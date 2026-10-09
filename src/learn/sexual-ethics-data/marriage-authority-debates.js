@@ -43,12 +43,32 @@ export const CSE_MARRIAGE_AUTHORITY_SOURCES=Object.freeze({
     "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html"
   ],
   "AL": [
-    "Francis, Amoris Laetitia §156",
-    "https://www.vatican.va/content/francesco/en/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia.html"
+    "Francis, Amoris Laetitia §156 (2016)",
+    "https://www.vatican.va/content/francesco/fr/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia.html"
   ],
   "LIBERTAS": [
     "Leo XIII, Libertas §§5–11",
     "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
+  ],
+  "GROOTHUIS": [
+    "Rebecca Merrill Groothuis, 'Biblical Submission within Marriage' (egalitarian position)",
+    "https://www.cbeinternational.org/resource/biblical-submission-within-marriage/"
+  ],
+  "KEENER_2021": [
+    "Craig S. Keener, 'Mutual Submission Frames the Household Codes' (2021)",
+    "https://www.cbeinternational.org/resource/mutual-submission-frames-household-codes/"
+  ],
+  "CHRYSOSTOM": [
+    "St John Chrysostom, Homily 20 on Ephesians 5:22–33",
+    "https://www.newadvent.org/fathers/230120.htm"
+  ],
+  "AQUINAS_CREATION": [
+    "St Thomas Aquinas, Summa Theologiae I q.92 a.1 (creation and subjection)",
+    "https://www.newadvent.org/summa/1092.htm"
+  ],
+  "FAMILY_CHARTER": [
+    "Holy See, Charter of the Rights of the Family, Articles 1–2 (1983)",
+    "https://www.vatican.va/roman_curia/pontifical_councils/family/documents/rc_pc_family_doc_19831022_family-rights_en.html"
   ]
 });
 export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
@@ -59,41 +79,43 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "Éphésiens 5 enseigne-t-il une hiérarchie permanente ou une soumission mutuelle ?"
     ],
     "opposition": [
-      "Craig Keener notes that the Greek of verse 22 supplies the verb 'submit' from verse 21. He argues that the wife's submission is an instance of the submission required of Christians generally and that the husband's self-sacrifice is the corresponding form. John Paul II also explicitly says that the spouses' subjection is mutual. Why turn Paul's household example into a unilateral authority structure?",
-      "Craig Keener relève que le verbe « se soumettre » au verset 22 est repris du verset 21 dans le texte grec. Il soutient que la soumission de l'épouse participe de celle demandée à tous les chrétiens et que le sacrifice du mari en est l'expression correspondante. Jean-Paul II affirme lui aussi expressément la réciprocité de la soumission des époux. Pourquoi transformer cet exemple domestique en une autorité unilatérale ?"
+      "Craig Keener's textual case is more demanding than a slogan about equality. In the early Greek text of Eph 5:22 the instruction to wives borrows its verb from 5:21, which addresses Christians collectively. The household code extends through 6:9, where masters too are instructed to act towards slaves in a new way; Keener argues that Paul transforms a recognisable Greco-Roman household structure from within rather than commanding Christians to reproduce all its social hierarchies for ever. Verse 25 then tells husbands to die for their wives, not to order them about. If Christians distinguish the gospel from ancient slaveholding, why must the asymmetry of the household code automatically be treated as an immutable Christian command? This is Keener's Protestant exegetical argument, not a Catholic magisterial pronouncement.",
+      "L'argument textuel de Craig Keener va bien au-delà d'un simple slogan égalitaire. Dans le texte grec ancien d'Ep 5,22, la consigne adressée aux femmes reprend son verbe du verset 21, qui concerne l'ensemble des chrétiens. Le code domestique se poursuit jusqu'en 6,9, où les maîtres reçoivent eux aussi des devoirs nouveaux envers les esclaves ; Keener soutient que Paul transforme de l'intérieur un ordre domestique gréco-romain identifiable, sans imposer de reproduire à jamais toutes ses hiérarchies. Au verset 25, le mari reçoit l'ordre de mourir pour sa femme, non celui de lui donner des ordres. Si les chrétiens distinguent l'Évangile de l'esclavage antique, pourquoi l'asymétrie du code domestique serait-elle nécessairement immuable ? C'est l'argument exégétique protestant de Keener, non une décision du magistère catholique."
     ],
     "reply": [
-      "The asymmetry is not invented: Paul specifically names the husband 'head' and describes the wife's relation to him through Christ and the Church. Leo XIII and Pius XI interpret this as a genuine order of domestic governance, not merely shared courtesy. Yet verse 21 and the husband's command to give himself up cannot be omitted. John Paul II's emphasis on mutual subjection is part of the Catholic interpretive record and must not be misrepresented as a Protestant objection.",
-      "L'asymétrie n'est pas inventée : Paul appelle expressément le mari « tête » et décrit le rapport de son épouse avec lui à partir du Christ et de l'Église. Léon XIII et Pie XI y reconnaissent un véritable ordre de gouvernement familial, non une simple courtoisie réciproque. Cependant, le verset 21 et l'ordre donné au mari de se livrer lui-même ne peuvent être omis. L'accent mis par Jean-Paul II sur la soumission mutuelle appartient au corpus interprétatif catholique et ne doit pas être présenté comme une objection protestante."
+      "The classical argument does not rest on ignoring verse 21 or on an isolated translation of 22. Verses 23–24 expressly call the husband the head and compare the wife's relation to him with the Church's relation to Christ; Col 3:18 and 1 Pet 3:1 attest that this was not a single accidental phrase. Chrysostom interprets both differentiated duties and a drastic restriction of the husband's conduct: he must win affection without threats, fear or violence. Leo XIII (*Arcanum* §11) and Pius XI (*Casti Connubii* §§26–29) explicitly read this apostolic material as an order of familial government. An exegete who says it teaches no differentiated authority must answer this textual and magisterial evidence rather than merely point to verse 21.",
+      "L'argument classique ne suppose ni d'ignorer le verset 21 ni d'isoler une traduction du verset 22. Les versets 23–24 appellent expressément le mari « tête » et rapprochent le lien de l'épouse avec lui de celui de l'Église avec le Christ ; Col 3,18 et 1 P 3,1 montrent que ce langage n'est pas une formule isolée. Chrysostome reconnaît des devoirs distincts tout en limitant radicalement la conduite du mari : il doit gagner l'affection sans menaces, peur ni violence. Léon XIII (*Arcanum*, §11) et Pie XI (*Casti Connubii*, §§26–29) lisent explicitement ces textes comme un ordre de gouvernement familial. Celui qui nie toute distinction d'autorité doit donc expliquer ces données scripturaires et magistérielles, et non se contenter du verset 21."
     ],
     "rejoinder": [
-      "If John Paul II says that all reasons for the woman's subjection must be understood as mutual submission, can Pius XI's formulation of primacy simply be repeated without qualification? No: the texts raise a real interpretive question about how enduring roles and evangelical reciprocity are related. Neither may be silently discarded.",
-      "Si Jean-Paul II affirme que toutes les raisons de la soumission de la femme doivent être comprises comme soumission mutuelle, peut-on répéter la formulation de Pie XI sur la primauté sans précision ? Non : les textes posent une véritable question d'interprétation sur la relation entre rôles distincts et réciprocité évangélique. Aucun ne doit être écarté en silence."
+      "But none of that settles whether the *social form* of governance is permanently prescribed. Paul compares the Church's submission to a sinless Christ with a wife's relation to a fallible man; an analogy cannot transfer Christ's prerogatives indiscriminately. Above all, *Mulieris Dignitatem* §24 says spousal subjection is mutual, and *Amoris Laetitia* §156 distinguishes the passage's revealed content from its cultural expression. A traditional account must explain these texts directly, not quietly substitute the vocabulary of 1930 for that of 1988 or 2016.",
+      "Cela n'établit pourtant pas que la *forme sociale* du gouvernement soit prescrite pour toujours. Paul rapproche la soumission de l'Église à un Christ sans péché du rapport d'une femme avec un homme faillible ; l'analogie ne transfère pas sans distinction les prérogatives du Christ. Surtout, *Mulieris Dignitatem* §24 déclare réciproque la soumission conjugale, et *Amoris Laetitia* §156 distingue le contenu révélé du passage de son expression culturelle. Une défense traditionnelle doit expliquer directement ces textes, sans substituer discrètement le vocabulaire de 1930 à celui de 1988 ou de 2016."
     ],
     "finding": [
-      "The Catholic account must read Ephesians 5:21–33 as a unit, acknowledge the real traditional teaching on domestic order, and give full weight to the later magisterial insistence on reciprocal self-gift. Distinguish the sources' emphases rather than pretend they use identical formulas.",
-      "La lecture catholique doit prendre Éphésiens 5, 21–33 comme un tout, reconnaître le véritable enseignement traditionnel sur l'ordre domestique et donner tout son poids à l'insistance magistérielle ultérieure sur le don réciproque. Il faut distinguer les accents des textes plutôt que leur prêter des formules identiques."
+      "Two conclusions have different evidential status. Paul's text and the classical papal documents genuinely contain asymmetrical marital language; saying they teach only identical roles is historically inadequate. Whether this entails a permanent, determinate right of unilateral decision over a wife is a *further* proposition that those verses do not establish by themselves. The controversy between a lasting order of headship and reciprocal governance must remain visible for theological adjudication; an editorial synthesis must not disguise that disputed inference as settled doctrine.",
+      "Deux conclusions ont un statut probatoire différent. Le texte paulinien et les encycliques classiques comportent réellement un langage conjugal asymétrique ; prétendre qu'ils ne distinguent aucun rôle est historiquement insuffisant. En déduire un droit permanent et déterminé de décider unilatéralement pour l'épouse est une *proposition supplémentaire* que ces versets n'établissent pas à eux seuls. Le débat entre permanence d'une primauté et gouvernement réciproque doit rester visible pour l'examen théologique ; une synthèse éditoriale ne doit pas présenter cette déduction contestée comme doctrine définitivement établie."
     ],
     "sources": {
       "opposition": [
-        "CBE",
-        "MULIERIS",
-        "EPH"
+        "EPH",
+        "KEENER_2021",
+        "GROOTHUIS"
       ],
       "reply": [
         "EPH",
+        "CHRYSOSTOM",
         "ARCANUM",
-        "CASTI",
-        "MULIERIS"
+        "CASTI"
       ],
       "rejoinder": [
         "MULIERIS",
-        "CASTI"
+        "AL",
+        "EPH"
       ],
       "finding": [
         "EPH",
         "CASTI",
-        "MULIERIS"
+        "MULIERIS",
+        "AL"
       ]
     }
   },
@@ -104,37 +126,40 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "Être chef signifie-t-il exercer une autorité réelle ou seulement servir avec amour ?"
     ],
     "opposition": [
-      "An egalitarian biblical reading argues that 'head' can describe a source of nourishment and unity rather than a ruler. The passage commands husbands to love, never explicitly to command their wives. Why insert a right to govern when Paul's ethical innovation is sacrificial care?",
-      "Une lecture biblique égalitariste considère que « tête » peut désigner la source de vie et d'unité plutôt qu'un chef qui commande. Le passage ordonne au mari d'aimer, sans lui ordonner explicitement de commander à son épouse. Pourquoi introduire un droit de gouverner lorsque la nouveauté morale de Paul réside dans le don de soi ?"
+      "Rebecca Merrill Groothuis argues against the inference 'husband = head, therefore husband = ruler'. She notes that a head can signify origin or life-giving relation, that Paul commands the husband to love and nourish rather than commands him to rule, and that Eph 6:1 explicitly tells children to obey while Eph 5 does not explicitly tell husbands to govern. The burden of proof is therefore on anyone deriving a household executive office from the metaphor. 'Servant leadership' does not solve the problem: calling a power benevolent does not prove the wife needs another adult to exercise it over her. Why is her spiritual judgment presumptively subordinate when both are accountable directly to God?",
+      "Rebecca Merrill Groothuis conteste le passage de « mari = tête » à « mari = gouvernant ». Elle rappelle qu'une tête peut signifier l'origine ou une relation vivifiante ; Paul ordonne au mari d'aimer et de nourrir, non de régner ; Ep 6,1 demande explicitement aux enfants d'obéir, tandis qu'Ep 5 ne commande pas explicitement au mari de gouverner. Celui qui déduit de cette image une fonction exécutive familiale porte donc la charge de la preuve. L'expression « chef serviteur » ne règle pas la difficulté : qualifier un pouvoir de bienveillant ne prouve pas qu'une adulte ait besoin qu'un autre l'exerce sur elle. Pourquoi son jugement spirituel serait-il présumé subordonné alors que tous deux rendent personnellement compte à Dieu ?"
     ],
     "reply": [
-      "Leo XIII expressly calls the husband the chief of the family; Pius XI speaks of his primacy in governance. Their account therefore includes responsibility for family direction. But their same texts bind him to fidelity, unselfish help, reason and charity, and deny that his wife is a servant. Authority is not permission to intimidate or demand personal advantages.",
-      "Léon XIII appelle expressément le mari chef de la famille ; Pie XI évoque sa primauté dans le gouvernement domestique. Leur enseignement comprend donc une responsabilité de direction familiale. Mais les mêmes textes l'obligent à la fidélité, à l'entraide désintéressée, à la raison et à la charité, et refusent de traiter l'épouse comme une servante. L'autorité ne permet ni l'intimidation ni la recherche d'avantages personnels."
+      "Groothuis identifies a genuine exegetical gap between the word *head* and a detailed household constitution. Yet the classical interpretation is not a modern invention: Leo XIII describes the husband as family chief, and Pius XI says that he has 'primacy in government'. Chrysostom likewise understands the wife's obedience as real while commanding the husband to endure suffering rather than intimidate. Thus the historical Catholic position includes some primacy of direction, but its own authoritative exponents reject treating the wife as a minor, servant or mere instrument. A husband cannot turn being 'head' into becoming the sole judge of God's will for his wife.",
+      "Groothuis identifie une véritable distance exégétique entre le mot *tête* et une constitution familiale détaillée. L'interprétation classique n'est pourtant pas une invention récente : Léon XIII qualifie le mari de chef de famille, et Pie XI lui attribue la « primauté du gouvernement ». Chrysostome reconnaît lui aussi une réelle obéissance de l'épouse, tout en ordonnant au mari de supporter la souffrance plutôt que d'intimider. La position catholique historique comporte donc une certaine primauté de direction, mais ses propres auteurs autorisés refusent de traiter l'épouse comme une mineure, une servante ou un simple instrument. Le mari ne peut se faire l'unique interprète de la volonté de Dieu pour sa femme."
     ],
     "rejoinder": [
-      "If headship is real, what can it require in practice? Not every contested preference becomes an enforceable command. Pius XI himself allows the concrete form of submission to vary, even requiring the wife to direct the family when her husband fails in his duty.",
-      "Si cette primauté est réelle, qu'implique-t-elle en pratique ? Toute préférence contestée du mari ne devient pas un commandement obligatoire. Pie XI admet lui-même que les modalités concrètes de la soumission varient, et que l'épouse dirige la famille lorsque le mari manque à son devoir."
+      "Then specify what the primacy *authorizes*. Can he decide where the couple lives against her considered objections, remove her independent access to money, forbid her to seek counsel, or decide for her conscience? None of these follows just by quoting a household metaphor. Under canon 1135 both spouses have equal marital rights and duties. A serious defender of headship must distinguish moral leadership, joint deliberation, final arbitration in limited matters and coercive command, giving evidence for each rather than moving from one meaning to another.",
+      "Il faut alors préciser ce que cette primauté *autorise*. Peut-il imposer le lieu de résidence malgré des objections réfléchies, priver son épouse d'accès indépendant aux ressources, lui interdire de demander conseil ou décider à la place de sa conscience ? Rien de cela ne découle de la seule métaphore domestique. Selon le canon 1135, les deux époux ont des droits et devoirs égaux dans la communauté conjugale. Le défenseur sérieux de la primauté doit distinguer l'exemple moral, la délibération commune, un éventuel arbitrage limité et l'ordre coercitif, avec des preuves propres à chaque proposition."
     ],
     "finding": [
-      "In the classic papal account, headship includes governance; it is radically conditioned by self-giving love, the wife's rights, prudence, and the family's common good. Neither 'nothing but sentiment' nor 'absolute rule' is a faithful summary.",
-      "Dans les encycliques classiques, la primauté comprend la direction du foyer ; elle est profondément réglée par l'amour qui se donne, les droits de l'épouse, la prudence et le bien commun familial. Ni « simple sentiment » ni « pouvoir absolu » ne résume fidèlement cet enseignement."
+      "The classic magisterial texts do teach a family order and do not equate headship with sentiment alone. But the particular powers sometimes asserted under that word—including unrestricted final say or spiritual control—need separate evidence and must respect the wife's rights. Do not let a devotional analogy silently become a legal or coercive entitlement.",
+      "Les textes magistériels classiques enseignent un ordre familial et ne réduisent pas la primauté à un simple sentiment. Mais les pouvoirs particuliers parfois revendiqués sous ce terme—dernier mot sans limites ou contrôle spirituel, notamment—exigent des preuves distinctes et doivent respecter les droits de l'épouse. L'analogie dévotionnelle ne doit pas devenir tacitement un droit juridique ou coercitif."
     ],
     "sources": {
       "opposition": [
-        "CBEBIBLE",
+        "GROOTHUIS",
         "EPH"
       ],
       "reply": [
         "ARCANUM",
-        "CASTI"
+        "CASTI",
+        "CHRYSOSTOM"
       ],
       "rejoinder": [
+        "CIC",
+        "GROOTHUIS",
         "CASTI"
       ],
       "finding": [
         "ARCANUM",
         "CASTI",
-        "EPH"
+        "CIC"
       ]
     }
   },
@@ -145,38 +170,40 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "La soumission contredit-elle l'égalité et la dignité de l'épouse ?"
     ],
     "opposition": [
-      "The Church's current canon law assigns each spouse an equal right and duty regarding their shared married life. John Paul II reads Paul's text through the reciprocal gift of persons. If rights and personal dignity are equal, why attach a standing presumption of authority to the husband's sex? That asymmetry risks treating the wife's judgment as second-class.",
-      "Le droit canonique actuel reconnaît à chaque époux les mêmes droits et devoirs concernant leur communauté de vie. Jean-Paul II interprète Paul à travers le don réciproque des personnes. Si les droits et la dignité personnelle sont égaux, pourquoi présumer une autorité attachée au sexe du mari ? Cette asymétrie risque de reléguer le jugement de l'épouse au second plan."
+      "An appeal to 'equal dignity but unequal roles' is insufficient without explaining the roles' moral legitimacy. Groothuis argues that a permanent gender-based hierarchy, however courteously described, gives one spouse a standing authority the other can never hold, even when she has superior competence. Canon 1135, by contrast, confers on both spouses equal rights and duties regarding their partnership of life; the Holy See's 1983 Charter of the Rights of the Family also affirms equal marital rights. If the wife possesses full rational and spiritual agency, on what non-circular ground does sex alone decide who governs? And how can she challenge misuse without being accused of rejecting God's order?",
+      "L'appel à une « dignité égale mais à des rôles inégaux » ne suffit pas tant qu'on n'explique pas la légitimité morale de ces rôles. Groothuis soutient qu'une hiérarchie permanente fondée sur le sexe, même formulée poliment, accorde à un conjoint une autorité que l'autre ne pourra jamais avoir, fût-elle plus compétente. À l'inverse, le canon 1135 donne aux deux époux des droits et devoirs égaux dans leur communauté de vie ; la Charte des droits de la famille du Saint-Siège de 1983 affirme également l'égalité des droits conjugaux. Si l'épouse possède pleinement raison et responsabilité spirituelle, quel fondement non circulaire fait du sexe le titre du gouvernement ? Comment pourrait-elle contester un abus sans être accusée de rejeter l'ordre voulu par Dieu ?"
     ],
     "reply": [
-      "Pius XI explicitly denies that the wife becomes a minor, a servant, or a person deprived of liberty. He distinguishes equal human dignity from distinct household roles and describes the wife as the family's 'heart'. His position must be reported as it stands; canon 1135 must also be reported as it stands, not hidden behind older phrases.",
-      "Pie XI refuse expressément de réduire l'épouse à une mineure, une servante ou une personne privée de liberté. Il distingue la dignité humaine égale de fonctions familiales différenciées et présente l'épouse comme le « cœur » de la famille. Il faut rapporter sa position fidèlement ; il faut aussi reconnaître le canon 1135 sans le dissimuler derrière les formules anciennes."
+      "Pius XI makes an important distinction: marriage includes an order of duties, but submission does not remove the wife's personal freedom or reduce her juridically or intellectually to a child. His text permits the *degree and mode* of submission to vary and allows the wife to take over household direction when the husband fails. This prevents a crude equation of dignity with identical household tasks and also defeats any claim that sex entails superior intelligence or moral infallibility. But Pius XI still asserts a primacy of government; that claim must be acknowledged instead of replaced by a merely symbolic account.",
+      "Pie XI établit une distinction importante : le mariage comporte un ordre de devoirs, mais la soumission ne supprime pas la liberté personnelle de l'épouse et ne la rabaisse ni juridiquement ni intellectuellement au rang d'enfant. Il admet que le *degré et les modalités* de la soumission varient et que l'épouse assume la direction du foyer lorsque le mari manque à son devoir. Cela interdit de confondre dignité et identité de toutes les fonctions, et réfute l'idée que le sexe rendrait plus intelligent ou moralement infaillible. Pie XI affirme pourtant une primauté de gouvernement : cette affirmation doit être reconnue, non remplacée par une pure métaphore."
     ],
     "rejoinder": [
-      "Equal worth in theory does not by itself prevent unequal treatment. That is a serious objection: a husband cannot invoke symbolic headship to override his wife's lawful freedom, exclude her judgment, control her finances arbitrarily or suppress her vocation.",
-      "L'égalité de dignité en théorie ne prévient pas à elle seule les inégalités de traitement. L'objection est sérieuse : un mari ne peut invoquer une primauté symbolique pour annuler la liberté légitime de son épouse, écarter son jugement, contrôler arbitrairement ses biens ou étouffer sa vocation."
+      "Those limits safeguard dignity in principle; they do not explain how the claim of government operates alongside canon 1135. It would be methodologically weak to call every practical application 'unchangeable doctrine' because Pius XI speaks of a divinely established family structure, or conversely to announce that canon 1135 automatically repeals the encyclical. A specialist must identify the object and authority of each proposition and explain what is moral doctrine, ecclesiastical law, theological interpretation or social custom.",
+      "Ces limites protègent la dignité en principe ; elles n'expliquent pas le fonctionnement de la primauté au regard du canon 1135. Il serait méthodologiquement faible de déclarer toute application pratique « doctrine immuable » parce que Pie XI parle d'une structure familiale établie par Dieu, ou, à l'inverse, de prétendre que le canon 1135 abroge automatiquement l'encyclique. Il faut déterminer l'objet et l'autorité de chaque proposition et distinguer doctrine morale, droit ecclésiastique, interprétation théologique et coutume sociale."
     ],
     "finding": [
-      "A valid discussion holds the texts together: no inferiority of person, no loss of legitimate rights, and no automatic license to dominate. The relationship between traditional role differentiation and contemporary canonical equality deserves explicit explanation, not concealment.",
-      "Une explication correcte tient les textes ensemble : aucune infériorité personnelle, aucune perte des droits légitimes et aucune permission automatique de dominer. Le rapport entre différenciation traditionnelle des rôles et égalité canonique contemporaine doit être expliqué, non occulté."
+      "Equal dignity is non-negotiable; differentiated responsibilities cannot suspend a wife's conscience, legitimate rights or capacity to govern where circumstances warrant. The precise theological reconciliation of historical domestic primacy with current equal-rights formulations needs an argued analysis, not a slogan. Neither 'husbands own their wives' nor 'Pius XI never taught governance' is an accurate account.",
+      "L'égale dignité n'est pas négociable ; des responsabilités distinctes ne peuvent supprimer la conscience de l'épouse, ses droits légitimes ni sa capacité à diriger lorsque les circonstances l'exigent. La conciliation théologique précise entre primauté historique et formulations actuelles de droits égaux réclame une analyse argumentée, non un slogan. Ni « les maris possèdent leur femme » ni « Pie XI n'a jamais enseigné de gouvernement » n'est fidèle aux textes."
     ],
     "sources": {
       "opposition": [
+        "GROOTHUIS",
         "CIC",
-        "MULIERIS"
+        "FAMILY_CHARTER"
       ],
       "reply": [
         "CASTI",
-        "CIC"
+        "ARCANUM"
       ],
       "rejoinder": [
         "CASTI",
-        "CIC"
+        "CIC",
+        "MULIERIS"
       ],
       "finding": [
         "CASTI",
-        "MULIERIS",
-        "CIC"
+        "CIC",
+        "FAMILY_CHARTER"
       ]
     }
   },
@@ -187,33 +214,34 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "Le mari a-t-il toujours le dernier mot en cas de désaccord ?"
     ],
     "opposition": [
-      "An egalitarian marriage argument says decision-making is often wiser when spouses wait for mutual agreement rather than invoking rank. Canon 1135 recognizes both as equally responsible partners. If a husband can always cast a deciding vote, he may call selfishness 'leadership' and never need to persuade the person who shares the consequences.",
-      "Une objection égalitariste soutient que les décisions sont souvent plus sages lorsque les époux cherchent un accord plutôt qu'un rang supérieur. Le canon 1135 les reconnaît comme partenaires également responsables. Si le mari possède toujours une voix décisive, il peut appeler « autorité » son intérêt personnel et ne jamais convaincre celle qui subit avec lui les conséquences."
+      "Groothuis directly rejects the familiar fallback argument that 'somebody must have the last word'. Two competent adults can use consensus, a temporary postponement, agreed division of responsibility, or outside mediation without a permanent executive office. She also points out that the very marriages most inclined to conflict may be those in which assigning unilateral authority creates the gravest risk of manipulation. Canon 1135 does not prescribe a male casting vote. If Scripture names husbands as heads but supplies no tie-break procedure, what warrants the rule that the wife's considered judgment always loses?",
+      "Groothuis rejette expressément l'argument selon lequel « il faut bien que quelqu'un ait le dernier mot ». Deux adultes compétents peuvent chercher un consensus, différer une décision, répartir librement les responsabilités ou recourir à une médiation sans instituer un chef permanent. Elle rappelle aussi que les mariages les plus conflictuels risquent précisément de rendre dangereuse l'attribution d'un pouvoir unilatéral. Le canon 1135 ne prévoit aucune voix prépondérante masculine. Si l'Écriture nomme le mari « tête » sans établir de procédure d'arbitrage, qu'est-ce qui permet de décréter que le jugement réfléchi de l'épouse doit toujours céder ?"
     ],
     "reply": [
-      "The classic papal teaching assigns a primacy of household governance to the husband. Yet no cited magisterial text lays down a universal rule that he automatically wins every ordinary disagreement; Pius XI expressly allows the manner of family direction to vary and requires conduct consistent with reason and the wife's dignity.",
-      "L'enseignement pontifical classique attribue au mari une primauté dans le gouvernement domestique. Mais aucun des textes invoqués n'établit une règle universelle selon laquelle il gagne automatiquement tout désaccord ordinaire ; Pie XI admet des modalités variables de direction et exige des décisions conformes à la raison et à la dignité de l'épouse."
+      "The traditional answer is not that every decision belongs to the more forceful spouse. Leo XIII and Pius XI do ascribe leadership and primacy to the husband, and a marriage cannot be governed as two rival sovereigns seeking purely private interests. Duties toward children, fidelity and the common home can require a decision even under disagreement. A husband can legitimately accept responsibility for proposing and carrying through a prudent common course—yet his act must remain accountable to his wife's rights and knowledge. The classical sources are authority for an order of responsibility, not a complete procedural code for school choices, residence, employment or the family budget.",
+      "La réponse traditionnelle ne consiste pas à remettre chaque décision au conjoint le plus autoritaire. Léon XIII et Pie XI attribuent effectivement au mari direction et primauté, et le mariage ne peut fonctionner comme deux souverains rivaux poursuivant leur intérêt privé. Les devoirs envers les enfants, la fidélité et le foyer peuvent exiger une décision malgré un désaccord. Le mari peut assumer la responsabilité de proposer et de conduire une voie commune prudente, mais son acte demeure soumis aux droits et au savoir de son épouse. Les textes classiques fondent un ordre de responsabilités, non un code de procédure exhaustif pour l'école, le logement, l'emploi ou le budget."
     ],
     "rejoinder": [
-      "What if consensus cannot be reached? This is a real prudential difficulty, not proof of a blank cheque. Distinguish matters of conscience, each spouse's rights, urgent obligations to children, and choices that permit negotiation or deferral. No universal tie-breaker can replace those distinctions.",
-      "Que faire si aucun accord n'est possible ? C'est une réelle difficulté prudentielle, non la preuve d'un chèque en blanc. Il faut distinguer les questions de conscience, les droits de chacun, les obligations urgentes envers les enfants et les décisions susceptibles de compromis ou de report. Aucun mécanisme universel de départage ne remplace ces distinctions."
+      "Suppose the husband wants to relocate for work while the wife reasonably objects because of children's needs, care for parents or damage to her livelihood. Saying simply 'he is head' substitutes status for reasoning. Saying merely 'agree somehow' is equally shallow if the question is urgent. The answer must consider whose rights are affected, duties already undertaken, feasibility of alternatives and whether the decision exceeds any legitimate competence. One cannot honestly cite a magisterial paragraph as if it resolved these factual questions in advance.",
+      "Supposons que le mari veuille déménager pour son travail et que l'épouse s'y oppose raisonnablement à cause des enfants, de parents à aider ou de son propre gagne-pain. Répondre « il est le chef » substitue le rang au raisonnement. Répondre seulement « trouvez un accord » est également insuffisant si la décision est urgente. Il faut examiner les droits concernés, les devoirs déjà assumés, les solutions possibles et les limites de toute compétence légitime. Un paragraphe du magistère ne résout pas d'avance ces données concrètes."
     ],
     "finding": [
-      "Traditional headship is not a standing unilateral veto. The scope of authority and concrete decision process must respect both spouses' rights, their duties to children, and the common good.",
-      "La primauté traditionnelle ne constitue pas un droit permanent de veto unilatéral. L'étendue de l'autorité et la manière de décider doivent respecter les droits des deux époux, leurs devoirs envers les enfants et le bien commun."
+      "The classical principle of governance does not establish a universally automatic male tie-breaker for every domestic disagreement. Any such claim requires a further argument, and may not extinguish either spouse's rights. Where agreement fails, the actual moral question is which available action best fulfils their shared duties; authority is accountable to that question rather than replacing it.",
+      "Le principe classique de gouvernement ne fournit pas automatiquement une voix prépondérante masculine pour tout désaccord domestique. Une telle prétention exige un argument supplémentaire et ne peut anéantir les droits d'aucun des époux. Lorsque l'accord échoue, la question morale réelle est de savoir quelle action possible remplit le mieux leurs devoirs communs ; l'autorité doit répondre à cette question et non s'y substituer."
     ],
     "sources": {
       "opposition": [
-        "CBEBIBLE",
+        "GROOTHUIS",
         "CIC"
       ],
       "reply": [
-        "CASTI",
-        "ARCANUM"
-      ],
-      "rejoinder": [
+        "ARCANUM",
         "CASTI",
         "CIC"
+      ],
+      "rejoinder": [
+        "CIC",
+        "CASTI"
       ],
       "finding": [
         "CASTI",
@@ -228,25 +256,26 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "Si Paul écrit « en toutes choses », l'épouse doit-elle obéir à toute demande ?"
     ],
     "opposition": [
-      "The forceful literalist objection is in the Pauline wording itself: wives are described as subject 'in all things'. Aquinas examines an analogous claim that inferiors should obey superiors in everything, since authority would otherwise seem powerless when contested. Does allowing refusal reduce obedience to personal preference?",
-      "L'objection littéraliste s'appuie sur la force même des mots de saint Paul : les épouses sont dites soumises « en toutes choses ». Saint Thomas examine une objection analogue : les sujets devraient obéir en tout à leur supérieur, sans quoi l'autorité semblerait impuissante dès qu'elle est contestée. Permettre le refus ne réduit-il pas l'obéissance à une simple préférence ?"
+      "A stringent traditionalist reading can point to the phrase 'in everything' (Eph 5:24). If the wife is free to obey only when convinced the husband made the best decision, his primacy seems indistinguishable from ordinary consultation. Aquinas himself argues that obedience can be virtuous even when one's own preference differs from a superior's. Does the duty become real only in difficult, non-sinful disputes? Conversely, if 'everything' means whatever he wants, a husband could use religion to control friendships, prayer, medical decisions or access to pastoral advice. These are different interpretations with very different consequences.",
+      "Une lecture traditionaliste stricte peut invoquer « en toutes choses » (Ep 5,24). Si l'épouse n'obéit que lorsqu'elle juge elle-même la décision de son mari optimale, la primauté semble ne pas dépasser la consultation ordinaire. Saint Thomas estime que l'obéissance peut être vertueuse malgré une préférence personnelle contraire. Le devoir n'a-t-il donc de sens que dans les désaccords difficiles mais non peccamineux ? Inversement, si « toutes choses » signifie tout ce qu'il veut, un mari pourrait invoquer la religion pour contrôler les amitiés, la prière, les soins ou l'accès à un conseiller spirituel. Ces interprétations ont des conséquences radicalement différentes."
     ],
     "reply": [
-      "Aquinas explicitly answers that human authority is limited both by higher divine commands and by its proper jurisdiction. Pius XI likewise denies that a wife must obey requests contrary to right reason or to the dignity owed her. Commands to sin or endure unlawful degradation have no moral claim simply because they come from a husband.",
-      "Saint Thomas répond expressément que l'autorité humaine est limitée par les commandements divins supérieurs et par sa compétence propre. Pie XI nie de même que l'épouse doive obéir à une demande contraire à la droite raison ou à la dignité qui lui est due. Un ordre de pécher ou de subir une humiliation injuste ne tire aucune légitimité morale du fait qu'il émane du mari."
+      "Aquinas II–II q.104 a.5 supplies two decisive limits: God is a higher authority and no human superior commands in matters beyond the scope of his position. Pius XI expressly says submission does not oblige a wife to comply with desires inconsistent with reason or her dignity; he never equates the husband's will with divine revelation. This does not mean that any difficult non-sinful decision becomes optional simply because it displeases someone. It means first identifying whether an actual duty of obedience exists in that matter, rather than assuming unlimited domestic jurisdiction from a metaphor.",
+      "Saint Thomas (II–II, q.104, a.5) pose deux limites décisives : Dieu est l'autorité supérieure, et aucun supérieur humain ne commande légitimement hors de sa compétence. Pie XI affirme expressément que la soumission n'oblige pas l'épouse à suivre des désirs contraires à la raison ou à sa dignité ; il n'assimile jamais la volonté du mari à une révélation divine. Cela ne signifie pas que toute décision pénible mais licite devienne facultative dès qu'elle déplaît. Il faut d'abord établir si un véritable devoir d'obéissance existe dans la matière considérée, plutôt que déduire une compétence illimitée d'une métaphore familiale."
     ],
     "rejoinder": [
-      "The hard case is not an openly sinful command but a disputed prudent judgment. It requires discernment, not the fiction that the husband's will equals God's will or the opposite fiction that every inconvenient command is sinful.",
-      "Le cas difficile n'est pas l'ordre ouvertement peccamineux, mais le jugement prudentiel contesté. Il exige discernement, sans assimiler la volonté du mari à celle de Dieu ni déclarer pécheur tout ordre qui déplaît."
+      "The remaining difficulty is genuine: who determines that jurisdiction in a disputed ordinary matter? 'I dislike it' does not prove immorality; 'I am the husband' does not prove authority. Distinguish a command requiring sin (always to be refused), threats or coercion (never a legitimate enforcement mechanism), decisions invading the wife's personal rights, and ordinary prudential choices requiring reciprocal deliberation. Claiming divine sanction for every preference is a form of the very abuse that the limits are meant to prevent.",
+      "La difficulté demeure réelle : qui détermine la compétence dans un désaccord ordinaire ? « Cela me déplaît » ne prouve pas l'immoralité ; « je suis le mari » ne prouve pas l'autorité. Il faut distinguer l'ordre de pécher (toujours à refuser), la menace ou la contrainte (jamais moyen légitime d'obtenir l'obéissance), les décisions portant atteinte aux droits personnels de l'épouse et les choix prudentiels nécessitant une délibération réciproque. Invoquer Dieu pour chaque préférence constitue précisément un abus que ces limites doivent prévenir."
     ],
     "finding": [
-      "Obedience has genuine moral content precisely because it is bounded by God, right reason, justice and the scope of lawful authority. Unconditional submission to another human being is not the Catholic rule.",
-      "L'obéissance possède un vrai contenu moral précisément parce qu'elle est réglée par Dieu, la droite raison, la justice et la compétence de l'autorité légitime. La soumission inconditionnelle à un être humain n'est pas la règle catholique."
+      "The text 'in everything' cannot be construed as unlimited human sovereignty. Equally, it should not be dissolved into a rule that obedience never calls for sacrifice. The precise claim in any concrete case must be established through moral law, the nature and limits of legitimate familial responsibility, and the rights of both spouses—not merely through the person's sex.",
+      "L'expression « en toutes choses » ne peut être comprise comme une souveraineté humaine sans limite. Elle ne doit pas non plus être vidée de sens comme si l'obéissance ne demandait jamais un sacrifice. Dans chaque cas concret, il faut déterminer les devoirs à partir de la loi morale, de la nature et des limites de la responsabilité familiale légitime et des droits des deux époux, non du seul sexe."
     ],
     "sources": {
       "opposition": [
         "EPH",
-        "AQUINAS"
+        "AQUINAS",
+        "CASTI"
       ],
       "reply": [
         "AQUINAS",
@@ -254,9 +283,11 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       ],
       "rejoinder": [
         "AQUINAS",
+        "CIC",
         "CASTI"
       ],
       "finding": [
+        "EPH",
         "AQUINAS",
         "CASTI"
       ]
@@ -269,36 +300,38 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "Les devoirs conjugaux peuvent-ils justifier une pression ou contrainte sexuelle ?"
     ],
     "opposition": [
-      "Traditional theologians speak of a reciprocal 'marital debt', and Aquinas treats unjustified refusal as capable of wronging one's spouse. A critic can therefore ask whether that older obligation conflicts with present claims that sex may never be imposed. Erasing the obligation would evade the difficulty rather than resolve it.",
-      "Les théologiens traditionnels parlent d'un « devoir conjugal » réciproque, et saint Thomas reconnaît qu'un refus injustifié peut léser le conjoint. On peut donc demander si cette ancienne obligation contredit le refus contemporain de tout acte sexuel imposé. Effacer l'obligation serait esquiver la difficulté au lieu de la résoudre."
+      "The hardest historical argument begins with 1 Cor 7:3–5: Paul assigns spouses reciprocal duties concerning marital relations and warns against deprivation without agreement. The *Summa* Supplement q.64 treats the so-called marital debt as a genuine obligation, not simply a preference. If any refusal is automatically considered decisive regardless of motive, could one spouse withhold relations habitually as punishment while claiming that the moral duty never has practical consequences? A serious Catholic answer cannot pretend that older reciprocal obligations never existed.",
+      "L'argument historique le plus exigeant part de 1 Co 7,3–5 : saint Paul confie aux époux des devoirs sexuels réciproques et met en garde contre la privation sans accord. La *Somme* (Supplément, q.64) traite le « devoir conjugal » comme une véritable obligation, et non une simple préférence. Si tout refus devenait automatiquement décisif indépendamment de ses motifs, l'un des conjoints pourrait-il priver durablement l'autre de relations pour le punir tout en soutenant qu'aucun devoir moral n'a de conséquence pratique ? Une réponse catholique sérieuse ne peut feindre que les obligations réciproques anciennes n'ont jamais existé."
     ],
     "reply": [
-      "The reciprocal duty is real but does not create a power to force another body. Paul VI specifically condemns intercourse imposed without regard for a spouse's condition or reasonable wishes. Aquinas likewise discusses limits concerning bodily welfare. Moral duties, consent to a particular act, and violent enforcement are different questions.",
-      "Le devoir réciproque est réel mais ne confère aucun pouvoir de forcer le corps d'autrui. Paul VI condamne expressément l'acte imposé sans considération pour l'état et les désirs raisonnables du conjoint. Saint Thomas reconnaît lui aussi des limites liées au bien corporel. Devoir moral, consentement à un acte précis et contrainte violente sont des questions distinctes."
+      "The opposite mistake is even graver: turning the existence of a moral claim into a right to force another person's body. In *Humanae Vitae* §13 Paul VI rejects an imposed act that disregards the spouse's condition and reasonable wishes; *Amoris Laetitia* §156 rejects sexual subjugation in its reading of Ephesians. Even the traditional discussion distinguishes justified demands from conditions affecting bodily welfare. Hence duty, personal consent to a particular act, and coercive enforcement are conceptually distinct. A marriage does not license threats, assault or bodily domination.",
+      "L'erreur inverse est plus grave encore : transformer l'existence d'un devoir moral en droit de contraindre le corps d'autrui. Dans *Humanae Vitae* §13, Paul VI rejette l'acte imposé sans égard à la condition et aux désirs raisonnables du conjoint ; *Amoris Laetitia* §156 rejette la sujétion sexuelle dans sa lecture d'Éphésiens. La discussion traditionnelle elle-même distingue les demandes légitimes des circonstances touchant au bien corporel. Devoir, consentement personnel à un acte particulier et exécution coercitive sont donc des notions différentes. Le mariage n'autorise ni menace, ni agression, ni domination corporelle."
     ],
     "rejoinder": [
-      "What about persistent refusal as a means of domination? That can itself be morally serious, but the remedy is discernment, support and just action—not coercion. Canon 1153 permits separation in circumstances of grave physical or mental danger. The existing CSE054 contains the main ownership of this issue.",
-      "Qu'en est-il du refus persistant utilisé pour dominer ? Il peut être moralement grave, mais la réponse relève du discernement, de l'accompagnement et de moyens justes, jamais de la contrainte. Le canon 1153 prévoit la séparation en cas de danger grave pour le corps ou l'esprit. La question CSE054 demeure le dossier principal sur ce sujet."
+      "This leaves two pastoral problems that should not be conflated. A persistent punitive refusal can be an injustice to the spouse and call for counsel and moral conversion. A spouse subject to force or threats needs protection; the fact that an aggressor invokes Catholic teaching changes nothing about the wrong. Canon 1153 provides for separation in circumstances of grave danger. An answer that talks only of obligations can endanger victims; an answer that denies every obligation misstates the tradition.",
+      "Il reste deux difficultés pastorales à ne pas confondre. Un refus persistant utilisé comme punition peut être injuste envers le conjoint et exiger conseil et conversion morale. Un conjoint exposé à la force ou aux menaces doit être protégé ; l'invocation de la doctrine catholique par l'agresseur ne change rien au mal commis. Le canon 1153 prévoit une séparation en cas de danger grave. Parler seulement des obligations peut mettre les victimes en danger ; nier toute obligation déforme la tradition."
     ],
     "finding": [
-      "A marital obligation cannot be enforced through sexual force. The traditional reciprocal duty and the absolute rejection of coercion must both be stated, without treating either spouse as property.",
-      "Le devoir conjugal ne peut être imposé par la force sexuelle. Il faut affirmer à la fois le devoir traditionnel réciproque et le rejet de toute contrainte, sans traiter aucun époux comme une propriété."
+      "The moral claims of spouses are reciprocal, not proprietary. A grievance about refusal never confers a right to force sex; equally, coercion's prohibition does not abolish duties of fidelity and mutual care. CSE054 remains the canonical owner of this practical problem and must retain direct links to the primary theological and pastoral sources.",
+      "Les devoirs des époux sont réciproques, non des droits de propriété. Une plainte pour refus ne confère jamais un droit de contrainte sexuelle ; inversement, l'interdiction de la contrainte n'abolit pas la fidélité ni le soin mutuel. CSE054 reste le dossier principal de ce problème pratique et doit conserver les liens vers les sources théologiques et pastorales originales."
     ],
     "sources": {
       "opposition": [
         "AQUINAS_MARITAL",
-        "HV"
+        "EPH"
       ],
       "reply": [
         "HV",
         "AL",
-        "CIC"
+        "AQUINAS_MARITAL"
       ],
       "rejoinder": [
         "CIC",
-        "HV"
+        "HV",
+        "AL"
       ],
       "finding": [
+        "AQUINAS_MARITAL",
         "HV",
         "AL"
       ]
@@ -311,33 +344,37 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "Les fiançailles donnent-elles déjà à l'homme l'autorité d'un mari ?"
     ],
     "opposition": [
-      "A serious engagement entails fidelity, plans for children, and sacrifices made in view of a shared household. Someone might argue that leadership and obedience must begin before the wedding, because otherwise the future spouses never practise the roles they intend to undertake.",
-      "Les fiançailles sérieuses engagent la fidélité, des projets d'enfants et des sacrifices en vue d'un foyer commun. On pourrait soutenir que la direction et l'obéissance doivent commencer avant le mariage, sans quoi les futurs époux ne s'exercent jamais aux responsabilités qu'ils envisagent."
+      "The objection here is an argument about preparation, not an identified doctrinal claim by an external school. Since betrothed couples promise marriage and anticipate marital duties, one could argue that they must begin practising deference to the future husband's judgment, or that a traditional Catholic woman who rejects his leadership before the wedding is failing to prepare for the vocation she intends to embrace. Such reasoning has practical force when the couple needs to discern habits of cooperation. But does preparation create a right to obedience that only marriage itself would ordinarily confer?",
+      "L'objection relève ici d'un raisonnement sur la préparation, non d'une doctrine attribuée à une école extérieure identifiée. Puisque les fiancés promettent le mariage et anticipent leurs devoirs, on pourrait soutenir qu'ils doivent déjà s'exercer à déférer au jugement du futur mari, ou qu'une catholique attachée à la tradition qui refuse toute direction avant les noces se prépare mal à la vocation choisie. Cette considération pratique a du poids pour discerner leurs habitudes de coopération. Mais la préparation crée-t-elle un droit à l'obéissance qui n'appartiendrait normalement qu'au mariage ?"
     ],
     "reply": [
-      "That is a practical inference, not a doctrine conferred by betrothal. Canon 1057 makes freely exchanged matrimonial consent constitutive of marriage; canon 1062 treats engagement as a promise and even denies a legal action to force celebration of the marriage. The rights proper to husband and wife do not arise merely from courting or engagement.",
-      "C'est une déduction pratique, non une doctrine attachée aux fiançailles. Le canon 1057 fait du consentement matrimonial librement échangé la cause du mariage ; le canon 1062 traite les fiançailles comme une promesse et exclut même l'action visant à contraindre la célébration du mariage. Les droits propres aux époux ne naissent pas de la fréquentation ou des fiançailles."
+      "Canon 1057 provides the crucial threshold: matrimony comes into being through the legally sufficient consent of the parties; canon 1062 treats betrothal as a promise and does not permit an action to compel the marriage. The 1983 Charter of the Rights of the Family likewise insists upon free marital choice. It follows that engagement is not a lesser form of marriage and does not bestow jurisdiction over the other person's conscience, friends, work, worship or bodily autonomy. A couple may voluntarily agree on responsibilities while discerning, but an unmarried man's claimed office of 'head of his future wife' is not a matrimonial right.",
+      "Le canon 1057 fixe le seuil décisif : le mariage naît du consentement juridiquement suffisant des parties ; le canon 1062 considère les fiançailles comme une promesse et n'autorise pas d'action pour contraindre à la célébration. La Charte des droits de la famille de 1983 insiste également sur la liberté du choix matrimonial. Les fiançailles ne sont donc pas une forme réduite du mariage et ne confèrent aucune compétence sur la conscience, les amitiés, le travail, le culte ou l'intégrité corporelle de l'autre. Le couple peut convenir librement de responsabilités durant son discernement, mais la prétendue fonction de « chef de sa future épouse » n'est pas un droit matrimonial."
     ],
     "rejoinder": [
-      "How then assess compatibility? Discuss faith, conflict, work, money, children and decision-making candidly. Voluntary cooperation while engaged is possible; compelled 'wifely obedience' is not a premarital entitlement.",
-      "Comment alors éprouver la compatibilité ? Il faut parler franchement de la foi, des conflits, du travail, de l'argent, des enfants et des décisions. La coopération volontaire des fiancés est possible ; l'« obéissance d'épouse » imposée n'est pas un droit avant le mariage."
+      "That answer must not be misused to avoid difficult premarital questions. If the couple have fundamentally different beliefs about marital authority, roles, education of children or finances, an engagement may expose a serious incompatibility. The man's capacity for sacrificial self-restraint is as relevant to that discernment as the woman's willingness to cooperate. Practising conversation and responsibility is appropriate; demanding premature submission is not.",
+      "Cette réponse ne doit pas servir à éviter les questions exigeantes avant le mariage. Si les fiancés divergent profondément sur l'autorité conjugale, les rôles, l'éducation des enfants ou les finances, les fiançailles peuvent révéler une incompatibilité sérieuse. L'aptitude de l'homme au renoncement et au don de soi compte autant dans ce discernement que la disposition de la femme à collaborer. S'exercer à dialoguer et à assumer des responsabilités est juste ; exiger une soumission prématurée ne l'est pas."
     ],
     "finding": [
-      "Engagement is preparation and promise, not marriage. CSE032 owns the canonical distinction; this debate explains its implications for claims of authority.",
-      "Les fiançailles préparent et promettent le mariage, sans l'être déjà. CSE032 traite la distinction canonique ; ce débat en précise les conséquences quant à l'autorité alléguée."
+      "Doctrinally this is a distinction of status, not a parallel school of biblical interpretation: freely chosen preparation is good, but betrothal creates no present marital power. The existing CSE032 owns this issue; do not present an invented opposing camp as a documented Protestant or traditionalist theologian.",
+      "Sur le plan doctrinal, il s'agit d'une distinction de statut, non d'une école concurrente d'interprétation biblique : la préparation libre est bonne, mais les fiançailles ne créent aucun pouvoir conjugal présent. CSE032 demeure propriétaire de cette question ; il ne faut pas présenter un courant opposé inventé comme s'il s'agissait d'un théologien protestant ou traditionaliste documenté."
     ],
     "sources": {
       "opposition": [
-        "CIC"
+        "CIC",
+        "FAMILY_CHARTER"
       ],
       "reply": [
-        "CIC"
+        "CIC",
+        "FAMILY_CHARTER"
       ],
       "rejoinder": [
-        "CIC"
+        "CIC",
+        "CASTI"
       ],
       "finding": [
-        "CIC"
+        "CIC",
+        "FAMILY_CHARTER"
       ]
     }
   },
@@ -348,42 +385,42 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
       "Comment la liberté chrétienne peut-elle coexister avec l'obéissance et la soumission ?"
     ],
     "opposition": [
-      "An egalitarian Christian account argues that turning sex into a standing authority marker undermines the freedom and mutual self-gift of two rational adults. It finds in Ephesians 5:21 and John Paul II's interpretation a better account of equal spiritual agency than a hierarchy assigned before either spouse's gifts and judgment are considered.",
-      "Une interprétation chrétienne égalitariste estime qu'attacher durablement l'autorité au sexe affaiblit la liberté et le don réciproque de deux adultes raisonnables. Elle trouve dans Éphésiens 5, 21 et l'interprétation de Jean-Paul II une meilleure reconnaissance de leur responsabilité spirituelle égale qu'une hiérarchie fixée avant d'examiner les dons et le jugement de chacun."
+      "The egalitarian objection is not that every obligation destroys freedom. Groothuis asks why a competent woman who is accountable immediately to God should receive moral direction through a husband's standing power rather than through her own conscience and the spouses' joint reasoning. Keener locates the revolutionary element of the household text in mutual service; John Paul II calls the spouses' submission reciprocal. A husband's 'loving' authority can still be paternalism if his judgment is presumed controlling by virtue of sex rather than argument. Does calling submission freely chosen settle anything when the ongoing relationship penalises disagreement?",
+      "L'objection égalitariste ne consiste pas à dire que toute obligation détruit la liberté. Groothuis demande pourquoi une femme compétente, responsable directement devant Dieu, devrait recevoir une direction morale par un pouvoir permanent de son mari plutôt que par sa conscience et le raisonnement commun des époux. Keener voit la nouveauté du code domestique dans le service mutuel ; Jean-Paul II qualifie la soumission conjugale de réciproque. L'autorité même « aimante » peut être paternaliste si le jugement de l'homme prime par le seul fait de son sexe et non par la force de ses raisons. Dire que la soumission est librement choisie résout-il quelque chose lorsque le désaccord est ensuite sanctionné ?"
     ],
     "reply": [
-      "Classical Catholic teaching does not equate freedom with independence from every duty. Leo XIII distinguishes liberty ordered to truth from license; Aquinas regards willing obedience within lawful authority as an exercise of rational freedom. Marriage itself creates mutual obligations through free consent, and Pius XI explicitly preserves the wife's liberty.",
-      "L'enseignement catholique classique n'identifie pas la liberté à l'absence de tout devoir. Léon XIII distingue la liberté ordonnée à la vérité de la licence ; saint Thomas voit dans l'obéissance libre, à l'intérieur d'une autorité légitime, un acte rationnel. Le mariage lui-même crée par le consentement libre des obligations réciproques, et Pie XI sauvegarde expressément la liberté de l'épouse."
+      "Leo XIII's *Libertas* and Aquinas distinguish a rationally chosen duty from being enslaved to another's arbitrary wishes. Marriage is a freely assumed permanent covenant; obligations of fidelity, mutual assistance and care for children may bind when inconvenient. Pius XI explicitly denies that the wife loses liberty or the free exercise of rights. The most defensible classical claim is therefore not 'freedom ends at marriage', but that freedom can be exercised in taking on an ordered common life. Yet the fact that duties can be freely accepted does *not* independently prove the contested distribution of household governance: that still needs scriptural and magisterial argument.",
+      "La *Libertas* de Léon XIII et saint Thomas distinguent le devoir rationnellement choisi de la servitude envers les caprices d'autrui. Le mariage est une alliance permanente librement contractée ; la fidélité, l'entraide et les soins dus aux enfants obligent même lorsqu'ils coûtent. Pie XI nie expressément que l'épouse perde sa liberté ou le libre exercice de ses droits. La meilleure thèse classique n'est donc pas « la liberté cesse au mariage », mais que la liberté peut s'exercer en assumant une vie commune ordonnée. Cependant, le fait qu'on puisse contracter librement des obligations ne prouve *pas en soi* la répartition contestée du gouvernement familial : celle-ci exige un argument biblique et magistériel distinct."
     ],
     "rejoinder": [
-      "This does not prove that every historically claimed marital hierarchy is divinely immutable. The classic encyclicals' language about governance and later texts about reciprocity need theological interpretation; the practice must always protect freedom of conscience, moral responsibility and personal dignity.",
-      "Cela ne prouve pas que toute hiérarchie conjugale historiquement revendiquée soit divine et immuable. Le langage des encycliques classiques sur le gouvernement et celui des textes ultérieurs sur la réciprocité demandent une interprétation théologique ; la pratique doit toujours préserver la liberté de conscience, la responsabilité morale et la dignité personnelle."
+      "Moreover, voluntary entrance into marriage is not advance consent to any future command. A spouse cannot turn the wedding vow into surrender of moral agency, access to counsel, property, bodily integrity or freedom to reject sin. Conversely, the egalitarian reply must not erase real obligations merely because they constrain individual preferences. The hard question is not freedom versus duty, but which particular duties have actually been authoritatively established, and what remedies exist when they are abused.",
+      "En outre, entrer volontairement dans le mariage ne signifie pas consentir d'avance à tout ordre futur. Aucun conjoint ne peut transformer le consentement nuptial en abandon de sa responsabilité morale, de son accès au conseil, de ses biens, de son intégrité corporelle ou de sa liberté de refuser le péché. Réciproquement, la réponse égalitariste ne doit pas effacer les véritables obligations au seul motif qu'elles limitent des préférences individuelles. La question difficile n'est pas liberté contre devoir, mais quels devoirs précis ont été légitimement établis et quels recours existent en cas d'abus."
     ],
     "finding": [
-      "Authentic Christian freedom is compatible with self-chosen duties and lawful obedience; it is incompatible with domination, abuse, commands to sin or denial of either spouse's rational moral agency. Neither libertarian autonomy nor unlimited patriarchal control expresses the complete tradition.",
-      "La véritable liberté chrétienne est compatible avec des devoirs librement assumés et l'obéissance légitime ; elle est incompatible avec la domination, les abus, les ordres de pécher ou la négation de la responsabilité morale de l'un des époux. Ni l'autonomie sans limites ni le contrôle patriarcal absolu ne résument toute la tradition."
+      "The Catholic tradition makes sense of free, binding duties; it cannot justify domination by renaming it obedience. It also contains an unresolved editorial question about the concrete authority denoted by traditional marital headship in light of *Mulieris Dignitatem*, *Amoris Laetitia* and canon 1135. Keep this question explicit, distinguish degrees of doctrinal authority and avoid certifying a harmonisation that has not actually been demonstrated.",
+      "La tradition catholique rend intelligibles des devoirs obligatoires librement assumés ; elle ne peut justifier la domination en l'appelant obéissance. Elle comporte aussi une question éditoriale non résolue sur la portée concrète de la primauté conjugale traditionnelle à la lumière de *Mulieris Dignitatem*, *Amoris Laetitia* et du canon 1135. Il faut l'exposer clairement, distinguer les degrés d'autorité doctrinale et ne pas certifier une conciliation qui n'a pas été démontrée."
     ],
     "sources": {
       "opposition": [
-        "CBEBIBLE",
-        "MULIERIS",
-        "EPH"
+        "GROOTHUIS",
+        "KEENER_2021",
+        "MULIERIS"
       ],
       "reply": [
         "LIBERTAS",
         "AQUINAS",
-        "CIC",
         "CASTI"
       ],
       "rejoinder": [
-        "MULIERIS",
-        "CASTI"
+        "CIC",
+        "FAMILY_CHARTER",
+        "AQUINAS"
       ],
       "finding": [
-        "LIBERTAS",
-        "AQUINAS",
         "MULIERIS",
-        "CASTI"
+        "AL",
+        "CASTI",
+        "CIC"
       ]
     }
   }
