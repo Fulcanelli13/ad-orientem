@@ -46,7 +46,9 @@ try{
      canonicalEnglishLength:globalThis.AO_PRAY_CANONICAL_DATA_V435930?.angelus?.en?.length??null,
      form:document.querySelector("#aoPray435930 [data-ao-angelus-form]")?.dataset?.aoAngelusForm,
      recitation:document.querySelector("#aoPray435930 [data-ao-angelus-recitation]")?.dataset?.aoAngelusRecitation,
-     kinds:[...document.querySelectorAll("#aoPray435930 [data-ao-angelus-unit]")].map(x=>x.dataset.aoAngelusUnit)
+     kinds:[...document.querySelectorAll("#aoPray435930 [data-ao-angelus-unit]")].map(x=>x.dataset.aoAngelusUnit),
+     firstVR:document.querySelector("#aoPray435930 [data-ao-angelus-unit=vr]")?.outerHTML?.slice(0,2200),
+     firstButton:document.querySelector("#aoPray435930 [data-ao-angelus-unit=vr] button")?.innerHTML?.slice(0,1700)
    }));
    throw new Error("Angelus leader/response DOM was not rendered: "+JSON.stringify(diagnostics)+"; "+String(error));
  });
