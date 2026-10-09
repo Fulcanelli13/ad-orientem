@@ -161,6 +161,30 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
 
 
+ // Month export must work from the visible Calendar, never from a second
+ // hand-authored feast list. Select a fully audited 2026 month and wait
+ // for all original daily Proper sources before enabling download.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ await page.locator("#ao-calendar-modular-root [data-cal-export-ics='2026-10']").waitFor({state:"visible",timeout:12000});
+ await page.waitForFunction(()=>{
+   const el=document.querySelector("#ao-calendar-modular-root [data-cal-export-ics='2026-10']");
+   return Boolean(el&&!el.disabled);
+ },null,{timeout:90000});
+ const [calendarDownload]=await Promise.all([
+   page.waitForEvent("download",{timeout:15000}),
+   page.locator("#ao-calendar-modular-root [data-cal-export-ics='2026-10']").click()
+ ]);
+ assert.equal(calendarDownload.suggestedFilename(),"ad-orientem-1962-2026-10.ics");
+ const icsStream=await calendarDownload.createReadStream();
+ const icsChunks=[];for await(const chunk of icsStream)icsChunks.push(chunk);
+ const icsContent=Buffer.concat(icsChunks).toString("utf8");
+ assert.equal((icsContent.match(/BEGIN:VEVENT/g)||[]).length,31,"Month download omits resolved October observances");
+ assert.match(icsContent,/DTSTART;VALUE=DATE:20261007/);
+ assert.match(icsContent.replace(/\r\n[ \t]/g,""),/Rosary|Rosaire/i,"Holy Rosary must come from the canonical October 7 day");
+ assert.doesNotMatch(icsContent,/\bLOCATION:|BEGIN:VALARM/,"Calendar export must not invent Mass places or times");
+ console.log("PASS Calendar monthly .ics download: visible button, all 31 source-resolved days, Holy Rosary, no invented Mass times");
+
  // Clean Calendar boot: Glossary must load only after its own contextual click.
  const glossaryUrl="/src/glossary/browser-entry.js";
  assert.equal(hits.some(x=>x.path===glossaryUrl),false,"Glossary unexpectedly loaded before its Calendar button");
