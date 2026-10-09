@@ -8,6 +8,9 @@ const wave3=read("data/explore/worldwide-relic-subject-census.wave3.research.v1.
 const backlog=new Set(wave1.systematic_subject_backlog.map(x=>x.subject_id));
 const newCustody=new Set(wave2.custody_claims.map(x=>x.subject_id));
 const historical=new Set(wave2.adversarial_historical_reviews.map(x=>x.subject_id));
+const evidenceAnyWave=new Set([...wave1.institutional_custody_evidence.map(x=>x.subject_id),...wave2.custody_claims.map(x=>x.subject_id),...wave2.adversarial_historical_reviews.map(x=>x.subject_id),...wave3.custody_claims.map(x=>x.subject_id),...wave3.historical_adversarial_reviews.map(x=>x.subject_id)]);
+const subjectEvidenceAnyWave=[...backlog].filter(x=>evidenceAnyWave.has(x));
+const subjectNoNewWaveEvidence=[...backlog].filter(x=>!evidenceAnyWave.has(x));
 const wave3Covered=new Set([...wave3.custody_claims.map(x=>x.subject_id),...wave3.historical_adversarial_reviews.map(x=>x.subject_id)]);
 const alreadyWave2=new Set([...wave2.custody_claims.map(x=>x.subject_id),...wave2.adversarial_historical_reviews.map(x=>x.subject_id)]);
 const wave3NewQueue=[...backlog].filter(x=>!alreadyWave2.has(x)&&wave3Covered.has(x));
@@ -32,10 +35,12 @@ const results={
  backlog_unaddressed_after_wave3:remainingAll.length,
  historical_case_reviews:wave2.adversarial_historical_reviews.length+wave3.historical_adversarial_reviews.length,
  backlog_total:backlog.size,
+ backlog_with_at_least_one_screened_case:subjectEvidenceAnyWave.length,
+ backlog_without_any_new_wave_source_case:subjectNoNewWaveEvidence.length,
  backlog_new_custody:categories.new_custody_evidence.length,
  backlog_historical_only:categories.historical_review_no_new_custody.length,
  backlog_no_wave2_research:categories.pending_wave2.length,
  unique_screened_countries:[...new Set([...wave1.institutional_custody_evidence,...wave2.custody_claims,...wave3.custody_claims].map(x=>x.country_code))].sort()
 };
-if(results.backlog_total!==results.backlog_new_custody+results.backlog_historical_only+results.backlog_no_wave2_research||results.backlog_unaddressed_after_wave3+results.newly_addressed_in_wave3!==results.backlog_no_wave2_research)throw Error("Census backlog partition failure");
-console.log(JSON.stringify(process.argv.includes("--details")?{...results,backlog_subject_ids:{...categories,expanded_wave3:wave3NewQueue,still_unaddressed:remainingAll}}:results,null,2));
+if(results.backlog_total!==results.backlog_new_custody+results.backlog_historical_only+results.backlog_no_wave2_research||results.backlog_unaddressed_after_wave3+results.newly_addressed_in_wave3!==results.backlog_no_wave2_research||results.backlog_with_at_least_one_screened_case+results.backlog_without_any_new_wave_source_case!==results.backlog_total)throw Error("Census backlog partition failure");
+console.log(JSON.stringify(process.argv.includes("--details")?{...results,backlog_subject_ids:{...categories,expanded_wave3:wave3NewQueue,still_unaddressed_in_waves2_and3:remainingAll,unaddressed_in_all_waves:subjectNoNewWaveEvidence}}:results,null,2));
