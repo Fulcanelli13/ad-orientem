@@ -12,7 +12,8 @@
     ],
     "proposedOnly55Source": "formation/learn-the-faith-sot-v2 — data/learn/learn-the-faith-curriculum.v1.json",
     "originalLanguageItalianWitness": "data/learn/ltfaith-pius-x-it-witness-index.v1.json",
-    "historicalFrenchWitnessReview": "data/learn/ltfaith-pius-x-french-historical-witness-review.v1.json"
+    "historicalFrenchWitnessReview": "data/learn/ltfaith-pius-x-french-historical-witness-review.v1.json",
+    "firstFrenchPrintedPageEvidence": "data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json"
   },
   "governance": [
     "The original 54 lesson IDs are permanent archival reference IDs, not overwritten by the proposed 55-title teaching order.",
@@ -40,7 +41,8 @@
     "sourceScopeDeskReviewAwaitingIndependentApproval": true,
     "frenchBilingualCandidateReadabilityCorrections20261009": 10,
     "french1913HistoricalEditionIdentified": true,
-    "french1913PageLevelQuestionCollation": 0
+    "french1913PageLevelQuestionCollation": 4,
+    "french1913ObservedEditionDateVariants": 1
   },
   "publicationGate": {
     "researchBilingual": true,
@@ -3965,8 +3967,8 @@
           }
         },
         {
-          "en": "Under the discipline recorded in 1912, the nuptial Mass with the special blessing of the spouses was not celebrated from the First Sunday of Advent to Christmas or from Ash Wednesday to Easter Sunday; this was a restriction on solemn celebration, not on matrimonial consent itself.",
-          "fr": "Selon la discipline exposée en 1912, la messe nuptiale avec la bénédiction spéciale des époux n’était pas célébrée du premier dimanche de l’Avent à Noël, ni du mercredi des Cendres au dimanche de Pâques ; cette restriction concernait la célébration solennelle, non le consentement matrimonial lui-même.",
+          "en": "The 1912 Italian Catechism describes a restriction on the nuptial Mass and special blessing from the First Sunday of Advent to Christmas and from Ash Wednesday to Easter Sunday. The authorized 1913 French printing gives the periods as Advent to Epiphany and the beginning of Lent to the octave of Easter. Both describe historical ceremonial restrictions, not conditions for valid matrimonial consent.",
+          "fr": "Le catéchisme italien de 1912 décrit une restriction de la messe nuptiale et de la bénédiction spéciale des époux du premier dimanche de l’Avent à Noël et du mercredi des Cendres au dimanche de Pâques. L’édition française autorisée de 1913 indique de l’Avent à l’Épiphanie et du début du Carême à l’octave de Pâques. Ces règles historiques concernent la célébration rituelle, non la validité du consentement matrimonial.",
           "sourceIds": [
             "PIUS_X_1912"
           ],
@@ -3998,10 +4000,12 @@
             ],
             "reviewFlags": [
               "1912_NUPTIAL_BLESSING_PROHIBITION_HISTORICAL",
-              "MARRIAGE_VALIDITY_NOT_EQUATED_WITH_NUPTIAL_MASS"
+              "MARRIAGE_VALIDITY_NOT_EQUATED_WITH_NUPTIAL_MASS",
+              "HISTORIC_FRENCH_1913_NUPTIAL_TIMESPAN_DIFFERS_FROM_ITALIAN_1912_TEXT"
             ],
             "additionalSourceLinks": [
-              "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html"
+              "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
+              "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=68"
             ],
             "sourcePassageComparison": "1912 Italian legge-precetti.md Q213–226 read in full",
             "originalPrintedFacsimileVerified": false,
@@ -4009,6 +4013,15 @@
             "canonicalSpecialistApproved": false,
             "nativeFrenchEditorApproved": false,
             "humanPublicationApproved": false
+          },
+          "french1913PrintSource": {
+            "ref": "FR1913-Q226",
+            "url": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=68",
+            "pdfPageOneIndexed": 68,
+            "printedPage": 58,
+            "status": "FULL_QUESTION_AND_ANSWER_VISUALLY_COLLATED_WITH_SCANNED_1913_FRENCH_PRINT",
+            "editionVariant": "FRENCH_1913_DATES_DIFFER_FROM_ITALIAN_1912_TRANSCRIPTION",
+            "humanCanonLawApproval": false
           }
         }
       ],
