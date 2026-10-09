@@ -1,14 +1,14 @@
 {
   "schema": "SACRED_ATLAS_EXCEPTIONAL_OBJECTS_MAP_SELECTION_V1",
   "as_of": "2026-10-09",
-  "status": "RESEARCH_REVIEW_NO_NEW_MAP_PINS",
+  "status": "SEVEN_EXCEPTIONAL_PLACE_GROUPS_PUBLISHED_WITH_SOURCE_QUALIFIED_MATERIAL_ATTRIBUTION",
   "rules": [
     "Passion objects and Marian textiles are not graded as bodily relics of a saint.",
     "Grouped Passion objects within the same treasury produce one site-level map anchor, not many relic-object markers.",
     "Historical devotion and custody attested by sanctuary does not independently certify attribution to Christ or the Virgin.",
     "Restricted or exceptional exposition is never represented as normal public accessibility.",
     "Aachen's four textiles, though separately described, require one Aachen Cathedral location if ever published.",
-    "The 7 unregistered candidate source sites need geocoding, source passage and visitor-access validation before publication.",
+    "The original seven unregistered sacred-object site candidates were reviewed as one batch, geolocated and published with attribution explicitly unverified; original research_candidate_id values remain for audit.",
     "Charlemagne's local veneration cannot be treated as universally canonically approved merely because Aachen holds his reliquary."
   ],
   "groups": [
@@ -183,128 +183,145 @@
     {
       "object_group_id": "sacred-object-group:aachen-four-cloths",
       "display_name_en": "Aachen Cathedral four ancient sacred textiles",
-      "existing_place_id": null,
+      "existing_place_id": "place:DE:aachener-dom-four-textiles",
       "proposed_new_site": "Aachener Dom",
       "legacy_relic_ids": [],
       "research_candidate_id": "candidate:relic:DE:aachen-four-textiles",
       "primary_source_urls": [
-        "https://www.aachenerdom.de/en/the-aachen-pilgrimage/"
+        "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+        "https://www.aachenerdom.de/2023/06/09/erhebungsfeier-der-heiligtumsfahrt-2023/"
       ],
       "material_category": "FOUR_ATTRIBUTED_CLOTH_OBJECTS",
       "world_map_recommendation": "WORLD_ANCHOR",
-      "visitor_access_status": "SEPTENNIAL_EXPOSITION_NOT_PERMANENT_DISPLAY",
+      "visitor_access_status": "SEE_PUBLISHED_OBJECT_SPECIFIC_ACCESS_NOTICE",
       "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
       "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
       "objects_are_grouped_under_one_site": true,
-      "current_map_change": false
+      "current_map_change": true,
+      "publication_state": "PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED"
     },
     {
       "object_group_id": "sacred-object-group:turin-shroud",
       "display_name_en": "Shroud of Turin",
-      "existing_place_id": null,
+      "existing_place_id": "place:IT:duomo-torino-sindone",
       "proposed_new_site": "Duomo di Torino",
       "legacy_relic_ids": [],
       "research_candidate_id": "candidate:relic:IT:turin-holy-shroud",
       "primary_source_urls": [
-        "https://sindone.org/en/home-english/"
+        "https://sindone.org/en/home-english/the-shroud/where-is-the-shroud-now/",
+        "https://sindone.org/en/welcome-to-sindone-org/"
       ],
       "material_category": "ATTRIBUTED_PASSION_BURIAL_CLOTH",
       "world_map_recommendation": "WORLD_ANCHOR",
-      "visitor_access_status": "KEPT_IN_CATHEDRAL_NOT_ROUTINELY_EXPOSED",
+      "visitor_access_status": "SEE_PUBLISHED_OBJECT_SPECIFIC_ACCESS_NOTICE",
       "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
       "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
       "objects_are_grouped_under_one_site": true,
-      "current_map_change": false
+      "current_map_change": true,
+      "publication_state": "PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED"
     },
     {
       "object_group_id": "sacred-object-group:trier-holy-robe",
       "display_name_en": "Holy Robe of Trier",
-      "existing_place_id": null,
+      "existing_place_id": "place:DE:trierer-dom-heiliger-rock",
       "proposed_new_site": "Trierer Dom",
       "legacy_relic_ids": [],
       "research_candidate_id": "candidate:relic:DE:trier-holy-robe",
       "primary_source_urls": [
-        "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html"
+        "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html",
+        "https://www.trierer-dom.de/bauwerk/der-heilige-rock/vom-heiligen-land-nach-trier/"
       ],
       "material_category": "REPUTED_PASSION_GARMENT",
       "world_map_recommendation": "WORLD_ANCHOR",
-      "visitor_access_status": "EXCEPTIONAL_OSTENSIONS_NOT_CONTINUOUS",
+      "visitor_access_status": "SEE_PUBLISHED_OBJECT_SPECIFIC_ACCESS_NOTICE",
       "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
       "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
       "objects_are_grouped_under_one_site": true,
-      "current_map_change": false
+      "current_map_change": true,
+      "publication_state": "PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED"
     },
     {
       "object_group_id": "sacred-object-group:cahors-sainte-coiffe",
       "display_name_en": "Sainte Coiffe of Cahors",
-      "existing_place_id": null,
+      "existing_place_id": "place:FR:cathedrale-saint-etienne-cahors",
       "proposed_new_site": "Cathédrale Saint-Étienne de Cahors",
       "legacy_relic_ids": [],
       "research_candidate_id": "candidate:relic:FR:cahors-sainte-coiffe",
       "primary_source_urls": [
-        "https://saintecoiffedecahors.com/"
+        "https://saintecoiffedecahors.com/index.php/2020/02/13/les-activites-de-pelerinage/",
+        "https://saintecoiffedecahors.com/index.php/2020/02/13/ostension/"
       ],
       "material_category": "REPUTED_PASSION_BURIAL_CLOTH",
       "world_map_recommendation": "REGIONAL_ANCHOR",
-      "visitor_access_status": "SPECIAL_OSTENSIONS_NOT_INFERRED_AS_REGULAR",
+      "visitor_access_status": "SEE_PUBLISHED_OBJECT_SPECIFIC_ACCESS_NOTICE",
       "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
       "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
       "objects_are_grouped_under_one_site": true,
-      "current_map_change": false
+      "current_map_change": true,
+      "publication_state": "PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED"
     },
     {
       "object_group_id": "sacred-object-group:oviedo-sudarium",
       "display_name_en": "Sudarium of Oviedo",
-      "existing_place_id": null,
+      "existing_place_id": "place:ES:catedral-san-salvador-oviedo",
       "proposed_new_site": "Catedral de San Salvador de Oviedo",
       "legacy_relic_ids": [],
       "research_candidate_id": "candidate:relic:ES:oviedo-camara-santa",
       "primary_source_urls": [
-        "https://www.turismoasturias.es/en/descubre/cultura/prerromanico/camara-santa"
+        "https://catedraldeoviedo.com/visita-cultural/prepara-tu-visita/preguntas-frecuentes/",
+        "https://iglesiadeasturias.org/entidades-diocesanas/catedral-metropolitana/",
+        "https://catedraldeoviedo.com/conoce-cada-rincon/camara-santa/"
       ],
       "material_category": "REPUTED_PASSION_BURIAL_CLOTH",
       "world_map_recommendation": "REGIONAL_ANCHOR",
-      "visitor_access_status": "SPECIAL_EXPOSITION_ONLY",
+      "visitor_access_status": "SEE_PUBLISHED_OBJECT_SPECIFIC_ACCESS_NOTICE",
       "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
       "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
       "objects_are_grouped_under_one_site": true,
-      "current_map_change": false
+      "current_map_change": true,
+      "publication_state": "PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED"
     },
     {
       "object_group_id": "sacred-object-group:fecamp-blood",
       "display_name_en": "Holy Blood tradition, Fécamp",
-      "existing_place_id": null,
+      "existing_place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
       "proposed_new_site": "Abbatiale de la Sainte-Trinité de Fécamp",
       "legacy_relic_ids": [],
       "research_candidate_id": "candidate:relic:FR:fecamp-precious-blood",
       "primary_source_urls": [
-        "https://en.fecamptourisme.com/experiences/our-must-haves/the-abbey-of-the-holy-trinity/"
+        "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/",
+        "https://www.cirkwi.com/fr/point-interet/2522956-abbatiale-de-la-sainte-trinite"
       ],
       "material_category": "REPUTED_PASSION_BLOOD_TRADITION",
-      "world_map_recommendation": "SOURCE_AND_OBJECT_HOLD",
-      "visitor_access_status": "LOCAL_TOURISM_SOURCE_NOT_SUFFICIENT_FOR_CERTIFIED_CONTENT",
+      "world_map_recommendation": "REGIONAL_ANCHOR",
+      "visitor_access_status": "SEE_PUBLISHED_OBJECT_SPECIFIC_ACCESS_NOTICE",
       "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
       "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
       "objects_are_grouped_under_one_site": true,
-      "current_map_change": false
+      "current_map_change": true,
+      "publication_state": "PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED"
     },
     {
       "object_group_id": "sacred-object-group:manoppello-face",
       "display_name_en": "Holy Face, Manoppello",
-      "existing_place_id": null,
+      "existing_place_id": "place:IT:santuario-volto-santo-manoppello",
       "proposed_new_site": "Santuario del Volto Santo di Manoppello",
       "legacy_relic_ids": [],
       "research_candidate_id": "candidate:relic:IT:manoppello-holy-face",
       "primary_source_urls": [
-        "https://www.padrepio.org/visit/holy-face-manoppello/"
+        "https://www.voltosanto.it/volto-santo.html",
+        "https://www.voltosanto.it/santuario.html",
+        "https://www.voltosanto.it/orari-contatti.html"
       ],
       "material_category": "REPUTED_FACE_CLOTH",
-      "world_map_recommendation": "SOURCE_AND_OBJECT_HOLD",
-      "visitor_access_status": "DIRECT_CUSTODIAN_SOURCE_REQUIRED",
+      "world_map_recommendation": "REGIONAL_ANCHOR",
+      "visitor_access_status": "SEE_PUBLISHED_OBJECT_SPECIFIC_ACCESS_NOTICE",
       "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
       "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
       "objects_are_grouped_under_one_site": true,
-      "current_map_change": false
+      "current_map_change": true,
+      "publication_state": "PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED"
     }
-  ]
+  ],
+  "publication_manifest": "data/explore/relic-exceptional-seven-publication.2026-10-09.json"
 }
