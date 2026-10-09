@@ -98,7 +98,7 @@ assert.match(html,/Église Saint-Test/);
 assert.match(html,/UNA CUM/);
 assert.match(html,/Roman · 1962/);
 assert.match(html,/Archidiocèse de Paris/);
-assert.match(html,/Official source/);
+assert.match(html,/Open official Mass/);
 assert.match(html,/Directions/);
 assert.match(html,/data-find-filter="unaCum"/);
 assert.match(html,/data-find-affiliation="SSPX"/);
