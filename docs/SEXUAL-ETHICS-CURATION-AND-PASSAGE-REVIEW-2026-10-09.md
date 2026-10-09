@@ -33,6 +33,23 @@ Status: **editorial source pass only**. No newly certified eight-stage debate or
 4. **CSE056 — opponent attribution:** Neither a general consent webpage nor material on consensual non-monogamy automatically verifies the words put in a reconstructed opponent's mouth. Preserve the distinction between a fair illustrative objection and original advocacy.
 5. All 55 original debate records and all 440 source-review stages retain their previous *not yet certified* flags. Do **not** interpret a citation URL, excerpt, or these six scoped passages as proof of every stage or as approval for publication.
 
+## Primary-text scope review — six-debate batch (48 stages)
+
+The supplemental [stage-by-stage evidence ledger](../data/learn/sexual-ethics-original-passage-scope-batch-2026-10-09.v4.json) records **48 individually examined stages across CSE006, CSE051, CSE061, CSE063, CSE064 and CSE070**. Each row identifies its EN/FR claim scope, precise original-document locus, selected hyperlinks, and what kind of assessment was actually possible.
+
+| Result | Stages | Publication meaning |
+|---|---:|---|
+| Original text examined and supports the bounded stage characterization | 34 | Primary-document scope support only; not literal quotation or eight-stage certification |
+| Authored illustrative counter-objections identified explicitly | 8 | Must not be represented as verbatim remarks by Mill, Curran or institutional advocates |
+| Original source check incomplete or unsuitable | 6 | Not certified, and not to be counted toward original-text passage verification |
+| Fully certified debates | **0** | No independent theological and French approval yet |
+
+**Substantive repairs made in the live bilingual text:** CSE006 now concedes that Mill's argument permits moral persuasion while opposing coercion, and separates natural-law persuasion from state prohibition. CSE061 now represents [Charles E. Curran's original 1987 argument](https://www.religion-online.org/article/roman-catholic-sexual-ethics-a-dissenting-view/) as a criticism of the alleged *physicalism* of Catholic sexual ethics, not a simplistic claim that contraception is morally neutral when no immediate victim is evident. The Catholic reply distinguishes deliberate moral object from biological description, relying on [*Casti Connubii* §§53–56](https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html) and [*Humanae Vitae* §§11–14](https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html).
+
+**Citation chain corrected:** CSE061 appeal uses Curran's actual 1987 original passage on physicalism; its concession about potentially prolonged pregnancy postponement uses [Pius XII's 29 October 1951 address](https://www.vatican.va/content/pius-xii/it/speeches/1951/documents/hf_p-xii_spe_19511029_ostetriche.html), not the less precise *Casti Connubii* locator. The mirrored JS selection, JSON source selection, semantic evidence and certification audit have all been reconciled. The older 440-stage certification flags deliberately remain false because these narrower checks do not constitute full sentence-by-sentence approval.
+
+**Reader restraint:** Pius XII's same 1951 address expressly cautions against literature describing marital intimacies in excessive detail under the pretext of instruction. The curated public index should therefore lead with governing principles, while retaining exceptional technical matters for genuinely necessary specialist or pastoral reference.
+
 ## Remaining source-certification route
 
 For each still-unverified stage: locate the exact original passage, compare its scope to every EN/FR claim in that stage, correct unsupported assertions, attach passage-specific locator and URL, preserve source-author attribution, and only then update the evidence record. Complete all eight stages before declaring an individual debate internally source certified. Independent theological and professional French reviews remain separate final gates.
