@@ -16,6 +16,12 @@ function language(win) {
   return win?.AO_RUNTIME_V8?.store?.getState?.()?.language === "fr" ? "fr" : "en";
 }
 
+// A Promise, undefined, or {ok:false} is not a successfully opened screen.
+// Keep all modular navigation owners on one explicit success contract.
+function openedSuccessfully(value) {
+  return value === true || value?.ok === true;
+}
+
 export function createAppHostAdapter(win = globalThis) {
   const runtime = () => win?.AO_RUNTIME_V8 ?? null;
   const shell = () => win?.AO_V37_SHELL ?? null;
@@ -114,27 +120,27 @@ export function createAppHostAdapter(win = globalThis) {
         const mass = win?.AO_R17_BROWSER_ENTRY;
         if (typeof mass?.hasResumable === "function" && mass.hasResumable()) {
           if (typeof mass?.resume !== "function") return false;
-          return Promise.resolve(mass.resume()).then((result) => result?.ok !== false);
+          return Promise.resolve(mass.resume()).then(openedSuccessfully);
         }
         const celebration = win?.AO_CELEBRATION_API;
         if (typeof celebration?.openPreflight !== "function") return false;
         // Fresh Mass entry belongs to the resolved-celebration preflight.
         // Do not fall through to the historical V37 Mass domain.
-        return Promise.resolve(celebration.openPreflight()).then((result) => result !== false);
+        return Promise.resolve(celebration.openPreflight()).then(openedSuccessfully);
       }
       if (domain === "pray") {
         const modular = win?.AO_PRAY_APP_V1;
         if (typeof modular?.open !== "function") return false;
         // PRAY has a modular final presentation owner. Never fall back to the
         // obsolete PrayerBook surface if that owner cannot open.
-        return Promise.resolve(modular.open()).then((opened) => opened !== false);
+        return Promise.resolve(modular.open()).then(openedSuccessfully);
       }
       if (domain === "find" || domain === "apostolate") {
         // A first-use import installs the same modular domain owner as before.
         // No historical V37 fallback and no eager Explore/Apostolate corpora.
         return loadDomainOnce(domain)
           .then(modular => typeof modular?.open === "function"
-            ? Promise.resolve(modular.open()).then(opened => opened !== false)
+            ? Promise.resolve(modular.open()).then(openedSuccessfully)
             : false)
           .catch(error => {
             try { win?.console?.error?.("Ad Orientem domain unavailable: "+domain,error); } catch {}
@@ -146,7 +152,7 @@ export function createAppHostAdapter(win = globalThis) {
         if (typeof modular?.open !== "function") return false;
         // Learn is fail-closed once extracted: the historical V37 domain shell
         // is donor evidence, not a production fallback.
-        return Promise.resolve(modular.open()).then((opened) => opened !== false);
+        return Promise.resolve(modular.open()).then(openedSuccessfully);
       }
       const api = shell();
       if (typeof api?.openDomain !== "function") return false;
@@ -157,14 +163,14 @@ export function createAppHostAdapter(win = globalThis) {
       const api = shell();
       if (typeof api?.openModule !== "function") return false;
       const result = await api.openModule(moduleId, options);
-      return result?.ok !== false && result !== false;
+      return openedSuccessfully(result);
     },
 
     async openCalendar() {
       const modular = win?.AO_CALENDAR_APP_V1;
       if (typeof modular?.open !== "function") return false;
       // The first-use import must fail closed; never reopen legacy Calendar.
-      try{return (await Promise.resolve(modular.open()))!==false}
+      try{return openedSuccessfully(await Promise.resolve(modular.open()))}
       catch(error){
         try{win?.console?.error?.("Calendar owner load failed",error)}catch{}
         return false;
@@ -182,11 +188,11 @@ export function createAppHostAdapter(win = globalThis) {
       try {
         const opened = api.open();
         return opened && typeof opened.then === "function"
-          ? Promise.resolve(opened).then(result => result !== false).catch(error => {
+          ? Promise.resolve(opened).then(openedSuccessfully).catch(error => {
               try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
               return false;
             })
-          : opened !== false;
+          : openedSuccessfully(opened);
       } catch (error) {
         try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
         return false;
