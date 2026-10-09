@@ -41,7 +41,7 @@ try{
      celebrationId:"mass_of_day"};
    const outcome=resolvedRogationCandidate(host,resolved,{requireResolver:true});
    return {
-    date,eligible:outcome.eligible,authority:outcome.authority,
+    date,eligible:outcome.eligible,votiveAllowed:outcome.votiveAllowed,authority:outcome.authority,
     status:resolved?.status,properStatus:resolved?.proper?.status,
     sourcePath:resolved?.proper?.data?.sourcePath??null,
     properId:resolved?.proper?.data?.id??null,
@@ -54,8 +54,10 @@ try{
   },date);
   console.log("ACTUAL_ROGATION_DAYRESOLVER",JSON.stringify(evidence));
   assert.equal(evidence.eligible,true,
-   "Actual DayResolver must certify eligible Minor Rogation date and white Feria Proper: "+JSON.stringify(evidence));
+   "Actual DayResolver must certify the Minor Rogation date and the day's real Proper: "+JSON.stringify(evidence));
   assert.equal(evidence.authority,"DAY_RESOLVER");
+  assert.ok([2,3,4].includes(Number(evidence.rank))&&evidence.votiveAllowed,
+   "The conditional II-class Rogation Mass must be eligible on an unimpeded day: "+JSON.stringify(evidence));
  }
  await context.close();
  console.log("Actual DayResolver Minor Rogation 1962 weekday eligibility: PASS");
