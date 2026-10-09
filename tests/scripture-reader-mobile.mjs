@@ -144,6 +144,37 @@ try{
  assert.match(await bellarmine.getAttribute("href"),/ecatholic2000\.com\/bellarmine\/commentary-on-psalms/);
  assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/Psalm 129/);
  await dialog.locator("[data-scripture-close]").click();
+ // Source-witnessed divided reading opens in the same overlay. The two
+ // chapters are separate; omitted verses are never silently restored.
+ const segments=[
+  {book:"Matthew",chapter:26,verseStart:36,verseEnd:75},
+  {book:"Matthew",chapter:27,verseStart:1,verseEnd:60}
+ ];
+ assert.equal(await page.evaluate(segments=>
+   globalThis.AO_SCRIPTURE_CONTEXT_V1.openSegments(segments,{
+    reference:"Matthew 26:36–75; 27:1–60",language:"en"
+   }),segments),true);
+ await dialog.waitFor({state:"visible"});
+ assert.equal(await dialog.locator(".aoScriptureSegments button").count(),2);
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 26:36–75");
+ assert.equal(await dialog.locator("[data-scripture-segment-index='0']").getAttribute("aria-pressed"),"true");
+ await dialog.locator("[data-scripture-segment-index='1']").click();
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 27:1–60");
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.activeSegmentIndex),1);
+ await dialog.locator(".aoScriptureNav select").first().selectOption("en");
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
+ await dialog.getByRole("button",{name:"Read at source"}).click();
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/Matthew%2027%3A1-60/i);
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"No uncertified Bible text may be shown");
+ await dialog.locator("[data-scripture-context-depth='chapter']").click();
+ assert.match(await dialog.locator("[data-scripture-whole-chapter]").getAttribute("href"),/Matthew%2027/);
+ assert.equal(await dialog.locator(".aoScriptureSegments button").count(),2,"Context depth must preserve source segments");
+ await dialog.locator("[data-scripture-segment-index='0']").click();
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 26:36–75");
+ await dialog.locator(".aoScriptureNav input").nth(0).fill("28");
+ await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
+ assert.equal(await dialog.locator(".aoScriptureSegments button").count(),0,"Manual Bible navigation must leave citation-specific segment mode");
+ await dialog.locator("[data-scripture-close]").click();
  assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
