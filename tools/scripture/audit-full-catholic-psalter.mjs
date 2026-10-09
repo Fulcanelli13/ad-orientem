@@ -96,6 +96,7 @@ if(process.argv[2]){
   examined:report.psalmsExamined,candidateChapters:report.mechanicallyAlignedPsalms,
   chaptersForReview:report.passagesNeedingEditorialReconciliation.length,
   candidateChapterNumbers:report.candidateChapterNumbers,
+  candidateVerseCounts:report.chapters.filter(x=>x.candidateForIdentityCrosswalk).map(x=>[x.chapter,x.cpdvNonblank]),
   reviewedForTheology:false,enabledForApp:false
  }));
 }
