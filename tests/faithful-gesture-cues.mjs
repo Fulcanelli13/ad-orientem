@@ -53,7 +53,7 @@ for(const [cueId,spec] of Object.entries(GLORIA_CREDO_FAITHFUL_GESTURES)){
     ["English",spec.anchorEn,source.english],
     ["French",spec.anchorFr,french.byCue[cueId]],
   ]){
-    assert.ok(anchor && String(anchor).split(/\\s*(?:…|\\.\\.)\\s*/).every(fragment=>
+    assert.ok(anchor && String(anchor).split(/\s*(?:…|\.\.)\s*/).every(fragment=>
       actual.toLocaleLowerCase().includes(fragment.toLocaleLowerCase())),
       cueId+" "+name+" word highlight is not a substring of its pinned source witness");
   }
