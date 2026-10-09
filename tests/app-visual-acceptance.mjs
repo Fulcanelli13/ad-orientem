@@ -332,7 +332,7 @@ try{
     headingTop:document.querySelector("#ao-calendar-modular-root .aoCalV2YearHeading")?.getBoundingClientRect?.().top??-1,
     tabsBottom:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs")?.getBoundingClientRect?.().bottom??Infinity,
   }));
-  assert.ok(calendarYear.ringWidth>=220,"Calendar liturgical-year ring collapsed below phone-readable size");
+  assert.ok(calendarYear.ringWidth>=105&&calendarYear.ringWidth<=160,"Calendar year ring must be compact but legible at phone width");
   assert.match(calendarYear.ringValue,/\d+(?:\.\d+)?%/,"Calendar year ring lost its computed percentage");
   assert.equal(calendarYear.yearTracks,1,"Calendar must have exactly one proportional year track");
   assert.equal(calendarYear.yearSegments,9,"Calendar timeline must contain all nine liturgical periods");
