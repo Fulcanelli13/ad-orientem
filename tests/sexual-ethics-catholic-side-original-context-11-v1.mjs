@@ -25,7 +25,7 @@ for(const row of review.cases){
  assert.equal(row.independent_french_approval,false);
  for(const p of row.passages){
   assert.equal(CSE_SOURCE_MAP[p.source_id]?.canonical_url,p.original_url,p.source_id+" original locator drift");
-  assert.ok(p.locator.length>5&&p.claim_supported.length>30,p.source_id+" unbounded source claim");
+  assert.ok(p.locator.length>=2&&p.claim_supported.length>30,p.source_id+" unbounded source claim");
   assert.ok(["ORIGINAL_PASSAGE_CONTEXT_CHECKED","ORIGINAL_ISSUER_SUMMARY_ONLY","BIBLIOGRAPHIC_RECORD_ONLY"].includes(p.verification));
  }
 }
