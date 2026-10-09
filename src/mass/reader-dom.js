@@ -1904,6 +1904,13 @@ export function createReaderDomAdapter({
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
           const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
+          // The Passion death rubric is tied to the final Latin words,
+          // rather than to the long Good Friday Passion card as a whole.
+          // This cue identity is inherited from source GF-PASS-320 and
+          // never inferred as a new liturgical event.
+          if(p.sourceCueIds?.includes("GF-PASS-320") &&
+             /tradidit spiritum\s*\.?\s*$/i.test(String(p.primary??"")))
+            node.dataset.cueId="GF-PASS-320";
           // PALM-GSP-010 has four distinct reader rows. Only its opening
           // proclamation heading can own the faithful's Gospel crosses.
           if(p.id==="PALM-R03-01" && p.sourceCueIds?.includes("PALM-GSP-010"))
