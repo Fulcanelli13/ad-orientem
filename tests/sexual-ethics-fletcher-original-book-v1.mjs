@@ -6,7 +6,7 @@ import {CSE_DEBATE_POSITION_REFS} from "../src/learn/sexual-ethics-data/provenan
 const doc=JSON.parse(readFileSync("data/learn/sexual-ethics-fletcher-original-book-20261009.v1.json","utf8"));
 const source=CSE_SOURCE_MAP.FLETCHER1966;
 assert.equal(source.original_digitized_text_url,doc.bibliography.digitized_original);
-assert.equal(source.canonical_url,"https://books.google.com/books/about/Situation_Ethics.html?id=Y4759nkMFq0C");
+assert.equal(source.canonical_url,"https://books.google.com/books/about/Situation_Ethics.html?id=E2JqAAAAMAAJ");
 assert.equal(doc.summary.debates_touched,3);
 assert.equal(doc.summary.stage_scope_checks,8);
 assert.equal(doc.records.length,8);
