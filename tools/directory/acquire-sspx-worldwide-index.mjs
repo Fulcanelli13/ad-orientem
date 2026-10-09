@@ -42,8 +42,8 @@ export function parseDistrictPlaces(district,links){
     if(!label)continue;
     found.push({source_place_id:slug,source_url:"https://map.fsspx.org/fr/places/"+slug,
       label,origin_district:district.district_slug,
-      sunday_badge_claim:/\b(?:Sunday|Dimanche|Sonntag|Domingo|Domenica)\b/i.test(label),
-      weekday_badge_claim:/\b(?:Weekdays|Semaine|Werktag|Feriali)\b/i.test(label)});
+      sunday_badge_claim:/(?:Sunday|Dimanche|Sonntag|Domingo|Domenica)/i.test(label),
+      weekday_badge_claim:/(?:Weekdays|Semaine|Werktag|Feriali)/i.test(label)});
   }
   const unique=distinctBy(found,r=>r.source_place_id);
   // Pages contain nested place-served relationships. Duplicate source links
