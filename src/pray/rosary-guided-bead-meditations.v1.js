@@ -21,8 +21,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 3,
-      "en": "Mary receives the angel’s message with humility.",
-      "fr": "Marie accueille humblement le message de l’ange."
+      "en": "Mary ponders the meaning of the angel’s greeting.",
+      "fr": "Marie réfléchit au sens de la salutation de l’ange."
     },
     {
       "bead": 4,
@@ -73,8 +73,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 3,
-      "en": "Mary greets her kinswoman with charity.",
-      "fr": "Marie salue sa parente avec charité."
+      "en": "Mary greets her kinswoman Elizabeth.",
+      "fr": "Marie salue sa parente Élisabeth."
     },
     {
       "bead": 4,
@@ -182,8 +182,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 4,
-      "en": "His parents offer the sacrifice permitted to the poor.",
-      "fr": "Ses parents offrent le sacrifice prévu pour les pauvres."
+      "en": "His parents offer two turtledoves or two young pigeons.",
+      "fr": "Ses parents offrent deux tourterelles ou deux petites colombes."
     },
     {
       "bead": 5,
