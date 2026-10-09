@@ -1,6 +1,7 @@
 import { auditVenue } from "./contracts.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
 import {applyIndicativeSspxLocations,fetchOfficialSspxPlaceIndex} from "./sspx-indicative-geo.js";
+import {applyIndicativeOtherCommunityLocations} from "./community-indicative-geo.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 export const RESEARCH_MASS_REVIEW_DAYS=120;
 const RESEARCH_PROVIDERS=Object.freeze([
@@ -284,9 +285,10 @@ export function publishableDirectoryRecords(records){
   });
 }
 export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PROVIDERS,researchProviders=RESEARCH_PROVIDERS}={}){
-  const [statusData,communityData]=await Promise.all([
+  const [statusData,communityData,countryReferences]=await Promise.all([
     fetchJson(moduleUrl("../../data/directory/status-assertions.v1.json"),{fetchImpl,optional:true}),
     fetchJson(moduleUrl("../../data/directory/communities.v1.json"),{fetchImpl,optional:true}),
+    fetchJson(moduleUrl("../../data/directory/generated/indicative-country-references.v1.json"),{fetchImpl,optional:true}),
   ]);
   const communityProfiles=safeArray(statusData?.communityProfiles);
   const loaded=[],unavailable=[];
@@ -328,9 +330,12 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     &&!isMapPublishableGeo(r.venue?.geo,r.venue?.address?.country_code));
   const mapIndex=needsSspxCoarse?await fetchOfficialSspxPlaceIndex({fetchImpl}):[];
   const indicated=applyIndicativeSspxLocations(records,{officialPlaces:mapIndex});
+  const allMapped=applyIndicativeOtherCommunityLocations(indicated.records,{
+    countryReferences:countryReferences?.countries??{},
+  });
   return Object.freeze({
-    records:indicated.records,
-    indicativeGeoSummary:indicated.summary,
+    records:allMapped.records,
+    indicativeGeoSummary:Object.freeze({sspx:indicated.summary,otherCommunities:allMapped.summary}),
     skippedInvalidRecords:joined.length-records.length,
     communities:safeArray(communityData?.communities),
     communityProfiles,
