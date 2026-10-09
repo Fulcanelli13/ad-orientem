@@ -49,6 +49,17 @@ for(const item of [
     "Nonconforming or absent canonical observed Temporale must fail closed");
 }
 assert.equal(calendarObservanceAlias({...fake("2024-06-03",":feria:4:g","tempora:Pent02-1:4:g"),status:"failed"},"en"),null);
-assert.equal(calendarObservanceAlias(fake("2027-01-07",":feria:4:w",null),"en"),null,
-  "Epiphany blank temporal source must not be guessed from date alone");
+const epiphany=fake("2027-01-07",":feria:4:w",null);
+assert.equal(calendarObservanceAlias(epiphany,"en"),null,
+  "A date without an inherited observed Epiphany Proper must remain unknown");
+epiphany.proper.data.sourcePath="Sancti/01-06";
+assert.equal(calendarObservanceAlias(epiphany,"en"),"Thursday after Epiphany");
+assert.equal(calendarObservanceAlias(epiphany,"fr"),"Jeudi après l’Épiphanie");
+const friday={...epiphany,date:"2027-01-08"};
+assert.equal(calendarObservanceAlias(friday,"en"),"Friday after Epiphany");
+assert.equal(calendarObservanceAlias(friday,"fr"),"Vendredi après l’Épiphanie");
+assert.equal(calendarObservanceAlias({...friday,date:"2027-01-14"},"en"),null,
+  "Proper source alone cannot extend Epiphany segment after January 13");
+assert.equal(calendarObservanceAlias({...friday,proper:{status:"failed",data:{sourcePath:"Sancti/01-06"}}},"en"),null,
+  "An unavailable inherited Proper must not be advertised as sourced");
 console.log("PASS 1962 source-first feria headline projection: 55-date historical cohort, EN/FR, temporal source ID and weekday guards");
