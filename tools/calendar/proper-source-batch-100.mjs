@@ -60,10 +60,17 @@ try{
         if(!x||seen.has(x.path)||selected.some(z=>z.date===x.date))return false;
         selected.push(x);seen.add(x.path);return true;
       };
+      // Month coverage first; then explicitly include class III and IV
+      // source paths. Ranking only by solemnity would select 99 high-rank
+      // Masses and overlook the far larger ordinary Sanctorale/Common.
       for(let month=1;month<=12;month++){
-        let count=0;
+        for(const x of candidates){if(x.month===month&&accept(x))break;}
+      }
+      const perClassTargets=new Map([[4,8],[3,18],[2,15],[1,9]]);
+      for(const [rank,target] of perClassTargets){
         for(const x of candidates){
-          if(x.month===month&&accept(x)&&++count===4)break;
+          if(selected.filter(z=>z.rank===rank).length>=target)break;
+          if(x.rank===rank)accept(x);
         }
       }
       for(const x of candidates){if(selected.length>=50)break;accept(x);}
@@ -104,9 +111,14 @@ try{
           const missing=Object.fromEntries(["lat","en","fr"].map(lang=>[lang,
             latinExpected.filter(x=>!x[lang].trim()).map(x=>x.section)]));
           const suspicious=[];
-          for(const x of prayed)for(const lang of ["lat","en","fr"])
-            if(/(^|\W)N\.(?=\s|,|;|$)|@[A-Za-z]+\/|\$(?:Per Dominum|Qui tecum)/i.test(x[lang]))
-              suspicious.push({section:x.section,lang,excerpt:x[lang].slice(0,100)});
+          for(const x of prayed)for(const lang of ["lat","en","fr"]){
+            const hit=x[lang].match(/(^|\W)N\.(?=\s|,|;|$)|@[A-Za-z]+\/|\$(?:Per Dominum|Qui tecum)/i);
+            if(hit){
+              const match=hit[0].trim(),kind=/^\$/.test(match)?"unexpanded_conclusion"
+                :match.includes("@")?"unresolved_source_reference":"name_placeholder";
+              suspicious.push({section:x.section,lang,kind,matched:match,excerpt:x[lang].slice(0,100)});
+            }
+          }
           const hardSections={
             introit:p.introit,epistle:p.epistle,gospel:p.gospel,offertory:p.offertory,communion:p.communion,
             collect:p.collects?.[0],secret:p.secrets?.[0],postcommunion:p.postcommunions?.[0],
@@ -155,6 +167,8 @@ try{
       records.flatMap(x=>(x.ownComputedMissing?.[lang]||[]).map(section=>({date:x.date,path:x.resolvedPath,section})))])),
     inheritedCoverageMismatch:coverageMismatch,
     unresolvedSourcePointers:records.flatMap(x=>(x.suspicious||[]).map(s=>({date:x.date,path:x.resolvedPath,...s}))),
+    unresolvedPointerTypes:Object.fromEntries(["unexpanded_conclusion","unresolved_source_reference","name_placeholder"].map(kind=>
+      [kind,records.flatMap(x=>x.suspicious||[]).filter(x=>x.kind===kind).length])),
     failures:output.failures.length,
     note:"Source integrity and bilingual text coverage measured from actual produced sections; no independent full-text collation against a 1962 typical edition.",
   };
