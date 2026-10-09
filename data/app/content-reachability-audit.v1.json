@@ -1328,7 +1328,18 @@
       "summary": "Home openRoute fallback may send a failed requested Prayer module to generic Prayer hub, obscuring target failure.",
       "module": "home",
       "action": "Retain requested ID and explicit error/retry with owning Home pipeline",
-      "normal_path_defect_confirmed": false
+      "normal_path_defect_confirmed": false,
+      "current_resolution": {
+        "status": "REMEDIATED_ON_MAIN",
+        "pr_number": 766,
+        "merge_commit": "0ece75a5174d5ed2b55c7eb3b38530276c68971d",
+        "checks_completed": [
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "notes": "Exact prayer fallback and visible EN/FR retry merged; original risk remains as historical audit finding."
+      }
     },
     {
       "id": "RCH-005",
@@ -1405,7 +1416,19 @@
           "geometry_status": "NO_PIN_COORDINATES"
         }
       ],
-      "normal_browser_unreachable_proven": false
+      "normal_browser_unreachable_proven": false,
+      "current_resolution": {
+        "status": "REMEDIATED_ON_MAIN",
+        "pr_number": 765,
+        "merge_commit": "2b0480a192796c8fc94ecc8d9af68f3db47edf5d",
+        "checks_completed": [
+          "directory-contract",
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "notes": "Both formerly unlinked Place identities now have explicit, sourced bidirectional related-place links and discoverability via the associated Shrine search; they remain distinct, address-geocoded sites with no coordinate substitution."
+      }
     }
   ],
   "summary": {
@@ -1434,8 +1457,11 @@
     "geographical_place_profiles_without_source_lens_relationships": 2,
     "geographical_place_profile_count": 181,
     "geographical_place_profiles_with_known_lens_relationship": 179,
-    "source_level_orphan_place_records": 2,
-    "geographical_place_ids_individually_browser_verified": 0
+    "source_level_orphan_place_records": 0,
+    "geographical_place_ids_individually_browser_verified": 0,
+    "geographical_place_profiles_with_related_place_discovery": 181,
+    "source_level_orphan_place_records_at_baseline": 2,
+    "conditional_home_fallbacks_current": 0
   },
   "acceptance_to_run": [
     "Six global ribbon routes under cold/return/error",
@@ -1452,18 +1478,54 @@
       "title": "Kerzenkapelle Kevelaer",
       "city": "Kevelaer, Germany",
       "candidate_related_place_id": "place:DE:kevelaer-gnadenkapelle",
-      "relationship_status": "NOT_VERIFIED",
-      "site_name_similarity_only": true,
-      "geometry_status": "NO_PIN_COORDINATES"
+      "relationship_status": "VERIFIED_ON_MAIN",
+      "site_name_similarity_only": false,
+      "geometry_status": "NO_PIN_COORDINATES",
+      "current_resolution": "DISCOVERABLE_VIA_VERIFIED_RELATED_PLACE",
+      "relation_verified_in": "data/geography/related-places.v1.json"
     },
     {
       "place_id": "place:GB:holywell-st-winefride-church",
       "title": "St Winefride's RC Church, Holywell",
       "city": "Holywell, Wales",
       "candidate_related_place_id": "place:GB:holywell-st-winefride",
-      "relationship_status": "NOT_VERIFIED",
-      "site_name_similarity_only": true,
-      "geometry_status": "NO_PIN_COORDINATES"
+      "relationship_status": "VERIFIED_ON_MAIN",
+      "site_name_similarity_only": false,
+      "geometry_status": "NO_PIN_COORDINATES",
+      "current_resolution": "DISCOVERABLE_VIA_VERIFIED_RELATED_PLACE",
+      "relation_verified_in": "data/geography/related-places.v1.json"
     }
-  ]
+  ],
+  "post_audit_release_reconciliation": {
+    "date": "2026-10-09",
+    "latest_main_after_fixes": "0ece75a5174d5ed2b55c7eb3b38530276c68971d",
+    "resolved_findings": [
+      {
+        "finding": "RCH-004",
+        "pr": 766,
+        "sha": "0ece75a5174d5ed2b55c7eb3b38530276c68971d",
+        "status": "REMEDIATED_ON_MAIN",
+        "test": [
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "note": "Exact prayer fallback and visible EN/FR retry merged; original risk remains as historical audit finding."
+      },
+      {
+        "finding": "RCH-011",
+        "pr": 765,
+        "sha": "2b0480a192796c8fc94ecc8d9af68f3db47edf5d",
+        "status": "REMEDIATED_ON_MAIN",
+        "test": [
+          "directory-contract",
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "note": "Both formerly unlinked Place identities now have explicit, sourced bidirectional related-place links and discoverability via the associated Shrine search; they remain distinct, address-geocoded sites with no coordinate substitution."
+      }
+    ],
+    "baseline_source_level_coverage_preserved": true
+  }
 }
