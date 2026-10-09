@@ -30,5 +30,7 @@ jobs:
         run: node tests/sexual-ethics-opponent-attribution-55-v1.mjs
       - name: Verify Farley and Curran first-person source constraints
         run: node tests/sexual-ethics-institutional-books-21-v1.mjs
+      - name: Audit all 440 classified source-stage verdicts and original-claim boundaries
+        run: node tests/sexual-ethics-evidence-v2.mjs
       - name: Retain certification approval holds
         run: node tests/sexual-ethics-certification-readiness-v3.mjs
