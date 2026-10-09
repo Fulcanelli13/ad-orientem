@@ -13,8 +13,8 @@ const novenas=read("data/pray/novena-sot.v1.json");
 const evidence=read("data/geography/customs-atlas-place-geo-evidence.2026-10-09.json");
 const places=new Map(geography.places.map(place=>[place.place_id,place]));
 const published=geography.places.filter(place=>isMapPublishablePlaceGeo(place.geo,place.address?.country_code));
-assert.equal(published.length,63,"canonical shared Places must expose 63 verified coordinates");
-assert.equal(evidence.records.length,56,"two curated coordinate batches and Fiskdale need provenance evidence");
+assert.equal(published.length,64,"canonical shared Places must expose 63 verified coordinates");
+assert.equal(evidence.records.length,57,"two curated coordinate batches and Fiskdale need provenance evidence");
 assert.equal(new Set(evidence.records.map(e=>e.place_id)).size,evidence.records.length,"duplicate GPS provenance");
 for(const record of evidence.records){
   const place=places.get(record.place_id);
@@ -35,12 +35,32 @@ const traditions=projectTraditionItems({
 const exact=traditions.filter(x=>x.raw.attestation.map_policy==="PLACE");
 const mapped=exact.filter(item=>item.map_publishable);
 assert.equal(exact.length,58,"exact geographical custom attestations changed");
-assert.equal(mapped.length,56,"Customs Atlas must plot 56 published exact-site attestations");
-assert.equal(exploreMapFeatures(mapped).length,56,"MapLibre feature projection lost customs pins");
+assert.equal(mapped.length,57,"Customs Atlas must plot 56 published exact-site attestations");
+assert.equal(exploreMapFeatures(mapped).length,57,"MapLibre feature projection lost customs pins");
 assert.ok(traditions.filter(item=>item.raw.attestation.map_policy==="AREA_CONTEXT").every(item=>!item.map_publishable),
   "regional/cultural custom was falsely pinned to a random central point");
 assert.deepEqual(exact.filter(item=>!item.map_publishable).map(item=>item.place_id).sort(),[
-  "place:NG:ugwogo-nike-national-marian-shrine",
   "place:NZ:st-peter-chanel-russell",
 ],"unresolved precise-site pins were silently fabricated or dropped");
-console.log("PASS 63 shared Place pins, 56 real Customs Atlas map markers, source evidence and 2 explicit holds");
+// Independently decode the full Open Location Code recovered from the shrine-affiliated
+// Ugwogo Nike contact address; never silently substitute the conflicting WorldPlaces pin.
+const charset="23456789CFGHJMPQRVWX", digits="6FR9JH95+W9J".replace("+","");
+let derivedLat=-90,derivedLng=-180;
+for(let i=0;i<8;i+=2){
+  const resolution=[20,1,0.05,0.0025][i/2];
+  derivedLat+=charset.indexOf(digits[i])*resolution;
+  derivedLng+=charset.indexOf(digits[i+1])*resolution;
+}
+let cellLat=0.0025,cellLng=0.0025;
+for(let i=8;i<digits.length;i++){
+  const n=charset.indexOf(digits[i]);
+  cellLat/=5;cellLng/=4;
+  derivedLat+=Math.floor(n/4)*cellLat;
+  derivedLng+=(n%4)*cellLng;
+}
+const shrine=places.get("place:NG:ugwogo-nike-national-marian-shrine");
+assert.equal(shrine.geo.lat,Math.round((derivedLat+cellLat/2)*1e8)/1e8);
+assert.equal(shrine.geo.lng,Math.round((derivedLng+cellLng/2)*1e8)/1e8);
+assert.equal(shrine.geo.source_ref,"OLC:6FR9JH95+W9J");
+assert.equal(shrine.geo.precision,"complex_anchor");
+console.log("PASS 64 shared Place pins, 57 real Customs Atlas map markers, Plus Code proof and 1 exact-site hold");

@@ -180,7 +180,7 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   filters:{},
 }));
 assert.match(shrineMapHtml,/Loading source-backed map points/i);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,63,"only provenance-locked shrine Places should publish map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,64,"only provenance-locked shrine Places should publish map points");
 
 const chartresShrine=filterExploreItems(projection.byLens.shrines,{query:"Chartres"});
 assert.equal(chartresShrine.length,1);
@@ -315,7 +315,7 @@ assert.equal(peterChanel[0].map_publishable,false);
 assert.ok(peterChanel[0].sections.some(section=>/Saint Peter Chanel/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 const ugwogo=filterExploreItems(projection.byLens.pilgrimages,{query:"Ugwogo"});
 assert.equal(ugwogo.length,1);
-assert.equal(ugwogo[0].map_publishable,false);
+assert.equal(ugwogo[0].map_publishable,true);
 assert.ok(ugwogo[0].sections.some(section=>/Perpetual Help/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 const umuaka=filterExploreItems(projection.byLens.shrines,{query:"Nne Enyemaka"});
 assert.equal(umuaka.length,1);
@@ -326,7 +326,7 @@ assert.ok(namugongo[0].sections.some(section=>/Uganda Martyrs Day/.test(section.
 const munyonyo=filterExploreItems(projection.byLens.pilgrimages,{query:"Munyonyo"});
 assert.equal(munyonyo.length,1);
 assert.ok(munyonyo[0].sections.some(section=>/Uganda Martyrs/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,63,"Australasia/Africa mapped shrine count drifted");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,64,"Australasia/Africa mapped shrine count drifted");
 
 const guadalupeMx=filterExploreItems(projection.byLens.pilgrimages,{query:"Santa María de Guadalupe"});
 assert.equal(guadalupeMx.length,1);
@@ -358,7 +358,7 @@ assert.equal(chiquinquira.length,1);
 assert.equal(chiquinquira[0].map_publishable,true);
 assert.ok(chiquinquira[0].sections.some(section=>/Chiquinquirá/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,63,"Latin America shrine pin count drifted");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,64,"Latin America shrine pin count drifted");
 
 const banneux=filterExploreItems(projection.byLens.pilgrimages,{query:"Banneux"});
 assert.equal(banneux.length,1);
@@ -400,7 +400,7 @@ assert.equal(sameiro[0].map_publishable,true);
 assert.ok(sameiro[0].sections.some(section=>/Archdiocesan pilgrimage to Sameiro/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 assert.ok(sameiro[0].sections.some(section=>/Feast of Our Lady of Sameiro/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,63,"tranche 7 address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,64,"tranche 7 address-only shrines unexpectedly published map points");
 
 const bermontShrine=filterExploreItems(projection.byLens.shrines,{query:"Bermont"});
 assert.equal(bermontShrine.length,1);
@@ -434,7 +434,7 @@ assert.equal(rueDuBacPilgrimage.length,1);
 assert.equal(rueDuBacPilgrimage[0].map_publishable,true);
 assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Médaille Miraculeuse/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,63,"France tranche address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,64,"France tranche address-only shrines unexpectedly published map points");
 
 const wigratzbadShrine=filterExploreItems(projection.byLens.shrines,{query:"Wigratzbad"});
 assert.equal(wigratzbadShrine.length,1);
@@ -460,7 +460,7 @@ const vesperbild=filterExploreItems(projection.byLens.pilgrimages,{query:"Maria 
 assert.equal(vesperbild.length,1);
 assert.ok(vesperbild[0].sections.some(section=>/13th of every month/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,63,"Germany tranche address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,64,"Germany tranche address-only shrines unexpectedly published map points");
 
 const oswegoShrine=filterExploreItems(projection.byLens.shrines,{query:"St. Mary of the Assumption Parish and Shrine"});
 assert.equal(oswegoShrine.length,1);
@@ -491,7 +491,7 @@ assert.equal(fiskdaleNovena.length,1);
 assert.equal(fiskdaleNovena[0].map_publishable,true);
 assert.ok(fiskdaleNovena[0].sections.some(section=>/18–26 July/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,63,"US Northeast address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,64,"US Northeast address-only shrines unexpectedly published map points");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
@@ -515,11 +515,10 @@ assert.match(homeSource,/data-home-find/,"Explore route lost shell-compatible Ho
 
 
 const atlasMappedTraditions=projection.byLens.traditions.filter(item=>item.kind==="CUSTOM_ATTESTATION"&&item.map_publishable);
-assert.equal(atlasMappedTraditions.length,56,"56 exact-site customs attestations must have source-backed pins");
-assert.equal(exploreMapFeatures(atlasMappedTraditions).length,56,"customs map feature count diverged from published attestations");
+assert.equal(atlasMappedTraditions.length,57,"57 exact-site customs attestations must have source-backed pins");
+assert.equal(exploreMapFeatures(atlasMappedTraditions).length,57,"customs map feature count diverged from published attestations");
 const atlasUngrounded=projection.byLens.traditions.filter(item=>item.kind==="CUSTOM_ATTESTATION"&&!item.map_publishable&&item.raw?.attestation?.map_policy==="PLACE");
 assert.deepEqual(atlasUngrounded.map(item=>item.place_id).sort(),[
-  "place:NG:ugwogo-nike-national-marian-shrine",
   "place:NZ:st-peter-chanel-russell",
 ],"unresolved exact-site pins must not be fabricated");
 
