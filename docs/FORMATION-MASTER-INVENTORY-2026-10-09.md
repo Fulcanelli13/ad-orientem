@@ -89,3 +89,13 @@ Do **not** select the version with the highest claim count automatically; compar
 - Current source-ID link integrity is structural; it does not prove the cited paragraph, person or event.
 - Existing 8 October documents contain snapshots (BAQ 22, contemporary 21 unassociated, or 488 sourced blocks) that predate October 9 improvements. This master inventory is the **current interpretation**, while those older raw research registers retain historical provenance.
 - No new canonical dossier, public Learn route, Mass engine change or automatic publication is authorized by this reconciliation.
+
+## 9 October: original 433-question locator and 54-lesson reference audit
+
+The recovered curriculum has now been crosswalked to a **pinned structured English source witness** of the 1912 shorter Catechism: all **433 numbered question-and-answer entries** were located across **21 original corpus sections** with **zero duplicate or missing numbers**, pinned to upstream commit `65d10046`. This verifies the numbering and source location, **not** every interpretation, current disciplinary application, or French historical-text equivalence.
+
+The resulting [claim-reference crosswalk](../data/learn/ltfaith-54-claim-citation-crosswalk.v1.json) preserves the **176 drafted claims** and their **523 explicit numbered citations** to 375 distinct Catechism questions. Its **43 differences** concern comparison of *broad lesson-index coverage* versus *paragraph-specific citations*; they are **not 43 established factual errors**. The compact draft's references are now explicitly classified as a *browse index*, rather than blanket citations supporting every word of its 108 compact claims.
+
+Focused source-context findings are recorded for LTF-018, LTF-026, LTF-031, LTF-034, LTF-051, LTF-052, LTF-053 and LTF-054. Particularly, **Pius X Q385 really does mention sacramentals, including holy water and blessings**, despite a misleading question heading; CCC §§1667–1671 supplies the fuller distinction. Likewise **Q341 explicitly mentions Viaticum**. Older rules on Eucharistic fasting and ecclesiastical discipline require historical warnings, not uncritical presentation as current law. `Veritatis splendor` §§60–61 is the direct original source for conscience, rather than the short Catechism's generalized catalogue of sins.
+
+**Nine further lessons receive proposed handoffs** to already existing, verified Mass Formation, Sacramental Formation, Spiritual Life, PRAY or Scapular owners; these are *research metadata only*, not new navigation links. No lesson has human theological or native-French signoff. No new route is permitted and the 433-question St Pius X Catechism remains the sole positive-doctrine corpus.
