@@ -773,7 +773,7 @@ export async function mountNativeReaderPreview({
       anchorLat:"Sequéntia sancti Evangélii",
       owner:"R22_PALM_GOSPEL_HEADING_SOURCE",
     }:null;
-    reader.renderMoment({cardUpdate:false,gesture});
+    reader.renderMoment({cardUpdate:false,gesture,gestureIconKey:show?"gospel_crosses":null});
     root.dataset.r17OwnerGesture=show?"R22_PALM_GOSPEL_HEADING_SOURCE":"R22_PALM_GOSPEL_READING_NONE";
     const previous=globalThis.AO_R17_NATIVE_READER_STATE??{};
     globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({...previous,gesture,palmGospelActive:show});
