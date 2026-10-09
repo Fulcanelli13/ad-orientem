@@ -1,0 +1,4638 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_WORLD_MAP_EVIDENCE_CROSSWALK_V2",
+  "generated_on": "2026-10-09",
+  "purpose": "RESEARCH_ONLY_RECONCILIATION_NOT_PUBLICATION",
+  "canonical_snapshot_records": 576,
+  "source_index_identity_count": 941,
+  "source_index_sunday_badges": 577,
+  "previous_api_census": {
+    "source_entities": 942,
+    "sunday_labelled": 655,
+    "reference_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/477",
+    "comparison": "DIFFERENT_ACQUISITION_CHANNEL_OR_SNAPSHOT_PENDING_ITEM_LEVEL_AUDIT"
+  },
+  "official_approved_geo_links": 336,
+  "official_geo_links_found_in_941": 336,
+  "official_geo_by_previous_bucket": {
+    "UNRESOLVED_SUNDAY_IDENTITY": {
+      "source_cases": 210,
+      "official_overlay_matched": 30
+    },
+    "NAME_MATCH_ONLY_REVIEW": {
+      "source_cases": 23,
+      "official_overlay_matched": 3
+    },
+    "NO_SUNDAY_BADGE": {
+      "source_cases": 364,
+      "official_overlay_matched": 41
+    },
+    "POTENTIAL_MATCH_NAME_CITY": {
+      "source_cases": 285,
+      "official_overlay_matched": 259
+    },
+    "INSTITUTION_OR_AFFILIATED_HOLD": {
+      "source_cases": 59,
+      "official_overlay_matched": 3
+    }
+  },
+  "unresolved_v1_total": 210,
+  "review_counts": {
+    "prior_official_source_links": 30,
+    "same_city_without_confirmed_physical_identity": 85,
+    "no_registered_locality_candidate": 95
+  },
+  "monday_or_other_mass_schedule_inferred": false,
+  "mexico_street_address_candidates_from_official_district": 10,
+  "district_queue": [
+    {
+      "district": "africa",
+      "total": 3,
+      "official_prior_links": 2,
+      "city_only_candidates": 0,
+      "missing_locality_candidates": 1
+    },
+    {
+      "district": "asia",
+      "total": 18,
+      "official_prior_links": 7,
+      "city_only_candidates": 3,
+      "missing_locality_candidates": 8
+    },
+    {
+      "district": "australia",
+      "total": 22,
+      "official_prior_links": 5,
+      "city_only_candidates": 9,
+      "missing_locality_candidates": 8
+    },
+    {
+      "district": "austria",
+      "total": 12,
+      "official_prior_links": 0,
+      "city_only_candidates": 12,
+      "missing_locality_candidates": 0
+    },
+    {
+      "district": "benelux",
+      "total": 5,
+      "official_prior_links": 0,
+      "city_only_candidates": 5,
+      "missing_locality_candidates": 0
+    },
+    {
+      "district": "brazil",
+      "total": 4,
+      "official_prior_links": 0,
+      "city_only_candidates": 3,
+      "missing_locality_candidates": 1
+    },
+    {
+      "district": "canada",
+      "total": 8,
+      "official_prior_links": 2,
+      "city_only_candidates": 4,
+      "missing_locality_candidates": 2
+    },
+    {
+      "district": "central-america",
+      "total": 9,
+      "official_prior_links": 0,
+      "city_only_candidates": 2,
+      "missing_locality_candidates": 7
+    },
+    {
+      "district": "france",
+      "total": 13,
+      "official_prior_links": 1,
+      "city_only_candidates": 2,
+      "missing_locality_candidates": 10
+    },
+    {
+      "district": "general-house",
+      "total": 1,
+      "official_prior_links": 0,
+      "city_only_candidates": 0,
+      "missing_locality_candidates": 1
+    },
+    {
+      "district": "germany",
+      "total": 10,
+      "official_prior_links": 0,
+      "city_only_candidates": 4,
+      "missing_locality_candidates": 6
+    },
+    {
+      "district": "great-britain-ireland",
+      "total": 4,
+      "official_prior_links": 2,
+      "city_only_candidates": 1,
+      "missing_locality_candidates": 1
+    },
+    {
+      "district": "italy",
+      "total": 10,
+      "official_prior_links": 0,
+      "city_only_candidates": 4,
+      "missing_locality_candidates": 6
+    },
+    {
+      "district": "mexico",
+      "total": 23,
+      "official_prior_links": 0,
+      "city_only_candidates": 7,
+      "missing_locality_candidates": 16
+    },
+    {
+      "district": "poland",
+      "total": 34,
+      "official_prior_links": 9,
+      "city_only_candidates": 14,
+      "missing_locality_candidates": 11
+    },
+    {
+      "district": "south-america",
+      "total": 8,
+      "official_prior_links": 1,
+      "city_only_candidates": 1,
+      "missing_locality_candidates": 6
+    },
+    {
+      "district": "spain-portugal",
+      "total": 4,
+      "official_prior_links": 1,
+      "city_only_candidates": 1,
+      "missing_locality_candidates": 2
+    },
+    {
+      "district": "switzerland",
+      "total": 11,
+      "official_prior_links": 0,
+      "city_only_candidates": 9,
+      "missing_locality_candidates": 2
+    },
+    {
+      "district": "usa",
+      "total": 10,
+      "official_prior_links": 0,
+      "city_only_candidates": 4,
+      "missing_locality_candidates": 6
+    },
+    {
+      "district": "zaitzkofen",
+      "total": 1,
+      "official_prior_links": 0,
+      "city_only_candidates": 0,
+      "missing_locality_candidates": 1
+    }
+  ],
+  "controls": {
+    "new_published_mass_records": 0,
+    "definitive_missing_public_mass_venues": null,
+    "automatic_publication": false,
+    "locality_equal_venue": false,
+    "external_page_schedules_not_transcribed_without_review": true
+  },
+  "cases": [
+    {
+      "source_place_id": "abu-dhabi-or-dubai",
+      "source_url": "https://map.fsspx.org/fr/places/abu-dhabi-or-dubai",
+      "source_label": "United Arab EmiratesMissionDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": null,
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "angers-noel-pinot",
+      "source_url": "https://map.fsspx.org/fr/places/angers-noel-pinot",
+      "source_label": "Oratoire Bienheureux Noël PinotChapelle · AngersDimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Angers",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-LPL-GASTINES-ANGERS",
+          "name": "Chapelle Saint-Pie X",
+          "locality": "Angers",
+          "country_code": "FR",
+          "address": "109, bis rue Jean Jaurès 49000 Angers",
+          "source_url": "https://laportelatine.org/lieux/gastines/angers"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "armidale",
+      "source_url": "https://map.fsspx.org/fr/places/armidale",
+      "source_label": "ArmidaleMission · ArmidaleDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Armidale",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-ARMIDALE-ARMIDALE-MISSION-HUGHES-HOUSE",
+          "name": "Armidale Mission (Hughes House)",
+          "locality": "Armidale",
+          "country_code": "AU",
+          "address": "141 Faulkner Street, Armidale NSW 2350",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "batea",
+      "source_url": "https://map.fsspx.org/fr/places/batea",
+      "source_label": "BateaMission · BateaDimanche",
+      "official_districts": [
+        "spain-portugal"
+      ],
+      "extracted_locality": "Batea",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "belo-horizonte",
+      "source_url": "https://map.fsspx.org/fr/places/belo-horizonte",
+      "source_label": "Belo HorizonteMission · Belo HorizonteDimanche",
+      "official_districts": [
+        "brazil"
+      ],
+      "extracted_locality": "Belo Horizonte",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BR-BR-BELO-HORIZONTE-MISSAO-DA-FSSPX",
+          "name": "Missão da FSSPX",
+          "locality": "Belo Horizonte",
+          "country_code": "BR",
+          "address": "Av. Cel. José Dias Bicalho 17, Belo Horizonte, MG, Brasil",
+          "source_url": "https://fsspx.com.br/pt/capelas"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "bergen",
+      "source_url": "https://map.fsspx.org/fr/places/bergen",
+      "source_label": "BergenMission · BergenDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Bergen",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "brindisi",
+      "source_url": "https://map.fsspx.org/fr/places/brindisi",
+      "source_label": "BrindisiMission · BrindisiDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Brindisi",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-IT-IT-BRINDISI-OSPEDALE-A-DI-SUMMA-PUBLIC-MASS-VENUE",
+          "name": "Ospedale A. Di Summa — public Mass venue",
+          "locality": "Brindisi",
+          "country_code": "IT",
+          "address": "Piazza Di Summa, 72100 Brindisi BR, Italia",
+          "source_url": "https://fsspx.it/it/cappelle-e-oratori"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capela-do-sagrado-coracao",
+      "source_url": "https://map.fsspx.org/fr/places/capela-do-sagrado-coracao",
+      "source_label": "Capela do Sagrado CoraçãoMission · PassosDimancheEn semaine",
+      "official_districts": [
+        "brazil"
+      ],
+      "extracted_locality": "Passos",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BR-BR-PASSOS-CAPELA-SAGRADO-CORACAO-DE-JESUS",
+          "name": "Capela Sagrado Coração de Jesus",
+          "locality": "Passos",
+          "country_code": "BR",
+          "address": "Rua Nebraska 526, Bairro Jardim Eldorado, 37902-108 Passos, MG, Brasil",
+          "source_url": "https://fsspx.com.br/pt/capelas"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capela-nossa-senhora-fatima",
+      "source_url": "https://map.fsspx.org/fr/places/capela-nossa-senhora-fatima",
+      "source_label": "Capela Nossa Senhora FatimaMission · Varre-SaiDimancheEn semaine",
+      "official_districts": [
+        "brazil"
+      ],
+      "extracted_locality": "Varre-Sai",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capela-santo-antonio",
+      "source_url": "https://map.fsspx.org/fr/places/capela-santo-antonio",
+      "source_label": "Capela Santo AntônioMission · CravinhosDimancheEn semaine",
+      "official_districts": [
+        "brazil"
+      ],
+      "extracted_locality": "Cravinhos",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BR-BR-CRAVINHOS-CAPELA-SAO-PIO-X",
+          "name": "Capela São Pio X",
+          "locality": "Cravinhos",
+          "country_code": "BR",
+          "address": "Rodovia Ângelo Cavalheiro, Sítio Figueira Nova, 14140-000 Cravinhos, SP, Brasil",
+          "source_url": "https://fsspx.com.br/pt/capelas"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capilla",
+      "source_url": "https://map.fsspx.org/fr/places/capilla",
+      "source_label": "CapillaMission · Distrito NacionalDimanche",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Distrito Nacional",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capilla-de-nuestra-senora-de-la-merced",
+      "source_url": "https://map.fsspx.org/fr/places/capilla-de-nuestra-senora-de-la-merced",
+      "source_label": "Capilla de Nuestra Señora de la MercedChapelle · BarcelonaDimancheEn semaine",
+      "official_districts": [
+        "spain-portugal"
+      ],
+      "extracted_locality": "Barcelona",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-multiregion-sspx-oct26-ib-es-barcelona-capilla-nuestra-senora-de-la-merced",
+        "crm_source_ref": "SSPX:OPE-002196",
+        "source_url": "https://map.fsspx.org/en/places/capilla-de-nuestra-senora-de-la-merced",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-IB-ES-BARCELONA-CAPILLA-NUESTRA-SENORA-DE-LA-MERCED",
+          "name": "Capilla Nuestra Señora de la Merced",
+          "locality": "Barcelona",
+          "country_code": "ES",
+          "address": "Carrer Vallespir 118, 08014 Barcelona, España",
+          "source_url": "https://fsspx.es/es/capillas-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "source_url": "https://map.fsspx.org/fr/places/capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "source_label": "Capilla Sagrados Corazones de Jyeus y de MariaChapelle · BogotáDimancheEn semaine",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Bogotá",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capilla-san-jose",
+      "source_url": "https://map.fsspx.org/fr/places/capilla-san-jose",
+      "source_label": "Capilla San JoséChapelle · Palmar de Ocoa, AzuaDimancheEn semaine",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Palmar de Ocoa, Azua",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capilla-san-jose-laferrere-la-matanza",
+      "source_url": "https://map.fsspx.org/fr/places/capilla-san-jose-laferrere-la-matanza",
+      "source_label": "Capilla San JoséChapelle · Laferrere, La MatanzaDimanche",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "Laferrere, La Matanza",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "capilla-san-rafael",
+      "source_url": "https://map.fsspx.org/fr/places/capilla-san-rafael",
+      "source_label": "Capilla San RafaélChapelle, Maison de retraites spirituelles · ZapotilticDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Zapotiltic",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-MX-MX-ZAPOTILTIC-CAPILLA-SAN-RAFAEL-ARCANGEL",
+          "name": "Capilla San Rafael Arcángel",
+          "locality": "Zapotiltic",
+          "country_code": "MX",
+          "address": "Calle Nicolás Bravo 287, 49600 Zapotiltic, Jalisco, México",
+          "source_url": "https://fsspx.mx/es/capillas-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "cappella-santa-caterina-da-siena",
+      "source_url": "https://map.fsspx.org/fr/places/cappella-santa-caterina-da-siena",
+      "source_label": "Cappella Santa Caterina da SienaChapelle · RomaDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Roma",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-IT-IT-ROMA-CAPPELLA-S-CATERINA-DA-SIENA",
+          "name": "Cappella S. Caterina da Siena",
+          "locality": "Roma",
+          "country_code": "IT",
+          "address": "Via Urbana 85, 00184 Roma RM, Italia",
+          "source_url": "https://fsspx.it/it/cappelle-e-oratori"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "casa-do-menino-jesus-de-praga",
+      "source_url": "https://map.fsspx.org/fr/places/casa-do-menino-jesus-de-praga",
+      "source_label": "Casa do Menino Jesus de PragaChapelle · FatimaDimancheEn semaine",
+      "official_districts": [
+        "spain-portugal"
+      ],
+      "extracted_locality": "Fatima",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-IB-PT-FATIMA-CASA-DO-MENINO-JESUS-DE-PRAGA-E-CAPELA",
+          "name": "Casa do Menino Jesus de Praga e Capela do Imaculado Coração de Maria",
+          "locality": "Fátima",
+          "country_code": "PT",
+          "address": "Rua Imaculada Conceição 8, Moita Redonda, 2495-651 Fátima, Portugal",
+          "source_url": "https://fsspx.es/es/capillas-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "centro-de-misa-de-gonnet",
+      "source_url": "https://map.fsspx.org/fr/places/centro-de-misa-de-gonnet",
+      "source_label": "Centro de Misa de GonnetChapelle · GonnetDimanche",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "Gonnet",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-SA-AR-GONNET-ORATORIO-SAN-ANTONIO-DE-PADUA",
+          "name": "Oratorio San Antonio de Padua",
+          "locality": "Gonnet",
+          "country_code": "AR",
+          "address": "Centenario 2922, Gonnet, Buenos Aires, Argentina",
+          "source_url": "https://fsspx-sudamerica.org/es/capillas"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "centro-de-misa-de-pichi-mahuida",
+      "source_url": "https://map.fsspx.org/fr/places/centro-de-misa-de-pichi-mahuida",
+      "source_label": "Centro de Misa de Pichi-MahuidaMission · Pichi-MahuidaDimanche",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "Pichi-Mahuida",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "centrum-sw-ludwika-marii-grignion-de-montfort",
+      "source_url": "https://map.fsspx.org/fr/places/centrum-sw-ludwika-marii-grignion-de-montfort",
+      "source_label": "Centrum św. Ludwika Marii Grignion de MontfortChapelle · CzęstochowaDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Częstochowa",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-CZESTOCHOWA-KAPLICA-SW-LUDWIKA-MARII-GRIGNIONA-DE-MONT",
+          "name": "Kaplica św. Ludwika Marii Grigniona de Montfort",
+          "locality": "Częstochowa",
+          "country_code": "PL",
+          "address": "ul. św. Jadwigi 18/20, Częstochowa, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapel-of-ol-of-fatima",
+      "source_url": "https://map.fsspx.org/fr/places/chapel-of-ol-of-fatima",
+      "source_label": "Chapel of OL of FatimaMission, Chapelle · Saint PetersburgDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Saint Petersburg",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapel-of-st-joseph",
+      "source_url": "https://map.fsspx.org/fr/places/chapel-of-st-joseph",
+      "source_label": "Chapel of St JosephMission · HamiltonDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Hamilton",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-NZ-HAMILTON-SAINT-JOSEPH-S-CHAPEL",
+          "name": "Saint Joseph's Chapel",
+          "locality": "Hamilton",
+          "country_code": "NZ",
+          "address": "4 Comries Road, Chartwell, Hamilton 3210",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapel-of-st-michael-the-archangel",
+      "source_url": "https://map.fsspx.org/fr/places/chapel-of-st-michael-the-archangel",
+      "source_label": "Chapel of St Michael the ArchangelChapelle · TawaDimancheEn semaine",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Tawa",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapel-of-the-immaculate-heart-of-mary",
+      "source_url": "https://map.fsspx.org/fr/places/chapel-of-the-immaculate-heart-of-mary",
+      "source_label": "Chapel of the Immaculate Heart of MaryMission · MoscowDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Moscow",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapel-of-the-immaculate-heart-of-mary-s-john",
+      "source_url": "https://map.fsspx.org/fr/places/chapel-of-the-immaculate-heart-of-mary-s-john",
+      "source_label": "Chapel of the Immaculate Heart of Mary & S. JohnChapelle · AucklandDimancheEn semaine",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Auckland",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-NZ-AUCKLAND-IMMACULATE-HEART-OF-MARY-CHURCH",
+          "name": "Immaculate Heart of Mary Church",
+          "locality": "Auckland",
+          "country_code": "NZ",
+          "address": "103 Avondale Road, Auckland 1026",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapel-of-the-sacred-heart",
+      "source_url": "https://map.fsspx.org/fr/places/chapel-of-the-sacred-heart",
+      "source_label": "Chapel of the Sacred HeartChapelle · MinskDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Minsk",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-de-la-sainte-famille",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-de-la-sainte-famille",
+      "source_label": "Chapelle de la Sainte FamilleChapelle · SionDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Sion",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-SION-EGLISE-DE-LA-SAINTE-FAMILLE",
+          "name": "Église de la Sainte Famille",
+          "locality": "Sion",
+          "country_code": "CH",
+          "address": "Rue de la Bourgeoisie 9, 1950 Sion",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-de-coat-ar-roch",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-de-coat-ar-roch",
+      "source_label": "Chapelle Notre-Dame de Coat ar RochChapelle · LannedernDimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Lannedern",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-de-lourdes",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-de-lourdes",
+      "source_label": "Chapelle Notre-Dame de LourdesChapelle · Les RoussesDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Les Rousses",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-du-rosaire",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-du-rosaire",
+      "source_label": "Chapelle Notre-Dame du RosaireChapelle · Le LausDimanche",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Le Laus",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-notre-dame-mediatrice-de-toutes-graces",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-mediatrice-de-toutes-graces",
+      "source_label": "Chapelle Notre-Dame Médiatrice de toutes grâcesMission · AdonisDimancheEn semaine",
+      "official_districts": [
+        "general-house"
+      ],
+      "extracted_locality": "Adonis",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-saint-aubain",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-saint-aubain",
+      "source_label": "Chapelle Saint-AubainChapelle · NamurDimancheEn semaine",
+      "official_districts": [
+        "benelux"
+      ],
+      "extracted_locality": "Namur",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BEN-BE-NAMUR-CHAPELLE-SAINT-AUBIN",
+          "name": "Chapelle Saint Aubin",
+          "locality": "Namur",
+          "country_code": "BE",
+          "address": "Rue Delvaux 8, 5000 Namur, Belgique",
+          "source_url": "https://fsspx.nl/nl/kerken-kapellen-benelux"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-saint-joseph-paita",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-saint-joseph-paita",
+      "source_label": "Chapelle Saint-JosephChapelle · Katiramona, Nouvelle-CalédonieDimancheEn semaine",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Katiramona, Nouvelle-Calédonie",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-saint-mathias",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-saint-mathias",
+      "source_label": "Chapelle Saint-MathiasChapelle · PontoiseDimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Pontoise",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-saint-maurice",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-saint-maurice",
+      "source_label": "Chapelle saint-MauriceChapelle · PauDimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Pau",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-france-first-party-sspx-lpl-lourdes-saint-ignace-pau",
+        "crm_source_ref": "SSPX:OPE-002159",
+        "source_url": "https://map.fsspx.org/en/places/chapelle-saint-maurice",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-saint-olaf",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-saint-olaf",
+      "source_label": "Chapelle Saint-OlafMission · OsloDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Oslo",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-sainte-emilie-de-rodat-ruols",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-sainte-emilie-de-rodat-ruols",
+      "source_label": "Chapelle Sainte-Emilie-de-RodatChapelle · OlempsDimanche",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Olemps",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chapelle-ste-honorine",
+      "source_url": "https://map.fsspx.org/fr/places/chapelle-ste-honorine",
+      "source_label": "Chapelle Sainte-HonorineChapelle · Conflans-Sainte-HonorineDimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Conflans-Sainte-Honorine",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chateau-de-cabanous",
+      "source_url": "https://map.fsspx.org/fr/places/chateau-de-cabanous",
+      "source_label": "Chapelle Saint Georges de LodèveMission · La CavalerieDimanche",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "La Cavalerie",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "chiesa-madonna-di-san-giovanni",
+      "source_url": "https://map.fsspx.org/fr/places/chiesa-madonna-di-san-giovanni",
+      "source_label": "Chiesa Madonna di San GiovanniMission · CoratoDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Corato",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "christkonigskapelle",
+      "source_url": "https://map.fsspx.org/fr/places/christkonigskapelle",
+      "source_label": "ChristkönigskapelleChapelle · SchlierenDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Schlieren",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-SCHLIEREN-CHAPELLE-DU-CHRIST-ROI",
+          "name": "Chapelle du Christ-Roi",
+          "locality": "Schlieren",
+          "country_code": "CH",
+          "address": "Rohrstrasse 7, 8952 Schlieren",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "church-of-the-canadian-martyrs",
+      "source_url": "https://map.fsspx.org/fr/places/church-of-the-canadian-martyrs",
+      "source_label": "Church of the Canadian MartyrsChapelle · WarminsterDimanche",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": "Warminster",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-CA-HOLY-CANADIAN-MARTYRS-CHURCH-WARMINSTER-9767-HWY-12-W",
+          "name": "Holy Canadian Martyrs Church",
+          "locality": "Warminster",
+          "country_code": "CA",
+          "address": "9767 Hwy 12 W, Warminster ON L0K 2G0",
+          "source_url": "https://fsspx.ca/en/list-sspx-chapels-4"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "church-of-the-holy-cross",
+      "source_url": "https://map.fsspx.org/fr/places/church-of-the-holy-cross",
+      "source_label": "Church of the Holy CrossChapelle · WokingDimanche",
+      "official_districts": [
+        "great-britain-ireland"
+      ],
+      "extracted_locality": "Woking",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "church-of-the-holy-face-of-jesus",
+      "source_url": "https://map.fsspx.org/fr/places/church-of-the-holy-face-of-jesus",
+      "source_label": "Church of the Holy Face of JesusChapelle · St. CatharinesDimanche",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": "St. Catharines",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-na-districts-20261008-sspx-na-ca-holy-face-of-jesus-church-st-catharines-181-lake-street",
+        "crm_source_ref": "SSPX:OPE-001992",
+        "source_url": "https://map.fsspx.org/en/places/church-of-the-holy-face-of-jesus",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-CA-HOLY-FACE-OF-JESUS-CHURCH-ST-CATHARINES-181-LAKE-STREET",
+          "name": "Holy Face of Jesus Church",
+          "locality": "St. Catharines",
+          "country_code": "CA",
+          "address": "181 Lake Street, St. Catharines ON L2R 5Y8",
+          "source_url": "https://fsspx.ca/en/list-sspx-chapels-4"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "church-of-the-immaculate-heart-of-mary",
+      "source_url": "https://map.fsspx.org/fr/places/church-of-the-immaculate-heart-of-mary",
+      "source_label": "Church of the Immaculate Heart of MaryChapelle · TallinnDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Tallinn",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "dardanup",
+      "source_url": "https://map.fsspx.org/fr/places/dardanup",
+      "source_label": "DardanupMission · DardanupDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Dardanup",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "debreceni-orvostudomanyi-egyetem-gyermekklinika-kapolnaja",
+      "source_url": "https://map.fsspx.org/fr/places/debreceni-orvostudomanyi-egyetem-gyermekklinika-kapolnaja",
+      "source_label": "Debreceni Orvostudományi Egyetem Gyermekklinika kápolnájaChapelle · DebrecenDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Debrecen",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-HU-DEBRECEN-UNIVERSITATSKINDERKLINIK-KAPELLE",
+          "name": "Universitätskinderklinik — Kapelle",
+          "locality": "Debrecen",
+          "country_code": "HU",
+          "address": "Pallagi út 9–10, 4032 Debrecen, Ungarn",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "dom-rekolekcyjny-pw-chrystusa-krola",
+      "source_url": "https://map.fsspx.org/fr/places/dom-rekolekcyjny-pw-chrystusa-krola",
+      "source_label": "Dom rekolekcyjny pw. Chrystusa KrólaMaison de retraites spirituelles, Chapelle · Kijewo KrólewskieDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Kijewo Królewskie",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "dubbo",
+      "source_url": "https://map.fsspx.org/fr/places/dubbo",
+      "source_label": "DubboMission · RawsonvilleDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Rawsonville",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-RAWSONVILLE-DUBBO-MASS-CENTRE-SOLDIER-S-MEMORIAL-HALL",
+          "name": "Dubbo Mass Centre — Soldier's Memorial Hall",
+          "locality": "Rawsonville",
+          "country_code": "AU",
+          "address": "Soldier’s Memorial Hall, Rawsonville NSW 2830",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "dunstall-s-funeral-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/dunstall-s-funeral-chapel",
+      "source_label": "Dunstall’s Funeral ChapelMission · NapierDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Napier",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-NZ-NAPIER-OUR-LADY-HELP-OF-CHRISTIANS-MISSION-DUNSTALL-S-FUNERAL-CHAPEL",
+          "name": "Our Lady Help of Christians Mission — Dunstall's Funeral Chapel",
+          "locality": "Napier",
+          "country_code": "NZ",
+          "address": "Corner Edwardes and Bowers Streets, Clive, Napier",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "east-devonport",
+      "source_url": "https://map.fsspx.org/fr/places/east-devonport",
+      "source_label": "East DevonportMission · East DevonportDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "East Devonport",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-EAST-DEVONPORT-TASMANIAN-MISSION",
+          "name": "Tasmanian Mission",
+          "locality": "East Devonport",
+          "country_code": "AU",
+          "address": "Corner of Church and Thomas Street, East Devonport TAS 7310",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "eglise-saint-joseph-bruxelles",
+      "source_url": "https://map.fsspx.org/fr/places/eglise-saint-joseph-bruxelles",
+      "source_label": "Église Saint-JosephChapelle · BruxellesDimancheEn semaine",
+      "official_districts": [
+        "benelux"
+      ],
+      "extracted_locality": "Bruxelles",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BEN-BE-BRUXELLES-SINT-JOZEFKERK-EGLISE-SAINT-JOSEPH",
+          "name": "Sint-Jozefkerk — Église Saint-Joseph",
+          "locality": "Bruxelles",
+          "country_code": "BE",
+          "address": "Square Frère Orban 3, 1000 Bruxelles, Belgique",
+          "source_url": "https://fsspx.nl/nl/kerken-kapellen-benelux"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "eglise-saint-raphael",
+      "source_url": "https://map.fsspx.org/fr/places/eglise-saint-raphael",
+      "source_label": "Église Saint RaphaëlMission · VunapisuDimancheEn semaine",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Vunapisu",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "eglise-sainte-foy",
+      "source_url": "https://map.fsspx.org/fr/places/eglise-sainte-foy",
+      "source_label": "Église Sainte-FoyChapelle · Jouy-MauvoisinDimanche",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Jouy-Mauvoisin",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "exerzitienhaus-porta-caeli",
+      "source_url": "https://map.fsspx.org/fr/places/exerzitienhaus-porta-caeli",
+      "source_label": "Exerzitienhaus Porta CaeliMaison de retraites spirituelles · LauterbachDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Lauterbach",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "gemeinde-st-petrus-canisius",
+      "source_url": "https://map.fsspx.org/fr/places/gemeinde-st-petrus-canisius",
+      "source_label": "Gemeinde St. Petrus CanisiusChapelle · KerkradeDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Kerkrade",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "gran-canaria",
+      "source_url": "https://map.fsspx.org/fr/places/gran-canaria",
+      "source_label": "Gran CanariaMission · Las Palmas de Gran CanariaDimanche",
+      "official_districts": [
+        "spain-portugal"
+      ],
+      "extracted_locality": "Las Palmas de Gran Canaria",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "hervey-bay-mass-centre",
+      "source_url": "https://map.fsspx.org/fr/places/hervey-bay-mass-centre",
+      "source_label": "Hervey Bay Mass CentreMission · NikenbahDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Nikenbah",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-NIKENBAH-PIALBA-HISTORICAL-VILLAGE-MUSEUM-CHAPEL",
+          "name": "Pialba Historical Village Museum Chapel",
+          "locality": "Nikenbah",
+          "country_code": "AU",
+          "address": "18 Nikenbah Dundowran Road, Nikenbah QLD 4655",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "herz-jesu-kirche",
+      "source_url": "https://map.fsspx.org/fr/places/herz-jesu-kirche",
+      "source_label": "Herz Jesu KircheChapelle · OensingenDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Oensingen",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "hill-end",
+      "source_url": "https://map.fsspx.org/fr/places/hill-end",
+      "source_label": "Hill EndMission · Hill EndDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Hill End",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "hong-kong",
+      "source_url": "https://map.fsspx.org/fr/places/hong-kong",
+      "source_label": "Hong-KongMission · KowloonDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Kowloon",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "iglesia-de-nuestra-senora-de-la-soledad",
+      "source_url": "https://map.fsspx.org/fr/places/iglesia-de-nuestra-senora-de-la-soledad",
+      "source_label": "Iglesia de Nuestra Señora de la SoledadChapelle · Godoy CruzDimancheEn semaine",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "Godoy Cruz",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-americas-sspx-oct26-sa-ar-godoy-cruz-iglesia-nuestra-senora-de-la-soledad",
+        "crm_source_ref": "SSPX:OPE-002380",
+        "source_url": "https://map.fsspx.org/en/places/iglesia-de-nuestra-senora-de-la-soledad",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-SA-AR-GODOY-CRUZ-IGLESIA-NUESTRA-SENORA-DE-LA-SOLEDAD",
+          "name": "Iglesia Nuestra Señora de la Soledad",
+          "locality": "Godoy Cruz",
+          "country_code": "AR",
+          "address": "General Mariano Balcarce 267, 5501 Godoy Cruz, Mendoza, Argentina",
+          "source_url": "https://fsspx-sudamerica.org/es/capillas"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "iglesia-nuestra-senora-de-lourdes",
+      "source_url": "https://map.fsspx.org/fr/places/iglesia-nuestra-senora-de-lourdes",
+      "source_label": "Iglesia Nuestra Señora de LourdesChapelle · AsunciónDimanche",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "Asunción",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "immaculate-conception-church-gilford",
+      "source_url": "https://map.fsspx.org/fr/places/immaculate-conception-church-gilford",
+      "source_label": "Immaculate Conception ChurchChapelle · GilfordDimanche",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Gilford",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "immaculate-heart-of-mary-mass-center",
+      "source_url": "https://map.fsspx.org/fr/places/immaculate-heart-of-mary-mass-center",
+      "source_label": "Immaculate Heart of Mary Mass CenterMission · TakatsukiDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Takatsuki",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-JP-005",
+          "name": "Immaculate Heart of Mary Chapel",
+          "locality": "Takatsuki",
+          "country_code": "JP",
+          "address": "11-5 Sakuragaoka Minamimachi, Takatsuki, Osaka 569-0818, Japan",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "indonesie-jakarta",
+      "source_url": "https://map.fsspx.org/fr/places/indonesie-jakarta",
+      "source_label": "IndonesiaMissionDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": null,
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapel-van-onze-lieve-vrouw-van-de-rozenkrans",
+      "source_url": "https://map.fsspx.org/fr/places/kapel-van-onze-lieve-vrouw-van-de-rozenkrans",
+      "source_label": "Kapel van Onze Lieve Vrouw van de RozenkransChapelle · LeidenDimancheEn semaine",
+      "official_districts": [
+        "benelux"
+      ],
+      "extracted_locality": "Leiden",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BEN-NL-LEIDEN-KAPEL-O-L-V-VAN-DE-ROZENKRANS",
+          "name": "Kapel O.-L.-V. van de Rozenkrans",
+          "locality": "Leiden",
+          "country_code": "NL",
+          "address": "Sumatrastraat 197, 2315 BD Leiden, Nederland",
+          "source_url": "https://fsspx.nl/nl/kerken-kapellen-benelux"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapela-sv-anna",
+      "source_url": "https://map.fsspx.org/fr/places/kapela-sv-anna",
+      "source_label": "Kapela sv. AnnaMission · MariborDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Maribor",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-SI-MARIBOR-KAPELA-SV-DRUZINE",
+          "name": "Kapela sv. Družine",
+          "locality": "Maribor",
+          "country_code": "SI",
+          "address": "Kuzmičeva 12, 2000 Maribor, Slowenien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-der-heiligen-theresia",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-der-heiligen-theresia",
+      "source_label": "Kapelle der Heiligen TheresiaChapelle · BaselDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Basel",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-BASEL-CHAPELLE-SAINTE-THERESE-DE-L-ENFANT-JESUS",
+          "name": "Chapelle Sainte Thérèse de l'Enfant-Jésus",
+          "locality": "Basel",
+          "country_code": "CH",
+          "address": "Schliengerweg 33, 4057 Basel",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-heiliger-prokop",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-heiliger-prokop",
+      "source_label": "Kapelle Heiliger ProkopChapelle · PstružíDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Pstruží",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-CZ-PSTRUZI-DUM-SV-PROKOPA",
+          "name": "Dům sv. Prokopa",
+          "locality": "Pstruží",
+          "country_code": "CZ",
+          "address": "Pstruží č. p. 107, 73911 Pstruží, Tschechien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-hl-prophet-elias",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-hl-prophet-elias",
+      "source_label": "Kapelle Hl. Prophet EliasMission, Chapelle · Ždár nad SázavouDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Ždár nad Sázavou",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-CZ-ZDAR-NAD-SAZAVOU-KAPLE-SV-ELIASE-PROROKA",
+          "name": "Kaple sv. Eliáše proroka",
+          "locality": "Žďár nad Sázavou",
+          "country_code": "CZ",
+          "address": "Nám. Republiky 1485/7, 59101 Žďár nad Sázavou, Tschechien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-jablonec-nad-nisou",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-jablonec-nad-nisou",
+      "source_label": "Kapelle Jablonec nad NisouChapelle, Mission · Jablonec nad NisouDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Jablonec nad Nisou",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-CZ-JABLONEC-NAD-NISOU-SUNDAY-MASS-CENTRE",
+          "name": "Sunday Mass centre",
+          "locality": "Jablonec nad Nisou",
+          "country_code": "CZ",
+          "address": "Anenské náměstí 3/4, 46601 Jablonec nad Nisou, Tschechien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-mgr-marcel-lefebvre",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-mgr-marcel-lefebvre",
+      "source_label": "Kapelle Mgr. Marcel LefebvreMission · Boršov nad VltavouDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Boršov nad Vltavou",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-CZ-BORSOV-NAD-VLTAVOU-DUM-MSGR-MARCELA-LEFEBVRA-MASS-CHAPEL",
+          "name": "Dům Msgr. Marcela Lefebvra — Mass chapel",
+          "locality": "Boršov nad Vltavou",
+          "country_code": "CZ",
+          "address": "Farní 50, 37382 Boršov nad Vltavou, Tschechien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-pardubice",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-pardubice",
+      "source_label": "Kapelle PardubiceMission · PardubiceDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Pardubice",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-CZ-PARDUBICE-SUNDAY-MASS-CENTRE",
+          "name": "Sunday Mass centre",
+          "locality": "Pardubice",
+          "country_code": "CZ",
+          "address": "Nám. Republiky 2686, 53002 Pardubice, Tschechien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-prag",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-prag",
+      "source_label": "Kapelle PragChapelle · PrahaDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Praha",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-CZ-PRAHA-DOMOV-SUE-RYDER-MASS-VENUE",
+          "name": "Domov Sue Ryder — Mass venue",
+          "locality": "Praha",
+          "country_code": "CZ",
+          "address": "Michelská 1/7, 14000 Praha, Tschechien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-st-ansgar",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-st-ansgar",
+      "source_label": "Kapelle St. AnsgarChapelle · Seelze-LetterDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Seelze-Letter",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-st-blasius",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-st-blasius",
+      "source_label": "Kapelle St. BlasiusMission · MliniDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Mlini",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-HR-MLINI-KAPELA-SV-VLAHA",
+          "name": "Kapela sv. Vlaha",
+          "locality": "Mlini",
+          "country_code": "HR",
+          "address": "Put Bruna Bušića 81, 20207 Mlini, Kroatien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-st-josef-viernheim",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-st-josef-viernheim",
+      "source_label": "Kapelle St. JosefChapelle · ViernheimDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Viernheim",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-DE-DE-VIERNHEIM-KAPELLE-HL-JOSEF",
+          "name": "Kapelle Hl. Josef",
+          "locality": "Viernheim",
+          "country_code": "DE",
+          "address": "Bürgermeister-Neff-Str. 15, 68519 Viernheim",
+          "source_url": "https://fsspx.today/viernheim"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-st-pius-x",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-st-pius-x",
+      "source_label": "Kapelle St. Pius X.Chapelle · St. GallenDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "St. Gallen",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-ST-GALLEN-CHAPELLE-SAINT-PIE-X",
+          "name": "Chapelle Saint-Pie X",
+          "locality": "St. Gallen",
+          "country_code": "CH",
+          "address": "Zürcherstrasse 68A, 9000 St. Gallen",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-st-theresia-von-avila",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-st-theresia-von-avila",
+      "source_label": "Kapelle St Theresia von AvilaPrieuré, Chapelle · Hamburg-AlsterdorfDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Hamburg-Alsterdorf",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-uhersky-brod",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-uhersky-brod",
+      "source_label": "Kapelle Uherský BrodMission · Uherský BrodDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Uherský Brod",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-CZ-UHERSKY-BROD-HRBITOVNI-KAPLE-STARY-HRBITOV",
+          "name": "Hřbitovní kaple — starý hřbitov",
+          "locality": "Uherský Brod",
+          "country_code": "CZ",
+          "address": "Svatopluka Čecha 1324, 68801 Uherský Brod, Tschechien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kapelle-unsere-liebe-frau-huterin-des-glauben",
+      "source_url": "https://map.fsspx.org/fr/places/kapelle-unsere-liebe-frau-huterin-des-glauben",
+      "source_label": "Kapelle Unsere Liebe Frau, Hüterin des GlaubenChapelle · Granges-PaccotDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Granges-Paccot",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-GRANGES-PACCOT-CHAPELLE-NOTRE-DAME-GARDIENNE-DE-LA-FOI",
+          "name": "Chapelle Notre-Dame Gardienne de la Foi",
+          "locality": "Granges-Paccot",
+          "country_code": "CH",
+          "address": "Route du Coteau 6, 1763 Granges-Paccot",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-p-w-matki-bozej-ostrobramskiej",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-p-w-matki-bozej-ostrobramskiej",
+      "source_label": "Kaplica p.w. Matki Bożej OstrobramskiejChapelle · OlsztynDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Olsztyn",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-OLSZTYN-KAPLICA-MATKI-BOZEJ-OSTROBRAMSKIEJ",
+          "name": "Kaplica Matki Bożej Ostrobramskiej",
+          "locality": "Olsztyn",
+          "country_code": "PL",
+          "address": "ul. Opolska 2, Olsztyn, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-p-w-sw-wojciecha",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-p-w-sw-wojciecha",
+      "source_label": "Kaplica p.w. sw. WojciechaChapelle · SzczecinDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Szczecin",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-SZCZECIN-KAPLICA-SW-WOJCIECHA",
+          "name": "Kaplica św. Wojciecha",
+          "locality": "Szczecin",
+          "country_code": "PL",
+          "address": "ul. Monte Cassino 30, Szczecin, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pi-a",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pi-a",
+      "source_label": "Kaplica PiłaMission · PiłaDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Piła",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-PI-A-KAPLICA-SW-JANA-CHRZCICIELA-I-SW-JANA-EWAN",
+          "name": "Kaplica św. Jana Chrzciciela i św. Jana Ewangelisty",
+          "locality": "Piła",
+          "country_code": "PL",
+          "address": "ul. Głuchowska 12, Piła, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-jezusa-chrystusa-najwyzszego-i-wiecznego-kap-ana",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-jezusa-chrystusa-najwyzszego-i-wiecznego-kap-ana",
+      "source_label": "Kaplica pw. Jezusa Chrystusa Najwyższego i Wiecznego KapłanaChapelle · TarnówDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Tarnów",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-tarnow-kaplica-jezusa-chrystusa-najwyzszego-i-wie",
+        "crm_source_ref": "SSPX:OPE-002713",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-jezusa-chrystusa-najwyzszego-i-wiecznego-kap-ana",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-TARNOW-KAPLICA-JEZUSA-CHRYSTUSA-NAJWYZSZEGO-I-WIE",
+          "name": "Kaplica Jezusa Chrystusa Najwyższego i Wiecznego Kapłana",
+          "locality": "Tarnów",
+          "country_code": "PL",
+          "address": "ul. Przemysłowa 27, Tarnów, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-bolesnej",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-bolesnej",
+      "source_label": "Kaplica pw. Matki Bożej BolesnejChapelle · BydgoszczDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Bydgoszcz",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-BYDGOSZCZ-KAPLICA-MATKI-BOZEJ-BOLESNEJ",
+          "name": "Kaplica Matki Bożej Bolesnej",
+          "locality": "Bydgoszcz",
+          "country_code": "PL",
+          "address": "ul. Fordońska 399, Bydgoszcz, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-dobrej-rady",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-dobrej-rady",
+      "source_label": "Kaplica pw. Matki Bożej Dobrej RadyChapelle · GnieznoDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Gniezno",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-gniezno-kaplica-matki-bozej-dobrej-rady",
+        "crm_source_ref": "SSPX:OPE-002723",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-matki-bozej-dobrej-rady",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-GNIEZNO-KAPLICA-MATKI-BOZEJ-DOBREJ-RADY",
+          "name": "Kaplica Matki Bożej Dobrej Rady",
+          "locality": "Gniezno",
+          "country_code": "PL",
+          "address": "ul. Krzywe Koło 2, Gniezno, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-rozancowej-z-pompejow",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-rozancowej-z-pompejow",
+      "source_label": "Kaplica pw. Matki Bożej Różańcowej z PompejówChapelle · OpoleDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Opole",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-opole-kaplica-matki-bozej-rozancowej-z-pompejow",
+        "crm_source_ref": "SSPX:OPE-002721",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-matki-bozej-rozancowej-z-pompejow",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-OPOLE-KAPLICA-MATKI-BOZEJ-ROZANCOWEJ-Z-POMPEJOW",
+          "name": "Kaplica Matki Bożej Różańcowej z Pompejów",
+          "locality": "Opole",
+          "country_code": "PL",
+          "address": "ul. Torowa 4, Opole, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-matki-bozej-wspomozycielki-wiernych",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-matki-bozej-wspomozycielki-wiernych",
+      "source_label": "Kaplica pw. Matki Bożej Wspomożycielki WiernychChapelle · JarosławDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Jarosław",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-jaros-aw-kaplica-matki-bozej-wspomozycielki-wiernyc",
+        "crm_source_ref": "SSPX:OPE-002716",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-matki-bozej-wspomozycielki-wiernych",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-JAROS-AW-KAPLICA-MATKI-BOZEJ-WSPOMOZYCIELKI-WIERNYC",
+          "name": "Kaplica Matki Bożej Wspomożycielki Wiernych",
+          "locality": "Jarosław",
+          "country_code": "PL",
+          "address": "ul. Lubelska 19, Jarosław, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-nmpanny-nieustajacej-pomocy",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-nmpanny-nieustajacej-pomocy",
+      "source_label": "Kaplica pw. NMPanny Nieustającej PomocyChapelle · BolesławiecDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Bolesławiec",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-BOLES-AWIEC-KAPLICA-NMP-NIEUSTAJACEJ-POMOCY",
+          "name": "Kaplica NMP Nieustającej Pomocy",
+          "locality": "Bolesławiec",
+          "country_code": "PL",
+          "address": "ul. Garncarska 17, Bolesławiec, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-andrzeja-boboli",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-andrzeja-boboli",
+      "source_label": "Kaplica pw. św. Andrzeja BoboliChapelle · ZaczernieDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Zaczernie",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-franciszka-z-asyzu",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-franciszka-z-asyzu",
+      "source_label": "Kaplica pw. św. Franciszka z AsyżuChapelle · BukowiecDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Bukowiec",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-bukowiec-kaplica-sw-franciszka-z-asyzu",
+        "crm_source_ref": "SSPX:OPE-002718",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-sw-franciszka-z-asyzu",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-BUKOWIEC-KAPLICA-SW-FRANCISZKA-Z-ASYZU",
+          "name": "Kaplica św. Franciszka z Asyżu",
+          "locality": "Bukowiec",
+          "country_code": "PL",
+          "address": "ul. Katowicka, Bukowiec, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-ignacego-loyoli",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-ignacego-loyoli",
+      "source_label": "Kaplica pw. św. Ignacego LoyoliChapelle · SłupskDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Słupsk",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-S-UPSK-KAPLICA-SW-IGNACEGO-LOYOLI",
+          "name": "Kaplica św. Ignacego Loyoli",
+          "locality": "Słupsk",
+          "country_code": "PL",
+          "address": "ul. Poniatowskiego 46A, Słupsk, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-jadwigi-slaskiej",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-jadwigi-slaskiej",
+      "source_label": "Kaplica pw. św. Jadwigi ŚląskiejChapelle · WroclawDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Wroclaw",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-WROC-AW-KAPLICA-SW-JADWIGI-SLASKIEJ",
+          "name": "Kaplica św. Jadwigi Śląskiej",
+          "locality": "Wrocław",
+          "country_code": "PL",
+          "address": "ul. Kleczkowska 45, Wrocław, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-jana-marii-vianneya",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-jana-marii-vianneya",
+      "source_label": "Kaplica pw. św. Jana Marii VianneyaChapelle · ToruńDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Toruń",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-torun-kaplica-sw-jana-marii-vianneya",
+        "crm_source_ref": "SSPX:OPE-002731",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-sw-jana-marii-vianneya",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-TORUN-KAPLICA-SW-JANA-MARII-VIANNEYA",
+          "name": "Kaplica św. Jana Marii Vianneya",
+          "locality": "Toruń",
+          "country_code": "PL",
+          "address": "ul. Fałata 35/37, Toruń, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-jana-z-dukli",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-jana-z-dukli",
+      "source_label": "Kaplica pw. św. Jana z DukliChapelle · KrosnoDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Krosno",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-krosno-kaplica-sw-jana-z-dukli",
+        "crm_source_ref": "SSPX:OPE-002715",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-sw-jana-z-dukli",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-KROSNO-KAPLICA-SW-JANA-Z-DUKLI",
+          "name": "Kaplica św. Jana z Dukli",
+          "locality": "Krosno",
+          "country_code": "PL",
+          "address": "ul. Okrzei 4A, Krosno, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-kingi",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-kingi",
+      "source_label": "Kaplica pw. św. KingiChapelle · Nowy SączDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Nowy Sącz",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-NOWY-SACZ-KAPLICA-SW-KINGI",
+          "name": "Kaplica św. Kingi",
+          "locality": "Nowy Sącz",
+          "country_code": "PL",
+          "address": "ul. Zygmuntowska 15, Nowy Sącz, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-melchiora-grodzieckiego",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-melchiora-grodzieckiego",
+      "source_label": "Kaplica pw. św. Melchiora GrodzieckiegoChapelle · Bielsko-BiałaDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Bielsko-Biała",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-BIELSKO-BIA-A-KAPLICA-SW-MELCHIORA-GRODZIECKIEGO",
+          "name": "Kaplica św. Melchiora Grodzieckiego",
+          "locality": "Bielsko-Biała",
+          "country_code": "PL",
+          "address": "ul. Zapłocie Duże 130A, Bielsko-Biała, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-piusa-v",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-piusa-v",
+      "source_label": "Kaplica pw. św. Piusa VChapelle · ŁódźDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Łódź",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-ODZ-KAPLICA-SW-PIUSA-V",
+          "name": "Kaplica św. Piusa V",
+          "locality": "Łódź",
+          "country_code": "PL",
+          "address": "ul. ks. Piotra Skargi 12, Łódź, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-stanis-awa-kostki",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-stanis-awa-kostki",
+      "source_label": "Kaplica pw. św. Stanisława KostkiChapelle · LublinDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Lublin",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-lublin-kaplica-sw-stanis-awa-kostki",
+        "crm_source_ref": "SSPX:OPE-002303",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-sw-stanis-awa-kostki",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-LUBLIN-KAPLICA-SW-STANIS-AWA-KOSTKI",
+          "name": "Kaplica św. Stanisława Kostki",
+          "locality": "Lublin",
+          "country_code": "PL",
+          "address": "ul. Żeglarska 6, Lublin, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-pw-sw-teresy-od-dzieciatka-jezus",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-pw-sw-teresy-od-dzieciatka-jezus",
+      "source_label": "Kaplica pw. św. Teresy od Dzieciątka JezusChapelle · TczewDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Tczew",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-oct26-poland-sspx-oct26-pl-tczew-kaplica-sw-teresy-od-dzieciatka-jezus",
+        "crm_source_ref": "SSPX:OPE-002728",
+        "source_url": "https://map.fsspx.org/en/places/kaplica-pw-sw-teresy-od-dzieciatka-jezus",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-TCZEW-KAPLICA-SW-TERESY-OD-DZIECIATKA-JEZUS",
+          "name": "Kaplica św. Teresy od Dzieciątka Jezus",
+          "locality": "Tczew",
+          "country_code": "PL",
+          "address": "ul. Chopina 35, Tczew, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-sw-antoniego-z-padwy",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-sw-antoniego-z-padwy",
+      "source_label": "Kaplica św. Antoniego z PadwyChapelle · ZamośćDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Zamość",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-ZAMOSC-KAPLICA-SW-ANTONIEGO-PADEWSKIEGO",
+          "name": "Kaplica św. Antoniego Padewskiego",
+          "locality": "Zamość",
+          "country_code": "PL",
+          "address": "ul. Peowiaków 5, Zamość, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-sw-krzyza",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-sw-krzyza",
+      "source_label": "Kaplica św. KrzyżaChapelle · KielceDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Kielce",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-KIELCE-KAPLICA-SWIETEGO-KRZYZA",
+          "name": "Kaplica Świętego Krzyża",
+          "locality": "Kielce",
+          "country_code": "PL",
+          "address": "ul. Wesoła 47/49, Kielce, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kaplica-zielona-gora",
+      "source_url": "https://map.fsspx.org/fr/places/kaplica-zielona-gora",
+      "source_label": "Kaplica Zielona GóraMission · Zielona GóraDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Zielona Góra",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-PL-ZIELONA-GORA-KAPLICA-SWIETYCH-PIECIU-BRACI-MECZENNIKOW",
+          "name": "Kaplica Świętych Pięciu Braci Męczenników",
+          "locality": "Zielona Góra",
+          "country_code": "PL",
+          "address": "ul. Batorego 126a, Zielona Góra, Polska",
+          "source_url": "https://www.piusx.org.pl/kaplice/zestawienie"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kirche-hl-mauritius",
+      "source_url": "https://map.fsspx.org/fr/places/kirche-hl-mauritius",
+      "source_label": "Kirche Hl. MauritiusMission, Chapelle · GlisDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Glis",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-GLIS-CHAPELLE-SAINT-MAURICE",
+          "name": "Chapelle Saint-Maurice",
+          "locality": "Glis",
+          "country_code": "CH",
+          "address": "Wierystrasse 60, 3902 Glis",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kirche-mariae-verkundigung",
+      "source_url": "https://map.fsspx.org/fr/places/kirche-mariae-verkundigung",
+      "source_label": "Kirche Mariae VerkündigungChapelle · Schramberg-SulgenDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Schramberg-Sulgen",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "kirche-st-joseph",
+      "source_url": "https://map.fsspx.org/fr/places/kirche-st-joseph",
+      "source_label": "Kirche St. JosephChapelle · MemmingenDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Memmingen",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-DE-DE-MEMMINGEN-KIRCHE-ST-JOSEF",
+          "name": "Kirche St. Josef",
+          "locality": "Memmingen",
+          "country_code": "DE",
+          "address": "Teramostr. 2a, 87700 Memmingen",
+          "source_url": "https://fsspx.today/memmingen"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "le-bremien-notre-dame",
+      "source_url": "https://map.fsspx.org/fr/places/le-bremien-notre-dame",
+      "source_label": "Maison de retraite \"Le Brémien Notre-Dame\"Résidence, Maison de retraite · Illiers-l'EvêqueDimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Illiers-l'Evêque",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-LPL2-PRIEURE-LE-BREMIEN",
+          "name": "Prieuré Saint Bernard",
+          "locality": "Illiers l'Evêque",
+          "country_code": "FR",
+          "address": "2, rue de l'Orée du Bois, 27770, Illiers l'Evêque",
+          "source_url": "https://laportelatine.org/lieux/prieure-le-bremien"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "magyarok-nagyasszonya-kapolna",
+      "source_url": "https://map.fsspx.org/fr/places/magyarok-nagyasszonya-kapolna",
+      "source_label": "Magyarok Nagyasszonya KápolnaChapelle · BudapestDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Budapest",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-HU-BUDAPEST-KAPELLE-UNSERER-LIEBEN-FRAU-VON-UNGARN",
+          "name": "Kapelle Unserer Lieben Frau von Ungarn",
+          "locality": "Budapest",
+          "country_code": "HU",
+          "address": "Thököly út 116 I/3, 1146 Budapest, Ungarn",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mar-del-plata",
+      "source_url": "https://map.fsspx.org/fr/places/mar-del-plata",
+      "source_label": "Mar del PlataMission · Mar del PlataDimancheEn semaine",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "Mar del Plata",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "maria-hilfe-der-christen",
+      "source_url": "https://map.fsspx.org/fr/places/maria-hilfe-der-christen",
+      "source_label": "Maria Hilfe der ChristenChapelle · GoldauDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Goldau",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-GOLDAU-CHAPELLE-MARIE-SECOURS-DES-CHRETIENS",
+          "name": "Chapelle Marie Secours des chrétiens",
+          "locality": "Goldau",
+          "country_code": "CH",
+          "address": "Hügelweg 8, 6410 Goldau",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "maria-stella-maris-church",
+      "source_url": "https://map.fsspx.org/fr/places/maria-stella-maris-church",
+      "source_label": "Maria Stella Maris ChurchChapelle · San PedroDimanche",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "San Pedro",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-US-MARIA-STELLA-MARIS-MISSION-SAN-PEDRO-3600-S-GAFFEY-STREET",
+          "name": "Maria Stella Maris Mission",
+          "locality": "San Pedro",
+          "country_code": "US",
+          "address": "3600 S. Gaffey Street, San Pedro, CA 90731-6932",
+          "source_url": "https://sspx.org/en/list-sspx-chapels"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "maritimes-missions-nb",
+      "source_url": "https://map.fsspx.org/fr/places/maritimes-missions-nb",
+      "source_label": "Maritimes Missions - NBMissionDimanche",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": null,
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "maritimes-missions-ns",
+      "source_url": "https://map.fsspx.org/fr/places/maritimes-missions-ns",
+      "source_label": "Maritimes Missions - NSMissionDimanche",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": null,
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "maungatapere-memorial-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/maungatapere-memorial-chapel",
+      "source_label": "Maungatapere Memorial ChapelMission · WhangareiDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Whangarei",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-NZ-WHANGAREI-SAINT-PETER-CHANEL-MISSION",
+          "name": "Saint Peter Chanel Mission",
+          "locality": "Whangarei",
+          "country_code": "NZ",
+          "address": "State Highway 14, Maungatapere, Whangarei",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-aguascalientes",
+      "source_url": "https://map.fsspx.org/fr/places/mision-aguascalientes",
+      "source_label": "Misión AguascalientesMission · AguascalientesDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Aguascalientes",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Calle Arandas 502, esq. Zapotlanejo, Col. La Soledad, 20126 Aguascalientes",
+        "published_schedule_note": "4º domingo 17:00 (district listing; conflicts with separate place page)"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-cancun",
+      "source_url": "https://map.fsspx.org/fr/places/mision-cancun",
+      "source_label": "Misión - CancúnMission · CancúnDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Cancún",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-de-la-fraternidad-s-pio-x",
+      "source_url": "https://map.fsspx.org/fr/places/mision-de-la-fraternidad-s-pio-x",
+      "source_label": "Misiòn de la Fraternidad S. Pio XMission · San SalvadorDimanche",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "San Salvador",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-CENTRAL_AMERICA-SV-043",
+          "name": "Misión San Pío X — public Mass site",
+          "locality": "San Salvador",
+          "country_code": "SV",
+          "address": "Calle Arce No. 910, San Salvador, El Salvador",
+          "source_url": "https://centroamerica.fsspx.org/es/mision-san-pio-x-san-salvador-30836"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-don-bosco",
+      "source_url": "https://map.fsspx.org/fr/places/mision-don-bosco",
+      "source_label": "Misión Don BoscoMission · ChilapaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Chilapa",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Calle 8 Poniente N°1507, Col. La Villa, 41100 Chilapa",
+        "published_schedule_note": "2º domingo 19:00; confirm quarterly qualifier"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-ensenada",
+      "source_url": "https://map.fsspx.org/fr/places/mision-ensenada",
+      "source_label": "Misión EnsenadaMission · EnsenadaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Ensenada",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Calle Castilla 190, esq. Valdepeña, Fracc. Chapultepec 2a Sección, 22870 Ensenada",
+        "published_schedule_note": "Sunday label published; no exact time on district index"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-jalapa",
+      "source_url": "https://map.fsspx.org/fr/places/mision-jalapa",
+      "source_label": "Misión - JalapaMission · JalapaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Jalapa",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-merida",
+      "source_url": "https://map.fsspx.org/fr/places/mision-merida",
+      "source_label": "Misión - MeridaMission · MéridaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Mérida",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-monterrey",
+      "source_url": "https://map.fsspx.org/fr/places/mision-monterrey",
+      "source_label": "Misión - MonterreyChapelle · Santa CatarinaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Santa Catarina",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-MX-MX-SANTA-CATARINA-CAPILLA-CORAZON-INMACULADO-DE-MARIA",
+          "name": "Capilla Corazón Inmaculado de María",
+          "locality": "Santa Catarina",
+          "country_code": "MX",
+          "address": "Avenida Manuel Ordóñez 913, Fracc Zimix, 66358 Santa Catarina, NL, México",
+          "source_url": "https://fsspx.mx/es/capillas-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-morelia",
+      "source_url": "https://map.fsspx.org/fr/places/mision-morelia",
+      "source_label": "Misión - MoreliaMission · MoreliaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Morelia",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Valerio de la Cruz 1067, Ilustres Novohispanos, 58226 Morelia",
+        "published_schedule_note": "4º domingo; hour not supplied"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-oaxaca",
+      "source_url": "https://map.fsspx.org/fr/places/mision-oaxaca",
+      "source_label": "Misión - OaxacaMission · OaxacaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Oaxaca",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-puebla",
+      "source_url": "https://map.fsspx.org/fr/places/mision-puebla",
+      "source_label": "Misión PueblaChapelle, Mission · CholulaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Cholula",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-MX-MX-CHOLULA-IGLESIA-NUESTRA-SENORA-DE-LOS-ANGELE",
+          "name": "Iglesia Nuestra Señora de los Ángeles",
+          "locality": "Cholula",
+          "country_code": "MX",
+          "address": "Calle Lago de Texcoco 814, Col. Manantiales, 72757 Cholula, Puebla, México",
+          "source_url": "https://fsspx.mx/es/capillas-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-queretaro",
+      "source_url": "https://map.fsspx.org/fr/places/mision-queretaro",
+      "source_label": "Misión QuerétaroChapelle · CorregidoraDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Corregidora",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Calle San Juan 28, Colonia Los Angeles, 76920 Corregidora",
+        "published_schedule_note": "1º y 3º domingo 08:30 y 11:30"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-s-ignacio",
+      "source_url": "https://map.fsspx.org/fr/places/mision-s-ignacio",
+      "source_label": "Misión - S. IgnacioMission · San Ignacio Cerro GordoDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "San Ignacio Cerro Gordo",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Aceves Pozos N°51, San Ignacio Cerro Gordo, Jalisco",
+        "published_schedule_note": "Un domingo al mes 18:00"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-sagrada-familia",
+      "source_url": "https://map.fsspx.org/fr/places/mision-sagrada-familia",
+      "source_label": "Misión Sagrada FamiliaChapelle · CuernavacaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Cuernavaca",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Sandoval S/N (frente a 4), Col. Lomas de Cortés, 62583 Cuernavaca",
+        "published_schedule_note": "3º domingo 10:00"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-saltillo",
+      "source_url": "https://map.fsspx.org/fr/places/mision-saltillo",
+      "source_label": "Misión - SaltilloChapelle · SaltilloDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Saltillo",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-MX-MX-SALTILLO-CAPILLA-SAGRADO-CORAZON",
+          "name": "Capilla Sagrado Corazón",
+          "locality": "Saltillo",
+          "country_code": "MX",
+          "address": "Bravo Norte 564, Zona Centro, 25000 Saltillo, Coahuila, México",
+          "source_url": "https://fsspx.mx/es/capillas-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-san-luis-rey",
+      "source_url": "https://map.fsspx.org/fr/places/mision-san-luis-rey",
+      "source_label": "Misión San Luis ReyMission, Chapelle · San Luis PotosíDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "San Luis Potosí",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Calle Independencia N°2918, Col. Himmo Nacional, 78280 San Luis Potosí",
+        "published_schedule_note": "1º y 3º domingo 10:00"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-san-pio-x",
+      "source_url": "https://map.fsspx.org/fr/places/mision-san-pio-x",
+      "source_label": "Misión San Pío XMission · QuetzaltenangoDimanche",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Quetzaltenango",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-santa-maria-goretti",
+      "source_url": "https://map.fsspx.org/fr/places/mision-santa-maria-goretti",
+      "source_label": "Misión Santa María GorettiMission · IrapuatoDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Irapuato",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-MX-MX-IRAPUATO-MISION-FSSPX",
+          "name": "Misión FSSPX",
+          "locality": "Irapuato",
+          "country_code": "MX",
+          "address": "Avenida de las Lomas 728, Col. Españita, 36613 Irapuato, Guanajuato, México",
+          "source_url": "https://fsspx.mx/es/capillas-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-tlaxiaco",
+      "source_url": "https://map.fsspx.org/fr/places/mision-tlaxiaco",
+      "source_label": "Misión - TlaxiacoChapelle · TlaxiacoDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Tlaxiaco",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-MX-MX-TLAXIACO-IGLESIA-SAN-NICOLAS-DE-TOLENTINO",
+          "name": "Iglesia San Nicolás de Tolentino",
+          "locality": "Tlaxiaco",
+          "country_code": "MX",
+          "address": "Niños Héroes de Chapultepec esquina Leona Vicario, 69800 Tlaxiaco, Oaxaca, México",
+          "source_url": "https://fsspx.mx/es/capillas-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-toluca",
+      "source_url": "https://map.fsspx.org/fr/places/mision-toluca",
+      "source_label": "Misión - TolucaMission, Chapelle · TolucaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Toluca",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Calle Filiberto Navas, esq. Fdo. Montes de Oca, Del. San Mateo Oxtotitlán, 50100 Toluca",
+        "published_schedule_note": "2º domingo de cada mes"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-tuxtla",
+      "source_url": "https://map.fsspx.org/fr/places/mision-tuxtla",
+      "source_label": "Misión TuxtlaChapelle, Mission · Tuxtla GutiérrezDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Tuxtla Gutiérrez",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-MX-MX-TUXTLA-GUTIERREZ-CAPILLA-SAN-JOSE",
+          "name": "Capilla San José",
+          "locality": "Tuxtla Gutiérrez",
+          "country_code": "MX",
+          "address": "3a Norte Poniente 1350, Local 6, 29020 Tuxtla Gutiérrez, Chiapas, México",
+          "source_url": "https://fsspx.mx/es/capillas-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-veracruz",
+      "source_url": "https://map.fsspx.org/fr/places/mision-veracruz",
+      "source_label": "Misión - VeracruzMission · VeracruzDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Veracruz",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mision-zacatecas",
+      "source_url": "https://map.fsspx.org/fr/places/mision-zacatecas",
+      "source_label": "Misión - ZacatecasMission · ZacatecasDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "Zacatecas",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": "Galeana No. 20, frente a la Plaza Fray Margil de Jesús, Guadalupe, 98600 Zacatecas",
+        "published_schedule_note": "4º domingo 09:00"
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mission-of-st-peter-mary-chanel",
+      "source_url": "https://map.fsspx.org/fr/places/mission-of-st-peter-mary-chanel",
+      "source_label": "Mission of St Peter Mary ChanelMission · DarwinDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Darwin",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mission-osijek",
+      "source_url": "https://map.fsspx.org/fr/places/mission-osijek",
+      "source_label": "Mission OsijekChapelle · OsijekDimanche",
+      "official_districts": [
+        "austria"
+      ],
+      "extracted_locality": "Osijek",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-AT-HR-OSIJEK-SUNDAY-MASS-MISSION",
+          "name": "Sunday Mass mission",
+          "locality": "Osijek",
+          "country_code": "HR",
+          "address": "Ulica Josipa Jurja Strossmayera 1a, 31000 Osijek, Kroatien",
+          "source_url": "https://fsspx.at/de/priorate-und-messzentren-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "mutter-v-d-immerwahrenden-hilfe",
+      "source_url": "https://map.fsspx.org/fr/places/mutter-v-d-immerwahrenden-hilfe",
+      "source_label": "Mutter v. d. Immerwährenden HilfeChapelle · FuldaDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Fulda",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-DE-DE-FULDA-MUTTER-VON-DER-IMMERWAHRENDEN-HILFE",
+          "name": "Mutter von der Immerwährenden Hilfe",
+          "locality": "Fulda",
+          "country_code": "DE",
+          "address": "Horaser Weg 99, 36039 Fulda",
+          "source_url": "https://fsspx.today/fulda"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "nakavu-village",
+      "source_url": "https://map.fsspx.org/fr/places/nakavu-village",
+      "source_label": "Nakavu VillageMission · Nakavu VillageDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Nakavu Village",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "notre-dame-de-lepante",
+      "source_url": "https://map.fsspx.org/fr/places/notre-dame-de-lepante",
+      "source_label": "Notre Dame de LépanteChapelle · MontreuxDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Montreux",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-MONTREUX-EGLISE-NOTRE-DAME-DE-LEPANTE",
+          "name": "Église Notre-Dame de Lépante",
+          "locality": "Montreux",
+          "country_code": "CH",
+          "address": "Rue de la Gare 24, 1820 Montreux",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "ntra-sra-de-alta-gracia",
+      "source_url": "https://map.fsspx.org/fr/places/ntra-sra-de-alta-gracia",
+      "source_label": "Ntra. Sra. de Alta GraciaMission · Los MosquitosDimanche",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Los Mosquitos",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "olbia",
+      "source_url": "https://map.fsspx.org/fr/places/olbia",
+      "source_label": "OlbiaMission · OlbiaDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Olbia",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-IT-IT-OLBIA-SSPX-MASS-CENTRE",
+          "name": "SSPX Mass centre",
+          "locality": "Olbia",
+          "country_code": "IT",
+          "address": "Via Ernestina Paper 7, 07026 Olbia SS, Italia",
+          "source_url": "https://fsspx.it/it/cappelle-e-oratori"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "oratoire-st-joseph",
+      "source_url": "https://map.fsspx.org/fr/places/oratoire-st-joseph",
+      "source_label": "GuyaneMission, Chapelle · Cayenne - Kourou - Saint-LourentDimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Cayenne - Kourou - Saint-Lourent",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "oratorio-san-jose",
+      "source_url": "https://map.fsspx.org/fr/places/oratorio-san-jose",
+      "source_label": "Oratorio San JoséMission · La HabanaDimanche",
+      "official_districts": [
+        "mexico"
+      ],
+      "extracted_locality": "La Habana",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": {
+        "source_url": "https://fsspx.mx/es/capillas-2",
+        "evidence": "SUNDAY_MASS_TAG_OR_SCHEDULE",
+        "physical_street_address": null,
+        "published_schedule_note": null
+      },
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "oratorio-stella-maris",
+      "source_url": "https://map.fsspx.org/fr/places/oratorio-stella-maris",
+      "source_label": "Oratorio Stella MarisMission · Panama CityDimancheEn semaine",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Panama City",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "ormoc",
+      "source_url": "https://map.fsspx.org/fr/places/ormoc",
+      "source_label": "OrmocMission · OrmocDimancheEn semaine",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Ormoc",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-and-st-andrew-s-church",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-and-st-andrew-s-church",
+      "source_label": "Our Lady and St. Andrew's ChurchChapelle · HamptonDimancheEn semaine",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Hampton",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-hampton-our-lady-and-saint-andrew-s-church",
+        "crm_source_ref": "SSPX:OPE-002414",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-and-st-andrew-s-church",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-HAMPTON-OUR-LADY-AND-SAINT-ANDREW-S-CHURCH",
+          "name": "Our Lady and Saint Andrew's Church",
+          "locality": "Hampton",
+          "country_code": "AU",
+          "address": "40 Ludstone Street, Hampton VIC 3188",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-of-consolation-st-joseph-ch",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-of-consolation-st-joseph-ch",
+      "source_label": "Our Lady of Consolation & St Joseph Ch.Chapelle · Iloilo CityDimancheEn semaine",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Iloilo City",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-PH-021",
+          "name": "Our Lady of Consolation & Saint Joseph Church",
+          "locality": "Iloilo City",
+          "country_code": "PH",
+          "address": "Bypass Road, Jaro, Iloilo City 5000, Philippines",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-of-fatima-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-of-fatima-chapel",
+      "source_label": "Our Lady of Fatima ChapelChapelle · RichmondDimancheEn semaine",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Richmond",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-of-knock-and-st-patrick-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-of-knock-and-st-patrick-chapel",
+      "source_label": "Our Lady of Knock and St Patrick ChapelChapelle · NewryDimanche",
+      "official_districts": [
+        "great-britain-ireland"
+      ],
+      "extracted_locality": "Newry",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-newry-our-lady-of-knock-and-saint-patrick-chapel",
+        "crm_source_ref": "SSPX:OPE-002214",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-of-knock-and-st-patrick-chapel",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-GB-GB-NEWRY-OUR-LADY-OF-KNOCK-AND-SAINT-PATRICK-CHAPEL",
+          "name": "Our Lady of Knock and Saint Patrick Chapel",
+          "locality": "Newry",
+          "country_code": "GB",
+          "address": "Unit 5, Richbrook Business Park, Mill Road, Bessbrook, Newry",
+          "source_url": "https://fsspx.uk/en/chapels-directory"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-of-lourdes-mission",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-of-lourdes-mission",
+      "source_label": "Our Lady of Lourdes MissionMission · Honolulu (Waikiki)Dimanche",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Honolulu (Waikiki)",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-of-rosa-mystica-and-st-joseph-church",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-of-rosa-mystica-and-st-joseph-church",
+      "source_label": "Our Lady of Rosa Mystica and St. Joseph ChurchChapelle · General Santos CityDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "General Santos City",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-027",
+        "crm_source_ref": "SSPX:OPE-002436",
+        "source_url": "https://map.fsspx.org/en/places/our-lady-of-rosa-mystica-and-st-joseph-church",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-PH-027",
+          "name": "Our Lady of Rosa Mystica and Saint Joseph Church",
+          "locality": "General Santos City",
+          "country_code": "PH",
+          "address": "Rosary Street, Andrade Subdivision, Barangay Isidro, General Santos City 9500, Philippines",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-of-the-most-holy-rosary-church",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-of-the-most-holy-rosary-church",
+      "source_label": "Our Lady of the Most Holy Rosary ChurchChapelle · WinnipegDimancheEn semaine",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": "Winnipeg",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-CA-OUR-LADY-OF-THE-ROSARY-CHURCH-WINNIPEG-478-MCKENZIE-STREET",
+          "name": "Our Lady of the Rosary Church",
+          "locality": "Winnipeg",
+          "country_code": "CA",
+          "address": "478 McKenzie Street, Winnipeg MB R2W 5B9",
+          "source_url": "https://fsspx.ca/en/list-sspx-chapels-4"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "our-lady-of-victory-church-las-vegas",
+      "source_url": "https://map.fsspx.org/fr/places/our-lady-of-victory-church-las-vegas",
+      "source_label": "Our Lady of Victory ChurchChapelle · Las VegasDimanche",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Las Vegas",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "palermo",
+      "source_url": "https://map.fsspx.org/fr/places/palermo",
+      "source_label": "PalermoMission · PalermoDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Palermo",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "pavia-voghera",
+      "source_url": "https://map.fsspx.org/fr/places/pavia-voghera",
+      "source_label": "Pavia-VogheraMission · PaviaDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Pavia",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "prieure-n-d-de-la-misericorde",
+      "source_url": "https://map.fsspx.org/fr/places/prieure-n-d-de-la-misericorde",
+      "source_label": "Chapelle de ND de l’AssomptionChapelle · Corse du Sud (Ajaccio) - AFADimancheEn semaine",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Corse du Sud (Ajaccio) - AFA",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "priorat-heilige-familie",
+      "source_url": "https://map.fsspx.org/fr/places/priorat-heilige-familie",
+      "source_label": "Priorat Heilige FamilieChapelle · Neustadt/WeinstraßeDimanche",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Neustadt/Weinstraße",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "priorato-sagrado-corazon-de-jesus",
+      "source_url": "https://map.fsspx.org/fr/places/priorato-sagrado-corazon-de-jesus",
+      "source_label": "Priorato Sagrado Corazón de JesúsPrieuré · Santo Domingo · lieux desservis 5",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Santo ",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "priorato-santa-teresita-del-nino-jesus",
+      "source_url": "https://map.fsspx.org/fr/places/priorato-santa-teresita-del-nino-jesus",
+      "source_label": "Priorato Santa Teresita del Niño JesúsChapelle · BucaramangaDimanche",
+      "official_districts": [
+        "central-america"
+      ],
+      "extracted_locality": "Bucaramanga",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-CENTRAL_AMERICA-CO-039",
+          "name": "Capilla San José",
+          "locality": "Bucaramanga",
+          "country_code": "CO",
+          "address": "Calle 20 #25-35, Barrio San Francisco, Bucaramanga, Colombia",
+          "source_url": "https://centroamerica.fsspx.org/es/capillas-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "ravanusa",
+      "source_url": "https://map.fsspx.org/fr/places/ravanusa",
+      "source_label": "RavanusaMission, Chapelle · RavanusaDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Ravanusa",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-IT-IT-RAVANUSA-SSPX-MASS-CENTRE",
+          "name": "SSPX Mass centre",
+          "locality": "Ravanusa",
+          "country_code": "IT",
+          "address": "Via Calabria 57, 92029 Ravanusa AG, Italia",
+          "source_url": "https://fsspx.it/it/cappelle-e-oratori"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "rende",
+      "source_url": "https://map.fsspx.org/fr/places/rende",
+      "source_label": "RendeMission · CosenzaDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Cosenza",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "rosenkranz-kapelle",
+      "source_url": "https://map.fsspx.org/fr/places/rosenkranz-kapelle",
+      "source_label": "Rosenkranz-KapelleChapelle · Passau-InnstadtDimanche",
+      "official_districts": [
+        "zaitzkofen"
+      ],
+      "extracted_locality": "Passau-Innstadt",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "rotuma",
+      "source_url": "https://map.fsspx.org/fr/places/rotuma",
+      "source_label": "RotumaMission · JujuDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Juju",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "sacred-heart-of-jesus-and-mary-mission",
+      "source_url": "https://map.fsspx.org/fr/places/sacred-heart-of-jesus-and-mary-mission",
+      "source_label": "Sacred Heart of Jesus and Mary MissionChapelle · SingletonDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Singleton",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-SINGLETON-SACRED-HEART-OF-JESUS-AND-MARY-CHURCH",
+          "name": "Sacred Heart of Jesus and Mary Church",
+          "locality": "Singleton",
+          "country_code": "AU",
+          "address": "37 Elizabeth Street, Singleton NSW 2330",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-anthony-of-padua-mission",
+      "source_url": "https://map.fsspx.org/fr/places/saint-anthony-of-padua-mission",
+      "source_label": "Saint Anthony of Padua MissionChapelle · North CaldwellDimancheEn semaine",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "North Caldwell",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-US-SAINT-ANTHONY-OF-PADUA-CHAPEL-NORTH-CALDWELL-103-GOULD-AVENUE",
+          "name": "Saint Anthony of Padua Chapel",
+          "locality": "North Caldwell",
+          "country_code": "US",
+          "address": "103 Gould Avenue, North Caldwell, NJ 07006-4211",
+          "source_url": "https://sspx.org/en/list-sspx-chapels"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-catherine-of-siena-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/saint-catherine-of-siena-chapel",
+      "source_label": "Saint Catherine of Siena ChapelMission · WestonDimancheEn semaine",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Weston",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-US-SAINT-CATHERINE-OF-SIENNA-MISSION-WESTON-439-BOSTON-POST-RD",
+          "name": "Saint Catherine of Sienna Mission",
+          "locality": "Weston",
+          "country_code": "US",
+          "address": "439 Boston Post Rd, Weston, MA 02493-1552",
+          "source_url": "https://sspx.org/en/list-sspx-chapels"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-francis-xavier-priory",
+      "source_url": "https://map.fsspx.org/fr/places/saint-francis-xavier-priory",
+      "source_label": "Saint Francis Xavier PrioryChapelle · NegomboDimancheEn semaine",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Negombo",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-LK-003",
+          "name": "Our Lady of Guadalupe Church",
+          "locality": "Negombo",
+          "country_code": "LK",
+          "address": "525 Colombo Main Road, Kurana, Negombo, Sri Lanka",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-james-catholic-church",
+      "source_url": "https://map.fsspx.org/fr/places/saint-james-catholic-church",
+      "source_label": "Saint James Catholic ChurchChapelle · PittsburghDimancheEn semaine",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Pittsburgh",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-US-SAINT-JAMES-CHURCH-PITTSBURGH-326-S-MAIN-ST",
+          "name": "Saint James Church",
+          "locality": "Pittsburgh",
+          "country_code": "US",
+          "address": "326 S. Main St., Pittsburgh, PA 15220-5512",
+          "source_url": "https://sspx.org/en/list-sspx-chapels"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-joseph-s-catholic-church",
+      "source_url": "https://map.fsspx.org/fr/places/saint-joseph-s-catholic-church",
+      "source_label": "Saint Joseph's Catholic ChurchChapelle · GreenwoodDimanche",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Greenwood",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-pius-v-chapel-onithsha",
+      "source_url": "https://map.fsspx.org/fr/places/saint-pius-v-chapel-onithsha",
+      "source_label": "Saint Pius V ChapelMission · OnithshaDimanche",
+      "official_districts": [
+        "africa"
+      ],
+      "extracted_locality": "Onithsha",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-therese-patron-of-alaska-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/saint-therese-patron-of-alaska-chapel",
+      "source_label": "Saint Therese, Patron of Alaska ChapelChapelle · AnchorageDimanche",
+      "official_districts": [
+        "usa"
+      ],
+      "extracted_locality": "Anchorage",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "saint-willibrordkerk",
+      "source_url": "https://map.fsspx.org/fr/places/saint-willibrordkerk",
+      "source_label": "Saint WillibrordkerkChapelle · UtrechtDimanche",
+      "official_districts": [
+        "benelux"
+      ],
+      "extracted_locality": "Utrecht",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BEN-NL-UTRECHT-SINT-WILLIBRORDKERK",
+          "name": "Sint Willibrordkerk",
+          "locality": "Utrecht",
+          "country_code": "NL",
+          "address": "Minrebroederstraat 21, 3512 GS Utrecht, Nederland",
+          "source_url": "https://fsspx.nl/nl/kerken-kapellen-benelux"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "sainte-marie-de-re",
+      "source_url": "https://map.fsspx.org/fr/places/sainte-marie-de-re",
+      "source_label": "Chapelle de l'Île de RéChapelle · Ile de RéDimanche",
+      "official_districts": [
+        "france"
+      ],
+      "extracted_locality": "Ile de Ré",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "san-luis",
+      "source_url": "https://map.fsspx.org/fr/places/san-luis",
+      "source_label": "San LuisMission · San LuisDimanche",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "San Luis",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "sanfre",
+      "source_url": "https://map.fsspx.org/fr/places/sanfre",
+      "source_label": "SanfrèMission · SanfrèDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Sanfrè",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "seniorenheim-st-josef",
+      "source_url": "https://map.fsspx.org/fr/places/seniorenheim-st-josef",
+      "source_label": "Seniorenheim St. JosefMaison de retraite, Chapelle · WeihungszellDimancheEn semaine",
+      "official_districts": [
+        "germany"
+      ],
+      "extracted_locality": "Weihungszell",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-DE-DE-WEIHUNGSZELL-PRIORAT-SAINT-CHRISTOPHORUS-PUBLIC-CHAPEL",
+          "name": "Priorat Saint Christophorus — public chapel",
+          "locality": "Weihungszell",
+          "country_code": "DE",
+          "address": "Maienfeld 5, 88477 Weihungszell",
+          "source_url": "https://fsspx.today/weihungszell"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "spiritual-centre-of-saint-berthold",
+      "source_url": "https://map.fsspx.org/fr/places/spiritual-centre-of-saint-berthold",
+      "source_label": "Spiritual Centre of Saint BertholdChapelle · RigaDimancheEn semaine",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Riga",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-amanduskapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-amanduskapel",
+      "source_label": "St. AmanduskapelChapelle · GentDimanche",
+      "official_districts": [
+        "benelux"
+      ],
+      "extracted_locality": "Gent",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-BEN-BE-GENT-SINT-AMANDUSKAPEL",
+          "name": "Sint Amanduskapel",
+          "locality": "Gent",
+          "country_code": "BE",
+          "address": "Kortrijksesteenweg 139, 9000 Gent, België",
+          "source_url": "https://fsspx.nl/nl/kerken-kapellen-benelux"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-andrew-s-church",
+      "source_url": "https://map.fsspx.org/fr/places/st-andrew-s-church",
+      "source_label": "St Andrew's ChurchChapelle · GlasgowDimancheEn semaine",
+      "official_districts": [
+        "great-britain-ireland"
+      ],
+      "extracted_locality": "Glasgow",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-four-district-bulk-sspx-gb-gb-glasgow-saint-andrew-s-church",
+        "crm_source_ref": "SSPX:OPE-002276",
+        "source_url": "https://map.fsspx.org/en/places/st-andrew-s-church",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-GB-GB-GLASGOW-SAINT-ANDREW-S-CHURCH",
+          "name": "Saint Andrew's Church",
+          "locality": "Glasgow",
+          "country_code": "GB",
+          "address": "202 Renfrew Street, Glasgow G3 6TX",
+          "source_url": "https://fsspx.uk/en/chapels-directory"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-anne-s-catholic-church",
+      "source_url": "https://map.fsspx.org/fr/places/st-anne-s-catholic-church",
+      "source_label": "St. Anne's Catholic ChurchMission · RasmussenDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Rasmussen",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-rasmussen-saint-anne-s-catholic-church",
+        "crm_source_ref": "SSPX:OPE-002427",
+        "source_url": "https://map.fsspx.org/en/places/st-anne-s-catholic-church",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-RASMUSSEN-SAINT-ANNE-S-CATHOLIC-CHURCH",
+          "name": "Saint Anne's Catholic Church",
+          "locality": "Rasmussen",
+          "country_code": "AU",
+          "address": "180-184 Pinnacle Drive, Rasmussen QLD 4817",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-anne-s-mission",
+      "source_url": "https://map.fsspx.org/fr/places/st-anne-s-mission",
+      "source_label": "St. Anne's MissionMission · Medicine HatDimanche",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": "Medicine Hat",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-CA-SAINT-ANNE-MISSION-MEDICINE-HAT-1-DUNMORE-RD-SE",
+          "name": "Saint Anne Mission",
+          "locality": "Medicine Hat",
+          "country_code": "CA",
+          "address": "1 Dunmore Rd SE, Medicine Hat AB T1A 1Z5",
+          "source_url": "https://fsspx.ca/en/list-sspx-chapels-4"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-anthony-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-anthony-chapel",
+      "source_label": "St. Anthony ChapelMission · ManbusaoDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Manbusao",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-anthony-s-chapel-singamparai",
+      "source_url": "https://map.fsspx.org/fr/places/st-anthony-s-chapel-singamparai",
+      "source_label": "St. Anthony's ChapelChapelle · Tirunelveli Dist.Dimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Tirunelveli Dist.",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-anthony-s-shrine",
+      "source_url": "https://map.fsspx.org/fr/places/st-anthony-s-shrine",
+      "source_label": "St Anthony's ShrineChapelle · ChennaiDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Chennai",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-in-033",
+        "crm_source_ref": "SSPX:OPE-001961",
+        "source_url": "https://map.fsspx.org/en/places/st-anthony-s-shrine",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-IN-033",
+          "name": "Saint Anthony's Shrine",
+          "locality": "Chennai",
+          "country_code": "IN",
+          "address": "33 Cathedral Road, Gopalapuram, Chennai 600086, Tamil Nadu, India",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-bartholomew-s-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-bartholomew-s-chapel",
+      "source_label": "Saint Bartholomew's MissionChapelle · Vasai (W), Dist- PalgharDimancheEn semaine",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Vasai (W), Dist- Palghar",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-francis-xavier-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-francis-xavier-chapel",
+      "source_label": "St. Francis Xavier ChapelChapelle · TuticorinDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Tuticorin",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-in-034",
+        "crm_source_ref": "SSPX:OPE-001970",
+        "source_url": "https://map.fsspx.org/en/places/st-francis-xavier-chapel",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-IN-034",
+          "name": "Saint Francis Xavier Chapel",
+          "locality": "Tuticorin",
+          "country_code": "IN",
+          "address": "88B Vettivelpuram, Tuticorin 628002, Tamil Nadu, India",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-joseph-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-joseph-chapel",
+      "source_label": "St. Joseph ChapelMission · BatoDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Bato",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-010",
+        "crm_source_ref": "SSPX:OPE-002446",
+        "source_url": "https://map.fsspx.org/en/places/st-joseph-chapel",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-PH-010",
+          "name": "Saint Joseph Chapel",
+          "locality": "Bato",
+          "country_code": "PH",
+          "address": "Barangay Alejos, Bato, Leyte, Philippines",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-jospeh-s-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-jospeh-s-chapel",
+      "source_label": "St Joseph's ChapelChapelle · TrichyDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Trichy",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-meinrad-kapelle",
+      "source_url": "https://map.fsspx.org/fr/places/st-meinrad-kapelle",
+      "source_label": "St. Meinrad KapelleChapelle · GommiswaldDimancheEn semaine",
+      "official_districts": [
+        "switzerland"
+      ],
+      "extracted_locality": "Gommiswald",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-CH-CH-GOMMISWALD-CHAPELLE-SAINT-MEINRAD",
+          "name": "Chapelle Saint Meinrad",
+          "locality": "Gommiswald",
+          "country_code": "CH",
+          "address": "Hof 15, 8737 Gommiswald",
+          "source_url": "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-michael-s-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-michael-s-chapel",
+      "source_label": "St. Michael's ChapelMission · Koronadal CityDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Koronadal City",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-028",
+        "crm_source_ref": "SSPX:OPE-002445",
+        "source_url": "https://map.fsspx.org/en/places/st-michael-s-chapel",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-PH-028",
+          "name": "Saint Michael's Chapel",
+          "locality": "Koronadal City",
+          "country_code": "PH",
+          "address": "Upper Paredez, Marbel, Koronadal City, South Cotabato, Philippines",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-michael-s-chapel-laucala-beach-estate",
+      "source_url": "https://map.fsspx.org/fr/places/st-michael-s-chapel-laucala-beach-estate",
+      "source_label": "St Michael's ChapelMission · Laucala Beach EstateDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Laucala Beach Estate",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-fj-laucala-beach-estate-saint-michael-s-chapel",
+        "crm_source_ref": "SSPX:OPE-002460",
+        "source_url": "https://map.fsspx.org/en/places/st-michael-s-chapel-laucala-beach-estate",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-FJ-LAUCALA-BEACH-ESTATE-SAINT-MICHAEL-S-CHAPEL",
+          "name": "Saint Michael's Chapel",
+          "locality": "Laucala Beach Estate",
+          "country_code": "FJ",
+          "address": "15 Moli Place, Laucala Beach Estate, Fiji",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-michael-s-church",
+      "source_url": "https://map.fsspx.org/fr/places/st-michael-s-church",
+      "source_label": "St. Michael's ChurchChapelle · WayvilleDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Wayville",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-wayville-saint-michael-s-church",
+        "crm_source_ref": "SSPX:OPE-001916",
+        "source_url": "https://map.fsspx.org/en/places/st-michael-s-church",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-WAYVILLE-SAINT-MICHAEL-S-CHURCH",
+          "name": "Saint Michael's Church",
+          "locality": "Wayville",
+          "country_code": "AU",
+          "address": "19 Rose Terrace, Wayville SA 5034",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-paul-s-mission",
+      "source_url": "https://map.fsspx.org/fr/places/st-paul-s-mission",
+      "source_label": "St. Paul's MissionMission · FolweniDimanche",
+      "official_districts": [
+        "africa"
+      ],
+      "extracted_locality": "Folweni",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-district-seed-sspx-af-za-folweni",
+        "crm_source_ref": "SSPX:OPE-002085",
+        "source_url": "https://map.fsspx.org/en/places/st-paul-s-mission",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-AF-ZA-FOLWENI",
+          "name": "Saint Paul's Mission",
+          "locality": "Folweni",
+          "country_code": "ZA",
+          "address": "Street 510057, A Section, Folweni 4136, South Africa",
+          "source_url": "https://fsspx.africa/en/list-sspx-chapels-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-philomena-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-philomena-chapel",
+      "source_label": "St. Philomena ChapelChapelle · Port ElizabethDimanche",
+      "official_districts": [
+        "africa"
+      ],
+      "extracted_locality": "Port Elizabeth",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-district-seed-sspx-af-za-portelizabeth",
+        "crm_source_ref": "SSPX:OPE-002082",
+        "source_url": "https://map.fsspx.org/en/places/st-philomena-chapel",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-AF-ZA-PORTELIZABETH",
+          "name": "Saint Philomena Chapel",
+          "locality": "Port Elizabeth",
+          "country_code": "ZA",
+          "address": "7 Neville Street, Western Hills, Port Elizabeth 6025, South Africa",
+          "source_url": "https://fsspx.africa/en/list-sspx-chapels-2"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-philomena-chapel-tanay",
+      "source_url": "https://map.fsspx.org/fr/places/st-philomena-chapel-tanay",
+      "source_label": "St. Philomena ChapelMission · TanayDimanche",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Tanay",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-015",
+        "crm_source_ref": "SSPX:OPE-002440",
+        "source_url": "https://map.fsspx.org/en/places/st-philomena-chapel-tanay",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-PH-015",
+          "name": "Saint Philomena Chapel",
+          "locality": "Tanay",
+          "country_code": "PH",
+          "address": "Sampaloc Barangay, Tanay, Rizal, Philippines",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-philomena-mission",
+      "source_url": "https://map.fsspx.org/fr/places/st-philomena-mission",
+      "source_label": "St. Philomena MissionMission · Greater SudburyDimanche",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": "Greater Sudbury",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-na-districts-20261008-sspx-na-ca-saint-philomena-mission-greater-sudbury-1233-paris-st",
+        "crm_source_ref": "SSPX:OPE-001997",
+        "source_url": "https://map.fsspx.org/en/places/st-philomena-mission",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-CA-SAINT-PHILOMENA-MISSION-GREATER-SUDBURY-1233-PARIS-ST",
+          "name": "Saint Philomena Mission",
+          "locality": "Greater Sudbury",
+          "country_code": "CA",
+          "address": "1233 Paris St, Greater Sudbury ON P3E 3B6",
+          "source_url": "https://fsspx.ca/en/list-sspx-chapels-4"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-pius-v-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-pius-v-chapel",
+      "source_label": "St Pius V ChapelMission · Mandaue CityDimancheEn semaine",
+      "official_districts": [
+        "asia"
+      ],
+      "extracted_locality": "Mandaue City",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-asia-central-americas-20261008-sspx-oct26-acas-asia-ph-019",
+        "crm_source_ref": "SSPX:OPE-002441",
+        "source_url": "https://map.fsspx.org/en/places/st-pius-v-chapel",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-OCT26-ACAS-ASIA-PH-019",
+          "name": "Saint Pius V Chapel",
+          "locality": "Mandaue City",
+          "country_code": "PH",
+          "address": "San Jose Village, Opao, Mandaue City, Cebu, Philippines",
+          "source_url": "https://fsspx.asia/en/list-sspx-chapels-1"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-therese-s-chapel",
+      "source_url": "https://map.fsspx.org/fr/places/st-therese-s-chapel",
+      "source_label": "St Therese's ChapelMission · Streaky BayDimanche",
+      "official_districts": [
+        "australia"
+      ],
+      "extracted_locality": "Streaky Bay",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": {
+        "venue_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-streaky-bay-saint-therese-s-chapel",
+        "crm_source_ref": "SSPX:OPE-002434",
+        "source_url": "https://map.fsspx.org/en/places/st-therese-s-chapel",
+        "linked_on": "OFFICIAL_NAME_AND_CITY"
+      },
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-ANZ-AU-STREAKY-BAY-SAINT-THERESE-S-CHAPEL",
+          "name": "Saint Thérèse's Chapel",
+          "locality": "Streaky Bay",
+          "country_code": "AU",
+          "address": "8 Wells Street, Streaky Bay SA 5680",
+          "source_url": "https://sspx.au/en/list-sspx-chapels-0"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "EXISTING_OFFICIAL_SOURCE_LINK",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "st-thomas-more-church",
+      "source_url": "https://map.fsspx.org/fr/places/st-thomas-more-church",
+      "source_label": "St. Thomas More ChurchChapelle · BrinstonDimanche",
+      "official_districts": [
+        "canada"
+      ],
+      "extracted_locality": "Brinston",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-NA-CA-ST-THOMAS-MORE-CATHOLIC-CHURCH-BRINSTON-11052-GILMOUR-ROAD",
+          "name": "St. Thomas More Catholic Church",
+          "locality": "Brinston",
+          "country_code": "CA",
+          "address": "11052 Gilmour Road, Brinston ON K0E 1C0",
+          "source_url": "https://fsspx.ca/en/list-sspx-chapels-4"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "sv-juozapo-koplycia",
+      "source_url": "https://map.fsspx.org/fr/places/sv-juozapo-koplycia",
+      "source_label": "Šv. Juozapo koplyčiaChapelle · ŠiauliaiDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Šiauliai",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "svc-mergeles-marijos-rozancines-koplycia",
+      "source_url": "https://map.fsspx.org/fr/places/svc-mergeles-marijos-rozancines-koplycia",
+      "source_label": "Švč. Mergelės Marijos Rožančinės koplyčiaChapelle · VilniusDimanche",
+      "official_districts": [
+        "poland"
+      ],
+      "extracted_locality": "Vilnius",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "temuco",
+      "source_url": "https://map.fsspx.org/fr/places/temuco",
+      "source_label": "TemucoMission · TemucoDimancheEn semaine",
+      "official_districts": [
+        "south-america"
+      ],
+      "extracted_locality": "Temuco",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "the-little-house",
+      "source_url": "https://map.fsspx.org/fr/places/the-little-house",
+      "source_label": "The Little HouseMission · BingleyDimanche",
+      "official_districts": [
+        "great-britain-ireland"
+      ],
+      "extracted_locality": "Bingley",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [
+        {
+          "registry_id": "SSPX-GB-GB-BINGLEY-THE-LITTLE-HOUSE-MASS-CHAPEL",
+          "name": "The Little House — Mass chapel",
+          "locality": "Bingley",
+          "country_code": "GB",
+          "address": "Market Street, Bingley BD16 2HP",
+          "source_url": "https://fsspx.uk/en/chapels-directory"
+        }
+      ],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "SAME_LOCALITY_NEEDS_PHYSICAL_DEDUP",
+      "publication_eligible": false
+    },
+    {
+      "source_place_id": "verona",
+      "source_url": "https://map.fsspx.org/fr/places/verona",
+      "source_label": "VeronaMission, Chapelle · VeronaDimanche",
+      "official_districts": [
+        "italy"
+      ],
+      "extracted_locality": "Verona",
+      "sunday_badge_from_server_html": true,
+      "prior_official_geo_link": null,
+      "locality_only_registry_candidates": [],
+      "mx_official_district_sunday_evidence": null,
+      "triage": "NO_LOCALITY_MATCH_NEEDS_SOURCE_DETAIL",
+      "publication_eligible": false
+    }
+  ]
+}
