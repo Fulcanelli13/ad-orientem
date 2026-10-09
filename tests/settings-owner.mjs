@@ -65,6 +65,12 @@ assert.match(about,/How source labels work/,"About lost collapsed source-methodo
 assert.match(about,/Official \/ governing source/,"About lost provenance vocabulary");
 assert.doesNotMatch(about,/>PROVENANCE</,"Provenance taxonomy returned as a standalone Settings section");
 assert.match(about,/43\.59\.99/);
+assert.equal((about.match(/data-settings-info\\b/g)||[]).length,7,
+  "Seven informational About rows must be static text, not dead buttons");
+assert.equal((about.match(/<button type="button" class="aoSetRow"/g)||[]).length,1,
+  "Only the actionable Privacy route should remain a button in About");
+assert.match(about,/data-settings-route="\/settings\/privacy-data"/,
+  "About must link to the real privacy controls");
 
 const stateSource=readFileSync("src/settings/donor-state.js","utf8");
 for(const key of ["ao2:preferences:v1","ao2:local-profiles:v1","defaultExperience","preparationDepth","thanksgivingDepth","postureGuidance","secondConfiteorParticipation"]){
