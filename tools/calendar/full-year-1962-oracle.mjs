@@ -26,8 +26,8 @@ function compare(actual,reference){
  if(!actual)return {status:'app_missing'};
  const conflicts=[],warnings=[];
  if(reference.rank&&actual.rank!=null&&reference.rank!==actual.rank)conflicts.push('class');
- if(reference.colour&&actual.colour&&normalColour(reference.colour)!==normalColour(actual.colour)){
-  if([normalColour(reference.colour),normalColour(actual.colour)].every(x=>['violet','rose'].includes(x)))warnings.push('optional_rose');
+ if(reference.colour&&actual.colour&&!String(actual.colour).split('/').map(normalColour).includes(normalColour(reference.colour))){
+  if([normalColour(reference.colour),...String(actual.colour).split('/').map(normalColour)].every(x=>['violet','rose'].includes(x)))warnings.push('optional_rose');
   else conflicts.push('colour');
  }
  const similarity=titleSimilarity(actual.title,reference.title);
