@@ -81,6 +81,16 @@ function semantic(text){
 }
 function semanticFace(el){
   if(!el||el.dataset.aoPraySemantic==='1')return;
+  // The canonical Angelus already provides a separate leader and response.
+  // TextContent flattens its two nested spans into one line, which previously
+  // destroyed the response role (and the spoken pairing) in Group mode.
+  // Keep this structured DOM as the authority rather than parsing it twice.
+  if(el.querySelector('[data-ao-angelus-voice="leader"]')&&
+     el.querySelector('[data-ao-angelus-voice="response"]')){
+    el.classList.add('aoP435930SemanticFace');
+    el.dataset.aoPraySemantic='1';
+    return;
+  }
   const text=plainWithBreaks(el);if(!text)return;
   el.innerHTML=semantic(text);el.classList.add('aoP435930SemanticFace');el.dataset.aoPraySemantic='1';
 }
