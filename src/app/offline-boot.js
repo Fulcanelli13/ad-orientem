@@ -90,8 +90,9 @@ async function initialise(){
  registered=true;
  try{
   navigator.serviceWorker.addEventListener("message",onMessage);
-  const reg=await navigator.serviceWorker.register(WORKER_URL.href,{scope:BASE.pathname,updateViaCache:"none"});
-  controller=reg.active||reg.waiting;
+  await navigator.serviceWorker.register(WORKER_URL.href,{scope:BASE.pathname,updateViaCache:"none"});
+  const reg=await navigator.serviceWorker.ready;
+  controller=reg.active;
   const s=await send("STATUS");
   ready=Boolean(s?.active);version=s?.active||null;
   await check({force:true});
