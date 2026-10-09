@@ -1,4 +1,5 @@
 import { ROSARY_MYSTERY_CONTEXT_V1 } from "./rosary-mystery-context.v1.js";
+import { ROSARY_GUIDED_BEAD_MEDITATIONS_V1 } from "./rosary-guided-bead-meditations.v1.js";
 
 /**
  * Rosary Scripture display policy — editorial safety gate, 9 October 2026.
@@ -136,6 +137,24 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
   // until all original edition/reference mappings receive editorial review.
   for(const el of root.querySelectorAll(".lab-prayer-sheet .lab-scripture-cue,.lab-prayer-sheet .lab-scripture-actions")){
     el.remove();
+  }
+  // Original editorial contemplations, never represented as Bible quotations.
+  // Canonical Rosary player still owns bead count, prayer text and progression.
+  for(const old of root.querySelectorAll("[data-ao-rosary-guided-bead]"))old.remove();
+  if(guided&&info.step.cue&&Number.isInteger(info.mi)){
+    const family={joyful:"joy",sorrowful:"sor",glorious:"glo",luminous:"lum"}[String(info.set||"")];
+    const id=family+String(info.mi+1),bead=Number(info.step.bead||0);
+    const moment=ROSARY_GUIDED_BEAD_MEDITATIONS_V1[id]?.[bead-1];
+    const prayer=root.querySelector(".lab-prayer-sheet");
+    if(prayer&&moment&&moment.bead===bead){
+      const note=root.ownerDocument.createElement("p");
+      note.className="aoRosaryGuidedBeadMeditation";
+      note.dataset.aoRosaryGuidedBead=id+".b"+bead;
+      note.dataset.aoRosaryContext="editorial-meditation";
+      note.lang=french?"fr":"en";
+      note.textContent=moment[french?"fr":"en"];
+      prayer.appendChild(note);
+    }
   }
   const contemplation=root.querySelector(".lab-contemplation");
   if(!contemplation || info.step.kind!=="mystery")return true;
