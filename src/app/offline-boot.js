@@ -90,12 +90,16 @@ async function initialise(){
  registered=true;
  try{
   navigator.serviceWorker.addEventListener("message",onMessage);
-  await navigator.serviceWorker.register(WORKER_URL.href,{scope:BASE.pathname,updateViaCache:"none"});
+  // Offline reloads must reuse the previously active worker without making
+  // a failed online re-registration a prerequisite for reading the snapshot.
+  const previous=await navigator.serviceWorker.getRegistration(BASE.href);
+  if(!previous||navigator.onLine!==false)
+    await navigator.serviceWorker.register(WORKER_URL.href,{scope:BASE.pathname,updateViaCache:"none"});
   const reg=await navigator.serviceWorker.ready;
   controller=reg.active;
   const s=await send("STATUS");
   ready=Boolean(s?.active);version=s?.active||null;
-  await check({force:true});
+  if(navigator.onLine!==false)await check({force:true});
  }catch(e){error=String(e?.message||e)}
 }
 if(eligible){
