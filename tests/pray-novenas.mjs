@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { NOVENA_CORPUS_V3 } from "../src/pray/novena-corpus.js";
 import { NOVENA_CORPUS_V4, NOVENA_CORPUS_V4_IDS, NOVENA_CORPUS_V4_VERSION, NOVENA_START_KIND } from "../src/pray/novena-corpus-v4.js";
+import { NOVENA_FRENCH_GUIDE_PARITY_V1, NOVENA_FRENCH_GUIDE_PARITY_STATUS } from "../src/pray/novena-french-guide-parity.v1.js";
 import { NOVENA_SOURCE_HOLDS, NOVENA_TARGET_IDS, NOVENA_TARGET_REGISTRY_V1 } from "../src/calendar/devotional-registry.js";
 
 const donorExpected=[
@@ -166,3 +167,36 @@ console.log("PASS complete 16-target bilingual Novenas corpus with French prayer
 assert.doesNotMatch(runtime,/Ad Orientem|devotional streak|completion score/i,"Novena reader reverted to self-referential interface narration");
 assert.match(runtime,/Choose a novena/);
 assert.match(runtime,/Choisissez une neuvaine/);
+
+
+// The V3 source prayers are immutable, but inherited English-only day headings
+// and guide labels must not leak into V4's French devotional screen.
+assert.match(NOVENA_FRENCH_GUIDE_PARITY_STATUS,/EDITORIAL_TRANSLATIONS/);
+const overlayIds=Object.keys(NOVENA_FRENCH_GUIDE_PARITY_V1);
+assert.deepEqual(overlayIds,["christmas","corpus_christi","annunciation","assumption","seven_sorrows"]);
+let translatedTitles=0,translatedGuides=0;
+for(const [id,original] of Object.entries(NOVENA_CORPUS_V3)){
+ const live=NOVENA_CORPUS_V4[id];
+ assert.ok(live,"Historical novena lost in V4: "+id);
+ for(let i=0;i<9;i++){
+  const before=original.days[i],after=live.days[i],overlay=NOVENA_FRENCH_GUIDE_PARITY_V1[id]?.[i];
+  // Only the French editorial guide fields may be corrected in this batch.
+  assert.equal(after.theme.en,before.theme.en,id+" "+i+" English heading changed");
+  assert.equal(after.guide.en,before.guide.en,id+" "+i+" English guide changed");
+  if(overlay?.theme){
+   translatedTitles++;
+   assert.equal(after.theme.fr,overlay.theme);
+   assert.notEqual(after.theme.fr,before.theme.en,"English title leaked into French: "+id+" day "+(i+1));
+  }else assert.equal(after.theme.fr,before.theme.fr,"Unintended French title edit: "+id+" day "+(i+1));
+  if(overlay?.guide){
+   translatedGuides++;
+   assert.equal(after.guide.fr,overlay.guide);
+   assert.notEqual(after.guide.fr,before.guide.en,"English guide leaked into French: "+id+" day "+(i+1));
+  }else assert.equal(after.guide.fr,before.guide.fr,"Unintended French guide edit: "+id+" day "+(i+1));
+  // None of the text-owner body/translation fields may be modified.
+  assert.equal(after.text?.en||"",before.text||"","Historical prayer changed: "+id+" day "+(i+1));
+ }
+}
+assert.equal(translatedTitles,45,"All 45 genuinely untranslated heading instances must be covered");
+assert.equal(translatedGuides,27,"All 27 untranslated Marian guide sentences must be covered");
+assert.equal(NOVENA_CORPUS_V4.sacred_heart.days[0].theme.fr,"Adoration","Identical and valid French words must not be spuriously changed");
