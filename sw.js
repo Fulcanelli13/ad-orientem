@@ -167,13 +167,14 @@ self.addEventListener("message",event=>{
 });
 self.addEventListener("fetch",event=>{
  const request=event.request;
- if(request.method!=="GET"||!scoped(request.url))return;
+ if(request.method!=="GET")return;
  const u=new URL(request.url);
+ if(u.origin!==BASE.origin||!u.pathname.startsWith(BASE.pathname))return;
  // Never intercept APIs, unrelated origins, private synthetic Scripture pack
  // CacheStorage keys or unscoped data. Asset requests may contain a query
  // (e.g. a current-day JSON fetch): let them pass through unmodified.
- if(u.search||u.pathname.includes("__ao_scripture_cache__"))return;
  const navigation=request.mode==="navigate";
+ if((u.search&&!navigation)||u.pathname.includes("__ao_scripture_cache__"))return;
  event.respondWith((async()=>{
   const id=event.resultingClientId||event.clientId;
   const version=await pinnedVersion(event);
