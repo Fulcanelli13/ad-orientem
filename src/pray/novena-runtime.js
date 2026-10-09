@@ -1,5 +1,6 @@
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
 import { novenaSourceAccess } from "./novena-source-access.v1.js";
+import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
 import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
@@ -98,13 +99,19 @@ function stageRail(n){const total=stages(n);return `<div class="aoN1StageRail" a
 function commonNote(n){if(n.commonNote)return txt(n.commonNote);return n.id==='st_joseph'?L('Moran directs three Our Fathers and three Hail Marys each day.','Moran prescrit trois Notre Père et trois Je vous salue Marie chaque jour.'):n.id==='holy_ghost'||n.id==='christmas'?L('The source directs one Our Father, one Hail Mary and one Glory Be after the daily prayer.','La source prescrit un Notre Père, un Je vous salue Marie et un Gloire au Père après la prière du jour.'):n.id==='immaculate_conception'?L('Moran directs nine Hail Marys and one Glory Be before the day prayer; they are kept here as a distinct guided stage.','Moran prescrit neuf Je vous salue Marie et un Gloire au Père avant la prière du jour ; ils sont conservés ici comme étape guidée distincte.'):L('The historical source does not prescribe an additional daily prayer sequence beyond the novena prayer itself.','La source historique ne prescrit pas de séquence quotidienne supplémentaire au-delà de la prière de neuvaine elle-même.')}
 function hammerChurchStage(n){return `${sourceWitness(n.churchPrayer,L('Historical “Prayer of the Church”','« Prière de l’Église » historique'))}${n.loretoCanonical?canonicalPrayer(n.loretoCanonical,1):''}`}
 function hammerTailStage(n){return `<div class="aoN1Info"><h3>${esc(L('Hail Mary & invocation','Je vous salue Marie et invocation'))}</h3><p>${esc(commonNote(n))}</p></div>${commonPrayers(n)}${sourceWitness(n.ejaculation,L('Historical ejaculation','Invocation historique'))}`}
+function hammerSourceDayDetails(n){
+ const witness=hammerHistoricalDayWitness(n.id,N.day);
+ if(!witness)return "";
+ const title=esc(witness.title),url=esc(witness.url);
+ return `<details class="aoN1Details" data-n1-hammer-source-day="${witness.day}" data-n1-hammer-source-novena="${esc(n.id)}"><summary>${esc(L('Original meditation & practice','Méditation et pratique historiques'))}</summary><p><b>${title}</b> · ${esc(L('Day','Jour'))} ${witness.day}</p><p class="aoN1Fine">${esc(L('The 1909 edition includes a complete meditation and practical resolution for this day. The short guide is separate editorial guidance. Open the original English source to read both historical passages.','L’édition de 1909 contient une méditation et une résolution pratique complètes pour ce jour. Le bref guide est rédactionnel. Consultez la source originale en anglais pour lire ces deux passages historiques.'))}</p><p><a href="${url}" target="_blank" rel="noopener noreferrer">${esc(L('Read the original day in Hammer (1909)','Lire le jour original chez Hammer (1909)'))} ↗</a></p></details>`;
+}
 function stageContent(n,d){
  const p=novenaPattern(n);
  if(N.stage===0)return `<div class="aoN1Info"><span class="aoN1Kicker">${esc(L('PREPARE','PRÉPARER'))}</span><h3>${esc(txt(d.theme))}</h3><p>${esc(txt(d.guide))}</p></div><div class="aoN1Calendar"><b>${esc(L('Before you begin','Avant de commencer'))}</b><br>${esc(L('Set the intention of the novena, become recollected, and make the Sign of the Cross. The intention is not stored.','Posez l’intention de la neuvaine, recueillez-vous et faites le signe de la Croix. L’intention n’est pas enregistrée.'))}</div>`;
  if(p==='HAMMER_MARIAN'){
   if(N.stage===1)return sourceWitness(n.opening,L('Preparatory prayer','Prière préparatoire'));
   if(N.stage===2)return hammerChurchStage(n);
-  if(N.stage===3)return sourceWitness(daySource(n,d),L('Proper prayer of the day','Prière propre du jour'));
+  if(N.stage===3)return sourceWitness(daySource(n,d),L('Proper prayer of the day','Prière propre du jour'))+hammerSourceDayDetails(n);
   if(N.stage===4)return hammerTailStage(n);
   if(N.stage===5)return `<div class="aoN1Info"><span class="aoN1Kicker">${esc(L('CLOSE','CONCLURE'))}</span><h3>${esc(L('Remain briefly in prayer','Demeurez brièvement en prière'))}</h3><p>${esc(L('Confide your intention to God and remain a moment in silence.','Confiez votre intention à Dieu et demeurez un instant en silence.'))}</p></div>${sourceDetails(n)}`;
  }
@@ -126,7 +133,7 @@ function stageContent(n,d){
 }
 function renderDay(n){const d=n.days[N.day-1]||n.days[0],p=novenaPattern(n);if(N.mode==='simple'){
  let body='';
- if(p==='HAMMER_MARIAN')body=`${sourceWitness(n.opening,L('Preparatory prayer','Prière préparatoire'))}${hammerChurchStage(n)}${sourceWitness(daySource(n,d),L('Proper prayer of the day','Prière propre du jour'))}${hammerTailStage(n)}`;
+ if(p==='HAMMER_MARIAN')body=`${sourceWitness(n.opening,L('Preparatory prayer','Prière préparatoire'))}${hammerChurchStage(n)}${sourceWitness(daySource(n,d),L('Proper prayer of the day','Prière propre du jour'))}${hammerSourceDayDetails(n)}${hammerTailStage(n)}`;
  else if(p==='COMMON_BEFORE_REPEAT')body=`${commonPrayers(n)}${sourceWitness(daySource(n,d),L('Historical prayer','Prière historique'))}`;
  else body=`${p==='OPENING_DAY_COMMON_CLOSE'?sourceWitness(n.opening,L('Common opening','Ouverture commune'))+commonPrayers(n):''}${sourceWitness(daySource(n,d),L('Historical prayer','Prière historique'))}${p==='OPENING_DAY_COMMON_CLOSE'?'':commonPrayers(n)}${n.sharedClosingText?sourceWitness(n.sharedClosingText,txt(n.sharedClosingLabel||{en:'Common closing prayer',fr:'Prière commune de conclusion'})):''}${n.closingCanonical?canonicalPrayer(n.closingCanonical,1):''}`;
  return `${head(`${L('Day','Jour')} ${N.day} · ${txt(d.theme)}`,txt(n.title))}<main class="aoP435930Body">${modeNav()}${body}${sourceDetails(n)}<div class="aoN1Nav"><button type="button" data-n1-day-prev ${N.day===1?'disabled':''}>← ${esc(L('Previous day','Jour précédent'))}</button><button type="button" class="primary" data-n1-day-next>${esc(N.day===9?L('Return to novena','Retour à la neuvaine'):L('Next day','Jour suivant'))} →</button></div></main>`}
