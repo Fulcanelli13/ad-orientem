@@ -67,16 +67,22 @@ try{
  await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:12000});
  const firstMystery=await page.evaluate(()=>{
    const api=globalThis.AO_ROSARY_V381,idx=api.steps().findIndex(x=>x.kind==="mystery");
-   if(idx<0)return -1;api.setStep(idx);return idx;
+   if(idx<1)return -1;
+   api.setStep(idx-1); // Place donor immediately before the mystery
+   return idx;
  });
  assert.ok(firstMystery>=0,"Joyful mystery is not reachable");
+ // Real button dispatch activates the canonical modular presentation owner.
+ // Direct API.setStep only redraws the archived donor and is not a UI journey.
+ await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").evaluate(x=>x.click());
  await page.waitForSelector("#aoPrayerBookRoot.open [data-ao-rosary-scripture-opening='joy1']",{timeout:8000});
  assert.match(await page.locator("#aoPrayerBookRoot.open .aoRosaryScriptureOpening").innerText(),/Luke 1:26-38/);
  const firstCue=await page.evaluate(()=>{
    const api=globalThis.AO_ROSARY_V381,idx=api.steps().findIndex(x=>x.cue);
-   if(idx<0)return -1;api.setStep(idx);return idx;
+   if(idx<1)return -1;api.setStep(idx-1);return idx;
  });
  assert.ok(firstCue>=0,"Rosary cue-bearing Hail Mary is not reachable");
+ await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-cue").count(),0,
    "Unreviewed bead Scripture still presented as certified English/French quotation");
  assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-actions").count(),0,
