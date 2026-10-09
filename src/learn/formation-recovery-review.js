@@ -13,7 +13,8 @@ const PACKS = Object.freeze([
   ["Traditional Mass II","traditional-mass-objections-051-065-reconciled.v1.json"],
   ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
   ["Apologetics dossiers","apologetics-canonical.v1.json"],
-  ["Church Crisis dossiers","church-crisis-canonical.v1.json"]
+  ["Church Crisis dossiers","church-crisis-canonical.v1.json"],
+  ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -42,7 +43,7 @@ export const RECOVERY_REVIEW_CHILD_KEYS = Object.freeze(["paragraphs","argument"
 const sectionsFor = (r) => {
   if(!r) return [];
   const order = RECOVERY_REVIEW_SECTION_KEYS;
-  return order.filter(k=>r[k] && (!Array.isArray(r[k]) || r[k].length)).map(k=>({label:kind(k),body:r[k]}));
+  return order.filter(k=>r[k] && (!Array.isArray(r[k]) || r[k].length)).map(k=>({key:k,label:kind(k),body:r[k]}));
 };
 const css = [
   "#ao-formation-recovery-review{position:fixed;inset:0;overflow:auto;z-index:16510;background:var(--ao-bg-canvas,#080c12);color:var(--ao-text-primary,#e9e4da);font:1rem/1.62 var(--ao-font-body,Georgia,serif)}",
@@ -70,6 +71,13 @@ const css = [
   "#ao-formation-recovery-review .rrNode{margin:12px 0 17px}",
   "#ao-formation-recovery-review .rrNode>h3{margin:12px 0 8px;font:500 .94rem var(--ao-font-display,Georgia,serif);color:var(--liturgical,#c9ad78)}",
   "#ao-formation-recovery-review .rrRole{color:var(--ao-text-muted,#a9a5a0);font:.7rem var(--ao-font-ui,system-ui);letter-spacing:.04em;margin-bottom:4px}",
+  "#ao-formation-recovery-review .rrArticle{margin:12px 0;border-top:1px solid var(--ao-rule,#3d3d40);padding:10px 0}",
+  "#ao-formation-recovery-review .rrArticle summary{cursor:pointer;min-height:44px;padding:11px 8px;font:500 1.04rem/1.4 var(--ao-font-display,Georgia,serif)}",
+  "#ao-formation-recovery-review .rrArticle summary::marker{color:var(--liturgical,#c9ad78)}",
+  "#ao-formation-recovery-review .rrArticleBody{padding:8px 10px}",
+  "#ao-formation-recovery-review .rrArticleSection{border-bottom:1px solid var(--ao-rule,#3d3d40);padding:11px 0}",
+  "#ao-formation-recovery-review .rrArticleSection h3{font:500 1.02rem var(--ao-font-display,Georgia,serif);margin:0 0 10px}",
+  "#ao-formation-recovery-review .rrInspect{min-height:44px;padding:8px 12px;border:1px solid var(--ao-rule,#3d3d40);border-radius:10px;background:var(--ao-surface-1,#101821);font:.8rem var(--ao-font-ui,system-ui)}",
   "@media(max-width:420px){#ao-formation-recovery-review main{padding:15px 12px 50px}}"
 ].join("\n");
 
@@ -119,6 +127,10 @@ export function buildRecoveryDossierCoverage(rows,packs) {
   const apo=packs.find(p=>p.label==="Apologetics dossiers")?.doc?.dossiers||[];
   const crisis=packs.find(p=>p.label==="Church Crisis dossiers")?.doc?.dossiers||[];
   if(apo.length!==60 || crisis.length!==81)throw new Error("Canonical Formation dossier inventory has changed");
+  const evidence=packs.find(p=>p.label==="Dossier evidence")?.doc;
+  const evidenceMap=new Map((evidence?.dossiers||[]).map(d=>[d.id,d]));
+  if(evidence && (evidence.dossiers?.length!==141 || evidenceMap.size!==141 || evidence.counts?.fully_certified!==0 || evidence.counts?.published_apologetics_or_crisis!==0))
+    throw new Error("Unapproved dossier source status");
   const owners=new Map([...apo,...crisis].map(d=>[d.id,[]]));
   if(owners.size!==141)throw new Error("Duplicate canonical dossier identifiers");
   const external=[];
@@ -128,8 +140,8 @@ export function buildRecoveryDossierCoverage(rows,packs) {
     else external.push(record);
   }
   const dossiers=[
-    ...apo.map(d=>({...d,corpus:"apologetics",research:owners.get(d.id)})),
-    ...crisis.map(d=>({...d,corpus:"crisis",research:owners.get(d.id)}))
+    ...apo.map(d=>({...d,corpus:"apologetics",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null})),
+    ...crisis.map(d=>({...d,corpus:"crisis",research:owners.get(d.id),evidence:evidenceMap.get(d.id)||null}))
   ];
   return Object.freeze({dossiers,external,covered:dossiers.filter(d=>d.research.length).length,
     linked:dossiers.reduce((n,d)=>n+d.research.length,0)});
@@ -178,18 +190,43 @@ export function createFormationRecoveryReview(win=globalThis) {
       '</small>'+esc(x.title)+'</button>').join("")||
       '<p class="rrMuted">'+esc(pick(win,"No matching dossiers.","Aucun dossier correspondant."))+'</p>';
   };
+  const dossierCase=(x,index)=>{
+    const all=sectionsFor(x.content);
+    const drafted=all.filter(section=>!["verification_notes","fr_executive_summary"].includes(section.key));
+    const notes=all.filter(section=>["verification_notes","fr_executive_summary"].includes(section.key));
+    const qSources=x.bank==="BAQ"?x.raw?.question_provenance_ids||[]:
+      x.content?.question_provenance_ids||x.content?.question_source_ids||[];
+    const qRegistry=x.bank==="BAQ"?new Map((state.questionSources||[]).map(y=>[y.id,y])):x.sourceRegistry;
+    const section=v=>'<section class="rrArticleSection"><h3>'+esc(v.label)+'</h3>'+renderNode(v.body,x.sourceRegistry)+'</section>';
+    return '<details class="rrArticle" data-rr-article="'+esc(x.id)+'"'+(index===0?" open":"")+'>'+
+      '<summary>'+esc(ttl(x))+'</summary><div class="rrArticleBody">'+
+      '<p class="rrMuted">'+esc(x.id)+' · '+esc(x.bank)+'</p>'+
+      (qSources.length?'<h3>'+esc(pick(win,"Question provenance","Provenance de la question"))+'</h3>'+sourceLinks(qSources,qRegistry):"")+
+      (drafted.length?drafted.map(section).join(""):'<p class="rrMuted">No substantive sourced answer in this record.</p>')+
+      (notes.length?'<details class="rrArticle"><summary>'+esc(pick(win,"Editorial verification notes","Notes de vérification éditoriale"))+'</summary>'+notes.map(section).join("")+'</details>':"")+
+      '<button type="button" class="rrInspect" data-rr-id="'+esc(x.id)+'">'+esc(pick(win,"Inspect original record","Examiner la fiche originale"))+'</button>'+
+      '</div></details>';
+  };
   const dossierDetail=()=>{
     const d=state.dossiers.find(x=>x.id===state.dossierId);
     if(!d)return listView();
-    return '<div class="rrMuted">'+esc(d.id)+' · '+esc(d.family)+'</div><h1>'+esc(d.title)+'</h1>'+
-      '<div class="rrWarning">'+esc(pick(win,"This is an unpublished editorial dossier index. Associated research is not a certified completed answer.",
-        "Index éditorial non publié. La recherche associée n’est pas une réponse complète certifiée."))+'</div>'+
-      '<h2>'+esc(pick(win,"Associated original research","Recherches originales associées"))+' ('+d.research.length+')</h2>'+
-      (d.research.length?'<div class="rrList">'+d.research.map(x=>
-        '<button type="button" data-rr-id="'+esc(x.id)+'"><small>'+esc(x.id)+' · '+esc(x.bank)+'</small>'+
-        esc(ttl(x))+'</button>').join("")+'</div>':
-        '<p class="rrMuted">'+esc(pick(win,"No direct research entry in the recovered 102 records or the 21 new unpublished controversy drafts. Other research may exist elsewhere.",
-        "Aucune entrée directe dans les 102 dossiers récupérés. D’autres recherches peuvent exister ailleurs."))+'</p>');
+    const evidence=d.evidence;
+    const leads=evidence?.legacy_thematic_and_research_bank_leads||[];
+    const refs=[...(evidence?.apostolate_reference_only||[]),...(evidence?.proposed_not_live_AQ_leads||[])];
+    const intro='<div class="rrMuted">'+esc(d.id)+' · '+esc(d.family)+'</div><h1>'+esc(d.title)+'</h1>'+
+      '<div class="rrWarning">'+esc(pick(win,
+        "Original source-linked research grouped under this dossier. Not a complete certified answer to the canonical question, and not approved for publication.",
+        "Recherches originales sourcées regroupées dans ce dossier. Elles ne constituent pas une réponse complète certifiée et ne sont pas approuvées pour publication."))+'</div>'+
+      (leads.length?'<p class="rrMuted">'+esc(pick(win,"Historical thematic leads (not recovered questions): ","Pistes historiques (non questions authentifiées) : "))+esc([...new Set(leads.map(x=>x.key))].join(", "))+'</p>':"")+
+      (refs.length?'<p class="rrMuted">'+esc(pick(win,"Apostolate cross-references only: ","Références croisées d’apostolat : "))+esc(refs.join(", "))+'</p>':"");
+    if(!d.research.length)return intro+'<p class="rrMuted">'+esc(pick(win,
+      "No direct indexed research record. Check other existing Formation owners and historical sources before drafting new claims.",
+      "Aucune recherche individuelle directement liée. Vérifier les autres modules et les sources historiques avant de rédiger."))+'</p>';
+    return intro+'<h2>'+esc(pick(win,"Source-linked dossier reading","Lecture des recherches sourcées"))+' ('+d.research.length+')</h2>'+
+      '<p class="rrMuted">'+esc(pick(win,
+        "Expand each case to read its documented answer, opposed positions, critical replies and traditional Catholic argument, wherever those sections actually exist. Source links accompany each original paragraph.",
+        "Déplier chaque cas pour lire les réponses, positions adverses, répliques et arguments catholiques traditionnels qui existent effectivement, avec les liens de source de chaque paragraphe."))+'</p>'+
+      d.research.map(dossierCase).join("");
   };
   const listRows=()=>{
     const q=state.query.toLowerCase().trim();
@@ -217,7 +254,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       '</div>'+
       '<div class="rrFields"><input data-rr-search type="search" value="'+esc(state.query)+
       '" placeholder="'+esc(dossierMode?pick(win,"Search dossiers and their questions","Rechercher les dossiers et questions"):
-        pick(win,"Search 102 research records","Rechercher les 102 recherches"))+'">'+
+        pick(win,"Search 123 research records","Rechercher les 123 recherches"))+'">'+
       (dossierMode?'<select data-rr-corpus aria-label="Dossier collection">'+
        [['all',pick(win,"All dossiers","Tous les dossiers")],
         ['apologetics',pick(win,"Apologetics","Apologétique")],
@@ -308,7 +345,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     el?.remove?.();state.open=false;state.view="list";state.id=null;state.dossierId=null;return true;
   }
   function status(){return Object.freeze({version:RECOVERY_REVIEW_VERSION,open:state.open,
-    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
+    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,assembledDossierReadings:state.dossiers.filter(d=>d.research.length&&d.evidence).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
   return Object.freeze({open,close,paint,status});
 }
 export function installFormationRecoveryReview(win=globalThis) {
