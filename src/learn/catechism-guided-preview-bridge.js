@@ -97,13 +97,22 @@ export async function installCatechismGuidedMode(win = globalThis) {
     panel.remove();
     return false;
   }
+  const closeGuided = () => { panel.hidden = true; button.focus?.({ preventScroll: true }); };
+  const onKeyDown = event => {
+    if (event.key === "Escape" && !panel.hidden) {
+      event.preventDefault();
+      closeGuided();
+    }
+  };
+  doc.addEventListener("keydown", onKeyDown);
   button.addEventListener("click", () => { panel.hidden = false; close.focus?.({ preventScroll: true }); });
-  close.addEventListener("click", () => { panel.hidden = true; button.focus?.({ preventScroll: true }); });
+  close.addEventListener("click", closeGuided);
   win.AO_CATECHISM_GUIDED_MODE_V1 = Object.freeze({
     openQuestion: number => view.openQuestion(number),
     status: () => ({ installed: true, preview, visible: !panel.hidden, lesson: view.currentLessonId }),
     dispose: () => {
       observer.disconnect();
+      doc.removeEventListener("keydown", onKeyDown);
       view.destroy();
       button.remove();
       panel.remove();
