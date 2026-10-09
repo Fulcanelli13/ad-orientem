@@ -513,7 +513,8 @@ assert.doesNotMatch(browserSource,/Sanctuaire Notre-Dame de Lourdes|Paray-le-Mon
 const novenaRuntimeSource=readFileSync("src/pray/novena-runtime.js","utf8");
 assert.match(novenaRuntimeSource,/opts\?\.novenaId/,"Novenas stopped accepting Explore deep-link identity");
 assert.match(novenaRuntimeSource,/data-n1-explore/,"Novena detail stopped linking back into Explore");
-assert.match(novenaRuntimeSource,/AO_FIND_APP_V1\?\.open\?\.\(\{lens:'traditions',query:/,"Novena context no longer opens prefiltered Explore");
+assert.match(novenaRuntimeSource,/AO_APP_SHELL_V1\?\.navigate\?\.\('find'\)/,"Novena context must first activate canonical Explore route");
+assert.match(novenaRuntimeSource,/result\?\.ok===true\?window\.AO_FIND_APP_V1\?\.open\?\.\(\{lens:'traditions',view:'list',query\}\)/,"Novena context deep link must be gated by successful navigation");
 assert.match(novenaRuntimeSource,/Object\.keys\(CORPUS\)\.length===16/,"Novena QA still assumes the obsolete 12-target corpus");
 
 const homeSource=readFileSync("src/home/presentation.js","utf8");
