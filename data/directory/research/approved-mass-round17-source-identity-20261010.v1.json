@@ -1,0 +1,195 @@
+{
+  "schema": "AO_DIRECTORY_ROUND17_SOURCE_IDENTITY_AUDIT_V1",
+  "audit_date": "2026-10-10",
+  "scope": "RESEARCH_ONLY_NOT_PUBLICATION",
+  "baseline": {
+    "discovery_records": 1474,
+    "carry_forward_leads": 233,
+    "with_accepted_source_urls": 119,
+    "without_accepted_source_urls": 114,
+    "inherited_legacy_match_hints": 200,
+    "legacy_hints_resolving_in_historical_corpus": 88,
+    "auto_merged": 0
+  },
+  "policy": [
+    "Never equate a legacy match hint with physical identity.",
+    "An original-source schedule does not create a canonical venue record.",
+    "Preserve seasonal, effective-date and date-specific overrides; TBD is not a time.",
+    "Same city and liturgical tradition do not imply the same church, chapel or worship space.",
+    "1962 Missal proof differs from a merely Latin-language celebration.",
+    "Keep this research ledger outside runtime publication providers until identity and coordinates are independently adjudicated."
+  ],
+  "records": [
+    {
+      "lead_number": 39,
+      "source_id": "LMD:bazylika-kolegiacka-swietej-malgorzaty-nowy-sacz-poland",
+      "country_code": "PL",
+      "place": "Bazylika św. Małgorzaty",
+      "city": "Nowy Sącz",
+      "address": "Plac Kolegiacki 1, 33-300 Nowy Sącz, Poland",
+      "source_url": "https://www.bazylika.org.pl/parafia.html",
+      "source_authority": "VENUE_OWNER",
+      "rite_evidence": "TRIDENTINE_EXPLICIT",
+      "schedule": {
+        "standing": "SUNDAY_15:30",
+        "seasonal_override": "LENT_SUNDAY_20:00"
+      },
+      "legacy_match_hint": "SSPX-OCT26-PL-NOWY-SACZ-KAPLICA-SW-KINGI",
+      "legacy_hint_disposition": "REJECT_DIFFERENT_PHYSICAL_VENUE",
+      "collision_note": "The existing SSPX chapel is Kaplica św. Kingi, ul. Zygmuntowska 15, Sunday 08:30, a different venue in the same city.",
+      "reviewed_on": "2026-10-10",
+      "production_venue_id": null,
+      "publication_state": "RESEARCH_ONLY_IDENTITY_PENDING"
+    },
+    {
+      "lead_number": 43,
+      "source_id": "LMD:kapuzinerkirche-sankt-antonius-saint-antonius-capuchin-church-bregenz-austria",
+      "country_code": "AT",
+      "place": "Kapuzinerkirche St. Antonius",
+      "city": "Bregenz",
+      "address": "Bregenz, Austria",
+      "source_url": "https://www.st-antonius.at/antonius/?page_id=191",
+      "source_authority": "VENUE_OWNER",
+      "rite_evidence": "OLD_LATIN_FORM_BOOK_NOT_EXPLICIT",
+      "schedule": {
+        "dated_occurrences": [
+          "2026-10-04T19:00",
+          "2026-10-11T19:00",
+          "2026-10-13T19:00",
+          "2026-10-18T19:00",
+          "2026-10-25T19:00"
+        ],
+        "standing": "NOT_CERTIFIED_BEYOND_DATED_CALENDAR"
+      },
+      "legacy_match_hint": "ao-fssp-vorstadtkirche-st-leopold-wienerstrasse-61-2700-wiener-neustadt-osterreich",
+      "legacy_hint_disposition": "REJECT_DIFFERENT_CITY_AND_VENUE",
+      "collision_note": "An inherited FSSP Wiener Neustadt record is not the Bregenz rectorate.",
+      "reviewed_on": "2026-10-10",
+      "production_venue_id": null,
+      "publication_state": "RESEARCH_ONLY_IDENTITY_PENDING"
+    },
+    {
+      "lead_number": 86,
+      "source_id": "LMD:deutschordenskirche-teutonic-order-church-frankfurt-germany",
+      "country_code": "DE",
+      "place": "Deutschordenskirche",
+      "city": "Frankfurt am Main",
+      "address": "Frankfurt am Main, Germany",
+      "source_url": "https://www.deutschordenskirche.de/ausserordentliche-form-des-roem-ritus/",
+      "source_authority": "VENUE_OWNER",
+      "rite_evidence": "MISSAL_1962_EXPLICIT",
+      "schedule": {
+        "standing": [
+          "SUNDAY_AND_FEAST_18:00_SUNG",
+          "THURSDAY_18:00_LOW"
+        ],
+        "collision_policy": "Do not double count a feast that falls on a Sunday"
+      },
+      "legacy_match_hint": "ao-fssp-ehemalige-deutschordenskirche-st-agidius-agidienplatz-6-d-93047-regensburg-deutschland",
+      "legacy_hint_disposition": "REJECT_DIFFERENT_CITY_AND_VENUE",
+      "collision_note": "The FSSP St Ägidius record concerns Regensburg, not Frankfurt; sharing Deutschordenskirche in the name is insufficient.",
+      "reviewed_on": "2026-10-10",
+      "production_venue_id": null,
+      "publication_state": "RESEARCH_ONLY_IDENTITY_PENDING"
+    },
+    {
+      "lead_number": 178,
+      "source_id": "LMD:kostel-svateho-jana-krtitele-hradec-kralove-8-czechia",
+      "country_code": "CZ",
+      "place": "Kostel sv. Jana Křtitele",
+      "city": "Hradec Králové – Třebeš",
+      "address": "Husova, Hradec Králové – Třebeš, Czech Republic",
+      "source_url": "https://www.unavoce.cz/kostely/hradec-kralove/hradec-kralove-sv-jan-krtitel",
+      "source_authority": "NATIONAL_TRADITIONAL_LITURGY_ASSOCIATION",
+      "rite_evidence": "MISSAL_1962_EXPLICIT",
+      "schedule": {
+        "standing": "SUNDAY_17:00",
+        "effective_from": "2026-10-18",
+        "feasts": "BY_ANNOUNCEMENT_ONLY"
+      },
+      "legacy_match_hint": "ao-fssp-kostel-svateho-jakuba-presanicke-nam-cz-33501-nepomuk-ceska-republika",
+      "legacy_hint_disposition": "REJECT_DIFFERENT_CITY_AND_PATRON",
+      "collision_note": "Nepomuk St James is neither the Hradec St John church nor the reported worship space.",
+      "reviewed_on": "2026-10-10",
+      "production_venue_id": null,
+      "publication_state": "RESEARCH_ONLY_IDENTITY_PENDING"
+    },
+    {
+      "lead_number": 180,
+      "source_id": "LMD:sint-michaelskapel-saint-michaels-chapel-as-belgium",
+      "country_code": "BE",
+      "place": "Sint-Michaëlskapel",
+      "city": "Niel-bij-As",
+      "address": "Caelenbergstraat 40, Niel-bij-As, Belgium",
+      "source_url": "https://www.michaelskapel.be/",
+      "source_authority": "VENUE_OWNER",
+      "rite_evidence": "MISSAL_1962_EXPLICIT",
+      "schedule": {
+        "standing": [
+          "FIRST_SUNDAY_17:00",
+          "SECOND_SUNDAY_10:00",
+          "THIRD_SUNDAY_11:30",
+          "FOURTH_AND_FIFTH_SUNDAY_17:00"
+        ],
+        "dated_overrides": [
+          {
+            "date": "2026-10-11",
+            "time": "11:30"
+          },
+          {
+            "date": "2026-10-18",
+            "time": null,
+            "status": "TO_BE_ANNOUNCED"
+          },
+          {
+            "date": "2026-10-25",
+            "time": "10:00"
+          }
+        ],
+        "precedence": "DATED_OVERRIDE_GT_STANDING; do not publish TBD as a time"
+      },
+      "legacy_match_hint": "SSPX-OCT26-BEN-BE-GENT-SINT-AMANDUSKAPEL",
+      "legacy_hint_disposition": "REJECT_DIFFERENT_CITY_AND_CHAPEL",
+      "collision_note": "Gent Sint-Amanduskapel is not Niel-bij-As Sint-Michaëlskapel.",
+      "reviewed_on": "2026-10-10",
+      "production_venue_id": null,
+      "publication_state": "RESEARCH_ONLY_IDENTITY_PENDING"
+    },
+    {
+      "lead_number": 183,
+      "source_id": "LMD:kaplica-matki-bozej-fatimskiej-oswiecim-poland",
+      "country_code": "PL",
+      "place": "Kaplica Matki Bożej Fatimskiej (lower church)",
+      "city": "Oświęcim",
+      "address": "Parish of St Maximilian, Plac św. Maksymiliana 2, 32-602 Oświęcim, Poland",
+      "source_url": "https://www.maksymilian.oswiecim.pl/index.php/o-parafii/nabozenstwa",
+      "source_authority": "VENUE_OWNER",
+      "rite_evidence": "TRIDENTINE_EXPLICIT",
+      "schedule": {
+        "standing": "SECOND_SUNDAY_13:15",
+        "active_months": [
+          9,
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "excluded_months": [
+          7,
+          8
+        ]
+      },
+      "legacy_match_hint": "SSPX-OCT26-PL-BYDGOSZCZ-KAPLICA-MATKI-BOZEJ-BOLESNEJ",
+      "legacy_hint_disposition": "REJECT_DIFFERENT_CITY_AND_CHAPEL",
+      "collision_note": "Bydgoszcz Our Lady of Sorrows chapel is distinct from the Fatima lower chapel at St Maximilian parish in Oświęcim.",
+      "reviewed_on": "2026-10-10",
+      "production_venue_id": null,
+      "publication_state": "RESEARCH_ONLY_IDENTITY_PENDING"
+    }
+  ]
+}
