@@ -82,7 +82,7 @@ try {
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
   const verified=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
   await verified.waitFor({state:"visible",timeout:12000});
-  assert.match(await verified.getAttribute("href"),/ecatholic2000\\.com\\/catena/,
+  assert.ok((await verified.getAttribute("href")).includes("ecatholic2000.com/catena/"),
     "Passage-specific patristic link lost provenance");
   await page.locator("#ao-scripture-overlay .aoScriptureNav select").nth(1).selectOption("cpdv-2009");
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.editionId),"cpdv-2009",
