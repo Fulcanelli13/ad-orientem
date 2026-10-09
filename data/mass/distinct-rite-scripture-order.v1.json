@@ -1,10 +1,10 @@
 {
   "version": "1962-DISTINCT-RITE-SCRIPTURE-ORDER-V1",
-  "status": "SOURCE_VERIFIED_PARTIALLY_NATIVE_CONTEXT_LINKED",
+  "status": "SOURCE_VERIFIED_NATIVE_GOOD_FRIDAY_PALM_AND_EASTER_VIGIL_LESSONS_CONTEXT_LINKED",
   "policy": {
     "owner": "Canonical Good Friday/Easter Vigil native scripture order, Palm preceding-rite Gospel and source-verified separate Mass handoffs",
     "verseModel": "Ordered segments with explicit start/end book/chapter/verse; no fake single-chapter reference for cross-chapter readings",
-    "presentation": "Native GF lessons and pre-/post-death Passion, plus Palm preceding-rite Gospel, can open the shared Scripture context only when actual native state and displayed Latin body match. GF death-pause state, Easter Vigil summaries and unresolved Holy Wednesday/Ember lessons remain held.",
+    "presentation": "Four Easter Vigil reading states use full appointed Latin scriptural passages with separate canticles and collects, source-bound to the actual EV native reader and stage, linked to shared Context Bible overlay. The liturgical Latin is not an approved cross-edition local Bible translation; French/English whole-passage display awaits collated witnesses. Good Friday/Palm guards and rite choreography unchanged.",
     "graphLink": "Source-owned GF/EV native lesson and Passion states; Palm procession source state; Easter Vigil post-Kyrie readings identified only by ordinary Mass Proper slot, never invented EV reading states"
   },
   "rites": [
@@ -103,7 +103,7 @@
             }
           ],
           "displayReference": "Genesis 1:1–31; 2:1–2",
-          "status": "CROSS_CHAPTER_REQUIRES_CONTEXT_SUPPORT"
+          "status": "NATIVE_CONTEXT_LINKED_FULL_LATIN_TEXT_WITH_SEPARATE_CANTICLE_AND_COLLECT"
         },
         {
           "order": 2,
@@ -126,7 +126,7 @@
             }
           ],
           "displayReference": "Exodus 14:24–31; 15:1",
-          "status": "CROSS_CHAPTER_REQUIRES_CONTEXT_SUPPORT"
+          "status": "NATIVE_CONTEXT_LINKED_FULL_LATIN_TEXT_WITH_SEPARATE_CANTICLE_AND_COLLECT"
         },
         {
           "order": 3,
@@ -143,7 +143,7 @@
             }
           ],
           "displayReference": "Isaiah 4:2–6",
-          "status": "NOT_YET_RUNTIME_LINKED"
+          "status": "NATIVE_CONTEXT_LINKED_FULL_LATIN_TEXT_WITH_SEPARATE_CANTICLE_AND_COLLECT"
         },
         {
           "order": 4,
@@ -160,14 +160,14 @@
             }
           ],
           "displayReference": "Deuteronomy 31:22–30",
-          "status": "NOT_YET_RUNTIME_LINKED"
+          "status": "NATIVE_CONTEXT_LINKED_FULL_LATIN_TEXT_WITH_SEPARATE_CANTICLE_AND_COLLECT"
         }
       ],
       "afterLitanyMass": {
         "phase": "MASS_AFTER_LITANY",
         "handoffNativeStateId": "EV-MASS-700",
         "status": "SOURCE_VERIFIED_POST_HANDOFF_PROPER_SLOTS_NOT_UI_LINKED",
-        "note": "Both Gospel and Epistle belong to the Mass after the second litany, not to the four preceding prophecies. EV-MASS-700 is the Kyrie handoff, not an Epistle or Gospel reading state.",
+        "note": "Both Gospel and Epistle belong to the Mass after the second litany, not to the four preceding prophecies. EV-MASS-700 is the Kyrie handoff, not an Epistle or Gospel reading state. The four native Prophecy Scripture links do not cover this separate Mass.",
         "readings": [
           {
             "role": "EPISTLE_OR_LESSON",

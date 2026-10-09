@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./easter-vigil-prophecies-source.mjs";
 import {readFileSync} from "node:fs";
 import {createEasterVigilReaderController,buildEasterVigilReader,projectEasterVigilMassModel} from "../src/mass/reader-easter-vigil.js";
 import {createMassReaderModel} from "../src/mass/reader-model.js";

@@ -400,7 +400,15 @@ function installReaderScriptureBridge(preview,prepared){
       ?? extendedLessonScriptureContext(card,prepared)
       ?? massScriptureContextForCard(card,prepared);
     box.hidden=!context;
-    if(!context)return null;
+    if(!context){
+      // A prior native reading must not leave a stale cite on a collect,
+      // canticle, death-pause state or post-litany Mass handoff.
+      button.hidden=true;
+      button.disabled=true;
+      delete button.dataset.massReadingReference;
+      status.textContent="";
+      return null;
+    }
     button.hidden=context.state!=="READY";
     button.disabled=opening||context.state!=="READY";
     if(context.state==="READY"){

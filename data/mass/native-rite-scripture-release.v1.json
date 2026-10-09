@@ -1,7 +1,7 @@
 {
-  "version": "1962-NATIVE-RITE-STATE-BOUND-SCRIPTURE-V1",
-  "status": "SOURCE_TEXT_GATED_GOOD_FRIDAY_AND_PALM_ONLY",
-  "governance": "Explicit native state + original reader paragraph ID and Latin body + rite identity; never infer from calendar date, title, rubric or adjacent state.",
+  "version": "1962-NATIVE-RITE-STATE-BOUND-SCRIPTURE-V2",
+  "status": "SOURCE_TEXT_GATED_GOOD_FRIDAY_PALM_AND_EASTER_VIGIL_FOUR_PROPHECIES",
+  "governance": "Exact graph/reader native state, source-owned paragraph ID and full displayed Latin incipit and ending; Easter Vigil stage must be VIGIL_ACTIVE. No buttons on canticles, collects, prayer posture states, or post-litany Kyrie handoff. A Bible edition may not be inferred from the Missal.",
   "controls": "Use only the existing Mass preferences Scripture Context button and shared Bible overlay. Suppress on the Good Friday death pause GF-PASS-320, and all Easter Vigil prophecy states until actual Latin lessons replace the summary donor. Do not substitute unapproved Bible editions.",
   "nativeReadings": [
     {
@@ -96,6 +96,90 @@
       ],
       "latinIncipit": "Cum appropinquasset Jesus Jerosolymis",
       "witnessUrl": "https://missale.online/proprium/en/tempore/dominica_in_palmis"
+    },
+    {
+      "rite": "EASTER_VIGIL",
+      "stateId": "EV-LESS-01-READ",
+      "paragraphId": "EV-PROP-1-T1",
+      "role": "FIRST_PROPHECY",
+      "reference": "Genesis 1:1–31; 2:1–2",
+      "segments": [
+        {
+          "book": "Genesis",
+          "chapter": 1,
+          "verseStart": 1,
+          "verseEnd": 31
+        },
+        {
+          "book": "Genesis",
+          "chapter": 2,
+          "verseStart": 1,
+          "verseEnd": 2
+        }
+      ],
+      "latinIncipit": "In principio creavit Deus caelum et terram",
+      "endText": "requievit die septimo ab universo opere quod patrarat",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light"
+    },
+    {
+      "rite": "EASTER_VIGIL",
+      "stateId": "EV-LESS-02-READ",
+      "paragraphId": "EV-PROP-2-T1",
+      "role": "SECOND_PROPHECY",
+      "reference": "Exodus 14:24–31; 15:1",
+      "segments": [
+        {
+          "book": "Exodus",
+          "chapter": 14,
+          "verseStart": 24,
+          "verseEnd": 31
+        },
+        {
+          "book": "Exodus",
+          "chapter": 15,
+          "verseStart": 1,
+          "verseEnd": 1
+        }
+      ],
+      "latinIncipit": "In diebus illis Factum est in vigilia matutina",
+      "endText": "Tunc cecinit Moyses et filii Israel carmen hoc Domino et dixerunt",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light"
+    },
+    {
+      "rite": "EASTER_VIGIL",
+      "stateId": "EV-LESS-03-READ",
+      "paragraphId": "EV-PROP-3-T1",
+      "role": "THIRD_PROPHECY",
+      "reference": "Isaiah 4:2–6",
+      "segments": [
+        {
+          "book": "Isaiah",
+          "chapter": 4,
+          "verseStart": 2,
+          "verseEnd": 6
+        }
+      ],
+      "latinIncipit": "In die illa erit germen Domini in magnificentia",
+      "endText": "et in securitatem et absconsionem a turbine et a pluvia",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light"
+    },
+    {
+      "rite": "EASTER_VIGIL",
+      "stateId": "EV-LESS-04-READ",
+      "paragraphId": "EV-PROP-4-T1",
+      "role": "FOURTH_PROPHECY",
+      "reference": "Deuteronomy 31:22–30",
+      "segments": [
+        {
+          "book": "Deuteronomy",
+          "chapter": 31,
+          "verseStart": 22,
+          "verseEnd": 30
+        }
+      ],
+      "latinIncipit": "In diebus illis Scripsit ergo Moyses canticum",
+      "endText": "Locutus est ergo Moyses audiente universo coetu Israel verba carminis huius et ad finem usque complevit",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light"
     }
   ]
 }

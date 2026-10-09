@@ -11,7 +11,7 @@ const register=load("../data/mass/native-rite-scripture-release.v1.json");
 assert.equal(register.version,NATIVE_RITE_SCRIPTURE_VERSION);
 assert.deepEqual(register.nativeReadings,NATIVE_RITE_SCRIPTURE_READINGS,
   "Native runtime citation index diverged from source-owned ledger");
-assert.equal(register.nativeReadings.length,5);
+assert.equal(register.nativeReadings.length,9);
 const nativeKeys=new Set();
 for(const entry of register.nativeReadings){
  const key=entry.rite+"|"+entry.stateId;

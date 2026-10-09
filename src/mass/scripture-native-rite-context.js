@@ -45,6 +45,20 @@ export function nativeRiteScriptureContext(preview,prepared){
   if(hit.length!==1)return null;
   return verifiedSource(state,hit[0])?entryContext(hit[0]):null;
  }
+ if(plan.kind==="COMPOSITE_DISTINCT_RITE"&&plan.rite==="EASTER_VIGIL"){
+  // EV-MASS-700 is a Kyrie handoff, never the fifth prophecy. A previously
+  // selected prophecy must not leak into the post-litany Mass projection.
+  if(preview.getCompositeStage?.()!=="VIGIL_ACTIVE")return null;
+  const state=preview.getEasterVigilState?.();
+  const stateId=state?.step?.recordId;
+  if(!/^EV-LESS-0[1-4]-READ$/.test(String(stateId)))return null;
+  if(preview.root.dataset?.r17NativeRiteRecord!==stateId)return null;
+  if(preview.getCurrentCard?.()?.id!==state.card?.id)return null;
+  const hits=NATIVE_RITE_SCRIPTURE_READINGS.filter(x=>
+    x.rite==="EASTER_VIGIL"&&x.stateId===stateId);
+  if(hits.length!==1)return null;
+  return verifiedSource(state,hits[0])?entryContext(hits[0]):null;
+ }
  if(preview.root.dataset?.r17NativeEvent==="palm"){
   const state=preview.getPalmState?.();
   const current=preview.getCurrentCard?.();
