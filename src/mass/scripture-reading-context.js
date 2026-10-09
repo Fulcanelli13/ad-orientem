@@ -1,4 +1,6 @@
 import {parseScriptureContext} from "../scripture/context.js";
+import {scriptureSegmentContext} from "../scripture/segments.js";
+import {VERIFIED_SEGMENTED_MASS_READINGS} from "./scripture-segmented-reading-index.js";
 import {VERIFIED_MASS_SCRIPTURE_READINGS} from "./scripture-reading-witness-index.js";
 import {VERIFIED_MASS_FEAST_READINGS} from "./scripture-feast-reading-index.js";
 
@@ -68,6 +70,20 @@ export function registeredMassReading(proper,slot,{sourcePath=null}={}){
  return parsed?Object.freeze({...parsed,slot,witnessUrl:witness.witnessUrl,
    provenance:"MATCHED_1962_PROPER_PATH_AND_LATIN_INCIPIT"}):null;
 }
+/** Source + actual Latin text bound; never adopt a Passion from another rite. */
+export function registeredSegmentedMassReading(proper,slot,{sourcePath=null}={}){
+ const path=String(sourcePath??proper?.sourcePath??"").trim();
+ const rows=VERIFIED_SEGMENTED_MASS_READINGS.filter(row=>row.sourcePath===path&&row.slot===slot);
+ if(rows.length!==1)return null;
+ const spec=rows[0],reading=readingForSlot(proper,slot);
+ if(!reading)return null;
+ const latin=normalizeWitnessLatin(reading.lat??reading.la);
+ const expected=normalizeWitnessLatin(spec.latinIncipit);
+ if(expected.length<10||!latin.includes(expected))return null;
+ const parsed=scriptureSegmentContext(spec.segments,{reference:spec.reference,
+  provenance:"MATCHED_1962_PROPER_PATH_LATIN_AND_ORDERED_SEGMENTS"});
+ return Object.freeze({...parsed,slot,witnessUrl:spec.witnessUrl});
+}
 function sameCoordinates(first,second){
  return first?.book===second?.book&&first?.chapter===second?.chapter&&
    first?.verseStart===second?.verseStart&&first?.verseEnd===second?.verseEnd;
@@ -87,6 +103,17 @@ export function massScriptureContextForCard(card,prepared){
   const path=String(prepared?.session?.resolvedMass?.proper?.sourcePath??proper?.sourcePath??"").trim();
   const candidates=relevant.map(slot=>registeredMassReading(proper,slot,{sourcePath:path})).filter(Boolean);
   const explicitLabels=relevant.flatMap(slot=>candidateReferences(proper,slot));
+  const segmented=relevant.map(slot=>registeredSegmentedMassReading(proper,slot,{sourcePath:path})).filter(Boolean);
+  if(segmented.length){
+    const one=segmented[0];
+    // Any different source citation vetoes the segmented Proper, even when its
+    // first chapter alone is parseable. Do not collapse multiple reading slots.
+    if(segmented.length!==1||relevant.length!==1||candidates.length||
+       explicitLabels.some(label=>label.trim()!==one.reference))
+      return Object.freeze({state:"UNRESOLVED_REFERENCE",slot:relevant.join(","),
+       explanation:"Conflicting segmented Scripture reading metadata; study withheld."});
+    return Object.freeze({state:"READY",...one});
+  }
   if(unique.length>1 || candidates.length>1 ||
     (unique.length===0 && explicitLabels.length>0) ||
     (unique.length===1 && candidates.length===1 &&
