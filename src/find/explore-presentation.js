@@ -274,6 +274,7 @@ export function buildExploreViewModel({
   selectedId=null,
   placeProfiles=[],
   selectedPlaceId=null,
+  displayLimit=120,
 }={}){
   const list=arr(items);
   const selected=list.find(item=>item?.item_id===selectedId)??null;
@@ -294,6 +295,7 @@ export function buildExploreViewModel({
     selectedPlace,
     mapped,
     addressOnly,
+    displayLimit:Number.isFinite(Number(displayLimit))?Math.max(60,Math.floor(Number(displayLimit))):120,
   });
 }
 
@@ -333,6 +335,10 @@ export function renderExploreToString(vm){
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
+  if(vm.lens==="tlm"){
+    const listed=vm.items.filter(x=>x.status==="SCHEDULE UNVERIFIED").length;
+    if(listed)html+='<span> · '+String(listed)+' '+esc(L(vm.language,"directory-listed, unverified","répertoriés, non vérifiés"))+'</span>';
+  }
   html+='</div>';
 
   html+='<div class="aoFindBody" data-find-view="'+esc(vm.view)+'" data-explore-lens="'+esc(vm.lens)+'">';
@@ -355,7 +361,10 @@ export function renderExploreToString(vm){
         +'</div>';
     }
   }else if(vm.items.length){
-    html+='<div class="aoFindList">'+vm.items.map(item=>itemCard(item,vm)).join("")+'</div>';
+    const visible=vm.items.slice(0,vm.displayLimit);
+    html+='<div class="aoFindList">'+visible.map(item=>itemCard(item,vm)).join("")+'</div>';
+    if(visible.length<vm.items.length)html+='<div class="aoFindMore"><span>'+esc(L(vm.language,"Showing ","Affichage de "))+visible.length+' / '+vm.items.length+'</span>'
+      +'<button type="button" data-find-show-more>'+esc(L(vm.language,"Show more results","Afficher plus de résultats"))+'</button></div>';
   }else html+=emptyState(vm);
   html+='</div>'+(vm.selectedPlace?placeSheet(vm):detailSheet(vm))+'</section>';
   return html;
