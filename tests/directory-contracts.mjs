@@ -67,7 +67,7 @@ const expectedResearchCounts = new Map([
   ["SSPX_PRIORITY_EUROPE_PACIFIC_20261009",11],
   ["SSPX_OCT26_FOLLOWUP_65_20261009",7],
   ["SSPX_GLOBAL_COMPLETION_20261009",7],
-  ["SSPX_OFFICIAL_ROUTE_OCT26_20261009",3],
+  ["SSPX_OFFICIAL_ROUTE_OCT26_20261009",2],
   ["SSPX_OCT26_POLAND",38],
   ["SSPX_ASIA_CENTRAL_AMERICAS_20261008",47],
   ["SSPX_NA_DISTRICTS_20261008",120],
@@ -225,7 +225,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,984,"research projection includes three more sourced Sunday Mass sites in Passau, Le Laus and Les Rousses");
+assert.equal(researchVenueCount,983,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);

@@ -1,0 +1,196 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_CANONICAL_LE_LAUS_AND_TEN_PINS_V1",
+  "date": "2026-10-09",
+  "first_party_map": "https://map.fsspx.org",
+  "new_pins_for_existing_venues": 10,
+  "physical_duplicate_venues_removed": 1,
+  "canonical_old_record_count": 614,
+  "canonical_new_record_count": 613,
+  "old_pins": 391,
+  "new_pins": 401,
+  "old_unpinned": 223,
+  "new_unpinned": 212,
+  "le_laus": {
+    "correction": "This place already exists in French first-party source snapshot. Remove duplicate added in route followup provider; preserve same confirmed official-source geo under original record.",
+    "canonical_upstream_id": "SSPX-LPL-MONTGARDIN-LE-LAUS",
+    "erroneously_added_upstream_id": "SSPX-SSPXMAP-20261009-FR-LE-LAUS-ND-ROSAIRE",
+    "canonical_source_url": "https://laportelatine.org/lieux/montgardin/le-laus",
+    "official_map_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-du-rosaire",
+    "official_map_geo": {
+      "lat": 44.521546,
+      "lng": 6.1537492,
+      "precision": "address",
+      "geocoding_source": "OFFICIAL_SOURCE"
+    },
+    "same_physical_address": "388 Grande Rue, 05130 Notre-Dame du Laus, France"
+  },
+  "controls": {
+    "no_manufactured_coordinates": true,
+    "no_duplicate_venue_pub": true,
+    "first_party_route_data_required": true,
+    "all_pin_overlay_country_codes_match": true,
+    "old_336_CRM_pins_unmodified": true
+  },
+  "cases": [
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-KONIGSBRUNN-KAPELLE-MUTTER-VOM-GROSSEN-SIEG",
+      "registered_name": "Kapelle Mutter vom Grossen Sieg",
+      "registered_address": "Keltenstraße 9, 86343 Königsbrunn/Augsburg",
+      "country_code": "DE",
+      "official_map_slug": "kapelle-mutter-vom-grossen-sieg",
+      "official_map_page": "https://map.fsspx.org/de/places/kapelle-mutter-vom-grossen-sieg",
+      "official_directions_destination": {
+        "lat": 48.28832,
+        "lng": 10.89042
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-KOBLENZ-KAPELLE-MARIA-HEIMSUCHUNG",
+      "registered_name": "Kapelle Mariä Heimsuchung",
+      "registered_address": "Bahnhofsweg 6, 56073 Koblenz-Moselweiss",
+      "country_code": "DE",
+      "official_map_slug": "kapelle-maria-heimsuchung",
+      "official_map_page": "https://map.fsspx.org/de/places/kapelle-maria-heimsuchung",
+      "official_directions_destination": {
+        "lat": 50.35012,
+        "lng": 7.5584
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-SULZBERG-KAPELLE-UNBEFLECKTES-HERZ-MARIA",
+      "registered_name": "Kapelle Unbeflecktes Herz Mariä",
+      "registered_address": "Bundesstraße 309, 87477 Sulzberg-Bodelsberg",
+      "country_code": "DE",
+      "official_map_slug": "kapelle-unbeflecktes-herz-maria",
+      "official_map_page": "https://map.fsspx.org/de/places/kapelle-unbeflecktes-herz-maria",
+      "official_directions_destination": {
+        "lat": 47.6569,
+        "lng": 10.36483
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-HAGSTEDT-KAPELLE-ZU-DEN-HERZEN-JESU-U-MARIA",
+      "registered_name": "Kapelle zu den Herzen Jesu u. Mariä",
+      "registered_address": "Hagstedt 142, 49429 Hagstedt (Visbeck)",
+      "country_code": "DE",
+      "official_map_slug": "kapelle-zu-den-herzen-jesu-u-maria",
+      "official_map_page": "https://map.fsspx.org/de/places/kapelle-zu-den-herzen-jesu-u-maria",
+      "official_directions_destination": {
+        "lat": 52.80277,
+        "lng": 8.25772
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-KAUFBEUREN-KAPELLE-HEILIGE-14-NOTHELFER",
+      "registered_name": "Kapelle Heilige 14 Nothelfer",
+      "registered_address": "Brettbuschgasse 4, 87600 Kaufbeuren-Neugablonz",
+      "country_code": "DE",
+      "official_map_slug": "kapelle-heilige-14-nothelfer",
+      "official_map_page": "https://map.fsspx.org/de/places/kapelle-heilige-14-nothelfer",
+      "official_directions_destination": {
+        "lat": 47.91157,
+        "lng": 10.62893
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-UBERLINGEN-ROSENKRANZKONIGIN",
+      "registered_name": "Rosenkranzkönigin",
+      "registered_address": "Litscherweg 2, 88662 Überlingen / Bodensee",
+      "country_code": "DE",
+      "official_map_slug": "kirche-rosenkranzkonigin",
+      "official_map_page": "https://map.fsspx.org/de/places/kirche-rosenkranzkonigin",
+      "official_directions_destination": {
+        "lat": 47.77174,
+        "lng": 9.1577
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-TRAUNWALCHEN-PHILOMENAZENTRUM",
+      "registered_name": "Philomenazentrum",
+      "registered_address": "Robert-Bosch-Str. 58, 83374 Traunwalchen",
+      "country_code": "DE",
+      "official_map_slug": "philomena-zentrum",
+      "official_map_page": "https://map.fsspx.org/de/places/philomena-zentrum",
+      "official_directions_destination": {
+        "lat": 47.94183,
+        "lng": 12.59776
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-DE-DE-NEUSTADT-KAPELLE-HEILIGE-FAMILIE",
+      "registered_name": "Kapelle Heilige Familie",
+      "registered_address": "Mandelring 36, 67433 Neustadt/Weinstraße",
+      "country_code": "DE",
+      "official_map_slug": "priorat-heilige-familie",
+      "official_map_page": "https://map.fsspx.org/de/places/priorat-heilige-familie",
+      "official_directions_destination": {
+        "lat": 49.36162,
+        "lng": 8.13777
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-GB-GB-MANCHESTER-CHURCH-OF-SAINT-PIUS-X",
+      "registered_name": "Church of Saint Pius X",
+      "registered_address": "16 Deer Park Road, Manchester M16 8FR",
+      "country_code": "GB",
+      "official_map_slug": "chapel-of-saint-pius-x",
+      "official_map_page": "https://map.fsspx.org/de/places/chapel-of-saint-pius-x",
+      "official_directions_destination": {
+        "lat": 53.45357,
+        "lng": -2.25415
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    },
+    {
+      "canonical_upstream_id": "SSPX-ANZ-AU-OXLEY-OUR-LADY-OF-LOURDES-CHURCH",
+      "registered_name": "Our Lady of Lourdes Church",
+      "registered_address": "1111 Oxley Road, Oxley QLD 4075",
+      "country_code": "AU",
+      "official_map_slug": "our-lady-of-lourdes-church",
+      "official_map_page": "https://map.fsspx.org/de/places/our-lady-of-lourdes-church",
+      "official_directions_destination": {
+        "lat": -27.5606,
+        "lng": 152.97804
+      },
+      "precision": "address",
+      "source_checked_at": "2026-10-09",
+      "disposition": "EXISTING_REGISTERED_PHYSICAL_VENUE_GEO_ADDED",
+      "new_venue_added": false
+    }
+  ]
+}
