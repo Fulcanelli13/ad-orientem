@@ -1,0 +1,521 @@
+{
+  "schema": "AO_PRAY_COMPENDIUM_WHOLE_FORM_COMPARISON_V1",
+  "date": "2026-10-10",
+  "method": "Manual whole-prayer-form comparison of canonical EN/FR/LA against published 2005 Vatican Compendium originals (URL + web extracted line windows). Records phrase-level assertions checked against the source-of-truth corpus; not a machine-extracted diplomatic transcript.",
+  "originals": [
+    "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+    "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html"
+  ],
+  "provenance": "Published Vatican Compendium text directly inspected; previously verified source-anchor and locale comparisons reconciled.",
+  "disclaimer": "Original text is not duplicated in this dataset; source text is linked. Source extraction line coordinates are ephemeral, not print-page references. No verbatim publication certification or claim of 1962 equivalence.",
+  "results": {
+    "prayers": 10,
+    "language_cells": 30,
+    "whole_form_comparisons": 30,
+    "marked_differences": 5,
+    "no_automatic_text_changes": 10,
+    "fully_verbatim_certified": 0,
+    "by_outcome": {
+      "WORD_SEQUENCE_MATCH_PUNCTUATION": 12,
+      "WORD_SEQUENCE_MATCH_ACCENTS": 8,
+      "WORD_SEQUENCE_MATCH_VERSE_LAYOUT": 1,
+      "MATERIAL_TRANSLATION_DIFFERENCE": 1,
+      "CUSTOMARY_AMEN_APPENDED": 2,
+      "MATERIAL_TRADITIONAL_FRENCH_VARIANT": 1,
+      "TRADITIONAL_LATIN_SPELLING_AND_AMEN": 1,
+      "PUBLISHED_FRENCH_ANOMALY_MATCH": 1,
+      "WORD_SEQUENCE_MATCH_HYPHENATION": 1,
+      "WORD_SEQUENCE_MATCH_CASE": 1,
+      "WORD_SEQUENCE_MATCH_LIGATURE_ACCENTS": 1
+    }
+  },
+  "items": [
+    {
+      "prayer_id": "foundations_sign_of_cross",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1115,
+        1117
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "In the name of the Father",
+      "comparison_notes": "Source displays the same three divine Persons and Amen; app adds commas after the first two titles.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_sign_of_cross",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        943,
+        945
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Au nom du Père",
+      "comparison_notes": "French published formula matches words; app inserts commas after Père and Fils.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_sign_of_cross",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1117,
+        1119
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "In nomine Patris",
+      "comparison_notes": "Latin formula is the same after liturgical diacritic and punctuation differences.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_glory_be",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1120,
+        1125
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Glory be to the Father",
+      "comparison_notes": "English same entire doxology; printed source uses line division without app commas.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_glory_be",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        945,
+        950
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Gloire au Père",
+      "comparison_notes": "Full French doxology remains the same form; sentence case and punctuation vary.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_glory_be",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1125,
+        1130
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Gloria Patri",
+      "comparison_notes": "Latin received doxology matches after diacritics and commas; no omission of Sicut erat.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_hail_mary",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1131,
+        1138
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Hail Mary",
+      "comparison_notes": "Published English Hail Mary and app have corresponding invocations; printed source has Hail, Mary and line breaks.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_hail_mary",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        950,
+        957
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Je vous salue, Marie",
+      "comparison_notes": "French petition is the same; published print has capitalized Le Seigneur and Priez, with verse break punctuation.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_hail_mary",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1138,
+        1145
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Ave Maria",
+      "comparison_notes": "Latin greeting and intercession have matching word order; printed accents and commas differ.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_guardian_angel",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1146,
+        1151
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_VERSE_LAYOUT",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Angel of God, my guardian dear",
+      "comparison_notes": "The entire English rhymed verse is on the source page; app joins verse lines in one prayer body.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_guardian_angel",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        957,
+        961
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Ange de Dieu, qui es mon gardien",
+      "comparison_notes": "Published French Angel of God and app have the same petitions in the same order.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_guardian_angel",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1151,
+        1156
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Ángele Dei",
+      "comparison_notes": "The complete Latin Angele Dei verse is in the published source; typography and orthography vary.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_eternal_rest",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1157,
+        1159
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Eternal rest grant unto them",
+      "comparison_notes": "Entire plural Eternal Rest and peace response match the English printed source.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_eternal_rest",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        961,
+        963
+      ],
+      "outcome": "MATERIAL_TRANSLATION_DIFFERENCE",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "la lumière éternelle",
+      "comparison_notes": "2005 French prints lumière de ta face; the app uses lumière éternelle, a traditional rendering of lux perpetua.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_eternal_rest",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1159,
+        1161
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Requiem aeternam",
+      "comparison_notes": "Latin plural Requiem aeternam, lux perpetua and Requiescant in pace match with unaccented app orthography.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_our_father",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1061,
+        1071
+      ],
+      "outcome": "CUSTOMARY_AMEN_APPENDED",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "but deliver us from evil. Amen.",
+      "comparison_notes": "English petition text follows printed Compendium in substance, but the app appends Amen not printed at the end of the displayed prayer.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_our_father",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        909,
+        910
+      ],
+      "outcome": "MATERIAL_TRADITIONAL_FRENCH_VARIANT",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "ne nous laissez pas succomber",
+      "comparison_notes": "Published French uses tu/ton, règne vienne and ne nous soumets pas; app uses vous/votre, règne arrive and ne nous laissez pas succomber; app also appends Amen.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_our_father",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1071,
+        1083
+      ],
+      "outcome": "TRADITIONAL_LATIN_SPELLING_AND_AMEN",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "quotidianum",
+      "comparison_notes": "Source uses cotidianum while app uses quotidianum; app also adds Amen beyond Compendium's displayed Pater Noster. Liturgical spelling and closing usage must stay edition-specific.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_faith",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1767,
+        1779
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "I believe that your divine Son became man",
+      "comparison_notes": "Full English profession, including Trinitarian and Christological clauses, appears in source and app.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_faith",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        1581,
+        1587
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Dans cette foi, puis-je vivre et mourir.",
+      "comparison_notes": "Full short French Acte de foi follows the 2005 published French form, including Dans cette foi.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_faith",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1779,
+        1787
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "firma fide credo et confíteor",
+      "comparison_notes": "Latin Actus fidei follows the printed received prayer; diacritics/line breaks vary.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_hope",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1788,
+        1796
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "In this hope I intend to live and die.",
+      "comparison_notes": "Full English Act of Hope includes closing In this hope; app preserves same complete prayer.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_hope",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        1587,
+        1594
+      ],
+      "outcome": "PUBLISHED_FRENCH_ANOMALY_MATCH",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Dans cette foi, puis-je vivre et mourir.",
+      "comparison_notes": "The French publication has Dans cette foi under Acte d'espérance, and app retains exactly that anomalous closing rather than silently replacing it.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_hope",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1796,
+        1803
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "In hac spe vívere et mori státuo.",
+      "comparison_notes": "Latin Actus spei ends In hac spe; app preserves wording with punctuation/diacritic variants only.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_love",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1804,
+        1809
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_PUNCTUATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "In this love I intend to live and die.",
+      "comparison_notes": "Complete English Act of Love including final in-this-love sentence appears as app wording.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_love",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        1594,
+        1597
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_HYPHENATION",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "j’aime mon prochain comme moi-même",
+      "comparison_notes": "French Acte de charité is shorter than EN/LA in the published Compendium; app follows its French length. Source extraction displays moimême where app prints moi-même.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "foundations_act_of_love",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1809,
+        1817
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "In hac caritáte vívere et mori",
+      "comparison_notes": "Latin Actus caritatis has full ending In hac caritate in the app and source.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "sacrament_act_of_contrition",
+      "language": "en",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium English 2005, Appendix A or Lord's Prayer",
+      "web_extraction_line_span": [
+        1818,
+        1818
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_CASE",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "Thy just punishments",
+      "comparison_notes": "English Act of Contrition is complete; app capitalizes Thy in just punishments where source prints lower-case thy.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "sacrament_act_of_contrition",
+      "language": "fr",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "source_section": "Compendium français 2005, section de prière nommée",
+      "web_extraction_line_span": [
+        1597,
+        1602
+      ],
+      "outcome": "CUSTOMARY_AMEN_APPENDED",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "faire pénitence. Amen.",
+      "comparison_notes": "Published French Acte de contrition ends faire pénitence without Amen; the app appends Amen, a customary prayer ending not reproduced in this edition.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    },
+    {
+      "prayer_id": "sacrament_act_of_contrition",
+      "language": "la",
+      "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "source_section": "Compendium 2005, texte latin imprimé",
+      "web_extraction_line_span": [
+        1819,
+        1819
+      ],
+      "outcome": "WORD_SEQUENCE_MATCH_LIGATURE_ACCENTS",
+      "whole_prayer_form_compared": true,
+      "canonical_witness": "ex toto corde pænitet me",
+      "comparison_notes": "Full Latin Actus contritionis is present; orthographic pœnas versus poenas in French HTML and liturgical accents do not change prayer content.",
+      "source_republication_approved": false,
+      "verbatim_text_certified": false
+    }
+  ],
+  "editorial_release_policy": [
+    "Maintain liturgical/traditional French wording when a modern Compendium prayer uses different text.",
+    "Present source URL as a witness/comparator, not automatic verbatim edition certification.",
+    "Preserve the attested French Act of Hope anomaly until a differently printed French original is separately verified.",
+    "Do not delete common terminal Amen or force French local Acts to match longer English/Latin forms.",
+    "Each future canonical text replacement requires its exact new original and independent language/rights sign-off."
+  ]
+}
