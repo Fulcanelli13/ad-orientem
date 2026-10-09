@@ -86,6 +86,7 @@ export function buildRequiemAbsolutionPayload({graph,payload,bodyPresent=false,b
 export function createRequiemAbsolutionReaderController(args={}){
   const built=buildRequiemAbsolutionPayload(args);
   let index=0;
+  let burialParticipant=false;
   function state(){
     const card=built.cards[index]??null;
     return freeze({
@@ -95,13 +96,19 @@ export function createRequiemAbsolutionReaderController(args={}){
       card,
       bodyPresent:built.bodyPresent,
       burialProcession:built.burialProcession,
+      burialParticipant,
+      // The source authorizes a processional posture for those joining;
+      // a body/burial flag alone never establishes personal participation.
+      posture:card?.actorScope==="FAITHFUL_PARTICIPATING" && !burialParticipant
+        ? null : card?.posture??null,
       handoff:card?.handoff??null,
     });
   }
   function next(){index=Math.min(index+1,built.cards.length-1);return state()}
   function previous(){index=Math.max(0,index-1);return state()}
   function goTo(cardId){const hit=built.cards.findIndex(x=>x.id===String(cardId));if(hit>=0)index=hit;return state()}
-  return freeze({schema:"ao-r25-requiem-absolution-reader-controller-v1",supported:true,cards:built.cards,project:state,next,previous,goTo});
+  function setBurialParticipant(value){burialParticipant=Boolean(value);return state()}
+  return freeze({schema:"ao-r25-requiem-absolution-reader-controller-v1",supported:true,cards:built.cards,project:state,next,previous,goTo,setBurialParticipant});
 }
 
 async function readJson(fetchImpl,url,label){
