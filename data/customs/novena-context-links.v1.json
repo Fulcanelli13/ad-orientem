@@ -286,15 +286,15 @@
       "relationship": "FRENCH_NATIONAL_FEAST_CUSTOM_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Cathédrale Notre-Dame de Paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "NDP-ASSUMPTION-VOW"
       ],
       "confidence": "HIGH",
-      "note": "Notre-Dame de Paris preserves the memory of the Vœu de Louis XIII and the 15 August Marian procession. This is French Assumption custom context, not an asserted source for AO's exact novena."
+      "note": "Notre-Dame de Paris preserves the memory of the Vœu de Louis XIII and the 15 August Marian procession. This is French Assumption custom context, not an asserted source for AO's exact novena. Mapped to existing canonical Place on 2026-10-09; this is devotional context, not identification of the app's precise prayer body."
     },
     {
       "link_id": "novena-place:seven_sorrows:notre-dame-victoires",
@@ -382,15 +382,15 @@
       "relationship": "DEVOTIONAL_FAMILY_SHRINE_PILGRIMAGE_CONTEXT",
       "custom_id": null,
       "geo_area_id": "geo:country:FR",
-      "place_id": null,
-      "place_name_hint": "Sanctuaire du Mont-Saint-Michel",
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "place_name_hint": null,
       "geographic_precision": "PLACE",
-      "map_policy": "PLACE_PENDING",
+      "map_policy": "PLACE",
       "source_ids": [
         "MONT-ST-MICHEL-SHRINE"
       ],
       "confidence": "HIGH",
-      "note": "The diocesan sanctuary at Mont-Saint-Michel has received pilgrims devoted to St Michael for roughly thirteen centuries and explicitly frames the site around St Michael, spiritual combat and pilgrimage. This does not prove AO's exact novena text."
+      "note": "The diocesan sanctuary at Mont-Saint-Michel has received pilgrims devoted to St Michael for roughly thirteen centuries and explicitly frames the site around St Michael, spiritual combat and pilgrimage. This does not prove AO's exact novena text. Mapped to existing canonical Place on 2026-10-09; this is devotional context, not identification of the app's precise prayer body."
     }
   ],
   "negative_knowledge": [],
