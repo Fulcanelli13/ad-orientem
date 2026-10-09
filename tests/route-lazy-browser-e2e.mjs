@@ -109,6 +109,51 @@ try {
     "An uncollated passage must not receive an invented commentary");
   await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
 
+  // Contextual Glossary is a separate lazy reader. It must preserve the
+  // originating control and scroll without mounting Formation or Mass.
+  const contextualBefore=await page.evaluate(()=>typeof globalThis.AO_GLOSSARY_V1);
+  assert.equal(contextualBefore,"undefined","Contextual Glossary loaded eagerly on Home");
+  await page.evaluate(()=>{
+    const origin=document.createElement("section");
+    origin.id="ao-test-contextual-origin";
+    origin.style.cssText="height:110px;overflow:auto";
+    const trigger=document.createElement("button");
+    trigger.id="ao-test-contextual-glossary";
+    trigger.type="button";
+    trigger.dataset.aoGlossaryContext="G067";
+    trigger.textContent="Rubric · Glossary";
+    origin.append(trigger);
+    const filler=document.createElement("div");
+    filler.style.height="740px";
+    origin.append(filler);
+    document.body.append(origin);
+    origin.scrollTop=48;
+    trigger.focus({preventScroll:true});
+    trigger.click();
+  });
+  await page.waitForFunction(()=>
+    globalThis.AO_GLOSSARY_V1?.status?.().open===true&&
+    globalThis.AO_GLOSSARY_V1?.status?.().detailId==="G067",null,{timeout:18000});
+  assert.equal(await page.locator("#ao-glossary-root .aoGlossDetailCard").isVisible(),true);
+  assert.ok(await page.locator("#ao-glossary-root .aoGlossSources a[href]").count(),
+    "Contextual Glossary entry lost its original source link");
+  assert.equal(await page.locator("#ao-glossary-root [data-gloss-close]").isVisible(),true);
+  const contextReturnBefore=await page.evaluate(()=>document.getElementById("ao-test-contextual-origin").scrollTop);
+  await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.close?.(false));
+  const contextReturn=await page.evaluate(()=>({
+    focus:document.activeElement?.id,
+    scroll:document.getElementById("ao-test-contextual-origin").scrollTop,
+    noMass:Boolean(globalThis.AO_R17_MASS_RUNTIME),
+    glossaryOpen:globalThis.AO_GLOSSARY_V1?.status?.().open,
+    learnOpen:globalThis.AO_LEARN_APP_V1?.status?.().open
+  }));
+  assert.equal(contextReturn.focus,"ao-test-contextual-glossary","Exact contextual Glossary did not restore trigger focus");
+  assert.equal(contextReturn.scroll,contextReturnBefore,"Contextual Glossary changed parent reading scroll position");
+  assert.equal(contextReturn.glossaryOpen,false);
+  assert.equal(contextReturn.learnOpen,false,"Closing contextual Glossary incorrectly navigated to Formation");
+  assert.equal(contextReturn.noMass,false,"Contextual Glossary unnecessarily mounted the Mass reader");
+  await page.locator("#ao-test-contextual-origin").evaluate(node=>node.remove());
+
   // Daily Rule remains actionable even if its legacy static-sheet handler
   // explicitly rejects opening. The fallback must dispatch Rosary.
   const homeRule=await page.evaluate(()=>{
