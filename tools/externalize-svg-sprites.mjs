@@ -8,6 +8,22 @@ import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 
 const INDEX="index.html";
+if(process.argv.includes("--verify")){
+  const saved=JSON.parse(readFileSync("data/presentation/startup-sprite-report.v1.json","utf8"));
+  const html=readFileSync("index.html","utf8");
+  if(Buffer.byteLength(html,"utf8")!==saved.reducedHtmlBytes)throw new Error("Index differs from sprite manifest");
+  for(const entry of saved.entries){
+    if(!existsSync(entry.path))throw new Error("SVG sprite missing: "+entry.path);
+    const external=readFileSync(entry.path,"utf8");
+    for(const sym of entry.symbols){
+      if(!external.includes('id="'+sym+'"')&&!external.includes("id='"+sym+"'"))throw new Error("External symbol lost "+sym);
+      if(!html.includes("#"+sym))throw new Error("Local proxy lost "+sym);
+    }
+  }
+  console.log("PASS external SVG sprite integrity");
+  process.exit(0);
+}
+
 const DIRECTORY="assets/generated-sprites";
 const MANIFEST="data/presentation/startup-sprite-report.v1.json";
 const SPRITES=["ao-v4318-refined-sprite","ao-v4330-semantic-icon-sprite","ao-v4332-full-refined-sprite"];
@@ -61,18 +77,4 @@ if(apply){
   if(entries.reduce((n,x)=>n+x.symbols.length,0)<18)throw new Error("Missing refined symbols");
   writeFileSync(INDEX,html);
   writeFileSync(MANIFEST,JSON.stringify(report,null,2)+"\n");
-}
-if(process.argv.includes("--verify")){
-  if(!existsSync(MANIFEST))throw new Error("Sprite manifest missing");
-  const previous=JSON.parse(readFileSync(MANIFEST,"utf8"));
-  if(bytes(html)!==previous.reducedHtmlBytes)throw new Error("Index differs from certified sprite manifest");
-  for(const entry of previous.entries){
-    if(!existsSync(entry.path))throw new Error("SVG sprite asset missing: "+entry.path);
-    const original=readFileSync(entry.path,"utf8");
-    for(const sym of entry.symbols){
-      if(!original.includes('id="'+sym+'"')&&!original.includes("id='"+sym+"'"))throw new Error("External sprite lost "+sym);
-      if(!html.includes("#"+sym))throw new Error("Local SVG proxy lost "+sym);
-    }
-  }
-  console.log("PASS sprite extraction manifest: "+bytes(html)+" byte HTML, "+previous.entries.length+" external SVG bundles");
 }
