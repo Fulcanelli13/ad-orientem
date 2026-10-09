@@ -3,6 +3,7 @@ import "./presentation-styles.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
+import { prayEditionWitness } from "./prayer-edition-witnesses.v1.js";
 import { canonicalAssetIdForPrayRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
@@ -319,22 +320,26 @@ const PRAY_LITURGICAL_TRANSCRIPTION=Object.freeze({
  adoration_lord_i_am_not_worthy:"https://la.wikisource.org/wiki/Ordinarium_miss%C3%A6_(1962)"
 });
 function praySourceURL(p){
- const source=p?.provenance?.url||p?.sourceUrl||PRAY_LITURGICAL_TRANSCRIPTION[p?.id]||"";
+ const source=prayEditionWitness(p?.id)?.url||p?.provenance?.url||p?.sourceUrl||PRAY_LITURGICAL_TRANSCRIPTION[p?.id]||"";
  // A scheme allowlist avoids injecting arbitrary markup into a source link.
  try{const url=new URL(source);return url.protocol==="https:"||url.protocol==="http:"?url.href:""}catch{return""}
 }
 function sourceLine(p){
  if(!p)return'';
- const pr=p.provenance||{},url=praySourceURL(p);
- const witness=pr.witness||p.source||L('Source witness not recorded','Témoin textuel non documenté');
- const transcribed=!!PRAY_LITURGICAL_TRANSCRIPTION[p.id]&&!pr.url&&!p.sourceUrl;
+ const pr=p.provenance||{},url=praySourceURL(p),edition=prayEditionWitness(p.id);
+ const witness=edition?L(edition.label.en,edition.label.fr):(pr.witness||p.source||L('Source witness not recorded','Témoin textuel non documenté'));
+ const transcribed=!edition&&!!PRAY_LITURGICAL_TRANSCRIPTION[p.id]&&!pr.url&&!p.sourceUrl;
  const sourceLink=url
    ?`<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(transcribed?L('Read the 1962 Roman Ordinary (secondary transcription)','Lire l’Ordinaire romain de 1962 (transcription secondaire)'):L('Open the cited source','Consulter la source citée'))} ↗</a>`
    :`<small>${esc(L('A direct source link has not yet been verified.','Aucun lien direct vers la source n’est encore vérifié.'))}</small>`;
+ const editionNote=edition?'<p>'+esc(L(edition.note.en,edition.note.fr))+'</p>':'';
+ const additionalWitness=edition?.secondaryUrl
+   ?'<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="'+esc(edition.secondaryUrl)+'">'+esc(L('Additional historical/decree witness','Témoin historique ou décret complémentaire'))+' ↗</a>'
+   :'';
  const langHold=p.id==='marian_consecration_immaculate_heart'
    ?`<p>${esc(L('This consecration is documented in English only; no equivalent French or Latin formula has been certified.','Cette consécration est documentée en anglais seulement ; aucune formule française ou latine équivalente n’a été certifiée.'))}</p>`
    :'';
- return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}</details>`;
+ return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${additionalWitness}${editionNote}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}</details>`;
 }
 const DEVOTIONAL_GUIDE_LINKS=Object.freeze({
  stations:[
@@ -1025,7 +1030,7 @@ function renderAdoration(){
 }
 function familyOf(p){if(['litany_loreto_1962','litany_loreto_current'].includes(p.id))return'litany_loreto';if(['foundations_eternal_rest','dead_eternal_rest_singular'].includes(p.id))return'eternal_rest';return p.id}
 let LIB={q:'',cat:'all',open:null,language:null};
-function normalizedSource(p){const pr=p.provenance||{};return {id:p.id,family:familyOf(p),work:pr.work||p.title||p.id,witness:pr.witness||p.source||'Normalized existing corpus',url:praySourceURL(p),quality:pr.quality||p.sourceStatus||'LEGACY_SOURCE_DOCUMENTED_NOT_PRIMARY_COLLATED',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
+function normalizedSource(p){const pr=p.provenance||{},ed=prayEditionWitness(p.id);return {id:p.id,family:familyOf(p),work:pr.work||p.title||p.id,witness:ed?.label.en||pr.witness||p.source||'Normalized existing corpus',url:praySourceURL(p),quality:ed?.witnessType||pr.quality||p.sourceStatus||'LEGACY_SOURCE_DOCUMENTED_NOT_PRIMARY_COLLATED',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
 const SOURCE_REGISTRY=Object.freeze(Object.fromEntries(Object.values(DATA.prayers||{}).map(p=>[p.id,Object.freeze(normalizedSource(p))])));
 function renderLibrary(){
  if(LIB.open){
