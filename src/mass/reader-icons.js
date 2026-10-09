@@ -149,6 +149,25 @@ function priestActionKey(action){
   return ACTION_ICON_KEYS[label]??null;
 }
 
+function voiceIconKey(value){
+  const voice=String(value??"").trim().toUpperCase();
+  if(!voice || /NO COMPETING|MINISTER RESPONSE/.test(voice))return null;
+  if(/^LISTENS(?:$|\s*\/)/.test(voice))return "listen";
+  if(/QUIET|SILENT|SECRET|PRIVATE|LOW/.test(voice))return "priest_silent";
+  if(/SUNG|PUBLIC|CLEAR|AUDIBLE|SPOKEN|SINGS|CHANTED/.test(voice))return "priest_audible";
+  return null;
+}
+
+// v1.80 attention lane is the faithful's instruction, not a second
+// representation of the right-rail priest voice or response.
+export function readerAttentionForState({priestVoice=null,response=null}={}){
+  if(response)return null; // Dedicated response cue already owns this.
+  const voice=priestVoice?.value??priestVoice?.label;
+  return voiceIconKey(voice)==="priest_audible"
+    ? Object.freeze({label:"LISTEN",iconKey:"listen",owner:"R17_PRIEST_PUBLIC_VOICE"})
+    : null;
+}
+
 function gestureKey(gesture){
   if(!gesture)return null;
   const direct=token(gesture.type??gesture.value);
@@ -175,10 +194,7 @@ export function iconKeysForReaderState(state={}){
     postureIconKey:R17_ICON_KEYS.posture[posture]??null,
     gestureIconKey:gestureKey(state.gesture),
     responseIconKey:state.response ? R17_ICON_KEYS.response : null,
-    priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??(
-      /LOW|QUIET|SILENT|SECRET|INAUDIBLE|LISTEN/.test(voice) ? "priest_silent" :
-      voice ? "priest_audible" : null
-    ),
+    priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label),
     scholaIconKey:state.schola ? R17_ICON_KEYS.schola : null,
     priestPositionIconKey:/PEOPLE/.test(facing)
       ? "priest_facing_people"
