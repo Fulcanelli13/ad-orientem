@@ -83,7 +83,7 @@ for(const id of ["CSE014","CSE016","CSE018","CSE050","CSE061","CSE063","CSE064"]
  assert.match(ref[1],/1987 essay/,id+" lost author-text locator");
 }
 assert.match(CSE_DEBATE_MAP.CSE007.opposition[0],/treats sexual consent as voluntary/);
-assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/In his 1908 essay/);
+assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/Freud's 1908 essay/);
 assert.match(CSE_DEBATE_MAP.CSE095.opposition[0],/2024 policy links gender-related rejection/);
 assert.match(CSE_DEBATE_MAP.CSE096.opposition[0],/recommends individualized assessment/);
 assert.match(CSE_DEBATE_MAP.CSE149.opposition[0],/Psychological and medical research can overturn factual assumptions/);
