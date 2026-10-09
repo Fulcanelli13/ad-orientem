@@ -38,7 +38,7 @@ export function calendarObservanceAlias(resolution, language = "en") {
   // A Common C10 Mass can also be selected votively on another weekday;
   // only a resolved Saturday principal observance may acquire this headline.
   const date = String(resolution.date || "");
-  if (BVM_SATURDAY_COMMONS.has(id) && /^\\d{4}-\\d{2}-\\d{2}$/.test(date)
+  if (BVM_SATURDAY_COMMONS.has(id) && /^\d{4}-\d{2}-\d{2}$/.test(date)
       && new Date(date + "T12:00:00Z").getUTCDay() === 6) {
     return lang === "fr" ? "Sainte Vierge Marie le samedi" : "Blessed Virgin Mary on Saturday";
   }
