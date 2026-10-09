@@ -19,12 +19,14 @@ export function guidedStudyReleaseApproved(crosswalk) {
       && x.humanSourceApproval === true && x.nativeFrenchApproval === true));
 }
 
-export function buildCatechismGuidedStudy(crosswalk, first, second, { preview = false } = {}) {
-  if (!crosswalk || !first || !second) throw new TypeError("All three course files are required");
+export function buildCatechismGuidedStudy(crosswalk, first, second, witnessIndex, { preview = false } = {}) {
+  if (!crosswalk || !first || !second || !witnessIndex) throw new TypeError("Crosswalk, both overlays and the 433-question witness index are required");
   if (!preview && !guidedStudyReleaseApproved(crosswalk))
     return Object.freeze({ available: false, lessons: Object.freeze([]), questionToLesson: Object.freeze({}) });
   if (crosswalk.lessons.length !== 55 || first.lessons.length !== 18 || second.lessons.length !== 36)
     throw new Error("Unexpected guided-study curriculum dimensions");
+  const witnessByNumber = new Map(witnessIndex.entries.map(x => [x.q, x.source_file_url]));
+  if (witnessByNumber.size !== 433) throw new Error("Incomplete Catechism witness index");
   const overlays = new Map([...first.lessons, ...second.lessons].map(x => [x.id, x]));
   if (overlays.size !== 54) throw new Error("Duplicate or missing historical claim overlays");
   const seen = new Set();
@@ -47,11 +49,11 @@ export function buildCatechismGuidedStudy(crosswalk, first, second, { preview = 
               const n = /^PXQ[0-9]{3}$/.test(ref) ? Number(ref.slice(-3)) : null;
               const witness = n === null ? null : entry.sourceWitnesses.find(w => Number(w.ref.slice(-3)) === n);
               const authority = [...first.sourceWitnesses, ...second.sourceWitnesses].find(w => w.id === s.source);
-              return { ref: n === null ? ref : sourceQuestion(n), url: witness?.sourceUrl ?? authority?.url ?? null };
+              return { ref: n === null ? ref : sourceQuestion(n), url: (n === null ? authority?.url : witnessByNumber.get(n)) ?? witness?.sourceUrl ?? null };
             })))
         : c.sourceQuestionNumbers.map(n => {
             const witness = entry.sourceWitnesses.find(w => Number(w.ref.slice(-3)) === n);
-            return { ref: sourceQuestion(n), url: witness?.sourceUrl ?? null };
+            return { ref: sourceQuestion(n), url: witnessByNumber.get(n) ?? witness?.sourceUrl ?? null };
           });
       if (!sources.length || sources.some(s => !s.url))
         throw new Error("Unresolved source link at " + entry.displayLessonId + " claim " + (j + 1));
