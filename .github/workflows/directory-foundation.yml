@@ -22,6 +22,7 @@ on:
       - "tests/worldwide-relic-subject-census-wave2.mjs"
       - "tests/worldwide-relic-subject-census-wave3.mjs"
       - "tests/worldwide-relic-subject-census-wave4.mjs"
+      - "tests/worldwide-relic-subject-census-wave5.mjs"
       - "docs/research/sacred-atlas-worldwide-relic-census-v1.md"
       - "package.json"
       - "tests/directory-*.mjs"
@@ -51,6 +52,7 @@ on:
       - "tests/worldwide-relic-subject-census-wave2.mjs"
       - "tests/worldwide-relic-subject-census-wave3.mjs"
       - "tests/worldwide-relic-subject-census-wave4.mjs"
+      - "tests/worldwide-relic-subject-census-wave5.mjs"
       - "docs/research/sacred-atlas-worldwide-relic-census-v1.md"
       - "package.json"
       - "tests/directory-*.mjs"
@@ -77,6 +79,7 @@ jobs:
       - run: node tests/worldwide-relic-subject-census-wave2.mjs
       - run: node tests/worldwide-relic-subject-census-wave3.mjs
       - run: node tests/worldwide-relic-subject-census-wave4.mjs
+      - run: node tests/worldwide-relic-subject-census-wave5.mjs
       - run: npm run test:explore-surface
       - run: npm run test:customs-atlas
       - run: npm run test:explore-geography

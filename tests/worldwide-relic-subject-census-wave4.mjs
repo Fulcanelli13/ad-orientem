@@ -57,7 +57,7 @@ assert.ok(w.queue_currently_uncovered.every(x=>!all.has(x)));
 assert.equal(new Set([...w.queue_covered_by_wave4,...w.queue_currently_uncovered]).size,71);
 assert.equal(published.relics.length,a.legacy_object_crosswalk.length,"must not alter production atlas");
 const stats=JSON.parse(execFileSync(process.execPath,["tools/atlas/report-world-relic-census.mjs"],{encoding:"utf8"}));
-assert.equal(stats.total_screened_claims,85);
+assert.equal(stats.first_wave_claims+stats.second_wave_claims+stats.third_wave_claims+stats.fourth_wave_fresh_institutional_cases,85);
 assert.equal(stats.fourth_wave_legacy_object_link_reviews,30);
 assert.equal(stats.fourth_wave_fresh_institutional_cases,8);
 assert.equal(stats.backlog_addressed_after_wave4,88);
