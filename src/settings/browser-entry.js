@@ -128,7 +128,7 @@ export function createSettingsOwner(win=globalThis){
   function mutate(fn){
     try{fn();liveGuards()?.sync?.();paint();return true;}catch(error){console.error("Settings update failed",error);return false;}
   }
-  function confirmAction(message){try{return win.confirm?.(message)!==false;}catch{return true;}}
+  function confirmAction(message){try{return typeof win.confirm==="function"&&win.confirm(message)===true;}catch{return false;}}
   function bind(r){
     r.addEventListener("click",event=>{
       const button=event.target?.closest?.("button");if(!button)return;
