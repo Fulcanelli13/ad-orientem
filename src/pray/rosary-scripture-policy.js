@@ -123,7 +123,12 @@ export function rosaryScripturePassage(id){
     // Verbatim wording lives in these Catholic editions, never in the
     // editorial summaries, which are expressly NOT Scripture quotations.
     href:"https://www.biblegateway.com/passage/?search="+encodeURIComponent(item.reference)+"&version=DRA",
-    hrefFr:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/"+encodeURIComponent(context.bookFr)+"#"+item.reference.split(" ").pop().split(":")[0]
+    hrefFr:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/"+encodeURIComponent(context.bookFr)+"#"+item.reference.split(" ").pop().split(":")[0],
+    doctrinalHref:id==="glo4"
+      ?"https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+      :id==="glo5"
+      ?"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html"
+      :null
   });
 }
 
@@ -216,6 +221,17 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
     link.dataset.aoRosaryScriptureEdition=french?"crampon-1923":"douay-rheims-challoner";
     link.textContent=french?"Lire le passage · Bible Crampon 1923 ↗":"Read the passage · Douay–Rheims ↗";
     section.appendChild(link);
+    if(passage.doctrinalHref){
+      const doctrine=root.ownerDocument.createElement("a");
+      doctrine.href=passage.doctrinalHref;
+      doctrine.target="_blank";
+      doctrine.rel="noopener noreferrer";
+      doctrine.dataset.aoRosaryDoctrinalWitness=id;
+      doctrine.textContent=french
+        ?"Enseignement de l’Église · Pie XII ↗"
+        :"Church teaching · Pius XII ↗";
+      section.appendChild(doctrine);
+    }
   }
   return true;
 }
