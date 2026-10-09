@@ -107,15 +107,15 @@ try{
      let displayedTitle=obs?.title||null;
      if(obs?.id?.startsWith("tempora:Pasc6-6:")){
        const hydrated=await globalThis.AO_RUNTIME_V8.resolver.resolveDay(date);
-       assert.equal(hydrated?.status,"ready","Vigil Mass resolution failed on "+date);
-       assert.equal(hydrated?.day?.main?.id,obs.id,"Vigil resolver identity differs on "+date);
+       if(hydrated?.status!=="ready")throw new Error("Vigil Mass resolution failed on "+date+": "+(hydrated?.error||"unknown"));
+       if(hydrated?.day?.main?.id!==obs.id)throw new Error("Vigil resolver identity differs on "+date);
        displayedTitle=hydrated?.day?.main?.title||null;
-       assert.equal(displayedTitle,"Vigil of Pentecost","Incorrect 1962 Pentecost Vigil headline on "+date);
+       if(displayedTitle!=="Vigil of Pentecost")throw new Error("Incorrect 1962 Pentecost Vigil headline on "+date);
      }
      // Christ the King is assigned to this Sunday by n. 17(d) itself:
      // no displaced second-class Sunday commemoration or orations.
      if(obs?.id==="sancti:10-DU:1:w"){
-       assert.equal(raw.commemoration?.length||0,0,"Forbidden Sunday commemoration under Christ the King on "+date);
+       if((raw.commemoration?.length||0)!==0)throw new Error("Forbidden Sunday commemoration under Christ the King on "+date);
      }
      return {date,id:obs?.id||null,title:displayedTitle,sourceTitle:obs?.title||null,rank:obs?.rank??null,
       colour:obs?.color||null,commemorations:(raw.commemoration||[]).map(x=>x.id),
