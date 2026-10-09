@@ -1,0 +1,1715 @@
+{
+  "version": "FORMATION_CANONICAL_SOURCE_FIRST_UNLINKED_BATCH4_V1",
+  "date": "2026-10-09",
+  "status": "UNPUBLISHED_ORIGINAL_EDITORIAL_DRAFT_NO_PRIOR_DIRECT_RESEARCH",
+  "publication_allowed": false,
+  "source_registry": [
+    {
+      "id": "CCC-GOD",
+      "title": "Catechism, ways of knowing God §§31–35",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_one/ii_ways_of_coming_to_know_god.index.html",
+      "locator": "§§31–35",
+      "original_context_approved": false
+    },
+    {
+      "id": "AQU-GOD",
+      "title": "Thomas Aquinas, Summa theologiae I q.2 a.3",
+      "url": "https://www.newadvent.org/summa/1002.htm#article3",
+      "locator": "I, q.2, a.3, five ways",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-EVIL",
+      "title": "Catechism, creation and providence §§309–314",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.index.html",
+      "locator": "§§309–314",
+      "original_context_approved": false
+    },
+    {
+      "id": "AUG-EVIL",
+      "title": "Augustine, Enchiridion on Faith Hope and Love",
+      "url": "https://www.newadvent.org/fathers/1302.htm",
+      "locator": "ch. 11; evil as privation and providence",
+      "original_context_approved": false
+    },
+    {
+      "id": "DEIV",
+      "title": "Second Vatican Council, Dei Verbum",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+      "locator": "§§2–10, 19",
+      "original_context_approved": false
+    },
+    {
+      "id": "DOMJES",
+      "title": "CDF, Dominus Iesus",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+      "locator": "§§5–7, 13–17, 20–22",
+      "original_context_approved": false
+    },
+    {
+      "id": "WCF",
+      "title": "Westminster Confession of Faith, original Reformed confessional position",
+      "url": "https://wts.edu/wcf",
+      "locator": "chapters I, XXV, XXVII–XXIX, XXXI; original historically received text",
+      "original_context_approved": false
+    },
+    {
+      "id": "BAPT1689",
+      "title": "Second London Baptist Confession (1689)",
+      "url": "https://www.sg-audiotreasures.org/1689/1689.htm",
+      "locator": "Second London Baptist Confession (1689), chapters 28–29 and 29.2 on subjects of baptism",
+      "original_context_approved": false
+    },
+    {
+      "id": "IR3",
+      "title": "Irenaeus, Against Heresies III.3",
+      "url": "https://www.newadvent.org/fathers/0103303.htm",
+      "locator": "III.3.1–3 apostolic succession and Rome",
+      "original_context_approved": false
+    },
+    {
+      "id": "IR4",
+      "title": "Irenaeus, Against Heresies III.4",
+      "url": "https://www.newadvent.org/fathers/0103304.htm",
+      "locator": "III.4, apostolic tradition in churches",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-RES",
+      "title": "Catechism §§638–647, Resurrection",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html",
+      "locator": "§§638–647 signs and appearances",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-COR",
+      "title": "1 Corinthians 15, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/1corinthians/15",
+      "locator": "vv. 3–19 and 26",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-MT",
+      "title": "Matthew 16 and 28, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/matthew/16",
+      "locator": "Matthew 16:13–20; Peter confession/keys",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-MT28",
+      "title": "Matthew 28, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/matthew/28",
+      "locator": "vv. 1–20; empty-tomb report and mission",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-JN",
+      "title": "John 14–17, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/john/14",
+      "locator": "John 14:6–11; Christ and Father",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-2TH",
+      "title": "2 Thessalonians 2, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/2thessalonians/2",
+      "locator": "v. 15; apostolic oral and written transmission",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-JN20",
+      "title": "John 20, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/john/20",
+      "locator": "vv. 19–29; apostolic commission and forgiveness",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-ACTS",
+      "title": "Acts 2, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/acts/2",
+      "locator": "vv. 37–42; Baptism and apostolic teaching",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-REV",
+      "title": "Catechism, Revelation in Christ §§50–67",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_1/iii_christ_jesus_mediator_and_fullness_of_all_revelation.index.html",
+      "locator": "§§65–67; definitive public Revelation",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-CH",
+      "title": "Catechism, Holy Church and sinners §§823–829",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_9/iii_the_church_is_one_holy_catholic_and_apostolic.html",
+      "locator": "§§823–829",
+      "original_context_approved": false
+    },
+    {
+      "id": "LG",
+      "title": "Lumen gentium, Dogmatic Constitution on the Church",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+      "locator": "§§8, 18–25, 39–42",
+      "original_context_approved": false
+    },
+    {
+      "id": "TRENT4",
+      "title": "Council of Trent, Session IV, Sacred Scripture and Traditions",
+      "url": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+      "locator": "Session IV, 8 April 1546",
+      "original_context_approved": false
+    },
+    {
+      "id": "V1",
+      "title": "First Vatican Council, Pastor aeternus",
+      "url": "https://www.vatican.va/archive/hist_councils/i_vatican_council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "locator": "chapters 1–4, especially 4 on ex cathedra",
+      "original_context_approved": false
+    },
+    {
+      "id": "VIN",
+      "title": "Vincent of Lérins, Commonitorium",
+      "url": "https://www.newadvent.org/fathers/3506.htm",
+      "locator": "ch. 23, §§54–57, development",
+      "original_context_approved": false
+    },
+    {
+      "id": "APOST",
+      "title": "Leo XIII, Apostolicae curae",
+      "url": "https://www.vatican.va/content/leo-xiii/en/apost_letters/documents/litterae-apostolicae-apostolicae-curae-13-septembris-1896.html",
+      "locator": "1896, conclusion on defect of form and intent",
+      "original_context_approved": false
+    },
+    {
+      "id": "SAEPIUS",
+      "title": "Archbishops of Canterbury and York, Saepius Officio (1897)",
+      "url": "https://www.anglicanhistory.org/orders/saepius.pdf",
+      "locator": "1897, formal Anglican archiepiscopal response to Apostolicae curae",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-SAC",
+      "title": "Catechism, Seven Sacraments in General §§1113–1134",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_one/chapter_one/article_2/iv_the_sacraments_of_salvation.html",
+      "locator": "§§1127–1134, efficacious signs",
+      "original_context_approved": false
+    },
+    {
+      "id": "TRENT7",
+      "title": "Council of Trent Session VII, Sacraments",
+      "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_VII/Sacraments",
+      "locator": "Session VII general canons 1–13",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-BAP",
+      "title": "Catechism, Baptism §§1213–1284",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/i_what_is_this_sacrament_called.html",
+      "locator": "§§1213, 1250–1252, 1262–1274",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-CONF",
+      "title": "Catechism, Confirmation §§1285–1321",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_2/i_confirmation_in_the_economy_of_salvation.html",
+      "locator": "§§1285–1305",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-PEN",
+      "title": "Catechism, Penance §§1422–1498",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vi_the_sacrament_of_penance_and_reconciliation.html",
+      "locator": "§§1440–1445, absolution",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-ACTS8",
+      "title": "Acts 8, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/acts/8",
+      "locator": "vv. 14–17; laying on hands",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-JN3",
+      "title": "John 3, USCCB Catholic Bible",
+      "url": "https://bible.usccb.org/bible/john/3",
+      "locator": "vv. 3–8 born of water and Spirit",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-FAITH",
+      "title": "Catechism, I Believe §§142–165",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_three/article_1/iii_the_characteristics_of_faith.index.html",
+      "locator": "§§150–159, faith and reason",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-MAT13",
+      "title": "Matthew 13:24–30, wheat and weeds",
+      "url": "https://bible.usccb.org/bible/matthew/13",
+      "locator": "vv. 24–30",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-MAT18",
+      "title": "Matthew 18, binding and loosing",
+      "url": "https://bible.usccb.org/bible/matthew/18",
+      "locator": "vv. 15–20",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-ACTS1",
+      "title": "Acts 1:15–26, Matthias appointed",
+      "url": "https://bible.usccb.org/bible/acts/1",
+      "locator": "vv. 15–26",
+      "original_context_approved": false
+    },
+    {
+      "id": "BIBLE-1TIM",
+      "title": "1 Timothy 4, laying on of hands",
+      "url": "https://bible.usccb.org/bible/1timothy/4",
+      "locator": "1 Timothy 4:14, apostolic ministry and laying on of hands",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-MAG",
+      "title": "Catechism, teaching office of bishops",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_9/paragraph_4_christ_s_faithful_hierarchy_laity_consecrated_life.html",
+      "locator": "§§888–892",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-BAPTISM-INF",
+      "title": "Catechism, infant baptism",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/iv_who_can_receive_baptism.html",
+      "locator": "§§1250–1255",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-CONF2",
+      "title": "Catechism, effects of Confirmation",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_2/iii_the_effects_of_confirmation.html",
+      "locator": "§§1302–1305",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC-PEN2",
+      "title": "Catechism, the acts of the penitent",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.html",
+      "locator": "§§1455–1467",
+      "original_context_approved": false
+    }
+  ],
+  "dossiers": [
+    {
+      "id": "APOL-001",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Catholic philosophy holds that reason can know God from created realities without a prior act of biblical faith. Aquinas argues from dependent and changing beings to an ultimate source, not from a gap in natural science to a convenient unexplained force. These are metaphysical arguments about why anything contingent exists; their premises and conclusions require philosophical scrutiny.",
+            "fr": "La philosophie catholique soutient que la raison peut connaître Dieu à partir des réalités créées, avant même la foi biblique. Saint Thomas remonte des êtres dépendants et changeants à leur principe premier ; il ne place pas une force inconnue dans les lacunes des sciences. Ses preuves sont métaphysiques : elles demandent pourquoi existe ce qui pourrait ne pas exister et exigent un examen rationnel."
+          },
+          "source_ids": [
+            "CCC-GOD",
+            "AQU-GOD"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The Westminster Confession itself recognises that nature manifests divine wisdom and power, but holds that nature alone does not give the knowledge necessary for salvation. This original Reformed confession distinguishes rational recognition of God from saving revelation. It is not a fair representative of philosophical atheism; it is a documented interlocutor about reason's limits.",
+            "fr": "La Confession de Westminster reconnaît elle-même que la nature manifeste puissance et sagesse divines, tout en jugeant cette connaissance insuffisante au salut. Cette confession réformée distingue reconnaissance rationnelle de Dieu et Révélation salvifique. Elle ne représente pas loyalement l'athéisme philosophique, mais offre une position réelle sur les limites de la raison."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC-GOD"
+          ],
+          "attribution": "Westminster Confession of Faith, chapter 1.1",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Explaining how physical processes develop does not by itself explain why a world of dependent things exists at all; likewise, asserting a first cause is not yet proof of every attribute of the Christian God. The validity of a Thomistic way turns on an account of causality, contingency and what it means for a first cause not to depend on anything else.",
+            "fr": "Décrire comment évoluent les processus physiques n'explique pas à lui seul pourquoi existe un monde de réalités dépendantes ; inversement, établir une cause première n'établit pas encore tous les attributs du Dieu chrétien. La force d'une voie thomiste suppose d'examiner causalité, contingence et indépendance du principe premier."
+          },
+          "source_ids": [
+            "AQU-GOD",
+            "CCC-GOD"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Faith does not demand that a person abandon reason: the Creator made an intelligible world and a mind able to seek its foundation. Philosophical demonstrations dispose toward belief but do not replace God's free self-disclosure in Christ. The Catholic position refuses both blind fideism and the claim that only experimental measurement can yield genuine knowledge.",
+            "fr": "La foi n'exige pas l'abdication de la raison : le Créateur a fait un monde intelligible et un esprit capable d'en rechercher le fondement. Les démonstrations philosophiques préparent à la foi sans remplacer la libre Révélation divine dans le Christ. La position catholique refuse à la fois le fidéisme aveugle et l'idée que seule la mesure expérimentale procure un savoir véritable."
+          },
+          "source_ids": [
+            "CCC-GOD",
+            "CCC-FAITH"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-003",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Catholic answer does not make suffering illusory or morally good. God permits a world with creaturely freedom and real secondary causes; moral evil arises from misuse of freedom, whereas disease and natural disaster raise the further question of an unfinished and vulnerable created order. Providence can bring good from evil without making the evil act itself just.",
+            "fr": "La réponse catholique ne rend ni illusoire ni moralement bon le mal subi. Dieu permet un monde doté de liberté créée et de causes secondes : le mal moral vient du mauvais usage de la liberté ; maladies et catastrophes posent aussi la question d'une création encore vulnérable. La Providence peut tirer un bien du mal sans rendre juste l'acte mauvais."
+          },
+          "source_ids": [
+            "CCC-EVIL",
+            "AUG-EVIL"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Augustine in his Enchiridion describes evil not as a second independent substance competing with God but as a privation or corruption of a good nature. This original Christian philosophical answer addresses the origin of moral defect; by itself it does not establish why this particular child suffers at this particular moment.",
+            "fr": "Dans son Enchiridion, saint Augustin décrit le mal non comme une substance indépendante opposée à Dieu mais comme privation ou corruption d'une nature bonne. Cette réponse philosophique chrétienne explique la possibilité de la défaillance morale ; elle ne démontre pas, à elle seule, pourquoi tel enfant souffre à tel instant."
+          },
+          "source_ids": [
+            "AUG-EVIL",
+            "CCC-EVIL"
+          ],
+          "attribution": "St Augustine, Enchiridion, chapter 11",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "An appeal to free will is insufficient as a complete account of earthquakes or congenital disease, and a claim that every victim is being punished contradicts the distinction between moral responsibility and suffering. Catholic teaching admits the mystery of providence and refuses a simple one-to-one assignment of blame to the afflicted.",
+            "fr": "Le libre arbitre n'explique pas complètement séismes et maladies congénitales ; prétendre que chaque victime subit une peine particulière confond responsabilité morale et souffrance. L'enseignement catholique reconnaît le mystère de la Providence et refuse d'imputer mécaniquement une faute personnelle à celui qui endure le malheur."
+          },
+          "source_ids": [
+            "CCC-EVIL",
+            "AUG-EVIL"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "At the Cross, God does not justify injustice: the innocent Christ suffers its consequences and redeems humanity through obedient love. Christians should alleviate suffering rather than merely supply theories about it. Hope in providence is compatible with lament, medical care, justice for victims and honest acknowledgement of what remains unexplained.",
+            "fr": "À la Croix, Dieu ne justifie pas l'injustice : le Christ innocent en subit les effets et rachète par l'amour obéissant. Le chrétien doit soulager la souffrance plutôt que se contenter d'en proposer une théorie. L'espérance en la Providence demeure compatible avec la plainte, les soins, la justice pour les victimes et l'aveu de ce qui reste mystérieux."
+          },
+          "source_ids": [
+            "CCC-EVIL",
+            "CCC-RES"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-005",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Human reason can learn that God exists, but it cannot discover by its own powers the inner life of the Trinity, the Incarnation or the gratuitous plan of salvation. Revelation is God's initiative to make himself known and invite humanity into communion. Its fullness is the person and mission of Jesus Christ, not an endless succession of competing new doctrinal messages.",
+            "fr": "La raison peut connaître l'existence de Dieu, mais ne saurait découvrir seule la vie intime de la Trinité, l'Incarnation ou le dessein gratuit du salut. La Révélation est l'initiative par laquelle Dieu se fait connaître et invite l'homme à sa communion. Sa plénitude est Jésus-Christ et sa mission, non une succession indéfinie de messages doctrinaux concurrents."
+          },
+          "source_ids": [
+            "DEIV",
+            "CCC-REV",
+            "CCC-GOD"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The Westminster Confession opens by affirming that the light of nature is insufficient for saving knowledge and that God revealed his will before committing it to written Scripture. This is a documented Protestant affirmation of the need for Revelation, although its understanding of how Revelation remains authoritative differs from Catholic teaching on Scripture, Tradition and the Magisterium.",
+            "fr": "La Confession de Westminster affirme d'emblée que la lumière naturelle ne suffit pas à la connaissance salvifique et que Dieu a révélé sa volonté avant de la faire consigner dans l'Écriture. Cette position protestante reconnaît réellement la nécessité d'une Révélation, mais diverge de l'Église catholique quant au maintien de son autorité par l'Écriture, la Tradition et le Magistère."
+          },
+          "source_ids": [
+            "WCF",
+            "DEIV"
+          ],
+          "attribution": "Westminster Confession of Faith, chapter 1.1",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The insufficiency of reason for knowing a freely chosen divine plan does not prove that every claimed prophecy comes from God. Competing revelations require tests of credibility, coherence and historical witness. A doctrine incompatible with Christ's definitive Revelation cannot become binding through private visionary enthusiasm.",
+            "fr": "L'incapacité de la seule raison à découvrir un dessein divin libre ne prouve pas que chaque prophétie alléguée vienne de Dieu. Il faut éprouver crédibilité, cohérence et témoignages historiques des révélations concurrentes. Une doctrine incompatible avec la Révélation définitive du Christ ne devient pas obligatoire par l'enthousiasme d'une vision privée."
+          },
+          "source_ids": [
+            "CCC-REV",
+            "DEIV"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Faith is reasonable assent to the God who reveals, not credulity toward every religious claim. The Apostles testify to what Christ taught and did, and the Church transmits that public deposit. The faithful should therefore distinguish natural religious insight, apostolic Revelation and subordinate private devotions without treating them as equal authorities.",
+            "fr": "La foi est l'assentiment raisonnable à Dieu qui révèle, non la crédulité envers toute prétention religieuse. Les Apôtres témoignent de l'enseignement et des actes du Christ, et l'Église transmet ce dépôt public. Il faut donc distinguer connaissance religieuse naturelle, Révélation apostolique et dévotions privées subordonnées sans leur attribuer la même autorité."
+          },
+          "source_ids": [
+            "DEIV",
+            "CCC-REV",
+            "CCC-FAITH"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-006",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Religions make claims that can contradict one another about God, Jesus, revelation and salvation. They cannot all be true in the same sense when one asserts that Jesus is the divine Son raised bodily and another rejects it. The Catholic case evaluates historical testimony, philosophical coherence, signs of credibility and the public apostolic witness rather than treating sincerity as a substitute for truth.",
+            "fr": "Les religions affirment des propositions parfois contradictoires sur Dieu, Jésus, la Révélation et le salut. Elles ne peuvent toutes être vraies dans le même sens quand l'une confesse Jésus Fils divin ressuscité corporellement et l'autre le nie. La démarche catholique examine témoignages historiques, cohérence rationnelle, signes de crédibilité et témoignage apostolique public, sans remplacer la vérité par la sincérité."
+          },
+          "source_ids": [
+            "DOMJES",
+            "CCC-FAITH",
+            "CCC-RES"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Dominus Iesus rejects the theory that distinct religions provide complementary and equivalent saving revelations alongside the fullness given in Christ. This is an official Catholic judgement; it must be contrasted fairly with actual alternative religions rather than imagining that every non-Christian simply believes all doctrines are interchangeable.",
+            "fr": "Dominus Iesus refuse la théorie selon laquelle des religions distinctes offriraient des révélations salvifiques équivalentes et complémentaires à la plénitude du Christ. C'est un jugement catholique officiel ; il faut le confronter loyalement aux croyances réelles des autres religions, sans prétendre que chaque non-chrétien professe l'interchangeabilité de toutes les doctrines."
+          },
+          "source_ids": [
+            "DOMJES",
+            "DEIV"
+          ],
+          "attribution": "Congregation for the Doctrine of the Faith, Dominus Iesus §§5–7",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "A true judgement about Christ's uniqueness does not license invented descriptions of rival religions or dismissal of real truths and moral goods their adherents recognise. Equally, social harmony does not establish that historically opposed claims about the Resurrection are mutually compatible. Theological truth and civil respect address different questions.",
+            "fr": "Confesser l'unicité du Christ n'autorise ni à inventer les doctrines adverses ni à nier les vérités ou biens moraux que d'autres croyants reconnaissent. Inversement, la concorde civile ne prouve pas la compatibilité de propositions historiques opposées sur la Résurrection. La vérité théologique et le respect civil répondent à des questions distinctes."
+          },
+          "source_ids": [
+            "DOMJES",
+            "CCC-RES"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "A search for the true religion must follow evidence wherever it leads and remain open to grace. Christ's claims concern real events, divine identity and the foundation of a visible Church, not private taste in ritual styles. Charity toward those who disagree requires accurate representation and freedom from coercion, not surrender of the truth claimed by the Gospel.",
+            "fr": "La recherche de la vraie religion doit suivre les preuves et demeurer ouverte à la grâce. Les affirmations du Christ portent sur des événements réels, son identité divine et la fondation d'une Église visible, non sur un goût privé pour un style rituel. La charité envers les contradicteurs impose justesse et absence de contrainte, non l'abandon de la vérité annoncée par l'Évangile."
+          },
+          "source_ids": [
+            "DOMJES",
+            "DEIV",
+            "CCC-FAITH"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-007",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Jesus of Nazareth is not known solely from a much later medieval legend: Paul's letters and the canonical Gospels preserve first-century Christian testimony, and the early Church publicly identifies the apostolic proclamation. This establishes a substantial historical subject while leaving critical questions about individual sayings, chronology and literary arrangement to careful study.",
+            "fr": "Jésus de Nazareth n'est pas connu seulement par une légende médiévale tardive : les lettres de saint Paul et les Évangiles canoniques conservent un témoignage chrétien du Ier siècle, relayé publiquement par l'Église ancienne. Cette base donne un personnage historique solide, tout en laissant à l'enquête des questions sur certaines paroles, la chronologie et la disposition littéraire."
+          },
+          "source_ids": [
+            "DEIV",
+            "BIBLE-COR",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The New Testament itself contains differing literary presentations of events: Paul preserves a compact list of Resurrection witnesses in 1 Corinthians 15, while the Gospels arrange fuller narratives according to their purposes. Treating such variation as a historical question is legitimate; presenting the texts as four verbatim stenographic transcripts would misstate their genre.",
+            "fr": "Le Nouveau Testament présente lui-même des récits aux formes diverses : Paul transmet une liste resserrée de témoins en 1 Corinthiens 15, tandis que les Évangiles disposent des épisodes plus développés selon leur objet. Il est légitime d'étudier ces variations historiquement ; prendre les quatre Évangiles pour des transcriptions sténographiques identiques méconnaît leurs genres."
+          },
+          "source_ids": [
+            "BIBLE-COR",
+            "BIBLE-MT28",
+            "DEIV"
+          ],
+          "attribution": "New Testament writers, first-century literary witnesses",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Differences of emphasis do not automatically prove fabrication, but neither may they be harmonised by inventing details absent from every witness. A sound historical method checks dating, dependence, wording, intended audience and independent corroboration where available. The question of inspiration belongs to theology while ordinary textual and historical criticism retains a real task.",
+            "fr": "Des différences d'accent ne prouvent pas automatiquement l'invention, mais on ne peut les harmoniser en ajoutant des faits absents de tous les témoins. Une bonne méthode examine datation, dépendances, formulation, public et corroborations indépendantes quand elles existent. L'inspiration relève de la théologie, tandis que critique textuelle et histoire ont leur tâche véritable."
+          },
+          "source_ids": [
+            "DEIV",
+            "BIBLE-COR",
+            "BIBLE-MT28"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The Church does not need to pretend that Evangelists wrote identical accounts to affirm that they faithfully transmitted what Christ did and taught for salvation. Reading them as ancient testimony within the apostolic community combines faith with the ordinary demands of historical honesty, without reducing Jesus to an invention or ignoring the differences among sources.",
+            "fr": "L'Église n'a pas besoin de présenter des récits évangéliques identiques pour affirmer que les évangélistes transmettent fidèlement ce que le Christ a accompli et enseigné pour notre salut. Les lire comme des témoignages anciens au sein de la communauté apostolique unit foi et honnêteté historique sans réduire Jésus à une invention ni nier les différences documentaires."
+          },
+          "source_ids": [
+            "DEIV",
+            "CCC-RES",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-009",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Resurrection is the claim that the crucified Jesus truly rose with a transformed bodily life, not simply that his disciples felt reassured after his death. Paul transmits an early account of appearances to Cephas, the Twelve and others, and the Gospels report an empty tomb and encounters. The event is both a historical claim and a transcendent act of God.",
+            "fr": "La Résurrection affirme que Jésus crucifié est réellement revenu à la vie corporelle transfigurée, non simplement que ses disciples furent réconfortés après sa mort. Paul transmet un témoignage ancien d'apparitions à Céphas, aux Douze et à d'autres ; les Évangiles rapportent le tombeau vide et des rencontres. L'événement possède une portée historique et demeure un acte transcendant de Dieu."
+          },
+          "source_ids": [
+            "BIBLE-COR",
+            "CCC-RES",
+            "BIBLE-MT28"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Matthew 28 itself records an early counter-narrative that disciples removed Jesus' body while the guards slept. Paul likewise admits that the Christian faith collapses if Christ has not been raised. These are identifiable ancient objections and stakes within original Christian sources, not a modern opponent manufactured to make the defence easier.",
+            "fr": "Matthieu 28 rapporte lui-même une explication adverse ancienne selon laquelle les disciples auraient enlevé le corps pendant le sommeil des gardes. Paul reconnaît également que la foi chrétienne s'effondrerait si le Christ n'était pas ressuscité. Ce sont des objections et enjeux anciens identifiables dans les sources chrétiennes, non des adversaires modernes inventés pour faciliter la réplique."
+          },
+          "source_ids": [
+            "BIBLE-MT28",
+            "BIBLE-COR"
+          ],
+          "attribution": "Matthew 28:11–15, reported counterclaim; Paul, 1 Corinthians 15:14–19",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The empty tomb alone cannot compel assent to a miracle, as the Catechism expressly acknowledges; explanations of appearances, the early proclamation and competing hypotheses must also be weighed. Yet reducing every encounter to private imagination does not explain by definition the same public apostolic claims. Historical argument does not substitute for the supernatural character of Resurrection.",
+            "fr": "Le seul tombeau vide ne contraint pas à reconnaître un miracle, comme l'admet expressément le Catéchisme ; il faut aussi peser les apparitions, la prédication primitive et les hypothèses rivales. Mais réduire par principe toutes les rencontres à l'imagination privée n'explique pas les mêmes affirmations apostoliques publiques. L'argument historique ne remplace pas la dimension surnaturelle de la Résurrection."
+          },
+          "source_ids": [
+            "CCC-RES",
+            "BIBLE-COR"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "If Christ rose, the Cross is victory over sin and death rather than the tragic end of one more teacher. The Church's proclamation therefore rests on a concrete event, not on the mere usefulness of Christian morals. Catholic faith accepts the witnesses under grace while refusing both rationalist exclusion of miracles in advance and careless claims about what individual relics prove.",
+            "fr": "Si le Christ est ressuscité, la Croix est victoire sur le péché et la mort plutôt que la fin tragique d'un maître de plus. La prédication ecclésiale repose donc sur un événement concret, non sur la seule utilité de la morale chrétienne. La foi accueille les témoins sous l'action de la grâce sans exclure a priori le miracle ni exagérer ce que démontrerait telle relique."
+          },
+          "source_ids": [
+            "BIBLE-COR",
+            "CCC-RES",
+            "DEIV"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-011",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Catholic confession that Christ is the unique Saviour means that all grace, wherever received, depends on the Incarnation, death and Resurrection of the divine Son. It does not mean that every person explicitly acquainted with Christianity is automatically saved or that every non-Christian is automatically condemned. The uniqueness of mediation and the mystery of individual salvation must be distinguished.",
+            "fr": "Confesser le Christ unique Sauveur signifie que toute grâce, où qu'elle soit reçue, dépend de l'Incarnation, de la mort et de la Résurrection du Fils de Dieu. Cela ne signifie ni que tous ceux qui connaissent explicitement le christianisme soient automatiquement sauvés ni que tous les autres soient automatiquement condamnés. Unicité de médiation et salut individuel doivent être distingués."
+          },
+          "source_ids": [
+            "DOMJES",
+            "DEIV",
+            "BIBLE-JN"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Dominus Iesus rejects interpreting Jesus as one limited revelation whose saving work is complemented by autonomous and equivalent mediators from other religions. This is an exact Catholic response to a particular pluralist thesis, not permission to attribute that thesis to every Muslim, Hindu, Protestant or other non-Catholic individual.",
+            "fr": "Dominus Iesus rejette une conception où Jésus ne serait qu'une révélation limitée complétée par des médiateurs religieux autonomes et équivalents. C'est une réponse catholique précise à une thèse pluraliste déterminée, non la permission de l'attribuer indistinctement à tout musulman, hindou, protestant ou autre non-catholique."
+          },
+          "source_ids": [
+            "DOMJES"
+          ],
+          "attribution": "CDF, Dominus Iesus §§13–17, rejected parallel-mediation thesis",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Religious plurality is an observable fact, not in itself evidence that opposed propositions about Jesus can all be revealed by God. Conversely, admitting a unique Redeemer does not allow Catholics to issue ungrounded final verdicts on strangers' consciences. The doctrinal issue is the objective source of salvation; the personal issue involves knowledge, grace and response.",
+            "fr": "La pluralité des religions est un fait observable, non la preuve que des propositions opposées sur Jésus puissent toutes être révélées par Dieu. Inversement, l'unique Rédempteur ne permet pas de prononcer sans fondement un verdict définitif sur la conscience d'inconnus. La question doctrinale concerne la source objective du salut ; la question personnelle dépend de connaissance, grâce et réponse."
+          },
+          "source_ids": [
+            "DOMJES",
+            "LG"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Mission remains necessary because Christ instructed his Church to proclaim him to every nation. Love of non-Christians demands genuine friendship and truthful doctrine rather than religious coercion or the silence that would deprive people of the Gospel. Catholics must hold together the universal saving will of God and the singular mediation of Jesus Christ.",
+            "fr": "La mission reste nécessaire parce que le Christ a chargé son Église de l'annoncer à toutes les nations. L'amour des non-chrétiens commande l'amitié véritable et une doctrine vraie, non la contrainte religieuse ni le silence qui les priverait de l'Évangile. Il faut maintenir ensemble la volonté salvifique universelle de Dieu et l'unique médiation de Jésus-Christ."
+          },
+          "source_ids": [
+            "DOMJES",
+            "BIBLE-MT28",
+            "LG"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-014",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Catholicism regards Scripture as inspired and authoritative, but rejects sola Scriptura understood as the Bible's being the only infallible rule independently of apostolic Tradition and the Church's authentic teaching office. The New Testament itself describes apostolic transmission through both oral teaching and letters. This does not imply the Church may contradict the Bible.",
+            "fr": "Le catholicisme reconnaît l'inspiration et l'autorité de l'Écriture, mais refuse la sola Scriptura qui fait de la Bible la seule règle infaillible indépendamment de la Tradition apostolique et du Magistère authentique. Le Nouveau Testament parle lui-même d'une transmission apostolique orale et écrite. Cela ne permet aucunement à l'Église de contredire la Bible."
+          },
+          "source_ids": [
+            "DEIV",
+            "BIBLE-2TH",
+            "TRENT4"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Westminster Confession chapter I explicitly makes Scripture the final authoritative standard for religious controversies and holds that everything necessary for salvation is expressed or necessarily deduced from it. This is a real, carefully formulated Protestant alternative; it should not be caricatured as contempt for tradition or a belief that no interpretation is ever required.",
+            "fr": "La Confession de Westminster (I) fait explicitement de l'Écriture la norme souveraine des controverses religieuses et affirme que le nécessaire au salut y figure expressément ou par conséquence nécessaire. C'est une alternative protestante réelle et articulée ; il serait inexact d'y voir un mépris pur et simple de toute tradition ou une négation du besoin d'interprétation."
+          },
+          "source_ids": [
+            "WCF"
+          ],
+          "attribution": "Westminster Confession of Faith, chapter I, §§6–10",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The immediate question is how Christians know the canon and identify binding apostolic teaching when rival interpretations conflict. Irenaeus appealed to the publicly transmitted doctrine of episcopal churches and their succession when confronting heresies, not merely to a private reading of an already agreed printed New Testament. This early evidence complicates an exclusive-rule thesis.",
+            "fr": "La question décisive est de savoir comment connaître le canon et reconnaître l'enseignement apostolique obligatoire lorsque des interprétations s'opposent. Face aux hérésies, Irénée renvoyait à la doctrine transmise publiquement par les Églises épiscopales et leur succession, non à la seule lecture privée d'un Nouveau Testament imprimé au canon déjà fixé. Ce témoignage ancien complique la thèse exclusive."
+          },
+          "source_ids": [
+            "IR3",
+            "DEIV",
+            "WCF"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Scripture and Tradition come from one divine source; the Magisterium serves their deposit rather than standing above it. The Church reads the inspired text within the apostolic faith that received and preserved it. This unity protects biblical authority against both arbitrary private interpretations and ecclesiastical novelties pretending to overrule revelation.",
+            "fr": "Écriture et Tradition proviennent d'une seule source divine ; le Magistère sert leur dépôt sans se placer au-dessus de lui. L'Église lit le texte inspiré dans la foi apostolique qui l'a reçu et gardé. Cette unité protège l'autorité biblique contre les interprétations privées arbitraires autant que contre les nouveautés ecclésiastiques prétendant dépasser la Révélation."
+          },
+          "source_ids": [
+            "DEIV",
+            "TRENT4",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-015",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Apostolic Tradition is the handing on of what the apostles received from Christ and the Spirit through preaching, worship, church order and lived witness as well as inspired writings. It is not identical with every local pious habit or every disciplinary custom. The Church distinguishes the unchangeable deposit of faith from practices that can legitimately develop or be abolished.",
+            "fr": "La Tradition apostolique transmet ce que les apôtres ont reçu du Christ et de l'Esprit par la prédication, le culte, l'organisation ecclésiale et le témoignage vécu, avec les écrits inspirés. Elle ne se confond pas avec chaque habitude pieuse locale ni chaque coutume disciplinaire. L'Église distingue le dépôt immuable de la foi des pratiques susceptibles d'évoluer ou de disparaître."
+          },
+          "source_ids": [
+            "DEIV",
+            "IR3",
+            "IR4"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Irenaeus, writing in the second century, points to identifiable episcopal successions and the faith professed in the churches as a public answer to secret alternative teachings. His appeal is an original early Catholic argument for transmissible ecclesial Tradition. It does not by itself authenticate every later claim that a cherished ceremony must be apostolic in origin.",
+            "fr": "Au IIe siècle, Irénée renvoie aux successions épiscopales identifiables et à la foi professée par les Églises pour répondre aux enseignements secrets concurrents. Son raisonnement est un argument chrétien ancien pour une Tradition ecclésiale publique et transmissible. Il ne prouve pas à lui seul que chaque cérémonie tardivement appréciée ait une origine apostolique."
+          },
+          "source_ids": [
+            "IR3",
+            "IR4"
+          ],
+          "attribution": "St Irenaeus, Against Heresies III.3–4",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "If every inherited custom were immutably apostolic, disciplinary history would become impossible to understand; if nothing oral from the apostles bound the Church, the New Testament's references to transmitted teaching would be weakened. Historical identification requires tracing the content, ancient witnesses and authority of a particular Tradition, not invoking the label as a substitute for evidence.",
+            "fr": "Si chaque coutume héritée était apostolique et immuable, l'histoire disciplinaire deviendrait incompréhensible ; si aucune parole apostolique transmise ne liait l'Église, on affaiblirait le témoignage du Nouveau Testament. Identifier une Tradition suppose de retracer son contenu, ses témoins anciens et son autorité, non de brandir le mot en guise de preuve."
+          },
+          "source_ids": [
+            "BIBLE-2TH",
+            "DEIV",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The Church must guard what she received, not invent a new Gospel by majority vote or private vision. Reverence for inherited liturgy is fitting because it bears doctrinal memory; exact distinctions remain necessary between divine Tradition, ecclesiastical tradition and mutable laws. This protects continuity without freezing every historical accident.",
+            "fr": "L'Église doit garder ce qu'elle a reçu et ne saurait inventer un Évangile nouveau par vote ou vision privée. La révérence envers la liturgie héritée convient parce qu'elle porte une mémoire doctrinale ; il faut pourtant distinguer la Tradition divine, les traditions ecclésiastiques et les lois changeantes. Cette distinction sauvegarde la continuité sans figer tout accident historique."
+          },
+          "source_ids": [
+            "DEIV",
+            "IR3",
+            "VIN"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-016",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Christ did not merely leave an invisible association of isolated believers: he gathered disciples, appointed apostles, gave them a mission to teach and baptise, and promised to remain with them. The Catholic Church is visible in profession of faith, sacramental communion and apostolic governance, though her supernatural life cannot be reduced to her offices and buildings.",
+            "fr": "Le Christ n'a pas seulement laissé une association invisible de croyants isolés : il a rassemblé des disciples, établi des apôtres, confié la mission d'enseigner et de baptiser, et promis sa présence. L'Église catholique est visible par la profession de foi, la communion sacramentelle et le gouvernement apostolique, mais sa vie surnaturelle ne se réduit ni à ses bureaux ni à ses édifices."
+          },
+          "source_ids": [
+            "BIBLE-MT28",
+            "LG",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The Westminster Confession distinguishes the invisible catholic Church of the elect from the visible Church, which it also defines as a real worldwide society professing true religion. Its account is not simply that the Church has no visible expression; its difference with Catholic teaching concerns the identity, marks and jurisdiction of the visible communion.",
+            "fr": "La Confession de Westminster distingue l'Église catholique invisible des élus et l'Église visible, qu'elle définit aussi comme une société réelle et universelle professant la vraie religion. Elle ne prétend donc pas que l'Église n'ait aucune manifestation visible ; le désaccord avec la doctrine catholique porte sur l'identité, les marques et la juridiction de la communion visible."
+          },
+          "source_ids": [
+            "WCF",
+            "LG"
+          ],
+          "attribution": "Westminster Confession of Faith, chapter XXV, §§1–6",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Visible institutions can contain sinful members without losing all identity; conversely, a visible hierarchy would not prove apostolic fidelity merely by holding property or offices. Irenaeus tests historical continuity through identifiable succession and public doctrine. Catholic ecclesiology therefore joins visible signs with the requirement to preserve the faith those signs were instituted to serve.",
+            "fr": "Une institution visible peut compter des membres pécheurs sans perdre toute identité ; inversement, une hiérarchie visible ne prouve pas sa fidélité apostolique par le seul fait de posséder biens et offices. Irénée éprouve la continuité par succession identifiable et doctrine publique. L'ecclésiologie catholique associe donc signes visibles et devoir de garder la foi qu'ils doivent servir."
+          },
+          "source_ids": [
+            "IR3",
+            "LG",
+            "WCF"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The Church is at once a spiritual communion in grace and a public apostolic body through which Christ ordinarily teaches and sanctifies. Treating her as merely human politics strips her of divine origin; treating her as entirely invisible makes sacraments, governance and apostolic succession unintelligible. Both dimensions belong to the mystery of the Church.",
+            "fr": "L'Église est à la fois communion spirituelle dans la grâce et corps apostolique public par lequel le Christ enseigne et sanctifie ordinairement. La réduire à une politique humaine nie son origine divine ; la rendre entièrement invisible vide de sens sacrements, gouvernement et succession apostolique. Ces deux dimensions appartiennent au mystère de l'Église."
+          },
+          "source_ids": [
+            "LG",
+            "IR3",
+            "BIBLE-MT28"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-017",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Church is holy because Christ sanctifies her, not because every Catholic or cleric is personally virtuous. Scripture itself knows sinful disciples and corrupt communities; the parable of wheat and weeds warns against assuming a perfectly pure membership before judgement. The Church's sanctity does not excuse real institutional wrongdoing.",
+            "fr": "L'Église est sainte parce que le Christ la sanctifie, non parce que tous les catholiques ou clercs seraient vertueux. L'Écriture connaît disciples pécheurs et communautés défaillantes ; la parabole du bon grain et de l'ivraie interdit d'attendre ici-bas une communauté parfaitement pure. La sainteté ecclésiale n'excuse aucun crime institutionnel."
+          },
+          "source_ids": [
+            "LG",
+            "CCC-CH",
+            "BIBLE-MAT13"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Irenaeus invoked public episcopal succession to defend authentic teaching, while also warning that bad successors could cause grave damage to the Church. This is a real second-century admission of ministerial failure rather than an idealised assurance that apostolic office automatically sanctifies its holder.",
+            "fr": "Irénée invoquait la succession épiscopale publique pour défendre la vraie doctrine, mais avertissait aussi que de mauvais successeurs pourraient causer un grave dommage à l'Église. C'est une reconnaissance réelle, au IIe siècle, des fautes ministérielles et non l'assurance idéalisée que l'office apostolique sanctifie automatiquement son titulaire."
+          },
+          "source_ids": [
+            "IR3",
+            "LG"
+          ],
+          "attribution": "Irenaeus, Against Heresies III.3.1",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "A documented clerical crime requires justice, protection of victims and institutional correction; it does not logically disprove Christ's teachings. Conversely, appealing to the Church's supernatural holiness to evade evidence or protect offenders is a misuse of theology. The distinction between divine grace and a human minister's culpability strengthens accountability.",
+            "fr": "Un crime clérical documenté exige justice, protection des victimes et correction institutionnelle ; il ne réfute pas logiquement l'enseignement du Christ. Inversement, invoquer la sainteté surnaturelle pour éviter les preuves ou protéger les auteurs est un abus théologique. La distinction entre grâce divine et responsabilité humaine renforce l'obligation de rendre compte."
+          },
+          "source_ids": [
+            "CCC-CH",
+            "LG"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The holiness of the Church must be visible in repentance, truthful governance, sacramental life and charity, not in denial of scandals. Faithful Catholics should demand the correction of abusive ministers without confusing their sins with the truth of the deposit of faith. Genuine reform restores discipline and virtue rather than institutional immunity.",
+            "fr": "La sainteté de l'Église doit se manifester par repentir, gouvernement véridique, vie sacramentelle et charité, non par la négation des scandales. Les catholiques doivent demander la correction des ministres fautifs sans confondre leurs péchés avec la vérité du dépôt de la foi. La vraie réforme restaure discipline et vertu plutôt qu'une immunité institutionnelle."
+          },
+          "source_ids": [
+            "LG",
+            "CCC-CH",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-018",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Catholic doctrine reads Christ's words to Peter concerning the rock, keys and binding and loosing as conferring a particular pastoral office for unity. This office is exercised within the apostolic communion and in submission to Christ, its divine head. A personal Petrine primacy does not imply that the pope can add a new revelation or command what God forbids.",
+            "fr": "La doctrine catholique voit dans les paroles du Christ à Pierre sur le roc, les clés et le pouvoir de lier et délier un office pastoral particulier d'unité. Cet office s'exerce dans la communion apostolique et sous le Christ, tête divine. Une primauté personnelle n'autorise pas le pape à ajouter une révélation ou à commander ce que Dieu interdit."
+          },
+          "source_ids": [
+            "BIBLE-MT",
+            "V1",
+            "LG"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The Westminster Confession states that Christ alone is the Church's head and rejects Roman papal headship. This is an original Reformed objection based on Christ's unique authority. It should be answered by distinguishing divine sovereignty from delegated pastoral primacy, not by pretending Presbyterians deny the Kingship of Jesus.",
+            "fr": "La Confession de Westminster affirme que le Christ seul est tête de l'Église et refuse la primauté romaine. C'est une objection réformée originale fondée sur l'autorité unique du Christ. Il faut y répondre en distinguant souveraineté divine et primauté pastorale déléguée, non en prétendant que les presbytériens nient la royauté de Jésus."
+          },
+          "source_ids": [
+            "WCF",
+            "BIBLE-MT"
+          ],
+          "attribution": "Westminster Confession, chapter XXV §6",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Matthew 16 addresses Peter specifically, while Matthew 18 also records authority to bind and loose conferred in a broader ecclesial context. These texts establish the theological question of primacy alongside collegiality; they do not themselves spell out every medieval or modern papal administrative practice. Historical succession therefore matters to the continuity claim.",
+            "fr": "Matthieu 16 s'adresse personnellement à Pierre, tandis que Matthieu 18 présente aussi le pouvoir de lier et délier dans un contexte ecclésial plus large. Ces textes posent primauté et collégialité ; ils ne décrivent pas toutes les pratiques administratives des papautés médiévales ou modernes. La succession historique importe donc pour la continuité."
+          },
+          "source_ids": [
+            "BIBLE-MT",
+            "BIBLE-MAT18",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The primacy of Peter serves a visible communion under the one Lord and is bounded by fidelity to apostolic revelation. Catholics should defend this office for the good of souls without pretending that every holder is impeccable or that every prudential order is infallible. Proper respect and truthful criticism can coexist.",
+            "fr": "La primauté de Pierre sert la communion visible sous l'unique Seigneur et demeure liée à la Révélation apostolique. Les catholiques la défendront pour le salut des âmes sans supposer chaque titulaire impeccable ni chaque ordonnance prudentielle infaillible. Le respect légitime et une critique véridique peuvent coexister."
+          },
+          "source_ids": [
+            "V1",
+            "LG",
+            "BIBLE-MT"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-019",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Apostolic succession transmits the episcopal ministry through historical continuity, valid ordination and the obligation to preserve apostolic doctrine. It is neither mere possession of a building nor an uncheckable claim of private inspiration. The second-century testimony of Irenaeus names bishops and argues from visible succession against secret rival teachings.",
+            "fr": "La succession apostolique transmet le ministère épiscopal par continuité historique, ordination valide et devoir de conserver la doctrine des apôtres. Elle n'est ni possession d'un bâtiment ni inspiration privée invérifiable. Irénée, au IIe siècle, nomme des évêques et argumente depuis la succession visible contre des enseignements rivaux secrets."
+          },
+          "source_ids": [
+            "IR3",
+            "LG",
+            "BIBLE-ACTS1"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Westminster's historic Reformed ecclesiology recognises church ministry and government but rejects the necessity of Roman papal headship. Its dispute with Catholic succession is therefore about the nature of ordained office, sacramental episcopacy and universal primacy, not whether the community should have any teachers or elders.",
+            "fr": "L'ecclésiologie réformée historique de Westminster reconnaît ministères et gouvernement ecclésial, mais rejette la nécessité de la primauté romaine. Son désaccord avec la succession catholique concerne donc la nature du ministère ordonné, l'épiscopat sacramentel et la primauté universelle, non le besoin de tout enseignant ou ancien."
+          },
+          "source_ids": [
+            "WCF",
+            "IR3"
+          ],
+          "attribution": "Westminster Confession, chapters XXV and XXX",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Acts describes the appointment of Matthias to Judas's place and the New Testament knows laying on of hands and ministerial transmission. Such texts do not supply the entire later law of episcopal succession, but they make it implausible to treat ministerial continuity as a purely medieval invention. Precise history remains essential to each claimed line.",
+            "fr": "Les Actes décrivent la désignation de Matthias à la place de Judas, et le Nouveau Testament connaît imposition des mains et transmission ministérielle. Ces textes ne livrent pas tout le droit épiscopal ultérieur, mais rendent peu plausible une invention purement médiévale de la continuité ministérielle. Chaque lignée alléguée exige pourtant une enquête historique précise."
+          },
+          "source_ids": [
+            "BIBLE-ACTS1",
+            "BIBLE-1TIM",
+            "IR3"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Succession makes apostolic teaching recognisably transmissible through generations while imposing accountability on bishops who hold the office. Sacramental and doctrinal continuity belong together; a title alone cannot justify departure from the faith entrusted to the apostles. Catholics owe reverence to the episcopate and vigilance for the integrity of its teaching.",
+            "fr": "La succession rend la doctrine apostolique reconnaissable à travers les générations tout en imposant des responsabilités aux évêques. Continuité sacramentelle et doctrinale vont ensemble ; un titre ne justifie pas l'abandon de la foi transmise par les apôtres. Les catholiques doivent révérence à l'épiscopat et vigilance envers l'intégrité de son enseignement."
+          },
+          "source_ids": [
+            "IR3",
+            "LG",
+            "DEIV"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-020",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Papal infallibility protects a definition of faith or morals delivered by the pope ex cathedra as universal shepherd, intended to bind the whole Church. It is not personal sinlessness, scientific omniscience, or infallibility of interviews, administrative policies and private opinions. The bishops also participate in infallible teaching under the specified conditions of Catholic doctrine.",
+            "fr": "L'infaillibilité pontificale protège une définition de foi ou de mœurs prononcée ex cathedra par le pape pasteur universel pour obliger l'Église entière. Elle n'est ni impeccabilité personnelle, ni omniscience scientifique, ni infaillibilité d'interviews, mesures administratives ou opinions privées. Les évêques participent aussi à l'enseignement infaillible selon les conditions doctrinales établies."
+          },
+          "source_ids": [
+            "V1",
+            "LG",
+            "CCC-MAG"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The Westminster Confession teaches that synods and councils since the apostolic era may err and should be received only insofar as their teaching conforms to Scripture. This original Reformed argument rejects a permanently infallible ecclesiastical teaching office. Its challenge concerns the identity of an authoritative interpreter of revelation.",
+            "fr": "La Confession de Westminster enseigne que synodes et conciles depuis l'époque apostolique peuvent errer et qu'il faut recevoir leurs enseignements selon leur conformité à l'Écriture. Cet argument réformé original rejette un Magistère ecclésiastique durablement infaillible. Il conteste l'identité de l'interprète autorisé de la Révélation."
+          },
+          "source_ids": [
+            "WCF",
+            "V1"
+          ],
+          "attribution": "Westminster Confession, chapter XXXI §4",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "A serious claim of ex cathedra definition must show the actual speaker, object, universal audience and intent to define; merely finding a papal statement is insufficient. Equally, a solemn definition cannot be demoted by calling it private opinion. The Church distinguishes levels of teaching and corresponding assent instead of assigning every utterance the same weight.",
+            "fr": "Une prétendue définition ex cathedra doit établir auteur, objet, audience universelle et intention de définir ; une phrase prononcée par un pape ne suffit pas. Inversement, une définition solennelle ne devient pas opinion privée par simple déclaration. L'Église distingue degrés d'enseignement et assentiments correspondants, au lieu d'attribuer le même poids à chaque parole."
+          },
+          "source_ids": [
+            "V1",
+            "LG",
+            "CCC-MAG"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Infallibility serves the received deposit; it does not make the pope a source of new divine revelation. Non-definitive teaching still merits its proper religious respect while remaining distinct from solemn definition. This calibrated fidelity permits real scrutiny of governance without undermining what the Church has definitively taught.",
+            "fr": "L'infaillibilité sert le dépôt reçu ; elle ne fait pas du pape une source de révélation divine nouvelle. L'enseignement non définitif mérite aussi le respect religieux qui lui convient, tout en restant distinct d'une définition solennelle. Cette fidélité nuancée permet d'examiner le gouvernement sans miner ce que l'Église a définitivement enseigné."
+          },
+          "source_ids": [
+            "V1",
+            "LG",
+            "DEIV"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-021",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Development clarifies and unfolds the meaning of one revealed deposit; it cannot make a defined doctrine true and its direct contradiction true in the same respect. The Church may refine vocabulary, distinguish cases and draw genuine implications over time. Calling every novelty a development would empty the principle of its protective force.",
+            "fr": "Le développement explicite le sens du même dépôt révélé ; il ne peut rendre vraies une doctrine définie et sa contradiction directe sous le même rapport. L'Église peut préciser les mots, distinguer les cas et tirer des conséquences authentiques au fil du temps. Appeler toute nouveauté développement viderait le principe de sa fonction protectrice."
+          },
+          "source_ids": [
+            "VIN",
+            "DEIV",
+            "V1"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Vincent of Lérins expressly affirmed progress in Christian understanding but only with preservation of the same doctrine, sense and meaning. His fifth-century test is an original traditional Catholic witness rather than a formula invented to approve everything an ecclesiastical official later changes. The content of each contested proposition must still be analysed.",
+            "fr": "Vincent de Lérins admettait expressément un progrès de l'intelligence chrétienne à condition de conserver même doctrine, même sens et même signification. Son critère du Ve siècle est un témoignage catholique traditionnel, non une formule inventée pour approuver tous les changements des responsables ecclésiastiques. Il faut toujours analyser les propositions contestées."
+          },
+          "source_ids": [
+            "VIN"
+          ],
+          "attribution": "Vincent of Lérins, Commonitorium chapter 23 §§54–57",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Two phrases that appear opposed may concern different situations, levels of authority or precise concepts; the resemblance of words alone establishes neither harmony nor rupture. Yet a real contradiction cannot be reconciled simply by appealing to pastoral development. Textual comparison must identify what earlier teaching actually bound Catholics to believe.",
+            "fr": "Deux phrases opposées en apparence peuvent viser des situations, degrés d'autorité ou concepts différents ; la similitude de mots ne prouve ni accord ni rupture. Une contradiction réelle ne se résout pourtant pas par l'appel au développement pastoral. La comparaison textuelle doit établir ce que l'enseignement antérieur obligeait véritablement à croire."
+          },
+          "source_ids": [
+            "VIN",
+            "V1",
+            "DEIV"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The faith belongs to Christ rather than any generation of theologians or church politicians. Growth should make apostolic truth clearer and better defended, never replace it with an expedient contrary assertion. Catholic fidelity therefore requires both serious examination of apparent difficulties and confidence that divine revelation cannot contradict itself.",
+            "fr": "La foi appartient au Christ, non à une génération de théologiens ou de responsables politiques ecclésiastiques. La croissance doit éclaircir et mieux défendre la vérité apostolique, jamais la remplacer par une assertion contraire commode. La fidélité catholique exige donc examen sérieux des difficultés et confiance dans la non-contradiction de la Révélation."
+          },
+          "source_ids": [
+            "VIN",
+            "DEIV",
+            "V1"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-022",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Church of England retains Christian Scripture, worship and historical community, but Catholic doctrine does not treat its Orders as automatically valid because an episcopal title survived. Leo XIII's Apostolicae curae judged the Anglican Ordinal defective in sacramental form and intention. This ruling concerns sacramental acts, not an assertion that every Anglican lacks sincere Christian faith.",
+            "fr": "L'Église d'Angleterre conserve Écritures, culte et communauté historique, mais la doctrine catholique ne tient pas ses Ordres pour valides du seul fait de titres épiscopaux conservés. Apostolicae curae de Léon XIII jugea l'ordinal anglican défectueux quant à la forme et l'intention sacramentelles. Ce jugement porte sur les actes sacramentels, non sur la sincérité de chaque anglican."
+          },
+          "source_ids": [
+            "APOST",
+            "LG"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "In Saepius Officio (1897) the Archbishops of Canterbury and York responded that the Anglican ordinal and surrounding formularies sufficiently express the Church of England's intention and the apostolic ministry. This is the authentic Anglican rebuttal to Leo XIII, not an invented objection that Anglicans simply value ceremony above the priesthood.",
+            "fr": "Dans Saepius Officio (1897), les archevêques de Canterbury et d'York répondirent que l'ordinal anglican et ses formulaires exprimaient suffisamment l'intention de l'Église d'Angleterre et le ministère apostolique. Il s'agit de la réplique anglicane authentique à Léon XIII, non d'une objection inventée selon laquelle les anglicans préféreraient simplement la cérémonie au sacerdoce."
+          },
+          "source_ids": [
+            "SAEPIUS",
+            "APOST"
+          ],
+          "attribution": "Archbishops Temple and Maclagan, Saepius Officio (1897)",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Valid Orders require an appropriate sacramental rite and intention, not merely the private sincerity of minister or recipient. Leo XIII examined public historical ritual forms; the archbishops contested his interpretation. Some later individual ordinations involving bishops whose Orders Rome recognises require case-specific evaluation and cannot simply be settled by repeating a generic historical formula.",
+            "fr": "Un Ordre valide requiert rite et intention sacramentels appropriés, non seulement la sincérité privée du ministre ou du destinataire. Léon XIII examina les formes rituelles publiques et historiques ; les archevêques en contestèrent l'interprétation. Certaines ordinations individuelles ultérieures impliquant des évêques aux Ordres reconnus par Rome demandent une enquête propre."
+          },
+          "source_ids": [
+            "APOST",
+            "SAEPIUS"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The priesthood is an objective sacrament with a relation to Eucharistic sacrifice, not an optional title bestowed by popular preference. The Church must be exact about valid Orders while showing charity and justice to Christians outside full communion. Honest ecumenism cannot require affirming sacramental equivalence that Catholic authority has denied.",
+            "fr": "Le sacerdoce est un sacrement objectif lié au sacrifice eucharistique, non un titre facultatif donné par préférence populaire. L'Église doit être précise sur la validité des Ordres tout en montrant charité et justice aux chrétiens hors de la pleine communion. Un œcuménisme honnête n'exige pas d'affirmer une équivalence sacramentelle rejetée par l'autorité catholique."
+          },
+          "source_ids": [
+            "APOST",
+            "LG",
+            "SAEPIUS"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-023",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Christ instituted seven efficacious sacraments entrusted to the Church: Baptism, Confirmation, Eucharist, Penance, Anointing, Orders and Matrimony. Their outward signs do not simply decorate faith; through them Christ acts to confer grace according to each sacrament's purpose. Reception must still be valid and fruitful, not treated as an automatic substitute for conversion.",
+            "fr": "Le Christ a institué sept sacrements efficaces confiés à l'Église : baptême, confirmation, Eucharistie, pénitence, onction, ordre et mariage. Leurs signes extérieurs n'ornent pas seulement la foi : le Christ y agit pour conférer la grâce propre à chacun. Leur réception doit cependant être valide et fructueuse, non un substitut automatique à la conversion."
+          },
+          "source_ids": [
+            "TRENT7",
+            "CCC-SAC"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The historic 1689 Baptist Confession recognises Baptism and the Lord's Supper as Christ's two ordinances; Westminster likewise treats only two as sacraments. These are actual confessional disagreements with Trent about sacramental number and efficacy. They do not mean that these Reformed communities reject Baptism or the Lord's Supper altogether.",
+            "fr": "La Confession baptiste de 1689 reconnaît baptême et Cène comme deux ordonnances du Christ ; Westminster traite également seulement deux sacrements. Ce sont de vrais désaccords confessionnels avec Trente sur leur nombre et efficacité. Ils ne signifient pas que ces communautés réformées rejettent le baptême ou la Cène en bloc."
+          },
+          "source_ids": [
+            "BAPT1689",
+            "WCF",
+            "TRENT7"
+          ],
+          "attribution": "Second London Baptist Confession ch. 28; Westminster ch. 27",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The New Testament shows apostolic laying on of hands and forgiveness of sins as well as Baptism and the Lord's Supper. The later list of seven is not recited in a single biblical verse; historical theology traces distinct instituted graces and rites across apostolic evidence. Development of ceremonial form should not be equated with invention of sacramental substance.",
+            "fr": "Le Nouveau Testament montre l'imposition apostolique des mains et la rémission des péchés en plus du baptême et de la Cène. La liste tardive des sept ne figure pas en un seul verset ; la théologie historique suit les grâces et rites distincts à travers les témoignages apostoliques. L'évolution cérémonielle ne doit pas être confondue avec l'invention de la substance sacramentelle."
+          },
+          "source_ids": [
+            "TRENT7",
+            "BIBLE-ACTS8",
+            "BIBLE-JN20"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Because the divine Word became man, Christ sanctifies embodied creatures through sensible signs. Sacramental grace does not depend on the celebrant's personal moral excellence or the recipient's emotional fervour, although worthy reception matters. Precise ecclesiastical discipline protects the objective gifts Christ committed to the Church.",
+            "fr": "Parce que le Verbe divin s'est fait homme, le Christ sanctifie les créatures corporelles par des signes sensibles. La grâce sacramentelle ne dépend pas de l'excellence morale personnelle du célébrant ni de l'émotion du destinataire, bien que la réception digne importe. La discipline ecclésiale protège les dons objectifs confiés à l'Église."
+          },
+          "source_ids": [
+            "CCC-SAC",
+            "TRENT7",
+            "DEIV"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-024",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Baptism effects rebirth by water and the Holy Spirit, remits sin and incorporates a person into Christ and his Church. Catholics baptise infants because sacramental adoption is a gift of divine grace rather than a reward for mature intellectual profession. The child must subsequently learn the faith and respond personally as his faculties develop.",
+            "fr": "Le baptême opère une renaissance d'eau et d'Esprit, remet le péché et incorpore au Christ et à l'Église. Les catholiques baptisent les nourrissons parce que l'adoption sacramentelle est un don de grâce et non une récompense pour une profession intellectuelle adulte. L'enfant doit ensuite connaître la foi et y répondre personnellement selon son développement."
+          },
+          "source_ids": [
+            "BIBLE-JN3",
+            "CCC-BAP",
+            "CCC-BAPTISM-INF"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "The 1689 Baptist Confession chapter 29.2 admits as proper subjects of Baptism only those who actually profess repentance and faith. It nevertheless recognises Baptism as Christ's ordinance and a sign of union with him. The difference with Catholics concerns whether a child can receive the sacrament before personal profession.",
+            "fr": "La Confession baptiste de 1689 (29.2) réserve le baptême à ceux qui professent effectivement repentance et foi. Elle reconnaît pourtant le baptême comme ordonnance du Christ et signe d'union avec lui. La divergence avec les catholiques concerne la possibilité pour l'enfant de recevoir le sacrement avant une profession personnelle."
+          },
+          "source_ids": [
+            "BAPT1689",
+            "BIBLE-JN3"
+          ],
+          "attribution": "Second London Baptist Confession, chapter 29 §§1–2",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The New Testament connects baptism and personal faith but also describes divine action in the sacrament and whole households entering the Church. A household baptism is not itself proof that infants were physically present. The Catholic case therefore also relies on ancient ecclesial reception and the Church's faith carried by parents and godparents.",
+            "fr": "Le Nouveau Testament lie baptême et foi personnelle, mais rapporte aussi l'action divine sacramentelle et l'entrée de maisons entières dans l'Église. Un baptême de maisonnée ne prouve pas à lui seul la présence de nourrissons. L'argument catholique invoque aussi la réception ecclésiale ancienne et la foi de l'Église portée par parents et parrains."
+          },
+          "source_ids": [
+            "CCC-BAPTISM-INF",
+            "BAPT1689",
+            "BIBLE-ACTS"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "An infant does not need to earn the grace of adoption by reaching a chosen minimum age. Parents and godparents take responsibility for formation because Baptism establishes lifelong discipleship, not mere cultural registration. Adult catechumens still must repent and profess belief; different ages of reception do not mean different baptisms.",
+            "fr": "Un nourrisson n'a pas à mériter l'adoption divine en atteignant un âge minimal. Parents et parrains assument la formation parce que le baptême inaugure une vie de disciple, non une simple inscription culturelle. Les catéchumènes adultes doivent se repentir et professer la foi ; l'âge différent n'établit pas des baptêmes différents."
+          },
+          "source_ids": [
+            "CCC-BAPTISM-INF",
+            "CCC-BAP",
+            "TRENT7"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-025",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Confirmation strengthens baptismal grace through a particular gift of the Holy Spirit and binds the Christian more firmly to public witness. It is neither simply graduation from religious instruction nor the first moment a child becomes personally responsible for faith. The Church's sacramental understanding links it to the apostolic laying on of hands.",
+            "fr": "La confirmation fortifie la grâce baptismale par un don particulier de l'Esprit-Saint et engage plus fermement le chrétien au témoignage public. Elle n'est ni diplôme de catéchisme ni premier instant de responsabilité personnelle devant la foi. La compréhension sacramentelle de l'Église la relie à l'imposition des mains des apôtres."
+          },
+          "source_ids": [
+            "CCC-CONF",
+            "CCC-CONF2",
+            "BIBLE-ACTS8"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Westminster's Reformed confession accepts only Baptism and the Lord's Supper as sacraments, declining to recognise Confirmation as a separately instituted sacrament. Its real objection concerns whether passages describing the Spirit and laying on of hands imply a permanent rite or only a historically situated apostolic action.",
+            "fr": "La confession réformée de Westminster ne reconnaît que baptême et Cène comme sacrements, non une confirmation instituée séparément. L'objection réelle demande si les passages sur l'Esprit et l'imposition des mains impliquent un rite permanent ou seulement une action apostolique propre à son contexte historique."
+          },
+          "source_ids": [
+            "WCF",
+            "BIBLE-ACTS8"
+          ],
+          "attribution": "Westminster Confession, chapter XXVII; Acts 8:14–17",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Acts 8 describes already baptised Samaritans receiving the Holy Spirit through the laying on of apostolic hands. Catholic Tradition sees a foundational witness to Confirmation here, but the passage does not contain the full later Latin ritual or prescribe one universal age. Distinguishing sacramental grace from changing disciplinary forms avoids historical exaggeration.",
+            "fr": "Actes 8 rapporte que des Samaritains déjà baptisés reçoivent l'Esprit par l'imposition des mains des apôtres. La Tradition y voit un témoignage fondateur de la confirmation, mais le passage ne contient pas tout le rite latin ultérieur ni un âge universel. Distinguer grâce sacramentelle et formes disciplinaires changeantes évite l'exagération historique."
+          },
+          "source_ids": [
+            "BIBLE-ACTS8",
+            "CCC-CONF"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "The confirmed Christian receives strength for confession of Christ, service and moral perseverance, not a private authority to invent doctrine. Preparation should lead to prayer, clear instruction and responsibility for Christian witness. The sacrament complements Baptism and should not be reduced to an optional adolescent ceremony.",
+            "fr": "Le confirmé reçoit la force de confesser le Christ, de servir et de persévérer moralement, non une autorité privée pour inventer une doctrine. La préparation doit mener à la prière, à l'instruction claire et à la responsabilité du témoignage chrétien. Le sacrement complète le baptême et ne saurait être réduit à une cérémonie adolescente facultative."
+          },
+          "source_ids": [
+            "CCC-CONF2",
+            "CCC-CONF",
+            "TRENT7"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    },
+    {
+      "id": "APOL-026",
+      "canonical_owner": "APOLOGETICS",
+      "question_provenance": "CANONICAL_TITLE_ONLY_LEGACY_ORIGINAL_NOT_RECOVERED",
+      "research_anchor": [],
+      "sections": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Christ alone is the source of forgiveness, but he commissioned apostles to forgive and retain sins in his name. The sacrament of Penance exercises this entrusted ministry: the priest does not compete with God as another independent redeemer. A penitent requires contrition, truthful confession and the purpose to amend life, rather than a mechanical recital of faults.",
+            "fr": "Le Christ seul est source du pardon, mais il chargea les apôtres de remettre et retenir les péchés en son nom. La pénitence exerce ce ministère confié : le prêtre ne concurrence pas Dieu comme rédempteur indépendant. Le pénitent doit éprouver contrition, accusation véridique et résolution de conversion, non réciter mécaniquement des fautes."
+          },
+          "source_ids": [
+            "BIBLE-JN20",
+            "CCC-PEN",
+            "CCC-PEN2"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "Westminster teaches repentance unto life and forgiveness in Christ but does not recognise auricular confession and absolution as one of Christ's two sacraments. It can still affirm pastoral counsel and church discipline. The difference is whether priestly absolution is a sacramental exercise of apostolic authority, not whether forgiveness comes ultimately from Jesus.",
+            "fr": "Westminster enseigne repentance et pardon dans le Christ sans reconnaître la confession auriculaire et l'absolution parmi ses deux sacrements. Elle peut néanmoins admettre conseil pastoral et discipline ecclésiastique. La divergence porte sur le caractère sacramentel du pouvoir apostolique d'absoudre, non sur le fait que le pardon vienne ultimement de Jésus."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC-PEN"
+          ],
+          "attribution": "Westminster Confession, chapters XV, XXVII and XXX",
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "John 20 distinguishes sins forgiven from sins retained after Jesus breathes the Spirit upon the apostles. Interpreting the passage as only a general proclamation must address this judicial distinction. Conversely, Catholic doctrine need not pretend that the modern confessional box or every later formula appears verbatim in the apostolic narrative.",
+            "fr": "Jean 20 distingue les péchés remis de ceux qui sont retenus après le don de l'Esprit aux apôtres. Une lecture limitée à une proclamation générale doit expliquer cette distinction de jugement. Inversement, la doctrine catholique ne suppose pas que le confessionnal moderne ni chaque formule tardive figure littéralement dans le récit apostolique."
+          },
+          "source_ids": [
+            "BIBLE-JN20",
+            "CCC-PEN"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        },
+        {
+          "role": "traditional_catholic_argument",
+          "text": {
+            "en": "Through confession the sinner returns to God by sincere repentance and the objective means of grace Christ gave to the Church. Truthful self-accusation fosters humility, and sacramental absolution gives an ecclesial assurance that does not rest on the intensity of emotion. Catholic penitence joins trust in mercy with real determination to abandon sin.",
+            "fr": "Par la confession le pécheur revient à Dieu par repentir sincère et moyen objectif de grâce confié par le Christ à l'Église. L'accusation véridique favorise l'humilité, et l'absolution assure ecclésialement sans dépendre de l'intensité émotionnelle. La pénitence catholique unit confiance en la miséricorde et ferme volonté de quitter le péché."
+          },
+          "source_ids": [
+            "CCC-PEN",
+            "CCC-PEN2",
+            "BIBLE-JN20"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false
+        }
+      ],
+      "original_claim_by_claim_source_context_certified": false,
+      "independent_theological_canonical_approval": false,
+      "native_french_copyapproval": false,
+      "publication_allowed": false
+    }
+  ],
+  "metrics": {
+    "canonical_dossiers": 20,
+    "english_substantive_paragraphs": 80,
+    "french_substantive_paragraphs": 80,
+    "source_registry_entries": 42,
+    "public_routes_added": 0,
+    "independent_approvals": 0
+  }
+}

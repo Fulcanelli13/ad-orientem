@@ -17,7 +17,8 @@ const PACKS = Object.freeze([
   ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"],
   ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"],
   ["Canonical syntheses II","formation-canonical-synthesis-batch2-2026-10-09.v1.json"],
-  ["Canonical syntheses III","formation-canonical-synthesis-batch3-2026-10-09.v1.json"]
+  ["Canonical syntheses III","formation-canonical-synthesis-batch3-2026-10-09.v1.json"],
+  ["Canonical source-first IV","formation-canonical-sourcefirst-batch4-2026-10-09.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -137,7 +138,8 @@ export function buildRecoveryDossierCoverage(rows,packs) {
   const synthPacks=[
     ["Canonical syntheses","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH1_V1",10],
     ["Canonical syntheses II","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH2_V1",20],
-    ["Canonical syntheses III","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH3_V1",23]
+    ["Canonical syntheses III","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH3_V1",23],
+    ["Canonical source-first IV","FORMATION_CANONICAL_SOURCE_FIRST_UNLINKED_BATCH4_V1",20]
   ];
   const synthMap=new Map();
   for(const [label,version,count] of synthPacks){
@@ -257,14 +259,19 @@ export function createFormationRecoveryReview(win=globalThis) {
     const leads=evidence?.legacy_thematic_and_research_bank_leads||[];
     const refs=[...(evidence?.apostolate_reference_only||[]),...(evidence?.proposed_not_live_AQ_leads||[])];
     const intro='<div class="rrMuted">'+esc(d.id)+' · '+esc(d.family)+'</div><h1>'+esc(d.title)+'</h1>'+
-      '<div class="rrWarning">'+esc(pick(win,
-        "Original source-linked research grouped under this dossier. Not a complete certified answer to the canonical question, and not approved for publication.",
-        "Recherches originales sourcées regroupées dans ce dossier. Elles ne constituent pas une réponse complète certifiée et ne sont pas approuvées pour publication."))+'</div>'+
+      '<div class="rrWarning">'+esc(d.synthesis?.research_anchor?.length===0?
+        pick(win,
+          "New source-first editorial argument under the existing canonical owner. The historical question and older research were not individually recovered; the answer is neither independently certified nor published.",
+          "Nouvel argument éditorial rédigé directement à partir des sources sous le dossier canonique existant. La question historique et les recherches anciennes n’ont pas été retrouvées individuellement ; la réponse n’est ni certifiée ni publiée."):
+        pick(win,
+          "Original source-linked research grouped under this dossier. Not a complete certified answer to the canonical question, and not approved for publication.",
+          "Recherches originales sourcées regroupées dans ce dossier. Elles ne constituent pas une réponse complète certifiée et ne sont pas approuvées pour publication."))+'</div>'+
       (leads.length?'<p class="rrMuted">'+esc(pick(win,"Historical thematic leads (not recovered questions): ","Pistes historiques (non questions authentifiées) : "))+esc([...new Set(leads.map(x=>x.key))].join(", "))+'</p>':"")+
       (refs.length?'<p class="rrMuted">'+esc(pick(win,"Apostolate cross-references only: ","Références croisées d’apostolat : "))+esc(refs.join(", "))+'</p>':"");
-    if(!d.research.length)return intro+synthesisReading(d)+'<p class="rrMuted">'+esc(pick(win,
-      "No direct indexed research record. Check other existing Formation owners and historical sources before drafting new claims.",
-      "Aucune recherche individuelle directement liée. Vérifier les autres modules et les sources historiques avant de rédiger."))+'</p>';
+    if(!d.research.length)return intro+synthesisReading(d)+
+      '<p class="rrMuted">'+esc(d.synthesis?
+        pick(win,"No earlier individually indexed research was recovered for this question; this new source-first article is an unpublished working draft.","Aucune recherche antérieure indexée individuellement n’a été retrouvée pour cette question ; ce nouvel article sourcé demeure un projet non publié."):
+        pick(win,"No indexed research or article here. Check existing Formation owners and historical sources before drafting new claims.","Aucune recherche ou rédaction liée ici. Examiner les autres dossiers et sources historiques avant de rédiger."))+'</p>';
     return intro+synthesisReading(d)+'<h2>'+esc(pick(win,"Source-linked dossier reading","Lecture des recherches sourcées"))+' ('+d.research.length+')</h2>'+
       '<p class="rrMuted">'+esc(pick(win,
         "Expand each case to read its documented answer, opposed positions, critical replies and traditional Catholic argument, wherever those sections actually exist. Source links accompany each original paragraph.",
@@ -376,7 +383,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
       state.synthesisSources=new Map();
-      for(const label of ["Canonical syntheses","Canonical syntheses II","Canonical syntheses III"]){
+      for(const label of ["Canonical syntheses","Canonical syntheses II","Canonical syntheses III","Canonical source-first IV"]){
         const doc=docs.find(x=>x.label===label)?.doc;
         for(const s of doc?.source_registry||[])state.synthesisSources.set(s.id,s);
       }

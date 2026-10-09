@@ -17,6 +17,8 @@ on:
       - 'data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
+      - 'data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json'
+      - 'tests/formation-canonical-sourcefirst-batch4.mjs'
       - 'tests/formation-canonical-synthesis-batch3.mjs'
       - 'tests/formation-canonical-synthesis-batch2.mjs'
       - 'tests/formation-canonical-synthesis-batch1.mjs'
@@ -120,6 +122,8 @@ jobs:
         run: node tests/formation-canonical-synthesis-batch2.mjs
       - name: Validate all 53 canonical research-linked bilingual dossiers
         run: node tests/formation-canonical-synthesis-batch3.mjs
+      - name: Validate new source-first Catholic foundation articles for previously unlinked owners
+        run: node tests/formation-canonical-sourcefirst-batch4.mjs
       - name: Bulk-validate all 21 unresolved controversy source maps
         run: node tests/contemporary-controversies-21-source-scaffold.mjs
       - name: Verify all 123 source-claim audit gates without claiming certification
