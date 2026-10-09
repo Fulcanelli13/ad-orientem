@@ -1,0 +1,161 @@
+{
+  "schema": "AO_ADORIENTEM_CHURCH_PUBLIC_BENCHMARK_V1",
+  "observed_date": "2026-10-09",
+  "public_site": "https://adorientem.church/",
+  "source_urls": {
+    "homepage": "https://adorientem.church/",
+    "country_index": "https://adorientem.church/find/countries",
+    "institute_index": "https://adorientem.church/find/institutes",
+    "verification_filter": "https://adorientem.church/find?verified=true",
+    "terms": "https://adorientem.church/legal/terms",
+    "press": "https://adorientem.church/press",
+    "official_sspx_statistics": "https://sspx.org/en/general-statistics-about-sspx-30870",
+    "latinmassdir_country_census": "https://www.latinmassdir.org/countries/"
+  },
+  "reported_homepage": {
+    "active_locations": 2284,
+    "countries": 77,
+    "mass_events": 5231,
+    "planned_separate": 3
+  },
+  "country_index": {
+    "counted_countries": 77,
+    "sum_of_listed_country_counts": 2288,
+    "counts": {
+      "GA": 2,
+      "KE": 2,
+      "MG": 1,
+      "NA": 3,
+      "NG": 8,
+      "RE": 2,
+      "ZA": 9,
+      "UG": 2,
+      "ZW": 1,
+      "HK": 1,
+      "IN": 3,
+      "ID": 5,
+      "JP": 4,
+      "MY": 3,
+      "PH": 24,
+      "SG": 2,
+      "KR": 4,
+      "LK": 1,
+      "TW": 5,
+      "AE": 1,
+      "AT": 30,
+      "BY": 3,
+      "BE": 23,
+      "HR": 6,
+      "CY": 1,
+      "CZ": 34,
+      "DK": 2,
+      "EE": 4,
+      "FI": 2,
+      "FR": 135,
+      "DE": 161,
+      "HU": 14,
+      "IE": 22,
+      "IT": 84,
+      "LV": 4,
+      "LI": 2,
+      "LT": 6,
+      "LU": 2,
+      "MT": 1,
+      "MC": 1,
+      "NL": 20,
+      "NO": 2,
+      "PL": 117,
+      "PT": 9,
+      "RO": 1,
+      "RU": 3,
+      "SK": 10,
+      "SI": 4,
+      "ES": 50,
+      "SE": 4,
+      "CH": 44,
+      "UA": 2,
+      "GB": 155,
+      "VA": 2,
+      "CA": 76,
+      "DO": 1,
+      "SV": 2,
+      "GP": 1,
+      "GT": 3,
+      "HN": 1,
+      "JM": 1,
+      "MX": 39,
+      "PA": 1,
+      "PR": 2,
+      "US": 779,
+      "AU": 62,
+      "FJ": 1,
+      "GU": 2,
+      "NC": 1,
+      "NZ": 22,
+      "AR": 33,
+      "BR": 197,
+      "CL": 6,
+      "CO": 10,
+      "PY": 2,
+      "PE": 1,
+      "UY": 2
+    }
+  },
+  "institute_index": {
+    "SSPX": 734,
+    "FSSP": 249,
+    "ICKSP": 97,
+    "diocesan": 905
+  },
+  "verified_filter": {
+    "matches": 28,
+    "warning": "Contains planned entries; do not infer 28 reliably verified current public venues."
+  },
+  "independent_official_source": {
+    "sspx_global_mass_locations": 798,
+    "sspx_friendly_separate": 79,
+    "sspx_US_chapels_2026_08": 120
+  },
+  "competitor_sspx_country_samples": {
+    "US": 262,
+    "FR": 50,
+    "DE": 45,
+    "PL": 31,
+    "MX": 31,
+    "CA": 30,
+    "AR": 26,
+    "GB": 25,
+    "CH": 24,
+    "BR": 23
+  },
+  "observed_duplicate_pairs": [
+    {
+      "name": "Annunciation Chapel",
+      "country": "US",
+      "city": "Fort Collins",
+      "address_normalized": "290 East County Road 56",
+      "listings": [
+        "https://adorientem.church/find/annunciation-chapel-fort-collins-4e352963",
+        "https://adorientem.church/find/annunciation-chapel-56-fort-collins-25016d75"
+      ],
+      "evidence": "Same chapel name and street number at the same address"
+    },
+    {
+      "name": "Annunciation Catholic Church",
+      "country": "US",
+      "city": "Houston",
+      "address_normalized": "1618 Texas Avenue",
+      "listings": [
+        "https://adorientem.church/find/annunciation-catholic-houston-f6122ff1",
+        "https://adorientem.church/find/annunciation-catholic-church-houston-f4d0a45c"
+      ],
+      "evidence": "Minor name and address spelling variants, same physical church and published Sunday time"
+    }
+  ],
+  "notes": [
+    "The 77 country counts sum to 2288, four above the homepage current-location count of 2284. Three planned listings alone do not fully explain the difference.",
+    "Do not equate third-party listing count, confirmed current Mass venues, community ministries, or geographic indicator count.",
+    "The website permits attributed structured directory reuse; requests that bulk ingestion use a data feed instead of high-rate scraping.",
+    "The competitor's displayed 262 US SSPX listings should not be interpreted as 262 unique US SSPX chapels versus the SSPX official report of 120 without a physical-site crosswalk."
+  ]
+}
