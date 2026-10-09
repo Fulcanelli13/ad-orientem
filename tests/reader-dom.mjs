@@ -308,6 +308,23 @@ expect(adoramus.primary.children.every(x=>!x.className?.includes("ao-ritual-trig
   "moving to a new cue left a highlight on previously active words");
 expect(holyName.primary.children.some(x=>x.className?.includes("ao-ritual-trigger")),
   "the new cue did not receive the highlight");
+// The actual source-first reader defaults to English. The same cue must
+// highlight its verified English and pinned French counterpart without
+// changing the selected language or broadening source cue ownership.
+adoramus.dataset.active="true";
+holyName.dataset.active="false";
+adoramus.primary.textContent="We adore thee.";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0056",anchorLat:"Adorámus te",anchorEn:"We adore thee",anchorFr:"Nous vous adorons"
+})===1 && adoramus.primary.children.some(x=>x.className?.includes("ao-ritual-trigger")),
+  "English Gloria cue is active but its equivalent displayed words are not highlighted");
+adoramus.dataset.ritualCueActive="false";
+adoramus.primary.textContent="Nous vous adorons.";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0056",anchorLat:"Adorámus te",anchorEn:"We adore thee",anchorFr:"Nous vous adorons"
+})===1 && adoramus.primary.children.some(x=>x.className?.includes("ao-ritual-trigger")),
+  "pinned French Gloria words were not highlighted at the same source cue");
+adoramus.dataset.active="false";
 holyName.dataset.active="false";
 credo.dataset.active="true";
 expect(syncReaderRitualHighlights(ritualRoot,{
@@ -316,6 +333,14 @@ expect(syncReaderRitualHighlights(ritualRoot,{
   "the two separated Incarnatus fragments did not highlight together");
 expect(credo.primary.children.filter(x=>x.className?.includes("ao-ritual-trigger")).length===2,
   "Incarnatus first and last source phrases were not both highlighted");
+// A two-part English canonical cue highlights only its two sourced clauses.
+credo.dataset.ritualCueActive="false";
+credo.primary.textContent="And was incarnate by the Holy Ghost of the Virgin Mary: and was made man.";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0096",anchorLat:"Et incarnátus est … et homo factus est",
+  anchorEn:"And was incarnate … and was made man"
+})===1 && credo.primary.children.filter(x=>x.className?.includes("ao-ritual-trigger")).length===2,
+  "English Incarnatus source boundaries do not yield both highlighted phrases");
 credo.dataset.active="false";
 expect(syncReaderRitualHighlights(ritualRoot,null)===0 &&
   credo.primary.children.every(x=>!x.className?.includes("ao-ritual-trigger")),
