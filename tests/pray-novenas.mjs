@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { NOVENA_CORPUS_V3 } from "../src/pray/novena-corpus.js";
 import { NOVENA_CORPUS_V4, NOVENA_CORPUS_V4_IDS, NOVENA_CORPUS_V4_VERSION, NOVENA_START_KIND } from "../src/pray/novena-corpus-v4.js";
 import { NOVENA_SOURCE_HOLDS, NOVENA_TARGET_IDS, NOVENA_TARGET_REGISTRY_V1 } from "../src/calendar/devotional-registry.js";
+import { NOVENA_SOURCE_ACCESS_V1, novenaSourceAccess } from "../src/pray/novena-source-access.v1.js";
 
 const donorExpected=[
   "holy_ghost","christmas","corpus_christi","sacred_heart",
@@ -166,3 +167,34 @@ console.log("PASS complete 16-target bilingual Novenas corpus with French prayer
 assert.doesNotMatch(runtime,/Ad Orientem|devotional streak|completion score/i,"Novena reader reverted to self-referential interface narration");
 assert.match(runtime,/Choose a novena/);
 assert.match(runtime,/Choisissez une neuvaine/);
+
+
+// Original-text primary links must actually be presented to the faithful.
+// Secondary historical links alone do not establish a witness to the prayer.
+const litSource=readFileSync("src/pray/novena-runtime.js","utf8");
+assert.match(litSource,/class="aoN1SourcePrimary"/,"Novenas primary citation must be rendered as clickable link");
+assert.match(litSource,/href="\\$\\{esc\\(url\\)\\}"/,"Actual source URL is not wired to clickable href");
+assert.match(litSource,/novenaSourceAccess\\(n\\.id\\)/,"Novena source drawer no longer resolves editorial section identity");
+assert.match(litSource,/rel="noopener noreferrer"/,"External novena witness lacks safe rel");
+assert.equal(Object.keys(NOVENA_SOURCE_ACCESS_V1).length,8);
+for(const [id,section] of Object.entries(NOVENA_SOURCE_ACCESS_V1)){
+ assert.ok(NOVENA_CORPUS_V4[id]?.source?.url,"Unknown source identity "+id);
+ assert.ok(section.heading.en.length>10&&section.heading.fr.length>10,id+" source section must be bilingual");
+ assert.ok(section.note.en.length>45&&section.note.fr.length>45,id+" witness limitation not adequately disclosed");
+ assert.equal(novenaSourceAccess(id),section);
+}
+assert.equal(novenaSourceAccess("sacred_heart"),null,"Do not make up an edition qualifier without evidence");
+
+const anthony=NOVENA_CORPUS_V4.st_anthony_nine_tuesdays;
+assert.deepEqual(anthony.commonPrayers,[["foundations_our_father",1],["foundations_hail_mary",1],["foundations_glory_be",1]],
+ "Franciscan 1966 witness prescribes the traditional three prayers after the novena invocation");
+assert.equal(anthony.closingCanonical,"devotion_st_anthony_lost_items",
+ "The customary Si quaeris responsory must reuse its canonical three-language Prayer owner");
+assert.match(anthony.commonNote.en,/not.*obligatory/i,
+ "Nine Tuesdays customary prayers must not be presented as universal obligation");
+assert.match(anthony.commonNote.fr,/n.*obligatoire/i,
+ "French Nine Tuesdays rubric must distinguish a proposed custom from requirement");
+assert.match(litSource,/n\.closingCanonical\?canonicalPrayer\(n\.closingCanonical,1\)/,
+ "Both guided and simple Novenas must render the source's canonical closing responsory");
+assert.equal(NOVENA_CORPUS_V4.perpetual_help.source.url,"https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
+ "Retain actual unproofread scan witness rather than inventing a certified edition");
