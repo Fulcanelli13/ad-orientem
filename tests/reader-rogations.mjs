@@ -97,10 +97,21 @@ for(const s of certifiedMock.properSections) {
   s.exactSourceLocator="Missale Romanum (1962), validated source locator";
   s.candidate.translationRights="CLEARED";
 }
-assert.equal(rogationProperReady(certifiedMock),true);
+assert.equal(rogationProperReady(certifiedMock),false,
+  "A metadata-only certificate without the actual Rogation Proper must fail closed");
+const syntheticProper={
+  schema:"AO_1962_ROGATION_PROPER_V1",
+  sections:certifiedMock.properSections.map(s=>({
+    key:s.key,sourceLocator:s.exactSourceLocator,
+    latin:"TEST ONLY - fabricated Latin fixture content; not publishable",
+    english:"TEST ONLY - fabricated English fixture content; not publishable",
+    french:"TEST ONLY - fabricated French fixture content; not publishable"
+  }))
+};
+assert.equal(rogationProperReady(certifiedMock,syntheticProper),true);
 const permitted=resolveRogationMassVariant({
   choice:"ROGATION_MASS",observanceConfirmed:true,
-  service:"ORDINARY_AUTHORIZED_SUPPLICATIONS",dayClass:2,sourceGate:certifiedMock
+  service:"ORDINARY_AUTHORIZED_SUPPLICATIONS",dayClass:2,sourceGate:certifiedMock,sourceProper:syntheticProper
 });
 assert.equal(permitted.availability,"AVAILABLE");
 assert.equal(permitted.massClass,2);
@@ -110,7 +121,7 @@ assert.deepEqual(permitted.precedingRites,["ROGATIONS"]);
 assert.equal(permitted.gloria,false);
 assert.equal(permitted.credo,false);
 certifiedMock.properSections[6].frenchVerified=false;
-assert.equal(rogationProperReady(certifiedMock),false);
+assert.equal(rogationProperReady(certifiedMock,syntheticProper),false);
 
 assert.equal(graph.length,6);
 const built=buildRogationsPayload({graph,payload});
