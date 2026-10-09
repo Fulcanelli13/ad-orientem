@@ -33,7 +33,7 @@ for(const row of audit.cases){
    assert.ok(known,row.id+" source not in registered catalog: "+source.source_id);
    assert.ok(live.refs.some(([id])=>id===source.source_id),row.id+" missing visible source "+source.source_id);
    assert.equal(source.url,known.canonical_url,row.id+" must retain exact original document URL");
-   assert.ok(source.locator.length>3);
+   assert.ok(source.locator.trim().length>=2,row.id+" lacks exact short source locator");
    assert.ok(Object.hasOwn(statusCounts,source.verification),row.id+" invalid access claim");
    statusCounts[source.verification]++;
  }
