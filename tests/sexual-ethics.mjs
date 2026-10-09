@@ -209,7 +209,7 @@ const q035=CSE_QUESTIONS.find(item=>item.id==="CSE035");
 assert.equal(q035.layer,"PASTORAL_CASE");
 assert.match(q035.a[0],/not itself fornication/i);
 const q051=CSE_QUESTIONS.find(item=>item.id==="CSE051");
-assert.ok(q051.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§19–20"));
+assert.ok(q051.refs.some(([sourceId,locator])=>sourceId==="CASTI"&&locator==="§§19–22"));
 const q057=CSE_QUESTIONS.find(item=>item.id==="CSE057");
 assert.match(q057.a[0],/integrated into the marital act/i);
 const q076=CSE_QUESTIONS.find(item=>item.id==="CSE076");
