@@ -43,7 +43,7 @@
       "principalRegex": "Hilary",
       "rank": 3,
       "colourRegex": "white",
-      "commemorationRegex": "Felix"
+      "commemorationRegex": "Felix|Felicis"
     },
     {
       "date": "2026-01-18",
@@ -215,7 +215,7 @@
       "principalRegex": "Mark",
       "rank": 2,
       "colourRegex": "red",
-      "commemorationRegex": "Litan"
+      "commemorationRegex": "Litan|rogation"
     },
     {
       "date": "2026-04-26",
@@ -225,7 +225,7 @@
     },
     {
       "date": "2026-05-01",
-      "principalRegex": "Joseph.*Worker|Joseph the Worker",
+      "principalRegex": "Joseph.*(?:Worker|Workman)",
       "rank": 1,
       "colourRegex": "white"
     },
@@ -355,7 +355,7 @@
     },
     {
       "date": "2026-10-03",
-      "principalRegex": "Th[eé]r[eè]se|Therese",
+      "principalRegex": "Theresa|Th[eé]r[eè]se|Therese",
       "rank": 3,
       "colourRegex": "white"
     },
@@ -399,7 +399,7 @@
     },
     {
       "date": "2026-11-09",
-      "principalRegex": "Lateran",
+      "principalRegex": "Archbasilica|Lateran",
       "rank": 2,
       "colourRegex": "white",
       "commemorationRegex": "Theodore"
