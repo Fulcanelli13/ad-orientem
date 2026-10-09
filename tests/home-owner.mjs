@@ -73,4 +73,38 @@ assert.match(ownerSource,/data-home-cu-static/,"Daily Rule click owner missing")
 assert.match(ownerSource,/opened===false/,"Daily Rule does not recognize a rejected legacy action");
 assert.ok(ownerSource.includes('rosary:"pray.rosary"'),"Daily Rule Rosary lacks a canonical fallback");
 
+
+// Coming Up must recover from an asynchronously unsuccessful module launch,
+// not mistake the returned Promise or {ok:false} for an opened destination.
+{
+  const handlers={};
+  const routes=[];
+  const probe={
+    document:{
+      addEventListener(type,handler){handlers[type]=handler;},
+      removeEventListener(){},
+      querySelectorAll(){return[];},
+      querySelector(){return null;},
+      getElementById(){return null;},
+    },
+    AO_RUNTIME_V8:{store:{getState:()=>({route:"home"}),subscribe:()=>()=>{}}},
+    AO_MODULES:{open:async id=>{routes.push("registry:"+id);return {ok:false};}},
+    AO_PRAY_APP_V1:{open:()=>{routes.push("pray:fallback");return true;}},
+    AO_LEARN_APP_V1:{openModule:id=>{routes.push("learn:fallback:"+id);return true;}},
+  };
+  createHomeOwner(probe);
+  assert.equal(typeof handlers.click,"function");
+  const fire=route=>handlers.click({
+    target:{closest(selector){return selector==="[data-home-cu-route]"?{dataset:{homeCuRoute:route}}:null;}},
+    preventDefault(){},
+  });
+  fire("pray.novenas");
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.deepEqual(routes,["registry:pray.novenas","pray:fallback"]);
+  routes.length=0;
+  fire("learn.catechism");
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.deepEqual(routes,["registry:learn.catechism","learn:fallback:learn.catechism"]);
+}
+
 console.log("PASS modular Home navigation/reset owner");

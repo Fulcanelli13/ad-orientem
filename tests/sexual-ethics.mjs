@@ -360,7 +360,9 @@ assert.match(runtime,/data-ao-cse-home/,"Sexual Ethics lost explicit global Home
 assert.doesNotMatch(runtime,/data-ao-cse-close/,"Sexual Ethics regressed to ambiguous Close");
 assert.match(runtime,/Related topics/);
 assert.match(runtime,/data-ao-cse-related/);
-assert.match(runtime,/<a href="\$\{esc\(url\)\}" target="_blank" rel="noopener"><strong>\$\{esc\(citation\)\}<\/strong> ↗<\/a>/);
+assert.match(runtime,/data-ao-cse-link-scope/,"Citation links must identify document/chapter/index precision");
+assert.match(runtime,/cseSourceTargets\(sourceId,locator,source/,"Original question and source disclosures must share the target resolver");
+assert.match(runtime,/rel="noopener noreferrer"/,"External citations must use safe target attributes");
 assert.match(runtime,/handoffToApostolate/);
 assert.match(runtime,/FORMATION_TO_APOSTOLATE/);
 assert.match(runtime,/The strongest objection/);

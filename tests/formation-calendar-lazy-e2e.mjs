@@ -60,6 +60,23 @@ try{
  assert.equal(direct,true,"Spiritual Life failed first-use lazy launch");
  assert.ok(hits.some(x=>x.path==="/src/learn/spiritual-life-data.js"),"Spiritual Life lessons were not fetched on first use");
  assert.equal(await page.evaluate(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().open),true,"Spiritual Life module did not open");
+
+ // Check genuine formation descriptive prose, not heading or kicker microtype.
+ for(const width of [320,360,390,430]){
+   await page.setViewportSize({width,height:844});
+   const metrics=await page.evaluate(()=>{
+     const root=document.getElementById("ao-spiritual-life-root");
+     const boundary=root.querySelector(".aoSLBoundary");
+     const row=root.querySelector(".aoSLRow p");
+     return {boundary:parseFloat(getComputedStyle(boundary).fontSize),
+       row:parseFloat(getComputedStyle(row).fontSize),
+       overflow:root.scrollWidth-root.clientWidth};
+   });
+   assert.ok(metrics.boundary>=14&&metrics.row>=14,
+     "Spiritual Life body copy below 14px at "+width+": "+JSON.stringify(metrics));
+   assert.ok(metrics.overflow<=2,"Spiritual Life overflows at "+width+": "+JSON.stringify(metrics));
+ }
+ await page.setViewportSize({width:390,height:844});
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
  const calStart=Date.now();
  const opened=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("calendar"));
@@ -229,6 +246,42 @@ try{
  const second=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("calendar"));
  assert.equal(second?.ok,true);
  assert.equal(hits.filter(x=>x.path==="/src/calendar/calendar-runtime.js").length,fetchedBefore,"Calendar code fetched again on re-entry");
+
+ // Calendar explanations are body copy, not secondary labels.
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2027-08-15")),true);
+ await page.locator("#ao-calendar-modular-root .aoCalV2Saint p").waitFor({state:"visible",timeout:12000});
+ for(const width of [320,360,390,430]){
+   await page.setViewportSize({width,height:844});
+   const result=await page.evaluate(()=>{
+     const root=document.getElementById("ao-calendar-modular-root");
+     const el=root.querySelector(".aoCalV2Saint p");
+     return {size:parseFloat(getComputedStyle(el).fontSize),overflow:root.scrollWidth-root.clientWidth};
+   });
+   assert.ok(result.size>=14,"Calendar explanatory text below 14px at "+width+": "+JSON.stringify(result));
+   assert.ok(result.overflow<=2,"Calendar text overflows at "+width+": "+JSON.stringify(result));
+ }
+ const learnReturn=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn"));
+ assert.equal(learnReturn?.ok,true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.sexual_ethics")),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SEXUAL_ETHICS_V1.openQuestion("CSE001")),true);
+ await page.locator("#ao-sexual-ethics-root .aoCSEAnswer").waitFor({state:"visible",timeout:16000});
+ for(const chapter of ["mat005","1co006"]){
+   const href="https://www.newadvent.org/bible/"+chapter+".htm";
+   assert.ok(await page.locator('#ao-sexual-ethics-root [data-ao-cse-inline-source="SCR"][href="'+href+'"]').count()>0,
+     "CSE001 citation does not open Scripture chapter "+chapter);
+ }
+ for(const width of [320,360,390,430]){
+   await page.setViewportSize({width,height:844});
+   const result=await page.evaluate(()=>{
+     const root=document.getElementById("ao-sexual-ethics-root");
+     const size=selector=>parseFloat(getComputedStyle(root.querySelector(selector)).fontSize);
+     return {answer:size(".aoCSEAnswer"),source:size(".aoCSEInlineRef"),overflow:root.scrollWidth-root.clientWidth};
+   });
+   assert.ok(result.answer>=15&&result.source>=13,"Formation reading text too small at "+width+": "+JSON.stringify(result));
+   assert.ok(result.overflow<=2,"Formation reader overflows at "+width+": "+JSON.stringify(result));
+ }
+ console.log("PASS Calendar and Sexual Ethics reading/source checks at 320/360/390/430px");
  assert.deepEqual(pageErrors.filter(s=>/SyntaxError|ReferenceError|TypeError|import.*failed|Cannot read/.test(s)),[], "Deferred Formation/Calendar caused errors");
  console.log("PASS Home avoided Formation courses and Calendar runtime; first-use Formation child and Calendar navigation preserved");
  console.log("FORMATION_CALENDAR_LAZY="+JSON.stringify({coldMs,calMs,coldRequests:cold.length,coldBytes:cold.reduce((n,v)=>n+v.bytes,0),calendarInstalled:calendar.status.installed,deepLinks:["learn.spiritual_life","learn.sexual_ethics","learn.rites.sick"]}));
