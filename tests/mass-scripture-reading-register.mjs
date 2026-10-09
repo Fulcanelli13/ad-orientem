@@ -11,7 +11,7 @@ const raw=JSON.parse(readFileSync(new URL("../data/mass/scripture-reading-witnes
 assert.equal(VERIFIED_MASS_SCRIPTURE_VERSION,raw.version);
 assert.deepEqual(VERIFIED_MASS_SCRIPTURE_READINGS,raw.celebrations,
  "Compiled reading index diverged from the auditable source register");
-assert.equal(raw.celebrations.length,8);
+assert.equal(raw.celebrations.length,45);
 assert.equal(raw.policy.identity,"EXACT_RESOLVED_PROPER_SOURCE_PATH_AND_MATCHING_LATIN_READINGS");
 const paths=new Set();
 const gospelCard={blocks:[{properSlot:"GOSPEL",blockId:"AO.SM.B018"}]};
@@ -22,9 +22,23 @@ let count=0;
 for(const witness of raw.celebrations){
  assert.ok(!paths.has(witness.sourcePath),"Duplicate source path "+witness.sourcePath);
  paths.add(witness.sourcePath);
- assert.match(witness.witnessUrl,/^https:\/\/missale\.online\/proprium\/en\/tempore\//);
+ const direct=/^https:\/\/github\.com\/DivinumOfficium\/divinum-officium\/blob\/master\/web\/www\/missa\/Latin\/Tempora\/[A-Za-z0-9-]+-0\.txt$/;
+ const old=/^https:\/\/missale\.online\/proprium\/en\/tempore\//;
+ assert.ok(old.test(witness.witnessUrl)||direct.test(witness.witnessUrl),
+   "Source must be exact Roman Missal Latin file or legacy independently witnessed Missale: "+witness.sourcePath);
+ if(direct.test(witness.witnessUrl))
+   assert.equal(witness.witnessUrl.endsWith("/"+witness.sourcePath.split("/").at(-1)+".txt"),true,
+     "Source link points to a different Sunday Proper");
  for(const [slot,[card,field]] of Object.entries(pairs)){
-  const {reference,latinIncipit}=witness.readings[slot];
+  const spec=witness.readings[slot];
+  if(!spec){
+    const held=witness.sourceHolds?.find(x=>x.slot===slot);
+    assert.ok(held,"Every missing Sunday slot must carry an explicit source hold");
+    const empty={sourcePath:witness.sourcePath,[field]:{lat:"Unverified other Latin Proper"}};
+    assert.equal(registeredMassReading(empty,slot),null);
+    continue;
+  }
+  const {reference,latinIncipit}=spec;
   const biblical=parseScriptureContext(reference);
   assert.ok(biblical?.passage,reference);
   assert.ok(latinIncipit.length>=12,witness.sourcePath+" "+slot);
@@ -51,10 +65,10 @@ for(const witness of raw.celebrations){
   count++;
  }
 }
-assert.equal(count,16);
+assert.equal(count,86);
 const special={sourcePath:"Tempora/Pent19-0",
  gospel:{lat:"Loquebatur Jesus principibus sacerdotum"},
  epistle:{lat:"Renovamini spiritu mentis"}};
 assert.equal(massScriptureContextForCard({blocks:[{properSlot:"GOSPEL"},{properSlot:"EPISTLE_OR_LESSON"}]},prep(special)).state,
  "UNRESOLVED_REFERENCE","Never arbitrarily pick one of two Scripture readings on a mixed card");
-console.log("PASS 8 original-source Mass Proper celebrations / 16 Scripture reading references, all checked against Latin incipits and source identity; explicit conflicts veto the index");
+console.log("PASS 45 source-checked temporal Sunday Mass Proper identities / 86 single-range Scripture references, exact Latin/source identity and inherited/split-reading holds; explicit conflicts veto the index");
