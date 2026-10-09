@@ -23,7 +23,7 @@ for(const r of fresh.records){
  assert.equal(r.source_checked_on,"2026-10-09");
  assert.match(r.su,/^https:\/\/map\.fsspx\.org\/de\/places\//);
  assert.ok(/Sunday|Dimanche/i.test(r.sr),"Sunday Mass claim absent "+r.u);
- assert.ok(r.a.length>=35,"Insufficient full address "+r.u);
+ assert.ok(r.a.length>=30&&/\\d/.test(r.a),"Insufficient numbered physical address "+r.u);
  assert.ok(r.schedule_caveat);
  assert.ok(!slugs.has(r.official_map_source_place_id));slugs.add(r.official_map_source_place_id);
 }
