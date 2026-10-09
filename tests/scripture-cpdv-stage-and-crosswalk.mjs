@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { CATHOLIC_BOOK_IDS } from "../src/scripture/canon.js";
 import { stageCpdvBook,stagingSummary } from "../tools/scripture/stage-cpdv-original-packs.mjs";
 import { scriptureParallelReferenceState,scriptureReferenceWarning } from "../src/scripture/reference-safety.js";
+import {CPDV_AUTHOR_BOOK_URLS,cpdvAuthorBookUrl} from "../src/scripture/cpdv-primary-links.js";
 const good={editionId:"cpdv-2009",book:"John",
  status:"RESEARCH_ONLY_AWAITING_TEXT_AND_THEOLOGICAL_CERTIFICATION",
  sourceUrl:"https://sacredbible.org/catholic/NT-04_John.htm",
@@ -32,4 +33,10 @@ for(const book of ["Esther","Psalms","SongOfSongs"]){
 const j=scriptureParallelReferenceState({book:"John",chapter:1,verseStart:1},"cpdv-2009","dr-challoner");
 assert.equal(j.kind,"provisional-coordinates-only");assert.equal(j.canAutoParallel,false);
 assert.equal(scriptureParallelReferenceState({book:"John",chapter:1,verseStart:1},"cpdv-2009","cpdv-2009").canAutoParallel,true);
-console.log("CPDV 73-book staged pack structural and cross-edition safety contracts passed");
+assert.equal(Object.keys(CPDV_AUTHOR_BOOK_URLS).length,73);
+assert.equal(new Set(Object.values(CPDV_AUTHOR_BOOK_URLS)).size,73);
+assert.equal(cpdvAuthorBookUrl("Luke"),"https://sacredbible.org/catholic/NT-03_Luke.htm");
+assert.equal(cpdvAuthorBookUrl("1Maccabees"),"https://sacredbible.org/catholic/OT-45_1-Maccabees.htm");
+assert.equal(cpdvAuthorBookUrl("SongOfSongs"),"https://sacredbible.org/catholic/OT-24_Song2.htm");
+assert.throws(()=>cpdvAuthorBookUrl("GospelOfThomas"),/Unknown/);
+console.log("CPDV 73-book staged pack, publisher source links and cross-edition safety contracts passed");
