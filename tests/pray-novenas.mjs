@@ -70,6 +70,11 @@ for(const id of completeExpected){
 }
 assert.equal(bodyCount,91,"Frozen V4 corpus source-body unit count changed");
 
+assert.match(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.history.en,/burial of St Anthony on the Tuesday following his death/);
+assert.match(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.history.fr,/inhumation solennelle de saint Antoine le mardi/);
+assert.ok(!/died on a Tuesday|mourut un mardi/.test(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.history.en+" "+NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.history.fr));
+assert.ok(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.historySources.some(x=>x.url==="https://www.messagerdesaintantoine.com/node/5972"));
+assert.ok(NOVENA_CORPUS_V4.christ_the_king.historySources.some(x=>x.url==="https://www.spiritualite-chretienne.com/s_coeur/priere_a.html"));
 assert.equal(NOVENA_CORPUS_V4.st_anthony_nine_tuesdays.calendar.type,"NINE_TUESDAYS_BEFORE_FIXED_FEAST");
 assert.equal(NOVENA_CORPUS_V4.christ_the_king.calendar.type,"LAST_SUNDAY_RELATIVE");
 assert.equal(NOVENA_CORPUS_V4.immaculate_heart.calendar.startDay,13);
@@ -94,6 +99,8 @@ assert.equal(sot.target_count,16);
 assert.equal(sot.playable_count,16);
 assert.equal(sot.french_body_parity,"16/16");
 assert.equal(sot.source_holds,0);
+assert.equal(sot.recovered_targets.st_anthony_nine_tuesdays.french_world_witness,"https://www.messagerdesaintantoine.com/node/5972");
+assert.equal(sot.recovered_targets.st_anthony_nine_tuesdays.original_prayer_witness_date,1966);
 assert.ok(sot.global_rules.some(x=>/TRADITIONAL_START or SUGGESTED_START/.test(x)),"SOT lost start-authority rule");
 for(const row of sot.novenas){
   assert.equal(row.start_kind,traditionalStartIds.has(row.id)?"TRADITIONAL_START":"SUGGESTED_START",row.id+" SOT start_kind diverged");
