@@ -5121,6 +5121,82 @@
       "source_ids": [
         "SHR-ORATOIRE-MONTREAL"
       ]
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denis",
+      "name": {
+        "official": "Basilique cathédrale de Saint-Denis",
+        "aliases": [
+          "Basilica Cathedral of Saint-Denis"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 48.935556,
+        "lng": 2.359722,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q184407",
+        "source_ref": "wikidata:Q184407",
+        "attribution": "Wikidata contributors, CC0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "1 rue de la Légion d'Honneur",
+        "line2": null,
+        "postal_code": "93200",
+        "city": "Saint-Denis",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "1 rue de la Légion d'Honneur, 93200 Saint-Denis, France"
+      },
+      "source_ids": [
+        "SHR-SAINT-DENIS-OFFICIAL"
+      ]
+    },
+    {
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "name": {
+        "official": "Sanktuarium św. Jana Pawła II Wielkiego w Krakowie",
+        "aliases": [
+          "Saint John Paul II Sanctuary, Kraków"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 50.013524,
+        "lng": 19.936559,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://sjanpawel2.pl/kontakt/",
+        "source_ref": "official:krakow-sanctuary-gps",
+        "attribution": "Official sanctuary",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "ul. Totus Tuus 32",
+        "line2": null,
+        "postal_code": "30-610",
+        "city": "Kraków",
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "ul. Totus Tuus 32, 30-610 Kraków, Poland"
+      },
+      "source_ids": [
+        "SHR-JPII-KRAKOW-OFFICIAL"
+      ]
     }
   ],
   "directoryPlaceLinks": [

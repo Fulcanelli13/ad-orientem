@@ -1866,6 +1866,38 @@
         "SHR-ORATOIRE-MONTREAL-TOMB"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-denis",
+      "place_id": "place:FR:basilique-saint-denis",
+      "name": "Basilique cathédrale de Saint-Denis",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Denis of Paris",
+      "origin_summary": "Cathedral and historical pilgrimage church over the traditionally identified burial place of Saint Denis, also the royal necropolis of France.",
+      "associated_saints": [
+        "Saint Denis of Paris"
+      ],
+      "source_ids": [
+        "SHR-SAINT-DENIS-OFFICIAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "name": "Sanktuarium św. Jana Pawła II Wielkiego w Krakowie",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint John Paul II",
+      "origin_summary": "Diocesan sanctuary dedicated to Saint John Paul II, with a blood relic documented by its custodians.",
+      "associated_saints": [
+        "Saint John Paul II"
+      ],
+      "source_ids": [
+        "SHR-JPII-KRAKOW-OFFICIAL"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -4007,6 +4039,32 @@
       "scope_note": "Year-round destination pilgrimage; no unverified annual date or traditional Latin Mass provision implied.",
       "source_ids": [
         "SHR-ORATOIRE-MONTREAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:basilique-saint-denis:destination",
+      "name": "Pilgrimage to Basilica Cathedral of Saint-Denis",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:basilique-saint-denis",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented worship and pilgrimage destination; no new feast date or traditional Latin Mass service inferred.",
+      "source_ids": [
+        "SHR-SAINT-DENIS-OFFICIAL"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:PL:sanktuarium-jana-pawla-ii-krakow:destination",
+      "name": "Pilgrimage to Saint John Paul II Sanctuary, Kraków",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented worship and pilgrimage destination; no new feast date or traditional Latin Mass service inferred.",
+      "source_ids": [
+        "SHR-JPII-KRAKOW-OFFICIAL"
       ],
       "confidence": "HIGH"
     }
