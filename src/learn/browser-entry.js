@@ -197,7 +197,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         const target=surface.dataset?.aoLearnDiscoverySurface;
         if(["home","mass","pray","calendar","find","apostolate"].includes(target)){
           void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.(target)).then(value=>{
-            if(value===false||value?.ok===false){
+            if(value!==true&&value?.ok!==true){
               state.error=L(win,"This section could not be opened.","Impossible d’ouvrir cette rubrique.");
               paint();
             }
@@ -227,6 +227,15 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       }
     });
     node.addEventListener("keydown",event=>{
+      if(event.key==="Escape"&&event.target?.closest?.("[data-ao-learn-discovery-search]")){
+        event.preventDefault?.();
+        if(state.discoveryQuery){
+          state.discoveryQuery="";
+          event.target.value="";
+          updateDiscovery();
+        }else event.target.blur?.();
+        return;
+      }
       if(event.key==="Escape"&&!state.child){
         event.preventDefault?.();
         void win?.AO_APP_SHELL_V1?.navigate?.("home");
