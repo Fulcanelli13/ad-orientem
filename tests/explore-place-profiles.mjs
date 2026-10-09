@@ -474,6 +474,7 @@ assert.equal(pukekaraka.counts.pilgrimages,1);
 
 const ugwogo=explorePlaceProfile(profiles,"place:NG:ugwogo-nike-national-marian-shrine");
 assert.ok(ugwogo);
+assert.equal(ugwogo.map_publishable,true,"Ugwogo shrine must expose Plus Code-derived GPS");
 assert.ok(ugwogo.counts.traditions>=1);
 assert.ok(ugwogo.calendar.some(row=>row.semantic_key==="feast.our_lady_perpetual_help"&&row.date==="2027-06-27"));
 
