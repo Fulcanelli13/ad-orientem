@@ -12,6 +12,7 @@ import {
 } from "./sexual-ethics-data/index.js";
 import { CSE_RELATED_TARGETS, CSE_SOT_MATRIX, relatedTargetsFor } from "./sexual-ethics-data/sot.js";
 import { paragraphRefsFor, CSE_MISCONCEPTION_REBUTTAL_IDS, CSE_CONTEXT_ONLY_POSITION_IDS } from "./sexual-ethics-data/provenance.js";
+import { cseSourceTargets } from "./sexual-ethics-data/source-targets.js";
 import { CSE_CANONICAL_FAMILIES, CSE_CANONICAL_DOSSIERS, CSE_CANONICAL_DOSSIER_MAP, CSE_QUESTION_OWNER_MAP } from "./sexual-ethics-data/canonical.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { CSE_MARRIAGE_AUTHORITY_DEBATES, CSE_MARRIAGE_AUTHORITY_SOURCES } from "./sexual-ethics-data/marriage-authority-debates.js";
@@ -75,6 +76,7 @@ function css(){
 .aoCSERelated{margin:17px 0 0;padding-top:11px;border-top:1px solid var(--border,rgba(255,255,255,.13))}.aoCSERelated small{display:block;margin-bottom:8px;color:var(--muted);font-size:var(--ao-type-ui-xs,11px);text-transform:uppercase;letter-spacing:.08em}.aoCSERelatedButtons{display:flex;gap:8px;flex-wrap:wrap}.aoCSERelated .aoCSEBtn{font-size:var(--ao-type-ui-sm,12px)}
 .aoCSEInlineRefs{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:9px;font:600 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoCSEInlineRefs::before{content:attr(data-label);color:var(--muted);font-weight:500}.aoCSEInlineRef{display:inline-flex;align-items:center;max-width:100%;padding:2px 6px;border:1px solid var(--liturgical-border,rgba(199,174,109,.28));border-radius:999px;color:var(--liturgical,#c7ae6d);text-decoration:none;background:var(--liturgical-soft,rgba(199,174,109,.045))}.aoCSEInlineRef:hover,.aoCSEInlineRef:focus-visible{text-decoration:underline;outline:none}.aoCSEDetailText{margin:0}
 .aoCSESources{margin:17px 0 0;border-top:1px solid var(--border,rgba(255,255,255,.13));padding-top:11px}.aoCSESources summary{cursor:pointer;color:var(--muted);font-size:var(--ao-type-ui-sm,12px)}.aoCSESource{margin:9px 0;padding-left:10px;border-left:1px solid var(--border,rgba(255,255,255,.14));font-size:var(--ao-type-ui-sm,12px);line-height:1.45}.aoCSESource a{color:var(--liturgical,#c7ae6d)}.aoCSESource em{color:var(--muted);font-style:normal}
+.aoCSEAnswer,.aoCSEDebateStep p,.aoCSEIntro{font-size:max(15px,0.9375rem);line-height:1.6}.aoCSEInlineRefs{font-size:max(13px,.8125rem);line-height:1.5}.aoCSESource{font-size:max(13px,.8125rem);line-height:1.5}
 .aoCSEEmpty{padding:22px 0;color:var(--muted);line-height:1.5}
 @media(max-width:520px){.aoCSEWrap{padding-left:13px;padding-right:13px}.aoCSETop{padding-left:8px;padding-right:8px}.aoCSESearch{grid-template-columns:1fr}.aoCSECount{justify-self:start}}
 `;
@@ -111,11 +113,13 @@ function paragraphSourceLinks(win,item,kind,field=null){
     :positionSide?L(win,"Opposing-position references:","Références de la position adverse :"):L(win,"Sources:","Sources :");
   const links=refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
-    const url=isFr(win)?(source.canonical_url_fr||source.canonical_url):source.canonical_url;
-    if(!url)return "";
-    const visible=`${shortSourceTitle(source)}${locator?` · ${locator}`:""}`;
-    const full=`${source.title}${locator?` · ${locator}`:""}`;
-    return `<a class="aoCSEInlineRef" data-ao-cse-inline-source="${esc(sourceId)}" href="${esc(url)}" target="_blank" rel="noopener" title="${esc(full)}">${esc(visible)} ↗</a>`;
+    return cseSourceTargets(sourceId,locator,source,{french:isFr(win)}).filter(t=>t.url).map(target=>{
+      const visible=`${shortSourceTitle(source)}${target.locator?` · ${target.locator}`:""}`;
+      const witness=target.witness?` · ${target.witness}`:"";
+      const scope=target.scope==="chapter"?L(win,"Opens cited chapter; locate the listed verses.","Ouvre le chapitre cité ; repérez les versets indiqués."):target.scope==="index"?L(win,"Source index only; passage link not verified.","Index uniquement ; lien au passage non vérifié."):"";
+      const full=`${source.title} · ${target.locator}${witness}${scope?` · ${scope}`:""}`;
+      return `<a class="aoCSEInlineRef" data-ao-cse-inline-source="${esc(sourceId)}" data-ao-cse-link-scope="${esc(target.scope)}" href="${esc(target.url)}" target="_blank" rel="noopener noreferrer" title="${esc(full)}">${esc(visible)} ↗</a>`;
+    }).join("");
   }).filter(Boolean).join("");
   return links?`<span class="aoCSEInlineRefs" data-label="${esc(label)}">${links}</span>`:"";
 }
@@ -125,10 +129,12 @@ function sourceDetails(win,item){
   if(!refs.length)return "";
   return `<details class="aoCSESources aoSourceDisclosure"><summary>${esc(L(win,"Sources & provenance","Sources & provenance"))} ▾</summary>${refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
-    const url=isFr(win)?(source.canonical_url_fr||source.canonical_url):source.canonical_url;
     const authority=source.authority_type?String(source.authority_type).replaceAll("_"," "):"";
-    const citation=`${source.title}${locator?` · ${locator}`:""}`;
-    return `<div class="aoCSESource">${url?`<a href="${esc(url)}" target="_blank" rel="noopener"><strong>${esc(citation)}</strong> ↗</a>`:`<strong>${esc(citation)}</strong>`}<br><em>${esc(authority)}${source.role==="argument_lead"?` · ${esc(L(win,"research / argument lead","guide de recherche / argumentation"))}`:""}</em></div>`;
+    return cseSourceTargets(sourceId,locator,source,{french:isFr(win)}).map(target=>{
+      const citation=`${source.title}${target.locator?` · ${target.locator}`:""}`;
+      const limit=target.scope==="chapter"?L(win,"Chapter-level text (verse locator above)","Texte au chapitre (versets indiqués ci-dessus)"):target.scope==="index"?L(win,"Index only; passage link unverified","Index seulement ; lien au passage non vérifié"):"";
+      return `<div class="aoCSESource">${target.url?`<a data-ao-cse-link-scope="${esc(target.scope)}" href="${esc(target.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(citation)}</strong> ↗</a>`:`<strong>${esc(citation)}</strong>`}<br><em>${esc(authority)}${target.witness?` · ${esc(target.witness)}`:""}${limit?` · ${esc(limit)}`:""}${source.role==="argument_lead"?` · ${esc(L(win,"research / argument lead","guide de recherche / argumentation"))}`:""}</em></div>`;
+    }).join("");
   }).join("")}</details>`;
 }
 
