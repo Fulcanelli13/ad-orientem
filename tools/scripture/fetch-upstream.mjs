@@ -39,6 +39,9 @@ for(const source of SOURCES) {
    sha256:createHash("sha256").update(bytes).digest("hex"),inspection,
    status:"RESEARCH_ONLY_NOT_CERTIFIED_OR_PUBLISHABLE"});
  console.log(source.tag+" verified "+bytes.length+" bytes. Shape: "+JSON.stringify(inspection).slice(0,3000));
+ console.log(source.tag+" book names: "+JSON.stringify(json.books?.map(b=>b.name)));
+ console.log(source.tag+" chapter shape: "+JSON.stringify(shape(json.books?.[0]?.chapters)).slice(0,2000));
+ console.log(source.tag+" verses shape: "+JSON.stringify(shape(json.books?.[0]?.chapters?.[0]?.verses)).slice(0,2000));
 }
 await writeFile(out+"/source-report.json",JSON.stringify(report,null,2)+"\n");
 console.log("Two source snapshots byte-verified; neither is approved for in-app import.");
