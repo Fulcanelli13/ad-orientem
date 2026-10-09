@@ -1,0 +1,313 @@
+{
+  "schema": "AO_PRAYER_12_ORIGINAL_FORM_REVIEW_V1",
+  "as_of": "2026-10-10",
+  "scope": "Twelve canonical Prayer records previously NOT_REVIEWED, independently compared with complete English or printed Latin source sections; no claim of trilingual verbatim certification.",
+  "method": "Original prayers opened and compared at full-form/boundary level. Classifications distinguish identical words, translations, variants, related-only content, and languages not supplied by cited original. Comparison is editorial, not rights sign-off.",
+  "counts": {
+    "prayers": 12,
+    "source_original_or_comparator_targets": 12,
+    "language_cells": 36,
+    "full_text_original_languages_certified": 0,
+    "individual_english_source_forms_reviewed": 12,
+    "independent_french_collation_completed": 0,
+    "contains_material_en_source_mismatch": 7,
+    "selected_link_differs_from_evidence": []
+  },
+  "items": [
+    {
+      "id": "foundations_morning_offering",
+      "title": "Morning Offering",
+      "source_witness": "USCCB Prayer Morning Offering",
+      "source_url": "https://www.usccb.org/prayers/morning-offering",
+      "canonical_source_url_at_review": "https://www.usccb.org/prayers/morning-offering",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_PRINTED_FORM_MATCH_PUNCTUATION",
+        "finding": "Complete English Gautrelet form appears on official USCCB page; canonical text combines lines and removes optional punctuation, with equivalent wording."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_TRANSLATION_NOT_ON_ENGLISH_SOURCE",
+        "finding": "French and Latin translations cannot be certified from USCCB English page; the app Latin begins Divinum Cor Iesu, an alternative opening to O Jesus."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "adoration_spiritual_communion",
+      "title": "Spiritual Communion",
+      "source_witness": "Vatican News Spiritual Communion, first St Alphonsus prayer",
+      "source_url": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html",
+      "canonical_source_url_at_review": "https://www.vaticannews.va/en/prayers/the-spiritual-communion.html",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_FORM_MATCH_CASE_PUNCTUATION",
+        "finding": "App's entire English prayer corresponds to the St Alphonsus text, stopping before the separate Cardinal Merry del Val prayer. App omits no distinct paragraph from the St Alphonsus form."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_TRANSLATION_UNVERIFIED",
+        "finding": "Vatican News page provides only an English prayer at this address; canonical Latin adds terminal Amen absent from the site's St Alphonsus prayer."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "benediction_divine_praises",
+      "title": "Divine Praises",
+      "source_witness": "USCCB Holy Communion and Worship of the Eucharistic Mystery outside Mass no.99",
+      "source_url": "https://www.usccb.org/prayers/divine-praises",
+      "canonical_source_url_at_review": "https://www.usccb.org/prayers/divine-praises",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_14_INVOCATIONS_MATCH_CASE",
+        "finding": "All 14 English Divine Praises correspond line by line to the USCCB form; Holy/His/Altar/capitalization differ, not the invocation sequence."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_SOURCE_NOT_AT_USCCB",
+        "finding": "USCCB page prints English only; the French and Latin 14-line formulas require their own independently collated source/edition."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "sacrament_come_holy_spirit",
+      "title": "Come, Holy Spirit",
+      "source_witness": "USCCB Prayer to the Holy Spirit",
+      "source_url": "https://www.usccb.org/prayers/prayer-holy-spirit",
+      "canonical_source_url_at_review": "https://www.usccb.org/prayers/prayer-holy-spirit",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_HISTORICAL_COLLECT_WORDING_VARIANT",
+        "finding": "The same invocation, Psalm versicle and final collect occur, but the app collect uses did instruct, grant that ... ever enjoy his consolations whereas USCCB prints have taught, grant that ... ever rejoice in his consolation."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_FORM_SECONDARY_NOT_VERBATIM_CERTIFIED",
+        "finding": "App uses the received Latin Veni Sancte Spiritus, Emitte Spiritum... and Deus qui corda. English page is not an original printed Latin/FR witness."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "devotion_prayer_st_michael",
+      "title": "Prayer to St. Michael",
+      "source_witness": "Holy See Press Office Communiqué 29 September 2018",
+      "source_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "canonical_source_url_at_review": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "LATIN_AND_ENGLISH_OR_PRIMARY_LATIN",
+      "en": {
+        "outcome": "EN_TRANSLATION_VERB_VARIANT",
+        "finding": "Holy See official English translates final detrude as cast into hell, while app says thrust into hell; prayer and other clauses correspond in sense."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_FORM_NORMALIZED",
+        "finding": "Holy See directly prints the complete Latin Sancte Michael prayer; app corresponds in wording after accents, capitalization and punctuation."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "devotion_memorare_st_joseph",
+      "title": "Memorare to St. Joseph",
+      "source_witness": "Diocese of Sacramento Memorare to St Joseph",
+      "source_url": "https://www.scd.org/stjoseph/prayers",
+      "canonical_source_url_at_review": "https://www.scd.org/stjoseph/prayers",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_PROTECTOR_ADJECTIVE_VARIANT",
+        "finding": "Diocesan witness says my great protector Saint Joseph, while app says my sweet protector St. Joseph; remaining English clauses track the published form after punctuation."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_TRANSLATION_UNSOURCED",
+        "finding": "The diocesan witness is English and cannot certify the separately composed Latin or French text."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "devotion_ad_te_beate_ioseph",
+      "title": "To Thee, O Blessed Joseph",
+      "source_witness": "Leo XIII Quamquam pluries appended Prayer to Saint Joseph",
+      "source_url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html",
+      "canonical_source_url_at_review": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15081889_quamquam-pluries.html",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_COMPLETE_APPENDED_PRAYER_WITH_ORTHOGRAPHY",
+        "finding": "English source supplies the entire 1889 appended Prayer to Saint Joseph. App preserves its paragraph sequence, with occasional off-spring/offspring and other orthographic differences."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_TRANSLATION_NOT_IN_ENGLISH_PAGE",
+        "finding": "The Vatican page in English does not establish app's Latin or French translation as the original 1889 approved edition."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "sacred_heart_aspiration_trust",
+      "title": "Sacred Heart Aspiration",
+      "source_witness": "USCCB Sacred Heart novena, Day 7 Padre Pio quote",
+      "source_url": "https://www.usccb.org/novena-sacred-heart-jesus",
+      "canonical_source_url_at_review": "https://www.usccb.org/novena-sacred-heart-jesus",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_RELATED_ASPIRATION_WITH_ADDED_MOST",
+        "finding": "USCCB quotes Sacred Heart of Jesus, I place all my trust in you; app adds Most. Related wording, but not verbatim exact source of the app aspiration."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_FR_UNSUPPORTED",
+        "finding": "No Latin or French translation of the app's longer adjective form is supplied on the cited USCCB page."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "dead_eternal_rest_singular",
+      "title": "Eternal Rest · for one deceased person",
+      "source_witness": "Catholic Truth Society, Prayers for the Dead, Requiem",
+      "source_url": "https://www.ctsbooks.org/prayers-for-the-dead/",
+      "canonical_source_url_at_review": "https://www.ctsbooks.org/prayers-for-the-dead/",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_RENDERED_GENDER_PLACEHOLDERS_NOT_VERBATIM",
+        "finding": "CTS supplies him (her), he (she) alternatives with separate response cues; app writes him or her and he or she inline and collapses the responses."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_ORIGINAL_NOT_IN_WEB_PAGE",
+        "finding": "CTS English devotional page cannot certify the Latin Requiem aeternam singular nor the French translation."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "sub_tuum",
+      "title": "Sub Tuum Praesidium",
+      "source_witness": "Holy See Press Office Communiqué 29 September 2018",
+      "source_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "canonical_source_url_at_review": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/09/29/180929d.html",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "LATIN_AND_ENGLISH_OR_PRIMARY_LATIN",
+      "en": {
+        "outcome": "EN_TRANSLATION_VARIANT",
+        "finding": "Holy See translation begins We fly to Thy protection and says petitions; app begins We fly to your patronage and says prayers. Historically related translations, not identical."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_EXTRA_NOSTRIS",
+        "finding": "Holy See prints in necessitatibus; app has in necessitatibus nostris. App adds a word to the official printed Latin passage, requiring a separate edition witness or review."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "devotion_consecration_christ_king",
+      "title": "Consecration to Christ the King",
+      "source_witness": "Itheca Latin Oratio ad Iesum Christum Regem",
+      "source_url": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html",
+      "canonical_source_url_at_review": "https://app.itheca.org/biblioteca/Oraciones/DeumUnuTri.html",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "LATIN_AND_ENGLISH_OR_PRIMARY_LATIN",
+      "en": {
+        "outcome": "EN_TRANSLATION_NOT_ON_LATIN_SOURCE",
+        "finding": "App English consecration follows the major Latin clauses including renunciation and Christ's kingship, but the cited site prints Latin only."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_COMPLETE_FORM_NORMALIZED",
+        "finding": "Site prints the whole Latin universal kingship prayer from Domine Iesu Christe to pacis regnum ... Amen; app has corresponding wording after accents and typography."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    },
+    {
+      "id": "church_prayer_for_pope",
+      "title": "Prayer for the Pope",
+      "source_witness": "Vatican News Prayer for the Pope",
+      "source_url": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html",
+      "canonical_source_url_at_review": "https://www.vaticannews.va/en/prayers/prayer-for-the-pope.html",
+      "source_url_matches_selected_reference": true,
+      "original_language_attested": "ENGLISH_ONLY",
+      "en": {
+        "outcome": "EN_RELATED_NOT_SAME_FORM",
+        "finding": "The Vatican News prayer is pope-specific and shorter; app uses a generic N. plus Tu es Petrus and longer historical clauses. Related function but not the exact app prayer."
+      },
+      "fr": {
+        "outcome": "FRENCH_TRANSLATION_UNCERTIFIED",
+        "finding": "No exact original French wording has been independently collated for this complete prayer in the cited edition."
+      },
+      "la": {
+        "outcome": "LATIN_FRENCH_NOT_IN_OFFICIAL_SOURCE",
+        "finding": "Vatican News current prose is not a Latin/French critical witness for the app's composite traditional papal prayer."
+      },
+      "canonical_text_unchanged": true,
+      "full_original_text_language_certified": false,
+      "editorial_hold": "DO_NOT_TREAT_CITED_PAGE_AS_VERBATIM_TRI_LOCALE_CERTIFICATE"
+    }
+  ],
+  "gates": [
+    "Identify precise source-language original; correct citations that only point to related prayers.",
+    "Require a native French historical Catholic witness before certifying the app's French wording.",
+    "Do not silently remove variants such as 'nostris', 'Most', 'sweet protector', or gender placeholders without a verified target edition.",
+    "Preserve Scripture passage source/bible-edition policy and bilingual/Latin user preference.",
+    "All original translations require rights and full line-level approval before publication certification."
+  ]
+}
