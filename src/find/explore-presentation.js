@@ -108,10 +108,19 @@ function placeSheet(vm){
     html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"ASSOCIATED SAINTS","SAINTS ASSOCIÉS"))+'</small><p>'+esc(profile.saints.join(" · "))+'</p></section>';
   }
 
+  if(arr(profile.novenas).length){
+    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"RELATED NOVENAS & DEVOTIONS","NEUVAINES ET DÉVOTIONS ASSOCIÉES"))+'</small>';
+    for(const novena of profile.novenas){
+      const name=vm.language==="fr"?novena.title_fr:novena.title_en;
+      html+='<article><div><strong>'+esc(name)+'</strong>'+(arr(novena.notes).length?'<p>'+esc(novena.notes.join(" "))+'</p>':"")+'</div><button type="button" data-explore-open-novena="'+esc(novena.id)+'">'+esc(L(vm.language,"Pray novena","Prier la neuvaine"))+'</button></article>';
+    }
+    html+='</section>';
+  }
+
   if(arr(profile.calendar).length){
     html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"CALENDAR","CALENDRIER"))+'</small>';
     for(const event of profile.calendar){
-      html+='<article><strong>'+esc(event.title)+'</strong>'+(event.date_label?'<span>'+esc(event.date_label)+'</span>':"")+'</article>';
+      html+='<article><strong>'+esc(event.title)+'</strong>'+(event.date_label?'<button type="button" data-explore-calendar-date="'+esc(event.date)+'">'+esc(event.date_label)+' →</button>':'<span>'+esc(L(vm.language,"Seasonal / local schedule","Saison / calendrier local"))+'</span>')+'</article>';
     }
     html+='</section>';
   }
