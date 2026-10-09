@@ -52,7 +52,36 @@ for(const id of ["CSE043","CSE049","CSE050","CSE071","CSE083","CSE089"]){
  assert.ok(CSE_DEBATE_POSITION_REFS[id].some(([src])=>src==="FARLEY_RESPONSE2012"),id+" lacks author's own qualifying response");
  assert.equal(audit.cases.find(x=>x.id===id).verification_scope,"FARLEY_CDF_DIRECT_EXCERPT_PLUS_FIRST_PERSON_RESPONSE");
 }
-for(const id of ["CSE008","CSE010"])assert.equal(audit.cases.find(x=>x.id===id).verification_scope,"FLETCHER_MEDIATED_EXCERPTS_AND_1966_BOOK_CATALOGUE");
+for(const id of ["CSE008","CSE010"]){
+ const row=audit.cases.find(x=>x.id===id);
+ assert.equal(row.verification_scope,"FLETCHER_DIGITIZED_ORIGINAL_1966_CHAPTERS_UNCOLLATED");
+ assert.equal(row.original_source_id,"FLETCHER1966");
+ for(const stageName of ["opposition","appeal","counter"]){
+  assert.deepEqual(stage[id][stageName],["FLETCHER1966"]);
+  assert.equal(certification.cases.find(x=>x.id===id).stages.find(x=>x.stage===stageName).exact_full_passage_collated,false);
+ }
+ assert.match(row.limit,/No complete printed-edition collation/);
+}
+assert.match(CSE_SOURCE_MAP.FLETCHER1966.title,/Westminster Press, 1966/);
+assert.match(CSE_SOURCE_MAP.FLETCHER1966.canonical_url,/E2JqAAAAMAAJ/);
+assert.match(CSE_SOURCE_MAP.FLETCHER1966.original_digitized_text_url,/scribd\.com\/document\/390198205/);
+// Farley's 2008 book chapter is titled 'Just Sex'; it is not the book title.
+// The official 2012 CDF excerpt and Farley's first-person response have
+// separate original-document identities, preventing false full-book claims.
+assert.match(CSE_SOURCE_MAP.FARLEY2008.title,/Just Love/);
+assert.match(CSE_DEBATE_POSITION_REFS.CSE007.find(([id])=>id==="FARLEY2008")[1],/chapter “Just Sex”/);
+for(const id of ["CSE043","CSE049","CSE050","CSE071","CSE083","CSE089"]){
+ assert.ok(stage[id].opposition.includes("FARLEY_QUOTED2012"),id+" lost quoted original book segment");
+ assert.equal(audit.cases.find(x=>x.id===id).full_named_position_original_context_certified,false);
+}
+// Curran's published 1987 essay is available as an author-written full text;
+// chapter-context locators are not literal quotations of modern objections.
+assert.match(CSE_SOURCE_MAP.CURRAN1987.canonical_url,/religion-online\.org\/article\/roman-catholic-sexual-ethics-a-dissenting-view/);
+for(const id of ["CSE014","CSE016","CSE018","CSE050","CSE061","CSE063","CSE064"]){
+ const ref=CSE_DEBATE_POSITION_REFS[id]?.find(([sid])=>sid==="CURRAN1987");
+ assert.ok(ref,id+" lost Curran primary argument source");
+ assert.match(ref[1],/1987 essay/,id+" lost author-text locator");
+}
 assert.match(CSE_DEBATE_MAP.CSE007.opposition[0],/treats sexual consent as voluntary/);
 assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/In his 1908 essay/);
 assert.match(CSE_DEBATE_MAP.CSE095.opposition[0],/2024 policy links gender-related rejection/);
