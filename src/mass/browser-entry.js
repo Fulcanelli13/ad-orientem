@@ -365,7 +365,12 @@ export async function openReaderScriptureContext(reference,{
     owner=win?.AO_SCRIPTURE_CONTEXT_V1;
   }
   if(typeof owner?.open!=="function")throw new Error("MASS_SCRIPTURE_OWNER_NOT_READY");
-  const accepted=await owner.open(reference,{language});
+  const isSegmented=Array.isArray(reference?.segments);
+  if(isSegmented && typeof owner.openSegments!=="function")
+    throw new Error("MASS_SEGMENTED_SCRIPTURE_OWNER_NOT_READY");
+  const accepted=isSegmented
+    ? await owner.openSegments(reference.segments,{language,reference:reference.reference,provenance:reference.provenance})
+    : await owner.open(reference,{language});
   if(accepted===false)throw new Error("MASS_SCRIPTURE_CONTEXT_UNAVAILABLE");
   return true;
 }
@@ -412,7 +417,7 @@ function installReaderScriptureBridge(preview,prepared){
     if(opening||disposed)return;
     const context=refresh();if(context?.state!=="READY")return;
     opening=true;button.disabled=true;button.setAttribute("aria-busy","true");
-    void openReaderScriptureContext(context.reference,{language:fr?"fr":"en"}).catch(error=>{
+    void openReaderScriptureContext(context.segments?context:context.reference,{language:fr?"fr":"en"}).catch(error=>{
       if(disposed)return;
       console.error("R17 reader Scripture context failed",error);
       status.textContent=fr
