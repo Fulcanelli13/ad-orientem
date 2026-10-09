@@ -40,6 +40,7 @@ function css(){
 .aoSLPractice{margin:24px 0 6px;padding:16px;border:1px solid var(--liturgical-border,rgba(201,173,120,.35));border-radius:14px;background:var(--liturgical-soft,rgba(201,173,120,.065))}.aoSLPractice small{display:block;color:var(--liturgical,#c9ad78);font:600 .65rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.09em;text-transform:uppercase}.aoSLPractice strong{display:block;margin-top:7px;font:600 1rem/1.45 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoSLPractice p{margin:8px 0 0;color:var(--muted,#aeb6bf);font-size:.82rem;line-height:1.5}
 .aoSLHandoffs{margin:22px 0 0;padding-top:16px;border-top:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}.aoSLHandoffs small{display:block;margin-bottom:9px;color:var(--muted,#9ba5b1);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}.aoSLHandoffButtons{display:flex;flex-wrap:wrap;gap:8px}.aoSLBtn{font-size:.78rem}
 .aoSLSources{margin:24px 0 0;padding-top:16px;border-top:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.12)))}.aoSLSources summary{cursor:pointer;color:var(--muted,#9ba5b1);font-size:.8rem}.aoSLSource{margin:11px 0;padding-left:10px;border-left:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));font-size:.76rem;line-height:1.45}.aoSLSource a{color:var(--liturgical,#c9ad78);text-decoration:none}.aoSLSource em{display:block;margin-top:2px;color:var(--muted,#9ba5b1);font-style:normal}.aoSLSourceLoc{margin-top:4px;color:var(--muted,#9ba5b1);font-size:.71rem}
+.aoSLInlineSources{margin-top:10px;color:var(--muted,#9ba5b1);font-size:max(13px,.8125rem);line-height:1.5}.aoSLInlineSources span{color:var(--muted,#9ba5b1)}.aoSLInlineSources a{color:var(--liturgical,#c9ad78);text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);text-underline-offset:3px;overflow-wrap:anywhere}.aoSLInlineSources a:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoSLSourceHold{font-style:italic}
 .aoSLNav{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:25px}.aoSLNav button{min-height:48px;border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.15)));border-radius:12px;background:var(--ao-surface-1,var(--surface-1,#101821));color:inherit;padding:10px 12px;text-align:left}.aoSLNav button:last-child{text-align:right}.aoSLNav button:disabled{opacity:.35}.aoSLNav small{display:block;color:var(--muted,#9ba5b1);font-size:.64rem;text-transform:uppercase;letter-spacing:.07em}.aoSLNav strong{display:block;margin-top:3px;font-size:.8rem;line-height:1.25}
 @media(max-width:430px){.aoSLWrap{padding-left:13px;padding-right:13px}.aoSLBlock p{font-size:.98rem}.aoSLHero h1{font-size:2.25rem}.aoSLHandoffButtons{display:grid}.aoSLBtn{width:100%}}
 /* Semantic reading hierarchy: paragraphs and practice text, not compact labels. */
@@ -65,6 +66,27 @@ function lessonSources(lesson){
     for(const sourceId of claim?.source_ids||[])if(!ids.includes(sourceId))ids.push(sourceId);
   }
   return ids.map(id=>SPIRITUAL_LIFE_SOURCE_MAP[id]).filter(Boolean);
+}
+
+// Render the exact frozen SOT authorities adjacent to the text they support.
+// The lesson bibliography remains available for full locators and provenance.
+function claimSources(claimIds){
+  const ids=new Set();
+  for(const claimId of claimIds||[]){
+    const claim=SPIRITUAL_LIFE_CLAIM_MAP[claimId];
+    for(const sourceId of claim?.source_ids||[])ids.add(sourceId);
+  }
+  return [...ids].map(id=>SPIRITUAL_LIFE_SOURCE_MAP[id]).filter(Boolean);
+}
+function claimSourceMarkup(win,claimIds){
+  const sources=claimSources(claimIds);
+  const links=sources.map(source=>{
+    if(!/^https:\/\//.test(source.canonical_url||""))return "";
+    const short=source.title.split(" · ").pop();
+    return `<a href="${esc(source.canonical_url)}" target="_blank" rel="noopener noreferrer" title="${esc(source.title)}" aria-label="${esc(source.title)}">${esc(short)} ↗</a>`;
+  }).filter(Boolean);
+  if(!links.length)return `<div class="aoSLInlineSources aoSLSourceHold">${esc(L(win,"Source link not verified","Lien source non vérifié"))}</div>`;
+  return `<div class="aoSLInlineSources" data-ao-sl-claim-sources="${esc((claimIds||[]).join(" "))}"><span>${esc(L(win,"Sources","Sources"))}:</span> ${links.join(" · ")}</div>`;
 }
 
 function sourceMarkup(win,lesson){
@@ -94,7 +116,7 @@ function lessonHtml(win,lesson){
   const index=SPIRITUAL_LIFE_LESSONS.findIndex(item=>item.id===lesson.id);
   const prev=index>0?SPIRITUAL_LIFE_LESSONS[index-1]:null;
   const next=index<SPIRITUAL_LIFE_LESSONS.length-1?SPIRITUAL_LIFE_LESSONS[index+1]:null;
-  return `${top(win,pick(win,lesson.title),index+1)}<main class="aoSLWrap"><section class="aoSLLessonHead"><div class="aoSLKicker">${esc(L(win,"Spiritual Life","Vie spirituelle"))}</div><h1>${esc(pick(win,lesson.title))}</h1><p>${esc(pick(win,lesson.summary))}</p></section><div class="aoSLBlocks">${lesson.blocks.map(block=>`<section class="aoSLBlock"><h2>${esc(pick(win,block.h))}</h2><p>${esc(pick(win,block.t))}</p></section>`).join("")}</div><section class="aoSLPractice"><small>${esc(L(win,"Practice · not scored","Mise en pratique · sans score"))}</small><strong>${esc(pick(win,lesson.practice.prompt))}</strong><p>${esc(pick(win,lesson.practice.guidance))}</p></section>${handoffMarkup(win,lesson)}${sourceMarkup(win,lesson)}<nav class="aoSLNav" aria-label="${esc(L(win,"Lesson navigation","Navigation des leçons"))}"><button type="button" data-ao-sl-prev ${prev?"":"disabled"}><small>${esc(L(win,"Previous","Précédente"))}</small><strong>${prev?esc(pick(win,prev.title)):"—"}</strong></button><button type="button" data-ao-sl-next ${next?"":"disabled"}><small>${esc(L(win,"Next","Suivante"))}</small><strong>${next?esc(pick(win,next.title)):"—"}</strong></button></nav></main>`;
+  return `${top(win,pick(win,lesson.title),index+1)}<main class="aoSLWrap"><section class="aoSLLessonHead"><div class="aoSLKicker">${esc(L(win,"Spiritual Life","Vie spirituelle"))}</div><h1>${esc(pick(win,lesson.title))}</h1><p>${esc(pick(win,lesson.summary))}</p></section><div class="aoSLBlocks">${lesson.blocks.map(block=>`<section class="aoSLBlock"><h2>${esc(pick(win,block.h))}</h2><p>${esc(pick(win,block.t))}</p>${claimSourceMarkup(win,block.claims)}</section>`).join("")}</div><section class="aoSLPractice"><small>${esc(L(win,"Practice · not scored","Mise en pratique · sans score"))}</small><strong>${esc(pick(win,lesson.practice.prompt))}</strong><p>${esc(pick(win,lesson.practice.guidance))}</p>${claimSourceMarkup(win,lesson.practice.claims)}</section>${handoffMarkup(win,lesson)}${sourceMarkup(win,lesson)}<nav class="aoSLNav" aria-label="${esc(L(win,"Lesson navigation","Navigation des leçons"))}"><button type="button" data-ao-sl-prev ${prev?"":"disabled"}><small>${esc(L(win,"Previous","Précédente"))}</small><strong>${prev?esc(pick(win,prev.title)):"—"}</strong></button><button type="button" data-ao-sl-next ${next?"":"disabled"}><small>${esc(L(win,"Next","Suivante"))}</small><strong>${next?esc(pick(win,next.title)):"—"}</strong></button></nav></main>`;
 }
 
 export function createSpiritualLifeRuntime(win=globalThis){
