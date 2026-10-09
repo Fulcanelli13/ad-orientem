@@ -1848,6 +1848,24 @@
         "SHR-PIL-JP-our-lady-akita-convent"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "name": "Oratoire Saint-Joseph du Mont-Royal",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Joseph",
+      "origin_summary": "Catholic pilgrimage sanctuary founded by Saint Brother André and dedicated to Saint Joseph; his tomb and heart reliquary are separately documented on site.",
+      "associated_saints": [
+        "Saint Joseph",
+        "Saint André Bessette"
+      ],
+      "source_ids": [
+        "SHR-ORATOIRE-MONTREAL",
+        "SHR-ORATOIRE-MONTREAL-TOMB"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -3978,6 +3996,19 @@
         "SHR-PIL-JP-our-lady-akita-convent"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CA:oratoire-saint-joseph-montreal:destination",
+      "name": "Pilgrimage to Saint Joseph's Oratory, Montréal",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Year-round destination pilgrimage; no unverified annual date or traditional Latin Mass provision implied.",
+      "source_ids": [
+        "SHR-ORATOIRE-MONTREAL"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "routes": [

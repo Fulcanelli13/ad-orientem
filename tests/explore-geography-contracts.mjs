@@ -111,6 +111,7 @@ assert.deepEqual(
     "place:US:st-anne-fiskdale",
     "place:CA:sainte-anne-de-beaupre",
     "place:CA:notre-dame-du-cap",
+    "place:CA:oratoire-saint-joseph-montreal",
     "place:CA:martyrs-shrine-midland",
     "place:IT:loreto-santa-casa",
     "place:IT:pompei-rosary-shrine",
@@ -227,7 +228,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 35,
-  places: 122,
+  places: 123,
   directoryPlaceLinks: 1,
 });
 
