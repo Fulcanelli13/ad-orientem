@@ -86,7 +86,8 @@ async function compareBook(book,url){
  const page=await fetchHtml(url);
  const master=parseMasterBookVerses(page.html);
  const source=indexCandidate(book);
- const diff=[],missingMaster=[],missingCandidate=[],nonblankSource=0,nonblankMaster=0;
+ const diff=[],missingMaster=[],missingCandidate=[];
+ let nonblankSource=0,nonblankMaster=0;
  for(const [key,text] of source){
   if(!text?.trim())continue;
   nonblankSource++;
