@@ -134,6 +134,16 @@ try{
  await dialog.locator("[data-scripture-close]").click();
  assert.equal(await dialog.isHidden(),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"home","Scripture overlay changed app route");
+ // Historic commentary must be clearly attributed and use the documented
+ // complete-work locator, not pretend to be verse-specific patristic exegesis.
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Psalms 129:1")),true);
+ await dialog.waitFor({state:"visible",timeout:12000});
+ await dialog.locator("[data-scripture-context-depth='commentary']").click();
+ const bellarmine=dialog.locator("[data-scripture-commentary-source='verified']");
+ await bellarmine.waitFor({state:"visible",timeout:12000});
+ assert.match(await bellarmine.getAttribute("href"),/ecatholic2000\.com\/bellarmine\/commentary-on-psalms/);
+ assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/Psalm 129/);
+ await dialog.locator("[data-scripture-close]").click();
  assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
