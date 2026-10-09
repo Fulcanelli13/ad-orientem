@@ -60,4 +60,13 @@ for(const lesson of draft.lessons)for(const claim of lesson.claims)for(const sou
 }
 assert.ok(originalLinks>400);
 assert.equal(buildCatechismGuidedStudy(c,a,b,en).available,false);
+assert.equal(b.batchFindings.bilingualSourceScopeRewrites20261009.count,4);
+for(const id of ["LTF-029","LTF-031","LTF-042","LTF-054"]) {
+ const lesson=b.lessons.find(l=>l.id===id),edited=lesson.claims.filter(x=>x.passageReview20261009);
+ assert.equal(edited.length,1,id+" lost source-scope correction");
+ assert.equal(edited[0].passageReview20261009.publicationApproved,false);
+}
+assert.ok(!b.lessons.find(l=>l.id==="LTF-042").claims[2].en.includes("require their own careful application"));
+assert.ok(!b.lessons.find(l=>l.id==="LTF-054").claims[3].en.includes("dedicated Serious Illness"));
+
 console.log(JSON.stringify({status:"PASS",questions:433,sections:21,lessons:55,claims:181,sourceScopedClaims:56,locatorOnlyClaims:125,englishItalianPairs,originalLinks,publicationApproved:false}));
