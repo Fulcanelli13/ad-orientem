@@ -1,0 +1,49 @@
+name: SSPX worldwide official map source index
+
+on:
+  pull_request:
+    paths:
+      - "tools/directory/acquire-sspx-worldwide-index.mjs"
+      - "tests/directory-sspx-worldwide-index.mjs"
+      - ".github/workflows/directory-sspx-world-index.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  official-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Parse and completeness tests
+        run: node tests/directory-sspx-worldwide-index.mjs
+      - name: Prepare browser
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install chromium
+      - name: Fetch all official district place identities
+        run: |
+          mkdir -p "$RUNNER_TEMP/sspx-world-index"
+          node tools/directory/acquire-sspx-worldwide-index.mjs --out="$RUNNER_TEMP/sspx-world-index"
+          cat "$RUNNER_TEMP/sspx-world-index/worldwide-source-report.v1.json"
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const f=JSON.parse(fs.readFileSync(
+            process.env.RUNNER_TEMP+'/sspx-world-index/worldwide-source-index.v1.json','utf8'));
+          console.log('SSPX_WORLD_INDEX_BEGIN');
+          console.log(JSON.stringify(f));
+          console.log('SSPX_WORLD_INDEX_END');
+          EOF
+      - name: Attach complete source-only artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-sspx-worldwide-source-index
+          path: ${{ runner.temp }}/sspx-world-index/
+          retention-days: 30
+          if-no-files-found: warn
