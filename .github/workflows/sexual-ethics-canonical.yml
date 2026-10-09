@@ -73,3 +73,5 @@ jobs:
         run: node tests/sexual-ethics-moral-authority-25-live-v1.mjs
       - name: Consolidated doctrinal bilingual review for 24 practical and high-stakes stages
         run: node tests/sexual-ethics-consolidated-doctrinal-reader-pass-v1.mjs
+      - name: Ephesians 5 submission original-source and bilingual accessibility review
+        run: node tests/sexual-ethics-ephesians5-review-v1.mjs

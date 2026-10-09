@@ -69,6 +69,14 @@ for(const entry of CSE_MARRIAGE_AUTHORITY_DEBATES){
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("KEENER_2021")||d.sources.opposition.includes("GROOTHUIS")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.some(d=>d.sources.opposition.includes("MULIERIS")));
 assert.ok(CSE_MARRIAGE_AUTHORITY_DEBATES.every(d=>d.traditionalAssessment[0].length>200 && d.traditionalAssessment[1].length>200));
+assert.match(CSE_QUESTION_MAP.CSE045.q[0],/headship and submission/,"Submission disputes must be visible from existing CSE045 title");
+assert.match(CSE_QUESTION_MAP.CSE045.q[1],/soumission/);
+assert.ok(CSE_QUESTION_MAP.CSE045.refs.some(([id,loc])=>id==="MULIERIS"&&loc==="§24"));
+for(const id of ["CASTI","ARCANUM","MULIERIS","HV","LIBERTAS","AL"]){
+ assert.equal(CSE_MARRIAGE_AUTHORITY_SOURCES[id].length,3,id+" must provide verified EN and FR original document links");
+ assert.notEqual(CSE_MARRIAGE_AUTHORITY_SOURCES[id][1],CSE_MARRIAGE_AUTHORITY_SOURCES[id][2]);
+}
+
 
 assert.deepEqual(CSE_EDITORIAL_ARCHIVE_IDS,["CSE055","CSE056","CSE058"]);
 assert.equal(CSE_PUBLIC_QUESTIONS.length,147);
