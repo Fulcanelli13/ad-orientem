@@ -742,7 +742,7 @@
   },
   "guided_formation": {
     "learn_the_faith": {
-      "status": "FULL_DRAFT_SOURCE_LINKED_NOT_PUBLISHED",
+      "status": "FULL_55_LESSON_DRAFT_SOURCE_LINKED_NOT_PUBLISHED",
       "registry": "data/learn/learn-the-faith-curriculum.v1.json",
       "proposed_route": "learn.faith",
       "visible": false,
@@ -752,7 +752,11 @@
       "rule": "Guided synthesis only. Do not duplicate the full Catechism Q&A bank or Apologetics objections.",
       "lesson_count": 55,
       "mapped_catechism_questions": 433,
-      "publication_gate": "THEOLOGICAL_EDITORIAL_SOURCE_VERIFICATION_REQUIRED"
+      "publication_gate": "DEDUP_EDITORIAL_FRENCH_SOURCE_VERIFICATION_REQUIRED",
+      "teaching_point_count": 166,
+      "catechism_question_index": "data/learn/pius-x-1912-question-index.v1.json",
+      "source_registry": "data/learn/learn-the-faith-sources.v1.json",
+      "duplicate_content_representations": 0
     }
   }
 }
