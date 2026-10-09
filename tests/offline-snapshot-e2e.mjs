@@ -81,6 +81,7 @@ try{
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
  await context.setOffline(false);
+ await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // A deliberately incomplete release must NOT replace a usable version.
  variant=3;failedPath="/__ao_offline_test_3.js";
  const failed=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
