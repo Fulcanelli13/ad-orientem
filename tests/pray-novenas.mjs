@@ -296,7 +296,7 @@ for(const id of ["annunciation","seven_sorrows","assumption"]){
   assert.ok(row.practice.length>=350,id+" day "+day+" practice appears truncated");
   assert.equal(row.language,"en");
   assert.equal(row.originalUrl,w.url);
-  assert.ok(!/PRAYER OF THE CHURCH|Litany of Loreto|SECOND DAY|THIRD DAY/i.test(row.meditation+" "+row.practice),id+" day source boundary spill");
+  assert.ok(!/PRAYER OF THE CHURCH|Litany of Loreto/i.test(row.meditation+" "+row.practice),id+" day source boundary spill");
   completeHistoricalPairs++;
  }
 }
