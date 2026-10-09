@@ -9,15 +9,15 @@ const first=load("data/learn/learn-the-faith-certification-001-018.v1.json");
 const second=load("data/learn/learn-the-faith-certification-019-054.v1.json");
 const english=load("data/learn/ltfaith-pius-x-en-witness-index.v1.json");
 assert.equal(proof.pdfPages,165);
-assert.equal(proof.verifiedPageSamples.length,4);
-assert.deepEqual(proof.verifiedPageSamples.map(x=>x.question),[226,228,253,400]);
+assert.equal(proof.verifiedPageSamples.length,5);
+assert.deepEqual(proof.verifiedPageSamples.map(x=>x.question),[202,226,228,253,400]);
 for(const q of proof.verifiedPageSamples){
  assert.equal(q.fullAnswerVisuallyRead,true);
  assert.equal(q.pdfPageOneIndexed,q.pdfPageZeroIndexed+1);
  assert.equal(q.humanTheologyApproved,false);
  assert.ok(q.claim.length>55);
 }
-const nuptial=proof.verifiedPageSamples[0];
+const nuptial=proof.verifiedPageSamples.find(x=>x.question===226);
 assert.equal(nuptial.pdfPageOneIndexed,68);
 assert.equal(nuptial.printedPage,58);
 assert.equal(nuptial.discrepancy,"DATE_RANGES_DIFFER_BETWEEN_LANGUAGE_EDITION_WITNESSES");
@@ -45,4 +45,4 @@ assert.ok(last.sources.some(s=>s.ref==="FR1913-Q226"&&s.url===c.french1913PrintS
 assert.ok(last.sources.some(s=>s.ref==="PX1912-Q226"&&s.originalLanguageUrl.includes("/it/legge-precetti.md")));
 assert.equal(buildCatechismGuidedStudy(crosswalk,first,second,english).available,false);
 for(const flag of ["fullOriginalPassageHumanVerification","editorialApproval","canonicalReview","frenchOriginalCollation","nativeFrenchEdit","publicRouteAdded"])assert.equal(crosswalk.publicationGate[flag],false);
-console.log(JSON.stringify({status:"PASS",sampledPrintedFrenchQuestions:4,editionDiscrepancies:1,guidedClaims:181,questions:433,releaseUnlocked:false}));
+console.log(JSON.stringify({status:"PASS",sampledPrintedFrenchQuestions:5,editionDiscrepancies:1,guidedClaims:181,questions:433,releaseUnlocked:false}));
