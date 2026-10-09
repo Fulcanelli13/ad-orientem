@@ -121,7 +121,7 @@ export function rosaryMeditationCitationLabel(witness,{french=false}={}){
   const reference=String(witness?.reference||"");
   if(!french)return reference;
   if(witness?.referenceFr)return witness.referenceFr;
-  const match=reference.match(/^(1 Peter|Isaias|Luke|Matthew|Mark|John|Acts|Romans|Hebrews|Apocalypse|Revelation)(?=\\s\\d+:)/);
+  const match=reference.match(/^(1 Peter|Isaias|Luke|Matthew|Mark|John|Acts|Romans|Hebrews|Apocalypse|Revelation)(?=\s\d+:)/);
   return match?ROSARY_CATHOLIC_BOOK_NAMES_FR[match[1]]+reference.slice(match[1].length):reference;
 }
 
