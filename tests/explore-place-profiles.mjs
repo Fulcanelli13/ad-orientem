@@ -665,3 +665,5 @@ assert.match(browserSource,/data-explore-place-item/);
 assert.match(browserSource,/state\.query="";/,"cross-lens Place navigation must clear stale search text");
 
 console.log("PASS canonical Explore Place profiles and exact-place aggregation");
+
+await import("./explore-related-places.mjs");

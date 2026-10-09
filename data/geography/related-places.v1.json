@@ -1,0 +1,33 @@
+{
+  "schema": "AO_EXPLICIT_RELATED_PLACES_V1",
+  "version": "1.0.0",
+  "policy": "Distinct physical Place IDs are never merged or assigned each other's coordinates, shrine status, relic claims, liturgical schedules or visitor availability.",
+  "relationships": [
+    {
+      "id": "related:kevelaer-kerzenkapelle-gnadenkapelle",
+      "source_place_id": "place:DE:kevelaer-kerzenkapelle",
+      "target_place_id": "place:DE:kevelaer-gnadenkapelle",
+      "relationship_kind": "SAME_PILGRIMAGE_PRECINCT",
+      "description_en": "Both are distinct chapels within the Kevelaer pilgrimage precinct at Kapellenplatz.",
+      "description_fr": "Deux chapelles distinctes du sanctuaire de pèlerinage de Kevelaer, sur la Kapellenplatz.",
+      "source_label": "St. Marien Kevelaer — Kerzenkapelle and Gnadenkapelle",
+      "source_url": "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/kerzenkapelle",
+      "corroborating_url": "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+      "source_class": "PILGRIMAGE_AUTHORITY_OFFICIAL",
+      "verified_date": "2026-10-09"
+    },
+    {
+      "id": "related:holywell-parish-well",
+      "source_place_id": "place:GB:holywell-st-winefride-church",
+      "target_place_id": "place:GB:holywell-st-winefride",
+      "relationship_kind": "PARISH_AND_ASSOCIATED_SHRINE",
+      "description_en": "The parish church at 15 Well Street and St Winefride’s Shrine & Well on Greenfield Street are separately addressed sites associated by the shrine's official parish guidance.",
+      "description_fr": "L’église paroissiale du 15 Well Street et le sanctuaire avec la source de sainte Winefride, Greenfield Street, sont deux lieux distincts reliés par les indications officielles du sanctuaire.",
+      "source_label": "St Winefride's Shrine — Parish",
+      "source_url": "https://www.stwinefridesshrine.org/blank-3",
+      "corroborating_url": "https://www.stwinefridesshrine.org/blank-2",
+      "source_class": "SHRINE_OFFICIAL",
+      "verified_date": "2026-10-09"
+    }
+  ]
+}
