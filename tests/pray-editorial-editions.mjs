@@ -32,7 +32,7 @@ for(const [lang,invocations] of Object.entries(josephAdditions)){
  for(const phrase of invocations)assert.ok(body.includes(phrase),"2021 Saint Joseph "+lang+" title absent: "+phrase);
 }
 assert.deepEqual(Object.keys(PRAY_EDITION_WITNESSES_V1).sort(),[
- "adoration_lord_i_am_not_worthy","devotion_litany_st_joseph","litany_loreto_1962","litany_loreto_current","mass_confiteor"
+ "adoration_lord_i_am_not_worthy","devotion_litany_st_joseph","foundations_grace_after_meals","litany_loreto_1962","litany_loreto_current","mass_confiteor"
 ].sort());
 for(const [id,ed] of Object.entries(PRAY_EDITION_WITNESSES_V1)){
  assert.ok(prayers[id],"edition override without owned canonical prayer: "+id);
@@ -64,4 +64,4 @@ const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.match(runtime,/prayEditionWitness\(p\.id\)/,"edition source must appear in the user-facing prayer reader");
 assert.match(runtime,/editionNote/,"period and text status notices must be visible");
 assert.match(runtime,/additionalWitness/,"additional decree/facsimile links must not be silently dropped");
-console.log("PASS PRAY editorial: 48 preserved, 200 bilingual guided meditations, 5 edition distinctions, Loreto 5 later invocations and Saint Joseph 7 additions");
+console.log("PASS PRAY editorial: 48 preserved, 200 bilingual guided meditations, 6 edition distinctions, Loreto 5 later invocations and Saint Joseph 7 additions");
