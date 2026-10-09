@@ -39,7 +39,7 @@ Scripture has one canonical reader and edition policy. Glossary retains the defi
 | W20 | `learn.glossary` | glossary | Canonical Glossary owner | Source-wired |
 | W21 | `learn.glossary` | originalSources | Glossary original source references | Index only |
 
-The Prayer source register records **48** canonical prayers: **14** marked `source_visible:true`, **34** `source_visible:false`, and **46** with `source_url`. A false visibility field is a **candidate presentation gap**; it is not proof of absent attribution or that an original link should be duplicated. Audit each item in its existing reader first.
+The Prayer source register records **48** canonical prayers (14 with `source_visible:true`, 34 `false`); **46** carry a base source URL. The `source_visible` marker is metadata and **does not govern the Prayer Library's rendered Source / provenance accordion**; see the item-level audit below. It is not evidence of 34 missing controls.
 
 ## Coverage grid — all 63 route identifiers
 
@@ -147,7 +147,7 @@ The Prayer source register records **48** canonical prayers: **14** marked `sour
 
 ## Next work packages (no duplicate controls)
 
-1. **Prayer provenance first (P1):** trace the 34 source-hidden prayer records to their rendered location, then determine whether the nested reader already shows the link. Fix the source presentation rather than adding another prayer card.
+1. **Prayer provenance first (P1):** review 30 not-yet-anchor-reviewed prayer records and 18 anchor-reviewed/non-verbatim records, verify exact English/French/Latin source matches, and phone-check the existing provenance accordion without creating new buttons.
 2. **R17 Scripture (P1):** examine all Epistle/Gospel/extended lessons against their source-ordered Proper identity and exact source reference; do not rewrite or re-order a Mass section.
 3. **Shared Scripture context (P1):** confirm first-use lazy loading, Bible-selection limitations, explicit edition/versification cautions, optional commentary and return to the same card/position.
 4. **Learn and formation (P2):** inspect each of the 15 launchers and nested sources. Maintain the publication hold on the 60 Apologetics and 81 Church Crisis dossiers; no automatic mass activation of contextual links.
@@ -160,3 +160,79 @@ The Prayer source register records **48** canonical prayers: **14** marked `sour
 Every proposed new control must record exact content ID, canonical owner, reference/term/source ID, editorial identity, source URL/locator, English/French behaviour, source scope (original/translation/commentary), return-context semantics, error-state behaviour and browser evidence. For every `NOT_AUDITED` row, first prove there is a relevant user-facing claim and that existing nested controls are inadequate. A missing cross-link is not automatically an error.
 
 Preserve current six ribbon destinations, all existing route aliases, Prayer owner, R17 reader, Calendar authority, Glossary lazy-loading, and the unpublished Formation/Bible-edition publication gates. The proposed broader navigation redesign is a separate decision.
+
+## 48-prayer item-level source presentation audit (2026-10-10)
+
+See [`data/pray/prayer-source-presentation-audit.v1.json`](../data/pray/prayer-source-presentation-audit.v1.json), cross-joined with the **48 canonical Prayer items** and existing [v3 certification inventory](../data/pray/prayer-source-certification-inventory.v3.json). The following is a **source-level display/certification review**, not live browser or external-source validation.
+
+**Correction of an earlier interpretation:** `source_visible:false` is metadata; it is **not** a missing source disclosure in the actual Prayer Library. The canonical `renderLibrary()` detail calls `prayerBlock(LIB.open,{scriptureContext:true})`, whose HTML always includes `sourceLine(p)` without consulting `sourceVisible`. Thus the claim that 34 prayers need new provenance buttons is **not supported**. The existing Source / provenance accordion is the correct surface and should be retained.
+
+| Structural finding | Count |
+|---|---:|
+| Canonical prayer objects inspected | 48 |
+| Base source URLs recorded | 46 |
+| Edition-specific reader overrides | 5 |
+| Base-URL-absent prayers with a reader edition source | 2 |
+| Reader source URL available by recorded code selection | 48 |
+| Source anchors reviewed, full verbatim collation still pending | 18 |
+| Source anchors not yet reviewed | 30 |
+| Independently fully certified prayers | **0** |
+
+The v3 inventory's `notReviewed:46` is a **64-record programme total** (including novenas); this audit separately classifies the **48 prayers only** into 18 + 30. The 48 linked source selections are **runtime assignments, not proof of HTTP success, exact source location or publication approval**.
+
+### Item-level register
+
+| Canonical prayer | source_visible metadata | Linked citation carrier | Edition distinction | Collation state | Recorded variant |
+|---|---|---|---|---|---|
+| `foundations_sign_of_cross` | false | Base | — | Anchor reviewed | SAME_FORM_NORM |
+| `foundations_our_father` | false | Base | — | Anchor reviewed | FRENCH_HISTORICAL_VARIANT |
+| `foundations_hail_mary` | false | Base | — | Anchor reviewed | SAME_FORM_NORM |
+| `foundations_glory_be` | false | Base | — | Anchor reviewed | SAME_FORM_NORM |
+| `foundations_apostles_creed` | false | Base | — | Anchor reviewed | FRENCH_HISTORICAL_VARIANT |
+| `sacrament_act_of_contrition` | false | Base | — | Anchor reviewed | AUTHORITATIVE_LOCALE_VARIANTS |
+| `foundations_act_of_faith` | false | Base | — | Anchor reviewed | AUTHORITATIVE_LOCALE_VARIANTS |
+| `foundations_act_of_hope` | false | Base | — | Anchor reviewed | PUBLISHED_FRENCH_ANOMALY |
+| `foundations_act_of_love` | false | Base | — | Anchor reviewed | AUTHORITATIVE_LOCALE_VARIANTS |
+| `foundations_guardian_angel` | false | Base | — | Anchor reviewed | SAME_FORM_NORM |
+| `foundations_grace_before_meals` | false | Base | — | Anchor reviewed | HISTORICAL_PRAYER_PRESENT |
+| `foundations_grace_after_meals` | false | Base | — | Anchor reviewed | HISTORICAL_PRAYER_ALTERNATIVE |
+| `foundations_morning_offering` | true | Base | — | Not reviewed | — |
+| `foundations_prayer_of_adoration` | false | Base | — | Not reviewed | — |
+| `mass_confiteor` | false | Edition only | PRINTED_MISSAL_FACSIMILE_UNCOLLATED | Not reviewed | — |
+| `marian_hail_holy_queen` | false | Base | — | Anchor reviewed | FRENCH_HISTORICAL_VARIANT |
+| `marian_memorare` | false | Base | — | Anchor reviewed | FRENCH_ALTERNATE_WITNESS |
+| `weekday_magnificat` | false | Base | — | Anchor reviewed | OFFICIAL_TEXT_VARIANTS |
+| `marian_consecration_immaculate_heart` | true | Base | — | Not reviewed | — |
+| `adoration_anima_christi` | false | Base | — | Anchor reviewed | ENGLISH_TRANSLATION_VARIANT |
+| `adoration_spiritual_communion` | true | Base | — | Not reviewed | — |
+| `benediction_o_salutaris` | true | Base | — | Not reviewed | — |
+| `benediction_tantum_ergo` | true | Base | — | Not reviewed | — |
+| `benediction_divine_praises` | true | Base | — | Not reviewed | — |
+| `adoration_litany_blessed_sacrament` | true | Base | — | Not reviewed | — |
+| `benediction_versicles` | true | Base | — | Not reviewed | — |
+| `adoration_lord_i_am_not_worthy` | false | Edition only | PRINTED_MISSAL_FACSIMILE_UNCOLLATED | Not reviewed | — |
+| `mass_devotion_leonine` | false | Base | — | Not reviewed | — |
+| `sacrament_come_holy_spirit` | false | Base | — | Not reviewed | — |
+| `weekday_benedictus` | false | Base | — | Anchor reviewed | BIBLE_EDITORIAL_VARIANTS |
+| `devotion_prayer_st_michael` | true | Base | — | Not reviewed | — |
+| `devotion_memorare_st_joseph` | false | Base | — | Not reviewed | — |
+| `devotion_consecration_christ_king` | true | Base | — | Not reviewed | — |
+| `church_prayer_for_pope` | true | Base | — | Not reviewed | — |
+| `devotion_st_anthony_lost_items` | true | Base | — | Not reviewed | — |
+| `sacred_heart_short_prayer` | true | Base | — | Not reviewed | — |
+| `sacred_heart_aspiration_trust` | false | Base | — | Not reviewed | — |
+| `foundations_eternal_rest` | false | Base | — | Anchor reviewed | FRENCH_TRANSLATION_VARIANT |
+| `dead_de_profundis` | false | Base | — | Not reviewed | — |
+| `devotion_litany_st_joseph` | false | Base | CURRENT_HOLY_SEE_WITH_DECREE | Not reviewed | — |
+| `devotion_ad_te_beate_ioseph` | false | Base | — | Not reviewed | — |
+| `traditional_veni_sancte_sequence` | false | Base | — | Not reviewed | — |
+| `dead_fidelium_deus` | false | Base | — | Not reviewed | — |
+| `dead_eternal_rest_singular` | false | Base | — | Not reviewed | — |
+| `sub_tuum` | false | Base | — | Not reviewed | — |
+| `benediction_adoremus_ps116` | true | Base | — | Not reviewed | — |
+| `litany_loreto_1962` | false | Base | PRECONCILIAR_COMPARATIVE_WITNESS | Not reviewed | — |
+| `litany_loreto_current` | false | Base | CURRENT_HOLY_SEE_WITH_DECREE | Not reviewed | — |
+
+### Editorial decision
+
+Do **not** add 34 citation buttons or rewrite any prayer to match a generic source page. Instead, next actions are: (1) check exact anchors and EN/FR/LA wording for the 30 unreviewed prayers in batches; (2) resolve the 18 anchor-reviewed but not full-verbatim records, beginning with documented variants; (3) make any genuinely inadequate original-source target an explicit `link-to-work-not-exact-passage` finding before replacing it; (4) verify the existing collapsible source control on phone for every Prayer family. The canonical source owner stays unchanged. No extra card or full-text duplication is justified by the metadata flag.
