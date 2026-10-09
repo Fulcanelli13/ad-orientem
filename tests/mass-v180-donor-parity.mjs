@@ -159,8 +159,12 @@ for(const key of ["priest_elevate_host_rich","priest_elevate_chalice_rich","prie
 }
 
 assert.match(dom,/ao-ritual-trigger-live/);
-assert.match(dom,/current\.gesture\?\.anchorLat/);
-assert.match(dom,/exactCueIds\.includes\(gestureCueId\)/);
+assert.match(dom,/syncReaderRitualHighlights\(root,current\.gesture\)/,
+  "native gesture anchor must update when chrome changes without a card rebuild");
+assert.match(dom,/paragraph\.dataset\?\.cueId===cueId/,
+  "word-level anchor must be owned by exactly its canonical source cue");
+assert.match(dom,/paragraph\.dataset\?\.active==="true"/,
+  "inactive adjacent source paragraphs may not keep a ritual highlight");
 assert.doesNotMatch(dom,/includes\(["'`]Iesu Christe["'`]\)|includes\(["'`]Et incarn/i,
   "ritual trigger styling must not infer cue ownership by prayer-text search");
 

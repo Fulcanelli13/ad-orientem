@@ -21,7 +21,14 @@ export function pickActiveCue({
   if(top<=edgePx)return usable[0].cueId;
   if(top>=Math.max(0,extent-viewport-edgePx))return usable[usable.length-1].cueId;
 
-  const focus=top+viewport*Math.min(.7,Math.max(.3,Number(focusRatio)||.46));
+  // Near the opening edge, a fixed 39% focus line would sit below the
+  // second/third cue before the card has any room to scroll. Ramp the focus
+  // offset into its normal position as scrolling advances; this gives each
+  // early source cue real territory without inserting blank lead-in prose.
+  const steadyOffset=viewport*Math.min(.7,Math.max(.3,Number(focusRatio)||.46));
+  const firstCenter=Math.max(24,(usable[0].top+usable[0].bottom)/2);
+  const openingOffset=Math.min(steadyOffset,Math.max(24,firstCenter+top*.8));
+  const focus=top+openingOffset;
   let best=usable[0],bestDistance=Infinity;
   for(const item of usable){
     if(focus>=item.top && focus<=item.bottom)return item.cueId;

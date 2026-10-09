@@ -2,6 +2,7 @@ import {
   buildReaderShellMarkup,
   createReaderDomAdapter,
   toggleReaderTranslation,
+  syncReaderRitualHighlights,
   normalizeReaderMoment,
   SCHOLA_SPEEDS,
   DEFAULT_SCHOLA_SPEED,
@@ -255,6 +256,103 @@ expect(switchCount===0,"re-selecting LIVE rebuilt the reader and displaced the a
 stableMode.setMode("SIMPLE");
 stableMode.setMode("SIMPLE");
 expect(switchCount===1,"re-selecting the active mode rebuilt the reader twice");
+// Real production cue updates use cardUpdate:false. The rail may change
+// without rebuilding the prayer paragraph; the exact active Latin words
+// must follow the canonical cue, and all former anchors must disappear.
+function fakeSpan(doc,initial=""){
+  return {
+    ownerDocument:doc,children:[],
+    append(child){this.children.push(child);},
+    replaceChildren(...items){this.children=[...items];},
+    get textContent(){return this.children.map(x=>x.textContent??"").join("");},
+    set textContent(value){this.children=[doc.createTextNode(value)];}
+  };
+}
+const ritualDoc={
+  createTextNode(text){return {textContent:String(text)};},
+  createElement(){const node=fakeSpan(ritualDoc);node.className="";return node;}
+};
+function cueParagraph(cueId,plain){
+  const primary=fakeSpan(ritualDoc);
+  primary.textContent=plain;
+  return {
+    dataset:{cueId,active:"false"},
+    hidden:false,
+    primary,
+    querySelector(q){return q===".ao-line-primary"?primary:null;}
+  };
+}
+const adoramus=cueParagraph("AO.SM.C0056","Adoramus te, glorificamus te");
+const holyName=cueParagraph("AO.SM.C0061","Iesu Christe, Fili Unigenite");
+const credo=cueParagraph("AO.SM.C0096","Et incarnatus est de Spiritu Sancto et homo factus est");
+const ritualRoot={
+  querySelectorAll(selector){
+    return selector===".ao-reader-paragraph[data-cue-id]"?[adoramus,holyName,credo]:[];
+  }
+};
+adoramus.dataset.active="true";
+expect(syncReaderRitualHighlights(ritualRoot,{canonicalCueId:"AO.SM.C0056",anchorLat:"Adorámus te"})===1,
+  "accented canonical Adoramus did not match its unaccented actual Latin words");
+expect(adoramus.primary.children.some(x=>x.className==="ao-ritual-trigger ao-ritual-trigger-live"),
+  "canonical gesture did not add the Latin highlight span on an in-card state update");
+const retainedNode=adoramus.primary.children.find(x=>x.className?.includes("ao-ritual-trigger"));
+expect(syncReaderRitualHighlights(ritualRoot,{canonicalCueId:"AO.SM.C0056",anchorLat:"Adorámus te"})===1 &&
+  adoramus.primary.children.includes(retainedNode),
+  "same-cue projected state reconstructed an already focused prayer phrase");
+adoramus.dataset.active="false";
+holyName.dataset.active="true";
+expect(syncReaderRitualHighlights(ritualRoot,{canonicalCueId:"AO.SM.C0061",anchorLat:"Jesu Christe"})===1,
+  "Iesu/Jesu canonical spelling mismatch hid the bow cue");
+expect(adoramus.primary.children.every(x=>!x.className?.includes("ao-ritual-trigger")) &&
+  adoramus.primary.textContent==="Adoramus te, glorificamus te",
+  "moving to a new cue left a highlight on previously active words");
+expect(holyName.primary.children.some(x=>x.className?.includes("ao-ritual-trigger")),
+  "the new cue did not receive the highlight");
+// The actual source-first reader defaults to English. The same cue must
+// highlight its verified English and pinned French counterpart without
+// changing the selected language or broadening source cue ownership.
+adoramus.dataset.active="true";
+holyName.dataset.active="false";
+adoramus.primary.textContent="We adore thee.";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0056",anchorLat:"Adorámus te",anchorEn:"We adore thee",anchorFr:"Nous vous adorons"
+})===1 && adoramus.primary.children.some(x=>x.className?.includes("ao-ritual-trigger")),
+  "English Gloria cue is active but its equivalent displayed words are not highlighted");
+adoramus.dataset.ritualCueActive="false";
+adoramus.primary.textContent="Nous vous adorons.";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0056",anchorLat:"Adorámus te",anchorEn:"We adore thee",anchorFr:"Nous vous adorons"
+})===1 && adoramus.primary.children.some(x=>x.className?.includes("ao-ritual-trigger")),
+  "pinned French Gloria words were not highlighted at the same source cue");
+adoramus.dataset.active="false";
+holyName.dataset.active="false";
+credo.dataset.active="true";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0096",anchorLat:"Et incarnátus est … et homo factus est"
+})===1,
+  "the two separated Incarnatus fragments did not highlight together");
+expect(credo.primary.children.filter(x=>x.className?.includes("ao-ritual-trigger")).length===2,
+  "Incarnatus first and last source phrases were not both highlighted");
+// A two-part English canonical cue highlights only its two sourced clauses.
+credo.dataset.ritualCueActive="false";
+credo.primary.textContent="And was incarnate by the Holy Ghost of the Virgin Mary: and was made man.";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0096",anchorLat:"Et incarnátus est … et homo factus est",
+  anchorEn:"And was incarnate … and was made man"
+})===1 && credo.primary.children.filter(x=>x.className?.includes("ao-ritual-trigger")).length===2,
+  "English Incarnatus source boundaries do not yield both highlighted phrases");
+credo.dataset.active="false";
+expect(syncReaderRitualHighlights(ritualRoot,null)===0 &&
+  credo.primary.children.every(x=>!x.className?.includes("ao-ritual-trigger")),
+  "cue removal left ritual highlights behind");
+credo.dataset.active="true";
+credo.primary.textContent="And was incarnate by the Holy Ghost";
+expect(syncReaderRitualHighlights(ritualRoot,{
+  canonicalCueId:"AO.SM.C0096",anchorLat:"Et incarnátus est … et homo factus est"
+})===0,"Latin cue matched unrelated vernacular words");
+expect(credo.primary.textContent==="And was incarnate by the Holy Ghost",
+  "live cue highlighting changed the user's displayed translation");
+
 const previousConsoleError=console.error;
 console.error=()=>{};
 try{

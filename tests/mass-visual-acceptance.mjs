@@ -556,16 +556,19 @@ try{
     await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
     const cue=page.locator(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${cueId}']`);
     assert.equal(await cue.count(),1,cueId+" is not exposed exactly once in the current source-first section");
-    for(let attempt=0;attempt<5;attempt++){
-      await cue.evaluate(el=>{
+    for(let attempt=0;attempt<30;attempt++){
+      await cue.evaluate((el,attempt)=>{
         const card=el.closest(".ao-prayer-card");
         const cr=card.getBoundingClientRect(),er=el.getBoundingClientRect();
         const top=er.top-cr.top+card.scrollTop;
         const bottom=er.bottom-cr.top+card.scrollTop;
         const max=Math.max(0,card.scrollHeight-card.clientHeight);
-        card.scrollTop=Math.min(max,Math.max(0,(top+bottom)/2-card.clientHeight*.39));
+        const target=Math.min(max,Math.max(0,(top+bottom)/2-card.clientHeight*.39));
+        // An early cue may have no possible fixed-39% position. Scroll a
+        // little further on retries to exercise its adaptive opening zone.
+        card.scrollTop=Math.min(max,Math.max(target,attempt*12));
         card.dispatchEvent(new Event("scroll"));
-      });
+      },attempt);
       await page.waitForTimeout(100);
       const active=await page.evaluate(()=>document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17NativeCue??null);
       if(active===cueId)break;
@@ -603,9 +606,22 @@ try{
       activeParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
       targetActive:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset?.active??null,
       gestureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerGesture??null,
+      anchorWords:[...document.querySelectorAll(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}'] .ao-ritual-trigger-live`)].map(el=>el.textContent.trim()),
+      anchorFlag:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset.ritualCueActive??null,
+      // Verify that triggering a transient action does not rebuild the
+      // source paragraph or steal focus/translation state on cue updates.
+      anchoredParagraphSource:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}'] .ao-line-primary`)?.textContent?.trim()??"",
+
       postureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerPosture??null,
     }),cueId);
   }
+
+  // Multi-fragment and single-word anchors are resolved at exactly their
+  // canonical cue, not merely at the section or card level.
+  const gloriaAdoramus=await focusCanonicalCue("AO.SM.C0056");
+  assert.ok(gloriaAdoramus.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
+    "Adoramus te gesture rail activates without highlighting the sourced phrase in the displayed language: "+JSON.stringify(gloriaAdoramus));
+  assert.equal(gloriaAdoramus.anchorFlag,"true");
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
@@ -618,6 +634,11 @@ try{
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
   assert.equal(gloriaBow.scholaDockActive,"false","shared Gloria text duplicated itself in the Schola dock");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
+  assert.equal(gloriaBow.anchorFlag,"true","Gloria bow rail/Latin anchor state diverged");
+  assert.ok(gloriaBow.anchorWords.some(word=>/Iesu Christe|Jesu Christe|Jesus Christ|Jésus-Christ/i.test(word)),
+    "Gloria Holy Name bow cue lacks its source-aligned phrase highlight: "+JSON.stringify(gloriaBow));
+  assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
+    "Gloria previous-word ritual highlight leaked into the next cue");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
@@ -626,6 +647,10 @@ try{
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
+  assert.equal(incarnatus.anchorFlag,"true","Incarnatus genuflect rail did not activate its Latin words");
+  assert.ok(incarnatus.anchorWords.some(word=>/Et incarn[aá]tus est|And was incarnate|Il a pris chair/i.test(word)) &&
+    incarnatus.anchorWords.some(word=>/et homo factus est|and was made man|s.est fait homme/i.test(word)),
+    "Credo Incarnatus sourced opening and closing words are not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
 
   const agnus=await focusCanonicalCue("AO.SM.C0222");
@@ -694,7 +719,7 @@ try{
 
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,hierarchy,consecration,wordsState,elevationState,
-    salience:{gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
+    salience:{gloriaAdoramus,gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
     wide,phoneAudit,
     errors
   },null,2));
