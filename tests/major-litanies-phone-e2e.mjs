@@ -172,4 +172,4 @@ try{
   }finally{await context.close()}
  }
  console.log("Greater Litanies EN/FR real-calendar public Litany → day Mass R17 journey: PASS");
-}finally{await browser?.close();await new Promise(ok=>server.close(()=>ok))}
+}finally{await browser?.close();await new Promise(ok=>server.close(()=>ok()))}
