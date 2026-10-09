@@ -47,7 +47,7 @@ function mock(order,path){
   const row=ex.find(r=>r.sourcePath===path&&r.sourceSectionId===x.sourceSectionId);
   const latin=row?row.latinIncipit+" "+(row.latinContinuityGuard?.join(" ")??"")+" Aliud.":
     x.type==="ORATION"?"Oremus. Flectamus genua. Levate.":"Graduale.";
-  return [x.id,{textLat:latin,textEn:"English counterpart for reader regression"}];
+  return [x.payloadRef,{textLat:latin,textEn:"English counterpart for reader regression"}];
  }));
  const m={schema:"ao-proper-manifest-v2",sourcePath:path,
   preGospelSequence:nodes,
