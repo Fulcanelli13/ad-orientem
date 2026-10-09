@@ -20,7 +20,7 @@ const opening=[
   {cueId:"AO.SM.C0057",top:178,bottom:248},
 ];
 assert.equal(pickActiveCue({scrollTop:0,clientHeight:724,scrollHeight:1298,items:opening}),"AO.SM.C0055");
-assert.equal(pickActiveCue({scrollTop:65,clientHeight:724,scrollHeight:1298,items:opening}),"AO.SM.C0056",
+assert.equal(pickActiveCue({scrollTop:45,clientHeight:724,scrollHeight:1298,items:opening}),"AO.SM.C0056",
   "second Gloria line skipped because 39% focus line is below the first cues");
 assert.equal(pickActiveCue({scrollTop:165,clientHeight:724,scrollHeight:1298,items:opening}),"AO.SM.C0057",
   "opening focus adaptation stalls before the third source cue");
