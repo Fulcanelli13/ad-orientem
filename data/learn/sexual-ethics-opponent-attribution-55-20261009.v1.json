@@ -8,8 +8,8 @@
     "stage_reference_sets": 440,
     "prior_semantic_stage_reviews": 440,
     "opposition_class_counts": {
-      "AUTHOR_FULL_FIRST_PERSON": 5,
-      "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED": 13,
+      "AUTHOR_FULL_FIRST_PERSON": 7,
+      "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED": 11,
       "DIGITIZED_1966_AUTHOR_PASSAGES_BOUNDED_NOT_COLLATED": 2,
       "REASONED_OR_ILLUSTRATIVE_NOT_NAMED_AUTHOR": 27,
       "AUTHOR_EXCERPTS_CDF": 6,
@@ -645,7 +645,7 @@
     },
     {
       "id": "CSE021",
-      "attribution_class": "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED",
+      "attribution_class": "AUTHOR_FULL_FIRST_PERSON",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
         "FREUD1924_FULL",
@@ -705,7 +705,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required. A full first-party source is now independently linked and bounded in the next evidence batch; retain prior attribution-class label until a separate author-context signoff."
+      "original_context_note": "Full first-person Freud 1908 essay independently accessible via complete historical English translations (1924/1915/1931). Its theory is not modern controlled clinical evidence for a causal harm of Catholic chastity."
     },
     {
       "id": "CSE029",
@@ -3096,7 +3096,7 @@
     },
     {
       "id": "CSE142",
-      "attribution_class": "NAMED_CLINICAL_OR_ORGANIZATIONAL_NOT_RECERTIFIED",
+      "attribution_class": "AUTHOR_FULL_FIRST_PERSON",
       "opposition_is_a_direct_quotation": false,
       "opposition_source_ids": [
         "FREUD1924_FULL",
@@ -3157,7 +3157,7 @@
       "all_eight_stages_full_original_passage_certified": false,
       "independent_human_theological_approval": false,
       "independent_human_french_approval": false,
-      "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required. A full first-party source is now independently linked and bounded in the next evidence batch; retain prior attribution-class label until a separate author-context signoff."
+      "original_context_note": "Full first-person Freud 1908 essay independently accessible via complete historical English translations (1924/1915/1931). Its theory is not modern controlled clinical evidence for a causal harm of Catholic chastity."
     },
     {
       "id": "CSE143",
@@ -3367,5 +3367,6 @@
       "independent_human_french_approval": false,
       "original_context_note": "Named institutional/clinical/empirical context; further whole-original-policy or study-specific verification is required."
     }
-  ]
+  ],
+  "history_note": "CSE021 and CSE142 historic Freud authorship category corrected; Fletcher original digitized passage status from parallel research preserved; opposing source contexts linked in opponent-context18-54claims register."
 }

@@ -37,6 +37,10 @@ export function cseSourceTargets(sourceId,locator,source,{french=false}={}){
     if(target.url)return Object.freeze([Object.freeze({...target,scope:"digitized-original",
       witness:"1966 original book · third-party digitization; printed pages not independently collated"})]);
   }
+  if(sourceId==="FARLEY_QUOTED2012"){
+    const excerpt=sourceTarget(base,original);
+    if(excerpt.scope==="document")return Object.freeze([Object.freeze({...excerpt,scope:"author-excerpt-in-cdf",witness:"Farley original words quoted by CDF 2012 · complete book not collated"})]);
+  }
   if(sourceId!=="SCR")return Object.freeze([sourceTarget(base,original)]);
   const parts=original.split(";").map(s=>s.trim()).filter(Boolean);
   if(!parts.length)return Object.freeze([{url:base,locator:original,scope:"index",witness:null}]);

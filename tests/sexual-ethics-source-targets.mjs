@@ -47,8 +47,10 @@ for(const id of books){
   assert.match(target.url,/^https:\/\/books\.google\.com\//);
   assert.match(target.witness,/not verified/);
 }
-assert.equal(cseSourceTargets("FARLEY_QUOTED2012","p. 295",CSE_SOURCE_MAP.FARLEY_QUOTED2012)[0].scope,
-  "document","Official CDF quotation of Farley is a real document, not a book catalogue");
+const farley=cseSourceTargets("FARLEY_QUOTED2012","p. 295",CSE_SOURCE_MAP.FARLEY_QUOTED2012)[0];
+assert.equal(farley.scope,"author-excerpt-in-cdf","CDF quotations are author excerpts, not independently collated complete books");
+assert.match(farley.witness,/complete book not collated/);
+assert.equal(farley.url,CSE_SOURCE_MAP.FARLEY_QUOTED2012.canonical_url);
 assert.equal(cseSourceTargets("CURRAN1987","full primary article",CSE_SOURCE_MAP.CURRAN1987)[0].scope,
   "document","Complete primary-author essay must remain identified as document text");
 assert.equal(cseSourceTargets("FLETCHER1966","p. 1",{canonical_url:"javascript:alert(1)"})[0].scope,
