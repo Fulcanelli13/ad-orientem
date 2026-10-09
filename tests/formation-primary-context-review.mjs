@@ -15,7 +15,14 @@ for(const x of f.findings){
  assert.ok(owner,x.id+" invalid canonical owner");
  const p=owner.sections.find(z=>z.role===x.role);
  assert.ok(p,x.id+" bad role");
- assert.ok(p.source_ids.includes(x.source_id),x.id+" no claim citation");
+ if(x.status==="SUPERSEDED_BY_FIRSTPERSON_PROPONENT_REVIEW"){
+  assert.equal(x.id,"PSV1-016");
+  assert.equal(x.superseded_by,"PSV2-002");
+  assert.equal(x.current_role,"critical_response");
+  assert.ok(owner.sections.find(y=>y.role===x.current_role).source_ids.includes(x.source_id),x.id+" source was lost rather than moved to Catholic reply");
+ }else{
+  assert.ok(p.source_ids.includes(x.source_id),x.id+" no claim citation");
+ }
  const s=sources.get(x.source_id);
  assert.ok(s&&s.url===x.url,x.id+" wrong source URL");
  assert.ok(x.locator.length>15&&x.document_finding.length>40&&x.qualification.length>30);
