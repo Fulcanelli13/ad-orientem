@@ -663,3 +663,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
 }
 
 if(typeof document!=="undefined")installPrayPresentationStyles(document);
+
+/* The Scripture source is the mystery-opening link; these are authored prayers,
+   never verbatim Scripture or legacy quote fragments. */
+#aoPrayerBookRoot .aoRosaryGuidedBeadMeditation{margin:12px 0 3px;padding:10px 12px;border-left:2px solid var(--liturgical,#9b886c);color:var(--text,#f3ead7);background:transparent;font:italic 0.94rem/1.55 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
