@@ -1,11 +1,12 @@
 import { mountScriptureLibrary } from "./library.js";
-import { installScriptureStyles } from "./styles.js";
+import { installScriptureStyles, installScriptureContextStyles } from "./styles.js";
 import { loadScriptureBook } from "./pack-loader.js";
 import { parseScriptureContext } from "./context.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
  const doc=win.document;
+ installScriptureContextStyles(doc);
  let reader=null,previousFocus=null,previousOverflow=null;
  const loaded=new Map();
  const inflight=new Set();
