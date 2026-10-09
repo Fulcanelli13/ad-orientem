@@ -55,7 +55,28 @@ assert.equal(relationshipCounts.SCRIPTURAL_PASSION_INTERPRETATION,3);
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4[6].reference,"Munificentissimus Deus §44");
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo5[0].relationship,"MARIAN_TYPOLOGICAL_READING");
 assert.deepEqual(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2.slice(4,7).map(x=>x.reference),
- ["Isaias 53:5","1 Peter 2:23","1 Peter 2:24"]);
+ ["Isaias 53:5","1 Peter 2:23","1 Peter 2:24-25"]);
+// Sorrowful mystery V follows the actual Calvary sequence and preserves the
+// order of the two filial entrustments in John 19:26-27, not the reverse.
+const calvary=ROSARY_GUIDED_BEAD_MEDITATIONS_V1.sor5;
+const calvaryEvidence=ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor5;
+assert.deepEqual(calvaryEvidence.map(x=>x.reference),[
+ "John 19:18","John 19:19","John 19:25","John 19:26","John 19:26",
+ "John 19:27","John 19:28","John 19:29","John 19:30","John 19:30"
+],"Calvary sequence drifted from the 1962-compatible Douay-Rheims Gospel order");
+assert.match(calvary[0].en,/crucified on Calvary/);
+assert.match(calvary[1].fr,/Roi des Juifs/);
+assert.match(calvary[4].en,/disciple to His Mother/);
+assert.match(calvary[4].fr,/disciple bien-aimé à sa Mère/);
+assert.match(calvary[5].en,/Mother to the beloved disciple/);
+assert.match(calvary[5].fr,/Mère au disciple bien-aimé/);
+assert.match(calvary[9].en,/gives up His spirit/);
+for(const row of calvaryEvidence){
+ assert.equal(row.relationship,"SCRIPTURAL_PARAPHRASE");
+ assert.equal(new URL(row.frenchPrimaryUrl).hash,"#19");
+}
+assert.equal(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.sor3[7].en,"They spit upon the Lord.");
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2[6].reference,"1 Peter 2:24-25");
 assert.deepEqual(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5.slice(8).map(x=>x.relationship),
  ["DOGMATIC_TEACHING","DOGMATIC_TEACHING"],"Trent's teaching must own the Eucharistic doctrinal cues");
 assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[8].primaryUrl,/twentysecond-session-of-the-council-of-trent/);
@@ -63,7 +84,8 @@ assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[8].frenchPrimaryUrl,/doctrines-
 assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[9].primaryUrl,/thirteenth-session-of-the-council-of-trent/);
 assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[9].frenchPrimaryUrl,/decret-sur-le-sacrement-de-leucharistie/);
 assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[8].referenceFr,/Concile de Trente/);
-assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor4[6].relationship,"DEVOTIONAL_REFLECTION");
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor4[6].relationship,"SCRIPTURAL_PARAPHRASE");
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.sor4[6].en,/warns the women/);
 for(const x of [...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4.slice(6),...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo5.slice(6)]){
  assert.equal(x.frenchWitnessLanguage,"la","papal doctrine should disclose source Latin in French mode");
  assert.match(x.frenchPrimaryUrl,/vatican\.va\/content\/pius-xii\/la\//);
