@@ -1,0 +1,71 @@
+{
+  "version": "LTF_PIUS_X_FRENCH_HISTORICAL_WITNESS_REVIEW_V1",
+  "date": "2026-10-09",
+  "scope": "55-lesson/181-claim guided course; edition identity and French text-quality gates",
+  "authoritativeIdentity": {
+    "edition": "Catechismo della dottrina cristiana, 1912 (433 questions)",
+    "notIdenticalTo": "Compendio della dottrina cristiana / Grand Catéchisme, 1905",
+    "approvalLetter": "https://www.vatican.va/content/pius-x/it/letters/documents/hf_p-x_let_19121018_catechismo.html",
+    "letterDate": "1912-10-18",
+    "promulgationScope": "Diocese and ecclesiastical province of Rome; others encouraged, not universally imposed"
+  },
+  "originalItalianText": {
+    "referenceIndex": "data/learn/ltfaith-pius-x-it-witness-index.v1.json",
+    "numberedQuestionsLocated": 433,
+    "printed1912EditionCollated": false
+  },
+  "historicalFrenchWitness": {
+    "title": "Catéchisme de la doctrine chrétienne publié par ordre de S. S. le pape Pie X",
+    "translator": "R. P. Emmanuel Bailly, A.A.",
+    "publisher": "Maison de la Bonne Presse / Paul Feron-Vrau",
+    "publicationYear": 1913,
+    "reportedExtent": "viii + 155 pages",
+    "authorizationLetterDate": "1913-03-07",
+    "authorizationWitness": "https://saint-remi.fr/fr/catechismes/381-catechisme-de-saint-pie-x-9782845191907.html",
+    "contemporaryBibliographicalWitness": "https://www.persee.fr/doc/rebyz_1146-9447_1913_num_16_103_4104",
+    "digitizedHistoricalBookRecord": "https://play.google.com/store/books/details/Cat%C3%A9chisme_de_la_doctrine_chr%C3%A9tienne?id=xSfVh1_eePAC",
+    "scannedOrTypesetCandidate": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
+    "sourceStatus": "BOOK_ID_AND_EDITION_ESTABLISHED_NOT_PAGE_BY_PAGE_COLLATED",
+    "handwrittenApprovalStatus": false,
+    "note": "1913 imprimatur/authorization is a historical claim supported by bibliographical witnesses; it does not certify the accuracy of any new bilingual explanatory claim."
+  },
+  "modernFrenchOnlineWitness": {
+    "url": "https://www.amicidilazzaro.it/fr/foi-et-spiritualite/petit-catechisme-de-saint-pie-x/",
+    "status": "REFERENCE_ONLY_UNSAFE_FOR_AUTOMATIC_PRODUCTION_TEXT_IMPORT",
+    "observedTextDamage": [
+      {
+        "question": 228,
+        "issue": "French response loses enumerated distinction between acquired natural and infused supernatural virtues",
+        "evidenceSnippet": "Il y a deux espèces de vertus : la répétition d’actes bons",
+        "severity": "HIGH"
+      },
+      {
+        "question": 253,
+        "issue": "French cardinal-virtues answer truncated and missing principal category words",
+        "evidenceSnippet": "Les principales vertus morales sont : lui est dû",
+        "severity": "HIGH"
+      },
+      {
+        "question": 400,
+        "issue": "French levels of Orders passage visibly omits named grades",
+        "evidenceSnippet": "Les degrés de la Hiérarchie sacrée sont : sont préparatoires",
+        "severity": "HIGH"
+      }
+    ],
+    "generalizationCaution": "These three concrete corruptions show the page is unsafe for unreviewed bulk import; they do not prove that every other numbered answer is corrupt."
+  },
+  "releaseGate": {
+    "authorizedFrench1913PrintedEditionPageLevelCollation": false,
+    "finishedIndependentDoctrinalReview": false,
+    "finishedIndependentCanonicalDisciplineReview": false,
+    "finishedNativeFrenchEditorialReview": false,
+    "publicGuidedStudyRelease": false
+  },
+  "editorialPolicy": [
+    "Preserve 1912 433 numbered Catechism Q&A as doctrinal source; treat 55 lessons as secondary sourced teaching only.",
+    "Use Italian 1912 transcription as provisional original-language text and French 1913 historical edition as translation target, without conflating either with 1905 Grand Catéchisme.",
+    "Do not import uncontrolled online French transcription; independently collate each French numbered answer against the 1913 physical/digitized printing.",
+    "For 1983 canonical norms distinguish current universal law, territorial episcopal law and the 1912 discipline.",
+    "No automatic certification, human theologian substitute, or editorial release-gate activation is authorized by this file."
+  ]
+}
