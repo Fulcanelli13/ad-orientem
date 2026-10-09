@@ -1,0 +1,137 @@
+{
+  "schema": "AO_1962_CALENDAR_CORRECTIONS_V1",
+  "sourceOfTruth": "Missale Romanum 1962, universal general calendar; these overrides correct stale/incorrect Missale Meum literal constants before parsing blocks, title and precedence registries.",
+  "upstreamPinned": "mmolenda/missalemeum@f43359b7a79a5a299158651eedf75cdaf0e43c94/backend/api/constants/common.py",
+  "basis": [
+    "https://missale.online/festkalender/en/2024/druck",
+    "https://missale.online/festkalender/en/2027/druck",
+    "https://gcatholic.org/calendar/2027/Extraordinary-en"
+  ],
+  "exclusions": [
+    "Local liturgical calendars",
+    "Votive Masses",
+    "Colour option multiple alternatives",
+    "A date without recorded independent evidence"
+  ],
+  "corrections": [
+    {
+      "key": "SANCTI_05_16",
+      "value": "sancti:05-16:3:w",
+      "reason": "St Ubald; third class white",
+      "source": "https://ordo.fsspx.org/day/2026-05-16?lang=en"
+    },
+    {
+      "key": "SANCTI_06_12",
+      "value": "sancti:06-12:3:w",
+      "reason": "St John of Sahagún; confessor white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_06_18",
+      "value": "sancti:06-18:3:w",
+      "reason": "St Ephrem; confessor and doctor white",
+      "source": "https://manualistpress.com/liturgical-calendar/1962-missal/"
+    },
+    {
+      "key": "SANCTI_06_19",
+      "value": "sancti:06-19:3:w",
+      "reason": "St Juliana Falconieri; virgin white",
+      "source": "https://manualistpress.com/liturgical-calendar/1962-missal/"
+    },
+    {
+      "key": "SANCTI_07_12",
+      "value": "sancti:07-12:3:w",
+      "reason": "St John Gualbert; abbot white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_07_18",
+      "value": "sancti:07-18:3:w",
+      "reason": "St Camillus de Lellis; confessor white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_07_20",
+      "value": "sancti:07-20:3:w",
+      "reason": "St Jerome Emiliani; confessor white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_07_23",
+      "value": "sancti:07-23:3:r",
+      "reason": "St Apollinaris; bishop and martyr red",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_07_29",
+      "value": "sancti:07-29:3:w",
+      "reason": "St Martha; virgin white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_08_02",
+      "value": "sancti:08-02:3:w",
+      "reason": "St Alphonsus Liguori; confessor and doctor white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_08_09",
+      "value": "sancti:08-09t:3:v",
+      "reason": "Vigil of St Lawrence; violet",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_08_28",
+      "value": "sancti:08-28:3:w",
+      "reason": "St Augustine; confessor and doctor white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_08_30",
+      "value": "sancti:08-30:3:w",
+      "reason": "St Rose of Lima; virgin white",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    },
+    {
+      "key": "SANCTI_11_13",
+      "value": "sancti:11-13:3:w",
+      "reason": "St Didacus; third class white",
+      "source": "https://unavocelacrosse.org/feasts/st-didacus/"
+    },
+    {
+      "key": "SANCTI_11_14",
+      "value": "sancti:11-14:3:r",
+      "reason": "St Josaphat; bishop and martyr red",
+      "source": "https://missale.online/festkalender/en/2027/druck"
+    }
+  ],
+  "reviewStatus": "Bounded 2024/2027 independent class/colour corroboration; not a day-by-day theological or archival certification.",
+  "disputes": [
+    {
+      "date": "2024-01-08",
+      "field": "colour",
+      "app": "White",
+      "firstSource": "Green",
+      "status": "REQUIRES_RUBRIC_REVIEW",
+      "note": "Missale Online presents this isolated Monday in green while the surrounding octave weekdays have white propers. Do not generalize colour by season.",
+      "sources": [
+        "https://missale.online/festkalender/en/2024/druck",
+        "https://gcatholic.org/calendar/2024/Extraordinary-en",
+        "https://manualistpress.com/liturgical-calendar/1962-missal/"
+      ]
+    },
+    {
+      "date": "2027-01-11",
+      "field": "colour",
+      "app": "White",
+      "firstSource": "Green",
+      "status": "REQUIRES_RUBRIC_REVIEW",
+      "note": "The 2027 Monday is green in Missale Online, but the next pre-Baptism weekday remains white. Compare traditional rubrics and alternative 1962 calendars.",
+      "sources": [
+        "https://missale.online/festkalender/en/2027/druck",
+        "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "https://manualistpress.com/liturgical-calendar/1962-missal/"
+      ]
+    }
+  ]
+}
