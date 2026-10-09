@@ -1,0 +1,1165 @@
+{
+  "version": "CSE_HIGH_STAKES_PRIMARY_SOURCE_BATCH_V1",
+  "date": "2026-10-09",
+  "based_on": "data/learn/sexual-ethics-certification-evidence.v2.json",
+  "status": "BOUNDED_SOURCE_AUDIT_NOT_FULL_CERTIFICATION",
+  "policy": "Classifications only certify the limited source relationship explicitly recorded in review_en, never the full bilingual paragraph, original book collation, expert moral classification of contested treatment, or publication approval.",
+  "summary": {
+    "debates": 7,
+    "stages": 56,
+    "question_only": 3,
+    "status_counts": {
+      "SOURCE_CONTEXT_NOT_ADVOCACY": 11,
+      "PRIMARY_DOCTRINAL_PASSAGE_SCOPED": 22,
+      "ILLUSTRATIVE_OBJECTION_NOT_ATTRIBUTED": 6,
+      "ORIGINAL_OPPONENT_TEXT_SCOPED": 2,
+      "REASONED_INFERENCE_NOT_VERBATIM": 9,
+      "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED": 6
+    },
+    "fully_certified_debates": 0
+  },
+  "debates": [
+    {
+      "id": "CSE101",
+      "stages": [
+        {
+          "stage": "opposition",
+          "source_refs": [
+            {
+              "id": "ASRM_ART",
+              "url": "https://www.asrm.org/practice-guidance/ethics-opinions/informed-consent-in-assisted-reproduction-an-ethics-committee-opinion-2023/",
+              "locator": "2023 Ethics Committee opinion, Key Points and Summary; clinical consent not normative IVF defense"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "ASRM 2023 informed-consent opinion concerns patients' autonomous choices, not a defense of IVF against Donum Vitae.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "appeal",
+          "source_refs": [
+            {
+              "id": "ASRM_ART",
+              "url": "https://www.asrm.org/practice-guidance/ethics-opinions/informed-consent-in-assisted-reproduction-an-ethics-committee-opinion-2023/",
+              "locator": "2023 Ethics Committee opinion, Key Points and Summary; clinical consent not normative IVF defense"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "ASRM 2023 discusses reproductive decision-making, not the Church's criterion for procreation.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "concession",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.B.5; Dignitas Personae §§12–13 affirm legitimate medical assistance.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "breakpoint",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            },
+            {
+              "id": "DP",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+              "locator": "§§12–13 (assistance versus substitution), §18–19 (freezing)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.B.5 distinguishes assisting from replacing the act.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "catholicCase",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            },
+            {
+              "id": "DP",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+              "locator": "§§12–13 (assistance versus substitution), §18–19 (freezing)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.B.5 explicitly rejects embryo-safe homologous IVF; Dignitas Personae §§12–13 confirms.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "counter",
+          "source_refs": [
+            {
+              "id": "ASRM_ART",
+              "url": "https://www.asrm.org/practice-guidance/ethics-opinions/informed-consent-in-assisted-reproduction-an-ethics-committee-opinion-2023/",
+              "locator": "2023 Ethics Committee opinion, Key Points and Summary; clinical consent not normative IVF defense"
+            }
+          ],
+          "status": "ILLUSTRATIVE_OBJECTION_NOT_ATTRIBUTED",
+          "review_en": "The question about loved IVF children is illustrative, not an ASRM quotation.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "response",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.B.5 affirms every resulting child's full dignity, even when IVF judged illicit.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "bottom",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            },
+            {
+              "id": "DP",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+              "locator": "§§12–13 (assistance versus substitution), §18–19 (freezing)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.B.5 grounds rejection in the manner of conception, not the child's worth.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        }
+      ],
+      "full_case_certified": false
+    },
+    {
+      "id": "CSE104",
+      "stages": [
+        {
+          "stage": "opposition",
+          "source_refs": [
+            {
+              "id": "ASRM_GC",
+              "url": "https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+              "locator": "2023 Ethics Committee opinion, Key Points; Counseling and Informed Consent; Conclusion"
+            }
+          ],
+          "status": "ORIGINAL_OPPONENT_TEXT_SCOPED",
+          "review_en": "ASRM 2023 gestational carrier opinion, Key Points and Conclusion, explicitly endorses safeguarding-based ethical permissibility.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "appeal",
+          "source_refs": [
+            {
+              "id": "ASRM_GC",
+              "url": "https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+              "locator": "2023 Ethics Committee opinion, Key Points; Counseling and Informed Consent; Conclusion"
+            }
+          ],
+          "status": "ORIGINAL_OPPONENT_TEXT_SCOPED",
+          "review_en": "ASRM 2023 Counseling and Informed Consent: autonomy, independent counsel, pressure and coercion risks.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "concession",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.A.3 distinguishes good motives and marital / child rights.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "breakpoint",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.A.3 explicitly rejects surrogacy even when motives are not commercial.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "catholicCase",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            },
+            {
+              "id": "DI2024",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html",
+              "locator": "§§48–50 (surrogacy)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.A.3; Dignitas Infinita §§48–50 affirm objective dignity basis.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "counter",
+          "source_refs": [
+            {
+              "id": "ASRM_GC",
+              "url": "https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+              "locator": "2023 Ethics Committee opinion, Key Points; Counseling and Informed Consent; Conclusion"
+            }
+          ],
+          "status": "ILLUSTRATIVE_OBJECTION_NOT_ATTRIBUTED",
+          "review_en": "Adoption contrast is a constructed challenge, not ASRM original claim.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "response",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            },
+            {
+              "id": "DI2024",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html",
+              "locator": "§§48–50 (surrogacy)"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "Donum Vitae II.A.3 supplies premise; adoption versus planned separation is an inferred moral analysis.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "bottom",
+          "source_refs": [
+            {
+              "id": "DONUMV",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+              "locator": "II.B.5 (homologous IVF) and II.A.3 (surrogacy)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Donum Vitae II.A.3 rejects planned separation of gestation / parentage.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        }
+      ],
+      "full_case_certified": false
+    },
+    {
+      "id": "CSE112",
+      "stages": [
+        {
+          "stage": "opposition",
+          "source_refs": [
+            {
+              "id": "RAINN_CONSENT101",
+              "url": "https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust",
+              "locator": "Consent 101; respect, boundaries and consent"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "RAINN Consent 101 does not argue bodily arousal equals consent: opposition is an illustrative misconception.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "appeal",
+          "source_refs": [
+            {
+              "id": "ASSAULT2024",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
+              "locator": "Vandervoort et al. (2024), PubMed abstract; 136 male and 250 female survivors"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "2024 scoping review confirms phenomenon, not the sociological claim about what most people assume.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "concession",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "ASSAULT2024",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
+              "locator": "Vandervoort et al. (2024), PubMed abstract; 136 male and 250 female survivors"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Aquinas ST I-II q6; 2024 scoping review: bodily response can accompany nonconsensual acts.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "breakpoint",
+          "source_refs": [
+            {
+              "id": "ASSAULT2024",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
+              "locator": "Vandervoort et al. (2024), PubMed abstract; 136 male and 250 female survivors"
+            },
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "Voluntary consent cannot be inferred from involuntary physiology; reasoned combination of moral and empirical sources.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "catholicCase",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "ASSAULT2024",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
+              "locator": "Vandervoort et al. (2024), PubMed abstract; 136 male and 250 female survivors"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Aquinas q6 on coercion; Vandervoort et al. 2024 (136 male/250 female subjects, frequency cannot be determined).",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "counter",
+          "source_refs": [
+            {
+              "id": "RAINN_CONSENT101",
+              "url": "https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust",
+              "locator": "Consent 101; respect, boundaries and consent"
+            }
+          ],
+          "status": "ILLUSTRATIVE_OBJECTION_NOT_ATTRIBUTED",
+          "review_en": "Question of experienced pleasure is an illustrative pastoral challenge, not RAINN's advocacy.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "response",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "RAINN_CONSENT101",
+              "url": "https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust",
+              "locator": "Consent 101; respect, boundaries and consent"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Aquinas q6 and RAINN Consent 101 support consent as voluntary choice, not a reflex.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "bottom",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "ASSAULT2024",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
+              "locator": "Vandervoort et al. (2024), PubMed abstract; 136 male and 250 female survivors"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "2024 review finds arousal can occur without consent; no prevalence established.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        }
+      ],
+      "full_case_certified": false
+    },
+    {
+      "id": "CSE117",
+      "stages": [
+        {
+          "stage": "opposition",
+          "source_refs": [
+            {
+              "id": "RAINN_ASSAULT",
+              "url": "https://rainn.org/get-the-facts-about-sexual-assault-rape",
+              "locator": "Get the Facts About Sexual Assault, incapacitation and force"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "RAINN Sexual Assault explains incapacitation as an assault scenario, not that intoxicated yes must be accepted.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "appeal",
+          "source_refs": [
+            {
+              "id": "RAINN_ALCOHOL",
+              "url": "https://rainn.org/strategies-to-reduce-risk-increase-safety/alcohol-safety/",
+              "locator": "Consent and intoxication guidance; exact linked passage still to check"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "RAINN shows incapacitation matters; mild impairment versus incapacity is reasoned distinction, not quantified cutoff.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "concession",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "Aquinas ST I-II q6 supports voluntariness and degrees of impairment, not an alcohol blood threshold.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "breakpoint",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "RAINN_ASSAULT",
+              "url": "https://rainn.org/get-the-facts-about-sexual-assault-rape",
+              "locator": "Get the Facts About Sexual Assault, incapacitation and force"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "RAINN Sexual Assault; Aquinas q6 establish lack of capacity prevents voluntary consent.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "catholicCase",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "ST76",
+              "url": "https://www.newadvent.org/summa/2076.htm",
+              "locator": "Summa Theologiae I-II q76 (ignorance and voluntariness)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Aquinas q6 and q76 distinguish responsibility and knowledge, not statutory blood-alcohol cutoffs.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "counter",
+          "source_refs": [
+            {
+              "id": "RAINN_ASSAULT",
+              "url": "https://rainn.org/get-the-facts-about-sexual-assault-rape",
+              "locator": "Get the Facts About Sexual Assault, incapacitation and force"
+            }
+          ],
+          "status": "ILLUSTRATIVE_OBJECTION_NOT_ATTRIBUTED",
+          "review_en": "A proposed 'regret later' claim is illustrative, not an RAINN position.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "response",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "RAINN_ASSAULT",
+              "url": "https://rainn.org/get-the-facts-about-sexual-assault-rape",
+              "locator": "Get the Facts About Sexual Assault, incapacitation and force"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Aquinas q6 and RAINN sexual assault materials distinguish voluntary consent from incapacity.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "bottom",
+          "source_refs": [
+            {
+              "id": "ST6",
+              "url": "https://www.newadvent.org/summa/2006.htm",
+              "locator": "Summa Theologiae I-II q6 aa1–8 (voluntariness, coercion)"
+            },
+            {
+              "id": "ST76",
+              "url": "https://www.newadvent.org/summa/2076.htm",
+              "locator": "Summa Theologiae I-II q76 (ignorance and voluntariness)"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Voluntary choice must be established; an impaired person's silence is not consent.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        }
+      ],
+      "full_case_certified": false
+    },
+    {
+      "id": "CSE123",
+      "stages": [
+        {
+          "stage": "opposition",
+          "source_refs": [
+            {
+              "id": "ACOG_ABORTION",
+              "url": "https://www.acog.org/advocacy/facts-are-important/abortion-is-healthcare",
+              "locator": "ACOG general abortion information; no verified philosophical opposition"
+            },
+            {
+              "id": "SINGER_KUHSE1990",
+              "url": "https://www.cambridge.org/core/books/abs/embryo-experimentation/individuals-humans-and-persons-the-issue-of-moral-status/85C3B73D8F316DBB23FCE99C7080F2B0",
+              "locator": "Singer–Kuhse original argument; not fully verified"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "ACOG abortion guidance is not an original philosophical defense of personhood by mature capacities; Singer-Kuhse text not fully collated.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "appeal",
+          "source_refs": [
+            {
+              "id": "ACOG_ABORTION",
+              "url": "https://www.acog.org/advocacy/facts-are-important/abortion-is-healthcare",
+              "locator": "ACOG general abortion information; no verified philosophical opposition"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "ACOG medical material does not establish that all defenders use consciousness criteria.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "concession",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "Casti Connubii treats abortion's morality, not the developmental facts at each stage.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "breakpoint",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORT74",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+              "locator": "1974 CDF Declaration §§11–14 and note 19 on ensoulment"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "1974 CDF declaration §§11–13 supports moral protection independent of maturation; analogous application is reasoned.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "catholicCase",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORT74",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+              "locator": "1974 CDF Declaration §§11–14 and note 19 on ensoulment"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "Casti Connubii §§63–66; 1974 CDF §§11–14 directly reject elective direct abortion and leave ensoulment unsettled.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "counter",
+          "source_refs": [
+            {
+              "id": "PP_ABORTION",
+              "url": "https://www.plannedparenthood.org/learn/abortion/",
+              "locator": "Planned Parenthood abortion information; direct passage not collated"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "PP abortion care information is not an author quotation advancing the precise fetal anomaly challenge.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "response",
+          "source_refs": [
+            {
+              "id": "ABORT74",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+              "locator": "1974 CDF Declaration §§11–14 and note 19 on ensoulment"
+            },
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            }
+          ],
+          "status": "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED",
+          "review_en": "The statement about declining futile treatment needs a distinct original care-proportionality source; no direct full passage verified.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "bottom",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORT74",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+              "locator": "1974 CDF Declaration §§11–14 and note 19 on ensoulment"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "1974 CDF §§11–14 protects human life during development independent of mature capacities.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        }
+      ],
+      "full_case_certified": false
+    },
+    {
+      "id": "CSE124",
+      "stages": [
+        {
+          "stage": "opposition",
+          "source_refs": [
+            {
+              "id": "ACOG_ABORTION",
+              "url": "https://www.acog.org/advocacy/facts-are-important/abortion-is-healthcare",
+              "locator": "ACOG general abortion information; no verified philosophical opposition"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "ACOG general abortion page does not itself establish this rape-specific philosophical objection.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "appeal",
+          "source_refs": [
+            {
+              "id": "ACOG_ABORTION",
+              "url": "https://www.acog.org/advocacy/facts-are-important/abortion-is-healthcare",
+              "locator": "ACOG general abortion information; no verified philosophical opposition"
+            }
+          ],
+          "status": "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED",
+          "review_en": "Individual trauma burden is plausible, but exact supporting psychological passage not in the selected ACOG citation.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "concession",
+          "source_refs": [
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            }
+          ],
+          "status": "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED",
+          "review_en": "The selected 2009 CDF text is about medical intervention and does not independently establish trauma-care details.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "breakpoint",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORT74",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+              "locator": "1974 CDF Declaration §§11–14 and note 19 on ensoulment"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "1974 CDF §§11–14 distinguishes grave hardship from justifying direct killing; application to rape is inferential.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "catholicCase",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORT74",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+              "locator": "1974 CDF Declaration §§11–14 and note 19 on ensoulment"
+            },
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "1974 CDF §§11–14 and Casti Connubii §§63–66 establish universal restriction; case-specific pastoral application is reasoned.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "counter",
+          "source_refs": [
+            {
+              "id": "PP_ABORTION",
+              "url": "https://www.plannedparenthood.org/learn/abortion/",
+              "locator": "Planned Parenthood abortion information; direct passage not collated"
+            }
+          ],
+          "status": "ILLUSTRATIVE_OBJECTION_NOT_ATTRIBUTED",
+          "review_en": "Rape bodily-autonomy retort is an illustrative challenge unless exact original advocate is attached.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "response",
+          "source_refs": [
+            {
+              "id": "ABORT74",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19741118_declaration-abortion_en.html",
+              "locator": "1974 CDF Declaration §§11–14 and note 19 on ensoulment"
+            },
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "The reply combines the abortion norm with pastoral application; neither 1974 nor 2009 text is dedicated trauma study.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "bottom",
+          "source_refs": [
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "1974 CDF §§11–14 says grave hardship does not overturn the prohibition of direct abortion.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        }
+      ],
+      "full_case_certified": false
+    },
+    {
+      "id": "CSE125",
+      "stages": [
+        {
+          "stage": "opposition",
+          "source_refs": [
+            {
+              "id": "ACOG_ECTOPIC",
+              "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+              "locator": "ACOG ectopic-pregnancy FAQ; direct retrieval incomplete"
+            }
+          ],
+          "status": "SOURCE_CONTEXT_NOT_ADVOCACY",
+          "review_en": "ACOG patient care advice does not assert the moral conclusion that refusing direct abortion values one life over another.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "appeal",
+          "source_refs": [
+            {
+              "id": "ACOG_ECTOPIC_GUIDELINE",
+              "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/03/tubal-ectopic-pregnancy",
+              "locator": "ACOG ectopic clinical guideline; direct retrieval incomplete"
+            }
+          ],
+          "status": "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED",
+          "review_en": "Ectopic clinical guideline's full original paragraph was not retrieved; medically specific claims remain to collate.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "concession",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ACOG_ECTOPIC",
+              "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+              "locator": "ACOG ectopic-pregnancy FAQ; direct retrieval incomplete"
+            }
+          ],
+          "status": "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED",
+          "review_en": "Casti Connubii and retrieved ACOG FAQ are not enough to certify the exact rupture symptom and treatment list.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "breakpoint",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "CDF 2009 Clarification, paragraph distinguishing direct abortion from non-abortive maternal treatment with collateral fetal death.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "catholicCase",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            },
+            {
+              "id": "NCBC_ECTOPIC",
+              "url": "https://www.ncbcenter.org/messages-from-presidents/highrisk",
+              "locator": "National Catholic Bioethics Center ectopic treatment commentary, not magisterial authority"
+            }
+          ],
+          "status": "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED",
+          "review_en": "NCBC is non-magisterial; precise methotrexate/salpingostomy moral analysis and ACOG evidence still require original verification.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "counter",
+          "source_refs": [
+            {
+              "id": "ACOG_ABORTION",
+              "url": "https://www.acog.org/advocacy/facts-are-important/abortion-is-healthcare",
+              "locator": "ACOG general abortion information; no verified philosophical opposition"
+            }
+          ],
+          "status": "ILLUSTRATIVE_OBJECTION_NOT_ATTRIBUTED",
+          "review_en": "The proposed wordplay challenge is illustrative, not an ACOG quotation.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "response",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            },
+            {
+              "id": "ACOG_ECTOPIC",
+              "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
+              "locator": "ACOG ectopic-pregnancy FAQ; direct retrieval incomplete"
+            }
+          ],
+          "status": "REASONED_INFERENCE_NOT_VERBATIM",
+          "review_en": "CDF 2009 explicitly distinguishes intended means from foreseen collateral loss; clinical details separately unresolved.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        },
+        {
+          "stage": "bottom",
+          "source_refs": [
+            {
+              "id": "CASTI",
+              "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+              "locator": "§§63–66 (direct abortion) or §64 (maternal care)"
+            },
+            {
+              "id": "ABORTCLAR",
+              "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
+              "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            },
+            {
+              "id": "NCBC_ECTOPIC",
+              "url": "https://www.ncbcenter.org/messages-from-presidents/highrisk",
+              "locator": "National Catholic Bioethics Center ectopic treatment commentary, not magisterial authority"
+            }
+          ],
+          "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
+          "review_en": "CDF 2009 provides core direct/indirect principle; NCBC is secondary and cannot settle all methods.",
+          "review_fr": "Passage original et portée de l'argument à contrôler en français ; aucune approbation linguistique indépendante n'est accordée.",
+          "full_english_french_sentence_certified": false,
+          "original_full_document_collated": false,
+          "verbatim_opponent_quote_verified": false
+        }
+      ],
+      "full_case_certified": false
+    }
+  ],
+  "question_only": [
+    {
+      "id": "CSE105",
+      "original": [
+        {
+          "id": "DP",
+          "locator": "§§22–23",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html"
+        }
+      ],
+      "finding": "Diagnosis intended for care is distinct from selection leading to discarding or eliminating embryos; existing wording correctly qualifies that distinction.",
+      "finding_fr": "Distinguer le diagnostic pour soigner de la sélection en vue de l'élimination ; maintenir cette nuance.",
+      "status": "BOUNDED_PRIMARY_PASSAGE_CHECKED",
+      "independent_french_approval": false
+    },
+    {
+      "id": "CSE109",
+      "original": [
+        {
+          "id": "DP",
+          "locator": "§18",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html"
+        },
+        {
+          "id": "DONUMV",
+          "locator": "I.6",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html"
+        }
+      ],
+      "finding": "Embryo freezing rejected for risks to embryo and deprivation of maternal gestation, not solely because storage is aesthetically undesirable.",
+      "finding_fr": "La congélation est jugée contraire au respect dû à l'embryon, non à une simple préférence esthétique.",
+      "status": "BOUNDED_PRIMARY_PASSAGE_CHECKED",
+      "independent_french_approval": false
+    },
+    {
+      "id": "CSE110",
+      "original": [
+        {
+          "id": "DP",
+          "locator": "§19",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html"
+        }
+      ],
+      "finding": "No general solution declared; prenatal adoption is described as praiseworthy in intention but unresolved in practice. Revised answer now prevents portrayal as categorically condemned or approved.",
+      "finding_fr": "L'adoption prénatale demeure louable dans son intention mais difficile à résoudre ; la réponse a été précisée.",
+      "status": "BOUNDED_PRIMARY_PASSAGE_CHECKED",
+      "independent_french_approval": false
+    }
+  ]
+}
