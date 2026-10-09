@@ -81,7 +81,10 @@ const report = {
 console.log(JSON.stringify(report, null, 2));
 
 if (process.argv.includes("--apply")) {
-  if (!entries.length) throw new Error("No eligible large inline blocks: preserving original HTML");
+  if (!entries.length) {
+    if (existsSync(REPORT_PATH)) { console.log("No further safe inline blocks; preserving prior report"); process.exit(0); }
+    throw new Error("No eligible large inline blocks: preserving original HTML");
+  }
   if (final >= initial * 0.9) throw new Error("Less than 10% HTML reduction: refusing speculative rewrite");
   writeFileSync(inputPath, output);
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2) + "\n");
