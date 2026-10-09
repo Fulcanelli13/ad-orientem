@@ -1009,32 +1009,77 @@ function syncRailVisibility(root){
   stage.dataset.rightRail=String(live);
 }
 
+// The v1.80 donor masks the original PNG pixel alpha via currentColor.
+// The frozen bank stores the exact PNG as an <image> in a local SVG transport
+// wrapper. CSS-masking that SVG wrapper directly flattens it to an opaque
+// viewport in Chromium, so unwrap only the PNG URI, without changing pixels.
+export function extractDonorRichMaskUri(svg){
+  const match=String(svg??"").match(/<image\b[^>]*\bhref=(["'])(data:image\/png;base64,[A-Za-z0-9+/=]+)\1/i);
+  return match?.[2]??null;
+}
+
+export function createDonorRichMaskLoader(fetchAsset=globalThis.fetch?.bind(globalThis)){
+  const entries=new Map();
+  return function load(src){
+    const url=String(src??"");
+    if(entries.has(url))return entries.get(url);
+    const entry={value:null,promise:null};
+    entries.set(url,entry);
+    entry.promise=Promise.resolve().then(async()=>{
+      if(typeof fetchAsset!=="function" || !url)return null;
+      const response=await fetchAsset(url,{credentials:"same-origin"});
+      return response?.ok ? extractDonorRichMaskUri(await response.text()) : null;
+    }).then(value=>{
+      entry.value=value;
+      return value;
+    }).catch(()=>null);
+    return entry;
+  };
+}
+
+const loadDonorRichMask=createDonorRichMaskLoader();
+
 function applyIcon(root, slot, key, iconResolver){
   const el=root.querySelector(`[data-icon-slot="${slot}"]`);
-  if(!el) return;
+  if(!el)return;
   const id=String(key??"").trim();
-  const src = id && typeof iconResolver === "function" ? iconResolver(id) : null;
-  const direct=/_rich$/.test(id);
-  el.classList?.toggle?.("ao-icon-direct",Boolean(src&&direct));
+  const src=id && typeof iconResolver==="function" ? iconResolver(id) : null;
+  // Guard against a stale rich-art fetch repainting a newer gesture.
+  const identity=src ? id+"|"+src : null;
+  el.__aoIconIdentity=identity;
   if(!src){
     el.hidden=true;
+    el.classList?.remove?.("ao-icon-direct");
     el.style.maskImage="";el.style.webkitMaskImage="";
     el.style.backgroundImage="";
     return;
   }
   el.hidden=false;
-  const css=`url("${String(src).replace(/"/g,'\\\"')}")`;
-  if(direct){
-    // The exact v4.6 rich masters are transparent PNG silhouettes externalized
-    // inside SVG wrappers. Rendering the wrapper directly preserves its alpha;
-    // re-masking the wrapper can collapse Chromium to the SVG viewport rectangle.
-    el.style.maskImage="none";el.style.webkitMaskImage="none";
-    el.style.backgroundImage=css;
-  }else{
+  const cssUrl=value=>`url("${String(value).replace(/"/g,'\\\"')}")`;
+  const showMask=uri=>{
+    if(el.__aoIconIdentity!==identity)return;
+    el.classList?.remove?.("ao-icon-direct");
     el.style.backgroundImage="";
-    el.style.maskImage=css;
-    el.style.webkitMaskImage=css;
+    el.style.maskImage=cssUrl(uri);
+    el.style.webkitMaskImage=cssUrl(uri);
+  };
+  if(!/_rich$/.test(id)){
+    showMask(src);
+    return;
   }
+  const entry=loadDonorRichMask(src);
+  if(entry.value){
+    showMask(entry.value);
+    return;
+  }
+  // Preserve visible donor art even before the local wrapper is unwrapped,
+  // and if file-origin/CSP restrictions block the same-origin fetch.
+  el.classList?.add?.("ao-icon-direct");
+  el.style.maskImage="none";el.style.webkitMaskImage="none";
+  el.style.backgroundImage=cssUrl(src);
+  entry.promise.then(uri=>{
+    if(uri && el.__aoIconIdentity===identity)showMask(uri);
+  });
 }
 
 export function toggleReaderTranslation(node){
