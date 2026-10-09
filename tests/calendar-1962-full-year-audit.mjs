@@ -77,6 +77,7 @@ try{
           return {
             date,status:String(r?.status||""),actualDate:String(r?.date||""),
             mainId:String(d.id||""),title:String(p.name||p.title?.en||d.title||d.name||""),
+            provenance:{dayTitle:d.title??null,dayColour:d.color??d.colour??null,properTitle:p.name??p.title?.en??null,properColour:p.color??p.colour??null,colourPlan:r?.colourPlan??null,dayCommemorations:d.commemorations??null,properCommemorations:p.commemorations??null},
             rawRank:p.rank??d.rank??null,rawColour:p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
             failed:!r||r.status==="failed"||!r.day?.main||r.date!==date,
