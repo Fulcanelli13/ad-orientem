@@ -27,6 +27,15 @@ assert.ok(sourceGate.sourceWitnesses.some(x=>x.type==="textual_candidate_not_nor
   "A general online Rogation-week Proper must not certify processional class/rubrics");
 
 
+
+assert.ok(sourceGate.properSections.every(x=>x.candidate && x.candidate.status==="DISCOVERED_NOT_COLLATED_TO_1962_MISSALE"),
+  "Every Rogation Proper section must have an explicit uncertified candidate status");
+assert.ok(sourceGate.properSections.every(x=>x.candidate.sourceLinks.length>=2 && x.candidate.translationRights==="NOT_CLEARED"),
+  "No derivative translation may be published without independent textual and rights validation");
+assert.match(sourceGate.properSections.find(x=>x.key==="epistle").candidate.passageReference,/James 5:16/);
+assert.match(sourceGate.properSections.find(x=>x.key==="gospel").candidate.passageReference,/Luke 11:5/);
+assert.match(sourceGate.properSections.find(x=>x.key==="secret").candidate.passageReference,/English absent/);
+
 assert.equal(graph.length,6);
 const built=buildRogationsPayload({graph,payload});
 assert.equal(built.readerPayloadComplete,true);
