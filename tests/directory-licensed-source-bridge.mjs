@@ -60,7 +60,7 @@ assert.match(html,/https:\/\/www\.latinmass\.com\/find-latin-mass/);
 assert.doesNotMatch(html,/<iframe[^>]*viewer\.mapme/);
 assert.doesNotMatch(html,/Source-backed current directory record/);
 const fr=renderExploreToString(buildExploreViewModel({items:[],lens:"tlm",language:"fr"}));
-assert.match(fr,/annuaire mondial/);
+assert.match(fr,/Carte Mass of the Ages/);
 const shrine=renderExploreToString(buildExploreViewModel({items:[],lens:"shrines",language:"en"}));
 assert.doesNotMatch(shrine,/https:\/\/www\.latinmassdir\.org\/countries\//);
 
