@@ -90,7 +90,10 @@ assert.equal(allIndicative.summary.already_mapped,401);
 assert.equal(allIndicative.summary.locality_added+allIndicative.summary.region_added+
  allIndicative.summary.country_added+allIndicative.summary.unresolved,212);
 assert.equal(mapped,613-allIndicative.summary.unresolved);
-assert.ok(mapped>=575,"Coarse bulk SSPX coverage below 575; investigate missing country anchors rather than inventing coordinates");
+assert.equal(mapped,613,"Every SSPX record must have a clearly scoped discovery indicator");
+assert.equal(allIndicative.summary.unresolved,0);
+assert.equal(allIndicative.summary.locality_added,4);
+assert.equal(allIndicative.summary.country_added,208);
 assert.ok(newRows.every(x=>x.venue.contact.website.length>0),"All venues retain official site redirection");
 assert.ok(newRows.filter(x=>x.venue.geo?.indicative_only).every(x=>x.venue.geo.routing_eligible===false));
 const ids=new Set(newRows.map(x=>x.venue.venue_id));
