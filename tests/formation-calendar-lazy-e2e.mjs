@@ -84,7 +84,7 @@ try{
  // that leaves the user stranded on the same year dashboard.
  const milestone=page.locator("#ao-calendar-modular-root .aoCalV2YearHero [data-cal-open-date]").first();
  const milestoneDate=await milestone.getAttribute("data-cal-open-date");
- assert.match(milestoneDate,/^\\d{4}-\\d{2}-\\d{2}$/);
+ assert.match(milestoneDate,/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/);
  await milestone.click();
  await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:12000});
  await page.waitForFunction(id=>globalThis.AO_CALENDAR_APP_V1?.status?.().selectedDate===id,milestoneDate,{timeout:12000});
