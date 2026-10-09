@@ -56,15 +56,15 @@ assert.ok(Math.abs(rosary.periodProgress - (130 / 182)) < 1e-12);
 assert.ok(Math.abs(rosary.progress - (312 / 364)) < 1e-12);
 assertContinuous(rosary);
 const segments=yearSegmentGeometry(rosary);
-assert.equal(segments.length,9,"1962 seasonal year must contain nine periods");
-assert.equal(Object.keys(SEASON_GUIDE).length,9,"Each period needs bilingual formation text");
+assert.equal(segments.length,11,"1962 seasonal subperiods must contain Epiphany and Ascensiontide explicitly");
+assert.equal(Object.keys(SEASON_GUIDE).length,11,"Each period needs bilingual formation text");
 assert.ok(Math.abs(segments.reduce((n,p)=>n+p.widthPercent,0)-100)<1e-8,"Timeline geometry must sum to 100%");
 assert.ok(Math.abs(segments.at(-1).endPercent-100)<1e-8,"Timeline must end at liturgical year boundary");
 assert.ok(segments.every(p=>p.days>0&&p.endPercent>p.startPercent),"Timeline segment must represent actual day duration");
 assert.ok(segments.find(p=>p.id==="pentecost").widthPercent<3,"Short Pentecost octave must remain proportionally short");
 const yearHtml=renderYearJourney({year:rosary,selectedDate:"2026-10-07",formatDate:id=>id});
-assert.equal((yearHtml.match(/data-cal-year-segment=/g)||[]).length,9,"Year track must render each period exactly once");
-assert.equal((yearHtml.match(/data-cal-year-period=/g)||[]).length,9,"All nine period cards must be selectable");
+assert.equal((yearHtml.match(/data-cal-year-segment=/g)||[]).length,11,"Year track must render each period exactly once");
+assert.equal((yearHtml.match(/data-cal-year-period=/g)||[]).length,11,"All 11 period cards must be selectable");
 assert.equal((yearHtml.match(/class="aoCalYearDetail"[^>]*>/g)||[]).filter(x=>!x.includes(" hidden")).length,1,"Only the expanded period detail must be visible");
 assert.match(yearHtml,/data-cal-year-open-day="2026-05-31"/,"Current period start day is computed from the year model");
 assert.match(yearHtml,/data-cal-year-month="2026-05"/,"Current period month navigation must be grounded");
@@ -73,9 +73,28 @@ const yearFrench=renderYearJourney({year:rosary,selectedDate:"2026-10-07",fr:tru
 assert.match(yearFrench,/Ouvrir le premier jour/,"French period controls are not translated");
 assert.match(yearFrench,/data-cal-year-open-day="2025-11-30"/,"Selecting a different period must change details");
 const following=buildLiturgicalYear("2026-11-29");
-assert.equal(yearSegmentGeometry(following).length,9,"Advent rollover must build a fresh year");
+assert.equal(yearSegmentGeometry(following).length,11,"Advent rollover must build a fresh year");
 assert.equal(yearSegmentGeometry(following)[0].start,following.start,"Following liturgical year starts on new Advent");
 
+// Independent normative rubrical boundaries: AAS 52 (1960), Rubricae generales nn. 72, 76–77, 119(a), 127(a).
+// Do not conflate explanatory season colour with an actual resolved feast/Mass colour.
+for(const year of [2024,2026,2027,2028,2035]){
+ const jan06=buildLiturgicalYear(`${year}-01-06`).currentPeriod,jan13=buildLiturgicalYear(`${year}-01-13`).currentPeriod,jan14=buildLiturgicalYear(`${year}-01-14`).currentPeriod;
+ assert.equal(jan06.id,"epiphany",`${year} January 6 season`);
+ assert.equal(jan13.id,"epiphany",`${year} January 13 season`);
+ assert.equal(jan13.color,"white",`${year} January 13 must not project green`);
+ assert.equal(jan14.id,"after-epiphany",`${year} January 14 begins per annum`);
+ assert.equal(jan14.color,"green",`${year} January 14 seasonal green`);
+ const easter=buildLiturgicalYear(`${year}-04-01`).easter;
+ const asc=addDaysIso(easter,39),before=addDaysIso(asc,-1),pent=addDaysIso(easter,49);
+ assert.equal(buildLiturgicalYear(before).currentPeriod.id,"easter",`${year} Ascension vigil`);
+ assert.equal(buildLiturgicalYear(asc).currentPeriod.id,"ascension",`${year} Ascension day`);
+ assert.equal(buildLiturgicalYear(addDaysIso(pent,-1)).currentPeriod.id,"ascension",`${year} Pentecost vigil civil-date illustration`);
+ assert.equal(buildLiturgicalYear(pent).currentPeriod.id,"pentecost",`${year} Pentecost begins octave`);
+ assertContinuous(buildLiturgicalYear(asc));
+}
+assert.match(yearHtml,/data-cal-year-period="after-epiphany"/);
+assert.match(yearHtml,/data-cal-year-period="ascension"/);
 const next = nextMajorCelebration("2026-10-07");
 assert.equal(next?.date, "2026-10-25");
 assert.equal(next?.en, "Christ the King");
@@ -91,7 +110,7 @@ assert.equal(nextMajorCelebration("2027-11-27")?.date,"2027-11-28","Boundary che
 
 
 assert.equal(buildLiturgicalYear("2026-04-05").currentPeriod.id, "easter");
-assert.equal(buildLiturgicalYear("2026-04-05").currentPeriod.days, 49);
+assert.equal(buildLiturgicalYear("2026-04-05").currentPeriod.days, 39);
 assert.equal(buildLiturgicalYear("2026-05-24").currentPeriod.id, "pentecost");
 assert.equal(buildLiturgicalYear("2026-05-24").currentPeriod.days, 7);
 assert.equal(buildLiturgicalYear("2026-05-31").currentPeriod.id, "after-pentecost");

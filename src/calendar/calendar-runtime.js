@@ -1,6 +1,6 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
-import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations } from "./liturgical-year.js";
+import { addDaysIso, buildLiturgicalYear } from "./liturgical-year.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
@@ -62,9 +62,7 @@ function monthVerified(monthId){const ids=monthGridIds(monthId);return ids.lengt
 // Major-day candidates only tell us what future dates to resolve.
 // Never display a candidate's feast title, rank, or colour as observed Mass data.
 function nextMajorCandidateDates(selected){
-  const nextYear=addDaysIso(buildLiturgicalYear(selected).end,1);
-  return [...new Set([...buildMajorCelebrations(selected),...buildMajorCelebrations(nextYear)]
-    .filter(x=>x.date>selected).map(x=>x.date))].sort().slice(0,8);
+  return Array.from({length:21},(_,i)=>addDays(selected,i+1));
 }
 function nextResolvedMajorCelebration(selected){
   const found=nextMajorResults.get(selected);
@@ -81,9 +79,10 @@ async function loadNextResolvedMajor(selected){
     let found=null;
     for(const date of nextMajorCandidateDates(selected)){
       const r=await resolveOne(date),tier=rankTier(r,date);
-      if(r?.status!=="failed"&&r?.day&&tier>0&&tier<=2){found={date,r};break}
+      if(r?.status==="failed"||!r?.day){found={unavailable:true};break} // Cannot claim "next" across an unresolved earlier day.
+      if(tier>0&&tier<=2){found={date,r};break}
     }
-    nextMajorResults.set(selected,found||{unavailable:true});
+    nextMajorResults.set(selected,found?.r?found:{unavailable:true});
     if(root()&&state()?.selectedDate===selected&&calendarView!=="picker")paint();
     return found;
   })().catch(error=>{
@@ -98,6 +97,11 @@ function rankTier(r,id){
   // Never manufacture a Roman class for an unresolved day.
   if(!r||r.status==="failed"||!r.day)return 0;
   const rank=rankOf(r).trim().toLowerCase();
+  // Original sources and donor adapters also report bare class numbers/ordinals.
+  const bare=rank.replace(/^classis\s+|^class\s+|\s+classis$|\s+class$|\s+classe$/g,"").trim();
+  const numeral={i:1,ii:2,iii:3,iv:4};
+  if(Object.hasOwn(numeral,bare))return numeral[bare];
+  if(/^[1-4]$/.test(bare))return Number(bare);
   if(/\b(?:i|1st|first|1)\s*(?:class|classe)\b/.test(rank))return 1;
   if(/\b(?:ii|2nd|second|2)\s*(?:class|classe)\b/.test(rank))return 2;
   if(/\b(?:iii|3rd|third|3)\s*(?:class|classe)\b/.test(rank))return 3;
@@ -226,7 +230,7 @@ function updateMonthStatusDom(monthId){
   const el=root()?.querySelector?.("[data-cal-month-status]");if(!el)return;
   const ids=monthGridIds(monthId),s=monthStatus.get(monthId),done=ids.filter(x=>weekCache.has(x)).length;
   const errors=ids.filter(x=>weekCache.has(x)&&(!weekCache.get(x)?.day||weekCache.get(x)?.status==="failed")).length;
-  el.textContent=monthVerified(monthId)?L("1962 calendar · 42 day entries loaded","Calendrier 1962 · 42 jours chargés")
+  el.textContent=monthVerified(monthId)?L("Calendar grid loaded · 42 dates","Grille du calendrier chargée · 42 dates")
     :monthReady(monthId)?L(`1962 calendar · ${errors} day(s) unavailable`,`Calendrier 1962 · ${errors} jour(s) indisponible(s)`)
     :L(`Resolving liturgical month · ${s?.done??done}/42`,`Résolution du mois liturgique · ${s?.done??done}/42`);
 }
@@ -666,7 +670,7 @@ function pickerSurface(selected){
     <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2></div>
     <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1" aria-label="${esc(L("Previous month","Mois précédent"))}">${assetIcon("ao-ui-previous")}<span class="aoCalMonthNavLong">${esc(L("Previous month","Mois précédent"))}</span><span class="aoCalMonthNavShort">${esc(L("Previous","Précédent"))}</span></button><button type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button><button type="button" data-cal-month-shift="1" aria-label="${esc(L("Next month","Mois suivant"))}"><span class="aoCalMonthNavLong">${esc(L("Next month","Mois suivant"))}</span><span class="aoCalMonthNavShort">${esc(L("Next","Suivant"))}</span>${assetIcon("ao-ui-next")}</button></div>
     ${monthIndexTabs()}
-    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?L("1962 calendar · 42 day entries loaded","Calendrier 1962 · 42 jours chargés"):attempted?L(`1962 calendar · ${errors} day(s) unavailable`,`Calendrier 1962 · ${errors} jour(s) indisponible(s)`):L(`Resolving liturgical month · ${done}/42`,`Résolution du mois liturgique · ${done}/42`))}</span>${calendarMonthView==="calendar"?`<span>${esc(L("Colour = liturgical colour · stronger mark = higher rank","Couleur = couleur liturgique · marque plus forte = classe plus élevée"))}</span>`:""}</div>
+    <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?L("Calendar grid loaded · 42 dates","Grille du calendrier chargée · 42 dates"):attempted?L(`1962 calendar · ${errors} day(s) unavailable`,`Calendrier 1962 · ${errors} jour(s) indisponible(s)`):L(`Resolving liturgical month · ${done}/42`,`Résolution du mois liturgique · ${done}/42`))}</span>${calendarMonthView==="calendar"?`<span>${esc(L("Colour = liturgical colour · stronger mark = higher rank","Couleur = couleur liturgique · marque plus forte = classe plus élevée"))}</span>`:""}</div>
     ${retryable?`<button type="button" class="aoCalV2Retry" data-cal-month-retry>${esc(L(`Retry ${retryable} unavailable day(s)`,`Réessayer pour ${retryable} jour(s) indisponible(s)`))}</button>`:""}
     ${projection}
     <div class="aoCalV2MonthExport"><button type="button" class="aoCalV2TextLink" data-cal-export-ics="${esc(pickerMonthId)}" ${exportReady?"":'disabled aria-disabled="true"'} title="${esc(L("Download resolved general Roman calendar as an all-day .ics file; no Mass schedules or local feasts.","Télécharger le calendrier romain général résolu au format .ics, sans horaires de messe ni propres locaux."))}">${esc(L("Export this month · .ics","Exporter ce mois · .ics"))}</button><small>${esc(exportReady?L("Liturgical observances only · no Mass times","Célébrations uniquement · sans horaires de messe"):L("Available when every day is resolved","Disponible lorsque tous les jours sont résolus"))}</small><p data-cal-export-error role="status" aria-live="polite"></p></div>

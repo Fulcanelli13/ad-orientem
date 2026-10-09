@@ -35,9 +35,15 @@ assert.ok(mar.some(x=>x.date==="2027-04-05"&&/Annunciation/.test(x.en)));
 assert.ok(!mar.some(x=>x.date==="2027-03-25"&&/Annunciation/.test(x.en)));
 // Fetched calendar data are not an independently certified 1962 ordo.
 assert.doesNotMatch(runtime,/liturgical month verified|mois liturgique vérifié/);
-assert.match(runtime,/1962 calendar · 42 day entries loaded/);
-assert.match(runtime,/Calendrier 1962 · 42 jours chargés/);
+assert.match(runtime,/Calendar grid loaded · 42 dates/);
+assert.match(runtime,/Grille du calendrier chargée · 42 dates/);
 for(const pattern of [/function retryFailedMonth\(\)/,/data-cal-day-retry/,/data-cal-month-retry/,/data-cal-next-major-retry/,/nextMajorResults\.get\(selected\)\?\.unavailable===true/,/Open the Good Friday liturgy/,/AAS-52-1960-ocr\.pdf#page=597/,/Sources & scope/,/input\.setSelectionRange\(start,end\)/,/for="ao-cal-exact-date"/])assert.match(runtime,pattern);
+// Next major day is an actual resolved I/II-class observance; curated dates cannot skip nearer Sundays.
+assert.match(runtime,/return Array\.from\(\{length:21\}/);
+assert.doesNotMatch(runtime,/buildMajorCelebrations/);
+assert.match(runtime,/const bare=rank\.replace/);
+assert.match(runtime,/if\(\/\^\[1-4\]\$\/\.test\(bare\)\)return Number\(bare\)/);
+assert.match(runtime,/Cannot claim "next" across an unresolved earlier day/);
 const {execFileSync}=await import("node:child_process");
 execFileSync(process.execPath,["--check","src/calendar/calendar-runtime.js"],{stdio:"pipe"});
 console.log("PASS calendar source truthfulness, retries, Good Friday, accessibility and JS syntax");

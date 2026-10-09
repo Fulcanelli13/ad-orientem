@@ -344,8 +344,8 @@ try{
   assert.ok(await page.locator("#ao-calendar-modular-root .aoCalV2YearIdentity .aoCalV2MajorLine").count()===1,
     "Next major celebration must remain visually prominent");
   assert.equal(calendarYear.yearTracks,1,"Calendar must have exactly one proportional year track");
-  assert.equal(calendarYear.yearSegments,9,"Calendar timeline must contain all nine liturgical periods");
-  assert.equal(calendarYear.periodCards,9,"Calendar journey must contain nine selectable periods");
+  assert.equal(calendarYear.yearSegments,11,"Calendar timeline must represent all eleven 1962 seasonal subperiods");
+  assert.equal(calendarYear.periodCards,11,"Calendar journey must make all eleven seasonal subperiods selectable");
   assert.ok(calendarYear.yearMarker>0,"Calendar selected-day marker missing");
   assert.ok(calendarYear.comingCards>=1,"Calendar year lost its Coming Next intelligence");
   assert.ok(calendarYear.rootScrollTop<=2,"Calendar view switch retained the previous surface scroll position");

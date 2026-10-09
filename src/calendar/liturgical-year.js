@@ -32,15 +32,20 @@ export function buildLiturgicalYear(selectedId){
   const selected=dateFromIso(selectedId),y=selected.getFullYear(),thisAdvent=firstAdventSunday(y);
   const start=selectedId>=thisAdvent?thisAdvent:firstAdventSunday(y-1),startYear=dateFromIso(start).getFullYear(),nextStart=firstAdventSunday(startYear+1),end=addDaysIso(nextStart,-1);
   const easter=gregorianEaster(startYear+1);
-  const septuagesima=addDaysIso(easter,-63),ashWednesday=addDaysIso(easter,-46),passionSunday=addDaysIso(easter,-14),pentecost=addDaysIso(easter,49),afterPentecost=addDaysIso(easter,56);
+  const septuagesima=addDaysIso(easter,-63),ashWednesday=addDaysIso(easter,-46),passionSunday=addDaysIso(easter,-14),ascension=addDaysIso(easter,39),pentecost=addDaysIso(easter,49),afterPentecost=addDaysIso(easter,56);
   const periods=[
     period("advent","Advent","Avent",start,`${startYear}-12-24`,"violet","Preparation for the coming of Our Lord","Préparation à la venue de Notre-Seigneur"),
     period("christmas","Christmas","Noël",`${startYear}-12-25`,`${startYear+1}-01-05`,"white","The Nativity and its octave","La Nativité et son octave"),
-    period("epiphany","Epiphany","Épiphanie",`${startYear+1}-01-06`,addDaysIso(septuagesima,-1),"green","The manifestation of Christ and the early Sundays of the year","Manifestation du Christ et premiers dimanches de l’année"),
+    // Rubrics of the Breviary and Missal (1960), n. 72: Epiphany is part of the Christmas season through January 13.
+    period("epiphany","Epiphany","Épiphanie",`${startYear+1}-01-06`,`${startYear+1}-01-13`,"white","The manifestation of Christ, within Christmastide","Manifestation du Christ, au sein du temps de Noël"),
+    // Rubrics 77, 119(a), 127(a): green time per annum begins January 14, not on Epiphany itself.
+    period("after-epiphany","After Epiphany","Après l’Épiphanie",`${startYear+1}-01-14`,addDaysIso(septuagesima,-1),"green","Time throughout the year before Septuagesima","Temps de l’année avant la Septuagésime"),
     period("septuagesima","Septuagesima","Septuagésime",septuagesima,addDaysIso(ashWednesday,-1),"violet","Preparation for Lent","Préparation au Carême"),
     period("lent","Lent","Carême",ashWednesday,addDaysIso(passionSunday,-1),"violet","Penance and preparation for Easter","Pénitence et préparation à Pâques"),
     period("passion","Passiontide","Temps de la Passion",passionSunday,addDaysIso(easter,-1),"violet","The Passion and Holy Week","La Passion et la Semaine sainte"),
-    period("easter","Eastertide","Temps pascal",easter,addDaysIso(pentecost,-1),"white","Resurrection and paschal joy","Résurrection et joie pascale"),
+    // Rubrics 76(a-b): Ascensiontide is a separate sub-season within Paschaltide.
+    period("easter","Eastertide","Temps pascal",easter,addDaysIso(ascension,-1),"white","Resurrection until the vigil of the Ascension","Résurrection jusqu’à la vigile de l’Ascension"),
+    period("ascension","Ascensiontide","Temps de l’Ascension",ascension,addDaysIso(pentecost,-1),"white","From the Ascension through the vigil of Pentecost","De l’Ascension à la vigile de la Pentecôte"),
     period("pentecost","Pentecost and its octave","Pentecôte et son octave",pentecost,addDaysIso(afterPentecost,-1),"red","The coming of the Holy Ghost","Venue du Saint-Esprit"),
     period("after-pentecost","After Pentecost","Après la Pentecôte",afterPentecost,end,"green","The life of the Church until the return of Advent","Vie de l’Église jusqu’au retour de l’Avent"),
   ];

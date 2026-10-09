@@ -28,14 +28,14 @@
 4. **Provider:** the canonical Mass DayResolver and its real Proper source paths. A `ready` value means fetched/displayable, **not** independently rubrically certified.
 5. **Editorial:** `liturgical-year.js` seasonal illustration and `traditional-year-v384.js` devotional dates. Both must defer to the resolved principal day for liturgical identity.
 
-The official rubric n. 72 defines the Christmas season through **13 January** (its Epiphany portion 6–13 Jan); n. 77 defines `per annum` beginning **14 January**; nn. 119(a), 127(a) distinguish associated ordinary seasonal white and green. The current nine-segment year overview instead extends one green-labelled “Epiphany” segment from 6 January until Septuagesima. This is a confirmed *year presentation* misstatement, **not proof that the DayResolver has a wrong Jan 6 or Jan 13 Mass**. Fix season segmentation without overriding the Mass colour. Likewise n. 76 separates Easter time and Ascensiontide within Paschaltide.
+The official rubric n. 72 defines the Christmas season through **13 January** (its Epiphany portion 6–13 Jan); n. 77 defines `per annum` beginning **14 January**; nn. 119(a), 127(a) distinguish associated ordinary seasonal white and green. Before seasonal PR #720, the nine-segment year overview extended one green-labelled “Epiphany” segment from 6 January until Septuagesima. This is a confirmed *year presentation* misstatement, **not proof that the DayResolver has a wrong Jan 6 or Jan 13 Mass**. Fix season segmentation without overriding the Mass colour. Likewise n. 76 separates Easter time and Ascensiontide within Paschaltide.
 
 ## 3. Severity register (confirmed source findings, pending browser characterization)
 
 | ID | Severity | Finding | Owner | PR #710 status |
 |---|---|---|---|---|
 | CAL-01 | P1 | 42 fetched entries were labelled “liturgical month verified,” falsely implying independent rubric certification. | Calendar | Corrected label; CI gate |
-| CAL-02 | P1 | “Epiphany” year segment falsely continues green through pre-Septuagesima instead of ending Jan 13; Jan 14 is `per annum`. | Calendar year model | OPEN |
+| CAL-02 | P1 | “Epiphany” year segment falsely continues green beyond Jan 13. | Calendar year model | Corrected in PR #720; CI gate |
 | CAL-03 | P1 | Failed next-major lookup could leave permanent “checking” message with no recovery. | Calendar | Corrected state + Retry; CI gate |
 | CAL-04 | P1 | Failed day/month cached results had no visible recovery action despite retry API. | Calendar | Corrected Day/Month Retry; CI gate |
 | CAL-05 | P1 | Explicit II-class Rogation Mass following litanies/procession still not demonstrated; date-only ordinary Mass is distinct. | Shared Mass option/proper resolver | OPEN/UNVERIFIED; #704 expressly excluded it |
@@ -43,15 +43,17 @@ The official rubric n. 72 defines the Christmas season through **13 January** (i
 | CAL-07 | P2 | Calendar repaint discarded user's half-entered date and focus. | Calendar | Corrected; phone gate |
 | CAL-08 | P2 | Good Friday action was labelled “Open this Mass” although this is not a Mass. | Calendar | Corrected |
 | CAL-09 | P2 | Temporale/Sanctorale selection uses translatable feast-title regex before stable source identity: fragile under bilingual aliases. | Calendar | OPEN |
-| CAL-10 | P2 | Nine editorial seasons omit explicit Ascensiontide; progress percentages and seasonal colour risk being mistaken for juridical ordo. | Calendar year | OPEN |
+| CAL-10 | P2 | Nine editorial seasons omitted explicit Ascensiontide; season/rite boundaries were conflated. | Calendar year | Corrected in PR #720; rite-level phases remain shared-owner |
 | CAL-11 | P2 | Scripture references and commentary must hand off to shared contextual reader; Calendar has no comprehensive passage/edition capsule contract. | Scripture/shared navigation | OPEN/UNVERIFIED |
 | CAL-12 | P2 | Stale 2024/2027 audit register still describes Rogation default defects superseded by merged #704; old evidence lacks supersession metadata. | Docs/Calendar | OPEN |
 | CAL-13 | P2 | Offline, cache invalidation, partial month, persistent focus and route return not demonstrated across English/French and device classes. | Calendar + shared test harness | PARTIAL; full stress evidence UNVERIFIED |
-| CAL-14 | P3 | Ordinary days redundantly carried “1962 Mass” profile in a Calendar universally labelled 1962. | Calendar | Corrected |
+| CAL-14 | P3 | Ordinary days redundantly carried “1962 Mass” profile in a Calendar universally labelled 1962. | Calendar | Corrected in PR #710 |
 | CAL-15 | P3 | Oversized progress percentage/ring and “Day n of N” turn the liturgical year into an analytics dashboard rather than primarily showing observances. | Calendar design | OPEN; simplify, preserve clear seasonal strip |
 | CAL-16 | P3 | Repeated “practices”, “for this date”, and “next celebration” explanation/cards impose reading cost, especially on phone. | Calendar design | OPEN; collapse to contextual micro-actions |
 
-**Confirmed register:** 16 defects: **P0 0, P1 5, P2 8, P3 3**. PR #710 touches **7** defects (CAL-01, 03, 04, 06, 07, 08, 14); counts are not synonymous with release passes. No P0 observed in the specific source review; lack of a P0 is not equivalent to absence of hidden critical bugs.
+| CAL-17 | P1 | “Next major celebration” searched a curated shortlist instead of consecutive authoritative day resolutions; numeric/Roman bare ranks were not recognized. Earlier I/II-class Sundays could be skipped. | Calendar | Corrected with consecutive-day bounded resolution in PR #720; CI gate |
+
+**Confirmed register:** 17 defects: **P0 0, P1 6, P2 8, P3 3**. PR #710 touches **7** defects (CAL-01, 03, 04, 06, 07, 08, 14); counts are not synonymous with release passes. No P0 observed in the specific source review; lack of a P0 is not equivalent to absence of hidden critical bugs.
 
 ## 4. Ten-axis criticism & provisional score
 
@@ -68,6 +70,8 @@ The official rubric n. 72 defines the Christmas season through **13 January** (i
 | **Total** | **100** | **51** | **57** |
 
 These are **expert risk/quality assessments of inspected code**, not blind user-study results. The final score is **NOT CERTIFIED** until actual browser checks, original-rubric adjudication of outstanding cases and merge/regression pass. Icon-bank ownership looks intentional (`assetIcon`, canonical registry), but visual/icon dimensions, screen-reader behavior, low-end device rendering and on-screen beauty **remain UNVERIFIED**. Unit-only tests do not warrant UI credit.
+
+**Provisional score after PR #720:** **61/100** (functionality 14/20, accuracy 17/25, sources 7/15, UX 7/12, design 5/10, clarity 5/8, languages 3/5, loading/offline 3/5). **Do not call this a certified final score** without phone/offline and original-rubric acceptance. The prospective correction closes CAL-02/10/17 in implementation, retaining earlier sources and annual ordo checks. Calendar UI now seeks the *next* I/II-class celebration by resolving intervening days; it stops on an unresolved day rather than falsely skipping it. Corrected/partially corrected: 10 issues; 7 remain open, with detailed Proper-specific provenance in CAL-06 still only partial. See shared follow-ups #718, #719 and #721.
 
 ## 5. Required multi-year matrix
 
@@ -93,7 +97,7 @@ Use **primary rubrics plus two independent dated source comparisons**, and inspe
 ## 6. Concrete staged correction plan
 
 - **Batch A — recovery and provenance (PR #710):** truthful loading, real retry controls, Good Friday terminology, less redundant metadata, normative disclosure, typed-date focus, phone/regression tests. Retain integrated .ics export #706.
-- **Batch B — season ontology:** split Epiphany portion from time after Jan 13 and expose Ascensiontide without rewriting canonical DayResolver; align `year-journey.js`, labels, test fixtures and full year. Decide whether to show more narrow periods or hierarchy to avoid a busier wheel.
+- **Batch B — season ontology and major-day authority (PR #720, implementation):** split Epiphany portion from time after Jan 13 and expose Ascensiontide without rewriting canonical DayResolver; align `year-journey.js`, labels, test fixtures and full year. Decide whether to show more narrow periods or hierarchy to avoid a busier wheel.
 - **Batch C — liturgical option selection:** complete conditional Rogation Mass in shared canonical Proper/Mass selection, preserve precedence/commemorations and following-action; audit local calendars and votives without a Calendar-owned alternate ordo.
 - **Batch D — UX reduction and ownership:** stable metadata-based Temporale/Sanctorale classification, compact Year view, avoid repeated practice cards and percentage gimmicks, source drawer/Scripture deep links delegated to shared owners.
 - **Batch E — acceptance:** CI, rendered screenshots at 320/390/768/desktop, real touch, font scaling, accessibility (keyboard/focus/screen-reader), French/English, offline/retry, all navigation and orphan buttons; 2024/2026/2027/2028 full original-rubric matrix, especially transfers/commemorations.
