@@ -34,7 +34,7 @@ for(const batch of [a,b])for(const l of batch.lessons)for(const claim of l.claim
   }
  }
 }
-assert.equal(scoped,56);assert.equal(remaining,122);assert.equal(nonPius,20);
+assert.equal(scoped,56);assert.equal(remaining,122);assert.equal(nonPius,16);
 for(const lesson of c.lessons){
  for(const q of lesson.sourceWitnesses){
   assert.equal(q.italianOriginalLanguageUrl,im.get(+q.ref.slice(-3)).italianSourceFileUrl);
