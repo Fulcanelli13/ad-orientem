@@ -11,6 +11,7 @@ import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
+import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
 
 export const VERSION = "final-browser-entry-v2";
 export const ACTIVE_MASS_STORAGE_KEY = "ao-r17-active-mass-v1";
@@ -393,7 +394,8 @@ function installReaderScriptureBridge(preview,prepared){
   let opening=false,disposed=false;
   function refresh(){
     if(disposed)return null;
-    const context=massScriptureContextForCard(preview?.getCurrentCard?.(),prepared);
+    const context=nativeRiteScriptureContext(preview,prepared)
+      ?? massScriptureContextForCard(preview?.getCurrentCard?.(),prepared);
     box.hidden=!context;
     if(!context)return null;
     button.hidden=context.state!=="READY";
@@ -438,7 +440,7 @@ function installReaderScriptureBridge(preview,prepared){
   const Observer=root.ownerDocument?.defaultView?.MutationObserver??globalThis.MutationObserver;
   const observer=typeof Observer==="function"?new Observer(()=>refresh()):null;
   observer?.observe?.(root,{attributes:true,attributeFilter:[
-    "data-r17-native-cue","data-r17-native-event","data-r17-presentation-mode",
+    "data-r17-native-cue","data-r17-native-event","data-r17-native-rite-record","data-r17-presentation-mode",
   ]});
   refresh();
   return Object.freeze({refresh,dispose(){
