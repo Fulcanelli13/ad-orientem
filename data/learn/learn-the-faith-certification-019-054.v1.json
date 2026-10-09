@@ -69,8 +69,8 @@
     "sourceScopeDeskReview20261009": {
       "claimCount": 122,
       "reviewed": 122,
-      "numberedItalianRefs": 359,
-      "supplementaryAuthorityReferences": 13,
+      "numberedItalianRefs": 361,
+      "supplementaryAuthorityReferences": 14,
       "claimsWithSpecificEditorialFlags": 31,
       "bilingualTextRevisions": 4,
       "newPrimarySourceAuthorities": [
@@ -315,10 +315,13 @@
             "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
             "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
             "italianQuestionRefs": [
-              "PX1912-Q146"
+              "PX1912-Q146",
+              "PX1912-Q363",
+              "PX1912-Q364"
             ],
             "originalLanguageLinks": [
-              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
             ],
             "supplementaryAuthorityLinks": [],
             "reviewFlags": [
@@ -9419,7 +9422,9 @@
             "originalLanguageLinks": [
               "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
             ],
-            "supplementaryAuthorityLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html"
+            ],
             "reviewFlags": [],
             "original1912PrintedFacsimileVerified": false,
             "independentDoctrinalApproved": false,
