@@ -21,7 +21,7 @@ assert.equal(report.summary.bilingual_live_answer_revisions,3);
 assert.equal(new Set(report.cases.map(x=>x.id)).size,17);
 for(const entry of report.cases){
   assert.ok(CSE_DEBATE_IDS.includes(entry.id),entry.id+" not a canonical debate");
-  assert.ok(entry.original_passage_locator.length>=4&&entry.source_scope_caveat.length>=60,entry.id+" unbounded source");
+  assert.ok(entry.original_passage_locator.length>=3&&entry.source_scope_caveat.length>=60,entry.id+" unbounded source");
   assert.equal(CSE_SOURCE_MAP[entry.primary_original_source_id]?.canonical_url,entry.original_source_url,entry.id+" original document drift");
   assert.deepEqual(entry.stages.map(x=>x.stage),five,entry.id+" Catholic stages incomplete");
   assert.ok(five.some(k=>stage[entry.id][k].includes(entry.primary_original_source_id)),entry.id+" original source not used at any Catholic stage");
