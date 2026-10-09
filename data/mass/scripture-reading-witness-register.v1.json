@@ -183,15 +183,15 @@
         "EPISTLE_OR_LESSON": {
           "reference": "1Corinthians 4:1–5",
           "latinIncipit": "fratres sic nos existimet homo ut ministros christi et dispensatores mysteriorum dei hic jam quaeritur inter dispensatores ut"
+        },
+        "GOSPEL": {
+          "reference": "Luke 3:1–6",
+          "latinIncipit": "anno quintodecimo imperii tiberii caesaris procurante pontio pilato judaeam tetrarcha autem galilaeae herode philippo autem fratre ejus tetrarcha",
+          "sourceOwner": "Tempora/Adv3-6",
+          "sourceSection": "Evangelium",
+          "inheritance": "EXPLICIT_SOURCE_SECTION_ALIAS_WITH_LATIN_MATCH"
         }
-      },
-      "sourceHolds": [
-        {
-          "slot": "GOSPEL",
-          "reason": "INHERITED_SOURCE_SECTION_REQUIRE_EXPLICIT_RESOLUTION",
-          "inheritedFrom": "@Tempora/Adv3-6"
-        }
-      ]
+      }
     },
     {
       "sourcePath": "Tempora/Nat1-0",
@@ -291,15 +291,15 @@
         "GOSPEL": {
           "reference": "Matthew 13:24–30",
           "latinIncipit": "in illo tempore dixit jesus turbis parabolam hanc simile factum est regnum coelorum homini qui seminavit bonum semen"
+        },
+        "EPISTLE_OR_LESSON": {
+          "reference": "Colossians 3:12–17",
+          "latinIncipit": "fratres induite vos sicut electi dei sancti et dilecti viscera misericordiae benignitatem humilitatem modestiam patientiam supportantes invicem et",
+          "sourceOwner": "Tempora/Epi1-0",
+          "sourceSection": "Lectio",
+          "inheritance": "EXPLICIT_SOURCE_SECTION_ALIAS_WITH_LATIN_MATCH"
         }
-      },
-      "sourceHolds": [
-        {
-          "slot": "EPISTLE_OR_LESSON",
-          "reason": "UNRESOLVED_INHERITED_SOURCE",
-          "inheritedFrom": "@Tempora/Epi1-0"
-        }
-      ]
+      }
     },
     {
       "sourcePath": "Tempora/Epi6-0",
