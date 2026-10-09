@@ -72,6 +72,9 @@ assert.match(ownerSource,/\.aoSaintArtCard/,"Home saint-art terminal-state clean
 assert.match(ownerSource,/data-home-cu-static/,"Daily Rule click owner missing");
 assert.match(ownerSource,/opened===false/,"Daily Rule does not recognize a rejected legacy action");
 assert.ok(ownerSource.includes('rosary:"pray.rosary"'),"Daily Rule Rosary lacks a canonical fallback");
+assert.doesNotMatch(ownerSource,/AO_PRAY_APP_V1\?\.open\?\.\(\)/,"Home still substitutes the generic Pray hub for a failed exact shortcut");
+assert.match(ownerSource,/data-home-shortcut-retry/,"Home failed shortcut has no user-facing retry path");
+assert.match(ownerSource,/role","alert"/,"Home failed shortcut has no accessible error message");
 
 
 // Coming Up must recover from an asynchronously unsuccessful module launch,
@@ -89,7 +92,7 @@ assert.ok(ownerSource.includes('rosary:"pray.rosary"'),"Daily Rule Rosary lacks 
     },
     AO_RUNTIME_V8:{store:{getState:()=>({route:"home"}),subscribe:()=>()=>{}}},
     AO_MODULES:{open:async id=>{routes.push("registry:"+id);return {ok:false};}},
-    AO_PRAY_APP_V1:{open:()=>{routes.push("pray:fallback");return true;}},
+    AO_PRAY_V435930:{open:id=>{routes.push("pray:exact:"+id);return true;}},
     AO_LEARN_APP_V1:{openModule:id=>{routes.push("learn:fallback:"+id);return true;}},
   };
   createHomeOwner(probe);
@@ -100,7 +103,7 @@ assert.ok(ownerSource.includes('rosary:"pray.rosary"'),"Daily Rule Rosary lacks 
   });
   fire("pray.novenas");
   await new Promise(resolve=>setImmediate(resolve));
-  assert.deepEqual(routes,["registry:pray.novenas","pray:fallback"]);
+  assert.deepEqual(routes,["registry:pray.novenas","pray:exact:pray.novenas"]);
   routes.length=0;
   fire("learn.catechism");
   await new Promise(resolve=>setImmediate(resolve));
@@ -108,3 +111,5 @@ assert.ok(ownerSource.includes('rosary:"pray.rosary"'),"Daily Rule Rosary lacks 
 }
 
 console.log("PASS modular Home navigation/reset owner");
+
+await import("./home-exact-shortcut-retry.mjs");

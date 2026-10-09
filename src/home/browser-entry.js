@@ -105,36 +105,80 @@ export function createHomeOwner(win=globalThis){
     enricherClicksBound=true;
   }
 
-  function openRoute(route){
+  function routeAccepted(value){
+    return value===true||value?.ok===true;
+  }
+
+  function showRouteError(id,trigger){
+    // Do not turn an unsuccessful deep link into an unrelated Prayer hub.
+    if(state(win)?.route!=="home")return;
+    const screen=win?.document?.querySelector?.(".homeScreen");
+    const doc=win?.document;
+    if(!screen||typeof doc?.createElement!=="function")return;
+    const previous=trigger?.closest?.("[data-home-shortcut-error]")??null;
+    const anchor=previous?.parentElement??(screen.contains?.(trigger)?trigger?.parentElement:null)??screen;
+    screen.querySelectorAll?.("[data-home-shortcut-error]")?.forEach?.(node=>node.remove?.());
+    const fr=state(win)?.language==="fr";
+    const box=doc.createElement("div");
+    box.dataset.homeShortcutError=id;
+    box.setAttribute("role","alert");
+    box.style.cssText="margin:10px 0;padding:12px;border:1px solid var(--ao-rule,#56524c);border-radius:10px;color:inherit;background:var(--ao-bg-canvas,#080c12);font:inherit";
+    const message=doc.createElement("span");
+    message.textContent=fr
+      ?"Impossible d’ouvrir le contenu demandé. Vous pouvez réessayer."
+      :"The requested item could not be opened. You can retry.";
+    const retry=doc.createElement("button");
+    retry.type="button";
+    retry.dataset.homeShortcutRetry=id;
+    retry.textContent=fr?"Réessayer":"Retry";
+    retry.style.cssText="display:block;margin-top:9px;min-height:44px;padding:8px 16px;color:inherit;background:transparent;border:1px solid var(--ao-rule,#56524c);border-radius:8px";
+    box.append(message,retry);
+    anchor.appendChild(box);
+  }
+
+  function clearRouteError(){
+    win?.document?.querySelectorAll?.(".homeScreen [data-home-shortcut-error]")?.forEach?.(node=>node.remove?.());
+  }
+
+  function openRoute(route,{trigger=null}={}){
     const id=String(route??"");
     if(!id)return false;
     if(id==="mass.current")return win?.AO_APP_SHELL_V1?.navigate?.("mass")??false;
     if(id==="today.calendar"||id==="calendar")return win?.AO_APP_SHELL_V1?.navigate?.("calendar")??false;
     if(id.startsWith("pray.")||id.startsWith("learn.")){
-      const fallback=()=>{
+      const exactFallback=()=>{
         try{
-          if(id.startsWith("pray."))return win?.AO_PRAY_APP_V1?.open?.()??false;
+          if(id.startsWith("pray.")){
+            // Only the requested canonical route is a valid fallback; never
+            // substitute AO_PRAY_APP_V1.open(), which opens the generic hub.
+            return win?.AO_PRAY_V435930?.open?.(id,{trigger})??false;
+          }
           return win?.AO_LEARN_APP_V1?.openModule?.(id)??false;
         }catch(error){
-          try{win?.console?.error?.("Home module fallback failed",id,error)}catch{}
+          try{win?.console?.error?.("Home exact-route fallback failed",id,error)}catch{}
           return false;
         }
       };
+      const finish=value=>{
+        if(routeAccepted(value)){clearRouteError();return true;}
+        showRouteError(id,trigger);
+        return false;
+      };
+      const fallback=()=>Promise.resolve(exactFallback()).then(finish).catch(error=>{
+        try{win?.console?.error?.("Home exact-route fallback rejected",id,error)}catch{}
+        return finish(false);
+      });
       try{
         const registry=win?.AO_MODULES;
         if(typeof registry?.open!=="function")return fallback();
-        const opened=registry.open(id);
-        // Module registries return {ok:false} (often asynchronously) when a
-        // lazy reader could not launch. A Promise itself is not a success.
-        if(opened&&typeof opened.then==="function"){
-          return Promise.resolve(opened).then(value=>
-            value===false||value?.ok===false?fallback():value
-          ).catch(error=>{
-            try{win?.console?.error?.("Home module route failed",id,error)}catch{}
-            return fallback();
-          });
-        }
-        return opened===false||opened?.ok===false?fallback():opened;
+        // A Promise is not a successful open. Require a positive result
+        // from the requested module, including cold-load failures.
+        return Promise.resolve(registry.open(id)).then(value=>
+          routeAccepted(value)?finish(value):fallback()
+        ).catch(error=>{
+          try{win?.console?.error?.("Home module route failed",id,error)}catch{}
+          return fallback();
+        });
       }catch(error){
         try{win?.console?.error?.("Home module route failed",id,error)}catch{}
         return fallback();
@@ -145,6 +189,12 @@ export function createHomeOwner(win=globalThis){
 
   function onEnricherClick(event){
     const target=event?.target;
+    const retry=target?.closest?.("[data-home-shortcut-retry]");
+    if(retry){
+      event.preventDefault?.();
+      void openRoute(retry.dataset?.homeShortcutRetry,{trigger:retry});
+      return;
+    }
     const resumeMass=target?.closest?.("[data-resume-mass]");
     if(resumeMass){
       event.preventDefault?.();
@@ -200,9 +250,9 @@ export function createHomeOwner(win=globalThis){
     if(dynamic){
       event.preventDefault?.();
       const id=dynamic.dataset?.homeCuDynamic;
-      if(id==="dynamic.free"){openRoute("pray.library");return;}
+      if(id==="dynamic.free"){void openRoute("pray.library",{trigger:dynamic});return;}
       try{if(win?.AO_RULE_V411?.openDynamic?.(id))return;}catch{}
-      openRoute(dynamic.dataset?.homeCuRoute);
+      void openRoute(dynamic.dataset?.homeCuRoute,{trigger:dynamic});
       return;
     }
     const stat=target?.closest?.("[data-home-cu-static]");
@@ -219,7 +269,7 @@ export function createHomeOwner(win=globalThis){
           evening:"pray.morning_evening",
           examen:"pray.nightly_examen",
         };
-        return routes[id]?openRoute(routes[id]):win?.AO_APP_SHELL_V1?.navigate?.("pray");
+        return routes[id]?openRoute(routes[id],{trigger:stat}):win?.AO_APP_SHELL_V1?.navigate?.("pray");
       };
       const openStatic=win?.AO_RULE_V411?.openStatic;
       if(typeof openStatic!=="function"){void fallback();return;}
@@ -238,7 +288,7 @@ export function createHomeOwner(win=globalThis){
     const route=target?.closest?.("[data-home-cu-route]");
     if(route){
       event.preventDefault?.();
-      openRoute(route.dataset?.homeCuRoute);
+      void openRoute(route.dataset?.homeCuRoute,{trigger:route});
       return;
     }
     const all=target?.closest?.("[data-home-cu-all]");
