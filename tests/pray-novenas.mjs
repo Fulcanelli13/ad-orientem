@@ -270,6 +270,14 @@ for(const id of missingHistorical){
  assert.equal(g.status,"27_HISTORICAL_MEDITATIONS_AND_PRACTICES_NOT_REPRODUCED");
  assert.deepEqual(g.missingPerDay,["full MEDITATION prose","full PRACTICE/resolution prose"]);
  assert.equal(NOVENA_CORPUS_V4[id].days.length,9);
+ assert.equal(g.originalDaySections.length,9,"The complete historical daily section heading inventory is missing: "+id);
+ for(let i=0;i<9;i++){
+  assert.equal(g.originalDaySections[i].day,i+1);
+  assert.ok(g.originalDaySections[i].originalEnglishTitle.length>10);
+  assert.match(g.originalDaySections[i].originalUrl,/gutenberg\.org/);
+  assert.equal(g.originalDaySections[i].historicalMeditationStatus,"PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP");
+  assert.equal(g.originalDaySections[i].historicalPracticeStatus,"PRESENT_IN_1909_SOURCE_NOT_REPRODUCED_IN_APP");
+ }
  const source=novenaSourceAccess(id);
  assert.match(source.note.en,/MEDITATION and PRACTICE/);
  assert.match(source.note.fr,/MÉDITATIONS? et (une )?PRATIQUES?/);
