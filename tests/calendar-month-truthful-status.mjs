@@ -1,4 +1,5 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
+import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar/liturgical-year.js";
@@ -66,3 +67,45 @@ assert.match(runtime,/import \{ observedCycle \} from "\.\/observed-cycle\.js";/
 assert.doesNotMatch(runtime,/const temporal=\//,"Title-based cycle regex must not recur");
 assert.match(runtime,/data-cal-unclassified/,"Unknown resolved days need a visible fail-closed explanation");
 console.log("PASS language-neutral observed cycle and unclassified-day disclosure");
+
+
+// The archival title mismatch set is an editorial worklist, not 132 liturgical
+// rank/colour errors, not a new calendar ordo, and not a certification claim.
+const titleLedger=JSON.parse(readFileSync("data/calendar/1962-editorial-reconciliation-2024-2027.v1.json","utf8"));
+const titleGroups=Object.fromEntries(titleLedger.groups.map(g=>[g.key,g]));
+const titleDates=titleLedger.groups.flatMap(g=>g.dates);
+assert.equal(titleLedger.status,"TRIAGE_NOT_LITURGICAL_CERTIFICATION");
+assert.equal(titleDates.length,132);
+assert.equal(new Set(titleDates).size,132,"Every 2024/2027 editorial flag has one canonical owner");
+assert.equal(titleDates.filter(x=>x.startsWith("2024-")).length,66);
+assert.equal(titleDates.filter(x=>x.startsWith("2027-")).length,66);
+for(const [key,total] of Object.entries({
+  generic_feria:55,saturday_bvm_mass_title:24,saint_variants:32,
+  major_title_variants:6,commemoration_count:9,
+  pentecost_vigil_mislabel:2,bibiana_mislabel:2,paul_latin_only:1,
+  advent_saturday_wording:1
+})){
+  assert.equal(titleGroups[key]?.dates.length,total,key+" archival count changed");
+  assert.equal(titleGroups[key].count,total);
+}
+for(const group of titleLedger.groups){
+  assert.ok(group.dates.every(d=>/^202[47]-\d{2}-\d{2}$/.test(d)),group.key+" malformed source date");
+  assert.ok(group.reason.length>60,group.key+" lacks source-specific disposition");
+}
+for(const [id,en,fr] of [
+  ["tempora:Pasc6-6:1:r","Vigil of Pentecost","Vigile de la Pentecôte"],
+  ["sancti:12-02:3:r","St Bibiana, Virgin and Martyr","Sainte Bibiane, vierge et martyre"],
+  ["sancti:06-30:3:r","Commemoration of St Paul, Apostle","Commémoraison de saint Paul, apôtre"]
+]){
+  assert.equal(calendarObservanceAlias(principal(id), "en"),en,id);
+  assert.equal(calendarObservanceAlias(principal(id), "fr"),fr,id);
+  assert.equal(calendarObservanceAlias(principal(id,"Unaffiliated translation"),"en"),en,id+" is not title-dependent");
+}
+assert.equal(calendarObservanceAlias(principal("sancti:12-020:3:r"),"en"),null);
+assert.equal(calendarObservanceAlias(principal("tempora:Pasc6-6"),"en"),null);
+assert.equal(calendarObservanceAlias(principal(":feria:4:w"),"en"),null,
+  "Generic feria has no verified source week: never fabricate contextual titles");
+assert.equal(calendarObservanceAlias({status:"failed",day:{main:{id:"sancti:12-02:3:r"}}},"fr"),null);
+assert.match(runtime,/calendarObservanceAlias\(r,fr\(\)\?"fr":"en"\)/,
+  "Calendar must show the source-identity corrected name before the donor alias");
+console.log("PASS 132 archived editorial cases categorized, three source-ID alias families protected");

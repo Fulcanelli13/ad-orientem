@@ -1,0 +1,235 @@
+{
+  "schema": "AO_CALENDAR_1962_EDITORIAL_CROSSWALK_V1",
+  "versionDate": "2026-10-09",
+  "scope": "Exactly the 132 first-oracle editorial findings in the archived 2024/2027 calendar comparison, grouped by cause. Do not apply these IDs as runtime overrides.",
+  "status": "TRIAGE_NOT_LITURGICAL_CERTIFICATION",
+  "sources": {
+    "firstOrdo": [
+      "https://missale.online/festkalender/en/2024/druck",
+      "https://missale.online/festkalender/en/2027/druck"
+    ],
+    "secondOrdo": [
+      "https://gcatholic.org/calendar/2024/Extraordinary-en",
+      "https://gcatholic.org/calendar/2027/Extraordinary-en"
+    ],
+    "originalRubrics": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=597",
+    "githubEvidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37941952423",
+    "archivedArtifact": "calendar-1962-full-year-comparison",
+    "code": [
+      "tools/calendar/full-year-1962-oracle.mjs",
+      "tools/calendar/secondary-1962-oracle.mjs"
+    ]
+  },
+  "totals": {
+    "flags": 132,
+    "year2024": 66,
+    "year2027": 66
+  },
+  "correctionPolicy": "Any display correction must use the canonical principal source identity, never translated-name regex or date-specific feast invention. A Calendar display alias does not certify appointed Propers, commemoration or rubrical precedence.",
+  "groups": [
+    {
+      "key": "generic_feria",
+      "count": 55,
+      "status": "REVIEW_NOT_CLEARED",
+      "reason": "Main observed ID was the synthetic :feria:4:w and displayed 'Feria'. Resolve source-of-day lineage/week before making contextual titles; NEVER relabel a weekday as a Sunday, and DO NOT infer the week from the civil date.",
+      "dates": [
+        "2024-01-09",
+        "2024-01-10",
+        "2024-01-11",
+        "2024-01-12",
+        "2024-02-13",
+        "2024-04-09",
+        "2024-04-10",
+        "2024-04-12",
+        "2024-04-15",
+        "2024-04-16",
+        "2024-06-03",
+        "2024-06-27",
+        "2024-07-04",
+        "2024-07-09",
+        "2024-09-04",
+        "2024-09-06",
+        "2024-09-09",
+        "2024-09-13",
+        "2024-09-26",
+        "2024-10-21",
+        "2024-10-22",
+        "2024-10-25",
+        "2024-10-29",
+        "2024-10-30",
+        "2024-10-31",
+        "2024-11-05",
+        "2024-11-06",
+        "2024-11-07",
+        "2024-11-08",
+        "2027-01-07",
+        "2027-01-08",
+        "2027-01-12",
+        "2027-02-03",
+        "2027-04-06",
+        "2027-04-07",
+        "2027-04-08",
+        "2027-04-09",
+        "2027-04-12",
+        "2027-05-24",
+        "2027-06-15",
+        "2027-06-16",
+        "2027-07-06",
+        "2027-07-09",
+        "2027-08-18",
+        "2027-09-01",
+        "2027-09-06",
+        "2027-09-13",
+        "2027-10-12",
+        "2027-10-21",
+        "2027-10-22",
+        "2027-10-26",
+        "2027-10-27",
+        "2027-10-29",
+        "2027-11-03",
+        "2027-11-05"
+      ]
+    },
+    {
+      "key": "saturday_bvm_mass_title",
+      "count": 24,
+      "status": "REVIEW_NOT_CLEARED",
+      "reason": "The app names a particular Saturday Marian Mass (Common C10 form); both dated ordo witnesses use a generic Saturday BVM celebration. The specific Proper is useful: harmonize user display with subtype without losing the appointed Mass identity.",
+      "dates": [
+        "2024-02-03",
+        "2024-04-20",
+        "2024-06-08",
+        "2024-06-15",
+        "2024-07-06",
+        "2024-07-13",
+        "2024-07-27",
+        "2024-08-03",
+        "2024-09-07",
+        "2024-10-05",
+        "2024-10-12",
+        "2024-10-26",
+        "2027-01-02",
+        "2027-01-09",
+        "2027-04-10",
+        "2027-04-17",
+        "2027-05-08",
+        "2027-07-17",
+        "2027-07-24",
+        "2027-09-04",
+        "2027-09-11",
+        "2027-10-30",
+        "2027-11-06",
+        "2027-11-27"
+      ]
+    },
+    {
+      "key": "saint_variants",
+      "count": 32,
+      "status": "REVIEW_NOT_CLEARED",
+      "reason": "Differences primarily saints' honorifics, offices, traditional aliases, spellings, and shortened titles; includes Octave Day of Christmas and Nativity. Do not silently expand names from a source witness without checking 1962 Latin calendar and translation policy.",
+      "dates": [
+        "2024-01-01",
+        "2024-04-11",
+        "2024-05-02",
+        "2024-05-16",
+        "2024-06-12",
+        "2024-06-18",
+        "2024-08-02",
+        "2024-08-20",
+        "2024-08-28",
+        "2024-09-21",
+        "2024-09-30",
+        "2024-10-03",
+        "2024-11-09",
+        "2024-11-19",
+        "2024-12-07",
+        "2024-12-25",
+        "2027-01-01",
+        "2027-01-14",
+        "2027-04-21",
+        "2027-06-12",
+        "2027-06-18",
+        "2027-07-14",
+        "2027-07-21",
+        "2027-08-02",
+        "2027-08-20",
+        "2027-08-28",
+        "2027-09-21",
+        "2027-09-30",
+        "2027-11-09",
+        "2027-11-19",
+        "2027-12-07",
+        "2027-12-25"
+      ]
+    },
+    {
+      "key": "major_title_variants",
+      "count": 6,
+      "status": "REVIEW_NOT_CLEARED",
+      "reason": "Holy Family and Triduum observances; review Mass-vs-day label without treating stylistic synonyms as errors.",
+      "dates": [
+        "2024-01-07",
+        "2024-03-28",
+        "2024-03-30",
+        "2027-01-10",
+        "2027-03-25",
+        "2027-03-27"
+      ]
+    },
+    {
+      "key": "commemoration_count",
+      "count": 9,
+      "status": "REVIEW_NOT_CLEARED",
+      "reason": "One source counted commemorations differently. Some 2027 discrepancies were subsequently corrected by PR #704; re-audit the CURRENT shared resolver and check the appointed collects, secrets and postcommunions before clearing.",
+      "dates": [
+        "2024-01-25",
+        "2024-02-22",
+        "2024-12-04",
+        "2027-01-25",
+        "2027-02-22",
+        "2027-08-15",
+        "2027-11-30",
+        "2027-12-04",
+        "2027-12-08"
+      ]
+    },
+    {
+      "key": "pentecost_vigil_mislabel",
+      "count": 2,
+      "status": "CALENDAR_ALIAS_PROPOSED",
+      "reason": "Observed tempora:Pasc6-6:1:r rendered 'Saturday after the Ascension', despite both independent 1962 witnesses identifying the Vigil of Pentecost. Apply strictly ID-guarded EN/FR display correction only; Mass reading/rite remains shared.",
+      "dates": [
+        "2024-05-18",
+        "2027-05-15"
+      ]
+    },
+    {
+      "key": "bibiana_mislabel",
+      "count": 2,
+      "status": "CALENDAR_ALIAS_PROPOSED",
+      "reason": "Observed sancti:12-02:3:r rendered 'St. Vivian', but both independent 1962 witnesses identify St Bibiana. Correct the EN/FR display label by canonical source ID.",
+      "dates": [
+        "2024-12-02",
+        "2027-12-02"
+      ]
+    },
+    {
+      "key": "paul_latin_only",
+      "count": 1,
+      "status": "CALENDAR_ALIAS_PROPOSED",
+      "reason": "Observed sancti:06-30:3:r rendered 'In Commemoratione Sancti Pauli Apostoli' instead of a user-language title; do not alter source Latin or the St Peter commemoration.",
+      "dates": [
+        "2027-06-30"
+      ]
+    },
+    {
+      "key": "advent_saturday_wording",
+      "count": 1,
+      "status": "REVIEW_NOT_CLEARED",
+      "reason": "Observed tempora:Adv2-6:3:v rendered 'Sabbato after II Sunday of Advent'. Review bilingual weekday wording, retaining Advent precedence and Proper.",
+      "dates": [
+        "2024-12-14"
+      ]
+    }
+  ]
+}
