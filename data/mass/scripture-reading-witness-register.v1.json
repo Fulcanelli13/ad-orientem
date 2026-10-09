@@ -282,6 +282,165 @@
           "latinIncipit": "in illo tempore ascendente jesu in naviculam secuti sunt eum discipuli ejus et ecce motus magnus factus est"
         }
       }
+    },
+    {
+      "sourcePath": "Tempora/Epi5-0",
+      "title": "Dominica V Post Epiphaniam",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi5-0.txt",
+      "readings": {
+        "GOSPEL": {
+          "reference": "Matthew 13:24–30",
+          "latinIncipit": "in illo tempore dixit jesus turbis parabolam hanc simile factum est regnum coelorum homini qui seminavit bonum semen"
+        }
+      },
+      "sourceHolds": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reason": "UNRESOLVED_INHERITED_SOURCE",
+          "inheritedFrom": "@Tempora/Epi1-0"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi6-0",
+      "title": "Dominica VI Post Epiphaniam",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi6-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Thessalonians 1:2–10",
+          "latinIncipit": "fratres gratias agimus deo semper pro omnibus vobis memoriam vestri facientes in orationibus nostris sine intermissione memores operis"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 13:31–35",
+          "latinIncipit": "in illo tempore dixit jesus turbis parabolam hanc simile est regnum coelorum grano sinapis quod accipiens homo seminavit"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "title": "Dominica in Septuagesima",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+      "readings": {
+        "GOSPEL": {
+          "reference": "Matthew 20:1–16",
+          "latinIncipit": "in illo tempore dixit jesus discipulis suis parabolam hanc simile est regnum coelorum homini patrifamilias qui exiit primo"
+        }
+      },
+      "sourceHolds": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reason": "DISCONTINUOUS_READING_LINKED_SEPARATELY_IN_SEGMENTED_REGISTER",
+          "reference": "1Corinthians 9:24–27; 10:1–5"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quadp2-0",
+      "title": "Dominica in Sexagesima",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp2-0.txt",
+      "readings": {
+        "GOSPEL": {
+          "reference": "Luke 8:4–15",
+          "latinIncipit": "in illo tempore cum turba plurima convenirent et de civitatibus properarent ad jesum dixit per similitudinem exiit qui"
+        }
+      },
+      "sourceHolds": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reason": "DISCONTINUOUS_READING_LINKED_SEPARATELY_IN_SEGMENTED_REGISTER",
+          "reference": "2Corinthians 11:19–33; 12:1–9"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quadp3-0",
+      "title": "Dominica in Quinquagesima",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp3-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Corinthians 13:1–13",
+          "latinIncipit": "fratres si linguis hominum loquar et angelorum caritatem autem non habeam factus sum velut aes sonans aut cymbalum"
+        },
+        "GOSPEL": {
+          "reference": "Luke 18:31–43",
+          "latinIncipit": "in illo tempore assumpsit jesus duodecim et ait illis ecce ascendimus jerosolymam et consummabuntur omnia quae scripta sunt"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad3-0",
+      "title": "Dominica III in Quadragesima",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Ephesians 5:1–9",
+          "latinIncipit": "fratres estote imitatores dei sicut filii carissimi et ambulate in dilectione sicut et christus dilexit nos et tradidit"
+        },
+        "GOSPEL": {
+          "reference": "Luke 11:14–28",
+          "latinIncipit": "in illo tempore erat jesus ejiciens daemonium et illud erat mutum et cum ejecisset daemonium locutus est mutus"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "title": "Dominica de Passione",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Hebrews 9:11–15",
+          "latinIncipit": "fratres christus assistens pontifex futurorum bonorum per amplius et perfectius tabernaculum non manufactum id est non hujus creationis"
+        },
+        "GOSPEL": {
+          "reference": "John 8:46–59",
+          "latinIncipit": "in illo tempore dicebat jesus turbis judaeorum quis ex vobis arguet me de peccato si veritatem dico vobis"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pasc1-0",
+      "title": "Dominica in Albis in Octava Paschæ",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc1-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1John 5:4–10",
+          "latinIncipit": "carissimi omne quod natum est ex deo vincit mundum et haec est victoria quae vincit mundum fides nostra"
+        },
+        "GOSPEL": {
+          "reference": "John 20:19–31",
+          "latinIncipit": "in illo tempore cum sero esset die illo una sabbatorum et fores essent clausae ubi erant discipuli congregati"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pasc2-0",
+      "title": "Dominica II Post Pascha",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc2-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Peter 2:21–25",
+          "latinIncipit": "carissimi christus passus est pro nobis vobis relinquens exemplum ut sequamini vestigia ejus qui peccatum non fecit nec"
+        },
+        "GOSPEL": {
+          "reference": "John 10:11–16",
+          "latinIncipit": "in illo tempore dixit jesus pharisaeis ego sum pastor bonus bonus pastor animam suam dat pro ovibus suis"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/Pasc3-0",
+      "title": "Dominica III Post Pascha",
+      "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc3-0.txt",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Peter 2:11–19",
+          "latinIncipit": "carissimi obsecro vos tamquam advenas et peregrinos abstinere vos a carnalibus desideriis quae militant adversus animam conversationem vestram"
+        },
+        "GOSPEL": {
+          "reference": "John 16:16–22",
+          "latinIncipit": "in illo tempore dixit jesus discipulis suis modicum et jam non videbitis me et iterum modicum et videbitis"
+        }
+      }
     }
   ]
 }
