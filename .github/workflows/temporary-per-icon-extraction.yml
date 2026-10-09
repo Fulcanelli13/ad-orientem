@@ -5,6 +5,7 @@ on:
       - performance/per-icon-sprite-requests-20261009
     paths:
       - ".github/workflows/temporary-per-icon-extraction.yml"
+      - "tests/per-icon-svg-e2e.mjs"
 permissions:
   contents: write
 jobs:
