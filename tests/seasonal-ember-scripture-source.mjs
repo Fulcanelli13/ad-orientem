@@ -84,7 +84,7 @@ for(const day of audit.days){
     "Daniel 3:49","Daniel 3:47–48","Daniel 3:50–51"]);
    assert.equal(context.liturgicalArrangement.noteEn.includes("canonical order"),true);
    assert.equal(context.liturgicalArrangement.noteFr.includes("ordre liturgique"),true);
-   const corrupted={...card,paragraphs:[{alternate:row.latinIncipit+" "+row.latinContinuityGuard[1]+" "+row.latinContinuityGuard[0]+" "+row.latinContinuityGuard[2]}]};
+   const corrupted={...card,paragraphs:[{alternate:row.latinIncipit+" "+row.latinContinuityGuard[2]+" "+row.latinContinuityGuard[1]}]};
    assert.equal(extendedLessonScriptureContext(corrupted,full.prepared),null,
     "A reordered Daniel Latin sentence must be rejected");
    assert.equal(extendedLessonScriptureContext({...card,paragraphs:[{
