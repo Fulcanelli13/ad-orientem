@@ -1,6 +1,7 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { scriptureContextCapsule } from "../scripture/context.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
 
@@ -135,7 +136,7 @@ export function renderHomeToString(state,win=globalThis){
 ${status}${translationStatus}
 ${resume?`<button class="resumeCard" data-resume-mass data-ao-resume-owner="${resume.source}"><span>${vm.language==="fr"?"Messe en cours":"Mass in progress"}</span><b>${vm.language==="fr"?"Reprendre":"Resume"}</b>${resumeMeta?`<small>${esc(resumeMeta)}</small>`:""}</button>`:""}
 <section class="homeSection aroundMass"><div class="sectionLabel">${esc(t("aroundMass"))}</div><div class="phaseActions"><button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(t("prepare"))}</b></button><button class="phaseButton primary" data-home-mass-entry><span>Ⅱ</span><b>${esc(t("followMass"))}</b></button><button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(t("giveThanks"))}</b></button></div></section>
-<section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p><button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
+<section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p>${vm.gospelReference?scriptureContextCapsule(vm.gospelReference,{french:vm.language==="fr"}):""}<button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
 <section class="contentCard aoHomeScriptureLink"><div class="cardKicker">${esc(vm.language==="fr"?"SAINTE ÉCRITURE":"SACRED SCRIPTURE")}</div><p>${esc(vm.language==="fr"?"Lire et rechercher dans la Bible catholique traditionnelle ; conserver des signets.":"Read and explore the traditional Catholic Bible; keep bookmarks.")}</p><button type="button" class="textAction" data-home-scripture>${esc(vm.language==="fr"?"Ouvrir la Sainte Écriture":"Open Sacred Scripture")} <span>${assetIcon("ao-ui-next")}</span></button></section>
 ${renderHomeEnrichersToString(enrichers,state,win)}
 <section class="contentCard findCard"><div><div class="cardKicker">${esc(vm.language==="fr"?"EXPLORER":"EXPLORE")}</div><p>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires, coutumes et pèlerinages — un seul atlas sourcé.":"Traditional Masses, shrines, customs and pilgrimages — one source-backed atlas.")}</p><button type="button" class="textAction aoHomeCustomsAtlasLink" data-home-customs-atlas>${esc(vm.language==="fr"?"Ouvrir l’Atlas des coutumes":"Open Customs Atlas")} ${assetIcon("ao-ui-next")}</button></div><button class="roundAction" data-home-find aria-label="${esc(vm.language==="fr"?"Ouvrir Explore":"Open Explore")}">${assetIcon("ao-ui-next")}</button></section>
