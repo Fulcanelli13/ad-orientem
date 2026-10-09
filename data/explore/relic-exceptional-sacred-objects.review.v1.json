@@ -1,0 +1,310 @@
+{
+  "schema": "SACRED_ATLAS_EXCEPTIONAL_OBJECTS_MAP_SELECTION_V1",
+  "as_of": "2026-10-09",
+  "status": "RESEARCH_REVIEW_NO_NEW_MAP_PINS",
+  "rules": [
+    "Passion objects and Marian textiles are not graded as bodily relics of a saint.",
+    "Grouped Passion objects within the same treasury produce one site-level map anchor, not many relic-object markers.",
+    "Historical devotion and custody attested by sanctuary does not independently certify attribution to Christ or the Virgin.",
+    "Restricted or exceptional exposition is never represented as normal public accessibility.",
+    "Aachen's four textiles, though separately described, require one Aachen Cathedral location if ever published.",
+    "The 7 unregistered candidate source sites need geocoding, source passage and visitor-access validation before publication.",
+    "Charlemagne's local veneration cannot be treated as universally canonically approved merely because Aachen holds his reliquary."
+  ],
+  "groups": [
+    {
+      "object_group_id": "sacred-object-group:notre-dame-paris",
+      "display_name_en": "Crown of Thorns and Passion reliquaries, Notre-Dame de Paris",
+      "existing_place_id": "place:FR:notre-dame-paris",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:FR:crown-of-thorns-paris",
+        "relic:FR:cross-paris",
+        "relic:FR:holy-nail-paris"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://www.notredamedeparis.fr/prier/messes-et-offices-nd/veneration-de-la-couronne-depines/"
+      ],
+      "material_category": "PASSION_OBJECTS_TRADITION",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "ORDINARY_VENERATION_SCHEDULE_REQUIRES_RECHECK",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:santa-croce-rome",
+      "display_name_en": "Passion relic treasury, Santa Croce in Gerusalemme",
+      "existing_place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:IT:santa-croce-true-cross",
+        "relic:IT:santa-croce-holy-nail",
+        "relic:IT:santa-croce-titulus-crucis",
+        "relic:IT:santa-croce-crown-thorns",
+        "relic:IT:santa-croce-good-thief",
+        "relic:IT:santa-croce-holy-sepulchre",
+        "relic:IT:santa-croce-nativity-grotto"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://www.santacroceroma.it/en/features-3/reliquie.html"
+      ],
+      "material_category": "PASSION_AND_HOLY_LAND_OBJECTS",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "VERIFY_ITEM_LEVEL_ACCESS",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:argenteuil-tunic",
+      "display_name_en": "Holy Tunic of Argenteuil",
+      "existing_place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:FR:basilique-saint-denys-argenteuil"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://saintetunique.com/contact/"
+      ],
+      "material_category": "REPUTED_PASSION_GARMENT",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "EXCEPTIONAL_OSTENSIONS_NOT_CONTINUOUS",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:chartres-veil",
+      "display_name_en": "Traditional veil of the Blessed Virgin, Chartres",
+      "existing_place_id": "place:FR:chartres-notre-dame",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:FR:chartres-voile-vierge"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://www.cathedrale-chartres.org/cathedrale/monument/lieu-dexception/la-crypte/"
+      ],
+      "material_category": "REPUTED_MARIAN_GARMENT",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "TREASURY_DISPLAY_CHECK_REQUIRED",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:rome-holy-crib",
+      "display_name_en": "Sacra Culla, Santa Maria Maggiore",
+      "existing_place_id": "place:IT:santa-maria-maggiore-rome",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:IT:holy-crib-rome"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://www.basilicasantamariamaggiore.va/en/basilica/storia-e-arte/sacra-culla.html"
+      ],
+      "material_category": "HOLY_FAMILY_AND_NATIVITY_OBJECT",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "DISPLAY_UNVERIFIED",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:liebana-lignum-crucis",
+      "display_name_en": "Lignum Crucis, Santo Toribio",
+      "existing_place_id": "place:ES:santo-toribio-liebana",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:ES:lignum-crucis-liebana"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana"
+      ],
+      "material_category": "PASSION_CROSS_FRAGMENT_TRADITION",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "VISITOR_ACCESS_UNVERIFIED",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:rome-holy-stairs",
+      "display_name_en": "Scala Santa, Rome",
+      "existing_place_id": "place:IT:scala-santa-rome",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:IT:holy-stairs"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://www.scala-santa.com/info-eng/"
+      ],
+      "material_category": "HISTORIC_SACRED_SITE_OBJECT",
+      "world_map_recommendation": "PILGRIMAGE_CONTEXT_ONLY",
+      "visitor_access_status": "NOT_TO_BE_GRADED_FIRST_CLASS",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:padua-true-cross-fragment",
+      "display_name_en": "True Cross fragment at Padua",
+      "existing_place_id": "place:IT:basilica-sant-antonio-padova",
+      "proposed_new_site": null,
+      "legacy_relic_ids": [
+        "relic:IT:true-cross-padua"
+      ],
+      "research_candidate_id": null,
+      "primary_source_urls": [
+        "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor"
+      ],
+      "material_category": "DISPERSED_PASSION_FRAGMENT",
+      "world_map_recommendation": "PROFILE_ONLY_NO_SEPARATE_PIN",
+      "visitor_access_status": "ONE_PADUA_PLACE_FOR_ANTHONY_AND_FRAGMENT",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:aachen-four-cloths",
+      "display_name_en": "Aachen Cathedral four ancient sacred textiles",
+      "existing_place_id": null,
+      "proposed_new_site": "Aachener Dom",
+      "legacy_relic_ids": [],
+      "research_candidate_id": "candidate:relic:DE:aachen-four-textiles",
+      "primary_source_urls": [
+        "https://www.aachenerdom.de/en/the-aachen-pilgrimage/"
+      ],
+      "material_category": "FOUR_ATTRIBUTED_CLOTH_OBJECTS",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "SEPTENNIAL_EXPOSITION_NOT_PERMANENT_DISPLAY",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:turin-shroud",
+      "display_name_en": "Shroud of Turin",
+      "existing_place_id": null,
+      "proposed_new_site": "Duomo di Torino",
+      "legacy_relic_ids": [],
+      "research_candidate_id": "candidate:relic:IT:turin-holy-shroud",
+      "primary_source_urls": [
+        "https://sindone.org/en/home-english/"
+      ],
+      "material_category": "ATTRIBUTED_PASSION_BURIAL_CLOTH",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "KEPT_IN_CATHEDRAL_NOT_ROUTINELY_EXPOSED",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:trier-holy-robe",
+      "display_name_en": "Holy Robe of Trier",
+      "existing_place_id": null,
+      "proposed_new_site": "Trierer Dom",
+      "legacy_relic_ids": [],
+      "research_candidate_id": "candidate:relic:DE:trier-holy-robe",
+      "primary_source_urls": [
+        "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html"
+      ],
+      "material_category": "REPUTED_PASSION_GARMENT",
+      "world_map_recommendation": "WORLD_ANCHOR",
+      "visitor_access_status": "EXCEPTIONAL_OSTENSIONS_NOT_CONTINUOUS",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:cahors-sainte-coiffe",
+      "display_name_en": "Sainte Coiffe of Cahors",
+      "existing_place_id": null,
+      "proposed_new_site": "Cathédrale Saint-Étienne de Cahors",
+      "legacy_relic_ids": [],
+      "research_candidate_id": "candidate:relic:FR:cahors-sainte-coiffe",
+      "primary_source_urls": [
+        "https://saintecoiffedecahors.com/"
+      ],
+      "material_category": "REPUTED_PASSION_BURIAL_CLOTH",
+      "world_map_recommendation": "REGIONAL_ANCHOR",
+      "visitor_access_status": "SPECIAL_OSTENSIONS_NOT_INFERRED_AS_REGULAR",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:oviedo-sudarium",
+      "display_name_en": "Sudarium of Oviedo",
+      "existing_place_id": null,
+      "proposed_new_site": "Catedral de San Salvador de Oviedo",
+      "legacy_relic_ids": [],
+      "research_candidate_id": "candidate:relic:ES:oviedo-camara-santa",
+      "primary_source_urls": [
+        "https://www.turismoasturias.es/en/descubre/cultura/prerromanico/camara-santa"
+      ],
+      "material_category": "REPUTED_PASSION_BURIAL_CLOTH",
+      "world_map_recommendation": "REGIONAL_ANCHOR",
+      "visitor_access_status": "SPECIAL_EXPOSITION_ONLY",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:fecamp-blood",
+      "display_name_en": "Holy Blood tradition, Fécamp",
+      "existing_place_id": null,
+      "proposed_new_site": "Abbatiale de la Sainte-Trinité de Fécamp",
+      "legacy_relic_ids": [],
+      "research_candidate_id": "candidate:relic:FR:fecamp-precious-blood",
+      "primary_source_urls": [
+        "https://en.fecamptourisme.com/experiences/our-must-haves/the-abbey-of-the-holy-trinity/"
+      ],
+      "material_category": "REPUTED_PASSION_BLOOD_TRADITION",
+      "world_map_recommendation": "SOURCE_AND_OBJECT_HOLD",
+      "visitor_access_status": "LOCAL_TOURISM_SOURCE_NOT_SUFFICIENT_FOR_CERTIFIED_CONTENT",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    },
+    {
+      "object_group_id": "sacred-object-group:manoppello-face",
+      "display_name_en": "Holy Face, Manoppello",
+      "existing_place_id": null,
+      "proposed_new_site": "Santuario del Volto Santo di Manoppello",
+      "legacy_relic_ids": [],
+      "research_candidate_id": "candidate:relic:IT:manoppello-holy-face",
+      "primary_source_urls": [
+        "https://www.padrepio.org/visit/holy-face-manoppello/"
+      ],
+      "material_category": "REPUTED_FACE_CLOTH",
+      "world_map_recommendation": "SOURCE_AND_OBJECT_HOLD",
+      "visitor_access_status": "DIRECT_CUSTODIAN_SOURCE_REQUIRED",
+      "historical_attribution": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "canonical_relic_class": "EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD",
+      "objects_are_grouped_under_one_site": true,
+      "current_map_change": false
+    }
+  ]
+}
