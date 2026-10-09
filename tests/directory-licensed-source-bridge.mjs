@@ -77,4 +77,22 @@ assert.equal(dataset.records[0].venue.geo?.lat,null);
 const empty=await loadDirectoryDataset({providers:[],researchProviders:[],fetchImpl:async()=>({ok:false,status:404})});
 assert.equal(empty.records.length,0);
 assert.equal(empty.complete,true);
+const unauthorizedLoad=await loadDirectoryDataset({
+ providers:[],researchProviders:[],
+ fetchImpl:async input=>String(input).includes("/licensed/approved-mass.v1.json")
+  ?{ok:true,json:async()=>({...feed,permission:{...grant,status:"PENDING"}})}
+  :{ok:false,status:404},
+});
+assert.equal(unauthorizedLoad.records.length,0,"A disabled or invalid license must not render any user-facing locations");
+const largeItems=Array.from({length:260},(_,i)=>({...projected[0],item_id:"tlm:synthetic-"+i}));
+const preview=renderExploreToString(buildExploreViewModel({items:largeItems,lens:"tlm",language:"en"}));
+assert.equal((preview.match(/data-explore-item="/g)||[]).length,120,"Large dataset must not create 260 DOM cards");
+assert.match(preview,/data-find-show-more/);
+assert.match(preview,/120 \/ 260/);
+const more=renderExploreToString(buildExploreViewModel({items:largeItems,lens:"tlm",language:"en",displayLimit:240}));
+assert.equal((more.match(/data-explore-item="/g)||[]).length,240);
+assert.match(more,/240 \/ 260/);
+const complete=renderExploreToString(buildExploreViewModel({items:largeItems,lens:"tlm",language:"en",displayLimit:360}));
+assert.equal((complete.match(/data-explore-item="/g)||[]).length,260);
+assert.doesNotMatch(complete,/data-find-show-more/);
 console.log("Licensed source bridge: PASS — no grant no publication, no false Mass times or map pins, two-language link");
