@@ -75,8 +75,8 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
             for (const language of ['la', 'en', 'fr'])
                 sources[language] = await resolver.resolveSource(commemoration.path, language, diagnostic);
             const collect = (0, proper_resolver_1.numbered)(sources, 'Oratio', true)[0];
-            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta')[0];
-            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio')[0];
+            const secret = (0, proper_resolver_1.numbered)(sources, 'Secreta', true)[0];
+            const postcommunion = (0, proper_resolver_1.numbered)(sources, 'Postcommunio', true)[0];
             if (collect)
                 proper.collects.push(collect);
             if (secret)
@@ -160,7 +160,7 @@ class DayResolver {
                 rank: (0, calendar_engine_1.classLabel)(day.main.rank || 4),
                 color: day.main.color || 'White',
                 profile: 'ordinary_mass',
-                gloria: inherited ? false : rules.gloria,
+                gloria: rogationFeria ? true : (inherited ? false : rules.gloria),
                 credo: inherited ? false : rules.credo,
                 preface: inherited ? seasonalPreface(day) : (rules.preface || 'Communis'),
                 inherited,
@@ -542,7 +542,7 @@ function completePrivilegedCommemorations(day, source) {
     // Sunday is a privileged commemoration beneath an I-class feast of
     // Our Lady or a saint; do not add it beneath a feast of Our Lord.
     if(day.date.getDay()===0&&main.rank===1&&main.flexibility==='sancti'&&
-       temporal?.rank===2&&!source.jesusFeasts.has?.(main.id)&&
+       temporal?.rank<=2&&!source.jesusFeasts.has?.(main.id)&&
        !source.jesusFeasts.includes?.(main.id)){
         add(temporal);
     }
@@ -2102,10 +2102,10 @@ function normalizeProper(meta, sources, preface, diagnostic) {
         sequence: textFrom(sources, "Sequentia"),
         gospel: textFrom(sources, "Evangelium"),
         offertory: textFrom(sources, "Offertorium"),
-        secrets: numbered(sources, "Secreta"),
+        secrets: numbered(sources, "Secreta", true),
         preface,
         communion: textFrom(sources, "Communio"),
-        postcommunions: numbered(sources, "Postcommunio"),
+        postcommunions: numbered(sources, "Postcommunio", true),
         preparatoryLessons,
         specialSections,
         showGloria: meta.gloria,
