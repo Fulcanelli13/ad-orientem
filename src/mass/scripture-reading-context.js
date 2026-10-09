@@ -1,5 +1,6 @@
 import {parseScriptureContext} from "../scripture/context.js";
 import {VERIFIED_MASS_SCRIPTURE_READINGS} from "./scripture-reading-witness-index.js";
+import {VERIFIED_MASS_FEAST_READINGS} from "./scripture-feast-reading-index.js";
 
 /**
  * Fail-closed link from the selected canonical 1962 reading to supplemental
@@ -39,7 +40,12 @@ function candidateReferences(proper,slot){
   }
   return candidates;
 }
-const WITNESS_BY_PATH=new Map(VERIFIED_MASS_SCRIPTURE_READINGS.map(item=>[item.sourcePath,item]));
+const ALL_MASS_SCRIPTURE_WITNESSES=Object.freeze([
+ ...VERIFIED_MASS_SCRIPTURE_READINGS,...VERIFIED_MASS_FEAST_READINGS
+]);
+const WITNESS_BY_PATH=new Map(ALL_MASS_SCRIPTURE_WITNESSES.map(item=>[item.sourcePath,item]));
+if(WITNESS_BY_PATH.size!==ALL_MASS_SCRIPTURE_WITNESSES.length)
+ throw new Error("Duplicate 1962 Mass Proper Scripture source identity");
 function normalizeWitnessLatin(value){
  return String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
    .replaceAll("æ","ae").replaceAll("Æ","ae").replaceAll("œ","oe")
