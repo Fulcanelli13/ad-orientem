@@ -205,4 +205,76 @@ for(const cueId of ["AO.SM.C0235","AO.SM.C0236","AO.SM.C0237","AO.SM.C0240"]){
     cueId+": locally enabled second Confiteor has no exact-source gesture anchor");
 }
 
+// R18 Low and Solemn must not inherit one another's channels. The Low
+// gesture registry is a historical witness, not an instruction to present
+// every customary practice under ESSENTIAL or GUIDED profiles.
+import { createReaderFormCueStateController } from "../src/mass/reader-form-state.js";
+const r18=load("../data/presentation/reader-form-state.v1.json");
+const lowCorpus=load("../data/presentation/reader-text-low.v1.json");
+const frenchOrdinary=load("../data/presentation/reader-french-ordinary.v1.json");
+const makeForm=(form,gestureProfile="GUIDED_1962",provenance={})=>({
+  session:{resolvedMass:{form,provenance:{conditions:[],...provenance}}},
+  readerPreferences:{mode:"LIVE",postureProfile:"OCONNELL_1962_COMMUNITY",gestureProfile}
+});
+const formController=(form,profile,provenance)=>createReaderFormCueStateController({
+  formStateData:r18,registries,lowCorpus,sungCorpus:sung,frenchOrdinary,
+  prepared:makeForm(form,profile,provenance),gestureMatrix
+});
+const lowEssential=formController("LOW","ESSENTIAL");
+const lowGuided=formController("LOW","GUIDED_1962");
+const lowTraditional=formController("LOW","TRADITIONAL");
+assert.equal(lowEssential.supported,true);
+assert.equal(lowEssential.form,"LOW");
+assert.equal(lowEssential.project("AO.SM.C0056").gesture,null,
+  "ESSENTIAL Low Mass inherited the customary Gloria head bow");
+assert.equal(lowGuided.project("AO.SM.C0056").gesture,null,
+  "GUIDED Low Mass imposed a customary bow as universal");
+assert.equal(lowTraditional.project("AO.SM.C0056").gesture?.anchorEn,"We adore thee",
+  "traditional Low Mass did not receive verified English gesture wording");
+assert.equal(lowTraditional.project("AO.SM.C0056").gesture?.anchorFr,"Nous vous adorons",
+  "Low Mass French cue is not anchored to the original witness");
+assert.equal(lowGuided.project("AO.SM.C0084").gesture?.type,"GOSPEL_CROSSES",
+  "GUIDED_1962 lost the explicitly sourced Low Gospel small-crosses");
+assert.equal(lowEssential.project("AO.SM.C0084").gesture,null,
+  "ESSENTIAL profile leaked discretionary 1962-era Low ceremonial guidance");
+assert.equal(lowTraditional.project("AO.SM.C0246").gesture,null,
+  "private/quiet Communion formula incorrectly prompted a public Holy Name bow");
+for(const cueId of ["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"]){
+  assert.equal(lowTraditional.project(cueId).gesture?.label,"Strike breast once",
+    cueId+": Low Agnus Dei triggered three strikes instead of one of three");
+  assert.equal(lowGuided.project(cueId).gesture,null,
+    cueId+": optional Low Agnus breast-striking leaked outside Traditional profile");
+}
+for(const cueId of ["AO.SM.C0243","AO.SM.C0244","AO.SM.C0245"]){
+  assert.equal(lowTraditional.project(cueId).gesture,null,
+    cueId+": Communion-only customary strike triggered with no faithful communicator");
+  assert.equal(formController("LOW","TRADITIONAL",{faithfulCommunicantsPresent:true}).project(cueId).gesture?.type,
+    "BREAST_STRIKE",cueId+": explicit faithful Communion did not enable the conditional source cue");
+  assert.equal(formController("LOW","TRADITIONAL",{faithfulCommunicantsPresent:false,conditions:["FAITHFUL_COMMUNION"]}).project(cueId).gesture,
+    null,cueId+": authoritative no-communicants flag failed to suppress stale condition");
+}
+assert.equal(lowTraditional.project("AO.SM.C0196").gesture,null,
+  "Nobis quoque lay custom became universal in Low Mass");
+assert.equal(lowTraditional.project("AO.SM.C0196",{conditions:["LAY_CUSTOM_NOBIS_BREAST_STRIKE"]}).gesture?.label,"Strike breast",
+  "explicitly enabled Nobis lay custom did not activate in Low Mass");
+assert.equal(lowTraditional.project("AO.SM.C0239").sacredMinister,null,
+  "Low Mass invented a sacred-minister channel");
+
+const solemnForm=formController("SOLEMN","GUIDED_1962");
+assert.equal(solemnForm.supported,true);
+assert.equal(solemnForm.project("AO.SM.C0075").sacredMinister?.actor,"SUBDEACON",
+  "Solemn Epistle lost its subdeacon");
+assert.equal(solemnForm.project("AO.SM.C0075").priestVoice?.value,"LISTENS",
+  "Solemn celebrant was incorrectly made to chant the subdeacon's Epistle");
+assert.equal(solemnForm.project("AO.SM.C0225").sacredMinister?.owner,"R18_SOLEMN_PAX_PRIMARY_SOURCE",
+  "Solemn Pax reverted to an unsourced lay or priest action");
+assert.equal(solemnForm.project("AO.SM.C0270").response,null,
+  "Solemn deacon's Gospel response duplicated as the congregation response");
+assert.equal(solemnForm.project("AO.SM.C0270").ownership.response,"R18_SOLEMN_MINISTER_RESPONSE");
+assert.equal(solemnForm.project("AO.SM.C9999").reason,"UNKNOWN_OR_SYNTHETIC_CUE");
+assert.equal(solemnForm.project("AO.SM.C9999").sacredMinister,null,
+  "unknown Solemn cue acquired minister or celebrant state");
+assert.equal(ctrl.project("AO.SM.C0075").sacredMinister,undefined,
+  "ordinary Sung controller gained Solemn minister activity");
+
 console.log("reader cue state: PASS — exact source cues, v1.80 priest actions, conditional fail-closed, persistent route/voice/posture transitions.");
