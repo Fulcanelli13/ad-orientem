@@ -33,7 +33,9 @@ for(const id of ["foundations_act_of_faith","foundations_act_of_love","sacrament
  assert.ok(n.notice.en.length>100 && n.notice.fr.length>100);
 }
 assert.match(PRAY_COLLATION_NOTICES_V1.sacrament_act_of_contrition.notice.fr,/Amen/);
-assert.match(PRAY_COLLATION_NOTICES_V1.foundations_grace_after_meals.notice.en,/primary historical source prints/);
+assert.match(PRAY_COLLATION_NOTICES_V1.foundations_grace_after_meals.notice.en,/Blessed Sacrament Book prints benefits/);
+assert.match(PRAY_COLLATION_NOTICES_V1.foundations_grace_after_meals.notice.en,/Baltimore Manual uses mercies/);
+assert.match(PRAY_COLLATION_NOTICES_V1.foundations_grace_after_meals.notice.en,/shortened composite/);
 assert.equal(PRAY_COLLATION_NOTICES_V1.foundations_act_of_hope,undefined,"French printed hope anomaly uses one existing disclosure");
 const prayerRuntime=readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.match(prayerRuntime,/const collation=prayCollationNotice\(p\.id\)/);
