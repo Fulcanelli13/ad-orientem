@@ -5,6 +5,8 @@ import {
   buildLiturgicalYear,
   buildMajorCelebrations,
   nextMajorCelebration,
+  annunciationObservanceDate,
+  allSoulsObservanceDate,
 } from "../src/calendar/liturgical-year.js";
 import { v384Dates, v384Events, v384Event } from "../src/calendar/traditional-year-v384.js";
 import { SEASON_GUIDE, yearSegmentGeometry, renderYearJourney } from "../src/calendar/year-journey.js";
@@ -84,6 +86,25 @@ assert.equal(byEnglishName.get("Christ the King")?.date, "2026-10-25");
 assert.equal(byEnglishName.get("All Saints")?.date, "2026-11-01");
 assert.equal(byEnglishName.get("Commemoration of All the Faithful Departed")?.date, "2026-11-02");
 
+// 1960 General Rubrics §§95–99; independently cross-checked against the
+// Roman Missal 1962 calendar for 2024, 2025 and 2027.
+assert.equal(annunciationObservanceDate(2027),"2027-04-05","Holy Thursday 2027 must not show the Annunciation");
+assert.equal(annunciationObservanceDate(2024),"2024-04-08","Holy Week 2024 must transfer the Annunciation");
+assert.equal(annunciationObservanceDate(2026),"2026-03-25","Ordinary Passion-week 2026 occurrence remains March 25");
+assert.equal(allSoulsObservanceDate(2025),"2025-11-03","All Souls on Sunday transfers to Monday under 1962 rubrics");
+assert.equal(allSoulsObservanceDate(2026),"2026-11-02");
+const anniversary2027=buildMajorCelebrations("2027-03-25").filter(x=>/Annunciation/.test(x.en));
+assert.deepEqual(anniversary2027.map(x=>x.date),["2027-04-05"]);
+assert.equal(anniversary2027[0].transferredFrom,"2027-03-25");
+assert.equal(buildMajorCelebrations("2027-03-25").some(x=>x.en==="Holy Thursday"&&x.date==="2027-03-25"),true);
+assert.equal(nextMajorCelebration("2027-04-04")?.date,"2027-04-05");
+assert.equal(nextMajorCelebration("2027-04-04")?.en,"Annunciation of the Blessed Virgin Mary");
+const allSouls2025=buildMajorCelebrations("2025-11-02").filter(x=>/Faithful Departed/.test(x.en));
+assert.deepEqual(allSouls2025.map(x=>x.date),["2025-11-03"]);
+assert.equal(allSouls2025[0].transferredFrom,"2025-11-02");
+const conception2024=buildMajorCelebrations("2024-12-08").find(x=>/Immaculate Conception/.test(x.en));
+assert.equal(conception2024?.date,"2024-12-08","Do not import the 2024 Ordinary Form December 9 transfer into the 1962 calendar");
+
 const traditional=v384Dates(2026);
 assert.equal(traditional.easter,"2026-04-05");
 assert.equal(traditional.septuagesima,"2026-02-01");
@@ -139,6 +160,10 @@ assert.match(browser, /renderYearJourney\(\{year:y/, "Liturgical Year lost the p
 assert.match(browser, /yearJourneyCss/, "Liturgical Year did not import responsive journey styles");
 assert.match(browser, /aoCalV2Coming/, "Liturgical Year lost its next major celebration and season transitions");
 assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
+assert.ok(browser.includes('data-cal-year-open-day="${next.date}"'),"Next feast must open Day through existing Year-Journey handler");
+assert.ok(browser.includes('data-cal-year-open-day="${nextSeason.start}"'),"Next season must open Day through Year-Journey handler");
+assert.ok(!browser.includes('data-cal-month-index-date="${x.date}" ${view==="sanctorale"'),"Sanctorale rows cannot intercept Day selection with saint-detail handler");
+assert.ok(browser.includes('if(openMonth&&calendarView!=="picker")pickerMonthId='),"Year-to-Month route must reset stale month");
 assert.match(browser,/data-cal-year-open-day/,"Period to Day journey navigation is missing");
 assert.match(browser,/data-cal-year-month/,"Period to Month journey navigation is missing");
 assert.match(browser,/data-cal-year-period/,"Expandable period card navigation is missing");
