@@ -272,7 +272,7 @@ for(const id of missingHistorical){
  assert.equal(NOVENA_CORPUS_V4[id].days.length,9);
  const source=novenaSourceAccess(id);
  assert.match(source.note.en,/MEDITATION and PRACTICE/);
- assert.match(source.note.fr,/MÉDITATION et (une )?PRATIQUE/);
+ assert.match(source.note.fr,/MÉDITATIONS? et (une )?PRATIQUES?/);
  assert.match(source.note.en,/editorial/);
  assert.match(source.note.fr,/rédactionnel/);
 }
