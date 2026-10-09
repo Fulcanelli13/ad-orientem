@@ -34,7 +34,7 @@ try{
  assert.equal(await dialog.getAttribute("role"),"dialog");
  assert.equal(await dialog.getAttribute("aria-modal"),"true");
  assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-scripture-close")),true);
- assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),2);
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),3);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(2).locator("option").count(),73);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.match(await dialog.locator(".aoScriptureText").innerText(),/not available offline/i);
@@ -43,6 +43,13 @@ try{
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("ncb-2019");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"copyrighted NCB text displayed without permission");
+ await dialog.getByRole("button",{name:"Read at source"}).click();
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=NCB/);
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.reader?.editionId),"ncb-2019");
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
  const mark=dialog.getByRole("button",{name:"Bookmark",exact:true});
  await mark.click();
  assert.equal(await dialog.getByRole("button",{name:"Bookmarked"}).getAttribute("aria-pressed"),"true");
