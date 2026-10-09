@@ -122,7 +122,7 @@ export function rosaryScripturePassage(id){
     // Verbatim wording lives in these Catholic editions, never in the
     // editorial summaries, which are expressly NOT Scripture quotations.
     href:"https://www.biblegateway.com/passage/?search="+encodeURIComponent(item.reference)+"&version=DRA",
-    hrefFr:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/"+encodeURIComponent(context.bookFr)
+    hrefFr:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/"+encodeURIComponent(context.bookFr)+"#"+item.reference.split(" ").pop().split(":")[0]
   });
 }
 
