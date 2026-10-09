@@ -142,6 +142,37 @@ try{
     assert.equal(x.actual,x.cycle, x.date+" "+x.reason+": "+JSON.stringify(x));
     assert.equal(x.alias,x.cycle, x.date+" "+x.reason+" changes classification when translated");
   }
+  // Independent 2024/2027 source identity acceptance: the five historic
+  // wrong/missing Calendar display names must be exposed from REAL resolver
+  // records, not date-based hardcoding or synthetic testing fixtures.
+  const disputedLabelCases=[
+    {date:"2024-05-18",id:"tempora:Pasc6-6:1:r",en:"Vigil of Pentecost",fr:"Vigile de la Pentecôte"},
+    {date:"2027-05-15",id:"tempora:Pasc6-6:1:r",en:"Vigil of Pentecost",fr:"Vigile de la Pentecôte"},
+    {date:"2024-12-02",id:"sancti:12-02:3:r",en:"St Bibiana, Virgin and Martyr",fr:"Sainte Bibiane, vierge et martyre"},
+    {date:"2027-12-02",id:"sancti:12-02:3:r",en:"St Bibiana, Virgin and Martyr",fr:"Sainte Bibiane, vierge et martyre"},
+    {date:"2027-06-30",id:"sancti:06-30:3:r",en:"Commemoration of St Paul, Apostle",fr:"Commémoraison de saint Paul, apôtre"}
+  ];
+  const observedLabels=await page.evaluate(async cases=>{
+    const {calendarObservanceAlias}=await import("/src/calendar/observance-title.js");
+    const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+    return Promise.all(cases.map(async entry=>{
+      try{
+        const resolution=await resolver.resolveDay(entry.date);
+        return {date:entry.date,id:resolution?.day?.main?.id||null,
+          failed:resolution?.status==="failed"||!resolution?.day?.main,
+          en:calendarObservanceAlias(resolution,"en"),
+          fr:calendarObservanceAlias(resolution,"fr")};
+      }catch(error){return {date:entry.date,failed:true,error:String(error)};}
+    }));
+  },disputedLabelCases);
+  for(const expected of disputedLabelCases){
+    const actual=observedLabels.find(x=>x.date===expected.date);
+    assert.ok(actual&&!actual.failed,"Archived Calendar title regression did not resolve: "+JSON.stringify(actual||expected));
+    assert.equal(actual.id,expected.id,expected.date+" principal source identity drift");
+    assert.equal(actual.en,expected.en,expected.date+" English display alias drift");
+    assert.equal(actual.fr,expected.fr,expected.date+" French display alias drift");
+  }
+
   const checks=[];
   for(const check of fixture.checks){
     const row=rows.find(x=>x.date===check.date);
