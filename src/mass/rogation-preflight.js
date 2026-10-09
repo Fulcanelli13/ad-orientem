@@ -87,12 +87,24 @@ export function projectRogationPreflight({
   return Object.freeze({visible:true,available,choice,selection});
 }
 
-export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis.fetch}={}){
+export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis.fetch,language=()=> "en"}={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")throw new TypeError("Rogation DOM and resolver required");
   let choice="DAY_MASS",service=null,library=null,loading=false,disposed=false,root=null,lastDate=null;
-  const container=doc.getElementById("ao-mass-flow-v1");
-  if(!container)return Object.freeze({selectionFor:()=>null,refresh:()=>{},dispose:()=>{}});
-  const mount=()=>container.querySelector(".aoFlowActions")??container.querySelector("[data-ao-start-live]")?.parentElement;
+  const container=()=>doc.getElementById("ao-mass-flow-v1");
+  const mount=()=>container()?.querySelector(".aoFlowActions")??container()?.querySelector("[data-ao-start-live]")?.parentElement;
+  const labels=()=>String(language()).startsWith("fr")?{
+    summary:"Observance des Rogations",service:"Office public",none:"Sans litanies publiques",
+    procession:"Procession publique",supplications:"Supplications publiques autorisées",
+    mass:"Messe",day:"Messe du jour",proper:"Messe des Rogations · Exaudivit",
+    ready:"La messe des Rogations exige des litanies publiques expressément choisies.",
+    blocked:"Le propre des Rogations n'est pas encore certifié ; la messe du jour reste possible après les litanies publiques."
+  }:{
+    summary:"Rogation observance",service:"Public rite",none:"No public litanies",
+    procession:"Public procession",supplications:"Authorized public supplications",
+    mass:"Mass",day:"Mass of the day",proper:"Rogation Mass · Exaudivit",
+    ready:"The Rogation Mass requires explicitly selected public litanies.",
+    blocked:"The Rogation Proper is not yet certified; the Mass of the day remains available after public litanies."
+  };
   function refresh(){
     if(disposed)return;
     let legacy=null;try{legacy=getResolvedMass()}catch{return}
@@ -100,6 +112,7 @@ export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis
     if(!candidate.eligible){root?.remove();root=null;choice="DAY_MASS";service=null;lastDate=null;return}
     if(lastDate!==candidate.date){choice="DAY_MASS";service=null;lastDate=candidate.date;}
     const anchor=mount();if(!anchor)return;
+    if(root&&!root.isConnected)root=null;
     if(!root){
       root=doc.createElement("details");
       root.className="aoRogationPreflight";
@@ -120,11 +133,20 @@ export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis
     const dedicated=root.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]');
     dedicated.disabled=!enabled;
     if(!enabled&&choice==="ROGATION_MASS")choice="DAY_MASS";
+    const l=labels();
+    root.querySelector("summary").textContent=l.summary;
+    const services=root.querySelector("[data-rogation-service]");
+    services.closest("label").firstChild.textContent=l.service+" ";
+    services.options[0].textContent=l.none;
+    services.options[1].textContent=l.procession;
+    services.options[2].textContent=l.supplications;
+    const masses=root.querySelector("[data-rogation-choice]");
+    masses.closest("label").firstChild.textContent=l.mass+" ";
+    masses.options[0].textContent=l.day;
+    masses.options[1].textContent=l.proper;
     root.querySelector("[data-rogation-service]").value=service??"";
     root.querySelector("[data-rogation-choice]").value=choice;
-    root.querySelector("[data-rogation-status]").textContent=enabled?
-      "A processional Mass requires explicit public litanies; the Mass of the day remains available.":
-      "The distinct processional Proper is not yet certified; the Mass of the day remains available after public litanies.";
+    root.querySelector("[data-rogation-status]").textContent=enabled?l.ready:l.blocked;
     if(!loading&&!library){
       loading=true;
       void loadRogationPreflightLibrary({fetchImpl}).then(value=>{library=value;refresh()}).catch(()=>{
@@ -139,5 +161,14 @@ export function mountRogationPreflight({doc,getResolvedMass,fetchImpl=globalThis
     return snapshot.selection;
   }
   refresh();
-  return Object.freeze({refresh,selectionFor,dispose(){disposed=true;root?.remove();root=null}});
+  const observer=typeof doc.defaultView?.MutationObserver==="function"?
+    new doc.defaultView.MutationObserver(records=>{
+      if(records.some(record=>[...record.addedNodes].some(node=>
+        node.nodeType===1 && (node.id==="ao-mass-flow-v1" ||
+          node.querySelector?.("#ao-mass-flow-v1")))))refresh();
+    }):null;
+  observer?.observe(doc.body,{childList:true,subtree:true});
+  return Object.freeze({refresh,selectionFor,dispose(){
+    disposed=true;observer?.disconnect();root?.remove();root=null;
+  }});
 }
