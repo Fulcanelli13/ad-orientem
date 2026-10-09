@@ -34,6 +34,10 @@ on:
       - 'tests/formation-primary-context-review-4.mjs'
       - 'data/learn/formation-primary-context-review-5-2026-10-09.v1.json'
       - 'tests/formation-primary-context-review-5.mjs'
+      - 'tests/formation-primary-context-review-6.mjs'
+      - 'data/learn/formation-primary-context-review-6-2026-10-09.v1.json'
+      - 'tests/formation-141-claim-scope-matrix.mjs'
+      - 'data/learn/formation-141-claim-scope-matrix-2026-10-09.v1.json'
       - 'tests/formation-canonical-sourcefirst-batch5.mjs'
       - 'tests/formation-canonical-sourcefirst-batch4.mjs'
       - 'tests/formation-canonical-synthesis-batch3.mjs'
@@ -111,6 +115,10 @@ jobs:
         run: node tests/formation-primary-context-review-4.mjs
       - name: Check thirteen additional original-opponent-context dossiers and all release holds
         run: node tests/formation-primary-context-review-5.mjs
+      - name: Check 26 additional apologetics original-opponent passages and all release holds
+        run: node tests/formation-primary-context-review-6.mjs
+      - name: Reconcile all 141 Formation owners and 564 claim sections against six reviewer ledgers
+        run: node tests/formation-141-claim-scope-matrix.mjs
   qa-reader:
     runs-on: ubuntu-latest
     steps:
@@ -174,6 +182,10 @@ jobs:
         run: node tests/formation-primary-context-review-4.mjs
       - name: Validate all remaining thirteen research-linked Crisis dossiers and fifth source review
         run: node tests/formation-primary-context-review-5.mjs
+      - name: Validate direct opponent arguments in 19 Apologetics dossiers against original texts
+        run: node tests/formation-primary-context-review-6.mjs
+      - name: Assert all 141 dossiers and 564 claim sections have accurate source-review scope accounting
+        run: node tests/formation-141-claim-scope-matrix.mjs
       - name: Bulk-validate all 21 unresolved controversy source maps
         run: node tests/contemporary-controversies-21-source-scaffold.mjs
       - name: Verify all 123 source-claim audit gates without claiming certification
