@@ -1906,7 +1906,10 @@ export function createReaderDomAdapter({
         }
       }
     }
-    ensureShortCardCueTravel();
+    // Recalculate scroll travel only when the paragraph card is replaced;
+    // doing so during a cue-only state update would briefly clamp scrollTop
+    // and prevent short cards from ever reaching their next invocation.
+    if(current.cardUpdate)ensureShortCardCueTravel();
     syncReaderRitualHighlights(root,current.gesture);
     return current;
   }
