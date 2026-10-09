@@ -48,6 +48,9 @@ for(const [id,ctx] of Object.entries(ROSARY_MYSTERY_CONTEXT_V1)){
    id+" has no French Catholic edition link");
  assert.ok(passage.href.includes("version=DRA"),id+" English link not Douay–Rheims");
 }
+assert.match(rosaryScripturePassage("glo4").doctrinalHref,/munificentissimus-deus\.html$/);
+assert.match(rosaryScripturePassage("glo5").doctrinalHref,/ad-caeli-reginam\.html$/);
+assert.equal(rosaryScripturePassage("joy1").doctrinalHref,null);
 assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo4.kind,"related_scripture_for_doctrinal_mystery");
 assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo5.kind,"traditional_marian_typology");
 assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo4.summary.en,/assumed body and soul into heavenly glory/);
