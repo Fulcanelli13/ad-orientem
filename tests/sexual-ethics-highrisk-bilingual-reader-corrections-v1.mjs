@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CSE_DEBATE_MAP,CSE_DEBATE_FIELDS} from "../src/learn/sexual-ethics-data/debates.js";
-import {CSE_QUESTION_MAP} from "../src/learn/sexual-ethics-data/questions.js";
+import {CSE_QUESTION_MAP} from "../src/learn/sexual-ethics-data/index.js";
 import {CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/sources.js";
 import {paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
 const ledger=JSON.parse(readFileSync("data/learn/sexual-ethics-highrisk-bilingual-reader-corrections-20261009.v1.json","utf8"));
