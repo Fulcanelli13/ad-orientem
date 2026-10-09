@@ -287,12 +287,8 @@ function makeObservance(raw, date, source) {
         throw new Error(`Bad observance ID: ${raw}`);
     let [flexibility, name, rankString, colorCode] = parts;
     let rank = Number(rankString);
-    // 1960 General Rubrics nn. 24–25: ordinary Advent ferias are
-    // III class even when they fall in late November. Dec 17–23 are
-    // II class; keep those distinct from ordinary Advent weekdays.
-    if (flexibility === 'tempora' && /^Adv\d-[1-6]$/.test(name) &&
-        (date.getMonth() === 10 || date.getMonth() === 11))
-        rank = date.getMonth() === 11 && date.getDate() >= 17 && date.getDate() <= 23 ? 2 : 3;
+    if (flexibility === 'tempora' && /^Adv\d-[1-6]$/.test(name) && date.getMonth() === 11 && date.getDate() >= 17 && date.getDate() <= 23)
+        rank = 2;
     const id = [flexibility, name, rank, colorCode].join(':');
     return {
         rawId: raw,
@@ -443,7 +439,7 @@ function applyRules(calendar, source, date, shifted) {
     // 1960 General Rubrics nn. 25, 108, 111: a III-class Advent feria
     // yields to a I/II-class sanctoral feast but remains a privileged
     // commemoration (Collect, Secret and Postcommunion).
-    if (!isSun && date.getMonth() === 11 && date.getDate() <= 16) {
+    if (!isSun && (date.getMonth() === 10 || (date.getMonth() === 11 && date.getDate() <= 16))) {
         const advent = matchFirst(obs, PAT.PATTERN_ADVENT);
         const saint = matchFirst(obs, PAT.PATTERN_SANCTI_CLASS_1_OR_2);
         if (advent && advent.rank === 3 && saint && saint.rank < advent.rank)
