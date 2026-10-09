@@ -19,7 +19,10 @@ const PACKS = Object.freeze([
   ["Canonical syntheses II","formation-canonical-synthesis-batch2-2026-10-09.v1.json"],
   ["Canonical syntheses III","formation-canonical-synthesis-batch3-2026-10-09.v1.json"],
   ["Canonical source-first IV","formation-canonical-sourcefirst-batch4-2026-10-09.v1.json"],
-  ["Canonical source-first V","formation-canonical-sourcefirst-batch5-2026-10-09.v1.json"]
+  ["Canonical source-first V","formation-canonical-sourcefirst-batch5-2026-10-09.v1.json"],
+  ["Church Crisis source-first VI","formation-crisis-sourcefirst-batch6-2026-10-09.v1.json"],
+  ["Church Crisis source-first VII","formation-crisis-sourcefirst-batch7-2026-10-09.v1.json"],
+  ["Church Crisis source-first VIII","formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -141,7 +144,10 @@ export function buildRecoveryDossierCoverage(rows,packs) {
     ["Canonical syntheses II","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH2_V1",20],
     ["Canonical syntheses III","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH3_V1",23],
     ["Canonical source-first IV","FORMATION_CANONICAL_SOURCE_FIRST_UNLINKED_BATCH4_V1",20],
-    ["Canonical source-first V","FORMATION_CANONICAL_SOURCE_FIRST_UNLINKED_BATCH5_V1",26]
+    ["Canonical source-first V","FORMATION_CANONICAL_SOURCE_FIRST_UNLINKED_BATCH5_V1",26],
+    ["Church Crisis source-first VI","FORMATION_CRISIS_SOURCEFIRST_BATCH6_20261009_V1",22],
+    ["Church Crisis source-first VII","FORMATION_CRISIS_SOURCEFIRST_BATCH7_20261009_V1",10],
+    ["Church Crisis source-first VIII","FORMATION_CRISIS_SOURCEFIRST_BATCH8_20261009_V1",10]
   ];
   const synthMap=new Map();
   for(const [label,version,count] of synthPacks){
@@ -385,7 +391,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
       state.synthesisSources=new Map();
-      for(const label of ["Canonical syntheses","Canonical syntheses II","Canonical syntheses III","Canonical source-first IV","Canonical source-first V"]){
+      for(const label of ["Canonical syntheses","Canonical syntheses II","Canonical syntheses III","Canonical source-first IV","Canonical source-first V","Church Crisis source-first VI","Church Crisis source-first VII","Church Crisis source-first VIII"]){
         const doc=docs.find(x=>x.label===label)?.doc;
         for(const s of doc?.source_registry||[])state.synthesisSources.set(s.id,s);
       }
