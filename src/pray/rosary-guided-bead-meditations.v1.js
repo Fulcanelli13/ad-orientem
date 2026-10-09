@@ -108,8 +108,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1 = Object.freeze({
     },
     {
       "bead": 10,
-      "en": "Mary remains with Elizabeth in loving service.",
-      "fr": "Marie demeure auprès d’Élisabeth pour la servir."
+      "en": "Mary remains with Elizabeth for about three months.",
+      "fr": "Marie demeure environ trois mois auprès d’Élisabeth."
     }
   ],
   "joy3": [
