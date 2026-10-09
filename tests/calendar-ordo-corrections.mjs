@@ -16,7 +16,7 @@ for(const row of registry.corrections){
  assert.ok(row.source?.startsWith("https://"),"Each correction must have original-source context");
 }
 assert.equal(registry.disputes.length,2,"Both Epiphany octave disputes need independent evidence");
-assert.ok(registry.disputes.every(x=>x.status==="REQUIRES_RUBRIC_REVIEW"&&x.sources?.length>=2));
+assert.ok(registry.disputes.every(x=>x.status==="ADJUDICATED_FROM_1960_RUBRICS"&&x.authority?.locator.includes("119(a)")&&x.sources?.length>=2));
 assert.doesNotMatch(boot,/generic source fallback can inherit a stale white tempora/,"Unverified blanket Epiphany colour override must not return");
 assert.match(boot,/C\.TEMPORA_QUAD5_5C\)\) && !matchFirst\(obs, PAT\.PATTERN_SANCTI_CLASS_1_OR_2\)/,
  "St Joseph Passion-Friday I-class precedence regression");
