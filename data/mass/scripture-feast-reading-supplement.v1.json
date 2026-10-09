@@ -16,7 +16,9 @@
     "Holy Thursday's Mass Gospel John 13:1–15 is not a proxy for the optional Mandatum and its separate associated chants.",
     "Holy Tuesday's Gospel Passion Mark 14:32–72; 15:1–46 is excluded from this legacy single-range supplement, but available in the independently witnessed segmented Mass Proper index with a Latin-incpit and source-path guard.",
     "Holy Wednesday: LectioL1 (Isaiah 62:11; 63:1–7) belongs to the ordered extended-lesson index and requires its actual Latin node; the later Epistle/Lectio is Isaiah 53:1–12 and uses this separate single-range Proper guard. Luke Passion is separately indexed by segments.",
-    "1962 September Ember Wednesday/Friday/Saturday are Tempora/093-3, 093-5, 093-6, not Pent17-3/5/6. Wednesday Amos preparatory lesson, Saturday preparatory lessons and Saturday post-preparatory Hebrews Epistle remain separate source owners. Saturday has source-pinned long/short variants."
+    "1962 September Ember Wednesday/Friday/Saturday are Tempora/093-3, 093-5, 093-6, not Pent17-3/5/6. Wednesday Amos preparatory lesson, Saturday preparatory lessons and Saturday post-preparatory Hebrews Epistle remain separate source owners. Saturday has source-pinned long/short variants.",
+    "Remaining 1962 Ember cycles: Advent Tempora/Adv3-3,5,6; Lent Tempora/Quad1-3,5,6; Pentecost octave Tempora/Pasc7-3,5,6. 2026 seasonal dates 16/18/19 Dec, 25/27/28 Feb, 27/29/30 May. Bible context is always gated by actual selected Proper Latin.",
+    "Pentecost Ember Friday Joel 2:23–24; 2:26–27 belongs exclusively to the segmented Bible context index, because Joel 2:25 is omitted."
   ],
   "holds": [
     {
@@ -373,6 +375,156 @@
       },
       "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-6.txt",
       "note": "The five preparatory lessons are separate from the Hebrews 9:2–12 ordinary Mass Epistle; Sept Ember shorter/longer form is source-controlled."
+    },
+    {
+      "sourcePath": "Tempora/Adv3-3",
+      "title": "Advent Ember Wednesday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-16?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 7:10–15",
+          "latinIncipit": "in diebus illis locutus est dominus ad achaz dicens pete tibi signum a domino deo tuo in profundum inferni"
+        },
+        "GOSPEL": {
+          "reference": "Luke 1:26–38",
+          "latinIncipit": "in illo tempore missus est angelus gabriel a deo in civitatem galilaeae cui nomen nazareth ad virginem desponsatam viro"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-3.txt",
+      "note": "Epistle and Gospel belong to the Mass Proper after any separately SOURCE_ORDER preparatory lessons."
+    },
+    {
+      "sourcePath": "Tempora/Adv3-5",
+      "title": "Advent Ember Friday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-18?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 11:1–5",
+          "latinIncipit": "haec dicit dominus deus egredietur virga de radice jesse et flos de radice ejus ascendet et requiescet super eum"
+        },
+        "GOSPEL": {
+          "reference": "Luke 1:39–47",
+          "latinIncipit": "in illo tempore exsurgens maria abiit in montana cum festinatione in civitatem juda et intravit in domum zachariae et"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-5.txt",
+      "note": "Epistle and Gospel belong to the Mass Proper after any separately SOURCE_ORDER preparatory lessons."
+    },
+    {
+      "sourcePath": "Tempora/Adv3-6",
+      "title": "Advent Ember Saturday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-19?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "2Thessalonians 2:1–8",
+          "latinIncipit": "fratres rogamus vos per adventum domini nostri jesu christi et nostrae congregationis in ipsum ut non cito moveamini a"
+        },
+        "GOSPEL": {
+          "reference": "Luke 3:1–6",
+          "latinIncipit": "anno quintodecimo imperii tiberii caesaris procurante pontio pilato judaeam tetrarcha autem galilaeae herode philippo autem fratre ejus tetrarcha ituraeae"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-6.txt",
+      "note": "Epistle and Gospel belong to the Mass Proper after any separately SOURCE_ORDER preparatory lessons."
+    },
+    {
+      "sourcePath": "Tempora/Quad1-3",
+      "title": "Lent Ember Wednesday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-25?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Kings 19:3–8",
+          "latinIncipit": "in diebus illis venit elias in bersabee juda et dimisit ibi puerum suum et perrexit in desertum viam unius"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 12:38–50",
+          "latinIncipit": "in illo tempore responderunt jesu quidam de scribis et pharisaeis dicentes magister volumus a te signum videre qui respondens"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-3.txt",
+      "note": "Latin 3 Regum = Catholic canonical 1 Kings, not 3 Kings in the canonical Scripture picker."
+    },
+    {
+      "sourcePath": "Tempora/Quad1-5",
+      "title": "Lent Ember Friday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-27?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Ezekiel 18:20–28",
+          "latinIncipit": "haec dicit dominus deus anima quae peccaverit ipsa morietur filius non portabit iniquitatem patris et pater non portabit iniquitatem"
+        },
+        "GOSPEL": {
+          "reference": "John 5:1–15",
+          "latinIncipit": "in illo tempore erat dies festus judaeorum et ascendit jesus jerosolymam est autem jerosolymis probatica piscina quae cognominatur hebraice"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-5.txt",
+      "note": "Epistle and Gospel belong to the Mass Proper after any separately SOURCE_ORDER preparatory lessons."
+    },
+    {
+      "sourcePath": "Tempora/Quad1-6",
+      "title": "Lent Ember Saturday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-28?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Thessalonians 5:14–23",
+          "latinIncipit": "fratres rogamus vos corripite inquietos consolamini pusillanimes suscipite infirmos patientes estote ad omnes videte ne quis malum pro malo"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 17:1–9",
+          "latinIncipit": "in illo tempore assumpsit jesus petrum et jacobum et joannem fratrem eius et duxit illos in montem excelsum seorsum"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-6.txt",
+      "gospelInheritedFrom": "Tempora/Quad2-0",
+      "note": "Gospel inherited verbatim from Tempora/Quad2-0:Evangelium; resolved Latin and Ember Saturday Proper path both required."
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-3",
+      "title": "Pentecost Ember Wednesday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-27?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Acts 5:12–16",
+          "latinIncipit": "in diebus illis per manus autem apostolorum fiebant signa et prodigia multa in plebe et erant unanimiter omnes in"
+        },
+        "GOSPEL": {
+          "reference": "John 6:44–52",
+          "latinIncipit": "in illo tempore dixit jesus turbis judaeorum nemo potest venire ad me nisi pater qui misit me traxerit eum"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-3.txt",
+      "note": "Epistle and Gospel belong to the Mass Proper after any separately SOURCE_ORDER preparatory lessons."
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-5",
+      "title": "Pentecost Ember Friday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-29?theme=light",
+      "readings": {
+        "GOSPEL": {
+          "reference": "Luke 5:17–26",
+          "latinIncipit": "in illo tempore factum est in una dierum et jesus sedebat docens et erant pharisaei sedentes et legis doctores"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-5.txt",
+      "note": "The Joel 2:23–24; 2:26–27 Epistle contains an omission. It belongs exclusively to the segmented Proper index, not this single-range slot."
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6",
+      "title": "Pentecost Ember Saturday · 1962",
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-30?theme=light",
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 5:1–5",
+          "latinIncipit": "fratres justificati ex fide pacem habeamus ad deum per dominum nostrum jesum christum per quem et habemus accessum per"
+        },
+        "GOSPEL": {
+          "reference": "Luke 4:38–44",
+          "latinIncipit": "in illo tempore surgens jesus de synagoga introivit in domum simonis socrus autem simonis tenebatur magnis febribus et rogaverunt"
+        }
+      },
+      "primaryLatinSourceFile": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6.txt",
+      "note": "Epistle and Gospel belong to the Mass Proper after any separately SOURCE_ORDER preparatory lessons."
     }
   ]
 }
