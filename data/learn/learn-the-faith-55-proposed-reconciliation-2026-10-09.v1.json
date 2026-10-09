@@ -53,7 +53,8 @@
     "italianSecondaryDigitalNumberingErrors": 4,
     "french1913ProvisionalOCRAnswerCandidates": 433,
     "french1913SourcePrintAnswersVisuallyChecked": 70,
-    "french1913PriorityPageBatch20261009": 47
+    "french1913PriorityPageBatch20261009": 47,
+    "bilingualClaimsWithPracticalCopyCorrections20261009": 7
   },
   "publicationGate": {
     "researchBilingual": true,
@@ -4426,5 +4427,20 @@
       "nativeFrenchApproval": false,
       "publicationApproved": false
     }
-  ]
+  ],
+  "claimLevelReleaseReview": {
+    "scope": "181 bilingual Guided Study explanatory claims across 55 lessons; original 433 Catechism Q&A unchanged",
+    "boundedToUnmodified433QuestionCorpus": true,
+    "claimCount": 181,
+    "sourceLinksDeskChecked": 181,
+    "independentlyVerifiedClaims": 0,
+    "nativeFrenchClaimsApproved": 0,
+    "historicalCanonLawReviewApproved": false,
+    "originalLanguageEvidenceApproved": false,
+    "releaseOwnerAuthorized": false,
+    "approvalRecord": null,
+    "publicationDecision": "HOLD_PENDING_INDEPENDENT_THEOLOGY_CANONICAL_AND_NATIVE_FRENCH_EDITORIAL_ACCEPTANCE",
+    "criticalEditionOfAll433HistoricFrenchPrintRequired": false,
+    "note": "The unchanged 433-question canonical reader is not being republished as a newly critical-text edition. Source-bounded review of every newly authored teaching claim plus per-lesson human approval can satisfy release gate instead of collation of all 433 historical print pages."
+  }
 }
