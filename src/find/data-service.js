@@ -1,6 +1,6 @@
 import { auditVenue } from "./contracts.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
-import {applyIndicativeSspxLocations,fetchOfficialSspxPlaceIndex} from "./sspx-indicative-geo.js";
+import {applyIndicativeSspxLocations,applyIndicativeOtherCommunities,fetchOfficialSspxPlaceIndex} from "./sspx-indicative-geo.js";
 const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 export const RESEARCH_MASS_REVIEW_DAYS=120;
 const RESEARCH_PROVIDERS=Object.freeze([
@@ -328,9 +328,11 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
     &&!isMapPublishableGeo(r.venue?.geo,r.venue?.address?.country_code));
   const mapIndex=needsSspxCoarse?await fetchOfficialSspxPlaceIndex({fetchImpl}):[];
   const indicated=applyIndicativeSspxLocations(records,{officialPlaces:mapIndex});
+  const other=applyIndicativeOtherCommunities(indicated.records);
   return Object.freeze({
-    records:indicated.records,
+    records:other.records,
     indicativeGeoSummary:indicated.summary,
+    otherCommunitiesIndicativeGeoSummary:other.summary,
     skippedInvalidRecords:joined.length-records.length,
     communities:safeArray(communityData?.communities),
     communityProfiles,
