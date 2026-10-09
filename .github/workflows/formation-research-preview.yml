@@ -96,6 +96,17 @@ on:
 permissions:
   contents: read
 jobs:
+  qa-original-source-pass4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify canonical owner and unapproved source pack
+        run: node tests/formation-canonical-synthesis-batch3.mjs
+      - name: Check ten bounded primary disputes and all release holds
+        run: node tests/formation-primary-context-review-4.mjs
   qa-reader:
     runs-on: ubuntu-latest
     steps:
