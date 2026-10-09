@@ -84,7 +84,9 @@ for(const [sourcePath,sourceOwner] of Object.entries(inheritedSourcePaths)){
  assert.ok(alias,sourcePath+" requires source-bound entry");
  assert.equal(alias.witnessUrl.endsWith("/"+sourcePath.split("/")[1]+".txt"),true);
  for(const [slot,spec] of Object.entries(alias.readings)){
-  assert.equal(spec.sourceOwner,sourceOwner,sourcePath+" "+slot+" source owner");
+  assert.equal(spec.immediateSourceOwner??spec.sourceOwner,sourceOwner,sourcePath+" "+slot+" direct alias");
+  const ultimateOwner=sourcePath==="Tempora/PentEpi5-0"&&slot==="EPISTLE_OR_LESSON"?"Tempora/Epi1-0":sourceOwner;
+  assert.equal(spec.sourceOwner,ultimateOwner,sourcePath+" "+slot+" true Latin section owner");
   const field=slot==="GOSPEL"?"gospel":"epistle";
   const proper={sourcePath,[field]:{lat:"Lectio. "+spec.latinIncipit+"."}};
   assert.equal(registeredMassReading(proper,slot)?.reference,spec.reference);
