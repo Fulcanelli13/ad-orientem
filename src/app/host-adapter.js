@@ -61,7 +61,7 @@ export function createAppHostAdapter(win = globalThis) {
       return store.subscribe((state) => listener(state?.route ?? null, state));
     },
 
-    async hardHome() {
+    hardHome() {
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
@@ -70,24 +70,42 @@ export function createAppHostAdapter(win = globalThis) {
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const modular = win?.AO_HOME_APP_V1;
+      const fallbackHome = () => {
+        const nav = win?.AO_NAV_V362;
+        if (typeof nav?.home !== "function") return false;
+        try {
+          // Preserve synchronous return values for legacy callers, while
+          // waiting for genuinely asynchronous implementations.
+          const value = nav.home();
+          return value && typeof value.then === "function"
+            ? Promise.resolve(value).then(result => result !== false).catch(error => {
+                try { win?.console?.error?.("Home fallback failed", error); } catch {}
+                return false;
+              })
+            : value !== false;
+        } catch (error) {
+          try { win?.console?.error?.("Home fallback failed", error); } catch {}
+          return false;
+        }
+      };
       if (typeof modular?.open === "function") {
         try {
-          const opened = await modular.open();
+          const opened = modular.open();
+          if (opened && typeof opened.then === "function") {
+            return Promise.resolve(opened).then(
+              result => result === false ? fallbackHome() : true,
+              error => {
+                try { win?.console?.error?.("Modular Home failed to open", error); } catch {}
+                return fallbackHome();
+              }
+            );
+          }
           if (opened !== false) return true;
         } catch (error) {
           try { win?.console?.error?.("Modular Home failed to open", error); } catch {}
         }
       }
-      const nav = win?.AO_NAV_V362;
-      if (typeof nav?.home !== "function") return false;
-      try {
-        // Legacy Home uses a void return in some releases; only explicit
-        // false means the fallback failed.
-        return (await nav.home()) !== false;
-      } catch (error) {
-        try { win?.console?.error?.("Home fallback failed", error); } catch {}
-        return false;
-      }
+      return fallbackHome();
     },
 
     openDomain(domain) {
@@ -153,7 +171,7 @@ export function createAppHostAdapter(win = globalThis) {
       }
     },
 
-    async openSettings() {
+    openSettings() {
       // Settings is modular and fail-closed. Close Learn before mounting the
       // Settings overlay so only one non-Mass state owns the visible surface.
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
@@ -162,7 +180,13 @@ export function createAppHostAdapter(win = globalThis) {
       const api = settingsApi(win);
       if (typeof api?.open !== "function") return false;
       try {
-        return (await api.open()) !== false;
+        const opened = api.open();
+        return opened && typeof opened.then === "function"
+          ? Promise.resolve(opened).then(result => result !== false).catch(error => {
+              try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
+              return false;
+            })
+          : opened !== false;
       } catch (error) {
         try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
         return false;
