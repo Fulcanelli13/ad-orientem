@@ -1062,8 +1062,11 @@ try{
       // A source cue already aligned with the 39% line at card-open has
       // not yet been encountered by scrolling. Advance a minimal 12px
       // rather than pretending the card's initial paint triggers speech.
+      // Levate requires a second, distinct forward movement after kneeling;
+      // duplicate browser scroll events at the same position do not suffice.
+      const minForward=/-R$/.test(cueId)?card.scrollTop+4:12;
       card.scrollTop=Math.min(card.scrollHeight-card.clientHeight,
-        Math.max(12,target));
+        Math.max(12,target,minForward));
       card.dispatchEvent(new Event("scroll"));
       return {cueId,scrollTop:card.scrollTop,maxScroll:card.scrollHeight-card.clientHeight,
         paragraphTop:rect.top,viewportTop:frame.top,viewportHeight:card.clientHeight};
@@ -1092,6 +1095,13 @@ try{
     assert.equal(active.posture,"KNEEL",
       "Prayer "+n+" Flectamus did not kneel: "+JSON.stringify({kGeometry,active}));
     assert.equal(active.formula,kneel);
+    const duplicateScroll=await page.evaluate(()=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      api.root.querySelector(".ao-prayer-card").dispatchEvent(new Event("scroll"));
+      return api.getGoodFridayState().step.recordId;
+    });
+    assert.equal(duplicateScroll,kneel,
+      "same-position scroll wrongly skipped from Flectamus to Levate");
     assert.ok(active.highlight.some(x=>/Flectamus genua/i.test(x)),
       "Prayer "+n+" source words were not highlighted");
     const rGeometry=await focusGoodFridayWord(rise);
@@ -1197,6 +1207,28 @@ try{
     assert.equal(projection.object,object,id+" sacramental object state drifted");
     communionTransitions.push(projection);
   }
+  const displayedSpeakers=async recordId=>page.evaluate(id=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    api.goToGoodFridayRecord(id);
+    return [...api.root.querySelectorAll(".ao-reader-paragraph[data-speaker]")].map(node=>({
+      id:node.dataset.paragraphId,
+      speaker:node.dataset.speaker,
+      label:node.querySelector(".ao-good-friday-speaker-label")?.textContent??null,
+    }));
+  },recordId);
+  const paterSpeakers=await displayedSpeakers("GF-COM-830");
+  assert.deepEqual(paterSpeakers.map(row=>[row.speaker,row.label]),[
+    ["CELEBRANT","Celebrant"],["ALL","All present"],
+    ["CELEBRANT","Celebrant"],["ALL","All present"]
+  ],"Good Friday Pater wrongly treats congregational prayer as the priest's alone");
+  const preparationSpeakers=await displayedSpeakers("GF-COM-840");
+  assert.deepEqual(preparationSpeakers.map(row=>row.speaker),[
+    "CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT",
+    "CELEBRANT","CELEBRANT","COMMUNICANTS"
+  ]);
+  assert.deepEqual(preparationSpeakers.map(row=>row.label).filter(Boolean),
+    ["Celebrant","Communicants"],
+    "Good Friday preparation labels should appear only at speaker transitions");
   const communionChoice=page.locator("#ao-r17-native-reader-preview [data-role='good-friday-communion-choice']");
   assert.equal(await communionChoice.isVisible(),true,
     "the faithful cannot select personal Communion during preparation");
@@ -1225,6 +1257,9 @@ try{
   assert.equal(receiving.posture,"KNEEL");
   assert.equal(receiving.personal,true);
   assert.equal(receiving.choice,true);
+  assert.deepEqual((await displayedSpeakers("GF-COM-850")).map(row=>[row.speaker,row.label]),[
+    ["CELEBRANT","Celebrant"],["COMMUNICANTS","Communicants"]
+  ],"the priest's Ecce and communicants' response were not distinguished");
   assert.equal(await communionChoice.isVisible(),false);
   assert.equal(await gfPanel.isVisible(),true,
     "individual Communion completion was not exposed");
@@ -1237,6 +1272,8 @@ try{
   });
   assert.deepEqual(received,{id:"GF-COM-860",posture:"STAND",object:null,personal:null});
   assert.equal(await gfPanel.isVisible(),false,"personal Communion action persisted after completion");
+  assert.equal(await page.locator("#ao-r17-native-reader-preview [data-speaker]").count(),0,
+    "communicant-specific labels leaked into the common Good Friday conclusion");
 
   await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord("GF-COM-840"));
   await communionRemain.click();

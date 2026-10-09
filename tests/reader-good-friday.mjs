@@ -120,6 +120,24 @@ assert.equal(corp.action,"SILENT_ADORATION_FROM_PLACE");
 assert.equal(corp.personalOnly,false);
 
 const communicant=buildGoodFridayReader({graph,payload,willReceiveCommunion:true});
+// Voice attribution follows the actual Good Friday actors, not the common
+// assumption that the celebrant alone says the entire Pater noster.
+const expectedCommunionSpeakers=[
+  ["GF-COM-830",["CELEBRANT","ALL","CELEBRANT","ALL"]],
+  ["GF-COM-840",["CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT","COMMUNICANTS"]],
+  ["GF-COM-850",["CELEBRANT","COMMUNICANTS"]],
+];
+for(const [recordId,expected] of expectedCommunionSpeakers){
+  const step=communicant.steps.find(x=>x.recordId===recordId);
+  assert.deepEqual(step.paragraphs.map(p=>p.speaker),expected,
+    recordId+" confused celebrant, congregation or communicants");
+}
+assert.deepEqual(
+  communicant.steps.find(x=>x.recordId==="GF-COM-820").paragraphs.map(p=>p.speaker),
+  expectedCommunionSpeakers[0][1],
+  "arrival at altar lost shared Pater speaker ownership"
+);
+
 const receive=communicant.steps.find(x=>x.recordId==="GF-COM-850");
 assert.equal(receive.actorScope,"COMMUNICANT");
 assert.equal(receive.personalOnly,true);

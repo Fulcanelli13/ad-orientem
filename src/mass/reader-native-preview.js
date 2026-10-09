@@ -481,6 +481,7 @@ export async function mountNativeReaderPreview({
     let deathCueRunning=false;
     let formulaCueRunning=false;
     let formulaKneelRecord=null;
+    let formulaKneelScrollTop=null;
     const kneelRecord=id=>/^GF-SOP-\d\d-K$/.test(id??"")||/^GF-X-52[123]$/.test(id??"");
     const r28Posture=state=>kneelRecord(state.step?.recordId) &&
       formulaKneelRecord!==state.step.recordId ? "STAND" : state.posture;
@@ -518,6 +519,58 @@ export async function mountNativeReaderPreview({
       panel.append(title,action);
       stage.append(panel);
       personalControls=panel;
+    }
+
+    const communionSpeakerLabels=Object.freeze({
+      CELEBRANT:"Celebrant",
+      ALL:"All present",
+      COMMUNICANTS:"Communicants",
+    });
+
+    function installCommunionSpeakerStyles(){
+      const style=doc.createElement("style");
+      style.textContent=`
+        #ao-r17-native-reader-preview .ao-good-friday-speaker-label{
+          display:block;margin:0 0 5px;
+          font:600 10px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+          letter-spacing:.09em;text-transform:uppercase;color:#b2c0b6;
+        }
+        #ao-r17-native-reader-preview .ao-reader-paragraph[data-speaker]{
+          padding-top:9px;
+        }
+        #ao-r17-native-reader-preview .ao-reader-paragraph[data-speaker="COMMUNICANTS"]{
+          border-left:2px solid rgba(178,201,183,.46);
+          padding-left:12px;
+        }
+      `;
+      root.append(style);
+    }
+
+    function updateCommunionSpeakerLabels(){
+      // The canonical GF source paragraphs carry speaker metadata; labels
+      // appear only when the speaker changes, never as extra liturgical text.
+      const voiceById=new Map((controller.project().card?.paragraphs??[])
+        .filter(row=>row.speaker).map(row=>[row.id,row.speaker]));
+      let previous=null;
+      for(const node of host.querySelectorAll?.(".ao-reader-paragraph[data-paragraph-id]")??[]){
+        const speaker=voiceById.get(node.dataset.paragraphId)??null;
+        const old=node.querySelector(".ao-good-friday-speaker-label");
+        if(!speaker){
+          delete node.dataset.speaker;
+          old?.remove();
+          previous=null;
+          continue;
+        }
+        node.dataset.speaker=speaker;
+        if(speaker===previous)old?.remove();
+        else {
+          const label=old??doc.createElement("span");
+          label.className="ao-good-friday-speaker-label";
+          label.textContent=communionSpeakerLabels[speaker]??speaker;
+          if(!old)node.insertBefore(label,node.firstChild);
+        }
+        previous=speaker;
+      }
     }
 
     function createCommunionControls(){
@@ -644,14 +697,22 @@ export async function mountNativeReaderPreview({
         items:items.filter(row=>row.cueId===expected),
       });
       if(!reached)return;
+      // Rendering the kneeling cue does not constitute a second scroll.
+      // Chromium may dispatch a deferred native scroll event after the
+      // explicit first focus event; it must not immediately stand at Levate.
+      // Require forward movement after Flectamus, or the explicit stand action.
+      if(formulaKneelRecord===id && /^GF-SOP-\d\d-K$/.test(id) &&
+        card.scrollTop<=(formulaKneelScrollTop??card.scrollTop)+2)return;
       formulaCueRunning=true;
       try{
         if(reached===id && formulaKneelRecord!==id){
           formulaKneelRecord=id;
+          formulaKneelScrollTop=card.scrollTop;
           showGoodFriday();
         }else if(/^GF-SOP-\d\d-R$/.test(reached) &&
           reached===id.replace(/-K$/,"-R") && formulaKneelRecord===id){
           formulaKneelRecord=null;
+          formulaKneelScrollTop=null;
           controller.goToRecord(reached);
           showGoodFriday();
         }
@@ -680,6 +741,7 @@ export async function mountNativeReaderPreview({
       if(!personalSteps[id] && id!=="GF-PASS-320" &&
         formulaKneelRecord!==id)return;
       formulaKneelRecord=null;
+      formulaKneelScrollTop=null;
       controller.next();
       showGoodFriday();
     }
@@ -759,6 +821,7 @@ export async function mountNativeReaderPreview({
           );
       }
       syncReaderRitualHighlights(host,moment?.ritualTrigger??moment?.gesture??null);
+      updateCommunionSpeakerLabels();
       updateGoodFridayControls();
       updateCommunionControls();
       root.dataset.r17NativeRiteRecord=step?.recordId??"none";
@@ -779,6 +842,7 @@ export async function mountNativeReaderPreview({
     function moveGoodFriday(direction){
       const state=controller.project();
       formulaKneelRecord=null;
+      formulaKneelScrollTop=null;
       if(direction==="next" && !state.atEnd)controller.next();
       else if(direction==="previous" && !state.atStart)controller.previous();
       return showGoodFriday();
@@ -809,6 +873,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17StateOwner="R28_GOOD_FRIDAY_GRAPH";
     doc.body.appendChild(root);
     reader.mount(prepared);
+    installCommunionSpeakerStyles();
     createGoodFridayControls();
     createCommunionControls();
     host.addEventListener?.("click",onGoodFridayAction);
@@ -832,6 +897,7 @@ export async function mountNativeReaderPreview({
       previous:()=>moveGoodFriday("previous"),
       goToGoodFridayRecord:id=>{
         formulaKneelRecord=null;
+        formulaKneelScrollTop=null;
         controller.goToRecord(id);
         return showGoodFriday();
       },
