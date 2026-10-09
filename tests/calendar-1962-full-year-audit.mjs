@@ -81,7 +81,7 @@ try{
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
             composition:{
-              commemorations:(p.calendarCommemorations||[]).map(x=>({name:x.name,path:x.path,rank:x.rank})),
+              commemorations:(p.calendarCommemorations||[]).map(x=>({name:x.name,path:x.path,prayerSourcePath:x.prayerSourcePath||null,rank:x.rank})),
               collects:(p.collects||[]).length,secrets:(p.secrets||[]).length,
               postcommunions:(p.postcommunions||[]).length,
               nameFr:p.nameFr||null,
@@ -126,6 +126,9 @@ try{
     assert.ok(c?.commemorations?.length>0,date+": no source-backed Proper commemoration");
     assert.ok(c.commemorations.some(x=>expectedId.test(x.path||"")),
       date+": original Temporale commemoration path absent");
+    if(date.startsWith("2026-1")&&date!=="2026-11-01")
+      assert.ok(c.commemorations.some(x=>/^Tempora\\/Adv[12]-0$/.test(x.prayerSourcePath||"")),
+        date+": the Advent ferial collect/secret/postcommunion must cite the source Sunday");
     for(const key of ["collects","secrets","postcommunions"])
       assert.ok(c[key]>=2,date+": missing distinct Proper "+key+" for privileged commemoration");
   }
