@@ -53,6 +53,25 @@ for(const returned of positives){
  assert.equal(c.getActive(),"learn");
  c.dispose();
 }
+// The existing Mass preflight is allowed to return void because it mounts
+// a visible real selection screen; a void no-op must still be rejected.
+{
+ const visible={isConnected:true,hidden:false,getAttribute:()=>null};
+ const win=windowFor(undefined);
+ win.document={querySelector:sel=>sel==="#ao-mass-flow-v1 .aoMassFlowBackdrop"?visible:null};
+ win.getComputedStyle=()=>({display:"block",visibility:"visible"});
+ assert.equal(await createAppHostAdapter(win).openDomain("mass"),true);
+ visible.hidden=true;
+ assert.equal(await createAppHostAdapter(win).openDomain("mass"),false);
+ visible.hidden=false;
+ win.getComputedStyle=()=>({display:"none",visibility:"visible"});
+ assert.equal(await createAppHostAdapter(win).openDomain("mass"),false);
+ const failed=windowFor({ok:false});
+ failed.document=win.document;
+ failed.getComputedStyle=()=>({display:"block",visibility:"visible"});
+ assert.equal(await createAppHostAdapter(failed).openDomain("mass"),false,
+  "Explicitly rejected preflight may not borrow an old visible backdrop");
+}
 for(const returned of [...failures,...positives]){
  const host=createAppHostAdapter({...windowFor(returned),AO_R17_BROWSER_ENTRY:{hasResumable:()=>true,resume:()=>returned}});
  assert.equal(await host.openDomain("mass"),positives.includes(returned),"Resumable Mass returned incorrect success");

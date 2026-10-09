@@ -126,7 +126,19 @@ export function createAppHostAdapter(win = globalThis) {
         if (typeof celebration?.openPreflight !== "function") return false;
         // Fresh Mass entry belongs to the resolved-celebration preflight.
         // Do not fall through to the historical V37 Mass domain.
-        return Promise.resolve(celebration.openPreflight()).then(openedSuccessfully);
+        // This existing preflight API is a legacy DOM command: successful
+        // openings may return void. Accept that case ONLY when the actual
+        // Mass-selection backdrop has mounted and is visible. Explicit false
+        // or structured failure results must still fail closed.
+        return Promise.resolve(celebration.openPreflight()).then(value => {
+          if (openedSuccessfully(value)) return true;
+          if (value !== undefined) return false;
+          const backdrop = win?.document?.querySelector?.("#ao-mass-flow-v1 .aoMassFlowBackdrop");
+          if (!backdrop || backdrop.isConnected !== true || backdrop.hidden === true ||
+              backdrop.getAttribute?.("aria-hidden") === "true") return false;
+          const style = win?.getComputedStyle?.(backdrop);
+          return style?.display !== "none" && style?.visibility !== "hidden";
+        });
       }
       if (domain === "pray") {
         const modular = win?.AO_PRAY_APP_V1;
