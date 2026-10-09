@@ -39,3 +39,5 @@ jobs:
         run: node tests/sexual-ethics-evidence-v2.mjs
       - name: Six-debate original-passage-scope evidence and non-certification gate
         run: node tests/sexual-ethics-original-passage-scope-batch-v4.mjs
+      - name: High-stakes source-scope bulk review, 56 bilingual stages
+        run: node tests/sexual-ethics-highstakes-original-source-v1.mjs
