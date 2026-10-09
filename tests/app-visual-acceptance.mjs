@@ -387,6 +387,31 @@ try{
   await shot("02d-calendar-month");
 
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]").count(),5,"Month lost Calendar · Major · Temporale · Sanctorale · Practices navigation");
+  // Verify every Month view is discoverable, including Practices, without
+  // horizontal scrolling at compact phone widths; month arrows remain tappable.
+  for(const width of [320,360,390,430]){
+    await page.setViewportSize({width,height:844});
+    const geometry=await page.evaluate(()=>{
+      const root=document.querySelector("#ao-calendar-modular-root");
+      const tabs=[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")];
+      const shifts=[...document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthNav [data-cal-month-shift]")];
+      const bounds=root.getBoundingClientRect();
+      const visible=(el)=>{
+        const r=el.getBoundingClientRect(),style=getComputedStyle(el);
+        return r.width>=44&&r.height>=44&&r.left>=bounds.left-1&&r.right<=bounds.right+1&&style.visibility!=="hidden";
+      };
+      return {tabs:tabs.length,tabVisible:tabs.every(visible),allFive:[...new Set(tabs.map(x=>x.dataset.calMonthView))].length===5,
+       buttons:shifts.length,shiftVisible:shifts.every(visible),overflow:root.scrollWidth-root.clientWidth,
+       navScroll:document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs").scrollWidth-document.querySelector("#ao-calendar-modular-root .aoCalMonthTabs").clientWidth};
+    });
+    assert.equal(geometry.tabs,5,"Month tabs lost at "+width+"px");
+    assert.equal(geometry.allFive,true,"Month category identity repeated at "+width+"px");
+    assert.equal(geometry.tabVisible,true,"A month filter, including Practices, is clipped or smaller than 44px at "+width+"px");
+    assert.equal(geometry.shiftVisible,true,"Month direction button clipped at "+width+"px");
+    assert.ok(geometry.overflow<=1&&geometry.navScroll<=1,"Horizontal overflow hides month controls at "+width+"px: "+JSON.stringify(geometry));
+  }
+  await page.setViewportSize({width:390,height:844});
+  
 
   await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='major']").click();
   await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='major']",{state:"visible",timeout:3000});
