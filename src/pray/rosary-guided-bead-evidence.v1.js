@@ -5,6 +5,7 @@
  * DEVOTIONAL_REFLECTION = prayerful response rather than a narrated biblical event;
  * MARIAN_TYPOLOGICAL_READING = accommodation of a symbolic passage, not a direct report;
  * DEFINED_DOCTRINE = teaching established by the cited papal document, not a Bible scene.
+ * SCRIPTURAL_PASSION_INTERPRETATION = OT prophecy or apostolic reading applied to Christ.
  * For the French witness, use the corresponding Crampon 1923 chapter
  * already linked in rosaryScripturePassage(), unless citing a papal document.
  */
@@ -1060,30 +1061,30 @@ export const ROSARY_GUIDED_BEAD_EVIDENCE_V1=Object.freeze({
     },
     {
       "bead": 5,
-      "reference": "John 19:2-3",
-      "relationship": "SCRIPTURAL_PARAPHRASE",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A2-3&version=DRA",
+      "reference": "Isaias 53:5",
+      "relationship": "SCRIPTURAL_PASSION_INTERPRETATION",
+      "primaryUrl": "https://ccel.org/ccel/challoner/douayrheims/Isaias/53.html",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Isa%C3%AFe"
     },
     {
       "bead": 6,
-      "reference": "John 19:2-3",
-      "relationship": "SCRIPTURAL_PARAPHRASE",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=John%2019%3A2-3&version=DRA",
+      "reference": "1 Peter 2:23",
+      "relationship": "SCRIPTURAL_PASSION_INTERPRETATION",
+      "primaryUrl": "https://www.biblegateway.com/passage/?search=1%20Peter%202%3A23&version=DRA",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/1_Pierre"
     },
     {
       "bead": 7,
-      "reference": "Hebrews 4:15",
-      "relationship": "DEVOTIONAL_REFLECTION",
-      "primaryUrl": "https://www.biblegateway.com/passage/?search=Hebrews%204%3A15&version=DRA",
+      "reference": "1 Peter 2:24",
+      "relationship": "SCRIPTURAL_PASSION_INTERPRETATION",
+      "primaryUrl": "https://www.biblegateway.com/passage/?search=1%20Peter%202%3A24&version=DRA",
       "isDirectQuotation": false,
       "textualApproval": "NOT_A_BIBLICAL_QUOTATION",
-      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/H%C3%A9breux"
+      "frenchPrimaryUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/1_Pierre"
     },
     {
       "bead": 8,
