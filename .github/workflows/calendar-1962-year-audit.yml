@@ -1,0 +1,36 @@
+name: 1962 Calendar year audit
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/calendar/**"
+      - "data/calendar/1962-year-independent-checks-*.json"
+      - "tests/calendar-1962-full-year-audit.mjs"
+      - ".github/workflows/calendar-1962-year-audit.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: 1962-calendar-audit-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  year-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Exhaustive 2026 production resolver sweep and independent checkpoints
+        run: node tests/calendar-1962-full-year-audit.mjs
+      - name: Publish findings even if audit fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-1962-2026-audit
+          path: artifacts/calendar-oracle/1962-2026-full-year-audit.json
+          if-no-files-found: warn
