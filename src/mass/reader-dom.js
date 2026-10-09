@@ -676,23 +676,33 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
 // the paragraph itself: that would reset translation/focus/scroll controls.
 export function syncReaderRitualHighlights(root,gesture){
   const cueId=String(gesture?.canonicalCueId??gesture?.cueId??"");
-  const anchor=String(gesture?.anchorLat??"");
+  const anchors=[gesture?.anchorLat,gesture?.anchorEn,gesture?.anchorFr]
+    .map(anchor=>String(anchor??"").trim()).filter(Boolean);
   let applied=0;
   for(const paragraph of root?.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[]){
     const primary=paragraph.querySelector?.(".ao-line-primary");
     if(!primary)continue;
-    const intended=Boolean(cueId && anchor && paragraph.dataset?.cueId===cueId &&
+    const intended=Boolean(cueId && anchors.length && paragraph.dataset?.cueId===cueId &&
       paragraph.dataset?.active==="true" && !paragraph.hidden);
     const oldActive=paragraph.dataset?.ritualCueActive==="true";
     const oldAnchor=paragraph.dataset?.ritualAnchor??"";
     if(!intended&&!oldActive)continue;
-    if(intended&&oldActive&&oldAnchor===anchor){applied++;continue;}
-    // Keep exactly what the reader currently displays, including an opened
-    // vernacular alternative; a cue must never switch languages by itself.
+    if(intended&&oldActive&&anchors.includes(oldAnchor)){applied++;continue;}
+    // Only the exact source-owned phrase is eligible, in whichever language
+    // is already displayed. Do not infer ritual gestures from unrelated text
+    // or switch a prayer's language as a side effect of scrolling.
     const displayed=primary.textContent??"";
-    const matched=renderReaderText(primary,displayed,{anchor,active:intended});
+    let matched=false,selected=null;
+    if(intended){
+      for(const anchor of anchors){
+        if(renderReaderText(primary,displayed,{anchor,active:true})){
+          matched=true;selected=anchor;break;
+        }
+      }
+    }
+    if(!matched)renderReaderText(primary,displayed);
     if(matched){
-      paragraph.dataset.ritualAnchor=anchor;
+      paragraph.dataset.ritualAnchor=selected;
       paragraph.dataset.ritualCueActive="true";
       applied++;
     }else{
@@ -1533,7 +1543,12 @@ export function createReaderDomAdapter({
         return;
       }
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
-      if(translatable){toggleReaderTranslation(translatable);return;}
+      if(translatable){
+        toggleReaderTranslation(translatable);
+        translatable.dataset.ritualCueActive="false";
+        syncReaderRitualHighlights(root,current?.gesture);
+        return;
+      }
       const guideClose=event.target?.closest?.("[data-guide-close]");
       if(guideClose){closeGuide();return;}
       const guideBackdrop=event.target?.closest?.('[data-role="guide-popover"]');
@@ -1624,7 +1639,13 @@ export function createReaderDomAdapter({
       const tag=String(event.target?.tagName??"").toUpperCase();
       if(key==="Enter"||key===" "){
         const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
-        if(translatable){event.preventDefault?.();toggleReaderTranslation(translatable);return;}
+        if(translatable){
+          event.preventDefault?.();
+          toggleReaderTranslation(translatable);
+          translatable.dataset.ritualCueActive="false";
+          syncReaderRitualHighlights(root,current?.gesture);
+          return;
+        }
         const scholaTranslate=event.target?.closest?.("[data-schola-translate]");
         if(scholaTranslate && current?.schola?.english){
           event.preventDefault?.();toggleScholaTranslation();return;
