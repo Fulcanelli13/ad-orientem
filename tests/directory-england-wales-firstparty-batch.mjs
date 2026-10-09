@@ -6,10 +6,10 @@ import {stageFirstPartyMassBatch,mergeStagedFirstPartyMasses} from "../tools/dir
 const read=f=>JSON.parse(fs.readFileSync(f,"utf8"));
 const canonical=read("data/directory/generated/v19/diocesan.v1.json");
 const review=read("data/directory/research/england-wales-first-party-reconciliation-20261009.v1.json");
-assert.equal(canonical.records.length,64);
+assert.equal(canonical.records.length,65);
 assert.equal(new Set(canonical.records.map(r=>r.u)).size,64);
-assert.equal(review.imported.length,8);
-assert.equal(review.held.length,13);
+assert.equal(review.imported.length,9);
+assert.equal(review.held.length,12);
 assert.equal(review.held.find(r=>r.id==="DIO-GB-GLASGOW-TORYGLEN").decision,"ARCHIVED_DISCONTINUED");
 assert.equal(canonical.records.some(r=>r.u==="DIO-GB-GLASGOW-TORYGLEN"),false,"Discontinued Mass centre must not appear in canonical active data");
 const joined=publishableDirectoryRecords(joinDirectoryRecords(expandResearchProviderSnapshot(canonical)));
@@ -38,7 +38,7 @@ const oxford=canonical.records.find(r=>r.u==="ORD-GB-OXFORD-ORATORY-ST-ALOYSIUS"
 assert.match(oxford.sr,/SUNDAY_08:00_EXTRAORDINARY_FORM/);
 assert.doesNotMatch(oxford.sr,/11:00_EXTRAORDINARY_FORM/,"Oxford 11:00 solemn Latin Mass is the newer rite");
 const oratorians=review.imported.filter(r=>r.community==="ORATORIAN");
-assert.equal(oratorians.length,2);
+assert.equal(oratorians.length,3);
 const heldIds=new Set(review.held.map(r=>r.id));
 assert.ok(heldIds.has("WITNESS-GB-WESTMINSTER-ROSARY-SHRINE"));
 assert.ok(heldIds.has("WITNESS-GB-WESTMINSTER-CATHEDRAL"));
@@ -73,4 +73,4 @@ assert.equal(mergeStagedFirstPartyMasses(fixture,staged).records.length,30);
 const repeated=stageFirstPartyMassBatch(mergeStagedFirstPartyMasses(fixture,staged),manifest);
 assert.equal(repeated.accepted.length,0,"Batch must be idempotent");
 assert.equal(repeated.holds.length,35);
-console.log("England/Wales first-party batch: PASS — 8 mass venues, 1 discontinued removed, 13 documented holds; 30-row batch idempotent");
+console.log("England/Wales first-party batch: PASS — 9 mass venues, 1 discontinued removed, 12 documented holds; 30-row batch idempotent");
