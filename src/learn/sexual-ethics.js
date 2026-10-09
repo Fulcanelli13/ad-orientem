@@ -141,7 +141,7 @@ function questionRow(win,item){
 }
 
 function searchBox(win,query,count){
-  return `<div class="aoCSESearch"><input type="search" data-ao-cse-search value="${esc(query||"")}" placeholder="${esc(L(win,"Search ${CSE_PUBLIC_QUESTIONS.length} questions…","Rechercher dans ${CSE_PUBLIC_QUESTIONS.length} questions…"))}" aria-label="${esc(L(win,"Search sexual ethics questions","Rechercher dans les questions de morale sexuelle"))}"><span class="aoCSECount">${count==null?"":esc(L(win,`${count} result${count===1?"":"s"}`,`${count} résultat${count===1?"":"s"}`))}</span></div>`;
+  return `<div class="aoCSESearch"><input type="search" data-ao-cse-search value="${esc(query||"")}" placeholder="${esc(L(win,`Search ${CSE_PUBLIC_QUESTIONS.length} questions…`,`Rechercher dans ${CSE_PUBLIC_QUESTIONS.length} questions…`))}" aria-label="${esc(L(win,"Search sexual ethics questions","Rechercher dans les questions de morale sexuelle"))}"><span class="aoCSECount">${count==null?"":esc(L(win,`${count} result${count===1?"":"s"}`,`${count} résultat${count===1?"":"s"}`))}</span></div>`;
 }
 
 function sectionsHtml(win,state){
@@ -149,7 +149,7 @@ function sectionsHtml(win,state){
   if(state.query){
     return `${top(win,L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap">${searchBox(win,state.query,results.length)}${results.length?`<div class="aoCSEList">${results.map(item=>questionRow(win,item)).join("")}</div>`:`<div class="aoCSEEmpty">${esc(L(win,"No matching question.","Aucune question correspondante."))}</div>`}</main>`;
   }
-  return `${top(win,L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><p class="aoCSEIntro">${esc(L(win,"50 thematic dossiers across 7 subjects, with ${CSE_PUBLIC_QUESTIONS.length} curated questions. ${CSE_PUBLIC_DEBATE_COUNT} include full debates.","50 dossiers thématiques en 7 domaines et ${CSE_PUBLIC_QUESTIONS.length} questions sélectionnées. ${CSE_PUBLIC_DEBATE_COUNT} comportent un débat approfondi."))}</p>
+  return `${top(win,L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><p class="aoCSEIntro">${esc(L(win,`50 thematic dossiers across 7 subjects, with ${CSE_PUBLIC_QUESTIONS.length} curated questions. ${CSE_PUBLIC_DEBATE_COUNT} include full debates.`,`50 dossiers thématiques en 7 domaines et ${CSE_PUBLIC_QUESTIONS.length} questions sélectionnées. ${CSE_PUBLIC_DEBATE_COUNT} comportent un débat approfondi.`))}</p>
     ${searchBox(win,"",null)}<div class="aoCSEList">${CSE_CANONICAL_FAMILIES.map(family=>{
       const dossiers=CSE_CANONICAL_DOSSIERS.filter(d=>d.family===family.id);
       return `<button type="button" class="aoCSERow" data-ao-cse-family="${esc(family.id)}"><strong>${esc(pick(win,family.title))}</strong><span>${esc(dossiers.length)} ${esc(L(win,"dossiers","dossiers"))} ›</span></button>`;
