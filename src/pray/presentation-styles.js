@@ -597,6 +597,12 @@ const ROSARY_GUIDE_CSS=`
 `;
 
 const ROSARY_SCRIPTURE_POLICY_CSS=`
+/* Hide legacy fragment cards synchronously, including the frame before JS decoration. */
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-sheet .lab-scripture-cue,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-prayer-sheet .lab-scripture-actions,
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .lab-contemplation .lab-scripture-actions{
+  display:none!important;
+}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening{
   display:grid;gap:5px;margin:14px 0;padding:12px 13px;border-left:2px solid var(--liturgical,#d8bd7d);
   background:color-mix(in srgb,var(--liturgical,#d8bd7d) 5%,transparent);
