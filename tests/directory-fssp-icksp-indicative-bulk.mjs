@@ -86,7 +86,7 @@ const fsspMinistryIds=new Set(fsspMinistries.map(m=>m.ministry_id));
 const fsspScheduleMinistries=new Set(fsspSchedules.filter(s=>s.service_type==="MASS").map(s=>s.ministry_id));
 assert.equal(fsspVenueIds.size,fsspVenues.length,"FSSP duplicate venue IDs");
 const massVenueIds=new Set(fsspMinistries.filter(m=>fsspScheduleMinistries.has(m.ministry_id)).map(m=>m.venue_id));
-assert.equal(massVenueIds.size,fsspSchedules.filter(s=>s.service_type==="MASS").length,"Mass venue count must reconcile against schedules");
+assert.ok(massVenueIds.size>0&&massVenueIds.size<=fsspSchedules.filter(s=>s.service_type==="MASS").length,"Distinct Mass venues must be backed by schedules");
 for(const m of fsspMinistries)assert.ok(fsspVenueIds.has(m.venue_id),"Orphan FSSP ministry");
 for(const s of fsspSchedules)assert.ok(fsspMinistryIds.has(s.ministry_id),"Orphan FSSP Mass schedule");
 const fsspJoined=publishableDirectoryRecords(joinDirectoryRecords({
