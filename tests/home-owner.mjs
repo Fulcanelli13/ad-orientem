@@ -69,4 +69,8 @@ assert.match(ownerSource,/retireLegacyHomeEnrichers/,"Home donor enricher retire
 assert.match(ownerSource,/retireUnresolvedSaintArt/,"Home does not suppress terminal saint-art cards without resolved artwork");
 assert.match(ownerSource,/\.aoSaintArtCard/,"Home saint-art terminal-state cleanup selector is missing");
 
+assert.match(ownerSource,/data-home-cu-static/,"Daily Rule click owner missing");
+assert.match(ownerSource,/opened===false/,"Daily Rule does not recognize a rejected legacy action");
+assert.match(ownerSource,/rosary:"pray\\.rosary"/,"Daily Rule Rosary lacks a canonical fallback");
+
 console.log("PASS modular Home navigation/reset owner");
