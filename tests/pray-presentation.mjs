@@ -389,7 +389,7 @@ for(const n of sourceV3.novenas){
  assert.match(n.editorial,/PENDING_INDEPENDENT/,"Uncollated novena falsely certified: "+n.id);
 }
 const sourceNotices=Object.entries(PRAY_COLLATION_NOTICES_V1);
-assert.equal(sourceNotices.length,10,"Ten edition/locale differences must be signalled in the existing Prayer source drawer");
+assert.equal(sourceNotices.length,12,"Twelve material Prayer edition/locale distinctions must remain in the existing source drawer");
 for(const [id,notice] of sourceNotices){
  const audit=v3Indexed.get(id)?.collation;
  assert.ok(audit,"Source notice lacks a ledger record: "+id);
