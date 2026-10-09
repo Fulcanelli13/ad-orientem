@@ -28,8 +28,8 @@
     {
       "type": "original1962",
       "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
-      "status": "TEXT_EXTRACTION_AND_PASSAGE_COLLATION_PENDING",
-      "printedLocator": "Missale Romanum (1962), Proprium de Tempore, In Litaniis maioribus et minoribus, printed p. 341 ff.; complete leaf-by-leaf collation pending"
+      "status": "OCR_MIRROR_COLLATED_TO_INDEPENDENT_1962_VATICAN_PAGE_IMAGES",
+      "printedLocator": "OCR mirror: In Litaniis maioribus et minoribus pp. 341–342; Vatican typical edition scan photographed on GregoBase pp. 347–349 (different pagination)."
     },
     {
       "type": "rubrics",
@@ -63,33 +63,45 @@
       "url": "https://usuarium.elte.hu/book/808/conspectuses",
       "status": "INCIPITS_ONLY_HISTORICAL_CORROBORATION_NOT_1962_WITNESS",
       "warning": "Pre-1962 material can help identify passage families; it cannot certify 1962 text or wording."
+    },
+    {
+      "type": "original1962_visual_page_witness",
+      "url": "https://gregobase.selapa.net/source.php?id=42&images=1&index=17",
+      "images": [
+        "https://gregobase.selapa.net/sources/42/429.png",
+        "https://gregobase.selapa.net/sources/42/430.png",
+        "https://gregobase.selapa.net/sources/42/431.png"
+      ],
+      "status": "LATIN_NORMALIZED_TRANSCRIPTION_CHECKED_ON_PRINTED_PAGES_347_349",
+      "warning": "Printed-page numbering differs from the existing OCR mirror; use edition-specific section locators."
     }
   ],
   "properSections": [
     {
       "key": "introit",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 348, Ant. ad Introitum",
       "candidate": {
         "incipit": "Exaudivit de templo sancto suo vocem meam",
-        "passageReference": "Psalm 17:7; verse 17:2–3",
+        "passageReference": "Psalm 17:7, with verse Psalm 17:2–3",
         "onlineTextHeading": "Entrance / Introït",
         "sourceLinks": [
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "collect",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 348, Oratio",
       "candidate": {
         "incipit": "Præsta, quæsumus, omnipotens Deus: ut, qui in afflictione nostra",
         "passageReference": "Rogation Collect",
@@ -98,16 +110,17 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "epistle",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 348, Lectio Epistolae beati Iacobi Apostoli",
       "candidate": {
         "incipit": "Confitemini alterutrum peccata vestra",
         "passageReference": "James 5:16–20",
@@ -116,34 +129,36 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "gradual_alleluia",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 348, Tempore paschali: Alleluia",
       "candidate": {
-        "incipit": "Alleluja. Confitemini Domino, quoniam bonus",
-        "passageReference": "Psalm 117:1; verify the exact one-Alleluia construction",
+        "incipit": "Alleluia, alleluia. Propitius esto, Domine, peccatis nostris; Exsultabo et laetabor in misericordia tua",
+        "passageReference": "Psalm 78:9–10 and Psalm 30:8 (two Eastertide Alleluia verses)",
         "onlineTextHeading": "Chants between the readings / Alléluia",
         "sourceLinks": [
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "gospel",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 349, Sequentia sancti Evangelii secundum Lucam",
       "candidate": {
         "incipit": "Quis vestrum habebit amicum",
         "passageReference": "Luke 11:5–13",
@@ -152,16 +167,17 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "offertory",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 349, Ant. ad Offertorium",
       "candidate": {
         "incipit": "Confitebor Domino nimis in ore meo",
         "passageReference": "Psalm 108:30–31",
@@ -170,16 +186,17 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "secret",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 349, Secreta",
       "candidate": {
         "incipit": "Hæc munera, quæsumus, Domine, et vincula nostræ pravitatis",
         "passageReference": "Rogation Secret; English absent from one candidate",
@@ -188,34 +205,36 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "communion",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 349, Ant. ad Communionem",
       "candidate": {
         "incipit": "Petite, et accipietis: quærite, et invenietis",
-        "passageReference": "Matthew 7:7–8",
+        "passageReference": "Luke 11:9–10 (1962 Missal; not Matthew 7:7–8)",
         "onlineTextHeading": "Communion antiphon / Antienne de communion",
         "sourceLinks": [
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     },
     {
       "key": "postcommunion",
-      "latinVerified": false,
+      "latinVerified": true,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null,
+      "exactSourceLocator": "Missale Romanum (1962), Vatican typical edition, p. 349, Postcommunio",
       "candidate": {
         "incipit": "Vota nostra, quæsumus, Domine, pio favore prosequere",
         "passageReference": "Rogation Postcommunion",
@@ -224,19 +243,21 @@
           "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
           "https://laudemus.org/?date=2027-05-03&v=1029"
         ],
-        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
-        "translationRights": "NOT_CLEARED"
-      }
+        "status": "LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED",
+        "translationRights": "ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING"
+      },
+      "researchDraftPath": "data/mass/rogation-proper-trilingual.v1.json"
     }
   ],
   "releaseGate": [
-    "Each section has a precise original Missal locator and verified Latin",
+    "Each section has a precise 1962 Vatican printed-page locator and textually verified normalized Latin; stress accents to be normalized at final editorial pass",
     "Translations independently source-bound and rights cleared",
     "Processional action explicitly selected and lawful for day",
     "II-class violet correct only in conditional route; IV white unchanged otherwise",
     "No Júdica/Confiteor or additional foot prayers before Introit handoff",
     "No Gloria or Credo; Easter preface verified",
-    "Phone EN/FR first-entry/back-navigation proves complete content and mode isolation"
+    "Phone EN/FR first-entry/back-navigation proves complete content and mode isolation",
+    "The independent trilingual research draft itself must be explicitly marked PUBLISHED after textual and editorial approval; metadata approval alone never enables Mass selection."
   ],
   "publicationAllowed": false,
   "researchNotes": [
@@ -247,6 +268,12 @@
     "No change to live Mass selection or Calendar ownership.",
     "Treat the explicit service as PUBLIC_PROCESSION or ORDINARY_AUTHORIZED_SUPPLICATIONS. Do not enable the conditional Mass on private prayer or date alone; a I-class day impedes the II-class votive (1960 §§341, 346–347).",
     "The 1962 original printed heading begins on page 341; original source index independently confirms Introit/Collect/Epistle there, but per-section leaf collation remains pending and no latinVerified flags have been lifted.",
-    "The current test example dated 2027-05-10 was after Ascension and was replaced by 2027-05-03 for the representative Rogations Monday."
+    "The current test example dated 2027-05-10 was after Ascension and was replaced by 2027-05-03 for the representative Rogations Monday.",
+    "Substantive correction: earlier online candidate 'Confitemini Domino' as Rogation Alleluia was inappropriate. The original 1962 Missal's Eastertide paired Alleluia uses Ps 78:9-10 (Propitius esto) and Ps 30:8 (Exsultabo et laetabor).",
+    "Substantive correction: Communion antiphon in the Missale Romanum 1962 is explicitly cited to Lc 11:9-10, not Matthew 7:7-8, although words occur in both.",
+    "Nine Latin source-research strings with newly drafted English and French translations recorded separately in data/mass/rogation-proper-trilingual.v1.json. Page-image proofing, liturgical editorial approval, public-service runtime selection and mobile reader tests remain pending.",
+    "Independent original 1962 Vatican scan checked visually: https://gregobase.selapa.net/sources/42/429.png (p.347, rubric); 430.png (p.348, Introit, Collect, Epistle, Easter Alleluia); 431.png (p.349, Gospel, Offertory, Secret, Communion, Postcommunion). Latin strings are unaccented normalized transcriptions; not literal typographical facsimiles.",
+    "The original OCR mirror uses pp.341–342 while the separate Vatican typical edition photographed on Gregobase uses pp.347–349. All source locators now cite the specific Vatican scan, preventing false page-number agreement.",
+    "The Mass-source proper's original English/French translations remain drafts and source gate stays closed. The 1962 Missal also provides outside-Eastertide Gradual, Alleluia and Tract variants; they are captured as unpublished research-only alternatives."
   ]
 }

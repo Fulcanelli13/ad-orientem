@@ -19,6 +19,8 @@ export function rogationProperReady(gate, sourceProper = null) {
   const byKey = new Map(sections.map(section => [section?.key, section]));
   if (byKey.size !== ROGATION_PROPER_KEYS.length) return false;
   if (sourceProper?.schema !== "AO_1962_ROGATION_PROPER_V1" ||
+      sourceProper?.status !== "PUBLISHED_1962_ROGATION_PROPER" ||
+      sourceProper?.publicationAllowed !== true ||
       !Array.isArray(sourceProper.sections) ||
       sourceProper.sections.length !== ROGATION_PROPER_KEYS.length) return false;
   const sourceByKey = new Map(sourceProper.sections.map(s => [s?.key, s]));

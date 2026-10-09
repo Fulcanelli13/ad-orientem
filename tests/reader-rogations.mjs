@@ -9,6 +9,7 @@ const extension=load("../data/mass/special-days-extension.v1.3.json");
 const payload=load("../data/presentation/reader-rogations.v1.json");
 const graph=extension.graphs.ROG;
 const sourceGate=load("../data/mass/rogation-proper-source-gate.v1.json");
+const researchProper=load("../data/mass/rogation-proper-trilingual.v1.json");
 assert.equal(sourceGate.status,"RESEARCH_ONLY_NOT_AVAILABLE_FOR_MASS_SELECTION");
 assert.equal(sourceGate.publicationAllowed,false);
 assert.equal(sourceGate.scope.defaultMass.class,4);
@@ -22,20 +23,40 @@ assert.equal(sourceGate.scope.conditionalMass.gloria,false);
 assert.equal(sourceGate.scope.conditionalMass.credo,false);
 assert.equal(sourceGate.properSections.length,9);
 assert.equal(new Set(sourceGate.properSections.map(x=>x.key)).size,9);
-assert.ok(sourceGate.properSections.every(x=>!x.latinVerified&&!x.englishVerified&&!x.frenchVerified&&!x.exactSourceLocator),
-  "Rogation Proper cannot be marked complete without passage-by-passage source collation");
+assert.ok(sourceGate.properSections.every(x=>
+  x.latinVerified === true && x.englishVerified === false &&
+  x.frenchVerified === false && typeof x.exactSourceLocator === "string"),
+  "Original 1962 Latin is source-collated but unpublished EN/FR cannot be certified");
 assert.ok(sourceGate.sourceWitnesses.some(x=>x.type==="textual_candidate_not_normative_for_class"&&/NOT itself/.test(x.warning)),
   "A general online Rogation-week Proper must not certify processional class/rubrics");
 
 
 
-assert.ok(sourceGate.properSections.every(x=>x.candidate && x.candidate.status==="DISCOVERED_NOT_COLLATED_TO_1962_MISSALE"),
+assert.ok(sourceGate.properSections.every(x=>x.candidate && x.candidate.status==="LATIN_COLLATED_EN_FR_EDITING_UNPUBLISHED"),
   "Every Rogation Proper section must have an explicit uncertified candidate status");
-assert.ok(sourceGate.properSections.every(x=>x.candidate.sourceLinks.length>=2 && x.candidate.translationRights==="NOT_CLEARED"),
+assert.ok(sourceGate.properSections.every(x=>x.candidate.sourceLinks.length>=2 && /ORIGINAL_DRAFT_EN_FR_EDITORIAL_REVIEW_PENDING/.test(x.candidate.translationRights)),
   "No derivative translation may be published without independent textual and rights validation");
 assert.match(sourceGate.properSections.find(x=>x.key==="epistle").candidate.passageReference,/James 5:16/);
 assert.match(sourceGate.properSections.find(x=>x.key==="gospel").candidate.passageReference,/Luke 11:5/);
 assert.match(sourceGate.properSections.find(x=>x.key==="secret").candidate.passageReference,/English absent/);
+assert.equal(researchProper.schema,"AO_1962_ROGATION_PROPER_V1");
+assert.equal(researchProper.publicationAllowed,false);
+assert.equal(researchProper.sections.length,9);
+assert.equal(researchProper.source.status,"LATIN_SOURCE_PASSAGE_VISUALLY_CHECKED_IN_1962_VATICAN_SCAN");
+assert.ok(researchProper.sections.every(s=>
+  s.sourceLocator===sourceGate.properSections.find(x=>x.key===s.key).exactSourceLocator));
+assert.equal(researchProper.interlectionalVariants.outsideEastertide.status,"RESEARCH_ONLY_VARIANTS_NOT_SELECTABLE");
+assert.ok(["gradual","alleluia","tract"].every(k=>
+  researchProper.interlectionalVariants.outsideEastertide[k].latin.length>90));
+assert.deepEqual(researchProper.sections.map(s=>s.key),ROGATION_PROPER_KEYS);
+assert.ok(researchProper.sections.every(s=>
+  s.latin?.length>100 && s.english?.length>100 && s.french?.length>100 &&
+  /Missale Romanum \(1962\)/.test(s.sourceLocator)
+),"All 9 Rogation source passages must contain Latin and independently drafted EN/FR");
+assert.match(researchProper.sections.find(x=>x.key==="gradual_alleluia").latin,/Propitius esto.*Exsultabo/s);
+assert.match(researchProper.sections.find(x=>x.key==="communion").references.join(";"),/Lc 11:9/);
+assert.doesNotMatch(researchProper.sections.find(x=>x.key==="gradual_alleluia").latin,/Confitemini Domino/);
+assert.equal(rogationProperReady(sourceGate,researchProper),false);
 
 
 assert.deepEqual(ROGATION_PROPER_KEYS,sourceGate.properSections.map(x=>x.key));
@@ -101,6 +122,7 @@ assert.equal(rogationProperReady(certifiedMock),false,
   "A metadata-only certificate without the actual Rogation Proper must fail closed");
 const syntheticProper={
   schema:"AO_1962_ROGATION_PROPER_V1",
+  status:"PUBLISHED_1962_ROGATION_PROPER",publicationAllowed:true,
   sections:certifiedMock.properSections.map(s=>({
     key:s.key,sourceLocator:s.exactSourceLocator,
     latin:"TEST ONLY - fabricated Latin fixture content; not publishable",
@@ -109,6 +131,9 @@ const syntheticProper={
   }))
 };
 assert.equal(rogationProperReady(certifiedMock,syntheticProper),true);
+syntheticProper.status="SOURCE_RESEARCH_UNPUBLISHED";
+assert.equal(rogationProperReady(certifiedMock,syntheticProper),false);
+syntheticProper.status="PUBLISHED_1962_ROGATION_PROPER";
 const permitted=resolveRogationMassVariant({
   choice:"ROGATION_MASS",observanceConfirmed:true,
   service:"ORDINARY_AUTHORIZED_SUPPLICATIONS",dayClass:2,sourceGate:certifiedMock,sourceProper:syntheticProper
