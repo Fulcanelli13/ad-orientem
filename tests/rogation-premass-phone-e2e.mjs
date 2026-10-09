@@ -42,6 +42,10 @@ try{
   await page.waitForFunction(()=>document.querySelector('[data-rogation-choice] option[value="ROGATION_MASS"]')?.disabled===true);
   const status=await page.locator("[data-rogation-status]").textContent();
   assert.match(status,lang==="fr"?/pas encore certifié/i:/not yet certified/i);
+  for(const selector of ["[data-ao-rogation-preflight] summary","[data-rogation-service]","[data-rogation-choice]"]){
+   const box=await page.locator(selector).boundingBox();
+   assert.ok(box&&box.height>=44,selector+" must have an accessible 44px touch target");
+  }
   await page.selectOption("[data-rogation-service]","PUBLIC_PROCESSION");
   const selection=await page.evaluate(()=>globalThis.__rogation.selectionFor(globalThis.__legacy()));
   assert.equal(selection.choice,"DAY_MASS");
