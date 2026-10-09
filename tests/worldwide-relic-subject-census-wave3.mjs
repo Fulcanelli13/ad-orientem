@@ -54,7 +54,8 @@ assert.ok(wave3.historical_adversarial_reviews.some(x=>x.subject_id==="subject:s
 const matthias=wave3.custody_claims.filter(x=>x.subject_id==="subject:saint-matthew-the-apostle");assert.equal(matthias.length,2);
 const rubaga=wave3.custody_claims.filter(x=>x.reported_custodian.includes("Rubaga"));assert.equal(rubaga.length,3);
 assert.ok(rubaga.every(x=>x.material_classification==="UNDETERMINED_NO_FIRST_CLASS_EVIDENCE"));
-assert.equal(prod.relics.length,wave1.legacy_object_crosswalk.length,"production relics must remain intact");
+assert.ok(prod.relics.length>=wave1.legacy_object_crosswalk.length,"production relics must remain intact");
+assert.ok(wave1.legacy_object_crosswalk.every(x=>prod.relics.some(r=>r.id===x.legacy_relic_id)),"All frozen legacy relic identities must survive expansion");
 const stats=JSON.parse(execFileSync(process.execPath,["tools/atlas/report-world-relic-census.mjs"],{encoding:"utf8"}));
 assert.equal(stats.first_wave_claims+stats.second_wave_claims+stats.third_wave_claims,77);
 assert.equal(stats.historical_case_reviews,19);
