@@ -4,30 +4,13 @@ import { scripturePassage } from "./catalogue.js";
  * One citation entry point for Mass/Prayer/Formation. This parses labels;
  * it never licenses Bible text or claims an unverified verse concordance.
  */
-const BOOK_ALIASES=Object.freeze({
-  "Mt":"Matthew","Matthew":"Matthew","Matthieu":"Matthew",
-  "Mk":"Mark","Mark":"Mark","Marc":"Mark",
-  "Lk":"Luke","Luke":"Luke","Luc":"Luke",
-  "Jn":"John","John":"John","Jean":"John",
-  "Acts":"Acts","Actes":"Acts",
-  "Gen":"Genesis","Genesis":"Genesis","Genèse":"Genesis",
-  "Ex":"Exodus","Exodus":"Exodus","Exode":"Exodus",
-  "Rom":"Romans","Romans":"Romans","Romains":"Romans",
-  "1 Cor":"1Corinthians","1 Corinthians":"1Corinthians","1 Corinthiens":"1Corinthians",
-  "2 Cor":"2Corinthians","2 Corinthians":"2Corinthians",
-  "1 Thess":"1Thessalonians","1 Thessalonians":"1Thessalonians",
-  "Rev":"Revelation","Revelation":"Revelation","Apocalypse":"Revelation",
-  "Ps":"Psalms","Psalm":"Psalms","Psalms":"Psalms","Psaume":"Psalms","Psaumes":"Psalms",
-  "Eph":"Ephesians","Ephesians":"Ephesians","Éphésiens":"Ephesians",
-  "1 Peter":"1Peter","1 Pierre":"1Peter","2 Timothy":"2Timothy","2 Timothée":"2Timothy",
-  "James":"James","Jacques":"James","Proverbs":"Proverbs","Proverbes":"Proverbs"
-});
+import {resolveCatholicBookName} from "./chapter-counts.js";
 const REF=/^(.+?)\s+(\d{1,3})(?:\s*[:;,]\s*(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?)?$/u;
 export function parseScriptureContext(value){
   const text=String(value||"").trim();
   const match=REF.exec(text);
   if(!match)return null;
-  const book=BOOK_ALIASES[match[1].trim()];
+  const book=resolveCatholicBookName(match[1].trim());
   if(!book)return null;
   const chapter=Number(match[2]),verseStart=Number(match[3]||1),verseEnd=Number(match[4]||match[3]||1);
   try{
@@ -45,6 +28,22 @@ export function verifiedScriptureCommentary(passage){
       url:"https://www.ecatholic2000.com/catena/untitled-12.shtml",
       type:"PATRISTIC_COMPILATION",scope:"PASSAGE",language:"en",
       note:"Collected patristic commentary; not the text of the Gospel."
+    });
+  }
+  if(passage?.book==="Luke"&&passage.chapter===1&&passage.verseStart>=26&&passage.verseEnd<=38){
+    return Object.freeze({
+      title:"St Thomas Aquinas · Catena Aurea (Luke 1:26–38 · Annunciation)",
+      url:"https://www.ecatholic2000.com/catena/untitled-62.shtml",
+      type:"PATRISTIC_COMPILATION",scope:"PASSAGE",language:"en",
+      note:"The chapter contains separately attributed comments by Bede, Ambrose and other writers; commentary is not Gospel text."
+    });
+  }
+  if(passage?.book==="Luke"&&passage.chapter===1&&passage.verseStart>=46&&passage.verseEnd<=55){
+    return Object.freeze({
+      title:"St Thomas Aquinas · Catena Aurea (Luke 1:46–55 · Magnificat)",
+      url:"https://www.ecatholic2000.com/catena/untitled-62.shtml",
+      type:"PATRISTIC_COMPILATION",scope:"PASSAGE",language:"en",
+      note:"Collected verse-by-verse patristic commentary on Mary's canticle; not inspired Scripture."
     });
   }
   return null; // Never invent a verse-specific Father, commentary, or locator.
