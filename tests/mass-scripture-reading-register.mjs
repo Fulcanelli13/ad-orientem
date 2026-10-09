@@ -50,7 +50,7 @@ for(const witness of raw.celebrations){
   assert.equal(massScriptureContextForCard(card,prep(proper)).reference,reference);
   // Unrecognized and switched sourcePath must not inherit a Sunday citation.
   assert.equal(registeredMassReading({...proper,sourcePath:"Sancti/10-07"},slot),null);
-  assert.equal(massScriptureContextForCard(card,prep({...proper,sourcePath:"Tempora/Pent09-0"})).state,"UNRESOLVED_REFERENCE");
+  assert.equal(massScriptureContextForCard(card,prep({...proper,sourcePath:"Tempora/UNLISTED-0"})).state,"UNRESOLVED_REFERENCE");
   assert.equal(registeredMassReading({...proper,[field]:{lat:"Completely unrelated Latin passage."}},slot),null);
   assert.equal(registeredMassReading({...proper,[field]:{en:"English only, no verified Latin identity"}},slot),null);
   // An actual contradictory or unparseable first-party source reference
