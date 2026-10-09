@@ -191,7 +191,7 @@ function host({ route = "home", confirm = true } = {}) {
     AO_V37_SHELL: { openDomain: () => true, openModule: async () => ({ ok:true }) },
   };
   const adapter=createAppHostAdapter(win);
-  assert.equal(adapter.hardHome(),true);
+  assert.equal(await adapter.hardHome(),true);
   assert.deepEqual(calls,["apostolate:close","home:modular"],"Home did not close Apostolate before mounting the modular owner");
 }
 
@@ -238,10 +238,10 @@ function host({ route = "home", confirm = true } = {}) {
     setTimeout: (fn) => { fn(); return 1; },
   };
   const adapter = createAppHostAdapter(win);
-  assert.equal(adapter.hardHome(), true);
+  assert.equal(await adapter.hardHome(), true);
   assert.equal(await adapter.openDomain("pray"), true);
   assert.equal(await adapter.openCalendar(), false,"Calendar must fail closed without its modular owner");
-  assert.equal(adapter.openSettings(), true);
+  assert.equal(await adapter.openSettings(), true);
   assert.equal(adapter.dismissSettings(), true);
   assert.deepEqual(calls, ["pray:close", "home", "pray:open", "settings:open", "settings:dismiss"]);
 }
@@ -254,7 +254,7 @@ function host({ route = "home", confirm = true } = {}) {
   };
   Object.defineProperty(win,"AO_SETTINGS_V4359",{get(){throw new Error("historical Settings donor was probed");}});
   const adapter=createAppHostAdapter(win);
-  assert.equal(adapter.openSettings(),false,"Settings did not fail closed when modular owner was unavailable");
+  assert.equal(await adapter.openSettings(),false,"Settings did not fail closed when modular owner was unavailable");
   assert.deepEqual(calls,[],"utility.settings fallback reopened historical Settings");
 }
 
@@ -364,6 +364,98 @@ function host({ route = "home", confirm = true } = {}) {
   await Promise.resolve();
   assert.equal(prevented,true,"late donor ribbon click was not owned by modular shell");
   assert.deepEqual(calls,["home","learn:open"]);
+}
+
+
+{
+  // The modular Home owner is allowed to be asynchronous. A rejected open
+  // must not be treated as success merely because it returned a Promise.
+  const calls = [];
+  const adapter = createAppHostAdapter({
+    AO_HOME_APP_V1: { open: async () => { calls.push("modular"); return false; } },
+    AO_NAV_V362: { home: async () => { calls.push("fallback"); return true; } },
+  });
+  assert.equal(await adapter.hardHome(), true);
+  assert.deepEqual(calls, ["modular", "fallback"]);
+}
+{
+  const adapter = createAppHostAdapter({
+    AO_HOME_APP_V1: { open: async () => false },
+    AO_NAV_V362: { home: async () => false },
+    AO_SETTINGS_APP_V1: { open: async () => false },
+  });
+  assert.equal(await adapter.hardHome(), false, "both failed Home owners were reported as success");
+  assert.equal(await adapter.openSettings(), false, "async rejected Settings open was reported as success");
+}
+{
+  // A donor can replace the entire ribbon DOM node after initial adoption.
+  // Its first click must bind to the replacement, not the detached old node.
+  const calls = [];
+  const documentCaptures = [];
+  const makeButton = (surface) => ({
+    dataset: { aoRibbon: surface },
+    classList: { toggle() {} },
+    setAttribute() {},
+    removeAttribute(name) { if (name === "data-ao-ribbon") delete this.dataset.aoRibbon; },
+    querySelectorAll() { return []; },
+  });
+  const makeNav = () => {
+    const buttons = NON_MASS_DONOR_CONTRACT.topLevel.map(makeButton);
+    return {
+      buttons,
+      dataset: {},
+      handler: null,
+      removed: 0,
+      contains(button) { return buttons.includes(button); },
+      addEventListener(type, handler) { if (type === "click") this.handler = handler; },
+      removeEventListener(type, handler) {
+        if (type === "click" && this.handler === handler) { this.handler = null; this.removed++; }
+      },
+      querySelectorAll(selector) {
+        if (selector === "[data-ao-ribbon], [data-ao-app-surface]") return buttons;
+        if (selector === "[data-ao-ribbon]") return buttons.filter(b => b.dataset.aoRibbon);
+        if (selector === "[data-ao-app-surface]") return buttons.filter(b => b.dataset.aoAppSurface);
+        return [];
+      },
+    };
+  };
+  let currentNav = makeNav();
+  const win = {
+    document: {
+      documentElement: { dataset: {} },
+      getElementById(id) { return id === "ao-global-ribbon" ? currentNav : null; },
+      addEventListener(type, handler, options) {
+        if (type === "click" && options?.capture) documentCaptures.push(handler);
+      },
+      removeEventListener() {},
+    },
+    MutationObserver: class { constructor(callback) { this.callback = callback; } observe() {} disconnect() {} },
+    AO_RUNTIME_V8: { store: { getState: () => ({ route: "home", language: "en" }), subscribe: () => () => {} } },
+    AO_NAV_V362: { home: () => { calls.push("home"); return true; } },
+    AO_LEARN_APP_V1: { open: () => { calls.push("learn:open"); return true; } },
+    AO_V37_SHELL: { openDomain: () => true },
+    setTimeout: fn => { fn(); return 1; },
+  };
+  const bridge = installAppShellBridge({ win, pollMs: 0, maxPolls: 1 });
+  const oldNav = currentNav;
+  assert.equal(typeof oldNav.handler, "function", "original ribbon was not listening");
+  currentNav = makeNav();
+  const newButton = currentNav.buttons.find(b => b.dataset.aoRibbon === "learn");
+  const click = {
+    target: { closest(selector) {
+      return /data-ao-app-surface|data-ao-ribbon/.test(selector) ? newButton : null;
+    } },
+    preventDefault() {},
+    stopPropagation() {},
+  };
+  for (const capture of documentCaptures) capture(click);
+  assert.equal(newButton.dataset.aoAppSurface, "learn", "replacement ribbon was not adopted on first click");
+  assert.equal(typeof currentNav.handler, "function", "replacement ribbon has no click listener");
+  assert.equal(oldNav.removed, 1, "detached ribbon retained its listener");
+  currentNav.handler(click);
+  await new Promise(resolve => setImmediate(resolve));
+  assert.deepEqual(calls, ["home", "learn:open"], "first click on replacement ribbon did not navigate");
+  assert.equal(bridge.getActive(), "learn");
 }
 
 console.log("PASS app shell contract");

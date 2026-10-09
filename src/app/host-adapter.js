@@ -70,14 +70,42 @@ export function createAppHostAdapter(win = globalThis) {
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const modular = win?.AO_HOME_APP_V1;
+      const fallbackHome = () => {
+        const nav = win?.AO_NAV_V362;
+        if (typeof nav?.home !== "function") return false;
+        try {
+          // Preserve synchronous return values for legacy callers, while
+          // waiting for genuinely asynchronous implementations.
+          const value = nav.home();
+          return value && typeof value.then === "function"
+            ? Promise.resolve(value).then(result => result !== false).catch(error => {
+                try { win?.console?.error?.("Home fallback failed", error); } catch {}
+                return false;
+              })
+            : value !== false;
+        } catch (error) {
+          try { win?.console?.error?.("Home fallback failed", error); } catch {}
+          return false;
+        }
+      };
       if (typeof modular?.open === "function") {
-        const opened = modular.open();
-        if (opened !== false) return true;
+        try {
+          const opened = modular.open();
+          if (opened && typeof opened.then === "function") {
+            return Promise.resolve(opened).then(
+              result => result === false ? fallbackHome() : true,
+              error => {
+                try { win?.console?.error?.("Modular Home failed to open", error); } catch {}
+                return fallbackHome();
+              }
+            );
+          }
+          if (opened !== false) return true;
+        } catch (error) {
+          try { win?.console?.error?.("Modular Home failed to open", error); } catch {}
+        }
       }
-      const nav = win?.AO_NAV_V362;
-      if (typeof nav?.home !== "function") return false;
-      nav.home();
-      return true;
+      return fallbackHome();
     },
 
     openDomain(domain) {
@@ -151,7 +179,18 @@ export function createAppHostAdapter(win = globalThis) {
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const api = settingsApi(win);
       if (typeof api?.open !== "function") return false;
-      return api.open() !== false;
+      try {
+        const opened = api.open();
+        return opened && typeof opened.then === "function"
+          ? Promise.resolve(opened).then(result => result !== false).catch(error => {
+              try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
+              return false;
+            })
+          : opened !== false;
+      } catch (error) {
+        try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
+        return false;
+      }
     },
 
     settingsOpen() {
