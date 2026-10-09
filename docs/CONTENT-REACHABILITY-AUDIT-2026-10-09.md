@@ -100,3 +100,14 @@ The accompanying contract test [`tests/content-reachability-source-contract.mjs`
 ## V. Freeze conditions
 
 Do not change global navigation or move Prayer/Calendar content in this PR. The underlying production app is receiving parallel work, and a source census must not silently overrule those owners. Final UI consolidation is a separate PR after route, return-context, publication and phone acceptance are certified.
+
+## VI. Resolution update — 9 October 2026, after the baseline census
+
+**Two implementation defects identified by this historical source audit have now been addressed in separate production PRs**. Their historical evidence remains recorded here to explain why the changes were needed; the current release status is held in `data/app/content-reachability-audit.v1.json`.
+
+- **RCH-011: Explore related places — [PR #765](https://github.com/Fulcanelli13/ad-orientem/pull/765), merged at `2b0480a`.** An official, explicit bidirectional association now makes the Kerzenkapelle Kevelaer and St Winefride's RC Church discoverable through associated shrine results and openable as distinct Place profiles. No duplicate shrines, coordinate borrowing or schedule claims were introduced.
+- **RCH-004: Home exact-route fallback — [PR #766](https://github.com/Fulcanelli13/ad-orientem/pull/766), merged at `0ece75a`.** A failed Prayer deep link now attempts the requested route directly and displays bilingual failure/retry rather than silently opening the generic Prayer hub.
+
+GitHub's app-shell/phone and visual CI checks completed successfully for both PRs; Directory contracts also passed for #765. **This is not a claim that the entire 3,849-item inventory has been individually phone-verified.** The two Place IDs remain without *direct* shrine/relic/apparition object ownership because they are separate physical places, but they now have verified indirect discovery relationships. Thus 179/181 is still the **baseline direct-link count**, while all 181 now have a known discovery route through either direct links or official related-place associations.
+
+The five-destination proposal is not implemented and should remain a separate migration, after Calendar and Prayer audits.
