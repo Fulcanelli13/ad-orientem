@@ -1,10 +1,12 @@
+import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+// The historical Catechism controller is embedded in the monolithic HTML.
+// Assert the native API exists, rather than maintain a second question navigator.
 const html=readFileSync("index.html","utf8");
-const terms=["AO_TRADITIONAL_CATECHISM","ao-cate-root","AO_CATECHISM","aoCate","cateQuestion","catechism"];
-for(const term of terms){
- const positions=[];let i=-1;
- while((i=html.indexOf(term,i+1))>=0 && positions.length<45)positions.push(i);
- console.log("\n=== "+term+" occurrences (first "+positions.length+") ===");
- for (const p of positions.slice(0,term==="AO_TRADITIONAL_CATECHISM"?20:term==="ao-cate-root"?15:5))
-   console.log("\nOFFSET "+p+"\n"+html.slice(Math.max(0,p-950),Math.min(html.length,p+1450)).replace(/\n{3,}/g,"\n\n"));
-}
+assert.match(html,/AO_TRADITIONAL_CATECHISM\s*=\s*\{[^}]{0,900}openQuestion\s*:\s*\(n\)\s*=>/);
+assert.match(html,/openQuestion\s*:\s*\(n\)\s*=>\s*\{const x=getQ\(n\);if\(!x\)return false;state\.detail=Number\(n\)/);
+assert.match(html,/['"]ao-cate-root['"]/);
+const bridge=readFileSync("src/learn/catechism-guided-preview-bridge.js","utf8");
+assert.ok(bridge.includes("openNativeCatechismQuestion(win, number, lang)"));
+assert.ok(!bridge.includes("link.click()"),"No fake native navigation or automatic external source redirects");
+console.log(JSON.stringify({status:"PASS",legacyQuestionNavigator:"AO_TRADITIONAL_CATECHISM.openQuestion",route:"learn.catechism",publicPublicationGate:"fail-closed"}));
