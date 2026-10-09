@@ -6,6 +6,7 @@ import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
 import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./reference-safety.js";
 import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
 import { verifiedScriptureCommentary } from "./context.js";
+import {scriptureChapterLimit} from "./chapter-counts.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -141,10 +142,10 @@ export function mountScriptureLibrary(root,{
    bookControl.append(books);nav.append(bookControl);
    for(const [field,value] of [[t.chapter,location.chapter],[t.verse,location.verseStart]]){
      const label=element("label",field);const input=element("input");
-     input.type="number";input.min="1";input.max=field===t.chapter?"200":"200";input.step="1";input.value=String(value);
+     input.type="number";input.min="1";input.max=field===t.chapter?String(scriptureChapterLimit(location.book)):"200";input.step="1";input.value=String(value);
      input.addEventListener("change",()=>{
        const n=Number(input.value);
-       if(!Number.isSafeInteger(n)||n<1||n>200){input.value=String(value);return;}
+       if(!Number.isSafeInteger(n)||n<1||n>(field===t.chapter?scriptureChapterLimit(location.book):200)){input.value=String(value);return;}
        location=field===t.chapter
          ? scripturePassage({book:location.book,chapter:n,verseStart:1})
          : scripturePassage({book:location.book,chapter:location.chapter,verseStart:n});
@@ -248,7 +249,7 @@ export function mountScriptureLibrary(root,{
    bookmark.addEventListener("click",()=>{prefs.toggleBookmark(location,editionId);draw();});actions.append(bookmark);
    for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
      const button=element("button",label);button.type="button";
-     button.disabled=direction<0&&location.chapter===1;
+     button.disabled=direction<0 ? location.chapter===1 : location.chapter>=scriptureChapterLimit(location.book);
      button.addEventListener("click",()=>{location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
      actions.append(button);
    }
