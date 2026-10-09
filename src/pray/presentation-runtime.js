@@ -967,7 +967,7 @@ function confessionExaminationView(ex){
 }
 
 function renderConfession(){
- const stages=[L('Prepare','Préparer'),L('Examination','Examen'),L('In Confessional','Au confessionnal'),L('After','Après')];
+ const stages=[L('Prepare','Préparer'),L('Examination','Examen'),L('Before entering','Avant d’entrer'),L('After','Après')];
  const ex=isFr()?DATA.examFr:DATA.exam;
  const path=confessionPath(CONF.path);
  let body='';
@@ -998,7 +998,7 @@ function renderConfession(){
  }
  const sources=`<details class="aoP435930ConfSources"><summary>${esc(L('Catholic sources and explanation','Sources et explication catholiques'))}</summary>
    <p>${esc(L('A general Confession is a wider individual examination; it is not required simply because the last Confession was long ago, and is not the exceptional collective rite of general absolution. All unconfessed grave sins remembered after diligent examination must be confessed by kind and number.','Une confession générale est un examen individuel plus large ; une longue absence ne l’impose pas, et elle n’est pas le rite exceptionnel d’absolution générale collective. Tout péché grave non encore confessé, rappelé après un examen diligent, doit être confessé selon son espèce et son nombre.'))}</p>
-   ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer">${esc(src.label)} ↗</a>`).join('')}</details>`;
+   ${CONFESSION_SOURCE_LINKS.map(src=>`<a href="${esc(isFr()&&src.urlFr?src.urlFr:src.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&src.labelFr?src.labelFr:src.label)} ↗</a>`).join('')}</details>`;
  const lastCard=CONF.stage===3&&CONF.afterStep===confessionAfterCards().length-1;
  const navigation=`<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-conf-prev ${CONF.stage===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>
  <button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):L('Continue','Continuer'))}</button></div>`;
