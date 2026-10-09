@@ -900,9 +900,11 @@ try{
     const api=globalThis.__AO_SPECIAL_RITE_VISUAL_API;
     const cards=api.model.cards;
     const terminal=cards.at(-1);
+    // A Requiem suppresses the final blessing, which is a separate split
+    // M29.B presentation card. The last *visible* Mass card is M29.A Placeat.
     const lastAllowed=cards.findLast(card=>
-      String(card.sourceSectionId??card.sectionId)!=="AO.CARD.030" &&
-      Number(card.sourceSequence)!==30);
+      Number(card.sourceSequence)===29 &&
+      !card.blocks?.some(block=>block.blockId==="AO.SM.B092"));
     const shown=api.showSection(lastAllowed.sectionId);
     return {
       terminal:{sectionId:terminal?.sectionId,sourceSequence:terminal?.sourceSequence,sourceSectionId:terminal?.sourceSectionId},
