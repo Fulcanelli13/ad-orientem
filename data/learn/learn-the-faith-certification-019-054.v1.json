@@ -65,6 +65,22 @@
       "originalLanguagePassagesStillRequireHumanSourceScopeCertification": true,
       "nativeFrenchApproved": false,
       "independentTheologicalApproved": false
+    },
+    "sourceScopeDeskReview20261009": {
+      "claimCount": 122,
+      "reviewed": 122,
+      "numberedItalianRefs": 359,
+      "supplementaryAuthorityReferences": 13,
+      "claimsWithSpecificEditorialFlags": 31,
+      "bilingualTextRevisions": 4,
+      "newPrimarySourceAuthorities": [
+        "CCC_1554_ORDERS",
+        "PIUS_IX_INEFFABILIS_DEUS",
+        "CIC_1983_PENANCE"
+      ],
+      "historicalAndDoctrinalHumanApprovals": 0,
+      "nativeFrenchApprovals": 0,
+      "scope": "All 122 claims inspected against Italian Catechism passage witnesses or identified original supplementary source paragraphs; desk-level sourcing and candidate copy only, not printed original collation or independent theological/canonical approval."
     }
   },
   "curriculumReconciliation": {
@@ -84,6 +100,18 @@
     "CCC_1667_1671": {
       "title": "Catechism of the Catholic Church, §§1667–1671",
       "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html"
+    },
+    "CCC_1554_ORDERS": {
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_6/iii_the_three_degrees_of_the_sacrament_of_holy_orders.index.html",
+      "title": "Catechism of the Catholic Church, §1554"
+    },
+    "PIUS_IX_INEFFABILIS_DEUS": {
+      "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+      "title": "Pius IX, Ineffabilis Deus (8 Dec 1854), Vatican Italian text"
+    },
+    "CIC_1983_PENANCE": {
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
+      "title": "1983 Code of Canon Law, canons 1249–1253"
     }
   },
   "lessons": [
@@ -126,7 +154,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q133"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Baptism and Penance are the principal sacraments by which sins are forgiven.",
@@ -165,7 +211,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q134",
+              "PX1912-Q139"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Grace lost through mortal sin may be recovered through worthy sacramental confession or perfect contrition; perfect contrition does not cancel the obligation to confess the mortal sins.",
@@ -193,7 +258,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q146"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "PERFECT_CONTRITION_REQUIRES_CONFESSION"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -308,7 +393,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q096",
+              "PX1912-Q097",
+              "PX1912-Q098",
+              "PX1912-Q099",
+              "PX1912-Q156"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "At the end of the world there will be the resurrection of the body and the universal judgment.",
@@ -369,7 +477,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q095",
+              "PX1912-Q097",
+              "PX1912-Q157",
+              "PX1912-Q158"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Eternal life means that final reward or punishment endures forever, with the vision of God as man's true happiness.",
@@ -408,7 +538,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q159",
+              "PX1912-Q160"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -485,7 +634,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q014",
+              "PX1912-Q015"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Purgatory is a temporary purification for souls destined for heaven who still require purification or satisfaction.",
@@ -535,7 +703,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q099",
+              "PX1912-Q101",
+              "PX1912-Q102"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "PURGATORY_PURIFICATION"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Hell is the eternal deprivation of God and punishment of those who die in mortal sin.",
@@ -607,7 +797,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q016",
+              "PX1912-Q017",
+              "PX1912-Q099",
+              "PX1912-Q103",
+              "PX1912-Q104"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/lezione-preliminare.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -677,7 +890,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q068"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Sanctifying grace is a habitual supernatural gift that makes us just, friends and adopted children of God, and heirs of heaven.",
@@ -705,7 +936,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q270"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Actual graces are divine helps—such as good thoughts and inspirations—by which God moves and assists us in good actions.",
@@ -733,7 +982,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q230"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The sacraments give or increase sanctifying grace and confer the particular sacramental grace proper to each sacrament.",
@@ -805,7 +1072,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q269",
+              "PX1912-Q271",
+              "PX1912-Q273",
+              "PX1912-Q274",
+              "PX1912-Q275"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -899,7 +1188,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q267",
+              "PX1912-Q268",
+              "PX1912-Q272"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "They confer sanctifying grace and the particular sacramental grace ordered to each sacrament's end.",
@@ -960,7 +1269,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q269",
+              "PX1912-Q270",
+              "PX1912-Q271",
+              "PX1912-Q273"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "A sacrament requires matter, form and a qualified minister acting with the intention of doing what the Church does.",
@@ -1021,7 +1351,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q286",
+              "PX1912-Q287",
+              "PX1912-Q288",
+              "PX1912-Q289"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "MINISTER_AND_INTENTION"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Baptism, Confirmation and Holy Orders imprint a permanent sacramental character and are therefore received only once.",
@@ -1093,7 +1446,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q281",
+              "PX1912-Q282",
+              "PX1912-Q283",
+              "PX1912-Q284",
+              "PX1912-Q285"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -1180,7 +1555,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q290"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Its essential rite uses natural water with the Trinitarian form; the ordinary minister is a priest, though in necessity another person can baptize with the Church's intention.",
@@ -1241,7 +1634,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q291",
+              "PX1912-Q292",
+              "PX1912-Q293",
+              "PX1912-Q294"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "BAPTISMAL_FORM_AND_MINISTER"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Baptism removes original sin and actual sins, gives sanctifying grace and the supernatural virtues, imprints the Christian character and makes one capable of receiving the other sacraments.",
@@ -1280,7 +1696,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q295",
+              "PX1912-Q296"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Because Baptism is necessary for salvation, the Church also teaches Baptism of blood and Baptism of desire when water Baptism cannot be received.",
@@ -1330,7 +1765,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q278",
+              "PX1912-Q279",
+              "PX1912-Q280"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "BAPTISM_OF_DESIRE_OR_BLOOD"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -1458,11 +1915,34 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q282",
+              "PX1912-Q283",
+              "PX1912-Q284",
+              "PX1912-Q285",
+              "PX1912-Q304"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-cresima.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
-          "en": "The historical Confirmation rite uses sacred chrism, a sacramental form and the laying on of hands. A bishop is the ordinary minister, while a priest can confirm with the requisite faculty; the 1912 formula must not be presented as unchanged across all rites.",
-          "fr": "Le rite historique de la Confirmation emploie le saint chrême, une forme sacramentelle et l'imposition des mains. L'évêque en est le ministre ordinaire, mais un prêtre peut confirmer avec la faculté requise ; il ne faut pas présenter la formule de 1912 comme inchangée dans tous les rites.",
+          "en": "The bishop is the ordinary minister of Confirmation; a priest may confirm when duly authorized. In the traditional rite, the bishop invokes the Holy Ghost over the candidates and anoints each forehead with sacred chrism using the prescribed sacramental form.",
+          "fr": "L’évêque est le ministre ordinaire de la Confirmation ; un prêtre peut confirmer s’il a reçu la faculté nécessaire. Dans le rite traditionnel, l’évêque invoque le Saint-Esprit sur les confirmands et oint leur front du saint chrême en prononçant la formule sacramentelle prescrite.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -1519,7 +1999,31 @@
               ]
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeRevised20261009": true,
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q305",
+              "PX1912-Q306",
+              "PX1912-Q307",
+              "PX1912-Q308"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-cresima.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "TRADITIONAL_CONFIRMATION_RITE_AND_FACULTY"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The sacrament gives an abundance of the Holy Spirit's grace and gifts to strengthen faith and the other virtues against spiritual enemies.",
@@ -1547,7 +2051,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q309"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-cresima.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The recipient should be in the state of grace, know the principal mysteries of faith if capable of reason, and approach Confirmation with devotion.",
@@ -1575,7 +2097,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q311"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-cresima.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -1696,7 +2236,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q316",
+              "PX1912-Q322",
+              "PX1912-Q323",
+              "PX1912-Q331",
+              "PX1912-Q333"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "At the Consecration the substance of bread and wine becomes Christ's Body and Blood, while the sensible appearances remain.",
@@ -1801,7 +2363,32 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q324",
+              "PX1912-Q325",
+              "PX1912-Q326",
+              "PX1912-Q327",
+              "PX1912-Q328",
+              "PX1912-Q329",
+              "PX1912-Q330",
+              "PX1912-Q332"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Christ instituted the Eucharist at the Last Supper as the permanent sacrifice of the New Testament and the food of souls.",
@@ -1840,7 +2427,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q320",
+              "PX1912-Q321"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Worthy Communion requires the state of grace, faith and reverent preparation, and it preserves and increases grace in the soul.",
@@ -1934,7 +2540,33 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q335",
+              "PX1912-Q336",
+              "PX1912-Q337",
+              "PX1912-Q338",
+              "PX1912-Q343",
+              "PX1912-Q344",
+              "PX1912-Q345"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "HISTORIC_EUCHARISTIC_FAST_MUST_NOT_TRANSFER"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -2044,7 +2676,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q346",
+              "PX1912-Q348"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The sacrifice of the Mass is the same sacrifice as that of the Cross, differing in the manner of offering rather than in the Victim.",
@@ -2083,7 +2734,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q349",
+              "PX1912-Q350"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "IDENTITY_OF_MASS_AND_CROSS_DISTINCT_MODE"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Mass is offered to God alone in adoration, thanksgiving, satisfaction for sins and petition for graces; even when it is celebrated in honour of saints, the sacrificial offering is not directed to them.",
@@ -2122,7 +2794,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q351",
+              "PX1912-Q352"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The faithful assist most fittingly by uniting themselves with the priest's offering and recalling the sacrifice of the Cross.",
@@ -2161,7 +2852,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q353",
+              "PX1912-Q354"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -2254,7 +2964,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q355",
+              "PX1912-Q356",
+              "PX1912-Q357"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "A good confession requires examination of conscience, sorrow, a firm purpose of amendment, confession and satisfaction.",
@@ -2403,7 +3133,36 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q358",
+              "PX1912-Q359",
+              "PX1912-Q360",
+              "PX1912-Q361",
+              "PX1912-Q362",
+              "PX1912-Q363",
+              "PX1912-Q364",
+              "PX1912-Q365",
+              "PX1912-Q366",
+              "PX1912-Q367",
+              "PX1912-Q368",
+              "PX1912-Q369"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The penitent must flee occasions of sin and confess all unconfessed mortal sins sincerely and integrally.",
@@ -2530,7 +3289,36 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q370",
+              "PX1912-Q371",
+              "PX1912-Q372",
+              "PX1912-Q373",
+              "PX1912-Q374",
+              "PX1912-Q375",
+              "PX1912-Q376",
+              "PX1912-Q377",
+              "PX1912-Q378",
+              "PX1912-Q379"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "INTEGRAL_CONFESSION_AND_UNINTENTIONALLY_OMITTED_SIN"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Absolution forgives sins; sacramental penance and other works of penance address temporal punishment and the need for satisfaction.",
@@ -2613,7 +3401,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q380",
+              "PX1912-Q381",
+              "PX1912-Q382",
+              "PX1912-Q383",
+              "PX1912-Q384",
+              "PX1912-Q385"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -2716,7 +3527,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q392"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-estrema-unzione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The priest administers Anointing of the Sick with blessed oil and the prescribed prayers and anointings. The particular ritual forms are those authorized for the rite being celebrated; the 1912 Catechism describes the ceremonies of its period.",
@@ -2760,6 +3589,27 @@
             "status": "REWORDED_FOR_SOURCE_SCOPE_REQUIRES_HUMAN_THEOLOGICAL_AND_NATIVE_FRENCH_REVIEW",
             "editorialRationale": "Move from editorial command to substantive distinction of a sacrament's minister and variable historical ritual forms.",
             "publicationApproved": false
+          },
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q393",
+              "PX1912-Q394"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-estrema-unzione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "TRADITIONAL_UNCTION_RITE_VS_CURRENT_FORM"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
           }
         },
         {
@@ -2799,7 +3649,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q395",
+              "PX1912-Q396"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-estrema-unzione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "CONDITIONAL_FORGIVENESS_IN_EXTREME_UNCTION"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -2906,11 +3777,34 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q282",
+              "PX1912-Q283",
+              "PX1912-Q284",
+              "PX1912-Q285",
+              "PX1912-Q397"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-ordine.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
-          "en": "A bishop administers sacred ordination. The 1912 Catechism describes historical minor orders, subdiaconate, diaconate, priesthood and episcopate; those disciplinary grades are not all sacramental orders under current Latin discipline.",
-          "fr": "L'évêque confère l'ordination sacrée. Le catéchisme de 1912 décrit les ordres mineurs, le sous-diaconat, le diaconat, le presbytérat et l'épiscopat ; tous ces degrés historiques ne sont pas des ordres sacramentels selon la discipline latine actuelle.",
+          "en": "Holy Orders is conferred by a bishop. The older Latin discipline included minor orders and the subdiaconate as preparatory grades; episcopate, presbyterate and diaconate are the three sacramental degrees of Holy Orders.",
+          "fr": "L’évêque confère le sacrement de l’Ordre. L’ancienne discipline latine comportait les ordres mineurs et le sous-diaconat comme degrés préparatoires ; l’épiscopat, le presbytérat et le diaconat sont les trois degrés sacramentels de l’Ordre.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -2954,9 +3848,48 @@
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
+            },
+            {
+              "source": "CCC_1554_ORDERS",
+              "refs": [
+                "§1554"
+              ],
+              "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_6/iii_the_three_degrees_of_the_sacrament_of_holy_orders.index.html",
+              "locators": [
+                {
+                  "ref": "§1554",
+                  "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_6/iii_the_three_degrees_of_the_sacrament_of_holy_orders.index.html"
+                }
+              ],
+              "verification": "OFFICIAL_ORIGINAL_AUTHORITY_PARAGRAPH_LOCATED_DESK_REVIEW_ONLY"
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeRevised20261009": true,
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q398",
+              "PX1912-Q399",
+              "PX1912-Q400"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-ordine.md"
+            ],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_three/article_6/iii_the_three_degrees_of_the_sacrament_of_holy_orders.index.html"
+            ],
+            "reviewFlags": [
+              "HISTORICAL_GRADES_VS_THREE_SACRAMENTAL_DEGREES"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The priesthood has a special relation to the Eucharist, the forgiveness of sins and the sanctification and guidance of the faithful.",
@@ -2995,7 +3928,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q400",
+              "PX1912-Q401"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-ordine.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "A genuine vocation seeks God's glory and the salvation of souls rather than personal ambition.",
@@ -3056,7 +4008,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q402",
+              "PX1912-Q403",
+              "PX1912-Q404",
+              "PX1912-Q405"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-ordine.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -3128,7 +4101,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q406"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The spouses confer matrimonial consent. In the Latin Church, valid celebration ordinarily requires the prescribed canonical form, before an authorized ecclesiastical assistant and two witnesses, subject to the exceptions provided by law.",
@@ -3180,6 +4171,29 @@
             "status": "REWORDED_FOR_SOURCE_SCOPE_REQUIRES_HUMAN_THEOLOGICAL_AND_NATIVE_FRENCH_REVIEW",
             "editorialRationale": "Remove self-referential contrast with 1912 source; preserve current canonical-form qualifications sourced to canons 1057 and 1108.",
             "publicationApproved": false
+          },
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q407",
+              "PX1912-Q408"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+            ],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html"
+            ],
+            "reviewFlags": [
+              "CANONICAL_FORM_EXCEPTIONS"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
           }
         },
         {
@@ -3230,7 +4244,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q275",
+              "PX1912-Q276",
+              "PX1912-Q412"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "STATE_OF_GRACE_AND_SACRAMENT_OF_LIVING"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Spouses owe one another faithful help and are responsible for the Christian formation of their children by word and example.",
@@ -3258,7 +4295,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q413"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -3343,7 +4398,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q064",
+              "PX1912-Q065"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-creazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The commandments express binding moral duties toward God, self and neighbor and are rooted in nature and sound reason.",
@@ -3404,7 +4478,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q161",
+              "PX1912-Q162",
+              "PX1912-Q163",
+              "PX1912-Q166"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "God's commandments are possible to observe with the help of grace, including in serious temptation.",
@@ -3432,7 +4527,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q165"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -3524,7 +4637,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q161",
+              "PX1912-Q162",
+              "PX1912-Q166"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Leo XIII describes natural law as reason's command to do right and avoid sin, deriving its authority from the eternal law of God.",
@@ -3539,7 +4672,25 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [],
+            "originalLanguageLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
+            ],
+            "reviewFlags": [
+              "LEO_XIII_NATURAL_LAW"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Human freedom is perfected, not destroyed, by conformity to this objective moral order.",
@@ -3554,7 +4705,25 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [],
+            "originalLanguageLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html"
+            ],
+            "reviewFlags": [
+              "LEO_XIII_TRUE_FREEDOM"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -3611,7 +4780,25 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [],
+            "originalLanguageLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            ],
+            "reviewFlags": [
+              "CONSCIENCE_OBJECTIVE_NORM"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Its dignity depends on its relation to objective truth about good and evil and to the divine law.",
@@ -3626,7 +4813,25 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [],
+            "originalLanguageLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            ],
+            "reviewFlags": [
+              "CONSCIENCE_OBJECTIVE_NORM"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Formation of conscience therefore requires learning and applying the moral law rather than treating sincere preference as sufficient.",
@@ -3695,7 +4900,32 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q161",
+              "PX1912-Q162",
+              "PX1912-Q166",
+              "PX1912-Q168"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+            ],
+            "reviewFlags": [
+              "CONSCIENCE_OBJECTIVE_NORM"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -3804,7 +5034,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q135"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Catechism distinguishes original sin from actual sin, the latter being committed voluntarily by one who has the use of reason.",
@@ -3854,7 +5102,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q136",
+              "PX1912-Q137",
+              "PX1912-Q140"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Actual sin can be committed in thoughts, words, deeds and omissions.",
@@ -3893,7 +5161,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q141",
+              "PX1912-Q142"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -3960,7 +5247,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q143"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "MORTAL_SIN_CONDITIONS"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "It deprives the soul of divine grace and supernatural merit until grace is recovered.",
@@ -4021,7 +5328,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q144",
+              "PX1912-Q145",
+              "PX1912-Q146",
+              "PX1912-Q147"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Venial sin does not remove sanctifying grace, but it harms the soul and disposes it toward greater sin.",
@@ -4071,7 +5399,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q148",
+              "PX1912-Q149",
+              "PX1912-Q150"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Sins differ in gravity; not all sins are morally equal.",
@@ -4132,7 +5480,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q151",
+              "PX1912-Q152",
+              "PX1912-Q153",
+              "PX1912-Q154"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -4223,7 +5592,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q227",
+              "PX1912-Q228",
+              "PX1912-Q252"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Supernatural virtues are given by God with sanctifying grace and exercised with the help of actual grace.",
@@ -4273,7 +5662,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q228",
+              "PX1912-Q229",
+              "PX1912-Q230"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Vice is the acquired habit of doing evil; the capital vices generate further sins, while contrary virtues train the soul toward good.",
@@ -4334,7 +5743,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q259",
+              "PX1912-Q260",
+              "PX1912-Q261",
+              "PX1912-Q262"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -4469,7 +5899,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q232",
+              "PX1912-Q238",
+              "PX1912-Q239",
+              "PX1912-Q240",
+              "PX1912-Q241",
+              "PX1912-Q242"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Charity is the greatest of the supernatural virtues because it unites us to God and moves us to the fulfillment of His law.",
@@ -4497,7 +5950,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q231"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "These virtues are not merely interior sentiments: they should be renewed frequently and shown in profession, conduct and works of mercy.",
@@ -4580,7 +6051,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q244",
+              "PX1912-Q245",
+              "PX1912-Q246",
+              "PX1912-Q247",
+              "PX1912-Q248",
+              "PX1912-Q249"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -4688,7 +6182,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q252",
+              "PX1912-Q253",
+              "PX1912-Q254"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Prudence judges the right means to a good end, and justice gives each person what is due.",
@@ -4727,7 +6241,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q255",
+              "PX1912-Q256"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Fortitude faces difficulty and danger without rashness or cowardice; temperance moderates the passions and the use of sensible goods.",
@@ -4766,7 +6299,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q257",
+              "PX1912-Q258"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -4875,7 +6427,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q169",
+              "PX1912-Q170",
+              "PX1912-Q171",
+              "PX1912-Q172",
+              "PX1912-Q173"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Veneration of angels and saints is distinct from the adoration due to God alone; relics and sacred images are honored in relation to the persons they represent.",
@@ -4947,7 +6521,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q174",
+              "PX1912-Q175",
+              "PX1912-Q176",
+              "PX1912-Q177",
+              "PX1912-Q178"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Second Commandment requires reverence for God's name and fidelity to lawful vows and oaths.",
@@ -5019,7 +6615,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q179",
+              "PX1912-Q180",
+              "PX1912-Q181",
+              "PX1912-Q182",
+              "PX1912-Q183"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Third Commandment requires outward worship as well as interior worship; Christian observance of sacred days is centered on worship of God and the good of the soul.",
@@ -5102,7 +6720,32 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q184",
+              "PX1912-Q185",
+              "PX1912-Q186",
+              "PX1912-Q187",
+              "PX1912-Q188",
+              "PX1912-Q189"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "HISTORICAL_SERVILE_WORK_TERMS"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -5201,7 +6844,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q190",
+              "PX1912-Q191",
+              "PX1912-Q192"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "LAWFUL_OBEDIENCE_NEVER_REQUIRES_SIN"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Fifth Commandment forbids unjust harm to our own life or that of others and extends to serious injury of another's spiritual good through scandal.",
@@ -5262,7 +6927,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q193",
+              "PX1912-Q194",
+              "PX1912-Q198",
+              "PX1912-Q199"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "It positively requires willing the good of others, including enemies, and repairing bodily or spiritual harm we have caused.",
@@ -5290,7 +6976,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q200"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -5372,7 +7076,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q201",
+              "PX1912-Q202"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Ninth Commandment extends chastity to deliberate thoughts and desires and calls for purity of heart and respect for the family.",
@@ -5411,19 +7134,36 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q209",
+              "PX1912-Q210"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
-          "en": "The Sixth and Ninth Commandments govern both outward acts and deliberately entertained thoughts and desires; chastity therefore requires purity in conduct and in the heart.",
-          "fr": "Les sixième et neuvième commandements concernent les actes extérieurs ainsi que les pensées et les désirs délibérément entretenus ; la chasteté exige donc la pureté dans la conduite et dans le cœur.",
+          "en": "The Sixth Commandment also concerns impure looks, words, books and images: chastity involves what one freely chooses to watch, read and say, not merely avoiding physical acts.",
+          "fr": "Le sixième commandement concerne aussi les regards, les paroles, les livres et les images impudiques : la chasteté engage ce que l’on choisit librement de regarder, de lire et de dire, et ne se limite pas à éviter les actes physiques.",
           "sources": [
             {
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ201",
-                "PXQ202",
-                "PXQ209",
-                "PXQ210"
+                "PXQ202"
               ],
               "locators": [
                 {
@@ -5434,16 +7174,6 @@
                 {
                   "ref": "PX1912-Q202",
                   "stem": "What does the sixth commandment order",
-                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
-                },
-                {
-                  "ref": "PX1912-Q209",
-                  "stem": "What does the ninth commandment, \"Thou",
-                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
-                },
-                {
-                  "ref": "PX1912-Q210",
-                  "stem": "What does the ninth commandment order",
                   "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
                 }
               ],
@@ -5458,16 +7188,6 @@
                   "ref": "PX1912-Q202",
                   "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md",
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
-                },
-                {
-                  "ref": "PX1912-Q209",
-                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md",
-                  "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
-                },
-                {
-                  "ref": "PX1912-Q210",
-                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md",
-                  "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
             }
@@ -5477,6 +7197,28 @@
             "status": "REWORDED_FOR_SOURCE_SCOPE_REQUIRES_HUMAN_THEOLOGICAL_AND_NATIVE_FRENCH_REVIEW",
             "editorialRationale": "Replace editorial handoff language with a substantive source-grounded catechetical claim.",
             "publicationApproved": false
+          },
+          "sourceScopeRevised20261009": true,
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q201",
+              "PX1912-Q202"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "DISTINCT_APPLIED_CHASTITY_CONTENT"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
           }
         }
       ],
@@ -5539,7 +7281,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q203"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Justice can require restitution, repair of damage, payment of debts and just wages.",
@@ -5578,7 +7338,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q204",
+              "PX1912-Q205"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Tenth Commandment governs interior desire, condemning disordered greed while permitting a just and moderate desire to improve one's condition.",
@@ -5617,7 +7396,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q211",
+              "PX1912-Q212"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -5678,7 +7476,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q206"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "It positively requires speaking truth in due time and place and interpreting another's actions favorably when possible.",
@@ -5706,7 +7522,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q207"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "A person who unjustly damages another's good name is bound, as far as possible, to repair the harm.",
@@ -5734,7 +7568,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q208"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -5804,7 +7656,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q198",
+              "PX1912-Q199"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "A near occasion of sin is a person or thing that places us in danger of sinning; the Christian is bound to flee such occasions when necessary to avoid sin.",
@@ -5854,7 +7725,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q369",
+              "PX1912-Q370",
+              "PX1912-Q371"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Responsibility for another's sin can also arise through direct voluntary participation, ordering or approving the evil, culpable failure to prevent it when obliged, or protecting wrongdoing.",
@@ -5869,7 +7760,25 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [],
+            "originalLanguageLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_8/v_the_proliferation_of_sin.html"
+            ],
+            "reviewFlags": [
+              "CULPABLE_COOPERATION_ONLY"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -5933,7 +7842,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q414"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Prayer may be mental or vocal, but vocal prayer should be accompanied by the mind and heart.",
@@ -5983,7 +7910,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q415",
+              "PX1912-Q416",
+              "PX1912-Q417"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Christian prayer should be humble, attentive, devout, confident and persevering in Christ's name.",
@@ -6066,7 +8013,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q418",
+              "PX1912-Q419",
+              "PX1912-Q420",
+              "PX1912-Q421",
+              "PX1912-Q422",
+              "PX1912-Q423"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -6145,7 +8115,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q424",
+              "PX1912-Q425"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Its first petitions seek God's glory, the spread of His kingdom and fulfillment of His will.",
@@ -6173,7 +8162,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q426"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Its remaining petitions ask for bodily and spiritual nourishment, forgiveness, help against temptation and deliverance from evil for ourselves and others.",
@@ -6212,7 +8219,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q427",
+              "PX1912-Q428"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -6297,7 +8323,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q429",
+              "PX1912-Q430",
+              "PX1912-Q433"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "CHRIST_UNIQUE_MEDIATOR"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Hail Mary begins with the angelic greeting given to Mary when she was chosen to be the Mother of God.",
@@ -6325,7 +8373,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q431"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "In it the Church asks Mary's motherly intercession for us in life and at death.",
@@ -6353,7 +8419,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q432"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -6416,7 +8500,25 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q082"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-incarnazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "By a unique privilege she was preserved from original sin from the first instant of her existence, which the Church celebrates as the Immaculate Conception.",
@@ -6442,9 +8544,45 @@
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
+            },
+            {
+              "source": "PIUS_IX_INEFFABILIS_DEUS",
+              "refs": [
+                "dogmatic definition"
+              ],
+              "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+              "locators": [
+                {
+                  "ref": "dogmatic definition",
+                  "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html"
+                }
+              ],
+              "verification": "OFFICIAL_ORIGINAL_AUTHORITY_PARAGRAPH_LOCATED_DESK_REVIEW_ONLY"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q138"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+            ],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html"
+            ],
+            "reviewFlags": [
+              "INEFFABILIS_DEUS_DEFINITION"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Pius XII defined as divinely revealed that the Immaculate Mother of God, ever Virgin, was assumed body and soul into heavenly glory after completing the course of her earthly life.",
@@ -6459,7 +8597,25 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [],
+            "originalLanguageLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html"
+            ],
+            "reviewFlags": [
+              "MUNIFICENTISSIMUS_DEUS_DEFINITION"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Her intercession does not rival Christ's unique mediation; whatever grace, merit or intercessory power the saints possess comes through Christ.",
@@ -6509,7 +8665,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q429",
+              "PX1912-Q430",
+              "PX1912-Q433"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -6624,7 +8800,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q121",
+              "PX1912-Q122",
+              "PX1912-Q123",
+              "PX1912-Q429",
+              "PX1912-Q430"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-chiesa.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Catholic veneration of saints is not divine worship; it honors God's friends and ultimately glorifies God who sanctifies them.",
@@ -6663,7 +8862,26 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q174",
+              "PX1912-Q175"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Relics are honored because saints' bodies served in holiness and are destined for resurrection; images are venerated in memory of those represented, not adored as gods.",
@@ -6713,7 +8931,27 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q176",
+              "PX1912-Q177",
+              "PX1912-Q178"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -6788,7 +9026,29 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q385"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            ],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html"
+            ],
+            "reviewFlags": [
+              "SACRAMENTALS_NOT_SACRAMENTS"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Sacramentals belong to the Church's life of prayer and penance and should be used devoutly rather than superstitiously.",
@@ -6838,7 +9098,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q172",
+              "PX1912-Q173",
+              "PX1912-Q385"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Their use is distinct from the seven sacraments instituted by Christ, which are efficacious signs conferring sacramental grace.",
@@ -6910,7 +9191,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q267",
+              "PX1912-Q268",
+              "PX1912-Q269",
+              "PX1912-Q271",
+              "PX1912-Q272"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -7006,11 +9309,31 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q184",
+              "PX1912-Q185",
+              "PX1912-Q189"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
-          "en": "The Church regulates penitential seasons and recurring observances, but the fasting ages, meals and abstinence days in the 1912 Catechism are historical disciplinary rules, not current universal law; its spiritual rationale remains useful.",
-          "fr": "L'Église règle les temps de pénitence et les observances périodiques, mais les âges, repas et jours d'abstinence du catéchisme de 1912 relèvent d'une discipline historique et non du droit universel actuel ; leur raison d'être spirituelle demeure instructive.",
+          "en": "The Church imposes days of fasting and abstinence for penance and mortification. The ages, days and meal rules recorded in the 1912 Catechism reflect historical discipline; the obligations binding today are determined by current ecclesiastical and legitimate particular law.",
+          "fr": "L’Église prescrit des jours de jeûne et d’abstinence pour faire pénitence et pratiquer la mortification. Les âges, les jours et les règles concernant les repas indiqués dans le catéchisme de 1912 relèvent d’une discipline historique ; les obligations actuelles sont déterminées par le droit ecclésiastique en vigueur et le droit particulier légitime.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -7109,9 +9432,54 @@
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
+            },
+            {
+              "source": "CIC_1983_PENANCE",
+              "refs": [
+                "cc.1249–1253"
+              ],
+              "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
+              "locators": [
+                {
+                  "ref": "cc.1249–1253",
+                  "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html"
+                }
+              ],
+              "verification": "OFFICIAL_ORIGINAL_AUTHORITY_PARAGRAPH_LOCATED_DESK_REVIEW_ONLY"
             }
           ],
-          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_CORRECTED_NOT_HUMAN_CERTIFIED",
+          "sourceScopeRevised20261009": true,
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q213",
+              "PX1912-Q214",
+              "PX1912-Q215",
+              "PX1912-Q218",
+              "PX1912-Q219",
+              "PX1912-Q220",
+              "PX1912-Q221",
+              "PX1912-Q222"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-precetti.md"
+            ],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html"
+            ],
+            "reviewFlags": [
+              "1912_FAST_ABSTINENCE_OBSOLETE",
+              "CURRENT_CIC_1249_1253"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Pius XII teaches that the liturgical year is not merely a record of past events: Christ lives in His Church, and His mysteries are proposed as examples of perfection and sources of grace.",
@@ -7126,7 +9494,25 @@
               "verification": "SECTION_IDENTIFIED_CLAIM_LEVEL_HUMAN_REVIEW_PENDING"
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [],
+            "originalLanguageLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+            ],
+            "reviewFlags": [
+              "MEDIATOR_DEI_LITURGICAL_YEAR"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -7247,7 +9633,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q227",
+              "PX1912-Q228",
+              "PX1912-Q229",
+              "PX1912-Q230"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Charity is central to Christian perfection because it unites us to God and moves us toward the faithful observance of His law and every good work.",
@@ -7319,7 +9726,29 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q231",
+              "PX1912-Q240",
+              "PX1912-Q241",
+              "PX1912-Q242",
+              "PX1912-Q243"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The grace received in the sacraments requires our correspondence through doing good and avoiding evil.",
@@ -7380,7 +9809,28 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q269",
+              "PX1912-Q270",
+              "PX1912-Q273",
+              "PX1912-Q277"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The evangelical counsels and Beatitudes point beyond minimal obligation toward a more perfect imitation of Christ.",
@@ -7463,7 +9913,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q250",
+              "PX1912-Q251",
+              "PX1912-Q263",
+              "PX1912-Q264",
+              "PX1912-Q265",
+              "PX1912-Q266"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-virtu.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         }
       ],
       "originalBrowseIndexRefs": [
@@ -7640,7 +10113,30 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q155",
+              "PX1912-Q156",
+              "PX1912-Q157",
+              "PX1912-Q158",
+              "PX1912-Q159"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md",
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-risurrezione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Immediately after death comes the particular judgment, followed by Heaven, Purgatory or Hell according to the soul's state.",
@@ -7734,7 +10230,31 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q096",
+              "PX1912-Q097",
+              "PX1912-Q098",
+              "PX1912-Q099",
+              "PX1912-Q101",
+              "PX1912-Q103",
+              "PX1912-Q104"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-venuta.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "The Church provides sacramental help for grave illness through Extreme Unction, which strengthens the sick person and prepares him for a holy death.",
@@ -7806,7 +10326,31 @@
               ]
             }
           ],
-          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED"
+          "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED_QUALIFIED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q392",
+              "PX1912-Q393",
+              "PX1912-Q394",
+              "PX1912-Q395",
+              "PX1912-Q396"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-estrema-unzione.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [
+              "VIATICUM_AND_UNCTION_HISTORICAL_CONTEXT"
+            ],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
+          }
         },
         {
           "en": "Holy Communion received as Viaticum sustains the soul in its final passage from this life toward eternity.",
@@ -7839,6 +10383,24 @@
             "status": "REWORDED_FOR_SOURCE_SCOPE_REQUIRES_HUMAN_THEOLOGICAL_AND_NATIVE_FRENCH_REVIEW",
             "editorialRationale": "Q341 expressly speaks of Viaticum sustaining the soul on its journey to eternity; remove app-module reference.",
             "publicationApproved": false
+          },
+          "sourceScopeDeskReview": {
+            "version": "2026-10-09_SOURCE_SCOPE_DESK_PASS",
+            "status": "SOURCE_SCOPE_RECONCILED",
+            "evidenceBasis": "COMPLETE_ITALIAN_1912_TRANSCRIPTION_PASSAGES_AND_LINKED_ORIGINAL_SUPPLEMENTARY_AUTHORITIES",
+            "italianQuestionRefs": [
+              "PX1912-Q341"
+            ],
+            "originalLanguageLinks": [
+              "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+            ],
+            "supplementaryAuthorityLinks": [],
+            "reviewFlags": [],
+            "original1912PrintedFacsimileVerified": false,
+            "independentDoctrinalApproved": false,
+            "canonicalSpecialistApproved": false,
+            "nativeFrenchEditorApproved": false,
+            "humanPublicationApproved": false
           }
         }
       ],
