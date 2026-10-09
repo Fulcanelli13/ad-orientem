@@ -617,6 +617,19 @@ const ROSARY_SCRIPTURE_POLICY_CSS=`
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening .aoRosaryTypologyNote{
   color:var(--muted,#aeb2b8);font:400 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
 }
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening .aoRosaryScriptureSummary{
+  margin:3px 0!important;color:var(--text,#f3ead7);
+  font:400 14px/1.62 var(--ao-font-liturgical,Georgia,serif);
+  text-wrap:pretty;
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening .aoRosaryPrayerIntention{
+  margin:1px 0!important;color:var(--muted,#abb2b8);
+  font:italic 13px/1.6 var(--ao-font-liturgical,Georgia,serif);
+}
+#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening .aoRosaryEditionLabel{
+  margin-top:4px;color:var(--muted,#abb2b8);font:500 10px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.04em;
+}
 #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryScriptureOpening a{
   display:inline-block;align-self:start;padding:7px 0;min-height:36px;color:var(--liturgical,#d8bd7d);
   text-decoration:underline;text-underline-offset:3px;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);

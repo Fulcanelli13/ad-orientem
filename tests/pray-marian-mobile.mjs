@@ -83,6 +83,11 @@ try{
  const setButton=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
  if(await setButton.count())await setButton.evaluate(x=>x.click());
  await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:12000});
+ // Guided depth must provide a readable bilingual edition-linked context
+ // at the mystery opening, without restoring arbitrary ten-bead quotations.
+ const guided=page.locator("#aoPrayerBookRoot.open [data-p435930-rosary-depth='guided']").first();
+ assert.ok(await guided.count(),"Rosary guided-depth control is absent");
+ await guided.evaluate(el=>el.click());
  const firstMystery=await page.evaluate(()=>{
    const api=globalThis.AO_ROSARY_V381,idx=api.steps().findIndex(x=>x.kind==="mystery");
    if(idx<1)return -1;
@@ -95,6 +100,13 @@ try{
  await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").evaluate(x=>x.click());
  await page.waitForSelector("#aoPrayerBookRoot.open [data-ao-rosary-scripture-opening='joy1']",{timeout:8000});
  assert.match(await page.locator("#aoPrayerBookRoot.open .aoRosaryScriptureOpening").innerText(),/Luke 1:26-38/);
+ const rosaryMeditation=page.locator("#aoPrayerBookRoot.open .aoRosaryScriptureOpening");
+ await page.waitForSelector("#aoPrayerBookRoot.open [data-ao-rosary-context='editorial-summary']",{timeout:9000});
+ assert.match(await rosaryMeditation.innerText(),/Gabriel announces that Mary|Gabriel annonce à Marie/);
+ assert.match(await rosaryMeditation.innerText(),/NOT A SCRIPTURE QUOTATION|PAS UNE CITATION BIBLIQUE/);
+ const original=rosaryMeditation.locator("a[data-ao-rosary-scripture-edition]");
+ assert.equal(await original.count(),1,"Guided mystery has no Catholic original reading");
+ assert.match(await original.getAttribute("href"),/^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
  const firstCue=await page.evaluate(()=>{
    const api=globalThis.AO_ROSARY_V381,idx=api.steps().findIndex(x=>x.cue);
    if(idx<1)return -1;api.setStep(idx-1);return idx;

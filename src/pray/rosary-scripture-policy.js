@@ -1,3 +1,5 @@
+import { ROSARY_MYSTERY_CONTEXT_V1 } from "./rosary-mystery-context.v1.js";
+
 /**
  * Rosary Scripture display policy — editorial safety gate, 9 October 2026.
  * A donor has 200 mixed-length Douay–Rheims excerpts, some split in mid-clause,
@@ -40,7 +42,7 @@ export const ROSARY_SCRIPTURE_REFERENCE_V1 = Object.freeze({
     "type": "narrative"
   },
   "lum3": {
-    "reference": "Mark 1:14-15",
+    "reference": "Mark 1:14-20",
     "type": "narrative"
   },
   "lum4": {
@@ -56,7 +58,7 @@ export const ROSARY_SCRIPTURE_REFERENCE_V1 = Object.freeze({
     "type": "narrative"
   },
   "sor2": {
-    "reference": "John 19:1",
+    "reference": "John 19:1-3",
     "type": "narrative"
   },
   "sor3": {
@@ -84,7 +86,7 @@ export const ROSARY_SCRIPTURE_REFERENCE_V1 = Object.freeze({
     "type": "narrative"
   },
   "glo4": {
-    "reference": "Psalm 131:8",
+    "reference": "Luke 1:46-55",
     "type": "traditional_typology"
   },
   "glo5": {
@@ -94,11 +96,11 @@ export const ROSARY_SCRIPTURE_REFERENCE_V1 = Object.freeze({
 });
 
 export const ROSARY_SCRIPTURE_POLICY_V1 = Object.freeze({
-  version:"1.0.0",
+  version:"1.1.0",
   donorExcerptCount:200,
   publicPerBeadExcerptStatus:"WITHHELD_UNTIL_PASSAGE_CERTIFICATION",
   mysteryReferenceCount:20,
-  readingMode:"FULL_PASSAGE_REFERENCE_AT_MYSTERY_OPENING",
+  readingMode:"SOURCE_LINKED_BILINGUAL_MYSTERY_CONTEXT",
   editorialRules:Object.freeze([
     "Never label sentence fragments as verbatim Scripture quotations.",
     "Never fall back to English whilst labelling an excerpt Crampon 1923 French.",
@@ -108,14 +110,19 @@ export const ROSARY_SCRIPTURE_POLICY_V1 = Object.freeze({
   ])
 });
 
+const CATHOLIC_FRENCH_BOOKS=Object.freeze(new Set(["Luc","Matthieu","Jean","Marc","Actes","Apocalypse"]));
 export function rosaryScripturePassage(id){
   const item=ROSARY_SCRIPTURE_REFERENCE_V1[id];
-  if(!item)return null;
+  const context=ROSARY_MYSTERY_CONTEXT_V1[id];
+  if(!item||!context||context.reference!==item.reference||
+     !CATHOLIC_FRENCH_BOOKS.has(context.bookFr))return null;
   return Object.freeze({
     ...item,
-    // DRA is public-domain Douay–Rheims. The source link shows the complete
-    // passage, not an invented or truncated quotation in either language.
-    href:"https://www.biblegateway.com/passage/?search="+encodeURIComponent(item.reference)+"&version=DRA"
+    context,
+    // Verbatim wording lives in these Catholic editions, never in the
+    // editorial summaries, which are expressly NOT Scripture quotations.
+    href:"https://www.biblegateway.com/passage/?search="+encodeURIComponent(item.reference)+"&version=DRA",
+    hrefFr:"https://fr.wikisource.org/wiki/Bible_Crampon_1923/"+encodeURIComponent(context.bookFr)+"#"+item.reference.split(" ").pop().split(":")[0]
   });
 }
 
@@ -150,8 +157,8 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
   section.replaceChildren();
   const caption=root.ownerDocument.createElement("small");
   caption.textContent=french
-    ? (guided?"ÉCRITURE · PASSAGE COMPLET":"RÉFÉRENCE BIBLIQUE")
-    : (guided?"SCRIPTURE · COMPLETE PASSAGE":"SCRIPTURE REFERENCE");
+    ? (guided?"ÉCRITURE · LECTURE DU MYSTÈRE":"RÉFÉRENCE BIBLIQUE")
+    : (guided?"SCRIPTURE · MYSTERY READING":"SCRIPTURE REFERENCE");
   const line=root.ownerDocument.createElement("p");
   line.textContent=passage.reference;
   section.append(caption,line);
@@ -159,16 +166,36 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
     const note=root.ownerDocument.createElement("p");
     note.className="aoRosaryTypologyNote";
     note.textContent=french
-      ?"Figure biblique appliquée à Notre-Dame dans la tradition de l’Église ; ce passage ne raconte pas directement ce mystère."
-      :"Biblical figure traditionally applied to Our Lady; this passage is not a direct historical account of the mystery.";
+      ?(id==="glo4"
+        ?"L’Assomption n’est pas racontée dans ce passage : le Magnificat éclaire la glorification de Marie."
+        :"Vision symbolique de la Femme : elle concerne aussi le peuple de Dieu et reçoit une interprétation mariale traditionnelle.")
+      :(id==="glo4"
+        ?"The Assumption is not narrated here: the Magnificat helps contemplate Mary's glorification."
+        :"A symbolic vision of the Woman, also concerning God's people and traditionally interpreted in a Marian sense.");
     section.appendChild(note);
   }
   if(guided){
+    const summary=root.ownerDocument.createElement("p");
+    summary.className="aoRosaryScriptureSummary";
+    summary.dataset.aoRosaryContext="editorial-summary";
+    summary.textContent=passage.context.summary[french?"fr":"en"];
+    section.appendChild(summary);
+    const intention=root.ownerDocument.createElement("p");
+    intention.className="aoRosaryPrayerIntention";
+    intention.textContent=passage.context.intention[french?"fr":"en"];
+    section.appendChild(intention);
+    const witness=root.ownerDocument.createElement("small");
+    witness.className="aoRosaryEditionLabel";
+    witness.textContent=french
+      ?"MÉDITATION RÉDIGÉE · PAS UNE CITATION BIBLIQUE"
+      :"EDITORIAL MEDITATION · NOT A SCRIPTURE QUOTATION";
+    section.appendChild(witness);
     const link=root.ownerDocument.createElement("a");
-    link.href=passage.href;
+    link.href=french?passage.hrefFr:passage.href;
     link.target="_blank";
     link.rel="noopener noreferrer";
-    link.textContent=french?"Lire dans la Bible · Douay–Rheims (anglais) ↗":"Read in the Douay–Rheims Bible ↗";
+    link.dataset.aoRosaryScriptureEdition=french?"crampon-1923":"douay-rheims-challoner";
+    link.textContent=french?"Lire le passage · Bible Crampon 1923 ↗":"Read the passage · Douay–Rheims ↗";
     section.appendChild(link);
   }
   return true;

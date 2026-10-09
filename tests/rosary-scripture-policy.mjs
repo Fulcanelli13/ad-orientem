@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {ROSARY_SCRIPTURE_REFERENCE_V1,ROSARY_SCRIPTURE_POLICY_V1,rosaryScripturePassage} from "../src/pray/rosary-scripture-policy.js";
+import {ROSARY_MYSTERY_CONTEXT_V1} from "../src/pray/rosary-mystery-context.v1.js";
 
 const audit=JSON.parse(readFileSync("data/pray/rosary-scripture-editorial-inventory.v1.json","utf8"));
 const entries=Object.entries(ROSARY_SCRIPTURE_REFERENCE_V1);
@@ -9,6 +10,36 @@ assert.deepEqual(entries.map(([id])=>id),[
   "joy1","joy2","joy3","joy4","joy5","lum1","lum2","lum3","lum4","lum5",
   "sor1","sor2","sor3","sor4","sor5","glo1","glo2","glo3","glo4","glo5"
 ]);
+assert.equal(Object.keys(ROSARY_MYSTERY_CONTEXT_V1).length,20,
+ "all 20 mysteries must have coherent bilingual contextual Scripture meditations");
+assert.equal(ROSARY_SCRIPTURE_POLICY_V1.readingMode,"SOURCE_LINKED_BILINGUAL_MYSTERY_CONTEXT");
+assert.equal(ROSARY_SCRIPTURE_REFERENCE_V1.lum3.reference,"Mark 1:14-20",
+ "Kingdom proclamation requires complete context rather than an isolated clause");
+assert.equal(ROSARY_SCRIPTURE_REFERENCE_V1.sor2.reference,"John 19:1-3",
+ "Scourging must retain the context surrounding the isolated verse");
+assert.equal(ROSARY_SCRIPTURE_REFERENCE_V1.glo4.reference,"Luke 1:46-55",
+ "Assumption biblical reference must not silently confuse Vulgate and Hebrew Psalm numbering");
+for(const [id,ctx] of Object.entries(ROSARY_MYSTERY_CONTEXT_V1)){
+ assert.equal(ctx.reference,ROSARY_SCRIPTURE_REFERENCE_V1[id].reference,
+   id+" reference drift between sources and displayed summary");
+ assert.ok(["Luc","Matthieu","Marc","Jean","Actes","Apocalypse"].includes(ctx.bookFr),id+" lacks verified Crampon book owner");
+ for(const language of ["en","fr"]){
+   assert.ok(ctx.summary[language].length>=95,id+" "+language+" does not explain the mystery coherently");
+   assert.ok(ctx.intention[language].length>=25,id+" "+language+" lacks a prayer intention");
+   assert.ok(!/\.\.\.|…|\[\s*\.\.\.\s*\]/.test(ctx.summary[language]),id+" "+language+" contains abridged quote markers");
+ }
+ assert.equal(ctx.publicTextStatus,"EDITORIAL_SUMMARY_NOT_VERBATIM_SCRIPTURE",
+   id+" summary could be misidentified as verbatim Douay/Crampon");
+ const passage=rosaryScripturePassage(id);
+ assert.ok(passage&&passage.hrefFr.startsWith("https://fr.wikisource.org/wiki/Bible_Crampon_1923/"),
+   id+" has no French Catholic edition link");
+ assert.ok(passage.href.includes("version=DRA"),id+" English link not Douay–Rheims");
+}
+assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo4.kind,"related_scripture_for_doctrinal_mystery");
+assert.equal(ROSARY_MYSTERY_CONTEXT_V1.glo5.kind,"traditional_marian_typology");
+assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo4.summary.en,/does not narrate her Assumption/);
+assert.match(ROSARY_MYSTERY_CONTEXT_V1.glo5.summary.en,/God.s people/);
+assert.equal(rosaryScripturePassage("unknown"),null,"unknown mystery must fail closed");
 assert.equal(audit.rows.length,200,"all 200 original cues must remain accounted for in the editorial archive");
 assert.equal(new Set(audit.rows.map(x=>x.id)).size,200,"original bead identities were lost");
 assert.equal(ROSARY_SCRIPTURE_POLICY_V1.donorExcerptCount,200);
@@ -28,4 +59,4 @@ assert.match(policy,/\.lab-prayer-sheet \.lab-scripture-cue/,"uncertified excerp
 assert.match(policy,/\.lab-prayer-sheet \.lab-scripture-actions/,"unreviewed per-bead commentary/action pairing not gated");
 assert.match(policy,/passage\.type==="traditional_typology"/);
 assert.ok(!policy.includes("window.AO_ROSARY_V381="),"no replacement Rosary player allowed");
-console.log("PASS Rosary Scripture policy: 20 sourced opening references, 200 cue records preserved as review-only, no unverified per-bead quotations");
+console.log("PASS Rosary bilingual Scripture: 20 coherent EN/FR mystery contexts, Crampon + Douay links, 200 held donor cues and accurate Marian typology");
