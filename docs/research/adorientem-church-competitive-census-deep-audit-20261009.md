@@ -36,6 +36,11 @@
 - 196 FSSP schedule-backed venues appear in the default provider. Its **404** total venues/ministry rows must NOT be counted as 404 current Mass venues.
 - The default ICKSP and IBP providers include additional schedules; ICKSP must be reconciled against the existing federated 104 before any global summation.
 
+
+### Example of existing coverage not represented in competitor country list
+- [Latin Mass Directory lists five Mauritius ICKSP venues](https://www.latinmassdir.org/country/mu/?view=list) (Curepipe and Port Louis), and our federated ICKSP corpus also contains five Mauritius source entries. By contrast, Mauritius is absent from [AdOrientem.church's country index](https://adorientem.church/find/countries). This is a specific geographic coverage advantage, although current schedules need their normal official-source verification and one must avoid double counting multiple Mass venues served by one chaplaincy.
+- The [Mauritius listing for Maison Bienheureux-Père-Laval](https://www.latinmassdir.org/venue/chapelle-de-la-maison-bienheureux-pere-laval-curepipe-mauritius/) points to the local ICKSP site; that site returned a fetch error in this research session, so do not promote its published Mass timetable to freshly officially verified on that basis.
+
 ## 3. Targeted acquisition ranking
 
 1. **Diocesan and approved-structure Masses:** decisive completeness gap. Our v19 diocesan corpus has 46 rows; Latin Mass Directory independently lists 1,573 venues across all approved-structure communities and the competitor categorises over 900 diocesan entries. Start with its USA, France, Poland, Italy, United Kingdom, Brazil and Germany cohorts, using official Mass evidence.
