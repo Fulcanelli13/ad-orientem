@@ -1,0 +1,211 @@
+{
+  "version": "CSE_ATOMIC_HIGH_RISK_CLAIMS_2024_FULL_REVIEW_20261009_V1",
+  "date": "2026-10-09",
+  "method": "Full original article text read in author-uploaded ResearchGate web presentation and compared with publisher/NIH abstract. Primary Aquinas and RAINN texts also checked. This is targeted claim-by-claim appraisal, not blanket signoff of every sentence in these three dossiers. PDF page image verification was unavailable; original text was inspected as HTML.",
+  "summary": {
+    "existing_debates_reviewed": 3,
+    "individual_claim_units": 20,
+    "clinical_original_full_paper_text_read": true,
+    "publisher_abstract_checked": true,
+    "empirical_population_prevalence_established": false,
+    "source_internal_denominator_discrepancy_flagged": true,
+    "independent_theological_approvals": 0,
+    "independent_native_french_approvals": 0,
+    "full_eight_stage_original_certifications": 0
+  },
+  "originals": {
+    "ASSAULT2024": {
+      "full": "https://www.researchgate.net/publication/380462684_Victim_Sexual_Arousal_During_Nonconsensual_Sex_A_Scoping_Review",
+      "canonical": "https://pubmed.ncbi.nlm.nih.gov/38724699/"
+    },
+    "ST6": {
+      "full": "https://www.newadvent.org/summa/2006.htm"
+    },
+    "ST77": {
+      "full": "https://www.newadvent.org/summa/2077.htm"
+    },
+    "RAINN_CONSENT101": {
+      "full": "https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust"
+    }
+  },
+  "cases": [
+    {
+      "id": "CSE112",
+      "focus": "Physiological arousal and consent",
+      "claims": [
+        [
+          "112-a",
+          "Genital responses are reported in some nonconsensual sexual experiences",
+          "ASSAULT2024",
+          "Results, pp.2309–2315",
+          "DIRECT_EMPIRICAL_SUPPORT",
+          "Occurrence is supported for included cases; universal response or rate is NOT supported."
+        ],
+        [
+          "112-b",
+          "Review screened 13,894 records and reports",
+          "ASSAULT2024",
+          "Methods, pp.2307–2308",
+          "DIRECT_METHODS_SUPPORT",
+          "24,501 initial database hits, 10,684 deduplicated, 13,817 screened plus 77 additional; counts refer to records not 13,894 people."
+        ],
+        [
+          "112-c",
+          "Eight articles and one book contributed relevant data",
+          "ASSAULT2024",
+          "Results and Table 1, pp.2308–2309",
+          "DIRECT_METHODS_SUPPORT",
+          "Papers published 1977–2019; sparse and heterogeneous underlying observations."
+        ],
+        [
+          "112-d",
+          "The pooled study figures do not estimate population prevalence",
+          "ASSAULT2024",
+          "Reported Frequencies, p.2309; Limitations, p.2316",
+          "DIRECT_METHODS_LIMITATION",
+          "Authors explicitly prohibit prevalence inference from percentages due to incomparable study designs and sampled populations."
+        ],
+        [
+          "112-e",
+          "Published abstract lists 136 male survivors while results section uses denominator 135",
+          "ASSAULT2024",
+          "Abstract p.2305 vs Reported Frequencies p.2309",
+          "PRIMARY_SOURCE_INTERNAL_DISCREPANCY",
+          "No justified resolution for one-person discrepancy; user-facing question deliberately avoids counts."
+        ],
+        [
+          "112-f",
+          "The reviewed data do not establish circumstances or mechanisms of arousal in a particular survivor",
+          "ASSAULT2024",
+          "Abstract and Discussion, pp.2314–2316",
+          "DIRECT_LIMITATION",
+          "Suggested explanatory theories remain hypotheses; do not claim universal reflex, inevitable pleasure, or cause."
+        ],
+        [
+          "112-g",
+          "Involuntary arousal, lubrication or orgasm does not equal consent",
+          "RAINN_CONSENT101",
+          "What Is Enthusiastic Consent?, following positive yes examples",
+          "DIRECT_SURVIVOR_GUIDANCE",
+          "RAINN is a specialist support source, not a population-prevalence study or an opposing moral author."
+        ],
+        [
+          "112-h",
+          "Voluntary human acts differ from external bodily events against the will",
+          "ST6",
+          "I-II q.6 aa.1,4–5",
+          "DIRECT_THOMISTIC_PRINCIPLE",
+          "Does not prove physiological frequency and is not a source for precise legal sexual consent rules."
+        ],
+        [
+          "112-i",
+          "A response does not render the person responsible for an assault",
+          "ST6",
+          "I-II q.6 aa.4–5 read alongside RAINN consent statement",
+          "MORAL_APPLICATION_OF_PRIMARY_PRINCIPLE",
+          "Responsibility for a coercive act cannot be inferred from an involuntary bodily reaction."
+        ]
+      ]
+    },
+    {
+      "id": "CSE117",
+      "focus": "Impaired consent and culpability",
+      "claims": [
+        [
+          "117-a",
+          "Informed meaningful consent requires capacity and voluntariness",
+          "RAINN_CONSENT101",
+          "What Is Consent?",
+          "DIRECT_SURVIVOR_GUIDANCE",
+          "Article lists sober/alert and freely communicating; avoid claiming a legal BAC threshold."
+        ],
+        [
+          "117-b",
+          "Severe impairment and unconsciousness can prevent meaningful sexual consent",
+          "RAINN_CONSENT101",
+          "What Consent Is Not?",
+          "DIRECT_SURVIVOR_GUIDANCE",
+          "No global alcohol-dose or intoxication threshold was supplied."
+        ],
+        [
+          "117-c",
+          "Not every circumstance involving alcohol establishes the same mental capacity",
+          "ST6",
+          "I-II q.6 aa.1,4–6",
+          "PRUDENTIAL_INFERENCE",
+          "Capacity varies; neither Aquinas nor RAINN establishes specific local legal thresholds."
+        ],
+        [
+          "117-d",
+          "Forcible conduct against the will is involuntary",
+          "ST6",
+          "I-II q.6 aa.4–5",
+          "DIRECT_THOMISTIC_PRINCIPLE",
+          "Do not equate mere absence of struggle with a positive act of will."
+        ],
+        [
+          "117-e",
+          "Two equally intoxicated persons need not have equal subjective culpability",
+          "ST6",
+          "I-II q.6 aa.4–8 and individual-intention assessment",
+          "BOUNDED_MORAL_INFERENCE",
+          "Particular culpability and legal liability depend on facts; rule is not a blanket excuse."
+        ],
+        [
+          "117-f",
+          "Avoid sexual activity where consent capacity is doubtful",
+          "RAINN_CONSENT101",
+          "How to Practice Consent",
+          "PRACTICAL_SAFETY_APPLICATION",
+          "Safety guidance, not clinical statistical conclusion nor a ruling in a concrete legal dispute."
+        ]
+      ]
+    },
+    {
+      "id": "CSE020",
+      "focus": "Habit, passion and culpability",
+      "claims": [
+        [
+          "020-a",
+          "Passion can diminish free deliberation without invariably removing grave personal responsibility",
+          "ST77",
+          "I-II q.77 aa.6–8",
+          "DIRECT_THOMISTIC_PRINCIPLE",
+          "The Aquinas source does not evaluate a specific individual's degree of freedom."
+        ],
+        [
+          "020-b",
+          "Prior voluntary causes of later passion remain relevant",
+          "ST77",
+          "I-II q.77 a.7",
+          "DIRECT_THOMISTIC_PRINCIPLE",
+          "Avoid formulae that blame victims for bodily reactions beyond the will."
+        ],
+        [
+          "020-c",
+          "Knowingly chosen vice must be distinguished from involuntary passion",
+          "ST77",
+          "I-II q.77 a.8; compare I-II q.78",
+          "DOCTRINAL_SYNTHESIS",
+          "The adjacent q.78 requires separate original-source citation, not a direct quote from q.77 alone."
+        ],
+        [
+          "020-d",
+          "Repetition cannot prove the subjective mortal guilt of a particular person",
+          "ST77",
+          "I-II q.77 aa.6–8",
+          "MORAL_APPLICATION_OF_PRIMARY_PRINCIPLE",
+          "Spiritual and clinical assessments of a person require individual context and specialist care where appropriate."
+        ],
+        [
+          "020-e",
+          "Empirical claims about compulsive sexual behaviour require clinical research, not addiction-by-analogy",
+          "ST77",
+          "I-II q.77 methodological boundary",
+          "UNRESOLVED_CLINICAL_EVIDENCE",
+          "Aquinas does not independently certify current clinical diagnoses, prevalence or treatment outcomes."
+        ]
+      ]
+    }
+  ]
+}

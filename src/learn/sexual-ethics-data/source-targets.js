@@ -24,6 +24,11 @@ function sourceTarget(base,locator){
 export function cseSourceTargets(sourceId,locator,source,{french=false}={}){
   const original=String(locator||"").trim();
   const base=String((french&&source?.canonical_url_fr)||source?.canonical_url||"");
+  if(sourceId==="ASSAULT2024" && source?.full_text_url){
+    const target=sourceTarget(String(source.full_text_url),original);
+    if(target.scope==="document" && new URL(target.url).hostname==="www.researchgate.net")
+      return Object.freeze([Object.freeze({...target,scope:"original-full-text",witness:"Author-uploaded full article · methods, results and limitations"})]);
+  }
   if(sourceId!=="SCR")return Object.freeze([sourceTarget(base,original)]);
   const parts=original.split(";").map(s=>s.trim()).filter(Boolean);
   if(!parts.length)return Object.freeze([{url:base,locator:original,scope:"index",witness:null}]);
