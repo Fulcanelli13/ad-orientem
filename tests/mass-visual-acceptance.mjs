@@ -639,6 +639,16 @@ try{
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
   assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
+  const priestBowArt=await page.evaluate(()=>{
+    const root=document.getElementById("ao-r17-native-reader-preview");
+    const rail=root?.querySelector('.ao-rail-right [data-channel="priest-action"]');
+    const art=root?.querySelector('[data-icon-slot="priest-action"]');
+    return {active:rail?.dataset.active,hidden:art?.hidden??null,
+      image:art?.style.backgroundImage??"",mask:art?.style.maskImage??""};
+  });
+  assert.equal(priestBowArt.active,"true","Gloria source priest bow action is missing from the rail");
+  assert.equal(priestBowArt.hidden,false,
+    "matrix BOWS HEAD incorrectly overrode the correctly bound rubric head_bow artwork");
   assert.equal(gloriaBow.scholaSharedActive,"true","shared Gloria text lost the v1.76 right-rail Schola indicator");
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
   assert.equal(gloriaBow.scholaDockActive,"false","shared Gloria text duplicated itself in the Schola dock");
@@ -649,6 +659,24 @@ try{
   assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
     "Gloria previous-word ritual highlight leaked into the next cue");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
+
+  // Source-owned v1.80 LISTEN cue appears during actual sung priest text,
+  // but the separate faithful response and posture channels remain independent.
+  const collectListening=await focusCanonicalCue("AO.SM.C0070");
+  const listenCue=await page.evaluate(()=>{
+    const rail=document.querySelector("#ao-r17-native-reader-preview .ao-rail-left [data-channel='attention']");
+    const image=rail?.querySelector('[data-icon-slot="attention"]');
+    const postureCue=document.querySelector("#ao-r17-native-reader-preview .ao-rail-left [data-channel='posture-change']");
+    return {active:rail?.dataset.active,display:rail?getComputedStyle(rail).display:null,
+      iconHidden:image?.hidden??null,iconMask:image?.style.maskImage??"",
+      postureCueActive:postureCue?.dataset.active??null};
+  });
+  assert.equal(listenCue.active,"true","sung Collect did not activate the faithful LISTEN channel: "+JSON.stringify({collectListening,listenCue}));
+  assert.equal(listenCue.display,"grid","LISTEN cue exists but is hidden by rail CSS");
+  assert.equal(listenCue.iconHidden,false,"LISTEN cue lost its exact donor art");
+  assert.match(listenCue.iconMask,/listen\\.svg/,"LISTEN cue resolved to the wrong donor key");
+  assert.equal(listenCue.postureCueActive,"false",
+    "persistent STAND was duplicated as a second posture-change icon");
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
   assert.match(incarnatus.gesture,/GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
