@@ -22,7 +22,8 @@ try{
  const page=await browser.newPage({serviceWorkers:"block"});
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
- const dates=["2024-05-06","2027-05-03","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08"];
+ const dates=["2024-05-06","2027-05-03","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
+   "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01"];
  const result=[];
  for(const date of dates){
    const row=await page.evaluate(async date=>{
@@ -70,7 +71,32 @@ try{
    assert.ok(item.secrets>=2,date+" must include second Secret for privileged commemoration");
    assert.ok(item.postcommunions>=2,date+" must include second Postcommunion");
  }
- console.log("PASS 1962 ordinary Rogation weekday colour+proper and privileged Sunday/Advent/Petrine commemorations");
+ // The 1960 General Rubrics 16(a), 17(d) explicitly prohibit the
+ // Sunday commemoration under a feast of the Lord assigned to that Sunday.
+ // This is a source-owner prayer rule, not only a Calendar label preference.
+ for(const date of ["2024-10-27","2027-10-31","2026-10-25"]){
+   const item=result.find(x=>x.date===date);
+   assert.match(item.main?.id||"",/^sancti:10-DU:1:w$/,date+": wrong Lord's feast");
+   assert.equal(item.comms.length,0,date+": Christ the King must omit the Sunday");
+   assert.equal(item.calendarCommemorations?.length||0,0,date+": forbidden Sunday Mass orations were appended");
+   for(const key of ["collects","secrets","postcommunions"])
+     assert.equal(item[key],1,date+": unexpected extra "+key+" in Christ the King Proper");
+ }
+ for(const date of ["2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06"]){
+   const item=result.find(x=>x.date===date);
+   assert.equal(item.status,"ready",date+": Lord's feast day unresolved");
+   assert.ok(!item.comms.some(x=>/^tempora:.*-0/.test(x.id||"")),
+     date+": Sunday commemoration added beneath an assigned Lord's feast");
+ }
+ // Do not generalize this suppression to feasts of saints or Our Lady:
+ // e.g. a first-class feast replacing a second-class Sunday may require
+ // privileged Sunday orations, as on the Assumption or All Saints.
+ const saintsSunday=result.find(x=>x.date==="2026-11-01");
+ assert.ok(saintsSunday.comms.some(x=>/^tempora:.*-0/.test(x.id||"")),
+   "All Saints must retain the privileged Sunday commemoration");
+ assert.ok(saintsSunday.collects>=2&&saintsSunday.secrets>=2&&saintsSunday.postcommunions>=2,
+   "All Saints must retain the three Sunday orations");
+ console.log("PASS 1962 ordinary Rogations, Christ the King no-Sunday-commemoration, other Lord feasts and privileged saint/Advent/Petrine commemorations");
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(ok));
