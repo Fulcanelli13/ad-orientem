@@ -63,3 +63,5 @@ jobs:
         run: node tests/sexual-ethics-moral-original-18-v1.mjs
       - name: Fletcher 1966 original book evidence and attribution scope
         run: node tests/sexual-ethics-fletcher-original-book-v1.mjs
+      - name: Thirty new practical debate original passage scopes
+        run: node tests/sexual-ethics-practical-thirty-passages-v1.mjs

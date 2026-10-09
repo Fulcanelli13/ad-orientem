@@ -13,7 +13,7 @@ const novenas=read("data/pray/novena-sot.v1.json");
 const evidence=read("data/geography/customs-atlas-place-geo-evidence.2026-10-09.json");
 const places=new Map(geography.places.map(place=>[place.place_id,place]));
 const published=geography.places.filter(place=>isMapPublishablePlaceGeo(place.geo,place.address?.country_code));
-assert.equal(published.length,118,"84 shared places must have publishable geo, including indicative Russell");
+assert.equal(published.length,126,"84 shared places must have publishable geo, including indicative Russell");
 assert.equal(evidence.records.length,58,"58 source-attributed coordinate promotions required");
 assert.equal(new Set(evidence.records.map(e=>e.place_id)).size,evidence.records.length,"duplicate GPS provenance");
 for(const record of evidence.records){

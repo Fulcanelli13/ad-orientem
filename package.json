@@ -158,7 +158,9 @@
     "test:directory-sspx-official-directions-23": "node tests/directory-sspx-official-directions-23.mjs",
     "test:directory-sspx-existing-geo-18": "node tests/directory-sspx-existing-geo-18.mjs",
     "test:directory-sspx-canonical-geography": "node tests/directory-sspx-canonical-geography.mjs",
-    "test:directory-sspx-indicative-bulk": "node tests/directory-sspx-indicative-bulk.mjs"
+    "test:directory-sspx-indicative-bulk": "node tests/directory-sspx-indicative-bulk.mjs",
+    "atlas:sync-baselines": "node tools/atlas/sync-census-baselines.mjs --write",
+    "atlas:check-baselines": "node tools/atlas/sync-census-baselines.mjs --check"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"

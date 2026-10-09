@@ -114,6 +114,14 @@ assert.deepEqual(
     "place:CA:oratoire-saint-joseph-montreal",
     "place:FR:basilique-saint-denis",
     "place:FR:basilique-saint-denys-argenteuil",
+    "place:FR:basilique-saint-sernin-toulouse",
+    "place:CH:abbaye-saint-maurice-agaune",
+    "place:DE:kolner-dom-three-kings",
+    "place:IT:basilica-san-marco-venezia",
+    "place:IT:basilica-san-domenico-bologna",
+    "place:FR:basilique-saint-nicolas-de-port",
+    "place:FR:basilique-saint-quentin-aisne",
+    "place:FR:cathedrale-saint-etienne-sens",
     "place:FR:cathedrale-notre-dame-amiens",
     "place:FR:basilique-sainte-marie-madeleine-vezelay",
     "place:PL:sanktuarium-jana-pawla-ii-krakow",
@@ -233,7 +241,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 35,
-  places: 128,
+  places: 136,
   directoryPlaceLinks: 1,
 });
 

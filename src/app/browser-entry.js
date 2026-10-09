@@ -13,7 +13,6 @@ import { installLiveSessionGuards } from "./live-session-guards.js";
 import { createPresentationFxBridge } from "./presentation-fx.js";
 import { installNonMassConvergence } from "./nonmass-convergence.js";
 import "../calendar/browser-entry.js";
-import "../find/browser-entry.js";
 import {
   APP_SURFACES,
   NON_MASS_DONOR_CONTRACT,
