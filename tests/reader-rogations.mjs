@@ -74,6 +74,21 @@ assert.equal(resolveRogationMassVariant({
 
 // Synthetic fully attested fixture checks the future acceptance route, without
 // changing or shipping the actual research-only ledger as published text.
+
+const afterPublicLitanies=resolveRogationMassVariant({
+  choice:"DAY_MASS",observanceConfirmed:true,
+  service:"PUBLIC_PROCESSION",dayClass:1,sourceGate
+});
+assert.equal(afterPublicLitanies.availability,"AVAILABLE");
+assert.equal(afterPublicLitanies.properOwner,"DAY_RESOLVER");
+assert.equal(afterPublicLitanies.massEntry,"INTROIT");
+assert.equal(afterPublicLitanies.omitOpeningPrayers,true);
+assert.deepEqual(afterPublicLitanies.precedingRites,["ROGATIONS"]);
+assert.equal(resolveRogationMassVariant({
+  choice:"DAY_MASS",observanceConfirmed:false,
+  service:"PUBLIC_PROCESSION",dayClass:4,sourceGate
+}).availability,"BLOCKED");
+
 const certifiedMock=structuredClone(sourceGate);
 certifiedMock.status="PUBLISHED_1962_ROGATION_PROPER";
 certifiedMock.publicationAllowed=true;
