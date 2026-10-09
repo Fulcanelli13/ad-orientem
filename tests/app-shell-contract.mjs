@@ -254,7 +254,7 @@ function host({ route = "home", confirm = true } = {}) {
   };
   Object.defineProperty(win,"AO_SETTINGS_V4359",{get(){throw new Error("historical Settings donor was probed");}});
   const adapter=createAppHostAdapter(win);
-  assert.equal(adapter.openSettings(),false,"Settings did not fail closed when modular owner was unavailable");
+  assert.equal(await adapter.openSettings(),false,"Settings did not fail closed when modular owner was unavailable");
   assert.deepEqual(calls,[],"utility.settings fallback reopened historical Settings");
 }
 
