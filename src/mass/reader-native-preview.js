@@ -52,7 +52,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
-import { iconKeysForReaderState } from "./reader-icons.js";
+import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
@@ -1289,7 +1289,22 @@ export async function mountNativeReaderPreview({
       sacredMinister:cueProjection?.ownership?.sacredMinister??"R18_CUE_WAITING_FAIL_CLOSED",
     });
 
-    const priestAction=cueProjection?.priestAction??gestureMatrixProjection?.primaryPriestAction??rubricProjection?.primaryPriestAction??null;
+    const rubricAction=rubricProjection?.primaryPriestAction??null;
+    const matrixAction=gestureMatrixProjection?.primaryPriestAction??null;
+    // Matrix text wins, but the same-cue rubric retains an authoritative
+    // icon identity if the matrix has not bound its icon yet.
+    const resolvedMatrixAction=matrixAction && !matrixAction.iconKey &&
+      rubricAction?.iconKey && rubricAction.cueId===matrixAction.cueId
+      ? Object.freeze({...matrixAction,iconKey:rubricAction.iconKey})
+      : matrixAction;
+    const priestAction=cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
+    const attention=readerAttentionForState({priestVoice,response});
+    // A native source transition may animate the selected posture owner.
+    // Never issue a conflicting instruction when a local/observed profile
+    // deliberately resolved a different faithful posture.
+    const postureCue=cueNative && cueProjection?.posture?.cueId===activeCueId &&
+      String(posture?.value??posture?.label??"")===String(cueProjection.posture.value??cueProjection.posture.label??"")
+      ? cueProjection.posture : null;
     const iconKeys=iconKeysForReaderState({
       priestPosition,posture,gesture,response,priestVoice,
       priestAction,bell,schola:scholaProjection.schola
@@ -1297,8 +1312,11 @@ export async function mountNativeReaderPreview({
     return Object.freeze({
       priestPosition,
       posture,
+      postureCue,
       gesture,
       response,
+      attention,
+      attentionIconKey:attention?.iconKey??null,
       bell,
       cinematic,
       priestVoice,

@@ -29,6 +29,10 @@ for(const token of [
   'data-role="section-title"',
   'data-role="guide-button"',
   'data-channel="posture"',
+  'data-channel="posture-change"',
+  'data-channel="attention"',
+  'data-icon-slot="attention"',
+  'data-icon-slot="posture-change"',
   'data-channel="gesture"',
   'data-channel="response"',
   'data-channel="priest-voice"',
@@ -72,6 +76,10 @@ expect(html.includes("opacity:.67"),"donor backward near-focus level no longer m
 expect(html.includes(".ao-state-kicker{font:700 7px/1"),"YOU / PRIEST state labels lost v1.79-v1.80 typography");
 expect(html.includes('class="ao-guide-copy"><small>GUIDE</small>'),"GUIDE centre cell is missing from the state ribbon");
 expect(html.includes('[data-channel="gesture"][data-active="false"]'),"inactive gesture rail no longer disappears like the final donor");
+expect(html.includes('[data-channel="posture-change"][data-active="false"]'),
+  "duplicate posture-change icon does not disappear when inactive");
+expect(html.includes('[data-channel="attention"][data-active="false"]'),
+  "inactive LISTEN cue incorrectly occupies a persistent rail slot");
 
 expect(JSON.stringify([...SCHOLA_SPEEDS])===JSON.stringify([0.25,0.35,0.45,0.60,0.80,1]),"v1.80 Schola speed ladder changed");
 expect(DEFAULT_SCHOLA_SPEED===0.45,"v1.80 Schola default speed changed");

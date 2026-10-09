@@ -52,12 +52,46 @@ export const R17_ICON_KEYS=Object.freeze({
     SILENT:"priest_silent",
     SECRET:"priest_silent",
     INAUDIBLE:"priest_silent",
-    LISTENS:"priest_silent",
+    LISTENS:"listen",
     NONE:"priest_silent",
   }),
 });
 
 const ACTION_ICON_KEYS=Object.freeze({
+  // v1.80 primary gesture-matrix labels differ from the explicit 77-item
+  // priest-action registry. Resolve their exact source labels before hiding
+  // the rail; never infer an icon by a loose substring match.
+  "BOWS HEAD":"head_bow",
+  "BOWS SLIGHTLY":"head_bow",
+  "BOWS FOR SANCTUS":"head_bow",
+  "BOWS OVER THE ALTAR":"priest_profound_bow_rich",
+  "BOWS PROFOUNDLY":"priest_profound_bow_rich",
+  "STRIKES BREAST ×3":"breast_strike",
+  "SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST":"gospel_crosses",
+  "CROSSES WITH PATEN":"cross",
+  "CROSSES WITH CHALICE":"cross",
+  "RAISES EYES AND HANDS":"priest_centre_arms_rich",
+  "RAISES EYES":"priest_centre_arms_rich",
+  "BLESSES OFFERINGS":"cross",
+  "RAISES AND JOINS HANDS · BOWS HEAD":"priest_centre_hands_rich",
+  "HANDS OVER OBLATIONS":"priest_centre_hands_rich",
+  "RAISES AND JOINS HANDS · EYES ON THE SACRAMENT":"priest_centre_hands_rich",
+  "KISSES THE ALTAR":"priest_kiss_altar_rich",
+  "BLESSES PEOPLE":"priest_blessing_rich",
+  "MAKES THREE CROSSES OVER HOST AND CHALICE":"cross",
+  "MAKES CROSS OVER HOST":"cross",
+  "MAKES CROSS OVER CHALICE":"cross",
+  "CROSSES HOST THEN CHALICE":"cross",
+  "STRIKES BREAST ONCE":"breast_strike",
+  "THREE CROSSES WITH HOST OVER CHALICE":"cross",
+  "TWO CROSSES WITH HOST":"cross",
+  "ELEVATES HOST AND CHALICE SLIGHTLY":"canon",
+  "SIGNS HIMSELF WITH PATEN":"cross",
+  "THREE CROSSES WITH PARTICLE":"cross",
+  "SIGNS WITH HOST":"cross",
+  "SIGNS WITH CHALICE":"cross",
+  "MAKES ONE SIGN OF THE CROSS OVER THE PEOPLE":"priest_blessing_rich",
+  "GENUFLECTS TOWARD THE GOSPEL":"priest_genuflect",
   "INCENSES ALTAR":"priest_incense_altar_rich",
   "INCENSES PEOPLE":"priest_incense_people_rich",
   "BLESSES INCENSE":"priest_incense_altar_rich",
@@ -115,6 +149,25 @@ function priestActionKey(action){
   return ACTION_ICON_KEYS[label]??null;
 }
 
+function voiceIconKey(value){
+  const voice=String(value??"").trim().toUpperCase();
+  if(!voice || /NO COMPETING|MINISTER RESPONSE/.test(voice))return null;
+  if(/^LISTENS(?:$|\s*\/)/.test(voice))return "listen";
+  if(/QUIET|SILENT|SECRET|PRIVATE|LOW/.test(voice))return "priest_silent";
+  if(/SUNG|PUBLIC|CLEAR|AUDIBLE|SPOKEN|SINGS|CHANTED/.test(voice))return "priest_audible";
+  return null;
+}
+
+// v1.80 attention lane is the faithful's instruction, not a second
+// representation of the right-rail priest voice or response.
+export function readerAttentionForState({priestVoice=null,response=null}={}){
+  if(response)return null; // Dedicated response cue already owns this.
+  const voice=priestVoice?.value??priestVoice?.label;
+  return voiceIconKey(voice)==="priest_audible"
+    ? Object.freeze({label:"LISTEN",iconKey:"listen",owner:"R17_PRIEST_PUBLIC_VOICE"})
+    : null;
+}
+
 function gestureKey(gesture){
   if(!gesture)return null;
   const direct=token(gesture.type??gesture.value);
@@ -141,10 +194,7 @@ export function iconKeysForReaderState(state={}){
     postureIconKey:R17_ICON_KEYS.posture[posture]??null,
     gestureIconKey:gestureKey(state.gesture),
     responseIconKey:state.response ? R17_ICON_KEYS.response : null,
-    priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??(
-      /LOW|QUIET|SILENT|SECRET|INAUDIBLE|LISTEN/.test(voice) ? "priest_silent" :
-      voice ? "priest_audible" : null
-    ),
+    priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label),
     scholaIconKey:state.schola ? R17_ICON_KEYS.schola : null,
     priestPositionIconKey:/PEOPLE/.test(facing)
       ? "priest_facing_people"
