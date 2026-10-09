@@ -98,8 +98,9 @@ try{
  assert.equal(old.version,original.version,"Staged update changed the active tab before user confirmation");
  await page.locator("#ao-offline-update-ready button").last().click();
  await page.waitForFunction(()=>globalThis.AO_OFFLINE_TEST_ASSET===2,null,{timeout:60000});
+ await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,update.version,{timeout:20000});
  const now=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
- assert.ok(now.version===update.version||now.version===null,"Activation did not use approved new snapshot");
+ assert.equal(now.version,update.version,"Activation did not use approved new snapshot");
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
