@@ -55,7 +55,7 @@
     "test:reader-palm": "node tests/reader-palm.mjs",
     "test:form-lifecycle": "node tests/form-lifecycle.mjs",
     "test:solemn-pax": "node tests/solemn-pax-authority.mjs",
-    "test:phone": "node tests/reader-phone-acceptance.mjs && node tests/app-shell-final-e2e.mjs && node tests/app-shell-nuptial-e2e.mjs && node tests/app-shell-easter-vigil-e2e.mjs && npm run test:nonmass-convergence-e2e && npm run test:learn-owner-e2e && npm run test:settings-e2e && npm run test:rogation-premass-phone && npm run test:rogation-selected-r17-phone",
+    "test:phone": "node tests/reader-phone-acceptance.mjs && node tests/app-shell-final-e2e.mjs && node tests/app-shell-nuptial-e2e.mjs && node tests/app-shell-easter-vigil-e2e.mjs && npm run test:nonmass-convergence-e2e && npm run test:learn-owner-e2e && npm run test:settings-e2e && npm run test:rogation-premass-phone && npm run test:rogation-selected-r17-phone && npm run test:rogation-real-dayresolver-phone",
     "test:reader-ash": "node tests/reader-ash.mjs",
     "test:reader-candlemas": "node tests/reader-candlemas.mjs",
     "test:reader-requiem-absolution": "node tests/reader-requiem-absolution.mjs",
@@ -186,7 +186,8 @@
     "test:directory-mauritius-local": "node tests/directory-mauritius-local-schedule.mjs",
     "test:rogation-premass": "node tests/rogation-premass-selection.mjs",
     "test:rogation-premass-phone": "node tests/rogation-premass-phone-e2e.mjs",
-    "test:rogation-selected-r17-phone": "node tests/rogation-selected-r17-phone-e2e.mjs"
+    "test:rogation-selected-r17-phone": "node tests/rogation-selected-r17-phone-e2e.mjs",
+    "test:rogation-real-dayresolver-phone": "node tests/rogation-real-dayresolver-phone-e2e.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
