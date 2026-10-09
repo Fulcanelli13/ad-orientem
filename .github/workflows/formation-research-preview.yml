@@ -16,6 +16,8 @@ on:
       - 'tests/learn-faith-certification-019-054.mjs'
       - 'tests/learn-faith-certification-001-018.mjs'
       - 'tests/learn-faith-italian-passage-evidence-001-018.mjs'
+      - 'tests/learn-faith-italian-source-433.mjs'
+      - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
       - 'data/learn/learn-the-faith-certification-001-018.v1.json'
       - 'tests/learn-faith-55-course-reconciliation.mjs'
       - 'data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json'
@@ -76,6 +78,8 @@ jobs:
         run: node tests/learn-faith-certification-001-018.mjs
       - name: Verify original-language Italian and English passage evidence for lessons 1–18
         run: node tests/learn-faith-italian-passage-evidence-001-018.mjs
+      - name: Verify all 433 Italian source locations and 181 bilingual claim links
+        run: node tests/learn-faith-italian-source-433.mjs
       - name: Verify Learn the Faith lessons 19–54, 122 sourced bilingual claims
         run: node tests/learn-faith-certification-019-054.mjs
       - name: Check source-first recovery review (102 research records)
