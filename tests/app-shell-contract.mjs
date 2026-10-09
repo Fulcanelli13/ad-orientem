@@ -30,7 +30,9 @@ assert.match(appEntrySource,/aoReleaseAuthority/,"app shell no longer owns final
 assert.match(appEntrySource,/watchReleaseAuthority/,"app shell no longer protects final release metadata from late legacy rewrites");
 assert.match(appEntrySource,/attributeFilter:\s*\[["\']data-ao-release["\'],\s*["\']data-ao-release-authority["\']\]/,"release metadata overwrite guard is missing");
 
-const calendarSource=readFileSync("src/calendar/browser-entry.js","utf8");
+const calendarFacade=readFileSync("src/calendar/browser-entry.js","utf8");
+const calendarSource=readFileSync("src/calendar/calendar-runtime.js","utf8");
+assert.match(calendarFacade,/ensureCalendarRuntime/,"Calendar first-use route boundary lost");
 assert.match(calendarSource,/data-cal-input/,"Calendar lost DD\/MM\/YYYY date entry");
 assert.doesNotMatch(calendarSource,/data-cal-native/,"Calendar regressed to duplicate visible date inputs");
 assert.match(calendarSource,/Commémorations/,"Calendar French commemorations label regressed");
