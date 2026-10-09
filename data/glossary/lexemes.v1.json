@@ -4784,7 +4784,10 @@
       "part_of_speech": "conjunction",
       "gloss_en": "and not / nor",
       "gloss_fr": "et ne… pas / ni",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "Church Latin is not School Latin",
+      "grammar_focus": "Ecclesiastical versus classical usage",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-32.v1.json"
     },
     {
       "id": "LEX-CORE-206",
@@ -5196,7 +5199,10 @@
       "part_of_speech": "adverb",
       "gloss_en": "again",
       "gloss_fr": "de nouveau",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "Cuius regni non erit finis",
+      "grammar_focus": "Future tense",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-13.v1.json"
     },
     {
       "id": "LEX-CORE-224",
@@ -5424,7 +5430,10 @@
       "part_of_speech": "adverb",
       "gloss_en": "mutually / one another",
       "gloss_fr": "mutuellement / l’un l’autre",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "How the Bible Changed Latin",
+      "grammar_focus": "Biblical Latin; Hebrew and Greek influence",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-33.v1.json"
     },
     {
       "id": "LEX-CORE-234",
@@ -6204,7 +6213,10 @@
       "part_of_speech": "noun",
       "gloss_en": "man",
       "gloss_fr": "homme",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "Church Latin is not School Latin",
+      "grammar_focus": "Ecclesiastical versus classical usage",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-32.v1.json"
     },
     {
       "id": "LEX-CORE-268",
@@ -7262,7 +7274,10 @@
       "part_of_speech": "verb",
       "gloss_en": "say / assert",
       "gloss_fr": "dire / affirmer",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "How the Bible Changed Latin",
+      "grammar_focus": "Biblical Latin; Hebrew and Greek influence",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-33.v1.json"
     },
     {
       "id": "LEX-CORE-314",
@@ -7467,7 +7482,10 @@
       "part_of_speech": "verb",
       "gloss_en": "go away / depart",
       "gloss_fr": "s’en aller / partir",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "How the Bible Changed Latin",
+      "grammar_focus": "Biblical Latin; Hebrew and Greek influence",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-33.v1.json"
     },
     {
       "id": "LEX-CORE-323",
@@ -7856,7 +7874,10 @@
       "part_of_speech": "verb",
       "gloss_en": "look back / regard / consider",
       "gloss_fr": "regarder / considérer",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "The Language of the Canon",
+      "grammar_focus": "Canon syntax and sacrificial register",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-35.v1.json"
     },
     {
       "id": "LEX-CORE-340",
@@ -8107,7 +8128,10 @@
       "part_of_speech": "adjective",
       "gloss_en": "wonderful / admirable",
       "gloss_fr": "merveilleux / admirable",
-      "lexical_enrichment_source": "FROZEN_CORE_REFERENCE_FALLBACK"
+      "lexical_enrichment_source": "CERTIFIED_CROSSWALK_WITH_AUTHORED_LESSON",
+      "lesson_title": "Psalms, Hymns and Antiphons",
+      "grammar_focus": "Psalter, Marian antiphons, hymns; poetic/biblical register",
+      "lesson_source": "data/learn/latin-course-lessons/lesson-36.v1.json"
     }
   ],
   "enrichment": {
@@ -8124,6 +8148,21 @@
       "abeo",
       "respicio",
       "mirabilis"
-    ]
+    ],
+    "certifiedCrosswalk": {
+      "date": "2026-10-08",
+      "source": "data/learn/core-latin-201-350.v1.0.json",
+      "lessons": "data/learn/latin-course-40-core350.v1.json",
+      "affectedLemmas": [
+        "neque/nec",
+        "iterum",
+        "invicem",
+        "vir",
+        "aio",
+        "abeo",
+        "respicio",
+        "mirabilis"
+      ]
+    }
   }
 }

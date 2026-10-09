@@ -112,7 +112,8 @@ assert.ok(gospel.faithful.some(x=>x.gesture==="GOSPEL_SMALL_CROSSES"));
 assert.ok(gospel.faithful.some(x=>x.campionPages.includes(30)));
 const elevation=matrixController.project("AO.SM.C0174");
 assert.ok(elevation.priest.some(x=>x.gesture==="ELEVATE_HOST"));
-assert.ok(elevation.faithful.some(x=>x.gesture==="ELEVATION_ADORATION"));
+assert.ok(elevation.faithful.some(x=>x.gesture==="HEAD_OR_BODY_BOW"&&/remain kneeling; bow reverently/i.test(x.label)),
+  "the precise faithful elevation posture/cue from the reviewed gesture SOT was lost");
 assert.equal(matrixController.project("AO.SM.C9999").priest.length,0);
 
 const noData=createReaderRubricEventController();

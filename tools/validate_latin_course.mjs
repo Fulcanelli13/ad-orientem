@@ -4,7 +4,9 @@ import path from "node:path";
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const course = readJson("data/learn/latin-course-40-core350.v1.json");
 const core200 = readJson("data/learn/core-latin-200.v0.2.json");
-const core350 = readJson("data/learn/core-latin-201-350.v1.json");
+const core350 = readJson("data/learn/core-latin-201-350.v1.0.json");
+const compatibilityCore350 = readJson("data/learn/core-latin-201-350.v1.json");
+if (JSON.stringify(compatibilityCore350.items.map(x => [x.rank,x.lemma])) !== JSON.stringify(core350.items.map(x => [x.rank,x.lemma]))) throw new Error("Compatibility Core-350 freeze has drifted from the certified lexical selection");
 const referenceRegistry = readJson("data/learn/latin-course-reference-registry.v1.json");
 const textualAudit = readJson("data/learn/latin-course-textual-audit.v1.json");
 const frParityAudit = readJson("data/learn/latin-course-fr-parity-audit.v1.json");
@@ -402,8 +404,8 @@ if (authored.length >= 5) {
   assert(authored[4].progressionStep === "sentence", "Lesson 5 must transition to sentence level");
   assert(authored[4].checkpoint.progressionGate === "phrase → sentence", "Lesson 5 must lock the phrase → sentence gate");
   const stage1Introduced = authored.slice(0,5).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
-  assert(stage1Introduced.length === 66, `Stage 1 must introduce 66 tracked lemmas, got ${stage1Introduced.length}`);
-  assert(new Set(stage1Introduced).size === 66, "Stage 1 contains duplicate introduced lemmas");
+  assert(stage1Introduced.length === 64, `Stage 1 must introduce 64 certified tracked lemmas, got ${stage1Introduced.length}`);
+  assert(new Set(stage1Introduced).size === 64, "Stage 1 contains duplicate introduced lemmas");
 }
 
 
@@ -567,8 +569,8 @@ if (authored.length >= 35) {
   assert(authored[34].checkpoint?.readingTransition === "complete Collect → long periodic Canon passage",
     "Lesson 35 must lock the long-periodic-Canon transition");
   const stage7Introduced = authored.slice(30,35).flatMap(x => x.coreVocabulary.introduced.map(v => v.lemma));
-  assert(stage7Introduced.length === 36, `Stage 7 must introduce 36 tracked lemmas, got ${stage7Introduced.length}`);
-  assert(new Set(stage7Introduced).size === 36, "Stage 7 contains duplicate introduced lemmas");
+  assert(stage7Introduced.length === 37, `Stage 7 must introduce 37 certified tracked lemmas, got ${stage7Introduced.length}`);
+  assert(new Set(stage7Introduced).size === 37, "Stage 7 contains duplicate introduced lemmas");
 }
 
 

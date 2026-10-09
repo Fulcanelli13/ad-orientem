@@ -138,7 +138,10 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         void win?.AO_APP_SHELL_V1?.navigate?.("home");
         return;
       }
-      const family=event.target?.closest?.("[data-ao-learn-family]");
+      // Only a family-door button changes the family. The page root also carries
+      // data-ao-learn-family to identify its active family; matching that ancestor
+      // would swallow every child module click before it reaches openModule.
+      const family=event.target?.closest?.("button[data-ao-learn-family]");
       if(family){
         event.preventDefault?.();
         const id=family.dataset?.aoLearnFamily??null;
@@ -276,7 +279,15 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     state.openPolls=0;
     hideHub();
     let result=null;
-    try{result=await registry.open(id);}catch(error){
+    try{
+      if(id===GLOSSARY_ROUTE_ID&&typeof win?.AO_GLOSSARY_V1?.open==="function"){
+        // Glossary's existing canonical owner is authoritative. Registry wrappers
+        // from other Formation modules may advertise the route without actually
+        // dispatching it; open the owner directly on this known Learn child.
+        const opened=await win.AO_GLOSSARY_V1.open({origin:"learn"});
+        result={ok:opened!==false,canonicalId:GLOSSARY_ROUTE_ID};
+      }else result=await registry.open(id);
+    }catch(error){
       try{win?.console?.error?.("Modular Learn module launch failed",error);}catch{}
     }
     if(result?.ok!==true){

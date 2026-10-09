@@ -147,13 +147,13 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
       for(const node of candidates){
         if(node?.querySelector?.("[data-ao-asset-id],.aoGlobalRibbonIcon"))continue;
         if(legacy.test(node?.textContent??"")){
-          node.textContent="Explore";
+          if(node.textContent!=="Explore")node.textContent="Explore";
           return true;
         }
       }
       for(const node of button.childNodes??[]){
         if(node?.nodeType===3&&legacy.test(node.textContent??"")){
-          node.textContent="Explore";
+          if(node.textContent!=="Explore")node.textContent="Explore";
           return true;
         }
       }
