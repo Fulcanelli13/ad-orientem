@@ -5083,6 +5083,44 @@
       "source_ids": [
         "osm:way:375753167"
       ]
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "name": {
+        "official": "Oratoire Saint-Joseph du Mont-Royal",
+        "aliases": [
+          "Saint Joseph's Oratory of Mount Royal"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.49244,
+        "lng": -73.61726,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/1458999228",
+        "source_ref": "osm:node:1458999228",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CA",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "3800 chemin Queen Mary",
+        "line2": null,
+        "postal_code": "H3V 1H6",
+        "city": "Montréal",
+        "region": "Québec",
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "3800 chemin Queen Mary, Montréal, Québec H3V 1H6, Canada"
+      },
+      "source_ids": [
+        "SHR-ORATOIRE-MONTREAL"
+      ]
     }
   ],
   "directoryPlaceLinks": [
