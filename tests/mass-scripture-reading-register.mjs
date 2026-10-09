@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import "./mass-scripture-feast-supplement.mjs";
 import "./scripture-segmented-context.mjs";
 import "./mass-scripture-secondary-witness.mjs";
+import "./mass-scripture-other-season-second-witness.mjs";
 import {readFileSync} from "node:fs";
 import {VERIFIED_MASS_SCRIPTURE_READINGS,VERIFIED_MASS_SCRIPTURE_VERSION}
  from "../src/mass/scripture-reading-witness-index.js";

@@ -1,0 +1,593 @@
+{
+  "schema": "ao-1962-other-temporal-sunday-second-published-witness-v1",
+  "version": "2026-10-10-R1",
+  "status": "46_CITATION_BOUNDARIES_CONCORDANT_AT_SOURCE_LABEL_LEVEL; NOT_INDEPENDENT_PRINT_OR_FULL_TEXT_CERTIFICATION",
+  "scope": "23 conditional Proper source identities outside Pentecost II–XXIV and four resumed Epiphany aliases: Advent, Christmas/Holy Name/Holy Family, Epiphany II–VI, Septuagesima, Lent/Passion, Eastertide after Easter. Conditional Proper identities do not imply yearly calendar occurrence.",
+  "editorialAuthority": "1962 Missale Romanum and 1960 Code of Rubrics govern date and authorized Mass; the linked digital sources serve as witnesses. No Gospel is inferred from site navigation or overlapping Proper labels.",
+  "provenanceLevels": {
+    "primary": "Direct original Latin section labels and incipits already identity-guarded in canonical register, including Adv3-6 inherited Gospel and Epi1-0 inherited Epi5 Epistle.",
+    "secondary": "Separately published 1962 digital Sunday or feast witnesses at exact URLs, used for citation boundary comparison. Editorial independence from Divinum Officium has not been established.",
+    "publication": "Citation concordance only. No full verse-by-verse Latin or EN/FR text collation, Scripture translation rights, or automatic inter-edition equivalence."
+  },
+  "exceptions": {
+    "ambiguousFirstAdventSecondaryPage": "Additional Matthew 21:1–9 label appears under the same First Advent external page, but is not the proper's Gospel; only Luke 21:25–33 accepted.",
+    "incompleteSeptuagesimaExternalArchive": "1962missal.com page displays only 1 Corinthians 9:24–27 and omits Matthew 20:1–16; replaced with the complete named second source for verification.",
+    "separateChristmastideAndHolyFamilyOwners": "Nat1, Nat2 and Epi1 are sourced from distinct named Mass/feast pages, not guessed from the first Epiphany Sunday navigation label."
+  },
+  "results": [
+    {
+      "sourcePath": "Tempora/Adv1-0",
+      "family": "rom-i-adventus",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-i-adventus/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Adv1-0",
+        "GOSPEL": "Tempora/Adv1-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 13:11–14",
+          "originalLatinSourceCitation": "Rom 13:11-14",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Luke 21:25–33",
+          "originalLatinSourceCitation": "Luc 21:25-33",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": [
+        "The separately published page also contains a second, unrelated Gospel label Mt 21:1–9; only the matching Luke 21 section belongs to this Sunday Proper. Do not attach that extra Gospel to the selected Mass."
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Adv2-0",
+      "family": "advent",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv2-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-ii-adventus/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Adv2-0",
+        "GOSPEL": "Tempora/Adv2-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 15:4–13",
+          "originalLatinSourceCitation": "Rom 15:4-13",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 11:2–10",
+          "originalLatinSourceCitation": "Matt 11:2-10",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Adv3-0",
+      "family": "advent",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-iii-adventus/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Adv3-0",
+        "GOSPEL": "Tempora/Adv3-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Philippians 4:4–7",
+          "originalLatinSourceCitation": "Philipp 4:4-7",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 1:19–28",
+          "originalLatinSourceCitation": "Joann 1:19-28",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Adv4-0",
+      "family": "advent",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv4-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-iv-adventus/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Adv4-0",
+        "GOSPEL": "Tempora/Adv3-6"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Corinthians 4:1–5",
+          "originalLatinSourceCitation": "1 Cor 4:1-5",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Luke 3:1–6",
+          "originalLatinSourceCitation": "Luc 3:1-6",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Nat1-0",
+      "family": "christmastide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat1-0.txt",
+      "secondaryPublishedWitnessUrl": "https://mylatinmass.com/readings/sunday-in-the-octave-of-the-nativity/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Nat1-0",
+        "GOSPEL": "Tempora/Nat1-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Galatians 4:1–7",
+          "originalLatinSourceCitation": "Gal 4:1-7",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Luke 2:33–40",
+          "originalLatinSourceCitation": "Luc 2:33-40",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": [
+        "The 1962missal.com Sunday-in-Christmas-Octave archive entry is marked SOON, so use the separately published complete Mass readings at the attached URL."
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Nat2-0",
+      "family": "christmastide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat2-0.txt",
+      "secondaryPublishedWitnessUrl": "https://mylatinmass.com/readings/the-most-holy-name-of-jesus/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Nat2-0",
+        "GOSPEL": "Tempora/Nat2-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Acts 4:8–12",
+          "originalLatinSourceCitation": "Act 4:8-12",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Luke 2:21",
+          "originalLatinSourceCitation": "Luc 2:21",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": [
+        "Holy Name is a feast Proper; date and Sunday assignment remain solely Calendar-owned."
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi1-0",
+      "family": "holy-family",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi1-0.txt",
+      "secondaryPublishedWitnessUrl": "https://mylatinmass.com/propers/feast-of-the-holy-family/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Epi1-0",
+        "GOSPEL": "Tempora/Epi1-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Colossians 3:12–17",
+          "originalLatinSourceCitation": "Col 3:12-17",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Luke 2:42–52",
+          "originalLatinSourceCitation": "Luc 2:42-52",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": [
+        "This owner is Holy Family; the ordinary First Sunday after Epiphany page is NOT a synonym and must not supply readings."
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Epi2-0",
+      "family": "epiphany",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi2-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-ii-post-epiphaniam/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Epi2-0",
+        "GOSPEL": "Tempora/Epi2-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 12:6–16",
+          "originalLatinSourceCitation": "Rom 12:6-16",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 2:1–11",
+          "originalLatinSourceCitation": "Joann 2:1-11",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Epi3-0",
+      "family": "epiphany",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-iii-post-epiphaniam/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Epi3-0",
+        "GOSPEL": "Tempora/Epi3-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 12:16–21",
+          "originalLatinSourceCitation": "Rom 12:16-21",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 8:1–13",
+          "originalLatinSourceCitation": "Matt 8:1-13",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Epi4-0",
+      "family": "epiphany",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi4-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-iv-post-epiphaniam/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Epi4-0",
+        "GOSPEL": "Tempora/Epi4-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 13:8–10",
+          "originalLatinSourceCitation": "Rom 13:8-10",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 8:23–27",
+          "originalLatinSourceCitation": "Matt 8:23-27",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Epi5-0",
+      "family": "epiphany",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi5-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-v-post-epiphaniam/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Epi1-0",
+        "GOSPEL": "Tempora/Epi5-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Colossians 3:12–17",
+          "originalLatinSourceCitation": "Col 3:12-17",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 13:24–30",
+          "originalLatinSourceCitation": "Matt 13:24-30",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Epi6-0",
+      "family": "epiphany",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi6-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-vi-post-epiphaniam/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Epi6-0",
+        "GOSPEL": "Tempora/Epi6-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Thessalonians 1:2–10",
+          "originalLatinSourceCitation": "1 Thess 1:2-10",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 13:31–35",
+          "originalLatinSourceCitation": "Matt 13:31-35",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Quadp1-0",
+      "family": "septuagesima",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+      "secondaryPublishedWitnessUrl": "https://mylatinmass.com/readings/septuagesima-sunday/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Quadp1-0",
+        "GOSPEL": "Tempora/Quadp1-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Corinthians 9:24–27; 10:1–5",
+          "originalLatinSourceCitation": "1 Cor 9:24-27; 10:1-5",
+          "shape": "SEGMENTED"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 20:1–16",
+          "originalLatinSourceCitation": "Matt 20:1-16",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": [
+        "1962missal.com/temporale/dominica-septuagesimae/ prints only 1 Corinthians 9:24–27 and omits this Sunday's Gospel from its displayed Proper; the explicitly linked mylatinmass.com complete Epistle and Gospel is the secondary check."
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quadp2-0",
+      "family": "septuagesima",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp2-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dominica-sexagesimae/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Quadp2-0",
+        "GOSPEL": "Tempora/Quadp2-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "2Corinthians 11:19–33; 12:1–9",
+          "originalLatinSourceCitation": "2 Cor 11:19-33; 12:1-9",
+          "shape": "SEGMENTED"
+        },
+        "GOSPEL": {
+          "reference": "Luke 8:4–15",
+          "originalLatinSourceCitation": "Luc 8:4-15",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Quadp3-0",
+      "family": "septuagesima",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp3-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dominica-quinquagesimae/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Quadp3-0",
+        "GOSPEL": "Tempora/Quadp3-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Corinthians 13:1–13",
+          "originalLatinSourceCitation": "1 Cor 13:1-13",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Luke 18:31–43",
+          "originalLatinSourceCitation": "Luc 18:31-43",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Quad3-0",
+      "family": "lent",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-iii-quadragesimae/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Quad3-0",
+        "GOSPEL": "Tempora/Quad3-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Ephesians 5:1–9",
+          "originalLatinSourceCitation": "Ephes 5:1-9",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "Luke 11:14–28",
+          "originalLatinSourceCitation": "Luc 11:14-28",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Quad5-0",
+      "family": "passiontide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dominica-passionis/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Quad5-0",
+        "GOSPEL": "Tempora/Quad5-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Hebrews 9:11–15",
+          "originalLatinSourceCitation": "Hebr 9:11-15",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 8:46–59",
+          "originalLatinSourceCitation": "Joann 8:46-59",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc1-0",
+      "family": "eastertide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc1-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dominica-in-albis/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Pasc1-0",
+        "GOSPEL": "Tempora/Pasc1-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1John 5:4–10",
+          "originalLatinSourceCitation": "1 Joannes 5:4-10",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 20:19–31",
+          "originalLatinSourceCitation": "Joannes 20:19-31",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc2-0",
+      "family": "eastertide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc2-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-ii-post-pascha/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Pasc2-0",
+        "GOSPEL": "Tempora/Pasc2-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Peter 2:21–25",
+          "originalLatinSourceCitation": "1 Petri 2:21-25",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 10:11–16",
+          "originalLatinSourceCitation": "Joann 10:11-16",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc3-0",
+      "family": "eastertide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc3-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-iii-post-pascha/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Pasc3-0",
+        "GOSPEL": "Tempora/Pasc3-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Peter 2:11–19",
+          "originalLatinSourceCitation": "1 Pet 2:11-19",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 16:16–22",
+          "originalLatinSourceCitation": "Joannes 16:16-22",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc4-0",
+      "family": "eastertide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc4-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-iv-post-pascha/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Pasc4-0",
+        "GOSPEL": "Tempora/Pasc4-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "James 1:17–21",
+          "originalLatinSourceCitation": "Jas 1:17-21",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 16:5–14",
+          "originalLatinSourceCitation": "Joannes 16:5-14",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc5-0",
+      "family": "eastertide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc5-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dom-v-post-pascha/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Pasc5-0",
+        "GOSPEL": "Tempora/Pasc5-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "James 1:22–27",
+          "originalLatinSourceCitation": "Jas 1:22-27",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 16:23–30",
+          "originalLatinSourceCitation": "Joann 16:23-30",
+          "shape": "SINGLE_RANGE"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc6-0",
+      "family": "eastertide",
+      "sourceWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc6-0.txt",
+      "secondaryPublishedWitnessUrl": "https://1962missal.com/temporale/dominica-post-ascensionem/",
+      "sourceSectionOwners": {
+        "EPISTLE_OR_LESSON": "Tempora/Pasc6-0",
+        "GOSPEL": "Tempora/Pasc6-0"
+      },
+      "readings": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Peter 4:7–11",
+          "originalLatinSourceCitation": "1 Pet 4:7-11",
+          "shape": "SINGLE_RANGE"
+        },
+        "GOSPEL": {
+          "reference": "John 15:26–27; 16:1–4",
+          "originalLatinSourceCitation": "Joannes 15:26-27; 16:1-4",
+          "shape": "SEGMENTED"
+        }
+      },
+      "citationCheck": "MATCHED_ORIGINAL_LATIN_AND_SEPARATELY_PUBLISHED_DIGITAL_WITNESS",
+      "editorialNotices": [
+        "Keep the two-chapter John 15:26–27; 16:1–4 Gospel in the segmented Scripture owner."
+      ]
+    }
+  ],
+  "totals": {
+    "conditionalSourcePaths": 23,
+    "scriptureSlots": 46,
+    "singleRangeSlots": 43,
+    "segmentedSlots": 3,
+    "matchedCitationBoundaries": 46,
+    "sourceCorrectionsProposed": 0,
+    "unresolvedBoundariesInBatch": 0
+  },
+  "outOfScope": "No missing Proper additions, data change to the 48-card LIVE model, Catholic lectionary-versification conversions, 1962 Calendar date changes, modern rite readings, or independent critical print-collation claim."
+}
