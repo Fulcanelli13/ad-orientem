@@ -41,6 +41,11 @@ const laudemusReferenceDate = buildLiturgicalYear("2026-09-13");
 assert.equal(laudemusReferenceDate.currentPeriod.id, "after-pentecost");
 assert.equal(laudemusReferenceDate.periodDayIndex, 106);
 assert.equal(nextMajorCelebration("2026-09-13")?.date, "2026-09-29");
+assert.equal(nextMajorCelebration("2026-11-27")?.date,"2026-11-29","Last liturgical week must link to next Advent");
+assert.equal(nextMajorCelebration("2026-11-28")?.date,"2026-11-29","Last liturgical day must not show an empty next feast");
+assert.equal(nextMajorCelebration("2026-11-29")?.date,"2026-12-06","At Advent 1, next major day is Advent 2");
+assert.equal(nextMajorCelebration("2027-11-27")?.date,"2027-11-28","Boundary check across another liturgical year");
+
 
 assert.equal(buildLiturgicalYear("2026-04-05").currentPeriod.id, "easter");
 assert.equal(buildLiturgicalYear("2026-04-05").currentPeriod.days, 49);
@@ -147,6 +152,14 @@ assert.match(browser, /height:66px!important/, "Calendar liturgical month lost i
 assert.match(browser, /grid-template-columns:repeat\(3,1fr\)/, "Calendar top navigation did not collapse to Day · Month · Liturgical Year");
 assert.match(browser, /observedCycle\(r,id\)/, "Month Temporale\/Sanctorale classification is missing");
 assert.match(browser, /majorForDate\(id\)/, "Month classification stopped using resolved major-day metadata");
+assert.match(browser,/const name=r\?\(/,"Month must prefer the resolved observed celebration to the projected major index");
+assert.match(browser,/projected=!r&&Boolean\(major\)/,"Unresolved feast projections must be identified explicitly");
+assert.match(browser,/monthVerified\(monthId\)/,"Partial or failed month cannot be marked fully verified");
+assert.match(browser,/calendarView="day";pickerMonthId=iso\(new Date\(\)\)\.slice\(0,7\)/,"Today must navigate to the day, not leave user stranded in the month picker");
+assert.doesNotMatch(browser,/function yearProgress\(/,"Gregorian civil-year progress cannot drive a liturgical wheel");
+assert.match(browser,/buildLiturgicalYear\(selected\)\.progress\*360/,"All Calendar year wheels must use Advent-to-Advent progress");
+assert.doesNotMatch(browser,/x\.sunday\|\|x\.tier<=2\|\|Boolean\(x\.major\)/,"Projected festivals cannot override the observed Major tab");
+
 assert.match(browser, /function principalSaintContext\(r,id\)/, "Calendar Day lost principal saint\/feast classification");
 assert.match(browser, /data-cal-saint-date/, "Calendar lost the shared saint-detail entry point");
 assert.match(browser, /AO_MODULES\?\.open\?\.\("today\.saint"/, "Calendar no longer reuses the shared saint-detail engine");
