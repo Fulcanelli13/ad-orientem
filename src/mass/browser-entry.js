@@ -278,10 +278,10 @@ function installReaderScriptureBridge(preview,prepared){
     button.hidden=context.state!=="READY";
     button.disabled=context.state!=="READY";
     if(context.state==="READY"){
-      button.dataset.aoScriptureContext=context.reference;
+      button.dataset.massReadingReference=context.reference;
       status.textContent=(fr?"Étude facultative · ":"Optional study · ")+context.reference;
     }else{
-      delete button.dataset.aoScriptureContext;
+      delete button.dataset.massReadingReference;
       status.textContent=fr
         ?"Référence biblique exacte non vérifiée. Le texte liturgique reste inchangé."
         :"Exact Bible reference unverified. Liturgical text remains unchanged.";
