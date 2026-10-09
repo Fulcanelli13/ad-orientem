@@ -63,6 +63,8 @@ assert.match(ownerSource,/Modular Home Mass resume failed/,"Home Resume does not
 assert.ok((ownerSource.match(/navigate\?\.\("mass"\)/g)||[]).length>=2,"Home fresh entry and Resume are not both routed through the app shell");
 assert.match(ownerSource,/navigate\?\.\("find"\)/,"Home Find entry does not route through the modular app shell");
 assert.match(ownerSource,/\[data-home-settings\]/,"Home does not own the new Settings utility entry");
+assert.match(ownerSource,/\[data-home-calendar\]/,"Today must own full Calendar entry");
+assert.match(readFileSync("src/home/presentation.js","utf8"),/data-home-calendar/,"Today missing explicit Full Calendar action");
 assert.match(ownerSource,/navigate\?\.\("settings"\)/,"Home Settings utility does not route through the modular shell");
 assert.match(ownerSource,/MutationObserver/,"Home does not continuously retire asynchronously reinserted donor enrichers");
 assert.match(ownerSource,/retireLegacyHomeEnrichers/,"Home donor enricher retirement helper is missing");

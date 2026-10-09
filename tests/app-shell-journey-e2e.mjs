@@ -93,7 +93,10 @@ try{
   assert.equal(cold.homeSuppressed,"false","Home was suppressed while Home owned the surface");
   assert.equal(cold.donorHomeEnricherVisible,false,"donor Coming Up/Daily Catechism remained visible under modular Home");
 
-  await page.locator("[data-ao-app-surface='calendar']").click();
+  assert.equal(await page.locator("[data-ao-app-surface]").count(),5,"Five permanent destinations required");
+   assert.equal(await page.locator("[data-ao-app-surface='calendar']").count(),0,"Calendar still occupies a ribbon tab");
+   assert.equal(await page.locator("[data-ao-app-surface='home']").getAttribute("aria-label"),"Today");
+   await page.locator("[data-home-calendar]").click();
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
     globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&

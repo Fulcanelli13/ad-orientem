@@ -3,13 +3,12 @@ export const APP_SURFACES = Object.freeze([
   "mass",
   "pray",
   "learn",
-  "calendar",
   "find",
 ]);
 
 // Settings remains a routable utility overlay, but it no longer consumes one
 // of the six permanent navigation slots.
-export const APP_ROUTE_SURFACES = Object.freeze([...APP_SURFACES, "settings", "apostolate"]);
+export const APP_ROUTE_SURFACES = Object.freeze([...APP_SURFACES, "calendar", "settings", "apostolate"]);
 
 const APP_SURFACE_SET = new Set(APP_ROUTE_SURFACES);
 

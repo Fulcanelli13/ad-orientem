@@ -1,9 +1,9 @@
 {
   "schema": "AO_CONTENT_NAVIGATION_REGISTRY_V1",
-  "version": "1.0.0",
+  "version": "1.1",
   "created_date": "2026-10-09",
   "baseline_commit": "dab6b8319ddea39c5a968085ae8d9b85d1b36e14",
-  "status": "REVIEW_ONLY_NO_RUNTIME_CHANGES",
+  "status": "ACTIVE_REGISTRY_WITH_NAVIGATION_MIGRATION",
   "scope": "ROUTE_AND_CORPUS_FAMILY_CENSUS",
   "nonclaims": [
     "Source declaration does not prove successful user interaction.",
@@ -37,7 +37,6 @@
       "mass",
       "pray",
       "learn",
-      "calendar",
       "find"
     ],
     "proposed_ribbon": [
@@ -47,14 +46,14 @@
       "learn",
       "explore"
     ],
-    "proposed_status": "DESIGN_PROPOSAL_NOT_RELEASED",
+    "proposed_status": "IMPLEMENTED_FIVE_SLOT_SHELL_PENDING_PHONE_ACCEPTANCE",
     "utility_access": [
       "settings",
       "scripture",
       "glossary",
       "global-discovery"
     ],
-    "today_rule": "Today reuses Home as concise launch projection and Calendar as full experience. Never rebuild the calendar in Home.",
+    "today_rule": "Today is the public label for canonical home; the full Calendar remains a separate routable overlay opened from Today's prominent Calendar action and existing contextual shortcuts. No liturgical-day logic is duplicated.",
     "formation_families": [
       {
         "id": "faith-foundations",
@@ -147,7 +146,40 @@
           "traditions"
         ]
       }
-    ]
+    ],
+    "previous_ribbon_six": [
+      "home",
+      "mass",
+      "pray",
+      "learn",
+      "calendar",
+      "find"
+    ],
+    "release_migration": {
+      "id": "NAV-FIVE-TODAY-20261010",
+      "permanent_internal_routes": [
+        "home",
+        "mass",
+        "pray",
+        "learn",
+        "find"
+      ],
+      "visible_labels_en": [
+        "Today",
+        "Mass",
+        "Pray",
+        "Formation",
+        "Explore"
+      ],
+      "retired_permanent_slot": "calendar",
+      "preserved_deep_link": "calendar",
+      "retained_external_paths": [
+        "today.calendar",
+        "data-home-cu-all",
+        "data-home-calendar"
+      ],
+      "legacy_donor_contract_unchanged": true
+    }
   },
   "routes": [
     {

@@ -54,8 +54,7 @@ try{
     mass:"ao-brand-emblem",
     pray:"ao-nav-pray",
     learn:"ao-nav-learn",
-    calendar:"ao-nav-calendar",
-    // The sixth permanent ribbon slot is Explore; Settings remains a contextual overlay.
+    // Calendar is nested under Today; Settings remains a contextual overlay.
     find:"ao-ui-search",
   };
   const ribbonAssets=await page.evaluate(expected=>Object.fromEntries(
@@ -222,7 +221,7 @@ try{
   await page.locator("[data-ao-app-surface='home']").click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:5000});
 
-  await page.locator("[data-ao-app-surface='calendar']").click();
+  await page.locator("[data-home-calendar]").click();
   await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
   const genericCalendarTransition=await page.evaluate(()=>{
     const el=document.getElementById("ao-cinema-transition");

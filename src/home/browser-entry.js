@@ -213,6 +213,14 @@ export function createHomeOwner(win=globalThis){
       });
       return;
     }
+    const calendar=target?.closest?.("[data-home-calendar]");
+    if(calendar){
+      event.preventDefault?.();
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("calendar")).catch(error=>{
+        try{win?.console?.error?.("Today full Calendar unavailable",error)}catch{}
+      });
+      return;
+    }
     const settings=target?.closest?.("[data-home-settings]");
     if(settings){
       event.preventDefault?.();

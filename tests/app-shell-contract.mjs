@@ -21,10 +21,12 @@ import {
 } from "../src/app/index.js";
 import { installAppShellBridge } from "../src/app/browser-entry.js";
 
-assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "calendar", "find"]);
-assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "calendar", "find", "settings", "apostolate"]);
+assert.deepEqual(APP_SURFACES, ["home", "mass", "pray", "learn", "find"]);
+assert.deepEqual(APP_ROUTE_SURFACES, ["home", "mass", "pray", "learn", "find", "calendar", "settings", "apostolate"]);
 assert.equal(APP_SURFACES.includes("find"), true, "Explore/Find is not a permanent ribbon surface");
 assert.equal(APP_SURFACES.includes("settings"), false, "Settings still consumes a permanent ribbon slot");
+assert.equal(APP_SURFACES.includes("calendar"), false, "Full Calendar still consumes a permanent ribbon slot");
+assert.equal(normalizeAppSurface("calendar"),"calendar","Calendar must remain directly routable");
 assert.equal(APP_SURFACES.includes("sources"), false);
 assert.equal(APP_SURFACES.includes("formation"), false, "Formation became a second canonical surface");
 assert.equal(normalizeAppSurface("learn"), "learn");
@@ -356,6 +358,16 @@ function host({ route = "home", confirm = true } = {}) {
   }
   for(const fn of observerCallbacks)fn?.();
   assert.equal(win.AO_APP_SHELL_V1.status().visibleOwner,true,"late donor ribbon was not adopted");
+  const todayButton=buttons.find(x=>x.dataset.aoAppSurface==="home");
+  assert.equal(todayButton?._label?.textContent,"Today","Home ribbon did not become Today");
+  assert.equal(todayButton?.attributes?.["aria-label"],"Today","Today ribbon ARIA label is wrong");
+  assert.match(appEntrySource,/if\(el\.textContent!==todayLabel\)/,"Today label must not rewrite identical text and starve ribbon observer");
+  const calendarSlot=buttons.find(x=>x.dataset.aoAppSecondary==="calendar");
+  assert.equal(calendarSlot?.hidden,true,"Calendar standalone ribbon slot remains visible");
+  assert.equal(calendarSlot?.dataset.aoAppSurface,undefined,"Hidden Calendar still owns a permanent tab");
+  assert.equal(buttons.filter(x=>!!x.dataset.aoAppSurface).length,5,"Expected exactly five permanent destinations");
+  assert.match(appEntrySource,/language==="fr"\?"Aujourd’hui":"Today"/,"Today ribbon lost its French label");
+  assert.match(appEntrySource,/ribbonLanguage=language/,"Today label does not update on language changes");
   const learnButton=buttons.find(x=>x.dataset.aoAppSurface==="learn");
   assert.equal(learnButton?._label?.textContent,"Formation","adopted phone ribbon still displays Learn / Apprendre");
   assert.equal(learnButton?.attributes?.["aria-label"],"Formation","adopted Learn ribbon ARIA label is not Formation");
