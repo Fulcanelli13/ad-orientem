@@ -51,7 +51,8 @@ assert.ok(wave1.legacy_object_crosswalk.some(x=>x.subject_id===francis.subject_i
 const serra=wave2.custody_claims.filter(x=>x.subject_id==="subject:saint-junipero-serra");
 assert.ok(serra.some(x=>x.material_kind==="COFFIN_CONTACT_OBJECT")&&serra.some(x=>x.material_kind==="HISTORICAL_TOMB_WITH_REMAINS"));
 assert.ok(wave2.adversarial_historical_reviews.some(x=>x.subject_id==="subject:saint-thomas-becket"));
-assert.equal(live.relics.length,wave1.legacy_object_crosswalk.length,"Research work must preserve current published relics");
+assert.ok(live.relics.length>=wave1.legacy_object_crosswalk.length,"Research work must preserve current published relics");
+assert.ok(wave1.legacy_object_crosswalk.every(x=>live.relics.some(r=>r.id===x.legacy_relic_id)),"All frozen legacy relic identities must survive expansion");
 const report=JSON.parse(execFileSync(process.execPath,["tools/atlas/report-world-relic-census.mjs"],{encoding:"utf8"}));
 assert.equal(report.first_wave_claims+report.second_wave_claims,51);
 assert.equal(report.backlog_total,133);
