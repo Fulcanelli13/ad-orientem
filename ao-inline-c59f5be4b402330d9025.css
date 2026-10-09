@@ -1,0 +1,102 @@
+
+/* Prayer Book reader actions and metadata */
+#aoPrayerBookRoot .lab-actions button{min-height:40px!important;border:1px solid var(--border)!important;border-radius:10px!important;background:var(--surface-2)!important;color:var(--text)!important;padding:8px 11px!important}
+#aoPrayerBookRoot .lab-actions .accent{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-prayer-flip{color:var(--text)!important;font-family:var(--font-liturgical)!important}
+#aoPrayerBookRoot .lab-flip-hint{border-color:var(--border)!important;color:var(--muted)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-reader-meta span{padding:3px 6px!important;border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important;font-size:.56rem!important}
+#aoPrayerBookRoot .lab-source-note,#aoPrayerBookRoot .lab-prayer-sheet .lab-source-note,#aoPrayerBookRoot .lab-practice-sheet .lab-source-note{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-source-note a,#aoPrayerBookRoot .lab-prayer-sheet .lab-source-note a,#aoPrayerBookRoot .lab-practice-sheet .lab-source-note a{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-practice-sheet .lab-practice-note{background:var(--liturgical-soft)!important;color:var(--muted)!important;border-left-color:var(--liturgical)!important}
+
+/* Rosary: keep devotional structure, remove the Lab-ora blue/paper sub-theme. */
+#aoPrayerBookRoot .lab-rosary-hero{padding:15px!important;border-color:var(--liturgical-border)!important;border-radius:var(--radius-m)!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important;margin-bottom:12px!important}
+#aoPrayerBookRoot .lab-rosary-hero small{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-rosary-hero strong{font-family:var(--font-display)!important;font-size:clamp(1.45rem,5vw,1.9rem)!important}
+#aoPrayerBookRoot .lab-rosary-hero p{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-rosary-hero button{min-height:42px!important;border-radius:10px!important;border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-mystery-grid{gap:8px!important}
+#aoPrayerBookRoot .lab-mystery-card{min-height:112px!important;padding:12px!important;border-color:var(--border)!important;border-radius:14px!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-mystery-card.recommended{border-color:var(--liturgical-border)!important;box-shadow:none!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important}
+#aoPrayerBookRoot .lab-mystery-card small{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-mystery-card strong{font-family:var(--font-display)!important;font-size:1.05rem!important}
+#aoPrayerBookRoot .lab-mystery-card ol{color:var(--muted)!important;font-size:.8rem!important}
+#aoPrayerBookRoot .lab-option-bar{gap:6px!important;margin:11px 0 13px!important}
+#aoPrayerBookRoot .lab-option-bar label{padding:6px 8px!important;border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--muted)!important;font-size:.76rem!important}
+#aoPrayerBookRoot .lab-option-bar input{accent-color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-decade-bar i{background:var(--surface-2)!important}
+#aoPrayerBookRoot .lab-decade-bar i.done,#aoPrayerBookRoot .lab-decade-bar i.current{background:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-bead{background:var(--surface-2)!important;border-color:var(--border)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-bead.past{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important}
+#aoPrayerBookRoot .lab-bead.current{background:var(--liturgical)!important;border-color:var(--liturgical)!important;box-shadow:0 0 0 4px var(--liturgical-soft)!important}
+#aoPrayerBookRoot .lab-prayer-sheet>.rubric,#aoPrayerBookRoot .lab-prayer-count strong{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-prayer-count{color:var(--muted)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-scripture-cue{padding:12px 13px!important;border:1px solid var(--border)!important;background:var(--surface-2)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-scripture-cue strong{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-player-controls{gap:8px!important;margin-top:12px!important}
+#aoPrayerBookRoot .lab-player-controls button{min-height:44px!important;border-color:var(--border)!important;border-radius:11px!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-player-controls .primary{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--text)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-contemplation{padding:16px!important;border:1px solid var(--border)!important;border-radius:var(--radius-m)!important;background:var(--surface-1)!important;color:var(--text)!important;box-shadow:none!important}
+#aoPrayerBookRoot .lab-contemplation .kicker,#aoPrayerBookRoot .lab-contemplation .fruit{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-contemplation h2{color:var(--text)!important;font-family:var(--font-display)!important;font-size:clamp(1.45rem,5vw,1.9rem)!important}
+#aoPrayerBookRoot .lab-contemplation .principal{border-left-color:var(--liturgical)!important;background:var(--liturgical-soft)!important}
+#aoPrayerBookRoot .lab-contemplation a{color:var(--liturgical)!important}
+
+/* Stations */
+#aoPrayerBookRoot .lab-stations-hero{padding:15px!important;border-color:var(--liturgical-border)!important;border-radius:var(--radius-m)!important;background:linear-gradient(145deg,var(--liturgical-soft),var(--surface-1))!important;margin-bottom:12px!important}
+#aoPrayerBookRoot .lab-stations-hero strong{font-family:var(--font-display)!important;font-size:1.3rem!important}
+#aoPrayerBookRoot .lab-stations-hero p{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-stations-settings{gap:7px!important;margin:11px 0!important}
+#aoPrayerBookRoot .lab-stations-settings button,#aoPrayerBookRoot .lab-stations-settings label{min-height:40px!important;border-color:var(--border)!important;border-radius:10px!important;background:var(--surface-1)!important;color:var(--text)!important;padding:8px 10px!important}
+#aoPrayerBookRoot .lab-stations-settings button.active{border-color:var(--liturgical-border)!important;box-shadow:none!important;background:var(--liturgical-soft)!important}
+#aoPrayerBookRoot .lab-stations-settings input{accent-color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-station-rail i{border-color:var(--border)!important;color:var(--muted)!important}
+#aoPrayerBookRoot .lab-station-rail i.done{background:var(--liturgical-soft)!important;border-color:var(--liturgical-border)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-station-rail i.current{background:var(--liturgical)!important;border-color:var(--liturgical)!important;color:var(--bg)!important}
+#aoPrayerBookRoot .lab-station-text h3{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-stabat{border-color:var(--border)!important}
+#aoPrayerBookRoot .lab-progress{height:5px!important;background:var(--surface-2)!important}
+#aoPrayerBookRoot .lab-progress i{background:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-source-row a{color:var(--liturgical)!important}
+#aoPrayerBookRoot .lab-change{color:var(--liturgical)!important}
+
+/* Rosary recitation/depth surfaces */
+#aoPrayerBookRoot .lab-recitation-mode{padding:8px 10px!important;border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-recitation-mode>span{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-recitation-mode>div{border-color:var(--border)!important}
+#aoPrayerBookRoot .lab-recitation-mode button{color:var(--muted)!important;font-family:var(--font-display)!important}
+#aoPrayerBookRoot .lab-recitation-mode button.active{background:var(--liturgical-soft)!important;color:var(--text)!important}
+#aoPrayerBookRoot .lab-recitation-mode small{color:var(--muted)!important}
+#aoPrayerBookRoot .lab-scripture-actions button{color:var(--liturgical)!important;font-family:var(--font-display)!important}
+.ao-r-depth-modal{background:rgba(2,5,9,.78)!important;backdrop-filter:blur(12px)!important}
+.ao-r-depth-panel{width:min(var(--ao-shell-standard),100%)!important;background:var(--bg)!important;color:var(--text)!important;border-color:var(--border)!important;border-radius:22px 22px 0 0!important}
+.ao-r-depth-panel>header{border-color:var(--border)!important;background:color-mix(in srgb,var(--bg) 96%,transparent)!important}
+.ao-r-depth-panel header small,.ao-r-depth-panel footer button{color:var(--liturgical)!important}
+.ao-r-depth-panel header h2{font-family:var(--font-display)!important;font-size:1.15rem!important}
+.ao-r-depth-panel header p,.ao-r-depth-panel>footer,.ao-r-loading{color:var(--muted)!important}
+.ao-r-depth-panel>footer{border-color:var(--border)!important;background:var(--surface-1)!important}
+.ao-r-depth-panel>footer button{border-color:var(--liturgical-border)!important;border-radius:10px!important;background:var(--liturgical-soft)!important}
+.ao-r-verses p.current{background:var(--liturgical-soft)!important;box-shadow:inset 3px 0 0 var(--liturgical)!important}
+.ao-r-commentary{border-color:var(--border)!important;background:var(--surface-1)!important}
+.ao-r-commentary h3,.ao-r-commentary summary,.ao-r-commentary a{color:var(--liturgical)!important}
+.ao-r-commentary blockquote,.ao-r-lang-note{border-color:var(--liturgical-border)!important;background:var(--liturgical-soft)!important;color:var(--muted)!important}
+
+/* Newer pb* prayer-book surfaces: same geometry and typography contract. */
+.pbShell{max-width:var(--ao-shell-standard)!important;padding-left:14px!important;padding-right:14px!important}
+.pbHero{padding:15px!important;border-radius:var(--radius-m)!important}
+.pbSearch{border-radius:12px!important;padding:11px 13px!important;margin-bottom:13px!important}
+.pbModuleGrid,.pbPrayerGrid{gap:8px!important}
+.pbModule,.pbPrayerCard,.pbActionCard{min-height:72px!important;padding:12px!important;border-radius:14px!important}
+.pbModule strong,.pbPrayerCard strong,.pbActionCard strong{font-family:var(--font-display)!important;font-size:.94rem!important}
+.pbModule span,.pbPrayerCard span,.pbActionCard span{font-size:.78rem!important}
+.pbSection{margin:19px 0!important}
+.pbTag{padding:4px 7px!important;font-size:.6rem!important}
+.pbPrayerText{border-radius:14px!important;padding:18px!important;font-family:var(--font-liturgical)!important}
+.pbFlowCard{border-radius:14px!important;padding:15px!important}
+.pbChoiceRow button{min-height:38px!important;padding:7px 10px!important;border-radius:10px!important}
+.pbSourceRow a{border-radius:10px!important}
+
+@media(max-width:650px){
+ #aoPrayerBookRoot .lab-mystery-card{min-height:0!important}
+ .ao-r-depth-panel{border-radius:0!important}
+}

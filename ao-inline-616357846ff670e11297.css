@@ -1,0 +1,142 @@
+
+/* v39.2 — quiet Group recitation inside v39.1's native dark prayer surfaces.
+   This deliberately overrides the older v37.2 "response card" treatment. */
+
+#aoPrayerBookRoot .lab-prayer-flip{
+  white-space:normal!important;
+  color:var(--text)!important;
+}
+
+/* Genuine source dialogue. */
+#aoPrayerBookRoot .aoPrayerDialogueLine{
+  display:grid!important;
+  grid-template-columns:1.55rem minmax(0,1fr)!important;
+  gap:.38rem!important;
+  align-items:start!important;
+  margin:.28rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoPrayerRole{
+  color:var(--liturgical)!important;
+  background:transparent!important;
+  border:0!important;
+  font-family:var(--font-liturgical)!important;
+  font-weight:600!important;
+  font-size:1em!important;
+  line-height:1.5!important;
+  letter-spacing:0!important;
+}
+#aoPrayerBookRoot .aoPrayerDialogueBody,
+#aoPrayerBookRoot .aoPrayerWords{
+  color:var(--text)!important;
+  background:transparent!important;
+}
+
+/* Group mode: one quiet cue, not a separate card. */
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine.aoResponse{
+  padding:.2rem .34rem!important;
+  border:0!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 58%,transparent)!important;
+  border-radius:0 4px 4px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoGroupResponseKicker{display:none!important}
+
+/* Ordinary prose and intentional paragraph gaps in mixed prayers. */
+#aoPrayerBookRoot .aoPrayerProse{
+  display:block!important;
+  margin:.1rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoPrayerSpacer{
+  display:block!important;
+  height:.62rem!important;
+}
+
+/* Customary communal division for Pater / Ave / Gloria.
+   No fake ℣./℟. characters are introduced. */
+#aoPrayerBookRoot .aoCustomarySplit{
+  display:block!important;
+  margin:.32rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoCustomaryLeader,
+#aoPrayerBookRoot .aoCustomaryResponse{
+  display:block!important;
+  color:var(--text)!important;
+  line-height:1.55!important;
+}
+#aoPrayerBookRoot .aoCustomaryLeader{
+  padding:.06rem .1rem .2rem!important;
+}
+#aoPrayerBookRoot .aoCustomaryResponse{
+  padding:.24rem .38rem!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 54%,transparent)!important;
+  border-radius:0 4px 4px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;
+}
+#aoPrayerBookRoot .aoSrOnly{
+  position:absolute!important;
+  width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;
+  overflow:hidden!important;clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;border:0!important;
+}
+
+/* Litanies: lighter still, because the response repeats continuously. */
+#aoPrayerBookRoot .aoLitanyLine{
+  display:grid!important;
+  gap:.12rem!important;
+  margin:.22rem 0!important;
+  color:var(--text)!important;
+}
+#aoPrayerBookRoot .aoLitanyCall,
+#aoPrayerBookRoot .aoLitanyResponse{
+  display:grid!important;
+  grid-template-columns:1.55rem minmax(0,1fr)!important;
+  gap:.38rem!important;
+  align-items:start!important;
+  color:var(--text)!important;
+}
+html.aoRecitationGroup #aoPrayerBookRoot .aoLitanyResponse{
+  padding:.1rem .24rem .1rem .32rem!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 42%,transparent)!important;
+  border-radius:0 3px 3px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 3%,transparent)!important;
+}
+#aoPrayerBookRoot .aoLitanyLine.aoGroupLitany .aoLitanyResponse{
+  /* neutralize old v37.2 stronger band if stale markup is encountered */
+  border-top:0!important;border-right:0!important;border-bottom:0!important;
+}
+
+/* Roman Before / After Mass response rows use the same shared recitation state. */
+.prayerFlip .aoRomanDialogueLine,
+.romanCorpus .aoRomanDialogueLine{
+  display:grid!important;
+  grid-template-columns:1.55rem minmax(0,1fr)!important;
+  gap:.38rem!important;
+  align-items:start!important;
+  margin:.26rem 0!important;
+}
+.aoRomanSpacer{display:block!important;height:.58rem!important}
+html.aoRecitationGroup .prayerFlip .aoRomanDialogueLine.aoResponse,
+html.aoRecitationGroup .romanCorpus .aoRomanDialogueLine.aoResponse{
+  padding:.2rem .34rem!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 54%,transparent)!important;
+  border-radius:0 4px 4px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;
+  color:var(--text)!important;
+}
+
+/* Keep the recitation control visually subordinate to the prayer itself. */
+#aoPrayerBookRoot .lab-recitation-mode{
+  background:rgba(255,255,255,.022)!important;
+  border-color:var(--border)!important;
+}
+#aoPrayerBookRoot .lab-recitation-mode button.active,
+.rc2Segments button[data-rc2-flow-recitation].active{
+  background:var(--liturgical-soft)!important;
+  border-color:var(--liturgical-border)!important;
+  color:var(--text)!important;
+}

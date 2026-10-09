@@ -1,0 +1,75 @@
+
+/* v41.1 — devotional recitation-role authority.
+   Individual: no invented dialogue markers for common prayers.
+   Group: visible ℣./℟. throughout the shared response format, matching Angelus.
+   Intrinsic source ℣./℟. remain intrinsic in both modes. */
+#aoPrayerBookRoot .aoCustomarySplit{display:block!important;color:var(--text)!important}
+#aoPrayerBookRoot .aoCustomaryLeader,
+#aoPrayerBookRoot .aoCustomaryResponse{color:var(--text)!important;line-height:1.55!important}
+
+/* Group common prayers use the same visible two-column role grammar as Angelus. */
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryLeader,
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryResponse,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryLeader,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryResponse{
+  display:grid!important;
+  grid-template-columns:1.55rem minmax(0,1fr)!important;
+  gap:.38rem!important;
+  align-items:start!important;
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryLeader,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryLeader{
+  padding:.10rem .10rem .30rem!important;
+  border-left:0!important;background:transparent!important;box-shadow:none!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryResponse,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryResponse{
+  margin:.12rem 0 .28rem!important;
+  padding:.30rem .46rem!important;
+  border-left:2px solid var(--liturgical-border)!important;
+  border-radius:0 6px 6px 0!important;
+  background:color-mix(in srgb,var(--liturgical) 9%,transparent)!important;
+  box-shadow:none!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryLeader>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryLeader>.aoPrayerRole{
+  display:inline!important;color:var(--muted)!important;font-weight:600!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoCustomaryResponse>.aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoCustomaryResponse>.aoPrayerRole{
+  display:inline!important;color:var(--liturgical)!important;font-weight:700!important
+}
+
+/* Intrinsic dialogue uses the same quiet-versicle / accented-response system. */
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine.aoVersicle .aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine.aoVersicle .aoPrayerRole,
+#aoPrayerBookRoot.aoRecitationGroup .aoLitanyCall .aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoLitanyCall .aoPrayerRole{color:var(--muted)!important;font-weight:600!important}
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine.aoResponse,
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine.aoResponse{
+  padding:.24rem .38rem!important;border-left:2px solid var(--liturgical-border)!important;
+  border-radius:0 5px 5px 0!important;background:color-mix(in srgb,var(--liturgical) 9%,transparent)!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoPrayerDialogueLine.aoResponse .aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoPrayerDialogueLine.aoResponse .aoPrayerRole{color:var(--liturgical)!important;font-weight:700!important}
+#aoPrayerBookRoot.aoRecitationGroup .aoLitanyResponse,
+html.aoRecitationGroup #aoPrayerBookRoot .aoLitanyResponse{
+  padding:.12rem .28rem .12rem .34rem!important;
+  border-left:2px solid color-mix(in srgb,var(--liturgical) 40%,transparent)!important;
+  border-radius:0 4px 4px 0!important;background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important
+}
+#aoPrayerBookRoot.aoRecitationGroup .aoLitanyResponse .aoPrayerRole,
+html.aoRecitationGroup #aoPrayerBookRoot .aoLitanyResponse .aoPrayerRole{color:var(--liturgical)!important;font-weight:700!important}
+
+/* Individual common prayers remain ordinary continuous prayer text. */
+#aoPrayerBookRoot.aoRecitationIndividual .aoCustomarySplit>.aoCustomaryLeader,
+#aoPrayerBookRoot.aoRecitationIndividual .aoCustomarySplit>.aoCustomaryResponse,
+html.aoRecitationIndividual #aoPrayerBookRoot .aoCustomarySplit>.aoCustomaryLeader,
+html.aoRecitationIndividual #aoPrayerBookRoot .aoCustomarySplit>.aoCustomaryResponse{
+  display:block!important;padding:0!important;border:0!important;background:transparent!important
+}
+#aoPrayerBookRoot.aoRecitationIndividual .aoCustomarySplit .aoPrayerRole,
+html.aoRecitationIndividual #aoPrayerBookRoot .aoCustomarySplit .aoPrayerRole{display:none!important}
+
+/* Gesture cues remain icon-first, discreet, and below prayer-text scale. */
+#aoPrayerBookRoot .aoDevGestureCue{max-width:100%;font-size:.72rem!important;line-height:1.25!important}

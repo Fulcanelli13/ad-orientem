@@ -1,0 +1,102 @@
+
+
+/* v39 Harmonized Master — native dark interior shell hardening.
+   Deep readers remain inside Ad Orientem's dark visual language. */
+:root{
+  --ao-v39-reader-bg:color-mix(in srgb,var(--bg) 96%,#18120a);
+  --ao-v39-reader-card:color-mix(in srgb,var(--surface-1) 94%,#1d160c);
+  --ao-v39-reader-card-2:color-mix(in srgb,var(--surface-2) 92%,#21180d);
+}
+
+/* Rosary art must not resurrect the old pale paper sheet over a dark app. */
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 86%,transparent)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer.aoArtSubtle .lab-prayer-sheet{
+  background:color-mix(in srgb,var(--surface-1) 91%,transparent)!important;
+}
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet h2,
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet p,
+#aoPrayerBookRoot .pbShell.aoRosaryArtPrayer .lab-prayer-sheet span{
+  color:inherit;
+}
+
+/* Commentary / Scripture depth sheet: native dark reader, not a white document. */
+.ao-r-depth-modal{background:rgba(2,5,9,.82)!important;backdrop-filter:blur(12px)!important}
+.ao-r-depth-panel{
+  background:var(--ao-v39-reader-bg)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+  box-shadow:0 26px 90px rgba(0,0,0,.52)!important;
+}
+.ao-r-depth-panel>header{
+  background:color-mix(in srgb,var(--bg) 94%,transparent)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-depth-panel header small{color:var(--liturgical)!important}
+.ao-r-depth-panel header h2{color:var(--text)!important}
+.ao-r-depth-panel header p{color:var(--muted)!important}
+.ao-r-depth-scroll{background:transparent!important}
+.ao-r-depth-panel>footer{
+  background:var(--surface-1)!important;
+  color:var(--muted)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-commentary{
+  background:var(--ao-v39-reader-card)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-commentary h3,.ao-r-commentary summary,.ao-r-commentary a{color:var(--liturgical)!important}
+.ao-r-commentary blockquote{
+  background:var(--liturgical-soft)!important;
+  color:var(--text)!important;
+  border-left-color:var(--liturgical)!important;
+}
+.ao-r-commentary details{border-color:var(--border)!important}
+.ao-r-commentary p{color:var(--text)!important}
+.ao-r-lang-note,.ao-r-error{
+  background:var(--ao-v39-reader-card-2)!important;
+  color:var(--muted)!important;
+  border-color:var(--border)!important;
+}
+.ao-r-error strong{color:var(--text)!important}
+
+/* Guides / preferences / diagnostics follow the same interior hierarchy. */
+.rc2Sheet,
+.aoContentV37Panel{
+  background:var(--ao-v39-reader-bg)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+.rc2Sheet header,
+.aoContentV37Panel>header{
+  background:color-mix(in srgb,var(--bg) 94%,transparent)!important;
+  border-color:var(--border)!important;
+}
+.rc2GuideSection,
+.rc2PrefSection,
+.aoContentV37Row,
+.aoV37SourcesCard{
+  background:var(--ao-v39-reader-card)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+
+/* Long reading surfaces use warm dark cards; rubric red stays semantic. */
+.scriptureScreen,.readerBody{background:var(--bg)!important;color:var(--text)!important}
+.pericope,.chapterSummary,.commentaryIntro,.note,.father,.provenance,.readerWarnings,.readerError{
+  background:var(--ao-v39-reader-card)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+.rubric{color:var(--rubric)!important}
+
+@media(max-width:650px){
+  .ao-r-depth-panel{border-radius:0!important}
+}
+

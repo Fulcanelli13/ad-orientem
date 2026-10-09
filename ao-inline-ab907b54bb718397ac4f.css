@@ -1,0 +1,65 @@
+
+/* v39.3 — source-led devotional gesture cues. Icons stay subordinate to prayer. */
+.ao-v393-gesture-rail{
+  display:flex!important;align-items:center!important;gap:6px!important;
+  min-height:24px!important;margin:5px 0 10px!important;
+  color:var(--muted-2)!important;
+}
+.ao-v393-gesture-cue{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  position:relative!important;vertical-align:-.24em!important;
+  width:23px!important;height:23px!important;min-width:23px!important;
+  margin:0 .18em!important;padding:0!important;
+  border:1px solid color-mix(in srgb,var(--liturgical) 30%,var(--border))!important;
+  border-radius:999px!important;background:color-mix(in srgb,var(--surface-2) 80%,transparent)!important;
+  color:var(--liturgical)!important;box-shadow:none!important;opacity:.84!important;
+  pointer-events:none!important;user-select:none!important;
+  font:600 .9rem/1 var(--font-display)!important;
+}
+.ao-v393-gesture-cue img{
+  width:15px!important;height:15px!important;object-fit:contain!important;
+  opacity:.86!important;filter:none!important;
+}
+.ao-v393-gesture-cue[data-authority="traditional_custom"],
+.ao-v393-gesture-cue[data-authority="office_tradition"]{opacity:.66!important;border-style:dashed!important}
+.ao-v393-gesture-cue.ao-v393-cross{
+  border:0!important;background:transparent!important;width:20px!important;min-width:20px!important;
+  height:20px!important;font:500 1.18rem/1 Georgia,serif!important;color:var(--liturgical)!important;opacity:.88!important;
+}
+.ao-v393-gesture-cue.ao-v393-breast{
+  width:auto!important;min-width:23px!important;padding:0 5px!important;
+  border:0!important;background:transparent!important;color:var(--rubric,#b65c55)!important;
+  font:600 .68rem/1 var(--font-display)!important;letter-spacing:.02em!important;
+}
+.ao-v393-gesture-cue .ao-v393-mult{
+  position:absolute!important;right:-3px!important;bottom:-3px!important;
+  min-width:13px!important;height:13px!important;padding:0 2px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  border:1px solid var(--border)!important;border-radius:999px!important;
+  background:var(--surface-1)!important;color:var(--muted-2)!important;
+  font:600 .48rem/1 var(--font-display)!important;
+}
+.ao-v393-inline-wrap{white-space:normal!important}
+.ao-v393-source-note{
+  padding:0!important;margin:0!important;color:var(--muted)!important;
+  font:400 .76rem/1.43 var(--font-liturgical)!important;
+}
+.ao-v393-source-note strong{color:var(--muted-2)!important;font-weight:600!important}
+.ao-v393-source-note a{color:var(--liturgical)!important;text-decoration:none!important}
+.ao-v393-disclosure{
+  margin:14px 0 0!important;padding:0!important;border:0!important;
+  border-top:1px solid color-mix(in srgb,var(--border) 70%,transparent)!important;background:none!important;
+}
+.ao-v393-disclosure>summary{
+  list-style:none!important;cursor:pointer!important;padding:8px 1px 2px!important;
+  color:var(--muted-2)!important;font:500 .66rem/1.4 var(--font-display)!important;
+  letter-spacing:.045em!important;text-transform:uppercase!important;
+}
+.ao-v393-disclosure>summary::-webkit-details-marker{display:none!important}
+.ao-v393-disclosure>summary::before{content:'ⓘ ';color:var(--liturgical)!important}
+.ao-v393-disclosure-body{display:grid!important;gap:7px!important;padding:7px 0 2px!important}
+.ao-v393-superseded{display:none!important}
+@media(max-width:650px){
+  .ao-v393-gesture-cue{width:22px!important;height:22px!important;min-width:22px!important}
+  .ao-v393-gesture-cue img{width:14px!important;height:14px!important}
+}

@@ -1,0 +1,28 @@
+
+/* v35.7 Daily Catechism — one canonical Catechism corpus, one daily Home entry point */
+.aoDailyCateHome{position:relative;overflow:hidden}
+.aoDailyCateHome .cateCardCopy{min-width:0}
+.aoDailyCateHome .aoDailyCateMeta{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.aoDailyCateHome .aoDailyCateMeta span{display:inline-flex;align-items:center;min-height:24px;padding:3px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.67rem;line-height:1}
+.aoDailyCateHome.complete .aoDailyCateMeta span:first-child{border-color:var(--liturgical-border);color:var(--liturgical)}
+body.aoDailyCateOpen{overflow:hidden}
+.aoDailyCateBackdrop{position:fixed;inset:0;z-index:17850;background:rgba(2,5,9,.82);backdrop-filter:blur(14px);display:flex;align-items:flex-end;justify-content:center}
+.aoDailyCateSheet{width:min(100%,720px);max-height:94dvh;overflow:auto;overscroll-behavior:contain;background:var(--bg);border:1px solid var(--border);border-bottom:0;border-radius:24px 24px 0 0;box-shadow:0 -24px 80px rgba(0,0,0,.48);padding-bottom:max(24px,var(--safe-bottom))}
+.aoDailyCateTop{position:sticky;top:0;z-index:3;display:grid;grid-template-columns:42px 1fr 42px;gap:8px;align-items:center;padding:calc(12px + var(--safe-top)) 14px 11px;background:color-mix(in srgb,var(--bg) 95%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.aoDailyCateTop button{width:42px;height:42px;border:1px solid var(--border);border-radius:50%;background:var(--surface-1);color:var(--text);font-size:1.15rem}
+.aoDailyCateTop>div{text-align:center;min-width:0}.aoDailyCateTop small{display:block;color:var(--liturgical);font:.62rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase}.aoDailyCateTop strong{display:block;margin-top:3px;font:600 1rem/1.2 var(--font-display)}
+.aoDailyCateBody{padding:18px 16px 30px}
+.aoDailyCateProgressHead{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:.73rem}.aoDailyCateProgressHead b{color:var(--text);font-family:var(--font-display)}
+.aoDailyCateProgress{height:5px;margin:9px 0 18px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}.aoDailyCateProgress i{display:block;height:100%;background:var(--liturgical);border-radius:inherit;transition:width .2s ease}
+.aoDailyCateCard{padding:18px;border:1px solid var(--border);border-radius:18px;background:var(--surface-1)}
+.aoDailyCateCard.context{border-color:var(--liturgical-border);background:linear-gradient(180deg,var(--liturgical-soft),var(--surface-1))}
+.aoDailyCateKicker{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--liturgical);font:.64rem/1.2 var(--font-display);letter-spacing:.09em;text-transform:uppercase}.aoDailyCateKicker span:last-child{color:var(--muted);letter-spacing:.05em}
+.aoDailyCateCard h2{margin:12px 0 0;font:600 clamp(1.25rem,5vw,1.7rem)/1.28 var(--font-display);letter-spacing:.01em}
+.aoDailyCateAnswer{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:1rem;line-height:1.65;color:var(--text)}
+.aoDailyCateSource{margin-top:12px;color:var(--muted);font-size:.7rem}
+.aoDailyCateActions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.aoDailyCateActions button,.aoDailyCateReveal,.aoDailyCateLink,.aoDailyCatePrimary{min-height:46px;border:1px solid var(--border);border-radius:13px;background:var(--surface-1);color:var(--text);padding:10px 12px;font-weight:650}.aoDailyCateReveal,.aoDailyCatePrimary{width:100%;margin-top:14px;border-color:var(--liturgical-border);background:var(--liturgical);color:#0b0d11}.aoDailyCateActions .knew{border-color:var(--liturgical-border);background:var(--liturgical-soft)}.aoDailyCateActions .review{color:var(--muted-2)}
+.aoDailyCateLink{width:100%;margin-top:9px;background:transparent;color:var(--muted)}
+.aoDailyCateSummary{padding:20px;border:1px solid var(--liturgical-border);border-radius:18px;background:var(--liturgical-soft);text-align:center}.aoDailyCateSummary .mark{font-size:2rem;color:var(--liturgical)}.aoDailyCateSummary h2{margin:7px 0 6px;font-family:var(--font-display)}.aoDailyCateSummary p{margin:0;color:var(--muted);line-height:1.5}
+.aoDailyCateStats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0}.aoDailyCateStat{padding:12px 8px;border:1px solid var(--border);border-radius:14px;background:var(--surface-1);text-align:center}.aoDailyCateStat b{display:block;font:600 1.15rem/1 var(--font-display)}.aoDailyCateStat span{display:block;margin-top:5px;color:var(--muted);font-size:.66rem;line-height:1.2}
+.aoDailyCateEmpty{padding:18px;border:1px solid var(--border);border-radius:16px;background:var(--surface-1)}.aoDailyCateEmpty h2{margin:0 0 8px;font-family:var(--font-display)}.aoDailyCateEmpty p{margin:0;color:var(--muted);line-height:1.5}
+@media(max-width:430px){.aoDailyCateBody{padding:15px 13px 26px}.aoDailyCateCard{padding:16px 14px}.aoDailyCateActions{grid-template-columns:1fr}.aoDailyCateStats{grid-template-columns:1fr 1fr}.aoDailyCateStats .aoDailyCateStat:last-child{grid-column:1/-1}.aoDailyCateHome{grid-template-columns:minmax(0,1fr) 38px!important}.aoDailyCateHome .roundAction{width:38px!important;min-width:38px!important;height:38px!important}}

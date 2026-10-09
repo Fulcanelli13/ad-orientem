@@ -1,0 +1,127 @@
+
+.aoRuleCardV411{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  margin:10px 16px 14px;
+  border:1px solid color-mix(in srgb,var(--liturgical) 60%,var(--border));
+  border-radius:16px;
+  overflow:hidden;
+  background:
+    linear-gradient(135deg,color-mix(in srgb,var(--liturgical) 10%,transparent),transparent 46%),
+    color-mix(in srgb,var(--surface-1) 92%,transparent);
+  box-shadow:0 14px 36px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.04);
+}
+.aoRuleCardV411::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--liturgical);z-index:2
+}
+.aoRuleCardV411.hasHero{grid-template-columns:76px minmax(0,1fr)}
+.aoRuleBody{min-width:0;padding:10px 11px 11px}
+.aoRuleHero{
+  position:relative;min-height:88px;border:0;border-right:1px solid var(--border);
+  padding:0;background:var(--surface-2);overflow:hidden;color:var(--text)
+}
+.aoRuleHero img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78;filter:saturate(.82) contrast(1.04)
+}
+.aoRuleHero::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 36%,rgba(3,8,14,.78))
+}
+.aoRuleHero span{
+  position:absolute;z-index:1;left:6px;right:6px;bottom:6px;
+  font:600 .52rem/1.15 var(--font-display);letter-spacing:.07em;text-transform:uppercase;
+  text-align:left;color:#f3eee3;text-shadow:0 1px 4px rgba(0,0,0,.7)
+}
+.aoRuleHead{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  min-height:22px!important;margin:0 0 6px!important
+}
+.aoRuleTitle{
+  display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  color:var(--text);font:600 .72rem/1.15 var(--font-display);letter-spacing:.11em;text-transform:uppercase
+}
+.aoRuleTitle>span{color:var(--liturgical)}
+.aoRuleCount{
+  padding:2px 6px!important;border:1px solid color-mix(in srgb,var(--liturgical) 28%,var(--border))!important;
+  border-radius:999px!important;background:color-mix(in srgb,var(--liturgical) 5%,transparent)!important;
+  color:var(--muted)!important;font-size:.62rem!important
+}
+.aoRuleNow{
+  display:grid!important;grid-template-columns:minmax(0,1fr) 28px!important;
+  align-items:center!important;gap:4px!important;
+  margin:0 0 7px!important;padding:0!important;border:0!important;background:transparent!important
+}
+.aoRuleNowMain{
+  width:100%;min-width:0;min-height:35px;
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:baseline;gap:7px;
+  border:0;border-left:3px solid var(--liturgical);border-radius:0 8px 8px 0;
+  padding:6px 8px;background:color-mix(in srgb,var(--liturgical) 7%,transparent);
+  color:var(--text);text-align:left
+}
+.aoRuleNowMain small{
+  color:var(--liturgical);font:600 .55rem/1 var(--font-display);letter-spacing:.09em;text-transform:uppercase
+}
+.aoRuleNowMain strong{
+  min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font:600 .9rem/1.12 var(--font-liturgical)
+}
+.aoRuleNowMain>span{
+  color:var(--liturgical);font:700 .56rem/1 var(--font-display);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap
+}
+.aoRuleNowDone{
+  width:27px;height:27px;border:1px solid var(--border);border-radius:50%;
+  background:transparent;color:var(--muted);padding:0;font-size:.78rem
+}
+.aoRuleStatic{
+  display:flex!important;align-items:center!important;gap:5px!important;flex-wrap:nowrap!important;
+  min-height:28px!important;overflow-x:auto!important;padding:0!important;scrollbar-width:none!important
+}
+.aoRuleStatic::-webkit-scrollbar{display:none}
+.aoRulePill{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  min-height:27px!important;border:1px solid rgba(255,255,255,.11)!important;border-radius:999px!important;
+  background:rgba(255,255,255,.026)!important;overflow:hidden!important
+}
+.aoRulePill.done{
+  background:color-mix(in srgb,var(--liturgical) 8%,transparent)!important;
+  border-color:color-mix(in srgb,var(--liturgical) 36%,var(--border))!important
+}
+.aoRuleCheck{
+  width:25px!important;min-height:25px!important;padding:0!important;border:0!important;
+  background:transparent!important;color:var(--liturgical)!important
+}
+.aoRuleOpen{
+  min-height:25px!important;padding:3px 8px 3px 0!important;border:0!important;
+  background:transparent!important;color:var(--text)!important;font-size:.68rem!important;white-space:nowrap!important
+}
+.aoRulePill.done .aoRuleOpen{color:color-mix(in srgb,var(--text) 72%,var(--muted))!important}
+
+/* inherited v40 elements no longer used on the compact card */
+.aoRuleTodayLabel,.aoRuleComplete,.aoRuleMore{display:none!important}
+
+/* concise Rule sheet */
+.aoRuleV411SheetItem{
+  display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:8px;align-items:center;
+  padding:7px 0;border-bottom:1px solid rgba(255,255,255,.055)
+}
+.aoRuleV411SheetItem:last-child{border-bottom:0}
+.aoRuleV411SheetItem>button:first-child{
+  border:0;background:transparent;color:var(--text);text-align:left;padding:5px 0
+}
+.aoRuleV411SheetItem strong{display:block;font-size:.88rem}
+.aoRuleV411SheetItem span{display:block;color:var(--muted);font-size:.68rem;margin-top:2px}
+.aoRuleV411SheetItem .mark{
+  width:30px;height:30px;border:1px solid var(--border);border-radius:50%;
+  background:transparent;color:var(--liturgical)
+}
+.aoRuleV411SheetItem .mark.done{background:var(--liturgical-soft);border-color:var(--liturgical-border)}
+
+@media(max-width:430px){
+ .aoRuleCardV411{margin:8px 16px 12px}
+ .aoRuleCardV411.hasHero{grid-template-columns:70px minmax(0,1fr)}
+ .aoRuleBody{padding:9px 9px 10px}
+ .aoRuleHero{min-height:84px}
+ .aoRuleNowMain{grid-template-columns:auto minmax(0,1fr);gap:6px}
+ .aoRuleNowMain>span{display:none}
+}

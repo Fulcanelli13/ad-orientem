@@ -1,0 +1,43 @@
+
+/* Coming Up now owns rich Lab-ora symbols and a genuine sacred-art thumbnail per row. */
+.homeScreen .aoComingUpV4323{padding:14px 15px 12px!important;overflow:hidden!important}
+.aoComingUpV4323 .aoCU23Heading .aoCU23HeaderLaboraIcon{width:27px!important;height:27px!important;color:var(--liturgical);display:block}
+.aoComingUpV4323 .aoCU23Row{grid-template-columns:70px 46px minmax(0,1fr) 92px 15px!important;gap:10px!important;min-height:104px!important;padding:10px 1px!important}
+.aoComingUpV4323 .aoCU23Icon{width:46px!important;height:46px!important;color:var(--liturgical)!important;display:grid!important;place-items:center!important}
+.aoComingUpV4323 .aoCU23LaboraIcon{display:block!important;width:44px!important;height:44px!important;overflow:visible!important;color:var(--liturgical)!important}
+.aoComingUpV4323 .aoCU23Hero{display:block!important;width:92px!important;height:82px!important;border-radius:12px;overflow:hidden;border:1px solid color-mix(in srgb,var(--liturgical) 30%,var(--border));background:var(--surface-2);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.aoComingUpV4323 .aoCU23Hero img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+.aoComingUpV4323 .aoCU23HeroFallback{display:grid!important;place-items:center;color:var(--liturgical);font-size:1.5rem}
+.aoComingUpV4323 .aoCU23Copy strong{font-size:1rem!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+.aoComingUpV4323 .aoCU23Copy span{font-size:.73rem!important;line-height:1.32!important;white-space:normal!important;display:-webkit-box!important;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden!important}
+.aoComingUpV4323 .aoCU23Row.event{background:linear-gradient(90deg,color-mix(in srgb,var(--liturgical) 8%,transparent),transparent 78%)!important}
+
+/* Persistent ribbon: preserve rich donor geometry instead of flattening it into generic line symbols. */
+.aoGlobalRibbonIcon.labora{width:29px!important;height:29px!important;color:inherit;--ao-rich-icon-ground:var(--bg);--ao-rich-icon-ground-hi:var(--surface-2);--ao-rich-icon-ground-lo:var(--bg);--ao-refined-ground:var(--bg)}
+.aoGlobalRibbonIcon.labora .aoRibbonSprite{display:block!important;width:100%!important;height:100%!important;overflow:visible!important}
+.aoGlobalRibbonIcon.home .aoRibbonHomeSvg{width:27px!important;height:27px!important;display:block!important}
+.aoGlobalRibbonIcon.massLogo.aoGlobalRibbonBrand.brandMark.aoBrandEmblem{width:28px!important;height:28px!important;margin:0!important;color:inherit}
+.aoGlobalRibbonIcon.massLogo.aoGlobalRibbonBrand.brandMark.aoBrandEmblem::before{width:27px!important;height:27px!important}
+
+/* Prayer-reader containment: fixes the Angelus/Hail Mary collapsing into a ~2-character column. */
+#aoPrayerBookRoot .pbShell,#aoPrayerBookRoot .pbReader,#aoPrayerBookRoot .pbFlow,#aoPrayerBookRoot .pbFlowCard{display:block!important;width:100%!important;max-width:760px!important;min-width:0!important;box-sizing:border-box!important}
+#aoPrayerBookRoot .pbPrayerText{display:block!important;inline-size:100%!important;width:100%!important;max-inline-size:100%!important;min-inline-size:0!important;box-sizing:border-box!important;writing-mode:horizontal-tb!important;word-break:normal!important;overflow-wrap:normal!important;white-space:pre-wrap!important}
+#aoPrayerBookRoot .pbPrayerText>span{display:block!important;width:100%!important;max-width:100%!important;word-break:normal!important;overflow-wrap:normal!important;white-space:pre-wrap!important}
+
+/* Suppressed background module roots must never paint through the active page. */
+[data-ao-ghost-suppressed="1"]{display:none!important;visibility:hidden!important;pointer-events:none!important}
+.liveScreen{touch-action:pan-y;overscroll-behavior-x:contain}
+
+@media(max-width:480px){
+ .homeScreen .aoComingUpV4323{padding:12px 11px 10px!important}
+ .aoComingUpV4323 .aoCU23Row{grid-template-columns:56px 40px minmax(0,1fr) 74px 12px!important;gap:7px!important;min-height:92px!important;padding:8px 0!important}
+ .aoComingUpV4323 .aoCU23Icon{width:40px!important;height:40px!important}.aoComingUpV4323 .aoCU23LaboraIcon{width:38px!important;height:38px!important}
+ .aoComingUpV4323 .aoCU23Hero{width:74px!important;height:68px!important;border-radius:10px}
+ .aoComingUpV4323 .aoCU23Copy strong{font-size:.91rem!important}.aoComingUpV4323 .aoCU23Copy span{font-size:.66rem!important}
+ .aoGlobalRibbonIcon.labora{width:25px!important;height:25px!important}.aoGlobalRibbonIcon.home .aoRibbonHomeSvg{width:24px!important;height:24px!important}
+ .aoGlobalRibbonIcon.massLogo.aoGlobalRibbonBrand.brandMark.aoBrandEmblem{width:25px!important;height:25px!important}.aoGlobalRibbonIcon.massLogo.aoGlobalRibbonBrand.brandMark.aoBrandEmblem::before{width:24px!important;height:24px!important}
+}
+@media(max-width:370px){
+ .aoComingUpV4323 .aoCU23Row{grid-template-columns:50px 35px minmax(0,1fr) 62px 10px!important;gap:6px!important}
+ .aoComingUpV4323 .aoCU23Hero{width:62px!important;height:60px!important}.aoComingUpV4323 .aoCU23Role{font-size:.5rem!important}
+}

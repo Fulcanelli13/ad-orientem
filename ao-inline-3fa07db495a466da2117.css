@@ -1,0 +1,154 @@
+
+/* v39.2 — Prayer Focus / Editorial De-emphasis
+   Principle: what is required to pray stays visible; provenance, history,
+   source criticism and optional custom move into a quiet disclosure layer. */
+
+/* Classification badges are metadata, not prayer content. */
+#aoPrayerBookRoot .ao-v392-editorial-meta{
+  display:block!important;
+  width:max-content!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--muted-2)!important;
+  font:500 .66rem/1.35 var(--font-display)!important;
+  letter-spacing:.045em!important;
+  text-transform:uppercase!important;
+}
+
+/* Ministerial-role warnings remain visible, but as a rubric cue rather than a badge. */
+#aoPrayerBookRoot .ao-v392-role-cue{
+  display:block!important;
+  margin:0 0 7px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--rubric)!important;
+  font:600 .68rem/1.35 var(--font-display)!important;
+  letter-spacing:.055em!important;
+  text-transform:uppercase!important;
+}
+
+/* Explanatory notices no longer look like primary devotional cards. */
+#aoPrayerBookRoot .ao-v392-inline-cue,
+#aoPrayerBookRoot .pbContextNotice.ao-v392-inline-cue,
+#aoPrayerBookRoot .lab-practice-note.ao-v392-inline-cue{
+  display:block!important;
+  margin:7px 0 11px!important;
+  padding:0 0 0 15px!important;
+  border:0!important;
+  border-left:1px solid var(--liturgical-border)!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--muted)!important;
+  font:400 .76rem/1.42 var(--font-liturgical)!important;
+  box-shadow:none!important;
+}
+#aoPrayerBookRoot .ao-v392-inline-cue strong{color:var(--muted-2)!important;font-weight:600!important}
+
+/* Short section labels such as Act of Contrition should read like headings, not callouts. */
+#aoPrayerBookRoot .lab-practice-note:has(> strong:only-child){
+  margin:12px 0 6px!important;
+  padding:0!important;
+  border:0!important;
+  background:none!important;
+  color:var(--muted-2)!important;
+  font-size:.72rem!important;
+  letter-spacing:.04em!important;
+  text-transform:uppercase!important;
+}
+
+/* Setup / option controls stay available but recede visually. */
+#aoPrayerBookRoot .pbPracticeToggle,
+#aoPrayerBookRoot label.lab-practice-note{
+  background:rgba(255,255,255,.012)!important;
+  border:1px solid color-mix(in srgb,var(--border) 72%,transparent)!important;
+  color:var(--muted)!important;
+  box-shadow:none!important;
+}
+#aoPrayerBookRoot .pbPracticeToggle strong,
+#aoPrayerBookRoot label.lab-practice-note strong{color:var(--text)!important;font-weight:600!important}
+
+/* The new disclosure is deliberately quieter than every prayer surface. */
+#aoPrayerBookRoot .ao-v392-disclosure{
+  margin:15px 0 0!important;
+  padding:0!important;
+  border:0!important;
+  border-top:1px solid color-mix(in srgb,var(--border) 70%,transparent)!important;
+  background:none!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure>summary{
+  list-style:none!important;
+  cursor:pointer!important;
+  padding:9px 1px 3px!important;
+  color:var(--muted-2)!important;
+  font:500 .68rem/1.4 var(--font-display)!important;
+  letter-spacing:.045em!important;
+  text-transform:uppercase!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure>summary::-webkit-details-marker{display:none!important}
+#aoPrayerBookRoot .ao-v392-disclosure>summary::before{content:'ⓘ ';color:var(--liturgical)!important}
+#aoPrayerBookRoot .ao-v392-disclosure[open]>summary{color:var(--text)!important}
+#aoPrayerBookRoot .ao-v392-disclosure-body{
+  display:grid!important;
+  gap:8px!important;
+  padding:7px 0 2px!important;
+  color:var(--muted)!important;
+  font-size:.78rem!important;
+  line-height:1.45!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure-body .lab-source-row,
+#aoPrayerBookRoot .ao-v392-disclosure-body .lab-source-note,
+#aoPrayerBookRoot .ao-v392-disclosure-body .pbSource,
+#aoPrayerBookRoot .ao-v392-disclosure-body .pbSourceRow{
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:none!important;
+  color:var(--muted)!important;
+  font-size:inherit!important;
+}
+#aoPrayerBookRoot .ao-v392-disclosure-body .lab-source-row a,
+#aoPrayerBookRoot .ao-v392-disclosure-body .pbSourceRow a{
+  padding:3px 0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  color:var(--liturgical)!important;
+  text-decoration:none!important;
+}
+
+/* Lead copy should orient, not compete with the prayer title. */
+#aoPrayerBookRoot .lab-practice-lead.ao-v392-prayer-lead{
+  margin:-1px 0 11px!important;
+  color:var(--muted-2)!important;
+  font-size:.76rem!important;
+  line-height:1.35!important;
+}
+
+/* Repeated structural notices in Rosary / Stations become micro-rubrics. */
+#aoPrayerBookRoot .pbFlowCard>.pbContextNotice:not(label),
+#aoPrayerBookRoot .lab-prayer-sheet>.lab-practice-note:not(label){
+  background:none!important;
+  border:0!important;
+  border-left:1px solid var(--liturgical-border)!important;
+  border-radius:0!important;
+  padding:0 0 0 13px!important;
+  margin:8px 0 10px!important;
+  color:var(--muted)!important;
+  font-size:.74rem!important;
+  line-height:1.4!important;
+}
+
+/* Formation and source material should never open by visual weight alone. */
+#aoPrayerBookRoot .pbFormation:not([open]){background:none!important;border-color:color-mix(in srgb,var(--border) 65%,transparent)!important}
+#aoPrayerBookRoot .pbFormation>summary{font-size:.74rem!important;color:var(--muted-2)!important;font-weight:500!important}
+
+@media(max-width:650px){
+  #aoPrayerBookRoot .ao-v392-disclosure{margin-top:12px!important}
+  #aoPrayerBookRoot .ao-v392-inline-cue{font-size:.73rem!important}
+}

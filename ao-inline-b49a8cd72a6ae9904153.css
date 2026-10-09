@@ -1,0 +1,88 @@
+
+/* v35.3.3 — presentation-only harmonization on the stable v35.3.2 runtime. */
+/* Home cards: one geometry and one hierarchy. */
+.homeScreen .aoLearnHomeCard,.homeScreen .aoCateHomeCard,.homeScreen .massCard,.homeScreen .moreCard{
+  min-width:0;grid-template-columns:minmax(0,1fr) 42px;gap:11px;align-items:center;
+  padding:14px 15px;border-radius:var(--radius-m);border:1px solid var(--border);
+  background:var(--surface-1);box-shadow:none;overflow:hidden
+}
+.homeScreen .aoLearnHomeCard:before,.homeScreen .aoCateHomeCard:before{display:none!important}
+.homeScreen .aoLearnHomeCard,.homeScreen .aoCateHomeCard{border-color:var(--border)!important;background:var(--surface-1)!important}
+.homeScreen .learnCardCopy,.homeScreen .cateCardCopy,.homeScreen .massCard>div,.homeScreen .moreCard>div{min-width:0}
+.homeScreen .learnCardCopy b,.homeScreen .cateCardCopy b,.homeScreen .massCard b,.homeScreen .moreCard b{
+  font-family:var(--font-display);font-size:.94rem;line-height:1.27;letter-spacing:.018em;font-weight:600
+}
+.homeScreen .learnCardCopy p,.homeScreen .cateCardCopy p,.homeScreen .massCard p,.homeScreen .moreCard p{
+  margin:4px 0 0;color:var(--muted);font-family:var(--font-liturgical);font-size:.82rem;line-height:1.38;
+  overflow-wrap:anywhere
+}
+.homeScreen .aoCateBadge,.homeScreen .aoLearnBadge{
+  display:inline-flex;width:max-content;max-width:100%;align-items:center;margin-top:7px;padding:4px 7px;
+  border:1px solid var(--liturgical-border);border-radius:999px;background:var(--liturgical-soft);
+  color:var(--liturgical);font:600 .62rem/1 var(--font-display);letter-spacing:.055em;text-transform:uppercase
+}
+.homeScreen :is(.aoLearnHomeCard,.aoCateHomeCard,.massCard,.moreCard) .roundAction{
+  width:42px!important;min-width:42px!important;height:42px!important;border:1px solid var(--border);
+  background:rgba(255,255,255,.025);color:var(--text)
+}
+.homeScreen .massCard .roundAction{border-color:var(--liturgical-border);background:var(--liturgical-soft);color:var(--liturgical)}
+.homeScreen .gospelCard{padding:15px;border-color:var(--liturgical-border);background:linear-gradient(180deg,var(--liturgical-soft),var(--surface-1))}
+.homeScreen .gospelCard p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;font-size:.9rem;line-height:1.46}
+.homeScreen .textAction{padding-top:9px;color:var(--liturgical);font:600 .78rem/1.2 var(--font-display)}
+
+/* Prayer Book / Practices: inherit Ad Orientem rather than maintaining a blue/gold microsite. */
+#aoPrayerBookRoot{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font-liturgical)!important;font-size:16px!important}
+#aoPrayerBookRoot .pbShell{max-width:760px;padding:0 14px calc(78px + var(--safe-bottom))}
+#aoPrayerBookRoot .lab-view-head{gap:10px;margin:0 0 16px;padding-top:16px}
+#aoPrayerBookRoot .lab-back,#aoPrayerBookRoot .lab-icon{border:1px solid var(--border);background:var(--surface-1);color:var(--text);border-radius:999px}
+#aoPrayerBookRoot .lab-view-head h1{font:600 clamp(1.45rem,6vw,2.15rem)/1.08 var(--font-display);letter-spacing:.012em;color:var(--text)}
+#aoPrayerBookRoot .lab-view-head .eyebrow,#aoPrayerBookRoot .lab-lang{
+  color:var(--liturgical)!important;font:600 .62rem/1.2 var(--font-display);letter-spacing:.11em;text-transform:uppercase
+}
+#aoPrayerBookRoot .lab-library-root{gap:20px;max-width:760px}
+#aoPrayerBookRoot .lab-library-section{padding:0;border:0;border-radius:0;background:transparent}
+#aoPrayerBookRoot .lab-library-head{margin-bottom:9px;align-items:end}
+#aoPrayerBookRoot .lab-library-head .eyebrow{color:var(--liturgical)!important;font:600 .62rem/1.2 var(--font-display);letter-spacing:.105em;text-transform:uppercase}
+#aoPrayerBookRoot .lab-library-head h2{margin-top:4px;color:var(--text);font:600 1.16rem/1.18 var(--font-display);letter-spacing:.01em}
+#aoPrayerBookRoot .lab-library-head>span{color:var(--muted);font-size:.7rem}
+#aoPrayerBookRoot .lab-library-grid{grid-template-columns:1fr;gap:8px}
+#aoPrayerBookRoot .lab-library-grid button{
+  min-height:64px;padding:12px 13px;text-align:left;border:1px solid var(--border);border-radius:var(--radius-m);
+  background:var(--surface-1);color:var(--text);box-shadow:none
+}
+#aoPrayerBookRoot .lab-library-grid button.featured{border-color:var(--liturgical-border);background:linear-gradient(180deg,var(--liturgical-soft),var(--surface-1))}
+#aoPrayerBookRoot .lab-library-grid strong{display:block;color:var(--text);font:600 .91rem/1.27 var(--font-display);letter-spacing:.01em}
+#aoPrayerBookRoot .lab-library-grid span{display:block;margin-top:4px;color:var(--muted);font:400 .79rem/1.35 var(--font-liturgical)}
+#aoPrayerBookRoot .lab-search{min-height:42px;border:1px solid var(--border);border-radius:12px;background:var(--surface-1);color:var(--text);font-family:var(--font-liturgical)}
+#aoPrayerBookRoot .lab-source-note{margin-top:8px;color:var(--muted);font-size:.78rem;line-height:1.4}
+#aoPrayerBookRoot .lab-source-note a{color:var(--liturgical)}
+#aoPrayerBookRoot .v25Taxonomy{gap:7px}
+#aoPrayerBookRoot .v25Taxonomy button{border-color:var(--border)!important;background:var(--surface-1)!important;color:var(--text)!important}
+#aoPrayerBookRoot .v25Taxonomy button strong{font-family:var(--font-display)}
+#aoPrayerBookRoot .v25PrayerCategoryHead{border-color:var(--border)!important;background:var(--surface-1)!important}
+
+/* Practice/detail cards follow the same surfaces while preserving readable prayer sheets. */
+#aoPrayerBookRoot .lab-practice-lead{color:var(--muted);font-size:.9rem;line-height:1.45;margin:-2px 0 14px}
+#aoPrayerBookRoot .lab-practice-grid{grid-template-columns:1fr;gap:8px;margin:12px 0 16px}
+#aoPrayerBookRoot .lab-practice-grid button{min-height:70px;padding:12px 13px;border:1px solid var(--border);border-radius:var(--radius-m);background:var(--surface-1);color:var(--text)}
+#aoPrayerBookRoot .lab-practice-grid .primary-practice{border-color:var(--liturgical-border);background:linear-gradient(180deg,var(--liturgical-soft),var(--surface-1))}
+#aoPrayerBookRoot .lab-practice-grid button strong{font:600 .93rem/1.25 var(--font-display)}
+#aoPrayerBookRoot .lab-practice-grid button span{margin-top:4px;color:var(--muted);font-size:.79rem;line-height:1.35}
+#aoPrayerBookRoot .lab-rosary-hero,#aoPrayerBookRoot .lab-mystery-card{border-color:var(--border);background:var(--surface-1);color:var(--text)}
+#aoPrayerBookRoot .lab-rosary-hero{background:linear-gradient(180deg,var(--liturgical-soft),var(--surface-1))}
+#aoPrayerBookRoot .lab-rosary-hero small,#aoPrayerBookRoot .lab-mystery-card small{color:var(--liturgical)}
+#aoPrayerBookRoot .lab-rosary-hero p,#aoPrayerBookRoot .lab-mystery-card ol{color:var(--muted)}
+#aoPrayerBookRoot .lab-rosary-hero button{border-color:var(--liturgical);background:var(--liturgical);color:#090b0e}
+#aoPrayerBookRoot .lab-mystery-card.recommended{border-color:var(--liturgical-border);box-shadow:inset 0 0 0 1px var(--liturgical-border)}
+#aoPrayerBookRoot .lab-option-bar label{border-color:var(--border);color:var(--muted)}
+#aoPrayerBookRoot .lab-option-bar input{accent-color:var(--liturgical)}
+
+@media(min-width:560px){
+  #aoPrayerBookRoot .lab-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #aoPrayerBookRoot .lab-practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:430px){
+  .homeScreen .aoLearnHomeCard,.homeScreen .aoCateHomeCard,.homeScreen .massCard,.homeScreen .moreCard{grid-template-columns:minmax(0,1fr) 38px;gap:9px;padding:13px 14px}
+  .homeScreen :is(.aoLearnHomeCard,.aoCateHomeCard,.massCard,.moreCard) .roundAction{width:38px!important;min-width:38px!important;height:38px!important}
+  #aoPrayerBookRoot .pbShell{padding-inline:12px}
+}

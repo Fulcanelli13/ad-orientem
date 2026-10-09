@@ -1,0 +1,64 @@
+
+/* Homepage-only integration. The v41.1 Rule sheet remains the full Rule surface. */
+.homeScreen #aoRuleCard{display:none!important}
+.homeScreen .ao384Today{display:none!important}
+
+.homeScreen .aoDailyCateHome{
+  position:relative!important;isolation:isolate;overflow:hidden!important;
+  min-height:224px!important;display:grid!important;
+  grid-template-columns:minmax(0,1fr) 48px!important;align-items:end!important;
+  padding:22px!important;border-color:var(--liturgical-border)!important;
+  background:#0b1016!important;
+}
+.homeScreen .aoDailyCateHome::before{
+  content:"";position:absolute;inset:0;z-index:-3;
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Pope_Pius_X_%28ca_1907%29.jpg");
+  background-size:cover;background-position:72% 23%;filter:grayscale(1) sepia(.10) contrast(1.04);
+}
+.homeScreen .aoDailyCateHome::after{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(90deg,rgba(5,9,13,.98) 0%,rgba(5,9,13,.90) 42%,rgba(5,9,13,.40) 69%,rgba(5,9,13,.12) 100%),linear-gradient(0deg,rgba(5,9,13,.55),transparent 48%);
+}
+.homeScreen .aoDailyCateHome .cateCardCopy{max-width:58%;align-self:end}
+.homeScreen .aoDailyCateHome .cardKicker{color:var(--liturgical)!important;letter-spacing:.1em;text-transform:uppercase}
+.homeScreen .aoDailyCateHome .cateCardCopy>b{display:block;font:650 clamp(1.35rem,4.8vw,2.05rem)/1.05 var(--font-display);margin-top:4px;color:#fff}
+.homeScreen .aoDailyCateHome .cateCardCopy>b::after{content:" · St Pius X";font-size:.58em;font-weight:500;opacity:.88}
+.homeScreen .aoDailyCateHome .cateCardCopy p{margin:9px 0 0;color:rgba(255,255,255,.84);line-height:1.45}
+.homeScreen .aoDailyCateHome .aoCateBadge,.homeScreen .aoDailyCateHome .aoDailyCateMeta span{background:rgba(7,12,17,.72);border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.82)}
+.homeScreen .aoDailyCateHome .roundAction{align-self:end;background:color-mix(in srgb,var(--liturgical) 86%,#fff 14%);border-color:var(--liturgical);color:#090c10;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+
+.aoComingUpV4319{margin:12px 0 14px;padding:0!important;overflow:hidden;border-color:var(--liturgical-border)!important;background:linear-gradient(180deg,color-mix(in srgb,var(--surface-1) 96%,var(--liturgical-soft) 4%),var(--surface-1))!important}
+.aoComingUpHead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px 12px;border-bottom:1px solid var(--border)}
+.aoComingUpTitle{display:flex;align-items:center;gap:9px;min-width:0}
+.aoComingUpTitle>svg{width:22px;height:22px;color:var(--liturgical);flex:none}
+.aoComingUpTitle small{display:block;color:var(--muted);font:.58rem/1.2 var(--font-display);letter-spacing:.1em;text-transform:uppercase}
+.aoComingUpTitle b{display:block;margin-top:2px;font:650 1.08rem/1.1 var(--font-display)}
+.aoComingUpMore{border:0;background:transparent;color:var(--liturgical);font:650 .69rem/1 var(--font-display);padding:8px 4px;white-space:nowrap}
+.aoComingUpGroup{padding:10px 14px 6px}
+.aoComingUpGroup+.aoComingUpGroup{padding-top:7px;border-top:1px solid var(--border)}
+.aoComingUpGroupLabel{display:flex;align-items:center;gap:7px;margin:0 0 4px;color:var(--muted);font:650 .58rem/1.2 var(--font-display);letter-spacing:.09em;text-transform:uppercase}
+.aoComingUpGroupLabel svg{width:14px;height:14px;color:var(--liturgical)}
+.aoComingUpRow{width:100%;display:grid;grid-template-columns:52px 30px minmax(0,1fr) 18px;gap:8px;align-items:center;padding:9px 0;border:0;border-bottom:1px solid rgba(255,255,255,.055);background:transparent;color:var(--text);text-align:left}
+.aoComingUpRow:last-child{border-bottom:0}
+.aoComingUpWhen{font:650 .7rem/1.2 var(--font-display);color:var(--liturgical);font-variant-numeric:tabular-nums}
+.aoComingUpIcon{width:30px;height:30px;display:grid;place-items:center;color:var(--text)}
+.aoComingUpIcon svg{width:25px;height:25px}
+.aoComingUpCopy{min-width:0}
+.aoComingUpCopy strong{display:block;font:.86rem/1.22 var(--font-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoComingUpCopy span{display:block;margin-top:2px;color:var(--muted);font-size:.66rem;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoComingUpArrow{color:var(--muted);font-size:1rem;text-align:right}
+.aoComingUpAlso{padding:2px 14px 11px;color:var(--muted);font-size:.64rem}
+.aoComingUpAlso b{color:var(--text);font-weight:600}
+.aoComingUpEmpty{padding:12px 14px 15px;color:var(--muted);font-size:.74rem}
+
+@media(max-width:560px){
+ .homeScreen .aoDailyCateHome{min-height:205px!important;padding:17px!important;grid-template-columns:minmax(0,1fr) 42px!important}
+ .homeScreen .aoDailyCateHome::before{background-position:76% 20%}
+ .homeScreen .aoDailyCateHome::after{background:linear-gradient(90deg,rgba(5,9,13,.98) 0%,rgba(5,9,13,.91) 48%,rgba(5,9,13,.30) 78%,rgba(5,9,13,.10) 100%),linear-gradient(0deg,rgba(5,9,13,.45),transparent 55%)}
+ .homeScreen .aoDailyCateHome .cateCardCopy{max-width:66%}
+ .homeScreen .aoDailyCateHome .cateCardCopy p{font-size:.76rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .homeScreen .aoDailyCateHome .aoDailyCateMeta{display:none}
+ .aoComingUpHead{padding:12px 12px 10px}.aoComingUpGroup{padding-left:12px;padding-right:12px}
+ .aoComingUpRow{grid-template-columns:46px 28px minmax(0,1fr) 14px;gap:7px;padding:8px 0}
+ .aoComingUpCopy strong{font-size:.81rem}.aoComingUpCopy span{font-size:.62rem}
+}
