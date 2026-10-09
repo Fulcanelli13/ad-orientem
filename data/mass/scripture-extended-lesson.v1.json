@@ -1,7 +1,7 @@
 {
-  "version": "1962-SOURCE-ORDER-EXTENDED-LESSON-SCRIPTURE-V3",
+  "version": "1962-SOURCE-ORDER-EXTENDED-LESSON-SCRIPTURE-V4",
   "status": "SOURCE_MATCHED_ACTUAL_LATIN_ONLY",
-  "policy": "Only exact preGospelSequence SOURCE_ORDER node with canonical Proper path, sourceRef, record ID, type LESSON and displayed Latin text. Do not infer reading by ordinal or date. September 1962 Ember Saturday may be long (five preparatory Lessons) or short (first and fifth); publish only cards actually in the selected source-resolved sequence, with the exact sourcePath and Latin text. Do not infer from the calendar date. Advent 2026, Lent 2026 and Pentecost octave 2026 read actual Divinum Officium Tempora/Adv3, Quad1, Pasc7 sources; long Saturday may select L1–L5, shorter form only L1 and L5. Fifth Daniel reading held until explicit liturgical order versus canonical Biblical verse order can be presented.",
+  "policy": "Only exact preGospelSequence SOURCE_ORDER node with canonical Proper path, sourceRef, record ID, type LESSON and displayed Latin text. Do not infer reading by ordinal or date. September 1962 Ember Saturday may be long (five preparatory Lessons) or short (first and fifth); publish only cards actually in the selected source-resolved sequence, with the exact sourcePath and Latin text. Do not infer from the calendar date. Advent 2026, Lent 2026 and Pentecost octave 2026 read actual Divinum Officium Tempora/Adv3, Quad1, Pasc7 sources; long Saturday may select L1–L5, shorter form only L1 and L5. Fifth Daniel reading held until explicit liturgical order versus canonical Biblical verse order can be presented. The fifth Saturday Daniel reading is available as BIBLE_CONTEXT_CANONICAL_ORDER_WITH_EXPLICIT_1962_LITURGICAL_ORDER_NOTE; never present the canonical Bible verse order as the order proclaimed at Mass. Its introductory, intermediate and closing Latin cues must match the displayed source text, and the Bible reader must visibly show the transposition note in both languages.",
   "readings": [
     {
       "sourcePath": "Tempora/Quad6-3",
@@ -415,6 +415,149 @@
       "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-30?theme=light",
       "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6.txt",
       "note": "1962 Ember supplementary Lesson with exact liturgical source owner, Latin opening and SOURCE_ORDER match, not an extra ordinary Epistle."
+    },
+    {
+      "sourcePath": "Tempora/093-6",
+      "sourceSectionId": "LectioL5",
+      "role": "SEPTEMBER_EMBER_SATURDAY_FIFTH_LESSON_CANONICAL_BIBLE_CONTEXT",
+      "reference": "Daniel 3:47–51",
+      "segments": [
+        {
+          "book": "Daniel",
+          "chapter": 3,
+          "verseStart": 47,
+          "verseEnd": 51
+        }
+      ],
+      "latinIncipit": "in diebus illis angelus domini descendit cum azaria et sociis ejus in fornacem",
+      "latinContinuityGuard": [
+        "angelus domini descendit cum azaria",
+        "flamma autem effundebatur",
+        "tunc hi tres quasi ex uno ore"
+      ],
+      "liturgicalArrangement": {
+        "schema": "ao-liturgical-bible-verse-order-v1",
+        "canonicalReference": "Daniel 3:47–51",
+        "liturgicalVerseOrder": [
+          "Daniel 3:49",
+          "Daniel 3:47–48",
+          "Daniel 3:50–51"
+        ],
+        "noteEn": "The Missal presents these verses in liturgical order: Daniel 3:49, then 3:47–48, then 3:50–51. The Bible below presents the canonical order 3:47–51. The following hymn is a separate liturgical text.",
+        "noteFr": "Le missel présente ces versets dans l’ordre liturgique : Daniel 3,49, puis 3,47–48, puis 3,50–51. La Bible ci-dessous suit l’ordre canonique 3,47–51. Le cantique qui suit est un texte liturgique distinct.",
+        "separateHymn": "Daniel 3:52–59"
+      },
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-26?theme=light",
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-6.txt",
+      "latinInheritedFrom": "Tempora/093-6:LectioL5",
+      "note": "Source readings place Daniel 3:49 first, then 47–48 and 50–51. The citation points to the Bible in canonical order ONLY, with mandatory bilingual explanation of the liturgical transposition. Hymn Daniel 3:52–59 remains separate. The Latin rubric source does not authorize reordering the ceremony."
+    },
+    {
+      "sourcePath": "Tempora/Adv3-6",
+      "sourceSectionId": "LectioL5",
+      "role": "ADVENT_EMBER_SATURDAY_FIFTH_LESSON_CANONICAL_BIBLE_CONTEXT",
+      "reference": "Daniel 3:47–51",
+      "segments": [
+        {
+          "book": "Daniel",
+          "chapter": 3,
+          "verseStart": 47,
+          "verseEnd": 51
+        }
+      ],
+      "latinIncipit": "in diebus illis angelus domini descendit cum azaria et sociis ejus in fornacem",
+      "latinContinuityGuard": [
+        "angelus domini descendit cum azaria",
+        "flamma autem effundebatur",
+        "tunc hi tres quasi ex uno ore"
+      ],
+      "liturgicalArrangement": {
+        "schema": "ao-liturgical-bible-verse-order-v1",
+        "canonicalReference": "Daniel 3:47–51",
+        "liturgicalVerseOrder": [
+          "Daniel 3:49",
+          "Daniel 3:47–48",
+          "Daniel 3:50–51"
+        ],
+        "noteEn": "The Missal presents these verses in liturgical order: Daniel 3:49, then 3:47–48, then 3:50–51. The Bible below presents the canonical order 3:47–51. The following hymn is a separate liturgical text.",
+        "noteFr": "Le missel présente ces versets dans l’ordre liturgique : Daniel 3,49, puis 3,47–48, puis 3,50–51. La Bible ci-dessous suit l’ordre canonique 3,47–51. Le cantique qui suit est un texte liturgique distinct.",
+        "separateHymn": "Daniel 3:52–59"
+      },
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-19?theme=light",
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-6.txt",
+      "latinInheritedFrom": "Tempora/093-6:LectioL5",
+      "note": "Source readings place Daniel 3:49 first, then 47–48 and 50–51. The citation points to the Bible in canonical order ONLY, with mandatory bilingual explanation of the liturgical transposition. Hymn Daniel 3:52–59 remains separate. The Latin rubric source does not authorize reordering the ceremony."
+    },
+    {
+      "sourcePath": "Tempora/Quad1-6",
+      "sourceSectionId": "LectioL5",
+      "role": "LENT_EMBER_SATURDAY_FIFTH_LESSON_CANONICAL_BIBLE_CONTEXT",
+      "reference": "Daniel 3:47–51",
+      "segments": [
+        {
+          "book": "Daniel",
+          "chapter": 3,
+          "verseStart": 47,
+          "verseEnd": 51
+        }
+      ],
+      "latinIncipit": "in diebus illis angelus domini descendit cum azaria et sociis ejus in fornacem",
+      "latinContinuityGuard": [
+        "angelus domini descendit cum azaria",
+        "flamma autem effundebatur",
+        "tunc hi tres quasi ex uno ore"
+      ],
+      "liturgicalArrangement": {
+        "schema": "ao-liturgical-bible-verse-order-v1",
+        "canonicalReference": "Daniel 3:47–51",
+        "liturgicalVerseOrder": [
+          "Daniel 3:49",
+          "Daniel 3:47–48",
+          "Daniel 3:50–51"
+        ],
+        "noteEn": "The Missal presents these verses in liturgical order: Daniel 3:49, then 3:47–48, then 3:50–51. The Bible below presents the canonical order 3:47–51. The following hymn is a separate liturgical text.",
+        "noteFr": "Le missel présente ces versets dans l’ordre liturgique : Daniel 3,49, puis 3,47–48, puis 3,50–51. La Bible ci-dessous suit l’ordre canonique 3,47–51. Le cantique qui suit est un texte liturgique distinct.",
+        "separateHymn": "Daniel 3:52–59"
+      },
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-28?theme=light",
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-6.txt",
+      "latinInheritedFrom": "Tempora/093-6:LectioL5",
+      "note": "Source readings place Daniel 3:49 first, then 47–48 and 50–51. The citation points to the Bible in canonical order ONLY, with mandatory bilingual explanation of the liturgical transposition. Hymn Daniel 3:52–59 remains separate. The Latin rubric source does not authorize reordering the ceremony."
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6",
+      "sourceSectionId": "LectioL5",
+      "role": "PENTECOST_EMBER_SATURDAY_FIFTH_LESSON_CANONICAL_BIBLE_CONTEXT",
+      "reference": "Daniel 3:47–51",
+      "segments": [
+        {
+          "book": "Daniel",
+          "chapter": 3,
+          "verseStart": 47,
+          "verseEnd": 51
+        }
+      ],
+      "latinIncipit": "in diebus illis angelus domini descendit cum azaria et sociis ejus in fornacem",
+      "latinContinuityGuard": [
+        "angelus domini descendit cum azaria",
+        "flamma autem effundebatur",
+        "tunc hi tres quasi ex uno ore"
+      ],
+      "liturgicalArrangement": {
+        "schema": "ao-liturgical-bible-verse-order-v1",
+        "canonicalReference": "Daniel 3:47–51",
+        "liturgicalVerseOrder": [
+          "Daniel 3:49",
+          "Daniel 3:47–48",
+          "Daniel 3:50–51"
+        ],
+        "noteEn": "The Missal presents these verses in liturgical order: Daniel 3:49, then 3:47–48, then 3:50–51. The Bible below presents the canonical order 3:47–51. The following hymn is a separate liturgical text.",
+        "noteFr": "Le missel présente ces versets dans l’ordre liturgique : Daniel 3,49, puis 3,47–48, puis 3,50–51. La Bible ci-dessous suit l’ordre canonique 3,47–51. Le cantique qui suit est un texte liturgique distinct.",
+        "separateHymn": "Daniel 3:52–59"
+      },
+      "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-30?theme=light",
+      "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6.txt",
+      "note": "Source readings place Daniel 3:49 first, then 47–48 and 50–51. The citation points to the Bible in canonical order ONLY, with mandatory bilingual explanation of the liturgical transposition. Hymn Daniel 3:52–59 remains separate. The Latin rubric source does not authorize reordering the ceremony."
     }
   ]
 }
