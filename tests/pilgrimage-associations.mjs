@@ -48,6 +48,10 @@ assert.equal(parayProfile.novenas[0].id,"sacred_heart");
 assert.equal(parayProfile.novenas[0].notes.length,2,"both source-specific novena relationships must survive");
 const lourdesProfile=profiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.equal(lourdesProfile.novenas[0].id,"immaculate_conception");
+const loughDergProfile=profiles.find(p=>p.place_id==="place:IE:lough-derg-station-island");
+assert.equal(loughDergProfile.calendar.length,0,"seasonal journey must not invent a fixed date");
+assert.equal(loughDergProfile.seasonal_pilgrimages.length,1);
+assert.match(loughDergProfile.seasonal_pilgrimages[0].title,/Three Day Pilgrimage/);
 const ui=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"pilgrimages",items:projection.byLens.pilgrimages,view:"list",
   placeProfiles:profiles,selectedPlaceId:parayProfile.place_id,counts:projection.counts,
