@@ -111,12 +111,13 @@ function paragraphSourceLinks(win,item,kind,field=null){
   const label=kind==="question"
     ?L(win,"Question source:","Source de la question :")
     :rebuttalMisconception?L(win,"Evidence rebutting this misconception (not proponents):","Preuves réfutant cette idée fausse (et non ses défenseurs) :")
+    :kind==="debate"&&field==="counter"?L(win,"Sources informing this follow-up (not a verbatim opponent reply):","Sources éclairant cette relance (et non une réponse littérale de l’opposant) :")
     :positionSide&&CSE_CONTEXT_ONLY_POSITION_IDS.includes(item?.id)?L(win,"Contextual evidence (not an attributed proponent):","Sources de contexte (sans attribution à un défenseur précis) :")
     :positionSide?L(win,"Opposing-position references:","Références de la position adverse :"):L(win,"Sources:","Sources :");
   const links=refs.map(([sourceId,locator])=>{
     const source=CSE_SOURCE_MAP[sourceId];if(!source)return "";
     return cseSourceTargets(sourceId,locator,source,{french:isFr(win)}).filter(t=>t.url).map(target=>{
-      const visible=`${shortSourceTitle(source)}${target.locator?` · ${target.locator}`:""}${target.scope==="original-full-text"?` · ${L(win,"full article","texte intégral")}`:""}`;
+      const visible=`${shortSourceTitle(source)}${target.locator?` · ${target.locator}`:""}${target.scope==="original-full-text"?` · ${L(win,"full article","texte intégral")}`:""}${target.scope==="author-excerpt-in-cdf"?` · ${L(win,"quoted excerpt","extrait cité")}`:""}`;
       const witness=target.witness?` · ${target.witness}`:"";
       const scope=target.scope==="chapter"?L(win,"Opens cited chapter; locate the listed verses.","Ouvre le chapitre cité ; repérez les versets indiqués.")
         :target.scope==="index"?L(win,"Source index only; passage link not verified.","Index uniquement ; lien au passage non vérifié.")
