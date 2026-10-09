@@ -12,5 +12,8 @@ const text='<p>{3:1} but for you, it is necessary.</p><p>{3:2} Beware of dogs.</
 const result=parseMasterBookVerses(text);
 assert.equal(result.get("3:1"),"but for you, it is necessary.");
 assert.equal(result.get("3:2"),"Beware of dogs.");
+const withChapter = parseMasterBookVerses("<p>{1:1} In the beginning.</p> [ Genesis 2 ] <p>{2:1} Thus completed.</p> The Sacred Bible: Genesis");
+assert.equal(withChapter.get("1:1"),"In the beginning.");
+assert.equal(withChapter.get("2:1"),"Thus completed.");
 assert.equal(comparisonWords("Hail, full of grace."),comparisonWords("Hail full of grace!"));
 console.log("CPDV 73-book primary-author parser tests passed");
