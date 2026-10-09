@@ -31,7 +31,11 @@ for(const [id,meditations] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1))
 }
 assert.equal(Object.values(relationshipCounts).reduce((x,y)=>x+y,0),200);
 assert.equal(relationshipCounts.MARIAN_TYPOLOGICAL_READING,6);
-assert.equal(relationshipCounts.DEFINED_DOCTRINE,4);
+assert.equal(relationshipCounts.DEFINED_DOCTRINE,2);
+assert.equal(relationshipCounts.DOGMATIC_TEACHING,2);
+assert.equal(relationshipCounts.MAGISTERIAL_TEACHING,2);
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4[9].relationship,"DEVOTIONAL_REFLECTION");
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo5[6].relationship,"MAGISTERIAL_TEACHING");
 assert.equal(relationshipCounts.SCRIPTURAL_PASSION_INTERPRETATION,3);
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4[6].reference,"Munificentissimus Deus §44");
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo5[0].relationship,"MARIAN_TYPOLOGICAL_READING");
@@ -52,6 +56,10 @@ for(const x of [...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4.slice(6),...ROSARY_GUIDED
 const rosaryPolicy=readFileSync("src/pray/rosary-scripture-policy.js","utf8");
 assert.match(rosaryPolicy,/witness\.referenceFr\|\|witness\.reference/);
 assert.match(rosaryPolicy,/frenchWitnessLanguage==="la"/);
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy1[2].en,/ponders the meaning/);
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy2[2].fr,/Élisabeth/);
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy4[3].en,/two turtledoves or two young pigeons/);
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy4[3].fr,/deux tourterelles ou deux petites colombes/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.lum4[9].en,/keep the vision secret/);
 assert.equal(Object.keys(ROSARY_GUIDED_BEAD_MEDITATIONS_V1).length,20,"all 20 mysteries need guided bead meditations");
 for(const [id,moments] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1)){
