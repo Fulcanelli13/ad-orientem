@@ -8,7 +8,7 @@ import {fileURLToPath} from "node:url";
 const asText=x=>String(x??"").trim();
 const canonical=x=>asText(x).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 function safeUrl(s){try{const u=new URL(s);return u.protocol==="https:"&&!!u.hostname}catch{return false}}
-const permittedKinds=new Set(["PARISH_OFFICIAL","DIOCESE_OFFICIAL","ORATORY_OFFICIAL","COMMUNITY_OFFICIAL","LOCAL_TRADITIONAL_MASS_ASSOCIATION"]);
+const permittedKinds=new Set(["PARISH_OFFICIAL","DIOCESE_OFFICIAL","ORATORY_OFFICIAL","COMMUNITY_OFFICIAL","CATHEDRAL_OFFICIAL","SHRINE_OFFICIAL","LOCAL_TRADITIONAL_MASS_ASSOCIATION"]);
 function fingerprint(r){return asText(r.cc).toUpperCase()+"|"+canonical(r.l)+"|"+canonical(r.n)}
 function street(r){
  const a=canonical(r.a);
