@@ -103,13 +103,13 @@ export function applyIndicativeOtherCommunityLocations(records,{countryReference
       precision="country";scope="country";matched="INDICATIVE_COUNTRY_ONLY_NOT_VENUE_LOCATION";
     }
     let selected=medoid(candidates);
-    if(!selected&&countryReferences?.[cc]&&Array.isArray(countryReferences[cc])){
-      const [lat,lng]=countryReferences[cc];
-      if(validCoordinates({lat,lng}))selected={lat,lng,ref:"COUNTRY_BBOX:"+cc,url:markerSource};
-    }
     if(!selected&&mainIslandFallback[cc]){
       const [lat,lng]=mainIslandFallback[cc];
       selected={lat,lng,ref:"COUNTRY_MAINLAND:"+cc,url:markerSource};
+    }
+    if(!selected&&countryReferences?.[cc]&&Array.isArray(countryReferences[cc])){
+      const [lat,lng]=countryReferences[cc];
+      if(validCoordinates({lat,lng}))selected={lat,lng,ref:"COUNTRY_BBOX:"+cc,url:markerSource};
     }
     if(!selected){summary.unresolved++;return rec}
     // A generic country reference never gains city-level precision.
