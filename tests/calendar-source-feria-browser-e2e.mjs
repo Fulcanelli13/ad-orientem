@@ -66,8 +66,14 @@ try{
     assert.ok(!/^\s*Férie\s*$/i.test(r.fr),r.date+": generic French label remained");
     assert.ok(!/Sunday of |Dimanche de /i.test(r.en),r.date+": possible weekday-to-Sunday mislabel");
   }
-  for(const r of without)assert.equal(r.en,null,
-    r.date+": do not infer a missing Temporal source from civil date alone");
+  assert.deepEqual(without.map(x=>x.date).sort(),["2027-01-07","2027-01-08"]);
+  for(const r of without){
+    assert.equal(r.properSourcePath,"Sancti/01-06",r.date+": Epiphany Mass Proper inheritance not verified");
+    const weekday=r.date.endsWith("-07")?"Thursday":"Friday";
+    assert.equal(r.en,weekday+" after Epiphany",r.date+": source-backed Epiphany weekday omitted");
+    assert.equal(r.fr,(weekday==="Thursday"?"Jeudi":"Vendredi")+" après l’Épiphanie",
+      r.date+": French source-backed Epiphany weekday omitted");
+  }
   for(const date of ["2024-11-05","2024-11-06","2024-11-07","2024-11-08","2027-11-03","2027-11-05"]){
     const r=records.find(x=>x.date===date);
     assert.match(r.en||"",/transferred.*Sunday after Epiphany/,date+": resumed Sunday source disguised as a January week");
@@ -78,7 +84,7 @@ try{
     linkedSample:inherited.slice(0,3),unlinkedEvidence:without,
     resumedEvidence:records.filter(x=>x.en?.includes("transferred")),
   }));
-  console.log("PASS actual 2024/2027 pinned DayResolver feria + Proper projection, 53 grounded; 2 hold for orphan source review");
+  console.log("PASS actual 2024/2027 pinned DayResolver feria + Proper projection, all 55 grounded including two Epiphany Proper inheritances");
 }finally{
   await browser?.close();await new Promise(ok=>server.close(ok));
 }
