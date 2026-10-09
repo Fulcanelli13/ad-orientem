@@ -46,7 +46,8 @@ function validatePayload(payload){
   EASTER_VIGIL_PROPHECY_READINGS.forEach((p,index)=>{
     if(p.stateId!=="EV-LESS-"+String(index+1).padStart(2,"0")+"-READ"||
        !Array.isArray(p.latinParagraphs)||p.latinParagraphs.length<2||
-       !p.latinParagraphs.every(x=>typeof x==="string"&&x.length>80)||
+       !p.latinParagraphs.every(x=>typeof x==="string"&&x.length>25)||
+       p.latinParagraphs.join(" ").length<600||
        typeof p.collectLatin!=="string"||p.collectLatin.length<60)
       throw new Error("Unverified Easter Vigil full Latin prophecy corpus "+(index+1));
   });
