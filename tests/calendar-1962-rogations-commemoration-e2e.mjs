@@ -29,7 +29,7 @@ try{
    const row=await page.evaluate(async date=>{
      const r=await globalThis.AO_RUNTIME_V8.resolver.resolveDay(date);
      const p=r?.proper?.data;
-     return {date,status:r?.status,properStatus:r?.proper?.status,main:r?.day?.main,
+     return {date,status:r?.status,properStatus:r?.proper?.status,error:r?.error||null,diagnosticErrors:r?.diagnostic?.errors||[],main:r?.day?.main,
        path:p?.sourcePath??p?.meta?.path??p?.source?.path??p?.path??null,
        properTitle:p?.name||p?.title,properColour:p?.color,canonicalColour:p?.canonicalColor,
        inherited:p?.inheritedProper,calendarCommemorations:p?.calendarCommemorations,
