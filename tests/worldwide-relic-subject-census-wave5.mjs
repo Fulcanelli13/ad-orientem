@@ -41,7 +41,7 @@ assert.ok(w.new_cases.some(x=>x.subject_id==="subject:saint-hedwig-of-silesia"&&
 assert.ok(w.new_cases.some(x=>x.subject_id==="subject:saint-maurice-of-agaunum"&&x.country_code==="CH"));
 assert.equal(live.relics.length,a.legacy_object_crosswalk.length,"Published relics changed during research-only work");
 assert.equal(stats.fifth_wave_cases,25);
-assert.equal(stats.total_screened_claims,110);
+assert.equal(stats.first_wave_claims+stats.second_wave_claims+stats.third_wave_claims+stats.fourth_wave_fresh_institutional_cases+stats.fifth_wave_cases,110);
 assert.equal(stats.backlog_total,133);
 assert.equal(stats.backlog_addressed_after_wave5,110);
 assert.equal(stats.backlog_pending_after_wave5,23);
