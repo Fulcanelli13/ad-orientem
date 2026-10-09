@@ -1121,6 +1121,15 @@ try{
     });
     assert.equal(before.posture,"STAND","Unveiling "+n+" kneels before Venite adoremus");
     const geometry=await focusGoodFridayWord(id);
+    if(geometry.maxScroll<=8){
+      // These short 3-line source cards cannot scroll to the response.
+      // The in-card context control supplies an explicit ceremonial action,
+      // rather than treating initial visibility as actual kneeling.
+      assert.equal(await gfPanel.isVisible(),true,
+        "unscrollable unveiling lacks the response-owned kneel action");
+      assert.match(await gfPanel.locator("[data-good-friday-advance]").textContent(),/Kneel for adoration/i);
+      await gfPanel.locator("[data-good-friday-advance]").click();
+    }
     const kneeling=await page.evaluate(()=>{
       const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
       return {posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
