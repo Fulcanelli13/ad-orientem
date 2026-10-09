@@ -148,8 +148,18 @@ function monthIndexTabs(){
   ];
   return `<nav class="aoCalMonthTabs" aria-label="${esc(L("Month views","Vues du mois"))}">${tabs.map(([id,label])=>`<button type="button" data-cal-month-view="${id}" class="${calendarMonthView===id?"active":""}" ${calendarMonthView===id?'aria-current="page"':""}>${esc(label)}</button>`).join("")}</nav>`;
 }
+// Month-index categories depend on actual resolved days; practices come from
+// their own registry and must not be blocked by an unrelated day-resolution job.
+function monthIndexResolutionState(monthId,view){
+ if(view==="practices")return "independent";
+ const ids=monthDateIds(monthId),missing=ids.filter(id=>!weekCache.has(id));
+ if(missing.length)return "loading";
+ const failed=ids.some(id=>{const r=weekCache.get(id);return !r?.day||r.status==="failed"});
+ return failed?"partial":"complete";
+}
 function monthIndexList(monthId,selected,view){
   const rows=monthIndexEntries(monthId,view);
+  const status=monthIndexResolutionState(monthId,view);
   const label=view==="major"?L("Major days","Jours majeurs"):view==="temporale"?L("Temporale","Temporal"):view==="sanctorale"?L("Sanctorale","Sanctoral"):L("Practices","Pratiques");
   const explanation=view==="major"
     ?L("Sundays, I–II class observances and other principal days in this month.","Dimanches, célébrations de I–II classe et autres jours principaux de ce mois.")
@@ -160,6 +170,7 @@ function monthIndexList(monthId,selected,view){
         :L("Date-bound traditional practices, programmes and sourced novena starts from the shared Calendar Intelligence registry.","Pratiques traditionnelles datées, programmes et débuts de neuvaines sourcées provenant du registre commun de Calendar Intelligence.");
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
+    ${rows.length&&status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
     ${rows.length?`<div class="aoCalMonthIndexList">${rows.map(x=>`<div class="aoCalMonthIndexRow" style="--month-accent:${esc(x.accent)}">
       <button type="button" data-cal-month-index-date="${x.date}" class="aoCalMonthIndexDay ${x.date===selected?"selected":""}">
         <time>${esc(displayDate(x.date))}</time>
@@ -167,7 +178,7 @@ function monthIndexList(monthId,selected,view){
         <i aria-hidden="true"></i>
       </button>
       ${view==="sanctorale"?`<button type="button" class="aoCalMonthSaintDetail" data-cal-saint-date="${x.date}" aria-label="${esc(L("Life & sources","Vie & sources"))}">${esc(L("Life & sources","Vie & sources"))} →</button>`:""}
-    </div>`).join("")}</div>`:`<div class="aoCalMonthEmpty">${esc(L("No resolved observances in this category for the month.","Aucune célébration résolue dans cette catégorie pour ce mois."))}</div>`}
+    </div>`).join("")}</div>`:`<div class="aoCalMonthEmpty">${esc(status==="loading"?L("Resolving this month’s liturgical days. Results will appear as they become available.","Résolution des jours liturgiques de ce mois. Les résultats apparaîtront progressivement."):status==="partial"?L("Some days could not be resolved; this list may be incomplete.","Certains jours n’ont pas pu être résolus ; cette liste peut être incomplète."):L("No resolved observances in this category for the month.","Aucune célébration résolue dans cette catégorie pour ce mois."))}</div>`}
   </section>`;
 }
 function updateMonthStatusDom(monthId){
