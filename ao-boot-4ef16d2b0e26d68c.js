@@ -1078,7 +1078,10 @@ function parseCalendarSources(common, blocks, titles) {
         titles: parseTitles(titles, constants),
         ember: new Set(parseTupleTokens(common, "EMBER_DAYS").map(key => constants[key]).filter(Boolean)),
         fixedVigils: new Set(parseTupleTokens(common, "FIXED_VIGILS_SUPPRESSED_ON_SUNDAY").map(key => constants[key]).filter(Boolean)),
-        jesusFeasts: new Set(parseTupleTokens(common, "FEASTS_OF_JESUS_CLASS_1_AND_2").map(key => constants[key]).filter(Boolean)),
+        // 1960 General Rubrics nn. 16(a), 17(d): Christ the King replaces
+        // the last Sunday of October without commemorating that Sunday.
+        // The pinned donor omits this Lord's feast from its Jesus-feast set.
+        jesusFeasts: new Set([...parseTupleTokens(common, "FEASTS_OF_JESUS_CLASS_1_AND_2").map(key => constants[key]), constants.SANCTI_10_DU].filter(Boolean)),
         precedence: parseTupleTokens(common, "TABLE_OF_PRECEDENCE").map(token => matcherFromToken(token, constants)).filter((x) => !!x),
     };
     const problems = [];
