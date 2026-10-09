@@ -69,7 +69,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!parsed)return false;
    return open({passage:parsed.passage,context:parsed,language});
  }
- function openSegments(segments,{language=null,reference=null,provenance=null}={}){
+ function openSegments(segments,{language=null,reference=null,provenance=null,liturgicalArrangement=null}={}){
    try{
      const context=scriptureSegmentContext(segments,{reference,provenance});
      return open({passage:context.passage,context,language});
