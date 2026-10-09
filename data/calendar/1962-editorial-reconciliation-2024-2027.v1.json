@@ -266,7 +266,7 @@
     }
   },
   "remaining47Adjudications": {
-    "status": "SOURCE_LEVEL_EDITORIAL_AND_COMMEMORATION_ADJUDICATION_PENDING_ACCEPTANCE",
+    "status": "ACCEPTED_BOUNDED_HISTORICAL_REVIEW_PR_767",
     "evidence": {
       "first": "https://missale.online/festkalender/en/2024/druck",
       "first2027": "https://missale.online/festkalender/en/2027/druck",
@@ -562,5 +562,34 @@
     "restoredInseparableApostolicDates": 4,
     "actualMassPrayerDefectDates": 6,
     "note": "Four Jan25/Feb22 source-owner omissions (inseparable St Peter/St Paul joined under one conclusion) and two Dec4 St Barbara omissions were actual Mass-text defects. Do not classify those as mere differences in counted day labels."
+  },
+  "post767Final": {
+    "date": "2026-10-09",
+    "auditedYears": [
+      2024,
+      2027
+    ],
+    "originalHistoricalFlagDates": 132,
+    "dateCasesAdjudicatedThisBatch": 47,
+    "historicallyUnadjudicatedCases": 0,
+    "historicalHeadlineCorrectionsPriorToPR767": 85,
+    "additionalSourceIDBilingualHeadlineCorrections": 4,
+    "cumulativeHeadlineCorrections": 89,
+    "historicalFlagsAcceptedWithoutAdditionalHeadline": 43,
+    "acceptedShortTitleVariants": 28,
+    "acceptedDayVersusFormularyTitles": 6,
+    "commemorationCasesRepairedAtSharedMassSource": 6,
+    "commemorationCasesPreviouslyResolved": 3,
+    "apostolicMissingPrayerCasesRepairedUnderOneConclusion": 4,
+    "stBarbaraMissingCommemorationCasesRepaired": 2,
+    "mergedPR": "https://github.com/Fulcanelli13/ad-orientem/pull/767",
+    "mergeCommit": "f2aa35a66e256979fcdca827509ab5810bef53b6",
+    "calendarIndependentTwoYearAudit": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37981422006",
+    "appConvergence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37981422065",
+    "sourceWitnessRankColourNovelConflicts": 0,
+    "fullProperTextCertification": false,
+    "explicitVioletRogationMassCertified": false,
+    "contextualSourceCoverageGapClosed": false,
+    "note": "All 47 historical date flags have bounded dispositions but the complete 1962 Mass Proper corpus, source gaps, localized propers, translation collation and separately chosen violet II-class Rogation Mass remain outside this acceptance. The 127 raw donor-title flags from the older run are not the number of unresolved user-visible headlines."
   }
 }
