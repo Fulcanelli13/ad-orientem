@@ -75,8 +75,39 @@ export async function mountFindMap(container,records,{win=globalThis,onSelect=()
     map.on("click","ao-clusters",async event=>{
       const feature=event.features?.[0],clusterId=feature?.properties?.cluster_id,source=map.getSource("ao-venues");
       if(clusterId===undefined||!source?.getClusterExpansionZoom)return;
-      const zoom=await source.getClusterExpansionZoom(clusterId);
-      map.easeTo({center:feature.geometry.coordinates,zoom});
+      try{
+        const zoom=await source.getClusterExpansionZoom(clusterId);
+        const currentZoom=map.getZoom?.()??0;
+        if(zoom<=10&&currentZoom<10){
+          map.easeTo({center:feature.geometry.coordinates,zoom});
+          return;
+        }
+        // Several country-only indicators can share a geographic reference point.
+        // Never make those chapels inaccessible by stacking unclickable markers.
+        const leaves=await source.getClusterLeaves(clusterId,100,0);
+        if(!leaves?.length)return;
+        const list=win.document.createElement("div");
+        list.className="aoFindClusterChoice";
+        list.style.cssText="max-height:260px;min-width:220px;overflow:auto;padding:8px;color:#18212b";
+        const title=win.document.createElement("strong");
+        title.textContent="Select a chapel · Choisir une chapelle";
+        list.append(title);
+        for(const leaf of leaves){
+          const id=leaf?.properties?.venue_id;if(!id)continue;
+          const btn=win.document.createElement("button");
+          btn.type="button";btn.textContent=leaf.properties.name||"Mass location";
+          btn.style.cssText="display:block;width:100%;padding:8px 3px;text-align:left;border:0;border-bottom:1px solid #ddd;background:transparent;cursor:pointer";
+          btn.addEventListener("click",()=>onSelect(id));
+          list.append(btn);
+        }
+        if(Number(feature.properties?.point_count)>leaves.length){
+          const note=win.document.createElement("small");
+          note.textContent="More locations: use the search/list view · Autres lieux : utilisez la liste";
+          list.append(note);
+        }
+        if(maplibre.Popup)new maplibre.Popup({closeButton:true,maxWidth:"340px"})
+          .setLngLat(feature.geometry.coordinates).setDOMContent(list).addTo(map);
+      }catch{}
     });
   });
   return Object.freeze({map,destroy(){try{map.remove()}catch{}}});
