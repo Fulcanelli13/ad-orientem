@@ -79,10 +79,12 @@ try{
   await page.locator('[data-pref-path="prayer.recitationMode"][data-pref-value="group"]').click();
   await page.locator('[data-pref-path="prayer.stations.mode"][data-pref-value="simple"]').click();
   await page.locator('[data-pref-toggle="prayer.stations.stabatMater"]').click();
-  await page.waitForFunction(()=>{
-    const s=globalThis.AO_PRAY_V435930?.state?.();
-    return s?.rosary?.recitation==="group"&&s?.stations?.mode==="simple"&&s?.stations?.stabat===true;
-  });
+  const earlyPrayer=await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.()?.preferences?.prayer);
+  assert.equal(earlyPrayer.recitationMode,"group");
+  assert.equal(earlyPrayer.stations.mode,"simple");
+  assert.equal(earlyPrayer.stations.stabatMater,true);
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1?.status?.()?.readerLoaded),false,
+    "Settings should not force cold-loading the Prayer reader");
   await page.locator("[data-settings-back]").click();
 
   await page.locator('[data-settings-route="/settings/local-customs"]').click();
@@ -116,6 +118,15 @@ try{
 
   await page.locator("[data-settings-close]").click();
   await page.waitForFunction(()=>!document.getElementById("ao-settings-modular-root"));
+  // Opening Prayer later must hydrate the donor from Settings preferences that
+  // were changed while the heavy Prayer runtime had not yet been downloaded.
+  const prayerOpen=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("pray"));
+  assert.equal(prayerOpen?.ok,true,"Could not open deferred Prayer after Settings edits");
+  await page.waitForFunction(()=>{
+    const p=globalThis.AO_PRAY_V435930?.state?.();
+    return p?.rosary?.recitation==="group"&&p?.stations?.mode==="simple"&&p?.stations?.stabat===true;
+  },null,{timeout:15000});
+  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
   await page.reload({waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true,null,{timeout:30000});
   const reloaded=await page.evaluate(()=>globalThis.AO_SETTINGS_DONOR_V4359?.snapshot?.());
