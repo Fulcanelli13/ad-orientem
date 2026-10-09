@@ -5,7 +5,7 @@ const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const corpus=load("../data/mass/distinct-rite-scripture-order.v1.json");
 const graphs=load("../data/mass/special-days-core.v1.1.json").graphs;
 assert.equal(corpus.rites.length,2);
-assert.equal(corpus.status,"SOURCE_VERIFIED_ORDER_RESEARCH_ONLY_NOT_UI_LINKED");
+assert.equal(corpus.status,"SOURCE_VERIFIED_PARTIALLY_NATIVE_CONTEXT_LINKED");
 const expected=[
  ["GOOD_FRIDAY_1962","GF",["Hosea","Exodus","John"]],
  ["EASTER_VIGIL_1962","EV",["Genesis","Exodus","Isaiah","Deuteronomy"]]
@@ -39,8 +39,10 @@ for(const [riteId,graphId,bookOrder] of expected){
   }
   const spans=entry.scriptureSegments.length>1;
   if(spans)crossChapter++;
-  assert.match(entry.status,/(NOT_YET_RUNTIME_LINKED|CROSS_CHAPTER)/,
-   "Research citation must not acquire spurious published UI status");
+  assert.match(entry.status,riteId==="GOOD_FRIDAY_1962"
+    ? /(NATIVE_CONTEXT_LINKED_SOURCE_TEXT_BOUND|PARTIALLY_NATIVE_CONTEXT_LINKED_SPLIT_PRE_POST_NO_DEATH_PAUSE_LINK)/
+    : /(NOT_YET_RUNTIME_LINKED|CROSS_CHAPTER)/,
+    "Native and held Scripture state publication flags must remain explicit");
   assert.ok(!Object.hasOwn(entry,"commentaryUrl"),"No improvised patristic attribution");
   count++;
  }
@@ -63,6 +65,7 @@ assert.equal(palm.riteId,"PALM_SUNDAY_1962");
 assert.equal(palm.canonicalSourcePath,"Tempora/Quad6-0");
 assert.equal(palm.precedingRiteGospel.nativeStateId,"PALM-GSP-020");
 assert.equal(palm.precedingRiteGospel.displayReference,"Matthew 21:1–9");
+assert.equal(palm.precedingRiteGospel.status,"NATIVE_CONTEXT_LINKED_SOURCE_TEXT_BOUND");
 assert.equal(palm.massPassion.standardMassProperSlot,"GOSPEL");
 assert.equal(palm.massPassion.nativeStateId,undefined,"No invented palm native state for Mass Passion");
 assert.equal(palm.massPassion.displayReference,"Matthew 26:36–75; 27:1–60");
