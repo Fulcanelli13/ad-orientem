@@ -13,7 +13,7 @@ const audit=read("../data/mass/scripture-seasonal-ember-source-matrix.v1.json");
 const readings=read("../data/mass/scripture-extended-lesson.v1.json").readings;
 assert.equal(audit.schema,"ao-1962-three-season-ember-source-order-matrix-v1");
 assert.deepEqual(VERIFIED_EXTENDED_LESSON_READINGS,readings);
-assert.equal(readings.length,25);
+assert.equal(readings.length,26);
 assert.equal(audit.days.length,9);
 assert.deepEqual(audit.days.map(x=>x.sourcePath),[
  "Tempora/Adv3-3","Tempora/Adv3-5","Tempora/Adv3-6",
