@@ -93,21 +93,32 @@ async function stageSnapshot(){
   const processed=new Set(),digests=[];
   let bytes=0;
   try{
+   // Limit concurrency while avoiding one network+CacheStorage round-trip
+   // per resource. Individual responses are still verified before commit.
    while(queue.length){
     if(processed.size+queue.length>MAX_ITEMS)fail("ITEM_LIMIT");
-    const url=queue.shift();
-    if(processed.has(url))continue;
-    const response=url===ROOT?source.clone():await safeFetch(url);
-    const body=await response.clone().arrayBuffer();
-    bytes+=body.byteLength;
-    if(bytes>MAX_BYTES)fail("BYTE_LIMIT");
-    await staging.put(keyFor(url),response);
-    digests.push([url,await hash(body)]);
-    processed.add(url);
-    const path=new URL(url).pathname;
-    if(path.endsWith(".js")||path.endsWith(".mjs")||path.endsWith(".css")){
-     const content=new TextDecoder().decode(body);
-     for(const dep of staticDeps(content,url))if(!processed.has(dep)&&!queue.includes(dep))queue.push(dep);
+    const batch=[];
+    while(batch.length<8&&queue.length){
+      const url=queue.shift();
+      if(processed.has(url))continue;
+      processed.add(url);
+      batch.push(url);
+    }
+    const entries=await Promise.all(batch.map(async url=>{
+      const response=url===ROOT?source.clone():await safeFetch(url);
+      const body=await response.clone().arrayBuffer();
+      await staging.put(keyFor(url),response);
+      const digest=await hash(body);
+      const path=new URL(url).pathname;
+      const deps=(path.endsWith(".js")||path.endsWith(".mjs")||path.endsWith(".css"))?
+        staticDeps(new TextDecoder().decode(body),url):[];
+      return {url,size:body.byteLength,digest,deps};
+    }));
+    for(const entry of entries){
+      bytes+=entry.size;
+      if(bytes>MAX_BYTES)fail("BYTE_LIMIT");
+      digests.push([entry.url,entry.digest]);
+      for(const dep of entry.deps)if(!processed.has(dep)&&!queue.includes(dep))queue.push(dep);
     }
    }
    // Reject deployments that change the entry HTML while its graph is
