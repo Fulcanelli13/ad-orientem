@@ -98,8 +98,15 @@ try {
   await page.locator("#ao-test-scripture-context-launcher").evaluate(node=>node.remove());
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:26–38")),true);
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
+  const annunciationCommentary=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
+  await annunciationCommentary.waitFor({state:"visible",timeout:12000});
+  assert.ok((await annunciationCommentary.getAttribute("href")).includes("ecatholic2000.com/catena/"),
+    "Source-verified Annunciation commentary must retain its original link");
+  await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:40")),true);
+  await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
   assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").count(),0,
-    "Uncollated passage must not receive a fabricated commentary");
+    "An uncollated passage must not receive an invented commentary");
   await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
 
   // Daily Rule remains actionable even if its legacy static-sheet handler
