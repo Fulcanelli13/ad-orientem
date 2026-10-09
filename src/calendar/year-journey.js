@@ -52,6 +52,7 @@ export function renderYearJourney({year,selectedDate,focusedPeriodId,fr=false,fo
    </div><span class="aoCalYearMarker" style="left:${marker.toFixed(6)}%" aria-hidden="true"><i></i></span></div>
    <div class="aoCalYearTrackCaption"><span>${esc(L("Advent","Avent"))}</span><strong>${esc(L("Selected day","Jour consulté"))}: ${esc(formatDate(selectedDate))}</strong><span>${esc(L("Before Advent","Avant l’Avent"))}</span></div>
    <p class="aoCalYearNote">${esc(L("The timeline colours describe seasons, not the colour of each Mass. Feast transfers, ranks and daily colours come from the resolved 1962 Calendar.","La frise montre les couleurs des temps, non de chaque messe. Les transferts, classes et couleurs quotidiennes viennent du calendrier 1962 résolu."))}</p>
+   <p class="aoCalYearSource"><a href="https://cdn.restorethe54.com/media/pdf/the-new-rubrics-of-the-roman-missal-and-breviary-1960.pdf" target="_blank" rel="noopener noreferrer">${esc(L("Read the 1960 Code of Rubrics · General Rubrics, chapters 8 and 18","Lire le Code des rubriques de 1960 · Rubriques générales, chapitres 8 et 18"))} ↗</a></p>
   </section>
   <section class="aoCalYearJourney" aria-label="${esc(L("Nine liturgical periods","Les neuf temps liturgiques"))}">
    <div class="aoCalYearHeading"><div><small>${esc(L("THE PATH OF THE YEAR","LE CHEMIN DE L’ANNÉE"))}</small><h3>${esc(L("Explore the nine periods","Explorer les neuf temps"))}</h3></div><span>${esc(L("Select a period for its meaning and dates","Choisir un temps pour sa signification et ses dates"))}</span></div>
@@ -73,6 +74,7 @@ export const yearJourneyCss=`
 .aoCalYearTrackCaption{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;color:#a9a99f;font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
 .aoCalYearTrackCaption strong{color:#e7dcc8;font-weight:600}.aoCalYearTrackCaption span:last-child{text-align:right}
 .aoCalYearNote{font-size:15px;line-height:1.5;color:#bcb8af;margin:14px 0 0}
+.aoCalYearSource{margin:12px 0 0;font:500 13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoCalYearSource a{color:#ded1b5;text-decoration:underline;text-underline-offset:3px}.aoCalYearSource a:focus-visible{outline:2px solid #e6d5b6;outline-offset:3px}
 .aoCalYearGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .aoCalYearSeason{align-self:start;min-width:0;background:#10161e;border:1px solid rgba(235,225,208,.13);border-top:3px solid var(--season-color);border-radius:8px;overflow:hidden}
 .aoCalYearSeason[data-cal-year-stage="past"]{opacity:.78}.aoCalYearSeason.expanded{opacity:1;border-color:rgba(235,225,208,.27);border-top-color:var(--season-color)}
