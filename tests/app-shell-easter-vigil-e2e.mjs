@@ -133,6 +133,43 @@ try{
     document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")?.textContent?.includes("GENUFLECT_TOWARD_PASCHAL_CANDLE"),
     null,{timeout:5000});
 
+  // User-visible single shared Scripture context: each native prophecy has
+  // one source-bound capsule, but canticles and collect states do not.
+  const actual=[
+    ["EV-LESS-01-READ","Genesis 1:1–31; 2:1–2","Genesis 1:1–31"],
+    ["EV-LESS-02-READ","Exodus 14:24–31; 15:1","Exodus 14:24–31"],
+    ["EV-LESS-03-READ","Isaiah 4:2–6","Isaiah 4:2–6"],
+    ["EV-LESS-04-READ","Deuteronomy 31:22–30","Deuteronomy 31:22–30"],
+  ];
+  for(const [state,reference,firstPassage] of actual){
+    await page.evaluate(id=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToEasterVigilRecord(id),state);
+    await page.waitForFunction(expected=>{
+      const el=document.querySelector("#ao-r17-native-reader-preview [data-reader-scripture-context]");
+      return Boolean(el&&!el.hidden&&!el.disabled&&el.dataset.massReadingReference===expected);
+    },reference,{timeout:6000});
+    const visibleReading=await page.locator("#ao-r17-native-reader-preview [data-role='paragraphs']").innerText();
+    assert.ok(visibleReading.length>650,state+" full Latin reading was not rendered");
+    assert.ok(!visibleReading.includes("Quattuor lectiones seu Prophetiae"),
+      "Native prophecy still duplicates generic donor summary");
+    await page.evaluate(()=>document.querySelector("#ao-r17-native-reader-preview [data-reader-scripture-context]").click());
+    const overlay=page.locator("#ao-scripture-overlay");
+    await overlay.waitFor({state:"visible",timeout:15000});
+    assert.equal((await overlay.locator(".aoScriptureContextTitle").innerText()).includes(reference),true);
+    assert.equal(await overlay.locator(".aoScriptureReading h3").innerText(),firstPassage);
+    assert.equal(await overlay.locator(".aoScriptureVerse").count(),0,
+      "Uncleared local Bible editions cannot leak through the native rite");
+    await overlay.locator("[data-scripture-close]").click();
+    await overlay.waitFor({state:"hidden",timeout:8000});
+    await page.evaluate(id=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToEasterVigilRecord(
+      id.replace("-READ","-OREM")),state);
+    await page.waitForFunction(()=>document.querySelector(
+      "#ao-r17-native-reader-preview [data-reader-scripture-context]")?.hidden===true,
+      null,{timeout:6000});
+  }
+  await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToEasterVigilRecord("EV-LESS-01-READ"));
+  await page.waitForFunction(()=>document.querySelector(
+    "#ao-r17-native-reader-preview [data-reader-scripture-context]")?.hidden===false,null,{timeout:6000});
+
   await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToEasterVigilRecord("EV-MASS-700"));
   await page.waitForFunction(()=>
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getEasterVigilState?.()?.handoffToMass===true,
