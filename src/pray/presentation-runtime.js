@@ -524,9 +524,17 @@ function angelusGuideMarkup(form){
 }
 function angelusUtterance(text,type){
  if(type!=='vr')return nl(text);
- const pair=splitAngelusVersicleResponse(text);
- if(pair.length!==2)return nl(text);
- return `<span class="aoAngelusDialogue">${pair.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><b aria-hidden="true">${part.role==='leader'?'℣.':'℟.'}</b><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+ // The unitiser has already identified an adjacent versicle and response.
+ // Do not discard their semantic roles if a spelling/punctuation variant
+ // escapes the strict symbol recogniser (or a locale switches during render).
+ const lines=String(text||'').replace(/\r/g,'').split('\n').map(x=>x.trim()).filter(Boolean);
+ const strict=splitAngelusVersicleResponse(text);
+ const parts=strict.length===2?strict:lines.length===2?lines.map((line,i)=>({
+   role:i===0?'leader':'response',
+   text:line.replace(i===0?/^(?:℣|V)\.?\s*/i:/^(?:℟|R)\.?\s*/i,'').trim()
+ })):[];
+ if(parts.length!==2)return nl(text);
+ return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><b aria-hidden="true">${part.role==='leader'?'℣.':'℟.'}</b><span>${esc(part.text)}</span></span>`).join('')}</span>`;
 }
 function renderAngelus(){
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
