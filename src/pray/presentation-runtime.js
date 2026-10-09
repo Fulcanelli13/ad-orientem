@@ -196,7 +196,7 @@ let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0};
 let FF={step:0,intention:false,communion:false};
 let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0};
 let PEN={step:0,token:0};
-let LIT={step:0,sections:null,loading:false,error:'',token:0};
+let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
 let SEVEN={step:0,sections:null,loading:false,error:'',srcToken:0,scriptToken:0};
 let FORTY={step:0};
 let STATIONS={step:0};
@@ -1309,6 +1309,10 @@ function litanySourceDisclosure(){
  return `<details class="aoP435930Source"><summary>${esc(L('Historical text and edition','Texte historique et édition'))}</summary><p><a href="${esc(witness.url)}" target="_blank" rel="noopener noreferrer">${esc(witness.label)} ↗</a></p><p>${esc(L('Historical transcription, not collated against a 1962 liturgical edition. Only the Litany proper is shown; the source also contains an appended psalm and prayers.','Transcription historique non collationnée sur une édition liturgique de 1962. Seules les litanies proprement dites sont affichées ; la source comprend également un psaume et des oraisons.'))}</p></details>`;
 }
 function renderLitany(){
+ // A preference change must not retain the other language's historical edition.
+ if(LIT.language!==lang()){
+  LIT.language=lang();LIT.token++;LIT.sections=null;LIT.loading=false;LIT.error='';LIT.step=0;
+ }
  if(!LIT.sections&&!LIT.loading&&!LIT.error)setTimeout(ensureLitany,0);
  if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;
  if(!LIT.sections)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body"><p class="aoP435930Loading">${esc(L('Loading the Litany…','Chargement des Litanies…'))}</p></main>`;
