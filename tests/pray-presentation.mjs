@@ -346,3 +346,23 @@ assert.doesNotMatch(segmented.sections[6].text,/Blessed Lady of Sorrows/);
 assert.match(segmented.appendix,/A Prayer to our Blessed Lady/);
 assert.throws(()=>parseSevenWordsHistoricalWitness(sevenFixture.replace("A Prayer to our Blessed Lady of Sorrows.","")),/Cannot separate/);
 assert.match(runtime,/SEVEN\.appendix/,"Seven Words conclusion is not rendered");
+
+
+// Exactly 48 canonical Prayer texts and 16 canonical Novenas are in the
+// cross-module edition inventory. Presence of a source link never certifies it.
+const sourceInventory=JSON.parse(readFileSync("data/pray/prayer-source-certification-inventory.v2.json","utf8"));
+assert.equal(sourceInventory.prayers.length,48);
+assert.equal(sourceInventory.novenas.length,16);
+assert.equal(sourceInventory.counts.prayers,48);
+assert.equal(sourceInventory.counts.novenas,16);
+assert.equal(new Set([...sourceInventory.prayers,...sourceInventory.novenas].map(x=>x.id)).size,64);
+for(const record of sourceInventory.prayers){
+ assert.ok(prayers[record.id],"edition audit contains unknown prayer "+record.id);
+ assert.deepEqual(record.languages,Object.fromEntries(["en","fr","la"].map(l=>[l,!!prayers[record.id][l]])));
+ assert.match(record.editorial,/PENDING_INDEPENDENT/,"record falsely certified without original collation: "+record.id);
+}
+for(const record of sourceInventory.novenas){
+ assert.match(record.editorial,/PENDING_INDEPENDENT/,"novena falsely certified without original collation: "+record.id);
+ assert.ok(record.sourceWork,"missing historical identity for "+record.id);
+ assert.match(record.sourceUrl,/^https:\/\//,"novena source must carry a URL: "+record.id);
+}
