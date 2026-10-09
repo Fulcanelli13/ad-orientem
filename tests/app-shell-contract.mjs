@@ -240,10 +240,10 @@ function host({ route = "home", confirm = true } = {}) {
   const adapter = createAppHostAdapter(win);
   assert.equal(adapter.hardHome(), true);
   assert.equal(await adapter.openDomain("pray"), true);
-  assert.equal(await adapter.openCalendar(), true);
+  assert.equal(await adapter.openCalendar(), false,"Calendar must fail closed without its modular owner");
   assert.equal(adapter.openSettings(), true);
   assert.equal(adapter.dismissSettings(), true);
-  assert.deepEqual(calls, ["pray:close", "home", "pray:open", "module:today.calendar", "settings:open", "settings:dismiss"]);
+  assert.deepEqual(calls, ["pray:close", "home", "pray:open", "settings:open", "settings:dismiss"]);
 }
 
 {
