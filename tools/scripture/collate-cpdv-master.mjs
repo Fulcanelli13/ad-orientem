@@ -49,7 +49,11 @@ export function parseMasterBookVerses(html){
   // The last verse can be followed by site footer. Remove it conservatively.
   let raw=cleaned.slice(marker.index+marker[0].length,next?.index??cleaned.length);
   if(!next)raw=raw.split(/\*\s*\*\s*\*/)[0];
-  const text=textOf(raw);
+  const text=textOf(raw)
+    .replace(/\s*\[\s*(?:[1-3]\s+)?[A-Za-z][A-Za-z ]*\s+[0-9]+\s*\]/g,"")
+    .split(/\bThe Sacred Bible\s*:/)[0]
+    .replace(/\s*\*\s*\*\s*\*.*/s,"")
+    .trim();
   if(!text)continue;
   if(verses.has(key))throw new Error("Master page duplicate "+key);
   verses.set(key,text);
