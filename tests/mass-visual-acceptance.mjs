@@ -941,10 +941,114 @@ try{
   const specialRites={palmOpening,palmReading,palmStart,candlemasStart,requiemStart};
   await page.screenshot({path:resolve(out,"14-special-rite-participation.png"),fullPage:false});
 
+  // Good Friday remains a distinct 56-record rite: the personal act is not
+  // driven by the Improperia soundtrack, and the death pause belongs to
+  // "tradidit spiritum", not the beginning of the long Passion paragraph.
+  const goodFridayMounted=await page.evaluate(async()=>{
+    globalThis.__AO_SPECIAL_RITE_VISUAL_API?.destroy?.();
+    const {mountNativeReaderPreview}=await import("/src/mass/reader-native-preview.js");
+    const {makeResolvedMass,compileMassPlan}=await import("/src/mass/session-engine.js");
+    const {createHostIconResolver}=await import("/src/mass/reader-icons.js");
+    const {R17_FROZEN_ACTIVE_ICON_ASSETS}=await import("/src/mass/reader-icon-bank.js");
+    const resolvedMass=makeResolvedMass({
+      date:"2027-03-26",form:"SOLEMN",presentationMode:"LIVE",
+      calendarCelebration:{id:"good-friday",type:"CALENDAR",title:"Good Friday"},
+      distinctRite:"GOOD_FRIDAY",
+      provenance:{goodFriday:{venerationMode:"PERSONAL"}},
+    });
+    const prepared={
+      ...globalThis.__AO_SPECIAL_RITE_VISUAL_PREPARED,
+      session:{resolvedMass,plan:compileMassPlan(resolvedMass)},
+    };
+    const api=await mountNativeReaderPreview({
+      prepared,iconResolver:createHostIconResolver({assets:R17_FROZEN_ACTIVE_ICON_ASSETS}),
+    });
+    globalThis.__AO_GOOD_FRIDAY_VISUAL_API=api;
+    return {
+      record:api.getGoodFridayState()?.step?.recordId,
+      ordinaryMassGraph:api.ownership.ordinaryMassGraph,
+    };
+  });
+  assert.equal(goodFridayMounted.ordinaryMassGraph,"INACTIVE");
+  assert.equal(goodFridayMounted.record,"GF-OPEN-010");
+  const gfPanel=page.locator("#ao-r17-native-reader-preview [data-role='good-friday-personal']");
+  assert.equal(await gfPanel.isVisible(),false,"personal Good Friday controls appeared in opening rites");
+
+  await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord("GF-PASS-310"));
+  const beforeDeath=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const card=api.root.querySelector(".ao-prayer-card");
+    const p=card.querySelector('.ao-reader-paragraph[data-cue-id="GF-PASS-320"]');
+    const text=p?.querySelector(".ao-line-primary")?.firstChild;
+    const needle="tradidit spiritum";
+    const offset=String(text?.textContent??"").toLowerCase().lastIndexOf(needle);
+    if(!text||offset<0)return {offset,present:Boolean(p)};
+    const range=document.createRange();
+    range.setStart(text,offset);range.setEnd(text,offset+needle.length);
+    const phrase=range.getBoundingClientRect(),r=card.getBoundingClientRect();
+    card.scrollTop=Math.max(0,Math.min(card.scrollHeight-card.clientHeight,
+      card.scrollTop+phrase.top-r.top-card.clientHeight*.37));
+    card.dispatchEvent(new Event("scroll"));
+    return {offset,record:api.getGoodFridayState().step.recordId,scroll:card.scrollTop};
+  });
+  assert.ok(beforeDeath.offset>=0,"source Passion death words were not assigned to the Good Friday cue");
+  await page.waitForFunction(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API?.getGoodFridayState()?.step?.recordId==="GF-PASS-320",
+    null,{timeout:3000});
+  const atDeath=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const p=api.root.querySelector('.ao-reader-paragraph[data-cue-id="GF-PASS-320"]');
+    return {
+      record:api.getGoodFridayState().step.recordId,
+      posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+      active:p?.dataset.active,
+      highlighted:[...p?.querySelectorAll(".ao-ritual-trigger-live")??[]].map(n=>n.textContent.trim()),
+      panel:api.root.querySelector('[data-role="good-friday-personal"]')?.hidden,
+    };
+  });
+  assert.equal(atDeath.posture,"KNEEL");
+  assert.equal(atDeath.active,"true");
+  assert.ok(atDeath.highlighted.some(x=>/tradidit spiritum/i.test(x)),
+    "Passion death kneel did not highlight the exact Latin words: "+JSON.stringify(atDeath));
+  assert.equal(atDeath.panel,false,"death pause lacks an explicit continue action");
+  await page.screenshot({path:resolve(out,"15-good-friday-death-pause.png"),fullPage:false});
+  await gfPanel.locator("[data-good-friday-advance]").click();
+  const afterDeath=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    return {
+      record:api.getGoodFridayState().step.recordId,
+      posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+      lingering:api.root.querySelectorAll(".ao-ritual-trigger-live").length,
+      panel:api.root.querySelector('[data-role="good-friday-personal"]')?.hidden,
+    };
+  });
+  assert.equal(afterDeath.record,"GF-PASS-330");
+  assert.equal(afterDeath.posture,"STAND","Passion narration did not restore standing");
+  assert.equal(afterDeath.lingering,0,"Passion death highlight continued into resumed reading");
+  assert.equal(afterDeath.panel,true,"the death pause capsule persisted after resuming");
+
+  await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord("GF-VEN-600"));
+  const venerationRecords=["GF-VEN-600","GF-VEN-610","GF-VEN-620","GF-VEN-630","GF-VEN-640"];
+  for(let i=0;i<venerationRecords.length;i++){
+    const state=await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.getGoodFridayState());
+    assert.equal(state.step.recordId,venerationRecords[i]);
+    assert.equal(state.personalOnly,true);
+    assert.equal(await gfPanel.isVisible(),true,"personal veneration capsule disappeared mid-ceremony");
+    const control=gfPanel.locator("[data-good-friday-advance]");
+    const rect=await control.boundingBox();
+    assert.ok(rect?.height>=44,"Cross-veneration action is not a 44px mobile target");
+    await control.click();
+  }
+  assert.equal(await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.getGoodFridayState().step.recordId),
+    "GF-X-700","personal veneration did not return cleanly to the common rite");
+  assert.equal(await gfPanel.isVisible(),false,"personal Cross-veneration controls persisted after completion");
+
+  const goodFriday={beforeDeath,atDeath,afterDeath,venerationSteps:venerationRecords.length};
+  await page.screenshot({path:resolve(out,"16-good-friday-veneration-exit.png"),fullPage:false});
+
   await writeFile(resolve(out,"mass-audit.json"),JSON.stringify({
     setup,opening,hierarchy,consecration,wordsState,elevationState,
     salience:{gloriaAdoramus,gloriaBow,incarnatus,agnus,lastGospelGenuflect,lastGospelRise},
-    wide,phoneAudit,specialRites,
+    wide,phoneAudit,specialRites,goodFriday,
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
