@@ -243,4 +243,11 @@ const bodySource = browser.match(/function bodyMarkup\(\)\{[\s\S]*?\n\}\nfunctio
 assert.doesNotMatch(bodySource, /yearWheel\(selected,r\)/, "day surface must not restore the old decorative year ring");
 assert.doesNotMatch(bodySource, /aoCalNavigate/, "old collapsed date jump must not remain in the active body");
 
+// The pinned production day resolver is a compiled boot bundle. Its original
+// Passion Friday special case must defer to an I/II class sanctoral feast.
+// The browser oracle independently verifies 19 March 2027 against the Missal.
+const compiledEngine=fs.readFileSync(new URL("../ao-boot-4ef16d2b0e26d68c.js",import.meta.url),"utf8");
+assert.match(compiledEngine,/C\.TEMPORA_QUAD5_5C\)\) && !matchFirst\(obs, PAT\.PATTERN_SANCTI_CLASS_1_OR_2\)/,
+  "Passion Friday special case still suppresses first/second-class saints");
+
 console.log("Calendar liturgical-year model, intelligence projection and v2 presentation contract: OK");
