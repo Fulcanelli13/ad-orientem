@@ -161,7 +161,9 @@ self.addEventListener("message",event=>{
  const m=event.data;
  if(m?.source!=="AO_OFFLINE_V1")return;
  const respond=body=>{try{event.ports?.[0]?.postMessage(body)}catch{}};
- if(m.type==="CHECK_UPDATE")event.waitUntil(stageSnapshot().then(respond));
+ if(m.type==="CHECK_UPDATE")event.waitUntil(
+   stageSnapshot().catch(error=>({ok:false,error:String(error?.message||error)})).then(respond)
+ );
  else if(m.type==="STATUS")event.waitUntil(readState().then(s=>respond({ok:true,...s})));
  else if(m.type==="USE_SNAPSHOT")event.waitUntil(useSnapshot(m.version,event.source?.id).then(respond));
 });
