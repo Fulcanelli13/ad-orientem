@@ -57,11 +57,11 @@ function translatedSourceBody(n,t){
   // after the Pater/Ave on EVERY day, before its seven recurring invocations.
   // The French verse below is an explicitly editorial translation.
   if(n.id==="holy_souls"){
-    const historicVerse="On Thy spouses have compassion,\\nOn these suffering children Thine;\\nMake these holy souls partakers\\nOf Thy happiness Divine.";
-    const editorialFrenchVerse="Ayez pitié de vos épouses,\\nDe ces enfants qui souffrent ;\\nFaites participer ces saintes âmes\\nÀ votre bonheur divin.";
+    const historicVerse="On Thy spouses have compassion,\nOn these suffering children Thine;\nMake these holy souls partakers\nOf Thy happiness Divine.";
+    const editorialFrenchVerse="Ayez pitié de vos épouses,\nDe ces enfants qui souffrent ;\nFaites participer ces saintes âmes\nÀ votre bonheur divin.";
     out.sharedClosingText=bi(
-      historicVerse+"\\n\\n"+String(n.sharedClosingText||""),
-      editorialFrenchVerse+"\\n\\n"+String(t?.sharedClosingText||"")
+      historicVerse+"\n\n"+String(n.sharedClosingText||""),
+      editorialFrenchVerse+"\n\n"+String(t?.sharedClosingText||"")
     );
     out.sharedClosingLabel=bi("Daily verse and closing intercessions","Verset quotidien et intercessions finales");
     out.source=F({
