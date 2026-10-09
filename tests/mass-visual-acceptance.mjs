@@ -768,6 +768,8 @@ try{
     return page.evaluate(async kind=>{
       globalThis.AO_R17_NATIVE_READER_PREVIEW?.destroy?.();
       const {mountNativeReaderPreview}=await import("/src/mass/reader-native-preview.js");
+      const {createHostIconResolver}=await import("/src/mass/reader-icons.js");
+      const {R17_FROZEN_ACTIVE_ICON_ASSETS}=await import("/src/mass/reader-icon-bank.js");
       const base=globalThis.__AO_SPECIAL_RITE_VISUAL_PREPARED;
       const previous=base.session.resolvedMass;
       const prelude=kind==="PALM"?"PALM":kind==="CANDLEMAS"?"CANDLEMAS":null;
@@ -793,7 +795,9 @@ try{
       };
       delete plan.lifecycle;
       const prepared={...base,session:{...base.session,resolvedMass,plan}};
-      const api=await mountNativeReaderPreview({prepared});
+      const api=await mountNativeReaderPreview({
+        prepared,iconResolver:createHostIconResolver({assets:R17_FROZEN_ACTIVE_ICON_ASSETS}),
+      });
       globalThis.__AO_SPECIAL_RITE_VISUAL_API=api;
       return {first:api.getCurrentCard()?.id,hasRoot:Boolean(api.root)};
     },kind);
@@ -831,7 +835,7 @@ try{
   assert.equal(palmOpening.sourceCue,"PALM-R03-01",
     "Palm crosses assigned to a whole Gospel source block instead of its heading");
   assert.equal(palmOpening.active,"true");
-  assert.ok(palmOpening.anchorWords.some(word=>/Sequ[eé]ntia sancti Evang[eé]lii/i.test(word.normalize("NFD").replace(/[\\u0300-\\u036f]/g,""))),
+  assert.ok(palmOpening.anchorWords.some(word=>/Sequ[eé]ntia sancti Evang[eé]lii/i.test(word.normalize("NFD").replace(/\\p{M}/gu,""))),
     "Palm Gospel crosses missing exact source-text highlight: "+JSON.stringify(palmOpening));
   assert.match(palmOpening.gesture,/Forehead.*lips.*breast/i);
   assert.equal(palmOpening.iconVisible,true,"Palm Gospel heading has no dedicated small-cross icon");
