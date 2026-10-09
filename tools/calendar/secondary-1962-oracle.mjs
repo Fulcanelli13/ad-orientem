@@ -129,6 +129,9 @@ try{
   console.log('SECONDARY_1962_EXAMPLES '+year+' '+JSON.stringify(report.findings.filter(x=>x.date.startsWith(String(year))).slice(0,8)));
   console.log('SECONDARY_1962_DISPUTES '+year+' '+JSON.stringify(report.findings.filter(x=>x.date.startsWith(String(year))&&x.priorStatus==='source_disputed')));
   console.log('SECONDARY_1962_GAP_CONFLICTS '+year+' '+JSON.stringify(report.findings.filter(x=>x.date.startsWith(String(year))&&x.priorStatus==='oracle_unrecorded'&&x.review!=='secondary_supports_app_on_primary_blank')));
+  const probes=['2024-05-06','2027-05-03','2024-12-24','2027-12-24','2027-06-30','2027-08-15','2027-11-30','2027-12-08']
+   .filter(d=>d.startsWith(String(year))).map(d=>({date:d,app:appByDate.get(d)?.app,secondary:secondByDate.get(d)}));
+  console.log('SECONDARY_1962_RUBRIC_PROBES '+year+' '+JSON.stringify(probes));
   console.log('SECONDARY_1962_NEW_CONFLICTS '+year+' '+JSON.stringify(report.findings.filter(x=>x.date.startsWith(String(year))&&x.secondaryConflict).slice(0,35)));
   console.log('SECONDARY_1962_COMM_WARNING '+year+' '+JSON.stringify(report.findings.filter(x=>x.date.startsWith(String(year))&&x.commemorationWarning).slice(0,50)));
  }
