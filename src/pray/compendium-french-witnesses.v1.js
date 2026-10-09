@@ -25,7 +25,6 @@ export const PRAYER_FRENCH_COMPARATIVE_IDS_V1=Object.freeze([
   "foundations_our_father",
   "foundations_apostles_creed",
   "sacrament_act_of_contrition",
-  "foundations_act_of_hope",
   "marian_hail_holy_queen",
   "marian_memorare",
   "weekday_magnificat",
