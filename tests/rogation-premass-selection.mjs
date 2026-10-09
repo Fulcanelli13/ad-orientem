@@ -10,7 +10,10 @@ const sourceGate=load("../data/mass/rogation-proper-source-gate.v1.json");
 const sourceProper=load("../data/mass/rogation-proper-trilingual.v1.json");
 const preface=load("../data/mass/rogation-easter-preface.v1.json");
 const library={sourceGate,sourceProper,preface};
-assert.equal(preface.status,"SOURCE_COLLATED_EDITORIAL_APPROVAL_PENDING");
+assert.equal(preface.status,"SOURCE_VERIFIED_TRANSLATIONS_REVIEWED_PRODUCTION_GATED");
+assert.equal(preface.source.visualWitness.status,"ORIGINAL_1962_PRINTED_PAGES_VISUALLY_VERIFIED");
+assert.match(preface.source.visualWitness.page234,/316.png/);
+assert.match(preface.source.visualWitness.page235,/317.png/);
 assert.equal(preface.publicationAllowed,false);
 assert.equal(rogationPrefaceReady(preface),false);
 assert.match(preface.text.lat,/in hoc potissimum/);
@@ -22,6 +25,22 @@ for(const date of ["2024-05-06","2027-05-03"]){
  const legacy={canStart:true,date,calendarRank:4,properSource:"Tempora/Pasc5-0",
   calendarDay:{id:"feria-rogationum"},requestedCelebrationId:"mass_of_day",celebrationId:"mass_of_day"};
  assert.equal(resolvedRogationCandidate(legacy).eligible,true);
+ const resolvedDay={status:"ready",day:{main:{rank:4}},
+  proper:{status:"ready",data:{sourcePath:"Tempora/Pasc5-0"}}};
+ const resolved=resolvedRogationCandidate(
+  {...legacy,calendarRank:undefined,properSource:undefined},resolvedDay,{requireResolver:true});
+ assert.equal(resolved.eligible,true,"real day resolver should supply missing legacy fields");
+ assert.equal(resolved.authority,"DAY_RESOLVER");
+ assert.equal(resolvedRogationCandidate(legacy,null,{requireResolver:true}).eligible,false,
+  "public Rogation choice must wait for real day resolver");
+ assert.equal(resolvedRogationCandidate(legacy,{...resolvedDay,day:{main:{rank:1}}},{requireResolver:true}).eligible,false,
+  "resolved first-class celebration must impede the Rogation candidate");
+ assert.equal(resolvedRogationCandidate(legacy,{...resolvedDay,proper:{status:"ready",data:{sourcePath:"Sancti/05-03"}}},{requireResolver:true}).eligible,false,
+  "resolved saint Mass may not be misrepresented as a white feria");
+ const checked=projectRogationPreflight({legacy,
+  resolvedDay,requireResolver:true,choice:"DAY_MASS",service:"PUBLIC_PROCESSION",library});
+ assert.equal(checked.selection.observanceConfirmed,true);
+
  const initial=projectRogationPreflight({legacy,library});
  assert.equal(initial.visible,true);
  assert.equal(initial.selection,null,"date MUST NOT imply public litanies");
