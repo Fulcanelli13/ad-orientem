@@ -52,7 +52,7 @@ try{
     const shot=await page.locator('[data-probe="'+name+'"]').screenshot();
     assert.notDeepEqual(shot,blank,name+" external SVG proxy rendered blank");
   }
-  assert.ok(requests.some(x=>x.includes("assets/generated-sprites/")),"No separate SVG assets requested");
+  assert.ok(requests.some(x=>/assets\/generated-(?:symbols|sprites)\//.test(x)),"No separately served SVG geometry requested");
   assert.deepEqual(errors.filter(x=>/SVG|sprite|symbol|Failed to fetch/i.test(x)),[],"SVG paint errors");
   console.log("PASS external SVG symbol paint: 3 groups rendered through legacy local IDs and separate SVG resources");
 }finally{
