@@ -46,6 +46,9 @@ assert.match(GOOD_DEATH_DYING_SOURCES_V384.frenchInvocations,/donbosco\.press\/f
 assert.match(GOOD_DEATH_DYING_V384.currentIndulgence.en,/priest cannot be obtained/,"In-articulo-mortis exception disappeared");
 assert.match(GOOD_DEATH_DYING_V384.currentIndulgence.en,/crucifix or cross is commended/,"Point-of-death crucifix guidance disappeared");
 
+for(const [id,url] of Object.entries(TRADITIONAL_PRAY_SOURCES_V381)){
+  assert.match(url,/^https:\/\//,id+" lacks a verified-scheme Prayer source");
+}
 const runtime=readFileSync("src/pray/traditional-pray-runtime.js","utf8");
 const styles=readFileSync("src/pray/traditional-pray-styles.js","utf8");
 const browser=readFileSync("src/pray/browser-entry.js","utf8");
@@ -82,6 +85,7 @@ assert.match(runtime,/ao-ui-back/,"Traditional PRAY Back control is not using th
 assert.match(runtime,/ao-nav-home/,"Traditional PRAY Home control is not using the canonical utility asset");
 assert.match(runtime,/data-tp381-home/,"Traditional PRAY header lost explicit global Home control");
 assert.doesNotMatch(runtime,/data-tp381-close/,"Traditional PRAY header regressed to ambiguous Close control");
+assert.doesNotMatch(runtime,/prov\.url\|\|p\.sourceUrl\|\|TRADITIONAL_PRAY_SOURCES_V381\.baltimore/,"Unattributed prayers must not receive a misleading Baltimore citation");
 assert.match(runtime,/function goHome\(\)/,"Traditional PRAY global Home action is missing");
 assert.match(runtime,/if\(S\.screen==="prayer"\)\{S\.screen="module"/,"Traditional PRAY Back no longer returns nested prayer to its module");
 assert.doesNotMatch(runtime,/>←<\/button>|>×<\/button>/,"Traditional PRAY shell regained raw Unicode navigation controls");
