@@ -6,6 +6,16 @@ import {isMapPublishableGeo} from "./geo-provenance.js";
  * Existing address pins are never moved or overwritten.
  */
 const MAP_API="https://map.fsspx.org/api/v1/places";
+// Geographic country reference positions (not churches), from CountryInfo's
+// ISO country/territory latlng dataset. These handle countries with zero SSPX
+// first-party pinned source records offline. They are labelled COUNTRY ONLY.
+const COUNTRY_REFERENCE=Object.freeze({
+ BE:[50.83333333,4],CZ:[49.75,15.5],KE:[1,38],LK:[7,81],
+ MG:[-20,47],RE:[-21.15,55.5],SG:[1.36666666,103.8],
+ SI:[46.11666666,14.81666666],SV:[13.83333333,-88.91666666],
+ UY:[-33,-56],ZW:[-20,30],
+});
+const COUNTRY_REFERENCE_SOURCE="https://github.com/porimol/countryinfo";
 const clean=s=>String(s??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
   .toLowerCase().replace(/\s+/g," ").trim();
 const key=s=>clean(s).replace(/[^a-z0-9]+/g," ").trim();
@@ -104,6 +114,12 @@ export function applyIndicativeSspxLocations(records,{officialPlaces=[]}={}){
       // Fallback marker shows only the COUNTRY, not the chapel's actual street or city.
       // Useful for discovery / opening its existing official link, never for navigation.
       candidates=countries.get(cc)||[];
+      if(!candidates.length&&Object.hasOwn(COUNTRY_REFERENCE,cc)){
+        const [lat,lng]=COUNTRY_REFERENCE[cc];
+        candidates=[{lat,lng,cc,city:null,
+          source_ref:"COUNTRYINFO:"+cc,source_url:COUNTRY_REFERENCE_SOURCE,
+          source_kind:"GEOGRAPHIC_COUNTRY_REFERENCE_ONLY"}];
+      }
       precision="country";scope="country";match="INDICATIVE_COUNTRY_ONLY_NOT_VENUE_LOCATION";
     }
     const candidate=bestRepresentative(candidates);
