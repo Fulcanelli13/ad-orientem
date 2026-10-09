@@ -238,6 +238,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
   }
 
   function goBack(){
+    state.handoffError="";
     if(state.view==="skill"){resetHome();render();return true;}
     if(state.view==="scenario"){
       const target=state.returnView||"answer";
