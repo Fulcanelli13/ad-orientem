@@ -245,6 +245,8 @@ assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,27);
 assert.equal(historicalNovenaReview.counts.frenchEditorialTranslationReviews,27);
 assert.equal(historicalNovenaReview.counts.completePrintEditionCertificates,0);
 assert.equal(historicalNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,27);
+assert.equal(historicalNovenaReview.counts.namedOriginalHistoricalMeditationSections,27);
+assert.match(historicalNovenaReview.reviewLimit,/not yet certified against printed facsimiles/i);
 const reviews=Object.fromEntries(historicalNovenaReview.records.map(x=>[x.id,x]));
 for(const id of ["christmas","holy_ghost","st_joseph"]){
  const historical=reviews[id],current=NOVENA_CORPUS_V4[id];
