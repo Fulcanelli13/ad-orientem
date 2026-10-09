@@ -272,8 +272,9 @@ assert.match(browser, /overflow-y:auto;overflow-x:hidden/, "Calendar root must s
 assert.match(browser, /height:66px!important/, "Calendar liturgical month lost its phone-readable cell height");
 assert.match(browser, /grid-template-columns:repeat\(3,1fr\)/, "Calendar top navigation did not collapse to Day · Month · Liturgical Year");
 assert.match(browser, /observedCycle\(r,id\)/, "Month Temporale\/Sanctorale classification is missing");
-assert.match(browser,/observedId\.startsWith\("sancti:"\)/,"Sanctorale must use observed ID before checking Sunday weekday");
-assert.match(browser,/observedId\.startsWith\("tempora:"\)/,"Temporale must use observed source ID");
+assert.match(browser,/import \\{ observedCycle \\} from "\\.\\/observed-cycle\\.js"/,"Calendar must use one source-identity classifier");
+assert.doesNotMatch(browser,/const temporal=\\//,"Calendar must not classify by translated title regex");
+assert.match(browser,/data-cal-unclassified/,"Unknown cycle must be disclosed, not silently categorized");
 assert.doesNotMatch(browser, /majorForDate\(/, "Month may not classify observed feasts from an independent candidate table");
 assert.match(browser, /const name=r&&\(tier>0/, "Month labels must come from resolved days only");
 assert.match(browser, /nextResolvedMajorCelebration\(selected\)/, "Upcoming major dates must be verified by the daily resolver");
