@@ -164,7 +164,8 @@
     "test:atlas-census": "node tests/european-relic-census.mjs",
     "atlas:audit-relic-subjects": "node tools/atlas/audit-relic-subjects.mjs",
     "test:directory-other-communities-indicative": "node tests/directory-other-communities-indicative.mjs",
-    "test:directory-fssp-icksp-indicative": "node tests/directory-fssp-icksp-indicative-bulk.mjs"
+    "test:directory-fssp-icksp-indicative": "node tests/directory-fssp-icksp-indicative-bulk.mjs",
+    "atlas:compare-relics": "node tools/atlas/relic-census-selection-triage.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
