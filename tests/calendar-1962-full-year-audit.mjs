@@ -78,7 +78,7 @@ try{
             date,status:String(r?.status||""),actualDate:String(r?.date||""),
             mainId:String(d.id||""),title:String(p.name||p.title?.en||d.title||d.name||""),
             provenance:{dayTitle:d.title??null,dayColour:d.color??d.colour??null,properTitle:p.name??p.title?.en??null,properColour:p.color??p.colour??null,colourPlan:r?.colourPlan??null,dayCommemorations:d.commemorations??null,properCommemorations:p.commemorations??null},
-            rawRank:p.rank??d.rank??null,rawColour:p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
+            rawRank:p.rank??d.rank??null,rawColour:r?.colourPlan?.massColor??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
             failed:!r||r.status==="failed"||!r.day?.main||r.date!==date,
             failure:String(r?.error||r?.proper?.error||""),
@@ -99,8 +99,12 @@ try{
       if(!new RegExp("^(?:"+check.colourRegex+")$","i").test(normalizeColor(row.rawColour)||""))problems.push("colour mismatch");
       if(check.commemorationRegex&&!row.commemorations.some(x=>new RegExp(check.commemorationRegex,"i").test(x)))
         problems.push("commemoration absent or unidentified");
+      if(check.colourPhases){
+        const actualPhases=(row.provenance?.colourPlan?.sequence||[]).map(x=>normalizeColor(x?.[1]));
+        if(JSON.stringify(actualPhases)!==JSON.stringify(check.colourPhases))problems.push("ceremonial colour sequence mismatch");
+      }
     }
-    checks.push({date:check.date,expected:{principalRegex:check.principalRegex,rank:check.rank,colourRegex:check.colourRegex,commemorationRegex:check.commemorationRegex||null},actual:row||null,problems});
+    checks.push({date:check.date,expected:{principalRegex:check.principalRegex,rank:check.rank,colourRegex:check.colourRegex,commemorationRegex:check.commemorationRegex||null,colourPhases:check.colourPhases||null},actual:row||null,problems});
   }
   const unresolved=rows.filter(x=>x.failed);
   const incomplete=rows.filter(x=>!x.failed&&(!x.title||normalizeRank(x.rawRank)===null||!normalizeColor(x.rawColour)));
