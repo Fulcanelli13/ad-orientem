@@ -14,6 +14,8 @@ on:
       - 'tests/formation-master-inventory.mjs'
       - 'tests/formation-141-absorption-evidence.mjs'
       - 'data/learn/formation-141-absorption-evidence-2026-10-09.v1.json'
+      - 'data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json'
+      - 'tests/formation-canonical-synthesis-batch1.mjs'
       - 'docs/FORMATION-141-ABSORPTION-ACTIONS-2026-10-09.md'
       - 'data/learn/apologetics-canonical.v1.json'
       - 'data/learn/apologetics-reconciliation.v1.json'
@@ -96,6 +98,8 @@ jobs:
         run: node tests/learn-faith-certification-019-054.mjs
       - name: Check source-first recovery review (102 research records)
         run: node tests/formation-recovery-review.mjs
+      - name: Check first ten substantive bilingual canonical syntheses against their original sources
+        run: node tests/formation-canonical-synthesis-batch1.mjs
       - name: Bulk-validate all 21 unresolved controversy source maps
         run: node tests/contemporary-controversies-21-source-scaffold.mjs
       - name: Verify all 123 source-claim audit gates without claiming certification

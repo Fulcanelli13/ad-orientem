@@ -14,7 +14,8 @@ const names=[
   ["Traditionis custodes","traditionis-custodes-debates.v1.json"],
   ["Apologetics dossiers","apologetics-canonical.v1.json"],
   ["Church Crisis dossiers","church-crisis-canonical.v1.json"],
-  ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"]
+  ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"],
+  ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"]
 ];
 const packs=names.map(([label,name])=>({label,doc:JSON.parse(readFileSync("data/learn/"+name,"utf8"))}));
 const legacyRows=buildRecoveryReviewRows(packs);
@@ -32,6 +33,8 @@ assert.equal(coverage.dossiers.length,141);
 assert.equal(coverage.covered,53);
 assert.equal(coverage.linked,118);
 assert.equal(coverage.external.length,5);
+assert.equal(coverage.dossiers.filter(x=>x.synthesis).length,10);
+assert.equal(coverage.dossiers.filter(x=>x.synthesis).every(x=>x.research.length>0),true);
 const evidence=JSON.parse(readFileSync("data/learn/formation-141-absorption-evidence-2026-10-09.v1.json","utf8"));
 assert.equal(coverage.dossiers.every(d=>d.evidence?.id===d.id),true,"every canonical dossier must receive its source evidence disposition");
 assert.equal(coverage.dossiers.filter(d=>d.evidence?.direct_source_bearing_research_ids?.length).length,53);
@@ -152,6 +155,7 @@ const node=nodes.get(RECOVERY_REVIEW_ROOT);
 assert.equal(live.status().canonicalDossiers,141);
 assert.equal(live.status().coveredDossiers,53);
 assert.equal(live.status().assembledDossierReadings,53);
+assert.equal(live.status().synthesisDossiers,10);
 assert.equal(live.status().externalRecords,5);
 assert.ok(node.innerHTML.includes("Formation recovery by topic"));
 assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'));
@@ -167,6 +171,11 @@ node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
 assert.ok(node.innerHTML.includes("CR-LIT-05"),"dossier title not rendered");
 assert.ok(node.innerHTML.includes('data-rr-id="TLM026"'),"dossier's researched subquestions missing");
 assert.ok(node.innerHTML.includes('data-rr-article="TLM026"'),"TLM subquestion is not assembled as a complete source-linked reading");
+node.listeners.click(makeClick({back:true}));
+node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
+assert.ok(node.innerHTML.includes('data-rr-canonical-synthesis="CR-LIT-05"'),"Canonical answer missing from dossier reading");
+assert.ok(node.innerHTML.includes('data-rr-synthesis-role="documented_position"'),"Original historical positions missing");
+assert.ok(node.innerHTML.includes("https://www.vatican.va/"),"Original canonical synthesis hyperlink missing");
 assert.ok(node.innerHTML.includes('class="rrArticleSection"'),"substantive source-bearing sections are missing");
 assert.ok(node.innerHTML.includes('class="rrSources"'),"original paragraph links are not carried into dossier reading");
 assert.ok(node.innerHTML.includes("The Traditional Mass is just nostalgia"),"existing authored argument has been replaced by an index-only shell");
