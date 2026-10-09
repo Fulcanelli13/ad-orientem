@@ -4,7 +4,7 @@ export function installScriptureStyles(doc=globalThis.document){
  if(doc.getElementById(SCRIPTURE_STYLE_ID))return true;
  const style=doc.createElement("style");style.id=SCRIPTURE_STYLE_ID;
  style.textContent=`
- #ao-scripture-overlay{position:fixed;inset:0;z-index:15000;background:#080c12ee;overflow:auto;padding:max(12px,env(safe-area-inset-top)) 12px max(24px,env(safe-area-inset-bottom));color:#ece6d6}
+ #ao-scripture-overlay{position:fixed;inset:0;z-index:2147483647!important;background:#080c12ee;overflow:auto;padding:max(12px,env(safe-area-inset-top)) 12px max(24px,env(safe-area-inset-bottom));color:#ece6d6}
  #ao-scripture-overlay[hidden]{display:none!important}
  .aoScriptureLibrary{max-width:820px;margin:0 auto;padding:clamp(14px,4vw,34px);border:1px solid #655d4d;background:#111720;border-radius:14px;font-family:Georgia,"Garamond",serif;line-height:1.6}
  .aoScriptureHeader{display:flex;align-items:center;justify-content:space-between;gap:12px}
