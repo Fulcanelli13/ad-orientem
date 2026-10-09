@@ -57,7 +57,7 @@ assert.equal(audit.summary.stage_specific_mapping_pending,0);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.remaining_full_passage_review,55);
 for(const id of ["CSE112","CSE117"])assert.ok(CSE_MISCONCEPTION_REBUTTAL_IDS.includes(id));
-for(const id of ["CSE035","CSE038","CSE045","CSE141","CSE142","CSE143"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id));
+for(const id of ["CSE029","CSE035","CSE038","CSE045","CSE093","CSE095","CSE143","CSE149"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id));
 const close=raw.CSE125.source_scope_caveat;
 assert.match(close,/Original CDF clarification .*distinguishes direct abortion from non-abortive maternal treatment/);
 assert.match(close,/NCBC 2022 classifications are non-magisterial and contested/);
