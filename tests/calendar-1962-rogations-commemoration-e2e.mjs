@@ -41,6 +41,7 @@ try{
        comms:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title,path:x.path,inseparable:x.inseparable})),
        collects:p?.collects?.length||0,secrets:p?.secrets?.length||0,postcommunions:p?.postcommunions?.length||0,
        lastCollect:p?.collects?.at(-1)||null,lastSecret:p?.secrets?.at(-1)||null,lastPostcommunion:p?.postcommunions?.at(-1)||null,
+       languageCoverage:p?.languageCoverage||null,composedSourceIntegrity:p?.composedSourceIntegrity||null,
        firstCollect:p?.collects?.[0]||null,firstSecret:p?.secrets?.[0]||null,firstPostcommunion:p?.postcommunions?.[0]||null,
        temporale:(r?.day?.tempora||[]).map(x=>({id:x.id,path:x.path,color:x.color}))};
    },date);
@@ -189,6 +190,20 @@ try{
    assert.equal(row.comms.length,2,date+": only Advent feria + Barbara should be commemorated");
    for(const key of ["collects","secrets","postcommunions"])
      assert.equal(row[key],3,date+": required triple of Peter, Advent, Barbara "+key+" absent");
+   // Language coverage is recomputed AFTER appending Advent and St Barbara's
+   // distinct sourced orations; otherwise the UI reports false completeness.
+   const composedMinimum=row.collects+row.secrets+row.postcommunions;
+   for(const language of ["en","fr"]){
+     const coverage=row.languageCoverage?.[language];
+     assert.ok(coverage,date+": missing "+language+" coverage after composition");
+     assert.ok(coverage.expected>=composedMinimum,
+       date+": post-composition "+language+" coverage omitted commemorative orations");
+     assert.equal(coverage.available+coverage.missing.length,coverage.expected,
+       date+": incoherent composed language coverage");
+   }
+   assert.equal(row.composedSourceIntegrity?.expectedLatinSections,row.languageCoverage.en.expected,
+     date+": composed source scanner excluded a Latin-bearing prayer");
+
    const prayers=[row.lastCollect,row.lastSecret,row.lastPostcommunion];
    for(const [ix,prayer] of prayers.entries()){
      assert.ok(prayer&&typeof prayer==="object",date+": Barbara prayer object "+ix+" absent");
