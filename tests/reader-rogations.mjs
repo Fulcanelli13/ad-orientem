@@ -46,7 +46,7 @@ assert.ok(!researchProper.sections.find(s=>s.key==="introit").latin.includes("al
 assert.equal((researchProper.sections.find(s=>s.key==="introit").latin.match(/alleluia\./gi)||[]).length,2);
 assert.match(researchProper.sections.find(s=>s.key==="gospel").french,/Si un enfant demande du pain/);
 assert.equal(researchProper.sections.length,9);
-assert.equal(researchProper.source.status,"LATIN_SOURCE_PASSAGE_VISUALLY_CHECKED_IN_1962_VATICAN_SCAN");
+assert.equal(researchProper.source.status,"LATIN_PRIMARY_SCAN_RECHECKED_AND_EDITORIAL_TRANSLATIONS_REVIEWED");
 assert.ok(researchProper.sections.every(s=>
   s.sourceLocator===sourceGate.properSections.find(x=>x.key===s.key).exactSourceLocator));
 assert.equal(researchProper.interlectionalVariants.outsideEastertide.status,"RESEARCH_ONLY_VARIANTS_NOT_SELECTABLE");
