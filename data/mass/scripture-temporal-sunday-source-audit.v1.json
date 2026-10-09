@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-temporal-sunday-scripture-source-batch-v1",
-  "version": "2026-10-10-R1",
+  "version": "2026-10-10-R2",
   "status": "DIRECT_LATIN_SOURCE_BOUND_WITH_1962_RUBRICS_CONTEXT; NOT_GLOBAL_DOUBLE-COLLATION",
   "policy": [
     "Only exact sourcePath + displayed original Latin incipit unlocks the shared Bible Context capsule.",
@@ -8,16 +8,19 @@
     "Each original-file witnessUrl points to the exact Divinum Officium Latin Tempora Proper, not merely a directory homepage.",
     "Historical pre-1960 source variants can coexist in upstream files: publication of dates, classes and rite choices is owned by the separate 1962 calendar/Mass resolver, not this Scripture index.",
     "Discontinuous biblical sections have distinct segmented-register owners; missing or redirected files must fail closed and cannot be guessed.",
-    "Unpublished texts, procession readings, optional branch state and local translation texts remain outside this batch."
+    "Unpublished texts, procession readings, optional branch state and local translation texts remain outside this batch.",
+    "A resumed Epiphany alias inherits biblical reading content only from its explicit source-owner pointer; the 1960 Code of Rubrics §18 and 1962 Calendar own when the resumed Proper is selected. Never deduce celebration from the alias's name."
   ],
   "corpus": {
     "legacySingleRangeSundaySources": 8,
     "newOriginalLatinSundaySources": 37,
     "newSourceBoundSingleReferences": 70,
     "newSegmentedSundayReferences": 4,
-    "totalSingleRangeMassProperSources": 74,
-    "totalSingleRangeMassProperReferences": 139,
-    "totalSegmentedProperReferences": 9
+    "totalSingleRangeMassProperSources": 79,
+    "totalSingleRangeMassProperReferences": 149,
+    "totalSegmentedProperReferences": 9,
+    "resolvedPreviouslyHeldSourcePaths": 5,
+    "resolvedPreviouslyHeldReadingReferences": 10
   },
   "originalWitnesses": [
     {
@@ -673,32 +676,9 @@
     }
   ],
   "deferred": {
-    "missingFullMassSource": [
-      {
-        "sourcePath": "Tempora/Pent03-0",
-        "reason": "The Latin source file contains the 1962/older octave rubrics and commemorations, but no independent Lectio or Evangelium body. Must collate the actual 1962 Sunday Mass Proper (1 Peter 5 and Luke 15 candidates not released).",
-        "doNotAlias": "Tempora/Pent02-0"
-      }
-    ],
-    "resumedEpiphanySundays": [
-      {
-        "sourcePath": "Tempora/PentEpi3-0",
-        "reason": "Resumed Sunday after Epiphany: source stub alone does not confer a calendar occurrence or a safe source-owned Epistle/Gospel. The liturgical calendar decides if this Mass is resumed; do not duplicate Epi3–6 by naming similarity."
-      },
-      {
-        "sourcePath": "Tempora/PentEpi4-0",
-        "reason": "Resumed Sunday after Epiphany: source stub alone does not confer a calendar occurrence or a safe source-owned Epistle/Gospel. The liturgical calendar decides if this Mass is resumed; do not duplicate Epi3–6 by naming similarity."
-      },
-      {
-        "sourcePath": "Tempora/PentEpi5-0",
-        "reason": "Resumed Sunday after Epiphany: source stub alone does not confer a calendar occurrence or a safe source-owned Epistle/Gospel. The liturgical calendar decides if this Mass is resumed; do not duplicate Epi3–6 by naming similarity."
-      },
-      {
-        "sourcePath": "Tempora/PentEpi6-0",
-        "reason": "Resumed Sunday after Epiphany: source stub alone does not confer a calendar occurrence or a safe source-owned Epistle/Gospel. The liturgical calendar decides if this Mass is resumed; do not duplicate Epi3–6 by naming similarity."
-      }
-    ],
-    "independentTextCollation": "Divinum Officium direct Latin and 1962 calendar are confirmed; full two-witness collation of every Sunday verse endpoint remains a separate editorial gate. Spot-checked first Advent Sunday and Sexagesima and Ascension Sunday against independently published 1962 Proper sources."
+    "missingFullMassSource": [],
+    "resumedEpiphanySundays": [],
+    "independentTextCollation": "Direct original-file source aliases resolved for all five formerly held Sunday identities. Comprehensive independent two-witness 1962 collation of every Mass Proper reference, actual Calendar-date selection, original French/English text licensing and unregistered feast/weekday coverage remain separate editorial gates."
   },
   "independentlyCorroboratedExamples": [
     {
@@ -712,6 +692,133 @@
     {
       "sourcePath": "Tempora/Pasc6-0",
       "witnessUrl": "https://www.missalemeum.com/en/calendar/1962-06-03"
+    },
+    {
+      "sourcePath": "Tempora/Pent03-0",
+      "witnessUrl": "https://missale.online/proprium/en/tempore/dominica_iii_post_pentecosten"
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "witnessUrl": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "rule": "1960 Code of Rubrics §18 governs the resumed Epiphany Sunday order."
+    }
+  ],
+  "resolvedPreviouslyHeldSourcePaths": [
+    {
+      "sourcePath": "Tempora/Pent03-0",
+      "referenceSourcePaths": [
+        "Tempora/Pent03-0r"
+      ],
+      "aliasWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent03-0.txt",
+      "resolvedSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent03-0r.txt",
+      "passages": {
+        "EPISTLE_OR_LESSON": "1Peter 5:6–11",
+        "GOSPEL": "Luke 15:1–10"
+      },
+      "editorialRule": "1962 Third Pentecost source resolves to Pent03-0r; its two reading sections are independently printed in the 1962 Missal.",
+      "readingSourceChain": {
+        "EPISTLE_OR_LESSON": {
+          "immediateSourceOwner": "Tempora/Pent03-0r",
+          "ultimateLatinSectionOwner": "Tempora/Pent03-0r"
+        },
+        "GOSPEL": {
+          "immediateSourceOwner": "Tempora/Pent03-0r",
+          "ultimateLatinSectionOwner": "Tempora/Pent03-0r"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "referenceSourcePaths": [
+        "Tempora/Epi3-0"
+      ],
+      "aliasWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi3-0.txt",
+      "resolvedSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+      "passages": {
+        "EPISTLE_OR_LESSON": "Romans 12:16–21",
+        "GOSPEL": "Matthew 8:1–13"
+      },
+      "editorialRule": "Resumed Epiphany source explicitly inherits the original Epiphany readings; 1960 Code of Rubrics §18 controls whether this Sunday is resumed.",
+      "readingSourceChain": {
+        "EPISTLE_OR_LESSON": {
+          "immediateSourceOwner": "Tempora/Epi3-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi3-0"
+        },
+        "GOSPEL": {
+          "immediateSourceOwner": "Tempora/Epi3-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi3-0"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/PentEpi4-0",
+      "referenceSourcePaths": [
+        "Tempora/Epi4-0"
+      ],
+      "aliasWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi4-0.txt",
+      "resolvedSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi4-0.txt",
+      "passages": {
+        "EPISTLE_OR_LESSON": "Romans 13:8–10",
+        "GOSPEL": "Matthew 8:23–27"
+      },
+      "editorialRule": "Resumed Epiphany source explicitly inherits the original Epiphany readings; 1960 Code of Rubrics §18 controls whether this Sunday is resumed.",
+      "readingSourceChain": {
+        "EPISTLE_OR_LESSON": {
+          "immediateSourceOwner": "Tempora/Epi4-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi4-0"
+        },
+        "GOSPEL": {
+          "immediateSourceOwner": "Tempora/Epi4-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi4-0"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/PentEpi5-0",
+      "referenceSourcePaths": [
+        "Tempora/Epi5-0",
+        "Tempora/Epi1-0"
+      ],
+      "aliasWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi5-0.txt",
+      "resolvedSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi5-0.txt",
+      "passages": {
+        "GOSPEL": "Matthew 13:24–30",
+        "EPISTLE_OR_LESSON": "Colossians 3:12–17"
+      },
+      "editorialRule": "Resumed Epiphany source explicitly inherits the original Epiphany readings; 1960 Code of Rubrics §18 controls whether this Sunday is resumed.",
+      "readingSourceChain": {
+        "GOSPEL": {
+          "immediateSourceOwner": "Tempora/Epi5-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi5-0"
+        },
+        "EPISTLE_OR_LESSON": {
+          "immediateSourceOwner": "Tempora/Epi5-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi1-0"
+        }
+      }
+    },
+    {
+      "sourcePath": "Tempora/PentEpi6-0",
+      "referenceSourcePaths": [
+        "Tempora/Epi6-0"
+      ],
+      "aliasWitnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi6-0.txt",
+      "resolvedSourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi6-0.txt",
+      "passages": {
+        "EPISTLE_OR_LESSON": "1Thessalonians 1:2–10",
+        "GOSPEL": "Matthew 13:31–35"
+      },
+      "editorialRule": "Resumed Epiphany source explicitly inherits the original Epiphany readings; 1960 Code of Rubrics §18 controls whether this Sunday is resumed.",
+      "readingSourceChain": {
+        "EPISTLE_OR_LESSON": {
+          "immediateSourceOwner": "Tempora/Epi6-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi6-0"
+        },
+        "GOSPEL": {
+          "immediateSourceOwner": "Tempora/Epi6-0",
+          "ultimateLatinSectionOwner": "Tempora/Epi6-0"
+        }
+      }
     }
   ]
 }
