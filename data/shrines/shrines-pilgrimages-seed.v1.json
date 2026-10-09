@@ -1946,6 +1946,70 @@
         "SHR-FR-VEZELAY-MADELEINE"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "name": "Basilique Saint-Sernin de Toulouse",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Basilique Saint-Sernin de Toulouse",
+      "origin_summary": "Historic Catholic sanctuary and documented saint-related relic or reliquary custody; the specific traditional attribution is not independently authenticated by the application.",
+      "associated_saints": [
+        "Saint Saturninus"
+      ],
+      "source_ids": [
+        "SHR-FR-basilique-saint-sernin-toulouse"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "name": "Basilique Saint-Nicolas de Saint-Nicolas-de-Port",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Basilique Saint-Nicolas de Saint-Nicolas-de-Port",
+      "origin_summary": "Historic Catholic sanctuary and documented saint-related relic or reliquary custody; the specific traditional attribution is not independently authenticated by the application.",
+      "associated_saints": [
+        "Saint Nicholas of Myra"
+      ],
+      "source_ids": [
+        "SHR-FR-basilique-saint-nicolas-de-port"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "name": "Basilique Saint-Quentin",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Basilique Saint-Quentin",
+      "origin_summary": "Historic Catholic sanctuary and documented saint-related relic or reliquary custody; the specific traditional attribution is not independently authenticated by the application.",
+      "associated_saints": [
+        "Saint Quentin"
+      ],
+      "source_ids": [
+        "SHR-FR-basilique-saint-quentin-aisne"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "name": "Cathédrale Saint-Étienne de Sens",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Cathédrale Saint-Étienne de Sens",
+      "origin_summary": "Historic Catholic sanctuary and documented saint-related relic or reliquary custody; the specific traditional attribution is not independently authenticated by the application.",
+      "associated_saints": [
+        "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens"
+      ],
+      "source_ids": [
+        "SHR-FR-cathedrale-saint-etienne-sens"
+      ],
+      "confidence": "HIGH"
     }
   ],
   "pilgrimages": [
@@ -4152,6 +4216,58 @@
       "scope_note": "Historic pilgrimage basilica whose crypt conserves relics traditionally attributed to Saint Mary Magdalene; distinct from Saint-Maximin relic records. No particular Latin Mass provision or annual procession date inferred.",
       "source_ids": [
         "SHR-FR-VEZELAY-MADELEINE"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:basilique-saint-sernin-toulouse:destination",
+      "name": "Pilgrimage to Basilique Saint-Sernin de Toulouse",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented sacred destination with historic pilgrim veneration. No particular 1962 Mass provision or unverified event dates claimed.",
+      "source_ids": [
+        "SHR-FR-basilique-saint-sernin-toulouse"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:basilique-saint-nicolas-de-port:destination",
+      "name": "Pilgrimage to Basilique Saint-Nicolas de Saint-Nicolas-de-Port",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented sacred destination with historic pilgrim veneration. No particular 1962 Mass provision or unverified event dates claimed.",
+      "source_ids": [
+        "SHR-FR-basilique-saint-nicolas-de-port"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:basilique-saint-quentin-aisne:destination",
+      "name": "Pilgrimage to Basilique Saint-Quentin",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented sacred destination with historic pilgrim veneration. No particular 1962 Mass provision or unverified event dates claimed.",
+      "source_ids": [
+        "SHR-FR-basilique-saint-quentin-aisne"
+      ],
+      "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:FR:cathedrale-saint-etienne-sens:destination",
+      "name": "Pilgrimage to Cathédrale Saint-Étienne de Sens",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Documented sacred destination with historic pilgrim veneration. No particular 1962 Mass provision or unverified event dates claimed.",
+      "source_ids": [
+        "SHR-FR-cathedrale-saint-etienne-sens"
       ],
       "confidence": "HIGH"
     }
