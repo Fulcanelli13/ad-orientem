@@ -533,7 +533,7 @@ function yearSurface(selected,r){
       </div>
     </section>
     ${yearTimeline(y)}
-    <div class="aoCalYearProvenance">${esc(L("Dates follow the 1962 Roman calendar; transferred feasts appear on their observed date.","Les dates suivent le calendrier romain de 1962 ; les fêtes transférées figurent à leur date de célébration."))} <a href="https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html" target="_blank" rel="noopener noreferrer">${esc(L("1960 General Rubrics · nn. 95–99 ↗","Rubriques générales de 1960 · nos 95–99 ↗"))}</a></div>
+    <div class="aoCalYearProvenance">${esc(L("Major dates are a guide; the resolved 1962 day governs precedence and rank. Explicit feast transfers are reflected here.","Les repères majeurs sont indicatifs ; le jour résolu selon 1962 fixe la préséance et le rang. Les transferts explicitement réglés figurent ici."))} <a href="https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html" target="_blank" rel="noopener noreferrer">${esc(L("1960 General Rubrics · nn. 95–99 ↗","Rubriques générales de 1960 · nos 95–99 ↗"))}</a></div>
     <section class="aoCalV2Coming">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("WHAT NOW?","ET MAINTENANT ?"))}</small><h3>${esc(L("Coming next","Les prochains repères"))}</h3></div></div>
       <div class="aoCalV2ComingGrid">
