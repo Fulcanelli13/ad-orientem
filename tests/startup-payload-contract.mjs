@@ -17,12 +17,13 @@ const sprites=JSON.parse(readFileSync("data/presentation/startup-sprite-report.v
 const perIcon=JSON.parse(readFileSync("data/presentation/startup-per-icon-report.v1.json","utf8"));
 const thin=JSON.parse(readFileSync("data/presentation/startup-thin-shell.v1.json","utf8"));
 assert.equal(thin.sourceHtmlBytes,perIcon.lazyHtmlBytes,"Thin-shell provenance missing");
-assert.equal(thin.shellBytes,htmlBytes,"Current HTML differs from certified thin-shell manifest");
+assert.equal(thin.packedShellBytes??thin.shellBytes,htmlBytes,"Current HTML differs from certified thin-shell manifest");
+assert.ok(thin.pack?.sourceCount>=32,"Parser-order IIFE pack missing; prevent 40-request startup waterfall");
 assert.ok(htmlBytes<650_000,"HTML must remain below 650 KB until deeper modularization");
 assert.ok(thin.extractedEntries>=70,"Loss of parser-ordered JS/CSS extraction");
 for(const entry of thin.entries){
   assert.ok(existsSync(entry.path),"Missing boot asset "+entry.path);
-  assert.ok(html.includes("./"+entry.path),"Detached boot asset "+entry.path);
+  if(!thin.pack.entries.some(item=>item.source===entry.path))assert.ok(html.includes("./"+entry.path),"Detached boot asset "+entry.path);
   assert.equal(statSync(entry.path).size,entry.bytes,"Boot asset content changed: "+entry.path);
 }
 assert.equal(perIcon.lazyActivationOwner,"src/app/refined-icon-on-demand.js");
