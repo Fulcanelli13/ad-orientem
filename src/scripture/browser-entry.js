@@ -8,7 +8,7 @@ export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
  const doc=win.document;
  installScriptureContextStyles(doc);
- let reader=null,previousFocus=null,previousOverflow=null;
+ let reader=null,previousFocus=null,previousOverflow=null,onCloseReturn=null;
  const loaded=new Map();
  const inflight=new Set();
  function overlay(){
@@ -30,12 +30,15 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(doc.body && previousOverflow!==null)doc.body.style.overflow=previousOverflow;
    previousOverflow=null;
    previousFocus?.focus?.();previousFocus=null;
+   const restore=onCloseReturn;onCloseReturn=null;
+   if(typeof restore==="function")try{restore()}catch(error){win.console?.error?.("Scripture return context failed",error)}
    return true;
  }
- function open({passage=null,language=null,context=null}={}){
+ function open({passage=null,language=null,context=null,onCloseReturn=null}={}){
    const node=overlay();if(!node)return false;
    installScriptureStyles(doc);
    if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
+   onCloseReturn=typeof onCloseReturn==="function"?onCloseReturn:null;
    reader?.destroy?.();
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{
@@ -64,12 +67,12 @@ export function installScriptureBrowserOwner(win=globalThis){
    node.querySelector?.("[data-scripture-close]")?.focus?.();
    return true;
  }
- function openContext(reference,{language=null}={}){
+ function openContext(reference,{language=null,onCloseReturn=null}={}){
    const parsed=parseScriptureContext(reference);
    if(!parsed)return false;
-   return open({passage:parsed.passage,context:parsed,language});
+   return open({passage:parsed.passage,context:parsed,language,onCloseReturn});
  }
- function openSegments(segments,{language=null,reference=null,provenance=null,liturgicalArrangement=null}={}){
+ function openSegments(segments,{language=null,reference=null,provenance=null,liturgicalArrangement=null,onCloseReturn=null}={}){
    try{
      const context=scriptureSegmentContext(segments,{reference,provenance});
      // The shared reader remains in canonical biblical order. A rare 1962
@@ -84,9 +87,9 @@ export function installScriptureBrowserOwner(win=globalThis){
          a.liturgicalVerseOrder.join("|")!=="Daniel 3:49|Daniel 3:47–48|Daniel 3:50–51" ||
          typeof a.noteEn!=="string"||typeof a.noteFr!=="string" ||
          a.noteEn.length<80||a.noteFr.length<80)return false;
-      return open({passage:context.passage,context:Object.freeze({...context,liturgicalArrangement:a}),language});
+      return open({passage:context.passage,context:Object.freeze({...context,liturgicalArrangement:a}),language,onCloseReturn});
     }
-    return open({passage:context.passage,context,language});
+    return open({passage:context.passage,context,language,onCloseReturn});
    }catch{return false;}
  }
  const click=e=>{

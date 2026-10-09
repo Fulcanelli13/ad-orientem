@@ -346,6 +346,47 @@ try{
  const assumptionEntry=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-08-15']").textContent();
  assert.match(assumptionEntry||"",/Assumption|Assomption/i,"Sunday Assumption must remain Sanctorale by observed principal Mass");
  console.log("PASS Calendar 1962 source-oracle sample: 14 observed days and transferred April feast");
+ // Real Calendar -> source-bound Scripture -> Calendar return on the canonical
+ // 10th Sunday after Pentecost; never launch a second Bible implementation.
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-08-02")),true);
+ const gospelCapsule=page.locator("#ao-calendar-modular-root [data-cal-scripture-date='2026-08-02'][data-cal-scripture-slot='GOSPEL']");
+ await gospelCapsule.waitFor({state:"visible",timeout:15000});
+ assert.match(await gospelCapsule.textContent(),/Luke 18:9/);
+ const entry=await page.evaluate(()=>{
+   const root=document.getElementById("ao-calendar-modular-root");
+   root.scrollTop=180;
+   // Playwright's touch gesture may scroll the capsule into view before the
+   // click. Capture the actual scroll at activation, which is what the reader
+   // must restore, rather than the artificial pre-tap scroll offset.
+   globalThis.__aoScriptureTapScroll=null;
+   root.addEventListener("click",event=>{
+     if(event.target.closest?.("[data-cal-scripture-slot]"))
+       globalThis.__aoScriptureTapScroll=root.scrollTop;
+   },{capture:true,once:true});
+   return {date:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate};
+ });
+ assert.equal(entry.date,"2026-08-02");
+ await gospelCapsule.tap();
+ await page.locator("#ao-scripture-overlay:not([hidden]) [data-ao-scripture-context-reader]").waitFor({state:"visible",timeout:15000});
+ assert.match(await page.locator("#ao-scripture-overlay [data-ao-scripture-context-reader]").getAttribute("data-ao-scripture-context-reader"),/Luke 18:9/);
+ await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
+ await page.waitForFunction(()=>document.getElementById("ao-scripture-overlay")?.hidden===true,null,{timeout:10000});
+ const returned=await page.evaluate(()=>({
+   date:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate,
+   view:document.getElementById("ao-calendar-modular-root")?.dataset?.aoCalendarView,
+   scroll:document.getElementById("ao-calendar-modular-root")?.scrollTop,
+   focus:document.activeElement?.dataset?.calScriptureSlot
+ }));
+ assert.equal(returned.date,entry.date,"Scripture return lost Calendar's exact date");
+ assert.equal(returned.view,"day","Scripture return changed Calendar's selected view");
+ const activatedScroll=await page.evaluate(()=>globalThis.__aoScriptureTapScroll);
+ assert.ok(Number.isFinite(activatedScroll),"Calendar did not record the real touch activation scroll");
+ assert.ok(Math.abs(returned.scroll-activatedScroll)<=2,
+   "Scripture return lost Calendar scroll position at touch activation");
+ assert.equal(returned.focus,"GOSPEL","Scripture return did not restore the originating reading control");
+ console.log("PASS Calendar Gospel -> source-backed shared Scripture -> same date/view/scroll/focus");
+
 
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
  const fetchedBefore=hits.filter(x=>x.path==="/src/calendar/calendar-runtime.js").length;

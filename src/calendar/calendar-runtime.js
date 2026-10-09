@@ -8,6 +8,7 @@ import { calendarMassColour } from "./colour-projection.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
 import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper.js";
 import { observedCycle } from "./observed-cycle.js";
+import {calendarScriptureContexts} from "./scripture-handoff.js";
 import { calendarObservanceAlias } from "./observance-title.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
@@ -539,6 +540,50 @@ function practiceContext(selected,r){
     ${disciplineRelevant?disciplineReference(intel.discipline):""}
   </section>`;
 }
+function calendarScriptureControls(selected,r){
+  const rows=calendarScriptureContexts(r);
+  if(!rows.length)return "";
+  const slotLabel=slot=>slot==="GOSPEL"?L("Gospel","Évangile"):L("Epistle / Lesson","Épître / Lecture");
+  return `<div class="aoCalDayScripture"><small>${esc(L("SCRIPTURE IN CONTEXT","ÉCRITURE EN CONTEXTE"))}</small><div class="aoCalDayScriptureActions">${rows.map(row=>
+    `<button type="button" data-cal-scripture-date="${esc(selected)}" data-cal-scripture-slot="${esc(row.slot)}" aria-label="${esc(slotLabel(row.slot)+" · "+row.reference)}"><strong>${esc(slotLabel(row.slot))}</strong><span>${esc(row.reference)}</span></button>`
+  ).join("")}</div><p class="aoCalDayScriptureError" role="alert" hidden></p></div>`;
+}
+async function openCalendarScripture(button){
+  const origin=root(),selected=String(button.dataset.calScriptureDate||""),slot=button.dataset.calScriptureSlot;
+  if(!origin||calendarView!=="day"||selected!==state()?.selectedDate)return false;
+  const reading=calendarScriptureContexts(resolution()).find(item=>item.slot===slot);
+  if(!reading)return false;
+  const atScroll=origin.scrollTop,language=fr()?"fr":"en";
+  const errorNode=origin.querySelector(".aoCalDayScriptureError");
+  const fail=()=>{
+    const err=origin.querySelector(".aoCalDayScriptureError")||errorNode;
+    if(err){err.textContent=L("This Scripture passage cannot be opened. Please try again.","Ce passage biblique ne peut pas être ouvert. Veuillez réessayer.");err.hidden=false}
+    button.disabled=false;return false;
+  };
+  button.disabled=true;
+  try{
+    const owner=globalThis.AO_SCRIPTURE_APP_V1||
+      (await import("../scripture/browser-entry.js")).installScriptureBrowserOwner(globalThis);
+    if(root()!==origin||state()?.selectedDate!==selected)return fail();
+    const returnToCalendar=()=>{
+      if(root()!==origin||state()?.selectedDate!==selected||calendarView!=="day")return;
+      origin.scrollTop=atScroll;
+      origin.querySelector('[data-cal-scripture-date="'+selected+'"][data-cal-scripture-slot="'+slot+'"]')?.focus?.({preventScroll:true});
+    };
+    const options={language,onCloseReturn:returnToCalendar};
+    const opened=reading.segments
+      ?owner?.openSegments?.(reading.segments,{...options,reference:reading.reference,provenance:reading.provenance})
+      :owner?.openContext?.(reading.reference,options);
+    if(!opened)return fail();
+    if(errorNode){errorNode.textContent="";errorNode.hidden=true}
+    button.disabled=false;return true;
+  }catch(error){
+    console.error("Calendar Scripture handoff failed",error);return fail();
+  }
+}
+function calendarScriptureStyles(){
+ return `.aoCalDayScripture{margin:12px auto 0;max-width:580px;text-align:left}.aoCalDayScripture>small{display:block;color:var(--ao-text-muted,#a6a198);font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em}.aoCalDayScriptureActions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.aoCalDayScriptureActions button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px!important;border:1px solid var(--ao-rule,rgba(226,214,190,.22))!important;background:var(--ao-surface-1,rgba(16,24,33,.94))!important;border-radius:999px!important;color:var(--ao-text-primary,#e9e4d9)!important;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important}.aoCalDayScriptureActions button strong{font-weight:650}.aoCalDayScriptureActions button span{color:var(--ao-text-muted,#a6a198)}.aoCalDayScriptureActions button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}.aoCalDayScriptureActions button:disabled{opacity:.55}.aoCalDayScriptureError:not([hidden]){color:#d9b99a;margin:8px 0 0;font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}`;
+}
 function daySurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),cm=commemorations(r),saint=principalSaintContext(r,selected);
   const season=periodName(p),properReady=!!properOf(r),printReady=assessPrintableProper(r,{language:fr()?"fr":"en"}).ok;
@@ -550,6 +595,7 @@ function daySurface(selected,r){
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
       ${sourceStatus(r)}
       ${daySourceDetails(r)}
+      ${calendarScriptureControls(selected,r)}
       ${properReady?`<button class="aoCalV2Primary" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
       ${printReady?`<button type="button" class="aoCalV2TextLink" data-cal-print-proper>${esc(L("Print bilingual Mass Propers","Imprimer les propres bilingues"))}</button><p data-cal-print-feedback role="status" aria-live="polite"></p>`:""}
     </section>
@@ -824,6 +870,8 @@ function openPrintableProper(){
 }
 function bind(r){
   r.addEventListener("click",event=>{
+    const reading=event.target.closest?.("[data-cal-scripture-slot]");
+    if(reading){event.preventDefault();void openCalendarScripture(reading);return;}
     const yearPeriod=event.target.closest?.("[data-cal-year-period]");
     if(yearPeriod){
       event.preventDefault();
@@ -876,7 +924,7 @@ function open(){
   calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";focusedYearPeriodId=null;if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
-  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}${calendarAuditCss()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();
+  const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();
   const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});return true;
 }
 function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,monthView:calendarMonthView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,pickerMonthId,monthReady:pickerMonthId?monthReady(pickerMonthId):false,monthLoading:pickerMonthId?monthLoads.has(pickerMonthId):false,monthCachedDays:pickerMonthId?monthGridIds(pickerMonthId).filter(x=>weekCache.has(x)).length:0,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}

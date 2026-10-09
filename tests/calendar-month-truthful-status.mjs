@@ -1,6 +1,7 @@
 import { observedCycle, cycleFromCanonicalIdentity } from "../src/calendar/observed-cycle.js";
 import { calendarObservanceAlias } from "../src/calendar/observance-title.js";
 import assert from "node:assert/strict";
+import "./calendar-scripture-handoff.mjs";
 import {readFileSync} from "node:fs";
 import {buildMajorCelebrations,annunciationObservanceDate} from "../src/calendar/liturgical-year.js";
 const runtime=readFileSync("src/calendar/calendar-runtime.js","utf8");
