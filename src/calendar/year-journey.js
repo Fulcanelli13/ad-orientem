@@ -105,6 +105,24 @@ export const yearJourneyCss=`
 .aoCalYearTrack{height:52px}.aoCalYearTrackCaption{grid-template-columns:1fr auto;gap:6px}.aoCalYearTrackCaption span:last-child{display:none}
 .aoCalYearSeasonButton{min-height:76px!important}
 #ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearHeroGrid{padding:18px 15px}
-#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2Ring{width:min(230px,70vw)}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearHero{padding:10px 0 16px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearHeading h2{font-size:32px;margin:2px 0 0}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearHeroGrid{grid-template-columns:clamp(106px,33vw,132px) minmax(0,1fr);gap:12px;padding:13px 12px;margin-top:12px;align-items:center}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2Ring{width:clamp(106px,33vw,132px)}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2Ring:after{inset:9px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2RingCore{width:90px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2RingCore strong{font-size:29px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2RingCore small{font-size:9px;letter-spacing:.04em}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2RingCore span{font-size:10px;margin-top:4px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearIdentity h3{font-size:clamp(17px,5vw,21px);line-height:1.13;margin:4px 0}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearIdentity>small{font-size:10px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2SelectedFeast{font-size:14px;margin:5px 0 8px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearIdentity dl{grid-template-columns:1fr 1fr;gap:4px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearIdentity dl div{padding:6px 0}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearIdentity dt{font-size:9px;letter-spacing:.03em}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2YearIdentity dd{font-size:12px;line-height:1.2}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2MajorLine{padding:6px 0}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2MajorLine small{font-size:9px}
+#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalV2MajorLine button{font-size:13px;padding:3px 0!important;min-height:32px!important}
 }
 `;
