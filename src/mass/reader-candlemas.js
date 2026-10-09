@@ -155,6 +155,10 @@ export function createCandlemasReaderController(args={}){
       recipientAction:recipient?.action??null,
       hasBlessedCandle,
       processionParticipant,
+      // Do not project a participant-only processional posture to somebody
+      // observing the rite from their place.
+      posture:card?.actorScope==="FAITHFUL_WITH_CANDLE_PARTICIPATING" && !processionParticipant
+        ? null : card?.posture??null,
       candleState:processionalLit ? "CANDLE_LIT" : (hasBlessedCandle ? "BLESSED_CANDLE_HELD" : null),
       handoff:card?.handoff??null,
       ordinaryOpeningSuppressed:Boolean(card?.ordinaryOpeningSuppressed),
