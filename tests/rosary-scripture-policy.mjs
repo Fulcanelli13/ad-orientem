@@ -37,6 +37,21 @@ assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4[6].reference,"Munificentissimus
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo5[0].relationship,"MARIAN_TYPOLOGICAL_READING");
 assert.deepEqual(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2.slice(4,7).map(x=>x.reference),
  ["Isaias 53:5","1 Peter 2:23","1 Peter 2:24"]);
+assert.deepEqual(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5.slice(8).map(x=>x.relationship),
+ ["DOGMATIC_TEACHING","DOGMATIC_TEACHING"],"Trent's teaching must own the Eucharistic doctrinal cues");
+assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[8].primaryUrl,/twentysecond-session-of-the-council-of-trent/);
+assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[8].frenchPrimaryUrl,/doctrines-et-canons-sur-le-sacrifice-de-la-messe/);
+assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[9].primaryUrl,/thirteenth-session-of-the-council-of-trent/);
+assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[9].frenchPrimaryUrl,/decret-sur-le-sacrement-de-leucharistie/);
+assert.match(ROSARY_GUIDED_BEAD_EVIDENCE_V1.lum5[8].referenceFr,/Concile de Trente/);
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor4[6].relationship,"DEVOTIONAL_REFLECTION");
+for(const x of [...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4.slice(6),...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo5.slice(6)]){
+ assert.equal(x.frenchWitnessLanguage,"la","papal doctrine should disclose source Latin in French mode");
+ assert.match(x.frenchPrimaryUrl,/vatican\.va\/content\/pius-xii\/la\//);
+}
+const rosaryPolicy=readFileSync("src/pray/rosary-scripture-policy.js","utf8");
+assert.match(rosaryPolicy,/witness\.referenceFr\|\|witness\.reference/);
+assert.match(rosaryPolicy,/frenchWitnessLanguage==="la"/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.lum4[9].en,/keep the vision secret/);
 assert.equal(Object.keys(ROSARY_GUIDED_BEAD_MEDITATIONS_V1).length,20,"all 20 mysteries need guided bead meditations");
 for(const [id,moments] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1)){
