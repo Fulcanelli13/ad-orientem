@@ -1,0 +1,1498 @@
+{
+  "version": "LTF_CERTIFICATION_001_018_V1",
+  "date": "2026-10-09",
+  "status": "SOURCE_MAPPING_RECONCILED_EDITORIAL_REVIEW_PENDING",
+  "scope": {
+    "from": "LTF-001",
+    "to": "LTF-018",
+    "lessonCount": 18
+  },
+  "authority": "Formation-side certification overlay only. The recovered composite remains preserved as evidence and the 433-question St Pius X Catechism remains the doctrine owner.",
+  "selectedDraftPolicy": "Use the v2 claim draft as the primary public-text candidate because it carries claim-level locators; absorb v1 prose only where each explanatory sentence can be independently sourced. The compact mapping is an indexing aid, not public prose.",
+  "sourceWitnesses": [
+    {
+      "id": "PIUS_X_1912",
+      "title": "St Pius X — Catechism of Christian Doctrine, structured English witness",
+      "url": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
+      "verification": "Exact question wording collated for all canonical PXQ references used in LTF-001–018."
+    },
+    {
+      "id": "VATICAN_I_DEI_FILIUS",
+      "title": "First Vatican Council — Dei Filius",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html",
+      "verification": "Chapters II–IV and the corresponding canons checked for the reason/revelation/faith claims in LTF-002, LTF-003 and LTF-005."
+    }
+  ],
+  "batchFindings": {
+    "originalDirectLessons": 17,
+    "originalPartialLessons": 1,
+    "lessonsWithReferenceDifferencesBeforeReview": 17,
+    "sourceReconciledLessons": 18,
+    "publicationApprovedLessons": 0,
+    "frenchNativeEditedLessons": 0,
+    "majorScopeMoves": [
+      "LTF-009: move supernatural destiny/original-justice material to LTF-011/LTF-022.",
+      "LTF-012/013/014/015: separate Christological identity, Incarnation, Redemption, and Resurrection/Ascension instead of repeating the same Q76–94 block.",
+      "LTF-018: remove Q124–130 ecclesial-status catalogue from the Communion of Saints lesson."
+    ],
+    "partialLessonResolution": "LTF-016 expanded with PXQ106 and PXQ115 for a Creed-level account of the Holy Ghost's life-giving and truth-assisting mission in the Church; grace and Confirmation remain separate later lessons."
+  },
+  "lessons": [
+    {
+      "id": "LTF-001",
+      "title": {
+        "en": "Why man exists",
+        "fr": "Pourquoi l’homme existe"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q001",
+        "PX1912-Q013",
+        "PX1912-Q014",
+        "PX1912-Q015",
+        "PX1912-Q016",
+        "PX1912-Q017",
+        "PX1912-Q018",
+        "PX1912-Q027"
+      ],
+      "removedRefs": [
+        "PX1912-Q002",
+        "PX1912-Q004",
+        "PX1912-Q005"
+      ],
+      "summary": {
+        "en": "God created man for a supernatural end: to know, love and serve Him in this life and to enjoy Him eternally in heaven.",
+        "fr": "Dieu a créé l’homme pour une fin surnaturelle : le connaître, l’aimer et le servir en cette vie, puis jouir éternellement de Lui au Ciel."
+      },
+      "claims": [
+        {
+          "en": "Human life has its origin in God, who created us.",
+          "fr": "La vie humaine a son origine en Dieu, qui nous a créés.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ001"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Our final end is to know, love and serve God here below and to enjoy Him eternally in heaven; dying in mortal sin turns the soul away from that final end.",
+          "fr": "Notre fin dernière est de connaître, aimer et servir Dieu ici-bas et de jouir éternellement de Lui au Ciel ; mourir en état de péché mortel détourne l’âme de cette fin dernière.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ013",
+                "PXQ014",
+                "PXQ015",
+                "PXQ016",
+                "PXQ017",
+                "PXQ018"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The Christian life is therefore ordered through faith, the commandments, grace, the sacraments and prayer.",
+          "fr": "La vie chrétienne s’ordonne donc par la foi, les commandements, la grâce, les sacrements et la prière.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ027"
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Removed Q2/Q4/Q5 from the canonical lesson mapping: they describe divine attributes and creation but do not need to be duplicated here."
+      ]
+    },
+    {
+      "id": "LTF-002",
+      "title": {
+        "en": "Knowing God by reason",
+        "fr": "Connaître Dieu par la raison"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q002",
+        "PX1912-Q003",
+        "PX1912-Q004",
+        "PX1912-Q005",
+        "PX1912-Q006",
+        "PX1912-Q007",
+        "PX1912-Q008",
+        "PX1912-Q009",
+        "PX1912-Q010",
+        "PX1912-Q011",
+        "PX1912-Q012",
+        "PX1912-Q052"
+      ],
+      "removedRefs": [],
+      "summary": {
+        "en": "Human reason can know with certainty that God exists from created things, while Revelation gives truths beyond reason’s unaided reach.",
+        "fr": "La raison humaine peut connaître avec certitude l’existence de Dieu à partir des choses créées, tandis que la Révélation donne des vérités qui dépassent les seules forces de la raison."
+      },
+      "claims": [
+        {
+          "en": "The Church teaches that the one true God, beginning and end of all things, can be known with certainty from created things by the natural light of human reason.",
+          "fr": "L’Église enseigne que le Dieu unique et vrai, principe et fin de toutes choses, peut être connu avec certitude à partir des choses créées par la lumière naturelle de la raison humaine.",
+          "sources": [
+            {
+              "source": "VATICAN_I_DEI_FILIUS",
+              "refs": [
+                "ch.II",
+                "canon II.1"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "God is the infinitely perfect Creator and Lord, pure spirit, eternal, present everywhere, all-knowing and almighty.",
+          "fr": "Dieu est le Créateur et Seigneur infiniment parfait, pur esprit, éternel, présent partout, omniscient et tout-puissant.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ002",
+                "PXQ003",
+                "PXQ004",
+                "PXQ005",
+                "PXQ006",
+                "PXQ007",
+                "PXQ008",
+                "PXQ009",
+                "PXQ010"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Creation manifests God’s power, wisdom and goodness, and His providence preserves and directs creatures toward their proper end.",
+          "fr": "La création manifeste la puissance, la sagesse et la bonté de Dieu, et sa Providence conserve les créatures et les dirige vers leur fin propre.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ011",
+                "PXQ012",
+                "PXQ052"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-001",
+        "APOL-002"
+      ]
+    },
+    {
+      "id": "LTF-003",
+      "title": {
+        "en": "Divine Revelation",
+        "fr": "La Révélation divine"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q028",
+        "PX1912-Q029",
+        "PX1912-Q030"
+      ],
+      "removedRefs": [
+        "PX1912-Q031",
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235",
+        "PX1912-Q236"
+      ],
+      "summary": {
+        "en": "God has revealed supernatural truths that we believe on His authority; these mysteries are above reason but never contrary to it.",
+        "fr": "Dieu a révélé des vérités surnaturelles que nous croyons sur son autorité ; ces mystères dépassent la raison sans jamais lui être contraires."
+      },
+      "claims": [
+        {
+          "en": "Revealed truths are believed because God reveals them and can neither deceive nor be deceived.",
+          "fr": "Les vérités révélées sont crues parce que Dieu les révèle et qu’Il ne peut ni se tromper ni nous tromper.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ028"
+              ]
+            },
+            {
+              "source": "VATICAN_I_DEI_FILIUS",
+              "refs": [
+                "ch.III"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The Creed is a profession of the principal mysteries and truths revealed through Christ and the Apostles and taught by the Church.",
+          "fr": "Le Credo est une profession des principaux mystères et vérités révélés par le Christ et les Apôtres et enseignés par l’Église.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ029"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "A mystery is above, but not contrary to, reason; Revelation is necessary for the supernatural end to which God has called man.",
+          "fr": "Un mystère dépasse la raison sans lui être contraire ; la Révélation est nécessaire à la fin surnaturelle à laquelle Dieu a appelé l’homme.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ030"
+              ]
+            },
+            {
+              "source": "VATICAN_I_DEI_FILIUS",
+              "refs": [
+                "ch.II",
+                "ch.IV"
+              ]
+            }
+          ]
+        }
+      ],
+      "internalHandoffs": [
+        "LTF-005",
+        "LTF-006"
+      ],
+      "notes": [
+        "Scripture/Tradition Q233–236 moved to LTF-005/006; Q31 belongs primarily to the principal mysteries/Trinity sequence."
+      ]
+    },
+    {
+      "id": "LTF-004",
+      "title": {
+        "en": "The virtue of faith",
+        "fr": "La vertu de foi"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q232",
+        "PX1912-Q237",
+        "PX1912-Q244",
+        "PX1912-Q245",
+        "PX1912-Q246",
+        "PX1912-Q247"
+      ],
+      "removedRefs": [
+        "PX1912-Q248",
+        "PX1912-Q249"
+      ],
+      "summary": {
+        "en": "Faith is the supernatural virtue by which we believe, on God’s authority, what He has revealed and proposes through the Church.",
+        "fr": "La foi est la vertu surnaturelle par laquelle nous croyons, sur l’autorité de Dieu, ce qu’Il a révélé et propose par l’Église."
+      },
+      "claims": [
+        {
+          "en": "Faith is a supernatural virtue by which we believe, on the authority of God, what He has revealed and proposes through the Church.",
+          "fr": "La foi est une vertu surnaturelle par laquelle nous croyons, sur l’autorité de Dieu, ce qu’Il a révélé et propose par l’Église.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ232"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Certain truths must be believed explicitly, especially the existence of God as rewarder and the principal mysteries of the Faith.",
+          "fr": "Certaines vérités doivent être crues explicitement, notamment l’existence de Dieu rémunérateur et les principaux mystères de la Foi.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ237"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Faith is to be professed, strengthened and lived; when necessary it must be defended without human respect.",
+          "fr": "La foi doit être professée, fortifiée et vécue ; lorsqu’il le faut, elle doit être défendue sans respect humain.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ244",
+                "PXQ245",
+                "PXQ246",
+                "PXQ247"
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Q248 and Q249 concern hope and charity and were removed from the Faith lesson."
+      ]
+    },
+    {
+      "id": "LTF-005",
+      "title": {
+        "en": "Sacred Scripture and Tradition",
+        "fr": "Écriture Sainte et Tradition"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235",
+        "PX1912-Q236"
+      ],
+      "removedRefs": [],
+      "summary": {
+        "en": "Divine Revelation is handed on in Sacred Scripture and Apostolic Tradition under the custody and authoritative interpretation of the Church.",
+        "fr": "La Révélation divine est transmise dans la Sainte Écriture et la Tradition apostolique sous la garde et l’interprétation autorisée de l’Église."
+      },
+      "claims": [
+        {
+          "en": "Sacred Scripture is the collection of books written by divine inspiration and received by the Church as the work of God.",
+          "fr": "La Sainte Écriture est l’ensemble des livres écrits sous l’inspiration divine et reçus par l’Église comme œuvre de Dieu.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ233",
+                "PXQ234"
+              ]
+            },
+            {
+              "source": "VATICAN_I_DEI_FILIUS",
+              "refs": [
+                "ch.II"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Tradition is the teaching of Christ and the Apostles transmitted livingly through the Church.",
+          "fr": "La Tradition est l’enseignement du Christ et des Apôtres transmis de vive voix et conservé par l’Église.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ233",
+                "PXQ235"
+              ]
+            },
+            {
+              "source": "VATICAN_I_DEI_FILIUS",
+              "refs": [
+                "ch.II"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The Church has authority to make known fully and in their true sense the truths contained in Scripture and Tradition.",
+          "fr": "L’Église a autorité pour faire connaître pleinement et dans leur vrai sens les vérités contenues dans l’Écriture et la Tradition.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ236"
+              ]
+            },
+            {
+              "source": "VATICAN_I_DEI_FILIUS",
+              "refs": [
+                "ch.II"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-012",
+        "APOL-013",
+        "APOL-014",
+        "APOL-015"
+      ]
+    },
+    {
+      "id": "LTF-006",
+      "title": {
+        "en": "The Church as teacher",
+        "fr": "L’Église enseignante"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q106",
+        "PX1912-Q112",
+        "PX1912-Q113",
+        "PX1912-Q114",
+        "PX1912-Q115",
+        "PX1912-Q116",
+        "PX1912-Q118",
+        "PX1912-Q119",
+        "PX1912-Q236"
+      ],
+      "removedRefs": [
+        "PX1912-Q105",
+        "PX1912-Q107",
+        "PX1912-Q108",
+        "PX1912-Q109",
+        "PX1912-Q110",
+        "PX1912-Q111",
+        "PX1912-Q117",
+        "PX1912-Q120"
+      ],
+      "summary": {
+        "en": "Christ founded a visible Church and entrusted her legitimate pastors with the mission of teaching revealed truth and guiding men toward holiness and salvation.",
+        "fr": "Le Christ a fondé une Église visible et a confié à ses pasteurs légitimes la mission d’enseigner la vérité révélée et de conduire les hommes vers la sainteté et le salut."
+      },
+      "claims": [
+        {
+          "en": "Christ founded the Church under the Apostles with Saint Peter at their head and gave her the sacrifice, the sacraments and the Holy Spirit who gives her life.",
+          "fr": "Le Christ a fondé l’Église sous l’autorité des Apôtres avec saint Pierre à leur tête et lui a donné le sacrifice, les sacrements et le Saint-Esprit qui lui donne la vie.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ106"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The Pope and the bishops united with him are the legitimate pastors; together they constitute the teaching Church, whose mission is to teach divine truths and laws.",
+          "fr": "Le Pape et les évêques unis à lui sont les pasteurs légitimes ; ensemble ils constituent l’Église enseignante, dont la mission est d’enseigner les vérités et les lois divines.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ112",
+                "PXQ113",
+                "PXQ114"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The teaching Church is assisted so that she does not err when teaching revealed truth; the Pope is infallible when, as pastor and teacher of all Christians, he defines doctrine concerning faith or morals.",
+          "fr": "L’Église enseignante est assistée afin de ne pas errer lorsqu’elle enseigne la vérité révélée ; le Pape est infaillible lorsqu’il définit, comme pasteur et docteur de tous les chrétiens, une doctrine concernant la foi ou les mœurs.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ115",
+                "PXQ116"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "This teaching authority serves the Church’s purpose of providing a sure guide and the means of holiness and salvation, and of authoritatively making known the truths contained in Scripture and Tradition.",
+          "fr": "Cette autorité d’enseignement sert la mission de l’Église : fournir un guide sûr et les moyens de sainteté et de salut, et faire connaître avec autorité les vérités contenues dans l’Écriture et la Tradition.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ118",
+                "PXQ119",
+                "PXQ236"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-016",
+        "APOL-018",
+        "APOL-019",
+        "APOL-020"
+      ],
+      "notes": [
+        "Marks of the Church and membership questions moved to LTF-017; Communion of Saints material moved to LTF-018."
+      ]
+    },
+    {
+      "id": "LTF-007",
+      "title": {
+        "en": "God and His attributes",
+        "fr": "Dieu et ses attributs"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q002",
+        "PX1912-Q003",
+        "PX1912-Q004",
+        "PX1912-Q005",
+        "PX1912-Q006",
+        "PX1912-Q007",
+        "PX1912-Q008",
+        "PX1912-Q009",
+        "PX1912-Q010",
+        "PX1912-Q011",
+        "PX1912-Q012",
+        "PX1912-Q018"
+      ],
+      "removedRefs": [
+        "PX1912-Q019"
+      ],
+      "summary": {
+        "en": "God is the one infinitely perfect Creator and Lord: pure spirit, eternal, omniscient, almighty, infinitely good and just.",
+        "fr": "Dieu est l’unique Créateur et Seigneur infiniment parfait : pur esprit, éternel, omniscient, tout-puissant, infiniment bon et juste."
+      },
+      "claims": [
+        {
+          "en": "God is the most perfect Being, Creator and Lord of heaven and earth, possessing every perfection without defect or limit.",
+          "fr": "Dieu est l’Être souverainement parfait, Créateur et Seigneur du ciel et de la terre, possédant toute perfection sans défaut ni limite.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ002",
+                "PXQ003",
+                "PXQ004",
+                "PXQ005"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "God is pure spirit, immense, eternal, all-knowing and almighty.",
+          "fr": "Dieu est pur esprit, immense, éternel, omniscient et tout-puissant.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ006",
+                "PXQ007",
+                "PXQ008",
+                "PXQ009",
+                "PXQ010"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "God cannot will evil because He is infinite goodness; His providence governs creatures with wisdom, goodness and justice, and His justice rewards good and punishes evil.",
+          "fr": "Dieu ne peut vouloir le mal parce qu’Il est bonté infinie ; sa Providence gouverne les créatures avec sagesse, bonté et justice, et sa justice récompense le bien et punit le mal.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ011",
+                "PXQ012",
+                "PXQ018"
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Q19 belongs to the Trinity lesson and was removed."
+      ]
+    },
+    {
+      "id": "LTF-008",
+      "title": {
+        "en": "The Most Holy Trinity",
+        "fr": "La Très Sainte Trinité"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q019",
+        "PX1912-Q020",
+        "PX1912-Q037",
+        "PX1912-Q038",
+        "PX1912-Q039",
+        "PX1912-Q040",
+        "PX1912-Q041",
+        "PX1912-Q042",
+        "PX1912-Q043",
+        "PX1912-Q044",
+        "PX1912-Q045",
+        "PX1912-Q046",
+        "PX1912-Q047",
+        "PX1912-Q048",
+        "PX1912-Q049",
+        "PX1912-Q050"
+      ],
+      "removedRefs": [
+        "PX1912-Q031",
+        "PX1912-Q032",
+        "PX1912-Q033",
+        "PX1912-Q034",
+        "PX1912-Q035",
+        "PX1912-Q036"
+      ],
+      "summary": {
+        "en": "There is one God in three really distinct and equal Persons: Father, Son and Holy Ghost.",
+        "fr": "Il n’y a qu’un seul Dieu en trois Personnes réellement distinctes et égales : le Père, le Fils et le Saint-Esprit."
+      },
+      "claims": [
+        {
+          "en": "There is one God in three really distinct Persons: Father, Son and Holy Ghost.",
+          "fr": "Il y a un seul Dieu en trois Personnes réellement distinctes : le Père, le Fils et le Saint-Esprit.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ019",
+                "PXQ020",
+                "PXQ037",
+                "PXQ038",
+                "PXQ039",
+                "PXQ040",
+                "PXQ041",
+                "PXQ042",
+                "PXQ043"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The Father does not proceed from another Person; the Son is begotten of the Father; the Holy Ghost proceeds from the Father and the Son.",
+          "fr": "Le Père ne procède d’aucune autre Personne ; le Fils est engendré du Père ; le Saint-Esprit procède du Père et du Fils.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ044",
+                "PXQ045",
+                "PXQ046"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Each Person is fully God, but there are not three gods: the three possess one divine nature and are equal and eternal.",
+          "fr": "Chaque Personne est pleinement Dieu, mais il n’y a pas trois dieux : les trois possèdent une seule nature divine et sont égales et éternelles.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ047",
+                "PXQ048",
+                "PXQ049",
+                "PXQ050"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-010"
+      ],
+      "notes": [
+        "Q31–36 concern the principal mysteries and Sign of the Cross; they remain in Catechism reference but are not needed in this guided lesson."
+      ]
+    },
+    {
+      "id": "LTF-009",
+      "title": {
+        "en": "Creation and Providence",
+        "fr": "Création et Providence"
+      },
+      "status": "SOURCE_RECONCILED_WITH_SCOPE_MOVE",
+      "canonicalCatechismRefs": [
+        "PX1912-Q004",
+        "PX1912-Q011",
+        "PX1912-Q012",
+        "PX1912-Q051",
+        "PX1912-Q052"
+      ],
+      "removedRefs": [
+        "PX1912-Q053",
+        "PX1912-Q067",
+        "PX1912-Q068",
+        "PX1912-Q069"
+      ],
+      "summary": {
+        "en": "God freely created all things from nothing and preserves and governs creation by His providence.",
+        "fr": "Dieu a librement créé toutes choses à partir de rien et conserve et gouverne la création par sa Providence."
+      },
+      "claims": [
+        {
+          "en": "To create is to make from nothing; God is called Creator of heaven and earth because the whole world is His work.",
+          "fr": "Créer signifie faire de rien ; Dieu est appelé Créateur du ciel et de la terre parce que le monde entier est son œuvre.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ004",
+                "PXQ051"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The greatness, beauty and order of the world manifest God’s power, wisdom and goodness.",
+          "fr": "La grandeur, la beauté et l’ordre du monde manifestent la puissance, la sagesse et la bonté de Dieu.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ052"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "God does not abandon creation: He preserves and directs creatures toward their proper end with wisdom, goodness and justice, while permitting created freedom.",
+          "fr": "Dieu n’abandonne pas la création : Il conserve les créatures et les dirige vers leur fin propre avec sagesse, bonté et justice, tout en permettant la liberté créée.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ011",
+                "PXQ012"
+              ]
+            }
+          ]
+        }
+      ],
+      "movedContent": [
+        {
+          "topic": "supernatural destiny, grace and prelapsarian gifts",
+          "to": [
+            "LTF-011",
+            "LTF-022"
+          ],
+          "refs": [
+            "PX1912-Q067",
+            "PX1912-Q068",
+            "PX1912-Q069"
+          ]
+        },
+        {
+          "topic": "creation of pure spirits and the human soul",
+          "to": [
+            "LTF-010",
+            "LTF-011"
+          ],
+          "refs": [
+            "PX1912-Q053"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LTF-010",
+      "title": {
+        "en": "The angels",
+        "fr": "Les anges"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q053",
+        "PX1912-Q054",
+        "PX1912-Q055",
+        "PX1912-Q056",
+        "PX1912-Q057",
+        "PX1912-Q058",
+        "PX1912-Q059"
+      ],
+      "removedRefs": [],
+      "summary": {
+        "en": "Angels are created pure spirits who serve God; the good angels assist us, while the demons are angels who rebelled.",
+        "fr": "Les anges sont des esprits purs créés qui servent Dieu ; les bons anges nous assistent, tandis que les démons sont des anges qui se sont révoltés."
+      },
+      "claims": [
+        {
+          "en": "God created pure spirits: intelligent beings without bodies.",
+          "fr": "Dieu a créé des esprits purs : des êtres intelligents sans corps.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ053",
+                "PXQ054",
+                "PXQ055"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The good angels are ministers of God; God entrusts each person to a guardian angel, toward whom we owe veneration and gratitude.",
+          "fr": "Les bons anges sont les ministres de Dieu ; Dieu confie chaque personne à un ange gardien, envers lequel nous devons vénération et reconnaissance.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ056",
+                "PXQ057",
+                "PXQ058"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The demons are angels who rebelled against God through pride and now tempt men to evil.",
+          "fr": "Les démons sont des anges qui se sont révoltés contre Dieu par orgueil et qui tentent désormais les hommes au mal.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ059"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LTF-011",
+      "title": {
+        "en": "Man, original justice and the Fall",
+        "fr": "L’homme, la justice originelle et la Chute"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q060",
+        "PX1912-Q061",
+        "PX1912-Q062",
+        "PX1912-Q063",
+        "PX1912-Q064",
+        "PX1912-Q065",
+        "PX1912-Q066",
+        "PX1912-Q067",
+        "PX1912-Q068",
+        "PX1912-Q069",
+        "PX1912-Q070",
+        "PX1912-Q071",
+        "PX1912-Q072",
+        "PX1912-Q073",
+        "PX1912-Q074",
+        "PX1912-Q075"
+      ],
+      "removedRefs": [],
+      "summary": {
+        "en": "Man is a rational creature composed of body and an immortal spiritual soul, created for supernatural beatitude but wounded by Adam’s Fall and original sin.",
+        "fr": "L’homme est une créature raisonnable composée d’un corps et d’une âme spirituelle immortelle, créée pour la béatitude surnaturelle mais blessée par la Chute d’Adam et le péché originel."
+      },
+      "claims": [
+        {
+          "en": "Man is composed of body and an immortal spiritual soul capable of knowing, loving and serving God, and he possesses genuine freedom ordered to the good.",
+          "fr": "L’homme est composé d’un corps et d’une âme spirituelle immortelle, capable de connaître, aimer et servir Dieu ; il possède une liberté réelle ordonnée au bien.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ060",
+                "PXQ061",
+                "PXQ062",
+                "PXQ063",
+                "PXQ064",
+                "PXQ065"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The first human beings, Adam and Eve, were created in a state elevated by grace and supernatural gifts.",
+          "fr": "Les premiers êtres humains, Adam et Ève, furent créés dans un état élevé par la grâce et des dons surnaturels.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ066",
+                "PXQ067",
+                "PXQ068",
+                "PXQ069"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Adam’s grave sin of pride and disobedience deprived mankind of original grace and supernatural gifts, leaving human nature subject to sin, suffering, ignorance, disordered inclinations and death; this privation is transmitted as original sin.",
+          "fr": "Le grave péché d’orgueil et de désobéissance d’Adam priva l’humanité de la grâce originelle et des dons surnaturels, laissant la nature humaine soumise au péché, à la souffrance, à l’ignorance, aux inclinations désordonnées et à la mort ; cette privation est transmise comme péché originel.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ070",
+                "PXQ071",
+                "PXQ072",
+                "PXQ073",
+                "PXQ074",
+                "PXQ075"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LTF-012",
+      "title": {
+        "en": "Jesus Christ",
+        "fr": "Jésus-Christ"
+      },
+      "status": "SOURCE_RECONCILED_WITH_SCOPE_TRIM",
+      "canonicalCatechismRefs": [
+        "PX1912-Q021",
+        "PX1912-Q022",
+        "PX1912-Q023",
+        "PX1912-Q024",
+        "PX1912-Q080",
+        "PX1912-Q086",
+        "PX1912-Q087",
+        "PX1912-Q088"
+      ],
+      "removedRefs": [
+        "PX1912-Q025",
+        "PX1912-Q026",
+        "PX1912-Q076",
+        "PX1912-Q077",
+        "PX1912-Q078",
+        "PX1912-Q079",
+        "PX1912-Q090",
+        "PX1912-Q091",
+        "PX1912-Q092",
+        "PX1912-Q093",
+        "PX1912-Q094"
+      ],
+      "summary": {
+        "en": "Jesus Christ is the eternal Son of God made man, true God and true man, whose teaching and miracles reveal His divine mission.",
+        "fr": "Jésus-Christ est le Fils éternel de Dieu fait homme, vrai Dieu et vrai homme, dont l’enseignement et les miracles manifestent la mission divine."
+      },
+      "claims": [
+        {
+          "en": "Jesus Christ is the second Person of the Most Holy Trinity made man: true God and true man.",
+          "fr": "Jésus-Christ est la deuxième Personne de la Très Sainte Trinité faite homme : vrai Dieu et vrai homme.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ021",
+                "PXQ022",
+                "PXQ023",
+                "PXQ024"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Jesus openly declared His divine Sonship and taught by both word and example how to live according to God.",
+          "fr": "Jésus a déclaré ouvertement sa filiation divine et a enseigné, par sa parole comme par son exemple, comment vivre selon Dieu.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ080",
+                "PXQ086"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "His miracles, and especially the Resurrection, confirmed His doctrine and showed His divine authority.",
+          "fr": "Ses miracles, et surtout la Résurrection, ont confirmé sa doctrine et manifesté son autorité divine.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ087",
+                "PXQ088"
+              ]
+            }
+          ]
+        }
+      ],
+      "internalHandoffs": [
+        "LTF-013",
+        "LTF-014",
+        "LTF-015"
+      ],
+      "crossLinks": [
+        "APOL-007",
+        "APOL-008",
+        "APOL-009",
+        "APOL-011"
+      ]
+    },
+    {
+      "id": "LTF-013",
+      "title": {
+        "en": "The Incarnation",
+        "fr": "L’Incarnation"
+      },
+      "status": "SOURCE_RECONCILED_WITH_SCOPE_TRIM",
+      "canonicalCatechismRefs": [
+        "PX1912-Q021",
+        "PX1912-Q022",
+        "PX1912-Q023",
+        "PX1912-Q024",
+        "PX1912-Q076",
+        "PX1912-Q077",
+        "PX1912-Q078",
+        "PX1912-Q079",
+        "PX1912-Q081",
+        "PX1912-Q082",
+        "PX1912-Q083"
+      ],
+      "removedRefs": [
+        "PX1912-Q025",
+        "PX1912-Q080",
+        "PX1912-Q084",
+        "PX1912-Q085"
+      ],
+      "summary": {
+        "en": "In the Incarnation the eternal Son assumed a true human nature without ceasing to be God; Jesus Christ is one divine Person in two natures.",
+        "fr": "Dans l’Incarnation, le Fils éternel a assumé une véritable nature humaine sans cesser d’être Dieu ; Jésus-Christ est une seule Personne divine en deux natures."
+      },
+      "claims": [
+        {
+          "en": "The second Person of the Trinity became man by taking a true body and soul in the womb of the Virgin Mary by the work of the Holy Ghost, without ceasing to be God.",
+          "fr": "La deuxième Personne de la Trinité s’est faite homme en prenant un véritable corps et une véritable âme dans le sein de la Vierge Marie par l’œuvre du Saint-Esprit, sans cesser d’être Dieu.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ021",
+                "PXQ022",
+                "PXQ023",
+                "PXQ024",
+                "PXQ076",
+                "PXQ077"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "In Christ there are two natures, divine and human, but only one Person: the divine Person of the Son.",
+          "fr": "Dans le Christ il y a deux natures, divine et humaine, mais une seule Personne : la Personne divine du Fils.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ078",
+                "PXQ079",
+                "PXQ081"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Mary is truly Mother of God because the one whom she bore is the divine Son made man; Saint Joseph is His foster-father and guardian.",
+          "fr": "Marie est véritablement Mère de Dieu parce que Celui qu’elle a enfanté est le Fils divin fait homme ; saint Joseph est son père nourricier et son gardien.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ082",
+                "PXQ083"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-010",
+        "APOL-032"
+      ]
+    },
+    {
+      "id": "LTF-014",
+      "title": {
+        "en": "The Redemption",
+        "fr": "La Rédemption"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q025",
+        "PX1912-Q026",
+        "PX1912-Q086",
+        "PX1912-Q089",
+        "PX1912-Q090",
+        "PX1912-Q091"
+      ],
+      "removedRefs": [
+        "PX1912-Q092"
+      ],
+      "summary": {
+        "en": "Christ redeemed us by offering Himself in sacrifice, satisfying for sin and reconciling man with God.",
+        "fr": "Le Christ nous a rachetés en s’offrant en sacrifice, en satisfaisant pour le péché et en réconciliant l’homme avec Dieu."
+      },
+      "claims": [
+        {
+          "en": "The Son of God became man to save us from sin and restore the way to heaven.",
+          "fr": "Le Fils de Dieu s’est fait homme pour nous sauver du péché et nous rouvrir le chemin du Ciel.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ025"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Christ made satisfaction for our sins by suffering and sacrificing Himself on the Cross, thereby reconciling us with God.",
+          "fr": "Le Christ a satisfait pour nos péchés en souffrant et en s’offrant en sacrifice sur la Croix, nous réconciliant ainsi avec Dieu.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ026",
+                "PXQ086"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Christ truly died according to His human nature; His soul descended to the just awaiting redemption, and His body remained in the tomb until the Resurrection.",
+          "fr": "Le Christ est réellement mort selon sa nature humaine ; son âme est descendue auprès des justes qui attendaient la Rédemption, et son corps est demeuré au tombeau jusqu’à la Résurrection.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ089",
+                "PXQ090",
+                "PXQ091"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-011"
+      ]
+    },
+    {
+      "id": "LTF-015",
+      "title": {
+        "en": "The Resurrection and Ascension",
+        "fr": "La Résurrection et l’Ascension"
+      },
+      "status": "SOURCE_RECONCILED",
+      "canonicalCatechismRefs": [
+        "PX1912-Q090",
+        "PX1912-Q091",
+        "PX1912-Q092",
+        "PX1912-Q093",
+        "PX1912-Q094"
+      ],
+      "removedRefs": [],
+      "summary": {
+        "en": "Christ truly rose from the dead, remained with His disciples for forty days and then ascended into heaven.",
+        "fr": "Le Christ est réellement ressuscité d’entre les morts, est demeuré quarante jours avec ses disciples, puis est monté au Ciel."
+      },
+      "claims": [
+        {
+          "en": "Christ truly rose after His body had remained in the tomb until the third day.",
+          "fr": "Le Christ est réellement ressuscité après que son corps fut demeuré au tombeau jusqu’au troisième jour.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ090",
+                "PXQ091"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "He remained on earth for forty days after the Resurrection to show that He had truly risen, confirm the disciples in faith and instruct them more deeply.",
+          "fr": "Il demeura quarante jours sur terre après la Résurrection afin de montrer qu’Il était vraiment ressuscité, de confirmer les disciples dans la foi et de les instruire plus profondément.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ092",
+                "PXQ093"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "He then ascended into heaven; as God He is everywhere, and as God and man He is in heaven and truly present in the Most Holy Sacrament.",
+          "fr": "Il monta ensuite au Ciel ; comme Dieu Il est partout, et comme Dieu et homme Il est au Ciel et réellement présent dans le Très Saint Sacrement.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ092",
+                "PXQ094"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-009"
+      ]
+    },
+    {
+      "id": "LTF-016",
+      "title": {
+        "en": "The Holy Ghost",
+        "fr": "Le Saint-Esprit"
+      },
+      "status": "SOURCE_RECONCILED_WITH_SCOPE_EXPANSION",
+      "canonicalCatechismRefs": [
+        "PX1912-Q020",
+        "PX1912-Q043",
+        "PX1912-Q046",
+        "PX1912-Q047",
+        "PX1912-Q048",
+        "PX1912-Q049",
+        "PX1912-Q050",
+        "PX1912-Q106",
+        "PX1912-Q115"
+      ],
+      "removedRefs": [
+        "PX1912-Q038"
+      ],
+      "summary": {
+        "en": "The Holy Ghost is the third divine Person, proceeding from the Father and the Son, fully God and active in the life and teaching of the Church.",
+        "fr": "Le Saint-Esprit est la troisième Personne divine, procédant du Père et du Fils, pleinement Dieu et agissant dans la vie et l’enseignement de l’Église."
+      },
+      "claims": [
+        {
+          "en": "The Holy Ghost is the third Person of the Most Holy Trinity.",
+          "fr": "Le Saint-Esprit est la troisième Personne de la Très Sainte Trinité.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ020",
+                "PXQ043"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "He proceeds from the Father and the Son and is fully God, equal and eternal with the Father and the Son.",
+          "fr": "Il procède du Père et du Fils et est pleinement Dieu, égal et éternel au Père et au Fils.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ046",
+                "PXQ047",
+                "PXQ048",
+                "PXQ049",
+                "PXQ050"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Christ gave the Holy Ghost to His Church as the Spirit who gives her life and continually assists the teaching Church in the truth.",
+          "fr": "Le Christ a donné le Saint-Esprit à son Église comme l’Esprit qui lui donne la vie et assiste continuellement l’Église enseignante dans la vérité.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ106",
+                "PXQ115"
+              ]
+            }
+          ]
+        }
+      ],
+      "internalHandoffs": [
+        "LTF-022",
+        "LTF-025",
+        "LTF-053"
+      ],
+      "notes": [
+        "The original compact mapping was genuinely partial. Q106 and Q115 supply a Creed-level ecclesial mission without duplicating the later lessons on grace and Confirmation."
+      ]
+    },
+    {
+      "id": "LTF-017",
+      "title": {
+        "en": "The Catholic Church",
+        "fr": "L’Église catholique"
+      },
+      "status": "SOURCE_RECONCILED_WITH_SCOPE_TRIM",
+      "canonicalCatechismRefs": [
+        "PX1912-Q105",
+        "PX1912-Q106",
+        "PX1912-Q107",
+        "PX1912-Q108",
+        "PX1912-Q109",
+        "PX1912-Q110",
+        "PX1912-Q111",
+        "PX1912-Q118",
+        "PX1912-Q119",
+        "PX1912-Q120",
+        "PX1912-Q131",
+        "PX1912-Q132"
+      ],
+      "removedRefs": [
+        "PX1912-Q112",
+        "PX1912-Q113",
+        "PX1912-Q114",
+        "PX1912-Q115",
+        "PX1912-Q116",
+        "PX1912-Q117"
+      ],
+      "summary": {
+        "en": "The Catholic Church is the visible society founded by Christ, one, holy, catholic and apostolic, in which He provides a sure guide and the means of holiness and salvation.",
+        "fr": "L’Église catholique est la société visible fondée par le Christ, une, sainte, catholique et apostolique, dans laquelle Il donne un guide sûr et les moyens de sainteté et de salut."
+      },
+      "claims": [
+        {
+          "en": "The Church is the society of the baptized who profess Christ’s faith and doctrine, share in His sacraments and obey the pastors established by Him; Christ founded her under the Apostles with Saint Peter at their head.",
+          "fr": "L’Église est la société des baptisés qui professent la foi et la doctrine du Christ, participent à ses sacrements et obéissent aux pasteurs établis par Lui ; le Christ l’a fondée sous l’autorité des Apôtres avec saint Pierre à leur tête.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ105",
+                "PXQ106"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The Church of Christ is one, holy, catholic and apostolic.",
+          "fr": "L’Église du Christ est une, sainte, catholique et apostolique.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ107",
+                "PXQ108",
+                "PXQ109",
+                "PXQ110",
+                "PXQ111"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Christ instituted the Church as a sure guide and the bearer of the true faith, sacrifice, sacraments and other spiritual helps ordered to holiness and eternal salvation.",
+          "fr": "Le Christ a institué l’Église comme guide sûr et dépositaire de la vraie foi, du sacrifice, des sacrements et des autres secours spirituels ordonnés à la sainteté et au salut éternel.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ118",
+                "PXQ119",
+                "PXQ120"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The necessity of the Church must be stated together with the distinction between culpable separation and being outside her through no fault of one’s own.",
+          "fr": "La nécessité de l’Église doit être affirmée avec la distinction entre la séparation coupable et la situation de celui qui se trouve hors d’elle sans faute de sa part.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ131",
+                "PXQ132"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-016",
+        "APOL-039",
+        "CR-DOC-07"
+      ],
+      "internalHandoffs": [
+        "LTF-006"
+      ],
+      "notes": [
+        "Papacy/infallibility Q112–116 remain under LTF-006; Q117 is better handled in exact Catechism reference and Apologetics rather than repeated as a polemical guided-course sentence."
+      ]
+    },
+    {
+      "id": "LTF-018",
+      "title": {
+        "en": "The Communion of Saints",
+        "fr": "La Communion des saints"
+      },
+      "status": "SOURCE_RECONCILED_WITH_SCOPE_TRIM",
+      "canonicalCatechismRefs": [
+        "PX1912-Q120",
+        "PX1912-Q121",
+        "PX1912-Q122",
+        "PX1912-Q123"
+      ],
+      "removedRefs": [
+        "PX1912-Q124",
+        "PX1912-Q125",
+        "PX1912-Q126",
+        "PX1912-Q127",
+        "PX1912-Q128",
+        "PX1912-Q129",
+        "PX1912-Q130"
+      ],
+      "summary": {
+        "en": "The Communion of Saints is the supernatural sharing of spiritual goods among the faithful united in Christ, including the blessed in heaven and the souls in purgatory.",
+        "fr": "La Communion des saints est le partage surnaturel des biens spirituels entre les fidèles unis dans le Christ, y compris les bienheureux au Ciel et les âmes du Purgatoire."
+      },
+      "claims": [
+        {
+          "en": "The faithful share in the means of holiness and salvation found in the Church and therefore form a communion in holy things.",
+          "fr": "Les fidèles participent aux moyens de sainteté et de salut présents dans l’Église et forment ainsi une communion dans les choses saintes.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ120",
+                "PXQ121"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "All the faithful form one body in Christ and share in the spiritual good that is and is done in the universal Church, insofar as sin does not impede that participation.",
+          "fr": "Tous les fidèles forment un seul corps dans le Christ et participent au bien spirituel qui existe et s’accomplit dans l’Église universelle, dans la mesure où le péché n’entrave pas cette participation.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ122"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "The blessed in heaven and the souls in purgatory are also joined to us in this communion through charity, intercession and suffrage.",
+          "fr": "Les bienheureux au Ciel et les âmes du Purgatoire sont aussi unis à nous dans cette communion par la charité, l’intercession et les suffrages.",
+          "sources": [
+            {
+              "source": "PIUS_X_1912",
+              "refs": [
+                "PXQ123"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossLinks": [
+        "APOL-035",
+        "APOL-040"
+      ],
+      "notes": [
+        "Q124–130 define categories outside ecclesial communion. They are not needed to teach the Communion of Saints and were removed from this guided lesson to avoid turning it into an ecclesial-status catalogue."
+      ]
+    }
+  ],
+  "reviewGate": {
+    "sourceContextVerifiedForSelectedClaims": true,
+    "catechismEnglishWordingCollated": true,
+    "frenchSourceWitnessCollated": false,
+    "frenchNativeEdited": false,
+    "crossModuleDeduplicationReviewed": true,
+    "publicationApproved": false,
+    "reason": "French source collation/native editorial review and final theological/editorial approval remain outstanding; no public learn.faith route is authorized."
+  }
+}
