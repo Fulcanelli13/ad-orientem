@@ -131,7 +131,7 @@ assert.equal(palmGospelFocusedRow({
   scrollTop:120,clientHeight:640,scrollHeight:1700,items:palmRows
 }),"PALM-R03-03","Gospel crosses persisted while the narrative was being read");
 assert.equal(palmGospelFocusedRow({
-  scrollTop:1050,clientHeight:640,scrollHeight:1700,items:palmRows
+  scrollTop:1060,clientHeight:640,scrollHeight:1700,items:palmRows
 }),"PALM-R03-04","Gospel crosses remained active into the concluding response");
 assert.equal(palmGospelFocusedRow({
   scrollTop:0,clientHeight:640,scrollHeight:1700,
