@@ -161,7 +161,8 @@
     "test:directory-sspx-indicative-bulk": "node tests/directory-sspx-indicative-bulk.mjs",
     "atlas:sync-baselines": "node tools/atlas/sync-census-baselines.mjs --write",
     "atlas:check-baselines": "node tools/atlas/sync-census-baselines.mjs --check",
-    "test:atlas-census": "node tests/european-relic-census.mjs"
+    "test:atlas-census": "node tests/european-relic-census.mjs",
+    "atlas:audit-relic-subjects": "node tools/atlas/audit-relic-subjects.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
