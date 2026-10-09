@@ -1,6 +1,7 @@
 import {
   buildReaderShellMarkup,
   createReaderDomAdapter,
+  toggleReaderTranslation,
   normalizeReaderMoment,
   SCHOLA_SPEEDS,
   DEFAULT_SCHOLA_SPEED,
@@ -218,7 +219,7 @@ guidePopover.hidden=false;
 dispatch("keydown",{key:"ArrowRight",target:{tagName:"BUTTON"},preventDefault(){}});
 expect(nextCount===1,"keyboard advanced Mass beneath an open Guide");
 guidePopover.hidden=true;
-dispatch("keydown",{key:"ArrowRight",target:{tagName:"BUTTON"},preventDefault(){}});
+dispatch("keydown",{key:"ArrowRight",target:{tagName:"ARTICLE"},preventDefault(){}});
 expect(nextCount===2,"keyboard card navigation was lost after Guide closed");
 adapter.destroy();
 expect(registered.get("click")?.size===0&&registered.get("keydown")?.size===0,
@@ -227,5 +228,112 @@ adapter.mount(prepared);
 expect(registered.get("click")?.size===1&&registered.get("keydown")?.size===1,
   "reader remount after destroy did not register one set of listeners");
 adapter.destroy();
+
+
+const translationSpan={textContent:"In principio",ownerDocument:{}};
+const translationNode={
+  dataset:{translateToggle:"true",primaryText:"In principio",altText:"Au commencement",showingAlt:"false"},
+  attrs:{},
+  querySelector(selector){return selector===".ao-line-primary"?translationSpan:null;},
+  setAttribute(name,value){this.attrs[name]=value;},
+};
+expect(toggleReaderTranslation(translationNode),"translation did not activate");
+expect(translationSpan.textContent==="Au commencement","alternate-language text did not render");
+expect(translationNode.attrs["aria-pressed"]==="true","translation toggle state not announced");
+expect(toggleReaderTranslation(translationNode),"translation did not reverse");
+expect(translationSpan.textContent==="In principio","primary-language text was not restored");
+expect(translationNode.attrs["aria-pressed"]==="false","translation toggle did not clear pressed state");
+let switchCount=0;
+const stableMode=createReaderDomAdapter({
+  root:fakeRoot,
+  allowPresentationModeSwitch:true,
+  onPresentationModeChange:()=>{switchCount++;},
+});
+stableMode.mount(prepared);
+stableMode.setMode("LIVE");
+expect(switchCount===0,"re-selecting LIVE rebuilt the reader and displaced the active cue");
+stableMode.setMode("SIMPLE");
+stableMode.setMode("SIMPLE");
+expect(switchCount===1,"re-selecting the active mode rebuilt the reader twice");
+const previousConsoleError=console.error;
+console.error=()=>{};
+try{
+  const failedMode=createReaderDomAdapter({
+    root:fakeRoot,
+    allowPresentationModeSwitch:true,
+    onPresentationModeChange:()=>{throw new Error("MODE_MODEL_UNAVAILABLE");},
+  });
+  failedMode.mount(prepared);
+  failedMode.setMode("MISSAL");
+  expect(failedMode.getMode()==="LIVE","failed mode switch left wrong mode highlighted");
+  failedMode.destroy();
+}finally{console.error=previousConsoleError;}
+
+const translationTarget={
+  tagName:"P",
+  closest(selector){return selector==='[data-translate-toggle="true"]'?translationNode:null;},
+};
+adapter.mount(prepared);
+let preventCount=0;
+dispatch("keydown",{key:"Enter",target:translationTarget,preventDefault(){preventCount++;}});
+expect(translationSpan.textContent==="Au commencement"&&preventCount===1,
+  "Enter failed to activate the paragraph translation control");
+dispatch("keydown",{key:" ",target:translationTarget,preventDefault(){preventCount++;}});
+expect(translationSpan.textContent==="In principio"&&preventCount===2,
+  "Space failed to activate paragraph translation");
+adapter.destroy();
+expect(html.includes('data-schola-translate title="Tap to translate" role="button" tabindex="-1"'),
+  "Schola translation remained a mouse-only div");
+
+// A real animation can be paused while its speed is changed: tempo changes
+// must adjust playback rate without restarting the words at the beginning.
+const listeners=new Map(),queue=[];
+const scholaAnim={
+  playbackRate:1,currentTime:6000,
+  effect:{getTiming:()=>({duration:40000})},
+  pause(){this.paused=true;},play(){this.paused=false;},
+  cancel(){this.cancelled=true;},
+};
+let animationsStarted=0;
+const dock={dataset:{active:"true"},style:{setProperty(){}}};
+const line={scrollWidth:650,style:{},animate(){animationsStarted++;return scholaAnim;}};
+const viewport={clientWidth:280};
+const pauseBtn={setAttribute(){},textContent:""};
+const speedReadout={textContent:""};
+const scrollTrack={style:{}};
+const fakeNodes=new Map([
+  [".ao-schola-dock",dock],['[data-channel="schola"]',dock],
+  ['[data-role="schola"]',line],[".ao-schola-main",viewport],
+  ['[data-role="schola-progress"]',scrollTrack],
+  ['[data-role="schola-speed"]',speedReadout],['[data-schola-pause]',pauseBtn],
+]);
+const scholaRoot={
+  innerHTML:"",dataset:{},ownerDocument:{defaultView:{
+    innerWidth:400,
+    requestAnimationFrame(fn){queue.push(fn);return queue.length;},
+    cancelAnimationFrame(){},
+    localStorage:{getItem:()=>null,setItem(){}},
+  }},
+  querySelector(selector){return fakeNodes.get(selector)??null;},
+  querySelectorAll(){return [];},
+  addEventListener(type,fn){listeners.set(type,fn);},
+  removeEventListener(type,fn){if(listeners.get(type)===fn)listeners.delete(type);},
+};
+const scholaAdapter=createReaderDomAdapter({root:scholaRoot});
+scholaAdapter.mount(prepared);
+scholaAdapter.renderMoment({
+  id:"SCHOLA",sectionTitle:"Credo",cardUpdate:false,
+  schola:{label:"Credo",latin:"Credo",english:"I believe",trackId:"CREDO",segmentId:"s1",cueId:"c1",index:0,total:2,complete:false},
+});
+while(queue.length){const cb=queue.shift();cb();if(animationsStarted>0)break;}
+expect(animationsStarted===1,"Schola initial animation failed to start");
+listeners.get("click")({target:{closest(selector){return selector==='[data-schola-pause]'?{}:null;}}});
+expect(scholaAnim.paused===true,"Schola did not pause before speed change");
+const time=scholaAnim.currentTime;
+listeners.get("click")({target:{closest(selector){return selector==='[data-schola-faster]'?{}:null;}}});
+expect(scholaAnim.playbackRate>1,"changing Schola speed while paused did not retime existing animation");
+expect(scholaAnim.currentTime===time,"Schola speed adjustment reset the current reading position");
+expect(animationsStarted===1,"Schola speed adjustment unnecessarily restarted the current phrase");
+scholaAdapter.destroy();
 
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");

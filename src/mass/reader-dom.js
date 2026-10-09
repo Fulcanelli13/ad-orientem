@@ -752,7 +752,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-page" data-role="schola-page"></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
-    <div class="ao-schola-main" data-schola-translate title="Tap to translate"><span data-role="schola">—</span></div>
+    <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Show Schola translation" aria-pressed="false" aria-disabled="true"><span data-role="schola">—</span></div>
     <div class="ao-schola-translation" data-role="schola-translation" aria-live="polite"></div>
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
@@ -829,6 +829,22 @@ function applyIcon(root, slot, key, iconResolver){
   }
 }
 
+export function toggleReaderTranslation(node){
+  if(node?.dataset?.translateToggle!=="true")return false;
+  const primary=node.querySelector?.(".ao-line-primary");
+  if(!primary)return false;
+  const showingAlt=node.dataset.showingAlt==="true";
+  const text=showingAlt ? node.dataset.primaryText : node.dataset.altText;
+  if(text==null)return false;
+  renderReaderText(primary,text,{
+    anchor:node.dataset.ritualAnchor??null,
+    active:node.dataset.ritualCueActive==="true",
+  });
+  node.dataset.showingAlt=String(!showingAlt);
+  node.setAttribute?.("aria-pressed",String(!showingAlt));
+  return true;
+}
+
 export function createReaderDomAdapter({
   root,
   iconResolver = null,
@@ -867,6 +883,7 @@ export function createReaderDomAdapter({
   let scholaProgressRaf=0;
   let scholaFallbackTimer=0;
   let scholaTickerIdentity=null;
+  let scholaTickerFinishedIdentity=null;
   let suppressNavClickUntil=0;
   let suppressNavClickDirection=null;
   let suppressModeClickUntil=0;
@@ -876,15 +893,39 @@ export function createReaderDomAdapter({
 
   function setMode(next){
     const requested=normalizePresentationMode(next);
-    if(!allowPresentationModeSwitch && requested!==mode) return mode;
+    if(!allowPresentationModeSwitch && requested!==mode)return mode;
+    // Re-selecting a mode must not rebuild the 48-card reader or reset the cue.
+    if(requested===mode)return mode;
+    const previous=mode;
+    const applyChrome=()=>{
+      const shell=root.querySelector("[data-ao-reader-shell]");
+      if(shell)shell.dataset.mode=mode;
+      for(const button of root.querySelectorAll?.("[data-reader-mode]")??[]){
+        button.setAttribute("aria-pressed",String(button.dataset.readerMode===mode));
+      }
+      syncRailVisibility(root);
+    };
     mode=requested;
-    const shell=root.querySelector("[data-ao-reader-shell]");
-    if(shell) shell.dataset.mode=mode;
-    for(const button of root.querySelectorAll?.("[data-reader-mode]") ?? []){
-      button.setAttribute("aria-pressed",String(button.dataset.readerMode===mode));
+    applyChrome();
+    try{
+      onPresentationModeChange?.(mode,prepared);
+      root.querySelector?.(".aoMassModeError")?.remove?.();
+    }catch(error){
+      mode=previous;
+      applyChrome();
+      const panel=root.querySelector?.('[data-role="mass-preferences"]');
+      const doc=panel?.ownerDocument;
+      panel?.querySelector?.(".aoMassModeError")?.remove?.();
+      if(doc?.createElement){
+        const warning=doc.createElement("p");
+        warning.className="aoMassModeError";
+        warning.setAttribute("role","alert");
+        warning.textContent="Reader mode could not change. Current position retained.";
+        warning.style.cssText="font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#e5c8ab;margin:8px 0";
+        panel.append(warning);
+      }
+      console.error("R17 Mass mode switch failed",error);
     }
-    syncRailVisibility(root);
-    if(typeof onPresentationModeChange==="function") onPresentationModeChange(mode,prepared);
     return mode;
   }
 
@@ -1006,6 +1047,8 @@ export function createReaderDomAdapter({
   }
 
   function finishScholaTicker(identity){
+    if(identity!==scholaTickerIdentity)return;
+    scholaTickerFinishedIdentity=identity;
     const progress=root.querySelector('[data-role="schola-progress"]');
     if(progress)progress.style.width="100%";
     scholaAnimation=null;scholaProgressRaf=0;scholaFallbackTimer=0;
@@ -1037,9 +1080,11 @@ export function createReaderDomAdapter({
       if(progress)progress.style.width="100%";
       return false;
     }
+    if(!force && scholaTickerFinishedIdentity===identity)return false;
     if(!force && scholaTickerIdentity===identity && scholaAnimation)return true;
     cancelScholaTicker();
     scholaTickerIdentity=identity;
+    scholaTickerFinishedIdentity=null;
     if(progress)progress.style.width="0%";
     line.style.transform="";
     if(scholaPaused||scholaTranslationVisible)return false;
@@ -1096,10 +1141,26 @@ export function createReaderDomAdapter({
     const nextIndex=Math.max(0,Math.min(SCHOLA_SPEEDS.length-1,currentIndex+Number(delta||0)));
     const next=SCHOLA_SPEEDS[nextIndex];
     if(next===scholaSpeed)return scholaSpeed;
+    const oldSpeed=scholaSpeed;
     scholaSpeed=next;
     storeScholaSpeed();
     syncScholaControls();
-    if(!scholaPaused&&!scholaTranslationVisible)startScholaTicker({force:true});
+    if(scholaAnimation){
+      // Change the running or paused WAAPI clock without losing reading position.
+      const viewport=root.querySelector(".ao-schola-main");
+      const line=root.querySelector('[data-role="schola"]');
+      const measures={
+        viewportWidth:viewport?.clientWidth??0,
+        lineWidth:line?.scrollWidth??0,
+        isMobile:Number(scholaWindow()?.innerWidth||0)<760,
+      };
+      const before=scholaTickerDuration({...measures,speed:oldSpeed});
+      const after=scholaTickerDuration({...measures,speed:next});
+      const rate=Number(scholaAnimation.playbackRate)||1;
+      scholaAnimation.playbackRate=rate*(before/after);
+    }else if(!scholaPaused&&!scholaTranslationVisible && scholaTickerFinishedIdentity!==scholaTickerIdentity){
+      startScholaTicker({force:true});
+    }
     return scholaSpeed;
   }
 
@@ -1111,10 +1172,18 @@ export function createReaderDomAdapter({
     const changed=identity!==scholaIdentity;
     if(changed){
       scholaIdentity=identity;
+      scholaTickerFinishedIdentity=null;
       scholaTranslationVisible=false;
       cancelScholaTicker({clearIdentity:true});
     }
     dock.dataset.showTranslation=String(Boolean(scholaTranslationVisible && schola?.english));
+    const translationTrigger=root.querySelector("[data-schola-translate]");
+    if(translationTrigger){
+      translationTrigger.setAttribute?.("aria-pressed",String(Boolean(scholaTranslationVisible && schola?.english)));
+      translationTrigger.setAttribute?.("aria-disabled",String(!schola?.english));
+      translationTrigger.setAttribute?.("aria-label",scholaTranslationVisible?"Hide Schola translation":"Show Schola translation");
+      translationTrigger.tabIndex=schola?.english?0:-1;
+    }
     const title=root.querySelector(".ao-schola-kicker");
     if(title)title.textContent=schola ? scholaTitle(schola.trackId) : "SCHOLA";
     setText(root,"schola",schola ? (schola.latin??textValue(schola)) : null);
@@ -1213,6 +1282,29 @@ export function createReaderDomAdapter({
     return result;
   }
 
+  function closeGuide(){
+    const pop=root.querySelector?.('[data-role="guide-popover"]');
+    if(!pop || pop.hidden)return false;
+    pop.hidden=true;pop.replaceChildren?.();
+    root.querySelector?.('[data-role="guide-button"]')?.focus?.();
+    return true;
+  }
+
+  function toggleScholaTranslation(){
+    if(!current?.schola?.english)return false;
+    const opening=!scholaTranslationVisible;
+    if(opening){
+      scholaPausedBeforeTranslation=scholaPaused;
+      scholaTranslationVisible=true;
+      setScholaPaused(true);
+    }else{
+      scholaTranslationVisible=false;
+      if(!scholaPausedBeforeTranslation&&!scholaUserPaused)setScholaPaused(false);
+    }
+    syncScholaContent();
+    return true;
+  }
+
   function unbind(){
     if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
     if(rootKeydownListener)root.removeEventListener?.("keydown",rootKeydownListener);
@@ -1247,7 +1339,10 @@ export function createReaderDomAdapter({
       }
       const sectionButton=event.target?.closest?.("[data-reader-section]");
       if(sectionButton){
-        onSectionSelect?.(sectionButton.dataset.readerSection,current,prepared);
+        // Choosing the current section must not return the text to its first line.
+        if(sectionButton.dataset.readerSection!==current?.id){
+          onSectionSelect?.(sectionButton.dataset.readerSection,current,prepared);
+        }
         closeSectionMenu();
         return;
       }
@@ -1265,16 +1360,7 @@ export function createReaderDomAdapter({
       if(scholaPause){setScholaPaused(!scholaUserPaused,{user:true});return;}
       const scholaTranslate=event.target?.closest?.("[data-schola-translate]");
       if(scholaTranslate && current?.schola?.english){
-        const opening=!scholaTranslationVisible;
-        if(opening){
-          scholaPausedBeforeTranslation=scholaPaused;
-          scholaTranslationVisible=true;
-          setScholaPaused(true);
-        }else{
-          scholaTranslationVisible=false;
-          if(!scholaPausedBeforeTranslation&&!scholaUserPaused)setScholaPaused(false);
-        }
-        syncScholaContent();
+        toggleScholaTranslation();
         return;
       }
       const nav=event.target?.closest?.("[data-reader-nav]");
@@ -1288,30 +1374,20 @@ export function createReaderDomAdapter({
         return;
       }
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
-      if(translatable){
-        const primary=translatable.querySelector?.(".ao-line-primary");
-        if(primary){
-          const showingAlt=translatable.dataset.showingAlt === "true";
-          const nextText=showingAlt ? translatable.dataset.primaryText : translatable.dataset.altText;
-          const nextShowingAlt=!showingAlt;
-          renderReaderText(primary,nextText,{
-            anchor:translatable.dataset.ritualAnchor??null,
-            active:translatable.dataset.ritualCueActive==="true",
-          });
-          translatable.dataset.showingAlt=String(nextShowingAlt);
-        }
-        return;
-      }
+      if(translatable){toggleReaderTranslation(translatable);return;}
       const guideClose=event.target?.closest?.("[data-guide-close]");
-      if(guideClose){const pop=root.querySelector('[data-role="guide-popover"]');if(pop){pop.hidden=true;pop.replaceChildren?.();}return;}
+      if(guideClose){closeGuide();return;}
       const guideBackdrop=event.target?.closest?.('[data-role="guide-popover"]');
-      if(guideBackdrop && event.target===guideBackdrop){guideBackdrop.hidden=true;guideBackdrop.replaceChildren?.();return;}
+      if(guideBackdrop && event.target===guideBackdrop){closeGuide();return;}
       const guideButton=event.target?.closest?.('[data-role="guide-button"]');
       if(guideButton && !guideButton.disabled && current?.guide){
         const pop=root.querySelector('[data-role="guide-popover"]');
         if(pop){
-          if(pop.hidden){renderGuideSheet(pop,current.guide);pop.hidden=false;}
-          else{pop.hidden=true;pop.replaceChildren?.();}
+          if(pop.hidden){
+            renderGuideSheet(pop,current.guide);
+            pop.hidden=false;
+            pop.querySelector?.("[data-guide-close]")?.focus?.();
+          }else closeGuide();
         }
         onGuide?.(current.guide,current,prepared);
         return;
@@ -1367,12 +1443,41 @@ export function createReaderDomAdapter({
       },{passive:false});
     }
     rootKeydownListener=event=>{
+      const key=event.key;
+      const pop=root.querySelector?.('[data-role="guide-popover"]');
+      const sectionMenu=root.querySelector?.('[data-role="section-menu"]');
+      const prefs=root.querySelector?.('[data-role="mass-preferences"]');
+      if(key==="Escape"){
+        if(pop?.hidden===false){event.preventDefault?.();closeGuide();return;}
+        if(sectionMenu?.hidden===false){
+          event.preventDefault?.();
+          closeSectionMenu();
+          root.querySelector?.('[data-role="section-jump"]')?.focus?.();
+          return;
+        }
+        if(prefs?.dataset?.open==="true"){
+          event.preventDefault?.();
+          setPreferencesOpen(false);
+          root.querySelector?.("[data-reader-preferences]")?.focus?.();
+          return;
+        }
+      }
       const tag=String(event.target?.tagName??"").toUpperCase();
+      if(key==="Enter"||key===" "){
+        const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
+        if(translatable){event.preventDefault?.();toggleReaderTranslation(translatable);return;}
+        const scholaTranslate=event.target?.closest?.("[data-schola-translate]");
+        if(scholaTranslate && current?.schola?.english){
+          event.preventDefault?.();toggleScholaTranslation();return;
+        }
+      }
       if(["INPUT","SELECT","TEXTAREA"].includes(tag))return;
-      // Navigation beneath an open Guide would dismiss the text the person is reading.
-      if(root.querySelector?.('[data-role="guide-popover"]')?.hidden===false)return;
-      if(event.key==="ArrowRight"){event.preventDefault?.();navigateBy(1,"keyboard");}
-      else if(event.key==="ArrowLeft"){event.preventDefault?.();navigateBy(-1,"keyboard");}
+      if(event.target?.isContentEditable)return;
+      if(pop?.hidden===false || sectionMenu?.hidden===false || prefs?.dataset?.open==="true")return;
+      // Arrow keys inside controls belong to those controls, not Mass navigation.
+      if(["BUTTON","A"].includes(tag) || event.target?.closest?.("button,a,[role=button]"))return;
+      if(key==="ArrowRight"){event.preventDefault?.();navigateBy(1,"keyboard");}
+      else if(key==="ArrowLeft"){event.preventDefault?.();navigateBy(-1,"keyboard");}
     };
     root.addEventListener?.("keydown",rootKeydownListener);
     // v1.80 Mass-preferences mode controls own touch on pointerdown for the
@@ -1551,6 +1656,9 @@ export function createReaderDomAdapter({
             node.dataset.altText=p.alternate;
             node.dataset.showingAlt="false";
             node.tabIndex=0;
+            node.setAttribute("role","button");
+            node.setAttribute("aria-label","Toggle Latin and vernacular text");
+            node.setAttribute("aria-pressed","false");
           }
           const primary=doc.createElement("span");
           primary.className="ao-line-primary";
@@ -1594,6 +1702,7 @@ export function createReaderDomAdapter({
     if(bellHoldTimer)clearTimeout(bellHoldTimer);
     cancelScholaTicker({clearIdentity:true});
     bellHoldTimer=0;heldBell=null;bellHoldUntil=0;
+    scholaTickerFinishedIdentity=null;
     scholaPaused=false;scholaUserPaused=false;scholaTranslationVisible=false;
     prepared=null;current=null;bound=false;sectionItems=[];root.innerHTML="";
   }
