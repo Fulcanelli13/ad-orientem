@@ -67,3 +67,5 @@ jobs:
         run: node tests/sexual-ethics-practical-thirty-passages-v1.mjs
       - name: Practical stage source-role reconciliation 120 of 120
         run: node tests/sexual-ethics-practical-final51-roles-v1.mjs
+      - name: Fifteen high-risk bilingual stage original-opponent and doctrine corrections
+        run: node tests/sexual-ethics-highrisk-bilingual-reader-corrections-v1.mjs
