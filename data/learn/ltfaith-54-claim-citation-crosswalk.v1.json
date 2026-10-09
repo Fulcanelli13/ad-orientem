@@ -8169,5 +8169,102 @@
       "disposition": "REVIEW_BROWSE_INDEX_SCOPE_VERSUS_SOURCE_CLAIM_SCOPE",
       "publishable": false
     }
-  ]
+  ],
+  "editorial_findings": {
+    "original_answer_spot_checks": 2,
+    "original_magisterial_sections_spot_checked": 2,
+    "complete_54_lesson_claim_review": false,
+    "native_french_review": false,
+    "source_role_correction": "BROAD_CATECHISM_INDEX_NOT_PARAGRAPH_CITATION",
+    "findings": [
+      {
+        "id": "LTF-018",
+        "status": "CONTEXT_SCOPE",
+        "primary_anchors": [
+          "PXQ122",
+          "PXQ123"
+        ],
+        "review": "The communion/intercession claims are anchored most directly in Q122–123. Several other browse-index numbers concern historical membership distinctions rather than the central communion argument."
+      },
+      {
+        "id": "LTF-026",
+        "status": "HISTORICAL_DISCIPLINE",
+        "primary_anchors": [
+          "PXQ339"
+        ],
+        "review": "The 1912 Eucharistic fasting rule is historical discipline and must not be displayed as current universally applicable practice."
+      },
+      {
+        "id": "LTF-031",
+        "status": "CANONICAL_DISCIPLINE",
+        "primary_anchors": [
+          "PXQ409",
+          "PXQ410",
+          "PXQ411"
+        ],
+        "review": "Marriage procedures, including civil-form discussion, require present-day applicable canon and civil law before practical instruction."
+      },
+      {
+        "id": "LTF-034",
+        "status": "SOURCE_PRIORITY",
+        "primary_anchors": [
+          "VS60",
+          "VS61",
+          "PXQ161",
+          "PXQ162",
+          "PXQ166",
+          "PXQ168"
+        ],
+        "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+        "review": "The moral conscience claims are grounded directly in Veritatis splendor 60–61. The compact index's sin taxonomy is background, not a direct conscience definition."
+      },
+      {
+        "id": "LTF-051",
+        "status": "FULL_ANSWER_CHECKED",
+        "primary_anchors": [
+          "PXQ385",
+          "CCC1667",
+          "CCC1668",
+          "CCC1670",
+          "CCC1671"
+        ],
+        "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+        "review": "The complete Q385 answer explicitly mentions sacramentals, holy water and blessings. Its question stem alone is misleading. The later Catechism gives the fuller distinction between sacramentals and sacraments."
+      },
+      {
+        "id": "LTF-052",
+        "status": "DOCTRINE_VS_PRECEPTS",
+        "primary_anchors": [
+          "PIUSXII_MEDIATOR_DEI_165",
+          "PXQ184",
+          "PXQ185",
+          "PXQ213"
+        ],
+        "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html",
+        "review": "Liturgical-year theology needs Mediator Dei 165; Sunday and fasting precepts in the 1912 Catechism are not the entire theology. Specific fasting discipline may have changed."
+      },
+      {
+        "id": "LTF-053",
+        "status": "DUPLICATION_BOUNDARY",
+        "primary_anchors": [
+          "PXQ227",
+          "PXQ228",
+          "PXQ229",
+          "PXQ230"
+        ],
+        "handoff": "learn.spiritual_life",
+        "review": "Keep virtue and grace doctrine under Catechism; methods of prayer, examen and living a rule belong to the existing Spiritual Life course."
+      },
+      {
+        "id": "LTF-054",
+        "status": "FULL_ANSWER_CHECKED",
+        "primary_anchors": [
+          "PXQ341"
+        ],
+        "handoff": "learn.rites.sick",
+        "review": "Q341 explicitly mentions Communion as Viaticum in danger of death. Sacramental doctrine remains Catechism-owned; practical sickbed preparation belongs to the Serious Illness guide."
+      }
+    ]
+  },
+  "recommendation": "KEEP_ONE_54_LESSON_CATECHISM_EXPLANATION_CORPUS_IN_RESEARCH; USE_V2_CLAIM_SPECIFIC_LOCATORS_ONLY_AS_EDITORIAL_START; NO_PUBLIC_ROUTE_OR_DUPLICATE_MODULE"
 }
