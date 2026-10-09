@@ -647,6 +647,11 @@ export async function mountNativeReaderPreview({
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
         posture:sourcePosture ? Object.freeze({label:sourcePosture}) : null,
         postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[sourcePosture]??null,
+        ritualTrigger:/^GF-SOP-\d\d-R$/.test(step.recordId)
+          ? Object.freeze({
+            canonicalCueId:step.recordId,anchorLat:"Levate.",
+            owner:"R28_GF_LEVATE_SOURCE",
+          }):null,
         gesture:step.recordId==="GF-PASS-320"
           ? Object.freeze({
               // Keep the exact source action stable for the R28 Good Friday
@@ -680,15 +685,17 @@ export async function mountNativeReaderPreview({
       shownSurface=step?.surfaceKey??null;
       const dying=step?.recordId==="GF-PASS-320";
       const activeFormula=formulaKneelRecord===step?.recordId?step.recordId:null;
+      const activeRise=/^GF-SOP-\d\d-R$/.test(step?.recordId??"")?step.recordId:null;
       for(const paragraph of host.querySelectorAll?.('.ao-reader-paragraph[data-cue-id]')??[]){
         if(paragraph.dataset.cueId==="GF-PASS-320" ||
            /^(GF-SOP-\d\d-[KR]|GF-X-52[123])$/.test(paragraph.dataset.cueId))
           paragraph.dataset.active=String(
             dying&&paragraph.dataset.cueId==="GF-PASS-320" ||
-            activeFormula===paragraph.dataset.cueId
+            activeFormula===paragraph.dataset.cueId ||
+            activeRise===paragraph.dataset.cueId
           );
       }
-      syncReaderRitualHighlights(host,moment?.gesture??null);
+      syncReaderRitualHighlights(host,moment?.ritualTrigger??moment?.gesture??null);
       updateGoodFridayControls();
       root.dataset.r17NativeRiteRecord=step?.recordId??"none";
       root.dataset.r17OwnerGesture=dying?"R28_GF_PASSION_DEATH_SOURCE":
@@ -698,7 +705,7 @@ export async function mountNativeReaderPreview({
       globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
         specialRite:"GOOD_FRIDAY",recordId:step?.recordId??null,
         posture:r28Posture(state),personalState:state.personalState,
-        exactFormulaActive:activeFormula,
+        exactFormulaActive:activeFormula,exactLevateActive:activeRise,
         objectState:state.objectState,deathPause:dying,
       });
       return state.card??null;
