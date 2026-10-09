@@ -27,6 +27,14 @@ async function sample(name){
   serviceWorkers:"block"
  });
  const page=await context.newPage(),errors=[];
+ if(process.env.AO_THIN_NETWORK_LATENCY){
+  const cdp=await context.newCDPSession(page);
+  await cdp.send("Network.enable");
+  await cdp.send("Network.emulateNetworkConditions",{
+   offline:false,latency:Number(process.env.AO_THIN_NETWORK_LATENCY),
+   downloadThroughput:625000,uploadThroughput:300000,
+  });
+ }
  page.on("pageerror",e=>errors.push(e.message));
  const start=Date.now(),offset=all.length;
  await page.goto("http://127.0.0.1:4196/"+name,{waitUntil:"domcontentloaded",timeout:90000});
