@@ -47,6 +47,30 @@ items:[romeItem],counts:{relics:1},selectedId:romeItem.item_id}));
 assert.match(romeUi,/Chapelle des reliques temporairement fermée/);
 
 assert.ok(sacred.relics.some(x=>x.relic_kind==="REPUTED_PASSION_RELIC"));
+
+for(const [id,status] of [
+  ["apparition:ES:pilar-zaragoza","HISTORICAL_TRADITION"],
+  ["apparition:IT:liberian-snow-dream","HISTORICAL_TRADITION"],
+  ["apparition:JP:akita","HISTORICALLY_APPROVED"],
+]){
+  const apparition=sacred.apparitions.find(x=>x.id===id);
+  assert.equal(apparition?.recognition_record,status,"recognition status incorrectly collapsed for "+id);
+  assert.ok(projectionDoesNotAssertDogma(apparition),"historical phenomena may not assert required dogma");
+}
+function projectionDoesNotAssertDogma(record){
+  return !/infallibly proven|must believe|universal approval/.test(record.summary_en??"");
+}
+for(const [placeId,count] of [
+  ["place:PT:fatima-sanctuary",3],
+  ["place:ES:carmel-alba-tormes",3],
+  ["place:IT:santa-maria-maggiore-rome",3],
+  ["place:IT:scala-santa-rome",2],
+]){
+  assert.equal(sacred.relics.filter(r=>r.place_id===placeId).length,count);
+}
+assert.ok(!sacred.relics.some(r=>["place:PS:holy-sepulchre-jerusalem","place:PS:nativity-bethlehem"].includes(r.place_id)),
+  "empty tomb and Nativity grotto are pilgrimage holy places, not bodily relics");
+
 assert.ok(sacred.relics.every(x=>x.authentication==="NOT_INDEPENDENTLY_CERTIFIED_BY_APP"));
 const projection=projectExploreDataset({geography:geo,sacredPhenomena:sacred});
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
