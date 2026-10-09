@@ -127,9 +127,9 @@ try {
   assert.ok(selectedNovena,"Place novena action has no linked ID");
   // The reverse Novena → Explore link must navigate through the app shell,
   // rather than opening the old Explore owner behind the Prayer sheet.
+  const customSummary=page.locator("#aoPray435930 details:has([data-n1-explore]) > summary").first();
   const crossLink=page.locator("#aoPray435930 [data-n1-explore]").first();
-  const customDetails=page.locator("#aoPray435930 details").filter({has:crossLink});
-  await customDetails.locator("summary").click();
+  await customSummary.click();
   await crossLink.click();
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="find",null,{timeout:15000});
   await page.locator("#ao-find-modular-root [data-find-query]").waitFor({state:"visible",timeout:15000});
