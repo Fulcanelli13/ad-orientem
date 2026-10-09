@@ -61,7 +61,7 @@ export function createAppHostAdapter(win = globalThis) {
       return store.subscribe((state) => listener(state?.route ?? null, state));
     },
 
-    hardHome() {
+    async hardHome() {
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
@@ -71,13 +71,23 @@ export function createAppHostAdapter(win = globalThis) {
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const modular = win?.AO_HOME_APP_V1;
       if (typeof modular?.open === "function") {
-        const opened = modular.open();
-        if (opened !== false) return true;
+        try {
+          const opened = await modular.open();
+          if (opened !== false) return true;
+        } catch (error) {
+          try { win?.console?.error?.("Modular Home failed to open", error); } catch {}
+        }
       }
       const nav = win?.AO_NAV_V362;
       if (typeof nav?.home !== "function") return false;
-      nav.home();
-      return true;
+      try {
+        // Legacy Home uses a void return in some releases; only explicit
+        // false means the fallback failed.
+        return (await nav.home()) !== false;
+      } catch (error) {
+        try { win?.console?.error?.("Home fallback failed", error); } catch {}
+        return false;
+      }
     },
 
     openDomain(domain) {
@@ -143,7 +153,7 @@ export function createAppHostAdapter(win = globalThis) {
       }
     },
 
-    openSettings() {
+    async openSettings() {
       // Settings is modular and fail-closed. Close Learn before mounting the
       // Settings overlay so only one non-Mass state owns the visible surface.
       try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
@@ -151,7 +161,12 @@ export function createAppHostAdapter(win = globalThis) {
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const api = settingsApi(win);
       if (typeof api?.open !== "function") return false;
-      return api.open() !== false;
+      try {
+        return (await api.open()) !== false;
+      } catch (error) {
+        try { win?.console?.error?.("Settings owner failed to open", error); } catch {}
+        return false;
+      }
     },
 
     settingsOpen() {
