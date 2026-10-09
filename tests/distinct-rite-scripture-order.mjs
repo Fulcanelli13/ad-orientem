@@ -58,4 +58,38 @@ assert.deepEqual(EV.entries.map(x=>x.nativeStateIds[0]),
 assert.equal(EV.entries[1].displayReference,"Exodus 14:24–31; 15:1");
 assert.equal(EV.entries[2].displayReference,"Isaiah 4:2–6");
 assert.equal(corpus.excludedFromTheseReadings.length,4);
-console.log("PASS Good Friday 3 and Easter Vigil 4 authentic 1962 biblical reading identities, order and separate native rites");
+const palm=corpus.palmSunday;
+assert.equal(palm.riteId,"PALM_SUNDAY_1962");
+assert.equal(palm.canonicalSourcePath,"Tempora/Quad6-0");
+assert.equal(palm.precedingRiteGospel.nativeStateId,"PALM-GSP-020");
+assert.equal(palm.precedingRiteGospel.displayReference,"Matthew 21:1–9");
+assert.equal(palm.massPassion.standardMassProperSlot,"GOSPEL");
+assert.equal(palm.massPassion.nativeStateId,undefined,"No invented palm native state for Mass Passion");
+assert.equal(palm.massPassion.displayReference,"Matthew 26:36–75; 27:1–60");
+assert.ok(palm.massPassion.status.includes("CROSS_CHAPTER"));
+const palmGraph=load("../data/mass/special-days-extension.v1.3.json").graphs.PALM;
+assert.equal(palmGraph.length,12);
+assert.ok(palmGraph.some(x=>x.id===palm.precedingRiteGospel.nativeStateId&&x.phase==="GOSPEL"));
+const palmPayload=load("../data/presentation/reader-palm.v1.json");
+const latin=text=>String(text??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replaceAll("æ","ae").replaceAll("Æ","ae").replaceAll("œ","oe").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+assert.ok(latin(palmPayload.texts.gospel).includes(latin(palm.precedingRiteGospel.latinIncipit)),"Palm source Gospel text no longer matches source witness");
+for(const item of [palm.precedingRiteGospel,palm.massPassion]){
+ for(const segment of item.scriptureSegments)assert.deepEqual(scripturePassage(segment),segment);
+}
+const vigilMass=EV.afterLitanyMass;
+assert.equal(vigilMass.handoffNativeStateId,"EV-MASS-700");
+assert.ok(graphs.EV.some(x=>x.id===vigilMass.handoffNativeStateId&&x.phase==="MASS_HANDOFF"));
+assert.deepEqual(vigilMass.readings.map(x=>x.properSlot),["EPISTLE_OR_LESSON","GOSPEL"]);
+assert.deepEqual(vigilMass.readings.map(x=>x.displayReference),["Colossians 3:1–4","Matthew 28:1–7"]);
+for(const row of vigilMass.readings){
+ assert.ok(row.status==="PROPER_TEXT_HANDOFF_MATCH_REQUIRED");
+ assert.ok(row.latinIncipit.length>=16);
+ assert.equal(row.nativeStateIds,undefined,"The Kyrie handoff must not be misrepresented as an EV reading state");
+ assert.equal(row.scriptureSegments.length,1);
+ assert.deepEqual(scripturePassage(row.scriptureSegments[0]),row.scriptureSegments[0]);
+}
+const feast=load("../data/mass/scripture-feast-reading-supplement.v1.json");
+assert.ok(feast.holds.some(x=>x.sourcePath==="Tempora/Quad6-0"&&x.slot==="GOSPEL"));
+assert.ok(!feast.celebrations.some(x=>x.sourcePath==="Tempora/Quad6-6"),"Special Vigil Mass must not be imported into ordinary generic source registry");
+
+console.log("PASS native GF/EV 7 readings + Palm two distinct Gospels + Vigil post-litany 2 Mass Proper slots, no unsafe context capsules");
