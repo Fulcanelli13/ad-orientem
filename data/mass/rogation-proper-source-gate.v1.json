@@ -50,6 +50,18 @@
       "url": "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
       "status": "FORMULARY_TEXT_CANDIDATE_ONLY",
       "warning": "Page describes III-class white Rogation Week with Gloria and is NOT itself evidence of II-class violet processional Mass rubrics; do not copy the ordinary preparation or ceremonial parts."
+    },
+    {
+      "type": "french_latin_secondary_candidate",
+      "url": "https://laudemus.org/?date=2027-05-03&v=1029",
+      "status": "PROPER_IN_CANDIDATE_FORM_NOT_AUTHORITATIVE_FOR_1962_COLLATION",
+      "warning": "Individual Rogation Proper passages and French renderings occur here, but exact 1962 printed-Missal comparison and text re-use rights remain pending. Generic Ordinary sections shown on a webpage cannot establish Rogation rubrics."
+    },
+    {
+      "type": "historical_repertory_non_normative",
+      "url": "https://usuarium.elte.hu/book/808/conspectuses",
+      "status": "INCIPITS_ONLY_HISTORICAL_CORROBORATION_NOT_1962_WITNESS",
+      "warning": "Pre-1962 material can help identify passage families; it cannot certify 1962 text or wording."
     }
   ],
   "properSections": [
@@ -58,63 +70,162 @@
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Exaudivit de templo sancto suo vocem meam",
+        "passageReference": "Psalm 17:7; verse 17:2–3",
+        "onlineTextHeading": "Entrance / Introït",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "collect",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Præsta, quæsumus, omnipotens Deus: ut, qui in afflictione nostra",
+        "passageReference": "Rogation Collect",
+        "onlineTextHeading": "Collect / Collecte",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "epistle",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Confitemini alterutrum peccata vestra",
+        "passageReference": "James 5:16–20",
+        "onlineTextHeading": "Reading / Epître",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "gradual_alleluia",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Alleluja. Confitemini Domino, quoniam bonus",
+        "passageReference": "Psalm 117:1; verify the exact one-Alleluia construction",
+        "onlineTextHeading": "Chants between the readings / Alléluia",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "gospel",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Quis vestrum habebit amicum",
+        "passageReference": "Luke 11:5–13",
+        "onlineTextHeading": "Gospel / Évangile",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "offertory",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Confitebor Domino nimis in ore meo",
+        "passageReference": "Psalm 108:30–31",
+        "onlineTextHeading": "Offertory / Offertoire",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "secret",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Hæc munera, quæsumus, Domine, et vincula nostræ pravitatis",
+        "passageReference": "Rogation Secret; English absent from one candidate",
+        "onlineTextHeading": "Secret / Secrète",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "communion",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Petite, et accipietis: quærite, et invenietis",
+        "passageReference": "Matthew 7:7–8",
+        "onlineTextHeading": "Communion antiphon / Antienne de communion",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     },
     {
       "key": "postcommunion",
       "latinVerified": false,
       "englishVerified": false,
       "frenchVerified": false,
-      "exactSourceLocator": null
+      "exactSourceLocator": null,
+      "candidate": {
+        "incipit": "Vota nostra, quæsumus, Domine, pio favore prosequere",
+        "passageReference": "Rogation Postcommunion",
+        "onlineTextHeading": "Postcommunion",
+        "sourceLinks": [
+          "https://missale.online/proprium/en/tempore/feria_secunda_in_rogationibus",
+          "https://laudemus.org/?date=2027-05-03&v=1029"
+        ],
+        "status": "DISCOVERED_NOT_COLLATED_TO_1962_MISSALE",
+        "translationRights": "NOT_CLEARED"
+      }
     }
   ],
   "releaseGate": [
@@ -126,5 +237,12 @@
     "No Gloria or Credo; Easter preface verified",
     "Phone EN/FR first-entry/back-navigation proves complete content and mode isolation"
   ],
-  "publicationAllowed": false
+  "publicationAllowed": false,
+  "researchNotes": [
+    "The nine online incipits are candidates, not certified transcriptions of the 1962 Missale Romanum. Keep exactSourceLocator null, all three language verification flags false, and publicationAllowed false until original Missal page/section collation is completed.",
+    "Read only the nine Proper components from secondary pages; generic preparation, Ordinary, Gloria and Credo shown elsewhere on those pages must not be inherited as processional Mass content.",
+    "No English translation was approved for the Secret in the sampled Missale Online witness. Check all English and French renderings independently and retain their provenance and re-use permissions.",
+    "The 1960 general rubrics (especially 80-90, 346-347) govern the class and processional condition, independently of the secondary text source.",
+    "No change to live Mass selection or Calendar ownership."
+  ]
 }
