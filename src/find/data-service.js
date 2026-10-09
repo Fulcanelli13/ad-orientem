@@ -6,6 +6,7 @@ export const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 export const RESEARCH_MASS_REVIEW_DAYS=120;
 export const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
+  Object.freeze({key:"verified-local-round18",file:"verified-local-round18-20261010.v1.json"}),
   Object.freeze({key:"sspx-district",file:"sspx-district-seed.v1.json",geoFile:"sspx-district-seed.geo.v1.json"}),
   Object.freeze({key:"sspx-france",file:"sspx-france-first-party.v1.json",geoFile:"sspx-france-first-party.geo.v1.json"}),
   Object.freeze({key:"sspx-france-second",file:"sspx-france-second-pass.v1.json",geoFile:"sspx-france-second-pass.geo.v1.json"}),
@@ -179,7 +180,7 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
       ministry_id:ministryId,
       service_type:serviceType,
       mass_type:"UNKNOWN",
-      payload:{raw:scheduleRaw},
+      payload:{raw:scheduleRaw,...(row.rr&&typeof row.rr==="object"?{rules:row.rr}:{})},
       source_ids:[scheduleSourceId],
       verification:{
         state:text(row.vs)||"OFFICIAL_VERIFIED",
@@ -196,7 +197,7 @@ export function expandResearchProviderSnapshot(snapshot={}, {geoRecords=[]}={}){
       title:text(row.n),
       url:text(row.su),
       retrieved_at:generatedAt,
-      authority:"PRIMARY",
+      authority:text(row.sa)||"PRIMARY",
       fields_supported:editionSourceId?["venue","venue.contact","schedule"]:["venue","venue.contact","schedule","liturgical_usage"],
     });
     if(editionSourceId){

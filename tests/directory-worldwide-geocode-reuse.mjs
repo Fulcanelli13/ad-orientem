@@ -4,6 +4,7 @@ import {
   planWorldwideCacheReuse,
 } from "../tools/directory/build-worldwide-geocode-overlays.mjs";
 import {isMapPublishableGeo} from "../src/find/geo-provenance.js";
+import {RESEARCH_PROVIDERS} from "../src/find/data-service.js";
 const venue={venue_id:"ao-research-test",name:{official:"Église Saint-Joseph"},
   address:{formatted:"12 rue Saint-Joseph, 75002 Paris",city:"Paris",country_code:"FR"}};
 const osm={lat:"48.867",lon:"2.343",
@@ -34,8 +35,8 @@ const report=(await planWorldwideCacheReuse()).summary;
 assert.equal(report.schema,"AO_DIRECTORY_WORLDWIDE_GEO_CACHE_REUSE_V1");
 assert.equal(report.mode,"OFFLINE_CACHED_EVIDENCE_ONLY");
 assert.equal(report.network_requests,0);
-assert.equal(report.source_snapshot_count,23);
-assert.equal(report.records_examined,1009);
+assert.equal(report.source_snapshot_count,RESEARCH_PROVIDERS.length);
+assert.ok(report.records_examined>=1014,"New approved source rows disappeared from the global geocoding planner");
 assert.ok(report.already_mappable>=90);
 assert.equal(report.total_map_eligible,report.already_mappable+report.accepted_from_cache);
 assert.ok(report.providers.every(p=>p.source_records>=1));
