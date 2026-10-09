@@ -6,6 +6,9 @@ on:
       - 'src/learn/formation-recovery-review.js'
       - 'tests/formation-recovery-review.mjs'
       - 'tests/formation-123-claim-gates.mjs'
+      - 'tests/formation-master-inventory.mjs'
+      - 'docs/FORMATION-MASTER-INVENTORY-2026-10-09.md'
+      - 'data/learn/content-ownership-registry.v1.json'
       - 'data/learn/formation-123-source-claim-gates-2026-10-09.v1.json'
       - 'src/learn/formation-research-preview-data.js'
       - 'src/learn/browser-entry.js'
@@ -52,6 +55,8 @@ jobs:
         run: node tests/contemporary-controversies-21-source-scaffold.mjs
       - name: Verify all 123 source-claim audit gates without claiming certification
         run: node tests/formation-123-claim-gates.mjs
+      - name: Reconcile all Formation owners and recoverable archived lesson branches
+        run: node tests/formation-master-inventory.mjs
       - name: Check Traditional Mass objections and canonical ownership
         run: node tests/traditional-mass-objections-reconciliation.mjs
       - name: Check 30 BAQ/SDV sources and opponent attribution
