@@ -50,7 +50,8 @@ try{
       const active=globalThis.AO_APP_SHELL_V1?.getActive?.()||null;
       if(!node)return {name,selector,mounted:false,active,transition,controls:[]};
       const visible=el=>{
-        if(el.closest("[hidden],[aria-hidden='true'],details:not([open])"))return false;
+        if(el.closest("[hidden],[aria-hidden='true']"))return false;
+        if(el.closest("details:not([open])")&&el.tagName.toLowerCase()!=="summary")return false;
         const style=getComputedStyle(el),rect=el.getBoundingClientRect();
         return style.display!=="none"&&style.visibility!=="hidden"&&rect.width>0&&rect.height>0;
       };
@@ -89,8 +90,12 @@ try{
       "Visible route has no controls: "+name+" "+JSON.stringify(info));
   }
   await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
-  const scripture=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.open?.());
-  assert.equal(scripture,true,"Actual Sacred Scripture overlay did not open from a cold Home return");
+  const scriptureControl=page.locator("[data-home-scripture]").first();
+  await scriptureControl.waitFor({state:"visible",timeout:12000});
+  await scriptureControl.click();
+  await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
+  const scripture=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true);
+  assert.equal(scripture,true,"Actual Home Scripture control did not open the reader");
   const s=await capture("scripture","#ao-scripture-overlay",{ok:scripture,route:"home-overlay"});
   assert.ok(s.mounted&&s.count>0,"Scripture overlay has no usable controls");
   await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.close());
