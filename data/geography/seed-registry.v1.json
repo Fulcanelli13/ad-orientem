@@ -5599,6 +5599,726 @@
       "source_ids": [
         "SHR-IT-basilica-san-domenico-bologna"
       ]
+    },
+    {
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "name": {
+        "official": "Duomo Sant'Andrea, Amalfi",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.63446,
+        "lng": 14.60343,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/254643211",
+        "source_ref": "osm:way:254643211",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Amalfi",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Duomo Sant'Andrea, Amalfi, Amalfi, IT"
+      },
+      "source_ids": [
+        "SHR-IT-amalfi-sant-andrea"
+      ]
+    },
+    {
+      "place_id": "place:IT:ortona-san-tommaso",
+      "name": {
+        "official": "Basilica Concattedrale di San Tommaso, Ortona",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.3572056,
+        "lng": 14.40439,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapy.com/en/?id=12439035&source=osm",
+        "source_ref": "mapy:osm:12439035",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Ortona",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica Concattedrale di San Tommaso, Ortona, Ortona, IT"
+      },
+      "source_ids": [
+        "SHR-IT-ortona-san-tommaso"
+      ]
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "name": {
+        "official": "Cattedrale di Salerno",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.68026,
+        "lng": 14.75989,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/34599454",
+        "source_ref": "mapcarta:34599454",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Salerno",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Cattedrale di Salerno, Salerno, IT"
+      },
+      "source_ids": [
+        "SHR-IT-salerno-duomo"
+      ]
+    },
+    {
+      "place_id": "place:DE:trier-sankt-matthias",
+      "name": {
+        "official": "Benediktinerabtei St Matthias, Trier",
+        "aliases": []
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.73814,
+        "lng": 6.63247,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/136513654",
+        "source_ref": "osm:way:136513654",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "DE",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Trier",
+        "region": null,
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Benediktinerabtei St Matthias, Trier, Trier, DE"
+      },
+      "source_ids": [
+        "SHR-DE-trier-sankt-matthias"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "name": {
+        "official": "Basilica San Bartolomeo all'Isola, Rome",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.89027,
+        "lng": 12.47831,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/49591745",
+        "source_ref": "osm:way:49591745",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Roma",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica San Bartolomeo all'Isola, Rome, Roma, IT"
+      },
+      "source_ids": [
+        "SHR-IT-san-bartolomeo-isola"
+      ]
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "name": {
+        "official": "Basilica Sant'Ambrogio, Milan",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.4625,
+        "lng": 9.17583,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q1071570",
+        "source_ref": "wikidata:Q1071570",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Milano",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica Sant'Ambrogio, Milan, Milano, IT"
+      },
+      "source_ids": [
+        "SHR-IT-sant-ambrogio-milano"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "name": {
+        "official": "Basilica San Pietro in Ciel d'Oro, Pavia",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.191278,
+        "lng": 9.154944,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q2036332",
+        "source_ref": "wikidata:Q2036332",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Pavia",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica San Pietro in Ciel d'Oro, Pavia, Pavia, IT"
+      },
+      "source_ids": [
+        "SHR-IT-san-pietro-ciel-doro"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-giustina-padova",
+      "name": {
+        "official": "Abbazia di Santa Giustina, Padua",
+        "aliases": []
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.39617,
+        "lng": 11.87961,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/131798543",
+        "source_ref": "osm:way:131798543",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Padova",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Abbazia di Santa Giustina, Padua, Padova, IT"
+      },
+      "source_ids": [
+        "SHR-IT-santa-giustina-padova"
+      ]
+    },
+    {
+      "place_id": "place:IT:duomo-milano",
+      "name": {
+        "official": "Duomo di Milano",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.46422,
+        "lng": 9.19056,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/25735328",
+        "source_ref": "mapcarta:25735328",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Milano",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Duomo di Milano, Milano, IT"
+      },
+      "source_ids": [
+        "SHR-IT-duomo-milano"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-chiara-assisi",
+      "name": {
+        "official": "Basilica di Santa Chiara, Assisi",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.06891,
+        "lng": 12.61709,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/36994747",
+        "source_ref": "osm:way:36994747",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Assisi",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica di Santa Chiara, Assisi, Assisi, IT"
+      },
+      "source_ids": [
+        "SHR-IT-santa-chiara-assisi"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "name": {
+        "official": "Santa Maria sopra Minerva, Rome",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.89799,
+        "lng": 12.47837,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/25400176",
+        "source_ref": "osm:way:25400176",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Roma",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Santa Maria sopra Minerva, Rome, Roma, IT"
+      },
+      "source_ids": [
+        "SHR-IT-santa-maria-minerva-rome"
+      ]
+    },
+    {
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "name": {
+        "official": "Chiesa del Gesù, Rome",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.895773,
+        "lng": 12.479007,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://turismoroma.it/en/places/church-jesus",
+        "source_ref": "turismoroma:gesu",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Roma",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Chiesa del Gesù, Rome, Roma, IT"
+      },
+      "source_ids": [
+        "SHR-IT-chiesa-gesu-rome"
+      ]
+    },
+    {
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "name": {
+        "official": "Couvent des Jacobins, Toulouse",
+        "aliases": []
+      },
+      "place_type": "convent",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.60345,
+        "lng": 1.4402,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/37336496",
+        "source_ref": "mapcarta:37336496",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Toulouse",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Couvent des Jacobins, Toulouse, Toulouse, FR"
+      },
+      "source_ids": [
+        "SHR-FR-couvent-jacobins-toulouse"
+      ]
+    },
+    {
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "name": {
+        "official": "Collégiale Sainte-Marthe de Tarascon",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.80563,
+        "lng": 4.65584,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/107869413",
+        "source_ref": "osm:way:107869413",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Tarascon",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Collégiale Sainte-Marthe de Tarascon, Tarascon, FR"
+      },
+      "source_ids": [
+        "SHR-FR-collegiale-sainte-marthe-tarascon"
+      ]
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "name": {
+        "official": "Basilique de la Visitation, Annecy",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.89255,
+        "lng": 6.12763,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/112145208",
+        "source_ref": "osm:way:112145208",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Annecy",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Basilique de la Visitation, Annecy, Annecy, FR"
+      },
+      "source_ids": [
+        "SHR-FR-basilique-visitation-annecy"
+      ]
+    },
+    {
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "name": {
+        "official": "Basilica Sant'Agostino in Campo Marzio, Rome",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.90106,
+        "lng": 12.47427,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/798082894",
+        "source_ref": "osm:way:798082894",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Roma",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica Sant'Agostino in Campo Marzio, Rome, Roma, IT"
+      },
+      "source_ids": [
+        "SHR-IT-sant-agostino-campo-marzio"
+      ]
+    },
+    {
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "name": {
+        "official": "Basilica Maria Ausiliatrice, Turin",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.0810715,
+        "lng": 7.6759955,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://piemonteoutdoor.it/it/interessi/abbazie-e-chiese/basilica-di-maria-ausiliatrice",
+        "source_ref": "piemonteoutdoor:basilica-maria-ausiliatrice",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Torino",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica Maria Ausiliatrice, Turin, Torino, IT"
+      },
+      "source_ids": [
+        "SHR-IT-maria-ausiliatrice-torino"
+      ]
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "name": {
+        "official": "Basilica Sant'Alfonso de Liguori, Pagani",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 40.7423,
+        "lng": 14.6107,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.urbipedia.org/hoja/Bas%C3%ADlica_de_San_Alfonso_Mar%C3%ADa_de_Ligorio",
+        "source_ref": "urbipedia:basilica-sant-alfonso",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Pagani",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica Sant'Alfonso de Liguori, Pagani, Pagani, IT"
+      },
+      "source_ids": [
+        "SHR-IT-sant-alfonso-pagani"
+      ]
+    },
+    {
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "name": {
+        "official": "Basilica Cattedrale di Catania",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 37.5026,
+        "lng": 15.0871,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q1499188",
+        "source_ref": "wikidata:Q1499188",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Catania",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Basilica Cattedrale di Catania, Catania, IT"
+      },
+      "source_ids": [
+        "SHR-IT-cattedrale-sant-agata-catania"
+      ]
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "name": {
+        "official": "Cattedrale di Sant'Eusebio, Vercelli",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.33003,
+        "lng": 8.42225,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/10076134019",
+        "source_ref": "osm:node:10076134019",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Vercelli",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Cattedrale di Sant'Eusebio, Vercelli, Vercelli, IT"
+      },
+      "source_ids": [
+        "SHR-IT-duomo-sant-eusebio-vercelli"
+      ]
     }
   ],
   "directoryPlaceLinks": [
