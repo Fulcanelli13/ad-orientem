@@ -675,7 +675,7 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-next]").isDisabled(),true,
     "Confession must require a preparation-path choice before continuing");
   await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").click();
-  for(let i=0;i<2;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  for(let i=0;i<6;i++)await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-sign-cross",null,{timeout:3000});
   const confessionRail=await page.evaluate(()=>({
     left:document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset??null,
@@ -684,8 +684,12 @@ try{
   }));
   assert.equal(confessionRail.left,"ao-live-sign-cross","Confession in-confessional stage lost the donor Sign-of-Cross cue");
   assert.equal(confessionRail.right,"ao-rich-confession","Confession lost its persistent sacramental identity rail");
-  assert.match(confessionRail.stage,/In Confessional|Au confessionnal/,"Confession rail lost the active stage");
-  await shot("03h-pray-confession-in-confessional");
+  assert.match(confessionRail.stage,/Before entering|Avant d.enter/,"Confession rail must describe preparation, not a simulated in-confessional experience");
+  await shot("03h-pray-confession-before-entering");
+  // Once the first rehearsal card is past, the transient cross cue disappears.
+  await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
+  assert.equal(await page.locator("#aoPray435930 .aoP435930SemanticRail.left").count(),0,"Sign-of-Cross cue must not persist throughout rehearsal");
+  assert.equal(await page.locator("#aoPray435930 [data-ao-confession-card='say-sins']").count(),1);
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
   await page.locator("#aoPray435930 [data-p435930-back]").click();
