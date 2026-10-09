@@ -305,9 +305,15 @@ export function createFindOwner(win=globalThis){
     if(novena){
       event.preventDefault?.();event.stopPropagation?.();
       const novenaId=novena.dataset.exploreOpenNovena;
+      if(!novenaId)return;
+      // Explore is available before the Prayer reader has been imported.
+      // Enter through the canonical shell to load PRAY; only then deep-link.
       close();
-      try{win?.AO_PRAY_V435930?.open?.("pray.novenas",{novenaId,returnContext:{surface:"find"}});}catch{}
-      try{win?.AO_APP_SHELL_V1?.syncSurface?.("pray");}catch{}
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("pray"))
+        .then(result=>result?.ok===true
+          ?win?.AO_PRAY_V435930?.open?.("pray.novenas",{novenaId,returnContext:{surface:"find"}})
+          :false)
+        .catch(error=>console.error("Explore novena navigation failed",error));
       return;
     }
     if(target?.closest?.("[data-find-show-more]")){
