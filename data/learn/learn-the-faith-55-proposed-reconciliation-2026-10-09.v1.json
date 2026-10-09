@@ -1,0 +1,3870 @@
+{
+  "version": "LTF_55_PROPOSED_CANONICAL_CROSSWALK_20261009_V1",
+  "date": "2026-10-09",
+  "status": "RECONCILED_CANDIDATE_NOT_PUBLISHED",
+  "purpose": "Reconcile archived 54-lesson sequence and duplicate open 55-lesson proposal without overwriting any historical ID or creating a second doctrinal Q&A.",
+  "authority": {
+    "catechism": "Existing published 433-question St Pius X corpus owns the Q&A",
+    "historicalSource": "data/learn/learn-the-faith-recovered-54.v1.json",
+    "selectedOverlays": [
+      "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "data/learn/learn-the-faith-certification-019-054.v1.json"
+    ],
+    "proposedOnly55Source": "formation/learn-the-faith-sot-v2 — data/learn/learn-the-faith-curriculum.v1.json"
+  },
+  "governance": [
+    "The original 54 lesson IDs are permanent archival reference IDs, not overwritten by the proposed 55-title teaching order.",
+    "New Precepts subject at display LTF-046 is an explicitly authored candidate; original historical LTF-046 remains 'What prayer is' and maps to proposed display LTF-047.",
+    "Each numbered Catechism question has one primary teaching lesson, verified 433/433; other lessons may link to it by reference without becoming additional Q&A copies.",
+    "Mass, sacraments, morality, Spiritual Life, prayer, liturgical year are distinct existing owners; preserve cross-links, don't duplicate practice or live rites.",
+    "The two older standalone 55-lesson PRs #490/#495 are alternative witnesses, not additional modules; don't merge both.",
+    "No lesson can become public before independent claim-level source/theological verification and native-French editorial approval."
+  ],
+  "metrics": {
+    "proposedLessonCount": 55,
+    "recoveredUniqueLessons": 54,
+    "historyMapped": 54,
+    "proposedAddedLessons": 1,
+    "selectionFirstHalf": 18,
+    "selectionSecondHalf": 36,
+    "proposedPreceptsEntry": "LTF-046",
+    "primaryQuestionReferences": 433,
+    "uniquePrimaryQuestionNumbers": 433,
+    "humanApprovedLessons": 0,
+    "publishedLessons": 0
+  },
+  "publicationGate": {
+    "researchBilingual": true,
+    "englishQuestionNumberCoverage": "433_NUMBERED_LOCATORS",
+    "fullOriginalPassageHumanVerification": false,
+    "editorialApproval": false,
+    "canonicalReview": false,
+    "frenchOriginalCollation": false,
+    "nativeFrenchEdit": false,
+    "publicRouteAdded": false
+  },
+  "lessons": [
+    {
+      "displayLessonId": "LTF-001",
+      "title": {
+        "en": "Why man exists",
+        "fr": "Pourquoi l’homme existe"
+      },
+      "family": "revelation-faith",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-001",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-001",
+      "primaryCatechismQuestionNumbers": [
+        1,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q001",
+          "questionStem": "Who created us?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q013",
+          "questionStem": "For what end did God create",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q014",
+          "questionStem": "What is heaven?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q015",
+          "questionStem": "Who deserves heaven?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q016",
+          "questionStem": "What do the wicked deserve, who",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q017",
+          "questionStem": "What is hell?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q018",
+          "questionStem": "Why does God reward the good",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-002",
+      "title": {
+        "en": "Knowing God by reason",
+        "fr": "Connaître Dieu par la raison"
+      },
+      "family": "revelation-faith",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-002",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-002",
+      "primaryCatechismQuestionNumbers": [],
+      "sourceWitnesses": [],
+      "crossModuleHandoffs": [
+        "APOL-001",
+        "APOL-002"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-003",
+      "title": {
+        "en": "Divine Revelation",
+        "fr": "La Révélation divine"
+      },
+      "family": "revelation-faith",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-003",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-003",
+      "primaryCatechismQuestionNumbers": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q028",
+          "questionStem": "What are the truths revealed by",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        },
+        {
+          "ref": "PX1912-Q029",
+          "questionStem": "What is the \"Creed\" or \"Apostles'",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        },
+        {
+          "ref": "PX1912-Q030",
+          "questionStem": "What is a mystery?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        },
+        {
+          "ref": "PX1912-Q031",
+          "questionStem": "What are the principal mysteries of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-004",
+      "title": {
+        "en": "The virtue of faith",
+        "fr": "La vertu de foi"
+      },
+      "family": "revelation-faith",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-004",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-004",
+      "primaryCatechismQuestionNumbers": [
+        232,
+        237
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q232",
+          "questionStem": "What is faith?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q237",
+          "questionStem": "Is it enough to believe in",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-005",
+      "title": {
+        "en": "Sacred Scripture and Tradition",
+        "fr": "Écriture Sainte et Tradition"
+      },
+      "family": "revelation-faith",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-005",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-005",
+      "primaryCatechismQuestionNumbers": [
+        233,
+        234,
+        235
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q233",
+          "questionStem": "Where is preserved that which God",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q234",
+          "questionStem": "What is Sacred Scripture?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q235",
+          "questionStem": "What is Tradition?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-012",
+        "APOL-013",
+        "APOL-014",
+        "APOL-015"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-006",
+      "title": {
+        "en": "The Church as teacher",
+        "fr": "L’Église enseignante"
+      },
+      "family": "revelation-faith",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-006",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-006",
+      "primaryCatechismQuestionNumbers": [
+        114,
+        115,
+        116,
+        236
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q114",
+          "questionStem": "What do the Pope and the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q115",
+          "questionStem": "Can the teaching Church err in",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q116",
+          "questionStem": "Can the Pope, by himself, err",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q236",
+          "questionStem": "Who can with authority make known",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-016",
+        "APOL-018",
+        "APOL-019",
+        "APOL-020"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-007",
+      "title": {
+        "en": "God and His attributes",
+        "fr": "Dieu et ses attributs"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-007",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-007",
+      "primaryCatechismQuestionNumbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q002",
+          "questionStem": "Who is God?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q003",
+          "questionStem": "What does \"most perfect\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q004",
+          "questionStem": "What does \"Creator\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q005",
+          "questionStem": "What does \"Lord\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q006",
+          "questionStem": "Does God have a body as",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q007",
+          "questionStem": "Where is God?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q008",
+          "questionStem": "Has God always existed?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q009",
+          "questionStem": "Does God know all things?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q010",
+          "questionStem": "Can God do all things?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q011",
+          "questionStem": "Can God also do evil?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q012",
+          "questionStem": "Does God care for created things?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-008",
+      "title": {
+        "en": "The Most Holy Trinity",
+        "fr": "La Très Sainte Trinité"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-008",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-008",
+      "primaryCatechismQuestionNumbers": [
+        19,
+        20,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q019",
+          "questionStem": "Is there only one God?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q020",
+          "questionStem": "What are the names of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q037",
+          "questionStem": "What does \"Unity of God\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q038",
+          "questionStem": "What does \"Trinity of God\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q039",
+          "questionStem": "What does \"three really distinct Persons\"",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q040",
+          "questionStem": "Do we understand how the three",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q041",
+          "questionStem": "Who is the first Person of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q042",
+          "questionStem": "Who is the second Person of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q043",
+          "questionStem": "Who is the third Person of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q044",
+          "questionStem": "Why is the Father the first",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q045",
+          "questionStem": "Why is the Son the second",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q046",
+          "questionStem": "Why is the Holy Spirit the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q047",
+          "questionStem": "Is each Person of the Most",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q048",
+          "questionStem": "If each divine Person is God,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q049",
+          "questionStem": "Are the three divine Persons equal,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        },
+        {
+          "ref": "PX1912-Q050",
+          "questionStem": "Was the Father at least before",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-010"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-009",
+      "title": {
+        "en": "Creation and Providence",
+        "fr": "Création et Providence"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-009",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-009",
+      "primaryCatechismQuestionNumbers": [
+        51,
+        52,
+        53
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q051",
+          "questionStem": "Why is God called \"Creator of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q052",
+          "questionStem": "Is the whole world the work",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q053",
+          "questionStem": "Did God create only what is",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-010",
+      "title": {
+        "en": "The angels",
+        "fr": "Les anges"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-010",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-010",
+      "primaryCatechismQuestionNumbers": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q054",
+          "questionStem": "Who are the pure spirits?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q055",
+          "questionStem": "How do we know that created",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q056",
+          "questionStem": "Which created pure spirits does Faith",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q057",
+          "questionStem": "Who are the Angels?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q058",
+          "questionStem": "Have we any duties toward the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q059",
+          "questionStem": "Who are the demons?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-011",
+      "title": {
+        "en": "Man, original justice and the Fall",
+        "fr": "L’homme, la justice originelle et la Chute"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-011",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-011",
+      "primaryCatechismQuestionNumbers": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q060",
+          "questionStem": "Who is man?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q061",
+          "questionStem": "What is the soul?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q062",
+          "questionStem": "Does the soul of man die",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q063",
+          "questionStem": "What care must we have of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q064",
+          "questionStem": "In what way is man free?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q065",
+          "questionStem": "If man is free, can he",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q066",
+          "questionStem": "Who were the first human beings?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q067",
+          "questionStem": "Was man created weak and miserable",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q068",
+          "questionStem": "What destiny did man receive from",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q069",
+          "questionStem": "Besides grace, what else had God",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q070",
+          "questionStem": "What kind of sin was Adam's?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q071",
+          "questionStem": "What harm did Adam's sin cause?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q072",
+          "questionStem": "What is the sin called to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q073",
+          "questionStem": "In what does original sin consist?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q074",
+          "questionStem": "How is original sin \"voluntary,\" and",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q075",
+          "questionStem": "Was man, because of original sin,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-012",
+      "title": {
+        "en": "Jesus Christ",
+        "fr": "Jésus-Christ"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-012",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-012",
+      "primaryCatechismQuestionNumbers": [
+        22,
+        23,
+        24,
+        86,
+        87,
+        88
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q022",
+          "questionStem": "What is the name of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q023",
+          "questionStem": "Who is Jesus Christ?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q024",
+          "questionStem": "Is Jesus Christ God and man?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q086",
+          "questionStem": "What did Jesus Christ do in",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q087",
+          "questionStem": "What is a miracle?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q088",
+          "questionStem": "By what miracles especially did Jesus",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-007",
+        "APOL-008",
+        "APOL-009",
+        "APOL-011"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-013",
+      "title": {
+        "en": "The Incarnation",
+        "fr": "L’Incarnation"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-013",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-013",
+      "primaryCatechismQuestionNumbers": [
+        21,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q021",
+          "questionStem": "Of the three Persons of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q076",
+          "questionStem": "In what way did the Son",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q077",
+          "questionStem": "In becoming man, did the Son",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md"
+        },
+        {
+          "ref": "PX1912-Q078",
+          "questionStem": "Are there two natures in Jesus",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q079",
+          "questionStem": "Are there in Jesus Christ also",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q080",
+          "questionStem": "How was Jesus Christ known to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q081",
+          "questionStem": "Did Jesus Christ always exist?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q082",
+          "questionStem": "From whom was Jesus Christ born?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q083",
+          "questionStem": "Was Saint Joseph not the father",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q084",
+          "questionStem": "Where was Jesus Christ born?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q085",
+          "questionStem": "Why did Jesus Christ wish to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-010",
+        "APOL-032"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-014",
+      "title": {
+        "en": "The Redemption",
+        "fr": "La Rédemption"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-014",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-014",
+      "primaryCatechismQuestionNumbers": [
+        25,
+        26,
+        89,
+        90,
+        91
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q025",
+          "questionStem": "Why did the Son of God",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q026",
+          "questionStem": "What did Jesus Christ do to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q089",
+          "questionStem": "Did Jesus Christ die as God",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q090",
+          "questionStem": "What became of Jesus Christ after",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        },
+        {
+          "ref": "PX1912-Q091",
+          "questionStem": "How long did the body of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-011"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-015",
+      "title": {
+        "en": "The Resurrection and Ascension",
+        "fr": "La Résurrection et l’Ascension"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-015",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-015",
+      "primaryCatechismQuestionNumbers": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q092",
+          "questionStem": "What did Jesus Christ do after",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q093",
+          "questionStem": "Why did Jesus Christ remain on",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q094",
+          "questionStem": "Is Jesus Christ now only in",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q095",
+          "questionStem": "Will Jesus Christ ever again return",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-009"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-016",
+      "title": {
+        "en": "The Holy Ghost",
+        "fr": "Le Saint-Esprit"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-016",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-016",
+      "primaryCatechismQuestionNumbers": [],
+      "sourceWitnesses": [],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-017",
+      "title": {
+        "en": "The Catholic Church",
+        "fr": "L’Église catholique"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-017",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-017",
+      "primaryCatechismQuestionNumbers": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        117,
+        118,
+        119,
+        120,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q105",
+          "questionStem": "What is the Church?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q106",
+          "questionStem": "By whom was the Church founded?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q107",
+          "questionStem": "Which is the Church of Jesus",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q108",
+          "questionStem": "Why is the Church one?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q109",
+          "questionStem": "Why is the Church holy?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q110",
+          "questionStem": "Why is the Church catholic?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q111",
+          "questionStem": "Why is the Church apostolic?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q112",
+          "questionStem": "Who are the legitimate Pastors of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q113",
+          "questionStem": "Who is the Pope?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q117",
+          "questionStem": "Can any Church outside the Roman",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q118",
+          "questionStem": "Why did Jesus Christ institute the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q119",
+          "questionStem": "What are the means of holiness",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q120",
+          "questionStem": "Are the means of holiness and",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q124",
+          "questionStem": "Who is outside the communion of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q125",
+          "questionStem": "Who are the unbelievers?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q126",
+          "questionStem": "Who are the Jews?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q127",
+          "questionStem": "Who are the heretics?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q128",
+          "questionStem": "Who are the apostates?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q129",
+          "questionStem": "Who are the schismatics?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q130",
+          "questionStem": "Who are the excommunicates?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q131",
+          "questionStem": "Is it a serious harm to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q132",
+          "questionStem": "Can one who is outside the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-016",
+        "APOL-039",
+        "CR-DOC-07"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-018",
+      "title": {
+        "en": "The Communion of Saints",
+        "fr": "La Communion des saints"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-018",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-001-018.v1.json",
+      "sourceEntryId": "LTF-018",
+      "primaryCatechismQuestionNumbers": [
+        121,
+        122,
+        123
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q121",
+          "questionStem": "Why are the faithful in the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q122",
+          "questionStem": "What does \"communion of saints\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        },
+        {
+          "ref": "PX1912-Q123",
+          "questionStem": "Are the blessed in heaven and",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "APOL-035",
+        "APOL-040"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-019",
+      "title": {
+        "en": "The forgiveness of sins",
+        "fr": "La rémission des péchés"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-019",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-019",
+      "primaryCatechismQuestionNumbers": [
+        133,
+        134
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q133",
+          "questionStem": "What does \"forgiveness of sins\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q134",
+          "questionStem": "How are sins forgiven in the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-020",
+      "title": {
+        "en": "Death, judgment and the resurrection of the body",
+        "fr": "Mort, jugement et résurrection de la chair"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-020",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-020",
+      "primaryCatechismQuestionNumbers": [
+        96,
+        97,
+        98,
+        99,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q096",
+          "questionStem": "Will Jesus Christ wait until the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q097",
+          "questionStem": "Are there two judgments?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q098",
+          "questionStem": "On what will Jesus Christ judge",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q099",
+          "questionStem": "After the particular judgment, what becomes",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q156",
+          "questionStem": "What awaits us at the end",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-risurrezione.md"
+        },
+        {
+          "ref": "PX1912-Q157",
+          "questionStem": "What awaits us at the end",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-risurrezione.md"
+        },
+        {
+          "ref": "PX1912-Q158",
+          "questionStem": "What does \"resurrection of the body\"",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-risurrezione.md"
+        },
+        {
+          "ref": "PX1912-Q159",
+          "questionStem": "What does \"life everlasting\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-risurrezione.md"
+        },
+        {
+          "ref": "PX1912-Q160",
+          "questionStem": "What does the word \"Amen\" mean?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-risurrezione.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-021",
+      "title": {
+        "en": "Heaven, Purgatory and Hell",
+        "fr": "Ciel, Purgatoire et Enfer"
+      },
+      "family": "creed",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-021",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-021",
+      "primaryCatechismQuestionNumbers": [
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q100",
+          "questionStem": "Where do children who die without",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q101",
+          "questionStem": "What is purgatory?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q102",
+          "questionStem": "Can we help and even free",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q103",
+          "questionStem": "Is it certain that heaven and",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        },
+        {
+          "ref": "PX1912-Q104",
+          "questionStem": "How long will heaven and hell",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-022",
+      "title": {
+        "en": "Sanctifying and actual grace",
+        "fr": "Grâce sanctifiante et grâce actuelle"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-022",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-022",
+      "primaryCatechismQuestionNumbers": [
+        270
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q270",
+          "questionStem": "What is sanctifying grace?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-023",
+      "title": {
+        "en": "What a sacrament is",
+        "fr": "Ce qu’est un sacrement"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-023",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-023",
+      "primaryCatechismQuestionNumbers": [
+        267,
+        268,
+        269,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q267",
+          "questionStem": "What are the sacraments?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q268",
+          "questionStem": "Why are the sacraments efficacious signs",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q269",
+          "questionStem": "What grace do the sacraments confer?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q271",
+          "questionStem": "What is sacramental grace?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q272",
+          "questionStem": "Who gave to the sacraments the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q273",
+          "questionStem": "How do the sacraments sanctify us?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q274",
+          "questionStem": "Which sacraments give us the first",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q275",
+          "questionStem": "Which sacraments increase grace in us?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q276",
+          "questionStem": "Does one who receives a sacrament",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q278",
+          "questionStem": "Which are the sacraments most necessary",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q279",
+          "questionStem": "Are Baptism and Penance equally necessary?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q280",
+          "questionStem": "If Baptism is necessary for all,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q281",
+          "questionStem": "How many times can the sacraments",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q282",
+          "questionStem": "Which sacraments are received only once?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q283",
+          "questionStem": "Why are Baptism, Confirmation, and Holy",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q284",
+          "questionStem": "What is the character?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q285",
+          "questionStem": "What character do Baptism, Confirmation, and",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q286",
+          "questionStem": "How many things are required to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q287",
+          "questionStem": "What is the matter of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q288",
+          "questionStem": "What is the form of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        },
+        {
+          "ref": "PX1912-Q289",
+          "questionStem": "Who is the minister of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-024",
+      "title": {
+        "en": "Baptism",
+        "fr": "Baptême"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-024",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-024",
+      "primaryCatechismQuestionNumbers": [
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q290",
+          "questionStem": "What is Baptism?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q291",
+          "questionStem": "What is the matter of Baptism?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q292",
+          "questionStem": "What is the form of Baptism?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q293",
+          "questionStem": "Who is the minister of Baptism?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q294",
+          "questionStem": "How is Baptism given?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q295",
+          "questionStem": "What effects does Baptism produce?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q296",
+          "questionStem": "Does Baptism transform man?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q297",
+          "questionStem": "To what does one who receives",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q298",
+          "questionStem": "What does one renounce in receiving",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q299",
+          "questionStem": "What is meant by the works",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q300",
+          "questionStem": "How do children renounce the devil",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q301",
+          "questionStem": "Who are the godparents at Baptism?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q302",
+          "questionStem": "Are we bound to keep the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        },
+        {
+          "ref": "PX1912-Q303",
+          "questionStem": "When must parents, or those who",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-battesimo.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.rites.baptism"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-025",
+      "title": {
+        "en": "Confirmation",
+        "fr": "Confirmation"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-025",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-025",
+      "primaryCatechismQuestionNumbers": [
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q304",
+          "questionStem": "What is Confirmation?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q305",
+          "questionStem": "What is the matter of Confirmation?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q306",
+          "questionStem": "What is the form of Confirmation?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q307",
+          "questionStem": "Who is the minister of Confirmation?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q308",
+          "questionStem": "How does the Bishop administer Confirmation?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q309",
+          "questionStem": "In what way does Confirmation make",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q310",
+          "questionStem": "At what age is it good",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q311",
+          "questionStem": "What dispositions must one who receives",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q312",
+          "questionStem": "What does the holy chrism signify?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q313",
+          "questionStem": "What does the anointing made on",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q314",
+          "questionStem": "What does the slight tap that",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        },
+        {
+          "ref": "PX1912-Q315",
+          "questionStem": "Are there godparents at Confirmation?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-cresima.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.rites.confirmation"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-026",
+      "title": {
+        "en": "The Holy Eucharist",
+        "fr": "La Sainte Eucharistie"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-026",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-026",
+      "primaryCatechismQuestionNumbers": [
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q316",
+          "questionStem": "What is the Eucharist?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q317",
+          "questionStem": "What is the matter of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q318",
+          "questionStem": "What is the form of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q319",
+          "questionStem": "Who is the minister of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q320",
+          "questionStem": "When did Jesus Christ institute the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q321",
+          "questionStem": "Why did Jesus Christ institute the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q322",
+          "questionStem": "Is the same Jesus Christ in",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q323",
+          "questionStem": "Why do you believe that Jesus",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q324",
+          "questionStem": "What is the host before the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q325",
+          "questionStem": "After the consecration, what is the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q326",
+          "questionStem": "What is contained in the chalice",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q327",
+          "questionStem": "What is in the chalice after",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q328",
+          "questionStem": "When do the bread and the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q329",
+          "questionStem": "After the consecration, is there nothing",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q330",
+          "questionStem": "What are the species or appearances?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q331",
+          "questionStem": "Under the appearances of bread is",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q332",
+          "questionStem": "When the host is broken into",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q333",
+          "questionStem": "Is Jesus Christ found in all",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q334",
+          "questionStem": "Why is the Most Holy Eucharist",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q335",
+          "questionStem": "How many things are necessary to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q336",
+          "questionStem": "What does \"to be in the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q337",
+          "questionStem": "Does one who receives Communion knowing",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q338",
+          "questionStem": "What does \"to know and to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q339",
+          "questionStem": "What fast is required before Communion?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q340",
+          "questionStem": "Is Communion ever permitted to one",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q341",
+          "questionStem": "Is there an obligation to receive",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q342",
+          "questionStem": "At what age does the obligation",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q343",
+          "questionStem": "Is it good and useful to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q344",
+          "questionStem": "After Communion, how long does Jesus",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q345",
+          "questionStem": "What effects does the Eucharist produce",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q346",
+          "questionStem": "Is the Eucharist only a sacrament?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.mass"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-027",
+      "title": {
+        "en": "The Holy Sacrifice of the Mass",
+        "fr": "Le Saint Sacrifice de la Messe"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-027",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-027",
+      "primaryCatechismQuestionNumbers": [
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q347",
+          "questionStem": "What is sacrifice?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q348",
+          "questionStem": "What is the Holy Mass?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q349",
+          "questionStem": "Is the sacrifice of the Mass",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q350",
+          "questionStem": "What difference is there between the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q351",
+          "questionStem": "For what ends is the Mass",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q352",
+          "questionStem": "Is the Mass not also offered",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q353",
+          "questionStem": "Are we bound to hear Mass?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        },
+        {
+          "ref": "PX1912-Q354",
+          "questionStem": "What is the most fitting way",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-eucaristia.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.mass",
+        "APOL-031"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-028",
+      "title": {
+        "en": "Penance and Confession",
+        "fr": "Pénitence et Confession"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-028",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-028",
+      "primaryCatechismQuestionNumbers": [
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q355",
+          "questionStem": "What is Penance?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q356",
+          "questionStem": "When was the sacrament of Penance",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q357",
+          "questionStem": "Who is the minister of Penance?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q358",
+          "questionStem": "How many and what things are",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q359",
+          "questionStem": "How is the examination of conscience",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q360",
+          "questionStem": "In the examination must we seek",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q361",
+          "questionStem": "What is sorrow?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q362",
+          "questionStem": "How many kinds of sorrow are",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q363",
+          "questionStem": "What is perfect sorrow, or contrition?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q364",
+          "questionStem": "Why is contrition perfect sorrow?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q365",
+          "questionStem": "What is imperfect sorrow, or attrition?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q366",
+          "questionStem": "Why is attrition imperfect sorrow?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q367",
+          "questionStem": "Is it necessary to have sorrow",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q368",
+          "questionStem": "Why is it necessary to have",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q369",
+          "questionStem": "What is the resolution?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q372",
+          "questionStem": "What is confession?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q373",
+          "questionStem": "Of what sins are we bound",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q374",
+          "questionStem": "How must we accuse our mortal",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q375",
+          "questionStem": "What must one do who does",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q376",
+          "questionStem": "Why must we not let ourselves",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q377",
+          "questionStem": "Would one who through shame or",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q378",
+          "questionStem": "What must one do who knows",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q379",
+          "questionStem": "Has one made a good confession",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q380",
+          "questionStem": "What is absolution?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q381",
+          "questionStem": "When sins are forgiven by absolution,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q382",
+          "questionStem": "What is satisfaction, or sacramental penance?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q383",
+          "questionStem": "When is it fitting to perform",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q384",
+          "questionStem": "Does sacramental penance suffice to free",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q385",
+          "questionStem": "What are the works of penance",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q386",
+          "questionStem": "What is an indulgence?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q387",
+          "questionStem": "How many kinds of indulgence are",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q388",
+          "questionStem": "What is the plenary indulgence?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q389",
+          "questionStem": "What is the partial indulgence?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q390",
+          "questionStem": "What is meant by an indulgence",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q391",
+          "questionStem": "What is required to gain indulgences?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "pray.confession",
+        "APOL-026"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-029",
+      "title": {
+        "en": "Extreme Unction / Anointing of the Sick",
+        "fr": "Extrême-Onction / Onction des malades"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-029",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-029",
+      "primaryCatechismQuestionNumbers": [
+        392,
+        393,
+        394,
+        395,
+        396
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q392",
+          "questionStem": "What is Extreme Unction?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-estrema-unzione.md"
+        },
+        {
+          "ref": "PX1912-Q393",
+          "questionStem": "Who is the minister of Extreme",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-estrema-unzione.md"
+        },
+        {
+          "ref": "PX1912-Q394",
+          "questionStem": "How does the priest administer Extreme",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-estrema-unzione.md"
+        },
+        {
+          "ref": "PX1912-Q395",
+          "questionStem": "What effects does Extreme Unction produce?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-estrema-unzione.md"
+        },
+        {
+          "ref": "PX1912-Q396",
+          "questionStem": "When can Holy Oil be given?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-estrema-unzione.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.rites.sick"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-030",
+      "title": {
+        "en": "Holy Orders",
+        "fr": "Ordre"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-030",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-030",
+      "primaryCatechismQuestionNumbers": [
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q397",
+          "questionStem": "What is \"Holy Orders\"?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q398",
+          "questionStem": "Who is the minister of Holy",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q399",
+          "questionStem": "Why is the sacrament that makes",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q400",
+          "questionStem": "What are the grades of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q401",
+          "questionStem": "Is the dignity of the Priesthood",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q402",
+          "questionStem": "What end must one who enters",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q403",
+          "questionStem": "Can anyone enter Holy Orders of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q404",
+          "questionStem": "Would one who entered the Priesthood",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        },
+        {
+          "ref": "PX1912-Q405",
+          "questionStem": "What duties have the faithful toward",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-ordine.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.rites.holy_orders"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-031",
+      "title": {
+        "en": "Matrimony",
+        "fr": "Mariage"
+      },
+      "family": "grace-sacraments",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-031",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-031",
+      "primaryCatechismQuestionNumbers": [
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q406",
+          "questionStem": "What is Matrimony?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        },
+        {
+          "ref": "PX1912-Q407",
+          "questionStem": "Who is the minister of Matrimony?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        },
+        {
+          "ref": "PX1912-Q408",
+          "questionStem": "How is Matrimony contracted?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        },
+        {
+          "ref": "PX1912-Q409",
+          "questionStem": "Does Matrimony celebrated in this form",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        },
+        {
+          "ref": "PX1912-Q410",
+          "questionStem": "How does Matrimony so celebrated obtain",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        },
+        {
+          "ref": "PX1912-Q411",
+          "questionStem": "Can Catholic spouses also perform a",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        },
+        {
+          "ref": "PX1912-Q412",
+          "questionStem": "Must the spouses be in the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        },
+        {
+          "ref": "PX1912-Q413",
+          "questionStem": "What duties have the spouses?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-matrimonio.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.rites.matrimony",
+        "learn.sexual_ethics"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-032",
+      "title": {
+        "en": "Christian freedom and moral law",
+        "fr": "Liberté chrétienne et loi morale"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-032",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-032",
+      "primaryCatechismQuestionNumbers": [
+        27,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q027",
+          "questionStem": "To live according to God, what",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md"
+        },
+        {
+          "ref": "PX1912-Q161",
+          "questionStem": "What are the commandments of God?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q162",
+          "questionStem": "What does the Decalogue impose on",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q163",
+          "questionStem": "To what may our duties toward",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q164",
+          "questionStem": "Why is the commandment of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q165",
+          "questionStem": "Can the commandments of God be",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q166",
+          "questionStem": "Are we bound to observe the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q167",
+          "questionStem": "Does whoever transgresses the commandments of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q168",
+          "questionStem": "What must be noted in the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-033",
+      "title": {
+        "en": "Natural law",
+        "fr": "Loi naturelle"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-033",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-033",
+      "primaryCatechismQuestionNumbers": [],
+      "sourceWitnesses": [],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-034",
+      "title": {
+        "en": "Conscience and its formation",
+        "fr": "La conscience et sa formation"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-034",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-034",
+      "primaryCatechismQuestionNumbers": [],
+      "sourceWitnesses": [],
+      "crossModuleHandoffs": [
+        "APOL-051",
+        "CR-MOR-02"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-035",
+      "title": {
+        "en": "Sin",
+        "fr": "Le péché"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-035",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-035",
+      "primaryCatechismQuestionNumbers": [
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q135",
+          "questionStem": "What is sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q136",
+          "questionStem": "How many kinds of sin are",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q137",
+          "questionStem": "What is original sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q138",
+          "questionStem": "Was anyone among the children of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q139",
+          "questionStem": "How is original sin blotted out?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q140",
+          "questionStem": "What is actual sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q141",
+          "questionStem": "In how many ways is actual",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q142",
+          "questionStem": "How many kinds of actual sin",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q151",
+          "questionStem": "Are all sins equal?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q152",
+          "questionStem": "Among the mortal sins, which are",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q153",
+          "questionStem": "Why are the sins against the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q154",
+          "questionStem": "Why are the sins that cry",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q155",
+          "questionStem": "What is particularly helpful in keeping",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-036",
+      "title": {
+        "en": "Mortal and venial sin",
+        "fr": "Péché mortel et péché véniel"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-036",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-036",
+      "primaryCatechismQuestionNumbers": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q143",
+          "questionStem": "What is mortal sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q144",
+          "questionStem": "Why is grave sin called mortal?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q145",
+          "questionStem": "If mortal sin renders man incapable",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q146",
+          "questionStem": "How is the grace of God,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q147",
+          "questionStem": "Together with grace, are the merits",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q148",
+          "questionStem": "What is venial sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q149",
+          "questionStem": "Why is sin that is not",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        },
+        {
+          "ref": "PX1912-Q150",
+          "questionStem": "Is venial sin harmful to the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-037",
+      "title": {
+        "en": "Virtue and vice",
+        "fr": "Vertu et vice"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-037",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-037",
+      "primaryCatechismQuestionNumbers": [
+        227,
+        228,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q227",
+          "questionStem": "What is virtue?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q228",
+          "questionStem": "How many kinds of virtue are",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q259",
+          "questionStem": "What are the passions?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q260",
+          "questionStem": "What is vice?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q261",
+          "questionStem": "What are the principal vices?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q262",
+          "questionStem": "What are the virtues opposed to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q263",
+          "questionStem": "Did Jesus Christ recommend any moral",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q264",
+          "questionStem": "Recite the Evangelical Beatitudes.",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q265",
+          "questionStem": "Why did Jesus Christ, in the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q266",
+          "questionStem": "Can those who follow the maxims",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-038",
+      "title": {
+        "en": "The theological virtues",
+        "fr": "Les vertus théologales"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-038",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-038",
+      "primaryCatechismQuestionNumbers": [
+        229,
+        230,
+        231,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q229",
+          "questionStem": "What are the virtues proper to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q230",
+          "questionStem": "How do we receive and exercise",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q231",
+          "questionStem": "Among the supernatural virtues, which is",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q238",
+          "questionStem": "What is hope?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q239",
+          "questionStem": "For what reason do we hope",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q240",
+          "questionStem": "What is charity?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q241",
+          "questionStem": "Why must we love God?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q242",
+          "questionStem": "Why must we love our neighbor?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q243",
+          "questionStem": "Are we bound to love even",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q244",
+          "questionStem": "When must we make acts of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q245",
+          "questionStem": "Is it good to make acts",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q246",
+          "questionStem": "How must we make acts of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q247",
+          "questionStem": "How does one give proof of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q248",
+          "questionStem": "How does one give proof of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q249",
+          "questionStem": "How does one give proof of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-039",
+      "title": {
+        "en": "The cardinal virtues",
+        "fr": "Les vertus cardinales"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-039",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-039",
+      "primaryCatechismQuestionNumbers": [
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q252",
+          "questionStem": "What is moral virtue?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q253",
+          "questionStem": "What are the principal moral virtues?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q254",
+          "questionStem": "Why are the cardinal virtues so",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q255",
+          "questionStem": "What is prudence?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q256",
+          "questionStem": "What is justice?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q257",
+          "questionStem": "What is fortitude?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q258",
+          "questionStem": "What is temperance?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-040",
+      "title": {
+        "en": "The First, Second and Third Commandments",
+        "fr": "Les trois premiers Commandements"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-040",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-040",
+      "primaryCatechismQuestionNumbers": [
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q169",
+          "questionStem": "What does the first commandment, \"I",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q170",
+          "questionStem": "What does the first commandment forbid",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q171",
+          "questionStem": "What is impiety?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q172",
+          "questionStem": "What is superstition?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q173",
+          "questionStem": "What is irreligion?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q174",
+          "questionStem": "If the worship of creatures is",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q175",
+          "questionStem": "Who are the Saints?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q176",
+          "questionStem": "Why do we venerate also the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q177",
+          "questionStem": "Why do we venerate also the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q178",
+          "questionStem": "Did not God in the Old",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q179",
+          "questionStem": "What does the second commandment, \"Thou",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q180",
+          "questionStem": "What is an oath?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q181",
+          "questionStem": "Is blasphemy a great sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q182",
+          "questionStem": "What does the second commandment order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q183",
+          "questionStem": "What is a vow?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q184",
+          "questionStem": "What does the third commandment, \"Remember",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q185",
+          "questionStem": "Why must we perform acts of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q186",
+          "questionStem": "What does the third commandment forbid",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q187",
+          "questionStem": "What works are called servile?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q188",
+          "questionStem": "Are all servile works forbidden on",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q189",
+          "questionStem": "How is it fitting to occupy",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-041",
+      "title": {
+        "en": "The Fourth and Fifth Commandments",
+        "fr": "Les quatrième et cinquième Commandements"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-041",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-041",
+      "primaryCatechismQuestionNumbers": [
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        200
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q190",
+          "questionStem": "What does the fourth commandment, \"Honor",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q191",
+          "questionStem": "What does the fourth commandment forbid",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q192",
+          "questionStem": "Why must we obey our superiors",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q193",
+          "questionStem": "What does the fifth commandment, \"Thou",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q194",
+          "questionStem": "Why is suicide a sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q195",
+          "questionStem": "Has the Church established penalties against",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q196",
+          "questionStem": "Why is dueling a sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q197",
+          "questionStem": "Has the Church established penalties against",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q200",
+          "questionStem": "What does the fifth commandment order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-042",
+      "title": {
+        "en": "The Sixth and Ninth Commandments",
+        "fr": "Les sixième et neuvième Commandements"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-042",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-042",
+      "primaryCatechismQuestionNumbers": [
+        201,
+        202,
+        209,
+        210
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q201",
+          "questionStem": "What does the sixth commandment, \"Thou",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q202",
+          "questionStem": "What does the sixth commandment order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q209",
+          "questionStem": "What does the ninth commandment, \"Thou",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q210",
+          "questionStem": "What does the ninth commandment order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.sexual_ethics"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-043",
+      "title": {
+        "en": "The Seventh and Tenth Commandments",
+        "fr": "Les septième et dixième Commandements"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-043",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-043",
+      "primaryCatechismQuestionNumbers": [
+        203,
+        204,
+        205,
+        211,
+        212
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q203",
+          "questionStem": "What does the seventh commandment, \"Thou",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q204",
+          "questionStem": "What does the seventh commandment order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q205",
+          "questionStem": "Will one who, being able, does",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q211",
+          "questionStem": "What does the tenth commandment, \"Thou",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q212",
+          "questionStem": "What does the tenth commandment order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-044",
+      "title": {
+        "en": "The Eighth Commandment",
+        "fr": "Le huitième Commandement"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-044",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-044",
+      "primaryCatechismQuestionNumbers": [
+        206,
+        207,
+        208
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q206",
+          "questionStem": "What does the eighth commandment, \"Thou",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q207",
+          "questionStem": "What does the eighth commandment order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q208",
+          "questionStem": "One who has harmed his neighbor",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-045",
+      "title": {
+        "en": "Scandal, cooperation and occasions of sin",
+        "fr": "Scandale, coopération et occasions de péché"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-045",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-045",
+      "primaryCatechismQuestionNumbers": [
+        198,
+        199,
+        370,
+        371
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q198",
+          "questionStem": "What is scandal?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q199",
+          "questionStem": "Is scandal a grave sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-comandamenti.md"
+        },
+        {
+          "ref": "PX1912-Q370",
+          "questionStem": "What is the occasion of sin?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        },
+        {
+          "ref": "PX1912-Q371",
+          "questionStem": "Are we bound to flee the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramento-penitenza.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.sexual_ethics"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-046",
+      "title": {
+        "en": "The Precepts of the Church",
+        "fr": "Les Préceptes de l’Église"
+      },
+      "family": "moral-life",
+      "status": "CANDIDATE_ADDITION_ALREADY_PROPOSED_IN_55_DRAFT_NOT_HISTORICALLY_RECOVERED",
+      "historicalOriginalLessonId": null,
+      "selectedContentOverlay": null,
+      "sourceEntryId": null,
+      "primaryCatechismQuestionNumbers": [
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q213",
+          "questionStem": "What are the general precepts of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q214",
+          "questionStem": "How does the Church have authority",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q215",
+          "questionStem": "In the Church, who can make",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q216",
+          "questionStem": "What does the first precept, \"to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q217",
+          "questionStem": "Is it a grave sin not",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q218",
+          "questionStem": "What does the second precept forbid",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q219",
+          "questionStem": "What does the second precept order",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q220",
+          "questionStem": "To what does the ecclesiastical fast",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q221",
+          "questionStem": "Who is bound to the ecclesiastical",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q222",
+          "questionStem": "Why does the Church impose abstinences",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q223",
+          "questionStem": "What does the third precept, \"to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q224",
+          "questionStem": "Why does the Church, in commanding",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q225",
+          "questionStem": "What does the fourth precept, \"to",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        },
+        {
+          "ref": "PX1912-Q226",
+          "questionStem": "What does the fifth precept, \"not",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "today.calendar",
+        "learn.rites.matrimony",
+        "pray.confession"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false,
+      "teachingClaims": [
+        {
+          "en": "The precepts of the Church concretize duties of worship, sacramental life, penance and support of the Church under legitimate ecclesiastical authority.",
+          "fr": "Les préceptes de l’Église concrétisent les devoirs de culte, de vie sacramentelle, de pénitence et de soutien de l’Église sous l’autorité ecclésiastique légitime.",
+          "sourceIds": [
+            "PIUS_X_1912"
+          ],
+          "sourceQuestionNumbers": [
+            213,
+            214,
+            215,
+            216,
+            217,
+            223,
+            224,
+            225
+          ],
+          "sourceLocatorUrlList": [
+            "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+          ],
+          "draftOnly": true
+        },
+        {
+          "en": "Fasting and abstinence express the Church’s authority to prescribe communal penance, but the detailed ages, days and forms found in the 1912 catechism belong to historical discipline and must not be presented as current universal law.",
+          "fr": "Le jeûne et l’abstinence expriment l’autorité de l’Église pour prescrire une pénitence commune, mais les âges, jours et formes détaillés du catéchisme de 1912 relèvent d’une discipline historique et ne doivent pas être présentés comme le droit universel actuel.",
+          "sourceIds": [
+            "PIUS_X_1912"
+          ],
+          "sourceQuestionNumbers": [
+            218,
+            219,
+            220,
+            221,
+            222
+          ],
+          "sourceLocatorUrlList": [
+            "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+          ],
+          "draftOnly": true
+        },
+        {
+          "en": "Likewise, historical restrictions on solemn wedding celebrations in particular seasons illustrate disciplinary application rather than an immutable element of the sacrament itself.",
+          "fr": "De même, les restrictions historiques concernant la célébration solennelle des mariages à certaines périodes illustrent une application disciplinaire plutôt qu’un élément immuable du sacrement lui-même.",
+          "sourceIds": [
+            "PIUS_X_1912"
+          ],
+          "sourceQuestionNumbers": [
+            226
+          ],
+          "sourceLocatorUrlList": [
+            "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-precetti.md"
+          ],
+          "draftOnly": true
+        }
+      ],
+      "sourceScopeAlert": "Original 1912 Q218–221 fasting ages, days, meals and Q226 marriage season rules are period-specific historical legislation; don't teach as current canon law."
+    },
+    {
+      "displayLessonId": "LTF-047",
+      "title": {
+        "en": "What prayer is",
+        "fr": "Ce qu’est la prière"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-046",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-046",
+      "primaryCatechismQuestionNumbers": [
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q414",
+          "questionStem": "What is prayer?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q415",
+          "questionStem": "How many kinds of prayer are",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q416",
+          "questionStem": "What is mental prayer?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q417",
+          "questionStem": "What is vocal prayer?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q418",
+          "questionStem": "How must we pray?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q419",
+          "questionStem": "Is it necessary to pray?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q420",
+          "questionStem": "Why does God grant the graces",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q421",
+          "questionStem": "Why must we pray to God",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q422",
+          "questionStem": "Why are we not always heard",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q423",
+          "questionStem": "What things must we ask of",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.spiritual_life"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-048",
+      "title": {
+        "en": "The Our Father",
+        "fr": "Le Notre Père"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-047",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-047",
+      "primaryCatechismQuestionNumbers": [
+        424,
+        425,
+        426,
+        427,
+        428
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q424",
+          "questionStem": "What is the Our Father?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q425",
+          "questionStem": "Why is the Our Father the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q426",
+          "questionStem": "What must we ask as good",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q427",
+          "questionStem": "As brothers among ourselves, what must",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q428",
+          "questionStem": "Why does Jesus Christ have us",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.spiritual_life"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-049",
+      "title": {
+        "en": "The Hail Mary and Marian prayer",
+        "fr": "L’Ave Maria et la prière mariale"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-048",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-048",
+      "primaryCatechismQuestionNumbers": [
+        431,
+        432
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q431",
+          "questionStem": "With what prayer especially do we",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q432",
+          "questionStem": "What do we ask of Our",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "pray.rosary"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-050",
+      "title": {
+        "en": "The Blessed Virgin Mary",
+        "fr": "La Très Sainte Vierge Marie"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-049",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-049",
+      "primaryCatechismQuestionNumbers": [],
+      "sourceWitnesses": [],
+      "crossModuleHandoffs": [
+        "pray.rosary",
+        "pray.angelus_regina"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-051",
+      "title": {
+        "en": "The saints, relics and sacred images",
+        "fr": "Les saints, les reliques et les images sacrées"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-050",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-050",
+      "primaryCatechismQuestionNumbers": [
+        429,
+        430,
+        433
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q429",
+          "questionStem": "If God hears one who prays",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q430",
+          "questionStem": "Why are the Angels, the Saints,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        },
+        {
+          "ref": "PX1912-Q433",
+          "questionStem": "Does the invocation of Our Lady",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/orazione.md"
+        }
+      ],
+      "crossModuleHandoffs": [],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-052",
+      "title": {
+        "en": "Sacramentals and blessings",
+        "fr": "Sacramentaux et bénédictions"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-051",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-051",
+      "primaryCatechismQuestionNumbers": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q032",
+          "questionStem": "Do we profess and express the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        },
+        {
+          "ref": "PX1912-Q033",
+          "questionStem": "How is the Sign of the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        },
+        {
+          "ref": "PX1912-Q034",
+          "questionStem": "In the Sign of the Cross,",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        },
+        {
+          "ref": "PX1912-Q035",
+          "questionStem": "Is it useful to make the",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        },
+        {
+          "ref": "PX1912-Q036",
+          "questionStem": "When is it good to make",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.scapular"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-053",
+      "title": {
+        "en": "The liturgical year",
+        "fr": "L’année liturgique"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-052",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-052",
+      "primaryCatechismQuestionNumbers": [],
+      "sourceWitnesses": [],
+      "crossModuleHandoffs": [
+        "today.calendar"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-054",
+      "title": {
+        "en": "Growth in holiness and perseverance",
+        "fr": "Croissance dans la sainteté et persévérance"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-053",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-053",
+      "primaryCatechismQuestionNumbers": [
+        250,
+        251,
+        277
+      ],
+      "sourceWitnesses": [
+        {
+          "ref": "PX1912-Q250",
+          "questionStem": "What are the evangelical counsels?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q251",
+          "questionStem": "What are the principal evangelical counsels?",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md"
+        },
+        {
+          "ref": "PX1912-Q277",
+          "questionStem": "What must we do to preserve",
+          "sourceUrl": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/sacramenti-in-generale.md"
+        }
+      ],
+      "crossModuleHandoffs": [
+        "learn.spiritual_life"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    },
+    {
+      "displayLessonId": "LTF-055",
+      "title": {
+        "en": "Preparing for death and eternity",
+        "fr": "Se préparer à la mort et à l’éternité"
+      },
+      "family": "prayer-christian-life",
+      "status": "CANDIDATE_ORDER_PRESERVE_ARCHIVAL_ID",
+      "historicalOriginalLessonId": "LTF-054",
+      "selectedContentOverlay": "data/learn/learn-the-faith-certification-019-054.v1.json",
+      "sourceEntryId": "LTF-054",
+      "primaryCatechismQuestionNumbers": [],
+      "sourceWitnesses": [],
+      "crossModuleHandoffs": [
+        "learn.rites.sick",
+        "pray.dying_companion"
+      ],
+      "humanSourceApproval": false,
+      "nativeFrenchApproval": false,
+      "publicationApproved": false
+    }
+  ]
+}
