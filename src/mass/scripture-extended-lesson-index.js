@@ -555,6 +555,24 @@ export const VERIFIED_EXTENDED_LESSON_READINGS=Object.freeze([
     "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-30?theme=light",
     "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6.txt",
     "note": "Source readings place Daniel 3:49 first, then 47–48 and 50–51. The citation points to the Bible in canonical order ONLY, with mandatory bilingual explanation of the liturgical transposition. Hymn Daniel 3:52–59 remains separate. The Latin rubric source does not authorize reordering the ceremony."
+  },
+  {
+    "sourcePath": "Tempora/Quad4-3",
+    "sourceSectionId": "LectioL1",
+    "role": "LENT_FOURTH_WEEK_WEDNESDAY_BAPTISMAL_FIRST_LESSON",
+    "reference": "Ezekiel 36:23–28",
+    "segments": [
+      {
+        "book": "Ezekiel",
+        "chapter": 36,
+        "verseStart": 23,
+        "verseEnd": 28
+      }
+    ],
+    "latinIncipit": "haec dicit dominus deus sanctificabo nomen meum magnum quod pollutum est inter gentes quod polluistis in medio",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-3.txt",
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-3.txt",
+    "note": "First preparatory lesson, not the later Isaiah 1:16–19 Mass Epistle. The gradual and collect between them are distinct non-Scripture reader slots; active only for source-order matched cards."
   }
 ]);
 export const VERIFIED_EXTENDED_LESSON_VERSION="1962-SOURCE-ORDER-EXTENDED-LESSON-SCRIPTURE-V4";
