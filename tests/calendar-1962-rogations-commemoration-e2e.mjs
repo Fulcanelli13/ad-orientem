@@ -110,6 +110,22 @@ try{
    assert.equal(row.comms.length,2,date+": only Advent feria + Barbara should be commemorated");
    for(const key of ["collects","secrets","postcommunions"])
      assert.equal(row[key],3,date+": required triple of Peter, Advent, Barbara "+key+" absent");
+   const prayers=[row.lastCollect,row.lastSecret,row.lastPostcommunion];
+   for(const [ix,prayer] of prayers.entries()){
+     assert.ok(prayer&&typeof prayer==="object",date+": Barbara prayer object "+ix+" absent");
+     for(const lang of ["lat","en","fr"]){
+       const text=String(prayer[lang]||"");
+       assert.ok(text.length>=80,date+": Barbara "+ix+" "+lang+" has empty or truncated text");
+       assert.doesNotMatch(text,/\bN\.|\$Qui tecum/,
+         date+": unfilled saint-name or liturgical conclusion in "+lang+" prayer "+ix);
+     }
+   }
+   assert.match(row.lastCollect.lat,/Intercessio, quaesumus, Domine, beatae Barbarae/,
+     date+": St Barbara's named Latin Collect changed");
+   assert.match(row.lastSecret.lat,/Bárbaræ Vírginis/,
+     date+": Barbara's Secret must have her name in the genitive");
+   assert.match(row.lastPostcommunion.lat,/beáta Bárbara Vírgine/,
+     date+": Barbara's Postcommunion requires her name in the ablative");
  }
  const deferred=result.find(x=>x.date==="2022-12-04");
  assert.ok(!deferred.comms.some(x=>x.id==="commemoration:12-04-barbara:4:r"),
