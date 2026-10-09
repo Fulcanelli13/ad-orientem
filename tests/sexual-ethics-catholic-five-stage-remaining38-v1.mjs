@@ -1,0 +1,62 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {CSE_QUESTIONS,CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/index.js";
+import {CSE_DEBATE_MAP,CSE_DEBATE_IDS,CSE_DEBATE_FIELDS} from "../src/learn/sexual-ethics-data/debates.js";
+import {paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
+import {CSE_HIGH_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-high24.js";
+import {CSE_REMAINING_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-remaining31.js";
+const review=JSON.parse(readFileSync("data/learn/sexual-ethics-catholic-five-stage-remaining38-20261009.v1.json","utf8"));
+const first=JSON.parse(readFileSync("data/learn/sexual-ethics-catholic-five-stage-primary17-20261009.v1.json","utf8"));
+const stage={...CSE_HIGH_STAGE_SOURCE_IDS,...CSE_REMAINING_STAGE_SOURCE_IDS};
+const itemMap=new Map(CSE_QUESTIONS.map(q=>[q.id,q]));
+const five=["concession","breakpoint","catholicCase","response","bottom"];
+assert.equal(CSE_QUESTIONS.length,150);
+assert.equal(CSE_DEBATE_IDS.length,55);
+assert.equal(CSE_DEBATE_FIELDS.length,8);
+assert.equal(review.cases.length,38);
+assert.equal(first.cases.length,17);
+assert.equal(review.summary.remaining_stage_records,190);
+assert.equal(review.summary.total_catholic_side_stage_records_across_two_batches,275);
+assert.equal(review.summary.archived_cases,3);
+assert.equal(review.summary.bilingual_substantive_corrections,4);
+assert.equal(review.summary.full_eight_stage_original_passage_certifications,0);
+assert.equal(review.summary.independent_theological_signoffs,0);
+assert.equal(review.summary.independent_native_french_signoffs,0);
+assert.equal(new Set([...review.cases,...first.cases].map(r=>r.id)).size,55);
+assert.deepEqual([...new Set([...review.cases,...first.cases].map(r=>r.id))].sort(),[...CSE_DEBATE_IDS].sort());
+const grades=Object.groupBy(review.cases,r=>r.original_context_grade);
+assert.equal((grades.ORIGINAL_DOCUMENT_SECTION_EXAMINED||[]).length,review.summary.original_document_context_examined_cases);
+assert.equal((grades.REGISTERED_SOURCE_NOT_INDEPENDENTLY_COLLATED_THIS_BATCH||[]).length,review.summary.registered_only_cases);
+for(const row of review.cases){
+ assert.equal(row.full_case_original_passage_certified,false,row.id+" cannot declare full certification");
+ assert.equal(row.human_theological_signoff,false);
+ assert.equal(row.native_french_signoff,false);
+ assert.ok(row.original_locator.length>=4,row.id+" unspecified source location");
+ assert.ok(row.claim_supported_only_within.length>=50,row.id+" original context claim not delimited");
+ assert.ok(row.unverified_claim_boundary.length>=55,row.id+" caveat not specific");
+ assert.equal(row.principal_original_url,CSE_SOURCE_MAP[row.principal_source_id]?.canonical_url,row.id+" source URL drift");
+ assert.equal(row.archived_case,["CSE055","CSE056","CSE058"].includes(row.id));
+ assert.deepEqual(row.stages.map(x=>x.stage),five,row.id+" stage sequence incorrect");
+ const live=CSE_DEBATE_MAP[row.id];
+ assert.ok(live&&itemMap.get(row.id),row.id+" not canonical");
+ for(const st of row.stages){
+  assert.deepEqual([st.claim_text_en,st.claim_text_fr],live[st.stage],row.id+" "+st.stage+" live English/French drift");
+  assert.deepEqual(st.intended_source_ids,stage[row.id][st.stage],row.id+" "+st.stage+" citations drift");
+  assert.deepEqual(paragraphRefsFor(itemMap.get(row.id),"debate",st.stage).map(x=>x[0]),st.intended_source_ids,row.id+" "+st.stage+" source resolution fallback");
+  assert.equal(st.source_urls.length,st.intended_source_ids.length);
+  for(const e of st.source_urls){assert.equal(e.url,CSE_SOURCE_MAP[e.source_id]?.canonical_url,row.id+" "+st.stage+" URL mismatch");}
+  assert.equal(st.source_validation,"CITATION_ROUTE_VALIDATED_BUT_NOT_ALL_SENTENCE_CLAIMS_PROVEN");
+  assert.equal(st.independent_primary_passage_certified,false);
+ }
+}
+const get=(id,field,lang)=>CSE_DEBATE_MAP[id][field][lang];
+assert.match(get("CSE055","catholicCase",0),/§1624\(a\)/);
+assert.match(get("CSE055","catholicCase",1),/§1624 a/);
+assert.match(get("CSE058","catholicCase",0),/§1624\(c\)/);
+assert.match(get("CSE058","response",1),/§1624 c/);
+assert.match(get("CSE083","catholicCase",0),/historical hypotheses/);
+assert.match(get("CSE083","catholicCase",1),/hypothèses historiques/);
+assert.match(get("CSE089","response",0),/empirical assertions/);
+assert.match(get("CSE089","response",1),/assertions empiriques/);
+assert.match(CSE_SOURCE_MAP.MCHUGH.title,/1958 imprimatur/);
+console.log("PASS all remaining 38 canonical dossiers / 190 Catholic-stage claim-boundary snapshots, 4 bilingual original-context corrections, archived owners preserved, zero false original-text or human approvals");
