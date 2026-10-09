@@ -23,7 +23,8 @@ assert.equal(evidence.summary.opposition_stages_recorded,102);
 assert.equal(evidence.summary.cases_with_directly_read_specific_original_context,15);
 assert.equal(evidence.summary.cases_without_directly_read_specific_original_context,19);
 assert.equal(evidence.summary.farley_mediated_excerpt_with_own_statement,4);
-assert.equal(evidence.summary.pew_false_23_percent_attribution_corrected,true);
+assert.equal(evidence.summary.pew_false_23_percent_attribution_corrected,false);
+assert.equal(evidence.summary.pew_23_percent_testing_motive_verified_in_original_main_report,true);
 assert.equal(evidence.summary.entire_eight_stage_original_certifications,0);
 assert.equal(evidence.summary.independent_theological_signoffs,0);
 assert.equal(evidence.summary.independent_native_french_signoffs,0);
@@ -59,12 +60,14 @@ for(const row of evidence.cases){
  }
 }
 const pew=CSE_DEBATE_MAP.CSE035.opposition;
-assert.match(pew[0],/38% of cohabiters cited finances and 37% cited convenience/);
-assert.match(pew[1],/38 % des personnes en cohabitation/);
-assert.doesNotMatch(pew[0],/23% of cohabiters cited testing/);
-assert.doesNotMatch(pew[1],/23 % des cohabitants citaient/);
+assert.match(pew[0],/23% of adults currently cohabiting cited wanting to test their relationship/);
+assert.match(pew[0],/38% cited finances and 37% convenience/);
+assert.match(pew[1],/23 % des adultes en cohabitation/);
+assert.match(pew[1],/38 % invoquaient les finances et 37 % la commodité/);
+assert.match(pew[0],/reported motives, not evidence/);
+assert.match(pew[1],/motifs déclarés/);
 const pev=evidence.cases.find(x=>x.id==="CSE035");
-assert.match(pev.scope_limitation,/23% instead refers/);
+assert.match(pev.scope_limitation,/Another unrelated 23% refers/);
 for(const id of ["CSE043","CSE071","CSE083","CSE089"]){
  const row=evidence.cases.find(x=>x.id===id);
  assert.equal(row.original_provenance_class,"MEDIATED_AUTHOR_BOOK_EXCERPT_PLUS_FIRST_PERSON_REPLY_READ");
@@ -82,4 +85,4 @@ for(const id of ["CSE094","CSE095"]){
  assert.equal(row.original_provenance_class,"ORIGINAL_POLICY_SUMMARY_READ_PDF_NOT_REVIEWED");
 }
 assert.equal(certification.summary.full_case_certifications,0);
-console.log("PASS 34 remaining opponent-source dossiers / 102 bilingual stage references; Pew 23% source error corrected; four Farley CDF plus firsthand response links; all original-access limits honest; 55 canonical owners and zero fabricated human approvals");
+console.log("PASS 34 remaining opponent-source dossiers / 102 bilingual stage references; Pew 23% original main-report attribution repaired; four Farley CDF plus firsthand response links; all original-access limits honest; 55 canonical owners and zero fabricated human approvals");
