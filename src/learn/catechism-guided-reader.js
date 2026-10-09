@@ -22,6 +22,7 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
     return { rendered: false, reason: "NOT_CERTIFIED", destroy() {} };
   }
   const doc = root.ownerDocument;
+  const witnessByQuestion = new Map(inputs.witnessIndex.entries.map(entry => [entry.q, entry]));
   const onQuestion = typeof options.onQuestion === "function" ? options.onQuestion : () => {};
   let current = options.questionNumber
     ? findGuidedLessonForQuestion(study, options.questionNumber)?.id
@@ -43,7 +44,7 @@ export function renderCatechismGuidedStudy(root, inputs, options = {}) {
       <article><h2>${escapeHtml(lesson.title[lang])}</h2>
         ${lesson.claims.map(c => `<p>${escapeHtml(c[lang])} <span class="aoCatechismGuidedSources">${c.sources.map(s => `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.ref)}</a>`).join(" · ")}</span></p>`).join("")}
         <h3>${text("Original Catechism questions", "Questions du Catéchisme original", lang)}</h3>
-        <div class="aoCatechismGuidedQuestions">${lesson.primaryQuestions.map(n => `<button type="button" data-guided-question="${n}">Q${n}</button>`).join(" ")}</div>
+        <div class="aoCatechismGuidedQuestions">${lesson.primaryQuestions.map(n => `<button type="button" data-guided-question="${n}" title="${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}">Q${n} · ${escapeHtml(witnessByQuestion.get(n)?.q_stem || "")}</button>`).join(" ")}</div>
       </article>
       <footer>
         <button type="button" data-guided-prev ${idx === 0 ? "disabled" : ""}>${text("Previous", "Précédente", lang)}</button>
