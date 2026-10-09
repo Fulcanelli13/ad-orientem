@@ -23,7 +23,7 @@ try{
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
  const dates=["2024-05-06","2027-05-03","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
-   "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01"];
+   "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01","2024-12-04","2027-12-04","2026-12-04","2022-12-04"];
  const result=[];
  for(const date of dates){
    const row=await page.evaluate(async date=>{
@@ -35,6 +35,7 @@ try{
        inherited:p?.inheritedProper,calendarCommemorations:p?.calendarCommemorations,
        comms:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title,path:x.path,inseparable:x.inseparable})),
        collects:p?.collects?.length||0,secrets:p?.secrets?.length||0,postcommunions:p?.postcommunions?.length||0,
+       lastCollect:p?.collects?.at(-1)||null,lastSecret:p?.secrets?.at(-1)||null,lastPostcommunion:p?.postcommunions?.at(-1)||null,
        temporale:(r?.day?.tempora||[]).map(x=>({id:x.id,path:x.path,color:x.color}))};
    },date);
    result.push(row);
@@ -71,6 +72,28 @@ try{
    assert.ok(item.secrets>=2,date+" must include second Secret for privileged commemoration");
    assert.ok(item.postcommunions>=2,date+" must include second Postcommunion");
  }
+
+ // The III-class St Peter Chrysologus on Dec 4 requires the III-class
+ // Advent weekday plus a commemoration of St Barbara (ordos and 1962).
+ // Both accompanying three-prayer sets must survive into the Mass Proper.
+ for(const date of ["2024-12-04","2027-12-04","2026-12-04"]){
+   const row=result.find(x=>x.date===date);
+   assert.equal(row.status,"ready",date+": Calendar failed");
+   assert.equal(row.properStatus,"ready",date+": Mass Proper unavailable");
+   assert.match(row.main?.id||"",/^sancti:12-04:3:w$/,date+": Peter Chrysologus displaced");
+   assert.ok(row.comms.some(x=>/tempora:Adv[1-4]-/.test(x.id)),date+": Advent feria missing");
+   const barbara=row.comms.find(x=>x.id==="commemoration:12-04-barbara:4:r");
+   assert.ok(barbara,date+": universal 1962 St Barbara commemoration omitted");
+   assert.equal(barbara.path,"Sancti/12-04pl",date+": wrong pinned Barbara Collect owner");
+   assert.ok(row.calendarCommemorations?.some(x=>x.path==="Sancti/12-04pl"),
+     date+": Barbara missing from composed Mass orations");
+   assert.equal(row.comms.length,2,date+": only Advent feria + Barbara should be commemorated");
+   for(const key of ["collects","secrets","postcommunions"])
+     assert.equal(row[key],3,date+": required triple of Peter, Advent, Barbara "+key+" absent");
+ }
+ const deferred=result.find(x=>x.date==="2022-12-04");
+ assert.ok(!deferred.comms.some(x=>x.id==="commemoration:12-04-barbara:4:r"),
+   "Advent Sunday must not acquire Barbara commemoration from Dec 4 civil-date rule");
  // The 1960 General Rubrics 16(a), 17(d) explicitly prohibit the
  // Sunday commemoration under a feast of the Lord assigned to that Sunday.
  // This is a source-owner prayer rule, not only a Calendar label preference.
