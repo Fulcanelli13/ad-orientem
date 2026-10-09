@@ -47,7 +47,7 @@ assert.equal(thomas.length,2);
 assert.equal(new Set(thomas.map(x=>x.country_code)).size,2);
 const francis=wave2.custody_claims.find(x=>x.subject_id==="subject:saint-francis-xavier");
 assert.ok(francis&&/forearm/i.test(francis.object_label_en));
-assert.ok(wave1.legacy_object_crosswalk.some(x=>x.subject_id===francis.subject_id&&x.place_id!=="PLACEHOLDER"));
+assert.ok(wave1.legacy_object_crosswalk.some(x=>x.subject_id===francis.subject_id&&x.custody_place_id==="place:IN:basilica-bom-jesus-old-goa"));
 const serra=wave2.custody_claims.filter(x=>x.subject_id==="subject:saint-junipero-serra");
 assert.ok(serra.some(x=>x.material_kind==="COFFIN_CONTACT_OBJECT")&&serra.some(x=>x.material_kind==="HISTORICAL_TOMB_WITH_REMAINS"));
 assert.ok(wave2.adversarial_historical_reviews.some(x=>x.subject_id==="subject:saint-thomas-becket"));
