@@ -1,0 +1,108 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_GEO_OVERLAY_V1",
+  "provider": "SSPX_GLOBAL_COMPLETION_20261009",
+  "generated_at": "2026-10-09T05:43:03.226Z",
+  "official_source": "https://map.fsspx.org",
+  "precision_policy": "5 official place-level direction pins marked address-approximate and 2 city/locality-only markers; never claim surveyed building footprints",
+  "approval": "EXACT_OFFICIAL_PLACE_SLUG_AND_DIRECTIONS_DESTINATION",
+  "records": [
+    {
+      "venue_id": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-01-mision-san-pio-x",
+      "geo": {
+        "lat": 14.83333,
+        "lng": -91.51667,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:mision-san-pio-x",
+        "source_url": "https://map.fsspx.org/de/places/mision-san-pio-x",
+        "matched_country_code": "GT",
+        "matched_on": "OFFICIAL_PLACE_ID_CITY_LEVEL_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-02-capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "geo": {
+        "lat": 4.62475,
+        "lng": -74.07286,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:capilla-sagrados-corazones-de-jyeus-y-de-maria",
+        "source_url": "https://map.fsspx.org/de/places/capilla-sagrados-corazones-de-jyeus-y-de-maria",
+        "matched_country_code": "CO",
+        "matched_on": "OFFICIAL_PLACE_ID_PHYSICAL_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-03-priorato-santa-teresita-del-nino-jesus",
+      "geo": {
+        "lat": 7.13043,
+        "lng": -73.12009,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:priorato-santa-teresita-del-nino-jesus",
+        "source_url": "https://map.fsspx.org/de/places/priorato-santa-teresita-del-nino-jesus",
+        "matched_country_code": "CO",
+        "matched_on": "OFFICIAL_PLACE_ID_PHYSICAL_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-04-capilla-san-jose-laferrere-la-matanza",
+      "geo": {
+        "lat": -34.65618,
+        "lng": -58.46641,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:capilla-san-jose-laferrere-la-matanza",
+        "source_url": "https://map.fsspx.org/de/places/capilla-san-jose-laferrere-la-matanza",
+        "matched_country_code": "AR",
+        "matched_on": "OFFICIAL_PLACE_ID_PHYSICAL_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-05-iglesia-nuestra-senora-de-lourdes",
+      "geo": {
+        "lat": -25.26688,
+        "lng": -57.56755,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:iglesia-nuestra-senora-de-lourdes",
+        "source_url": "https://map.fsspx.org/de/places/iglesia-nuestra-senora-de-lourdes",
+        "matched_country_code": "PY",
+        "matched_on": "OFFICIAL_PLACE_ID_PHYSICAL_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-06-capela-nossa-senhora-fatima",
+      "geo": {
+        "lat": -20.9206,
+        "lng": -41.87756,
+        "precision": "locality",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:capela-nossa-senhora-fatima",
+        "source_url": "https://map.fsspx.org/de/places/capela-nossa-senhora-fatima",
+        "matched_country_code": "BR",
+        "matched_on": "OFFICIAL_PLACE_ID_CITY_LEVEL_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    },
+    {
+      "venue_id": "ao-research-sspx-global-completion-20261009-sspx-global-20261009-07-church-of-the-holy-cross",
+      "geo": {
+        "lat": 51.32041,
+        "lng": -0.53731,
+        "precision": "address",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_ref": "SSPX:MAP:church-of-the-holy-cross",
+        "source_url": "https://map.fsspx.org/de/places/church-of-the-holy-cross",
+        "matched_country_code": "GB",
+        "matched_on": "OFFICIAL_PLACE_ID_PHYSICAL_ADDRESS_DIRECTIONS_POINT",
+        "source_observed_at": "2026-10-09"
+      }
+    }
+  ]
+}

@@ -1,0 +1,709 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_LAST_71_FIRST_PARTY_REVIEW_20261009_V1",
+  "review_date": "2026-10-09",
+  "scope": "Complete per-identity disposition of last 71 Sunday-badged initial 210-case queue across all districts",
+  "prior_registry_sspx_mass_records": 604,
+  "new_sspx_mass_records": 7,
+  "after_sspx_mass_records": 611,
+  "source_identity_cases": 71,
+  "disposition_counts": {
+    "RETAIN_PENDING_FIRST_PARTY_EVIDENCE": 44,
+    "EXISTING_PHYSICAL_SITE_ALIAS": 17,
+    "ADDRESS_CONFLICT_HOLD": 3,
+    "NEW_VERIFIED_MASS_SITE": 7
+  },
+  "first_party_sources": [
+    "https://map.fsspx.org/de/districts/central-america",
+    "https://map.fsspx.org/de/districts/south-america",
+    "https://map.fsspx.org/de/districts/brazil",
+    "https://fsspx.com.br/pt/priorados-e-capelas-51589",
+    "https://fsspx.ca/en/list-sspx-chapels-4",
+    "https://fsspx.asia/en/list-sspx-chapels-1",
+    "https://fsspx.mx/es/capillas-2",
+    "https://fsspx.uk/en/holy-cross-church-woking-32341"
+  ],
+  "controls": {
+    "no_mass_entry_without_source_visitor_address": true,
+    "confirmed_aliases_do_not_create_new_venues": true,
+    "missing_city_only_sources_remain_pending": true,
+    "conflicting_address_never_auto_overwritten": true,
+    "exact_official_map_routing_geos_only": true,
+    "locality_pins_distinguished_from_address_pins": true
+  },
+  "cases": [
+    {
+      "official_place_id": "abu-dhabi-or-dubai",
+      "official_map_url": "https://map.fsspx.org/fr/places/abu-dhabi-or-dubai",
+      "district": "asia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "OFFICIAL_REGION_ONLY_NO_PUBLIC_STREET_OR_PREDICTABLE_MASS"
+    },
+    {
+      "official_place_id": "angers-noel-pinot",
+      "official_map_url": "https://map.fsspx.org/fr/places/angers-noel-pinot",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "batea",
+      "official_map_url": "https://map.fsspx.org/fr/places/batea",
+      "district": "spain-portugal",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "belo-horizonte",
+      "official_map_url": "https://map.fsspx.org/fr/places/belo-horizonte",
+      "district": "brazil",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-BR-BR-BELO-HORIZONTE-MISSAO-DA-FSSPX",
+      "registered_name": "Missão da FSSPX",
+      "registered_address": "Av. Cel. José Dias Bicalho 17, Belo Horizonte, MG, Brasil",
+      "registered_provider_source": "sspx-oct26-americas",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "capela-do-sagrado-coracao",
+      "official_map_url": "https://map.fsspx.org/fr/places/capela-do-sagrado-coracao",
+      "district": "brazil",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "ADDRESS_CONFLICT_HOLD",
+      "registry_address": "Rua Nebraska 526, Jardim Eldorado, Passos, MG, Brasil",
+      "alternate_official_address": "Rua Nebraska 532, Bairro São Francisco, Passos, MG, Brasil",
+      "reason": "Street number and bairro conflict across official Brazilian SSPX pages; preserve current record, do not create another physical chapel",
+      "official_url": "https://fsspx.com.br/pt/priorados-e-capelas-51589"
+    },
+    {
+      "official_place_id": "capela-nossa-senhora-fatima",
+      "official_map_url": "https://map.fsspx.org/fr/places/capela-nossa-senhora-fatima",
+      "district": "brazil",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "NEW_VERIFIED_MASS_SITE",
+      "new_venue_id": "SSPX-GLOBAL-20261009-06-CAPELA-NOSSA-SENHORA-FATIMA",
+      "new_address": "Rua Vereador Frilson Mateus Viêira 69, Santa Terezinha, 28375-000 Varre-Sai, Rio de Janeiro, Brasil",
+      "new_schedule": "Sunday Mass 08:00, except fourth Sunday 19:00. Official Brazilian SSPX autonomous-house 2026 district schedule; check for exceptions.",
+      "new_provider_source": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
+      "geo_precision": "locality"
+    },
+    {
+      "official_place_id": "capela-santo-antonio",
+      "official_map_url": "https://map.fsspx.org/fr/places/capela-santo-antonio",
+      "district": "brazil",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-BR-BR-CRAVINHOS-CAPELA-SAO-PIO-X",
+      "registered_name": "Capela São Pio X",
+      "registered_address": "Rodovia Ângelo Cavalheiro, Sítio Figueira Nova, 14140-000 Cravinhos, SP, Brasil",
+      "registered_provider_source": "sspx-oct26-americas",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination.",
+      "note": "Official SSPX chapel patronage renamed Santo Antônio; the existing Cravinhos source record calls it São Pio X but shares Sítio Figueira Nova. Preserve alias discrepancy for later titular update."
+    },
+    {
+      "official_place_id": "capilla",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-ACAS-CENTRAL_AMERICA-DO-037",
+      "registered_name": "Capilla de Distrito Nacional",
+      "registered_address": "Calle Ramón Cáceres at Calle C, Barrio Cristo Rey, Distrito Nacional, Santo Domingo, Dominican Republic",
+      "registered_provider_source": "sspx-asia-central-americas",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-sagrados-corazones-de-jyeus-y-de-maria",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "NEW_VERIFIED_MASS_SITE",
+      "new_venue_id": "SSPX-GLOBAL-20261009-02-CAPILLA-SAGRADOS-CORAZONES-DE-JYEUS-Y-DE-MARIA",
+      "new_address": "Carrera 18 n.º 35-33, Bogotá, Colombia",
+      "new_schedule": "Sunday Mass marked by the official SSPX 2026 site, but only weekday hours Tue–Sat 17:30 published; confirm the Sunday time before travel.",
+      "new_provider_source": "https://centroamerica.fsspx.org/es/capillas-1",
+      "geo_precision": "address"
+    },
+    {
+      "official_place_id": "capilla-san-jose",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-san-jose",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "PALMAR_DE_OCOA_CITY_ONLY_OFFICIAL_SUNDAY_MASS_LOCATION"
+    },
+    {
+      "official_place_id": "capilla-san-jose-laferrere-la-matanza",
+      "official_map_url": "https://map.fsspx.org/fr/places/capilla-san-jose-laferrere-la-matanza",
+      "district": "south-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "NEW_VERIFIED_MASS_SITE",
+      "new_venue_id": "SSPX-GLOBAL-20261009-04-CAPILLA-SAN-JOSE-LAFERRERE-LA-MATANZA",
+      "new_address": "Zinny 2095, Barrio Kanmar, 1824 Laferrere, La Matanza, Buenos Aires, Argentina",
+      "new_schedule": "Sunday Mass listed by official SSPX South America district; contact the priests at Escuela del Niño Jesús (La Reja) for actual times.",
+      "new_provider_source": "https://fsspx.ar/es/capillas",
+      "geo_precision": "address"
+    },
+    {
+      "official_place_id": "casa-do-menino-jesus-de-praga",
+      "official_map_url": "https://map.fsspx.org/fr/places/casa-do-menino-jesus-de-praga",
+      "district": "spain-portugal",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-IB-PT-FATIMA-CASA-DO-MENINO-JESUS-DE-PRAGA-E-CAPELA",
+      "registered_name": "Casa do Menino Jesus de Praga e Capela do Imaculado Coração de Maria",
+      "registered_address": "Rua Imaculada Conceição 8, Moita Redonda, 2495-651 Fátima, Portugal",
+      "registered_provider_source": "sspx-oct26-europe",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "centro-de-misa-de-gonnet",
+      "official_map_url": "https://map.fsspx.org/fr/places/centro-de-misa-de-gonnet",
+      "district": "south-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-SA-AR-GONNET-ORATORIO-SAN-ANTONIO-DE-PADUA",
+      "registered_name": "Oratorio San Antonio de Padua",
+      "registered_address": "Centenario 2922, Gonnet, Buenos Aires, Argentina",
+      "registered_provider_source": "sspx-oct26-americas",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "centro-de-misa-de-pichi-mahuida",
+      "official_map_url": "https://map.fsspx.org/fr/places/centro-de-misa-de-pichi-mahuida",
+      "district": "south-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CITY_ONLY_NO_PHYSICAL_MASS_ADDRESS"
+    },
+    {
+      "official_place_id": "chapelle-notre-dame-de-coat-ar-roch",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-de-coat-ar-roch",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "chapelle-notre-dame-de-lourdes",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-de-lourdes",
+      "district": "switzerland",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "chapelle-notre-dame-du-rosaire",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-du-rosaire",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "chapelle-notre-dame-mediatrice-de-toutes-graces",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-notre-dame-mediatrice-de-toutes-graces",
+      "district": "general-house",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "chapelle-saint-aubain",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-saint-aubain",
+      "district": "benelux",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-BEN-BE-NAMUR-CHAPELLE-SAINT-AUBIN",
+      "registered_name": "Chapelle Saint Aubin",
+      "registered_address": "Rue Delvaux 8, 5000 Namur, Belgique",
+      "registered_provider_source": "sspx-oct26-europe",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "chapelle-saint-mathias",
+      "official_map_url": "https://map.fsspx.org/fr/places/chapelle-saint-mathias",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "church-of-the-canadian-martyrs",
+      "official_map_url": "https://map.fsspx.org/fr/places/church-of-the-canadian-martyrs",
+      "district": "canada",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-NA-CA-HOLY-CANADIAN-MARTYRS-CHURCH-WARMINSTER-9767-HWY-12-W",
+      "registered_name": "Holy Canadian Martyrs Church",
+      "registered_address": "9767 Hwy 12 W, Warminster ON L0K 2G0",
+      "registered_provider_source": "sspx-north-america-20261008",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "church-of-the-holy-cross",
+      "official_map_url": "https://map.fsspx.org/fr/places/church-of-the-holy-cross",
+      "district": "great-britain-ireland",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "NEW_VERIFIED_MASS_SITE",
+      "new_venue_id": "SSPX-GLOBAL-20261009-07-CHURCH-OF-THE-HOLY-CROSS",
+      "new_address": "Sandy Lane, Maybury, Woking GU22 8BA, United Kingdom",
+      "new_schedule": "Sunday Mass every Sunday at the Church of the Holy Cross; verify current hour in the SSPX district schedule before travel.",
+      "new_provider_source": "https://fsspx.uk/en/holy-cross-church-woking-32341",
+      "geo_precision": "address"
+    },
+    {
+      "official_place_id": "dardanup",
+      "official_map_url": "https://map.fsspx.org/fr/places/dardanup",
+      "district": "australia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "MASS_MISSION_SITE_UNVERIFIED"
+    },
+    {
+      "official_place_id": "eglise-saint-joseph-bruxelles",
+      "official_map_url": "https://map.fsspx.org/fr/places/eglise-saint-joseph-bruxelles",
+      "district": "benelux",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-BEN-BE-BRUXELLES-SINT-JOZEFKERK-EGLISE-SAINT-JOSEPH",
+      "registered_name": "Sint-Jozefkerk — Église Saint-Joseph",
+      "registered_address": "Square Frère Orban 3, 1000 Bruxelles, Belgique",
+      "registered_provider_source": "sspx-oct26-europe",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "eglise-saint-raphael",
+      "official_map_url": "https://map.fsspx.org/fr/places/eglise-saint-raphael",
+      "district": "australia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "VUNAPISU_FIJI_MISSION_EXACT_LOCATION_UNVERIFIED"
+    },
+    {
+      "official_place_id": "eglise-sainte-foy",
+      "official_map_url": "https://map.fsspx.org/fr/places/eglise-sainte-foy",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "exerzitienhaus-porta-caeli",
+      "official_map_url": "https://map.fsspx.org/fr/places/exerzitienhaus-porta-caeli",
+      "district": "germany",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "gran-canaria",
+      "official_map_url": "https://map.fsspx.org/fr/places/gran-canaria",
+      "district": "spain-portugal",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "hong-kong",
+      "official_map_url": "https://map.fsspx.org/fr/places/hong-kong",
+      "district": "asia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "NO_CURRENT_VERIFIED_PHYSICAL_VISITOR_ADDRESS"
+    },
+    {
+      "official_place_id": "iglesia-nuestra-senora-de-lourdes",
+      "official_map_url": "https://map.fsspx.org/fr/places/iglesia-nuestra-senora-de-lourdes",
+      "district": "south-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "NEW_VERIFIED_MASS_SITE",
+      "new_venue_id": "SSPX-GLOBAL-20261009-05-IGLESIA-NUESTRA-SENORA-DE-LOURDES",
+      "new_address": "Avenida Santísima Trinidad y Santísimo Sacramento, Asunción, Paraguay",
+      "new_schedule": "Sunday Mass listed by official SSPX South America district (2026 listing); schedule hours unpublished. Confirm via the supervising priory.",
+      "new_provider_source": "https://fsspx.ar/es/capillas",
+      "geo_precision": "address"
+    },
+    {
+      "official_place_id": "indonesie-jakarta",
+      "official_map_url": "https://map.fsspx.org/fr/places/indonesie-jakarta",
+      "district": "asia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "NO_CURRENT_VERIFIED_PHYSICAL_VISITOR_ADDRESS"
+    },
+    {
+      "official_place_id": "kapel-van-onze-lieve-vrouw-van-de-rozenkrans",
+      "official_map_url": "https://map.fsspx.org/fr/places/kapel-van-onze-lieve-vrouw-van-de-rozenkrans",
+      "district": "benelux",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-BEN-NL-LEIDEN-KAPEL-O-L-V-VAN-DE-ROZENKRANS",
+      "registered_name": "Kapel O.-L.-V. van de Rozenkrans",
+      "registered_address": "Sumatrastraat 197, 2315 BD Leiden, Nederland",
+      "registered_provider_source": "sspx-oct26-europe",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "le-bremien-notre-dame",
+      "official_map_url": "https://map.fsspx.org/fr/places/le-bremien-notre-dame",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "mar-del-plata",
+      "official_map_url": "https://map.fsspx.org/fr/places/mar-del-plata",
+      "district": "south-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CITY_ONLY_NO_PHYSICAL_MASS_ADDRESS"
+    },
+    {
+      "official_place_id": "maritimes-missions-nb",
+      "official_map_url": "https://map.fsspx.org/fr/places/maritimes-missions-nb",
+      "district": "canada",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "MULTI_LOCALITY_MISSION_NO_STABLE_MASS_ADDRESS"
+    },
+    {
+      "official_place_id": "maritimes-missions-ns",
+      "official_map_url": "https://map.fsspx.org/fr/places/maritimes-missions-ns",
+      "district": "canada",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "MULTI_LOCALITY_MISSION_NO_STABLE_MASS_ADDRESS"
+    },
+    {
+      "official_place_id": "mision-cancun",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-cancun",
+      "district": "mexico",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CONFLICTING_SUNDAY_HALL_AND_SATURDAY_VENUE_FUTURE_CHURCH_NOT_YET_BUILT"
+    },
+    {
+      "official_place_id": "mision-de-la-fraternidad-s-pio-x",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-de-la-fraternidad-s-pio-x",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "ADDRESS_CONFLICT_HOLD",
+      "registry_address": "Calle Arce No. 910, San Salvador, El Salvador",
+      "official_2026_district_address": "Calle Gabriela Mistral 563, San Salvador, El Salvador",
+      "reason": "Same SSPX mission; national and global first-party directory street disagreement, presumed venue move not independently adjudicated",
+      "official_url": "https://centroamerica.fsspx.org/es/capillas-1"
+    },
+    {
+      "official_place_id": "mision-jalapa",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-jalapa",
+      "district": "mexico",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CITY_ONLY_NO_VERIFIED_PUBLIC_STREET"
+    },
+    {
+      "official_place_id": "mision-merida",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-merida",
+      "district": "mexico",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CHICHI_SUAREZ_VERSUS_TEMPORARY_QUINTA_CHABLEKAL_ADDRESS"
+    },
+    {
+      "official_place_id": "mision-oaxaca",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-oaxaca",
+      "district": "mexico",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CITY_ONLY_NO_VERIFIED_PUBLIC_STREET"
+    },
+    {
+      "official_place_id": "mision-san-pio-x",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-san-pio-x",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "NEW_VERIFIED_MASS_SITE",
+      "new_venue_id": "SSPX-GLOBAL-20261009-01-MISION-SAN-PIO-X",
+      "new_address": "Avenida Cenizal 0-97, Zona 4 (panadería Doña Juanita), Quetzaltenango, Guatemala",
+      "new_schedule": "Sunday Mass is listed by the official SSPX Central America district; time and recurrence need local confirmation.",
+      "new_provider_source": "https://centroamerica.fsspx.org/es/capillas-1",
+      "geo_precision": "locality"
+    },
+    {
+      "official_place_id": "mision-veracruz",
+      "official_map_url": "https://map.fsspx.org/fr/places/mision-veracruz",
+      "district": "mexico",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CITY_ONLY_NO_VERIFIED_PUBLIC_STREET"
+    },
+    {
+      "official_place_id": "mission-of-st-peter-mary-chanel",
+      "official_map_url": "https://map.fsspx.org/fr/places/mission-of-st-peter-mary-chanel",
+      "district": "australia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "DARWIN_MISSION_CITY_ONLY_NO_STREET"
+    },
+    {
+      "official_place_id": "ntra-sra-de-alta-gracia",
+      "official_map_url": "https://map.fsspx.org/fr/places/ntra-sra-de-alta-gracia",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "LOS_MOSQUITOS_SITE_ADDRESS_NOT_PUBLISHED"
+    },
+    {
+      "official_place_id": "oratoire-st-joseph",
+      "official_map_url": "https://map.fsspx.org/fr/places/oratoire-st-joseph",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "oratorio-san-jose",
+      "official_map_url": "https://map.fsspx.org/fr/places/oratorio-san-jose",
+      "district": "mexico",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "HAVANA_CITY_ONLY_NO_VERIFIED_PUBLIC_STREET"
+    },
+    {
+      "official_place_id": "oratorio-stella-maris",
+      "official_map_url": "https://map.fsspx.org/fr/places/oratorio-stella-maris",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "ADDRESS_CONFLICT_HOLD",
+      "official_map_address": "Avenida Morgan 2468, Panama City",
+      "official_mass_schedule_address": "Calle Los Almendros 57, Albrook, Ancón, Panama City",
+      "reason": "Two different street addresses within the same current official SSPX mission page, so neither exact Mass venue nor pin can be asserted",
+      "official_url": "https://map.fsspx.org/de/places/oratorio-stella-maris"
+    },
+    {
+      "official_place_id": "ormoc",
+      "official_map_url": "https://map.fsspx.org/fr/places/ormoc",
+      "district": "asia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "SUNDAY_FIRST_OF_MONTH_ONLY_NO_VISITOR_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "our-lady-of-the-most-holy-rosary-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/our-lady-of-the-most-holy-rosary-church",
+      "district": "canada",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-NA-CA-OUR-LADY-OF-THE-ROSARY-CHURCH-WINNIPEG-478-MCKENZIE-STREET",
+      "registered_name": "Our Lady of the Rosary Church",
+      "registered_address": "478 McKenzie Street, Winnipeg MB R2W 5B9",
+      "registered_provider_source": "sspx-north-america-20261008",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "palermo",
+      "official_map_url": "https://map.fsspx.org/fr/places/palermo",
+      "district": "italy",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "pavia-voghera",
+      "official_map_url": "https://map.fsspx.org/fr/places/pavia-voghera",
+      "district": "italy",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "priorato-sagrado-corazon-de-jesus",
+      "official_map_url": "https://map.fsspx.org/fr/places/priorato-sagrado-corazon-de-jesus",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "YAMASA_PRIORY_WITH_MULTIPLE_MISSIONS_PUBLIC_ACCESS_NOT_PROVEN"
+    },
+    {
+      "official_place_id": "priorato-santa-teresita-del-nino-jesus",
+      "official_map_url": "https://map.fsspx.org/fr/places/priorato-santa-teresita-del-nino-jesus",
+      "district": "central-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "NEW_VERIFIED_MASS_SITE",
+      "new_venue_id": "SSPX-GLOBAL-20261009-03-PRIORATO-SANTA-TERESITA-DEL-NINO-JESUS",
+      "new_address": "Calle 19 #26-50, Barrio San Francisco, Bucaramanga, Santander, Colombia",
+      "new_schedule": "Sunday Mass expressly listed for this chapel by the official SSPX district; hour not published. This is a different street address from Capilla San José on Calle 20 #25-35.",
+      "new_provider_source": "https://centroamerica.fsspx.org/es/capillas-1",
+      "geo_precision": "address"
+    },
+    {
+      "official_place_id": "rende",
+      "official_map_url": "https://map.fsspx.org/fr/places/rende",
+      "district": "italy",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "rosenkranz-kapelle",
+      "official_map_url": "https://map.fsspx.org/fr/places/rosenkranz-kapelle",
+      "district": "zaitzkofen",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "rotuma",
+      "official_map_url": "https://map.fsspx.org/fr/places/rotuma",
+      "district": "australia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Juju location insufficient to infer accessible building"
+    },
+    {
+      "official_place_id": "saint-pius-v-chapel-onithsha",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-pius-v-chapel-onithsha",
+      "district": "africa",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-AF-NG-ONITSHA",
+      "registered_name": "Saint Pius V Chapel",
+      "registered_address": "34 Anyika Street, Awada Obosi, Onitsha, Anambra, Nigeria",
+      "registered_provider_source": "sspx-district-seed",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "saint-willibrordkerk",
+      "official_map_url": "https://map.fsspx.org/fr/places/saint-willibrordkerk",
+      "district": "benelux",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-BEN-NL-UTRECHT-SINT-WILLIBRORDKERK",
+      "registered_name": "Sint Willibrordkerk",
+      "registered_address": "Minrebroederstraat 21, 3512 GS Utrecht, Nederland",
+      "registered_provider_source": "sspx-oct26-europe",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "sainte-marie-de-re",
+      "official_map_url": "https://map.fsspx.org/fr/places/sainte-marie-de-re",
+      "district": "france",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "san-luis",
+      "official_map_url": "https://map.fsspx.org/fr/places/san-luis",
+      "district": "south-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "CITY_ONLY_NO_PHYSICAL_MASS_ADDRESS"
+    },
+    {
+      "official_place_id": "sanfre",
+      "official_map_url": "https://map.fsspx.org/fr/places/sanfre",
+      "district": "italy",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "seniorenheim-st-josef",
+      "official_map_url": "https://map.fsspx.org/fr/places/seniorenheim-st-josef",
+      "district": "germany",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    },
+    {
+      "official_place_id": "st-amanduskapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-amanduskapel",
+      "district": "benelux",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-BEN-BE-GENT-SINT-AMANDUSKAPEL",
+      "registered_name": "Sint Amanduskapel",
+      "registered_address": "Kortrijksesteenweg 139, 9000 Gent, België",
+      "registered_provider_source": "sspx-oct26-europe",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "st-anne-s-mission",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-anne-s-mission",
+      "district": "canada",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-NA-CA-SAINT-ANNE-MISSION-MEDICINE-HAT-1-DUNMORE-RD-SE",
+      "registered_name": "Saint Anne Mission",
+      "registered_address": "1 Dunmore Rd SE, Medicine Hat AB T1A 1Z5",
+      "registered_provider_source": "sspx-north-america-20261008",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "st-anthony-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-anthony-chapel",
+      "district": "asia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-OCT26-ACAS-ASIA-PH-018",
+      "registered_name": "Saint Anthony Chapel",
+      "registered_address": "Barangay Balit, Mambusao, Capiz, Philippines",
+      "registered_provider_source": "sspx-asia-central-americas",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "st-bartholomew-s-chapel",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-bartholomew-s-chapel",
+      "district": "asia",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "VASAI_DISTRICT_ONLY_NO_VISITOR_STREET_ADDRESS"
+    },
+    {
+      "official_place_id": "st-thomas-more-church",
+      "official_map_url": "https://map.fsspx.org/fr/places/st-thomas-more-church",
+      "district": "canada",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-NA-CA-ST-THOMAS-MORE-CATHOLIC-CHURCH-BRINSTON-11052-GILMOUR-ROAD",
+      "registered_name": "St. Thomas More Catholic Church",
+      "registered_address": "11052 Gilmour Road, Brinston ON K0E 1C0",
+      "registered_provider_source": "sspx-north-america-20261008",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "temuco",
+      "official_map_url": "https://map.fsspx.org/fr/places/temuco",
+      "district": "south-america",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "FAMILY_VILLAGRA_PRIVATE_HOST_NO_SPECIFIC_PUBLIC_STREET"
+    },
+    {
+      "official_place_id": "the-little-house",
+      "official_map_url": "https://map.fsspx.org/fr/places/the-little-house",
+      "district": "great-britain-ireland",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "EXISTING_PHYSICAL_SITE_ALIAS",
+      "registered_venue_id": "SSPX-GB-GB-BINGLEY-THE-LITTLE-HOUSE-MASS-CHAPEL",
+      "registered_name": "The Little House — Mass chapel",
+      "registered_address": "Market Street, Bingley BD16 2HP",
+      "registered_provider_source": "sspx-four-district-bulk",
+      "proof": "Official source place and incumbent national directory physical venue agree on street, named chapel or uniquely identified Mass destination."
+    },
+    {
+      "official_place_id": "verona",
+      "official_map_url": "https://map.fsspx.org/fr/places/verona",
+      "district": "italy",
+      "original_status": "PENDING_PLACE_DETAIL_ADJUDICATION",
+      "decision": "RETAIN_PENDING_FIRST_PARTY_EVIDENCE",
+      "reason": "Official Sunday map claim retained; further first-party schedule/site-specific comparison required. No new venue or pin asserted."
+    }
+  ]
+}
