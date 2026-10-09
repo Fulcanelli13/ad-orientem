@@ -186,6 +186,47 @@ export const VERIFIED_MASS_FEAST_READINGS=Object.freeze([
         "latinIncipit": "Missus est Angelus Gabriel a Deo"
       }
     }
+  },
+  {
+    "sourcePath": "Tempora/Quad6-1",
+    "title": "Holy Monday · Mass",
+    "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-03-30?theme=light",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Isaiah 50:5–10",
+        "latinIncipit": "Dominus Deus aperuit mihi aurem"
+      },
+      "GOSPEL": {
+        "reference": "John 12:1–9",
+        "latinIncipit": "Ante sex dies Paschae venit Jesus Bethaniam"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Quad6-2",
+    "title": "Holy Tuesday · Mass lesson, Passion held",
+    "witnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-03-31?theme=light",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Jeremiah 11:18–20",
+        "latinIncipit": "Domine demonstrasti mihi et cognovi"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Quad6-4",
+    "title": "Holy Thursday · Mass of the Lord's Supper",
+    "witnessUrl": "https://www.missalemeum.com/en/calendar/2026-04-02",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1 Corinthians 11:20–32",
+        "latinIncipit": "Convenientibus vobis in unum"
+      },
+      "GOSPEL": {
+        "reference": "John 13:1–15",
+        "latinIncipit": "Ante diem festum Paschae"
+      }
+    }
   }
 ]);
 export const VERIFIED_MASS_FEAST_VERSION="1962-MASS-FEAST-READING-CONTEXT-SUPPLEMENT-V1";
