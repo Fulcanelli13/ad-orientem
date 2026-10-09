@@ -399,6 +399,7 @@ const sacredStatusNames=Object.freeze({
   HISTORICAL_TRADITION:"Historical devotional tradition",
   DIOCESAN_TRADITION:"Diocesan devotional tradition",
   MEDIEVAL_LEGEND:"Medieval hagiographical tradition",
+  COPTIC_ORTHODOX_RECOGNITION:"Recognised by Coptic Orthodox Patriarchate; not Catholic diocesan approval",
 });
 export function projectSacredSiteItems({records=[],places=[],kind="apparitions"}={}){
   const placeMap=new Map(arr(places).map(row=>[row?.place_id,row]));
@@ -435,10 +436,10 @@ export function projectSacredSiteItems({records=[],places=[],kind="apparitions"}
         {label:"Evidence",value:evidence},
         apparition?{label:"Witness / tradition",value:record?.witness_or_tradition}:null,
       ].filter(x=>x?.value)),
-      sections:freezeList([{label:"Source scope",title:"",body:notes}]),
+      sections:freezeList([{label:"Source scope",title:"",body:notes},...(record?.access_notice_en?[{label:"Visitor access",title:"Temporary closure",body:record.access_notice_en}]:[])]),
       source_links:freezeList([record?.source_url?{id:record.id,title:title,issuer:"Documented source",url:record.source_url}:null].filter(Boolean)),
       actions:freezeList(placeMapsUrl(place)?[{label:"Destination",url:placeMapsUrl(place)}]:[]),
-      note:notes,
+      note:notes+(record?.access_notice_en?" "+record.access_notice_en:""),
       search_text:itemSearch([record?.title_en,record?.title_fr,record?.associated_person,record?.witness_or_tradition,record?.period_label,record?.phenomenon_family,record?.relic_kind,place?.name?.official,addressLabel(place?.address)]),
       raw:Object.freeze({record,place}),
     });
