@@ -82,7 +82,7 @@ try{
    assert.equal(await page.locator(daily).count(),1);
  }
  assert.match(await page.locator(daily).innerText(),/Prayer completed/);
- await tapStep("#aoPray435930.open [data-tp381-daily-step='0']",step);
+ await tapStep("#aoPray435930.open [data-tp381-daily-step='0']",0);
  await page.locator("#aoPray435930.open [data-tp381-daypart='evening']").tap();
  assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 13");
  for(let step=1;step<=8;step++)await tapStep("#aoPray435930.open [data-tp381-daily-step='"+step+"']",step);
