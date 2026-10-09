@@ -11,6 +11,24 @@ import {
 } from "../src/calendar/liturgical-year.js";
 import { v384Dates, v384Events, v384Event } from "../src/calendar/traditional-year-v384.js";
 import { SEASON_GUIDE, yearSegmentGeometry, renderYearJourney } from "../src/calendar/year-journey.js";
+import { calendarMassColour } from "../src/calendar/colour-projection.js";
+
+// This is deliberately display-only. The production day resolver already
+// owns the phase colours; the Calendar must label the Mass, not the first
+// blessing/procession segment, while R17 retains the full rite sequence.
+for(const [name,first,mass] of [
+  ["Palm Sunday","Red","Violet"],
+  ["Easter Vigil","Violet","White"],
+  ["Pentecost Vigil","Violet","Red"],
+]){
+  const r={proper:{data:{color:first}},day:{main:{color:first+" / "+mass}},colourPlan:{
+    primary:first,massColor:mass,sequence:[["Preparatory rites",first],["Mass",mass]]
+  }};
+  assert.equal(calendarMassColour(r),mass,name+" calendar colour must refer to the Mass");
+  assert.deepEqual(r.colourPlan.sequence.map(x=>x[1]),[first,mass],name+" colour plan was mutated");
+}
+assert.equal(calendarMassColour({proper:{data:{color:"Green"}},day:{main:{color:"Green"}}}),"Green");
+assert.equal(calendarMassColour({day:{main:{color:"White"}}}),"White");
 
 function assertContinuous(year) {
   assert.equal(year.periods.reduce((sum, period) => sum + period.days, 0), year.totalDays);
