@@ -107,7 +107,7 @@
     "test:mass-v180-donor-parity": "node tests/mass-v180-donor-parity.mjs",
     "test:design-system": "node tests/design-system-coherence.mjs",
     "test:date-format": "node tests/date-format-coherence.mjs",
-    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second && npm run test:directory-sspx-oct26-bulk && npm run test:directory-sspx-asia-central-americas && npm run test:directory-sspx-north-america-corpus && npm run test:directory-worldwide-geocode-reuse && npm run test:directory-sspx-map-geo-overlays && npm run test:directory-sspx-worldwide-index",
+    "test:directory": "node tests/directory-contracts.mjs && node tests/directory-corpus-importers.mjs && npm run test:directory-official-geo && npm run test:directory-icksp-quality && npm run test:directory-sspx-france-second && npm run test:directory-sspx-oct26-bulk && npm run test:directory-sspx-asia-central-americas && npm run test:directory-sspx-north-america-corpus && npm run test:directory-worldwide-geocode-reuse && npm run test:directory-sspx-map-geo-overlays && npm run test:directory-sspx-worldwide-index && npm run test:directory-sspx-worldwide-evidence",
     "directory:import:sspx": "node tools/directory/import-sspx.mjs",
     "test:sacramental-sot": "node tests/sacramental-formation-sot.mjs",
     "directory:import:fssp": "node tools/directory/import-fssp.mjs",
@@ -146,7 +146,8 @@
     "test:directory-worldwide-geocode-reuse": "node tests/directory-worldwide-geocode-reuse.mjs",
     "directory:geocode:worldwide-cache": "node tools/directory/build-worldwide-geocode-overlays.mjs",
     "test:directory-sspx-map-geo-overlays": "node tests/directory-sspx-map-geo-overlays.mjs",
-    "test:directory-sspx-worldwide-index": "node tests/directory-sspx-worldwide-index.mjs && node tests/directory-sspx-worldwide-corpus.mjs"
+    "test:directory-sspx-worldwide-index": "node tests/directory-sspx-worldwide-index.mjs && node tests/directory-sspx-worldwide-corpus.mjs",
+    "test:directory-sspx-worldwide-evidence": "node tests/directory-sspx-worldwide-evidence.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
