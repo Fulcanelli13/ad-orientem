@@ -15,7 +15,9 @@ assert.ok(report.uniqueImages>=80,"Externalized image registry unexpectedly shra
 assert.ok(report.savedFromTextBytes>=25_000_000,"Text weight recovered less than expected");
 const sprites=JSON.parse(readFileSync("data/presentation/startup-sprite-report.v1.json","utf8"));
 const perIcon=JSON.parse(readFileSync("data/presentation/startup-per-icon-report.v1.json","utf8"));
-assert.equal(perIcon.reducedHtmlBytes,htmlBytes,"Current HTML differs from per-icon SVG manifest");
+assert.equal(perIcon.lazyHtmlBytes,htmlBytes,"Current HTML differs from deferred per-icon SVG manifest");
+assert.equal(perIcon.lazyActivationOwner,"src/app/refined-icon-on-demand.js");
+assert.ok(html.includes('src="./src/app/refined-icon-on-demand.js"'),"Deferred icon loader missing");
 assert.equal(perIcon.originalHtmlBytes,sprites.reducedHtmlBytes,"Original sprite manifest lost its provenance");
 assert.equal(perIcon.icons.length,20,"Twenty historical refined icon symbols must remain intact");
 const mappedIcons=new Map(perIcon.icons.map(row=>[row.id,row]));
@@ -23,7 +25,8 @@ for(const icon of perIcon.icons){
   assert.ok(existsSync(icon.path),"Missing per-icon geometry: "+icon.path);
   const source=readFileSync(icon.path,"utf8");
   assert.ok(source.includes('id="'+icon.id+'"'),"Individual SVG lost "+icon.id);
-  assert.ok(html.includes("./"+icon.path+"#"+icon.id),"Local proxy points to wrong SVG: "+icon.id);
+  assert.ok(html.includes('data-ao-refined-lazy="./'+icon.path+'#'+icon.id+'"'),"Lazy local symbol lost asset path: "+icon.id);
+  assert.ok(!html.includes('<use href="./'+icon.path+'#'+icon.id+'"'),"Historical icon is still loaded eagerly: "+icon.id);
 }
 assert.equal(sprites.originalHtmlBytes,split.postArtHtmlBytes,"SVG extraction did not start from the certified post-art HTML");
 assert.ok(htmlBytes<3_000_000,"Cold HTML budget: refined SVG assets must remain external");
