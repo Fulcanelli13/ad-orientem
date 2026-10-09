@@ -11,7 +11,8 @@
     "defaultMass": {
       "class": 4,
       "colour": "white",
-      "sourcePath": "Tempora/Pasc5-0"
+      "sourcePath": "Tempora/Pasc5-0",
+      "note": "Representative IV-class Monday feria only; on other Lesser Rogation weekdays DayResolver may resolve a III-class saint or another actual celebration. Never overwrite the day Mass."
     },
     "conditionalMass": {
       "class": 2,
@@ -21,7 +22,8 @@
       "handoff": "INTROIT",
       "omitOpeningPrayers": true,
       "gloria": false,
-      "credo": false
+      "credo": false,
+      "impediment": "A I-class celebration prevents the II-class Rogation votive, but public Litanies and their Mass-of-day handoff may still be chosen."
     }
   },
   "sourceWitnesses": [
@@ -304,7 +306,12 @@
       "CLASS_I_VOTIVE_IMPEDIMENT"
     ],
     "requiredTextOwnership": "R17_REAL_SOURCE_CORPUS_AND_VERIFIED_PASCHAL_PREFACE",
-    "acceptance": "PR_810_SYNTHETIC_TEXT_E2E_PASS; THIS_PR_REAL_CHECKED_IN_CORPUS_PHONE_ACCEPTANCE_REQUIRED"
+    "acceptance": "PR_810_SYNTHETIC_TEXT_E2E_PASS; THIS_PR_REAL_CHECKED_IN_CORPUS_PHONE_ACCEPTANCE_REQUIRED",
+    "eligibleDayMass": "Resolver-confirmed source-available class I-IV calendar Mass on the three minor-Rogation weekdays; saint Proper remains intact for day-Mass choice.",
+    "eligibleVotive": "II-class Rogation votive on those weekdays only when the resolved principal celebration is not I class and user explicitly selects public service.",
+    "representativeObservedSaintDay": {
+      "2027-05-04": "St Monica, III class, Sancti/05-04; white day Mass remains selectable"
+    }
   },
   "researchNotesAreHistorical": true,
   "editorialApproval": {
