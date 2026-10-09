@@ -62,6 +62,29 @@ try {
   const findLoaded=await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.()?.installed===true);
   assert.equal(findLoaded,true,"Explore modular owner not installed");
 
+  // Cold Explore must install and open its deferred contextual Glossary.
+  await page.locator("#ao-find-modular-root [data-find-glossary]").click();
+  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.open===true,null,{timeout:30000});
+  assert.equal(await page.evaluate(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.loaded),true,
+    "Contextual Glossary opened without loading its definitions");
+  await page.evaluate(()=>globalThis.AO_GLOSSARY_V1.close());
+
+  // Use the actual delegated Explore Novena action before first Prayer visit.
+  // The linked novena ID is present in the canonical 16-Novena corpus.
+  await page.evaluate(()=>{
+    const trigger=document.createElement("button");
+    trigger.type="button";trigger.id="explore-first-use-novena";
+    trigger.dataset.exploreOpenNovena="immaculate_conception";
+    trigger.textContent="Open linked novena";
+    document.getElementById("ao-find-modular-root")?.append(trigger);
+  });
+  await page.locator("#explore-first-use-novena").click();
+  await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id==="immaculate_conception"
+    &&document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoN1==="true",null,{timeout:45000});
+  assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.()?.open),false,
+    "Explore must close only once the Novena opened successfully");
+  await page.evaluate(()=>globalThis.AO_NOVENAS_V3.close());
+
   const back=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("home"));
   assert.equal(back.ok,true,"Home route failed after lazy Explore");
   const apostolate=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("apostolate"));
