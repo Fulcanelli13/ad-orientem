@@ -219,7 +219,22 @@ try{
  const novenaIds=await page.locator("#aoPray435930.open [data-n1-select]").evaluateAll(nodes=>nodes.map(x=>x.dataset.n1Select));
  assert.equal(novenaIds.length,16,"Novenas home no longer lists all sixteen source-backed targets");
  for(const id of novenaIds){
-   await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:9000});
+   // A successful touch navigation replaces the selection card immediately;
+   // Playwright may observe the card detached after the action has succeeded.
+   // Require the real canonical Novena detail state or rethrow the tap error.
+   try{
+     await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:9000});
+   }catch(error){
+     const selected=await page.evaluate(id=>{
+       const state=globalThis.AO_NOVENAS_V3?.state?.();
+       return state?.id===id&&state?.screen==="detail";
+     },id);
+     if(!selected)throw error;
+   }
+   assert.equal(await page.evaluate(id=>{
+     const state=globalThis.AO_NOVENAS_V3?.state?.();
+     return state?.id===id&&state?.screen==="detail";
+   },id),true,"Touch did not open Novena detail: "+id);
    const detail=page.locator("#aoPray435930.open");
    const source=detail.locator("details.aoN1SourceDetails");
    assert.equal(await source.count(),1,"Missing original-source disclosure for Novena "+id);
