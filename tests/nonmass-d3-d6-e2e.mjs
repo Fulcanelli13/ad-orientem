@@ -91,6 +91,12 @@ try{
   await page.waitForSelector("#aoPray435930 [data-p435930-conf-step='0']",{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-step]").count(),4,"D5 does not expose the four approved practical Confession phases");
   assert.doesNotMatch(await page.locator("#aoPray435930").innerText(),/\b\d+\s*\/\s*8\b/);
+  // The current Confession owner requires choosing a preparation path before
+  // progressing. Cover the ordinary/quick path instead of clicking a disabled
+  // Continue control from an obsolete pre-path flow.
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-path]").count(),3);
+  await page.locator("#aoPray435930 [data-p435930-conf-path='regular']").click();
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-conf-next]").isEnabled(),true);
   await page.locator("#aoPray435930 [data-p435930-conf-next]").click();
   await page.waitForSelector("#aoPray435930 .aoP435930ExamReadOnly details",{timeout:5000});
   assert.ok(await page.locator("#aoPray435930 .aoP435930ExamReadOnly details").count()>=10);
