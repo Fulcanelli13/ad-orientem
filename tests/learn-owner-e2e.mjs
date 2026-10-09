@@ -164,6 +164,10 @@ try{
   await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:12000});
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-discovery-search]").inputValue(),"grâce");
   assert.ok(await page.locator('#ao-learn-modular-root [data-ao-learn-reference-id="G001"]').count());
+  await page.locator("#ao-learn-modular-root [data-ao-learn-discovery-search]").focus();
+  await page.keyboard.press("Escape");
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-discovery-search]").inputValue(),"","Escape must clear search without sending the user Home");
+  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"learn");
   await assertNoMass("Formation discovery exact Glossary term");
   await assertFocusSafe("Formation discovery exact Glossary term");
 
