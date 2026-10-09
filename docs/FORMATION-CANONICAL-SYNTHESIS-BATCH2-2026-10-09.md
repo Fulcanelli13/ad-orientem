@@ -1,0 +1,11 @@
+# Formation canonical syntheses — second substantive batch (9 October 2026)
+
+**Existing-dossier content added, not a new module:** 20 canonical owners with research-based bilingual core answers, accurately attributed primary and external positions, critical responses and traditional Catholic arguments. This adds **80 substantive English + 80 substantive French paragraphs**, with inline hyperlinks to **60 source works**. The previous ten dossiers, 118 subcase research entries and total 141 canonical owners stay intact. **Cumulative directly drafted canonical syntheses: 30 of the 53 research-linked owners.**
+
+The 10 Apologetics owners are APOL-002, APOL-004, APOL-008, APOL-010, APOL-042, APOL-050, APOL-052, APOL-053, APOL-059 and APOL-060. Their central claims concern science and original sin, Fatima and private revelation, Christ's divinity, Trinity, eternal life, natural law, ends and means in moral theology, social and political duty, Communism and Freemasonry.
+
+The 10 Church Crisis owners are CR-ORG-09 and CR-LIT-02,03,06,07,08,09,10,11,12. They cover preconciliar French secularisation, the Council's actual liturgical requirements, 1964–67 interim changes, Offertory/Canon, sacrifice and expiation language, lectionary evidence, Latin and chant, orientation, Communion and the canonical distinction between permission, norm and abuse.
+
+The original cited views include Jehovah's Witnesses, BioLogos genetic arguments, the Humanity+ manifesto, Catholic pacifist Dorothy Day, the Communist Manifesto, the United Grand Lodge of England's FAQs, Ottaviani–Bacci's 1969 critique and official Roman liturgical, conciliar and canonical documents. None is falsely presented as identical with a generic anonymous opposing camp.
+
+**Not ready for public release:** historical source passages, contested data, 1967 Notitiae page references and original Latin/French texts still require independent contextual check. Each paragraph has EN/FR text, traceable source IDs, and its own original-context and French signoff flags set false. There are no approved theological/canonical dossiers and no new public Formation route. The existing unpublished `?aoFormationRecoveryReview=1` reader renders batch I and II together before the older case studies. The user-facing liturgical reader and prayers remain untouched.
