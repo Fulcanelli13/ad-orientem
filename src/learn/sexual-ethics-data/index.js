@@ -53,6 +53,14 @@ export const CSE_QUESTIONS=Object.freeze(allRaw.map(raw=>{
 }));
 
 export const CSE_QUESTION_MAP=Object.freeze(Object.fromEntries(CSE_QUESTIONS.map(item=>[item.id,item])));
+// The full 150-question corpus remains the research/certification record.
+// Explicit technique-specific debates stay available to editors, but are not promoted
+// as separate questions in the conservative Catholic reader.
+export const CSE_EDITORIAL_ARCHIVE_IDS=Object.freeze(["CSE055","CSE056","CSE058"]);
+const CSE_ARCHIVED_SET=new Set(CSE_EDITORIAL_ARCHIVE_IDS);
+export const CSE_PUBLIC_QUESTIONS=Object.freeze(CSE_QUESTIONS.filter(item=>!CSE_ARCHIVED_SET.has(item.id)));
+export const CSE_PUBLIC_QUESTION_MAP=Object.freeze(Object.fromEntries(CSE_PUBLIC_QUESTIONS.map(item=>[item.id,item])));
+
 export const CSE_SECTION_MAP=Object.freeze(Object.fromEntries(CSE_SECTIONS.map(section=>[section.id,section])));
 export { CSE_SOURCES, CSE_SOURCE_MAP };
 
