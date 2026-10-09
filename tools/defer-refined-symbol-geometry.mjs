@@ -3,6 +3,21 @@ import { readFileSync,writeFileSync,existsSync } from "node:fs";
 const PATH="index.html", REPORT="data/presentation/startup-per-icon-report.v1.json";
 const manifest=JSON.parse(readFileSync(REPORT,"utf8"));
 let html=readFileSync(PATH,"utf8"),moved=0;
+if(process.argv.includes("--verify")){
+  const html=readFileSync(PATH,"utf8");
+  if(Buffer.byteLength(html,"utf8")!==manifest.lazyHtmlBytes)throw Error("Lazy SVG index byte count drifted");
+  for(const icon of manifest.icons){
+    if(!html.includes('data-ao-refined-lazy="./'+icon.path+'#'+icon.id+'"'))throw Error("Missing inert icon "+icon.id);
+    if(html.includes('<use href="./'+icon.path+'#'+icon.id+'"'))throw Error("Eager SVG icon request returned: "+icon.id);
+  }
+  if(!html.includes('src="./src/app/refined-icon-on-demand.js"'))throw Error("Lazy loader not installed");
+  console.log("PASS inert SVG placeholders and on-demand loader integrity");
+  process.exit(0);
+}
+if(process.argv.includes("--apply")&&manifest.lazyHtmlBytes){
+  console.log("Refined SVG geometry already deferred; unchanged");
+  process.exit(0);
+}
 for(const icon of manifest.icons){
   const id=icon.id,ref="./"+icon.path+"#"+id;
   const source='<use href="'+ref+'" width="100%" height="100%"></use>';
@@ -29,10 +44,4 @@ if(process.argv.includes("--apply")){
   writeFileSync(PATH,html);
   const next={...manifest,lazyHtmlBytes:bytes,lazyActivationOwner:"src/app/refined-icon-on-demand.js"};
   writeFileSync(REPORT,JSON.stringify(next,null,2)+"\n");
-}
-if(process.argv.includes("--verify")){
-  for(const icon of manifest.icons){
-    if(!html.includes('data-ao-refined-lazy="./'+icon.path+'#'+icon.id+'"'))throw Error("Missing inert icon "+icon.id);
-    if(html.includes('<use href="./'+icon.path+'#'+icon.id+'"'))throw Error("Icon eagerly requests its geometry: "+icon.id);
-  }
 }
