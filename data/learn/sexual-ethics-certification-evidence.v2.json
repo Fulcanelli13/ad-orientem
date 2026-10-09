@@ -55,15 +55,15 @@
   "summary": {
     "total_cases": 55,
     "total_stages": 440,
-    "substantive_case_reviews": 23,
-    "individually_assessed_stages": 184,
+    "substantive_case_reviews": 39,
+    "individually_assessed_stages": 312,
     "stage_verdict_counts": {
-      "ILLUSTRATIVE_CHALLENGE": 34,
-      "REASONED_INFERENCE_FROM_DOCUMENT": 87,
+      "ILLUSTRATIVE_CHALLENGE": 65,
+      "REASONED_INFERENCE_FROM_DOCUMENT": 183,
       "DIRECT_PRIMARY_NORMATIVE_PASSAGE": 45,
       "SECONDARY_OR_PARTIAL_PRIMARY_CONTEXT": 5,
-      "ORIGINAL_OPPONENT_POSITION": 10,
-      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 257,
+      "ORIGINAL_OPPONENT_POSITION": 11,
+      "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED": 129,
       "DIRECT_ORIGINAL_CLINICAL_CONTEXT": 2
     },
     "full_case_certifications": 0
@@ -1572,7 +1572,7 @@
     },
     {
       "id": "CSE020",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -1581,9 +1581,9 @@
           "selected_source_ids": [
             "NIDA_ADDICTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "NIDA's substance-addiction model does not quantify culpability in a particular sexual habit.",
+          "explanation_fr": "Le modèle de NIDA porte sur les addictions aux substances, non sur la culpabilité de chaque habitude sexuelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1592,9 +1592,9 @@
           "selected_source_ids": [
             "NIDA_ADDICTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "NIDA's substance-addiction model does not quantify culpability in a particular sexual habit.",
+          "explanation_fr": "Le modèle de NIDA porte sur les addictions aux substances, non sur la culpabilité de chaque habitude sexuelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1604,9 +1604,9 @@
             "ST77",
             "CCC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral responsibility requires knowledge and free consent, which can vary with habit and anxiety.",
+          "explanation_fr": "La responsabilité requiert connaissance et libre consentement, variables selon habitudes et angoisses.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1616,9 +1616,9 @@
             "ST77",
             "ST78"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Both automatic mortal guilt and automatic exculpation exceed the evidence.",
+          "explanation_fr": "Présumer toujours une faute mortelle ou toujours une excuse dépasse les preuves.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1628,9 +1628,9 @@
             "CCC",
             "ST77"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral responsibility requires knowledge and free consent, which can vary with habit and anxiety.",
+          "explanation_fr": "La responsabilité requiert connaissance et libre consentement, variables selon habitudes et angoisses.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1639,9 +1639,9 @@
           "selected_source_ids": [
             "NIDA_ADDICTION"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Both automatic mortal guilt and automatic exculpation exceed the evidence.",
+          "explanation_fr": "Présumer toujours une faute mortelle ou toujours une excuse dépasse les preuves.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1651,9 +1651,9 @@
             "ST77",
             "CCC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Both automatic mortal guilt and automatic exculpation exceed the evidence.",
+          "explanation_fr": "Présumer toujours une faute mortelle ou toujours une excuse dépasse les preuves.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1663,9 +1663,9 @@
             "ST77",
             "ST78"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Moral responsibility requires knowledge and free consent, which can vary with habit and anxiety.",
+          "explanation_fr": "La responsabilité requiert connaissance et libre consentement, variables selon habitudes et angoisses.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -1754,11 +1754,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE021",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -1767,9 +1772,9 @@
           "selected_source_ids": [
             "FREUD1908"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Freud criticized repression under his historical conditions, not the Christian virtue in its full account.",
+          "explanation_fr": "Freud critiquait la répression dans son contexte historique, non toute la doctrine de la chasteté.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1778,9 +1783,9 @@
           "selected_source_ids": [
             "FREUD1908"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Freud criticized repression under his historical conditions, not the Christian virtue in its full account.",
+          "explanation_fr": "Freud critiquait la répression dans son contexte historique, non toute la doctrine de la chasteté.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1789,9 +1794,9 @@
           "selected_source_ids": [
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas II–II q151 treats chastity as reason-governed virtue, not suppression of human dignity.",
+          "explanation_fr": "La Somme II–II, q.151 décrit une vertu gouvernée par la raison, non la négation de la dignité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1800,9 +1805,9 @@
           "selected_source_ids": [
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Harms from coercive formation must be distinguished from willing self-mastery.",
+          "explanation_fr": "Les dommages d'une formation coercitive se distinguent de la maîtrise libre de soi.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1812,9 +1817,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas II–II q151 treats chastity as reason-governed virtue, not suppression of human dignity.",
+          "explanation_fr": "La Somme II–II, q.151 décrit une vertu gouvernée par la raison, non la négation de la dignité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1823,9 +1828,9 @@
           "selected_source_ids": [
             "FREUD1908"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Harms from coercive formation must be distinguished from willing self-mastery.",
+          "explanation_fr": "Les dommages d'une formation coercitive se distinguent de la maîtrise libre de soi.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1835,9 +1840,9 @@
             "ST151",
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Harms from coercive formation must be distinguished from willing self-mastery.",
+          "explanation_fr": "Les dommages d'une formation coercitive se distinguent de la maîtrise libre de soi.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1846,9 +1851,9 @@
           "selected_source_ids": [
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas II–II q151 treats chastity as reason-governed virtue, not suppression of human dignity.",
+          "explanation_fr": "La Somme II–II, q.151 décrit une vertu gouvernée par la raison, non la négation de la dignité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -1934,11 +1939,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE029",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -1947,9 +1957,9 @@
           "selected_source_ids": [
             "PRIEST_WELLBEING2016"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Reports of isolation among priests are genuine, but the qualitative sample cannot prove universal pathology.",
+          "explanation_fr": "Les témoignages d'isolement sacerdotal existent ; un petit échantillon qualitatif ne prouve aucune pathologie universelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1958,9 +1968,9 @@
           "selected_source_ids": [
             "PRIEST_WELLBEING2016"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Reports of isolation among priests are genuine, but the qualitative sample cannot prove universal pathology.",
+          "explanation_fr": "Les témoignages d'isolement sacerdotal existent ; un petit échantillon qualitatif ne prouve aucune pathologie universelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1969,9 +1979,9 @@
           "selected_source_ids": [
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Chastity and priestly celibacy are meaningful commitments requiring community and practical support.",
+          "explanation_fr": "Chasteté et célibat sacerdotal demandent vie communautaire et soutien concret.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1980,9 +1990,9 @@
           "selected_source_ids": [
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Reject romanticizing loneliness and avoid an unsupported statistical claim that celibacy necessarily harms.",
+          "explanation_fr": "Il faut refuser l'idéalisation de la solitude comme la généralisation statistique sans preuve.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -1991,9 +2001,9 @@
           "selected_source_ids": [
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Chastity and priestly celibacy are meaningful commitments requiring community and practical support.",
+          "explanation_fr": "Chasteté et célibat sacerdotal demandent vie communautaire et soutien concret.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2002,9 +2012,9 @@
           "selected_source_ids": [
             "PRIEST_WELLBEING2016"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Reject romanticizing loneliness and avoid an unsupported statistical claim that celibacy necessarily harms.",
+          "explanation_fr": "Il faut refuser l'idéalisation de la solitude comme la généralisation statistique sans preuve.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2013,9 +2023,9 @@
           "selected_source_ids": [
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Reject romanticizing loneliness and avoid an unsupported statistical claim that celibacy necessarily harms.",
+          "explanation_fr": "Il faut refuser l'idéalisation de la solitude comme la généralisation statistique sans preuve.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2024,9 +2034,9 @@
           "selected_source_ids": [
             "SACRA"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Chastity and priestly celibacy are meaningful commitments requiring community and practical support.",
+          "explanation_fr": "Chasteté et célibat sacerdotal demandent vie communautaire et soutien concret.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -2110,6 +2120,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -2490,7 +2505,7 @@
     },
     {
       "id": "CSE038",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -2499,9 +2514,9 @@
           "selected_source_ids": [
             "PP_SEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "'Looking is not touching' is an illustrative slogan with no verified named advocate.",
+          "explanation_fr": "« Regarder n'est pas toucher » reste une formule illustrative sans auteur vérifié.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2510,9 +2525,9 @@
           "selected_source_ids": [
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "'Looking is not touching' is an illustrative slogan with no verified named advocate.",
+          "explanation_fr": "« Regarder n'est pas toucher » reste une formule illustrative sans auteur vérifié.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2521,9 +2536,9 @@
           "selected_source_ids": [
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Matthew 5 and Aquinas distinguish an involuntary perception from consent to deliberate lust.",
+          "explanation_fr": "Matthieu 5 et saint Thomas distinguent la perception involontaire du consentement à la convoitise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2533,9 +2548,9 @@
             "SCR",
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "An initial glance is not by itself an act of chosen lust.",
+          "explanation_fr": "Le premier regard n'est pas en soi une convoitise voulue.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2545,9 +2560,9 @@
             "SCR",
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Matthew 5 and Aquinas distinguish an involuntary perception from consent to deliberate lust.",
+          "explanation_fr": "Matthieu 5 et saint Thomas distinguent la perception involontaire du consentement à la convoitise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2556,9 +2571,9 @@
           "selected_source_ids": [
             "PP_SEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "An initial glance is not by itself an act of chosen lust.",
+          "explanation_fr": "Le premier regard n'est pas en soi une convoitise voulue.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2568,9 +2583,9 @@
             "SCR",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "An initial glance is not by itself an act of chosen lust.",
+          "explanation_fr": "Le premier regard n'est pas en soi une convoitise voulue.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2580,9 +2595,9 @@
             "SCR",
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Matthew 5 and Aquinas distinguish an involuntary perception from consent to deliberate lust.",
+          "explanation_fr": "Matthieu 5 et saint Thomas distinguent la perception involontaire du consentement à la convoitise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -2670,11 +2685,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE039",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -2683,9 +2703,9 @@
           "selected_source_ids": [
             "PP_RELATIONSHIPS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Relationship-advice sources do not advocate all flirting or disloyal intimacy.",
+          "explanation_fr": "Les conseils relationnels cités ne défendent pas toutes les formes de flirt ou de déloyauté.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2694,9 +2714,9 @@
           "selected_source_ids": [
             "PP_CONSENT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Relationship-advice sources do not advocate all flirting or disloyal intimacy.",
+          "explanation_fr": "Les conseils relationnels cités ne défendent pas toutes les formes de flirt ou de déloyauté.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2705,9 +2725,9 @@
           "selected_source_ids": [
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Fidelity and promises matter, while courtship and matrimony impose different obligations.",
+          "explanation_fr": "La fidélité et les promesses comptent, mais fréquentation et mariage imposent des obligations différentes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2717,9 +2737,9 @@
             "SCR",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Harmless courtesy must not be labeled adultery; deliberately encouraging disloyal sexual attention is different.",
+          "explanation_fr": "La simple courtoisie n'est pas un adultère ; entretenir volontairement un lien déloyal est différent.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2729,9 +2749,9 @@
             "SCR",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Fidelity and promises matter, while courtship and matrimony impose different obligations.",
+          "explanation_fr": "La fidélité et les promesses comptent, mais fréquentation et mariage imposent des obligations différentes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2740,9 +2760,9 @@
           "selected_source_ids": [
             "PP_RELATIONSHIPS"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Harmless courtesy must not be labeled adultery; deliberately encouraging disloyal sexual attention is different.",
+          "explanation_fr": "La simple courtoisie n'est pas un adultère ; entretenir volontairement un lien déloyal est différent.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2752,9 +2772,9 @@
             "SCR",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Harmless courtesy must not be labeled adultery; deliberately encouraging disloyal sexual attention is different.",
+          "explanation_fr": "La simple courtoisie n'est pas un adultère ; entretenir volontairement un lien déloyal est différent.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2764,9 +2784,9 @@
             "CASTI",
             "ST18"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Fidelity and promises matter, while courtship and matrimony impose different obligations.",
+          "explanation_fr": "La fidélité et les promesses comptent, mais fréquentation et mariage imposent des obligations différentes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -2854,11 +2874,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE040",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -2867,9 +2892,9 @@
           "selected_source_ids": [
             "PP_SEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The engaged-couple 'technical non-intercourse' argument is reconstructed from sexual-health practices.",
+          "explanation_fr": "L'argument des fiancés sur l'absence « technique » de coït est reconstitué depuis des pratiques sanitaires.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2878,9 +2903,9 @@
           "selected_source_ids": [
             "PP_SAFERSEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The engaged-couple 'technical non-intercourse' argument is reconstructed from sexual-health practices.",
+          "explanation_fr": "L'argument des fiancés sur l'absence « technique » de coït est reconstitué depuis des pratiques sanitaires.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2889,9 +2914,9 @@
           "selected_source_ids": [
             "ST154"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Persona Humana §§7,9 gives premarital chastity principles, not a comprehensive list of contemporary acts.",
+          "explanation_fr": "Persona Humana §§7,9 donne des principes, non une liste exhaustive des actes modernes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2901,9 +2926,9 @@
             "PH",
             "ST154"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Ordinary affection is not automatically a deliberate genital sexual act.",
+          "explanation_fr": "L'affection ordinaire ne constitue pas automatiquement un acte génital délibéré.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2914,9 +2939,9 @@
             "ST154",
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Persona Humana §§7,9 gives premarital chastity principles, not a comprehensive list of contemporary acts.",
+          "explanation_fr": "Persona Humana §§7,9 donne des principes, non une liste exhaustive des actes modernes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2925,9 +2950,9 @@
           "selected_source_ids": [
             "PP_SEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Ordinary affection is not automatically a deliberate genital sexual act.",
+          "explanation_fr": "L'affection ordinaire ne constitue pas automatiquement un acte génital délibéré.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2937,9 +2962,9 @@
             "PH",
             "ST154"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Ordinary affection is not automatically a deliberate genital sexual act.",
+          "explanation_fr": "L'affection ordinaire ne constitue pas automatiquement un acte génital délibéré.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -2949,9 +2974,9 @@
             "PH",
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Persona Humana §§7,9 gives premarital chastity principles, not a comprehensive list of contemporary acts.",
+          "explanation_fr": "Persona Humana §§7,9 donne des principes, non une liste exhaustive des actes modernes.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -3040,6 +3065,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -3232,7 +3262,7 @@
     },
     {
       "id": "CSE044",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -3241,9 +3271,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The sterile-heterosexual-couple analogy is illustrative, not a verbatim Farley passage.",
+          "explanation_fr": "L'analogie du couple hétérosexuel stérile est illustrative, non citée littéralement de Farley.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3252,9 +3282,9 @@
           "selected_source_ids": [
             "APA_LGB"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The sterile-heterosexual-couple analogy is illustrative, not a verbatim Farley passage.",
+          "explanation_fr": "L'analogie du couple hétérosexuel stérile est illustrative, non citée littéralement de Farley.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3263,9 +3293,9 @@
           "selected_source_ids": [
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Canon 1084 §3 distinguishes sterility from inability to perform the conjugal act.",
+          "explanation_fr": "Le canon 1084 §3 distingue stérilité et incapacité d'accomplir l'acte conjugal.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3275,9 +3305,9 @@
             "CIC",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Infertility of an act's outcome must not be confused with its human bodily structure.",
+          "explanation_fr": "L'absence de conception ne se confond pas avec la structure de l'union corporelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3287,9 +3317,9 @@
             "CASTI",
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Canon 1084 §3 distinguishes sterility from inability to perform the conjugal act.",
+          "explanation_fr": "Le canon 1084 §3 distingue stérilité et incapacité d'accomplir l'acte conjugal.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3298,9 +3328,9 @@
           "selected_source_ids": [
             "FARLEY_QUOTED2012"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Infertility of an act's outcome must not be confused with its human bodily structure.",
+          "explanation_fr": "L'absence de conception ne se confond pas avec la structure de l'union corporelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3310,9 +3340,9 @@
             "CIC",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Infertility of an act's outcome must not be confused with its human bodily structure.",
+          "explanation_fr": "L'absence de conception ne se confond pas avec la structure de l'union corporelle.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3321,9 +3351,9 @@
           "selected_source_ids": [
             "CIC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Canon 1084 §3 distinguishes sterility from inability to perform the conjugal act.",
+          "explanation_fr": "Le canon 1084 §3 distingue stérilité et incapacité d'accomplir l'acte conjugal.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -3410,11 +3440,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE045",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -3423,9 +3458,9 @@
           "selected_source_ids": [
             "PEW_CO2019"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Pew records friendship and love as actual marriage motives, not a public moral doctrine.",
+          "explanation_fr": "Pew relève amitié et amour comme motifs du mariage, sans définir une doctrine morale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3434,9 +3469,9 @@
           "selected_source_ids": [
             "PEW_CO2019"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Pew records friendship and love as actual marriage motives, not a public moral doctrine.",
+          "explanation_fr": "Pew relève amitié et amour comme motifs du mariage, sans définir une doctrine morale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3445,9 +3480,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage.",
+          "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3456,9 +3491,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
+          "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3467,9 +3502,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage.",
+          "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3478,9 +3513,9 @@
           "selected_source_ids": [
             "PEW_CO2019"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
+          "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3489,9 +3524,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Do not frame a non-generative personal bond as worthless or a survey as doctrinal proof.",
+          "explanation_fr": "Ne dépréciez pas l'affection stérile et ne transformez pas un sondage en preuve doctrinale.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3500,9 +3535,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii recognizes mutual aid alongside the generative and educative ends of marriage.",
+          "explanation_fr": "Casti Connubii reconnaît l'aide mutuelle aux côtés des fins procréatrice et éducative.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -3586,6 +3621,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -3970,7 +4010,7 @@
     },
     {
       "id": "CSE051",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -3979,9 +4019,9 @@
           "selected_source_ids": [
             "PP_CONSENT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Mutual-consent institutional materials do not assert every marital sexual choice is morally good.",
+          "explanation_fr": "Les textes sur le consentement ne déclarent pas bon chaque choix sexuel matrimonial.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -3990,9 +4030,9 @@
           "selected_source_ids": [
             "PP_CONSENT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Mutual-consent institutional materials do not assert every marital sexual choice is morally good.",
+          "explanation_fr": "Les textes sur le consentement ne déclarent pas bon chaque choix sexuel matrimonial.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4001,9 +4041,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii denies that marriage suspends divine moral law.",
+          "explanation_fr": "Casti Connubii refuse que le mariage suspende la loi morale divine.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4013,9 +4053,9 @@
             "CASTI",
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Consent is obligatory but never replaces an analysis of act and fidelity.",
+          "explanation_fr": "Le consentement reste nécessaire sans remplacer l'étude de l'acte et de la fidélité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4025,9 +4065,9 @@
             "HV",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii denies that marriage suspends divine moral law.",
+          "explanation_fr": "Casti Connubii refuse que le mariage suspende la loi morale divine.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4036,9 +4076,9 @@
           "selected_source_ids": [
             "PP_CONSENT"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Consent is obligatory but never replaces an analysis of act and fidelity.",
+          "explanation_fr": "Le consentement reste nécessaire sans remplacer l'étude de l'acte et de la fidélité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4048,9 +4088,9 @@
             "CASTI",
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Consent is obligatory but never replaces an analysis of act and fidelity.",
+          "explanation_fr": "Le consentement reste nécessaire sans remplacer l'étude de l'acte et de la fidélité.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4059,9 +4099,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii denies that marriage suspends divine moral law.",
+          "explanation_fr": "Casti Connubii refuse que le mariage suspende la loi morale divine.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -4148,6 +4188,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -4251,7 +4296,7 @@
     },
     {
       "id": "CSE055",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -4260,9 +4305,9 @@
           "selected_source_ids": [
             "PP_SEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Modern-device advocacy is a reconstructed challenge, not a magisterial catalogue.",
+          "explanation_fr": "Les débats sur dispositifs modernes ne constituent ni une citation ni un catalogue magistériel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4271,9 +4316,9 @@
           "selected_source_ids": [
             "PP_SAFERSEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Modern-device advocacy is a reconstructed challenge, not a magisterial catalogue.",
+          "explanation_fr": "Les débats sur dispositifs modernes ne constituent ni une citation ni un catalogue magistériel.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4282,9 +4327,9 @@
           "selected_source_ids": [
             "MCHUGH"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "McHugh–Callan §1624 permits incomplete conjugal affection beyond immediate foreplay.",
+          "explanation_fr": "McHugh–Callan §1624 admet les gestes d'affection incomplets même hors de préliminaires immédiats.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4294,9 +4339,9 @@
             "MCHUGH",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Do not reduce marital morality to anatomic checklists or permit every completed alternative.",
+          "explanation_fr": "La morale conjugale ne se réduit pas à une liste anatomique ni n'autorise tout acte alternatif achevé.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4307,9 +4352,9 @@
             "CASTI",
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "McHugh–Callan §1624 permits incomplete conjugal affection beyond immediate foreplay.",
+          "explanation_fr": "McHugh–Callan §1624 admet les gestes d'affection incomplets même hors de préliminaires immédiats.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4318,9 +4363,9 @@
           "selected_source_ids": [
             "PP_SEX"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Do not reduce marital morality to anatomic checklists or permit every completed alternative.",
+          "explanation_fr": "La morale conjugale ne se réduit pas à une liste anatomique ni n'autorise tout acte alternatif achevé.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4330,9 +4375,9 @@
             "MCHUGH",
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Do not reduce marital morality to anatomic checklists or permit every completed alternative.",
+          "explanation_fr": "La morale conjugale ne se réduit pas à une liste anatomique ni n'autorise tout acte alternatif achevé.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4342,9 +4387,9 @@
             "MCHUGH",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "McHugh–Callan §1624 permits incomplete conjugal affection beyond immediate foreplay.",
+          "explanation_fr": "McHugh–Callan §1624 admet les gestes d'affection incomplets même hors de préliminaires immédiats.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -4433,11 +4478,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE056",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -4447,9 +4497,9 @@
             "APA_CNM",
             "PP_OPEN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Consent to non-monogamy is reported as a relationship practice, not as a Catholic moral judgment.",
+          "explanation_fr": "Le consentement à la non-monogamie est rapporté comme pratique relationnelle, non jugement moral catholique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4458,9 +4508,9 @@
           "selected_source_ids": [
             "APA_CNM"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Consent to non-monogamy is reported as a relationship practice, not as a Catholic moral judgment.",
+          "explanation_fr": "Le consentement à la non-monogamie est rapporté comme pratique relationnelle, non jugement moral catholique.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4469,9 +4519,9 @@
           "selected_source_ids": [
             "SCR"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii makes matrimonial exclusivity an essential covenantal commitment.",
+          "explanation_fr": "Casti Connubii présente l'exclusivité comme engagement essentiel du mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4481,9 +4531,9 @@
             "SCR",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Removing deception does not necessarily preserve the vowed marital exclusivity.",
+          "explanation_fr": "Supprimer la tromperie ne préserve pas nécessairement l'exclusivité promise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4494,9 +4544,9 @@
             "TRENT6",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii makes matrimonial exclusivity an essential covenantal commitment.",
+          "explanation_fr": "Casti Connubii présente l'exclusivité comme engagement essentiel du mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4505,9 +4555,9 @@
           "selected_source_ids": [
             "PP_OPEN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Removing deception does not necessarily preserve the vowed marital exclusivity.",
+          "explanation_fr": "Supprimer la tromperie ne préserve pas nécessairement l'exclusivité promise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4517,9 +4567,9 @@
             "SCR",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Removing deception does not necessarily preserve the vowed marital exclusivity.",
+          "explanation_fr": "Supprimer la tromperie ne préserve pas nécessairement l'exclusivité promise.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4529,9 +4579,9 @@
             "TRENT6",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii makes matrimonial exclusivity an essential covenantal commitment.",
+          "explanation_fr": "Casti Connubii présente l'exclusivité comme engagement essentiel du mariage.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -4621,11 +4671,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE058",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -4634,9 +4689,9 @@
           "selected_source_ids": [
             "PP_ANAL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Planned Parenthood describes anal practices and risks, not Christian arguments about their moral species.",
+          "explanation_fr": "Planned Parenthood décrit actes et risques, non leur espèce morale chrétienne.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4645,9 +4700,9 @@
           "selected_source_ids": [
             "PP_ANAL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Planned Parenthood describes anal practices and risks, not Christian arguments about their moral species.",
+          "explanation_fr": "Planned Parenthood décrit actes et risques, non leur espèce morale chrétienne.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4656,9 +4711,9 @@
           "selected_source_ids": [
             "ST154"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas II–II q154 treats acts' moral objects distinctly; borderline preparations require their own analysis.",
+          "explanation_fr": "La Somme II–II q154 distingue les objets moraux ; les actes préparatoires demandent leur examen.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4668,9 +4723,9 @@
             "ST154",
             "MCHUGH"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A categorical claim about every anal touch is not established by a rule about completed intercourse.",
+          "explanation_fr": "Une règle sur le coït anal achevé ne classe pas tout contact anal.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4681,9 +4736,9 @@
             "MCHUGH",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas II–II q154 treats acts' moral objects distinctly; borderline preparations require their own analysis.",
+          "explanation_fr": "La Somme II–II q154 distingue les objets moraux ; les actes préparatoires demandent leur examen.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4692,9 +4747,9 @@
           "selected_source_ids": [
             "PP_ANAL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A categorical claim about every anal touch is not established by a rule about completed intercourse.",
+          "explanation_fr": "Une règle sur le coït anal achevé ne classe pas tout contact anal.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4704,9 +4759,9 @@
             "ST154",
             "MCHUGH"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A categorical claim about every anal touch is not established by a rule about completed intercourse.",
+          "explanation_fr": "Une règle sur le coït anal achevé ne classe pas tout contact anal.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4716,9 +4771,9 @@
             "ST154",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Aquinas II–II q154 treats acts' moral objects distinctly; borderline preparations require their own analysis.",
+          "explanation_fr": "La Somme II–II q154 distingue les objets moraux ; les actes préparatoires demandent leur examen.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -4807,11 +4862,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE061",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -4820,9 +4880,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ORIGINAL_OPPONENT_POSITION",
+          "explanation_en": "Curran directly criticizes alleged sexual-ethical physicalism in his own 1987 article.",
+          "explanation_fr": "Curran critique directement le « physicalisme » dans son propre article de 1987.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4831,9 +4891,9 @@
           "selected_source_ids": [
             "PP_BIRTHCONTROL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Curran directly criticizes alleged sexual-ethical physicalism in his own 1987 article.",
+          "explanation_fr": "Curran critique directement le « physicalisme » dans son propre article de 1987.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4842,9 +4902,9 @@
           "selected_source_ids": [
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii and Humanae Vitae §§12–14 condemn intentionally contracepting intercourse.",
+          "explanation_fr": "Casti Connubii et Humanae Vitae §§12–14 condamnent l'acte conjugal volontairement contracepté.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4854,9 +4914,9 @@
             "HV",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Prudential reasons to postpone pregnancy do not automatically justify every chosen means.",
+          "explanation_fr": "Des raisons prudentielles de reporter une naissance ne justifient pas tout moyen.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4867,9 +4927,9 @@
             "CASTI",
             "MIDWIVES"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii and Humanae Vitae §§12–14 condemn intentionally contracepting intercourse.",
+          "explanation_fr": "Casti Connubii et Humanae Vitae §§12–14 condamnent l'acte conjugal volontairement contracepté.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4878,9 +4938,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Prudential reasons to postpone pregnancy do not automatically justify every chosen means.",
+          "explanation_fr": "Des raisons prudentielles de reporter une naissance ne justifient pas tout moyen.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4890,9 +4950,9 @@
             "HV",
             "CASTI"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Prudential reasons to postpone pregnancy do not automatically justify every chosen means.",
+          "explanation_fr": "Des raisons prudentielles de reporter une naissance ne justifient pas tout moyen.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -4901,9 +4961,9 @@
           "selected_source_ids": [
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Casti Connubii and Humanae Vitae §§12–14 condemn intentionally contracepting intercourse.",
+          "explanation_fr": "Casti Connubii et Humanae Vitae §§12–14 condamnent l'acte conjugal volontairement contracepté.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -4991,11 +5051,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE063",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -5004,9 +5069,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "A claim that NFP and contraception are identical is a reconstructed objection, not a direct Curran quotation.",
+          "explanation_fr": "Identifier PFN et contraception est une objection reconstituée, non citation littérale de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5015,9 +5080,9 @@
           "selected_source_ids": [
             "PP_BIRTHCONTROL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "A claim that NFP and contraception are identical is a reconstructed objection, not a direct Curran quotation.",
+          "explanation_fr": "Identifier PFN et contraception est une objection reconstituée, non citation littérale de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5026,9 +5091,9 @@
           "selected_source_ids": [
             "MIDWIVES"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Humanae Vitae §16 distinguishes periodic continence from deliberate contraception.",
+          "explanation_fr": "Humanae Vitae §16 distingue continence périodique et contraception délibérée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5038,9 +5103,9 @@
             "HV",
             "MIDWIVES"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The intention to avoid pregnancy and the act chosen must be assessed separately.",
+          "explanation_fr": "L'intention d'éviter une naissance et le moyen choisi s'examinent séparément.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5050,9 +5115,9 @@
             "HV",
             "MIDWIVES"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Humanae Vitae §16 distinguishes periodic continence from deliberate contraception.",
+          "explanation_fr": "Humanae Vitae §16 distingue continence périodique et contraception délibérée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5061,9 +5126,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "The intention to avoid pregnancy and the act chosen must be assessed separately.",
+          "explanation_fr": "L'intention d'éviter une naissance et le moyen choisi s'examinent séparément.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5073,9 +5138,9 @@
             "HV",
             "MIDWIVES"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "The intention to avoid pregnancy and the act chosen must be assessed separately.",
+          "explanation_fr": "L'intention d'éviter une naissance et le moyen choisi s'examinent séparément.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5084,9 +5149,9 @@
           "selected_source_ids": [
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Humanae Vitae §16 distinguishes periodic continence from deliberate contraception.",
+          "explanation_fr": "Humanae Vitae §16 distingue continence périodique et contraception délibérée.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -5173,11 +5238,16 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
       "id": "CSE064",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -5186,9 +5256,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "'Catholic contraception' is a polemical paraphrase, not an authenticated Curran line.",
+          "explanation_fr": "« Contraception catholique » est une paraphrase polémique, non citation authentifiée de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5197,9 +5267,9 @@
           "selected_source_ids": [
             "PP_BIRTHCONTROL"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "'Catholic contraception' is a polemical paraphrase, not an authenticated Curran line.",
+          "explanation_fr": "« Contraception catholique » est une paraphrase polémique, non citation authentifiée de Curran.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5208,9 +5278,9 @@
           "selected_source_ids": [
             "MIDWIVES"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Pius XII and Humanae Vitae distinguish abstaining during fertile periods from sterilizing intercourse.",
+          "explanation_fr": "Pie XII et Humanae Vitae distinguent l'abstinence périodique de la stérilisation de l'acte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5220,9 +5290,9 @@
             "HV",
             "MIDWIVES"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Even a licit method can be chosen for morally defective motives.",
+          "explanation_fr": "Même une méthode licite peut être choisie pour des motifs déficients.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5231,9 +5301,9 @@
           "selected_source_ids": [
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Pius XII and Humanae Vitae distinguish abstaining during fertile periods from sterilizing intercourse.",
+          "explanation_fr": "Pie XII et Humanae Vitae distinguent l'abstinence périodique de la stérilisation de l'acte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5242,9 +5312,9 @@
           "selected_source_ids": [
             "CURRAN1987"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Even a licit method can be chosen for morally defective motives.",
+          "explanation_fr": "Même une méthode licite peut être choisie pour des motifs déficients.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5254,9 +5324,9 @@
             "MIDWIVES",
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Even a licit method can be chosen for morally defective motives.",
+          "explanation_fr": "Même une méthode licite peut être choisie pour des motifs déficients.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5265,9 +5335,9 @@
           "selected_source_ids": [
             "HV"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Pius XII and Humanae Vitae distinguish abstaining during fertile periods from sterilizing intercourse.",
+          "explanation_fr": "Pie XII et Humanae Vitae distinguent l'abstinence périodique de la stérilisation de l'acte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -5353,6 +5423,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -5556,7 +5631,7 @@
     },
     {
       "id": "CSE074",
-      "case_status": "SOURCED_STAGE_MAP_ONLY_EXACT_PASSAGE_CHECK_PENDING",
+      "case_status": "EIGHT_STAGE_SEMANTIC_REVIEWED_PRIMARY_PASSAGES_PARTIAL",
       "full_eight_stage_certified": false,
       "stage_review_count": 8,
       "stages": [
@@ -5565,9 +5640,9 @@
           "selected_source_ids": [
             "PP_PORN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "Planned Parenthood itself warns about potentially harmful messages in pornography.",
+          "explanation_fr": "Planned Parenthood avertit aussi de représentations pornographiques nuisibles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5576,9 +5651,9 @@
           "selected_source_ids": [
             "PP_PORN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Planned Parenthood itself warns about potentially harmful messages in pornography.",
+          "explanation_fr": "Planned Parenthood avertit aussi de représentations pornographiques nuisibles.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5587,9 +5662,9 @@
           "selected_source_ids": [
             "CCC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic arguments concern lust and the exposure of intimacy, not only coercive production.",
+          "explanation_fr": "Les arguments catholiques concernent la convoitise et l'exposition de l'intimité, non la seule contrainte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5599,9 +5674,9 @@
             "CCC",
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No source supports an unqualified assertion that consensual pornography is always harmless.",
+          "explanation_fr": "Aucune source ne prouve que la pornographie consentie serait toujours inoffensive.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5611,9 +5686,9 @@
             "CCC",
             "ST151"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic arguments concern lust and the exposure of intimacy, not only coercive production.",
+          "explanation_fr": "Les arguments catholiques concernent la convoitise et l'exposition de l'intimité, non la seule contrainte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5622,9 +5697,9 @@
           "selected_source_ids": [
             "PP_PORN"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "ILLUSTRATIVE_CHALLENGE",
+          "explanation_en": "No source supports an unqualified assertion that consensual pornography is always harmless.",
+          "explanation_fr": "Aucune source ne prouve que la pornographie consentie serait toujours inoffensive.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5633,9 +5708,9 @@
           "selected_source_ids": [
             "CCC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "No source supports an unqualified assertion that consensual pornography is always harmless.",
+          "explanation_fr": "Aucune source ne prouve que la pornographie consentie serait toujours inoffensive.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         },
@@ -5644,9 +5719,9 @@
           "selected_source_ids": [
             "CCC"
           ],
-          "assessment": "ORIGINAL_PASSAGE_COLLATION_STILL_REQUIRED",
-          "explanation_en": null,
-          "explanation_fr": null,
+          "assessment": "REASONED_INFERENCE_FROM_DOCUMENT",
+          "explanation_en": "Catholic arguments concern lust and the exposure of intimacy, not only coercive production.",
+          "explanation_fr": "Les arguments catholiques concernent la convoitise et l'exposition de l'intimité, non la seule contrainte.",
           "author_quote_verified": false,
           "exact_full_passage_collated": false
         }
@@ -5732,6 +5807,11 @@
             "notes": "The debate is an authored synthesis unless specific first-person wording has independently been matched; apply the case-specific critical finding before any certification."
           }
         ]
+      },
+      "claim_review_batch_v3": {
+        "evidence_is_partial": true,
+        "opposing_position_exact_verbatim_validated": false,
+        "case_original_passage_completed": false
       }
     },
     {
@@ -9633,10 +9713,10 @@
       }
     ],
     "primary_consultation_limit": "These are original text or original-author quotations used to check scope. Access to a page alone is NOT a comprehensive collation of every section or every linked stage, and does not warrant declaring a full debate certified.",
-    "additional_semantic_stage_cases": 15,
-    "additional_semantic_stage_assessments": 120,
-    "total_semantic_stage_assessments": 184,
-    "remaining_unassessed_stage_claims": 256,
+    "additional_semantic_stage_cases": 31,
+    "additional_semantic_stage_assessments": 248,
+    "total_semantic_stage_assessments": 312,
+    "remaining_unassessed_stage_claims": 128,
     "full_original_passage_certification_remains_open": true
   }
 }
