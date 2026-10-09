@@ -63,7 +63,7 @@ assert.equal(current.feriaReconciliation.resumedEpiphanyWeekdaysAfterPentecost,6
 assert.equal(current.feriaReconciliation.dateOnlyPatches,0);
 console.log("PASS Calendar editorial historical 132-date worklist: 85 source-backed display headlines, 47 open; newer raw-source audit 127");
 const adjudications=registry.remaining47Adjudications;
-assert.equal(adjudications.status,"SOURCE_LEVEL_EDITORIAL_AND_COMMEMORATION_ADJUDICATION_PENDING_ACCEPTANCE");
+assert.equal(adjudications.status,"ACCEPTED_BOUNDED_HISTORICAL_REVIEW_PR_767");
 const remainingOwners=new Map([
   ["saints","saint_variants"],["major","major_title_variants"],
   ["commemorations","commemoration_count"]
@@ -115,4 +115,23 @@ for(const [id,date,en,fr] of [
 assert.equal(calendarObservanceAlias({status:"ready",date:"2024-05-16",day:{main:{id:"sancti:05-16:4:w"}}},"en"),"St Ubald",
   "Identity-backed display intentionally covers the same feast ID independent of class if source confirms");
 assert.equal(current.allPropersCertified,false,"This bounded review must never certify every Mass Proper");
-console.log("PASS Calendar editorial 47-case reconciliation: 4 saint-name aliases, 28 valid short titles, 6 day/Mass names, 3 existing commemorations, 4 reciprocal Apostles, 2 Barbara fixes pending source acceptance");
+const final=registry.post767Final;
+assert.equal(final.originalHistoricalFlagDates,132);
+assert.equal(final.dateCasesAdjudicatedThisBatch,47);
+assert.equal(final.historicallyUnadjudicatedCases,0);
+assert.equal(final.historicalHeadlineCorrectionsPriorToPR767,85);
+assert.equal(final.additionalSourceIDBilingualHeadlineCorrections,4);
+assert.equal(final.cumulativeHeadlineCorrections,89);
+assert.equal(final.historicalFlagsAcceptedWithoutAdditionalHeadline,43);
+assert.equal(final.acceptedShortTitleVariants,28);
+assert.equal(final.acceptedDayVersusFormularyTitles,6);
+assert.equal(final.commemorationCasesRepairedAtSharedMassSource,6);
+assert.equal(final.commemorationCasesPreviouslyResolved,3);
+assert.equal(final.apostolicMissingPrayerCasesRepairedUnderOneConclusion,4);
+assert.equal(final.stBarbaraMissingCommemorationCasesRepaired,2);
+assert.match(final.mergeCommit,/^[a-f0-9]{40}$/);
+assert.equal(final.sourceWitnessRankColourNovelConflicts,0);
+assert.equal(final.fullProperTextCertification,false);
+assert.equal(final.explicitVioletRogationMassCertified,false);
+assert.equal(final.contextualSourceCoverageGapClosed,false);
+console.log("PASS 132 historical Calendar discrepancy dates: 89 headline corrections, 43 accepted without a new headline; 47 newly adjudicated including six true Mass-text repairs; 0 unadjudicated historical flags; full Proper certification remains open");

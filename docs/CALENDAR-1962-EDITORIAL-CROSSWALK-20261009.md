@@ -2,6 +2,16 @@
 
 **Scope:** 132 **historical** naming/count flags from the archived two-witness 2024/2027 comparison (66 + 66). This is a triage register, **not** an assertion of 132 rubrical errors or an original-missal certification. Its date-level authoritative worklist is `data/calendar/1962-editorial-reconciliation-2024-2027.v1.json`.
 
+## Current accepted status after PR #767
+
+**Historical 2024/2027 crosswalk: all 132 dated flags dispositioned.** Previous numbered tables below preserve the source-observation snapshots and the original 85 corrections / 47-review queue *as they stood before* [PR #767](https://github.com/Fulcanelli13/ad-orientem/pull/767). They are not a live list of still-open defects.
+
+The 47-case batch found **four** additional EN/FR saint headlines to correct, **28** accepted abbreviated saint titles, **six** legitimate day-versus-Mass naming distinctions, **six** real source-level Mass-prayer omissions (four reciprocal apostolic compositions and two St Barbara commemorations), and **three** commemoration cases corrected earlier. The cumulative historical title corrections are therefore **89** (85 earlier + 4 new). The other **43** historical cases are reviewed without requiring a different day headline. The audit records **zero unadjudicated items in this historic 132-date register**.
+
+All Calendar specific, two-witness 2024/2027, app phone, and visual acceptance gates for [PR #767](https://github.com/Fulcanelli13/ad-orientem/pull/767) passed on source commit `119dcd1ec2d60c3eae635cb19320dd1a474f888d`; merged to `main` as `f2aa35a66e256979fcdca827509ab5810bef53b6`. The accepted [bounded disposition ledger](../data/calendar/1962-editorial-reconciliation-2024-2027.v1.json) records those distinctions explicitly.
+
+**This is not 731 fully collated Mass Propers, a particular-calendar audit, nor authorization for the conditional II-class violet Rogation Mass.** The independent first-source 61-day coverage gap and full Latin/vernacular Proper critical edition remain separate work. The newer raw-donor **127 title-similarity flags** must not be reported as 127 remaining UI errors.
+
 ## Evidence and differential method
 - [Missale Online 2024](https://missale.online/festkalender/en/2024/druck) / [2027](https://missale.online/festkalender/en/2027/druck), independent original comparison.
 - [GCatholic 1962 2024](https://gcatholic.org/calendar/2024/Extraordinary-en) / [2027](https://gcatholic.org/calendar/2027/Extraordinary-en), independent second comparison.
