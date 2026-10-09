@@ -536,6 +536,17 @@ function resolveConcurrency(calendar, source) {
                 feria.colorCode = day.tempora[0].colorCode;
                 feria.color = colorLabel(feria.colorCode);
             }
+            else {
+                // The generic source ferie default to white, but ordinary
+                // weekdays after the Holy Family and before Septuagesima
+                // inherit the green temporal colour. See 1962 registry.
+                const y = day.date.getFullYear();
+                if (day.date > (0, date_utils_1.holyFamily)(y) && day.date < (0, date_utils_1.septuagesima)(y)) {
+                    feria.colors = ['g'];
+                    feria.colorCode = 'g';
+                    feria.color = colorLabel('g');
+                }
+            }
             celebration = [feria];
         }
         day.celebration = celebration;
