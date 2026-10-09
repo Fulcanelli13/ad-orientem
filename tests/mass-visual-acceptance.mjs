@@ -1062,8 +1062,11 @@ try{
       // A source cue already aligned with the 39% line at card-open has
       // not yet been encountered by scrolling. Advance a minimal 12px
       // rather than pretending the card's initial paint triggers speech.
+      // Levate requires a second, distinct forward movement after kneeling;
+      // duplicate browser scroll events at the same position do not suffice.
+      const minForward=/-R$/.test(cueId)?card.scrollTop+4:12;
       card.scrollTop=Math.min(card.scrollHeight-card.clientHeight,
-        Math.max(12,target));
+        Math.max(12,target,minForward));
       card.dispatchEvent(new Event("scroll"));
       return {cueId,scrollTop:card.scrollTop,maxScroll:card.scrollHeight-card.clientHeight,
         paragraphTop:rect.top,viewportTop:frame.top,viewportHeight:card.clientHeight};
@@ -1092,6 +1095,13 @@ try{
     assert.equal(active.posture,"KNEEL",
       "Prayer "+n+" Flectamus did not kneel: "+JSON.stringify({kGeometry,active}));
     assert.equal(active.formula,kneel);
+    const duplicateScroll=await page.evaluate(()=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      api.root.querySelector(".ao-prayer-card").dispatchEvent(new Event("scroll"));
+      return api.getGoodFridayState().step.recordId;
+    });
+    assert.equal(duplicateScroll,kneel,
+      "same-position scroll wrongly skipped from Flectamus to Levate");
     assert.ok(active.highlight.some(x=>/Flectamus genua/i.test(x)),
       "Prayer "+n+" source words were not highlighted");
     const rGeometry=await focusGoodFridayWord(rise);
