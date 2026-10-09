@@ -1,6 +1,6 @@
 {
   "schema": "ao-app-release-gate-v1",
-  "version": "1.27.0",
+  "version": "1.28.1",
   "status": "PRESENTATION_PARITY_REQUIRED",
   "releaseRule": "FINAL_APP_READY requires certified runtime stability, modular six-destination ownership, real-data phone acceptance, certified Mass product parity, and exact recovery of the approved non-Mass donor presentation chain. Feature presence or conceptual equivalence is insufficient.",
   "massSubsystem": {
@@ -20,8 +20,7 @@
     "mass",
     "pray",
     "learn",
-    "calendar",
-    "settings"
+    "find"
   ],
   "requiredPhoneJourney": "cold launch -> Home -> Calendar -> Mass selection -> native LIVE -> Settings overlay/restore -> leave/resume -> PRAY -> Home -> Learn -> Home -> Learn -> PRAY/Calendar/Settings",
   "findings": [
@@ -340,5 +339,19 @@
   "productParityLedger": "data/presentation/product-parity.v1.json",
   "presentationFxLedger": "data/presentation/presentation-fx-parity.v1.json",
   "exactDonorParityLedger": "data/presentation/exact-donor-parity.v1.json",
-  "massDefinitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json"
+  "massDefinitiveConvergenceLedger": "data/presentation/mass-definitive-convergence.v1.json",
+  "utilityRoutes": [
+    "calendar",
+    "settings",
+    "apostolate"
+  ],
+  "historicalDonorTopLevelContract": [
+    "home",
+    "mass",
+    "pray",
+    "learn",
+    "calendar",
+    "settings"
+  ],
+  "navigationContractAuthority": "src/app/contracts.js: APP_SURFACES (five permanent destinations), APP_ROUTE_SURFACES (three utilities); preserve historical NON_MASS_DONOR_CONTRACT.topLevel without treating it as the production ribbon"
 }
