@@ -26,7 +26,7 @@ assert.match(eng,/DTSTART;VALUE=DATE:20261031\r\nDTEND;VALUE=DATE:20261101/);
 assert.equal(calendarMonthIcsFilename("2026-10"),"ad-orientem-1962-2026-10.ics");
 assert.doesNotMatch(eng,/\b(?:DTSTART:2026|TZID=|LOCATION:|RRULE:|VALARM)\b/);
 assert.match(eng,/not a Mass schedule/);
-assert.doesNotMatch(eng,/\n(?!\r)/,"iCalendar must use CRLF");
+assert.doesNotMatch(eng,/(?<!\r)\n/,"iCalendar must use CRLF");
 const lines=eng.split("\r\n").filter(Boolean);
 assert.ok(lines.every(x=>encoder.encode(x).length<=75),"RFC5545 line must not exceed 75 UTF-8 octets");
 const unfolded=eng.replace(/\r\n[ \t]/g,"");
