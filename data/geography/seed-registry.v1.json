@@ -7147,6 +7147,272 @@
       "source_ids": [
         "SHR-IT-santa-maria-vallicella-rome"
       ]
+    },
+    {
+      "place_id": "place:IT:duomo-torino-sindone",
+      "name": {
+        "official": "Cattedrale di San Giovanni Battista — Holy Shroud, Turin",
+        "aliases": [
+          "Cathédrale Saint-Jean-Baptiste — Saint Suaire, Turin"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.07332,
+        "lng": 7.68541,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/110679251",
+        "source_ref": "osm:way:110679251",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza San Giovanni, 10122 Torino, Italy",
+        "line2": null,
+        "postal_code": null,
+        "city": "Torino",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza San Giovanni, 10122 Torino, Italy"
+      },
+      "source_ids": [
+        "SHR-IT-duomo-torino-sindone"
+      ]
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "name": {
+        "official": "Aachener Dom — Four Sacred Textiles",
+        "aliases": [
+          "Cathédrale d’Aix-la-Chapelle — quatre tissus sacrés"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 50.7747469,
+        "lng": 6.08392,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://whc.unesco.org/en/list/003/maps/",
+        "source_ref": "UNESCO:WHC:003:cathedral",
+        "attribution": "Geographical authority cited via linked original site",
+        "matched_country_code": "DE",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Klosterplatz 2, 52062 Aachen, Germany",
+        "line2": null,
+        "postal_code": null,
+        "city": "Aachen",
+        "region": null,
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Klosterplatz 2, 52062 Aachen, Germany"
+      },
+      "source_ids": [
+        "SHR-DE-aachener-dom-four-textiles"
+      ]
+    },
+    {
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "name": {
+        "official": "Trierer Dom — Holy Robe",
+        "aliases": [
+          "Cathédrale Saint-Pierre de Trèves — Sainte Tunique"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.75625,
+        "lng": 6.64366,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/50284360",
+        "source_ref": "osm:way:50284360",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "DE",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Domfreihof, 54290 Trier, Germany",
+        "line2": null,
+        "postal_code": null,
+        "city": "Trier",
+        "region": null,
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Domfreihof, 54290 Trier, Germany"
+      },
+      "source_ids": [
+        "SHR-DE-trierer-dom-heiliger-rock"
+      ]
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "name": {
+        "official": "Cathédrale Saint-Étienne — Sainte Coiffe de Cahors",
+        "aliases": [
+          "Cathédrale Saint-Étienne — Sainte Coiffe de Cahors"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.4473,
+        "lng": 1.443,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/38612480",
+        "source_ref": "osm:way:38612480",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Place Jean-Jacques-Chapou, 46000 Cahors, France",
+        "line2": null,
+        "postal_code": null,
+        "city": "Cahors",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place Jean-Jacques-Chapou, 46000 Cahors, France"
+      },
+      "source_ids": [
+        "SHR-FR-cathedrale-saint-etienne-cahors"
+      ]
+    },
+    {
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "name": {
+        "official": "Catedral de San Salvador — Cámara Santa, Oviedo",
+        "aliases": [
+          "Cathédrale Saint-Sauveur — Cámara Santa, Oviedo"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.362488,
+        "lng": -5.843598,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.turismoasturias.es/en/descubre/cultura/prerromanico/camara-santa",
+        "source_ref": "TurismoAsturias:CamaraSanta:GPS",
+        "attribution": "Geographical authority cited via linked original site",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Plaza de Alfonso II el Casto, 33003 Oviedo, Spain",
+        "line2": null,
+        "postal_code": null,
+        "city": "Oviedo",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Plaza de Alfonso II el Casto, 33003 Oviedo, Spain"
+      },
+      "source_ids": [
+        "SHR-ES-catedral-san-salvador-oviedo"
+      ]
+    },
+    {
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "name": {
+        "official": "Abbatiale de la Sainte-Trinité — Précieux Sang, Fécamp",
+        "aliases": [
+          "Abbatiale de la Sainte-Trinité — Précieux Sang, Fécamp"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.7553375,
+        "lng": 0.3816538,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.cirkwi.com/fr/point-interet/2522956-abbatiale-de-la-sainte-trinite",
+        "source_ref": "FecampTourisme:Cirkwi:2522956",
+        "attribution": "Geographical authority cited via linked original site",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Place des Ducs Richard, 76400 Fécamp, France",
+        "line2": null,
+        "postal_code": null,
+        "city": "Fécamp",
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Place des Ducs Richard, 76400 Fécamp, France"
+      },
+      "source_ids": [
+        "SHR-FR-abbatiale-sainte-trinite-fecamp"
+      ]
+    },
+    {
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "name": {
+        "official": "Basilica del Volto Santo di Manoppello",
+        "aliases": [
+          "Basilique du Saint Visage de Manoppello"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 42.24992,
+        "lng": 14.06235,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/232374972",
+        "source_ref": "osm:way:232374972",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Via Cappuccini 26, 65024 Manoppello (PE), Italy",
+        "line2": null,
+        "postal_code": null,
+        "city": "Manoppello",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Via Cappuccini 26, 65024 Manoppello (PE), Italy"
+      },
+      "source_ids": [
+        "SHR-IT-santuario-volto-santo-manoppello"
+      ]
     }
   ],
   "directoryPlaceLinks": [

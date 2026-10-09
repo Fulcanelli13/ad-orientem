@@ -72,17 +72,17 @@ assert.ok(selected.nonpublication_cases.some(x=>x.subject_id==="subject:saint-pe
 assert.ok(selected.nonpublication_cases.some(x=>x.subject_id==="subject:saint-thomas-the-apostle"&&x.exclusion_class==="PROFILE_FRAGMENT_ONLY"));
 assert.equal(exceptional.schema,"SACRED_ATLAS_EXCEPTIONAL_OBJECTS_MAP_SELECTION_V1");
 assert.equal(exceptional.groups.length,15);
-assert.equal(exceptional.groups.filter(x=>x.existing_place_id).length,8);
+assert.equal(exceptional.groups.filter(x=>x.existing_place_id).length,15);
 assert.equal(exceptional.groups.filter(x=>x.research_candidate_id).length,7);
 for(const s of exceptional.groups){
- assert.equal(s.current_map_change,false);
+ assert.equal(s.current_map_change,Boolean(s.research_candidate_id));
  assert.equal(s.objects_are_grouped_under_one_site,true);
  assert.equal(s.historical_attribution,"TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED");
  assert.equal(s.canonical_relic_class,"EXCEPTIONAL_SACRED_OBJECT_NOT_AUTOMATICALLY_FIRST_SECOND_OR_THIRD");
  assert.ok(s.primary_source_urls.every(u=>/^https:\/\//.test(u)));
  assert.ok(s.primary_source_urls.length>=1);
- if(s.existing_place_id){assert.ok(placeIds.has(s.existing_place_id));assert.ok(s.legacy_relic_ids.length>0);}
- if(s.research_candidate_id)assert.equal(s.existing_place_id,null);
+ if(s.existing_place_id){assert.ok(placeIds.has(s.existing_place_id));if(!s.research_candidate_id)assert.ok(s.legacy_relic_ids.length>0);}
+ if(s.research_candidate_id){assert.ok(s.existing_place_id);assert.equal(s.publication_state,"PUBLISHED_PHYSICAL_SITE_TRADITION_UNAUTHENTICATED");}
 }
 const preview=JSON.parse(execFileSync(process.execPath,["tools/atlas/report-relic-publication-shortlist.mjs"],{encoding:"utf8"}));
 assert.equal(preview.priority_subject_count,133);
@@ -91,6 +91,6 @@ assert.equal(preview.saint_relic_site_associations,71);
 assert.equal(preview.new_site_candidates,39);
 assert.equal(preview.exceptional_sacred_object_groupings,15);
 assert.equal(preview.production_pins_created,0);
-assert.equal(published.relics.length,114);
-assert.equal(places.places.length,174);
+assert.equal(published.relics.length,121);
+assert.equal(places.places.length,181);
 console.log("PASS relic selection: 133 subject reach screens, "+assessed+" traceable reach indicators including "+universals+" apostolic roles, 71 associations → 66 sites (39 new candidates), 15 exceptional groups, 18 nonpin decisions; 0 production pins");

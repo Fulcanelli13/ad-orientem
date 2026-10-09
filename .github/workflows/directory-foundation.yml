@@ -27,6 +27,7 @@ on:
       - "tests/relic-census-selection-triage.mjs"
       - "tests/relic-atlas-publication-selection.mjs"
       - "tests/relic-principal-sites-bulk.mjs"
+      - "tests/relic-exceptional-seven-publication.mjs"
       - "docs/research/relic-atlas-publication-gate-v1.md"
       - "docs/research/sacred-atlas-worldwide-relic-census-v1.md"
       - "package.json"
@@ -62,6 +63,7 @@ on:
       - "tests/relic-census-selection-triage.mjs"
       - "tests/relic-atlas-publication-selection.mjs"
       - "tests/relic-principal-sites-bulk.mjs"
+      - "tests/relic-exceptional-seven-publication.mjs"
       - "docs/research/relic-atlas-publication-gate-v1.md"
       - "docs/research/sacred-atlas-worldwide-relic-census-v1.md"
       - "package.json"
@@ -94,6 +96,7 @@ jobs:
       - run: node tests/relic-census-selection-triage.mjs
       - run: node tests/relic-atlas-publication-selection.mjs
       - run: node tests/relic-principal-sites-bulk.mjs
+      - run: node tests/relic-exceptional-seven-publication.mjs
       - run: npm run test:explore-surface
       - run: npm run test:customs-atlas
       - run: npm run test:explore-geography

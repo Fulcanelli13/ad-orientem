@@ -1,0 +1,61 @@
+{
+  "schema": "SACRED_ATLAS_RELIC_CENSUS_GATES_V2",
+  "as_of": "2026-10-09",
+  "status": "RESEARCH_ONLY",
+  "subject_families": [
+    "APOSTLES_BIBLICAL",
+    "EARLY_MARTYRS_AND_FATHERS",
+    "DOCTORS_AND_FOUNDERS",
+    "PATRONS_AND_MISSIONARIES",
+    "WOMEN_SAINTS",
+    "RECENT_MARTYRS",
+    "PASSION_AND_MARIAN_OBJECTS",
+    "HISTORICAL_TREASURIES"
+  ],
+  "regional_lenses": [
+    "WESTERN_EUROPE",
+    "CENTRAL_EASTERN_EUROPE",
+    "MIDDLE_EAST_NORTH_AFRICA",
+    "SUBSAHARAN_AFRICA",
+    "ASIA_OCEANIA",
+    "AMERICAS"
+  ],
+  "material_axes": [
+    "MAJOR_BODY",
+    "NOTABLE_BODILY_PART",
+    "MINOR_FRAGMENT",
+    "PERSONAL_USE_OBJECT",
+    "CONTACT_OBJECT",
+    "ATTRIBUTED_SACRED_CLOTH",
+    "OTHER_SACRED_OBJECT",
+    "NO_EXTANT_BODY",
+    "COLLECTION"
+  ],
+  "publication_gates": [
+    "Original custody source passage",
+    "Distinct object identity and material evidence",
+    "Permanent custodian verified",
+    "Documented devotional importance",
+    "Canonical Place and site-precise coordinates",
+    "Exposition status distinguished from building access",
+    "Competing attribution claims reconciled or qualified",
+    "No invented 1962 feast or Mass schedule"
+  ],
+  "outcomes": [
+    "WORLD_ANCHOR",
+    "REGIONAL_ANCHOR",
+    "PROFILE_ONLY",
+    "HISTORICAL_CONTEXT",
+    "HOLD"
+  ],
+  "next_batch": {
+    "research_case_target": 60,
+    "scope": "Balanced across the 8 subject families and 6 regions",
+    "no_auto_pins": true,
+    "priority_disputes": [
+      "Benedict: Fleury/Monte Cassino",
+      "Magdalene: Provence/Vézelay"
+    ]
+  },
+  "scope_note": "The 133-subject screened sample is not a complete global denominator. Minor fragments are not a reason to create new map markers. Subject reach and traditional three-class material categories are separately evidenced."
+}
