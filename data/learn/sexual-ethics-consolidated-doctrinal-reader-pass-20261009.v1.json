@@ -1,0 +1,560 @@
+{
+  "version": "CSE_CONSOLIDATED_DOCTRINAL_READER_PASS_20261009_V1",
+  "date": "2026-10-09",
+  "purpose": "A single substantive review batch addressing genuine primary-text and argument defects across the existing canonical Sexual Ethics corpus. This is editorial-theological source review, not independent ecclesiastical approval. Do not duplicate topics or expand the inventory.",
+  "coverage": {
+    "canonical_questions": 150,
+    "debates": 55,
+    "reviewed_existing_debates": 14,
+    "bilingual_stage_pairs_corrected": 24,
+    "full_debate_claim_by_claim_certification": 0,
+    "independent_theological_approvals": 0,
+    "independent_french_approvals": 0
+  },
+  "review_policy": {
+    "original_english_and_french_links": "Prefer exact official bilingual primary document locations; retain genuine adverse positions with clear attribution.",
+    "independent_theological_review": "Optional additional assurance for public release; not a prerequisite established by universal canon law for an ordinary app; do not claim approved until actual external expert review.",
+    "nihil_obstat_imprimatur": "Not awarded and not automatically required for a standalone application; do not imply ecclesiastical endorsement.",
+    "release_testing": "Functional app acceptance and content editorial readiness are distinct. Do not mark an unreviewed debate certified or tell the public every statement is independently approved."
+  },
+  "original_primary_sources": [
+    "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+    "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19861001_homosexual-persons_en.html",
+    "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html",
+    "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+    "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+    "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care"
+  ],
+  "cases": [
+    {
+      "id": "CSE070",
+      "stage": "catholicCase",
+      "source_ids": [
+        "CASTI",
+        "HV"
+      ],
+      "linked_sources": [
+        {
+          "id": "CASTI",
+          "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+        },
+        {
+          "id": "HV",
+          "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Casti Connubii §59 tolerance by non-choosing spouse has grave reason and charitable dissuasion conditions.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE070",
+      "stage": "bottom",
+      "source_ids": [
+        "CASTI"
+      ],
+      "linked_sources": [
+        {
+          "id": "CASTI",
+          "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Casti Connubii §59 tolerance by non-choosing spouse has grave reason and charitable dissuasion conditions.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE083",
+      "stage": "catholicCase",
+      "source_ids": [
+        "PH",
+        "CDF2003"
+      ],
+      "linked_sources": [
+        {
+          "id": "PH",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html"
+        },
+        {
+          "id": "CDF2003",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20030731_homosexual-unions_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Persona Humana §8 personal guilt and objectively judged acts; avoid claiming direct CDF86 support where link not present.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE083",
+      "stage": "response",
+      "source_ids": [
+        "PH",
+        "CDF2003"
+      ],
+      "linked_sources": [
+        {
+          "id": "PH",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html"
+        },
+        {
+          "id": "CDF2003",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20030731_homosexual-unions_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Persona Humana §8 personal guilt and objectively judged acts; avoid claiming direct CDF86 support where link not present.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE084",
+      "stage": "opposition",
+      "source_ids": [
+        "FARLEY_QUOTED2012"
+      ],
+      "linked_sources": [
+        {
+          "id": "FARLEY_QUOTED2012",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20120330_nota-farley_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Sterility versus same-sex union analogy editorial, not verbatim original Farley source.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE088",
+      "stage": "catholicCase",
+      "source_ids": [
+        "HOMO86"
+      ],
+      "linked_sources": [
+        {
+          "id": "HOMO86",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19861001_homosexual-persons_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "CDF 1986 inclination objectively disordered is moral-theological usage, not psychiatric illness or guilt.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE088",
+      "stage": "response",
+      "source_ids": [
+        "HOMO86"
+      ],
+      "linked_sources": [
+        {
+          "id": "HOMO86",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19861001_homosexual-persons_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "CDF 1986 inclination objectively disordered is moral-theological usage, not psychiatric illness or guilt.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE093",
+      "stage": "catholicCase",
+      "source_ids": [
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Dignitas Infinita §59 specifically distinguishes biological sex and sociocultural sex roles, without separation.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE093",
+      "stage": "bottom",
+      "source_ids": [
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Dignitas Infinita §59 specifically distinguishes biological sex and sociocultural sex roles, without separation.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE094",
+      "stage": "opposition",
+      "source_ids": [
+        "APA_TRANSCARE"
+      ],
+      "linked_sources": [
+        {
+          "id": "APA_TRANSCARE",
+          "url": "https://www.apa.org/about/policy/transgender-nonbinary-inclusive-care"
+        }
+      ],
+      "doctrinal_review_question_en": "APA February 2024 clinical policy primary wording; normative evaluation independent of empirical treatment evidence.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE094",
+      "stage": "breakpoint",
+      "source_ids": [
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "APA February 2024 clinical policy primary wording; normative evaluation independent of empirical treatment evidence.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE095",
+      "stage": "response",
+      "source_ids": [
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Dignitas Infinita §§55–60 does not itself issue universal pronoun rules.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE096",
+      "stage": "catholicCase",
+      "source_ids": [
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Dignitas Infinita §60 qualified as a rule and distinct treatment of genital abnormalities.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE096",
+      "stage": "bottom",
+      "source_ids": [
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Dignitas Infinita §60 qualified as a rule and distinct treatment of genital abnormalities.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE101",
+      "stage": "catholicCase",
+      "source_ids": [
+        "DONUMV",
+        "DP"
+      ],
+      "linked_sources": [
+        {
+          "id": "DONUMV",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html"
+        },
+        {
+          "id": "DP",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Donum Vitae II.B.5 and Dignitas Personae §§12–16 distinguish treatment of infertility, IVF, embryo destruction.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE101",
+      "stage": "response",
+      "source_ids": [
+        "DONUMV"
+      ],
+      "linked_sources": [
+        {
+          "id": "DONUMV",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Donum Vitae II.B.5 and Dignitas Personae §§12–16 distinguish treatment of infertility, IVF, embryo destruction.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE104",
+      "stage": "catholicCase",
+      "source_ids": [
+        "DONUMV",
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DONUMV",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html"
+        },
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Donum Vitae II.A.3 condemns altruistic and commercial surrogacy on the unity-of-procreation rationale.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE104",
+      "stage": "response",
+      "source_ids": [
+        "DONUMV",
+        "DI2024"
+      ],
+      "linked_sources": [
+        {
+          "id": "DONUMV",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html"
+        },
+        {
+          "id": "DI2024",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240402_dignitas-infinita_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Donum Vitae II.A.3 condemns altruistic and commercial surrogacy on the unity-of-procreation rationale.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE142",
+      "stage": "opposition",
+      "source_ids": [
+        "FREUD1908"
+      ],
+      "linked_sources": [
+        {
+          "id": "FREUD1908",
+          "url": "https://www.freudedition.net/werke/modern-sexual-morality-and-modern-nervousness/druckschrift"
+        }
+      ],
+      "doctrinal_review_question_en": "Freud historical original theory not clinical proof; modern scenario is illustrative not direct Freud quote.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE142",
+      "stage": "response",
+      "source_ids": [
+        "ST151",
+        "SACRA"
+      ],
+      "linked_sources": [
+        {
+          "id": "ST151",
+          "url": "https://www.newadvent.org/summa/3151.htm"
+        },
+        {
+          "id": "SACRA",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Freud historical original theory not clinical proof; modern scenario is illustrative not direct Freud quote.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE143",
+      "stage": "response",
+      "source_ids": [
+        "HOMO86",
+        "SACRA"
+      ],
+      "linked_sources": [
+        {
+          "id": "HOMO86",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19861001_homosexual-persons_en.html"
+        },
+        {
+          "id": "SACRA",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Psychological correlation not causation; freedom, shame and moral fault differentiated.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE145",
+      "stage": "opposition",
+      "source_ids": [
+        "FLETCHER_EXCERPTS"
+      ],
+      "linked_sources": [
+        {
+          "id": "FLETCHER_EXCERPTS",
+          "url": "https://www.christianstudylibrary.org/article/situation-ethics"
+        }
+      ],
+      "doctrinal_review_question_en": "Love is love slogan is not original Fletcher thesis; opinion and intention do not solely decide object.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE145",
+      "stage": "breakpoint",
+      "source_ids": [
+        "VS",
+        "ST18"
+      ],
+      "linked_sources": [
+        {
+          "id": "VS",
+          "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
+        },
+        {
+          "id": "ST18",
+          "url": "https://www.newadvent.org/summa/2018.htm"
+        }
+      ],
+      "doctrinal_review_question_en": "Love is love slogan is not original Fletcher thesis; opinion and intention do not solely decide object.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    },
+    {
+      "id": "CSE149",
+      "stage": "response",
+      "source_ids": [
+        "ST94",
+        "DP"
+      ],
+      "linked_sources": [
+        {
+          "id": "ST94",
+          "url": "https://www.newadvent.org/summa/2094.htm"
+        },
+        {
+          "id": "DP",
+          "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html"
+        }
+      ],
+      "doctrinal_review_question_en": "Empirical premises must be falsifiable; science does not alone give normative moral conclusion.",
+      "english_and_french_live_revision": true,
+      "original_source_scope_rechecked": true,
+      "source_not_solely_a_doctrinal_approval": true,
+      "independent_expert_review_complete": false,
+      "formal_ecclesiastical_authorization_claimed": false,
+      "ready_for_release_not_assessed": true
+    }
+  ]
+}
