@@ -161,6 +161,21 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"day");
 
 
+ // Source provenance and month date-input focus are exercised on the real phone DOM.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
+ const sources=page.locator("#ao-calendar-modular-root .aoCalDaySources");
+ await sources.locator("summary").click();
+ assert.match(await sources.textContent(),/General Roman Calendar|Calendrier romain général/);
+ assert.equal(await sources.locator('a[href*="vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf"]').count(),1);
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ const input=page.locator("#ao-calendar-modular-root [data-cal-input]");
+ await input.fill("19/03/2028");
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.paint());
+ assert.equal(await input.inputValue(),"19/03/2028","Unsubmitted date was erased by a background repaint");
+ assert.equal(await input.evaluate(el=>document.activeElement===el),true,"Background repaint stole date-input focus");
+ assert.doesNotMatch(await page.locator("#ao-calendar-modular-root [data-cal-month-status]").textContent(),/verified|vérifié/i);
+ await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
+ 
  // Clean Calendar boot: Glossary must load only after its own contextual click.
  const glossaryUrl="/src/glossary/browser-entry.js";
  assert.equal(hits.some(x=>x.path===glossaryUrl),false,"Glossary unexpectedly loaded before its Calendar button");
