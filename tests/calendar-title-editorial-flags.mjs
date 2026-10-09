@@ -4,7 +4,7 @@ const d=JSON.parse(readFileSync(new URL("../data/calendar/1962-title-editorial-f
 assert.equal(d.schema,"AO_1962_TITLE_EDITORIAL_FLAGS_V1");
 const all=Object.entries(d.dates).flatMap(([family,dates])=>{assert.equal(d.counts[family],dates.length);return dates});
 assert.equal(all.length,131);assert.equal(new Set(all).size,131);
-for(const date of all)assert.match(date,/^202(?:4|7)-\\d{2}-\\d{2}$/);
+for(const date of all)assert.match(date,/^202(?:4|7)-\d{2}-\d{2}$/);
 assert.deepEqual(d.dates.PENTECOST_VIGIL,["2024-05-18","2027-05-15"]);
 assert.deepEqual(d.independentCommemorationDisputes.map(x=>x.date),["2024-10-27","2027-10-31"]);
 for(const x of d.independentCommemorationDisputes)assert.equal(x.status,"OPEN_SHARED_DAY_AND_MASS_RESOLVER");
