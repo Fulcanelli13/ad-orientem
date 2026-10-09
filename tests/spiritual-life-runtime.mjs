@@ -84,6 +84,11 @@ assert.equal(resolveSpiritualLifeSourceTarget(fr,tanquerey,["SL03-Q02"]),tanquer
   "Do not invent a French Tanquerey translation where only English is verified");
 
 const source=readFileSync("src/learn/spiritual-life.js","utf8");
+assert.match(source,/\.aoSLSources summary\{[^\n]*min-height:44px/,
+  "Spiritual Life source summary tap target regressed");
+assert.match(source,/\.aoSLInlineSources\{[^\n]*font-family:var\(--ao-font-ui/,
+  "Spiritual Life citation metadata lost shared UI typography");
+
 assert.match(source,/Sources & provenance/);
 assert.match(source,/claimSourceMarkup\(win,block\.claims\)/,"Lesson explanations must carry claim-specific links");
 assert.match(source,/claimSourceMarkup\(win,lesson\.practice\.claims\)/,"Practical counsel must carry claim-specific links");
