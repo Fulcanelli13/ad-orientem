@@ -61,6 +61,17 @@ function sourceFeriaTitle(resolution, language){
   // single observed Temporale matching this *same weekday* and IV class.
   const temporal=(resolution.day?.tempora||[]).filter(x=>
     /^tempora:(?:Epi\d+|Pasc\d+|Pent\d+|Quadp\d+)-[1-5]:4:[wvgrbp]$/i.test(String(x?.id||"")));
+  // An Epiphany-season weekday can inherit the Epiphany Mass even when the
+  // calendar has no separate IV-class Temporale candidate. The DayResolver
+  // explicitly walks back to 6 January and returns Sancti/01-06; require
+  // that actual source-backed Proper and the 1960 n.72 Jan 7-12 boundary.
+  // This is an observed Proper linkage, NOT civil-date-only feast inference.
+  if(temporal.length===0 && (resolution.day?.tempora||[]).length===0
+      && main.id===":feria:4:w"
+      && date.slice(5)>="01-07" && date.slice(5)<="01-12"
+      && resolution.proper?.status==="ready"
+      && resolution.proper?.data?.sourcePath==="Sancti/01-06")
+    return lang==="fr"?label+" après l’Épiphanie":label+" after Epiphany";
   if(temporal.length!==1)return null;
   const match=/^tempora:(Epi|Pasc|Pent|Quadp)(\d+)-([1-5]):4:([wvgrbp])$/i.exec(temporal[0].id);
   if(!match||Number(match[3])!==weekday)return null;
