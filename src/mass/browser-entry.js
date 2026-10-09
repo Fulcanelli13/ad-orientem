@@ -371,7 +371,7 @@ export async function openReaderScriptureContext(reference,{
   if(isSegmented && typeof owner.openSegments!=="function")
     throw new Error("MASS_SEGMENTED_SCRIPTURE_OWNER_NOT_READY");
   const accepted=isSegmented
-    ? await owner.openSegments(reference.segments,{language,reference:reference.reference,provenance:reference.provenance})
+    ? await owner.openSegments(reference.segments,{language,reference:reference.reference,provenance:reference.provenance,liturgicalArrangement:reference.liturgicalArrangement??null})
     : await owner.open(reference,{language});
   if(accepted===false)throw new Error("MASS_SCRIPTURE_CONTEXT_UNAVAILABLE");
   return true;
