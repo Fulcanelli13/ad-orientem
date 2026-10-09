@@ -62,6 +62,19 @@ assert.match(runtime,/catalogue \/ preview only/,"Bibliographic disclosure is no
 assert.match(runtime,/notice \/ aperçu seulement/,"Bibliographic disclosure is not visible in French");
 assert.match(runtime,/not a verified original passage/,"Complete source bibliography omits the catalog-only warning");
 
+// The verified *1966* edition and the examined original scan are separate
+// witnesses. Scanned chapter text is not a certified print collation.
+const fletcher=CSE_SOURCE_MAP.FLETCHER1966;
+assert.equal(new URL(fletcher.canonical_url).searchParams.get("id"),"E2JqAAAAMAAJ");
+const fletcherScan=cseSourceTargets("FLETCHER1966","1966 original, pp.120–123: proposition 5",fletcher)[0];
+assert.equal(fletcherScan.scope,"digitized-original");
+assert.equal(fletcherScan.url,fletcher.original_digitized_text_url);
+assert.match(fletcherScan.witness,/not independently collated/);
+assert.equal(cseSourceTargets("FLETCHER1966","unspecified thesis",fletcher)[0].scope,"catalogue");
+const readRuntime=(await import("node:fs")).readFileSync("src/learn/sexual-ethics.js","utf8");
+assert.match(readRuntime,/1966 scan · uncollated/);
+assert.match(readRuntime,/numérisation de 1966 · non collationnée/);
+
 const unsupported=cseSourceTargets("SCR","Unverified 12:34",CSE_SOURCE_MAP.SCR);
 assert.equal(unsupported[0].scope,"index","Unknown biblical abbreviations must fail closed");
 assert.equal(unsupported[0].url,CSE_SOURCE_MAP.SCR.canonical_url);

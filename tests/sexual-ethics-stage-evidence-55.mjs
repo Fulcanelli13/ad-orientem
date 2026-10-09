@@ -27,7 +27,14 @@ for(const id of CSE_DEBATE_IDS){
  assert.deepEqual(fields,x.stage_source_ids,id+" JS and JSON drift");
  for(const stage of CSE_DEBATE_FIELDS){
    const selected=fields[stage];
-   assert.ok(selected.length>0&&selected.length<=3,id+"."+stage+" source selection too broad");
+   // Four witnesses are necessary for two explicitly reviewed high-risk
+   // applications. Do not drop can. 1057 in CSE040 or clinical/episcopal
+   // evidence for ectopic-pregnancy treatment merely to meet an old cap.
+   const exception=(id==="CSE040"&&stage==="catholicCase")
+      ||(id==="CSE125"&&["catholicCase","response","bottom"].includes(stage));
+   const cap=exception?4:3;
+   assert.ok(selected.length>0&&selected.length<=cap,id+"."+stage+" source selection too broad");
+   if(exception)assert.equal(selected.length,4,id+"."+stage+" lost a required distinct authority");
    assert.equal(new Set(selected).size,selected.length,id+"."+stage+" duplicate source");
    const rendered=paragraphRefsFor(question,"debate",stage);
    assert.deepEqual(rendered.map(x=>x[0]),selected,id+"."+stage+" reader did not use selected sources");
@@ -42,16 +49,16 @@ for(const id of CSE_DEBATE_IDS){
  }
 }
 assert.equal(stageCount,440);
-assert.equal(referenceCount,612);
+assert.equal(referenceCount,632);
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,612);
+assert.equal(audit.summary.stage_specific_mapping_references,632);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.remaining_full_passage_review,55);
 for(const id of ["CSE112","CSE117"])assert.ok(CSE_MISCONCEPTION_REBUTTAL_IDS.includes(id));
 for(const id of ["CSE035","CSE038","CSE045","CSE141","CSE142","CSE143"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id));
 const close=raw.CSE125.source_scope_caveat;
-assert.match(close,/ACOG gives clinical treatment options, not moral permission/);
-assert.match(close,/NCBC is a non-magisterial application/);
-console.log("PASS Sexual Ethics 55/55 debate stage mappings: 440 distinct stage citation chains, 612 original source references, no invented locators, 0 claimed certified.");
+assert.match(close,/Original CDF clarification .*distinguishes direct abortion from non-abortive maternal treatment/);
+assert.match(close,/NCBC 2022 classifications are non-magisterial and contested/);
+console.log("PASS Sexual Ethics 55/55 debate stage mappings: 440 distinct stage citation chains, 632 original source references, no invented locators, 0 claimed certified.");

@@ -1,0 +1,36 @@
+name: Sexual Ethics author-original source integrity
+on:
+  pull_request:
+    paths:
+      - 'src/learn/sexual-ethics.js'
+      - 'src/learn/sexual-ethics-data/**'
+      - 'data/learn/sexual-ethics-*.json'
+      - 'tests/sexual-ethics-*.mjs'
+      - '.github/workflows/cse-author-original-source-integrity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-author-source-provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate 150 questions and bilingual original-source routes
+        run: node tests/sexual-ethics.mjs
+      - name: Verify actual source destinations and bibliographic limitations
+        run: node tests/sexual-ethics-source-targets.mjs
+      - name: Verify Fletcher original 1966 sections and no false certification
+        run: node tests/sexual-ethics-fletcher-original-book-v1.mjs
+      - name: Verify all 55 eight-stage source registries
+        run: node tests/sexual-ethics-stage-evidence-55.mjs
+      - name: Verify attribution across 55 debates
+        run: node tests/sexual-ethics-opponent-attribution-55-v1.mjs
+      - name: Verify Farley and Curran first-person source constraints
+        run: node tests/sexual-ethics-institutional-books-21-v1.mjs
+      - name: Audit all 440 classified source-stage verdicts and original-claim boundaries
+        run: node tests/sexual-ethics-evidence-v2.mjs
+      - name: Retain certification approval holds
+        run: node tests/sexual-ethics-certification-readiness-v3.mjs
