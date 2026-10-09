@@ -1,4 +1,5 @@
 import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
+import { installLazyPrayRegistry } from "./lazy-module-registry.js";
 
 
 
@@ -121,6 +122,7 @@ export function installPrayBrowserOwner(win=globalThis){
   if(win?.AO_PRAY_APP_V1)return win.AO_PRAY_APP_V1;
   const api=createPrayOwner(win);
   win.AO_PRAY_APP_V1=api;
+  installLazyPrayRegistry(win,ensurePrayReader);
   return api;
 }
 
