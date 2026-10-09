@@ -80,7 +80,7 @@ function placeRecordRows(records,language){
   if(!list.length)return "";
   return '<div class="aoExplorePlaceRows">'+list.map(item=>
     '<button type="button" class="aoExplorePlaceRow" data-explore-place-item="'+esc(item.item_id)+'" data-explore-place-lens="'+esc(item.lens)+'">'
-    +'<span><small>'+esc(item.eyebrow||lensLabel(language,item.lens))+'</small><strong>'+esc(translatedTitle(item,vm.language)||"")+'</strong></span>'
+    +'<span><small>'+esc(item.eyebrow||lensLabel(language,item.lens))+'</small><strong>'+esc(translatedTitle(item,language)||"")+'</strong></span>'
     +(item.status?'<i>'+esc(item.status)+'</i>':"")
     +'</button>'
   ).join("")+'</div>';
