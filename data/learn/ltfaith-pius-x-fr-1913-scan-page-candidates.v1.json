@@ -1,0 +1,3522 @@
+{
+  "version": "LTF_PIUS_X_FRENCH_1913_ORIGINAL_SCAN_PAGE_CANDIDATES_V1",
+  "date": "2026-10-09",
+  "sourcePdf": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
+  "pdfPageCount": 165,
+  "method": "GitHub-hosted PDF downloaded and text-extracted with Poppler; numbered-question OCR headings matched in body range PDF pp. 19–116. Missing 19 headings assigned bounded neighboring question-page candidates. Five samples visually verified against photographic page images, including Q202 and Q226. No blanket exact-answer collation.",
+  "sourceWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37892642596",
+  "questionCount": 433,
+  "directOcrDetectedQuestionNumbers": 414,
+  "ocrMissingQuestionNumbers": [
+    10,
+    11,
+    12,
+    14,
+    15,
+    16,
+    21,
+    30,
+    31,
+    41,
+    42,
+    48,
+    182,
+    202,
+    207,
+    265,
+    342,
+    361,
+    383
+  ],
+  "photoVerifiedQuestionNumbers": [
+    202,
+    226,
+    228,
+    253,
+    400
+  ],
+  "discrepancyRegister": "data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json",
+  "verificationCounts": {
+    "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED": 410,
+    "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED": 18,
+    "VISUALLY_CONFIRMED_ORIGINAL_FRENCH_1913_PRINT_QA": 5
+  },
+  "all433PrintedAnswersVisuallyVerified": false,
+  "original1912ItalianPrintedFacsimileCollated": false,
+  "nativeFrenchEditorialApproved": false,
+  "publicationApproved": false,
+  "entries": [
+    {
+      "q": 1,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 2,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 3,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 4,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 5,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 6,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 7,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 8,
+      "pdfPageOneIndexedCandidates": [
+        19
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=19",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 9,
+      "pdfPageOneIndexedCandidates": [
+        20
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 10,
+      "pdfPageOneIndexedCandidates": [
+        20
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 11,
+      "pdfPageOneIndexedCandidates": [
+        20
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 12,
+      "pdfPageOneIndexedCandidates": [
+        20
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 13,
+      "pdfPageOneIndexedCandidates": [
+        20
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 14,
+      "pdfPageOneIndexedCandidates": [
+        20,
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 15,
+      "pdfPageOneIndexedCandidates": [
+        20,
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 16,
+      "pdfPageOneIndexedCandidates": [
+        20,
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=20",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 17,
+      "pdfPageOneIndexedCandidates": [
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=21",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 18,
+      "pdfPageOneIndexedCandidates": [
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=21",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 19,
+      "pdfPageOneIndexedCandidates": [
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=21",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 20,
+      "pdfPageOneIndexedCandidates": [
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=21",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 21,
+      "pdfPageOneIndexedCandidates": [
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=21",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 22,
+      "pdfPageOneIndexedCandidates": [
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=21",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 23,
+      "pdfPageOneIndexedCandidates": [
+        21
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=21",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 24,
+      "pdfPageOneIndexedCandidates": [
+        22
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=22",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 25,
+      "pdfPageOneIndexedCandidates": [
+        22
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=22",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 26,
+      "pdfPageOneIndexedCandidates": [
+        22
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=22",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 27,
+      "pdfPageOneIndexedCandidates": [
+        22
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=22",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 28,
+      "pdfPageOneIndexedCandidates": [
+        23
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=23",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 29,
+      "pdfPageOneIndexedCandidates": [
+        23
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=23",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 30,
+      "pdfPageOneIndexedCandidates": [
+        23,
+        24
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=23",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 31,
+      "pdfPageOneIndexedCandidates": [
+        23,
+        24
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=23",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 32,
+      "pdfPageOneIndexedCandidates": [
+        24
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=24",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 33,
+      "pdfPageOneIndexedCandidates": [
+        24
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=24",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 34,
+      "pdfPageOneIndexedCandidates": [
+        24
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=24",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 35,
+      "pdfPageOneIndexedCandidates": [
+        24
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=24",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 36,
+      "pdfPageOneIndexedCandidates": [
+        25
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=25",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 37,
+      "pdfPageOneIndexedCandidates": [
+        25
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=25",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 38,
+      "pdfPageOneIndexedCandidates": [
+        25
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=25",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 39,
+      "pdfPageOneIndexedCandidates": [
+        25
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=25",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 40,
+      "pdfPageOneIndexedCandidates": [
+        26
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=26",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 41,
+      "pdfPageOneIndexedCandidates": [
+        26
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=26",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 42,
+      "pdfPageOneIndexedCandidates": [
+        26
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=26",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 43,
+      "pdfPageOneIndexedCandidates": [
+        26
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=26",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 44,
+      "pdfPageOneIndexedCandidates": [
+        26
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=26",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 45,
+      "pdfPageOneIndexedCandidates": [
+        26
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=26",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 46,
+      "pdfPageOneIndexedCandidates": [
+        27
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=27",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 47,
+      "pdfPageOneIndexedCandidates": [
+        27
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=27",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 48,
+      "pdfPageOneIndexedCandidates": [
+        27
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=27",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 49,
+      "pdfPageOneIndexedCandidates": [
+        27
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=27",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 50,
+      "pdfPageOneIndexedCandidates": [
+        27
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=27",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 51,
+      "pdfPageOneIndexedCandidates": [
+        28
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=28",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 52,
+      "pdfPageOneIndexedCandidates": [
+        28
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=28",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 53,
+      "pdfPageOneIndexedCandidates": [
+        28
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=28",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 54,
+      "pdfPageOneIndexedCandidates": [
+        28
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=28",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 55,
+      "pdfPageOneIndexedCandidates": [
+        29
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=29",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 56,
+      "pdfPageOneIndexedCandidates": [
+        29
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=29",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 57,
+      "pdfPageOneIndexedCandidates": [
+        29
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=29",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 58,
+      "pdfPageOneIndexedCandidates": [
+        29
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=29",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 59,
+      "pdfPageOneIndexedCandidates": [
+        29
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=29",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 60,
+      "pdfPageOneIndexedCandidates": [
+        29
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=29",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 61,
+      "pdfPageOneIndexedCandidates": [
+        29
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=29",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 62,
+      "pdfPageOneIndexedCandidates": [
+        30
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=30",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 63,
+      "pdfPageOneIndexedCandidates": [
+        30
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=30",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 64,
+      "pdfPageOneIndexedCandidates": [
+        30
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=30",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 65,
+      "pdfPageOneIndexedCandidates": [
+        30
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=30",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 66,
+      "pdfPageOneIndexedCandidates": [
+        30
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=30",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 67,
+      "pdfPageOneIndexedCandidates": [
+        31
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=31",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 68,
+      "pdfPageOneIndexedCandidates": [
+        31
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=31",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 69,
+      "pdfPageOneIndexedCandidates": [
+        31
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=31",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 70,
+      "pdfPageOneIndexedCandidates": [
+        31
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=31",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 71,
+      "pdfPageOneIndexedCandidates": [
+        31
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=31",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 72,
+      "pdfPageOneIndexedCandidates": [
+        32
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=32",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 73,
+      "pdfPageOneIndexedCandidates": [
+        32
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=32",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 74,
+      "pdfPageOneIndexedCandidates": [
+        32
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=32",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 75,
+      "pdfPageOneIndexedCandidates": [
+        32
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=32",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 76,
+      "pdfPageOneIndexedCandidates": [
+        33
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=33",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 77,
+      "pdfPageOneIndexedCandidates": [
+        33
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=33",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 78,
+      "pdfPageOneIndexedCandidates": [
+        33
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=33",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 79,
+      "pdfPageOneIndexedCandidates": [
+        33
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=33",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 80,
+      "pdfPageOneIndexedCandidates": [
+        34
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=34",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 81,
+      "pdfPageOneIndexedCandidates": [
+        34
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=34",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 82,
+      "pdfPageOneIndexedCandidates": [
+        34
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=34",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 83,
+      "pdfPageOneIndexedCandidates": [
+        34
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=34",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 84,
+      "pdfPageOneIndexedCandidates": [
+        34
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=34",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 85,
+      "pdfPageOneIndexedCandidates": [
+        34
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=34",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 86,
+      "pdfPageOneIndexedCandidates": [
+        35
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=35",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 87,
+      "pdfPageOneIndexedCandidates": [
+        35
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=35",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 88,
+      "pdfPageOneIndexedCandidates": [
+        35
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=35",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 89,
+      "pdfPageOneIndexedCandidates": [
+        35
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=35",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 90,
+      "pdfPageOneIndexedCandidates": [
+        36
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=36",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 91,
+      "pdfPageOneIndexedCandidates": [
+        36
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=36",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 92,
+      "pdfPageOneIndexedCandidates": [
+        36
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=36",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 93,
+      "pdfPageOneIndexedCandidates": [
+        36
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=36",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 94,
+      "pdfPageOneIndexedCandidates": [
+        37
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=37",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 95,
+      "pdfPageOneIndexedCandidates": [
+        37
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=37",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 96,
+      "pdfPageOneIndexedCandidates": [
+        37
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=37",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 97,
+      "pdfPageOneIndexedCandidates": [
+        37
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=37",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 98,
+      "pdfPageOneIndexedCandidates": [
+        38
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=38",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 99,
+      "pdfPageOneIndexedCandidates": [
+        38
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=38",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 100,
+      "pdfPageOneIndexedCandidates": [
+        38
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=38",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 101,
+      "pdfPageOneIndexedCandidates": [
+        38
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=38",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 102,
+      "pdfPageOneIndexedCandidates": [
+        38
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=38",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 103,
+      "pdfPageOneIndexedCandidates": [
+        39
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=39",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 104,
+      "pdfPageOneIndexedCandidates": [
+        39
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=39",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 105,
+      "pdfPageOneIndexedCandidates": [
+        39
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=39",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 106,
+      "pdfPageOneIndexedCandidates": [
+        39
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=39",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 107,
+      "pdfPageOneIndexedCandidates": [
+        40
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=40",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 108,
+      "pdfPageOneIndexedCandidates": [
+        40
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=40",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 109,
+      "pdfPageOneIndexedCandidates": [
+        40
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=40",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 110,
+      "pdfPageOneIndexedCandidates": [
+        40
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=40",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 111,
+      "pdfPageOneIndexedCandidates": [
+        41
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=41",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 112,
+      "pdfPageOneIndexedCandidates": [
+        41
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=41",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 113,
+      "pdfPageOneIndexedCandidates": [
+        41
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=41",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 114,
+      "pdfPageOneIndexedCandidates": [
+        41
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=41",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 115,
+      "pdfPageOneIndexedCandidates": [
+        42
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=42",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 116,
+      "pdfPageOneIndexedCandidates": [
+        42
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=42",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 117,
+      "pdfPageOneIndexedCandidates": [
+        42
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=42",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 118,
+      "pdfPageOneIndexedCandidates": [
+        42
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=42",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 119,
+      "pdfPageOneIndexedCandidates": [
+        43
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=43",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 120,
+      "pdfPageOneIndexedCandidates": [
+        43
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=43",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 121,
+      "pdfPageOneIndexedCandidates": [
+        43
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=43",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 122,
+      "pdfPageOneIndexedCandidates": [
+        43
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=43",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 123,
+      "pdfPageOneIndexedCandidates": [
+        44
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=44",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 124,
+      "pdfPageOneIndexedCandidates": [
+        44
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=44",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 125,
+      "pdfPageOneIndexedCandidates": [
+        44
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=44",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 126,
+      "pdfPageOneIndexedCandidates": [
+        44
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=44",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 127,
+      "pdfPageOneIndexedCandidates": [
+        44
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=44",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 128,
+      "pdfPageOneIndexedCandidates": [
+        45
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=45",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 129,
+      "pdfPageOneIndexedCandidates": [
+        45
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=45",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 130,
+      "pdfPageOneIndexedCandidates": [
+        45
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=45",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 131,
+      "pdfPageOneIndexedCandidates": [
+        45
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=45",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 132,
+      "pdfPageOneIndexedCandidates": [
+        45
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=45",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 133,
+      "pdfPageOneIndexedCandidates": [
+        46
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=46",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 134,
+      "pdfPageOneIndexedCandidates": [
+        46
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=46",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 135,
+      "pdfPageOneIndexedCandidates": [
+        46
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=46",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 136,
+      "pdfPageOneIndexedCandidates": [
+        46
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=46",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 137,
+      "pdfPageOneIndexedCandidates": [
+        46
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=46",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 138,
+      "pdfPageOneIndexedCandidates": [
+        46
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=46",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 139,
+      "pdfPageOneIndexedCandidates": [
+        47
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=47",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 140,
+      "pdfPageOneIndexedCandidates": [
+        47
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=47",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 141,
+      "pdfPageOneIndexedCandidates": [
+        47
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=47",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 142,
+      "pdfPageOneIndexedCandidates": [
+        47
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=47",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 143,
+      "pdfPageOneIndexedCandidates": [
+        47
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=47",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 144,
+      "pdfPageOneIndexedCandidates": [
+        47
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=47",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 145,
+      "pdfPageOneIndexedCandidates": [
+        48
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=48",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 146,
+      "pdfPageOneIndexedCandidates": [
+        48
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=48",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 147,
+      "pdfPageOneIndexedCandidates": [
+        48
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=48",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 148,
+      "pdfPageOneIndexedCandidates": [
+        48
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=48",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 149,
+      "pdfPageOneIndexedCandidates": [
+        49
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=49",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 150,
+      "pdfPageOneIndexedCandidates": [
+        49
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=49",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 151,
+      "pdfPageOneIndexedCandidates": [
+        49
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=49",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 152,
+      "pdfPageOneIndexedCandidates": [
+        49
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=49",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 153,
+      "pdfPageOneIndexedCandidates": [
+        49
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=49",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 154,
+      "pdfPageOneIndexedCandidates": [
+        50
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=50",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 155,
+      "pdfPageOneIndexedCandidates": [
+        50
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=50",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 156,
+      "pdfPageOneIndexedCandidates": [
+        50
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=50",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 157,
+      "pdfPageOneIndexedCandidates": [
+        51
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=51",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 158,
+      "pdfPageOneIndexedCandidates": [
+        51
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=51",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 159,
+      "pdfPageOneIndexedCandidates": [
+        51
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=51",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 160,
+      "pdfPageOneIndexedCandidates": [
+        51
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=51",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 161,
+      "pdfPageOneIndexedCandidates": [
+        52
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=52",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 162,
+      "pdfPageOneIndexedCandidates": [
+        52
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=52",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 163,
+      "pdfPageOneIndexedCandidates": [
+        52
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=52",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 164,
+      "pdfPageOneIndexedCandidates": [
+        53
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=53",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 165,
+      "pdfPageOneIndexedCandidates": [
+        53
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=53",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 166,
+      "pdfPageOneIndexedCandidates": [
+        53
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=53",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 167,
+      "pdfPageOneIndexedCandidates": [
+        53
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=53",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 168,
+      "pdfPageOneIndexedCandidates": [
+        54
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=54",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 169,
+      "pdfPageOneIndexedCandidates": [
+        54
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=54",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 170,
+      "pdfPageOneIndexedCandidates": [
+        54
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=54",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 171,
+      "pdfPageOneIndexedCandidates": [
+        54
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=54",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 172,
+      "pdfPageOneIndexedCandidates": [
+        54
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=54",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 173,
+      "pdfPageOneIndexedCandidates": [
+        55
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=55",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 174,
+      "pdfPageOneIndexedCandidates": [
+        55
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=55",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 175,
+      "pdfPageOneIndexedCandidates": [
+        55
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=55",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 176,
+      "pdfPageOneIndexedCandidates": [
+        56
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=56",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 177,
+      "pdfPageOneIndexedCandidates": [
+        56
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=56",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 178,
+      "pdfPageOneIndexedCandidates": [
+        56
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=56",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 179,
+      "pdfPageOneIndexedCandidates": [
+        56
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=56",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 180,
+      "pdfPageOneIndexedCandidates": [
+        57
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=57",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 181,
+      "pdfPageOneIndexedCandidates": [
+        57
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=57",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 182,
+      "pdfPageOneIndexedCandidates": [
+        57
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=57",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 183,
+      "pdfPageOneIndexedCandidates": [
+        57
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=57",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 184,
+      "pdfPageOneIndexedCandidates": [
+        58
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=58",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 185,
+      "pdfPageOneIndexedCandidates": [
+        58
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=58",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 186,
+      "pdfPageOneIndexedCandidates": [
+        58
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=58",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 187,
+      "pdfPageOneIndexedCandidates": [
+        58
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=58",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 188,
+      "pdfPageOneIndexedCandidates": [
+        58
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=58",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 189,
+      "pdfPageOneIndexedCandidates": [
+        59
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=59",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 190,
+      "pdfPageOneIndexedCandidates": [
+        59
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=59",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 191,
+      "pdfPageOneIndexedCandidates": [
+        59
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=59",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 192,
+      "pdfPageOneIndexedCandidates": [
+        59
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=59",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 193,
+      "pdfPageOneIndexedCandidates": [
+        60
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=60",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 194,
+      "pdfPageOneIndexedCandidates": [
+        60
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=60",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 195,
+      "pdfPageOneIndexedCandidates": [
+        60
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=60",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 196,
+      "pdfPageOneIndexedCandidates": [
+        60
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=60",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 197,
+      "pdfPageOneIndexedCandidates": [
+        61
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=61",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 198,
+      "pdfPageOneIndexedCandidates": [
+        61
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=61",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 199,
+      "pdfPageOneIndexedCandidates": [
+        61
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=61",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 200,
+      "pdfPageOneIndexedCandidates": [
+        61
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=61",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 201,
+      "pdfPageOneIndexedCandidates": [
+        61
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=61",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 202,
+      "pdfPageOneIndexedCandidates": [
+        62
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=62",
+      "status": "VISUALLY_CONFIRMED_ORIGINAL_FRENCH_1913_PRINT_QA"
+    },
+    {
+      "q": 203,
+      "pdfPageOneIndexedCandidates": [
+        62
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=62",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 204,
+      "pdfPageOneIndexedCandidates": [
+        62
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=62",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 205,
+      "pdfPageOneIndexedCandidates": [
+        62
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=62",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 206,
+      "pdfPageOneIndexedCandidates": [
+        63
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=63",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 207,
+      "pdfPageOneIndexedCandidates": [
+        63
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=63",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 208,
+      "pdfPageOneIndexedCandidates": [
+        63
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=63",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 209,
+      "pdfPageOneIndexedCandidates": [
+        63
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=63",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 210,
+      "pdfPageOneIndexedCandidates": [
+        64
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=64",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 211,
+      "pdfPageOneIndexedCandidates": [
+        64
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=64",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 212,
+      "pdfPageOneIndexedCandidates": [
+        64
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=64",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 213,
+      "pdfPageOneIndexedCandidates": [
+        65
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=65",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 214,
+      "pdfPageOneIndexedCandidates": [
+        65
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=65",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 215,
+      "pdfPageOneIndexedCandidates": [
+        65
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=65",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 216,
+      "pdfPageOneIndexedCandidates": [
+        65
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=65",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 217,
+      "pdfPageOneIndexedCandidates": [
+        66
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=66",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 218,
+      "pdfPageOneIndexedCandidates": [
+        66
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=66",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 219,
+      "pdfPageOneIndexedCandidates": [
+        66
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=66",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 220,
+      "pdfPageOneIndexedCandidates": [
+        67
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=67",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 221,
+      "pdfPageOneIndexedCandidates": [
+        67
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=67",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 222,
+      "pdfPageOneIndexedCandidates": [
+        67
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=67",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 223,
+      "pdfPageOneIndexedCandidates": [
+        67
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=67",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 224,
+      "pdfPageOneIndexedCandidates": [
+        68
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=68",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 225,
+      "pdfPageOneIndexedCandidates": [
+        68
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=68",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 226,
+      "pdfPageOneIndexedCandidates": [
+        68
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=68",
+      "status": "VISUALLY_CONFIRMED_ORIGINAL_FRENCH_1913_PRINT_QA"
+    },
+    {
+      "q": 227,
+      "pdfPageOneIndexedCandidates": [
+        69
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=69",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 228,
+      "pdfPageOneIndexedCandidates": [
+        69
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=69",
+      "status": "VISUALLY_CONFIRMED_ORIGINAL_FRENCH_1913_PRINT_QA"
+    },
+    {
+      "q": 229,
+      "pdfPageOneIndexedCandidates": [
+        69
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=69",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 230,
+      "pdfPageOneIndexedCandidates": [
+        69
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=69",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 231,
+      "pdfPageOneIndexedCandidates": [
+        70
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=70",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 232,
+      "pdfPageOneIndexedCandidates": [
+        70
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=70",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 233,
+      "pdfPageOneIndexedCandidates": [
+        70
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=70",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 234,
+      "pdfPageOneIndexedCandidates": [
+        70
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=70",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 235,
+      "pdfPageOneIndexedCandidates": [
+        71
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=71",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 236,
+      "pdfPageOneIndexedCandidates": [
+        71
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=71",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 237,
+      "pdfPageOneIndexedCandidates": [
+        71
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=71",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 238,
+      "pdfPageOneIndexedCandidates": [
+        71
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=71",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 239,
+      "pdfPageOneIndexedCandidates": [
+        72
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=72",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 240,
+      "pdfPageOneIndexedCandidates": [
+        72
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=72",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 241,
+      "pdfPageOneIndexedCandidates": [
+        72
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=72",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 242,
+      "pdfPageOneIndexedCandidates": [
+        72
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=72",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 243,
+      "pdfPageOneIndexedCandidates": [
+        72
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=72",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 244,
+      "pdfPageOneIndexedCandidates": [
+        73
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=73",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 245,
+      "pdfPageOneIndexedCandidates": [
+        73
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=73",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 246,
+      "pdfPageOneIndexedCandidates": [
+        73
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=73",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 247,
+      "pdfPageOneIndexedCandidates": [
+        73
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=73",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 248,
+      "pdfPageOneIndexedCandidates": [
+        74
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=74",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 249,
+      "pdfPageOneIndexedCandidates": [
+        74
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=74",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 250,
+      "pdfPageOneIndexedCandidates": [
+        74
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=74",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 251,
+      "pdfPageOneIndexedCandidates": [
+        74
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=74",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 252,
+      "pdfPageOneIndexedCandidates": [
+        75
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=75",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 253,
+      "pdfPageOneIndexedCandidates": [
+        75
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=75",
+      "status": "VISUALLY_CONFIRMED_ORIGINAL_FRENCH_1913_PRINT_QA"
+    },
+    {
+      "q": 254,
+      "pdfPageOneIndexedCandidates": [
+        75
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=75",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 255,
+      "pdfPageOneIndexedCandidates": [
+        75
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=75",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 256,
+      "pdfPageOneIndexedCandidates": [
+        75
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=75",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 257,
+      "pdfPageOneIndexedCandidates": [
+        75
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=75",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 258,
+      "pdfPageOneIndexedCandidates": [
+        76
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=76",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 259,
+      "pdfPageOneIndexedCandidates": [
+        76
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=76",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 260,
+      "pdfPageOneIndexedCandidates": [
+        76
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=76",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 261,
+      "pdfPageOneIndexedCandidates": [
+        76
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=76",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 262,
+      "pdfPageOneIndexedCandidates": [
+        76
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=76",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 263,
+      "pdfPageOneIndexedCandidates": [
+        76
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=76",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 264,
+      "pdfPageOneIndexedCandidates": [
+        77
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=77",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 265,
+      "pdfPageOneIndexedCandidates": [
+        77,
+        78
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=77",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 266,
+      "pdfPageOneIndexedCandidates": [
+        78
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=78",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 267,
+      "pdfPageOneIndexedCandidates": [
+        79
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=79",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 268,
+      "pdfPageOneIndexedCandidates": [
+        79
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=79",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 269,
+      "pdfPageOneIndexedCandidates": [
+        79
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=79",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 270,
+      "pdfPageOneIndexedCandidates": [
+        80
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=80",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 271,
+      "pdfPageOneIndexedCandidates": [
+        80
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=80",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 272,
+      "pdfPageOneIndexedCandidates": [
+        80
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=80",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 273,
+      "pdfPageOneIndexedCandidates": [
+        80
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=80",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 274,
+      "pdfPageOneIndexedCandidates": [
+        80
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=80",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 275,
+      "pdfPageOneIndexedCandidates": [
+        81
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=81",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 276,
+      "pdfPageOneIndexedCandidates": [
+        81
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=81",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 277,
+      "pdfPageOneIndexedCandidates": [
+        81
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=81",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 278,
+      "pdfPageOneIndexedCandidates": [
+        81
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=81",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 279,
+      "pdfPageOneIndexedCandidates": [
+        81
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=81",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 280,
+      "pdfPageOneIndexedCandidates": [
+        82
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=82",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 281,
+      "pdfPageOneIndexedCandidates": [
+        82
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=82",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 282,
+      "pdfPageOneIndexedCandidates": [
+        82
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=82",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 283,
+      "pdfPageOneIndexedCandidates": [
+        82
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=82",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 284,
+      "pdfPageOneIndexedCandidates": [
+        83
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=83",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 285,
+      "pdfPageOneIndexedCandidates": [
+        83
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=83",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 286,
+      "pdfPageOneIndexedCandidates": [
+        83
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=83",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 287,
+      "pdfPageOneIndexedCandidates": [
+        83
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=83",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 288,
+      "pdfPageOneIndexedCandidates": [
+        83
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=83",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 289,
+      "pdfPageOneIndexedCandidates": [
+        83
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=83",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 290,
+      "pdfPageOneIndexedCandidates": [
+        84
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=84",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 291,
+      "pdfPageOneIndexedCandidates": [
+        84
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=84",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 292,
+      "pdfPageOneIndexedCandidates": [
+        84
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=84",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 293,
+      "pdfPageOneIndexedCandidates": [
+        84
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=84",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 294,
+      "pdfPageOneIndexedCandidates": [
+        84
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=84",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 295,
+      "pdfPageOneIndexedCandidates": [
+        84
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=84",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 296,
+      "pdfPageOneIndexedCandidates": [
+        85
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=85",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 297,
+      "pdfPageOneIndexedCandidates": [
+        85
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=85",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 298,
+      "pdfPageOneIndexedCandidates": [
+        85
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=85",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 299,
+      "pdfPageOneIndexedCandidates": [
+        85
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=85",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 300,
+      "pdfPageOneIndexedCandidates": [
+        86
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=86",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 301,
+      "pdfPageOneIndexedCandidates": [
+        86
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=86",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 302,
+      "pdfPageOneIndexedCandidates": [
+        86
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=86",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 303,
+      "pdfPageOneIndexedCandidates": [
+        86
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=86",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 304,
+      "pdfPageOneIndexedCandidates": [
+        87
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=87",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 305,
+      "pdfPageOneIndexedCandidates": [
+        87
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=87",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 306,
+      "pdfPageOneIndexedCandidates": [
+        87
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=87",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 307,
+      "pdfPageOneIndexedCandidates": [
+        87
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=87",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 308,
+      "pdfPageOneIndexedCandidates": [
+        87
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=87",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 309,
+      "pdfPageOneIndexedCandidates": [
+        88
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=88",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 310,
+      "pdfPageOneIndexedCandidates": [
+        88
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=88",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 311,
+      "pdfPageOneIndexedCandidates": [
+        88
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=88",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 312,
+      "pdfPageOneIndexedCandidates": [
+        88
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=88",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 313,
+      "pdfPageOneIndexedCandidates": [
+        89
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=89",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 314,
+      "pdfPageOneIndexedCandidates": [
+        89
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=89",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 315,
+      "pdfPageOneIndexedCandidates": [
+        89
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=89",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 316,
+      "pdfPageOneIndexedCandidates": [
+        89
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=89",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 317,
+      "pdfPageOneIndexedCandidates": [
+        90
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=90",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 318,
+      "pdfPageOneIndexedCandidates": [
+        90
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=90",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 319,
+      "pdfPageOneIndexedCandidates": [
+        90
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=90",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 320,
+      "pdfPageOneIndexedCandidates": [
+        90
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=90",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 321,
+      "pdfPageOneIndexedCandidates": [
+        90
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=90",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 322,
+      "pdfPageOneIndexedCandidates": [
+        91
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=91",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 323,
+      "pdfPageOneIndexedCandidates": [
+        91
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=91",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 324,
+      "pdfPageOneIndexedCandidates": [
+        91
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=91",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 325,
+      "pdfPageOneIndexedCandidates": [
+        91
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=91",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 326,
+      "pdfPageOneIndexedCandidates": [
+        92
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=92",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 327,
+      "pdfPageOneIndexedCandidates": [
+        92
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=92",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 328,
+      "pdfPageOneIndexedCandidates": [
+        92
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=92",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 329,
+      "pdfPageOneIndexedCandidates": [
+        92
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=92",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 330,
+      "pdfPageOneIndexedCandidates": [
+        92
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=92",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 331,
+      "pdfPageOneIndexedCandidates": [
+        92
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=92",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 332,
+      "pdfPageOneIndexedCandidates": [
+        93
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=93",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 333,
+      "pdfPageOneIndexedCandidates": [
+        93
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=93",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 334,
+      "pdfPageOneIndexedCandidates": [
+        93
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=93",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 335,
+      "pdfPageOneIndexedCandidates": [
+        93
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=93",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 336,
+      "pdfPageOneIndexedCandidates": [
+        93
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=93",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 337,
+      "pdfPageOneIndexedCandidates": [
+        94
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=94",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 338,
+      "pdfPageOneIndexedCandidates": [
+        94
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=94",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 339,
+      "pdfPageOneIndexedCandidates": [
+        94
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=94",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 340,
+      "pdfPageOneIndexedCandidates": [
+        94
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=94",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 341,
+      "pdfPageOneIndexedCandidates": [
+        94
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=94",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 342,
+      "pdfPageOneIndexedCandidates": [
+        94,
+        95
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=94",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 343,
+      "pdfPageOneIndexedCandidates": [
+        95
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=95",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 344,
+      "pdfPageOneIndexedCandidates": [
+        95
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=95",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 345,
+      "pdfPageOneIndexedCandidates": [
+        95
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=95",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 346,
+      "pdfPageOneIndexedCandidates": [
+        95
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=95",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 347,
+      "pdfPageOneIndexedCandidates": [
+        96
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=96",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 348,
+      "pdfPageOneIndexedCandidates": [
+        96
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=96",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 349,
+      "pdfPageOneIndexedCandidates": [
+        96
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=96",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 350,
+      "pdfPageOneIndexedCandidates": [
+        96
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=96",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 351,
+      "pdfPageOneIndexedCandidates": [
+        97
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=97",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 352,
+      "pdfPageOneIndexedCandidates": [
+        97
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=97",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 353,
+      "pdfPageOneIndexedCandidates": [
+        97
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=97",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 354,
+      "pdfPageOneIndexedCandidates": [
+        97
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=97",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 355,
+      "pdfPageOneIndexedCandidates": [
+        98
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=98",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 356,
+      "pdfPageOneIndexedCandidates": [
+        98
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=98",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 357,
+      "pdfPageOneIndexedCandidates": [
+        98
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=98",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 358,
+      "pdfPageOneIndexedCandidates": [
+        98
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=98",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 359,
+      "pdfPageOneIndexedCandidates": [
+        99
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=99",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 360,
+      "pdfPageOneIndexedCandidates": [
+        99
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=99",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 361,
+      "pdfPageOneIndexedCandidates": [
+        99
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=99",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 362,
+      "pdfPageOneIndexedCandidates": [
+        99
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=99",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 363,
+      "pdfPageOneIndexedCandidates": [
+        99
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=99",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 364,
+      "pdfPageOneIndexedCandidates": [
+        100
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=100",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 365,
+      "pdfPageOneIndexedCandidates": [
+        100
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=100",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 366,
+      "pdfPageOneIndexedCandidates": [
+        100
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=100",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 367,
+      "pdfPageOneIndexedCandidates": [
+        100
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=100",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 368,
+      "pdfPageOneIndexedCandidates": [
+        100
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=100",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 369,
+      "pdfPageOneIndexedCandidates": [
+        101
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=101",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 370,
+      "pdfPageOneIndexedCandidates": [
+        101
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=101",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 371,
+      "pdfPageOneIndexedCandidates": [
+        101
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=101",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 372,
+      "pdfPageOneIndexedCandidates": [
+        101
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=101",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 373,
+      "pdfPageOneIndexedCandidates": [
+        101
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=101",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 374,
+      "pdfPageOneIndexedCandidates": [
+        101
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=101",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 375,
+      "pdfPageOneIndexedCandidates": [
+        102
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=102",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 376,
+      "pdfPageOneIndexedCandidates": [
+        102
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=102",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 377,
+      "pdfPageOneIndexedCandidates": [
+        102
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=102",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 378,
+      "pdfPageOneIndexedCandidates": [
+        102
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=102",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 379,
+      "pdfPageOneIndexedCandidates": [
+        103
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=103",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 380,
+      "pdfPageOneIndexedCandidates": [
+        103
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=103",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 381,
+      "pdfPageOneIndexedCandidates": [
+        103
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=103",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 382,
+      "pdfPageOneIndexedCandidates": [
+        103
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=103",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 383,
+      "pdfPageOneIndexedCandidates": [
+        103,
+        104
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=103",
+      "status": "OCR_HEADING_MISSING_INFERRED_PAGE_WINDOW_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 384,
+      "pdfPageOneIndexedCandidates": [
+        104
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=104",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 385,
+      "pdfPageOneIndexedCandidates": [
+        104
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=104",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 386,
+      "pdfPageOneIndexedCandidates": [
+        104
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=104",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 387,
+      "pdfPageOneIndexedCandidates": [
+        105
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=105",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 388,
+      "pdfPageOneIndexedCandidates": [
+        105
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=105",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 389,
+      "pdfPageOneIndexedCandidates": [
+        105
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=105",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 390,
+      "pdfPageOneIndexedCandidates": [
+        105
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=105",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 391,
+      "pdfPageOneIndexedCandidates": [
+        105
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=105",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 392,
+      "pdfPageOneIndexedCandidates": [
+        105
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=105",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 393,
+      "pdfPageOneIndexedCandidates": [
+        106
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=106",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 394,
+      "pdfPageOneIndexedCandidates": [
+        106
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=106",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 395,
+      "pdfPageOneIndexedCandidates": [
+        106
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=106",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 396,
+      "pdfPageOneIndexedCandidates": [
+        106
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=106",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 397,
+      "pdfPageOneIndexedCandidates": [
+        107
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=107",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 398,
+      "pdfPageOneIndexedCandidates": [
+        107
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=107",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 399,
+      "pdfPageOneIndexedCandidates": [
+        107
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=107",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 400,
+      "pdfPageOneIndexedCandidates": [
+        107
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=107",
+      "status": "VISUALLY_CONFIRMED_ORIGINAL_FRENCH_1913_PRINT_QA"
+    },
+    {
+      "q": 401,
+      "pdfPageOneIndexedCandidates": [
+        108
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=108",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 402,
+      "pdfPageOneIndexedCandidates": [
+        108
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=108",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 403,
+      "pdfPageOneIndexedCandidates": [
+        108
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=108",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 404,
+      "pdfPageOneIndexedCandidates": [
+        108
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=108",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 405,
+      "pdfPageOneIndexedCandidates": [
+        109
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=109",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 406,
+      "pdfPageOneIndexedCandidates": [
+        109
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=109",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 407,
+      "pdfPageOneIndexedCandidates": [
+        109
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=109",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 408,
+      "pdfPageOneIndexedCandidates": [
+        109
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=109",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 409,
+      "pdfPageOneIndexedCandidates": [
+        110
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=110",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 410,
+      "pdfPageOneIndexedCandidates": [
+        110
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=110",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 411,
+      "pdfPageOneIndexedCandidates": [
+        110
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=110",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 412,
+      "pdfPageOneIndexedCandidates": [
+        110
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=110",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 413,
+      "pdfPageOneIndexedCandidates": [
+        110
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=110",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 414,
+      "pdfPageOneIndexedCandidates": [
+        112
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=112",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 415,
+      "pdfPageOneIndexedCandidates": [
+        112
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=112",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 416,
+      "pdfPageOneIndexedCandidates": [
+        112
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=112",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 417,
+      "pdfPageOneIndexedCandidates": [
+        112
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=112",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 418,
+      "pdfPageOneIndexedCandidates": [
+        113
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=113",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 419,
+      "pdfPageOneIndexedCandidates": [
+        113
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=113",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 420,
+      "pdfPageOneIndexedCandidates": [
+        113
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=113",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 421,
+      "pdfPageOneIndexedCandidates": [
+        113
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=113",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 422,
+      "pdfPageOneIndexedCandidates": [
+        114
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=114",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 423,
+      "pdfPageOneIndexedCandidates": [
+        114
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=114",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 424,
+      "pdfPageOneIndexedCandidates": [
+        114
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=114",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 425,
+      "pdfPageOneIndexedCandidates": [
+        114
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=114",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 426,
+      "pdfPageOneIndexedCandidates": [
+        114
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=114",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 427,
+      "pdfPageOneIndexedCandidates": [
+        115
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=115",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 428,
+      "pdfPageOneIndexedCandidates": [
+        115
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=115",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 429,
+      "pdfPageOneIndexedCandidates": [
+        115
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=115",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 430,
+      "pdfPageOneIndexedCandidates": [
+        116
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=116",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 431,
+      "pdfPageOneIndexedCandidates": [
+        116
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=116",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 432,
+      "pdfPageOneIndexedCandidates": [
+        116
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=116",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    },
+    {
+      "q": 433,
+      "pdfPageOneIndexedCandidates": [
+        116
+      ],
+      "scanUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf#page=116",
+      "status": "OCR_NUMBER_HEADING_CANDIDATE_NOT_VISUALLY_VERIFIED"
+    }
+  ]
+}

@@ -27,7 +27,22 @@
     "scannedOrTypesetCandidate": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
     "sourceStatus": "BOOK_ID_AND_EDITION_ESTABLISHED_NOT_PAGE_BY_PAGE_COLLATED",
     "handwrittenApprovalStatus": false,
-    "note": "1913 imprimatur/authorization is a historical claim supported by bibliographical witnesses; it does not certify the accuracy of any new bilingual explanatory claim."
+    "note": "1913 imprimatur/authorization is a historical claim supported by bibliographical witnesses; it does not certify the accuracy of any new bilingual explanatory claim.",
+    "scannedOriginalPageEvidence": "data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json",
+    "scanned1913PrintUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
+    "questionAnswersVisuallyChecked": 5,
+    "fullScanNumberedQuestionCollation": false,
+    "knownEditionVariant": {
+      "q": 226,
+      "kind": "historical nuptial Mass prohibition intervals",
+      "italian1912": "first Sunday Advent to Christmas; Ash Wednesday to Easter Sunday",
+      "french1913": "Advent to Epiphany; beginning of Lent to Easter octave",
+      "status": "VISUALLY_VERIFIED_IN_1913_PRINT_BUT_ITALIAN_IS_TRANSCRIPTION_NOT_PHOTOGRAPHED"
+    },
+    "scanned1913QuestionPageCandidateIndex": "data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json",
+    "numberedQuestionPageCandidates": 433,
+    "ocrHeadingDetected": 414,
+    "ocrHeadingNotDetected": 19
   },
   "modernFrenchOnlineWitness": {
     "url": "https://www.amicidilazzaro.it/fr/foi-et-spiritualite/petit-catechisme-de-saint-pie-x/",
@@ -37,19 +52,25 @@
         "question": 228,
         "issue": "French response loses enumerated distinction between acquired natural and infused supernatural virtues",
         "evidenceSnippet": "Il y a deux espèces de vertus : la répétition d’actes bons",
-        "severity": "HIGH"
+        "severity": "HIGH",
+        "original1913PrintPageOneIndexed": 69,
+        "correctlyIntactInScannedFrench1913": true
       },
       {
         "question": 253,
         "issue": "French cardinal-virtues answer truncated and missing principal category words",
         "evidenceSnippet": "Les principales vertus morales sont : lui est dû",
-        "severity": "HIGH"
+        "severity": "HIGH",
+        "original1913PrintPageOneIndexed": 75,
+        "correctlyIntactInScannedFrench1913": true
       },
       {
         "question": 400,
         "issue": "French levels of Orders passage visibly omits named grades",
         "evidenceSnippet": "Les degrés de la Hiérarchie sacrée sont : sont préparatoires",
-        "severity": "HIGH"
+        "severity": "HIGH",
+        "original1913PrintPageOneIndexed": 107,
+        "correctlyIntactInScannedFrench1913": true
       }
     ],
     "generalizationCaution": "These three concrete corruptions show the page is unsafe for unreviewed bulk import; they do not prove that every other numbered answer is corrupt."

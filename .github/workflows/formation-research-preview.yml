@@ -28,6 +28,10 @@ on:
       - 'tests/learn-faith-italian-source-433.mjs'
       - 'tests/learn-faith-125-source-scope-desk-review.mjs'
       - 'tests/learn-faith-french-historic-witness-review.mjs'
+      - 'tests/learn-faith-french-1913-printed-pages.mjs'
+      - 'tests/learn-faith-french-1913-all-433-page-locators.mjs'
+      - 'data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json'
+      - 'data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json'
       - 'data/learn/ltfaith-pius-x-french-historical-witness-review.v1.json'
       - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
       - 'data/learn/learn-the-faith-certification-001-018.v1.json'
@@ -94,6 +98,10 @@ jobs:
         run: node tests/learn-faith-italian-source-433.mjs
       - name: Check authorized 1913 French witness and ten bilingual precision edits without false approval
         run: node tests/learn-faith-french-historic-witness-review.mjs
+      - name: Validate all 433 provisional French 1913 scan-page candidate locators
+        run: node tests/learn-faith-french-1913-all-433-page-locators.mjs
+      - name: Check scanned 1913 French printed page evidence and historic nuptial-date variant
+        run: node tests/learn-faith-french-1913-printed-pages.mjs
       - name: Verify completed 125-claim source-scope desk review and publication holds
         run: node tests/learn-faith-125-source-scope-desk-review.mjs
       - name: Verify Learn the Faith lessons 19–54, 122 sourced bilingual claims

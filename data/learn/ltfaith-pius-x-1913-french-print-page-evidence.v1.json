@@ -1,0 +1,85 @@
+{
+  "version": "LTFAITH_1913_FRENCH_PRINT_EVIDENCE_V1",
+  "created": "2026-10-09",
+  "sourceType": "PAGE_IMAGES_OF_HISTORICAL_1913_FRENCH_PRINTING",
+  "title": "Catéchisme de la doctrine chrétienne, publié par ordre de S. S. le Pape Pie X, traduction française autorisée",
+  "publisherImprint": "Paris, Imprimerie Paul Feron-Vrau, 5 rue Bayard",
+  "authorization": "Letter from Cardinal Merry del Val to Emmanuel Bailly dated 7 March 1913",
+  "pdfUrl": "https://pdfs.bibliotheque-catholique.com/pdfs/catechisme/Saint%20Pie%20X%20-%20Cat%C3%A9chisme%20de%20Saint%20Pie%20X.pdf",
+  "pdfPages": 165,
+  "questionRange": [
+    1,
+    433
+  ],
+  "printPhysicalOriginalProvenance": "Digitized scan bearing historic title/authorization and printed pagination; no independent physical-copy provenance certification",
+  "imageBasedPageInspectionPerformed": true,
+  "ocrReliability": "UNRELIABLE_AS_LITERAL_TEXT__VERIFY_AGAINST_PAGE_IMAGES",
+  "collationPolicy": "Page-verified evidence only; full 433 pages not yet signed off. The 1912 Italian transcription is not itself a 1912 photographed original.",
+  "verifiedPageSamples": [
+    {
+      "question": 202,
+      "pdfPageOneIndexed": 62,
+      "pdfPageZeroIndexed": 61,
+      "printedPage": 52,
+      "fullAnswerVisuallyRead": true,
+      "claim": "Sixth Commandment entails reverence for one's body and that of others as works of God and temples of His presence and grace.",
+      "comparison": "The visible French printed wording directly supports the existing chastity lesson's explanation of personal bodily dignity.",
+      "discrepancy": "NONE_OBSERVED",
+      "humanTheologyApproved": false
+    },
+    {
+      "question": 226,
+      "pdfPageOneIndexed": 68,
+      "pdfPageZeroIndexed": 67,
+      "printedPage": 58,
+      "fullAnswerVisuallyRead": true,
+      "claim": "1913 French witness restricts nuptial Mass with special blessing from Advent to Epiphany and the start of Lent to the octave of Easter.",
+      "comparison": "Italian 1912 transcription Q226 instead names first Sunday of Advent to Christmas and Ash Wednesday to Easter Sunday.",
+      "discrepancy": "DATE_RANGES_DIFFER_BETWEEN_LANGUAGE_EDITION_WITNESSES",
+      "humanTheologyApproved": false
+    },
+    {
+      "question": 228,
+      "pdfPageOneIndexed": 69,
+      "pdfPageZeroIndexed": 68,
+      "printedPage": 59,
+      "fullAnswerVisuallyRead": true,
+      "claim": "Printed French distinguishes acquired natural virtues from supernatural virtues bestowed by God.",
+      "comparison": "A later online French rendition truncates this distinction; unsafe as a canonical French import.",
+      "discrepancy": "DAMAGED_WEB_TRANSCRIPTION_NOT_PRINTED_TEXT",
+      "humanTheologyApproved": false
+    },
+    {
+      "question": 253,
+      "pdfPageOneIndexed": 75,
+      "pdfPageZeroIndexed": 74,
+      "printedPage": 65,
+      "fullAnswerVisuallyRead": true,
+      "claim": "Printed French names religion and four cardinal virtues: prudence, justice, fortitude, temperance.",
+      "comparison": "The damaged online French rendering omits the list.",
+      "discrepancy": "DAMAGED_WEB_TRANSCRIPTION_NOT_PRINTED_TEXT",
+      "humanTheologyApproved": false
+    },
+    {
+      "question": 400,
+      "pdfPageOneIndexed": 107,
+      "pdfPageZeroIndexed": 106,
+      "continuationPdfPageOneIndexed": 108,
+      "continuationPdfPageZeroIndexed": 107,
+      "printedPage": 97,
+      "fullAnswerVisuallyRead": true,
+      "claim": "Printed French lists minor orders, subdiaconate, diaconate, priesthood and episcopate in its 1912-era hierarchical description.",
+      "comparison": "The damaged online French rendering omits the named grades; modern sacramental/disciplinary distinctions remain in supplemental teaching.",
+      "discrepancy": "DAMAGED_WEB_TRANSCRIPTION_NOT_PRINTED_TEXT",
+      "humanTheologyApproved": false
+    }
+  ],
+  "observedMinimumPageVerifiedQACount": 5,
+  "all433FrOriginalAnswersPrintPageCollated": false,
+  "all433ItalianPrintPageCollated": false,
+  "independentCanonicalReviewApproved": false,
+  "independentDoctrinalApproved": false,
+  "nativeFrenchEditorApproved": false,
+  "publicReleaseApproved": false,
+  "automatedOcrPageCandidateIndex": "data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json"
+}

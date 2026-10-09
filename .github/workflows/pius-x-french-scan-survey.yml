@@ -1,0 +1,20 @@
+name: Pius X French 1913 page survey
+on:
+  pull_request:
+    paths:
+      - 'tests/learn-faith-1913-print-ocr-page-candidates.mjs'
+      - '.github/workflows/pius-x-french-scan-survey.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scanned-page-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - run: node tests/learn-faith-1913-print-ocr-page-candidates.mjs
