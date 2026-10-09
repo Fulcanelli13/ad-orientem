@@ -5,6 +5,7 @@ import "./cinematic-runtime.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import "../home/browser-entry.js";
 import "../pray/browser-entry.js";
+import "../scripture/browser-entry.js";
 import "../learn/browser-entry.js";
 import "../apostolate/browser-entry.js";
 import "../settings/browser-entry.js";
