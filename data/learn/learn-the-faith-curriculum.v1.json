@@ -1,7 +1,7 @@
 {
   "schema": "ao-learn-the-faith-curriculum-v1",
   "version": "1.1.0",
-  "status": "FULL_DRAFT_SOURCE_LINKED_NOT_PUBLISHED",
+  "status": "FULL_55_LESSON_DRAFT_SOURCE_LINKED_NOT_PUBLISHED",
   "created_at": "2026-10-08",
   "proposed_route": "learn.faith",
   "title": {
@@ -11,14 +11,14 @@
   "purpose": "Guided positive Catholic doctrine in a coherent order between the Daily Catechism and the full Traditional Catechism reference.",
   "publication_gate": {
     "published": false,
-    "rule": "Do not expose learn.faith until all 55 bilingual lesson drafts pass theological/editorial review, every supplementary-source gap is resolved, and paragraph-level source links are verified. The St Pius X Q1-Q433 mapping and first source-linked bilingual draft are complete.",
-    "current_reference_route": "learn.catechism",
-    "current_daily_route": "learn.catechism.daily",
     "mapping_complete": true,
     "lesson_prose_complete": true,
     "paragraph_sources_complete": true,
-    "note": "All 54 lessons now have bilingual source-linked draft prose and exact St Pius X mappings. Publication remains blocked pending final editorial review, source-link verification and deduplication acceptance.",
-    "editorial_review_complete": false
+    "cross_module_dedup_complete": false,
+    "theological_editorial_review_complete": false,
+    "french_editorial_review_complete": false,
+    "source_url_verification_complete": false,
+    "rule": "Do not expose learn.faith until cross-module deduplication, theological/editorial review, French review and final source-link verification pass."
   },
   "relationship_to_existing": {
     "learn.catechism.daily": "Daily review and spaced encounter with the existing question bank; not the guided doctrine course.",
@@ -156,7 +156,7 @@
         18
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -187,7 +187,7 @@
             1
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -203,7 +203,7 @@
             15
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -219,7 +219,7 @@
             18
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -247,9 +247,9 @@
         12
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "DEI-FILIUS",
-        "ROMAN-CATECHISM"
+        "PX1912",
+        "V1-DEI-FILIUS",
+        "TRENT-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
@@ -272,7 +272,7 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "DEI-FILIUS"
+            "V1-DEI-FILIUS"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -296,7 +296,7 @@
             12
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -308,8 +308,8 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "DEI-FILIUS",
-            "ROMAN-CATECHISM"
+            "V1-DEI-FILIUS",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -337,9 +337,9 @@
         236
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "DEI-FILIUS",
-        "ROMAN-CATECHISM"
+        "PX1912",
+        "V1-DEI-FILIUS",
+        "TRENT-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -368,8 +368,8 @@
             28
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "DEI-FILIUS"
+            "PX1912",
+            "V1-DEI-FILIUS"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -385,7 +385,7 @@
             31
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -402,8 +402,8 @@
             236
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "DEI-FILIUS"
+            "PX1912",
+            "V1-DEI-FILIUS"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -433,9 +433,9 @@
         247
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "DEI-FILIUS",
-        "ROMAN-CATECHISM"
+        "PX1912",
+        "V1-DEI-FILIUS",
+        "TRENT-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -462,8 +462,8 @@
             237
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "DEI-FILIUS"
+            "PX1912",
+            "V1-DEI-FILIUS"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -480,7 +480,7 @@
             247
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -492,7 +492,7 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "DEI-FILIUS"
+            "V1-DEI-FILIUS"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -517,8 +517,8 @@
         236
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM"
+        "PX1912",
+        "TRENT-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -546,8 +546,8 @@
             234
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -561,8 +561,8 @@
             235
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -576,7 +576,7 @@
             236
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -606,8 +606,8 @@
         236
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM"
+        "PX1912",
+        "TRENT-CATECHISM"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -638,7 +638,7 @@
             236
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -653,8 +653,8 @@
             116
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -666,7 +666,7 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "ROMAN-CATECHISM"
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -696,7 +696,7 @@
         12
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -732,7 +732,7 @@
             3
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -748,7 +748,7 @@
             12
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -767,7 +767,7 @@
             11
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -802,7 +802,7 @@
         50
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -847,7 +847,7 @@
             48
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -866,8 +866,8 @@
             46
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -884,7 +884,7 @@
             50
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -906,7 +906,7 @@
         53
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -936,7 +936,7 @@
             53
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -950,8 +950,8 @@
             12
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -966,7 +966,7 @@
             54
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -991,7 +991,7 @@
         59
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1024,7 +1024,7 @@
             57
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1038,7 +1038,7 @@
             58
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1052,8 +1052,8 @@
             59
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1088,7 +1088,7 @@
         75
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1131,7 +1131,7 @@
             63
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1146,7 +1146,7 @@
             65
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1169,8 +1169,8 @@
             75
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1200,7 +1200,7 @@
         88
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1234,7 +1234,7 @@
             79
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1250,7 +1250,7 @@
             88
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1266,8 +1266,8 @@
             89
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1301,7 +1301,7 @@
         85
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1340,7 +1340,7 @@
             79
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1355,7 +1355,7 @@
             83
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1370,8 +1370,8 @@
             85
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1395,7 +1395,7 @@
         91
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1424,7 +1424,7 @@
             25
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1439,8 +1439,8 @@
             89
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1456,7 +1456,7 @@
             91
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1479,7 +1479,7 @@
         95
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1508,7 +1508,7 @@
             93
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1522,7 +1522,7 @@
             94
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1536,8 +1536,8 @@
             95
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1558,9 +1558,9 @@
         46
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1588,8 +1588,8 @@
             47
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1609,8 +1609,8 @@
             50
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1622,8 +1622,8 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "ROMAN-CATECHISM",
-            "SPIRAGO-1899"
+            "TRENT-CATECHISM",
+            "SPIRAGO"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1667,7 +1667,7 @@
         132
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1719,7 +1719,7 @@
             111
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1736,7 +1736,7 @@
             119
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1760,8 +1760,8 @@
             132
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1789,7 +1789,7 @@
         123
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1816,7 +1816,7 @@
             121
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1830,8 +1830,8 @@
             122
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1845,8 +1845,8 @@
             123
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1872,7 +1872,7 @@
         380
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -1899,7 +1899,7 @@
             134
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1916,7 +1916,7 @@
             355
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -1934,8 +1934,8 @@
             384
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -1963,7 +1963,7 @@
         160
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -2000,7 +2000,7 @@
             156
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2017,8 +2017,8 @@
             158
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2033,7 +2033,7 @@
             160
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2067,7 +2067,7 @@
         159
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -2097,7 +2097,7 @@
             15
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2113,8 +2113,8 @@
             102
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2133,8 +2133,8 @@
             104
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2160,7 +2160,7 @@
         277
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -2186,7 +2186,7 @@
             270
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2204,7 +2204,7 @@
             275
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2216,8 +2216,8 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "ROMAN-CATECHISM",
-            "SPIRAGO-1899"
+            "TRENT-CATECHISM",
+            "SPIRAGO"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2258,7 +2258,7 @@
         289
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -2306,7 +2306,7 @@
             273
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2326,7 +2326,7 @@
             280
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2348,7 +2348,7 @@
             289
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2381,7 +2381,7 @@
         303
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -2423,7 +2423,7 @@
             294
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2439,7 +2439,7 @@
             297
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2458,7 +2458,7 @@
             303
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2489,7 +2489,7 @@
         315
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -2530,7 +2530,7 @@
             312
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2546,7 +2546,7 @@
             314
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2562,7 +2562,7 @@
             315
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2612,7 +2612,7 @@
         346
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -2681,7 +2681,7 @@
             330
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2698,7 +2698,7 @@
             334
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2723,7 +2723,7 @@
             346
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2754,7 +2754,7 @@
         354
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [
         "learn.mass",
@@ -2791,7 +2791,7 @@
             348
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2806,7 +2806,7 @@
             350
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2823,7 +2823,7 @@
             354
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -2877,7 +2877,7 @@
         391
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [
         "pray.confession",
@@ -2954,7 +2954,7 @@
             369
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -2976,7 +2976,7 @@
             380
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3000,7 +3000,7 @@
             391
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3024,7 +3024,7 @@
         396
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -3055,7 +3055,7 @@
             394
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3069,7 +3069,7 @@
             395
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3083,8 +3083,8 @@
             396
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3112,7 +3112,7 @@
         405
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -3148,7 +3148,7 @@
             400
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3162,8 +3162,8 @@
             401
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3180,7 +3180,7 @@
             405
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3207,7 +3207,7 @@
         413
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [
         "learn.rites.matrimony",
@@ -3246,8 +3246,8 @@
             408
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3262,7 +3262,7 @@
             413
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3278,7 +3278,7 @@
             411
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3306,7 +3306,7 @@
         168
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -3341,7 +3341,7 @@
             65
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3362,7 +3362,7 @@
             168
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3376,7 +3376,7 @@
             27
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3403,9 +3403,9 @@
         168
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM",
-        "SUMMA-NATURAL-LAW"
+        "PX1912",
+        "TRENT-CATECHISM",
+        "AQUINAS-ST"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
@@ -3428,8 +3428,8 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "SUMMA-NATURAL-LAW",
-            "ROMAN-CATECHISM"
+            "AQUINAS-ST",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3446,8 +3446,8 @@
             164
           ],
           "sourceRefs": [
-            "SUMMA-NATURAL-LAW",
-            "PIUSX-1912"
+            "AQUINAS-ST",
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3464,8 +3464,8 @@
             168
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3492,9 +3492,9 @@
         255
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
       ],
       "crossLinks": [
         "APOL-051",
@@ -3521,8 +3521,8 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "SUMMA-CONSCIENCE",
-            "ROMAN-CATECHISM"
+            "AQUINAS-ST",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3540,8 +3540,8 @@
             168
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "SUMMA-CONSCIENCE"
+            "PX1912",
+            "AQUINAS-ST"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3557,8 +3557,8 @@
             255
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "SUMMA-CONSCIENCE"
+            "PX1912",
+            "AQUINAS-ST"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3590,7 +3590,7 @@
         155
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -3634,7 +3634,7 @@
             142
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3651,7 +3651,7 @@
             154
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3665,7 +3665,7 @@
             155
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3692,7 +3692,7 @@
         150
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -3725,7 +3725,7 @@
             144
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3741,7 +3741,7 @@
             147
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3757,7 +3757,7 @@
             150
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3795,7 +3795,7 @@
         266
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -3830,7 +3830,7 @@
             228
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3844,7 +3844,7 @@
             259
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3864,7 +3864,7 @@
             266
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -3900,7 +3900,7 @@
         249
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -3941,7 +3941,7 @@
             231
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3961,7 +3961,7 @@
             243
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -3980,7 +3980,7 @@
             249
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4008,7 +4008,7 @@
         258
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -4041,7 +4041,7 @@
             254
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4058,7 +4058,7 @@
             258
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4073,8 +4073,8 @@
             228
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4114,7 +4114,7 @@
         189
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -4168,7 +4168,7 @@
             178
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4186,7 +4186,7 @@
             183
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4205,7 +4205,7 @@
             189
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4233,7 +4233,7 @@
         200
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -4268,7 +4268,7 @@
             192
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4286,7 +4286,7 @@
             197
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4300,7 +4300,7 @@
             200
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4323,7 +4323,7 @@
         210
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [
         "learn.sexual_ethics"
@@ -4355,7 +4355,7 @@
             202
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4370,7 +4370,7 @@
             210
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4382,7 +4382,7 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4406,7 +4406,7 @@
         212
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -4436,7 +4436,7 @@
             204
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4450,7 +4450,7 @@
             205
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4465,7 +4465,7 @@
             212
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4487,7 +4487,7 @@
         208
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -4514,7 +4514,7 @@
             206
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4528,7 +4528,7 @@
             207
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4542,7 +4542,7 @@
             208
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4571,7 +4571,7 @@
         371
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [
         "learn.sexual_ethics"
@@ -4605,7 +4605,7 @@
             199
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4621,7 +4621,7 @@
             371
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4633,7 +4633,7 @@
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "ROMAN-CATECHISM"
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4682,7 +4682,7 @@
         226
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [
         "today.calendar",
@@ -4714,7 +4714,7 @@
             225
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4732,7 +4732,7 @@
             222
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4746,7 +4746,7 @@
             226
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4775,7 +4775,7 @@
         423
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [
         "learn.spiritual_life"
@@ -4816,7 +4816,7 @@
             418
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4832,7 +4832,7 @@
             421
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4847,8 +4847,8 @@
             423
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4872,7 +4872,7 @@
         428
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -4902,7 +4902,7 @@
             425
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4917,8 +4917,8 @@
             427
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4932,7 +4932,7 @@
             428
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -4959,7 +4959,7 @@
         433
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -4985,7 +4985,7 @@
             431
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -4999,8 +4999,8 @@
             432
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5016,8 +5016,8 @@
             433
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -5044,9 +5044,11 @@
         433
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO",
+        "PIUS9-INEFFABILIS",
+        "PIUS12-MUNIFICENTISSIMUS"
       ],
       "crossLinks": [],
       "sourceResolution": "SOURCE_MAPPED",
@@ -5071,8 +5073,8 @@
             83
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5086,7 +5088,8 @@
             138
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912",
+            "PIUS9-INEFFABILIS"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5102,9 +5105,21 @@
             433
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM",
-            "SPIRAGO-1899"
+            "PX1912",
+            "TRENT-CATECHISM",
+            "SPIRAGO"
+          ],
+          "status": "DRAFT_SOURCE_LINKED"
+        },
+        {
+          "id": "LTF-050-P04",
+          "text": {
+            "en": "The Church also teaches as divinely revealed that the Immaculate Mother of God, ever Virgin, after completing the course of her earthly life, was assumed body and soul into heavenly glory.",
+            "fr": "L’Église enseigne aussi comme divinement révélé que l’Immaculée Mère de Dieu, toujours Vierge, après avoir achevé le cours de sa vie terrestre, fut élevée corps et âme dans la gloire céleste."
+          },
+          "catechismRefs": [],
+          "sourceRefs": [
+            "PIUS12-MUNIFICENTISSIMUS"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -5134,7 +5149,7 @@
         433
       ],
       "sourceRefs": [
-        "PIUSX-1912"
+        "PX1912"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -5163,7 +5178,7 @@
             123
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5181,8 +5196,8 @@
             178
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5198,8 +5213,8 @@
             433
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -5229,9 +5244,9 @@
         178
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
       ],
       "crossLinks": [],
       "sourceResolution": "CATECHISM_MAPPED",
@@ -5266,7 +5281,7 @@
             36
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5284,8 +5299,8 @@
             178
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5301,8 +5316,8 @@
             269
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -5341,9 +5356,10 @@
         226
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO",
+        "PIUS12-MEDIATOR"
       ],
       "crossLinks": [
         "today.calendar"
@@ -5376,21 +5392,21 @@
             217
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "MISSAL-1962"
+            "PX1912",
+            "PIUS12-MEDIATOR"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
         {
           "id": "LTF-053-P02",
           "text": {
-            "en": "The Roman liturgical year presents the mysteries of Christ and the saints in an ordered cycle; its seasons and feasts teach doctrine through repeated worship and Scripture.",
-            "fr": "L’année liturgique romaine présente les mystères du Christ et les saints dans un cycle ordonné ; ses temps et ses fêtes enseignent la doctrine par la répétition du culte et de l’Écriture."
+            "en": "The liturgical year is not merely a record of past events: Christ lives in His Church, and the mysteries of His life are renewed in the Church’s worship as examples of perfection and sources of grace.",
+            "fr": "L’année liturgique n’est pas un simple récit d’événements passés : le Christ vit dans Son Église, et les mystères de Sa vie sont renouvelés dans le culte de l’Église comme exemples de perfection et sources de grâce."
           },
           "catechismRefs": [],
           "sourceRefs": [
-            "MISSAL-1962",
-            "ROMAN-CATECHISM"
+            "PIUS12-MEDIATOR",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5409,8 +5425,8 @@
             226
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "MISSAL-1962"
+            "PX1912",
+            "PIUS12-MEDIATOR"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -5458,8 +5474,8 @@
         277
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "SPIRAGO-1899"
+        "PX1912",
+        "SPIRAGO"
       ],
       "crossLinks": [
         "learn.spiritual_life"
@@ -5494,7 +5510,7 @@
             230
           ],
           "sourceRefs": [
-            "PIUSX-1912"
+            "PX1912"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5526,8 +5542,8 @@
             266
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "SPIRAGO-1899"
+            "PX1912",
+            "SPIRAGO"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5541,8 +5557,8 @@
             277
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "SPIRAGO-1899"
+            "PX1912",
+            "SPIRAGO"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -5585,9 +5601,9 @@
         396
       ],
       "sourceRefs": [
-        "PIUSX-1912",
-        "ROMAN-CATECHISM",
-        "SPIRAGO-1899"
+        "PX1912",
+        "TRENT-CATECHISM",
+        "SPIRAGO"
       ],
       "crossLinks": [
         "learn.rites.sick",
@@ -5622,8 +5638,8 @@
             159
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5641,8 +5657,8 @@
             396
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "ROMAN-CATECHISM"
+            "PX1912",
+            "TRENT-CATECHISM"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         },
@@ -5665,8 +5681,8 @@
             104
           ],
           "sourceRefs": [
-            "PIUSX-1912",
-            "SPIRAGO-1899"
+            "PX1912",
+            "SPIRAGO"
           ],
           "status": "DRAFT_SOURCE_LINKED"
         }
@@ -5711,170 +5727,11 @@
       "owner": "sacramental-formation"
     }
   ],
-  "source_registry": {
-    "PIUSX-1912": {
-      "title": "St Pius X — Catechism of Christian Doctrine (1912), 433-question shorter catechism",
-      "role": "PRIMARY_CATECHETICAL_REFERENCE",
-      "url": "https://catechismecatholique.fr/petit-catechisme",
-      "englishStructured": "https://github.com/gustavo-depaula/ember/tree/main/content/books/pius-x-catechism/en-US",
-      "frenchStructured": "https://catechismecatholique.fr/petit-catechisme"
-    },
-    "ROMAN-CATECHISM": {
-      "title": "Roman Catechism — Council of Trent",
-      "role": "DEEPER_TRADITIONAL_EXPOSITION",
-      "url": "https://en.wikisource.org/wiki/The_catechism_of_the_Council_of_Trent"
-    },
-    "SPIRAGO-1899": {
-      "title": "Joseph Spirago — The Catechism Explained (1899)",
-      "role": "TRADITIONAL_EXPLANATORY_REFERENCE",
-      "url": "https://archive.org/details/catechismexplain00spiruoft"
-    },
-    "DEI-FILIUS": {
-      "title": "First Vatican Council — Dei Filius",
-      "role": "MAGISTERIAL_SOURCE_FOR_REASON_REVELATION_FAITH",
-      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html"
-    },
-    "SUMMA-NATURAL-LAW": {
-      "title": "St Thomas Aquinas — Summa Theologiae I-II, q.94",
-      "role": "TRADITIONAL_THEOLOGICAL_SOURCE_FOR_NATURAL_LAW",
-      "url": "https://www.newadvent.org/summa/2094.htm"
-    },
-    "SUMMA-CONSCIENCE": {
-      "title": "St Thomas Aquinas — Summa Theologiae I, q.79, a.13; I-II, q.19",
-      "role": "TRADITIONAL_THEOLOGICAL_SOURCE_FOR_CONSCIENCE",
-      "url": "https://www.newadvent.org/summa/1079.htm"
-    },
-    "MISSAL-1962": {
-      "title": "Missale Romanum — Editio typica 1962",
-      "role": "NORMATIVE_LITURGICAL_REFERENCE_FOR_THE_YEAR",
-      "url": "https://archive.org/details/sp07mr62-editio-typica"
-    }
-  },
   "catechism_corpus": {
     "question_count": 433,
-    "partitions": [
-      {
-        "id": "intro",
-        "range": "PXQ001–PXQ027"
-      },
-      {
-        "id": "faith",
-        "range": "PXQ028–PXQ160"
-      },
-      {
-        "id": "moral",
-        "range": "PXQ161–PXQ266"
-      },
-      {
-        "id": "grace",
-        "range": "PXQ267–PXQ413"
-      },
-      {
-        "id": "prayer",
-        "range": "PXQ414–PXQ433"
-      }
-    ],
-    "mapping_status": "ALL_54_LESSONS_MAPPED_TO_EXACT_QUESTION_REFS",
-    "source_map": "data/learn/pius-x-catechism-source-map.v1.json",
-    "source_chapters": 21
-  },
-  "content_batches": [
-    {
-      "path": "data/learn/learn-the-faith-content.batch1.v1.json",
-      "scope": "LTF-001–LTF-018",
-      "lessons": 18,
-      "claims": 54,
-      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
-    },
-    {
-      "path": "data/learn/learn-the-faith-content.batch2.v1.json",
-      "scope": "LTF-019–LTF-036",
-      "lessons": 18,
-      "claims": 64,
-      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
-    },
-    {
-      "path": "data/learn/learn-the-faith-content.batch3.v1.json",
-      "scope": "LTF-037–LTF-054",
-      "lessons": 18,
-      "claims": 58,
-      "status": "SOURCE_LINKED_DRAFT_NOT_PUBLISHED"
-    }
-  ],
-  "metrics": {
-    "lesson_count": 54,
-    "content_batches": 3,
-    "source_linked_claims": 176,
-    "unresolved_source_gaps": 0,
-    "public_route_exposed": false
-  },
-  "catechism_mapping": {
-    "status": "PX1912_433_MAPPED",
-    "corpus": "St Pius X — Catechism of Christian Doctrine (1912), 433-question shorter catechism",
-    "questionRange": "Q1–Q433",
-    "parts": [
-      {
-        "id": "intro",
-        "range": "Q1–27",
-        "title": "First notions"
-      },
-      {
-        "id": "faith",
-        "range": "Q28–160",
-        "title": "The Faith / Creed"
-      },
-      {
-        "id": "moral",
-        "range": "Q161–266",
-        "title": "Christian moral life"
-      },
-      {
-        "id": "grace",
-        "range": "Q267–413",
-        "title": "Means of grace / Sacraments"
-      },
-      {
-        "id": "prayer",
-        "range": "Q414–433",
-        "title": "Prayer"
-      }
-    ],
-    "directOrPartialLessons": 52,
-    "supplementRequiredLessons": 12,
-    "zeroDirectCatechismRefLessons": [
-      "LTF-034",
-      "LTF-051"
-    ],
-    "rule": "Question references identify the exact Pius X material feeding each guided lesson; they do not imply that the shorter catechism alone is sufficient for every lesson."
-  },
-  "content_draft": {
-    "status": "ALL_54_SOURCE_LINKED_DRAFTED",
-    "batches": [
-      "data/learn/learn-the-faith-lessons-001-018.v1.json",
-      "data/learn/learn-the-faith-lessons-019-036.v1.json",
-      "data/learn/learn-the-faith-lessons-037-054.v1.json"
-    ],
-    "lessons": 54,
-    "paragraphs": 162,
-    "bilingual": true,
-    "published": false,
-    "remaining_before_publication": [
-      "Verify every external source URL and source-to-paragraph fit.",
-      "Resolve stronger primary sources where the current registry relies on explanatory or mirror sources.",
-      "Run cross-module deduplication against Apologetics, Church Crisis, Mass Formation, Sexual Ethics, Spiritual Life and sacramental Formation.",
-      "Editorial pass for tone, precision, disciplinary-historical qualifications and French parity.",
-      "Build the user-facing runtime only after the sourcing and deduplication gates pass."
-    ]
-  },
-  "catechism_source_map": "data/learn/st-pius-x-catechism-source-map.v1.json",
-  "coverage_summary": {
-    "direct": 48,
-    "partial": 6,
-    "unmapped": 0
-  },
-  "catechism_source_index": {
-    "corpus": "St Pius X — Catechism of Christian Doctrine (1912)",
-    "questionCount": 433,
+    "question_index": "data/learn/pius-x-1912-question-index.v1.json",
+    "source_chapters": 21,
+    "primary_mapping_status": "ALL_433_QUESTIONS_HAVE_EXACTLY_ONE_PRIMARY_GUIDED_OWNER",
     "parts": [
       {
         "id": "intro",
@@ -5901,171 +5758,40 @@
         "from": 414,
         "to": 433
       }
-    ],
-    "chapters": [
-      {
-        "id": "intro",
-        "from": 1,
-        "to": 27,
-        "enPath": "lezione-preliminare.md"
-      },
-      {
-        "id": "mysteries",
-        "from": 28,
-        "to": 36,
-        "enPath": "credo-misteri-principali.md"
-      },
-      {
-        "id": "trinity",
-        "from": 37,
-        "to": 50,
-        "enPath": "credo-unita-trinita.md"
-      },
-      {
-        "id": "creation",
-        "from": 51,
-        "to": 77,
-        "enPath": "credo-creazione.md"
-      },
-      {
-        "id": "incarnation",
-        "from": 78,
-        "to": 91,
-        "enPath": "credo-incarnazione.md"
-      },
-      {
-        "id": "lastthings",
-        "from": 92,
-        "to": 104,
-        "enPath": "credo-venuta.md"
-      },
-      {
-        "id": "church",
-        "from": 105,
-        "to": 127,
-        "enPath": "credo-chiesa.md"
-      },
-      {
-        "id": "sin",
-        "from": 128,
-        "to": 155,
-        "enPath": "credo-remissione-peccati.md"
-      },
-      {
-        "id": "resurrection",
-        "from": 156,
-        "to": 160,
-        "enPath": "credo-risurrezione.md"
-      },
-      {
-        "id": "commandments",
-        "from": 161,
-        "to": 212,
-        "enPath": "legge-comandamenti.md"
-      },
-      {
-        "id": "precepts",
-        "from": 213,
-        "to": 226,
-        "enPath": "legge-precetti.md"
-      },
-      {
-        "id": "virtues",
-        "from": 227,
-        "to": 266,
-        "enPath": "legge-virtu.md"
-      },
-      {
-        "id": "sacraments",
-        "from": 267,
-        "to": 289,
-        "enPath": "sacramenti-in-generale.md"
-      },
-      {
-        "id": "baptism",
-        "from": 290,
-        "to": 303,
-        "enPath": "sacramento-battesimo.md"
-      },
-      {
-        "id": "confirmation",
-        "from": 304,
-        "to": 315,
-        "enPath": "sacramento-cresima.md"
-      },
-      {
-        "id": "eucharist",
-        "from": 316,
-        "to": 354,
-        "enPath": "sacramento-eucaristia.md"
-      },
-      {
-        "id": "penance",
-        "from": 355,
-        "to": 391,
-        "enPath": "sacramento-penitenza.md"
-      },
-      {
-        "id": "unction",
-        "from": 392,
-        "to": 396,
-        "enPath": "sacramento-estrema-unzione.md"
-      },
-      {
-        "id": "orders",
-        "from": 397,
-        "to": 405,
-        "enPath": "sacramento-ordine.md"
-      },
-      {
-        "id": "matrimony",
-        "from": 406,
-        "to": 413,
-        "enPath": "sacramento-matrimonio.md"
-      },
-      {
-        "id": "prayer",
-        "from": 414,
-        "to": 433,
-        "enPath": "orazione.md"
-      }
-    ],
-    "englishStructuredBase": "https://raw.githubusercontent.com/gustavo-depaula/ember/main/content/books/pius-x-catechism/en-US/",
-    "frenchStructuredBase": "https://raw.githubusercontent.com/janvier-s/catechismecatholique/main/static/data/pius-x-petit/",
-    "note": "Question refs are canonical numeric anchors only; lesson prose must still resolve its own paragraph-level sources before publication."
+    ]
   },
-  "mapping_coverage": {
-    "lessonsMapped": 54,
-    "catechismQuestionsCovered": 433,
-    "catechismQuestionTotal": 433,
-    "unmappedQuestions": [],
-    "publicationReady": false
+  "metrics": {
+    "lesson_count": 54,
+    "content_batches": 3,
+    "source_linked_claims": 176,
+    "unresolved_source_gaps": 0,
+    "public_route_exposed": false
   },
   "coverage": {
     "catechismQuestionCount": 433,
     "primaryMappedQuestionCount": 433,
     "unmappedPrimaryQuestions": [],
+    "duplicatePrimaryQuestions": [],
     "guidedLessonCount": 55,
     "lessonsWithPrimaryPiusXCoverage": 48,
-    "lessonsRequiringSupplement": [
+    "lessonsWithoutPrimaryPiusXOwner": [
       "LTF-002",
       "LTF-016",
-      "LTF-022",
       "LTF-033",
       "LTF-034",
-      "LTF-045",
-      "LTF-046",
       "LTF-050",
-      "LTF-052",
       "LTF-053",
       "LTF-055"
     ],
-    "mappingRule": "Each St Pius X question has exactly one primary guided lesson owner. Supporting catechismRefs may overlap where a doctrine legitimately informs more than one lesson."
+    "mappingRule": "Each St Pius X question has exactly one primary guided lesson owner. Supporting catechismRefs may overlap where a doctrine informs more than one lesson."
   },
   "content_progress": {
     "draftedLessons": 55,
     "totalLessons": 55,
-    "lastBatch": "LTF-047–LTF-055",
+    "teachingPoints": 166,
+    "bilingualSummaries": 55,
+    "bilingualTeachingPoints": 166,
     "allLessonDraftsPresent": true
-  }
+  },
+  "source_registry_file": "data/learn/learn-the-faith-sources.v1.json"
 }
