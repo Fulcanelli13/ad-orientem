@@ -34,6 +34,10 @@ export const CSE_MARRIAGE_AUTHORITY_SOURCES=Object.freeze({
     "St Thomas Aquinas, Summa Theologiae II–II q.104 aa.1,5",
     "https://www.newadvent.org/summa/3104.htm"
   ],
+  "AQUINAS_MARITAL": [
+    "St Thomas Aquinas, Summa Theologiae Supplement q.64 aa.1–2",
+    "https://www.newadvent.org/summa/5064.htm"
+  ],
   "HV": [
     "Paul VI, Humanae Vitae §13",
     "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html"
@@ -282,7 +286,7 @@ export const CSE_MARRIAGE_AUTHORITY_DEBATES=Object.freeze([
     ],
     "sources": {
       "opposition": [
-        "AQUINAS",
+        "AQUINAS_MARITAL",
         "HV"
       ],
       "reply": [
