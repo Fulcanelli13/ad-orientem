@@ -69,7 +69,7 @@ const remainingOwners=new Map([
   ["commemorations","commemoration_count"]
 ]);
 const adjudicatedDates=new Set();
-let saintAliases=0,saintEquivalents=0,majorEquivalent=0,commRestored=0,commExisting=0;
+let saintAliases=0,saintEquivalents=0,majorEquivalent=0,commRestored=0,commExisting=0,commApostolic=0;
 for(const [field,original] of remainingOwners){
   const entries=adjudications[field];
   const actual=entries.flatMap(x=>x.dates).sort();
@@ -90,6 +90,7 @@ for(const [field,original] of remainingOwners){
         majorEquivalent++;
       }else{
         if(entry.disposition==="RESTORED_BARBARA_PR_767")commRestored++;
+        else if(entry.disposition==="RESTORED_INSEPARABLE_APOSTOLIC_PR_767")commApostolic++;
         else if(/^(PRESENT_|PRESENT_RESTORED)/.test(entry.disposition))commExisting++;
         else assert.fail("Unadjudicated commemoration case "+date);
         assert.ok(entry.expectedCommemorated?.length,date+": missing Mass commemoration owner");
@@ -98,7 +99,9 @@ for(const [field,original] of remainingOwners){
   }
 }
 assert.equal(adjudicatedDates.size,47);
-assert.deepEqual([saintAliases,saintEquivalents,majorEquivalent,commExisting,commRestored],[4,28,6,7,2]);
+assert.deepEqual([saintAliases,saintEquivalents,majorEquivalent,commExisting,commApostolic,commRestored],[4,28,6,3,4,2]);
+assert.equal(adjudications.actualMassPrayerDefectDates,6);
+assert.equal(adjudications.restoredInseparableApostolicDates,4);
 for(const [id,date,en,fr] of [
   ["sancti:05-16:3:w","2024-05-16","St Ubald","Saint Ubald"],
   ["sancti:06-12:3:w","2024-06-12","St John of Sahagún","Saint Jean de Sahagún"],
@@ -112,4 +115,4 @@ for(const [id,date,en,fr] of [
 assert.equal(calendarObservanceAlias({status:"ready",date:"2024-05-16",day:{main:{id:"sancti:05-16:4:w"}}},"en"),"St Ubald",
   "Identity-backed display intentionally covers the same feast ID independent of class if source confirms");
 assert.equal(current.allPropersCertified,false,"This bounded review must never certify every Mass Proper");
-console.log("PASS Calendar editorial 47-case reconciliation: 4 saint-name aliases, 28 valid short titles, 6 day/Mass names, 7 previously present commemorations, 2 Barbara fixes pending source acceptance");
+console.log("PASS Calendar editorial 47-case reconciliation: 4 saint-name aliases, 28 valid short titles, 6 day/Mass names, 3 existing commemorations, 4 reciprocal Apostles, 2 Barbara fixes pending source acceptance");
