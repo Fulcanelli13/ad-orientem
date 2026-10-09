@@ -1,0 +1,474 @@
+{
+  "schema": "ao-1962-year-independent-checks-v1",
+  "year": 2026,
+  "calendar": "1962_GENERAL_ROMAN",
+  "basis": "Independent witness sample of observed principal feast, rank, colour and selected commemorations; titles allow restrained source translation variants; optional rose/violet allowed. This fixture does not independently check all 365 days.",
+  "sources": {
+    "gcatholic": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+    "missale": "https://missale.online/festkalender/en/2026/druck"
+  },
+  "checks": [
+    {
+      "date": "2026-01-01",
+      "principalRegex": "Octave|Circumcision",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-01-04",
+      "principalRegex": "Holy Name",
+      "rank": 2,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-01-06",
+      "principalRegex": "Epiphany",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-01-11",
+      "principalRegex": "Holy Family",
+      "rank": 2,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-01-13",
+      "principalRegex": "Baptism",
+      "rank": 2,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-01-14",
+      "principalRegex": "Hilary",
+      "rank": 3,
+      "colourRegex": "white",
+      "commemorationRegex": "Felix|Felicis"
+    },
+    {
+      "date": "2026-01-18",
+      "principalRegex": "Sunday after Epiphany",
+      "rank": 2,
+      "colourRegex": "green"
+    },
+    {
+      "date": "2026-01-20",
+      "principalRegex": "Fabian|Sebastian",
+      "rank": 3,
+      "colourRegex": "red"
+    },
+    {
+      "date": "2026-02-01",
+      "principalRegex": "Septuagesima",
+      "rank": 2,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-02-02",
+      "principalRegex": "Purification|Candlemas",
+      "rank": 2,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-02-08",
+      "principalRegex": "Sexagesima",
+      "rank": 2,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-02-11",
+      "principalRegex": "Lourdes|Apparition",
+      "rank": 3,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-02-15",
+      "principalRegex": "Quinquagesima",
+      "rank": 2,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-02-18",
+      "principalRegex": "Ash Wednesday",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-02-22",
+      "principalRegex": "Lent",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-02-24",
+      "principalRegex": "Matthias",
+      "rank": 2,
+      "colourRegex": "red",
+      "commemorationRegex": "Lent|Tuesday"
+    },
+    {
+      "date": "2026-02-25",
+      "principalRegex": "Ember Wednesday",
+      "rank": 2,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-02-27",
+      "principalRegex": "Ember Friday",
+      "rank": 2,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-03-01",
+      "principalRegex": "Sunday of Lent",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-03-08",
+      "principalRegex": "Sunday of Lent",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-03-15",
+      "principalRegex": "Sunday of Lent|Laetare",
+      "rank": 1,
+      "colourRegex": "violet|rose"
+    },
+    {
+      "date": "2026-03-19",
+      "principalRegex": "Joseph",
+      "rank": 1,
+      "colourRegex": "white",
+      "commemorationRegex": "Lent|Thursday"
+    },
+    {
+      "date": "2026-03-22",
+      "principalRegex": "Passion Sunday",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-03-25",
+      "principalRegex": "Annunciation",
+      "rank": 1,
+      "colourRegex": "white",
+      "commemorationRegex": "Passion|Wednesday"
+    },
+    {
+      "date": "2026-03-29",
+      "principalRegex": "Palm Sunday",
+      "rank": 1,
+      "colourRegex": "violet",
+      "colourPhases": [
+        "red",
+        "violet"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "principalRegex": "Holy Week|Holy Monday",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-04-02",
+      "principalRegex": "Holy Thursday",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-04-03",
+      "principalRegex": "Good Friday",
+      "rank": 1,
+      "colourRegex": "black",
+      "colourPhases": [
+        "black",
+        "violet"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "principalRegex": "Easter Vigil|Holy Saturday",
+      "rank": 1,
+      "colourRegex": "white",
+      "colourPhases": [
+        "violet",
+        "white"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "principalRegex": "Easter",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-04-06",
+      "principalRegex": "Easter|Octave",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-04-12",
+      "principalRegex": "Low Sunday|Octave|in Albis",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-04-19",
+      "principalRegex": "Sunday after Easter",
+      "rank": 2,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-04-25",
+      "principalRegex": "Mark",
+      "rank": 2,
+      "colourRegex": "red",
+      "commemorationRegex": "Litan|rogation"
+    },
+    {
+      "date": "2026-04-26",
+      "principalRegex": "Sunday after Easter",
+      "rank": 2,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-05-01",
+      "principalRegex": "Joseph.*(?:Worker|Workman)",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-05-10",
+      "principalRegex": "Sunday after Easter",
+      "rank": 2,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-05-11",
+      "principalRegex": "Philip|James",
+      "rank": 2,
+      "colourRegex": "red"
+    },
+    {
+      "date": "2026-05-13",
+      "principalRegex": "Ascension|Vigil",
+      "rank": 2,
+      "colourRegex": "white",
+      "commemorationRegex": "Robert Bellarmine"
+    },
+    {
+      "date": "2026-05-14",
+      "principalRegex": "Ascension",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-05-23",
+      "principalRegex": "Pentecost|Vigil",
+      "rank": 1,
+      "colourRegex": "red",
+      "colourPhases": [
+        "violet",
+        "red"
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "principalRegex": "Pentecost",
+      "rank": 1,
+      "colourRegex": "red"
+    },
+    {
+      "date": "2026-05-27",
+      "principalRegex": "Ember Wednesday|Pentecost",
+      "rank": 1,
+      "colourRegex": "red"
+    },
+    {
+      "date": "2026-05-31",
+      "principalRegex": "Trinity",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-06-04",
+      "principalRegex": "Corpus Christi",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-06-12",
+      "principalRegex": "Sacred Heart",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-06-23",
+      "principalRegex": "John.*Baptist|Vigil",
+      "rank": 2,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-06-24",
+      "principalRegex": "John.*Baptist",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-06-29",
+      "principalRegex": "Peter|Paul",
+      "rank": 1,
+      "colourRegex": "red"
+    },
+    {
+      "date": "2026-07-01",
+      "principalRegex": "Precious Blood",
+      "rank": 1,
+      "colourRegex": "red"
+    },
+    {
+      "date": "2026-07-02",
+      "principalRegex": "Visitation",
+      "rank": 2,
+      "colourRegex": "white",
+      "commemorationRegex": "Processus|Martinian"
+    },
+    {
+      "date": "2026-07-05",
+      "principalRegex": "Sunday after Pentecost",
+      "rank": 2,
+      "colourRegex": "green"
+    },
+    {
+      "date": "2026-08-06",
+      "principalRegex": "Transfiguration",
+      "rank": 2,
+      "colourRegex": "white",
+      "commemorationRegex": "Sixtus|Felicissimus"
+    },
+    {
+      "date": "2026-08-10",
+      "principalRegex": "Lawrence",
+      "rank": 2,
+      "colourRegex": "red"
+    },
+    {
+      "date": "2026-08-15",
+      "principalRegex": "Assumption",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-09-08",
+      "principalRegex": "Nativity.*Virgin|Nativity.*Mary",
+      "rank": 2,
+      "colourRegex": "white",
+      "commemorationRegex": "Hadrian"
+    },
+    {
+      "date": "2026-10-03",
+      "principalRegex": "Theresa|Th[eé]r[eè]se|Therese",
+      "rank": 3,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-10-04",
+      "principalRegex": "Sunday after Pentecost",
+      "rank": 2,
+      "colourRegex": "green"
+    },
+    {
+      "date": "2026-10-07",
+      "principalRegex": "Rosary",
+      "rank": 2,
+      "colourRegex": "white",
+      "commemorationRegex": "Mark"
+    },
+    {
+      "date": "2026-10-25",
+      "principalRegex": "Christ.*King",
+      "rank": 1,
+      "colourRegex": "white"
+    },
+    {
+      "date": "2026-11-01",
+      "principalRegex": "All Saints",
+      "rank": 1,
+      "colourRegex": "white",
+      "commemorationRegex": "Sunday after Pentecost"
+    },
+    {
+      "date": "2026-11-02",
+      "principalRegex": "All Souls",
+      "rank": 1,
+      "colourRegex": "black"
+    },
+    {
+      "date": "2026-11-08",
+      "principalRegex": "Sunday after Epiphany",
+      "rank": 2,
+      "colourRegex": "green"
+    },
+    {
+      "date": "2026-11-09",
+      "principalRegex": "Archbasilica|Lateran",
+      "rank": 2,
+      "colourRegex": "white",
+      "commemorationRegex": "Theodore"
+    },
+    {
+      "date": "2026-11-22",
+      "principalRegex": "Last Sunday after Pentecost|Sunday after Pentecost",
+      "rank": 2,
+      "colourRegex": "green"
+    },
+    {
+      "date": "2026-11-29",
+      "principalRegex": "Advent",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-11-30",
+      "principalRegex": "Andrew",
+      "rank": 2,
+      "colourRegex": "red",
+      "commemorationRegex": "Advent|Monday"
+    },
+    {
+      "date": "2026-12-06",
+      "principalRegex": "Advent",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-12-08",
+      "principalRegex": "Immaculate Conception",
+      "rank": 1,
+      "colourRegex": "white",
+      "commemorationRegex": "Advent"
+    },
+    {
+      "date": "2026-12-13",
+      "principalRegex": "Advent",
+      "rank": 1,
+      "colourRegex": "rose|violet"
+    },
+    {
+      "date": "2026-12-20",
+      "principalRegex": "Advent",
+      "rank": 1,
+      "colourRegex": "violet"
+    },
+    {
+      "date": "2026-12-25",
+      "principalRegex": "Nativity|Christmas",
+      "rank": 1,
+      "colourRegex": "white"
+    }
+  ]
+}

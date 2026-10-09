@@ -4,6 +4,7 @@ import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations } from "./litur
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
+import { calendarMassColour } from "./colour-projection.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -348,7 +349,7 @@ function titleOf(r){
   return String((fr()?(p?.nameFr||p?.title?.fr||p?.name||d?.titleFr||d?.nameFr||d?.title):(p?.name||p?.title?.en||d?.title||d?.name))||L("Liturgical day","Jour liturgique"));
 }
 function rankOf(r){const p=properOf(r),d=r?.day?.main;return String(p?.rank||d?.rank||"")}
-function rawColour(r){const p=properOf(r),d=r?.day?.main;return String(p?.color||p?.colour||d?.color||d?.colour||r?.colourPlan?.name||r?.colourPlan?.label||"")}
+function rawColour(r){return calendarMassColour(r)}
 function colourOf(r){
   const raw=rawColour(r),k=raw.trim().toLowerCase();
   const map={red:["Red","Rouge"],green:["Green","Vert"],white:["White","Blanc"],violet:["Violet","Violet"],purple:["Violet","Violet"],black:["Black","Noir"],rose:["Rose","Rose"],gold:["Gold","Or"]};
