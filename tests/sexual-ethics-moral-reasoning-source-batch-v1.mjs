@@ -32,7 +32,7 @@ for(const rec of doc.cases){
 assert.equal(count,80);
 assert.deepEqual(found,doc.summary.status_counts);
 for(const id of ["CSE012","CSE013","CSE014","CSE016","CSE018","CSE020","CSE021"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" not marked contextual");
-assert.match(CSE_DEBATE_MAP.CSE016.response[0],/not merely one private opinion/);
-assert.match(CSE_DEBATE_MAP.CSE020.breakpoint[0],/substance addiction does not establish/);
+assert.match(CSE_DEBATE_MAP.CSE016.response[0],/Donum Veritatis/);
+assert.match(CSE_DEBATE_MAP.CSE020.breakpoint[0],/drug addiction cannot establish/);
 assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/Freud/);
 console.log("PASS Sexual Ethics: 10 debates x 8 stages, 80 individual EN/FR source-scope findings; original quoted excerpts and contextual positions clearly distinguished; 0 false publication certifications.");
