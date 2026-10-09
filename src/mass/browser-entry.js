@@ -4,6 +4,7 @@
 
 import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
+import { mountRogationPreflight } from "./rogation-preflight.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
@@ -641,7 +642,7 @@ export async function resumePersistedMass({
   });
 }
 
-export function createBrowserMassController() {
+export function createBrowserMassController({rogationPreflight=null}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
   return createMassEntryController({
@@ -657,7 +658,8 @@ export function createBrowserMassController() {
       const proper=await recoverReaderProperOmissions(options.proper,{
         hostResolver:runtime()?.resolver?.properResolver,
       });
-      return Object.freeze({...options,proper});
+      const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
+      return Object.freeze({...options,proper,rogationSelection});
     },
     openReader: openProductionReader,
   });
@@ -687,7 +689,7 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null };
 
   function tryInstall() {
     state.polls += 1;
@@ -696,7 +698,12 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       return;
     }
     try {
-      state.controller = createBrowserMassController();
+      state.rogationPreflight=mountRogationPreflight({
+        doc:document,
+        getResolvedMass:()=>celebrationApi().getResolvedMass(),
+        language:()=>runtimeState()?.language??"en"
+      });
+      state.controller = createBrowserMassController({rogationPreflight:state.rogationPreflight});
       state.installed = true;
       document.documentElement.dataset.aoR17MassBridge = "ready";
     } catch (error) {
@@ -730,6 +737,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     suspend: () => suspendPersistedMass(),
     status: () => Object.freeze({
       installed: state.installed,
+      rogationPreflightMounted:Boolean(state.rogationPreflight),
       polls: state.polls,
       hostApi: Boolean(celebrationApi()?.getResolvedMass),
       presentationOwner: "R17_NATIVE_PRODUCTION",
