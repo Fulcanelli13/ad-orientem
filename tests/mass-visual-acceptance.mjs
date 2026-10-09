@@ -835,7 +835,7 @@ try{
   assert.equal(palmOpening.sourceCue,"PALM-R03-01",
     "Palm crosses assigned to a whole Gospel source block instead of its heading");
   assert.equal(palmOpening.active,"true");
-  assert.ok(palmOpening.anchorWords.some(word=>/Sequ[eé]ntia sancti Evang[eé]lii/i.test(word.normalize("NFD").replace(/\\p{M}/gu,""))),
+  assert.ok(palmOpening.anchorWords.some(word=>/Sequ[eé]ntia sancti Evang[eé]lii/i.test(word.normalize("NFD").replace(/\p{M}/gu,""))),
     "Palm Gospel crosses missing exact source-text highlight: "+JSON.stringify(palmOpening));
   assert.match(palmOpening.gesture,/Forehead.*lips.*breast/i);
   assert.equal(palmOpening.iconVisible,true,"Palm Gospel heading has no dedicated small-cross icon");
