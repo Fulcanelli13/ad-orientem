@@ -34,10 +34,15 @@ jobs:
           npm run test:reader-rogations
           npm run test:proper
           npm run test:app-shell-contract
+          npm run test:reader-proper-recovery
       - name: Install browser runner
         run: |
           npm install --no-save --no-package-lock @playwright/test
           npx playwright install --with-deps chromium
+      - name: Check production Mass reader and shell on phones
+        run: |
+          node tests/reader-phone-acceptance.mjs
+          node tests/app-shell-final-e2e.mjs
       - name: Verify Rogation ordinary Proper and privileged commemoration prayers
         run: node tests/calendar-1962-rogations-commemoration-e2e.mjs
       - name: Inspect both full civil years against independent 1962 calendar
