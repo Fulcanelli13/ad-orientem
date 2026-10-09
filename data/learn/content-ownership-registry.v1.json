@@ -848,7 +848,25 @@
           "pius_x_question_coverage": 433
         }
       ],
-      "governing_action": "DO_NOT_COUNT_VERSIONS_ADDITIVELY; preserve branch and source provenance, compare semantic overlap and catechism ownership before selective absorption; no blind merge"
+      "governing_action": "DO_NOT_COUNT_VERSIONS_ADDITIVELY; preserve branch and source provenance, compare semantic overlap and catechism ownership before selective absorption; no blind merge",
+      "recovered_composite_on_main": {
+        "current_branch": "formation/learn-faith-54-branch-convergence-20261009",
+        "recovered_source_path": "data/learn/learn-the-faith-recovered-54.v1.json",
+        "original_branch_files_merged_as_whole": false,
+        "exact_54_lesson_ids_preserved": true,
+        "v1_bilingual_explanatory_paragraphs": 162,
+        "v2_bilingual_sourced_claims": 176,
+        "compact_bilingual_claims": 108,
+        "pius_x_distinct_index_positions": 433,
+        "detailed_v2_distinct_question_numbers_cited": 375,
+        "v2_question_citation_instances": 523,
+        "lessons_with_reference_disagreements": 43,
+        "partial_catechism_coverage": 6,
+        "source_content_and_translations_unmodified": true,
+        "human_editorial_certifications": 0,
+        "public_route_published": false,
+        "note": "Branch text is now preserved inside one combined unpublished research file. This is NOT a merge of branch histories, nor approval of a new Learn launcher."
+      }
     },
     "ownership_boundaries": {
       "catechism": "positive doctrine; Learn the Faith is a proposed pedagogical course under catechism owner, not 54 new Apologetics debates",

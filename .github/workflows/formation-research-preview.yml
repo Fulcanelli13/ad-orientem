@@ -7,6 +7,8 @@ on:
       - 'tests/formation-recovery-review.mjs'
       - 'tests/formation-123-claim-gates.mjs'
       - 'tests/formation-master-inventory.mjs'
+      - 'tests/learn-faith-54-recovery.mjs'
+      - 'data/learn/learn-the-faith-recovered-54.v1.json'
       - 'docs/FORMATION-MASTER-INVENTORY-2026-10-09.md'
       - 'data/learn/content-ownership-registry.v1.json'
       - 'data/learn/formation-123-source-claim-gates-2026-10-09.v1.json'
@@ -57,6 +59,8 @@ jobs:
         run: node tests/formation-123-claim-gates.mjs
       - name: Reconcile all Formation owners and recoverable archived lesson branches
         run: node tests/formation-master-inventory.mjs
+      - name: Verify all 54 archived Catechism lesson versions are preserved without new public routes
+        run: node tests/learn-faith-54-recovery.mjs
       - name: Check Traditional Mass objections and canonical ownership
         run: node tests/traditional-mass-objections-reconciliation.mjs
       - name: Check 30 BAQ/SDV sources and opponent attribution
