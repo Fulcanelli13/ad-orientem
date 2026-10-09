@@ -984,6 +984,9 @@ function matcherFromToken(token, constants) {
 }
 function parseCalendarSources(common, blocks, titles) {
     const constants = parseStringConstants(common);
+    // Universal 1962 ordo corrections; tracked in data/calendar/1962-ordo-corrections.v1.json.
+    // Apply BEFORE block/precedence/title resolution so every consumer receives one identity.
+    Object.assign(constants, {"SANCTI_05_16":"sancti:05-16:3:w","SANCTI_06_12":"sancti:06-12:3:w","SANCTI_06_18":"sancti:06-18:3:w","SANCTI_06_19":"sancti:06-19:3:w","SANCTI_07_12":"sancti:07-12:3:w","SANCTI_07_18":"sancti:07-18:3:w","SANCTI_07_20":"sancti:07-20:3:w","SANCTI_07_23":"sancti:07-23:3:r","SANCTI_07_29":"sancti:07-29:3:w","SANCTI_08_02":"sancti:08-02:3:w","SANCTI_08_09":"sancti:08-09t:3:v","SANCTI_08_28":"sancti:08-28:3:w","SANCTI_08_30":"sancti:08-30:3:w","SANCTI_11_13":"sancti:11-13:3:w","SANCTI_11_14":"sancti:11-14:3:r"});
     const parsedBlocks = {
         POST_EPIPHANY: parseNestedRows(blocks, "POST_EPIPHANY", constants),
         FROM_PRE_LENT_TO_POST_PENTECOST: parseNestedRows(blocks, "FROM_PRE_LENT_TO_POST_PENTECOST", constants),
