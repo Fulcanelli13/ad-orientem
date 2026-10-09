@@ -16,6 +16,8 @@ on:
       - 'data/learn/formation-141-absorption-evidence-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json'
+      - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
+      - 'tests/formation-canonical-synthesis-batch3.mjs'
       - 'tests/formation-canonical-synthesis-batch2.mjs'
       - 'tests/formation-canonical-synthesis-batch1.mjs'
       - 'docs/FORMATION-141-ABSORPTION-ACTIONS-2026-10-09.md'
@@ -116,6 +118,8 @@ jobs:
         run: node tests/formation-canonical-synthesis-batch1.mjs
       - name: Validate 20 sourced bilingual canonical answers
         run: node tests/formation-canonical-synthesis-batch2.mjs
+      - name: Validate all 53 canonical research-linked bilingual dossiers
+        run: node tests/formation-canonical-synthesis-batch3.mjs
       - name: Bulk-validate all 21 unresolved controversy source maps
         run: node tests/contemporary-controversies-21-source-scaffold.mjs
       - name: Verify all 123 source-claim audit gates without claiming certification
