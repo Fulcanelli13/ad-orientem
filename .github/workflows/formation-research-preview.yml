@@ -9,6 +9,8 @@ on:
       - 'tests/formation-master-inventory.mjs'
       - 'tests/learn-faith-54-recovery.mjs'
       - 'tests/learn-faith-certification-019-054.mjs'
+      - 'tests/learn-faith-certification-001-018.mjs'
+      - 'data/learn/learn-the-faith-certification-001-018.v1.json'
       - 'data/learn/learn-the-faith-certification-019-054.v1.json'
       - 'tests/learn-faith-54-citation-witnesses.mjs'
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
@@ -56,6 +58,8 @@ jobs:
         run: node tests/formation-research-preview.mjs
       - name: Verify forensic A/C/TLM recovery holds and surviving 102 research records
         run: node tests/formation-forensic-recovery.mjs
+      - name: Verify Learn the Faith lessons 1–18, original source reconciliation
+        run: node tests/learn-faith-certification-001-018.mjs
       - name: Verify Learn the Faith lessons 19–54, 122 sourced bilingual claims
         run: node tests/learn-faith-certification-019-054.mjs
       - name: Check source-first recovery review (102 research records)
