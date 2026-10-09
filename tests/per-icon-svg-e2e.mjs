@@ -66,12 +66,22 @@ try{
       }
       document.body.append(host);
     },sym);
-    await page.waitForTimeout(100);
+    await page.waitForTimeout(1000);
     const newer=await page.locator('[data-probe="new"]').screenshot();
     const older=await page.locator('[data-probe="old"]').screenshot();
     const blank=await page.locator('[data-probe="blank"]').screenshot();
     assert.notDeepEqual(newer,blank,"Individual icon renders blank: "+sym.id);
-    assert.deepEqual(newer,older,"Icon changed visually after splitting: "+sym.id);
+    assert.notDeepEqual(older,blank,"Original bundled icon rendered blank (likely not yet loaded): "+sym.id);
+    if(!newer.equals(older)){
+      const sameLengths=newer.length===older.length;
+      const index=Math.min(newer.length,older.length,50);
+      console.error("SVG_PARITY_DIAGNOSTIC="+JSON.stringify({
+        icon:sym.id,newBytes:newer.length,oldBytes:older.length,sameLengths,
+        probe:await page.evaluate(()=>[...document.querySelectorAll('[data-probe]')].map(n=>({kind:n.dataset.probe,box:JSON.stringify(n.getBoundingClientRect().toJSON())}))),
+        newFirstBytes:[...newer.slice(0,index)],oldFirstBytes:[...older.slice(0,index)],
+      }));
+      throw Error("Refined icon pixel mismatch: "+sym.id);
+    }
   }
   const data={
     coldRequests:cold.length,
