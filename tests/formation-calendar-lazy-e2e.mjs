@@ -96,6 +96,20 @@ try{
  assert.ok(yearSize.trackWidth>150,"Year timeline has no usable phone width");
  assert.ok(Math.abs(yearSize.partsWidth-yearSize.trackWidth)<5,"Period widths are not proportional inside track");
  assert.ok(yearSize.horizontalOverflow<=2,"Year view causes horizontal overflow on phone");
+ for(const width of [320,360,390,430]){
+   await page.setViewportSize({width,height:844});
+   const measure=await page.evaluate(()=>{
+     const root=document.getElementById("ao-calendar-modular-root");
+     const ring=root?.querySelector(".aoCalV2Ring")?.getBoundingClientRect();
+     const timeline=root?.querySelector(".aoCalYearTrack")?.getBoundingClientRect();
+     const hero=root?.querySelector(".aoCalV2YearHeroGrid")?.getBoundingClientRect();
+     return {overflow:root.scrollWidth-root.clientWidth,ringWidth:ring?.width||0,trackWidth:timeline?.width||0,heroWidth:hero?.width||0};
+   });
+   assert.ok(measure.overflow<=2,"Year view overflows at "+width+"px: "+JSON.stringify(measure));
+   assert.ok(measure.ringWidth>100&&measure.ringWidth<165,"Year wheel is not compact at "+width+"px: "+JSON.stringify(measure));
+   assert.ok(measure.trackWidth>width*.7,"Year timeline is too narrow at "+width+"px");
+ }
+ await page.setViewportSize({width:390,height:844});
  assert.equal(yearSize.expanded,1,"Only one year period may be expanded");
  await page.locator("#ao-calendar-modular-root [data-cal-year-period='advent']").click();
  assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period='advent']").getAttribute("aria-expanded"),"true","Year period tap did not expand details");
