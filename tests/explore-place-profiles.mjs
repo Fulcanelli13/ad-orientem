@@ -462,6 +462,8 @@ assert.equal(marianValley.calendar.length,0);
 
 const peterChanel=explorePlaceProfile(profiles,"place:NZ:st-peter-chanel-russell");
 assert.ok(peterChanel);
+assert.equal(peterChanel.map_publishable,true,"Russell Place must carry indicative map coordinate");
+assert.equal(peterChanel.geo.indicative_only,true,"Russell school nearby point must never claim shrine exactness");
 assert.equal(peterChanel.counts.shrines,1);
 assert.equal(peterChanel.counts.pilgrimages,1);
 assert.ok(peterChanel.counts.traditions>=1);
