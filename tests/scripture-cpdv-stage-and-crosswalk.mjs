@@ -23,12 +23,13 @@ assert.throws(()=>stageCpdvBook({...good,verses:[{chapter:1,verse:1,text:"x"},{c
 assert.throws(()=>stagingSummary([b]),/Incomplete original/);
 const p={book:"Esther",chapter:1,verseStart:1};
 const e=scriptureParallelReferenceState(p,"dr-challoner","cpdv-2009");
-assert.equal(e.kind,"requires-crosswalk");assert.equal(e.canAutoParallel,false);
-assert.equal(e.reference,null);
+assert.equal(e.kind,"source-collated-esther-single-verse");assert.equal(e.canAutoParallel,true);
+assert.deepEqual(e.reference,{book:"Esther",chapter:3,verseStart:1,verseEnd:1});
 for(const book of ["Esther","Psalms","SongOfSongs"]){
  assert.ok(scriptureReferenceWarning(book,"en"));
  assert.ok(scriptureReferenceWarning(book,"fr"));
- assert.equal(scriptureParallelReferenceState({book,chapter:1,verseStart:1},"cpdv-2009","dr-challoner").canAutoParallel,false);
+ if(book==="Esther")assert.equal(scriptureParallelReferenceState({book,chapter:1,verseStart:1},"cpdv-2009","dr-challoner").canAutoParallel,true);
+ else assert.equal(scriptureParallelReferenceState({book,chapter:1,verseStart:1},"cpdv-2009","dr-challoner").canAutoParallel,false);
 }
 const j=scriptureParallelReferenceState({book:"John",chapter:1,verseStart:1},"cpdv-2009","dr-challoner");
 assert.equal(j.kind,"provisional-coordinates-only");assert.equal(j.canAutoParallel,false);

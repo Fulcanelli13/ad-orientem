@@ -3,7 +3,7 @@ import { scriptureBookCatalogue, sourceReadingLink, ROSARY_SCRIPTURE_LINKS } fro
 import { passageReference } from "./passages.js";
 import { createScripturePreferences } from "./preferences.js";
 import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
-import { scriptureReferenceWarning } from "./reference-safety.js";
+import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./reference-safety.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -47,6 +47,22 @@ export function mountScriptureLibrary(root,{
  let query="";
  let section="read";
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
+ const editionLocations=new Map([[editionId,location]]);
+ function moveEdition(nextEdition){
+   if(nextEdition===editionId)return;
+   editionLocations.set(editionId,location);
+   const saved=editionLocations.get(nextEdition);
+   const parallel=scriptureParallelReferenceState(location,editionId,nextEdition);
+   // A source-collated one-verse Esther reference can be translated exactly,
+   // including its rearranged Greek additions. Other unverified source moves
+   // restore a previously chosen edition position rather than fabricate one.
+   if(parallel.canAutoParallel&&parallel.reference)location=parallel.reference;
+   else if(saved?.book===location.book)location=saved;
+   else if(scriptureReferenceWarning(location.book,lang))
+     location=scripturePassage({book:location.book,chapter:1,verseStart:1});
+   editionId=nextEdition;
+   editionLocations.set(editionId,location);
+ }
  const wrap=element("section",null,"aoScriptureLibrary");
  wrap.setAttribute("aria-label","Sacred Scripture");
  root.replaceChildren(wrap);
@@ -81,7 +97,11 @@ export function mountScriptureLibrary(root,{
      const opt=element("option",name);opt.value=value;languageSelect.append(opt);
    }
    languageSelect.value=lang;
-   languageSelect.addEventListener("change",()=>{lang=languageSelect.value;editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];prefs.setLanguage(lang);draw();});
+   languageSelect.addEventListener("change",()=>{
+     const next=languageSelect.value;
+     const nextEdition=next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next];
+     moveEdition(nextEdition);lang=next;prefs.setLanguage(lang);draw();
+   });
    langControl.append(languageSelect);nav.append(langControl);
    const editionControl=element("label",t.source);
    const editionSelect=element("select");
@@ -95,7 +115,7 @@ export function mountScriptureLibrary(root,{
    editionSelect.addEventListener("change",()=>{
      const chosen=SCRIPTURE_EDITIONS[editionSelect.value];
      if(!chosen || chosen.language!==lang || (chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && chosen.id!=="cpdv-2009" && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
-     editionId=chosen.id;
+     moveEdition(chosen.id);
      if(lang==="en" && ["dr-challoner","cpdv-2009"].includes(editionId))prefs.setEnglishEdition(editionId);
      draw();
    });
@@ -147,10 +167,10 @@ export function mountScriptureLibrary(root,{
    const url=editionSource();source.disabled=!url;
    source.addEventListener("click",()=>linkToSource(editionSource()));actions.append(source);
    const bookmark=element("button",t.save);bookmark.type="button";
-   const present=prefs.load().bookmarks.some(b=>b.book===location.book&&b.chapter===location.chapter&&b.verseStart===location.verseStart);
+   const present=prefs.load().bookmarks.some(b=>b.editionId===editionId&&b.book===location.book&&b.chapter===location.chapter&&b.verseStart===location.verseStart);
    bookmark.textContent=present?t.saved:t.save;
    bookmark.setAttribute("aria-pressed",String(present));
-   bookmark.addEventListener("click",()=>{prefs.toggleBookmark(location);draw();});actions.append(bookmark);
+   bookmark.addEventListener("click",()=>{prefs.toggleBookmark(location,editionId);draw();});actions.append(bookmark);
    for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
      const button=element("button",label);button.type="button";
      button.disabled=direction<0&&location.chapter===1;
@@ -181,7 +201,7 @@ export function mountScriptureLibrary(root,{
    searchSection.append(searchField,resultArea);wrap.append(searchSection);paintResults();
    const savedSection=element("details",null,"aoScriptureBookmarks");
    savedSection.append(element("summary",t.bookmarks));
-   const marks=prefs.load().bookmarks;
+   const marks=prefs.load().bookmarks.filter(b=>b.editionId===editionId);
    if(!marks.length)savedSection.append(element("p",t.noBookmarks));
    for(const mark of marks){
      const button=element("button",passageReference(mark));button.type="button";
@@ -189,6 +209,17 @@ export function mountScriptureLibrary(root,{
      savedSection.append(button);
    }
    wrap.append(savedSection);
+   const oldMarks=prefs.load().bookmarks.filter(b=>b.editionId===null);
+   if(oldMarks.length){
+     const older=element("details",null,"aoScriptureUnassignedBookmarks");
+     older.append(element("summary",lang==="fr"?"Anciens signets sans édition":"Older bookmarks without a known edition"));
+     older.append(element("p",lang==="fr"?"Ces signets ont été créés sans identifier la traduction. Attribuez-en un seulement après vérification.":"These older bookmarks did not record a Bible edition. Assign one only after confirming the source."));
+     for(const mark of oldMarks){
+       const add=element("button",(lang==="fr"?"Attribuer à cette édition : ":"Assign to this edition: ")+passageReference(mark));
+       add.type="button";add.addEventListener("click",()=>{prefs.assignLegacyBookmark(mark,editionId);draw();});older.append(add);
+     }
+     wrap.append(older);
+   }
    const rosary=element("details",null,"aoScriptureRosary");
    rosary.append(element("summary",t.rosary));
    for(const [id,item] of Object.entries(ROSARY_SCRIPTURE_LINKS)){
@@ -201,7 +232,7 @@ export function mountScriptureLibrary(root,{
  }
  draw();
  return Object.freeze({
-   setLanguage(next){if(!L[next])throw new Error("Unsupported language");lang=next;editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];prefs.setLanguage(lang);draw();},
+   setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
    setPassage(next){location=scripturePassage(next);draw();},
    setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");records=next;draw();},
    status(){return Object.freeze({language:lang,editionId,passage:location,bookmarks:prefs.load().bookmarks.length});},

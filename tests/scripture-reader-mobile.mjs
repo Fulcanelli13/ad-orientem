@@ -60,7 +60,17 @@ try{
  assert.match(await dialog.locator(".aoScriptureReading h3").innerText(),/Tobit 1:1/);
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Esther");
  assert.equal(await dialog.locator("[data-crosswalk-unverified=Esther]").count(),1);
- assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/chapter order differ/i);
+ assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/different chapter order/i);
+ // Same Catholic Esther event lives at Douay 11:2 but CPDV 1:1.
+ await dialog.locator(".aoScriptureNav input").nth(0).fill("11");
+ await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
+ await dialog.locator(".aoScriptureNav input").nth(1).fill("2");
+ await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Esther 11:2");
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Esther 1:1");
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Esther 11:2");
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Psalms");
  assert.equal(await dialog.locator("[data-crosswalk-unverified=Psalms]").count(),1);
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("John");
