@@ -224,8 +224,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1=Object.freeze({
     },
     {
       "bead": 2,
-      "en": "At twelve years old, Jesus remains in the Temple.",
-      "fr": "À douze ans, Jésus demeure au Temple."
+      "en": "At twelve years old, Jesus stays behind in Jerusalem.",
+      "fr": "À douze ans, Jésus reste à Jérusalem."
     },
     {
       "bead": 3,
@@ -925,8 +925,8 @@ export const ROSARY_GUIDED_BEAD_MEDITATIONS_V1=Object.freeze({
     },
     {
       "bead": 7,
-      "en": "Each hears the apostles in a familiar language.",
-      "fr": "Chacun entend les apôtres dans sa propre langue."
+      "en": "Each hears the apostles speaking in his own language.",
+      "fr": "Chacun entend les apôtres parler dans sa propre langue."
     },
     {
       "bead": 8,

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {ROSARY_SCRIPTURE_REFERENCE_V1,ROSARY_SCRIPTURE_POLICY_V1,rosaryScripturePassage} from "../src/pray/rosary-scripture-policy.js";
+import {ROSARY_SCRIPTURE_REFERENCE_V1,ROSARY_SCRIPTURE_POLICY_V1,rosaryScripturePassage,rosaryMeditationCitationLabel} from "../src/pray/rosary-scripture-policy.js";
 import {ROSARY_MYSTERY_CONTEXT_V1} from "../src/pray/rosary-mystery-context.v1.js";
 import {ROSARY_GUIDED_BEAD_MEDITATIONS_V1} from "../src/pray/rosary-guided-bead-meditations.v1.js";
 import {ROSARY_GUIDED_BEAD_EVIDENCE_V1} from "../src/pray/rosary-guided-bead-evidence.v1.js";
@@ -32,6 +32,17 @@ for(const [id,meditations] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1))
 const biblicalLinks=Object.values(ROSARY_GUIDED_BEAD_EVIDENCE_V1).flat().filter(x=>/^https:\/\/fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\//.test(x.frenchPrimaryUrl));
 assert.equal(biblicalLinks.length,190,"expected 190 chapter-specific Crampon links and 10 doctrinal witnesses");
 for(const citation of biblicalLinks){
+ const fr=rosaryMeditationCitationLabel(citation,{french:true});
+ const en=rosaryMeditationCitationLabel(citation,{french:false});
+ assert.notEqual(fr,"",citation.reference+" missing French displayed label");
+ assert.equal(en,citation.reference,citation.reference+" English label must remain source-aligned");
+ assert.ok(/^(Luc|Matthieu|Marc|Jean|Actes|Romains|Hébreux|Apocalypse|Isaïe|1 Pierre)\s\d+:/.test(fr),
+    "French Catholic citation still displays an English book name: "+fr);
+}
+assert.equal(rosaryMeditationCitationLabel({reference:"Council of Trent",referenceFr:"Concile de Trente"},{french:true}),"Concile de Trente");
+assert.equal(rosaryMeditationCitationLabel({reference:"John 19:26-27"},{french:true}),"Jean 19:26-27");
+assert.equal(rosaryMeditationCitationLabel({reference:"1 Peter 2:24-25"},{french:true}),"1 Pierre 2:24-25");
+for(const citation of biblicalLinks){
  const chapter=citation.reference.match(/\b(\d+):\d+/)?.[1];
  assert.ok(chapter,"cannot identify Bible chapter in "+citation.reference);
  assert.equal(new URL(citation.frenchPrimaryUrl).hash,"#"+chapter,
@@ -39,7 +50,12 @@ for(const citation of biblicalLinks){
 }
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy5[2].en,/unaware that Jesus has stayed behind/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy5[2].fr,/sans savoir que Jésus est resté à Jérusalem/);
-assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.joy5[1].reference,"Luke 2:43-46");
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.joy5[1].reference,"Luke 2:43");
+assert.equal(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy5[1].en,"At twelve years old, Jesus stays behind in Jerusalem.");
+assert.equal(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy5[1].fr,"À douze ans, Jésus reste à Jérusalem.");
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo3[5].reference,"Acts 2:5-6");
+assert.equal(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.glo3[6].en,"Each hears the apostles speaking in his own language.");
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.glo3[6].fr,/propre langue/);
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.joy5[1].frenchPrimaryUrl.endsWith("#2"),true);
 assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2[4].primaryUrl,
  "https://www.biblegateway.com/passage/?search=Isaiah%2053%3A5&version=DRA",
@@ -93,7 +109,7 @@ for(const x of [...ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4.slice(6),...ROSARY_GUIDED
  assert.match(x.frenchPrimaryUrl,/vatican\.va\/content\/pius-xii\/la\//);
 }
 const rosaryPolicy=readFileSync("src/pray/rosary-scripture-policy.js","utf8");
-assert.match(rosaryPolicy,/witness\.referenceFr\|\|witness\.reference/);
+assert.match(rosaryPolicy,/rosaryMeditationCitationLabel\(witness,\{french\}\)/);
 assert.match(rosaryPolicy,/frenchWitnessLanguage==="la"/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy1[2].en,/ponders the meaning/);
 assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.joy2[2].fr,/Élisabeth/);
