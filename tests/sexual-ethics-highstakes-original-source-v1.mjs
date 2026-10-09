@@ -43,5 +43,5 @@ assert.match(CSE_QUESTION_MAP.CSE101.a[0],/hypothetical IVF procedure/);
 assert.match(CSE_QUESTION_MAP.CSE104.a[0],/2023 ASRM Ethics Committee/);
 assert.match(CSE_QUESTION_MAP.CSE110.a[0],/prenatal adoption/);
 assert.match(CSE_QUESTION_MAP.CSE112.d[0],/could not determine their frequency/);
-assert.match(CSE_DEBATE_MAP.CSE104.catholicCase[0],/independent|ASRM Ethics Committee/);
+assert.match(CSE_DEBATE_MAP.CSE104.catholicCase[0],/Donum Vitae II\.A\.3/);
 console.log("PASS high-stakes CSE: 7 debates x 8 stages=56, 3 other original-passage question checks, EN/FR findings and source URLs intact, no false full certification.");
