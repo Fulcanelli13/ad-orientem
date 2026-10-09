@@ -20,4 +20,19 @@ assert.ok(registry.disputes.every(x=>x.status==="REQUIRES_RUBRIC_REVIEW"&&x.sour
 assert.doesNotMatch(boot,/generic source fallback can inherit a stale white tempora/,"Unverified blanket Epiphany colour override must not return");
 assert.match(boot,/C\.TEMPORA_QUAD5_5C\)\) && !matchFirst\(obs, PAT\.PATTERN_SANCTI_CLASS_1_OR_2\)/,
  "St Joseph Passion-Friday I-class precedence regression");
+// A plain [Secreta] or [Postcommunio] heading is normative source text,
+// not an optional numbered-only appendix. Protect both the base Mass and
+// source-backed privileged commemorations from silently losing these prayers.
+for(const p of [
+  'secrets: numbered(sources, "Secreta", true)',
+  'postcommunions: numbered(sources, "Postcommunio", true)',
+  "(0, proper_resolver_1.numbered)(sources, 'Secreta', true)[0]",
+  "(0, proper_resolver_1.numbered)(sources, 'Postcommunio', true)[0]",
+]){
+  assert.ok(boot.includes(p),"Canonical Proper parser dropped unnumbered section: "+p);
+}
+assert.match(boot,/1960 General Rubrics nn\. 25, 108, 111/,"III-class Advent feria commemoration rule missing");
+assert.match(boot,/const sunday = isSun && x\.flexibility === 'sancti'/,"displaced II-class Sunday commemoration rule missing");
+assert.match(boot,/observance\.path === 'Tempora\/Pasc6-6'/,"canonical Pentecost Vigil title resolver missing");
+
 console.log("PASS pinned 1962 calendar correction registry, 15 recurring feasts, 2 transparently unresolved source disagreements, St Joseph precedence");
