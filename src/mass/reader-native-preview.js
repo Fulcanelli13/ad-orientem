@@ -532,7 +532,13 @@ export async function mountNativeReaderPreview({
       if(!loc)return;
       const threshold=loc.viewport.top+loc.card.clientHeight*.39;
       // The actual Latin death words, not the card start, own the kneeling pause.
-      if((loc.card.scrollTop||0)<=8||loc.rect.top>threshold||loc.rect.bottom<loc.viewport.top)return;
+      const atEnd=loc.card.scrollTop>=loc.card.scrollHeight-loc.card.clientHeight-8;
+      // On small screens the last Passion words can sit below the fixed
+      // 39% line even at maximum scroll. At the real end of the same source
+      // reading they must still trigger the pause, never be skipped.
+      if((loc.card.scrollTop||0)<=8||
+         (loc.rect.top>threshold&&!atEnd)||
+         loc.rect.bottom<loc.viewport.top)return;
       deathCueRunning=true;
       try{controller.goToRecord("GF-PASS-320");showGoodFriday();}
       finally{deathCueRunning=false;}
