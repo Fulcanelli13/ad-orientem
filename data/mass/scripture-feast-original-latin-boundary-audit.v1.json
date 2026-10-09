@@ -1,0 +1,702 @@
+{
+  "schema": "ao-major-mass-scripture-original-latin-citation-audit-v1",
+  "version": "2026-10-10-R2",
+  "status": "29_SOURCE_PATHS_58_SLOTS_REVIEWED; TWO_ORIGINAL_COMMON_TARGETS_UNRESOLVED",
+  "approach": "Inspect actual Divinum Officium Latin Proper citation label or explicit section alias and compare it against the canonical source-and-Latin-gated 1962 Scripture index. Original file citation is a different assurance level from published 1962 missal reference, calendar selection or independent full-text collation.",
+  "totals": {
+    "sourcePaths": 29,
+    "scriptureSlots": 58,
+    "single": 53,
+    "segmented": 5,
+    "DIRECT_LATIN": 47,
+    "DIRECT_SEGMENTED_LATIN": 4,
+    "COMMON_TARGET_UNRESOLVED": 2,
+    "EXPLICIT_INHERITED_LATIN": 2,
+    "RESOLVED_1962_HOLY_THURSDAY_MASS_BRANCH": 2,
+    "RESOLVED_1962_PASSION_BRANCH": 1
+  },
+  "policies": [
+    "Do not silently treat a Mass-selection stub or unresolved Common pointer as a complete original Latin witness.",
+    "Palm Passion source contains older, longer metadata; the selected 1962 Passion source must be checked independently.",
+    "The two unresolved Annunciation Common-source slots remain source/Latin-guarded in runtime and are not independently certified here.",
+    "Extended Ember lessons and the multiple lessons for Holy Wednesday have separate source-ordered ownership. Do not fold them into a single reading slot.",
+    "1962 branch resolution: Palm Sunday uses Quad6-0r:Evangelium1; Holy Thursday's Mass of the Lord's Supper uses Quad6-4rm2 for Epistle/Gospel. Neither 1962 branch may be replaced by generic historical Mass source."
+  ],
+  "rows": [
+    {
+      "sourcePath": "Tempora/Quad1-0",
+      "title": "First Sunday of Lent",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-0.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/dominica_i_in_quadragesima",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "2 Corinthians 6:1–10",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "2 Cor 6:1-10"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 4:1–11",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Matt 4:1-11"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad2-0",
+      "title": "Second Sunday of Lent",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad2-0.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/dominica_ii_in_quadragesima",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1 Thessalonians 4:1–7",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "1 Thess 4:1-7"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 17:1–9",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Matt 17:1-9"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad4-0",
+      "title": "Fourth Sunday of Lent (Laetare)",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad4-0.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/dominica_iv_in_quadragesima",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Galatians 4:22–31",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Gal 4:22-31"
+        },
+        "GOSPEL": {
+          "reference": "John 6:1–15",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Joann 6:1-15"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad6-0",
+      "title": "Palm Sunday · Mass, not palm blessing",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-0.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/dominica_in_palmis",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Philippians 2:5–11",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Phil 2:5-11"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 26:36–75; 27:1–60",
+          "kind": "SEGMENTED",
+          "status": "RESOLVED_1962_PASSION_BRANCH",
+          "oldHeader": "Matt 26:1-75; 27:1-66",
+          "witnessUrl": "https://www.missalemeum.com/en/calendar/1962-04-15",
+          "reason": "Original generic Quad6-0 header covers an older Passion, but Quad6-0r contains the verified 1962 Evangelium1 Matthew 26:36–75; 27:1–60. Do not use the procession Gospel.",
+          "originalLatinCitation": "Matt 26:36-75; 27:1-60",
+          "owner": "Tempora/Quad6-0r",
+          "ownerUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-0r.txt"
+        }
+      },
+      "existingHolds": [
+        {
+          "slot": "GOSPEL",
+          "reason": "PASSION_SPANS_CHAPTERS_AND_PRECEDING_RITE_OWNS_DIFFERENT_GOSPEL"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-0",
+      "title": "Easter Sunday",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc0-0.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/dominica_resurrectionis",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1 Corinthians 5:7–8",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "1 Cor 5:7-8"
+        },
+        "GOSPEL": {
+          "reference": "Mark 16:1–7",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Marc 16:1-7"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc5-4",
+      "title": "Ascension",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc5-4.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/in_ascensione_domini",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Acts 1:1–11",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Act 1:1-11"
+        },
+        "GOSPEL": {
+          "reference": "Mark 16:14–20",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Marc 16:14-20"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-0",
+      "title": "Pentecost Sunday",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-0.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/dominica_pentecostes",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Acts 2:1–11",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Acts 2:1-11"
+        },
+        "GOSPEL": {
+          "reference": "John 14:23–31",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Joannes 14:23-31"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pent01-0",
+      "title": "Trinity Sunday",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent01-0.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/dominica_sanctissimae_trinitatis",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 11:33–36",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Rom 11:33-36"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 28:18–20",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Matt 28:18-20"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pent01-4",
+      "title": "Corpus Christi",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent01-4.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/festum_sanctissimi_corporis_christi",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1 Corinthians 11:23–29",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "1 Cor 11:23-29"
+        },
+        "GOSPEL": {
+          "reference": "John 6:56–59",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Joann 6:56-59"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pent02-5",
+      "title": "Most Sacred Heart of Jesus",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent02-5.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/tempore/sacratissimi_cordis_domini_nostri_jesu_christi",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Ephesians 3:8–12; 3:14–19",
+          "kind": "SEGMENTED",
+          "status": "DIRECT_SEGMENTED_LATIN",
+          "originalLatinCitation": "Eph 3:8-12, 14-19"
+        },
+        "GOSPEL": {
+          "reference": "John 19:31–37",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Joannes 19:31-37"
+        }
+      },
+      "existingHolds": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reason": "EXCLUDED_FROM_SINGLE_RANGE_INDEX_NOW_COVERED_BY_SOURCE_GUARDED_SEGMENTS"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Sancti/01-06",
+      "title": "Epiphany of the Lord",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/01-06.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/sancti/in_epiphania_domini",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 60:1–6",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Is 60:1-6"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 2:1–12",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Matt 2:1-12"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Sancti/02-02",
+      "title": "Purification of the BVM · Candlemas Mass",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/02-02.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/sancti/in_purificatione_beatae_mariae_virginis",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Malachi 3:1–4",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Malach 3:1-4"
+        },
+        "GOSPEL": {
+          "reference": "Luke 2:22–32",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Luc 2:22-32"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Sancti/03-25",
+      "title": "Annunciation of the BVM",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/03-25.txt",
+      "existingPublishedWitnessUrl": "https://missale.online/proprium/en/sancti/in_annuntiatione_b_mariae_virginis",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 7:10–15",
+          "kind": "SINGLE",
+          "status": "COMMON_TARGET_UNRESOLVED",
+          "alias": "@Commune/C10a",
+          "reason": "Underlying Latin Common source was not resolved in inspected original GitHub path."
+        },
+        "GOSPEL": {
+          "reference": "Luke 1:26–38",
+          "kind": "SINGLE",
+          "status": "COMMON_TARGET_UNRESOLVED",
+          "alias": "@Commune/C10a",
+          "reason": "Underlying Latin Common source was not resolved in inspected original GitHub path."
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad6-1",
+      "title": "Holy Monday · Mass",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-1.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-03-30?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 50:5–10",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Isa 50:5-10"
+        },
+        "GOSPEL": {
+          "reference": "John 12:1–9",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Joann 12:1-9"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad6-2",
+      "title": "Holy Tuesday · Mass lesson, Passion held",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-2.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-03-31?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Jeremiah 11:18–20",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Jer 11:18-20"
+        },
+        "GOSPEL": {
+          "reference": "Mark 14:32–72; 15:1–46",
+          "kind": "SEGMENTED",
+          "status": "DIRECT_SEGMENTED_LATIN",
+          "originalLatinCitation": "Marc 14:32-72; 15:1-46"
+        }
+      },
+      "existingHolds": [
+        {
+          "slot": "GOSPEL",
+          "reason": "PASSION_SPANS_CHAPTERS_NOT_SINGLE_RANGE"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/Quad6-4",
+      "title": "Holy Thursday · Mass of the Lord's Supper",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-4.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/calendar/2026-04-02",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1 Corinthians 11:20–32",
+          "kind": "SINGLE",
+          "status": "RESOLVED_1962_HOLY_THURSDAY_MASS_BRANCH",
+          "reason": "Quad6-4 is a selection stub. Original 1960-rubric Mass of the Lord's Supper owner Quad6-4rm2 prints 1 Cor 11:20-32; Chrism Mass owner Quad6-4m1 has different readings and must remain separate.",
+          "originalLatinCitation": "1 Cor 11:20-32",
+          "owner": "Tempora/Quad6-4rm2",
+          "ownerUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-4rm2.txt"
+        },
+        "GOSPEL": {
+          "reference": "John 13:1–15",
+          "kind": "SINGLE",
+          "status": "RESOLVED_1962_HOLY_THURSDAY_MASS_BRANCH",
+          "reason": "Quad6-4 is a selection stub. Original 1960-rubric Mass of the Lord's Supper owner Quad6-4rm2 prints Joann 13:1-15; Chrism Mass owner Quad6-4m1 has different readings and must remain separate.",
+          "originalLatinCitation": "Joann 13:1-15",
+          "owner": "Tempora/Quad6-4rm2",
+          "ownerUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-4rm2.txt"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad6-3",
+      "title": "Holy Wednesday · Mass second lesson (first lesson separately source-ordered)",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad6-3.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-04-01?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 53:1–12",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Is 53:1-12"
+        },
+        "GOSPEL": {
+          "reference": "Luke 22:39–71; 23:1–53",
+          "kind": "SEGMENTED",
+          "status": "DIRECT_SEGMENTED_LATIN",
+          "originalLatinCitation": "Luc 22:39-71; 23:1-53"
+        }
+      },
+      "existingHolds": [
+        {
+          "slot": "EPISTLE_OR_LESSON",
+          "reason": "MULTIPLE_DISTINCT_LESSONS_AND_DISCONTIGUOUS_FIRST_LESSON"
+        },
+        {
+          "slot": "GOSPEL",
+          "reason": "PASSION_SPANS_CHAPTERS_NOT_SINGLE_RANGE"
+        }
+      ]
+    },
+    {
+      "sourcePath": "Tempora/093-3",
+      "title": "September Ember Wednesday (1962)",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-3.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-23?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Nehemiah 8:1–10",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Neh 8:1-10"
+        },
+        "GOSPEL": {
+          "reference": "Mark 9:16–28",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Marc 9:16-28"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/093-5",
+      "title": "September Ember Friday (1962)",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-5.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-25?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Hosea 14:2–10",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Osee 14:2-10"
+        },
+        "GOSPEL": {
+          "reference": "Luke 7:36–50",
+          "kind": "SINGLE",
+          "status": "EXPLICIT_INHERITED_LATIN",
+          "originalLatinCitation": "Luc 7:36-50",
+          "owner": "Sancti/07-22",
+          "reason": "The selected Proper aliases this Gospel; the original referenced source prints Luc 7:36–50."
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/093-6",
+      "title": "September Ember Saturday (1962)",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/093-6.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-09-26?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Hebrews 9:2–12",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Hebr 9:2-12"
+        },
+        "GOSPEL": {
+          "reference": "Luke 13:6–17",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Luc 13:6-17"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Adv3-3",
+      "title": "Advent Ember Wednesday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-3.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-16?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 7:10–15",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Is 7:10-15"
+        },
+        "GOSPEL": {
+          "reference": "Luke 1:26–38",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Luc 1:26-38"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Adv3-5",
+      "title": "Advent Ember Friday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-5.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-18?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Isaiah 11:1–5",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Is 11:1-5"
+        },
+        "GOSPEL": {
+          "reference": "Luke 1:39–47",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Luc 1:39-47"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Adv3-6",
+      "title": "Advent Ember Saturday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-6.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-12-19?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "2Thessalonians 2:1–8",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "2 Thess 2:1-8"
+        },
+        "GOSPEL": {
+          "reference": "Luke 3:1–6",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Luc 3:1-6"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad1-3",
+      "title": "Lent Ember Wednesday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-3.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-25?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Kings 19:3–8",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "3 Reg 19:3-8"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 12:38–50",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Matt 12:38-50"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad1-5",
+      "title": "Lent Ember Friday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-5.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-27?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Ezekiel 18:20–28",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Ezech 18:20-28"
+        },
+        "GOSPEL": {
+          "reference": "John 5:1–15",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Joann 5:1-15"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Quad1-6",
+      "title": "Lent Ember Saturday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad1-6.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-02-28?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "1Thessalonians 5:14–23",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "1 Thess 5:14-23"
+        },
+        "GOSPEL": {
+          "reference": "Matthew 17:1–9",
+          "kind": "SINGLE",
+          "status": "EXPLICIT_INHERITED_LATIN",
+          "originalLatinCitation": "Matt 17:1-9",
+          "owner": "Tempora/Quad2-0",
+          "reason": "The selected Proper explicitly references Tempora/Quad2-0:Evangelium (Matt 17:1–9)."
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-3",
+      "title": "Pentecost Ember Wednesday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-3.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-27?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Acts 5:12–16",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Acts 5:12-16"
+        },
+        "GOSPEL": {
+          "reference": "John 6:44–52",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Joannes 6:44-52"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-5",
+      "title": "Pentecost Ember Friday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-5.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-29?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Joel 2:23–24; 2:26–27",
+          "kind": "SEGMENTED",
+          "status": "DIRECT_SEGMENTED_LATIN",
+          "originalLatinCitation": "Joël 2:23-24; 2:26-27"
+        },
+        "GOSPEL": {
+          "reference": "Luke 5:17–26",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Luc 5:17-26"
+        }
+      },
+      "existingHolds": []
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6",
+      "title": "Pentecost Ember Saturday · 1962",
+      "originalFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-6.txt",
+      "existingPublishedWitnessUrl": "https://www.missalemeum.com/en/widgets/propers/2026-05-30?theme=light",
+      "slots": {
+        "EPISTLE_OR_LESSON": {
+          "reference": "Romans 5:1–5",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Rom 5:1-5"
+        },
+        "GOSPEL": {
+          "reference": "Luke 4:38–44",
+          "kind": "SINGLE",
+          "status": "DIRECT_LATIN",
+          "originalLatinCitation": "Luc 4:38-44"
+        }
+      },
+      "existingHolds": []
+    }
+  ],
+  "unresolvedOriginalOwnerSlots": [
+    "Sancti/03-25|EPISTLE_OR_LESSON",
+    "Sancti/03-25|GOSPEL"
+  ],
+  "editorialLimits": "Original digital citation-level verification only, with one 1962 alternative-text witness. Does not license texts or fully certify printed 1962 calendar choice, Latin text word-for-word, EN/FR Bible editions or additional reader states.",
+  "resolvedOriginalBranchProofs": [
+    {
+      "selectedSourcePath": "Tempora/Quad6-0",
+      "massSourceOwner": "Tempora/Quad6-0r",
+      "section": "Evangelium1",
+      "citation": "Matt 26:36-75; 27:1-60"
+    },
+    {
+      "selectedSourcePath": "Tempora/Quad6-4",
+      "massSourceOwner": "Tempora/Quad6-4rm2",
+      "section": "Lectio",
+      "citation": "1 Cor 11:20-32"
+    },
+    {
+      "selectedSourcePath": "Tempora/Quad6-4",
+      "massSourceOwner": "Tempora/Quad6-4rm2",
+      "section": "Evangelium",
+      "citation": "Joann 13:1-15"
+    }
+  ]
+}
