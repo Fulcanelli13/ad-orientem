@@ -68,6 +68,63 @@ async function applyShiftedPostEpiphany(resolver, sources, date, path, diagnosti
 async function mergeCommemorations(resolver, proper, day, diagnostic) {
     proper.calendarCommemorations = [];
     for (const commemoration of day.commemorations || []) {
+        // 1960 Rubricae generales n.110: the reciprocal commemoration of
+        // the two Apostles is inseparable; the two prayers share ONE
+        // conclusion and count as one Collect/Secret/Postcommunion.
+        // The pinned normalized /01-25c and /02-22c are local-only source
+        // paths and do not exist upstream. resolveSource() throws before
+        // reading their sections. Use the verified named source sections in
+        // canonical Sancti/02-22 from the pinned Divinum Officium witness.
+        const reciprocal =
+          day.main?.id === 'sancti:01-25r:3:w' && commemoration.id === 'sancti:01-25c:4:w'
+            ? 'Petri'
+            : day.main?.id === 'sancti:02-22:2:w' && commemoration.id === 'sancti:02-22c:4:r'
+              ? 'Pauli' : null;
+        if (reciprocal) {
+            const sources = {};
+            for (const lang of ['la', 'en', 'fr'])
+                sources[lang] = await resolver.resolveSource('Sancti/02-22', lang, diagnostic);
+            const sectionKeys = [['collects', 'Oratio'], ['secrets', 'Secreta'], ['postcommunions', 'Postcommunio']];
+            const removeConclusion = value => {
+                const lines = String(value || '').split('\n');
+                const idx = lines.findIndex((line, i) => i > 0 &&
+                  /^(?:Per Dóminum|Per Dominum|Through our Lord|Par Notre-Seigneur|Par Notre Seigneur|Qui vivis|Who liveth|Who livest|Vous qui vivez|Lui qui vit|\$Per Dominum|\$Qui vivis)/i.test(line.trim()));
+                return (idx < 0 ? lines : lines.slice(0, idx)).join('\n').trim();
+            };
+            const noRubricHeading = value => String(value || '').split('\n')
+                .filter((line,i)=>!(i===0&&/^(?:Pro S\.|For St\.|Commemoratio S\.|Commemoration of St\.|Pour St\.|Pour S\.)/.test(line.trim())))
+                .join('\n').trim();
+            const endings = reciprocal === 'Petri'
+              ? {
+                lat: 'Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.',
+                en: 'Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.',
+                fr: 'Par Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il.'
+              }
+              : {
+                lat: 'Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.',
+                en: 'Who livest and reignest with God the Father in the unity of the Holy Ghost, God, world without end. Amen.',
+                fr: 'Vous qui vivez et régnez avec Dieu le Père dans l’unité du Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il.'
+              };
+            for (const [field, section] of sectionKeys) {
+                const companion = (0, proper_resolver_1.numbered)(sources, section+' '+reciprocal, true)[0];
+                if (!companion || !['lat', 'en', 'fr'].every(lang => !!companion[lang] && companion[lang].length > 30))
+                    throw new Error('Reciprocal apostolic source incomplete: '+section+' '+reciprocal);
+                if (!proper[field]?.[0])
+                    throw new Error('Principal apostolic prayer missing: '+field);
+                const primary = proper[field][0];
+                proper[field][0] = Object.fromEntries(['lat', 'en', 'fr'].map(lang=>{
+                    const a = removeConclusion(primary[lang]), b = removeConclusion(noRubricHeading(companion[lang]));
+                    if (!a || !b) throw new Error('Incomplete inseparable apostolic '+section+' in '+lang);
+                    return [lang, a+'\n'+b+'\n'+endings[lang]];
+                }));
+            }
+            proper.calendarCommemorations.push({
+                name: commemoration.title, path: commemoration.path,
+                prayerSourcePath: 'Sancti/02-22', rank: (0, calendar_engine_1.classLabel)(commemoration.rank),
+                inseparable: true, underOneConclusion: true
+            });
+            continue;
+        }
         if (!commemoration?.path)
             continue;
         try {
