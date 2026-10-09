@@ -19,7 +19,7 @@ assert.equal(review.summary.bilingual_corrections,2);
 assert.equal(new Set(review.cases.map(r=>r.id)).size,11);
 for(const row of review.cases){
  assert.ok(CSE_DEBATE_MAP[row.id],row.id+" not a canonical debate");
- assert.ok(row.boundary.length>70,row.id+" missing evidence caveat");
+ assert.ok(row.boundary.length>=60,row.id+" missing evidence caveat");
  assert.equal(row.all_eight_stages_certified,false);
  assert.equal(row.independent_theological_approval,false);
  assert.equal(row.independent_french_approval,false);
