@@ -1047,6 +1047,101 @@ try{
   assert.equal(afterDeath.lingering,0,"Passion death highlight continued into resumed reading");
   assert.equal(afterDeath.panel,true,"the death pause capsule persisted after resuming");
 
+  // Exercise every Good Friday Solemn Prayer as a separate source-led
+  // kneel-at-Flectamus / stand-at-Levate transition on an actual 390px
+  // Chromium reader, including prayer VIII's printed 1962 Latin text.
+  async function focusGoodFridayWord(cueId){
+    return page.evaluate(cueId=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      const card=api.root.querySelector(".ao-prayer-card");
+      const p=[...card.querySelectorAll(".ao-reader-paragraph[data-cue-id]")]
+        .find(x=>x.dataset.cueId===cueId);
+      if(!p)return {missing:cueId,current:api.getGoodFridayState().step.recordId};
+      const rect=p.getBoundingClientRect(),frame=card.getBoundingClientRect();
+      const target=card.scrollTop+rect.top-frame.top-card.clientHeight*.39+2;
+      card.scrollTop=Math.max(0,Math.min(card.scrollHeight-card.clientHeight,target));
+      card.dispatchEvent(new Event("scroll"));
+      return {cueId,scrollTop:card.scrollTop,maxScroll:card.scrollHeight-card.clientHeight,
+        paragraphTop:rect.top,viewportTop:frame.top,viewportHeight:card.clientHeight};
+    },cueId);
+  }
+  const prayerChecks=[];
+  for(let n=1;n<=9;n++){
+    const nn=String(n).padStart(2,"0"),kneel="GF-SOP-"+nn+"-K",rise="GF-SOP-"+nn+"-R";
+    await page.evaluate(id=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord(id),kneel);
+    const before=await page.evaluate(()=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      return {posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+        formula:globalThis.AO_R17_NATIVE_READER_STATE?.exactFormulaActive??null};
+    });
+    assert.equal(before.posture,"STAND","Prayer "+n+" knee cue activated before Flectamus");
+    assert.equal(before.formula,null);
+    const kGeometry=await focusGoodFridayWord(kneel);
+    const active=await page.evaluate(id=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      return {record:api.getGoodFridayState().step.recordId,
+        posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+        highlight:[...api.root.querySelectorAll('.ao-ritual-trigger-live')].map(el=>el.textContent.trim()),
+        formula:globalThis.AO_R17_NATIVE_READER_STATE?.exactFormulaActive??null,
+      };
+    },kneel);
+    assert.equal(active.posture,"KNEEL",
+      "Prayer "+n+" Flectamus did not kneel: "+JSON.stringify({kGeometry,active}));
+    assert.equal(active.formula,kneel);
+    assert.ok(active.highlight.some(x=>/Flectamus genua/i.test(x)),
+      "Prayer "+n+" source words were not highlighted");
+    const rGeometry=await focusGoodFridayWord(rise);
+    const completed=await page.evaluate(()=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      return {record:api.getGoodFridayState().step.recordId,
+        posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+        highlight:[...api.root.querySelectorAll('.ao-ritual-trigger-live')].map(el=>el.textContent.trim()),
+        formula:globalThis.AO_R17_NATIVE_READER_STATE?.exactLevateActive??null,
+      };
+    });
+    assert.equal(completed.record,rise,
+      "Prayer "+n+" Levate did not activate: "+JSON.stringify({rGeometry,completed}));
+    assert.equal(completed.posture,"STAND");
+    assert.ok(completed.highlight.some(x=>/Levate/i.test(x)),
+      "Prayer "+n+" source rise was not highlighted");
+    prayerChecks.push({number:n,kneel:active.formula,rise:completed.formula});
+  }
+  const unveilChecks=[];
+  for(let n=1;n<=3;n++){
+    const id="GF-X-52"+n,standing="GF-X-53"+n;
+    await page.evaluate(id=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord(id),id);
+    const before=await page.evaluate(()=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      return {posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+        formula:globalThis.AO_R17_NATIVE_READER_STATE?.exactFormulaActive};
+    });
+    assert.equal(before.posture,"STAND","Unveiling "+n+" kneels before Venite adoremus");
+    const geometry=await focusGoodFridayWord(id);
+    const kneeling=await page.evaluate(()=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      return {posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+        highlights:[...api.root.querySelectorAll('.ao-ritual-trigger-live')].map(x=>x.textContent.trim()),
+        formula:globalThis.AO_R17_NATIVE_READER_STATE?.exactFormulaActive};
+    });
+    assert.equal(kneeling.posture,"KNEEL",
+      "Unveiling "+n+" missed its response: "+JSON.stringify({geometry,kneeling}));
+    assert.ok(kneeling.highlights.some(x=>/Venite.*adoremus/i.test(x)));
+    assert.equal(await gfPanel.isVisible(),true,
+      "Unveiling "+n+" missing explicit silent-adoration completion");
+    await gfPanel.locator("[data-good-friday-advance]").click();
+    const after=await page.evaluate(()=>{
+      const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+      return {record:api.getGoodFridayState().step.recordId,
+        posture:api.root.querySelector('[data-role="posture"]')?.textContent?.trim(),
+        highlights:api.root.querySelectorAll(".ao-ritual-trigger-live").length};
+    });
+    assert.equal(after.record,standing);
+    assert.equal(after.posture,"STAND","Unveiling "+n+" did not restore standing");
+    assert.equal(after.highlights,0,"Unveiling "+n+" retained highlighted kneeling words");
+    unveilChecks.push({number:n,posture:after.posture});
+  }
+  await page.screenshot({path:resolve(out,"16a-good-friday-prayers-and-unveilings.png"),fullPage:false});
+
   await page.evaluate(()=>globalThis.__AO_GOOD_FRIDAY_VISUAL_API.goToGoodFridayRecord("GF-VEN-600"));
   const venerationRecords=["GF-VEN-600","GF-VEN-610","GF-VEN-620","GF-VEN-630","GF-VEN-640"];
   for(let i=0;i<venerationRecords.length;i++){
@@ -1063,7 +1158,9 @@ try{
     "GF-X-700","personal veneration did not return cleanly to the common rite");
   assert.equal(await gfPanel.isVisible(),false,"personal Cross-veneration controls persisted after completion");
 
-  const goodFriday={beforeDeath,atDeath,afterDeath,venerationSteps:venerationRecords.length};
+  const goodFriday={beforeDeath,atDeath,afterDeath,
+    solemnPrayerPairs:prayerChecks,unveilingIntervals:unveilChecks,
+    venerationSteps:venerationRecords.length};
   await page.screenshot({path:resolve(out,"16-good-friday-veneration-exit.png"),fullPage:false});
 
   // Holy Thursday joining is a choice, not an automatic transition from
