@@ -681,6 +681,11 @@ class CalendarEngine {
         }
     }
     async hydrateTitle(observance, diagnostic) {
+        // Normalize the named 1962 first-class Vigil at source hydration.
+        // Some upstream calendar editions already supply the descriptive
+        // Saturday title, so this must precede the early title return.
+        if (observance.path === 'Tempora/Pasc6-6')
+            return { ...observance, title: 'Vigil of Pentecost', sourceTitle: observance.title || 'Saturday after the Ascension' };
         if (observance.title)
             return observance;
         if (!observance.path)
