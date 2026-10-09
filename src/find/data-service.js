@@ -2,9 +2,9 @@ import { auditVenue } from "./contracts.js";
 import { expandLicensedDirectoryFeed } from "./licensed-source-bridge.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
 import {applyIndicativeSspxLocations,applyIndicativeOtherCommunities,fetchOfficialSspxPlaceIndex} from "./sspx-indicative-geo.js";
-const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
+export const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
 export const RESEARCH_MASS_REVIEW_DAYS=120;
-const RESEARCH_PROVIDERS=Object.freeze([
+export const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
   Object.freeze({key:"sspx-district",file:"sspx-district-seed.v1.json",geoFile:"sspx-district-seed.geo.v1.json"}),
   Object.freeze({key:"sspx-france",file:"sspx-france-first-party.v1.json",geoFile:"sspx-france-first-party.geo.v1.json"}),

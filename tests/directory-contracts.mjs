@@ -78,7 +78,7 @@ const expectedResearchCounts = new Map([
   ["RCI",31],
   ["SSPV_CSPV",19],
   ["SMMD",1],
-  ["ICKSP_FEDERATED_V13",103],
+  ["ICKSP_FEDERATED_V13",102],
 ]);
 let researchVenueCount=0;
 const researchVenueIds=new Set();
@@ -86,7 +86,7 @@ for(const snapshot of researchSnapshots){
   assert.equal(snapshot.schema,"AO_DIRECTORY_RESEARCH_PROVIDER_V1");
   assert.equal(snapshot.records.length,expectedResearchCounts.get(snapshot.provider),snapshot.provider+" record-count drift");
   const expanded=expandResearchProviderSnapshot(snapshot);
-  const expectedExpandedCount=snapshot.provider==="ICKSP_FEDERATED_V13"?120:snapshot.records.length;
+  const expectedExpandedCount=snapshot.provider==="ICKSP_FEDERATED_V13"?119:snapshot.records.length;
   assert.equal(expanded.venues.length,expectedExpandedCount,snapshot.provider+" physical venue expansion drift");
   assert.equal(expanded.ministries.length,expectedExpandedCount,snapshot.provider+" physical ministry expansion drift");
   assert.equal(expanded.schedules.length,expectedExpandedCount,snapshot.provider+" physical schedule expansion drift");
@@ -197,9 +197,9 @@ for(const snapshot of researchSnapshots){
   }
   if(snapshot.provider==="ICKSP_FEDERATED_V13"){
     assert.ok(expanded.ministries.every(m=>m.community_id==="ICKSP"&&m.liturgical_usage.books==="1962"),"ICKSP supplement profile drifted");
-    assert.equal(snapshot.records.filter(row=>row.svc==="MASS").length,90,"ICKSP current-Mass candidate count drifted");
+    assert.equal(snapshot.records.filter(row=>row.svc==="MASS").length,89,"ICKSP current-Mass candidate count drifted");
     assert.equal(snapshot.records.filter(row=>row.svc==="SOURCE_ASSERTION").length,13,"ICKSP candidate assertion count drifted");
-    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,104,"ICKSP physical current-Mass count drifted");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,103,"ICKSP physical current-Mass count drifted");
     assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,16,"ICKSP physical research-assertion count drifted");
     assert.equal(expanded.venues.filter(v=>v.upstream.parent_upstream_id).length,30,"ICKSP physical fan-out count drifted");
     assert.ok(expanded.venues.some(v=>/icksp-stg-001-lafox/.test(v.venue_id)),"Agen Lafox physical venue missing");
@@ -225,7 +225,7 @@ for(const snapshot of researchSnapshots){
     assert.equal(byUpstream.get("ICKSP-STG-108")?.address?.line1??null,null,"Mouila locality-only chapel was falsely upgraded to street precision");
   }
 }
-assert.equal(researchVenueCount,1010,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
+assert.equal(researchVenueCount,1009,"research projection excludes the duplicated Le Laus Mass site and preserves its first-party France owner");
 const ickspReconciliation=readJson("../data/directory/research/icksp-v13-reconciliation.json");
 assert.equal(ickspReconciliation.research_unique_candidates,125);
 assert.equal(ickspReconciliation.live_runtime_records,27);
@@ -281,8 +281,13 @@ const expandedIcksp=expandResearchProviderSnapshot(ickspFederated);
 const currentIckspMassSchedules=expandedIcksp.schedules.filter(schedule=>schedule.service_type==="MASS");
 assert.equal(RESEARCH_MASS_REVIEW_DAYS,120);
 assert.equal(scheduleFreshnessPolicy.rules.research_current_mass.review_days,RESEARCH_MASS_REVIEW_DAYS);
-assert.ok(currentIckspMassSchedules.every(schedule=>/^2026-10-07T00:00:00Z$/.test(schedule.verification.checked_at)),"ICKSP current Mass schedules must preserve venue verification day");
-assert.ok(currentIckspMassSchedules.every(schedule=>/^2027-02-04T23:59:59Z$/.test(schedule.verification.review_due_at)),"ICKSP current Mass schedules must carry review dates");
+const isMauritiusIckspMass=schedule=>/icksp-stg-09[2456]/i.test(schedule.ministry_id);
+assert.ok(currentIckspMassSchedules.every(schedule=>
+  schedule.verification.checked_at===(isMauritiusIckspMass(schedule)?"2026-10-09T00:00:00Z":"2026-10-07T00:00:00Z")),
+  "ICKSP current Mass schedules must preserve their country-specific original source review day");
+assert.ok(currentIckspMassSchedules.every(schedule=>
+  schedule.verification.review_due_at===(isMauritiusIckspMass(schedule)?"2027-02-06T23:59:59Z":"2027-02-04T23:59:59Z")),
+  "ICKSP current Mass schedules must retain their own date-specific review deadlines");
 assert.ok(currentIckspMassSchedules.every(schedule=>scheduleFreshnessState(schedule,{now:new Date("2026-10-08T00:00:00Z")})==="CURRENT"));
 assert.equal(scheduleFreshnessState(currentIckspMassSchedules[0],{now:new Date("2027-02-05T00:00:00Z")}),"REVIEW_DUE");
 assert.equal(ickspOverlapAudit.scope.icksp_federated_physical_venues,120);

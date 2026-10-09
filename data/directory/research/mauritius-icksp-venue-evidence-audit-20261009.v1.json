@@ -1,0 +1,44 @@
+{
+  "schema": "AO_MAURITIUS_ICKSP_LOCAL_TIMETABLE_CORRECTION_V1",
+  "reviewed_at": "2026-10-09",
+  "official_site": "https://icrspmaurice.org/index.php/horaires-de-lapostolat/",
+  "previous_generic_calendar": "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
+  "rule": "A general annual liturgical calendar does not certify a particular Mauritius chapel's Mass times or prove the location of an 8:30 weekday service.",
+  "confirmed_source_mentions": [
+    {
+      "venue_id": "ICKSP-STG-092",
+      "site": "Chapelle du Collège Saint-Joseph, Curepipe",
+      "evidence": "Sunday Sung Mass at 09:45",
+      "note": "Exact October Sunday should still be checked for exceptions."
+    },
+    {
+      "venue_id": "ICKSP-STG-094",
+      "site": "Maison Bienheureux-Père-Laval",
+      "evidence": "Monday and Friday 18:00, Saturday 09:00"
+    },
+    {
+      "venue_id": "ICKSP-STG-095",
+      "site": "Sanctuaire Marie Reine de la Paix, Port Louis",
+      "evidence": "Monthly Saturday Mass 08:30",
+      "note": "Website still says next dates 7 Oct, 4 Nov, 2 Dec, corresponding to the 2023 first-Saturday sequence; current 2026 dates are NOT established by that text."
+    },
+    {
+      "venue_id": "ICKSP-STG-096",
+      "site": "Hôpital Jeetoo chapel, Port Louis",
+      "evidence": "Last Sunday of the month Mass 08:00",
+      "note": "Check with canon before directing a traveller."
+    }
+  ],
+  "held": [
+    {
+      "venue_id": "ICKSP-STG-093",
+      "name": "Église Sainte-Thérèse, Curepipe",
+      "former_mass_claim": "TUESDAY_WEDNESDAY_THURSDAY_08:30",
+      "reason": "Original local apostolate page gives Tuesday/Wednesday/Thursday at 08:30 but DOES NOT name Sainte-Thérèse or any location for those services. Claim is not venue-backed.",
+      "status": "HOLD_UNTIL_ORIGINAL_SOURCE_ASSIGNS_WEEKDAY_MASS_TO_THIS_CHURCH",
+      "not_a_verified_mass_location": true
+    }
+  ],
+  "outcome": "Four site-assigned source Mass venues remain. One unsubstantiated church-to-time attribution withdrawn from active 1962 Mass directory.",
+  "comparison": "This is a data-quality correction. Apparent country source-record coverage decreases by one; traveller trust improves."
+}
