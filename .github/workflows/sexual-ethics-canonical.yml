@@ -41,3 +41,5 @@ jobs:
         run: node tests/sexual-ethics-original-passage-scope-batch-v4.mjs
       - name: High-stakes source-scope bulk review, 56 bilingual stages
         run: node tests/sexual-ethics-highstakes-original-source-v1.mjs
+      - name: Moral-reasoning bulk original-source classification, 80 stages
+        run: node tests/sexual-ethics-moral-reasoning-source-batch-v1.mjs
