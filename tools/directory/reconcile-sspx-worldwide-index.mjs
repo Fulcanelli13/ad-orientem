@@ -7,8 +7,21 @@ const normalize=value=>String(value??"").normalize("NFKD")
   .replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"");
 const source=relative=>JSON.parse(fs.readFileSync(path.join(ROOT,relative),"utf8"));
 const directory="data/directory/generated/v19";
+// Frozen input set for the 2026-10-09 941-place / 576-Mass V1 census. New
+// verified venue batches are adjudicated separately; do not rewrite history.
+const CENSUS_V1_SSPX_SNAPSHOTS=Object.freeze([
+  "sspx-asia-central-americas.v1.json",
+  "sspx-district-seed.v1.json",
+  "sspx-four-district-bulk.v1.json",
+  "sspx-france-first-party.v1.json",
+  "sspx-france-second-pass.v1.json",
+  "sspx-north-america-20261008.v1.json",
+  "sspx-oct26-americas.v1.json",
+  "sspx-oct26-europe.v1.json",
+  "sspx-oct26-poland.v1.json",
+]);
 export function loadSspxSnapshotRows(){
-  const names=fs.readdirSync(path.join(ROOT,directory)).filter(n=>n.endsWith(".v1.json")&&!n.endsWith(".geo.v1.json"));
+  const names=CENSUS_V1_SSPX_SNAPSHOTS;
   const rows=[];
   for(const name of names){
     const doc=source(directory+"/"+name);
