@@ -348,4 +348,11 @@ expect(html.includes(".ao-guide-short{display:none}"),
 expect(readerDomSource.includes('scholaCollapsed ? 44 : scholaHeight'),
   "collapsed Schola height and reader controls are out of sync");
 
+expect(html.includes("Compact phones: keep the 48px transient cue rails"),
+  "narrow-phone prayer-width and state-label improvements disappeared");
+expect(html.includes(".ao-prayer-card{padding-left:0;padding-right:0}"),
+  "320px reader regained redundant side insets");
+expect(html.includes("-webkit-line-clamp:3;max-height:3.5em"),
+  "compact state ribbon reverted to truncating longer priest/posture labels");
+
 console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
