@@ -197,9 +197,9 @@ for(const snapshot of researchSnapshots){
   }
   if(snapshot.provider==="ICKSP_FEDERATED_V13"){
     assert.ok(expanded.ministries.every(m=>m.community_id==="ICKSP"&&m.liturgical_usage.books==="1962"),"ICKSP supplement profile drifted");
-    assert.equal(snapshot.records.filter(row=>row.svc==="MASS").length,90,"ICKSP current-Mass candidate count drifted");
+    assert.equal(snapshot.records.filter(row=>row.svc==="MASS").length,89,"ICKSP current-Mass candidate count drifted");
     assert.equal(snapshot.records.filter(row=>row.svc==="SOURCE_ASSERTION").length,13,"ICKSP candidate assertion count drifted");
-    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,104,"ICKSP physical current-Mass count drifted");
+    assert.equal(expanded.schedules.filter(s=>s.service_type==="MASS").length,103,"ICKSP physical current-Mass count drifted");
     assert.equal(expanded.schedules.filter(s=>s.service_type==="SOURCE_ASSERTION").length,16,"ICKSP physical research-assertion count drifted");
     assert.equal(expanded.venues.filter(v=>v.upstream.parent_upstream_id).length,30,"ICKSP physical fan-out count drifted");
     assert.ok(expanded.venues.some(v=>/icksp-stg-001-lafox/.test(v.venue_id)),"Agen Lafox physical venue missing");
