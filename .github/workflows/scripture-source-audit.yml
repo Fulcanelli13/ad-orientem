@@ -7,6 +7,7 @@ on:
       - 'tests/scripture-cpdv-editorial-review.mjs'
       - 'tests/scripture-cpdv-first-pass.mjs'
       - 'tests/scripture-cpdv-errata.mjs'
+      - 'tests/scripture-author-master-collation.mjs'
       - '.github/workflows/scripture-source-audit.yml'
   workflow_dispatch:
 jobs:
@@ -25,10 +26,14 @@ jobs:
         run: |
           node tests/scripture-cpdv-errata.mjs
           node tests/scripture-cpdv-first-pass.mjs
+      - name: Validate primary author HTML parser and canonical index mapping
+        run: node tests/scripture-author-master-collation.mjs
       - name: Fetch and verify historical Catholic text witnesses
         run: node tools/scripture/fetch-upstream.mjs
       - name: Check primary publisher text and correct only attested errata in research snapshots
         run: node tools/scripture/verify-cpdv-edition.mjs artifacts/scripture-candidates
+      - name: Collate all 73 CPDV books against the author's maintained master text
+        run: node tools/scripture/collate-cpdv-master.mjs artifacts/scripture-candidates 73
       - name: Generate side-by-side doctrinal and readability review dossier
         run: node tools/scripture/audit-cpdv-vs-drc.mjs
       - uses: actions/upload-artifact@v4
