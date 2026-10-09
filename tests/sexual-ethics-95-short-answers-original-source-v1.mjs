@@ -45,7 +45,7 @@ for(const r of doc.records){
    assert.equal(r.bounded_source,null);
  }
 }
-assert.equal(links,193);
+assert.equal(links,195);
 assert.equal(primary,30);assert.equal(pending,65);
 assert.equal(withDetail,20);
 for(const id of ["CSE057","CSE144","CSE147","CSE148","CSE150"])assert.ok(!CSE_QUESTION_MAP[id].refs.some(x=>x[0]==="LBM"),"no book-catalogue primary proof "+id);
@@ -53,9 +53,12 @@ assert.ok(CSE_QUESTION_MAP.CSE119.refs.some(x=>x[0]==="CIC_PENANCE"));
 assert.ok(CSE_QUESTION_MAP.CSE120.refs.some(x=>x[0]==="RAINN_CONSENT101"));
 for(const id of ["CSE131","CSE133","CSE134","CSE135"])assert.ok(CSE_QUESTION_MAP[id].refs.some(x=>x[0]==="CIC_PENANCE"));
 assert.ok(CSE_QUESTION_MAP.CSE139.refs.some(x=>x[0]==="CIC_EUCHARIST"));
+for(const id of ["CSE131","CSE133"])assert.ok(CSE_QUESTION_MAP[id].refs.some(x=>x[0]==="CIC_PENANCE_MINISTER"));
+assert.match(CSE_SOURCE_MAP.CIC_PENANCE.canonical_url_fr,/cann987-991_fr\.html$/);
+assert.match(CSE_SOURCE_MAP.CIC_PENANCE_MINISTER.canonical_url_fr,/cann965-986_fr\.html$/);
 assert.match(CSE_QUESTION_MAP.CSE139.a[0],/both a grave reason|a grave reason to receive and no opportunity|a grave reason AND no opportunity/i);
 assert.match(CSE_QUESTION_MAP.CSE110.a[0],/prenatal adoption/);
 assert.match(CSE_QUESTION_MAP.CSE097.a[0],/arising later/);
 assert.match(CSE_QUESTION_MAP.CSE077.a[0],/AI-generated images/);
 assert.match(CSE_QUESTION_MAP.CSE150.a[0],/celibacy/);
-console.log("PASS 95 short answers: 193 live original-source URLs, 30 bounded original-paragraph checks, 65 pending full passage collation; 18 records repaired, five catalogue-only citations removed, zero false independent certifications.");
+console.log("PASS 95 short answers: 195 live original-source URLs, 30 bounded original-paragraph checks, 65 pending full passage collation; 18 records repaired, five catalogue-only citations removed, zero false independent certifications.");
