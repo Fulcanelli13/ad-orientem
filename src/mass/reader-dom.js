@@ -1,3 +1,4 @@
+import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { normalizePresentationMode } from "./session-engine.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
@@ -734,6 +735,10 @@ function renderGuideSheet(pop,guide){
     if(urls.length){const links=doc.createElement("div");links.className="ao-guide-links";urls.forEach((url,index)=>{const a=doc.createElement("a");a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=names[index]||("Source "+(index+1));links.append(a);});sources.append(links);}
     body.append(sources);
   }
+  // The rubric link is contextual and keeps the current Mass card untouched.
+  const glossary=doc.createElement("div");glossary.className="ao-guide-contextual-term";
+  glossary.innerHTML=glossaryContextCapsule("G067");
+  body.append(glossary);
   sheet.append(body);pop.append(sheet);
 }
 
