@@ -1902,7 +1902,11 @@ export function createReaderDomAdapter({
             }
           }
           if(p.sourceCueIds?.length) node.dataset.sourceCueIds=p.sourceCueIds.join(" ");
-          const exactCueIds=(p.sourceCueIds??[]).filter(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
+          const exactCueIds=(p.sourceCueIds??[]).filter(id=>
+            /^(?:AO\.SM\.C\d{4}|GF-SOP-\d\d-[KR]|GF-X-52[123])$/.test(String(id)));
+          // In distinct Good Friday only the explicit formula line may own
+          // its source-record cue; other GF records must never acquire an
+          // identity from a shared card's source list.
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
           // The Passion death rubric is tied to the final Latin words,
           // rather than to the long Good Friday Passion card as a whole.

@@ -13,6 +13,20 @@ import { loadReaderCueRegistries } from "./reader-cue-state.js";
 import { loadReaderFormStateData, createReaderFormCueStateController } from "./reader-form-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
 
+// The certified Good Friday state graph carries nine kneel/rise formula
+// pairs and three Cross-unveiling silent adoration intervals. Their spoken
+// formula cues are recognized ONLY by exact source-owned paragraph IDs.
+export function goodFridayFormulaAtFocus({scrollTop=0,clientHeight=0,items=[]}={}){
+  const y=Math.max(0,Number(scrollTop)||0),height=Math.max(0,Number(clientHeight)||0);
+  if(y<=8 || !height)return null;
+  const line=y+height*.39;
+  return [...items].filter(row=>
+    /^(?:GF-SOP-\d\d-[KR]|GF-X-52[123])$/.test(String(row?.cueId??"")) &&
+    Number.isFinite(row.top)&&Number.isFinite(row.bottom) &&
+    row.top<=line && row.bottom>=y-4
+  ).sort((a,b)=>b.top-a.top)[0]?.cueId??null;
+}
+
 // Palm gospel-crosses belong only to the source-owned proclamation heading,
 // never the response or the complete Matthew reading in the same rite card.
 const PALM_GOSPEL_HEADING_ID="PALM-R03-01";
@@ -464,6 +478,17 @@ export async function mountNativeReaderPreview({
     let shownSurface=null;
     let personalControls=null;
     let deathCueRunning=false;
+    let formulaCueRunning=false;
+    let formulaKneelRecord=null;
+    const kneelRecord=id=>/^GF-SOP-\d\d-K$/.test(id??"")||/^GF-X-52[123]$/.test(id??"");
+    const r28Posture=state=>kneelRecord(state.step?.recordId) &&
+      formulaKneelRecord!==state.step.recordId ? "STAND" : state.posture;
+    const formulaAnchor=record=>{
+      if(/^GF-SOP-\d\d-K$/.test(record))return "Flectamus genua.";
+      if(/^GF-SOP-\d\d-R$/.test(record))return "Levate.";
+      if(/^GF-X-52[123]$/.test(record))return "Venite, adoremus.";
+      return null;
+    };
     const personalSteps=Object.freeze({
       "GF-VEN-600":Object.freeze({title:"Your Cross veneration",label:"It is my turn"}),
       "GF-VEN-610":Object.freeze({title:"Approach the Cross",label:"I am at the Cross"}),
@@ -496,8 +521,17 @@ export async function mountNativeReaderPreview({
     function updateGoodFridayControls(){
       if(!personalControls)return;
       const state=controller.project(),id=state?.step?.recordId;
+      const formulaAction=formulaKneelRecord===id ? (
+        /^GF-X-52[123]$/.test(id) ?
+          {title:"Silent adoration of the Cross",label:"Rise after adoration"} :
+          {title:"Kneel at Flectamus genua",label:"Stand at Levate"}
+      ) : null;
+      const unveilingPending=/^GF-X-52[123]$/.test(id??"") &&
+        formulaKneelRecord!==id
+        ? {title:"At Venite, adoremus",label:"Kneel for adoration"}:null;
       const action=personalSteps[id]??(id==="GF-PASS-320"
-        ? {title:"At the death of Our Lord",label:"Continue the Passion"}:null);
+        ? {title:"At the death of Our Lord",label:"Continue the Passion"}:
+          formulaAction??unveilingPending);
       personalControls.hidden=!action;
       const stage=personalControls.closest(".ao-reader-stage");
       if(stage)stage.dataset.riteChoice=String(Boolean(action));
@@ -544,12 +578,64 @@ export async function mountNativeReaderPreview({
       finally{deathCueRunning=false;}
     }
 
+    function syncGoodFridayFormulas(){
+      if(formulaCueRunning)return;
+      const state=controller.project(),id=state.step?.recordId??"";
+      if(!/^GF-SOP-\d\d-K$/.test(id) && !/^GF-X-52[123]$/.test(id))return;
+      const card=host.querySelector?.(".ao-prayer-card");
+      if(!card)return;
+      const shell=card.getBoundingClientRect();
+      const items=[...card.querySelectorAll(".ao-reader-paragraph[data-cue-id]")].map(node=>{
+        const rect=node.getBoundingClientRect();
+        return {cueId:node.dataset.cueId,
+          top:rect.top-shell.top+card.scrollTop,bottom:rect.bottom-shell.top+card.scrollTop};
+      });
+      // In a short or densely segmented prayer, both formulae can fall
+      // above the focus line on the first swipe. Never skip Flectamus:
+      // until it has been reached, only its exact K words may activate.
+      // Once kneeling is active, only the distinct Levate line may rise.
+      const expected=formulaKneelRecord===id ? id.replace(/-K$/,"-R") : id;
+      const reached=goodFridayFormulaAtFocus({
+        scrollTop:card.scrollTop,clientHeight:card.clientHeight,
+        items:items.filter(row=>row.cueId===expected),
+      });
+      if(!reached)return;
+      formulaCueRunning=true;
+      try{
+        if(reached===id && formulaKneelRecord!==id){
+          formulaKneelRecord=id;
+          showGoodFriday();
+        }else if(/^GF-SOP-\d\d-R$/.test(reached) &&
+          reached===id.replace(/-K$/,"-R") && formulaKneelRecord===id){
+          formulaKneelRecord=null;
+          controller.goToRecord(reached);
+          showGoodFriday();
+        }
+      }finally{formulaCueRunning=false;}
+    }
+
+    function onGoodFridayScroll(){
+      syncGoodFridayDeath();
+      syncGoodFridayFormulas();
+    }
+
     function onGoodFridayAction(event){
       const target=event.target?.closest?.("[data-good-friday-advance]");
       if(!target||personalControls?.hidden||!personalControls?.contains?.(target))return;
       event.stopPropagation?.();
       const state=controller.project();
-      if(!personalSteps[state.step?.recordId] && state.step?.recordId!=="GF-PASS-320")return;
+      const id=state.step?.recordId??"";
+      if(/^GF-X-52[123]$/.test(id) && formulaKneelRecord!==id){
+        // Three short unveiling cards have no scroll travel. A deliberate
+        // user activation at the response is required: never guess the
+        // source ceremony's timing from the card becoming visible.
+        formulaKneelRecord=id;
+        showGoodFriday();
+        return;
+      }
+      if(!personalSteps[id] && id!=="GF-PASS-320" &&
+        formulaKneelRecord!==id)return;
+      formulaKneelRecord=null;
       controller.next();
       showGoodFriday();
     }
@@ -559,6 +645,9 @@ export async function mountNativeReaderPreview({
       const card=state?.card;
       const step=state?.step;
       if(!card||!step)return null;
+      const sourcePosture=r28Posture(state);
+      const formulaActive=formulaKneelRecord===step.recordId;
+      const formulaText=formulaActive?formulaAnchor(step.recordId):null;
       return Object.freeze({
         id:step.recordId,
         sectionTitle:"Good Friday",
@@ -575,8 +664,13 @@ export async function mountNativeReaderPreview({
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
-        posture:state.posture ? Object.freeze({label:state.posture}) : null,
-        postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[state.posture]??null,
+        posture:sourcePosture ? Object.freeze({label:sourcePosture}) : null,
+        postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[sourcePosture]??null,
+        ritualTrigger:/^GF-SOP-\d\d-R$/.test(step.recordId)
+          ? Object.freeze({
+            canonicalCueId:step.recordId,anchorLat:"Levate.",
+            owner:"R28_GF_LEVATE_SOURCE",
+          }):null,
         gesture:step.recordId==="GF-PASS-320"
           ? Object.freeze({
               // Keep the exact source action stable for the R28 Good Friday
@@ -586,7 +680,15 @@ export async function mountNativeReaderPreview({
               canonicalCueId:"GF-PASS-320",anchorLat:"tradidit spiritum",
               owner:"R28_GF_PASSION_DEATH_SOURCE",
             })
-          : state.action ? Object.freeze({label:state.action}) : null,
+          : formulaText ? Object.freeze({
+            label:state.action??"KNEEL",
+            action:state.action??"KNEEL",
+            canonicalCueId:step.recordId,anchorLat:formulaText,
+            owner:"R28_GF_FORMULA_EXACT_SOURCE",
+          })
+          : formulaActive || !kneelRecord(step.recordId)
+            ? (state.action ? Object.freeze({label:state.action}):null)
+            : null,
         guide:null,
       });
     }
@@ -601,18 +703,28 @@ export async function mountNativeReaderPreview({
       }
       shownSurface=step?.surfaceKey??null;
       const dying=step?.recordId==="GF-PASS-320";
-      const paragraph=host.querySelector?.('.ao-reader-paragraph[data-cue-id="GF-PASS-320"]');
-      if(paragraph){
-        paragraph.dataset.active=String(dying);
-        syncReaderRitualHighlights(host,moment?.gesture??null);
+      const activeFormula=formulaKneelRecord===step?.recordId?step.recordId:null;
+      const activeRise=/^GF-SOP-\d\d-R$/.test(step?.recordId??"")?step.recordId:null;
+      for(const paragraph of host.querySelectorAll?.('.ao-reader-paragraph[data-cue-id]')??[]){
+        if(paragraph.dataset.cueId==="GF-PASS-320" ||
+           /^(GF-SOP-\d\d-[KR]|GF-X-52[123])$/.test(paragraph.dataset.cueId))
+          paragraph.dataset.active=String(
+            dying&&paragraph.dataset.cueId==="GF-PASS-320" ||
+            activeFormula===paragraph.dataset.cueId ||
+            activeRise===paragraph.dataset.cueId
+          );
       }
+      syncReaderRitualHighlights(host,moment?.ritualTrigger??moment?.gesture??null);
       updateGoodFridayControls();
       root.dataset.r17NativeRiteRecord=step?.recordId??"none";
       root.dataset.r17OwnerGesture=dying?"R28_GF_PASSION_DEATH_SOURCE":
-        state.action?"R28_GF_CEREMONIAL":"R28_GF_EXACT_NONE";
+        activeFormula?"R28_GF_FORMULA_EXACT_SOURCE":
+        (kneelRecord(step?.recordId)?"R28_GF_FORMULA_PENDING":
+          state.action?"R28_GF_CEREMONIAL":"R28_GF_EXACT_NONE");
       globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
         specialRite:"GOOD_FRIDAY",recordId:step?.recordId??null,
-        posture:state.posture,personalState:state.personalState,
+        posture:r28Posture(state),personalState:state.personalState,
+        exactFormulaActive:activeFormula,exactLevateActive:activeRise,
         objectState:state.objectState,deathPause:dying,
       });
       return state.card??null;
@@ -620,6 +732,7 @@ export async function mountNativeReaderPreview({
 
     function moveGoodFriday(direction){
       const state=controller.project();
+      formulaKneelRecord=null;
       if(direction==="next" && !state.atEnd)controller.next();
       else if(direction==="previous" && !state.atStart)controller.previous();
       return showGoodFriday();
@@ -634,7 +747,7 @@ export async function mountNativeReaderPreview({
     });
 
     function destroyGoodFriday(){
-      host.querySelector?.(".ao-prayer-card")?.removeEventListener?.("scroll",syncGoodFridayDeath);
+      host.querySelector?.(".ao-prayer-card")?.removeEventListener?.("scroll",onGoodFridayScroll);
       host.removeEventListener?.("click",onGoodFridayAction);
       reader.destroy?.();
       root.remove?.();
@@ -651,7 +764,7 @@ export async function mountNativeReaderPreview({
     reader.mount(prepared);
     createGoodFridayControls();
     host.addEventListener?.("click",onGoodFridayAction);
-    host.querySelector?.(".ao-prayer-card")?.addEventListener?.("scroll",syncGoodFridayDeath,{passive:true});
+    host.querySelector?.(".ao-prayer-card")?.addEventListener?.("scroll",onGoodFridayScroll,{passive:true});
     showGoodFriday();
 
     const api=Object.freeze({
@@ -668,7 +781,11 @@ export async function mountNativeReaderPreview({
       getGoodFridayState:()=>controller.project(),
       next:()=>moveGoodFriday("next"),
       previous:()=>moveGoodFriday("previous"),
-      goToGoodFridayRecord:id=>{controller.goToRecord(id);return showGoodFriday();},
+      goToGoodFridayRecord:id=>{
+        formulaKneelRecord=null;
+        controller.goToRecord(id);
+        return showGoodFriday();
+      },
       destroy:destroyGoodFriday,
     });
     globalThis.AO_R17_NATIVE_READER_PREVIEW=api;

@@ -57,6 +57,25 @@ for(let n=1;n<=9;n++){
   assert.equal(rise.posture,"STAND",s+" solemn prayer lost Levate");
   assert.equal(kneel.surfaceKey,rise.surfaceKey);
 }
+// Every kneel/rise pair shares its visual prayer text but only the exact
+// Flectamus and Levate lines own the two canonical state events.
+for(let n=1;n<=9;n++){
+  const nn=String(n).padStart(2,"0");
+  const kneel=built.steps.find(x=>x.recordId==="GF-SOP-"+nn+"-K");
+  const rise=built.steps.find(x=>x.recordId==="GF-SOP-"+nn+"-R");
+  const k=kneel.paragraphs.find(x=>x.id==="GF-SOP-"+nn+"-K");
+  const r=kneel.paragraphs.find(x=>x.id==="GF-SOP-"+nn+"-R");
+  assert.equal(k.latin,"Flectamus genua.");
+  assert.equal(r.latin,"Levate.");
+  assert.deepEqual([...k.sourceIds],["GF-SOP-"+nn+"-K"]);
+  assert.deepEqual([...r.sourceIds],["GF-SOP-"+nn+"-R"]);
+  assert.deepEqual([...rise.paragraphs.find(x=>x.id===k.id).sourceIds],[kneel.recordId]);
+  assert.deepEqual([...rise.paragraphs.find(x=>x.id===r.id).sourceIds],[rise.recordId]);
+  for(const row of kneel.paragraphs.filter(x=>!["GF-SOP-"+nn+"-K","GF-SOP-"+nn+"-R"].includes(x.id))){
+    assert.deepEqual([...row.sourceIds],[],nn+" unrelated prayer text owns a kneeling event");
+  }
+}
+
 const jewishSurface=built.steps.find(x=>x.recordId==="GF-SOP-08-K");
 assert.ok(jewishSurface.paragraphs.some(x=>/auferat velamen/.test(x.latin)),"printed 1962 Jewish prayer was not the default");
 assert.ok(!jewishSurface.paragraphs.some(x=>/plenitudine gentium/.test(x.latin)),"2008 Jewish prayer silently replaced printed 1962 text");
@@ -72,6 +91,17 @@ for(const n of [1,2,3]){
   assert.equal(k.action,"BRIEF_SILENT_ADORATION");
   assert.equal(r.posture,"STAND");
   assert.equal(k.surfaceKey,`UNVEILING_${n}`);
+}
+
+for(let n=1;n<=3;n++){
+  const kneel=built.steps.find(x=>x.recordId==="GF-X-52"+n);
+  const rise=built.steps.find(x=>x.recordId==="GF-X-53"+n);
+  for(const step of [kneel,rise]){
+    const proclamation=step.paragraphs.find(x=>x.id==="GF-X-"+n+"-V");
+    const response=step.paragraphs.find(x=>x.id==="GF-X-"+n+"-R");
+    assert.deepEqual([...proclamation.sourceIds],[],"Ecce lignum falsely triggered kneeling");
+    assert.deepEqual([...response.sourceIds],["GF-X-52"+n],"Cross response not tied to its own unveiling");
+  }
 }
 
 const genuflect=built.steps.find(x=>x.recordId==="GF-VEN-620");
