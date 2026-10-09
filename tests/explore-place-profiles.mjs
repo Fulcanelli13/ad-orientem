@@ -360,7 +360,7 @@ assert.ok(champion);
 assert.equal(champion.counts.shrines,1);
 assert.equal(champion.counts.pilgrimages,3);
 assert.ok(champion.counts.traditions>=1);
-assert.equal(champion.map_publishable,false);
+assert.equal(champion.map_publishable,true);
 assert.ok(champion.calendar.some(row=>row.semantic_key==="observance.our_lady_of_champion"&&row.date==="2026-10-09"));
 
 const guadalupe=explorePlaceProfile(profiles,"place:US:guadalupe-shrine-la-crosse");
@@ -499,7 +499,7 @@ assert.ok(guadalupeMx);
 assert.equal(guadalupeMx.counts.shrines,1);
 assert.equal(guadalupeMx.counts.pilgrimages,1);
 assert.ok(guadalupeMx.counts.traditions>=1);
-assert.equal(guadalupeMx.map_publishable,false);
+assert.equal(guadalupeMx.map_publishable,true);
 assert.equal(guadalupeMx.counts.tlm,0);
 assert.ok(guadalupeMx.calendar.some(row=>row.semantic_key==="feast.our_lady_of_guadalupe"&&row.date==="2026-12-12"));
 
@@ -508,7 +508,7 @@ assert.ok(zapopan);
 assert.equal(zapopan.counts.shrines,1);
 assert.equal(zapopan.counts.pilgrimages,2);
 assert.ok(zapopan.counts.traditions>=1);
-assert.equal(zapopan.map_publishable,false);
+assert.equal(zapopan.map_publishable,true);
 assert.ok(zapopan.calendar.some(row=>row.semantic_key==="observance.zapopan_romeria"&&row.date==="2026-10-12"));
 
 const aparecida=explorePlaceProfile(profiles,"place:BR:aparecida-national-shrine");
@@ -516,7 +516,7 @@ assert.ok(aparecida);
 assert.equal(aparecida.counts.shrines,1);
 assert.equal(aparecida.counts.pilgrimages,1);
 assert.ok(aparecida.counts.traditions>=1);
-assert.equal(aparecida.map_publishable,false);
+assert.equal(aparecida.map_publishable,true);
 assert.ok(aparecida.calendar.some(row=>row.semantic_key==="observance.our_lady_aparecida"&&row.date==="2026-10-12"));
 
 const nazare=explorePlaceProfile(profiles,"place:BR:nazare-belem");
@@ -524,7 +524,7 @@ assert.ok(nazare);
 assert.equal(nazare.counts.shrines,1);
 assert.equal(nazare.counts.pilgrimages,2);
 assert.ok(nazare.counts.traditions>=1);
-assert.equal(nazare.map_publishable,false);
+assert.equal(nazare.map_publishable,true);
 assert.equal(nazare.calendar.length,0,"second-Sunday Círio recurrence was incorrectly reduced to one fixed date");
 
 const lasLajas=explorePlaceProfile(profiles,"place:CO:las-lajas-ipiales");
