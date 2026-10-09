@@ -25,7 +25,7 @@ export function createSettingsOwner(win=globalThis){
   const historicalSelectors=["#ao-settings-v4359","#ao-settings-v4358","#ao-settings-v4356","[data-ao-settings-owner^='AO_SETTINGS_V']","[data-v37-module='utility.settings']","[data-module='utility.settings']"];
   const donor=createSettingsDonorState(win);
   win.AO_SETTINGS_DONOR_V4359=donor;
-  let route="/settings",returnSurface="home",previousFocus=null,unsubscribe=null,legacyObserver=null,releaseObserver=null;
+  let route="/settings",routeHistory=[],returnSurface="home",previousFocus=null,unsubscribe=null,legacyObserver=null,releaseObserver=null;
 
   const root=()=>win?.document?.getElementById?.("ao-settings-modular-root")||null;
   const isLive=()=>Boolean(liveGuards()?.status?.().live);
@@ -82,7 +82,7 @@ export function createSettingsOwner(win=globalThis){
       if(win.document.activeElement&&r.contains(win.document.activeElement))try{win.document.activeElement.blur?.();}catch{}
       r.remove?.();
     }
-    release();
+    release();routeHistory=[];
     if(win.document?.documentElement?.dataset){delete win.document.documentElement.dataset.aoSettingsSurface;win.document.documentElement.dataset.aoSettingsOwner="AO_SETTINGS_APP_V1";}
     if(restoreSurface){
       const target=surface||returnSurface||"home";
@@ -94,15 +94,18 @@ export function createSettingsOwner(win=globalThis){
   function close(){return closeInternal({restoreSurface:true});}
   function dismiss(){return closeInternal({restoreSurface:false});}
   function restoreHome(){closeInternal({restoreSurface:false});try{shell()?.syncSurface?.("home");}catch{}return true;}
-  function go(next){
-    route=normalizeSettingsRoute(next);paint();
+  function go(next,{remember=true}={}){
+    const target=normalizeSettingsRoute(next);
+    if(remember&&root()&&target!==route)routeHistory.push(route);
+    route=target;paint();
     (win.queueMicrotask?.bind(win)||queueMicrotask)(()=>root()?.querySelector?.("[data-settings-back],[data-settings-close]")?.focus?.());
     return true;
   }
   function back(){
+    if(routeHistory.length)return go(routeHistory.pop(),{remember:false});
     if(route==="/settings")return close();
-    if(route.startsWith("/settings/local-customs/"))return go("/settings/local-customs");
-    return go("/settings");
+    if(route.startsWith("/settings/local-customs/"))return go("/settings/local-customs",{remember:false});
+    return go("/settings",{remember:false});
   }
   function open(target="/settings"){
     const doc=win?.document,st=store();
@@ -112,7 +115,7 @@ export function createSettingsOwner(win=globalThis){
       const current=shell()?.getActive?.();
       returnSurface=current&&current!=="settings"?current:(isLive()?"mass":"home");
     }
-    route=normalizeSettingsRoute(target);suppressHistorical();
+    routeHistory=[];route=normalizeSettingsRoute(target);suppressHistorical();
     let r=root();
     if(!r){
       r=doc.createElement("section");r.id="ao-settings-modular-root";r.dataset.aoAssetId=canonicalAssetIdForSurface("settings")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");doc.body.appendChild(r);bind(r);
