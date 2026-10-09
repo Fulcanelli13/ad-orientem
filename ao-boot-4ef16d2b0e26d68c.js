@@ -565,7 +565,9 @@ function completePrivilegedCommemorations(day,source){
  const existing=new Set((day.commemoration||[]).map(x=>x.id));
  const add=x=>{if(x&&!existing.has(x.id)){day.commemoration.push(x);existing.add(x.id)}};
  const t=(day.tempora||[]).find(x=>x.flexibility==='tempora');
- // The source identity collection is a Set, not an Array. Optional chaining\n // .some() silently returns undefined and wrongly adds Sunday orations.\n const lordFeast=source.jesusFeasts instanceof Set && source.jesusFeasts.has(main.id);
+ // The source identity collection is a Set, not an Array. Optional chaining
+ // .some() silently returns undefined and wrongly adds Sunday orations.
+ const lordFeast=source.jesusFeasts instanceof Set && source.jesusFeasts.has(main.id);
  if(day.date.getDay()===0&&main.flexibility==='sancti'&&main.rank===1&&
     t?.rank<=2&&!lordFeast)add(t);
  if(day.date.getDay()!==0&&main.flexibility==='sancti'&&main.rank<=2&&
