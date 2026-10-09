@@ -1326,8 +1326,8 @@ function onClick(e){
    if(!confessionPath(b.dataset.p435930ConfPath))return;
    CONF.path=b.dataset.p435930ConfPath;CONF.examStep=0;return render();
  }
- if(b.dataset.p435930ConfStage!=null){
-   const target=Number(b.dataset.p435930ConfStage);
+ if(b.dataset.p435930ConfStep!=null||b.dataset.p435930ConfStage!=null){
+   const target=Number(b.dataset.p435930ConfStep??b.dataset.p435930ConfStage);
    if(!CONF.path&&target>0)return;
    CONF.stage=Math.max(0,Math.min(3,Number.isInteger(target)?target:0));CONF.examStep=0;return render();
  }
