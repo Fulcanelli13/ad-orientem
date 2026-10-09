@@ -5455,6 +5455,150 @@
       "source_ids": [
         "SHR-FR-cathedrale-saint-etienne-sens"
       ]
+    },
+    {
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "name": {
+        "official": "Abbaye de Saint-Maurice d'Agaune",
+        "aliases": []
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:CH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 46.219444,
+        "lng": 7.003333,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q125019525",
+        "source_ref": "wikidata:Q125019525",
+        "attribution": "Wikidata contributors, CC0",
+        "matched_country_code": "CH",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Avenue d'Agaune 15",
+        "line2": null,
+        "postal_code": "1890",
+        "city": "Saint-Maurice",
+        "region": null,
+        "country_code": "CH",
+        "country": "Switzerland",
+        "formatted": "Avenue d'Agaune 15, 1890 Saint-Maurice, Switzerland"
+      },
+      "source_ids": [
+        "SHR-CH-abbaye-saint-maurice-agaune"
+      ]
+    },
+    {
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "name": {
+        "official": "Hohe Domkirche St. Petrus, Köln",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:DE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 50.941389,
+        "lng": 6.958333,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q4176",
+        "source_ref": "wikidata:Q4176",
+        "attribution": "Wikidata contributors, CC0",
+        "matched_country_code": "DE",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Domkloster 4",
+        "line2": null,
+        "postal_code": "50667",
+        "city": "Köln",
+        "region": null,
+        "country_code": "DE",
+        "country": "Germany",
+        "formatted": "Domkloster 4, 50667 Köln, Germany"
+      },
+      "source_ids": [
+        "SHR-DE-kolner-dom-three-kings"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "name": {
+        "official": "Basilica Cattedrale Patriarcale di San Marco",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.434444,
+        "lng": 12.339722,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q172988",
+        "source_ref": "wikidata:Q172988",
+        "attribution": "Wikidata contributors, CC0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza San Marco 328",
+        "line2": null,
+        "postal_code": "30124",
+        "city": "Venezia",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza San Marco 328, 30124 Venezia, Italy"
+      },
+      "source_ids": [
+        "SHR-IT-basilica-san-marco-venezia"
+      ]
+    },
+    {
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "name": {
+        "official": "Basilica di San Domenico, Bologna",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.489417,
+        "lng": 11.3445,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q862602",
+        "source_ref": "wikidata:Q862602",
+        "attribution": "Wikidata contributors, CC0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "address": {
+        "line1": "Piazza San Domenico 13",
+        "line2": null,
+        "postal_code": "40124",
+        "city": "Bologna",
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza San Domenico 13, 40124 Bologna, Italy"
+      },
+      "source_ids": [
+        "SHR-IT-basilica-san-domenico-bologna"
+      ]
     }
   ],
   "directoryPlaceLinks": [
