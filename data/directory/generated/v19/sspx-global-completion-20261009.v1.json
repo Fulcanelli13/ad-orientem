@@ -1,7 +1,7 @@
 {
   "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
   "version": "1.0.0",
-  "generated_at": "2026-10-09T05:41:43.290Z",
+  "generated_at": "2026-10-09T05:42:43.543Z",
   "provider": "SSPX_GLOBAL_COMPLETION_20261009",
   "purpose": "Six additional distinct official SSPX visitor-addressed Sunday Mass sites in Guatemala, Colombia, Argentina, Paraguay and Brazil, reconciled against 604 already published SSPX Mass source records; monthly/undated sites conditional, no fabricated geography.",
   "defaults": {
@@ -25,7 +25,7 @@
     "checked_against_prior_sspx_records": 604,
     "first_party_sunday_evidence": 7,
     "first_party_physical_address": 7,
-    "not_geolocated_yet": 7,
+    "not_geolocated_yet": 0,
     "country_totals": {
       "GT": 1,
       "CO": 2,
@@ -33,7 +33,10 @@
       "PY": 1,
       "BR": 1,
       "GB": 1
-    }
+    },
+    "official_map_geopoints": 7,
+    "address_approx_geopoints": 5,
+    "locality_only_geopoints": 2
   },
   "records": [
     {
@@ -52,7 +55,7 @@
       "first_party_district_url": "https://centroamerica.fsspx.org/es/capillas-1",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "SUNDAY_HOUR_NOT_PUBLISHED",
-      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+      "geocoding_gate": "OFFICIAL_MAP_COORDINATES_LOCALITY_ONLY_ROUNDED_5_DECIMALS"
     },
     {
       "u": "SSPX-GLOBAL-20261009-02-CAPILLA-SAGRADOS-CORAZONES-DE-JYEUS-Y-DE-MARIA",
@@ -70,7 +73,7 @@
       "first_party_district_url": "https://centroamerica.fsspx.org/es/capillas-1",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "SUNDAY_BADGE_NO_SUNDAY_HOUR",
-      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+      "geocoding_gate": "OFFICIAL_MAP_DIRECTIONS_COORDINATE_ADDRESS_APPROX"
     },
     {
       "u": "SSPX-GLOBAL-20261009-03-PRIORATO-SANTA-TERESITA-DEL-NINO-JESUS",
@@ -88,7 +91,7 @@
       "first_party_district_url": "https://centroamerica.fsspx.org/es/capillas-1",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "DISTINCT_BARRIO_SITE_HOUR_UNKNOWN",
-      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+      "geocoding_gate": "OFFICIAL_MAP_DIRECTIONS_COORDINATE_ADDRESS_APPROX"
     },
     {
       "u": "SSPX-GLOBAL-20261009-04-CAPILLA-SAN-JOSE-LAFERRERE-LA-MATANZA",
@@ -106,7 +109,7 @@
       "first_party_district_url": "https://fsspx.ar/es/capillas",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "CALL_FOR_SUNDAY_HOURS",
-      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+      "geocoding_gate": "OFFICIAL_MAP_DIRECTIONS_COORDINATE_ADDRESS_APPROX"
     },
     {
       "u": "SSPX-GLOBAL-20261009-05-IGLESIA-NUESTRA-SENORA-DE-LOURDES",
@@ -124,7 +127,7 @@
       "first_party_district_url": "https://fsspx.ar/es/capillas",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "STREET_INTERSECTION_NO_TIME",
-      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+      "geocoding_gate": "OFFICIAL_MAP_DIRECTIONS_COORDINATE_ADDRESS_APPROX"
     },
     {
       "u": "SSPX-GLOBAL-20261009-06-CAPELA-NOSSA-SENHORA-FATIMA",
@@ -142,7 +145,7 @@
       "first_party_district_url": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "FOURTH_SUNDAY_EXCEPTION",
-      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+      "geocoding_gate": "OFFICIAL_MAP_COORDINATES_LOCALITY_ONLY_MAP_ADDRESS_DIFFERS_FROM_DISTRICT_STREET"
     },
     {
       "u": "SSPX-GLOBAL-20261009-07-CHURCH-OF-THE-HOLY-CROSS",
@@ -160,7 +163,7 @@
       "first_party_district_url": "https://fsspx.uk/en/holy-cross-church-woking-32341",
       "review_flag": "DIRECT_OFFICIAL_SUNDAY_AND_PHYSICAL_ADDRESS",
       "schedule_caveat": "SUNDAY_HOUR_REVERIFY",
-      "geocoding_gate": "NO_COORDINATE_ASSERTION_UNTIL_FIRST_PARTY_SITE_GEO_PROVED"
+      "geocoding_gate": "OFFICIAL_MAP_DIRECTIONS_COORDINATE_ADDRESS_APPROX"
     }
   ]
 }
