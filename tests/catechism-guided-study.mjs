@@ -43,4 +43,20 @@ const retryApi = { openQuestion: n => loaded && n === 433, async load(lang) { as
 assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: retryApi }, 433, "fr"), true);
 assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: { openQuestion: () => false } }, 1), false);
 assert.equal(await openNativeCatechismQuestion({}, 1), false);
+let asyncOpens = 0;
+let unnecessaryLoads = 0;
+const asyncApi = {
+  async openQuestion(n) { asyncOpens += 1; return n === 212; },
+  async load() { unnecessaryLoads += 1; }
+};
+assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: asyncApi }, 212), true);
+assert.equal(asyncOpens, 1, "A successful async native open must be invoked exactly once");
+assert.equal(unnecessaryLoads, 0, "A successful async native open must not reload the Catechism");
+let deferredReady = false;
+const asyncRetry = {
+  async openQuestion(n) { return deferredReady && n === 211; },
+  async load(lang) { assert.equal(lang, "fr"); deferredReady = true; }
+};
+assert.equal(await openNativeCatechismQuestion({ AO_TRADITIONAL_CATECHISM: asyncRetry }, 211, "fr"), true);
+
 console.log(JSON.stringify({ status: "PASS", publicLessons: 0, previewLessons: 55, sourceClaims: 181, mappedQuestions: 433 }));
