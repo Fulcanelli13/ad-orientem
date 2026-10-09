@@ -1,0 +1,1346 @@
+{
+  "schema": "AO_CONTENT_NAVIGATION_REGISTRY_V1",
+  "version": "1.0.0",
+  "created_date": "2026-10-09",
+  "baseline_commit": "dab6b8319ddea39c5a968085ae8d9b85d1b36e14",
+  "status": "REVIEW_ONLY_NO_RUNTIME_CHANGES",
+  "scope": "ROUTE_AND_CORPUS_FAMILY_CENSUS",
+  "nonclaims": [
+    "Source declaration does not prove successful user interaction.",
+    "Counts across corpora overlap and must never be summed as unique content.",
+    "Source-level census does not certify historical or doctrinal claims.",
+    "This registry does not publish new content or change current ribbon.",
+    "Research/archival content must not be surfaced before source and bilingual publication gates."
+  ],
+  "source_authorities": [
+    "src/app/contracts.js",
+    "src/learn/presentation.js",
+    "src/pray/presentation-runtime.js",
+    "src/pray/lazy-module-registry.js",
+    "src/find/explore-projection.js",
+    "data/learn/content-ownership-registry.v1.json",
+    "docs/FORMATION-MASTER-INVENTORY-2026-10-09.md"
+  ],
+  "content_state_definitions": {
+    "NAV_VISIBLE_IN_SOURCE": "Listed in the global app ribbon source; rendering/interaction still requires browser verification.",
+    "LAUNCHER_DECLARED": "Listed as an active launcher; browser acceptance not inferred.",
+    "FAMILY_OR_HUB_DECLARED": "Registered in a Prayer family or hub; no phone acceptance inferred.",
+    "REGISTRY_DECLARED_NOT_FAMILY": "Found in canonical Prayer registry without main family card; verify reachability.",
+    "LAZY_REGISTRY_DECLARED": "Registered by lazy-loading route; verify callable and discoverable.",
+    "PUBLICATION_GATED": "Research is intentionally not published; no public launcher may be created.",
+    "LIVE_LENS_DECLARED": "Explore projection supports the lens, even if proposed presentation groups it differently.",
+    "EXPLORE_SEED_LOADED": "Named in the source files loaded by the Explore data service, not an independent proof of visitor completeness."
+  },
+  "navigation": {
+    "current_ribbon": [
+      "home",
+      "mass",
+      "pray",
+      "learn",
+      "calendar",
+      "find"
+    ],
+    "proposed_ribbon": [
+      "today",
+      "mass",
+      "pray",
+      "learn",
+      "explore"
+    ],
+    "proposed_status": "DESIGN_PROPOSAL_NOT_RELEASED",
+    "utility_access": [
+      "settings",
+      "scripture",
+      "glossary",
+      "global-discovery"
+    ],
+    "today_rule": "Today reuses Home as concise launch projection and Calendar as full experience. Never rebuild the calendar in Home.",
+    "formation_families": [
+      {
+        "id": "faith-foundations",
+        "label_en": "Foundations of the Faith",
+        "current": [
+          "learn.catechism",
+          "learn.catechism.daily"
+        ],
+        "proposed": [
+          "learn-the-faith-54 after certification"
+        ]
+      },
+      {
+        "id": "catholic-life",
+        "label_en": "Living the Catholic Faith",
+        "current": [
+          "learn.spiritual_life",
+          "learn.sexual_ethics",
+          "learn.scapular",
+          "learn.rites.sick",
+          "learn.rites.baptism",
+          "learn.rites.first_communion",
+          "learn.rites.confirmation",
+          "learn.rites.holy_orders",
+          "learn.rites.matrimony"
+        ]
+      },
+      {
+        "id": "liturgy-latin",
+        "label_en": "Liturgy and Latin",
+        "current": [
+          "learn.mass",
+          "learn.serve_mass.responses",
+          "learn.latin"
+        ]
+      },
+      {
+        "id": "questions-debates",
+        "label_en": "Questions and Debates",
+        "current": [
+          "learn.sexual_ethics"
+        ],
+        "gated": [
+          "learn.apologetics",
+          "learn.church_crisis"
+        ],
+        "policy": "One reusable debate UI; separate canonical dossier ownership and publication gates."
+      },
+      {
+        "id": "apostolate",
+        "label_en": "Putting Faith into Practice",
+        "current": [
+          "apostolate"
+        ]
+      }
+    ],
+    "prayer_rule": "Preserve six existing Prayer families during ongoing Prayer audit; simplify shared presentation before changing category structure.",
+    "prayer_current_families": [
+      "daily",
+      "eucharistic",
+      "penance",
+      "passion",
+      "devotions",
+      "library"
+    ],
+    "explore_families": [
+      {
+        "id": "find-mass",
+        "lenses": [
+          "tlm"
+        ]
+      },
+      {
+        "id": "sacred-places",
+        "lenses": [
+          "shrines",
+          "apparitions",
+          "relics"
+        ]
+      },
+      {
+        "id": "pilgrimages",
+        "lenses": [
+          "pilgrimages"
+        ]
+      },
+      {
+        "id": "catholic-traditions",
+        "lenses": [
+          "traditions"
+        ]
+      }
+    ]
+  },
+  "routes": [
+    {
+      "id": "home",
+      "current_location": "global-ribbon",
+      "status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "home",
+      "proposed_destination": "today",
+      "disposition": "RENAME_PROJECTION_TO_TODAY",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "mass",
+      "current_location": "global-ribbon",
+      "status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "mass",
+      "proposed_destination": "mass",
+      "disposition": "KEEP",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "pray",
+      "current_location": "global-ribbon",
+      "status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn",
+      "current_location": "global-ribbon",
+      "status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "learn",
+      "proposed_destination": "learn",
+      "disposition": "KEEP",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "calendar",
+      "current_location": "global-ribbon",
+      "status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "calendar",
+      "proposed_destination": "today",
+      "disposition": "NEST_UNDER_TODAY",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "find",
+      "current_location": "global-ribbon",
+      "status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "explore",
+      "proposed_destination": "explore",
+      "disposition": "KEEP",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "settings",
+      "current_location": "secondary-route",
+      "status": "ROUTABLE_IN_SOURCE",
+      "canonical_owner": "settings",
+      "proposed_destination": "global-utility",
+      "disposition": "REPOSITION_ENTRY_NOT_ENGINE",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "apostolate",
+      "current_location": "secondary-route",
+      "status": "ROUTABLE_IN_SOURCE",
+      "canonical_owner": "apostolate",
+      "proposed_destination": "learn",
+      "disposition": "REPOSITION_ENTRY_NOT_ENGINE",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.catechism.daily",
+      "current_location": "learn/foundations",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "learn.catechism",
+      "proposed_destination": "learn",
+      "proposed_family": "faith-foundations",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.catechism",
+      "current_location": "learn/foundations",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "catechism",
+      "proposed_destination": "learn",
+      "proposed_family": "faith-foundations",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.spiritual_life",
+      "current_location": "learn/spiritual-moral",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "spiritual-life",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.sexual_ethics",
+      "current_location": "learn/spiritual-moral",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sexual-ethics",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "CONSOLIDATE_NAVIGATION_KEEP_CORPUS",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.scapular",
+      "current_location": "learn/spiritual-moral",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "formation-devotional-guide",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.mass",
+      "current_location": "learn/liturgy-tradition",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "mass-formation",
+      "proposed_destination": "learn",
+      "proposed_family": "liturgy-latin",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.serve_mass.responses",
+      "current_location": "learn/liturgy-tradition",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "mass-formation-practice",
+      "proposed_destination": "learn",
+      "proposed_family": "liturgy-latin",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.sick",
+      "current_location": "learn/sacraments-life",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.baptism",
+      "current_location": "learn/sacraments-life",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.first_communion",
+      "current_location": "learn/sacraments-life",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.confirmation",
+      "current_location": "learn/sacraments-life",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.holy_orders",
+      "current_location": "learn/sacraments-life",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.matrimony",
+      "current_location": "learn/sacraments-life",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "proposed_family": "catholic-life",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.latin",
+      "current_location": "learn/latin",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "latin",
+      "proposed_destination": "learn",
+      "proposed_family": "liturgy-latin",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.glossary",
+      "current_location": "learn/reference",
+      "status": "LAUNCHER_DECLARED",
+      "canonical_owner": "glossary",
+      "proposed_destination": "reference-service",
+      "proposed_family": "reference-service",
+      "disposition": "KEEP_OR_GROUP",
+      "source": "src/learn/presentation.js",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.hub",
+      "current_location": "pray/registry",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.rosary",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.angelus_regina",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.angelus",
+      "current_location": "pray/registry",
+      "status": "COMPATIBILITY_ALIAS",
+      "canonical_owner": "pray.angelus_regina",
+      "proposed_destination": "pray",
+      "disposition": "PRESERVE_ALIAS",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "alias"
+    },
+    {
+      "id": "pray.confession",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.benediction",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.adoration",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.stations",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.visit_blessed_sacrament",
+      "current_location": "pray/registry",
+      "status": "REGISTRY_DECLARED_NOT_FAMILY",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.library",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.litany_saints",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.seven_words",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.forty_hours",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.de_profundis",
+      "current_location": "pray/registry",
+      "status": "REGISTRY_DECLARED_NOT_FAMILY",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "prayer"
+    },
+    {
+      "id": "pray.eternal_rest",
+      "current_location": "pray/registry",
+      "status": "REGISTRY_DECLARED_NOT_FAMILY",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "prayer"
+    },
+    {
+      "id": "programme.first_friday",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "prayer-programmes",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "programme"
+    },
+    {
+      "id": "programme.first_saturday",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "prayer-programmes",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "programme"
+    },
+    {
+      "id": "pray.morning_evening",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.meal_prayers",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.nightly_examen",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.communion_treasury",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.novenas",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.sacred_heart",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.good_death",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "pray.dying_companion",
+      "current_location": "pray/family",
+      "status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "disposition": "KEEP_AND_CONSOLIDATE_PRESENTATION",
+      "source": "src/pray/presentation-runtime.js",
+      "browser_verified": false,
+      "kind": "module"
+    },
+    {
+      "id": "explore.lens.tlm",
+      "current_location": "explore/lens",
+      "status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "mass-directory",
+      "proposed_destination": "explore",
+      "proposed_family": "find-mass",
+      "disposition": "KEEP_FILTER_BEHIND_TASK_FAMILY",
+      "source": "src/find/explore-projection.js",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.shrines",
+      "current_location": "explore/lens",
+      "status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "proposed_family": "sacred-places",
+      "disposition": "KEEP_FILTER_BEHIND_TASK_FAMILY",
+      "source": "src/find/explore-projection.js",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.apparitions",
+      "current_location": "explore/lens",
+      "status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "proposed_family": "sacred-places",
+      "disposition": "KEEP_FILTER_BEHIND_TASK_FAMILY",
+      "source": "src/find/explore-projection.js",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.relics",
+      "current_location": "explore/lens",
+      "status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "proposed_family": "sacred-places",
+      "disposition": "KEEP_FILTER_BEHIND_TASK_FAMILY",
+      "source": "src/find/explore-projection.js",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.traditions",
+      "current_location": "explore/lens",
+      "status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "customs-atlas",
+      "proposed_destination": "explore",
+      "proposed_family": "catholic-traditions",
+      "disposition": "KEEP_FILTER_BEHIND_TASK_FAMILY",
+      "source": "src/find/explore-projection.js",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.pilgrimages",
+      "current_location": "explore/lens",
+      "status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "proposed_family": "pilgrimages",
+      "disposition": "KEEP_FILTER_BEHIND_TASK_FAMILY",
+      "source": "src/find/explore-projection.js",
+      "browser_verified": false
+    },
+    {
+      "id": "scripture",
+      "current_location": "contextual",
+      "status": "CONTEXTUAL_OR_COMPATIBILITY",
+      "canonical_owner": "scripture",
+      "proposed_destination": "reference-service",
+      "disposition": "KEEP_CONTEXTUAL",
+      "source": "src/scripture/browser-entry.js",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.apologetics",
+      "current_location": "unpublished-research",
+      "status": "PUBLICATION_GATED",
+      "canonical_owner": "apologetics",
+      "proposed_destination": "learn",
+      "disposition": "DO_NOT_PUBLISH_BEFORE_CERTIFICATION",
+      "source": "data/learn/content-ownership-registry.v1.json",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.church_crisis",
+      "current_location": "unpublished-research",
+      "status": "PUBLICATION_GATED",
+      "canonical_owner": "church-crisis",
+      "proposed_destination": "learn",
+      "disposition": "DO_NOT_PUBLISH_BEFORE_CERTIFICATION",
+      "source": "data/learn/content-ownership-registry.v1.json",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.catholic_life",
+      "current_location": "compatibility-or-retired",
+      "status": "RETIRED_OR_ALIAS",
+      "canonical_owner": "none",
+      "proposed_destination": "none",
+      "disposition": "DO_NOT_RESURRECT",
+      "source": "data/learn/content-ownership-registry.v1.json",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.seasonal_rites",
+      "current_location": "compatibility-or-retired",
+      "status": "RETIRED_OR_ALIAS",
+      "canonical_owner": "none",
+      "proposed_destination": "none",
+      "disposition": "DO_NOT_RESURRECT",
+      "source": "data/learn/content-ownership-registry.v1.json",
+      "browser_verified": false
+    },
+    {
+      "id": "today.calendar",
+      "current_location": "contextual",
+      "status": "CONTEXTUAL_OR_COMPATIBILITY",
+      "canonical_owner": "calendar",
+      "proposed_destination": "today",
+      "disposition": "KEEP_CONTEXTUAL",
+      "source": "src/app/contracts.js",
+      "browser_verified": false
+    }
+  ],
+  "corpora": [
+    {
+      "id": "mass-1962",
+      "canonical_owner": "mass",
+      "source_of_truth": "data/mass/form-registry.v2.json",
+      "count": null,
+      "publication_status": "LIVE_RUNTIME_SOURCE",
+      "primary_destination": "mass",
+      "notes": "The R17 native reader and canon/proper structures own liturgical execution; legacy is rollback only."
+    },
+    {
+      "id": "liturgical-calendar",
+      "canonical_owner": "calendar",
+      "source_of_truth": "src/calendar/calendar-runtime.js",
+      "count": null,
+      "publication_status": "LIVE_RUNTIME_SOURCE",
+      "primary_destination": "today/calendar",
+      "notes": "Calendar owns resolved days, ranks and transfers, not independent fixed-date Home labels."
+    },
+    {
+      "id": "prayer-core",
+      "canonical_owner": "pray",
+      "source_of_truth": "src/pray/canonical-data.js",
+      "count": 48,
+      "publication_status": "REGISTERED_CORE_TEXTS",
+      "primary_destination": "pray",
+      "notes": "Core prayer objects; other Rosary, Angelus and Stations data live in same file."
+    },
+    {
+      "id": "prayer-experiences",
+      "canonical_owner": "pray",
+      "source_of_truth": "src/pray/presentation-runtime.js",
+      "count": 28,
+      "publication_status": "ROUTES_REGISTERED",
+      "primary_destination": "pray",
+      "notes": "Route count includes aliases, programmes and individual prayers; not distinct executable apps."
+    },
+    {
+      "id": "novenas",
+      "canonical_owner": "pray",
+      "source_of_truth": "data/pray/novena-sot.v1.json",
+      "count": 16,
+      "publication_status": "PLAYABLE_REPORTED_BY_SOT",
+      "primary_destination": "pray",
+      "notes": "Calendar owns temporal computation; Prayer owns text and devotional execution."
+    },
+    {
+      "id": "catechism-st-pius-x",
+      "canonical_owner": "catechism",
+      "source_of_truth": "docs/FORMATION-MASTER-INVENTORY-2026-10-09.md",
+      "count": 433,
+      "publication_status": "PUBLIC_CONTENT_REPORTED",
+      "primary_destination": "learn",
+      "notes": "Daily Catechism is a presentation of the single positive-doctrine owner; verify original text and language witness."
+    },
+    {
+      "id": "learn-the-faith-54",
+      "canonical_owner": "catechism",
+      "source_of_truth": "data/learn/learn-the-faith-recovered-54.v1.json",
+      "count": 54,
+      "publication_status": "RESEARCH_ONLY_UNPUBLISHED",
+      "primary_destination": "learn",
+      "notes": "Recovered variants overlap; source claim certification required; do not publish as an independent second Catechism."
+    },
+    {
+      "id": "apologetics",
+      "canonical_owner": "apologetics",
+      "source_of_truth": "data/learn/apologetics-canonical.v1.json",
+      "count": 60,
+      "publication_status": "FROZEN_TARGET_NOT_YET_PUBLISHED",
+      "primary_destination": "learn",
+      "notes": "Dossier titles are not 60 completed articles; original objections and paragraph-level sources require certification."
+    },
+    {
+      "id": "church-crisis",
+      "canonical_owner": "church-crisis",
+      "source_of_truth": "data/learn/church-crisis-canonical.v1.json",
+      "count": 81,
+      "publication_status": "FROZEN_TARGET_NOT_YET_PUBLISHED",
+      "primary_destination": "learn",
+      "notes": "Distinct authority/controversy owner; sourced actual opposing positions, bilingual passage audit and pastoral synthesis required."
+    },
+    {
+      "id": "traditional-mass-objections",
+      "canonical_owner": "church-crisis",
+      "source_of_truth": "data/learn/traditional-mass-objections-reconciliation.v1.json",
+      "count": 50,
+      "publication_status": "RESEARCH_RECONCILED_NOT_PUBLISHED",
+      "primary_destination": "learn",
+      "notes": "Index/aliases to Church Crisis dossiers; never a second independently published debate bank."
+    },
+    {
+      "id": "contemporary-controversies",
+      "canonical_owner": "apologetics-church-crisis",
+      "source_of_truth": "data/learn/contemporary-controversies-reconciliation.v1.json",
+      "count": 43,
+      "publication_status": "RECONCILIATION_RESEARCH_ONLY",
+      "primary_destination": "learn",
+      "notes": "Ownership varies by claim; record count denotes reconciliation cases, not automatically new dossiers."
+    },
+    {
+      "id": "sexual-ethics-questions",
+      "canonical_owner": "sexual-ethics",
+      "source_of_truth": "src/learn/sexual-ethics-data/index.js",
+      "count": 150,
+      "publication_status": "PUBLIC_QA_REPORTED",
+      "primary_destination": "learn",
+      "notes": "Keep all 150 searchable; navigation uses 50 canonical topics; deeper debates require separate source gates."
+    },
+    {
+      "id": "sexual-ethics-debates",
+      "canonical_owner": "sexual-ethics",
+      "source_of_truth": "docs/FORMATION-MASTER-INVENTORY-2026-10-09.md",
+      "count": 55,
+      "publication_status": "PUBLIC_DEBATES_NOT_FULLY_CERTIFIED",
+      "primary_destination": "learn",
+      "notes": "0 of 55 fully source-certified in referenced inventory; do not equate publication with certification."
+    },
+    {
+      "id": "spiritual-life",
+      "canonical_owner": "spiritual-life",
+      "source_of_truth": "data/learn/spiritual-life-course.v1.json",
+      "count": 14,
+      "publication_status": "PUBLIC_LESSONS_REPORTED",
+      "primary_destination": "learn",
+      "notes": "Explanations in Learn; prayer execution in Pray."
+    },
+    {
+      "id": "latin-course",
+      "canonical_owner": "latin",
+      "source_of_truth": "data/learn/latin-course-40-core350.v1.json",
+      "count": 40,
+      "publication_status": "PUBLIC_COURSE_REPORTED",
+      "primary_destination": "learn",
+      "notes": "Source-backed Latin for Missal; reference lexemes belong to glossary/reference."
+    },
+    {
+      "id": "sacramental-formation",
+      "canonical_owner": "sacramental-formation",
+      "source_of_truth": "data/learn/sacramental-formation-sot.v1.json",
+      "count": 7,
+      "publication_status": "SOT_RECORDS",
+      "primary_destination": "learn",
+      "notes": "Seven sacrament records in SOT; six practical route launchers; do not equate them."
+    },
+    {
+      "id": "glossary",
+      "canonical_owner": "glossary",
+      "source_of_truth": "data/glossary/glossary-navigation-sot.v1.json",
+      "count": 450,
+      "publication_status": "LIVE_REFERENCE_INFRASTRUCTURE",
+      "primary_destination": "reference-service",
+      "notes": "450 concepts plus separate lexemes and phrases; do not count as debates."
+    },
+    {
+      "id": "apostolate-scenarios",
+      "canonical_owner": "apostolate",
+      "source_of_truth": "src/apostolate/contracts.js",
+      "count": 36,
+      "publication_status": "ROUTE_IMPLEMENTED",
+      "primary_destination": "learn",
+      "notes": "Apostolate has six scenario families; keep scenario practice under one owner."
+    },
+    {
+      "id": "apostolate-skills",
+      "canonical_owner": "apostolate",
+      "source_of_truth": "src/apostolate/contracts.js",
+      "count": 9,
+      "publication_status": "ROUTE_IMPLEMENTED",
+      "primary_destination": "learn",
+      "notes": "Shared skills content, not nine new navigation destinations."
+    },
+    {
+      "id": "scripture-editions",
+      "canonical_owner": "scripture",
+      "source_of_truth": "src/scripture/catalogue.js",
+      "count": 4,
+      "publication_status": "TEXT_EDITIONS_DISABLED",
+      "primary_destination": "reference-service",
+      "notes": "All four catalogue editions are enabled:false at baseline pending exact text/edition certification; preserve external source fallback."
+    },
+    {
+      "id": "scripture-context",
+      "canonical_owner": "scripture",
+      "source_of_truth": "src/scripture/context.js",
+      "count": null,
+      "publication_status": "CONTEXT_CAPSULE_IMPLEMENTED",
+      "primary_destination": "reference-service",
+      "notes": "One shared passage/context path; no duplicate prayer-specific Bible readers."
+    },
+    {
+      "id": "geographical-places",
+      "canonical_owner": "sacred-geography",
+      "source_of_truth": "data/geography/seed-registry.v1.json",
+      "count": 181,
+      "publication_status": "EXPLORE_SEED_LOADED",
+      "primary_destination": "explore",
+      "notes": "Canonical place IDs are shared by shrine/relic/pilgrimage associations."
+    },
+    {
+      "id": "shrines",
+      "canonical_owner": "sacred-geography",
+      "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json",
+      "count": 177,
+      "publication_status": "EXPLORE_SEED_LOADED",
+      "primary_destination": "explore",
+      "notes": "Shrine objects reference canonical places."
+    },
+    {
+      "id": "pilgrimages",
+      "canonical_owner": "sacred-geography",
+      "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json",
+      "count": 205,
+      "publication_status": "EXPLORE_SEED_LOADED",
+      "primary_destination": "explore",
+      "notes": "Pilgrimage records are not all distinct mapped sites."
+    },
+    {
+      "id": "pilgrimage-routes",
+      "canonical_owner": "sacred-geography",
+      "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json",
+      "count": 20,
+      "publication_status": "EXPLORE_SEED_LOADED",
+      "primary_destination": "explore",
+      "notes": "Route definitions not necessarily independently travel-verified."
+    },
+    {
+      "id": "apparitions",
+      "canonical_owner": "sacred-geography",
+      "source_of_truth": "data/explore/sacred-phenomena-seed.v1.json",
+      "count": 32,
+      "publication_status": "EXPLORE_PARTIAL_SEED",
+      "primary_destination": "explore",
+      "notes": "Recognition/attestation must be portrayed accurately."
+    },
+    {
+      "id": "relics",
+      "canonical_owner": "sacred-geography",
+      "source_of_truth": "data/explore/sacred-phenomena-seed.v1.json",
+      "count": 121,
+      "publication_status": "EXPLORE_PARTIAL_SEED",
+      "primary_destination": "explore",
+      "notes": "Authenticity, custody and visitor access are distinct claims."
+    },
+    {
+      "id": "published-relic-principal-sites",
+      "canonical_owner": "sacred-geography",
+      "source_of_truth": "data/explore/relic-principal-sites-publication.2026-10-09.json",
+      "count": 39,
+      "publication_status": "ALREADY_IN_LIVE_SEED_BY_ID",
+      "primary_destination": "explore",
+      "notes": "All 39 site IDs matched places, relics and shrines in inspected seed; NOT 39 new destinations to reimport."
+    },
+    {
+      "id": "customs",
+      "canonical_owner": "customs-atlas",
+      "source_of_truth": "data/customs/customs-atlas-seed.v1.json",
+      "count": 13,
+      "publication_status": "EXPLORE_SEED_LOADED",
+      "primary_destination": "explore",
+      "notes": "Ten published and three context-only records as of inspected seed."
+    },
+    {
+      "id": "customs-attestations",
+      "canonical_owner": "customs-atlas",
+      "source_of_truth": "data/customs/customs-atlas-seed.v1.json",
+      "count": 71,
+      "publication_status": "EXPLORE_SEED_LOADED",
+      "primary_destination": "explore",
+      "notes": "Evidence attestations are not additional customs."
+    },
+    {
+      "id": "mass-directory",
+      "canonical_owner": "mass-directory",
+      "source_of_truth": "src/find/data-service.js",
+      "count": null,
+      "publication_status": "PROVIDER_LOADER_IMPLEMENTED",
+      "primary_destination": "explore",
+      "notes": "Default providers FSSP, ICKSP, IBP, SSPX; additional research providers not automatically verified schedules."
+    }
+  ],
+  "cross_module_handoffs": [
+    {
+      "from": "today",
+      "to": "calendar",
+      "action": "OPEN_DAY",
+      "canonical_owner": "calendar",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "today",
+      "to": "mass",
+      "action": "PREPARE_OR_RESUME",
+      "canonical_owner": "mass",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "today",
+      "to": "scripture",
+      "action": "OPEN_CONTEXT",
+      "canonical_owner": "scripture",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "calendar",
+      "to": "pray.novenas",
+      "action": "OPEN_NOVENA",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "calendar",
+      "to": "mass",
+      "action": "OPEN_RESOLVED_CELEBRATION",
+      "canonical_owner": "mass",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "pray",
+      "to": "scripture",
+      "action": "EXPAND_PASSAGE",
+      "canonical_owner": "scripture",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "learn",
+      "to": "scripture",
+      "action": "EXPAND_PASSAGE",
+      "canonical_owner": "scripture",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "apostolate",
+      "to": "learn",
+      "action": "OPEN_CANONICAL_DOSSIER_WHEN_PUBLISHED",
+      "canonical_owner": "learn",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "apostolate",
+      "to": "pray",
+      "action": "OPEN_OWNED_DEVOTION",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "explore",
+      "to": "pray.novenas",
+      "action": "OPEN_RELATED_DEVOTION",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "explore",
+      "to": "calendar",
+      "action": "OPEN_RELATED_LITURGICAL_DATE",
+      "canonical_owner": "calendar",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "explore",
+      "to": "mass-directory",
+      "action": "OPEN_SCHEDULE_AT_PLACE",
+      "canonical_owner": "mass-directory",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "learn",
+      "to": "glossary",
+      "action": "OPEN_DEFINITION",
+      "canonical_owner": "glossary",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "mass",
+      "to": "pray",
+      "action": "OPEN_CANONICAL_THANKSGIVING_PRAYER",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "pray.confession",
+      "to": "learn",
+      "action": "OPEN_SACRAMENTAL_EXPLANATION",
+      "canonical_owner": "sacramental-formation",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    }
+  ],
+  "special_constraints": {
+    "mass_reader": "R17_NATIVE only for production; legacy donor explicit rollback.",
+    "calendar_prayer_parallel_audits": "No production navigation changes or shared style edits in this registry PR.",
+    "retired_catholic_life": "Do not revive learn.catholic_life as a module. Retain canonical post-retirement owners.",
+    "retired_seasonal_rites": "Retain calendar compatibility alias until historical links migrated; do not make a Formation card.",
+    "scripture_rights": "No local Bible text may be enabled solely by creating a new navigation link.",
+    "source_certification": "Question provenance, opponent quotations, factual claims and every substantive paragraph are independently gated.",
+    "language_policy": "EN/FR parity for public copy; Latin original/translation identity must be explicit.",
+    "user_journey": "Every contextual handoff should return users to their previous location; protect active Mass.",
+    "geography": "One place ID; distinguish physical place, community ministry, ceremony, relic claim and pilgrimage association.",
+    "deduplication": "Do not sum research versions or import matched existing seed IDs again."
+  },
+  "migrations": [
+    {
+      "id": "ARCH-01",
+      "priority": "P1",
+      "action": "Lock route/corpus state, enforce source existence and owner uniqueness with tests",
+      "risk": "LOW",
+      "workstream": "architecture",
+      "ready": true
+    },
+    {
+      "id": "ARCH-02",
+      "priority": "P1",
+      "action": "Reconcile unpublished Formation dossiers, recover originality, and protect citation gates",
+      "risk": "MEDIUM",
+      "workstream": "formation",
+      "ready": false
+    },
+    {
+      "id": "ARCH-03",
+      "priority": "P1",
+      "action": "Resolve Scripture edition certification before claiming local full-text functionality",
+      "risk": "MEDIUM",
+      "workstream": "scripture",
+      "ready": false
+    },
+    {
+      "id": "ARCH-04",
+      "priority": "P2",
+      "action": "Present the existing 15 Formation launchers under five families, not as a flattened new topic wall",
+      "risk": "MEDIUM",
+      "workstream": "learn",
+      "ready": false
+    },
+    {
+      "id": "ARCH-05",
+      "priority": "P2",
+      "action": "Harmonise Prayer component styles and language/source controls after Prayer audit",
+      "risk": "MEDIUM",
+      "workstream": "pray",
+      "ready": false
+    },
+    {
+      "id": "ARCH-06",
+      "priority": "P2",
+      "action": "Use one Explore place-profile identity and four task families while retaining six query lenses",
+      "risk": "MEDIUM",
+      "workstream": "explore",
+      "ready": false
+    },
+    {
+      "id": "ARCH-07",
+      "priority": "P2",
+      "action": "Propose Today containing Home projection and Calendar, with permanent Calendar discoverability",
+      "risk": "HIGH",
+      "workstream": "shell",
+      "ready": false
+    },
+    {
+      "id": "ARCH-08",
+      "priority": "P2",
+      "action": "Add universal published-only content discovery index and contextual links",
+      "risk": "HIGH",
+      "workstream": "app",
+      "ready": false
+    },
+    {
+      "id": "ARCH-09",
+      "priority": "P3",
+      "action": "Retire obsolete link aliases only after deep-link, return-context and saved-state acceptance",
+      "risk": "HIGH",
+      "workstream": "app",
+      "ready": false
+    }
+  ],
+  "acceptance_gates": [
+    "Current route and corpus-owner inventories reconcile against live code.",
+    "No source file from inventory is missing.",
+    "Unpublished datasets remain unadvertised.",
+    "No two canonical owners are assigned to the same content family.",
+    "Calendar and Prayer remain independently auditable without code changes.",
+    "Every proposed route migration has deep-link/return-context regression coverage before release.",
+    "UI changes require phone and EN/FR acceptance evidence."
+  ]
+}

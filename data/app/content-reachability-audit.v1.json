@@ -1,0 +1,1531 @@
+{
+  "schema": "AO_CONTENT_REACHABILITY_AUDIT_V1",
+  "date": "2026-10-09",
+  "baseline_commit": "10f87e51375794b5bd26ce2d18cf33df906fbe48",
+  "status": "SOURCE_TRACE_NOT_PHONE_ACCEPTANCE",
+  "coverage": {
+    "route_alias_lens_ids": 63,
+    "content_kinds": 39,
+    "indexed_leaf_ids": 3849,
+    "individually_browser_verified": 0
+  },
+  "source_claims_policy": [
+    "A registered route is not a passed tap test.",
+    "A nested route or compatibility alias is not necessarily a missing public entry.",
+    "Unpublished research must not acquire a launcher before certification.",
+    "Bible edition catalogue metadata does not prove installed full text.",
+    "A source-backed seed place does not prove live map/render or current public visitor access."
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "kind": "NAV_DESTINATION",
+      "current_status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "home",
+      "proposed_destination": "today",
+      "entry_path": "global ribbon",
+      "evidence_paths": [
+        "src/app/contracts.js",
+        "src/app/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap icon/active state/back",
+      "browser_verified": false
+    },
+    {
+      "id": "mass",
+      "kind": "NAV_DESTINATION",
+      "current_status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "mass",
+      "proposed_destination": "mass",
+      "entry_path": "global ribbon",
+      "evidence_paths": [
+        "src/app/contracts.js",
+        "src/app/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap icon/active state/back",
+      "browser_verified": false
+    },
+    {
+      "id": "pray",
+      "kind": "NAV_DESTINATION",
+      "current_status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "global ribbon",
+      "evidence_paths": [
+        "src/app/contracts.js",
+        "src/app/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap icon/active state/back",
+      "browser_verified": false
+    },
+    {
+      "id": "learn",
+      "kind": "NAV_DESTINATION",
+      "current_status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "learn",
+      "proposed_destination": "learn",
+      "entry_path": "global ribbon",
+      "evidence_paths": [
+        "src/app/contracts.js",
+        "src/app/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap icon/active state/back",
+      "browser_verified": false
+    },
+    {
+      "id": "calendar",
+      "kind": "NAV_DESTINATION",
+      "current_status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "calendar",
+      "proposed_destination": "today",
+      "entry_path": "global ribbon",
+      "evidence_paths": [
+        "src/app/contracts.js",
+        "src/app/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap icon/active state/back",
+      "browser_verified": false
+    },
+    {
+      "id": "find",
+      "kind": "NAV_DESTINATION",
+      "current_status": "NAV_VISIBLE_IN_SOURCE",
+      "canonical_owner": "explore",
+      "proposed_destination": "explore",
+      "entry_path": "global ribbon",
+      "evidence_paths": [
+        "src/app/contracts.js",
+        "src/app/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap icon/active state/back",
+      "browser_verified": false
+    },
+    {
+      "id": "settings",
+      "kind": "UTILITY_ENTRY",
+      "current_status": "ROUTABLE_IN_SOURCE",
+      "canonical_owner": "settings",
+      "proposed_destination": "global-utility",
+      "entry_path": "Home settings icon",
+      "evidence_paths": [
+        "src/home/presentation.js",
+        "src/home/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Settings modal close and state",
+      "browser_verified": false
+    },
+    {
+      "id": "apostolate",
+      "kind": "FORMATION_BRIDGE",
+      "current_status": "ROUTABLE_IN_SOURCE",
+      "canonical_owner": "apostolate",
+      "proposed_destination": "learn",
+      "entry_path": "Formation > Apostolate",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "All six scenario families",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.catechism.daily",
+      "kind": "FORMATION_DONOR_DELEGATION",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "learn.catechism",
+      "proposed_destination": "learn",
+      "entry_path": "learn/foundations",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.catechism",
+      "kind": "FORMATION_DONOR_DELEGATION",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "catechism",
+      "proposed_destination": "learn",
+      "entry_path": "learn/foundations",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.spiritual_life",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "spiritual-life",
+      "proposed_destination": "learn",
+      "entry_path": "learn/spiritual-moral",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.sexual_ethics",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sexual-ethics",
+      "proposed_destination": "learn",
+      "entry_path": "learn/spiritual-moral",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.scapular",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "formation-devotional-guide",
+      "proposed_destination": "learn",
+      "entry_path": "learn/spiritual-moral",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.mass",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "mass-formation",
+      "proposed_destination": "learn",
+      "entry_path": "learn/liturgy-tradition",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.serve_mass.responses",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "mass-formation-practice",
+      "proposed_destination": "learn",
+      "entry_path": "learn/liturgy-tradition",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.sick",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "entry_path": "learn/sacraments-life",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.baptism",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "entry_path": "learn/sacraments-life",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.first_communion",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "entry_path": "learn/sacraments-life",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.confirmation",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "entry_path": "learn/sacraments-life",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.holy_orders",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "entry_path": "learn/sacraments-life",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.rites.matrimony",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "sacramental-formation",
+      "proposed_destination": "learn",
+      "entry_path": "learn/sacraments-life",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.latin",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "latin",
+      "proposed_destination": "learn",
+      "entry_path": "learn/latin",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.glossary",
+      "kind": "FORMATION_FAMILY_LAUNCHER",
+      "current_status": "LAUNCHER_DECLARED",
+      "canonical_owner": "glossary",
+      "proposed_destination": "reference-service",
+      "entry_path": "learn/reference",
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "src/learn/browser-entry.js",
+        "src/learn/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Open cold, loaded child, return focus",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.hub",
+      "kind": "PRAY_HOME",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray ribbon",
+      "evidence_paths": [
+        "src/pray/browser-entry.js",
+        "src/pray/presentation-runtime.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "First-use import",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.rosary",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.angelus_regina",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.angelus",
+      "kind": "COMPATIBILITY_ALIAS",
+      "current_status": "COMPATIBILITY_ALIAS",
+      "canonical_owner": "pray.angelus_regina",
+      "proposed_destination": "pray",
+      "entry_path": "Alternative ID to Angelus / Regina",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js"
+      ],
+      "source_trace_status": "INTENTIONAL_ALIAS",
+      "manual_probe": "Legacy redirect",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.confession",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.benediction",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.adoration",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.stations",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.visit_blessed_sacrament",
+      "kind": "NESTED_ADORATION",
+      "current_status": "REGISTRY_DECLARED_NOT_FAMILY",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > Eucharistic > Adoration & Visit",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js"
+      ],
+      "source_trace_status": "NESTED_NOT_ORPHAN_CONFIRMED_BY_SOURCE",
+      "manual_probe": "Visit submode opens correctly",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.library",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.litany_saints",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.seven_words",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.forty_hours",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.de_profundis",
+      "kind": "LIBRARY_OR_DIRECT",
+      "current_status": "REGISTRY_DECLARED_NOT_FAMILY",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > Library / registered direct",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/canonical-data.js"
+      ],
+      "source_trace_status": "LISTED_IN_LIBRARY_CORPUS_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Library search and exact prayer",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.eternal_rest",
+      "kind": "LIBRARY_OR_DIRECT",
+      "current_status": "REGISTRY_DECLARED_NOT_FAMILY",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > Library / registered direct",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/canonical-data.js"
+      ],
+      "source_trace_status": "LISTED_IN_LIBRARY_CORPUS_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Library search and exact prayer",
+      "browser_verified": false
+    },
+    {
+      "id": "programme.first_friday",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "prayer-programmes",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "programme.first_saturday",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "prayer-programmes",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.morning_evening",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.meal_prayers",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.nightly_examen",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.communion_treasury",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.novenas",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.sacred_heart",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.good_death",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "pray.dying_companion",
+      "kind": "PRAY_FAMILY_ITEM",
+      "current_status": "FAMILY_OR_HUB_DECLARED",
+      "canonical_owner": "pray",
+      "proposed_destination": "pray",
+      "entry_path": "Pray > pray/family",
+      "evidence_paths": [
+        "src/pray/presentation-runtime.js",
+        "src/pray/lazy-module-registry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Tap family/item; verify owner and return",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.tlm",
+      "kind": "EXPLORE_LENS",
+      "current_status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "mass-directory",
+      "proposed_destination": "explore",
+      "entry_path": "Explore > tlm",
+      "evidence_paths": [
+        "src/find/explore-projection.js",
+        "src/find/explore-presentation.js",
+        "src/find/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "List/map/filters and sources",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.shrines",
+      "kind": "EXPLORE_LENS",
+      "current_status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "entry_path": "Explore > shrines",
+      "evidence_paths": [
+        "src/find/explore-projection.js",
+        "src/find/explore-presentation.js",
+        "src/find/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "List/map/filters and sources",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.apparitions",
+      "kind": "EXPLORE_LENS",
+      "current_status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "entry_path": "Explore > apparitions",
+      "evidence_paths": [
+        "src/find/explore-projection.js",
+        "src/find/explore-presentation.js",
+        "src/find/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "List/map/filters and sources",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.relics",
+      "kind": "EXPLORE_LENS",
+      "current_status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "entry_path": "Explore > relics",
+      "evidence_paths": [
+        "src/find/explore-projection.js",
+        "src/find/explore-presentation.js",
+        "src/find/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "List/map/filters and sources",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.traditions",
+      "kind": "EXPLORE_LENS",
+      "current_status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "customs-atlas",
+      "proposed_destination": "explore",
+      "entry_path": "Explore > traditions",
+      "evidence_paths": [
+        "src/find/explore-projection.js",
+        "src/find/explore-presentation.js",
+        "src/find/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "List/map/filters and sources",
+      "browser_verified": false
+    },
+    {
+      "id": "explore.lens.pilgrimages",
+      "kind": "EXPLORE_LENS",
+      "current_status": "LIVE_LENS_DECLARED",
+      "canonical_owner": "sacred-geography",
+      "proposed_destination": "explore",
+      "entry_path": "Explore > pilgrimages",
+      "evidence_paths": [
+        "src/find/explore-projection.js",
+        "src/find/explore-presentation.js",
+        "src/find/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "List/map/filters and sources",
+      "browser_verified": false
+    },
+    {
+      "id": "scripture",
+      "kind": "SCRIPTURE_CONTEXT",
+      "current_status": "CONTEXTUAL_OR_COMPATIBILITY",
+      "canonical_owner": "scripture",
+      "proposed_destination": "reference-service",
+      "entry_path": "Home Scripture / contextual capsules",
+      "evidence_paths": [
+        "src/scripture/browser-entry.js",
+        "src/home/presentation.js"
+      ],
+      "source_trace_status": "READER_ENTRY_PRESENT_TEXT_PARTIALLY_GATED",
+      "manual_probe": "Contextual passage and full-text fallback",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.apologetics",
+      "kind": "UNPUBLISHED_HOLD",
+      "current_status": "PUBLICATION_GATED",
+      "canonical_owner": "apologetics",
+      "proposed_destination": "learn",
+      "entry_path": null,
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "data/learn/content-ownership-registry.v1.json"
+      ],
+      "source_trace_status": "INTENTIONALLY_NO_PUBLIC_LAUNCHER",
+      "manual_probe": "Certify source paragraphs and French before publishing",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.church_crisis",
+      "kind": "UNPUBLISHED_HOLD",
+      "current_status": "PUBLICATION_GATED",
+      "canonical_owner": "church-crisis",
+      "proposed_destination": "learn",
+      "entry_path": null,
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "data/learn/content-ownership-registry.v1.json"
+      ],
+      "source_trace_status": "INTENTIONALLY_NO_PUBLIC_LAUNCHER",
+      "manual_probe": "Certify source paragraphs and French before publishing",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.catholic_life",
+      "kind": "RETIRED",
+      "current_status": "RETIRED_OR_ALIAS",
+      "canonical_owner": "none",
+      "proposed_destination": "none",
+      "entry_path": null,
+      "evidence_paths": [
+        "src/learn/presentation.js",
+        "data/learn/content-ownership-registry.v1.json"
+      ],
+      "source_trace_status": "INTENTIONALLY_RETIRED",
+      "manual_probe": "Keep owners split",
+      "browser_verified": false
+    },
+    {
+      "id": "learn.seasonal_rites",
+      "kind": "COMPATIBILITY_CALENDAR",
+      "current_status": "RETIRED_OR_ALIAS",
+      "canonical_owner": "none",
+      "proposed_destination": "none",
+      "entry_path": null,
+      "evidence_paths": [
+        "src/learn/traditional-life.js",
+        "data/learn/content-ownership-registry.v1.json"
+      ],
+      "source_trace_status": "COMPATIBILITY_ONLY",
+      "manual_probe": "Old route to Calendar",
+      "browser_verified": false
+    },
+    {
+      "id": "today.calendar",
+      "kind": "CALENDAR_ALIAS",
+      "current_status": "CONTEXTUAL_OR_COMPATIBILITY",
+      "canonical_owner": "calendar",
+      "proposed_destination": "today",
+      "entry_path": "Home date and Coming Up",
+      "evidence_paths": [
+        "src/app/contracts.js",
+        "src/home/browser-entry.js"
+      ],
+      "source_trace_status": "DECLARED_NOT_BROWSER_VERIFIED",
+      "manual_probe": "Date select and Calendar entry",
+      "browser_verified": false
+    }
+  ],
+  "kind_entry_points": [
+    {
+      "kind": "prayer",
+      "entry_route": "pray.library",
+      "mode": "PRAYER_LIBRARY_ENTRY",
+      "proposed_destination": "pray",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "novena",
+      "entry_route": "pray.novenas",
+      "mode": "DEVOTION_ENTRY",
+      "proposed_destination": "pray",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "devotional-programme",
+      "entry_route": "programme.first_friday|programme.first_saturday",
+      "mode": "SOT_REGISTERED_PROGRAMME",
+      "proposed_destination": "pray",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "rosary-mystery",
+      "entry_route": "pray.rosary",
+      "mode": "NESTED_IN_EXPERIENCE",
+      "proposed_destination": "pray",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "stations-stage",
+      "entry_route": "pray.stations",
+      "mode": "NESTED_IN_EXPERIENCE",
+      "proposed_destination": "pray",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "apologetics-dossier",
+      "entry_route": null,
+      "mode": "UNPUBLISHED_NO_LAUNCHER",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": true
+    },
+    {
+      "kind": "church-crisis-dossier",
+      "entry_route": null,
+      "mode": "UNPUBLISHED_NO_LAUNCHER",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": true
+    },
+    {
+      "kind": "catechism-question-witness",
+      "entry_route": "learn.catechism",
+      "mode": "SOURCE_WITNESS_INDEX_NOT_RENDER_CONFIRMATION",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "learn-faith-archival-lesson",
+      "entry_route": null,
+      "mode": "UNPUBLISHED_RESEARCH",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": true
+    },
+    {
+      "kind": "learn-faith-order-candidate",
+      "entry_route": null,
+      "mode": "UNPUBLISHED_CANDIDATE_VARIANT",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": true
+    },
+    {
+      "kind": "formation-research-evidence",
+      "entry_route": null,
+      "mode": "NONPUBLIC_EDITORIAL_EVIDENCE",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": true
+    },
+    {
+      "kind": "spiritual-life-lesson",
+      "entry_route": "learn.spiritual_life",
+      "mode": "COURSE_MODULE",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "latin-lesson",
+      "entry_route": "learn.latin",
+      "mode": "COURSE_MODULE",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "sexual-ethics-question",
+      "entry_route": "learn.sexual_ethics",
+      "mode": "QUESTIONS_SEARCH",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "sexual-ethics-topic",
+      "entry_route": "learn.sexual_ethics",
+      "mode": "BROWSE_PROJECTION",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "sexual-ethics-debate",
+      "entry_route": "learn.sexual_ethics",
+      "mode": "EXPANDED_QUESTION_READER",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "glossary-concept",
+      "entry_route": "learn.glossary",
+      "mode": "REFERENCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "latin-lexeme",
+      "entry_route": "learn.glossary",
+      "mode": "REFERENCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "latin-phrase",
+      "entry_route": "learn.glossary",
+      "mode": "REFERENCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "glossary-bibliographical-source",
+      "entry_route": "learn.glossary",
+      "mode": "CONTEXTUAL_SOURCE_LOOKUP",
+      "proposed_destination": "reference-service",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "scripture-edition",
+      "entry_route": "scripture",
+      "mode": "CATALOGUE_ONLY_TEXT_DISABLED",
+      "proposed_destination": "reference-service",
+      "individually_browser_verified": false,
+      "restrict_publication": true
+    },
+    {
+      "kind": "geo-area",
+      "entry_route": "find",
+      "mode": "MAP_FILTER_INFRASTRUCTURE",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "place",
+      "entry_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "place-directory-link",
+      "entry_route": "find",
+      "mode": "VENUE_PLACE_RELATIONSHIP",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "shrine",
+      "entry_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "pilgrimage",
+      "entry_route": "find",
+      "mode": "PILGRIMAGE_LENS",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "pilgrimage-route",
+      "entry_route": "find",
+      "mode": "PILGRIMAGE_LENS",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "temporal-link",
+      "entry_route": "find|calendar",
+      "mode": "CALENDAR_EXPLORE_HANDOFF",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "apparition",
+      "entry_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "relic",
+      "entry_route": "find",
+      "mode": "SACRED_PLACE_PROFILE",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "custom",
+      "entry_route": "find",
+      "mode": "TRADITIONS_LENS",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "custom-attestation",
+      "entry_route": "find",
+      "mode": "EVIDENCE_CONTEXT",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "shrine-bibliographical-source",
+      "entry_route": "find",
+      "mode": "CONTEXTUAL_SOURCE_LOOKUP",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "custom-bibliographical-source",
+      "entry_route": "find",
+      "mode": "CONTEXTUAL_SOURCE_LOOKUP",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "apostolate-scenario",
+      "entry_route": "apostolate",
+      "mode": "SCENARIO_READER",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "apostolate-skill",
+      "entry_route": "apostolate",
+      "mode": "PRACTICE_SUPPORT",
+      "proposed_destination": "learn",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "provider-venue-evidence",
+      "entry_route": "find",
+      "mode": "DIRECTORY_PROVIDER_EVIDENCE_UNVERIFIED",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "community",
+      "entry_route": "find",
+      "mode": "DIRECTORY_FILTER_REFERENCE",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    },
+    {
+      "kind": "directory-bibliographical-source",
+      "entry_route": "find",
+      "mode": "DIRECTORY_SOURCE_REFERENCE",
+      "proposed_destination": "explore",
+      "individually_browser_verified": false,
+      "restrict_publication": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "RCH-001",
+      "severity": "P1",
+      "type": "INTENTIONAL_HOLD",
+      "summary": "60 APOL and 81 Church Crisis dossiers are not public. Do not mistake this for broken navigation.",
+      "module": "learn",
+      "action": "Publish only after paragraph source and bilingual approvals"
+    },
+    {
+      "id": "RCH-002",
+      "severity": "P1",
+      "type": "EDITION_GATE",
+      "summary": "Bible reader and contextual access exist; four catalogued editions remain disabled for local text.",
+      "module": "scripture",
+      "action": "Certify editions and show honest external-source fallback"
+    },
+    {
+      "id": "RCH-003",
+      "severity": "P1",
+      "type": "INCOMPLETE_DIRECTORY",
+      "summary": "Selected provider rows are not a verified worldwide deduplicated Mass directory.",
+      "module": "explore",
+      "action": "Use source-first venue/schedule matrix"
+    },
+    {
+      "id": "RCH-004",
+      "severity": "P2",
+      "type": "CONDITIONAL_ROUTE_MISMATCH",
+      "summary": "Home openRoute fallback may send a failed requested Prayer module to generic Prayer hub, obscuring target failure.",
+      "module": "home",
+      "action": "Retain requested ID and explicit error/retry with owning Home pipeline",
+      "normal_path_defect_confirmed": false,
+      "current_resolution": {
+        "status": "REMEDIATED_ON_MAIN",
+        "pr_number": 766,
+        "merge_commit": "0ece75a5174d5ed2b55c7eb3b38530276c68971d",
+        "checks_completed": [
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "notes": "Exact prayer fallback and visible EN/FR retry merged; original risk remains as historical audit finding."
+      }
+    },
+    {
+      "id": "RCH-005",
+      "severity": "P2",
+      "type": "NESTED_NOT_MISSING",
+      "summary": "Visit Blessed Sacrament, De profundis, Eternal Rest and Angelus alias are registered/nested without independent family cards.",
+      "module": "pray",
+      "action": "Verify actual reachability; do not add duplicate launcher cards"
+    },
+    {
+      "id": "RCH-006",
+      "severity": "P2",
+      "type": "DONOR_DELEGATION",
+      "summary": "Catechism and Daily Catechism use legacy owner delegation, other Learn modules use first-use imports.",
+      "module": "learn",
+      "action": "Verify all 15 launchers on phones"
+    },
+    {
+      "id": "RCH-007",
+      "severity": "P2",
+      "type": "PROJECTION_NOT_PROOF",
+      "summary": "Six Explore lenses project data, but loaded-place relationship integrity does not verify display of each item.",
+      "module": "explore",
+      "action": "Check exact lens counts against rendered list and map"
+    },
+    {
+      "id": "RCH-008",
+      "severity": "P2",
+      "type": "CROSS_MODULE_STATE",
+      "summary": "Independent owners implement return/focus flows; exact state/scroll position across every handoff is unverified.",
+      "module": "shared",
+      "action": "Phone EN/FR handoff/back testing"
+    },
+    {
+      "id": "RCH-009",
+      "severity": "P2",
+      "type": "GATED_EDITORIAL_PREVIEW",
+      "summary": "Learn the Faith 54 archival lessons and 55 candidate order are not public separate courses.",
+      "module": "catechism",
+      "action": "Preserve one Catechism owner and complete source-claim gate"
+    },
+    {
+      "id": "RCH-010",
+      "severity": "P2",
+      "type": "PROPOSED_ONLY",
+      "summary": "Five-destination Today + Calendar consolidation has not been user-accepted.",
+      "module": "shell",
+      "action": "Prove Calendar is one-tap discoverable before shipping"
+    },
+    {
+      "id": "RCH-011",
+      "severity": "P2",
+      "type": "SOURCE_LEVEL_ORPHANED_PLACE_PROFILE",
+      "summary": "Two geographic Place objects are built into place profiles but have no relationship to any Explore-lens items, directory-place links or novena-context links; source-level path lacks a linked lens result to enter these profiles.",
+      "module": "explore",
+      "action": "Verify local relationship to nearby primary shrine/chapel and add a sourced relationship or appropriate location discovery entry; retain independent Place IDs, do not invent coordinates or mass schedules.",
+      "records": [
+        {
+          "place_id": "place:DE:kevelaer-kerzenkapelle",
+          "title": "Kerzenkapelle Kevelaer",
+          "city": "Kevelaer, Germany",
+          "candidate_related_place_id": "place:DE:kevelaer-gnadenkapelle",
+          "relationship_status": "NOT_VERIFIED",
+          "site_name_similarity_only": true,
+          "geometry_status": "NO_PIN_COORDINATES"
+        },
+        {
+          "place_id": "place:GB:holywell-st-winefride-church",
+          "title": "St Winefride's RC Church, Holywell",
+          "city": "Holywell, Wales",
+          "candidate_related_place_id": "place:GB:holywell-st-winefride",
+          "relationship_status": "NOT_VERIFIED",
+          "site_name_similarity_only": true,
+          "geometry_status": "NO_PIN_COORDINATES"
+        }
+      ],
+      "normal_browser_unreachable_proven": false,
+      "current_resolution": {
+        "status": "REMEDIATED_ON_MAIN",
+        "pr_number": 765,
+        "merge_commit": "2b0480a192796c8fc94ecc8d9af68f3db47edf5d",
+        "checks_completed": [
+          "directory-contract",
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "notes": "Both formerly unlinked Place identities now have explicit, sourced bidirectional related-place links and discoverability via the associated Shrine search; they remain distinct, address-geocoded sites with no coordinate substitution."
+      }
+    }
+  ],
+  "summary": {
+    "categories": {
+      "NAV_DESTINATION": 6,
+      "UTILITY_ENTRY": 1,
+      "FORMATION_BRIDGE": 1,
+      "FORMATION_DONOR_DELEGATION": 2,
+      "FORMATION_FAMILY_LAUNCHER": 13,
+      "PRAY_HOME": 1,
+      "PRAY_FAMILY_ITEM": 23,
+      "COMPATIBILITY_ALIAS": 1,
+      "NESTED_ADORATION": 1,
+      "LIBRARY_OR_DIRECT": 2,
+      "EXPLORE_LENS": 6,
+      "SCRIPTURE_CONTEXT": 1,
+      "UNPUBLISHED_HOLD": 2,
+      "RETIRED": 1,
+      "COMPATIBILITY_CALENDAR": 1,
+      "CALENDAR_ALIAS": 1
+    },
+    "confirmed_unreachable_public_items": 0,
+    "intentionally_unpublished_dossier_navigation": 2,
+    "conditionally_risky_home_fallbacks": 1,
+    "required_manual_acceptance": true,
+    "geographical_place_profiles_without_source_lens_relationships": 2,
+    "geographical_place_profile_count": 181,
+    "geographical_place_profiles_with_known_lens_relationship": 179,
+    "source_level_orphan_place_records": 0,
+    "geographical_place_ids_individually_browser_verified": 0,
+    "geographical_place_profiles_with_related_place_discovery": 181,
+    "source_level_orphan_place_records_at_baseline": 2,
+    "conditional_home_fallbacks_current": 0
+  },
+  "acceptance_to_run": [
+    "Six global ribbon routes under cold/return/error",
+    "All 15 Learn launcher children including donor owner fallback",
+    "Each Prayer family, novenas, Rosary, Library all texts, three registered nested/direct views",
+    "Explore six lenses and place profile/data count parity",
+    "Scripture contexts/edition rights and no false installed text claim",
+    "Home→Calendar date; Calendar→Novena; Explore→Prayer; Prayer→Bible→same place",
+    "English/French phone keyboard and touch, offline/error and source link accessibility"
+  ],
+  "orphaned_place_profile_candidates": [
+    {
+      "place_id": "place:DE:kevelaer-kerzenkapelle",
+      "title": "Kerzenkapelle Kevelaer",
+      "city": "Kevelaer, Germany",
+      "candidate_related_place_id": "place:DE:kevelaer-gnadenkapelle",
+      "relationship_status": "VERIFIED_ON_MAIN",
+      "site_name_similarity_only": false,
+      "geometry_status": "NO_PIN_COORDINATES",
+      "current_resolution": "DISCOVERABLE_VIA_VERIFIED_RELATED_PLACE",
+      "relation_verified_in": "data/geography/related-places.v1.json"
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride-church",
+      "title": "St Winefride's RC Church, Holywell",
+      "city": "Holywell, Wales",
+      "candidate_related_place_id": "place:GB:holywell-st-winefride",
+      "relationship_status": "VERIFIED_ON_MAIN",
+      "site_name_similarity_only": false,
+      "geometry_status": "NO_PIN_COORDINATES",
+      "current_resolution": "DISCOVERABLE_VIA_VERIFIED_RELATED_PLACE",
+      "relation_verified_in": "data/geography/related-places.v1.json"
+    }
+  ],
+  "post_audit_release_reconciliation": {
+    "date": "2026-10-09",
+    "latest_main_after_fixes": "0ece75a5174d5ed2b55c7eb3b38530276c68971d",
+    "resolved_findings": [
+      {
+        "finding": "RCH-004",
+        "pr": 766,
+        "sha": "0ece75a5174d5ed2b55c7eb3b38530276c68971d",
+        "status": "REMEDIATED_ON_MAIN",
+        "test": [
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "note": "Exact prayer fallback and visible EN/FR retry merged; original risk remains as historical audit finding."
+      },
+      {
+        "finding": "RCH-011",
+        "pr": 765,
+        "sha": "2b0480a192796c8fc94ecc8d9af68f3db47edf5d",
+        "status": "REMEDIATED_ON_MAIN",
+        "test": [
+          "directory-contract",
+          "app-shell-contract",
+          "app-shell-phone",
+          "capture"
+        ],
+        "note": "Both formerly unlinked Place identities now have explicit, sourced bidirectional related-place links and discoverability via the associated Shrine search; they remain distinct, address-geocoded sites with no coordinate substitution."
+      }
+    ],
+    "baseline_source_level_coverage_preserved": true
+  }
+}
