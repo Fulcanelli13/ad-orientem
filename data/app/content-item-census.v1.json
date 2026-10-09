@@ -1,0 +1,371 @@
+{
+  "schema": "AO_CONTENT_ITEM_CENSUS_INDEX_V1",
+  "version": "1.0.0",
+  "compiled_date": "2026-10-09",
+  "branch": "architecture/content-navigation-registry-20261009",
+  "source_state": "GITHUB_MAIN_SOURCES_CAPTURED_IN_BATCHES_NOT_ATOMIC_COMMIT",
+  "status": "INTERNAL_CENSUS_NOT_PUBLICATION",
+  "completeness": "PARTIAL_APP_WIDE_ITEM_CENSUS",
+  "total_index_identifiers": 3849,
+  "explanation": "Records include primary content, alternate navigational topic projections, metadata-only editions, historical witnesses, unpublished drafts, evidence attachments, geographic associations, provider rows and source registries. The number is NOT a count of unique published app modules, doctrines, articles, Mass sites, prayers or screens.",
+  "shards": [
+    {
+      "name": "pray",
+      "path": "data/app/content-items-pray.v1.json",
+      "count": 100,
+      "complete": true,
+      "subtypes": [
+        {
+          "kind": "prayer",
+          "count": 48
+        },
+        {
+          "kind": "novena",
+          "count": 16
+        },
+        {
+          "kind": "devotional-programme",
+          "count": 2
+        },
+        {
+          "kind": "stations-stage",
+          "count": 14
+        },
+        {
+          "kind": "rosary-mystery",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "name": "formation",
+      "path": "data/app/content-items-formation.v1.json",
+      "count": 860,
+      "complete": true,
+      "subtypes": [
+        {
+          "kind": "apologetics-dossier",
+          "count": 60
+        },
+        {
+          "kind": "church-crisis-dossier",
+          "count": 81
+        },
+        {
+          "kind": "catechism-question-witness",
+          "count": 433
+        },
+        {
+          "kind": "learn-faith-archival-lesson",
+          "count": 54
+        },
+        {
+          "kind": "learn-faith-order-candidate",
+          "count": 55
+        },
+        {
+          "kind": "formation-research-evidence",
+          "count": 123
+        },
+        {
+          "kind": "spiritual-life-lesson",
+          "count": 14
+        },
+        {
+          "kind": "latin-lesson",
+          "count": 40
+        }
+      ]
+    },
+    {
+      "name": "sexual-ethics",
+      "path": "data/app/content-items-sexual-ethics.v1.json",
+      "count": 255,
+      "complete": true,
+      "subtypes": [
+        {
+          "kind": "sexual-ethics-topic",
+          "count": 50
+        },
+        {
+          "kind": "sexual-ethics-question",
+          "count": 150
+        },
+        {
+          "kind": "sexual-ethics-debate",
+          "count": 55
+        }
+      ]
+    },
+    {
+      "name": "reference",
+      "path": "data/app/content-items-reference.v1.json",
+      "count": 1030,
+      "complete": true,
+      "subtypes": [
+        {
+          "kind": "glossary-concept",
+          "count": 450
+        },
+        {
+          "kind": "latin-lexeme",
+          "count": 350
+        },
+        {
+          "kind": "latin-phrase",
+          "count": 80
+        },
+        {
+          "kind": "glossary-bibliographical-source",
+          "count": 146
+        },
+        {
+          "kind": "scripture-edition",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "explore",
+      "path": "data/app/content-items-explore.v1.json",
+      "count": 1282,
+      "complete": true,
+      "subtypes": [
+        {
+          "kind": "geo-area",
+          "count": 41
+        },
+        {
+          "kind": "place",
+          "count": 181
+        },
+        {
+          "kind": "place-directory-link",
+          "count": 9
+        },
+        {
+          "kind": "shrine",
+          "count": 177
+        },
+        {
+          "kind": "pilgrimage",
+          "count": 205
+        },
+        {
+          "kind": "pilgrimage-route",
+          "count": 20
+        },
+        {
+          "kind": "temporal-link",
+          "count": 77
+        },
+        {
+          "kind": "apparition",
+          "count": 32
+        },
+        {
+          "kind": "relic",
+          "count": 121
+        },
+        {
+          "kind": "custom",
+          "count": 13
+        },
+        {
+          "kind": "custom-attestation",
+          "count": 71
+        },
+        {
+          "kind": "shrine-bibliographical-source",
+          "count": 260
+        },
+        {
+          "kind": "custom-bibliographical-source",
+          "count": 75
+        }
+      ]
+    },
+    {
+      "name": "apostolate",
+      "path": "data/app/content-items-apostolate.v1.json",
+      "count": 45,
+      "complete": true,
+      "subtypes": [
+        {
+          "kind": "apostolate-scenario",
+          "count": 36
+        },
+        {
+          "kind": "apostolate-skill",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "name": "directory-partial",
+      "path": "data/app/content-items-directory-partial.v1.json",
+      "count": 277,
+      "complete": false,
+      "subtypes": [
+        {
+          "kind": "provider-venue-evidence",
+          "count": 243
+        },
+        {
+          "kind": "community",
+          "count": 20
+        },
+        {
+          "kind": "directory-bibliographical-source",
+          "count": 14
+        }
+      ]
+    }
+  ],
+  "key_crosswalks": {
+    "canonical_APOL_CR_dossiers": 141,
+    "indexed_research_records": 123,
+    "distinct_APOL_CR_dossiers_with_research_links_in_this_ledger": 53,
+    "canonical_APOL_CR_dossiers_without_links_in_this_ledger": 88,
+    "research_records_with_explicit_other_owner": [
+      {
+        "id": "research:private-revelation",
+        "owner": "learn.catechism"
+      },
+      {
+        "id": "research:yoga-reiki",
+        "owner": "learn.catechism"
+      },
+      {
+        "id": "research:organ-donation",
+        "owner": "learn.catechism"
+      },
+      {
+        "id": "research:cremation",
+        "owner": "learn.rites.sick"
+      }
+    ],
+    "catechism_english_witness_question_count": 433,
+    "archival_learn_the_faith_lessons": 54,
+    "proposed_learn_the_faith_order_candidates": 55,
+    "all_CSE_questions_have_topic": true,
+    "explore_core_relationship_orphans": {
+      "shrine_places": 0,
+      "relic_places": 0,
+      "apparition_places": 0,
+      "pilgrimage_shrines": 0,
+      "custom_attestations": 0
+    },
+    "canonical_geographical_places": 181,
+    "directory_provider_rows_included": 243,
+    "directory_globally_deduplicated": false,
+    "scripture_editions_with_enabled_full_text": 0
+  },
+  "publication_guardrails": [
+    "Do not turn metadata witnesses or draft prose into approved public texts.",
+    "A canonical content record may have multiple indexes, pathways, variants and source records without constituting additional content.",
+    "Do not publish source-uncertified APOL or Church Crisis dossiers.",
+    "Do not treat canonical venue provider rows as globally unique verified Mass sites.",
+    "Do not import relic publications again when place/shrine/relic IDs already exist in the app seeds.",
+    "Traditional Rosary mysteries are fifteen; luminous mysteries are an optional later addition, not an original part of the traditional cycle.",
+    "Do not claim one of four disabled Bible text editions is installed simply because its catalogue entry exists.",
+    "Do not rewrite Mass, Calendar or Pray runtime from the inventory."
+  ],
+  "recovery_queue": [
+    {
+      "id": "REC-01",
+      "priority": "P1",
+      "owner": "formation",
+      "finding": "88 canonical APOL/CR dossier IDs lack a link in the specific 123-record research ledger",
+      "next": "For each, search other approved provenance and original documents; classify unmapped, not empty; source-certify before publish."
+    },
+    {
+      "id": "REC-02",
+      "priority": "P1",
+      "owner": "catechism",
+      "finding": "54 recovered archival lessons and 55 proposed ordering records overlap; different source/claim baselines",
+      "next": "Finish original text and claim-level reconciliation under single Catechism owner; keep editorial previews gated."
+    },
+    {
+      "id": "REC-03",
+      "priority": "P1",
+      "owner": "scripture",
+      "finding": "Four catalogue editions are disabled for local full-text rendering",
+      "next": "Resolve source, reproduction rights, chapter/verse collation and bilingual/Latin status before activation; provide explicit external source fallback."
+    },
+    {
+      "id": "REC-04",
+      "priority": "P1",
+      "owner": "mass-directory",
+      "finding": "Provider-level rows are not one worldwide deduplicated Mass register; large FSSP feed excluded",
+      "next": "Use independent Mass-directory source/venue research matrix; adjudicate duplicates, sources, schedules and coordinates, then publish canonical IDs."
+    },
+    {
+      "id": "REC-05",
+      "priority": "P2",
+      "owner": "sexual-ethics",
+      "finding": "150 questions share 50 browse topics and 55 advanced debate overlays",
+      "next": "Retain complete search and concise QA; make deep debates optional, independently verify source paragraphs."
+    },
+    {
+      "id": "REC-06",
+      "priority": "P2",
+      "owner": "explore",
+      "finding": "Seed records have consistent place/shrine/relic/custom links; many records are associations rather than destinations",
+      "next": "Use one place detail page with linked phenomena, routes and devotions; protect authenticity/access warnings."
+    },
+    {
+      "id": "REC-07",
+      "priority": "P2",
+      "owner": "pray",
+      "finding": "48 core prayers, 16 novenas, 14 Stations and traditional/luminous Rosary items are registered",
+      "next": "Review actual reachability and duplicate visual presentation in Prayer audit; avoid promoting more navigation cards."
+    },
+    {
+      "id": "REC-08",
+      "priority": "P2",
+      "owner": "reference",
+      "finding": "450 concepts, 350 Latin lexemes and 80 phrases are indexed; source registries are separate witnesses",
+      "next": "Provide universal contextual lookup and verify exact source passage links; do not duplicate definitions in each lesson."
+    },
+    {
+      "id": "REC-09",
+      "priority": "P2",
+      "owner": "global-shell",
+      "finding": "Source inventory cannot decide what is genuinely unreachable until rendered route testing",
+      "next": "Complete mobile EN/FR deep-link, search and return-to-origin acceptance before retiring or adding global tabs."
+    },
+    {
+      "id": "REC-10",
+      "priority": "P2",
+      "owner": "mass-calendar",
+      "finding": "Dynamic liturgical dates, Propers and reader cue events cannot be inferred from static leaf corpus counts",
+      "next": "Reconcile dedicated Mass and Calendar audit outputs by canonical ID, including the R17 48-card reference without reviving legacy code."
+    }
+  ],
+  "missing_coverage": [
+    {
+      "scope": "Complete Mass directory canonical venue-by-venue records, FSSP original >1MB, SSPX provider historic overlays",
+      "reason": "Separate global matrix and source-validation pipeline required; partial provider rows are evidence only."
+    },
+    {
+      "scope": "All individual Mass proper texts, reader cue events and 1962 calendar year/date projections",
+      "reason": "Dynamic domain engines under independent Mass/Calendar audits, not safe to enumerate as static unrelated content."
+    },
+    {
+      "scope": "All historical branches and source documents not already represented in checked registries",
+      "reason": "Current-main census is not a full repository history or connected conversation provenance search."
+    },
+    {
+      "scope": "Actual user-facing navigation reachability, mobile behavior and published-source accuracy",
+      "reason": "Requires rendered app acceptance and independent claim-level editorial verification."
+    }
+  ],
+  "test_status": {
+    "connector_cross_shard_integrity": "PASS",
+    "node_contract_test": "CREATED_NOT_EXECUTED",
+    "phone_acceptance": "NOT_PERFORMED",
+    "editorial_source_certification": "NOT_PERFORMED"
+  },
+  "code_change_policy": "None of these records changes the production app. Treat navigation proposal as an unapproved migration until the 5-destination UX has passed phone acceptance."
+}
