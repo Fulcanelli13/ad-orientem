@@ -43,7 +43,7 @@ jobs:
           node-version: 22
       - name: Install source reader and browser
         run: |
-          npm ci
+          npm install --no-save --no-package-lock --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Offline parser and provenance regression
         run: |
@@ -53,7 +53,7 @@ jobs:
         env:
           COUNTRY_CODES: ${{ github.event_name == 'workflow_dispatch' && inputs.countries || 'all' }}
           PAGE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.max_pages || '200' }}
-          DETAIL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.max_details || '0' }}
+          DETAIL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.max_details || '25' }}
         run: |
           mkdir -p out/source-discovery
           node tools/directory/discover-approved-mass-worldwide.mjs \
