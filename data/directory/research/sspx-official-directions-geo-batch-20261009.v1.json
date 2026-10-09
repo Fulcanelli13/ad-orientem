@@ -4,11 +4,11 @@
   "purpose": "Existing SSPX 336 approved map overlays preserved; geo enrichment of 20 additional already-registered physical Mass sites plus 3 independent new Sunday-Mass sites. Each GPS pair transcribed from exact official place page's directions destination, not generated from city lookup.",
   "source_method": "https://map.fsspx.org/de/places/<slug> -> Route -> maps/dir/?api=1&destination=<lat>,<lng>",
   "old_approved_sspx_map_coordinates": 350,
-  "added_existing_sspx_mass_site_coordinates": 20,
-  "added_new_venue_coordinates": 3,
+  "added_existing_sspx_mass_site_coordinates": 21,
+  "added_new_venue_coordinates": 2,
   "total_sspx_map_coordinates": 373,
-  "current_sspx_mass_venues": 614,
-  "not_yet_geolocated": 241,
+  "current_sspx_mass_venues": 613,
+  "not_yet_geolocated": 240,
   "precision_counts": {
     "address": 22,
     "locality": 1
@@ -249,14 +249,17 @@
       "previously_registered": false
     },
     {
-      "venue_id": "ao-research-sspx-official-route-oct26-20261009-sspx-sspxmap-20261009-fr-le-laus-nd-rosaire",
+      "venue_id": "ao-research-sspx-france-first-party-sspx-lpl-montgardin-le-laus",
       "official_place_slug": "chapelle-notre-dame-du-rosaire",
       "source_url": "https://map.fsspx.org/de/places/chapelle-notre-dame-du-rosaire",
       "country_code": "FR",
       "latitude": 44.521546,
       "longitude": 6.1537492,
       "precision": "address",
-      "previously_registered": false
+      "previously_registered": true,
+      "canonical_owner_corrected_on": "2026-10-09",
+      "duplicate_registration_prevented": "SSPX-SSPXMAP-20261009-FR-LE-LAUS-ND-ROSAIRE"
     }
-  ]
+  ],
+  "corrected_record_ownership": "Le Laus is the pre-existing French SSPX chapel, so the source URL and coordinate remain but the separately added physical chapel is removed; this record was originally misclassified in PR #541."
 }
