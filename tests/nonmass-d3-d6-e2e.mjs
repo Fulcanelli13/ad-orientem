@@ -27,7 +27,6 @@ try{
   await page.goto("http://127.0.0.1:4176/index.html",{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>
     globalThis.AO_NON_MASS_D3_D6_CONVERGENCE?.status?.().d6==="integrated-on-modular-settings" &&
-    typeof globalThis.AO_PRAY_V435930?.open==="function" &&
     typeof globalThis.AO_PRAY_APP_V1?.open==="function",
     null,{timeout:30000}
   );
@@ -55,6 +54,11 @@ try{
 
   assert.notEqual((await page.evaluate(async()=>globalThis.AO_APP_SHELL_V1?.navigate?.("pray")))?.ok,false);
   await page.waitForSelector("#aoPray435930.open",{timeout:15000});
+  await page.waitForFunction(()=>
+    typeof globalThis.AO_PRAY_V435930?.open==="function" &&
+    globalThis.AO_PRAY_APP_V1?.status?.().readerLoaded===true,
+    null,{timeout:10000}
+  );
   const owner=await page.evaluate(()=>({
     route:document.documentElement.dataset.aoPrayRouteOwner??null,
     visible:document.getElementById("aoPray435930")?.dataset?.aoPrayOwner??null,
