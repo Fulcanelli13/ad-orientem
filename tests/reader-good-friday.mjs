@@ -114,4 +114,31 @@ ctrl.next();
 assert.equal(ctrl.project().step.recordId,"GF-PASS-330");
 assert.equal(ctrl.project().posture,"STAND");
 
+const venerate=createGoodFridayReaderController({graph,payload});
+venerate.goToRecord("GF-VEN-600");
+const personalSequence=[
+  ["GF-VEN-600","WAITING",null],
+  ["GF-VEN-610","APPROACHING","APPROACH_CROSS"],
+  ["GF-VEN-620","GENUFLECTING","ONE_SIMPLE_GENUFLECTION"],
+  ["GF-VEN-630","VENERATING","KISS_OR_VENERATE_CROSS"],
+  ["GF-VEN-640","COMPLETE","RETURN_TO_PLACE"],
+];
+for(const [i,[id,personalState,action]] of personalSequence.entries()){
+  const state=venerate.project();
+  assert.equal(state.step.recordId,id,"personal Cross state advanced from unrelated hymn text");
+  assert.equal(state.personalState,personalState);
+  assert.equal(state.action,action);
+  assert.equal(state.personalOnly,true);
+  assert.equal(state.card.id,"CROSS_VENERATION");
+  if(i<personalSequence.length-1)venerate.next();
+}
+venerate.next();
+assert.equal(venerate.project().step.recordId,"GF-X-700",
+  "personal Cross veneration was not completed before altar replacement");
+const noPersonal=createGoodFridayReaderController({graph,payload,venerationMode:"CORPORATE_SILENT"});
+assert.equal(noPersonal.goToRecord("GF-VEN-620").step.recordId,"GF-OPEN-010",
+  "corporate silent mode manufactured a personal genuflection state");
+noPersonal.goToRecord("GF-VEN-650");
+assert.equal(noPersonal.project().action,"SILENT_ADORATION_FROM_PLACE");
+
 console.log("Good Friday distinct rite: PASS — 56-state graph, Passion death pause, nine Solemn Prayers, three unveilings, personal veneration/Communion and 1962 prayer policy.");
