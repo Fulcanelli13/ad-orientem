@@ -21,7 +21,8 @@
       "id": "VATICAN_I_DEI_FILIUS",
       "title": "First Vatican Council — Dei Filius",
       "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html",
-      "verification": "Chapters II–IV and the corresponding canons checked for the reason/revelation/faith claims in LTF-002, LTF-003 and LTF-005."
+      "verification": "Chapters II–IV and the corresponding canons checked for the reason/revelation/faith claims in LTF-002, LTF-003 and LTF-005.",
+      "originalLatinUrl": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html"
     }
   ],
   "batchFindings": {
@@ -36,7 +37,18 @@
       "LTF-012/013/014/015: separate Christological identity, Incarnation, Redemption, and Resurrection/Ascension instead of repeating the same Q76–94 block.",
       "LTF-018: remove Q124–130 ecclesial-status catalogue from the Communion of Saints lesson."
     ],
-    "partialLessonResolution": "LTF-016 expanded with PXQ106 and PXQ115 for a Creed-level account of the Holy Ghost's life-giving and truth-assisting mission in the Church; grace and Confirmation remain separate later lessons."
+    "partialLessonResolution": "LTF-016 expanded with PXQ106 and PXQ115 for a Creed-level account of the Holy Ghost's life-giving and truth-assisting mission in the Church; grace and Confirmation remain separate later lessons.",
+    "passageEvidenceBatch20261009": {
+      "reviewedLessonCount": 18,
+      "reviewedClaimCount": 56,
+      "distinctCompleteEnglishQARead": 116,
+      "sourceLinksResolved": 160,
+      "citationScopeCorrections": 3,
+      "original1912ItalianCollationComplete": false,
+      "nativeFrenchEditorialApprovalCount": 0,
+      "independentDoctrineApprovalCount": 0,
+      "description": "Full numbered questions and answers read from fixed modern-English 1912 short-catechism witness, Vatican I sections located in original Latin. Evidence reconciliation, not historical/original-language certification."
+    }
   },
   "lessons": [
     {
@@ -74,9 +86,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ001"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q001",
+                  "stem": "Who created us?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "b8a436ea",
+                  "englishAnswerWitnessCharacters": 34,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Our final end is to know, love and serve God here below and to enjoy Him eternally in heaven; dying in mortal sin turns the soul away from that final end.",
@@ -91,9 +123,69 @@
                 "PXQ016",
                 "PXQ017",
                 "PXQ018"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q013",
+                  "stem": "For what end did God create",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "f94699f6",
+                  "englishAnswerWitnessCharacters": 151,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q014",
+                  "stem": "What is heaven?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "2087316c",
+                  "englishAnswerWitnessCharacters": 125,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q015",
+                  "stem": "Who deserves heaven?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "50e0923a",
+                  "englishAnswerWitnessCharacters": 124,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q016",
+                  "stem": "What do the wicked deserve, who",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "c3a8a876",
+                  "englishAnswerWitnessCharacters": 144,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q017",
+                  "stem": "What is hell?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "ca15bf32",
+                  "englishAnswerWitnessCharacters": 143,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q018",
+                  "stem": "Why does God reward the good",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "b66c9544",
+                  "englishAnswerWitnessCharacters": 131,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The Christian life is therefore ordered through faith, the commandments, grace, the sacraments and prayer.",
@@ -103,9 +195,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ027"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q027",
+                  "stem": "To live according to God, what",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "a0a7d5f0",
+                  "englishAnswerWitnessCharacters": 222,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "notes": [
@@ -148,9 +260,31 @@
               "refs": [
                 "ch.II",
                 "canon II.1"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "ch.II",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                },
+                {
+                  "ref": "canon II.1",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                }
+              ],
+              "verification": "VATICAN_I_PRIMARY_LATIN_LOCATOR_ATTACHED_NOT_HUMAN_APPROVAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "God is the infinitely perfect Creator and Lord, pure spirit, eternal, present everywhere, all-knowing and almighty.",
@@ -168,9 +302,93 @@
                 "PXQ008",
                 "PXQ009",
                 "PXQ010"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q002",
+                  "stem": "Who is God?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "d45dc179",
+                  "englishAnswerWitnessCharacters": 83,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q003",
+                  "stem": "What does \"most perfect\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "5f95788d",
+                  "englishAnswerWitnessCharacters": 180,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q004",
+                  "stem": "What does \"Creator\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "1ec299a3",
+                  "englishAnswerWitnessCharacters": 83,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q005",
+                  "stem": "What does \"Lord\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "f17a4edc",
+                  "englishAnswerWitnessCharacters": 85,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q006",
+                  "stem": "Does God have a body as",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "1e1d42e9",
+                  "englishAnswerWitnessCharacters": 75,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q007",
+                  "stem": "Where is God?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "90c04c04",
+                  "englishAnswerWitnessCharacters": 83,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q008",
+                  "stem": "Has God always existed?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "b6b121c0",
+                  "englishAnswerWitnessCharacters": 91,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q009",
+                  "stem": "Does God know all things?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "3d6a1807",
+                  "englishAnswerWitnessCharacters": 92,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q010",
+                  "stem": "Can God do all things?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "0f3b29c1",
+                  "englishAnswerWitnessCharacters": 75,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Creation manifests God’s power, wisdom and goodness, and His providence preserves and directs creatures toward their proper end.",
@@ -179,12 +397,39 @@
             {
               "source": "PIUS_X_1912",
               "refs": [
-                "PXQ011",
                 "PXQ012",
                 "PXQ052"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q012",
+                  "stem": "Does God care for created things?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "3360ec98",
+                  "englishAnswerWitnessCharacters": 186,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q052",
+                  "stem": "Is the whole world the work",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "8c431c86",
+                  "englishAnswerWitnessCharacters": 178,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
@@ -224,15 +469,43 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ028"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q028",
+                  "stem": "What are the truths revealed by",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md",
+                  "englishAnswerWitnessFingerprint": "a7884cc6",
+                  "englishAnswerWitnessCharacters": 270,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
               "refs": [
                 "ch.III"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "ch.III",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                }
+              ],
+              "verification": "VATICAN_I_PRIMARY_LATIN_LOCATOR_ATTACHED_NOT_HUMAN_APPROVAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The Creed is a profession of the principal mysteries and truths revealed through Christ and the Apostles and taught by the Church.",
@@ -242,9 +515,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ029"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q029",
+                  "stem": "What is the \"Creed\" or \"Apostles'",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md",
+                  "englishAnswerWitnessFingerprint": "b4bafad7",
+                  "englishAnswerWitnessCharacters": 219,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "A mystery is above, but not contrary to, reason; Revelation is necessary for the supernatural end to which God has called man.",
@@ -254,16 +547,49 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ030"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q030",
+                  "stem": "What is a mystery?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-misteri-principali.md",
+                  "englishAnswerWitnessFingerprint": "90631546",
+                  "englishAnswerWitnessCharacters": 124,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
               "refs": [
                 "ch.II",
                 "ch.IV"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "ch.II",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                },
+                {
+                  "ref": "ch.IV",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                }
+              ],
+              "verification": "VATICAN_I_PRIMARY_LATIN_LOCATOR_ATTACHED_NOT_HUMAN_APPROVAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "internalHandoffs": [
@@ -306,9 +632,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ232"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q232",
+                  "stem": "What is faith?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "3be1179f",
+                  "englishAnswerWitnessCharacters": 172,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Certain truths must be believed explicitly, especially the existence of God as rewarder and the principal mysteries of the Faith.",
@@ -318,9 +664,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ237"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q237",
+                  "stem": "Is it enough to believe in",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "c06d8a67",
+                  "englishAnswerWitnessCharacters": 458,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Faith is to be professed, strengthened and lived; when necessary it must be defended without human respect.",
@@ -333,9 +699,53 @@
                 "PXQ245",
                 "PXQ246",
                 "PXQ247"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q244",
+                  "stem": "When must we make acts of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "9ef78185",
+                  "englishAnswerWitnessCharacters": 246,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q245",
+                  "stem": "Is it good to make acts",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "578dda3e",
+                  "englishAnswerWitnessCharacters": 244,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q246",
+                  "stem": "How must we make acts of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "53d46369",
+                  "englishAnswerWitnessCharacters": 182,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q247",
+                  "stem": "How does one give proof of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "edc5c7d8",
+                  "englishAnswerWitnessCharacters": 231,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "notes": [
@@ -370,15 +780,51 @@
               "refs": [
                 "PXQ233",
                 "PXQ234"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q233",
+                  "stem": "Where is preserved that which God",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "b577170b",
+                  "englishAnswerWitnessCharacters": 235,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q234",
+                  "stem": "What is Sacred Scripture?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "e0995008",
+                  "englishAnswerWitnessCharacters": 195,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
               "refs": [
                 "ch.II"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "ch.II",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                }
+              ],
+              "verification": "VATICAN_I_PRIMARY_LATIN_LOCATOR_ATTACHED_NOT_HUMAN_APPROVAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Tradition is the teaching of Christ and the Apostles transmitted livingly through the Church.",
@@ -389,15 +835,51 @@
               "refs": [
                 "PXQ233",
                 "PXQ235"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q233",
+                  "stem": "Where is preserved that which God",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "b577170b",
+                  "englishAnswerWitnessCharacters": 235,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q235",
+                  "stem": "What is Tradition?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "9c4852ac",
+                  "englishAnswerWitnessCharacters": 163,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
               "refs": [
                 "ch.II"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "ch.II",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                }
+              ],
+              "verification": "VATICAN_I_PRIMARY_LATIN_LOCATOR_ATTACHED_NOT_HUMAN_APPROVAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The Church has authority to make known fully and in their true sense the truths contained in Scripture and Tradition.",
@@ -407,15 +889,43 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ236"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q236",
+                  "stem": "Who can with authority make known",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "3de9d7d6",
+                  "englishAnswerWitnessCharacters": 396,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             },
             {
               "source": "VATICAN_I_DEI_FILIUS",
               "refs": [
                 "ch.II"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "ch.II",
+                  "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+                  "verification": "OFFICIAL_LATIN_DEI_FILIUS_CHAPTER_OR_CANON_LOCATED"
+                }
+              ],
+              "verification": "VATICAN_I_PRIMARY_LATIN_LOCATOR_ATTACHED_NOT_HUMAN_APPROVAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
@@ -466,9 +976,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ106"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q106",
+                  "stem": "By whom was the Church founded?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "4d154cf2",
+                  "englishAnswerWitnessCharacters": 257,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The Pope and the bishops united with him are the legitimate pastors; together they constitute the teaching Church, whose mission is to teach divine truths and laws.",
@@ -480,9 +1010,45 @@
                 "PXQ112",
                 "PXQ113",
                 "PXQ114"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q112",
+                  "stem": "Who are the legitimate Pastors of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "5fece356",
+                  "englishAnswerWitnessCharacters": 152,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q113",
+                  "stem": "Who is the Pope?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "792a4631",
+                  "englishAnswerWitnessCharacters": 295,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q114",
+                  "stem": "What do the Pope and the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "eca3d10e",
+                  "englishAnswerWitnessCharacters": 356,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The teaching Church is assisted so that she does not err when teaching revealed truth; the Pope is infallible when, as pastor and teacher of all Christians, he defines doctrine concerning faith or morals.",
@@ -493,9 +1059,37 @@
               "refs": [
                 "PXQ115",
                 "PXQ116"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q115",
+                  "stem": "Can the teaching Church err in",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "5a3ae34a",
+                  "englishAnswerWitnessCharacters": 262,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q116",
+                  "stem": "Can the Pope, by himself, err",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "ab9aee06",
+                  "englishAnswerWitnessCharacters": 290,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": "Maintain distinction between protected definitive Magisterium and non-definitive teachings; scope must not imply every episcopal or papal utterance is infallible."
+          }
         },
         {
           "en": "This teaching authority serves the Church’s purpose of providing a sure guide and the means of holiness and salvation, and of authoritatively making known the truths contained in Scripture and Tradition.",
@@ -507,9 +1101,45 @@
                 "PXQ118",
                 "PXQ119",
                 "PXQ236"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q118",
+                  "stem": "Why did Jesus Christ institute the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "31d01e3d",
+                  "englishAnswerWitnessCharacters": 184,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q119",
+                  "stem": "What are the means of holiness",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "3635aa0b",
+                  "englishAnswerWitnessCharacters": 269,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q236",
+                  "stem": "Who can with authority make known",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/legge-virtu.md",
+                  "englishAnswerWitnessFingerprint": "3de9d7d6",
+                  "englishAnswerWitnessCharacters": 396,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
@@ -562,9 +1192,53 @@
                 "PXQ003",
                 "PXQ004",
                 "PXQ005"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q002",
+                  "stem": "Who is God?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "d45dc179",
+                  "englishAnswerWitnessCharacters": 83,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q003",
+                  "stem": "What does \"most perfect\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "5f95788d",
+                  "englishAnswerWitnessCharacters": 180,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q004",
+                  "stem": "What does \"Creator\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "1ec299a3",
+                  "englishAnswerWitnessCharacters": 83,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q005",
+                  "stem": "What does \"Lord\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "f17a4edc",
+                  "englishAnswerWitnessCharacters": 85,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "God is pure spirit, immense, eternal, all-knowing and almighty.",
@@ -578,9 +1252,61 @@
                 "PXQ008",
                 "PXQ009",
                 "PXQ010"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q006",
+                  "stem": "Does God have a body as",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "1e1d42e9",
+                  "englishAnswerWitnessCharacters": 75,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q007",
+                  "stem": "Where is God?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "90c04c04",
+                  "englishAnswerWitnessCharacters": 83,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q008",
+                  "stem": "Has God always existed?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "b6b121c0",
+                  "englishAnswerWitnessCharacters": 91,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q009",
+                  "stem": "Does God know all things?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "3d6a1807",
+                  "englishAnswerWitnessCharacters": 92,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q010",
+                  "stem": "Can God do all things?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "0f3b29c1",
+                  "englishAnswerWitnessCharacters": 75,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "God cannot will evil because He is infinite goodness; His providence governs creatures with wisdom, goodness and justice, and His justice rewards good and punishes evil.",
@@ -592,9 +1318,45 @@
                 "PXQ011",
                 "PXQ012",
                 "PXQ018"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q011",
+                  "stem": "Can God also do evil?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "1c6fbb8b",
+                  "englishAnswerWitnessCharacters": 191,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q012",
+                  "stem": "Does God care for created things?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "3360ec98",
+                  "englishAnswerWitnessCharacters": 186,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q018",
+                  "stem": "Why does God reward the good",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "b66c9544",
+                  "englishAnswerWitnessCharacters": 131,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "notes": [
@@ -655,9 +1417,93 @@
                 "PXQ041",
                 "PXQ042",
                 "PXQ043"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q019",
+                  "stem": "Is there only one God?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "e54444c2",
+                  "englishAnswerWitnessCharacters": 120,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q020",
+                  "stem": "What are the names of the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "6e3d4f89",
+                  "englishAnswerWitnessCharacters": 152,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q037",
+                  "stem": "What does \"Unity of God\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "cf4f9385",
+                  "englishAnswerWitnessCharacters": 82,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q038",
+                  "stem": "What does \"Trinity of God\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "3be55ff1",
+                  "englishAnswerWitnessCharacters": 148,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q039",
+                  "stem": "What does \"three really distinct Persons\"",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "01c58142",
+                  "englishAnswerWitnessCharacters": 174,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q040",
+                  "stem": "Do we understand how the three",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "46f5792b",
+                  "englishAnswerWitnessCharacters": 215,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q041",
+                  "stem": "Who is the first Person of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "93d4a477",
+                  "englishAnswerWitnessCharacters": 109,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q042",
+                  "stem": "Who is the second Person of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "8246a995",
+                  "englishAnswerWitnessCharacters": 108,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q043",
+                  "stem": "Who is the third Person of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "6bc59a6a",
+                  "englishAnswerWitnessCharacters": 114,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The Father does not proceed from another Person; the Son is begotten of the Father; the Holy Ghost proceeds from the Father and the Son.",
@@ -669,9 +1515,45 @@
                 "PXQ044",
                 "PXQ045",
                 "PXQ046"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q044",
+                  "stem": "Why is the Father the first",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "c5d982f1",
+                  "englishAnswerWitnessCharacters": 244,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q045",
+                  "stem": "Why is the Son the second",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "6d834b39",
+                  "englishAnswerWitnessCharacters": 221,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q046",
+                  "stem": "Why is the Holy Spirit the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "32469afd",
+                  "englishAnswerWitnessCharacters": 178,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Each Person is fully God, but there are not three gods: the three possess one divine nature and are equal and eternal.",
@@ -684,9 +1566,53 @@
                 "PXQ048",
                 "PXQ049",
                 "PXQ050"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q047",
+                  "stem": "Is each Person of the Most",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "c2c6efd7",
+                  "englishAnswerWitnessCharacters": 97,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q048",
+                  "stem": "If each divine Person is God,",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "c6ff2820",
+                  "englishAnswerWitnessCharacters": 205,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q049",
+                  "stem": "Are the three divine Persons equal,",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "258568ee",
+                  "englishAnswerWitnessCharacters": 388,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q050",
+                  "stem": "Was the Father at least before",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "3bb567e7",
+                  "englishAnswerWitnessCharacters": 230,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
@@ -730,9 +1656,37 @@
               "refs": [
                 "PXQ004",
                 "PXQ051"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q004",
+                  "stem": "What does \"Creator\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "1ec299a3",
+                  "englishAnswerWitnessCharacters": 83,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q051",
+                  "stem": "Why is God called \"Creator of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "e63f1ff9",
+                  "englishAnswerWitnessCharacters": 189,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The greatness, beauty and order of the world manifest God’s power, wisdom and goodness.",
@@ -742,9 +1696,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ052"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q052",
+                  "stem": "Is the whole world the work",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "8c431c86",
+                  "englishAnswerWitnessCharacters": 178,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "God does not abandon creation: He preserves and directs creatures toward their proper end with wisdom, goodness and justice, while permitting created freedom.",
@@ -755,9 +1729,37 @@
               "refs": [
                 "PXQ011",
                 "PXQ012"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q011",
+                  "stem": "Can God also do evil?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "1c6fbb8b",
+                  "englishAnswerWitnessCharacters": 191,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q012",
+                  "stem": "Does God care for created things?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "3360ec98",
+                  "englishAnswerWitnessCharacters": 186,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "movedContent": [
@@ -817,9 +1819,45 @@
                 "PXQ053",
                 "PXQ054",
                 "PXQ055"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q053",
+                  "stem": "Did God create only what is",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "813b20ad",
+                  "englishAnswerWitnessCharacters": 169,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q054",
+                  "stem": "Who are the pure spirits?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "7600ad98",
+                  "englishAnswerWitnessCharacters": 80,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q055",
+                  "stem": "How do we know that created",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "0eb887a1",
+                  "englishAnswerWitnessCharacters": 102,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The good angels are ministers of God; God entrusts each person to a guardian angel, toward whom we owe veneration and gratitude.",
@@ -828,12 +1866,39 @@
             {
               "source": "PIUS_X_1912",
               "refs": [
-                "PXQ056",
                 "PXQ057",
                 "PXQ058"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q057",
+                  "stem": "Who are the Angels?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "81e3547a",
+                  "englishAnswerWitnessCharacters": 142,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q058",
+                  "stem": "Have we any duties toward the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "f86a23ae",
+                  "englishAnswerWitnessCharacters": 239,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The demons are angels who rebelled against God through pride and now tempt men to evil.",
@@ -843,9 +1908,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ059"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q059",
+                  "stem": "Who are the demons?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "440b2e17",
+                  "englishAnswerWitnessCharacters": 164,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ]
     },
@@ -893,9 +1978,69 @@
                 "PXQ063",
                 "PXQ064",
                 "PXQ065"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q060",
+                  "stem": "Who is man?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "d9ad2297",
+                  "englishAnswerWitnessCharacters": 66,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q061",
+                  "stem": "What is the soul?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "8246bf7f",
+                  "englishAnswerWitnessCharacters": 163,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q062",
+                  "stem": "Does the soul of man die",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "545caf9a",
+                  "englishAnswerWitnessCharacters": 128,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q063",
+                  "stem": "What care must we have of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "8033f9d7",
+                  "englishAnswerWitnessCharacters": 189,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q064",
+                  "stem": "In what way is man free?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "086fc55b",
+                  "englishAnswerWitnessCharacters": 153,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q065",
+                  "stem": "If man is free, can he",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "5da3cb70",
+                  "englishAnswerWitnessCharacters": 174,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The first human beings, Adam and Eve, were created in a state elevated by grace and supernatural gifts.",
@@ -908,9 +2053,53 @@
                 "PXQ067",
                 "PXQ068",
                 "PXQ069"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q066",
+                  "stem": "Who were the first human beings?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "84adbf11",
+                  "englishAnswerWitnessCharacters": 199,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q067",
+                  "stem": "Was man created weak and miserable",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "c1558515",
+                  "englishAnswerWitnessCharacters": 173,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q068",
+                  "stem": "What destiny did man receive from",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "67035d25",
+                  "englishAnswerWitnessCharacters": 301,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q069",
+                  "stem": "Besides grace, what else had God",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "d826a5fb",
+                  "englishAnswerWitnessCharacters": 274,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Adam’s grave sin of pride and disobedience deprived mankind of original grace and supernatural gifts, leaving human nature subject to sin, suffering, ignorance, disordered inclinations and death; this privation is transmitted as original sin.",
@@ -925,9 +2114,69 @@
                 "PXQ073",
                 "PXQ074",
                 "PXQ075"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q070",
+                  "stem": "What kind of sin was Adam's?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "7e9c5ea5",
+                  "englishAnswerWitnessCharacters": 85,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q071",
+                  "stem": "What harm did Adam's sin cause?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "060c45f0",
+                  "englishAnswerWitnessCharacters": 264,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q072",
+                  "stem": "What is the sin called to",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "60c32cfb",
+                  "englishAnswerWitnessCharacters": 275,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q073",
+                  "stem": "In what does original sin consist?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "26d15b4a",
+                  "englishAnswerWitnessCharacters": 262,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q074",
+                  "stem": "How is original sin \"voluntary,\" and",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "02019e93",
+                  "englishAnswerWitnessCharacters": 301,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q075",
+                  "stem": "Was man, because of original sin,",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "ab3b1633",
+                  "englishAnswerWitnessCharacters": 248,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": "In final French and Italian collation distinguish loss of sanctifying grace, preternatural gifts, and wounded human nature without implying human nature was destroyed."
+          }
         }
       ]
     },
@@ -977,9 +2226,53 @@
                 "PXQ022",
                 "PXQ023",
                 "PXQ024"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q021",
+                  "stem": "Of the three Persons of the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "5497f8a6",
+                  "englishAnswerWitnessCharacters": 195,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q022",
+                  "stem": "What is the name of the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "a61559a1",
+                  "englishAnswerWitnessCharacters": 95,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q023",
+                  "stem": "Who is Jesus Christ?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "5bcf5528",
+                  "englishAnswerWitnessCharacters": 117,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q024",
+                  "stem": "Is Jesus Christ God and man?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "995720b7",
+                  "englishAnswerWitnessCharacters": 75,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Jesus openly declared His divine Sonship and taught by both word and example how to live according to God.",
@@ -990,9 +2283,37 @@
               "refs": [
                 "PXQ080",
                 "PXQ086"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q080",
+                  "stem": "How was Jesus Christ known to",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "1a93dd06",
+                  "englishAnswerWitnessCharacters": 336,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q086",
+                  "stem": "What did Jesus Christ do in",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "9b7d598e",
+                  "englishAnswerWitnessCharacters": 343,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "His miracles, and especially the Resurrection, confirmed His doctrine and showed His divine authority.",
@@ -1003,9 +2324,37 @@
               "refs": [
                 "PXQ087",
                 "PXQ088"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q087",
+                  "stem": "What is a miracle?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "0b2dfd06",
+                  "englishAnswerWitnessCharacters": 169,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q088",
+                  "stem": "By what miracles especially did Jesus",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "63d29b71",
+                  "englishAnswerWitnessCharacters": 432,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "internalHandoffs": [
@@ -1064,9 +2413,69 @@
                 "PXQ024",
                 "PXQ076",
                 "PXQ077"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q021",
+                  "stem": "Of the three Persons of the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "5497f8a6",
+                  "englishAnswerWitnessCharacters": 195,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q022",
+                  "stem": "What is the name of the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "a61559a1",
+                  "englishAnswerWitnessCharacters": 95,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q023",
+                  "stem": "Who is Jesus Christ?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "5bcf5528",
+                  "englishAnswerWitnessCharacters": 117,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q024",
+                  "stem": "Is Jesus Christ God and man?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "995720b7",
+                  "englishAnswerWitnessCharacters": 75,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q076",
+                  "stem": "In what way did the Son",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "2e8512b8",
+                  "englishAnswerWitnessCharacters": 186,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q077",
+                  "stem": "In becoming man, did the Son",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-creazione.md",
+                  "englishAnswerWitnessFingerprint": "eca57e8e",
+                  "englishAnswerWitnessCharacters": 165,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "In Christ there are two natures, divine and human, but only one Person: the divine Person of the Son.",
@@ -1076,11 +2485,38 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ078",
-                "PXQ079",
-                "PXQ081"
-              ]
+                "PXQ079"
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q078",
+                  "stem": "Are there two natures in Jesus",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "346649f1",
+                  "englishAnswerWitnessCharacters": 120,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q079",
+                  "stem": "Are there in Jesus Christ also",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "8b54a20b",
+                  "englishAnswerWitnessCharacters": 194,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Mary is truly Mother of God because the one whom she bore is the divine Son made man; Saint Joseph is His foster-father and guardian.",
@@ -1091,9 +2527,37 @@
               "refs": [
                 "PXQ082",
                 "PXQ083"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q082",
+                  "stem": "From whom was Jesus Christ born?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "f9ceac3d",
+                  "englishAnswerWitnessCharacters": 134,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q083",
+                  "stem": "Was Saint Joseph not the father",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "e259043f",
+                  "englishAnswerWitnessCharacters": 246,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
@@ -1132,9 +2596,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ025"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q025",
+                  "stem": "Why did the Son of God",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "9ece4748",
+                  "englishAnswerWitnessCharacters": 137,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Christ made satisfaction for our sins by suffering and sacrificing Himself on the Cross, thereby reconciling us with God.",
@@ -1145,9 +2629,37 @@
               "refs": [
                 "PXQ026",
                 "PXQ086"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q026",
+                  "stem": "What did Jesus Christ do to",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "4356c8f9",
+                  "englishAnswerWitnessCharacters": 189,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q086",
+                  "stem": "What did Jesus Christ do in",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "9b7d598e",
+                  "englishAnswerWitnessCharacters": 343,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Christ truly died according to His human nature; His soul descended to the just awaiting redemption, and His body remained in the tomb until the Resurrection.",
@@ -1159,9 +2671,45 @@
                 "PXQ089",
                 "PXQ090",
                 "PXQ091"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q089",
+                  "stem": "Did Jesus Christ die as God",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "7c1e5ca3",
+                  "englishAnswerWitnessCharacters": 115,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q090",
+                  "stem": "What became of Jesus Christ after",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "27da4d0a",
+                  "englishAnswerWitnessCharacters": 249,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q091",
+                  "stem": "How long did the body of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "971ab1e8",
+                  "englishAnswerWitnessCharacters": 208,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
@@ -1197,9 +2745,37 @@
               "refs": [
                 "PXQ090",
                 "PXQ091"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q090",
+                  "stem": "What became of Jesus Christ after",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "27da4d0a",
+                  "englishAnswerWitnessCharacters": 249,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q091",
+                  "stem": "How long did the body of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-incarnazione.md",
+                  "englishAnswerWitnessFingerprint": "971ab1e8",
+                  "englishAnswerWitnessCharacters": 208,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "He remained on earth for forty days after the Resurrection to show that He had truly risen, confirm the disciples in faith and instruct them more deeply.",
@@ -1210,9 +2786,37 @@
               "refs": [
                 "PXQ092",
                 "PXQ093"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q092",
+                  "stem": "What did Jesus Christ do after",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md",
+                  "englishAnswerWitnessFingerprint": "c90d5289",
+                  "englishAnswerWitnessCharacters": 209,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q093",
+                  "stem": "Why did Jesus Christ remain on",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md",
+                  "englishAnswerWitnessFingerprint": "e6bdc47f",
+                  "englishAnswerWitnessCharacters": 279,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "He then ascended into heaven; as God He is everywhere, and as God and man He is in heaven and truly present in the Most Holy Sacrament.",
@@ -1223,9 +2827,37 @@
               "refs": [
                 "PXQ092",
                 "PXQ094"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q092",
+                  "stem": "What did Jesus Christ do after",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md",
+                  "englishAnswerWitnessFingerprint": "c90d5289",
+                  "englishAnswerWitnessCharacters": 209,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q094",
+                  "stem": "Is Jesus Christ now only in",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-venuta.md",
+                  "englishAnswerWitnessFingerprint": "cac3027f",
+                  "englishAnswerWitnessCharacters": 191,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
@@ -1267,9 +2899,37 @@
               "refs": [
                 "PXQ020",
                 "PXQ043"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q020",
+                  "stem": "What are the names of the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/lezione-preliminare.md",
+                  "englishAnswerWitnessFingerprint": "6e3d4f89",
+                  "englishAnswerWitnessCharacters": 152,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q043",
+                  "stem": "Who is the third Person of",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "6bc59a6a",
+                  "englishAnswerWitnessCharacters": 114,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "He proceeds from the Father and the Son and is fully God, equal and eternal with the Father and the Son.",
@@ -1283,9 +2943,61 @@
                 "PXQ048",
                 "PXQ049",
                 "PXQ050"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q046",
+                  "stem": "Why is the Holy Spirit the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "32469afd",
+                  "englishAnswerWitnessCharacters": 178,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q047",
+                  "stem": "Is each Person of the Most",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "c2c6efd7",
+                  "englishAnswerWitnessCharacters": 97,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q048",
+                  "stem": "If each divine Person is God,",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "c6ff2820",
+                  "englishAnswerWitnessCharacters": 205,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q049",
+                  "stem": "Are the three divine Persons equal,",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "258568ee",
+                  "englishAnswerWitnessCharacters": 388,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q050",
+                  "stem": "Was the Father at least before",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-unita-trinita.md",
+                  "englishAnswerWitnessFingerprint": "3bb567e7",
+                  "englishAnswerWitnessCharacters": 230,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Christ gave the Holy Ghost to His Church as the Spirit who gives her life and continually assists the teaching Church in the truth.",
@@ -1296,9 +3008,37 @@
               "refs": [
                 "PXQ106",
                 "PXQ115"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q106",
+                  "stem": "By whom was the Church founded?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "4d154cf2",
+                  "englishAnswerWitnessCharacters": 257,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q115",
+                  "stem": "Can the teaching Church err in",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "5a3ae34a",
+                  "englishAnswerWitnessCharacters": 262,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "internalHandoffs": [
@@ -1353,9 +3093,37 @@
               "refs": [
                 "PXQ105",
                 "PXQ106"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q105",
+                  "stem": "What is the Church?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "a9fadcbf",
+                  "englishAnswerWitnessCharacters": 211,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q106",
+                  "stem": "By whom was the Church founded?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "4d154cf2",
+                  "englishAnswerWitnessCharacters": 257,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The Church of Christ is one, holy, catholic and apostolic.",
@@ -1369,9 +3137,61 @@
                 "PXQ109",
                 "PXQ110",
                 "PXQ111"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q107",
+                  "stem": "Which is the Church of Jesus",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "d0f1c053",
+                  "englishAnswerWitnessCharacters": 177,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q108",
+                  "stem": "Why is the Church one?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "a79e557d",
+                  "englishAnswerWitnessCharacters": 271,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q109",
+                  "stem": "Why is the Church holy?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "f3c8033b",
+                  "englishAnswerWitnessCharacters": 319,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q110",
+                  "stem": "Why is the Church catholic?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "7ea11692",
+                  "englishAnswerWitnessCharacters": 176,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q111",
+                  "stem": "Why is the Church apostolic?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "c6e6e180",
+                  "englishAnswerWitnessCharacters": 284,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "Christ instituted the Church as a sure guide and the bearer of the true faith, sacrifice, sacraments and other spiritual helps ordered to holiness and eternal salvation.",
@@ -1383,9 +3203,45 @@
                 "PXQ118",
                 "PXQ119",
                 "PXQ120"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q118",
+                  "stem": "Why did Jesus Christ institute the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "31d01e3d",
+                  "englishAnswerWitnessCharacters": 184,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q119",
+                  "stem": "What are the means of holiness",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "3635aa0b",
+                  "englishAnswerWitnessCharacters": 269,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q120",
+                  "stem": "Are the means of holiness and",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "d5a0b19d",
+                  "englishAnswerWitnessCharacters": 345,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "The necessity of the Church must be stated together with the distinction between culpable separation and being outside her through no fault of one’s own.",
@@ -1396,9 +3252,37 @@
               "refs": [
                 "PXQ131",
                 "PXQ132"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q131",
+                  "stem": "Is it a serious harm to",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md",
+                  "englishAnswerWitnessFingerprint": "82d19f64",
+                  "englishAnswerWitnessCharacters": 259,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q132",
+                  "stem": "Can one who is outside the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-remissione-peccati.md",
+                  "englishAnswerWitnessFingerprint": "af438220",
+                  "englishAnswerWitnessCharacters": 354,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": "Retain explicit distinction between culpable refusal and inculpable separation. Separate doctrinal necessity of Church from any inference that all non-Catholics are culpable."
+          }
         }
       ],
       "crossLinks": [
@@ -1449,9 +3333,37 @@
               "refs": [
                 "PXQ120",
                 "PXQ121"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q120",
+                  "stem": "Are the means of holiness and",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "d5a0b19d",
+                  "englishAnswerWitnessCharacters": 345,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                },
+                {
+                  "ref": "PX1912-Q121",
+                  "stem": "Why are the faithful in the",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "786bd50f",
+                  "englishAnswerWitnessCharacters": 206,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         },
         {
           "en": "All the faithful form one body in Christ and share in the spiritual good that is and is done in the universal Church, insofar as sin does not impede that participation.",
@@ -1461,9 +3373,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ122"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q122",
+                  "stem": "What does \"communion of saints\" mean?",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "2d6a1527",
+                  "englishAnswerWitnessCharacters": 267,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": "Condition on participation in spiritual goods must not be read as an automatic judgment of an individual person's juridical Church membership."
+          }
         },
         {
           "en": "The blessed in heaven and the souls in purgatory are also joined to us in this communion through charity, intercession and suffrage.",
@@ -1473,9 +3405,29 @@
               "source": "PIUS_X_1912",
               "refs": [
                 "PXQ123"
-              ]
+              ],
+              "locators": [
+                {
+                  "ref": "PX1912-Q123",
+                  "stem": "Are the blessed in heaven and",
+                  "url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/en-US/credo-chiesa.md",
+                  "englishAnswerWitnessFingerprint": "5f2b3d21",
+                  "englishAnswerWitnessCharacters": 346,
+                  "verification": "COMPLETE_NUMBERED_ENGLISH_QUESTION_AND_ANSWER_READ"
+                }
+              ],
+              "verification": "PINNED_MODERN_ENGLISH_QA_READ_NOT_ITALIAN_OR_FRENCH_ORIGINAL"
             }
-          ]
+          ],
+          "witnessPassageReview": {
+            "status": "PINNED_ENGLISH_QA_AND_LATIN_VATICAN_I_SCOPE_REVIEWED",
+            "claimRetainedAsBilingualDraft": true,
+            "doctrinalHumanApproved": false,
+            "original1912ItalianCollated": false,
+            "nativeFrenchSourceCollated": false,
+            "nativeFrenchEdited": false,
+            "editorialNote": null
+          }
         }
       ],
       "crossLinks": [
