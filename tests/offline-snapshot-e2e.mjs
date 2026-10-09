@@ -50,7 +50,12 @@ try{
    console.error("OFFLINE_PREFIX_PAGE_ERRORS="+JSON.stringify(errs));
    throw e;
  }
- await page.waitForFunction(()=>globalThis.AO_OFFLINE_APP_V1?.status?.ready===true,null,{timeout:120000});
+ await page.waitForFunction(()=>{
+   const s=globalThis.AO_OFFLINE_APP_V1?.status;
+   return s?.ready===true||Boolean(s?.error);
+ },null,{timeout:120000});
+ const initialOfflineState=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
+ assert.equal(initialOfflineState.error,null,"First offline snapshot could not be staged: "+JSON.stringify(initialOfflineState));
  let original=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.ok(original.version,"First coherent cache has no version");
  assert.equal(original.pendingVersion,null,"First install should not offer an update");
