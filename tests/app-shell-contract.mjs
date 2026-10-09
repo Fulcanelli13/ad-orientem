@@ -465,7 +465,8 @@ assert.equal(parseScriptureContext("1 Cor 6:18–20")?.passage.book,"1Corinthian
 assert.equal(parseScriptureContext("Psalms 129:1")?.numbering,"SOURCE_EDITION_REQUIRED");
 assert.equal(parseScriptureContext("Unverified source 4:1"),null);
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Matthew 5:27–28").passage)?.type,"PATRISTIC_COMPILATION");
-assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:28").passage),null);
+assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:28").passage)?.type,"PATRISTIC_COMPILATION","The source-verified Annunciation Catena covers Luke 1:28");
+assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:40").passage),null,"Outside certified Annunciation/Magnificat ranges must remain unavailable");
 for(const file of ["src/home/presentation.js","src/learn/sexual-ethics.js",
   "src/pray/presentation-runtime.js","src/apostolate/presentation.js"]){
   assert.match(readFileSync(file,"utf8"),/scriptureContextCapsule/,
