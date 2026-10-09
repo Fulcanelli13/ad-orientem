@@ -32,7 +32,7 @@ assert.deepEqual(page.entries[137].continuationPdfPagesOneIndexed,[47]);
 assert.deepEqual(page.entries[15].continuationPdfPagesOneIndexed,[21]);
 assert.ok(byQ.get(132).claim.includes("without fault"));
 assert.ok(byQ.get(143).claim.includes("grave matter"));
-assert.ok(byQ.get(221).claim.includes("21"));
+assert.ok(byQ.get(221).claim.includes("twenty-one"));
 assert.ok(byQ.get(293).claim.includes("intention"));
 assert.ok(byQ.get(339).claim.includes("historic"));
 assert.equal(course.metrics.french1913PageLevelQuestionCollation,70);
