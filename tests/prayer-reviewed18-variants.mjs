@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import { PRAY_EDITION_WITNESSES_V1 } from "../src/pray/prayer-edition-witnesses.v1.js";
 const matrix=JSON.parse(readFileSync("data/pray/prayer-reviewed18-edition-variants.v1.json","utf8"));
 const cert=JSON.parse(readFileSync("data/pray/prayer-source-certification-inventory.v3.json","utf8"));
 const known=cert.prayers.filter(x=>x.collation?.status==="ANCHOR_REVIEWED_NOT_FULL_VERBATIM");
@@ -28,4 +29,11 @@ assert.equal(anima.review_type,"ENGLISH_PROSE_VS_VERSE");
 const meals=seen.find(x=>x.id==="foundations_grace_after_meals");
 assert.equal(meals.review_type,"HISTORICAL_ALTERNATIVE_URL_PRIORITY");
 assert.ok(meals.editorial_action.includes("duplicate"));
+const grace=PRAY_EDITION_WITNESSES_V1.foundations_grace_after_meals;
+assert.equal(grace.url,"https://en.wikisource.org/wiki/Blessed_Sacrament_Book/Prayers_During_the_Day");
+assert.equal(grace.secondaryUrl,"https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers");
+assert.match(grace.note.en,/benefits/);
+assert.match(grace.note.en,/mercies/);
+const prayerRuntime=readFileSync("src/pray/presentation-runtime.js","utf8");
+assert.ok(prayerRuntime.includes('x.url!==url&&x.url!==edition?.secondaryUrl'),"primary/additional witnesses must not duplicate collation links");
 console.log("PASS 18 anchor-reviewed Prayer source variance classifications, zero false certification");
