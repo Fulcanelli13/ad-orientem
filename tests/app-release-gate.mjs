@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { APP_SURFACES, APP_ROUTE_SURFACES, NON_MASS_DONOR_CONTRACT } from "../src/app/contracts.js";
 
 const app=JSON.parse(readFileSync("data/presentation/app-release-gate.v1.json","utf8"));
 const reader=JSON.parse(readFileSync("data/presentation/reader-release-gate.v1.json","utf8"));
@@ -11,9 +12,15 @@ const massV180=JSON.parse(readFileSync("data/presentation/mass-v180-donor-parity
 const massStepReconciliation=JSON.parse(readFileSync("data/presentation/mass-v180-v183-step-reconciliation.v1.json","utf8"));
 
 assert.equal(app.schema,"ao-app-release-gate-v1");
-assert.equal(app.version,"1.27.0");
+assert.equal(app.version,"1.28.1");
 assert.equal(app.status,"PRESENTATION_PARITY_REQUIRED");
-assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","calendar","settings"]);
+assert.deepEqual(app.topLevelContract,APP_SURFACES,"Release gate must track the actual permanent app ribbon");
+assert.deepEqual(app.topLevelContract,["home","mass","pray","learn","find"]);
+assert.deepEqual(app.utilityRoutes,APP_ROUTE_SURFACES.filter(x=>!APP_SURFACES.includes(x)));
+assert.deepEqual(app.historicalDonorTopLevelContract,NON_MASS_DONOR_CONTRACT.topLevel,"Keep donor six-slot evidence separate");
+assert.equal(app.topLevelContract.includes("settings"),false,"Settings is a utility, not a permanent ribbon destination");
+assert.equal(app.topLevelContract.includes("calendar"),false,"Calendar remains fully routable but no longer occupies a permanent tab");
+assert.ok(app.utilityRoutes.includes("calendar"),"Calendar was lost instead of being consolidated");
 
 assert.equal(reader.status,"FINAL_NATIVE_READY","Mass subsystem lost FINAL_NATIVE_READY");
 assert.equal(reader.productionDefault,"R17_NATIVE","Mass subsystem lost R17 native default");
