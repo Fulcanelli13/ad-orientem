@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {ROSARY_SCRIPTURE_REFERENCE_V1,ROSARY_SCRIPTURE_POLICY_V1,rosaryScripturePassage} from "../src/pray/rosary-scripture-policy.js";
 import {ROSARY_MYSTERY_CONTEXT_V1} from "../src/pray/rosary-mystery-context.v1.js";
 import {ROSARY_GUIDED_BEAD_MEDITATIONS_V1} from "../src/pray/rosary-guided-bead-meditations.v1.js";
+import {ROSARY_GUIDED_BEAD_EVIDENCE_V1} from "../src/pray/rosary-guided-bead-evidence.v1.js";
 
 const audit=JSON.parse(readFileSync("data/pray/rosary-scripture-editorial-inventory.v1.json","utf8"));
 const entries=Object.entries(ROSARY_SCRIPTURE_REFERENCE_V1);
@@ -11,6 +12,32 @@ assert.deepEqual(entries.map(([id])=>id),[
   "joy1","joy2","joy3","joy4","joy5","lum1","lum2","lum3","lum4","lum5",
   "sor1","sor2","sor3","sor4","sor5","glo1","glo2","glo3","glo4","glo5"
 ]);
+assert.equal(Object.keys(ROSARY_GUIDED_BEAD_EVIDENCE_V1).length,20,
+ "all 20 mysteries require stable per-bead source ownership");
+const relationshipCounts={};
+for(const [id,meditations] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1)){
+ const citations=ROSARY_GUIDED_BEAD_EVIDENCE_V1[id];
+ assert.equal(citations?.length,10,id+" has missing per-bead source ownership");
+ for(const [index,citation] of citations.entries()){
+  assert.equal(citation.bead,index+1,id+" source/bead index drift");
+  assert.equal(meditations[index].bead,citation.bead,id+" text/source index mismatch");
+  assert.equal(citation.isDirectQuotation,false,"a Rosary meditation must never claim to be biblical quotation");
+  assert.equal(citation.textualApproval,"NOT_A_BIBLICAL_QUOTATION");
+  assert.match(citation.primaryUrl,/^https:\/\//);
+  assert.match(citation.frenchPrimaryUrl,/^https:\/\//);
+  assert.ok(citation.reference.length>=8,"source is not a clear reference: "+id+"."+index);
+  relationshipCounts[citation.relationship]=(relationshipCounts[citation.relationship]||0)+1;
+ }
+}
+assert.equal(Object.values(relationshipCounts).reduce((x,y)=>x+y,0),200);
+assert.equal(relationshipCounts.MARIAN_TYPOLOGICAL_READING,6);
+assert.equal(relationshipCounts.DEFINED_DOCTRINE,4);
+assert.equal(relationshipCounts.SCRIPTURAL_PASSION_INTERPRETATION,3);
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo4[6].reference,"Munificentissimus Deus §44");
+assert.equal(ROSARY_GUIDED_BEAD_EVIDENCE_V1.glo5[0].relationship,"MARIAN_TYPOLOGICAL_READING");
+assert.deepEqual(ROSARY_GUIDED_BEAD_EVIDENCE_V1.sor2.slice(4,7).map(x=>x.reference),
+ ["Isaias 53:5","1 Peter 2:23","1 Peter 2:24"]);
+assert.match(ROSARY_GUIDED_BEAD_MEDITATIONS_V1.lum4[9].en,/keep the vision secret/);
 assert.equal(Object.keys(ROSARY_GUIDED_BEAD_MEDITATIONS_V1).length,20,"all 20 mysteries need guided bead meditations");
 for(const [id,moments] of Object.entries(ROSARY_GUIDED_BEAD_MEDITATIONS_V1)){
  assert.ok(ROSARY_SCRIPTURE_REFERENCE_V1[id],id+" lacks source passage");
