@@ -124,7 +124,7 @@ try{
    for(const [field,petri,pauli] of [
      ["firstCollect",/Petro|Petri/i,/Pauli/i],
      ["firstSecret",/Petri|Petr/i,/Pauli/i],
-     ["firstPostcommunion",/Petr/i,/Pauli/i]
+     ["firstPostcommunion",/Petr/i,/Sanctific/i]
    ]){
      const prayer=row[field];
      assert.match(prayer?.lat||"",pauli,date+": St Paul omitted in joined "+field);
@@ -145,10 +145,14 @@ try{
      date+": reciprocal St Paul prayer not composed");
    for(const key of ["collects","secrets","postcommunions"])
      assert.equal(row[key],2,date+": apostolic pair + Lenten feria, not three independent "+key);
-   for(const field of ["firstCollect","firstSecret","firstPostcommunion"]){
+   for(const [field,petri,pauli] of [
+     ["firstCollect",/Petr/i,/Paul/i],
+     ["firstSecret",/Petr/i,/Paul/i],
+     ["firstPostcommunion",/Petr/i,/Sanctific/i]
+   ]){
      const prayer=row[field];
-     assert.match(prayer?.lat||"",/Petr/i,date+": main St Peter not in "+field);
-     assert.match(prayer?.lat||"",/Paul/i,date+": reciprocal St Paul not in "+field);
+     assert.match(prayer?.lat||"",petri,date+": main St Peter not in "+field);
+     assert.match(prayer?.lat||"",pauli,date+": reciprocal St Paul source section not in "+field);
      assert.equal((prayer?.lat||"").match(/Amen\./g)?.length||0,1,
        date+": reciprocal Apostles must share one conclusion");
      assert.ok(prayer?.en?.length>100&&prayer?.fr?.length>100,
