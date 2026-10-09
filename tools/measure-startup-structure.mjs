@@ -1,0 +1,58 @@
+import { readFileSync } from "node:fs";
+import { gzipSync } from "node:zlib";
+const source=readFileSync("index.html","utf8");
+const len=x=>Buffer.byteLength(x,"utf8");
+const tokens=[];
+const rx=/<(script|style)\b([^>]*)>([\s\S]*?)<\/\1\s*>/gi;
+for(const m of source.matchAll(rx)){
+ const [full,tag,attrs,payload]=m;
+ const id=attrs.match(/\bid=["']([^"']+)["']/i)?.[1]||null;
+ const type=attrs.match(/\btype=["']([^"']+)["']/i)?.[1]||null;
+ const src=attrs.match(/\bsrc=["']([^"']+)["']/i)?.[1]||null;
+ tokens.push({tag,bytes:len(payload),id,refs:id?source.split(id).length-1:null,type,src,preview:payload.slice(0,140).replace(/\s+/g," "),blocked:/\bdocument\s*\.\s*(?:currentScript|write|writeln)\b/.test(payload)});
+}
+const scriptSize=tokens.filter(t=>t.tag==="script").reduce((n,x)=>n+x.bytes,0);
+const styleSize=tokens.filter(t=>t.tag==="style").reduce((n,x)=>n+x.bytes,0);
+const stat={htmlBytes:len(source),gzipBytes:gzipSync(source).length,
+scripts:tokens.filter(t=>t.tag==="script").length,styles:tokens.filter(t=>t.tag==="style").length,
+inlineScriptBytes:scriptSize,inlineStyleBytes:styleSize,
+nonScriptStyleBytes:len(source)-scriptSize-styleSize,
+top:tokens.filter(x=>x.bytes>25000).sort((a,b)=>b.bytes-a.bytes).slice(0,40),
+first:source.slice(0,1500),last:source.slice(-2500)};
+console.log("STARTUP_ANALYSIS="+JSON.stringify(stat));
+
+const withoutScripts=source.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,"");
+const textNodes=[...withoutScripts.matchAll(/>([^<]+)</g)].map(m=>({bytes:len(m[1]),sample:m[1].slice(0,160).replace(/\s+/g," ")})).filter(x=>x.bytes>1000).sort((a,b)=>b.bytes-a.bytes).slice(0,25);
+const longTags=[...withoutScripts.matchAll(/<([a-z][a-z0-9:-]*)\b([^>]*)>/gi)].map(m=>({tag:m[1],bytes:len(m[0]),head:m[0].slice(0,140)})).filter(x=>x.bytes>500).sort((a,b)=>b.bytes-a.bytes).slice(0,20);
+const groups={};
+for(const tag of ["svg","template","pre","article","section","div","main","textarea","details"]){
+ const r=new RegExp("<"+tag+"\\b","gi");
+ groups[tag]=(withoutScripts.match(r)||[]).length;
+}
+const preMarkup=withoutScripts.replace(/>([^<]+)</g,"><");
+console.log("MARKUP_ANALYSIS="+JSON.stringify({markupBytes:len(withoutScripts),literalTextBytes:len(withoutScripts)-len(preMarkup),tagCounts:groups,topText:textNodes,topAttrs:longTags}));
+
+const inlineSvg=[...withoutScripts.matchAll(/<svg\b([^>]*)>[\s\S]*?<\/svg\s*>/gi)].map(m=>({
+ bytes:len(m[0]),start:m.index,attrs:m[1].slice(0,500),ids:[...m[0].matchAll(/\bid=["']([^"']+)["']/g)].slice(0,15).map(z=>z[1]),
+ before:withoutScripts.slice(Math.max(0,m.index-180),m.index).replace(/\s+/g," "),after:withoutScripts.slice(m.index+m[0].length,m.index+m[0].length+180).replace(/\s+/g," "),
+ symbolCount:(m[0].match(/<symbol\b/g)||[]).length,pathCount:(m[0].match(/<path\b/g)||[]).length
+}));
+console.log("SVG_ANALYSIS="+JSON.stringify({svgCount:inlineSvg.length,svgTotalBytes:inlineSvg.reduce((a,b)=>a+b.bytes,0),largest:inlineSvg.sort((a,b)=>b.bytes-a.bytes).slice(0,25)}));
+
+const externalCandidates=["ao-v4318-refined-sprite","ao-v4330-semantic-icon-sprite","ao-v4332-full-refined-sprite"];
+const groupsReport=[];
+for(const id of externalCandidates){
+ const escaped=id.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&");
+ const rx=new RegExp("<svg\\b[^>]*\\bid=[\"']"+escaped+"[\"'][^>]*>[\\s\\S]*?<\\/svg\\s*>","i");
+ const match=source.match(rx);
+ if(!match){groupsReport.push({id,found:false});continue}
+ const markup=match[0], outside=source.replace(markup,"");
+ const symbols=[...markup.matchAll(/<symbol\b[^>]*\bid=["']([^"']+)["']/gi)].map(z=>z[1]);
+ const usage=[];
+ for(const sym of symbols){
+   const pos=outside.indexOf(sym);
+   usage.push({id:sym,refs:pos<0?0:outside.split(sym).length-1,context:pos<0?"":outside.slice(Math.max(0,pos-100),pos+sym.length+110).replace(/\s+/g," ")});
+ }
+ groupsReport.push({id,bytes:len(markup),symbols:usage,externalUse:usage.filter(x=>x.refs>0).length});
+}
+console.log("SPRITE_REFERENCES="+JSON.stringify(groupsReport));
