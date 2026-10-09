@@ -3,7 +3,7 @@ import { CATHOLIC_BOOK_IDS } from "./canon.js";
 import { ROSARY_MYSTERY_CONTEXT_V1 } from "../pray/rosary-mystery-context.v1.js";
 
 const EN_WITNESS = "https://www.biblegateway.com/passage/?version=DRA&search=";
-const CLEAR_ENGLISH_WITNESS = "https://www.biblegateway.com/passage/?version=NCB&search=";
+const PUBLIC_DOMAIN_CATHOLIC_INDEX = "https://sacredbible.org/catholic/index.htm";
 const FRENCH_WITNESS = "https://fr.wikisource.org/wiki/Bible_Crampon_1923";
 const referenceSyntax = /^([1-3]?[A-Za-z][A-Za-z0-9]*)\s+(\d+):(\d+)(?:[-–](\d+))?$/;
 
@@ -20,10 +20,11 @@ export function parseScriptureReference(reference) {
 }
 export function sourceReadingLink(passage, editionId = "dr-challoner") {
   const p = scripturePassage(passage);
-  if (!["dr-challoner","ncb-2019"].includes(editionId)) throw new Error("No verified passage URL provider for edition");
+  if (editionId === "cpdv-2009") return PUBLIC_DOMAIN_CATHOLIC_INDEX; // Verified publisher index only, not a deep-linked verse.
+  if (editionId !== "dr-challoner") throw new Error("No verified passage URL provider for edition");
   const query = p.book + " " + p.chapter + ":" + p.verseStart +
     (p.verseEnd === p.verseStart ? "" : "-" + p.verseEnd);
-  return (editionId === "ncb-2019" ? CLEAR_ENGLISH_WITNESS : EN_WITNESS) + encodeURIComponent(query);
+  return EN_WITNESS + encodeURIComponent(query);
 }
 /**
  * Mystery IDs are existing ROSARY ownership IDs. They do not generate or edit
