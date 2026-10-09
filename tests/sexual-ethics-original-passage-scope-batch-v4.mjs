@@ -51,5 +51,5 @@ assert.equal(illustrative,8);
 assert.equal(stillOpen,6);
 assert.match(CSE_DEBATE_MAP.CSE061.opposition[0],/Charles E\. Curran argues/);
 assert.match(CSE_DEBATE_MAP.CSE061.appeal[0],/Curran identifies/);
-assert.match(CSE_DEBATE_MAP.CSE006.response[0],/does not automatically justify a civil prohibition/);
+assert.match(CSE_DEBATE_MAP.CSE006.response[0],/does not automatically warrant civil prohibition/);
 console.log("PASS CSE original-passage batch: 6 debates, 48 stages, 34 bounded passage comparisons, 8 illustrative objections, 6 original checks open; zero full certifications.");
