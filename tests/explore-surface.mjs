@@ -12,6 +12,7 @@ import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/cu
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const geography=readJson("data/geography/seed-registry.v1.json");
+const phenomena=readJson("data/explore/sacred-phenomena-seed.v1.json");
 const customsSeed=readJson("data/customs/customs-atlas-seed.v1.json");
 const customSources=readJson("data/customs/source-registry.v1.json");
 const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
@@ -55,6 +56,7 @@ const dataset={
     unavailableProviders:[],
   },
   geography:{geoAreas:geography.geoAreas,places:geography.places},
+  sacredPhenomena:phenomena,
   customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources},
   shrines:{
     shrines:shrineSeed.shrines,
@@ -72,10 +74,12 @@ const dataset={
 };
 
 const projection=projectExploreDataset(dataset);
-assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","traditions","pilgrimages"]);
+assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
   shrines:72,
+  apparitions:19,
+  relics:11,
   traditions:89,
   pilgrimages:100,
 });
