@@ -10,8 +10,8 @@ const MAP_API="https://map.fsspx.org/api/v1/places";
 // ISO country/territory latlng dataset. These handle countries with zero SSPX
 // first-party pinned source records offline. They are labelled COUNTRY ONLY.
 const COUNTRY_REFERENCE=Object.freeze({
- BE:[50.83333333,4],CZ:[49.75,15.5],KE:[1,38],LK:[7,81],
- MG:[-20,47],RE:[-21.15,55.5],SG:[1.36666666,103.8],
+ BE:[50.83333333,4],CO:[4,-72],CZ:[49.75,15.5],EC:[-2,-77.5],ES:[40,-4],GB:[54,-2],KE:[1,38],LK:[7,81],
+ MG:[-20,47],MQ:[14.666667,-61],PT:[39.5,-8],RE:[-21.15,55.5],SG:[1.36666666,103.8],
  SI:[46.11666666,14.81666666],SV:[13.83333333,-88.91666666],
  UY:[-33,-56],ZW:[-20,30],
 });
