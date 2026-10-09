@@ -34,6 +34,24 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuide").evaluate(x=>x.open),true);
  await page.locator("#aoPray435930 [data-p435930-seg='group']").first().evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 [data-ao-angelus-recitation]").getAttribute("data-ao-angelus-recitation"),"group");
+ // Opening/recitation presentation may settle after the state selector changes.
+ // Require both actual role spans, never just a "group" preference flag.
+ await page.waitForFunction(()=>{
+   const root=document.querySelector("#aoPray435930");
+   return !!root?.querySelector("[data-ao-angelus-voice=leader]") &&
+     !!root?.querySelector("[data-ao-angelus-voice=response]");
+ },null,{timeout:8000}).catch(async error=>{
+   const diagnostics=await page.evaluate(()=>({
+     owner:globalThis.AO_PRAY_V435930?.qa?.(),
+     canonicalEnglishLength:globalThis.AO_PRAY_CANONICAL_DATA_V435930?.angelus?.en?.length??null,
+     form:document.querySelector("#aoPray435930 [data-ao-angelus-form]")?.dataset?.aoAngelusForm,
+     recitation:document.querySelector("#aoPray435930 [data-ao-angelus-recitation]")?.dataset?.aoAngelusRecitation,
+     kinds:[...document.querySelectorAll("#aoPray435930 [data-ao-angelus-unit]")].map(x=>x.dataset.aoAngelusUnit),
+     firstVR:document.querySelector("#aoPray435930 [data-ao-angelus-unit=vr]")?.outerHTML?.slice(0,2200),
+     firstButton:document.querySelector("#aoPray435930 [data-ao-angelus-unit=vr] button")?.innerHTML?.slice(0,1700)
+   }));
+   throw new Error("Angelus leader/response DOM was not rendered: "+JSON.stringify(diagnostics)+"; "+String(error));
+ });
  const dialogue=await page.evaluate(()=>{
   const host=document.getElementById("aoPray435930");
   return {leader:host?.querySelectorAll("[data-ao-angelus-voice=leader]").length??0,

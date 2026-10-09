@@ -313,7 +313,29 @@ function head(title,sub=''){
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
 function callout(text,type='info'){return `<div class="aoP435930Callout ${esc(type)}">${text}</div>`}
-function sourceLine(p){if(!p)return'';const pr=p.provenance||{};const witness=pr.witness||p.source||L('Prayer source retained in the app','Source de la prière conservée dans l’application');return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${pr.adaptation?`<small>${esc(pr.adaptation)}</small>`:''}</details>`}
+// The exact historic witness, when identified, must be a usable hyperlink.
+const PRAY_LITURGICAL_TRANSCRIPTION=Object.freeze({
+ mass_confiteor:"https://la.wikisource.org/wiki/Ordinarium_miss%C3%A6_(1962)",
+ adoration_lord_i_am_not_worthy:"https://la.wikisource.org/wiki/Ordinarium_miss%C3%A6_(1962)"
+});
+function praySourceURL(p){
+ const source=p?.provenance?.url||p?.sourceUrl||PRAY_LITURGICAL_TRANSCRIPTION[p?.id]||"";
+ // A scheme allowlist avoids injecting arbitrary markup into a source link.
+ try{const url=new URL(source);return url.protocol==="https:"||url.protocol==="http:"?url.href:""}catch{return""}
+}
+function sourceLine(p){
+ if(!p)return'';
+ const pr=p.provenance||{},url=praySourceURL(p);
+ const witness=pr.witness||p.source||L('Source witness not recorded','Témoin textuel non documenté');
+ const transcribed=!!PRAY_LITURGICAL_TRANSCRIPTION[p.id]&&!pr.url&&!p.sourceUrl;
+ const sourceLink=url
+   ?`<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(transcribed?L('Read the 1962 Roman Ordinary (secondary transcription)','Lire l’Ordinaire romain de 1962 (transcription secondaire)'):L('Open the cited source','Consulter la source citée'))} ↗</a>`
+   :`<small>${esc(L('A direct source link has not yet been verified.','Aucun lien direct vers la source n’est encore vérifié.'))}</small>`;
+ const langHold=p.id==='marian_consecration_immaculate_heart'
+   ?`<p>${esc(L('This consecration is documented in English only; no equivalent French or Latin formula has been certified.','Cette consécration est documentée en anglais seulement ; aucune formule française ou latine équivalente n’a été certifiée.'))}</p>`
+   :'';
+ return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}</details>`;
+}
 const DEVOTIONAL_GUIDE_LINKS=Object.freeze({
  stations:[
   ['Herbert Thurston, S.J. · The Stations of the Cross','https://www.gutenberg.org/files/79316/79316-h/79316-h.htm'],
@@ -502,9 +524,17 @@ function angelusGuideMarkup(form){
 }
 function angelusUtterance(text,type){
  if(type!=='vr')return nl(text);
- const pair=splitAngelusVersicleResponse(text);
- if(pair.length!==2)return nl(text);
- return `<span class="aoAngelusDialogue">${pair.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><b aria-hidden="true">${part.role==='leader'?'℣.':'℟.'}</b><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+ // The unitiser has already identified an adjacent versicle and response.
+ // Do not discard their semantic roles if a spelling/punctuation variant
+ // escapes the strict symbol recogniser (or a locale switches during render).
+ const lines=String(text||'').replace(/\r/g,'').split('\n').map(x=>x.trim()).filter(Boolean);
+ const strict=splitAngelusVersicleResponse(text);
+ const parts=strict.length===2?strict:lines.length===2?lines.map((line,i)=>({
+   role:i===0?'leader':'response',
+   text:line.replace(i===0?/^(?:℣|V)\.?\s*/i:/^(?:℟|R)\.?\s*/i,'').trim()
+ })):[];
+ if(parts.length!==2)return nl(text);
+ return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><b aria-hidden="true">${part.role==='leader'?'℣.':'℟.'}</b><span>${esc(part.text)}</span></span>`).join('')}</span>`;
 }
 function renderAngelus(){
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
@@ -995,7 +1025,7 @@ function renderAdoration(){
 }
 function familyOf(p){if(['litany_loreto_1962','litany_loreto_current'].includes(p.id))return'litany_loreto';if(['foundations_eternal_rest','dead_eternal_rest_singular'].includes(p.id))return'eternal_rest';return p.id}
 let LIB={q:'',cat:'all',open:null,language:null};
-function normalizedSource(p){const pr=p.provenance||{};return {id:p.id,family:familyOf(p),work:pr.work||p.title||p.id,witness:pr.witness||p.source||'Normalized existing corpus',url:pr.url||p.sourceUrl||'',quality:pr.quality||p.sourceStatus||'NORMALIZED_EXISTING',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
+function normalizedSource(p){const pr=p.provenance||{};return {id:p.id,family:familyOf(p),work:pr.work||p.title||p.id,witness:pr.witness||p.source||'Normalized existing corpus',url:praySourceURL(p),quality:pr.quality||p.sourceStatus||'LEGACY_SOURCE_DOCUMENTED_NOT_PRIMARY_COLLATED',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
 const SOURCE_REGISTRY=Object.freeze(Object.fromEntries(Object.values(DATA.prayers||{}).map(p=>[p.id,Object.freeze(normalizedSource(p))])));
 function renderLibrary(){
  if(LIB.open){

@@ -5,6 +5,7 @@ on:
       - "src/pray/**"
       - "tests/pray-presentation.mjs"
       - "tests/pray-marian-mobile.mjs"
+      - "tests/pray-all-modules-mobile.mjs"
       - ".github/workflows/pray-marian-acceptance.yml"
   workflow_dispatch:
 jobs:
@@ -21,3 +22,5 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Angelus and Rosary real mobile Guide
         run: timeout --signal=TERM --kill-after=5s 160s node tests/pray-marian-mobile.mjs
+      - name: All devotional routes and canonical Prayer Library mobile
+        run: timeout --signal=TERM --kill-after=5s 190s node tests/pray-all-modules-mobile.mjs
