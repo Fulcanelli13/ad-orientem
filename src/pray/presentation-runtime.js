@@ -343,7 +343,7 @@ function sourceLine(p){
  const witness=edition?L(edition.label.en,edition.label.fr):(pr.witness||p.source||L('Source witness not recorded','Témoin textuel non documenté'));
  const transcribed=!edition&&!!PRAY_LITURGICAL_TRANSCRIPTION[p.id]&&!pr.url&&!p.sourceUrl;
  const sourceLink=url
-   ?`<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(localeWitness?L('Read French edition for comparison','Consulter l’édition française de référence'):transcribed?L('Read the 1962 Roman Ordinary (secondary transcription)','Lire l’Ordinaire romain de 1962 (transcription secondaire)'):L('Open the cited source','Consulter la source citée'))} ↗</a>`
+   ?`<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(localeWitness?(localeWitness.isComparative?L('Compare the published French edition','Comparer avec l’édition française publiée'):L('Read the published French text','Consulter le texte français publié')):transcribed?L('Read the 1962 Roman Ordinary (secondary transcription)','Lire l’Ordinaire romain de 1962 (transcription secondaire)'):L('Open the cited source','Consulter la source citée'))} ↗</a>`
    :`<small>${esc(L('A direct source link has not yet been verified.','Aucun lien direct vers la source n’est encore vérifié.'))}</small>`;
  const editionNote=edition?'<p>'+esc(L(edition.note.en,edition.note.fr))+'</p>':'';
  const additionalWitness=edition?.secondaryUrl
