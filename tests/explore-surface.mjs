@@ -408,7 +408,7 @@ assert.ok(sameiro[0].sections.some(section=>/Feast of Our Lady of Sameiro/.test(
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,99,"tranche 7 address-only shrines unexpectedly published map points");
 
 const bermontShrine=filterExploreItems(projection.byLens.shrines,{query:"Bermont"});
-assert.equal(bermontShrine.length,1);
+assert.ok(bermontShrine.some(item=>item.source_id==="shrine:FR:bermont-greux"),"historical Bermont sanctuary missing from expanded shrine search");
 assert.equal(bermontShrine[0].map_publishable,true);
 assert.equal(bermontShrine[0].map_state,"MAPPED");
 
