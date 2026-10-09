@@ -54,6 +54,9 @@ assert.equal(TRADITIONAL_LEARN_ALIASES["learn.seasonal_rites"]?.target,"calendar
 assert.equal(Object.hasOwn(TRADITIONAL_LEARN_ROUTES,"learn.seasonal_rites"),false,"Seasonal Catholic Practice returned as an active Learn owner");
 assert.equal(LEARN_MODULE_IDS.includes("learn.seasonal_rites"),false,"final v38.4 donor dedupe requires Seasonal Catholic Practice to remain a compatibility alias, not a duplicate Learn launcher");
 
+for(const [id,url] of Object.entries(TRADITIONAL_LEARN_SOURCES_V381)){
+  assert.match(url,/^https:\/\//,id+" lacks a verified-scheme Formation source");
+}
 const runtime=readFileSync("src/learn/traditional-life.js","utf8");
 const browser=readFileSync("src/learn/browser-entry.js","utf8");
 const presentation=readFileSync("src/learn/presentation.js","utf8");
