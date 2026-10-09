@@ -9,6 +9,7 @@ const L={
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
+  readable:"Struggling with Douay–Rheims? Select New Catholic Bible (2019) to open the same passage in clear, contemporary Catholic English. Full in-app text requires publisher permission.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
  fr:{heading:"Sainte Écriture",notice:"Bible catholique traditionnelle. Le texte intégral n'apparaît qu'après validation et intégration d'une édition autorisée.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
@@ -44,13 +45,13 @@ export function mountScriptureLibrary(root,{
  let location=passage?scripturePassage(passage):scripturePassage({book:"Luke",chapter:1,verseStart:28});
  let query="";
  let section="read";
- let editionId=DEFAULT_SCRIPTURE_EDITION[lang];
+ let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const wrap=element("section",null,"aoScriptureLibrary");
  wrap.setAttribute("aria-label","Sacred Scripture");
  root.replaceChildren(wrap);
  function editionSource() {
    if(lang==="fr")return FRENCH_INDEX;
-   if(editionId==="dr-challoner")return sourceReadingLink(location);
+   if(["dr-challoner","ncb-2019"].includes(editionId))return sourceReadingLink(location,editionId);
    return null;
  }
  function linkToSource(href) {
@@ -79,19 +80,26 @@ export function mountScriptureLibrary(root,{
      const opt=element("option",name);opt.value=value;languageSelect.append(opt);
    }
    languageSelect.value=lang;
-   languageSelect.addEventListener("change",()=>{lang=languageSelect.value;editionId=DEFAULT_SCRIPTURE_EDITION[lang];prefs.setLanguage(lang);draw();});
+   languageSelect.addEventListener("change",()=>{lang=languageSelect.value;editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];prefs.setLanguage(lang);draw();});
    langControl.append(languageSelect);nav.append(langControl);
    const editionControl=element("label",t.source);
    const editionSelect=element("select");
    for(const edition of Object.values(SCRIPTURE_EDITIONS).filter(x=>x.language===lang)){
      const opt=element("option",edition.title);
      opt.value=edition.id;
-     opt.disabled=edition.id!==DEFAULT_SCRIPTURE_EDITION[lang] && (!edition.enabled || edition.rights!=="cleared");
+     opt.disabled=!(edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || edition.id==="ncb-2019" || (edition.enabled && edition.rights==="cleared"));
      editionSelect.append(opt);
    }
    editionSelect.value=editionId;
-   editionSelect.addEventListener("change",()=>{editionId=editionSelect.value;draw();});
+   editionSelect.addEventListener("change",()=>{
+     const chosen=SCRIPTURE_EDITIONS[editionSelect.value];
+     if(!chosen || chosen.language!==lang || (chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && chosen.id!=="ncb-2019" && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
+     editionId=chosen.id;
+     if(lang==="en" && ["dr-challoner","ncb-2019"].includes(editionId))prefs.setEnglishEdition(editionId);
+     draw();
+   });
    editionControl.append(editionSelect);nav.append(editionControl);
+   if(lang==="en")wrap.append(element("p",t.readable,"aoScriptureNotice"));
    const bookControl=element("label",t.book);
    const books=element("select");
    for(const book of scriptureBookCatalogue()){const opt=element("option",book);opt.value=book;books.append(opt);}
@@ -184,7 +192,7 @@ export function mountScriptureLibrary(root,{
  }
  draw();
  return Object.freeze({
-   setLanguage(next){if(!L[next])throw new Error("Unsupported language");lang=next;editionId=DEFAULT_SCRIPTURE_EDITION[lang];draw();},
+   setLanguage(next){if(!L[next])throw new Error("Unsupported language");lang=next;editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];prefs.setLanguage(lang);draw();},
    setPassage(next){location=scripturePassage(next);draw();},
    setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");records=next;draw();},
    status(){return Object.freeze({language:lang,editionId,passage:location,bookmarks:prefs.load().bookmarks.length});},
