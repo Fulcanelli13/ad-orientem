@@ -34,7 +34,11 @@ for (const match of html.matchAll(pattern)) {
   const type = (attrs.match(/\btype\s*=\s*(['"])(.*?)\1/i)?.[2] ?? "").trim().toLowerCase();
   const classic = tag === "script" && (!type || /^(?:text|application)\/(?:javascript|ecmascript)$/.test(type));
   const staticCss = tag === "style" && (!type || type === "text/css");
-  const blockedAttributes = /\b(?:src|async|defer|id|onload|onerror|integrity)\s*=/i.test(attrs);
+  // An ID is safe to retain on an external script/link when no code refers
+  // to that ID elsewhere; dynamic template/data scripts are never extracted.
+  const id = attrs.match(/\bid\s*=\s*(['"])(.*?)\1/i)?.[2] ?? null;
+  const idIsUnreferenced = !id || html.split(id).length === 2;
+  const blockedAttributes = /\b(?:src|async|defer|onload|onerror|integrity)\s*=/i.test(attrs) || !idIsUnreferenced;
   const blockedContents = tag === "script" && /\bdocument\s*\.\s*(?:currentScript|write|writeln)\b|\bimport\s*\.\s*meta\b/.test(source);
   const shouldExtract = !blockedAttributes && !blockedContents &&
     ((classic && n >= MIN_JS) || (staticCss && n >= MIN_CSS));
@@ -87,7 +91,7 @@ if (process.argv.includes("--verify")) {
   for (const entry of prev.entries) {
     if (!existsSync(entry.filename)) throw new Error("Missing startup chunk " + entry.filename);
     if (!html.includes("./" + entry.filename)) throw new Error("HTML lost startup chunk " + entry.filename);
-    if (size(readFileSync(entry.filename)) !== entry.originalBytes) throw new Error("Changed startup chunk " + entry.filename);
+    if (size(readFileSync(entry.filename)) !== (entry.packagedBytes ?? entry.originalBytes)) throw new Error("Changed startup chunk " + entry.filename);
   }
   if (initial > prev.originalHtmlBytes * 0.9) throw new Error("HTML reduction budget regressed");
   console.log("Startup chunk integrity PASS");
