@@ -121,7 +121,7 @@ try{
     ["2026-12-08",new RegExp("^Tempora/Adv2-2")],
   ]){
     const row=rows.find(x=>x.date===date);
-    assert.ok(!row.failed,date+": day unresolved");
+    assert.ok(!row.failed,date+": day unresolved: "+JSON.stringify(row));
     const c=row?.composition;
     assert.ok(c?.commemorations?.length>0,date+": no source-backed Proper commemoration");
     assert.ok(c.commemorations.some(x=>expectedId.test(x.path||"")),
