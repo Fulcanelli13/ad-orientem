@@ -5,6 +5,7 @@ import { NOVENA_CORPUS_V4, NOVENA_CORPUS_V4_IDS, NOVENA_CORPUS_V4_VERSION, NOVEN
 import { NOVENA_FRENCH_GUIDE_PARITY_V1, NOVENA_FRENCH_GUIDE_PARITY_STATUS } from "../src/pray/novena-french-guide-parity.v1.js";
 import { NOVENA_SOURCE_HOLDS, NOVENA_TARGET_IDS, NOVENA_TARGET_REGISTRY_V1 } from "../src/calendar/devotional-registry.js";
 import { NOVENA_SOURCE_ACCESS_V1, novenaSourceAccess } from "../src/pray/novena-source-access.v1.js";
+import { HAMMER_DAY_SECTIONS_V1, HAMMER_DAY_SOURCE_URL_V1, hammerHistoricalDayWitness } from "../src/pray/novena-hammer-day-witness.v1.js";
 
 const donorExpected=[
   "holy_ghost","christmas","corpus_christi","sacred_heart",
@@ -238,6 +239,66 @@ assert.equal(NOVENA_CORPUS_V4.perpetual_help.source.url,"https://en.wikisource.o
 // Textual correspondence to their digitizations is not a printed facsimile
 // collation and does not certify editorial French translations.
 const historicalNovenaReview=JSON.parse(readFileSync("data/pray/novena-source-review.v2.json","utf8"));
+
+const latestNovenaReview=JSON.parse(readFileSync("data/pray/novena-source-review.v3.json","utf8"));
+assert.equal(latestNovenaReview.schema,"ao.prayer.novena-source-review.v3");
+assert.equal(latestNovenaReview.records.length,16);
+assert.equal(latestNovenaReview.counts.sourceDayBodyReviews,72);
+assert.equal(latestNovenaReview.counts.uniqueDayPrayerBodies,72);
+assert.equal(latestNovenaReview.counts.sourceDayBodyReviewsThisPass,36);
+assert.equal(latestNovenaReview.counts.repeatFormAnchorReviewsThisPass,2);
+assert.equal(latestNovenaReview.counts.fullEnglishDigitalLineByLineCertificates,0);
+assert.equal(latestNovenaReview.counts.completePrintEditionCertificates,0);
+assert.equal(latestNovenaReview.counts.independentOriginalFrenchPrintCertificates,0);
+assert.equal(latestNovenaReview.counts.omittedHammerMeditationPracticeDayPairs,27);
+
+const latestSourceReviews=Object.fromEntries(latestNovenaReview.records.map(x=>[x.id,x]));
+let verifiedDigitalAnchors=0;
+for(const id of ["christmas","holy_ghost","st_joseph","holy_souls","immaculate_conception","annunciation","seven_sorrows","assumption"]){
+ const record=latestSourceReviews[id],live=NOVENA_CORPUS_V4[id];
+ assert.equal(record.dayBodySourceReview.length,9,id+" must have nine original-language review entries");
+ for(let i=0;i<9;i++){
+  const a=record.dayBodySourceReview[i],text=live.days[i].text.en;
+  assert.equal(a.day,i+1);
+  assert.ok(text.startsWith(a.sourceIncipit),id+" day "+(i+1)+" original-text opening drifted");
+  assert.ok(text.endsWith(a.sourceExplicit),id+" day "+(i+1)+" original-text ending drifted");
+  assert.match(a.completePrintEditionCertification,/NOT_CERTIFIED/);
+  assert.ok(a.sourceUrl||record.url);
+  verifiedDigitalAnchors++;
+ }
+}
+assert.equal(verifiedDigitalAnchors,72);
+assert.equal(Object.keys(HAMMER_DAY_SECTIONS_V1).length,3);
+assert.equal(HAMMER_DAY_SOURCE_URL_V1,"https://www.gutenberg.org/files/33671/33671-h/33671-h.htm");
+for(const id of ["annunciation","seven_sorrows","assumption"]){
+ const historical=latestSourceReviews[id].omittedHistoricalMaterial.originalDaySections;
+ assert.equal(historical.length,9);
+ assert.equal(HAMMER_DAY_SECTIONS_V1[id].length,9);
+ for(let i=0;i<9;i++){
+  const witness=hammerHistoricalDayWitness(id,i+1);
+  assert.equal(witness.title,historical[i].originalEnglishTitle,id+" original day "+(i+1)+" title drifted");
+  assert.equal(witness.url,historical[i].originalUrl);
+  assert.equal(witness.day,i+1);
+  assert.equal(witness.language,"en");
+  assert.equal(witness.meditation,"PRESENT_IN_ORIGINAL_NOT_EMBEDDED");
+  assert.equal(witness.practice,"PRESENT_IN_ORIGINAL_NOT_EMBEDDED");
+ }
+}
+assert.equal(hammerHistoricalDayWitness("holy_souls",1),null);
+assert.equal(hammerHistoricalDayWitness("annunciation",10),null);
+for(const id of ["corpus_christi","sacred_heart"]){
+ const row=latestSourceReviews[id].repeatBodySourceReview,body=NOVENA_CORPUS_V4[id].repeatText.en;
+ assert.ok(body.startsWith(row.sourceIncipit));
+ assert.ok(body.endsWith(row.sourceExplicit));
+ assert.equal(row.directPrintedFacsimileComparison,"PENDING");
+}
+const latestRuntime=readFileSync("src/pray/novena-runtime.js","utf8");
+assert.match(latestRuntime,/function hammerSourceDayDetails\\(n\\)/,"Missing discreet per-day original-source expander");
+assert.match(latestRuntime,/data-n1-hammer-source-day/);
+assert.match(latestRuntime,/sourceWitness\\(daySource\\(n,d\\),L\\('Proper prayer of the day','Prière propre du jour'\\)\\)\\+hammerSourceDayDetails\\(n\\)/,"Guided Hammer day must offer the full original meditation and practice");
+assert.match(latestRuntime,/\\$\\{hammerSourceDayDetails\\(n\\)\\}\\$\\{hammerTailStage\\(n\\)\\}/,"Simple Hammer day must offer the original meditations and practices");
+assert.match(latestRuntime,/target="_blank" rel="noopener noreferrer"/,"Historical source access lost secure external link");
+
 assert.equal(historicalNovenaReview.records.length,16);
 assert.equal(historicalNovenaReview.counts.sourceDayBodyReviews,36,"Historical text review must include nine Holy Souls day-prayers");
 assert.equal(historicalNovenaReview.counts.frenchEditorialTranslationReviews,27,"Uncompared editorial French meanings must not count as reviewed");
