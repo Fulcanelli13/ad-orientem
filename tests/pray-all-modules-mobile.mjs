@@ -193,6 +193,23 @@ try{
   assert.equal(result.ariaHidden,"false",id+" is inaccessible despite opening");
   snapshots.push({id,view,bodyLength:result.bodyLength});
  }
+ // Real mobile disclosure: original historical witnesses must be clickable,
+ // not just bibliographic titles or an unrelated Bible-edition source.
+ for(const [route,witness] of [
+   ["pray.stations","The_Stations_of_the_Cross"],
+   ["pray.penitential_psalms","The_Seven_Penitential_Psalms"],
+   ["pray.seven_words","The_Devotion_of_the_Seven_Words"],
+   ["pray.forty_hours","The_Devotion_of_the_Forty_Hours"]
+ ]){
+   await page.evaluate(id=>globalThis.AO_PRAY_V435930.open(id,{returnContext:null}),route);
+   const box="#aoPray435930.open";
+   const sources=await page.locator(box+" details.aoP435930Source a.aoP435930SourceLink").evaluateAll(nodes=>nodes.map(node=>({href:node.href,rel:node.rel})));
+   assert.ok(sources.some(x=>x.href.includes(witness)),"Missing direct historical witness from "+route+": "+JSON.stringify(sources));
+   assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
+   const disclosure=page.locator(box+" details.aoP435930Source").last();
+   await disclosure.locator("summary").tap();
+   assert.equal(await disclosure.getAttribute("open"),"","Historical witness drawer cannot be opened on touch: "+route);
+ }
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
  const ids=await page.locator("#aoPray435930 [data-p435930-lib-open]").evaluateAll(nodes=>nodes.map(x=>x.dataset.p435930LibOpen));
@@ -235,6 +252,11 @@ try{
      }
    }
    assert.ok(prayer.source.length>=5,"Prayer source/witness presentation lost: "+id);
+   if(id==="foundations_act_of_hope"){
+     assert.match(prayer.source,/Dans cette foi/,"published French textual anomaly must be explicitly recorded");
+     const links=await page.locator("#aoPray435930.open .aoP435930SourceWitnessNote a").evaluateAll(nodes=>nodes.map(n=>n.href));
+     assert.ok(links.some(x=>x.includes("compendium-ccc_fr.html")),"French Compendium witness not linked");
+   }
    if(["mass_confiteor","adoration_lord_i_am_not_worthy","litany_loreto_1962","litany_loreto_current","devotion_litany_st_joseph"].includes(id)){
      const sourceLinks=await page.locator("#aoPray435930.open .aoP435930Prayer .aoP435930Source a").evaluateAll(nodes=>nodes.map(n=>n.href));
      assert.ok(sourceLinks.length>=2,"Missing primary/secondary edition references for "+id);
