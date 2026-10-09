@@ -54,7 +54,7 @@ const report={schema:'AO_CALENDAR_1962_FULL_YEAR_AUDIT_V1',createdAt:new Date().
  independentSource:'Missale Online annual print calendar; missing records are not proof of agreement',
  secondaryReference:'https://gcatholic.org/calendar/2027/Extraordinary-en',
  method:'Compare all civil dates; rank/colour divergences flagged; title and commemoration-count differences require human review. Optional rose is a warning.',
- summaries:[],reviews:[],failures:[]};
+ summaries:[],reviews:[],dayRows:[],failures:[]};
 try{
  browser=await chromium.launch({headless:true});
  const app=await browser.newPage({serviceWorkers:'block'});
@@ -115,6 +115,8 @@ try{
   const anomalies=[];
   for(let i=0;i<numberOfDays(year);i++){
    const date=new Date(Date.UTC(year,0,i+1)).toISOString().slice(0,10),a=appDays.get(date),o=oracle.get(date);
+   report.dayRows.push({date,app:a?{id:a.id,title:a.title,rank:a.rank,colour:a.colour,commemorations:a.commemorations}:null,
+    independent:o?{title:o.title,rank:o.rank,colour:o.colour,commemorations:o.commemorations,unrecorded:o.unrecorded}:null});
    let finding=compare(a,o);
    const dispute=disputesByDate.get(date);
    if(finding.status==='potential_liturgical_conflict'&&dispute&&finding.conflicts.length===1&&
