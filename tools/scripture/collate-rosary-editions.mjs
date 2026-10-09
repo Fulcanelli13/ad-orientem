@@ -60,6 +60,7 @@ function flatten(root) {
   return out;
 }
 const en=flatten(english),fr=flatten(french);
+console.log("COLLATION_BOOK_NAMES "+JSON.stringify({en:english.books.map(x=>x.name),fr:french.books.map(x=>x.name)}));
 const aliases={
   "luke":{en:["luke"],fr:["luc","evangile selon saint luc"]},
   "matthew":{en:["matthew"],fr:["matthieu","evangile selon saint matthieu"]},
