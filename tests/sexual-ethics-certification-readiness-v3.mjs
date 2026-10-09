@@ -40,8 +40,8 @@ for(const record of evidence.cases){
   }
 }
 assert.equal(stageNotes,47*8);
-assert.equal(evidence.readiness_v3.read_primary_documents.length,21);
-for(const x of evidence.readiness_v3.read_primary_documents)assert.match(x.url,/^https:\/\//);
+assert.equal(evidence.readiness_v3.primary_reference_documents_consulted.length,21);
+for(const x of evidence.readiness_v3.primary_reference_documents_consulted)assert.match(x.url,/^https:\/\//);
 assert.match(CSE_DEBATE_MAP.CSE006.opposition[0],/state coercion/);
 assert.match(CSE_DEBATE_MAP.CSE006.opposition[1],/contrainte étatique/);
 assert.match(CSE_DEBATE_MAP.CSE093.opposition[0],/atypical sex development/);
