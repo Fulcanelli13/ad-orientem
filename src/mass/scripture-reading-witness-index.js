@@ -68,7 +68,7 @@ export const VERIFIED_MASS_SCRIPTURE_READINGS=Object.freeze([
     "readings": {
       "EPISTLE_OR_LESSON": {
         "reference": "Ephesians 4:23–28",
-        "latinIncipit": "Renovamini spiritu mentis vestrae"
+        "latinIncipit": "Renovamini spiritu mentis"
       },
       "GOSPEL": {
         "reference": "Matthew 22:1–14",
