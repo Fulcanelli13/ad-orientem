@@ -31,3 +31,10 @@ for(const tag of ["svg","template","pre","article","section","div","main","texta
 }
 const preMarkup=withoutScripts.replace(/>([^<]+)</g,"><");
 console.log("MARKUP_ANALYSIS="+JSON.stringify({markupBytes:len(withoutScripts),literalTextBytes:len(withoutScripts)-len(preMarkup),tagCounts:groups,topText:textNodes,topAttrs:longTags}));
+
+const inlineSvg=[...withoutScripts.matchAll(/<svg\b([^>]*)>[\s\S]*?<\/svg\s*>/gi)].map(m=>({
+ bytes:len(m[0]),start:m.index,attrs:m[1].slice(0,500),ids:[...m[0].matchAll(/\bid=["']([^"']+)["']/g)].slice(0,15).map(z=>z[1]),
+ before:withoutScripts.slice(Math.max(0,m.index-180),m.index).replace(/\s+/g," "),after:withoutScripts.slice(m.index+m[0].length,m.index+m[0].length+180).replace(/\s+/g," "),
+ symbolCount:(m[0].match(/<symbol\b/g)||[]).length,pathCount:(m[0].match(/<path\b/g)||[]).length
+}));
+console.log("SVG_ANALYSIS="+JSON.stringify({svgCount:inlineSvg.length,svgTotalBytes:inlineSvg.reduce((a,b)=>a+b.bytes,0),largest:inlineSvg.sort((a,b)=>b.bytes-a.bytes).slice(0,25)}));
