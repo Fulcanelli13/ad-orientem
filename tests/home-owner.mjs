@@ -71,6 +71,6 @@ assert.match(ownerSource,/\.aoSaintArtCard/,"Home saint-art terminal-state clean
 
 assert.match(ownerSource,/data-home-cu-static/,"Daily Rule click owner missing");
 assert.match(ownerSource,/opened===false/,"Daily Rule does not recognize a rejected legacy action");
-assert.match(ownerSource,/rosary:"pray\\.rosary"/,"Daily Rule Rosary lacks a canonical fallback");
+assert.ok(ownerSource.includes('rosary:"pray.rosary"'),"Daily Rule Rosary lacks a canonical fallback");
 
 console.log("PASS modular Home navigation/reset owner");
