@@ -51,3 +51,11 @@ const absent=createPrayOwner({
 assert.equal(await absent.open(),false);
 
 console.log("PASS modular PRAY navigation owner");
+
+import {readFileSync} from "node:fs";
+const runtimeSource=readFileSync("src/pray/presentation-runtime.js","utf8");
+assert.ok(runtimeSource.includes("function openExternalFamilyRoute(button,route,returnFamily)"),"PRAY external family launch lacks canonical failure-aware handler");
+assert.ok(runtimeSource.includes("result===true||result?.ok===true"),"PRAY external family launch accepts implicit or failed results");
+assert.match(runtimeSource,/data-p435930-family-open-error/,"PRAY external family failure lacks a visible alert");
+assert.match(runtimeSource,/p435930RetryExternal/,"PRAY external module failure lacks an exact-route Retry action");
+assert.match(runtimeSource,/min-height:44px/,"PRAY retry target is too small");

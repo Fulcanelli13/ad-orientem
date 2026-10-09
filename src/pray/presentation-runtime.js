@@ -1386,15 +1386,55 @@ function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}AD
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
 function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
 function openPrayerOnly(id){prayerReturnView=view;prayerId=id;view='prayerOnly';render()}
+let externalFamilyEpoch=0;
+function clearExternalFamilyError(){
+ document.querySelectorAll?.('[data-p435930-family-open-error]')?.forEach?.(node=>node.remove?.());
+}
+async function openExternalFamilyRoute(button,route,returnFamily){
+ const attempt=++externalFamilyEpoch;
+ if(button?.getAttribute?.('aria-busy')==='true')return false;
+ clearExternalFamilyError();
+ button?.setAttribute?.('aria-busy','true');
+ let result=null;
+ try{result=await window?.AO_MODULES?.open?.(route,{returnContext:PRAY_CTX,returnFamily});}
+ catch(error){console.error('PRAY family route failed',route,error);}
+ finally{button?.removeAttribute?.('aria-busy');}
+ if(result===true||result?.ok===true)return true;
+ if(attempt!==externalFamilyEpoch||view!=='family'||familyId!==returnFamily||button?.isConnected===false)return false;
+ const panel=document.createElement('div');
+ panel.dataset.p435930FamilyOpenError=route;
+ panel.setAttribute('role','alert');
+ panel.style.cssText='margin:8px 0 12px;padding:12px;border:1px solid var(--ao-rule,rgba(217,197,154,.25));border-radius:10px;font:inherit';
+ const message=document.createElement('p');
+ message.textContent=L('This prayer could not be opened. Please retry.','Impossible d’ouvrir cette prière. Veuillez réessayer.');
+ message.style.cssText='margin:0 0 8px;line-height:1.4';
+ const retry=document.createElement('button');
+ retry.type='button';
+ retry.dataset.p435930RetryExternal=route;
+ retry.textContent=L('Retry','Réessayer');
+ retry.style.cssText='min-height:44px;padding:8px 16px;background:transparent;color:inherit;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px';
+ panel.append(message,retry);
+ button?.insertAdjacentElement?.('afterend',panel);
+ return false;
+}
 function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.matches('[data-p435930-close]'))return close();
  if(b.matches('[data-p435930-home]'))return goGlobalHome();
  if(b.matches('[data-p435930-back]'))return backToParent()
  if(b.dataset.p435930Family){familyId=b.dataset.p435930Family;view='family';navStack=[];return render()}
+ if(b.dataset.p435930RetryExternal){
+  const holder=b.closest?.('[data-p435930-family-open-error]');
+  const card=holder?.previousElementSibling;
+  if(card?.dataset?.p435930External){
+    e.preventDefault?.();
+    void openExternalFamilyRoute(card,card.dataset.p435930External,familyId);
+  }
+  return;
+ }
  if(b.dataset.p435930External){
-  const route=b.dataset.p435930External,returnFamily=familyId;
-  void Promise.resolve(window?.AO_MODULES?.open?.(route,{returnContext:PRAY_CTX,returnFamily})).catch(error=>console.error('PRAY family route failed',route,error));
+  e.preventDefault?.();
+  void openExternalFamilyRoute(b,b.dataset.p435930External,familyId);
   return;
  }
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}

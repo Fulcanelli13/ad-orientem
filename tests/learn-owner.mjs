@@ -142,3 +142,4 @@ assert.match(host,/domain === "learn"[\s\S]*AO_LEARN_APP_V1/);
 console.log("PASS modular Learn owner: v43.59.30 hub plus Spiritual Life and v38.4 sacramental formation, shell-routed, donor fallback retired.");
 
 await import("./learn-public-discovery.mjs");
+await import("./learn-direct-entry-stale-launch.mjs");
