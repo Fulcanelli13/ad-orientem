@@ -18,6 +18,7 @@ on:
       - "src/settings/**"
       - "assets/**"
       - "tests/app-visual-acceptance.mjs"
+      - "tests/catechism-guided-mode-e2e.mjs"
       - "tests/mass-visual-acceptance.mjs"
       - "tests/nonmass-donor-reference-e2e.mjs"
       - "data/presentation/exact-donor-parity.v1.json"
@@ -45,6 +46,7 @@ jobs:
       # the definitive Mass acceptance evidence from this workflow.
       - run: node tests/mass-visual-acceptance.mjs
       - run: node tests/app-visual-acceptance.mjs
+      - run: node tests/catechism-guided-mode-e2e.mjs
       - run: node tests/nonmass-donor-reference-e2e.mjs
       - uses: actions/upload-artifact@v4
         if: always()
