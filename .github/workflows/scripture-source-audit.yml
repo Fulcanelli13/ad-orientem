@@ -1,0 +1,25 @@
+name: Scripture candidate source acquisition
+on:
+  pull_request:
+    paths:
+      - 'tools/scripture/**'
+      - 'tests/scripture-source-normalization.mjs'
+      - '.github/workflows/scripture-source-audit.yml'
+  workflow_dispatch:
+jobs:
+  source-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test Catholic canon and verse gap classification
+        run: node tests/scripture-source-normalization.mjs
+      - name: Fetch and verify historical Catholic text witnesses
+        run: node tools/scripture/fetch-upstream.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scripture-historical-candidates-review-only
+          path: artifacts/scripture-candidates/
+          retention-days: 7
