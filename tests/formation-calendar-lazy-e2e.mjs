@@ -97,8 +97,8 @@ try{
  // and navigable cards even before the whole year's Masses are loaded.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("year")),true);
  await page.locator("#ao-calendar-modular-root .aoCalYearTrack").waitFor({state:"visible",timeout:5000});
- assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-segment]").count(),9);
- assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period]").count(),9);
+ assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-segment]").count(),11);
+ assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-year-period]").count(),11);
  const yearSize=await page.evaluate(()=>{
    const root=document.getElementById("ao-calendar-modular-root");
    const track=root.querySelector(".aoCalYearTrack");
@@ -226,6 +226,11 @@ try{
  console.log("PASS Calendar bilingual Proper print opens faithful two-column source-bound extract; no claim to a complete Missal");
 
 
+ // The next major day must be computed by consecutive resolved days, not a hand-curated feast shortlist.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
+ await page.waitForFunction(()=>!!document.querySelector('#ao-calendar-modular-root .aoCalV2NextMajor[data-cal-date="2026-10-11"]'),null,{timeout:60000});
+ assert.equal(await page.locator('#ao-calendar-modular-root .aoCalV2NextMajor[data-cal-date="2026-10-11"]').count(),1,
+   "Next major day must include the next actual Sunday, not jump to the curated Christ the King");
  // Source provenance and month date-input focus are exercised on the real phone DOM.
  // The .ics check above ends on Month; a Day-only disclosure must be tested on Day.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day")),true);
