@@ -10,7 +10,8 @@
     "terms": "https://adorientem.church/legal/terms",
     "press": "https://adorientem.church/press",
     "official_sspx_statistics": "https://sspx.org/en/general-statistics-about-sspx-30870",
-    "latinmassdir_country_census": "https://www.latinmassdir.org/countries/"
+    "latinmassdir_country_census": "https://www.latinmassdir.org/countries/",
+    "latinmassdir_about": "https://www.latinmassdir.org/about/"
   },
   "reported_homepage": {
     "active_locations": 2284,
@@ -114,7 +115,11 @@
   "independent_official_source": {
     "sspx_global_mass_locations": 798,
     "sspx_friendly_separate": 79,
-    "sspx_US_chapels_2026_08": 120
+    "sspx_US_chapels_2026_08": 120,
+    "latinmassdir_approved_venues_2026_10": 1573,
+    "latinmassdir_listed_countries": 65,
+    "latinmassdir_excludes_sspx": true,
+    "theoretical_disjoint_affiliation_total": 2371
   },
   "competitor_sspx_country_samples": {
     "US": 262,
@@ -156,6 +161,7 @@
     "The 77 country counts sum to 2288, four above the homepage current-location count of 2284. Three planned listings alone do not fully explain the difference.",
     "Do not equate third-party listing count, confirmed current Mass venues, community ministries, or geographic indicator count.",
     "The website permits attributed structured directory reuse; requests that bulk ingestion use a data feed instead of high-rate scraping.",
-    "The competitor's displayed 262 US SSPX listings should not be interpreted as 262 unique US SSPX chapels versus the SSPX official report of 120 without a physical-site crosswalk."
+    "The competitor's displayed 262 US SSPX listings should not be interpreted as 262 unique US SSPX chapels versus the SSPX official report of 120 without a physical-site crosswalk.",
+    "Latin Mass Directory reports 1573 currently listed approved-structure venues across 65 countries and excludes SSPX; adding its 1573 to SSPX's 798 official Mass locations yields 2371 source listings BEFORE physical deduplication, schedule review and geographic normalization. This is a discovery opportunity, not a verified published total."
   ]
 }
