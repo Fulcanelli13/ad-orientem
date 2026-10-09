@@ -75,6 +75,11 @@ for(const id of ["G326","G328","G096","G331","G031","G037","G038"]){
   assert.match(runtime,new RegExp('"'+id+'"'),"Traditional PRAY glossary mapping lost "+id);
 }
 assert.match(styles,/aoTP381Glossary/,"Traditional PRAY glossary action lost restrained styling");
+assert.match(styles,/\.aoTP381Source\{[^\n]*max\(13px,\.8125rem\)/,
+  "Prayer source text is below the shared readable metadata floor");
+assert.match(styles,/\.aoTP381Source summary\{[^\n]*min-height:44px/,
+  "Prayer source disclosure is no longer touch-friendly");
+
 assert.match(styles,/aoTP381Reader/);
 assert.match(styles,/aoTP381PrayerList/);
 assert.match(runtime,/Foundational prayers may recur later in the Rosary or another devotion/,"Morning\/Evening repetition guide disappeared");
