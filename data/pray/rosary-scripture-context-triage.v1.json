@@ -1,0 +1,2214 @@
+{
+  "schema": "ao-rosary-scripture-context-triage-v1",
+  "date": "2026-10-09",
+  "baseline": "PR #526 automated comparison; triage only, never Scripture publication",
+  "policy": {
+    "default": "Use 20 existing coherent bilingual mystery meditations until full human editorial approval.",
+    "doNotConflate": [
+      "machine verse lookup",
+      "verbatim textual verification",
+      "Marian typological legitimacy",
+      "readability across a decade",
+      "legal permission"
+    ],
+    "typology": "Do not describe typological and liturgical applications as direct biblical narration of the Assumption or Coronation.",
+    "beads": "Do not require 10 mechanically divided quotations per mystery; sentences and speaker context must remain intelligible.",
+    "publication": "Zero entries authorized by this registry."
+  },
+  "priorityCases": [
+    {
+      "id": "glo4.b1",
+      "mystery": "glo4",
+      "reference": "Psalm 131:8",
+      "interpretation": "liturgical_typology",
+      "editorialFinding": "Ark/rest motif: not a historical narration of the Assumption; identify traditional application explicitly.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "KEEP_AS_EXPLICIT_TYPOLOGY_ONLY",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_5",
+      "contextReviewNote": "French Crampon explicitly gives Psalm 132 as Vulgate 131; exact alias verified. Not direct historical testimony to Assumption."
+    },
+    {
+      "id": "glo4.b2",
+      "mystery": "glo4",
+      "reference": "Canticles 2:10",
+      "interpretation": "canticle_allegory",
+      "editorialFinding": "Beloved's call: traditional spiritual/Marian application must be identified as such.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "GROUP_INTO_COMPLETE_SCENE_WITH_EXPLICIT_SPEAKERS",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Cantique_des_Cantiques",
+      "contextReviewNote": "Poetic exchanges require identification of interlocutors; avoid standalone verse snippets misrepresented as direct Assumption narrative."
+    },
+    {
+      "id": "glo4.b3",
+      "mystery": "glo4",
+      "reference": "Canticles 2:11",
+      "interpretation": "canticle_allegory",
+      "editorialFinding": "Incomplete seasonal image in isolation: group with surrounding verse(s) for comprehension.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "GROUP_INTO_COMPLETE_SCENE_WITH_EXPLICIT_SPEAKERS",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Cantique_des_Cantiques",
+      "contextReviewNote": "Poetic exchanges require identification of interlocutors; avoid standalone verse snippets misrepresented as direct Assumption narrative."
+    },
+    {
+      "id": "glo4.b4",
+      "mystery": "glo4",
+      "reference": "Canticles 2:12–13",
+      "interpretation": "canticle_allegory",
+      "editorialFinding": "Seasonal scene, not an Assumption eyewitness narrative; restore context.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "GROUP_INTO_COMPLETE_SCENE_WITH_EXPLICIT_SPEAKERS",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Cantique_des_Cantiques",
+      "contextReviewNote": "Poetic exchanges require identification of interlocutors; avoid standalone verse snippets misrepresented as direct Assumption narrative."
+    },
+    {
+      "id": "glo4.b5",
+      "mystery": "glo4",
+      "reference": "Canticles 2:14",
+      "interpretation": "canticle_allegory",
+      "editorialFinding": "Bridegroom/bride speech: identify speaker and context; do not present isolated words as Marian historical testimony.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "GROUP_INTO_COMPLETE_SCENE_WITH_EXPLICIT_SPEAKERS",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Cantique_des_Cantiques",
+      "contextReviewNote": "Poetic exchanges require identification of interlocutors; avoid standalone verse snippets misrepresented as direct Assumption narrative."
+    },
+    {
+      "id": "glo4.b6",
+      "mystery": "glo4",
+      "reference": "Psalm 44:10",
+      "interpretation": "royal_psalm_typology",
+      "editorialFinding": "Royal bride/queen imagery: Marian interpretation, not a direct record of the Coronation.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "KEEP_AS_EXPLICIT_MARIAN_TYPOLOGY_ONLY",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_2",
+      "contextReviewNote": "Royal psalm's original context must be distinguished from traditional Marian liturgical application."
+    },
+    {
+      "id": "glo4.b7",
+      "mystery": "glo4",
+      "reference": "Psalm 44:14–16",
+      "interpretation": "royal_psalm_typology",
+      "editorialFinding": "Royal procession imagery: avoid claiming the psalm directly narrates Mary's heavenly entry.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "KEEP_AS_EXPLICIT_MARIAN_TYPOLOGY_ONLY",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_2",
+      "contextReviewNote": "Royal psalm's original context must be distinguished from traditional Marian liturgical application."
+    },
+    {
+      "id": "glo4.b10",
+      "mystery": "glo4",
+      "reference": "Judith 13:23",
+      "interpretation": "judith_liturgical_application",
+      "editorialFinding": "Judith praised after deliverance: typological praise applied to Mary, not words addressed to Mary in the narrative.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "REWRITE_CONTEXT_OR_REMOVE_FROM_BEAD_SEQUENCE",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Judith",
+      "contextReviewNote": "Crampon 1923 full Judith chapter supports a literal narrative about Judith, not direct Marian historical speech. Group quotations into optional typology commentary, not ten mandatory quotations. Three pinpoint verse keys absent in secondary transcription."
+    },
+    {
+      "id": "glo5.b2",
+      "mystery": "glo5",
+      "reference": "Psalm 44:10",
+      "interpretation": "royal_psalm_typology",
+      "editorialFinding": "Royal bride/queen imagery: Marian interpretation, not a direct record of the Coronation.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "KEEP_AS_EXPLICIT_MARIAN_TYPOLOGY_ONLY",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_2",
+      "contextReviewNote": "Royal psalm's original context must be distinguished from traditional Marian liturgical application."
+    },
+    {
+      "id": "glo5.b3",
+      "mystery": "glo5",
+      "reference": "Psalm 44:11–12",
+      "interpretation": "royal_psalm_typology",
+      "editorialFinding": "Royal bride imagery: keep the original speaker and context distinguishable from Marian application.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "KEEP_AS_EXPLICIT_MARIAN_TYPOLOGY_ONLY",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_2",
+      "contextReviewNote": "Royal psalm's original context must be distinguished from traditional Marian liturgical application."
+    },
+    {
+      "id": "glo5.b4",
+      "mystery": "glo5",
+      "reference": "Psalm 44:14–16",
+      "interpretation": "royal_psalm_typology",
+      "editorialFinding": "Royal procession imagery: avoid claiming the psalm directly narrates Mary's heavenly entry.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "KEEP_AS_EXPLICIT_MARIAN_TYPOLOGY_ONLY",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_2",
+      "contextReviewNote": "Royal psalm's original context must be distinguished from traditional Marian liturgical application."
+    },
+    {
+      "id": "glo5.b5",
+      "mystery": "glo5",
+      "reference": "Canticles 6:8",
+      "interpretation": "canticle_allegory",
+      "editorialFinding": "Royal bride imagery; textual context and edition versification require checking.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "GROUP_INTO_COMPLETE_SCENE_WITH_EXPLICIT_SPEAKERS",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Cantique_des_Cantiques",
+      "contextReviewNote": "Poetic exchanges require identification of interlocutors; avoid standalone verse snippets misrepresented as direct Assumption narrative."
+    },
+    {
+      "id": "glo5.b6",
+      "mystery": "glo5",
+      "reference": "Canticles 6:9",
+      "interpretation": "canticle_allegory",
+      "editorialFinding": "Praise of the beloved; context and numbering need to be established before Marian application.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "GROUP_INTO_COMPLETE_SCENE_WITH_EXPLICIT_SPEAKERS",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Cantique_des_Cantiques",
+      "contextReviewNote": "Poetic exchanges require identification of interlocutors; avoid standalone verse snippets misrepresented as direct Assumption narrative."
+    },
+    {
+      "id": "glo5.b7",
+      "mystery": "glo5",
+      "reference": "Judith 13:23",
+      "interpretation": "judith_liturgical_application",
+      "editorialFinding": "Judith praised after deliverance: typological praise applied to Mary, not words addressed to Mary in the narrative.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "REWRITE_CONTEXT_OR_REMOVE_FROM_BEAD_SEQUENCE",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Judith",
+      "contextReviewNote": "Crampon 1923 full Judith chapter supports a literal narrative about Judith, not direct Marian historical speech. Group quotations into optional typology commentary, not ten mandatory quotations. Three pinpoint verse keys absent in secondary transcription."
+    },
+    {
+      "id": "glo5.b8",
+      "mystery": "glo5",
+      "reference": "Judith 13:25",
+      "interpretation": "judith_liturgical_application",
+      "editorialFinding": "Narrative praise of Judith; verify 1923 French page and English wording/verse mapping.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "REWRITE_CONTEXT_OR_REMOVE_FROM_BEAD_SEQUENCE",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Judith",
+      "contextReviewNote": "Crampon 1923 full Judith chapter supports a literal narrative about Judith, not direct Marian historical speech. Group quotations into optional typology commentary, not ten mandatory quotations. Three pinpoint verse keys absent in secondary transcription."
+    },
+    {
+      "id": "glo5.b9",
+      "mystery": "glo5",
+      "reference": "Judith 15:10",
+      "interpretation": "judith_liturgical_application",
+      "editorialFinding": "Judith's triumphal praise; explicit distinction between literal narrative and Marian liturgical use.",
+      "requiredActions": [
+        "verify_exact_english_edition_text",
+        "verify_crampon_1923_text_and_verse",
+        "record_original_context_and_speaker",
+        "verify_marian_liturgical_or_patristic_witness",
+        "rewrite_as_complete_coherent_meditation_if_needed",
+        "record_republication_rights"
+      ],
+      "status": "REVIEW_REQUIRED",
+      "approved": false,
+      "proposedDisposition": "REWRITE_CONTEXT_OR_REMOVE_FROM_BEAD_SEQUENCE",
+      "frenchPrimaryWitnessUrl": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Judith",
+      "contextReviewNote": "Crampon 1923 full Judith chapter supports a literal narrative about Judith, not direct Marian historical speech. Group quotations into optional typology commentary, not ten mandatory quotations. Three pinpoint verse keys absent in secondary transcription."
+    }
+  ],
+  "all200Flags": [
+    {
+      "id": "joy1.b1",
+      "reference": "Luke 1:26–27",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b2",
+      "reference": "Luke 1:28",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b3",
+      "reference": "Luke 1:29–30",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b4",
+      "reference": "Luke 1:31",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b5",
+      "reference": "Luke 1:32–33",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b6",
+      "reference": "Luke 1:34",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b7",
+      "reference": "Luke 1:35",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b8",
+      "reference": "Luke 1:36–37",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b9",
+      "reference": "Luke 1:38a",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy1.b10",
+      "reference": "Luke 1:38b",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b1",
+      "reference": "Luke 1:39–40",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b2",
+      "reference": "Luke 1:41",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b3",
+      "reference": "Luke 1:42",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b4",
+      "reference": "Luke 1:43–44",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b5",
+      "reference": "Luke 1:45",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b6",
+      "reference": "Luke 1:46–47",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b7",
+      "reference": "Luke 1:48–49",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b8",
+      "reference": "Luke 1:50–52",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b9",
+      "reference": "Luke 1:53–55",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy2.b10",
+      "reference": "Luke 1:56",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b1",
+      "reference": "Luke 2:4–5",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b2",
+      "reference": "Luke 2:6",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b3",
+      "reference": "Luke 2:7",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b4",
+      "reference": "Luke 2:8–9",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b5",
+      "reference": "Luke 2:10",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b6",
+      "reference": "Luke 2:11–12",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b7",
+      "reference": "Luke 2:13–14",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b8",
+      "reference": "Luke 2:15–16",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b9",
+      "reference": "Luke 2:17–19",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy3.b10",
+      "reference": "Luke 2:20",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b1",
+      "reference": "Luke 2:22–24",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b2",
+      "reference": "Luke 2:25",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b3",
+      "reference": "Luke 2:26",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b4",
+      "reference": "Luke 2:27–28",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b5",
+      "reference": "Luke 2:29–30",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b6",
+      "reference": "Luke 2:31–32",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b7",
+      "reference": "Luke 2:33–34",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b8",
+      "reference": "Luke 2:35",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b9",
+      "reference": "Luke 2:36–38",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy4.b10",
+      "reference": "Luke 2:39–40",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b1",
+      "reference": "Luke 2:41–42",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b2",
+      "reference": "Luke 2:43–44",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b3",
+      "reference": "Luke 2:45",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b4",
+      "reference": "Luke 2:46",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b5",
+      "reference": "Luke 2:47",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b6",
+      "reference": "Luke 2:48",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b7",
+      "reference": "Luke 2:49",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b8",
+      "reference": "Luke 2:50",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b9",
+      "reference": "Luke 2:51",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "joy5.b10",
+      "reference": "Luke 2:52",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b1",
+      "reference": "John 1:29",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b2",
+      "reference": "Matthew 3:13",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b3",
+      "reference": "Matthew 3:14",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b4",
+      "reference": "Matthew 3:15",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b5",
+      "reference": "Luke 3:21a",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b6",
+      "reference": "Luke 3:21b",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b7",
+      "reference": "Luke 3:22a",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b8",
+      "reference": "Luke 3:22b",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b9",
+      "reference": "John 1:32",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum1.b10",
+      "reference": "John 1:33–34",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b1",
+      "reference": "John 2:1",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b2",
+      "reference": "John 2:2",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b3",
+      "reference": "John 2:3",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b4",
+      "reference": "John 2:4",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b5",
+      "reference": "John 2:5",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b6",
+      "reference": "John 2:6",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b7",
+      "reference": "John 2:7",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b8",
+      "reference": "John 2:8",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b9",
+      "reference": "John 2:9–10",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum2.b10",
+      "reference": "John 2:11",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b1",
+      "reference": "Mark 1:14",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b2",
+      "reference": "Mark 1:15",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b3",
+      "reference": "John 3:3",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b4",
+      "reference": "John 3:5",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b5",
+      "reference": "Luke 4:18–19",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b6",
+      "reference": "Matthew 5:3",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b7",
+      "reference": "Matthew 6:33",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b8",
+      "reference": "Luke 15:7",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b9",
+      "reference": "Matthew 10:7–8",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum3.b10",
+      "reference": "John 18:36",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b1",
+      "reference": "Matthew 17:1",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b2",
+      "reference": "Luke 9:28",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b3",
+      "reference": "Matthew 17:2",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b4",
+      "reference": "Matthew 17:3",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b5",
+      "reference": "Luke 9:31",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b6",
+      "reference": "Matthew 17:4",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b7",
+      "reference": "Luke 9:34",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b8",
+      "reference": "Luke 9:35",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b9",
+      "reference": "Matthew 17:6–8",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum4.b10",
+      "reference": "Matthew 17:9",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b1",
+      "reference": "Luke 22:14–15",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b2",
+      "reference": "Matthew 26:26",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b3",
+      "reference": "Matthew 26:27–28",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b4",
+      "reference": "1 Corinthians 11:26",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b5",
+      "reference": "John 6:35",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b6",
+      "reference": "John 6:48–52",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b7",
+      "reference": "John 6:54",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b8",
+      "reference": "John 6:55–56",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b9",
+      "reference": "John 6:57–58",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "lum5.b10",
+      "reference": "John 6:59",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b1",
+      "reference": "Matthew 26:36–37",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b2",
+      "reference": "Matthew 26:38",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b3",
+      "reference": "Matthew 26:39",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b4",
+      "reference": "Luke 22:41–42",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b5",
+      "reference": "Luke 22:43",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b6",
+      "reference": "Luke 22:44",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b7",
+      "reference": "Matthew 26:40",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b8",
+      "reference": "Matthew 26:41",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b9",
+      "reference": "Matthew 26:42",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor1.b10",
+      "reference": "Matthew 26:45–46",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b1",
+      "reference": "John 18:38",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b2",
+      "reference": "Luke 23:14–15",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b3",
+      "reference": "Luke 23:16",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b4",
+      "reference": "Matthew 27:24",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b5",
+      "reference": "Matthew 27:26",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b6",
+      "reference": "John 19:1",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b7",
+      "reference": "Isaias 53:3",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b8",
+      "reference": "Isaias 53:4",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b9",
+      "reference": "Isaias 53:5",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor2.b10",
+      "reference": "Isaias 53:7",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b1",
+      "reference": "Matthew 27:27",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b2",
+      "reference": "Matthew 27:28",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b3",
+      "reference": "Matthew 27:29a",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b4",
+      "reference": "Matthew 27:29b",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b5",
+      "reference": "Matthew 27:30",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b6",
+      "reference": "John 19:2",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b7",
+      "reference": "John 19:3",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b8",
+      "reference": "John 19:4",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b9",
+      "reference": "John 19:5",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor3.b10",
+      "reference": "Matthew 27:31",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b1",
+      "reference": "Matthew 16:24",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b2",
+      "reference": "John 19:16–17",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b3",
+      "reference": "Luke 23:26",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b4",
+      "reference": "Luke 23:27",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b5",
+      "reference": "Luke 23:28",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b6",
+      "reference": "Luke 23:29",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b7",
+      "reference": "Luke 23:30",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b8",
+      "reference": "Luke 23:31",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b9",
+      "reference": "Luke 23:32",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor4.b10",
+      "reference": "Luke 23:33",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b1",
+      "reference": "John 19:17–18",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b2",
+      "reference": "Luke 23:34",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b3",
+      "reference": "Luke 23:42–43",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b4",
+      "reference": "John 19:25",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b5",
+      "reference": "John 19:26–27",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b6",
+      "reference": "John 19:28",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b7",
+      "reference": "John 19:29",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b8",
+      "reference": "John 19:30",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b9",
+      "reference": "Luke 23:46",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "sor5.b10",
+      "reference": "John 19:34–35",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b1",
+      "reference": "John 20:1",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b2",
+      "reference": "John 20:3–8",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b3",
+      "reference": "John 20:11–13",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b4",
+      "reference": "John 20:14–16",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b5",
+      "reference": "John 20:17–18",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b6",
+      "reference": "John 20:19–20",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b7",
+      "reference": "John 20:21–23",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b8",
+      "reference": "John 20:24–25",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b9",
+      "reference": "John 20:26–28",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo1.b10",
+      "reference": "John 20:29",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b1",
+      "reference": "Acts 1:3",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b2",
+      "reference": "Acts 1:4–5",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b3",
+      "reference": "Acts 1:8",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b4",
+      "reference": "Luke 24:50",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b5",
+      "reference": "Acts 1:9",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b6",
+      "reference": "Acts 1:10",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b7",
+      "reference": "Acts 1:11",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b8",
+      "reference": "Matthew 28:18",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b9",
+      "reference": "Matthew 28:19–20",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo2.b10",
+      "reference": "Mark 16:19",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b1",
+      "reference": "Acts 1:14",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b2",
+      "reference": "Acts 2:1",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_FRAGMENT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b3",
+      "reference": "Acts 2:2",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b4",
+      "reference": "Acts 2:3",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b5",
+      "reference": "Acts 2:4",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b6",
+      "reference": "Acts 2:6",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b7",
+      "reference": "Acts 2:11",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b8",
+      "reference": "Acts 2:14",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b9",
+      "reference": "Acts 2:37–38",
+      "sourceMatch": "ORDERED_WITH_OMISSIONS",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P1_OMISSION",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo3.b10",
+      "reference": "Acts 2:41",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b1",
+      "reference": "Psalm 131:8",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b2",
+      "reference": "Canticles 2:10",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b3",
+      "reference": "Canticles 2:11",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b4",
+      "reference": "Canticles 2:12–13",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b5",
+      "reference": "Canticles 2:14",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b6",
+      "reference": "Psalm 44:10",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b7",
+      "reference": "Psalm 44:14–16",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b8",
+      "reference": "Apocalypse 11:19",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b9",
+      "reference": "Apocalypse 12:1",
+      "sourceMatch": "NORMALIZED_FULL_PASSAGE_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo4.b10",
+      "reference": "Judith 13:23",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MISSING_DIGITAL_KEY",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b1",
+      "reference": "Apocalypse 12:1",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b2",
+      "reference": "Psalm 44:10",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b3",
+      "reference": "Psalm 44:11–12",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b4",
+      "reference": "Psalm 44:14–16",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b5",
+      "reference": "Canticles 6:8",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b6",
+      "reference": "Canticles 6:9",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b7",
+      "reference": "Judith 13:23",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MISSING_DIGITAL_KEY",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b8",
+      "reference": "Judith 13:25",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MISSING_DIGITAL_KEY",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b9",
+      "reference": "Judith 15:10",
+      "sourceMatch": "EDITION_OR_REFERENCE_UNRESOLVED",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P0_TYPOLOGY",
+      "reviewNeeded": true,
+      "approved": false
+    },
+    {
+      "id": "glo5.b10",
+      "reference": "Luke 1:48",
+      "sourceMatch": "CONTIGUOUS_EXCERPT_MATCH",
+      "frVerseCoverage": "MATCHED_DIGITAL_RANGE",
+      "editorialPriority": "P2_CONTEXT",
+      "reviewNeeded": true,
+      "approved": false
+    }
+  ],
+  "summary": {
+    "rows": 200,
+    "unresolvedEnglish": 16,
+    "frenchDigitalGaps": 3,
+    "approved": 0
+  },
+  "editorialDecisions": {
+    "status": "SOURCE_CONTEXT_REVIEW_RECORDED_NOT_VERBATIM_CERTIFIED",
+    "groups": [
+      {
+        "category": "KEEP_AS_EXPLICIT_TYPOLOGY_ONLY",
+        "source": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_5",
+        "affectedIds": [
+          "glo4.b1"
+        ],
+        "reason": "French Crampon explicitly gives Psalm 132 as Vulgate 131; exact alias verified. Not direct historical testimony to Assumption."
+      },
+      {
+        "category": "REWRITE_CONTEXT_OR_REMOVE_FROM_BEAD_SEQUENCE",
+        "source": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Judith",
+        "affectedIds": [
+          "glo4.b10",
+          "glo5.b7",
+          "glo5.b8",
+          "glo5.b9"
+        ],
+        "reason": "Crampon 1923 full Judith chapter supports a literal narrative about Judith, not direct Marian historical speech. Group quotations into optional typology commentary, not ten mandatory quotations. Three pinpoint verse keys absent in secondary transcription."
+      },
+      {
+        "category": "GROUP_INTO_COMPLETE_SCENE_WITH_EXPLICIT_SPEAKERS",
+        "source": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Cantique_des_Cantiques",
+        "affectedIds": [
+          "glo4.b2",
+          "glo4.b3",
+          "glo4.b4",
+          "glo4.b5",
+          "glo5.b5",
+          "glo5.b6"
+        ],
+        "reason": "Poetic exchanges require identification of interlocutors; avoid standalone verse snippets misrepresented as direct Assumption narrative."
+      },
+      {
+        "category": "KEEP_AS_EXPLICIT_MARIAN_TYPOLOGY_ONLY",
+        "source": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_2",
+        "affectedIds": [
+          "glo4.b6",
+          "glo4.b7",
+          "glo5.b2",
+          "glo5.b3",
+          "glo5.b4"
+        ],
+        "reason": "Royal psalm's original context must be distinguished from traditional Marian liturgical application."
+      }
+    ],
+    "frenchWitnessForJudith": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Judith",
+    "psalm132VersificationWitness": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Psaumes_5",
+    "remaining": "Validate each individual English/French quotation from editions, check exact French page/verse, obtain theological and rights approvals; do not publish."
+  },
+  "doctrinalWitnesses": {
+    "glo4": {
+      "document": "Pius XII, Munificentissimus Deus (1950)",
+      "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+      "relevantSections": "26–27, 44",
+      "scope": "The Assumption is defined in §44; §§26–27 describe typological scriptural applications, including Ark, Psalm, Canticles and woman clothed with sun. Not proof that these texts literally narrate the event."
+    },
+    "glo5": {
+      "document": "Pius XII, Ad Caeli Reginam (1954)",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html",
+      "relevantSections": "1, 5–6, 46–48",
+      "scope": "Queenship of Mary is Catholic teaching attested by tradition, liturgy and theology; vision in Apocalypse 12 is typological rather than a ceremony report."
+    }
+  }
+}
