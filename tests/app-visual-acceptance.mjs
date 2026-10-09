@@ -323,17 +323,21 @@ try{
   const calendarYear=await page.evaluate(()=>({
     ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect?.().width??0,
     ringValue:document.querySelector("#ao-calendar-modular-root .aoCalV2RingCore strong")?.textContent?.trim()??"",
-    duplicateTimeline:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Timeline").length,
-    duplicateJourney:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2JourneyRail").length,
+    yearTracks:document.querySelectorAll("#ao-calendar-modular-root .aoCalYearTrack").length,
+    yearSegments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
+    periodCards:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
+    yearMarker:document.querySelector("#ao-calendar-modular-root .aoCalYearMarker")?.getBoundingClientRect?.().left??0,
     comingCards:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2ComingGrid [data-cal-date]").length,
     rootScrollTop:document.getElementById("ao-calendar-modular-root")?.scrollTop??Infinity,
     headingTop:document.querySelector("#ao-calendar-modular-root .aoCalV2YearHeading")?.getBoundingClientRect?.().top??-1,
     tabsBottom:document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs")?.getBoundingClientRect?.().bottom??Infinity,
   }));
-  assert.ok(calendarYear.ringWidth>=220,"Calendar liturgical-year ring collapsed below phone-readable size");
+  assert.ok(calendarYear.ringWidth>=105&&calendarYear.ringWidth<=160,"Calendar year ring must be compact but legible at phone width");
   assert.match(calendarYear.ringValue,/\d+(?:\.\d+)?%/,"Calendar year ring lost its computed percentage");
-  assert.equal(calendarYear.duplicateTimeline,0,"Calendar regained a second proportional year visualization");
-  assert.equal(calendarYear.duplicateJourney,0,"Calendar regained the redundant nine-card year journey");
+  assert.equal(calendarYear.yearTracks,1,"Calendar must have exactly one proportional year track");
+  assert.equal(calendarYear.yearSegments,9,"Calendar timeline must contain all nine liturgical periods");
+  assert.equal(calendarYear.periodCards,9,"Calendar journey must contain nine selectable periods");
+  assert.ok(calendarYear.yearMarker>0,"Calendar selected-day marker missing");
   assert.ok(calendarYear.comingCards>=1,"Calendar year lost its Coming Next intelligence");
   assert.ok(calendarYear.rootScrollTop<=2,"Calendar view switch retained the previous surface scroll position");
   assert.ok(calendarYear.headingTop>=calendarYear.tabsBottom-1,"Calendar Liturgical Year heading is hidden beneath sticky navigation");

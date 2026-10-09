@@ -3,6 +3,7 @@ import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear, buildMajorCelebrations, nextMajorCelebration } from "./liturgical-year.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
+import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 
 const VERSION="modular-calendar-v2-liturgical-year";
 const ROOT_ID="ao-calendar-modular-root";
@@ -28,7 +29,7 @@ const weekCache=new Map(),dayLoads=new Map(),weekLoads=new Map(),weekStatus=new 
 let foregroundWeek="",navEpoch=0,monthEpoch=0;
 const CALENDAR_VIEWS=new Set(["day","year","picker"]);
 const MONTH_INDEX_VIEWS=new Set(["calendar","major","temporale","sanctorale","practices"]);
-let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null;
+let calendarView="day",calendarMonthView="calendar",pickerMonthId="",requestedView=null,requestedMonthView=null,focusedYearPeriodId=null;
 let pilgrimageCorpus=null,pilgrimageLoad=null;
 const pilgrimageDataUrl=new URL("../../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url).href;
 function loadCalendarPilgrimagePlaces(){
@@ -493,7 +494,7 @@ function ringGradient(year){
   }).join(",");
 }
 function yearSurface(selected,r){
-  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextMajorCelebration(selected),yearPct=pct(y.progress),periodPct=pct(y.periodProgress),gradient=ringGradient(y);
+  const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextMajorCelebration(selected),yearPct=pct(y.progress),gradient=ringGradient(y);
   const nextSeason=y.nextPeriod||{en:"Advent",fr:"Avent",start:addDaysIso(y.end,1)};
   return `
     <section class="aoCalV2YearHero">
@@ -501,7 +502,7 @@ function yearSurface(selected,r){
       <div class="aoCalV2YearHeroGrid">
         <div class="aoCalV2Ring" style="--year-angle:${(y.progress*360).toFixed(2)}deg;--year-gradient:conic-gradient(from -90deg,${gradient})">
           <div class="aoCalV2RingMarker"></div>
-          <div class="aoCalV2RingCore"><strong>${yearPct}%</strong><small>${esc(L("YEAR ELAPSED","ANNÉE PARCOURUE"))}</small><span>${esc(L(`day ${y.dayIndex} of ${y.totalDays}`,`jour ${y.dayIndex} sur ${y.totalDays}`))}</span></div>
+          <div class="aoCalV2RingCore"><strong>${yearPct}%</strong><small>${esc(L("THROUGH SELECTED DAY","JUSQU’AU JOUR CONSULTÉ"))}</small><span>${esc(L(`day ${y.dayIndex} of ${y.totalDays}`,`jour ${y.dayIndex} sur ${y.totalDays}`))}</span></div>
         </div>
         <div class="aoCalV2YearIdentity">
           <small>${esc(L("SELECTED DAY","JOUR CONSULTÉ"))}</small>
@@ -509,10 +510,10 @@ function yearSurface(selected,r){
           <p class="aoCalV2SelectedFeast">${esc(r?.day?titleOf(r):L("Mass of the day awaiting resolution","Messe du jour en attente de résolution"))}</p>
           <dl><div><dt>${esc(L("Year","Année"))}</dt><dd>${esc(y.label)}</dd></div><div><dt>${esc(L("Current period","Période actuelle"))}</dt><dd>${esc(L(`Day ${y.periodDayIndex} of ${p.days}`,`Jour ${y.periodDayIndex} sur ${p.days}`))}</dd></div></dl>
           ${next?`<div class="aoCalV2MajorLine"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><button type="button" data-cal-date="${next.date}">${esc(celebrationName(next))} · ${esc(shortDate(next.date))}</button></div>`:""}
-          <div class="aoCalV2PeriodProgress"><div><small>${esc(L("PROGRESS IN ","PROGRESSION DANS "))}${esc(periodName(p).toUpperCase())}</small><strong>${periodPct}%</strong></div><span><i style="width:${periodPct}%"></i></span></div>
         </div>
       </div>
     </section>
+    ${renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate})}
     <section class="aoCalV2Coming">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("WHAT NOW?","ET MAINTENANT ?"))}</small><h3>${esc(L("Coming next","Les prochains repères"))}</h3></div></div>
       <div class="aoCalV2ComingGrid">
@@ -589,6 +590,7 @@ function css(){
 .aoCalV2ComingGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.aoCalV2ComingGrid button{min-height:116px!important;border-radius:2px!important;background:#0b1118!important;text-align:left!important;padding:17px!important;border-radius:var(--ao-card-radius,15px)!important}.aoCalV2ComingGrid strong{display:block;font-size:20px;font-weight:400;margin:9px 0 6px}.aoCalV2ComingGrid span{color:#8f969a;font:500 var(--ao-type-ui-sm,12px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}
 .aoCalV2Picker{padding:28px 0}.aoCalV2MonthNav{align-items:center;margin:18px 0 10px}.aoCalV2MonthMeta{display:flex;justify-content:space-between;gap:12px;margin:0 0 13px;color:#747d84;font:600 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em}.aoCalV2MonthMeta span:last-child{text-align:right}.aoCalV2Weekdays,.aoCalV2MonthGrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));width:100%;min-width:0}.aoCalV2Weekdays{border-bottom:1px solid rgba(235,225,208,.09)}.aoCalV2Weekdays span{text-align:center;padding:9px 4px;color:#747d84;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase}.aoCalV2MonthGrid{border-left:1px solid rgba(235,225,208,.06);border-top:1px solid rgba(235,225,208,.06)}.aoCalV2MonthGrid button{aspect-ratio:auto;min-width:0!important;padding:7px 5px 5px!important;height:78px!important;min-height:0!important;border-radius:0!important;border-width:0 1px 1px 0!important;border-color:rgba(235,225,208,.06)!important;background:color-mix(in srgb,var(--month-accent,#59626c) 3%,#0b1118)!important;position:relative;text-align:left!important;overflow:hidden}.aoCalV2MonthGrid button[data-ready="0"]{--month-accent:#59626c}.aoCalV2MonthGrid button.outside{opacity:.26}.aoCalV2MonthGrid button.sunday:not(.outside){background:color-mix(in srgb,var(--month-accent,#59626c) 7%,#0b1118)!important}.aoCalV2MonthGrid button.selected{z-index:1;box-shadow:inset 0 0 0 2px #d3c5a7}.aoCalV2MonthGrid button.today .aoCalMonthTop b{outline:1px solid rgba(181,93,80,.9);outline-offset:2px;border-radius:50%}.aoCalMonthTop{display:flex;align-items:center;justify-content:space-between;gap:4px}.aoCalV2MonthGrid b{font-size:16px;font-weight:400;line-height:1}.aoCalMonthTop i{display:block;width:6px;height:2px;border-radius:999px;background:var(--month-accent,#59626c);opacity:.62}.aoCalV2MonthGrid button[data-rank-tier="1"] .aoCalMonthTop i{width:16px;height:3px;opacity:1}.aoCalV2MonthGrid button[data-rank-tier="2"] .aoCalMonthTop i{width:12px;height:3px;opacity:.9}.aoCalV2MonthGrid button[data-rank-tier="3"] .aoCalMonthTop i{width:9px;height:2px;opacity:.76}.aoCalMonthName{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:8px;color:#a9a397;font:500 var(--ao-type-ui-xs,11px)/1.08 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}.aoCalV2MonthGrid button.major .aoCalMonthName,.aoCalV2MonthGrid button.sunday .aoCalMonthName{color:#d3cab9}.aoCalMonthName:empty{display:none}.aoCalV2DirectJump{margin-top:22px;padding-top:18px;border-top:1px solid rgba(235,225,208,.08)}.aoCalV2DirectJump label{color:#8c949a;font:700 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em;text-transform:uppercase}.aoCalV2DirectJump>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-top:8px}.aoCalV2DirectJump input{min-width:0;min-height:var(--ao-control-h,44px);border:1px solid rgba(235,225,208,.13);border-radius:var(--ao-control-radius,11px);background:#0b1118;color:#e7dfd2;padding:8px 11px}.aoCalV2DirectJump p{min-height:18px;color:#d2aa7b;font-size:11px}
 @media(max-width:700px){.aoCalModBody{padding:0 var(--ao-page-gutter-phone,12px) 46px}.aoCalV2Tabs{top:calc(61px + var(--safe-top,0px));margin:0 calc(-1 * var(--ao-page-gutter-phone,12px));padding:0 6px}.aoCalV2Tabs button{font-size:var(--ao-type-ui-xs,11px);letter-spacing:.025em}.aoCalMonthTabs{margin-left:0;margin-right:0}.aoCalMonthTabs button{font-size:var(--ao-type-ui-xs,11px)!important;padding-inline:8px!important}.aoCalV2Hero{padding:34px 4px 30px}.aoCalV2Hero h2{font-size:35px}.aoCalV2Saint{align-items:flex-start;padding:14px 12px}.aoCalV2Saint p{font-size:var(--ao-type-ui-xs,11px)}.aoCalV2Saint button{min-height:var(--ao-control-h,44px)!important}.aoCalV2NextMajor{grid-template-columns:1fr!important}.aoCalV2Week{overflow-x:auto;grid-template-columns:repeat(7,92px);margin-right:-12px}.aoCalV2Week button{min-height:104px!important}.aoCalV2YearHeroGrid{grid-template-columns:1fr;gap:26px;padding:22px 16px}.aoCalV2Ring{width:min(250px,76vw);margin:auto}.aoCalV2YearIdentity{text-align:left}.aoCalV2YearIdentity h3{font-size:31px}.aoCalV2YearIdentity dl{grid-template-columns:1fr 1fr}.aoCalV2ComingGrid{grid-template-columns:1fr}.aoCalMonthIndexHead{display:grid;gap:5px}.aoCalMonthIndexHead p{text-align:left}.aoCalMonthIndexList>button{grid-template-columns:74px minmax(0,1fr) 12px!important;padding:10px 11px!important}.aoCalV2MonthGrid button{height:66px!important;min-height:0!important;padding:6px 4px 4px!important}.aoCalMonthName{font-size:var(--ao-type-ui-xs,11px);margin-top:6px}.aoCalV2MonthMeta{display:grid;gap:3px}.aoCalV2MonthMeta span:last-child{text-align:left;font-weight:500}.aoCalV2SeasonMeta{display:grid;gap:3px}.aoCalV2SectionTitle h3{font-size:22px}}
+${yearJourneyCss}
 `;
 }
 let unsub=null;
@@ -674,6 +676,7 @@ function setView(view){
   if(!CALENDAR_VIEWS.has(next))return false;
   if(!root()){requestedView=next;return true}
   calendarView=next;
+  if(calendarView==="year")focusedYearPeriodId=null;
   if(calendarView==="picker"){
     pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
     if(!MONTH_INDEX_VIEWS.has(calendarMonthView))calendarMonthView="calendar";
@@ -685,6 +688,28 @@ function setView(view){
 }
 function bind(r){
   r.addEventListener("click",event=>{
+    const yearPeriod=event.target.closest?.("[data-cal-year-period]");
+    if(yearPeriod){
+      event.preventDefault();
+      focusedYearPeriodId=yearPeriod.dataset.calYearPeriod||null;
+      paint();
+      try{root()?.querySelector('[data-cal-year-period="'+focusedYearPeriodId+'"]')?.focus?.({preventScroll:true})}catch{}
+      return;
+    }
+    const yearDay=event.target.closest?.("[data-cal-year-open-day]");
+    if(yearDay){
+      event.preventDefault();calendarView="day";focusedYearPeriodId=null;
+      root()?.scrollTo?.({top:0,left:0,behavior:"auto"});
+      void select(yearDay.dataset.calYearOpenDay);return;
+    }
+    const yearMonth=event.target.closest?.("[data-cal-year-month]");
+    if(yearMonth){
+      event.preventDefault();
+      const month=yearMonth.dataset.calYearMonth||"";
+      if(!/^\d{4}-\d{2}$/.test(month))return;
+      pickerMonthId=month;calendarMonthView="calendar";calendarView="picker";
+      root()?.scrollTo?.({top:0,left:0,behavior:"auto"});paint();requestPickerMonth();return;
+    }
     const glossaryButton=event.target.closest?.("[data-cal-glossary]");if(glossaryButton){event.preventDefault();openCalendarGlossary();return}
     const viewButton=event.target.closest?.("[data-cal-view]");if(viewButton){event.preventDefault();setView(viewButton.dataset.calView||"day");return}
     const monthViewButton=event.target.closest?.("[data-cal-month-view]");if(monthViewButton){event.preventDefault();setMonthView(monthViewButton.dataset.calMonthView||"calendar",{openMonth:true});return}
@@ -706,7 +731,7 @@ function bind(r){
 }
 function open(){
   const doc=globalThis.document;if(!doc?.body||!runtime()?.store||!runtime()?.resolver)return false;
-  calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
+  calendarView=CALENDAR_VIEWS.has(requestedView)?requestedView:"day";focusedYearPeriodId=null;if(MONTH_INDEX_VIEWS.has(requestedMonthView))calendarMonthView=requestedMonthView;else if(calendarView!=="picker")calendarMonthView="calendar";requestedView=null;requestedMonthView=null;
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
   const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role","dialog");r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));r.innerHTML=`<style>${css()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button></div><main class="aoCalModBody" data-cal-body></main>`;doc.body.append(r);bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();
