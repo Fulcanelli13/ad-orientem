@@ -69,3 +69,5 @@ jobs:
         run: node tests/sexual-ethics-practical-final51-roles-v1.mjs
       - name: Fifteen high-risk bilingual stage original-opponent and doctrine corrections
         run: node tests/sexual-ethics-highrisk-bilingual-reader-corrections-v1.mjs
+      - name: Original opponent and magisterial review for 25 moral authority reader stages
+        run: node tests/sexual-ethics-moral-authority-25-live-v1.mjs
