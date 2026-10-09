@@ -59,6 +59,8 @@ try{
    console.error("OFFLINE_STAGE_DIAGNOSTIC="+JSON.stringify(await page.evaluate(async()=>({
      status:globalThis.AO_OFFLINE_APP_V1?.status??null,
      cacheNames:await caches.keys(),
+     stagingCount:(await(await caches.open("ao-bootstrap-staging-v1")).keys()).length,
+     stagingTail:(await(await caches.open("ao-bootstrap-staging-v1")).keys()).slice(-5).map(r=>r.url),
      controller:navigator.serviceWorker.controller?.scriptURL??null,
      registrations:(await navigator.serviceWorker.getRegistrations()).map(r=>({scope:r.scope,active:r.active?.state,installing:r.installing?.state,waiting:r.waiting?.state}))
    }))));
