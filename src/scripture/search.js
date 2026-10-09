@@ -1,3 +1,4 @@
+import { SCRIPTURE_EDITIONS } from "./catalogue.js";
 import { CATHOLIC_BOOK_IDS } from "./canon.js";
 /** Search locally reviewed Scripture records only; never returns generated or remote guesses. */
 export function searchCertifiedScripture(records,{query="",editionId=null,limit=50}={}) {
@@ -7,7 +8,8 @@ export function searchCertifiedScripture(records,{query="",editionId=null,limit=
   if(!Number.isSafeInteger(limit)||limit<1||limit>200)throw new Error("Invalid result limit");
   const results=[];
   for(const record of records) {
-    if(record?.reviewed!==true || typeof record.text!=="string" ||
+    if(SCRIPTURE_EDITIONS[record?.editionId]?.enabled!==true || SCRIPTURE_EDITIONS[record?.editionId]?.rights!=="cleared" ||
+      record?.reviewed!==true || typeof record.text!=="string" ||
       !record.licenceId || !record.sourceEdition || !record.sourceUrl ||
       !CATHOLIC_BOOK_IDS.includes(record.book) || (editionId && record.editionId!==editionId))continue;
     if(!(record.text.toLocaleLowerCase().includes(needle) ||
