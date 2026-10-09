@@ -24,7 +24,7 @@ export const CSE_DEBATE_POSITION_REFS=freezeMap({
   CSE039:[["PP_RELATIONSHIPS","healthy relationships and communication"],["PP_CONSENT","boundaries and sexual consent"]],
   CSE040:[["PP_SEX","oral sex, anal sex, genital touching and sexual activity"],["PP_SAFERSEX","oral, anal and other sexual activity"]],
   CSE043:[["FARLEY_QUOTED2012","p. 293 same-sex civil marriage; p. 295 same-sex relationships"],["FARLEY2008","same-sex relationships, marriage and family"],["APA_LGB","sexual orientation and same-sex relationships"]],
-  CSE044:[["FARLEY_QUOTED2012","pp. 293,295 on same-sex relationships; does not explicitly advance sterility analogy"],["FARLEY2008","same-sex relationships, marriage and family"],["APA_LGB","sexual orientation and homosexuality"]],
+  CSE044:[["CIC","can.1084 §3: sterility neither prohibits nor nullifies marriage; authentic premise, not an advocate of the analogy"],["CDF2003","§§2–4: doctrinal account of the nature of marriage; the infertility inference remains an illustrative objection"]],
   CSE045:[["PEW_CO2019","original survey: respondents cite love/companionship in marriage; no claim procreation is morally obsolete"],["FARLEY2008","marriage, family and just love"]],
   CSE049:[["FARLEY_QUOTED2012","pp. 304–305 on marriage commitment and possible release"],["FARLEY2008","divorce and second marriage"]],
   CSE050:[["FARLEY_QUOTED2012","p. 310 on remarriage after divorce"],["CURRAN1987","author discusses divorce and proposed change in moral teaching"],["FARLEY2008","divorce and second marriage"],["CURRAN2006","divorce and dissent from official teaching"]],
