@@ -10,6 +10,41 @@ const PROFILE_LEVEL = Object.freeze({
 // canonical reader-text-sung.v1.json (English) and the pinned French
 // reader-french-ordinary.v1.json byCue witness. They never create a cue:
 // each is selectable only after its exact AO.SM.C.... Latin cue owns focus.
+// Exact canonical ordinary-Sung word fragments outside Gloria/Credo.
+// Each is a literal fragment of the same cue in reader-text-sung.v1.json
+// (Latin/English) or the pinned French Ordinary witness. These are only
+// presentation anchors; they NEVER manufacture a gesture or relax its profile
+// and local-condition gates. Cue actions without a text-bound instant stay unlit.
+export const ORDINARY_SUNG_GESTURE_ANCHORS=Object.freeze({
+  "AO.SM.C0001":Object.freeze({anchorLat:"In nómine Patris",anchorEn:"In the Name of the Father",anchorFr:"Au nom du Père"}),
+  "AO.SM.C0014":Object.freeze({anchorLat:"Adiutórium nostrum ✠",anchorEn:"Our help ✠",anchorFr:"Notre secours ✠"}),
+  "AO.SM.C0021":Object.freeze({anchorLat:"Confíteor Deo omnipoténti",anchorEn:"I confess to Almighty God",anchorFr:"Je confesse à Dieu tout-puissant"}),
+  "AO.SM.C0022":Object.freeze({anchorLat:"mea culpa, mea culpa, mea máxima culpa",anchorEn:"through my fault, through my fault, through my most grievous fault",anchorFr:"C’est ma faute, c’est ma faute, c’est ma très grande faute"}),
+  "AO.SM.C0023":Object.freeze({anchorLat:"Ideo precor",anchorEn:"Therefore I beseech",anchorFr:"C’est pourquoi je supplie"}),
+  "AO.SM.C0026":Object.freeze({anchorLat:"Indulgéntiam, ✠",anchorEn:"pardon, ✠",anchorFr:"accorde ✠"}),
+  "AO.SM.C0084":Object.freeze({anchorLat:"Sequéntia ✠",anchorEn:"Continuation ✠",anchorFr:"Suite ✠"}),
+  "AO.SM.C0141":Object.freeze({anchorLat:"Grátias agámus Dómino",anchorEn:"Let us give thanks to the Lord",anchorFr:"Rendons grâces au Seigneur"}),
+  "AO.SM.C0142":Object.freeze({anchorLat:"Deo nostro",anchorEn:"our God",anchorFr:"notre Dieu"}),
+  "AO.SM.C0145":Object.freeze({anchorLat:"Sanctus, Sanctus, Sanctus",anchorEn:"Holy, Holy, Holy",anchorFr:"Saint, Saint, Saint"}),
+  "AO.SM.C0148":Object.freeze({anchorLat:"Benedíctus qui venit",anchorEn:"Blessed is He who comes",anchorFr:"Béni soit celui qui vient"}),
+  "AO.SM.C0196":Object.freeze({anchorLat:"Nobis quoque peccatóribus",anchorEn:"To us also, thy sinful servants",anchorFr:"À nous aussi, pécheurs"}),
+  "AO.SM.C0222":Object.freeze({anchorLat:"Agnus Dei",anchorEn:"Lamb of God",anchorFr:"Agneau de Dieu"}),
+  "AO.SM.C0223":Object.freeze({anchorLat:"Agnus Dei",anchorEn:"Lamb of God",anchorFr:"Agneau de Dieu"}),
+  "AO.SM.C0224":Object.freeze({anchorLat:"Agnus Dei",anchorEn:"Lamb of God",anchorFr:"Agneau de Dieu"}),
+  "AO.SM.C0235":Object.freeze({anchorLat:"Confíteor Deo omnipoténti",anchorEn:"I confess to Almighty God",anchorFr:"Je confesse à Dieu tout-puissant"}),
+  "AO.SM.C0236":Object.freeze({anchorLat:"mea culpa, mea culpa, mea máxima culpa",anchorEn:"through my fault, through my fault, through my most grievous fault",anchorFr:"C’est ma faute, c’est ma faute, c’est ma très grande faute"}),
+  "AO.SM.C0237":Object.freeze({anchorLat:"Ideo precor",anchorEn:"Therefore I beseech",anchorFr:"C’est pourquoi je supplie"}),
+  "AO.SM.C0240":Object.freeze({anchorLat:"Indulgéntiam, ✠",anchorEn:"pardon, ✠",anchorFr:"accorde ✠"}),
+  "AO.SM.C0242":Object.freeze({anchorLat:"Ecce Agnus Dei",anchorEn:"Behold the Lamb of God",anchorFr:"Voici l’Agneau de Dieu"}),
+  "AO.SM.C0243":Object.freeze({anchorLat:"Dómine, non sum dignus",anchorEn:"Lord, I am not worthy",anchorFr:"Seigneur, je ne suis pas digne"}),
+  "AO.SM.C0244":Object.freeze({anchorLat:"Dómine, non sum dignus",anchorEn:"Lord, I am not worthy",anchorFr:"Seigneur, je ne suis pas digne"}),
+  "AO.SM.C0245":Object.freeze({anchorLat:"Dómine, non sum dignus",anchorEn:"Lord, I am not worthy",anchorFr:"Seigneur, je ne suis pas digne"}),
+  "AO.SM.C0265":Object.freeze({anchorLat:"Pater, et Fílius, ✠",anchorEn:"the Father, and the Son, ✠",anchorFr:"le Père, le Fils, ✠"}),
+  "AO.SM.C0269":Object.freeze({anchorLat:"Initium ✠ sancti Evangélii",anchorEn:"The beginning ✠ of the holy Gospel",anchorFr:"Commencement ✠ du saint Évangile"}),
+  "AO.SM.C0273":Object.freeze({anchorLat:"ET VERBUM CARO FACTUM EST",anchorEn:"AND THE WORD WAS MADE FLESH",anchorFr:"ET LE VERBE S’EST FAIT CHAIR"}),
+  "AO.SM.C0274":Object.freeze({anchorLat:"Et habitávit in nobis",anchorEn:"And dwelt among us",anchorFr:"et il a habité parmi nous"}),
+});
+
 export const GLORIA_CREDO_FAITHFUL_GESTURES = Object.freeze({
   "AO.SM.C0056": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Adorámus te",anchorEn:"We adore thee",anchorFr:"Nous vous adorons",minimumProfile:"TRADITIONAL"}),
   "AO.SM.C0058": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Grátias ágimus tibi",anchorEn:"We give thee thanks",anchorFr:"Nous vous rendons grâces",minimumProfile:"TRADITIONAL"}),
