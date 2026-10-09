@@ -14,6 +14,7 @@ on:
       - "data/calendar/1962-editorial-reconciliation-2024-2027.v1.json"
       - "tests/calendar-source-feria-projection.mjs"
       - "tests/calendar-source-feria-browser-e2e.mjs"
+      - "tools/calendar/proper-source-batch-100.mjs"
   workflow_dispatch:
 
 permissions:
@@ -55,6 +56,8 @@ jobs:
         run: node tools/calendar/full-year-1962-oracle.mjs --strict
       - name: Reconcile full years with independent second 1962 calendar
         run: node tools/calendar/secondary-1962-oracle.mjs
+      - name: Audit first 100 distinct pinned 1962 Mass Proper source identities
+        run: node tools/calendar/proper-source-batch-100.mjs
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
@@ -63,4 +66,5 @@ jobs:
           path: |
             artifacts/calendar-1962-full-year-audit.json
             artifacts/calendar-1962-secondary-reconciliation.json
+            artifacts/calendar-1962-proper-source-batch-100.json
           if-no-files-found: error
