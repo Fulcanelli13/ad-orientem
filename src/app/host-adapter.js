@@ -134,11 +134,13 @@ export function createAppHostAdapter(win = globalThis) {
 
     async openCalendar() {
       const modular = win?.AO_CALENDAR_APP_V1;
-      if (typeof modular?.open === "function") {
-        const opened = await Promise.resolve(modular.open());
-        if (opened !== false) return true;
+      if (typeof modular?.open !== "function") return false;
+      // The first-use import must fail closed; never reopen legacy Calendar.
+      try{return (await Promise.resolve(modular.open()))!==false}
+      catch(error){
+        try{win?.console?.error?.("Calendar owner load failed",error)}catch{}
+        return false;
       }
-      return this.openModule(NON_MASS_DONOR_CONTRACT.calendarModuleId);
     },
 
     openSettings() {

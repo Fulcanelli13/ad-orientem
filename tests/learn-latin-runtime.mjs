@@ -123,9 +123,10 @@ assert.equal(exercises,431);
 // Registry/owner wiring must be present in source.
 const owner=readFileSync("src/learn/browser-entry.js","utf8");
 const presentation=readFileSync("src/learn/presentation.js","utf8");
-assert.match(owner,/installLatinCourseModule/);
-assert.match(owner,/ensureLatinCourseRegistry/);
-assert.match(owner,/AO_LATIN_COURSE_V1/);
+const lazy=readFileSync("src/learn/lazy-module-registry.js","utf8");
+assert.match(owner,/await ensureLearnModule\(id,win\)/,"Latin course is imported on first launch");
+assert.match(lazy,/mod\.installLatinCourseModule\(win\)/);
+assert.match(lazy,/\.\/latin-course-v2\.js/);
 assert.match(presentation,/id:"learn\.latin"/);
 
 console.log("PASS Latin course runtime localization: 40 lessons / 245 blocks / 431 exercises, canonical grading isolated from EN↔FR presentation.");

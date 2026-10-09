@@ -162,7 +162,8 @@ assert.doesNotMatch(runtime,/<span aria-hidden="true"><\/span><\/header>/,"tradi
 assert.match(runtime,/if\(canonical==="learn\.seasonal_rites"\)[\s\S]*setView\?\.\("year"\)[\s\S]*navigate\?\.\("calendar"\)[\s\S]*canonicalId:"calendar"/,"Seasonal compatibility alias no longer hands off to the richer Calendar/liturgical-year owner");
 assert.doesNotMatch(runtime,/else node\.innerHTML=seasonal\(win\)/,"retired Seasonal Catholic Practice returned as the generic Traditional Learn renderer fallback");
 assert.doesNotMatch(runtime,/AO_TRADITION_V38/,"historical Traditions monolith was restored as a runtime owner");
-assert.match(browser,/ensureTraditionalLearnRegistry/);
+assert.match(browser,/await ensureLearnModule\(id,win\)/,"Traditional Formation must install on first child navigation");
+assert.match(readFileSync("src/learn/lazy-module-registry.js","utf8"),/mod\.installTraditionalLearnModules\(win\)/);
 assert.match(browser,/TRADITIONAL_LEARN_ROUTES\[id\]/);
 assert.match(presentation,/Sacraments & Life Events/);
 assert.doesNotMatch(presentation,/id:"learn\.seasonal_rites"/,"final v38.4 duplicate seasonal discovery card returned to Learn");
