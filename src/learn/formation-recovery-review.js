@@ -15,7 +15,8 @@ const PACKS = Object.freeze([
   ["Apologetics dossiers","apologetics-canonical.v1.json"],
   ["Church Crisis dossiers","church-crisis-canonical.v1.json"],
   ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"],
-  ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"]
+  ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"],
+  ["Canonical syntheses II","formation-canonical-synthesis-batch2-2026-10-09.v1.json"]
 ]);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick = (win,en,fr) => isFr(win) ? fr : en;
@@ -132,12 +133,24 @@ export function buildRecoveryDossierCoverage(rows,packs) {
   const evidenceMap=new Map((evidence?.dossiers||[]).map(d=>[d.id,d]));
   if(evidence && (evidence.dossiers?.length!==141 || evidenceMap.size!==141 || evidence.counts?.fully_certified!==0 || evidence.counts?.published_apologetics_or_crisis!==0))
     throw new Error("Unapproved dossier source status");
-  const synth=packs.find(p=>p.label==="Canonical syntheses")?.doc;
-  const synthMap=new Map((synth?.dossiers||[]).map(d=>[d.id,d]));
-  if(synth && (synth.version!=="FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH1_V1" ||
-    synth.dossiers?.length!==10 || synthMap.size!==10 || synth.publication_allowed!==false ||
-    synth.dossiers.some(d=>d.publication_allowed!==false||d.sections?.length!==4)))
-      throw new Error("Formation canonical synthesis publication/evidence contract changed");
+  const synthPacks=[
+    ["Canonical syntheses","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH1_V1",10],
+    ["Canonical syntheses II","FORMATION_CANONICAL_SUBSTANTIVE_SYNTHESIS_20261009_BATCH2_V1",20]
+  ];
+  const synthMap=new Map();
+  for(const [label,version,count] of synthPacks){
+    const pack=packs.find(p=>p.label===label)?.doc;
+    if(!pack)continue;
+    if(pack.version!==version||pack.dossiers?.length!==count||pack.publication_allowed!==false)
+      throw new Error("Formation canonical synthesis data contract changed: "+label);
+    for(const d of pack.dossiers){
+      if(synthMap.has(d.id)||d.publication_allowed!==false||d.sections?.length!==4||
+        d.independent_theological_canonical_approval!==false||d.native_french_copyapproval!==false||
+        d.original_claim_by_claim_source_context_certified!==false)
+        throw new Error("Formation duplicate or falsely certified synthesis "+d.id);
+      synthMap.set(d.id,d);
+    }
+  }
   const owners=new Map([...apo,...crisis].map(d=>[d.id,[]]));
   if(owners.size!==141)throw new Error("Duplicate canonical dossier identifiers");
   const external=[];
@@ -360,7 +373,11 @@ export function createFormationRecoveryReview(win=globalThis) {
       state.rows=[...buildRecoveryReviewRows(docs),...buildContemporaryDraftRows(docs)];
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
-      state.synthesisSources=new Map((docs.find(x=>x.label==="Canonical syntheses")?.doc?.source_registry||[]).map(x=>[x.id,x]));
+      state.synthesisSources=new Map();
+      for(const label of ["Canonical syntheses","Canonical syntheses II"]){
+        const doc=docs.find(x=>x.label===label)?.doc;
+        for(const s of doc?.source_registry||[])state.synthesisSources.set(s.id,s);
+      }
       state.external=coverage.external;
       state.questionSources=docs.find(x=>x.label==="BAQ questions")?.doc?.source_registry||[];
       state.error="";

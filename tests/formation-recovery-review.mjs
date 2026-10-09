@@ -15,7 +15,8 @@ const names=[
   ["Apologetics dossiers","apologetics-canonical.v1.json"],
   ["Church Crisis dossiers","church-crisis-canonical.v1.json"],
   ["Dossier evidence","formation-141-absorption-evidence-2026-10-09.v1.json"],
-  ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"]
+  ["Canonical syntheses","formation-canonical-synthesis-batch1-2026-10-09.v1.json"],
+  ["Canonical syntheses II","formation-canonical-synthesis-batch2-2026-10-09.v1.json"]
 ];
 const packs=names.map(([label,name])=>({label,doc:JSON.parse(readFileSync("data/learn/"+name,"utf8"))}));
 const legacyRows=buildRecoveryReviewRows(packs);
@@ -33,7 +34,7 @@ assert.equal(coverage.dossiers.length,141);
 assert.equal(coverage.covered,53);
 assert.equal(coverage.linked,118);
 assert.equal(coverage.external.length,5);
-assert.equal(coverage.dossiers.filter(x=>x.synthesis).length,10);
+assert.equal(coverage.dossiers.filter(x=>x.synthesis).length,30);
 assert.equal(coverage.dossiers.filter(x=>x.synthesis).every(x=>x.research.length>0),true);
 const evidence=JSON.parse(readFileSync("data/learn/formation-141-absorption-evidence-2026-10-09.v1.json","utf8"));
 assert.equal(coverage.dossiers.every(d=>d.evidence?.id===d.id),true,"every canonical dossier must receive its source evidence disposition");
@@ -155,7 +156,7 @@ const node=nodes.get(RECOVERY_REVIEW_ROOT);
 assert.equal(live.status().canonicalDossiers,141);
 assert.equal(live.status().coveredDossiers,53);
 assert.equal(live.status().assembledDossierReadings,53);
-assert.equal(live.status().synthesisDossiers,10);
+assert.equal(live.status().synthesisDossiers,30);
 assert.equal(live.status().externalRecords,5);
 assert.ok(node.innerHTML.includes("Formation recovery by topic"));
 assert.ok(node.innerHTML.includes('data-rr-dossier="CR-LIT-05"'));
@@ -174,6 +175,17 @@ assert.ok(node.innerHTML.includes('data-rr-article="TLM026"'),"TLM subquestion i
 node.listeners.click(makeClick({back:true}));
 node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
 assert.ok(node.innerHTML.includes('data-rr-canonical-synthesis="CR-LIT-05"'),"Canonical answer missing from dossier reading");
+node.listeners.click(makeClick({back:true}));
+for(const id of ["APOL-002","APOL-004","APOL-008","APOL-010","APOL-042","APOL-050","APOL-052","APOL-053","APOL-059","APOL-060",
+                 "CR-ORG-09","CR-LIT-02","CR-LIT-03","CR-LIT-06","CR-LIT-07","CR-LIT-08","CR-LIT-09","CR-LIT-10","CR-LIT-11","CR-LIT-12"]){
+  node.listeners.click(makeClick({dossier:id}));
+  assert.ok(node.innerHTML.includes('data-rr-canonical-synthesis="'+id+'"'),id+" is missing the new canonical answer");
+  for(const role of ["answer","documented_position","critical_response","traditional_catholic_argument"])
+    assert.ok(node.innerHTML.includes('data-rr-synthesis-role="'+role+'"'),id+" missing argument role "+role);
+  assert.ok(node.innerHTML.includes('https://'),id+" lacks hyperlinks to original texts");
+  node.listeners.click(makeClick({back:true}));
+}
+node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
 assert.ok(node.innerHTML.includes('data-rr-synthesis-role="documented_position"'),"Original historical positions missing");
 assert.ok(node.innerHTML.includes("https://www.vatican.va/"),"Original canonical synthesis hyperlink missing");
 assert.ok(node.innerHTML.includes('class="rrArticleSection"'),"substantive source-bearing sections are missing");
