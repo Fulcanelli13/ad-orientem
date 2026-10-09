@@ -5,7 +5,7 @@ export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
  const doc=win.document;
- let reader=null,previousFocus=null;
+ let reader=null,previousFocus=null,previousOverflow=null;
  const loaded=new Map();
  const inflight=new Set();
  function overlay(){
@@ -24,13 +24,15 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!reader)return false;
    reader.destroy();reader=null;
    const node=overlay();if(node)node.hidden=true;
+   if(doc.body && previousOverflow!==null)doc.body.style.overflow=previousOverflow;
+   previousOverflow=null;
    previousFocus?.focus?.();previousFocus=null;
    return true;
  }
  function open({passage=null,language=null}={}){
    const node=overlay();if(!node)return false;
    installScriptureStyles(doc);
-   previousFocus=doc.activeElement;
+   if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
    reader?.destroy?.();
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{
@@ -55,6 +57,7 @@ export function installScriptureBrowserOwner(win=globalThis){
      openExternal:(url)=>win.open?.(url,"_blank","noopener,noreferrer")
    });
    node.hidden=false;
+   if(doc.body)doc.body.style.overflow="hidden";
    node.querySelector?.("[data-scripture-close]")?.focus?.();
    return true;
  }
@@ -63,7 +66,18 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!button)return;
    e.preventDefault?.();e.stopPropagation?.();open();
  };
- const key=e=>{if(e.key==="Escape"&&reader){e.preventDefault?.();close();}};
+ const key=e=>{
+   if(!reader)return;
+   if(e.key==="Escape"){e.preventDefault?.();e.stopPropagation?.();close();return;}
+   if(e.key!=="Tab")return;
+   const node=overlay();
+   const focusables=[...(node?.querySelectorAll?.("button:not([disabled]),input:not([disabled]),select:not([disabled]),a[href]")||[])]
+     .filter(el=>!el.closest?.("details:not([open])") && el.getClientRects?.().length);
+   if(!focusables.length)return;
+   const first=focusables[0],last=focusables[focusables.length-1];
+   if(e.shiftKey && (doc.activeElement===first||!node.contains(doc.activeElement))){e.preventDefault();last.focus();}
+   else if(!e.shiftKey && (doc.activeElement===last||!node.contains(doc.activeElement))){e.preventDefault();first.focus();}
+ };
  doc?.addEventListener?.("click",click,true);
  doc?.addEventListener?.("keydown",key);
  const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,close,

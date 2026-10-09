@@ -1,0 +1,26 @@
+name: Scripture phone acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/scripture/**'
+      - 'src/home/presentation.js'
+      - 'tests/scripture-reader-mobile.mjs'
+      - '.github/workflows/scripture-reader-mobile.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/scripture/**'
+      - 'src/home/presentation.js'
+      - 'tests/scripture-reader-mobile.mjs'
+jobs:
+  scripture-phone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Native phone Scripture reader
+        run: node tests/scripture-reader-mobile.mjs

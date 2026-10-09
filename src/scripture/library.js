@@ -38,7 +38,9 @@ export function mountScriptureLibrary(root,{
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
  const prefs=createScripturePreferences(storage);
- let lang=["en","fr"].includes(language)?language:"en";
+ const stored=Boolean(storage?.getItem?.("ao-scripture-v1"));
+ const preference=stored?prefs.load().language:language;
+ let lang=["en","fr"].includes(preference)?preference:"en";
  let location=passage?scripturePassage(passage):scripturePassage({book:"Luke",chapter:1,verseStart:28});
  let query="";
  let section="read";
@@ -84,7 +86,7 @@ export function mountScriptureLibrary(root,{
    for(const edition of Object.values(SCRIPTURE_EDITIONS).filter(x=>x.language===lang)){
      const opt=element("option",edition.title);
      opt.value=edition.id;
-     opt.disabled=edition.id!=="dr-challoner" && (!edition.enabled || edition.rights!=="cleared");
+     opt.disabled=edition.id!==DEFAULT_SCRIPTURE_EDITION[lang] && (!edition.enabled || edition.rights!=="cleared");
      editionSelect.append(opt);
    }
    editionSelect.value=editionId;

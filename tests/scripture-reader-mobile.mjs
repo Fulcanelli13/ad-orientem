@@ -1,0 +1,80 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import {readFile} from "node:fs/promises";
+import {extname,resolve,sep} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp"};
+const server=http.createServer(async(req,res)=>{
+ try{
+  const filename=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
+  const file=resolve(root,"."+filename);
+  if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end("forbidden");return;}
+  const data=await readFile(file);
+  res.writeHead(200,{"content-type":mime[extname(file)]??"application/octet-stream","cache-control":"no-store"});
+  res.end(data);
+ }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error.message??error));}
+});
+await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4199,"127.0.0.1",ok);});
+let browser;
+try{
+ browser=await chromium.launch({headless:true,channel:"chromium"});
+ const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-US"});
+ const page=await context.newPage(),pageErrors=[];
+ page.on("pageerror",e=>pageErrors.push(String(e?.message??e)));
+ await page.goto("http://127.0.0.1:4199/index.html",{waitUntil:"domcontentloaded",timeout:90000});
+ await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true &&
+   globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.installed===true,null,{timeout:30000});
+ const entry=page.locator("[data-home-scripture]");
+ await entry.waitFor({state:"visible",timeout:20000});
+ await entry.click();
+ const dialog=page.locator("#ao-scripture-overlay");
+ await dialog.waitFor({state:"visible",timeout:15000});
+ assert.equal(await dialog.getAttribute("role"),"dialog");
+ assert.equal(await dialog.getAttribute("aria-modal"),"true");
+ assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-scripture-close")),true);
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),2);
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(2).locator("option").count(),73);
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
+ assert.match(await dialog.locator(".aoScriptureText").innerText(),/not available offline/i);
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"uncleared biblical text leaked to user");
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='knox']").evaluate(el=>el.disabled),true);
+ await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
+ await dialog.getByRole("button",{name:"Read at source"}).click();
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
+ const mark=dialog.getByRole("button",{name:"Bookmark",exact:true});
+ await mark.click();
+ assert.equal(await dialog.getByRole("button",{name:"Bookmarked"}).getAttribute("aria-pressed"),"true");
+ await dialog.locator(".aoScriptureBookmarks summary").click();
+ assert.equal(await dialog.locator(".aoScriptureBookmarks button").count(),1);
+ await dialog.locator(".aoScriptureSearch input").fill("Tob");
+ await dialog.locator(".aoScriptureResults button").first().click();
+ assert.match(await dialog.locator(".aoScriptureReading h3").innerText(),/Tobit 1:1/);
+ await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
+ assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/);
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),1);
+ assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").first().evaluate(el=>el.disabled),false);
+ await dialog.getByRole("button",{name:"Consulter la source"}).click();
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/fr\.wikisource\.org\/wiki\/Bible_Crampon_1923/);
+ await dialog.locator(".aoScriptureRosary summary").click();
+ assert.equal(await dialog.locator(".aoScriptureMystery").count(),20);
+ assert.match(await dialog.locator(".aoScriptureMystery").first().innerText(),/Luc|Gabriel|Marie|Annonciation/i);
+ const dimensions=await dialog.evaluate(el=>({scroll:el.scrollWidth,client:el.clientWidth}));
+ assert.ok(dimensions.scroll<=dimensions.client+2,"Mobile Scripture dialog overflows: "+JSON.stringify(dimensions));
+ assert.equal(await page.evaluate(()=>document.body.style.overflow),"hidden");
+ await page.keyboard.press("Escape");
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>document.body.style.overflow),"");
+ assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-home-scripture")),true,"Focus was not restored to Home Scripture entry");
+ await entry.click();
+ assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/,"French preference did not persist");
+ await dialog.locator("[data-scripture-close]").click();
+ assert.equal(await dialog.isHidden(),true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"home","Scripture overlay changed app route");
+ assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
+ console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
+}finally{
+ await browser?.close?.();
+ await new Promise(ok=>server.close(ok));
+}
