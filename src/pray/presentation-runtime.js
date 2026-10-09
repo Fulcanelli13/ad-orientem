@@ -17,6 +17,7 @@ import { LITANY_SOURCE_WITNESSES, extractLitanyProper, paginateLitanyProper } fr
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
 import { prayCollationNotice } from "./source-collation-notices.v1.js";
+import { prayerCompendiumFrenchWitness } from "./compendium-french-witnesses.v1.js";
 
 // Locked v43.59.30 PRAY presentation runtime. Kept intact inside a browser-only
 // guard so unit tests may import the modular owner without a DOM.
@@ -338,11 +339,11 @@ function praySourceURL(p){
 }
 function sourceLine(p){
  if(!p)return'';
- const pr=p.provenance||{},url=praySourceURL(p),edition=prayEditionWitness(p.id);
+ const pr=p.provenance||{},edition=prayEditionWitness(p.id),localeWitness=!edition&&isFr()?prayerCompendiumFrenchWitness(p.id):null,url=localeWitness?.url||praySourceURL(p);
  const witness=edition?L(edition.label.en,edition.label.fr):(pr.witness||p.source||L('Source witness not recorded','Témoin textuel non documenté'));
  const transcribed=!edition&&!!PRAY_LITURGICAL_TRANSCRIPTION[p.id]&&!pr.url&&!p.sourceUrl;
  const sourceLink=url
-   ?`<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(transcribed?L('Read the 1962 Roman Ordinary (secondary transcription)','Lire l’Ordinaire romain de 1962 (transcription secondaire)'):L('Open the cited source','Consulter la source citée'))} ↗</a>`
+   ?`<a class="aoP435930SourceLink" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${esc(localeWitness?(localeWitness.isComparative?L('Compare the published French edition','Comparer avec l’édition française publiée'):L('Read the published French text','Consulter le texte français publié')):transcribed?L('Read the 1962 Roman Ordinary (secondary transcription)','Lire l’Ordinaire romain de 1962 (transcription secondaire)'):L('Open the cited source','Consulter la source citée'))} ↗</a>`
    :`<small>${esc(L('A direct source link has not yet been verified.','Aucun lien direct vers la source n’est encore vérifié.'))}</small>`;
  const editionNote=edition?'<p>'+esc(L(edition.note.en,edition.note.fr))+'</p>':'';
  const additionalWitness=edition?.secondaryUrl

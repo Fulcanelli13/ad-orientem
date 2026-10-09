@@ -4,6 +4,7 @@ import "./contextual-study.mjs";
 import "./contextual-study-coverage.mjs";
 import "./prayer-source-anchor-triage.mjs";
 import "./prayer-reviewed18-variants.mjs";
+import "./prayer-locale-collation.mjs";
 import {parseScriptureContext,verifiedScriptureCommentary} from "../src/scripture/context.js";
 import { readFileSync } from "node:fs";
 import {

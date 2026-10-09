@@ -1,0 +1,901 @@
+{
+  "schema": "AO_PRAYER_LOCALE_COLLATION_EVIDENCE_V1",
+  "date": "2026-10-10",
+  "meaning": "54 language/source comparisons. NORMALIZED_FORM indicates a source-level form match with editorial orthography differences; it is not diplomatic line-exact certification.",
+  "bounds": "18 previously anchor-reviewed canonical Prayer records, no text replacements",
+  "original_source_pages": [
+    "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+    "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+    "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+    "https://en.wikisource.org/wiki/Blessed_Sacrament_Book/Prayers_During_the_Day"
+  ],
+  "counts": {
+    "prayers": 18,
+    "language_cells": 54,
+    "externally_anchored_cells": 50,
+    "fully_certified_prayers": 0,
+    "fully_certified_language_cells": 0,
+    "status_frequency": {
+      "NORMALIZED_FORM": 27,
+      "ENDING_FORMAT_VARIANT": 2,
+      "TRADITIONAL_FRENCH_NOT_2005": 3,
+      "SOURCE_SECTION_PENDING": 1,
+      "PUBLISHED_LOCALE_ENDING_DIFF": 1,
+      "PUBLISHED_FRENCH_ANOMALY": 1,
+      "HISTORICAL_ENGLISH_FORM": 1,
+      "SOURCE_NOT_ESTABLISHED": 4,
+      "HISTORICAL_BENEFITS_FORM": 1,
+      "NORMALIZED_FORM_WITH_APPENDIX": 2,
+      "TRADITIONAL_FRENCH_COMPARATIVE": 1,
+      "LATIN_WORDING_VARIANT": 1,
+      "BIBLE_EDITION_SPECIFIC": 6,
+      "ENGLISH_PROSE_NOT_PRINTED_POEM": 1,
+      "FRENCH_EDITION_VARIANT": 1,
+      "FRENCH_TRANSLATION_NOT_2005": 1
+    }
+  },
+  "items": [
+    {
+      "id": "foundations_sign_of_cross",
+      "title_en": "Sign of the Cross",
+      "family": "COMMON_PRAYER",
+      "primary_discrepancy": "EN/FR/LA prayers have the same essential formula; accents, commas and capitals differ.",
+      "source_identity_summary": "COMMON_FORM_WITH_ORTHOGRAPHY",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1115,
+            1119
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            943,
+            945
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1117,
+            1119
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_our_father",
+      "title_en": "Our Father",
+      "family": "LORDS_PRAYER",
+      "primary_discrepancy": "The 2005 French source uses tu and ne nous soumets pas; app uses vous and ne nous laissez pas succomber. Source EN/LA does not end with the app's customary Amen.",
+      "source_identity_summary": "TRADITIONAL_FRENCH_NOT_2005_FRENCH",
+      "statuses": {
+        "en": {
+          "grade": "ENDING_FORMAT_VARIANT",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1061,
+            1071
+          ],
+          "source_locator": "Lord's Prayer / Notre Père",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "TRADITIONAL_FRENCH_NOT_2005",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            909,
+            910
+          ],
+          "source_locator": "Lord's Prayer / Notre Père",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "ENDING_FORMAT_VARIANT",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1071,
+            1083
+          ],
+          "source_locator": "Lord's Prayer / Notre Père",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_hail_mary",
+      "title_en": "Hail Mary",
+      "family": "COMMON_PRAYER",
+      "primary_discrepancy": "The received formula is present in each language; editorial punctuation/case differs.",
+      "source_identity_summary": "COMMON_FORM_WITH_ORTHOGRAPHY",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1131,
+            1145
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            950,
+            957
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1138,
+            1145
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_glory_be",
+      "title_en": "Glory Be",
+      "family": "COMMON_PRAYER",
+      "primary_discrepancy": "Doxology corresponds in EN, FR and LA after typography differences.",
+      "source_identity_summary": "COMMON_FORM_WITH_ORTHOGRAPHY",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1120,
+            1130
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            945,
+            950
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1125,
+            1130
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_apostles_creed",
+      "title_en": "Apostles’ Creed",
+      "family": "PROFESSION_OF_FAITH",
+      "primary_discrepancy": "The creed appears in the Compendium; app French uses Saint-Esprit rather than its later French profession Esprit Saint. Distinct Latin edition anchor awaits exact section review.",
+      "source_identity_summary": "TRADITIONAL_FRENCH_NOT_2005_FRENCH",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            194,
+            208
+          ],
+          "source_locator": "Profession of Faith / Symbole des Apôtres",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "TRADITIONAL_FRENCH_NOT_2005",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            200,
+            201
+          ],
+          "source_locator": "Profession of Faith / Symbole des Apôtres",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "SOURCE_SECTION_PENDING",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": null,
+          "source_locator": "Profession of Faith / Symbole des Apôtres",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "sacrament_act_of_contrition",
+      "title_en": "Act of Contrition",
+      "family": "OFFICIAL_PRAYER",
+      "primary_discrepancy": "FR app concludes with customary Amen while the French 2005 published form ends after faire pénitence. English/Latin forms are structurally longer than FR.",
+      "source_identity_summary": "OFFICIAL_LOCALE_FORM_DIVERGENCE",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1818,
+            1819
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "PUBLISHED_LOCALE_ENDING_DIFF",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            1597,
+            1602
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1819,
+            1819
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_act_of_faith",
+      "title_en": "Act of Faith",
+      "family": "OFFICIAL_PRAYER",
+      "primary_discrepancy": "Compendium English expands Christology, while FR and LA print shorter legitimate prayers; not three parallel translations.",
+      "source_identity_summary": "OFFICIAL_LOCALE_FORM_DIVERGENCE",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1767,
+            1787
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            1581,
+            1587
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1779,
+            1787
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_act_of_hope",
+      "title_en": "Act of Hope",
+      "family": "OFFICIAL_PRAYER",
+      "primary_discrepancy": "French app reproduces Dans cette foi published under Acte d'espérance, while EN says In this hope and LA says In hac spe. Do not silently emend.",
+      "source_identity_summary": "PUBLISHED_FRENCH_SOURCE_ANOMALY",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1788,
+            1803
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "PUBLISHED_FRENCH_ANOMALY",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            1587,
+            1593
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1796,
+            1803
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_act_of_love",
+      "title_en": "Act of Love",
+      "family": "OFFICIAL_PRAYER",
+      "primary_discrepancy": "Compendium French form ends earlier than English/Latin, as distinct officially published locale forms.",
+      "source_identity_summary": "OFFICIAL_LOCALE_FORM_DIVERGENCE",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1804,
+            1817
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            1594,
+            1597
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1809,
+            1817
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_guardian_angel",
+      "title_en": "Guardian Angel Prayer",
+      "family": "COMMON_PRAYER",
+      "primary_discrepancy": "English is metrical verse; French and Latin are different accepted language forms.",
+      "source_identity_summary": "COMMON_FORM_WITH_ORTHOGRAPHY",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1146,
+            1156
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            957,
+            961
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1151,
+            1156
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_grace_before_meals",
+      "title_en": "Grace Before Meals",
+      "family": "HISTORICAL_PRAYER",
+      "primary_discrepancy": "Baltimore prayer-book confirms English wording; original FR/LA sources are still to be compared.",
+      "source_identity_summary": "HISTORICAL_EN_SOURCE_FORM",
+      "statuses": {
+        "en": {
+          "grade": "HISTORICAL_ENGLISH_FORM",
+          "source_edition": "Grace Before Meals",
+          "source_url": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+          "observed_web_line_range": null,
+          "source_locator": "Grace Before Meals",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "SOURCE_NOT_ESTABLISHED",
+          "source_edition": "SOURCE_NOT_ESTABLISHED",
+          "source_url": null,
+          "observed_web_line_range": null,
+          "source_locator": "Grace Before Meals",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "SOURCE_NOT_ESTABLISHED",
+          "source_edition": "SOURCE_NOT_ESTABLISHED",
+          "source_url": null,
+          "observed_web_line_range": null,
+          "source_locator": "Grace Before Meals",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_grace_after_meals",
+      "title_en": "Grace After Meals",
+      "family": "HISTORICAL_PRAYER",
+      "primary_discrepancy": "Blessed Sacrament Book supports benefits, Baltimore Manual has mercies. No certified printed FR/LA pairing.",
+      "source_identity_summary": "HISTORICAL_ALTERNATIVE_URL_PRIORITY",
+      "statuses": {
+        "en": {
+          "grade": "HISTORICAL_BENEFITS_FORM",
+          "source_edition": "Grace After Meals",
+          "source_url": "https://en.wikisource.org/wiki/Blessed_Sacrament_Book/Prayers_During_the_Day",
+          "observed_web_line_range": null,
+          "source_locator": "Grace After Meals",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "SOURCE_NOT_ESTABLISHED",
+          "source_edition": "SOURCE_NOT_ESTABLISHED",
+          "source_url": null,
+          "observed_web_line_range": null,
+          "source_locator": "Grace After Meals",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "SOURCE_NOT_ESTABLISHED",
+          "source_edition": "SOURCE_NOT_ESTABLISHED",
+          "source_url": null,
+          "observed_web_line_range": null,
+          "source_locator": "Grace After Meals",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "marian_hail_holy_queen",
+      "title_en": "Hail Holy Queen (Salve Regina)",
+      "family": "MARIAN_ANTIPHON",
+      "primary_discrepancy": "App adds versicle and response to Salve Regina; the French antiphon uses traditional vous, unlike the Compendium.",
+      "source_identity_summary": "TRADITIONAL_FRENCH_NOT_2005_FRENCH",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM_WITH_APPENDIX",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1199,
+            1228
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "TRADITIONAL_FRENCH_NOT_2005",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": null,
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM_WITH_APPENDIX",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": null,
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "marian_memorare",
+      "title_en": "Memorare (to Mary)",
+      "family": "MARIAN_PRAYER",
+      "primary_discrepancy": "Compendium Latin uses Mater Verbi, whereas app uses Mater Verbi incarnati; FSSP French is a comparator but not exact.",
+      "source_identity_summary": "TRADITIONAL_FRENCH_COMPARATOR_VARIANT",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1669,
+            1694
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "TRADITIONAL_FRENCH_COMPARATIVE",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": null,
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "LATIN_WORDING_VARIANT",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1684,
+            1694
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "weekday_magnificat",
+      "title_en": "Magnificat (Mary)",
+      "family": "SCRIPTURE_CANTICLE",
+      "primary_discrepancy": "UK and USA English canticles and distinct French/Latin liturgical texts demand edition and doxology ownership.",
+      "source_identity_summary": "BIBLE_EDITION_LANGUAGE_VARIANT",
+      "statuses": {
+        "en": {
+          "grade": "BIBLE_EDITION_SPECIFIC",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1229,
+            1275
+          ],
+          "source_locator": "Magnificat",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "BIBLE_EDITION_SPECIFIC",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": null,
+          "source_locator": "Magnificat",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "BIBLE_EDITION_SPECIFIC",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": null,
+          "source_locator": "Magnificat",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "adoration_anima_christi",
+      "title_en": "Anima Christi",
+      "family": "LATIN_DEVOTION",
+      "primary_discrepancy": "The printed English 2005 Compendium is rhymed; the app prose is a separate translation. Latin agrees in core formula.",
+      "source_identity_summary": "ENGLISH_PROSE_VS_VERSE",
+      "statuses": {
+        "en": {
+          "grade": "ENGLISH_PROSE_NOT_PRINTED_POEM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1644,
+            1668
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "FRENCH_EDITION_VARIANT",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": null,
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1656,
+            1668
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "weekday_benedictus",
+      "title_en": "Benedictus (Zechariah)",
+      "family": "SCRIPTURE_CANTICLE",
+      "primary_discrepancy": "UK/US canticle settings differ; verify specific Scripture or office version, not blanket 3-language identity.",
+      "source_identity_summary": "BIBLE_EDITION_LANGUAGE_VARIANT",
+      "statuses": {
+        "en": {
+          "grade": "BIBLE_EDITION_SPECIFIC",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1307,
+            1360
+          ],
+          "source_locator": "Benedictus",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "BIBLE_EDITION_SPECIFIC",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": null,
+          "source_locator": "Benedictus",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "BIBLE_EDITION_SPECIFIC",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": null,
+          "source_locator": "Benedictus",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "id": "foundations_eternal_rest",
+      "title_en": "Eternal Rest (Requiem)",
+      "family": "FUNERAL_PRAYER",
+      "primary_discrepancy": "App prints French lumière éternelle whereas Compendium French prints lumière de ta face; Latin and English use perpetual light.",
+      "source_identity_summary": "FRENCH_OFFICIAL_VARIANT",
+      "statuses": {
+        "en": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1157,
+            1161
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "fr": {
+          "grade": "FRENCH_TRANSLATION_NOT_2005",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+          "observed_web_line_range": [
+            961,
+            963
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        },
+        "la": {
+          "grade": "NORMALIZED_FORM",
+          "source_edition": "Compendium 2005, language-specific edition",
+          "source_url": "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+          "observed_web_line_range": [
+            1159,
+            1161
+          ],
+          "source_locator": "Common Prayers / Prières communes",
+          "canonical_text_present": true,
+          "certified_verbatim": false,
+          "independent_translation_certified": false
+        }
+      },
+      "material_original_text_fully_collated": false,
+      "release_gate": "EXACT_EDITION_AND_LANGUAGE_REVIEW_PENDING"
+    }
+  ],
+  "original_witness_caveat": "Source page line ranges refer to web text extraction indices, not stable published page numbers or exact browser hash targets.",
+  "source_policy": [
+    "Individual locale forms are distinct printed witnesses; never imply parallel word-for-word translations.",
+    "A language having a linked comparison page is not evidence it reproduces the app wording exactly.",
+    "The Vatican printed French Acte d'espérance anomaly is preserved until separately witnessed correction.",
+    "The canonical 48 prayer bodies remain immutable until independent review approves a specific revised edition."
+  ]
+}
