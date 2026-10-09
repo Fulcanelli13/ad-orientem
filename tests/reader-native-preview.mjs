@@ -196,6 +196,19 @@ for(const [followingAction,fixture,controllerKey,firstId,ending] of followingFix
   assert.equal(first.id??first.recordId,firstId);
   assert.equal(readyFollowing.lifecycleRuntime.snapshot().stage,"MASS_ACTIVE");
   assert.equal(readyFollowing.lifecycleRuntime.contract.followingAction.active,true);
+  if(followingAction==="REQUIEM_ABSOLUTION"){
+    const abs=readyFollowing.requiemAbsolutionController;
+    assert.equal(readyFollowing.lifecycleRuntime.contract.massBoundary.anchor,
+      "AFTER_PLAN_DEFINED_MASS_END__LAST_GOSPEL_SUPPRESSED",
+      "Requiem Absolution handoff incorrectly forced an ordinary Last Gospel");
+    assert.equal(readyFollowing.lifecycleRuntime.contract.leonine.eligible,false,
+      "Requiem Sung Mass inherited Low Mass post-Mass Leonine prayers");
+    assert.equal(abs.project().bodyPresent,false);
+    assert.deepEqual(abs.cards.map(card=>card.id),["ABS-R01","ABS-R03","ABS-R04"],
+      "catafalque-only Requiem inserted body-present or burial-procession actions");
+    assert.equal(abs.project().card.posture,"LOCAL_OR_INHERIT",
+      "Requiem Absolution invented a universal lay posture");
+  }
 }
 
 await assert.rejects(

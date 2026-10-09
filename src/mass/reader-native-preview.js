@@ -312,6 +312,7 @@ export async function prepareNativeReaderPreview({
     registries,
     lowCorpus:data?.lowCorpus,
     sungCorpus:data?.sungCorpus,
+    frenchOrdinary:data?.frenchOrdinary??null,
     prepared,
     gestureMatrix:data?.gestureMatrix??null,
   });
