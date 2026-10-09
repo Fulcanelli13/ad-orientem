@@ -1,4 +1,4 @@
-// Generated from data/mass/scripture-segmented-proper.v1.json; tests enforce parity.
+// Generated from data/mass/scripture-segmented-proper.v1.json; regression tests enforce exact parity.
 export const VERIFIED_SEGMENTED_MASS_READINGS=Object.freeze([
   {
     "sourcePath": "Tempora/Quad6-0",
@@ -111,6 +111,98 @@ export const VERIFIED_SEGMENTED_MASS_READINGS=Object.freeze([
     "reference": "Joel 2:23–24; 2:26–27",
     "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc7-5.txt",
     "omittedVerse": "Joel 2:25"
+  },
+  {
+    "sourcePath": "Tempora/Quadp1-0",
+    "title": "Dominica in Septuagesima",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+    "latinIncipit": "fratres nescitis quod ii qui in stadio currunt omnes quidem currunt sed unus accipit bravium sic currite ut",
+    "segments": [
+      {
+        "book": "1Corinthians",
+        "chapter": 9,
+        "verseStart": 24,
+        "verseEnd": 27
+      },
+      {
+        "book": "1Corinthians",
+        "chapter": 10,
+        "verseStart": 1,
+        "verseEnd": 5
+      }
+    ],
+    "reference": "1Corinthians 9:24–27; 10:1–5",
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt"
+  },
+  {
+    "sourcePath": "Tempora/Quadp2-0",
+    "title": "Dominica in Sexagesima",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp2-0.txt",
+    "latinIncipit": "fratres libenter suffertis insipientes cum sitis ipsi sapientes sustinetis enim si quis vos in servitutem redigit si quis",
+    "segments": [
+      {
+        "book": "2Corinthians",
+        "chapter": 11,
+        "verseStart": 19,
+        "verseEnd": 33
+      },
+      {
+        "book": "2Corinthians",
+        "chapter": 12,
+        "verseStart": 1,
+        "verseEnd": 9
+      }
+    ],
+    "reference": "2Corinthians 11:19–33; 12:1–9",
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp2-0.txt"
+  },
+  {
+    "sourcePath": "Tempora/Pasc6-0",
+    "title": "Dominica infra Octavam Ascensionis",
+    "slot": "GOSPEL",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc6-0.txt",
+    "latinIncipit": "in illo tempore dixit jesus discipulis suis cum venerit paraclitus quem ego mittam vobis a patre spiritum veritatis",
+    "segments": [
+      {
+        "book": "John",
+        "chapter": 15,
+        "verseStart": 26,
+        "verseEnd": 27
+      },
+      {
+        "book": "John",
+        "chapter": 16,
+        "verseStart": 1,
+        "verseEnd": 4
+      }
+    ],
+    "reference": "John 15:26–27; 16:1–4",
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc6-0.txt"
+  },
+  {
+    "sourcePath": "Tempora/Pent23-0",
+    "title": "Dominica XXIII Post Pentecosten",
+    "slot": "EPISTLE_OR_LESSON",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+    "latinIncipit": "fratres imitatores mei estote et observate eos qui ita ambulant sicut habetis formam nostram multi enim ambulant quos",
+    "segments": [
+      {
+        "book": "Philippians",
+        "chapter": 3,
+        "verseStart": 17,
+        "verseEnd": 21
+      },
+      {
+        "book": "Philippians",
+        "chapter": 4,
+        "verseStart": 1,
+        "verseEnd": 3
+      }
+    ],
+    "reference": "Philippians 3:17–21; 4:1–3",
+    "sourceFileUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt"
   }
 ]);
 export const VERIFIED_SEGMENTED_MASS_VERSION="1962-MASS-PROPER-SEGMENTED-SCRIPTURE-V1";

@@ -1,5 +1,4 @@
-// Generated mirror of data/mass/scripture-reading-witness-register.v1.json.
-// Do not edit by hand; test enforces exact register parity.
+// Generated from data/mass/scripture-reading-witness-register.v1.json; regression tests enforce exact parity.
 export const VERIFIED_MASS_SCRIPTURE_READINGS=Object.freeze([
   {
     "sourcePath": "Tempora/Pent10-0",
@@ -120,6 +119,579 @@ export const VERIFIED_MASS_SCRIPTURE_READINGS=Object.freeze([
         "latinIncipit": "Cum videritis"
       }
     }
+  },
+  {
+    "sourcePath": "Tempora/Adv1-0",
+    "title": "Dominica I Adventus",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 13:11–14",
+        "latinIncipit": "fratres scientes quia hora est jam nos de somno surgere nunc enim propior est nostra salus quam cum"
+      },
+      "GOSPEL": {
+        "reference": "Luke 21:25–33",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis erunt signa in sole et luna et stellis et in terris"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Adv2-0",
+    "title": "Dominica II Adventus",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv2-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 15:4–13",
+        "latinIncipit": "fratres quaecumque scripta sunt ad nostram doctrinam scripta sunt ut per patientiam et consolationem scripturarum spem habeamus deus"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 11:2–10",
+        "latinIncipit": "in illo tempore cum audisset joannes in vinculis opera christi mittens duos de discipulis suis ait illi tu"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Adv3-0",
+    "title": "Dominica III Adventus",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv3-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Philippians 4:4–7",
+        "latinIncipit": "fratres gaudete in domino semper iterum dico gaudete modestia vestra nota sit omnibus hominibus dominus prope est nihil"
+      },
+      "GOSPEL": {
+        "reference": "John 1:19–28",
+        "latinIncipit": "in illo tempore miserunt judaei ab jerosolymis sacerdotes et levitas ad joannem ut interrogarent eum tu quis es"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Adv4-0",
+    "title": "Dominica IV Adventus",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv4-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Corinthians 4:1–5",
+        "latinIncipit": "fratres sic nos existimet homo ut ministros christi et dispensatores mysteriorum dei hic jam quaeritur inter dispensatores ut"
+      },
+      "GOSPEL": {
+        "reference": "Luke 3:1–6",
+        "latinIncipit": "anno quintodecimo imperii tiberii caesaris procurante pontio pilato judaeam tetrarcha autem galilaeae herode philippo autem fratre ejus tetrarcha",
+        "sourceOwner": "Tempora/Adv3-6",
+        "sourceSection": "Evangelium",
+        "inheritance": "EXPLICIT_SOURCE_SECTION_ALIAS_WITH_LATIN_MATCH"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Nat1-0",
+    "title": "Dominica Infra Octavam Nativitatis",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat1-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Galatians 4:1–7",
+        "latinIncipit": "fratres quanto tempore heres parvulus est nihil differt a servo cum sit dominus omnium sed sub tutoribus et"
+      },
+      "GOSPEL": {
+        "reference": "Luke 2:33–40",
+        "latinIncipit": "in illo tempore erat joseph et maria mater jesu mirantes super his quae dicebantur de illo et benedixit"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Nat2-0",
+    "title": "Sanctissimi Nominis Jesu",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Nat2-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Acts 4:8–12",
+        "latinIncipit": "in diebus illis petrus repletus spiritu sancto dixit principes populi et seniores audite si nos hodie dijudicamur in"
+      },
+      "GOSPEL": {
+        "reference": "Luke 2:21",
+        "latinIncipit": "in illo tempore postquam consummati sunt dies octo ut circumcideretur puer vocatum est nomen ejus jesus quod vocatum"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Epi1-0",
+    "title": "Sanctæ Familiæ Jesu Mariæ Joseph",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi1-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Colossians 3:12–17",
+        "latinIncipit": "fratres induite vos sicut electi dei sancti et dilecti viscera misericordiae benignitatem humilitatem modestiam patientiam supportantes invicem et"
+      },
+      "GOSPEL": {
+        "reference": "Luke 2:42–52",
+        "latinIncipit": "cum factus esset jesus annorum duodecim ascendentibus illis jerosolymam secundum consuetudinem diei festi consummatisque diebus cum redirent remansit"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Epi2-0",
+    "title": "Dominica II post Epiphaniam",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi2-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 12:6–16",
+        "latinIncipit": "fratres habentes donationes secundum gratiam quae data est nobis differentes sive prophetiam secundum rationem fidei sive ministerium in"
+      },
+      "GOSPEL": {
+        "reference": "John 2:1–11",
+        "latinIncipit": "in illo tempore nuptiae factae sunt in cana galilaeae et erat mater jesu ibi vocatus est autem et"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Epi3-0",
+    "title": "Dominica III Post Epiphaniam",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi3-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 12:16–21",
+        "latinIncipit": "fratres nolite esse prudentes apud vosmetipsos nulli malum pro malo reddentes providentes bona non tantum coram deo sed"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 8:1–13",
+        "latinIncipit": "in illo tempore cum descendisset jesus de monte secutae sunt eum turbae multae et ecce leprosus veniens adorabat"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Epi4-0",
+    "title": "Dominica IV Post Epiphaniam",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi4-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 13:8–10",
+        "latinIncipit": "fratres nemini quidquam debeatis nisi ut invicem diligatis qui enim diligit proximum legem implevit nam non adulterabis non"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 8:23–27",
+        "latinIncipit": "in illo tempore ascendente jesu in naviculam secuti sunt eum discipuli ejus et ecce motus magnus factus est"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Epi5-0",
+    "title": "Dominica V Post Epiphaniam",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi5-0.txt",
+    "readings": {
+      "GOSPEL": {
+        "reference": "Matthew 13:24–30",
+        "latinIncipit": "in illo tempore dixit jesus turbis parabolam hanc simile factum est regnum coelorum homini qui seminavit bonum semen"
+      },
+      "EPISTLE_OR_LESSON": {
+        "reference": "Colossians 3:12–17",
+        "latinIncipit": "fratres induite vos sicut electi dei sancti et dilecti viscera misericordiae benignitatem humilitatem modestiam patientiam supportantes invicem et",
+        "sourceOwner": "Tempora/Epi1-0",
+        "sourceSection": "Lectio",
+        "inheritance": "EXPLICIT_SOURCE_SECTION_ALIAS_WITH_LATIN_MATCH"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Epi6-0",
+    "title": "Dominica VI Post Epiphaniam",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Epi6-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Thessalonians 1:2–10",
+        "latinIncipit": "fratres gratias agimus deo semper pro omnibus vobis memoriam vestri facientes in orationibus nostris sine intermissione memores operis"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 13:31–35",
+        "latinIncipit": "in illo tempore dixit jesus turbis parabolam hanc simile est regnum coelorum grano sinapis quod accipiens homo seminavit"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Quadp1-0",
+    "title": "Dominica in Septuagesima",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp1-0.txt",
+    "readings": {
+      "GOSPEL": {
+        "reference": "Matthew 20:1–16",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis parabolam hanc simile est regnum coelorum homini patrifamilias qui exiit primo"
+      }
+    },
+    "sourceHolds": [
+      {
+        "slot": "EPISTLE_OR_LESSON",
+        "reason": "DISCONTINUOUS_READING_LINKED_SEPARATELY_IN_SEGMENTED_REGISTER",
+        "reference": "1Corinthians 9:24–27; 10:1–5"
+      }
+    ]
+  },
+  {
+    "sourcePath": "Tempora/Quadp2-0",
+    "title": "Dominica in Sexagesima",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp2-0.txt",
+    "readings": {
+      "GOSPEL": {
+        "reference": "Luke 8:4–15",
+        "latinIncipit": "in illo tempore cum turba plurima convenirent et de civitatibus properarent ad jesum dixit per similitudinem exiit qui"
+      }
+    },
+    "sourceHolds": [
+      {
+        "slot": "EPISTLE_OR_LESSON",
+        "reason": "DISCONTINUOUS_READING_LINKED_SEPARATELY_IN_SEGMENTED_REGISTER",
+        "reference": "2Corinthians 11:19–33; 12:1–9"
+      }
+    ]
+  },
+  {
+    "sourcePath": "Tempora/Quadp3-0",
+    "title": "Dominica in Quinquagesima",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quadp3-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Corinthians 13:1–13",
+        "latinIncipit": "fratres si linguis hominum loquar et angelorum caritatem autem non habeam factus sum velut aes sonans aut cymbalum"
+      },
+      "GOSPEL": {
+        "reference": "Luke 18:31–43",
+        "latinIncipit": "in illo tempore assumpsit jesus duodecim et ait illis ecce ascendimus jerosolymam et consummabuntur omnia quae scripta sunt"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Quad3-0",
+    "title": "Dominica III in Quadragesima",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad3-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Ephesians 5:1–9",
+        "latinIncipit": "fratres estote imitatores dei sicut filii carissimi et ambulate in dilectione sicut et christus dilexit nos et tradidit"
+      },
+      "GOSPEL": {
+        "reference": "Luke 11:14–28",
+        "latinIncipit": "in illo tempore erat jesus ejiciens daemonium et illud erat mutum et cum ejecisset daemonium locutus est mutus"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Quad5-0",
+    "title": "Dominica de Passione",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Quad5-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Hebrews 9:11–15",
+        "latinIncipit": "fratres christus assistens pontifex futurorum bonorum per amplius et perfectius tabernaculum non manufactum id est non hujus creationis"
+      },
+      "GOSPEL": {
+        "reference": "John 8:46–59",
+        "latinIncipit": "in illo tempore dicebat jesus turbis judaeorum quis ex vobis arguet me de peccato si veritatem dico vobis"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pasc1-0",
+    "title": "Dominica in Albis in Octava Paschæ",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc1-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1John 5:4–10",
+        "latinIncipit": "carissimi omne quod natum est ex deo vincit mundum et haec est victoria quae vincit mundum fides nostra"
+      },
+      "GOSPEL": {
+        "reference": "John 20:19–31",
+        "latinIncipit": "in illo tempore cum sero esset die illo una sabbatorum et fores essent clausae ubi erant discipuli congregati"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pasc2-0",
+    "title": "Dominica II Post Pascha",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc2-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Peter 2:21–25",
+        "latinIncipit": "carissimi christus passus est pro nobis vobis relinquens exemplum ut sequamini vestigia ejus qui peccatum non fecit nec"
+      },
+      "GOSPEL": {
+        "reference": "John 10:11–16",
+        "latinIncipit": "in illo tempore dixit jesus pharisaeis ego sum pastor bonus bonus pastor animam suam dat pro ovibus suis"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pasc3-0",
+    "title": "Dominica III Post Pascha",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc3-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Peter 2:11–19",
+        "latinIncipit": "carissimi obsecro vos tamquam advenas et peregrinos abstinere vos a carnalibus desideriis quae militant adversus animam conversationem vestram"
+      },
+      "GOSPEL": {
+        "reference": "John 16:16–22",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis modicum et jam non videbitis me et iterum modicum et videbitis"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pasc4-0",
+    "title": "Dominica IV Post Pascha",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc4-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "James 1:17–21",
+        "latinIncipit": "carissimi omne datum optimum et omne donum perfectum desursum est descendens a patre luminum apud quem non est"
+      },
+      "GOSPEL": {
+        "reference": "John 16:5–14",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis vado ad eum qui misit me et nemo ex vobis interrogat"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pasc5-0",
+    "title": "Dominica V Post Pascha",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc5-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "James 1:22–27",
+        "latinIncipit": "carissimi estote factores verbi et non auditores tantum fallentes vosmetipsos quia si quis auditor est verbi et non"
+      },
+      "GOSPEL": {
+        "reference": "John 16:23–30",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis amen amen dico vobis si quid petieritis patrem in nomine meo"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pasc6-0",
+    "title": "Dominica infra Octavam Ascensionis",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pasc6-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Peter 4:7–11",
+        "latinIncipit": "carissimi estote prudentes et vigilate in orationibus ante omnia autem mutuam in vobismetipsis caritatem continuam habentes quia caritas"
+      }
+    },
+    "sourceHolds": [
+      {
+        "slot": "GOSPEL",
+        "reason": "SEGMENTED_READING_REGISTER_OWNS_REFERENCE",
+        "reference": "John 15:26–27; 16:1–4"
+      }
+    ]
+  },
+  {
+    "sourcePath": "Tempora/Pent02-0",
+    "title": "Dominica II Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent02-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1John 3:13–18",
+        "latinIncipit": "carissimi nolite mirari si odit vos mundus nos scimus quoniam translati sumus de morte ad vitam quoniam diligimus"
+      },
+      "GOSPEL": {
+        "reference": "Luke 14:16–24",
+        "latinIncipit": "in illo tempore dixit jesus pharisaeis parabolam hanc homo quidam fecit coenam magnam et vocavit multos et misit"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent04-0",
+    "title": "Dominica IV Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent04-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 8:18–23",
+        "latinIncipit": "fratres existimo quod non sunt condignae passiones hujus temporis ad futuram gloriam quae revelabitur in nobis nam exspectatio"
+      },
+      "GOSPEL": {
+        "reference": "Luke 5:1–11",
+        "latinIncipit": "in illo tempore cum turbae irruerent in jesum ut audirent verbum dei et ipse stabat secus stagnum genesareth"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent05-0",
+    "title": "Dominica V Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent05-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Peter 3:8–15",
+        "latinIncipit": "carissimi omnes unanimes in oratione estote compatientes fraternitatis amatores misericordes modesti humiles non reddentes malum pro malo nec"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 5:20–24",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis nisi abundaverit justitia vestra plus quam scribarum et pharisaeorum non intrabitis"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent06-0",
+    "title": "Dominica VI Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent06-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 6:3–11",
+        "latinIncipit": "fratres quicumque baptizati sumus in christo jesu in morte ipsius baptizati sumus consepulti enim sumus cum illo per"
+      },
+      "GOSPEL": {
+        "reference": "Mark 8:1–9",
+        "latinIncipit": "in illo tempore cum turba multa esset cum jesu nec haberent quod manducarent convocatis discipulis ait illis misereor"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent07-0",
+    "title": "Dominica VII Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent07-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 6:19–23",
+        "latinIncipit": "fratres humanum dico propter infirmitatem carnis vestrae sicut enim exhibuistis membra vestra servire immunditiae et iniquitati ad iniquitatem"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 7:15–21",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis attendite a falsis prophetis qui veniunt ad vos in vestimentis ovium"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent08-0",
+    "title": "Dominica VIII Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent08-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Romans 8:12–17",
+        "latinIncipit": "fratres debitores sumus non carni ut secundum carnem vivamus si enim secundum carnem vixeritis moriemini si autem spiritu"
+      },
+      "GOSPEL": {
+        "reference": "Luke 16:1–9",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis parabolam hanc homo quidam erat dives qui habebat villicum et hic"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent09-0",
+    "title": "Dominica IX Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent09-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "1Corinthians 10:6–13",
+        "latinIncipit": "fratres non simus concupiscentes malorum sicut et illi concupierunt neque idololatrae efficiamini sicut quidam ex ipsis quemadmodum scriptum"
+      },
+      "GOSPEL": {
+        "reference": "Luke 19:41–47",
+        "latinIncipit": "in illo tempore cum appropinquaret jesus jerusalem videns civitatem flevit super illam dicens quia si cognovisses et tu"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent12-0",
+    "title": "Dominica XII Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent12-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "2Corinthians 3:4–9",
+        "latinIncipit": "fratres fiduciam talem habemus per christum ad deum non quod sufficientes simus cogitare aliquid a nobis quasi ex"
+      },
+      "GOSPEL": {
+        "reference": "Luke 10:23–37",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis beati oculi qui vident quae vos videtis dico enim vobis quod"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent13-0",
+    "title": "Dominica XIII Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent13-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Galatians 3:16–22",
+        "latinIncipit": "fratres abrahae dictae sunt promissiones et semini ejus non dicit et seminibus quasi in multis sed quasi in"
+      },
+      "GOSPEL": {
+        "reference": "Luke 17:11–19",
+        "latinIncipit": "in illo tempore dum iret jesus in jerusalem transibat per mediam samariam et galilaeam et cum ingrederetur quoddam"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent14-0",
+    "title": "Dominica XIV Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent14-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Galatians 5:16–24",
+        "latinIncipit": "fratres spiritu ambulate et desideria carnis non perficietis caro enim concupiscit adversus spiritum spiritus autem adversus carnem haec"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 6:24–33",
+        "latinIncipit": "in illo tempore dixit jesus discipulis suis nemo potest duobus dominis servire aut enim unum odio habebit et"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent16-0",
+    "title": "Dominica XVI Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent16-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Ephesians 3:13–21",
+        "latinIncipit": "fratres obsecro vos ne deficiatis in tribulationibus meis pro vobis quae est gloria vestra hujus rei gratia flecto"
+      },
+      "GOSPEL": {
+        "reference": "Luke 14:1–11",
+        "latinIncipit": "in illo tempore cum intraret jesus in domum cujusdam principis pharisaeorum sabbato manducare panem et ipsi observabant eum"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent17-0",
+    "title": "Dominica XVII Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent17-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Ephesians 4:1–6",
+        "latinIncipit": "fratres obsecro vos ego vinctus in domino ut digne ambuletis vocatione qua vocati estis cum omni humilitate et"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 22:34–46",
+        "latinIncipit": "in illo tempore accesserunt ad jesum pharisaei et interrogavit eum unus ex eis legis doctor tentans eum magister"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent22-0",
+    "title": "Dominica XXII Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+    "readings": {
+      "EPISTLE_OR_LESSON": {
+        "reference": "Philippians 1:6–11",
+        "latinIncipit": "fratres confidimus in domino jesu quia qui coepit in vobis opus bonum perficiet usque in diem christi jesu"
+      },
+      "GOSPEL": {
+        "reference": "Matthew 22:15–21",
+        "latinIncipit": "in illo tempore abeuntes pharisaei consilium inierunt ut caperent jesum in sermone et mittunt ei discipulos suos cum"
+      }
+    }
+  },
+  {
+    "sourcePath": "Tempora/Pent23-0",
+    "title": "Dominica XXIII Post Pentecosten",
+    "witnessUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+    "readings": {
+      "GOSPEL": {
+        "reference": "Matthew 9:18–26",
+        "latinIncipit": "in illo tempore loquente jesu ad turbas ecce princeps unus accessit et adorabat eum dicens domine filia mea"
+      }
+    },
+    "sourceHolds": [
+      {
+        "slot": "EPISTLE_OR_LESSON",
+        "reason": "DISCONTINUOUS_TEXT_IN_SEGMENTED_REGISTER",
+        "reference": "Philippians 3:17–21; 4:1–3"
+      }
+    ]
   }
 ]);
-export const VERIFIED_MASS_SCRIPTURE_VERSION="1962-MASS-READING-CONTEXT-REGISTER-V1";
+export const VERIFIED_MASS_SCRIPTURE_VERSION="1962-MASS-READING-CONTEXT-REGISTER-V2";

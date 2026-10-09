@@ -35,7 +35,7 @@ const actualProper=VERIFIED_MASS_FEAST_READINGS.filter(x=>audit.days.some(d=>d.s
 assert.equal(actualProper.length,9);
 assert.equal(actualProper.reduce((n,x)=>n+Object.keys(x.readings).length,0),17);
 assert.equal(VERIFIED_MASS_FEAST_READINGS.length,29);
-assert.equal(VERIFIED_SEGMENTED_MASS_READINGS.length,5);
+assert.equal(VERIFIED_SEGMENTED_MASS_READINGS.length,9);
 function mock(order,path){
  const nodes=order.map((id,i)=>({
   id:"PRE_GOSPEL."+String(i+1).padStart(2,"0")+"."+id,

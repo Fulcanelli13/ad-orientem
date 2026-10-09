@@ -12,7 +12,7 @@ const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const source=load("../data/mass/scripture-segmented-proper.v1.json");
 assert.equal(VERIFIED_SEGMENTED_MASS_VERSION,source.version);
 assert.deepEqual(VERIFIED_SEGMENTED_MASS_READINGS,source.readings,"Compiled segmented witness diverged from source ledger");
-assert.equal(source.readings.length,5);
+assert.equal(source.readings.length,9);
 const bible=(book,chapter,a,b)=>({book,chapter,verseStart:a,verseEnd:b});
 const part=[bible("Ephesians",3,8,12),bible("Ephesians",3,14,19)];
 assert.equal(scriptureSegmentsReference(part),"Ephesians 3:8–12; 3:14–19");
@@ -39,7 +39,11 @@ for(const row of source.readings){
  assert.ok(!seen.has(key),"Duplicate segmented Proper owner");
  seen.add(key);
  assert.equal(scriptureSegmentsReference(row.segments),row.reference);
- assert.ok(/^https:\/\/www\.missalemeum\.com\//.test(row.witnessUrl));
+ assert.ok(/^https:\/\/(?:www\.missalemeum\.com\/|github\.com\/DivinumOfficium\/divinum-officium\/blob\/master\/web\/www\/missa\/Latin\/Tempora\/)/.test(row.witnessUrl),
+    "Segmented witness must be anchored to a real primary liturgical text source");
+ if(row.witnessUrl.includes("github.com/DivinumOfficium"))
+   assert.ok(row.witnessUrl.endsWith("/"+row.sourcePath.split("/").at(-1)+".txt"),
+     "Source link must match its selected Proper file");
  assert.ok(row.latinIncipit.length>=18);
  assert.equal(row.segments.length,2);
  const field=row.slot==="GOSPEL"?"gospel":"epistle";
@@ -82,4 +86,4 @@ const noOwner={AO_SCRIPTURE_CONTEXT_V1:{open:()=>true}};
 await assert.rejects(openReaderScriptureContext(result,{win:noOwner,loader:async()=>({})}),/SEGMENTED_SCRIPTURE_OWNER_NOT_READY/);
 const provisional=scriptureParallelReferenceState(result.passage,"dr-challoner","cpdv-2009");
 assert.equal(provisional.canAutoParallel,false,"Never fabricate inter-edition equivalence from the new segments");
-console.log("PASS segmented Scripture: canonical order/omissions, 5 text-guarded segmented Mass Propers, mixed-card/conflicting-citation rejection, one shared owner, native rite holds");
+console.log("PASS segmented Scripture: canonical order/omissions, 9 text-guarded segmented Mass Propers, mixed-card/conflicting-citation rejection, one shared owner, native rite holds");
