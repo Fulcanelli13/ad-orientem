@@ -17,6 +17,17 @@
   "collationPolicy": "Page-verified evidence only; full 433 pages not yet signed off. The 1912 Italian transcription is not itself a 1912 photographed original.",
   "verifiedPageSamples": [
     {
+      "question": 202,
+      "pdfPageOneIndexed": 62,
+      "pdfPageZeroIndexed": 61,
+      "printedPage": 52,
+      "fullAnswerVisuallyRead": true,
+      "claim": "Sixth Commandment entails reverence for one's body and that of others as works of God and temples of His presence and grace.",
+      "comparison": "The visible French printed wording directly supports the existing chastity lesson's explanation of personal bodily dignity.",
+      "discrepancy": "NONE_OBSERVED",
+      "humanTheologyApproved": false
+    },
+    {
       "question": 226,
       "pdfPageOneIndexed": 68,
       "pdfPageZeroIndexed": 67,
@@ -63,11 +74,12 @@
       "humanTheologyApproved": false
     }
   ],
-  "observedMinimumPageVerifiedQACount": 4,
+  "observedMinimumPageVerifiedQACount": 5,
   "all433FrOriginalAnswersPrintPageCollated": false,
   "all433ItalianPrintPageCollated": false,
   "independentCanonicalReviewApproved": false,
   "independentDoctrinalApproved": false,
   "nativeFrenchEditorApproved": false,
-  "publicReleaseApproved": false
+  "publicReleaseApproved": false,
+  "automatedOcrPageCandidateIndex": "data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json"
 }
