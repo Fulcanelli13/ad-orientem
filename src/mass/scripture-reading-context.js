@@ -21,7 +21,7 @@ function fromReading(reading){
     reading.passage?.reference,
     ...["en","fr","lat","la","vernacular"].flatMap(key=>
       typeof reading[key]==="string"
-        ?reading[key].split(/\\r?\\n/).slice(0,12).map(line=>line.trim())
+        ?reading[key].split(/\r?\n/).slice(0,12).map(line=>line.trim())
           .filter(line=>parseScriptureContext(line))
         :[])
   ].filter(value=>typeof value==="string"&&value.trim());
@@ -46,8 +46,12 @@ export function massScriptureContextForCard(card,prepared){
   const matched=relevant.flatMap(slot=>candidateReferences(proper,slot)
     .map(label=>({slot,parsed:parseScriptureContext(label)}))
     .filter(entry=>entry.parsed));
-  if(matched.length!==1)return Object.freeze({state:"UNRESOLVED_REFERENCE",slot:relevant.join(","),
+  const unique=[...new Map(matched.map(row=>[
+    [row.slot,row.parsed.passage.book,row.parsed.passage.chapter,row.parsed.passage.verseStart,row.parsed.passage.verseEnd].join(":"),
+    row
+  ])).values()];
+  if(unique.length!==1)return Object.freeze({state:"UNRESOLVED_REFERENCE",slot:relevant.join(","),
     explanation:"The Mass Proper has no single verified Bible reference for this card."});
-  return Object.freeze({state:"READY",slot:matched[0].slot,...matched[0].parsed,
+  return Object.freeze({state:"READY",slot:unique[0].slot,...unique[0].parsed,
     provenance:"EXPLICIT_RESOLVED_PROPER_REFERENCE"});
 }
