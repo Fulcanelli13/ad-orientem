@@ -60,6 +60,23 @@ try{
  assert.equal(direct,true,"Spiritual Life failed first-use lazy launch");
  assert.ok(hits.some(x=>x.path==="/src/learn/spiritual-life-data.js"),"Spiritual Life lessons were not fetched on first use");
  assert.equal(await page.evaluate(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.().open),true,"Spiritual Life module did not open");
+
+ // Check genuine formation descriptive prose, not heading or kicker microtype.
+ for(const width of [320,360,390,430]){
+   await page.setViewportSize({width,height:844});
+   const metrics=await page.evaluate(()=>{
+     const root=document.getElementById("ao-spiritual-life-root");
+     const boundary=root.querySelector(".aoSLBoundary");
+     const row=root.querySelector(".aoSLRow p");
+     return {boundary:parseFloat(getComputedStyle(boundary).fontSize),
+       row:parseFloat(getComputedStyle(row).fontSize),
+       overflow:root.scrollWidth-root.clientWidth};
+   });
+   assert.ok(metrics.boundary>=14&&metrics.row>=14,
+     "Spiritual Life body copy below 14px at "+width+": "+JSON.stringify(metrics));
+   assert.ok(metrics.overflow<=2,"Spiritual Life overflows at "+width+": "+JSON.stringify(metrics));
+ }
+ await page.setViewportSize({width:390,height:844});
  await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
  const calStart=Date.now();
  const opened=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("calendar"));
