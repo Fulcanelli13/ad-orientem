@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { properToReaderSlots,assertReaderProperReady } from "../src/mass/proper-reader-slots.js";
+import { compileRogationReaderProper } from "../src/mass/rogation-reader-proper.js";
 import { adaptV346ResolvedMass, prepareMassSessionFromV346 } from "../src/mass/host-adapter.js";
 
 const expect=(x,m)=>{if(!x)throw new Error(m)};
@@ -131,6 +134,82 @@ const corpusAction=prepareMassSessionFromV346(base,{
   followingActions:["CORPUS_CHRISTI_PROCESSION"],
 });
 expect(corpusAction.plan.normalLastGospel===false && corpusAction.plan.blessingAllowed===false,"Explicit Corpus procession ending lost");
+
+
+const load=(p)=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
+const actualRogationGate=load("../data/mass/rogation-proper-source-gate.v1.json");
+const actualRogationText=load("../data/mass/rogation-proper-trilingual.v1.json");
+const rogationDate={...base,date:"2027-05-03",calendarRank:4};
+const requestedRogation={
+  choice:"ROGATION_MASS",observanceConfirmed:true,
+  service:"PUBLIC_PROCESSION",dayClass:4,
+  sourceGate:actualRogationGate,sourceProper:actualRogationText,
+  preface:{
+    lat:"Praefatio paschalis — 1962 source-resolved Latin fixture.",
+    en:"Easter Preface — fully resolved English fixture.",
+    fr:"Préface pascale — témoin français de validation.",
+    sourceRef:"TEST: Missale Romanum 1962 Easter Preface"
+  }
+};
+let unpublishedBlocked=false;
+try{prepareMassSessionFromV346(rogationDate,{
+  form:"sung",proper,rogationSelection:requestedRogation
+})}catch(e){unpublishedBlocked=/ROGATION_SELECTION_PROPER_NOT_SOURCE_CERTIFIED/.test(String(e))}
+expect(unpublishedBlocked,"Unpublished Rogation Mass must be rejected at actual host adapter boundary");
+
+const certifiedGate=structuredClone(actualRogationGate);
+certifiedGate.status="PUBLISHED_1962_ROGATION_PROPER";
+certifiedGate.publicationAllowed=true;
+const certifiedProper=structuredClone(actualRogationText);
+certifiedProper.status="PUBLISHED_1962_ROGATION_PROPER";
+certifiedProper.publicationAllowed=true;
+const certifiedSelection={...requestedRogation,
+  sourceGate:certifiedGate,sourceProper:certifiedProper
+};
+// Test-only fixture simulates future editorial publication; production JSON
+// remains unpublished and cannot pass this entry point.
+const approved=prepareMassSessionFromV346(rogationDate,{
+  form:"sung",proper,rogationSelection:certifiedSelection
+});
+expect(approved.resolvedMass.actualCelebration.id==="rogation-mass-1962",
+  "Certified II-class Rogation Proper identity was lost");
+expect(approved.resolvedMass.provenance.votiveClass===2,
+  "II-class conditional votive class not retained");
+expect(approved.resolvedMass.provenance.colour==="violet",
+  "Violet colour not retained");
+expect(approved.resolvedMass.provenance.gloria===false &&
+  approved.resolvedMass.provenance.credo===false,
+  "Gloria or Credo wrongly inherited from date-only host");
+expect(approved.plan.massEntry==="INTROIT" &&
+  approved.plan.precedingGraphs.includes("ROGATIONS"),
+  "Procession-to-Introit handoff missing");
+expect(approved.resolvedMass.overlays.includes("VOTIVE_PROPER"),
+  "Certified Rogation must activate one canonical Votive overlay");
+for(const lang of ["en","fr"]){
+  const mapped=assertReaderProperReady(properToReaderSlots(
+    approved.resolvedMass.proper.data,{language:lang}
+  ));
+  expect(mapped.ready && !mapped.missing.length,
+    "Trilingual Rogation Proper missing R17 reader slot "+lang);
+  const antiphon=mapped.slots.INTROIT.data.paragraphs[0];
+  expect(/Exaudivit/.test(antiphon.latin),"Wrong Rogation Introit");
+}
+const permittedDayAfterRogation=prepareMassSessionFromV346(
+  {...rogationDate,calendarRank:1},{
+  proper,rogationSelection:{
+    choice:"DAY_MASS",observanceConfirmed:true,
+    service:"PUBLIC_PROCESSION",dayClass:1
+  }
+});
+expect(permittedDayAfterRogation.plan.massEntry==="INTROIT",
+  "Mass of day must also begin at Introit after public Litanies");
+expect(permittedDayAfterRogation.resolvedMass.actualCelebration.id!=="rogation-mass-1962",
+  "Impeded II-class votive may not replace class I day Mass");
+expect(permittedDayAfterRogation.resolvedMass.proper.data.sourcePath===proper.sourcePath,
+  "Impeded votive accidentally replaced ordinary Proper");
+const dateOnly=prepareMassSessionFromV346(rogationDate,{proper});
+expect(dateOnly.plan.massEntry==="FOOT_CLUSTER" && dateOnly.plan.precedingGraphs.length===0,
+  "Date alone activated Rogations");
 
 let blocked=false;
 try{ adaptV346ResolvedMass({...base,canStart:false},{proper}); }catch{blocked=true}
