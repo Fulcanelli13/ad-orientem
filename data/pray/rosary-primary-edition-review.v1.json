@@ -1,0 +1,4398 @@
+{
+  "schema": "ao-rosary-primary-edition-review-v1",
+  "version": "1.0.0",
+  "date": "2026-10-09",
+  "purpose": "Do not reintroduce 200 quotation fragments without passage-level source review; distinguish contextual excerpts, punctuation/orthography changes, traditional typology and actual source text.",
+  "sourceOwner": "data/pray/rosary-scripture-editorial-inventory.v1.json",
+  "sourceCorpusEdition": "Inherited donor labelled Douay–Rheims, compared against Douay–Rheims (Challoner) Wikisource witness; Crampon 1923 separately linked.",
+  "rules": [
+    "No source link alone certifies an excerpt or grants reproduction rights.",
+    "English comparison is not bilingual certification; exact Crampon verse collation and edition rights remain pending.",
+    "Preserve all 200 IDs, mystery and bead ownership; the production player may not use the historical fragments.",
+    "Typology in the Assumption and Coronation must never be styled as direct Gospel narrative.",
+    "Psalm, Canticles, Judith and Isaias references need canonical-edition mapping; never guess Psalm numbering.",
+    "Automatic triage flags are review prompts, not a declaration of error or theological approval."
+  ],
+  "counts": {
+    "sourceRows": 200,
+    "candidateEnglishTextCompared": 20,
+    "unreviewedForEnglishText": 180,
+    "englishWordingFindings": {
+      "CONTIGUOUS_SHORT_EXCERPT": 7,
+      "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT": 7,
+      "COMPLETE_VERSE_MATCHED": 4,
+      "HOLD_TYPOLOGY_AND_VULGATE_PSALM_NUMBER": 1,
+      "CONTIGUOUS_TYPOLOGICAL_EXCERPT": 1
+    },
+    "holdDisposition": {
+      "PENDING_EDITION_COLLATION": 132,
+      "UNSAFE_FRAGMENT_HOLD": 53,
+      "TYPOLOGICAL_REVIEW_HOLD": 15
+    },
+    "bilingualTextApproved": 0,
+    "publishedScriptureQuotes": 0
+  },
+  "locators": {
+    "Luke": {
+      "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+      "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+    },
+    "John": {
+      "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+      "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+    },
+    "Matthew": {
+      "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+      "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+    },
+    "Mark": {
+      "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Mark",
+      "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
+    },
+    "1 Corinthians": {
+      "en": null,
+      "fr": null
+    },
+    "Isaias": {
+      "en": null,
+      "fr": null
+    },
+    "Acts": {
+      "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+      "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+    },
+    "Psalm": {
+      "en": null,
+      "fr": null
+    },
+    "Canticles": {
+      "en": null,
+      "fr": null
+    },
+    "Apocalypse": {
+      "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Apocalypse",
+      "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
+    },
+    "Judith": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "rows": [
+    {
+      "id": "joy1.b1",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:26–27",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 26,
+        "verseEnd": 27,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b2",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:28",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 28,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_SHORT_EXCERPT",
+        "explanation": "Accurate core salutation; verse 28 begins with the angel's arrival and attribution, missing from the inherited excerpt.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "joy1.b3",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:29–30",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 29,
+        "verseEnd": 30,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b4",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:31",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 31,
+        "verseEnd": 31,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b5",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:32–33",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 32,
+        "verseEnd": 33,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b6",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:34",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 34,
+        "verseEnd": 34,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b7",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:35",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 35,
+        "verseEnd": 35,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b8",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:36–37",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 36,
+        "verseEnd": 37,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b9",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:38a",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 38,
+        "verseEnd": 38,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "OPEN_SENTENCE",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy1.b10",
+      "mysteryId": "joy1",
+      "sourceReference": "Luke 1:38b",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 38,
+        "verseEnd": 38,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b1",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:39–40",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 39,
+        "verseEnd": 40,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b2",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:41",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 41,
+        "verseEnd": 41,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b3",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:42",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 42,
+        "verseEnd": 42,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b4",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:43–44",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 43,
+        "verseEnd": 44,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b5",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:45",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 45,
+        "verseEnd": 45,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b6",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:46–47",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 46,
+        "verseEnd": 47,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_SHORT_EXCERPT",
+        "explanation": "The Magnificat words are biblical, but Luke 1:46 identifies Mary as speaker before the selected extract.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "joy2.b7",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:48–49",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 48,
+        "verseEnd": 49,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b8",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:50–52",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 50,
+        "verseEnd": 52,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b9",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:53–55",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 53,
+        "verseEnd": 55,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy2.b10",
+      "mysteryId": "joy2",
+      "sourceReference": "Luke 1:56",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 56,
+        "verseEnd": 56,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b1",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:4–5",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 4,
+        "verseEnd": 5,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b2",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:6",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 6,
+        "verseEnd": 6,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b3",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:7",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 7,
+        "verseEnd": 7,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT",
+        "explanation": "Luke 2:7 uses firstborn and has differing punctuation/commas in the inspected Challoner witness.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "joy3.b4",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:8–9",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 8,
+        "verseEnd": 9,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b5",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:10",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 10,
+        "verseEnd": 10,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b6",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:11–12",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 11,
+        "verseEnd": 12,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b7",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:13–14",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 13,
+        "verseEnd": 14,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b8",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:15–16",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 15,
+        "verseEnd": 16,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b9",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:17–19",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 17,
+        "verseEnd": 19,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy3.b10",
+      "mysteryId": "joy3",
+      "sourceReference": "Luke 2:20",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 20,
+        "verseEnd": 20,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b1",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:22–24",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 22,
+        "verseEnd": 24,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b2",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:25",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 25,
+        "verseEnd": 25,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b3",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:26",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 26,
+        "verseEnd": 26,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b4",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:27–28",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 27,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS",
+        "UNFINISHED_CLAUSE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b5",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:29–30",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 29,
+        "verseEnd": 30,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b6",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:31–32",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 31,
+        "verseEnd": 32,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b7",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:33–34",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 33,
+        "verseEnd": 34,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b8",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:35",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 35,
+        "verseEnd": 35,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT",
+        "explanation": "Luke 2:35 adds punctuation around 'many hearts' that the donor drops.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "joy4.b9",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:36–38",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 36,
+        "verseEnd": 38,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy4.b10",
+      "mysteryId": "joy4",
+      "sourceReference": "Luke 2:39–40",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 39,
+        "verseEnd": 40,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b1",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:41–42",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 41,
+        "verseEnd": 42,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b2",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:43–44",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 43,
+        "verseEnd": 44,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b3",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:45",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 45,
+        "verseEnd": 45,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b4",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:46",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 46,
+        "verseEnd": 46,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_SHORT_EXCERPT",
+        "explanation": "Luke 2:46 opens 'And it came to pass, that,' and uses commas absent in this abridgement.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "joy5.b5",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:47",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 47,
+        "verseEnd": 47,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b6",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:48",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 48,
+        "verseEnd": 48,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b7",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:49",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 49,
+        "verseEnd": 49,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b8",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:50",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 50,
+        "verseEnd": 50,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b9",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:51",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 51,
+        "verseEnd": 51,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "joy5.b10",
+      "mysteryId": "joy5",
+      "sourceReference": "Luke 2:52",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 2,
+        "verseStart": 52,
+        "verseEnd": 52,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b1",
+      "mysteryId": "lum1",
+      "sourceReference": "John 1:29",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 1,
+        "verseStart": 29,
+        "verseEnd": 29,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b2",
+      "mysteryId": "lum1",
+      "sourceReference": "Matthew 3:13",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 3,
+        "verseStart": 13,
+        "verseEnd": 13,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b3",
+      "mysteryId": "lum1",
+      "sourceReference": "Matthew 3:14",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 3,
+        "verseStart": 14,
+        "verseEnd": 14,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b4",
+      "mysteryId": "lum1",
+      "sourceReference": "Matthew 3:15",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 3,
+        "verseStart": 15,
+        "verseEnd": 15,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT",
+        "explanation": "Matthew 3:15 includes Jesus' speaker introduction and reads 'fulfill' in the inspected Challoner witness, rather than the donor's 'fulfil'.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "lum1.b5",
+      "mysteryId": "lum1",
+      "sourceReference": "Luke 3:21a",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 3,
+        "verseStart": 21,
+        "verseEnd": 21,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b6",
+      "mysteryId": "lum1",
+      "sourceReference": "Luke 3:21b",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 3,
+        "verseStart": 21,
+        "verseEnd": 21,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b7",
+      "mysteryId": "lum1",
+      "sourceReference": "Luke 3:22a",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 3,
+        "verseStart": 22,
+        "verseEnd": 22,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b8",
+      "mysteryId": "lum1",
+      "sourceReference": "Luke 3:22b",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 3,
+        "verseStart": 22,
+        "verseEnd": 22,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b9",
+      "mysteryId": "lum1",
+      "sourceReference": "John 1:32",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 1,
+        "verseStart": 32,
+        "verseEnd": 32,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum1.b10",
+      "mysteryId": "lum1",
+      "sourceReference": "John 1:33–34",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 1,
+        "verseStart": 33,
+        "verseEnd": 34,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b1",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:1",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 1,
+        "verseEnd": 1,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b2",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:2",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 2,
+        "verseEnd": 2,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b3",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:3",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b4",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:4",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 4,
+        "verseEnd": 4,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b5",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:5",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 5,
+        "verseEnd": 5,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "COMPLETE_VERSE_MATCHED",
+        "explanation": "John 2:5 is a complete intelligible verse in the inspected English witness.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "lum2.b6",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:6",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 6,
+        "verseEnd": 6,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b7",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:7",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 7,
+        "verseEnd": 7,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b8",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:8",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 8,
+        "verseEnd": 8,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b9",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:9–10",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 9,
+        "verseEnd": 10,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum2.b10",
+      "mysteryId": "lum2",
+      "sourceReference": "John 2:11",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 2,
+        "verseStart": 11,
+        "verseEnd": 11,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b1",
+      "mysteryId": "lum3",
+      "sourceReference": "Mark 1:14",
+      "passage": {
+        "sourceBook": "Mark",
+        "chapter": 1,
+        "verseStart": 14,
+        "verseEnd": 14,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Mark",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b2",
+      "mysteryId": "lum3",
+      "sourceReference": "Mark 1:15",
+      "passage": {
+        "sourceBook": "Mark",
+        "chapter": 1,
+        "verseStart": 15,
+        "verseEnd": 15,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Mark",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b3",
+      "mysteryId": "lum3",
+      "sourceReference": "John 3:3",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 3,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b4",
+      "mysteryId": "lum3",
+      "sourceReference": "John 3:5",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 3,
+        "verseStart": 5,
+        "verseEnd": 5,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b5",
+      "mysteryId": "lum3",
+      "sourceReference": "Luke 4:18–19",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 4,
+        "verseStart": 18,
+        "verseEnd": 19,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b6",
+      "mysteryId": "lum3",
+      "sourceReference": "Matthew 5:3",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 5,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b7",
+      "mysteryId": "lum3",
+      "sourceReference": "Matthew 6:33",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 6,
+        "verseStart": 33,
+        "verseEnd": 33,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "COMPLETE_VERSE_MATCHED",
+        "explanation": "Matthew 6:33 is a complete intelligible verse in the inspected English witness.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "lum3.b8",
+      "mysteryId": "lum3",
+      "sourceReference": "Luke 15:7",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 15,
+        "verseStart": 7,
+        "verseEnd": 7,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b9",
+      "mysteryId": "lum3",
+      "sourceReference": "Matthew 10:7–8",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 10,
+        "verseStart": 7,
+        "verseEnd": 8,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum3.b10",
+      "mysteryId": "lum3",
+      "sourceReference": "John 18:36",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 18,
+        "verseStart": 36,
+        "verseEnd": 36,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b1",
+      "mysteryId": "lum4",
+      "sourceReference": "Matthew 17:1",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 17,
+        "verseStart": 1,
+        "verseEnd": 1,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b2",
+      "mysteryId": "lum4",
+      "sourceReference": "Luke 9:28",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 9,
+        "verseStart": 28,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b3",
+      "mysteryId": "lum4",
+      "sourceReference": "Matthew 17:2",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 17,
+        "verseStart": 2,
+        "verseEnd": 2,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "COMPLETE_VERSE_MATCHED",
+        "explanation": "Matthew 17:2 is a complete intelligible verse in the inspected English witness.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "lum4.b4",
+      "mysteryId": "lum4",
+      "sourceReference": "Matthew 17:3",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 17,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b5",
+      "mysteryId": "lum4",
+      "sourceReference": "Luke 9:31",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 9,
+        "verseStart": 31,
+        "verseEnd": 31,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b6",
+      "mysteryId": "lum4",
+      "sourceReference": "Matthew 17:4",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 17,
+        "verseStart": 4,
+        "verseEnd": 4,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b7",
+      "mysteryId": "lum4",
+      "sourceReference": "Luke 9:34",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 9,
+        "verseStart": 34,
+        "verseEnd": 34,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b8",
+      "mysteryId": "lum4",
+      "sourceReference": "Luke 9:35",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 9,
+        "verseStart": 35,
+        "verseEnd": 35,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b9",
+      "mysteryId": "lum4",
+      "sourceReference": "Matthew 17:6–8",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 17,
+        "verseStart": 6,
+        "verseEnd": 8,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum4.b10",
+      "mysteryId": "lum4",
+      "sourceReference": "Matthew 17:9",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 17,
+        "verseStart": 9,
+        "verseEnd": 9,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b1",
+      "mysteryId": "lum5",
+      "sourceReference": "Luke 22:14–15",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 22,
+        "verseStart": 14,
+        "verseEnd": 15,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b2",
+      "mysteryId": "lum5",
+      "sourceReference": "Matthew 26:26",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 26,
+        "verseEnd": 26,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_SHORT_EXCERPT",
+        "explanation": "Matthew 26:26 is abbreviated to Christ's words, without the breaking of bread and narrative attribution.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "lum5.b3",
+      "mysteryId": "lum5",
+      "sourceReference": "Matthew 26:27–28",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 27,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b4",
+      "mysteryId": "lum5",
+      "sourceReference": "1 Corinthians 11:26",
+      "passage": {
+        "sourceBook": "1 Corinthians",
+        "chapter": 11,
+        "verseStart": 26,
+        "verseEnd": 26,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b5",
+      "mysteryId": "lum5",
+      "sourceReference": "John 6:35",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 6,
+        "verseStart": 35,
+        "verseEnd": 35,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b6",
+      "mysteryId": "lum5",
+      "sourceReference": "John 6:48–52",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 6,
+        "verseStart": 48,
+        "verseEnd": 52,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b7",
+      "mysteryId": "lum5",
+      "sourceReference": "John 6:54",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 6,
+        "verseStart": 54,
+        "verseEnd": 54,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b8",
+      "mysteryId": "lum5",
+      "sourceReference": "John 6:55–56",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 6,
+        "verseStart": 55,
+        "verseEnd": 56,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b9",
+      "mysteryId": "lum5",
+      "sourceReference": "John 6:57–58",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 6,
+        "verseStart": 57,
+        "verseEnd": 58,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "lum5.b10",
+      "mysteryId": "lum5",
+      "sourceReference": "John 6:59",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 6,
+        "verseStart": 59,
+        "verseEnd": 59,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b1",
+      "mysteryId": "sor1",
+      "sourceReference": "Matthew 26:36–37",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 36,
+        "verseEnd": 37,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b2",
+      "mysteryId": "sor1",
+      "sourceReference": "Matthew 26:38",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 38,
+        "verseEnd": 38,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b3",
+      "mysteryId": "sor1",
+      "sourceReference": "Matthew 26:39",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 39,
+        "verseEnd": 39,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT",
+        "explanation": "Matthew 26:39 is abbreviated and the 'Nevertheless' punctuation does not reproduce the inspected witness.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "sor1.b4",
+      "mysteryId": "sor1",
+      "sourceReference": "Luke 22:41–42",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 22,
+        "verseStart": 41,
+        "verseEnd": 42,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b5",
+      "mysteryId": "sor1",
+      "sourceReference": "Luke 22:43",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 22,
+        "verseStart": 43,
+        "verseEnd": 43,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b6",
+      "mysteryId": "sor1",
+      "sourceReference": "Luke 22:44",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 22,
+        "verseStart": 44,
+        "verseEnd": 44,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b7",
+      "mysteryId": "sor1",
+      "sourceReference": "Matthew 26:40",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 40,
+        "verseEnd": 40,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b8",
+      "mysteryId": "sor1",
+      "sourceReference": "Matthew 26:41",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 41,
+        "verseEnd": 41,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b9",
+      "mysteryId": "sor1",
+      "sourceReference": "Matthew 26:42",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 42,
+        "verseEnd": 42,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor1.b10",
+      "mysteryId": "sor1",
+      "sourceReference": "Matthew 26:45–46",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 26,
+        "verseStart": 45,
+        "verseEnd": 46,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b1",
+      "mysteryId": "sor2",
+      "sourceReference": "John 18:38",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 18,
+        "verseStart": 38,
+        "verseEnd": 38,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b2",
+      "mysteryId": "sor2",
+      "sourceReference": "Luke 23:14–15",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 14,
+        "verseEnd": 15,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b3",
+      "mysteryId": "sor2",
+      "sourceReference": "Luke 23:16",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 16,
+        "verseEnd": 16,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b4",
+      "mysteryId": "sor2",
+      "sourceReference": "Matthew 27:24",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 24,
+        "verseEnd": 24,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b5",
+      "mysteryId": "sor2",
+      "sourceReference": "Matthew 27:26",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 26,
+        "verseEnd": 26,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b6",
+      "mysteryId": "sor2",
+      "sourceReference": "John 19:1",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 1,
+        "verseEnd": 1,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT",
+        "explanation": "John 19:1 changes the commas surrounding Pilate and Jesus; not an exact-source transcription.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "sor2.b7",
+      "mysteryId": "sor2",
+      "sourceReference": "Isaias 53:3",
+      "passage": {
+        "sourceBook": "Isaias",
+        "chapter": 53,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b8",
+      "mysteryId": "sor2",
+      "sourceReference": "Isaias 53:4",
+      "passage": {
+        "sourceBook": "Isaias",
+        "chapter": 53,
+        "verseStart": 4,
+        "verseEnd": 4,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b9",
+      "mysteryId": "sor2",
+      "sourceReference": "Isaias 53:5",
+      "passage": {
+        "sourceBook": "Isaias",
+        "chapter": 53,
+        "verseStart": 5,
+        "verseEnd": 5,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor2.b10",
+      "mysteryId": "sor2",
+      "sourceReference": "Isaias 53:7",
+      "passage": {
+        "sourceBook": "Isaias",
+        "chapter": 53,
+        "verseStart": 7,
+        "verseEnd": 7,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b1",
+      "mysteryId": "sor3",
+      "sourceReference": "Matthew 27:27",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 27,
+        "verseEnd": 27,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b2",
+      "mysteryId": "sor3",
+      "sourceReference": "Matthew 27:28",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 28,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b3",
+      "mysteryId": "sor3",
+      "sourceReference": "Matthew 27:29a",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 29,
+        "verseEnd": 29,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b4",
+      "mysteryId": "sor3",
+      "sourceReference": "Matthew 27:29b",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 29,
+        "verseEnd": 29,
+        "partialVerse": true
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "VERSE_SPLIT",
+        "HALF_VERSE_REFERENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b5",
+      "mysteryId": "sor3",
+      "sourceReference": "Matthew 27:30",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 30,
+        "verseEnd": 30,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT",
+        "explanation": "Matthew 27:30 drops a comma after 'reed' in the inspected edition.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "sor3.b6",
+      "mysteryId": "sor3",
+      "sourceReference": "John 19:2",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 2,
+        "verseEnd": 2,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b7",
+      "mysteryId": "sor3",
+      "sourceReference": "John 19:3",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b8",
+      "mysteryId": "sor3",
+      "sourceReference": "John 19:4",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 4,
+        "verseEnd": 4,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b9",
+      "mysteryId": "sor3",
+      "sourceReference": "John 19:5",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 5,
+        "verseEnd": 5,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor3.b10",
+      "mysteryId": "sor3",
+      "sourceReference": "Matthew 27:31",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 27,
+        "verseStart": 31,
+        "verseEnd": 31,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b1",
+      "mysteryId": "sor4",
+      "sourceReference": "Matthew 16:24",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 16,
+        "verseStart": 24,
+        "verseEnd": 24,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b2",
+      "mysteryId": "sor4",
+      "sourceReference": "John 19:16–17",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 16,
+        "verseEnd": 17,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b3",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:26",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 26,
+        "verseEnd": 26,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b4",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:27",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 27,
+        "verseEnd": 27,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b5",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:28",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 28,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_SHORT_EXCERPT",
+        "explanation": "Luke 23:28 omits Jesus' introductory speech attribution.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "sor4.b6",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:29",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 29,
+        "verseEnd": 29,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b7",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:30",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 30,
+        "verseEnd": 30,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b8",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:31",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 31,
+        "verseEnd": 31,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b9",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:32",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 32,
+        "verseEnd": 32,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor4.b10",
+      "mysteryId": "sor4",
+      "sourceReference": "Luke 23:33",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 33,
+        "verseEnd": 33,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b1",
+      "mysteryId": "sor5",
+      "sourceReference": "John 19:17–18",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 17,
+        "verseEnd": 18,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b2",
+      "mysteryId": "sor5",
+      "sourceReference": "Luke 23:34",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 34,
+        "verseEnd": 34,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b3",
+      "mysteryId": "sor5",
+      "sourceReference": "Luke 23:42–43",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 42,
+        "verseEnd": 43,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b4",
+      "mysteryId": "sor5",
+      "sourceReference": "John 19:25",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 25,
+        "verseEnd": 25,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b5",
+      "mysteryId": "sor5",
+      "sourceReference": "John 19:26–27",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 26,
+        "verseEnd": 27,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b6",
+      "mysteryId": "sor5",
+      "sourceReference": "John 19:28",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 28,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b7",
+      "mysteryId": "sor5",
+      "sourceReference": "John 19:29",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 29,
+        "verseEnd": 29,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b8",
+      "mysteryId": "sor5",
+      "sourceReference": "John 19:30",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 30,
+        "verseEnd": 30,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_SHORT_EXCERPT",
+        "explanation": "John 19:30 omits the sentence identifying Jesus as speaker after taking the vinegar.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "sor5.b9",
+      "mysteryId": "sor5",
+      "sourceReference": "Luke 23:46",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 23,
+        "verseStart": 46,
+        "verseEnd": 46,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "sor5.b10",
+      "mysteryId": "sor5",
+      "sourceReference": "John 19:34–35",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 19,
+        "verseStart": 34,
+        "verseEnd": 35,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b1",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:1",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 1,
+        "verseEnd": 1,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_SHORT_EXCERPT",
+        "explanation": "John 20:1 starts with 'And on the first day of the week'; the donor begins after this temporal context.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "glo1.b2",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:3–8",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 3,
+        "verseEnd": 8,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b3",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:11–13",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 11,
+        "verseEnd": 13,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b4",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:14–16",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 14,
+        "verseEnd": 16,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b5",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:17–18",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 17,
+        "verseEnd": 18,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b6",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:19–20",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 19,
+        "verseEnd": 20,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b7",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:21–23",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 21,
+        "verseEnd": 23,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b8",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:24–25",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 24,
+        "verseEnd": 25,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b9",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:26–28",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 26,
+        "verseEnd": 28,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo1.b10",
+      "mysteryId": "glo1",
+      "sourceReference": "John 20:29",
+      "passage": {
+        "sourceBook": "John",
+        "chapter": 20,
+        "verseStart": 29,
+        "verseEnd": 29,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/John",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Jean"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b1",
+      "mysteryId": "glo2",
+      "sourceReference": "Acts 1:3",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 1,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b2",
+      "mysteryId": "glo2",
+      "sourceReference": "Acts 1:4–5",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 1,
+        "verseStart": 4,
+        "verseEnd": 5,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b3",
+      "mysteryId": "glo2",
+      "sourceReference": "Acts 1:8",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 1,
+        "verseStart": 8,
+        "verseEnd": 8,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b4",
+      "mysteryId": "glo2",
+      "sourceReference": "Luke 24:50",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 24,
+        "verseStart": 50,
+        "verseEnd": 50,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b5",
+      "mysteryId": "glo2",
+      "sourceReference": "Acts 1:9",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 1,
+        "verseStart": 9,
+        "verseEnd": 9,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "COMPLETE_VERSE_MATCHED",
+        "explanation": "Acts 1:9 is a complete intelligible verse in the inspected English witness.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "glo2.b6",
+      "mysteryId": "glo2",
+      "sourceReference": "Acts 1:10",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 1,
+        "verseStart": 10,
+        "verseEnd": 10,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b7",
+      "mysteryId": "glo2",
+      "sourceReference": "Acts 1:11",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 1,
+        "verseStart": 11,
+        "verseEnd": 11,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b8",
+      "mysteryId": "glo2",
+      "sourceReference": "Matthew 28:18",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 28,
+        "verseStart": 18,
+        "verseEnd": 18,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b9",
+      "mysteryId": "glo2",
+      "sourceReference": "Matthew 28:19–20",
+      "passage": {
+        "sourceBook": "Matthew",
+        "chapter": 28,
+        "verseStart": 19,
+        "verseEnd": 20,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Matthew",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Matthieu"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo2.b10",
+      "mysteryId": "glo2",
+      "sourceReference": "Mark 16:19",
+      "passage": {
+        "sourceBook": "Mark",
+        "chapter": 16,
+        "verseStart": 19,
+        "verseEnd": 19,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Mark",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Marc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b1",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 1:14",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 1,
+        "verseStart": 14,
+        "verseEnd": 14,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b2",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:1",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 1,
+        "verseEnd": 1,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "OPEN_SENTENCE"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b3",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:2",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 2,
+        "verseEnd": 2,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b4",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:3",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 3,
+        "verseEnd": 3,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b5",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:4",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 4,
+        "verseEnd": 4,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "PUNCTUATION_OR_ORTHOGRAPHY_DRIFT",
+        "explanation": "Acts 2:4 uses commas in the inspected verse; the donor places a colon after 'Holy Ghost'.",
+        "frenchTextCollation": "SOURCE_VERSE_LOCATED_REPRODUCTION_UNREVIEWED",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "glo3.b6",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:6",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 6,
+        "verseEnd": 6,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b7",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:11",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 11,
+        "verseEnd": 11,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b8",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:14",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 14,
+        "verseEnd": 14,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b9",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:37–38",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 37,
+        "verseEnd": 38,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo3.b10",
+      "mysteryId": "glo3",
+      "sourceReference": "Acts 2:41",
+      "passage": {
+        "sourceBook": "Acts",
+        "chapter": 2,
+        "verseStart": 41,
+        "verseEnd": 41,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Acts",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Actes"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [],
+      "editorialHold": "PENDING_EDITION_COLLATION",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b1",
+      "mysteryId": "glo4",
+      "sourceReference": "Psalm 131:8",
+      "passage": {
+        "sourceBook": "Psalm",
+        "chapter": 131,
+        "verseStart": 8,
+        "verseEnd": 8,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": {
+        "status": "NUMERATION_AND_TYPOLOGY_REVIEW_HOLD",
+        "englishWordingFinding": "HOLD_TYPOLOGY_AND_VULGATE_PSALM_NUMBER",
+        "explanation": "Psalm 131:8 is cited in the Vulgate-based devotional tradition; verify verse mapping to each target Bible. Ark typology does not directly narrate the Assumption.",
+        "frenchTextCollation": "NOT_COLLATED_AGAINST_FRENCH_QUOTATION",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "glo4.b2",
+      "mysteryId": "glo4",
+      "sourceReference": "Canticles 2:10",
+      "passage": {
+        "sourceBook": "Canticles",
+        "chapter": 2,
+        "verseStart": 10,
+        "verseEnd": 10,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b3",
+      "mysteryId": "glo4",
+      "sourceReference": "Canticles 2:11",
+      "passage": {
+        "sourceBook": "Canticles",
+        "chapter": 2,
+        "verseStart": 11,
+        "verseEnd": 11,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b4",
+      "mysteryId": "glo4",
+      "sourceReference": "Canticles 2:12–13",
+      "passage": {
+        "sourceBook": "Canticles",
+        "chapter": 2,
+        "verseStart": 12,
+        "verseEnd": 13,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "OPEN_SENTENCE",
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b5",
+      "mysteryId": "glo4",
+      "sourceReference": "Canticles 2:14",
+      "passage": {
+        "sourceBook": "Canticles",
+        "chapter": 2,
+        "verseStart": 14,
+        "verseEnd": 14,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b6",
+      "mysteryId": "glo4",
+      "sourceReference": "Psalm 44:10",
+      "passage": {
+        "sourceBook": "Psalm",
+        "chapter": 44,
+        "verseStart": 10,
+        "verseEnd": 10,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b7",
+      "mysteryId": "glo4",
+      "sourceReference": "Psalm 44:14–16",
+      "passage": {
+        "sourceBook": "Psalm",
+        "chapter": 44,
+        "verseStart": 14,
+        "verseEnd": 16,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b8",
+      "mysteryId": "glo4",
+      "sourceReference": "Apocalypse 11:19",
+      "passage": {
+        "sourceBook": "Apocalypse",
+        "chapter": 11,
+        "verseStart": 19,
+        "verseEnd": 19,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Apocalypse",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b9",
+      "mysteryId": "glo4",
+      "sourceReference": "Apocalypse 12:1",
+      "passage": {
+        "sourceBook": "Apocalypse",
+        "chapter": 12,
+        "verseStart": 1,
+        "verseEnd": 1,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Apocalypse",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo4.b10",
+      "mysteryId": "glo4",
+      "sourceReference": "Judith 13:23",
+      "passage": {
+        "sourceBook": "Judith",
+        "chapter": 13,
+        "verseStart": 23,
+        "verseEnd": 23,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b1",
+      "mysteryId": "glo5",
+      "sourceReference": "Apocalypse 12:1",
+      "passage": {
+        "sourceBook": "Apocalypse",
+        "chapter": 12,
+        "verseStart": 1,
+        "verseEnd": 1,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Apocalypse",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Apocalypse"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": {
+        "status": "ENGLISH_TEXT_COMPARED_NOT_APPROVED_FOR_PUBLICATION",
+        "englishWordingFinding": "CONTIGUOUS_TYPOLOGICAL_EXCERPT",
+        "explanation": "Revelation/Apocalypse 12:1 is an image of the Woman, not a narrative of Mary's historical coronation; the donor omits the opening 'And a great sign appeared in heaven'.",
+        "frenchTextCollation": "SOURCE_VERSE_LOCATED_REPRODUCTION_UNREVIEWED",
+        "rights": "UNRESOLVED",
+        "independentApproval": "PENDING"
+      }
+    },
+    {
+      "id": "glo5.b2",
+      "mysteryId": "glo5",
+      "sourceReference": "Psalm 44:10",
+      "passage": {
+        "sourceBook": "Psalm",
+        "chapter": 44,
+        "verseStart": 10,
+        "verseEnd": 10,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b3",
+      "mysteryId": "glo5",
+      "sourceReference": "Psalm 44:11–12",
+      "passage": {
+        "sourceBook": "Psalm",
+        "chapter": 44,
+        "verseStart": 11,
+        "verseEnd": 12,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b4",
+      "mysteryId": "glo5",
+      "sourceReference": "Psalm 44:14–16",
+      "passage": {
+        "sourceBook": "Psalm",
+        "chapter": 44,
+        "verseStart": 14,
+        "verseEnd": 16,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b5",
+      "mysteryId": "glo5",
+      "sourceReference": "Canticles 6:8",
+      "passage": {
+        "sourceBook": "Canticles",
+        "chapter": 6,
+        "verseStart": 8,
+        "verseEnd": 8,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "EDITORIAL_ELLIPSIS",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b6",
+      "mysteryId": "glo5",
+      "sourceReference": "Canticles 6:9",
+      "passage": {
+        "sourceBook": "Canticles",
+        "chapter": 6,
+        "verseStart": 9,
+        "verseEnd": 9,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b7",
+      "mysteryId": "glo5",
+      "sourceReference": "Judith 13:23",
+      "passage": {
+        "sourceBook": "Judith",
+        "chapter": 13,
+        "verseStart": 23,
+        "verseEnd": 23,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b8",
+      "mysteryId": "glo5",
+      "sourceReference": "Judith 13:25",
+      "passage": {
+        "sourceBook": "Judith",
+        "chapter": 13,
+        "verseStart": 25,
+        "verseEnd": 25,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b9",
+      "mysteryId": "glo5",
+      "sourceReference": "Judith 15:10",
+      "passage": {
+        "sourceBook": "Judith",
+        "chapter": 15,
+        "verseStart": 10,
+        "verseEnd": 10,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": null,
+        "fr": null
+      },
+      "sourceLocatorLevel": "BOOK_LOCATOR_NOT_YET_VERIFIED",
+      "automatedFlags": [
+        "OPEN_SENTENCE",
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION",
+        "CATHOLIC_BOOK_OR_VERSIFICATION_CROSSWALK_REQUIRED"
+      ],
+      "editorialHold": "UNSAFE_FRAGMENT_HOLD",
+      "primaryWitnessReview": null
+    },
+    {
+      "id": "glo5.b10",
+      "mysteryId": "glo5",
+      "sourceReference": "Luke 1:48",
+      "passage": {
+        "sourceBook": "Luke",
+        "chapter": 1,
+        "verseStart": 48,
+        "verseEnd": 48,
+        "partialVerse": false
+      },
+      "editionLocators": {
+        "en": "https://en.wikisource.org/wiki/Bible_(Douay-Rheims,_Challoner)/Luke",
+        "fr": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Luc"
+      },
+      "sourceLocatorLevel": "WITNESS_BOOK_LOCATED",
+      "automatedFlags": [
+        "TRADITIONAL_TYPOLOGICAL_APPLICATION"
+      ],
+      "editorialHold": "TYPOLOGICAL_REVIEW_HOLD",
+      "primaryWitnessReview": null
+    }
+  ]
+}
