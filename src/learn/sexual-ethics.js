@@ -1,4 +1,4 @@
-import { formationReaderCss } from "./formation-ui.js";
+import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import {
   CSE_QUESTIONS,
   CSE_QUESTION_MAP,
@@ -283,6 +283,7 @@ export function createSexualEthicsRuntime(win=globalThis){
     else if(state.view==="section"&&CSE_SECTION_MAP[state.sectionId])node.innerHTML=sectionHtml(win,CSE_SECTION_MAP[state.sectionId]);
     else node.innerHTML=sectionsHtml(win,state);
     node.hidden=false;node.removeAttribute("aria-hidden");
+    installFormationNavigation(win,node);
     if(preserveSearchFocus){
       const input=node.querySelector?.("[data-ao-cse-search]");if(input){const p=input.value.length;queueMicrotask(()=>{try{input.focus({preventScroll:true});input.setSelectionRange(p,p);}catch{}});}
     }
