@@ -158,7 +158,7 @@ const shrineVm=buildExploreViewModel({
 });
 const shrineHtml=renderExploreToString(shrineVm);
 assert.match(shrineHtml,/AD ORIENTEM · EXPLORE/);
-assert.match(shrineHtml,/>Shrines</);
+assert.match(shrineHtml,/>Explore</);
 assert.match(shrineHtml,/data-find-filter="lens"/);
 assert.match(shrineHtml,/Shrines/);
 assert.match(shrineHtml,/Traditions/);
@@ -680,6 +680,9 @@ assert.match(heritageHtml,/data-heritage-custom="DEV-006"/,"universal customs mu
 assert.doesNotMatch(heritageHtml,/class="aoFindList"/,"map-first Explore must not default to a result list");
 assert.match(heritageHtml,/data-heritage-nearby/,"map-first discovery must support user-requested nearby recentering");
 assert.match(heritageHtml,/aoHeritageMapHint/,"initial screen should explain pin interaction without a long list");
+assert.ok(heritageHtml.indexOf('class="aoHeritageTools"')<heritageHtml.indexOf('class="aoHeritageCategories"'),"search must appear before the category filters");
+assert.match(heritageHtml,/aoHeritageMore/,"technical record lists should be behind Browse");
+assert.match(heritageHtml,/data-find-filter-value="tlm"/,"Mass map shortcut remains reachable in Browse");
 assert.doesNotMatch(heritageHtml,/aoHeritageSearchResults/,"unfiltered launch must not display search results");
 const searchableMap=projectHeritagePlaces(projection,{query:"Lourdes"});
 const searchHtml=renderExploreToString(buildExploreViewModel({
@@ -698,7 +701,10 @@ const heritagePreview=renderExploreToString(buildExploreViewModel({
   selectedPlaceId:lourdesCombined.place_id,placeProfiles,
 }));
 assert.match(heritagePreview,/data-explore-expand-place/,"map click must open compact Place preview");
-assert.match(heritagePreview,/Découvrir ce lieu/);
+assert.match(heritagePreview,/Explorer ce lieu/);
+assert.match(heritagePreview,/aoHeritageCardHeading/,"place preview should show its type and location compactly");
+assert.match(heritagePreview,/aoHeritageCardTitle/,"place name must be the main visual identity");
+assert.doesNotMatch(heritagePreview,/aoHeritageCaution/,"source qualifications belong in the expanded record, not the small card");
 assert.doesNotMatch(heritagePreview,/class="aoExplorePlaceRows"/,"Place preview must not open a dense record listing immediately");
 assert.match(heritagePreview,/aoHeritageSynopsis/,"sourced place explanation must be the salient preview");
 assert.doesNotMatch(heritagePreview,/class="aoFindFacts"/,"place previews should not be numerical dashboards");
@@ -733,3 +739,5 @@ await import("./explore-relic-final60-open20-source.mjs");
 await import("./explore-sot07-source-recovery.mjs");
 await import("./explore-handoff-recovery.mjs");
 await import("./explore-first-load-recovery.mjs");
+
+await import("./explore-world-boundaries.mjs");
