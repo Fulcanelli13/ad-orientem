@@ -1,0 +1,216 @@
+{
+  "schema": "AO_MR1962_HOLY_WEEK_B05_TEXT_COMPLETENESS_REGISTER_V1",
+  "version": 1,
+  "reviewDate": "2026-10-10",
+  "auditClass": "production-content-inventory + independently edited 1962 witness incipits; NOT full word-for-word printed-typica verification",
+  "certification": "NOT_CERTIFIED",
+  "dependsOn": "data/mass/independent-1962-holy-week-b04.v1.json",
+  "controls": {
+    "calendarRite": "1962 restored Holy Week, never pre-1955 donor",
+    "productionTextsChanged": false,
+    "imageVerifiedHolyWeekTypicaPages": 0,
+    "lineByLinePrintedCollationsCertified": 0,
+    "statusPolicy": "A passing B05 CI documents open textual deficits; it must never be presented as complete Latin/English/French certification. A partial text, heading, rubric or ellipsis is not the full prescribed prayer.",
+    "safety": "Retain original graph/Canon/48-card product; prohibit speculative text insertions. Source variants are separate authorities and not interpolated."
+  },
+  "sourceWitnesses": [
+    {
+      "id": "VATICAN_1962_SCAN",
+      "kind": "printed-typica-facsimile",
+      "url": "https://propria.org/additional/",
+      "status": "whole-book PDF too large for available web reader; NO Holy Week page visual sign-off"
+    },
+    {
+      "id": "PRINTED_SAMPLE_VISUAL",
+      "kind": "sample original typica",
+      "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+      "status": "sample covers July, not Holy Week; page 1 visually inspected only as scan provenance"
+    },
+    {
+      "id": "PALM_EDITORIAL",
+      "kind": "independent-1962-daily-edition",
+      "url": "https://www.missalemeum.com/en/calendar/2026-03-29"
+    },
+    {
+      "id": "THURSDAY_EDITORIAL",
+      "kind": "independent-1962-daily-edition",
+      "url": "https://www.missalemeum.com/en/calendar/2026-04-02"
+    },
+    {
+      "id": "FRIDAY_EDITORIAL",
+      "kind": "independent-1962-daily-edition",
+      "url": "https://www.missalemeum.com/en/calendar/2026-04-03",
+      "caution": "This web edition prints a later 2008 Jewish-prayer form; its Good Friday page must NEVER stand as the original 1962 authority for that prayer."
+    },
+    {
+      "id": "VIGIL_EDITORIAL",
+      "kind": "independent-1962-daily-edition",
+      "url": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light"
+    }
+  ],
+  "auditItems": [
+    {
+      "id": "PALM_BLESSING",
+      "rite": "PALM_1962",
+      "appPath": "data/presentation/reader-palm.v1.json",
+      "surface": "texts",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "Distinct blessing prayers, Matthew 21 Gospel, procession refrains and final prayer are stored; B04 verifies five incipits but not their full printed wording.",
+      "source": "PALM_EDITORIAL"
+    },
+    {
+      "id": "PALM_MATTHEW_PASSION",
+      "rite": "PALM_1962",
+      "appPath": "Tempora/Quad6-0r (resolved Proper) + live reader composition",
+      "surface": "Passion Matthew 26:36–75; 27:1–60",
+      "status": "RUNTIME_TEXT_COLLATION_REQUIRED",
+      "evidence": "No full Matthew Passion exists in the Palm blessing payload. Verify assembled 1962 Proper actual Latin, verse coverage, chronista/Christus/synagoga assignment and Death kneel/pause.",
+      "source": "PALM_EDITORIAL"
+    },
+    {
+      "id": "THURSDAY_CANON",
+      "rite": "HOLY_THURSDAY_1962",
+      "appPath": "data/presentation/reader-text-sung.v1.json + resolved Holy Thursday Proper/Canon overlay",
+      "surface": "Communicantes / Hanc igitur / Qui pridie",
+      "status": "RUNTIME_VARIANT_COLLATION_REQUIRED",
+      "evidence": "The standard sung Canon corpus does not itself contain Holy Thursday special openings. Verify that the 1962 three proper insertions actually replace the default text in every Mass mode; do not infer this from proper source rank.",
+      "source": "THURSDAY_EDITORIAL",
+      "incipits": [
+        "Communicantes et diem sacratissimum celebrantes",
+        "Hanc igitur oblationem servitutis nostrae",
+        "Qui pridie quam pro nostra omniumque salute pateretur hoc est hodie"
+      ]
+    },
+    {
+      "id": "THURSDAY_MANDATUM",
+      "rite": "HOLY_THURSDAY_1962",
+      "appPath": "data/presentation/reader-holy-thursday-post.v1.json + src/mass/reader-holy-thursday-post.js",
+      "surface": "optional washing of feet",
+      "status": "MISSING_READER_TEXT",
+      "evidence": "Existing post-Mass payload contains Pange lingua, Tantum ergo and Psalm 21, but no Mandatum antiphon/prayer body or optional reader segment. Optional does not mean it can be represented as a mere note when selected.",
+      "source": "THURSDAY_EDITORIAL",
+      "incipits": [
+        "Mandatum novum do vobis",
+        "Postquam surrexit Dominus a cena"
+      ]
+    },
+    {
+      "id": "THURSDAY_TRANSLATION",
+      "rite": "HOLY_THURSDAY_1962",
+      "appPath": "data/presentation/reader-holy-thursday-post.v1.json",
+      "surface": "Pange lingua / Tantum ergo / stripping Psalm 21",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "All six hymn stanzas are split 4+2; stripping Psalm is stored. Critical orthographic, textual and translation collation remains.",
+      "source": "THURSDAY_EDITORIAL"
+    },
+    {
+      "id": "FRIDAY_PASSION",
+      "rite": "GOOD_FRIDAY_1962",
+      "appPath": "data/presentation/reader-good-friday.v1.json",
+      "surface": "John 18:1–19:42",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "24 pre-death and four post-death Latin blocks exist. Compare every verse and performer assignment against printed 1962 Passion; boundaries and pacing alone do not prove text equivalence.",
+      "source": "FRIDAY_EDITORIAL"
+    },
+    {
+      "id": "FRIDAY_PASSION_SPEAKERS",
+      "rite": "GOOD_FRIDAY_1962",
+      "appPath": "src/mass/reader-good-friday.js",
+      "surface": "Passion Latin spoken/sung roles",
+      "status": "ROLE_ANNOTATIONS_MISSING",
+      "evidence": "The Good Friday reader turns undifferentiated Latin Passion paragraphs into TEXT rows; performer/voice ownership (Christus, Chronista, Synagoga) is not represented in the payload.",
+      "source": "FRIDAY_EDITORIAL"
+    },
+    {
+      "id": "FRIDAY_NINE_PRAYERS",
+      "rite": "GOOD_FRIDAY_1962",
+      "appPath": "data/presentation/reader-good-friday.v1.json",
+      "surface": "nine Solemn Prayers",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "Nine intention/prayer pairs and Flectamus/Levate states exist; each Latin prayer, response and 1962 wording must still receive source-line review.",
+      "source": "FRIDAY_EDITORIAL"
+    },
+    {
+      "id": "FRIDAY_JEWISH_PRAYER",
+      "rite": "GOOD_FRIDAY_1962",
+      "appPath": "data/presentation/reader-good-friday.v1.json",
+      "surface": "Pro conversione Iudaeorum",
+      "status": "HISTORICAL_VARIANT_UNCOLLATED",
+      "evidence": "PRINTED_1962 is the default, HOLY_SEE_2008 an explicit alternative. The consulted secondary Good Friday page gives the newer wording: never use that web witness to certify the printed 1962 variant.",
+      "source": "FRIDAY_EDITORIAL"
+    },
+    {
+      "id": "FRIDAY_CONFITEOR",
+      "rite": "GOOD_FRIDAY_1962",
+      "appPath": "src/mass/reader-good-friday.js",
+      "surface": "deacon's confession before faithful Communion",
+      "status": "MISSING_READER_TEXT",
+      "evidence": "The Good Friday Communion card renders the rubric 'Et continuo diaconus facit confessionem.' but not the Latin Confiteor prayer; the following Misereatur and Indulgentiam have text.",
+      "source": "FRIDAY_EDITORIAL"
+    },
+    {
+      "id": "FRIDAY_CROSS_CHANTS",
+      "rite": "GOOD_FRIDAY_1962",
+      "appPath": "data/presentation/reader-good-friday.v1.json",
+      "surface": "Improperia, Crucem tuam, Crux fidelis",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "Chant arrays exist, but repeated alternation of Greek/Latin Trisagion and full stanza sequence is not yet independently checked.",
+      "source": "FRIDAY_EDITORIAL"
+    },
+    {
+      "id": "VIGIL_FOUR_PROPHECIES",
+      "rite": "EASTER_VIGIL_1962",
+      "appPath": "data/presentation/reader-easter-vigil-prophecies.v1.json",
+      "surface": "Genesis / Exodus / Isaiah / Deuteronomy",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "Four long Latin reading bodies, appointed canticles and collects are source-bound. Critical text line-by-line visual review and English/French parity still pending.",
+      "source": "VIGIL_EDITORIAL"
+    },
+    {
+      "id": "VIGIL_EXSULTET",
+      "rite": "EASTER_VIGIL_1962",
+      "appPath": "data/presentation/reader-easter-vigil.v1.json",
+      "surface": "Exsultet",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "Substantial Latin/EN/FR text exists. Check full 1962 preface and celebrant/deacon rubric detail against edition.",
+      "source": "VIGIL_EDITORIAL"
+    },
+    {
+      "id": "VIGIL_LITANIES",
+      "rite": "EASTER_VIGIL_1962",
+      "appPath": "data/presentation/reader-easter-vigil.v1.json + src/mass/reader-easter-vigil.js",
+      "surface": "Litany of the Saints, two halves",
+      "status": "ABBREVIATED_CONFIRMED",
+      "evidence": "Both litanyI and litanyII Latin fields contain editorial descriptions, not the prescribed invocation text. The native reader renders these description fields as the litany cards.",
+      "source": "VIGIL_EDITORIAL"
+    },
+    {
+      "id": "VIGIL_FONT",
+      "rite": "EASTER_VIGIL_1962",
+      "appPath": "data/presentation/reader-easter-vigil.v1.json",
+      "surface": "font blessing and baptism conditional branch",
+      "status": "ABBREVIATED_CONFIRMED",
+      "evidence": "font and fontOverview describe the ritual but do not provide the complete prescribed font blessing and baptismal ceremony texts.",
+      "source": "VIGIL_EDITORIAL"
+    },
+    {
+      "id": "VIGIL_BAPTISMAL_VOWS",
+      "rite": "EASTER_VIGIL_1962",
+      "appPath": "data/presentation/reader-easter-vigil.v1.json",
+      "surface": "renewal of baptismal promises",
+      "status": "ABBREVIATED_CONFIRMED",
+      "evidence": "renunciations and professions each contain a single generic question/response; the bridge Pater noster is explicitly ellipsized. Complete questions, answers and prayers are absent from those reader surfaces.",
+      "source": "VIGIL_EDITORIAL"
+    },
+    {
+      "id": "VIGIL_LAUDS",
+      "rite": "EASTER_VIGIL_1962",
+      "appPath": "data/presentation/reader-easter-vigil.v1.json",
+      "surface": "Lauds",
+      "status": "PRESENT_UNCOLLATED",
+      "evidence": "Latin/EN/FR Lauds data exists and is inserted after ablutions; exact full text and chant are not yet visually printed-certified.",
+      "source": "VIGIL_EDITORIAL"
+    }
+  ],
+  "nextAcceptance": "Obtain an actual accessible folio-by-folio 1962 Holy Week scanned-typica witness; map printed pages and exact Latin line ranges to each app text surface; separately certify translations and speaker roles. Keep #894 open until then."
+}
