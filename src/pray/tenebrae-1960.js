@@ -118,7 +118,7 @@ function resolveOfficeCollect(local,thursday,dayIndex){
 }
 function collectPrayer(local,thursday){
   let text=local.get("Oratio Matutinum");
-  if(String(text??"").trim().startsWith("@Tempora/Quad6-4")){
+  if(!text||String(text).trim().startsWith("@Tempora/Quad6-4")){
     text=thursday.get("Oratio Matutinum");
   }
   const chosen=String(text??"").split(/\r?\n/).find(x=>/^v\.\s*/.test(x));
