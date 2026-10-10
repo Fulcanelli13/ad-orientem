@@ -211,7 +211,7 @@ assert.ok(loughDerg[0].sections.some(section=>section.label==="Calendar relation
 
 const pereLaval=filterExploreItems(projection.byLens.pilgrimages,{query:"Père Laval"});
 assert.equal(pereLaval.length,1);
-assert.equal(pereLaval[0].map_publishable,false);
+assert.equal(pereLaval[0].map_publishable,true);
 
 const altoetting=filterExploreItems(projection.byLens.shrines,{query:"Altötting"});
 assert.equal(altoetting.length,1);
@@ -233,7 +233,7 @@ assert.ok(mariazellCandle.some(item=>item.source_id==="att:DEV-010:MARIAZELL"));
 
 const mariaTaferl=filterExploreItems(projection.byLens.shrines,{query:"Maria Taferl"});
 assert.equal(mariaTaferl.length,1);
-assert.equal(mariaTaferl[0].map_publishable,false);
+assert.equal(mariaTaferl[0].map_publishable,true);
 
 const engelweihe=filterExploreItems(projection.byLens.pilgrimages,{query:"Engelweihe"});
 assert.equal(engelweihe.length,1);
@@ -273,7 +273,7 @@ assert.ok(ndcCandle.some(item=>item.source_id==="att:DEV-010:NOTRE-DAME-DU-CAP")
 
 const martyrs=filterExploreItems(projection.byLens.pilgrimages,{query:"Canadian Martyrs traditional"});
 assert.equal(martyrs.length,1);
-assert.equal(martyrs[0].map_publishable,false);
+assert.equal(martyrs[0].map_publishable,true);
 assert.ok(martyrs[0].sections.some(section=>/Annual Canadian Martyrs traditional pilgrimage/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
 const loreto=filterExploreItems(projection.byLens.pilgrimages,{query:"Loreto"});
@@ -417,7 +417,7 @@ assert.equal(bermontShrine[0].map_state,"MAPPED");
 
 const arcachonShrine=filterExploreItems(projection.byLens.shrines,{query:"Notre-Dame des Marins"});
 assert.equal(arcachonShrine.length,1);
-assert.equal(arcachonShrine[0].map_publishable,false);
+assert.equal(arcachonShrine[0].map_publishable,true);
 
 const pontmainShrine=filterExploreItems(projection.byLens.shrines,{query:"Notre-Dame de Pontmain"});
 assert.equal(pontmainShrine.length,1);
