@@ -529,6 +529,9 @@ export function createFindOwner(win=globalThis){
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-place]")){
       event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint({selectionOnly:true});return;
     }
+    if(target?.closest?.("[data-explore-sheet-toggle]")){
+      event.preventDefault?.();state.expandPlace=true;void paint({selectionOnly:true});return;
+    }
     if(target?.closest?.("[data-explore-expand-place]")){
       event.preventDefault?.();state.expandPlace=true;void paint({selectionOnly:true});return;
     }
