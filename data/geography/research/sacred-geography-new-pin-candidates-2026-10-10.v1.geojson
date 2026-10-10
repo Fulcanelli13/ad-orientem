@@ -1,0 +1,169 @@
+{
+  "type": "FeatureCollection",
+  "name": "Ad Orientem Sacred Geography — candidate pins, research only",
+  "schema": "AO_CANDIDATE_GEO_PINS_V1",
+  "as_of": "2026-10-10",
+  "notice": "NOT a production map. Original 182 pinned Places remain source of truth. New candidate coordinates from named OSM objects, with explicit complex/subsite precision. Attribution and ODbL obligations must be maintained.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "SG-GEO-NEW-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.12205,
+          49.93431
+        ]
+      },
+      "properties": {
+        "source_id": "NA_CANADA_VELYCHKOVSKY",
+        "candidate_id": "SG-INV-0422",
+        "name": "Bishop Velychkovsky Martyr’s Shrine",
+        "country": "CA",
+        "osm": "https://www.openstreetmap.org/node/3183027127",
+        "coord_source": "https://mapcarta.com/N3183027127",
+        "religious_source": "https://www.cccb.ca/the-catholic-church-in-canada/canadas-national-shrines/",
+        "precision": "OSM_NAMED_SHRINE_NODE",
+        "geometry_type": "POINT",
+        "category": "SAINT_RELIC_SHRINE",
+        "review_status": "PIN_CANDIDATE_SITE_FEATURE",
+        "note": "OSM names shrine as museum; avoid confusing it with adjacent St Joseph's Church.",
+        "nearest_production_places": [
+          {
+            "id": "place:US:guadalupe-shrine-la-crosse",
+            "name": "Shrine of Our Lady of Guadalupe",
+            "km": 822
+          },
+          {
+            "id": "place:US:champion-shrine",
+            "name": "National Shrine of Our Lady of Champion",
+            "km": 921.1
+          }
+        ],
+        "licence": "© OpenStreetMap contributors — ODbL 1.0 (coordinate attribution)",
+        "publishable": false,
+        "canonical_place_id": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-NEW-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.40766,
+          -15.3713
+        ]
+      },
+      "properties": {
+        "source_id": "AF-ZM-LUSAKA-OUR-LADY",
+        "candidate_id": "SG-INV-0724",
+        "name": "Archdiocese of Lusaka Marian Shrine",
+        "country": "ZM",
+        "osm": "https://www.openstreetmap.org/node/4468672099",
+        "coord_source": "https://mapcarta.com/N4468672099",
+        "religious_source": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/",
+        "precision": "OSM_NAMED_SHRINE_NODE",
+        "geometry_type": "POINT",
+        "category": "MARIAN_SHRINE",
+        "review_status": "PIN_CANDIDATE_SITE_FEATURE",
+        "note": "Named shrine node, not a locality centroid.",
+        "nearest_production_places": [
+          {
+            "id": "place:RW:sanctuaire-kibeho",
+            "name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
+            "km": 1420.2
+          },
+          {
+            "id": "place:UG:munyonyo-martyrs",
+            "name": "Munyonyo Martyrs Shrine",
+            "km": 1796.1
+          }
+        ],
+        "licence": "© OpenStreetMap contributors — ODbL 1.0 (coordinate attribution)",
+        "publishable": false,
+        "canonical_place_id": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-NEW-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.25595,
+          45.8188
+        ]
+      },
+      "properties": {
+        "source_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-di-varallo",
+        "candidate_id": "SG-NEW-VARALLO",
+        "name": "Sacro Monte di Varallo",
+        "country": "IT",
+        "osm": "https://www.openstreetmap.org/way/494243748",
+        "coord_source": "https://mapcarta.com/W494243748",
+        "religious_source": "https://whc.unesco.org/en/list/1068/maps/",
+        "precision": "OSM_SITE_AREA_REPRESENTATIVE",
+        "geometry_type": "COMPLEX_REPRESENTATIVE",
+        "category": "SACRED_LANDSCAPE",
+        "review_status": "PIN_CANDIDATE_COMPLEX_NEEDS_ENTRANCE_REVIEW",
+        "note": "Representative point for wider sacred landscape. Not a pin for individual chapel.",
+        "nearest_production_places": [
+          {
+            "id": "place:IT:duomo-sant-eusebio-vercelli",
+            "name": "Cattedrale di Sant'Eusebio, Vercelli",
+            "km": 55.9
+          },
+          {
+            "id": "place:IT:sant-ambrogio-milano",
+            "name": "Basilica Sant'Ambrogio, Milan",
+            "km": 81.8
+          }
+        ],
+        "licence": "© OpenStreetMap contributors — ODbL 1.0 (coordinate attribution)",
+        "publishable": false,
+        "canonical_place_id": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-NEW-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.84432,
+          41.58813
+        ]
+      },
+      "properties": {
+        "source_id": "THEME26:ES:SACRED_CAVE:santa-cova-de-montserrat",
+        "candidate_id": "SG-NEW-MONTSERRAT-COVA",
+        "name": "Santa Cova de Montserrat",
+        "country": "ES",
+        "osm": "https://www.openstreetmap.org/way/182464453",
+        "coord_source": "https://mapcarta.com/W182464453",
+        "religious_source": "https://www.montserratvisita.com/en/spirituality/our-lady-of-montserrat",
+        "precision": "OSM_CATHOLIC_CHAPEL_WAY",
+        "geometry_type": "SUBSITE_CHAPEL",
+        "category": "SACRED_CAVE",
+        "review_status": "PIN_CANDIDATE_REQUIRES_PARENT_SITE_DECISION",
+        "note": "A separate physical chapel associated with Montserrat, but must decide whether it deserves a separate user-visible pin or appears as monastery subsite.",
+        "nearest_production_places": [
+          {
+            "id": "place:ES:basilica-del-pilar-zaragoza",
+            "name": "Basílica de Nuestra Señora del Pilar",
+            "km": 226.4
+          },
+          {
+            "id": "place:FR:couvent-jacobins-toulouse",
+            "name": "Couvent des Jacobins, Toulouse",
+            "km": 226.5
+          }
+        ],
+        "licence": "© OpenStreetMap contributors — ODbL 1.0 (coordinate attribution)",
+        "publishable": false,
+        "canonical_place_id": null
+      }
+    }
+  ]
+}
