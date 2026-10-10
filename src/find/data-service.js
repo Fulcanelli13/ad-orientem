@@ -283,6 +283,20 @@ export function publishableDirectoryRecords(records){
           text(s?.payload?.raw).length>0));
       if(!valid)return false;
     }
+    // Structured full-corpus SSPX imports need individually reviewed physical
+    // Mass evidence. Distinct first-party discovery-only leads are retained
+    // separately as OFFICIAL_LISTED_MASS_TIMES_UNCONFIRMED in Explore.
+    if(record?.venue?.upstream?.provider==="SSPX_MAP_API"){
+      if(!["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record.venue.publication_state))return false;
+      const evidenced=safeArray(record?.ministries).some(m=>m.community_id==="SSPX"&&
+        safeArray(m.schedules).some(s=>s.service_type==="MASS"&&
+          safeArray(s.source_ids).length>0&&
+          ["OFFICIAL_LIVE","OFFICIAL_VERIFIED","RECENTLY_VERIFIED"].includes(s?.verification?.state)&&
+          (text(s?.payload?.raw).length>0||
+            safeArray(s?.payload?.sections).some(section=>safeArray(section?.lines)
+              .some(line=>/\b(mass|messe|missa|misa)\b/i.test(String(line)))))));
+      if(!evidenced)return false;
+    }
     const icksp=safeArray(record?.ministries).filter(m=>m?.community_id==="ICKSP");
     if(icksp.length&&!icksp.some(m=>safeArray(m?.schedules).some(schedule=>schedule?.service_type==="MASS")))return false;
     return true;

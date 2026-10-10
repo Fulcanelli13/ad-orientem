@@ -4,6 +4,7 @@ import { pathToFileURL } from "node:url";
 import { auditVenue } from "../../src/find/contracts.js";
 import { findDuplicateCandidates } from "../../src/find/entity-resolution.js";
 import { isMapPublishableGeo } from "../../src/find/geo-provenance.js";
+import { applySspxAdjudications } from "./lib/sspx-reconciliation.mjs";
 
 export const SSPX_API_BASE = "https://map.fsspx.org/api/v1";
 export const SSPX_SOURCE_REGISTRY_ID = "SRC_SSPX_MAP_API";
@@ -104,6 +105,23 @@ function venueTypeFor(place) {
   return map.get(place?.kind) ?? "other";
 }
 
+function initialSspxPublicationState(place) {
+  const kind=String(place?.kind??"");
+  const otherKinds=Array.isArray(place?.alsoKinds)?place.alsoKinds:[];
+  // A missing summary flag is not negative evidence if there is a secondary
+  // chapel function or detailed scheduling material to review.
+  const possiblePublicMass=otherKinds.includes("chapel") ||
+    Boolean(place?.sundayMass || place?.weekdayMass) ||
+    (Array.isArray(place?.schedules) && place.schedules.length>0);
+  if(possiblePublicMass)return "PENDING_CURRENT_EVIDENCE";
+  if(["school","seminary","noviciate"].includes(kind))return "INSTITUTION_ONLY";
+  if(["priory","residence","general_house","district_hq","autonomous_hq",
+    "retreat_house","retirement_home","contemplative_house"].includes(kind)){
+    return "PROVIDER_HOUSE_ONLY";
+  }
+  return "PENDING_CURRENT_EVIDENCE";
+}
+
 function validNumber(value) {
   if (value === null || value === undefined || value === "") return null;
   const number = Number(value);
@@ -175,6 +193,8 @@ export function mapSspxPlace(place) {
       mass_frequency: place?.massFrequency ?? null,
     },
     status: "active",
+    // A source-directory record is not a verified public Mass venue.
+    publication_state: initialSspxPublicationState(place),
     source_ids: [sourceId],
     upstream_updated_at: place?.updatedAt ?? null,
   };
@@ -239,7 +259,7 @@ export function mapSspxPlace(place) {
   return Object.freeze({ venue, ministry, schedules, source });
 }
 
-export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toISOString() } = {}) {
+export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toISOString(), adjudications = [], asOf = retrievedAt.slice(0, 10) } = {}) {
   const venueRecords = [];
   const ministryRecords = [];
   const scheduleRecords = [];
@@ -259,9 +279,20 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
     }
   }
 
+  const projected = applySspxAdjudications({
+    venues: venueRecords, ministries: ministryRecords, schedules: scheduleRecords, sources: sourceRecords,
+  }, adjudications, {asOf, retrievedAt});
+  venueRecords.splice(0,venueRecords.length,...projected.venues);
+  ministryRecords.splice(0,ministryRecords.length,...projected.ministries);
+  scheduleRecords.splice(0,scheduleRecords.length,...projected.schedules);
+  sourceRecords.splice(0,sourceRecords.length,...projected.sources);
+  validationIssues.push(...projected.exceptions.map(e=>({...e,code:"SSPX_"+e.code})));
+  for(const venue of venueRecords.slice(places.length)) {
+    validationIssues.push(...auditVenue(venue,`venue:${venue.venue_id}`));
+  }
   const seenUpstream = new Map();
   const duplicateUpstreamIds = [];
-  for (const venue of venueRecords) {
+  for (const venue of venueRecords.filter(v=>!v?.upstream?.physical_site_key)) {
     const upstreamId = venue?.upstream?.crm_id ?? venue?.upstream?.slug;
     if (!upstreamId) continue;
     if (seenUpstream.has(upstreamId)) {
@@ -282,10 +313,20 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
       .map(venue => venue.venue_id),
   );
 
+  const verifiedVenueIds = new Set(venueRecords.filter(venue =>
+    ["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(venue.publication_state) &&
+    ministryRecords.filter(m=>m.venue_id===venue.venue_id).some(m =>
+      scheduleRecords.some(schedule=>schedule.ministry_id===m.ministry_id &&
+        schedule.service_type==="MASS" && Array.isArray(schedule.source_ids) &&
+        schedule.source_ids.length>0 && schedule.verification?.state==="OFFICIAL_VERIFIED")
+    )
+  ).map(v=>v.venue_id));
+
   const geojson = {
     type: "FeatureCollection",
     features: venueRecords
       .filter(venue => publishableIds.has(venue.venue_id))
+      .filter(venue => verifiedVenueIds.has(venue.venue_id))
       .filter(venue => isMapPublishableGeo(venue?.geo,venue?.address?.country_code))
       .map(venue => {
         const ministry = ministryRecords.find(item => item.venue_id === venue.venue_id);
@@ -316,7 +357,18 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
   const report = {
     schema: "AO_DIRECTORY_SSPX_IMPORT_REPORT_V1",
     retrieved_at: retrievedAt,
-    place_count: venueRecords.length,
+    place_count: places.length,
+    source_entity_count: places.length,
+    physical_venue_projection_complete: projected.decisionCount === places.length && projected.exceptions.length === 0,
+    adjudicated_source_count: projected.decisionCount,
+    added_physical_site_count: projected.physicalSiteCount,
+    adjudication_exception_count: projected.exceptions.length,
+    publication_state_counts: Object.fromEntries(
+      [...new Set(venueRecords.map(v=>v.publication_state))].map(state=>[
+        state,venueRecords.filter(v=>v.publication_state===state).length,
+      ])
+    ),
+    find_publishable_venue_count: verifiedVenueIds.size,
     venue_count: venueRecords.length,
     ministry_count: ministryRecords.length,
     schedule_assertion_count: scheduleRecords.length,
@@ -338,6 +390,7 @@ export function buildCanonicalSspxDataset(places, { retrievedAt = new Date().toI
     validationIssues,
     duplicateUpstreamIds,
     duplicateCandidates,
+    adjudicationExceptions: projected.exceptions,
     report,
   });
 }
@@ -358,13 +411,19 @@ async function fetchJson(url, { fetchImpl = fetch } = {}) {
 async function createSspxBrowserFetch(){
   const { chromium }=await import("@playwright/test");
   const browser=await chromium.launch({headless:true});
-  const context=await browser.newContext({
-    locale:"en-US",
-    userAgent:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155 Safari/537.36"
-  });
-  const page=await context.newPage();
-  await page.goto("https://map.fsspx.org/en/api",{waitUntil:"domcontentloaded",timeout:60000});
-  await page.waitForTimeout(2500);
+  let page;
+  try{
+    const context=await browser.newContext({
+      locale:"en-US",
+      userAgent:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155 Safari/537.36"
+    });
+    page=await context.newPage();
+    await page.goto("https://map.fsspx.org/en/api",{waitUntil:"domcontentloaded",timeout:30000});
+    await page.waitForTimeout(750);
+  }catch(error){
+    await browser.close();
+    throw error;
+  }
   const fetchImpl=async url=>{
     const result=await page.evaluate(async target=>{
       const response=await fetch(target,{headers:{accept:"application/json,text/plain,*/*"},credentials:"include"});
@@ -386,19 +445,43 @@ export async function fetchAllSspxPlaceSummaries({
   fetchImpl = fetch,
 } = {}) {
   const items = [];
+  const upstreamIds = new Set();
   let offset = 0;
-  let total = Infinity;
-  while (offset < total) {
+  let expectedTotal = null;
+  do {
     const url = new URL(`${SSPX_API_BASE}/places`);
     url.searchParams.set("lang", lang);
     url.searchParams.set("limit", String(Math.min(1000, Math.max(1, pageSize))));
     url.searchParams.set("offset", String(offset));
     const page = await fetchJson(url, { fetchImpl });
-    const batch = Array.isArray(page?.items) ? page.items : [];
-    total = Number.isFinite(Number(page?.total)) ? Number(page.total) : offset + batch.length;
-    items.push(...batch);
-    if (!batch.length) break;
+    const count = Number(page?.total);
+    if (!Number.isSafeInteger(count) || count < 0 || !Array.isArray(page?.items)) {
+      throw new Error(`SSPX incomplete acquisition: invalid pagination response at offset ${offset}`);
+    }
+    if (expectedTotal === null) expectedTotal = count;
+    else if (count !== expectedTotal) {
+      throw new Error(`SSPX incomplete acquisition: total changed from ${expectedTotal} to ${count}`);
+    }
+    const batch = page.items;
+    if (batch.length === 0 && offset < expectedTotal) {
+      throw new Error(`SSPX incomplete acquisition: empty page at ${offset}/${expectedTotal}`);
+    }
+    if (offset + batch.length > expectedTotal) {
+      throw new Error("SSPX incomplete acquisition: received more records than reported total");
+    }
+    for (const item of batch) {
+      const id = item?.crmId ?? item?.slug;
+      if (!id) throw new Error("SSPX incomplete acquisition: place without stable identifier");
+      if (upstreamIds.has(String(id))) {
+        throw new Error(`SSPX incomplete acquisition: duplicated upstream identifier ${id}`);
+      }
+      upstreamIds.add(String(id));
+      items.push(item);
+    }
     offset += batch.length;
+  } while (offset < expectedTotal);
+  if (items.length !== expectedTotal) {
+    throw new Error(`SSPX incomplete acquisition: ${items.length}/${expectedTotal} records`);
   }
   return items;
 }
@@ -431,10 +514,8 @@ export async function fetchSspxPlaceDetails(summaries, {
     try {
       return await fetchJson(url, { fetchImpl });
     } catch (error) {
-      return {
-        ...summary,
-        _importWarning: String(error?.message ?? error),
-      };
+      // Do not turn acquisition failure into a false schedule-less source record.
+      throw new Error(`SSPX detail acquisition failed for ${identifier}: ${String(error?.message ?? error)}`);
     }
   });
 }
@@ -445,12 +526,16 @@ function parseArgs(argv) {
     out: "data/directory/generated/sspx",
     concurrency: 6,
     details: true,
+    snapshotOnly: false,
+    adjudicationsFile: "data/directory/research/sspx-physical-adjudications.v1.json",
   };
   for (const arg of argv) {
     if (arg.startsWith("--lang=")) options.lang = arg.slice("--lang=".length);
     else if (arg.startsWith("--out=")) options.out = arg.slice("--out=".length);
     else if (arg.startsWith("--concurrency=")) options.concurrency = Number(arg.slice("--concurrency=".length)) || 6;
     else if (arg === "--no-details") options.details = false;
+    else if (arg === "--snapshot-only") options.snapshotOnly = true;
+    else if (arg.startsWith("--adjudications=")) options.adjudicationsFile = arg.slice("--adjudications=".length);
   }
   return options;
 }
@@ -464,23 +549,57 @@ export async function runSspxImport(options = {}) {
   let effectiveOptions=options;
   let summaries;
   try{
-    summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
-  }catch(error){
-    if(!/SSPX API 403/.test(String(error?.message??error)))throw error;
-    browserSession=await createSspxBrowserFetch();
-    effectiveOptions={...options,fetchImpl:browserSession.fetchImpl};
-    summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
-  }
-  try{
+    try{
+      summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
+    }catch(error){
+      if(!/SSPX API 403/.test(String(error?.message??error)))throw error;
+      browserSession=await createSspxBrowserFetch();
+      effectiveOptions={...options,fetchImpl:browserSession.fetchImpl};
+      summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
+    }
     if (summaries.length < 100) {
       throw new Error(`SSPX import coverage guard: expected a substantial official corpus, received ${summaries.length} place summaries.`);
+    }
+    const retrievedAt = new Date().toISOString();
+    // Acquisition-only is never promoted to Find or the runtime GeoJSON.
+    // It can be compared against the worldwide country-index census before
+    // the expensive individual place-detail / schedule retrieval.
+    if(options.snapshotOnly){
+      const counts = key => Object.fromEntries([...new Set(summaries.map(p=>String(p?.[key]??"UNKNOWN")))]
+        .sort().map(k=>[k,summaries.filter(p=>String(p?.[key]??"UNKNOWN")===k).length]));
+      const report={
+        schema:"AO_DIRECTORY_SSPX_ACQUISITION_REPORT_V1",retrieved_at:retrievedAt,
+        upstream_total:summaries.length,source_entity_count:summaries.length,
+        detailed_records_retrieved:0,publication_eligible_venues:0,
+        raw_snapshot_only:true,
+        by_country:counts("countryCode"),
+        by_relationship:counts("relationship"),
+        by_kind:counts("kind"),
+      };
+      const outDir=path.resolve(options.out ?? "data/directory/generated/sspx");
+      await fs.mkdir(outDir,{recursive:true});
+      await writeJson(path.join(outDir,"raw-source-inventory.v1.json"),{
+        schema:"AO_DIRECTORY_SSPX_RAW_SOURCE_INVENTORY_V1",
+        retrieved_at:retrievedAt,reported_total:summaries.length,records:summaries,
+      });
+      await writeJson(path.join(outDir,"acquisition-report.v1.json"),report);
+      return report;
     }
     const places = options.details === false
       ? summaries
       : await fetchSspxPlaceDetails(summaries, effectiveOptions);
 
-    const retrievedAt = new Date().toISOString();
-  const dataset = buildCanonicalSspxDataset(places, { retrievedAt });
+  const manifest = JSON.parse(await fs.readFile(path.resolve(options.adjudicationsFile ??
+    "data/directory/research/sspx-physical-adjudications.v1.json"), "utf8"));
+  if(manifest.schema !== "AO_DIRECTORY_SSPX_ADJUDICATIONS_V1" || !Array.isArray(manifest.decisions)) {
+    throw new Error("SSPX adjudications manifest schema mismatch");
+  }
+  if(options.details === false && manifest.decisions.length) {
+    throw new Error("SSPX adjudications require detailed source records");
+  }
+  const dataset = buildCanonicalSspxDataset(places, {
+    retrievedAt, adjudications: manifest.decisions,
+  });
   const outDir = path.resolve(options.out ?? "data/directory/generated/sspx");
   await fs.mkdir(outDir, { recursive: true });
 
@@ -517,6 +636,10 @@ export async function runSspxImport(options = {}) {
     issues: dataset.validationIssues,
   });
   await writeJson(path.join(outDir, "import-report.v1.json"), dataset.report);
+  await writeJson(path.join(outDir, "adjudication-exceptions.v1.json"), {
+    schema: "AO_DIRECTORY_SSPX_ADJUDICATION_EXCEPTIONS_V1",
+    generated_at: retrievedAt, issues: dataset.adjudicationExceptions,
+  });
 
   if (dataset.duplicateUpstreamIds.length) {
     throw new Error(`SSPX import blocked: ${dataset.duplicateUpstreamIds.length} duplicated upstream identifiers.`);

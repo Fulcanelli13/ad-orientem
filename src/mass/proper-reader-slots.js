@@ -28,7 +28,11 @@ function values(value,language="en"){
 
 function readyEnvelope(slot,value,{language="en"}={}){
   const rows=values(value,language);
-  if(!rows.length) return Object.freeze({status:"MISSING",slot,data:null});
+  // A composed Collect/Secret/Postcommunion array must retain every source
+  // oration. Reject the complete slot if any commemoration lacks the selected
+  // vernacular or Latin text; filtering valid neighbours silently loses Mass text.
+  const incomplete=Array.isArray(value)&&value.some(row=>!usable(row,language));
+  if(!rows.length||incomplete) return Object.freeze({status:"MISSING",slot,data:null});
   return Object.freeze({
     status:"READY",
     slot,
