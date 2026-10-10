@@ -10,11 +10,12 @@ assert.equal(registry.ownerIssue, 885);
 assert.ok(registry.artworks.length >= 40);
 assert.equal(new Set(registry.artworks.map(a => a.id)).size, registry.artworks.length);
 for (const candidate of registry.artworks) {
-  assert.match(candidate.id, /^(?:(?:met|cma|nga|artic)-\d+|commons-[a-z0-9-]+)$/);
+  assert.match(candidate.id, /^(?:(?:met|cma|nga|artic)-\d+|commons-[a-z0-9-]+|kress-k\d+)$/);
   assert.equal(candidate.medium, "painting");
-  assert.ok(["CC0","PUBLIC_DOMAIN_PD_ART_PDM"].includes(candidate.source.rights));
+  assert.ok(["CC0","PUBLIC_DOMAIN_PD_ART_PDM","PUBLIC_DOMAIN_KRESS_REUSE_HOLD"].includes(candidate.source.rights));
   if(candidate.id.startsWith("commons-")) assert.equal(candidate.review.rights,"PD_ART_JURISDICTION_REVIEW_PENDING","PD-Art must never be marked as CC0 or automatically cleared");
-  assert.match(candidate.source.objectUrl, /^https:\/\/(?:www\.metmuseum\.org\/art\/collection\/search\/\d+|clevelandart\.org\/art\/[\d.a-z]+|www\.nga\.gov\/artworks\/\d+-[a-z0-9-]+|www\.artic\.edu\/artworks\/\d+|commons\.wikimedia\.org\/wiki\/File:[^\s]+)$/);
+  if(candidate.id.startsWith("kress-")) assert.equal(candidate.review.rights,"KRESS_REPRODUCTION_RIGHTS_REVIEW_PENDING","Kress public-domain source is not automatically CC0, globally cleared or publishable");
+  assert.match(candidate.source.objectUrl, /^https:\/\/(?:www\.metmuseum\.org\/art\/collection\/search\/\d+|clevelandart\.org\/art\/[\d.a-z]+|www\.nga\.gov\/artworks\/\d+-[a-z0-9-]+|www\.artic\.edu\/artworks\/\d+|commons\.wikimedia\.org\/wiki\/File:[^\s]+|www\.kressfoundation\.org\/kress-collection\/artwork\/[a-f0-9]{64})$/);
   assert.equal(candidate.review.status, "CANDIDATE");
   assert.equal(candidate.image, null);
   assert.equal(eligibleSacredArtwork(candidate), false, "Museum page alone is never production image approval");
