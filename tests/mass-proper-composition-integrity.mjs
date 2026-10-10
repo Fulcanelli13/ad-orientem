@@ -74,4 +74,23 @@ assert.equal(p.languageCoverage.en.complete,false,"Unresolved macro counted as t
 assert.ok(p.composedSourceIntegrity.unresolved.some(x=>x.section==="Secret 2"&&x.marker==="$Qui tecum"));
 assert.ok(p.composedSourceIntegrity.unresolved.some(x=>x.marker==="N."));
 assert.ok(diagnostic.warnings.some(x=>x.includes("unresolved text/source placeholders")));
+// Exercise the *production* donor alias, not a shadow string replacement.
+// Every donor below has an original [Oratio] (ad missam) heading which
+// parseSections intentionally stores under canonical key "Oratio".
+const massAlias=between("// The historical English Commons label their Mass-only Collect",
+  "function parseReference(line, defaultSection) {");
+const canonicalSection=runInNewContext(massAlias+"\\ncanonicalReferencedProperSection;");
+const parsed={map:new Map([["Oratio",["verified mass collect"]]])};
+for(const donor of ["Commune/C2","Commune/C5","Commune/C5b",
+  "Commune/C6-1","Commune/C6b","Commune/C11"]){
+  assert.equal(canonicalSection(donor,"Oratio ad missam",parsed),"Oratio",
+    "1962 named-Mass Collect was dropped for "+donor);
+}
+assert.equal(canonicalSection("Commune/C3","Oratio ad missam",parsed),"Oratio ad missam",
+  "unverified donor was silently generalized");
+assert.equal(canonicalSection("Commune/C11","Postcommunio ad missam",parsed),
+  "Postcommunio ad missam","non-Collect alias was fabricated");
+assert.equal(canonicalSection("Commune/C5","Oratio ad missam",
+  {map:new Map([["Oratio ad missam",["direct original"]],["Oratio",["other"]]])}),
+  "Oratio ad missam","original explicit section was overwritten by fallback");
 console.log("PASS actual Proper conclusion and post-commemoration coverage logic (EN/FR/LA)");
