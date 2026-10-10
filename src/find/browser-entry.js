@@ -56,6 +56,7 @@ function installStyle(win){
     ".aoBiblePlacesGroups{padding:4px 13px 12px;display:grid;gap:11px}.aoBiblePlacesGroup>small{display:block;margin-bottom:5px;color:#bba57b;font:650 10px var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase}.aoBiblePlacesGroup>div{display:flex;flex-wrap:wrap;gap:6px}.aoBiblePlacesGroup button{min-height:40px;padding:7px 10px;border:1px solid rgba(217,197,154,.16);border-radius:999px;background:#111b26;color:#dacfb8;cursor:pointer;font:12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesGroup button.active{background:#d9c59a;color:#080c12}",
     ".aoBiblePlacesDetail{padding:12px 15px 16px;border-top:1px solid rgba(217,197,154,.16)}.aoBiblePlacesDetail h3{font:600 20px/1.2 var(--ao-font-display,Georgia,serif);margin:0 0 9px}.aoBiblePlacesDetail p{font:14px/1.6 var(--ao-font-body,Georgia,serif);color:#d1c4aa;margin:0 0 12px}.aoBiblePlacesDetail dl{display:grid;gap:7px;margin:0 0 14px}.aoBiblePlacesDetail dl>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:9px}.aoBiblePlacesDetail dt{color:#9f927d;font:11px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesDetail dd{margin:0;color:#e4d8bf;font:12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesRead{display:flex;flex-wrap:wrap;gap:8px}.aoBiblePlacesRead button{border:1px solid rgba(217,197,154,.35);border-radius:999px;background:#19232b;color:#e9d7b5;min-height:44px;padding:10px 12px;cursor:pointer;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesHint{margin:0;padding:0 13px 13px;color:#a99d88;font:12px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoBiblePhaseLabel{display:block;padding:8px 0 5px;color:#9f978b;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesChips{display:flex;flex-wrap:wrap;gap:6px}.aoBiblePlacesEpisode{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;padding:6px 0;border-bottom:1px solid rgba(217,197,154,.12)}.aoBiblePlacesEpisode:last-child{border-bottom:0}.aoBiblePlacesEpisode>span{min-width:0;flex:1;color:#d3c9bb;font:13px/1.4 var(--ao-font-body,Georgia,serif)}.aoBiblePlacesEpisode>button{flex-shrink:0}.aoBiblePlacesDetail .aoBiblePlacesRead{display:grid;grid-template-columns:minmax(0,1fr)}",
+    ".aoBiblePlacesControls{padding:4px 13px 12px;display:grid;gap:9px}.aoBiblePlacesControls input{box-sizing:border-box;width:100%;min-height:44px;border:1px solid rgba(217,197,154,.23);border-radius:10px;padding:10px 12px;background:#101923;color:#eee2ca;font:16px var(--ao-font-ui,system-ui,sans-serif)}.aoBibleScopeActions{display:flex;gap:7px}.aoBibleScopeActions button{min-height:40px;padding:9px 14px;border:1px solid rgba(217,197,154,.25);border-radius:999px;background:#121d29;color:#e0d5bd;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoBibleScopeActions button[aria-pressed=true]{background:#d9c59a;color:#080c12}.aoBiblePlacesChips button[hidden],.aoBiblePlacesChips[hidden],.aoBiblePlacesGroup[hidden],.aoBiblePhaseLabel[hidden]{display:none}",
     ".aoBiblePlacesCompact button:focus-visible{outline:2px solid #e5cb92;outline-offset:2px}",
     ".aoCustomsAtlasPanel{margin:12px 16px 6px;padding:17px;border:1px solid rgba(217,197,154,.22);border-radius:16px;background:linear-gradient(145deg,rgba(217,197,154,.06),rgba(10,18,27,.6))}",
     ".aoCustomsAtlasHeading{display:flex;align-items:end;justify-content:space-between;gap:14px}.aoCustomsAtlasHeading small{font:650 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:#bba47a}.aoCustomsAtlasHeading h2{margin:5px 0 0;font:600 25px/1.1 var(--ao-font-display,Georgia,serif);color:#eadfcb}.aoCustomsAtlasHeading p{max-width:390px;margin:0;color:#ad9f8c;font:13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
@@ -125,6 +126,8 @@ export function createFindOwner(win=globalThis){
     expandPlace:false,
     bibleOpen:false,
     bibleSelectedId:null,
+    bibleScope:"ALL",
+    bibleQuery:"",
     atlasFamily:"ANY",
     atlasArea:"ANY",
     atlasPeriod:"ANY",
@@ -331,7 +334,7 @@ export function createFindOwner(win=globalThis){
   function close(){
     ++paintToken;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
-    state.bibleOpen=false;state.bibleSelectedId=null;
+    state.bibleOpen=false;state.bibleSelectedId=null;state.bibleScope="ALL";state.bibleQuery="";
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
@@ -422,6 +425,17 @@ export function createFindOwner(win=globalThis){
       const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
       state.bibleOpen=!state.bibleOpen;
       if(!state.bibleOpen)state.bibleSelectedId=null;
+      void paint().then(()=>{
+        const surface=getRoot(win)?.querySelector?.(".aoFindSurface");
+        if(surface)surface.scrollTop=previousScroll;
+      });return;
+    }
+    const bibleScopeButton=target?.closest?.("[data-bible-scope]");
+    if(bibleScopeButton&&state.lens==="heritage"&&state.bibleOpen){
+      event.preventDefault?.();
+      const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
+      state.bibleScope=bibleScopeButton.dataset.bibleScope==="MIRACLES"?"MIRACLES":"ALL";
+      state.bibleSelectedId=null;
       void paint().then(()=>{
         const surface=getRoot(win)?.querySelector?.(".aoFindSurface");
         if(surface)surface.scrollTop=previousScroll;
@@ -531,6 +545,24 @@ export function createFindOwner(win=globalThis){
 
   function onInput(event){
     if(!openState)return;
+    const bibleInput=event?.target?.closest?.("[data-bible-search]");
+    if(bibleInput&&state.lens==="heritage"&&state.bibleOpen){
+      state.bibleQuery=bibleInput.value||"";
+      const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+      const search=norm(state.bibleQuery.trim()),section=bibleInput.closest(".aoBiblePlacesCompact");
+      section?.querySelectorAll?.("[data-bible-place]")?.forEach(button=>{
+        button.hidden=!norm(button.dataset.bibleSearchText).includes(search);
+      });
+      section?.querySelectorAll?.(".aoBiblePlacesChips")?.forEach(container=>{
+        const visible=[...(container.querySelectorAll("[data-bible-place]"))].some(b=>!b.hidden);
+        container.hidden=!visible;
+        if(container.previousElementSibling?.classList?.contains("aoBiblePhaseLabel"))container.previousElementSibling.hidden=!visible;
+      });
+      section?.querySelectorAll?.(".aoBiblePlacesGroup")?.forEach(group=>{
+        group.hidden=![...(group.querySelectorAll("[data-bible-place]"))].some(b=>!b.hidden);
+      });
+      return;
+    }
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
     state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.displayLimit=120;
     void paint({preserveSearchFocus:true});
@@ -562,6 +594,8 @@ export function createFindOwner(win=globalThis){
       selectedPlaceId:state.selectedPlaceId,
       bibleOpen:state.bibleOpen,
       bibleSelectedId:state.bibleSelectedId,
+      bibleScope:state.bibleScope,
+      bibleQuery:state.bibleQuery,
       counts:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
       unavailableProviders:dataset?.directory?.unavailableProviders??[],
