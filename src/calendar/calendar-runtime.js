@@ -1,5 +1,6 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
+import { renderApprovedSacredArt } from "../art/approved-sacred-art.js";
 import { addDaysIso, buildLiturgicalYear } from "./liturgical-year.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
@@ -596,6 +597,7 @@ function daySurface(selected,r){
     <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
       <small class="aoCalV2Eyebrow">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
       <h2>${esc(titleOf(r))}</h2>
+      ${renderApprovedSacredArt({observedId:r?.day?.main?.id,language:fr()?"fr":"en"})}
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
       ${sourceStatus(r)}
       ${daySourceDetails(r)}
