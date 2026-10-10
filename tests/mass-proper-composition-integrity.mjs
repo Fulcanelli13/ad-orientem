@@ -112,7 +112,7 @@ const saintCases=[
   {owner:"Sancti/05-25o",section:"collect",before:singleton("Urbánum","Urban","bienheureux N., pape"),
     after:singleton("Urbánum","Urban","bienheureux Urbain, pape")},
   {owner:"Sancti/05-26o",section:"collect",before:singleton("per beátum N. Summum","blessed N., sovereign","bienheureux N., pape"),
-    after:singleton("per beátum Eleuthérium Summum","blessed Eleutherius, sovereign","bienheureux Éleuthère, pape")},
+    after:singleton("per beátum Eleuthérium Summum","blessed Eleutherius, sovereign","bienheureux Eleuthère, pape")},
   ...["collect","secret","postcommunion"].map(section=>({owner:"Sancti/06-19o",section,
     before:singleton("Gervásii et Protásii","Martyrs N. and N.","Gervais et Protais"),
     after:singleton("Gervásii et Protásii","Martyrs Gervasius and Protasius","Gervais et Protais")}))
