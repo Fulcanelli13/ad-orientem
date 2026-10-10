@@ -36,6 +36,7 @@ try{
   globalThis.__full=mountFullMassPreflight({doc:document,
     getResolvedMass:()=>globalThis.__observed?.effectiveResolvedMass(__legacyMass())??__legacyMass(),
     onOpenSourceProper:()=>globalThis.__observed?.open?.(),
+    getSourceGate:()=>globalThis.__observed?.preparationGate?.()??{ready:true,reason:null},
     getDefaultForm:()=>__formDefault,language:()=>__lang});
  });
 
@@ -70,6 +71,11 @@ try{
  assert.equal(await picker.locator("details").evaluate(el=>el.open),true,
    "Other Proper category failed to open the source-day selector");
  await picker.locator("[data-observed-date]").fill("2026-10-07");
+ await page.evaluate(()=>__full.refresh());
+ assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-proper-ready"),"false",
+   "Unconfirmed Proper lookup must block entry instead of silently starting Mass of the day");
+ assert.equal((await page.evaluate(()=>__observed.preparationGate())).ready,false);
+
  await picker.locator("[data-observed-lookup]").click();
  await page.waitForSelector("[data-observed-candidate]:not([hidden])");
  assert.match(await picker.locator("[data-observed-candidate]").innerText(),/Most Holy Rosary/);
@@ -78,6 +84,8 @@ try{
  await picker.locator("[data-observed-sunday-choice]").selectOption("COMMEMORATE_SUNDAY");
  await picker.locator("[data-observed-select]").click();
  await page.waitForFunction(()=>globalThis.__observed?.status?.().selected==="Sancti/10-07");
+ assert.equal((await page.evaluate(()=>__observed.preparationGate())).ready,true);
+
  const actual=await page.evaluate(()=>{
    const s=__observed.effectiveResolvedMass(__legacyMass());
    return {massDate:s.date,source:s.properSource,kind:s.celebrationType,
