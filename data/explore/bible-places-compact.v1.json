@@ -1,6 +1,6 @@
 {
   "schema": "AO_EXPLORE_BIBLE_PLACES_COMPACT_V1",
-  "scope": "Compact Bible Places: 40 locations, with Christ's major Gospel events from Annunciation to Ascension as labeled in-app passage-linked episodes",
+  "scope": "Small Bible Places UI with deeper Gospel content: named locations, qualified regions, and individual Scripture-linked events including 37 conventional miracle cases",
   "publication_policy": "Concise bilingual Scripture-linked context; date uncertainty and contested site identities expressed; no independent map pins.",
   "version": "2026-10-10",
   "groups": [
@@ -10,190 +10,6 @@
     "APOSTLES"
   ],
   "entries": [
-    {
-      "id": "babylon",
-      "group": "OT",
-      "title_en": "Babylon",
-      "title_fr": "Babylone",
-      "summary_en": "The fall of Jerusalem leads to exile in Babylon, a major setting of the prophetic books.",
-      "summary_fr": "La chute de Jérusalem conduit à l’exil à Babylone, cadre majeur des livres prophétiques.",
-      "period_en": "Sixth century BC",
-      "period_fr": "VIe siècle av. J.-C.",
-      "persons_en": "Nebuchadnezzar, exiles",
-      "persons_fr": "Nabuchodonosor, exilés",
-      "passages": [
-        "2Kings 25:8–12",
-        "Daniel 1:1–6"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "hebron",
-      "group": "OT",
-      "title_en": "Hebron / Mamre",
-      "title_fr": "Hébron / Mambré",
-      "summary_en": "Abraham welcomes three visitors near Mamre. Hebron remains closely linked to the patriarchs.",
-      "summary_fr": "Abraham reçoit trois visiteurs près de Mambré. Hébron reste lié aux patriarches.",
-      "period_en": "Patriarchal narratives · date uncertain",
-      "period_fr": "Récits patriarcaux · date incertaine",
-      "persons_en": "Abraham, Sarah",
-      "persons_fr": "Abraham, Sara",
-      "passages": [
-        "Genesis 18:1–8",
-        "Genesis 23:17–20"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "carmel",
-      "group": "OT",
-      "title_en": "Mount Carmel",
-      "title_fr": "Mont Carmel",
-      "summary_en": "Elijah confronts the prophets of Baal on Mount Carmel and calls Israel back to the Lord.",
-      "summary_fr": "Élie affronte les prophètes de Baal sur le Carmel et rappelle Israël au Seigneur.",
-      "period_en": "Divided kingdoms · about 9th century BC",
-      "period_fr": "Royaumes divisés · vers le IXe siècle av. J.-C.",
-      "persons_en": "Elijah, Ahab",
-      "persons_fr": "Élie, Achab",
-      "passages": [
-        "1Kings 18:19–39"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "nebo",
-      "group": "OT",
-      "title_en": "Mount Nebo",
-      "title_fr": "Mont Nébo",
-      "summary_en": "Moses views the Promised Land from Mount Nebo. Scripture says his grave's location is unknown.",
-      "summary_fr": "Moïse contemple la Terre promise depuis le mont Nébo. L’Écriture dit que le lieu de sa tombe est inconnu.",
-      "period_en": "End of the Exodus narrative · date uncertain",
-      "period_fr": "Fin du récit de l’Exode · date incertaine",
-      "persons_en": "Moses",
-      "persons_fr": "Moïse",
-      "passages": [
-        "Deuteronomy 34:1–6"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "sinai",
-      "group": "OT",
-      "title_en": "Mount Sinai",
-      "title_fr": "Mont Sinaï",
-      "summary_en": "Israel receives the Law at Sinai after the departure from Egypt; the modern mountain identification is debated.",
-      "summary_fr": "Israël reçoit la Loi au Sinaï après la sortie d’Égypte ; l’identification de la montagne actuelle reste discutée.",
-      "period_en": "Exodus narrative · date uncertain",
-      "period_fr": "Récit de l’Exode · date incertaine",
-      "persons_en": "Moses, Israelites",
-      "persons_fr": "Moïse, Israélites",
-      "passages": [
-        "Exodus 19:16–20"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "shiloh",
-      "group": "OT",
-      "title_en": "Shiloh",
-      "title_fr": "Silo",
-      "summary_en": "Hannah prays at the sanctuary of Shiloh, where the young Samuel later serves.",
-      "summary_fr": "Anne prie au sanctuaire de Silo, où le jeune Samuel sert ensuite.",
-      "period_en": "Period of the judges · date uncertain",
-      "period_fr": "Époque des Juges · date incertaine",
-      "persons_en": "Hannah, Eli, Samuel",
-      "persons_fr": "Anne, Héli, Samuel",
-      "passages": [
-        "1Samuel 1:9–20"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "ur",
-      "group": "OT",
-      "title_en": "Ur of the Chaldees",
-      "title_fr": "Our des Chaldéens",
-      "summary_en": "Abraham's family leaves Ur for Haran on the journey toward Canaan.",
-      "summary_fr": "La famille d’Abraham quitte Our pour Harrân, en route vers le pays de Canaan.",
-      "period_en": "Patriarchal narratives · date uncertain",
-      "period_fr": "Récits patriarcaux · date incertaine",
-      "persons_en": "Abraham, Terah",
-      "persons_fr": "Abraham, Tharé",
-      "passages": [
-        "Genesis 11:31"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "bethulia",
-      "group": "DEUTERO",
-      "title_en": "Bethulia",
-      "title_fr": "Béthulie",
-      "summary_en": "Judith's city is threatened by Holofernes. Its exact ancient location is not established.",
-      "summary_fr": "La ville de Judith est menacée par Holopherne. Son emplacement ancien exact n’est pas établi.",
-      "period_en": "Book of Judith · chronology debated",
-      "period_fr": "Livre de Judith · chronologie discutée",
-      "persons_en": "Judith, Holofernes",
-      "persons_fr": "Judith, Holopherne",
-      "passages": [
-        "Judith 7:1–7",
-        "Judith 8:1–8"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "modein",
-      "group": "DEUTERO",
-      "title_en": "Modein",
-      "title_fr": "Modine",
-      "summary_en": "Mattathias and his family come from Modein, where the Maccabean resistance takes shape.",
-      "summary_fr": "Mattathias et sa famille sont originaires de Modine, où prend forme la résistance des Maccabées.",
-      "period_en": "Second century BC",
-      "period_fr": "IIe siècle av. J.-C.",
-      "persons_en": "Mattathias, Judas Maccabeus",
-      "persons_fr": "Mattathias, Judas Maccabée",
-      "passages": [
-        "1Maccabees 2:1–5"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "nineveh",
-      "group": "DEUTERO",
-      "title_en": "Nineveh",
-      "title_fr": "Ninive",
-      "summary_en": "Tobit lives in exile at Nineveh; the city also receives Jonah's call to repentance.",
-      "summary_fr": "Tobie vit en exil à Ninive ; la ville reçoit aussi l’appel à la pénitence du prophète Jonas.",
-      "period_en": "Assyrian period · biblical narrative",
-      "period_fr": "Époque assyrienne · récit biblique",
-      "persons_en": "Tobit, Jonah",
-      "persons_fr": "Tobie, Jonas",
-      "passages": [
-        "Tobit 1:10",
-        "Jonah 3:1–10"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
     {
       "id": "nazareth",
       "group": "CHRIST",
@@ -442,7 +258,8 @@
       "persons_en": "Jesus, Mary, disciples",
       "persons_fr": "Jésus, Marie, disciples",
       "passages": [
-        "John 2:1–11"
+        "John 2:1–11",
+        "John 4:46–54"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -453,7 +270,18 @@
           "id": "cana-e1",
           "title_en": "The wedding at Cana",
           "title_fr": "Les noces de Cana",
-          "reference": "John 2:1–11"
+          "reference": "John 2:1–11",
+          "miracle_id": "miracle-01",
+          "category": "MIRACLE"
+        },
+        {
+          "id": "cana-miracle-02",
+          "title_en": "Healing of a royal official's son at a distance",
+          "title_fr": "Guérison à distance du fils d’un officier royal",
+          "reference": "John 4:46–54",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-02",
+          "site_evidence": "EXPLICIT_CANA_HEALING_TARGET_CAPERNAUM"
         }
       ]
     },
@@ -481,19 +309,77 @@
           "id": "capernaum-e1",
           "title_en": "Teaching and exorcism in the synagogue",
           "title_fr": "Enseignement et exorcisme à la synagogue",
-          "reference": "Mark 1:21–28"
+          "reference": "Mark 1:21–28",
+          "miracle_id": "miracle-03",
+          "category": "MIRACLE"
         },
         {
           "id": "capernaum-e2",
           "title_en": "The healing of a paralytic",
           "title_fr": "La guérison du paralytique",
-          "reference": "Mark 2:1–12"
+          "reference": "Mark 2:1–12",
+          "miracle_id": "miracle-09",
+          "category": "MIRACLE"
         },
         {
           "id": "capernaum-e3",
           "title_en": "The discourse on the Bread of Life",
           "title_fr": "Le discours sur le Pain de vie",
           "reference": "John 6:24–59"
+        },
+        {
+          "id": "capernaum-miracle-04",
+          "title_en": "Healing of Peter's mother-in-law",
+          "title_fr": "Guérison de la belle-mère de Pierre",
+          "reference": "Mark 1:29–31",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-04",
+          "site_evidence": "EXPLICIT_CITY"
+        },
+        {
+          "id": "capernaum-miracle-05",
+          "title_en": "Healings and exorcisms at evening",
+          "title_fr": "Guérisons et exorcismes au soir",
+          "reference": "Mark 1:32–34",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-05",
+          "site_evidence": "EXPLICIT_CITY"
+        },
+        {
+          "id": "capernaum-miracle-08",
+          "title_en": "Healing of the centurion's servant",
+          "title_fr": "Guérison du serviteur du centurion",
+          "reference": "Matthew 8:5–13",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-08",
+          "site_evidence": "EXPLICIT_CITY"
+        },
+        {
+          "id": "capernaum-miracle-14",
+          "title_en": "Healing of the woman with a haemorrhage",
+          "title_fr": "Guérison de la femme souffrant d’hémorragies",
+          "reference": "Mark 5:25–34",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-14",
+          "site_evidence": "GALILEE_LAKESIDE_NOT_EXPLICIT_TOWN"
+        },
+        {
+          "id": "capernaum-miracle-15",
+          "title_en": "Raising of Jairus's daughter",
+          "title_fr": "Résurrection de la fille de Jaïre",
+          "reference": "Mark 5:35–43",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-15",
+          "site_evidence": "GALILEE_LAKESIDE_NOT_EXPLICIT_TOWN"
+        },
+        {
+          "id": "capernaum-miracle-28",
+          "title_en": "Temple-tax coin in the fish's mouth",
+          "title_fr": "Didrachme trouvé dans la bouche du poisson",
+          "reference": "Matthew 17:24–27",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-28",
+          "site_evidence": "EXPLICIT_CAPERNAUM"
         }
       ]
     },
@@ -527,19 +413,41 @@
           "id": "galilee-sea-e2",
           "title_en": "Jesus calms the storm",
           "title_fr": "Jésus apaise la tempête",
-          "reference": "Mark 4:35–41"
+          "reference": "Mark 4:35–41",
+          "miracle_id": "miracle-12",
+          "category": "MIRACLE"
         },
         {
           "id": "galilee-sea-e3",
           "title_en": "Jesus walks upon the water",
           "title_fr": "Jésus marche sur les eaux",
-          "reference": "Matthew 14:22–33"
+          "reference": "Matthew 14:22–33",
+          "miracle_id": "miracle-20",
+          "category": "MIRACLE"
         },
         {
           "id": "galilee-sea-e4",
           "title_en": "The risen Jesus appears by the lake",
           "title_fr": "Jésus ressuscité apparaît au bord du lac",
           "reference": "John 21:1–14"
+        },
+        {
+          "id": "galilee-sea-miracle-06",
+          "title_en": "First miraculous catch of fish",
+          "title_fr": "Première pêche miraculeuse",
+          "reference": "Luke 5:1–11",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-06",
+          "site_evidence": "EXPLICIT_LAKE"
+        },
+        {
+          "id": "galilee-sea-miracle-37",
+          "title_en": "Second miraculous catch of fish after Resurrection",
+          "title_fr": "Seconde pêche miraculeuse après la Résurrection",
+          "reference": "John 21:4–11",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-37",
+          "site_evidence": "LAKE_COAST_NO_EXACT_POINT"
         }
       ]
     },
@@ -600,7 +508,9 @@
           "id": "nain-e1",
           "title_en": "The raising of the widow's son",
           "title_fr": "La résurrection du fils de la veuve",
-          "reference": "Luke 7:11–17"
+          "reference": "Luke 7:11–17",
+          "miracle_id": "miracle-11",
+          "category": "MIRACLE"
         }
       ]
     },
@@ -627,7 +537,9 @@
           "id": "tabgha-e1",
           "title_en": "The feeding of the multitude",
           "title_fr": "La multiplication des pains",
-          "reference": "John 6:1–15"
+          "reference": "John 6:1–15",
+          "miracle_id": "miracle-19",
+          "category": "MIRACLE"
         }
       ]
     },
@@ -709,7 +621,9 @@
           "id": "bethany-e1",
           "title_en": "The raising of Lazarus",
           "title_fr": "La résurrection de Lazare",
-          "reference": "John 11:1–44"
+          "reference": "John 11:1–44",
+          "miracle_id": "miracle-33",
+          "category": "MIRACLE"
         },
         {
           "id": "bethany-e2",
@@ -743,7 +657,9 @@
           "id": "jericho-e1",
           "title_en": "The healing of the blind man",
           "title_fr": "La guérison de l’aveugle",
-          "reference": "Luke 18:35–43"
+          "reference": "Luke 18:35–43",
+          "miracle_id": "miracle-34",
+          "category": "MIRACLE"
         },
         {
           "id": "jericho-e2",
@@ -779,6 +695,403 @@
           "reference": "John 4:4–26"
         }
       ]
+    },
+    {
+      "id": "galilee-region",
+      "group": "CHRIST",
+      "title_en": "Galilee — unnamed villages",
+      "title_fr": "Galilée — villages non identifiés",
+      "summary_en": "Some of Christ's healings take place in Galilee without an identifiable town.",
+      "summary_fr": "Certaines guérisons du Christ ont lieu en Galilée sans village identifiable.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, disciples, crowds",
+      "persons_fr": "Jésus, disciples, foules",
+      "phase": "PUBLIC",
+      "location_semantics": "UNSPECIFIED_REGION",
+      "passages": [
+        "Mark 1:40–45",
+        "Mark 3:1–6"
+      ],
+      "events": [
+        {
+          "id": "galilee-region-miracle-07",
+          "title_en": "Cleansing of a man with leprosy",
+          "title_fr": "Purification d’un lépreux",
+          "reference": "Mark 1:40–45",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-07",
+          "site_evidence": "REGION_NOT_PRECISE"
+        },
+        {
+          "id": "galilee-region-miracle-10",
+          "title_en": "Healing of the man with a withered hand",
+          "title_fr": "Guérison de l’homme à la main desséchée",
+          "reference": "Mark 3:1–6",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-10",
+          "site_evidence": "SYNAGOGUE_NOT_IDENTIFIED"
+        },
+        {
+          "id": "galilee-region-miracle-16",
+          "title_en": "Healing of two blind men",
+          "title_fr": "Guérison de deux aveugles",
+          "reference": "Matthew 9:27–31",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-16",
+          "site_evidence": "NOT_PRECISE"
+        },
+        {
+          "id": "galilee-region-miracle-17",
+          "title_en": "Healing of a man unable to speak",
+          "title_fr": "Guérison d’un homme muet",
+          "reference": "Matthew 9:32–34",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-17",
+          "site_evidence": "NOT_PRECISE"
+        },
+        {
+          "id": "galilee-region-miracle-27",
+          "title_en": "Healing of the boy with an unclean spirit",
+          "title_fr": "Guérison de l’enfant possédé",
+          "reference": "Mark 9:14–29",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-27",
+          "site_evidence": "AFTER_TRANSFIGURATION_EXACT_PLACE_UNKNOWN"
+        },
+        {
+          "id": "galilee-region-miracle-29",
+          "title_en": "Healing of a blind and mute demoniac",
+          "title_fr": "Guérison d’un possédé aveugle et muet",
+          "reference": "Matthew 12:22–23",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-29",
+          "site_evidence": "NOT_PRECISE"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "gerasenes",
+      "group": "CHRIST",
+      "title_en": "Country of the Gerasenes",
+      "title_fr": "Pays des Géraséniens",
+      "summary_en": "Across the lake Jesus delivers a demoniac; the Gospels preserve alternative place names.",
+      "summary_fr": "De l’autre côté du lac Jésus délivre un possédé ; les Évangiles conservent plusieurs toponymes.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, demoniac",
+      "persons_fr": "Jésus, possédé",
+      "phase": "PUBLIC",
+      "location_semantics": "COMPETING_IDENTIFICATION",
+      "passages": [
+        "Mark 5:1–20"
+      ],
+      "events": [
+        {
+          "id": "gerasenes-miracle-13",
+          "title_en": "The Gerasene demoniac and the swine",
+          "title_fr": "Le possédé gérasénien et les porcs",
+          "reference": "Mark 5:1–20",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-13",
+          "site_evidence": "REGIONAL_COMPETING_IDENTIFICATIONS"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "bethesda",
+      "group": "CHRIST",
+      "title_en": "Pool of Bethesda — Jerusalem",
+      "title_fr": "Piscine de Bethesda — Jérusalem",
+      "summary_en": "Jesus heals a long-suffering invalid beside the pool in Jerusalem.",
+      "summary_fr": "Jésus guérit un malade de longue date près de la piscine, à Jérusalem.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, invalid",
+      "persons_fr": "Jésus, malade",
+      "phase": "PUBLIC",
+      "location_semantics": "SUBSITE_OF_JERUSALEM",
+      "passages": [
+        "John 5:1–15"
+      ],
+      "events": [
+        {
+          "id": "bethesda-miracle-18",
+          "title_en": "Healing at the Pool of Bethesda",
+          "title_fr": "Guérison à la piscine de Bethesda",
+          "reference": "John 5:1–15",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-18",
+          "site_evidence": "EXPLICIT_POOL_JERUSALEM"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "gennesaret",
+      "group": "CHRIST",
+      "title_en": "Gennesaret",
+      "title_fr": "Génésareth",
+      "summary_en": "Jesus heals many sick people in the lakeside plain of Gennesaret.",
+      "summary_fr": "Jésus guérit de nombreux malades dans la plaine de Génésareth, au bord du lac.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, crowds",
+      "persons_fr": "Jésus, foules",
+      "phase": "PUBLIC",
+      "location_semantics": "EXPLICIT_REGION",
+      "passages": [
+        "Mark 6:53–56"
+      ],
+      "events": [
+        {
+          "id": "gennesaret-miracle-21",
+          "title_en": "Many healed in Gennesaret",
+          "title_fr": "Nombreuses guérisons à Génésareth",
+          "reference": "Mark 6:53–56",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-21",
+          "site_evidence": "EXPLICIT_REGION"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "tyre-sidon",
+      "group": "CHRIST",
+      "title_en": "Territory of Tyre and Sidon",
+      "title_fr": "Territoire de Tyr et Sidon",
+      "summary_en": "A Gentile mother asks Jesus to deliver her daughter from an evil spirit.",
+      "summary_fr": "Une mère païenne demande à Jésus de délivrer sa fille d’un esprit mauvais.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Syrophoenician woman",
+      "persons_fr": "Jésus, Syrophénicienne",
+      "phase": "PUBLIC",
+      "location_semantics": "EXPLICIT_REGION",
+      "passages": [
+        "Mark 7:24–30"
+      ],
+      "events": [
+        {
+          "id": "tyre-sidon-miracle-22",
+          "title_en": "Healing the daughter of the Syrophoenician woman",
+          "title_fr": "Guérison de la fille de la Syrophénicienne",
+          "reference": "Mark 7:24–30",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-22",
+          "site_evidence": "TYRE_DISTRICT_EXPLICIT_PRECISE_UNCERTAIN"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "decapolis",
+      "group": "CHRIST",
+      "title_en": "Decapolis",
+      "title_fr": "Décapole",
+      "summary_en": "Jesus passes through the Decapolis region and heals a deaf man.",
+      "summary_fr": "Jésus traverse la région de la Décapole et guérit un sourd.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, deaf man",
+      "persons_fr": "Jésus, sourd",
+      "phase": "PUBLIC",
+      "location_semantics": "EXPLICIT_REGION",
+      "passages": [
+        "Mark 7:31–37"
+      ],
+      "events": [
+        {
+          "id": "decapolis-miracle-23",
+          "title_en": "Healing of the deaf man with a speech impediment",
+          "title_fr": "Guérison du sourd qui parlait difficilement",
+          "reference": "Mark 7:31–37",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-23",
+          "site_evidence": "DECAPOLIS_REGION"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "eastern-galilee-shore",
+      "group": "CHRIST",
+      "title_en": "Other shores of the Sea of Galilee",
+      "title_fr": "Autres rives du lac de Galilée",
+      "summary_en": "Jesus feeds a multitude by the lake; the precise spot is not given.",
+      "summary_fr": "Jésus nourrit une foule près du lac ; le lieu précis n’est pas indiqué.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, disciples",
+      "persons_fr": "Jésus, disciples",
+      "phase": "PUBLIC",
+      "location_semantics": "APPROXIMATE_LAKESHORE",
+      "passages": [
+        "Matthew 15:32–39"
+      ],
+      "events": [
+        {
+          "id": "eastern-galilee-shore-miracle-24",
+          "title_en": "Feeding of the four thousand",
+          "title_fr": "Multiplication des pains pour quatre mille hommes",
+          "reference": "Matthew 15:32–39",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-24",
+          "site_evidence": "LAKESIDE_REGION_NOT_EXACT"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "bethsaida",
+      "group": "CHRIST",
+      "title_en": "Bethsaida",
+      "title_fr": "Bethsaïde",
+      "summary_en": "Jesus restores sight to a blind man at Bethsaida; the modern archaeological identification is debated.",
+      "summary_fr": "Jésus rend la vue à un aveugle à Bethsaïde ; l’identification archéologique actuelle reste discutée.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, blind man",
+      "persons_fr": "Jésus, aveugle",
+      "phase": "PUBLIC",
+      "location_semantics": "COMPETING_IDENTIFICATIONS",
+      "passages": [
+        "Mark 8:22–26"
+      ],
+      "events": [
+        {
+          "id": "bethsaida-miracle-25",
+          "title_en": "Healing of a blind man at Bethsaida",
+          "title_fr": "Guérison d’un aveugle à Bethsaïde",
+          "reference": "Mark 8:22–26",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-25",
+          "site_evidence": "EXPLICIT_VILLAGE"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "siloam",
+      "group": "CHRIST",
+      "title_en": "Pool of Siloam — Jerusalem",
+      "title_fr": "Piscine de Siloé — Jérusalem",
+      "summary_en": "Jesus sends a man born blind to wash at Siloam, where he receives sight.",
+      "summary_fr": "Jésus envoie un aveugle-né se laver à Siloé, où il retrouve la vue.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, man born blind",
+      "persons_fr": "Jésus, aveugle-né",
+      "phase": "PUBLIC",
+      "location_semantics": "SUBSITE_OF_JERUSALEM",
+      "passages": [
+        "John 9:1–12"
+      ],
+      "events": [
+        {
+          "id": "siloam-miracle-26",
+          "title_en": "Healing of the man born blind at Siloam",
+          "title_fr": "Guérison de l’aveugle-né à Siloé",
+          "reference": "John 9:1–12",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-26",
+          "site_evidence": "EXPLICIT_POOL_JERUSALEM"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "judean-perean-region",
+      "group": "CHRIST",
+      "title_en": "Judea and Perea — unspecified settings",
+      "title_fr": "Judée et Pérée — lieux non précisés",
+      "summary_en": "Luke relates several healings in homes and synagogues without identifying their town.",
+      "summary_fr": "Luc rapporte plusieurs guérisons dans des maisons et synagogues sans nommer la ville.",
+      "period_en": "Later ministry · first century AD",
+      "period_fr": "Fin du ministère · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, sick people",
+      "persons_fr": "Jésus, malades",
+      "phase": "PUBLIC",
+      "location_semantics": "UNSPECIFIED_REGION",
+      "passages": [
+        "Luke 13:10–17",
+        "Luke 14:1–6"
+      ],
+      "events": [
+        {
+          "id": "judean-perean-region-miracle-30",
+          "title_en": "Healing of the woman bent double",
+          "title_fr": "Guérison de la femme courbée",
+          "reference": "Luke 13:10–17",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-30",
+          "site_evidence": "SYNAGOGUE_NOT_IDENTIFIED"
+        },
+        {
+          "id": "judean-perean-region-miracle-31",
+          "title_en": "Healing of the man with dropsy",
+          "title_fr": "Guérison de l’homme hydropique",
+          "reference": "Luke 14:1–6",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-31",
+          "site_evidence": "PRIVATE_HOUSE_UNIDENTIFIED"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "samaria-galilee-border",
+      "group": "CHRIST",
+      "title_en": "Between Samaria and Galilee",
+      "title_fr": "Entre Samarie et Galilée",
+      "summary_en": "On his way to Jerusalem Jesus cleanses ten lepers in a border region.",
+      "summary_fr": "En chemin vers Jérusalem Jésus purifie dix lépreux dans une région frontalière.",
+      "period_en": "Later ministry · first century AD",
+      "period_fr": "Fin du ministère · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, ten lepers",
+      "persons_fr": "Jésus, dix lépreux",
+      "phase": "PUBLIC",
+      "location_semantics": "EXPLICIT_BORDER_REGION",
+      "passages": [
+        "Luke 17:11–19"
+      ],
+      "events": [
+        {
+          "id": "samaria-galilee-border-miracle-32",
+          "title_en": "Cleansing of ten lepers",
+          "title_fr": "Purification de dix lépreux",
+          "reference": "Luke 17:11–19",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-32",
+          "site_evidence": "EXPLICIT_BORDER_REGION"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
     },
     {
       "id": "bethphage",
@@ -918,6 +1231,15 @@
           "title_en": "The arrest of Jesus",
           "title_fr": "L’arrestation de Jésus",
           "reference": "Matthew 26:47–56"
+        },
+        {
+          "id": "gethsemane-miracle-36",
+          "title_en": "Healing of the high priest's servant's ear",
+          "title_fr": "Guérison de l’oreille du serviteur du grand prêtre",
+          "reference": "Luke 22:49–51",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-36",
+          "site_evidence": "GARDEN_OF_ARREST_TRADITION"
         }
       ]
     },
@@ -1002,6 +1324,37 @@
       ]
     },
     {
+      "id": "bethany-road",
+      "group": "CHRIST",
+      "title_en": "Road from Bethany",
+      "title_fr": "Route de Béthanie",
+      "summary_en": "On the road from Bethany to Jerusalem Jesus addresses a fig tree which subsequently withers.",
+      "summary_fr": "Sur la route de Béthanie à Jérusalem Jésus s’adresse à un figuier qui se dessèche ensuite.",
+      "period_en": "Holy Week · first century AD",
+      "period_fr": "Semaine sainte · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Apostles",
+      "persons_fr": "Jésus, Apôtres",
+      "phase": "PASSION",
+      "location_semantics": "ROAD_NO_EXACT_LOCATION",
+      "passages": [
+        "Mark 11:12–14"
+      ],
+      "events": [
+        {
+          "id": "bethany-road-miracle-35",
+          "title_en": "Withering of the fig tree",
+          "title_fr": "Dessèchement du figuier",
+          "reference": "Mark 11:12–14",
+          "category": "MIRACLE",
+          "miracle_id": "miracle-35",
+          "site_evidence": "ROAD_FROM_BETHANY_NO_POINT"
+        }
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
       "id": "christ-tomb",
       "group": "CHRIST",
       "title_en": "Tomb of Christ / Holy Sepulchre",
@@ -1067,6 +1420,190 @@
           "reference": "Luke 24:13–35"
         }
       ]
+    },
+    {
+      "id": "babylon",
+      "group": "OT",
+      "title_en": "Babylon",
+      "title_fr": "Babylone",
+      "summary_en": "The fall of Jerusalem leads to exile in Babylon, a major setting of the prophetic books.",
+      "summary_fr": "La chute de Jérusalem conduit à l’exil à Babylone, cadre majeur des livres prophétiques.",
+      "period_en": "Sixth century BC",
+      "period_fr": "VIe siècle av. J.-C.",
+      "persons_en": "Nebuchadnezzar, exiles",
+      "persons_fr": "Nabuchodonosor, exilés",
+      "passages": [
+        "2Kings 25:8–12",
+        "Daniel 1:1–6"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "hebron",
+      "group": "OT",
+      "title_en": "Hebron / Mamre",
+      "title_fr": "Hébron / Mambré",
+      "summary_en": "Abraham welcomes three visitors near Mamre. Hebron remains closely linked to the patriarchs.",
+      "summary_fr": "Abraham reçoit trois visiteurs près de Mambré. Hébron reste lié aux patriarches.",
+      "period_en": "Patriarchal narratives · date uncertain",
+      "period_fr": "Récits patriarcaux · date incertaine",
+      "persons_en": "Abraham, Sarah",
+      "persons_fr": "Abraham, Sara",
+      "passages": [
+        "Genesis 18:1–8",
+        "Genesis 23:17–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "carmel",
+      "group": "OT",
+      "title_en": "Mount Carmel",
+      "title_fr": "Mont Carmel",
+      "summary_en": "Elijah confronts the prophets of Baal on Mount Carmel and calls Israel back to the Lord.",
+      "summary_fr": "Élie affronte les prophètes de Baal sur le Carmel et rappelle Israël au Seigneur.",
+      "period_en": "Divided kingdoms · about 9th century BC",
+      "period_fr": "Royaumes divisés · vers le IXe siècle av. J.-C.",
+      "persons_en": "Elijah, Ahab",
+      "persons_fr": "Élie, Achab",
+      "passages": [
+        "1Kings 18:19–39"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "nebo",
+      "group": "OT",
+      "title_en": "Mount Nebo",
+      "title_fr": "Mont Nébo",
+      "summary_en": "Moses views the Promised Land from Mount Nebo. Scripture says his grave's location is unknown.",
+      "summary_fr": "Moïse contemple la Terre promise depuis le mont Nébo. L’Écriture dit que le lieu de sa tombe est inconnu.",
+      "period_en": "End of the Exodus narrative · date uncertain",
+      "period_fr": "Fin du récit de l’Exode · date incertaine",
+      "persons_en": "Moses",
+      "persons_fr": "Moïse",
+      "passages": [
+        "Deuteronomy 34:1–6"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "sinai",
+      "group": "OT",
+      "title_en": "Mount Sinai",
+      "title_fr": "Mont Sinaï",
+      "summary_en": "Israel receives the Law at Sinai after the departure from Egypt; the modern mountain identification is debated.",
+      "summary_fr": "Israël reçoit la Loi au Sinaï après la sortie d’Égypte ; l’identification de la montagne actuelle reste discutée.",
+      "period_en": "Exodus narrative · date uncertain",
+      "period_fr": "Récit de l’Exode · date incertaine",
+      "persons_en": "Moses, Israelites",
+      "persons_fr": "Moïse, Israélites",
+      "passages": [
+        "Exodus 19:16–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "shiloh",
+      "group": "OT",
+      "title_en": "Shiloh",
+      "title_fr": "Silo",
+      "summary_en": "Hannah prays at the sanctuary of Shiloh, where the young Samuel later serves.",
+      "summary_fr": "Anne prie au sanctuaire de Silo, où le jeune Samuel sert ensuite.",
+      "period_en": "Period of the judges · date uncertain",
+      "period_fr": "Époque des Juges · date incertaine",
+      "persons_en": "Hannah, Eli, Samuel",
+      "persons_fr": "Anne, Héli, Samuel",
+      "passages": [
+        "1Samuel 1:9–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "ur",
+      "group": "OT",
+      "title_en": "Ur of the Chaldees",
+      "title_fr": "Our des Chaldéens",
+      "summary_en": "Abraham's family leaves Ur for Haran on the journey toward Canaan.",
+      "summary_fr": "La famille d’Abraham quitte Our pour Harrân, en route vers le pays de Canaan.",
+      "period_en": "Patriarchal narratives · date uncertain",
+      "period_fr": "Récits patriarcaux · date incertaine",
+      "persons_en": "Abraham, Terah",
+      "persons_fr": "Abraham, Tharé",
+      "passages": [
+        "Genesis 11:31"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "bethulia",
+      "group": "DEUTERO",
+      "title_en": "Bethulia",
+      "title_fr": "Béthulie",
+      "summary_en": "Judith's city is threatened by Holofernes. Its exact ancient location is not established.",
+      "summary_fr": "La ville de Judith est menacée par Holopherne. Son emplacement ancien exact n’est pas établi.",
+      "period_en": "Book of Judith · chronology debated",
+      "period_fr": "Livre de Judith · chronologie discutée",
+      "persons_en": "Judith, Holofernes",
+      "persons_fr": "Judith, Holopherne",
+      "passages": [
+        "Judith 7:1–7",
+        "Judith 8:1–8"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "modein",
+      "group": "DEUTERO",
+      "title_en": "Modein",
+      "title_fr": "Modine",
+      "summary_en": "Mattathias and his family come from Modein, where the Maccabean resistance takes shape.",
+      "summary_fr": "Mattathias et sa famille sont originaires de Modine, où prend forme la résistance des Maccabées.",
+      "period_en": "Second century BC",
+      "period_fr": "IIe siècle av. J.-C.",
+      "persons_en": "Mattathias, Judas Maccabeus",
+      "persons_fr": "Mattathias, Judas Maccabée",
+      "passages": [
+        "1Maccabees 2:1–5"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "nineveh",
+      "group": "DEUTERO",
+      "title_en": "Nineveh",
+      "title_fr": "Ninive",
+      "summary_en": "Tobit lives in exile at Nineveh; the city also receives Jonah's call to repentance.",
+      "summary_fr": "Tobie vit en exil à Ninive ; la ville reçoit aussi l’appel à la pénitence du prophète Jonas.",
+      "period_en": "Assyrian period · biblical narrative",
+      "period_fr": "Époque assyrienne · récit biblique",
+      "persons_en": "Tobit, Jonah",
+      "persons_fr": "Tobie, Jonas",
+      "passages": [
+        "Tobit 1:10",
+        "Jonah 3:1–10"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
     },
     {
       "id": "antioch",
@@ -1139,244 +1676,23 @@
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
-    },
-    {
-      "id": "galilee-region",
-      "group": "CHRIST",
-      "title_en": "Galilee — unnamed villages",
-      "title_fr": "Galilée — villages non identifiés",
-      "summary_en": "Some of Christ's healings take place in Galilee without an identifiable town.",
-      "summary_fr": "Certaines guérisons du Christ ont lieu en Galilée sans village identifiable.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, disciples, crowds",
-      "persons_fr": "Jésus, disciples, foules",
-      "phase": "PUBLIC",
-      "location_semantics": "UNSPECIFIED_REGION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "gerasenes",
-      "group": "CHRIST",
-      "title_en": "Country of the Gerasenes",
-      "title_fr": "Pays des Géraséniens",
-      "summary_en": "Across the lake Jesus delivers a demoniac; the Gospels preserve alternative place names.",
-      "summary_fr": "De l’autre côté du lac Jésus délivre un possédé ; les Évangiles conservent plusieurs toponymes.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, demoniac",
-      "persons_fr": "Jésus, possédé",
-      "phase": "PUBLIC",
-      "location_semantics": "COMPETING_IDENTIFICATION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "bethesda",
-      "group": "CHRIST",
-      "title_en": "Pool of Bethesda — Jerusalem",
-      "title_fr": "Piscine de Bethesda — Jérusalem",
-      "summary_en": "Jesus heals a long-suffering invalid beside the pool in Jerusalem.",
-      "summary_fr": "Jésus guérit un malade de longue date près de la piscine, à Jérusalem.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, invalid",
-      "persons_fr": "Jésus, malade",
-      "phase": "PUBLIC",
-      "location_semantics": "SUBSITE_OF_JERUSALEM",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "gennesaret",
-      "group": "CHRIST",
-      "title_en": "Gennesaret",
-      "title_fr": "Génésareth",
-      "summary_en": "Jesus heals many sick people in the lakeside plain of Gennesaret.",
-      "summary_fr": "Jésus guérit de nombreux malades dans la plaine de Génésareth, au bord du lac.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, crowds",
-      "persons_fr": "Jésus, foules",
-      "phase": "PUBLIC",
-      "location_semantics": "EXPLICIT_REGION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "tyre-sidon",
-      "group": "CHRIST",
-      "title_en": "Territory of Tyre and Sidon",
-      "title_fr": "Territoire de Tyr et Sidon",
-      "summary_en": "A Gentile mother asks Jesus to deliver her daughter from an evil spirit.",
-      "summary_fr": "Une mère païenne demande à Jésus de délivrer sa fille d’un esprit mauvais.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Syrophoenician woman",
-      "persons_fr": "Jésus, Syrophénicienne",
-      "phase": "PUBLIC",
-      "location_semantics": "EXPLICIT_REGION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "decapolis",
-      "group": "CHRIST",
-      "title_en": "Decapolis",
-      "title_fr": "Décapole",
-      "summary_en": "Jesus passes through the Decapolis region and heals a deaf man.",
-      "summary_fr": "Jésus traverse la région de la Décapole et guérit un sourd.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, deaf man",
-      "persons_fr": "Jésus, sourd",
-      "phase": "PUBLIC",
-      "location_semantics": "EXPLICIT_REGION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "eastern-galilee-shore",
-      "group": "CHRIST",
-      "title_en": "Other shores of the Sea of Galilee",
-      "title_fr": "Autres rives du lac de Galilée",
-      "summary_en": "Jesus feeds a multitude by the lake; the precise spot is not given.",
-      "summary_fr": "Jésus nourrit une foule près du lac ; le lieu précis n’est pas indiqué.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, disciples",
-      "persons_fr": "Jésus, disciples",
-      "phase": "PUBLIC",
-      "location_semantics": "APPROXIMATE_LAKESHORE",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "bethsaida",
-      "group": "CHRIST",
-      "title_en": "Bethsaida",
-      "title_fr": "Bethsaïde",
-      "summary_en": "Jesus restores sight to a blind man at Bethsaida; the modern archaeological identification is debated.",
-      "summary_fr": "Jésus rend la vue à un aveugle à Bethsaïde ; l’identification archéologique actuelle reste discutée.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, blind man",
-      "persons_fr": "Jésus, aveugle",
-      "phase": "PUBLIC",
-      "location_semantics": "COMPETING_IDENTIFICATIONS",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "siloam",
-      "group": "CHRIST",
-      "title_en": "Pool of Siloam — Jerusalem",
-      "title_fr": "Piscine de Siloé — Jérusalem",
-      "summary_en": "Jesus sends a man born blind to wash at Siloam, where he receives sight.",
-      "summary_fr": "Jésus envoie un aveugle-né se laver à Siloé, où il retrouve la vue.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, man born blind",
-      "persons_fr": "Jésus, aveugle-né",
-      "phase": "PUBLIC",
-      "location_semantics": "SUBSITE_OF_JERUSALEM",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "judean-perean-region",
-      "group": "CHRIST",
-      "title_en": "Judea and Perea — unspecified settings",
-      "title_fr": "Judée et Pérée — lieux non précisés",
-      "summary_en": "Luke relates several healings in homes and synagogues without identifying their town.",
-      "summary_fr": "Luc rapporte plusieurs guérisons dans des maisons et synagogues sans nommer la ville.",
-      "period_en": "Later ministry · first century AD",
-      "period_fr": "Fin du ministère · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, sick people",
-      "persons_fr": "Jésus, malades",
-      "phase": "PUBLIC",
-      "location_semantics": "UNSPECIFIED_REGION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "samaria-galilee-border",
-      "group": "CHRIST",
-      "title_en": "Between Samaria and Galilee",
-      "title_fr": "Entre Samarie et Galilée",
-      "summary_en": "On his way to Jerusalem Jesus cleanses ten lepers in a border region.",
-      "summary_fr": "En chemin vers Jérusalem Jésus purifie dix lépreux dans une région frontalière.",
-      "period_en": "Later ministry · first century AD",
-      "period_fr": "Fin du ministère · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, ten lepers",
-      "persons_fr": "Jésus, dix lépreux",
-      "phase": "PUBLIC",
-      "location_semantics": "EXPLICIT_BORDER_REGION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "bethany-road",
-      "group": "CHRIST",
-      "title_en": "Road from Bethany",
-      "title_fr": "Route de Béthanie",
-      "summary_en": "On the road from Bethany to Jerusalem Jesus addresses a fig tree which subsequently withers.",
-      "summary_fr": "Sur la route de Béthanie à Jérusalem Jésus s’adresse à un figuier qui se dessèche ensuite.",
-      "period_en": "Holy Week · first century AD",
-      "period_fr": "Semaine sainte · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Apostles",
-      "persons_fr": "Jésus, Apôtres",
-      "phase": "PASSION",
-      "location_semantics": "ROAD_NO_EXACT_LOCATION",
-      "passages": [],
-      "events": [],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
     }
   ],
   "christ_event_coverage": {
     "phase_counts": {
       "INFANCY": 5,
-      "PUBLIC": 13,
-      "PASSION": 6,
+      "PUBLIC": 24,
+      "PASSION": 7,
       "RESURRECTION": 2
     },
-    "event_count": 52,
+    "event_count": 80,
     "qualification": "Covers major narratively distinct events of Christ's life, not literally every Gospel pericope; some sites are traditional, disputed or collective regions."
+  },
+  "integrity": {
+    "miracle_catalogue": "data/explore/bible-places-miracles.v1.json",
+    "all_37_linked": true,
+    "miracle_new_event_rows": 28,
+    "miracle_existing_event_matches": 9,
+    "do_not_map_unnamed_regions": true
   }
 }
