@@ -63,9 +63,13 @@ editorial collation proceeds.
 
 English Douay and French Crampon come from pinned Scrollmapper digital
 witnesses with their original Git blob SHA checked by the acquisition script.
-The CPDV transcription is taken instead from Ronald L. Conte Jr.'s **primary
-author-maintained pages** (independently downloaded, checked by byte SHA-256,
-and not from the dated third-party CPDV file). Every book is separate, with a
+The **currently displayed provisional CPDV transcription** is from a pinned
+**older third-party CPDV digital file**, NOT the current author-maintained
+master. It has documented mismatches with Ronald L. Conte Jr.'s newer original
+pages, including meaning-bearing changes (see
+`docs/scripture/CPDV_AUTHOR_MASTER_AUDIT_20261009.md`). The reader explicitly
+warns of this limitation; upgrading CPDV to the independently acquired
+original author-master packs is still outstanding. Every book is separate, with a
 manifest SHA-256, source URL, status `SOURCE_TRANSCRIPTION_UNDER_REVIEW`,
 and explicit blank verse slots. The runtime verifies the SHA-256 before display
 and caches only validated data. It never turns these records into certified
@@ -81,6 +85,9 @@ To reconstruct, run:
 `node tools/scripture/collate-cpdv-master.mjs artifacts/scripture-candidates 73`
 `node tools/scripture/publish-source-transcriptions.mjs artifacts/scripture-candidates data/scripture/source-transcriptions`
 
-The dedicated source-generation workflow runs these steps and commits
-validated output to the feature branch. Formal `SCRIPTURE_EDITIONS.enabled`,
+The approved repository import uses GitHub's authenticated tree API; the
+source-audit GitHub Actions workflow remains read-only under tree hygiene.
+The author's newest CPDV author-master is staged in research artifacts, but
+the published provisional CPDV book files have **not** been switched to it yet.
+Formal `SCRIPTURE_EDITIONS.enabled`,
 `loadScriptureBook` and the 73-book review gates are deliberately unaffected.
