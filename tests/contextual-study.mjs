@@ -35,7 +35,7 @@ assert.match(spiritual,/SL03:"G324"/);
 assert.match(spiritual,/SL12:"G044"/);
 assert.match(bootstrap,/installContextualStudyBridge\(globalThis\)/);
 assert.match(glossary,/state\.origin==="context"/);
-assert.match(glossary,/returning\.trigger\.focus/);
+assert.match(glossary,/trigger\.focus\?\.\(\{preventScroll:true\}\)/,"Glossary contextual return must focus the original or exact-ID replacement trigger");
 
 const handlers={};
 const root={
