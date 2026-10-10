@@ -3473,20 +3473,20 @@
         "to": "learn.sexual_ethics",
         "relationship": "study_to_study",
         "context": "marital_moral_questions",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Open canonically owned contextual reader and restore the invoking owner; no duplicate content or route switch",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/learn/traditional-life.js · LIVING THE MARRIAGE contextual button; src/learn/sexual-ethics.js · exact marriage section with return scroll/focus"
       },
       {
         "from": "learn.latin",
         "to": "learn.glossary",
         "relationship": "study_to_reference",
         "context": "latin_lexemes",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Open canonically owned contextual reader and restore the invoking owner; no duplicate content or route switch",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/learn/latin-course-v2.js · read phase Latin Glossary contextual owner overlay and focus/scroll restoration"
       },
       {
         "from": "pray.confession",
@@ -3494,9 +3494,16 @@
         "relationship": "prayer_to_doctrine",
         "context": "penance_doctrine_lookup",
         "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "selection_rule": "Do not interrupt guided rites or silent adoration with an unproven Catechism route. Reconsider only after exact return-state acceptance.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": null,
+        "interim_reference": {
+          "canonical_owner": "learn.glossary",
+          "entry_id": "G034",
+          "location": "Penance context shown only during Confession preparation",
+          "state": "SOURCE_WIRED_IN_PLACE_PHONE_UNVERIFIED",
+          "exact_catechism_deep_link": false
+        }
       },
       {
         "from": "pray.adoration",
@@ -3504,9 +3511,16 @@
         "relationship": "prayer_to_doctrine",
         "context": "eucharistic_doctrine_lookup",
         "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "selection_rule": "Do not interrupt guided rites or silent adoration with an unproven Catechism route. Reconsider only after exact return-state acceptance.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": null,
+        "interim_reference": {
+          "canonical_owner": "learn.glossary",
+          "entry_id": "G301",
+          "location": "Eucharistic context shown only at Adoration mode selection",
+          "state": "SOURCE_WIRED_IN_PLACE_PHONE_UNVERIFIED",
+          "exact_catechism_deep_link": false
+        }
       },
       {
         "from": "pray.communion_treasury",
@@ -4267,9 +4281,10 @@
     },
     "content_level_relation_audit": {
       "reviewed": 20,
-      "source_wired_not_phone_verified": 16,
-      "proposed_not_wired": 4,
-      "principle": "Evidence is bound to exact source section/handler. A declared link does not prove real phone return; no duplicate source owners."
+      "source_wired_not_phone_verified": 18,
+      "proposed_not_wired": 2,
+      "doctrine_references_in_place": 2,
+      "principle": "Exact 20 relations preserve canonical destinations; two Catechism deep links remain deliberately unwired despite context provided via sourced Glossary."
     }
   },
   "guide_policy": {
@@ -4306,7 +4321,8 @@
     "user_visible_content_crosslinks_implemented": true,
     "reason": "Pray and Formation entry hierarchy implemented; 9 of 20 contextual links were already source wired, 11 remain proposed; phone acceptance still outstanding.",
     "apostolate_intention_navigation_implemented": true,
-    "contextual_batch1_source_wired": true
+    "contextual_batch1_source_wired": true,
+    "contextual_batch2_source_wired": true
   },
   "audit_findings": {
     "obsolete_apostolate_prayer_handoffs_fixed_on_branch": [
@@ -4361,6 +4377,18 @@
       "locked_surfaces": [
         "mass"
       ]
+    },
+    "contextual_batch2": {
+      "actual_new_source_wired": [
+        "learn.rites.matrimony → learn.sexual_ethics",
+        "learn.latin → learn.glossary"
+      ],
+      "safe_inline_reference_alternatives": [
+        "pray.confession → learn.glossary:G034",
+        "pray.adoration → learn.glossary:G301"
+      ],
+      "catechism_direct_links_remaining": 2,
+      "masReaderUntouched": true
     }
   },
   "guides": {

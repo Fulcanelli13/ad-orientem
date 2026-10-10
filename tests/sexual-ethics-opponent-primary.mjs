@@ -10,9 +10,12 @@ const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-au
 const preview=readFileSync("src/learn/sexual-ethics.js","utf8");
 const directIds=["CURRAN1987","FARLEY_QUOTED2012","FARLEY_RESPONSE2012","CURRAN_CDF1986","ACOG_ECTOPIC","ACOG_ECTOPIC_GUIDELINE","MILL_IV_FULL"];
 assert.equal(new Set(CSE_SOURCES.map(s=>s.id)).size,CSE_SOURCES.length);
-assert.equal(CSE_SOURCES.length,89);
+assert.equal(CSE_SOURCES.length,97,"Canonical 97-source inventory changed without provenance review");
 for(const id of directIds){assert.match(CSE_SOURCE_MAP[id].canonical_url,/^https:\/\//);assert.ok(CSE_SOURCE_MAP[id].title);}
 assert.equal(audit.summary.records,55);
+assert.equal(audit.reconciliation?.changed_debates,22);
+assert.equal(audit.reconciliation?.created_source_references,14);
+assert.equal(audit.reconciliation?.original_source_texts_changed,false);
 assert.equal(audit.cases.length,55);
 assert.deepEqual(audit.cases.map(c=>c.id),[...CSE_POSITION_SOURCE_IDS]);
 assert.equal(audit.summary.selected_primary_position_checks,51);

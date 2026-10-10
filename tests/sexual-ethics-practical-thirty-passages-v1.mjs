@@ -38,7 +38,7 @@ for(const x of next.records){
  assert.ok(CSE_DEBATE_MAP[x.id][x.stage][0].length>32&&CSE_DEBATE_MAP[x.id][x.stage][1].length>32);
  assert.ok(paragraphRefsFor(CSE_QUESTION_MAP[x.id],"debate",x.stage).some(([id])=>id===x.source_id));
  assert.equal(x.original_source_url,CSE_SOURCE_MAP[x.source_id].canonical_url);
- assert.ok(x.passage_locator.length>3);
+ assert.ok(x.passage_locator.length>3||/^§[0-9]+$/.test(x.passage_locator),"Exact numbered primary-source paragraphs are valid bounded locators");
  assert.ok(x.what_original_establishes_en.length>75&&x.what_it_does_not_establish_en.length>75,key+" incomplete source scope");
  assert.ok(x.classification.length>10);
  assert.equal(x.english_original_scope_checked,true);
@@ -57,7 +57,7 @@ assert.equal(farley.length,4);
 assert.ok(farley.every(x=>x.source_id==="FARLEY_QUOTED2012" && x.opposing_full_book_independently_collated===false));
 assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[0],/can\. 1108/);
 assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[1],/1108/);
-assert.match(CSE_DEBATE_MAP.CSE054.concession[0],/unjust exaction/);
+assert.match(CSE_DEBATE_MAP.CSE054.concession[0],/(?:unjust exaction|exaction[^.]{0,95}is unjust)/,"conjugal consent must reject unjust exaction in the authentic argument");
 assert.match(CSE_DEBATE_MAP.CSE054.concession[1],/saint Thomas/);
 const archived=["CSE055","CSE056","CSE058"];
 assert.ok(archived.every(id=>!next.records.some(x=>x.id===id)));

@@ -19,8 +19,8 @@ assert.equal(map.schema,"AO_PRAY_FORMATION_ORGANISATIONAL_MAP_V1");
 assert.equal(map.status,"PARTIAL_ENTRY_PRESENTATION_IMPLEMENTED");
 assert.equal(map.acceptance.entry_presentation_implemented,true);
 assert.equal(map.acceptance.user_visible_content_crosslinks_implemented,true);
-assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="SOURCE_WIRED_PHONE_UNVERIFIED").length,16);
-assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="PROPOSED_NOT_WIRED").length,4);
+assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="SOURCE_WIRED_PHONE_UNVERIFIED").length,18);
+assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="PROPOSED_NOT_WIRED").length,2);
 const unique=(entries,label)=>{
   const ids=entries.map(x=>x.id);
   assert.equal(new Set(ids).size,ids.length,label+" duplicates a content ID");
@@ -162,6 +162,30 @@ assert.equal(map.pray.library_categories.reduce((n,x)=>n+x.count,0),48);
 assert.equal(map.guides.source_level_followup_count,25);
 assert.equal(map.guides.source_level_followups.length,25);
 assert.equal(map.guides.fully_verified_in_phone,false);
+const followups=map.connections.editorially_proposed_item_links;
+for(const [from,to] of [["learn.rites.matrimony","learn.sexual_ethics"],["learn.latin","learn.glossary"]]){
+  const link=followups.find(x=>x.from===from&&x.to===to);
+  assert.equal(link?.state,"SOURCE_WIRED_PHONE_UNVERIFIED","new source-owned contextual handoff missing: "+from);
+}
+for(const [from,id] of [["pray.confession","G034"],["pray.adoration","G301"]]){
+  const link=followups.find(x=>x.from===from&&x.to==="learn.catechism");
+  assert.equal(link?.state,"PROPOSED_NOT_WIRED","direct Catechism route must not be falsely certified");
+  assert.equal(link.interim_reference?.entry_id,id);
+  assert.equal(link.interim_reference?.exact_catechism_deep_link,false);
+}
+const traditionalMarriage=read("src/learn/traditional-life.js");
+const ethicsOverlay=read("src/learn/sexual-ethics.js");
+const latinCourse=read("src/learn/latin-course-v2.js");
+assert.match(traditionalMarriage,/data-ao-tradlearn-ethics-context/);
+assert.match(traditionalMarriage,/sectionId:"marriage",origin:"context",trigger/);
+assert.match(ethicsOverlay,/contextReturn/);
+assert.match(ethicsOverlay,/context\.trigger\.focus/);
+assert.match(latinCourse,/data-l2-open-glossary/);
+assert.match(latinCourse,/origin:"context",categoryId:"latin_rubrics",trigger/);
+assert.match(prayerSource,/glossaryContextCapsule\(\x27G034\x27/);
+assert.match(prayerSource,/glossaryContextCapsule\("G301"/);
+assert.equal(map.connections.content_level_relation_audit.doctrine_references_in_place,2);
+
 const contextualRoutes=new Map(map.connections.editorially_proposed_item_links.map(x=>[x.from+" → "+x.to,x]));
 for(const key of ["learn.spiritual_life → pray.nightly_examen","learn.spiritual_life → pray.adoration","learn.rites.sick → pray.good_death","pray.communion_treasury → learn.rites.first_communion","pray.good_death → learn.rites.sick","learn.sexual_ethics → pray.confession","programme.first_friday → pray.sacred_heart"]){
   assert.equal(contextualRoutes.get(key)?.state,"SOURCE_WIRED_PHONE_UNVERIFIED",key+" is not source wired");
@@ -192,4 +216,4 @@ assert.equal(map.formation.sexual_ethics_topic_projection.question_ids.length,15
 assert.equal(map.formation.sexual_ethics_topic_projection.extended_debate_question_ids.length,55);
 assert.equal(map.acceptance.runtime_implemented,false);
 assert.equal(map.acceptance.phone_verified,false);
-console.log("PASS Pray-Formation IA: 23 Prayer doors, 15 Formation entries, 36 Apostolate scenarios, 100 Prayer leaves, 15 declared handoffs, 16 source-wired/4 proposed contextual links, Holy Name seven stages aligned; publication gates intact");
+console.log("PASS Pray-Formation IA: 23 Prayer doors, 15 Formation entries, 36 Apostolate scenarios, 100 Prayer leaves, 15 declared handoffs, 18 source-wired/2 Catechism direct links deferred (doctrine inline), Holy Name seven stages aligned; publication gates intact");

@@ -45,7 +45,7 @@ for(const r of doc.records){
    assert.equal(r.bounded_source,null);
  }
 }
-assert.equal(links,195);
+assert.equal(links,197,"Canonical source-owner reconciliation added two original-document locators, not new questions");
 assert.equal(primary,30);assert.equal(pending,65);
 assert.equal(withDetail,20);
 for(const id of ["CSE057","CSE144","CSE147","CSE148","CSE150"])assert.ok(!CSE_QUESTION_MAP[id].refs.some(x=>x[0]==="LBM"),"no book-catalogue primary proof "+id);
@@ -61,4 +61,4 @@ assert.match(CSE_QUESTION_MAP.CSE110.a[0],/prenatal adoption/);
 assert.match(CSE_QUESTION_MAP.CSE097.a[0],/arising later/);
 assert.match(CSE_QUESTION_MAP.CSE077.a[0],/AI-generated images/);
 assert.match(CSE_QUESTION_MAP.CSE150.a[0],/celibacy/);
-console.log("PASS 95 short answers: 195 live original-source URLs, 30 bounded original-paragraph checks, 65 pending full passage collation; 18 records repaired, five catalogue-only citations removed, zero false independent certifications.");
+console.log("PASS 95 short answers: 197 live original-source URLs, 30 bounded original-paragraph checks, 65 pending full passage collation; 18 records repaired, five catalogue-only citations removed, zero false independent certifications.");

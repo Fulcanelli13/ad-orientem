@@ -18,7 +18,7 @@
   "statistics": {
     "total": 55,
     "stages": 440,
-    "direct_registered_source_references": 612,
+    "direct_registered_source_references": 636,
     "bibliographic_only_rendered": 0,
     "original_or_related_primary_scoped": 51,
     "original_proponent_unverified": [
@@ -30,12 +30,14 @@
     "full_certifications": 0,
     "publication_approval": false,
     "excerpt_via_secondary_case_ids": [
-      "CSE008",
-      "CSE010",
       "CSE145"
     ],
     "original_coauthor_chapter_abstract_case_ids": [
       "CSE123"
+    ],
+    "bounded_original_fletcher_1966_case_ids": [
+      "CSE008",
+      "CSE010"
     ]
   },
   "cases": [
@@ -200,8 +202,8 @@
     {
       "id": "CSE008",
       "source_id": "VS",
-      "doctrinal_evidence_note": "VS 78-81 directly addresses moral object and intention; Fletcher primary wording remains unchecked.",
-      "editorial_status": "ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED",
+      "doctrinal_evidence_note": "Veritatis Splendor 78–81 directly addresses moral object and intention. Fletcher original 1966 selected sections have bounded checks in a third-party digitization, without complete book collation, French approval or eight-stage proof.",
+      "editorial_status": "BOUNDED_ORIGINAL_FLETCHER_1966_DIGITIZATION_NOT_EIGHT_STAGE_CERTIFIED",
       "language_status": "EN_FR_PRESENT_SEMANTIC_PROOFREAD_PENDING",
       "claimed_exact_proponent_quote": false,
       "full_8_stage_certified": false,
@@ -210,7 +212,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -218,7 +220,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
-            "FLETCHER_TABLET"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -252,7 +254,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -285,7 +287,7 @@
       "id": "CSE010",
       "source_id": "VS",
       "doctrinal_evidence_note": "Intrinsic evil means object incompatible with the good; personal culpability is not uniform.",
-      "editorial_status": "ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED",
+      "editorial_status": "BOUNDED_ORIGINAL_FLETCHER_1966_DIGITIZATION_NOT_EIGHT_STAGE_CERTIFIED",
       "language_status": "EN_FR_PRESENT_SEMANTIC_PROOFREAD_PENDING",
       "claimed_exact_proponent_quote": false,
       "full_8_stage_certified": false,
@@ -294,7 +296,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -302,7 +304,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
-            "FLETCHER_TABLET"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -334,7 +336,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -846,6 +848,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
+            "FREUD1924_FULL",
             "FREUD1908"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -854,6 +857,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
+            "FREUD1924_FULL",
             "FREUD1908"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -887,6 +891,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
+            "FREUD1924_FULL",
             "FREUD1908"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -1355,7 +1360,8 @@
           "selected_source_ids": [
             "PH",
             "ST154",
-            "SCR"
+            "SCR",
+            "CIC"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -1401,7 +1407,8 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FARLEY_QUOTED2012"
+            "FARLEY_QUOTED2012",
+            "FARLEY_RESPONSE2012"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -1488,7 +1495,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
-            "APA_LGB"
+            "CIC"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -1591,7 +1598,8 @@
         {
           "stage": "catholicCase",
           "selected_source_ids": [
-            "CASTI"
+            "CASTI",
+            "CIC"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -2399,7 +2407,8 @@
         {
           "stage": "catholicCase",
           "selected_source_ids": [
-            "HV"
+            "HV",
+            "MIDWIVES"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -2528,7 +2537,8 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FARLEY_QUOTED2012"
+            "FARLEY_QUOTED2012",
+            "FARLEY_RESPONSE2012"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -2770,7 +2780,8 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FARLEY_QUOTED2012"
+            "FARLEY_QUOTED2012",
+            "FARLEY_RESPONSE2012"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -3086,7 +3097,8 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FARLEY_QUOTED2012"
+            "FARLEY_QUOTED2012",
+            "FARLEY_RESPONSE2012"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -3238,6 +3250,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
+            "APA_TRANSCARE_FULL2024",
             "APA_TRANSCARE"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -3246,6 +3259,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
+            "APA_TRANSCARE_FULL2024",
             "APA_TRANSCARE"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -3278,6 +3292,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
+            "APA_TRANSCARE_FULL2024",
             "APA_TRANSCARE"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -3314,6 +3329,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
+            "APA_TRANSCARE_FULL2024",
             "APA_TRANSCARE"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -3322,6 +3338,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
+            "APA_TRANSCARE_FULL2024",
             "APA_TRANSCARE"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -3354,6 +3371,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
+            "APA_TRANSCARE_FULL2024",
             "APA_TRANSCARE"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -3982,7 +4000,8 @@
           "stage": "breakpoint",
           "selected_source_ids": [
             "CASTI",
-            "ABORTCLAR"
+            "ABORTCLAR",
+            "USCCB_DIRECT2010"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -3992,7 +4011,8 @@
           "selected_source_ids": [
             "CASTI",
             "ABORTCLAR",
-            "NCBC_ECTOPIC"
+            "NCBC_ECTOPIC",
+            "USCCB_DIRECT2010"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -4010,7 +4030,8 @@
           "selected_source_ids": [
             "CASTI",
             "ABORTCLAR",
-            "ACOG_ECTOPIC"
+            "ACOG_ECTOPIC",
+            "USCCB_DIRECT2010"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -4020,7 +4041,8 @@
           "selected_source_ids": [
             "CASTI",
             "ABORTCLAR",
-            "NCBC_ECTOPIC"
+            "NCBC_ECTOPIC",
+            "USCCB_DIRECT2010"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -4079,7 +4101,8 @@
           "stage": "catholicCase",
           "selected_source_ids": [
             "ST151",
-            "SACRA"
+            "SACRA",
+            "FRANCIS_SPADARO2013"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "DOCTRINAL_OR_ANALYTIC_PARAPHRASE_NOT_INDEPENDENTLY_CERTIFIED"
@@ -4124,6 +4147,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
+            "FREUD1924_FULL",
             "FREUD1908"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -4132,6 +4156,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
+            "FREUD1924_FULL",
             "FREUD1908"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -4166,6 +4191,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
+            "FREUD1924_FULL",
             "FREUD1908"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
@@ -4503,5 +4529,22 @@
     "full_original_passage_certifications": 0,
     "independent_theological_signoff": false,
     "publication_approval": false
+  },
+  "reconciliation": {
+    "date": "2026-10-10",
+    "kind": "STAGE_SELECTED_SOURCE_IDS_MATCH_LIVE_55_CASE_REGISTRY",
+    "changed_stage_selections": 31,
+    "direct_registered_source_references": 636,
+    "bibliographic_only_rendered": 0,
+    "full_eight_stage_certifications": 0,
+    "publication_approval": false,
+    "original_digitized_scope_source_ids": [
+      "FLETCHER1966"
+    ],
+    "source_url_resolver": "src/learn/sexual-ethics-data/source-targets.js",
+    "partial_digitized_original_fletcher_cases": [
+      "CSE008",
+      "CSE010"
+    ]
   }
 }

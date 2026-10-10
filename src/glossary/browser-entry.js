@@ -298,7 +298,7 @@ export function createGlossaryRuntime(win=globalThis){
       const trigger=opts.trigger??win?.document?.activeElement??null;
       let scrollNode=trigger?.parentElement??null;
       while(scrollNode&&!(scrollNode.scrollHeight>scrollNode.clientHeight+2))scrollNode=scrollNode.parentElement;
-      state.contextReturn={trigger,scrollNode,scrollTop:scrollNode?.scrollTop??0};
+      state.contextReturn={trigger,contextId:trigger?.getAttribute?.("data-ao-glossary-context")||null,scrollNode,scrollTop:scrollNode?.scrollTop??0};
     }else state.contextReturn=null;
     state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.latinStage=null;state.query=String(opts.query||"");state.detailId=null;state.detailType="concept";state.contextIds=[];state.origin=String(opts.origin||"learn");
     ensureRoot();attach();state.loading=!state.loaded;render();
@@ -349,7 +349,22 @@ export function createGlossaryRuntime(win=globalThis){
     const hasLiveParent=win?.AO_LEARN_APP_V1?.status?.()?.child===ROUTE_ID;
     if(returning){
       try{if(returning.scrollNode?.isConnected)returning.scrollNode.scrollTop=returning.scrollTop}catch{}
-      try{if(returning.trigger?.isConnected)returning.trigger.focus?.({preventScroll:true})}catch{}
+      try{
+        const trigger=returning.trigger?.isConnected?returning.trigger:
+          (returning.contextId?win?.document?.querySelector?.('[data-ao-glossary-context="'+returning.contextId+'"]'):null);
+        if(trigger?.isConnected){
+          trigger.disabled=false;
+          trigger.focus?.({preventScroll:true});
+          // Other owning readers may flush their overlay/visibility after this
+          // close. Repeat on the next microtask only when focus was displaced;
+          // never navigate away or resurrect a detached trigger.
+          const defer=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
+          defer(()=>{
+            const live=trigger.isConnected?trigger:(returning.contextId?win?.document?.querySelector?.('[data-ao-glossary-context="'+returning.contextId+'"]'):null);
+            if(live?.isConnected&&win?.document?.activeElement!==live){live.disabled=false;live.focus?.({preventScroll:true});}
+          });
+        }
+      }catch{}
     }
     state.contextReturn=null;
     if(returnToLearn&&!hasLiveParent)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
