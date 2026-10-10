@@ -8,6 +8,7 @@ import {
   projectExploreDataset,
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
+import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap } from "./map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
@@ -99,7 +100,7 @@ function installStyle(win){
     ".aoHeritageSurface .aoFindSheetBackdrop{background:rgba(0,0,0,.34)}.aoHeritagePreview{max-width:660px;max-height:48vh}.aoHeritagePreview h2{font-size:21px}.aoHeritagePlaceTags{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.aoHeritagePlaceTags span{background:#19212b;border:1px solid rgba(217,197,154,.17);padding:6px 9px;border-radius:999px;color:#cbbca5;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritageCaution{font:12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#b2a58f;margin:9px 0}.aoHeritagePreviewActions{display:flex;gap:8px;margin-top:10px}.aoHeritagePreviewActions button,.aoHeritagePreviewActions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid rgba(217,197,154,.27);border-radius:999px;background:#1d2023;color:#e9d3a7;padding:10px 16px;text-decoration:none;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritagePreviewActions button:first-child{background:#dac494;color:#0b121b}",
     ".aoHeritageStripActions{display:flex;align-items:center;gap:8px}.aoExploreReturnMap{grid-column:1/-1}@media(max-width:520px){.aoHeritageCategories{padding:7px 8px}.aoHeritageTools{padding:0 8px 7px}.aoHeritageCustomStrip{left:12px;right:12px;bottom:34px}.aoHeritageCustomRail button{flex-basis:126px}.aoHeritagePreviewActions{flex-wrap:wrap}.aoHeritageSurface .aoFindHeader h1{font-size:19px}}",
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(3,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}"
-  ].join("");
+  ].join("")+HERITAGE_STYLE;
   win.document.head?.append?.(style);
 }
 
@@ -161,6 +162,41 @@ export function createFindOwner(win=globalThis){
       return false;
     }finally{button?.removeAttribute?.("aria-busy");}
   }
+  function nearbyStatus(message){
+    const label=getRoot(win)?.querySelector?.("[data-heritage-location-status]");
+    if(label){label.textContent=String(message||"");label.hidden=!message;}
+  }
+  // Explicit user gesture only. Coordinates never enter Ad Orientem's data
+  // registry and do not change the canonical point/source records.
+  function locateNearby(button){
+    if(state.lens!=="heritage")return;
+    nearbyStatus("");
+    const geo=win?.navigator?.geolocation;
+    if(!geo?.getCurrentPosition){
+      nearbyStatus(language(win)==="fr"?"Géolocalisation indisponible sur cet appareil.":"Location unavailable on this device.");
+      return;
+    }
+    if(!mapHandle?.map){
+      nearbyStatus(language(win)==="fr"?"Carte indisponible. Cherchez un lieu par son nom.":"Map unavailable. Search for a place by name.");
+      return;
+    }
+    button?.setAttribute?.("aria-busy","true");
+    geo.getCurrentPosition(position=>{
+      button?.removeAttribute?.("aria-busy");
+      if(!openState||state.lens!=="heritage"||!mapHandle?.map)return;
+      const lat=position?.coords?.latitude,lng=position?.coords?.longitude;
+      if(!Number.isFinite(lat)||!Number.isFinite(lng))return;
+      const currentZoom=mapHandle.map.getZoom?.()??2;
+      const options={center:[lng,lat],zoom:Math.max(currentZoom,7)};
+      if(win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)mapHandle.map.jumpTo?.(options);
+      else mapHandle.map.easeTo?.({...options,duration:450});
+      nearbyStatus(language(win)==="fr"?"Carte centrée sur votre position. Seuls les lieux documentés sont affichés.":"Map centred near you. Only documented sites are shown.");
+    },()=>{
+      button?.removeAttribute?.("aria-busy");
+      nearbyStatus(language(win)==="fr"?"Accès à la position refusé ou indisponible. Utilisez la recherche.":"Location permission denied or unavailable. Use search instead.");
+    },{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
+  }
+
   async function ensureData(){
     if(dataset)return dataset;
     if(!loading){
@@ -302,8 +338,20 @@ export function createFindOwner(win=globalThis){
         if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
         mapHandle=nextHandle;
       }catch(error){
-        const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
-        if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
+        // MapLibre may fail offline or behind a tile/CDN blocker. It empties
+        // its container before construction; put an accessible recovery back.
+        if(mapNode&&win?.document){
+          const panel=win.document.createElement("div");
+          panel.className="aoFindMapFallback";
+          const title=win.document.createElement("strong");
+          title.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
+          const detail=win.document.createElement("span");
+          detail.textContent=language(win)==="fr"
+            ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
+            :"Use search above to open any place and its source references.";
+          panel.append(title,detail);
+          mapNode.replaceChildren(panel);
+        }
         console.error("Explore map failed",error);
       }
     }
@@ -398,6 +446,7 @@ export function createFindOwner(win=globalThis){
       void paint().finally(()=>retry.removeAttribute?.("aria-busy"));
       return;
     }
+    const nearButton=target?.closest?.("[data-heritage-nearby]");if(nearButton){event.preventDefault?.();locateNearby(nearButton);return;}
     const glossaryButton=target?.closest?.("[data-find-glossary]");if(glossaryButton){event.preventDefault?.();event.stopPropagation?.();void openGlossary(glossaryButton);return}
     if(target?.closest?.("[data-find-clear-calendar]")){
       event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
@@ -512,6 +561,14 @@ export function createFindOwner(win=globalThis){
     const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
   }
 
+  function onKeyDown(event){
+    if(!openState||event?.key!=="Escape")return;
+    if(state.selectedPlaceId){event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint();return;}
+    if(state.selectedId){event.preventDefault?.();state.selectedId=null;void paint();return;}
+    const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open]");
+    if(disclosure){event.preventDefault?.();disclosure.open=false;}
+  }
+
   function onInput(event){
     if(!openState)return;
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
@@ -529,6 +586,7 @@ export function createFindOwner(win=globalThis){
   win?.document?.addEventListener?.("click",onClick,true);
   win?.document?.addEventListener?.("input",onInput,true);
   win?.document?.addEventListener?.("change",onChange,true);
+  win?.document?.addEventListener?.("keydown",onKeyDown,true);
   installStyle(win);ensureRoot(win);
 
   return Object.freeze({
@@ -553,6 +611,7 @@ export function createFindOwner(win=globalThis){
       win?.document?.removeEventListener?.("click",onClick,true);
       win?.document?.removeEventListener?.("input",onInput,true);
       win?.document?.removeEventListener?.("change",onChange,true);
+      win?.document?.removeEventListener?.("keydown",onKeyDown,true);
       getRoot(win)?.remove?.();
     }
   });
