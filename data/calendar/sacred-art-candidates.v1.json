@@ -15320,6 +15320,176 @@
         "artCuratorApproval": false,
         "phoneHeroCropApproval": false
       }
+    },
+    {
+      "id": "met-437336",
+      "title": "Madonna and Child with Saints Francis and Dominic and Angels",
+      "artist": "Giulio Cesare Procaccini",
+      "dated": "ca. 1612",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437336",
+        "objectId": "437336",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met official object and public-domain painting classification plus original image recorded with hash in source acquisition run 38054107621.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "our-lady-rosary",
+          "institution-rosary"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "holy-rosary"
+        ],
+        "relationToTarget": "EXPLICIT_MUSEUM_CURATORIAL_INSTITUTION_OF_ROSARY",
+        "targetResearchIds": [
+          "calendar.holy-rosary"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2102,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "EXPLICIT_MUSEUM_CURATORIAL_INSTITUTION_OF_ROSARY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38054107621",
+        "artifactId": 11670573051,
+        "archiveOriginal": "originals/met-437336.jpg",
+        "originalSha256": "934a14aa1e9c3efe31a9170825f24bf37b5bd6083953ebeb5c91cdc7265baf27",
+        "originalWidth": 2102,
+        "originalHeight": 3722,
+        "colourFraction": 0.6713,
+        "bytes": 1699030
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "our-lady-rosary",
+          "institution-rosary"
+        ],
+        "prayerKeys": [
+          "holy-rosary"
+        ],
+        "prayerRoutes": [
+          "pray.rosary",
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "EXPLICIT_MUSEUM_CURATORIAL_INSTITUTION_OF_ROSARY",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-437578",
+      "title": "Christ in Glory",
+      "artist": "Russian (Novgorod?) Painter",
+      "dated": "late 15th century",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437578",
+        "objectId": "437578",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met official object and public-domain painting classification plus original image recorded with hash in source acquisition run 38054107621.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "christ-in-glory"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "THEMATIC_GLORIFIED_CHRIST_NOT_EXACT_1962_FEAST",
+        "targetResearchIds": [
+          "calendar.christ-king",
+          "devotion.christ-king"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2624,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "THEMATIC_GLORIFIED_CHRIST_NOT_EXACT_1962_FEAST"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38054107621",
+        "artifactId": 11670573051,
+        "archiveOriginal": "originals/met-437578.jpg",
+        "originalSha256": "9b937183a1b0b65db29b1fca25b3337fbcb0618d42050e7496d37c06d724ee33",
+        "originalWidth": 2624,
+        "originalHeight": 3722,
+        "colourFraction": 0.9465,
+        "bytes": 3635241
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "christ-in-glory"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "THEMATIC_GLORIFIED_CHRIST_NOT_EXACT_1962_FEAST",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
     }
   ],
   "notes": [
