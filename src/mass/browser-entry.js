@@ -7,6 +7,8 @@ import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
 import { specialMassPresentation,renderSpecialMassContext } from "./full-mass-special-presentation.js";
+import { mountSpecialMassStage } from "./reader-special-stage.js";
+import "./reader-special-stage-styles.js";
 import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
 import "./full-mass-preflight-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
@@ -570,6 +572,7 @@ export function suspendPersistedMass({
   }
 
   globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.();
+  globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
   preview?.destroy?.();
   try { delete globalThis.AO_R17_ACTIVE_MASS; } catch {}
   try { delete globalThis.AO_R17_MASS_RUNTIME; } catch {}
@@ -615,6 +618,10 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
   installReaderSpecialMassContext(previewState.preview,prepared);
+  globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
+  globalThis.AO_R17_SPECIAL_STAGE=mountSpecialMassStage({
+    preview:previewState.preview,prepared,doc:document,
+  });
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,
@@ -647,6 +654,7 @@ export async function resumePersistedMass({
     clearPersistedActiveMass(storage);
     try { globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.(); } catch {}
     try { globalThis.AO_R17_NATIVE_READER_PREVIEW?.destroy?.(); } catch {}
+    globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
     try { delete globalThis.AO_R17_ACTIVE_MASS; } catch {}
     try { delete globalThis.AO_R17_MASS_RUNTIME; } catch {}
     if (globalThis.document?.documentElement?.dataset) {
