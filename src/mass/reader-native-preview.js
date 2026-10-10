@@ -539,9 +539,14 @@ export async function mountNativeReaderPreview({
         #ao-r17-native-reader-preview .ao-reader-paragraph[data-speaker]{
           padding-top:9px;
         }
-        #ao-r17-native-reader-preview .ao-reader-paragraph[data-speaker="COMMUNICANTS"]{
+        #ao-r17-native-reader-preview .ao-reader-paragraph[data-speaker="ALL"]{
           border-left:2px solid rgba(178,201,183,.46);
           padding-left:12px;
+        }
+        #ao-r17-native-reader-preview .ao-good-friday-repeat{
+          display:inline-block;margin:0 0 8px;
+          font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+          letter-spacing:.03em;color:#b2c0b6;
         }
       `;
       root.append(style);
@@ -550,11 +555,19 @@ export async function mountNativeReaderPreview({
     function updateCommunionSpeakerLabels(){
       // The canonical GF source paragraphs carry speaker metadata; labels
       // appear only when the speaker changes, never as extra liturgical text.
-      const voiceById=new Map((controller.project().card?.paragraphs??[])
-        .filter(row=>row.speaker).map(row=>[row.id,row.speaker]));
+      const rowsById=new Map((controller.project().card?.paragraphs??[])
+        .map(row=>[row.id,row]));
       let previous=null;
       for(const node of host.querySelectorAll?.(".ao-reader-paragraph[data-paragraph-id]")??[]){
-        const speaker=voiceById.get(node.dataset.paragraphId)??null;
+        const row=rowsById.get(node.dataset.paragraphId);
+        const speaker=row?.speaker??null;
+        const repeat=node.querySelector(".ao-good-friday-repeat");
+        if(row?.repetitions>1){
+          const marker=repeat??doc.createElement("span");
+          marker.className="ao-good-friday-repeat";
+          marker.textContent=String(row.repetitions)+" times";
+          if(!repeat)node.insertBefore(marker,node.querySelector(".ao-line-primary")??node.firstChild);
+        }else repeat?.remove();
         const old=node.querySelector(".ao-good-friday-speaker-label");
         if(!speaker){
           delete node.dataset.speaker;
