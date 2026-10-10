@@ -147,7 +147,7 @@ function familyById(id){
 
 function discoveryLabel(result,state){
  const langFr=isFr(state);
- if(result.kind==="content")return ({topic:langFr?"Thème · Morale":"Topic · Ethics",question:langFr?"Question · Morale":"Question · Ethics",spiritual:langFr?"Leçon · Vie spirituelle":"Lesson · Spiritual Life",latin:langFr?"Leçon · Latin":"Lesson · Latin"})[result.contentKind]||"Formation";
+ if(result.kind==="content")return ({topic:langFr?"Thème · Morale":"Topic · Ethics",question:langFr?"Question · Morale":"Question · Ethics",spiritual:langFr?"Leçon · Vie spirituelle":"Lesson · Spiritual Life",latin:langFr?"Leçon · Latin":"Lesson · Latin",catechism:langFr?"Question · Catéchisme (titre anglais)":"Question · Catechism"})[result.contentKind]||"Formation";
  return result.kind==="reference"
   ?(langFr?"Définition · Glossaire":"Definition · Glossary"):
   result.kind==="module"?(langFr?"Formation":"Learn"):
