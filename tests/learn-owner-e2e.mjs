@@ -468,6 +468,69 @@ try{
     await assertFocusSafe(id+" return");
   }
 
+  // The legacy phone suite already covered Spiritual Life, Glossary and all
+  // eight traditional guides. These five cold entry cards were only listed,
+  // not actually tapped. Exercise their public launchers and the Back/Close
+  // path before claiming 15/15 Formation module reachability.
+  const remainingFormation=[
+    {id:"learn.catechism.daily",family:"foundations",root:"#ao-daily-cate-root",exit:"daily"},
+    {id:"learn.catechism",family:"foundations",root:"#ao-cate-root",exit:"catechism"},
+    {id:"learn.sexual_ethics",family:"spiritual-moral",root:"#ao-sexual-ethics-root",exit:"[data-ao-cse-back]"},
+    {id:"learn.mass",family:"liturgy-tradition",root:"#ao-mass-formation-root",exit:"[data-ao-mf-close]"},
+    {id:"learn.latin",family:"latin",root:"#ao-latin-course-root",exit:"[data-l2-back]"},
+  ];
+  const entered=[];
+  for(const spec of remainingFormation){
+    await openFormationFamily(spec.family);
+    const launcher=page.locator('#ao-learn-modular-root [data-ao-learn-module="'+spec.id+'"]');
+    assert.equal(await launcher.count(),1,"Formation has no unique visible card for "+spec.id);
+    const buttonSize=await launcher.evaluate(node=>({width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height}));
+    assert.ok(buttonSize.width>=44&&buttonSize.height>=44,"Formation card smaller than a touch target: "+spec.id);
+    await launcher.tap({timeout:12000});
+    await page.waitForSelector(spec.root,{state:"visible",timeout:25000});
+    await page.waitForFunction(id=>globalThis.AO_LEARN_APP_V1?.status?.().child===id,spec.id,{timeout:12000});
+    const child=await page.locator(spec.root).evaluate(node=>({
+      length:node.innerText.trim().length,
+      overflow:node.scrollWidth-node.clientWidth,
+      size:node.getBoundingClientRect().width,
+      buttons:node.querySelectorAll("button").length,
+    }));
+    assert.ok(child.length>=40,"Blank Formation child: "+spec.id);
+    assert.ok(child.overflow<=1,"Formation child has horizontal overflow: "+spec.id);
+    assert.ok(child.size>300,"Formation child collapsed on phone: "+spec.id);
+    assert.ok(child.buttons>0,"Formation child lacks user actions: "+spec.id);
+    await assertFocusSafe("Formation "+spec.id+" opened");
+    if(spec.exit==="daily"){
+      // Exercise the actual donor close control, not a programmatic API exit.
+      await page.locator(spec.root+" [data-dc-close]").tap({timeout:10000});
+    }else if(spec.exit==="catechism"){
+      // The overview's native Close button must restore its suspended family.
+      await page.locator(spec.root+" [data-cate-close]").tap({timeout:10000});
+    }else{
+      await page.locator(spec.root+" "+spec.exit).first().tap({timeout:10000});
+    }
+    await page.waitForFunction(family=>{
+      const s=globalThis.AO_LEARN_APP_V1?.status?.();
+      return s?.open===true&&s?.child==null&&s?.family===family
+        &&!!document.getElementById("ao-learn-modular-root")
+        &&!document.getElementById("ao-learn-modular-root")?.hidden;
+    },spec.family,{timeout:14000});
+    assert.equal(await page.locator(spec.root).isVisible().catch(()=>false),false,"Closed Formation child remains visible: "+spec.id);
+    await assertFocusSafe("Formation "+spec.id+" returned");
+    entered.push(spec.id);
+  }
+  const previouslyCovered=[
+    "learn.spiritual_life","learn.glossary","learn.scapular",
+    "learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism",
+    "learn.rites.first_communion","learn.rites.confirmation",
+    "learn.rites.holy_orders","learn.rites.matrimony",
+  ];
+  assert.equal(entered.length,5);
+  assert.deepEqual([...new Set([...previouslyCovered,...entered])].sort(),
+    [...learned.status.modules].sort(),
+    "15 Formation launchers must each have an actual phone entry/return");
+  console.log("PASS all 15 Formation entry points: ten existing phone journeys + five cold visible-card launches and exact family returns");
+
   assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.seasonal_rites"]').count(),0,
     "final v38.4 donor dedupe requires no duplicate Seasonal Catholic Practice launcher");
   const seasonal=await page.evaluate(()=>globalThis.AO_MODULES?.open?.("learn.seasonal_rites",{returnContext:{surface:"learn"}}));
