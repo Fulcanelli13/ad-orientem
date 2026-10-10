@@ -86,7 +86,8 @@ try{
       await page.locator("#ao-learn-modular-root [data-ao-learn-back]").tap();
       await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
     }
-    await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).tap();
+    if(id==="questions")await page.locator("#ao-learn-modular-root [data-ao-learn-questions]").tap();
+    else await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).tap();
     await page.waitForFunction(expected=>globalThis.AO_LEARN_APP_V1?.status?.().family===expected,id,{timeout:10000});
   }
 
@@ -475,7 +476,7 @@ try{
   const remainingFormation=[
     {id:"learn.catechism.daily",family:"foundations",root:"#ao-daily-cate-root",exit:"daily"},
     {id:"learn.catechism",family:"foundations",root:"#ao-cate-root",exit:"catechism"},
-    {id:"learn.sexual_ethics",family:"spiritual-moral",root:"#ao-sexual-ethics-root",exit:"[data-ao-cse-back]"},
+    {id:"learn.sexual_ethics",family:"questions",root:"#ao-sexual-ethics-root",exit:"[data-ao-cse-back]"},
     {id:"learn.mass",family:"liturgy-tradition",root:"#ao-mass-formation-root",exit:"[data-ao-mf-close]"},
     {id:"learn.latin",family:"latin",root:"#ao-latin-course-root",exit:"[data-l2-back]"},
   ];

@@ -1332,7 +1332,17 @@ try{
   assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
   assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
   assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
-  assert.equal(learnParity.cards.length,8,"Formation should show six learning-intent doors and two explicitly labelled draft-study collections");
+  assert.equal(learnParity.cards.length,6,"Formation landing should show six uncluttered learning-intent doors");
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-dossier-review]").count(),0,
+    "Preliminary study collections belong inside Questions, not the root");
+  await page.locator("#ao-learn-modular-root [data-ao-learn-questions]").click();
+  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="questions",null,{timeout:5000});
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='learn.sexual_ethics']").count(),1,
+    "Questions lost its canonical published Sexual Ethics owner");
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-dossier-review]").count(),2,
+    "Questions must visibly distinguish both unapproved research collections");
+  await page.locator("#ao-learn-modular-root [data-ao-learn-back]").click();
+  await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:5000});
   for(const card of learnParity.cards){assert.ok(card.w>300,"Learn card collapsed below phone-readable width");assert.ok(card.h>=90,"Learn card collapsed below approved touch/readability height");}
   await page.locator("#ao-learn-modular-root [data-ao-learn-family='spiritual-moral']").click();
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="spiritual-moral",null,{timeout:5000});

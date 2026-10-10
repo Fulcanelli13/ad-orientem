@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync,existsSync} from "node:fs";
 import {LEARN_LAYOUT,LEARN_MODULE_IDS,renderLearnPresentation,learnDiscoveryMarkup} from "../src/learn/presentation.js";
-import {searchDiscovery,normalizeDiscovery,DISCOVERY_SURFACES,loadReferenceDiscovery} from "../src/learn/discovery.js";
+import {searchDiscovery,normalizeDiscovery,DISCOVERY_SURFACES,loadReferenceDiscovery,loadFormationContentDiscovery} from "../src/learn/discovery.js";
 
 const raw=JSON.parse(readFileSync("data/app/public-reference-discovery.v1.json","utf8"));
 assert.equal(raw.schema,"AO_PUBLIC_REFERENCE_DISCOVERY_V1");
@@ -65,4 +65,74 @@ assert.match(owner,/opts\?\.phraseId/);
 assert.match(owner,/state\.discoveryQuery/);
 assert.match(owner,/\["home","mass","pray","calendar","find","apostolate"\]/);
 assert.doesNotMatch(owner,/LEARN_MODULE_IDS\.push/);
-console.log("PASS 15 canonical Formation launchers, 880 Glossary references, bilingual search and fail-closed publication policy");
+
+const content=JSON.parse(readFileSync("data/app/formation-discovery-content.v1.json","utf8"));
+assert.equal(content.schema,"AO_FORMATION_DISCOVERY_CONTENT_V1");
+assert.equal(content.entries.length,687);
+assert.deepEqual(content.counts,{topic:50,question:150,spiritual:14,latin:40,catechism:433});
+assert.equal(new Set(content.entries.map(row=>row.id)).size,687,"Formation discovery duplicates a content owner");
+const cq=text=>searchDiscovery(text,{sections:LEARN_LAYOUT.sections,referenceEntries:raw.entries,
+  contentEntries:content.entries,limit:40});
+for(const [term,id,kind] of [["CSE123","CSE123","question"],["SEX-CORE-35","SEX-CORE-35","topic"],
+  ["SL01","SL01","spiritual"],["latin:40","latin:40","latin"],["PX1912-Q001","PX1912-Q001","catechism"],["PX1912-Q433","PX1912-Q433","catechism"]]){
+ assert.ok(cq(term).some(row=>row.kind==="content"&&row.id===id&&row.contentKind===kind),
+   "Missing direct canonical search destination "+id);
+}
+assert.ok(cq("vie intérieure").some(row=>row.id==="SL01"),"French spiritual lesson search failed");
+assert.ok(cq("contraception").some(row=>row.id==="SEX-CORE-17"),"Sexual Ethics topic search failed");
+assert.equal(content.entries.some(row=>/^(?:APOL-|CR-)/.test(row.id)),false,
+  "Unapproved 141-dossier research must not enter global discovery index");
+const searchHtml=learnDiscoveryMarkup(state,fakeWin,{query:"CSE123",referenceEntries:raw.entries,
+  referenceStatus:"ready",contentEntries:content.entries,contentStatus:"ready"});
+assert.match(searchHtml,/data-ao-learn-content-id="CSE123"/);
+assert.match(searchHtml,/data-ao-learn-content-kind="question"/);
+assert.match(searchHtml,/data-ao-learn-module="learn.sexual_ethics"/);
+
+const nativeWitness=JSON.parse(readFileSync("data/learn/ltfaith-pius-x-en-witness-index.v1.json","utf8"));
+const guided=JSON.parse(readFileSync("data/learn/learn-the-faith-55-proposed-reconciliation-2026-10-09.v1.json","utf8"));
+assert.equal(nativeWitness.entries.length,433);
+assert.equal(guided.lessons.length,55);
+const owners=new Map(guided.lessons.flatMap(l=>l.primaryCatechismQuestionNumbers.map(n=>[n,l])));
+assert.equal(owners.size,433);
+const indexedCatechism=content.entries.filter(x=>x.kind==="catechism");
+assert.equal(indexedCatechism.length,433);
+for(const witness of nativeWitness.entries){
+ const item=indexedCatechism.find(x=>x.questionNumber===witness.q);
+ assert.ok(item,"Missing native Catechism question "+witness.q);
+ assert.equal(item.route,"learn.catechism");
+ assert.equal(item.id,"PX1912-Q"+String(witness.q).padStart(3,"0"));
+ assert.equal(item.title[0],witness.q_stem,"Catechism question text differs from pinned English witness");
+ assert.equal(item.title[1],witness.q_stem,"French original must not be invented from an English witness");
+ assert.equal(item.titleLanguage,"en","Missing honest witness-language provenance");
+ assert.equal(item.lessonRef,owners.get(witness.q)?.displayLessonId);
+ assert.ok(item.terms.includes(owners.get(witness.q)?.title?.fr),"French study-family keyword missing");
+}
+assert.equal(content.entries.some(x=>x.id.startsWith("LTF-")),false,
+ "Uncertified 55-lesson guided Catechism must not be published through discovery");
+assert.ok(cq("question 433").some(x=>x.id==="PX1912-Q433"));
+assert.ok(cq("création").every(x=>x.kind!=="content"||x.contentKind!=="catechism"||x.titleLanguage!=="fr"),
+ "Search should not claim translated question text");
+const catechismMarkup=learnDiscoveryMarkup(french,fakeWin,{query:"PX1912-Q433",referenceEntries:raw.entries,
+ referenceStatus:"ready",contentEntries:content.entries,contentStatus:"ready"});
+assert.match(catechismMarkup,/data-ao-learn-content-id="PX1912-Q433"/);
+assert.match(catechismMarkup,/data-ao-learn-module="learn.catechism"/);
+assert.match(catechismMarkup,/titre anglais/);
+
+let contentRequests=0;
+const loadedContent=await loadFormationContentDiscovery({fetch:async url=>{
+ contentRequests++;
+ assert.ok(String(url).includes("/data/app/formation-discovery-content.v1.json"));
+ return {ok:true,json:async()=>content};
+}});
+assert.equal(loadedContent.length,687);
+assert.equal(contentRequests,1);
+assert.equal(await loadFormationContentDiscovery({fetch:async()=>{throw Error("content refetch");}}),loadedContent);
+const ownerDeep=readFileSync("src/learn/browser-entry.js","utf8");
+assert.match(ownerDeep,/registry\.open\(id,opts\)/,"Module launch drops search deep-link options");
+assert.match(ownerDeep,/contentKind==="spiritual"/);
+assert.match(ownerDeep,/contentKind==="question"/);
+assert.match(ownerDeep,/contentKind==="catechism"/);
+assert.match(ownerDeep,/openNativeCatechismQuestion/);
+assert.match(ownerDeep,/opts\?\.lessonNumber/);
+console.log("PASS 15 Formation launchers, 880 Glossary references, 687 search entries including 433 native Catechism questions; unpublished guided lessons remain gated");
+

@@ -34,6 +34,7 @@ const asText = (value,win) => {
   return "";
 };
 const slug = text => String(text||"").toLowerCase().replace(/[^a-z0-9]+/g,"-");
+const searchKey = value => String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 const kind = k => ({
   answer_paragraphs:"Answer",short_answer:"Short answer",paragraphs:"Paragraphs",
   sedevacantist_case:"Sedevacantist case",critical_assessment:"Critical assessment",
@@ -247,9 +248,10 @@ export function createFormationRecoveryReview(win=globalThis) {
     (state.corpus==="all"||x.corpus===state.corpus)&&
     (state.family==="all"||x.family===state.family));
   const dossierRows=()=>{
-    const q=state.query.toLowerCase().trim();
+    const q=searchKey(state.query).trim();
     const selected=visibleDossiers().filter(x=>
-      [x.id,x.title,x.family,familyName(x.family),...x.research.flatMap(y=>[y.title_en,y.title_fr])].some(v=>String(v||"").toLowerCase().includes(q)));
+      [x.id,x.title,x.family,familyName(x.family),...x.research.flatMap(y=>[y.title_en,y.title_fr]),
+       ...(x.synthesis?.sections||[]).flatMap(section=>[section.text?.en,section.text?.fr])].some(v=>searchKey(v).includes(q)));
     return selected.map(x=>'<button type="button" data-rr-dossier="'+esc(x.id)+'"><small>'+
       esc(x.id)+' · '+esc(familyName(x.family))+' · '+esc(state.studyPreview?pick(win,'Draft answer · sources linked','Brouillon sourcé'):(x.synthesis?pick(win,'Draft with source links','Brouillon avec sources'):pick(win,'Draft pending','Brouillon en attente')))+(state.studyPreview?'':' · '+esc(x.research.length+' '+pick(win,'prior records','recherches antérieures')))+
       '</small>'+esc(x.title)+'</button>').join("")||

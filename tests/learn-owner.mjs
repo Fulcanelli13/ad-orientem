@@ -15,22 +15,26 @@ import {
   const root=()=>({dataset:{},innerHTML:""});
   const normal=root();
   renderLearnPresentation(normal,{language:"en"},{location:{search:""},document:{getElementById:()=>null}});
-  assert.match(normal.innerHTML,/data-ao-learn-dossier-review="apologetics"/,"Apologetics not visible without hidden query flag");
-  assert.match(normal.innerHTML,/data-ao-learn-dossier-review="crisis"/,"Church Crisis not visible without hidden query flag");
-  assert.match(normal.innerHTML,/Early study preview/,"unapproved sources must be conspicuous");
+  assert.match(normal.innerHTML,/data-ao-learn-questions/,"Questions area is not discoverable");
+  assert.doesNotMatch(normal.innerHTML,/data-ao-learn-dossier-review=/,"research cards should be organised inside Questions, not on the landing");
   const preview=root();
   const win={location:{search:"?aoFormationReview=1"},document:{getElementById:()=>null}};
   assert.equal(formationDossierReviewEnabled(win),true);
   assert.equal(formationDossierReviewEnabled({location:{search:"?aoFormationReview=0"}}),false);
   assert.equal(formationDossierReviewEnabled({location:{search:"?foo=aoFormationReview=1"}}),false);
-  renderLearnPresentation(preview,{language:"en"},win);
+  renderLearnPresentation(preview,{language:"en"},win,{familyId:"questions"});
+  assert.match(preview.innerHTML,/data-ao-learn-module="learn.sexual_ethics"/);
   assert.match(preview.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
   assert.match(preview.innerHTML,/data-ao-learn-dossier-review="crisis"/);
-  assert.match(preview.innerHTML,/Early study preview/);
+  assert.match(preview.innerHTML,/Early study preview/,"unapproved research must remain visibly marked");
   const french=root();
-  renderLearnPresentation(french,{language:"fr"},win);
+  renderLearnPresentation(french,{language:"fr"},win,{familyId:"questions"});
   assert.match(french.innerHTML,/Apologétique/);
   assert.match(french.innerHTML,/Crise dans l’Église/);
+  const spiritual=root();
+  renderLearnPresentation(spiritual,{language:"en"},win,{familyId:"spiritual-moral"});
+  assert.match(spiritual.innerHTML,/data-ao-learn-module="learn.spiritual_life"/);
+  assert.doesNotMatch(spiritual.innerHTML,/data-ao-learn-module="learn.sexual_ethics"/,"moral questions are now housed in Questions");
 }
 
 assert.equal(LEARN_DONOR_RELEASE,"43.59.30");
