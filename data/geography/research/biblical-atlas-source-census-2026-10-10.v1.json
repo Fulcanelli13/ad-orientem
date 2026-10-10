@@ -81,7 +81,10 @@
     "book_presence_percentage": 37,
     "not_worldwide_completeness": true,
     "source_lineage": "data/geography/research/biblical-atlas-core-2026-10-10.v1.json",
-    "source_corpus_imported_into_app": false
+    "source_corpus_imported_into_app": false,
+    "framing": "The hand-made 90 examples were quarantined and are NOT the project master index. Actual coverage percentage begins only after pinned OpenBible ancient dataset is materialized and counted, plus 73-book supplement gaps documented.",
+    "current_master_gazetteer_imported": false,
+    "first_curated_entries_status": "EXEMPLAR_ONLY"
   },
   "strict_completion_gate": [
     "Enumerate exact unique ancient place/place-sense IDs from imported upstream ancient.jsonl, separate from modern geographic object count.",
@@ -92,5 +95,76 @@
     "Keep no-coordinate, uncertain and multi-location entries searchable without plotting fabricated pins or roads; preserve proportional region geometry rather than converting it to exact points.",
     "Reuse native Scripture Passage / Full chapter / Commentary drawer, on-device text witness, exact back/scroll handoff, language selection, and existing Crampon/DR/CPDV edition checks.",
     "No UI or publication before quality, attribution, source-rights and regression/phone acceptance gates."
-  ]
+  ],
+  "primary_method": "REUSE_EXISTING_SCHOLARLY_GAZETTEER_NOT_MANUAL_PLACE_COLLECTION",
+  "source_choice_as_of": "2026-10-10",
+  "adopt_in_order": [
+    {
+      "rank": 1,
+      "name": "OpenBible.info Bible Geocoding Data",
+      "type": "REUSABLE_MASTER_ANCIENT_AND_MODERN_GEO_RELATIONS",
+      "source_url": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "ancient_place_count_documented": 1342,
+      "modern_location_count_documented": 1596,
+      "source_reference_count_2021": 442,
+      "license": "CC BY 4.0 core, ODbL OSM-dependent data, images per-file",
+      "status": "SELECTED_BUT_BULK_DATA_NOT_YET_IMPORTED",
+      "critical_gates": [
+        "Pin Git commit SHA and download JSONL (GitHub Contents API returned >1MB core file as empty, do not count that as a successful import)",
+        "Count actual ancient rows on pinned data, not ancient+modern combined",
+        "Preserve multiple modern identifications, unknown coordinates and probability geometry",
+        "Map USX/OSIS verses to 73-book reader; import only data permitted under exact license terms"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "STEPBible TIPNR + TVTMS",
+      "type": "REUSABLE_PROPER_NAMES_PERSON_PLACE_REFERENCE_AND_VERSIFICATION_MASTER",
+      "source_url": "https://github.com/STEPBible/STEPBible-Data",
+      "secondary_preparsed_url": "https://github.com/PatristicTextArchive/tipnr_data",
+      "license": "CC BY 4.0 root README; exact source-file notices must be respected",
+      "status": "SELECTED_BUT_SOURCE_FILES_NOT_IMPORTED",
+      "critical_gates": [
+        "Record source version and license, verify actual file content",
+        "Use individualised proper-name IDs, prevent same-name person/place collapsing",
+        "Do not treat AI-generated descriptive articles as sourced Catholic education",
+        "Use TVTMS edition crosswalk only with verified rules, do not guess Greek/Vulgate variants"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "Bible Atlas public project and verse-context API",
+      "type": "EXISTING_COMPLETE_UI_OR_OPTIONAL_ONLINE_REFERENCE_NOT_DATA_OWNER",
+      "source_url": "https://bible-atlas.com/",
+      "api_url": "https://bible-atlas.com/developers",
+      "site_claimed_counts": {
+        "people": 3067,
+        "places": 1274,
+        "events": 450,
+        "books": 66
+      },
+      "license": "Free public API and iframe embedding documented; bulk offline database redistribution license NOT ESTABLISHED",
+      "status": "REFERENTIAL_OPTIONAL_API_EVALUATION_ONLY",
+      "critical_gates": [
+        "Do not import their entire proprietary content without explicit license",
+        "No forced external redirect or iframe replacing native Ad Orientem Scripture text",
+        "Do not adopt denominational theological interpretations unreviewed",
+        "API access may require internet and compatibility tests"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "PatristicTextArchive TIPNR format adaptation",
+      "type": "POSSIBLE_READY_MADE_JSON_CONVERSION_AND_PLEIADES_CROSSWALK",
+      "source_url": "https://github.com/PatristicTextArchive/tipnr_data",
+      "license": "TIPNR source CC BY 4.0; adapter derivation/redistribution review",
+      "status": "PROVEN_PREEXISTING_CONVERSION_LOOKUP",
+      "critical_gates": [
+        "Compare converted 2024 version against live upstream TIPNR and any changed IDs",
+        "Don't duplicate Pleiades identity if already present in OpenBible",
+        "Credit original STEPBible and adaptation as warranted"
+      ]
+    }
+  ],
+  "dataset_reuse_verdict": "No manual full gazetteer. Ingest OpenBible 1342 ancient-site reference dataset, join STEPBible named entities; treat existing Bible Atlas as optional API/UI comparison; add only Catholic 73-book delta, Catholic tradition/custodian/archaeology editorial annotations."
 }
