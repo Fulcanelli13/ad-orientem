@@ -50,6 +50,24 @@ export function resolveReaderPostureChannel({
   const sourced=normalizedSource(cueProjection);
   const local=findLocalPostureOverride(preferences,{cueId,sectionId,macroId});
 
+  if(sourced?.fixed){
+    return Object.freeze({
+      posture:Object.freeze({...cueProjection.posture,value:sourced.value,label:sourced.value,
+        owner:"SOURCED_FIXED",persistent:true}),
+      owner:"SOURCED_FIXED",localKey:null,sourcePostureId:sourced.sourcePostureId,
+    });
+  }
+
+  // An explicit local choice changes the participant's displayed posture
+  // for this exact source cue only. A fixed ritual posture cannot be changed.
+  if(local && !sourced?.fixed && ["STAND","SIT","KNEEL"].includes(local.value)){
+    return Object.freeze({
+      posture:Object.freeze({label:local.value,value:local.value,owner:"LOCAL_OVERRIDE",
+        localKey:local.key,persistent:true}),
+      owner:"LOCAL_OVERRIDE",localKey:local.key,sourcePostureId:null,
+    });
+  }
+
   if(profile==="FOLLOW_CONGREGATION"){
     if(legacyPosture){
       return Object.freeze({
