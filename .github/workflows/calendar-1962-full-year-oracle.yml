@@ -23,6 +23,13 @@ on:
       - "data/mass/independent-1962-advent-ember-lent3-b03.v1.json"
       - "tools/calendar/independent-1962-holy-week-b04.mjs"
       - "data/mass/independent-1962-holy-week-b04.v1.json"
+      - "tools/calendar/independent-1962-holy-week-b05-text-audit.mjs"
+      - "data/mass/independent-1962-holy-week-b05-text-audit.v1.json"
+      - "data/presentation/reader-easter-vigil.v1.json"
+      - "data/presentation/reader-good-friday.v1.json"
+      - "data/presentation/reader-holy-thursday-post.v1.json"
+      - "src/mass/reader-easter-vigil.js"
+      - "src/mass/reader-good-friday.js"
   workflow_dispatch:
 
 permissions:
@@ -74,6 +81,8 @@ jobs:
         run: node tools/calendar/independent-1962-advent-ember-lent3-b03.mjs --strict
       - name: Compare restored 1962 Palm Sunday and Triduum rite boundaries with independent rubrical witnesses
         run: node tools/calendar/independent-1962-holy-week-b04.mjs --strict
+      - name: Verify explicit Holy Week full-text omissions remain open until independently collated
+        run: node tools/calendar/independent-1962-holy-week-b05-text-audit.mjs --strict
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
@@ -87,4 +96,5 @@ jobs:
             artifacts/independent-1962-lent-sundays-b02.json
             artifacts/independent-1962-advent-ember-lent3-b03.json
             artifacts/independent-1962-holy-week-b04.json
+            artifacts/independent-1962-holy-week-b05-text-holds.json
           if-no-files-found: error
