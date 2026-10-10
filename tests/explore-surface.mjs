@@ -77,6 +77,22 @@ const dataset={
 };
 
 const projection=projectExploreDataset(dataset);
+const sacredGeoLaunch=readJson("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json");
+assert.equal(sacredGeoLaunch.promoted.length,35,"major-site launch batch drifted");
+const launchPlaceIds=new Set();
+for(const site of sacredGeoLaunch.promoted){
+  assert.ok(!launchPlaceIds.has(site.place_id),"duplicate launched Place "+site.place_id);
+  launchPlaceIds.add(site.place_id);
+  const place=geography.places.find(p=>p.place_id===site.place_id);
+  assert.ok(place,"launched Place absent from canonical geography: "+site.place_id);
+  const item=projection.byLens.shrines.find(s=>s.place_id===site.place_id);
+  assert.ok(item&&item.map_publishable,"launched shrine not projected onto app map: "+site.place_id);
+  assert.ok(item.source_links.some(source=>source.url===site.identity_source_url),
+    "launched shrine lacks clickable identity source: "+site.place_id);
+  assert.equal(item.geo.lat,place.geo.lat,"launched map position drifted from canonical Place");
+  assert.equal(item.geo.lng,place.geo.lng,"launched map position drifted from canonical Place");
+}
+
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
