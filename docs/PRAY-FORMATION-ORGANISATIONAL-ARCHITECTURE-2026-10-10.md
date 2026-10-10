@@ -49,7 +49,7 @@ The screen should show the **three paths**, then (contextually) a featured ongoi
 
 ## Connections: use the codes we already have
 
-The machine map preserves all **15 registered cross-module handoff types** verbatim and distinguishes them from **20 editorially proposed item-to-item relationships**. The former are contracts, not guarantees that each nested transition passes phone QA; the latter are **not yet implemented**.
+The machine map preserves all **15 registered cross-module handoff types** and reconciles **20 candidate content-level relationships** against live owners. Of those 20, **nine already have source-wired connections** (without phone certification), including Spiritual Life → Daily Prayer, Serious Illness → Dying Companion, First Communion → Communion Treasury, Dying Companion → serious-illness Formation, First Saturday → Rosary, and four Apostolate scenario handoffs. Only **eleven are genuinely proposed/not yet wired**. This distinction prevents duplicate buttons and parallel ownership.
 
 Concrete journeys to implement or validate:
 - **Formation: Spiritual Life → Pray: Morning/Evening or Nightly Examen.** Study leads to an action; returning restores the lesson and section.
@@ -96,6 +96,8 @@ The branch now contains **bounded actual presentation and routing changes**, in 
 - `src/apostolate/corpus.js` / `src/apostolate/hs-corpus.js`: replace four obsolete Prayer references. `pray.marian` becomes exact `pray.rosary` for AQ01; three `pray.holy_souls` handoffs (AQ07, HS05, HS06) become `pray.eternal_rest`. Both canonical destinations are already registered with real readers. This repairs route identity but real tap/back still requires phone validation.
 - Machine map expanded with **72 live Apostolate source-defined handoffs** spanning 36 scenarios, **65 registered target routes**, **2 intra-Apostolate scenario references**, and **5 Mass-preparation handoffs** whose exact `mass.prepare` subroute is not independently resolved by the Apostolate handler. These five remain for the Mass-last workstream; do not represent them as exact Prepare-entry success. There are **zero unresolved target IDs** after the four Prayer corrections.
 - Exact Prayer Library facet identities accounted for: `essentials` 15, `marian` 7, `eucharistic` 8, `massdev` 2, `holyghost` 2, `canticles` 1, `saints` 7, `hearts` 2, `dead` 4. These nine existing source categories are content filters, not independent text banks. 50 Sexual Ethics topic IDs map to 150 questions and 55 deeper debate records.
+
+**Guide triage:** Of the 38 published Prayer/Formation entrances in this crosswalk, **25** carry a source-level PARTIAL, GAP_CANDIDATE or preview-only flag for at least one of Guide context and walkthrough. They are ranked in the machine map; this is not proof that live runtime lacks all 25 functions, nor does a passive lookup require an artificial wizard. High-value review targets include Sexual Ethics debate pathways, Holy Name litany, Communion Treasury, Good Death/Dying Companion, Prayer Library context and the Catechism guided reader.
 
 **Tests added:** the app-shell IA contract now checks the complete 23/15/36/100 identities, that exact 72-target handoff ledger against actual corpus text, category counts, existing source definitions, absence of obsolete apostolate Prayer aliases, preservation of publication gates and the new UI linkage. This does not replace browser/phone acceptance and does not certify original texts or argument sourcing.
 
