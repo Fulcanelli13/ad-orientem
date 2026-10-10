@@ -609,6 +609,8 @@ export async function mountR17Preview({
 }
 
 async function openProductionReader(prepared, { resumeRecord = null } = {}) {
+  // R17 owns the whole screen as soon as the native Mass starts.
+  globalThis.AO_MASS_HUB_V1?.close?.();
   persistPrepared(prepared, { state: "active", resumeRecord });
   const readerUiMode="NATIVE";
   const previewState=await mountR17Preview({doc:document,prepared});
@@ -833,6 +835,16 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     get polls() { return state.polls; },
     prepare: () => state.controller?.prepare?.(),
     enter: () => state.controller?.enter?.(),
+    configure({form,readerMode,category}={}){
+      if(!state.installed||!state.fullMassPreflight)return Object.freeze({ok:false,reason:"MASS_PREFLIGHT_NOT_READY"});
+      try{
+        if(form)state.fullMassPreflight.selectForm(form);
+        if(readerMode)state.fullMassPreflight.selectReaderMode(readerMode);
+        if(category)state.fullMassPreflight.openCategory(category);
+        return Object.freeze({ok:true,form:state.fullMassPreflight.status().chosenForm,
+          readerMode:state.fullMassPreflight.status().readerMode,category:category??"CALENDAR"});
+      }catch(error){return Object.freeze({ok:false,reason:String(error?.message??error)})}
+    },
     hasResumable: () => hasResumableMass(),
     resume: () => resumePersistedMass(),
     suspend: () => suspendPersistedMass(),

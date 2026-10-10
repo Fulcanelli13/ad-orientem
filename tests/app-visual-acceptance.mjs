@@ -293,17 +293,23 @@ try{
 
   await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
   await page.locator("[data-home-mass-entry]").click();
-  await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+  await page.waitForSelector("#ao-mass-modular-root",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
   const massEntry=await page.evaluate(()=>({
     active:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+    hubVisible:Boolean(document.querySelector("#ao-mass-modular-root:not([hidden])")),
     preflightVisible:Boolean(document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop .aoMassFlow")),
     nativeMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
-    donorLearnVisible:Boolean(document.getElementById("ao-v37-root")?.classList?.contains("aoV37ShellOpen")),
   }));
   assert.equal(massEntry.active,"mass","Home Follow Mass did not activate the Mass destination");
-  assert.equal(massEntry.preflightVisible,true,"Home Follow Mass did not open the celebration preflight");
-  assert.equal(massEntry.nativeMounted,false,"fresh Mass entry bypassed preflight and mounted R17 immediately");
+  assert.equal(massEntry.hubVisible,true,"Mass did not open its first-class modular hub");
+  assert.equal(massEntry.preflightVisible,false,"Fresh Mass shortcut still jumped straight into legacy preflight");
+  assert.equal(massEntry.nativeMounted,false,"Fresh Mass entry bypassed preflight and mounted R17 immediately");
+  await shot("01a-mass-hub");
+  await page.locator('[data-mass-hub-category="CALENDAR"]').click();
+  await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+  assert.equal(await page.locator("#ao-mass-modular-root").isHidden(),true,
+    "Source-owned Mass preparation is obscured behind its hub");
   await shot("01b-mass-preflight");
   await page.locator("#ao-mass-flow-v1 [data-ao-close]").last().click();
   await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});

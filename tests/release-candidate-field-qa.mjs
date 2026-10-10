@@ -251,14 +251,23 @@ try{
       }
     }
 
-    // Mass entry is included without starting a liturgy: RC geometry must prove
-    // that the production selection/preflight surface itself still fits every
-    // supported phone width.
+    // Mass entry is a real top-level module. Audit both its landing and the
+    // authoritative Proper/1962 preflight it launches after a category choice.
     const massNav=page.locator("[data-ao-app-surface='mass']").first();
     await massNav.click();
-    await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+    await page.waitForSelector("#ao-mass-modular-root",{state:"visible",timeout:10000});
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
-    assert.equal(await visible(page,"#ao-mass-flow-v1 .aoMassFlowBackdrop"),true);
+    assert.equal(await visible(page,"#ao-mass-modular-root"),true);
+    assert.equal(await page.locator('[data-mass-hub-category]').count(),6);
+    assert.equal(await page.locator('[data-mass-hub-form]').count(),4);
+    assert.equal(await page.locator('[data-mass-hub-mode]').count(),3);
+    assert.equal(await visible(page,"#ao-mass-flow-v1 .aoMassFlowBackdrop"),false,
+      viewport.width+"px Mass tab jumped directly into the obsolete preflight");
+    await assertViewportFit(page,"Mass hub",viewport.width);
+    await assertNoLegacyLeak(page,"Mass hub",viewport.width);
+    await page.locator('[data-mass-hub-category="CALENDAR"]').click();
+    await page.waitForSelector("#ao-mass-flow-v1 .aoMassFlowBackdrop",{state:"visible",timeout:10000});
+    assert.equal(await page.locator("#ao-mass-modular-root").isHidden(),true);
     await assertViewportFit(page,"Mass preflight",viewport.width);
     await assertNoLegacyLeak(page,"Mass preflight",viewport.width);
 
@@ -283,7 +292,7 @@ try{
     await context.close();
   }
 
-  console.log("RC field QA PASS — 320/360/390/430px assembled shell, repeated six-surface routing, Mass preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
+  console.log("RC field QA PASS — 320/360/390/430px assembled shell, repeated six-surface routing, Mass hub and preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));

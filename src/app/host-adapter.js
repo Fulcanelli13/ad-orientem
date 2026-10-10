@@ -75,6 +75,7 @@ export function createAppHostAdapter(win = globalThis) {
       try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
+      try { win?.AO_MASS_HUB_V1?.close?.(); } catch {}
       const modular = win?.AO_HOME_APP_V1;
       const fallbackHome = () => {
         const nav = win?.AO_NAV_V362;
@@ -121,6 +122,22 @@ export function createAppHostAdapter(win = globalThis) {
         if (typeof mass?.hasResumable === "function" && mass.hasResumable()) {
           if (typeof mass?.resume !== "function") return false;
           return Promise.resolve(mass.resume()).then(openedSuccessfully);
+        }
+        // A fresh Mass entry now opens a full module, like Calendar, rather
+        // than landing inside the old transient preflight. Source resolution
+        // remains solely with that preflight after a user chooses a Mass.
+        // A unit-test adapter without a DOM retains its minimal host contract.
+        if (win?.document?.body) {
+          return import("../mass/hub-browser.js")
+            .then(mod => {
+              const hub=mod.installMassHubBrowserOwner(win);
+              if(typeof hub?.open!=="function")return false;
+              return openedSuccessfully(hub.open());
+            })
+            .catch(error=>{
+              try { win?.console?.error?.("Mass module could not open",error) } catch {}
+              return false;
+            });
         }
         const celebration = win?.AO_CELEBRATION_API;
         if (typeof celebration?.openPreflight !== "function") return false;
