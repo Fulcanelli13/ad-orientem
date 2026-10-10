@@ -202,8 +202,8 @@
       ],
       "grade": 2,
       "lectionary": [
-        "Isa 2:2-5",
-        "Isa 7:10-15"
+        "Is 2:2-5",
+        "Is 7:10-15"
       ],
       "gospel": "Luc 1:26-38",
       "preparatoryMin": 1,
@@ -233,21 +233,26 @@
       ],
       "grade": 2,
       "lectionary": [
-        "Isa 19:20-22",
-        "Isa 35:1-7",
-        "Isa 40:9-11",
-        "Isa 42:1-9",
-        "Isa 45:1-11",
+        "Is 19:20-22",
+        "Is 35:1-7",
+        "Is 40:9-11",
+        "Is 45:1-8",
+        "Dan 3:47-51",
         "2 Thess 2:1-8"
       ],
       "gospel": "Luc 3:1-6",
       "preparatoryMin": 5,
-      "witness": "https://theanglicanbreviary.wordpress.com/2015/10/11/advent-the-readings-at-mass-2/"
+      "witness": "https://www.newliturgicalmovement.org/2009/12/saturday-of-twelve-lessons-ember.html",
+      "crosscheck": "https://www.newliturgicalmovement.org/2025/12/durandus-on-ember-saturday-of-advent.html",
+      "editorialReconciliation": "Do not adopt an Anglican/older-source listing of Is 42:1-9 and Is 45:1-11: the independently documented Roman Ember Saturday in the 1962 rite uses four Isaiah prophecies 19,35,40,45, then Dan 3:47-51, followed by 2 Thess 2:1-8."
     }
   ],
   "limitations": [
     "The 1962 rite ordains complete lessons including all 5 preparatory lessons on Ember Saturday",
     "The 2027 / 2026 dates represent repeated source formularies not new critical witnesses",
     "Passion/Holy Week full texts are separate not covered by these Sunday/Ember checks"
-  ]
+  ],
+  "interpretation": {
+    "emberReadingsRule": "Fail when preparatory lesson count, biblical citations or chronological source order differ. Full chants, genuflection prompts and prayers are not asserted by this scope."
+  }
 }
