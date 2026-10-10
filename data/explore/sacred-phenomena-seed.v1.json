@@ -1041,12 +1041,13 @@
       "title_en": "Reliquary of St Mary Magdalene's head",
       "title_fr": "Reliquaire du chef attribué à sainte Marie-Madeleine",
       "associated_person": "Saint Mary Magdalene",
-      "source_url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+      "source_url": "https://paroissesaintmaximin.fr/basilique/les-saintes-reliques/",
       "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
       "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
-      "summary_en": "The diocese documents the traditional identification of the skull preserved in the crypt; the app does not establish historical identity independently.",
-      "summary_fr": "Le diocèse décrit la tradition du crâne attribué à sainte Marie-Madeleine conservé dans la crypte, sans garantie d'identification historique indépendante.",
-      "calendar_semantic_key": null
+      "summary_en": "The Saint-Maximin parish describes the skull attributed by tradition to Mary Magdalene, kept in the crypt, with later dispersal of other claimed relics. Vézelay preserves a separate and continuing Magdalene relic tradition. No modern independent authentication or exclusive full-body identification is implied.",
+      "summary_fr": "La paroisse de Saint-Maximin décrit le crâne attribué par tradition à Marie-Madeleine et conservé dans la crypte ; d’autres reliques alléguées ont été dispersées. Vézelay garde une tradition distincte. Ni l’authentification moderne ni la revendication exclusive d’un corps entier ne sont ici établies.",
+      "calendar_semantic_key": null,
+      "dispute_id": "conflict:saint-mary-magdalene-saint-maximin-vezelay"
     },
     {
       "id": "relic:FR:maximin-sarcophagus",
@@ -1069,12 +1070,13 @@
       "title_en": "Relics of St Benedict at Fleury Abbey",
       "title_fr": "Reliques de saint Benoît à l’abbaye de Fleury",
       "associated_person": "Saint Benedict of Nursia",
-      "source_url": "https://www.abbaye-fleury.com/contact.html",
+      "source_url": "https://www.abbaye-fleury.com/st-benoicirct-pegravere-des-moines.html",
       "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
       "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
-      "summary_en": "The monks state that St Benedict's relics repose in their crypt; this is their traditional custodial claim, not resolution of competing historical traditions.",
-      "summary_fr": "Les moines indiquent que les reliques de saint Benoît reposent dans leur crypte ; il s’agit d’une tradition de conservation sans arbitrage historique des revendications.",
-      "calendar_semantic_key": null
+      "summary_en": "Fleury Abbey describes a transfer of Saint Benedict's remains from Montecassino and present reliquary veneration in its crypt. Montecassino independently describes a joint tomb with Saint Scholastica and reported remains. Neither tradition is used to claim exclusive authentication of Benedict's entire body.",
+      "summary_fr": "Fleury rapporte la translation du corps de saint Benoît depuis le Mont-Cassin et la vénération des reliques dans sa crypte. Le Mont-Cassin décrit de son côté un tombeau commun avec sainte Scholastique. Aucune attribution exclusive du corps entier n’est ici authentifiée.",
+      "calendar_semantic_key": null,
+      "dispute_id": "conflict:saint-benedict-fleury-montecassino"
     },
     {
       "id": "relic:FR:martin-parents-lisieux",
@@ -1408,9 +1410,10 @@
       "source_url": "https://www.basiliquedevezelay.org/samedi-saint/",
       "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
       "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
-      "summary_en": "The basilica describes relics of Mary Magdalene in its crypt; the app does not authenticate the traditional identification.",
-      "summary_fr": "Historic pilgrimage basilica whose crypt conserves relics traditionally attributed to Saint Mary Magdalene; distinct from Saint-Maximin relic records.",
-      "calendar_semantic_key": null
+      "summary_en": "The Vézelay basilica describes traditional Magdalene relics venerated in its crypt. Saint-Maximin separately reports a skull reliquary and a 1279 rediscovery tradition. The presence of two reported custodians is a historical question, not evidence that either shrine holds an exclusively authenticated body.",
+      "summary_fr": "La basilique de Vézelay atteste la vénération de reliques attribuées à Marie-Madeleine dans sa crypte. Saint-Maximin présente de son côté un reliquaire du chef et une tradition de découverte en 1279. La coexistence de ces revendications n’authentifie pas l’intégralité du corps dans l’un ou l’autre sanctuaire.",
+      "calendar_semantic_key": null,
+      "dispute_id": "conflict:saint-mary-magdalene-saint-maximin-vezelay"
     },
     {
       "id": "relic:FR:chartres-voile-vierge",
@@ -2215,6 +2218,21 @@
       "object_group_id": "sacred-object-group:manoppello-face",
       "material_category": "REPUTED_FACE_CLOTH_IMAGE",
       "attribution_class": "TRADITIONAL_IDENTITY_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "calendar_semantic_key": null
+    },
+    {
+      "id": "relic:IT:montecassino-abbey",
+      "place_id": "place:IT:montecassino-abbey",
+      "relic_kind": "REPUTED_BODILY_REMAINS",
+      "title_en": "Traditionally attributed remains of Saints Benedict and Scholastica at Montecassino",
+      "title_fr": "Dépouilles traditionnellement attribuées à saint Benoît et sainte Scholastique au Mont-Cassin",
+      "associated_person": "Saint Benedict of Nursia; Saint Scholastica",
+      "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+      "source_claim": "CURRENT_MONASTIC_TOMB_TRADITION_WITH_COMPETING_FLEURY_ATTRIBUTION",
+      "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
+      "summary_en": "The abbey describes silver containers in a tomb behind the high altar as holding remains of Saints Benedict and Scholastica. Fleury Abbey separately reports Benedict's translated remains in its crypt. These competing monastic reports establish devotional custody traditions, not an independently established division or attribution of all bodily material.",
+      "summary_fr": "L’abbaye situe derrière le maître-autel un tombeau dont les reliquaires d’argent contiendraient des dépouilles de saint Benoît et de sainte Scholastique. Fleury revendique également des reliques de saint Benoît dans sa crypte. Ces traditions monastiques distinctes ne permettent ni une identification corporelle indépendante ni un partage certain des ossements.",
+      "dispute_id": "conflict:saint-benedict-fleury-montecassino",
       "calendar_semantic_key": null
     }
   ]

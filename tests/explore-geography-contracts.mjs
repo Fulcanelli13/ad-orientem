@@ -186,6 +186,7 @@ assert.deepEqual(
     "place:PS:holy-sepulchre-jerusalem",
     "place:PS:nativity-bethlehem",
     "place:JP:our-lady-akita-convent",
+    "place:IT:montecassino-abbey",
     "place:IT:duomo-torino-sindone",
     "place:DE:aachener-dom-four-textiles",
     "place:DE:trierer-dom-heiliger-rock",
@@ -287,7 +288,7 @@ const registry = {
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
   geoAreas: 41,
-  places: 182,
+  places: 183,
   directoryPlaceLinks: 1,
 });
 

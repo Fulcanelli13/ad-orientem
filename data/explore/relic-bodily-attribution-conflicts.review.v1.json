@@ -1,0 +1,83 @@
+{
+  "schema": "SACRED_ATLAS_CONTESTED_BODILY_ATTRIBUTIONS_REVIEW_V1",
+  "as_of": "2026-10-09",
+  "status": "TWO_MULTI_CUSTODIAN_TRADITIONS_SCREENED_NO_AUTHENTICATION_AWARDED",
+  "rules": [
+    "An original custodian can attest possession and liturgical veneration, not necessarily the historical biological identity of a medieval body.",
+    "Two monasteries may both report remains of a saint; a modern publication must not pronounce exclusive entire-body identity without independent provenance and source reconciliation.",
+    "A holy tomb, fragment, head reliquary, claimed translation and current reliquary are distinct evidence units.",
+    "A monastery's reported ecclesiastical recognition of an object is described within its historic context, not upgraded to modern independent authentication.",
+    "Competing claims are cross-linked by subject; one site-level map marker per canonical Place; no new pin for a fragment already grouped under its custodial Place."
+  ],
+  "dossiers": [
+    {
+      "id": "conflict:saint-benedict-fleury-montecassino",
+      "subject_id": "subject:saint-benedict-of-nursia",
+      "title_en": "Saint Benedict of Nursia — attributed remains at Fleury and Montecassino",
+      "title_fr": "Saint Benoît de Nursie — dépouilles attribuées à Fleury et au Mont-Cassin",
+      "resolution": "PARALLEL_HISTORIC_CUSTODY_CLAIMS_NOT_COMBINED",
+      "claimants": [
+        {
+          "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+          "name": "Abbaye de Fleury, Saint-Benoît-sur-Loire",
+          "claim": "Monks report transfer from Montecassino around the late seventh century and relics now in their crypt, including annual procession.",
+          "original_custodian_url": "https://www.abbaye-fleury.com/st-benoicirct-pegravere-des-moines.html",
+          "source_grade": "DIRECT_CUSTODIAN",
+          "material_extent": "MONASTIC_RELIQUARY_REPORTED_REMAINS_NOT_ALL_BODY_PROVEN",
+          "source_scope": "MONASTIC_HISTORY_AND_PRESENT_CRYPTO_RELIQUARY",
+          "map_action": "KEEP_EXISTING_PLACE"
+        },
+        {
+          "place_id": "place:IT:montecassino-abbey",
+          "name": "Abbazia di Montecassino",
+          "claim": "Abbey describes a joint tomb behind the main altar and silver containers holding attributed remains of Benedict and Scholastica; a postwar examination is narrated.",
+          "original_custodian_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+          "additional_original_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/",
+          "source_grade": "DIRECT_CUSTODIAN",
+          "material_extent": "JOINT_RELIQUARY_AT_TOMB_BODILY_SCOPE_NOT_EXTERNALLY_VERIFIED",
+          "source_scope": "PRESENT_TOMB_AND_RESTORATION_HISTORIOGRAPHY",
+          "map_action": "NEW_MAJOR_SITE_SAME_SUBJECT_SEPARATE_CUSTODIAL_CLAIM"
+        }
+      ],
+      "finding_en": "Both present Benedictine custodians document distinct bodily-relic traditions. Fleury reports translation from Montecassino; Montecassino maintains a combined burial of Benedict and Scholastica. Their reports are mutually important but do not settle what portion, if any, remains at each site. Neither claim is presented as independently authenticated.",
+      "finding_fr": "Les deux communautés bénédictines présentent des traditions de reliques corporelles distinctes : translation à Fleury, tombeau commun de Benoît et Scholastique au Mont-Cassin. Leurs sources ne permettent pas de déterminer indépendamment la part de dépouille qui se trouverait à chaque lieu ni d’en authentifier l’identité.",
+      "open_question": "Original inventories and historical translation sources, including exact extent of any material exchanged or left at Montecassino, require critical edition-level comparison.",
+      "proposed_attribution": "TRADITIONAL_IDENTITIES_CONTESTED_NO_EXCLUSIVE_FULL_BODY_VERDICT"
+    },
+    {
+      "id": "conflict:saint-mary-magdalene-saint-maximin-vezelay",
+      "subject_id": "subject:saint-mary-magdalene",
+      "title_en": "Saint Mary Magdalene — Provence and Vézelay relic traditions",
+      "title_fr": "Sainte Marie-Madeleine — traditions de reliques en Provence et à Vézelay",
+      "resolution": "BOTH_VENERATION_SITES_RETAINED_MATERIAL_IDENTITIES_UNVERIFIED",
+      "claimants": [
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+          "name": "Basilique Sainte-Marie-Madeleine, Saint-Maximin",
+          "claim": "Parish and diocese identify the crypt skull reliquary and narrate a 1279 discovery, later restoration, and processions; the head is a separately alleged bodily part.",
+          "original_custodian_url": "https://paroissesaintmaximin.fr/basilique/les-saintes-reliques/",
+          "additional_original_url": "https://archives.frejustoulon.fr/2024/07/22/marie-madeleine-culte-science-et-traditions/",
+          "source_grade": "DIRECT_PARISH_AND_DIOCESAN_ARCHIVES",
+          "material_extent": "ATTRIBUTED_SKULL_AND_OTHER_TRADITIONS_NOT_FULL_BODY",
+          "source_scope": "PRESENT_RELIQUARY_PLUS_13TH_C_DISCOVERY_NARRATIVE",
+          "map_action": "KEEP_EXISTING_PLACE"
+        },
+        {
+          "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+          "name": "Basilique Sainte-Marie-Madeleine, Vézelay",
+          "claim": "The basilica identifies traditional Magdalene relics in its crypt and preserves the historic pilgrimage narrative, including medieval diffusion and disputed transfers.",
+          "original_custodian_url": "https://www.basiliquedevezelay.org/samedi-saint/",
+          "additional_original_url": "https://www.basiliquedevezelay.org/marie-madeleine/",
+          "source_grade": "DIRECT_BASILICA",
+          "material_extent": "RELIQUARY_SCOPE_UNSPECIFIED",
+          "source_scope": "PRESENT_CRYPT_VENERATION_AND_HISTORY",
+          "map_action": "KEEP_EXISTING_PLACE"
+        }
+      ],
+      "finding_en": "Both Saint-Maximin and Vézelay document historical and continuing Magdalene devotions. Saint-Maximin's reported skull and Vézelay's reported crypt relics are not automatically the same object or mutually exclusive whole-body claims. Historical papal or monastic approval of a cult does not by itself establish modern material identification.",
+      "finding_fr": "Saint-Maximin et Vézelay attestent deux foyers du culte de Marie-Madeleine. Le crâne attribué de Saint-Maximin et les reliques de la crypte de Vézelay ne doivent être ni confondus ni artificiellement fusionnés. La reconnaissance historique d’un culte ne suffit pas à identifier matériellement les ossements.",
+      "open_question": "Trace the pre-1279 Vézelay inventory, the 1279 Saint-Maximin dossier and later distributions without treating mutually exclusive medieval hagiography as verified chain of custody.",
+      "proposed_attribution": "COMPETING_MEDIEVAL_NARRATIVES_CONTEMPORARY_CUSTODY_REPORTED"
+    }
+  ]
+}
