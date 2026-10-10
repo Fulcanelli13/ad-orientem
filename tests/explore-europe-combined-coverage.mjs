@@ -45,7 +45,7 @@ assert.equal(W2.category_associations.filter(x=>x.category==="PILGRIMAGES").leng
 assert.equal(W2.category_associations.filter(x=>x.category==="RELICS").length,1);
 assert.equal(W2.category_associations.filter(x=>x.category==="SACRED_IMAGE").length,3);
 const medj=W2.category_associations.find(x=>x.category==="APPARITIONS");
-assert.ok(medj&&medj.qualifier.includes("NOT"),"Medjugorje nihil obstat is not supernatural certification");
+assert.ok(medj&&/not supernatural origin/i.test(medj.qualifier),"Medjugorje nihil obstat is not supernatural certification");
 const marina=W2.category_associations.find(x=>x.category==="RELICS");
 assert.ok(marina&&marina.qualifier.includes("authentication"));
 assert.ok(W2.evidence_guards.some(x=>x.includes("Budsla")));
