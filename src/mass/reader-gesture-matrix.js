@@ -88,6 +88,8 @@ export function validateReaderGestureMatrix(data){
     faithfulCount:items.filter(x=>x.actor==="FAITHFUL").length,
     campionBackedCount:items.filter(x=>x.campionPages.length).length,
     primaryPriestCueCount:primaryPriestByCue.size,
+    iconBoundCount:items.filter(x=>Boolean(x.iconKey)).length,
+    iconPendingCount:items.filter(x=>!x.iconKey).length,
     items:Object.freeze(items),
   });
 }
@@ -111,6 +113,7 @@ function priestAction(item){
     label:item.label,
     action:item.label,
     iconKey:item.iconKey,
+    iconStatus:item.iconStatus,
     cueId:item.cueId,
     trigger:item.triggerLatin,
     sourceGestureId:item.id,
