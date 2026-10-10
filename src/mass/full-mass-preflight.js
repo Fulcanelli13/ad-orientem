@@ -57,6 +57,7 @@ export function mountFullMassPreflight({
   getDefaultForm=()=> "sung",
   language=()=> "en",
   getCelebrationApi=()=>globalThis.AO_CELEBRATION_API,
+  onBeforeCategoryChange=()=>{},
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
@@ -79,6 +80,7 @@ export function mountFullMassPreflight({
     if(!Object.hasOwn(choices,kind))throw new Error("Unknown Mass category");
     const api=getCelebrationApi?.();
     if(typeof api?.openChangeMass!=="function")throw new Error("CHANGE_MASS_OWNER_NOT_READY");
+    onBeforeCategoryChange(kind);
     // Invoke the established resolver's public navigation: never infer a
     // votive or Requiem file from the clicked category alone.
     api.openChangeMass();
