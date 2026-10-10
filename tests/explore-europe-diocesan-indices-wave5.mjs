@@ -11,6 +11,7 @@ const M5=read("data/explore/europe-acquisition.five-wave-master.review.v1.json")
 const G=read("data/geography/seed-registry.v1.json");
 // Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
 const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
+for(const p of read("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json").promoted)publishedAfterFreeze.add(p.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const id=x=>x.research_id||x.lead_id||x.id||x.site_id||x.place_id;
 const allBefore=[
