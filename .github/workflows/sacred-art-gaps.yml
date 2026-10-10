@@ -1,0 +1,38 @@
+name: Sacred art — close Rosary subject gaps
+
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - "tools/calendar/fill-sacred-art-gaps.py"
+      - ".github/workflows/sacred-art-gaps.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-rosary-subject-gaps
+  cancel-in-progress: true
+
+jobs:
+  cc0-gap-acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow numpy
+      - name: Search and download CC0 paintings matching missing Rosary subjects
+        run: python tools/calendar/fill-sacred-art-gaps.py
+      - name: Preserve source-linked originals, rejection log and review contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-cma-rosary-gap-originals
+          path: artifacts/sacred-art-cma-gaps/
+          if-no-files-found: warn
+          retention-days: 30
