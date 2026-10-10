@@ -1,0 +1,26 @@
+name: SSPX first-party worldwide coverage
+on:
+  pull_request:
+    paths:
+      - "src/find/official-sspx-discovery.js"
+      - "src/find/sspx-indicative-geo.js"
+      - "src/find/data-service.js"
+      - "tools/directory/audit-sspx-official-live.mjs"
+      - ".github/workflows/sspx-official-live-audit.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Offline fixture and duplicate safeguards
+        run: node tests/directory-sspx-official-map-bulk.mjs
+      - name: Official SSPX live global API source audit (diagnostic, endpoint may reject CI)
+        continue-on-error: true
+        run: node tools/directory/audit-sspx-official-live.mjs

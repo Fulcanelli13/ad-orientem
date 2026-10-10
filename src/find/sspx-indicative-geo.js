@@ -145,7 +145,7 @@ export async function fetchOfficialSspxPlaceIndex({fetchImpl=fetch,timeoutMs=500
   const timer=controller?setTimeout(()=>controller.abort(),timeoutMs):null;
   try{
     for(let offset=0;offset<=2000;offset+=1000){
-      const url=MAP_API+"?lang=en&sundayMass=true&limit=1000&offset="+offset;
+      const url=MAP_API+"?lang=en&limit=1000&offset="+offset;
       const response=await fetchImpl(url,{headers:{accept:"application/json"},...(controller?{signal:controller.signal}:{})});
       if(!response?.ok)break;
       const result=await response.json();

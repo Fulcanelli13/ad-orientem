@@ -97,8 +97,12 @@ export function projectDirectoryItems(records,{communities=[]}={}){
     const geo=mapped?normalizeGeo(venue.geo):null;
     const label=communityLabel(ministry?.community_id,communities);
     const external=venue?.publication_state==="DIRECTORY_LISTED_UNVERIFIED";
-    const status=external?"SCHEDULE UNVERIFIED":una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":una==="VARIES"?"VARIES":"STATUS UNKNOWN";
-    const facts=(external?[
+    const officialListing=venue?.publication_state==="OFFICIAL_LISTED_MASS_TIMES_UNCONFIRMED";
+    const status=external?"SCHEDULE UNVERIFIED":officialListing?"OFFICIAL · TIMES UNCONFIRMED":una==="YES"?"UNA CUM":una==="NO"?"NON-UNA CUM":una==="VARIES"?"VARIES":"STATUS UNKNOWN";
+    const facts=(officialListing?[
+      {label:"Evidence",value:"Mass presence listed by the SSPX official worldwide map"},
+      {label:"Liturgy",value:"Traditional Mass · exact timetable not imported"},
+    ]:external?[
       {label:"Verification",value:"External directory listing · schedule not independently checked"},
       {label:"Liturgy",value:"Exact liturgical form not independently established"},
     ]:[
@@ -114,25 +118,27 @@ export function projectDirectoryItems(records,{communities=[]}={}){
       lens:"tlm",
       kind:"TLM_VENUE",
       community_id:ministry?.community_id??"OTHER",
-      eyebrow:external?"Directory-listed":label,
+      eyebrow:external?"Directory-listed":officialListing?"SSPX · official Mass location":label,
       status,
       title:venue?.name?.official||"Unnamed venue",
       subtitle:[venue?.address?.city,venue?.address?.country_code].filter(Boolean).join(" · "),
-      summary:external?"Listed by an external directory. Current Mass times and liturgical form require checking at source.":schedules[0]?.body??usageLabel(ministry),
+      summary:officialListing?"SSPX officially lists Mass at this place. Open the source for current days and times.":external?"Listed by an external directory. Current Mass times and liturgical form require checking at source.":schedules[0]?.body??usageLabel(ministry),
       address:venue?.address??null,
       geo,
       map_publishable:Boolean(mapped&&geo),
       map_state:mapped?"MAPPED":"ADDRESS_ONLY",
       facts:freezeList(facts),
-      sections:freezeList(external?[]:schedules.map(schedule=>({label:"Schedule",title:schedule.title,body:schedule.body}))),
+      sections:freezeList(external||officialListing?[]:schedules.map(schedule=>({label:"Schedule",title:schedule.title,body:schedule.body}))),
       source_links:directorySourceLinks(record),
-      actions:freezeList(external?[
+      actions:freezeList(officialListing?[
+        arr(venue?.contact?.schedule_url)[0]?{label:"Official SSPX Mass details",url:arr(venue.contact.schedule_url)[0]}:null,
+      ].filter(Boolean):external?[
         arr(venue?.contact?.schedule_url)[0]?{label:"Open external listing",url:arr(venue.contact.schedule_url)[0]}:null,
       ].filter(Boolean):[
         directoryMapsUrl(venue)?{label:"Directions",url:directoryMapsUrl(venue)}:null,
         arr(venue?.contact?.website)[0]?{label:"Website",url:arr(venue.contact.website)[0]}:null,
       ].filter(Boolean)),
-      note:external?"Licensed third-party listing only. Not an independent verification of a currently celebrated 1962 Mass; consult the original source before travelling.":"Source-backed current directory record. Check the official schedule before travelling.",
+      note:officialListing?"This location is listed as offering Mass by the SSPX public map. Exact times, address and current availability must be checked on the official linked page.":external?"Licensed third-party listing only. Not an independent verification of a currently celebrated 1962 Mass; consult the original source before travelling.":"Source-backed current directory record. Check the official schedule before travelling.",
       search_text:itemSearch([
         venue?.name?.official,venue?.name?.alternate,addressLabel(venue?.address),venue?.diocese?.name,label,
         external?"directory listed":usageLabel(ministry),schedules.map(item=>item.body),
