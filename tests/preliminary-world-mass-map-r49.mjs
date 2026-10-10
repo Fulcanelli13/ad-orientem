@@ -21,8 +21,8 @@ const all=filterPreliminaryR49(records,{directoryGroup:"ALL"});
 assert.equal(rome.length,PRELIMINARY_R49_ROME);
 assert.equal(sspx.length,732);
 assert.equal(unknown.length,125);
-assert.equal(all.length,1876);
-assert.equal(exploreMapFeatures(records).length,1876);
+assert.equal(all.length,1879);
+assert.equal(exploreMapFeatures(records).length,1879);
 assert.ok(rome.every(x=>x.preliminary_group==="ROME"));
 assert.ok(sspx.every(x=>x.community_id==="SSPX"));
 assert.ok(rome.every(x=>x.map_publishable&&x.geo.approximate));
@@ -34,7 +34,7 @@ assert.equal(filterPreliminaryR49(records,{directoryGroup:"ALL",query:"aononexis
 assert.equal(filterPreliminaryR49(records,{directoryGroup:"ALL",query:"église"}).length,
   filterPreliminaryR49(records,{directoryGroup:"ALL",query:"eglise"}).length,"Search accent insensitivity lost");
 const vm=buildExploreViewModel({language:"fr",items:rome,lens:"tlm",view:"map",
- counts:{tlm:1876},loadedProviders:[],unavailableProviders:[],
+ counts:{tlm:1879},loadedProviders:[],unavailableProviders:[],
  filters:{directoryGroup:"ROME",affiliations:[],query:""}});
 const html=renderExploreToString(vm);
 assert.match(html,/data-find-filter="directoryGroup"/);

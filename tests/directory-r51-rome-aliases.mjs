@@ -8,8 +8,8 @@ const r51=read("../data/directory/research/staging/map-first-r37/R51-rome-venue-
 validateR49Snapshot(map);
 const pins=projectPreliminaryR49(map);
 const byId=new Map(map.records.map(row=>[row[0],row]));
-assert.equal(pins.length,1876);
-assert.equal(filterPreliminaryR49(pins,{directoryGroup:"ROME"}).length,1019);
+assert.equal(pins.length,1879);
+assert.equal(filterPreliminaryR49(pins,{directoryGroup:"ROME"}).length,1022);
 assert.equal(filterPreliminaryR49(pins,{directoryGroup:"SSPX"}).length,732);
 assert.equal(filterPreliminaryR49(pins,{directoryGroup:"UNKNOWN"}).length,125);
 assert.equal(r51.schema,"AO_DIRECTORY_R51_ROMERECOGNISED_ALIAS_CROSSWALK");

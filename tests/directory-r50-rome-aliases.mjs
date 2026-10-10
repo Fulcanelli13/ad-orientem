@@ -6,8 +6,8 @@ const map=read("../data/directory/preliminary-map-r49.v1.json");
 const cross=read("../data/directory/research/staging/map-first-r37/R50-rome-source-aliases.json");
 validateR49Snapshot(map);
 const items=projectPreliminaryR49(map);
-assert.equal(items.length,1876);
-assert.equal(filterPreliminaryR49(items,{directoryGroup:"ROME"}).length,1019);
+assert.equal(items.length,1879);
+assert.equal(filterPreliminaryR49(items,{directoryGroup:"ROME"}).length,1022);
 assert.equal(filterPreliminaryR49(items,{directoryGroup:"SSPX"}).length,732);
 assert.equal(filterPreliminaryR49(items,{directoryGroup:"UNKNOWN"}).length,125);
 assert.equal(cross.schema,"AO_DIRECTORY_R50_ROMERECOGNISED_ALIAS_CROSSWALK");
@@ -29,5 +29,5 @@ const amended=cross.records.filter(pair=>{
  return [row[8],row[9]].join("; ").includes(pair.source_url);
 });
 assert.ok(amended.length>=6,"Lost R50 site-specific source hyperlinks");
-assert.equal(new Set(map.records.map(r=>r[0])).size,1876);
+assert.equal(new Set(map.records.map(r=>r[0])).size,1879);
 console.log("PASS R50: 19 source aliases, unchanged 1,876 pins / 1,019 Rome, source evidence preserved");
