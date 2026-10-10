@@ -128,7 +128,12 @@ function resolveOfficeCollect(local,thursday,dayIndex){
   // the exact French substitution; recover those, not a guessed translation.
   const other=String(local.get("Special Completorium")??"");
   const variant=other.match(/:s\/([^/]+)\/([^/]+)\//);
-  if(variant && base.includes(variant[1]))return base.replace(variant[1],variant[2]);
+  if(variant){
+    // The French compiler leaf mixes straight source apostrophes with the
+    // corresponding typographic apostrophes in its Thursday witness.
+    const normalized=base.replace(/[’‘]/g,"'");
+    if(normalized.includes(variant[1]))return normalized.replace(variant[1],variant[2]);
+  }
   throw new Error("Tenebrae edition macro substitution not present in source");
 }
 function collectPrayer(local,thursday){
