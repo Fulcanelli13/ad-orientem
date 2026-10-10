@@ -879,6 +879,8 @@ try{
   assert.ok(gloriaAdoramus.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
     "Adoramus te gesture rail activates without highlighting the sourced phrase in the displayed language: "+JSON.stringify(gloriaAdoramus));
   assert.equal(gloriaAdoramus.anchorFlag,"true");
+  assert.match(gloriaAdoramus.anchoredParagraphSource,/Adorámus te/i,
+    "real sung Gloria paragraph should be Latin-first in the LIVE reader");
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
@@ -933,6 +935,8 @@ try{
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
   assert.equal(incarnatus.anchorFlag,"true","Incarnatus genuflect rail did not activate its Latin words");
+  assert.match(incarnatus.anchoredParagraphSource,/incarn[aá]tus est/i,
+    "real sung Credo should be Latin-first in the LIVE reader");
   assert.ok(incarnatus.anchorWords.some(word=>/Et incarn[aá]tus est|And was incarnate|Il a pris chair/i.test(word)) &&
     incarnatus.anchorWords.some(word=>/et homo factus est|and was made man|s.est fait homme/i.test(word)),
     "Credo Incarnatus sourced opening and closing words are not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
