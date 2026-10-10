@@ -599,6 +599,28 @@ function angelusUtterance(text,type){
  if(parts.length!==2)return nl(text);
  return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
 }
+// Compact named prayer sections; no liturgical text is duplicated or inferred.
+function angelusUnitHeading(form,u,i,units){
+ const label=u?.type||"";
+ if(label==="hail")return "AVE MARIA";
+ if(label==="collect")return "ORATIO";
+ if(form==="regina"){
+   if(label==="prayer"&&i===0)return "REGINA CÆLI";
+   if(label==="vr")return "GAUDE ET LÆTARE";
+   return "REGINA CÆLI";
+ }
+ if(label==="vr"){
+   const verse=units.slice(0,i+1).filter(x=>x.type==="vr").length;
+   return ["ANGELUS DOMINI","ECCE ANCILLA DOMINI","ET VERBUM CARO FACTUM EST","ORA PRO NOBIS"][verse-1]
+     ||L("Versicle and response","Verset et répons").toUpperCase();
+ }
+ return L("Prayer","Prière").toUpperCase();
+}
+function angelusSequenceNav(units){
+ if(units.length<2)return "";
+ const label=L("Prayer navigation","Navigation des prières");
+ return `<nav class="aoReaderSeqNav aoAngelusSeqNav" aria-label="${esc(label)}" data-ao-angelus-progress data-ao-progress-prefix="${esc(L("Prayer","Prière"))}"><span class="aoReaderSeqPosition" data-ao-reader-position>${esc(L("Prayer 1","Prière 1"))} / ${units.length}</span><div class="aoReaderSeqSegments">${units.map((u,i)=>`<button type="button" data-ao-angelus-jump="${i}" class="${i===0?'current':''}" ${i===0?'aria-current="step"':''} aria-label="${esc((i+1)+" / "+units.length+" · "+angelusUnitHeading(angelusChoice().form,u,i,units))}" title="${esc(angelusUnitHeading(angelusChoice().form,u,i,units))}"><span></span></button>`).join('')}</div></nav>`;
+}
 function renderAngelus(){
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
  const unitsV=angelusUnits(vern,form),unitsL=angelusUnits(lat,form);
@@ -610,9 +632,9 @@ function renderAngelus(){
  const units=unitsV.map((u,i)=>{
   const la=unitsL[i]?.text||'';
   const incarnation=form==='angelus'&&u.type==='vr'&&/(Word was made flesh|Verbum caro factum est|Verbe s[’']est fait chair)/i.test(u.text+' '+la);
-  return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small>${esc(labels[u.type]||labels.prayer)}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${angelusUtterance(u.text,u.type)}</span><span data-face-la hidden>${angelusUtterance(la,u.type)}</span></button></article>`;
+  return `<article class="aoP435930LitCard aoP435930PrayerUnit" data-ao-angelus-unit="${esc(u.type)}" data-ao-angelus-index="${i}"${incarnation?' data-ao-incarnation="true"':''}><small class="aoReaderPrayerName">${esc(angelusUnitHeading(form,u,i,unitsV))}</small><button type="button" data-p435930-card-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${angelusUtterance(u.text,u.type)}</span><span data-face-la hidden>${angelusUtterance(la,u.type)}</span></button></article>`;
  }).join('');
- return `${head(form==='regina'?'Regina Cæli':'Angelus',L('Season-aware daily Marian prayer','Prière mariale quotidienne selon le temps liturgique'))}<main class="aoP435930Body" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${authority}${vespersToggle}${angelusGuideMarkup(form)}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}> <span><b>${esc(L('Historical conclusion','Conclusion historique'))}</b><small>${esc(L('Optional · off by default','Facultative · désactivée par défaut'))}</small></span></label>`:''}${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix"><h3>${esc(L('Traditional conclusion','Conclusion traditionnelle'))}</h3><button type="button" class="aoP435930AppendixFlip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
+ return `${head(form==='regina'?'Regina Cæli':'Angelus',L('Season-aware daily Marian prayer','Prière mariale quotidienne selon le temps liturgique'))}<main class="aoP435930Body" data-ao-angelus-form="${form}" data-ao-angelus-recitation="${S.rosary.recitation}">${nav(L('Form','Forme'),[['auto','Automatic','Automatique'],['angelus','Angelus','Angelus'],['regina','Regina Cæli','Regina Cæli']],S.angelusMode)}${recitationMode}${authority}${vespersToggle}${angelusGuideMarkup(form)}${angelusSequenceNav(unitsV)}<section class="aoRitualReaderGrid aoAngelusRitualGrid" data-ao-ritual-reader="angelus">${angelusExactRailMarkup()}<div class="aoP435930Cards aoP435930AngelusSequence">${units}</div></section>${form==='angelus'?`<label class="aoP435930Toggle"><input type="checkbox" data-p435930-angelus-appendix ${S.angelusHistoricalConclusion?'checked':''}> <span><b>${esc(L('Historical conclusion','Conclusion historique'))}</b><small>${esc(L('Optional · off by default','Facultative · désactivée par défaut'))}</small></span></label>`:''}${form==='angelus'&&S.angelusHistoricalConclusion?`<article class="aoP435930Appendix"><h3>${esc(L('Traditional conclusion','Conclusion traditionnelle'))}</h3><button type="button" class="aoP435930AppendixFlip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(DATA.angelusAppendix?.[lang()]||'')}</span><span data-face-la hidden>${nl(DATA.angelusAppendix?.la||'')}</span></button></article>`:''}</main>`;
 }
 function normalizeRosaryPrefs(raw=S.rosary){
  return Object.freeze({
