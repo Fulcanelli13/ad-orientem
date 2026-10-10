@@ -1,7 +1,7 @@
 {
   "schema": "ao.pray.tenebrae.1960-acquisition.v1",
   "created": "2026-10-10",
-  "status": "NINE_SOURCE_LEAVES_PRESERVED_NOT_ASSEMBLED_OR_PUBLISHED",
+  "status": "SIX_SOURCE_DERIVED_HOURS_ROUTED_PRINT_EDITION_UNCOLLATED",
   "purpose": "Create a small seasonal Holy Week Tenebrae journey, not a generic Divine Office or musical feature.",
   "source": {
     "provider": "Divinum Officium Project",
@@ -98,12 +98,11 @@
   ],
   "assemblyHold": {
     "tasks": [
-      "Resolve the three 1960/1961 Matins psalm sets and Lauds psalms/canticle/ordinary from the Breviary Psalter and Ordinarium; no inferred missing prayers.",
-      "Apply version-tagged sections and substitutions, including @Tempora/Quad6-4 references, rather than displaying raw unresolved macros.",
-      "Validate all nine Lamentations/lessons and nine responsories per day with 1961 source, and French/English passage alignment.",
-      "Distinguish actual 1960 Office timing from optional pre-1955 historical evening Tenebrae. In the 1960 Code of Rubrics Lauds cannot be anticipated; avoid depicting strepitus/hiding last candle as required 1962 ceremony.",
-      "Build an in-app compact 3-day x 2-hour reader (Latin and French, English optional), with opening date/path, active passage and contextual rubrics. No external redirect in production.",
-      "Verify output against a separate Breviarium Romanum 1961/1962 witness and real mobile acceptance."
+      "Independently collate each 1961 Breviary printed Matins and Lauds folio, including common orations and Hour ending formulas; source assembly passing CI is not print edition certification.",
+      "Confirm source weekday Psalter second-scheme and special Holy Saturday Moses canticle segmentation against a separately printed 1961 text.",
+      "Review full Latin and French variants of Christus factus est, especially partially corrupt Friday/Saturday Divinum Officium internal macros.",
+      "Validate actual 390px user flow and app module navigation after any further PRAY UI changes.",
+      "Do not assert the ceremonial fifteen-candle extinction/strepitus from pre-1955 Tenebrae is mandatory in the 1960/61 books."
     ],
     "excluded": [
       "full daily Divine Office",
@@ -121,8 +120,35 @@
     "sourceLocales": 3,
     "rawProperFilesPreserved": 9,
     "sourceFilesExpected": 9,
-    "assembliesReady": 0,
-    "readerRoutesPublished": 0
+    "assembliesReady": 6,
+    "readerRoutesPublished": 1,
+    "psalterAndCanticleDistinctIds": 37,
+    "psalterLocaleBundles": 9,
+    "psalterSourceLeavesPreserved": 111,
+    "sourceDerivedHourAssemblies": 6,
+    "independentPrintedBreviaryCertifiedHours": 0
   },
-  "publicationStatus": "RESEARCH_SOURCE_FREEZE_ONLY"
+  "publicationStatus": "SEASONAL_PRAY_READER_IMPLEMENTED_SOURCE_DERIVED_NOT_ORIGINAL_PRINT_CERTIFIED",
+  "reader": {
+    "route": "pray.tenebrae",
+    "nativeOwner": "src/pray/presentation-runtime.js",
+    "assembler": "src/pray/tenebrae-1960.js",
+    "renderer": "src/pray/tenebrae-presentation.js",
+    "styles": "src/pray/tenebrae-styles.js",
+    "sourceDerived": {
+      "matinsReadingStepsEachDay": 32,
+      "laudsReadingStepsEachDay": 10,
+      "sourcePsalmsEachMatins": 9,
+      "sourceLessonsEachMatins": 9,
+      "sourceResponsoriesEachMatins": 9,
+      "sourcePsalmsAndCanticlesEachLauds": 6
+    },
+    "languageFaces": [
+      "la",
+      "fr",
+      "en"
+    ],
+    "phoneGate": "tests/tenebrae-phone-e2e.mjs",
+    "status": "ACTIVE_READER_CRITICAL_SOURCE_HOLDS_REMAIN"
+  }
 }
