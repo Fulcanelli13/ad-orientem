@@ -2258,13 +2258,24 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "ACQUISITION_IN_PROGRESS",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3444,
+          "height": 4096
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042295260",
+        "artifactId": 11666222904,
+        "archiveOriginal": "nga-originals/nga-41696.jpg",
+        "originalWidth": 3444,
+        "originalHeight": 4096,
+        "originalSha256": "8dbcab042b04848af2eaf8ff0a723f4d38b8da9c933987ae83dd7c42145271ea"
+      }
     },
     {
       "id": "nga-46470",
@@ -2296,13 +2307,24 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "ACQUISITION_IN_PROGRESS",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2992,
+          "height": 4096
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042295260",
+        "artifactId": 11666222904,
+        "archiveOriginal": "nga-originals/nga-46470.jpg",
+        "originalWidth": 2992,
+        "originalHeight": 4096,
+        "originalSha256": "361e092842eae79c1bccf7a3552c09a52a210c5d0aa14c49d4407fd01aa1a0be"
+      }
     },
     {
       "id": "nga-46145",
@@ -2334,13 +2356,24 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "ACQUISITION_IN_PROGRESS",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2995,
+          "height": 4096
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042295260",
+        "artifactId": 11666222904,
+        "archiveOriginal": "nga-originals/nga-46145.jpg",
+        "originalWidth": 2995,
+        "originalHeight": 4096,
+        "originalSha256": "f80258023f805c42c7b255fcbc8debdaed57005f027afd6193ff285ace00aeea"
+      }
     }
   ],
   "notes": [
