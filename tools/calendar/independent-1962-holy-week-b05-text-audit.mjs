@@ -32,7 +32,8 @@ check("explicitly-NOT-certified",register.certification==="NOT_CERTIFIED"&&regis
 check("all-open-items-classified",items.length===17&&items.every(x=>x.status!=="CERTIFIED"&&x.source&&x.evidence));
 check("Palm-source-blessing-present-not-Passion",palm.texts.blessingPrayer.length>150&&palm.texts.gospel.length>800&&!Object.keys(palm.texts).some(k=>/passion/i.test(k)));
 check("Holy-Thursday-translation-hymn-text",thursday.pangeLingua.length===4&&thursday.tantumErgo.length===2&&thursday.stripping.psalm21Pian.join(" ").length>2000);
-check("Holy-Thursday-Mandatum-not-rendered-as-complete",!JSON.stringify(thursday).includes("Mandátum novum")&&!htReader.includes("Mandatum novum")&&itemById.get("THURSDAY_MANDATUM")?.status==="MISSING_READER_TEXT");
+check("Holy-Thursday-Mandatum-owned-within-Mass-and-still-textually-partial",!JSON.stringify(thursday).includes("Mandátum novum")&&!htReader.includes("Mandatum novum")&&itemById.get("THURSDAY_MANDATUM")?.status==="B08_IN_MASS_OPTIONAL_SELECTED_CHANTS__FULL_COLLATION_OPEN");
+check("Holy-Thursday-Canon-proper-restored-not-original-printed-certified",itemById.get("THURSDAY_CANON")?.status==="B08_SOURCE_MAPPED_READER_VARIANTS__PRINTED_FACSIMILE_UNCOLLATED");
 check("Good-Friday-nine-intentions-and-prayers",friday.solemnPrayers.length===9&&friday.solemnPrayers.every(x=>x.variants?.PRINTED_1962||x.intention?.length>50&&x.prayer?.length>130));
 check("Good-Friday-Passion-body-present",friday.passion.preDeath.length===24&&friday.passion.postDeath.length===4&&friday.passion.preDeath.join(" ").length>6500);
 check("Good-Friday-Passion-renderer-has-no-speaker-roles",gfReader.includes('rows("GF-PASS-A",payload.passion.preDeath')&&gfReader.includes('rows("GF-PASS-B",payload.passion.postDeath')&&itemById.get("FRIDAY_PASSION_SPEAKERS")?.status==="ROLE_ANNOTATIONS_MISSING");
