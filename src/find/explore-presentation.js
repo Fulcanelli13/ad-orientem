@@ -189,7 +189,7 @@ function itemCard(item,vm){
   const cut=full.length>170?full.slice(0,170).replace(/\s+\S*$/u,"").trimEnd()+"…":full;
   return '<button type="button" class="aoFindCard aoExploreCard" data-explore-item="'+esc(item.item_id)+'" data-explore-lens="'+esc(item.lens)+'">'
     +'<span class="aoFindCardTop"><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small>'
-    +(item.status==="OFFICIAL SANCTUARY"?'<i class="aoExploreCardRecognition">'+esc(L(vm.language,"Official Sanctuary","Sanctuaire officiel"))+'</i>':"")+'</span>'
+    +(item.status?'<i class="aoExploreCardRecognition">'+esc(item.status==="OFFICIAL SANCTUARY"?L(vm.language,"Official Sanctuary","Sanctuaire officiel"):item.status)+'</i>':"")+'</span>'
     +'<strong>'+esc(translatedTitle(item,vm.language)||"")+'</strong>'
     +(item.subtitle?'<span class="aoExploreCardLocation">'+esc(item.subtitle)+'</span>':"")
     +(cut?'<p>'+esc(cut)+'</p>':"")
