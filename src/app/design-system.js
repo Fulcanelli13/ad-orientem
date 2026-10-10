@@ -178,6 +178,28 @@ const CSS=`
   line-height:1.65;
 }
 
+/* Apply Mass refinements without touching the byte-locked donor renderer.
+ * This shared sheet is the only owner of these cross-reader display overrides. */
+.ao-reader-shell .ao-prayer-title{
+  font-size:clamp(.94rem,1.65vw,1.18rem)!important;
+  font-weight:500!important;
+  text-transform:uppercase!important;
+  letter-spacing:.10em!important;
+}
+.ao-reader-shell .ao-reader-paragraph{
+  opacity:var(--ao-reader-focus-far,.56)!important;
+}
+.ao-reader-shell .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{
+  opacity:var(--ao-reader-focus-far,.56)!important;
+}
+.ao-reader-shell .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{
+  opacity:var(--ao-reader-focus-current,1)!important;
+}
+.ao-reader-shell .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
+.ao-reader-shell .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){
+  opacity:var(--ao-reader-focus-near,.80)!important;
+}
+
 /* Shared sequence chrome. This is a location indicator, not a record of prayer. */
 #aoPray435930 .aoReaderSeqNav,
 #aoPrayerBookRoot .aoReaderSeqNav{
