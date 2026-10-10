@@ -9,6 +9,7 @@ on:
       - "tests/calendar-1962-full-year-audit.mjs"
       - "tools/calendar/report-sacred-art-liturgical-priorities.mjs"
       - "tools/calendar/build-sacred-art-reuse-index.mjs"
+      - "tools/calendar/build-sacred-art-rank-ii-iv-firstpass.mjs"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
       - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
       - "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
@@ -41,6 +42,7 @@ jobs:
           if [ -f artifacts/calendar-oracle/1962-2026-full-year-audit.json ]; then
             node tools/calendar/report-sacred-art-liturgical-priorities.mjs --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
             node tools/calendar/build-sacred-art-reuse-index.mjs
+            node tools/calendar/build-sacred-art-rank-ii-iv-firstpass.mjs
           else
             node tools/calendar/report-sacred-art-liturgical-priorities.mjs
           fi
@@ -52,6 +54,8 @@ jobs:
           path: |
             artifacts/sacred-art-coverage/liturgical-priority-v1.json
             artifacts/sacred-art-coverage/liturgical-priority-v1.md
+            artifacts/sacred-art-coverage/rank-ii-iv-firstpass-v1.json
+            artifacts/sacred-art-coverage/rank-ii-iv-firstpass-v1.md
           if-no-files-found: warn
       - name: Publish findings even if audit fails
         if: always()
