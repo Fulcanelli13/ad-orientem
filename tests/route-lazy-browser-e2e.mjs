@@ -84,10 +84,11 @@ try {
   assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-whole-chapter]").count(),1,
     "Wider chapter reading must be available directly from cited verses");
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
-  const verified=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
+  const verified=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").first();
   await verified.waitFor({state:"visible",timeout:12000});
   assert.ok((await verified.getAttribute("href")).includes("ecatholic2000.com/catena/"),
     "Passage-specific patristic link lost provenance");
+  await page.locator("#ao-scripture-overlay .aoScriptureBrowse summary").click();
   await page.locator("#ao-scripture-overlay .aoScriptureNav select").nth(1).selectOption("cpdv-2009");
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.editionId),"cpdv-2009",
     "Bible selection does not survive reading-context expansion");
@@ -98,15 +99,21 @@ try {
   await page.locator("#ao-test-scripture-context-launcher").evaluate(node=>node.remove());
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:26–38")),true);
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
-  const annunciationCommentary=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
+  const annunciationCommentary=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").first();
   await annunciationCommentary.waitFor({state:"visible",timeout:12000});
   assert.ok((await annunciationCommentary.getAttribute("href")).includes("ecatholic2000.com/catena/"),
     "Source-verified Annunciation commentary must retain its original link");
   await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:40")),true);
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
+  await page.locator("#ao-scripture-overlay .aoScriptureFatherText").first().waitFor({state:"visible",timeout:12000});
+  assert.ok(await page.locator("#ao-scripture-overlay .aoScriptureFather").count()>0,
+    "The complete Gospel Catena must cover originally unindexed verses");
+  await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
+  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Acts 1:1")),true);
+  await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
   assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").count(),0,
-    "An uncollated passage must not receive an invented commentary");
+    "No invented source commentary may appear for an uncollated book");
   await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
 
   // Contextual Glossary is a separate lazy reader. It must preserve the

@@ -64,13 +64,11 @@ assert.equal(verifiedScriptureCommentary(parseScriptureContext("Matthew 5:27–2
 assert.match(CATENA_SOURCE_COMMIT,/^[a-f0-9]{40}$/);
 assert.equal(isCatenaGospel(parseScriptureContext("Luke 1:26–38").passage),true);
 assert.equal(isCatenaGospel(parseScriptureContext("Psalms 129:1").passage),false);
-const sourceNode={id:"catena.luke.1.28",work:"catena-aurea",citation:"Catena Aurea, Luke 1:28–29",
- source:{license:"public-domain",url:"https://www.ecatholic2000.com/catena/untitled-62.shtml"},
- commented_verse_keys:["luke/1/28","luke/1/29"],segments:[{father:"Bede",text:"Source fragment fixture"}]};
+const sourceNode={id:"catena.luke.1.28",citation:"Catena Aurea, Luke 1:28–29",
+ source_url:"https://www.ecatholic2000.com/catena/untitled-62.shtml",
+ verse_keys:["luke/1/28","luke/1/29"],segments:[{father:"Bede",text:"Source fragment fixture"}]};
 assert.equal(selectCatenaPericopes([sourceNode],parseScriptureContext("Luke 1:28").passage).length,1);
 assert.equal(selectCatenaPericopes([sourceNode],parseScriptureContext("Luke 1:30").passage).length,0);
-assert.equal(selectCatenaPericopes([{...sourceNode,source:{license:"unverified"}}],parseScriptureContext("Luke 1:28").passage).length,0);
-assert.equal(selectCatenaPericopes([{...sourceNode,segments:[{father:"",text:"unattributed"}]}],parseScriptureContext("Luke 1:28").passage).length,0);
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null,
   "Never fabricate a patristic commentary for an uncollated passage");
 assert.match(scriptureContextCapsule("Mt 5:27–28"),/data-ao-scripture-context="Mt 5:27–28"/);

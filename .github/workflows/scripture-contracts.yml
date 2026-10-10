@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'src/scripture/**'
+      - 'data/scripture/catena/**'
       - 'tests/scripture-*.mjs'
       - 'package.json'
       - '.github/workflows/scripture-contracts.yml'
@@ -10,6 +11,7 @@ on:
     branches: [main]
     paths:
       - 'src/scripture/**'
+      - 'data/scripture/catena/**'
       - 'tests/scripture-*.mjs'
       - 'package.json'
 jobs:
