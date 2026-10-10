@@ -68,3 +68,5 @@ assert.ok(calls.includes("closed"),"Rejected exact definition must close generic
 bridge.dispose();
 assert.equal(win.AO_CONTEXTUAL_STUDY_V1,undefined);
 console.log("PASS canonical contextual glossary identities, 3 owner surfaces and fail-closed handoffs");
+
+await import("./glossary-context-lifecycle.mjs");
