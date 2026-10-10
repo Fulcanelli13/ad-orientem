@@ -736,6 +736,8 @@ const mixedProfile={
 };
 assert.equal(sacredPlaceSynopsis(mixedProfile,{preferredCategory:"relics"}),"RELIC INTRO ORIGINAL");
 assert.equal(sacredPlaceSynopsis(mixedProfile,{preferredCategory:"relics",language:"fr"}),"INTRO RELIQUE FRANÇAISE");
+assert.equal(sacredPlaceSynopsis({...mixedProfile,relics:[{}]},{preferredCategory:"relics"}),"",
+  "missing relic synopsis must not silently substitute shrine history");
 const relicPreview=compactHeritagePlaceSheet({selectedPlace:mixedProfile,language:"en",filters:{heritageCategories:["relics"]}});
 assert.match(relicPreview,/RELIC INTRO ORIGINAL/);
 assert.doesNotMatch(relicPreview,/SHRINE INTRO ORIGINAL/);
