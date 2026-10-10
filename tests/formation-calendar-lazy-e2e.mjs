@@ -444,6 +444,66 @@ try{
    assert.ok(result.overflow<=2,"Formation reader overflows at "+width+": "+JSON.stringify(result));
  }
  console.log("PASS Calendar and Sexual Ethics reading/source checks at 320/360/390/430px");
+
+ // Same-Formation-owner handoff: Matrimony stays mounted under the exact
+ // published Sexual Ethics marriage section, and Back restores focus/scroll.
+ await page.setViewportSize({width:390,height:844});
+ await page.evaluate(()=>globalThis.AO_SEXUAL_ETHICS_V1.close(false));
+ assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.rites.matrimony")),true);
+ const marriageRoot="#ao-learn-traditional-root";
+ await page.locator(marriageRoot+" [data-ao-tradlearn-ethics-context]").waitFor({state:"attached",timeout:12000});
+ await page.locator(marriageRoot+" [data-ao-tradlearn-ethics-context]").evaluate(el=>{const details=el.closest("details");if(details)details.open=true});
+ await page.locator(marriageRoot+" [data-ao-tradlearn-ethics-context]").tap();
+ await page.waitForFunction(()=>globalThis.AO_SEXUAL_ETHICS_V1?.status?.()?.view==="section",null,{timeout:15000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_TRADITIONAL_LEARN_V381.status().route),"learn.rites.matrimony");
+ const marriageScroll=await page.evaluate(()=>document.querySelector("#ao-learn-traditional-root").scrollTop);
+ await page.evaluate(()=>document.querySelector("#ao-learn-traditional-root").scrollTop=0);
+ await page.locator("#ao-sexual-ethics-root [data-ao-cse-back]").tap();
+ await page.locator("#ao-sexual-ethics-root [data-ao-cse-back]").tap();
+ assert.equal(await page.locator("#ao-sexual-ethics-root").count(),0,"Contextual Sexual Ethics failed to close");
+ assert.equal(await page.evaluate(()=>document.querySelector("#ao-learn-traditional-root").scrollTop),marriageScroll,"Matrimony scroll position lost on contextual Back");
+ assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-ao-tradlearn-ethics-context")),true,"Matrimony focus not restored");
+ console.log("PASS Matrimony -> published Sexual Ethics marriage section -> exact reader/focus/scroll return");
+
+ // Latin Glossary remains a contextual owner. Do not close the Latin lesson
+ // or replace the active course/stage/exercise to browse its canonical lexicon.
+ await page.evaluate(()=>globalThis.AO_TRADITIONAL_LEARN_V381.close());
+ const navLearn=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn"));
+ assert.equal(navLearn?.ok,true);
+ assert.equal(await page.evaluate(()=>globalThis.AO_LEARN_APP_V1.openModule("learn.latin")),true);
+ await page.locator("[data-l2-stage]").first().waitFor({state:"visible",timeout:16000});
+ await page.locator("[data-l2-stage]").first().tap();
+ await page.locator("[data-l2-lesson]").first().waitFor({state:"visible",timeout:15000});
+ await page.locator("[data-l2-lesson]").first().tap();
+ await page.locator("[data-l2-phase='read']").waitFor({state:"visible",timeout:15000});
+ await page.locator("[data-l2-phase='read']").tap();
+ const latinBefore=await page.evaluate(()=>globalThis.AO_LATIN_COURSE_V2.status());
+ await page.locator("[data-l2-open-glossary]").tap();
+ await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.view==="category",null,{timeout:18000});
+ const latinRoot=await page.evaluate(()=>document.querySelector("#ao-latin-course-root")||document.querySelector("[data-ao-latin-course-version]"));
+ assert.ok(latinRoot!==null,"Latin module disappeared under its contextual Glossary");
+ await page.evaluate(()=>globalThis.AO_GLOSSARY_V1.close(false));
+ const latinAfter=await page.evaluate(()=>globalThis.AO_LATIN_COURSE_V2.status());
+ assert.equal(latinAfter.lesson,latinBefore.lesson,"Glossary return changed Latin lesson");
+ assert.equal(latinAfter.lessonPhase,latinBefore.lessonPhase,"Glossary return changed Latin learning phase");
+ assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-l2-open-glossary")),true,"Latin return failed to restore activating reference control");
+ console.log("PASS Latin reading -> canonical Latin Glossary -> same lesson, phase and reference focus");
+
+ // Doctrinal context must live at the Confession preparation and Adoration
+ // selection surfaces only. Guided sacramental/silent stages remain clean.
+ await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray"));
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:12000});
+ for(const {route,id} of [{route:"pray.confession",id:"G034"},{route:"pray.adoration",id:"G301"}]){
+   assert.equal(await page.evaluate(route=>globalThis.AO_PRAY_V435930.open(route,{returnContext:null}),route),true);
+   const selector='#aoPray435930.open [data-ao-glossary-context="'+id+'"]';
+   await page.locator(selector).tap();
+   await page.waitForFunction(id=>globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,id,{timeout:16000});
+   assert.equal(await page.locator("#aoPray435930.open").count(),1,"Canonical Prayer owner was lost to doctrine lookup");
+   await page.evaluate(()=>globalThis.AO_GLOSSARY_V1.close(false));
+   assert.equal(await page.evaluate(selector=>document.activeElement?.matches?.(selector)),true,"Prayer Glossary return lost exact trigger");
+ }
+ console.log("PASS Confession / Adoration doctrinal glossary in-place, original Prayer surfaces retained");
+
  assert.deepEqual(pageErrors.filter(s=>/SyntaxError|ReferenceError|TypeError|import.*failed|Cannot read/.test(s)),[], "Deferred Formation/Calendar caused errors");
  console.log("PASS Home avoided Formation courses and Calendar runtime; first-use Formation child and Calendar navigation preserved");
  console.log("FORMATION_CALENDAR_LAZY="+JSON.stringify({coldMs,calMs,coldRequests:cold.length,coldBytes:cold.reduce((n,v)=>n+v.bytes,0),calendarInstalled:calendar.status.installed,deepLinks:["learn.spiritual_life","learn.sexual_ethics","learn.rites.sick"]}));
