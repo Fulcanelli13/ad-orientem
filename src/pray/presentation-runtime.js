@@ -1085,7 +1085,7 @@ const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
 ];
 function benMacroIndex(step){if(step<=0)return 0;if(step===1)return 1;if(step>=6)return 3;return 2}
-function benMacroRail(step){const labels=[L('Exposition','Exposition'),L('Adoration','Adoration'),L('Benediction','Bénédiction'),L('Reposition','Reposition')];return `<div class="aoP435930StageRail aoP435930BenMacroRail">${labels.map((x,i)=>`<span class="${i===benMacroIndex(step)?'active':''}" ${i===benMacroIndex(step)?'aria-current="step"':''}>${esc(x)}</span>`).join('')}</div>`}
+function benMacroRail(step){const labels=[L('Exposition','Exposition'),L('Adoration','Adoration'),L('Benediction','Bénédiction'),L('Reposition','Reposition')];return `<div class="aoP435930StageRail aoP435930BenMacroRail aoReaderMacroRail" aria-label="${esc(L('Benediction phases','Phases de la Bénédiction'))}">${labels.map((x,i)=>`<span class="${i===benMacroIndex(step)?'active':i<benMacroIndex(step)?'past':''}" ${i===benMacroIndex(step)?'aria-current="step"':''}>${esc(x)}</span>`).join('')}</div>`}
 function renderBenediction(){
  const i=BEN.step,id=BEN_STAGES[i][0],titles=BEN_STAGES.map(x=>L(x[1],x[2]));let body='';
  if(id==='exposition')body=`${guideNow(L('Attend to the Exposition','Soyez attentif à l’exposition'),L('When the Blessed Sacrament is exposed, turn your attention to the altar. If O Salutaris is actually sung, pray or sing it with the church; otherwise follow what is used.','Lorsque le Saint-Sacrement est exposé, tournez votre attention vers l’autel. Si O Salutaris est effectivement chanté, priez-le ou chantez-le avec l’assemblée ; sinon, suivez ce qui est utilisé.'))}${prayerBlock('benediction_o_salutaris',{kicker:L('If sung here','Si chanté ici')})}${guideCue(L('WAIT FOR','ATTENDEZ'),L('Stay here until the opening hymn or prayers have finished and the service settles into adoration.','Restez ici jusqu’à la fin du chant ou des prières d’ouverture et jusqu’à ce que l’office entre dans l’adoration.'))}`;
@@ -1102,11 +1102,23 @@ function timerMarkup(){
  if(!ADOR.timerEnd)return `<div class="aoP435930Timer"><b>${esc(L('Optional timer aid','Minuteur facultatif'))}</b><span>${esc(L('It never marks a devotion complete.','Il ne valide jamais une dévotion.'))}</span><div>${[10,20,30,60].map(n=>`<button type="button" data-p435930-timer="${n}">${n} min</button>`).join('')}</div></div>`;
  const rem=Math.max(0,ADOR.timerEnd-Date.now()),min=Math.ceil(rem/60000);return `<div class="aoP435930Timer running"><b>${esc(L('Timer aid','Minuteur'))}: ${min} min</b><span>${esc(L('Completion remains your explicit report.','L’accomplissement reste votre déclaration explicite.'))}</span><button type="button" data-p435930-timer-stop>${esc(L('Stop','Arrêter'))}</button></div>`;
 }
+// Presentation-only progress, never a claim that worship was completed.
+function readerStageIndicator(items,active,kind){
+ const count=items.length,index=Math.max(0,Math.min(count-1,Number(active)||0));
+ if(!count)return '';
+ const position=String(index+1)+' / '+String(count);
+ const progress=Math.round(100*(index+1)/count);
+ return `<div class="aoReaderStageIndicator" data-ao-reader-stage-indicator="${esc(kind)}" aria-label="${esc(L('Current section','Section actuelle'))}">
+ <span class="aoReaderStageNumber">${esc(position)}</span>
+ <strong class="aoReaderStageTitle">${esc(items[index]||'')}</strong>
+ <span class="aoReaderStageTrack" role="progressbar" aria-valuemin="0" aria-valuemax="${count}" aria-valuenow="${index+1}" aria-label="${esc(L('Current section','Section actuelle'))}"><i style="width:${progress}%"></i></span>
+ </div>`;
+}
 function guideRail(items,active,kind){
- return `<div class="aoP435930StageRail aoP435930GuideRail">${items.map((x,i)=>`<button type="button" class="${i===active?'active':''}" ${i===active?'aria-current="step"':''} data-p435930-${kind}-step="${i}"><span>${i+1}</span><b>${esc(x)}</b></button>`).join('')}</div>`
+ return readerStageIndicator(items,active,kind)+`<nav class="aoP435930StageRail aoP435930GuideRail aoReaderStageRail" data-ao-reader-stage="${esc(kind)}" aria-label="${esc(L('Sections','Sections'))}">${items.map((x,i)=>`<button type="button" class="${i===active?'active':''}" ${i===active?'aria-current="step"':''} data-p435930-${kind}-step="${i}" title="${esc(x)}" aria-label="${esc((i+1)+' / '+items.length+' · '+x)}"><span>${i+1}</span><b>${esc(x)}</b></button>`).join('')}</nav>`
 }
 function litFlowRail(items,active,kind){
- return `<div class="aoP435930StageRail aoP435930LitFlow" data-ao-lit-flow="${esc(kind)}">${items.map((x,i)=>`<button type="button" class="${i===active?'current':i<active?'past':'future'}" ${i===active?'aria-current="step"':''} data-p435930-${kind}-step="${i}"><span>${i+1}</span><b>${esc(x)}</b></button>`).join('')}</div>`;
+ return readerStageIndicator(items,active,kind)+`<nav class="aoP435930StageRail aoP435930LitFlow aoReaderStageRail" data-ao-lit-flow="${esc(kind)}" data-ao-reader-stage="${esc(kind)}" aria-label="${esc(L('Stages','Étapes'))}">${items.map((x,i)=>`<button type="button" class="${i===active?'current':i<active?'past':'future'}" ${i===active?'aria-current="step"':''} data-p435930-${kind}-step="${i}" title="${esc(x)}" aria-label="${esc((i+1)+' / '+items.length+' · '+x)}"><span>${i+1}</span><b>${esc(x)}</b></button>`).join('')}</nav>`;
 }
 function guideNow(title,action,note=''){
  return `<section class="aoP435930GuideNow"><small>${esc(L('NOW','MAINTENANT'))}</small><h2>${esc(title)}</h2><p>${esc(action)}</p>${note?`<span>${esc(note)}</span>`:''}</section>`
@@ -1363,14 +1375,18 @@ async function guidedWsText(title,key,language='en'){
 
 function stationFlip(la,vern,label){
  const hasBoth=!!(la&&vern),shown=vern||la||'';
- return `<article class="aoP435930Prayer aoP435930StationPrayer"><div class="aoP435930PrayerHead"><div><small>${esc(label||L('Pray','Prier'))}</small></div>${hasBoth?`<span>LA ↔ ${isFr()?'FR':'EN'}</span>`:''}</div>${hasBoth?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(la)}</span></button>`:`<div class="aoP435930Text">${nl(shown)}</div>`}</article>`
+ return `<article class="aoP435930Prayer aoP435930StationPrayer"><div class="aoP435930PrayerHead"><div><h3 class="aoReaderDevotionalTitle">${esc(label||L('Prayer','Prière'))}</h3></div>${hasBoth?`<span>LA ↔ ${isFr()?'FR':'EN'}</span>`:''}</div>${hasBoth?`<button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch prayer language','Changer la langue de la prière'))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(la)}</span></button>`:`<div class="aoP435930Text">${nl(shown)}</div>`}</article>`
 }
 function stationResponse(vr){
  const la=vr.la||[],ve=vr[lang()]||vr.en||[],group=S.stations.recitation==='group';
  const line=(role,latin,vern)=>`<div class="aoP435930VRLine ${role}" data-role="${role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${role==='leader'?'versicle':'response'}">${role==='leader'?'℣.':'℟.'}</span><button type="button" class="aoP435930Flip" data-p435930-flip aria-label="${esc(L('Switch response language','Changer la langue du répons'))}"><span data-face-v>${esc(String(vern||'').replace(/^[℣℟]\.\s*/,''))}</span><span data-face-la hidden>${esc(String(latin||'').replace(/^[℣℟]\.\s*/,''))}</span></button></div>`;
  return `<article class="aoP435930VR ${group?'group':'individual'}"><small>${esc(group?L('GROUP · VERSICLE & RESPONSE','GROUPE · VERSET & RÉPONS'):L('VERSICLE & RESPONSE','VERSET & RÉPONS'))}</small>${line('leader',la[0],ve[0])}${line('response',la[1],ve[1])}</article>`;
 }
-function stationRail(active){const roman=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'];return `<div class="aoP435930StageRail aoP435930GuideRail aoP435930StationRail">${roman.map((r,i)=>`<button type="button" class="${i===active?'active':''}" ${i===active?'aria-current="step"':''} data-p435930-station-step="${i}"><span>${r}</span><b>${esc((STATION_DATA.stationTitles?.[lang()]||STATION_DATA.stationTitles?.en||[])[i]||'')}</b></button>`).join('')}</div>`}
+function stationRail(active){
+ const roman=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'];
+ const titles=STATION_DATA.stationTitles?.[lang()]||STATION_DATA.stationTitles?.en||[];
+ return readerStageIndicator(titles,active,'stations')+`<nav class="aoP435930StageRail aoP435930GuideRail aoP435930StationRail aoReaderStageRail" data-ao-reader-stage="stations" aria-label="${esc(L('Stations','Stations'))}">${roman.map((r,i)=>`<button type="button" class="${i===active?'active':''}" ${i===active?'aria-current="step"':''} data-p435930-station-step="${i}" title="${esc(titles[i]||'')}" aria-label="${esc(r+' · '+(titles[i]||''))}"><span>${r}</span><b>${esc(titles[i]||'')}</b></button>`).join('')}</nav>`;
+}
 function stationsFx(){
  const i=Math.max(0,Math.min(13,Number(STATIONS.step)||0));
  if(lastStationsFxStep===i)return false;
