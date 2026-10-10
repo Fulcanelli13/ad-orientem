@@ -260,6 +260,26 @@ export function createFormationRecoveryReview(win=globalThis) {
       '<button type="button" class="rrInspect" data-rr-id="'+esc(x.id)+'">'+esc(pick(win,"Inspect original record","Examiner la fiche originale"))+'</button>'+
       '</div></details>';
   };
+  // Historical questions need an evidentiary label, not a fabricated adversarial "camp".
+  // Curated from the existing canonical 81-question Church Crisis table: neutral source review
+  // remains distinct from dossiers centered on an attributable disputed position.
+  const documentaryCrisisIds=new Set([
+    "CR-ORG-01","CR-ORG-02","CR-ORG-04","CR-ORG-05","CR-ORG-06",
+    "CR-ORG-07","CR-ORG-09","CR-LIT-01","CR-LIT-02","CR-LIT-03",
+    "CR-LIT-04","CR-LIT-08","CR-LIT-09","CR-LIT-10","CR-LIT-11","CR-LIT-12",
+    "CR-DOC-01","CR-ECC-11","CR-AUT-04","CR-AUT-06","CR-AUT-07",
+    "CR-IDM-09","CR-IDM-10","CR-GOV-01","CR-GOV-02","CR-GOV-03",
+    "CR-GOV-05","CR-GOV-06","CR-GOV-07","CR-GOV-09"
+  ]);
+  const synthesisRoleLabel=(d,role)=>{
+    if(d.corpus==="crisis"&&documentaryCrisisIds.has(d.id)){
+      if(role==="documented_position")return ["Historical documents and evidence","Documents et témoignages historiques"];
+      if(role==="critical_response")return ["Evidence-based assessment","Analyse fondée sur les sources"];
+    }
+    if(role==="documented_position"&&d.corpus==="crisis")
+      return ["Documented argument or position","Argument ou position documentée"];
+    return null;
+  };
   const synthesisReading=d=>{
     if(!d.synthesis)return "";
     const corpus=state.synthesisSources||new Map();
@@ -276,7 +296,7 @@ export function createFormationRecoveryReview(win=globalThis) {
         "New bilingual source-linked synthesis. Original-text spot-checking does not constitute independent passage-by-passage, theological or French editorial approval.",
         "Nouvelle synthèse bilingue sourcée. Le repérage des textes ne constitue ni une certification indépendante de chaque passage, ni une approbation théologique ou linguistique."))+'</div>'+
       d.synthesis.sections.map(q=>'<section class="rrArticleSection" data-rr-synthesis-role="'+esc(q.role)+'">'+
-      '<h3>'+esc(pick(win,...(labels[q.role]||[q.role,q.role])))+'</h3>'+
+      '<h3>'+esc(pick(win,...(synthesisRoleLabel(d,q.role)||labels[q.role]||[q.role,q.role])))+'</h3>'+
       (q.attribution?'<p class="rrMuted">'+esc(q.attribution)+'</p>':"")+
       '<p>'+esc(asText(q.text,win))+'</p>'+
       sourceLinks(q.source_ids,corpus)+'</section>').join("")+'</section>';
