@@ -1,6 +1,7 @@
 import { buildLiturgicalYear, buildMajorCelebrations } from "../calendar/liturgical-year.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
 import { TODAY_V2_CSS } from "./today-v2-styles.js";
+import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 // The uploaded Today v2 HTML is a visual reference, not a liturgical source.
 // Actual observance always comes from the selected 1962 Calendar resolution.
@@ -25,6 +26,11 @@ function prayerAttributes(row){
 }
 const section=(kicker,title,action="")=>`<div class="td2-section-head"><div><small>${esc(kicker)}</small><h2>${esc(title)}</h2></div>${action}</div>`;
 const arrow='<span aria-hidden="true" class="td2-arrow">›</span>';
+function icon(asset){
+ const url=resolveCanonicalAssetUrl(asset);
+ if(!url)return '';
+ return '<span data-ao-asset-id="'+esc(asset)+'" aria-hidden="true" style="display:inline-block;width:22px;height:22px;background:currentColor;-webkit-mask:url(\''+esc(url)+'\') center/contain no-repeat;mask:url(\''+esc(url)+'\') center/contain no-repeat"></span>';
+}
 export function renderTodayV2({state,vm,resume=null,artMarkup="",enrichers=null,warnings=""}){
  const fr=vm.language==="fr",L=(en,frText)=>fr?frText:en,date=vm.dateIso;
  const y=buildLiturgicalYear(date),period=y.currentPeriod;
@@ -40,9 +46,9 @@ export function renderTodayV2({state,vm,resume=null,artMarkup="",enrichers=null,
  return `<style id="ao-today-v2-styles">${TODAY_V2_CSS}</style>
  <main class="homeScreen td2" data-ao-today-version="${TODAY_V2_VERSION}" data-ao-home-presentation-owner="modular-home-presentation-v1" data-home-language="${esc(vm.language)}">
   <header class="td2-top">
-   <button type="button" data-home-calendar-view="picker" aria-label="${esc(L("Calendar","Calendrier"))}"><span aria-hidden="true">▦</span></button>
+   <button type="button" data-home-calendar-view="picker" aria-label="${esc(L("Calendar","Calendrier"))}">${icon("ao-nav-calendar")}</button>
    <span>AD ORIENTEM</span>
-   <button type="button" data-home-settings aria-label="${esc(L("Settings","Paramètres"))}"><span data-ao-asset-id="ao-ui-settings" aria-hidden="true">⚙</span></button>
+   <button type="button" data-home-settings aria-label="${esc(L("Settings","Paramètres"))}">${icon("ao-ui-settings")}</button>
   </header>
   <nav class="td2-tabs" aria-label="${esc(L("Calendar views","Vues du calendrier"))}">
     <button type="button" aria-current="page">${esc(L("Today","Aujourd’hui"))}</button>
@@ -84,9 +90,9 @@ export function renderTodayV2({state,vm,resume=null,artMarkup="",enrichers=null,
       <button type="button" ${prayerAttributes(prayer)}>${esc(L("Pray","Prier"))}</button>
      </div>
      <div class="td2-shortcuts">
-      <button type="button" data-home-cu-route="pray.rosary"><span aria-hidden="true">✥</span>${esc(L("Rosary","Rosaire"))}</button>
-      <button type="button" data-home-cu-route="pray.confession"><span aria-hidden="true">✝</span>${esc(L("Confession","Confession"))}</button>
-      <button type="button" data-home-cu-route="pray.adoration"><span aria-hidden="true">✠</span>${esc(L("Adoration","Adoration"))}</button>
+      <button type="button" data-home-cu-route="pray.rosary">${icon("ao-rich-rosary")}${esc(L("Rosary","Rosaire"))}</button>
+      <button type="button" data-home-cu-route="pray.confession">${icon("ao-rich-examination-of-conscience")}${esc(L("Confession","Confession"))}</button>
+      <button type="button" data-home-cu-route="pray.adoration">${icon("ao-refined-church")}${esc(L("Adoration","Adoration"))}</button>
      </div>
    </section>
    <section class="td2-zone">
