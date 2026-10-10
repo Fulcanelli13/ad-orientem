@@ -5,7 +5,8 @@ const report = read("data/learn/formation-141-claim-scope-matrix-2026-10-09.v1.j
 const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
 const a2=read("data/learn/formation-a2-20261010-source-role-amendment.v1.json");
 const priority=read("data/learn/formation-priority-original-opponents-source-amendment-2026-10-10.v1.json");
-const a1Changed=new Map([...a1.modified_roles,...a2.modified_roles,...priority.modified_roles].map(x=>[x.owner+"|"+x.role,x]));
+const prioritySix=read("data/learn/formation-priority-six-20261010-source-role-amendment.v1.json");
+const a1Changed=new Map([...a1.modified_roles,...a2.modified_roles,...priority.modified_roles,...prioritySix.modified_roles].map(x=>[x.owner+"|"+x.role,x]));
 const packs = report.source_packs.map(path => ({path, data: read(path)}));
 const reviews = report.review_ledgers.map(path => ({path, data: read(path)}));
 assert.equal(report.version, "FORMATION_141_CLAIM_SCOPE_MATRIX_20261009_V1");
