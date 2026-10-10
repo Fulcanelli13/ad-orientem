@@ -898,6 +898,29 @@ try{
   assert.ok(faithfulGloriaIcons.count>=1 && faithfulGloriaIcons.eachHasPosture,
     "each visible Gloria paragraph requires its own faithful posture icon");
   assert.equal(faithfulGloriaIcons.current,false,"Gloria bow missing from faithful paragraph itself");
+  // An actual tap on the faithful pictogram, not the priest icon, owns
+  // the local posture/gesture picker. Saving must not rebuild the card.
+  const gloriaInline=page.locator(
+    "#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='posture']");
+  await gloriaInline.click();
+  const faithfulPicker=page.locator("#ao-r17-native-reader-preview [data-role='faithful-icon-picker']");
+  assert.equal(await faithfulPicker.isVisible(),true,"tapping faithful icon did not open customization");
+  assert.equal(await faithfulPicker.getAttribute("data-cue-id"),"AO.SM.C0061");
+  await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("STAND");
+  await page.waitForFunction(()=>
+    document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061']")
+      ?.dataset.faithfulPosture==="STAND",null,{timeout:7000});
+  await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("SIGN_OF_CROSS");
+  await page.waitForFunction(()=>
+    document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")
+      ?.textContent?.includes("SIGN OF CROSS"),null,{timeout:7000});
+  assert.match(await page.evaluate(()=>localStorage.getItem("ao-mass-customary-v1")??""),/AO.SM.C0061/,
+    "faithful paragraph icon customization was not saved");
+  await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("DEFAULT");
+  await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("DEFAULT");
+  await faithfulPicker.locator("[data-faithful-picker-close]").click();
+  assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
+
   const priestBowArt=await page.evaluate(()=>{
     const root=document.getElementById("ao-r17-native-reader-preview");
     const rail=root?.querySelector('.ao-rail-right [data-channel="priest-action"]');
