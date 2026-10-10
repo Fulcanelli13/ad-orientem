@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Orientem · Campion gesture & position icon audit</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--panel:#121922;--line:#343b43;--txt:#e3e0d7;--muted:#acaeab;--accent:#c8ac7c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.55 system-ui,-apple-system,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:clamp(18px,4vw,44px)}
+h1,h2,.heading{font-family:Georgia,serif;font-weight:400}h1{font-size:clamp(27px,4vw,42px);margin:10px 0}h2{font-size:24px;margin-top:38px}
+.kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.15em;font-size:10px}
+.intro{max-width:860px;color:#c5c7c2}.metrics{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}.metric{min-width:115px;padding:11px 15px;border:1px solid var(--line);border-radius:9px}
+.metric strong{display:block;font:24px Georgia,serif}.metric small{color:var(--muted)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:20px 0;padding:12px;background:#0c141d;border:1px solid var(--line);border-radius:9px}
+select,input,textarea,button{background:#161f28;color:var(--txt);border:1px solid #46505a;border-radius:7px;padding:9px;font:inherit}
+button{cursor:pointer}button:hover,button:focus-visible{border-color:var(--accent)}.primary{color:#0e1013;background:var(--accent);border-color:var(--accent);font-weight:700}
+.card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr));gap:12px}
+.card{border:1px solid #323b46;border-radius:12px;padding:16px;background:var(--panel);min-width:0}
+.card[data-decision="accept"]{border-color:#69836d}.card[data-decision="redesign"]{border-color:#987c60}.card h3{font:20px/1.3 Georgia,serif;margin:7px 0}
+.small{color:var(--muted);font-size:11px}.source{margin:9px 0;font-size:12px;overflow-wrap:anywhere}.reason{color:#c9c6c0;font-size:12px}
+.figures{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0}
+.figure{border:1px solid var(--line);border-radius:8px;text-align:center;padding:9px 4px;background:#0b121a;min-width:0}
+.figure img{height:112px;width:100%;max-width:170px;object-fit:contain;filter:brightness(0) invert(.83);vertical-align:middle}
+.figure p{margin:6px 0 0;color:var(--muted);font-size:10px}
+.figure .none{min-height:112px;display:grid;place-items:center;color:#9fa6ae}
+.options{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0}.option{padding:8px 9px;font-size:11px}
+.option[aria-pressed="true"]{border-color:var(--accent);background:#393323;color:#f5e6bd}
+textarea{width:100%;resize:vertical;min-height:43px;font-size:12px}
+.banner{border-left:3px solid var(--accent);padding:6px 14px;margin:18px 0;background:#11171c}
+summary{cursor:pointer}a{color:#dfbf8d}footer{font-size:12px;color:#9caaa8;margin-top:35px}
+@media(max-width:500px){main{padding:15px}.card{padding:11px}.figure img{height:80px}}
+</style>
+</head>
+<body>
+<main>
+<div class="kicker">Ad Orientem · artwork audit / user approval</div>
+<h1>Gestures and priest positions</h1>
+<p class="intro">The ceremonial source data is already present. This audit separates <strong>missing exact artwork</strong> from missing rubrics. The original 67 v4.6 masters remain frozen and active. New images shown here are <strong>unapproved vector proposals</strong>, not live substitutions.</p>
+<section class="metrics" id="metrics"></section>
+<div class="banner"><strong>Source ownership:</strong> the 1962 Missal and certified ceremonial sources govern movements. Campion's 1954 missal is discovery/explanation, never a source of obligatory congregational gestures. A single icon must not erase a conditional or sequence-based cue. Select <em>Needs redesign</em> when none of the displayed pictograms expresses the precise action.</div>
+<div class="toolbar">
+<label>Filter <select id="filter"><option value="all">All unapproved items</option><option value="POSITION">Priest positions</option><option value="PRIEST">Priest gestures</option><option value="FAITHFUL">Faithful gestures</option><option value="undecided">Not yet decided</option></select></label>
+<button type="button" class="primary" id="export">Export decisions as JSON</button>
+<button type="button" id="reset">Reset decisions</button>
+<span id="progress" class="small" aria-live="polite"></span>
+</div>
+<div id="sections"></div>
+<footer>Decisions are held in this browser for this session and exported to JSON. Nothing is automatically committed to the production R17 icon bank. You can mark unmentioned items as accepted only after you have examined their candidates.</footer>
+</main>
+<script>
+"use strict";
+const payload={"schema":"ao-mass-campion-icon-review-20261010","sourceStatus":"PROPOSALS_NOT_ACTIVATED","matrixCount":142,"boundCount":125,"pendingCount":17,"positionRows":49,"masterCount":67,"rows":[{"id":"POS.EPISTLE_MISSAL","title":"Epistle-side Missal","station":"ALTAR_EPISTLE_MISSAL","candidate":"../assets/review/mass-icon-candidates/priest-epistle-side.svg","label":"Epistle-side Missal","actor":"PRIEST","kind":"POSITION","source":"49 sourced priest station transitions","cueId":"ALTAR_EPISTLE_MISSAL","existing":"../assets/active/mass-v46/priest_centre.svg","comparatorKey":"priest_centre","reason":"Currently shown as ALTAR_CENTER; verify distinct plain position glyph with original 1962 source, without using rich action artwork","priority":"STATION"},{"id":"POS.EPISTLE_SIDE","title":"Epistle-side station","station":"ALTAR_EPISTLE_SIDE","candidate":"../assets/review/mass-icon-candidates/priest-epistle-side.svg","label":"Epistle-side station","actor":"PRIEST","kind":"POSITION","source":"49 sourced priest station transitions","cueId":"ALTAR_EPISTLE_SIDE","existing":"../assets/active/mass-v46/priest_centre.svg","comparatorKey":"priest_centre","reason":"Currently shown as ALTAR_CENTER; verify distinct plain position glyph with original 1962 source, without using rich action artwork","priority":"STATION"},{"id":"POS.GOSPEL_MISSAL","title":"Gospel-side Missal","station":"ALTAR_GOSPEL_MISSAL","candidate":"../assets/review/mass-icon-candidates/priest-gospel-side.svg","label":"Gospel-side Missal","actor":"PRIEST","kind":"POSITION","source":"49 sourced priest station transitions","cueId":"ALTAR_GOSPEL_MISSAL","existing":"../assets/active/mass-v46/priest_centre.svg","comparatorKey":"priest_centre","reason":"Currently shown as ALTAR_CENTER; verify distinct plain position glyph with original 1962 source, without using rich action artwork","priority":"STATION"},{"id":"GM.F.C0021.01","cueId":"AO.SM.C0021","actor":"FAITHFUL","label":"Profound bow / remain kneeling according profile","gesture":"PROFOUND_BOW","campionPages":[21,22],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/profound_bow.svg","comparatorKey":"profound_bow","reason":"Conditional: profile-dependent kneel/bow","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0023.01","cueId":"AO.SM.C0023","actor":"FAITHFUL","label":"Remain bowed / return after conclusion","gesture":"HEAD_OR_BODY_BOW","campionPages":[21,22],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/head_bow.svg","comparatorKey":"head_bow","reason":"Bowed-to-raised transition; cannot use one still uncritically","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0056.01","cueId":"AO.SM.C0056","actor":"FAITHFUL","label":"Customary bow may follow local practice; do not hard-code as universal.","gesture":"HEAD_OR_BODY_BOW","campionPages":[],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/head_bow.svg","comparatorKey":"head_bow","reason":"Customary only; exclude from universal gesture triggers","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0096.01","cueId":"AO.SM.C0096","actor":"FAITHFUL","label":"Kneeling/genuflection here depends on sung/local calendar rule; Christmas and...","gesture":"GENUFLECT","campionPages":[33],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/genuflect.svg","comparatorKey":"genuflect","reason":"Posture differs according liturgical condition","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.P.C0117.01","cueId":"AO.SM.C0117","actor":"PRIEST","label":"RAISES EYES AND HANDS","gesture":"RAISE_EYES_AND_HANDS","campionPages":[41],"sourceAuthority":"1962_NORMATIVE","priority":"ACTION","candidate":"../assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg","existing":"../assets/active/mass-v46/priest_centre_arms_rich.svg","comparatorKey":"priest_centre_arms_rich","reason":"Verify gaze + elevated hands","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.P.C0155.01","cueId":"AO.SM.C0155","actor":"PRIEST","label":"RAISES AND JOINS HANDS · BOWS HEAD","gesture":"MEMENTO_HANDS","campionPages":[51],"sourceAuthority":"1962_NORMATIVE","priority":"ACTION","candidate":null,"existing":"../assets/active/mass-v46/priest_centre_hands_rich.svg","comparatorKey":"priest_centre_hands_rich","reason":"Joined hands + head bowed: combined action","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.P.C0161.01","cueId":"AO.SM.C0161","actor":"PRIEST","label":"HANDS OVER OBLATIONS","gesture":"HANDS_OVER_OBLATIONS","campionPages":[53],"sourceAuthority":"1962_NORMATIVE","priority":"ACTION","candidate":"../assets/review/mass-icon-candidates/priest-hands-over-oblations.svg","existing":"../assets/active/mass-v46/priest_centre_hands_rich.svg","comparatorKey":"priest_centre_hands_rich","reason":"Hands must be ABOVE gifts, not joined","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.P.C0169.01","cueId":"AO.SM.C0169","actor":"PRIEST","label":"RAISES EYES","gesture":"RAISE_EYES","campionPages":[55,56],"sourceAuthority":"1962_NORMATIVE","priority":"ACTION","candidate":null,"existing":"../assets/active/mass-v46/priest_centre_arms_rich.svg","comparatorKey":"priest_centre_arms_rich","reason":"Eyes only; current master falsely implies arms up","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0173.01","cueId":"AO.SM.C0173","actor":"FAITHFUL","label":"Remain kneeling; bow reverently, then look up at the Sacred Host","gesture":"HEAD_OR_BODY_BOW","campionPages":[55,56],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/kneel.svg","comparatorKey":"kneel","reason":"Kneel, bow, look up at Sacred Host","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0174.01","cueId":"AO.SM.C0174","actor":"FAITHFUL","label":"Remain kneeling; bow reverently, then look up at the Sacred Host","gesture":"HEAD_OR_BODY_BOW","campionPages":[55,56],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/kneel.svg","comparatorKey":"kneel","reason":"Exact source event at elevation of Host","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0179.01","cueId":"AO.SM.C0179","actor":"FAITHFUL","label":"Remain kneeling; bow reverently, then look up at the Chalice","gesture":"HEAD_OR_BODY_BOW","campionPages":[57,58],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/kneel.svg","comparatorKey":"kneel","reason":"Exact source event at elevation of Chalice","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.P.C0193.01","cueId":"AO.SM.C0193","actor":"PRIEST","label":"RAISES AND JOINS HANDS · EYES ON THE SACRAMENT","gesture":"MEMENTO_HANDS","campionPages":[66],"sourceAuthority":"1962_NORMATIVE","priority":"ACTION","candidate":null,"existing":"../assets/active/mass-v46/priest_centre_hands_rich.svg","comparatorKey":"priest_centre_hands_rich","reason":"Joined hands, gaze fixed on Sacrament","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.P.C0204.01","cueId":"AO.SM.C0204","actor":"PRIEST","label":"ELEVATES HOST AND CHALICE SLIGHTLY","gesture":"MINOR_ELEVATION","campionPages":[69,70],"sourceAuthority":"1962_NORMATIVE","priority":"ACTION","candidate":null,"existing":"../assets/active/mass-v46/canon.svg","comparatorKey":"canon","reason":"Minor elevation of both species, not major elevation","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0235.01","cueId":"AO.SM.C0235","actor":"FAITHFUL","label":"Remain bowed / recollected","gesture":"HEAD_OR_BODY_BOW","campionPages":[],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/head_bow.svg","comparatorKey":"head_bow","reason":"Sustained recollection, not a fresh movement","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0237.01","cueId":"AO.SM.C0237","actor":"FAITHFUL","label":"Remain bowed / recollected","gesture":"HEAD_OR_BODY_BOW","campionPages":[],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/head_bow.svg","comparatorKey":"head_bow","reason":"Sustained recollection, not a fresh movement","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.F.C0242.01","cueId":"AO.SM.C0242","actor":"FAITHFUL","label":"Reverent attention to the Host","gesture":"REVERENT_ATTENTION","campionPages":[84,85],"sourceAuthority":"FAITHFUL_CUE_SOT","priority":"PARTICIPATION","candidate":null,"existing":"../assets/active/mass-v46/communion.svg","comparatorKey":"communion","reason":"Devotional attention is not a mandated gesture","kind":"GESTURE","source":"Canonical gesture matrix"},{"id":"GM.P.C0263.01","cueId":"AO.SM.C0263","actor":"PRIEST","label":"RAISES EYES AND HANDS","gesture":"RAISE_EYES_AND_HANDS","campionPages":[94,95],"sourceAuthority":"1962_NORMATIVE","priority":"ACTION","candidate":"../assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg","existing":"../assets/active/mass-v46/priest_centre_arms_rich.svg","comparatorKey":"priest_centre_arms_rich","reason":"Same source pose?","kind":"GESTURE","source":"Canonical gesture matrix"}]};
+const selections=new Map();
+const rows=payload.rows;
+const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const groups=[
+ {key:"POSITION",title:"Priest positions — 3 distinct station treatments",rows:rows.filter(x=>x.kind==="POSITION")},
+ {key:"PRIEST",title:"Priest gestures — pending exact masters",rows:rows.filter(x=>x.kind==="GESTURE"&&x.actor==="PRIEST")},
+ {key:"FAITHFUL",title:"Faithful gestures — conditional cues",rows:rows.filter(x=>x.kind==="GESTURE"&&x.actor==="FAITHFUL")}
+];
+document.querySelector("#metrics").innerHTML=[
+ ["Source gesture rows",payload.matrixCount],["Bound to frozen masters",payload.boundCount],
+ ["Pending gesture icons",payload.pendingCount],["Station variants to review",3],
+ ["Priest station transitions",payload.positionRows],["Frozen v4.6 masters",payload.masterCount]
+].map(([label,n])=>'<div class="metric"><strong>'+n+'</strong><small>'+esc(label)+'</small></div>').join("");
+function draw(){
+ const v=document.querySelector("#filter").value;
+ document.querySelector("#sections").innerHTML=groups.map(g=>{
+ const matches=g.rows.filter(x=>v==="all"||v===g.key||(v==="undecided"&&!selections.get(x.id)?.decision));
+ if(!matches.length)return "";
+ return '<section><h2>'+esc(g.title)+'</h2><div class="card-list">'+matches.map(x=>{
+ const d=selections.get(x.id)??{},decision=d.decision??"";
+ const figure=(src,title)=>'<div class="figure">'+(src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(title)+'"/>':'<div class="none">No exact master</div>')+'<p>'+esc(title)+'</p></div>';
+ const actions=["accept","redesign","keep-unillustrated","investigate"];
+ const titles=["Accept candidate","Needs redesign","Keep textual cue","Investigate"];
+ const buttons=actions.map((a,i)=>'<button type="button" class="option" data-option="'+a+'" data-id="'+esc(x.id)+'" aria-pressed="'+(decision===a)+'"'+(a==="accept"&&!x.candidate?" disabled":"")+'>'+titles[i]+'</button>').join("");
+ return '<article class="card" data-decision="'+esc(decision)+'"><div class="small">'+esc(x.id)+' · '+esc(x.cueId)+' · '+esc(x.sourceAuthority??x.source)+'</div><h3>'+esc(x.label)+'</h3><div class="small">'+esc(x.kind==="POSITION"?"PRIEST STATION":x.actor+" · "+x.gesture)+'</div><div class="figures">'+figure(x.existing,"Current reference: "+(x.comparatorKey??"none"))+figure(x.candidate,"New proposal (unapproved)")+'</div><div class="reason">'+esc(x.reason)+'</div>'+(
+ x.campionPages?.length?'<div class="source">Campion pp. '+x.campionPages.join(", ")+' · verify against 1962 Missal</div>':""
+ )+'<div class="options">'+buttons+'</div><label class="small" for="note-'+esc(x.id)+'">Reviewer note</label><textarea id="note-'+esc(x.id)+'" data-note="'+esc(x.id)+'" placeholder="Wrong posture, different position, use another master…">'+esc(d.note??"")+'</textarea></article>';
+ }).join("")+'</div></section>';
+ }).join("");
+ document.querySelector("#progress").textContent=selections.size+" of "+rows.length+" reviewed";
+}
+document.addEventListener("click",e=>{
+ const b=e.target.closest("[data-option]");
+ if(!b)return;
+ const id=b.dataset.id;selections.set(id,{...selections.get(id),decision:b.dataset.option});draw();
+});
+document.addEventListener("input",e=>{
+ const t=e.target.closest("[data-note]");if(!t)return;
+ const id=t.dataset.note;const prior=selections.get(id)??{};selections.set(id,{...prior,note:t.value});
+ document.querySelector("#progress").textContent=selections.size+" of "+rows.length+" reviewed";
+});
+document.querySelector("#filter").addEventListener("change",draw);
+document.querySelector("#reset").addEventListener("click",()=>{if(confirm("Clear decisions for this review session?")){selections.clear();draw();}});
+document.querySelector("#export").addEventListener("click",()=>{
+ const output={schema:"ao-mass-campion-icon-decisions-20261010",source:payload.schema,
+ sourceBank:"mass-v46-immutable",status:"USER_REVIEW_NOT_YET_IMPORTED",
+ decisions:rows.filter(x=>selections.has(x.id)).map(x=>({id:x.id,actor:x.actor,
+ cueId:x.cueId,decision:selections.get(x.id).decision??"investigate",
+ candidate:x.candidate??null,notes:selections.get(x.id).note??""}))};
+ const blob=new Blob([JSON.stringify(output,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob);
+ const link=document.createElement("a");link.href=url;link.download="Ad_Orientem_Campion_Icon_Decisions_20261010.json";
+ document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url);
+});
+draw();
+</script>
+</body></html>
