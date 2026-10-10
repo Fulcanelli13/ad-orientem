@@ -1,5 +1,24 @@
 # Biblical Atlas — Catholic Scripture places, figures, events and chronology
 
+## Product scope freeze — compact Bible Places feature (10 October 2026)
+
+**This scope supersedes earlier ambitious all-places Biblical Atlas UI proposals in this document.** Ad Orientem's centre remains the Mass, prayers and Catholic formation. The biblical geography component must be **small, useful and visually subordinate** within Explore, not a parallel biblical-education product.
+
+**Shipping target:** one **“Bible Places”** entry point inside existing Explore; initially **40 curated major sites and biblical landscapes**, rather than thousands of rows. A source-backed [40-site shortlist](../../data/geography/research/bible-places-compact-mvp-2026-10-10.v1.json) is committed for review: 15 Old Testament, four deuterocanonical, 13 events/places from the Life of Christ and eight from the Apostolic Church. **These are 40 editorial candidates from the quarantined 90-case pilot, not published/approved entries yet**.
+
+**Each card:** place name; a maximum of **two concise event-description sentences**; *broad period/century* when historically supportable, else “date uncertain”; principal biblical person(s); **one or two key in-app Scripture passages**. A single option opens the **existing** Scripture passage reader and returns to the same Explore card. Use existing map/List/Place infrastructure with a marker only where credible physical location evidence permits. Two optional list filters (Testament and person/event search) are enough; grouping by Old Testament, deuterocanonical, Life of Christ and Apostles does not require four new top-level navigation routes.
+
+**Excluded from the initial UI:** full 1,342-place gazetteer, 3,232-person biographies, searchable complete verse occurrence index, historical timeline slider, full-screen standalone Atlas app, detailed Paul route animations, ancient borders, deep historical controversies, complete 73-book toponym acquisition as launch dependency, copied map art or reconstructed biblical walking tracks.
+
+**Reuse of already imported 2026 corpus:** the full OpenBible/STEPBible research import remains **backstage data** for provenance, source disambiguation and future expansion. It is **not** bundled wholesale in the production app and imposes **no requirement to build a large Atlas interface**. Only a small reviewed runtime selection should ship.
+
+**Delivery order:** (1) 40-item editorial source validation, shared-Place reconciliation and Bible edition links; (2) compact Explore screen/card with existing UI components, a Bible passage deep link and mobile return behaviour; (3) small phone acceptance test for locations of Our Lord, patriarchs, prophets, Maccabees and Apostles. Feature freeze thereafter unless a clear user need justifies additional places.
+
+**Status:** feature selection and requirements committed to draft PR #923, **no production UI or maps shipped**. The remainder of this document describes an archival long-range vision only; it is **not** the current app scope.
+
+---
+
+
 ## Import completed — pinned upstream data (10 October 2026)
 
 **The earlier "not yet imported" statements below are superseded by this completed acquisition.** The research-only master data is now in the existing draft PR, independent of the native app runtime.
