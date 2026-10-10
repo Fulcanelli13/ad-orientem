@@ -419,10 +419,11 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
+        "image": "REJECTED_NEAR_MONO",
         "pixelDimensions": null,
         "crop": "NOT_REVIEWED",
-        "status": "CANDIDATE"
+        "status": "CANDIDATE",
+        "rejectionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975"
       },
       "image": null
     },
@@ -927,10 +928,11 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
+        "image": "REJECTED_NEAR_MONO",
         "pixelDimensions": null,
         "crop": "NOT_REVIEWED",
-        "status": "CANDIDATE"
+        "status": "CANDIDATE",
+        "rejectionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975"
       },
       "image": null
     },
@@ -1681,10 +1683,11 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
+        "image": "REJECTED_LOW_RES_1561",
         "pixelDimensions": null,
         "crop": "NOT_REVIEWED",
-        "status": "CANDIDATE"
+        "status": "CANDIDATE",
+        "rejectionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975"
       },
       "image": null
     },
@@ -1719,10 +1722,11 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
+        "image": "REJECTED_LOW_RES_1611",
         "pixelDimensions": null,
         "crop": "NOT_REVIEWED",
-        "status": "CANDIDATE"
+        "status": "CANDIDATE",
+        "rejectionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975"
       },
       "image": null
     },
@@ -2768,11 +2772,12 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
+        "image": "REJECTED_LOW_RES_1929",
         "pixelDimensions": null,
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
-        "subjectConfidence": "DIRECT_SUBJECT"
+        "subjectConfidence": "DIRECT_SUBJECT",
+        "rejectionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975"
       },
       "image": null
     },
@@ -2856,13 +2861,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2947,
+          "height": 4000
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975",
+        "artifactId": 11666499648,
+        "archiveOriginal": "museum-originals/met-436839.jpg",
+        "originalWidth": 2947,
+        "originalHeight": 4000,
+        "originalSha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18"
+      }
     },
     {
       "id": "nga-505",
@@ -2995,13 +3011,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2597,
+          "height": 3722
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "SUBJECT_CONTEXT_REQUIRED"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975",
+        "artifactId": 11666499648,
+        "archiveOriginal": "museum-originals/met-437423.jpg",
+        "originalWidth": 2597,
+        "originalHeight": 3722,
+        "originalSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a"
+      }
     },
     {
       "id": "met-437156",
@@ -3038,13 +3065,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3213,
+          "height": 4000
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "SUBJECT_CONTEXT_REQUIRED"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975",
+        "artifactId": 11666499648,
+        "archiveOriginal": "museum-originals/met-437156.jpg",
+        "originalWidth": 3213,
+        "originalHeight": 4000,
+        "originalSha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67"
+      }
     },
     {
       "id": "met-437342",
@@ -3081,13 +3119,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2244,
+          "height": 3722
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "SUBJECT_CONTEXT_REQUIRED"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975",
+        "artifactId": 11666499648,
+        "archiveOriginal": "museum-originals/met-437342.jpg",
+        "originalWidth": 2244,
+        "originalHeight": 3722,
+        "originalSha256": "1ee5a9ab525bb63b42b49d346dd1b6029a3d4f50cd8bcf268e92dabc764602f0"
+      }
     },
     {
       "id": "met-437458",
@@ -3120,13 +3169,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3540,
+          "height": 4000
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "SUBJECT_CONTEXT_REQUIRED"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975",
+        "artifactId": 11666499648,
+        "archiveOriginal": "museum-originals/met-437458.jpg",
+        "originalWidth": 3540,
+        "originalHeight": 4000,
+        "originalSha256": "6c980df07e2fd9ddc2bfc4b00b913fb6b60890f06fee9f11a8d640f8488b3abe"
+      }
     },
     {
       "id": "met-458966",
@@ -4861,13 +4921,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3094,
+          "height": 4000
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975",
+        "artifactId": 11666499648,
+        "archiveOriginal": "museum-originals/met-437542.jpg",
+        "originalWidth": 3094,
+        "originalHeight": 4000,
+        "originalSha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e"
+      }
     },
     {
       "id": "met-747199",
@@ -4901,11 +4972,12 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
+        "image": "MUSEUM_CLASSIFICATION_CONFLICT",
         "pixelDimensions": null,
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
-        "subjectConfidence": "DIRECT_SUBJECT"
+        "subjectConfidence": "DIRECT_SUBJECT",
+        "rejectionRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38043542975"
       },
       "image": null
     },
@@ -5142,6 +5214,7 @@
     "Batch-2 Met original JPEG acquisition produced 35 technically passing source-authenticated paintings; subjects tagged with caution for composites and patron saint identity. No artist/phone-crop review and no production promotion.",
     "Pentecost 3 Commons originals acquired & SHA1-verified. Public Domain Mark / PD-Art is not CC0; per-image worldwide reuse rights not cleared. The Rosary 15-mystery 2-original availability milestone therefore does not mean 15/15 released or commercial-rights-cleared.",
     "Sacred Heart and Immaculate Heart source-pool minima may use clearly captioned symbolically related Christ/Marian masterpiece; that is NOT an exact painted sacred/immaculate heart. Exact-iconographic works remain an independent acquisition/review target.",
-    "Stations pool now has related Passion paintings but still lacks individual station-to-painting approval; no painted image should be displayed under an inaccurate station label."
+    "Stations pool now has related Passion paintings but still lacks individual station-to-painting approval; no painted image should be displayed under an inaccurate station label.",
+    "Acquisition batch 38043542975: six new genuine originals retained; four near-monochrome/low-resolution Met candidates and one specific oil-on-copper classification conflict held, never auto-retired or silently counted as image approved."
   ]
 }
