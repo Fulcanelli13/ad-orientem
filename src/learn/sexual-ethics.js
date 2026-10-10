@@ -367,6 +367,9 @@ export function createSexualEthicsRuntime(win=globalThis){
   }
 
   function back(){
+    // Contextual study belongs to the originating Formation guide: Back
+    // returns directly there, not through Sexual Ethics catalogue screens.
+    if(state.contextReturn&&state.view!=="question")return close(false);
     if(state.view==="question"){
       state.questionId=null;state.reveal=false;
       state.view=state.returnView==="sections"?"sections":state.returnView==="section"?"section":"dossier";
