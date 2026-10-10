@@ -15,7 +15,9 @@ const prayerSource=read("src/pray/presentation-runtime.js");
 const familySource=prayerSource.slice(prayerSource.indexOf("function prayFamilies()"),prayerSource.indexOf("function prayFamilyDoor("));
 
 assert.equal(map.schema,"AO_PRAY_FORMATION_ORGANISATIONAL_MAP_V1");
-assert.equal(map.status,"APPROVAL_CANDIDATE_NOT_RUNTIME_MIGRATION");
+assert.equal(map.status,"PARTIAL_ENTRY_PRESENTATION_IMPLEMENTED");
+assert.equal(map.acceptance.entry_presentation_implemented,true);
+assert.equal(map.acceptance.user_visible_content_crosslinks_implemented,false);
 const unique=(entries,label)=>{
   const ids=entries.map(x=>x.id);
   assert.equal(new Set(ids).size,ids.length,label+" duplicates a content ID");
