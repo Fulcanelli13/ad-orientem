@@ -438,6 +438,9 @@ export function createFindOwner(win=globalThis){
     const sync=()=>{
       const source=map?.getSource?.("ao-explore-items");if(!source)return;
       source.setData?.({type:"FeatureCollection",features:exploreMapFeatures(atlasMapItems(stops,index))});
+      if(!active.geo&&previous?.era!==active.era){
+        try{map.easeTo?.({center:[35,31],zoom:3.6,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});}catch{}
+      }
       if(active.geo){
         const key="atlas:"+active.geo.key;
         try{
@@ -508,7 +511,9 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.expandPlace=true;void paint();return;
     }
     if(target?.closest?.("[data-bible-atlas-open]")&&state.lens==="heritage"){
-      event.preventDefault?.();state.bibleAtlas=true;state.bibleIndex=0;
+      event.preventDefault?.();
+      if(!dataset?.biblePlaces?.entries?.length){actionError(language(win)==="fr"?"Données bibliques indisponibles.":"Biblical Atlas data is unavailable.");return;}
+      state.bibleAtlas=true;state.bibleIndex=0;
       lastMapView=null;lastMapLens=null;
       void paint().then(()=>{centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
     }
