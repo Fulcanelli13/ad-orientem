@@ -34,7 +34,9 @@ try{
     requestedCelebrationId:__kind==="CALENDAR"?"mass_of_day":__kind.toLowerCase(),
     celebrationType:__kind});
   globalThis.__full=mountFullMassPreflight({doc:document,
-    getResolvedMass:__legacyMass,getDefaultForm:()=>__formDefault,language:()=>__lang});
+    getResolvedMass:()=>globalThis.__observed?.effectiveResolvedMass(__legacyMass())??__legacyMass(),
+    onOpenSourceProper:()=>globalThis.__observed?.open?.(),
+    getDefaultForm:()=>__formDefault,language:()=>__lang});
  });
 
  // Independent Mass source date: this must be available on *any* host Mass date
@@ -56,12 +58,17 @@ try{
   };
   __observed=mountObservedMassSourceSelector({
    doc:document,getResolvedMass:__legacyMass,
+   mountTarget:()=>document.querySelector("[data-full-mass-source-slot]"),
    resolveDay:async date=>__sources[date]??{status:"unavailable"},
    language:()=>__lang,onSelectionChange:()=>__full.refresh(),
   });
  });
  const picker=page.locator("[data-ao-observed-mass-picker]");
- await picker.locator("summary").click();
+ assert.equal(await page.locator("[data-full-mass-source-slot] [data-ao-observed-mass-picker]").count(),1,
+   "Different Proper picker is outside the unified Mass form/celebration module");
+ await page.locator('[data-full-mass-category="SOURCE_DATE"]').click();
+ assert.equal(await picker.locator("details").evaluate(el=>el.open),true,
+   "Other Proper category failed to open the source-day selector");
  await picker.locator("[data-observed-date]").fill("2026-10-07");
  await picker.locator("[data-observed-lookup]").click();
  await page.waitForSelector("[data-observed-candidate]:not([hidden])");
@@ -84,6 +91,15 @@ try{
   permission:"NOT_VERIFIED",commem:1,
  });
  assert.equal(await picker.locator("[data-observed-sunday-choice]").inputValue(),"COMMEMORATE_SUNDAY");
+ await page.evaluate(()=>__full.refresh());
+ assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-proper-source"),"Sancti/10-07",
+   "Mass preparation review continued to display the old Sunday Proper");
+ assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/Most Holy Rosary/);
+ await page.locator("[data-full-mass-review] summary").click();
+ assert.match(await page.locator("[data-full-mass-review-body]").innerText(),/Sancti\/10-07/);
+ assert.match(await page.locator("[data-full-mass-review-body]").innerText(),/2026-10-04/);
+ assert.match(await page.locator("[data-full-mass-review-body]").innerText(),/2 \/ 2 \/ 2/);
+ assert.equal(await page.locator('[data-full-mass-category="SOURCE_DATE"]').getAttribute("aria-current"),"true");
  await page.evaluate(()=>{__formDate="2026-10-11";__observed.update()});
  assert.equal((await page.evaluate(()=>__observed.status())).selected,null,
    "Observed source leaked into another actual Mass date");
@@ -127,7 +143,7 @@ try{
   "Requiem branch must not survive a new actual celebration");
  assert.equal(await page.locator('[data-full-mass-rite="ASPERGES"]').isChecked(),false,
   "An old actual-ceremony choice must not leak to a new celebration");
- assert.equal(await page.locator("[data-full-mass-category]").count(),5);
+ assert.equal(await page.locator("[data-full-mass-category]").count(),6);
  await page.evaluate(()=>{
   globalThis.__categoryClicks=[];
   globalThis.AO_CELEBRATION_API={
