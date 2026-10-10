@@ -133,6 +133,8 @@ export function mountFullMassPreflight({
          ["OTHER","Other","Autre"],["SOURCE_DATE","Other Proper","Autre propre"]].map(([id,en,fr])=>
          '<button type="button" data-full-mass-category="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</button>').join("")+
         '</div><div data-full-mass-source-slot></div><p data-full-mass-category-error role="alert" hidden></p>'+
+        '<details data-full-mass-review><summary data-full-mass-review-summary></summary>'+
+        '<div data-full-mass-review-body></div></details>'+
         '<p data-full-mass-resolver></p><fieldset data-full-mass-form-fieldset>'+
         '<legend data-full-mass-form-title></legend><div class="aoFullMassForms">'+
         FULL_MASS_FORM_OPTIONS.map(({id})=>
@@ -148,9 +150,7 @@ export function mountFullMassPreflight({
 
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
-        '<p data-full-mass-note></p>'+
-        '<details data-full-mass-review><summary data-full-mass-review-summary></summary>'+
-        '<div data-full-mass-review-body></div></details>'; 
+        '<p data-full-mass-note></p>';  
       root.addEventListener("click",e=>{
         const button=e.target?.closest?.("[data-full-mass-category]");
         if(!button)return;
@@ -280,6 +280,7 @@ export function mountFullMassPreflight({
     root.querySelector("[data-full-mass-review-summary]").textContent=l(
       "Review Mass and Proper","Vérifier la messe et le propre");
     const body=root.querySelector("[data-full-mass-review-body]");
+    if(observed)review.open=true;
     body.replaceChildren();
     const entries=[
       [l("Date","Date"),date||"—"],
