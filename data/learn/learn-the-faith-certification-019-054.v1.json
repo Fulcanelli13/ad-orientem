@@ -70,13 +70,14 @@
       "claimCount": 122,
       "reviewed": 122,
       "numberedItalianRefs": 361,
-      "supplementaryAuthorityReferences": 14,
+      "supplementaryAuthorityReferences": 15,
       "claimsWithSpecificEditorialFlags": 31,
       "bilingualTextRevisions": 4,
       "newPrimarySourceAuthorities": [
         "CCC_1554_ORDERS",
         "PIUS_IX_INEFFABILIS_DEUS",
-        "CIC_1983_PENANCE"
+        "CIC_1983_PENANCE",
+        "CCC_1256_BAPTISM_MINISTERS"
       ],
       "historicalAndDoctrinalHumanApprovals": 0,
       "nativeFrenchApprovals": 0,
@@ -141,6 +142,10 @@
     "CIC_1983_PENANCE": {
       "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
       "title": "1983 Code of Canon Law, canons 1249–1253"
+    },
+    "CCC_1256_BAPTISM_MINISTERS": {
+      "title": "Catechism of the Catholic Church, §1256",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/v_who_can_baptize.html"
     }
   },
   "lessons": [
@@ -1646,8 +1651,8 @@
           }
         },
         {
-          "en": "Baptism uses natural water and the Trinitarian form. A priest is ordinarily its minister; in necessity anyone can validly baptize if they intend to do what the Church does.",
-          "fr": "Le Baptême requiert l’eau naturelle et la formule trinitaire. Son ministre est ordinairement le prêtre ; en cas de nécessité, toute personne peut baptiser validement si elle a l’intention de faire ce que fait l’Église.",
+          "en": "Baptism is conferred with natural water and the Trinitarian formula. In the Latin Church, the bishop, priest and deacon are ordinary ministers. In necessity, anyone, even an unbaptized person, can validly baptize with the required intention to do what the Church does.",
+          "fr": "Le Baptême est conféré avec de l’eau naturelle et la formule trinitaire. Dans l’Église latine, l’évêque, le prêtre et le diacre en sont les ministres ordinaires. En cas de nécessité, toute personne, même non baptisée, peut baptiser validement avec l’intention requise de faire ce que fait l’Église.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -1702,6 +1707,14 @@
                   "verification": "ITALIAN_ORIGINAL_LANGUAGE_NUMBERED_QUESTION_LOCATED_SCOPE_NOT_HUMAN_CERTIFIED"
                 }
               ]
+            },
+            {
+              "source": "CCC_1256_BAPTISM_MINISTERS",
+              "refs": [
+                "§1256"
+              ],
+              "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/v_who_can_baptize.html",
+              "verification": "OFFICIAL_CATECHISM_SECTION_READ_EDITORIAL_NOT_INDEPENDENTLY_CERTIFIED"
             }
           ],
           "draftState": "EN_FR_EXISTING_V2_DRAFT_NOT_HUMAN_CERTIFIED",
@@ -1718,7 +1731,9 @@
             "originalLanguageLinks": [
               "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
             ],
-            "supplementaryAuthorityLinks": [],
+            "supplementaryAuthorityLinks": [
+              "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/v_who_can_baptize.html"
+            ],
             "reviewFlags": [
               "BAPTISMAL_FORM_AND_MINISTER"
             ],
@@ -1804,8 +1819,8 @@
           }
         },
         {
-          "en": "Because Baptism is necessary for salvation, the Church also teaches Baptism of blood and Baptism of desire when water Baptism cannot be received.",
-          "fr": "Parce que le Baptême est nécessaire au salut, l’Église enseigne aussi le baptême de sang et le baptême de désir lorsque le baptême d’eau ne peut être reçu.",
+          "en": "While Baptism is necessary for salvation and must not be neglected when it can be received, the Church teaches that martyrdom for Christ and the desire for Baptism, with the necessary dispositions, can bring its saving fruits without sacramental Baptism.",
+          "fr": "Bien que le Baptême soit nécessaire au salut et ne doive pas être négligé lorsqu’il peut être reçu, l’Église enseigne que le martyre pour le Christ et le désir du Baptême, avec les dispositions requises, peuvent en procurer les fruits salutaires sans la réception du sacrement.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -3266,8 +3281,8 @@
           }
         },
         {
-          "en": "The penitent must flee occasions of sin and confess all unconfessed mortal sins sincerely and integrally.",
-          "fr": "Le pénitent doit fuir les occasions de péché et confesser sincèrement et intégralement tous les péchés mortels non encore confessés.",
+          "en": "The penitent must avoid occasions of sin and sincerely confess all mortal sins remembered after a diligent examination of conscience, specifying their kind and number as far as possible. A mortal sin unintentionally forgotten in a sincere confession must be mentioned at the next confession when remembered.",
+          "fr": "Le pénitent doit fuir les occasions de péché et confesser sincèrement tous les péchés mortels dont il se souvient après un sérieux examen de conscience, en précisant autant que possible leur espèce et leur nombre. Un péché mortel involontairement oublié dans une confession sincère doit être accusé à la confession suivante lorsqu’on s’en souvient.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -8458,8 +8473,8 @@
       },
       "claims": [
         {
-          "en": "Christians invoke Mary, the angels and the saints because their intercession depends entirely on God's grace and the merits of Christ.",
-          "fr": "Les chrétiens invoquent Marie, les anges et les saints parce que leur intercession dépend entièrement de la grâce de Dieu et des mérites du Christ.",
+          "en": "Christians ask Mary, the angels and the saints to pray for them; their intercession does not rival Christ's unique mediation, but depends entirely upon Him.",
+          "fr": "Les chrétiens demandent à Marie, aux anges et aux saints d’intercéder pour eux ; leur intercession ne rivalise pas avec l’unique médiation du Christ, mais dépend entièrement de Lui.",
           "sources": [
             {
               "source": "PIUS_X_1912",
@@ -9573,8 +9588,8 @@
           }
         },
         {
-          "en": "The Church imposes days of fasting and abstinence for penance and mortification. The ages, days and meal rules recorded in the 1912 Catechism reflect historical discipline; the obligations binding today are determined by current ecclesiastical and legitimate particular law.",
-          "fr": "L’Église prescrit des jours de jeûne et d’abstinence pour faire pénitence et pratiquer la mortification. Les âges, les jours et les règles concernant les repas indiqués dans le catéchisme de 1912 relèvent d’une discipline historique ; les obligations actuelles sont déterminées par le droit ecclésiastique en vigueur et le droit particulier légitime.",
+          "en": "The Church prescribes fasting and abstinence as works of penance. Under current universal Latin canon law, Ash Wednesday and Good Friday require both; Fridays are penitential days, with abstinence or a substitution according to applicable episcopal-conference norms. The 1912 Catechism's ages, days and meal rules describe historical discipline, not automatically the law binding today.",
+          "fr": "L’Église prescrit le jeûne et l’abstinence comme pratiques de pénitence. Selon le droit universel latin actuel, le Mercredi des Cendres et le Vendredi saint imposent l’un et l’autre ; les vendredis sont des jours de pénitence, avec abstinence ou substitution selon les normes applicables de la conférence épiscopale. Les âges, les jours et les règles de repas du catéchisme de 1912 décrivent une discipline historique, et non nécessairement celle qui oblige aujourd’hui.",
           "sources": [
             {
               "source": "PIUS_X_1912",
