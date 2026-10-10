@@ -687,6 +687,8 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
   // changes the prepared Mass, never the global Calendar or host API.
   const actualApi=observedSource ? {
     getResolvedMass:()=>{
+      const gate=observedSource.preparationGate();
+      if(!gate.ready)throw new Error(gate.reason);
       const base=api.getResolvedMass();
       return observedSource.effectiveResolvedMass(base);
     },
