@@ -41,6 +41,21 @@ try{
  await page.locator('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]').waitFor({state:"visible"});
  // Small-screen acceptance: the landing view is a map, never a directory dump.
  assert.equal(await page.locator("#ao-find-modular-root .aoHeritageSurface .aoFindList").count(),0);
+ const layout=await page.evaluate(()=>{
+   const root=document.querySelector("#ao-find-modular-root .aoHeritageSurface");
+   const map=root?.querySelector(".aoHeritageBody .aoFindMap");
+   const panels=[".aoFindHeader",".aoExploreMainDestinations",".aoHeritageTools",".aoHeritageCategories"];
+   const box=element=>{const r=element?.getBoundingClientRect();return r?{width:r.width,height:r.height,top:r.top,bottom:r.bottom}:null};
+   return {map:box(map),root:box(root),chrome:panels.map(x=>box(root?.querySelector(x))),
+     targets:[...root.querySelectorAll(".aoExploreMainDestinations button,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")].map(box),
+     overflow:document.documentElement.scrollWidth-innerWidth};
+ });
+ assert.ok(layout.map?.height>=300,"Explore mobile chrome squeezed the map below 300px");
+ assert.ok(layout.map.width>=300,"Explore map is narrower than its intended phone canvas");
+ assert.ok(layout.chrome.every(Boolean),"Explore navigation has missing layout sections");
+ assert.ok(layout.targets.every(x=>x.height>=44),"Explore filter or navigation control below 44px");
+ assert.ok(layout.overflow<=1,"Explore mobile chrome causes horizontal page overflow");
+
  const nearby=page.locator("#ao-find-modular-root [data-heritage-nearby]");
  assert.equal(await nearby.count(),1,"opt-in nearby map control missing");
  const nearbyBox=await nearby.boundingBox();

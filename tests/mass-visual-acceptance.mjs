@@ -884,7 +884,7 @@ try{
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
-  assert.equal(gloriaBow.posture,"SIT","Gloria should show the faithful sitting when the priest is at the sedilia");
+  assert.equal(gloriaBow.posture,"STAND","Gloria stays standing until Qui sedes ad dexteram Patris");
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
@@ -941,6 +941,14 @@ try{
   assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
     "Gloria previous-word ritual highlight leaked into the next cue");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
+  const beforeGloriaSit=await focusCanonicalCue("AO.SM.C0064");
+  assert.equal(beforeGloriaSit.posture,"STAND","Gloria sits too early before Qui sedes");
+  const gloriaSit=await focusCanonicalCue("AO.SM.C0065");
+  assert.equal(gloriaSit.posture,"SIT","Gloria must sit exactly at Qui sedes ad dexteram Patris");
+  await page.screenshot({path:resolve(out,"09a-mass-gloria-qui-sedes-sit.png"),fullPage:false});
+  const gloriaRise=await focusCanonicalCue("AO.SM.C0068");
+  assert.equal(gloriaRise.posture,"STAND","Gloria must rise at Cum Sancto Spiritu before Amen");
+  assert.match(gloriaRise.anchoredParagraphSource,/Cum Sancto Spíritu/i);
 
   // Source-owned v1.80 LISTEN cue appears during actual sung priest text,
   // but the separate faithful response and posture channels remain independent.
@@ -962,7 +970,7 @@ try{
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
   assert.match(incarnatus.gesture,/GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
-  assert.equal(incarnatus.posture,"SIT","Incarnatus transient genuflection must not replace the customary seated posture");
+  assert.equal(incarnatus.posture,"STAND","Credo stands through Incarnatus and sits only after the kneeling");
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
@@ -973,6 +981,11 @@ try{
     incarnatus.anchorWords.some(word=>/et homo factus est|and was made man|s.est fait homme/i.test(word)),
     "Credo Incarnatus sourced opening and closing words are not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
+  const credoSit=await focusCanonicalCue("AO.SM.C0097");
+  assert.equal(credoSit.posture,"SIT","Credo must sit at Crucifixus, after Incarnatus");
+  await page.screenshot({path:resolve(out,"10a-mass-credo-post-incarnatus-sit.png"),fullPage:false});
+  const credoRise=await focusCanonicalCue("AO.SM.C0104");
+  assert.equal(credoRise.posture,"STAND","Credo must rise at Et vitam before Amen");
 
   // Check unrelated phases, not just Gloria/Credo. These anchors belong to
   // their exact canonical cues, in the language the reader already displays.
@@ -1708,7 +1721,30 @@ try{
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
-  console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration},null,2));
+  // Independent 390px review client: source records, selectable artwork,
+  // note/approval persistence and actual JSON export.
+  await page.goto("http://127.0.0.1:4190/reviews/mass-complete-icon-assignment-atlas-20261011.html",
+    {waitUntil:"domcontentloaded",timeout:90000});
+  await page.locator("#targets .target").first().waitFor({timeout:20000});
+  assert.ok(await page.locator("#assets .asset").count()>=50,
+    "complete asset bank failed to display image candidates");
+  await page.locator("#findTarget").fill("AO.SM.C0068");
+  await page.locator("#targets .target").first().click();
+  await page.locator("#findAsset").fill("cross");
+  await page.locator("#assets .asset [data-primary]").first().click();
+  await page.locator("#status").selectOption("approved");
+  await page.locator("#notes").fill("Review example: exact cue; approved only in local export");
+  const [reviewDownload]=await Promise.all([
+    page.waitForEvent("download",{timeout:12000}),page.locator("#export").click()
+  ]);
+  const exported=JSON.parse(await readFile(await reviewDownload.path(),"utf8"));
+  assert.equal(exported.schema,"ao-icon-assignment-review-v1");
+  assert.ok(Object.keys(exported.changes).length>=1);
+  assert.ok(exported.sourceCounts?.matrix142===142);
+  await page.screenshot({path:resolve(out,"18-mass-complete-icon-atlas-mobile.png"),fullPage:false});
+  assert.deepEqual(errors,[],"review page JavaScript error: "+JSON.stringify(errors));
+  console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration,
+    iconAtlas:{targets:exported.sourceCounts?.matrix142,changed:Object.keys(exported.changes).length}},null,2));
   await context.close();
 }finally{
   await browser?.close();
