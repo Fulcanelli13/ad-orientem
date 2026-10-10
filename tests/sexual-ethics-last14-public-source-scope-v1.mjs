@@ -42,5 +42,5 @@ assert.match(CSE_QUESTION_MAP.CSE096.a[0],/§60/);
 assert.match(CSE_QUESTION_MAP.CSE095.d[1],/pronoms/);
 assert.match(CSE_SOURCE_MAP.FRANCIS_SPADARO2013.canonical_url,/vatican\.va/);
 assert.match(CSE_SOURCE_MAP.FARLEY_QUOTED2012.canonical_url_fr,/nota-farley_fr\.html/);
-assert.deepEqual(paragraphRefsFor(CSE_QUESTION_MAP.CSE094,"debate","opposition").map(x=>x[0]),["APA_TRANSCARE"]);
+assert.deepEqual(paragraphRefsFor(CSE_QUESTION_MAP.CSE094,"debate","opposition").map(x=>x[0]),["APA_TRANSCARE_FULL2024","APA_TRANSCARE"]);
 console.log("PASS last 14 public Sexual Ethics debates: 112 EN/FR stage findings, precise opposing-author and clinical links, 3 archived unchanged, zero false certification.");
