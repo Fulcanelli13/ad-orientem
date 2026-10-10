@@ -73,6 +73,30 @@ try{
     assert.equal(issue,null,label+": focus remained inside a hidden/aria-hidden ancestor");
   };
 
+  // Layout parity checks operate on the actual mounted canonical child, not screenshots.
+  async function assertFormationChrome(selector,label){
+    const geometry=await page.locator(selector).evaluate(node=>{
+      const top=node.querySelector("header");
+      const controls=top?[...top.querySelectorAll("button")]:[];
+      const middle=top?.children?.[1];
+      const wrap=node.querySelector("main");
+      return {
+        controlWidths:controls.map(x=>Math.round(x.getBoundingClientRect().width)),
+        controlHeights:controls.map(x=>Math.round(x.getBoundingClientRect().height)),
+        titleAlign:middle?getComputedStyle(middle).textAlign:null,
+        wrapWidth:wrap?.getBoundingClientRect().width??0,
+        overflow:node.scrollWidth-node.clientWidth,
+        label:top?.querySelector("strong")?.textContent?.trim()??""
+      };
+    });
+    assert.deepEqual(geometry.controlWidths,[44,44],label+": reader toolbar must use common 44px controls");
+    assert.deepEqual(geometry.controlHeights,[44,44],label+": reader toolbar controls must be 44px tall");
+    assert.equal(geometry.titleAlign,"center",label+": reader toolbar title is not centred");
+    assert.ok(geometry.wrapWidth>300&&geometry.wrapWidth<=760,label+": reader column width diverged");
+    assert.ok(geometry.overflow<=1,label+": horizontal scroll regression");
+    assert.ok(geometry.label.length>0,label+": missing reader title");
+  }
+
   async function openLearn(){
     await page.locator("[data-ao-app-surface='learn']").tap();
     await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:10000});
@@ -449,6 +473,7 @@ try{
     }});
     assert.equal(child.owner,expectedTraditionalLearnOwner,id+": wrong child owner");
     assert.ok(child.width>300,id+": child collapsed on phone");
+    await assertFormationChrome("#ao-learn-traditional-root",id);
     assert.ok(child.overflow<=1,id+": child has horizontal overflow");
     assert.equal(child.donorVisible,false,id+": historical Traditions monolith became visible");
     assert.equal(child.priestCeremonialExposed,false,id+": priest-only ceremonial scope leaked");
@@ -497,6 +522,9 @@ try{
       buttons:node.querySelectorAll("button").length,
     }));
     assert.ok(child.length>=40,"Blank Formation child: "+spec.id);
+    if(["learn.sexual_ethics","learn.mass","learn.latin"].includes(spec.id)){
+      await assertFormationChrome(spec.root,spec.id);
+    }
     assert.ok(child.overflow<=1,"Formation child has horizontal overflow: "+spec.id);
     assert.ok(child.size>300,"Formation child collapsed on phone: "+spec.id);
     assert.ok(child.buttons>0,"Formation child lacks user actions: "+spec.id);
