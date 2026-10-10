@@ -17,7 +17,7 @@ assert.equal(publication.sites.length,7);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:shrine.shrines,pilgrimages:shrine.pilgrimages,routes:shrine.routes,temporalLinks:shrine.temporalLinks,sources:sources.sources,places:geo.places}).pass,true);
 const counts=[geo.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length];
-assert.deepEqual(counts,[181,177,205,260,121]);
+assert.deepEqual(counts,[182,178,206,261,122]);
 const geos=new Map(geo.places.map(p=>[p.place_id,p]));
 const groups=new Map(research.groups.map(g=>[g.object_group_id,g]));
 const pins=new Set(),oldGroups=research.groups.filter(g=>!g.research_candidate_id);
@@ -56,7 +56,7 @@ for(const s of publication.sites){
 }
 const projected=projectExploreDataset({geography:geo,sacredPhenomena:sacred,shrines:shrine});
 const items=projected.byLens.relics;
-assert.equal(items.length,121);
+assert.equal(items.length,122);
 const features=exploreMapFeatures(items);
 assert.equal(features.length,new Set(items.filter(i=>i.map_publishable).map(i=>i.place_id)).size,"One relic marker per physical Place");
 for(const placeId of pins)assert.equal(features.filter(f=>f.properties.item_id==="relics:relic:"+placeId.slice(6)).length,1,placeId+" lost map marker");
