@@ -1063,7 +1063,13 @@ export function buildReaderShellMarkup(prepared = {}) {
         <option value="false">Keep source standing unless I choose otherwise</option>
       </select>
     </label>
-    <small>This changes your personal cues, not the priest's movements or the Mass rubrics. Exact seating timing varies by celebration.</small>
+    <label>Credo sitting after the Incarnatus
+      <select data-faithful-picker-credo-start aria-label="When to sit during the Credo">
+        <option value="AO.SM.C0097">At Crucifixus etiam pro nobis (first paragraph)</option>
+        <option value="AO.SM.C0098">At Et iterum venturus est (following paragraph)</option>
+      </select>
+    </label>
+    <small>The priest's sedilia is a source-backed state, but these word-level sitting and rising cues follow local custom. They do not rewrite the Mass rubrics.</small>
   </aside>
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
     <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
@@ -1746,6 +1752,9 @@ export function createReaderDomAdapter({
         if(event.target?.matches?.("[data-faithful-picker-seating]")){
           onCustomaryChange?.({kind:"followPriestSeating",value:event.target.value==="true"});return;
         }
+        if(event.target?.matches?.("[data-faithful-picker-credo-start]")){
+          onCustomaryChange?.({kind:"credoSitStart",value:event.target.value});return;
+        }
       }
       const select=event.target?.closest?.("[data-reader-customary]");
       if(!select||select.disabled||!current?.customary)return;
@@ -2041,9 +2050,32 @@ export function createReaderDomAdapter({
       (Number(card.scrollTop)||0);
     // Allow at least one meaningful scroll interval per distinct cue, capped
     // at 240px on longer devices. Never modify individual prayer line heights.
-    const travel=Math.min(240,Math.max(68,(cueCount-1)*56));
+    // Gloria and Credo end with two distinct word-owned events:
+    // rise at Cum Sancto Spiritu / Et vitam, then the concluding Amen.
+    // The last-cue edge guard must not swallow the penultimate cue.
+    // Give those dense Ordinary cards extra end scroll *territory*,
+    // without stretching prayer paragraphs or moving their text anchors.
+    const closingOrdinary=/\b(?:Gloria|Credo)\b/i.test(current?.sectionTitle??"");
+    const travel=Math.min(closingOrdinary?340:240,Math.max(68,(cueCount-1)*56));
     const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
-    if(extra)card.style.setProperty("--ao-short-cue-tail",extra+"px");
+    // On naturally long Ordinary cards, extra can be zero even though the
+    // source-backed penultimate doxology is swallowed by the hard last-cue
+    // scroll edge. Reserve precisely enough additional scroll to place
+    // that cue on the 39% focus line *before* the final-cue edge zone.
+    let closingExtra=0;
+    if(closingOrdinary){
+      const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
+      const penultimate=cues.at(-2);
+      if(penultimate){
+        const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
+        const center=pr.top-cr.top+card.scrollTop+pr.height/2;
+        const requiredScroll=center-viewport*.39+24;
+        const availableScroll=Math.max(0,card.scrollHeight-viewport);
+        closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
+      }
+    }
+    const tail=Math.max(extra,closingExtra);
+    if(tail)card.style.setProperty("--ao-short-cue-tail",tail+"px");
   }
 
   function closeFaithfulPicker(){
@@ -2084,6 +2116,11 @@ export function createReaderDomAdapter({
     if(gesture)gesture.value=row.savedGesture??"DEFAULT";
     const seating=picker.querySelector('[data-faithful-picker-seating]');
     if(seating)seating.value=String(current?.customary?.followPriestSeating!==false);
+    const credoStart=picker.querySelector("[data-faithful-picker-credo-start]");
+    if(credoStart){
+      credoStart.value=current?.customary?.credoSitStart??"AO.SM.C0097";
+      credoStart.parentElement.hidden=row.phase!=="CREDO";
+    }
   }
   function syncFaithfulParagraphIcons(){
     for(const node of root.querySelectorAll?.('.ao-reader-paragraph[data-faithful-row-id]')??[]){

@@ -28,6 +28,8 @@ export function readMassCustomaryPreferences(base={},storage=null){
     localGestures,
     followPriestSeating:typeof saved.followPriestSeating==="boolean"
       ? saved.followPriestSeating : source.followPriestSeating,
+    credoSitStart:["AO.SM.C0097","AO.SM.C0098"].includes(saved.credoSitStart)
+      ? saved.credoSitStart : source.credoSitStart,
     postureProfile:POSTURE_PROFILES.includes(saved.postureProfile)?saved.postureProfile:source.postureProfile,
     gestureProfile:GESTURE_PROFILES.includes(saved.gestureProfile)?saved.gestureProfile:source.gestureProfile,
     localPostures:local,
@@ -52,6 +54,9 @@ export function updateMassCustomaryPreferences(preferences,change,storage=null){
     if(input.value==null||input.value==="DEFAULT")delete next.localGestures[input.cueId];
     else if(GESTURES.has(input.value))next.localGestures[input.cueId]=input.value;
     else return preferences;
+  }else if(input.kind==="credoSitStart"){
+    if(!["AO.SM.C0097","AO.SM.C0098"].includes(input.value))return preferences;
+    next.credoSitStart=input.value;
   }else if(input.kind==="followPriestSeating"){
     if(typeof input.value!=="boolean")return preferences;
     next.followPriestSeating=input.value;
@@ -63,6 +68,7 @@ export function updateMassCustomaryPreferences(preferences,change,storage=null){
     localPostures:Object.fromEntries(Object.entries(resolved.localPostures).filter(([k,v])=>CUE.test(k)&&POSTURES.has(v))),
     localGestures:Object.fromEntries(Object.entries(resolved.localGestures).filter(([k,v])=>CUE.test(k)&&GESTURES.has(v)&&v!=="DEFAULT")),
     followPriestSeating:resolved.followPriestSeating,
+    credoSitStart:resolved.credoSitStart,
   }));
   return resolved;
 }

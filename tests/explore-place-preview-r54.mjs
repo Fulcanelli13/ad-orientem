@@ -11,6 +11,8 @@ const base={language:"en",lens:"tlm",view:"map",items:[first],counts:{tlm:1879},
   filters:{directoryGroup:"ROME"},selectedId:first.item_id};
 const preview=renderExploreToString(buildExploreViewModel(base));
 assert.match(preview,/class="aoFindSheet aoExploreQuickPreview"/);
+assert.match(preview,/aoExploreQuickPreviewLayer/,"map preview should not shield the map");
+assert.match(preview,/aria-modal="false"/,"quick map cards must remain nonmodal");
 assert.match(preview,/data-explore-expand-detail/);
 assert.match(preview,/Details &amp; sources/);
 assert.match(preview,/Provisional venue/);
@@ -20,6 +22,7 @@ assert.doesNotMatch(preview,/class="aoFindFacts"/,"Must not open with an informa
 assert.doesNotMatch(preview,/class="aoExploreSections"/,"No detailed sections in first sheet");
 const full=renderExploreToString(buildExploreViewModel({...base,expandDetail:true}));
 assert.match(full,/data-explore-collapse-detail/);
+assert.match(full,/aria-modal="true"/,"full source reader must remain modal");
 assert.match(full,/class="aoFindSources"/);
 assert.match(full,/target="_blank" rel="noopener"/);
 assert.doesNotMatch(full,/data-explore-expand-detail/,"Full record must not retain preview action");

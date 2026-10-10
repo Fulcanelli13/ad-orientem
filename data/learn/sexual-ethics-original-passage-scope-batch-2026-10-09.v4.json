@@ -875,6 +875,10 @@
             {
               "id": "HV",
               "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html"
+            },
+            {
+              "id": "MIDWIVES",
+              "url": "https://www.vatican.va/content/pius-xii/it/speeches/1951/documents/hf_p-xii_spe_19511029_ostetriche.html"
             }
           ],
           "original_passages_examined": [
@@ -1140,5 +1144,14 @@
         }
       ]
     }
-  ]
+  ],
+  "source_selection_alignment_20261011": {
+    "case": "CSE064",
+    "stage": "catholicCase",
+    "added_reference": "MIDWIVES",
+    "source_registry": "src/learn/sexual-ethics-data/stage-evidence-remaining31.js",
+    "scope": "Citation registry reconciliation only. This does not add to the original_passages_examined list or certify the 1951 address's exact language or French translation.",
+    "source_excerpt_newly_verified": false,
+    "full_stage_certified": false
+  }
 }

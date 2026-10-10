@@ -25,7 +25,7 @@ for(const q of last.records){
  assert.ok(CSE_SOURCE_MAP[q.source_id],"missing source "+q.source_id);
  assert.equal(q.original_url,CSE_SOURCE_MAP[q.source_id].canonical_url);
  assert.ok(CSE_QUESTION_MAP[q.id].refs.some(([id])=>id===q.source_id),"live source missing "+q.id);
- assert.ok(q.locator.length>3&&q.confirmed_scope_en.length>40&&q.limits_en.length>40);
+ assert.ok((q.locator.length>3||/^§\d{1,3}$/.test(q.locator))&&q.confirmed_scope_en.length>40&&q.limits_en.length>40,"Accept a precise short §58 source locator without weakening substantive scope requirements: "+q.id);
  assert.equal(q.original_english_section_examined,true);
  for(const gate of ["all_answer_claims_certified","independent_french_collation","independent_theology_approval","independent_french_approval"])assert.equal(q[gate],false);
 }

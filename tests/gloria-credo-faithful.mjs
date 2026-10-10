@@ -16,22 +16,32 @@ let prefs=readMassCustomaryPreferences(resolveReaderPreferences({gestureProfile:
 const cue=(id,opts={})=>projectGloriaCredoFaithfulCue({cueId:id,form:"MISSA_CANTATA_SIMPLE",
   preferences:prefs,sourcedPosture:{value:"STAND",cueId:opts.sourceCueId??"AO.SM.C0053",fixed:opts.fixed??false},...opts});
 assert.equal(cue("AO.SM.C0053").posture,"STAND");
-assert.equal(cue("AO.SM.C0055").posture,"SIT");
-assert.equal(cue("AO.SM.C0061").posture,"SIT");
+assert.equal(cue("AO.SM.C0055").posture,"STAND");
+assert.equal(cue("AO.SM.C0061").posture,"STAND");
 assert.equal(cue("AO.SM.C0061").gestureIconKey,"head_bow");
+assert.equal(cue("AO.SM.C0064").posture,"STAND"); // before Qui sedes
+assert.equal(cue("AO.SM.C0065").posture,"SIT"); // "Qui sedes ad dexteram Patris"
+assert.equal(cue("AO.SM.C0067").posture,"SIT");
 assert.equal(cue("AO.SM.C0068").posture,"STAND");
 assert.equal(cue("AO.SM.C0068").gestureIconKey,"cross");
 assert.equal(cue("AO.SM.C0089").posture,"STAND");
-assert.equal(cue("AO.SM.C0090").posture,"SIT");
-assert.equal(cue("AO.SM.C0096").posture,"SIT");
+assert.equal(cue("AO.SM.C0090").posture,"STAND");
+assert.equal(cue("AO.SM.C0096").posture,"STAND");
 assert.equal(cue("AO.SM.C0096").gestureIconKey,"genuflect");
+assert.equal(cue("AO.SM.C0097").posture,"SIT"); // after Incarnatus, first sentence
+assert.equal(cue("AO.SM.C0098").posture,"SIT"); // second sentence
+prefs=updateMassCustomaryPreferences(prefs,{kind:"credoSitStart",value:"AO.SM.C0098"},storage);
+assert.equal(cue("AO.SM.C0097").posture,"STAND"); // local second-sentence option
+assert.equal(cue("AO.SM.C0098").posture,"SIT");
+assert.equal(readMassCustomaryPreferences({},storage).credoSitStart,"AO.SM.C0098");
+prefs=updateMassCustomaryPreferences(prefs,{kind:"credoSitStart",value:"AO.SM.C0097"},storage);
 assert.equal(cue("AO.SM.C0104").posture,"STAND");
 assert.equal(cue("AO.SM.C0104").gestureIconKey,"cross");
-assert.equal(cue("AO.SM.C0060").postureIconKey,"sit");
+assert.equal(cue("AO.SM.C0060").postureIconKey,"stand");
 assert.equal(cue("AO.SM.C0069").postureIconKey,"stand");
-assert.equal(cue("AO.SM.C0061").priestStateWitness,GLORIA_CREDO_SEDILIA_WITNESSES.GLORIA.sit);
+assert.equal(cue("AO.SM.C0065").priestStateWitness,GLORIA_CREDO_SEDILIA_WITNESSES.GLORIA.sit);
 assert.equal(cue("AO.SM.C0068").priestStateWitness,GLORIA_CREDO_SEDILIA_WITNESSES.GLORIA.rise);
-assert.equal(cue("AO.SM.C0096").priestStateWitness,GLORIA_CREDO_SEDILIA_WITNESSES.CREDO.sit);
+assert.equal(cue("AO.SM.C0097").priestStateWitness,GLORIA_CREDO_SEDILIA_WITNESSES.CREDO.sit);
 assert.equal(cue("AO.SM.C0104").priestStateWitness,GLORIA_CREDO_SEDILIA_WITNESSES.CREDO.rise);
 assert.equal(projectGloriaCredoFaithfulCue({cueId:"AO.SM.C0056",form:"LOW",preferences:prefs,sourcedPosture:{value:"STAND"}}).posture,"STAND");
 assert.equal(cue("AO.SM.C0096",{fixed:true,sourcedPosture:{value:"STAND",fixed:true}}).posture,"STAND",
