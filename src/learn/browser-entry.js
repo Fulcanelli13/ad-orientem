@@ -252,14 +252,6 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         });
         return;
       }
-      // Questions is a real study area, not a disguised Sexual Ethics shortcut.
-       const questions=event.target?.closest?.("[data-ao-learn-questions]");
-       if(questions){
-         event.preventDefault?.();
-         state.family="questions";state.lastFamily="questions";
-         state.discoveryQuery="";state.error="";
-         paint();return;
-       }
        const surface=event.target?.closest?.("[data-ao-learn-discovery-surface]");
       if(surface){
         event.preventDefault?.();
