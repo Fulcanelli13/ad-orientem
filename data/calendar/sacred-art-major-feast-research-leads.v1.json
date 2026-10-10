@@ -1,0 +1,113 @@
+{
+  "schema": "AO_SACRED_ART_MAJOR_FEAST_RESEARCH_LEADS_V1",
+  "createdOn": "2026-10-10",
+  "issue": 885,
+  "status": "SOURCE_PAGE_CONFIRMED_DOWNLOAD_AND_RIGHTS_PENDING",
+  "warnings": [
+    "Official museum/foundation object identity and painted medium verified at source page, but original image bytes/hash have not been downloaded or accepted.",
+    "Kress labels the original object image Public Domain; retain separate jurisdiction/reproduction rights review and do not claim CC0.",
+    "All acquired assets remain excluded from app and master registry until post-run reconciliation and artistic approval.",
+    "Contextual saint portraits or Last Judgment are NOT feast-specific for John Baptist Nativity, All Saints, or All Souls."
+  ],
+  "leads": [
+    {
+      "id": "kress-k2017",
+      "targetIds": [
+        "calendar.palm-sunday"
+      ],
+      "relation": "EXACT",
+      "title": "The Entry into Jerusalem",
+      "artist": "Maestro Bartolomé",
+      "date": "1480–88",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2017_3223_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "kress-k2016",
+      "targetIds": [
+        "calendar.transfiguration",
+        "rosary.lum4",
+        "scripture.transfiguration"
+      ],
+      "relation": "EXACT",
+      "title": "The Transfiguration",
+      "artist": "Maestro Bartolomé",
+      "date": "c. 1493–95",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2016_3222_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "kress-k1782",
+      "targetIds": [
+        "calendar.holy-innocents"
+      ],
+      "relation": "EXACT",
+      "title": "The Massacre of the Innocents",
+      "artist": "Follower of Raphael",
+      "date": "early 16th century",
+      "medium": "tempera on panel",
+      "museum": "Samuel H. Kress Foundation / Mead Art Museum",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f65fe27049161fdc04c5696d3b01d6c1f5a32680a87bfcb99d76bf69b39b7cb0",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k1782_3052_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "met-438462",
+      "targetIds": [
+        "calendar.holy-innocents"
+      ],
+      "relation": "EXACT",
+      "title": "The Massacre of the Innocents",
+      "artist": "François Joseph Navez",
+      "date": "1824",
+      "medium": "oil on canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438462",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438462",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED"
+    },
+    {
+      "id": "kress-k0355",
+      "targetIds": [
+        "calendar.st-john-baptist",
+        "person.john-baptist"
+      ],
+      "relation": "CONTEXTUAL_SAINT_NOT_NATIVITY_OR_MARTYRDOM",
+      "title": "Saint John the Baptist",
+      "artist": "Vittore Carpaccio",
+      "date": "c. 1490",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / Philbrook Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/61fd2920fc2ebf20a1fbb4205b36bbcea5a7707d09dcff52a61f0d55e9b4abf5",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k0355_3451_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "kress-k2027",
+      "targetIds": [
+        "calendar.all-saints",
+        "calendar.all-souls",
+        "formation.death-judgment"
+      ],
+      "relation": "CONTEXTUAL_LAST_JUDGMENT_NOT_FEAST_PROPER",
+      "title": "The Last Judgment",
+      "artist": "Fernando Gallego and Workshop",
+      "date": "1480–88",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/5cfc10f4fb81dd90a2088e868b50f68a66c11fc3525daa2e5b3c7530fa82d82f",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2027_3233_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    }
+  ],
+  "excludedLead": {
+    "sourceUrl": "https://artmuseum.princeton.edu/art/collections/objects/29240",
+    "reason": "Exact Palm Sunday panel but highest exposed IIIF canvas is 2000 pixels, below current 2500-pixel original threshold; retained outside count."
+  }
+}
