@@ -3413,20 +3413,20 @@
         "to": "pray.nightly_examen",
         "relationship": "study_to_practice",
         "context": "examination_of_conscience",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use the contextual owner in the named lesson/stage; do not add generic shortcuts or duplicate the underlying corpus.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/learn/spiritual-life.js · SL06 General Examination contextual button"
       },
       {
         "from": "learn.spiritual_life",
         "to": "pray.adoration",
         "relationship": "study_to_practice",
         "context": "mental_prayer_and_adoration",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use the contextual owner in the named lesson/stage; do not add generic shortcuts or duplicate the underlying corpus.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/learn/spiritual-life.js · SL03 Mental Prayer optional adoration button"
       },
       {
         "from": "learn.rites.sick",
@@ -3443,10 +3443,10 @@
         "to": "pray.good_death",
         "relationship": "sacrament_to_prayer",
         "context": "preparation_and_perseverance",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use the contextual owner in the named lesson/stage; do not add generic shortcuts or duplicate the underlying corpus.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/learn/traditional-life.js · PREPARE card"
       },
       {
         "from": "learn.rites.first_communion",
@@ -3463,10 +3463,10 @@
         "to": "pray.confession",
         "relationship": "pastoral_to_prayer",
         "context": "penance_and_amendment",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use the contextual owner in the named lesson/stage; do not add generic shortcuts or duplicate the underlying corpus.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/learn/sexual-ethics-data/sot.js · SECTION_RELATED.confession; src/learn/sexual-ethics.js · relatedDetails"
       },
       {
         "from": "learn.rites.matrimony",
@@ -3513,10 +3513,10 @@
         "to": "learn.rites.first_communion",
         "relationship": "prayer_to_study",
         "context": "communion_context",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use the contextual owner in the named lesson/stage; do not add generic shortcuts or duplicate the underlying corpus.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/pray/traditional-pray-runtime.js · before-Communion context"
       },
       {
         "from": "pray.dying_companion",
@@ -3533,20 +3533,20 @@
         "to": "learn.rites.sick",
         "relationship": "prayer_to_study",
         "context": "serious_illness",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use the contextual owner in the named lesson/stage; do not add generic shortcuts or duplicate the underlying corpus.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/pray/traditional-pray-runtime.js · serious-illness link"
       },
       {
         "from": "programme.first_friday",
         "to": "pray.sacred_heart",
         "relationship": "devotion_to_related_devotion",
         "context": "sacred_heart",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use the contextual owner in the named lesson/stage; do not add generic shortcuts or duplicate the underlying corpus.",
         "return_to_origin_required": true,
-        "evidence": null
+        "evidence": "src/pray/presentation-runtime.js · firstFridayStage step 3"
       },
       {
         "from": "programme.first_saturday",
@@ -4267,9 +4267,9 @@
     },
     "content_level_relation_audit": {
       "reviewed": 20,
-      "source_wired_not_phone_verified": 9,
-      "proposed_not_wired": 11,
-      "principle": "Prior source implementations are authoritative; new work must strengthen or contextualise an existing link rather than duplicate it."
+      "source_wired_not_phone_verified": 16,
+      "proposed_not_wired": 4,
+      "principle": "Evidence is bound to exact source section/handler. A declared link does not prove real phone return; no duplicate source owners."
     }
   },
   "guide_policy": {
@@ -4305,7 +4305,8 @@
     "apostolate_obsolete_prayer_handoffs_repaired": true,
     "user_visible_content_crosslinks_implemented": true,
     "reason": "Pray and Formation entry hierarchy implemented; 9 of 20 contextual links were already source wired, 11 remain proposed; phone acceptance still outstanding.",
-    "apostolate_intention_navigation_implemented": true
+    "apostolate_intention_navigation_implemented": true,
+    "contextual_batch1_source_wired": true
   },
   "audit_findings": {
     "obsolete_apostolate_prayer_handoffs_fixed_on_branch": [
@@ -4345,7 +4346,22 @@
     "retired_aliases": [
       "learn.catholic_life",
       "learn.seasonal_rites"
-    ]
+    ],
+    "contextual_batch1": {
+      "reconciled_link_count": 7,
+      "source_wired_current": 16,
+      "remaining_unwired": 4,
+      "dead_handoff_from_serious_illness_fixed": {
+        "old": "pray.holy_souls",
+        "new": "pray.eternal_rest"
+      },
+      "new_guides": [
+        "pray.holy_name_litany"
+      ],
+      "locked_surfaces": [
+        "mass"
+      ]
+    }
   },
   "guides": {
     "source": "data/app/guide-coverage-two-function-audit.v1.json",
@@ -4604,6 +4620,15 @@
     ],
     "source_level_followup_count": 25,
     "fully_verified_in_phone": false,
-    "policy": "Information and user-controlled walkthrough are different; inspect current target reader, historical source, user context and guide before implementing. Passive Library and Glossary lookups do not need fake guided steps."
+    "policy": "Information and user-controlled walkthrough are different; inspect current target reader, historical source, user context and guide before implementing. Passive Library and Glossary lookups do not need fake guided steps.",
+    "source_level_audit_snapshot": "2026-10-10 pre-contextual-guide-batch1: 25 flagged; source-level classifications retained until renewed audit",
+    "newly_implemented": [
+      {
+        "id": "pray.holy_name_litany",
+        "improvement": "Optional seven-section original-text guided mode, aligned EN FR LA; full-text alternative preserved; no completion tracking",
+        "implementation": "src/pray/traditional-pray-runtime.js",
+        "phone_verified": false
+      }
+    ]
   }
 }
