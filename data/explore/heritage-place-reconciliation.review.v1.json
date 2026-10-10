@@ -32,17 +32,6 @@
       "place:DE:kevelaer-kerzenkapelle",
       "place:GB:holywell-st-winefride-church"
     ],
-    "geo_source_url_needs_review": [
-      "place:AT:maria-taferl-basilica",
-      "place:CA:martyrs-shrine-midland",
-      "place:DE:kevelaer-kerzenkapelle",
-      "place:FR:notre-dame-des-marins-arcachon",
-      "place:GB:holywell-st-winefride-church",
-      "place:MU:pere-laval-sainte-croix",
-      "place:NZ:pukekaraka-otaki",
-      "place:US:la-salette-attleboro",
-      "place:US:st-alphonsus-baltimore"
-    ],
     "customs_without_exact_place": [
       {
         "id": "att:DOM-002:FR",
@@ -141,14 +130,27 @@
         "map_policy": "NOT_MAPPED",
         "geo_area_id": "geo:culture:french-catholic-world"
       }
-    ]
+    ],
+    "places_pending_coordinates": [
+      "place:AT:maria-taferl-basilica",
+      "place:CA:martyrs-shrine-midland",
+      "place:DE:kevelaer-kerzenkapelle",
+      "place:FR:notre-dame-des-marins-arcachon",
+      "place:GB:holywell-st-winefride-church",
+      "place:MU:pere-laval-sainte-croix",
+      "place:NZ:pukekaraka-otaki",
+      "place:US:la-salette-attleboro",
+      "place:US:st-alphonsus-baltimore"
+    ],
+    "coordinates_without_source_url": []
   },
   "acceptance_rules": [
     "A Place can appear once on the unified map while retaining multiple independently owned records.",
     "Source-backed coordinate eligibility is computed by the existing geography policy, not by this review ledger.",
     "An AREA_CONTEXT or worldwide custom is never converted into a point.",
     "Reference-only Places remain in the geography registry pending editorial review.",
-    "The absence of a missing-reference error is not proof of current opening times, relic authenticity or apparition approval."
+    "The absence of a missing-reference error is not proof of current opening times, relic authenticity or apparition approval.",
+    "Places with null latitude/longitude are pending coordinates, not false claims that a known coordinate lacks attribution."
   ],
   "place_crosswalk": [
     {
@@ -178,7 +180,7 @@
           "pilgrimage:AT:maria-taferl-destination"
         ]
       },
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:AT:mariazell-basilica",
@@ -343,7 +345,7 @@
           "route:CA:canadian-martyrs-traditional"
         ]
       },
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:CA:notre-dame-du-cap",
@@ -581,7 +583,7 @@
       "place_id": "place:DE:kevelaer-kerzenkapelle",
       "display_name": "Kerzenkapelle Kevelaer",
       "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:DE:kolner-dom-three-kings",
@@ -1338,7 +1340,7 @@
           "link:directory-place:FR:arcachon-notre-dame"
         ]
       },
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:FR:notre-dame-du-laus",
@@ -1629,7 +1631,7 @@
       "place_id": "place:GB:holywell-st-winefride-church",
       "display_name": "St Winefride's RC Church, Holywell",
       "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:GB:walsingham-catholic-shrine",
@@ -2452,7 +2454,7 @@
           "route:MU:pere-laval-saint-louis"
         ]
       },
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:MX:basilica-guadalupe-mexico-city",
@@ -2590,7 +2592,7 @@
           "pilgrimage:NZ:pukekaraka-destination"
         ]
       },
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:NZ:st-peter-chanel-russell",
@@ -3028,7 +3030,7 @@
           "pilgrimage:US:la-salette-attleboro-destination"
         ]
       },
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:US:lourdes-grotto-emmitsburg",
@@ -3112,7 +3114,7 @@
           "link:directory-place:US:st-alphonsus-baltimore"
         ]
       },
-      "geo_source_status": "GEO_SOURCE_URL_REVIEW"
+      "geo_source_status": "PENDING_COORDINATES"
     },
     {
       "place_id": "place:US:st-anne-fiskdale",
