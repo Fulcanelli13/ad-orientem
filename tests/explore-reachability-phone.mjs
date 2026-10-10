@@ -37,6 +37,7 @@ try{
   &&document.querySelector("#ao-find-modular-root .aoFindSurface"),null,{timeout:60000});
  const lenses=["tlm","shrines","apparitions","relics","traditions","pilgrimages"];
  const reached=[];
+ let verifiedSourceLinks=0;
  for(const lens of lenses){
   const selector='#ao-find-modular-root [data-find-filter="lens"][data-find-filter-value="'+lens+'"]';
   const lensButton=page.locator(selector);
@@ -75,6 +76,16 @@ try{
    await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]").waitFor({state:"visible",timeout:12000});
    const detail=await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]").innerText();
    assert.ok(detail.trim().length>=title.length+5,lens+" source detail has no substantive content");
+   // Validate hyperlink controls rendered in the real selected item's source drawer.
+   const sources=await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog] .aoFindSources a[href]").evaluateAll(nodes=>
+     nodes.map(a=>({href:a.href,target:a.target,rel:a.rel,label:a.textContent.trim()})));
+   for(const source of sources){
+     assert.match(source.href,/^https:\/\//,lens+" emitted a non-HTTPS evidence link");
+     assert.equal(source.target,"_blank",lens+" source lost its external-document target");
+     assert.ok(source.rel.split(/\s+/).includes("noopener"),lens+" source risks an unsafe opener");
+     assert.ok(source.label.length>=2,lens+" source link is unlabelled");
+   }
+   verifiedSourceLinks+=sources.length;
    await page.locator("#ao-find-modular-root button[data-find-close-detail]").first().tap({timeout:10000});
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheet[role=dialog]"),null,{timeout:12000});
   }
@@ -94,18 +105,63 @@ try{
   await page.locator("#ao-find-modular-root [data-find-query]").fill("",{timeout:12000});
   await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
     snapshot.count,{timeout:12000});
-  if(["shrines","pilgrimages"].includes(lens)&&snapshot.count){
-   await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]').tap();
-   await page.waitForFunction(()=>Boolean(document.querySelector("#ao-find-modular-root [data-find-view='map'] [data-find-map]")),
-    null,{timeout:15000});
-   assert.ok((await page.locator("#ao-find-modular-root [data-find-map]").innerText()).length>=0);
-   await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="list"]').tap();
-   await page.waitForFunction(()=>Boolean(document.querySelector("#ao-find-modular-root [data-find-view='list']")),
-     null,{timeout:10000});
+  if(lens==="tlm"){
+   // Exercise a real timetable filter without claiming current schedules are verified.
+   await page.locator('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="SUNDAY"]').tap();
+   await page.waitForFunction(()=>Boolean(document.querySelector('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="SUNDAY"].active')),
+     null,{timeout:12000});
+   const sunday=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
+   assert.ok(sunday<=snapshot.count,"Sunday filter incorrectly adds venues");
+   await page.locator('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="ANY"]').tap();
+   await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
+     snapshot.count,{timeout:12000});
+   await page.locator("#ao-find-modular-root .aoExploreAdvancedFilters summary").tap();
+   const provider=page.locator('#ao-find-modular-root [data-find-affiliation="FSSP"]');
+   assert.equal(await provider.count(),1,"TLM community filter is inaccessible");
+   await provider.tap();
+   await page.waitForFunction(()=>Boolean(document.querySelector('#ao-find-modular-root [data-find-affiliation="FSSP"].active')),
+     null,{timeout:12000});
+   const fssp=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
+   assert.ok(fssp<=snapshot.count,"FSSP filter incorrectly adds venues");
+   await page.locator('#ao-find-modular-root [data-find-affiliation="FSSP"]').tap();
+   await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
+     snapshot.count,{timeout:12000});
   }
+  if(lens==="traditions"){
+   await page.locator("#ao-find-modular-root .aoCustomsAtlasDiscovery summary").tap();
+   const period=page.locator('#ao-find-modular-root [data-atlas-filter="atlasPeriod"]');
+   assert.equal(await period.count(),1,"Traditions period selector is missing");
+   const option=await period.locator('option:not([value="ANY"])').first().getAttribute("value").catch(()=>null);
+   if(option){
+     await period.selectOption(option);
+     await page.waitForFunction(value=>document.querySelector('#ao-find-modular-root [data-atlas-filter="atlasPeriod"]')?.value===value,
+       option,{timeout:12000});
+     const narrowed=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
+     assert.ok(narrowed<=snapshot.count,"Traditions period selector incorrectly adds attestations");
+     await page.locator("#ao-find-modular-root [data-atlas-clear]").tap();
+     await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
+       snapshot.count,{timeout:12000});
+   }
+  }
+  // All six lenses must have a meaningful Map/List state, including sparse lenses.
+  await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]').tap();
+  await page.waitForFunction(id=>{
+    const node=document.querySelector('#ao-find-modular-root [data-find-view="map"][data-explore-lens="'+id+'"] [data-find-map]');
+    return Boolean(node&&(node.querySelector("canvas")||node.textContent.trim().length>=15));
+  },lens,{timeout:15000});
+  const map=await page.locator("#ao-find-modular-root [data-find-map]").evaluate(node=>({
+    width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height,
+    canvas:!!node.querySelector("canvas"),message:node.textContent.trim()
+  }));
+  assert.ok(map.width>250&&map.height>=300,lens+" map collapsed on a phone");
+  assert.ok(map.canvas||map.message.length>=15,lens+" map has neither canvas nor an explanatory fallback");
+  await page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="list"]').tap();
+  await page.waitForFunction(id=>Boolean(document.querySelector('#ao-find-modular-root [data-find-view="list"][data-explore-lens="'+id+'"]')),
+    lens,{timeout:12000});
   reached.push({lens,count:snapshot.count});
  }
  assert.deepEqual(reached.map(x=>x.lens),lenses);
+ assert.ok(verifiedSourceLinks>=1,"Explore exposed no source hyperlink in the six tested details");
  assert.equal(await page.locator("#ao-find-modular-root [data-find-filter='lens']").count(),6);
  await page.locator("#ao-find-modular-root [data-find-close]").tap({timeout:10000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"
