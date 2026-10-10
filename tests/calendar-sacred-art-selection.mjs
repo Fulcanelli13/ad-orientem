@@ -8,7 +8,7 @@ const registry = JSON.parse(readFileSync("data/calendar/sacred-art-candidates.v1
 assert.equal(registry.schema, "AO_SACRED_ART_CANDIDATES_V1");
 assert.equal(registry.ownerIssue, 885);
 assert.equal(registry.artworks.length, 40);
-assert.equal(new Set(registry.artworks.map(a => a.id)).size, 29);
+assert.equal(new Set(registry.artworks.map(a => a.id)).size, 40);
 for (const candidate of registry.artworks) {
   assert.match(candidate.id, /^met-\d+$/);
   assert.equal(candidate.medium, "painting");
