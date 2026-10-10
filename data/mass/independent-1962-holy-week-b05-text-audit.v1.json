@@ -7,11 +7,12 @@
   "dependsOn": "data/mass/independent-1962-holy-week-b04.v1.json",
   "controls": {
     "calendarRite": "1962 restored Holy Week, never pre-1955 donor",
-    "productionTextsChanged": false,
+    "productionTextsChanged": true,
     "imageVerifiedHolyWeekTypicaPages": 0,
     "lineByLinePrintedCollationsCertified": 0,
     "statusPolicy": "A passing B05 CI documents open textual deficits; it must never be presented as complete Latin/English/French certification. A partial text, heading, rubric or ellipsis is not the full prescribed prayer.",
-    "safety": "Retain original graph/Canon/48-card product; prohibit speculative text insertions. Source variants are separate authorities and not interpolated."
+    "safety": "Retain original graph/Canon/48-card product; prohibit speculative text insertions. Source variants are separate authorities and not interpolated.",
+    "sourceEditedTextVersion": "B06 secondary witness, Latin text restored; original typica image certification still zero"
   },
   "sourceWitnesses": [
     {
@@ -180,8 +181,8 @@
       "rite": "EASTER_VIGIL_1962",
       "appPath": "data/presentation/reader-easter-vigil.v1.json + src/mass/reader-easter-vigil.js",
       "surface": "Litany of the Saints, two halves",
-      "status": "ABBREVIATED_CONFIRMED",
-      "evidence": "Both litanyI and litanyII Latin fields contain editorial descriptions, not the prescribed invocation text. The native reader renders these description fields as the litany cards.",
+      "status": "RESTORED_FROM_SECONDARY_1962__PRINTED_VISUAL_UNCOLLATED",
+      "evidence": "B06 restores the complete two-part 1962 Litany of the Saints with 46 first-part and 30 second-part invocations, each followed by its response. Source lines are separately focusable and have independently authored EN/FR readings. Printed 1962 typica page-image collation and French liturgical-approval parity remain outstanding.",
       "source": "VIGIL_EDITORIAL"
     },
     {
@@ -198,8 +199,8 @@
       "rite": "EASTER_VIGIL_1962",
       "appPath": "data/presentation/reader-easter-vigil.v1.json",
       "surface": "renewal of baptismal promises",
-      "status": "ABBREVIATED_CONFIRMED",
-      "evidence": "renunciations and professions each contain a single generic question/response; the bridge Pater noster is explicitly ellipsized. Complete questions, answers and prayers are absent from those reader surfaces.",
+      "status": "RESTORED_FROM_SECONDARY_1962__PRINTED_VISUAL_UNCOLLATED",
+      "evidence": "B06 restores the full Latin baptismal-promise exhortation, three renunciations, three professions, full Pater noster and final prayer/Amen, with per-speaker rows and editorial EN/FR parallels. Original 1962 printed page-image and translation editorial review remain outstanding.",
       "source": "VIGIL_EDITORIAL"
     },
     {

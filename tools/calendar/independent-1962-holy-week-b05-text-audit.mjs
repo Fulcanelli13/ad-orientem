@@ -40,15 +40,15 @@ check("Good-Friday-Confiteor-is-rubric-only",gfReader.includes("Et continuo diac
 check("Jewish-prayer-variants-owned-and-not-conflated",friday.solemnPrayers.find(x=>x.key==="CONVERSION_OF_JEWS")?.variants?.PRINTED_1962&&friday.solemnPrayers.find(x=>x.key==="CONVERSION_OF_JEWS")?.variants?.HOLY_SEE_2008&&register.sourceWitnesses.find(x=>x.id==="FRIDAY_EDITORIAL")?.caution?.includes("2008"));
 check("Easter-Vigil-four-complete-length-lessons",prophecies.readings.length===4&&prophecies.readings.every(x=>x.latinParagraphs.join(" ").length>=600&&x.collectLatin?.length>60));
 check("Easter-Vigil-Exsultet-long-form",vigil.donor.exsultet.lat.length>=3500);
-check("Easter-Vigil-both-litanies-are-explanations",vigil.bridge.litanyI.lat.length<180&&vigil.bridge.litanyII.lat.length<180&&evReader.includes('bilingualRows("EV-LIT1",payload.bridge.litanyI')&&evReader.includes('bilingualRows("EV-LIT2",payload.bridge.litanyII')&&itemById.get("VIGIL_LITANIES")?.status==="ABBREVIATED_CONFIRMED");
+check("Easter-Vigil-complete-two-part-Litany-secondary-witness",vigil.bridge.litanyI.lat.split("\n").length===92&&vigil.bridge.litanyII.lat.split("\n").length===60&&evReader.includes('ritualResponseRows("EV-LIT1",payload.bridge.litanyI')&&evReader.includes('ritualResponseRows("EV-LIT2",payload.bridge.litanyII')&&itemById.get("VIGIL_LITANIES")?.status==="RESTORED_FROM_SECONDARY_1962__PRINTED_VISUAL_UNCOLLATED");
 check("Easter-Vigil-font-is-a-summary",vigil.bridge.font.lat.length<200&&vigil.donor.fontOverview.lat.length<600&&itemById.get("VIGIL_FONT")?.status==="ABBREVIATED_CONFIRMED");
-check("Easter-Vigil-promises-and-Pater-are-abbreviated",vigil.bridge.renunciations.lat.length<100&&vigil.bridge.professions.lat.length<80&&vigil.bridge.pater.lat.includes("…")&&itemById.get("VIGIL_BAPTISMAL_VOWS")?.status==="ABBREVIATED_CONFIRMED");
+check("Easter-Vigil-full-promise-dialogue-and-Pater-secondary-witness",vigil.bridge.renunciations.lat.split("\n").length===6&&vigil.bridge.professions.lat.split("\n").length===6&&vigil.bridge.pater.lat.includes("Et ne nos indúcas in tentatiónem")&&!vigil.bridge.pater.lat.includes("…")&&itemById.get("VIGIL_BAPTISMAL_VOWS")?.status==="RESTORED_FROM_SECONDARY_1962__PRINTED_VISUAL_UNCOLLATED");
 const counts=Object.fromEntries([...new Set(items.map(x=>x.status))].sort().map(status=>[status,items.filter(x=>x.status===status).length]));
 const failed=checks.filter(x=>!x.passed);
 const report={
  schema:"AO_MR1962_HOLY_WEEK_B05_TEXT_HOLDS_REPORT",
  certification:"NOT_CERTIFIED",
- meaningOfGreen:"Known source-backed text debt accurately represented; full critical word-for-word printed 1962 text is still NOT certified.",
+ meaningOfGreen:"Restored secondary-source texts and remaining debt accurately classified; original printed 1962 critical collation is still NOT certified.",
  sourceWitnessClass:register.auditClass,
  imageVerifiedHolyWeekTypicaPages:register.controls.imageVerifiedHolyWeekTypicaPages,
  auditedSurfaces:items.length,byStatus:counts,

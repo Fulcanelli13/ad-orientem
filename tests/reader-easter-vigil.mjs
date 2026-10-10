@@ -30,6 +30,38 @@ assert.ok(!built.steps.some(x=>x.recordId==="EV-BAPT-430"));
 assert.equal(built.steps.at(-1).recordId,"EV-MASS-700");
 assert.equal(built.steps.at(-1).handoffToMass,true);
 
+const litanyI=built.steps.find(x=>x.recordId==="EV-LIT1-400").paragraphs;
+const litanyII=built.steps.find(x=>x.recordId==="EV-LIT2-600").paragraphs;
+assert.equal(litanyI.length,92,"1962 Vigil first Litany must have 46 complete versicle/response pairs");
+assert.equal(litanyII.length,60,"1962 Vigil second Litany must have 30 complete versicle/response pairs");
+for(const [name,part] of [["first",litanyI],["second",litanyII]]){
+  assert.ok(part.every((p,i)=>p.speaker===(i%2?"ALL":"CANTORS")),name+" Litany speaker role");
+  assert.ok(part.every((p,i)=>p.kind===(i%2?"RESPONSE":"VERSICLE")),name+" Litany call-response kind");
+  assert.ok(part.every(p=>p.latin&&p.english&&p.french&&p.english.startsWith(p.latin.slice(0,2))),name+" Litany trilingual alignment");
+  assert.equal(new Set(part.map(p=>p.id)).size,part.length,name+" Litany row IDs");
+}
+assert.match(litanyI[litanyI.length-2].latin,/Omnes Sancti et Sanctæ Dei/);
+assert.match(litanyII[0].latin,/Propítius esto/);
+assert.match(litanyII[litanyII.length-2].latin,/Christe, audi nos/);
+for(const [id,expected] of [["EV-REN-500",3],["EV-REN-510",6],["EV-REN-520",6],["EV-REN-530",4]]){
+  const rows=built.steps.find(x=>x.recordId===id).paragraphs;
+  assert.equal(rows.length,expected,id+" complete printed-1962 renewal text rows");
+  assert.ok(rows.every(p=>p.english?.length>5&&p.french?.length>5),id+" trilingual text");
+}
+const vows=built.steps.find(x=>x.recordId==="EV-REN-510").paragraphs;
+assert.deepEqual(vows.map(x=>x.speaker),["CELEBRANT","ALL","CELEBRANT","ALL","CELEBRANT","ALL"]);
+const beliefs=built.steps.find(x=>x.recordId==="EV-REN-520").paragraphs;
+assert.deepEqual(beliefs.map(x=>x.speaker),["CELEBRANT","ALL","CELEBRANT","ALL","CELEBRANT","ALL"]);
+const pater=built.steps.find(x=>x.recordId==="EV-REN-530").paragraphs;
+assert.match(pater[1].latin,/sed líbera nos a malo/);
+assert.match(pater[2].latin,/Et Deus omnípotens/);
+assert.equal(pater[3].speaker,"ALL");
+assert.doesNotMatch(pater[1].latin,/…/);
+assert.equal(payload.criticalTextB06.litanyFirstInvocations,46);
+assert.equal(payload.criticalTextB06.litanySecondInvocations,30);
+assert.match(payload.criticalTextB06.status,/NOT_ORIGINAL_PRINTED/);
+
+
 const noFont=buildEasterVigilReader({graph,payload,fontMode:"NONE"});
 assert.ok(noFont.steps.some(x=>x.recordId==="EV-FONT-410"));
 assert.ok(!noFont.steps.some(x=>x.recordId==="EV-FONT-420"));
