@@ -24,9 +24,9 @@ const unique=(entries,label)=>{
 const sort=x=>[...x].sort();
 const prayerEntries=map.pray.entries;
 assert.equal(prayerEntries.length,23);
-const srcPray=[...familySource.matchAll(/\\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
+const srcPray=[...familySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
 assert.equal(srcPray.length,22,"Prayer runtime source family count changed");
-const srcLazy=[...familySource.matchAll(/\\['external','([^']+)'/g)].map(x=>x[1]);
+const srcLazy=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
 assert.equal(srcLazy.length,10,"Prayer lazy routes changed");
 assert.ok(familySource.includes("direct:'pray.library'"));
 assert.deepEqual(sort(unique(prayerEntries,"Prayer")),sort([...srcPray,"pray.library"]));
