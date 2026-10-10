@@ -3,7 +3,6 @@ import {readFileSync} from "node:fs";
 import {makeResolvedMass,compileMassPlan} from "../src/mass/session-engine.js";
 import {projectSpecialStructure} from "../src/mass/reader-special-structure.js";
 import {createReaderFormCueStateController} from "../src/mass/reader-form-state.js";
-import {createReaderGestureMatrixController} from "../src/mass/reader-gesture-matrix.js";
 
 const json=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const registry=json("../data/mass/rite-overlay-registry.v1.json");
@@ -12,7 +11,7 @@ const sources={registry,extension:json("../data/mass/special-days-extension.v1.3
 const formState=json("../data/presentation/reader-form-state.v1.json");
 const lowCorpus=json("../data/presentation/reader-text-low.v1.json");
 const sungCorpus=json("../data/presentation/reader-text-sung.v1.json");
-const gestMatrix=createReaderGestureMatrixController({data:json("../data/mass/gesture-matrix.v1.json")});
+const gestMatrix=json("../data/mass/gesture-matrix.v1.json");
 const registries=Object.freeze({
  gestures:json("../data/presentation/reader-gestures.v1.json"),
  responses:json("../data/presentation/reader-responses.v1.json"),
