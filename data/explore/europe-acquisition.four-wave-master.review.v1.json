@@ -1,0 +1,803 @@
+{
+  "schema": "AO_EXPLORE_EUROPE_FOUR_WAVE_MASTER_REVIEW_V1",
+  "as_of": "2026-10-10",
+  "status": "REGISTRY_RESEARCH_IN_PROGRESS_NONE_COMPLETE",
+  "source_wave_files": [
+    "data/explore/europe-acquisition.wave1.research.v1.json",
+    "data/explore/europe-acquisition.wave2.research.v1.json",
+    "data/explore/europe-acquisition.wave3.research.v1.json",
+    "data/explore/europe-acquisition.wave4-national-depth.research.v1.json"
+  ],
+  "base_canonical_geography": "data/geography/seed-registry.v1.json",
+  "summary": {
+    "jurisdictions": 47,
+    "waves": 4,
+    "site_research_leads": 149,
+    "existing_canonical_place_matches": 22,
+    "unmatched_new_place_candidates": 127,
+    "raw_source_records": 111,
+    "distinct_source_urls": 105,
+    "category_associations": 113,
+    "by_category": {
+      "PILGRIMAGES": 60,
+      "RELICS": 13,
+      "APPARITIONS": 6,
+      "SACRED_IMAGE": 11,
+      "CUSTOMS": 23
+    },
+    "zero_site_countries": 0,
+    "countries_with_0_2_total_places_or_leads": 28,
+    "exact_name_collision_groups": 0
+  },
+  "source_identity_duplicate_scan": [],
+  "category_boundaries": [
+    "SHRINES are represented as Place site-identity candidates, not as separate association records; zero SHRINES in association counts would incorrectly imply zero shrine candidates.",
+    "Shrines/site candidates and category claims are separate. A single site can be associated with several pilgrimages, relics, apparitions, images or customs.",
+    "Research-only site candidates are NOT published app Places or map markers.",
+    "APPARITIONS includes reported events without ecclesial certification; sacred-image phenomena are separate.",
+    "RELICS records may represent historical, temporary, reported or unresolved custodian relations. No relic authenticity granted.",
+    "CUSTOMS are historical/regional attestations; French-world relevance gate applies for French domestic content."
+  ],
+  "country_review": [
+    {
+      "country_code": "AL",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "AD",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "AT",
+      "published_canonical_places": 2,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 0,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "BY",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "BE",
+      "published_canonical_places": 3,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "BA",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "BG",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 3,
+      "unmatched_research_site_leads": 3,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 2,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "HR",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "CY",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 3,
+      "unmatched_research_site_leads": 3,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "CZ",
+      "published_canonical_places": 2,
+      "source_research_site_leads": 4,
+      "unmatched_research_site_leads": 4,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 3,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "DK",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 2,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "EE",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 2,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "FI",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "FR",
+      "published_canonical_places": 44,
+      "source_research_site_leads": 28,
+      "unmatched_research_site_leads": 16,
+      "source_research_associations": 17,
+      "category_associations": {
+        "PILGRIMAGES": 8,
+        "RELICS": 4,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 3
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "NATIONAL_COMPLETENESS_REVIEW"
+    },
+    {
+      "country_code": "DE",
+      "published_canonical_places": 13,
+      "source_research_site_leads": 8,
+      "unmatched_research_site_leads": 7,
+      "source_research_associations": 7,
+      "category_associations": {
+        "PILGRIMAGES": 7,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "NATIONAL_COMPLETENESS_REVIEW"
+    },
+    {
+      "country_code": "GI",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "GR",
+      "published_canonical_places": 1,
+      "source_research_site_leads": 3,
+      "unmatched_research_site_leads": 3,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "HU",
+      "published_canonical_places": 1,
+      "source_research_site_leads": 5,
+      "unmatched_research_site_leads": 5,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 2,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "IS",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "IE",
+      "published_canonical_places": 2,
+      "source_research_site_leads": 4,
+      "unmatched_research_site_leads": 3,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "IT",
+      "published_canonical_places": 37,
+      "source_research_site_leads": 21,
+      "unmatched_research_site_leads": 20,
+      "source_research_associations": 10,
+      "category_associations": {
+        "PILGRIMAGES": 3,
+        "RELICS": 1,
+        "APPARITIONS": 2,
+        "SACRED_IMAGE": 2,
+        "CUSTOMS": 2
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "NATIONAL_COMPLETENESS_REVIEW"
+    },
+    {
+      "country_code": "XK",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "LV",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 2,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "LI",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 2
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "LT",
+      "published_canonical_places": 2,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "LU",
+      "published_canonical_places": 1,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "MT",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "MD",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "MC",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "ME",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "NL",
+      "published_canonical_places": 2,
+      "source_research_site_leads": 0,
+      "unmatched_research_site_leads": 0,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "MK",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "NO",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 3,
+      "unmatched_research_site_leads": 3,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 2,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "PL",
+      "published_canonical_places": 7,
+      "source_research_site_leads": 4,
+      "unmatched_research_site_leads": 3,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "NATIONAL_COMPLETENESS_REVIEW"
+    },
+    {
+      "country_code": "PT",
+      "published_canonical_places": 2,
+      "source_research_site_leads": 3,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 4,
+      "category_associations": {
+        "PILGRIMAGES": 3,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "RO",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 2,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "RU",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 4,
+      "unmatched_research_site_leads": 4,
+      "source_research_associations": 4,
+      "category_associations": {
+        "PILGRIMAGES": 2,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 2
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "SM",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "RS",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "SK",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 2,
+      "source_research_associations": 1,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "SI",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 3,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "ES",
+      "published_canonical_places": 6,
+      "source_research_site_leads": 13,
+      "unmatched_research_site_leads": 12,
+      "source_research_associations": 6,
+      "category_associations": {
+        "PILGRIMAGES": 4,
+        "RELICS": 0,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "NATIONAL_COMPLETENESS_REVIEW"
+    },
+    {
+      "country_code": "SE",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "CH",
+      "published_canonical_places": 3,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 0,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "UA",
+      "published_canonical_places": 0,
+      "source_research_site_leads": 1,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "GB",
+      "published_canonical_places": 4,
+      "source_research_site_leads": 2,
+      "unmatched_research_site_leads": 1,
+      "source_research_associations": 2,
+      "category_associations": {
+        "PILGRIMAGES": 1,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "MEDIUM_UNDERREPRESENTED"
+    },
+    {
+      "country_code": "VA",
+      "published_canonical_places": 1,
+      "source_research_site_leads": 0,
+      "unmatched_research_site_leads": 0,
+      "source_research_associations": 0,
+      "category_associations": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "coverage_status": "PARTIAL_COUNTRY_ACQUISITION_PENDING_EXHAUSTIVE_NATIONAL_RECONCILIATION",
+      "priority": "HIGH_UNDERREPRESENTED"
+    }
+  ],
+  "next_acquisition_gate": [
+    "Prioritise countries with sparse records (zero to two combined sites) but do not regard more than two as nationally complete.",
+    "Reconcile every diocesan/national source list to stable Place identity, including alternative names, chapels within sanctuaries and historical buildings.",
+    "Review category completeness separately by sanctuary, pilgrimage, relic location, apparition claim, sacred image and regional custom.",
+    "Retain ecclesiastical ownership, recognition, current-custody, geographic scope and date qualifications.",
+    "After Europe-wide source acquisition and identity deduplication, move to site address/geocoding, then historical text and licensed images."
+  ],
+  "publication_control": "ALL_INCOMING_WAVES_RESEARCH_ONLY_NO_NEW_PINS_NO_BIOGRAPHIES_NO_IMAGES"
+}
