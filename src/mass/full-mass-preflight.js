@@ -3,6 +3,7 @@
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
+import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -113,6 +114,7 @@ export function mountFullMassPreflight({
       root.className="aoFullMassPreflight";
       root.setAttribute("aria-label","Mass preparation");
       root.innerHTML='<h3 data-full-mass-title></h3><p data-full-mass-celebration role="status"></p>'+
+        '<section class="aoSpecialMassContext" data-full-mass-special hidden></section>'+
         '<div class="aoFullMassCategories" role="group" data-full-mass-categories aria-label="Select actual Mass">'+
         [["CALENDAR","Mass of the day","Messe du jour"],["VOTIVE","Votive","Votive"],
          ["REQUIEM","Requiem","Requiem"],["NUPTIAL","Nuptial","Nuptiale"],
@@ -198,6 +200,16 @@ export function mountFullMassPreflight({
     root.querySelector("[data-full-mass-form-fieldset]").disabled=!summary.formChangeAllowed;
     const rites=availableOptionalMassRites(legacy,{form:summary.form,kind:summary.kind});
     const options=rites.filter(rite=>rite.allowed||rite.fromSource);
+    const effectiveRites={
+      precedingRites:rites.filter(rite=>rite.position==="precedingRites" &&
+        (riteOverrides[rite.id]??(rite.fromSource&&rite.allowed))).map(rite=>rite.id),
+      followingActions:rites.filter(rite=>rite.position==="followingActions" &&
+        (riteOverrides[rite.id]??(rite.fromSource&&rite.allowed))).map(rite=>rite.id),
+    };
+    const presentation=specialMassPresentation(legacy,{
+      kind:summary.kind,language:language(),selectedRites:effectiveRites,
+    });
+    renderSpecialMassContext(root.querySelector("[data-full-mass-special]"),presentation);
     const detail=root.querySelector("[data-full-mass-rites]");
     detail.hidden=options.length===0;
     root.querySelector("[data-full-mass-rite-summary]").textContent=l("Rites actually taking place",
@@ -226,6 +238,7 @@ export function mountFullMassPreflight({
       input.closest("label").querySelector("span").textContent=fr?rite.fr:rite.en;
     }
     root.dataset.aoCelebrationKind=summary.kind;
+    root.dataset.aoSpecialMassVariant=presentation.variant;
     root.dataset.aoChosenMassForm=summary.form;
     root.dataset.aoProperReady=String(summary.canStart);
     return summary;
