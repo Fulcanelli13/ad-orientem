@@ -1,3 +1,4 @@
+import { formationReaderCss } from "./formation-ui.js";
 import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { searchDiscovery } from "./discovery.js";
@@ -9,8 +10,8 @@ export const LEARN_LAYOUT=Object.freeze({
   kicker:Object.freeze(["FORMATION","FORMATION"]),
   title:Object.freeze(["Formation","Formation"]),
   intro:Object.freeze([
-    "Learn the Faith in a deliberate order: foundations first, then spiritual and moral life, liturgy, the sacraments and deeper study.",
-    "Apprendre la foi dans un ordre clair : d’abord les fondements, puis la vie spirituelle et morale, la liturgie, les sacrements et l’étude approfondie."
+    "Catechism, spiritual life, the Mass, sacraments, Catholic questions and Latin — in one place.",
+    "Catéchisme, vie spirituelle, Messe, sacrements, questions catholiques et latin — dans un même espace."
   ]),
   sections:Object.freeze([
     Object.freeze({
@@ -24,17 +25,16 @@ export const LEARN_LAYOUT=Object.freeze({
     }),
     Object.freeze({
       id:"spiritual-moral",
-      title:Object.freeze(["Spiritual & Moral Life","Vie spirituelle & morale"]),
-      description:Object.freeze(["Form judgment, prayer and daily Catholic conduct.","Former le jugement, la prière et la conduite catholique quotidienne."]),
+      title:Object.freeze(["Spiritual Life & Devotions","Vie spirituelle & dévotions"]),
+      description:Object.freeze(["Grow in prayer, virtue and traditional devotions.","Grandir dans la prière, les vertus et les dévotions traditionnelles."]),
       items:Object.freeze([
         Object.freeze({id:"learn.spiritual_life",type:"course",featured:false,title:Object.freeze(["Spiritual Life","Vie spirituelle"]),description:Object.freeze(["14 sourced lessons on recollection, mental prayer, examen, spiritual reading, ordinary duties and a stable rule of life.","14 leçons sourcées sur le recueillement, l’oraison mentale, l’examen, la lecture spirituelle, les devoirs ordinaires et une règle de vie stable."])}),
-        Object.freeze({id:"learn.sexual_ethics",type:"reference",featured:false,title:Object.freeze(["Catholic Sexual Ethics","Morale sexuelle catholique"]),description:Object.freeze(["150 concise, rigorously sourced questions with deeper objection/refutation treatment where it is genuinely useful.","150 questions concises et rigoureusement sourcées, avec un traitement objection/réfutation plus développé lorsqu’il est réellement utile."])}),
         Object.freeze({id:"learn.scapular",type:"guide",featured:false,title:Object.freeze(["Brown Scapular","Scapulaire brun"]),description:Object.freeze(["Meaning, preparation for enrolment and living the devotion.","Sens, préparation à l’imposition et vie de la dévotion."])})
       ])
     }),
     Object.freeze({
       id:"liturgy-tradition",
-      title:Object.freeze(["Liturgy & Tradition","Liturgie & tradition"]),
+      title:Object.freeze(["Mass & Liturgy","Messe & liturgie"]),
       description:Object.freeze(["Understand traditional Catholic worship and learn how to take part in it.","Comprendre le culte catholique traditionnel et apprendre à y prendre part."]),
       items:Object.freeze([
         Object.freeze({id:"learn.mass",type:"course",featured:true,title:Object.freeze(["Understand the Mass","Comprendre la Messe"]),description:Object.freeze(["A guided course through the order, meaning, history and roles of the Roman Mass.","Un parcours guidé sur l’ordre, le sens, l’histoire et les rôles de la Messe romaine."])}),
@@ -44,7 +44,7 @@ export const LEARN_LAYOUT=Object.freeze({
     }),
     Object.freeze({
       id:"sacraments-life",
-      title:Object.freeze(["Sacraments & Life Events","Sacrements & étapes de vie"]),
+      title:Object.freeze(["Sacraments & Christian Life","Sacrements & vie chrétienne"]),
       description:Object.freeze(["Open the guide that matches the sacrament, vocation or serious situation you are preparing for.","Ouvrir le guide correspondant au sacrement, à la vocation ou à la situation grave que vous préparez."]),
       items:Object.freeze([
         Object.freeze({id:"learn.rites.sick",type:"guide",featured:false,title:Object.freeze(["Serious Illness & Dying","Maladie grave & fin de vie"]),description:Object.freeze(["Prepare · pray · understand Anointing & Viaticum.","Se préparer · prier · comprendre l’Onction & le Viatique."])}),
@@ -53,6 +53,14 @@ export const LEARN_LAYOUT=Object.freeze({
         Object.freeze({id:"learn.rites.confirmation",type:"guide",featured:false,title:Object.freeze(["Confirmation · Candidate & Sponsor","Confirmation · Confirmand & parrain/marraine"]),description:Object.freeze(["Preparation, sponsor, Sacred Chrism and the traditional Roman ceremonies.","Préparation, parrain, Saint Chrême et cérémonies romaines traditionnelles."])}),
         Object.freeze({id:"learn.rites.holy_orders",type:"guide",featured:false,title:Object.freeze(["Holy Orders · Understand the Ordinations","Ordre · Comprendre les ordinations"]),description:Object.freeze(["Bishop · priest · deacon · traditional orders · vocation discernment.","Évêque · prêtre · diacre · ordres traditionnels · discernement vocationnel."])}),
         Object.freeze({id:"learn.rites.matrimony",type:"guide",featured:false,title:Object.freeze(["Matrimony · Bride & Groom","Mariage · Époux"]),description:Object.freeze(["Preparation, consent, participation and the Nuptial Mass.","Préparation, consentement, participation et Messe nuptiale."])})
+      ])
+    }),
+    Object.freeze({
+      id:"questions",
+      title:Object.freeze(["Questions & Debates","Questions et débats"]),
+      description:Object.freeze(["Catholic moral questions, defending the faith, and disputed questions in Church history. Research previews are identified as such.","Morale catholique, défense de la foi et controverses de l’histoire de l’Église. Les aperçus de recherche restent identifiés."]),
+      items:Object.freeze([
+        Object.freeze({id:"learn.sexual_ethics",type:"reference",featured:false,title:Object.freeze(["Catholic Sexual Ethics","Morale sexuelle catholique"]),description:Object.freeze(["150 concise, rigorously sourced questions with deeper objection/refutation treatment where it is genuinely useful.","150 questions concises et rigoureusement sourcées, avec un traitement objection/réfutation plus développé lorsqu’il est réellement utile."])}),
       ])
     }),
     Object.freeze({
@@ -133,8 +141,8 @@ function sectionDoorMarkup(section,state,win){
   const representative=section.items[0];
   const icon=iconMarkup(representative,win);
   return `<article class="aoLearnModCard aoLearnFamilyCard">
-    <button type="button" class="aoLearnModCardMain aoLearnFamilyDoor ${icon?"iconized":""}" data-ao-learn-family="${esc(section.id)}">
-      ${icon}<span class="type">${esc(isFr(state)?"Parcours":"Formation")}</span>
+    <button type="button" class="aoLearnModCardMain aoLearnFamilyDoor ${icon?"iconized":""}" data-ao-learn-family="${esc(section.id)}"${section.id==="questions"?" data-ao-learn-questions":""}>
+      ${icon}
       <strong>${esc(pick(section.title,state))}</strong>
       <p>${esc(pick(section.description,state))}</p>
     </button>
@@ -212,21 +220,24 @@ export function learnPresentationCss(){
 .aoLearnIntentLayout{display:grid;gap:20px}.aoLearnIntentGroup{min-width:0}.aoLearnIntentHeading{margin:0 0 12px}.aoLearnIntentHeading small{font:700 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:var(--liturgical,#c9ad78)}.aoLearnIntentHeading h2{margin:5px 0;font:500 clamp(1.35rem,4vw,1.7rem)/1.17 var(--ao-font-display,Georgia,serif)}.aoLearnIntentHeading p{margin:5px 0 0;color:var(--muted,#9ba5b1);font:400 .92rem/1.55 var(--ao-font-body,Georgia,serif)}.aoLearnIntentSecondary,.aoLearnReferenceGroup{padding-top:15px;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12))}.aoLearnQuestionsBridge{width:100%;display:grid;grid-template-columns:28px minmax(0,1fr) 18px;gap:10px;align-items:center;min-height:70px;padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.38));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,#101821);color:inherit;text-align:left}.aoLearnQuestionsBridge span{display:grid;gap:4px}.aoLearnQuestionsBridge strong{font:600 1.07rem/1.3 var(--ao-font-display,Georgia,serif)}.aoLearnQuestionsBridge small{color:var(--liturgical,#c9ad78);font:700 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em}.aoLearnQuestionsBridge em{font:400 13px/1.45 var(--ao-font-body,Georgia,serif);font-style:normal;color:var(--muted,#9ba5b1)}.aoLearnQuestionsBridge:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoLearnIntentSecondary .aoLearnApostolateBridge{margin:0;background:var(--ao-surface-1,#101821)}
 .aoLearnModSection{padding:18px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}.aoLearnModSectionHead{margin:0 0 10px}.aoLearnModSectionHead h2{margin:0;font:600 1rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.02em}.aoLearnModSectionHead p{max-width:640px;margin:5px 0 0;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-sm,12px)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnModGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.aoLearnFamilyGrid .aoLearnModCardMain{min-height:132px}.aoLearnFamilyDoor strong{font-size:1.08rem}.aoLearnModCard{min-width:0;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-card-radius,15px);background:var(--surface-1,#101821);overflow:hidden}.aoLearnModCard.featured{border-color:var(--liturgical-border,rgba(201,173,120,.4));background:linear-gradient(145deg,var(--liturgical-soft,rgba(201,173,120,.08)),var(--surface-1,#101821))}
 .aoLearnModCardMain{position:relative;width:100%;min-height:112px;padding:13px 13px 14px;border:0;background:transparent;color:var(--text,#e9e4d9);text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:6px}.aoLearnModCardMain.iconized{padding-left:61px}.aoLearnModCardMain>.aoLearnModIcon{position:absolute;left:13px;top:15px;width:36px;height:36px;color:var(--liturgical,#c9ad78)}.aoLearnModCardMain .type{color:var(--liturgical,#c9ad78);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}.aoLearnModCardMain strong{font:600 1rem/1.22 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModCardMain p{margin:0;color:var(--muted,#9ba5b1);font-size:.82rem;line-height:1.4}.aoLearnModCardMain:hover,.aoLearnModCardMain:focus-visible{outline:none;background:rgba(255,255,255,.025)}.aoLearnModCardMain:focus-visible{box-shadow:inset 0 0 0 2px var(--liturgical,#c9ad78)}
- .aoLearnDossierReview{margin-top:14px}.aoLearnDossierReviewNote{margin:0 0 12px;color:var(--ao-text-muted,#a9a5a0);font:500 .77rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnDossierReview .aoLearnModCardMain{min-height:100px}
+ .aoLearnFamilyDoor{justify-content:center}.aoLearnFamilyDoor p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:430px){.aoLearnModGrid.aoLearnFamilyGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:155px;justify-content:flex-end;padding:48px 11px 12px;gap:5px}.aoLearnFamilyGrid .aoLearnFamilyDoor.iconized{padding:48px 11px 12px}.aoLearnFamilyGrid .aoLearnModIcon{width:29px;height:29px;top:12px;left:11px}.aoLearnFamilyGrid .aoLearnFamilyDoor strong{font-size:.99rem;line-height:1.22}.aoLearnFamilyGrid .aoLearnFamilyDoor p{font-size:.75rem;line-height:1.34}}
+@media(max-width:350px){.aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:126px}.aoLearnFamilyGrid .aoLearnFamilyDoor p{display:none}}
+@media(max-width:430px){#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard,#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:155px!important}}
+@media(max-width:350px){#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard,#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:126px!important}}
+
+.aoLearnDossierReview{margin-top:14px}.aoLearnDossierReviewNote{margin:0 0 12px;color:var(--ao-text-muted,#a9a5a0);font:500 .77rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnDossierReview .aoLearnModCardMain{min-height:100px}
  .aoLearnQuestionsBridge{min-height:94px}.aoLearnQuestionsBridge:focus-visible,.aoLearnApostolateBridge:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
  .aoLearnDossierReview .aoLearnModGrid{margin-top:8px}.aoLearnDiscoveryResult{min-height:52px}.aoLearnDiscoveryResultInfo{min-width:0;overflow-wrap:anywhere}
  @media(max-width:430px){.aoLearnModWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}.aoLearnModGrid{grid-template-columns:1fr}.aoLearnModCardMain{min-height:96px}.aoLearnModHero{padding-top:14px}.aoLearnModHero h1{font-size:2.35rem}}
+${formationReaderCss()}
 `;
 }
 
 export function renderLearnPresentation(root,state,win,{error="",familyId=null,discoveryQuery="",referenceEntries=[],referenceStatus="idle",contentEntries=[],contentStatus="idle"}={}){
   if(!root)return false;
   const langFr=isFr(state);
-  const family=familyById(familyId)||(familyId==="questions"?{
-    id:"questions",title:["Questions & Debates","Questions et débats"],
-    description:["Catholic moral questions, Apologetics and the Crisis in the Church. Unapproved research is marked as preliminary.","Morale catholique, apologétique et crise dans l’Église. Les recherches non approuvées restent signalées."],
-    items:LEARN_LAYOUT.sections.flatMap(s=>s.items).filter(item=>item.id==="learn.sexual_ethics")
-  }:null);
+  const family=familyById(familyId);
   root.dataset.aoLearnPresentationOwner=LEARN_PRESENTATION_VERSION;
   root.dataset.aoLearnFamily=family?.id||"";
   root.lang=langFr?"fr":"en";
@@ -244,24 +255,14 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
       <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus,contentEntries,contentStatus})}</div></section>
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
       ${family
-        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.filter(item=>family.id==="questions"||item.id!=="learn.sexual_ethics").map(item=>cardMarkup(item,state,win)).join("")}</div>${family.id==="questions"?formationDossierReviewMarkup(state,win):""}</section>`
+        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.map(item=>cardMarkup(item,state,win)).join("")}</div>${family.id==="questions"?formationDossierReviewMarkup(state,win):""}</section>`
         :`<div class="aoLearnIntentLayout">
-          <section class="aoLearnIntentGroup aoLearnIntentPrimary" aria-label="${esc(langFr?"Apprendre la foi":"Learn the Faith")}">
-            <div class="aoLearnIntentHeading"><small>${esc(langFr?"APPRENDRE":"LEARN")}</small><h2>${esc(langFr?"Apprendre la foi":"Learn the Faith")}</h2><p>${esc(langFr?"Catéchisme, vie spirituelle, sacrements et latin — choisissez votre sujet.":"Catechism, spiritual life, sacraments and Latin — choose a subject.")}</p></div>
-            <div class="aoLearnModGrid aoLearnFamilyGrid">${LEARN_LAYOUT.sections.slice(0,5).map(section=>sectionDoorMarkup(section,state,win)).join("")}</div>
+          <section class="aoLearnIntentGroup aoLearnIntentPrimary" aria-label="${esc(langFr?"Domaines de formation":"Formation subjects")}">
+            <div class="aoLearnIntentHeading"><small>${esc(langFr?"LES DOMAINES":"SUBJECTS")}</small><h2>${esc(langFr?"Choisir un domaine":"Choose a subject")}</h2></div>
+            <div class="aoLearnModGrid aoLearnFamilyGrid">${LEARN_LAYOUT.sections.map(section=>sectionDoorMarkup(section,state,win)).join("")}</div>
           </section>
-          <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Questions et débats":"Questions and Debates")}">
-            <button type="button" class="aoLearnQuestionsBridge" data-ao-learn-questions>
-              ${assetMask("ao-refined-help")}<span><small>${esc(langFr?"QUESTIONS":"QUESTIONS")}</small><strong>${esc(langFr?"Questions et débats":"Questions & Debates")}</strong><em>${esc(langFr?"Morale catholique, apologétique et crise de l’Église · les brouillons sourcés sont clairement signalés.":"Catholic moral questions, Apologetics and Church Crisis · source-linked working drafts are clearly marked.")}</em></span>${assetMask("ao-ui-next")}
-            </button>
-            
-          </section>
-          <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Mettre la foi en pratique":"Put Faith into Practice")}">
-            <button type="button" class="aoLearnApostolateBridge" data-ao-learn-apostolate>${assetMask("ao-refined-help")}<span><strong>${esc(langFr?"Mettre la foi en pratique":"Put Faith into Practice")}</strong><small>${esc(langFr?"Apostolat · répondre, aider, accompagner":"Apostolate · answer, help, accompany")}</small></span>${assetMask("ao-ui-next")}</button>
-          </section>
-          <section class="aoLearnIntentGroup aoLearnReferenceGroup" aria-label="${esc(langFr?"Références et définitions":"Reference and Definitions")}">
-            <div class="aoLearnIntentHeading"><small>${esc(langFr?"RECHERCHER":"LOOK UP")}</small><h2>${esc(langFr?"Références et définitions":"Reference & Definitions")}</h2></div>
-            <div class="aoLearnModGrid aoLearnFamilyGrid">${sectionDoorMarkup(LEARN_LAYOUT.sections[5],state,win)}</div>
+          <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Passer à la pratique":"Put faith into practice")}">
+            <button type="button" class="aoLearnApostolateBridge" data-ao-learn-apostolate>${assetMask("ao-refined-help")}<span><strong>${esc(langFr?"Passer à la pratique":"Put Faith into Practice")}</strong><small>${esc(langFr?"Apostolat · répondre, aider, accompagner":"Apostolate · answer, help, accompany")}</small></span>${assetMask("ao-ui-next")}</button>
           </section>
         </div>`
       }

@@ -45,16 +45,17 @@ assert.deepEqual(
   LEARN_LAYOUT.sections.map(section=>section.title),
   [
     ["Foundations","Fondements"],
-    ["Spiritual & Moral Life","Vie spirituelle & morale"],
-    ["Liturgy & Tradition","Liturgie & tradition"],
-    ["Sacraments & Life Events","Sacrements & étapes de vie"],
+    ["Spiritual Life & Devotions","Vie spirituelle & dévotions"],
+    ["Mass & Liturgy","Messe & liturgie"],
+    ["Sacraments & Christian Life","Sacrements & vie chrétienne"],
+    ["Questions & Debates","Questions et débats"],
     ["Latin","Latin"],
     ["Reference","Référence"],
   ],
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],
+  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.sexual_ethics","learn.latin","learn.glossary"],
   "Formation learning-intent layout changed unexpectedly",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
@@ -95,16 +96,23 @@ assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint","today\.gos
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.doesNotMatch(presentation,/id:"today\.gospel"/,"Today’s Gospel returned as a Formation launcher");
 assert.match(owner,/"today\.gospel"/,"Today’s Gospel compatibility route was removed rather than hidden");
-assert.match(presentation,/Spiritual & Moral Life/);
-assert.match(presentation,/Sacraments & Life Events/);
+assert.match(presentation,/Spiritual Life & Devotions/);
+assert.match(presentation,/Sacraments & Christian Life/);
 assert.match(presentation,/data-ao-learn-family/,"Formation landing does not expose learning-intent doors");
 assert.match(presentation,/aoLearnFamilyGrid/,"Formation family-door grid is missing");
 assert.match(owner,/state\.family/,"Formation owner does not retain family navigation state");
 assert.match(owner,/familyId:state\.family/,"Formation presentation is not driven by family state");
 const spiritualSection=LEARN_LAYOUT.sections.find(section=>section.id==="spiritual-moral");
 const liturgySection=LEARN_LAYOUT.sections.find(section=>section.id==="liturgy-tradition");
-assert.ok(spiritualSection?.items.some(item=>item.id==="learn.scapular"),"Brown Scapular is not classified under Spiritual & Moral Life");
+assert.ok(spiritualSection?.items.some(item=>item.id==="learn.scapular"),"Brown Scapular is not classified under Spiritual Life & Devotions");
 assert.equal(liturgySection?.items.some(item=>item.id==="learn.scapular"),false,"Brown Scapular remains misclassified under Liturgy & Tradition");
+const questionSection=LEARN_LAYOUT.sections.find(section=>section.id==="questions");
+assert.deepEqual(questionSection?.items.map(item=>item.id),["learn.sexual_ethics"],"Sexual Ethics needs a single authoritative Questions category");
+assert.equal(spiritualSection?.items.some(item=>item.id==="learn.sexual_ethics"),false,"Moral debates were duplicated under Spiritual Life");
+assert.equal(LEARN_LAYOUT.sections.length,7,"Every Formation subject must have the same navigation level");
+assert.equal(new Set(LEARN_MODULE_IDS).size,15,"Formation has duplicated canonical module routes");
+assert.match(presentation,/formationReaderCss/,"Formation hub has not joined the shared reader design");
+
 assert.match(presentation,/type:"practice".*learn\.serve_mass\.responses|id:"learn\.serve_mass\.responses",type:"practice"/s,"Serve Low Mass is not classified as practice");
 assert.match(owner,/modular-learn-v1/);
 assert.match(owner,/aoLearnRouteOwner/);

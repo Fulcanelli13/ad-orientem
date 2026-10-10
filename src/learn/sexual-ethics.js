@@ -1,3 +1,4 @@
+import { formationReaderCss } from "./formation-ui.js";
 import {
   CSE_QUESTIONS,
   CSE_QUESTION_MAP,
@@ -81,6 +82,7 @@ function css(){
 .aoCSEAnswer,.aoCSEDebateStep p,.aoCSEIntro{font-size:max(15px,0.9375rem);line-height:1.6}.aoCSEInlineRefs{font-size:max(13px,.8125rem);line-height:1.5}.aoCSESource{font-size:max(13px,.8125rem);line-height:1.5}
 .aoCSEEmpty{padding:22px 0;color:var(--muted);line-height:1.5}
 @media(max-width:520px){.aoCSEWrap{padding-left:13px;padding-right:13px}.aoCSETop{padding-left:8px;padding-right:8px}.aoCSESearch{grid-template-columns:1fr}.aoCSECount{justify-self:start}}
+${formationReaderCss()}
 `;
 }
 

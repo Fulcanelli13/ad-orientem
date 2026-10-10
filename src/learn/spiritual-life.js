@@ -1,3 +1,4 @@
+import { formationReaderCss } from "./formation-ui.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import {
   SPIRITUAL_LIFE_ROUTE_ID,
@@ -50,6 +51,7 @@ function css(){
 .aoSLBoundary,.aoSLRow p,.aoSLPractice p,.aoSLLessonHead p{font-size:max(14px,.875rem);line-height:1.55}
 .aoSLSource,.aoSLSourceLoc{font-size:max(13px,.8125rem);line-height:1.55}
 
+${formationReaderCss()}
 `;
 }
 

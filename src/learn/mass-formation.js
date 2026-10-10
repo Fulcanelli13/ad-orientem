@@ -1,3 +1,4 @@
+import { formationReaderCss } from "./formation-ui.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
@@ -28,7 +29,7 @@ function css(){
     ".aoMFStageRow{width:100%;padding:15px 2px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.12));background:transparent;color:inherit;text-align:left;display:grid;grid-template-columns:34px 1fr;gap:10px}.aoMFStageRow .n{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:50%;color:var(--liturgical,#c9ad78);font:.7rem/1 var(--ao-font-display,Georgia,serif)}.aoMFStageRow strong{display:block;font:600 1rem/1.25 var(--ao-font-display,Georgia,serif)}.aoMFStageRow p{margin:4px 0 0;color:var(--muted,#9ba5b1);font-size:.82rem;line-height:1.45}",
     ".aoMFQuestion{margin:0 0 6px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-display,Georgia,serif);letter-spacing:.09em;text-transform:uppercase}.aoMFStage h1{margin:0 0 9px;font:500 clamp(1.8rem,7vw,2.7rem)/1.08 var(--ao-font-display,Georgia,serif)}.aoMFStageLead{margin:0 0 20px;color:var(--muted,#9ba5b1);line-height:1.52}",
     ".aoMFClaim{padding:15px 0;border-top:1px solid var(--border,rgba(255,255,255,.11))}.aoMFClaim p{margin:0;line-height:1.62}.aoMFSources{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.aoMFSources a{display:inline-flex;align-items:center;min-height:29px;padding:5px 8px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:999px;color:var(--liturgical,#c9ad78);font:.68rem/1.2 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}.aoMFNav{display:flex;justify-content:space-between;gap:8px;margin-top:20px}.aoMFNav button{min-height:38px;padding:8px 11px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;background:var(--surface-1,#101821);color:inherit}.aoMFError{padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.4));border-radius:10px;color:var(--muted,#9ba5b1)}"
-  ].join("");
+  ].join("")+formationReaderCss();
 }
 
 async function loadData(fetchImpl=globalThis.fetch){

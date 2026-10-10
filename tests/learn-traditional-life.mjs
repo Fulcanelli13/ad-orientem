@@ -174,7 +174,7 @@ assert.doesNotMatch(runtime,/AO_TRADITION_V38/,"historical Traditions monolith w
 assert.match(browser,/await ensureLearnModule\(id,win\)/,"Traditional Formation must install on first child navigation");
 assert.match(readFileSync("src/learn/lazy-module-registry.js","utf8"),/mod\.installTraditionalLearnModules\(win\)/);
 assert.match(browser,/TRADITIONAL_LEARN_ROUTES\[id\]/);
-assert.match(presentation,/Sacraments & Life Events/);
+assert.match(presentation,/Sacraments & Christian Life/);
 assert.doesNotMatch(presentation,/id:"learn\.seasonal_rites"/,"final v38.4 duplicate seasonal discovery card returned to Learn");
 assert.match(assets,/"learn\.rites\.sick"\s*:\s*"ao-refined-help"/);
 assert.match(assets,/"learn\.rites\.baptism"\s*:\s*"ao-rich-guides"/);

@@ -1,3 +1,4 @@
+import { formationReaderCss } from "./formation-ui.js";
 import "../pray/canonical-data.js";
 import {
   LOW_MASS_RESPONSES_V381,
@@ -48,6 +49,7 @@ function css(){
 .aoLearnTradPrayer{padding:14px 0;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));border-radius:0;background:transparent}.aoLearnTradPrayer h2{margin:0 0 12px;font:600 1.2rem/1.2 var(--font-display,Georgia,serif)}.aoLearnTradPrayer button{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:400 1.02rem/1.7 var(--font-liturgical,Georgia,serif)}.aoLearnTradPrayerText{font:400 1.02rem/1.7 var(--font-liturgical,Georgia,serif)}
 .aoLearnTradSeasonList{display:grid;gap:0;border-top:1px solid var(--border,rgba(255,255,255,.13));margin:12px 0}.aoLearnTradSeason{width:100%;min-height:0;padding:13px 2px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));border-radius:0;background:transparent;color:inherit;text-align:left;display:grid;gap:4px}.aoLearnTradSeason b{font:600 .98rem/1.2 var(--font-display,Georgia,serif)}.aoLearnTradSeason small{color:var(--liturgical,#c7ae6d);font-size:.69rem}.aoLearnTradSeason span{color:var(--muted);font-size:.82rem;line-height:1.4}
 @media(max-width:520px){.aoLearnTradTop{grid-template-columns:44px minmax(0,1fr) 44px}.aoLearnTradCompare{grid-template-columns:1fr}.aoLearnTradWrap{padding-left:13px;padding-right:13px}}
+${formationReaderCss()}
 `;
 }
 function source(win,label,url){
