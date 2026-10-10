@@ -46,6 +46,7 @@ export async function findObservedMassSource({
  massDate,sourceDate,resolveDay,recoverProper=async value=>value,language="en",
 }={}){
  if(!dateOnly(massDate)||!dateOnly(sourceDate))throw new Error("OBSERVED_MASS_DATE_INVALID");
+ if(sourceDate===massDate)throw new Error("OBSERVED_MASS_USE_DAY_MASS_INSTEAD");
  if(typeof resolveDay!=="function")throw new Error("OBSERVED_MASS_RESOLVER_MISSING");
  const source=await resolveDay(sourceDate);
  if(source?.status!=="ready"||!isReady(source?.proper))
@@ -83,7 +84,7 @@ export async function composeObservedMassSelection(candidate,{
    throw new Error("OBSERVED_MASS_SUNDAY_COMMEMORATION_UNDECIDED");
  if(sundayChoice==="COMMEMORATE_SUNDAY"&&(!sunday||!different))
    throw new Error("OBSERVED_MASS_SUNDAY_COMMEMORATION_NOT_APPLICABLE");
- const data=principalProper(candidate.proper);
+ const data={...principalProper(candidate.proper)};
  let sundaySourcePath=null;
  if(sundayChoice==="COMMEMORATE_SUNDAY"){
    if(typeof resolveDay!=="function")throw new Error("OBSERVED_MASS_RESOLVER_MISSING");
@@ -118,6 +119,7 @@ export async function composeObservedMassSelection(candidate,{
   // would ordinarily occur on the selected calendar date.
   gloria:typeof data.hasGloria==="boolean"?data.hasGloria:null,
   credo:typeof data.hasCredo==="boolean"?data.hasCredo:null,
+  insertedRites:Object.freeze([]),
   commemorations: sundaySourcePath?[{
    id:"observed-sunday",title:String(data.calendarCommemorations[0].title),
    prayerSourcePath:sundaySourcePath,sourcePath:sundaySourcePath,
