@@ -322,8 +322,20 @@ export function createFindOwner(win=globalThis){
         if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
         mapHandle=nextHandle;
       }catch(error){
-        const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
-        if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
+        // MapLibre may fail offline or behind a tile/CDN blocker. It empties
+        // its container before construction; put an accessible recovery back.
+        if(mapNode&&win?.document){
+          const panel=win.document.createElement("div");
+          panel.className="aoFindMapFallback";
+          const title=win.document.createElement("strong");
+          title.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
+          const detail=win.document.createElement("span");
+          detail.textContent=language(win)==="fr"
+            ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
+            :"Use search above to open any place and its source references.";
+          panel.append(title,detail);
+          mapNode.replaceChildren(panel);
+        }
         console.error("Explore map failed",error);
       }
     }
