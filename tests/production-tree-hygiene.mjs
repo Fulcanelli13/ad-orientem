@@ -42,6 +42,29 @@ for(const name of workflows){
       name+" review-branch promotion requires explicit contents: write");
     assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
       name+" must push only back to the triggering review branch");
+  }else if(name==="branch-hygiene.yml"){
+    // Merged-branch ref deletion is deliberately distinct from mutating app
+    // source or restoring old production builds. Enforce the exact safeguards,
+    // rather than blindly treating this limited git-ref cleanup as promotion.
+    assert.match(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
+      "merged-head cleanup needs explicit ref-delete permission");
+    assert.match(source,/pull_request:\s*\n\s*types:\s*\[closed\]/i);
+    assert.match(source,/github\.event\.pull_request\.merged == true/);
+    assert.match(source,/current["']?\s*!=\s*["']?\$MERGED_HEAD|"\$current"\s*!=\s*"\$MERGED_HEAD"/,
+      "only the exact merged head may be removed");
+    assert.match(source,/protected["']?\s*==\s*false|"\$protected"\s*==\s*false/,
+      "protected branch refs must not be removed");
+    assert.match(source,/git merge-base --is-ancestor "\$sha" refs\/remotes\/origin\/main/,
+      "old branch cleanup must require ancestry on main");
+    assert.match(source,/max_delete=150/,
+      "prune mode must have a bounded deletion cap");
+    assert.match(source,/grep -Fxq -- "\$branch" "\$RUNNER_TEMP\/open-pr-heads\.txt"/,
+      "unmerged or open PR heads must not be removed");
+    assert.match(source,/main\|HEAD\|gh-pages\|archive\/\*\|release\/\*/,
+      "preserved main/archive/release refs must be excluded");
+    assert.doesNotMatch(source,/git\s+push\b/i,"no source push allowed");
+    assert.doesNotMatch(source,/gh api\s+-X\s+(?:PUT|PATCH|POST)/i,
+      "branch hygiene must remain delete/read only");
   }else{
     assert.doesNotMatch(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
       name+" regained contents: write");
