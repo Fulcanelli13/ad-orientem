@@ -241,6 +241,40 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"});
       return;
     }
+    // Today v2 projects existing Calendar Month/Year/Day; no second Calendar owner.
+    const calendarView=target?.closest?.("[data-home-calendar-view]");
+    if(calendarView){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      const view=calendarView.dataset.homeCalendarView;
+      void (async()=>{
+        if(await navigateHomeShortcut("calendar",{trigger:calendarView,routeId:"today.calendar"})){
+          const applied=win?.AO_CALENDAR_APP_V1?.setView?.(view);
+          if(applied===false)showRouteError("today.calendar",calendarView);
+        }
+      })();
+      return;
+    }
+    const calendarDate=target?.closest?.("[data-home-calendar-date]");
+    if(calendarDate){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      const date=calendarDate.dataset.homeCalendarDate;
+      void (async()=>{
+        if(await navigateHomeShortcut("calendar",{trigger:calendarDate,routeId:"today.calendar"})){
+          const owner=win?.AO_CALENDAR_APP_V1;
+          owner?.setView?.("day");
+          try{
+            const result=await owner?.select?.(date);
+            if(result===false)showRouteError("today.calendar",calendarDate);
+          }catch(error){
+            win?.console?.error?.("Today v2 Calendar date unavailable",date,error);
+            showRouteError("today.calendar",calendarDate);
+          }
+        }
+      })();
+      return;
+    }
     const calendar=target?.closest?.("[data-home-calendar]");
     if(calendar){
       event.preventDefault?.();
