@@ -12,6 +12,8 @@ const result={
     const pool=poolOf(t.key);const downloaded=pool.filter(isActualOriginal);
     return {key:t.key,title:t.title,target:t.minimumMasterpieces,
       catalogued:pool.length,acquiredOriginals:downloaded.length,
+      cc0Originals:downloaded.filter(a=>a.source?.rights==="CC0").length,
+      pdArtRightsHeldOriginals:downloaded.filter(a=>a.source?.rights==="PUBLIC_DOMAIN_PD_ART_PDM").length,
       blocked:pool.filter(a=>String(a.review?.image||"").startsWith("DOWNLOAD_BLOCKED")).map(a=>a.id),
       sourceGap:Math.max(0,t.minimumMasterpieces-pool.length),
       originalGap:Math.max(0,t.minimumMasterpieces-downloaded.length)};
@@ -36,4 +38,4 @@ mkdirSync("artifacts/sacred-art-coverage",{recursive:true});
 writeFileSync("artifacts/sacred-art-coverage/coverage.json",JSON.stringify(result,null,2)+"\n");
 console.log(JSON.stringify(result.summary,null,2));
 console.log("Missing acquisition coverage:\n"+result.rosary.filter(x=>x.originalGap).map(x=>x.key+" "+x.acquiredOriginals+"/"+x.target+" original(s)").join("\n"));
-if(result.summary.sourceCoveredMysteries!==15)process.exitCode=1;
+if(result.summary.sourceCoveredMysteries!==15||result.summary.twoOriginalMysteries!==15)process.exitCode=1;
