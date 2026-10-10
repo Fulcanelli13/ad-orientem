@@ -121,7 +121,7 @@ try{
     const donor=document.getElementById("ao-v37-root");
     const ribbon=document.getElementById("ao-global-ribbon");
     const rr=root?.getBoundingClientRect(),rb=ribbon?.getBoundingClientRect();
-    const tapTargets=[...root.querySelectorAll("button")].map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height}});
+    const tapTargets=[...root.querySelectorAll("button")].filter(node=>node.getClientRects().length>0&&getComputedStyle(node).visibility!=="hidden").map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height,label:node.getAttribute("aria-label")||node.textContent.trim().slice(0,42)}});
     const oldLearn=document.getElementById("ao-learn-root");
     const oldCate=document.getElementById("ao-cate-root");
     const oldDaily=document.getElementById("ao-daily-cate-root");
@@ -168,7 +168,7 @@ try{
   assert.ok(learned.geometry.scrollWidth<=learned.geometry.clientWidth+1,"Learn phone surface has horizontal overflow");
   assert.ok(learned.geometry.rootBottom<=learned.geometry.ribbonTop+2,"Learn surface covers the global app ribbon");
   assert.ok(learned.geometry.tapTargets.length>=6,"Learn surface lost expected controls");
-  for(const target of learned.geometry.tapTargets)assert.ok(target.w>=44&&target.h>=44,"Learn touch target fell below 44px");
+  for(const target of learned.geometry.tapTargets)assert.ok(target.w>=44&&target.h>=44,"Visible Learn touch target fell below 44px: "+JSON.stringify(target));
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
 
