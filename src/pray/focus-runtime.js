@@ -145,12 +145,27 @@ export function installPrayFocusRuntime(){
   },true);
   // Horizontal intent changes Angelus prayer sections; vertical gestures
   // remain entirely native, and mode/translation controls are not hijacked.
-  let swipe=null;
+  let swipe=null,lastAngelusSwipe=null;
+  // A browser-synthesized click after a gesture must not flip a translation.
+  document.addEventListener("click",event=>{
+    const flip=event.target?.closest?.(".aoP435930AngelusSequence [data-p435930-card-flip]");
+    if(!flip||!lastAngelusSwipe)return;
+    const elapsed=Date.now()-lastAngelusSwipe.at;
+    const distance=Math.hypot((event.clientX??-999)-lastAngelusSwipe.x,(event.clientY??-999)-lastAngelusSwipe.y);
+    if(elapsed<=400&&distance<=40){
+      lastAngelusSwipe=null;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }else if(elapsed>400)lastAngelusSwipe=null;
+  },true);
   document.addEventListener("touchstart",event=>{
     const sequence=event.target?.closest?.(".aoP435930AngelusSequence");
     const t=event.touches?.[0];
     swipe=sequence&&event.touches?.length===1&&t
       ?{sequence,x:t.clientX,y:t.clientY}:null;
+  },{passive:true,capture:true});
+  document.addEventListener("touchmove",event=>{
+    if(event.touches?.length>1)swipe=null;
   },{passive:true,capture:true});
   document.addEventListener("touchend",event=>{
     const point=event.changedTouches?.[0],s=swipe;
@@ -158,6 +173,7 @@ export function installPrayFocusRuntime(){
     if(!s||!point)return;
     const dx=point.clientX-s.x,dy=point.clientY-s.y;
     if(Math.abs(dx)<85||Math.abs(dx)<Math.abs(dy)*1.65)return;
+    lastAngelusSwipe={x:point.clientX,y:point.clientY,at:Date.now()};
     const mount=s.sequence.closest(".aoP435930Mount[data-ao-pray-view='angelus']");
     if(!mount)return;
     const main=mount.querySelector(".aoP435930Body");
