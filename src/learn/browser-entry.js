@@ -226,7 +226,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           state.error="";
           paint();
           const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
-          queue(()=>root(win)?.querySelector?.("[data-ao-learn-module]")?.focus?.({preventScroll:true}));
+          queue(()=>root(win)?.querySelector?.("[data-ao-learn-module],[data-ao-learn-dossier-review]")?.focus?.({preventScroll:true}));
         }
         return;
       }

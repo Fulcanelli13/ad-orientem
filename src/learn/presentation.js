@@ -10,8 +10,8 @@ export const LEARN_LAYOUT=Object.freeze({
   kicker:Object.freeze(["FORMATION","FORMATION"]),
   title:Object.freeze(["Formation","Formation"]),
   intro:Object.freeze([
-    "Catechism, spiritual life, the Mass, sacraments, Catholic questions and Latin — in one place.",
-    "Catéchisme, vie spirituelle, Messe, sacrements, questions catholiques et latin — dans un même espace."
+    "Catechism, spiritual life, sacraments, moral teaching, Apologetics, Church history and Latin.",
+    "Catéchisme, vie spirituelle, sacrements, morale, apologétique, histoire de l’Église et latin."
   ]),
   sections:Object.freeze([
     Object.freeze({
@@ -57,11 +57,27 @@ export const LEARN_LAYOUT=Object.freeze({
     }),
     Object.freeze({
       id:"questions",
-      title:Object.freeze(["Questions & Debates","Questions et débats"]),
-      description:Object.freeze(["Catholic moral questions, defending the faith, and disputed questions in Church history. Research previews are identified as such.","Morale catholique, défense de la foi et controverses de l’histoire de l’Église. Les aperçus de recherche restent identifiés."]),
+      title:Object.freeze(["Moral Questions","Questions de morale"]),
+      description:Object.freeze(["Practical Catholic moral teaching and difficult questions on human relationships and sexuality.","Enseignement moral catholique pratique et questions délicates sur les relations humaines et la sexualité."]),
       items:Object.freeze([
         Object.freeze({id:"learn.sexual_ethics",type:"reference",featured:false,title:Object.freeze(["Catholic Sexual Ethics","Morale sexuelle catholique"]),description:Object.freeze(["150 concise, rigorously sourced questions with deeper objection/refutation treatment where it is genuinely useful.","150 questions concises et rigoureusement sourcées, avec un traitement objection/réfutation plus développé lorsqu’il est réellement utile."])}),
       ])
+    }),
+    Object.freeze({
+      id:"apologetics",
+      title:Object.freeze(["Apologetics","Apologétique"]),
+      description:Object.freeze(["Defend and explain the Catholic faith: 60 sourced dossiers across nine themes, in preliminary review.","Défendre et expliquer la foi catholique : 60 dossiers sourcés en neuf thèmes, en cours de révision."]),
+      reviewCorpus:"apologetics",
+      previewAssetId:"ao-refined-study",
+      items:Object.freeze([])
+    }),
+    Object.freeze({
+      id:"church-crisis",
+      title:Object.freeze(["Crisis in the Church","Crise dans l’Église"]),
+      description:Object.freeze(["Historical and ecclesial controversies: 81 sourced dossiers across eight themes, in preliminary review.","Controverses historiques et ecclésiales : 81 dossiers sourcés en huit thèmes, en cours de révision."]),
+      reviewCorpus:"crisis",
+      previewAssetId:"ao-refined-help",
+      items:Object.freeze([])
     }),
     Object.freeze({
       id:"latin",
@@ -139,7 +155,10 @@ function cardMarkup(item,state,win){
 
 function sectionDoorMarkup(section,state,win){
   const representative=section.items[0];
-  const icon=iconMarkup(representative,win);
+  const previewAsset=section.previewAssetId?resolveCanonicalAssetUrl(section.previewAssetId):null;
+  const icon=previewAsset
+    ?`<span class="aoLearnModIcon aoLearnModIconMask" data-ao-asset-id="${esc(section.previewAssetId)}" aria-hidden="true" style="background:currentColor;-webkit-mask:url('${esc(previewAsset)}') center/contain no-repeat;mask:url('${esc(previewAsset)}') center/contain no-repeat"></span>`
+    :iconMarkup(representative,win);
   return `<article class="aoLearnModCard aoLearnFamilyCard">
     <button type="button" class="aoLearnModCardMain aoLearnFamilyDoor ${icon?"iconized":""}" data-ao-learn-family="${esc(section.id)}"${section.id==="questions"?" data-ao-learn-questions":""}>
       ${icon}
@@ -194,19 +213,21 @@ export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],ref
 export function formationDossierReviewEnabled(win=globalThis){
  return /(?:^\?|&)aoFormationReview=1(?:&|$)/.test(String(win?.location?.search||""));
 }
-function formationDossierReviewMarkup(state,win){
-
+function formationDossierReviewMarkup(state,win,corpus){
  const fr=isFr(state);
- const items=[
-  ["apologetics","Apologetics","Apologétique",60,"Defending the faith · nine themes","Défendre la foi · neuf thèmes"],
-  ["crisis","Crisis in the Church","Crise dans l’Église",81,"Contested questions · eight themes","Questions controversées · huit thèmes"]
- ];
- return '<div class="aoLearnDossierReview" data-ao-learn-review-section>'+
-  '<p class="aoLearnDossierReviewNote">'+esc(fr?"Aperçu de lecture · réponses et sources encore en révision":"Early study preview · answers and sources still under review")+'</p>'+
-  '<div class="aoLearnModGrid">'+items.map(item=>
-   '<article class="aoLearnModCard"><button type="button" class="aoLearnModCardMain" data-ao-learn-dossier-review="'+item[0]+'">'+
-   '<span class="type">'+esc((fr?"APERÇU · ":"PREVIEW · ")+item[3]+" questions")+'</span>'+
-   '<strong>'+esc(item[fr?2:1])+'</strong><p>'+esc(item[fr?5:4])+'</p></button></article>').join("")+'</div></div>';
+ const items={
+  apologetics:["apologetics","Apologetics","Apologétique",60,"Nine topics · defending the faith","Neuf thèmes · défendre la foi"],
+  crisis:["crisis","Crisis in the Church","Crise dans l’Église",81,"Eight topics · contested ecclesial questions","Huit thèmes · questions ecclésiales controversées"]
+ };
+ const item=items[corpus];
+ if(!item)return "";
+ return '<div class="aoLearnDossierReview" data-ao-learn-review-section="'+esc(corpus)+'">'+
+  '<p class="aoLearnDossierReviewNote">'+esc(fr
+   ?"Aperçu de recherche : sources, théologie et rédaction française encore en révision. Ce contenu n’est pas certifié."
+   :"Research preview: sources, theology and French copy remain under review. This is not certified teaching.")+'</p>'+
+  '<div class="aoLearnModGrid"><article class="aoLearnModCard"><button type="button" class="aoLearnModCardMain" data-ao-learn-dossier-review="'+esc(corpus)+'">'+
+   '<span class="type">'+esc((fr?"APERÇU · ":"PREVIEW · ")+item[3]+" "+(fr?"dossiers":"dossiers"))+'</span>'+
+   '<strong>'+esc(item[fr?2:1])+'</strong><p>'+esc(item[fr?5:4])+'</p></button></article></div></div>';
 }
 
 export function learnPresentationCss(){
@@ -255,7 +276,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
       <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus,contentEntries,contentStatus})}</div></section>
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
       ${family
-        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.map(item=>cardMarkup(item,state,win)).join("")}</div>${family.id==="questions"?formationDossierReviewMarkup(state,win):""}</section>`
+        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.map(item=>cardMarkup(item,state,win)).join("")}</div>${family.reviewCorpus?formationDossierReviewMarkup(state,win,family.reviewCorpus):""}</section>`
         :`<div class="aoLearnIntentLayout">
           <section class="aoLearnIntentGroup aoLearnIntentPrimary" aria-label="${esc(langFr?"Domaines de formation":"Formation subjects")}">
             <div class="aoLearnIntentHeading"><small>${esc(langFr?"LES DOMAINES":"SUBJECTS")}</small><h2>${esc(langFr?"Choisir un domaine":"Choose a subject")}</h2></div>

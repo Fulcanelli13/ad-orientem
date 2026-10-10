@@ -37,12 +37,27 @@ try{
   await page.locator("#ao-learn-modular-root").waitFor({state:"visible",timeout:12000});
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-dossier-review]").count(),0,
     "Research previews must not crowd the Formation root");
-  await page.locator("#ao-learn-modular-root [data-ao-learn-questions]").tap();
+  const hub=page.locator("#ao-learn-modular-root");
+  await hub.locator('[data-ao-learn-family="questions"]').tap();
   await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="questions",null,{timeout:10000});
-  assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.sexual_ethics"]').count(),1,
-    "Questions area lost the canonical Sexual Ethics owner");
+  assert.equal(await hub.locator('[data-ao-learn-module="learn.sexual_ethics"]').count(),1,
+    "Moral Questions lost the canonical Sexual Ethics owner");
+  assert.equal(await hub.locator("[data-ao-learn-dossier-review]").count(),0,
+    "Neither Apologetics nor Church Crisis belongs under moral questions");
+  await hub.locator("[data-ao-learn-back]").tap();
+  await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
   const selector="#ao-learn-modular-root [data-ao-learn-dossier-review]";
-  assert.equal(await page.locator(selector).count(),2,"exactly two visible prepublication study entrances expected");
+  async function enterSubject(family,corpus){
+    if((await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().family))!==null){
+      await hub.locator("[data-ao-learn-back]").tap();
+      await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
+    }
+    await hub.locator('[data-ao-learn-family="'+family+'"]').tap();
+    await page.waitForFunction(id=>globalThis.AO_LEARN_APP_V1?.status?.().family===id,family,{timeout:10000});
+    assert.equal(await page.locator(selector).count(),1,"Each subject has only its own dossier collection");
+    assert.equal(await page.locator(selector).first().getAttribute("data-ao-learn-dossier-review"),corpus);
+  }
+  await enterSubject("apologetics","apologetics");
 
   async function openReview(corpus,firstId,otherId){
     const button=page.locator(selector+'[data-ao-learn-dossier-review="'+corpus+'"]');
@@ -80,6 +95,7 @@ try{
   assert.equal(await page.evaluate(()=>document.activeElement?.dataset?.aoLearnDossierReview),
     "apologetics","Formation launcher focus not restored");
 
+  await enterSubject("church-crisis","crisis");
   root=await openReview("crisis","CR-LIT-05","APOL-001");
   await root.locator('[data-rr-dossier="CR-LIT-05"]').tap();
   await root.locator('[data-rr-canonical-synthesis="CR-LIT-05"]').waitFor({state:"visible"});
@@ -97,7 +113,7 @@ try{
   }
   assert.equal(errors.filter(e=>/formation.recovery|formation.research|research files unavailable/i.test(e)).length,0,
     "Formation review raised a browser runtime exception: "+errors.join("; "));
-  console.log("PASS: normal Formation navigation exposes preview, source status, isolated APOL/CR, themed search, links and phone Back/focus");
+  console.log("PASS: distinct Formation subjects expose preliminary previews, source status, isolated APOL/CR, themed search, links and phone Back/focus");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));
