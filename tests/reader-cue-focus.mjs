@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { pickActiveCue } from "../src/mass/reader-cue-focus.js";
+import { pickActiveCue, markActiveCue } from "../src/mass/reader-cue-focus.js";
 
 const items=[
   {cueId:"AO.SM.C0001",top:0,bottom:34},
@@ -39,4 +39,21 @@ assert.equal(pickActiveCue({
   ],
 }),"AO.SM.C0100","default LIVE focus point no longer sits in the approved ~39% reading zone");
 
-console.log("reader cue focus: PASS — top/bottom ownership, zero-lag geometry and 39% focus zone.");
+// Repeated focus/resize projections must not rewrite identical data-active
+// states. A cue handoff updates only the paragraphs that actually change.
+const writes=[];
+const node=id=>{
+  const dataset=new Proxy({cueId:id,active:"false"},{set(target,key,value){
+    writes.push([id,key,value]);target[key]=value;return true;
+  }});
+  return {dataset};
+};
+const activeNodes=[node("AO.SM.C0001"),node("AO.SM.C0002")];
+const simulated={querySelectorAll:()=>activeNodes};
+markActiveCue(simulated,"AO.SM.C0001");
+assert.equal(writes.length,1);
+markActiveCue(simulated,"AO.SM.C0001");
+assert.equal(writes.length,1,"unchanged focus state rewrote live DOM attributes");
+markActiveCue(simulated,"AO.SM.C0002");
+assert.deepEqual(writes,[["AO.SM.C0001","active","true"],["AO.SM.C0001","active","false"],["AO.SM.C0002","active","true"]]);
+console.log("reader cue focus: PASS — 39% focus zone and no redundant DOM mutations.");
