@@ -57,7 +57,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   let observedRibbon = null;
   const cleanups = [];
 
-  const isolatedNonMass=new Set(["calendar","pray","learn","settings","find","apostolate"]);
+  const isolatedNonMass=new Set(["mass","calendar","pray","learn","settings","find","apostolate"]);
 
   function ensureSurfaceIsolationStyle(){
     if(doc.getElementById?.("ao-app-surface-isolation"))return;
