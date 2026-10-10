@@ -449,7 +449,13 @@ export function mountScriptureLibrary(root,{
    setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
    setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");records=next;draw();},
    setSourceRecords(next,packs){if(!Array.isArray(next)||!Array.isArray(packs))throw new TypeError("Scripture transcription data required");
-     sourceRecords=next;sourceIndex=new Map(packs.map(p=>[p.editionId+":"+p.book,p]));draw();},
+     const active=root.ownerDocument?.activeElement;
+     const closeFocused=Boolean(active&&wrap.contains(active)&&active.hasAttribute?.("data-scripture-close"));
+     const tab=active&&wrap.contains(active)?active.getAttribute?.("data-scripture-context-depth"):null;
+     sourceRecords=next;sourceIndex=new Map(packs.map(p=>[p.editionId+":"+p.book,p]));draw();
+     if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
+     else if(tab)wrap.querySelector('[data-scripture-context-depth="'+tab+'"]')?.focus?.({preventScroll:true});
+   },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
