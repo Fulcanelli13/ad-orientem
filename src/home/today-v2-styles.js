@@ -29,6 +29,8 @@ export const TODAY_V2_CSS=`
 .td2 .td2-art-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,18,.15),transparent 33%,rgba(8,12,18,.23) 57%,rgba(8,12,18,.96));pointer-events:none}
 .td2 .td2-art-kicker{position:absolute;top:18px;left:18px;right:18px;color:#f1f1ef;font:700 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-shadow:0 2px 9px #000}
 .td2 .td2-art-heading{position:absolute;bottom:17px;left:14px;right:14px;text-align:center;pointer-events:none}
+.td2 .td2-art-latin{font:italic 15px/1.3 var(--ao-font-liturgical,Georgia,serif);color:#e2e4e1;text-shadow:0 2px 10px #000;margin-bottom:7px}
+.td2 .td2-art-info{position:absolute;top:12px;right:14px;z-index:4;width:34px;height:34px;display:grid;place-items:center;background:rgba(5,8,12,.68);color:#f5f5f2;border:1px solid rgba(245,245,245,.42);border-radius:50%;font:italic 700 18px Georgia,serif}
 .td2 .td2-art-heading h1{margin:0 auto;max-width:520px;font:400 clamp(30px,5vw,41px)/1.05 var(--ao-font-display,Georgia,serif);color:#f6f4f0;text-shadow:0 2px 13px #000;overflow-wrap:anywhere}
 .td2 .td2-hero-actions{text-align:center;padding:16px 18px 17px;background:var(--td-bg)}
 .td2 .td2-meta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px 13px;font:500 13px/1.3 var(--ao-font-body,Georgia,serif);color:var(--td-muted)}
