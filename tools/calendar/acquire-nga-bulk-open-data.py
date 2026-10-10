@@ -107,8 +107,26 @@ def main():
    if grouped[t["id"]]:
     queue.append(grouped[t["id"]].pop(0));progress=True
   if not progress:break
+ # NGA credits are stored separately; do not fabricate artists from saint/scene titles.
+ # A failure to retrieve person tables must not invent attribution or void image proofs.
+ authors={}
+ try:
+  ids={q["objectID"] for q in queue}
+  relationships=csvrows(get(DATASET+"objects_constituents.csv",90_000_000))
+  relevant=[q for q in relationships if q.get("objectid") in ids and q.get("roletype","").lower()=="artist"]
+  maker_ids={q.get("constituentid") for q in relevant}
+  people={q.get("constituentid"):q.get("forwarddisplayname") for q in csvrows(get(DATASET+"constituents.csv",90_000_000))
+          if q.get("constituentid") in maker_ids}
+  for q in relevant:
+   by=people.get(q["constituentid"])
+   if by:authors.setdefault(q["objectid"],[]).append(by)
+  print("NGA_NAMED_ARTIST_CREDITS",len(authors),"of",len(queue),flush=True)
+ except Exception as exc:
+  print("NGA_ARTIST_CREDITS_HELD",str(exc)[:180],flush=True)
+
  rows=[]
  for o in queue:
+  o["artist"]="; ".join(dict.fromkeys(authors.get(o["objectID"],[]))) or "Attribution not retrieved from NGA source dataset"
   oid=o["objectID"];img=sorted(byObject[oid],key=lambda i:(i.get("viewtype")!="primary",int(i.get("sequence") or 0)))[0]
   row={**o,"id":"nga-"+oid,"sourceUrl":"https://www.nga.gov/artworks/"+oid,
        "sourceDataset":DATASET,"rightsPolicyUrl":"https://www.nga.gov/artworks/free-images-and-open-access",
@@ -147,7 +165,7 @@ def main():
  # Print a capped machine-readable source-original ledger for exact GitHub
  # connector reconciliation; NEVER promote missing hash, wrong class, or non-openaccess images.
  good=[{
-  "id":a["id"],"title":a["title"],"medium":a["medium"],
+  "id":a["id"],"title":a["title"],"medium":a["medium"],"artist":a["artist"],
   "objectID":a["objectID"],"targetId":a["targetId"],
   "iiifOriginalURL":a["iiifOriginalURL"],"imageUUID":a["imageUUID"],
   "sourceUrl":a["sourceUrl"],"sha256":a["sha256"],
