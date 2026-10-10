@@ -1,0 +1,3215 @@
+{
+  "schema": "AO_EXPLORE_PLACE_RECONCILIATION_REVIEW_V1",
+  "created_at": "2026-10-10",
+  "status": "EDITORIAL_REVIEW_ONLY_NOT_PRODUCTION_DATA",
+  "purpose": "Lossless crosswalk of source-owned heritage evidence to canonical Places; never grants relic authenticity, apparition approval, custom distribution, or publishable coordinate status.",
+  "ownership": {
+    "places": "data/geography/seed-registry.v1.json",
+    "shrines_pilgrimages": "data/shrines/shrines-pilgrimages-seed.v1.json",
+    "relics_apparitions": "data/explore/sacred-phenomena-seed.v1.json",
+    "customs": "data/customs/customs-atlas-seed.v1.json",
+    "novena_context": "data/customs/novena-context-links.v1.json"
+  },
+  "counts": {
+    "places": 182,
+    "places_with_linked_records": 180,
+    "places_without_direct_claim": 2,
+    "multicategory_heritage_places": 178,
+    "shrines": 178,
+    "pilgrimages": 206,
+    "relic_claims": 122,
+    "apparition_accounts": 32,
+    "canonical_customs": 13,
+    "custom_attestations": 71,
+    "novena_context_links": 18,
+    "route_records": 20,
+    "directory_place_links": 9
+  },
+  "exception_queues": {
+    "dangling_place_references": [],
+    "dangling_pilgrimage_shrine_references": [],
+    "places_without_direct_claim": [
+      "place:DE:kevelaer-kerzenkapelle",
+      "place:GB:holywell-st-winefride-church"
+    ],
+    "customs_without_exact_place": [
+      {
+        "id": "att:DOM-002:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:DOM-006:FRENCH-WORLD",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:culture:french-catholic-world"
+      },
+      {
+        "id": "att:DOM-007:FRENCH-WORLD",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:culture:french-catholic-world"
+      },
+      {
+        "id": "att:LIFE-002:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:DEV-001:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:DEV-006:WORLD",
+        "map_policy": "NOT_MAPPED",
+        "geo_area_id": "geo:world"
+      },
+      {
+        "id": "att:DEV-006:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:DEV-007:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:DEAD-001:WORLD",
+        "map_policy": "NOT_MAPPED",
+        "geo_area_id": "geo:world"
+      },
+      {
+        "id": "att:DEAD-001:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:DEAD-003:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:BELL-004:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "att:FOOD-001:FR",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      }
+    ],
+    "novena_context_without_exact_place": [
+      {
+        "id": "novena-custom:holy_souls:DEAD-001",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "novena-custom:holy_souls:DEAD-003",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "novena-area:st_joseph:france",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "novena-area:holy_ghost:corsica-traditional",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "novena-area:christmas:corsica-o-antiphons",
+        "map_policy": "AREA_CONTEXT",
+        "geo_area_id": "geo:country:FR"
+      },
+      {
+        "id": "novena-area:christ_the_king:french-world",
+        "map_policy": "NOT_MAPPED",
+        "geo_area_id": "geo:culture:french-catholic-world"
+      }
+    ],
+    "places_pending_coordinates": [
+      "place:AT:maria-taferl-basilica",
+      "place:CA:martyrs-shrine-midland",
+      "place:DE:kevelaer-kerzenkapelle",
+      "place:FR:notre-dame-des-marins-arcachon",
+      "place:GB:holywell-st-winefride-church",
+      "place:MU:pere-laval-sainte-croix",
+      "place:NZ:pukekaraka-otaki",
+      "place:US:la-salette-attleboro",
+      "place:US:st-alphonsus-baltimore"
+    ],
+    "coordinates_without_source_url": []
+  },
+  "acceptance_rules": [
+    "A Place can appear once on the unified map while retaining multiple independently owned records.",
+    "Source-backed coordinate eligibility is computed by the existing geography policy, not by this review ledger.",
+    "An AREA_CONTEXT or worldwide custom is never converted into a point.",
+    "Reference-only Places remain in the geography registry pending editorial review.",
+    "The absence of a missing-reference error is not proof of current opening times, relic authenticity or apparition approval.",
+    "Places with null latitude/longitude are pending coordinates, not false claims that a known coordinate lacks attribution."
+  ],
+  "place_crosswalk": [
+    {
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "display_name": "Santuario María del Rosario de San Nicolás",
+      "record_ids": {
+        "shrines": [
+          "shrine:AR:san-nicolas"
+        ],
+        "pilgrimages": [
+          "pilgrimage:AR:san-nicolas-visit"
+        ],
+        "apparitions": [
+          "apparition:AR:san-nicolas"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AT:maria-taferl-basilica",
+      "display_name": "Wallfahrtsbasilika Maria Taferl",
+      "record_ids": {
+        "shrines": [
+          "shrine:AT:maria-taferl-sorrowful-mother"
+        ],
+        "pilgrimages": [
+          "pilgrimage:AT:maria-taferl-destination"
+        ]
+      },
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:AT:mariazell-basilica",
+      "display_name": "Basilika Mariazell",
+      "record_ids": {
+        "shrines": [
+          "shrine:AT:mariazell-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:AT:mariazell-destination"
+        ],
+        "customs": [
+          "att:DEV-010:MARIAZELL"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AU:marian-valley",
+      "display_name": "Marian Valley — Shrine of Our Lady Help of Christians",
+      "record_ids": {
+        "shrines": [
+          "shrine:AU:marian-valley-help-christians"
+        ],
+        "pilgrimages": [
+          "pilgrimage:AU:marian-valley-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "display_name": "Shrine of Our Lady of Mercy — Penrose Park",
+      "record_ids": {
+        "shrines": [
+          "shrine:AU:penrose-our-lady-mercy"
+        ],
+        "pilgrimages": [
+          "pilgrimage:AU:penrose-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "display_name": "Sanctuaire de la Vierge des Pauvres — Banneux",
+      "record_ids": {
+        "shrines": [
+          "shrine:BE:banneux-virgin-poor"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BE:banneux-destination"
+        ],
+        "apparitions": [
+          "apparition:BE:banneux"
+        ],
+        "customs": [
+          "att:DEV-007:BANNEUX"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BE:beauraing",
+      "display_name": "Sanctuaire Notre-Dame de Beauraing",
+      "record_ids": {
+        "shrines": [
+          "shrine:BE:beauraing-golden-heart"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BE:beauraing-destination"
+        ],
+        "apparitions": [
+          "apparition:BE:beauraing"
+        ],
+        "customs": [
+          "att:DEV-006:BEAURAING"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "display_name": "Sanctuaire Sainte-Julienne de Cornillon",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:BE:sanctuaire-sainte-julienne-cornillon:destination"
+        ],
+        "novena_context": [
+          "novena-place:corpus_christi:liege"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BR:aparecida-national-shrine",
+      "display_name": "Santuário Nacional de Nossa Senhora Aparecida",
+      "record_ids": {
+        "shrines": [
+          "shrine:BR:aparecida-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BR:aparecida-destination"
+        ],
+        "customs": [
+          "att:DEV-007:APARECIDA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BR:nazare-belem",
+      "display_name": "Basílica Santuário de Nossa Senhora de Nazaré do Desterro",
+      "record_ids": {
+        "shrines": [
+          "shrine:BR:nazare-belem"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BR:cirio-nazare",
+          "pilgrimage:BR:nazare-destination"
+        ],
+        "customs": [
+          "att:DEV-007:CIRIO-NAZARE"
+        ],
+        "routes": [
+          "route:BR:belem-cathedral-nazare"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "display_name": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+      "record_ids": {
+        "shrines": [
+          "shrine:BR:pateo-do-collegio-sao-paulo"
+        ],
+        "pilgrimages": [
+          "pilgrimage:BR:pateo-do-collegio-sao-paulo:destination"
+        ],
+        "relics": [
+          "relic:BR:pateo-do-collegio-sao-paulo"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "display_name": "Martyrs' Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:martyrs-midland"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:canadian-martyrs-traditional",
+          "pilgrimage:CA:martyrs-midland-destination"
+        ],
+        "routes": [
+          "route:CA:canadian-martyrs-traditional"
+        ]
+      },
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "display_name": "Sanctuaire Notre-Dame-du-Cap",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:notre-dame-du-cap"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:notre-dame-du-cap-destination"
+        ],
+        "customs": [
+          "att:DEV-010:NOTRE-DAME-DU-CAP"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "display_name": "Oratoire Saint-Joseph du Mont-Royal",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:oratoire-saint-joseph-montreal"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:oratoire-saint-joseph-montreal:destination"
+        ],
+        "relics": [
+          "relic:CA:brother-andre-heart-montreal",
+          "relic:CA:brother-andre-tomb-montreal"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "display_name": "Sanctuaire Sainte-Anne-de-Beaupré",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:sainte-anne-de-beaupre"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:sainte-anne-de-beaupre-destination"
+        ],
+        "relics": [
+          "relic:CA:anne-beaupre-1892-forearm",
+          "relic:CA:anne-beaupre-1960-forearm",
+          "relic:CA:anne-beaupre-finger"
+        ],
+        "customs": [
+          "att:DEV-007:SAINTE-ANNE-BEAUPRE"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "display_name": "Abbaye de Saint-Maurice d'Agaune",
+      "record_ids": {
+        "shrines": [
+          "shrine:CH:abbaye-saint-maurice-agaune"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CH:abbaye-saint-maurice-agaune:destination"
+        ],
+        "relics": [
+          "relic:CH:abbaye-saint-maurice-agaune"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CH:einsiedeln-monastery",
+      "display_name": "Kloster Einsiedeln",
+      "record_ids": {
+        "shrines": [
+          "shrine:CH:einsiedeln-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CH:einsiedeln-destination",
+          "pilgrimage:CH:einsiedeln-engelweihe"
+        ],
+        "customs": [
+          "att:DEV-007:EINSIEDELN-ENGELWEIHE"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CH:kloster-mariastein",
+      "display_name": "Kloster Mariastein",
+      "record_ids": {
+        "shrines": [
+          "shrine:CH:mariastein-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CH:mariastein-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CO:chiquinquira-basilica",
+      "display_name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá",
+      "record_ids": {
+        "shrines": [
+          "shrine:CO:chiquinquira"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CO:chiquinquira-destination"
+        ],
+        "customs": [
+          "att:DEV-007:CHIQUINQUIRA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CO:las-lajas-ipiales",
+      "display_name": "Santuario de Nuestra Señora del Rosario de Las Lajas",
+      "record_ids": {
+        "shrines": [
+          "shrine:CO:las-lajas"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CO:las-lajas-destination"
+        ],
+        "customs": [
+          "att:DEV-007:LAS-LAJAS"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "display_name": "Bazilika svatého Václava — Stará Boleslav",
+      "record_ids": {
+        "shrines": [
+          "shrine:CZ:stara-boleslav-wenceslas"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CZ:stara-boleslav-wenceslas"
+        ],
+        "customs": [
+          "att:DEV-007:ST-WENCESLAS-BOLESLAV"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:svata-hora-pribram",
+      "display_name": "Svatá Hora",
+      "record_ids": {
+        "shrines": [
+          "shrine:CZ:svata-hora"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CZ:svata-hora-destination"
+        ],
+        "customs": [
+          "att:DEV-007:SVATA-HORA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "display_name": "Aachener Dom — Four Sacred Textiles",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:aachener-dom-four-textiles"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:aachener-dom-four-textiles:destination"
+        ],
+        "relics": [
+          "relic:DE:aachener-dom-four-textiles"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "display_name": "Gnadenkapelle Altötting",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:altoetting-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:altoetting-assumption",
+          "pilgrimage:DE:altoetting-destination"
+        ],
+        "customs": [
+          "att:DEV-009:ALTOETTING"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "display_name": "Wallfahrtskirche St. Salvator Bettbrunn",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:bettbrunn-st-salvator"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:bettbrunn-destination",
+          "pilgrimage:DE:bettbrunn-men",
+          "pilgrimage:DE:bettbrunn-preith"
+        ],
+        "customs": [
+          "att:DEV-006:BETTBRUNN",
+          "att:DEV-010:BETTBRUNN-VOTIVE-CANDLES"
+        ],
+        "routes": [
+          "route:DE:preith-bettbrunn"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "display_name": "Gnadenkapelle Kevelaer",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:kevelaer-consolatrix-afflictorum"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:kevelaer-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:kevelaer-kerzenkapelle",
+      "display_name": "Kerzenkapelle Kevelaer",
+      "record_ids": {},
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "display_name": "Hohe Domkirche St. Petrus, Köln",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:kolner-dom-three-kings"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:kolner-dom-three-kings:destination"
+        ],
+        "relics": [
+          "relic:DE:kolner-dom-three-kings"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:maria-vesperbild",
+      "display_name": "Wallfahrtskirche Maria Vesperbild",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:maria-vesperbild"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:maria-vesperbild-destination"
+        ],
+        "customs": [
+          "att:DEV-007:MARIA-VESPERBILD-FATIMA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:mariahilf-amberg",
+      "display_name": "Wallfahrtskirche Maria Hilf Amberg",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:mariahilf-amberg"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:mariahilf-amberg-bergfest",
+          "pilgrimage:DE:mariahilf-amberg-destination"
+        ],
+        "customs": [
+          "att:DEV-007:MARIAHILF-AMBERG-BERGFEST"
+        ],
+        "directory_links": [
+          "link:directory-place:DE:mariahilf-amberg"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:st-apollinaris-frielingsdorf",
+      "display_name": "St. Apollinaris Frielingsdorf",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:st-apollinaris-frielingsdorf"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:st-apollinaris-frielingsdorf-destination",
+          "pilgrimage:DE:st-apollinaris-frielingsdorf-octave"
+        ],
+        "customs": [
+          "att:DEV-007:FRIELINGSDORF-APOLLINARIS"
+        ],
+        "directory_links": [
+          "link:directory-place:DE:st-apollinaris-frielingsdorf"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:st-leonhard-nussdorf",
+      "display_name": "Kirche St. Leonhard Nußdorf am Inn",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:st-leonhard-nussdorf"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:st-leonhard-nussdorf-destination",
+          "pilgrimage:DE:st-leonhard-nussdorf-ritt"
+        ],
+        "customs": [
+          "att:DEV-007:NUSSDORF-LEONHARDIRITT"
+        ],
+        "directory_links": [
+          "link:directory-place:DE:st-leonhard-nussdorf"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:trier-sankt-matthias",
+      "display_name": "Benediktinerabtei St Matthias, Trier",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:trier-sankt-matthias"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:trier-sankt-matthias:destination"
+        ],
+        "relics": [
+          "relic:DE:trier-sankt-matthias"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "display_name": "Trierer Dom — Holy Robe",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:trierer-dom-heiliger-rock"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:trierer-dom-heiliger-rock:destination"
+        ],
+        "relics": [
+          "relic:DE:trierer-dom-heiliger-rock"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:wigratzbad-maria-vom-sieg",
+      "display_name": "Gebetsstätte Maria vom Sieg Wigratzbad",
+      "record_ids": {
+        "shrines": [
+          "shrine:DE:wigratzbad-maria-vom-sieg"
+        ],
+        "pilgrimages": [
+          "pilgrimage:DE:wigratzbad-destination"
+        ],
+        "customs": [
+          "att:DEV-006:WIGRATZBAD"
+        ],
+        "directory_links": [
+          "link:directory-place:DE:wigratzbad-suehnekirche"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:EG:zeitoun-coptic-saint-mary",
+      "display_name": "Church of the Virgin Mary, Zeitoun (Coptic Orthodox)",
+      "record_ids": {
+        "apparitions": [
+          "apparition:EG:zeitoun"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "display_name": "Basílica de Nuestra Señora del Pilar",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:ES:basilica-del-pilar-zaragoza"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:ES:basilica-del-pilar-zaragoza:destination"
+        ],
+        "apparitions": [
+          "apparition:ES:pilar-zaragoza"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:carmel-alba-tormes",
+      "display_name": "Monasterio de la Anunciación — Carmelitas Descalzas",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:ES:carmel-alba-tormes"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:ES:carmel-alba-tormes:destination"
+        ],
+        "relics": [
+          "relic:ES:teresa-arm-alba",
+          "relic:ES:teresa-body-alba",
+          "relic:ES:teresa-heart-alba"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "display_name": "Catedral de San Salvador — Cámara Santa, Oviedo",
+      "record_ids": {
+        "shrines": [
+          "shrine:ES:catedral-san-salvador-oviedo"
+        ],
+        "pilgrimages": [
+          "pilgrimage:ES:catedral-san-salvador-oviedo:destination"
+        ],
+        "relics": [
+          "relic:ES:catedral-san-salvador-oviedo"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "display_name": "Convento de San Juan de la Cruz, Segovia",
+      "record_ids": {
+        "shrines": [
+          "shrine:ES:convento-san-juan-cruz-segovia"
+        ],
+        "pilgrimages": [
+          "pilgrimage:ES:convento-san-juan-cruz-segovia:destination"
+        ],
+        "relics": [
+          "relic:ES:convento-san-juan-cruz-segovia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "display_name": "Catedral de Santiago de Compostela",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:ES:santiago-compostela-cathedral"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:ES:santiago-compostela-cathedral:destination"
+        ],
+        "relics": [
+          "relic:ES:james-compostela"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:santo-toribio-liebana",
+      "display_name": "Monasterio de Santo Toribio de Liébana",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:ES:santo-toribio-liebana"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:ES:santo-toribio-liebana:destination"
+        ],
+        "relics": [
+          "relic:ES:lignum-crucis-liebana"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "display_name": "Abbatiale de la Sainte-Trinité — Précieux Sang, Fécamp",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:abbatiale-sainte-trinite-fecamp"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:abbatiale-sainte-trinite-fecamp:destination"
+        ],
+        "relics": [
+          "relic:FR:abbatiale-sainte-trinite-fecamp"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "display_name": "Abbaye de Fleury — Saint-Benoît-sur-Loire",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:abbaye-fleury-saint-benoit-loire:destination"
+        ],
+        "relics": [
+          "relic:FR:benedict-fleury"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "display_name": "Abbaye du Mont-Saint-Michel",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:abbaye-mont-saint-michel"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:abbaye-mont-saint-michel:destination"
+        ],
+        "apparitions": [
+          "apparition:FR:mont-saint-michel"
+        ],
+        "novena_context": [
+          "novena-place:st_michael:mont-saint-michel"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-ars",
+      "display_name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:basilique-ars"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:basilique-ars:destination"
+        ],
+        "relics": [
+          "relic:FR:curé-ars"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "display_name": "Basilique Saint-Louis-Marie-Grignion-de-Montfort",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:basilique-montfort-saint-laurent"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:basilique-montfort-saint-laurent:destination"
+        ],
+        "relics": [
+          "relic:FR:marie-louise-trichet",
+          "relic:FR:montfort-basilica"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "display_name": "Basilique Notre-Dame du Perpétuel-Secours, Paris",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:basilique-notre-dame-perpetuel-secours-paris"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:basilique-notre-dame-perpetuel-secours-paris:destination"
+        ],
+        "novena_context": [
+          "novena-place:perpetual_help:paris"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "display_name": "Basilique Notre-Dame des Victoires, Paris",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:basilique-notre-dame-victoires-paris"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:basilique-notre-dame-victoires-paris:destination"
+        ],
+        "novena_context": [
+          "novena-place:immaculate_heart:notre-dame-victoires",
+          "novena-place:seven_sorrows:notre-dame-victoires"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denis",
+      "display_name": "Basilique cathédrale de Saint-Denis",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:basilique-saint-denis"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:basilique-saint-denis:destination"
+        ],
+        "relics": [
+          "relic:FR:basilique-saint-denis"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "display_name": "Basilique Saint-Denys d’Argenteuil",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:basilique-saint-denys-argenteuil"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:basilique-saint-denys-argenteuil:destination"
+        ],
+        "relics": [
+          "relic:FR:basilique-saint-denys-argenteuil"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "display_name": "Basilique Saint-Martin de Tours",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:basilique-saint-martin-tours"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:basilique-saint-martin-tours:destination"
+        ],
+        "relics": [
+          "relic:FR:martin-tours-tomb"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "display_name": "Basilique Saint-Nicolas de Saint-Nicolas-de-Port",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:basilique-saint-nicolas-de-port"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:basilique-saint-nicolas-de-port:destination"
+        ],
+        "relics": [
+          "relic:FR:phalange-saint-nicolas-port"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "display_name": "Basilique Saint-Quentin",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:basilique-saint-quentin-aisne"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:basilique-saint-quentin-aisne:destination"
+        ],
+        "relics": [
+          "relic:FR:main-saint-quentin"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "display_name": "Basilique Saint-Sernin de Toulouse",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:basilique-saint-sernin-toulouse"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:basilique-saint-sernin-toulouse:destination"
+        ],
+        "relics": [
+          "relic:FR:saint-saturnin-toulouse"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "display_name": "Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin:destination"
+        ],
+        "relics": [
+          "relic:FR:magdalene-head-saint-maximin",
+          "relic:FR:maximin-sarcophagus"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "display_name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:basilique-sainte-marie-madeleine-vezelay"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:basilique-sainte-marie-madeleine-vezelay:destination"
+        ],
+        "relics": [
+          "relic:FR:basilique-sainte-marie-madeleine-vezelay"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "display_name": "Basilique Sainte-Thérèse de Lisieux",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:basilique-sainte-therese-lisieux"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:basilique-sainte-therese-lisieux:destination"
+        ],
+        "relics": [
+          "relic:FR:martin-parents-lisieux"
+        ],
+        "novena_context": [
+          "novena-place:st_therese:lisieux"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "display_name": "Basilique de la Visitation, Annecy",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:basilique-visitation-annecy"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:basilique-visitation-annecy:destination"
+        ],
+        "relics": [
+          "relic:FR:basilique-visitation-annecy"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:bermont-greux",
+      "display_name": "Chapelle Notre-Dame de Bermont",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:bermont-greux"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:bermont-destination"
+        ],
+        "customs": [
+          "att:DEV-006:BERMONT-GREUX"
+        ],
+        "directory_links": [
+          "link:directory-place:FR:bermont-greux"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:carmel-lisieux",
+      "display_name": "Chapelle du Carmel de Lisieux",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:carmel-lisieux"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:carmel-lisieux:destination"
+        ],
+        "relics": [
+          "relic:FR:therese-carmel"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "display_name": "Cathédrale Notre-Dame d’Amiens",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:cathedrale-notre-dame-amiens"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:cathedrale-notre-dame-amiens:destination"
+        ],
+        "relics": [
+          "relic:FR:cathedrale-notre-dame-amiens"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-le-puy",
+      "display_name": "Cathédrale Notre-Dame de l’Annonciation du Puy-en-Velay",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:cathedrale-notre-dame-le-puy"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:cathedrale-notre-dame-le-puy:destination"
+        ],
+        "novena_context": [
+          "novena-place:annunciation:le-puy"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "display_name": "Cathédrale Saint-Étienne — Sainte Coiffe de Cahors",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:cathedrale-saint-etienne-cahors"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:cathedrale-saint-etienne-cahors:destination"
+        ],
+        "relics": [
+          "relic:FR:cathedrale-saint-etienne-cahors"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "display_name": "Cathédrale Saint-Étienne de Sens",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:cathedrale-saint-etienne-sens"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:cathedrale-saint-etienne-sens:destination"
+        ],
+        "relics": [
+          "relic:FR:suaires-saints-sens"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:chapelle-saint-vincent-paris",
+      "display_name": "Chapelle Saint-Vincent-de-Paul, Paris",
+      "record_ids": {
+        "relics": [
+          "relic:FR:vincent-de-paul"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:chartres-notre-dame",
+      "display_name": "Cathédrale Notre-Dame de Chartres",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:chartres-notre-dame"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:chartres-pentecost"
+        ],
+        "relics": [
+          "relic:FR:chartres-voile-vierge"
+        ],
+        "routes": [
+          "route:FR:paris-chartres-pentecost"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "display_name": "Collégiale Sainte-Marthe de Tarascon",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:collegiale-sainte-marthe-tarascon"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:collegiale-sainte-marthe-tarascon:destination"
+        ],
+        "relics": [
+          "relic:FR:collegiale-sainte-marthe-tarascon"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "display_name": "Couvent des Jacobins, Toulouse",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:couvent-jacobins-toulouse"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:couvent-jacobins-toulouse:destination"
+        ],
+        "relics": [
+          "relic:FR:couvent-jacobins-toulouse"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "display_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:espace-bernadette-nevers"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:espace-bernadette-nevers:destination"
+        ],
+        "relics": [
+          "relic:FR:bernadette-nevers"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "display_name": "Sanctuaire des Grottes de Saint-Antoine, Brive",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:grottes-saint-antoine-brive"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:grottes-saint-antoine-brive:destination"
+        ],
+        "novena_context": [
+          "novena-place:st_anthony:brive"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:montligeon",
+      "display_name": "Sanctuaire Notre-Dame de Montligeon",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:montligeon"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:montligeon-ciel",
+          "pilgrimage:FR:montligeon-destination"
+        ],
+        "customs": [
+          "att:DEAD-003:MONTLIGEON"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "display_name": "Basilique Notre-Dame d’Arcachon — Sanctuaire Notre-Dame des Marins",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:arcachon-marins"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:arcachon-marins-destination"
+        ],
+        "directory_links": [
+          "link:directory-place:FR:arcachon-notre-dame"
+        ]
+      },
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:FR:notre-dame-du-laus",
+      "display_name": "Sanctuaire Notre-Dame du Laus",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:notre-dame-du-laus"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:notre-dame-du-laus:destination"
+        ],
+        "apparitions": [
+          "apparition:FR:laus-christ-crucified",
+          "apparition:FR:laus-mary"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:notre-dame-graces-cotignac",
+      "display_name": "Sanctuaire Notre-Dame de Grâces, Cotignac",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:notre-dame-graces-cotignac"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:notre-dame-graces-cotignac:destination"
+        ],
+        "apparitions": [
+          "apparition:FR:cotignac-nd-graces"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "display_name": "Sanctuaire Notre-Dame de La Salette",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:notre-dame-la-salette-fallavaux"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:notre-dame-la-salette-fallavaux:destination"
+        ],
+        "apparitions": [
+          "apparition:FR:la-salette"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:notre-dame-paris",
+      "display_name": "Cathédrale Notre-Dame de Paris",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:notre-dame-paris"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:notre-dame-paris:destination"
+        ],
+        "relics": [
+          "relic:FR:cross-paris",
+          "relic:FR:crown-of-thorns-paris",
+          "relic:FR:holy-nail-paris"
+        ],
+        "novena_context": [
+          "novena-place:assumption:notre-dame-paris"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:pellevoisin",
+      "display_name": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:pellevoisin"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:pellevoisin-annual",
+          "pilgrimage:FR:pellevoisin-destination"
+        ],
+        "apparitions": [
+          "apparition:FR:pellevoisin"
+        ],
+        "customs": [
+          "att:DEV-006:PELLEVOISIN-ANNUAL"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:pontmain",
+      "display_name": "Sanctuaire Notre-Dame de Pontmain",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:pontmain"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:pontmain-assumption",
+          "pilgrimage:FR:pontmain-destination",
+          "pilgrimage:FR:pontmain-jan17"
+        ],
+        "apparitions": [
+          "apparition:FR:pontmain"
+        ],
+        "customs": [
+          "att:DEV-007:PONTMAIN-JAN17",
+          "att:DEV-010:PONTMAIN-CANDLE"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "display_name": "Chapelle Notre-Dame de la Médaille Miraculeuse",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:rue-du-bac"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:rue-du-bac-destination"
+        ],
+        "relics": [
+          "relic:FR:catherine-laboure",
+          "relic:FR:louise-de-marillac",
+          "relic:FR:vincent-heart-rue-du-bac"
+        ],
+        "apparitions": [
+          "apparition:FR:rue-du-bac",
+          "apparition:FR:rue-du-bac-christ",
+          "apparition:FR:rue-du-bac-st-vincent"
+        ],
+        "customs": [
+          "att:DEV-006:RUE-DU-BAC"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "display_name": "Église Saint-Hilaire-le-Grand, Poitiers",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:saint-hilaire-le-grand-poitiers"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:saint-hilaire-le-grand-poitiers:destination"
+        ],
+        "relics": [
+          "relic:FR:saint-hilaire-le-grand-poitiers"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "display_name": "Sanctuaire Saint-Joseph du Bessillon",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:FR:saint-joseph-bessillon"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:FR:saint-joseph-bessillon:destination"
+        ],
+        "apparitions": [
+          "apparition:FR:saint-joseph-cotignac"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "display_name": "Sanctuaire de Sainte-Anne-d'Auray",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:sainte-anne-d-auray"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:sainte-anne-d-auray-destination",
+          "pilgrimage:FR:sainte-anne-grand-pardon"
+        ],
+        "apparitions": [
+          "apparition:FR:sainte-anne-auray"
+        ],
+        "customs": [
+          "att:DEV-007:SAINTE-ANNE-D-AURAY"
+        ],
+        "routes": [
+          "route:FR:sainte-anne-chemin-nicolazic"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "display_name": "Sanctuaire Notre-Dame de Laghet",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:laghet-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:laghet-destination",
+          "pilgrimage:FR:laghet-paillon-deanery"
+        ],
+        "customs": [
+          "att:DEV-009:LAGHET"
+        ],
+        "routes": [
+          "route:FR:laghet-paillon-old-road"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "display_name": "Sanctuaire Notre-Dame de Lourdes",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:lourdes-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:lourdes-destination"
+        ],
+        "apparitions": [
+          "apparition:FR:lourdes"
+        ],
+        "customs": [
+          "att:DEV-010:LOURDES"
+        ],
+        "novena_context": [
+          "novena-place:immaculate_conception:lourdes"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "display_name": "Sanctuaire du Sacré-Cœur de Paray-le-Monial",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:paray-sacred-heart"
+        ],
+        "pilgrimages": [
+          "pilgrimage:FR:paray-sacred-heart"
+        ],
+        "relics": [
+          "relic:FR:margaret-mary-paray"
+        ],
+        "apparitions": [
+          "apparition:FR:paray-sacred-heart"
+        ],
+        "customs": [
+          "att:DOM-006:PARAY",
+          "att:DOM-007:PARAY"
+        ],
+        "novena_context": [
+          "novena-custom:sacred_heart:DOM-006",
+          "novena-custom:sacred_heart:DOM-007"
+        ],
+        "routes": [
+          "route:FR:paray-pilgrim-path"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride",
+      "display_name": "St Winefride's Shrine & Well",
+      "record_ids": {
+        "shrines": [
+          "shrine:GB:holywell-st-winefride"
+        ],
+        "pilgrimages": [
+          "pilgrimage:GB:holywell-destination",
+          "pilgrimage:GB:holywell-lms"
+        ],
+        "customs": [
+          "att:DEV-007:HOLYWELL-ST-WINEFRIDE"
+        ],
+        "routes": [
+          "route:GB:holywell-church-to-well"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride-church",
+      "display_name": "St Winefride's RC Church, Holywell",
+      "record_ids": {},
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "display_name": "Catholic National Shrine and Basilica of Our Lady, Walsingham",
+      "record_ids": {
+        "shrines": [
+          "shrine:GB:walsingham-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:GB:walsingham-destination",
+          "pilgrimage:GB:walsingham-lms"
+        ],
+        "customs": [
+          "att:DEV-007:WALSINGHAM"
+        ],
+        "routes": [
+          "route:GB:ely-walsingham-lms"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "display_name": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+      "record_ids": {
+        "shrines": [
+          "shrine:GB:westminster-abbey-st-edward"
+        ],
+        "pilgrimages": [
+          "pilgrimage:GB:westminster-abbey-st-edward:destination"
+        ],
+        "relics": [
+          "relic:GB:westminster-abbey-st-edward"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GR:saint-titus-heraklion",
+      "display_name": "Church of Saint Titus, Heraklion",
+      "record_ids": {
+        "shrines": [
+          "shrine:GR:saint-titus-heraklion"
+        ],
+        "pilgrimages": [
+          "pilgrimage:GR:saint-titus-heraklion:destination"
+        ],
+        "relics": [
+          "relic:GR:saint-titus-heraklion"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "display_name": "Saint Stephen's Basilica, Budapest",
+      "record_ids": {
+        "shrines": [
+          "shrine:HU:st-stephen-basilica-budapest"
+        ],
+        "pilgrimages": [
+          "pilgrimage:HU:st-stephen-basilica-budapest:destination"
+        ],
+        "relics": [
+          "relic:HU:st-stephen-basilica-budapest"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IE:knock-shrine",
+      "display_name": "Knock Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:IE:knock"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IE:knock-apparition-anniversary",
+          "pilgrimage:IE:knock-destination"
+        ],
+        "apparitions": [
+          "apparition:IE:knock"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IE:lough-derg-station-island",
+      "display_name": "Lough Derg — Sanctuary of Saint Patrick",
+      "record_ids": {
+        "shrines": [
+          "shrine:IE:lough-derg"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IE:lough-derg-three-day"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "display_name": "Basilica of Bom Jesus, Old Goa",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IN:basilica-bom-jesus-old-goa"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IN:basilica-bom-jesus-old-goa:destination"
+        ],
+        "relics": [
+          "relic:IN:francis-xavier-goa"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "display_name": "Abbazia di San Colombano, Bobbio",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:abbey-san-colombano-bobbio"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:abbey-san-colombano-bobbio:destination"
+        ],
+        "relics": [
+          "relic:IT:abbey-san-colombano-bobbio"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "display_name": "Duomo Sant'Andrea, Amalfi",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:amalfi-sant-andrea"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:amalfi-sant-andrea:destination"
+        ],
+        "relics": [
+          "relic:IT:amalfi-sant-andrea"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "display_name": "Basilica di San Domenico, Bologna",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:basilica-san-domenico-bologna"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:basilica-san-domenico-bologna:destination"
+        ],
+        "relics": [
+          "relic:IT:basilica-san-domenico-bologna"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "display_name": "Basilica di San Francesco d'Assisi",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:basilica-san-francesco-assisi"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:basilica-san-francesco-assisi:destination"
+        ],
+        "relics": [
+          "relic:IT:francis-assisi",
+          "relic:IT:francis-first-companions"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "display_name": "Basilica Cattedrale Patriarcale di San Marco",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:basilica-san-marco-venezia"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:basilica-san-marco-venezia:destination"
+        ],
+        "relics": [
+          "relic:IT:basilica-san-marco-venezia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "display_name": "Basilica di San Nicola, Bari",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:basilica-san-nicola-bari"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:basilica-san-nicola-bari:destination"
+        ],
+        "relics": [
+          "relic:IT:nicholas-bari"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "display_name": "Basilica di Sant'Antonio, Padova",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:basilica-sant-antonio-padova"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:basilica-sant-antonio-padova:destination"
+        ],
+        "relics": [
+          "relic:IT:anthony-padua-bones",
+          "relic:IT:anthony-padua-jawbone",
+          "relic:IT:anthony-padua-tongue",
+          "relic:IT:anthony-padua-voice",
+          "relic:IT:john-paul-ii-padua",
+          "relic:IT:true-cross-padua"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "display_name": "Basilica di Santa Rita da Cascia",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:basilica-santa-rita-cascia"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:basilica-santa-rita-cascia:destination"
+        ],
+        "relics": [
+          "relic:IT:rita-cascia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "display_name": "Basilica Cattedrale di Catania",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:cattedrale-sant-agata-catania"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:cattedrale-sant-agata-catania:destination"
+        ],
+        "relics": [
+          "relic:IT:cattedrale-sant-agata-catania"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "display_name": "Chiesa del Gesù, Rome",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:chiesa-gesu-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:chiesa-gesu-rome:destination"
+        ],
+        "relics": [
+          "relic:IT:chiesa-gesu-rome"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:duomo-milano",
+      "display_name": "Duomo di Milano",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:duomo-milano"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:duomo-milano:destination"
+        ],
+        "relics": [
+          "relic:IT:duomo-milano"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "display_name": "Cattedrale di Sant'Eusebio, Vercelli",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:duomo-sant-eusebio-vercelli"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:duomo-sant-eusebio-vercelli:destination"
+        ],
+        "relics": [
+          "relic:IT:duomo-sant-eusebio-vercelli"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:duomo-torino-sindone",
+      "display_name": "Cattedrale di San Giovanni Battista — Holy Shroud, Turin",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:duomo-torino-sindone"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:duomo-torino-sindone:destination"
+        ],
+        "relics": [
+          "relic:IT:duomo-torino-sindone"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:loreto-santa-casa",
+      "display_name": "Santuario Pontificio della Santa Casa di Loreto",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:loreto-holy-house"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:loreto-destination"
+        ],
+        "customs": [
+          "att:DEV-007:LORETO-VENUTA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "display_name": "Basilica Maria Ausiliatrice, Turin",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:maria-ausiliatrice-torino"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:maria-ausiliatrice-torino:destination"
+        ],
+        "relics": [
+          "relic:IT:maria-ausiliatrice-torino"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "display_name": "Abbazia di Montecassino — Tomb of Saints Benedict and Scholastica",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:montecassino-abbey"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:montecassino-abbey:destination"
+        ],
+        "relics": [
+          "relic:IT:montecassino-abbey"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:ortona-san-tommaso",
+      "display_name": "Basilica Concattedrale di San Tommaso, Ortona",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:ortona-san-tommaso"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:ortona-san-tommaso:destination"
+        ],
+        "relics": [
+          "relic:IT:ortona-san-tommaso"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "display_name": "Pontificio Santuario della Beata Maria Vergine del Santo Rosario di Pompei",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:pompei-rosary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:pompei-destination"
+        ],
+        "customs": [
+          "att:DEV-007:POMPEI-SUPPLICA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "display_name": "Chiesa della Sacra Famiglia — Saint Josephine Bakhita, Schio",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:sacra-famiglia-bakhita-schio"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:sacra-famiglia-bakhita-schio:destination"
+        ],
+        "relics": [
+          "relic:IT:sacra-famiglia-bakhita-schio"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "display_name": "Basilica Papale di San Paolo fuori le Mura",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:saint-paul-outside-walls-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:saint-paul-outside-walls-rome:destination"
+        ],
+        "relics": [
+          "relic:IT:paul-chains",
+          "relic:IT:paul-tomb"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "display_name": "Cattedrale di Salerno",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:salerno-duomo"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:salerno-duomo:destination"
+        ],
+        "relics": [
+          "relic:IT:salerno-duomo"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "display_name": "Basilica San Bartolomeo all'Isola, Rome",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:san-bartolomeo-isola"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:san-bartolomeo-isola:destination"
+        ],
+        "relics": [
+          "relic:IT:san-bartolomeo-isola"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "display_name": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:san-geremia-santa-lucia-venezia"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:san-geremia-santa-lucia-venezia:destination"
+        ],
+        "relics": [
+          "relic:IT:san-geremia-santa-lucia-venezia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:san-michele-gargano",
+      "display_name": "Santuario di San Michele Arcangelo, Monte Sant'Angelo",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:san-michele-gargano"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:san-michele-gargano:destination"
+        ],
+        "apparitions": [
+          "apparition:IT:monte-gargano"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "display_name": "Basilica San Pietro in Ciel d'Oro, Pavia",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:san-pietro-ciel-doro"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:san-pietro-ciel-doro:destination"
+        ],
+        "relics": [
+          "relic:IT:san-pietro-ciel-doro"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "display_name": "Basilica Sant'Agostino in Campo Marzio, Rome",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:sant-agostino-campo-marzio"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:sant-agostino-campo-marzio:destination"
+        ],
+        "relics": [
+          "relic:IT:sant-agostino-campo-marzio"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "display_name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:sant-alfonso-pagani"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:sant-alfonso-pagani:destination"
+        ],
+        "relics": [
+          "relic:IT:sant-alfonso-pagani"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "display_name": "Basilica Sant'Ambrogio, Milan",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:sant-ambrogio-milano"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:sant-ambrogio-milano:destination"
+        ],
+        "relics": [
+          "relic:IT:sant-ambrogio-milano"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santa-chiara-assisi",
+      "display_name": "Basilica di Santa Chiara, Assisi",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:santa-chiara-assisi"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:santa-chiara-assisi:destination"
+        ],
+        "relics": [
+          "relic:IT:santa-chiara-assisi"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "display_name": "Basilica di Santa Croce in Gerusalemme",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:santa-croce-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:santa-croce-rome-visit"
+        ],
+        "relics": [
+          "relic:IT:santa-croce-crown-thorns",
+          "relic:IT:santa-croce-good-thief",
+          "relic:IT:santa-croce-holy-nail",
+          "relic:IT:santa-croce-holy-sepulchre",
+          "relic:IT:santa-croce-nativity-grotto",
+          "relic:IT:santa-croce-thomas-finger",
+          "relic:IT:santa-croce-titulus-crucis",
+          "relic:IT:santa-croce-true-cross"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santa-giustina-padova",
+      "display_name": "Abbazia di Santa Giustina, Padua",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:santa-giustina-padova"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:santa-giustina-padova:destination"
+        ],
+        "relics": [
+          "relic:IT:santa-giustina-padova"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "display_name": "Basilica Papale di Santa Maria Maggiore",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:santa-maria-maggiore-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:santa-maria-maggiore-rome:destination"
+        ],
+        "relics": [
+          "relic:IT:holy-crib-rome",
+          "relic:IT:jerome-rome",
+          "relic:IT:matthew-rome"
+        ],
+        "apparitions": [
+          "apparition:IT:liberian-snow-dream"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "display_name": "Santa Maria sopra Minerva, Rome",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:santa-maria-minerva-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:santa-maria-minerva-rome:destination"
+        ],
+        "relics": [
+          "relic:IT:santa-maria-minerva-rome"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "display_name": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:santa-maria-vallicella-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:santa-maria-vallicella-rome:destination"
+        ],
+        "relics": [
+          "relic:IT:santa-maria-vallicella-rome"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "display_name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:santuario-san-pio-rotondo"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:santuario-san-pio-rotondo:destination"
+        ],
+        "relics": [
+          "relic:IT:padre-pio-rotondo"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "display_name": "Basilica del Volto Santo di Manoppello",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:santuario-volto-santo-manoppello"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:santuario-volto-santo-manoppello:destination"
+        ],
+        "relics": [
+          "relic:IT:santuario-volto-santo-manoppello"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "display_name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:IT:scala-santa-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:IT:scala-santa-rome:destination"
+        ],
+        "relics": [
+          "relic:IT:holy-stairs",
+          "relic:IT:sancta-sanctorum-ark"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:JP:our-lady-akita-convent",
+      "display_name": "Seitai Hoshikai — Our Lady of Akita Chapel",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:JP:our-lady-akita-convent"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:JP:our-lady-akita-convent:destination"
+        ],
+        "apparitions": [
+          "apparition:JP:akita"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "display_name": "Monastery of Saint Maron — Annaya",
+      "record_ids": {
+        "shrines": [
+          "shrine:LB:monastery-saint-maron-annaya"
+        ],
+        "pilgrimages": [
+          "pilgrimage:LB:monastery-saint-maron-annaya:destination"
+        ],
+        "relics": [
+          "relic:LB:monastery-saint-maron-annaya"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LT:siluva-apparition-chapel",
+      "display_name": "Holy Virgin Mary’s Apparition Chapel, Šiluva",
+      "record_ids": {
+        "shrines": [
+          "shrine:LT:siluva"
+        ],
+        "pilgrimages": [
+          "pilgrimage:LT:siluva-visit"
+        ],
+        "apparitions": [
+          "apparition:LT:siluva"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "display_name": "Vilnius Cathedral — Chapel of Saint Casimir",
+      "record_ids": {
+        "shrines": [
+          "shrine:LT:vilnius-cathedral-st-casimir"
+        ],
+        "pilgrimages": [
+          "pilgrimage:LT:vilnius-cathedral-st-casimir:destination"
+        ],
+        "relics": [
+          "relic:LT:vilnius-cathedral-st-casimir"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "display_name": "Basilica of Saint Willibrord, Echternach",
+      "record_ids": {
+        "shrines": [
+          "shrine:LU:basilica-st-willibrord-echternach"
+        ],
+        "pilgrimages": [
+          "pilgrimage:LU:basilica-st-willibrord-echternach:destination"
+        ],
+        "relics": [
+          "relic:LU:basilica-st-willibrord-echternach"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "display_name": "Centre Père Laval",
+      "record_ids": {
+        "shrines": [
+          "shrine:MU:pere-laval"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MU:pere-laval-annual"
+        ],
+        "routes": [
+          "route:MU:pere-laval-saint-joseph",
+          "route:MU:pere-laval-saint-louis"
+        ]
+      },
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "display_name": "Insigne y Nacional Basílica de Santa María de Guadalupe",
+      "record_ids": {
+        "shrines": [
+          "shrine:MX:guadalupe-tepeyac"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MX:guadalupe-destination"
+        ],
+        "apparitions": [
+          "apparition:MX:guadalupe"
+        ],
+        "customs": [
+          "att:DEV-007:GUADALUPE-MX"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MX:basilica-zapopan",
+      "display_name": "Basílica de Nuestra Señora de Zapopan",
+      "record_ids": {
+        "shrines": [
+          "shrine:MX:zapopan-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:MX:zapopan-destination",
+          "pilgrimage:MX:zapopan-romeria"
+        ],
+        "customs": [
+          "att:DEV-007:ZAPOPAN-ROMERIA"
+        ],
+        "routes": [
+          "route:MX:guadalajara-zapopan-romeria"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "display_name": "Nne Enyemaka Shrine, Umuaka",
+      "record_ids": {
+        "shrines": [
+          "shrine:NG:nne-enyemaka-umuaka"
+        ],
+        "pilgrimages": [
+          "pilgrimage:NG:nne-enyemaka-destination"
+        ],
+        "routes": [
+          "route:NG:nne-enyemaka-rosary-procession"
+        ],
+        "directory_links": [
+          "link:directory-place:NG:nne-enyemaka-umuaka"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "display_name": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike",
+      "record_ids": {
+        "shrines": [
+          "shrine:NG:ugwogo-perpetual-help"
+        ],
+        "pilgrimages": [
+          "pilgrimage:NG:ugwogo-destination"
+        ],
+        "customs": [
+          "att:DEV-007:UGWOGO-PERPETUAL-HELP"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NI:cuapa-national-shrine",
+      "display_name": "Santuario de Nuestra Señora de Cuapa",
+      "record_ids": {
+        "shrines": [
+          "shrine:NI:cuapa"
+        ],
+        "pilgrimages": [
+          "pilgrimage:NI:cuapa-visit"
+        ],
+        "apparitions": [
+          "apparition:NI:cuapa"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "display_name": "Heiligdom Onze Lieve Vrouw ter Nood",
+      "record_ids": {
+        "shrines": [
+          "shrine:NL:heiloo-olv-ter-nood"
+        ],
+        "pilgrimages": [
+          "pilgrimage:NL:heiloo-destination"
+        ],
+        "customs": [
+          "att:DEV-007:HEILOO-FIRST-SATURDAY"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "display_name": "Basiliek Onze Lieve Vrouw — Sterre der Zee",
+      "record_ids": {
+        "shrines": [
+          "shrine:NL:maastricht-sterre-der-zee"
+        ],
+        "pilgrimages": [
+          "pilgrimage:NL:maastricht-sterre-der-zee"
+        ],
+        "customs": [
+          "att:DEV-007:MAASTRICHT-STERRE-DER-ZEE"
+        ],
+        "routes": [
+          "route:NL:winthagen-maastricht-sterre-der-zee"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "display_name": "Hāto Mere / St Mary's Pukekaraka",
+      "record_ids": {
+        "shrines": [
+          "shrine:NZ:pukekaraka-mary"
+        ],
+        "pilgrimages": [
+          "pilgrimage:NZ:pukekaraka-destination"
+        ]
+      },
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "display_name": "National Catholic Shrine of St Peter Chanel",
+      "record_ids": {
+        "shrines": [
+          "shrine:NZ:st-peter-chanel-russell"
+        ],
+        "pilgrimages": [
+          "pilgrimage:NZ:st-peter-chanel-destination"
+        ],
+        "customs": [
+          "att:DEV-007:ST-PETER-CHANEL-NZ"
+        ],
+        "routes": [
+          "route:NZ:nga-tapuwae-russell"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "display_name": "Basílica y Convento de Santo Domingo, Lima",
+      "record_ids": {
+        "shrines": [
+          "shrine:PE:convento-santo-domingo-lima"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PE:convento-santo-domingo-lima:destination"
+        ],
+        "relics": [
+          "relic:PE:convento-santo-domingo-lima"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "display_name": "Sanktuarium Bożego Miłosierdzia, Płock",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:PL:divine-mercy-plock"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:PL:divine-mercy-plock:destination"
+        ],
+        "apparitions": [
+          "apparition:PL:faustina-plock"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:gietrzwald-basilica",
+      "display_name": "Sanktuarium Matki Bożej Gietrzwałdzkiej",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:gietrzwald"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:gietrzwald-visit"
+        ],
+        "apparitions": [
+          "apparition:PL:gietrzwald"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "display_name": "Gniezno Cathedral — Saint Adalbert",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:gniezno-cathedral-adalbert"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:gniezno-cathedral-adalbert:destination"
+        ],
+        "relics": [
+          "relic:PL:gniezno-cathedral-adalbert"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:jasna-gora",
+      "display_name": "Jasna Góra",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:jasna-gora-czestochowa"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:jasna-gora-destination"
+        ],
+        "customs": [
+          "att:DEV-007:JASNA-GORA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "display_name": "Sanktuarium Pasyjno-Maryjne w Kalwarii Zebrzydowskiej",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:kalwaria-zebrzydowska"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:kalwaria-destination"
+        ],
+        "customs": [
+          "att:DEV-007:KALWARIA-ASSUMPTION"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "display_name": "Sanktuarium św. Jana Pawła II Wielkiego w Krakowie",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:sanktuarium-jana-pawla-ii-krakow"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:sanktuarium-jana-pawla-ii-krakow:destination"
+        ],
+        "relics": [
+          "relic:PL:sanktuarium-jana-pawla-ii-krakow"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "display_name": "Wawel Cathedral, Kraków",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:wawel-cathedral-stanislaus"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PL:wawel-cathedral-stanislaus:destination"
+        ],
+        "relics": [
+          "relic:PL:wawel-cathedral-stanislaus"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "display_name": "Church of the Holy Sepulchre — shared Christian sanctuary",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:PS:holy-sepulchre-jerusalem"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:PS:holy-sepulchre-jerusalem:destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PS:nativity-bethlehem",
+      "display_name": "Church of the Nativity — shared Christian sanctuary",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:PS:nativity-bethlehem"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:PS:nativity-bethlehem:destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PT:fatima-sanctuary",
+      "display_name": "Santuário de Nossa Senhora do Rosário de Fátima",
+      "record_ids": {
+        "shrines": [
+          "shrine:PT:fatima"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PT:fatima-destination"
+        ],
+        "relics": [
+          "relic:PT:francisco-fatima",
+          "relic:PT:jacinta-fatima",
+          "relic:PT:lucia-fatima"
+        ],
+        "apparitions": [
+          "apparition:PT:fatima"
+        ],
+        "customs": [
+          "att:DEV-007:FATIMA-MAY13"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PT:sameiro-braga",
+      "display_name": "Santuário de Nossa Senhora do Sameiro",
+      "record_ids": {
+        "shrines": [
+          "shrine:PT:sameiro"
+        ],
+        "pilgrimages": [
+          "pilgrimage:PT:sameiro-destination"
+        ],
+        "customs": [
+          "att:DEV-007:SAMEIRO"
+        ],
+        "routes": [
+          "route:PT:braga-cathedral-sameiro"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:RW:sanctuaire-kibeho",
+      "display_name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:RW:sanctuaire-kibeho"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:RW:sanctuaire-kibeho:destination"
+        ],
+        "apparitions": [
+          "apparition:RW:kibeho"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "display_name": "Catedral Metropolitana de San Salvador",
+      "record_ids": {
+        "shrines": [
+          "shrine:SV:catedral-metropolitana-san-salvador"
+        ],
+        "pilgrimages": [
+          "pilgrimage:SV:catedral-metropolitana-san-salvador:destination"
+        ],
+        "relics": [
+          "relic:SV:catedral-metropolitana-san-salvador"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:UG:munyonyo-martyrs",
+      "display_name": "Munyonyo Martyrs Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:UG:munyonyo-martyrs"
+        ],
+        "pilgrimages": [
+          "pilgrimage:UG:munyonyo-destination"
+        ],
+        "customs": [
+          "att:DEV-007:MUNYONYO-MARTYRS"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:UG:namugongo-martyrs",
+      "display_name": "Uganda Martyrs Catholic Shrine, Namugongo",
+      "record_ids": {
+        "shrines": [
+          "shrine:UG:namugongo-martyrs"
+        ],
+        "pilgrimages": [
+          "pilgrimage:UG:namugongo-martyrs-day"
+        ],
+        "customs": [
+          "att:DEV-007:NAMUGONGO-MARTYRS-DAY"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:auriesville-martyrs",
+      "display_name": "National Shrine of Our Lady of Martyrs",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:auriesville-martyrs"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:auriesville-amsterdam",
+          "pilgrimage:US:auriesville-destination",
+          "pilgrimage:US:auriesville-restoration"
+        ],
+        "customs": [
+          "att:DEV-006:AURIESVILLE-RESTORATION"
+        ],
+        "routes": [
+          "route:US:amsterdam-auriesville",
+          "route:US:lake-george-auriesville-restoration"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "display_name": "Carmel Mission Basilica — Saint Junípero Serra",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:carmel-mission-basilica-serra"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:carmel-mission-basilica-serra:destination"
+        ],
+        "relics": [
+          "relic:US:carmel-mission-basilica-serra"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "display_name": "Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:cathedral-katharine-drexel-philadelphia"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:cathedral-katharine-drexel-philadelphia:destination"
+        ],
+        "relics": [
+          "relic:US:cathedral-katharine-drexel-philadelphia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:champion-shrine",
+      "display_name": "National Shrine of Our Lady of Champion",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:champion-our-lady"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:champion-destination",
+          "pilgrimage:US:champion-solemnity",
+          "pilgrimage:US:walk-to-mary"
+        ],
+        "apparitions": [
+          "apparition:US:champion"
+        ],
+        "customs": [
+          "att:DEV-007:CHAMPION"
+        ],
+        "routes": [
+          "route:US:walk-to-mary"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:czestochowa-doylestown",
+      "display_name": "National Shrine of Our Lady of Czestochowa",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:czestochowa-doylestown"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:czestochowa-doylestown-destination",
+          "pilgrimage:US:czestochowa-walking"
+        ],
+        "customs": [
+          "att:DEV-006:CZESTOCHOWA-US-WALK"
+        ],
+        "routes": [
+          "route:US:great-meadows-doylestown-czestochowa"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:divine-mercy-stockbridge",
+      "display_name": "The National Shrine of The Divine Mercy",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:divine-mercy-stockbridge"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:divine-mercy-stockbridge-destination",
+          "pilgrimage:US:divine-mercy-sunday-stockbridge"
+        ],
+        "customs": [
+          "att:DEV-007:STOCKBRIDGE-DIVINE-MERCY"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "display_name": "Shrine of Our Lady of Guadalupe",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:guadalupe-la-crosse"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:guadalupe-la-crosse-destination"
+        ],
+        "customs": [
+          "att:DEV-010:GUADALUPE-LA-CROSSE"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:holy-hill",
+      "display_name": "Basilica and National Shrine of Mary Help of Christians at Holy Hill",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:holy-hill-mary-help"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:holy-hill-destination",
+          "pilgrimage:US:holy-hill-traditional"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:la-salette-attleboro",
+      "display_name": "National Shrine of Our Lady of La Salette",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:la-salette-attleboro"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:la-salette-attleboro-destination"
+        ]
+      },
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "display_name": "National Shrine Grotto of Our Lady of Lourdes",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:lourdes-grotto-emmitsburg"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:lourdes-grotto-emmitsburg-destination"
+        ],
+        "customs": [
+          "att:DEV-007:GROTTO-LOURDES-FEAST"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "display_name": "The Shrine of Lourdes in Litchfield",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:lourdes-litchfield"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:lourdes-litchfield-destination"
+        ],
+        "customs": [
+          "att:DEV-006:LITCHFIELD-LOURDES"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "display_name": "Basilica Shrine of Our Lady of the Miraculous Medal",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:miraculous-medal-philadelphia"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:miraculous-medal-philadelphia-destination"
+        ],
+        "customs": [
+          "att:DEV-010:MIRACULOUS-MEDAL-PHILADELPHIA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "display_name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:seton-emmitsburg"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:seton-emmitsburg-destination",
+          "pilgrimage:US:seton-sea-services"
+        ],
+        "relics": [
+          "relic:US:seton-emmitsburg"
+        ],
+        "customs": [
+          "att:DEV-006:SETON-SEA-SERVICES"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "display_name": "National Shrine of Saint Alphonsus Liguori",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:alphonsus-baltimore"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:alphonsus-baltimore-destination"
+        ],
+        "directory_links": [
+          "link:directory-place:US:st-alphonsus-baltimore"
+        ]
+      },
+      "geo_source_status": "PENDING_COORDINATES"
+    },
+    {
+      "place_id": "place:US:st-anne-fiskdale",
+      "display_name": "St. Anne Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:st-anne-fiskdale"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:st-anne-fiskdale-destination",
+          "pilgrimage:US:st-anne-fiskdale-novena"
+        ],
+        "customs": [
+          "att:DEV-007:FISKDALE-ST-ANNE-NOVENA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "display_name": "National Shrine of St. John Neumann",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:neumann-philadelphia"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:neumann-philadelphia-destination"
+        ],
+        "relics": [
+          "relic:US:neumann-philadelphia"
+        ],
+        "customs": [
+          "att:DEV-006:NEUMANN-PHILADELPHIA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "display_name": "St. Mary of the Assumption Parish and Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:st-mary-assumption-oswego"
+        ],
+        "pilgrimages": [
+          "pilgrimage:US:oswego-assumption-destination"
+        ],
+        "directory_links": [
+          "link:directory-place:US:oswego-st-mary-assumption"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "display_name": "St Peter's Basilica — Vatican",
+      "record_ids": {
+        "shrines": [
+          "shrine:20261009:VA:saint-peter-vatican"
+        ],
+        "pilgrimages": [
+          "pilgrimage:20261009:VA:saint-peter-vatican:destination"
+        ],
+        "relics": [
+          "relic:VA:peter-tomb"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:VE:finca-betania",
+      "display_name": "Santuario Finca Betania",
+      "record_ids": {
+        "shrines": [
+          "shrine:VE:betania"
+        ],
+        "pilgrimages": [
+          "pilgrimage:VE:betania-visit"
+        ],
+        "apparitions": [
+          "apparition:VE:betania"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    }
+  ],
+  "distinct_place_links": {
+    "shrines": 178,
+    "pilgrimages": 178,
+    "relics": 92,
+    "apparitions": 29,
+    "customs": 55,
+    "novena_context": 10,
+    "routes": 18,
+    "directory_links": 9
+  },
+  "map_policy_note": "The distinct-place counts include address-only or coordinate-pending Places. They are not counts of publishable map pins."
+}

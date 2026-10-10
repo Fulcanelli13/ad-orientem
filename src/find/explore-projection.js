@@ -250,7 +250,6 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
     const geo=mapped?normalizeGeo(place.geo):null;
     const relatedNovenas=novenaLinksForAttestation(attestation,novenaLinks);
     const facts=[
-      {label:"Class",value:String(custom?.custom_class??"").replaceAll("_"," ")},
       {label:"Period",value:attestation?.period_label??custom?.period_label},
       {label:"Evidence",value:attestation?.strength},
       {label:"Confidence",value:attestation?.confidence},

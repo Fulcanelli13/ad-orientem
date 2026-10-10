@@ -9,6 +9,9 @@ import {
 import { buildExploreViewModel, renderExploreToString } from "../src/find/explore-presentation.js";
 import { exploreMapFeatures } from "../src/find/map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/customs-atlas-filters.js";
+import { groupTraditionsForBrowse, countCanonicalTraditions } from "../src/find/traditions-browse.js";
+import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "../src/find/heritage-map.js";
+import { buildExplorePlaceProfiles } from "../src/find/place-profiles.js";
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const geography=readJson("data/geography/seed-registry.v1.json");
@@ -503,7 +506,7 @@ const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
 assert.match(browserSource,/projectExploreDataset/);
 assert.match(browserSource,/mountExploreMap/);
-assert.match(browserSource,/lens:"tlm"/);
+assert.match(browserSource,/lens:"heritage"/,"the default Explore lens must be the unified heritage map");
 assert.match(browserSource,/data-explore-open-novena/,"Explore lost Novena deep-link click handling");
 assert.match(browserSource,/AO_PRAY_V435930\?\.open\?\.\("pray\.novenas"/,"Explore no longer opens the canonical PRAY Novena owner");
 assert.match(browserSource,/ensureLearnModule\("learn\.glossary",win\)/,"Cold Explore Glossary must load its canonical owner");
@@ -529,8 +532,41 @@ assert.equal(exploreMapFeatures(atlasMappedTraditions).length,58,"customs map fe
 const atlasUngrounded=projection.byLens.traditions.filter(item=>item.kind==="CUSTOM_ATTESTATION"&&!item.map_publishable&&item.raw?.attestation?.map_policy==="PLACE");
 assert.deepEqual(atlasUngrounded.map(item=>item.place_id).sort(),[],"all exact-site attestations have actual or indicative pins");
 
+
 const customsAtlasItems=projection.byLens.traditions;
+assert.equal(countCanonicalTraditions(customsAtlasItems),13,"13 customs remain independently canonical");
+const practiceBrowse=groupTraditionsForBrowse(customsAtlasItems);
+assert.equal(practiceBrowse.length,13,"list should not turn 71 attestations and 18 novena context links into 89 practices");
+assert.ok(practiceBrowse.every(item=>item.kind==="CANONICAL_CUSTOM"&&!item.map_publishable),"canonical practices are not map pins");
+assert.ok(practiceBrowse.every(item=>item.facts.every(fact=>fact.label!=="Class")),"geographically mixed legacy classification must not appear as exclusive nationality");
+assert.ok(customsAtlasItems.filter(item=>item.kind==="CUSTOM_ATTESTATION").every(item=>item.facts.every(fact=>fact.label!=="Class")),"place-specific evidence must not promote unreviewed national classification");
+const pilgrimagePractice=practiceBrowse.find(item=>item.source_id==="DEV-006");
+assert.equal(pilgrimagePractice.attestation_examples.length,13,"global and place-level pilgrimage evidence stays with its practice");
+assert.ok(pilgrimagePractice.attestation_examples.some(example=>example.title==="World"),"worldwide attestation must not be lost");
+const regionalPardons=practiceBrowse.find(item=>item.source_id==="DEV-007");
+assert.equal(regionalPardons.attestation_examples.length,36,"local examples belong under one practice");
+assert.ok(regionalPardons.attestation_examples.some(example=>example.place_id),"source-linked places remain navigable");
+const holyWater=practiceBrowse.find(item=>item.source_id==="DOM-002");
+assert.equal(holyWater.attestation_examples.length,1,"one-locality customs remain one practice");
+const searchedContexts=groupTraditionsForBrowse(customsAtlasItems,{includeNovenaContext:true});
+assert.equal(searchedContexts.length,31,"18 novena contextual links should remain accessible through search/context");
+assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,13,"canonical practice identities must be unique");
+const practiceVm=buildExploreViewModel({
+  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:13},
+  view:"list",filters:{},selectedId:"tradition:custom:DEV-007",
+});
+const practiceHtml=renderExploreToString(practiceVm);
+assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
+assert.match(practiceHtml,/Documented examples.*36/);
+assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
+assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
+assert.match(practiceHtml,/>13<\/strong><span>practices/,"list count must describe practices, not attestations");
+
 const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
+assert.ok(atlasFacets.families.some(option=>option.value==="Sacred Heart"),"theme browsing must be independent of geography");
+const sacredHeartFamily=filterCustomsAtlasItems(customsAtlasItems,{atlasFamily:"Sacred Heart"});
+assert.ok(sacredHeartFamily.length>0&&sacredHeartFamily.every(item=>item.raw?.custom?.family==="Sacred Heart"),"theme filter must not infer a country");
+assert.equal(groupTraditionsForBrowse(sacredHeartFamily).length,2,"two Sacred Heart customs, not several country records");
 assert.ok(atlasFacets.areas.some(option=>option.value==="geo:country:FR"&&option.label==="France"),"French customs geography disappeared");
 assert.ok(atlasFacets.periods.some(option=>option.value==="Historical; largely declined"),"source-owned historical period was lost");
 assert.ok(atlasFacets.calendar.some(option=>option.value==="HINT:May"),"documented May Marian context was lost");
@@ -558,6 +594,7 @@ const atlasVm=buildExploreViewModel({
 });
 const atlasHtml=renderExploreToString(atlasVm);
 assert.match(atlasHtml,/Customs Atlas/);
+assert.match(atlasHtml,/data-atlas-filter="atlasFamily"/);
 assert.match(atlasHtml,/data-atlas-filter="atlasArea"/);
 assert.match(atlasHtml,/data-atlas-filter="atlasPeriod"/);
 assert.match(atlasHtml,/data-atlas-filter="atlasCalendar"/);
@@ -571,6 +608,7 @@ const atlasFrHtml=renderExploreToString(buildExploreViewModel({
   atlasFacets,filters:{atlasArea:"ANY",atlasPeriod:"ANY",atlasCalendar:"ANY"},view:"list",
 }));
 assert.match(atlasFrHtml,/Atlas des coutumes/);
+assert.match(atlasFrHtml,/Thème/);
 assert.match(atlasFrHtml,/Géographie/);
 assert.match(atlasFrHtml,/Période historique/);
 assert.match(atlasFrHtml,/Contexte calendaire/);
@@ -581,8 +619,62 @@ assert.match(browserSource,/options\?\.view==="map"/);
 assert.match(homeSource,/data-home-customs-atlas/);
 const homeOwnerSource=readFileSync("src/home/browser-entry.js","utf8");
 assert.match(homeOwnerSource,/data-home-customs-atlas/);
-assert.match(homeOwnerSource,/lens:"traditions",view:"map",query:""/);
+assert.match(homeOwnerSource,/lens:"heritage",view:"map",categories:\["traditions"\],query:""/,"Home Customs entry should open map with the traditions filter");
 
-console.log("PASS unified Explore projection and four-lens surface");
+
+// Unified map is derived from source-owned Place IDs, not from coordinate proximity.
+// Each documented site appears once even when it has multiple independent claims.
+const heritagePlaces=projectHeritagePlaces(projection);
+assert.deepEqual(HERITAGE_CATEGORIES,["shrines","relics","pilgrimages","apparitions","traditions"]);
+assert.ok(heritagePlaces.length>=171,"mapped shrine places must survive the unified projection");
+assert.equal(new Set(heritagePlaces.map(item=>item.place_id)).size,heritagePlaces.length,"unified map duplicated a physical Place");
+assert.equal(exploreMapFeatures(heritagePlaces).length,heritagePlaces.length,"unified Place points must remain source-backed");
+const lourdesCombined=heritagePlaces.find(item=>item.place_id===lourdesShrine[0].place_id);
+assert.ok(lourdesCombined,"Lourdes was dropped by the unified map");
+assert.ok(lourdesCombined.heritage_categories.includes("shrines"),"Lourdes shrine relationship lost");
+assert.ok(lourdesCombined.heritage_categories.includes("pilgrimages"),"pilgrimage records should share the Lourdes Place pin");
+const onlyRelics=projectHeritagePlaces(projection,{categories:["relics"]});
+assert.ok(onlyRelics.length>0&&onlyRelics.length<=projection.byLens.relics.length);
+assert.ok(onlyRelics.every(item=>item.heritage_categories.length===1&&item.heritage_categories[0]==="relics"),"relic filter leaked another category");
+const onlyCustomSites=projectHeritagePlaces(projection,{categories:["traditions"]});
+assert.ok(onlyCustomSites.length>0&&onlyCustomSites.length<=58,"customs must map only genuine PLACE attestations");
+const globalCustom=projectHeritagePlaces(projection,{categories:["traditions"],customId:"DEV-006"});
+assert.ok(globalCustom.length<13,"the global pilgrimage custom cannot create a pin per abstract area");
+assert.ok(globalCustom.every(item=>item.heritage_categories.includes("traditions")),"custom selection must not turn on other categories");
+assert.equal(projectHeritagePlaces(projection,{categories:[],query:""}).length,0,"empty map category filter must not show pins");
+const heritageCustoms=heritageCustomCards(practiceBrowse);
+assert.equal(heritageCustoms.length,13,"all canonical practices must be available without a geographical list");
+assert.equal(heritageCustomCards(practiceBrowse,{enabled:false}).length,0);
+const heritageVm=buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{query:"",heritageCategories:[...HERITAGE_CATEGORIES],highlightCustomId:null},
+  customCards:heritageCustoms,counts:{...projection.counts,heritage:heritagePlaces.length},
+});
+const heritageHtml=renderExploreToString(heritageVm);
+assert.match(heritageHtml,/Sacred Geography/);
+assert.match(heritageHtml,/data-find-view="map"/);
+assert.match(heritageHtml,/data-heritage-category="ALL"/);
+for(const category of HERITAGE_CATEGORIES)assert.match(heritageHtml,new RegExp('data-heritage-category="'+category+'"'));
+assert.match(heritageHtml,/aoHeritageCustomRail/,"customs need a compact horizontal rail");
+assert.match(heritageHtml,/data-heritage-custom="DEV-006"/,"universal customs must remain visible without pins");
+assert.doesNotMatch(heritageHtml,/class="aoFindList"/,"map-first Explore must not default to a result list");
+const placeProfiles=buildExplorePlaceProfiles(dataset,projection);
+const heritagePreview=renderExploreToString(buildExploreViewModel({
+  language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:lourdesCombined.place_id,placeProfiles,
+}));
+assert.match(heritagePreview,/data-explore-expand-place/,"map click must open compact Place preview");
+assert.match(heritagePreview,/Découvrir ce lieu/);
+assert.doesNotMatch(heritagePreview,/class="aoExplorePlaceRows"/,"Place preview must not open a dense record listing immediately");
+const expandedPlace=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:lourdesCombined.place_id,placeProfiles,expandPlace:true,
+}));
+assert.match(expandedPlace,/data-explore-place-item=/,"expanded Place must retain original source-owned records");
+
+console.log("PASS unified Explore projection, canonical customs and map-first heritage surface");
+await import("./heritage-place-reconciliation.mjs");
 await import("./explore-handoff-recovery.mjs");
 await import("./explore-first-load-recovery.mjs");

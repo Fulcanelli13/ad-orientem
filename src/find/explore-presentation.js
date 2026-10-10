@@ -1,10 +1,12 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { renderHeritageToString } from "./heritage-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
 
 const LENS_LABELS=Object.freeze({
+  heritage:["Heritage","Patrimoine"],
   tlm:["TLM","TLM"],
   shrines:["Shrines","Sanctuaires"],
   apparitions:["Apparitions","Apparitions"],
@@ -22,6 +24,7 @@ const FACT_LABELS=Object.freeze({
   Evidence:["Evidence","Preuve"],
   Class:["Class","Classe"],
   Period:["Period","Période"],
+  "Documented examples":["Documented examples","Exemples attestés"],
   Confidence:["Confidence","Confiance"],
   Category:["Category","Catégorie"],
   "Witness / tradition":["Witness / tradition","Témoin / tradition"],
@@ -51,7 +54,8 @@ function customsAtlasPanel(vm){
   let html='<section class="aoCustomsAtlasPanel" aria-label="'+esc(L(language,"Customs Atlas","Atlas des coutumes"))+'">';
   html+='<div class="aoCustomsAtlasHeading"><div><small>'+esc(L(language,"TRADITIONS & PRACTICES","TRADITIONS ET PRATIQUES"))+'</small>'
     +'<h2>'+esc(L(language,"Customs Atlas","Atlas des coutumes"))+'</h2></div>'
-    +'<p>'+esc(L(language,"Explore documented Catholic practices by place, historical description and devotional-calendar context.","Explorer les pratiques catholiques attestées par lieu, période historique et contexte du calendrier dévotionnel."))+'</p></div>';
+    +'<p>'+esc(L(language,"Browse Catholic practices by subject. Places and countries provide documented examples, not exclusive national classifications.","Découvrir les pratiques catholiques par sujet. Les lieux et les pays fournissent des témoignages, sans attribuer chaque coutume à une seule nation."))+'</p></div>';
+  html+='<div class="aoCustomsAtlasTopics">'+atlasSelect("atlasFamily",L(language,"Theme","Thème"),L(language,"All themes","Tous les thèmes"),facets.families,filters.atlasFamily??"ANY")+'</div>';
   const active=(filters.atlasArea&&filters.atlasArea!=="ANY")||(filters.atlasPeriod&&filters.atlasPeriod!=="ANY")||(filters.atlasCalendar&&filters.atlasCalendar!=="ANY");
   html+='<details class="aoCustomsAtlasDiscovery"'+(active?' open':'')+'><summary>'+esc(L(language,"Filter by place, period or calendar context","Filtrer par lieu, période ou calendrier"))+'</summary><div class="aoCustomsAtlasFacets">'
     +atlasSelect("atlasArea",L(language,"Geography","Géographie"),L(language,"All areas","Toutes les régions"),facets.areas,filters.atlasArea??"ANY")
@@ -209,6 +213,18 @@ function detailSheet(vm){
     html+='</div>';
   }
 
+  if(item.kind==="CANONICAL_CUSTOM"&&arr(item.attestation_examples).length){
+    html+='<details class="aoTraditionEvidence"><summary>'+esc(L(vm.language,"Documented examples","Exemples documentés"))+' ('+item.attestation_examples.length+')</summary>';
+    for(const example of item.attestation_examples){
+      html+='<article><strong>'+esc(example.title)+'</strong>';
+      if(example.period)html+='<small>'+esc(example.period)+'</small>';
+      if(example.body)html+='<p>'+esc(example.body)+'</p>';
+      if(example.place_id)html+='<button type="button" data-explore-open-place="'+esc(example.place_id)+'">'+esc(L(vm.language,"View this place","Voir ce lieu"))+'</button>';
+      html+='</article>';
+    }
+    html+='</details>';
+  }
+
   if(arr(item.sections).length){
     html+='<section class="aoFindSchedules aoExploreSections">';
     for(const section of item.sections){
@@ -285,12 +301,15 @@ export function buildExploreViewModel({
   view="list",
   filters={},
   selectedId=null,
+  selectedOverride=null,
   placeProfiles=[],
   selectedPlaceId=null,
+  expandPlace=false,
+  customCards=[],
   displayLimit=120,
 }={}){
   const list=arr(items);
-  const selected=list.find(item=>item?.item_id===selectedId)??null;
+  const selected=list.find(item=>item?.item_id===selectedId)??selectedOverride??null;
   const selectedPlace=arr(placeProfiles).find(profile=>profile?.place_id===selectedPlaceId)??null;
   const mapped=list.filter(item=>item?.map_publishable).length;
   const addressOnly=list.filter(item=>!item?.map_publishable&&item?.address).length;
@@ -306,6 +325,8 @@ export function buildExploreViewModel({
     filters,
     selected,
     selectedPlace,
+    expandPlace:Boolean(expandPlace),
+    customCards:arr(customCards),
     mapped,
     addressOnly,
     displayLimit:Number.isFinite(Number(displayLimit))?Math.max(60,Math.floor(Number(displayLimit))):120,
@@ -313,12 +334,13 @@ export function buildExploreViewModel({
 }
 
 export function renderExploreToString(vm){
+  if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet});
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.counts?.[vm.lens]??vm.items.length);
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
-  html+='<nav class="aoExploreLensTabs">';
+  html+='<nav class="aoExploreLensTabs"><button type="button" data-find-filter="lens" data-find-filter-value="heritage" class="aoExploreReturnMap">'+esc(L(vm.language,"Unified map","Carte générale"))+'</button>';
   for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
     const label=lensLabel(vm.language,lens);
     const count=vm.counts?.[lens];
@@ -343,10 +365,10 @@ export function renderExploreToString(vm){
     +'<a href="https://www.latinmass.com/find-latin-mass" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Mass of the Ages map ↗","Carte Mass of the Ages ↗"))+'</a>'
     +'<a href="https://www.latinmassdir.org/countries/" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Latin Mass Directory ↗","Latin Mass Directory ↗"))+'</a>'
     +'</section>';
-  html+='<nav class="aoFindViewTabs">'+pill("view","list",L(vm.language,"List","Liste"),vm.view)+pill("view","map",L(vm.language,"Map","Carte"),vm.view)+'</nav>';
+  html+='<nav class="aoFindViewTabs">'+pill("view","list",vm.lens==="traditions"?L(vm.language,"Practices","Pratiques"):L(vm.language,"List","Liste"),vm.view)+pill("view","map",vm.lens==="traditions"?L(vm.language,"Attested places","Lieux attestés"):L(vm.language,"Map","Carte"),vm.view)+'</nav>';
   if(vm.lens==="tlm")html+=tlmFilters(vm);
 
-  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,"attestations","attestations"):L(vm.language,"pilgrimages","pèlerinages");
+  const noun=vm.lens==="tlm"?L(vm.language,"venues","lieux"):vm.lens==="shrines"?L(vm.language,"shrines","sanctuaires"):vm.lens==="apparitions"?L(vm.language,"apparition accounts","récits d’apparition"):vm.lens==="relics"?L(vm.language,"relic sites","lieux de reliques"):vm.lens==="traditions"?L(vm.language,vm.view==="list"?"practices":"attestations",vm.view==="list"?"pratiques":"attestations"):L(vm.language,"pilgrimages","pèlerinages");
   html+='<div class="aoFindResultMeta"><strong>'+String(vm.items.length)+'</strong><span>'+esc(noun)+'</span>';
   if(vm.mapped)html+='<span> · '+String(vm.mapped)+' '+esc(L(vm.language,"mapped","cartographiés"))+'</span>';
   if(vm.addressOnly)html+='<span> · '+String(vm.addressOnly)+' '+esc(L(vm.language,"address only","adresse seule"))+'</span>';
