@@ -35,6 +35,15 @@ try{
  assert.equal(nav?.ok,true);
  const hub=page.locator("#ao-learn-modular-root");
  await hub.waitFor({state:"visible"});
+ const doors=hub.locator("[data-ao-learn-family]");
+ assert.equal(await doors.count(),7,"Formation homepage must have seven correctly categorised subject doors");
+ const grid=await doors.evaluateAll(nodes=>nodes.map(x=>{const b=x.getBoundingClientRect();return{x:b.x,y:b.y,w:b.width,h:b.height,id:x.dataset.aoLearnFamily}}));
+ assert.ok(grid[1].x>grid[0].x+30&&Math.abs(grid[1].y-grid[0].y)<3,
+   "320px Formation categories must use compact two-column geometry: "+JSON.stringify(grid.slice(0,2)));
+ assert.ok(grid.every(x=>x.w>=128&&x.h>=120),
+   "320px Formation subject cards are too small: "+JSON.stringify(grid));
+ assert.deepEqual(grid.map(x=>x.id),
+   ["foundations","spiritual-moral","liturgy-tradition","sacraments-life","questions","latin","reference"]);
  const search=hub.locator("[data-ao-learn-discovery-search]");
  async function find(id){
   await search.fill(id);
