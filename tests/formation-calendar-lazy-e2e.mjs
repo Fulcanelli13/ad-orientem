@@ -500,7 +500,11 @@ try{
    await page.waitForFunction(id=>globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,id,{timeout:16000});
    assert.equal(await page.locator("#aoPray435930.open").count(),1,"Canonical Prayer owner was lost to doctrine lookup");
    await page.evaluate(()=>globalThis.AO_GLOSSARY_V1.close(false));
-   assert.equal(await page.evaluate(selector=>document.activeElement?.matches?.(selector)),true,"Prayer Glossary return lost exact trigger");
+   const focusReturn=await page.evaluate(selector=>{
+     const active=document.activeElement,trigger=document.querySelector(selector),gloss=globalThis.AO_GLOSSARY_V1?.status?.();
+     return {match:Boolean(active?.matches?.(selector)),activeTag:active?.tagName,activeId:active?.id||"",activeClass:active?.className?.baseVal||active?.className||"",triggerExists:Boolean(trigger),triggerDisabled:Boolean(trigger?.disabled),triggerConnected:Boolean(trigger?.isConnected),glossOpen:Boolean(gloss?.open),rootClass:document.getElementById("aoPray435930")?.className||""};
+   },selector);
+   assert.equal(focusReturn.match,true,"Prayer Glossary return lost exact trigger: "+JSON.stringify(focusReturn));
  }
  console.log("PASS Confession / Adoration doctrinal glossary in-place, original Prayer surfaces retained");
 
