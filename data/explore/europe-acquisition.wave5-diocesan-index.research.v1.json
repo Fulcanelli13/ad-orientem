@@ -1,0 +1,784 @@
+{
+  "schema": "AO_EXPLORE_EUROPE_DIOCESAN_INDICES_WAVE5_RESEARCH_V1",
+  "as_of": "2026-10-10",
+  "status": "RESEARCH_ONLY_NO_GEO_OR_PUBLICATION",
+  "source_scope": "Five diocesan/shrine-led country registers and additional Nordic pilgrim sources; site identities from own or supervising church/government authorities, not claims of continent-wide exhaustive coverage.",
+  "sources": [
+    {
+      "source_id": "HR-HBK-SANCTUARIES",
+      "url": "https://papa.hbk.hr/index.php?Itemid=321&id=442&option=com_content&view=article",
+      "authority": "CROATIAN_BISHOPS_CONFERENCE",
+      "scope": "Church-operated index of named Croatian sanctuaries; historical page, not live schedules",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "HR-SINJ-2026",
+      "url": "https://www.gospa-sinjska.hr/wp/novosti/program-proslave-svetkovine-velike-gospe-u-svetistu-i-bazilici-cudotvorne-gospe-sinjske/",
+      "authority": "FRANCISCAN_SANCTUARY_CUSTODIAN",
+      "scope": "2026 Assumption procession, novena and pilgrimage at Sinj",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "NL-ROTTERDAM-SITES",
+      "url": "https://bisdomrotterdam.nl/bisdom-rotterdam/bisdombureau-en-bisdom/bedevaartplaatsen",
+      "authority": "ROTTERDAM_CATHOLIC_DIOCESE",
+      "scope": "Ten diocesan pilgrimage-site entries with addresses; some chapels inside churches, others separate",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "NL-BRIELLE-2026",
+      "url": "https://bisdomrotterdam.nl/nieuws/inspiratie-nieuws/nieuw-bedevaartseizoen-in-brielle",
+      "authority": "ROTTERDAM_CATHOLIC_DIOCESE",
+      "scope": "2026 Brielle martyrs national pilgrimage and noveen; not year-independent programme",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "NL-BRIELLE-REMAINS",
+      "url": "https://www.bisdomrotterdam.nl/nieuws/inspiratie-nieuws/fotoverslag-nationale-bedevaart-brielle-hoop-doet-bidden",
+      "authority": "ROTTERDAM_CATHOLIC_DIOCESE",
+      "scope": "Brielle physical martyr field contains reported remnants; not identifiable complete bodies",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "SI-BREZJE-HISTORY",
+      "url": "https://marija.si/en/mary-help-of-christians/the-history-of-the-pilgrimage-route/",
+      "authority": "BREZJE_FRANCISCAN_SHRINE_CUSTODIAN",
+      "scope": "Names historically attested Marian pilgrimage churches in Slovenia; no individual canonical shrine title inferred",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "SM-MARINO-ROUTE",
+      "url": "https://www.visitsanmarino.com/pub2/VisitSM/en/luogo/TURISMO-RELIGIOSO/2%C2%B0-Tappa--Santo-Marino_San-Marino-Citt%C3%A0-%28RSM%29.html",
+      "authority": "SAN_MARINO_OFFICIAL_TOURISM",
+      "scope": "Relics of St Agatha at Sant'Antimo; churches St Francis; source includes historic walking-route context",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "SM-MARINO-BASILICA",
+      "url": "https://visitsanmarino.com/pub2/VisitSM/luogo/Arte-e-cultura/Basilica-del-Santo.html",
+      "authority": "SAN_MARINO_OFFICIAL_TOURISM",
+      "scope": "Church of St Peter is separate adjacent building from Basilica; saint's bed folk traditions reported",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "SM-MARINO-2026",
+      "url": "https://www.visitsanmarino.com/pub2/VisitSM/evento/20260903_Festa_di_San_Marino.html",
+      "authority": "SAN_MARINO_OFFICIAL_TOURISM",
+      "scope": "September 2026 feast, documented relic procession and local civic overlap",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "MT-MELLIEHA",
+      "url": "https://church.mt/doors-of-mercy/the-national-shrine-of-our-lady-of-mellieha/",
+      "authority": "ARCHDIOCESE_OF_MALTA",
+      "scope": "National Shrine of Our Lady of Mellieħa and venerable Marian cave image; Luke authorship is pious legend",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "MT-MELLIEHA-PASTORAL",
+      "url": "https://church.mt/our-lady-leads-us-to-the-true-path-of-wisdom-peace-and-joy-the-archbishop/",
+      "authority": "ARCHDIOCESE_OF_MALTA",
+      "scope": "2025 archbishop historical assessment of Mellieħa image and pilgrimage",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "MT-TALHERBA",
+      "url": "https://church.mt/liberating-us-from-ruin-bishop-galea%E2%80%91curmi/",
+      "authority": "ARCHDIOCESE_OF_MALTA",
+      "scope": "Official sanctuary description for Our Lady of Tal-Ħerba Birkirkara; miraculous discovery story labeled legend",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "MT-ZABBAR",
+      "url": "https://church.mt/churchesplenaryindulgences2025/",
+      "authority": "ARCHDIOCESE_OF_MALTA",
+      "scope": "2025 Jubilee selection explicitly calls Our Lady of Grace in Ħaż-Żabbar a sanctuary",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "NO-PILGRIMAGE-LIST",
+      "url": "https://www.katolsk.no/nyheter/2020/06/ut-pa-helgentur-pilegrimsmal-i-norge",
+      "authority": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "Norwegian site list identifies ancient Hallvard cathedral ruins, Oslo cathedral Olav relic, other historic pilgrimage sites",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "NO-STIKLESTAD-CHAPEL",
+      "url": "https://www.katolsk.no/nyheter/2026/03/kapellet-pa-stiklestad-ny-innvies-av-biskop-erik",
+      "authority": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "Saint Olav Catholic Chapel restored and blessed May 2026, independent of Stiklestad medieval church",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "NO-OLSOK-2026",
+      "url": "https://www.katolsk.no/nyheter/2026/07/olsok-i-trondheim-program-olsokfeiringen-2026",
+      "authority": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "2026 Olsok Stiklestad processions carrying St Olav relic, linked sites distinct",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "SE-VADSTENA-CHURCH",
+      "url": "https://www.katolskakyrkan.se/aktuellt/stiftsnyheter/2022/pilgrimsmassa-firas-av-kardinal-anders-arborelius-den-23-juli-i-vadstena-klosterkyrka-blakyrkan-kl-15",
+      "authority": "SWEDISH_CATHOLIC_CHURCH",
+      "scope": "Catholic St Bridget pilgrimage Mass at old Blåkyrkan, shared ecumenical celebration",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "SE-VADSTENA-CONVENT",
+      "url": "https://katolskakyrkan.se/kyrkan-i-sverige/ordnar-och-kongregationer/kvinnliga-kommuniteter/birgittasystrar-den-medeltida-grenen-vadstena-o-ss-s",
+      "authority": "SWEDISH_CATHOLIC_CHURCH",
+      "scope": "Catholic Pax Mariae convent separate from historic Blåkyrkan",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "DK-OM-SITE",
+      "url": "https://www.katolsk.dk/katolsk-tro-og-liv/valfart",
+      "authority": "DANISH_CATHOLIC_CHURCH",
+      "scope": "Øm current pilgrimage site Ømborgen is not the same as medieval Cistercian Abbey ruins",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    },
+    {
+      "source_id": "DK-OM-2026",
+      "url": "https://www.katolsk.dk/nyhed/valfart-til-vore-frue-af-oem-2026",
+      "authority": "DANISH_CATHOLIC_CHURCH",
+      "scope": "2026 Øm procession and brought St Ansgar relic; visiting relic only",
+      "verification_stage": "SOURCE_TEXT_IDENTIFIED_NEEDS_EDITORIAL_EXTRACT_RECHECK"
+    }
+  ],
+  "site_leads": [
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:aljmas-svetiste-gospe-od-utocista",
+      "country_code": "HR",
+      "name": "Aljmaš — Svetište Gospe od Utočišta",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 1,
+      "site_type": "MARIAN_DIOCESAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:karlovac-dubovac-nacionalno-svetiste-svetog-josipa",
+      "country_code": "HR",
+      "name": "Karlovac Dubovac — Nacionalno svetište svetog Josipa",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 2,
+      "site_type": "NATIONAL_SAINT_JOSEPH_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:krasno-svetiste-majke-bozje-od-krasna",
+      "country_code": "HR",
+      "name": "Krasno — Svetište Majke Božje od Krasna",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 3,
+      "site_type": "MARIAN_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:ludbreg-svetiste-predragocjene-krvi-isusove",
+      "country_code": "HR",
+      "name": "Ludbreg — Svetište Predragocjene Krvi Isusove",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 4,
+      "site_type": "EUCHARISTIC_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:zagreb-remete-svetiste-majke-bozje-remetske",
+      "country_code": "HR",
+      "name": "Zagreb Remete — Svetište Majke Božje Remetske",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 5,
+      "site_type": "MARIAN_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:sinj-svetiste-cudotvorne-gospe-sinjske",
+      "country_code": "HR",
+      "name": "Sinj — Svetište Čudotvorne Gospe Sinjske",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 6,
+      "site_type": "MARIAN_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:solin-prasvetiste-gospe-od-otoka",
+      "country_code": "HR",
+      "name": "Solin — Prasvetište Gospe od Otoka",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 7,
+      "site_type": "MARIAN_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:rijeka-trsat-svetiste-gospe-trsatske",
+      "country_code": "HR",
+      "name": "Rijeka Trsat — Svetište Gospe Trsatske",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 8,
+      "site_type": "MARIAN_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:trski-vrh-svetiste-majke-bozje-jeruzalemske",
+      "country_code": "HR",
+      "name": "Trški Vrh — Svetište Majke Božje Jeruzalemske",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 9,
+      "site_type": "MARIAN_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:makarska-vepric-svetiste-gospe-lurdske",
+      "country_code": "HR",
+      "name": "Makarska Vepric — Svetište Gospe Lurdske",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 10,
+      "site_type": "MARIAN_PILGRIMAGE_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:HR:vocin-svetiste-gospe-vocinske",
+      "country_code": "HR",
+      "name": "Voćin — Svetište Gospe Voćinske",
+      "source_ids": [
+        "HR-HBK-SANCTUARIES"
+      ],
+      "source_entry_index": 11,
+      "site_type": "MARIAN_DIOCESAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:brielle-heiligdom-van-de-hh-martelaren-van-gorcum",
+      "country_code": "NL",
+      "name": "Brielle — Heiligdom van de HH. Martelaren van Gorcum",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 12,
+      "site_type": "CATHOLIC_MARTYR_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:delft-mariakapel-in-maria-van-jessekerk",
+      "country_code": "NL",
+      "name": "Delft — Mariakapel in Maria van Jessekerk",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 13,
+      "site_type": "CHAPEL_INSIDE_EXISTING_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:den-haag-oud-eik-en-duinen-historical-parish-church-ruins",
+      "country_code": "NL",
+      "name": "Den Haag — Oud Eik en Duinen historical parish church ruins",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 14,
+      "site_type": "HISTORICAL_CATHOLIC_SITE_RUINS",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:den-hoorn-hh-antonius-en-cornelius",
+      "country_code": "NL",
+      "name": "Den Hoorn — HH. Antonius en Cornelius",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 15,
+      "site_type": "CATHOLIC_LOCAL_PILGRIMAGE_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:dordrecht-sint-antoniuskerk",
+      "country_code": "NL",
+      "name": "Dordrecht — Sint-Antoniuskerk",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 16,
+      "site_type": "CATHOLIC_LOCAL_PILGRIMAGE_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:haastrecht-sint-barnabaskerk",
+      "country_code": "NL",
+      "name": "Haastrecht — Sint-Barnabaskerk",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 17,
+      "site_type": "CATHOLIC_LOCAL_PILGRIMAGE_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:noordwijk-sint-jeroenskerk",
+      "country_code": "NL",
+      "name": "Noordwijk — Sint-Jeroenskerk",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 18,
+      "site_type": "CATHOLIC_LOCAL_PILGRIMAGE_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:schiedam-basiliek-van-de-h-liduina",
+      "country_code": "NL",
+      "name": "Schiedam — Basiliek van de H. Liduina",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 19,
+      "site_type": "CATHOLIC_SAINT_PILGRIMAGE_BASILICA",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:waddinxveen-kapel-van-onze-lieve-vrouw-in-sint-victorkerk",
+      "country_code": "NL",
+      "name": "Waddinxveen — Kapel van Onze Lieve Vrouw in Sint-Victorkerk",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 20,
+      "site_type": "CHAPEL_INSIDE_EXISTING_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NL:zevenhoven-lourdesgrot-at-johannes-geboortekerk",
+      "country_code": "NL",
+      "name": "Zevenhoven — Lourdesgrot at Johannes Geboortekerk",
+      "source_ids": [
+        "NL-ROTTERDAM-SITES"
+      ],
+      "source_entry_index": 21,
+      "site_type": "DEVOTIONAL_GROTTO_AT_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SI:bled-island-church-of-the-assumption",
+      "country_code": "SI",
+      "name": "Bled Island — Church of the Assumption",
+      "source_ids": [
+        "SI-BREZJE-HISTORY"
+      ],
+      "source_entry_index": 22,
+      "site_type": "HISTORIC_MARIAN_PILGRIMAGE_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SI:ptujska-gora-basilica-of-our-lady-of-mercy",
+      "country_code": "SI",
+      "name": "Ptujska Gora — Basilica of Our Lady of Mercy",
+      "source_ids": [
+        "SI-BREZJE-HISTORY"
+      ],
+      "source_entry_index": 23,
+      "site_type": "MARIAN_PILGRIMAGE_CHURCH_STATUS_PENDING",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SI:sveta-gora-basilica-of-holy-mother-of-god-near-solkan",
+      "country_code": "SI",
+      "name": "Sveta Gora — Basilica of Holy Mother of God near Solkan",
+      "source_ids": [
+        "SI-BREZJE-HISTORY"
+      ],
+      "source_entry_index": 24,
+      "site_type": "MARIAN_PILGRIMAGE_CHURCH_STATUS_PENDING",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SI:lesce-marian-pilgrimage-church",
+      "country_code": "SI",
+      "name": "Lesce — Marian Pilgrimage Church",
+      "source_ids": [
+        "SI-BREZJE-HISTORY"
+      ],
+      "source_entry_index": 25,
+      "site_type": "HISTORIC_MARIAN_PILGRIMAGE_CHURCH_NAME_PENDING",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SM:borgo-maggiore-chiesa-di-sant-antimo",
+      "country_code": "SM",
+      "name": "Borgo Maggiore — Chiesa di Sant'Antimo",
+      "source_ids": [
+        "SM-MARINO-ROUTE"
+      ],
+      "source_entry_index": 26,
+      "site_type": "CATHOLIC_RELIC_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SM:san-marino-citta-chiesa-di-san-pietro",
+      "country_code": "SM",
+      "name": "San Marino Città — Chiesa di San Pietro",
+      "source_ids": [
+        "SM-MARINO-BASILICA"
+      ],
+      "source_entry_index": 27,
+      "site_type": "CATHOLIC_CHURCH_WITH_FOLK_SAINT_TRADITION",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SM:san-marino-citta-chiesa-di-san-francesco",
+      "country_code": "SM",
+      "name": "San Marino Città — Chiesa di San Francesco",
+      "source_ids": [
+        "SM-MARINO-ROUTE"
+      ],
+      "source_entry_index": 28,
+      "site_type": "HISTORIC_CATHOLIC_CHURCH_PILGRIM_STOP",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:MT:mellie-a-national-shrine-of-our-lady",
+      "country_code": "MT",
+      "name": "Mellieħa — National Shrine of Our Lady",
+      "source_ids": [
+        "MT-MELLIEHA"
+      ],
+      "source_entry_index": 29,
+      "site_type": "NATIONAL_MARIAN_SHRINE",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:MT:birkirkara-santwarju-tal-madonna-tal-erba",
+      "country_code": "MT",
+      "name": "Birkirkara — Santwarju tal-Madonna tal-Ħerba",
+      "source_ids": [
+        "MT-TALHERBA"
+      ],
+      "source_entry_index": 30,
+      "site_type": "CATHOLIC_MARIAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:MT:az-zabbar-sanctuary-of-our-lady-of-graces",
+      "country_code": "MT",
+      "name": "Ħaż-Żabbar — Sanctuary of Our Lady of Graces",
+      "source_ids": [
+        "MT-ZABBAR"
+      ],
+      "source_entry_index": 31,
+      "site_type": "CATHOLIC_MARIAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NO:stiklestad-st-olav-catholic-chapel",
+      "country_code": "NO",
+      "name": "Stiklestad — St Olav Catholic Chapel",
+      "source_ids": [
+        "NO-STIKLESTAD-CHAPEL"
+      ],
+      "source_entry_index": 32,
+      "site_type": "CURRENT_CATHOLIC_PILGRIMAGE_CHAPEL",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NO:trondheim-st-olav-catholic-cathedral",
+      "country_code": "NO",
+      "name": "Trondheim — St Olav Catholic Cathedral",
+      "source_ids": [
+        "NO-OLSOK-2026"
+      ],
+      "source_entry_index": 33,
+      "site_type": "CURRENT_CATHOLIC_CATHEDRAL_PILGRIMAGE_HUB",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NO:oslo-st-olav-catholic-cathedral",
+      "country_code": "NO",
+      "name": "Oslo — St Olav Catholic Cathedral",
+      "source_ids": [
+        "NO-PILGRIMAGE-LIST"
+      ],
+      "source_entry_index": 34,
+      "site_type": "CATHOLIC_CATHEDRAL_RELIC_CUSTODIAN_REPORT",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:NO:oslo-ruins-of-medieval-st-hallvard-cathedral",
+      "country_code": "NO",
+      "name": "Oslo — Ruins of Medieval St Hallvard Cathedral",
+      "source_ids": [
+        "NO-PILGRIMAGE-LIST"
+      ],
+      "source_entry_index": 35,
+      "site_type": "HISTORIC_CATHOLIC_PILGRIMAGE_RUINS_NO_PRESENT_RELIC",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SE:vadstena-blakyrkan-medieval-abbey-church",
+      "country_code": "SE",
+      "name": "Vadstena — Blåkyrkan Medieval Abbey Church",
+      "source_ids": [
+        "SE-VADSTENA-CHURCH"
+      ],
+      "source_entry_index": 36,
+      "site_type": "HISTORIC_SHARED_CHURCH_CATHOLIC_PILGRIMAGE",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:SE:vadstena-pax-mariae-catholic-bridgettine-abbey",
+      "country_code": "SE",
+      "name": "Vadstena — Pax Mariae Catholic Bridgettine Abbey",
+      "source_ids": [
+        "SE-VADSTENA-CONVENT"
+      ],
+      "source_entry_index": 37,
+      "site_type": "CURRENT_CATHOLIC_MONASTERY",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W5:PLACE:DK:ry-medieval-m-cistercian-abbey-ruins",
+      "country_code": "DK",
+      "name": "Ry — Medieval Øm Cistercian Abbey Ruins",
+      "source_ids": [
+        "DK-OM-SITE"
+      ],
+      "source_entry_index": 38,
+      "site_type": "HISTORIC_CATHOLIC_ABBEY_RUINS_NOT_CURRENT_OM_PILGRIMAGE_CHAPEL",
+      "canonical_place_id": null,
+      "disposition": "CANDIDATE_EXACT_SITE_RECONCILIATION",
+      "geo": null,
+      "biography": null,
+      "image": null,
+      "publication": "RESEARCH_ONLY"
+    }
+  ],
+  "associations": [],
+  "review_rules": [
+    "Do not automatically publish individual sites in a map; a church and its embedded chapel/grotto may share a physical building but remain distinct canonical subsite identities.",
+    "Croatian Bishops' Conference historic index names sites; contemporary ownership, dates, addresses and exact coordinates require later checks.",
+    "The Rotterdam Diocese explicitly classifies these as diocesan pilgrimage locations, NOT ten nationally designated shrines.",
+    "Some historical ruins (e.g. Saint Hallvard, Øm Abbey) differ from current Catholic-owned places; do not mislabel current confession.",
+    "Sweden's Blåkyrkan historical church is not the Catholic Pax Mariae convent; preserve ownership distinction.",
+    "Church of Sant'Antimo in San Marino has relics of St Agatha reportedly held there, while the Basilica holds founder Marinus relics; do not combine objects.",
+    "Mellieħa St Luke authorship is traditional legend, not a certified historical painting provenance.",
+    "Dates and programmes in 2025 and 2026 sources are not future schedules.",
+    "No geographic pins, biographies, source-media reuse or copyright-unlicensed images from this research file."
+  ],
+  "counts": {
+    "source_records": 20,
+    "site_candidates": 38,
+    "by_country": {
+      "DK": 1,
+      "HR": 11,
+      "MT": 3,
+      "NL": 10,
+      "NO": 4,
+      "SE": 2,
+      "SI": 4,
+      "SM": 3
+    }
+  }
+}
