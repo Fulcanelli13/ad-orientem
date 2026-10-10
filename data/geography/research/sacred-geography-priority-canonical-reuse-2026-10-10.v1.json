@@ -1,0 +1,307 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_PRIORITY_CANONICAL_REUSE_V1",
+  "as_of": "2026-10-10",
+  "source_crosswalk": "data/geography/research/sacred-geography-curated-750-site-crosswalk-2026-10-10.v1.1.json",
+  "canonical_owner": "data/geography/seed-registry.v1.json",
+  "counts": {
+    "major_candidate_links": 20,
+    "existing_pins_minted": 0,
+    "new_canonical_places": 0,
+    "existing_map_geometries_changed": 0
+  },
+  "reconciled_major_sites": [
+    {
+      "candidate_id": "SG-INV-0001",
+      "existing_canonical_place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "editorial_label": "Sanctuary of Our Lady of Lourdes",
+      "official_canonical_name": "Sanctuaire Notre-Dame de Lourdes",
+      "site_coordinate_existing": {
+        "lat": 43.09738,
+        "lng": -0.05875,
+        "source_url": "https://www.openstreetmap.org/node/4958231645"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0002",
+      "existing_canonical_place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "editorial_label": "Sanctuary of Our Lady of La Salette",
+      "official_canonical_name": "Sanctuaire Notre-Dame de La Salette",
+      "site_coordinate_existing": {
+        "lat": 44.85887,
+        "lng": 5.9786,
+        "source_url": "https://mapcarta.com/W239191922"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0076",
+      "existing_canonical_place_id": "place:IT:basilica-san-francesco-assisi",
+      "editorial_label": "Basilica of Saint Francis of Assisi",
+      "official_canonical_name": "Basilica di San Francesco d'Assisi",
+      "site_coordinate_existing": {
+        "lat": 43.07485,
+        "lng": 12.60581,
+        "source_url": "https://mapcarta.com/W34357303"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0080",
+      "existing_canonical_place_id": "place:IT:santuario-san-pio-rotondo",
+      "editorial_label": "Sanctuary of Saint Pio of Pietrelcina, San Giovanni Rotondo",
+      "official_canonical_name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+      "site_coordinate_existing": {
+        "lat": 41.70703,
+        "lng": 15.70312,
+        "source_url": "https://mapcarta.com/W405757483"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0121",
+      "existing_canonical_place_id": "place:ES:santiago-compostela-cathedral",
+      "editorial_label": "Cathedral of Santiago de Compostela",
+      "official_canonical_name": "Catedral de Santiago de Compostela",
+      "site_coordinate_existing": {
+        "lat": 42.88064,
+        "lng": -8.5445,
+        "source_url": "https://mapcarta.com/25251226"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0145",
+      "existing_canonical_place_id": "place:PT:fatima-sanctuary",
+      "editorial_label": "Sanctuary of Our Lady of Fátima",
+      "official_canonical_name": "Santuário de Nossa Senhora do Rosário de Fátima",
+      "site_coordinate_existing": {
+        "lat": 39.63112778,
+        "lng": -8.67318611,
+        "source_url": "https://www.santuario-fatima.pt/pt/pages/indicacoes-para-a-peregrinacao-a-pe"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0183",
+      "existing_canonical_place_id": "place:AT:mariazell-basilica",
+      "editorial_label": "Basilica of Mariazell",
+      "official_canonical_name": "Basilika Mariazell",
+      "site_coordinate_existing": {
+        "lat": 47.7728,
+        "lng": 15.31887,
+        "source_url": "https://mapcarta.com/de/26228562"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0199",
+      "existing_canonical_place_id": "place:PL:jasna-gora",
+      "editorial_label": "Jasna Góra Monastery and Shrine of Our Lady of Częstochowa",
+      "official_canonical_name": "Jasna Góra",
+      "site_coordinate_existing": {
+        "lat": 50.81238,
+        "lng": 19.09759,
+        "source_url": "https://mapcarta.com/fr/W208061805"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0235",
+      "existing_canonical_place_id": "place:IE:knock-shrine",
+      "editorial_label": "Shrine of Our Lady of Knock",
+      "official_canonical_name": "Knock Shrine",
+      "site_coordinate_existing": {
+        "lat": 53.79087,
+        "lng": -8.91819,
+        "source_url": "https://mapcarta.com/W191789187"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0247",
+      "existing_canonical_place_id": "place:GB:walsingham-catholic-shrine",
+      "editorial_label": "National Shrine of Our Lady of Walsingham (Catholic)",
+      "official_canonical_name": "Catholic National Shrine and Basilica of Our Lady, Walsingham",
+      "site_coordinate_existing": {
+        "lat": 52.8811,
+        "lng": 0.8533,
+        "source_url": "https://www.britishpilgrimage.org/places/shrine-of-our-lady-of-walsingham-little-walsingham"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0372",
+      "existing_canonical_place_id": "place:VA:saint-peter-vatican",
+      "editorial_label": "Saint Peter's Basilica and Tomb of the Apostle Peter",
+      "official_canonical_name": "St Peter's Basilica — Vatican",
+      "site_coordinate_existing": {
+        "lat": 41.90216,
+        "lng": 12.45371,
+        "source_url": "https://mapcarta.com/24884214"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0376",
+      "existing_canonical_place_id": "place:US:guadalupe-shrine-la-crosse",
+      "editorial_label": "Shrine of Our Lady of Guadalupe, La Crosse",
+      "official_canonical_name": "Shrine of Our Lady of Guadalupe",
+      "site_coordinate_existing": {
+        "lat": 43.75291,
+        "lng": -91.18085,
+        "source_url": "https://mapcarta.com/W817339969"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0382",
+      "existing_canonical_place_id": "place:US:czestochowa-doylestown",
+      "editorial_label": "National Shrine of Our Lady of Czestochowa, Doylestown",
+      "official_canonical_name": "National Shrine of Our Lady of Czestochowa",
+      "site_coordinate_existing": {
+        "lat": 40.31919,
+        "lng": -75.17954,
+        "source_url": "https://mapcarta.com/W801656585"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0426",
+      "existing_canonical_place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "editorial_label": "Basilica of Our Lady of Guadalupe, Mexico City",
+      "official_canonical_name": "Insigne y Nacional Basílica de Santa María de Guadalupe",
+      "site_coordinate_existing": {
+        "lat": 19.4844,
+        "lng": -99.1168,
+        "source_url": "https://www.sacred-destinations.com/mexico/mexico-city-basilica-guadalupe"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Prior research GeoJSON described the NEW Guadalupe basilica, but existing canonical site coordinates may be on a different structure in the same complex. Review current point against current basilica before accepting building-level precision"
+    },
+    {
+      "candidate_id": "SG-INV-0476",
+      "existing_canonical_place_id": "place:BR:aparecida-national-shrine",
+      "editorial_label": "National Shrine of Our Lady of Aparecida",
+      "official_canonical_name": "Santuário Nacional de Nossa Senhora Aparecida",
+      "site_coordinate_existing": {
+        "lat": -22.84972,
+        "lng": -45.233932,
+        "source_url": "https://www.latlong.net/place/basilica-of-the-national-shrine-of-our-lady-of-aparecida-aparecida-sp-brazil-20335.html"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0544",
+      "existing_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+      "editorial_label": "Church of the Holy Sepulchre, Jerusalem",
+      "official_canonical_name": "Church of the Holy Sepulchre — shared Christian sanctuary",
+      "site_coordinate_existing": {
+        "lat": 31.778333,
+        "lng": 35.229722,
+        "source_url": "https://www.wikidata.org/wiki/Q187702"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Curated country label differs from canonical geographic region; same physical sanctuary, no change to political boundaries intended"
+    },
+    {
+      "candidate_id": "SG-INV-0566",
+      "existing_canonical_place_id": "place:PS:nativity-bethlehem",
+      "editorial_label": "Church of the Nativity, Bethlehem",
+      "official_canonical_name": "Church of the Nativity — shared Christian sanctuary",
+      "site_coordinate_existing": {
+        "lat": 31.704306,
+        "lng": 35.207583,
+        "source_url": "https://www.wikidata.org/wiki/Q194504"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Curated country label differs from canonical geographic region; same physical sanctuary, no change to political boundaries intended"
+    },
+    {
+      "candidate_id": "SG-INV-0708",
+      "existing_canonical_place_id": "place:RW:sanctuaire-kibeho",
+      "editorial_label": "Sanctuary of Our Lady of Kibeho",
+      "official_canonical_name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
+      "site_coordinate_existing": {
+        "lat": -2.648889,
+        "lng": 29.553333,
+        "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_marial_de_Kibeho"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0710",
+      "existing_canonical_place_id": "place:UG:namugongo-martyrs",
+      "editorial_label": "Uganda Martyrs' Catholic Shrine, Namugongo",
+      "official_canonical_name": "Uganda Martyrs Catholic Shrine, Namugongo",
+      "site_coordinate_existing": {
+        "lat": 0.38728,
+        "lng": 32.65246,
+        "source_url": "https://mapcarta.com/W1249579321"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    },
+    {
+      "candidate_id": "SG-INV-0746",
+      "existing_canonical_place_id": "place:NZ:st-peter-chanel-russell",
+      "editorial_label": "Saint Peter Chanel Memorial, Russell",
+      "official_canonical_name": "National Catholic Shrine of St Peter Chanel",
+      "site_coordinate_existing": {
+        "lat": -35.262172,
+        "lng": 174.123766,
+        "source_url": "https://schoolfinder.nz/northland-region/whangarei-office/russell-school-bay-of-islands/"
+      },
+      "disposition": "REUSE_PUBLISHED_PLACE_DO_NOT_MINT_PIN",
+      "review_notes": "Name/identity reconciled by specific dedication and locality, not by token similarity alone"
+    }
+  ],
+  "separate_building_and_subsite_holds": [
+    {
+      "candidate_id": "SG-INV-0248",
+      "name": "Anglican Shrine of Our Lady of Walsingham",
+      "decision": "KEEP_DISTINCT_NON_CATHOLIC_RELIGIOUS_BUILDING",
+      "reason": "Anglican shrine must not be merged into the Catholic Walsingham canonical place or presented as a Catholic-operated shrine"
+    },
+    {
+      "candidate_id": "SG-INV-0668",
+      "name": "National Shrine of Our Lady of La Vang",
+      "decision": "HOLD_CURRENT_COMPLEX_GEO_REVIEW",
+      "reason": "Map sources include destroyed earlier chapel; current campus has distinct structures"
+    },
+    {
+      "candidate_id": "SG-INV-0673",
+      "name": "Shrine of Vietnamese Martyrs, La Vang",
+      "decision": "HOLD_SUBSITE_CLAIM",
+      "reason": "Do not create second pin for unverified distinct building"
+    },
+    {
+      "candidate_id": "SG-INV-0560",
+      "name": "Church of St Peter, Capernaum",
+      "decision": "SITE_COORDINATE_RESEARCH_REQUIRES_BUILDING_VERIFICATION",
+      "reason": "Ruins of house of Peter and modern elevated octagonal church occupy complex; source coordinate may refer to ensemble"
+    }
+  ],
+  "governance": [
+    "No new production Place IDs or pins for existing physical sites",
+    "Political/country labels do not define physical identity or adjudicate sovereignty",
+    "Special attention to modern versus historic Guadalupe basilicas",
+    "Anglican Walsingham is not the Catholic National Shrine"
+  ],
+  "status": "RESEARCH_ONLY"
+}
