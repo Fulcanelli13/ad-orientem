@@ -22,10 +22,16 @@ export function gloriaCredoPhase(cueId){
 export function gloriaCredoSittingCue(cueId){
   const n=num(cueId),phase=gloriaCredoPhase(cueId);
   if(!phase)return false;
-  // When the priest uses the sedilia, the Schola begins after his
-  // intonation. Rise is displayed at the closing doxology/Et vitam.
-  // These are user-adjustable guide boundaries, not exact priest timestamps.
-  return phase==="GLORIA" ? n>=55&&n<68 : n>=90&&n<104;
+  // Faithful custom recorded for this local celebration, not a
+  // universally fixed 1962 rubrical timestamp:
+  // Gloria: priest sits at "Qui sedes ad dexteram Patris" and rises
+  // at "Cum Sancto Spiritu", just before the concluding Amen.
+  // Credo: remain standing/genuflect at the Incarnatus; sit at the
+  // first paragraph after the kneeling passage (Crucifixus), or at the
+  // following paragraph if selected locally; rise at "Et vitam".
+  return phase==="GLORIA"
+    ? n>=65&&n<68
+    : n>=97&&n<104;
 }
 export function projectGloriaCredoFaithfulCue({
   cueId,form="SUNG",preferences={},sourcedPosture=null,incarnatusAction="GENUFLECT",
@@ -37,7 +43,11 @@ export function projectGloriaCredoFaithfulCue({
   const fixed=sourcedPosture?.fixed===true;
   const follow=preferences.followPriestSeating!==false && sung &&
     preferences.postureProfile!=="MY_LOCAL";
-  const defaultPosture=follow&&gloriaCredoSittingCue(cueId)?"SIT":sourceValue;
+  const credoSitStart=preferences.credoSitStart==="AO.SM.C0098"?98:97;
+  const customSitting=phase==="CREDO"
+    ? num(cueId)>=credoSitStart&&num(cueId)<104
+    : gloriaCredoSittingCue(cueId);
+  const defaultPosture=follow&&customSitting?"SIT":sourceValue;
   const local=preferences.localPostures??{};
   let saved=null;
   const key=String(cueId??"");
@@ -75,9 +85,9 @@ export function projectGloriaCredoFaithfulCue({
     gesture,gestureIconKey:gestureKey,
     savedPosture:saved,savedGesture:gestureSetting,
     source:"GLORIA_CREDO_CUSTOMARY_DISPLAY",
-    conditionalSedilia:follow && gloriaCredoSittingCue(key),
+    conditionalSedilia:follow && customSitting,
     priestStateWitness:follow
-      ? GLORIA_CREDO_SEDILIA_WITNESSES[phase][gloriaCredoSittingCue(key)?"sit":"rise"]
+      ? GLORIA_CREDO_SEDILIA_WITNESSES[phase][customSitting?"sit":"rise"]
       : null,
     gestureOwner:gesture?.owner??"NO_FAITHFUL_GESTURE",
     fixedSourcePosture:fixed,
