@@ -228,8 +228,18 @@ try{
           const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
           return {id:c?.id,sectionId:c?.sectionId,sourceSectionId:c?.sourceSectionId,title:c?.title};
         });
+        const direct=await page.evaluate(()=>{
+          try{
+            const value=globalThis.AO_R17_NATIVE_READER_PREVIEW?.next?.();
+            const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+            return {resultId:value?.id??value?.sectionId??null,
+              card:{id:c?.id,sectionId:c?.sectionId,sourceSectionId:c?.sourceSectionId,title:c?.title}};
+          }catch(e){return {error:String(e?.stack??e)}}
+        });
         throw new Error("ROGATION_NAV_EXPECTED_"+sectionId+" got "+
-          JSON.stringify(card)+" after "+JSON.stringify(visited)+"; "+
+          JSON.stringify(card)+" after "+JSON.stringify(visited)+
+          " browserErrors="+JSON.stringify(errors)+
+          " directNext="+JSON.stringify(direct)+"; "+
           String(error?.message??error));
       }
       visited.push(sectionId);
