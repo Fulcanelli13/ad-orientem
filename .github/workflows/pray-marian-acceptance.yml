@@ -8,6 +8,11 @@ on:
       - "tests/pray-all-modules-mobile.mjs"
       - ".github/workflows/pray-marian-acceptance.yml"
   workflow_dispatch:
+# Cancel obsolete revisions of the same pull request; never cancel manual or main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   marian-mobile:
     runs-on: ubuntu-latest
