@@ -6,7 +6,7 @@ import {CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/sources.js";
 import {cseSourceTargets} from "../src/learn/sexual-ethics-data/source-targets.js";
 import {CSE_HIGH_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-high24.js";
 import {CSE_REMAINING_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-remaining31.js";
-import {paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
+import {paragraphRefsFor,CSE_DEBATE_POSITION_REFS} from "../src/learn/sexual-ethics-data/provenance.js";
 
 const report=JSON.parse(readFileSync("data/learn/sexual-ethics-certification-audit.v1.json","utf8"));
 const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-audit.v1.json","utf8"));
@@ -62,7 +62,10 @@ assert.equal(refs,636);
 for(const id of ["CSE008","CSE010","CSE145"]){
   const q=report.cases.find(x=>x.id===id);
   assert.equal(q.editorial_status,"ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED");
-  assert.ok(sources[id].opposition.includes("FLETCHER_EXCERPTS"));
+  assert.ok(CSE_DEBATE_POSITION_REFS[id].some(([sourceId])=>sourceId==="FLETCHER_EXCERPTS"),
+    "Historical original excerpts remain documented despite later source-selection changes");
+  if(id==="CSE008"||id==="CSE010")assert.deepEqual(sources[id].opposition,["FLETCHER1966"],
+    id+" selects uncollated original-book text with explicit renderer caveat");
 }
 assert.deepEqual(sources.CSE123.opposition,["ACOG_ABORTION","SINGER_KUHSE1990"]);
 assert.equal(sources.CSE012.counter[0],"CURRAN_CDF1986");
