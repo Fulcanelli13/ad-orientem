@@ -1,0 +1,747 @@
+{
+  "schema": "AO_EXPLORE_EUROPE_WAVE6_EPARCHY_SANCTUARY_ACQUISITION_V1",
+  "as_of": "2026-10-10",
+  "status": "RESEARCH_ONLY_NO_LIVE_PLACE_CREATION",
+  "scope": "Country depth across Latin, Romanian Byzantine, Slovak Byzantine, Ukrainian Byzantine and historical Catholic pilgrim sites. This is source-based discovery and not a complete European registry.",
+  "source_register": [
+    {
+      "source_id": "RO-RADNA-VAT",
+      "url": "https://www.vatican.va/content/john-paul-ii/la/apost_letters/1992/documents/hf_jp-ii_apl_19920828_est-in-dioecesi-timisoarensi.html",
+      "authority": "HOLY_SEE_APOSTOLIC_LETTER",
+      "scope": "1992 papal minor basilica decree for Maria Radna",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "RO-ONE-CAP",
+      "url": "https://ofmcapucini.ro/convente_onesti",
+      "authority": "ROMANIAN_CAPUCHIN_CUSTODIAN",
+      "scope": "Capuchin convent and Beato Ieremia shrine crypt houses blessed man's remains",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "RO-SCAIUS",
+      "url": "https://ercis.ro/stiri/scaius-ps-petru-gherghel-la-sfintirea-noii-biserici-sanctuar-eparhial-201409130",
+      "authority": "ROMAN_CATHOLIC_DIOCESE_REPORTING_GREEK_CATHOLIC_EPARCHY",
+      "scope": "2014 newly dedicated Romanian Greek Catholic Eparchial Marian sanctuary, not the preceding chapel",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "RO-CSIK",
+      "url": "https://romkat.ro/2026/05/20/timar-sandor-asztrik-sokat-jelent-ha-a-hivek-fegyelmezetten-imadkozva-es-enekelve-vesznek-reszt-a-csiksomlyoi-zarandoklaton/",
+      "authority": "TRANSYLVANIAN_CATHOLIC_NEWS_FRANCISCAN_SHRINE_DIRECTOR",
+      "scope": "2026 Csíksomlyó Pentecost pilgrimage; already represented as wave1 site, crosslink only",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-MARIANKA",
+      "url": "https://slovakia.travel/en/marianka",
+      "authority": "SLOVAK_NATIONAL_TOURISM",
+      "scope": "Marianka Marian pilgrimage shrine, site name and historically attested pilgrimage",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-PRESOV",
+      "url": "https://www.grkatpo.sk/putnicke-miesta/",
+      "authority": "PRESOV_GREEK_CATHOLIC_ARCHIEPARCHY",
+      "scope": "Primary archieparchy regional index of named Byzantine Catholic pilgrimage places",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-LUTINA",
+      "url": "https://www.grkatpo.sk/putnicke-miesta/lutina/",
+      "authority": "PRESOV_GREEK_CATHOLIC_ARCHIEPARCHY",
+      "scope": "Lutina Byzantine Catholic Marian pilgrimage and reported 1851 St Nicholas experience",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-BUKOVA",
+      "url": "https://www.grkatpo.sk/putnicke-miesta/bukova-horka/",
+      "authority": "PRESOV_GREEK_CATHOLIC_ARCHIEPARCHY",
+      "scope": "Buková Hôrka complex with church of Exaltation and separate Transfiguration chapel",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-KRASNY",
+      "url": "https://www.grkatpo.sk/putnicke-miesta/krasny-brod/",
+      "authority": "PRESOV_GREEK_CATHOLIC_ARCHIEPARCHY",
+      "scope": "Old destroyed monastery vs new Basilian monastery, pilgrim icon, historical healing tradition",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-RAFAJOVCE",
+      "url": "https://www.grkatpo.sk/putnicke-miesta/rafajovce/",
+      "authority": "PRESOV_GREEK_CATHOLIC_ARCHIEPARCHY",
+      "scope": "Rafajovce eparchial pilgrim icon and historical icon legend",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-LITMANOVA",
+      "url": "https://www.grkatpo.sk/putnicke-miesta/litmanova/",
+      "authority": "PRESOV_GREEK_CATHOLIC_ARCHIEPARCHY",
+      "scope": "Litmanová Mount Zvir devotional place distinct from village parish; reported 1990-95 visions",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-DDF-LIT",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250704_lettera-esperienza-litmanova_fr.html",
+      "authority": "VATICAN_DDF_PRIMARY_DECISION",
+      "scope": "2025 nihil obstat to pilgrimage/devotion is not authenticity finding of reported apparitions",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-KLOKOCOV",
+      "url": "https://www.grkat.sk/bula-rs/",
+      "authority": "SLOVAK_GREEK_CATHOLIC_METROPOLITAN_CHURCH",
+      "scope": "1667/1670 weeping icon historical narrative at Klokočov; ecclesial account not scientific authentication",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-LEVOCAPARISH",
+      "url": "https://www.farnostlevoca.sk/marianska-hora/",
+      "authority": "LEVOCa_ROMAN_CATHOLIC_PARISH",
+      "scope": "Mariánska hora basilica already named in European wave1; source enrichment and pilgrimage association",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SK-SUMMER",
+      "url": "https://www.grkat.sk/prehlad-letnych-odpustovych-slavnosti/",
+      "authority": "SLOVAK_GREEK_CATHOLIC_METROPOLITAN_CHURCH",
+      "scope": "July 2026 eparchial pilgrim list; dates historical",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SE-OSKAR",
+      "url": "https://www.katolskakyrkan.se/aktuellt/vallfarder/2026/rosenkransvallfard-till-oskarstrom",
+      "authority": "SWEDISH_CATHOLIC_DIOCESE",
+      "scope": "May 2026 annual rosary pilgrimage to St Maria Church Oskarström",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SE-MARIAVALL",
+      "url": "https://www.mariavall.se/",
+      "authority": "SWEDISH_BENEDICTINE_ABBEY_CUSTODIAN",
+      "scope": "Mariavall convent records annual Benedictine pilgrimage",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "SE-SANKTOLOF",
+      "url": "https://www.svenskakyrkan.se/simrishamn/pilgrim",
+      "authority": "SWEDISH_LUTHERAN_PARISH",
+      "scope": "2026 ecumenical pilgrimage from Mariavall to historic Sankt Olof Church; present non-Catholic custodian",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "FI-HATTULA",
+      "url": "https://katolinen.fi/en/practical-matters/",
+      "authority": "FINLAND_CATHOLIC_DIOCESE",
+      "scope": "Diocesan Holy Cross pilgrimage to historic Hattula church and veneration of a True Cross relic (reported)",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "FI-TURKU",
+      "url": "https://katolinen.fi/en/practical-matters/",
+      "authority": "FINLAND_CATHOLIC_DIOCESE",
+      "scope": "Historic 1300 translation of St Henry relics to Turku Cathedral; current Lutheran cathedral",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "EE-CROSS-2026",
+      "url": "https://parnu.katoliku.ee/kutse-osaleda-puha-risti-palverannaku-jalgsiraja-koostamisel-17-20-08-2026/",
+      "authority": "ESTONIAN_ROMAN_CATHOLIC_PARISH_PÄRNU",
+      "scope": "2026 Pärnu-Vastseliina pilgrim route reconnaissance names Vanamõisa and Rõngu Holy Cross chapel remains",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "EE-CROSS-2025",
+      "url": "https://parnu.katoliku.ee/meenutused-puha-risti-palverannaku-jalgsiretkelt/",
+      "authority": "ESTONIAN_ROMAN_CATHOLIC_PARISH_PÄRNU",
+      "scope": "Historical vanished Pärnu black cross and Vanamõisa pilgrim tradition; no extant True Cross object inferred",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "LU-ECH-ARCH",
+      "url": "https://cathol.lu/fr/news-fr-1/echternach-springprozession",
+      "authority": "LUXEMBOURG_CATHOLIC_ARCHDIOCESE",
+      "scope": "2026 Echternach procession and pilgrimages, already live canonical Place",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "LU-ECH-RELIC",
+      "url": "https://web.cathol.lu/2/mouvements/oeuvre-saint-willibrord/oeuvre-saint-willibrord/basilique/la-basilique-d-echternach",
+      "authority": "SAINT_WILLIBRORD_CUSTODIAN",
+      "scope": "Saint Willibrord tomb, relic chapel, hairshirt fragments inside existing Echternach basilica",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "LU-ECH-TRAD",
+      "url": "https://web.cathol.lu/2/mouvements/oeuvre-saint-willibrord/oeuvre-saint-willibrord/procession-dansante/le-sens-de-la-procession-dansante-d-echternach-et-sa-sauvegarde-precisions-utiles",
+      "authority": "SAINT_WILLIBRORD_PILGRIMAGE_ORGANIZATION",
+      "scope": "Local Pentecost Tuesday dancing procession, distinguish from stereotype three forward two backward",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "UA-SOKAL",
+      "url": "https://ugcc.ua/en/eparchies/eparchy-of-sokal-zhovkva-17/",
+      "authority": "UKRAINIAN_GREEK_CATHOLIC_EPARCHY_SOKAL_ZHOVKVA",
+      "scope": "Eparchy-specific named icon shrines and Saint Parthemius and Blessed Josaphata relic custody",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "UA-IVANO",
+      "url": "https://pdf.ugcc.ua/en/eparchies/archeparchy-of-ivano-frankivsk-16/",
+      "authority": "UKRAINIAN_GREEK_CATHOLIC_ARCHEPARCHY_IVANO_FRANKIVSK",
+      "scope": "Named Hoshiv, Pohonya, Krylos and other icon sanctuaries",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "UA-TERNOPIL",
+      "url": "https://ugcc.ua/en/eparchies/archeparchy-of-ternopil-zboriv-11/",
+      "authority": "UKRAINIAN_GREEK_CATHOLIC_ARCHEPARCHY_TERNOPIL_ZBORIV",
+      "scope": "Zarvanytsia center and separate named icon/relic sites; prior wave1 place identity preserved",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "UA-HOSHIV",
+      "url": "https://archives.ugcc.ua/en/news/the_miraculous_mother_of_god_icon_will_be_crowned_in_hoshiv_56595.html",
+      "authority": "UKRAINIAN_GREEK_CATHOLIC_CHURCH",
+      "scope": "2009 crowning of Hoshiv icon, dated historic event not future 2026 event",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "UA-ZARV-2026",
+      "url": "https://ugcc.ua/en/data/address-by-the-head-of-the-ugcc-for-the-230th-week-of-the-full-scale-war-july-12-2026-2358/",
+      "authority": "UGCC_MAJOR_ARCHBISHOP_STATEMENT",
+      "scope": "2026 national pilgrimage at existing Zarvanytsia site, no duplicate identity",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    },
+    {
+      "source_id": "UA-ZARV-CUST",
+      "url": "https://ugcc.ua/en/eparchies/archeparchy-of-ternopil-zboriv-11/",
+      "authority": "UKRAINIAN_GREEK_CATHOLIC_ARCHEPARCHY_TERNOPIL_ZBORIV",
+      "scope": "Distinguish parish church of Holy Trinity, Studite monastery and general Marian complex",
+      "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
+    }
+  ],
+  "site_leads": [
+    {
+      "research_id": "EUROPE:W6:PLACE:RO:maria-radna-basilica-minor-of-the-blessed-virgin",
+      "country_code": "RO",
+      "name": "Maria Radna — Basilica Minor of the Blessed Virgin",
+      "site_kind": "LATIN_CATHOLIC_BASILICA_PILGRIMAGE",
+      "source_ids": [
+        "RO-RADNA-VAT"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:RO:onesti-sanctuary-of-blessed-jeremiah-valahul",
+      "country_code": "RO",
+      "name": "Onești — Sanctuary of Blessed Jeremiah Valahul",
+      "site_kind": "LATIN_CATHOLIC_CAPUCHIN_RELIC_SANCTUARY",
+      "source_ids": [
+        "RO-ONE-CAP"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:RO:scaius-eparchial-marian-sanctuary-of-our-protecting-lady",
+      "country_code": "RO",
+      "name": "Scăiuș — Eparchial Marian Sanctuary of Our Protecting Lady",
+      "site_kind": "ROMANIAN_GREEK_CATHOLIC_EPARCHIAL_SANCTUARY",
+      "source_ids": [
+        "RO-SCAIUS"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:marianka-marian-pilgrimage-church",
+      "country_code": "SK",
+      "name": "Marianka — Marian Pilgrimage Church",
+      "site_kind": "LATIN_CATHOLIC_MARIAN_PILGRIMAGE",
+      "source_ids": [
+        "SK-MARIANKA"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:lutina-greek-catholic-basilica-of-the-dormition",
+      "country_code": "SK",
+      "name": "Ľutina — Greek-Catholic Basilica of the Dormition",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_MARIAN_BASILICA",
+      "source_ids": [
+        "SK-LUTINA"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:bukova-horka-church-of-the-exaltation-of-the-holy-cross",
+      "country_code": "SK",
+      "name": "Buková Hôrka — Church of the Exaltation of the Holy Cross",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_PILGRIMAGE_COMPLEX",
+      "source_ids": [
+        "SK-BUKOVA"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:krasny-brod-basilian-pilgrimage-monastery",
+      "country_code": "SK",
+      "name": "Krásny Brod — Basilian Pilgrimage Monastery",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_BASILIAN_PILGRIMAGE",
+      "source_ids": [
+        "SK-KRASNY"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:circ-greek-catholic-marian-pilgrimage-site",
+      "country_code": "SK",
+      "name": "Čirč — Greek-Catholic Marian Pilgrimage Site",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_PILGRIMAGE_SITE_EXACT_BUILDING_PENDING",
+      "source_ids": [
+        "SK-PRESOV"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": true,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:rafajovce-marian-pilgrimage-church",
+      "country_code": "SK",
+      "name": "Rafajovce — Marian Pilgrimage Church",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_ICON_SHRINE",
+      "source_ids": [
+        "SK-RAFAJOVCE"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:sasova-greek-catholic-marian-pilgrimage-site",
+      "country_code": "SK",
+      "name": "Šašová — Greek-Catholic Marian Pilgrimage Site",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_PILGRIMAGE_SITE_EXACT_BUILDING_PENDING",
+      "source_ids": [
+        "SK-PRESOV"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": true,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:klokocov-greek-catholic-marian-icon-sanctuary",
+      "country_code": "SK",
+      "name": "Klokočov — Greek-Catholic Marian Icon Sanctuary",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_MARIAN_ICON_SHRINE",
+      "source_ids": [
+        "SK-KLOKOCOV"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SK:litmanova-mount-zvir-greek-catholic-marian-sanctuary",
+      "country_code": "SK",
+      "name": "Litmanová Mount Zvir — Greek-Catholic Marian Sanctuary",
+      "site_kind": "SLOVAK_GREEK_CATHOLIC_APPARITION_ASSOCIATED_PILGRIMAGE",
+      "source_ids": [
+        "SK-LITMANOVA"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SE:oskarstrom-s-ta-maria-catholic-church",
+      "country_code": "SE",
+      "name": "Oskarström — S:ta Maria Catholic Church",
+      "site_kind": "LATIN_CATHOLIC_ROSARY_PILGRIMAGE_CHURCH",
+      "source_ids": [
+        "SE-OSKAR"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SE:mariavall-abbey-of-the-mother-of-jesus",
+      "country_code": "SE",
+      "name": "Mariavall — Abbey of the Mother of Jesus",
+      "site_kind": "LATIN_CATHOLIC_BENEDICTINE_PILGRIMAGE_ABBEY",
+      "source_ids": [
+        "SE-MARIAVALL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:SE:sankt-olof-medieval-pilgrimage-church",
+      "country_code": "SE",
+      "name": "Sankt Olof — Medieval Pilgrimage Church",
+      "site_kind": "HISTORIC_CATHOLIC_PRESENT_CHURCH_OF_SWEDEN",
+      "source_ids": [
+        "SE-SANKTOLOF"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:FI:hattula-medieval-holy-cross-church",
+      "country_code": "FI",
+      "name": "Hattula — Medieval Holy Cross Church",
+      "site_kind": "HISTORIC_CATHOLIC_PRESENT_LUTHERAN_PILGRIMAGE",
+      "source_ids": [
+        "FI-HATTULA"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:FI:turku-medieval-cathedral-of-saint-henry-s-relic-translation",
+      "country_code": "FI",
+      "name": "Turku — Medieval Cathedral of Saint Henry's Relic Translation",
+      "site_kind": "HISTORIC_CATHOLIC_PRESENT_LUTHERAN_CATHEDRAL",
+      "source_ids": [
+        "FI-TURKU"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:EE:vanamoisa-site-of-the-medieval-holy-cross-chapel",
+      "country_code": "EE",
+      "name": "Vanamõisa — Site of the Medieval Holy Cross Chapel",
+      "site_kind": "HISTORIC_CATHOLIC_PILGRIMAGE_CHAPEL_RUINS_OR_SITE",
+      "source_ids": [
+        "EE-CROSS-2026"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:EE:rongu-site-of-the-medieval-holy-cross-castle-chapel",
+      "country_code": "EE",
+      "name": "Rõngu — Site of the Medieval Holy Cross Castle Chapel",
+      "site_kind": "HISTORIC_CATHOLIC_PILGRIMAGE_CHAPEL_RUINS_OR_SITE",
+      "source_ids": [
+        "EE-CROSS-2026"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:hoshiv-basilian-transfiguration-monastery-on-yasna-hora",
+      "country_code": "UA",
+      "name": "Hoshiv — Basilian Transfiguration Monastery on Yasna Hora",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_MARIAN_ICON_MONASTERY",
+      "source_ids": [
+        "UA-IVANO"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:pohonya-basilian-monastery-of-the-dormition",
+      "country_code": "UA",
+      "name": "Pohonya — Basilian Monastery of the Dormition",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_MARIAN_ICON_MONASTERY",
+      "source_ids": [
+        "UA-IVANO"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:krylos-church-of-the-dormition-of-the-mother-of-god",
+      "country_code": "UA",
+      "name": "Krylos — Church of the Dormition of the Mother of God",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_HISTORIC_MARIAN_ICON_CHURCH",
+      "source_ids": [
+        "UA-IVANO"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:krekhiv-basilian-monastery-of-saint-nicholas",
+      "country_code": "UA",
+      "name": "Krekhiv — Basilian Monastery of Saint Nicholas",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_BASILIAN_MONASTERY",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:zhuzheliany-church-of-the-resurrection-of-christ",
+      "country_code": "UA",
+      "name": "Zhuzheliany — Church of the Resurrection of Christ",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_BLESSED_JOSAPHATA_RELIC_CHURCH",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:chervonohrad-basilian-church-of-saint-george",
+      "country_code": "UA",
+      "name": "Chervonohrad — Basilian Church of Saint George",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_MARIAN_ICON_CHURCH",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:pidkamin-basilian-monastery-of-the-origin-of-the-tree-of-christ",
+      "country_code": "UA",
+      "name": "Pidkamin — Basilian Monastery of the Origin of the Tree of Christ",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_CRUCIFIX_MARIAN_ICON_MONASTERY",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:pidhirtsi-monastery-church-of-the-annunciation",
+      "country_code": "UA",
+      "name": "Pidhirtsi — Monastery Church of the Annunciation",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_MARIAN_ICON_MONASTERY",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:zhovkva-monastery-of-the-nativity-of-christ",
+      "country_code": "UA",
+      "name": "Zhovkva — Monastery of the Nativity of Christ",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_ST_PARTHEMIUS_RELIC_MONASTERY",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:markipol-church-of-the-ascension",
+      "country_code": "UA",
+      "name": "Markipol — Church of the Ascension",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_MARIAN_ICON_CHURCH",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:berezhany-church-of-the-holy-trinity",
+      "country_code": "UA",
+      "name": "Berezhany — Church of the Holy Trinity",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_ST_JOHN_BAPTIST_RELIC_CHURCH",
+      "source_ids": [
+        "UA-TERNOPIL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    },
+    {
+      "research_id": "EUROPE:W6:PLACE:UA:nestanychy-church-of-the-nativity-of-the-virgin-mary",
+      "country_code": "UA",
+      "name": "Nestanychy — Church of the Nativity of the Virgin Mary",
+      "site_kind": "UKRAINIAN_GREEK_CATHOLIC_MARIAN_ICON_CHURCH",
+      "source_ids": [
+        "UA-SOKAL"
+      ],
+      "phase": "RESEARCH_IDENTITY_ONLY",
+      "exact_building_review_required": false,
+      "canonical_place_id": null,
+      "geo": null,
+      "public_description": null,
+      "images": null,
+      "publication_status": "HELD_SOURCE_RESEARCH"
+    }
+  ],
+  "associations": [],
+  "existing_site_enrichments": [],
+  "governance": [
+    "One physical site, one Place. Related source-backed relics, pilgrimages, devotional image objects and reported apparitions are separate associations, not duplicate Place entries.",
+    "The historic destruction, rebuilding or confessional change of a chapel does not demonstrate a current active Catholic-owned building; historical ownership is explicit.",
+    "Greek/Romanian/Ukrainian Catholic communities remain Catholic, but their local liturgical and customary practices are not automatically French Latin Catholic domestic traditions.",
+    "A reported vision, weeping icon, or shrine visitation is not equivalent to juridical recognition of supernatural origin; 2025 DDF nihil obstat for Litmanová permits worship but does not establish supernatural authenticity.",
+    "Source-reported historic relic custody does not establish independent authentication or 2026 public access.",
+    "No fabricated coordinates, route polylines, future schedules, biographies, photos, or premature maps."
+  ],
+  "counts": {
+    "source_records": 31,
+    "site_candidates": 31,
+    "association_records": 0,
+    "existing_site_enrichments": 0,
+    "by_country": {
+      "EE": 2,
+      "FI": 2,
+      "RO": 3,
+      "SE": 3,
+      "SK": 9,
+      "UA": 12
+    }
+  }
+}
