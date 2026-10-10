@@ -26,10 +26,14 @@ export function mountSourceOwnedMassCatalogue({
  language=()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language??"en",
 }={}){
  if(!doc?.body||typeof stage!=="function")throw new TypeError("Mass catalogue DOM and stage required");
- let panel=null,disposed=false,observer=null,signature="",filter="",refreshQueued=false,lastOriginals=[];
+ let panel=null,disposed=false,observer=null,signature="",filter="",refreshQueued=false,lastOriginals=[],shadowedContainers=[];
  const flow=()=>doc.getElementById("ao-mass-flow-v1");
  const original=()=>flow()?.querySelector(".aoMassFlowBody")??null;
- const showOriginals=()=>{for(const node of lastOriginals)node.classList?.remove("aoMassCatalogueShadowed");lastOriginals=[];};
+ const showOriginals=()=>{
+  for(const node of lastOriginals)node.classList?.remove("aoMassCatalogueShadowed");
+  for(const node of shadowedContainers)node.classList?.remove("aoMassCatalogueShadowedSection");
+  lastOriginals=[];shadowedContainers=[];
+ };
  const tr=(en,fr)=>String(language()).startsWith("fr")?fr:en;
  function refresh(){
   refreshQueued=false;if(disposed)return;
@@ -85,7 +89,18 @@ export function mountSourceOwnedMassCatalogue({
   body.insertBefore(panel,body.firstElementChild?.nextSibling??body.firstChild);
   previous?.remove();
   lastOriginals=rows.map(x=>x.source);
-  for(const button of lastOriginals)button.classList.add("aoMassCatalogueShadowed");
+  // Hide the source-owned *list containers*, not just individual buttons,
+  // so original votive headings/search do not duplicate the projected list.
+  const originals=[...body.children].filter(node=>node!==panel&&(
+    rows.some(row=>node===row.source||node.contains(row.source))||
+    (category==="votive"&&Boolean(node.querySelector?.("[data-ao-search]")))
+  ));
+  shadowedContainers=originals;
+  for(const node of originals)node.classList.add("aoMassCatalogueShadowedSection");
+  for(const button of lastOriginals){
+    if(!originals.some(node=>node===button||node.contains(button)))
+      button.classList.add("aoMassCatalogueShadowed");
+  }
   applyFilter();
  }
  function applyFilter(){
