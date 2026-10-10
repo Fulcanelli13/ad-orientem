@@ -27,6 +27,15 @@ assert.equal(
   doBase+"web/www/horas/Francais/Commune/C4b.txt"
 );
 
+// Coronatio is a sourced Mass Common; rewriting it to horas loses the
+// pinned EN/FR texts required by 22 February and 25 May.
+for(const lang of ["Latin","English","Francais"]){
+  const proper=doBase+"web/www/missa/"+lang+"/Commune/Coronatio.txt";
+  assert.equal(rewriteResolvedSourceUrl(proper),proper,
+    "Coronatio "+lang+" must stay in the verified Mass corpus");
+  assert.equal(isKnownAbsentResolvedSourceUrl(proper),false,
+    "Existing Coronatio source was classified as absent");
+}
 const ordinary=doBase+"web/www/missa/Latin/Sancti/10-07.txt";
 assert.equal(rewriteResolvedSourceUrl(ordinary),ordinary,"ordinary Proper URL was rewritten unexpectedly");
 
@@ -51,9 +60,13 @@ const compat=installSourceTransportCompat(fakeWin);
 const miss=await fakeWin.fetch(absent[0]);
 assert.equal(miss.status,404);
 assert.equal(nativeCalls,0,"known absent source still emitted a network request");
+const coronatio=doBase+"web/www/missa/English/Commune/Coronatio.txt";
+const massSource=await fakeWin.fetch(coronatio);
+assert.equal(massSource.status,200,"source transport incorrectly blocked valid English Coronatio");
+assert.equal(nativeCalls,1,"valid Mass Common was not fetched from its exact URI");
 const hit=await fakeWin.fetch(ordinary);
 assert.equal(hit.status,200);
-assert.equal(nativeCalls,1,"valid source no longer reaches native fetch");
+assert.equal(nativeCalls,2,"valid source no longer reaches native fetch");
 assert.equal(compat.isKnownAbsent(absent[2]),true);
 
 console.log("PASS source transport compatibility: canonical rewrites plus pinned known-absent candidates fail locally without noisy network probes.");
