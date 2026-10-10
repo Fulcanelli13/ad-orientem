@@ -27,7 +27,21 @@ for(const id of CSE_HIGH_STAGE_IDS){
  const allOriginal=[...CSE_DEBATE_POSITION_REFS[id],...question.refs];
  for(const stage of CSE_DEBATE_FIELDS){
    const selected=live[stage];
-   assert.ok(selected.length>0&&selected.length<=3,id+" "+stage+" too broad/empty");
+   // Four independent documents are deliberately retained for CSE040's
+   // moral/canonical-law distinction and CSE125's emergency obstetric ethics:
+   // papal teaching, CDF clarification, episcopal directive, and the distinct
+   // clinical or NCBC treatment of disputed procedures.
+   const fourSourceExceptions={
+     CSE040:{catholicCase:["PH","ST154","SCR","CIC"]},
+     CSE125:{
+       catholicCase:["CASTI","ABORTCLAR","NCBC_ECTOPIC","USCCB_DIRECT2010"],
+       response:["CASTI","ABORTCLAR","ACOG_ECTOPIC","USCCB_DIRECT2010"],
+       bottom:["CASTI","ABORTCLAR","NCBC_ECTOPIC","USCCB_DIRECT2010"]
+     }
+   };
+   const four=fourSourceExceptions[id]?.[stage];
+   assert.ok(selected.length>0&&selected.length<=(four?4:3),id+" "+stage+" too broad/empty");
+   if(four)assert.deepEqual(selected,four,id+" "+stage+" four-source exception changed without review");
    assert.equal(new Set(selected).size,selected.length,id+" "+stage+" duplicates");
    const rendered=paragraphRefsFor(question,"debate",stage);
    assert.deepEqual(rendered.map(x=>x[0]),selected,id+" "+stage+" resolved wrong source");
@@ -41,10 +55,10 @@ for(const id of CSE_HIGH_STAGE_IDS){
  }
 }
 assert.equal(chains,192);
-assert.equal(references,pack.stage_reference_count||282);
+assert.equal(references,295,"24-case original source selection total must match the reconciled 2026-10-09 pack");
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,612);
+assert.equal(audit.summary.stage_specific_mapping_references,636);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 const pending=CSE_DEBATE_IDS.filter(id=>!CSE_HIGH_STAGE_SOURCE_IDS[id]);

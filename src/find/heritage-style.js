@@ -160,4 +160,78 @@ export const HERITAGE_STYLE = String.raw`
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreSectionNav>span{font-size:11px;letter-spacing:.06em}
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreSectionSwitcher>summary{border-radius:10px;background:#17212b}
 @media(max-width:520px){.aoHeritageSurface .aoExploreMainDestinations{padding:5px 9px 4px}.aoHeritageSurface .aoExploreMainDestinations>*{min-height:46px;font-size:11px;padding:8px 5px}}
+
+/* The short Place preview is a non-modal map card. The detailed reader alone
+   remains modal. Pins and controls outside the card must remain clickable. */
+.aoHeritageSurface .aoHeritageCardLayer{pointer-events:none;background:transparent;align-items:flex-end}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview{pointer-events:auto;overscroll-behavior:contain}
+.aoHeritageSurface .aoHeritageCardClose{min-width:44px;width:44px;height:44px;min-height:44px;cursor:pointer}
+.aoHeritageSurface .aoHeritageWorldReset{position:absolute;top:12px;left:16px;z-index:3;min-height:44px;max-width:48vw;display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:10px;background:#0b151ee8;color:#efdfbf;border:1px solid #d5ba855c;box-shadow:0 4px 17px #0008;backdrop-filter:blur(12px);font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoHeritageSurface .aoHeritageWorldReset:before{content:"";width:13px;height:13px;flex:none;border:1.5px solid #d6b77d;border-radius:50%;background:radial-gradient(circle at center,#d6b77d 0 2px,transparent 2px)}
+.aoHeritageSurface .aoHeritageWorldReset:focus-visible{outline:2px solid #e7c887;outline-offset:2px}
+.aoHeritageSurface .aoHeritageWorldReset:active{background:#302c23}
+.aoHeritageSurface .aoHeritagePreviewActions{min-width:0}
+.aoHeritageSurface .aoHeritagePreviewActions button{min-width:0}
+.aoHeritageSurface .aoHeritagePreviewActions a{min-width:0}
+@media(max-width:520px){
+ .aoHeritageSurface .aoHeritageWorldReset{top:9px;left:11px;padding:8px 11px;font-size:11px}
+ .aoHeritageSurface .aoHeritagePreviewActions{grid-template-columns:minmax(0,1fr) auto;gap:7px}
+ .aoHeritageSurface .aoHeritagePreviewActions button,.aoHeritageSurface .aoHeritagePreviewActions a{padding-inline:11px}
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview{margin:0;width:100%;max-width:none}
+}
+@media(max-width:355px){
+ .aoHeritageSurface .aoHeritageTools .aoFindSearch{min-width:78px}
+ .aoHeritageSurface .aoHeritageTools .aoFindSearch input{font-size:16px;padding-right:5px;text-overflow:ellipsis}
+ .aoHeritageSurface .aoHeritageNearby{font-size:10px;padding-inline:7px}
+ .aoHeritageSurface .aoHeritageMore summary{padding-inline:7px;font-size:10px}
+ .aoHeritageSurface .aoHeritagePreviewActions{grid-template-columns:minmax(0,1fr)}
+ .aoHeritageSurface .aoHeritagePreviewActions a{justify-content:center}
+}
+
+/* R54 individual-record previews share map click-through; the full record
+   reader and list-view previews retain normal modal focus semantics. */
+.aoExploreSurface .aoExploreQuickPreviewLayer{pointer-events:none;background:transparent}
+.aoExploreSurface .aoExploreQuickPreviewLayer .aoExploreQuickPreview{pointer-events:auto;overscroll-behavior:contain}
+.aoExploreSurface .aoExploreQuickPreviewLayer .aoExploreQuickPreview header button{min-width:44px;min-height:44px}
+
+/* Mobile editorial audit: prioritize the cartographic canvas. Keep all
+   interactive controls >=44px; reduce decorative rows and horizontal noise. */
+.aoHeritageSurface{--ao-explore-chrome:#080c12;--ao-explore-panel:#101923}
+.aoHeritageSurface .aoHeritageCategories{scroll-snap-type:x proximity;scroll-padding-inline:12px}
+.aoHeritageSurface .aoHeritageCategories button{scroll-snap-align:start;flex:none;white-space:nowrap}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview{box-shadow:0 -14px 55px #000b}
+.aoHeritageSurface .aoHeritageCardLocation{white-space:normal;overflow-wrap:anywhere;max-width:min(74vw,52ch)}
+.aoHeritageSurface .aoHeritagePreviewActions button,.aoHeritageSurface .aoHeritagePreviewActions a{min-height:48px;line-height:1.25}
+.aoHeritageSurface .aoHeritagePreview .aoHeritageSynopsis{line-height:1.48;letter-spacing:0}
+.aoHeritageSurface .aoHeritageCardKicker{color:#cdb68a}
+.aoHeritageSurface .aoHeritageMapHint{font-size:11px;line-height:1.35;max-width:220px}
+.aoHeritageSurface .aoHeritageBody .maplibregl-ctrl-top-right{top:6px;right:5px}
+.aoHeritageSurface .aoHeritageBody .maplibregl-ctrl-group button{width:44px;height:44px;min-width:44px;min-height:44px}
+@media(max-width:520px){
+ .aoHeritageSurface .aoFindHeader{padding:7px 9px 6px}
+ .aoHeritageSurface .aoFindHeader h1{font-size:19px;line-height:1.1}
+ .aoHeritageSurface .aoExploreMainDestinations{padding:4px 9px 3px;gap:5px}
+ .aoHeritageSurface .aoExploreMainDestinations>*{min-height:44px;padding:6px 4px;border-radius:9px;font-size:11px}
+ .aoHeritageSurface .aoHeritageTools{padding:6px 9px 5px;gap:6px}
+ .aoHeritageSurface .aoHeritageTools .aoFindSearch input{min-height:44px;height:44px;border-radius:9px}
+ .aoHeritageSurface .aoHeritageNearby,.aoHeritageSurface .aoHeritageMore summary{min-height:44px;height:44px;border-radius:9px}
+ .aoHeritageSurface .aoHeritageCategories{padding:2px 9px 6px;gap:6px}
+ .aoHeritageSurface .aoHeritageCategories button{min-height:44px;height:44px;padding:7px 10px;font-size:11px}
+ .aoHeritageSurface .aoHeritageBody.aoFindBody[data-find-view=map]{min-height:240px;padding:0 3px 3px}
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview{max-height:min(47dvh,410px);padding:7px 15px max(14px,env(safe-area-inset-bottom))}
+ .aoHeritageSurface .aoHeritageSheetHandle{margin-bottom:8px}
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageCardTitle{font-size:22px;line-height:1.15;margin-top:6px}
+ .aoHeritageSurface .aoHeritageSynopsis{margin-top:8px;font-size:14px;-webkit-line-clamp:3}
+ .aoHeritageSurface .aoHeritagePreviewActions{margin-top:12px}
+ .aoHeritageSurface .aoHeritageMapHint{left:12px;bottom:13px}
+}
+@media(max-width:355px){
+ .aoHeritageSurface .aoFindHeader h1{font-size:17px}
+ .aoHeritageSurface .aoHeritageCount{font-size:12px}
+ .aoHeritageSurface .aoHeritageTools{gap:4px}
+ .aoHeritageSurface .aoHeritageNearby{padding-inline:6px;font-size:10px}
+ .aoHeritageSurface .aoHeritageMore summary{padding-inline:7px;font-size:10px}
+ .aoHeritageSurface .aoExploreMainDestinations>*{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.aoHeritageSurface .aoHeritageCategories{scroll-snap-type:none}}
 `;

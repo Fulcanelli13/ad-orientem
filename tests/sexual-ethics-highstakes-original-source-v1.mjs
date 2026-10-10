@@ -30,6 +30,25 @@ for(const row of doc.debates){
   results[stage.status]=(results[stage.status]||0)+1;
  }
 }
+// The 2010 USCCB committee statement was subsequently included in exactly
+// four CSE125 stage source selections. It is doctrinal context, not a newly
+// certified original-page collation or clinical approval.
+const c125=doc.debates.find(x=>x.id==="CSE125");
+const annotated=["breakpoint","catholicCase","response","bottom"];
+assert.deepEqual(doc.source_selection_alignment_20261011.stages_with_additional_reference,annotated);
+assert.equal(doc.source_selection_alignment_20261011.exact_original_passage_newly_verified,false);
+assert.equal(doc.source_selection_alignment_20261011.clinical_question_newly_resolved,false);
+assert.equal(doc.source_selection_alignment_20261011.french_editorial_approval,false);
+for(const stage of c125.stages){
+ const found=stage.source_refs.find(x=>x.id==="USCCB_DIRECT2010");
+ assert.equal(Boolean(found),annotated.includes(stage.stage),
+   "USCCB 2010 reference introduced or dropped unexpectedly in CSE125."+stage.stage);
+ if(found){
+   assert.equal(found.url,CSE_SOURCE_MAP.USCCB_DIRECT2010.canonical_url);
+   assert.match(found.locator,/not independently collated/);
+   assert.equal(stage.original_full_document_collated,false);
+ }
+}
 assert.deepEqual(results,doc.summary.status_counts);
 assert.equal(Object.values(results).reduce((a,b)=>a+b,0),56);
 assert.deepEqual(doc.question_only.map(x=>x.id),["CSE105","CSE109","CSE110"]);
@@ -42,6 +61,6 @@ for(const row of doc.question_only){
 assert.match(CSE_QUESTION_MAP.CSE101.a[0],/hypothetical IVF procedure/);
 assert.match(CSE_QUESTION_MAP.CSE104.a[0],/2023 ASRM Ethics Committee/);
 assert.match(CSE_QUESTION_MAP.CSE110.a[0],/prenatal adoption/);
-assert.match(CSE_QUESTION_MAP.CSE112.d[0],/could not determine their frequency/);
+assert.match(CSE_QUESTION_MAP.CSE112.d[0],/do not yield a reliable prevalence estimate/);
 assert.match(CSE_DEBATE_MAP.CSE104.catholicCase[0],/Donum Vitae II\.A\.3/);
 console.log("PASS high-stakes CSE: 7 debates x 8 stages=56, 3 other original-passage question checks, EN/FR findings and source URLs intact, no false full certification.");

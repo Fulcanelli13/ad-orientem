@@ -32,7 +32,7 @@ assert.deepEqual(result,doc.summary.category_counts);
 assert.match(CSE_DEBATE_MAP.CSE049.catholicCase[0],/can\. 1141/);
 assert.match(CSE_DEBATE_MAP.CSE049.response[0],/can\. 1153/);
 assert.match(CSE_DEBATE_MAP.CSE050.catholicCase[0],/1142/);
-assert.match(CSE_DEBATE_MAP.CSE029.opposition[0],/15 US priests/);
+assert.match(CSE_DEBATE_MAP.CSE029.opposition[0],/15 US Catholic priests/);
 assert.match(CSE_DEBATE_MAP.CSE035.opposition[0],/23%/);
 assert.match(CSE_DEBATE_MAP.CSE054.catholicCase[0],/Humanae Vitae/);
 assert.match(CSE_DEBATE_MAP.CSE040.opposition[0],/genital sexual acts/);
