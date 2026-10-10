@@ -1,0 +1,701 @@
+{
+  "type": "FeatureCollection",
+  "schema": "AO_SACRED_GEOGRAPHY_PRIORITY_NEW_PIN_CANDIDATES_V1",
+  "as_of": "2026-10-10",
+  "source_inventory": "data/geography/research/sacred-geography-curated-750-site-crosswalk-2026-10-10.v1.1.json",
+  "counts": {
+    "new_pin_candidates": 22,
+    "unique_candidate_ids": 22,
+    "published_place_collision_under_100m": 0,
+    "complex_hold": 2
+  },
+  "safeguards": [
+    "This file is NOT a production marker dataset",
+    "Do not publish when editorial_status begins HOLD",
+    "Geocoded church/monastery building != a proven formally designated international shrine",
+    "Distinguish source name from local language title and canonical aliases",
+    "Do not merge nearby but independent Catholic shrines",
+    "No biblical atlas entities or OpenBible locations imported"
+  ],
+  "on_hold_not_geocoded": [
+    {
+      "candidate_id": "SG-INV-0668",
+      "name": "La Vang",
+      "reason": "Some location sources refer specifically to the destroyed old basilica rather than the present sanctuary; need parent-complex identity",
+      "source_url": "https://www.wikidata.org/wiki/Q15272244"
+    },
+    {
+      "candidate_id": "SG-INV-0673",
+      "name": "Vietnamese Martyrs at La Vang",
+      "reason": "Unclear whether independently identifiable sanctuary or devotional subsite; preserve as association"
+    },
+    {
+      "candidate_id": "SG-INV-0721",
+      "name": "Namaacha, Mozambique",
+      "reason": "Individual crowd-submitted GPS point not cross-confirmed to a named building; verify before adding",
+      "source_url": "https://www.info4camper.com/santuario_de_nossa_senhora_de_fatima_namaacha_maputo_11618.html?lg=pt"
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.3275,
+          39.45285
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0107",
+        "name": "Royal Monastery of Santa María de Guadalupe",
+        "cc": "ES",
+        "source_geometry_type": "UNESCO_WORLD_HERITAGE_PROPERTY",
+        "source_coordinate_url": "https://whc.unesco.org/en/list/665/maps/",
+        "site_evidence_url": "https://whc.unesco.org/en/list/665/",
+        "geometry_precision": "MONASTERY_COMPLEX",
+        "site_note": "UNESCO location, not exact entrance",
+        "nearest_published": {
+          "place_id": "place:ES:carmel-alba-tormes",
+          "distance_km": 153.579
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "UNESCO property location — official source; reuse conditions of underlying map data to verify"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.9376,
+          50.01997
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0210",
+        "name": "Divine Mercy Sanctuary, Kraków-Łagiewniki",
+        "cc": "PL",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/123144540",
+        "site_evidence_url": "https://mapcarta.com/W123144540",
+        "geometry_precision": "SANCTUARY_BASILICA_ANCHOR",
+        "site_note": "Near independent Saint John Paul II shrine, do not merge",
+        "nearest_published": {
+          "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+          "distance_km": 0.721
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.53165,
+          45.49539
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0314",
+        "name": "National Shrine of Saint Joseph, Karlovac",
+        "cc": "HR",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/177574260",
+        "site_evidence_url": "https://www.wikidata.org/wiki/Q12637953",
+        "geometry_precision": "CHURCH_BUILDING",
+        "site_note": "Named Roman Catholic national shrine in source",
+        "nearest_published": {
+          "place_id": "place:IT:basilica-san-marco-venezia",
+          "distance_km": 249.002
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.28554,
+          54.68148
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0338",
+        "name": "Divine Mercy Sanctuary, Vilnius",
+        "cc": "LT",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/81296879",
+        "site_evidence_url": "https://parapijos.lt/en/church/vilniaus/Vilniaus-Dievo-Gailestingumo-%C5%A1ventov%C4%97",
+        "geometry_precision": "CHURCH_BUILDING",
+        "site_note": "Not the other Divine Mercy chapel in Vilnius hospital district",
+        "nearest_published": {
+          "place_id": "place:LT:vilnius-cathedral-st-casimir",
+          "distance_km": 0.511
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.12145,
+          -34.56444
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0489",
+        "name": "Basilica of Our Lady of Luján",
+        "cc": "AR",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/186577050",
+        "site_evidence_url": "https://www.wikidata.org/wiki/Q2607636",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Coordinates identify basilica, not city centre",
+        "nearest_published": {
+          "place_id": "place:AR:san-nicolas-virgen-rosario",
+          "distance_km": 171.622
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.84964,
+          10.68025
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0583",
+        "name": "Basilica of Our Lady of Good Health, Vailankanni",
+        "cc": "IN",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/672541959",
+        "site_evidence_url": "https://www.wikipedia.org/wiki/Basilica_of_Our_Lady_of_Good_Health",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Site devotion is historically oral tradition; do not infer approved apparition",
+        "nearest_published": {
+          "place_id": "place:IN:basilica-bom-jesus-old-goa",
+          "distance_km": 837.043
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.94122,
+          10.86402
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0586",
+        "name": "Basilica of Our Lady of Lourdes, Poondi",
+        "cc": "IN",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/424972317",
+        "site_evidence_url": "https://mapcarta.com/W424972317",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Distinct from Lourdes France and other Lourdes-dedicated sites in India",
+        "nearest_published": {
+          "place_id": "place:IN:basilica-bom-jesus-old-goa",
+          "distance_km": 749.776
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.20298,
+          8.85482
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0600",
+        "name": "Shrine of Our Lady of Madhu",
+        "cc": "LK",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/483435994",
+        "site_evidence_url": "https://mapcarta.com/W483435994",
+        "geometry_precision": "SHRINE_CHURCH_BUILDING",
+        "site_note": "Distinguish church from town Madhu",
+        "nearest_published": {
+          "place_id": "place:IN:basilica-bom-jesus-old-goa",
+          "distance_km": 1006.552
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.99701,
+          14.63018
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0637",
+        "name": "National Shrine of Our Lady of Lourdes, Quezon City",
+        "cc": "PH",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/140348903",
+        "site_evidence_url": "https://nsoll.ph/",
+        "geometry_precision": "CHURCH_BUILDING",
+        "site_note": "Avoid separate marker for enclosing parish grounds way 96557951",
+        "nearest_published": {
+          "place_id": "place:JP:our-lady-akita-convent",
+          "distance_km": 3359.264
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9806,
+          14.68258
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0639",
+        "name": "National Shrine of Our Lady of Fatima, Valenzuela",
+        "cc": "PH",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/50982921",
+        "site_evidence_url": "https://mapcarta.com/W50982921",
+        "geometry_precision": "CHURCH_BUILDING",
+        "site_note": "OSM regional classification is inconsistent; physically named Valenzuela church",
+        "nearest_published": {
+          "place_id": "place:JP:our-lady-akita-convent",
+          "distance_km": 3355.109
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04555,
+          14.56129
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0648",
+        "name": "National Shrine of Our Lady of Guadalupe, Makati",
+        "cc": "PH",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/153741157",
+        "site_evidence_url": "https://mapcarta.com/W153741157",
+        "geometry_precision": "CHURCH_BUILDING",
+        "site_note": "Do not confuse with Mexican Guadalupe shrine",
+        "nearest_published": {
+          "place_id": "place:JP:our-lady-akita-convent",
+          "distance_km": 3363.283
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.17749,
+          14.0762
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0655",
+        "name": "Padre Pio Shrine, Santo Tomas, Batangas",
+        "cc": "PH",
+        "source_geometry_type": "OSM_COMPLEX_RELATION",
+        "source_coordinate_url": "https://www.openstreetmap.org/relation/4065077",
+        "site_evidence_url": "https://mapcarta.com/National_Shrine_of_Saint_Padre_Pio_R4065077",
+        "geometry_precision": "WHOLE_SHRINE_COMPLEX",
+        "site_note": "User inventory says international; third-party map says national. Leave canonical designation unverified",
+        "nearest_published": {
+          "place_id": "place:JP:our-lady-akita-convent",
+          "distance_km": 3403.106
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "HOLD_COMPLEX_PIN_REVIEW",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.94216,
+          10.32742
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0659",
+        "name": "National Shrine of Saint Joseph, Mandaue",
+        "cc": "PH",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/855787222",
+        "site_evidence_url": "https://www.wikidata.org/wiki/Q39055340",
+        "geometry_precision": "CHURCH_BUILDING",
+        "site_note": "Do not confuse with Saint Joseph sites in Mandaluyong or elsewhere",
+        "nearest_published": {
+          "place_id": "place:JP:our-lady-akita-convent",
+          "distance_km": 3643.459
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.04262,
+          36.80105
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0690",
+        "name": "Basilica of Notre-Dame d’Afrique, Algiers",
+        "cc": "DZ",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/26614341",
+        "site_evidence_url": "https://www.wikidata.org/wiki/Q2088381",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Distinct from adjacent Notre Dame d'Afrique viewpoint/transport station",
+        "nearest_published": {
+          "place_id": "place:ES:basilica-del-pilar-zaragoza",
+          "distance_km": 636.692
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.11152,
+          14.55468
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0707",
+        "name": "Basilica of Our Lady of Deliverance, Popenguine",
+        "cc": "SN",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/232424082",
+        "site_evidence_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-de-la-D%C3%A9livrande_de_Popenguine",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Separate site identity from Black Madonna grotto nearby",
+        "nearest_published": {
+          "place_id": "place:NG:nne-enyemaka-umuaka",
+          "distance_km": 2817.156
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.29698,
+          6.81129
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0719",
+        "name": "Basilica of Our Lady of Peace, Yamoussoukro",
+        "cc": "CI",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/89584501",
+        "site_evidence_url": "https://www.wikidata.org/wiki/Q815584",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Important Catholic basilica; national/international canonical shrine status not asserted",
+        "nearest_published": {
+          "place_id": "place:NG:nne-enyemaka-umuaka",
+          "distance_km": 1367.71
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0; display attribution required"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.00069,
+          38.93336
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0374",
+        "name": "Basilica of the National Shrine of the Immaculate Conception, Washington",
+        "cc": "US",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/297739340",
+        "site_evidence_url": "https://www.nationalshrine.org/",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Adjacent John Paul II shrine is a separate physical site; no merging",
+        "nearest_published": {
+          "place_id": "place:US:st-alphonsus-baltimore",
+          "distance_km": 51.876
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.0034,
+          43.20036
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0381",
+        "name": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+        "cc": "US",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/1251763730",
+        "site_evidence_url": "https://www.wikidata.org/wiki/Q4867411",
+        "geometry_precision": "BASILICA_BUILDING",
+        "site_note": "Use basilica building geometry rather than full shrine ground relation",
+        "nearest_published": {
+          "place_id": "place:CA:martyrs-shrine-midland",
+          "distance_km": 183.542
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.11786,
+          19.48485
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0426",
+        "name": "New Basilica of Our Lady of Guadalupe, Mexico City",
+        "cc": "MX",
+        "source_geometry_type": "OSM_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/120733641",
+        "site_evidence_url": "https://mapcarta.com/34443152",
+        "geometry_precision": "CURRENT_BASILICA_BUILDING",
+        "site_note": "Old Basilica is distinct building about 100m away; avoid wrong historic structure",
+        "nearest_published": {
+          "place_id": "place:MX:basilica-guadalupe-mexico-city",
+          "distance_km": 0.122
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.65634,
+          -20.33657
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0498",
+        "name": "Sanctuary of Our Lady of La Tirana, Chile",
+        "cc": "CL",
+        "source_geometry_type": "OSM_CHURCH_BUILDING_WAY",
+        "source_coordinate_url": "https://www.openstreetmap.org/way/157593768",
+        "site_evidence_url": "https://www.santuariodelatirana.cl/2025/06/entrega-de-programacion-y-formularios-para-medios-de-comunicacion-tirana-2025/",
+        "geometry_precision": "CHURCH_BUILDING",
+        "site_note": "Nearby tourist shrine node and church way describe complex, single physical church pin",
+        "nearest_published": {
+          "place_id": "place:PE:convento-santo-domingo-lima",
+          "distance_km": 1212.054
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.65167,
+          33.98194
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0574",
+        "name": "Shrine of Our Lady of Lebanon, Harissa",
+        "cc": "LB",
+        "source_geometry_type": "GEONAMES_SHRINE_POI",
+        "source_coordinate_url": "https://mapcarta.com/12881604",
+        "site_evidence_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-du-Liban_de_Harissa",
+        "geometry_precision": "SHRINE_COMPLEX_REPRESENTATIVE",
+        "site_note": "Statue chapel and modern basilica are separate buildings in one shrine complex; choose parent and subsite hierarchy",
+        "nearest_published": {
+          "place_id": "place:LB:monastery-saint-maron-annaya",
+          "distance_km": 18.068
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "HOLD_PARENT_SITE_PRECISION_REVIEW",
+        "release": false,
+        "coordinates_licence": "GeoNames / map source reuse attribution terms to check"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-GEO-P3-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.93443,
+          7.0326
+        ]
+      },
+      "properties": {
+        "curated_candidate_id": "SG-INV-0601",
+        "name": "National Basilica of Our Lady of Lanka, Tewatta",
+        "cc": "LK",
+        "source_geometry_type": "OSM_PLACE_OF_WORSHIP_NODE",
+        "source_coordinate_url": "https://www.openstreetmap.org/node/2362887712",
+        "site_evidence_url": "https://mapcarta.com/N2362887712",
+        "geometry_precision": "BASILICA_PLACE_OF_WORSHIP",
+        "site_note": "Named national basilica in Tewatta, not the separate Tewatta Church marker nearby",
+        "nearest_published": {
+          "place_id": "place:IN:basilica-bom-jesus-old-goa",
+          "distance_km": 1147.681
+        },
+        "canonical_place_id": null,
+        "recognition_status": "NOT_INDEPENDENTLY_VERIFIED_FROM_COMPETENT_ECCLESIASTICAL_AUTHORITY",
+        "editorial_status": "SOURCE_GROUNDED_PIN_CANDIDATE",
+        "release": false,
+        "coordinates_licence": "© OpenStreetMap contributors · ODbL 1.0"
+      }
+    }
+  ]
+}
