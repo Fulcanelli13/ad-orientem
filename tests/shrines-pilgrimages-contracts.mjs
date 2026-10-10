@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:177,
-  pilgrimages:205,
+  shrines:178,
+  pilgrimages:206,
   routes:20,
   temporalLinks:77,
-  sources:260,
+  sources:261,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -100,6 +100,7 @@ const requiredPlaces=new Set([
   "place:CA:martyrs-shrine-midland",
   "place:IT:loreto-santa-casa",
   "place:IT:pompei-rosary-shrine",
+  "place:IT:montecassino-abbey",
   "place:PL:jasna-gora",
   "place:PL:kalwaria-zebrzydowska",
   "place:GB:walsingham-catholic-shrine",
