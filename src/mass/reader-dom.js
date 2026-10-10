@@ -58,6 +58,7 @@ const SHELL_STYLE = `
 
 .ao-mass-prefs{
   position:absolute;z-index:34;top:58px;right:8px;width:min(310px,calc(100% - 16px));
+  max-height:calc(100dvh - 72px);overflow-y:auto;overscroll-behavior:contain;
   padding:13px;border:1px solid rgba(255,255,255,.075);border-radius:14px;
   background:var(--ao-mass-panel);box-shadow:0 18px 60px rgba(0,0,0,.5);
   opacity:0;visibility:hidden;pointer-events:none;transform:none;transition:opacity .14s ease,visibility 0s linear .14s
