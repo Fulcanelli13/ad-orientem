@@ -77,7 +77,7 @@ jobs:
         run: |
           set -euo pipefail
           operation=audit
-          [[ "$GITHUB_EVENT_NAME" == push ]] && operation=prune
+          [[ "$GITHUB_EVENT_NAME" == push || "$GITHUB_EVENT_NAME" == schedule ]] && operation=prune
           [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]] && operation="${REQUESTED_OPERATION:-audit}"
           [[ "$operation" == audit || "$operation" == prune ]] || exit 2
           max_delete=150
