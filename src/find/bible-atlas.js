@@ -19,9 +19,9 @@ const ERAS={
 // [era, corpus place id, corpus event id, EN fallback title, FR fallback title, Scripture]
 // Selected major milestones are explicitly sequenced: not an exhaustive harmony.
 const SEQUENCE=[
- ["ORIGINS",null,null,"Creation","La Création","Genesis 1:1–2:3"],
+ ["ORIGINS",null,null,"Creation","La Création","Genesis 1:1–31"],
  ["ORIGINS",null,null,"The Fall","La Chute","Genesis 3:1–24"],
- ["ORIGINS",null,null,"The Flood","Le Déluge","Genesis 6:9–9:17"],
+ ["ORIGINS",null,null,"The Flood","Le Déluge","Genesis 7:1–24"],
  ["PATRIARCHS","ur",null,"Abraham's family leaves Ur","La famille d'Abraham quitte Ur","Genesis 11:31"],
  ["PATRIARCHS","hebron",null,"Abraham at Mamre","Abraham à Mambré","Genesis 18:1–8"],
  ["EXODUS",null,null,"The departure from Egypt","La sortie d'Égypte","Exodus 12:31–42"],
