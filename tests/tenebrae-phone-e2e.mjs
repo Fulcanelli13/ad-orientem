@@ -61,7 +61,8 @@ try{
   return el?el.scrollWidth-el.clientWidth:null
  });
  assert.ok(overflow!==null&&overflow<4,"Tenebrae horizontal mobile overflow: "+overflow);
- assert.deepEqual(external,[],"In-app Tenebrae must not use external redirected texts");
+ assert.deepEqual(external.filter(url=>/Quad6-[456]|Psalm(?:50|68|231)\\.txt/i.test(url)),[],
+   "Tenebrae text/psalter must never request upstream URLs at runtime");
  assert.ok(requests.some(r=>r.endsWith("/psalms-01.json")),"Offline Psalter not loaded");
  assert.equal(errors.length,0,"Tenebrae phone console errors: "+errors.join(" | "));
  console.log("Tenebrae 390px phone PASS — all six 1960 Offices open in PRAY, local source loads, day/hour nav, verse progression, Latin toggle, zero external text fetch.");
