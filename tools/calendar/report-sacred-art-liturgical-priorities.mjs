@@ -30,6 +30,12 @@ const major=config.majorCalendarSubjectIds.map(id=>{
  return {id,title:t.title,required:t.required,downloadedOriginals:t.downloadedOriginals,
   missingToMinimum:t.missingToMinimum,approvalStatus:t.approvalStatus};
 });
+const feastSet=new Set(config.majorFeastsAndPrincipalDays);
+const seasonSet=new Set(config.majorSeasonSupport);
+assert.equal(feastSet.size+seasonSet.size,major.length);
+assert.ok(major.every(t=>feastSet.has(t.id)||seasonSet.has(t.id)));
+const majorFeasts=major.filter(t=>feastSet.has(t.id));
+const seasonSupport=major.filter(t=>seasonSet.has(t.id));
 const minor=subjectReport.subjects.filter(s=>!config.majorCalendarSubjectIds.includes(s.id));
 const summ=(rows)=>({targets:rows.length,meetingOriginalMinimum:rows.filter(x=>x.missingToMinimum===0).length,
  belowMinimum:rows.filter(x=>x.missingToMinimum>0).length,missingSourceSlots:rows.reduce((n,x)=>n+x.missingToMinimum,0)});
@@ -83,6 +89,8 @@ const report={
  policy:config.editorialSequence,
  warning:"Acquired original != beautiful masterpiece, source-verified subject/Proper association, global commercial reuse permission, or publication approval.",
  calendarMajorSubjectPool:{...summ(major),subjects:major},
+ majorFeastsAndPrincipalDays:{...summ(majorFeasts),subjects:majorFeasts},
+ seasonalSupport:{...summ(seasonSupport),subjects:seasonSupport},
  allOtherSubjectPool:{...summ(minor),subjectsBelowMinimum:minor.filter(x=>x.missingToMinimum>0).map(s=>({id:s.id,missing:s.missingToMinimum}))},
  obligationCandidateCount:config.obligationCandidates.length,
  obligationRules:"Sundays universally obligatory. No locally obligatory weekday can be labelled until territorial norms are sourced. Civil-date feast candidate is never sufficient.",
@@ -117,7 +125,9 @@ const L=[
  "",
  "Priority: major feasts and solemn seasons → obligation (territorial-law overlay) → **every other observed I-class day** → app modules → observed II → III → IV class.",
  "",
- "Canonical calendar targets: "+major.length+"; "+report.calendarMajorSubjectPool.meetingOriginalMinimum+" meet their minimum; "+report.calendarMajorSubjectPool.belowMinimum+" under target.",
+ "Major feast/Triduum subjects: "+majorFeasts.length+"; "+report.majorFeastsAndPrincipalDays.meetingOriginalMinimum+" meet acquisition minimum; "+report.majorFeastsAndPrincipalDays.belowMinimum+" under target.",
+ "Secondary seasonal support: "+seasonSupport.length+"; "+report.seasonalSupport.meetingOriginalMinimum+" meet acquisition minimum; "+report.seasonalSupport.belowMinimum+" under target.",
+ "All canonical calendar subject targets: "+major.length+".",
  "Other module and supplemental targets: "+minor.length+"; "+report.allOtherSubjectPool.belowMinimum+" under target.",
  "",
  "**This is a source-only audit. No original is approved for publication.**",
@@ -144,6 +154,8 @@ const L=[
  ];
 writeFileSync(outdir+"/liturgical-priority-v1.md",L.join("\n")+"\n");
 console.log(JSON.stringify({
+ majorFeastsAndPrincipalDays:majorFeasts.length,majorFeastTargetsBelowMinimum:report.majorFeastsAndPrincipalDays.belowMinimum,
+ seasonalSupportTargets:seasonSupport.length,seasonalSupportBelowMinimum:report.seasonalSupport.belowMinimum,
  majorCalendarTargets:major.length,majorTargetsBelowMinimum:report.calendarMajorSubjectPool.belowMinimum,
  otherTargets:minor.length,otherBelowMinimum:report.allOtherSubjectPool.belowMinimum,
  observedYearStatus:report.observedYear.status,observedClassCounts:report.observedYear.classCounts||null,
