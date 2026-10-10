@@ -5,6 +5,16 @@
 **Research data:** [reference-census-2026-10-10.v1.json](../../data/geography/research/reference-census-2026-10-10.v1.json)  
 **Release status:** research only; no canonical Place, shrine, pilgrimage, relic, custom, apparition or runtime changes.
 
+## Coordination update — **merged Europe wave 7 is the site-identity owner**
+
+**Current main, PR [#919](https://github.com/Fulcanelli13/ad-orientem/pull/919):** 47 European jurisdictions, **232** research site leads, **22** already existing-Place matches, **210** unmatched candidates, **175** source records and **227** associations. **All 47 countries remain research-incomplete.** These replace the **historical five-wave** baseline of 187/22/165 cited in the acquisition history below. No other pipeline may claim the later 18 European reference rows as newly discovered European Places without physical and alias reconciliation.
+
+**Ownership boundary:** `data/explore/europe-acquisition.*` owns European site candidates and category associations. This PR owns *bibliography/source-index extraction*, especially sources from outside Europe. Italian ICCD/PAMI pages and fiches become **source handoffs** to the Europe owner; they do not create a parallel Italian `Place` list. [Machine-readable 18-row Italy/Ireland handoff](../../data/geography/research/europe-seven-wave-handoff-2026-10-10.v1.json) checks **15 Italian PAMI/ICCD/Turin cases** and **three Irish bishops' references** against all seven European waves plus the 182 published Places.
+
+The Irish correction is important: **Croagh Patrick is already in Europe's wave-1 lead register** (`EUROPE:PLACE:IE:croagh-patrick-saint-patrick-pilgrimage-mountain`), even though it is not in the published Place seed; **Knock** and **Lough Derg** are already published Places. Therefore the Irish index generates **zero net-new European site identities**. The 15 Italian cases have **no exact title matches** among seven-wave European leads or the canonical seed. They are *candidate source enrichments pending locality/complex/alias review*, **not 15 certified new sites**.
+
+Other reconciliation owners are unchanged: `data/geography/seed-registry.v1.json` alone provides canonical Place identities after reviewed admission; `data/shrines/` governs shrine/pilgrimage records; existing relic, customs and apparition owners govern their claims; the map/photography layer is deferred. It is forbidden to add together 232 European research site leads and 512 gross worldwide source-list rows as though both were unique Places.
+
 ## Why this batch exists
 
 A country possessing a published map pin is **not** a national inventory. The first European pass reached 47/47 jurisdictions but the previous 187 research leads (22 matched, 165 still-unmatched) have not been certified. In the current `main` geography seed there are 182 physical `Place` records, including 44 for France, 37 for Italy, 17 for the United States, 4 for Canada, 2 for Australia, 2 for New Zealand, 1 for India and 0 for the Philippines. These are **seed counts, not estimates of real-world total sites**.
@@ -108,7 +118,7 @@ Italy is a separate, deeper book/source census. The [ICCD diocesan source-list i
 - The American association index lists both **St Gerard** and **Saint Lucy's Church/National Shrine of St Gerard** in Newark and two descriptions of **St Ann** in Scranton; these are potential duplicate physical sites, not two automatically independent records each. Ten US links are only proposed from names/location, and not yet published as authoritative bridges.
 - The Malolos index lists **San Isidro Labrador** at both Pulilan and Guiguinto, which are different towns; Guiguinto's own page links point instead to **Sta Rita de Cascia**. Keep the contradiction attached to that exact record rather than forcing either title.
 - NASPA and the Australian site each carry a specific identity/designation role; the latter mixes church buildings, cemeteries/graves, sacred outdoor locations and one-off Jubilee destinations. Their raw totals cannot be summed as major Catholic shrines.
-- The initial 16 research leads are preserved intact, and **10/16 are now linked to a specific bounded-source index entry**, not a verified new Place. Europe’s older 165 unmatched leads remain unreconciled with this batch.
+- The initial 16 research leads are preserved intact, and **10/16 are now linked to a specific bounded-source index entry**, not a verified new Place. Europe’s current seven-wave 210 unmatched leads remain unreconciled with this batch.
 
 **Source index acquisition completion is 211/211 (100%) within these four selected, finite lists, but worldwide inventory completeness and worldwide eligible-site reconciliation remain unknown.** The next research work should focus on source-index coverage in other countries, especially where the seed presently has no Places, while obtaining and crosswalking Italy's many diocesan source files and the French reference-book indexes. Do not author bios or map pins from index-only records.
 
@@ -149,7 +159,7 @@ PAMI's [updated sanctuary census and world Marian map](https://www.pami.info/san
 ### Remaining gates
 
 - **Full indexes:** complete the live Philippines association directory (not merely 66), Chile's diocesan shrine database and shrine-feast register, Italy's 33 listed diocesan PDFs, and open French inventories.
-- **Cross-source identity:** reconcile every row with the current 182 Places, the 211 earlier indexed rows, the prior European 187 research leads and the 16 initial global candidates; a matched source title is not a verified physical Place.
+- **Cross-source identity:** reconcile every row with the current 182 Places, the 211 earlier indexed rows, the European seven-wave 232 research leads and the 16 initial global candidates; a matched source title is not a verified physical Place.
 - **Coverage denominator:** identify and acquire the principal institutional and printed inventories per country/diocese, recording source edition, index length, extraction percentages, contradictions and unavailability.
 - **Later:** canonical Place admission, accurate pins, biographies and artwork only after identities and editorial importance pass. No source-index item is automatically approved for map publication.
 
