@@ -57,7 +57,9 @@ try{
  await page.locator("#ao-find-modular-root .aoExplorePlaceSheet").waitFor({state:"visible"});
  assert.ok(await page.locator("#ao-find-modular-root .aoExplorePlaceSheet details.aoPlaceAccordion").count()>0,
    "detailed source records are not progressively disclosed");
- await page.locator("#ao-find-modular-root .aoExplorePlaceSheet button[data-find-close-place]").tap();
+ await page.locator("#ao-find-modular-root .aoExplorePlaceSheet [data-explore-collapse-place]").tap();
+ await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
+ await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").tap();
  await page.locator("#ao-find-modular-root [data-find-query]").fill("");
  await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoHeritageSearchResults"),null,{timeout:15000});
 
@@ -139,6 +141,18 @@ try{
    assert.ok(size.width>=44&&size.height>=44,lens+" result item has an undersized touch target");
    await first.tap({timeout:12000});
    await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]").waitFor({state:"visible",timeout:12000});
+   // First touch opens a concise preview. Evidence/actions must be opt-in.
+   const preview=page.locator("#ao-find-modular-root .aoExploreQuickPreview");
+   await preview.waitFor({state:"visible",timeout:12000});
+   assert.equal(await preview.locator(".aoFindSources a[href]").count(),0,
+     lens+" exposed dense bibliography on initial map/list tap");
+   assert.equal(await preview.locator("[data-explore-expand-detail]").count(),1,
+     lens+" lacks explicit Details & sources navigation");
+   const previewHeight=await preview.evaluate(node=>node.getBoundingClientRect().height);
+   assert.ok(previewHeight<innerHeight*.7||previewHeight<520,
+     lens+" preview blocks too much mobile map");
+   await preview.locator("[data-explore-expand-detail]").tap();
+   await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]:not(.aoExploreQuickPreview)").waitFor({state:"visible",timeout:12000});
    const detail=await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]").innerText();
    assert.ok(detail.trim().length>=title.length+5,lens+" source detail has no substantive content");
    // Validate hyperlink controls rendered in the real selected item's source drawer.
@@ -151,6 +165,8 @@ try{
      assert.ok(source.label.length>=2,lens+" source link is unlabelled");
    }
    verifiedSourceLinks+=sources.length;
+   await page.locator("#ao-find-modular-root [data-explore-collapse-detail]").tap();
+   await page.locator("#ao-find-modular-root .aoExploreQuickPreview").waitFor({state:"visible",timeout:12000});
    await page.locator("#ao-find-modular-root button[data-find-close-detail]").first().tap({timeout:10000});
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheet[role=dialog]"),null,{timeout:12000});
   }
