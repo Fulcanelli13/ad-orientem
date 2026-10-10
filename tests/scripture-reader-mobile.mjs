@@ -145,10 +145,8 @@ try{
  assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false,
    "Contextual Scripture reading must put the passage first");
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
- assert.equal(await dialog.locator(".aoScriptureCommentaryParagraph").count(),2,
-   "Commentary must contain attributed in-app paragraphs, not merely an external link");
- assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/Les profondeurs|depths from which the penitent cries/i,
-   "Source-based exegesis must be visible in the selected language");
+ assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/texte n’est pas encore intégré|not yet transcribed/i,
+   "Untranscribed Psalm commentary must not masquerade as verbatim source content");
  const bellarmine=dialog.locator("[data-scripture-commentary-source='verified']");
  await bellarmine.waitFor({state:"visible",timeout:12000});
  assert.match(await bellarmine.getAttribute("href"),/ecatholic2000\.com\/bellarmine\/commentary-on-psalms/);
