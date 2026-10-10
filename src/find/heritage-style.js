@@ -160,4 +160,37 @@ export const HERITAGE_STYLE = String.raw`
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreSectionNav>span{font-size:11px;letter-spacing:.06em}
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreSectionSwitcher>summary{border-radius:10px;background:#17212b}
 @media(max-width:520px){.aoHeritageSurface .aoExploreMainDestinations{padding:5px 9px 4px}.aoHeritageSurface .aoExploreMainDestinations>*{min-height:46px;font-size:11px;padding:8px 5px}}
+
+/* The short Place preview is a non-modal map card. The detailed reader alone
+   remains modal. Pins and controls outside the card must remain clickable. */
+.aoHeritageSurface .aoHeritageCardLayer{pointer-events:none;background:transparent;align-items:flex-end}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview{pointer-events:auto;overscroll-behavior:contain}
+.aoHeritageSurface .aoHeritageCardClose{min-width:44px;width:44px;height:44px;min-height:44px;cursor:pointer}
+.aoHeritageSurface .aoHeritageWorldReset{position:absolute;top:12px;left:16px;z-index:3;min-height:44px;max-width:48vw;display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:10px;background:#0b151ee8;color:#efdfbf;border:1px solid #d5ba855c;box-shadow:0 4px 17px #0008;backdrop-filter:blur(12px);font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoHeritageSurface .aoHeritageWorldReset:before{content:"";width:13px;height:13px;flex:none;border:1.5px solid #d6b77d;border-radius:50%;background:radial-gradient(circle at center,#d6b77d 0 2px,transparent 2px)}
+.aoHeritageSurface .aoHeritageWorldReset:focus-visible{outline:2px solid #e7c887;outline-offset:2px}
+.aoHeritageSurface .aoHeritageWorldReset:active{background:#302c23}
+.aoHeritageSurface .aoHeritagePreviewActions{min-width:0}
+.aoHeritageSurface .aoHeritagePreviewActions button{min-width:0}
+.aoHeritageSurface .aoHeritagePreviewActions a{min-width:0}
+@media(max-width:520px){
+ .aoHeritageSurface .aoHeritageWorldReset{top:9px;left:11px;padding:8px 11px;font-size:11px}
+ .aoHeritageSurface .aoHeritagePreviewActions{grid-template-columns:minmax(0,1fr) auto;gap:7px}
+ .aoHeritageSurface .aoHeritagePreviewActions button,.aoHeritageSurface .aoHeritagePreviewActions a{padding-inline:11px}
+ .aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview{margin:0;width:100%;max-width:none}
+}
+@media(max-width:355px){
+ .aoHeritageSurface .aoHeritageTools .aoFindSearch{min-width:78px}
+ .aoHeritageSurface .aoHeritageTools .aoFindSearch input{font-size:16px;padding-right:5px;text-overflow:ellipsis}
+ .aoHeritageSurface .aoHeritageNearby{font-size:10px;padding-inline:7px}
+ .aoHeritageSurface .aoHeritageMore summary{padding-inline:7px;font-size:10px}
+ .aoHeritageSurface .aoHeritagePreviewActions{grid-template-columns:minmax(0,1fr)}
+ .aoHeritageSurface .aoHeritagePreviewActions a{justify-content:center}
+}
+
+/* R54 individual-record previews share map click-through; the full record
+   reader and list-view previews retain normal modal focus semantics. */
+.aoExploreSurface .aoExploreQuickPreviewLayer{pointer-events:none;background:transparent}
+.aoExploreSurface .aoExploreQuickPreviewLayer .aoExploreQuickPreview{pointer-events:auto;overscroll-behavior:contain}
+.aoExploreSurface .aoExploreQuickPreviewLayer .aoExploreQuickPreview header button{min-width:44px;min-height:44px}
 `;
