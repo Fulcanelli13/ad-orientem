@@ -1,5 +1,5 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
-import { renderHeritageToString, sacredPlaceSynopsis } from "./heritage-presentation.js";
+import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis } from "./heritage-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
@@ -465,6 +465,6 @@ export function renderExploreToString(vm){
     if(visible.length<vm.items.length)html+='<div class="aoFindMore"><span>'+esc(L(vm.language,"Showing ","Affichage de "))+visible.length+' / '+vm.items.length+'</span>'
       +'<button type="button" data-find-show-more>'+esc(L(vm.language,"Show more results","Afficher plus de résultats"))+'</button></div>';
   }else html+=emptyState(vm);
-  html+='</div>'+(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):""):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):""))+'</section>';
+  html+='</div>'+(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):""))+'</section>';
   return html;
 }
