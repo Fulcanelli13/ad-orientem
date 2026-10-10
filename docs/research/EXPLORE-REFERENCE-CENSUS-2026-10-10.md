@@ -86,3 +86,28 @@ Do not treat a book's 2,900 entries as 2,900 public pins, a 2025 Jubilee stop as
 4. **Only then** address precise geo-coordinates, bios, photographs/artworks and map-level release. Preserve the original modules and source ownership. Issue #665's existing relic-census dependency still blocks premature publication of the major Marian release batch.
 
 **No release certification is claimed. No exhaustive national denominators have been established.**
+
+## Batch 2 completed: bounded national/diocesan index acquisition (same date)
+
+The reference-led acquisition pass now has **211 indexed entries** from four source lists, transcribed and retained in five machine-readable files (the fifth is Italy's list-of-diocesan-source-registers, not site records):
+
+| Index | Indexed items | Name/index acquired | Canonical status |
+| --- | ---: | ---: | --- |
+| [NASPA US national shrine listings](../../data/geography/research/naspa-us-national-shrines-2026-10-10.v1.json) | 72 | 72/72 (100%) | 10 proposed links to existing seed sites; rest unresolved; apparent repeated physical sites in source |
+| [Australia 2025 Jubilee pilgrimage sites](../../data/geography/research/australia-jubilee-2025-sites-2026-10-10.v1.json) | 117 | 117/117 (100%) | One source-confirmed preexisting Penrose Park identity; 2025 designation not an enduring shrine status |
+| [Canadian bishops' national shrine list](../../data/geography/research/canada-national-shrines-2026-10-10.v1.json) | 6 | 6/6 (100%) | Four proposed matches to canonical Place seed; two seed gaps |
+| [Malolos diocesan shrine/basilica list](../../data/geography/research/malolos-shrines-2026-10-10.v1.json) | 16 | 16/16 (100%) | Four national shrines, ten diocesan shrines, two minor basilicas; no Philippine seed Place |
+| **Four bounded indices combined** | **211** | **211/211** | **Not 211 new unique Places or shrines** |
+
+Italy is a separate, deeper book/source census. The [ICCD diocesan source-list index](../../data/geography/research/italy-iccd-diocesan-source-index-2026-10-10.v1.json) records **33 listed diocesan/eparchial files**; their PDF records are unreviewed. ICCD's current publication description gives **31 Basilicata + 162 Calabria sanctuaries** in a monograph, measured at 31 December 2025, **not** 193 verified new sites in the app.
+
+### Confirmed identity and source-quality safeguards
+
+- The Australian index's *Shrine of Our Lady of Mercy* describes **Penrose Park**; the source site profile corroborates that this is the already seeded `place:AU:penrose-park`. No duplicate pin is justified. [Official Australian pilgrimage profile](https://pilgrimsofhope.catholic.org.au/site/shrine-of-our-lady-of-mercy/).
+- The Canadian episcopal index's **four known sites** are St Joseph's Oratory, Sainte-Anne-de-Beaupré, Notre-Dame-du-Cap and Canadian Martyrs' Shrine; the **two seed gaps** are Lac-Bouchette's Saint Anthony's Hermitage and Bishop Velychkovsky Martyr's Shrine (Winnipeg). Their canonical IDs remain unassigned.
+- The American association index lists both **St Gerard** and **Saint Lucy's Church/National Shrine of St Gerard** in Newark and two descriptions of **St Ann** in Scranton; these are potential duplicate physical sites, not two automatically independent records each. Ten US links are only proposed from names/location, and not yet published as authoritative bridges.
+- The Malolos index lists **San Isidro Labrador** at both Pulilan and Guiguinto, which are different towns; Guiguinto's own page links point instead to **Sta Rita de Cascia**. Keep the contradiction attached to that exact record rather than forcing either title.
+- NASPA and the Australian site each carry a specific identity/designation role; the latter mixes church buildings, cemeteries/graves, sacred outdoor locations and one-off Jubilee destinations. Their raw totals cannot be summed as major Catholic shrines.
+- The initial 16 research leads are preserved intact, and **10/16 are now linked to a specific bounded-source index entry**, not a verified new Place. Europe’s older 165 unmatched leads remain unreconciled with this batch.
+
+**Source index acquisition completion is 211/211 (100%) within these four selected, finite lists, but worldwide inventory completeness and worldwide eligible-site reconciliation remain unknown.** The next research work should focus on source-index coverage in other countries, especially where the seed presently has no Places, while obtaining and crosswalking Italy's many diocesan source files and the French reference-book indexes. Do not author bios or map pins from index-only records.
