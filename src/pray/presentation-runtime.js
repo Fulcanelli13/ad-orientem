@@ -1209,7 +1209,8 @@ function history(records,label){return `<div class="aoP435930History"><h3>${esc(
 function upsert(arr,rec){const i=arr.findIndex(x=>x.date===rec.date);if(i>=0)arr[i]=rec;else arr.push(rec);arr.sort((a,b)=>a.date.localeCompare(b.date));while(arr.length>36)arr.shift()}
 function handoff(id){externalResume=captureResume();close({silent:true,preserve:true});return BASE?.open?.(id,{returnContext:PRAY_CTX})}
 function programmeRail(kind,step,items){
- return `<div class="aoP435930StageRail aoP435930ProgrammeRail">${items.map((x,i)=>`<button type="button" class="${i===step?'active':''}" ${i===step?'aria-current="step"':''} data-p435930-${kind}-stage="${i}"><span>${i+1}</span><b>${esc(L(x[0],x[1]))}</b></button>`).join('')}</div>`
+ const titles=items.map(x=>L(x[0],x[1]));
+ return readerStageIndicator(titles,step,kind)+`<nav class="aoP435930StageRail aoP435930ProgrammeRail aoReaderStageRail" data-ao-reader-stage="${esc(kind)}" aria-label="${esc(L('Programme stages','Étapes du programme'))}">${items.map((x,i)=>`<button type="button" class="${i===step?'active':''}" ${i===step?'aria-current="step"':''} data-p435930-${kind}-stage="${i}" title="${esc(titles[i])}" aria-label="${esc((i+1)+' / '+items.length+' · '+titles[i])}"><span>${i+1}</span><b>${esc(titles[i])}</b></button>`).join('')}</nav>`;
 }
 function programmeNav(kind,step,total,lastLabel){
  const final=step===total-1;
