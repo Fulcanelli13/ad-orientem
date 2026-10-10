@@ -32,6 +32,9 @@ try{
  const dialog=page.locator("#ao-scripture-overlay");
  await dialog.waitFor({state:"visible",timeout:15000});
  assert.equal(await dialog.getAttribute("role"),"dialog");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").count(),1);
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
+   "Standalone Bible entry should expose book navigation");
  assert.equal(await dialog.getAttribute("aria-modal"),"true");
  assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-scripture-close")),true);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),2);
@@ -65,6 +68,7 @@ try{
  assert.equal(await dialog.getByRole("button",{name:"Bookmarked"}).getAttribute("aria-pressed"),"true");
  await dialog.locator(".aoScriptureBookmarks summary").click();
  assert.equal(await dialog.locator(".aoScriptureBookmarks button").count(),1);
+ await dialog.locator(".aoScriptureSearch summary").click();
  await dialog.locator(".aoScriptureSearch input").fill("Tob");
  await dialog.locator(".aoScriptureResults button").first().click();
  assert.match(await dialog.locator(".aoScriptureReading h3").innerText(),/Tobit 1:1/);
@@ -138,11 +142,28 @@ try{
  // complete-work locator, not pretend to be verse-specific patristic exegesis.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Psalms 129:1")),true);
  await dialog.waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false,
+   "Contextual Scripture reading must put the passage first");
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
+ assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/texte n’est pas encore intégré|not yet transcribed/i,
+   "Untranscribed Psalm commentary must not masquerade as verbatim source content");
  const bellarmine=dialog.locator("[data-scripture-commentary-source='verified']");
  await bellarmine.waitFor({state:"visible",timeout:12000});
  assert.match(await bellarmine.getAttribute("href"),/ecatholic2000\.com\/bellarmine\/commentary-on-psalms/);
  assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/Psalm 129/);
+ await dialog.locator("[data-scripture-close]").click();
+ // The shared reader must render the original Catena text, not just a link.
+ const catenaFixture={id:"catena.luke.1.28",work:"catena-aurea",
+   citation:"Catena Aurea, Luke 1:28–29",
+   source:{license:"public-domain",url:"https://www.ecatholic2000.com/catena/untitled-62.shtml"},
+   commented_verse_keys:["luke/1/28","luke/1/29"],
+   segments:[{father:"Bede",text:"Tested original-source passage within the reader."}]};
+ await page.route("**/data/catena/luke.jsonl",route=>route.fulfill({status:200,body:JSON.stringify(catenaFixture)}));
+ assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:28",{language:"en"})),true);
+ await dialog.locator("[data-scripture-context-depth='commentary']").click();
+ await dialog.locator(".aoScriptureFatherText").first().waitFor({state:"visible",timeout:12000});
+ assert.match(await dialog.locator(".aoScriptureFatherText").first().innerText(),/within the reader/);
+ assert.match(await dialog.locator(".aoScriptureFather summary").first().innerText(),/Bede/);
  await dialog.locator("[data-scripture-close]").click();
  // Source-witnessed divided reading opens in the same overlay. The two
  // chapters are separate; omitted verses are never silently restored.
@@ -161,7 +182,10 @@ try{
  await dialog.locator("[data-scripture-segment-index='1']").click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 27:1–60");
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.activeSegmentIndex),1);
+ await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("en");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
+   "Expanded navigation must survive a language change");
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/Matthew%2027%3A1-60/i);
@@ -199,6 +223,7 @@ try{
  assert.match(await notice.innerText(),/then 3:47–48, then 3:50–51/);
  assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,
    "Liturgical note must never unlock unlicensed Bible text");
+ await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await notice.innerText(),/ordre liturgique/);
  assert.match(await notice.innerText(),/Bible ci-dessous suit l’ordre canonique/);
