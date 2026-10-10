@@ -65,7 +65,7 @@ jobs:
       - name: Probe printed-1962 Missal July facsimile transcription against actual Latin Proper
         run: node tools/calendar/printed-1962-july-facsimile-b01.mjs --strict
       - name: Compare five Lent and Palm Sunday formularies with independent Latin booklets
-        run: node tools/calendar/independent-1962-lent-sundays-b02.mjs
+        run: node tools/calendar/independent-1962-lent-sundays-b02.mjs --strict
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
