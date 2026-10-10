@@ -44,7 +44,7 @@ export function compactHeritagePlaceSheet(vm){
   const synopsis=sacredPlaceSynopsis(p,{maxLength:250,language:vm.language,preferredCategory:preferred});
   const area=shortArea(p);
   let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
-  html+='<button type="button" class="aoHeritageSheetHandle" data-explore-expand-place aria-label="'+L(vm.language,"Open full place details","Ouvrir la fiche complète du lieu")+'"></button>';
+  html+='<button type="button" class="aoHeritageSheetHandle" data-explore-sheet-toggle aria-label="'+L(vm.language,"Open full place details","Ouvrir la fiche complète du lieu")+'"></button>';
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
   html+='<span class="aoHeritageCardKicker">'+esc(primary?label(vm.language,primary):L(vm.language,"Sacred place","Lieu sacré"))+'</span>';
   if(area)html+='<span class="aoHeritageCardLocation">'+esc(area)+'</span>';
