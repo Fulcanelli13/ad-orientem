@@ -17,13 +17,23 @@ assert.equal(normalizeMassLiturgicalColour("Or"),"GOLD");
 assert.equal(normalizeMassLiturgicalColour("invented"),null);
 assert.equal(Object.keys(MASS_LITURGICAL_PALETTES).length,8);
 
-const donorAccents={
-  WHITE:"#d6caa6",RED:"#b7736b",GREEN:"#6d9575",VIOLET:"#927aa2",
-  ROSE:"#c58e9f",BLACK:"#a8aaa6",GOLD:"#c7aa6d"
+// Existing chromatic accents retained; white/black deliberately supersede
+// the warm-gold/silver donor swatches at the user's visual review.
+const expectedAccents={
+  WHITE:"#eff0ed",RED:"#b7736b",GREEN:"#6d9575",VIOLET:"#927aa2",
+  ROSE:"#c58e9f",BLACK:"#50545c",GOLD:"#c7aa6d"
 };
-for(const [colour,accent] of Object.entries(donorAccents))
-  assert.equal(MASS_LITURGICAL_PALETTES[colour].accent,accent,
-    colour+" accent drifted from the exact v1.80 donor palette");
+for(const [colour,accent] of Object.entries(expectedAccents)){
+  const theme=MASS_LITURGICAL_PALETTES[colour];
+  assert.equal(theme.accent,accent,colour+" accent differs from approved dark palette");
+  assert.ok(/^#[0-9a-f]{6}$/i.test(theme.bg),colour+" lacks dark foundation");
+  // All ambient backgrounds retain a maximum channel of 34; accent colours
+  // are allowed to be vivid but must not saturate the Mass reader.
+  const rgb=theme.bg.match(/[0-9a-f]{2}/gi).map(x=>parseInt(x,16));
+  assert.ok(rgb.every(x=>x<=34),colour+" Mass foundation is too bright");
+}
+assert.notEqual(MASS_LITURGICAL_PALETTES.WHITE.accent,MASS_LITURGICAL_PALETTES.GOLD.accent);
+assert.notEqual(MASS_LITURGICAL_PALETTES.BLACK.accent,MASS_LITURGICAL_PALETTES.WHITE.accent);
 
 
 const sample=(proper,legacy={})=>({
@@ -54,12 +64,12 @@ const neutral=resolveMassLiturgicalTheme({session:{resolvedMass:{actualCelebrati
 assert.equal(neutral.key,"NEUTRAL","unknown colour must not silently become green");
 assert.equal(neutral.resolved,false);
 const css=massThemeCssVariables(white);
-assert.match(css,/--ao-mass-bg:#191815/);
+assert.match(css,/--ao-mass-bg:#080b10/);
 assert.match(css,/--ao-mass-accent:/);
 const markup=buildReaderShellMarkup(sample({color:"white"}));
 assert.match(markup,/data-liturgical-colour="WHITE"/);
 assert.match(markup,/data-liturgical-source="SELECTED_PROPER"/);
-assert.match(markup,/--ao-mass-bg:#191815/);
+assert.match(markup,/--ao-mass-bg:#080b10/);
 assert.match(markup,/background:linear-gradient\(180deg,var\(--ao-mass-top\),var\(--ao-mass-bottom\)\)/);
 assert.doesNotMatch(markup,/--ao-bg:#0d120f/);
 const shellCss=markup.slice(0,markup.indexOf("</style>"));
