@@ -44,6 +44,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{
      passage,context,language:current==="fr"?"fr":"en",storage:win.localStorage,
+     records:[...loaded.values()].flat(),
      onClose:close,
      onNeedBook:async({book,editionId})=>{
        const key=editionId+":"+book;
