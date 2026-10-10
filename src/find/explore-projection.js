@@ -216,6 +216,7 @@ export function projectShrineItems({shrines=[],places=[],placeRelationships=[],s
       title:shrine?.name||place?.name?.official||"Shrine",
       subtitle:addressLabel(address),
       summary:shrine?.origin_summary??"",
+      summary_fr:shrine?.origin_summary_fr??shrine?.origin_summary??"",
       address,
       geo,
       map_publishable:Boolean(mapped&&geo),
