@@ -1721,7 +1721,30 @@ try{
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
-  console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration},null,2));
+  // Independent 390px review client: source records, selectable artwork,
+  // note/approval persistence and actual JSON export.
+  await page.goto("http://127.0.0.1:4190/reviews/mass-complete-icon-assignment-atlas-20261011.html",
+    {waitUntil:"domcontentloaded",timeout:90000});
+  await page.locator("#targets .target").first().waitFor({timeout:20000});
+  assert.ok(await page.locator("#assets .asset").count()>=50,
+    "complete asset bank failed to display image candidates");
+  await page.locator("#findTarget").fill("AO.SM.C0068");
+  await page.locator("#targets .target").first().click();
+  await page.locator("#findAsset").fill("cross");
+  await page.locator("#assets .asset [data-primary]").first().click();
+  await page.locator("#status").selectOption("approved");
+  await page.locator("#notes").fill("Review example: exact cue; approved only in local export");
+  const [reviewDownload]=await Promise.all([
+    page.waitForEvent("download",{timeout:12000}),page.locator("#export").click()
+  ]);
+  const exported=JSON.parse(await readFile(await reviewDownload.path(),"utf8"));
+  assert.equal(exported.schema,"ao-icon-assignment-review-v1");
+  assert.ok(Object.keys(exported.changes).length>=1);
+  assert.ok(exported.sourceCounts?.matrix142===142);
+  await page.screenshot({path:resolve(out,"18-mass-complete-icon-atlas-mobile.png"),fullPage:false});
+  assert.deepEqual(errors,[],"review page JavaScript error: "+JSON.stringify(errors));
+  console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration,
+    iconAtlas:{targets:exported.sourceCounts?.matrix142,changed:Object.keys(exported.changes).length}},null,2));
   await context.close();
 }finally{
   await browser?.close();
