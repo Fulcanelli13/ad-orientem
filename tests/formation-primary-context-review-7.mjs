@@ -68,7 +68,7 @@ assert.match(role("APOL-002","documented_position").text.en,/§37/);
 assert.match(role("APOL-052","documented_position").text.en,/John Stuart Mill/);
 assert.match(role("APOL-060","documented_position").text.en,/1983/);
 assert.match(role("CR-GOV-05","documented_position").text.en,/two-thirds/);
-assert.match(role("CR-GOV-10","documented_position").text.en,/Magisterium/);
+assert.match(role("CR-GOV-10","documented_position").text.en,/dubium dated 10 July 2023/);
 assert.match(role("CR-IDM-06","documented_position").text.en,/Ad gentes/);
 for(const pack of packs){
  assert.equal(pack.publication_allowed,false);
