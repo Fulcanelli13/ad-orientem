@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
-  eligibleSacredArtwork, selectDailySacredArt, selectTimedDevotionalSacredArt
+  eligibleSacredArtwork, selectDailySacredArt, selectTimedDevotionalSacredArt, selectRecurringPrayerSacredArt
 } from "../src/calendar/sacred-art-selection.js";
 
 const registry = JSON.parse(readFileSync("data/calendar/sacred-art-candidates.v1.json", "utf8"));
@@ -80,4 +80,21 @@ for (const year of [2026,2028]){
     assert.equal(selectDailySacredArt({date},works).artwork.id,"met-5");
   }
 }
+
+const prayerCandidates=[
+  {...mock("101",["annunciation"]),association:{subjectKeys:["annunciation"],seasonIds:[],observedIds:[],prayerKeys:["angelus","rosary.joy1"]}},
+  {...mock("102",["annunciation"]),association:{subjectKeys:["annunciation"],seasonIds:[],observedIds:[],prayerKeys:["angelus"]}},
+  {...mock("103",["annunciation"]),association:{subjectKeys:["annunciation"],seasonIds:[],observedIds:[],prayerKeys:["angelus"]}},
+  {...mock("104",["resurrection"]),association:{subjectKeys:["resurrection"],seasonIds:[],observedIds:[],prayerKeys:["regina-caeli","rosary.glo1"]}}
+];
+const dailySlots=["morning","midday","evening"].map(slot=>selectRecurringPrayerSacredArt({date:"2026-10-10",prayerKey:"angelus",slot},prayerCandidates));
+assert.equal(new Set(dailySlots.map(x=>x.artwork.id)).size,3,"Three prayer times must show distinct paintings when possible");
+assert.equal(dailySlots[0].artwork.id,selectRecurringPrayerSacredArt({date:"2026-10-10",prayerKey:"angelus",slot:"morning"},prayerCandidates).artwork.id,"No flicker across rerenders");
+assert.equal(selectRecurringPrayerSacredArt({date:"2026-10-11",prayerKey:"angelus",slot:"morning"},prayerCandidates).poolSize,3);
+assert.equal(selectRecurringPrayerSacredArt({date:"2026-10-10",prayerKey:"rosary.joy1"},prayerCandidates).artwork.id,"met-101");
+assert.equal(selectRecurringPrayerSacredArt({date:"2026-10-10",prayerKey:"rosary.glo1"},prayerCandidates).artwork.id,"met-104");
+assert.equal(selectRecurringPrayerSacredArt({date:"2026-10-10",prayerKey:"rosary.sor5"},prayerCandidates),null,"No arbitrary substitute for missing mystery");
+assert.equal(selectRecurringPrayerSacredArt({date:"2026-10-10",prayerKey:"angelus"},registry.artworks),null,"Source candidates do not become published imagery");
+assert.equal(selectRecurringPrayerSacredArt({date:"bad",prayerKey:"angelus"},prayerCandidates),null);
+
 console.log("PASS 40 museum objects source-listed as candidates; fail-closed QA, observed 1962 precedence, Scripture/season fallback, local-time Angelus and 365/366 algorithmic safety");
