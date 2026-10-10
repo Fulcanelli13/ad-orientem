@@ -36,6 +36,13 @@ export function rewriteResolvedSourceUrl(input){
   match=raw.match(DO_MISSA_COMMON);
   if(match){
     const [,ref,language,file]=match;
+    // Coronatio's appointed 1962 Mass lessons, Gospel and chants exist in
+    // this pinned missa corpus, but NOT its horas counterpart for EN/FR.
+    // Redirecting it to horas silently discarded the Chair of St Peter and
+    // Gregory VII Proper translations. Preserve the source's own Mass owner.
+    // Pinned source: DivinumOfficium/divinum-officium@${DIVINUM_OFFICIUM_PIN}
+    // web/www/missa/{English,Francais}/Commune/Coronatio.txt
+    if(ref===DIVINUM_OFFICIUM_PIN && /^Coronatio\\.txt$/i.test(file))return raw;
     return `${RAW_DO}${ref}/web/www/horas/${canonicalLanguage(language)}/Commune/${file}`;
   }
 
