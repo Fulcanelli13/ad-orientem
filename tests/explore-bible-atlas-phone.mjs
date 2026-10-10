@@ -35,7 +35,7 @@ try{
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===true&&
   document.querySelector("[data-bible-atlas]"),null,{timeout:15000});
  const stops=page.locator("#ao-find-modular-root [data-bible-step]");
- assert.equal(await stops.count(),143,"all milestones are one continuous ribbon");
+ assert.equal(await stops.count(),150,"all milestones are one continuous ribbon");
  const track=page.locator("#ao-find-modular-root [data-bible-track]");
  const width=await track.evaluate(el=>({scroll:el.scrollWidth,client:el.clientWidth}));
  assert.ok(width.scroll>width.client*3,"timeline is not horizontally scrollable");
@@ -47,11 +47,11 @@ try{
  assert.equal(await page.locator('#ao-find-modular-root [data-bible-step="71"]').getAttribute("aria-pressed"),"true");
  const nearby=await track.evaluate(el=>{const middle=el.getBoundingClientRect().left+el.clientWidth/2;const card=el.querySelector('[data-bible-step="71"]').getBoundingClientRect();return Math.abs(card.left+card.width/2-middle)});
  assert.ok(nearby<125,"selected milestone should remain close to timeline centre");
- await page.locator('#ao-find-modular-root [data-bible-step="142"]').tap({timeout:15000});
- await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===142,null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-step="149"]').tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleIndex===149,null,{timeout:15000});
  const last=await page.locator("#ao-find-modular-root [data-bible-detail]").innerText();
  assert.match(last,/new Jerusalem|Jérusalem nouvelle/i);
- assert.ok(await page.locator('#ao-find-modular-root [data-bible-step="142"]').getAttribute("aria-pressed")==="true");
+ assert.ok(await page.locator('#ao-find-modular-root [data-bible-step="149"]').getAttribute("aria-pressed")==="true");
  // Non-geographic apocalyptic visions remain on the timeline, with no fabricated pin.
  assert.match(last,/No earthly location|Aucun lieu terrestre/);
  // Native Scripture opens from an atlas milestone and leaves the atlas ready on return.
