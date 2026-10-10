@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {parseScriptureContext} from "../src/scripture/context.js";
 import { readFileSync } from "node:fs";
 import {
-  buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail,
+  buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes,
   atlasEraOverlay, renderBibleAtlasToString, ATLAS_GEO
 } from "../src/find/bible-atlas.js";
 
@@ -61,6 +61,14 @@ assert.equal(atlasIndexForPin(stops,by("APOSTLES","rome").index,"atlas:corinth")
 assert.match(atlasDetail(by("INFANCY","jerusalem-temple"),"en"),/City-level reference/);
 assert.match(atlasDetail(by("EXODUS","sinai"),"fr"),/repère/);
 assert.match(atlasDetail(by("APOSTLES","rome"),"en"),/data-ao-scripture-context="Acts 28:16–31"/);
+const capIdx=by("PUBLIC","capernaum").index;
+const pinSheet=atlasPinEpisodes(stops,data.entries,"capernaum",capIdx,"en");
+assert.match(pinSheet,/data-bible-pin-episodes="capernaum"/);
+assert.match(pinSheet,/Teaching and exorcism/);
+assert.match(pinSheet,/data-ao-scripture-context=/,"pin detail exposes canonical passages");
+const oldJerusalem=atlasPinEpisodes(stops,data.entries,"jerusalem",by("ISRAEL","jerusalem-temple").index,"en");
+assert.doesNotMatch(oldJerusalem,/The Presentation of Jesus/,"ancient kingdom pin must not leak later infancy events");
+
 assert.match(atlasEraOverlay("EXODUS","fr"),/L&#39;Exode/);
 const en=renderBibleAtlasToString({language:"en",atlasStops:stops,atlasIndex:0});
 const fr=renderBibleAtlasToString({language:"fr",atlasStops:stops,atlasIndex:71});
