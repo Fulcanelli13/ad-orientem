@@ -107,6 +107,14 @@ try{
  await page.evaluate(()=>__observed.dispose());
  await page.waitForSelector("[data-ao-full-mass-preflight]");
  assert.equal(await page.locator("[data-full-mass-form]").count(),4);
+ assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
+ assert.equal(await page.locator('[data-full-mass-reader-mode][value="LIVE"]').isChecked(),true);
+ for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+  await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
+  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).readerMode,mode);
+  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-reader-mode"),mode);
+ }
+
  assert.equal(await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').isChecked(),true);
  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-celebration-kind"),"CALENDAR");
  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","SOLEMN","MISSA_CANTATA_INCENSE"]){
@@ -186,6 +194,8 @@ try{
  assert.equal(await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').isChecked(),true,
   "Selection leaked across a different Mass date");
  assert.equal((await page.evaluate(()=>__full.status())).explicitlyChosenForm,false);
+ assert.equal((await page.evaluate(()=>__full.status())).explicitlyChosenReaderMode,false,
+  "Reader mode leaked across a new actual Mass date");
  await page.evaluate(()=>{__kind="CALENDAR";__formDate="2026-10-12";__ready=false;__full.refresh()});
  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-proper-ready"),"false");
  await page.evaluate(()=>{
