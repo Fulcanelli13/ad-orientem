@@ -4,6 +4,7 @@ import csv, hashlib, io, json, re, time
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+from urllib.parse import urlsplit, urlunsplit, quote
 from PIL import Image, ImageOps, ImageDraw
 import numpy as np
 
@@ -17,6 +18,8 @@ USER_AGENT = "AdOrientem-sacred-art-review/1.0"
 def download(url, size_limit=LIMIT):
     if not url.startswith("https://"):
         raise ValueError("Non-HTTPS source")
+    parts = urlsplit(url)
+    url = urlunsplit((parts.scheme, parts.netloc, quote(parts.path, safe="/%"), parts.query, parts.fragment))
     last = None
     for attempt in range(4):
         try:
