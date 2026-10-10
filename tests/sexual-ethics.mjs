@@ -339,7 +339,7 @@ for(const language of ["en","fr"]){
   assert.ok(objection>=0&&answer>objection&&expand>answer,
     item.id+" "+language+": objection must precede the visible direct answer and debate expander");
   const rendered=html.slice(objection,answer);
-  assert.match(rendered,/<small>Objection<\\/small><p>[^<]{35,}<\\/p>/,
+  assert.match(rendered,/<small>Objection<\/small><p>[^<]{35,}<\/p>/,
     item.id+" "+language+": source links displaced actual objection prose");
   assert.match(rendered,/<details class="aoCSEStageSources"[^>]*data-ao-cse-stage-sources="opposition">/,
     item.id+" "+language+": opponent sources must be available within a disclosure");
