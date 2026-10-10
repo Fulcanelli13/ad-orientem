@@ -46,6 +46,25 @@ assert.equal(coverage.dossiers.filter(x=>x.synthesis&&!x.research.length).length
 assert.equal(coverage.dossiers.filter(x=>x.corpus==="apologetics"&&x.synthesis).length,60);
 assert.equal(coverage.dossiers.filter(x=>x.corpus==="crisis"&&x.synthesis).length,81);
 assert.equal(coverage.dossiers.filter(x=>!x.synthesis).length,0);
+// A source ID is scoped to its canonical pack, not an app-global map.
+// The original V1 citations point to distinct official editions; previous
+// global flattening silently attached the last pack's title to every owner.
+const councilInBatchOne=coverage.dossiers.find(d=>d.id==="CR-ECC-04");
+const councilInBatchFour=coverage.dossiers.find(d=>d.id==="APOL-018");
+assert.ok(councilInBatchOne.synthesis.sourceRegistry instanceof Map);
+assert.ok(councilInBatchFour.synthesis.sourceRegistry instanceof Map);
+assert.notEqual(councilInBatchOne.synthesis.sourceRegistry,councilInBatchFour.synthesis.sourceRegistry);
+assert.equal(councilInBatchOne.synthesis.sourceRegistry.get("V1").url,
+ "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html");
+assert.equal(councilInBatchFour.synthesis.sourceRegistry.get("V1").url,
+ "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html");
+assert.notEqual(councilInBatchOne.synthesis.sourceRegistry.get("V1").title,
+ councilInBatchFour.synthesis.sourceRegistry.get("V1").title);
+for(const d of coverage.dossiers)
+  for(const part of d.synthesis.sections)
+    for(const ref of part.source_ids)
+      assert.ok(d.synthesis.sourceRegistry.get(ref)?.url?.startsWith("https://"),d.id+" missing scoped citation "+ref);
+
 const evidence=JSON.parse(readFileSync("data/learn/formation-141-absorption-evidence-2026-10-09.v1.json","utf8"));
 assert.equal(coverage.dossiers.every(d=>d.evidence?.id===d.id),true,"every canonical dossier must receive its source evidence disposition");
 assert.equal(coverage.dossiers.filter(d=>d.evidence?.direct_source_bearing_research_ids?.length).length,53);
@@ -194,6 +213,13 @@ assert.ok(node.innerHTML.includes('data-rr-article="TLM026"'),"TLM subquestion i
 node.listeners.click(makeClick({back:true}));
 node.listeners.click(makeClick({dossier:"CR-LIT-05"}));
 assert.ok(node.innerHTML.includes('data-rr-canonical-synthesis="CR-LIT-05"'),"Canonical answer missing from dossier reading");
+node.listeners.click(makeClick({back:true}));
+node.listeners.click(makeClick({dossier:"APOL-018"}));
+assert.ok(node.innerHTML.includes("First Vatican Council, Pastor aeternus"),"APOL-018 must display its own primary-source title");
+node.listeners.click(makeClick({back:true}));
+node.listeners.click(makeClick({dossier:"CR-ECC-04"}));
+assert.ok(node.innerHTML.includes("First Vatican Council, Pastor aeternus (1870), Latin"),"CR-ECC-04 must retain its different primary-source title");
+
 node.listeners.click(makeClick({back:true}));
 for(const id of ["APOL-002","APOL-004","APOL-008","APOL-010","APOL-042","APOL-050","APOL-052","APOL-053","APOL-059","APOL-060",
                  "CR-ORG-09","CR-LIT-02","CR-LIT-03","CR-LIT-06","CR-LIT-07","CR-LIT-08","CR-LIT-09","CR-LIT-10","CR-LIT-11","CR-LIT-12"]){
