@@ -91,7 +91,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
   // Explicit Rogation variant is owned by the central Mass resolver, not
   // by the calendar or insertion of the procession card on its own.
   const rogationSelection=options.rogationSelection==null ? null :
-    resolveRogationMassVariant(options.rogationSelection);
+    resolveRogationMassVariant({...options.rogationSelection,date:legacy.date});
   if(rogationSelection?.availability==="BLOCKED")
     throw new Error("ROGATION_SELECTION_"+rogationSelection.reason);
   let selectedProper=options.proper??null;
@@ -99,7 +99,8 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     selectedProper=compileRogationReaderProper({
       sourceGate:options.rogationSelection.sourceGate,
       sourceProper:options.rogationSelection.sourceProper,
-      preface:options.rogationSelection.preface
+      preface:options.rogationSelection.preface,
+      credo:rogationSelection.credo
     });
     requestedCelebration=celebrationObject(
       "rogation-mass-1962","VOTIVE","Missa de Rogationibus · Exaudivit");
@@ -130,7 +131,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       requiemClass:legacy.requiemClass??null,
       colour:rogationSelection?.selection==="ROGATION_MASS"?"violet":(legacy.colour??null),
       gloria:rogationSelection?.selection==="ROGATION_MASS"?false:(legacy.gloria??proper?.data?.hasGloria??proper?.hasGloria??null),
-      credo:rogationSelection?.selection==="ROGATION_MASS"?false:(legacy.credo??proper?.data?.hasCredo??proper?.hasCredo??null),
+      credo:rogationSelection?.selection==="ROGATION_MASS"?rogationSelection.credo:(legacy.credo??proper?.data?.hasCredo??proper?.hasCredo??null),
       sequencePresent:options.sequencePresent??legacy.sequencePresent??null,
       chantSetting:options.chantSetting??legacy.chantSetting??null,
       faithfulCommunicantsPresent:options.faithfulCommunicantsPresent??legacy.faithfulCommunicantsPresent??null,

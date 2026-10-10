@@ -27,9 +27,10 @@ const ICONS=["stand","sit","kneel","genuflect","bow","cross","gospel_crosses","b
 "priest_rail","priest_people"];
 try{
  browser=await chromium.launch({headless:true});
- for(const [date,language,service] of [
-  ["2026-04-25","en","PUBLIC_PROCESSION"],
-  ["2038-04-27","fr","ORDINARY_AUTHORIZED_SUPPLICATIONS"]
+ for(const [date,language,service,votiveExpected] of [
+  ["2026-04-25","en","PUBLIC_PROCESSION",true],
+  ["2027-04-25","fr","PUBLIC_PROCESSION",true],
+  ["2038-04-27","fr","ORDINARY_AUTHORIZED_SUPPLICATIONS",false]
  ]){
   const context=await browser.newContext({viewport:{width:390,height:844},
     isMobile:true,hasTouch:true,deviceScaleFactor:2,serviceWorkers:"block"});
@@ -124,19 +125,28 @@ try{
    });
    console.log("MAJOR_VOTIVE_BROWSER_ELIGIBILITY",JSON.stringify(eligibility));
    assert.equal(eligibility.candidate.observance,"MAJOR");
-   assert.equal(eligibility.candidate.votiveAllowed,false);
-   assert.equal(eligibility.domOptionDisabled,true,"Major votive must remain independently unpublished");
-   assert.equal(await option.getAttribute("disabled"),"","Disabled Major votive must have a real DOM attribute");
-   assert.match((await page.locator("[data-rogation-status]").textContent())??"",
-    language==="fr"?/pas encore certifiée/i:/not yet certified/i);
+   assert.equal(eligibility.candidate.votiveAllowed,votiveExpected,
+    "First-class Easter octave impediment must be distinct from certified Eastertide votive");
+   assert.equal(eligibility.domOptionDisabled,!votiveExpected,"Votive option eligibility differs from real day");
+   assert.equal(await option.getAttribute("disabled"),votiveExpected?null:"",
+    "Votive DOM state must reflect real independent Major certificate and first-class impediment");
+   const status=await page.locator("[data-rogation-status]").textContent();
+   assert.match(status,votiveExpected?
+    (language==="fr"?/exige des litanies publiques/i:/requires explicitly selected public litanies/i):
+    (language==="fr"?/Ire classe/i:/first-class celebration/i));
    const before=await page.evaluate(()=>globalThis.__majorPreflight.selectionFor(
     globalThis.AO_CELEBRATION_API.getResolvedMass()));
    assert.equal(before,null,"Date must never automatically insert public Litanies");
    await page.selectOption("[data-rogation-service]",service);
+   if(votiveExpected)await page.selectOption("[data-rogation-choice]","ROGATION_MASS");
    const selection=await page.evaluate(()=>globalThis.__majorPreflight.selectionFor(
     globalThis.AO_CELEBRATION_API.getResolvedMass()));
    assert.equal(selection.observance,"MAJOR");
-   assert.equal(selection.choice,"DAY_MASS");
+   assert.equal(selection.choice,votiveExpected?"ROGATION_MASS":"DAY_MASS");
+   if(votiveExpected){
+    assert.equal(selection.majorGate.publicationAllowed,true);
+    assert.equal(selection.sourcePreface.published,true);
+   }
    assert.equal(selection.service,service);
    const state=await page.evaluate(async()=>{
     const mod=await import("/src/mass/browser-entry.js?major-litanies-day-mass-e2e");
@@ -148,13 +158,28 @@ try{
       properSource:prepared.session.resolvedMass.proper?.data?.sourcePath,
       owner:prepared.session.resolvedMass.actualCelebration?.id,
       observance:prepared.session.resolvedMass.provenance?.rogationSelection?.observance,
-      starts:globalThis.__majorLegacyStart
+      starts:globalThis.__majorLegacyStart,
+      gloria:prepared.session.resolvedMass.provenance.gloria,
+      credo:prepared.session.resolvedMass.provenance.credo,
+      preface:prepared.session.resolvedMass.proper?.data?.preface,
+      introit:prepared.session.resolvedMass.proper?.data?.introit
     };
    });
    assert.equal(state.entry,"INTROIT");
    assert.deepEqual(state.preceding,["ROGATIONS"]);
-   assert.equal(state.properSource,actualDay.source,"Calendar day Proper replaced with Rogation votive");
-   assert.notEqual(state.owner,"rogation-mass-1962");
+   if(votiveExpected){
+    assert.equal(state.properSource,"Rogationes/1962/Exaudivit");
+    assert.equal(state.owner,"rogation-mass-1962");
+    assert.equal(state.gloria,false);
+    assert.equal(state.credo,new Date(date+"T00:00:00Z").getUTCDay()===0,
+     "Sunday Rogation votive must preserve the Creed under 1960 §343(a)");
+    assert.match(state.preface.lat,/in hoc potissimum/);
+    assert.match(state.introit.lat,/Exaudivit de templo sancto/);
+    assert.ok(state.preface[language].length>100);
+   }else{
+    assert.equal(state.properSource,actualDay.source,"I-class Mass of the day must not be overwritten");
+    assert.notEqual(state.owner,"rogation-mass-1962");
+   }
    assert.equal(state.observance,"MAJOR");
    assert.equal(state.starts,0);
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R01",
@@ -182,12 +207,74 @@ try{
    await page.touchscreen.tap(bb.x+bb.width/2,bb.y+bb.height/2);
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R06",
     null,{timeout:5000});
+   if(votiveExpected){
+    // Walk the source-owned R17 Ordinary and prove the Sunday Creed exception.
+    const expected=[
+      "AO.CARD.001","AO.CARD.002","AO.CARD.004",
+      "AO.CARD.005","AO.CARD.006","AO.CARD.007","AO.CARD.008",
+      ...(state.credo?["AO.CARD.009"]:[]),"AO.CARD.010"
+    ];
+    const visited=[];
+    for(const sectionId of expected){
+      const box=await next.boundingBox();assert.ok(box&&box.height>=44);
+      // Locator tap waits for the dynamically rendered phone control to
+      // become stable after each card-arrival transition.
+      await next.tap({timeout:5000});
+      // Match the previously certified Minor Rogation phone journey:
+      // let the 120ms post-touch card repaint settle before sampling R17.
+      await page.waitForTimeout(120);
+      try{
+        await page.waitForFunction(expectedId=>{
+          const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+          return (card?.sourceSectionId??card?.sectionId)===expectedId;
+        },sectionId,{timeout:5000});
+      }catch(error){
+        const card=await page.evaluate(()=>{
+          const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+          return {id:c?.id,sectionId:c?.sectionId,sourceSectionId:c?.sourceSectionId,title:c?.title};
+        });
+        const navDetails=await page.evaluate(()=>{
+          const api=globalThis.AO_R17_NATIVE_READER_PREVIEW,root=api?.root;
+          const b=root?.querySelector('[data-reader-nav="next"]');
+          const rect=b?.getBoundingClientRect?.();
+          const center=rect?{x:rect.x+rect.width/2,y:rect.y+rect.height/2}:null;
+          const hit=center?document.elementFromPoint(center.x,center.y):null;
+          return {
+            rootNavInput:root?.dataset?.aoLastNavInput,
+            rootNavResult:root?.dataset?.aoLastNavResult,
+            buttonOuter:b?.outerHTML?.slice(0,520),buttonDisabled:b?.disabled,
+            center,hitTag:hit?.tagName,hitClass:hit?.className,
+            hitMarkup:hit?.outerHTML?.slice(0,450),
+            pointerEvents:b?getComputedStyle(b).pointerEvents:null,
+            effectiveNav:api?.reader?.getState?.()?.id,
+            lifecycleState:root?.dataset?.r17StateOwner
+          };
+        });
+        const clickResponse=await page.evaluate(()=>{
+          const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+          const button=api?.root?.querySelector('[data-reader-nav="next"]');
+          button?.click();
+          const c=api?.getCurrentCard?.();
+          return {card:c?.sectionId??c?.id,navInput:api?.root?.dataset?.aoLastNavInput,
+            navResult:api?.root?.dataset?.aoLastNavResult};
+        });
+        throw new Error("ROGATION_NAV_EXPECTED_"+sectionId+" got "+
+          JSON.stringify(card)+" after "+JSON.stringify(visited)+
+          " browserErrors="+JSON.stringify(errors)+
+          " navDetails="+JSON.stringify(navDetails)+
+          " syntheticClick="+JSON.stringify(clickResponse)+"; "+
+          String(error?.message??error));
+      }
+      visited.push(sectionId);
+    }
+   }
    assert.deepEqual(errors,[],"Browser errors on "+date);
-   console.log("ACTUAL_MAJOR_LITANY_DAY_MASS",JSON.stringify({
+   console.log("ACTUAL_MAJOR_LITANY_MASS",JSON.stringify({
      ...actualDay,language,service,entry:state.entry,correctOwner:state.owner,
-     publicLitany:true,noAutomaticDateAction:true,majorVotiveStillBlocked:true
+     publicLitany:true,noAutomaticDateAction:true,
+     majorVotivePublished:votiveExpected,sundayCredo:state.credo??null
    }));
   }finally{await context.close()}
  }
- console.log("Greater Litanies EN/FR real-calendar public Litany → day Mass R17 journey: PASS");
+ console.log("Greater Litanies EN/FR real-calendar public Litany → II-class votive after octave or I-class day Mass: PASS");
 }finally{await browser?.close();await new Promise(ok=>server.close(()=>ok()))}

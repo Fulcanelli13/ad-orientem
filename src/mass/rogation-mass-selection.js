@@ -1,3 +1,4 @@
+import { gregorianEasterDate, litanyObservanceOn } from "./litany-dates.js";
 // Conditional II-class Rogation Mass contract (1960 Rubricae generales §§80–90, 341–347).
 // This is a pure Mass-owner decision: it does not infer a rite from a calendar date
 // and never substitutes an ordinary feria or an unrelated votive Proper.
@@ -40,13 +41,42 @@ export function rogationProperReady(gate, sourceProper = null) {
   });
 }
 
+// A distinct Greater Litany certificate must refer to the *same* printed
+// source as the Minor Proper. April 25 is always in Gregorian Eastertide,
+// and the only §80 transfer is Easter Tuesday (I class, votive impeded).
+export function majorLitanyVotiveReady({
+  date,dayClass,observance,majorGate,sourceGate,sourceProper,preface
+}={}){
+  if(observance!=="MAJOR" || litanyObservanceOn(date)!=="MAJOR" ||
+     ![2,3,4].includes(Number(dayClass)))return false;
+  const easter=gregorianEasterDate(Number(date.slice(0,4)));
+  const offset=(Date.parse(date+"T00:00:00Z")-easter.getTime())/86400000;
+  const verified=majorGate?.verifiedRelease;
+  if(majorGate?.schema!=="AO_1962_MAJOR_LITANY_VOTIVE_RELEASE_GATE_V1" ||
+     majorGate.status!=="PUBLISHED_1962_MAJOR_LITANY_EASTERTIDE_VOTIVE" ||
+     majorGate.publicationAllowed!==true ||
+     verified?.season!=="EASTERTIDE_ONLY" ||
+     verified?.sundayCredo!==true ||
+     verified?.chantStructure!=="TEMPOR(E)_PASCHALI_TWO_VERSE_ALLELUIA_AS_ALREADY_PUBLISHED_FOR_MINOR" ||
+     !Number.isInteger(offset) || offset<8 || offset>34 ||
+     majorGate?.sourceReuse?.properId!=="AO_1962_ROGATION_PROPER_V1" ||
+     !rogationProperReady(sourceGate,sourceProper))return false;
+  return preface?.selection==="IN_HOC_POTISSIMUM" &&
+    preface?.status==="PUBLISHED_1962_EASTER_PREFACE" &&
+    preface?.published===true && preface?.publicationAllowed===true &&
+    !!preface?.source?.edition &&
+    ["lat","en","fr"].every(k=>typeof preface?.text?.[k]==="string"&&preface.text[k].trim().length>100) &&
+    /in hoc potissimum/i.test(preface.text.lat);
+}
+
 // observanceConfirmed must be supplied by the shared liturgical-day resolver,
 // including any lawful diocesan transfer; civil date alone is never enough.
 // A procession and Ordinariate-authorised alternative public supplications
 // are separate explicit service states under rubrics §§82–83 and 346.
 export function resolveRogationMassVariant({
   choice = "DAY_MASS", observanceConfirmed = false, service = null,
-  dayClass = null, sourceGate = null, sourceProper = null
+  dayClass = null, sourceGate = null, sourceProper = null,
+  observance = null,date = null,majorGate = null,sourcePreface = null
 } = {}) {
   if (!["DAY_MASS", "ROGATION_MASS"].includes(choice)) {
     throw new TypeError("Unknown Rogation Mass choice");
@@ -84,12 +114,21 @@ export function resolveRogationMassVariant({
     return block("PUBLIC_RITE_NOT_CONFIRMED");
   }
   if (![1, 2, 3, 4].includes(dayClass)) return block("DAY_CLASS_NOT_VERIFIED");
+  if (observance!=null&&date!=null&&litanyObservanceOn(date)!==observance)
+    return block("ROGATION_OBSERVANCE_DATE_MISMATCH");
   if (dayClass === 1) return block("VOTIVE_II_CLASS_IMPEDED");
+  if (observance==="MAJOR"&&!majorLitanyVotiveReady({
+    date,dayClass,observance,majorGate,sourceGate,sourceProper,preface:sourcePreface
+  }))return block("MAJOR_LITANY_VOTIVE_NOT_SOURCE_CERTIFIED");
+  if (observance==="MAJOR"&&litanyObservanceOn(date)!=="MAJOR")
+    return block("MAJOR_LITANY_DATE_NOT_VERIFIED");
   if (!rogationProperReady(sourceGate, sourceProper)) return block("PROPER_NOT_SOURCE_CERTIFIED");
+  const sunday=observance==="MAJOR" &&
+    new Date(date+"T00:00:00Z").getUTCDay()===0;
   return Object.freeze({
     selection: "ROGATION_MASS", availability: "AVAILABLE",
     properOwner: "ROGATION_1962_SOURCE", massClass: 2, colour: "violet",
-    massEntry: "INTROIT", omitOpeningPrayers: true, gloria: false, credo: false,
+    massEntry: "INTROIT", omitOpeningPrayers: true, gloria: false, credo: sunday,
     precedingRites: Object.freeze(["ROGATIONS"]),
     selectedService: service
   });

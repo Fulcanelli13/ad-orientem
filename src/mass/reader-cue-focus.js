@@ -72,7 +72,10 @@ export function activeCueFromScrollContainer(container,options={}){
 export function markActiveCue(container,cueId){
   if(!container?.querySelectorAll)return;
   for(const node of container.querySelectorAll(".ao-reader-paragraph[data-cue-id]")){
-    node.dataset.active=String(Boolean(cueId && node.dataset.cueId===cueId));
+    const active=String(Boolean(cueId && node.dataset.cueId===cueId));
+    // The cue tracker may refresh on scroll, resize, and Schola resize.
+    // Avoid unnecessary DOM writes / style invalidation at every frame.
+    if(node.dataset.active!==active)node.dataset.active=active;
   }
 }
 

@@ -1354,6 +1354,7 @@ export async function mountNativeReaderPreview({
     // Matrix text wins, but the same-cue rubric retains an authoritative
     // icon identity if the matrix has not bound its icon yet.
     const resolvedMatrixAction=matrixAction && !matrixAction.iconKey &&
+      matrixAction.iconStatus!=="PENDING_EXACT_MASTER" &&
       rubricAction?.iconKey && rubricAction.cueId===matrixAction.cueId
       ? Object.freeze({...matrixAction,iconKey:rubricAction.iconKey})
       : matrixAction;
@@ -1922,17 +1923,17 @@ export async function mountNativeReaderPreview({
 
   function planAwareCard(card){
     if(!card)return null;
-    // The II-class violet Rogation votive omits Gloria and Credo.
-    // Keep the canonical 48-step corpus immutable, but prevent these
-    // entire source-owned sections appearing in navigation or rendering.
+    // Purple II-class Rogation votives always omit Gloria. Under 1960
+    // General Rubrics §343(a), Credo is retained if the occurring
+    // Sunday prescribes it. Keep the canonical 48-card source unchanged.
     const isRogation=prepared?.session?.resolvedMass?.actualCelebration?.id==="rogation-mass-1962";
     const sourceSection=String(card.sourceSectionId??card.sectionId??"");
-    if(isRogation && ["AO.CARD.003","AO.CARD.009"].includes(sourceSection)){
-      if(prepared?.session?.resolvedMass?.provenance?.gloria!==false ||
-         prepared?.session?.resolvedMass?.provenance?.credo!==false)
-        throw new Error("ROGATION_GLORIA_CREDO_OMISSION_NOT_CERTIFIED");
+    const prov=prepared?.session?.resolvedMass?.provenance??{};
+    if(isRogation && sourceSection==="AO.CARD.003"){
+      if(prov.gloria!==false)throw new Error("ROGATION_GLORIA_OMISSION_NOT_CERTIFIED");
       return null;
     }
+    if(isRogation && sourceSection==="AO.CARD.009"&&prov.credo===false)return null;
     const plan=prepared?.session?.plan;
     if(plan?.blessingAllowed!==false)return card;
     const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
@@ -1970,7 +1971,7 @@ export async function mountNativeReaderPreview({
     return null;
   }
 
-  function showCard(card){
+  function showCard(card,{directJump=false}={}){
     if(!card) return null;
     inAsperges=false;
     inPalm=false;
@@ -1989,7 +1990,10 @@ export async function mountNativeReaderPreview({
     syncRiteChoice(null,null);
     const previous=current;
     const changed=Boolean(previous?.sectionId && previous.sectionId!==card.sectionId);
-    const partCinema=partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
+    // A direct section/sequence jump is navigation, not a liturgical
+    // procession between adjacent cards. Preserve donor cinematics during
+    // linear reading only; never mask a manually selected destination.
+    const partCinema=directJump ? null : partTransitionCinematic(initialCardRender ? null : previous,card,{initial:initialCardRender});
     initialCardRender=false;
     armPartCinematic(partCinema);
     if(changed){
@@ -2110,7 +2114,7 @@ export async function mountNativeReaderPreview({
     },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(visibleCardAllowed(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     onPrevious:previousReaderCard,
     onNext:nextReaderCard,
@@ -2251,11 +2255,11 @@ export async function mountNativeReaderPreview({
     }),
     showSection:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
-      return showCard(visibleCardAllowed(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     showSequence:sequence=>{
       const card=readerModel.cardBySequence(sequence);
-      return showCard(visibleCardAllowed(card)?card:null);
+      return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
     },
     syncState:queue,
     getPresentationMode:()=>reader.getMode(),

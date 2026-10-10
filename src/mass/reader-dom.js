@@ -1,5 +1,6 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { normalizePresentationMode } from "./session-engine.js";
+import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -21,20 +22,20 @@ export function scholaTickerDuration({viewportWidth=0,lineWidth=0,speed=DEFAULT_
 
 const SHELL_STYLE = `
 .ao-reader-shell{
-  --ao-bg:#0d120f;--ao-panel:#141c17;--ao-panel2:#19231d;
+  --ao-bg:var(--ao-mass-bg);--ao-panel:var(--ao-mass-panel);--ao-panel2:var(--ao-mass-top);
   --ao-line:rgba(238,241,233,.13);--ao-muted:#a9afa7;--ao-dim:#6f766f;
-  --ao-text:#eef1e9;--ao-accent:#6d9575;--ao-warm:#d6caa6;--ao-response:#c8d9e9;
+  --ao-text:#eef1e9;--ao-accent:var(--ao-mass-accent);--ao-warm:#d6caa6;--ao-response:#c8d9e9;
   --ao-rail:62px;--ao-content-max:820px;--ao-schola-height:150px;--ao-schola-reserve:0px;
   box-sizing:border-box;position:relative;display:grid;grid-template-rows:auto auto minmax(0,1fr);
   width:100%;height:100%;min-height:0;overflow:hidden;
-  background:linear-gradient(180deg,#0c120e 0,#101711 100%);color:var(--ao-text);
+  background:linear-gradient(180deg,var(--ao-mass-top),var(--ao-mass-bottom));color:var(--ao-text);
   font-family:var(--ao-font-ui,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif)
 }
 .ao-reader-shell *{box-sizing:border-box}
 .ao-reader-top-ribbon{
   position:relative;z-index:12;display:grid;grid-template-columns:56px minmax(0,1fr) 56px;align-items:center;
   height:56px;min-height:56px;gap:4px;padding:4px 6px;
-  background:rgba(6,10,8,.975);border-bottom:1px solid rgba(255,255,255,.045)
+  background:var(--ao-mass-top);border-bottom:1px solid rgba(255,255,255,.045)
 }
 .ao-reader-top-action{
   appearance:none;border:0;background:transparent;color:#d7dfd8;display:grid;place-items:center;
@@ -56,7 +57,7 @@ const SHELL_STYLE = `
 .ao-mass-prefs{
   position:absolute;z-index:34;top:58px;right:8px;width:min(310px,calc(100% - 16px));
   padding:13px;border:1px solid rgba(255,255,255,.075);border-radius:14px;
-  background:rgba(8,13,10,.985);box-shadow:0 18px 60px rgba(0,0,0,.5);
+  background:var(--ao-mass-panel);box-shadow:0 18px 60px rgba(0,0,0,.5);
   opacity:0;visibility:hidden;pointer-events:none;transform:none;transition:opacity .14s ease,visibility 0s linear .14s
 }
 .ao-mass-prefs[data-open="true"]{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity .14s ease}
@@ -89,7 +90,7 @@ const SHELL_STYLE = `
 }
 .ao-state-cell{
   position:relative;min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;
-  padding:5px 9px;background:rgba(7,12,9,.96);color:#9ca69e;overflow:visible
+  padding:5px 9px;background:var(--ao-mass-top);color:#9ca69e;overflow:visible
 }
 .ao-state-cell[data-side="faithful"]{justify-content:center}
 .ao-state-cell[data-side="priest"]{justify-content:center;border-left:1px solid rgba(255,255,255,.035)}
@@ -103,7 +104,7 @@ const SHELL_STYLE = `
 .ao-state-cell>.ao-icon-mask{width:52px;height:52px;flex:0 0 52px;color:#d6dfd7}
 .ao-state-guide{
   appearance:none;border:0;border-left:1px solid rgba(255,255,255,.035);border-right:1px solid rgba(255,255,255,.035);
-  background:rgba(9,15,11,.98);color:#d6dfd7;display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--ao-mass-panel);color:#d6dfd7;display:flex;align-items:center;justify-content:center;gap:8px;
   min-width:0;padding:5px 8px;cursor:pointer;font:inherit;transition:background .18s ease,color .18s ease,box-shadow .18s ease
 }
 .ao-state-guide:hover,.ao-state-guide:focus-visible{background:rgba(37,52,41,.92);color:#f2f4ef;outline:none;box-shadow:inset 0 0 0 1px rgba(174,194,179,.10)}
@@ -133,13 +134,13 @@ const SHELL_STYLE = `
   filter:brightness(0) saturate(100%) invert(94%) sepia(9%) saturate(263%) hue-rotate(353deg) brightness(104%) contrast(91%)
 }
 .ao-progress-track{position:absolute;z-index:13;left:0;right:0;top:120px;height:2px;background:rgba(255,255,255,.05)}
-.ao-progress-track>span{display:block;height:100%;width:0;background:#6d9575;transition:width .18s linear}
+.ao-progress-track>span{display:block;height:100%;width:0;background:var(--ao-mass-accent);transition:width .18s linear}
 
 .ao-section-menu{
   position:absolute;z-index:33;top:58px;left:50%;transform:translateX(-50%);
   width:min(92vw,440px);max-height:min(70vh,560px);overflow:auto;
   padding:7px;border:1px solid rgba(238,241,233,.11);border-radius:12px;
-  background:rgba(14,21,17,.985);box-shadow:0 18px 42px rgba(0,0,0,.46)
+  background:var(--ao-mass-panel);box-shadow:0 18px 42px rgba(0,0,0,.46)
 }
 .ao-section-menu[hidden]{display:none}
 .ao-section-menu button{
@@ -300,6 +301,8 @@ const SHELL_STYLE = `
   background:#111914;box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
 }
 .ao-schola-dock[data-active="false"]{display:none}
+/* Retain the manually collapsed SHOW handle between audible Schola cues. */
+.ao-schola-dock[data-active="false"][data-collapsed="true"]{display:block}
 .ao-schola-dock[data-collapsed="true"]{min-height:32px;height:32px!important;padding-top:4px;padding-bottom:4px}
 .ao-schola-dock[data-collapsed="true"] .ao-schola-main,
 .ao-schola-dock[data-collapsed="true"] .ao-schola-translation,
@@ -900,8 +903,9 @@ function renderGuideSheet(pop,guide){
 export function buildReaderShellMarkup(prepared = {}) {
   const mode = normalizePresentationMode(prepared?.readerPreferences?.mode ?? prepared?.session?.resolvedMass?.presentationMode ?? "LIVE");
   const section = esc(prepared?.session?.resolvedMass?.actualCelebration?.title ?? "Mass");
+  const liturgicalTheme=resolveMassLiturgicalTheme(prepared);
   return `<style data-ao-reader-shell-style>${SHELL_STYLE}</style>
-<section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}">
+<section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}" data-liturgical-colour="${liturgicalTheme.key}" data-liturgical-source="${liturgicalTheme.source}" style="${massThemeCssVariables(liturgicalTheme)}">
   <header class="ao-reader-top-ribbon" aria-label="Mass navigation">
     <button class="ao-reader-top-action" type="button" data-reader-home aria-label="Back to Ad Orientem home">${topNavSvg("home")}</button>
     <button class="ao-section-jump" type="button" data-role="section-jump" aria-expanded="false" disabled><span data-role="section-title">${section}</span><span class="ao-section-caret" aria-hidden="true">⌄</span></button>
@@ -1479,7 +1483,7 @@ export function createReaderDomAdapter({
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
-    const reserve=(scholaActive||scholaRelevant) ? (scholaCollapsed ? 44 : scholaHeight) : 0;
+    const reserve=(scholaActive||scholaRelevant||scholaCollapsed) ? (scholaCollapsed ? 44 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
       shell.dataset.scholaRelevant=String(scholaRelevant);

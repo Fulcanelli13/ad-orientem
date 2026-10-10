@@ -40,6 +40,7 @@ try{
     const proper={
       sourcePath:"Sancti/10-07",
       name:"Our Lady of the Rosary",
+      color:"white",
       introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord"),
       collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son")],
       epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world"),
@@ -105,6 +106,9 @@ try{
 
   const opening=await page.evaluate(()=>({
     uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+    liturgicalColour:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset.liturgicalColour??null,
+    liturgicalSource:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset.liturgicalSource??null,
+    massBackground:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.style.getPropertyValue("--ao-mass-bg")??null,
     legacyStarts:globalThis.__AO_MASS_VISUAL_LEGACY_STARTS??0,
     modeButtons:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-mode]").length,
     livePressed:document.querySelector("#ao-r17-native-reader-preview [data-reader-mode='LIVE']")?.getAttribute("aria-pressed")??null,
@@ -148,6 +152,9 @@ try{
     shellRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview .ao-reader-shell")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
   }));
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
+  assert.equal(opening.liturgicalColour,"WHITE","selected Rosary Mass must own its white theme, not the Sunday calendar");
+  assert.equal(opening.liturgicalSource,"SELECTED_PROPER");
+  assert.equal(opening.massBackground,"#191815");
   assert.equal(opening.legacyStarts,0);
   assert.equal(opening.modeButtons,3);
   assert.equal(opening.livePressed,"true");
@@ -415,6 +422,25 @@ try{
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
   await scholaToggle.click();
   assert.equal(await scholaDock.getAttribute("data-collapsed"),"true","Schola hide control did not collapse the dock");
+  // A short break in the sung track must not strand the user with an
+  // invisible SHOW button. This checks the actual CSS at 390px and 320px.
+  for(const width of [390,320]){
+    await page.setViewportSize({width,height:844});
+    const state=await page.evaluate(()=>{
+      const dock=document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock");
+      const original=dock.dataset.active;
+      dock.dataset.active="false";
+      const display=getComputedStyle(dock).display;
+      const toggle=dock.querySelector("[data-schola-toggle]");
+      const bounds=toggle.getBoundingClientRect();
+      dock.dataset.active=original;
+      return {display,label:toggle.textContent.trim(),width:bounds.width,height:bounds.height};
+    });
+    assert.notEqual(state.display,"none","collapsed Schola SHOW handle vanished when Schola became inactive");
+    assert.equal(state.label,"SHOW");
+    assert.ok(state.width>=44&&state.height>=36,"collapsed Schola handle is not tappable: "+JSON.stringify(state));
+  }
+  await page.setViewportSize({width:390,height:844});
   const scholaHitGeometry=await page.evaluate(()=>{
     const toggle=document.querySelector("#ao-r17-native-reader-preview [data-schola-toggle]")?.getBoundingClientRect();
     const next=document.querySelector("#ao-r17-native-reader-preview [data-reader-nav='next']")?.getBoundingClientRect();
@@ -481,6 +507,14 @@ try{
   assert.equal(await hostSection.count(),1,"source-first section menu exposes no Host Consecration");
   await hostSection.click();
   await page.waitForFunction(()=>/Consecration/i.test(document.querySelector("#ao-r17-native-reader-preview [data-role='section-title']")?.textContent??""),null,{timeout:5000});
+  // Section picker is a deliberate jump; only continuous reading owns the
+  // v1.80 part-transition overlay. Exact source-cue elevations remain intact.
+  const jumpCinema=await page.evaluate(()=>({
+    kind:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.dataset?.kind??null,
+    hidden:document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden??null,
+  }));
+  assert.ok(jumpCinema.hidden || jumpCinema.kind!=="PART_TRANSITION",
+    "manual section jump incorrectly played linear-reader part cinematic: "+JSON.stringify(jumpCinema));
 
   const consecration=await page.evaluate(()=>{
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
@@ -655,8 +689,8 @@ try{
       return {sectionId:target.sectionId,title:target.title};
     },cueId);
     assert.ok(section?.sectionId,"source-first display model has no section for "+cueId);
-    // Section changes legitimately show the donor part-transition cinema. Wait
-    // for it to finish so salience screenshots certify the ritual cue itself.
+    // Direct section navigation has no part-transition cinematic; allow
+    // any genuine cue-scoped cinema to complete for salience screenshots.
     await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
     const cue=page.locator(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${cueId}']`);
     assert.equal(await cue.count(),1,cueId+" is not exposed exactly once in the current source-first section");

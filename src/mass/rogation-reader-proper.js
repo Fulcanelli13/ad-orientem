@@ -4,7 +4,7 @@ import { assertReaderProperReady, properToReaderSlots } from "./proper-reader-sl
 // Source-owned nine-section 1962 Rogation Proper => canonical R17 reader slots.
 // No Gregorian Ordinary is copied or generated here. The preface must be
 // supplied as a source-resolved trilingual text by the shared Mass owner.
-export function compileRogationReaderProper({sourceGate,sourceProper,preface}={}) {
+export function compileRogationReaderProper({sourceGate,sourceProper,preface,credo=false}={}) {
   if (!rogationProperReady(sourceGate,sourceProper))
     throw new Error("ROGATION_PROPER_NOT_PUBLISHED_AND_CERTIFIED");
   const required=["lat","en","fr"];
@@ -31,7 +31,7 @@ export function compileRogationReaderProper({sourceGate,sourceProper,preface}={}
     sourcePath:"Rogationes/1962/Exaudivit",
     liturgicalSource:"Missale Romanum (1962), Vatican typical edition, pp. 347–349",
     class:2,colour:"violet",hasGloria:false,showGloria:false,
-    hasCredo:false,showCredo:false,opening:"INTROIT",
+    hasCredo:Boolean(credo),showCredo:Boolean(credo),opening:"INTROIT",
     introit:text("introit"),
     collects:Object.freeze([text("collect")]),
     epistle:text("epistle"),
