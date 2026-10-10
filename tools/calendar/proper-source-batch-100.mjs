@@ -8,8 +8,9 @@ import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
+const FOCUSED_GAPS=process.argv.includes("--focus-gaps");
 const root=resolve(fileURLToPath(new URL("../..",import.meta.url)));
-const dest=resolve(root,"artifacts/calendar-1962-proper-source-batch-100.json");
+const dest=resolve(root,FOCUSED_GAPS?"artifacts/calendar-1962-proper-source-focus-10.json":"artifacts/calendar-1962-proper-source-batch-100.json");
 const media={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".woff2":"font/woff2",".png":"image/png",".webp":"image/webp"};
 const server=http.createServer(async(req,res)=>{
   try{
@@ -85,10 +86,20 @@ try{
   for(const year of [2024,2027])assert.equal(
     new Set(dates.filter(x=>x.year===year).map(x=>x.month)).size,12,
     year+": sampling lost a liturgical month");
+  // The legacy sample found exactly ten path-owned bilingual gaps. Preserve
+  // its deterministic 100-identity selection, but let CI scrutinize those ten
+  // quickly without downloading every source in routine feature PRs.
+  const focusPaths=new Set(["Sancti/02-22","Sancti/01-15","Sancti/05-25",
+    "Sancti/02-06","Tempora/Quad3-3","Tempora/Quad5-4","Tempora/Quad1-4",
+    "Commune/C10c","Commune/C10Pasc","Commune/C10t"]);
+  const cases=FOCUSED_GAPS?dates.filter(row=>focusPaths.has(row.path)):dates;
+  if(FOCUSED_GAPS){
+    assert.deepEqual(new Set(cases.map(x=>x.path)),focusPaths,"Focused audit lost a registered source identity");
+  }
   const chunks=[];
-  for(let n=0;n<dates.length;n+=5)chunks.push(dates.slice(n,n+5));
+  for(let n=0;n<cases.length;n+=5)chunks.push(cases.slice(n,n+5));
   for(const chunk of chunks){
-    const records=await page.evaluate(async list=>{
+    const records=await page.evaluate(async ({list,focused})=>{
       const resolver=globalThis.AO_RUNTIME_V8.resolver;
       return Promise.all(list.map(async item=>{
         try{
@@ -110,6 +121,13 @@ try{
           const latinExpected=prayed.filter(x=>x.lat.trim());
           const missing=Object.fromEntries(["lat","en","fr"].map(lang=>[lang,
             latinExpected.filter(x=>!x[lang].trim()).map(x=>x.section)]));
+          // Blank translations and *visible* unresolved source tokens are
+          // different categories. Keep the blank-only historical metric intact,
+          // but compare the engine's post-composition readiness against both.
+          const incompleteByIntegrity=Object.fromEntries(["en","fr"].map(lang=>[lang,
+            latinExpected.filter(x=>!x[lang].trim() ||
+              /\$[A-Za-z][A-Za-z -]*|\bN\.(?=\s|$)/.test(x[lang]))
+              .map(x=>x.section)]));
           const suspicious=[];
           for(const x of prayed)for(const lang of ["lat","en","fr"]){
             const hit=x[lang].match(/(^|\W)N\.(?=\s|,|;|$)|@[A-Za-z]+\/|\$(?:Per Dominum|Qui tecum)/i);
@@ -132,6 +150,7 @@ try{
           return {...item,identity:r?.day?.main?.id||null,status:r?.status||"missing",properStatus:r?.proper?.status||"missing",
             error:r?.error||r?.proper?.error||null,resolvedPath:p.sourcePath||null,
             languageCoverage:p.languageCoverage||null,ownComputedMissing:missing,
+            ownComposedIncomplete:incompleteByIntegrity,
             missingLatinCore,sectionCount:prayed.length,sectionNames:prayed.map(x=>x.section),
             commemorations:(r?.day?.commemorations||[]).map(x=>({id:x.id,path:x.path||null})),
             prayerCounts:{collects:p.collects?.length||0,secrets:p.secrets?.length||0,
@@ -139,20 +158,36 @@ try{
             composedCommemorations:(p.calendarCommemorations||[]).map(x=>({path:x.path,
               prayerSourcePath:x.prayerSourcePath,inseparable:!!x.inseparable,underOneConclusion:!!x.underOneConclusion})),
             sourceVersions:p.sourceRevisions||null,pinnedLatinSourceURL:expectedSourceURL,
-            sourceRequests:actualSourceRequests,suspicious};
+            sourceRequests:actualSourceRequests,suspicious,
+            ...(focused?{
+              detailedMissing:prayed.filter(section=>
+                section.lat.trim()&&(!section.en.trim()||!section.fr.trim())).map(section=>({
+                  section:section.section,latinStart:section.lat.slice(0,140),
+                  englishStart:section.en.slice(0,140),frenchStart:section.fr.slice(0,140)
+                })),
+              orationGroups:Object.fromEntries(["collects","secrets","postcommunions"].map(key=>
+                [key,(p[key]||[]).map((v,index)=>({
+                  index,latStart:String(v?.lat||"").slice(0,140),
+                  enLength:String(v?.en||"").length,frLength:String(v?.fr||"").length,
+                  sourceOwner:index===0?p.sourcePath:
+                    (p.calendarCommemorations||[]).filter(x=>!x.inseparable)[index-1]?.prayerSourcePath??null
+                }))])),
+              integrity:p.composedSourceIntegrity,
+            }:{}),
+            };
         }catch(error){return {...item,status:"exception",properStatus:"failed",error:String(error?.message||error)};}
       }));
-    },chunk);
+    },{list:chunk,focused:FOCUSED_GAPS});
     output.records.push(...records);
     console.log("PROPER_100_PROGRESS "+output.records.length+"/100");
   }
-  assert.equal(output.records.length,100);
+  assert.equal(output.records.length,FOCUSED_GAPS?focusPaths.size:100);
   const records=output.records;
   output.failures=records.filter(x=>x.status!=="ready"||x.properStatus!=="ready"||!x.resolvedPath)
     .map(x=>({date:x.date,id:x.id,path:x.path,stage:"source load",error:x.error||x.properStatus}));
   const coverageMismatch=records.filter(x=>
     ["en","fr"].some(lang=>{
-      const old=x.languageCoverage?.[lang],actual=x.ownComputedMissing?.[lang]||[];
+      const old=x.languageCoverage?.[lang],actual=x.ownComposedIncomplete?.[lang]||[];
       const expected=x.sectionNames?.length||0;
       return old&&old.missing?.length!==actual.length && expected>0;
     })).map(x=>({date:x.date,path:x.resolvedPath,engine:x.languageCoverage,actual:x.ownComputedMissing}));
@@ -172,6 +207,11 @@ try{
     failures:output.failures.length,
     note:"Source integrity and bilingual text coverage measured from actual produced sections; no independent full-text collation against a 1962 typical edition.",
   };
+  if(FOCUSED_GAPS)console.log("PROPER_SOURCE_FOCUS_DETAILS "+JSON.stringify(records.map(r=>({
+    date:r.date,path:r.resolvedPath,missing:r.ownComputedMissing,owners:r.composedCommemorations,
+    detailedMissing:r.detailedMissing,orationGroups:r.orationGroups,
+    unresolved:r.integrity?.unresolved?.slice(0,10),coverage:r.languageCoverage
+  }))));
   console.log("PROPER_100_SUMMARY "+JSON.stringify({...output.summary,
     missingLatinCore:output.summary.missingLatinCore.length,
     missingLanguageSlots:Object.fromEntries(["en","fr"].map(x=>[x,output.summary.missingLanguageSlots[x].length])),
@@ -185,4 +225,9 @@ try{
 }
 console.log("Source-integrity artifact: "+dest);
 if(output.failures.length)process.exitCode=2;
-if(output.records.length!==100)process.exitCode=3;
+if(output.records.length!==(FOCUSED_GAPS?10:100))process.exitCode=3;
+// Production cannot advertise translated Proper completeness while composed
+// prayers or readings still contain a placeholder, and source directives may
+// never be displayed as completed liturgical conclusions.
+if(output.summary?.inheritedCoverageMismatch?.length)process.exitCode=4;
+if(output.summary?.unresolvedPointerTypes?.unexpanded_conclusion)process.exitCode=5;

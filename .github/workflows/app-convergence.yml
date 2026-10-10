@@ -48,6 +48,7 @@ on:
       - "tests/reader-phone-acceptance.mjs"
       - "tests/source-transport-compat.mjs"
       - "tests/field-current-week-e2e.mjs"
+      - "tools/calendar/proper-source-batch-100.mjs"
       - "tests/release-candidate-field-qa.mjs"
       - "tests/release-candidate-interaction-qa.mjs"
       - "tests/production-tree-hygiene.mjs"
@@ -145,6 +146,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       # Fail fast on incomplete composed Mass prayers before costly full-phone journeys.
+      - run: node tools/calendar/proper-source-batch-100.mjs --focus-gaps
       - run: npm run test:field-current-week
       - run: node tests/per-icon-svg-e2e.mjs
       - run: node tests/external-svg-sprite-e2e.mjs
