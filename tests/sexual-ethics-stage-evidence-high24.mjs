@@ -27,7 +27,14 @@ for(const id of CSE_HIGH_STAGE_IDS){
  const allOriginal=[...CSE_DEBATE_POSITION_REFS[id],...question.refs];
  for(const stage of CSE_DEBATE_FIELDS){
    const selected=live[stage];
-   assert.ok(selected.length>0&&selected.length<=3,id+" "+stage+" too broad/empty");
+   // CSE040's Catholic case genuinely spans chastity/acts (PH, ST154,
+   // Scripture) and the distinct betrothal/matrimonial-consent point (CIC
+   // can. 1057). The four-source set is explicitly recorded in the audited
+   // stage scope; trimming CIC to meet a generic count would lose evidence.
+   const cap=id==="CSE040"&&stage==="catholicCase"?4:3;
+   assert.ok(selected.length>0&&selected.length<=cap,id+" "+stage+" too broad/empty");
+   if(cap===4)assert.deepEqual(selected,["PH","ST154","SCR","CIC"],
+     "CSE040 must preserve its documented four-source moral and canonical-law distinction");
    assert.equal(new Set(selected).size,selected.length,id+" "+stage+" duplicates");
    const rendered=paragraphRefsFor(question,"debate",stage);
    assert.deepEqual(rendered.map(x=>x[0]),selected,id+" "+stage+" resolved wrong source");
