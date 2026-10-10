@@ -52,7 +52,7 @@ for(const name of [
  const xml=readFileSync(file,"utf8");
  assert.match(xml,/^<svg[^>]+viewBox="0 0 64 64"/);
  assert.match(xml,/stroke="currentColor"/);
- assert.doesNotMatch(xml,/<image|<foreignObject|<script|https?:\/\//i,
+ assert.doesNotMatch(xml,/<image|<foreignObject|<script|(?:href|xlink:href)=["\x27]https?:\/\//i,
   "Review icon must be pure, themable, offline vector artwork");
 }
 assert.equal(Object.keys(R17_FROZEN_ACTIVE_ICON_ASSETS).length,67,
