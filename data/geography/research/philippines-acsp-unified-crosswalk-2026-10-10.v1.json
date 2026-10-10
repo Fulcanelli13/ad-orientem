@@ -1,0 +1,916 @@
+{
+  "schema": "EXPLORE_PHILIPPINES_ACSP_UNIFIED_CROSSWALK_V1",
+  "as_of": "2026-10-10",
+  "source_scope": "Four current ACSP regional webpages — named index rows, not complete national church census or all 2024 claimed shrines",
+  "regional_rows": {
+    "northern_central_luzon": 77,
+    "ncr_southern_luzon": 129,
+    "visayas": 55,
+    "mindanao": 5
+  },
+  "totals": {
+    "source_rows": 266,
+    "exact_name_and_locality_repeated_entries": 3,
+    "probable_additional_internal_duplicate_sites": 1,
+    "unique_after_only_three_exact_duplicates": 263,
+    "unique_after_four_provisional_duplicates": 262,
+    "canonical_ph_places_published": 0
+  },
+  "source_accounting": {
+    "association_2024_announced_shrines": 305,
+    "association_2024_enrolled_members": 257,
+    "announced_regional_breakdown_sum": 296,
+    "comparison_warning": "Different date and definition from current regional webpages; do not subtract 266 from 305 as number of missing churches."
+  },
+  "four_source_paths": [
+    "data/geography/research/philippines-acsp-north-complete-2026-10-10.v1.json",
+    "data/geography/research/philippines-acsp-ncr-southern-complete-2026-10-10.v1.json",
+    "data/geography/research/philippines-acsp-visayas-index-2026-10-10.v1.json",
+    "data/geography/research/philippines-acsp-mindanao-complete-2026-10-10.v1.json"
+  ],
+  "previous_priority_crosswalk": {
+    "source": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json",
+    "rows": 66,
+    "exact_title_count": 56,
+    "repeated_title_count": 2,
+    "source_alias_count": 8,
+    "items": [
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-our-lady-of-visitation-gamu-isabela",
+        "title": "National Shrine and Parish of Our Lady of Visitation",
+        "locality": "Gamu, Isabela",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-019"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-of-la-virgen-divina-pastora-three-kings-parish-gapan-city-nueva-ecija",
+        "title": "National Shrine of La Virgen Divina Pastora – Three Kings Parish",
+        "locality": "Gapan City, Nueva Ecija",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-033"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-st-john-paul-ii-hermosa-bataan",
+        "title": "National Shrine and Parish of St. John Paul II",
+        "locality": "Hermosa, Bataan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-048"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-our-lady-of-fatima-marulas-valenzuela-city",
+        "title": "National Shrine and Parish of Our Lady of Fatima",
+        "locality": "Marulas, Valenzuela City",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-062"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-st-anne-hagonoy-bulacan",
+        "title": "National Shrine and Parish of St. Anne",
+        "locality": "Hagonoy, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-063"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-the-divine-mercy-marilao-bulacan",
+        "title": "National Shrine and Parish of the Divine Mercy",
+        "locality": "Marilao, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-066"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-of-nuestra-senora-de-la-inmaculada-concepcion-de-salambao-san-pascual-bayl",
+        "title": "National Shrine of Nuestra Señora de la Inmaculada Concepcion de Salambao – San Pascual Baylon Parish",
+        "locality": "Obando, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-075"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-parish-of-our-lady-of-the-rosary-of-manaoag-manaoag-pangasinan",
+        "title": "Minor Basilica and Parish of Our Lady of the Rosary of Manaoag",
+        "locality": "Manaoag, Pangasinan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-025"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-archdiocesan-shrine-of-our-lady-of-piat-piat-cagayan",
+        "title": "Minor Basilica and Archdiocesan Shrine of Our Lady of Piat",
+        "locality": "Piat, Cagayan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-013"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-shrine-parish-of-our-lady-of-the-rosary-of-orani-orani-bataan",
+        "title": "Minor Basilica and Shrine-Parish of Our Lady of the Rosary of Orani",
+        "locality": "Orani, Bataan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-044"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-of-san-nicolas-de-tolentino-santuario-de-sto-cristo-milagroso-de-sinait-sin",
+        "title": "Minor Basilica of San Nicolas de Tolentino – Santuario de Sto. Cristo Milagroso de Sinait",
+        "locality": "Sinait, Ilocos Sur",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-002"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-archdiocesan-shrine-parish-of-our-lady-of-the-assumption-santa-maria-il",
+        "title": "Minor Basilica and Archdiocesan Shrine Parish of Our Lady of the Assumption",
+        "locality": "Santa Maria, Ilocos Sur",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-005"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-diocesan-shrine-of-our-lady-of-charity-sta-monica-parish-agoo-la-union",
+        "title": "Minor Basilica and Diocesan Shrine of Our Lady of Charity – Sta. Monica Parish",
+        "locality": "Agoo, La Union",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-030"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-nuestra-senora-virgen-del-mar-cautiva-sto-tomas-la-union",
+        "title": "Diocesan Shrine of Nuestra Señora Virgen del Mar Cautiva",
+        "locality": "Sto. Tomas, La Union",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-032"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-the-holy-face-of-jesus-of-manoppello-nampicuan-nueva-ecija",
+        "title": "Diocesan Shrine of the Holy Face of Jesus of Manoppello",
+        "locality": "Nampicuan, Nueva Ecija",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-040"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-and-parish-of-sta-rita-de-cascia-guiguinto-bulacan",
+        "title": "Diocesan Shrine and Parish of Sta. Rita de Cascia",
+        "locality": "Guiguinto, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-076"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-national-shrine-of-the-black-nazarene-st-john-the-baptist-parish-quiapo",
+        "title": "Minor Basilica and National Shrine of the Black Nazarene – St. John the Baptist Parish",
+        "locality": "Quiapo, Manila",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-005"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-national-shrine-of-san-lorenzo-ruiz-binondo-manila",
+        "title": "Minor Basilica and National Shrine of San Lorenzo Ruiz",
+        "locality": "Binondo, Manila",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-007"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-the-sacred-heart-makati-city",
+        "title": "National Shrine and Parish of the Sacred Heart",
+        "locality": "Makati City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-002"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-regal-parish-and-national-shrine-of-st-michael-and-the-archangels-san-miguel-manila",
+        "title": "Regal Parish and National Shrine of St. Michael and the Archangels",
+        "locality": "San Miguel, Manila",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-004"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-st-jude-thaddeus-san-miguel-manila",
+        "title": "National Shrine and Parish of St. Jude Thaddeus",
+        "locality": "San Miguel, Manila",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-013"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-our-lady-of-guadalupe-makati-city",
+        "title": "National Shrine and Parish of Our Lady of Guadalupe",
+        "locality": "Makati City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-014"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-our-lady-of-the-abandoned-sta-ana-manila",
+        "title": "National Shrine and Parish of Our Lady of the Abandoned",
+        "locality": "Sta. Ana, Manila",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-017"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-of-our-lady-of-the-rosary-la-naval-de-manila-sto-domingo-parish-quezon-cit",
+        "title": "National Shrine of Our Lady of the Rosary La Naval de Manila – Sto. Domingo Parish",
+        "locality": "Quezon City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-023"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-our-lady-of-lourdes-quezon-city",
+        "title": "National Shrine and Parish of Our Lady of Lourdes",
+        "locality": "Quezon City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-024"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-of-our-mother-of-perpetual-help-baclaran-paranaque-city",
+        "title": "National Shrine of Our Mother of Perpetual Help",
+        "locality": "Baclaran, Parañaque City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-042"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-our-lady-of-the-miraculous-medal-national-shrine-parish-sucat-muntinlupa-city",
+        "title": "Our Lady of the Miraculous Medal National Shrine Parish",
+        "locality": "Sucat, Muntinlupa City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-043"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-of-mary-help-of-christians-parish-don-bosco-paranaque-city",
+        "title": "National Shrine of Mary Help of Christians Parish",
+        "locality": "Don Bosco, Parañaque City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-044"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-antipolo-cathedral-international-shrine-of-our-lady-of-peace-and-good-voyage-antipolo-city",
+        "title": "Antipolo Cathedral – International Shrine of Our Lady of Peace and Good Voyage",
+        "locality": "Antipolo City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-051"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-of-our-lady-of-la-salette-silang-cavite",
+        "title": "National Shrine of Our Lady of La Salette",
+        "locality": "Silang, Cavite",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-067"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-san-antonio-de-padua-pila-laguna",
+        "title": "National Shrine and Parish of San Antonio de Padua",
+        "locality": "Pila, Laguna",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-080"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-parish-and-the-national-shrine-of-saint-padre-pio-sto-tomas-batangas",
+        "title": "Parish and the National Shrine of Saint Padre Pio",
+        "locality": "Sto. Tomas, Batangas",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-093"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-our-lady-of-sorrows-dolores-quezon",
+        "title": "National Shrine and Parish of Our Lady of Sorrows",
+        "locality": "Dolores, Quezon",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-101"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-minor-basilica-and-national-shrine-of-our-lady-of-penafrancia-naga-city",
+        "title": "Minor Basilica and National Shrine of Our Lady of Peñafrancia",
+        "locality": "Naga City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-106"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-of-our-lady-of-caysasay-taal-batangas",
+        "title": "Archdiocesan Shrine of Our Lady of Caysasay",
+        "locality": "Taal, Batangas",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-088"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-nuestra-senora-de-los-dolores-de-turumba-san-pedro-de-alcantara-parish-",
+        "title": "Diocesan Shrine of Nuestra Señora de los Dolores de Turumba – San Pedro de Alcantara Parish",
+        "locality": "Pakil, Laguna",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-075"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-and-parish-of-our-lady-of-aranzazu-san-mateo-rizal",
+        "title": "Diocesan Shrine and Parish of Our Lady of Aranzazu",
+        "locality": "San Mateo, Rizal",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-052"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-the-holy-face-of-jesus-of-manoppello-st-jude-thaddeus-parish-tanay-riza",
+        "title": "Diocesan Shrine of the Holy Face of Jesus of Manoppello – St. Jude Thaddeus Parish",
+        "locality": "Tanay, Rizal",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-061"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-st-martha-san-roque-parish-pateros",
+        "title": "Diocesan Shrine of St. Martha – San Roque Parish",
+        "locality": "Pateros",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-050",
+          "ACSP-NCR_SOUTHERN-064"
+        ],
+        "match_method": "REPEATED_TITLE",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-shrine-of-st-therese-of-the-child-jesus-villamor-air-base-pasay-city",
+        "title": "Shrine of St. Thérèse of the Child Jesus",
+        "locality": "Villamor Air Base, Pasay City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-065"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-shrine-and-quasi-parish-of-mary-queen-of-peace-our-lady-of-edsa-quezon-city",
+        "title": "Shrine and Quasi-Parish of Mary, Queen of Peace, Our Lady of EDSA",
+        "locality": "Quezon City",
+        "acsp_source_entry_ids": [
+          "ACSP-NCR_SOUTHERN-006"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-of-our-lady-of-the-candles-jaro-metropolitan-cathedral-jaro-iloilo-city",
+        "title": "National Shrine of Our Lady of the Candles – Jaro Metropolitan Cathedral",
+        "locality": "Jaro, Iloilo City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-007"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-basilica-minore-del-santo-nino-de-cebu-cebu-city",
+        "title": "Basilica Minore del Santo Niño de Cebu",
+        "locality": "Cebu City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-026"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-national-shrine-and-parish-of-st-joseph-mandaue-city",
+        "title": "National Shrine and Parish of St. Joseph",
+        "locality": "Mandaue City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-029"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-nuestra-senora-de-la-regla-parish-national-shrine-lapu-lapu-city",
+        "title": "Nuestra Señora de la Regla Parish National Shrine",
+        "locality": "Lapu-Lapu City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-042"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-of-san-pedro-calungsod-cebu-city",
+        "title": "Archdiocesan Shrine of San Pedro Calungsod",
+        "locality": "Cebu City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-031"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-of-the-theotokos-perrilos-hill-carcar-city",
+        "title": "Archdiocesan Shrine of the Theotokos",
+        "locality": "Perrilos Hill, Carcar City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-028"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-and-parish-of-our-lady-of-guadalupe-guadalupe-cebu-city",
+        "title": "Archdiocesan Shrine and Parish of Our Lady of Guadalupe",
+        "locality": "Guadalupe, Cebu City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-030"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-and-parish-of-our-lady-of-fatima-basak-mandaue-city",
+        "title": "Archdiocesan Shrine and Parish of Our Lady of Fatima",
+        "locality": "Basak, Mandaue City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-009",
+          "ACSP-VISAYAS-027"
+        ],
+        "match_method": "REPEATED_TITLE",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-and-parish-of-the-immaculate-heart-of-mary-minglanilla-cebu",
+        "title": "Archdiocesan Shrine and Parish of the Immaculate Heart of Mary",
+        "locality": "Minglanilla, Cebu",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-045"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-and-parish-of-patrocinio-de-maria-santisima-boljoon-cebu",
+        "title": "Archdiocesan Shrine and Parish of Patrocinio de Maria Santisima",
+        "locality": "Boljoon, Cebu",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-054"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-and-parish-of-santiago-de-compostela-compostela-cebu",
+        "title": "Archdiocesan Shrine and Parish of Santiago de Compostela",
+        "locality": "Compostela, Cebu",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-044"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-of-nuestra-senora-del-carmen-la-limpia-cebu-city",
+        "title": "Archdiocesan Shrine of Nuestra Señora del Carmen, La Limpia",
+        "locality": "Cebu City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-052"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-and-parish-of-the-most-sacred-heart-of-jesus-cebu-city",
+        "title": "Archdiocesan Shrine and Parish of the Most Sacred Heart of Jesus",
+        "locality": "Cebu City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-051"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-the-holy-cross-and-the-first-mass-limasawa-southern-leyte",
+        "title": "Diocesan Shrine of the Holy Cross and the First Mass",
+        "locality": "Limasawa, Southern Leyte",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-020"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-the-visitation-of-the-blessed-virgin-mary-baybay-city",
+        "title": "Diocesan Shrine of the Visitation of the Blessed Virgin Mary",
+        "locality": "Baybay City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-025"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-and-parish-of-san-antonio-de-padua-baybay-city",
+        "title": "Diocesan Shrine and Parish of San Antonio de Padua",
+        "locality": "Baybay City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-022"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-cathedral-and-diocesan-shrine-of-our-lady-of-the-assumption-maasin-city",
+        "title": "Cathedral and Diocesan Shrine of Our Lady of the Assumption",
+        "locality": "Maasin City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-024"
+        ],
+        "match_method": "SOURCE_TITLE_VARIANT_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-assumption-of-our-lady-shrine-parish-dauis-bohol",
+        "title": "Assumption of Our Lady Shrine-Parish",
+        "locality": "Dauis, Bohol",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-055"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-diocesan-shrine-of-nuestro-padre-jesus-nazareno-st-rock-the-healer-parish-catarman-norther",
+        "title": "Diocesan Shrine of Nuestro Padre Jesus Nazareno – St. Rock the Healer Parish",
+        "locality": "Catarman, Northern Samar",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-005"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-st-vincent-ferrer-parish-shrine-vito-sagay-city",
+        "title": "St. Vincent Ferrer Parish Shrine",
+        "locality": "Vito, Sagay City",
+        "acsp_source_entry_ids": [
+          "ACSP-VISAYAS-019"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-santuario-de-la-virgen-del-pilar-zamboanga-city",
+        "title": "Santuario de la Virgen del Pilar",
+        "locality": "Zamboanga City",
+        "acsp_source_entry_ids": [
+          "ACSP-MINDANAO-001"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-of-divine-mercy-el-salvador-city",
+        "title": "Archdiocesan Shrine of Divine Mercy",
+        "locality": "El Salvador City",
+        "acsp_source_entry_ids": [
+          "ACSP-MINDANAO-002"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-archdiocesan-shrine-and-parish-of-the-black-nazarene-cagayan-de-oro-city",
+        "title": "Archdiocesan Shrine and Parish of the Black Nazarene",
+        "locality": "Cagayan de Oro City",
+        "acsp_source_entry_ids": [
+          "ACSP-MINDANAO-003"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-birhen-sa-kasilak-mindanao-shrine-parish-bading-butuan-city",
+        "title": "Birhen sa Kasilak Mindanao Shrine Parish",
+        "locality": "Bading, Butuan City",
+        "acsp_source_entry_ids": [
+          "ACSP-MINDANAO-004"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      },
+      {
+        "priority_key": "ACSP-PH-sto-nino-parish-and-diocesan-shrine-libertad-butuan-city",
+        "title": "Sto. Niño Parish and Diocesan Shrine",
+        "locality": "Libertad, Butuan City",
+        "acsp_source_entry_ids": [
+          "ACSP-MINDANAO-005"
+        ],
+        "match_method": "TITLE_EQUAL",
+        "physical_identity_verified": false
+      }
+    ]
+  },
+  "malolos_crosswalk": {
+    "source": "data/geography/research/malolos-shrines-2026-10-10.v1.json",
+    "rows": 16,
+    "items": [
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-01",
+        "diocesan_title": "Immaculate Conception Parish – Cathedral and Minor Basilica",
+        "diocesan_locality": "Malolos City",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-064"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-02",
+        "diocesan_title": "Minor Basilica and Parish of La Purisima Concepcion",
+        "diocesan_locality": "Poblacion, Santa Maria, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-074"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-03",
+        "diocesan_title": "Parish of the National Shrine of Our Lady of Fatima",
+        "diocesan_locality": "Marulas, Valenzuela City",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-062"
+        ],
+        "match_type": "ALIAS_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-04",
+        "diocesan_title": "National Shrine and Parish of St. Anne",
+        "diocesan_locality": "Poblacion, Hagonoy, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-063"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-05",
+        "diocesan_title": "National Shrine and Parish of the Divine Mercy",
+        "diocesan_locality": "Sta. Rosa I, Marilao, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-066"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-06",
+        "diocesan_title": "National Shrine of Nuestra Señora de la Inmaculada Concepcion de Salambao – San Pascual Baylon Parish",
+        "diocesan_locality": "Pag-asa, Obando, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-075"
+        ],
+        "match_type": "ALIAS_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-07",
+        "diocesan_title": "Diocesan Shrine and Parish of Sagrado Corazon de Jesus",
+        "diocesan_locality": "Cruz na Daan, San Rafael, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-065"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-08",
+        "diocesan_title": "Diocesan Shrine and Parish of San Miguel Arcangel",
+        "diocesan_locality": "Poblacion, San Miguel, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-073"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-09",
+        "diocesan_title": "Diocesan Shrine and Parish of St. Augustine",
+        "diocesan_locality": "Poblacion, Baliwag City",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-077"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-10",
+        "diocesan_title": "Diocesan Shrine and Parish of St. John the Baptist",
+        "diocesan_locality": "Poblacion, Calumpit, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-035",
+          "ACSP-NORTH_CENTRAL-069"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-11",
+        "diocesan_title": "Diocesan Shrine and Parish of Nuestra Señora de la Asuncion",
+        "diocesan_locality": "Poblacion-San Jose, Bulakan, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-070"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-12",
+        "diocesan_title": "Diocesan Shrine and Parish of San Isidro Labrador",
+        "diocesan_locality": "Poblacion, Pulilan, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-034",
+          "ACSP-NORTH_CENTRAL-071",
+          "ACSP-NCR_SOUTHERN-081"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-13",
+        "diocesan_title": "Diocesan Shrine and Parish of San Isidro Labrador",
+        "diocesan_locality": "Sta. Rita, Guiguinto, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-034",
+          "ACSP-NORTH_CENTRAL-071",
+          "ACSP-NCR_SOUTHERN-081"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-14",
+        "diocesan_title": "Parish and Diocesan Shrine of Mary, Mother of the Eucharist and Grace",
+        "diocesan_locality": "San Vicente, Santa Maria, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-067"
+        ],
+        "match_type": "ALIAS_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-15",
+        "diocesan_title": "Diocesan Shrine of Mahal na Poong Krus sa Wawa – St. Martin of Tours Parish",
+        "diocesan_locality": "Poblacion, Bocaue, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-068"
+        ],
+        "match_type": "EXACT_TITLE_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      },
+      {
+        "diocesan_source_entry_id": "MALOLOS-PH-16",
+        "diocesan_title": "Diocesan Shrine of St. Andrew Kim Taegon – Nuestro Señor Jesucristo Parish",
+        "diocesan_locality": "Lolomboy, Bocaue, Bulacan",
+        "acsp_source_entry_ids": [
+          "ACSP-NORTH_CENTRAL-072"
+        ],
+        "match_type": "ALIAS_NEEDS_LOCALITY_REVIEW",
+        "physical_identity_verified": false
+      }
+    ]
+  },
+  "duplicate_clusters": [
+    {
+      "source_entry_ids": [
+        "ACSP-NORTH_CENTRAL-058",
+        "ACSP-NORTH_CENTRAL-060"
+      ],
+      "reason": "Same diocesan shrine title, Masinloc, with locality sometimes prefixed Poblacion",
+      "status": "PROBABLE_SAME_PHYSICAL_COMPLEX"
+    },
+    {
+      "source_entry_ids": [
+        "ACSP-NORTH_CENTRAL-059",
+        "ACSP-NORTH_CENTRAL-061"
+      ],
+      "reason": "Exact same title and Olongapo locality repeated",
+      "status": "EXACT_TITLE_LOCALITY_DUPLICATE"
+    },
+    {
+      "source_entry_ids": [
+        "ACSP-NCR_SOUTHERN-050",
+        "ACSP-NCR_SOUTHERN-064"
+      ],
+      "reason": "Saint Martha Pateros under Diocese of Pasig and Military Ordinariate",
+      "status": "EXACT_TITLE_LOCALITY_DUPLICATE"
+    },
+    {
+      "source_entry_ids": [
+        "ACSP-VISAYAS-040",
+        "ACSP-VISAYAS-049"
+      ],
+      "reason": "Our Lady of Lourdes Punta Princesa Cebu listed twice",
+      "status": "EXACT_TITLE_LOCALITY_DUPLICATE"
+    }
+  ],
+  "source_quality_holds": [
+    "Association and bishops' data do not establish church approval status for supernatural phenomena.",
+    "Guiguinto St Rita identity is favored by ACSP and diocesan history; Malolos page heading contradictory, no automatic rewrite.",
+    "Laoag shrine's current 'address' field repeats title rather than giving a physical location.",
+    "Regional source pages include mixed dates up to 2025; not identical to ACSP 2024 institutional census.",
+    "Visayas page text retrieval timed out on direct fetch; cross-check index ending after Tagbilaran before claiming immutable complete source capture.",
+    "Dates of shrine canonical designation and membership statuses not yet structured in regional extracts; the name/locality/diocese audit does not claim those are captured."
+  ],
+  "record_policy": "Use distinct source_entry_id for each source row, never publish or assign a place_id automatically."
+}
