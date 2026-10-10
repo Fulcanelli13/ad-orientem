@@ -777,6 +777,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          },
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
+         getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
          getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
          getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
          language:()=>runtimeState()?.language??"en",
