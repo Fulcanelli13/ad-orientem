@@ -475,7 +475,7 @@ try{
   const remainingFormation=[
     {id:"learn.catechism.daily",family:"foundations",root:"#ao-daily-cate-root",exit:"daily"},
     {id:"learn.catechism",family:"foundations",root:"#ao-cate-root",exit:"catechism"},
-    {id:"learn.sexual_ethics",family:"spiritual-moral",root:"#ao-sexual-ethics-root",exit:"[data-ao-cse-back]"},
+    {id:"learn.sexual_ethics",family:"questions",root:"#ao-sexual-ethics-root",exit:"[data-ao-cse-back]"},
     {id:"learn.mass",family:"liturgy-tradition",root:"#ao-mass-formation-root",exit:"[data-ao-mf-close]"},
     {id:"learn.latin",family:"latin",root:"#ao-latin-course-root",exit:"[data-l2-back]"},
   ];
