@@ -183,8 +183,16 @@ export function mountObservedMassSourceSelector({
    }):null;
  observer?.observe(doc.body,{subtree:true,childList:true});
  update();
+ function preparationGate(){
+   const base=getResolvedMass();
+   if(!observedSourceEligibility(base).allowed)return Object.freeze({ready:true,reason:null});
+   if(pending)return Object.freeze({ready:false,reason:"OBSERVED_MASS_PROPER_RESOLUTION_IN_PROGRESS"});
+   if(sourceDate&&!selectionFor(base))
+     return Object.freeze({ready:false,reason:"OBSERVED_MASS_PROPER_CHOICE_UNCONFIRMED"});
+   return Object.freeze({ready:true,reason:null});
+ }
  return Object.freeze({
-  update,selectionFor,effectiveResolvedMass,
+  update,selectionFor,effectiveResolvedMass,preparationGate,
   open:()=>{
     update();
     const details=root?.querySelector("[data-observed-details]");
@@ -193,7 +201,7 @@ export function mountObservedMassSourceSelector({
     root?.querySelector("[data-observed-date]")?.focus?.();
     return true;
   },
-  clear:()=>{clear();update();},
+  clear:({eraseDate=true}={})=>{clear({eraseDate});update();},
   status:()=>Object.freeze({date:latestDate,sourceDate,selected:selection?.sourcePath??null,pending,hasCandidate:Boolean(candidate)}),
   dispose(){disposed=true;++request;doc.removeEventListener("click",schedule);doc.removeEventListener("change",schedule);observer?.disconnect();root?.remove();}
  });
