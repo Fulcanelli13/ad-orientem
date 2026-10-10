@@ -1728,6 +1728,8 @@ try{
   await page.locator("#targets .target").first().waitFor({timeout:20000});
   assert.ok(await page.locator("#assets .asset").count()>=50,
     "complete asset bank failed to display image candidates");
+  // The exact matched cue is already assigned; include reviewed targets rather than filtering to missing-only.
+  await page.locator("#targetStatus").selectOption("");
   await page.locator("#findTarget").fill("AO.SM.C0068");
   await page.locator("#targets .target").first().click();
   await page.locator("#findAsset").fill("cross");
