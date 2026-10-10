@@ -12,13 +12,31 @@ function clean(value){
 
 export function findLocalPostureOverride(preferences,{
   cueId=null,
+  sourceCueId=null,
   sectionId=null,
   macroId=null,
 }={}){
   const map=preferences?.localPostures ?? {};
-  for(const key of [cueId,sectionId,macroId]){
-    const value=key ? clean(map[key]) : null;
-    if(value) return Object.freeze({key,value});
+  const exact=cueId?clean(map[cueId]):null;
+  if(exact)return Object.freeze({key:cueId,value:exact});
+  // Saved local instructions persist for the current source posture span,
+  // but end at the next canonically sourced posture transition. This makes
+  // Gloria/Credo local sitting usable without fabricating a sedilia cue.
+  const idNumber=id=>/^AO\.SM\.C\d{4}$/.test(String(id))?Number(String(id).slice(-4)):null;
+  const now=idNumber(cueId),start=idNumber(sourceCueId);
+  if(now!=null && start!=null && now>=start){
+    let bestKey=null,bestNumber=-1;
+    for(const [key,value] of Object.entries(map)){
+      const n=idNumber(key);
+      if(n!=null && n>=start && n<=now && n>bestNumber && ["STAND","SIT","KNEEL"].includes(value)){
+        bestKey=key;bestNumber=n;
+      }
+    }
+    if(bestKey)return Object.freeze({key:bestKey,value:map[bestKey]});
+  }
+  for(const key of [sectionId,macroId]){
+    const value=key?clean(map[key]):null;
+    if(value)return Object.freeze({key,value});
   }
   return null;
 }
@@ -48,7 +66,7 @@ export function resolveReaderPostureChannel({
 
   const profile=String(preferences.postureProfile??"FOLLOW_CONGREGATION").toUpperCase();
   const sourced=normalizedSource(cueProjection);
-  const local=findLocalPostureOverride(preferences,{cueId,sectionId,macroId});
+  const local=findLocalPostureOverride(preferences,{cueId,sourceCueId:sourced?.cueId,sectionId,macroId});
 
   if(sourced?.fixed){
     return Object.freeze({
