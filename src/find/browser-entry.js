@@ -8,7 +8,8 @@ import {
   projectExploreDataset,
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
-import { mapViewport, mountExploreMap } from "./map-runtime.js";
+import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
+import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasEraOverlay, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "./heritage-map.js";
@@ -131,6 +132,8 @@ export function createFindOwner(win=globalThis){
     bibleSelectedId:null,
     bibleScope:"ALL",
     bibleQuery:"",
+    bibleAtlas:false,
+    bibleIndex:0,
     atlasFamily:"ANY",
     atlasArea:"ANY",
     atlasPeriod:"ANY",
@@ -281,7 +284,8 @@ export function createFindOwner(win=globalThis){
       selectedPlaceId:state.selectedPlaceId,
       expandPlace:state.expandPlace,
     });
-    node.innerHTML=renderExploreToString(vm);
+    const atlasStops=state.bibleAtlas?buildBibleAtlas(dataset?.biblePlaces?.entries??[]):[];
+    node.innerHTML=state.bibleAtlas?renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex}):renderExploreToString(vm);
     if(searchFocus){
       const next=node.querySelector?.("[data-find-query]");
       next?.focus?.({preventScroll:true});
@@ -294,16 +298,20 @@ export function createFindOwner(win=globalThis){
     node.dataset.open=openState?"true":"false";
     node.dataset.aoFindLoadState="ready";
     node.dataset.exploreLens=state.lens;
-    if(mapHandle&&state.view==="map"){
+    if(mapHandle&&state.view==="map"&&!state.bibleAtlas){
       lastMapView=mapViewport(mapHandle.map);lastMapLens=state.lens;
     }
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
       try{
-        const nextHandle=await mountExploreMap(mapNode,items,{
-          win,initialViewport:lastMapLens===state.lens?lastMapView:null,
+        const atlasMode=state.bibleAtlas;
+        const nextHandle=await mountExploreMap(mapNode,atlasMode?atlasMapItems(atlasStops,state.bibleIndex):items,{
+          win,allowEmpty:atlasMode,initialViewport:atlasMode?{center:[35,31],zoom:3.6}:lastMapLens===state.lens?lastMapView:null,
           onSelect:id=>{
+            if(atlasMode){
+              updateBibleIndex(atlasIndexForPin(atlasStops,state.bibleIndex,id),{center:true});return;
+            }
             const place=state.lens==="heritage"?items.find(item=>item.item_id===id):null;
             state.selectedPlaceId=place?.place_id??null;
             state.selectedId=place?null:id;
@@ -350,7 +358,7 @@ export function createFindOwner(win=globalThis){
   function close(){
     ++paintToken;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
-    state.bibleOpen=false;state.bibleSelectedId=null;state.bibleScope="ALL";state.bibleQuery="";
+    state.bibleOpen=false;state.bibleSelectedId=null;state.bibleScope="ALL";state.bibleQuery="";state.bibleAtlas=false;state.bibleIndex=0;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
@@ -400,6 +408,68 @@ export function createFindOwner(win=globalThis){
     return false;
   }
 
+  // Update pins and camera *in place* as the timeline scrubs; never remount map on each stop.
+  function updateBibleIndex(next,{center=false}={}){
+    if(!openState||!state.bibleAtlas||!dataset)return;
+    const stops=buildBibleAtlas(dataset.biblePlaces?.entries??[]);
+    const index=Math.max(0,Math.min(stops.length-1,Math.floor(Number(next)||0)));
+    const previous=stops[state.bibleIndex],active=stops[index];
+    if(!active)return;
+    state.bibleIndex=index;
+    const root=getRoot(win),lang=language(win);
+    root?.querySelectorAll?.("[data-bible-step]")?.forEach(button=>{
+      const selected=Number(button.dataset.bibleStep)===index;
+      button.classList.toggle("active",selected);button.setAttribute("aria-pressed",String(selected));
+    });
+    const detail=root?.querySelector?.("[data-bible-detail]");
+    if(detail)detail.innerHTML=atlasDetail(active,lang);
+    const title=root?.querySelector?.("[data-bible-era-name]");
+    if(title)title.textContent=lang==="fr"?
+      ({ORIGINS:"Les origines",PATRIARCHS:"Les Patriarches",EXODUS:"L'Exode",ISRAEL:"Israël et les Prophètes",EXILE:"Exil et restauration",INFANCY:"L'Incarnation",PUBLIC:"La Vie publique",PASSION:"La Passion",RESURRECTION:"La Résurrection",APOSTLES:"L'Église apostolique",REVELATION:"L'Apocalypse"})[active.era]:
+      ({ORIGINS:"The Beginnings",PATRIARCHS:"The Patriarchs",EXODUS:"The Exodus",ISRAEL:"Israel and the Prophets",EXILE:"Exile and Restoration",INFANCY:"The Incarnation",PUBLIC:"The Public Ministry",PASSION:"The Passion",RESURRECTION:"The Resurrection",APOSTLES:"The Apostolic Church",REVELATION:"The Apocalypse"})[active.era];
+    if(previous?.era!==active.era&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true){
+      const overlay=root?.querySelector?.("[data-bible-era-overlay]");
+      if(overlay)overlay.innerHTML=atlasEraOverlay(active.era,lang);
+    }
+    const map=mapHandle?.map;
+    const sync=()=>{
+      const source=map?.getSource?.("ao-explore-items");if(!source)return;
+      source.setData?.({type:"FeatureCollection",features:exploreMapFeatures(atlasMapItems(stops,index))});
+      if(active.geo){
+        const key="atlas:"+active.geo.key;
+        try{
+          map.setPaintProperty?.("ao-explore-points","circle-color",["case",["==",["get","item_id"],key],"#edcb86","#79909f"]);
+          map.easeTo?.({center:[active.geo.lng,active.geo.lat],zoom:active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
+        }catch{}
+      }
+    };
+    if(map?.getSource?.("ao-explore-items"))sync();
+    else if(map?.once)map.once("load",sync);
+    if(center)centerBibleMilestone(index);
+  }
+  function centerBibleMilestone(index){
+    const target=getRoot(win)?.querySelector?.('[data-bible-step="'+index+'"]');
+    target?.scrollIntoView?.({block:"nearest",inline:"center",behavior:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"instant":"smooth"});
+  }
+  let bibleScrollFrame=0;
+  function onBibleTimelineScroll(event){
+    if(!openState||!state.bibleAtlas||!event?.target?.matches?.("[data-bible-track]"))return;
+    if(bibleScrollFrame)return;
+    const track=event.target;
+    const update=()=>{
+      bibleScrollFrame=0;
+      const middle=track.getBoundingClientRect().left+track.clientWidth/2;
+      let best=-1,distance=Infinity;
+      track.querySelectorAll("[data-bible-step]").forEach(button=>{
+        const rect=button.getBoundingClientRect(),diff=Math.abs(rect.left+rect.width/2-middle);
+        if(diff<distance){distance=diff;best=Number(button.dataset.bibleStep);}
+      });
+      if(best>=0&&best!==state.bibleIndex)updateBibleIndex(best);
+    };
+    bibleScrollFrame=win.requestAnimationFrame?win.requestAnimationFrame(update):1;
+    if(!win.requestAnimationFrame){bibleScrollFrame=0;update();}
+  }
+
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
@@ -433,6 +503,19 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-explore-expand-place]")){
       event.preventDefault?.();state.expandPlace=true;void paint();return;
+    }
+    if(target?.closest?.("[data-bible-atlas-open]")&&state.lens==="heritage"){
+      event.preventDefault?.();state.bibleAtlas=true;state.bibleIndex=0;
+      lastMapView=null;lastMapLens=null;
+      void paint().then(()=>{centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
+    }
+    if(target?.closest?.("[data-bible-atlas-close]")&&state.bibleAtlas){
+      event.preventDefault?.();state.bibleAtlas=false;lastMapView=null;lastMapLens=null;void paint();return;
+    }
+    const atlasStep=target?.closest?.("[data-bible-step]");
+    if(atlasStep&&state.bibleAtlas){event.preventDefault?.();updateBibleIndex(Number(atlasStep.dataset.bibleStep),{center:true});return;}
+    if(target?.closest?.("[data-bible-follow]")&&state.bibleAtlas){
+      event.preventDefault?.();centerBibleMilestone(state.bibleIndex);updateBibleIndex(state.bibleIndex);return;
     }
     const bibleToggle=target?.closest?.("[data-bible-toggle]");
     if(bibleToggle&&state.lens==="heritage"){
@@ -590,6 +673,7 @@ export function createFindOwner(win=globalThis){
     setFilter(field.dataset.atlasFilter,field.value);
   }
 
+  win?.document?.addEventListener?.("scroll",onBibleTimelineScroll,true);
   win?.document?.addEventListener?.("click",onClick,true);
   win?.document?.addEventListener?.("input",onInput,true);
   win?.document?.addEventListener?.("change",onChange,true);
@@ -607,6 +691,8 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       view:state.view,
       selectedPlaceId:state.selectedPlaceId,
+      bibleAtlas:state.bibleAtlas,
+      bibleIndex:state.bibleIndex,
       bibleOpen:state.bibleOpen,
       bibleSelectedId:state.bibleSelectedId,
       bibleScope:state.bibleScope,
@@ -618,6 +704,7 @@ export function createFindOwner(win=globalThis){
     }),
     dispose(){
       close();
+      win?.document?.removeEventListener?.("scroll",onBibleTimelineScroll,true);
       win?.document?.removeEventListener?.("click",onClick,true);
       win?.document?.removeEventListener?.("input",onInput,true);
       win?.document?.removeEventListener?.("change",onChange,true);
