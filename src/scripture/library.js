@@ -9,6 +9,7 @@ import { verifiedScriptureCommentary } from "./context.js";
 import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
+import {hasScriptureWitness} from "./witness-loader.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
@@ -28,8 +29,8 @@ const element=(tag,copy=null,className="")=>{
 };
 function validatedRecord(record,editionId) {
  const edition=SCRIPTURE_EDITIONS[editionId];
- return Boolean(edition?.enabled && edition.rights==="cleared" &&
-  record?.editionId===editionId && record?.reviewed===true &&
+ return Boolean(((edition?.enabled && edition.rights==="cleared" && record?.reviewed===true) || (hasScriptureWitness(editionId,record?.book) && record?.sourceWitness===true && record?.reviewed===false && record?.sourceStatus==="UNCOLLATED_SOURCE_WITNESS")) &&
+  record?.editionId===editionId &&
   typeof record.text==="string" && record.text.trim() && record.sourceUrl &&
   record.sourceEdition && record.licenceId);
 }
@@ -103,7 +104,7 @@ export function mountScriptureLibrary(root,{
  function draw(){
    const t=L[lang];
    wrap.replaceChildren();
-   if(SCRIPTURE_EDITIONS[editionId]?.enabled && SCRIPTURE_EDITIONS[editionId]?.rights==="cleared") {
+   if(hasScriptureWitness(editionId,location.book) || (SCRIPTURE_EDITIONS[editionId]?.enabled && SCRIPTURE_EDITIONS[editionId]?.rights==="cleared")) {
      queueMicrotask(()=>onNeedBook({book:location.book,editionId}));
    }
    const heading=element("header",null,"aoScriptureHeader");
@@ -152,8 +153,8 @@ export function mountScriptureLibrary(root,{
      draw();
    });
    editionControl.append(editionSelect);nav.append(editionControl);
-   if(lang==="en")browse.append(element("p",t.readable,"aoScriptureNotice"));
-   if(editionId==="cpdv-2009")browse.append(element("p","The source opens this book; the chapter and verse must be located there manually.","aoScriptureNotice"));
+   if(lang==="en" && !hasScriptureWitness(editionId,location.book))browse.append(element("p",t.readable,"aoScriptureNotice"));
+   if(editionId==="cpdv-2009"&&!hasScriptureWitness(editionId,location.book))browse.append(element("p","The source opens this book; the chapter and verse must be located there manually.","aoScriptureNotice"));
    const bookControl=element("label",t.book);
    const books=element("select");
    for(const book of scriptureBookCatalogue()){const opt=element("option",book);opt.value=book;books.append(opt);}
