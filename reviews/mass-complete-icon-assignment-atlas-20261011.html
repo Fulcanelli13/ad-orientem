@@ -86,9 +86,10 @@ const storeKey="ao-icon-assignment-atlas-20261011-v1";
 const memo=new Map(DATA.assets.map(a=>[a.id,a]));
 const targets=[...DATA.targets];
 const tmap=new Map(targets.map(t=>[t.id,t]));
-let changes={},selected=targets[0]?.id??null,assetLimit=90;
-try{const raw=localStorage.getItem(storeKey);if(raw){const j=JSON.parse(raw);if(j&&typeof j==="object"&&j.changes)changes=j.changes;}}catch{}
-function save(){try{localStorage.setItem(storeKey,JSON.stringify({schema:"ao-icon-assignment-review-v1",changes}));$("storageState").textContent="Saved locally · export to submit";}catch{$("storageState").textContent="Browser storage unavailable · export now";}}
+let changes={},customTargets=[],selected=targets[0]?.id??null,assetLimit=90;
+try{const raw=localStorage.getItem(storeKey);if(raw){const j=JSON.parse(raw);if(j&&typeof j==="object"&&j.changes){changes=j.changes;customTargets=j.customTargets??[];}}}catch{}
+for(const t of customTargets){if(t?.id&&!tmap.has(t.id)){tmap.set(t.id,t);targets.push(t)}}
+function save(){try{localStorage.setItem(storeKey,JSON.stringify({schema:"ao-icon-assignment-review-v1",changes,customTargets}));$("storageState").textContent="Saved locally · export to submit";}catch{$("storageState").textContent="Browser storage unavailable · export now";}}
 function get(t){return changes[t.id]??{}}
 function primary(t){const entry=get(t);return Object.hasOwn(entry,"primary")?entry.primary:t.originalIcon}
 function fileUrl(asset){if(!asset?.path)return "";return "../"+asset.path}
@@ -178,7 +179,7 @@ $("clearPrimary").addEventListener("click",()=>updateField("primary",null));
 $("revertPrimary").addEventListener("click",()=>{const t=selectedTarget();if(!t)return;const c={...get(t)};delete c.primary;changes[t.id]=c;save();renderTargets();renderSelected()});
 $("export").addEventListener("click",()=>{
  const payload={schema:"ao-icon-assignment-review-v1",version:"2026-10-11",source:"reviews/mass-complete-icon-assignment-atlas-20261011.html",
-  sourceCounts:DATA.metadata,changes,customTargets:targets.filter(t=>t.source==="USER_CREATED")};
+  sourceCounts:DATA.metadata,changes,customTargets};
  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
  const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="AO_Mass_Complete_Icon_Assignments.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),3000)
 });
@@ -186,7 +187,7 @@ $("import").addEventListener("click",()=>$("importfile").click());
 $("importfile").addEventListener("change",async e=>{
  const file=e.target.files?.[0];if(!file)return;try{const j=JSON.parse(await file.text());
  if(j.schema!=="ao-icon-assignment-review-v1"||!j.changes||typeof j.changes!=="object")throw Error("Not an Ad Orientem icon assignment review");
- changes=j.changes;for(const t of j.customTargets??[]){if(!t?.id||tmap.has(t.id))continue;
+ changes=j.changes;customTargets=j.customTargets??[];for(const t of customTargets){if(!t?.id||tmap.has(t.id))continue;
  tmap.set(t.id,t);targets.push(t)}save();populateStats();renderTargets();renderSelected();
  }catch(err){alert("Unable to import: "+err.message)}e.target.value="";
 });
@@ -196,7 +197,7 @@ $("addTarget").addEventListener("click",()=>{
  const cue=prompt("Source cue (optional, e.g. AO.SM.C0065)","")??"";
  const id="USER."+Date.now();const t={id,actor:role.toUpperCase(),label,channel:"User-defined targets",cue,semantic:label,authority:"REVIEW_ONLY",
  source:"USER_CREATED",campionPages:[],originalIcon:null,condition:"",trigger:"",sourceStatus:"NEEDS_EVIDENCE"};
- targets.push(t);tmap.set(id,t);selected=id;
+ targets.push(t);tmap.set(id,t);customTargets.push(t);selected=id;
  if(!$("targetChannel").querySelector('option[value="User-defined targets"]')){
   const o=document.createElement("option");o.value="User-defined targets";o.textContent="User-defined targets";$("targetChannel").append(o)}
  changes[id]={status:"investigate"};save();populateStats();renderTargets();renderSelected()
