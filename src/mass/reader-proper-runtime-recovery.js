@@ -92,7 +92,8 @@ async function fillSourceBoundCommemorations(data,hostResolver,diagnostic){
       let witness;
       try{witness=await recoverText(hostResolver,path,[section],diagnostic)}catch{continue}
       const expected=latinOpening(original.lat??original.la),actual=latinOpening(witness.lat);
-      if(expected.length<35||actual.length<35||expected!==actual)continue;
+      const shared=Math.min(expected.length,actual.length,50);
+      if(shared<35||expected.slice(0,shared)!==actual.slice(0,shared))continue;
       const replacement={...original};
       for(const lang of ["en","fr"]){
         if(!String(original[lang]??"").trim()&&String(witness[lang]??"").trim()){
