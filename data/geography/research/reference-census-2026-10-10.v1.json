@@ -955,5 +955,51 @@
     "safety": "RESEARCH_ONLY_NOT_PUBLISHED",
     "cross_pipeline_handoff": "data/geography/research/europe-seven-wave-handoff-2026-10-10.v1.json",
     "european_additional_unique_sites_approved": 0
+  },
+  "acquisition_checkpoint_batch5": {
+    "batch": "2026-10-10-THEMATIC-HERITAGE",
+    "owner": "THEMATIC_FEATURE_SOURCE_CLASSIFICATION_NOT_EUROPE_PLACE_CANDIDATES",
+    "source_file": "data/geography/research/thematic-sacred-heritage-2026-10-10.v1.json",
+    "review_doc": "docs/research/EXPLORE-THEMATIC-SACRED-HERITAGE-2026-10-10.md",
+    "feature_rows": 38,
+    "feature_categories": {
+      "BLACK_MADONNA": 6,
+      "DEVOTIONAL_WELL": 14,
+      "SACRED_LANDSCAPE": 10,
+      "SACRED_CAVE": 4,
+      "EX_VOTO": 3,
+      "VENERATED_RELIQUARY_IMAGE": 1
+    },
+    "distinct_feature_source_urls": 25,
+    "existing_published_place_context_rows": 8,
+    "existing_europe_site_research_context_rows": 8,
+    "unresolved_parent_context_rows": 22,
+    "finite_corpus_source_coverage": [
+      {
+        "source": "UNESCO nine Sacri Monti components",
+        "screened": 9,
+        "total": 9
+      },
+      {
+        "source": "Brittany Cléden-Cap-Sizun dedicated fountains",
+        "screened": 5,
+        "total": 5
+      },
+      {
+        "source": "Brittany Confort-Meilars dedicated fountains",
+        "screened": 2,
+        "total": 2
+      },
+      {
+        "source": "Pont-Croix individual devotional fountains in collective index",
+        "screened": 2,
+        "total": 2
+      }
+    ],
+    "source_list_rows_preexisting": 512,
+    "thematic_row_count_not_added_to_512": true,
+    "net_new_european_site_identity_candidates": 0,
+    "published_new_places": 0,
+    "status": "RESEARCH_ONLY_SOURCE_HANDOFF_NO_MAP_PIN"
   }
 }
