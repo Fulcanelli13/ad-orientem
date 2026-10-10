@@ -54,7 +54,7 @@ async function loadMapLibre(win){
 }
 export async function mountFindMap(container,records,{win=globalThis,onSelect=()=>{}}={}){
   const features=directoryMapFeatures(records);
-  if(!container||!features.length||!win?.document)return null;
+  if(!container||(!features.length&&!allowEmpty)||!win?.document)return null;
   ensureCss(win.document);
   const maplibre=await loadMapLibre(win);
   container.innerHTML="";
@@ -194,7 +194,7 @@ export function mapViewport(map){
   return {center:[center.lng,center.lat],zoom};
 }
 export async function mountExploreMap(container,items,{
-  win=globalThis,onSelect=()=>{},initialViewport=null,
+  win=globalThis,onSelect=()=>{},initialViewport=null,allowEmpty=false,
 }={}){
   const features=exploreMapFeatures(items);
   if(!container||!features.length||!win?.document)return null;
