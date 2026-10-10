@@ -30,12 +30,14 @@
     "full_certifications": 0,
     "publication_approval": false,
     "excerpt_via_secondary_case_ids": [
-      "CSE008",
-      "CSE010",
       "CSE145"
     ],
     "original_coauthor_chapter_abstract_case_ids": [
       "CSE123"
+    ],
+    "bounded_original_fletcher_1966_case_ids": [
+      "CSE008",
+      "CSE010"
     ]
   },
   "cases": [
@@ -200,8 +202,8 @@
     {
       "id": "CSE008",
       "source_id": "VS",
-      "doctrinal_evidence_note": "VS 78-81 directly addresses moral object and intention; Fletcher primary wording remains unchecked.",
-      "editorial_status": "ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED",
+      "doctrinal_evidence_note": "Veritatis Splendor 78–81 directly addresses moral object and intention. Fletcher original 1966 selected sections have bounded checks in a third-party digitization, without complete book collation, French approval or eight-stage proof.",
+      "editorial_status": "BOUNDED_ORIGINAL_FLETCHER_1966_DIGITIZATION_NOT_EIGHT_STAGE_CERTIFIED",
       "language_status": "EN_FR_PRESENT_SEMANTIC_PROOFREAD_PENDING",
       "claimed_exact_proponent_quote": false,
       "full_8_stage_certified": false,
@@ -285,7 +287,7 @@
       "id": "CSE010",
       "source_id": "VS",
       "doctrinal_evidence_note": "Intrinsic evil means object incompatible with the good; personal culpability is not uniform.",
-      "editorial_status": "ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED",
+      "editorial_status": "BOUNDED_ORIGINAL_FLETCHER_1966_DIGITIZATION_NOT_EIGHT_STAGE_CERTIFIED",
       "language_status": "EN_FR_PRESENT_SEMANTIC_PROOFREAD_PENDING",
       "claimed_exact_proponent_quote": false,
       "full_8_stage_certified": false,
@@ -4539,6 +4541,10 @@
     "original_digitized_scope_source_ids": [
       "FLETCHER1966"
     ],
-    "source_url_resolver": "src/learn/sexual-ethics-data/source-targets.js"
+    "source_url_resolver": "src/learn/sexual-ethics-data/source-targets.js",
+    "partial_digitized_original_fletcher_cases": [
+      "CSE008",
+      "CSE010"
+    ]
   }
 }
