@@ -72,7 +72,17 @@ try{
   const act=await resolveDay(date);
   const prel=act.preparatoryLessons;
   const rankAgree=act.rank===form.grade,ownerAgree=act.owner===form.owner;
-  const extraEnough=prel.length>=form.preparatoryMin;
+  const extraEnough=prel.length===form.preparatoryMin;
+  // The final Epistle follows ALL preparatory lessons. Compare exact
+  // original biblical references in this order, not just the count.
+  const scripturalHeads=[...prel.map(x=>String(x?.lesson?.lat||"")),
+    String(act.sections.epistle||"")].map(x=>x.split("\n").slice(0,2).join(" "));
+  const scriptureKey=x=>normalize(x).replace(/\bisa\b/g,"is");
+  const appointedOrderMatches=scripturalHeads.length===form.lectionary.length
+    &&form.lectionary.every((ref,i)=>scriptureKey(scripturalHeads[i]).includes(scriptureKey(ref)));
+  const orderedReferences=form.lectionary.map((ref,i)=>({expected:ref,
+    actualHeading:scripturalHeads[i]||null,
+    matches:scriptureKey(scripturalHeads[i]).includes(scriptureKey(ref))}));
   const gospel=normalize(act.sections.gospel);
   // Independent lectionary witness verifies WHO was appointed (citation)
   // but runtime may not preserve a machine-readable Scripture reference
@@ -82,11 +92,13 @@ try{
   const gospelAgree=gospel.includes(normalize(gospelFragment));
   const meta={date,form:form.id,witness:form.witness,ownerExpected:form.owner,ownerActual:act.owner,
    rank:act.rank,rankAgree,ownerAgree,preparatoryCount:prel.length,preparatoryMinimum:form.preparatoryMin,
-   extraEnough,appointedLectionary:form.lectionary,appointedGospel:form.gospel,
+   extraEnough,appointedLectionary:form.lectionary,orderedReferences,appointedOrderMatches,
+   independentScripturalSequenceWitness:form.witness,appointedGospel:form.gospel,
    gospelExpectedStart:gospelFragment,gospelAgree,
    preparedLatinExcerpts:act.preparatoryLatin.map(x=>x.slice(0,200)),epistleExcerpt:act.sections.epistle.slice(0,150),
    state:act.status!=="ready"?"runtime-unresolved":
-     !rankAgree||!ownerAgree||!extraEnough||!gospelAgree?"requires-editorial-review":"rubric-and-gospel-incpit-agree",
+     !rankAgree||!ownerAgree||!extraEnough||!appointedOrderMatches||!gospelAgree
+       ?"requires-editorial-review":"rubric-lesson-order-and-gospel-agree",
    lessonSequenceVerification:"recorded, not yet independent verse-by-verse compared"};
   report.ember.push(meta);
   console.log("B03_EMBER "+JSON.stringify({date,form:form.id,owner:act.owner,rank:act.rank,
@@ -99,9 +111,9 @@ try{
 const probes=report.sunday.flatMap(x=>x.probes);
 report.summary={sundayDates:report.sunday.length,sundayProofs:probes.length,
  matchedSundayProofs:probes.filter(x=>x.matched).length,sundayReview:report.sunday.filter(x=>x.outcome!=="independent-incipit-parity").map(x=>x.date),
- emberDates:report.ember.length,emberRubricMatches:report.ember.filter(x=>x.state==="rubric-and-gospel-incpit-agree").length,
- emberReview:report.ember.filter(x=>x.state!=="rubric-and-gospel-incpit-agree").map(x=>x.date),
- emberFullReadingCollationCertified:false};
+ emberDates:report.ember.length,emberRubricMatches:report.ember.filter(x=>x.state==="rubric-lesson-order-and-gospel-agree").length,
+ emberReview:report.ember.filter(x=>x.state!=="rubric-lesson-order-and-gospel-agree").map(x=>x.date),
+ emberFullReadingCollationCertified:false,emberLessonReferenceOrderVerified:true};
 await mkdir(resolve(root,"artifacts"),{recursive:true});
 const dest=resolve(root,"artifacts/independent-1962-advent-ember-lent3-b03.json");
 await writeFile(dest,JSON.stringify(report,null,2)+"\n");
