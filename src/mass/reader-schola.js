@@ -95,7 +95,7 @@ export function createNativeScholaController(args={}){
   for(const track of built.tracks)for(const segment of track.segments){
     if(segment.cueId)cueToTrack.set(segment.cueId,{trackId:track.id,index:track.segments.indexOf(segment)});
   }
-  let activeTrackId=null,index=0,complete=false;
+  let activeTrackId=null,index=0,complete=false,lastSyncedCueId=null;
 
   function state(){
     const track=activeTrackId?byId.get(activeTrackId):null;
@@ -114,8 +114,8 @@ export function createNativeScholaController(args={}){
     });
   }
   function activate(trackId,{reset=true}={}){
-    if(!byId.has(trackId)){activeTrackId=null;index=0;complete=false;return state()}
-    if(activeTrackId!==trackId || reset){activeTrackId=trackId;index=0;complete=false}
+    if(!byId.has(trackId)){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
+    if(activeTrackId!==trackId || reset){activeTrackId=trackId;index=0;complete=false;lastSyncedCueId=null}
     return state();
   }
   function activateForCard(sequence){
@@ -123,13 +123,18 @@ export function createNativeScholaController(args={}){
     const current=activeTrackId?byId.get(activeTrackId):null;
     if(current?.cards?.includes(n))return state();
     const matches=built.tracks.filter(t=>t.cards.includes(n));
-    if(!matches.length){activeTrackId=null;index=0;complete=false;return state()}
+    if(!matches.length){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
     return activate(matches[0].id);
   }
   function syncCue(cueId){
-    const hit=cueToTrack.get(String(cueId??""));
+    const id=String(cueId??"");
+    const hit=cueToTrack.get(id);
     if(!hit)return state();
+    // A layout refresh or unchanged cue focus must not rewind a Schola
+    // segment manually advanced within its independent track.
+    if(id===lastSyncedCueId && activeTrackId===hit.trackId)return state();
     activeTrackId=hit.trackId;index=hit.index;complete=false;
+    lastSyncedCueId=id;
     return state();
   }
   function next(){
