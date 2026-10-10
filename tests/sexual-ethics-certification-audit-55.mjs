@@ -60,7 +60,7 @@ assert.equal(liveRefs,636,"new live source-map projection must retain its separa
 for(const id of ["CSE008","CSE010","CSE145"]){
   const q=report.cases.find(x=>x.id===id);
   assert.equal(q.editorial_status,"ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED");
-  assert.ok(sources[id].opposition.includes("FLETCHER_EXCERPTS"));
+  assert.ok(report.cases.find(x=>x.id===id).stage_reviews.find(x=>x.stage==="opposition").selected_source_ids.includes("FLETCHER_EXCERPTS"),"historical Fletcher original-excerpt witness not preserved");
 }
 assert.deepEqual(sources.CSE123.opposition,["ACOG_ABORTION","SINGER_KUHSE1990"]);
 assert.equal(sources.CSE012.counter[0],"CURRAN_CDF1986");
