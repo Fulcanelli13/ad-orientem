@@ -6,6 +6,7 @@ import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
+import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
 import "./full-mass-preflight-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
@@ -664,7 +665,12 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
       if(chosen?.kind==="GOOD_FRIDAY" && chosen?.explicitlyChosenForm)
         throw new Error("GOOD_FRIDAY_IS_NOT_A_MASS_FORM");
+      const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
       return Object.freeze({...options,proper,rogationSelection,
+        ...(optional?{
+          precedingRites:optional.precedingRites,
+          followingActions:optional.followingActions,
+        }:{}),
         celebrationForm:chosen?.form??options.celebrationForm});
     },
     openReader: openProductionReader,
@@ -695,7 +701,7 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null };
 
   function tryInstall() {
     state.polls += 1;
@@ -715,6 +721,11 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          doc:document,
          getResolvedMass:()=>celebrationApi().getResolvedMass(),
          getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
+         language:()=>runtimeState()?.language??"en",
+       });
+       state.fullMassCatalogue=mountSourceOwnedMassCatalogue({
+         doc:document,
+         stage:()=>arch()?.stage,
          language:()=>runtimeState()?.language??"en",
        });
        state.controller = createBrowserMassController({
@@ -756,6 +767,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       installed: state.installed,
       rogationPreflightMounted:Boolean(state.rogationPreflight),
        fullMassPreflight:state.fullMassPreflight?.status?.()??null,
+       fullMassCatalogue:state.fullMassCatalogue?.status?.()??null,
       polls: state.polls,
       hostApi: Boolean(celebrationApi()?.getResolvedMass),
       presentationOwner: "R17_NATIVE_PRODUCTION",
