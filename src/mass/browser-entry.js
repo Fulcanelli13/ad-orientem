@@ -693,7 +693,8 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
   } : api;
   return createMassEntryController({
     celebrationApi: actualApi,
-    readReaderPreferences: () => readerPreferences(),
+    readReaderPreferences: resolvedMass => ({...readerPreferences(),
+      mode:fullMassPreflight?.selectionFor?.(resolvedMass)?.readerMode??readerPreferences().mode}),
     resolveHostOptions: async (resolvedMass) => {
       const options=deriveHostOptions({
         resolvedMass,
@@ -775,6 +776,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
          getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
+         getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
          language:()=>runtimeState()?.language??"en",
        });
       state.observedSource=mountObservedMassSourceSelector({
