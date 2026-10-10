@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "date": "2026-10-10",
   "baseline_main": "75273300dcae8809885938d167f4a1f41b8bcced",
-  "status": "APPROVAL_CANDIDATE_NOT_RUNTIME_MIGRATION",
+  "status": "PARTIAL_ENTRY_PRESENTATION_IMPLEMENTED",
   "purpose": "Unique canonical owners with compact cross-linked user-facing projections. IA metadata only; no original prayer, doctrine, source or content duplicated.",
   "scope": {
     "prayer_family_launchers": 23,
@@ -4233,7 +4233,11 @@
     "runtime_implemented": false,
     "source_count_verified": true,
     "phone_verified": false,
-    "apostolate_72_source_handoffs_audited": true
+    "apostolate_72_source_handoffs_audited": true,
+    "entry_presentation_implemented": true,
+    "apostolate_obsolete_prayer_handoffs_repaired": true,
+    "user_visible_content_crosslinks_implemented": false,
+    "reason": "Original readers and published routes remain canonical. Pray and Formation entry hierarchy is implemented; 20 new item relationships and Mass-preparation exact routes are not."
   },
   "audit_findings": {
     "obsolete_apostolate_prayer_handoffs_fixed_on_branch": [
