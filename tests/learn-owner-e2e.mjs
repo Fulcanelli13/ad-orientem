@@ -86,7 +86,8 @@ try{
       await page.locator("#ao-learn-modular-root [data-ao-learn-back]").tap();
       await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
     }
-    await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).tap();
+    if(id==="questions")await page.locator("#ao-learn-modular-root [data-ao-learn-questions]").tap();
+    else await page.locator(`#ao-learn-modular-root [data-ao-learn-family="${id}"]`).tap();
     await page.waitForFunction(expected=>globalThis.AO_LEARN_APP_V1?.status?.().family===expected,id,{timeout:10000});
   }
 
