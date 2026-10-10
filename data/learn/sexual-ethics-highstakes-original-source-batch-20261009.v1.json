@@ -1057,6 +1057,11 @@
               "id": "ABORTCLAR",
               "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20090711_aborto-procurato_en.html",
               "locator": "2009 CDF Clarification on Procured Abortion, distinction of direct abortion/therapeutic intervention"
+            },
+            {
+              "id": "USCCB_DIRECT2010",
+              "url": "https://www.usccb.org/resources/direct-abortion-statement2010-06-23.pdf",
+              "locator": "USCCB Committee on Doctrine (2010), pp. 2–3, corroborating direct-abortion distinction; added to citation map, exact wording not independently collated for this audit"
             }
           ],
           "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
@@ -1084,6 +1089,11 @@
               "id": "NCBC_ECTOPIC",
               "url": "https://www.ncbcenter.org/messages-from-presidents/highrisk",
               "locator": "National Catholic Bioethics Center ectopic treatment commentary, not magisterial authority"
+            },
+            {
+              "id": "USCCB_DIRECT2010",
+              "url": "https://www.usccb.org/resources/direct-abortion-statement2010-06-23.pdf",
+              "locator": "USCCB Committee on Doctrine (2010), pp. 2–3, corroborating direct-abortion distinction; added to citation map, exact wording not independently collated for this audit"
             }
           ],
           "status": "DIRECT_PASSAGE_OR_EMPIRICAL_CLAIM_UNRESOLVED",
@@ -1128,6 +1138,11 @@
               "id": "ACOG_ECTOPIC",
               "url": "https://www.acog.org/womens-health/faqs/ectopic-pregnancy",
               "locator": "ACOG ectopic-pregnancy FAQ; direct retrieval incomplete"
+            },
+            {
+              "id": "USCCB_DIRECT2010",
+              "url": "https://www.usccb.org/resources/direct-abortion-statement2010-06-23.pdf",
+              "locator": "USCCB Committee on Doctrine (2010), pp. 2–3, corroborating direct-abortion distinction; added to citation map, exact wording not independently collated for this audit"
             }
           ],
           "status": "REASONED_INFERENCE_NOT_VERBATIM",
@@ -1155,6 +1170,11 @@
               "id": "NCBC_ECTOPIC",
               "url": "https://www.ncbcenter.org/messages-from-presidents/highrisk",
               "locator": "National Catholic Bioethics Center ectopic treatment commentary, not magisterial authority"
+            },
+            {
+              "id": "USCCB_DIRECT2010",
+              "url": "https://www.usccb.org/resources/direct-abortion-statement2010-06-23.pdf",
+              "locator": "USCCB Committee on Doctrine (2010), pp. 2–3, corroborating direct-abortion distinction; added to citation map, exact wording not independently collated for this audit"
             }
           ],
           "status": "PRIMARY_DOCTRINAL_PASSAGE_SCOPED",
@@ -1217,5 +1237,25 @@
       "status": "BOUNDED_PRIMARY_PASSAGE_CHECKED",
       "independent_french_approval": false
     }
-  ]
+  ],
+  "source_selection_alignment_20261011": {
+    "purpose": "Reconcile 2026-10-09 bounded research snapshot to current CSE125 canonical stage-source map",
+    "affected_case": "CSE125",
+    "stages_with_additional_reference": [
+      "breakpoint",
+      "catholicCase",
+      "response",
+      "bottom"
+    ],
+    "added_source": "USCCB_DIRECT2010",
+    "source_url": "https://www.usccb.org/resources/direct-abortion-statement2010-06-23.pdf",
+    "source_role": "Episcopal committee doctrinal context; corroborates direct-versus-indirect abortion distinction; not a substitute for clinical sources, not a judgment on individual ectopic pregnancy procedures.",
+    "citation_added_to_existing_stage": true,
+    "exact_original_passage_newly_verified": false,
+    "clinical_question_newly_resolved": false,
+    "full_stage_certification": false,
+    "full_eight_stage_certification": false,
+    "french_editorial_approval": false,
+    "notice": "The four stage review_en/review_fr and status fields reflect their earlier partial research; adding this canonical URL does not silently upgrade passage verification or theological certification."
+  }
 }
