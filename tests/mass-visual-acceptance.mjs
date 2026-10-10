@@ -262,8 +262,8 @@ try{
       const afterwards=snapshot();
       // A later Collect source row specifying the *same* STAND state is
       // an informational marker, not a second instruction to stand.
-      adapter.renderMoment({...base,cardUpdate:false,
-        postureCue:{label:"STAND",cueId:"AO.SM.C0070"}});
+      // The cue controller rejects C0070 before it can reach the DOM.
+      adapter.renderMoment({...base,cardUpdate:false,postureCue:null});
       const redundant=snapshot();
       adapter.renderMoment({...base,cardUpdate:false,posture:{label:"KNEEL"},
         postureIconKey:"kneel",postureCue:{label:"STAND",cueId:"AO.SM.C0070"},
