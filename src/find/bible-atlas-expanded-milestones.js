@@ -1,4 +1,5 @@
-// Supplemental bilingual narrative milestones: biblical references; geographic pins require separate evidence.
+// Supplemental Catholic-canon milestones. Deuterocanonical additions follow Douay chapter labels;
+// exact verse links must be edition-crosswalk audited against Crampon, CPDV and other witnesses.
 export const BEFORE_MILESTONES={
   "The departure from Egypt": [
     [
@@ -392,6 +393,62 @@ export const AFTER_MILESTONES={
       "Ezra proclaims the Law",
       "Esdras proclame la Loi",
       "Nehemiah 8:1–12"
+    ],
+    [
+      "EXILE",
+      null,
+      null,
+      "The prayer of Esther",
+      "La prière d'Esther",
+      "Esther 14:1–19"
+    ],
+    [
+      "EXILE",
+      null,
+      null,
+      "Baruch's promise to Jerusalem",
+      "La promesse de Baruch à Jérusalem",
+      "Baruch 5:1–9"
+    ],
+    [
+      "EXILE",
+      null,
+      null,
+      "The song of the three youths",
+      "Le cantique des trois jeunes gens",
+      "Daniel 3:24–90"
+    ],
+    [
+      "EXILE",
+      null,
+      null,
+      "Susanna is vindicated",
+      "Suzanne est innocentée",
+      "Daniel 13:1–64"
+    ],
+    [
+      "EXILE",
+      null,
+      null,
+      "Daniel exposes the idol of Bel",
+      "Daniel dénonce l'idole de Bel",
+      "Daniel 14:1–22"
+    ],
+    [
+      "EXILE",
+      null,
+      null,
+      "Daniel and the dragon",
+      "Daniel et le dragon",
+      "Daniel 14:23–42"
+    ],
+    [
+      "EXILE",
+      null,
+      null,
+      "The praise of divine Wisdom",
+      "La louange de la Sagesse divine",
+      "Sirach 24:1–22"
     ]
   ],
   "The Maccabean resistance": [
