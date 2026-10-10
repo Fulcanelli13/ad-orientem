@@ -11,6 +11,9 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"artifacts/sacred-art-cma-gaps"
 IMAGES=OUT/"nga-originals"
 LEADS=[
+ {"id":"nga-34956","prayerKey":"confession","title":"The Return of the Prodigal Son",
+  "object":"https://www.nga.gov/artworks/34956-return-prodigal-son",
+  "original":"https://api.nga.gov/iiif/676fa96e-ad4e-4209-b985-ae0c15f5d902/full/full/0/default.jpg"},
  {"id":"nga-41659","prayerKey":"stations","title":"Saint Veronica [obverse]",
   "object":"https://www.nga.gov/artworks/41659-saint-veronica-obverse",
   "original":"https://api.nga.gov/iiif/8788f9a6-142d-40b7-953b-a9a208ff2eef/full/full/0/default.jpg"},
