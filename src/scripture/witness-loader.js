@@ -23,6 +23,7 @@ export function validateScriptureWitness(data,editionId,book){
  return data.verses.map(([chapter,verseStart,text])=>Object.freeze({
   editionId,book,chapter,verseStart,verseEnd:verseStart,text,
   sourceWitness:true,reviewed:false,sourceEdition:editionId,
+  licenceId:"UNCOLLATED_CATHOLIC_SOURCE_WITNESS",
   sourceUrl:"https://github.com/"+data.sourceRepository+"/blob/main/"+data.sourcePath,
   sourceStatus:data.sourceStatus
  }));
