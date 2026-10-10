@@ -536,6 +536,36 @@
       "locator": "Official doctrine: following the final resurrection the fire of God consumes the unrighteous and ends sin and sinners",
       "original_context_approved": false,
       "provenance": "A2 authentic opponent against eternal conscious punishment; editorial pass 2026-10-10"
+    },
+    {
+      "id": "GAL-1633-SENT-OPP",
+      "title": "Galileo's 1633 condemnation and abjuration, translated historical excerpts, Fordham Internet History Sourcebook",
+      "url": "https://sourcebooks.web.fordham.edu/mod/1630galileo.asp",
+      "locator": "Sentence of 22 June 1633 and abjuration: ecclesiastical condemnation of the Earth's motion; editorial source notes warn the English extract's printed provenance is uncertain",
+      "original_context_approved": false,
+      "original_passage_status": "TRANSLATION_PROVENANCE_NOT_INDEPENDENTLY_VERIFIED"
+    },
+    {
+      "id": "MURPHY-2009-OPP",
+      "title": "Commission of Investigation into the Catholic Archdiocese of Dublin (Murphy Commission), Report (2009), original report",
+      "url": "https://www.bishop-accountability.org/reports/2009_11_26_Murphy_Report/",
+      "locator": "Government commission's 2009 original report, chapter 1 Overview §§1.15–1.31, 1.113; priority of avoiding scandal, failure to protect children, structures and state responsibility",
+      "original_context_approved": false,
+      "original_passage_status": "ORIGINAL_REPORT_MIRROR_CONTEXT_CHECK_PENDING"
+    },
+    {
+      "id": "TRC-2015-OPP",
+      "title": "Truth and Reconciliation Commission of Canada, Calls to Action (2015), original NCTR text",
+      "url": "https://nctr.ca/about/truth-and-reconciliation-commission-of-canada-calls-to-action/",
+      "locator": "Calls to Action 47–49 and 58–61: repudiation of doctrines of discovery, Church residential-school harms, apology, education, reparative obligations",
+      "original_context_approved": false
+    },
+    {
+      "id": "NCTR-2022-OPP",
+      "title": "National Centre for Truth and Reconciliation, statement concerning survivors' meetings with Pope Francis, 31 March 2022",
+      "url": "https://nctr.ca/about/statements-and-news-releases/statement/",
+      "locator": "National Centre statement March 31 2022, rights of survivors and outstanding TRC action 58 at that date (before July 2022 visit and apology)",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -2253,30 +2283,38 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "In 1992 John Paul II publicly addressed the work of a commission studying the Galileo case and recognised how exegetical and disciplinary errors resulted from confusing a received physical cosmology with scriptural teaching. This is original Roman acknowledgement of a historical failure, not an assertion that heliocentrism had been condemned as a dogma for all time.",
-            "fr": "En 1992 Jean-Paul II présenta publiquement le travail d'une commission sur Galilée et reconnut des erreurs exégétiques et disciplinaires liées à la confusion entre cosmologie reçue et enseignement scripturaire. C'est un aveu romain original d'une défaillance historique, non l'affirmation que l'héliocentrisme aurait été condamné comme dogme pour toujours."
+            "en": "The Roman tribunal's sentence of 22 June 1633 expressly treated Galileo's defence of the Earth's motion as philosophically erroneous and contrary to Scripture, ordered him to abjure and prohibited his Dialogue. The actual disciplinary record is much more forceful than a mere difference of taste between astronomers and theologians. An accessible English excerpt is preserved in Fordham University's historical sourcebook, although its editor cautions that the exact printed provenance of one translation is uncertain. The sentence is evidence of a specific institutional failure, not proof that every Catholic institution always opposed scientific inquiry.",
+            "fr": "La sentence du tribunal romain du 22 juin 1633 a expressément considéré la défense du mouvement terrestre par Galilée comme erronée en philosophie et contraire à l'Écriture ; elle lui a imposé l'abjuration et a interdit son Dialogue. Ce document disciplinaire est plus grave qu'une simple divergence de goût entre astronomes et théologiens. Un extrait anglais est conservé dans la collection historique de l'université Fordham, dont l'éditeur signale toutefois l'incertitude sur la provenance imprimée exacte d'une traduction. Cette décision prouve une faute institutionnelle précise, non que toutes les institutions catholiques auraient toujours persécuté la science."
           },
           "source_ids": [
-            "GAL1992",
-            "CCC-SCIENCE"
+            "GAL-1633-SENT-OPP"
           ],
-          "attribution": "John Paul II, Pontifical Academy of Sciences address, 31 October 1992",
+          "attribution": "Roman Inquisition, Sentence and Abjuration concerning Galileo, 22 June 1633, historical English translation in Fordham Sourcebooks",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "GAL-1633-SENT-OPP": "Sentence dated 22 June 1633, judgement on movement of Earth and disciplinary penalties; English translation provenance uncertain"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "Modern astronomy must be judged by empirical evidence, not by the claim that a historical theologian once attached a biblical phrase to geocentrism. Yet Galileo's history also requires accurately distinguishing scientific hypotheses and proofs available at each date. The philosophical and theological question of creation is not an alternative mechanical astronomy theory competing with physics.",
-            "fr": "L'astronomie moderne se juge selon les preuves empiriques, non selon l'usage qu'un théologien ancien fit d'une phrase biblique en faveur du géocentrisme. Toutefois l'histoire de Galilée demande de distinguer hypothèses et preuves disponibles à chaque date. La question philosophique et théologique de la création ne constitue pas une astronomie mécanique concurrente de la physique."
+            "en": "The 1633 sentence requires acknowledging that an ecclesiastical tribunal treated a changeable cosmological judgement as if it carried scriptural authority. John Paul II's 1992 reflection recognized this hermeneutical confusion. Historical explanations of what evidence was available to Galileo neither annul the court's action nor prove a general war of religion against all scientific inquiry. A serious Catholic reply separates the truth of the faith, the legitimate autonomy of empirical research, and particular errors in the way ecclesiastical power was exercised.",
+            "fr": "La sentence de 1633 impose de reconnaître qu'un tribunal ecclésiastique a revêtu un jugement cosmologique révisable d'une autorité prétendument scripturaire. En 1992, Jean-Paul II a reconnu cette confusion herméneutique. Expliquer quelles preuves étaient disponibles à Galilée n'annule pas la décision du tribunal ; celle-ci ne démontre pas non plus une guerre générale de la religion contre toute recherche scientifique. Une réponse catholique sérieuse distingue la vérité de la foi, la juste autonomie des sciences expérimentales et les fautes particulières dans l'exercice du pouvoir ecclésiastique."
           },
           "source_ids": [
+            "GAL-1633-SENT-OPP",
             "GAL1992",
             "CCC-SCIENCE"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "GAL-1633-SENT-OPP": "1633 sentence and abjuration, quoted disciplinary allegations",
+            "GAL1992": "1992 address acknowledging Galileo confusion",
+            "CCC-SCIENCE": "§159 faith and scientific research"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -2322,30 +2360,38 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The 2023 revision of Vos estis lux mundi explicitly recognises damage caused by sexual abuse and establishes reporting and procedural norms covering clerics and relevant institutional superiors. This binding Roman text acknowledges concrete ecclesial accountability duties rather than claiming that the Church's supernatural mission makes reporting unnecessary.",
-            "fr": "La révision de 2023 de Vos estis lux mundi reconnaît explicitement les dommages des abus sexuels et fixe des règles de signalement et de procédure visant les clercs et certains supérieurs institutionnels. Ce texte normatif romain reconnaît une responsabilité ecclésiale concrète plutôt que de prétendre que la mission surnaturelle dispenserait de signaler les crimes."
+            "en": "The independent Commission of Investigation into the Catholic Archdiocese of Dublin, reporting in 2009, found systemic failures in the handling of clerical child sexual abuse. Its original report documents institutional priority given to reputation and avoidance of scandal rather than protection of children, alongside failures of civil authorities. This is not a speculative anti-Catholic accusation: it is an evidence-based public investigation of an identifiable period and jurisdiction. The argument challenges the credibility of ecclesiastical leaders and the Church's practical witness; it must be answered without dismissing victims or assuming that the finding proves every theological claim false.",
+            "fr": "La Commission indépendante d'enquête sur l'archidiocèse catholique de Dublin, dans son rapport de 2009, a constaté de graves défaillances systémiques dans le traitement des abus sexuels commis par des clercs sur des enfants. Son rapport original documente la priorité accordée à la réputation et à l'évitement du scandale plutôt qu'à la protection des enfants, ainsi que des fautes des autorités civiles. Ce n'est pas une accusation anticatholique hypothétique : c'est une enquête publique étayée, portant sur une période et une juridiction déterminées. L'argument met en cause la crédibilité des responsables et leur témoignage pratique ; il faut le traiter sans mépriser les victimes ni prétendre qu'il réfute logiquement chaque dogme."
           },
           "source_ids": [
-            "VELM2023",
-            "ITC2000"
+            "MURPHY-2009-OPP"
           ],
-          "attribution": "Francis, Vos estis lux mundi 2023, preamble and Title I",
+          "attribution": "Commission of Investigation into the Catholic Archdiocese of Dublin, Murphy Report, 2009, original commissioned report",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "MURPHY-2009-OPP": "Chapter 1 Overview (2009), documented institutional cover-up, failures to protect children and civil failures"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "A valid Christian sacrament does not acquire its truth from a minister's personal goodness, but this distinction must not become a shield against criminal or civil liability. Nor can victims be required to return to unsafe environments in order to demonstrate forgiveness. Each accusation requires fair evidence, protection from retaliation, lawful process and transparent corrective measures.",
-            "fr": "Un sacrement chrétien valide ne tire pas sa vérité de la bonté personnelle du ministre, mais cette distinction ne doit pas protéger de la responsabilité pénale ou civile. On ne peut demander aux victimes de retourner dans un milieu dangereux comme preuve de pardon. Chaque accusation exige preuves équitables, protection contre les représailles, procédure légale et corrections transparentes."
+            "en": "The report's findings demand acknowledgment, safeguards, disclosure consistent with law, effective civil investigation and meaningful reparation. It would be illegitimate to reply that sacramental validity renders child protection irrelevant. Catholic doctrine distinguishes Christ's truth from the sin of clergy, but that distinction is no excuse for concealing crimes or pressuring survivors into forgiveness or silence. The 2023 norms of Vos estis lux mundi establish ecclesiastical obligations; actual institutional conduct must be judged by whether reporting, investigation and accountability occur, not by citing those norms alone.",
+            "fr": "Les conclusions du rapport exigent reconnaissance des torts, protection effective, divulgation conforme au droit, enquête civile et réparation réelle. Il serait illégitime de soutenir que la validité des sacrements rendrait secondaire la protection des enfants. La doctrine catholique distingue la vérité du Christ des péchés du clergé ; cette distinction ne saurait justifier ni la dissimulation des crimes ni des pressions sur les victimes pour obtenir silence ou pardon. Les normes de Vos estis lux mundi de 2023 imposent des obligations ecclésiales ; il faut juger les pratiques concrètes d'après les signalements, enquêtes et responsabilités effectifs, et non selon la seule existence des normes."
           },
           "source_ids": [
+            "MURPHY-2009-OPP",
             "VELM2023",
             "ITC2000"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "MURPHY-2009-OPP": "Dublin Commission 2009 primary findings",
+            "VELM2023": "Preamble and Title I, institutional reporting duties",
+            "ITC2000": "Church, memory, responsibilities for historical evil"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -2390,30 +2436,42 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The Vatican's 2023 joint statement rejects the so-called doctrine of discovery as inconsistent with Indigenous rights, cites Paul III's Sublimis Deus against enslaving native peoples and acknowledges evil committed by Christians. This is an identifiable official historical admission, not a claim that the Church uniformly opposed every colonial injustice at every date.",
-            "fr": "La déclaration vaticane conjointe de 2023 rejette la prétendue doctrine de la découverte comme contraire aux droits autochtones, cite Sublimis Deus de Paul III contre l'asservissement des peuples indigènes et reconnaît les méfaits de chrétiens. C'est un aveu officiel identifiable, non la prétention que l'Église aurait uniformément combattu toute injustice coloniale à toutes les époques."
+            "en": "Canada's Truth and Reconciliation Commission, drawing on Indigenous survivors and evidence about residential schools, issued Calls to Action 47–49 and 58–61 in 2015. These explicitly demand repudiation of colonial legal justifications such as the Doctrine of Discovery and acknowledge the Catholic Church's role in abuse inflicted on First Nations, Inuit and Métis children. A 31 March 2022 National Centre for Truth and Reconciliation statement repeated survivors' demand for a papal apology—before Pope Francis's subsequent Canadian visit and apology that July. These are documented challenges from affected communities and their commission, not merely a Vatican statement about its own past.",
+            "fr": "La Commission de vérité et réconciliation du Canada, fondée notamment sur les témoignages de survivants autochtones des pensionnats, a formulé en 2015 les appels à l'action 47–49 et 58–61. Ils réclament le rejet de justifications coloniales comme la « doctrine de la découverte » et mettent en cause le rôle de l'Église catholique dans les abus subis par des enfants des Premières Nations, inuits et métis. Une déclaration du Centre national du 31 mars 2022 rappelait l'exigence d'excuses pontificales formulée par les survivants, avant la visite et les excuses de François au Canada en juillet suivant. Il s'agit de demandes documentées des communautés touchées et de leur commission, non d'une simple autocritique du Vatican."
           },
           "source_ids": [
-            "VATS2023",
-            "ITC2000"
+            "TRC-2015-OPP",
+            "NCTR-2022-OPP"
           ],
-          "attribution": "Holy See dicasteries, joint Doctrine of Discovery statement, 30 March 2023",
+          "attribution": "Truth and Reconciliation Commission of Canada, Calls to Action 47–49 and 58–61 (2015); National Centre statement 31 March 2022",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "TRC-2015-OPP": "Calls to Action 47–49 and 58–61, colonial justification, apology, education and healing",
+            "NCTR-2022-OPP": "March 2022 statement on survivors' appeals; historical pre-apology date"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "A document condemning slavery does not prove that all Catholic monarchs, clergy or institutions obeyed it. Equally, finding a colonial atrocity by baptised perpetrators does not establish that Christian doctrine prescribed it. Honest research must separate papal pronouncements, colonial royal law, commercial incentives, local church acts and affected Indigenous testimony while allowing accountability for each.",
-            "fr": "Un document condamnant l'esclavage ne prouve pas que tous les monarques, clercs ou institutions catholiques lui ont obéi. Inversement, une atrocité coloniale commise par des baptisés ne prouve pas que la doctrine chrétienne l'ordonnait. La recherche honnête distingue enseignements pontificaux, lois royales, intérêts commerciaux, actes ecclésiaux locaux et témoignages autochtones, avec responsabilité propre à chaque niveau."
+            "en": "Papal declarations supporting Indigenous freedom cannot cancel harms committed by Christian institutions or explain away documented violations of language, family integrity and conscience. The Canadian Commission's findings require distinct institutional accountability and reconciliation measures, not just a theoretical distinction between doctrine and misconduct. Conversely, historical responsibility must be established for particular acts and authorities; it should neither erase genuine anti-enslavement teaching nor turn every Indigenous experience into an identical history. The Vatican's 2023 repudiation of the Doctrine of Discovery is one response to demands that predated it.",
+            "fr": "Les déclarations pontificales en faveur de la liberté des peuples autochtones n'effacent pas les torts commis par des institutions chrétiennes ni les atteintes documentées aux langues, aux familles et aux consciences. Les conclusions de la commission canadienne exigent responsabilité institutionnelle et mesures concrètes de réconciliation, au-delà de la distinction théorique entre doctrine et fautes humaines. Inversement, la responsabilité historique se démontre acte par acte et autorité par autorité : elle ne supprime ni les enseignements authentiques contre l'esclavage ni la diversité des expériences autochtones. La déclaration vaticane de 2023 rejetant la « doctrine de la découverte » répond notamment à des demandes plus anciennes."
           },
           "source_ids": [
+            "TRC-2015-OPP",
+            "NCTR-2022-OPP",
             "VATS2023",
             "ITC2000"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "TRC-2015-OPP": "2015 commission's Church apology/education and Doctrine of Discovery calls",
+            "NCTR-2022-OPP": "2022 historically outstanding calls",
+            "VATS2023": "2023 Vatican repudiation",
+            "ITC2000": "Church's historical responsibility"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -2441,7 +2499,7 @@
     "canonical_dossiers": 26,
     "english_substantive_paragraphs": 104,
     "french_substantive_paragraphs": 104,
-    "source_registry_entries": 67,
+    "source_registry_entries": 71,
     "public_routes_added": 0,
     "independent_approvals": 0
   }

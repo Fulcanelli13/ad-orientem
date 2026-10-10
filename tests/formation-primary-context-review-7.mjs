@@ -14,8 +14,9 @@ const packs = [
 ].map(p => read(root+p));
 const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
 const a2=read("data/learn/formation-a2-20261010-source-role-amendment.v1.json");
+const priority=read("data/learn/formation-priority-original-opponents-source-amendment-2026-10-10.v1.json");
 const a1Changed=new Map(a1.modified_roles.map(x=>[x.owner+"|"+x.role,x]));
-const a1Superseded=new Map([...a1.original_findings_superseded,...a2.original_findings_superseded].map(x=>[x.finding_id,x]));
+const a1Superseded=new Map([...a1.original_findings_superseded,...a2.original_findings_superseded,...priority.original_findings_superseded].map(x=>[x.finding_id,x]));
 const validateReassigned=(f,section,sources)=>{
  const change=a1Superseded.get(f.id);
  assert.ok(change,f.id+": original citation removed without an explicit source-review disposition");
@@ -64,7 +65,7 @@ assert.match(role("CR-LIT-10","documented_position").text.en,/expedit/);
 assert.match(role("CR-LIT-07","documented_position").text.en,/25 September 1969/);
 assert.match(role("CR-DOC-09","documented_position").text.en,/John Paul II/);
 assert.match(role("APOL-002","documented_position").text.en,/§37/);
-assert.match(role("APOL-052","documented_position").text.en,/voluntary/);
+assert.match(role("APOL-052","documented_position").text.en,/John Stuart Mill/);
 assert.match(role("APOL-060","documented_position").text.en,/1983/);
 assert.match(role("CR-GOV-05","documented_position").text.en,/two-thirds/);
 assert.match(role("CR-GOV-10","documented_position").text.en,/Magisterium/);
