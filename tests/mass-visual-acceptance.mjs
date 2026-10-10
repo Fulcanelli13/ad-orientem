@@ -154,7 +154,7 @@ try{
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(opening.liturgicalColour,"WHITE","selected Rosary Mass must own its white theme, not the Sunday calendar");
   assert.equal(opening.liturgicalSource,"SELECTED_PROPER");
-  assert.equal(opening.massBackground,"#191815");
+  assert.equal(opening.massBackground,"#080b10","liturgical white now uses the restrained dark Mass foundation");
   assert.equal(opening.legacyStarts,0);
   assert.equal(opening.modeButtons,3);
   assert.equal(opening.livePressed,"true");
