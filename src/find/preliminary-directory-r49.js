@@ -42,7 +42,7 @@ export function projectPreliminaryR49(json){
   return Object.freeze(source.records.map(row=>{
     const [id,name,country,locality,affiliation,group,lat,lng,url,other_url,precision]=row;
     const community_id=providerGroup(affiliation,group);
-    const sources=[url,...linkList(other_url)].filter((v,i,a)=>v&&a.indexOf(v)===i);
+    const sources=[...linkList(url),...linkList(other_url)].filter((v,i,a)=>v&&a.indexOf(v)===i);
     const provisional="Provisional venue pin. Presence of the traditional Mass, affiliation, precise entrance and times have not been verified.";
     const label=tidy(affiliation)||"Affiliation unverified";
     return Object.freeze({
