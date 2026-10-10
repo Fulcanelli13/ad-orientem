@@ -180,8 +180,10 @@ function flags(a,u){
  '<button class="investigate '+(has("INVESTIGATE_FURTHER",a,u)?"active":"")+'" data-kind="INVESTIGATE_FURTHER"'+(u?' data-date="'+escape(u.date)+'" data-principal="'+escape(u.principal)+'"':'')+'>Investigate</button>';
 }
 function draw(){
+ const gallery=$("gallery");
+ const openCards=new Set([...gallery.querySelectorAll("article.card")].filter(c=>c.querySelector("details[open]")).map(c=>c.dataset.id));
  const view=data.items.filter(filtered);
- const gallery=$("gallery");gallery.replaceChildren();
+ gallery.replaceChildren();
  for(const a of view){
   const card=document.createElement("article");card.className="card";
   card.dataset.id=a.id;
@@ -209,6 +211,7 @@ function draw(){
   }
   html+='</details><small>SHA-256 '+escape(a.sha.slice(0,15))+'…</small></div>';
   card.innerHTML=html;gallery.append(card);
+  if(openCards.has(a.id))card.querySelector("details").open=true;
   const img=card.querySelector("img.preview");if(img)img.onclick=()=>{$("zoomImg").src=a.preview;$("zoom").showModal()};
   card.querySelectorAll("button[data-kind]").forEach(btn=>btn.onclick=()=>{
    const u=btn.dataset.date?a.uses.find(u=>u.date===btn.dataset.date&&u.principal===btn.dataset.principal):null;
