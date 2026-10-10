@@ -1,8 +1,8 @@
 // Preliminary R49 venue snapshot. Source-affiliation groupings are editorial,
 // never proof of a particular Canon's una-cum commemoration or active timetable.
 export const PRELIMINARY_R49_URL=new URL("../../data/directory/preliminary-map-r49.v1.json",import.meta.url).href;
-export const PRELIMINARY_R49_TOTAL=1876;
-export const PRELIMINARY_R49_ROME=1019;
+export const PRELIMINARY_R49_TOTAL=1879;
+export const PRELIMINARY_R49_ROME=1022;
 const COLS=["id","name","country","locality","affiliation","group","lat","lng","url","other_url","precision"];
 const tidy=s=>String(s??"").trim();
 const searchKey=s=>tidy(s).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
