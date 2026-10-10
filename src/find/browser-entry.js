@@ -418,15 +418,24 @@ export function createFindOwner(win=globalThis){
     const bibleToggle=target?.closest?.("[data-bible-toggle]");
     if(bibleToggle&&state.lens==="heritage"){
       event.preventDefault?.();
+      const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
       state.bibleOpen=!state.bibleOpen;
       if(!state.bibleOpen)state.bibleSelectedId=null;
-      void paint();return;
+      void paint().then(()=>{
+        const surface=getRoot(win)?.querySelector?.(".aoFindSurface");
+        if(surface)surface.scrollTop=previousScroll;
+      });return;
     }
     const biblePlace=target?.closest?.("[data-bible-place]");
     if(biblePlace&&state.lens==="heritage"&&state.bibleOpen){
       event.preventDefault?.();
+      const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
       state.bibleSelectedId=biblePlace.dataset.biblePlace||null;
-      void paint();return;
+      void paint().then(()=>{
+        const surface=getRoot(win)?.querySelector?.(".aoFindSurface");
+        if(surface)surface.scrollTop=previousScroll;
+        getRoot(win)?.querySelector?.(".aoBiblePlacesDetail")?.scrollIntoView?.({block:"nearest"});
+      });return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
