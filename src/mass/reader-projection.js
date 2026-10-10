@@ -17,6 +17,7 @@ function normalizeParagraphSource(paragraph, fallbackKind="TEXT"){
     latin:paragraph.latin ?? paragraph.lat ?? null,
     vernacular:paragraph.vernacular ?? paragraph.translation ?? paragraph.en ?? null,
     active:paragraph.active === true,
+    displayLanguage:paragraph.displayLanguage ?? null,
     sourceCueIds:Object.freeze([...(paragraph.sourceCueIds ?? (paragraph.id ? [paragraph.id] : []))].map(String)),
   });
 }
@@ -37,6 +38,30 @@ export function projectResolvedReaderText(resolvedText){
   return Object.freeze(source.map((raw,index)=>{
     const p=normalizeParagraphSource(raw,fallbackKind);
     const policy=dialogueLanguagePolicy(p.kind);
+    // Exact source-clock/display ownership wins over the generic dialogue
+    // fallback: sung prayers Latin, private/Proper text vernacular.
+    if(p.displayLanguage==="LATIN"){
+      if(!p.latin)throw new Error("Sung Latin text required for "+p.id);
+      return Object.freeze({
+        id:String(p.id ?? index),kind:p.kind,
+        primary:String(p.latin),secondary:null,
+        alternate:p.vernacular == null ? null : String(p.vernacular),
+        replaceOnToggle:Boolean(p.vernacular),
+        active:p.active,sourceCueIds:p.sourceCueIds,
+        displayLanguage:"LATIN",languageOwner:"SOURCE_SUNG_PRAYER",
+      });
+    }
+    if(p.displayLanguage==="VERNACULAR" && p.kind!=="RESPONSE" && p.kind!=="VERSICLE"){
+      if(!p.vernacular)throw new Error("Vernacular source text required for "+p.id);
+      return Object.freeze({
+        id:String(p.id??index),kind:p.kind,
+        primary:String(p.vernacular),secondary:null,
+        alternate:p.latin == null ? null : String(p.latin),
+        replaceOnToggle:Boolean(p.latin),
+        active:p.active,sourceCueIds:p.sourceCueIds,
+        displayLanguage:"VERNACULAR",languageOwner:"SOURCE_PRIVATE_OR_PROPER",
+      });
+    }
     if(policy.primary==="LATIN"){
       if(!p.latin) throw new Error("Latin dialogue text required for "+p.kind);
       return Object.freeze({
