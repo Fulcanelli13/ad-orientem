@@ -1,0 +1,617 @@
+{
+  "schema": "AO_DIRECTORY_RESEARCH_PROVIDER_V1",
+  "version": "1.0.0",
+  "provider": "UNA_VOCE_CZ_CURRENT_20261010",
+  "generated_at": "2026-10-10T00:00:00Z",
+  "scope_note": "Sixteen physically distinct Czech churches selected from current national Una Voce Czech traditional-Mass register. Association corroboration rather than parish-owner verification; no claim to an explicit 1962 book year. Preserves human-readable schedule, recurrence metadata and holds for overlapping Mass/devotion entries. Other twelve listings are reconciled in a separate disposition ledger. Coordinates intentionally null.",
+  "defaults": {
+    "f": "ROMAN",
+    "b": "UNKNOWN",
+    "mf": "TRADITIONAL_LATIN",
+    "rel": "served_by",
+    "ac": "REVIEW",
+    "svc": "MASS",
+    "vs": "RECENTLY_VERIFIED",
+    "vv": "2026-10-10",
+    "cp": "UNKNOWN",
+    "az": "NOT_PUBLICLY_ESTABLISHED",
+    "pc": "UNKNOWN",
+    "ad": "NO_PUBLIC_EVIDENCE",
+    "ps": "CURRENT_PUBLIC_MASS",
+    "gs": "SOURCE_ADDRESS_ONLY"
+  },
+  "records": [
+    {
+      "u": "UVCZ-R20-PRAHA-EMAUZY",
+      "cc": "CZ",
+      "c": "BENEDICTINE",
+      "j": "Archdiocese of Prague",
+      "l": "Praha – Nové Město",
+      "n": "Emauzský klášter — kostel Panny Marie a slovanských patronů",
+      "vt": "church",
+      "a": "Vyšehradská, Praha 2 – Nové Město, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass: Sunday 08:15; Monday/Wednesday/Friday 07:30; Tuesday/Thursday/Saturday 18:30. Verify holiday exceptions with the monastery.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "08:15"
+          },
+          {
+            "day": "MO",
+            "time": "07:30"
+          },
+          {
+            "day": "TU",
+            "time": "18:30"
+          },
+          {
+            "day": "WE",
+            "time": "07:30"
+          },
+          {
+            "day": "TH",
+            "time": "18:30"
+          },
+          {
+            "day": "FR",
+            "time": "07:30"
+          },
+          {
+            "day": "SA",
+            "time": "18:30"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/praha/praha-emauzy",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "ASSOCIATION_IDENTIFIES_OSB_PRIEST",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-PRAHA-KARLOV",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Archdiocese of Prague",
+      "l": "Praha – Nové Město",
+      "n": "Kostel Nanebevzetí Panny Marie a sv. Karla Velikého",
+      "vt": "church",
+      "a": "Ke Karlovu, Praha 2 – Nové Město, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass Sunday 17:00 year-round and Sunday 11:00 except July–August (solemn only if deacon present); holy days 17:30. First-Friday adoration and first-Saturday litany are NOT Mass slots.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "17:00"
+          },
+          {
+            "day": "SU",
+            "time": "11:00",
+            "excluded_months": [
+              7,
+              8
+            ],
+            "note": "Solemn only if a deacon is present"
+          }
+        ],
+        "feast_days": [
+          {
+            "time": "17:30",
+            "deduplicate_when": "SUNDAY",
+            "conflict_rule": "RECHECK_OPERATOR_WHEN_FEAST_ON_SUNDAY"
+          }
+        ],
+        "excluded_non_mass": [
+          {
+            "day": "FIRST_FRIDAY",
+            "time": "17:30",
+            "service": "ADORATION"
+          },
+          {
+            "day": "FIRST_SATURDAY",
+            "time": "09:00",
+            "service": "LITANY"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/praha/praha-karlov",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-PRAHA-ST-PETER-PORICI",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Archdiocese of Prague",
+      "l": "Praha – Petrská čtvrť",
+      "n": "Kostel sv. Petra na Poříčí",
+      "vt": "church",
+      "a": "Biskupská, Praha 1 – Petrská čtvrť, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass Saturday 08:00 (outside Advent); during Advent 07:00; July and August only first Saturdays at 08:00.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SA",
+            "time": "08:00",
+            "excluded_seasons": [
+              "ADVENT"
+            ],
+            "excluded_months": [
+              7,
+              8
+            ]
+          },
+          {
+            "day": "SA",
+            "time": "07:00",
+            "season": "ADVENT"
+          }
+        ],
+        "monthly_nth_weekday": [
+          {
+            "day": "SA",
+            "nth": 1,
+            "time": "08:00",
+            "months": [
+              7,
+              8
+            ]
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/praha/praha-sv-petr-porici",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-PRAHA-ST-VOJTECH",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Archdiocese of Prague",
+      "l": "Praha – Nové Město",
+      "n": "Kostel sv. Vojtěcha",
+      "vt": "church",
+      "a": "Vojtěšská, Praha 1 – Nové Město, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass Sunday 08:00; Tuesday and Thursday 06:30, Saturday 07:00 (July–August weekdays subject to parish confirmation).",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "08:00"
+          },
+          {
+            "day": "TU",
+            "time": "06:30",
+            "summer_status": "VERIFY"
+          },
+          {
+            "day": "TH",
+            "time": "06:30",
+            "summer_status": "VERIFY"
+          },
+          {
+            "day": "SA",
+            "time": "07:00",
+            "summer_status": "VERIFY"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/praha/praha-sv-vojtech",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-KOVARSKA-ST-MICHAEL",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Litoměřice",
+      "l": "Kovářská",
+      "n": "Kostel sv. Michaela Archanděla",
+      "vt": "church",
+      "a": "Dlouhá, Kovářská, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass Sunday 11:00. Thursday 17:00 is listed as Rosary plus Mass; exact Mass start time is not independently resolved and is withheld.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "11:00"
+          }
+        ],
+        "unresolved": [
+          {
+            "day": "TH",
+            "time": "17:00",
+            "status": "COMBINED_ROSARY_MASS_START_UNCERTAIN"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/litomerice/kovarska",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-VEJPRTY-ALL-SAINTS",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Litoměřice",
+      "l": "Vejprty",
+      "n": "Kostel Všech svatých",
+      "vt": "church",
+      "a": "Kostelní náměstí, Vejprty, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass Sunday 09:00; Monday 09:00; Wednesday 17:00; first Saturday 09:30 (Rosary 09:00). Friday 17:00/17:30 duplicate source entries await clarification; no Friday time certified.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "09:00"
+          },
+          {
+            "day": "MO",
+            "time": "09:00"
+          },
+          {
+            "day": "WE",
+            "time": "17:00"
+          }
+        ],
+        "monthly_nth_weekday": [
+          {
+            "day": "SA",
+            "nth": 1,
+            "time": "09:30"
+          }
+        ],
+        "unresolved": [
+          {
+            "day": "FR",
+            "listed_times": [
+              "17:00",
+              "17:30"
+            ],
+            "status": "POSSIBLE_ROSARY_MASS_MIXED_SOURCE_ENTRIES"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/litomerice/vejprty-vsech-svatych",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-VYSSI-BROD-ASSUMPTION",
+      "cc": "CZ",
+      "c": "OTHER",
+      "j": "Diocese of České Budějovice",
+      "l": "Vyšší Brod",
+      "n": "Klášterní kostel Nanebevzetí Panny Marie",
+      "vt": "church",
+      "a": "Klášter, Vyšší Brod, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass daily 07:15; Sunday and holy days also 10:00. Monastic worship site; confirm visitors' access and exception calendar.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "daily": [
+          {
+            "time": "07:15"
+          }
+        ],
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "10:00"
+          }
+        ],
+        "feast_days": [
+          {
+            "time": "10:00",
+            "deduplicate_when": "SUNDAY"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/ceske-budejovice/vyssi-brod",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "MONASTIC_COMMUNITY_NOT_MAPPED_TO_SPECIFIC_ENUM",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-BRNO-ST-MICHAEL",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Brno",
+      "l": "Brno – střed",
+      "n": "Kostel sv. Michala",
+      "vt": "church",
+      "a": "Dominikánské náměstí, Brno-střed, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass every Sunday 15:00.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "15:00"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/brno/brno-sv-michal",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-JIHLAVA-ST-IGNATIUS",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Brno",
+      "l": "Jihlava",
+      "n": "Kostel sv. Ignáce z Loyoly",
+      "vt": "church",
+      "a": "Masarykovo náměstí, Jihlava, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass third Saturday of each month at 18:00.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "monthly_nth_weekday": [
+          {
+            "day": "SA",
+            "nth": 3,
+            "time": "18:00"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/brno/jihlava",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-KOSTELANY-ST-FLORIAN",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Archdiocese of Olomouc",
+      "l": "Kostelany nad Moravou",
+      "n": "Kostel sv. Floriána",
+      "vt": "church",
+      "a": "Kostelany nad Moravou, Uherské Hradiště District, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass Sunday 07:15; first Friday 15:30 and first Saturday 07:30. Other feast-day times announced separately.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "07:15"
+          }
+        ],
+        "monthly_nth_weekday": [
+          {
+            "day": "FR",
+            "nth": 1,
+            "time": "15:30"
+          },
+          {
+            "day": "SA",
+            "nth": 1,
+            "time": "07:30"
+          }
+        ],
+        "feast_days": "BY_ANNOUNCEMENT_ONLY"
+      },
+      "su": "https://www.unavoce.cz/kostely/olomouc/kostelany-nad-moravou",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-PROSTEJOV-ST-JOHN-NEPOMUCENE",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Archdiocese of Olomouc",
+      "l": "Prostějov",
+      "n": "Kostel sv. Jana Nepomuckého",
+      "vt": "church",
+      "a": "Svatoplukova, Prostějov, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass every Sunday at 16:30.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "SU",
+            "time": "16:30"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/olomouc/prostejov",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-TUCAPY-CYRIL-METHODIUS",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Archdiocese of Olomouc",
+      "l": "Tučapy – Boršice u Buchlovic",
+      "n": "Kostel sv. Cyrila a Metoděje",
+      "vt": "church",
+      "a": "Tučapy, Boršice u Buchlovic, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass Tuesday 07:30 and Saturday 07:30; confirm at the parish website.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "TU",
+            "time": "07:30"
+          },
+          {
+            "day": "SA",
+            "time": "07:30"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/olomouc/tucapy",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-HLUCIN-ST-JOHN-BAPTIST",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Ostrava-Opava",
+      "l": "Hlučín",
+      "n": "Kostel sv. Jana Křtitele",
+      "vt": "church",
+      "a": "Farní, Hlučín, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass first and third Tuesday of each month at 17:00.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "monthly_nth_weekday": [
+          {
+            "day": "TU",
+            "nth": 1,
+            "time": "17:00"
+          },
+          {
+            "day": "TU",
+            "nth": 3,
+            "time": "17:00"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/ostrava-opava/hlucin",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-LUDGEROVICE-ST-NICHOLAS",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Ostrava-Opava",
+      "l": "Ludgeřovice",
+      "n": "Kostel sv. Mikuláše",
+      "vt": "church",
+      "a": "Markvartovická, Ludgeřovice, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass fourth Tuesday of each month at 17:00.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "monthly_nth_weekday": [
+          {
+            "day": "TU",
+            "nth": 4,
+            "time": "17:00"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/ostrava-opava/ludgerovice",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-RYMAROV-ST-MICHAEL",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Ostrava-Opava",
+      "l": "Rýmařov",
+      "n": "Kostel sv. Michala",
+      "vt": "church",
+      "a": "Školní náměstí, Rýmařov, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass second Tuesday of each month at 17:00.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "monthly_nth_weekday": [
+          {
+            "day": "TU",
+            "nth": 2,
+            "time": "17:00"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/ostrava-opava/rymarov",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    },
+    {
+      "u": "UVCZ-R20-SLEZSKA-OSTRAVA-ST-JOSEPH",
+      "cc": "CZ",
+      "c": "DIOCESAN",
+      "j": "Diocese of Ostrava-Opava",
+      "l": "Slezská Ostrava",
+      "n": "Kostel sv. Josefa",
+      "vt": "church",
+      "a": "Těšínská, Slezská Ostrava, Czech Republic",
+      "b": "UNKNOWN",
+      "sr": "Traditional Latin Mass every Wednesday 18:00 and first, third and fifth Sundays of the month at 10:30. Confession and Rosary 30 minutes before Mass.",
+      "rr": {
+        "timezone": "Europe/Prague",
+        "weekly": [
+          {
+            "day": "WE",
+            "time": "18:00"
+          }
+        ],
+        "monthly_nth_weekday": [
+          {
+            "day": "SU",
+            "nth": 1,
+            "time": "10:30"
+          },
+          {
+            "day": "SU",
+            "nth": 3,
+            "time": "10:30"
+          },
+          {
+            "day": "SU",
+            "nth": 5,
+            "time": "10:30"
+          }
+        ]
+      },
+      "su": "https://www.unavoce.cz/kostely/ostrava-opava/slezska-ostrava",
+      "st": "TRADITIONAL_ASSOCIATION_CURRENT",
+      "sa": "CORROBORATED_ASSOCIATION",
+      "ac": "REVIEW",
+      "source_scope": "DIRECT_VENUE_PAGE_LISTING"
+    }
+  ]
+}
