@@ -35,13 +35,39 @@ try{
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().open===true
   &&globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready"
   &&document.querySelector("#ao-find-modular-root .aoFindSurface"),null,{timeout:60000});
+ // Explore opens as a compact unified map. Detailed lists remain available
+ // behind the explicit More disclosure and must be reachable on phones.
+ assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.().lens),"heritage");
+ await page.locator('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]').waitFor({state:"visible"});
+ const activeAll=page.locator('#ao-find-modular-root [data-heritage-category="ALL"]');
+ assert.equal(await activeAll.getAttribute("aria-pressed"),"true");
+ const shrineChip=page.locator('#ao-find-modular-root [data-heritage-category="shrines"]');
+ await shrineChip.tap();
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="heritage"
+   &&document.querySelector('[data-heritage-category="shrines"]')?.getAttribute("aria-pressed")==="true"
+   &&document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="false",null,{timeout:15000});
+ await activeAll.tap();
+ await page.waitForFunction(()=>document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
+ // A widespread devotion remains discoverable as a thematic card, not
+ // as an invented geographic point or a top-level list.
+ const customRail=page.locator('#ao-find-modular-root .aoHeritageCustomRail');
+ assert.ok(await customRail.count()===1,"canonical customs carousel is not visible in the unified map");
+ const custom=customRail.locator('[data-heritage-custom]').first();
+ const customId=await custom.getAttribute("data-heritage-custom");
+ assert.ok(customId,"custom strip has no source-backed practice identity");
+ await custom.tap();
+ await page.waitForFunction(id=>Boolean(document.querySelector('[data-heritage-custom="'+id+'"].active')),customId,{timeout:15000});
+ assert.ok(await page.locator('#ao-find-modular-root [data-heritage-custom-details]').count()===1,"selected custom has no optional explanation");
+ await page.locator('#ao-find-modular-root [data-heritage-custom-clear]').tap();
  const lenses=["tlm","shrines","apparitions","relics","traditions","pilgrimages"];
  const reached=[];
  let verifiedSourceLinks=0;
  for(const lens of lenses){
   const selector='#ao-find-modular-root [data-find-filter="lens"][data-find-filter-value="'+lens+'"]';
+  const more=page.locator("#ao-find-modular-root .aoHeritageMore");
+  await more.locator("summary").tap({timeout:15000});
   const lensButton=page.locator(selector);
-  assert.equal(await lensButton.count(),1,"Explore lens has no unique visible control: "+lens);
+  assert.equal(await lensButton.count(),1,"Explore lens has no unique detail control: "+lens);
   await lensButton.tap({timeout:15000});
   await page.waitForFunction(id=>{
    const status=globalThis.AO_FIND_APP_V1?.status?.();
@@ -161,6 +187,10 @@ try{
   await page.waitForFunction(id=>Boolean(document.querySelector('#ao-find-modular-root [data-find-view="list"][data-explore-lens="'+id+'"]')),
     lens,{timeout:12000});
   reached.push({lens,count:snapshot.count});
+  // Return to the common map before selecting another optional source lens.
+  await page.locator('#ao-find-modular-root [data-find-filter="lens"][data-find-filter-value="heritage"]').tap({timeout:15000});
+  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="heritage"
+    &&Boolean(document.querySelector('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]')),null,{timeout:15000});
  }
  assert.deepEqual(reached.map(x=>x.lens),lenses);
  assert.ok(verifiedSourceLinks>=1,"Explore exposed no source hyperlink in the six tested details");
