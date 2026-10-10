@@ -5,10 +5,10 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const data=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
 assert.equal(data.schema,"AO_EXPLORE_BIBLE_PLACES_COMPACT_V1");
-assert.equal(data.entries.length,18);
-assert.equal(new Set(data.entries.map(x=>x.id)).size,18);
+assert.equal(data.entries.length,40);
+assert.equal(new Set(data.entries.map(x=>x.id)).size,40);
 assert.deepEqual(Object.fromEntries(data.groups.map(g=>[g,data.entries.filter(x=>x.group===g).length])),{
- OT:5,DEUTERO:3,CHRIST:6,APOSTLES:4
+ OT:15,DEUTERO:4,CHRIST:13,APOSTLES:8
 });
 for(const row of data.entries){
  for(const k of ["title_en","title_fr","summary_en","summary_fr","period_en","period_fr","persons_en","persons_fr"]){
@@ -29,7 +29,7 @@ assert.match(closed,/aria-expanded="false"/);
 assert.doesNotMatch(closed,/data-bible-place=/,"Closed surface should not expose all site buttons");
 const opened=renderExploreToString(make("en","nazareth",true));
 assert.match(opened,/aria-expanded="true"/);
-assert.equal((opened.match(/data-bible-place=/g)||[]).length,18);
+assert.equal((opened.match(/data-bible-place=/g)||[]).length,40);
 assert.match(opened,/The Angel Gabriel announces?|Gabriel announces/);
 assert.match(opened,/data-ao-scripture-context="Luke 1:26–38"/);
 assert.match(opened,/data-ao-scripture-context="Luke 4:16–21"/);
@@ -47,4 +47,4 @@ assert.match(service,/bible-places-compact\.v1\.json/);
 assert.match(service,/fetchJson\(EXPLORE_DATA_URLS\.biblePlaces,\{fetchImpl,optional:true\}\)/);
 const native=readFileSync(new URL("../src/scripture/browser-entry.js",import.meta.url),"utf8");
 assert.match(native,/data-ao-scripture-context/);
-console.log("PASS Explore Bible Places compact: 18 curated entries, Catholic passage links, bilingual disclosure, unchanged lens ownership");
+console.log("PASS Explore Bible Places compact: 40 curated entries, Catholic passage links, bilingual disclosure, unchanged lens ownership");
