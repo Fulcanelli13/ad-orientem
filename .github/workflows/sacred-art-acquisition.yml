@@ -1,0 +1,39 @@
+name: Sacred art originals review
+
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - "tools/calendar/acquire-sacred-art.py"
+      - "data/calendar/sacred-art-candidates.v1.json"
+      - ".github/workflows/sacred-art-acquisition.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-originals-review
+  cancel-in-progress: true
+
+jobs:
+  acquire-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow numpy
+      - name: Download, inspect and generate contact sheets
+        run: python tools/calendar/acquire-sacred-art.py
+      - name: Preserve originals, source proofs and review sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-originals-review
+          path: artifacts/sacred-art-review/
+          if-no-files-found: warn
+          retention-days: 30
