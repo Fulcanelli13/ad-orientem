@@ -300,7 +300,7 @@ export function createSexualEthicsRuntime(win=globalThis){
       if(target.dataset.aoCseSection){event.preventDefault?.();openSection(target.dataset.aoCseSection);return;}
       if(target.dataset.aoCseQuestion){event.preventDefault?.();openQuestion(target.dataset.aoCseQuestion);return;}
       if(target.dataset.aoCseRelated){event.preventDefault?.();openRelated(target.dataset.aoCseRelated);return;}
-      if(target.matches("[data-ao-cse-reveal]")){event.preventDefault?.();state.reveal=!state.reveal;render();return;}
+      if(target.matches("[data-ao-cse-reveal]")){event.preventDefault?.();state.reveal=!state.reveal;render();queueMicrotask(()=>root()?.querySelector?.("[data-ao-cse-reveal]")?.focus?.({preventScroll:true}));return;}
       if(target.matches("[data-ao-cse-apostolate]")){event.preventDefault?.();void openApostolateHandoff(state.questionId);return;}
     });
     node.addEventListener("input",event=>{
