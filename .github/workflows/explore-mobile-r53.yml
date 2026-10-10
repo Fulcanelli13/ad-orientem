@@ -8,6 +8,7 @@ on:
       - "tests/explore-touch-navigation-r53.mjs"
       - "tests/explore-surface.mjs"
       - "tests/explore-reachability-phone.mjs"
+      - "tests/explore-place-preview-r54.mjs"
       - "tests/preliminary-world-mass-map-r49.mjs"
       - ".github/workflows/explore-mobile-r53.yml"
   workflow_dispatch:
@@ -32,6 +33,8 @@ jobs:
           node --check src/find/map-runtime.js
       - name: Touch intent and section model
         run: node tests/explore-touch-navigation-r53.mjs
+      - name: Compact preview and full evidence disclosure
+        run: node tests/explore-place-preview-r54.mjs
       - name: Map, sources and existing surface contracts
         run: |
           node tests/preliminary-world-mass-map-r49.mjs
