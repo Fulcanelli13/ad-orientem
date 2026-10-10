@@ -288,6 +288,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
            :contentId&&contentKind==="question"?{questionId:contentId}
            :contentId&&contentKind==="topic"?{dossierId:contentId}
            :contentId&&contentKind==="spiritual"?{lessonId:contentId}
+           :contentId&&contentKind==="catechism"&&/^PX1912-Q(?:00[1-9]|0[1-9][0-9]|[1-3][0-9]{2}|4(?:[0-2][0-9]|3[0-3]))$/.test(contentId)
+             ?{catechismQuestion:Number(contentId.slice(-3))}
            :contentId&&contentKind==="latin"&&/^latin:([1-9]|[1-3][0-9]|40)$/.test(contentId)
              ?{lessonNumber:Number(contentId.split(":")[1])}:{};
          void openModule(state.lastLauncher,opts);
@@ -452,6 +454,12 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
        if(result?.ok===true&&id===LATIN_COURSE_ROUTE_ID&&opts?.lessonNumber){
          const focused=await win?.AO_LATIN_COURSE_V1?.openLesson?.(opts.lessonNumber);
          if(focused===false)result={...result,ok:false,error:"LATIN_LESSON_UNAVAILABLE"};
+       }
+       if(result?.ok===true&&id==="learn.catechism"&&Number.isInteger(opts?.catechismQuestion)){
+         const {openNativeCatechismQuestion}=await import("./catechism-guided-reader.js");
+         if(!current())return false;
+         const focused=await openNativeCatechismQuestion(win,opts.catechismQuestion,appState(win)?.language);
+         if(focused!==true)result={...result,ok:false,error:"CATECHISM_QUESTION_UNAVAILABLE"};
        }
     }catch(error){
       try{win?.console?.error?.("Modular Learn module launch failed",error);}catch{}
