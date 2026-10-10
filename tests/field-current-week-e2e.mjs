@@ -83,7 +83,21 @@ try{
         // the source-first acceptance assertion.
         orationAudit:reader&&!reader.ready?{
           properKeys:Object.keys(proper),
-          commemorationOwners:proper.commemorations??resolution?.commemorations??[],
+          commemorationOwners:proper.calendarCommemorations??[],
+          recoveredFrench:Object.fromEntries(["collects","secrets","postcommunions"].map(group=>[
+            group,(repaired?.[group]??[]).map((value,index)=>({index,frLength:String(value?.fr??"").length}))
+          ])),
+          originalSourceSections:await Promise.all((proper.calendarCommemorations??[]).map(async comm=>{
+            const path=comm.prayerSourcePath??comm.path;
+            try{
+              const french=await globalThis.AO_RUNTIME_V8.resolver.properResolver.resolveSource(path,"fr",{
+                requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],
+                structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]
+              });
+              return {path,keys:[...(french?.map?.keys?.()??[])],
+                lengths:Object.fromEntries(["Oratio","Secreta","Postcommunio"].map(k=>[k,(french?.map?.get?.(k)??[]).join("\\n").length]))};
+            }catch(error){return {path,error:String(error?.message??error)};}
+          })),
           groups:Object.fromEntries(["collects","secrets","postcommunions"].map(group=>[
             group,(proper[group]??[]).map((value,index)=>({
               index,keys:Object.keys(value??{}),
