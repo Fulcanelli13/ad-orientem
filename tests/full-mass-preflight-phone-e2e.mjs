@@ -178,6 +178,45 @@ try{
  await page.locator('[data-ao-mass-catalogue-choice="anniversary"]').click();
  assert.equal(await page.evaluate(()=>__selectedSource),"anniversary");
  await page.evaluate(()=>__catalogue.dispose());
+ // Source-owned in-reader ritual stage at 390px: overlay is not a second
+ // prayer card, action cue, posture instruction or blocked tap target.
+ await page.evaluate(async()=>{
+  const {mountSpecialMassStage}=await import("/src/mass/reader-special-stage.js");
+  await import("/src/mass/reader-special-stage-styles.js");
+  const root=document.createElement("section");
+  root.id="special-stage-phone-fixture";
+  root.style.cssText="position:relative;width:390px;max-width:100%;height:180px";
+  root.innerHTML='<div class="ao-reader-stage" style="height:180px;width:100%"></div>'+
+    '<span data-role="section-title">Introit</span>';
+  document.body.append(root);
+  __stageCard={sectionId:"AO.CARD.001",title:"Prayers at the Foot"};
+  __stageRoot=root;
+  __stage=mountSpecialMassStage({
+   preview:{root,getCurrentCard:()=>__stageCard},
+   prepared:{session:{resolvedMass:{overlays:["REQUIEM"]},plan:{kind:"MASS"}},
+     readerPreferences:{language:"fr"}},doc:document
+  });
+ });
+ assert.equal(await page.locator("[data-ao-special-reader-stage]").isVisible(),true);
+ assert.equal(await page.locator(".ao-reader-ceremony-name").textContent(),"Requiem");
+ await page.evaluate(()=>{
+   __stageCard={id:"ABS-R03",title:"Libera me"};
+   __stageRoot.dataset.r17StateOwner="R26_REQUIEM_ABSOLUTION_NATIVE";
+   __stageRoot.dataset.r17NativeRiteRecord="ABS:ABS-R03";
+   globalThis.AO_R17_NATIVE_READER_STATE={specialRite:"REQUIEM_ABSOLUTION"};
+ });
+ await page.waitForFunction(()=>document.querySelector(".ao-reader-ceremony-name")?.textContent==="Absoute");
+ assert.equal(await page.locator(".ao-reader-ceremony-detail").innerText(),"Libera me");
+ const blockedTap=await page.locator("[data-ao-special-reader-stage]").evaluate(node=>
+   getComputedStyle(node).pointerEvents);
+ assert.equal(blockedTap,"none");
+ const stageOverflow=await page.evaluate(()=>{
+   const r=__stageRoot.getBoundingClientRect();
+   const stage=__stageRoot.querySelector("[data-ao-special-reader-stage]").getBoundingClientRect();
+   return stage.left>=r.left-1 && stage.right<=r.right+1;
+ });
+ assert.equal(stageOverflow,true,"The ceremony stage overflows 390px phone");
+ await page.evaluate(()=>{__stage.dispose();__stageRoot.remove()});
  const horizontal=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(horizontal<=1,"390px phone overflow: "+horizontal);
  assert.deepEqual(errors,[]);
