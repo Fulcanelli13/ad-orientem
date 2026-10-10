@@ -292,7 +292,9 @@ export function publishableDirectoryRecords(records){
         safeArray(m.schedules).some(s=>s.service_type==="MASS"&&
           safeArray(s.source_ids).length>0&&
           ["OFFICIAL_LIVE","OFFICIAL_VERIFIED","RECENTLY_VERIFIED"].includes(s?.verification?.state)&&
-          text(s?.payload?.raw).length>0));
+          (text(s?.payload?.raw).length>0||
+            safeArray(s?.payload?.sections).some(section=>safeArray(section?.lines)
+              .some(line=>/\\b(mass|messe|missa|misa)\\b/i.test(String(line)))))));
       if(!evidenced)return false;
     }
     const icksp=safeArray(record?.ministries).filter(m=>m?.community_id==="ICKSP");
