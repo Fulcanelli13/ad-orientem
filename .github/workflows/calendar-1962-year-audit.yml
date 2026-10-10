@@ -11,6 +11,7 @@ on:
       - "tools/calendar/build-sacred-art-reuse-index.mjs"
       - "tools/calendar/build-sacred-art-rank-ii-iv-firstpass.mjs"
       - "tools/calendar/build-sacred-art-full-year-associations.mjs"
+      - "tools/calendar/group-sacred-art-gaps.mjs"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
       - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
       - "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
@@ -45,6 +46,7 @@ jobs:
             node tools/calendar/build-sacred-art-reuse-index.mjs
             node tools/calendar/build-sacred-art-rank-ii-iv-firstpass.mjs
             node tools/calendar/build-sacred-art-full-year-associations.mjs
+            node tools/calendar/group-sacred-art-gaps.mjs
           else
             node tools/calendar/report-sacred-art-liturgical-priorities.mjs
           fi
@@ -60,6 +62,8 @@ jobs:
             artifacts/sacred-art-coverage/rank-ii-iv-firstpass-v1.md
             artifacts/sacred-art-coverage/full-year-multiple-associations.v1.json
             artifacts/sacred-art-coverage/full-year-multiple-associations.v1.md
+            artifacts/sacred-art-coverage/bulk-gospel-gap-backlog.v1.json
+            artifacts/sacred-art-coverage/bulk-gospel-gap-backlog.v1.md
           if-no-files-found: warn
       - name: Publish findings even if audit fails
         if: always()
