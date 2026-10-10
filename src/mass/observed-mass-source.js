@@ -14,6 +14,19 @@ const isSunday=value=>dateOnly(value)&&new Date(value+"T12:00:00Z").getUTCDay()=
 const required=(value,label)=>{if(!value)throw new Error("OBSERVED_MASS_"+label+"_UNAVAILABLE");return value};
 const unwrap=value=>value?.data??value;
 const isReady=x=>["READY","CACHED"].includes(String(x?.status??"").toUpperCase());
+// A different source-day formulary belongs only to an actual Mass. Special
+// distinct liturgies keep their own authority and cannot be retyped as votives.
+export function observedSourceEligibility(legacy){
+ if(!legacy||legacy.canStart!==true)return Object.freeze({allowed:false,reason:"HOST_PREFLIGHT_NOT_READY"});
+ const distinct=String(legacy.distinctRite??legacy.exceptionalProfile??"").toUpperCase();
+ const type=String(legacy.celebrationType??"").toUpperCase();
+ if(/GOOD.?FRIDAY|EASTER.?VIGIL/.test(distinct)||["GOOD_FRIDAY","EASTER_VIGIL"].includes(type))
+   return Object.freeze({allowed:false,reason:"DISTINCT_RITE_SOURCE_LOCKED"});
+ if(type==="REQUIEM"||type==="NUPTIAL"||
+   String(legacy.celebrationId??"").toLowerCase()==="nuptial")
+   return Object.freeze({allowed:false,reason:"USE_CEREMONY_OWNED_PROPER"});
+ return Object.freeze({allowed:true,reason:null});
+}
 function prayer(value,key){
  const rows=Array.isArray(value[key+"s"])&&value[key+"s"].length?value[key+"s"]:
   (value[key]?[value[key]]:[]);
@@ -76,7 +89,8 @@ export async function composeObservedMassSelection(candidate,{
  if(candidate?.schema!=="ao-observed-mass-source-v1")throw new Error("OBSERVED_MASS_CANDIDATE_REQUIRED");
  if(!dateOnly(massDate)||candidate.massDate!==massDate||baseLegacy?.date!==massDate)
    throw new Error("OBSERVED_MASS_DATE_CHANGED");
- if(baseLegacy.canStart!==true)throw new Error("OBSERVED_MASS_HOST_PREFLIGHT_NOT_READY");
+ const eligibility=observedSourceEligibility(baseLegacy);
+ if(!eligibility.allowed)throw new Error("OBSERVED_MASS_"+eligibility.reason);
  if(!OBSERVED_MASS_SUNDAY_CHOICES.includes(sundayChoice))
    throw new Error("OBSERVED_MASS_SUNDAY_CHOICE_INVALID");
  const sunday=isSunday(massDate),different=candidate.sourceDate!==massDate;
@@ -113,6 +127,7 @@ export async function composeObservedMassSelection(candidate,{
  const legacy=Object.freeze({
   ...baseLegacy,date:massDate,requestedCelebrationId:id,celebrationId:id,
   celebrationType:"VOTIVE",celebrationTitle:candidate.title,
+  proper,
   actualCelebration:Object.freeze({id,type:"VOTIVE",title:candidate.title}),
   properSource:candidate.sourcePath,
   // These are properties of the actual chosen Proper, not the Mass that
