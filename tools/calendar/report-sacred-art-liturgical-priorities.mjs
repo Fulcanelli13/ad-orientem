@@ -134,6 +134,13 @@ if(yearPath){
   sundayObligationDays:days.filter(d=>d.obligation.sundayUniversal).length,
   days};
 }
+if(report.observedYear.days){
+ console.log("FIRST_CLASS_OBSERVED_IDENTITIES="+JSON.stringify(
+  report.observedYear.days.filter(x=>x.rank===1).map(x=>({
+   date:x.date,id:x.observedPrincipalId,title:x.title,acquired:x.acquiredExplicitObservedPrincipalOriginals
+  }))
+ ));
+}
 const outdir="artifacts/sacred-art-coverage";
 mkdirSync(outdir,{recursive:true});
 writeFileSync(outdir+"/liturgical-priority-v1.json",JSON.stringify(report,null,2)+"\n");
