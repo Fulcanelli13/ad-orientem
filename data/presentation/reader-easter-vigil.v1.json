@@ -110,10 +110,229 @@
     "renewalProfessionQuestions": 3,
     "renewalPaterFullyWritten": true,
     "intentionallyUnresolved": [
-      "complete font blessing text",
       "baptism itself if present",
       "first-half litany canonical type edition visual signoff",
-      "printed-typica full text image signoff"
+      "printed-typica full text image signoff",
+      "complete font blessing printed-typica visual text collation and EN/FR approval"
     ]
+  },
+  "font1962": {
+    "schema": "AO_1962_EASTER_VIGIL_FONT_B07",
+    "source": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light",
+    "rubricWitness": "https://www.vatican.va/archive/aas/documents/AAS-44-1952-ocr.pdf#page=59",
+    "evidence": "editorial Latin secondary 1962 witness, with original 1952 published restored-rite rubric; original printed 1962 Missale Romanum leaf visual collation still outstanding",
+    "edition": "1962 restored Easter Vigil; font blessing only when a font is used",
+    "status": "LATIN_RESTORED_NOT_PRINTED_IMAGE_CERTIFIED__EN_FR_EDITORIAL_UNCERTIFIED",
+    "segments": [
+      {
+        "id": "F01",
+        "section": "INTRODUCTORY_DIALOGUE",
+        "action": "OPENING_DIALOGUE",
+        "latin": "℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.\nOrémus.",
+        "english": "℣. The Lord be with you.\n℟. And with thy spirit.\nLet us pray.",
+        "french": "℣. Le Seigneur soit avec vous.\n℟. Et avec votre esprit.\nPrions."
+      },
+      {
+        "id": "F02",
+        "section": "OPENING_COLLECT",
+        "action": "OPENING_COLLECT",
+        "latin": "Omnípotens sempitérne Deus, adésto magnæ pietátis tuæ mystériis, adésto sacraméntis: et ad recreándos novos pópulos, quos tibi fons baptismátis párturit, spíritum adoptiónis emítte; ut, quod nostræ humilitátis geréndum est ministério, virtútis tuæ impleátur efféctu. Per Dóminum nostrum Iesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula sæculórum.\n℟. Amen.",
+        "english": "Almighty and everlasting God, be present at the mysteries of thy great kindness and at the sacraments. Send forth the spirit of adoption to renew the people born to thee from this baptismal font, so that what is accomplished by our lowly ministry may be fulfilled through thy power. Through our Lord Jesus Christ, thy Son, who liveth and reigneth with thee in the unity of the Holy Ghost, God, for ever and ever.\n℟. Amen.",
+        "french": "Dieu tout-puissant et éternel, assiste aux mystères de ta grande bonté et à tes sacrements. Envoie l'esprit d'adoption pour renouveler le peuple que cette fontaine baptismale fait naître pour toi ; que ta puissance accomplisse ce qui est confié à notre humble ministère. Par Notre-Seigneur Jésus-Christ, ton Fils, qui vit et règne avec toi dans l'unité du Saint-Esprit, Dieu, pour les siècles des siècles.\n℟. Amen."
+      },
+      {
+        "id": "F03",
+        "section": "PREFACE_DIALOGUE",
+        "action": "PREFACE_DIALOGUE",
+        "latin": "℣. Dóminus vobíscum.\n℟. Et cum spíritu tuo.\n℣. Sursum corda.\n℟. Habémus ad Dóminum.\n℣. Grátias agámus Dómino Deo nostro.\n℟. Dignum et iustum est.",
+        "english": "℣. The Lord be with you.\n℟. And with thy spirit.\n℣. Lift up your hearts.\n℟. We have lifted them up unto the Lord.\n℣. Let us give thanks unto the Lord our God.\n℟. It is meet and just.",
+        "french": "℣. Le Seigneur soit avec vous.\n℟. Et avec votre esprit.\n℣. Élevons nos cœurs.\n℟. Nous les tournons vers le Seigneur.\n℣. Rendons grâces au Seigneur notre Dieu.\n℟. Cela est juste et bon."
+      },
+      {
+        "id": "F04",
+        "section": "PREFACE_FIRST",
+        "action": "PREFACE_SUNG",
+        "latin": "Vere dignum et iustum est, æquum et salutáre, nos tibi semper et ubíque grátias ágere, Dómine, sancte Pater, omnípotens ætérne Deus: qui invisíbili poténtia, sacramentórum tuórum mirabíliter operáris efféctum: et licet nos tantis mystériis exsequéndis simus indígni: tu tamen grátiæ tuæ dona non déserens, étiam ad nostras preces aures tuæ pietátis inclínas. Deus, cuius Spíritus super aquas inter ipsa mundi primórdia ferebátur: ut iam tunc virtútem sanctificatiónis aquárum natúra concíperet.",
+        "english": "It is truly fitting and just, right and salutary, always and everywhere to give thee thanks, holy Lord, almighty Father, everlasting God. By thy unseen power thou wondrously workest through thy sacraments; although we are unworthy to perform such mysteries, thou hearest our prayers in thy mercy without withdrawing the gifts of thy grace. O God, whose Spirit moved above the waters at the world's beginning, so that water might even then receive the power of sanctification.",
+        "french": "Il est vraiment digne et juste, équitable et salutaire de te rendre grâces toujours et partout, Seigneur, Père saint, Dieu tout-puissant et éternel. Par ta puissance invisible, tu accomplis admirablement les effets de tes sacrements ; malgré notre indignité, tu prêtes dans ta bonté l'oreille à nos prières. Ô Dieu, dont l'Esprit planait sur les eaux aux origines du monde, afin que l'eau reçût déjà la vertu de sanctification."
+      },
+      {
+        "id": "F05",
+        "section": "PREFACE_DELUGE",
+        "action": "PREFACE_SUNG",
+        "latin": "Deus, qui nocéntis mundi crímina per aquas ábluens, regeneratiónis spéciem in ipsa dilúvii effusióne signásti: ut uníus eiúsdemque eleménti mystério, et finis esset vítiis, et orígo virtútibus. Réspice, Dómine, in fáciem Ecclésiæ tuæ, et multíplica in ea regeneratiónes tuas, qui grátiæ tuæ affluéntis ímpetu lætíficas civitátem tuam: fontémque baptísmatis áperis toto orbe terrárum géntibus innovándis: ut tuæ maiestátis império, sumat Unigéniti tui grátiam de Spíritu Sancto.",
+        "english": "O God, by the waters of the flood thou didst wash away the crimes of a guilty world and foreshadow regeneration, so that the same element should end vice and give rise to virtue. Look upon thy Church, and multiply within her those born again. Thou makest thy city glad with abundant grace and openest the baptismal font throughout the earth, that the nations may be renewed by the grace of thine only-begotten Son through the Holy Ghost.",
+        "french": "Ô Dieu, qui as lavé par les eaux du déluge les fautes du monde coupable et figuré ainsi la régénération, pour que cet élément fût à la fois la fin des vices et l'origine des vertus. Regarde ton Église et multiplie en elle les renaissances ; par l'abondance de ta grâce tu réjouis ta cité et ouvres partout la fontaine du baptême pour renouveler les nations par la grâce de ton Fils unique dans le Saint-Esprit."
+      },
+      {
+        "id": "F06",
+        "section": "DIVISION_OF_WATER",
+        "action": "DIVIDE_WATER_AS_CROSS",
+        "latin": "Qui hanc aquam, regenerándis homínibus præparátam, arcána sui núminis admixtióne fecúndet: ut sanctificatióne concépta, ab immaculáto divíni fontis útero, in novam renáta creatúram, progénies cæléstis emérgat: et quos aut sexus in córpore, aut ætas discérnit in témpore, omnes in unam páriat grátia mater infántiam. Prócul ergo hinc, iubénte te, Dómine, omnis spíritus immúndus abscédat: prócul tota nequítia diabólicæ fraudis absístat.",
+        "english": "May he make fruitful this water prepared for the regeneration of men, by the hidden working of his divinity, so that a heavenly offspring may come forth from the spotless womb of this sacred font, reborn to a new creation; and all who differ in age or sex may receive one infancy through grace. At thy command, O Lord, let every unclean spirit depart and every deceit of the devil be driven far away.",
+        "french": "Qu'il féconde cette eau préparée pour la régénération des hommes par l'action secrète de sa divinité, afin que surgisse du sein immaculé de cette fontaine sainte une descendance céleste, renouvelée par la grâce ; que tous, quel que soit leur âge ou leur sexe, reçoivent une seule enfance spirituelle. À ton ordre, Seigneur, que s'éloignent les esprits impurs et toutes les ruses du démon."
+      },
+      {
+        "id": "F07",
+        "section": "EXPULSION_OF_EVIL",
+        "action": "PRIEST_ORATION",
+        "latin": "Nihil hoc loci hábeat contráriæ virtútis admíxtio: non insidiándo circúmvolet: non laténdo súbrepat: non inficiéndo corrúmpat.",
+        "english": "Let no hostile power mingle here, or circle about in ambush, or creep in secretly, or corrupt this water with its poison.",
+        "french": "Qu'aucune puissance ennemie ne s'y mêle, ne rôde pour dresser des embûches, ne s'y glisse en secret et ne la corrompe de son venin."
+      },
+      {
+        "id": "F08",
+        "section": "TOUCH_WATER",
+        "action": "TOUCH_WATER",
+        "latin": "Sit hæc sancta et ínnocens creatúra, líbera ab omni impugnatóris incúrsu, et totíus nequítiæ purgáta discéssu. Sit fons vivus, aqua regénerans, unda puríficans: ut omnes hoc lavácro salutífero diluéndi, operánte in eis Spíritu Sancto, perféctæ purgatiónis indulgéntiam consequántur.",
+        "english": "May this holy and innocent creature be free from every assault of the enemy and cleansed of all malice. May it be a living fountain, regenerating water and purifying stream, so that all washed in this saving bath may obtain perfect cleansing through the work of the Holy Ghost.",
+        "french": "Que cette créature sainte et innocente soit délivrée des attaques de l'ennemi et purifiée de toute malice. Qu'elle soit fontaine de vie, eau de renaissance et flot purificateur, afin que tous ceux qui seront lavés dans ce bain salutaire obtiennent la parfaite purification par l'action du Saint-Esprit."
+      },
+      {
+        "id": "F09",
+        "section": "WATER_BLESSING",
+        "action": "THREE_CROSSES_OVER_WATER",
+        "latin": "Unde benedíco te, creatúra aquæ, per Deum ✠ vivum, per Deum ✠ verum, per Deum ✠ sanctum: per Deum, qui te in princípio verbo separávit ab árida: cuius Spíritus super te ferebátur.",
+        "english": "Therefore I bless thee, creature of water, by the living ✠ God, the true ✠ God, the holy ✠ God, who in the beginning separated thee from dry land by his word and whose Spirit hovered above thee.",
+        "french": "C'est pourquoi je te bénis, créature de l'eau, par le Dieu ✠ vivant, le Dieu ✠ véritable, le Dieu ✠ saint, qui au commencement te sépara de la terre ferme par sa parole et dont l'Esprit planait sur toi."
+      },
+      {
+        "id": "F10",
+        "section": "FOUR_DIRECTIONS",
+        "action": "DIVIDE_WATER_TOWARD_FOUR_DIRECTIONS",
+        "latin": "Qui te paradísi fonte manáre fecit, et in quátuor flumínibus totam terram rigáre præcépit. Qui te in desérto amáram, suavitáte índita, fecit esse potábilem, et sitiénti pópulo de petra prodúxit. Bene ✠ díco te et per Iesum Christum Fílium eius únicum, Dóminum nostrum: qui te in Cana Galilǽæ signo admirábili sua poténtia convértit in vinum. Qui pédibus super te ambulávit, et a Ioánne in Iordáne in te baptizátus est.",
+        "english": "He caused thee to spring from paradise and water the whole earth by four rivers. In the desert he made bitter water sweet and brought thee forth from the rock for his thirsty people. I bless ✠ thee also through Jesus Christ, his only Son, our Lord, who changed thee into wine at Cana, walked upon thee and was baptized in thee by John in the Jordan.",
+        "french": "Il t'a fait jaillir de la source du paradis et arroser la terre entière par quatre fleuves. Au désert, il adoucit tes eaux amères et te fit sortir du rocher pour désaltérer son peuple. Je te bénis ✠ aussi par Jésus-Christ, son Fils unique, Notre-Seigneur, qui te changea en vin à Cana, marcha sur toi et reçut en toi le baptême de Jean au Jourdain."
+      },
+      {
+        "id": "F11",
+        "section": "CHRIST_SIDE",
+        "action": "PRIEST_ORATION",
+        "latin": "Qui te una cum sánguine de látere suo prodúxit: et discípulis suis iussit, ut credéntes baptizaréntur in te, dicens: Ite, docéte omnes gentes, baptizántes eos in nómine Patris, et Fílii, et Spíritus Sancti.",
+        "english": "He made thee flow forth with blood from his side and commanded his disciples that believers should be baptized in thee, saying: Go, teach all nations, baptizing them in the name of the Father and of the Son and of the Holy Ghost.",
+        "french": "Il t'a fait jaillir de son côté avec son sang et a commandé à ses disciples de baptiser les croyants en toi : Allez, enseignez toutes les nations et baptisez-les au nom du Père, du Fils et du Saint-Esprit."
+      },
+      {
+        "id": "F12",
+        "section": "PRAYER_OVER_WATER",
+        "action": "BREATHE_THREE_TIMES_AS_CROSS",
+        "latin": "Hæc nobis præcépta servántibus tu, Deus omnípotens, clemens adésto: tu benígnus aspíra. Tu has símplices aquas tuo ore benedícito: ut præter naturálem emundatiónem, quam lavándis possunt adhibére corpóribus, sint étiam purificándis méntibus efficáces.",
+        "english": "Almighty God, graciously assist us as we keep these commands. Bless these pure waters by thy word, so that beyond their natural power to wash bodies they may also purify souls.",
+        "french": "Dieu tout-puissant, assiste avec clémence ceux qui observent tes commandements. Bénis de ta bouche ces eaux simples, afin qu'outre la purification naturelle des corps, elles aient aussi la puissance de purifier les âmes."
+      },
+      {
+        "id": "F13",
+        "section": "PASCHAL_CANDLE",
+        "action": "LOWER_PASCHAL_CANDLE_INTO_WATER_AND_BREATHE_PSI",
+        "latin": "Descéndat in hanc plenitúdinem fontis virtus Spíritus Sancti. Totámque huius aquæ substántiam regenerándi fecúndet efféctu.",
+        "english": "May the power of the Holy Ghost descend into all the fullness of this font and make the whole substance of this water fruitful for regeneration.",
+        "french": "Que la puissance du Saint-Esprit descende dans toute cette fontaine et féconde toute la substance de cette eau pour produire la régénération."
+      },
+      {
+        "id": "F14",
+        "section": "CLOSING_PREFACE",
+        "action": "REMOVE_CANDLE_AND_CONCLUDE",
+        "latin": "Hic ómnium peccatórum máculæ deleántur: hic natúra ad imáginem tuam cóndita, et ad honórem sui reformáta princípii, cunctis vetustátis squalóribus emundétur: ut omnis homo, sacraméntum hoc regeneratiónis ingréssus, in veræ innocéntiæ novam infántiam renascátur. Per Dóminum nostrum Iesum Christum Fílium tuum: qui ventúrus est iudicáre vivos et mórtuos, et sǽculum per ignem.\n℟. Amen.",
+        "english": "Here may every stain of sin be removed. Here may nature, made in thy image and restored to the dignity of its origin, be cleansed of the defilements of the old life, so that everyone receiving this sacrament of regeneration may be reborn into a new infancy of true innocence. Through our Lord Jesus Christ thy Son, who shall come to judge the living and the dead and the world by fire.\n℟. Amen.",
+        "french": "Qu'ici soient effacées les taches de tous les péchés ; qu'ici la nature créée à ton image et rétablie dans l'honneur de son origine soit purifiée des souillures anciennes, afin que quiconque reçoit ce sacrement de régénération renaisse à la nouvelle enfance de la véritable innocence. Par Notre-Seigneur Jésus-Christ, ton Fils, qui viendra juger les vivants et les morts et le monde par le feu.\n℟. Amen."
+      },
+      {
+        "id": "F15",
+        "section": "OIL_CATECHUMENS",
+        "action": "POUR_OIL_OF_CATECHUMENS",
+        "latin": "Sanctificétur ✠ et fecundétur fons iste Oleo salútis renascéntibus ex eo, in vitam ætérnam.\n℟. Amen.",
+        "english": "May this font be sanctified ✠ and made fruitful by the oil of salvation for those who are reborn from it unto everlasting life.\n℟. Amen.",
+        "french": "Que cette fontaine soit sanctifiée ✠ et fécondée par l'huile du salut pour ceux qui y renaîtront à la vie éternelle.\n℟. Amen."
+      },
+      {
+        "id": "F16",
+        "section": "HOLY_CHRISM",
+        "action": "POUR_HOLY_CHRISM",
+        "latin": "Infúsio Chrísmatis Dómini nostri Iesu Christi, et Spíritus Sancti Parácliti, fiat in nómine sanctæ Trinitátis.\n℟. Amen.",
+        "english": "May the pouring of the Chrism of our Lord Jesus Christ and of the Holy Ghost the Paraclete take place in the name of the Holy Trinity.\n℟. Amen.",
+        "french": "Que l'infusion du saint Chrême de Notre-Seigneur Jésus-Christ et du Saint-Esprit Paraclet se fasse au nom de la Sainte Trinité.\n℟. Amen."
+      },
+      {
+        "id": "F17",
+        "section": "OILS_MIXED",
+        "action": "POUR_BOTH_OILS",
+        "latin": "Commíxtio Chrísmatis sanctificatiónis, et Olei unctiónis, et aquæ baptísmatis, páriter fiat in nómine Pa ✠ tris, et Fí ✠ lii, et Spíritus ✠ Sancti.\n℟. Amen.",
+        "english": "May the mingling of the Chrism of sanctification, the oil of anointing and the water of baptism be accomplished in the name of the ✠ Father and of the ✠ Son and of the Holy ✠ Ghost.\n℟. Amen.",
+        "french": "Que le mélange du Chrême de sanctification, de l'huile d'onction et de l'eau baptismale se fasse au nom du ✠ Père, du ✠ Fils et du ✠ Saint-Esprit.\n℟. Amen."
+      }
+    ],
+    "procession": {
+      "separateBaptistery": {
+        "note": "When the font is in a separate baptistery, the cantor repeats the first Litany as needed while the ministers proceed. The 1962 witness assigns the canticle Sicut cervus to the procession.",
+        "startAt": "Sancta Trinitas, unus Deus",
+        "continueLitanyInNave": true
+      },
+      "chant": [
+        {
+          "id": "SC1",
+          "latin": "Sicut cervus desíderat ad fontes aquárum: ita desíderat ánima mea ad te, Deus.",
+          "english": "As the hart longs for springs of water, so my soul longs for thee, O God.",
+          "french": "Comme le cerf soupire après les sources d'eau, ainsi mon âme soupire après toi, ô Dieu.",
+          "role": "SCHOLA"
+        },
+        {
+          "id": "SC2",
+          "latin": "Sitívit ánima mea ad Deum vivum: quando véniam, et apparébo ante fáciem Dei?",
+          "english": "My soul thirsts for the living God; when shall I come and appear before his face?",
+          "french": "Mon âme a soif du Dieu vivant : quand viendrai-je paraître devant la face de Dieu ?",
+          "role": "SCHOLA"
+        },
+        {
+          "id": "SC3",
+          "latin": "Fuérunt mihi lácrimæ meæ panes die ac nocte: dum dícitur mihi per síngulos dies: Ubi est Deus tuus?",
+          "english": "My tears have been my bread day and night, while they say continually: Where is thy God?",
+          "french": "Mes larmes sont devenues mon pain jour et nuit, lorsqu'on me demande sans cesse : Où est ton Dieu ?",
+          "role": "SCHOLA"
+        }
+      ],
+      "atFont": [
+        {
+          "id": "FC1",
+          "latin": "℣. Dóminus vobíscum.",
+          "english": "℣. The Lord be with you.",
+          "french": "℣. Le Seigneur soit avec vous."
+        },
+        {
+          "id": "FC2",
+          "latin": "℟. Et cum spíritu tuo.",
+          "english": "℟. And with thy spirit.",
+          "french": "℟. Et avec votre esprit."
+        },
+        {
+          "id": "FC3",
+          "latin": "Orémus.",
+          "english": "Let us pray.",
+          "french": "Prions."
+        },
+        {
+          "id": "FC4",
+          "latin": "Omnípotens sempitérne Deus, réspice propítius ad devotiónem pópuli renascéntis, qui sicut cervus aquárum tuárum éxpetit fontem: et concéde propítius; ut fídei ipsíus sitis, baptísmatis mystério, ánimam corpúsque sanctíficet. Per Christum Dóminum nostrum.",
+          "english": "Almighty and everlasting God, look graciously upon this people approaching rebirth, who thirst after the font of thy waters like the hart; grant that their thirst for faith may sanctify soul and body through the sacrament of baptism. Through Christ our Lord.",
+          "french": "Dieu tout-puissant et éternel, regarde avec bonté le peuple qui va renaître, qui désire la source de tes eaux comme le cerf altéré ; que sa soif de foi sanctifie son âme et son corps par le sacrement du baptême. Par le Christ Notre-Seigneur."
+        },
+        {
+          "id": "FC5",
+          "latin": "℟. Amen.",
+          "english": "℟. Amen.",
+          "french": "℟. Amen."
+        }
+      ]
+    },
+    "conditionalBaptism": {
+      "authority": "Rituale Romanum, Titulus II (ordo depends on infants/adults, candidate number and minister); liturgical text is not identical to a short one-formula insert",
+      "status": "RITUAL_OWNER_UNRESOLVED__DO_NOT_PRESENT_AS_COMPLETE",
+      "note": "The Missale Romanum explicitly refers the actual baptisms to the Rituale Romanum; this app surface is only the location and reader handoff, not the text of that sacrament."
+    },
+    "editorial": {
+      "noFontBranch": "Font prayer and procession must be entirely absent when FONT_MODE=NONE",
+      "separateFontBranch": "Font blessing is performed at the baptistery, not repeated on returning.",
+      "waterForAspersion": "Water for aspersion after renewal is drawn off before the Holy Oils are added.",
+      "noClaim": "No formal 1962 printed-typica text-image or approved vernacular translation certification"
+    }
   }
 }
