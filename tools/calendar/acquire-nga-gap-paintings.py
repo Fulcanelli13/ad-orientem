@@ -11,6 +11,9 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"artifacts/sacred-art-cma-gaps"
 IMAGES=OUT/"nga-originals"
 LEADS=[
+ {"id":"nga-45890","prayerKey":"rosary.glo2","title":"The Ascension",
+  "object":"https://www.nga.gov/artworks/45890-ascension",
+  "original":"https://api.nga.gov/iiif/644d2492-3c7c-4f1e-ab33-c837edc019c2/full/full/0/default.jpg"},
  {"id":"nga-505","prayerKey":"rosary.joy2","title":"The Visitation with Saint Nicholas and Saint Anthony Abbot",
   "object":"https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot",
   "original":"https://api.nga.gov/iiif/53a3d42d-c211-4df6-b199-88086fdbd5a9/full/full/0/default.jpg"},
