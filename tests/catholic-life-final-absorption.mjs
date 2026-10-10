@@ -44,7 +44,8 @@ assert.match(sick,/FUNERAL & REQUIEM/);
 assert.match(sick,/BURIAL, CREMATION & ASHES/);
 assert.match(sick,/mass:true/);
 assert.match(runtime,/data-ao-tradlearn-mass/);
-assert.match(sick,/route:"pray\.holy_souls"/);
+assert.match(sick,/route:"pray\.eternal_rest"/,"after-death links must resolve to the registered Eternal Rest reader");
+assert.doesNotMatch(sick,/route:"pray\.holy_souls"/,"retired Holy Souls route must not return");
 assert.doesNotMatch(sick,/DISCERNMENT & ENGAGEMENT|CANONICAL PREPARATION/,"Matrimony cards leaked into Serious Illness");
 
 assert.match(matrimony,/DISCERNMENT & ENGAGEMENT/);

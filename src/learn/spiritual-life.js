@@ -21,6 +21,8 @@ const HANDOFF_LABELS=Object.freeze({
   "learn.catechism":Object.freeze({en:"Traditional Catechism",fr:"Catéchisme traditionnel"}),
   "today.gospel":Object.freeze({en:"Today's Gospel",fr:"Évangile du jour"}),
   "pray.morning_evening":Object.freeze({en:"Morning & Evening Prayer",fr:"Prière du matin & du soir"}),
+  "pray.nightly_examen":Object.freeze({en:"Guided nightly examination",fr:"Examen du soir guidé"}),
+  "pray.adoration":Object.freeze({en:"Adoration · optional prayer setting",fr:"Adoration · lieu de prière facultatif"}),
   "pray.confession":Object.freeze({en:"Confession",fr:"Confession"}),
   "programme.first_friday":Object.freeze({en:"First Friday",fr:"Premier vendredi"}),
   "calendar":Object.freeze({en:"Calendar",fr:"Calendrier"}),
@@ -127,8 +129,17 @@ function sourceMarkup(win,lesson){
   }).join("")}</details>`;
 }
 
+// Contextual actions extend the existing sourced lesson's practical exit.
+// No doctrinal text or parallel prayer reader is introduced.
+const LESSON_CONTEXTUAL_HANDOFFS=Object.freeze({
+  SL03:Object.freeze([{surface:"pray",target:"pray.adoration",reason:"Optional quiet prayer before the Blessed Sacrament, distinct from the method of mental prayer."}]),
+  SL06:Object.freeze([{surface:"pray",target:"pray.nightly_examen",reason:"Use the canonical nightly examen after studying the general examination."}]),
+});
+function lessonHandoffs(lesson){
+  return [...(lesson.handoffs||[]),...(LESSON_CONTEXTUAL_HANDOFFS[lesson.id]||[])];
+}
 function handoffMarkup(win,lesson){
-  const visible=(lesson.handoffs||[]).filter(item=>item.surface!=="apostolate");
+  const visible=lessonHandoffs(lesson).filter(item=>item.surface!=="apostolate");
   if(!visible.length)return "";
   return `<section class="aoSLHandoffs"><small>${esc(L(win,"Continue in the canonical owner","Continuer dans le module compétent"))}</small><div class="aoSLHandoffButtons">${visible.map((item,index)=>{
     const label=HANDOFF_LABELS[item.target]||{en:item.target,fr:item.target};
@@ -208,7 +219,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
 
   function openHandoff(index){
     const lesson=currentLesson();if(!lesson)return false;
-    const visible=(lesson.handoffs||[]).filter(item=>item.surface!=="apostolate");
+    const visible=lessonHandoffs(lesson).filter(item=>item.surface!=="apostolate");
     const item=visible[index];if(!item)return false;
     if(item.surface==="formation"){
       close(false);
