@@ -1,6 +1,7 @@
 import { mountScriptureLibrary } from "./library.js";
 import { installScriptureStyles, installScriptureContextStyles } from "./styles.js";
 import { loadScriptureBook } from "./pack-loader.js";
+import {loadScriptureWitness,hasScriptureWitness} from "./witness-loader.js";
 import { parseScriptureContext } from "./context.js";
 import {scriptureSegmentContext} from "./segments.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
@@ -50,7 +51,9 @@ export function installScriptureBrowserOwner(win=globalThis){
        if(loaded.has(key)){return;}
        inflight.add(key);
        try{
-         const records=await loadScriptureBook(editionId,book,{
+         const records=hasScriptureWitness(editionId,book)
+          ?await loadScriptureWitness(editionId,book,{fetcher:win.fetch?.bind(win),cacheStorage:win.caches})
+          :await loadScriptureBook(editionId,book,{
            fetcher:win.fetch?.bind(win),cacheStorage:win.caches,cryptoProvider:win.crypto
          });
          loaded.set(key,records);
