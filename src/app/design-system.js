@@ -34,6 +34,9 @@ const CSS=`
   --ao-type-ui-sm:12px;
   --ao-type-ui:14px;
   --ao-type-body:16px;
+  --ao-type-prayer:clamp(16px,2.4vw,20px);
+  --ao-type-prose:16px;
+  --ao-type-speaker-weight:650;
 
   /*
    * Shared elevation vocabulary. These retain the migration-safe high range
@@ -125,6 +128,47 @@ const CSS=`
 .thanksgivingScreen button:focus-visible{
   outline:2px solid var(--ao-liturgical-accent);
   outline-offset:2px;
+}
+
+
+/*
+ * Shared liturgical transcription grammar. Four source roles share exactly
+ * one type rule; the source, not the locale or surrounding section, owns the
+ * distinction between ℣./℟. and M./S.
+ */
+:where(.ao-reader-shell,#aoPray435930,#aoPrayerBookRoot,#ao-learn-modular-root) .ao-liturgical-speaker{
+  display:inline;
+  font-family:inherit!important;
+  font-size:1em!important;
+  font-style:normal;
+  font-weight:var(--ao-type-speaker-weight)!important;
+  line-height:inherit;
+  letter-spacing:0;
+  white-space:nowrap;
+  color:var(--liturgical,var(--ao-liturgical-accent));
+}
+.ao-reader-shell .ao-liturgical-speaker{
+  color:var(--ao-mass-accent-text,var(--ao-liturgical-accent));
+}
+#aoPray435930 .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker),
+#aoPray435930 .aoP435930VRLine>button,
+#ao-learn-modular-root .aoLearnTradPrompt,
+#ao-learn-modular-root .aoLearnTradAnswer{
+  font-family:var(--ao-font-liturgical,Georgia,serif)!important;
+}
+#aoPray435930 .aoAngelusDialogueLine>span:not(.ao-liturgical-speaker),
+#aoPray435930 .aoP435930VRLine>button{
+  font-size:var(--ao-type-prayer)!important;
+  line-height:1.62;
+}
+/* Consistent Formation prose without overriding its title or citation UI. */
+#ao-learn-modular-root .aoCSEAnswer,
+#ao-learn-modular-root .aoCSEDebateStep p,
+#ao-learn-modular-root .aoLearnTradIntro,
+#ao-learn-modular-root .aoLearnTradCard p{
+  font-family:var(--ao-font-body,Georgia,serif);
+  font-size:var(--ao-type-prose);
+  line-height:1.65;
 }
 
 /* Reusable source/provenance disclosure. Feature modules should converge here. */

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./liturgical-speaker-typography.mjs";
 import "./scripture-context-mass-pray.mjs";
 import "./contextual-study.mjs";
 import "./glossary-context-lifecycle.mjs";

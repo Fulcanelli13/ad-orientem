@@ -531,7 +531,7 @@ const DEVOTIONAL_UX_CSS=`
 #aoPray435930 .aoP435930VR{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:15px;background:var(--surface-1,#151c24)}
 #aoPray435930 .aoP435930VR>small{color:var(--liturgical,#d8bd7d);font:700 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em}
 #aoPray435930 .aoP435930VRLine{display:grid;grid-template-columns:1.55rem minmax(0,1fr);gap:6px;align-items:start}
-#aoPray435930 .aoP435930VRLine>b{color:var(--liturgical,#d8bd7d);font:700 1rem/1.55 var(--ao-font-liturgical,Georgia,serif)}
+#aoPray435930 .aoP435930VRLine>.ao-liturgical-speaker{color:var(--liturgical,#d8bd7d);font:650 1rem/1.55 var(--ao-font-liturgical,Georgia,serif)}
 #aoPray435930 .aoP435930VRLine>button{border:0;background:transparent;color:var(--text,#f3ead7);padding:0;text-align:left;font:500 1rem/1.55 var(--ao-font-liturgical,Georgia,serif)}
 #aoPray435930 .aoP435930VR.group .aoP435930VRLine.response{padding:7px 8px;border-radius:10px;background:var(--liturgical-soft,rgba(216,189,125,.08))}
 #aoPray435930 .aoP435930StationOrdinary{border-top:1px solid var(--border,rgba(255,255,255,.12));border-bottom:1px solid var(--border,rgba(255,255,255,.12))}
@@ -579,7 +579,7 @@ const ANGELUS_GUIDE_RITUAL_CSS=`
 #aoPray435930 .aoAngelusGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
 #aoPray435930 [data-ao-angelus-recitation] .aoAngelusDialogue{display:grid;gap:11px;width:100%;text-align:left}
 #aoPray435930 .aoAngelusDialogueLine{display:grid;grid-template-columns:2em minmax(0,1fr);gap:9px;align-items:start}
-#aoPray435930 .aoAngelusDialogueLine>b{color:var(--liturgical,#d8bd7d);font-family:var(--ao-font-display,Georgia,serif);font-weight:650}
+#aoPray435930 .aoAngelusDialogueLine>.ao-liturgical-speaker{color:var(--liturgical,#d8bd7d);font:650 1rem/1.62 var(--ao-font-liturgical,Georgia,serif)}
 #aoPray435930 [data-ao-angelus-recitation="group"] .aoAngelusDialogueLine.response{border-left:2px solid var(--liturgical,#d8bd7d);padding:8px 8px 8px 10px;background:color-mix(in srgb,var(--liturgical,#d8bd7d) 8%,transparent);border-radius:4px 9px 9px 4px}
 #aoPray435930 .aoAngelusVespers{margin:0}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoAngelusDialogueLine{transition:none}}
