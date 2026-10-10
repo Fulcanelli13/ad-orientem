@@ -60,6 +60,7 @@ export function mountFullMassPreflight({
   getCelebrationApi=()=>globalThis.AO_CELEBRATION_API,
   onBeforeCategoryChange=()=>{},
   onOpenSourceProper=()=>{},
+  getSourceGate=()=>({ready:true,reason:null}),
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
@@ -204,7 +205,11 @@ export function mountFullMassPreflight({
     root.querySelector("[data-full-mass-form-title]").textContent=l("How is it celebrated?","Comment est-elle célébrée ?");
     root.querySelector("[data-full-mass-celebration]").textContent=
       summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"");
-    root.querySelector("[data-full-mass-resolver]").textContent=summary.canStart?
+    const sourceGate=getSourceGate();
+    root.querySelector("[data-full-mass-resolver]").textContent=!sourceGate.ready?
+      l("Finish choosing the other Proper, or return to the Mass of the day, before starting.",
+        "Terminez le choix de l’autre propre, ou revenez à la messe du jour, avant de commencer.") :
+      summary.canStart?
       l("The Mass of the day, Requiem, votive or Nuptial Proper is chosen in the celebration selector above. Its actual texts, rank and permitted changes must be resolved before starting.",
         "Le propre du jour, du Requiem, de la messe votive ou nuptiale se choisit dans le sélecteur de célébration ci-dessus. Les textes, le rang et les adaptations autorisées doivent être résolus avant de commencer.") :
       l("Choose a permitted celebration with a complete Proper before starting. No text is substituted.",
@@ -317,7 +322,7 @@ export function mountFullMassPreflight({
     root.dataset.aoSpecialMassVariant=presentation.variant;
     root.dataset.aoChosenMassForm=summary.form;
     root.dataset.aoChosenReaderMode=summary.readerMode;
-    root.dataset.aoProperReady=String(summary.canStart);
+    root.dataset.aoProperReady=String(summary.canStart&&sourceGate.ready);
     return summary;
   }
   const onchange=()=>queueMicrotask(refresh);
