@@ -212,7 +212,7 @@ let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null};
 let SEVEN={step:0,sections:null,appendix:'',loading:false,error:'',srcToken:0,scriptToken:0};
 let FORTY={step:0};
 let STATIONS={step:0};
-let TEN={day:0,hour:'MATINS',step:0,face:'vernacular',model:null,loading:false,error:null,epoch:0};
+let TEN={day:0,hour:'MATINS',step:0,face:'vernacular',guided:true,model:null,loading:false,error:null,epoch:0};
 let lastStationsFxStep=null;
 let angelusRitualObserver=null,lastAngelusRitualCard=null;
 function stopAngelusExactRail(){
@@ -307,7 +307,7 @@ function open(id,opts={}){
   else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=0}
   else if(id==='pray.litany_saints'){view='litany';LIT.step=0}
   else if(id==='pray.seven_words'){view='sevenWords';SEVEN.step=0}
-  else if(id==='pray.tenebrae'){view='tenebrae';TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.model=null;TEN.error=null;TEN.epoch++}
+  else if(id==='pray.tenebrae'){view='tenebrae';TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.epoch++}
   else if(id==='pray.forty_hours'){view='fortyHours';FORTY.step=0}
   else if(id==='pray.de_profundis'){view='prayerOnly';prayerReturnView='home';prayerId='dead_de_profundis'}
   else if(id==='pray.eternal_rest'){view='prayerOnly';prayerReturnView='home';prayerId='foundations_eternal_rest'}
@@ -508,7 +508,7 @@ function prayFamilies(){
    items:Object.freeze([
     ['own','pray.stations',L('Stations of the Cross','Chemin de Croix'),L('Fourteen Stations with the existing guided or simple companion.','Quatorze stations avec le compagnon guidé ou simple existant.')],
     ['own','pray.seven_words',L('Seven Words of Our Lord','Sept Paroles de Notre-Seigneur'),L('Gospel word · traditional meditation · silence.','Parole évangélique · méditation traditionnelle · silence.')],
-   ['own','pray.tenebrae',L('Office of Tenebrae','Office des Ténèbres'),L('Three sacred days · Matins and Lauds · 1960 rubrics.','Trois jours saints · Matines et Laudes · rubriques de 1960.')]
+   ['own','pray.tenebrae',L('Office of Tenebrae','Office des Ténèbres'),L('Three sacred days · Matins and Lauds · simple or guided.','Trois jours saints · Matines et Laudes · simple ou guidé.')]
    ])
   }),
   devotions:Object.freeze({
@@ -1472,7 +1472,7 @@ function renderTenebrae(){
  if(!TEN.model&&!TEN.loading&&!TEN.error)setTimeout(()=>void ensureTenebrae(),0);
  return head(L('Office of Tenebrae','Office des Ténèbres'),L('Triduum · Matins and Lauds','Triduum · Matines et Laudes'))+
   renderTenebraeBody({day:TEN.day,hour:TEN.hour,index:TEN.step,face:TEN.face,
-   french:isFr(),data:TEN.model,loading:TEN.loading,error:TEN.error});
+   french:isFr(),data:TEN.model,loading:TEN.loading,error:TEN.error,guided:TEN.guided});
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
@@ -1516,7 +1516,16 @@ function onClick(e){
  if(b.matches('[data-p435930-close]'))return close();
  if(b.matches('[data-p435930-home]')||b.matches('[data-p435930-home-retry]'))return goGlobalHome();
  if(b.matches('[data-p435930-back]'))return backToParent()
- if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-day'))return setTenebrae(Number(b.dataset.p435930TenebraeDay));
+ if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-mode')){
+   TEN.guided=b.dataset.p435930TenebraeMode==='guided';return render();
+  }
+  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-jump')){
+   if(!TEN.model)return;
+   const dest=Number(b.dataset.p435930TenebraeJump);
+   if(!Number.isInteger(dest)||dest<0||dest>=TEN.model.steps.length)return;
+   TEN.step=dest;return render();
+  }
+  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-day'))return setTenebrae(Number(b.dataset.p435930TenebraeDay));
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-hour'))return setTenebrae(TEN.day,b.dataset.p435930TenebraeHour);
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-face')){TEN.face=TEN.face==='latin'?'vernacular':'latin';return render()}
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-retry')){TEN.error=null;TEN.model=null;return render()}
