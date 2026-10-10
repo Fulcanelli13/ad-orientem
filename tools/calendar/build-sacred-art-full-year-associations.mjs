@@ -47,7 +47,7 @@ const titles=[
  [/^(?:saint|st)\s+anthony(?:$|\s+(?:abbot|the great)\b)/,"saint-anthony-abbot"],
  [/^(?:saint|st)\s+scholastica(?:$|\s*,)/,"saint-scholastica"],
  [/^(?:saint|st)\s+john bosco(?:$|\s*,)/,"saint-john-bosco"],
- [/^(?:saints|sts)\s+fabian\s+(?:and|&)\s+sebastian\b/,"saint-sebastian"],
+ [/^(?:saints|sts)\s+fabian\s+(?:and\s+)?sebastian\b/,"saint-sebastian"],
  [/^(?:saint|st)\s+polycarp(?:$|\s*,)/,"saint-polycarp"],
  [/^(?:saint|st)\s+timothy(?:$|\s*,)/,"saint-timothy"],
  [/^(?:saint|st)\s+john chrysostom(?:$|\s*,)/,"saint-john-chrysostom"],
