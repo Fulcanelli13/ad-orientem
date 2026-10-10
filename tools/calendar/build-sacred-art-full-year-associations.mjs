@@ -33,6 +33,7 @@ const titles=[
  [/\b(?:saint|st)\s+anthony of padua\b/,"saint-anthony-padua"],
  [/\b(?:saint|st)\s+benedict\b(?!\s+joseph)/,"saint-benedict"],
  [/\b(?:saint|st)\s+catherine of siena\b/,"saint-catherine-siena"],
+ [/\b(?:saint|st)\s+catherine of alexandria\b/,"saint-catherine-alexandria"],
  [/\b(?:saint|st)\s+dominic\b(?!\s+savio)/,"saint-dominic"],
  [/\b(?:saint|st)\s+francis of assisi\b/,"saint-francis-assisi"],
  [/\b(?:saint|st)\s+jerome(?=$|\s+(?:priest|doctor|confessor)\b)/,"saint-jerome"],

@@ -1056,6 +1056,24 @@
       "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
     },
     {
+      "id": "person.catherine-alexandria",
+      "title": "Saint Catherine of Alexandria",
+      "queries": [
+        "Saint Catherine of Alexandria",
+        "Saint Catherine of Alexandria in Prison",
+        "Saint Catherine Disputing"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_scene",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_ALEXANDRIA_NOT_SIENA",
+      "creationReason": "2026-11-25 source-resolved 1962 Proper"
+    },
+    {
       "id": "person.cecilia",
       "title": "Saint Cecilia",
       "queries": [
