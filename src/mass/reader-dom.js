@@ -200,21 +200,21 @@ const SHELL_STYLE = `
 @keyframes aoCardArrivePrevious{0%{opacity:.72;transform:translateX(-14vw);filter:blur(.35px)}100%{opacity:1;transform:none;filter:none}}
 .ao-prayer-title{
   margin:0 auto 26px;max-width:760px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.045);
-  font:400 clamp(1.15rem,2.3vw,1.55rem)/1.18 var(--ao-font-display,Georgia,"Times New Roman",serif);
-  letter-spacing:.018em;color:#e7ebe5
+  font:500 clamp(.94rem,1.65vw,1.18rem)/1.24 var(--ao-font-display,Georgia,"Times New Roman",serif);
+  text-transform:uppercase;letter-spacing:.10em;color:#e7ebe5
 }
 .ao-prayer-title[hidden]{display:none}
 .ao-prayer-body{max-width:790px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
 .ao-reader-paragraph{
   position:relative;margin:0 0 2px;padding:2px 0;border-radius:6px;
   font:400 clamp(1.18rem,2.45vw,1.68rem)/1.69 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);
-  color:var(--ao-text);opacity:.43;font-kerning:normal;font-variant-ligatures:common-ligatures contextual;text-rendering:optimizeLegibility;
+  color:var(--ao-text);opacity:var(--ao-reader-focus-far,.56);font-kerning:normal;font-variant-ligatures:common-ligatures contextual;text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;transition:opacity .28s ease,transform .28s cubic-bezier(.16,.72,.18,1),color .16s ease,text-shadow .28s ease,filter .28s ease
 }
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:.43}
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1;color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)}
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.84}
-.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.67}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph{opacity:var(--ao-reader-focus-far,.56)}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:var(--ao-reader-focus-current,1);color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:var(--ao-reader-focus-near,.80)}
+.ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:var(--ao-reader-focus-near,.80)}
 .ao-reader-paragraph[data-kind="RUBRIC"]{
   margin:11px 0 14px;padding:9px 11px 9px 13px;border-left:2px solid #718178;border-radius:0 8px 8px 0;
   background:linear-gradient(90deg,rgba(113,129,120,.085),rgba(255,255,255,.012));
