@@ -243,11 +243,11 @@ const CSS=`
   display:block;height:100%;width:0;background:var(--ao-liturgical-accent,#c9ad78);
   transition:width .15s linear;
 }
-#aoPray435930 .aoReaderPrayerName{
-  display:block;margin:0 0 8px;
-  font:600 var(--ao-reader-prayer-label-size,11px)/1.4 var(--ao-font-display,Georgia,serif);
-  letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ao-liturgical-accent-text,var(--ao-liturgical-accent,#c9ad78));
+#aoPray435930 .aoP435930PrayerUnit .aoReaderPrayerName{
+  display:block!important;margin:0 0 8px!important;
+  font:600 var(--ao-reader-prayer-label-size,11px)/1.4 var(--ao-font-display,Georgia,serif)!important;
+  letter-spacing:.12em!important;text-transform:uppercase!important;
+  color:var(--ao-liturgical-accent-text,var(--ao-liturgical-accent,#c9ad78))!important;
 }
 @media(prefers-reduced-motion:reduce){
   #aoPrayerBookRoot .aoReaderSeqFill{transition:none}
