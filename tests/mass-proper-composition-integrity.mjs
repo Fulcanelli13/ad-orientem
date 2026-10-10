@@ -79,7 +79,7 @@ assert.ok(diagnostic.warnings.some(x=>x.includes("unresolved text/source placeho
 // parseSections intentionally stores under canonical key "Oratio".
 const massAlias=between("// The historical English Commons label their Mass-only Collect",
   "function parseReference(line, defaultSection) {");
-const canonicalSection=runInNewContext(massAlias+"\\ncanonicalReferencedProperSection;");
+const canonicalSection=runInNewContext(massAlias+"\ncanonicalReferencedProperSection;");
 const parsed={map:new Map([["Oratio",["verified mass collect"]]])};
 for(const donor of ["Commune/C2","Commune/C5","Commune/C5b",
   "Commune/C6-1","Commune/C6b","Commune/C11"]){
