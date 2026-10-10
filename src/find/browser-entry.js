@@ -256,7 +256,7 @@ export function createFindOwner(win=globalThis){
     node.querySelector?.("[data-find-retry]")?.focus?.({preventScroll:true});
   }
 
-  async function paint({preserveSearchFocus=false}={}){
+  async function paint({preserveSearchFocus=false,selectionOnly=false}={}){
     const token=++paintToken;
     const node=ensureRoot(win);if(!node)return false;
     installStyle(win);
@@ -317,7 +317,34 @@ export function createFindOwner(win=globalThis){
       expandPlace:state.expandPlace,
       expandDetail:state.expandDetail,
     });
-    node.innerHTML=renderExploreToString(vm);
+    const rendered=renderExploreToString(vm);
+    // Selecting or expanding a Place changes only its sheet. Never discard
+    // the interactive map, its camera, or the user's current search position.
+    if(selectionOnly&&node.dataset.exploreLens===state.lens&&node.querySelector(".aoFindSurface")){
+      const staged=win.document.createElement("div");
+      staged.innerHTML=rendered;
+      const nextSheet=staged.querySelector(".aoFindSheetBackdrop");
+      const surface=node.querySelector(".aoFindSurface");
+      surface.querySelectorAll(".aoFindSheetBackdrop").forEach(sheet=>sheet.remove());
+      if(nextSheet)surface.append(nextSheet);
+      node.dataset.aoFindLoadState="ready";
+      return true;
+    }
+    // Search and filter changes update MapLibre's source without instantiating
+    // a new canvas. A map is recreated only when changing destinations.
+    const existingMap=node.querySelector("[data-find-map]");
+    const reuseMap=Boolean(mapHandle?.map&&existingMap&&state.view==="map"&&node.dataset.exploreLens===state.lens);
+    if(reuseMap){
+      const staged=win.document.createElement("div");
+      staged.innerHTML=rendered;
+      const nextMap=staged.querySelector("[data-find-map]");
+      if(nextMap){
+        nextMap.replaceWith(existingMap);
+        node.replaceChildren(...Array.from(staged.childNodes));
+        mapHandle.updateItems?.(items);
+        mapHandle.map.resize?.();
+      }else node.innerHTML=rendered;
+    }else node.innerHTML=rendered;
     if(searchFocus){
       const next=node.querySelector?.("[data-find-query]");
       next?.focus?.({preventScroll:true});
@@ -333,6 +360,7 @@ export function createFindOwner(win=globalThis){
     if(mapHandle&&state.view==="map"){
       lastMapView=mapViewport(mapHandle.map);lastMapLens=state.lens;
     }
+    if(reuseMap)return true;
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
@@ -340,11 +368,11 @@ export function createFindOwner(win=globalThis){
         const nextHandle=await mountExploreMap(mapNode,items,{
           win,initialViewport:lastMapLens===state.lens?lastMapView:null,
           onSelect:id=>{
-            const place=state.lens==="heritage"?items.find(item=>item.item_id===id):null;
+            const place=state.lens==="heritage"?filtered().find(item=>item.item_id===id):null;
             state.selectedPlaceId=place?.place_id??null;
             state.selectedId=place?null:id;
             state.expandPlace=false;state.expandDetail=false;
-            void paint();
+            void paint({selectionOnly:true});
           },
         });
         if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
@@ -486,8 +514,8 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-find-close]")){
       event.preventDefault?.();
-      if(state.selectedPlaceId){if(state.expandPlace){state.expandPlace=false;void paint();return;}state.selectedPlaceId=null;void paint();return;}
-      if(state.selectedId){if(state.expandDetail){state.expandDetail=false;void paint();return;}state.selectedId=null;void paint();return;}
+      if(state.selectedPlaceId){if(state.expandPlace){state.expandPlace=false;void paint({selectionOnly:true});return;}state.selectedPlaceId=null;void paint({selectionOnly:true});return;}
+      if(state.selectedId){if(state.expandDetail){state.expandDetail=false;void paint({selectionOnly:true});return;}state.selectedId=null;void paint({selectionOnly:true});return;}
       if(state.lens!=="heritage"){setFilter("lens","heritage");return;}
       close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return;
     }
@@ -495,23 +523,23 @@ export function createFindOwner(win=globalThis){
     // must reach their own Place, Calendar, novena and source-link actions.
     if(target?.closest?.("button[data-find-close-detail]")||
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-detail]")){
-      event.preventDefault?.();state.selectedId=null;state.expandDetail=false;void paint();return;
+      event.preventDefault?.();state.selectedId=null;state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     if(target?.closest?.("button[data-find-close-place]")||
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-place]")){
-      event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint();return;
+      event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint({selectionOnly:true});return;
     }
     if(target?.closest?.("[data-explore-expand-place]")){
-      event.preventDefault?.();state.expandPlace=true;void paint();return;
+      event.preventDefault?.();state.expandPlace=true;void paint({selectionOnly:true});return;
     }
     if(target?.closest?.("[data-explore-collapse-place]")){
-      event.preventDefault?.();state.expandPlace=false;void paint();return;
+      event.preventDefault?.();state.expandPlace=false;void paint({selectionOnly:true});return;
     }
     if(target?.closest?.("[data-explore-expand-detail]")){
-      event.preventDefault?.();state.expandDetail=true;void paint();return;
+      event.preventDefault?.();state.expandDetail=true;void paint({selectionOnly:true});return;
     }
     if(target?.closest?.("[data-explore-collapse-detail]")){
-      event.preventDefault?.();state.expandDetail=false;void paint();return;
+      event.preventDefault?.();state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
@@ -531,7 +559,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.highlightCustomId=null;void paint();return;
     }
     if(target?.closest?.("[data-heritage-custom-details]")&&state.lens==="heritage"&&state.highlightCustomId){
-      event.preventDefault?.();state.selectedId="tradition:custom:"+state.highlightCustomId;state.expandDetail=false;void paint();return;
+      event.preventDefault?.();state.selectedId="tradition:custom:"+state.highlightCustomId;state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     const heritageCustom=target?.closest?.("[data-heritage-custom]");
     if(heritageCustom&&state.lens==="heritage"){
@@ -553,7 +581,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();event.stopPropagation?.();
       state.selectedPlaceId=openPlace.dataset.exploreOpenPlace||null;
       state.selectedId=null;state.expandPlace=false;state.expandDetail=false;
-      void paint();return;
+      void paint({selectionOnly:true});return;
     }
     const placeItem=target?.closest?.("[data-explore-place-item]");
     if(placeItem){
@@ -594,7 +622,7 @@ export function createFindOwner(win=globalThis){
       void paint().then(()=>{const scroller=getRoot(win)?.querySelector?.(".aoFindSurface");if(scroller)scroller.scrollTop=previousScroll;});
       return;
     }
-    const item=target?.closest?.("[data-explore-item]");if(item){state.selectedPlaceId=null;state.selectedId=item.dataset.exploreItem;state.expandDetail=false;void paint();return}
+    const item=target?.closest?.("[data-explore-item]");if(item){state.selectedPlaceId=null;state.selectedId=item.dataset.exploreItem;state.expandDetail=false;void paint({selectionOnly:true});return}
     const aff=target?.closest?.("[data-find-affiliation]");
     if(aff&&state.lens==="tlm"){
       const id=aff.dataset.findAffiliation,index=state.affiliations.indexOf(id);
@@ -604,10 +632,29 @@ export function createFindOwner(win=globalThis){
     const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
   }
 
+  // The visible sheet handle is a real interaction: upward swipe expands
+  // the record, downward swipe dismisses. Text and map gestures remain native.
+  let sheetTouch=null;
+  function onSheetTouchStart(event){
+    const handle=event.target?.closest?.(".aoHeritageCardLayer .aoHeritageSheetHandle");
+    const touch=event.touches?.[0];
+    sheetTouch=handle&&state.selectedPlaceId&&!state.expandPlace&&touch
+      ?{x:touch.clientX,y:touch.clientY}:null;
+  }
+  function onSheetTouchEnd(event){
+    if(!sheetTouch)return;
+    const started=sheetTouch;sheetTouch=null;
+    const end=event.changedTouches?.[0];if(!end)return;
+    const dy=end.clientY-started.y,dx=end.clientX-started.x;
+    if(Math.abs(dy)<42||Math.abs(dx)>Math.abs(dy))return;
+    if(dy<0)state.expandPlace=true;
+    else state.selectedPlaceId=null;
+    void paint({selectionOnly:true});
+  }
   function onKeyDown(event){
     if(!openState||event?.key!=="Escape")return;
-    if(state.selectedPlaceId){event.preventDefault?.();if(state.expandPlace)state.expandPlace=false;else state.selectedPlaceId=null;void paint();return;}
-    if(state.selectedId){event.preventDefault?.();if(state.expandDetail)state.expandDetail=false;else state.selectedId=null;void paint();return;}
+    if(state.selectedPlaceId){event.preventDefault?.();if(state.expandPlace)state.expandPlace=false;else state.selectedPlaceId=null;void paint({selectionOnly:true});return;}
+    if(state.selectedId){event.preventDefault?.();if(state.expandDetail)state.expandDetail=false;else state.selectedId=null;void paint({selectionOnly:true});return;}
     const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open],.aoExploreSectionSwitcher[open]");
     if(disclosure){event.preventDefault?.();disclosure.open=false;return;}
     if(state.lens!=="heritage"){event.preventDefault?.();setFilter("lens","heritage");}
@@ -631,6 +678,8 @@ export function createFindOwner(win=globalThis){
   win?.document?.addEventListener?.("input",onInput,true);
   win?.document?.addEventListener?.("change",onChange,true);
   win?.document?.addEventListener?.("keydown",onKeyDown,true);
+  win?.document?.addEventListener?.("touchstart",onSheetTouchStart,{capture:true,passive:true});
+  win?.document?.addEventListener?.("touchend",onSheetTouchEnd,{capture:true,passive:true});
   installStyle(win);ensureRoot(win);
 
   return Object.freeze({
@@ -656,6 +705,8 @@ export function createFindOwner(win=globalThis){
       win?.document?.removeEventListener?.("input",onInput,true);
       win?.document?.removeEventListener?.("change",onChange,true);
       win?.document?.removeEventListener?.("keydown",onKeyDown,true);
+      win?.document?.removeEventListener?.("touchstart",onSheetTouchStart,true);
+      win?.document?.removeEventListener?.("touchend",onSheetTouchEnd,true);
       scrollGuard.dispose();
       getRoot(win)?.remove?.();
     }
