@@ -677,6 +677,7 @@ assert.match(expandedPlace,/data-explore-place-item=/,"expanded Place must retai
 console.log("PASS unified Explore projection, canonical customs and map-first heritage surface");
 await import("./heritage-place-reconciliation.mjs");
 await import("./explore-overlapping-place-pins.mjs");
+await import("./explore-europe-acquisition-wave1.mjs");
 await import("./explore-research-ownership-gates.mjs");
 await import("./explore-customary-source-trace.mjs");
 await import("./explore-relic-final60-open20-source.mjs");
