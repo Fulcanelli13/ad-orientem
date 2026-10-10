@@ -1,7 +1,7 @@
 {
   "schema": "ao.pray.tenebrae.1960-acquisition.v1",
   "created": "2026-10-10",
-  "status": "SIX_SOURCE_DERIVED_HOURS_ROUTED_PRINT_EDITION_UNCOLLATED",
+  "status": "SIX_SOURCE_DERIVED_OFFICES_READER_IN_PRAY_PRINT_COLLATION_PENDING",
   "purpose": "Create a small seasonal Holy Week Tenebrae journey, not a generic Divine Office or musical feature.",
   "source": {
     "provider": "Divinum Officium Project",
@@ -98,6 +98,7 @@
   ],
   "assemblyHold": {
     "tasks": [
+      "Confirm source-derived 1960 full-hour text against photographed 1961 Breviary and compare all optional rubrical branches; CI and phone verify source assembly, not primary-print certification.",
       "Independently collate each 1961 Breviary printed Matins and Lauds folio, including common orations and Hour ending formulas; source assembly passing CI is not print edition certification.",
       "Confirm source weekday Psalter second-scheme and special Holy Saturday Moses canticle segmentation against a separately printed 1961 text.",
       "Review full Latin and French variants of Christus factus est, especially partially corrupt Friday/Saturday Divinum Officium internal macros.",
@@ -126,9 +127,11 @@
     "psalterLocaleBundles": 9,
     "psalterSourceLeavesPreserved": 111,
     "sourceDerivedHourAssemblies": 6,
-    "independentPrintedBreviaryCertifiedHours": 0
+    "independentPrintedBreviaryCertifiedHours": 0,
+    "psalterAndCanticleLeavesPerLocale": 37,
+    "psalterLocales": 3
   },
-  "publicationStatus": "SEASONAL_PRAY_READER_IMPLEMENTED_SOURCE_DERIVED_NOT_ORIGINAL_PRINT_CERTIFIED",
+  "publicationStatus": "SIX_HOURS_SOURCE_DERIVED_READABLE__PRINT_CRITICAL_NOT_CERTIFIED",
   "reader": {
     "route": "pray.tenebrae",
     "nativeOwner": "src/pray/presentation-runtime.js",
