@@ -51,7 +51,9 @@ try{
  // A widespread devotion remains discoverable as a thematic card, not
  // as an invented geographic point or a top-level list.
  const customRail=page.locator('#ao-find-modular-root .aoHeritageCustomRail');
- assert.ok(await customRail.count()===1,"canonical customs carousel is not visible in the unified map");
+ assert.ok(await customRail.count()===0,"the unfiltered map should not be obstructed by a customs rail");
+ await page.locator('#ao-find-modular-root [data-heritage-category="traditions"]').tap();
+ assert.ok(await customRail.count()===1,"customs carousel should appear on the Customs filter");
  const custom=customRail.locator('[data-heritage-custom]').first();
  const customId=await custom.getAttribute("data-heritage-custom");
  assert.ok(customId,"custom strip has no source-backed practice identity");
