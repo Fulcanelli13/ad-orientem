@@ -181,7 +181,7 @@ const SHELL_STYLE = `
 .ao-reader-shell .ao-prayer-title,.ao-reader-shell .ao-section-jump,
 .ao-reader-shell .ao-cinematic-title{font-family:var(--ao-missal-display)}
 .ao-reader-shell .ao-reader-paragraph[data-opening="true"] .ao-line-primary::first-letter{
-  font-family:var(--ao-missal-display);font-size:1.35em;font-weight:600;color:var(--ao-mass-accent-text)}
+  font-family:"UnifrakturCook","Old English Text MT",var(--ao-missal-display);font-size:1.35em;font-weight:600;color:var(--ao-mass-accent-text)}
 .ao-customary-controls label{display:grid;gap:5px;margin:9px 0;color:var(--ao-text);font:400 13px/1.3 var(--ao-missal-face)}
 .ao-customary-controls select{width:100%;min-height:44px;padding:7px;border-radius:8px;
   border:1px solid color-mix(in srgb,var(--ao-mass-accent) 30%,transparent);
@@ -837,7 +837,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     cardUpdate:moment.cardUpdate !== false,
     paragraphs,
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
-    customary:moment.customary??previous.customary??null,
+    customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
     posture:persist(moment.posture, previous.posture),
     gesture:moment.gesture ?? null,
     response:moment.response ?? null,
@@ -1964,6 +1964,11 @@ export function createReaderDomAdapter({
           ? "Applies only to "+current.customary.cueId
           : "Fixed source cue: local overrides unavailable."
         : "Select an exact Mass cue before setting a local posture.";
+    }else{
+      const select=root.querySelector('[data-reader-customary="localPosture"]');
+      if(select)select.disabled=true;
+      const note=root.querySelector("[data-customary-cue-note]");
+      if(note)note.textContent="Local choices apply to source-backed Mass cues.";
     }
     const titleNode=root.querySelector('[data-role="card-title"]');
     if(titleNode)titleNode.hidden=true;
@@ -2047,11 +2052,12 @@ export function createReaderDomAdapter({
       const doc=body.ownerDocument ?? globalThis.document;
       if(doc?.createElement){
         let openingSet=false;
+        const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
         for(const p of current.paragraphs){
           const node=doc.createElement("p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
-          if(!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
+          if(decorateThisSection&&!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
             node.dataset.opening="true";openingSet=true;
           }
           node.dataset.active=String(p.active);
