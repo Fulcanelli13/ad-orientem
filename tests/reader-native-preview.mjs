@@ -359,7 +359,7 @@ assert.equal(resolveGestureProjection(certified,{label:"BOW"}).label,"GENUFLECT"
 
 assert.equal(resolveGestureProjection(disputed,{label:"LEGACY BOW"},{
   cueId:"AO.SM.C0056",gestureProfile:"GUIDED_1962"
-}),null,"customary Gloria cue leaked into GUIDED_1962");
+}).type,"HEAD_BOW","guided Gloria did not expose source-linked faithful bow");
 assert.equal(resolveGestureProjection(disputed,{label:"LEGACY BOW"},{
   cueId:"AO.SM.C0056",gestureProfile:"TRADITIONAL"
 }).type,"HEAD_BOW","exact traditional Gloria cue did not resolve");
@@ -368,7 +368,7 @@ assert.equal(resolveGestureProjection(disputed,{label:"LEGACY CROSS"},{
 }).type,"SIGN_OF_CROSS","exact traditional Credo cross did not resolve");
 assert.equal(resolveGestureProjection(null,{label:"LEGACY BOW"},{
   cueId:"AO.SM.C0090",gestureProfile:"GUIDED_1962"
-}),null,"known Credo cue fell back to legacy despite profile suppression");
+}).type,"HEAD_BOW","guided Credo did not expose its faithful head bow");
 
 
 const guidedSource=resolveCueOwnedChannels({
