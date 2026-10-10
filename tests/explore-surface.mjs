@@ -536,6 +536,8 @@ assert.equal(countCanonicalTraditions(customsAtlasItems),13,"13 customs remain i
 const practiceBrowse=groupTraditionsForBrowse(customsAtlasItems);
 assert.equal(practiceBrowse.length,13,"list should not turn 71 attestations and 18 novena context links into 89 practices");
 assert.ok(practiceBrowse.every(item=>item.kind==="CANONICAL_CUSTOM"&&!item.map_publishable),"canonical practices are not map pins");
+assert.ok(practiceBrowse.every(item=>item.facts.every(fact=>fact.label!=="Class")),"geographically mixed legacy classification must not appear as exclusive nationality");
+assert.ok(customsAtlasItems.filter(item=>item.kind==="CUSTOM_ATTESTATION").every(item=>item.facts.every(fact=>fact.label!=="Class")),"place-specific evidence must not promote unreviewed national classification");
 const pilgrimagePractice=practiceBrowse.find(item=>item.source_id==="DEV-006");
 assert.equal(pilgrimagePractice.attestation_examples.length,13,"global and place-level pilgrimage evidence stays with its practice");
 assert.ok(pilgrimagePractice.attestation_examples.some(example=>example.title==="World"),"worldwide attestation must not be lost");
