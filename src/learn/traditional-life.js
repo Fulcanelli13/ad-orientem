@@ -64,7 +64,7 @@ function card(win,title,text,extra=""){
   return `<details class="aoLearnTradCard"><summary><span class="aoLearnTradCardTitle">${esc(title)}</span></summary><div class="aoLearnTradCardBody"><p>${esc(text)}</p>${extra}</div></details>`;
 }
 function actions(items){
-  return `<div class="aoLearnTradActions">${items.map(item=>`<button type="button" class="${item.primary?"primary":""}" ${item.route?`data-ao-tradlearn-route="${esc(item.route)}"`:""} ${item.prayer?`data-ao-tradlearn-prayer="${esc(item.prayer)}"`:""} ${item.mass?"data-ao-tradlearn-mass":""} ${item.nuptial?"data-ao-tradlearn-nuptial":""}>${esc(item.label)}</button>`).join("")}</div>`;
+  return `<div class="aoLearnTradActions">${items.map(item=>`<button type="button" class="${item.primary?"primary":""}" ${item.route?`data-ao-tradlearn-route="${esc(item.route)}"`:""} ${item.prayer?`data-ao-tradlearn-prayer="${esc(item.prayer)}"`:""} ${item.sexualEthics?`data-ao-tradlearn-ethics-context`:""} ${item.mass?"data-ao-tradlearn-mass":""} ${item.nuptial?"data-ao-tradlearn-nuptial":""}>${esc(item.label)}</button>`).join("")}</div>`;
 }
 function top(win,title){
   return `<style data-ao-traditional-learn-style>${css()}</style><header class="aoLearnTradTop"><button type="button" data-ao-tradlearn-back aria-label="${esc(L(win,"Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L(win,"Formation","Formation"))}</small><strong>${esc(title)}</strong></div><button type="button" data-ao-tradlearn-home aria-label="${esc(L(win,"Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
@@ -245,6 +245,7 @@ function matrimony(win){
       {label:L(win,"Family Rosary","Rosaire en famille"),route:"pray.rosary"},
       {label:L(win,"Sacred Heart prayers","Prières au Sacré-Cœur"),route:"pray.library"},
       {label:L(win,"First Friday","Premier vendredi"),route:"programme.first_friday"},
+      {label:L(win,"Marital moral questions · explore","Questions morales conjugales · approfondir"),sexualEthics:true},
     ]))+
     source(win,"Pius XII · Ingruentium Malorum · family Rosary",TRADITIONAL_LEARN_SOURCES_V381.piusXiiFamilyRosary)+
     source(win,"St John Paul II · Familiaris Consortio · family prayer",TRADITIONAL_LEARN_SOURCES_V381.familyPrayer)+
@@ -340,6 +341,29 @@ export function createTraditionalLearnRuntime(win=globalThis){
     }
     return win?.AO_MODULES?.open?.(route,{returnContext:{surface:"learn"}})??false;
   }
+  async function contextualSexualEthics(trigger){
+    if(!trigger||trigger.disabled)return false;
+    trigger.disabled=true;
+    try{
+      const {ensureLearnModule}=await import("./lazy-module-registry.js");
+      await ensureLearnModule("learn.sexual_ethics",win);
+      const owner=win?.AO_SEXUAL_ETHICS_V1;
+      if(typeof owner?.open!=="function"||owner.open({sectionId:"marriage",origin:"context",trigger})!==true)
+        throw new Error("Canonical Sexual Ethics section unavailable");
+      return true;
+    }catch(error){
+      try{win?.console?.error?.("Matrimony to Sexual Ethics context failed",error)}catch{}
+      const previous=trigger.parentElement?.querySelector?.("[data-ao-tradlearn-context-error]");
+      previous?.remove?.();
+      const note=win?.document?.createElement?.("small");
+      if(note&&trigger.isConnected){
+        note.dataset.aoTradlearnContextError="true";note.setAttribute("role","alert");
+        note.textContent=L(win,"Unable to open this section. Retry.","Impossible d’ouvrir cette section. Réessayez.");
+        trigger.insertAdjacentElement("afterend",note);
+      }
+      return false;
+    }finally{if(trigger.isConnected)trigger.disabled=false}
+  }
   function nuptial(){
     close();
     try{win?.AO_CELEBRATION_API?.select?.("nuptial");return win?.AO_CELEBRATION_API?.openPreflight?.()??win?.AO_CELEBRATION_API?.openChangeMass?.()??true}catch{return false}
@@ -355,6 +379,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
     if(b.matches("[data-ao-tradlearn-flip]")){e.preventDefault();const v=b.querySelector("[data-face-v]"),la=b.querySelector("[data-face-la]");if(v&&la){const showLatin=la.hidden;la.hidden=!showLatin;v.hidden=showLatin}return}
     if(b.dataset.aoTradlearnPrayer){e.preventDefault();state.screen="prayer";state.prayerId=b.dataset.aoTradlearnPrayer;render();return}
     if(b.dataset.aoTradlearnRoute){e.preventDefault();void handoff(b.dataset.aoTradlearnRoute);return}
+    if(b.matches("[data-ao-tradlearn-ethics-context]")){e.preventDefault();void contextualSexualEthics(b);return}
     if(b.matches("[data-ao-tradlearn-mass]")){e.preventDefault();void massHandoff();return}
     if(b.matches("[data-ao-tradlearn-nuptial]")){e.preventDefault();nuptial();return}
     if(b.matches("[data-ao-tradlearn-reveal]")){e.preventDefault();state.trainerReveal=true;render();return}
