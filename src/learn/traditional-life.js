@@ -5,6 +5,7 @@ import {
   TRADITIONAL_LEARN_SOURCES_V381,
 } from "./traditional-life-data.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { parseLiturgicalSpeakerPrefix } from "../app/liturgical-speakers.js";
 
 export const TRADITIONAL_LEARN_VERSION="38.6-content-ownership-cleanup";
 export const TRADITIONAL_LEARN_ROOT_ID="ao-learn-traditional-root";
@@ -259,13 +260,17 @@ function matrimony(win){
     source(win,"1917 Code of Canon Law · sponsalia, banns and matrimonial discipline",TRADITIONAL_LEARN_SOURCES_V381.cic1917)
   );
 }
+function speakerText(value){
+  const p=parseLiturgicalSpeakerPrefix(value);
+  return p?`${esc(p.leading)}<span class="ao-liturgical-speaker" data-ao-speaker-role="${p.role}">${esc(p.mark)}</span>${esc(p.separator+p.text)}`:esc(value);
+}
 function trainer(win,state){
   const x=LOW_MASS_RESPONSES_V381[state.trainerIndex]||LOW_MASS_RESPONSES_V381[0];
   return shell(win,
     L(win,"Serve Low Mass","Servir la Messe basse"),
     L(win,"Practice the common minister responses from the same certified 1962 Mass text already used by the Mass follower. This trains the words; it does not invent altar-server choreography.","Entraînez-vous aux réponses courantes du servant à partir du même texte certifié de la Messe de 1962 utilisé par le suivi de Messe. Ceci entraîne les paroles ; aucune chorégraphie de servant n’est inventée."),
     L(win,"1962 Mass · exact response text","Messe de 1962 · texte exact des réponses"),
-    `<section class="aoLearnTradTrainer"><div class="aoLearnTradCue">${esc(L(win,x.cue,x.cueFr))} · ${state.trainerIndex+1} / ${LOW_MASS_RESPONSES_V381.length}</div><div class="aoLearnTradPrompt">${esc(L(win,x.prompt,x.promptFr))}</div>${state.trainerReveal?`<div class="aoLearnTradAnswer"><strong>${esc(x.lat)}</strong><span>${esc(isFr(win)?x.fr:x.en)}</span></div>`:`<div class="aoLearnTradActions"><button type="button" class="primary" data-ao-tradlearn-reveal>${esc(L(win,"Reveal response","Afficher la réponse"))}</button></div>`}<div class="aoLearnTradNav"><button type="button" data-ao-tradlearn-trainer="prev" ${state.trainerIndex===0?"disabled":""}>← ${esc(L(win,"Previous","Précédent"))}</button><button type="button" data-ao-tradlearn-trainer="next" ${state.trainerIndex===LOW_MASS_RESPONSES_V381.length-1?"disabled":""}>${esc(L(win,"Next","Suivant"))} →</button></div></section>`+
+    `<section class="aoLearnTradTrainer"><div class="aoLearnTradCue">${esc(L(win,x.cue,x.cueFr))} · ${state.trainerIndex+1} / ${LOW_MASS_RESPONSES_V381.length}</div><div class="aoLearnTradPrompt">${speakerText(L(win,x.prompt,x.promptFr))}</div>${state.trainerReveal?`<div class="aoLearnTradAnswer"><strong>${speakerText(x.lat)}</strong><span>${speakerText(isFr(win)?x.fr:x.en)}</span></div>`:`<div class="aoLearnTradActions"><button type="button" class="primary" data-ao-tradlearn-reveal>${esc(L(win,"Reveal response","Afficher la réponse"))}</button></div>`}<div class="aoLearnTradNav"><button type="button" data-ao-tradlearn-trainer="prev" ${state.trainerIndex===0?"disabled":""}>← ${esc(L(win,"Previous","Précédent"))}</button><button type="button" data-ao-tradlearn-trainer="next" ${state.trainerIndex===LOW_MASS_RESPONSES_V381.length-1?"disabled":""}>${esc(L(win,"Next","Suivant"))} →</button></div></section>`+
     source(win,"Baltimore Manual · Manner of Serving Mass",TRADITIONAL_LEARN_SOURCES_V381.baltimore)
   );
 }
