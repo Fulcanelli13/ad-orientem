@@ -1,7 +1,7 @@
 import {CATHOLIC_BOOK_IDS} from "./canon.js";
 const CATALOGUE=Object.freeze({
  "dr-challoner":Object.freeze(["Matthew","Mark","Luke","John"]),
- "cpdv-2009":Object.freeze(["Matthew","Mark","Luke","John"]),
+ "cpdv-2009":CATHOLIC_BOOK_IDS,
  "crampon-1923":Object.freeze(["Matthew","Mark","Luke","John","Acts","1Corinthians","Revelation","SongOfSongs","Isaiah","Judith","Psalms"])
 });
 const CACHE="ao-scripture-witness-v1";
