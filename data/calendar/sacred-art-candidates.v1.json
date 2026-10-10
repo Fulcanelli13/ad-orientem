@@ -1270,7 +1270,12 @@
         ],
         "observedIds": [],
         "scriptureKeys": [],
-        "prayerKeys": []
+        "prayerKeys": [
+          "immaculate-heart"
+        ],
+        "prayerSymbolicContextNotes": {
+          "immaculate-heart": "Our Lady with the Child Jesus, Marian contemplation; NOT painted Immaculate Heart"
+        }
       },
       "review": {
         "source": "OBJECT_PAGE_CHECKED",
@@ -1319,7 +1324,12 @@
         ],
         "observedIds": [],
         "scriptureKeys": [],
-        "prayerKeys": []
+        "prayerKeys": [
+          "sacred-heart"
+        ],
+        "prayerSymbolicContextNotes": {
+          "sacred-heart": "Christ's love and blessing (symbolic context, NOT a Sacred Heart icon)"
+        }
       },
       "review": {
         "source": "OBJECT_PAGE_CHECKED",
@@ -3367,7 +3377,12 @@
         "seasonIds": [],
         "observedIds": [],
         "scriptureKeys": [],
-        "prayerKeys": []
+        "prayerKeys": [
+          "immaculate-heart"
+        ],
+        "prayerSymbolicContextNotes": {
+          "immaculate-heart": "Virgin and Child Marian contemplation, NOT painted Immaculate Heart"
+        }
       },
       "review": {
         "source": "MUSEUM_API_CC0_VERIFIED",
@@ -4246,8 +4261,12 @@
         "observedIds": [],
         "scriptureKeys": [],
         "prayerKeys": [
-          "adoration"
-        ]
+          "adoration",
+          "sacred-heart"
+        ],
+        "prayerSymbolicContextNotes": {
+          "sacred-heart": "Christ blessing, a symbolic fallback; do not label as the Sacred Heart"
+        }
       },
       "review": {
         "source": "MUSEUM_API_CC0_VERIFIED",
@@ -4771,6 +4790,86 @@
         "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49"
       },
       "image": null
+    },
+    {
+      "id": "met-437542",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artist": "Workshop of Peter Paul Rubens",
+      "dated": null,
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437542",
+        "objectId": "437542",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met object record classifies the oil painting as Public Domain, covered by its CC0 Open Access image policy.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "holy-souls",
+          "purgatory",
+          "intercession-saints"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "holy-souls"
+        ]
+      },
+      "review": {
+        "source": "OBJECT_PAGE_CHECKED",
+        "rights": "OBJECT_PAGE_CHECKED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "NOT_ACQUIRED",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null
+    },
+    {
+      "id": "met-747199",
+      "title": "The Virgin of Carmen and the Souls of Purgatory with St. Joseph and the Prophet Elijah",
+      "artist": "Juan Francisco de Aguilera",
+      "dated": "c. 1720",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/747199",
+        "objectId": "747199",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met object record classifies the oil painting as Public Domain, covered by its CC0 Open Access image policy.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "holy-souls",
+          "purgatory",
+          "our-lady-of-mount-carmel"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "holy-souls"
+        ]
+      },
+      "review": {
+        "source": "OBJECT_PAGE_CHECKED",
+        "rights": "OBJECT_PAGE_CHECKED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "NOT_ACQUIRED",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null
     }
   ],
   "notes": [
@@ -4778,6 +4877,7 @@
     "Coverage-first 12 additional museum object candidates (8 Cleveland with archival originals, 1 Met, 3 NGA). CMA composite diptych requires iconographic review. Two CMA Assumption studies and a misassigned Presentation study are retained in acquisition archive only, not counted as direct artwork candidates.",
     "Two Art Institute painted Pentecost records close the source-catalogue zero for rosary.glo3, but IIIF image downloads returned HTTP 403; original image quality is not verified. They are leads, not acquired paintings.",
     "Batch-2 Met original JPEG acquisition produced 35 technically passing source-authenticated paintings; subjects tagged with caution for composites and patron saint identity. No artist/phone-crop review and no production promotion.",
-    "Pentecost 3 Commons originals acquired & SHA1-verified. Public Domain Mark / PD-Art is not CC0; per-image worldwide reuse rights not cleared. The Rosary 15-mystery 2-original availability milestone therefore does not mean 15/15 released or commercial-rights-cleared."
+    "Pentecost 3 Commons originals acquired & SHA1-verified. Public Domain Mark / PD-Art is not CC0; per-image worldwide reuse rights not cleared. The Rosary 15-mystery 2-original availability milestone therefore does not mean 15/15 released or commercial-rights-cleared.",
+    "Sacred Heart and Immaculate Heart source-pool minima may use clearly captioned symbolically related Christ/Marian masterpiece; that is NOT an exact painted sacred/immaculate heart. Exact-iconographic works remain an independent acquisition/review target."
   ]
 }
