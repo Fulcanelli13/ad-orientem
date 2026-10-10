@@ -40,6 +40,7 @@ try{
     const proper={
       sourcePath:"Sancti/10-07",
       name:"Our Lady of the Rosary",
+      color:"white",
       introit:t("Gaudeámus omnes in Dómino","Let us all rejoice in the Lord"),
       collects:[t("Deus, cuius Unigénitus","O God, whose only-begotten Son")],
       epistle:t("Ab inítio et ante sǽcula","From the beginning and before the world"),
@@ -105,6 +106,9 @@ try{
 
   const opening=await page.evaluate(()=>({
     uiOwner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner??null,
+    liturgicalColour:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset.liturgicalColour??null,
+    liturgicalSource:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset.liturgicalSource??null,
+    massBackground:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.style.getPropertyValue("--ao-mass-bg")??null,
     legacyStarts:globalThis.__AO_MASS_VISUAL_LEGACY_STARTS??0,
     modeButtons:document.querySelectorAll("#ao-r17-native-reader-preview [data-reader-mode]").length,
     livePressed:document.querySelector("#ao-r17-native-reader-preview [data-reader-mode='LIVE']")?.getAttribute("aria-pressed")??null,
@@ -148,6 +152,9 @@ try{
     shellRect:(()=>{const x=document.querySelector("#ao-r17-native-reader-preview .ao-reader-shell")?.getBoundingClientRect();return x?{width:x.width,height:x.height}:null})(),
   }));
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
+  assert.equal(opening.liturgicalColour,"WHITE","selected Rosary Mass must own its white theme, not the Sunday calendar");
+  assert.equal(opening.liturgicalSource,"SELECTED_PROPER");
+  assert.equal(opening.massBackground,"#191815");
   assert.equal(opening.legacyStarts,0);
   assert.equal(opening.modeButtons,3);
   assert.equal(opening.livePressed,"true");
