@@ -51,6 +51,24 @@ const frenchSuppressed=properToReaderSlots({...frenchProper,communion:{}},{
 assert.equal(frenchSuppressed.ready,true,"French Proper lost certified NOT_APPLICABLE support");
 assert.equal(frenchSuppressed.slots.COMMUNION.status,"NOT_APPLICABLE");
 
+// A translated first prayer must never hide an untranslated additional
+// commemoration in the actual rendered Mass Proper.
+const commemoration={...proper,collects:[t("Oratio","Collect"),{lat:"Commemoratio",en:"",fr:"Commémoraison"}]};
+const missingCommemoration=properToReaderSlots(commemoration,{language:"en"});
+assert.equal(missingCommemoration.ready,false,"Reader silently dropped the second collect");
+assert.equal(missingCommemoration.slots.COLLECT_SET.status,"MISSING");
+assert.ok(missingCommemoration.missing.includes("COLLECT_SET"));
+assert.throws(()=>assertReaderProperReady(missingCommemoration),/COLLECT_SET/);
+const completeFrenchCommemoration=properToReaderSlots({...frenchProper,collects:[
+ {lat:"Oratio",en:"",fr:"Collecte"},{lat:"Commemoratio",en:"",fr:"Commémoraison"}
+]},{language:"fr"});
+assert.equal(completeFrenchCommemoration.ready,true);
+assert.equal(completeFrenchCommemoration.slots.COLLECT_SET.data.paragraphs.length,2);
+for(const [property,slot] of [["secrets","SECRET_SET"],["postcommunions","POSTCOMMUNION_SET"]]){
+ const mixed=properToReaderSlots({...proper,[property]:[t("Oratio","Prayer"),{lat:"Commemoratio",en:"",fr:""}]});
+ assert.equal(mixed.ready,false,slot+" silently filtered a missing commemoration");
+ assert.ok(mixed.missing.includes(slot));
+}
 const missing=properToReaderSlots({...proper,gospel:{}});
 assert.equal(missing.ready,false);
 assert.ok(missing.missing.includes("GOSPEL"));
