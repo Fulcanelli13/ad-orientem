@@ -15430,7 +15430,10 @@
       "association": {
         "subjectKeys": [
           "our-lady-rosary",
-          "institution-rosary"
+          "institution-rosary",
+          "saint-dominic",
+          "saint-francis-assisi",
+          "virgin-child"
         ],
         "seasonIds": [],
         "observedIds": [],
@@ -15438,7 +15441,7 @@
         "prayerKeys": [
           "holy-rosary"
         ],
-        "relationToTarget": "EXPLICIT_MUSEUM_CURATORIAL_INSTITUTION_OF_ROSARY",
+        "relationToTarget": "MET_COLLECTION_DOCUMENTS_INSTITUTION_OF_ROSARY_WITH_DISTINCT_VISIBLE_ST_DOMINIC_AND_ST_FRANCIS_ASSISI; MAIN_SUBJECT_MARIAN_ROSARY_INSTITUTION",
         "targetResearchIds": [
           "calendar.holy-rosary"
         ]
@@ -15454,7 +15457,7 @@
         },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
-        "subjectConfidence": "EXPLICIT_MUSEUM_CURATORIAL_INSTITUTION_OF_ROSARY"
+        "subjectConfidence": "DIRECT_ROSARY_INSTITUTION_AND_SECONDARY_SAINTS_SOURCE_ATTESTED_AWAIT_USER_AUDIT"
       },
       "acquisition": {
         "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38054107621",
@@ -15470,7 +15473,10 @@
       "tags": {
         "iconography": [
           "our-lady-rosary",
-          "institution-rosary"
+          "institution-rosary",
+          "saint-dominic",
+          "saint-francis-assisi",
+          "virgin-child"
         ],
         "prayerKeys": [
           "holy-rosary"
@@ -15487,7 +15493,7 @@
         "scriptureIdentityKeys": [],
         "portraitSubjectId": null,
         "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
-        "associationConfidence": "EXPLICIT_MUSEUM_CURATORIAL_INSTITUTION_OF_ROSARY",
+        "associationConfidence": "DIRECT_ROSARY_INSTITUTION_AND_SECONDARY_SAINTS_SOURCE_ATTESTED_AWAIT_USER_AUDIT",
         "sourceRights": {
           "licence": "CC0",
           "jurisdictionGate": "METADATA_FLAG_CHECKED"
@@ -19673,7 +19679,8 @@
     "2026-10-10 multi-day breadth: six new ZIP-reverified Met/CMA CC0 original paintings, including Epiphany x2, John Baptist preaching, two Marian masterworks, St Francis at Cross devotional context. Physically excluded misleading Cézanne Domaine Saint-Joseph landscape. Virgin/Child is NOT the specific Our Lady of Perpetual Help icon; Francis before Crucifix is NOT historical Station XII.",
     "2026-10-10 added Caravaggio The Denial of Saint Peter as real hashed Met source original; eligible for distinct appointed Passion Gospel narrative passages where the actual denial occurs, not all Apostle Peter observances. Crop/rights/curator final audit remain separate.",
     "Research reuse repair: NGA-505 Piero di Cosimo Visitation already acquired. NGA identifies Nicholas of Myra and Anthony Abbot as distinct visible supporting figures; preserve subject Visitation as primary, tag saints for contextual date reuse only.",
-    "High-yield physical-original batch: four official Met paintings and CMA Pittoni 1720s altarpiece (distinct identified saints Agnes, Scholastica, Benedict, Lucy, Veronica, Anthony OF PADUA), plus Catherine Alexandria direct scenes. Never confuse Catherine Alexandria with Catherine Siena, or Padua with Anthony Abbot. Composite fields are contextual. Three Met low-resolution leads excluded without upscaling."
+    "High-yield physical-original batch: four official Met paintings and CMA Pittoni 1720s altarpiece (distinct identified saints Agnes, Scholastica, Benedict, Lucy, Veronica, Anthony OF PADUA), plus Catherine Alexandria direct scenes. Never confuse Catherine Alexandria with Catherine Siena, or Padua with Anthony Abbot. Composite fields are contextual. Three Met low-resolution leads excluded without upscaling.",
+    "Reused already acquired Met-437336 rosary-institution altarpiece, whose Met curatorial entry explicitly identifies St Dominic and St Francis as separate figures. Tags add these as secondary saint contextual uses, not separate portrait acquisitions."
   ],
   "tagSchema": "AO_SACRED_ART_SEMANTIC_TAGS_V2"
 }
