@@ -1,3 +1,4 @@
+import { BEFORE_MILESTONES, AFTER_MILESTONES, ATLAS_PLACE_LABELS } from "./bible-atlas-expanded-milestones.js";
 // Curated narrative *order*: source entries are grouped by location, not ordered in time.
 // No inferred year for primeval history; no invented pin for disputed/unlocated episodes.
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -70,7 +71,29 @@ const SEQUENCE=[
 // Registered Sacred Geography site anchors or OpenBible identified ancient settlements.
 // Traditional site pin is never proof of exact event geography. Jerusalem uses a city-level
 // reference for events with different or disputed local settings.
+const SEQUENCE_ALL=SEQUENCE.flatMap(s=>{
+ const key=s[2]??s[3];
+ return [...(BEFORE_MILESTONES[key]??[]),s,...(AFTER_MILESTONES[key]??[])];
+});
 export const ATLAS_GEO=Object.freeze({
+ "carmel":{key:"carmel",lat:32.6725,lng:35.023333,kind:"mountain_region",source_record_id:"mf9b7d7",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "ein-karem":{key:"ein-karem",lat:31.764483,lng:35.159454,kind:"traditional",source_record_id:"mc853b5",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "nain":{key:"nain",lat:32.630694,lng:35.350139,kind:"settlement",source_record_id:"m0b02a7",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "bethesda":{key:"bethesda",lat:31.781389,lng:35.235833,kind:"site",source_record_id:"m48007f",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "siloam":{key:"siloam",lat:31.770556,lng:35.235,kind:"site",source_record_id:"m068207",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "caesarea-philippi":{key:"banias",lat:33.246111,lng:35.693333,kind:"city_context",source_record_id:"m518f8e",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "bethphage":{key:"bethphage",lat:31.777619,lng:35.250839,kind:"traditional",source_record_id:"m6bd6bd",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "samaria":{key:"samaria",lat:32.276111,lng:35.195,kind:"settlement",source_record_id:"me64af8",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "tarsus":{key:"tarsus",lat:36.913028,lng:34.892056,kind:"settlement",source_record_id:"mc9df1a",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "joppa":{key:"joppa",lat:32.054481,lng:34.753039,kind:"settlement",source_record_id:"mcb49f3",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "caesarea-maritima":{key:"caesarea-maritima",lat:32.5,lng:34.891667,kind:"settlement",source_record_id:"m11da12",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "lystra":{key:"lystra",lat:37.6017,lng:32.3384,kind:"settlement",source_record_id:"ma6f6dc",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "philippi":{key:"philippi",lat:41.012072,lng:24.284576,kind:"settlement",source_record_id:"mec5201",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "thessalonica":{key:"thessalonica",lat:40.637771,lng:22.945767,kind:"settlement",source_record_id:"mdadcc0",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "athens":{key:"athens",lat:37.971851,lng:23.726738,kind:"settlement",source_record_id:"md70ac9",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "ephesus":{key:"ephesus",lat:37.939125,lng:27.3407,kind:"settlement",source_record_id:"m84025e",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "troas":{key:"troas",lat:39.751944,lng:26.158611,kind:"settlement",source_record_id:"mf8cbc7",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
+ "miletus":{key:"miletus",lat:37.531111,lng:27.275556,kind:"settlement",source_record_id:"mcf7752",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
  shiloh:{key:"shiloh",lat:32.055703,lng:35.289536,kind:"settlement",url:"https://www.openbible.info/geo/modern/m12f296/khirbet-seilun"},
  nineveh:{key:"nineveh",lat:36.3594,lng:43.1528,kind:"settlement",url:"https://www.openbible.info/geo/modern/m52bd87/nineveh"},
  babylon:{key:"babylon",lat:32.543333,lng:44.422222,kind:"settlement",url:"https://www.openbible.info/geo/modern/md561de/babylon"},
@@ -80,10 +103,10 @@ export const ATLAS_GEO=Object.freeze({
  "jerusalem-temple":{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"city_context",url:"https://www.wikidata.org/wiki/Q187702"},
  capernaum:{key:"capernaum",lat:32.880999,lng:35.575371,kind:"settlement",url:"https://www.octagonproject.org/news/the-modern-church-at-capernaum"},
  transfiguration:{key:"tabor",lat:32.68627,lng:35.39242,kind:"traditional",url:"https://www.openstreetmap.org/way/255793567"},
- jericho:{key:"jericho",lat:31.871719,lng:35.444564,kind:"settlement",url:"https://www.openbible.info/geo/modern/m95349d/tell-es-sultan"},
- olives:{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"city_context",url:"https://www.wikidata.org/wiki/Q187702"},
+ jericho:{key:"jericho",lat:31.871719,lng:35.444564,kind:"city_context",url:"https://www.openbible.info/geo/modern/m95349d/tell-es-sultan"},
+ olives:{key:"olives",lat:31.777946,lng:35.245686,kind:"mountain_region",source_record_id:"me461ba",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
  cenacle:{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"city_context",url:"https://www.wikidata.org/wiki/Q187702"},
- gethsemane:{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"city_context",url:"https://www.wikidata.org/wiki/Q187702"},
+ gethsemane:{key:"gethsemane",lat:31.779419,lng:35.239425,kind:"traditional",source_record_id:"m835caa",url:"https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/modern.jsonl"},
  "jerusalem-trial":{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"city_context",url:"https://www.wikidata.org/wiki/Q187702"},
  golgotha:{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"traditional",url:"https://www.wikidata.org/wiki/Q187702"},
  "christ-tomb":{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"traditional",url:"https://www.wikidata.org/wiki/Q187702"},
@@ -93,14 +116,16 @@ export const ATLAS_GEO=Object.freeze({
  rome:{key:"rome",lat:41.8922,lng:12.4852,kind:"settlement",url:"https://www.openbible.info/geo/modern/mb083bc/rome"}
 });
 export function buildBibleAtlas(records){
- const byId=new Map((Array.isArray(records)?records:[]).map(row=>[row.id,row]));
- return SEQUENCE.map((s,index)=>{
+ const extraPlaces=Object.entries(ATLAS_PLACE_LABELS).map(([id,titles])=>({id,title_en:titles[0],title_fr:titles[1]}));
+ const byId=new Map([...((Array.isArray(records)?records:[])),...extraPlaces].map(row=>[row.id,row]));
+ return SEQUENCE_ALL.map((s,index)=>{
   const [era,placeId,eventId,en,fr,passage]=s,place=byId.get(placeId),event=place?.events?.find(e=>e.id===eventId);
   if(placeId&&!place)throw new Error("Atlas missing place "+placeId);
   if(eventId&&!event)throw new Error("Atlas missing episode "+eventId);
   return Object.freeze({index,era,placeId,geo:ATLAS_GEO[placeId]??null,title_en:event?.title_en??en,title_fr:event?.title_fr??fr,
    reference:event?.reference??passage,place_en:place?.title_en??"",place_fr:place?.title_fr??"",
-   summary_en:place?.summary_en??ERAS[era][2],summary_fr:place?.summary_fr??ERAS[era][3]});
+   summary_en:s[6]??(event?place?.summary_en:(en?en+". "+passage+".":ERAS[era][2])),
+   summary_fr:s[7]??(event?place?.summary_fr:(fr?fr+". "+passage+".":ERAS[era][3]))});
  });
 }
 export function atlasMapItems(stops,index){
