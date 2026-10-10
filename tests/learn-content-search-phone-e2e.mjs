@@ -60,6 +60,9 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_LATIN_COURSE_V1?.status?.()?.screen),"lesson");
  await returnToHub(()=>globalThis.AO_LATIN_COURSE_V1?.close?.());
  await search.fill("");
+ // After Latin the suspended parent is correctly its Latin subject, not the root.
+ await hub.locator("[data-ao-learn-back]").tap();
+ await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.()?.family,null,{timeout:10000});
  await hub.locator("[data-ao-learn-questions]").tap();
  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.()?.family==="questions",null,{timeout:10000});
  assert.equal(await hub.locator('[data-ao-learn-module="learn.sexual_ethics"]').count(),1);
