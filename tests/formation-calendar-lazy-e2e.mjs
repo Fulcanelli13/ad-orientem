@@ -480,8 +480,8 @@ try{
  const latinBefore=await page.evaluate(()=>globalThis.AO_LATIN_COURSE_V2.status());
  await page.locator("[data-l2-open-glossary]").tap();
  await page.waitForFunction(()=>globalThis.AO_GLOSSARY_V1?.status?.()?.view==="category",null,{timeout:18000});
- const latinRoot=await page.evaluate(()=>document.querySelector("#ao-latin-course-root")||document.querySelector("[data-ao-latin-course-version]"));
- assert.ok(latinRoot!==null,"Latin module disappeared under its contextual Glossary");
+ const latinRoot=await page.evaluate(()=>Boolean(document.getElementById("ao-latin-course-root")));
+ assert.equal(latinRoot,true,"Latin module disappeared under its contextual Glossary");
  await page.evaluate(()=>globalThis.AO_GLOSSARY_V1.close(false));
  const latinAfter=await page.evaluate(()=>globalThis.AO_LATIN_COURSE_V2.status());
  assert.equal(latinAfter.lesson,latinBefore.lesson,"Glossary return changed Latin lesson");
