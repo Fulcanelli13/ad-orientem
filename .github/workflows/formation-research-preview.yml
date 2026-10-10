@@ -24,6 +24,8 @@ on:
       - 'tests/apologetics-a2-25-source-audit.mjs'
       - 'data/learn/apologetics-a3-10-source-audit-2026-10-10.v1.json'
       - 'tests/apologetics-a3-10-source-audit.mjs'
+      - 'data/learn/formation-priority-original-opponents-source-amendment-2026-10-10.v1.json'
+      - 'tests/formation-priority-original-opponents.mjs'
       - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json'
@@ -194,6 +196,8 @@ jobs:
         run: node tests/apologetics-a2-25-source-audit.mjs
       - name: Verify final Apologetics A3 owners and original-source draft release locks
         run: node tests/apologetics-a3-10-source-audit.mjs
+      - name: Verify seven authentic opposing primary sources and historical research evidence
+        run: node tests/formation-priority-original-opponents.mjs
       - name: Validate all 53 canonical research-linked bilingual dossiers
         run: node tests/formation-canonical-synthesis-batch3.mjs
       - name: Validate new source-first Catholic foundation articles for previously unlinked owners
