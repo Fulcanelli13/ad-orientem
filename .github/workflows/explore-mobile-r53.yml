@@ -8,6 +8,7 @@ on:
       - "tests/explore-touch-navigation-r53.mjs"
       - "tests/explore-surface.mjs"
       - "tests/explore-reachability-phone.mjs"
+      - "tests/explore-layout-phone.mjs"
       - "tests/preliminary-world-mass-map-r49.mjs"
       - ".github/workflows/explore-mobile-r53.yml"
   workflow_dispatch:
@@ -53,3 +54,5 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Real phone Explore journey and scroll safety
         run: node tests/explore-reachability-phone.mjs
+      - name: Multi-width Explore layout audit
+        run: node tests/explore-layout-phone.mjs
