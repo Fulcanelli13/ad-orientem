@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {captureModuleOrigin,returnToObservedOrigin} from "../src/app/module-return.js";
 const calls=[];
-let surface="home",parentStatus={open:false,child:null};
+let surface="home",parentStatus={open:false,child:null,externalReturn:null};
 const win={
  AO_APP_SHELL_V1:{getActive:()=>surface,navigate:async(target)=>{calls.push("navigate:"+target);return {ok:true,surface:target}}},
  AO_LEARN_APP_V1:{status:()=>parentStatus,open:()=>{calls.push("restore:learn");return true}},
@@ -29,6 +29,12 @@ const formed=captureModuleOrigin(win,"learn");
 assert.equal(formed.parentVisited,true,"suspended Formation family should count as a genuinely visited parent");
 exit(formed);await flush();
 assert.deepEqual(calls.splice(0),["close","restore:learn"],"return should restore suspended family without resetting its state");
+parentStatus={open:false,child:"learn.rites.sick",externalReturn:{surface:"pray",route:"pray.dying_companion"}};
+const bedside=captureModuleOrigin(win,"learn");
+exit(bedside);await flush();
+assert.deepEqual(calls.splice(0),["close"],
+  "explicit Prayer-to-Formation-to-Prayer return must remain owned by the parent monitor");
+parentStatus={open:false,child:"learn.sexual_ethics",externalReturn:null};
 surface="pray";parentStatus={open:true};
 exit(captureModuleOrigin(win,"pray"));await flush();
 assert.deepEqual(calls.splice(0),["close","restore:pray"]);
