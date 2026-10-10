@@ -1442,6 +1442,23 @@ function mergeMissing(primary, fallback) {
     }
     return { map, order };
 }
+// The historical English Commons label their Mass-only Collect
+// [Oratio] (ad missam). parseSections deliberately canonicalizes that
+// higher-priority source heading to "Oratio". The normalized 1962 English
+// layer, however, requests "Oratio ad missam" explicitly. Reconnect only
+// source paths independently verified to provide that exact heading.
+const MASS_COLLECT_AD_MISSAM_DONORS = new Set([
+    "Commune/C2", "Commune/C5", "Commune/C5b",
+    "Commune/C6-1", "Commune/C6b", "Commune/C11"
+]);
+function canonicalReferencedProperSection(path, requested, parsed) {
+    if (parsed.map.has(requested)) return requested;
+    if (requested === "Oratio ad missam"
+      && MASS_COLLECT_AD_MISSAM_DONORS.has(path)
+      && parsed.map.has("Oratio"))
+        return "Oratio";
+    return requested;
+}
 function parseReference(line, defaultSection) {
     const value = String(line || "");
     if (!value.startsWith("@"))
@@ -2155,15 +2172,29 @@ class ProperResolver {
                 result.push(line);
                 continue;
             }
-            const targetPath = reference.path || path;
-            const targetSection = reference.section || section;
+            // Original 1962 Latin reference uses Commune/C2p for St Paul's
+            // January 15 Communion; old English Sancti/01-15 points instead
+            // at a missing C2ap file. C2ap's own pinned Latin source delegates
+            // to C2p. Restore only this exact EN antiphon donor identity.
+            const latinMatchedCommunion = language === "en" && path === "Sancti/01-15"
+              && section === "Communio" && reference.path === "Commune/C2ap"
+              && (!reference.section || reference.section === "Communio");
+            const targetPath = latinMatchedCommunion ? "Commune/C2p" : reference.path || path;
+            const rawSection = reference.section || section;
             const targetLayer = reference.path ? "upstream" : layer;
+            const targetParsed = reference.path ? await this.loadUpstreamParsed(targetPath, language, diagnostic) : parsed;
+            const targetSection = canonicalReferencedProperSection(targetPath, rawSection, targetParsed);
             const visitKey = `${targetLayer}|${language}|${targetPath}|${targetSection}|${reference.subs}`;
             if (visited.has(visitKey))
                 throw new Error(`Reference cycle detected: ${visitKey}`);
             const next = new Set(visited);
             next.add(visitKey);
-            const targetParsed = reference.path ? await this.loadUpstreamParsed(targetPath, language, diagnostic) : parsed;
+            if (targetSection !== rawSection || latinMatchedCommunion)
+                diagnostic?.structuralInheritances?.push({
+                    language, path, section, from: reference.path || path,
+                    requested: rawSection, to: targetPath, resolvedSection: targetSection,
+                    evidence: "pinned-1962-latin-and-canonical-ad-missam-heading"
+                });
             let nested = await this.resolveSection(targetParsed, targetSection, targetPath, language, targetLayer, diagnostic, next, depth + 1);
             nested = applySubstitutions(nested, reference.subs, diagnostic, `${targetPath}:${targetSection}`);
             diagnostic.referencesResolved.push({ from: `${layer}:${path}:${section}`, to: `${targetLayer}:${targetPath}:${targetSection}`, substitution: reference.subs || null });
