@@ -1,3 +1,4 @@
+import { captureModuleOrigin, returnToObservedOrigin } from "../app/module-return.js";
 import {
   CSE_QUESTIONS,
   CSE_QUESTION_MAP,
@@ -286,8 +287,15 @@ export function createSexualEthicsRuntime(win=globalThis){
     }
     return true;
   }
+  let entryOrigin=null;
+  const visitedFrames=[];
+  function rememberView(){
+    visitedFrames.push({view:state.view,familyId:state.familyId,dossierId:state.dossierId,
+      sectionId:state.sectionId,questionId:state.questionId,query:state.query,returnView:state.returnView});
+  }
   function open(opts={}){
     if(!CSE_VALIDATION.ok){try{win?.console?.error?.("Catholic Sexual Ethics corpus invalid",CSE_VALIDATION.errors);}catch{}return false;}
+    entryOrigin=captureModuleOrigin(win,"learn");visitedFrames.length=0;
     state.query="";state.reveal=false;
     if(opts.questionId&&CSE_PUBLIC_QUESTION_MAP[publicQuestionId(opts.questionId)]){
       const item=CSE_PUBLIC_QUESTION_MAP[publicQuestionId(opts.questionId)];
@@ -302,18 +310,18 @@ export function createSexualEthicsRuntime(win=globalThis){
   }
   function openFamily(id){
     if(!CSE_FAMILY_MAP[id])return false;
-    state.familyId=id;state.dossierId=null;state.questionId=null;state.view="family";
+    rememberView();state.familyId=id;state.dossierId=null;state.questionId=null;state.view="family";
     state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;
   }
   function openDossier(id){
     const dossier=CSE_CANONICAL_DOSSIER_MAP[id];if(!dossier)return false;
-    state.familyId=dossier.family;state.dossierId=dossier.id;state.questionId=null;state.view="dossier";
+    rememberView();state.familyId=dossier.family;state.dossierId=dossier.id;state.questionId=null;state.view="dossier";
     state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;
   }
-  function openSection(id){if(!CSE_SECTION_MAP[id])return false;state.sectionId=id;state.questionId=null;state.view="section";state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;}
+  function openSection(id){if(!CSE_SECTION_MAP[id])return false;rememberView();state.sectionId=id;state.questionId=null;state.view="section";state.reveal=false;state.query="";render();root()?.scrollTo?.(0,0);return true;}
   function openQuestion(id){
     const item=CSE_PUBLIC_QUESTION_MAP[publicQuestionId(id)];if(!item)return false;
-    const fromSearch=Boolean(state.query);
+    rememberView();const fromSearch=Boolean(state.query);
     state.returnView=fromSearch?"sections":state.view==="section"?"section":"dossier";
     state.questionId=item.id;state.sectionId=item.section;state.dossierId=CSE_QUESTION_OWNER_MAP[item.id];
     state.familyId=CSE_CANONICAL_DOSSIER_MAP[state.dossierId]?.family||null;
@@ -360,16 +368,15 @@ export function createSexualEthicsRuntime(win=globalThis){
   }
 
   function back(){
-    if(state.view==="question"){
-      state.questionId=null;state.reveal=false;
-      state.view=state.returnView==="sections"?"sections":state.returnView==="section"?"section":"dossier";
-      render();return true;
+    if(visitedFrames.length){
+      Object.assign(state,visitedFrames.pop(),{reveal:false});
+      render();root()?.scrollTo?.(0,0);return true;
     }
-    if(state.view==="dossier"){state.view="family";state.dossierId=null;render();return true;}
-    if(state.view==="family"||state.view==="section"){state.view="sections";state.familyId=null;state.sectionId=null;render();return true;}
     return close(true);
   }
-  function close(returnToLearn=false){const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoSexualEthicsOpen");state.view="sections";state.familyId=null;state.dossierId=null;state.sectionId=null;state.questionId=null;state.query="";state.reveal=false;if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());return true;}
+  function close(returnToLearn=false){const node=root();try{node?.querySelector?.(":focus")?.blur?.();}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoSexualEthicsOpen");state.view="sections";state.familyId=null;state.dossierId=null;state.sectionId=null;state.questionId=null;state.query="";state.reveal=false;visitedFrames.length=0;if(returnToLearn)return returnToObservedOrigin(win,entryOrigin,{
+      close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.open?.()
+    });return true;}
   function status(){return Object.freeze({version:SEXUAL_ETHICS_VERSION,installed:true,open:Boolean(root()),route:SEXUAL_ETHICS_ROUTE,view:state.view,sectionId:state.sectionId,questionId:state.questionId,questions:CSE_QUESTIONS.length,publicQuestions:CSE_PUBLIC_QUESTIONS.length,dossiers:CSE_CANONICAL_DOSSIERS.length,families:CSE_CANONICAL_FAMILIES.length,sections:CSE_SECTIONS.length,validation:CSE_VALIDATION});}
   return Object.freeze({version:SEXUAL_ETHICS_VERSION,open,openFamily,openDossier,openSection,openQuestion,handoffToApostolate,close,back,render,status});
 }
