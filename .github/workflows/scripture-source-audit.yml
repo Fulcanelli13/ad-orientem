@@ -15,11 +15,16 @@ on:
       - 'tests/scripture-remaining-psalms.mjs'
       - '.github/workflows/scripture-source-audit.yml'
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   source-candidates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: true
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -68,3 +73,17 @@ jobs:
           name: scripture-historical-candidates-review-only
           path: artifacts/scripture-candidates/
           retention-days: 7
+      - name: Materialize all 219 source-identifed book packs (review not certified)
+        if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feat/scripture-source-reading-restoration-20261010'
+        run: node tools/scripture/publish-source-transcriptions.mjs artifacts/scripture-candidates data/scripture/source-transcriptions
+      - name: Commit on-demand Scripture source transcriptions
+        if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feat/scripture-source-reading-restoration-20261010'
+        env:
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/scripture/source-transcriptions/
+          git diff --cached --quiet && exit 0
+          git commit -m "Build source-identified per-book Catholic Bible texts (edition review pending)"
+          git push origin "HEAD:${BRANCH}"
