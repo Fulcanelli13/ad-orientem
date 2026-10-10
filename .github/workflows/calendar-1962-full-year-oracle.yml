@@ -61,7 +61,7 @@ jobs:
       - name: Audit first 100 distinct pinned 1962 Mass Proper source identities
         run: node tools/calendar/proper-source-batch-100.mjs
       - name: Probe printed-1962 Missal July facsimile transcription against actual Latin Proper
-        run: node tools/calendar/printed-1962-july-facsimile-b01.mjs
+        run: node tools/calendar/printed-1962-july-facsimile-b01.mjs --strict
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
