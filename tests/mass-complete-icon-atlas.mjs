@@ -25,7 +25,7 @@ assert.ok(assets.some(a=>a.path==="assets/active/mass-v46/sit.svg"&&a.available)
 assert.ok(assets.some(a=>a.path==="assets/active/mass-v46/stand.svg"&&a.available));
 assert.ok(assets.some(a=>a.group==="Unapproved proposals"));
 for(const marker of ["ao-icon-assignment-review-v1","data-primary","data-alternate",
- "Same actor","All records with same actor","data-role","Export review JSON","Import review JSON"]){
+ "Same actor","All records with same actor","id=\"atlas-data\"","Export review JSON","Import review JSON"]){
  // Export reviewer UI must remain functional, not a static image gallery.
  assert.ok(html.toLowerCase().includes(marker.toLowerCase()),marker+" missing");
 }
