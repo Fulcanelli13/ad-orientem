@@ -51,6 +51,11 @@ function installStyle(win){
     ".aoExploreLensTabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:14px 16px 4px}",
     ".aoExploreLensTabs button{min-width:0;border:1px solid rgba(217,197,154,.16);background:#0e151e;color:#c9bea8;border-radius:var(--ao-control-radius,11px);padding:10px 7px;font:650 var(--ao-type-ui-sm,12px)/1.15 var(--ao-font-ui,system-ui,sans-serif);display:grid;gap:4px;text-align:center}",
     ".aoExploreLensTabs button small{font-size:var(--ao-type-ui-xs,11px);color:#817765}.aoExploreLensTabs button.active{background:#d9c59a;color:#080c12;border-color:#d9c59a}.aoExploreLensTabs button.active small{color:#493f30}",
+    ".aoBiblePlacesCompact{margin:8px var(--ao-page-gutter,14px) 13px;border:1px solid rgba(217,197,154,.2);border-radius:13px;background:rgba(217,197,154,.025);overflow:hidden}",
+    ".aoBiblePlacesToggle{width:100%;min-height:54px;padding:11px 14px;border:0;background:transparent;color:#e9dfcd;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;cursor:pointer}.aoBiblePlacesToggle>span:first-child{display:grid;gap:3px}.aoBiblePlacesToggle strong{font:600 17px var(--ao-font-display,Georgia,serif)}.aoBiblePlacesToggle small{color:#afa38d;font:12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesToggle>span:last-child{color:#bba57b;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}",
+    ".aoBiblePlacesGroups{padding:4px 13px 12px;display:grid;gap:11px}.aoBiblePlacesGroup>small{display:block;margin-bottom:5px;color:#bba57b;font:650 10px var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase}.aoBiblePlacesGroup>div{display:flex;flex-wrap:wrap;gap:6px}.aoBiblePlacesGroup button{min-height:40px;padding:7px 10px;border:1px solid rgba(217,197,154,.16);border-radius:999px;background:#111b26;color:#dacfb8;cursor:pointer;font:12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesGroup button.active{background:#d9c59a;color:#080c12}",
+    ".aoBiblePlacesDetail{padding:12px 15px 16px;border-top:1px solid rgba(217,197,154,.16)}.aoBiblePlacesDetail h3{font:600 20px/1.2 var(--ao-font-display,Georgia,serif);margin:0 0 9px}.aoBiblePlacesDetail p{font:14px/1.6 var(--ao-font-body,Georgia,serif);color:#d1c4aa;margin:0 0 12px}.aoBiblePlacesDetail dl{display:grid;gap:7px;margin:0 0 14px}.aoBiblePlacesDetail dl>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:9px}.aoBiblePlacesDetail dt{color:#9f927d;font:11px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesDetail dd{margin:0;color:#e4d8bf;font:12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesRead{display:flex;flex-wrap:wrap;gap:8px}.aoBiblePlacesRead button{border:1px solid rgba(217,197,154,.35);border-radius:999px;background:#19232b;color:#e9d7b5;min-height:44px;padding:10px 12px;cursor:pointer;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesHint{margin:0;padding:0 13px 13px;color:#a99d88;font:12px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
+    ".aoBiblePlacesCompact button:focus-visible{outline:2px solid #e5cb92;outline-offset:2px}",
     ".aoCustomsAtlasPanel{margin:12px 16px 6px;padding:17px;border:1px solid rgba(217,197,154,.22);border-radius:16px;background:linear-gradient(145deg,rgba(217,197,154,.06),rgba(10,18,27,.6))}",
     ".aoCustomsAtlasHeading{display:flex;align-items:end;justify-content:space-between;gap:14px}.aoCustomsAtlasHeading small{font:650 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:#bba47a}.aoCustomsAtlasHeading h2{margin:5px 0 0;font:600 25px/1.1 var(--ao-font-display,Georgia,serif);color:#eadfcb}.aoCustomsAtlasHeading p{max-width:390px;margin:0;color:#ad9f8c;font:13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoCustomsAtlasTopics{margin-top:14px;max-width:440px}.aoCustomsAtlasDiscovery{margin-top:12px;padding-top:10px;border-top:1px solid rgba(217,197,154,.14)}.aoCustomsAtlasDiscovery>summary{cursor:pointer;min-height:36px;color:#d9c59a;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);display:list-item;list-style-position:inside}.aoCustomsAtlasDiscovery>summary:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}",
@@ -117,6 +122,8 @@ export function createFindOwner(win=globalThis){
     heritageCategories:[...HERITAGE_CATEGORIES],
     highlightCustomId:null,
     expandPlace:false,
+    bibleOpen:false,
+    bibleSelectedId:null,
     atlasFamily:"ANY",
     atlasArea:"ANY",
     atlasPeriod:"ANY",
@@ -241,6 +248,7 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       counts:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
       customCards,
+      biblePlaces:dataset?.biblePlaces?.entries??[],
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:data.directory?.loadedProviders??[],
       unavailableProviders:data.directory?.unavailableProviders??[],
@@ -322,6 +330,7 @@ export function createFindOwner(win=globalThis){
   function close(){
     ++paintToken;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
+    state.bibleOpen=false;state.bibleSelectedId=null;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
@@ -405,6 +414,19 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-explore-expand-place]")){
       event.preventDefault?.();state.expandPlace=true;void paint();return;
+    }
+    const bibleToggle=target?.closest?.("[data-bible-toggle]");
+    if(bibleToggle&&state.lens==="heritage"){
+      event.preventDefault?.();
+      state.bibleOpen=!state.bibleOpen;
+      if(!state.bibleOpen)state.bibleSelectedId=null;
+      void paint();return;
+    }
+    const biblePlace=target?.closest?.("[data-bible-place]");
+    if(biblePlace&&state.lens==="heritage"&&state.bibleOpen){
+      event.preventDefault?.();
+      state.bibleSelectedId=biblePlace.dataset.biblePlace||null;
+      void paint();return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
@@ -528,6 +550,8 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       view:state.view,
       selectedPlaceId:state.selectedPlaceId,
+      bibleOpen:state.bibleOpen,
+      bibleSelectedId:state.bibleSelectedId,
       counts:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
       unavailableProviders:dataset?.directory?.unavailableProviders??[],
