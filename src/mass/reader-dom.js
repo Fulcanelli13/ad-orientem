@@ -256,6 +256,34 @@ const SHELL_STYLE = `
 .ao-ritual-cross-symbol.ao-ritual-trigger-live{animation:aoRitualCross 1.25s ease-out both}
 @keyframes aoRitualCross{0%{transform:scale(.92);filter:brightness(.8)}35%{transform:scale(1.28);filter:brightness(1.35)}100%{transform:scale(1.08);filter:none}}
 .ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
+/* Gloria/Credo: one source cue, one faithful display row. The mini-icons
+   belong on the faithful side, not beside the priest's transient actions. */
+.ao-reader-paragraph[data-faithful-cues="true"]{position:relative;padding-left:67px}
+.ao-faithful-paragraph-icons{position:absolute;top:2px;left:2px;display:flex;gap:2px;align-items:flex-start}
+.ao-faithful-icon-edit{appearance:none;display:grid;place-items:center;
+  width:32px;height:36px;padding:3px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 18%,transparent);
+  border-radius:8px;background:color-mix(in srgb,var(--ao-mass-panel) 93%,transparent);
+  color:var(--ao-mass-accent-text);cursor:pointer}
+.ao-faithful-icon-edit .ao-icon-mask{width:24px;height:24px;flex:0 0 24px}
+.ao-faithful-icon-edit[data-active="true"]{border-color:var(--ao-mass-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--ao-mass-accent) 22%,transparent)}
+.ao-faithful-icon-edit:focus-visible,.ao-state-cell[data-faithful-icon-open]:focus-visible{
+  outline:2px solid var(--ao-mass-accent-text);outline-offset:2px}
+.ao-state-cell[data-faithful-icon-open]{cursor:pointer}
+.ao-faithful-icon-picker{position:absolute;z-index:38;left:50%;bottom:max(8px,env(safe-area-inset-bottom));
+  transform:translateX(-50%);width:min(370px,calc(100% - 24px));
+  max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain;
+  padding:14px 16px 17px;background:var(--ao-mass-panel);border:1px solid var(--ao-mass-accent);
+  border-radius:14px;box-shadow:0 16px 44px rgba(0,0,0,.63);color:var(--ao-text)}
+.ao-faithful-icon-picker[hidden]{display:none}
+.ao-faithful-icon-picker-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ao-faithful-icon-picker h3{margin:0;font:600 17px/1.4 var(--ao-missal-display)}
+.ao-faithful-icon-picker label{display:grid;gap:5px;margin-top:10px;font:400 14px/1.4 var(--ao-missal-face)}
+.ao-faithful-icon-picker select{width:100%;min-height:44px;background:#10151c;
+  color:var(--ao-text);border:1px solid color-mix(in srgb,var(--ao-mass-accent) 26%,transparent);
+  border-radius:8px;padding:8px;font:500 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-faithful-icon-picker small{display:block;margin-top:9px;color:var(--ao-muted);font:italic 12px/1.5 var(--ao-missal-face)}
+.ao-faithful-icon-picker-header button{min-width:44px;min-height:44px;background:transparent;
+  color:var(--ao-text);border:0;font-size:22px;cursor:pointer}
 .ao-reader-paragraph[data-translate-toggle="true"]:focus-visible{outline:1px solid color-mix(in srgb,var(--ao-mass-accent) 70%,transparent);outline-offset:4px}
 .ao-line-primary{display:block}
 .ao-line-secondary{
@@ -959,7 +987,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   </header>
 
   <div class="ao-state-ribbon" aria-live="polite">
-    <div class="ao-state-cell" data-side="faithful" data-channel="posture">
+    <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span></span>
     </div>
@@ -1003,6 +1031,34 @@ export function buildReaderShellMarkup(prepared = {}) {
     <button class="ao-mass-prefs-more" type="button" data-reader-glossary>Terms & rubrics</button><button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
   </aside>
 
+  <aside class="ao-faithful-icon-picker" data-role="faithful-icon-picker" role="dialog" aria-label="Customize faithful cue" hidden>
+    <div class="ao-faithful-icon-picker-header">
+      <h3>My gesture at this passage</h3>
+      <button type="button" data-faithful-picker-close aria-label="Close customization">×</button>
+    </div>
+    <small data-role="faithful-picker-cue"></small>
+    <label>Posture
+      <select data-faithful-picker-posture aria-label="My posture">
+        <option value="DEFAULT">Follow the customary guide</option>
+        <option value="STAND">Stand</option><option value="SIT">Sit</option><option value="KNEEL">Kneel</option>
+      </select>
+    </label>
+    <label>Gesture
+      <select data-faithful-picker-gesture aria-label="My gesture">
+        <option value="DEFAULT">Follow the customary guide</option><option value="NONE">No gesture</option>
+        <option value="HEAD_BOW">Bow head</option><option value="PROFOUND_BOW">Profound bow</option>
+        <option value="GENUFLECT">Genuflect</option><option value="KNEEL">Kneel</option>
+        <option value="SIGN_OF_CROSS">Sign of the Cross</option>
+      </select>
+    </label>
+    <label>When priest uses the sedilia
+      <select data-faithful-picker-seating aria-label="Mirror priest sitting and standing">
+        <option value="true">Mirror sitting and standing (customary)</option>
+        <option value="false">Keep source standing unless I choose otherwise</option>
+      </select>
+    </label>
+    <small>This changes your personal cues, not the priest's movements or the Mass rubrics. Exact seating timing varies by celebration.</small>
+  </aside>
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
     <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
       <div class="ao-rail-item" data-channel="posture" data-active="true"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
@@ -1113,8 +1169,7 @@ export function createDonorRichMaskLoader(fetchAsset=globalThis.fetch?.bind(glob
 
 const loadDonorRichMask=createDonorRichMaskLoader();
 
-function applyIcon(root, slot, key, iconResolver){
-  const el=root.querySelector(`[data-icon-slot="${slot}"]`);
+function applyIconNode(el,key,iconResolver){
   if(!el)return;
   const id=String(key??"").trim();
   const src=id && typeof iconResolver==="function" ? iconResolver(id) : null;
@@ -1154,6 +1209,9 @@ function applyIcon(root, slot, key, iconResolver){
   entry.promise.then(uri=>{
     if(uri && el.__aoIconIdentity===identity)showMask(uri);
   });
+}
+function applyIcon(root,slot,key,iconResolver){
+  applyIconNode(root.querySelector(`[data-icon-slot="${slot}"]`),key,iconResolver);
 }
 
 export function toggleReaderTranslation(node){
