@@ -1,4 +1,5 @@
 import { filterDirectoryRecords } from "./data-service.js";
+import { createScrollTapGuard } from "../app/scroll-tap-guard.js";
 import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49 } from "./preliminary-directory-r49.js";
 import { loadExploreDataset } from "./explore-data-service.js";
 import {
@@ -108,6 +109,10 @@ export function createFindOwner(win=globalThis){
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
+  const queryByLens=new Map();
+  const scrollGuard=createScrollTapGuard(win?.document,{
+    contains:target=>Boolean(getRoot(win)?.contains?.(target)),
+  });
   const state={
     lens:"heritage",
     view:"map",
@@ -395,6 +400,10 @@ export function createFindOwner(win=globalThis){
     const previousLens=state.lens;
     if(key==="view")state.view=value==="map"?"map":"list";
     else if(key==="lens"&&(value==="heritage"||EXPLORE_LENSES.includes(value))){
+      if(value!==previousLens){
+        queryByLens.set(previousLens,state.query);
+        state.query=queryByLens.get(value)??"";
+      }
       state.lens=value;state.calendarKey=null;
       if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(Object.hasOwn(state,key))state[key]=value;
@@ -438,6 +447,9 @@ export function createFindOwner(win=globalThis){
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
+    // A category/detail Back tap returns to the parent map; only Back from
+    // Sacred Geography itself exits the Explore domain.
+    // The swipe guard runs in capture phase before this handler.
     const retry=target?.closest?.("[data-find-retry]");
     if(retry){
       event.preventDefault?.();
@@ -456,7 +468,13 @@ export function createFindOwner(win=globalThis){
       state.atlasFamily="ANY";state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
       state.selectedId=null;state.selectedPlaceId=null;void paint();return;
     }
-    if(target?.closest?.("[data-find-close]")){event.preventDefault?.();close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return}
+    if(target?.closest?.("[data-find-close]")){
+      event.preventDefault?.();
+      if(state.selectedPlaceId){state.selectedPlaceId=null;state.expandPlace=false;void paint();return;}
+      if(state.selectedId){state.selectedId=null;void paint();return;}
+      if(state.lens!=="heritage"){setFilter("lens","heritage");return;}
+      close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return;
+    }
     // Backdrops may be clicked to dismiss, but clicks *inside* the sheet
     // must reach their own Place, Calendar, novena and source-link actions.
     if(target?.closest?.("button[data-find-close-detail]")||
@@ -565,8 +583,9 @@ export function createFindOwner(win=globalThis){
     if(!openState||event?.key!=="Escape")return;
     if(state.selectedPlaceId){event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint();return;}
     if(state.selectedId){event.preventDefault?.();state.selectedId=null;void paint();return;}
-    const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open]");
-    if(disclosure){event.preventDefault?.();disclosure.open=false;}
+    const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open],.aoExploreSectionSwitcher[open]");
+    if(disclosure){event.preventDefault?.();disclosure.open=false;return;}
+    if(state.lens!=="heritage"){event.preventDefault?.();setFilter("lens","heritage");}
   }
 
   function onInput(event){
@@ -612,6 +631,7 @@ export function createFindOwner(win=globalThis){
       win?.document?.removeEventListener?.("input",onInput,true);
       win?.document?.removeEventListener?.("change",onChange,true);
       win?.document?.removeEventListener?.("keydown",onKeyDown,true);
+      scrollGuard.dispose();
       getRoot(win)?.remove?.();
     }
   });
