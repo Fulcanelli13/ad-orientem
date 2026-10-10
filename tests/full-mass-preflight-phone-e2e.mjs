@@ -57,6 +57,9 @@ try{
  }));
  assert.deepEqual(observed.precedingRites,["ASPERGES"]);
  await page.evaluate(()=>{__kind="REQUIEM";__full.refresh()});
+ assert.equal(await page.locator('[data-ao-special-phase="req"]').count(),1);
+ assert.equal(await page.locator('[data-ao-special-phase="absolution"]').count(),0,
+  "Requiem UI must not invent an Absolution before it is selected");
  assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').count(),1);
  assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').isChecked(),false);
  await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').check();
@@ -64,6 +67,8 @@ try{
   precedingRites:[],followingActions:[],
  }));
  assert.ok(funeral.followingActions.includes("REQUIEM_ABSOLUTION"));
+ assert.equal(await page.locator('[data-ao-special-phase="absolution"]').count(),1,
+  "Requiem UI must reflect the explicitly selected Absolution");
  await page.evaluate(()=>{__kind="CALENDAR";__full.refresh()});
  assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').count(),0,
   "Requiem branch must not survive a new actual celebration");
@@ -101,8 +106,12 @@ try{
  assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/Requiem/);
  assert.match(await page.locator("[data-full-mass-form-title]").innerText(),/Comment/);
  await page.evaluate(()=>{__kind="VOTIVE";__full.refresh()});
+ assert.equal(await page.locator('[data-ao-special-phase="votive-proper"]').count(),1);
  assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/votive/i);
  await page.evaluate(()=>{__kind="NUPTIAL";__full.refresh()});
+ assert.deepEqual(await page.locator("[data-full-mass-special] [data-ao-special-phase]").evaluateAll(
+   nodes=>nodes.map(node=>node.dataset.aoSpecialPhase)),
+   ["nuptial-mass","nuptial-pater","nuptial-final"]);
  assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/nuptiale/i);
  await page.evaluate(()=>{__kind="CALENDAR";__formDate="2026-10-11";__full.refresh()});
  assert.equal(await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').isChecked(),true,
@@ -128,6 +137,8 @@ try{
    inputsDisabled:[...document.querySelectorAll("[data-full-mass-form]")].every(x=>x.disabled),
  }));
  assert.equal(gf.kind,"GOOD_FRIDAY","Non-Mass rite not classified: "+JSON.stringify(gf));
+ assert.equal(await page.locator("[data-full-mass-special] [data-ao-special-phase=mass]").count(),0);
+ assert.equal(await page.locator("[data-full-mass-special] [data-ao-special-phase=gf-cross]").count(),1);
  assert.equal(gf.fieldsetDisabled,true,"Non-Mass form selector still active: "+JSON.stringify(gf));
  assert.equal(gf.inputsDisabled,true,"Non-Mass radios still active: "+JSON.stringify(gf));
  assert.match(await page.locator("[data-full-mass-note]").innerText(),/ce n’est pas une messe/i);
