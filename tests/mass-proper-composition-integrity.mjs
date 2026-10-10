@@ -30,6 +30,19 @@ for(const [key,lang] of Object.entries(endings))for(const [locale,text] of Objec
   assert.ok(text.length>70,key+"/"+locale+" missing full conclusion");
   assert.ok(!text.includes("$"),key+"/"+locale+" still contains source macro");
 }
+const sameSpirit=expand("$Per Dominum eiusdem");
+const sameSpiritVariant=expand("$Per Dominum ejusdem");
+const punctuation=expand("$Per Dominum.");
+const punctuationQui=expand("$Qui tecum.");
+assert.deepEqual(sameSpirit,sameSpiritVariant,"Latin transliteration of eiusdem changed the prayer ending");
+assert.deepEqual(punctuation,endings.perDominum,"terminal punctuation changed its prayer text");
+assert.deepEqual(punctuationQui,endings.quiTecum,"terminal punctuation changed the Qui tecum ending");
+assert.match(sameSpirit.la,/unitáte ejúsdem Spíritus Sancti/);
+assert.match(sameSpirit.en,/unity of the same Holy Ghost/);
+assert.match(sameSpirit.fr,/unité du même Saint-Esprit/);
+assert.notEqual(sameSpirit.la,endings.perDominum.la,"Pentecost conclusion collapsed into ordinary Per Dominum");
+assert.equal(cleanLines(["$Per Dominum never-guessed"],"la"),"$Per Dominum never-guessed",
+  "unknown source-specific ending was silently invented");
 assert.notEqual(endings.perDominum.la,endings.perEundem.la);
 assert.notEqual(endings.quiVivis.la,endings.quiTecum.la);
 assert.equal(cleanLines(["$Unknown unresolved"],"la"),"$Unknown unresolved",
