@@ -4,7 +4,7 @@ const registry=JSON.parse(readFileSync(new URL("../data/pray/tenebrae-source-reg
 assert.equal(registry.schema,"ao.pray.tenebrae.1960-acquisition.v1");
 assert.equal(registry.status,"SIX_SOURCE_DERIVED_HOURS_ROUTED_PRINT_EDITION_UNCOLLATED");
 assert.equal(registry.source.commit,"b9f8c8eb15d52b2b2c02e2ca24807cfaa73758f0");
-assert.equal(registry.publicationStatus,"RESEARCH_SOURCE_FREEZE_ONLY");
+assert.equal(registry.publicationStatus,"SEASONAL_PRAY_READER_IMPLEMENTED_SOURCE_DERIVED_NOT_ORIGINAL_PRINT_CERTIFIED");
 assert.equal(registry.dates.length,3);
 assert.equal(registry.progress.rawProperFilesPreserved,9);
 assert.equal(registry.progress.assembliesReady,6);
