@@ -40,10 +40,62 @@ try{
   page.on("pageerror",error=>errors.push(String(error?.message??error)));
 
   await page.goto("http://127.0.0.1:4186/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
+
+  // Original v43.43 loader ownership: same boot/async DOM, exact Marian and
+  // Four Evangelists masks, no additional spinner or second overlay.
+  const roses=await page.evaluate(()=>{
+    const boot=document.querySelector("#ao-cinema-boot");
+    const loader=document.querySelector("#ao-cinema-loader");
+    const first=boot?.querySelector(".aoCinemaBootCross.aoBrandEmblem")??null;
+    const second=loader?.querySelector(".aoCinemaLoaderMark.aoBrandEmblem")??null;
+    const detail=el=>{
+      if(!el)return null;
+      const mark=getComputedStyle(el,"::before"),rect=el.getBoundingClientRect();
+      return {mask:mark.maskImage||mark.webkitMaskImage,animation:mark.animationName,
+        width:rect.width,height:rect.height,pseudoWidth:mark.width,pseudoHeight:mark.height,
+        background:mark.backgroundColor};
+    };
+    return {boot:detail(first),loader:detail(second),
+      bootCount:document.querySelectorAll("#ao-cinema-boot").length,
+      loaderCount:document.querySelectorAll("#ao-cinema-loader").length,
+      linked:Boolean(document.getElementById("ao-v4343-rose-windows-css"))};
+  });
+  assert.equal(roses.bootCount,1,"loading repair duplicated the boot overlay");
+  assert.equal(roses.loaderCount,1,"loading repair duplicated the async overlay");
+  assert.equal(roses.linked,true,"v43.43 loader art not loaded before the Home paint");
+  assert.match(roses.boot?.mask??"",/rose-marian-v4343\.png/,
+    "original Our Lady rose missing from application boot");
+  assert.match(roses.loader?.mask??"",/rose-evangelists-v4343\.png/,
+    "original Four Evangelists rose missing from asynchronous loader");
+  assert.equal(roses.boot?.animation,"aoRoseIllumine");
+  assert.equal(roses.loader?.animation,"aoRoseIllumine");
+  assert.ok(roses.boot?.width>=130&&roses.boot?.height>=130,"boot rose lost donor scale");
+  assert.ok(roses.loader?.width>=56&&roses.loader?.height>=56,"content rose lost donor scale");
+  await page.screenshot({path:resolve(out,"01a-v4343-marian-boot-390.png"),fullPage:false});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true,null,{timeout:30000});
   await page.waitForSelector(".homeScreen",{state:"visible",timeout:30000});
   await page.waitForSelector("[data-ao-home-enricher-owner='modular-home-enrichers-v1']",{state:"visible",timeout:10000});
   await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),null,{timeout:8000});
+
+  // Capture the secondary loading artwork independently of calendar/scripture
+  // availability. This changes only the visual state of the existing loader.
+  const asyncLoader=page.locator("#ao-cinema-loader");
+  await asyncLoader.evaluate(el=>{el.classList.add("aoCinemaLoaderOn");el.setAttribute("aria-hidden","false");});
+  await page.screenshot({path:resolve(out,"01b-v4343-evangelists-async-390.png"),fullPage:false});
+  await asyncLoader.evaluate(el=>{el.classList.remove("aoCinemaLoaderOn");el.setAttribute("aria-hidden","true");});
+
+  await page.emulateMedia({reducedMotion:"reduce"});
+  const reducedRose=await page.evaluate(()=>
+    getComputedStyle(document.querySelector(".aoCinemaLoaderMark.aoBrandEmblem"),"::before").animationName);
+  assert.equal(reducedRose,"none","system reduced-motion preference did not disable rose breathing");
+  await page.emulateMedia({reducedMotion:"no-preference"});
+  const settingRose=await page.evaluate(()=>{
+    document.documentElement.dataset.reducedMotion="true";
+    const animation=getComputedStyle(document.querySelector(".aoCinemaLoaderMark.aoBrandEmblem"),"::before").animationName;
+    delete document.documentElement.dataset.reducedMotion;
+    return animation;
+  });
+  assert.equal(settingRose,"none","app reduced-motion preference did not disable rose breathing");
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.legacyCinematicAvailable===true,
     null,{timeout:8000}
