@@ -1,0 +1,2799 @@
+{
+  "schema": "AO_SOT07G_GEOGRAPHIC_CUSTOMARY_FULL_INVENTORY_REVIEW_V1",
+  "date": "2026-10-10",
+  "status": "ORIGINAL_RESEARCH_WORKBOOK_RECOVERED_REVIEW_ONLY",
+  "workbook_name": "Ad_Orientem_SOT-07G_Geographic_Customary_Atlas_v1.2.xlsx",
+  "library_file_id": "file_00000000ce1c8208b66a9cb84192b09b",
+  "counts": {
+    "families": 53,
+    "complexes": 21,
+    "geographic_attestations": 135,
+    "geo_areas": 162,
+    "sources": 117
+  },
+  "source_sheets": {
+    "01_CUSTOM_FAMILIES": "53 records at rows 5–57",
+    "02_CUSTOM_COMPLEXES": "21 records at rows 5–25",
+    "03_ATTESTATIONS": "135 records at rows 5–139",
+    "04_GEO_AREAS": "162 records at rows 5–166",
+    "07_SOURCE_REGISTER": "117 records at rows 5–121",
+    "10_DIRECTORY_CROSSWALK": "433 rows at rows 5–437, Directory-owned; not promoted by this review"
+  },
+  "review_rules": [
+    "All 135 geographic attestations retain original family, geo-area and source IDs. They do not become 135 map pins.",
+    "All 53 families, 21 complexes, 162 geographic areas and 117 sources remain source-workbook identities, subject to later entity reconciliation.",
+    "The workbook public_display=YES is a RESEARCH FIELD, not authorisation to publish to the app.",
+    "No automatic conversion of regional customs to universal or of country/route/cluster attestations to precise pins.",
+    "Apply French-world relevance gate to candidate domestic practices; other country practices are not automatically admitted to the main app.",
+    "The legacy workbook 433 Directory crosswalk rows belong to the independently governed Directory, not Explore venues."
+  ],
+  "families": [
+    {
+      "family_id": "CF-BLESSED-BREAD",
+      "workbook_row": 5,
+      "sot07_custom_id": "FOOD-001",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-DOMESTIC-HOLY-WATER-FONT",
+      "workbook_row": 6,
+      "sot07_custom_id": "DOM-002",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-PALM-CROSS-CUSTOM",
+      "workbook_row": 7,
+      "sot07_custom_id": "DOM-013",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "workbook_row": 8,
+      "sot07_custom_id": "DEV-008",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-EX-VOTO",
+      "workbook_row": 9,
+      "sot07_custom_id": "DEV-009",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-DEVOTIONAL-ORIGIN-SITE",
+      "workbook_row": 10,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-PERPETUAL-ADORATION-CENTRE",
+      "workbook_row": 11,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-HOLY-SOULS-PILGRIMAGE",
+      "workbook_row": 12,
+      "sot07_custom_id": "DEV-006",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-FUNERAL-CONFRATERNITY",
+      "workbook_row": 13,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "workbook_row": 14,
+      "sot07_custom_id": "DEV-007",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-TROMENIE",
+      "workbook_row": 15,
+      "sot07_custom_id": "DEV-007",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-MARITIME-BLESSING",
+      "workbook_row": 16,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-MARITIME-EXVOTO",
+      "workbook_row": 17,
+      "sot07_custom_id": "DEV-009",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-ABSENT-DEAD-RITE",
+      "workbook_row": 18,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-MARIAN-REGIONAL-FEAST",
+      "workbook_row": 19,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "workbook_row": 20,
+      "sot07_custom_id": "DEV-006",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-MARIAN-BOAT-PROCESSION",
+      "workbook_row": 21,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-ASSUMPTION-HERBS",
+      "workbook_row": 22,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SAINT-HORSE-PILGRIMAGE",
+      "workbook_row": 23,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "workbook_row": 24,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-CORPUS-BROTHERHOOD",
+      "workbook_row": 25,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SACRED-HEART-REGIONAL",
+      "workbook_row": 26,
+      "sot07_custom_id": "DOM-006",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-PRANGSTANGEN",
+      "workbook_row": 27,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SAMSON-FIGURE",
+      "workbook_row": 28,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-ASCENSION-RIDE",
+      "workbook_row": 29,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-HOLY-WEEK-FIGURAL-PROCESSION",
+      "workbook_row": 30,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-RELIC-CULT",
+      "workbook_row": 31,
+      "sot07_custom_id": "DEV-008",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-PROCESSION-CHAPEL",
+      "workbook_row": 32,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-WAYSIDE-CROSS",
+      "workbook_row": 33,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-PENITENTIAL-STAIR-PILGRIMAGE",
+      "workbook_row": 34,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-ST-JOSEPH-ALTAR",
+      "workbook_row": 35,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-ALL-SAINTS-GRAVE-BLESSING",
+      "workbook_row": 36,
+      "sot07_custom_id": "DEAD-001",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-CHRISTMAS-BONFIRE",
+      "workbook_row": 37,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-HOLY-WEEK-WALKING-PILGRIMAGE",
+      "workbook_row": 38,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SHRINE-EARTH",
+      "workbook_row": 39,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SANTO-NINO-PILGRIMAGE",
+      "workbook_row": 40,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-PENITENTE-BROTHERHOOD",
+      "workbook_row": 41,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-LAS-POSADAS",
+      "workbook_row": 42,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-PUEBLO-PATRONAL-FEAST",
+      "workbook_row": 43,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-EASTER-FOOD-BLESSING",
+      "workbook_row": 44,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-LIVING-VIA-CRUCIS",
+      "workbook_row": 45,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-VOTIVE-CITY-PILGRIMAGE",
+      "workbook_row": 46,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-HOLY-FIRE-EASTER",
+      "workbook_row": 47,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-FLOWER-CARPET",
+      "workbook_row": 48,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SAINT-ANIMAL-PROCESSION",
+      "workbook_row": 49,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SHOULDER-VOTIVE-MACHINE",
+      "workbook_row": 50,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SAINT-TREZENA",
+      "workbook_row": 51,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-EASTER-HOUSE-VISIT",
+      "workbook_row": 52,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-EUCHARISTIC-CITY-PROCESSION",
+      "workbook_row": 53,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "workbook_row": 54,
+      "sot07_custom_id": "DEV-006",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-PATRONAL-SAINT-FESTA",
+      "workbook_row": 55,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    },
+    {
+      "family_id": "CF-ROSARY-PROCESSION",
+      "workbook_row": 56,
+      "sot07_custom_id": "DEV-001",
+      "review_state": "LINK_TO_SOT07_SUBJECT_FIRST"
+    },
+    {
+      "family_id": "CF-EXTENDED-ROSARY-DEVOTION",
+      "workbook_row": 57,
+      "sot07_custom_id": null,
+      "review_state": "FRENCH_WORLD_RELEVANCE_AND_CANONICAL_OWNER_REVIEW"
+    }
+  ],
+  "complexes": [
+    {
+      "complex_id": "CX-PARIS-GENEVIEVE",
+      "workbook_row": 5,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-BRETON-PARDON",
+      "workbook_row": 6,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-NORMAN-CHARITONS",
+      "workbook_row": 7,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-APPENZELL-CORPUS",
+      "workbook_row": 8,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-TYROL-SACRED-HEART",
+      "workbook_row": 9,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-CHIMAYO",
+      "workbook_row": 10,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-LOUISIANA-STJOSEPH",
+      "workbook_row": 11,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-STANNE-BEAUPRE",
+      "workbook_row": 12,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-PADUA-ANTHONY",
+      "workbook_row": 13,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-TOLEDO-CORPUS",
+      "workbook_row": 14,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-BRAGA-HOLYWEEK",
+      "workbook_row": 15,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-VENICE-SALUTE",
+      "workbook_row": 16,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-ADELAIDE-MARIAN",
+      "workbook_row": 17,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-MACKILLOP-AUSTRALIA",
+      "workbook_row": 18,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-CANBERRA-GOULBURN-MARIAN",
+      "workbook_row": 19,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-WALSINGHAM",
+      "workbook_row": 20,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-CARFIN",
+      "workbook_row": 21,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-NNE-ENYEMAKA",
+      "workbook_row": 22,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-PERE-LAVAL-MU",
+      "workbook_row": 23,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-MELEN-GABON",
+      "workbook_row": 24,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    },
+    {
+      "complex_id": "CX-NAMUGONGO",
+      "workbook_row": 25,
+      "review_state": "LOCAL_COMPLEX_OR_EXISTING_PLACE_CROSSWALK_REVIEW"
+    }
+  ],
+  "attestations": [
+    {
+      "attestation_id": "ATT-FR-001",
+      "original_workbook_row": 5,
+      "family_id": "CF-BLESSED-BREAD",
+      "geo_id": "GEO-FR-PARIS",
+      "source_id": "SRC-FR-PARIS-PAIN",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-002",
+      "original_workbook_row": 6,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-FR-PARIS-GENEVIEVE",
+      "source_id": "SRC-FR-GENEVIEVE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-003",
+      "original_workbook_row": 7,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-FR-PARIS-GENEVIEVE",
+      "source_id": "SRC-FR-GENEVIEVE-EULOGIES",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-004",
+      "original_workbook_row": 8,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-FR-PARIS-GENEVIEVE",
+      "source_id": "SRC-FR-GENEVIEVE",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-005",
+      "original_workbook_row": 9,
+      "family_id": "CF-EX-VOTO",
+      "geo_id": "GEO-FR-PARIS-NDV",
+      "source_id": "SRC-FR-NDV",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-006",
+      "original_workbook_row": 10,
+      "family_id": "CF-PALM-CROSS-CUSTOM",
+      "geo_id": "GEO-FR-NANTEAU",
+      "source_id": "SRC-FR-NANTEAU",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-007",
+      "original_workbook_row": 11,
+      "family_id": "CF-DEVOTIONAL-ORIGIN-SITE",
+      "geo_id": "GEO-FR-PARIS-RUEDUBAC",
+      "source_id": "SRC-FR-RUEDUBAC",
+      "relation": "ORIGIN_SITE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-008",
+      "original_workbook_row": 12,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-FR-PARIS-NDP",
+      "source_id": "SRC-FR-NDP",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-009",
+      "original_workbook_row": 13,
+      "family_id": "CF-PERPETUAL-ADORATION-CENTRE",
+      "geo_id": "GEO-FR-PARIS-MONTMARTRE",
+      "source_id": "SRC-FR-MONTMARTRE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-010",
+      "original_workbook_row": 14,
+      "family_id": "CF-BLESSED-BREAD",
+      "geo_id": "GEO-FR-BERNAY",
+      "source_id": "SRC-FR-BERNAY",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-011",
+      "original_workbook_row": 15,
+      "family_id": "CF-DOMESTIC-HOLY-WATER-FONT",
+      "geo_id": "GEO-FR-MARTINCAMP",
+      "source_id": "SRC-FR-MARTINCAMP",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-012",
+      "original_workbook_row": 16,
+      "family_id": "CF-HOLY-SOULS-PILGRIMAGE",
+      "geo_id": "GEO-FR-MONTLIGEON",
+      "source_id": "SRC-FR-MONTLIGEON",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-013",
+      "original_workbook_row": 17,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-PINTERVILLE",
+      "source_id": "SRC-FR-PINTERVILLE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-014",
+      "original_workbook_row": 18,
+      "family_id": "CF-FUNERAL-CONFRATERNITY",
+      "geo_id": "GEO-FR-NORM",
+      "source_id": "SRC-FR-CHARITES",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-015",
+      "original_workbook_row": 19,
+      "family_id": "CF-FUNERAL-CONFRATERNITY",
+      "geo_id": "GEO-FR-CHENNEBRUN",
+      "source_id": "SRC-FR-CHARITES",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-016",
+      "original_workbook_row": 20,
+      "family_id": "CF-FUNERAL-CONFRATERNITY",
+      "geo_id": "GEO-FR-HOULBEC",
+      "source_id": "SRC-FR-CHARITES",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-017",
+      "original_workbook_row": 21,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-FR-ROUEN",
+      "source_id": "SRC-FR-ROUEN-ROMAIN",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-018",
+      "original_workbook_row": 22,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-BRITTANY",
+      "source_id": "SRC-FR-BRETAGNE-PARDONS",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-019",
+      "original_workbook_row": 23,
+      "family_id": "CF-TROMENIE",
+      "geo_id": "GEO-FR-LOCRONAN",
+      "source_id": "SRC-FR-LOCRONAN",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-020",
+      "original_workbook_row": 24,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-STANNEAURAY",
+      "source_id": "SRC-FR-STANNE-AURAY",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-021",
+      "original_workbook_row": 25,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-TREGUIER",
+      "source_id": "SRC-FR-STYVES",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-022",
+      "original_workbook_row": 26,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-RUMENGOL",
+      "source_id": "SRC-FR-RUMENGOL",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-023",
+      "original_workbook_row": 27,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-STANNEPALUD",
+      "source_id": "SRC-FR-STANNE-PALUD",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-024",
+      "original_workbook_row": 28,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-FOLGOET",
+      "source_id": "SRC-FR-FOLGOET",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-025",
+      "original_workbook_row": 29,
+      "family_id": "CF-PARDON-PILGRIMAGE",
+      "geo_id": "GEO-FR-LOCILDUT",
+      "source_id": "SRC-FR-LOCILDUT",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-026",
+      "original_workbook_row": 30,
+      "family_id": "CF-MARITIME-BLESSING",
+      "geo_id": "GEO-FR-TROAON",
+      "source_id": "SRC-FR-TROAON",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-027",
+      "original_workbook_row": 31,
+      "family_id": "CF-BLESSED-BREAD",
+      "geo_id": "GEO-FR-MORLAIX",
+      "source_id": "SRC-FR-MORLAIX",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-028",
+      "original_workbook_row": 32,
+      "family_id": "CF-BLESSED-BREAD",
+      "geo_id": "GEO-FR-CUGAND",
+      "source_id": "SRC-FR-CUGAND",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-029",
+      "original_workbook_row": 33,
+      "family_id": "CF-ABSENT-DEAD-RITE",
+      "geo_id": "GEO-FR-OUESSANT",
+      "source_id": "SRC-FR-OUESSANT",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-030",
+      "original_workbook_row": 34,
+      "family_id": "CF-MARIAN-REGIONAL-FEAST",
+      "geo_id": "GEO-FR-ANJOU",
+      "source_id": "SRC-FR-ANJOU",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-031",
+      "original_workbook_row": 35,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-FR-BEHUARD",
+      "source_id": "SRC-FR-ANJOU",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-032",
+      "original_workbook_row": 36,
+      "family_id": "CF-MARIAN-BOAT-PROCESSION",
+      "geo_id": "GEO-FR-AVESNIERES",
+      "source_id": "SRC-FR-AVESNIERES",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-FR-033",
+      "original_workbook_row": 37,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-FR-PONTMAIN",
+      "source_id": "SRC-FR-PONTMAIN",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-001",
+      "original_workbook_row": 38,
+      "family_id": "CF-ASSUMPTION-HERBS",
+      "geo_id": "GEO-DE-BAVARIA",
+      "source_id": "SRC-DE-HERBS",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-002",
+      "original_workbook_row": 39,
+      "family_id": "CF-ASSUMPTION-HERBS",
+      "geo_id": "GEO-DE-OBERLAND",
+      "source_id": "SRC-DE-HERBS",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-003",
+      "original_workbook_row": 40,
+      "family_id": "CF-ASSUMPTION-HERBS",
+      "geo_id": "GEO-AT",
+      "source_id": "SRC-AT-HERBS",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-004",
+      "original_workbook_row": 41,
+      "family_id": "CF-SAINT-HORSE-PILGRIMAGE",
+      "geo_id": "GEO-DE-INCHENHOFEN",
+      "source_id": "SRC-DE-LEONHARD-INCH",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-005",
+      "original_workbook_row": 42,
+      "family_id": "CF-SAINT-HORSE-PILGRIMAGE",
+      "geo_id": "GEO-DE-BADTOLZ",
+      "source_id": "SRC-DE-LEONHARD",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-006",
+      "original_workbook_row": 43,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-DE-BAVARIA",
+      "source_id": "SRC-DE-REGENSBURG-CORPUS",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-007",
+      "original_workbook_row": 44,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-AT-HALLSTATT",
+      "source_id": "SRC-AT-CORPUS-WATER",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-008",
+      "original_workbook_row": 45,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-AT-TRAUNKIRCHEN",
+      "source_id": "SRC-AT-CORPUS-WATER",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-009",
+      "original_workbook_row": 46,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-AT-ASCHACH",
+      "source_id": "SRC-AT-CORPUS-WATER",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-010",
+      "original_workbook_row": 47,
+      "family_id": "CF-CORPUS-BROTHERHOOD",
+      "geo_id": "GEO-CH-LUCERNE",
+      "source_id": "SRC-CH-LUCERNE-KANONIERE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-011",
+      "original_workbook_row": 48,
+      "family_id": "CF-CORPUS-BROTHERHOOD",
+      "geo_id": "GEO-CH-SEMPACH",
+      "source_id": "SRC-CH-LUCERNE-KANONIERE",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-012",
+      "original_workbook_row": 49,
+      "family_id": "CF-SACRED-HEART-REGIONAL",
+      "geo_id": "GEO-AT-TYROL",
+      "source_id": "SRC-AT-TYROL-SH",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-013",
+      "original_workbook_row": 50,
+      "family_id": "CF-SACRED-HEART-REGIONAL",
+      "geo_id": "GEO-AT-INNSBRUCK",
+      "source_id": "SRC-AT-TYROL-SH",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-014",
+      "original_workbook_row": 51,
+      "family_id": "CF-PRANGSTANGEN",
+      "geo_id": "GEO-AT-ZEDERHAUS",
+      "source_id": "SRC-AT-PRANG",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-015",
+      "original_workbook_row": 52,
+      "family_id": "CF-PRANGSTANGEN",
+      "geo_id": "GEO-AT-MUHR",
+      "source_id": "SRC-AT-PRANG",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-016",
+      "original_workbook_row": 53,
+      "family_id": "CF-SAMSON-FIGURE",
+      "geo_id": "GEO-AT-LUNGAU",
+      "source_id": "SRC-AT-SAMSON",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-017",
+      "original_workbook_row": 54,
+      "family_id": "CF-ASCENSION-RIDE",
+      "geo_id": "GEO-CH-BEROMUNSTER",
+      "source_id": "SRC-CH-BEROMUNSTER",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-018",
+      "original_workbook_row": 55,
+      "family_id": "CF-ASCENSION-RIDE",
+      "geo_id": "GEO-CH-LUCERNE",
+      "source_id": "SRC-CH-BEROMUNSTER",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-019",
+      "original_workbook_row": 56,
+      "family_id": "CF-MARIAN-BOAT-PROCESSION",
+      "geo_id": "GEO-AT-WOERTHERSEE",
+      "source_id": "SRC-AT-WOERTHERSEE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-020",
+      "original_workbook_row": 57,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-CH-ZUG",
+      "source_id": "SRC-CH-ZUG-EINSIEDELN",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-021",
+      "original_workbook_row": 58,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-CH-EINSIEDELN",
+      "source_id": "SRC-CH-ZUG-EINSIEDELN",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-022",
+      "original_workbook_row": 59,
+      "family_id": "CF-HOLY-WEEK-FIGURAL-PROCESSION",
+      "geo_id": "GEO-DE-HEILIGENSTADT",
+      "source_id": "SRC-DE-HEILIGENSTADT",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-023",
+      "original_workbook_row": 60,
+      "family_id": "CF-RELIC-CULT",
+      "geo_id": "GEO-CH-SAINTMAURICE",
+      "source_id": "SRC-CH-SAINTMAURICE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-024",
+      "original_workbook_row": 61,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-CH-APPENZELL",
+      "source_id": "SRC-CH-APPENZELL",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-DACH-025",
+      "original_workbook_row": 62,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-CH-APPENZELL",
+      "source_id": "SRC-CH-APPENZELL",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-001",
+      "original_workbook_row": 63,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-CA-STANNE",
+      "source_id": "SRC-CA-STANNE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-002",
+      "original_workbook_row": 64,
+      "family_id": "CF-PENITENTIAL-STAIR-PILGRIMAGE",
+      "geo_id": "GEO-CA-STANNE",
+      "source_id": "SRC-CA-STANNE-SCALA",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-003",
+      "original_workbook_row": 65,
+      "family_id": "CF-EX-VOTO",
+      "geo_id": "GEO-CA-STANNE",
+      "source_id": "SRC-CA-STANNE-VOTIVE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-004",
+      "original_workbook_row": 66,
+      "family_id": "CF-PROCESSION-CHAPEL",
+      "geo_id": "GEO-CA-QC",
+      "source_id": "SRC-QC-PROC-CHAPEL",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-005",
+      "original_workbook_row": 67,
+      "family_id": "CF-PROCESSION-CHAPEL",
+      "geo_id": "GEO-CA-LAUZON",
+      "source_id": "SRC-QC-PROC-CHAPEL",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-006",
+      "original_workbook_row": 68,
+      "family_id": "CF-PROCESSION-CHAPEL",
+      "geo_id": "GEO-CA-BEAUMONT",
+      "source_id": "SRC-QC-PROC-CHAPEL",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-007",
+      "original_workbook_row": 69,
+      "family_id": "CF-WAYSIDE-CROSS",
+      "geo_id": "GEO-CA-QC",
+      "source_id": "SRC-QC-WAYSIDE-CROSS",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-008",
+      "original_workbook_row": 70,
+      "family_id": "CF-PENITENTIAL-STAIR-PILGRIMAGE",
+      "geo_id": "GEO-CA-STJOSEPH",
+      "source_id": "SRC-CA-STJOSEPH",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-009",
+      "original_workbook_row": 71,
+      "family_id": "CF-EX-VOTO",
+      "geo_id": "GEO-CA-STJOSEPH",
+      "source_id": "SRC-CA-STJOSEPH",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-010",
+      "original_workbook_row": 72,
+      "family_id": "CF-ST-JOSEPH-ALTAR",
+      "geo_id": "GEO-US-LA",
+      "source_id": "SRC-LA-STJOSEPH",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-011",
+      "original_workbook_row": 73,
+      "family_id": "CF-ST-JOSEPH-ALTAR",
+      "geo_id": "GEO-US-NEWORLEANS",
+      "source_id": "SRC-ARCHNO-STJOSEPH",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-012",
+      "original_workbook_row": 74,
+      "family_id": "CF-MARITIME-BLESSING",
+      "geo_id": "GEO-US-CHAUVIN",
+      "source_id": "SRC-LA-FLEET",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-013",
+      "original_workbook_row": 75,
+      "family_id": "CF-MARITIME-BLESSING",
+      "geo_id": "GEO-US-GOLDENMEADOW",
+      "source_id": "SRC-LA-FLEET",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-014",
+      "original_workbook_row": 76,
+      "family_id": "CF-ALL-SAINTS-GRAVE-BLESSING",
+      "geo_id": "GEO-US-LA",
+      "source_id": "SRC-ARCHNO-ALLSAINTS",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-015",
+      "original_workbook_row": 77,
+      "family_id": "CF-CHRISTMAS-BONFIRE",
+      "geo_id": "GEO-US-RIVERPARISHES",
+      "source_id": "SRC-LA-BONFIRES",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-016",
+      "original_workbook_row": 78,
+      "family_id": "CF-HOLY-WEEK-WALKING-PILGRIMAGE",
+      "geo_id": "GEO-US-CHIMAYO",
+      "source_id": "SRC-NPS-CHIMAYO",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-017",
+      "original_workbook_row": 79,
+      "family_id": "CF-DEVOTIONAL-ORIGIN-SITE",
+      "geo_id": "GEO-US-CHIMAYO",
+      "source_id": "SRC-NPS-CHIMAYO",
+      "relation": "ORIGIN_SITE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-018",
+      "original_workbook_row": 80,
+      "family_id": "CF-SHRINE-EARTH",
+      "geo_id": "GEO-US-CHIMAYO",
+      "source_id": "SRC-NPS-CHIMAYO",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-019",
+      "original_workbook_row": 81,
+      "family_id": "CF-SANTO-NINO-PILGRIMAGE",
+      "geo_id": "GEO-US-CHIMAYO",
+      "source_id": "SRC-CHIMAYO-SHRINE",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-020",
+      "original_workbook_row": 82,
+      "family_id": "CF-PENITENTE-BROTHERHOOD",
+      "geo_id": "GEO-US-NNM",
+      "source_id": "SRC-NPS-PENITENTES",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-021",
+      "original_workbook_row": 83,
+      "family_id": "CF-HOLY-WEEK-FIGURAL-PROCESSION",
+      "geo_id": "GEO-US-TOME",
+      "source_id": "SRC-NPS-PENITENTES",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-022",
+      "original_workbook_row": 84,
+      "family_id": "CF-LAS-POSADAS",
+      "geo_id": "GEO-US-PECOS",
+      "source_id": "SRC-NPS-PECOS",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-023",
+      "original_workbook_row": 85,
+      "family_id": "CF-PUEBLO-PATRONAL-FEAST",
+      "geo_id": "GEO-US-NM-PUEBLOS",
+      "source_id": "SRC-ARCHSF-PUEBLO",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-024",
+      "original_workbook_row": 86,
+      "family_id": "CF-EASTER-FOOD-BLESSING",
+      "geo_id": "GEO-US-CHICAGO",
+      "source_id": "SRC-CHI-EASTER",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-025",
+      "original_workbook_row": 87,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-US-CHICAGO",
+      "source_id": "SRC-CHI-STFABIAN",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-026",
+      "original_workbook_row": 88,
+      "family_id": "CF-LIVING-VIA-CRUCIS",
+      "geo_id": "GEO-US-PILSEN",
+      "source_id": "SRC-CHI-PILSEN",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-027",
+      "original_workbook_row": 89,
+      "family_id": "CF-ST-JOSEPH-ALTAR",
+      "geo_id": "GEO-US-MELROSEPARK",
+      "source_id": "SRC-CHI-MELROSE",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-NA-028",
+      "original_workbook_row": 90,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-US-CHICAGO",
+      "source_id": "SRC-CHI-JESUS-STREETS",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-001",
+      "original_workbook_row": 91,
+      "family_id": "CF-VOTIVE-CITY-PILGRIMAGE",
+      "geo_id": "GEO-IT-VENICE",
+      "source_id": "SRC-IT-VENICE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-002",
+      "original_workbook_row": 92,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-IT-ORVIETO",
+      "source_id": "SRC-IT-ORVIETO",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-003",
+      "original_workbook_row": 93,
+      "family_id": "CF-HOLY-FIRE-EASTER",
+      "geo_id": "GEO-IT-FLORENCE",
+      "source_id": "SRC-IT-FLORENCE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-004",
+      "original_workbook_row": 94,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-IT-PADUA",
+      "source_id": "SRC-IT-PADUA",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-005",
+      "original_workbook_row": 95,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-IT-PADUA",
+      "source_id": "SRC-IT-PADUA",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-006",
+      "original_workbook_row": 96,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-IT-ASCOLI",
+      "source_id": "SRC-IT-ASCOLI",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-007",
+      "original_workbook_row": 97,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-IT-LUCCA",
+      "source_id": "SRC-IT-LUCCA",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-008",
+      "original_workbook_row": 98,
+      "family_id": "CF-FLOWER-CARPET",
+      "geo_id": "GEO-IT",
+      "source_id": "SRC-IT-INFIO",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-009",
+      "original_workbook_row": 99,
+      "family_id": "CF-SAINT-ANIMAL-PROCESSION",
+      "geo_id": "GEO-IT-COCULLO",
+      "source_id": "SRC-IT-COCULLO",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-010",
+      "original_workbook_row": 100,
+      "family_id": "CF-SHOULDER-VOTIVE-MACHINE",
+      "geo_id": "GEO-IT-VOTIVE-MACHINES",
+      "source_id": "SRC-IT-MACHINES",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-011",
+      "original_workbook_row": 101,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-ES-TOLEDO",
+      "source_id": "SRC-ES-TOLEDO",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-012",
+      "original_workbook_row": 102,
+      "family_id": "CF-HOLY-WEEK-FIGURAL-PROCESSION",
+      "geo_id": "GEO-ES-VALLADOLID",
+      "source_id": "SRC-ES-VALLADOLID",
+      "relation": "CLUSTER",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-013",
+      "original_workbook_row": 103,
+      "family_id": "CF-HOLY-WEEK-FIGURAL-PROCESSION",
+      "geo_id": "GEO-ES",
+      "source_id": "SRC-ES-SEMANA",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-014",
+      "original_workbook_row": 104,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-PT-FATIMA",
+      "source_id": "SRC-PT-FATIMA",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-015",
+      "original_workbook_row": 105,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-PT-LISBON",
+      "source_id": "SRC-PT-LISBON-ANTHONY",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-016",
+      "original_workbook_row": 106,
+      "family_id": "CF-SAINT-TREZENA",
+      "geo_id": "GEO-PT-LISBON",
+      "source_id": "SRC-PT-LISBON-TREZENA",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-017",
+      "original_workbook_row": 107,
+      "family_id": "CF-EASTER-HOUSE-VISIT",
+      "geo_id": "GEO-PT-NORTH",
+      "source_id": "SRC-PT-COMPASSO",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-018",
+      "original_workbook_row": 108,
+      "family_id": "CF-MARIAN-BOAT-PROCESSION",
+      "geo_id": "GEO-PT-VIANA",
+      "source_id": "SRC-PT-AGONIA",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-019",
+      "original_workbook_row": 109,
+      "family_id": "CF-PATRONAL-RELIC-PROCESSION",
+      "geo_id": "GEO-PT-LAMEGO",
+      "source_id": "SRC-PT-LAMEGO",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-II-020",
+      "original_workbook_row": 110,
+      "family_id": "CF-HOLY-WEEK-FIGURAL-PROCESSION",
+      "geo_id": "GEO-PT-BRAGA",
+      "source_id": "SRC-PT-BRAGA-HW",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-001",
+      "original_workbook_row": 111,
+      "family_id": "CF-EUCHARISTIC-CITY-PROCESSION",
+      "geo_id": "GEO-AU-SYDNEY",
+      "source_id": "SRC-AU-SYD-WWC",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-002",
+      "original_workbook_row": 112,
+      "family_id": "CF-CORPUS-CHRISTI-PROCESSION",
+      "geo_id": "GEO-AU-MONTE-SANTANGELO",
+      "source_id": "SRC-AU-MONTE-CORPUS",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-003",
+      "original_workbook_row": 113,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-AU-ADELAIDE",
+      "source_id": "SRC-AU-ADELAIDE-MARIAN",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-004",
+      "original_workbook_row": 114,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-AU-NEWTON",
+      "source_id": "SRC-AU-MONTEVERGINE",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-005",
+      "original_workbook_row": 115,
+      "family_id": "CF-PATRONAL-SAINT-FESTA",
+      "geo_id": "GEO-AU-HECTORVILLE",
+      "source_id": "SRC-AU-SANPELLEGRINO",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-006",
+      "original_workbook_row": 116,
+      "family_id": "CF-PATRONAL-SAINT-FESTA",
+      "geo_id": "GEO-AU-PARALOWIE",
+      "source_id": "SRC-AU-SANJOSEPH",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-007",
+      "original_workbook_row": 117,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-AU-MARYMACKILLOP",
+      "source_id": "SRC-AU-MACKILLOP-FEAST",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-008",
+      "original_workbook_row": 118,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-AU",
+      "source_id": "SRC-AU-MACKILLOP-PILGRIMAGE",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-009",
+      "original_workbook_row": 119,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-AU-KENSINGTON",
+      "source_id": "SRC-AU-MACKILLOP-PILGRIMAGE",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-010",
+      "original_workbook_row": 120,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-AU-GOULBURN",
+      "source_id": "SRC-AU-CG-MARIAN",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-011",
+      "original_workbook_row": 121,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-AU-GALONG",
+      "source_id": "SRC-AU-CG-MARIAN",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AU-012",
+      "original_workbook_row": 122,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-AU-SYDNEY",
+      "source_id": "SRC-AU-SYD-FATIMA",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-GB-001",
+      "original_workbook_row": 123,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-GB-WALSINGHAM-SHRINE",
+      "source_id": "SRC-GB-WALSINGHAM-STORY",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-GB-002",
+      "original_workbook_row": 124,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-GB-HOLYMILE",
+      "source_id": "SRC-GB-WALSINGHAM-HOLYMILE",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-GB-003",
+      "original_workbook_row": 125,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-GB-HOLYMILE",
+      "source_id": "SRC-GB-WALSINGHAM-DOWRY",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-GB-004",
+      "original_workbook_row": 126,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-GB-DUNFERMLINE",
+      "source_id": "SRC-GB-STMARGARET",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-GB-005",
+      "original_workbook_row": 127,
+      "family_id": "CF-ROSARY-PROCESSION",
+      "geo_id": "GEO-GB-CARFIN",
+      "source_id": "SRC-GB-CARFIN",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-GB-006",
+      "original_workbook_row": 128,
+      "family_id": "CF-EUCHARISTIC-CITY-PROCESSION",
+      "geo_id": "GEO-GB-WARRINGTON",
+      "source_id": "SRC-GB-WARRINGTON",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-001",
+      "original_workbook_row": 129,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-NG-NNEENYEMAKA",
+      "source_id": "SRC-NG-NNE-HISTORY",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-002",
+      "original_workbook_row": 130,
+      "family_id": "CF-ROSARY-PROCESSION",
+      "geo_id": "GEO-NG-NNEENYEMAKA",
+      "source_id": "SRC-NG-NNE-DEVOTIONS",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-003",
+      "original_workbook_row": 131,
+      "family_id": "CF-EXTENDED-ROSARY-DEVOTION",
+      "geo_id": "GEO-NG-NNEENYEMAKA",
+      "source_id": "SRC-NG-NNE-DEVOTIONS",
+      "relation": "PIN",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-004",
+      "original_workbook_row": 132,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-MU-SAINTECROIX",
+      "source_id": "SRC-MU-PERELAVAL-2026",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-005",
+      "original_workbook_row": 133,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-MU-PORTLOUIS",
+      "source_id": "SRC-MU-PERELAVAL-2026",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-006",
+      "original_workbook_row": 134,
+      "family_id": "CF-MARIAN-REGIONAL-FEAST",
+      "geo_id": "GEO-MU",
+      "source_id": "SRC-MU-ASSUMPTION",
+      "relation": "AREA",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-007",
+      "original_workbook_row": 135,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-MU-MARIE-REINE",
+      "source_id": "SRC-MU-BRANCARDIERS",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-008",
+      "original_workbook_row": 136,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-GA-MELEN",
+      "source_id": "SRC-GA-MELEN",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-009",
+      "original_workbook_row": 137,
+      "family_id": "CF-MARIAN-PILGRIMAGE",
+      "geo_id": "GEO-GA-MELEN",
+      "source_id": "SRC-GA-SSPX-PENTECOST",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-010",
+      "original_workbook_row": 138,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-UG-NAMUGONGO",
+      "source_id": "SRC-UG-NAMUGONGO-2026",
+      "relation": "LIVING_CENTRE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    },
+    {
+      "attestation_id": "ATT-AFR-011",
+      "original_workbook_row": 139,
+      "family_id": "CF-SAINT-PILGRIMAGE",
+      "geo_id": "GEO-UG",
+      "source_id": "SRC-UG-FOOTPILGRIMS",
+      "relation": "ROUTE",
+      "publication_disposition": "REVIEW_NOT_AUTOMATICALLY_PUBLISHED"
+    }
+  ],
+  "geographic_areas": [
+    {
+      "geo_id": "GEO-AT",
+      "workbook_row": 5
+    },
+    {
+      "geo_id": "GEO-AU",
+      "workbook_row": 6
+    },
+    {
+      "geo_id": "GEO-BE",
+      "workbook_row": 7
+    },
+    {
+      "geo_id": "GEO-CA",
+      "workbook_row": 8
+    },
+    {
+      "geo_id": "GEO-CH",
+      "workbook_row": 9
+    },
+    {
+      "geo_id": "GEO-CO",
+      "workbook_row": 10
+    },
+    {
+      "geo_id": "GEO-CZ",
+      "workbook_row": 11
+    },
+    {
+      "geo_id": "GEO-DE",
+      "workbook_row": 12
+    },
+    {
+      "geo_id": "GEO-EC",
+      "workbook_row": 13
+    },
+    {
+      "geo_id": "GEO-ES",
+      "workbook_row": 14
+    },
+    {
+      "geo_id": "GEO-FR",
+      "workbook_row": 15
+    },
+    {
+      "geo_id": "GEO-GB",
+      "workbook_row": 16
+    },
+    {
+      "geo_id": "GEO-GT",
+      "workbook_row": 17
+    },
+    {
+      "geo_id": "GEO-IE",
+      "workbook_row": 18
+    },
+    {
+      "geo_id": "GEO-IT",
+      "workbook_row": 19
+    },
+    {
+      "geo_id": "GEO-MU",
+      "workbook_row": 20
+    },
+    {
+      "geo_id": "GEO-MX",
+      "workbook_row": 21
+    },
+    {
+      "geo_id": "GEO-NG",
+      "workbook_row": 22
+    },
+    {
+      "geo_id": "GEO-NL",
+      "workbook_row": 23
+    },
+    {
+      "geo_id": "GEO-NZ",
+      "workbook_row": 24
+    },
+    {
+      "geo_id": "GEO-PL",
+      "workbook_row": 25
+    },
+    {
+      "geo_id": "GEO-PT",
+      "workbook_row": 26
+    },
+    {
+      "geo_id": "GEO-US",
+      "workbook_row": 27
+    },
+    {
+      "geo_id": "GEO-FR-IDF",
+      "workbook_row": 28
+    },
+    {
+      "geo_id": "GEO-FR-PARIS",
+      "workbook_row": 29
+    },
+    {
+      "geo_id": "GEO-FR-PARIS-GENEVIEVE",
+      "workbook_row": 30
+    },
+    {
+      "geo_id": "GEO-FR-PARIS-NDV",
+      "workbook_row": 31
+    },
+    {
+      "geo_id": "GEO-FR-PARIS-RUEDUBAC",
+      "workbook_row": 32
+    },
+    {
+      "geo_id": "GEO-FR-PARIS-NDP",
+      "workbook_row": 33
+    },
+    {
+      "geo_id": "GEO-FR-PARIS-MONTMARTRE",
+      "workbook_row": 34
+    },
+    {
+      "geo_id": "GEO-FR-NANTEAU",
+      "workbook_row": 35
+    },
+    {
+      "geo_id": "GEO-FR-NORM",
+      "workbook_row": 36
+    },
+    {
+      "geo_id": "GEO-FR-BERNAY",
+      "workbook_row": 37
+    },
+    {
+      "geo_id": "GEO-FR-MARTINCAMP",
+      "workbook_row": 38
+    },
+    {
+      "geo_id": "GEO-FR-MONTLIGEON",
+      "workbook_row": 39
+    },
+    {
+      "geo_id": "GEO-FR-PINTERVILLE",
+      "workbook_row": 40
+    },
+    {
+      "geo_id": "GEO-FR-CHENNEBRUN",
+      "workbook_row": 41
+    },
+    {
+      "geo_id": "GEO-FR-HOULBEC",
+      "workbook_row": 42
+    },
+    {
+      "geo_id": "GEO-FR-ROUEN",
+      "workbook_row": 43
+    },
+    {
+      "geo_id": "GEO-FR-BRITTANY",
+      "workbook_row": 44
+    },
+    {
+      "geo_id": "GEO-FR-LOCRONAN",
+      "workbook_row": 45
+    },
+    {
+      "geo_id": "GEO-FR-STANNEAURAY",
+      "workbook_row": 46
+    },
+    {
+      "geo_id": "GEO-FR-TREGUIER",
+      "workbook_row": 47
+    },
+    {
+      "geo_id": "GEO-FR-RUMENGOL",
+      "workbook_row": 48
+    },
+    {
+      "geo_id": "GEO-FR-STANNEPALUD",
+      "workbook_row": 49
+    },
+    {
+      "geo_id": "GEO-FR-FOLGOET",
+      "workbook_row": 50
+    },
+    {
+      "geo_id": "GEO-FR-LOCILDUT",
+      "workbook_row": 51
+    },
+    {
+      "geo_id": "GEO-FR-TROAON",
+      "workbook_row": 52
+    },
+    {
+      "geo_id": "GEO-FR-MORLAIX",
+      "workbook_row": 53
+    },
+    {
+      "geo_id": "GEO-FR-OUESSANT",
+      "workbook_row": 54
+    },
+    {
+      "geo_id": "GEO-FR-ANJOU",
+      "workbook_row": 55
+    },
+    {
+      "geo_id": "GEO-FR-CUGAND",
+      "workbook_row": 56
+    },
+    {
+      "geo_id": "GEO-FR-BEHUARD",
+      "workbook_row": 57
+    },
+    {
+      "geo_id": "GEO-FR-MAYENNE",
+      "workbook_row": 58
+    },
+    {
+      "geo_id": "GEO-FR-AVESNIERES",
+      "workbook_row": 59
+    },
+    {
+      "geo_id": "GEO-FR-PONTMAIN",
+      "workbook_row": 60
+    },
+    {
+      "geo_id": "GEO-DE-BAVARIA",
+      "workbook_row": 61
+    },
+    {
+      "geo_id": "GEO-DE-OBERLAND",
+      "workbook_row": 62
+    },
+    {
+      "geo_id": "GEO-DE-INCHENHOFEN",
+      "workbook_row": 63
+    },
+    {
+      "geo_id": "GEO-DE-BADTOLZ",
+      "workbook_row": 64
+    },
+    {
+      "geo_id": "GEO-DE-EICHSFELD",
+      "workbook_row": 65
+    },
+    {
+      "geo_id": "GEO-DE-HEILIGENSTADT",
+      "workbook_row": 66
+    },
+    {
+      "geo_id": "GEO-AT-TYROL",
+      "workbook_row": 67
+    },
+    {
+      "geo_id": "GEO-AT-INNSBRUCK",
+      "workbook_row": 68
+    },
+    {
+      "geo_id": "GEO-AT-LUNGAU",
+      "workbook_row": 69
+    },
+    {
+      "geo_id": "GEO-AT-ZEDERHAUS",
+      "workbook_row": 70
+    },
+    {
+      "geo_id": "GEO-AT-MUHR",
+      "workbook_row": 71
+    },
+    {
+      "geo_id": "GEO-AT-HALLSTATT",
+      "workbook_row": 72
+    },
+    {
+      "geo_id": "GEO-AT-TRAUNKIRCHEN",
+      "workbook_row": 73
+    },
+    {
+      "geo_id": "GEO-AT-ASCHACH",
+      "workbook_row": 74
+    },
+    {
+      "geo_id": "GEO-AT-WOERTHERSEE",
+      "workbook_row": 75
+    },
+    {
+      "geo_id": "GEO-CH-LUCERNE",
+      "workbook_row": 76
+    },
+    {
+      "geo_id": "GEO-CH-BEROMUNSTER",
+      "workbook_row": 77
+    },
+    {
+      "geo_id": "GEO-CH-SEMPACH",
+      "workbook_row": 78
+    },
+    {
+      "geo_id": "GEO-CH-ZUG",
+      "workbook_row": 79
+    },
+    {
+      "geo_id": "GEO-CH-EINSIEDELN",
+      "workbook_row": 80
+    },
+    {
+      "geo_id": "GEO-CH-APPENZELL",
+      "workbook_row": 81
+    },
+    {
+      "geo_id": "GEO-CH-SAINTMAURICE",
+      "workbook_row": 82
+    },
+    {
+      "geo_id": "GEO-CA-QC",
+      "workbook_row": 83
+    },
+    {
+      "geo_id": "GEO-CA-STANNE",
+      "workbook_row": 84
+    },
+    {
+      "geo_id": "GEO-CA-LAUZON",
+      "workbook_row": 85
+    },
+    {
+      "geo_id": "GEO-CA-BEAUMONT",
+      "workbook_row": 86
+    },
+    {
+      "geo_id": "GEO-CA-MONTREAL",
+      "workbook_row": 87
+    },
+    {
+      "geo_id": "GEO-CA-STJOSEPH",
+      "workbook_row": 88
+    },
+    {
+      "geo_id": "GEO-US-LA",
+      "workbook_row": 89
+    },
+    {
+      "geo_id": "GEO-US-NEWORLEANS",
+      "workbook_row": 90
+    },
+    {
+      "geo_id": "GEO-US-CHAUVIN",
+      "workbook_row": 91
+    },
+    {
+      "geo_id": "GEO-US-GOLDENMEADOW",
+      "workbook_row": 92
+    },
+    {
+      "geo_id": "GEO-US-RIVERPARISHES",
+      "workbook_row": 93
+    },
+    {
+      "geo_id": "GEO-US-NNM",
+      "workbook_row": 94
+    },
+    {
+      "geo_id": "GEO-US-CHIMAYO",
+      "workbook_row": 95
+    },
+    {
+      "geo_id": "GEO-US-TOME",
+      "workbook_row": 96
+    },
+    {
+      "geo_id": "GEO-US-PECOS",
+      "workbook_row": 97
+    },
+    {
+      "geo_id": "GEO-US-NM-PUEBLOS",
+      "workbook_row": 98
+    },
+    {
+      "geo_id": "GEO-US-CHICAGO",
+      "workbook_row": 99
+    },
+    {
+      "geo_id": "GEO-US-PILSEN",
+      "workbook_row": 100
+    },
+    {
+      "geo_id": "GEO-US-MELROSEPARK",
+      "workbook_row": 101
+    },
+    {
+      "geo_id": "GEO-IT-SICILY",
+      "workbook_row": 102
+    },
+    {
+      "geo_id": "GEO-PL-POLISH",
+      "workbook_row": 103
+    },
+    {
+      "geo_id": "GEO-GT-ESQUIPULAS",
+      "workbook_row": 104
+    },
+    {
+      "geo_id": "GEO-IT-VENICE",
+      "workbook_row": 105
+    },
+    {
+      "geo_id": "GEO-IT-ORVIETO",
+      "workbook_row": 106
+    },
+    {
+      "geo_id": "GEO-IT-FLORENCE",
+      "workbook_row": 107
+    },
+    {
+      "geo_id": "GEO-IT-PADUA",
+      "workbook_row": 108
+    },
+    {
+      "geo_id": "GEO-IT-ASCOLI",
+      "workbook_row": 109
+    },
+    {
+      "geo_id": "GEO-IT-LUCCA",
+      "workbook_row": 110
+    },
+    {
+      "geo_id": "GEO-IT-COCULLO",
+      "workbook_row": 111
+    },
+    {
+      "geo_id": "GEO-IT-VOTIVE-MACHINES",
+      "workbook_row": 112
+    },
+    {
+      "geo_id": "GEO-ES-TOLEDO",
+      "workbook_row": 113
+    },
+    {
+      "geo_id": "GEO-ES-VALLADOLID",
+      "workbook_row": 114
+    },
+    {
+      "geo_id": "GEO-PT-FATIMA",
+      "workbook_row": 115
+    },
+    {
+      "geo_id": "GEO-PT-LISBON",
+      "workbook_row": 116
+    },
+    {
+      "geo_id": "GEO-PT-NORTH",
+      "workbook_row": 117
+    },
+    {
+      "geo_id": "GEO-PT-BRAGA",
+      "workbook_row": 118
+    },
+    {
+      "geo_id": "GEO-PT-VIANA",
+      "workbook_row": 119
+    },
+    {
+      "geo_id": "GEO-PT-LAMEGO",
+      "workbook_row": 120
+    },
+    {
+      "geo_id": "GEO-AU-NSW",
+      "workbook_row": 121
+    },
+    {
+      "geo_id": "GEO-AU-SYDNEY",
+      "workbook_row": 122
+    },
+    {
+      "geo_id": "GEO-AU-NORTHSYDNEY",
+      "workbook_row": 123
+    },
+    {
+      "geo_id": "GEO-AU-MONTE-SANTANGELO",
+      "workbook_row": 124
+    },
+    {
+      "geo_id": "GEO-AU-MARYMACKILLOP",
+      "workbook_row": 125
+    },
+    {
+      "geo_id": "GEO-AU-PARRAMATTA",
+      "workbook_row": 126
+    },
+    {
+      "geo_id": "GEO-AU-MAITLAND",
+      "workbook_row": 127
+    },
+    {
+      "geo_id": "GEO-AU-ACT",
+      "workbook_row": 128
+    },
+    {
+      "geo_id": "GEO-AU-CANBERRA",
+      "workbook_row": 129
+    },
+    {
+      "geo_id": "GEO-AU-GOULBURN",
+      "workbook_row": 130
+    },
+    {
+      "geo_id": "GEO-AU-GALONG",
+      "workbook_row": 131
+    },
+    {
+      "geo_id": "GEO-AU-SA",
+      "workbook_row": 132
+    },
+    {
+      "geo_id": "GEO-AU-ADELAIDE",
+      "workbook_row": 133
+    },
+    {
+      "geo_id": "GEO-AU-HECTORVILLE",
+      "workbook_row": 134
+    },
+    {
+      "geo_id": "GEO-AU-NEWTON",
+      "workbook_row": 135
+    },
+    {
+      "geo_id": "GEO-AU-PARALOWIE",
+      "workbook_row": 136
+    },
+    {
+      "geo_id": "GEO-AU-KENSINGTON",
+      "workbook_row": 137
+    },
+    {
+      "geo_id": "GEO-AU-PENOLA",
+      "workbook_row": 138
+    },
+    {
+      "geo_id": "GEO-IT-CAMPANIA",
+      "workbook_row": 139
+    },
+    {
+      "geo_id": "GEO-IT-ALTAVILLA",
+      "workbook_row": 140
+    },
+    {
+      "geo_id": "GEO-GB-ENG",
+      "workbook_row": 141
+    },
+    {
+      "geo_id": "GEO-GB-SCT",
+      "workbook_row": 142
+    },
+    {
+      "geo_id": "GEO-GB-NORFOLK",
+      "workbook_row": 143
+    },
+    {
+      "geo_id": "GEO-GB-WALSINGHAM",
+      "workbook_row": 144
+    },
+    {
+      "geo_id": "GEO-GB-WALSINGHAM-SHRINE",
+      "workbook_row": 145
+    },
+    {
+      "geo_id": "GEO-GB-HOLYMILE",
+      "workbook_row": 146
+    },
+    {
+      "geo_id": "GEO-GB-DUNFERMLINE",
+      "workbook_row": 147
+    },
+    {
+      "geo_id": "GEO-GB-CARFIN",
+      "workbook_row": 148
+    },
+    {
+      "geo_id": "GEO-GB-WARRINGTON",
+      "workbook_row": 149
+    },
+    {
+      "geo_id": "GEO-GB-EDINBURGH",
+      "workbook_row": 150
+    },
+    {
+      "geo_id": "GEO-GB-READING",
+      "workbook_row": 151
+    },
+    {
+      "geo_id": "GEO-GB-BEDFORD",
+      "workbook_row": 152
+    },
+    {
+      "geo_id": "GEO-GB-CHESHAM",
+      "workbook_row": 153
+    },
+    {
+      "geo_id": "GEO-NG-IMO",
+      "workbook_row": 154
+    },
+    {
+      "geo_id": "GEO-NG-UMUAKA",
+      "workbook_row": 155
+    },
+    {
+      "geo_id": "GEO-NG-NNEENYEMAKA",
+      "workbook_row": 156
+    },
+    {
+      "geo_id": "GEO-MU-PORTLOUIS",
+      "workbook_row": 157
+    },
+    {
+      "geo_id": "GEO-MU-SAINTECROIX",
+      "workbook_row": 158
+    },
+    {
+      "geo_id": "GEO-MU-TERRE-ROUGE",
+      "workbook_row": 159
+    },
+    {
+      "geo_id": "GEO-MU-MARIE-REINE",
+      "workbook_row": 160
+    },
+    {
+      "geo_id": "GEO-GA",
+      "workbook_row": 161
+    },
+    {
+      "geo_id": "GEO-GA-LIBREVILLE",
+      "workbook_row": 162
+    },
+    {
+      "geo_id": "GEO-GA-MELEN",
+      "workbook_row": 163
+    },
+    {
+      "geo_id": "GEO-UG",
+      "workbook_row": 164
+    },
+    {
+      "geo_id": "GEO-UG-KAMPALA",
+      "workbook_row": 165
+    },
+    {
+      "geo_id": "GEO-UG-NAMUGONGO",
+      "workbook_row": 166
+    }
+  ],
+  "source_registry": [
+    {
+      "source_id": "SRC-FR-PARIS-PAIN",
+      "workbook_row": 5
+    },
+    {
+      "source_id": "SRC-FR-GENEVIEVE",
+      "workbook_row": 6
+    },
+    {
+      "source_id": "SRC-FR-GENEVIEVE-EULOGIES",
+      "workbook_row": 7
+    },
+    {
+      "source_id": "SRC-FR-NDV",
+      "workbook_row": 8
+    },
+    {
+      "source_id": "SRC-FR-NANTEAU",
+      "workbook_row": 9
+    },
+    {
+      "source_id": "SRC-FR-RUEDUBAC",
+      "workbook_row": 10
+    },
+    {
+      "source_id": "SRC-FR-NDP",
+      "workbook_row": 11
+    },
+    {
+      "source_id": "SRC-FR-MONTMARTRE",
+      "workbook_row": 12
+    },
+    {
+      "source_id": "SRC-FR-BERNAY",
+      "workbook_row": 13
+    },
+    {
+      "source_id": "SRC-FR-MARTINCAMP",
+      "workbook_row": 14
+    },
+    {
+      "source_id": "SRC-FR-MONTLIGEON",
+      "workbook_row": 15
+    },
+    {
+      "source_id": "SRC-FR-PINTERVILLE",
+      "workbook_row": 16
+    },
+    {
+      "source_id": "SRC-FR-CHARITES",
+      "workbook_row": 17
+    },
+    {
+      "source_id": "SRC-FR-ROUEN-ROMAIN",
+      "workbook_row": 18
+    },
+    {
+      "source_id": "SRC-FR-BRETAGNE-PARDONS",
+      "workbook_row": 19
+    },
+    {
+      "source_id": "SRC-FR-LOCRONAN",
+      "workbook_row": 20
+    },
+    {
+      "source_id": "SRC-FR-STANNE-AURAY",
+      "workbook_row": 21
+    },
+    {
+      "source_id": "SRC-FR-STYVES",
+      "workbook_row": 22
+    },
+    {
+      "source_id": "SRC-FR-RUMENGOL",
+      "workbook_row": 23
+    },
+    {
+      "source_id": "SRC-FR-STANNE-PALUD",
+      "workbook_row": 24
+    },
+    {
+      "source_id": "SRC-FR-FOLGOET",
+      "workbook_row": 25
+    },
+    {
+      "source_id": "SRC-FR-LOCILDUT",
+      "workbook_row": 26
+    },
+    {
+      "source_id": "SRC-FR-TROAON",
+      "workbook_row": 27
+    },
+    {
+      "source_id": "SRC-FR-MORLAIX",
+      "workbook_row": 28
+    },
+    {
+      "source_id": "SRC-FR-CUGAND",
+      "workbook_row": 29
+    },
+    {
+      "source_id": "SRC-FR-OUESSANT",
+      "workbook_row": 30
+    },
+    {
+      "source_id": "SRC-FR-ANJOU",
+      "workbook_row": 31
+    },
+    {
+      "source_id": "SRC-FR-ANJOU-MAY",
+      "workbook_row": 32
+    },
+    {
+      "source_id": "SRC-FR-AVESNIERES",
+      "workbook_row": 33
+    },
+    {
+      "source_id": "SRC-FR-PONTMAIN",
+      "workbook_row": 34
+    },
+    {
+      "source_id": "SRC-DE-HERBS",
+      "workbook_row": 35
+    },
+    {
+      "source_id": "SRC-AT-HERBS",
+      "workbook_row": 36
+    },
+    {
+      "source_id": "SRC-DE-LEONHARD",
+      "workbook_row": 37
+    },
+    {
+      "source_id": "SRC-DE-LEONHARD-INCH",
+      "workbook_row": 38
+    },
+    {
+      "source_id": "SRC-DE-REGENSBURG-CORPUS",
+      "workbook_row": 39
+    },
+    {
+      "source_id": "SRC-AT-CORPUS-WATER",
+      "workbook_row": 40
+    },
+    {
+      "source_id": "SRC-CH-LUCERNE-KANONIERE",
+      "workbook_row": 41
+    },
+    {
+      "source_id": "SRC-AT-TYROL-SH",
+      "workbook_row": 42
+    },
+    {
+      "source_id": "SRC-AT-PRANG",
+      "workbook_row": 43
+    },
+    {
+      "source_id": "SRC-AT-SAMSON",
+      "workbook_row": 44
+    },
+    {
+      "source_id": "SRC-CH-BEROMUNSTER",
+      "workbook_row": 45
+    },
+    {
+      "source_id": "SRC-AT-WOERTHERSEE",
+      "workbook_row": 46
+    },
+    {
+      "source_id": "SRC-CH-ZUG-EINSIEDELN",
+      "workbook_row": 47
+    },
+    {
+      "source_id": "SRC-DE-HEILIGENSTADT",
+      "workbook_row": 48
+    },
+    {
+      "source_id": "SRC-CH-SAINTMAURICE",
+      "workbook_row": 49
+    },
+    {
+      "source_id": "SRC-CH-APPENZELL",
+      "workbook_row": 50
+    },
+    {
+      "source_id": "SRC-CA-STANNE",
+      "workbook_row": 51
+    },
+    {
+      "source_id": "SRC-CA-STANNE-SCALA",
+      "workbook_row": 52
+    },
+    {
+      "source_id": "SRC-CA-STANNE-VOTIVE",
+      "workbook_row": 53
+    },
+    {
+      "source_id": "SRC-QC-PROC-CHAPEL",
+      "workbook_row": 54
+    },
+    {
+      "source_id": "SRC-QC-WAYSIDE-CROSS",
+      "workbook_row": 55
+    },
+    {
+      "source_id": "SRC-CA-STJOSEPH",
+      "workbook_row": 56
+    },
+    {
+      "source_id": "SRC-LA-STJOSEPH",
+      "workbook_row": 57
+    },
+    {
+      "source_id": "SRC-ARCHNO-STJOSEPH",
+      "workbook_row": 58
+    },
+    {
+      "source_id": "SRC-LA-FLEET",
+      "workbook_row": 59
+    },
+    {
+      "source_id": "SRC-ARCHNO-ALLSAINTS",
+      "workbook_row": 60
+    },
+    {
+      "source_id": "SRC-LA-BONFIRES",
+      "workbook_row": 61
+    },
+    {
+      "source_id": "SRC-NPS-CHIMAYO",
+      "workbook_row": 62
+    },
+    {
+      "source_id": "SRC-CHIMAYO-SHRINE",
+      "workbook_row": 63
+    },
+    {
+      "source_id": "SRC-NPS-PENITENTES",
+      "workbook_row": 64
+    },
+    {
+      "source_id": "SRC-NPS-PECOS",
+      "workbook_row": 65
+    },
+    {
+      "source_id": "SRC-ARCHSF-PUEBLO",
+      "workbook_row": 66
+    },
+    {
+      "source_id": "SRC-CHI-EASTER",
+      "workbook_row": 67
+    },
+    {
+      "source_id": "SRC-CHI-STFABIAN",
+      "workbook_row": 68
+    },
+    {
+      "source_id": "SRC-CHI-PILSEN",
+      "workbook_row": 69
+    },
+    {
+      "source_id": "SRC-CHI-MELROSE",
+      "workbook_row": 70
+    },
+    {
+      "source_id": "SRC-CHI-JESUS-STREETS",
+      "workbook_row": 71
+    },
+    {
+      "source_id": "SRC-IT-VENICE",
+      "workbook_row": 72
+    },
+    {
+      "source_id": "SRC-IT-ORVIETO",
+      "workbook_row": 73
+    },
+    {
+      "source_id": "SRC-IT-FLORENCE",
+      "workbook_row": 74
+    },
+    {
+      "source_id": "SRC-IT-PADUA",
+      "workbook_row": 75
+    },
+    {
+      "source_id": "SRC-IT-ASCOLI",
+      "workbook_row": 76
+    },
+    {
+      "source_id": "SRC-IT-LUCCA",
+      "workbook_row": 77
+    },
+    {
+      "source_id": "SRC-IT-INFIO",
+      "workbook_row": 78
+    },
+    {
+      "source_id": "SRC-IT-COCULLO",
+      "workbook_row": 79
+    },
+    {
+      "source_id": "SRC-IT-MACHINES",
+      "workbook_row": 80
+    },
+    {
+      "source_id": "SRC-ES-TOLEDO",
+      "workbook_row": 81
+    },
+    {
+      "source_id": "SRC-ES-SEMANA",
+      "workbook_row": 82
+    },
+    {
+      "source_id": "SRC-ES-VALLADOLID",
+      "workbook_row": 83
+    },
+    {
+      "source_id": "SRC-PT-FATIMA",
+      "workbook_row": 84
+    },
+    {
+      "source_id": "SRC-PT-LISBON-ANTHONY",
+      "workbook_row": 85
+    },
+    {
+      "source_id": "SRC-PT-LISBON-TREZENA",
+      "workbook_row": 86
+    },
+    {
+      "source_id": "SRC-PT-COMPASSO",
+      "workbook_row": 87
+    },
+    {
+      "source_id": "SRC-PT-AGONIA",
+      "workbook_row": 88
+    },
+    {
+      "source_id": "SRC-PT-LAMEGO",
+      "workbook_row": 89
+    },
+    {
+      "source_id": "SRC-PT-BRAGA-HW",
+      "workbook_row": 90
+    },
+    {
+      "source_id": "SRC-DIR-SOT",
+      "workbook_row": 91
+    },
+    {
+      "source_id": "SRC-DIR-FSSP-AUDIT",
+      "workbook_row": 92
+    },
+    {
+      "source_id": "SRC-DIR-ICKSP-AUDIT",
+      "workbook_row": 93
+    },
+    {
+      "source_id": "SRC-AU-SYD-WWC",
+      "workbook_row": 94
+    },
+    {
+      "source_id": "SRC-AU-MONTE-CORPUS",
+      "workbook_row": 95
+    },
+    {
+      "source_id": "SRC-AU-ADELAIDE-MARIAN",
+      "workbook_row": 96
+    },
+    {
+      "source_id": "SRC-AU-MONTEVERGINE",
+      "workbook_row": 97
+    },
+    {
+      "source_id": "SRC-AU-SANPELLEGRINO",
+      "workbook_row": 98
+    },
+    {
+      "source_id": "SRC-AU-SANJOSEPH",
+      "workbook_row": 99
+    },
+    {
+      "source_id": "SRC-AU-MACKILLOP-FEAST",
+      "workbook_row": 100
+    },
+    {
+      "source_id": "SRC-AU-MACKILLOP-PILGRIMAGE",
+      "workbook_row": 101
+    },
+    {
+      "source_id": "SRC-AU-CG-MARIAN",
+      "workbook_row": 102
+    },
+    {
+      "source_id": "SRC-AU-SYD-FATIMA",
+      "workbook_row": 103
+    },
+    {
+      "source_id": "SRC-GB-WALSINGHAM-STORY",
+      "workbook_row": 104
+    },
+    {
+      "source_id": "SRC-GB-WALSINGHAM-HOLYMILE",
+      "workbook_row": 105
+    },
+    {
+      "source_id": "SRC-GB-WALSINGHAM-DOWRY",
+      "workbook_row": 106
+    },
+    {
+      "source_id": "SRC-GB-STMARGARET",
+      "workbook_row": 107
+    },
+    {
+      "source_id": "SRC-GB-CARFIN",
+      "workbook_row": 108
+    },
+    {
+      "source_id": "SRC-GB-WARRINGTON",
+      "workbook_row": 109
+    },
+    {
+      "source_id": "SRC-NG-NNE-HISTORY",
+      "workbook_row": 110
+    },
+    {
+      "source_id": "SRC-NG-NNE-DEVOTIONS",
+      "workbook_row": 111
+    },
+    {
+      "source_id": "SRC-NG-ORLU-PARISH",
+      "workbook_row": 112
+    },
+    {
+      "source_id": "SRC-MU-PERELAVAL-2026",
+      "workbook_row": 113
+    },
+    {
+      "source_id": "SRC-MU-PERELAVAL-PREP",
+      "workbook_row": 114
+    },
+    {
+      "source_id": "SRC-MU-ASSUMPTION",
+      "workbook_row": 115
+    },
+    {
+      "source_id": "SRC-MU-BRANCARDIERS",
+      "workbook_row": 116
+    },
+    {
+      "source_id": "SRC-GA-MELEN",
+      "workbook_row": 117
+    },
+    {
+      "source_id": "SRC-GA-SSPX-PENTECOST",
+      "workbook_row": 118
+    },
+    {
+      "source_id": "SRC-GA-ICRSP-2026",
+      "workbook_row": 119
+    },
+    {
+      "source_id": "SRC-UG-NAMUGONGO-2026",
+      "workbook_row": 120
+    },
+    {
+      "source_id": "SRC-UG-FOOTPILGRIMS",
+      "workbook_row": 121
+    }
+  ],
+  "blockers": [
+    "No app source registry link to the 117 original workbook source URLs has been published in this batch.",
+    "No crosswalk from the 162 atlas research geo areas to current canonical Place IDs is yet certified.",
+    "The 135 attestation records remain unpublished research until source passage, exact Place identity and relevance are audited."
+  ]
+}
