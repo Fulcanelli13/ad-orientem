@@ -1,0 +1,158 @@
+{
+  "schema": "formation-a1-20261010-source-role-amendment-v1",
+  "date": "2026-10-10",
+  "governing_rule": "Dated 2026-10-09 source-context findings are historical and may not be presented as certifying the newly revised paragraphs. Only explicitly enumerated changes are allowed; all older original-document evidence is retained.",
+  "modified_roles": [
+    {
+      "owner": "APOL-003",
+      "role": "documented_position",
+      "previous_source_count": 2,
+      "current_source_ids": [
+        "HUME-EVIL-X"
+      ],
+      "current_source_count": 1
+    },
+    {
+      "owner": "APOL-003",
+      "role": "critical_response",
+      "previous_source_count": 2,
+      "current_source_ids": [
+        "CCC-EVIL",
+        "AUG-EVIL",
+        "HUME-EVIL-X"
+      ],
+      "current_source_count": 3
+    },
+    {
+      "owner": "APOL-004",
+      "role": "documented_position",
+      "previous_source_count": 2,
+      "current_source_ids": [
+        "HUME-MIRACLE-X"
+      ],
+      "current_source_count": 1
+    },
+    {
+      "owner": "APOL-004",
+      "role": "traditional_catholic_argument",
+      "previous_source_count": 2,
+      "current_source_ids": [
+        "CCC156M",
+        "CCC548M",
+        "CCC67"
+      ],
+      "current_source_count": 3
+    },
+    {
+      "owner": "APOL-010",
+      "role": "answer",
+      "previous_source_count": 2,
+      "current_source_ids": [
+        "NICEA325",
+        "JN1",
+        "CHAL451"
+      ],
+      "current_source_count": 3
+    },
+    {
+      "owner": "APOL-010",
+      "role": "critical_response",
+      "previous_source_count": 3,
+      "current_source_ids": [
+        "NICEA325",
+        "JN1",
+        "ATHANASIUS-ARIANS",
+        "CHAL451"
+      ],
+      "current_source_count": 4
+    },
+    {
+      "owner": "APOL-010",
+      "role": "traditional_catholic_argument",
+      "previous_source_count": 3,
+      "current_source_ids": [
+        "NICEA325",
+        "JN1",
+        "ATHANASIUS-ARIANS",
+        "CHAL451"
+      ],
+      "current_source_count": 4
+    }
+  ],
+  "original_findings_superseded": [
+    {
+      "finding_id": "PSV7-013",
+      "owner": "APOL-004",
+      "role": "documented_position",
+      "previous_source_id": "FATIMA00",
+      "replacement_source_ids": [
+        "HUME-MIRACLE-X"
+      ],
+      "historical_finding_retained": true,
+      "retirement_reason": "Previous Fatima-only paragraph was off-topic for the canonical miracles question; original 2000 source review remains recorded in the 2026-10-09 ledger and the historical Fatima research remains referenced by APOL-004; this corrected role has a different source base.",
+      "new_citation_claims_independently_certified": false
+    },
+    {
+      "finding_id": "PSV7-031",
+      "owner": "APOL-003",
+      "role": "documented_position",
+      "previous_source_id": "AUG-EVIL",
+      "replacement_source_ids": [
+        "HUME-EVIL-X"
+      ],
+      "historical_finding_retained": true,
+      "retirement_reason": "The old documented-position paragraph quoted Augustine, who is a Catholic respondent, not an adversarial objection to the problem of evil. The original Augustine testimony remains cited in the critical response; Hume's opposing philosophical challenge now occupies the documented-position role.",
+      "new_citation_claims_independently_certified": false
+    },
+    {
+      "finding_id": "PSV9-015",
+      "owner": "APOL-004",
+      "role": "answer",
+      "previous_source_id": "FATIMA00",
+      "replacement_source_ids": [
+        "CCC156M",
+        "CCC548M"
+      ],
+      "historical_finding_retained": true,
+      "retirement_reason": "Previous Fatima-only paragraph was off-topic for the canonical miracles question; original 2000 source review remains recorded in the 2026-10-09 ledger and the historical Fatima research remains referenced by APOL-004; this corrected role has a different source base.",
+      "new_citation_claims_independently_certified": false
+    },
+    {
+      "finding_id": "PSV9-016",
+      "owner": "APOL-004",
+      "role": "critical_response",
+      "previous_source_id": "FATIMA00",
+      "replacement_source_ids": [
+        "HUME-MIRACLE-X",
+        "CCC156M"
+      ],
+      "historical_finding_retained": true,
+      "retirement_reason": "Previous Fatima-only paragraph was off-topic for the canonical miracles question; original 2000 source review remains recorded in the 2026-10-09 ledger and the historical Fatima research remains referenced by APOL-004; this corrected role has a different source base.",
+      "new_citation_claims_independently_certified": false
+    },
+    {
+      "finding_id": "PSV9-017",
+      "owner": "APOL-004",
+      "role": "traditional_catholic_argument",
+      "previous_source_id": "FATIMA00",
+      "replacement_source_ids": [
+        "CCC156M",
+        "CCC548M",
+        "CCC67"
+      ],
+      "historical_finding_retained": true,
+      "retirement_reason": "Previous Fatima-only paragraph was off-topic for the canonical miracles question; original 2000 source review remains recorded in the 2026-10-09 ledger and the historical Fatima research remains referenced by APOL-004; this corrected role has a different source base.",
+      "new_citation_claims_independently_certified": false
+    }
+  ],
+  "still_existing_recovered_research_anchors": [
+    "BAQ-01",
+    "BAQ-02",
+    "fatima-consecration",
+    "fatima-third-secret",
+    "medjugorje",
+    "charismatic-renewal"
+  ],
+  "publication_allowed": false,
+  "independent_certification": false
+}

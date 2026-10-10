@@ -17,6 +17,8 @@ on:
       - 'data/learn/formation-141-absorption-evidence-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json'
+      - 'data/learn/apologetics-a1-25-source-audit-2026-10-10.v1.json'
+      - 'tests/apologetics-a1-25-source-audit.mjs'
       - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json'
@@ -181,6 +183,8 @@ jobs:
         run: node tests/formation-canonical-synthesis-batch1.mjs
       - name: Validate 20 sourced bilingual canonical answers
         run: node tests/formation-canonical-synthesis-batch2.mjs
+      - name: Verify Apologetics A1 first 25 question sources, opponents and publication holds
+        run: node tests/apologetics-a1-25-source-audit.mjs
       - name: Validate all 53 canonical research-linked bilingual dossiers
         run: node tests/formation-canonical-synthesis-batch3.mjs
       - name: Validate new source-first Catholic foundation articles for previously unlinked owners

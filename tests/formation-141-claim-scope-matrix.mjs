@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 const read = path => JSON.parse(readFileSync(path, "utf8"));
 const report = read("data/learn/formation-141-claim-scope-matrix-2026-10-09.v1.json");
+const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
+const a1Changed=new Map(a1.modified_roles.map(x=>[x.owner+"|"+x.role,x]));
 const packs = report.source_packs.map(path => ({path, data: read(path)}));
 const reviews = report.review_ledgers.map(path => ({path, data: read(path)}));
 assert.equal(report.version, "FORMATION_141_CLAIM_SCOPE_MATRIX_20261009_V1");
@@ -52,7 +54,12 @@ for (const {path,data} of packs) {
       const s = snapshot.roles[i];
       const expected = findingsByRole.get(actual.id+"|"+role.role) || [];
       assert.equal(role.role, s.role);
-      assert.equal(s.source_id_count, role.source_ids.length);
+      const amendment=a1Changed.get(actual.id+"|"+role.role);
+      if(amendment){
+        assert.equal(s.source_id_count,amendment.previous_source_count,"dated source snapshot must not be rewritten");
+        assert.deepEqual(role.source_ids,amendment.current_source_ids,"A1 source change not justified");
+        assert.equal(role.source_ids.length,amendment.current_source_count);
+      }else assert.equal(s.source_id_count, role.source_ids.length);
       assert.deepEqual(s.bounded_findings,expected,actual.id+":"+s.role+" review ledger mismatch");
       const missing = role.source_ids.filter(id=>!sources.has(id));
       assert.deepEqual(s.unresolved_source_ids,missing,actual.id+":"+s.role+" source registry mismatch");
