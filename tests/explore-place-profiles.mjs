@@ -627,7 +627,8 @@ const vm=buildExploreViewModel({
   filters:{query:"Lourdes"},
   selectedId:null,
   placeProfiles:profiles,
-  selectedPlaceId:lourdes.place_id
+  selectedPlaceId:lourdes.place_id,
+  expandPlace:true
 });
 const html=renderExploreToString(vm);
 assert.ok(html.includes('data-explore-place-owner="'+lourdes.place_id+'"'));
@@ -646,7 +647,8 @@ const detailHtml=renderExploreToString(buildExploreViewModel({
   view:"list",
   filters:{query:"Lourdes"},
   selectedId:lourdesShrine.item_id,
-  placeProfiles:profiles
+  placeProfiles:profiles,
+  expandDetail:true
 }));
 assert.ok(detailHtml.includes('data-explore-open-place="'+lourdes.place_id+'"'));
 assert.match(detailHtml,/Place page/);
