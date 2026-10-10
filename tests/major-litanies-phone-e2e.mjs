@@ -232,8 +232,24 @@ try{
           try{
             const value=globalThis.AO_R17_NATIVE_READER_PREVIEW?.next?.();
             const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+            const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+            const model=api?.model;
+            const currentIndex=model?.cards?.findIndex?.(x=>x.sectionId===c?.sectionId);
             return {resultId:value?.id??value?.sectionId??null,
-              card:{id:c?.id,sectionId:c?.sectionId,sourceSectionId:c?.sourceSectionId,title:c?.title}};
+              value:value&&typeof value==="object"?
+               {stage:value.stage,kind:value.kind,schema:value.schema}:null,
+              card:{id:c?.id,sectionId:c?.sectionId,sourceSectionId:c?.sourceSectionId,title:c?.title},
+              modelLength:model?.cards?.length,modelStructure:model?.structureOwner,
+              currentIndex,
+              vicinity:model?.cards?.slice?.(Math.max(0,currentIndex-2),currentIndex+9).map(x=>({
+                id:x.sectionId,source:x.sourceSectionId,title:x.title,
+                sourceSequence:x.sourceSequence,sequence:x.sequence
+              })),
+              lifecycle:api?.getLifecycleState?.(),dataset:{
+                mode:api?.root?.dataset?.r17PresentationMode,
+                state:api?.root?.dataset?.r17StateOwner,
+                cards:api?.root?.dataset?.r17PresentationModelCards
+              }};
           }catch(e){return {error:String(e?.stack??e)}}
         });
         throw new Error("ROGATION_NAV_EXPECTED_"+sectionId+" got "+
