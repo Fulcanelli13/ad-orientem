@@ -1056,7 +1056,7 @@
       "id": "geographical-places",
       "canonical_owner": "sacred-geography",
       "source_of_truth": "data/geography/seed-registry.v1.json",
-      "count": 181,
+      "count": 182,
       "publication_status": "EXPLORE_SEED_LOADED",
       "primary_destination": "explore",
       "notes": "Canonical place IDs are shared by shrine/relic/pilgrimage associations."
@@ -1065,7 +1065,7 @@
       "id": "shrines",
       "canonical_owner": "sacred-geography",
       "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json",
-      "count": 177,
+      "count": 178,
       "publication_status": "EXPLORE_SEED_LOADED",
       "primary_destination": "explore",
       "notes": "Shrine objects reference canonical places."
@@ -1074,7 +1074,7 @@
       "id": "pilgrimages",
       "canonical_owner": "sacred-geography",
       "source_of_truth": "data/shrines/shrines-pilgrimages-seed.v1.json",
-      "count": 205,
+      "count": 206,
       "publication_status": "EXPLORE_SEED_LOADED",
       "primary_destination": "explore",
       "notes": "Pilgrimage records are not all distinct mapped sites."
@@ -1101,7 +1101,7 @@
       "id": "relics",
       "canonical_owner": "sacred-geography",
       "source_of_truth": "data/explore/sacred-phenomena-seed.v1.json",
-      "count": 121,
+      "count": 122,
       "publication_status": "EXPLORE_PARTIAL_SEED",
       "primary_destination": "explore",
       "notes": "Authenticity, custody and visitor access are distinct claims."
