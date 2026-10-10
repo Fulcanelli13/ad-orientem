@@ -22,7 +22,18 @@ for(const c of doc.cases){
   assert.equal(s.full_en_fr_certified,false);
   assert.equal(s.independent_french_and_theology_approved,false);
   assert.ok(s.finding_en.length>150&&s.finding_fr.length>150,c.id+"."+s.stage+" bilingual findings");
-  assert.deepEqual(s.selected_sources.map(r=>r.id),paragraphRefsFor(CSE_QUESTION_MAP[c.id],"debate",s.stage).map(x=>x[0]),c.id+"."+s.stage+" source chain");
+  const historical=s.selected_sources.map(r=>r.id);
+  const live=paragraphRefsFor(CSE_QUESTION_MAP[c.id],"debate",s.stage).map(x=>x[0]);
+  // Later primary/context evidence is source-registered but not backdated
+  // into the original 120-stage review.
+  const revised={
+   "CSE040.catholicCase":["PH","ST154","SCR","CIC"],
+   "CSE043.opposition":["FARLEY_QUOTED2012","FARLEY_RESPONSE2012"],
+   "CSE044.appeal":["CIC"],
+   "CSE045.catholicCase":["CASTI","CIC"],
+   "CSE071.opposition":["FARLEY_QUOTED2012","FARLEY_RESPONSE2012"],
+  };
+  assert.deepEqual(live,revised[c.id+"."+s.stage]||historical,c.id+"."+s.stage+" source chain");
   for(const source of s.selected_sources)assert.equal(source.url,CSE_SOURCE_MAP[source.id].canonical_url);
   result[s.status]=(result[s.status]||0)+1;stageCount++;
  }
