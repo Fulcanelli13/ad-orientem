@@ -1,4 +1,5 @@
 import { filterDirectoryRecords } from "./data-service.js";
+import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49 } from "./preliminary-directory-r49.js";
 import { loadExploreDataset } from "./explore-data-service.js";
 import {
   EXPLORE_LENSES,
@@ -102,12 +103,13 @@ function installStyle(win){
 }
 
 export function createFindOwner(win=globalThis){
-  let openState=false,dataset=null,projection=null,mapHandle=null,loading=null;
+  let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
   const state={
-    lens:"heritage",
+    lens:"tlm",
     view:"map",
+    directoryGroup:"ROME",
     query:"",
     day:"ANY",
     affiliations:[],
@@ -169,7 +171,19 @@ export function createFindOwner(win=globalThis){
     return loading;
   }
 
+  async function ensurePreliminary(){
+    if(preliminary)return preliminary;
+    if(!preliminaryLoading){
+      const ticket=win?.AO_LOADING_DIRECTOR_V1?.begin?.("find");
+      preliminaryLoading=loadPreliminaryR49({fetchImpl:win?.fetch?.bind?.(win)??fetch})
+        .then(value=>{preliminary=value;return value})
+        .finally(()=>{preliminaryLoading=null;ticket?.end?.()});
+    }
+    return preliminaryLoading;
+  }
+
   function filtered(){
+    if(state.lens==="tlm")return filterPreliminaryR49(preliminary??[],state);
     if(!dataset||!projection)return [];
     if(state.lens==="heritage")return projectHeritagePlaces(projection,{categories:state.heritageCategories,query:state.query,customId:state.highlightCustomId});
     if(state.lens==="tlm"){
@@ -210,8 +224,9 @@ export function createFindOwner(win=globalThis){
           scroll:node.querySelector?.(".aoFindSurface")?.scrollTop??0,
         }
       : null;
-    let data;
-    try{data=await ensureData()}catch(error){
+    let data=null;
+    const preliminaryMode=state.lens==="tlm";
+    try{if(preliminaryMode)await ensurePreliminary();else data=await ensureData()}catch(error){
       if(token!==paintToken||!openState)return false;
       lastLoadError=error;
       try{win?.console?.error?.("Explore data unavailable",error)}catch{}
@@ -228,22 +243,22 @@ export function createFindOwner(win=globalThis){
     const items=state.lens==="traditions"&&state.view==="list"
       ?groupTraditionsForBrowse(rawItems,{includeNovenaContext:Boolean(state.query.trim())||state.atlasCalendar==="NOVENA"})
       :rawItems;
-    const canonical=groupTraditionsForBrowse(projection.byLens.traditions);
+    const canonical=projection?groupTraditionsForBrowse(projection.byLens.traditions):[];
     const selectedOverride=state.lens==="traditions"
       ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null
       :state.lens==="heritage"?canonical.find(item=>item.item_id===state.selectedId)??null:null;
     const customCards=state.lens==="heritage"
       ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
-    const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
+    const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
       language:language(win),
       items,
       lens:state.lens,
-      counts:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
+      counts:preliminaryMode?{tlm:PRELIMINARY_R49_TOTAL}:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
       customCards,
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
-      loadedProviders:data.directory?.loadedProviders??[],
-      unavailableProviders:data.directory?.unavailableProviders??[],
+      loadedProviders:preliminaryMode?[]:data.directory?.loadedProviders??[],
+      unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
       view:state.view,
       filters:state,
       selectedId:state.selectedId,
@@ -332,8 +347,7 @@ export function createFindOwner(win=globalThis){
     if(key==="view")state.view=value==="map"?"map":"list";
     else if(key==="lens"&&(value==="heritage"||EXPLORE_LENSES.includes(value))){
       state.lens=value;state.calendarKey=null;
-      if(value==="heritage")state.view="map";
-      else if(value==="traditions")state.view="map";
+      if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
     state.displayLimit=120;
@@ -528,10 +542,10 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       view:state.view,
       selectedPlaceId:state.selectedPlaceId,
-      counts:projection?.counts??{},
+      counts:state.lens==="tlm"?{tlm:PRELIMINARY_R49_TOTAL}:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
       unavailableProviders:dataset?.directory?.unavailableProviders??[],
-      records:dataset?.directory?.records?.length??0,
+      records:preliminary?.length??dataset?.directory?.records?.length??0,
     }),
     dispose(){
       close();
