@@ -6,7 +6,30 @@ import {
   LEARN_LAYOUT,
   LEARN_MODULE_IDS,
   LEARN_PRESENTATION_VERSION,
+  formationDossierReviewEnabled,
+  renderLearnPresentation,
 } from "../src/learn/presentation.js";
+
+{
+  // Source-controlled editorial access must be explicit, not a public module.
+  const root=()=>({dataset:{},innerHTML:""});
+  const normal=root();
+  renderLearnPresentation(normal,{language:"en"},{location:{search:""},document:{getElementById:()=>null}});
+  assert.doesNotMatch(normal.innerHTML,/data-ao-learn-dossier-review=/);
+  const preview=root();
+  const win={location:{search:"?aoFormationReview=1"},document:{getElementById:()=>null}};
+  assert.equal(formationDossierReviewEnabled(win),true);
+  assert.equal(formationDossierReviewEnabled({location:{search:"?aoFormationReview=0"}}),false);
+  assert.equal(formationDossierReviewEnabled({location:{search:"?foo=aoFormationReview=1"}}),false);
+  renderLearnPresentation(preview,{language:"en"},win);
+  assert.match(preview.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
+  assert.match(preview.innerHTML,/data-ao-learn-dossier-review="crisis"/);
+  assert.match(preview.innerHTML,/Unpublished editorial preview/);
+  const french=root();
+  renderLearnPresentation(french,{language:"fr"},win);
+  assert.match(french.innerHTML,/Apologétique/);
+  assert.match(french.innerHTML,/Crise dans l’Église/);
+}
 
 assert.equal(LEARN_DONOR_RELEASE,"43.59.30");
 assert.equal(LEARN_PRESENTATION_VERSION,"modular-learn-presentation-v1");

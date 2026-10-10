@@ -160,6 +160,7 @@ jobs:
           path: artifacts/control-audit/visible-controls.v1.json
           if-no-files-found: warn
       - run: node tests/formation-calendar-lazy-e2e.mjs
+      - run: node tests/learn-formation-review-e2e.mjs
       - run: node tests/pray-route-lazy-e2e.mjs
       - run: node tests/pray-all-modules-mobile.mjs
       - run: node tests/thin-html-browser-e2e.mjs
