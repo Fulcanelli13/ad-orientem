@@ -2,6 +2,30 @@ import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance
 const MAPLIBRE_MODULE="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.mjs";
 const MAPLIBRE_CSS="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.css";
 const DEFAULT_STYLE="https://tiles.openfreemap.org/styles/dark";
+// Web Mercator has finite latitude, and the atlas intentionally has one world.
+// MapLibre's default wrapped copies make multiple apparent Europes/Africas at
+// low zoom. Keep every physical Place on a single world, including after re-renders.
+export const EXPLORE_WORLD_BOUNDS=Object.freeze([Object.freeze([-180,-85.051129]),Object.freeze([180,85.051129])]);
+const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+export function boundedWorldViewport(viewport=null){
+  const rawCenter=Array.isArray(viewport?.center)?viewport.center:[0,16];
+  const longitude=Number(rawCenter[0]),latitude=Number(rawCenter[1]),zoom=Number(viewport?.zoom);
+  return Object.freeze({
+    center:[clamp(Number.isFinite(longitude)?longitude:0,-180,180),clamp(Number.isFinite(latitude)?latitude:16,-85,85)],
+    zoom:clamp(Number.isFinite(zoom)?zoom:1,0,18),
+  });
+}
+export function boundedWorldMapOptions(viewport=null){
+  const position=boundedWorldViewport(viewport);
+  return {
+    center:position.center,zoom:position.zoom,
+    renderWorldCopies:false,
+    maxBounds:EXPLORE_WORLD_BOUNDS.map(pair=>[...pair]),
+    minZoom:0,maxZoom:18,
+    maxPitch:0,dragRotate:false,touchPitch:false,
+  };
+}
+
 export const MASS_MAP_GROUP_COLORS=Object.freeze({
   FSSP:"#c9ae75",ICKSP:"#aa9bc5",SSPX:"#85a9b7",IBP:"#b6aa94",
   DIOCESAN:"#87ac9b",OTHER:"#b8b1a2",
@@ -61,8 +85,7 @@ export async function mountFindMap(container,records,{win=globalThis,onSelect=()
   const map=new maplibre.Map({
     container,
     style:win.AO_DIRECTORY_MAP_STYLE_URL||DEFAULT_STYLE,
-    center:[0,20],
-    zoom:1.2,
+    ...boundedWorldMapOptions(),
     attributionControl:true,
   });
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
@@ -191,7 +214,7 @@ export function mapFitBounds(features){
 export function mapViewport(map){
   const center=map?.getCenter?.(),zoom=map?.getZoom?.();
   if(!center||!Number.isFinite(center.lng)||!Number.isFinite(center.lat)||!Number.isFinite(zoom))return null;
-  return {center:[center.lng,center.lat],zoom};
+  return boundedWorldViewport({center:[center.lng,center.lat],zoom});
 }
 export async function mountExploreMap(container,items,{
   win=globalThis,onSelect=()=>{},initialViewport=null,
@@ -205,8 +228,7 @@ export async function mountExploreMap(container,items,{
   const map=new maplibre.Map({
     container,
     style:win.AO_EXPLORE_MAP_STYLE_URL||win.AO_DIRECTORY_MAP_STYLE_URL||DEFAULT_STYLE,
-    center:initialViewport?.center??[0,20],
-    zoom:initialViewport?.zoom??1.2,
+    ...boundedWorldMapOptions(initialViewport),
     attributionControl:true,
   });
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
