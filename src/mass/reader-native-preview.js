@@ -1923,17 +1923,17 @@ export async function mountNativeReaderPreview({
 
   function planAwareCard(card){
     if(!card)return null;
-    // The II-class violet Rogation votive omits Gloria and Credo.
-    // Keep the canonical 48-step corpus immutable, but prevent these
-    // entire source-owned sections appearing in navigation or rendering.
+    // Purple II-class Rogation votives always omit Gloria. Under 1960
+    // General Rubrics §343(a), Credo is retained if the occurring
+    // Sunday prescribes it. Keep the canonical 48-card source unchanged.
     const isRogation=prepared?.session?.resolvedMass?.actualCelebration?.id==="rogation-mass-1962";
     const sourceSection=String(card.sourceSectionId??card.sectionId??"");
-    if(isRogation && ["AO.CARD.003","AO.CARD.009"].includes(sourceSection)){
-      if(prepared?.session?.resolvedMass?.provenance?.gloria!==false ||
-         prepared?.session?.resolvedMass?.provenance?.credo!==false)
-        throw new Error("ROGATION_GLORIA_CREDO_OMISSION_NOT_CERTIFIED");
+    const prov=prepared?.session?.resolvedMass?.provenance??{};
+    if(isRogation && sourceSection==="AO.CARD.003"){
+      if(prov.gloria!==false)throw new Error("ROGATION_GLORIA_OMISSION_NOT_CERTIFIED");
       return null;
     }
+    if(isRogation && sourceSection==="AO.CARD.009"&&prov.credo===false)return null;
     const plan=prepared?.session?.plan;
     if(plan?.blessingAllowed!==false)return card;
     const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
