@@ -220,6 +220,9 @@ try{
       // Locator tap waits for the dynamically rendered phone control to
       // become stable after each card-arrival transition.
       await next.tap({timeout:5000});
+      // Match the previously certified Minor Rogation phone journey:
+      // let the 120ms post-touch card repaint settle before sampling R17.
+      await page.waitForTimeout(120);
       try{
         await page.waitForFunction(expectedId=>{
           const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
