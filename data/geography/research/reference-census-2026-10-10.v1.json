@@ -342,6 +342,151 @@
       "url": "https://www.usccb.org/committees/divine-worship/policies/norms-for-national-shrines",
       "access": "NORM_ACCESSIBLE",
       "note": "Distinguishes canonically designated shrines from mere dedication and private pilgrimage."
+    },
+    {
+      "id": "AS_PH_ACSP_2024_CENSUS",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Association of Catholic Shrines and Pilgrimages Philippines: official member census (2024)",
+      "authority": "SHRINE_ASSOCIATION_CENSUS",
+      "url": "https://philippineshrines.org/2025/01/28/acsp-official-shrine-members/",
+      "access": "REPORT_ACCESSIBLE",
+      "note": "Association states 305 shrines and 257 enrolled members in 2024; reported geographical subtotals add to 296; 2025 association report not equal present unique-physical-site denominator."
+    },
+    {
+      "id": "AS_PH_ACSP_NORTH",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP Northern and Central Luzon directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/northern-central-luzon/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Named shrines with designation dates, dioceses and membership labels; page has repeated Iba records. 16 selected priority rows acquired.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AS_PH_ACSP_NCR",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP NCR and Southern Luzon directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Named shrine rows; Saint Martha at Pateros listed under two authority headings. 25 selected priority rows acquired.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AS_PH_ACSP_VISAYAS",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP Visayas directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/visayas/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Cebu Our Lady of Lourdes repeat; 20 selected priority rows acquired.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AS_PH_ACSP_MINDANAO",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP Mindanao directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/mindanao/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Five publicly listed shrines on page; all five recorded.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_2025",
+      "continent": "South America",
+      "geo_scope": "Chile",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Episcopal Conference of Chile — El peregrinar su sentido y finalidad (2025)",
+      "authority": "EPISCOPAL_ILLUSTRATED_INDEX",
+      "url": "https://www.iglesia.cl/48774-el-peregrinar-su-sentido-y-finalidad.html",
+      "access": "MAP_AND_PDF_ACCESSIBLE",
+      "note": "15 named shrines visible on 2025 illustrated map; geographic and church identity require detailed index.",
+      "extracted_index": "data/geography/research/chile-episcopal-shrines-map-2026-10-10.v1.json"
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_SEARCH",
+      "continent": "South America",
+      "geo_scope": "Chile",
+      "subjects": [
+        "SHRINE",
+        "CUSTOM",
+        "PILGRIMAGE"
+      ],
+      "title": "Chilean bishops' searchable shrine directory and historic festivals catalogues",
+      "authority": "EPISCOPAL_DATABASE_INDEX",
+      "url": "https://www.iglesia.cl/santuarios.php",
+      "access": "SEARCH_UI_ACCESSIBLE",
+      "note": "Directory accepts name/city/feast searches. Old episcopal area page references full list of shrine feast days and an inventory, but source download file not acquired."
+    },
+    {
+      "id": "EU_IE_EPISCOPAL_2025",
+      "continent": "Europe",
+      "geo_scope": "Ireland",
+      "subjects": [
+        "PILGRIMAGE",
+        "SHRINE"
+      ],
+      "title": "Irish Catholic Bishops' Conference Jubilee 2025 national pilgrimage destinations",
+      "authority": "EPISCOPAL_NAMED_INDEX",
+      "url": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "access": "THREE_SITE_INDEX_ACCESSIBLE",
+      "note": "Three designated 2025 sites, Croagh Patrick absent from 182 Place seed; Knock and Lough Derg known.",
+      "extracted_index": "data/geography/research/ireland-2025-national-pilgrimage-2026-10-10.v1.json"
+    },
+    {
+      "id": "IT_PAMI_SANCTUARY",
+      "continent": "Europe",
+      "geo_scope": "Italy / Global",
+      "subjects": [
+        "SHRINE"
+      ],
+      "title": "Pontificia Academia Mariana Internationalis — censimento santuari and world Marian map",
+      "authority": "PONTIFICAL_RESEARCH_INVENTORY",
+      "url": "https://www.pami.info/santuari-censimento/",
+      "access": "INDEX_AND_MAP_ACCESSIBLE",
+      "note": "Worldwide Marian map and Italian sanctuary cataloguing with official ICCD links, currently updating. Map content not extracted."
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_CUSTOM",
+      "continent": "South America",
+      "geo_scope": "Chile",
+      "subjects": [
+        "CUSTOM"
+      ],
+      "title": "Conferencia Episcopal de Chile — popular piety customs/fiestas and Canto a lo Divino",
+      "authority": "EPISCOPAL_CULTURAL_INDEX",
+      "url": "https://www.iglesia.cl/area_eclesial.php",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Festival catalogue, dates, popular devotions, canta a lo divino and Cuasimodo; Latin American customs distinct from French relevance-gated domestic customs."
     }
   ],
   "initial_source_derived_leads": [
@@ -620,5 +765,21 @@
     "published_new_places": 0,
     "source_screening_status": "INDEX_TRANSCRIPTION_COMPLETE_IN_4_BOUNDED_LISTS; PHYSICAL_IDENTITY_AND_RELEASE_ELIGIBILITY_UNRESOLVED",
     "source_extraction_not_worldwide_completeness": true
+  },
+  "acquisition_checkpoint_batch3": {
+    "added_source_references": 10,
+    "total_source_references": 32,
+    "selected_philippine_shrine_rows": 66,
+    "philippine_directories": "Four live regional ACSP pages; selective 66 significant or representative rows, not complete transcription of 305 reported shrines",
+    "reported_philippine_shrine_total_2024": 305,
+    "regional_subtotals_sum": 296,
+    "reported_unique_sites": "NOT_VERIFIED_SOURCE_INTERNAL_INCONSISTENCY",
+    "chilean_bishops_map_rows": 15,
+    "chilean_comprehensive_shrine_catalogue": "DISCOVERED_BUT_NOT_EXTRACTED",
+    "ireland_three_site_episcopal_list": 3,
+    "ireland_seed_missing": "Croagh Patrick",
+    "indexed_source_rows_combined_before_entity_dedup": 295,
+    "published_new_places": 0,
+    "original_16_source_derived_leads_all_held": true
   }
 }
