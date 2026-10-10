@@ -1,4 +1,4 @@
-import { formationReaderCss } from "./formation-ui.js";
+import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { searchDiscovery } from "./discovery.js";
@@ -288,5 +288,6 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
         </div>`
       }
     </main>`;
+  installFormationNavigation(win,root);
   return true;
 }

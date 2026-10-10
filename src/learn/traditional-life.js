@@ -1,4 +1,4 @@
-import { formationReaderCss } from "./formation-ui.js";
+import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import "../pray/canonical-data.js";
 import {
   LOW_MASS_RESPONSES_V381,
@@ -321,7 +321,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
     else if(state.route==="learn.serve_mass.responses")node.innerHTML=trainer(win,state);
     else if(state.route==="learn.scapular")node.innerHTML=scapular(win);
     else return false;
-    node.scrollTop=0;queueMicrotask(()=>node.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());return true;
+    node.scrollTop=0;installFormationNavigation(win,node);queueMicrotask(()=>node.querySelector("button,[href],summary,[tabindex]:not([tabindex='-1'])")?.focus?.());return true;
   }
   function open(id,opts={}){
     const canonical=id==="learn.serve_mass"?"learn.serve_mass.responses":id;

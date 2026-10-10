@@ -37,6 +37,21 @@ try{
  await hub.waitFor({state:"visible"});
  const doors=hub.locator("[data-ao-learn-family]");
  assert.equal(await doors.count(),9,"Formation homepage must have nine distinct subject doors");
+ const hubNav=hub.locator(".aoFNav");
+ assert.equal(await hubNav.count(),1,"Formation subject hub needs a visual navigator");
+ assert.equal(await hubNav.locator("[data-ao-fnav-go]").count(),9,
+  "Formation table of contents must reach every subject");
+ const hubControls=await hubNav.locator(".aoFNavRail button").evaluateAll(nodes=>
+  nodes.map(n=>({h:n.getBoundingClientRect().height,w:n.getBoundingClientRect().width})));
+ assert.ok(hubControls.every(x=>x.h>=44&&x.w>=44),
+  "Intra-Formation navigation controls must remain finger-sized on 320px phones");
+ await hubNav.locator('[data-ao-fnav-action="toggle"]').tap();
+ assert.equal(await hubNav.locator(".aoFNavMenu").isVisible(),true,
+  "The contents index must open on an explicit tap");
+ assert.equal(await hubNav.locator('[data-ao-fnav-action="toggle"]').getAttribute("aria-expanded"),"true");
+ await hubNav.locator('[data-ao-fnav-go="4"]').tap();
+ assert.equal(await hubNav.locator(".aoFNavMenu").isVisible(),false,
+  "Jumping to a subject must close the expanded contents index");
  const grid=await doors.evaluateAll(nodes=>nodes.map(x=>{const b=x.getBoundingClientRect();return{x:b.x,y:b.y,w:b.width,h:b.height,id:x.dataset.aoLearnFamily}}));
  assert.ok(grid[1].x>grid[0].x+30&&Math.abs(grid[1].y-grid[0].y)<3,
    "320px Formation categories must use compact two-column geometry: "+JSON.stringify(grid.slice(0,2)));
@@ -61,6 +76,18 @@ try{
  assert.equal(await search.inputValue(),"CSE123","Question search context lost on return");
  await find("SL01");
  await page.waitForFunction(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.()?.lessonId==="SL01",null,{timeout:12000});
+ const slNav=page.locator("#ao-spiritual-life-root .aoFNav");
+ assert.equal(await slNav.count(),1,"Spiritual Life lesson lacks its section rail");
+ assert.ok(await slNav.locator("[data-ao-fnav-go]").count()>=2,
+  "Spiritual Life sections should be navigable without paging through full text");
+ await slNav.locator('[data-ao-fnav-action="toggle"]').tap();
+ await slNav.locator('[data-ao-fnav-go="1"]').tap();
+ assert.equal(await slNav.locator(".aoFNavMenu").isVisible(),false);
+ const scrollInfo=await page.locator("#ao-spiritual-life-root").evaluate(n=>({
+  overflow:n.scrollWidth-n.clientWidth,progress:n.querySelector(".aoFNav")?.style.getPropertyValue("--ao-fnav-progress")
+ }));
+ assert.ok(scrollInfo.overflow<=2,"Spiritual Life navigator causes mobile overflow");
+ assert.ok(scrollInfo.progress!==undefined,"Scroll-position indicator missing");
  await returnToHub(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.close?.());
  await find("PX1912-Q213");
  await page.waitForFunction(()=>globalThis.AO_TRADITIONAL_CATECHISM?.getState?.()?.detail===213,

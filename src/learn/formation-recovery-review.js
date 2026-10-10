@@ -1,3 +1,4 @@
+import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 // Canonical study preview and full editorial QA share one source; draft is not certified teaching.
 // The records load from their canonical research JSON files; this view does not duplicate the answer corpus.
 export const RECOVERY_REVIEW_VERSION = "FORMATION_RECOVERY_REVIEW_V1";
@@ -108,7 +109,7 @@ const css = [
   "#ao-formation-recovery-review .rrThemeCard:focus-visible,#ao-formation-recovery-review .rrThemeChips button:focus-visible,#ao-formation-recovery-review .rrBreadcrumb button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}",
   "@media(max-width:420px){#ao-formation-recovery-review main{padding:15px 12px 50px}#ao-formation-recovery-review .rrThemeGrid{gap:8px}#ao-formation-recovery-review .rrThemeCard{min-height:130px;padding:13px 26px 13px 11px}#ao-formation-recovery-review .rrThemeCard strong{font-size:.94rem}}"
 
-].join("\n");
+].join("\n")+formationReaderCss();
 
 export function buildRecoveryReviewRows(packs) {
   const byName = name => packs.find(x=>x.label===name)?.doc;
@@ -533,6 +534,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     el.innerHTML='<style>'+css+'</style><header class="rrTop"><button type="button" data-rr-back aria-label="Back">‹</button>'+
       '<strong>'+esc(state.studyPreview?pick(win,"Formation · Study preview","Formation · Aperçu"):pick(win,"Source review · Unpublished","Examen des sources · Non publié"))+'</strong>'+
       '<button type="button" data-rr-home aria-label="Home">⌂</button></header><main>'+inner+'</main>';
+    installFormationNavigation(win,el);
     return true;
   }
   async function open({corpus="all",returnFocus=null,studyPreview=false}={}){

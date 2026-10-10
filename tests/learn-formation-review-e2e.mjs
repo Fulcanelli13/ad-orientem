@@ -73,6 +73,17 @@ try{
     assert.equal(status.view,"themes","Preview should land on subthemes rather than a flat list");
     assert.equal(status.themeCount,expectedThemes,"Canonical category count lost");
     assert.equal(await root.locator("[data-rr-theme]").count(),expectedThemes);
+    const navigator=root.locator(".aoFNav");
+    assert.equal(await navigator.count(),1,"Research reader missing visual topic navigator");
+    assert.equal(await navigator.locator("[data-ao-fnav-go]").count(),expectedThemes,
+      "Expanded navigator must index each canonical subject");
+    const controls=await navigator.locator(".aoFNavRail button").evaluateAll(nodes=>
+      nodes.map(b=>({w:b.getBoundingClientRect().width,h:b.getBoundingClientRect().height})));
+    assert.ok(controls.every(x=>x.w>=44&&x.h>=44),"Research reader navigation touch targets are undersized");
+    await navigator.locator('[data-ao-fnav-action="toggle"]').tap();
+    assert.equal(await navigator.locator(".aoFNavMenu").isVisible(),true);
+    await navigator.locator('[data-ao-fnav-go="1"]').tap();
+    assert.equal(await navigator.locator(".aoFNavMenu").isVisible(),false);
     const counts=await root.locator(".rrThemeCard").evaluateAll(nodes=>nodes.map(n=>Number(n.dataset.rrThemeCount)));
     assert.equal(counts.reduce((a,b)=>a+b,0),expectedQuestions,"Subtheme counts do not cover canonical questions");
     assert.equal(await root.locator("[data-rr-dossier]").count(),0,
@@ -156,6 +167,12 @@ try{
     assert.ok(metrics.overflow<=3,"subtheme grid overflows at "+width+"px: "+JSON.stringify(metrics));
     assert.ok(metrics.headerHeight>=44,"review header controls too small for phone");
     assert.ok(metrics.tiles.every(n=>n>=128),"theme tile collapses below usable phone size");
+    const navMetrics=await root.locator(".aoFNav").evaluate(n=>({
+      overflow:n.scrollWidth-n.clientWidth,
+      buttons:[...n.querySelectorAll(".aoFNavRail button")].map(b=>b.getBoundingClientRect().height)
+    }));
+    assert.ok(navMetrics.overflow<=2,"formation cinematic navigation overflows at "+width+"px");
+    assert.ok(navMetrics.buttons.every(h=>h>=44),"formation subtheme navigator has undersized controls");
   }
 
   assert.equal(errors.filter(e=>/formation.recovery|formation.research|research files unavailable/i.test(e)).length,0,

@@ -1,4 +1,4 @@
-import { formationReaderCss } from "../learn/formation-ui.js";
+import { formationReaderCss, installFormationNavigation } from "../learn/formation-ui.js";
 
 const VERSION="glossary-runtime-v1";
 const ROUTE_ID="learn.glossary";
@@ -257,7 +257,7 @@ export function createGlossaryRuntime(win=globalThis){
     else if(state.error)body=top()+'<main class="aoGlossWrap"><div class="aoGlossEmpty">'+esc(state.error)+'</div></main>';
     else body=state.view==="context"?contextView():state.view==="lexemeStage"?lexemeStageView():state.view==="lexemes"?lexemeStagesView():state.view==="phrases"?phrasesView():state.view==="section"?sectionView():state.view==="category"?categoryView():categoriesView();
     n.innerHTML="<style>"+css()+"</style>"+body+(state.detailId?detail():"");
-    n.hidden=false;n.removeAttribute("aria-hidden");return true;
+    n.hidden=false;n.removeAttribute("aria-hidden");installFormationNavigation(win,n);return true;
   }
 
   function onInput(e){
