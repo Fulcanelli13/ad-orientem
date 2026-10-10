@@ -71,11 +71,11 @@ export const yearJourneyCss=`
 .aoCalYearHeading h3{font-size:24px;font-weight:400;margin:0;line-height:1.22}
 .aoCalYearHeading>span{font:500 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#abb0ac;text-align:right}
 .aoCalYearTrackWrap{position:relative;margin:28px 1px 9px}
-.aoCalYearTrack{width:100%;height:60px;display:flex;overflow:hidden;outline:1px solid rgba(235,225,208,.23);border-radius:3px;background:#131820}
+.aoCalYearTrack{width:100%;height:60px;display:flex;overflow:hidden;outline:1px solid rgba(235,225,208,.23);border-radius:3px;background:var(--surface-2,#131820)}
 .aoCalYearSegment{flex:none;min-width:0;height:100%;border-right:1px solid rgba(8,12,18,.45)}
 .aoCalYearSegment.current{box-shadow:inset 0 0 0 2px rgba(247,235,210,.8)}
-.aoCalYearMarker{position:absolute;z-index:1;top:-15px;bottom:-8px;width:2px;background:#e9ddc4;transform:translateX(-50%)}
-.aoCalYearMarker i{position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#e9ddc4;box-shadow:0 0 0 3px #0b1118}
+.aoCalYearMarker{position:absolute;z-index:1;top:-15px;bottom:-8px;width:2px;background:var(--text,#eef0ef);transform:translateX(-50%)}
+.aoCalYearMarker i{position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:var(--text,#eef0ef);box-shadow:0 0 0 3px var(--bg,#080c12)}
 .aoCalYearTrackCaption{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;color:#a9a99f;font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
 .aoCalYearTrackCaption strong{color:var(--ao-text-primary,#e7e9ed);font-weight:600}
 .aoCalYearDayColourLegend{margin:14px 0 6px;color:var(--ao-text-muted,#a6abb5);font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.03em}
@@ -83,7 +83,7 @@ export const yearJourneyCss=`
 .aoCalYearNote{font-size:15px;line-height:1.5;color:#bcb8af;margin:14px 0 0}
 .aoCalYearSource{margin:12px 0 0;font:500 13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoCalYearSource a{color:#ded1b5;text-decoration:underline;text-underline-offset:3px}.aoCalYearSource a:focus-visible{outline:2px solid #e6d5b6;outline-offset:3px}
 .aoCalYearGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.aoCalYearSeason{align-self:start;min-width:0;background:#10161e;border:1px solid rgba(235,225,208,.13);border-top:3px solid var(--season-color);border-radius:8px;overflow:hidden}
+.aoCalYearSeason{align-self:start;min-width:0;background:var(--surface-1,#10161e);border:1px solid rgba(235,225,208,.13);border-top:3px solid var(--season-color);border-radius:8px;overflow:hidden}
 .aoCalYearSeason[data-cal-year-stage="past"]{opacity:.78}.aoCalYearSeason.expanded{opacity:1;border-color:rgba(235,225,208,.27);border-top-color:var(--season-color)}
 .aoCalYearSeasonButton{display:flex!important;align-items:start;gap:9px;width:100%;min-height:100px!important;padding:14px!important;text-align:left!important;background:transparent!important;border:0!important;border-radius:0!important;color:#e9e4d9!important}
 .aoCalYearSeasonButton:focus-visible,.aoCalYearActions button:focus-visible{outline:2px solid #e6d5b6!important;outline-offset:-3px!important}
