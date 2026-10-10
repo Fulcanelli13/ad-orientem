@@ -3,6 +3,7 @@
 // Legacy DOM/state is consulted only when an explicit rollback/shadow donor is supplied.
 
 import { createMassReaderModel } from "./reader-model.js";
+import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
@@ -227,6 +228,8 @@ export async function prepareNativeReaderPreview({
   loadCorpusChristiData=loadCorpusChristiProcessionReaderData,
   holyThursdayPostData=null,
   loadHolyThursdayPostData=loadHolyThursdayPostReaderData,
+  mandatumSourceData=null,
+  loadMandatumData=loadMandatumSource,
   genericProcessionData=null,
   loadGenericProcessionData=loadGenericProcessionReaderData,
 }={}){
@@ -331,6 +334,12 @@ export async function prepareNativeReaderPreview({
     hasHolyThursdayPost ? (holyThursdayPostData ?? Promise.resolve(loadHolyThursdayPostData(prepared))) : null,
     hasGenericProcession ? (genericProcessionData ?? Promise.resolve(loadGenericProcessionData(prepared))) : null,
   ]);
+  const mandatumActive=prepared?.session?.resolvedMass?.provenance?.holyThursday?.mandatumPresent===true;
+  const loadedMandatum=mandatumActive
+    ? (mandatumSourceData ?? await Promise.resolve(loadMandatumData(prepared)))
+    : null;
+  const mandatumSource=loadedMandatum?.source??loadedMandatum??null;
+  const presentationWithMandatum=Object.freeze({...data,mandatumSource});
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
     sectionMap:data?.sectionMap,
@@ -339,6 +348,7 @@ export async function prepareNativeReaderPreview({
     canonSourceMap:data?.canonSourceMap,
     nuptialData:data?.nuptialData,
     frenchOrdinary:data?.frenchOrdinary,
+    holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
   const presentationModel=projectSourceFirst48Presentation(model);
@@ -396,7 +406,7 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,data,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
+    prepared,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -452,7 +462,7 @@ export async function mountNativeReaderPreview({
     goodFridayData,loadGoodFridayData,
     easterVigilData,loadEasterVigilData,
     requiemAbsolutionData,loadRequiemAbsolutionData,corpusChristiData,loadCorpusChristiData,
-    holyThursdayPostData,loadHolyThursdayPostData,genericProcessionData,loadGenericProcessionData,
+    holyThursdayPostData,loadHolyThursdayPostData,mandatumSourceData,loadMandatumData,genericProcessionData,loadGenericProcessionData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
