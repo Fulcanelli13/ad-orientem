@@ -1,4 +1,5 @@
 import { HOME_PRESENTATION_VERSION, renderHome } from "./presentation.js";
+import "./today-v2.css";
 
 const VERSION="modular-home-v2";
 
@@ -244,6 +245,12 @@ export function createHomeOwner(win=globalThis){
     const calendar=target?.closest?.("[data-home-calendar]");
     if(calendar){
       event.preventDefault?.();
+      const view=calendar.dataset?.homeCalendarView;
+      if(view==="year"||view==="picker"){
+        // Set requested first-use Calendar view before navigation, avoiding a
+        // transient Day flash while the lazy Calendar runtime loads.
+        win?.AO_CALENDAR_APP_V1?.setView?.(view);
+      }
       void navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
       return;
     }
