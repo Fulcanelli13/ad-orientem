@@ -217,7 +217,9 @@ try{
     const visited=[];
     for(const sectionId of expected){
       const box=await next.boundingBox();assert.ok(box&&box.height>=44);
-      await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+      // Locator tap waits for the dynamically rendered phone control to
+      // become stable after each card-arrival transition.
+      await next.tap({timeout:5000});
       try{
         await page.waitForFunction(expectedId=>{
           const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
