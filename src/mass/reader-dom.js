@@ -2058,7 +2058,24 @@ export function createReaderDomAdapter({
     const closingOrdinary=/\b(?:Gloria|Credo)\b/i.test(current?.sectionTitle??"");
     const travel=Math.min(closingOrdinary?340:240,Math.max(68,(cueCount-1)*56));
     const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
-    if(extra)card.style.setProperty("--ao-short-cue-tail",extra+"px");
+    // On naturally long Ordinary cards, extra can be zero even though the
+    // source-backed penultimate doxology is swallowed by the hard last-cue
+    // scroll edge. Reserve precisely enough additional scroll to place
+    // that cue on the 39% focus line *before* the final-cue edge zone.
+    let closingExtra=0;
+    if(closingOrdinary){
+      const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
+      const penultimate=cues.at(-2);
+      if(penultimate){
+        const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
+        const center=pr.top-cr.top+card.scrollTop+pr.height/2;
+        const requiredScroll=center-viewport*.39+24;
+        const availableScroll=Math.max(0,card.scrollHeight-viewport);
+        closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
+      }
+    }
+    const tail=Math.max(extra,closingExtra);
+    if(tail)card.style.setProperty("--ao-short-cue-tail",tail+"px");
   }
 
   function closeFaithfulPicker(){
