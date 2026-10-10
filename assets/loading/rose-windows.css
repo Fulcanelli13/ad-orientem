@@ -74,3 +74,71 @@ html[data-ao-motion-v1="reduced"] .aoCinemaLoaderMark.brandMark.aoBrandEmblem::b
   animation:none!important;
   transform:none!important;
 }
+
+/* v1 loading director: one mask surface, three EXACT existing art sources.
+   The outer layer crossfades; its child breathes without rotating. The
+   archived Marian/Evangelist masks above remain the fallback when JS is off. */
+#ao-cinema-boot .aoCinemaBootCross[data-ao-loading-enhanced="true"],
+#ao-cinema-loader .aoCinemaLoaderMark[data-ao-loading-enhanced="true"]{
+  position:relative!important;
+  isolation:isolate;
+}
+#ao-cinema-boot .aoCinemaBootCross[data-ao-loading-enhanced="true"]::before,
+#ao-cinema-loader .aoCinemaLoaderMark[data-ao-loading-enhanced="true"]::before{
+  opacity:0!important;
+  animation:none!important;
+}
+#ao-cinema-boot .aoCinemaBootCross .aoLoadingArtLayer,
+#ao-cinema-loader .aoCinemaLoaderMark .aoLoadingArtLayer{
+  position:absolute;
+  inset:var(--ao-loading-art-inset,3px);
+  display:block;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 400ms ease;
+}
+#ao-cinema-loader .aoCinemaLoaderMark .aoLoadingArtLayer{
+  --ao-loading-art-inset:2px;
+}
+#ao-cinema-boot .aoCinemaBootCross .aoLoadingArtLayer[data-visible="true"],
+#ao-cinema-loader .aoCinemaLoaderMark .aoLoadingArtLayer[data-visible="true"]{
+  opacity:1;
+}
+.aoLoadingArtSymbol{
+  position:absolute;
+  inset:0;
+  display:block;
+  background:color-mix(in srgb,var(--liturgical,#c9ad78) 78%,#efe9dd);
+  animation:aoLoadingArtBreathe 3.4s ease-in-out infinite;
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  mask-position:center;
+  -webkit-mask-size:contain;
+  mask-size:contain;
+}
+.aoLoadingArtLayer[data-art="marian"] .aoLoadingArtSymbol{
+  -webkit-mask-image:url("./rose-marian-v4343.png");
+  mask-image:url("./rose-marian-v4343.png");
+}
+.aoLoadingArtLayer[data-art="evangelists"] .aoLoadingArtSymbol{
+  -webkit-mask-image:url("./rose-evangelists-v4343.png");
+  mask-image:url("./rose-evangelists-v4343.png");
+}
+.aoLoadingArtLayer[data-art="logo"] .aoLoadingArtSymbol{
+  -webkit-mask-image:url("../active/navigation/ao-brand-emblem.png");
+  mask-image:url("../active/navigation/ao-brand-emblem.png");
+}
+@keyframes aoLoadingArtBreathe{
+  0%,100%{transform:scale(.985);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--liturgical) 12%,transparent))}
+  50%{transform:scale(1.012);filter:drop-shadow(0 0 22px color-mix(in srgb,var(--liturgical) 32%,transparent))}
+}
+@media(prefers-reduced-motion:reduce){
+  .aoLoadingArtLayer,.aoLoadingArtSymbol{animation:none!important;transition:none!important;transform:none!important}
+}
+html[data-reduced-motion="true"] .aoLoadingArtLayer,
+html[data-reduced-motion="true"] .aoLoadingArtSymbol,
+html[data-ao-motion-v1="reduced"] .aoLoadingArtLayer,
+html[data-ao-motion-v1="reduced"] .aoLoadingArtSymbol{
+  animation:none!important;transition:none!important;transform:none!important
+}
