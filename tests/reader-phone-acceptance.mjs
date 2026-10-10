@@ -60,6 +60,21 @@ try{
     assert.ok(box && box.height>=44,selector+" touch target is under 44px high");
   }
 
+  // Former Batch A draft: prove the shared rubrical Guide opens and closes
+  // through real mobile touch, without detaching the native R17 reader.
+  const guide=page.locator('[data-role="guide-button"]');
+  assert.equal(await guide.count(),1,"Native reader lost the central Guide control");
+  const guideRect=await guide.boundingBox();
+  assert.ok(guideRect&&guideRect.height>=40,"Guide is not a usable touch target");
+  await page.touchscreen.tap(guideRect.x+guideRect.width/2,guideRect.y+guideRect.height/2);
+  await page.waitForFunction(()=>document.querySelector('[data-role="guide-popover"]')?.hidden===false,null,{timeout:5000});
+  const closeGuide=page.locator('[data-guide-close]');
+  const closeGuideRect=await closeGuide.boundingBox();
+  assert.ok(closeGuideRect&&closeGuideRect.height>=30,"Rubrical Guide has no usable close control");
+  await page.touchscreen.tap(closeGuideRect.x+closeGuideRect.width/2,closeGuideRect.y+closeGuideRect.height/2);
+  await page.waitForFunction(()=>document.querySelector('[data-role="guide-popover"]')?.hidden===true,null,{timeout:5000});
+  assert.equal(await shell.count(),1,"Guide touch detached native Mass reader");
+
   const translatable=page.locator('[data-translate-toggle="true"]').first();
   assert.ok(await translatable.count(),"no tappable vernacular/Latin paragraph found");
   const primary=await translatable.getAttribute("data-primary-text");
