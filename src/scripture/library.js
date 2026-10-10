@@ -428,7 +428,29 @@ export function mountScriptureLibrary(root,{
  return Object.freeze({
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
    setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
-   setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");const closeFocused=wrap.querySelector("[data-scripture-close]")===document.activeElement;records=next;draw();if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});},
+   setRecords(next){
+     if(!Array.isArray(next))throw new TypeError("Scripture records array required");
+     // An asynchronously arriving book must not discard a chapter/verse
+     // currently being edited. Recreate that control with its exact value
+     // and focus, even when the user has not yet committed the change.
+     const current=document.activeElement;
+     const inputList=[...wrap.querySelectorAll(".aoScriptureNav input")];
+     const editingIndex=inputList.indexOf(current);
+     const editingValue=editingIndex>=0?current.value:null;
+     const editingSelection=editingIndex>=0 && current.type!=="number"
+       ?[current.selectionStart,current.selectionEnd]:null;
+     const closeFocused=wrap.querySelector("[data-scripture-close]")===current;
+     records=next;draw();
+     if(editingIndex>=0){
+       const preserved=wrap.querySelectorAll(".aoScriptureNav input")[editingIndex];
+       if(preserved){
+         preserved.value=editingValue;
+         preserved.focus({preventScroll:true});
+         if(editingSelection?.every(Number.isInteger))
+           try{preserved.setSelectionRange(...editingSelection);}catch{}
+       }
+     }else if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
+   },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
