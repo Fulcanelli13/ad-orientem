@@ -1,0 +1,679 @@
+{
+  "schema": "AO_SACRED_ART_PRAYER_SLOTS_V1",
+  "ownerIssue": 885,
+  "prayerCorpus": "PRAY_CANONICAL_DATA_V435930",
+  "novenaCorpus": "NOVENA_CORPUS_V4",
+  "created": "2026-10-10",
+  "policy": {
+    "primary": "Only an iconographic match establishes direct visual subject correspondence; all preliminary until manual confirmation",
+    "secondary": "Related symbolic works may decorate the prayer only with truthful caption, never labelled direct depiction",
+    "approval": "All images stay outside the app until artistic, legal and crop review."
+  },
+  "prayerSlots": {
+    "foundations_sign_of_cross": {
+      "primarySubjects": [
+        "crucifixion"
+      ],
+      "relatedSymbolicSubjects": [
+        "holy-trinity"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_our_father": {
+      "primarySubjects": [
+        "christ-teaching"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_hail_mary": {
+      "primarySubjects": [
+        "annunciation",
+        "virgin-child"
+      ],
+      "relatedSymbolicSubjects": [
+        "marian"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_glory_be": {
+      "primarySubjects": [
+        "holy-trinity"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_apostles_creed": {
+      "primarySubjects": [
+        "christ-teaching",
+        "holy-trinity"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "sacrament_act_of_contrition": {
+      "primarySubjects": [
+        "penitent-magdalene",
+        "prodigal-son"
+      ],
+      "relatedSymbolicSubjects": [
+        "repentance"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_act_of_faith": {
+      "primarySubjects": [
+        "christ-teaching"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_act_of_hope": {
+      "primarySubjects": [
+        "resurrection"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_act_of_love": {
+      "primarySubjects": [
+        "sacred-heart-jesus"
+      ],
+      "relatedSymbolicSubjects": [
+        "crucifixion",
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_guardian_angel": {
+      "primarySubjects": [
+        "guardian-angel"
+      ],
+      "relatedSymbolicSubjects": [
+        "saint-michael"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_grace_before_meals": {
+      "primarySubjects": [
+        "multiplication-loaves"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_grace_after_meals": {
+      "primarySubjects": [
+        "multiplication-loaves"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_morning_offering": {
+      "primarySubjects": [
+        "christ-blessing"
+      ],
+      "relatedSymbolicSubjects": [
+        "nativity",
+        "virgin-child"
+      ],
+      "moduleRoute": "pray.morning_evening",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_prayer_of_adoration": {
+      "primarySubjects": [
+        "eucharist",
+        "last-supper"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.adoration",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "mass_confiteor": {
+      "primarySubjects": [
+        "prodigal-son",
+        "penitent-magdalene"
+      ],
+      "relatedSymbolicSubjects": [
+        "repentance"
+      ],
+      "moduleRoute": "pray.confession",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "marian_hail_holy_queen": {
+      "primarySubjects": [
+        "virgin-child",
+        "marian"
+      ],
+      "relatedSymbolicSubjects": [
+        "annunciation"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "marian_memorare": {
+      "primarySubjects": [
+        "virgin-child",
+        "marian"
+      ],
+      "relatedSymbolicSubjects": [
+        "annunciation"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "weekday_magnificat": {
+      "primarySubjects": [
+        "visitation"
+      ],
+      "relatedSymbolicSubjects": [
+        "virgin-child"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "marian_consecration_immaculate_heart": {
+      "primarySubjects": [
+        "immaculate-heart-mary"
+      ],
+      "relatedSymbolicSubjects": [
+        "virgin-child",
+        "marian"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "adoration_anima_christi": {
+      "primarySubjects": [
+        "crucifixion",
+        "eucharist"
+      ],
+      "relatedSymbolicSubjects": [
+        "last-supper"
+      ],
+      "moduleRoute": "pray.adoration",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "adoration_spiritual_communion": {
+      "primarySubjects": [
+        "last-supper",
+        "eucharist"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.adoration",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "benediction_o_salutaris": {
+      "primarySubjects": [
+        "eucharist",
+        "last-supper"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.benediction",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "benediction_tantum_ergo": {
+      "primarySubjects": [
+        "eucharist",
+        "last-supper"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.benediction",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "benediction_divine_praises": {
+      "primarySubjects": [
+        "holy-trinity",
+        "eucharist"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.benediction",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "adoration_litany_blessed_sacrament": {
+      "primarySubjects": [
+        "eucharist",
+        "last-supper"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.adoration",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "benediction_versicles": {
+      "primarySubjects": [
+        "eucharist"
+      ],
+      "relatedSymbolicSubjects": [
+        "last-supper"
+      ],
+      "moduleRoute": "pray.benediction",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "adoration_lord_i_am_not_worthy": {
+      "primarySubjects": [
+        "eucharist",
+        "last-supper"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "mass_devotion_leonine": {
+      "primarySubjects": [
+        "saint-michael",
+        "virgin-child"
+      ],
+      "relatedSymbolicSubjects": [
+        "marian"
+      ],
+      "moduleRoute": "pray.morning_evening",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "sacrament_come_holy_spirit": {
+      "primarySubjects": [
+        "pentecost",
+        "descent-holy-spirit"
+      ],
+      "relatedSymbolicSubjects": [
+        "holy-trinity"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "weekday_benedictus": {
+      "primarySubjects": [
+        "saint-john-baptist",
+        "visitation"
+      ],
+      "relatedSymbolicSubjects": [
+        "nativity"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "devotion_prayer_st_michael": {
+      "primarySubjects": [
+        "saint-michael"
+      ],
+      "relatedSymbolicSubjects": [
+        "archangel-michael"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "devotion_memorare_st_joseph": {
+      "primarySubjects": [
+        "saint-joseph"
+      ],
+      "relatedSymbolicSubjects": [
+        "holy-family"
+      ],
+      "moduleRoute": "pray.st_joseph",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "devotion_consecration_christ_king": {
+      "primarySubjects": [
+        "christ-king"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.sacred_heart",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "church_prayer_for_pope": {
+      "primarySubjects": [
+        "pius-x",
+        "leo-xiii",
+        "gregory-i"
+      ],
+      "relatedSymbolicSubjects": [
+        "saint-peter"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "devotion_st_anthony_lost_items": {
+      "primarySubjects": [
+        "saint-anthony-padua"
+      ],
+      "relatedSymbolicSubjects": [
+        "saint-joseph"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "sacred_heart_short_prayer": {
+      "primarySubjects": [
+        "sacred-heart-jesus"
+      ],
+      "relatedSymbolicSubjects": [
+        "crucifixion",
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.sacred_heart",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "sacred_heart_aspiration_trust": {
+      "primarySubjects": [
+        "sacred-heart-jesus"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.sacred_heart",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "foundations_eternal_rest": {
+      "primarySubjects": [
+        "holy-souls",
+        "purgatory"
+      ],
+      "relatedSymbolicSubjects": [
+        "crucifixion"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "dead_de_profundis": {
+      "primarySubjects": [
+        "holy-souls",
+        "purgatory"
+      ],
+      "relatedSymbolicSubjects": [
+        "resurrection"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "devotion_litany_st_joseph": {
+      "primarySubjects": [
+        "saint-joseph"
+      ],
+      "relatedSymbolicSubjects": [
+        "holy-family"
+      ],
+      "moduleRoute": "pray.st_joseph",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "devotion_ad_te_beate_ioseph": {
+      "primarySubjects": [
+        "saint-joseph"
+      ],
+      "relatedSymbolicSubjects": [
+        "holy-family"
+      ],
+      "moduleRoute": "pray.st_joseph",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "traditional_veni_sancte_sequence": {
+      "primarySubjects": [
+        "pentecost",
+        "descent-holy-spirit"
+      ],
+      "relatedSymbolicSubjects": [
+        "holy-trinity"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "dead_fidelium_deus": {
+      "primarySubjects": [
+        "holy-souls",
+        "purgatory"
+      ],
+      "relatedSymbolicSubjects": [
+        "resurrection"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "dead_eternal_rest_singular": {
+      "primarySubjects": [
+        "holy-souls",
+        "purgatory"
+      ],
+      "relatedSymbolicSubjects": [
+        "resurrection"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "sub_tuum": {
+      "primarySubjects": [
+        "virgin-child",
+        "marian"
+      ],
+      "relatedSymbolicSubjects": [
+        "annunciation"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "benediction_adoremus_ps116": {
+      "primarySubjects": [
+        "eucharist",
+        "last-supper"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.benediction",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "litany_loreto_1962": {
+      "primarySubjects": [
+        "virgin-child",
+        "marian"
+      ],
+      "relatedSymbolicSubjects": [
+        "annunciation"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    },
+    "litany_loreto_current": {
+      "primarySubjects": [
+        "virgin-child",
+        "marian"
+      ],
+      "relatedSymbolicSubjects": [
+        "annunciation"
+      ],
+      "moduleRoute": "pray.library",
+      "subjectRelation": "PRELIMINARY_EDITORIAL_PENDING_ICONOGRAPHIC_APPROVAL"
+    }
+  },
+  "novenaSlots": {
+    "holy_ghost": {
+      "primarySubjects": [
+        "pentecost",
+        "descent-holy-spirit"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "christmas": {
+      "primarySubjects": [
+        "nativity"
+      ],
+      "relatedSymbolicSubjects": [
+        "annunciation"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "corpus_christi": {
+      "primarySubjects": [
+        "eucharist",
+        "last-supper"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "sacred_heart": {
+      "primarySubjects": [
+        "sacred-heart-jesus"
+      ],
+      "relatedSymbolicSubjects": [
+        "crucifixion",
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "immaculate_conception": {
+      "primarySubjects": [
+        "immaculate-conception"
+      ],
+      "relatedSymbolicSubjects": [
+        "virgin-child"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "annunciation": {
+      "primarySubjects": [
+        "annunciation"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "assumption": {
+      "primarySubjects": [
+        "assumption-mary"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "seven_sorrows": {
+      "primarySubjects": [
+        "mater-dolorosa",
+        "pieta",
+        "lamentation"
+      ],
+      "relatedSymbolicSubjects": [
+        "crucifixion"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "st_joseph": {
+      "primarySubjects": [
+        "saint-joseph"
+      ],
+      "relatedSymbolicSubjects": [
+        "holy-family"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "holy_souls": {
+      "primarySubjects": [
+        "holy-souls",
+        "purgatory"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "perpetual_help": {
+      "primarySubjects": [
+        "our-lady-perpetual-help"
+      ],
+      "relatedSymbolicSubjects": [
+        "virgin-child"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "st_therese": {
+      "primarySubjects": [
+        "saint-therese-lisieux"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "christ_the_king": {
+      "primarySubjects": [
+        "christ-king"
+      ],
+      "relatedSymbolicSubjects": [
+        "christ-blessing"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "immaculate_heart": {
+      "primarySubjects": [
+        "immaculate-heart-mary"
+      ],
+      "relatedSymbolicSubjects": [
+        "virgin-child"
+      ],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "st_michael": {
+      "primarySubjects": [
+        "saint-michael",
+        "archangel-michael"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    },
+    "st_anthony_nine_tuesdays": {
+      "primarySubjects": [
+        "saint-anthony-padua"
+      ],
+      "relatedSymbolicSubjects": [],
+      "moduleRoute": "pray.novenas",
+      "sourceCorpus": "NOVENA_CORPUS_V4"
+    }
+  }
+}
