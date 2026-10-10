@@ -47,6 +47,42 @@
           "title_en": "Jesus teaches in the synagogue",
           "title_fr": "Jésus enseigne dans la synagogue",
           "reference": "Luke 4:16–30"
+        },
+        {
+          "id": "nazareth-additional-001",
+          "title_en": "An angel speaks to Joseph in a dream",
+          "title_fr": "Un ange parle en songe à Joseph",
+          "reference": "Matthew 1:18–25",
+          "category": "LIFE_EVENT",
+          "site_basis": "CITY_CONTEXT",
+          "chronology_phase": "INFANCY"
+        },
+        {
+          "id": "nazareth-additional-004",
+          "title_en": "The hidden life of Jesus",
+          "title_fr": "La vie cachée de Jésus",
+          "reference": "Luke 2:39–40",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_TOWN",
+          "chronology_phase": "INFANCY"
+        },
+        {
+          "id": "nazareth-additional-006",
+          "title_en": "Jesus grows in wisdom and grace",
+          "title_fr": "Jésus grandit en sagesse et en grâce",
+          "reference": "Luke 2:51–52",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_NAZARETH",
+          "chronology_phase": "INFANCY"
+        },
+        {
+          "id": "nazareth-additional-014",
+          "title_en": "Jesus is rejected in his home town",
+          "title_fr": "Jésus est rejeté dans sa patrie",
+          "reference": "Luke 4:22–30",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_NAZARETH",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -115,6 +151,24 @@
           "title_en": "The visit of the Magi",
           "title_fr": "La visite des Mages",
           "reference": "Matthew 2:1–12"
+        },
+        {
+          "id": "bethlehem-additional-002",
+          "title_en": "Jesus is circumcised and named",
+          "title_fr": "Jésus est circoncis et reçoit son nom",
+          "reference": "Luke 2:21–21",
+          "category": "LIFE_EVENT",
+          "site_basis": "NATIVITY_REGION",
+          "chronology_phase": "INFANCY"
+        },
+        {
+          "id": "bethlehem-additional-003",
+          "title_en": "Herod orders the massacre of the Innocents",
+          "title_fr": "Hérode ordonne le massacre des Innocents",
+          "reference": "Matthew 2:16–18",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_BETHLEHEM_DISTRICT",
+          "chronology_phase": "INFANCY"
         }
       ]
     },
@@ -155,6 +209,60 @@
           "title_en": "Jesus purifies the Temple",
           "title_fr": "Jésus purifie le Temple",
           "reference": "John 2:13–22"
+        },
+        {
+          "id": "jerusalem-temple-additional-005",
+          "title_en": "Simeon's canticle at the Presentation",
+          "title_fr": "Cantique de Siméon à la Présentation",
+          "reference": "Luke 2:25–35",
+          "category": "LIFE_EVENT",
+          "site_basis": "TEMPLE_COMPLEX",
+          "chronology_phase": "INFANCY"
+        },
+        {
+          "id": "jerusalem-temple-additional-048",
+          "title_en": "Jesus teaches openly at the feast",
+          "title_fr": "Jésus enseigne publiquement pendant la fête",
+          "reference": "John 7:14–24",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_TEMPLE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jerusalem-temple-additional-049",
+          "title_en": "Jesus announces living water",
+          "title_fr": "Jésus annonce l’eau vive",
+          "reference": "John 7:37–39",
+          "category": "LIFE_EVENT",
+          "site_basis": "TEMPLE_FEAST_CONTEXT",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jerusalem-temple-additional-050",
+          "title_en": "Jesus declares himself the Light of the World",
+          "title_fr": "Jésus se déclare la Lumière du monde",
+          "reference": "John 8:12–20",
+          "category": "LIFE_EVENT",
+          "site_basis": "TEMPLE_TREASURY",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jerusalem-temple-additional-052",
+          "title_en": "Jesus walks in Solomon's Portico",
+          "title_fr": "Jésus marche sous le portique de Salomon",
+          "reference": "John 10:22–30",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_TEMPLE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jerusalem-temple-additional-068",
+          "title_en": "Jesus foretells the destruction of the Temple",
+          "title_fr": "Jésus annonce la destruction du Temple",
+          "reference": "Mark 13:1–2",
+          "category": "LIFE_EVENT",
+          "site_basis": "TEMPLE_EXIT",
+          "chronology_phase": "PASSION"
         }
       ]
     },
@@ -282,6 +390,15 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-02",
           "site_evidence": "EXPLICIT_CANA_HEALING_TARGET_CAPERNAUM"
+        },
+        {
+          "id": "cana-additional-009",
+          "title_en": "Jesus travels from Cana to Capernaum",
+          "title_fr": "Jésus va de Cana à Capharnaüm",
+          "reference": "John 2:11–12",
+          "category": "LIFE_EVENT",
+          "site_basis": "ITINERARY_TEXT",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -380,6 +497,78 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-28",
           "site_evidence": "EXPLICIT_CAPERNAUM"
+        },
+        {
+          "id": "capernaum-additional-015",
+          "title_en": "Jesus settles at Capernaum by the lake",
+          "title_fr": "Jésus s’établit à Capharnaüm au bord du lac",
+          "reference": "Matthew 4:12–17",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_CAPERNAUM",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "capernaum-additional-018",
+          "title_en": "The call of the tax collector Levi",
+          "title_fr": "L’appel du publicain Lévi",
+          "reference": "Mark 2:13–17",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESIDE_NEAR_CAPERNAUM",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "capernaum-additional-019",
+          "title_en": "Jesus answers a question about fasting",
+          "title_fr": "Jésus répond à une question sur le jeûne",
+          "reference": "Mark 2:18–22",
+          "category": "LIFE_EVENT",
+          "site_basis": "GALILEE_CONTEXT",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "capernaum-additional-025",
+          "title_en": "Jesus praises the centurion's faith",
+          "title_fr": "Jésus loue la foi du centurion",
+          "reference": "Luke 7:1–10",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_CAPERNAUM",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "capernaum-additional-033",
+          "title_en": "Jesus raises questions about his family",
+          "title_fr": "Jésus parle de sa vraie famille",
+          "reference": "Mark 3:31–35",
+          "category": "LIFE_EVENT",
+          "site_basis": "TOWN_CONTEXT_NOT_PRECISE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "capernaum-additional-037",
+          "title_en": "Jesus teaches on the Bread of Life",
+          "title_fr": "Jésus prononce le discours du Pain de vie",
+          "reference": "John 6:24–59",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_CAPERNAUM",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "capernaum-additional-040",
+          "title_en": "Jesus teaches humility using a child",
+          "title_fr": "Jésus enseigne l’humilité à l’aide d’un enfant",
+          "reference": "Mark 9:33–37",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_CAPERNAUM",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "capernaum-additional-041",
+          "title_en": "The question of forgiveness seventy times seven",
+          "title_fr": "La question du pardon jusqu’à soixante-dix fois sept fois",
+          "reference": "Matthew 18:21–35",
+          "category": "LIFE_EVENT",
+          "site_basis": "GATHERING_CONTEXT_UNCERTAIN",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -448,6 +637,69 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-37",
           "site_evidence": "LAKE_COAST_NO_EXACT_POINT"
+        },
+        {
+          "id": "galilee-sea-additional-016",
+          "title_en": "The disciples leave their nets to follow Jesus",
+          "title_fr": "Les disciples quittent leurs filets pour suivre Jésus",
+          "reference": "Matthew 4:18–22",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESIDE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-sea-additional-028",
+          "title_en": "Parable of the sower",
+          "title_fr": "La parabole du semeur",
+          "reference": "Mark 4:1–20",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESIDE_TEACHING",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-sea-additional-029",
+          "title_en": "Parable of the growing seed",
+          "title_fr": "La parabole de la semence qui pousse",
+          "reference": "Mark 4:26–29",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESIDE_TEACHING",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-sea-additional-030",
+          "title_en": "Parable of the mustard seed",
+          "title_fr": "La parabole du grain de sénevé",
+          "reference": "Mark 4:30–34",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESIDE_TEACHING",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-sea-additional-031",
+          "title_en": "Parables of the tares and hidden treasure",
+          "title_fr": "Paraboles de l’ivraie et du trésor caché",
+          "reference": "Matthew 13:24–44",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESIDE_PARABLE_DISCOURSE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-sea-additional-032",
+          "title_en": "The pearl of great price and the net",
+          "title_fr": "La perle précieuse et le filet",
+          "reference": "Matthew 13:45–50",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESIDE_PARABLE_DISCOURSE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-sea-additional-083",
+          "title_en": "Jesus asks Peter three times whether he loves him",
+          "title_fr": "Jésus demande trois fois à Pierre s’il l’aime",
+          "reference": "John 21:15–19",
+          "category": "LIFE_EVENT",
+          "site_basis": "LAKESHORE_NOT_EXACT_POINT",
+          "chronology_phase": "RESURRECTION"
         }
       ]
     },
@@ -482,6 +734,42 @@
           "title_en": "The Sermon on the Mount",
           "title_fr": "Le Sermon sur la montagne",
           "reference": "Matthew 5:13–48"
+        },
+        {
+          "id": "beatitudes-additional-021",
+          "title_en": "The choosing of the Twelve Apostles",
+          "title_fr": "Le choix des douze Apôtres",
+          "reference": "Luke 6:12–16",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNIDENTIFIED_MOUNTAIN_NEAR_GALILEE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "beatitudes-additional-022",
+          "title_en": "Jesus teaches prayer and charity",
+          "title_fr": "Jésus enseigne la prière et la charité",
+          "reference": "Matthew 6:1–18",
+          "category": "LIFE_EVENT",
+          "site_basis": "SERMON_MOUNTAIN_TRADITION",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "beatitudes-additional-023",
+          "title_en": "The Lord's Prayer",
+          "title_fr": "Le Notre Père",
+          "reference": "Matthew 6:9–13",
+          "category": "LIFE_EVENT",
+          "site_basis": "SERMON_MOUNTAIN_TRADITION",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "beatitudes-additional-024",
+          "title_en": "The house built on rock",
+          "title_fr": "La maison bâtie sur le roc",
+          "reference": "Matthew 7:24–29",
+          "category": "LIFE_EVENT",
+          "site_basis": "SERMON_MOUNTAIN_TRADITION",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -555,7 +843,8 @@
       "persons_en": "Jesus, Peter, Apostles",
       "persons_fr": "Jésus, Pierre, Apôtres",
       "passages": [
-        "Matthew 16:13–20"
+        "Matthew 16:13–20",
+        "Matthew 16:21–28"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -567,6 +856,15 @@
           "title_en": "Peter's confession of faith",
           "title_fr": "La confession de foi de Pierre",
           "reference": "Matthew 16:13–20"
+        },
+        {
+          "id": "caesarea-philippi-additional-044",
+          "title_en": "Jesus first foretells his Passion",
+          "title_fr": "Jésus annonce pour la première fois sa Passion",
+          "reference": "Matthew 16:21–28",
+          "category": "LIFE_EVENT",
+          "site_basis": "DISTRICT_NEAR_CAESAREA",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -582,7 +880,8 @@
       "persons_en": "Jesus, Peter, James, John",
       "persons_fr": "Jésus, Pierre, Jacques, Jean",
       "passages": [
-        "Matthew 17:1–8"
+        "Matthew 17:1–8",
+        "Matthew 17:9–13"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -594,6 +893,15 @@
           "title_en": "The Transfiguration",
           "title_fr": "La Transfiguration",
           "reference": "Matthew 17:1–8"
+        },
+        {
+          "id": "transfiguration-additional-045",
+          "title_en": "Jesus descends from the mount of the Transfiguration",
+          "title_fr": "Jésus descend de la montagne de la Transfiguration",
+          "reference": "Matthew 17:9–13",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNNAMED_MOUNTAIN",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -630,6 +938,24 @@
           "title_en": "The anointing at Bethany",
           "title_fr": "L’onction à Béthanie",
           "reference": "John 12:1–8"
+        },
+        {
+          "id": "bethany-additional-057",
+          "title_en": "Jesus visits Martha and Mary",
+          "title_fr": "Jésus rend visite à Marthe et Marie",
+          "reference": "Luke 10:38–42",
+          "category": "LIFE_EVENT",
+          "site_basis": "TRADITIONAL_BETHANY_IDENTIFICATION",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "bethany-additional-066",
+          "title_en": "Jesus stays at Bethany before the Passion",
+          "title_fr": "Jésus demeure à Béthanie avant la Passion",
+          "reference": "John 12:1–8",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_BETHANY",
+          "chronology_phase": "PASSION"
         }
       ]
     },
@@ -666,6 +992,24 @@
           "title_en": "The conversion of Zacchaeus",
           "title_fr": "La conversion de Zachée",
           "reference": "Luke 19:1–10"
+        },
+        {
+          "id": "jericho-additional-064",
+          "title_en": "Jesus calls Zacchaeus down from the tree",
+          "title_fr": "Jésus appelle Zachée à descendre de son arbre",
+          "reference": "Luke 19:1–10",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_JERICHO",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jericho-additional-065",
+          "title_en": "Parable of the ten minas",
+          "title_fr": "La parabole des dix mines",
+          "reference": "Luke 19:11–27",
+          "category": "LIFE_EVENT",
+          "site_basis": "SPOKEN_NEAR_JERICHO",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -681,7 +1025,8 @@
       "persons_en": "Jesus, Samaritan woman",
       "persons_fr": "Jésus, Samaritaine",
       "passages": [
-        "John 4:4–26"
+        "John 4:4–26",
+        "John 4:39–42"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -693,6 +1038,15 @@
           "title_en": "Jesus and the Samaritan woman",
           "title_fr": "Jésus et la Samaritaine",
           "reference": "John 4:4–26"
+        },
+        {
+          "id": "sychar-additional-013",
+          "title_en": "Samaritans welcome Jesus for two days",
+          "title_fr": "Les Samaritains accueillent Jésus pendant deux jours",
+          "reference": "John 4:39–42",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_TOWN",
+          "chronology_phase": "PUBLIC"
         }
       ]
     },
@@ -767,6 +1121,60 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-29",
           "site_evidence": "NOT_PRECISE"
+        },
+        {
+          "id": "galilee-region-additional-017",
+          "title_en": "Jesus travels through the Galilean synagogues",
+          "title_fr": "Jésus parcourt les synagogues de Galilée",
+          "reference": "Mark 1:35–39",
+          "category": "LIFE_EVENT",
+          "site_basis": "REGIONAL_JOURNEY",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-region-additional-020",
+          "title_en": "Jesus declares himself Lord of the Sabbath",
+          "title_fr": "Jésus se déclare maître du sabbat",
+          "reference": "Mark 2:23–28",
+          "category": "LIFE_EVENT",
+          "site_basis": "FIELDS_NOT_PRECISE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-region-additional-026",
+          "title_en": "The sinful woman anoints Jesus' feet",
+          "title_fr": "La pécheresse oint les pieds de Jésus",
+          "reference": "Luke 7:36–50",
+          "category": "LIFE_EVENT",
+          "site_basis": "TOWN_NOT_NAMED",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-region-additional-034",
+          "title_en": "Jesus sends out the Twelve to preach",
+          "title_fr": "Jésus envoie les Douze prêcher",
+          "reference": "Matthew 10:1–15",
+          "category": "LIFE_EVENT",
+          "site_basis": "MANY_GALILEE_TOWNS",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-region-additional-035",
+          "title_en": "John the Baptist sends his disciples to Jesus",
+          "title_fr": "Jean-Baptiste envoie ses disciples auprès de Jésus",
+          "reference": "Luke 7:18–23",
+          "category": "LIFE_EVENT",
+          "site_basis": "TOWN_NOT_NAMED",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "galilee-region-additional-046",
+          "title_en": "Jesus foretells his Passion again",
+          "title_fr": "Jésus annonce de nouveau sa Passion",
+          "reference": "Mark 9:30–32",
+          "category": "LIFE_EVENT",
+          "site_basis": "GALILEE_REGION",
+          "chronology_phase": "PUBLIC"
         }
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
@@ -880,7 +1288,8 @@
       "phase": "PUBLIC",
       "location_semantics": "EXPLICIT_REGION",
       "passages": [
-        "Mark 7:24–30"
+        "Mark 7:24–30",
+        "Mark 7:31–31"
       ],
       "events": [
         {
@@ -891,6 +1300,15 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-22",
           "site_evidence": "TYRE_DISTRICT_EXPLICIT_PRECISE_UNCERTAIN"
+        },
+        {
+          "id": "tyre-sidon-additional-042",
+          "title_en": "Jesus passes through the region of Sidon",
+          "title_fr": "Jésus passe par le territoire de Sidon",
+          "reference": "Mark 7:31–31",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_REGION",
+          "chronology_phase": "PUBLIC"
         }
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
@@ -911,7 +1329,8 @@
       "phase": "PUBLIC",
       "location_semantics": "EXPLICIT_REGION",
       "passages": [
-        "Mark 7:31–37"
+        "Mark 7:31–37",
+        "Mark 7:36–37"
       ],
       "events": [
         {
@@ -922,6 +1341,15 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-23",
           "site_evidence": "DECAPOLIS_REGION"
+        },
+        {
+          "id": "decapolis-additional-043",
+          "title_en": "The crowds marvel at Jesus' healing works",
+          "title_fr": "Les foules s’émerveillent des guérisons de Jésus",
+          "reference": "Mark 7:36–37",
+          "category": "LIFE_EVENT",
+          "site_basis": "REGIONAL_WITNESS",
+          "chronology_phase": "PUBLIC"
         }
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
@@ -973,7 +1401,8 @@
       "phase": "PUBLIC",
       "location_semantics": "COMPETING_IDENTIFICATIONS",
       "passages": [
-        "Mark 8:22–26"
+        "Mark 8:22–26",
+        "Luke 9:10–17"
       ],
       "events": [
         {
@@ -984,6 +1413,15 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-25",
           "site_evidence": "EXPLICIT_VILLAGE"
+        },
+        {
+          "id": "bethsaida-additional-038",
+          "title_en": "Jesus sends the Apostles to a deserted place",
+          "title_fr": "Jésus conduit les Apôtres à l’écart",
+          "reference": "Luke 9:10–17",
+          "category": "LIFE_EVENT",
+          "site_basis": "BETHSAIDA_REGION_APPROX",
+          "chronology_phase": "PUBLIC"
         }
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
@@ -1056,6 +1494,69 @@
           "category": "MIRACLE",
           "miracle_id": "miracle-31",
           "site_evidence": "PRIVATE_HOUSE_UNIDENTIFIED"
+        },
+        {
+          "id": "judean-perean-region-additional-056",
+          "title_en": "Parable of the Good Samaritan",
+          "title_fr": "La parabole du Bon Samaritain",
+          "reference": "Luke 10:25–37",
+          "category": "LIFE_EVENT",
+          "site_basis": "PARABLE_NOT_ACTUAL_TRAVEL_SITE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "judean-perean-region-additional-058",
+          "title_en": "Jesus teaches about persistent prayer",
+          "title_fr": "Jésus enseigne la persévérance dans la prière",
+          "reference": "Luke 11:5–13",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNSPECIFIED_PLACE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "judean-perean-region-additional-059",
+          "title_en": "Parable of the lost sheep",
+          "title_fr": "La parabole de la brebis perdue",
+          "reference": "Luke 15:1–7",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNSPECIFIED_PLACE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "judean-perean-region-additional-060",
+          "title_en": "Parable of the lost coin",
+          "title_fr": "La parabole de la drachme perdue",
+          "reference": "Luke 15:8–10",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNSPECIFIED_PLACE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "judean-perean-region-additional-061",
+          "title_en": "Parable of the prodigal son",
+          "title_fr": "La parabole du fils prodigue",
+          "reference": "Luke 15:11–32",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNSPECIFIED_PLACE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "judean-perean-region-additional-062",
+          "title_en": "Parable of the rich man and Lazarus",
+          "title_fr": "La parabole du riche et de Lazare",
+          "reference": "Luke 16:19–31",
+          "category": "LIFE_EVENT",
+          "site_basis": "PARABLE_NOT_GEOGRAPHICAL_TOMB",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "judean-perean-region-additional-063",
+          "title_en": "Parable of the Pharisee and the publican",
+          "title_fr": "La parabole du pharisien et du publicain",
+          "reference": "Luke 18:9–14",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNSPECIFIED_PLACE",
+          "chronology_phase": "PUBLIC"
         }
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
@@ -1106,8 +1607,57 @@
       "persons_fr": "Jésus, disciples",
       "phase": "PUBLIC",
       "location_semantics": "EXPLICIT_CITY",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "jerusalem-city-additional-010",
+          "title_en": "Nicodemus visits Jesus by night",
+          "title_fr": "Nicodème visite Jésus de nuit",
+          "reference": "John 3:1–21",
+          "category": "LIFE_EVENT",
+          "site_basis": "JERUSALEM_CIRCUMSTANCE_NOT_TEMPLE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jerusalem-city-additional-047",
+          "title_en": "Jesus goes to the feast of Tabernacles",
+          "title_fr": "Jésus monte à la fête des Tabernacles",
+          "reference": "John 7:1–14",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_JERUSALEM",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jerusalem-city-additional-051",
+          "title_en": "Jesus teaches about the Good Shepherd",
+          "title_fr": "Jésus enseigne sur le Bon Pasteur",
+          "reference": "John 10:1–21",
+          "category": "LIFE_EVENT",
+          "site_basis": "JERUSALEM_CONTEXT_NOT_NARROWED",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jerusalem-city-additional-070",
+          "title_en": "Jesus debates the authorities in Jerusalem",
+          "title_fr": "Jésus répond aux autorités à Jérusalem",
+          "reference": "Mark 12:13–34",
+          "category": "LIFE_EVENT",
+          "site_basis": "JERUSALEM_GENERAL",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "jerusalem-city-additional-085",
+          "title_en": "Jesus instructs the Apostles before the Ascension",
+          "title_fr": "Jésus instruit les Apôtres avant l’Ascension",
+          "reference": "Luke 24:44–49",
+          "category": "LIFE_EVENT",
+          "site_basis": "JERUSALEM_GENERAL",
+          "chronology_phase": "RESURRECTION"
+        }
+      ],
+      "passages": [
+        "John 3:1–21",
+        "John 7:1–14"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -1125,8 +1675,20 @@
       "persons_fr": "Jésus, disciples",
       "phase": "PUBLIC",
       "location_semantics": "HISTORIC_TOWN_NOT_EVENT_SPOT",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "magdala-region-additional-027",
+          "title_en": "Women accompany and support Jesus' ministry",
+          "title_fr": "Des femmes accompagnent et soutiennent le ministère de Jésus",
+          "reference": "Luke 8:1–3",
+          "category": "LIFE_EVENT",
+          "site_basis": "GALILEE_TRAVEL_LOCATION_NOT_MAGDALA",
+          "chronology_phase": "PUBLIC"
+        }
+      ],
+      "passages": [
+        "Luke 8:1–3"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -1144,8 +1706,20 @@
       "persons_fr": "Jésus, disciples",
       "phase": "PUBLIC",
       "location_semantics": "EXPLICIT_TOWN",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "chorazin-additional-036",
+          "title_en": "Jesus reproaches Chorazin and Bethsaida",
+          "title_fr": "Jésus fait des reproches à Chorazin et Bethsaïde",
+          "reference": "Matthew 11:20–24",
+          "category": "LIFE_EVENT",
+          "site_basis": "TOWNS_NAMED_SPEECH_LOCATION_UNKNOWN",
+          "chronology_phase": "PUBLIC"
+        }
+      ],
+      "passages": [
+        "Matthew 11:20–24"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -1163,8 +1737,39 @@
       "persons_fr": "Jésus, disciples",
       "phase": "PUBLIC",
       "location_semantics": "REGION_AND_ROAD_NOT_SINGLE_POINT",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "samaria-region-additional-012",
+          "title_en": "Jesus passes through Samaria",
+          "title_fr": "Jésus traverse la Samarie",
+          "reference": "John 4:1–4",
+          "category": "LIFE_EVENT",
+          "site_basis": "REGION_ROUTE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "samaria-region-additional-054",
+          "title_en": "A Samaritan village refuses Jesus hospitality",
+          "title_fr": "Un village samaritain refuse l’hospitalité à Jésus",
+          "reference": "Luke 9:51–56",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNNAMED_VILLAGE",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "samaria-region-additional-055",
+          "title_en": "Jesus sends out the seventy-two disciples",
+          "title_fr": "Jésus envoie les soixante-douze disciples",
+          "reference": "Luke 10:1–12",
+          "category": "LIFE_EVENT",
+          "site_basis": "JOURNEY_REGION_UNSPECIFIED",
+          "chronology_phase": "PUBLIC"
+        }
+      ],
+      "passages": [
+        "John 4:1–4",
+        "Luke 9:51–56"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -1182,8 +1787,48 @@
       "persons_fr": "Jésus, disciples",
       "phase": "PUBLIC",
       "location_semantics": "MULTIPLE_IDENTIFICATION",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "jordan-east-bank-additional-007",
+          "title_en": "John the Baptist identifies the Lamb of God",
+          "title_fr": "Jean-Baptiste désigne l’Agneau de Dieu",
+          "reference": "John 1:29–34",
+          "category": "LIFE_EVENT",
+          "site_basis": "BEYOND_JORDAN_UNCERTAIN",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jordan-east-bank-additional-008",
+          "title_en": "The first disciples follow Jesus",
+          "title_fr": "Les premiers disciples suivent Jésus",
+          "reference": "John 1:35–51",
+          "category": "LIFE_EVENT",
+          "site_basis": "BEYOND_JORDAN_REGION",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jordan-east-bank-additional-011",
+          "title_en": "Jesus and disciples minister in Judea",
+          "title_fr": "Jésus et ses disciples séjournent en Judée",
+          "reference": "John 3:22–36",
+          "category": "LIFE_EVENT",
+          "site_basis": "JUDEA_REGION",
+          "chronology_phase": "PUBLIC"
+        },
+        {
+          "id": "jordan-east-bank-additional-053",
+          "title_en": "Jesus returns beyond the Jordan",
+          "title_fr": "Jésus retourne au-delà du Jourdain",
+          "reference": "John 10:40–42",
+          "category": "LIFE_EVENT",
+          "site_basis": "REGIONAL_VISIT",
+          "chronology_phase": "PUBLIC"
+        }
+      ],
+      "passages": [
+        "John 1:29–34",
+        "John 1:35–51"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -1220,8 +1865,20 @@
       "persons_fr": "Jésus, disciples",
       "phase": "PUBLIC",
       "location_semantics": "COMPETING_GOSPEL_TOPONYM",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "dalmanutha-additional-039",
+          "title_en": "The Pharisees ask Jesus for a sign",
+          "title_fr": "Les pharisiens demandent un signe à Jésus",
+          "reference": "Mark 8:10–13",
+          "category": "LIFE_EVENT",
+          "site_basis": "REGION_NAMED_NOT_PRECISE",
+          "chronology_phase": "PUBLIC"
+        }
+      ],
+      "passages": [
+        "Mark 8:10–13"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -1238,7 +1895,8 @@
       "persons_en": "Jesus, disciples",
       "persons_fr": "Jésus, disciples",
       "passages": [
-        "Matthew 21:1–7"
+        "Matthew 21:1–7",
+        "Matthew 21:8–11"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -1250,6 +1908,15 @@
           "title_en": "Preparation for entry into Jerusalem",
           "title_fr": "Préparatifs de l’entrée à Jérusalem",
           "reference": "Matthew 21:1–7"
+        },
+        {
+          "id": "bethphage-additional-067",
+          "title_en": "Jesus enters Jerusalem as King",
+          "title_fr": "Jésus entre à Jérusalem en roi",
+          "reference": "Matthew 21:8–11",
+          "category": "LIFE_EVENT",
+          "site_basis": "ROUTE_NOT_EXACT_STREET",
+          "chronology_phase": "PASSION"
         }
       ]
     },
@@ -1290,6 +1957,15 @@
           "title_en": "The Ascension of Our Lord",
           "title_fr": "L’Ascension de Notre-Seigneur",
           "reference": "Acts 1:6–12"
+        },
+        {
+          "id": "olives-additional-069",
+          "title_en": "Parables and warnings in the eschatological discourse",
+          "title_fr": "Paraboles et avertissements dans le discours eschatologique",
+          "reference": "Matthew 25:1–30",
+          "category": "LIFE_EVENT",
+          "site_basis": "MOUNT_OLIVES_DISCOURSE",
+          "chronology_phase": "PASSION"
         }
       ]
     },
@@ -1330,6 +2006,60 @@
           "title_en": "The risen Lord appears to the Apostles",
           "title_fr": "Le Ressuscité apparaît aux Apôtres",
           "reference": "John 20:19–29"
+        },
+        {
+          "id": "cenacle-additional-071",
+          "title_en": "Jesus announces Peter's denial",
+          "title_fr": "Jésus annonce le reniement de Pierre",
+          "reference": "Luke 22:31–34",
+          "category": "LIFE_EVENT",
+          "site_basis": "UPPER_ROOM_CONTEXT",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "cenacle-additional-072",
+          "title_en": "Jesus gives the new commandment of charity",
+          "title_fr": "Jésus donne le commandement nouveau de la charité",
+          "reference": "John 13:31–35",
+          "category": "LIFE_EVENT",
+          "site_basis": "UPPER_ROOM_CONTEXT",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "cenacle-additional-073",
+          "title_en": "Jesus promises the Holy Spirit",
+          "title_fr": "Jésus promet le Saint-Esprit",
+          "reference": "John 14:15–26",
+          "category": "LIFE_EVENT",
+          "site_basis": "UPPER_ROOM_CONTEXT",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "cenacle-additional-074",
+          "title_en": "Jesus prays for his disciples",
+          "title_fr": "Jésus prie pour ses disciples",
+          "reference": "John 17:1–26",
+          "category": "LIFE_EVENT",
+          "site_basis": "FAREWELL_DISCOURSE_CONTEXT",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "cenacle-additional-081",
+          "title_en": "Jesus shows his wounds to the disciples",
+          "title_fr": "Jésus montre ses plaies aux disciples",
+          "reference": "Luke 24:36–43",
+          "category": "LIFE_EVENT",
+          "site_basis": "JERUSALEM_ROOM_NOT_EXPLICIT_IDENTICAL_CENACLE",
+          "chronology_phase": "RESURRECTION"
+        },
+        {
+          "id": "cenacle-additional-082",
+          "title_en": "Jesus commissions the Apostles to forgive sins",
+          "title_fr": "Jésus confie aux Apôtres le pouvoir de pardonner les péchés",
+          "reference": "John 20:19–23",
+          "category": "LIFE_EVENT",
+          "site_basis": "JERUSALEM_ROOM_TRADITION",
+          "chronology_phase": "RESURRECTION"
         }
       ]
     },
@@ -1413,6 +2143,24 @@
           "title_en": "The scourging and crowning with thorns",
           "title_fr": "La flagellation et le couronnement d’épines",
           "reference": "John 19:1–16"
+        },
+        {
+          "id": "jerusalem-trial-additional-075",
+          "title_en": "Peter denies Jesus three times",
+          "title_fr": "Pierre renie Jésus trois fois",
+          "reference": "Luke 22:54–62",
+          "category": "LIFE_EVENT",
+          "site_basis": "COURTYARD_TRADITION_UNKNOWN",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "jerusalem-trial-additional-076",
+          "title_en": "Jesus appears before Herod Antipas",
+          "title_fr": "Jésus comparaît devant Hérode Antipas",
+          "reference": "Luke 23:6–12",
+          "category": "LIFE_EVENT",
+          "site_basis": "BUILDING_NOT_ATTESTED",
+          "chronology_phase": "PASSION"
         }
       ]
     },
@@ -1453,6 +2201,24 @@
           "title_en": "Jesus and the good thief",
           "title_fr": "Jésus et le bon larron",
           "reference": "Luke 23:39–43"
+        },
+        {
+          "id": "golgotha-additional-077",
+          "title_en": "Jesus entrusts his Mother to the beloved disciple",
+          "title_fr": "Jésus confie sa Mère au disciple bien-aimé",
+          "reference": "John 19:25–27",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_CROSS",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "golgotha-additional-078",
+          "title_en": "The darkness and the death of Jesus",
+          "title_fr": "Les ténèbres et la mort de Jésus",
+          "reference": "Luke 23:44–49",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_CROSS",
+          "chronology_phase": "PASSION"
         }
       ]
     },
@@ -1524,6 +2290,24 @@
           "title_en": "The angel announces the Resurrection",
           "title_fr": "L’ange annonce la Résurrection",
           "reference": "Matthew 28:1–10"
+        },
+        {
+          "id": "christ-tomb-additional-079",
+          "title_en": "The guards at the tomb",
+          "title_fr": "Les gardes au tombeau",
+          "reference": "Matthew 27:62–66",
+          "category": "LIFE_EVENT",
+          "site_basis": "TOMB_SUBSITE",
+          "chronology_phase": "PASSION"
+        },
+        {
+          "id": "christ-tomb-additional-080",
+          "title_en": "Peter and John visit the empty tomb",
+          "title_fr": "Pierre et Jean visitent le tombeau vide",
+          "reference": "John 20:3–10",
+          "category": "LIFE_EVENT",
+          "site_basis": "TOMB_SUBSITE",
+          "chronology_phase": "RESURRECTION"
         }
       ]
     },
@@ -1567,8 +2351,20 @@
       "persons_fr": "Jésus, disciples",
       "phase": "RESURRECTION",
       "location_semantics": "UNIDENTIFIED_MOUNTAIN",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "galilee-mountain-additional-084",
+          "title_en": "Jesus commissions the Eleven in Galilee",
+          "title_fr": "Jésus donne mission aux Onze en Galilée",
+          "reference": "Matthew 28:16–20",
+          "category": "LIFE_EVENT",
+          "site_basis": "UNSPECIFIED_GALILEE_MOUNTAIN",
+          "chronology_phase": "RESURRECTION"
+        }
+      ],
+      "passages": [
+        "Matthew 28:16–20"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -1837,8 +2633,13 @@
       "PASSION": 7,
       "RESURRECTION": 2
     },
-    "event_count": 80,
-    "qualification": "Covers major narratively distinct events of Christ's life, not literally every Gospel pericope; some sites are traditional, disputed or collective regions."
+    "event_count": 165,
+    "qualification": "Covers major narratively distinct events of Christ's life, not literally every Gospel pericope; some sites are traditional, disputed or collective regions.",
+    "event_kinds": {
+      "OTHER": 43,
+      "LIFE_EVENT": 85,
+      "MIRACLE": 37
+    }
   },
   "integrity": {
     "miracle_catalogue": "data/explore/bible-places-miracles.v1.json",
@@ -1848,6 +2649,7 @@
     "do_not_map_unnamed_regions": true
   },
   "editorial_notes": [
-    "Modern physical sites and Gospel literary locations remain distinct; named regions are not precise pins; one site can anchor many events."
+    "Modern physical sites and Gospel literary locations remain distinct; named regions are not precise pins; one site can anchor many events.",
+    "Gospel harmonies provide approximate event order; pericope chronology remains disputable. 'Site basis' flags explain traditional or regional attribution."
   ]
 }
