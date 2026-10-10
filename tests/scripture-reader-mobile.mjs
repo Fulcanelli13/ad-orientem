@@ -113,6 +113,8 @@ try{
  await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
  await dialog.locator(".aoScriptureNav input").nth(1).fill("1");
  await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1",
+   "Manual chapter navigation must survive asynchronous source witness loading");
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1");
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
