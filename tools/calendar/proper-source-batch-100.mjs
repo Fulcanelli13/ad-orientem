@@ -248,7 +248,11 @@ if(output.failures.length)process.exitCode=2;
 if(output.records.length!==(FOCUSED_GAPS?10:100))process.exitCode=3;
 // These two canonical Propers had 12 missing vernacular slots in the
 // original 100-case corpus. EN/FR must both survive the pinned donor path.
-for(const path of ["Sancti/02-22","Sancti/05-25"]){
+// Every named source in the 2026-10-10 integrity register must now have
+// EN and FR for all Latin-bearing sections. No blank row may count as complete.
+for(const path of ["Sancti/02-22","Sancti/05-25","Sancti/01-15",
+  "Commune/C10c","Commune/C10Pasc","Commune/C10t","Sancti/02-06",
+  "Tempora/Quad3-3","Tempora/Quad5-4","Tempora/Quad1-4"]){
   const entry=output.records.find(row=>row.resolvedPath===path);
   if(!entry || ["en","fr"].some(lang=>entry.ownComputedMissing?.[lang]?.length)){
     console.error("PROPER_BILINGUAL_SOURCE_UNRESOLVED",path,entry?.ownComputedMissing);
