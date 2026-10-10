@@ -515,6 +515,82 @@
       "url": "https://www.cbcgha.org/national-directory/",
       "access": "DIRECTORY_ACCESSIBLE",
       "note": "Source-routing across Ghanaian dioceses; no shrine corpus extracted and no completed country inventory claimed."
+    },
+    {
+      "id": "IT_PAMI_OPPIDO",
+      "continent": "Europe",
+      "geo_scope": "Italy – Diocese of Oppido Mamertina-Palmi",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE",
+        "CUSTOM"
+      ],
+      "title": "PAMI – I santuari della Diocesi di Oppido Mamertina-Palmi",
+      "authority": "PONTIFICAL_RESEARCH_DIOCESAN_INVENTORY",
+      "url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "access": "FULL_ARTICLE_ACCESSIBLE",
+      "note": "11 named diocesan shrines with linked individual ICCD MODI catalogue codes. Customs/site linked only; images not licensed.",
+      "extracted_index": "data/geography/research/pami-italy-rwanda-diocesan-cases-2026-10-10.v1.json"
+    },
+    {
+      "id": "IT_PAMI_TRICARICO",
+      "continent": "Europe",
+      "geo_scope": "Italy – Diocese of Tricarico",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "PAMI – I Santuari della Diocesi di Tricarico",
+      "authority": "PONTIFICAL_RESEARCH_DIOCESAN_INVENTORY",
+      "url": "https://www.pami.info/santuari/i-santuari-della-diocesi-di-tricarico/",
+      "access": "FULL_ARTICLE_ACCESSIBLE",
+      "note": "Two named diocesan shrines; site-specific URLs and dates. Not all Italian census.",
+      "extracted_index": "data/geography/research/pami-italy-rwanda-diocesan-cases-2026-10-10.v1.json"
+    },
+    {
+      "id": "AF_RW_PAMI_RUHENGERI",
+      "continent": "Africa",
+      "geo_scope": "Rwanda – Ruhengeri Diocese",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "PAMI – Sanctuaire Notre Dame de Fatima Ruhengeri",
+      "authority": "PONTIFICAL_RESEARCH_DIOCESAN_CASE",
+      "url": "https://www.pami.info/santuari/sanctuaire-notre-dame-de-fatima-ruhengeri/",
+      "access": "FULL_ARTICLE_ACCESSIBLE",
+      "note": "Site name/locality and 20 May 2017 diocesan sanctuary designation independently stated.",
+      "extracted_index": "data/geography/research/pami-italy-rwanda-diocesan-cases-2026-10-10.v1.json"
+    },
+    {
+      "id": "IT_ICCD_AOSTA_FICHE",
+      "continent": "Europe",
+      "geo_scope": "Italy – Introd, Valle d'Aosta",
+      "subjects": [
+        "SHRINE",
+        "RELIC"
+      ],
+      "title": "ICCD MODI source fiche – Santuario San Giovanni Paolo II, Les Combes",
+      "authority": "PONTIFICAL_RESEARCH_ORIGINAL_FICHE",
+      "url": "https://www.pami.info/censimento_santuari/schede/Santuario_San_Giovanni_Paolo_II_Aosta.pdf",
+      "access": "PDF_22_PAGES_REVIEWED_KEY_PAGES",
+      "note": "Primary fiche with physical site, approximate published WGS84 coordinate, feast and relic movement. Explicit source copyright authorization required: metadata only, do not reproduce text/photos.",
+      "extracted_index": "data/geography/research/italy-iccd-validated-records-2026-10-10.v1.json"
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_HISTORICAL_ARCHIVE",
+      "continent": "South America",
+      "geo_scope": "Chile – national episcopal sanctuary and feast research archives",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE",
+        "CUSTOM"
+      ],
+      "title": "Conferencia Episcopal de Chile – Catastro de Santuarios and lists of santuarios y sus fiestas",
+      "authority": "EPISCOPAL_ARCHIVAL_CATALOGUE",
+      "url": "https://www.iglesia.cl/area_eclesial.php",
+      "access": "LINKED_ARCHIVAL_INDEX_ONLY",
+      "note": "Historical archive advertises full sanctuary and feast PDF and Excel, plus sanctuary census in DOC/ZIP. Download links could not be opened with available web interface and are NOT transcribed."
     }
   ],
   "initial_source_derived_leads": [
@@ -815,5 +891,52 @@
       "kenya_subukia_is_preexisting_research_lead": true,
       "ghana_bishops_directory_routing_only": true
     }
+  },
+  "acquisition_checkpoint_batch4": {
+    "batch": "2026-10-10-BATCH-4",
+    "philippines_current_regional_source_entries": {
+      "northern_central_luzon": 77,
+      "ncr_southern_luzon": 129,
+      "visayas": 55,
+      "mindanao": 5,
+      "total": 266,
+      "source_repeat_exact_name_and_locality": 3,
+      "source_repeat_additional_probable": 1
+    },
+    "philippines_source_paths": [
+      "data/geography/research/philippines-acsp-north-complete-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-ncr-southern-complete-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-visayas-index-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-mindanao-complete-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-unified-crosswalk-2026-10-10.v1.json"
+    ],
+    "previous_ph_priority_rows_superseded_in_index_counts": 66,
+    "previous_ph_priority_crosswalk": {
+      "total": 66,
+      "exact_unique_title": 56,
+      "repeated_title": 2,
+      "alias_title": 8,
+      "all_physical_ids_verified": false
+    },
+    "malolos_crosswalk_rows": 16,
+    "italy_pami_named_diocesan_site_cases": 13,
+    "rwanda_pami_named_site_cases": 1,
+    "italy_primary_iccd_pami_fiche_full_individual_records": 1,
+    "italy_pami_site_cases_total": 14,
+    "deduplicated_replacement_accounting": {
+      "previous_source_index_rows": 297,
+      "replace_selected_ph_priority_rows": -66,
+      "replace_with_full_ph_region_rows": 266,
+      "add_pami_cases": 14,
+      "add_primary_italy_fiche": 1,
+      "resulting_source_rows_across_distinct_source_lists": 512,
+      "unique_physical_places": "UNDETERMINED_SOURCE_OVERLAP",
+      "canonical_new_places": 0
+    },
+    "chile_downloadable_archival_catalogue": "DISCOVERED_NOT_EXTRACTED",
+    "italy_diocesan_pdf_lists": 33,
+    "italy_detailed_fiches_reviewed": 1,
+    "total_bibliography_sources": 39,
+    "safety": "RESEARCH_ONLY_NOT_PUBLISHED"
   }
 }
