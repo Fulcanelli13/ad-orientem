@@ -420,6 +420,9 @@ export function createFindOwner(win=globalThis){
     if(target?.closest?.("[data-heritage-custom-clear]")&&state.lens==="heritage"){
       event.preventDefault?.();state.highlightCustomId=null;void paint();return;
     }
+    if(target?.closest?.("[data-heritage-custom-details]")&&state.lens==="heritage"&&state.highlightCustomId){
+      event.preventDefault?.();state.selectedId="tradition:custom:"+state.highlightCustomId;void paint();return;
+    }
     const heritageCustom=target?.closest?.("[data-heritage-custom]");
     if(heritageCustom&&state.lens==="heritage"){
       event.preventDefault?.();
@@ -428,7 +431,7 @@ export function createFindOwner(win=globalThis){
       if(!custom)return;
       state.heritageCategories=["traditions"];
       state.highlightCustomId=state.highlightCustomId===id?null:id;
-      state.selectedId=state.highlightCustomId?"tradition:custom:"+id:null;
+      state.selectedId=null; // Keep the map visible; extended practice text is opt-in.
       state.selectedPlaceId=null;state.expandPlace=false;
       void paint();return;
     }
