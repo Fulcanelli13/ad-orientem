@@ -118,9 +118,12 @@ def prepare_editorial_previews(rows):
         "artworks":report},indent=2)+"\n",encoding="utf-8")
 
 def main():
-    candidates=[x for x in json.loads(REGISTRY.read_text(encoding="utf-8"))["artworks"] if x["id"].startswith("met-")]
+    candidates=[x for x in json.loads(REGISTRY.read_text(encoding="utf-8"))["artworks"] if x["id"].startswith("met-") and x.get("review",{}).get("image")=="NOT_ACQUIRED"]
     assert len({x["id"] for x in candidates})==len(candidates), "Duplicate candidate IDs"
     ORIGINALS.mkdir(parents=True,exist_ok=True)
+    if not candidates:
+        print("No unacquired Met source candidates; existing originals have immutable hashes in the catalogue.")
+        return
     rows=[]
     for idx,art in enumerate(candidates,1):
         key=art["id"]
