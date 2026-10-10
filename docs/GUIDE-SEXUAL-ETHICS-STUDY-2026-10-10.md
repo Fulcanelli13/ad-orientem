@@ -14,6 +14,10 @@ The public Catholic Sexual Ethics reader currently exposes 147 of the 150 editor
 - Guides are optional, session-only reading paths with no gamification, scores, persistent progress or implied doctrinal approval.
 - Back/Finish returns to the correct owning family or dossier. Direct links and global search continue to open the established reference reader without forcing the study path.
 
+
+## Adjacent source-audit convergence
+A baseline source-integrity check exposed 22 already-drifted positions between the 55-case archived opposition-source audit and the more precise current `CSE_DEBATE_POSITION_REFS` owner. The source-audit metadata now mirrors that established canonical owner: 14 newly selected source references are represented with links from the existing source registry and 2 outdated source selections have been retired. In particular, canonical-law and CDF references used for CSE044 are explicitly recorded as **context**, not as opposing advocates. This is a cross-file metadata correction, **not** a new claim of original-book passage verification, an endorsement of all reconstructed objections, or theological certification. The audit retains its prior historical review statuses and open certification gates.
+
 ## Acceptance
 `tests/sexual-ethics-study.mjs` verifies canonical seven-family/fifty-dossier ownership; exact 147 public question coverage, archival exclusions, first/last and Previous/Next boundaries, EN/FR navigation, Back/Finish, and preserved original source-reference rendering. It is imported by the app-shell contract suite.
 
