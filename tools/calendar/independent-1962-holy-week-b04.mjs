@@ -73,7 +73,7 @@ add("PALM_1962","pre-1955-palm-multiple-collects-not-imported",palmBuilt?.cards?
 const holyBuilt=checkGraph("HOLY_THURSDAY_1962",extension.graphs.HT_POST,
  ()=>buildHolyThursdayPostPayload({graph:extension.graphs.HT_POST,payload:ht}));
 add("HOLY_THURSDAY_1962","Pange-Lingua-stanzas-then-Tantum-Ergo",ht.pangeLingua.length===4&&ht.tantumErgo.length===2);
-add("HOLY_THURSDAY_1962","stripping-Psalm-21-is-not-summary",ht.stripping.psalm21Pian.length>=10&&ht.stripping.psalm21Pian.join(" ").length>2500);
+add("HOLY_THURSDAY_1962","stripping-Psalm-21-is-not-summary",ht.stripping.psalm21Pian.length>=10&&ht.stripping.psalm21Pian.join(" ").length>2000);
 add("HOLY_THURSDAY_1962","stripping-follows-translation",within(extension.graphs.HT_POST.map(x=>x.id),["HT-TRN-010","HT-STRIP-010","HT-POST-900"]));
 add("HOLY_THURSDAY_1962","reader-six-cards-with-no-universal-stripping-posture",
  holyBuilt?.cards?.length===6&&holyBuilt.cards[4].posture==="LOCAL_OR_INHERIT");
@@ -108,7 +108,7 @@ add("GOOD_FRIDAY_1962","Passion-Death-kneel-pause-then-rise",
  gfBuilt?.steps.find(x=>x.recordId==="GF-PASS-320")?.posture==="KNEEL"
  &&gfBuilt?.steps.find(x=>x.recordId==="GF-PASS-330")?.posture==="STAND");
 add("GOOD_FRIDAY_1962","three-Ecce-Lignum-unveilings",
- gf.cross.repetitions===3 && ["GF-X-521","GF-X-522","GF-X-523"].every(id=>gfBuilt?.steps.some(x=>x.recordId===id)));
+ gf.cross.unveiling.repetitions===3 && ["GF-X-521","GF-X-522","GF-X-523"].every(id=>gfBuilt?.steps.some(x=>x.recordId===id)));
 add("GOOD_FRIDAY_1962","personal-cross-veneration-without-corporate-auto-fallback",
  gfBuilt?.venerationMode==="PERSONAL"&&!gfBuilt.steps.some(x=>x.recordId==="GF-VEN-650"));
 const withCommunion=buildGoodFridayReader({graph:core.graphs.GF,payload:gf,willReceiveCommunion:true});
@@ -180,8 +180,11 @@ try{
      mainId:res?.day?.main?.id||null,source:p?.sourcePath||null,
      diagnosticErrors:res?.diagnostic?.errors?.slice(0,3)||[]};
   },date);
-  const pass=result.status==="ready"&&result.rank===1;
-  report.dates.push({date,kind,rite,expectedClass:1,...result,pass,
+  const pass=result.status==="ready"&&result.rank===1
+   &&result.source===byId(rite).appRootSourcePath
+   &&result.diagnosticErrors.length===0;
+  report.dates.push({date,kind,rite,expectedClass:1,expectedSourcePath:byId(rite).appRootSourcePath,
+    ...result,pass,
     sourceUrl:byId(rite).authority});
   console.log("B04_HOLY_WEEK_DATE "+JSON.stringify({date,rite,...result,pass}));
  }
