@@ -12,7 +12,7 @@
     "lineByLinePrintedCollationsCertified": 0,
     "statusPolicy": "A passing B05 CI documents open textual deficits; it must never be presented as complete Latin/English/French certification. A partial text, heading, rubric or ellipsis is not the full prescribed prayer.",
     "safety": "Retain original graph/Canon/48-card product; prohibit speculative text insertions. Source variants are separate authorities and not interpolated.",
-    "sourceEditedTextVersion": "B07 Latin water blessing and font procession restored, 1962 secondary witness, original Missal image comparison still pending"
+    "sourceEditedTextVersion": "B08 Holy Thursday proper Canon cue substitution and optional partial Mandatum in reader; original typica visual collation pending"
   },
   "sourceWitnesses": [
     {
@@ -73,8 +73,8 @@
       "rite": "HOLY_THURSDAY_1962",
       "appPath": "data/presentation/reader-text-sung.v1.json + resolved Holy Thursday Proper/Canon overlay",
       "surface": "Communicantes / Hanc igitur / Qui pridie",
-      "status": "RUNTIME_VARIANT_COLLATION_REQUIRED",
-      "evidence": "The standard sung Canon corpus does not itself contain Holy Thursday special openings. Verify that the 1962 three proper insertions actually replace the default text in every Mass mode; do not infer this from proper source rank.",
+      "status": "B08_SOURCE_MAPPED_READER_VARIANTS__PRINTED_FACSIMILE_UNCOLLATED",
+      "evidence": "B08 source-owns Holy Thursday Communicantes / Hanc igitur / Qui pridie cues C0157, C0161, C0162 and C0168 in both LOW and SUNG actual reader, preserving the other Canon cues and the Consecration words. Verify original 1962 printed folio and French/English editorial translation before visual critical sign-off.",
       "source": "THURSDAY_EDITORIAL",
       "incipits": [
         "Communicantes et diem sacratissimum celebrantes",
@@ -87,8 +87,8 @@
       "rite": "HOLY_THURSDAY_1962",
       "appPath": "data/presentation/reader-holy-thursday-post.v1.json + src/mass/reader-holy-thursday-post.js",
       "surface": "optional washing of feet",
-      "status": "MISSING_READER_TEXT",
-      "evidence": "Existing post-Mass payload contains Pange lingua, Tantum ergo and Psalm 21, but no Mandatum antiphon/prayer body or optional reader segment. Optional does not mean it can be represented as a mere note when selected.",
+      "status": "B08_IN_MASS_OPTIONAL_SELECTED_CHANTS__FULL_COLLATION_OPEN",
+      "evidence": "B08 introduces an optional Mandatum after Gospel/homily and before Offertory, separate from six-state HT_POST. It exposes selected Latin chants, Ubi caritas and the concluding Adesto collect, not yet the complete appointed chant/psalm repetitions and responses. Its subset must not be marked complete. Explicit presence required.",
       "source": "THURSDAY_EDITORIAL",
       "incipits": [
         "Mandatum novum do vobis",

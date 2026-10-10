@@ -109,3 +109,65 @@ assert.throws(()=>createMassReaderModel({
 }),/distinct rite UNSUPPORTED_TEST_RITE/);
 
 console.log("Mass reader model: PASS — 39-step source-first LIVE and 30-card SIMPLE/MISSAL models remain Proper-safe.");
+
+
+const holyThursdayResolved={
+  ...base,date:"2027-03-25",overlays:[],actualCelebration:{id:"holy-thursday",type:"CALENDAR"},
+  proper:{status:"READY",sourcePath:"Tempora/Quad6-4r",
+    data:{...proper,sourcePath:"Tempora/Quad6-4r"}},
+  precedingRites:[],followingActions:["HOLY_THURSDAY_POST"]
+};
+const htQuiet=createMassReaderModel({
+  resolvedMass:holyThursdayResolved,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
+});
+assert.equal(htQuiet.holyThursday,true);
+assert.equal(htQuiet.mandatumPresent,false);
+assert.equal(htQuiet.totalCards,38,"No Credo on 1962 Holy Thursday");
+assert.equal(htQuiet.cardForEvent("MC-CRD-010"),null,"Holy Thursday Credo must not render");
+const cue=(model,id)=>model.cards.flatMap(c=>c.paragraphs).find(p=>p.sourceCueIds?.includes(id));
+for(const [id,phrase] of [
+  ["AO.SM.C0157","et diem sacratíssimum"],
+  ["AO.SM.C0161","trádidit discípulis suis Córporis et Sánguinis"],
+  ["AO.SM.C0162","Per eúndem Christum"],
+  ["AO.SM.C0168","hoc est, hódie"]
+]){
+ assert.ok(cue(htQuiet,id)?.alternate?.includes(phrase),id+" proper 1962 Latin not projected");
+}
+assert.equal(cue(htQuiet,"AO.SM.C0173").alternate,"HOC EST ENIM CORPUS MEUM.","Consecration formula mutated");
+assert.equal(cue(htQuiet,"AO.SM.C0158").alternate,"Iesu Christi:","Communicantes cue split mutated");
+assert.equal(htQuiet.cardBySequence(8).sourceSequence,8);
+assert.equal(htQuiet.cardBySequence(9).sourceSequence,10);
+
+const htMandatum=createMassReaderModel({
+ resolvedMass:holyThursdayResolved,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+ holyThursdayMandatumPresent:true
+});
+assert.equal(htMandatum.totalCards,39);
+assert.equal(htMandatum.cardBySequence(9).sectionId,"AO.HT.MANDATUM");
+assert.equal(htMandatum.cardBySequence(8).sourceSequence,8);
+assert.equal(htMandatum.cardBySequence(10).sourceSequence,10);
+assert.equal(htMandatum.mandatumPresent,true);
+assert.equal(htMandatum.cardBySequence(9).provenance.textComplete,false,"selected antiphons are not full printed certification");
+assert.ok(htMandatum.cardBySequence(9).paragraphs.some(p=>p.alternate.includes("Mandátum novum do vobis")));
+assert.ok(htMandatum.cardBySequence(9).paragraphs.some(p=>p.alternate.includes("Ubi cáritas")));
+assert.ok(htMandatum.cardBySequence(9).paragraphs.some(p=>p.alternate.includes("Adésto, Dómine")));
+assert.equal(htMandatum.cardBySequence(9).faithfulPosture,"LOCAL_OR_INHERIT");
+assert.equal(htMandatum.cardForEvent("MC-CRD-010"),null);
+assert.equal(htMandatum.cardForEvent("MC-CNS-010").card.sectionId,"AO.CANON.06");
+assert.equal(htMandatum.previousCard("AO.HT.MANDATUM").sourceSectionId,"AO.CARD.008");
+assert.equal(htMandatum.nextCard("AO.HT.MANDATUM").sourceSectionId,"AO.CARD.010");
+
+const htLow=createMassReaderModel({
+ resolvedMass:{...holyThursdayResolved,form:"LOW",presentationMode:"MISSAL"},
+ sectionMap,lowCorpus:low,sungCorpus:sung
+});
+assert.equal(htLow.totalCards,29);
+assert.ok(cue(htLow,"AO.SM.C0168").alternate.includes("hoc est, hódie"));
+assert.ok(cue(htLow,"AO.SM.C0161").alternate.includes("Córporis et Sánguinis"));
+const genericCue=cue(model,"AO.SM.C0168");
+assert.ok(genericCue.alternate.includes("Qui prídie quam paterétur"));
+assert.ok(!genericCue.alternate.includes("hoc est, hódie"));
+assert.throws(()=>createMassReaderModel({
+ resolvedMass:base,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,holyThursdayMandatumPresent:true
+}),/non-Holy-Thursday/);
+console.log("1962 Holy Thursday Canon: PASS — 4 variant cues, both Mass forms, ordinary isolated, optional Mandatum after homily, no Credo.");

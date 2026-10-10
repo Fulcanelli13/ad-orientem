@@ -101,15 +101,16 @@ function validateFrenchOrdinary(frenchOrdinary){
   return frenchOrdinary.byCue;
 }
 
-function ordinaryParagraphs(block,{language="en",frenchOrdinary=null}={}){
+function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVariants=null}={}){
   const locale=languageKey(language);
   const frenchByCue=locale==="fr" ? validateFrenchOrdinary(frenchOrdinary) : null;
   const raw=(block.units??[])
     .map(unit=>applyCanonicalTextCorrection(block.Block_ID,unit))
     .filter(unit=>Boolean(String(unit?.latin??"").trim() || String(unit?.english??"").trim()))
     .map(unit=>{
-      let vernacular=unit.english;
-      if(locale==="fr"){
+      const variant=ordinaryVariants?.[unit.cue_id]??null;
+      let vernacular=variant ? (locale==="fr"?variant.fr:variant.en) : unit.english;
+      if(locale==="fr"&&!variant){
         const sourced=String(frenchByCue?.[unit.cue_id]??"").trim();
         if(!sourced) throw new Error(block.Block_ID+": French Ordinary cue missing "+unit.cue_id);
         const prefix=rolePrefix(unit.latin);
@@ -118,7 +119,7 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null}={}){
       return {
         id:unit.cue_id,
         kind:unitKind(unit),
-        latin:unit.latin,
+        latin:variant?.lat??unit.latin,
         vernacular,
         sourceCueIds:Object.freeze([unit.cue_id]),
       };
@@ -169,6 +170,7 @@ export function buildReaderSectionCard({
   properSlots={},
   vernacularLanguage="en",
   frenchOrdinary=null,
+  ordinaryVariants=null,
 }={}){
   validateReaderTextCorpus(corpus);
   if(!section || !Number.isInteger(section.sequence)) throw new TypeError("Reader section with sequence required");
@@ -187,7 +189,7 @@ export function buildReaderSectionCard({
     );
     const raw=block.Proper_Slot
       ? properParagraphs(block,properSlots,{language:vernacularLanguage})
-      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary});
+      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants});
     const stateOnly=stateOnlyBlock(block);
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");

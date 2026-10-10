@@ -5,6 +5,8 @@ import { projectSourceFirstLiveModel } from "./reader-live-source.js";
 import { augmentReaderCardsWithPrayerOverPeople } from "./reader-prayer-over-people.js";
 import { projectEmberInsertionModel } from "./reader-ember-lessons.js";
 import { projectNuptialInsertionModel } from "./reader-nuptial.js";
+import { holyThursdayCanonVariantsForProper } from "./reader-holy-thursday-canon.js";
+import { projectHolyThursdayMass } from "./reader-holy-thursday-mandatum.js";
 
 const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS","NUPTIAL"]);
 
@@ -43,6 +45,7 @@ export function createMassReaderModel({
   frenchOrdinary=null,
   properNotApplicableSlots=Object.freeze([]),
   vernacularLanguage="en",
+  holyThursdayMandatumPresent=false,
 }={}){
   if(!resolvedMass || resolvedMass.schema!=="ao-resolved-mass-v2") {
     throw new TypeError("ao-resolved-mass-v2 required");
@@ -63,6 +66,7 @@ export function createMassReaderModel({
     sungCorpus,
   });
 
+  const ordinaryVariants=holyThursdayCanonVariantsForProper(resolvedMass);
   const baseCards=Object.freeze(sectionResolver.sections.map(section=>
     buildReaderSectionCard({
       corpus:selected.corpus,
@@ -70,6 +74,7 @@ export function createMassReaderModel({
       properSlots:properMap.slots,
       vernacularLanguage,
       frenchOrdinary,
+      ordinaryVariants,
     })
   ));
   const cards=augmentReaderCardsWithPrayerOverPeople(baseCards,resolvedMass);
@@ -121,6 +126,10 @@ export function createMassReaderModel({
     if(!canonSourceMap)throw new Error("SOURCE_FIRST_LIVE_CANON_MAP_REQUIRED");
     projected=projectSourceFirstLiveModel(baseModel,canonSourceMap);
   }
+  projected=projectHolyThursdayMass(projected,resolvedMass,{
+    mandatumPresent:holyThursdayMandatumPresent===true||resolvedMass?.provenance?.holyThursday?.mandatumPresent===true,
+    language:vernacularLanguage,
+  });
   projected=projectEmberInsertionModel(projected,resolvedMass);
   return projectNuptialInsertionModel(projected,resolvedMass,nuptialData);
 }
