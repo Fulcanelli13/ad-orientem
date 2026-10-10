@@ -400,8 +400,8 @@ const guidedGloria=resolveCueOwnedChannels({
   cueId:"AO.SM.C0056",
   gestureProfile:"GUIDED_1962",
 });
-assert.equal(guidedGloria.gesture,null,
-  "GUIDED_1962 leaked a customary Gloria bow from the raw source registry");
+assert.equal(guidedGloria.gesture?.type,"HEAD_BOW",
+  "GUIDED_1962 lost the adjudicated faithful Gloria bow and fell back to the priest registry");
 
 const traditionalGloria=resolveCueOwnedChannels({
   cueControllerSupported:true,
