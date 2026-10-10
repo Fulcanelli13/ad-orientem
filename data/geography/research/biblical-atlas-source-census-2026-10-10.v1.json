@@ -1,0 +1,96 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_SOURCE_CENSUS_V1",
+  "as_of": "2026-10-10",
+  "goal": "All biblically named or explicitly described geographic entities in the 73-book Catholic canon, with links to mentions, people, events, historical chronology and defensible modern locations.",
+  "current_app": {
+    "canon_73_source": "src/scripture/canon.js",
+    "chapter_source": "src/scripture/chapter-counts.js",
+    "reader": "src/scripture/library.js",
+    "reader_entry": "src/scripture/browser-entry.js",
+    "original_bible_witness": "data/scripture/witness/README.md",
+    "geography_owner": "data/geography/seed-registry.v1.json",
+    "existing_published_place_count": 182,
+    "source_reader_production": "Existing Scripture passage/full chapter/commentary must be reused; do not introduce a separate bible content pipeline",
+    "recent_scripture_merges": [
+      "https://github.com/Fulcanelli13/ad-orientem/pull/912",
+      "https://github.com/Fulcanelli13/ad-orientem/pull/928"
+    ],
+    "inflight_scripture_work": "https://github.com/Fulcanelli13/ad-orientem/pull/932",
+    "inflight_note": "932 restores 73-book Douay source witness; Atlas work cannot mutate Scripture reader, source witnesses or translation/certification flags."
+  },
+  "candidate_datasets": [
+    {
+      "id": "OPENBIBLE_GEOCODING_2026",
+      "title": "OpenBible.info Bible Geocoding Data",
+      "uri": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "documentation": "https://openbible.info/geo/",
+      "file": "data/ancient.jsonl",
+      "license_claim": "CC BY 4.0 DATA, ODbL on OpenStreetMap-derived geography",
+      "images": "Image rights separate by photograph/file",
+      "content_scope": "Every identifiable toponym in the Protestant 66-book corpus; verse mentions, alternate identifications and uncertain/unknown places",
+      "external_ui_search_count": 2938,
+      "count_definition": "Ancient AND modern indexed place objects together per website search, NOT number of distinct biblical places",
+      "verified": "DOCUMENTATION_AND_LICENSE_REVIEWED",
+      "import_status": "NOT_IMPORTED_BULK_SOURCE_FILE_GT_1_MB_GITHUB_CONTENTS_INTERFACE_RETURNED_EMPTY",
+      "selection_note": "Preserve ancient place ID, distinct modern location ID, confidence/votes and unknown/special resolution. Do not auto-promote resolved lat/lon."
+    },
+    {
+      "id": "STEPBIBLE_TIPNR",
+      "title": "STEPBible Translators Individualised Proper Names with all References",
+      "uri": "https://github.com/STEPBible/STEPBible-Data",
+      "documentation": "https://stepbible.github.io/STEPBible-Data/",
+      "file": "TIPNR - Translators Individualised Proper Names with all References - STEPBible.org CC BY.txt",
+      "license_claim": "Current repo README says CC BY 4.0; check license notice inside exact TIPNR file and exact commit before commercial distribution",
+      "content_scope": "Biblical persons, places, names, original-language forms, known verse citations, relational data",
+      "auto_content_caution": "Some later descriptive articles are AI-generated per upstream documentation; do not copy as authoritative site history; extract structured proper-name and verse relations only",
+      "import_status": "NOT_IMPORTED_SOURCE_SCHEMA_TO_REVIEW",
+      "canon_gap": "Do not assume complete Catholic deuterocanonical coverage from an ESV-centric base."
+    },
+    {
+      "id": "SCRIPTURE_CANON_73",
+      "title": "Existing Ad Orientem Scripture source/versification owners",
+      "uri": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/scripture/canon.js",
+      "content_scope": "73 book names/IDs; edition-specific Psalms/Esther/Song of Songs and other alignments; in-app passage reader",
+      "import_status": "ALREADY_PRESENT_APP_SOURCE",
+      "restriction": "No duplicate verse texts or automatic verse-alignment based on word spelling."
+    },
+    {
+      "id": "FRANCISCAN_HOLY_LAND",
+      "title": "Franciscan Custody of the Holy Land sanctuary directory",
+      "uri": "https://www.custodia.org/en/santuari/",
+      "content_scope": "27 site names from separate explored source index; original site histories and Franciscan pilgrim monuments",
+      "crosswalk": "data/geography/research/holy-land-custodia-sanctuary-index-2026-10-10.v1.json",
+      "import_status": "27_CUSTODY_SOURCE_LINKS_ACQUIRED_RESEARCH_ONLY",
+      "restriction": "Modern Custody site location may be traditional attribution not literal named Gospel toponym; ecclesiastical site not interchangeable with ancient place."
+    },
+    {
+      "id": "CATHOLIC_DEUTEROCANON_SUPPLEMENT",
+      "title": "Catholic seven-deuterocanonical-book and Greek-additions gap audit",
+      "uri": "https://github.com/Fulcanelli13/ad-orientem/blob/main/src/scripture/chapter-counts.js",
+      "content_scope": "Tobit, Judith, Wisdom, Sirach, Baruch, 1 Maccabees, 2 Maccabees; plus Esther, Daniel and relevant Greek text versification",
+      "import_status": "NOT_EXTRACTED_EXHAUSTIVELY",
+      "requirement": "Extract named and described places from all Catholic-only verses; mark books without explicit named places rather than inventing them."
+    }
+  ],
+  "coverage_snapshot": {
+    "first_curated_entries": 90,
+    "biblical_verse_reference_spans": 128,
+    "distinct_canonical_books_mentioned_in_curated_entries": 27,
+    "total_catholic_books": 73,
+    "books_without_seed_reference": 46,
+    "book_presence_percentage": 37,
+    "not_worldwide_completeness": true,
+    "source_lineage": "data/geography/research/biblical-atlas-core-2026-10-10.v1.json",
+    "source_corpus_imported_into_app": false
+  },
+  "strict_completion_gate": [
+    "Enumerate exact unique ancient place/place-sense IDs from imported upstream ancient.jsonl, separate from modern geographic object count.",
+    "Crosswalk every ancient ID to Catholic 73-book occurrence register and add Catholic-only location mentions; classify unresolved, symbolic, narrative described but unnamed locations.",
+    "Expose each place's every verse reference with edition-normalized coordinates or an explicit fail-closed warning; ensure 73-book full scan not just books with explicit geography.",
+    "Join biblical places to real geography Places only with site identity evidence; one modern town can represent several ancient settlements and one biblical site can have multiple competing modern identifications.",
+    "Acquire source-backed events, figures, plausible period date ranges, and at least one source for every factual paragraph in user-facing educational context.",
+    "Keep no-coordinate, uncertain and multi-location entries searchable without plotting fabricated pins or roads; preserve proportional region geometry rather than converting it to exact points.",
+    "Reuse native Scripture Passage / Full chapter / Commentary drawer, on-device text witness, exact back/scroll handoff, language selection, and existing Crampon/DR/CPDV edition checks.",
+    "No UI or publication before quality, attribution, source-rights and regression/phone acceptance gates."
+  ]
+}
