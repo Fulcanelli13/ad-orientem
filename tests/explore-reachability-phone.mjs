@@ -55,7 +55,7 @@ try{
  assert.equal(await bibleToggle.getAttribute("aria-expanded"),"false");
  await bibleToggle.tap();
  await page.waitForFunction(()=>document.querySelector('[data-bible-toggle]')?.getAttribute("aria-expanded")==="true",null,{timeout:15000});
- assert.equal(await page.locator('#ao-find-modular-root [data-bible-place]').count(),18);
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-place]').count(),40);
  await page.locator('#ao-find-modular-root [data-bible-place="nazareth"]').tap();
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleSelectedId==="nazareth",null,{timeout:15000});
  const scriptureLink=page.locator('#ao-find-modular-root [data-ao-scripture-context="Luke 1:26–38"]');
