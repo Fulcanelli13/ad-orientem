@@ -186,14 +186,14 @@ def main():
         "", "## Reconciliation outcomes", "",
         *[f"- {k}: {v}" for k,v in sorted(counters.items())],
         "", "## Missing or failed lanes", "",
-        *(("- "+x) for x in missing_reports) if missing_reports else ["- None reported"],
+        *(["- "+x for x in missing_reports] if missing_reports else ["- None reported"]),
         "", "## Canonical rights labels (not worldwide reuse clearance)", "",
         *[f"- {k}: {v}" for k,v in sorted(original_rights.items())],
         "", "## Next gate", "",
         "Review proposal object identity/scene, import hash-backed originals with artifact provenance, rerun full 1962 associations, then generate the single all-artworks exception-only HTML atlas.",
         "",
     ]
-    (out/"stats.md").write_text("\\n".join(summary_lines),encoding="utf-8")
+    (out/"stats.md").write_text(chr(10).join(summary_lines),encoding="utf-8")
     print("SACRED_ART_FULL_HARVEST_RECONCILED="+json.dumps(report["harvest"],separators=(",",":"),ensure_ascii=True))
     if incidents:
         raise SystemExit("Integrity incidents detected; leave held until investigated")
