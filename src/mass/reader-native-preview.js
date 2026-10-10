@@ -364,7 +364,10 @@ export async function prepareNativeReaderPreview({
     prepared,
     gestureMatrix:data?.gestureMatrix??null,
   });
-  const scholaState=createNativeScholaController({sungCorpus:data?.sungCorpus,properSlots:model.properSlots,prepared});
+  const scholaState=createNativeScholaController({
+    sungCorpus:data?.sungCorpus,properSlots:model.properSlots,
+    prepared,frenchOrdinary:data?.frenchOrdinary??null,
+  });
   const transientState=createReaderTransientController({events,prepared});
   const rubricState=createReaderRubricEventController({data:data?.rubricEvents??null});
   const gestureMatrixState=createReaderGestureMatrixController({data:data?.gestureMatrix??null});
