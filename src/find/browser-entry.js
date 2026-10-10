@@ -383,7 +383,7 @@ export function createFindOwner(win=globalThis){
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
-    state.expandPlace=false;
+    state.expandPlace=false;state.expandDetail=false;
     const node=ensureRoot(win);if(!node)return false;
     openState=true;node.dataset.open="true";
     node.dataset.aoFindLoadState="loading";
@@ -473,7 +473,7 @@ export function createFindOwner(win=globalThis){
     if(state.lens==="traditions"&&target?.closest?.("[data-atlas-clear]")){
       event.preventDefault?.();
       state.atlasFamily="ANY";state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
-      state.selectedId=null;state.selectedPlaceId=null;void paint();return;
+      state.selectedId=null;state.selectedPlaceId=null;state.expandDetail=false;void paint();return;
     }
     if(target?.closest?.("[data-find-close]")){
       event.preventDefault?.();
@@ -515,14 +515,14 @@ export function createFindOwner(win=globalThis){
           current.includes(value)?(current.length===1?[...HERITAGE_CATEGORIES]:current.filter(cat=>cat!==value)):
           [...current,value];
       }
-      state.highlightCustomId=null;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
+      state.highlightCustomId=null;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
       void paint();return;
     }
     if(target?.closest?.("[data-heritage-custom-clear]")&&state.lens==="heritage"){
       event.preventDefault?.();state.highlightCustomId=null;void paint();return;
     }
     if(target?.closest?.("[data-heritage-custom-details]")&&state.lens==="heritage"&&state.highlightCustomId){
-      event.preventDefault?.();state.selectedId="tradition:custom:"+state.highlightCustomId;void paint();return;
+      event.preventDefault?.();state.selectedId="tradition:custom:"+state.highlightCustomId;state.expandDetail=false;void paint();return;
     }
     const heritageCustom=target?.closest?.("[data-heritage-custom]");
     if(heritageCustom&&state.lens==="heritage"){
@@ -533,7 +533,7 @@ export function createFindOwner(win=globalThis){
       state.heritageCategories=["traditions"];
       state.highlightCustomId=state.highlightCustomId===id?null:id;
       state.selectedId=null; // Keep the map visible; extended practice text is opt-in.
-      state.selectedPlaceId=null;state.expandPlace=false;
+      state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
       // A selected practice can have geographically distant examples. Fit
       // their source-backed pins rather than preserving an unrelated viewport.
       lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
@@ -591,7 +591,7 @@ export function createFindOwner(win=globalThis){
     if(aff&&state.lens==="tlm"){
       const id=aff.dataset.findAffiliation,index=state.affiliations.indexOf(id);
       if(index>=0)state.affiliations.splice(index,1);else state.affiliations.push(id);
-      state.selectedId=null;void paint();return;
+      state.selectedId=null;state.expandDetail=false;void paint();return;
     }
     const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
   }
@@ -608,7 +608,7 @@ export function createFindOwner(win=globalThis){
   function onInput(event){
     if(!openState)return;
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
-    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.displayLimit=24;
+    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.expandDetail=false;state.displayLimit=24;
     void paint({preserveSearchFocus:true});
   }
 
