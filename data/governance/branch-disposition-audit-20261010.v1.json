@@ -1,0 +1,2990 @@
+{
+  "schema": "ad-orientem.branch-disposition-audit.v1",
+  "observed_at_utc": "2026-10-10",
+  "snapshot_warning": "This is a historical inventory. Revalidate SHA, open PR status, source diff, and canonical merged successor at time of any action. No candidate is authorized for deletion by this document.",
+  "source": "GitHub REST repository branch listing + closed/open PR inventories",
+  "summary": {
+    "all_branches": 800,
+    "counts": {
+      "active": 2,
+      "preserved": 47,
+      "mergedExact": 497,
+      "closedUnmergedExact": 147,
+      "branchEvolved": 17,
+      "noPr": 90
+    },
+    "manual_review": 254
+  },
+  "policy": {
+    "auto_delete": [
+      "mergedExact only, subject to live SHA, age, branch protection, no open PR"
+    ],
+    "always_retain": [
+      "active",
+      "preserved"
+    ],
+    "hold_for_manual_evidence": [
+      "closedUnmergedExact",
+      "branchEvolved",
+      "noPr"
+    ]
+  },
+  "manual_review": [
+    {
+      "name": "a10-apostolate-skills-handoff-repair",
+      "head_sha": "e376a403bea6252542d59a97fa078447a8ccb02e",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "a10-apostolate-skills-handoff-repair-v2",
+      "head_sha": "688571ae7413f39870a94e8ca35ce38d40faa6c2",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 357,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "688571ae7413f39870a94e8ca35ce38d40faa6c2"
+        }
+      ]
+    },
+    {
+      "name": "a10-apostolate-skills-handoff-repair-v3",
+      "head_sha": "4316a3bf81cdc915dd8dc86a31f3bdc9a3b6c116",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 360,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "4316a3bf81cdc915dd8dc86a31f3bdc9a3b6c116"
+        }
+      ]
+    },
+    {
+      "name": "a4-apostolate-aq-corpus",
+      "head_sha": "bc91212a710c1390686cdda938a66e2bfca36417",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "a5-apostolate-hs-corpus",
+      "head_sha": "d6f842ab992df6f1124206b8a6681348e70e4d62",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "a5-apostolate-hs-corpus-v2",
+      "head_sha": "05b0c504e11a3e7c7fd228d9ba522e9c3ff12b54",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 327,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "05b0c504e11a3e7c7fd228d9ba522e9c3ff12b54"
+        }
+      ]
+    },
+    {
+      "name": "a7-apostolate-tf-corpus",
+      "head_sha": "f992ea24ad2571af123c0214641947ac274f722b",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "a7-apostolate-tf-corpus-v2",
+      "head_sha": "3a0cc035dbb6ae7be8f2809dc05bc1bcb2cb655d",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 334,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "3a0cc035dbb6ae7be8f2809dc05bc1bcb2cb655d"
+        }
+      ]
+    },
+    {
+      "name": "a7-apostolate-tf-corpus-v3",
+      "head_sha": "ef0ba52d385f2d701bd9906746068b31ebe2aa84",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 336,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ef0ba52d385f2d701bd9906746068b31ebe2aa84"
+        }
+      ]
+    },
+    {
+      "name": "a7-apostolate-tf-corpus-v4",
+      "head_sha": "1597ce6ecca3ab4ad18d813f3c8570a8f61264b3",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 338,
+          "merged": true,
+          "merged_at": "2026-10-07T14:52:18Z",
+          "recorded_head_sha": "25061506b46330193d5211629ddb34a05e3afe8a"
+        }
+      ]
+    },
+    {
+      "name": "a8-apostolate-dv-corpus",
+      "head_sha": "2c2d241afcbbb8237c5e23fa06533783085c6e12",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 340,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2c2d241afcbbb8237c5e23fa06533783085c6e12"
+        }
+      ]
+    },
+    {
+      "name": "acceptance/canonical-global-ribbon-assets",
+      "head_sha": "c8a573c09c2e932fbdc0127974b59c473560efa1",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 174,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "c8a573c09c2e932fbdc0127974b59c473560efa1"
+        }
+      ]
+    },
+    {
+      "name": "acceptance/canonical-global-ribbon-assets-v2",
+      "head_sha": "e5add33ab4c7de0133a8bb47687783f111a1f5aa",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 175,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e5add33ab4c7de0133a8bb47687783f111a1f5aa"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/final-hygiene",
+      "head_sha": "d77c36b177fcb0613d821ec1062ef62853a61f01",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 113,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d77c36b177fcb0613d821ec1062ef62853a61f01"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/home-presentation-r2",
+      "head_sha": "ca72f15f598b2c4062db9f8197ad364fc7e6fe32",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 121,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ca72f15f598b2c4062db9f8197ad364fc7e6fe32"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/home-presentation-v1",
+      "head_sha": "03ef07c5ff301d8dfe23cc7afb2a013198607331",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 119,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "03ef07c5ff301d8dfe23cc7afb2a013198607331"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/learn-modular-extraction-v2",
+      "head_sha": "34498870c526dd9f58aa46a5968847e67dcc1479",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 132,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "34498870c526dd9f58aa46a5968847e67dcc1479"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/nonmass-d3-d6-main-r2",
+      "head_sha": "49f99d23889a3212603f7b60eb1a9cc96ec94bb0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 118,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "49f99d23889a3212603f7b60eb1a9cc96ec94bb0"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/nonmass-d3-d6-r1",
+      "head_sha": "e233205192e552ca1780605f98a9befb27361eef",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 109,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e233205192e552ca1780605f98a9befb27361eef"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/settings-final-modular-extraction",
+      "head_sha": "4f42ac365c19ee43f0e3adeb6909a47d50c64d75",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 137,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "4f42ac365c19ee43f0e3adeb6909a47d50c64d75"
+        },
+        {
+          "number": 134,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "0c84ccfd359587cb6a337fae249ef96701560222"
+        }
+      ]
+    },
+    {
+      "name": "app-convergence/settings-final-modular-extraction-v2",
+      "head_sha": "29e6859330421c6c2abb6e07405ce58e325e8b91",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "app-convergence/settings-modular-extraction",
+      "head_sha": "609847ac653a28da145e62f2eeef141078d38cf0",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "app/explore-six-lens-current-main-20261010",
+      "head_sha": "a36d52da5d930eee49dab2addb79dd674ccc0c65",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 856,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "a36d52da5d930eee49dab2addb79dd674ccc0c65"
+        }
+      ]
+    },
+    {
+      "name": "app/explore-six-lens-phone-reachability-20261010",
+      "head_sha": "a36d52da5d930eee49dab2addb79dd674ccc0c65",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 852,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e70718a94f5bc6100ea603992c29021bc7d0d84b"
+        }
+      ]
+    },
+    {
+      "name": "app/final-shell-contract",
+      "head_sha": "0138e6855bac8a3cdaea040857bf0d352bc83acc",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 77,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "0138e6855bac8a3cdaea040857bf0d352bc83acc"
+        }
+      ]
+    },
+    {
+      "name": "app/final-shell-contract-r2",
+      "head_sha": "cf3ec47f89d6727cb868ab5029adf549c919f64d",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 81,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "cf3ec47f89d6727cb868ab5029adf549c919f64d"
+        }
+      ]
+    },
+    {
+      "name": "app/final-shell-convergence",
+      "head_sha": "ade01a598565f5565c19e0b6953f969d0ce8b395",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 102,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ade01a598565f5565c19e0b6953f969d0ce8b395"
+        }
+      ]
+    },
+    {
+      "name": "app/focus-visibility-guard-v1",
+      "head_sha": "5e538b93588c36d264ac343be9094587e1b0ffbe",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 101,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "5e538b93588c36d264ac343be9094587e1b0ffbe"
+        }
+      ]
+    },
+    {
+      "name": "app/home-enrichers-modular",
+      "head_sha": "c1b254f93de3e33f691f99b08d6303ff7114702c",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "architecture/formation-gap-ownership-v1",
+      "head_sha": "07a245453fa6d58b2dcf5f48b20da6cfcf4bb78d",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "atlas/relic-principal-sites-bulk-20261009",
+      "head_sha": "324b57542e1f4f0986f3f7c64f08b91cdd1e74b3",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 645,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "324b57542e1f4f0986f3f7c64f08b91cdd1e74b3"
+        }
+      ]
+    },
+    {
+      "name": "atlas/world-subject-census-wave6-close-20261009",
+      "head_sha": "ccf5002e38595722584b52c17d92094e0ef1aea9",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 630,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ccf5002e38595722584b52c17d92094e0ef1aea9"
+        }
+      ]
+    },
+    {
+      "name": "audit/calendar-forensic-truthful-recovery-20261009",
+      "head_sha": "e12f103081bea8f43998aebb5cb69b82f4729294",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "audit/cross-section-ux-readonly-20261009",
+      "head_sha": "2b6e1b30876d631fa6b37488cf815ad2398d1745",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "audit/cse-content-quality-v3",
+      "head_sha": "5b8801a6eb01a027244e24abcfe92a9e8439e362",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "audit/post-convergence-visual-acceptance",
+      "head_sha": "d2971eef4efb6f14e705a6b9c443868976ab44f6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 140,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d2971eef4efb6f14e705a6b9c443868976ab44f6"
+        }
+      ]
+    },
+    {
+      "name": "audit/prayer-reviewed-18-variant-matrix-20261010",
+      "head_sha": "71ece5f455f45766b2f720597ae3a026f265e8d4",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "audit/section-integrity-20261009",
+      "head_sha": "d31af03bb4d52ee96bf7d267ed8f19215c1ccb3b",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "audit/visible-module-user-journeys",
+      "head_sha": "1d7597885a4acab78ebdc58fdbbaee2205bc3e1c",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 158,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "1d7597885a4acab78ebdc58fdbbaee2205bc3e1c"
+        }
+      ]
+    },
+    {
+      "name": "audit/visible-module-user-journeys-v2",
+      "head_sha": "895c80fe4c1fd7aedb8395a50e3f13749ee4d6e7",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 202,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "895c80fe4c1fd7aedb8395a50e3f13749ee4d6e7"
+        }
+      ]
+    },
+    {
+      "name": "calendar-transfer-interactions-sourcefix-20261009",
+      "head_sha": "8614d5ab934b8ac7df2d379a5b53c31a41116ba5",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 666,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "8614d5ab934b8ac7df2d379a5b53c31a41116ba5"
+        }
+      ]
+    },
+    {
+      "name": "campion-formation-glossary-communion",
+      "head_sha": "74c2c747a316ddbf27f731755ebe13510f4b8ac6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 362,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "74c2c747a316ddbf27f731755ebe13510f4b8ac6"
+        }
+      ]
+    },
+    {
+      "name": "campion-formation-glossary-communion-v2",
+      "head_sha": "910ebbe933a5f2dda5f7cc046c2fb9e1fe948b1a",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 364,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "aa0898fe8a3415296e6020eafcf98b37b7926c3f"
+        }
+      ]
+    },
+    {
+      "name": "campion-gesture-matrix-sot",
+      "head_sha": "bf28e956acfcbb85e7b34bc493d4ca4a34a1ab43",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 410,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "bf28e956acfcbb85e7b34bc493d4ca4a34a1ab43"
+        }
+      ]
+    },
+    {
+      "name": "chore/design-system-coherence-v1",
+      "head_sha": "5985d1e51faff56fbd17a3b283dc31436c309b4a",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "chore/design-system-coherence-v1-rebased",
+      "head_sha": "73276987712bad10c7e06bd81499b4849e225c6c",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "cleanup/full-real-shell-certification",
+      "head_sha": "394351fd9c7fe8a6c8bf418696c31d84b1873e9f",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 98,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "394351fd9c7fe8a6c8bf418696c31d84b1873e9f"
+        }
+      ]
+    },
+    {
+      "name": "closure/final-reconciliation-v1",
+      "head_sha": "5f4dd1abe653fd6cb8f691c0311f1f567d71cc96",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "convergence/explore-presentation-v1",
+      "head_sha": "7030aed2e26246b3048e2388eb3673542f24684e",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "convergence/formation-ia-v1",
+      "head_sha": "9f714fd4f212792631f02c64144ec2b62aaf1299",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "convergence/formation-ia-v2",
+      "head_sha": "908296bc57d74ddc30c99acba89fcbc55dee4844",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "convergence/pray-hub-v1",
+      "head_sha": "331eaf4cd0b51541fdd836644c02d41c29bc9c70",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "convergence/return-stack-v1",
+      "head_sha": "73e55432c6918aacac669e60700eb02cb8b0f353",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "convergence/v318-r17-production",
+      "head_sha": "7658191702a538ac565f8416e2bdad60a20ac272",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "cse-fletcher-original-eight-stages-20261009",
+      "head_sha": "cfbd0aba0baa5dc627f2b4981ef2d64f431f8cef",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "diagnostic/index-monolith-audit",
+      "head_sha": "7ab802fdadac327fcbc0f6460245a172ff58bd80",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "directory/all-communities-indicative-map-20261009",
+      "head_sha": "10cf80bf08c641887969be361717acc4206548d8",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 598,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "10cf80bf08c641887969be361717acc4206548d8"
+        }
+      ]
+    },
+    {
+      "name": "directory/all-communities-indicative-rebased-20261009",
+      "head_sha": "5ffef8e821313e53bd15d7f9f828239e26da8afc",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 603,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "5ffef8e821313e53bd15d7f9f828239e26da8afc"
+        }
+      ]
+    },
+    {
+      "name": "directory/all-community-geography-atomic-20261009",
+      "head_sha": "630f8c0cb3aa4c5e67505a4d2d67851e00959bdc",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 605,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "630f8c0cb3aa4c5e67505a4d2d67851e00959bdc"
+        }
+      ]
+    },
+    {
+      "name": "directory/icksp-eligibility-bulk-v1",
+      "head_sha": "c26aefabfa3b7c7216e6631bf1de6c213d732786",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "directory/icksp-live-freshness-v1",
+      "head_sha": "e3b55b8bd054055a7232460e95cd50eecaa78d9a",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "directory/icksp-physical-venues-fr-ie-v1",
+      "head_sha": "d41a4501e1ac265bde2469c72e5eebf6b53cbde3",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "directory/icksp-physical-venues-fr-ie-v2",
+      "head_sha": "9474422956d0516dbbb98f79c1eeaf392421677d",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "directory/icksp-publication-gate-v2",
+      "head_sha": "064bac0fe28399b731c4aa9dc0fe7d76f6ff6c03",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 382,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "064bac0fe28399b731c4aa9dc0fe7d76f6ff6c03"
+        }
+      ]
+    },
+    {
+      "name": "directory/icksp-publication-gate-v3",
+      "head_sha": "38dd257ec36142b9ba66a7e06d50fdb387da5cb0",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 384,
+          "merged": true,
+          "merged_at": "2026-10-07T19:30:56Z",
+          "recorded_head_sha": "c00256730b357ceb9f85c83609ed237596272690"
+        }
+      ]
+    },
+    {
+      "name": "directory/icksp-quality-gates-v1",
+      "head_sha": "bc729be686df3ae07dc4f820f75dcf86bddb9aab",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "directory/icksp-quality-geo-run-v1",
+      "head_sha": "b2b0af3a08c45a17f82042ddf70904cdde70d141",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 405,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "898cc5bab1e96a31e9d87a425220f84a6d1e6d2d"
+        }
+      ]
+    },
+    {
+      "name": "directory/icksp-v19-reconciliation",
+      "head_sha": "3899b8381a43be288fd6772025a9660e796743f0",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "explore-france-t9",
+      "head_sha": "76d67eaf82da8ffa1bda1d748158685a975f27f9",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/calendar-devotional-practice-registry-v1",
+      "head_sha": "efe69577da908ee64a470ab35099d594c4fd8ce2",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 256,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "88b704e9757a8ec6195d241095a7eada93641587"
+        }
+      ]
+    },
+    {
+      "name": "feature/calendar-liturgical-month-v1",
+      "head_sha": "c3b4ffe3eb3f4c31e0164337a75547121cb113e1",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/calendar-liturgical-year-v2",
+      "head_sha": "4339587e15a61cbc12175525085e9ab594d3a53d",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/calendar-retire-v384-ui",
+      "head_sha": "05734d00ba3f04ed1c5edf4949489c107b3c4145",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 262,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "05734d00ba3f04ed1c5edf4949489c107b3c4145"
+        }
+      ]
+    },
+    {
+      "name": "feature/calendar-saint-context-v1",
+      "head_sha": "2f939bdda6c7d50301373e153b1e26db69109689",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 252,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2f939bdda6c7d50301373e153b1e26db69109689"
+        }
+      ]
+    },
+    {
+      "name": "feature/catholic-sexual-ethics-150",
+      "head_sha": "14c9d7dd83e030472f30cf1dc8ace111a868cf2d",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 345,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "14c9d7dd83e030472f30cf1dc8ace111a868cf2d"
+        }
+      ]
+    },
+    {
+      "name": "feature/cse-50-debates",
+      "head_sha": "9e08b932031a58fca6194a8497819631dac7fdad",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/customs-atlas-attestations-v1",
+      "head_sha": "9ea89d17b7fd7c1b3f267361a7f7b9f8440308ed",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 291,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "9ea89d17b7fd7c1b3f267361a7f7b9f8440308ed"
+        }
+      ]
+    },
+    {
+      "name": "feature/explore-geography-place-foundation",
+      "head_sha": "811dff769451601ebab205bdf7befca21ee9e7c2",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 285,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "811dff769451601ebab205bdf7befca21ee9e7c2"
+        }
+      ]
+    },
+    {
+      "name": "feature/explore-geography-place-foundation-v2",
+      "head_sha": "c367565943ff452cdba992a4cefe1a111c53bbc0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 287,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "c367565943ff452cdba992a4cefe1a111c53bbc0"
+        }
+      ]
+    },
+    {
+      "name": "feature/explore-projection-surface-v1",
+      "head_sha": "0e100bc895b7c698686a7979979bad795b03c60b",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 301,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "0e100bc895b7c698686a7979979bad795b03c60b"
+        }
+      ]
+    },
+    {
+      "name": "feature/explore-shrine-corpus-tranche-10-germany",
+      "head_sha": "415c90783be18ee93c97034f86eb9a3a1805a7eb",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/explore-shrine-corpus-tranche-11-us-northeast",
+      "head_sha": "20d6fd302d5471507bd9e5b9402d52e18331aeb4",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/explore-shrine-corpus-tranche-11-us-northeast-ready",
+      "head_sha": "1031152ab5c944413fbd987ace8bc336f0e834d0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 353,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "1031152ab5c944413fbd987ace8bc336f0e834d0"
+        }
+      ]
+    },
+    {
+      "name": "feature/explore-shrine-corpus-tranche-5-oceania",
+      "head_sha": "1ecc4b5110871c601102ffa3b3e82a667cd4efd5",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/explore-shrine-corpus-tranche-9-france",
+      "head_sha": "fa56c98b36c1e2c6de55d4784882f95110fb32c9",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/explore-shrine-corpus-tranche-9-france-final",
+      "head_sha": "d8d8f6b454799acee63104f3ce21dd4a204517e0",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/explore-shrine-corpus-tranche-9-france-ready",
+      "head_sha": "76d67eaf82da8ffa1bda1d748158685a975f27f9",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/find-a-mass-surface-v1",
+      "head_sha": "8bcf65dd0d356dc237d261293c7f4c2a02925e35",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 284,
+          "merged": true,
+          "merged_at": "2026-10-07T09:51:53Z",
+          "recorded_head_sha": "a45c81cbe7388b4c5df766099cf7af7a9e8493eb"
+        }
+      ]
+    },
+    {
+      "name": "feature/find-czech-national-round20-20261010",
+      "head_sha": "d8ad99b6df72f3f4275b603cb63e13ae38220653",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 846,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d8ad99b6df72f3f4275b603cb63e13ae38220653"
+        }
+      ]
+    },
+    {
+      "name": "feature/scripture-catholic-editions-foundation-20261009",
+      "head_sha": "908b89fcfadca744f932e3cb19c77543dab9a4da",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 507,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "908b89fcfadca744f932e3cb19c77543dab9a4da"
+        }
+      ]
+    },
+    {
+      "name": "feature/shrine-geo-calendar-bindings-v1",
+      "head_sha": "349ad2e0e94e4e6ee01a18a692c2c893f3c49942",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "feature/shrines-pilgrimages-sot-v1",
+      "head_sha": "064fdfc7a01992f333f954c089e821f98446ef55",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 296,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "064fdfc7a01992f333f954c089e821f98446ef55"
+        }
+      ]
+    },
+    {
+      "name": "final/following-actions-after-good-friday",
+      "head_sha": "2601a0b15ab42f6a425ec6af79c577657726f700",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 87,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2601a0b15ab42f6a425ec6af79c577657726f700"
+        }
+      ]
+    },
+    {
+      "name": "final/requiem-funeral-context",
+      "head_sha": "79999e79c2c53eb77bd2595b8c2454d2fcad313f",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 97,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "79999e79c2c53eb77bd2595b8c2454d2fcad313f"
+        }
+      ]
+    },
+    {
+      "name": "fix-shrine-contract-enums",
+      "head_sha": "9b4b55f6d476833d9b0ffaa47fd909d7e75ed84d",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "fix-traditional-life-authority-guard",
+      "head_sha": "b88f9eaa045351f9623611b745f70d7a6c9ada79",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 358,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "b88f9eaa045351f9623611b745f70d7a6c9ada79"
+        }
+      ]
+    },
+    {
+      "name": "fix/1962-rogations-commemorations-20261009",
+      "head_sha": "7bc789e7e1f4020567435d6eae35bbdf7e140bdf",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 700,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "7bc789e7e1f4020567435d6eae35bbdf7e140bdf"
+        }
+      ]
+    },
+    {
+      "name": "fix/2026-oct08-composed-oration-source-diagnostics",
+      "head_sha": "f9e04a73404d8f933699385ded0c0902ccf02255",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 858,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "f9e04a73404d8f933699385ded0c0902ccf02255"
+        }
+      ]
+    },
+    {
+      "name": "fix/benediction-blessing-frozen-v4",
+      "head_sha": "0d6121cce5e5fc26c26acd5692c86ad75b05c3d3",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "fix/calendar-observance-headlines-source-20261009",
+      "head_sha": "c736930b1545f2731d787c4f3adac086dc062515",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 745,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "c736930b1545f2731d787c4f3adac086dc062515"
+        }
+      ]
+    },
+    {
+      "name": "fix/calendar-resolved-major-glossary-20261009",
+      "head_sha": "82ec8a7723473e06f8ddd81eb362179a99c54e65",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 654,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "82ec8a7723473e06f8ddd81eb362179a99c54e65"
+        }
+      ]
+    },
+    {
+      "name": "fix/calendar-rogations-commemorations-20261009",
+      "head_sha": "d79dae3fdc6981e61083e65f77f84ace9310a43e",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "fix/ci-touch-ribbon-rebased-20261008",
+      "head_sha": "7fb5c7aed763101e1a8c10a9b1151a558baf0ff0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 451,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "7fb5c7aed763101e1a8c10a9b1151a558baf0ff0"
+        }
+      ]
+    },
+    {
+      "name": "fix/cse-fletcher-farley-curran-originals-20261009",
+      "head_sha": "c5cf1da0fedb7e63fb718c14596542d9df04c6bf",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 728,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "c5cf1da0fedb7e63fb718c14596542d9df04c6bf"
+        }
+      ]
+    },
+    {
+      "name": "fix/cse-public-copy-and-citations",
+      "head_sha": "67bd10718fe5b05c34a9bbbfdfb9b6108f6768b2",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 351,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "67bd10718fe5b05c34a9bbbfdfb9b6108f6768b2"
+        }
+      ]
+    },
+    {
+      "name": "fix/cse-three-authors-source-reconciled-20261009",
+      "head_sha": "546a42fd20996f2647f1ad18a4e7f268451358d1",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 733,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "546a42fd20996f2647f1ad18a4e7f268451358d1"
+        }
+      ]
+    },
+    {
+      "name": "fix/french-parity-mass-ordinary-20261007",
+      "head_sha": "e5d0ae715a84535588a0fe7f09fde7e5ed810522",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 316,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e5d0ae715a84535588a0fe7f09fde7e5ed810522"
+        }
+      ]
+    },
+    {
+      "name": "fix/home-r17-resume-ownership",
+      "head_sha": "cbd466d0ba690b4914fc6cef2badd387dcd16d48",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 156,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "cbd466d0ba690b4914fc6cef2badd387dcd16d48"
+        }
+      ]
+    },
+    {
+      "name": "fix/home-resume-r17-owner",
+      "head_sha": "e87a58e220826bc34b54fba57cd9c7f9f9995339",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 161,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e87a58e220826bc34b54fba57cd9c7f9f9995339"
+        }
+      ]
+    },
+    {
+      "name": "fix/home-resume-r17-owner-v2",
+      "head_sha": "d42501b8675ccd7e978f5f82153f70599c94615d",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "fix/latin-core350-certified-crosswalk-20261008",
+      "head_sha": "660ea2cf467a90659eb7bd228366a4cd18a72aaa",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 461,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "660ea2cf467a90659eb7bd228366a4cd18a72aaa"
+        }
+      ]
+    },
+    {
+      "name": "fix/mass-definitive-single-owner-v1",
+      "head_sha": "ad1c286cb74db6df3784620d0b6d6639b3837601",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 206,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ad1c286cb74db6df3784620d0b6d6639b3837601"
+        }
+      ]
+    },
+    {
+      "name": "fix/mass-text-proper-integrity-20260927-v1",
+      "head_sha": "e01dfbf66871a90662ab2a7c396ff268570649fb",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "fix/nonmass-pray-visible-regressions-v1",
+      "head_sha": "193687ee07766949bfc51d6a4bccbadb5b3efa29",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 208,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "193687ee07766949bfc51d6a4bccbadb5b3efa29"
+        }
+      ]
+    },
+    {
+      "name": "fix/nonmass-pray-visible-regressions-v2",
+      "head_sha": "144e35b3762a3cfcfdb46e500b675e38ebdd425e",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 211,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "144e35b3762a3cfcfdb46e500b675e38ebdd425e"
+        }
+      ]
+    },
+    {
+      "name": "fix/nonmass-pray-visible-regressions-v3",
+      "head_sha": "959af54fcea8a203dd3a82729d7c3da7219c4c33",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 217,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "959af54fcea8a203dd3a82729d7c3da7219c4c33"
+        }
+      ]
+    },
+    {
+      "name": "fix/nonmass-pray-visible-regressions-v4",
+      "head_sha": "fb9ef3824752352e4ff291bb47acf37efe6c52ed",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 219,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "fb9ef3824752352e4ff291bb47acf37efe6c52ed"
+        }
+      ]
+    },
+    {
+      "name": "fix/phone-acceptance-deterministic-cue",
+      "head_sha": "8f4a9373c24488eca9f699138078ae1648976d5f",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 30,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "8f4a9373c24488eca9f699138078ae1648976d5f"
+        }
+      ]
+    },
+    {
+      "name": "fix/phone-pray-tap-qa-20261008",
+      "head_sha": "675fc851f8d603d27ba01c9f2950805b9e2ac723",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 430,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "675fc851f8d603d27ba01c9f2950805b9e2ac723"
+        }
+      ]
+    },
+    {
+      "name": "fix/phone-ribbon-loop-asset-and-pr-gate-20261008",
+      "head_sha": "d41247cc2098fa8a3cb1c49e0b781ae302b9101e",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 439,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d41247cc2098fa8a3cb1c49e0b781ae302b9101e"
+        }
+      ]
+    },
+    {
+      "name": "fix/r17-icon-bank-runtime-bridge",
+      "head_sha": "ee9d9b0d4b8b89800d3e63edf95023209f95363d",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 123,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ee9d9b0d4b8b89800d3e63edf95023209f95363d"
+        }
+      ]
+    },
+    {
+      "name": "fix/r17-icon-bank-runtime-bridge-current",
+      "head_sha": "9607727d60cf201040a45bc5f0d74ece96b0a4fd",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 124,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "9607727d60cf201040a45bc5f0d74ece96b0a4fd"
+        }
+      ]
+    },
+    {
+      "name": "fix/r17-repository-icon-bank",
+      "head_sha": "32b27101741fddf15194bb1026c2163062d61fe4",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 126,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "32b27101741fddf15194bb1026c2163062d61fe4"
+        }
+      ]
+    },
+    {
+      "name": "fix/reader-composed-commemoration-source-french-20261010",
+      "head_sha": "ad47621d995e52b817e0b084516f111bb9e55cd0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 863,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ad47621d995e52b817e0b084516f111bb9e55cd0"
+        }
+      ]
+    },
+    {
+      "name": "fix/requiem-model-regression",
+      "head_sha": "764c780ba0a9a1e6d24355173a42693c98771621",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 39,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "764c780ba0a9a1e6d24355173a42693c98771621"
+        }
+      ]
+    },
+    {
+      "name": "fix/rosary-active-root-controls-v1",
+      "head_sha": "0c22d4ae851f1c30d68085ed587e2146e7e17d4e",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 224,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "0c22d4ae851f1c30d68085ed587e2146e7e17d4e"
+        }
+      ]
+    },
+    {
+      "name": "fix/scripture-luke-context-contract-20261009",
+      "head_sha": "2897f908bba8024b51e0d6a9e4c8ea055a14568e",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 732,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2897f908bba8024b51e0d6a9e4c8ea055a14568e"
+        }
+      ]
+    },
+    {
+      "name": "fix/source-first-canon-structure",
+      "head_sha": "5c7303e55a6972361fb9882d653d21c3b0f680bb",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 13,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "5c7303e55a6972361fb9882d653d21c3b0f680bb"
+        }
+      ]
+    },
+    {
+      "name": "fix/source-first-canon-structure-r2",
+      "head_sha": "66b939c6465e0a5c3b326ac97304e400b64fbab6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 15,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "66b939c6465e0a5c3b326ac97304e400b64fbab6"
+        }
+      ]
+    },
+    {
+      "name": "fix/source-first-canon-structure-r3",
+      "head_sha": "70128467fbff5c63ba7e9f820e7fb3c7697c835d",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "fix/text-proper-integrity-20260927",
+      "head_sha": "2b1bbb7a7ead01c3e317bacca02b4debc8e1d6e4",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 3,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2b1bbb7a7ead01c3e317bacca02b4debc8e1d6e4"
+        }
+      ]
+    },
+    {
+      "name": "fix/urgent-stabilization-v43.34",
+      "head_sha": "afab533a14ab2a72e4bf74560a038cbc10786472",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 2,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "afab533a14ab2a72e4bf74560a038cbc10786472"
+        }
+      ]
+    },
+    {
+      "name": "formation/baq-13-16-full-bilingual-debates-20261008",
+      "head_sha": "559ae0688bf1cdfcb890a333096a181b35af79f6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 475,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "559ae0688bf1cdfcb890a333096a181b35af79f6"
+        }
+      ]
+    },
+    {
+      "name": "formation/close-catholic-life-absorption-v1",
+      "head_sha": "e820a7947fb0cc78f25cfe3fc9e38b2f3b02404f",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "formation/close-catholic-life-absorption-v2",
+      "head_sha": "25ecd2e5766e9c3347dc1451f4dcdf1166b9c043",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 375,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "25ecd2e5766e9c3347dc1451f4dcdf1166b9c043"
+        }
+      ]
+    },
+    {
+      "name": "formation/contemporary-21-bulk-primary-source-map-20261008",
+      "head_sha": "8a8c70218ab078499fea19ab7c796ffeed028624",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 481,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "8a8c70218ab078499fea19ab7c796ffeed028624"
+        },
+        {
+          "number": 480,
+          "merged": true,
+          "merged_at": "2026-10-08T11:32:25Z",
+          "recorded_head_sha": "f32cb7c96e67aacef0b470c72190443dfa0b2967"
+        }
+      ]
+    },
+    {
+      "name": "formation/content-ownership-registry-v1",
+      "head_sha": "fa2788a065505a885463ba655cfe149dadb818d8",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 419,
+          "merged": true,
+          "merged_at": "2026-10-08T07:50:45Z",
+          "recorded_head_sha": "17c053b88bf43a71f8f2fcfb65fccd20769eb71e"
+        }
+      ]
+    },
+    {
+      "name": "formation/cse-high-risk-primary-pass-20261009",
+      "head_sha": "62efb781e0f263b455bea4e51064ea80dda41bfd",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 659,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "62efb781e0f263b455bea4e51064ea80dda41bfd"
+        }
+      ]
+    },
+    {
+      "name": "formation/cse-opponent-original-54claims-20261009",
+      "head_sha": "707334952c9887ced7745dcb6d8705ac5063cc4e",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 755,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "707334952c9887ced7745dcb6d8705ac5063cc4e"
+        },
+        {
+          "number": 743,
+          "merged": true,
+          "merged_at": "2026-10-09T16:00:01Z",
+          "recorded_head_sha": "80bc20fe71475ce728a9c9058557d49f46a2bbc0"
+        },
+        {
+          "number": 740,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "cded4d8f297afd34a0ecfcde68d3fd744c7c0232"
+        }
+      ]
+    },
+    {
+      "name": "formation/cse-opposition-primary-34-20261009",
+      "head_sha": "6d8eea251b033a602f1076c6e962e49768e89a88",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 744,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "6d8eea251b033a602f1076c6e962e49768e89a88"
+        }
+      ]
+    },
+    {
+      "name": "formation/cse-remove-editorial-meta-20261009",
+      "head_sha": "eb37b822c1b1fdc83ccc79d43b881fd211bf5dfc",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 642,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "eb37b822c1b1fdc83ccc79d43b881fd211bf5dfc"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-faith-certify-001-018",
+      "head_sha": "9fa916d184cb7a4b7a7264658d4d541eac3aa39a",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 499,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "9fa916d184cb7a4b7a7264658d4d541eac3aa39a"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-faith-full-54-review-reconciliation-20261009",
+      "head_sha": "943ad1060484934cae03d4498b895d0216e0e705",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 506,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "943ad1060484934cae03d4498b895d0216e0e705"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-faith-full-draft-v1",
+      "head_sha": "7c1e39ae9f1e08e04e17e967bd02fb5d5dcc51b0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 490,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "7c1e39ae9f1e08e04e17e967bd02fb5d5dcc51b0"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-the-faith-content-v1",
+      "head_sha": "9c02e36f124d7ebbe13ee2bbefa38dd73a09ee90",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 478,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "9c02e36f124d7ebbe13ee2bbefa38dd73a09ee90"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-the-faith-content-v1-clean",
+      "head_sha": "1314866241c2f025171f2d3b1f01280e5a92bb63",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 485,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "1314866241c2f025171f2d3b1f01280e5a92bb63"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-the-faith-content-v2",
+      "head_sha": "8a3cf4244980e2bf70aa26a8937bf8410ce9efa4",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 466,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "8a3cf4244980e2bf70aa26a8937bf8410ce9efa4"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-the-faith-curriculum-v1",
+      "head_sha": "69425ca408ff272c99ff25fe165d635a22a1f830",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 440,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "5784cf3a673a7b1142a57e18766ff26a6391187a"
+        }
+      ]
+    },
+    {
+      "name": "formation/learn-the-faith-curriculum-v2",
+      "head_sha": "3aedb5f64180f30066d340324836879da145751b",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "formation/learn-the-faith-sot-v2",
+      "head_sha": "adacd897e22f9dd224e81aeb6bc5ed6efd7f50a3",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 495,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "adacd897e22f9dd224e81aeb6bc5ed6efd7f50a3"
+        }
+      ]
+    },
+    {
+      "name": "formation/spiritual-life-publish-v1",
+      "head_sha": "8a429f137d09f004fb3b9af20ab1460df253d38b",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "formation/spiritual-life-runtime-tests-v1",
+      "head_sha": "031eef43180f00c4006e7d8aa89c15b32fcd8350",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "formation/tc-source-debate-deepening-20261008",
+      "head_sha": "f9feb6de91d62a0db7fe4ed68aa76fba30b2ace5",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 459,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "f9feb6de91d62a0db7fe4ed68aa76fba30b2ace5"
+        }
+      ]
+    },
+    {
+      "name": "formation/tlm-canonical-owner-review-20261008",
+      "head_sha": "26868d703c34a5e7f77d059a93a8c86d05e84f55",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 469,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "26868d703c34a5e7f77d059a93a8c86d05e84f55"
+        }
+      ]
+    },
+    {
+      "name": "formation/tlm-tc-documentary-editorial-20261008",
+      "head_sha": "9cfe81792686eda71e7e6a2d978b2b56fa831cd6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 463,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "9cfe81792686eda71e7e6a2d978b2b56fa831cd6"
+        }
+      ]
+    },
+    {
+      "name": "glossary/definitions-001-050",
+      "head_sha": "73fd7e6dcfa44a9610668bc3351a647efd4eda78",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "glossary/definitions-v1-final",
+      "head_sha": "a94fe757612cd27bd5344c2d17eaecc501648094",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 380,
+          "merged": true,
+          "merged_at": "2026-10-07T19:23:01Z",
+          "recorded_head_sha": "c262fd8b128992b3826e4a8640efd9d5a1cc9fee"
+        }
+      ]
+    },
+    {
+      "name": "glossary/final-convergence-v1",
+      "head_sha": "593b4415fbac352faf2faf15750a9e1e05e54810",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "glossary/latin-reference-v1",
+      "head_sha": "acfce5056797e8fb2f85d24047133b056d22b3d8",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "glossary/latin-reference-v1-final",
+      "head_sha": "d819e27f7407d86f3c8a82a02acea13942bc9598",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 390,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d819e27f7407d86f3c8a82a02acea13942bc9598"
+        }
+      ]
+    },
+    {
+      "name": "glossary/reference-convergence-v1",
+      "head_sha": "d88f334762ce28e6f97fb083690e50b937b772e7",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "glossary/sot-v1-current",
+      "head_sha": "cac6b7b8e1a7abc49b63b32c89ba4c36e90cdbb0",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "glossary/sot-v1-navigation",
+      "head_sha": "a684b94ea6268de5bba2d9628dd49c55491342b5",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "governance/unmerged-branch-disposition-20261010",
+      "head_sha": "1027a17f42e29494f388d718394af622f84ae6eb",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r17-mass-convergence",
+      "head_sha": "c426aa312ba7547b5fe1353e0ec6564f0d5e6826",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r17-mass-convergence-mainline",
+      "head_sha": "35d7915464c76c75ff13c7760f14e64c91afafb6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 4,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "35d7915464c76c75ff13c7760f14e64c91afafb6"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r18-form-state-parity",
+      "head_sha": "915fc464645d34787d972188136b6eaeb465fd15",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 6,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "915fc464645d34787d972188136b6eaeb465fd15"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r18-form-state-parity-reconciled",
+      "head_sha": "16039a5e102b03cd41cfa359c762bae57e3701c9",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r18-form-transient-parity",
+      "head_sha": "e8b7f016770167805e4629754d8810910c55ad35",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 17,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e8b7f016770167805e4629754d8810910c55ad35"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r18-form-transient-parity-current",
+      "head_sha": "1bf6e4fe04d3a777c604d42431e273f9203493d6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 18,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "1bf6e4fe04d3a777c604d42431e273f9203493d6"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r18-form-transient-parity-current2",
+      "head_sha": "b16f3ed0cbb90a673a83252aea7fd058fc300709",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 19,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "b16f3ed0cbb90a673a83252aea7fd058fc300709"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r19-special-structure-projection",
+      "head_sha": "fa1e748d27577e120f1a155013640a432e8a1b2c",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 10,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "fa1e748d27577e120f1a155013640a432e8a1b2c"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r22-palm-native-payload",
+      "head_sha": "07e9e164f84ddb6fa746ef4059736410147d4148",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 21,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "07e9e164f84ddb6fa746ef4059736410147d4148"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r23-ash-native-payload",
+      "head_sha": "213aad775c8117e97ac94fcb0487446ff72eb05a",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r23-special-native-preview",
+      "head_sha": "cd139a57208ec0d218fdf98ecb15b19f224ff868",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 26,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "cd139a57208ec0d218fdf98ecb15b19f224ff868"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r23-special-premass-cluster",
+      "head_sha": "db2973569c5d4b97cffba5f7d74e94eba874b494",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 31,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "db2973569c5d4b97cffba5f7d74e94eba874b494"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r24-ash-candlemas-native",
+      "head_sha": "80ddc4c5687741782830f9e91f1e689d173e0530",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 27,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "80ddc4c5687741782830f9e91f1e689d173e0530"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r24-candlemas-rogations-current",
+      "head_sha": "4ed6bc5401658a6502f95e073c4aefa78097a7f0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 34,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "4ed6bc5401658a6502f95e073c4aefa78097a7f0"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r25-rogations-current",
+      "head_sha": "b1ec8d26f1abf138673c84b700eb4e2505bcceae",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r25-rogations-native",
+      "head_sha": "244e1a687d41dfcdf3334ba72317c88ca84f6c90",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 28,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "244e1a687d41dfcdf3334ba72317c88ca84f6c90"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r26-requiem-native",
+      "head_sha": "714bf9f5794df3d67f75a44284bc70a0bd515375",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r30-rogations-native-current",
+      "head_sha": "c874d089ab0674c970f4af3a060b548a0086d20c",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 44,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "c874d089ab0674c970f4af3a060b548a0086d20c"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r31-holy-thursday-post-native",
+      "head_sha": "34689d3c0a0b6989870d41bc943a8f94a00efd4d",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r32-good-friday-native",
+      "head_sha": "a18e59377227661a76e875ff8a5131969d93c9d2",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 46,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "a18e59377227661a76e875ff8a5131969d93c9d2"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r32-nuptial-certification",
+      "head_sha": "90ea4886ca2f450ccf1ac33e8ff77a233f97bd46",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r33-good-friday-runtime-current",
+      "head_sha": "ce058f658997b3123282f7ad84d1c1bc2b5918d4",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/r34-field-native-default",
+      "head_sha": "c3d1b7363ade5b6e3af4cbcbad7ba183afd2dd07",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 61,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "c3d1b7363ade5b6e3af4cbcbad7ba183afd2dd07"
+        }
+      ]
+    },
+    {
+      "name": "implementation/r34-good-friday-ledger-reconcile",
+      "head_sha": "ce0496a77be85e6c84cd6731791b1dbe9591349b",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "implementation/wave-0-1-canonical-runtime",
+      "head_sha": "00d857283beace866d5b02cf1e02ba9ee1d4be70",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "integration/cross-domain-phone-journey",
+      "head_sha": "aa0ccf6fdf83561610f2ab837d1b61962d30d3e5",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 106,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "aa0ccf6fdf83561610f2ab837d1b61962d30d3e5"
+        }
+      ]
+    },
+    {
+      "name": "integration/form-state-parity-certification",
+      "head_sha": "3e7157e7a0fbf93b71b9b828b5428f81863ad793",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "integration/good-friday-real-shell",
+      "head_sha": "82e7c91641a6c9dbbd136f40f0f04fd9963aa513",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "integration/good-friday-real-shell-v2",
+      "head_sha": "b11fce225a1ebe6e67facd672d6b4905b41c20ca",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 84,
+          "merged": true,
+          "merged_at": "2026-10-04T15:26:35Z",
+          "recorded_head_sha": "5d6cc03445b2152df4d1f8887ead81e2d0acf52e"
+        }
+      ]
+    },
+    {
+      "name": "integration/live-session-guards",
+      "head_sha": "3b9722224807fda8631acd2393bbca6edf12c5f4",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 111,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "3b9722224807fda8631acd2393bbca6edf12c5f4"
+        }
+      ]
+    },
+    {
+      "name": "integration/nonmass-d3-d6-convergence",
+      "head_sha": "0231a98ca20abe90cba090bec71d3a2d291e2589",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 104,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "0231a98ca20abe90cba090bec71d3a2d291e2589"
+        }
+      ]
+    },
+    {
+      "name": "integration/nonmass-d3-d6-current",
+      "head_sha": "364549a8473d1d711e74ee209810dbbec493a3ea",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 108,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "364549a8473d1d711e74ee209810dbbec493a3ea"
+        }
+      ]
+    },
+    {
+      "name": "integration/nonmass-d3-d6-main",
+      "head_sha": "d5892aaa7c66d63946300c2d875c79f388dee4a3",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 110,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d5892aaa7c66d63946300c2d875c79f388dee4a3"
+        }
+      ]
+    },
+    {
+      "name": "integration/r18-form-state-on-r17-transients",
+      "head_sha": "ac3d00b44685aeb175f1669fbe788674be255fde",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 7,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ac3d00b44685aeb175f1669fbe788674be255fde"
+        }
+      ]
+    },
+    {
+      "name": "integration/real-shell-asperges",
+      "head_sha": "dcc3fe2f8b9c0cd66e7080cc509de4fae8f33c7f",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 75,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2e02283b8a62375cc612c178467c4ac3658b17da"
+        }
+      ]
+    },
+    {
+      "name": "integration/real-shell-asperges-v2",
+      "head_sha": "3d7feb88d93a38faffd8e31e0b0868c8b34da94c",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 78,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "3d7feb88d93a38faffd8e31e0b0868c8b34da94c"
+        }
+      ]
+    },
+    {
+      "name": "integration/reconcile-oct4-field-rescue",
+      "head_sha": "2eccb753e19aeb0577126f343761faf6bef0e207",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 63,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "35d7915464c76c75ff13c7760f14e64c91afafb6"
+        }
+      ]
+    },
+    {
+      "name": "integration/requiem-plan-only-overlay",
+      "head_sha": "75c59883d0561ee3271a206344e2cf1d7324bbd0",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 32,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "75c59883d0561ee3271a206344e2cf1d7324bbd0"
+        }
+      ]
+    },
+    {
+      "name": "integration/visible-shell-ownership",
+      "head_sha": "d705d860aa3ef33438707a080e4d66a64b60d174",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 103,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d705d860aa3ef33438707a080e4d66a64b60d174"
+        }
+      ]
+    },
+    {
+      "name": "learn/latin-v2-curriculum",
+      "head_sha": "638c0c33de58ea560de50900c83fafde818d4112",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "mass-batch-a-liturgical-theme-icons-20261008",
+      "head_sha": "d869665c84990c26c252e3633a8c99c9e11e6efe",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 438,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d869665c84990c26c252e3633a8c99c9e11e6efe"
+        }
+      ]
+    },
+    {
+      "name": "mass/definitive-single-reader-v1",
+      "head_sha": "71d69b82672dd73cde9b1d82bcc6597a3ba07d30",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 207,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "71d69b82672dd73cde9b1d82bcc6597a3ba07d30"
+        }
+      ]
+    },
+    {
+      "name": "mass/postmerge-visual-certification-hotfix",
+      "head_sha": "ac64acd433b52c11f9825ae626cedc24901108c4",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 239,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "ac64acd433b52c11f9825ae626cedc24901108c4"
+        }
+      ]
+    },
+    {
+      "name": "mass/postmerge-visual-certification-v2",
+      "head_sha": "2d6e0c5b19bc42a6c6314a3b4e48c7990e12a777",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 240,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2d6e0c5b19bc42a6c6314a3b4e48c7990e12a777"
+        }
+      ]
+    },
+    {
+      "name": "mass/shared-knowledge-registry-v1",
+      "head_sha": "eba7dd153e7b7fa16e8b41792db588fd7307fa36",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 434,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "eba7dd153e7b7fa16e8b41792db588fd7307fa36"
+        }
+      ]
+    },
+    {
+      "name": "mass/v180-parity-convergence-20261007",
+      "head_sha": "23872d6e9a5e4747cc7842c97973686d724e2823",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "migration/mass-v1.76-r18",
+      "head_sha": "9bb7c3a9c0d2e1416d130e11ad2170ad45c55a79",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "novena/start-authority-20261007",
+      "head_sha": "f2d68763b4377d176a84a4472d44039482da0bc8",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "prayer-confession-full-guided-journeys-20261009",
+      "head_sha": "f9ba6f467b3a9e77ceaa58ea8376a6c190f17044",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 647,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "f9ba6f467b3a9e77ceaa58ea8376a6c190f17044"
+        }
+      ]
+    },
+    {
+      "name": "qa/product-pass-1",
+      "head_sha": "e0d7b67e64bedc56df38c6b7d4e43c62a0cbc545",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "r35/real-shell-palm-ash",
+      "head_sha": "8dedde5ac504a9fe58a832267ed4640e48cd896f",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "r35/scoped-native-palm-ash",
+      "head_sha": "33cb8611cb048d07a436a30856a5ff05e72dec7a",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 67,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "33cb8611cb048d07a436a30856a5ff05e72dec7a"
+        }
+      ]
+    },
+    {
+      "name": "r36/candlemas-real-shell",
+      "head_sha": "a69d633a40355e32838d9d45f33e4ce7ad6a8b36",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "r37/real-shell-following-actions",
+      "head_sha": "7ee4e569853177a37637626c71acecc604c81520",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 80,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "7ee4e569853177a37637626c71acecc604c81520"
+        }
+      ]
+    },
+    {
+      "name": "r37/real-shell-following-actions-r2",
+      "head_sha": "fab064df601815eec3303bec11721c1b12c22164",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 82,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "fab064df601815eec3303bec11721c1b12c22164"
+        }
+      ]
+    },
+    {
+      "name": "r38/following-actions-final",
+      "head_sha": "b2faacb330f5f21a6d863b7434bc8117e45e16f1",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 85,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "b2faacb330f5f21a6d863b7434bc8117e45e16f1"
+        }
+      ]
+    },
+    {
+      "name": "r38/following-actions-latest-main",
+      "head_sha": "214ac2063e09fd04e0c548077cacb82501bbec63",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "r38/requiem-real-shell",
+      "head_sha": "6a46cf9ac58220da916f35ed6ba19609a953b92a",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "r38/requiem-real-shell-v2",
+      "head_sha": "ada77f71095ab9450dc027dc35b9340670897021",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "r38/requiem-real-shell-v3",
+      "head_sha": "f06ca310c6004d62bb9aab17a94c24f7c78a94ce",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 91,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "f06ca310c6004d62bb9aab17a94c24f7c78a94ce"
+        }
+      ]
+    },
+    {
+      "name": "r40/easter-vigil-real-shell",
+      "head_sha": "df2306becc473474976a9f8e6609c7c64dd7bff4",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 90,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "df2306becc473474976a9f8e6609c7c64dd7bff4"
+        }
+      ]
+    },
+    {
+      "name": "r40/easter-vigil-real-shell-r2",
+      "head_sha": "0829a4171605dc6ece8ab0e6ff85095122debb8e",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 92,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "0829a4171605dc6ece8ab0e6ff85095122debb8e"
+        }
+      ]
+    },
+    {
+      "name": "r40/following-action-evidence",
+      "head_sha": "33a5a2e53c05ebad1f5f17c8abe3aefd303fc6e6",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "r41/complete-real-shell-evidence",
+      "head_sha": "255e31a8927ddd3229b0bce699bbc9c31db6f1cd",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/direct-donor-visual-gate-v1",
+      "head_sha": "8dafb04a5c14b65d41a0eeb5e8119686d14e47e6",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 228,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "8dafb04a5c14b65d41a0eeb5e8119686d14e47e6"
+        }
+      ]
+    },
+    {
+      "name": "recovery/exact-donor-parity-ledger-v2",
+      "head_sha": "504080f3772525ebe56ed19e7da16bd1c5ba2262",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 223,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "504080f3772525ebe56ed19e7da16bd1c5ba2262"
+        }
+      ]
+    },
+    {
+      "name": "recovery/exact-donor-rails-v2",
+      "head_sha": "b7f07c7e507cc44f4004dc8e8592270ca0f4646c",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 198,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "b7f07c7e507cc44f4004dc8e8592270ca0f4646c"
+        }
+      ]
+    },
+    {
+      "name": "recovery/exact-donor-rails-v4-cert",
+      "head_sha": "174a57ff9868852976dcda7236c61e31d5ee5c67",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/exact-donor-rails-v4-hardening",
+      "head_sha": "08babd9b308a604ce982c42416835f64ce30f4b3",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/exact-donor-v6-ledger-reconcile",
+      "head_sha": "823bf72c2ab0734d3caff375932f6b3122600f5e",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/presentation-fx-v1",
+      "head_sha": "e1adeb9d360717af556e8e856530b303b0198954",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 171,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e1adeb9d360717af556e8e856530b303b0198954"
+        }
+      ]
+    },
+    {
+      "name": "recovery/presentation-fx-v1-rebased",
+      "head_sha": "c592c8c1459cd779d697deed75355e4ca0856d9c",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 173,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "c592c8c1459cd779d697deed75355e4ca0856d9c"
+        }
+      ]
+    },
+    {
+      "name": "recovery/presentation-fx-v4-stations",
+      "head_sha": "615f20476d2f131fcedf4637055f592b0034767b",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 186,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "29d986caf0a878b086cbf29b762297abf4eb5da5"
+        }
+      ]
+    },
+    {
+      "name": "recovery/presentation-fx-v6-extract-owner",
+      "head_sha": "0186beee6b0cff87e7e857673423b8661653f1d6",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/product-parity-learn-audit",
+      "head_sha": "050c72fdc54b2e80f39ee27c54d7daead900e3a5",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 163,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "050c72fdc54b2e80f39ee27c54d7daead900e3a5"
+        },
+        {
+          "number": 162,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e62a9573c22664debb8b2b5f99a26a6f0afc68ce"
+        }
+      ]
+    },
+    {
+      "name": "recovery/product-parity-mass-elevation-audit",
+      "head_sha": "9c681c6471faf3abc903ec10df7353607c321687",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/product-parity-mass-ui-v3-current",
+      "head_sha": "e7dd1752b24de78931706bed5e006a3f30bbdd9b",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 165,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "e7dd1752b24de78931706bed5e006a3f30bbdd9b"
+        }
+      ]
+    },
+    {
+      "name": "recovery/product-parity-mass-ui-v3-elevation",
+      "head_sha": "8cc818f80a25343efb2013b0106eaeb9ba687422",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 155,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "8cc818f80a25343efb2013b0106eaeb9ba687422"
+        }
+      ]
+    },
+    {
+      "name": "recovery/product-parity-mass-ui-v4-salience",
+      "head_sha": "9352c24a7f26cc0f082b0eeccc9ed33cfb17a5cb",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 168,
+          "merged": true,
+          "merged_at": "2026-10-05T12:58:44Z",
+          "recorded_head_sha": "d87f3599dbe8f6d7e6c28870908f0b49c7eb758c"
+        }
+      ]
+    },
+    {
+      "name": "recovery/prototype-fidelity-v1",
+      "head_sha": "f6e25a4e339b1cefa177b694b38f7dfca6116b1c",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 195,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "f6e25a4e339b1cefa177b694b38f7dfca6116b1c"
+        }
+      ]
+    },
+    {
+      "name": "recovery/traditional-pray-v381-v1",
+      "head_sha": "74f1d8027c72b28f9071d6e033468afdc8ad3724",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/v180-elevation-bell-hold-v1",
+      "head_sha": "9897c130ed75c25d8cc424227a08c37e89428c5c",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "recovery/v384-liturgical-year-v1",
+      "head_sha": "a254e2a388b142d56986c1abf17957b587b51d2b",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 232,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "a4ec91249cb95a4138922132729f248c721ef3d0"
+        }
+      ]
+    },
+    {
+      "name": "repair/exact-nonmass-current-main",
+      "head_sha": "d9772b23435625409ec52663fc8653ac2d17d51d",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 253,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "d9772b23435625409ec52663fc8653ac2d17d51d"
+        }
+      ]
+    },
+    {
+      "name": "repair/exact-nonmass-settings-cinema",
+      "head_sha": "7f32c7d1a3fa06ee7f57a1e6e1fb909aefe1705a",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 234,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "7f32c7d1a3fa06ee7f57a1e6e1fb909aefe1705a"
+        }
+      ]
+    },
+    {
+      "name": "repair/rosary-declutter-reader",
+      "head_sha": "2c345d35e0299e315ffeecb56c72760ca3b59a2b",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 238,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "2c345d35e0299e315ffeecb56c72760ca3b59a2b"
+        }
+      ]
+    },
+    {
+      "name": "research/core-201-350-resolved-propers",
+      "head_sha": "6f404753d33dd79c5f5dd9f7e43480762893a3bd",
+      "protected": false,
+      "classification": "noPr",
+      "linked_prs": []
+    },
+    {
+      "name": "research/export-find-matrix-source-20261009",
+      "head_sha": "82459ab9e3469dcbb16e947013e7c6f8a0817a21",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 708,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "82459ab9e3469dcbb16e947013e7c6f8a0817a21"
+        }
+      ]
+    },
+    {
+      "name": "stabilization/p0-runtime-recovery",
+      "head_sha": "d5d1327185d638e84b78e6ccadc6657047aca6f4",
+      "protected": false,
+      "classification": "branchEvolved",
+      "linked_prs": [
+        {
+          "number": 145,
+          "merged": true,
+          "merged_at": "2026-10-05T07:17:04Z",
+          "recorded_head_sha": "ff895b4557b2254c02338ce131c6e5359c47636b"
+        }
+      ]
+    },
+    {
+      "name": "stabilization/product-parity-gate",
+      "head_sha": "3aa1abe5f94984802b0abfeab5958d4121395de1",
+      "protected": false,
+      "classification": "closedUnmergedExact",
+      "linked_prs": [
+        {
+          "number": 146,
+          "merged": false,
+          "merged_at": null,
+          "recorded_head_sha": "3aa1abe5f94984802b0abfeab5958d4121395de1"
+        }
+      ]
+    }
+  ]
+}
