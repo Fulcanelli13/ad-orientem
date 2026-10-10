@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const registry=JSON.parse(readFileSync(new URL("../data/pray/tenebrae-source-registry.v1.json",import.meta.url),"utf8"));
 assert.equal(registry.schema,"ao.pray.tenebrae.1960-acquisition.v1");
-assert.equal(registry.status,"SIX_SOURCE_DERIVED_HOURS_ROUTED_PRINT_EDITION_UNCOLLATED");
+assert.equal(registry.status,"SIX_SOURCE_DERIVED_OFFICES_READER_IN_PRAY_PRINT_COLLATION_PENDING");
 assert.equal(registry.source.commit,"b9f8c8eb15d52b2b2c02e2ca24807cfaa73758f0");
 assert.equal(registry.publicationStatus,"SEASONAL_PRAY_READER_IMPLEMENTED_SOURCE_DERIVED_NOT_ORIGINAL_PRINT_CERTIFIED");
 assert.equal(registry.dates.length,3);
