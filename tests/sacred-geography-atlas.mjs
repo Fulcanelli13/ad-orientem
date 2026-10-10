@@ -43,7 +43,7 @@ assert.ok(croce.every(x=>x.authentication==="NOT_INDEPENDENTLY_CERTIFIED_BY_APP"
 const romeItem=projectExploreDataset({geography:geo,sacredPhenomena:sacred}).byLens.relics.find(x=>x.source_id==="relic:IT:santa-croce-true-cross");
 assert.ok(romeItem.sections.some(x=>x.label==="Visitor access"&&x.body_fr?.includes("fermée")));
 const romeUi=renderExploreToString(buildExploreViewModel({language:"fr",lens:"relics",view:"list",
-items:[romeItem],counts:{relics:1},selectedId:romeItem.item_id}));
+items:[romeItem],counts:{relics:1},selectedId:romeItem.item_id,expandDetail:true}));
 assert.match(romeUi,/Chapelle des reliques temporairement fermée/);
 
 assert.ok(sacred.relics.some(x=>x.relic_kind==="REPUTED_PASSION_RELIC"));
@@ -93,7 +93,7 @@ assert.match(french,/origine surnaturelle/);
 const selected=projection.byLens.relics.find(x=>x.source_id==="relic:FR:crown-of-thorns-paris");
 const detail=renderExploreToString(buildExploreViewModel({
   lens:"relics",language:"fr",view:"list",items:projection.byLens.relics,counts:projection.counts,
-  selectedId:selected.item_id
+  selectedId:selected.item_id,expandDetail:true
 }));
 assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);

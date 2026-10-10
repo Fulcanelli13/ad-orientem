@@ -74,7 +74,7 @@ function searchMatches(vm){
   if(results.length>6)html+='<small class="aoHeritageSearchFoot">'+L(vm.language,"Refine your search to see other places.","Affinez la recherche pour voir les autres lieux.")+'</small>';
   return html+'</div>';
 }
-export function renderHeritageToString(vm,{placeSheet,detailSheet}={}){
+export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={}){
   const active=arr(vm.filters?.heritageCategories),all=active.length===Object.keys(CATEGORY_LABELS).length;
   const searching=Boolean(String(vm.filters?.query??"").trim());
   let html='<section class="aoFindSurface aoExploreSurface aoHeritageSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
@@ -116,6 +116,6 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet}={}){
   }
   html+='</div>';
   if(vm.filters?.highlightCustomId)html+='<p class="aoHeritageScope">'+L(vm.language,"Only documented examples are mapped; this does not imply a custom’s worldwide distribution.","Seuls des exemples attestés sont cartographiés ; cela ne représente pas la diffusion mondiale d’une coutume.")+'</p>';
-  html+=(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):detailSheet(vm));
+  html+=(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected&&!vm.expandDetail&&itemPreview?itemPreview(vm):detailSheet(vm)));
   return html+'</section>';
 }
