@@ -67,6 +67,7 @@ const sourceDay=(date,color)=>({date,status:"ready",day:{main:{id:"fixture:"+dat
   proper:{data:{color}}});
 const resolvedFixtures=new Map([
   ["2026-04-05",sourceDay("2026-04-05","White")],
+  ["2026-10-07",sourceDay("2026-10-07","Green")],
   ["2026-05-24",sourceDay("2026-05-24","Red")],
   ["2026-10-10",sourceDay("2026-10-10","White")],
   ["2026-10-11",sourceDay("2026-10-11","Green")],
@@ -74,11 +75,11 @@ const resolvedFixtures=new Map([
 ]);
 const daily=yearDailyProjection(rosary,id=>resolvedFixtures.get(id));
 assert.equal(daily.total,364,"2025–2026 liturgical-year daily wheel must have 364 distinct days");
-assert.equal(daily.verified,5);
+assert.equal(daily.verified,6);
 assert.equal(daily.complete,false);
 assert.equal(daily.selected,"GREEN");
-assert.match(daily.gradient,/conic-gradient\\(from -90deg,/);
-assert.match(daily.timeline,/linear-gradient\\(to right,/);
+assert.match(daily.gradient,/conic-gradient\(from -90deg,/);
+assert.match(daily.timeline,/linear-gradient\(to right,/);
 assert.ok(daily.gradient.includes(MASS_LITURGICAL_PALETTES.RED.accent),"Pentecost red must not be averaged into green");
 assert.ok(daily.gradient.includes(MASS_LITURGICAL_PALETTES.BLACK.accent),"All Souls black must survive inside green season");
 assert.ok(daily.gradient.includes(MASS_LITURGICAL_PALETTES.WHITE.accent),"White saints' days must survive inside green season");
@@ -95,9 +96,9 @@ assert.equal(verifiedEveryday.complete,true);
 assert.equal((verifiedEveryday.gradient.match(/#[a-f0-9]+/gi)||[]).length,1,
   "Contiguous equal-colour days must combine into one CSS band");
 const yearRuntimeSource=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
-assert.match(yearRuntimeSource,/requestYearDailyColours\\(y\\)/,"Year view must initiate source-based day colours");
+assert.match(yearRuntimeSource,/requestYearDailyColours\(y\)/,"Year view must initiate source-based day colours");
 assert.match(yearRuntimeSource,/data-verified-days/,"Year wheel must expose actual verification count");
-assert.match(yearRuntimeSource,/yearDailyProjection\\(y,/);
+assert.match(yearRuntimeSource,/yearDailyProjection\(y,/);
 const yearJourneySource=fs.readFileSync(new URL("../src/calendar/year-journey.js",import.meta.url),"utf8");
 assert.doesNotMatch(yearJourneySource,/const COLOR=Object.freeze/,"Legacy beige seasonal palette must be removed");
 assert.match(yearJourneySource,/aoCalYearDailyTrack/,"Timeline must show actual daily colours separately from seasons");
