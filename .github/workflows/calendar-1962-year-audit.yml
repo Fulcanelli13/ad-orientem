@@ -8,6 +8,7 @@ on:
       - "data/calendar/1962-year-independent-checks-*.json"
       - "tests/calendar-1962-full-year-audit.mjs"
       - "tools/calendar/report-sacred-art-liturgical-priorities.mjs"
+      - "tools/calendar/build-sacred-art-reuse-index.mjs"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
       - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
       - "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
@@ -39,6 +40,7 @@ jobs:
           node tools/calendar/audit-sacred-art-modules.mjs
           if [ -f artifacts/calendar-oracle/1962-2026-full-year-audit.json ]; then
             node tools/calendar/report-sacred-art-liturgical-priorities.mjs --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
+            node tools/calendar/build-sacred-art-reuse-index.mjs
           else
             node tools/calendar/report-sacred-art-liturgical-priorities.mjs
           fi
