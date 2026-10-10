@@ -42,7 +42,7 @@ assert.equal(noDom.status().installed,false);
 const host=readFileSync(new URL("../src/app/host-adapter.js",import.meta.url),"utf8");
 assert.match(host,/import\("\.\.\/mass\/hub-browser\.js"\)/);
 assert.match(host,/hasResumableMass/);
-assert.match(host,/MASS_PREFLIGHT/);
+assert.match(host,/openPreflight/);
 const reader=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
 assert.match(reader,/AO_MASS_HUB_V1\?\.close/,"The actual native LIVE Mass did not close the hub");
 assert.match(reader,/R17_NATIVE_PRODUCTION/);
