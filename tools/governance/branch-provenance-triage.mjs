@@ -38,6 +38,28 @@ const equal=(...args)=>{try{execFileSync("git",["diff","--quiet",...args],{stdio
   catch(e){if(e.status===1)return false;throw e;}};
 const revTree=sha=>git("rev-parse",sha+"^{tree}");
 const mainSha=git("rev-parse",mainRef),mainTree=revTree(mainSha);
+// Route unresolved histories by real changed paths, not branch-name folklore.
+// Cross-domain and source-only work require an explicit shared-owner review.
+const owners=[
+  ["Mass",/^(src\/mass\/|data\/mass\/|data\/presentation\/reader-|tests\/reader-|tests\/mass-|docs\/R17-)/],
+  ["Formation-Apostolate",/^(src\/(learn|apostolate)\/|data\/(learn|apostolate|formation)\/|docs\/(FORMATION|SEXUAL-ETHICS|formation\/)|tests\/(formation|sexual-ethics|apostolate|catechism|learn)-)/],
+  ["Prayer",/^(src\/pray\/|data\/(pray|prayer|novena)\/|docs\/(PRAYER|NOVENA|SPIRITUAL-LIFE|pray\/)|tests\/(pray|novena|rosary)-)/],
+  ["Calendar",/^(src\/calendar\/|data\/calendar\/|docs\/CALENDAR|tests\/calendar-)/],
+  ["Explore-Directory",/^(src\/find\/|data\/(customs|directory|explore|geography|shrines)\/|docs\/(EXPLORE|DIRECTORY|CUSTOMS|SHRINES|research\/sacred-atlas)|tests\/(explore|directory|relic|shrines|pilgrimage|customs)-)/],
+  ["Scripture",/^(src\/scripture\/|data\/scripture\/|docs\/scripture\/|tests\/scripture-)/],
+  ["Glossary",/^(src\/glossary\/|data\/glossary\/|data\/reference\/catholic-glossary|tests\/glossary-)/],
+  ["App-Platform",/^(src\/(app|home|settings)\/|data\/presentation\/|index\.html$|ao-(boot|packed|inline)-|\.github\/|tests\/(app|home|settings|thin-html|startup|offline)-)/]
+];
+const ownerOf=(paths)=>{
+  const score=new Map();
+  for(const p of paths)for(const [owner,re] of owners)if(re.test(p))score.set(owner,(score.get(owner)||0)+1);
+  const ranked=[...score].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  if(!ranked.length)return {owner:"Cross-cutting-Unassigned",score:{}};
+  const total=ranked.reduce((n,[,v])=>n+v,0);
+  const winner=ranked[0][0];
+  return {owner:ranked.length>1&&ranked[0][1]<total*0.55?"Cross-cutting-Multiowner":winner,
+    score:Object.fromEntries(ranked)};
+};
 const dispositions={};
 for(const row of rows){
   if(!reviewClasses.has(row.classification))continue;
@@ -47,6 +69,11 @@ for(const row of rows){
     const shared=git("merge-base",mainSha,branchSha);
     const deltaRaw=execFileSync("git",["diff","--name-only","-z",shared,branchSha],{encoding:"utf8",maxBuffer:24*1024*1024});
     const changedPaths=deltaRaw.split("\0").filter(Boolean);
+    const ownership=ownerOf(changedPaths);
+    row.owner=ownership.owner;
+    row.owner_scores=ownership.score;
+    row.changed_paths=changedPaths;
+    row.source_sensitive=changedPaths.some(p=>/^(data\/(mass|learn|pray|prayer|novena|calendar|customs|directory|explore|shrines|geography|scripture|glossary)\/|docs\/research\/)/.test(p));
     const revisionCount=Number(git("rev-list","--count",shared+".."+branchSha));
     const sameWholeTree=revTree(branchSha)===mainTree;
     const touchedMatch=changedPaths.length<=500 ? equal(branchSha,mainSha,"--",...changedPaths) : null;
@@ -63,16 +90,50 @@ for(const row of rows){
     row.sample_paths=changedPaths.slice(0,12);
     dispositions[evidenceClass]=(dispositions[evidenceClass]||0)+1;
   }catch(e){
+    row.owner="Cross-cutting-Unassigned";
     row.content_evidence="AUDIT_UNAVAILABLE_HOLD";
     row.audit_error=String(e.message||e).slice(0,240);
     dispositions.AUDIT_UNAVAILABLE_HOLD=(dispositions.AUDIT_UNAVAILABLE_HOLD||0)+1;
   }
 }
+// One reviewable domain batch per canonical owner, including full-path evidence.
+// Never equate a code difference with a missing implementation.
+const reviewRows=rows.filter(r=>reviewClasses.has(r.classification));
+const byOwner=new Map();
+for(const row of reviewRows){
+  const owner=row.owner||"Cross-cutting-Unassigned";
+  if(!byOwner.has(owner))byOwner.set(owner,[]);
+  byOwner.get(owner).push(row);
+}
+const ownerSummary=Object.fromEntries([...byOwner].map(([owner,rs])=>[owner,{
+  total:rs.length,
+  differences:rs.filter(r=>r.content_evidence==="UNIQUE_OR_SUPERSEDED_DIFFERENCES_REVIEW").length,
+  source_sensitive:rs.filter(r=>r.source_sensitive).length,
+  exact_content_match:rs.filter(r=>r.content_evidence==="EXACT_PRODUCTION_TREE"||r.content_evidence==="ALL_TOUCHED_PATHS_ALREADY_MATCH"||r.content_evidence==="NO_BRANCH_DELTA").length
+}]));
+mkdirSync("artifacts/branch-triage/owners",{recursive:true});
+const summaryRows=["# Branch reconciliation by canonical production owner","","**Read-only evidence** based on main \`"+mainSha+"\`. A branch is not declared redundant just because its current files differ from production. No branch removal or source promotion is authorized here.","","| Owner | Unresolved | Changed content | Source-sensitive | Exact-match/no-delta |","| --- | ---: | ---: | ---: | ---: |"];
+for(const [owner,v] of Object.entries(ownerSummary).sort((a,b)=>b[1].total-a[1].total)){
+  const slug=owner.toLowerCase();
+  summaryRows.push("| ["+owner+"](owners/"+slug+".md) | "+v.total+" | "+v.differences+" | "+v.source_sensitive+" | "+v.exact_content_match+" |");
+  const list=["# "+owner+" — branch history adjudication","",
+    "Production baseline: \`"+mainSha+"\`. Each branch retains its original SHA; no automatic cherry-pick, merge or deletion.",
+    "", "| Branch | PRs | Commits | Paths | Content comparison |","| --- | --- | ---: | ---: | --- |"];
+  for(const r of byOwner.get(owner).sort((a,b)=>a.branch.localeCompare(b.branch))){
+    const link="[\`"+r.branch+"\`](https://github.com/"+repo+"/tree/"+encodeURIComponent(r.branch)+")";
+    list.push("| "+link+" | "+r.pr_numbers.map(n=>"[#"+n+"](https://github.com/"+repo+"/pull/"+n+")").join(", ")+" | "+(r.commits_ahead??"?")+" | "+(r.touched_paths??"?")+" | "+(r.content_evidence||"hold")+" |");
+    list.push("");
+    list.push("  - SHA \`"+r.sha+"\`; changed-path sample: "+(r.sample_paths||[]).map(p=>"\`"+p+"\`").join(", "));
+  }
+  list.push("","**Disposition:** All unverified differences remain on hold. Review original PR rationale, original source/edition and canonical production data before selectively recovering or explicitly superseding. Cross-owner cases require both owners.");
+  writeFileSync("artifacts/branch-triage/owners/"+slug+".md",list.join("\n")+"\n");
+}
+writeFileSync("artifacts/branch-triage/OWNER-INDEX.md",summaryRows.join("\n")+"\n");
 rows.sort((a,b)=>a.classification.localeCompare(b.classification)||a.branch.localeCompare(b.branch));
 const tally={};
 for(const row of rows)tally[row.classification]=(tally[row.classification]||0)+1;
 mkdirSync("artifacts/branch-triage",{recursive:true});
-writeFileSync("artifacts/branch-triage/inventory.json",JSON.stringify({generated:new Date().toISOString(),repo,mainSha,branchCount:rows.length,classes:tally,contentEvidenceClasses:dispositions,items:rows},null,2)+"\n");
+writeFileSync("artifacts/branch-triage/inventory.json",JSON.stringify({generated:new Date().toISOString(),repo,mainSha,branchCount:rows.length,classes:tally,contentEvidenceClasses:dispositions,ownerSummary,items:rows},null,2)+"\n");
 const tsv=["classification\tbranch\tsha\tassociated_prs\texact_prs\tcontent_evidence\tcommits_ahead\ttouched_paths\tchanged_path_samples",...rows.map(r=>[r.classification,r.branch,r.sha,r.pr_numbers.join(","),r.exact_pr_numbers.join(","),r.content_evidence||"",r.commits_ahead??"",r.touched_paths??"",(r.sample_paths||[]).join(",")].join("\t"))].join("\n")+"\n";
 writeFileSync("artifacts/branch-triage/inventory.tsv",tsv);
 const counts=Object.entries(tally).sort((a,b)=>b[1]-a[1]);
@@ -82,3 +143,4 @@ console.log(md);
 const candidates=rows.filter(r=>["EXACT_PRODUCTION_TREE","NO_BRANCH_DELTA","ALL_TOUCHED_PATHS_ALREADY_MATCH"].includes(r.content_evidence));
 const visibleCandidates=candidates.map(r=>({branch:r.branch,sha:r.sha,classification:r.classification,content_evidence:r.content_evidence,prs:r.pr_numbers,commits_ahead:r.commits_ahead,touched_paths:r.touched_paths}));
 console.log("CONTENT_MATCH_CANDIDATES="+JSON.stringify(visibleCandidates));
+console.log("OWNER_RECONCILIATION_SUMMARY="+JSON.stringify(ownerSummary));
