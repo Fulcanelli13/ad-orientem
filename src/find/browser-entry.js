@@ -9,7 +9,7 @@ import {
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
-import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasEraOverlay, renderBibleAtlasToString } from "./bible-atlas.js";
+import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "./heritage-map.js";
@@ -310,7 +310,12 @@ export function createFindOwner(win=globalThis){
           win,allowEmpty:atlasMode,initialViewport:lastMapLens===state.lens&&!atlasMode?lastMapView:(atlasMode?{center:[35,31],zoom:3.6}:null),
           onSelect:id=>{
             if(atlasMode){
-              updateBibleIndex(atlasIndexForPin(atlasStops,state.bibleIndex,id),{center:true});return;
+              const index=atlasIndexForPin(atlasStops,state.bibleIndex,id);
+              updateBibleIndex(index,{center:true});
+              const detail=getRoot(win)?.querySelector?.("[data-bible-detail]");
+              if(detail)detail.insertAdjacentHTML("beforeend",atlasPinEpisodes(
+                atlasStops,dataset?.biblePlaces?.entries??[],String(id).replace(/^atlas:/,""),index,language(win)));
+              return;
             }
             const place=state.lens==="heritage"?items.find(item=>item.item_id===id):null;
             state.selectedPlaceId=place?.place_id??null;
