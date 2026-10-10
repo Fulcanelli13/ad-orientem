@@ -4,6 +4,7 @@ import { resolveReaderPreferences, POSTURE_PROFILES, GESTURE_PROFILES } from "./
 
 export const MASS_CUSTOMARY_STORAGE_KEY="ao-mass-customary-v1";
 const POSTURES=new Set(["STAND","SIT","KNEEL"]);
+const GESTURES=new Set(["DEFAULT","NONE","HEAD_BOW","PROFOUND_BOW","GENUFLECT","KNEEL","SIGN_OF_CROSS"]);
 const CUE=/^AO\.SM\.C\d{4}$/;
 
 function object(value){return value&&typeof value==="object"&&!Array.isArray(value)?value:{};}
@@ -15,11 +16,18 @@ export function readMassCustomaryPreferences(base={},storage=null){
   try{saved=object(JSON.parse(safeStorage(storage,"getItem",MASS_CUSTOMARY_STORAGE_KEY)||"{}"));}catch{}
   const source=object(base);
   const local={...object(source.localPostures)};
+  const localGestures={...object(source.localGestures)};
   for(const [cue,value] of Object.entries(object(saved.localPostures))){
     if(CUE.test(cue)&&POSTURES.has(value))local[cue]=value;
   }
+  for(const [cue,value] of Object.entries(object(saved.localGestures))){
+    if(CUE.test(cue)&&GESTURES.has(value)&&value!=="DEFAULT")localGestures[cue]=value;
+  }
   return resolveReaderPreferences({
     ...source,
+    localGestures,
+    followPriestSeating:typeof saved.followPriestSeating==="boolean"
+      ? saved.followPriestSeating : source.followPriestSeating,
     postureProfile:POSTURE_PROFILES.includes(saved.postureProfile)?saved.postureProfile:source.postureProfile,
     gestureProfile:GESTURE_PROFILES.includes(saved.gestureProfile)?saved.gestureProfile:source.gestureProfile,
     localPostures:local,
@@ -27,7 +35,7 @@ export function readMassCustomaryPreferences(base={},storage=null){
 }
 export function updateMassCustomaryPreferences(preferences,change,storage=null){
   const input=object(change);
-  const next={...preferences,localPostures:{...object(preferences?.localPostures)}};
+  const next={...preferences,localPostures:{...object(preferences?.localPostures)},localGestures:{...object(preferences?.localGestures)}};
   if(input.kind==="postureProfile"){
     if(!POSTURE_PROFILES.includes(input.value))return preferences;
     next.postureProfile=input.value;
@@ -39,12 +47,22 @@ export function updateMassCustomaryPreferences(preferences,change,storage=null){
     if(input.value==null||input.value==="DEFAULT")delete next.localPostures[input.cueId];
     else if(POSTURES.has(input.value))next.localPostures[input.cueId]=input.value;
     else return preferences;
+  }else if(input.kind==="localGesture"){
+    if(!CUE.test(String(input.cueId||"")))return preferences;
+    if(input.value==null||input.value==="DEFAULT")delete next.localGestures[input.cueId];
+    else if(GESTURES.has(input.value))next.localGestures[input.cueId]=input.value;
+    else return preferences;
+  }else if(input.kind==="followPriestSeating"){
+    if(typeof input.value!=="boolean")return preferences;
+    next.followPriestSeating=input.value;
   }else return preferences;
   const resolved=resolveReaderPreferences(next);
   safeStorage(storage,"setItem",MASS_CUSTOMARY_STORAGE_KEY,JSON.stringify({
     postureProfile:resolved.postureProfile,
     gestureProfile:resolved.gestureProfile,
     localPostures:Object.fromEntries(Object.entries(resolved.localPostures).filter(([k,v])=>CUE.test(k)&&POSTURES.has(v))),
+    localGestures:Object.fromEntries(Object.entries(resolved.localGestures).filter(([k,v])=>CUE.test(k)&&GESTURES.has(v)&&v!=="DEFAULT")),
+    followPriestSeating:resolved.followPriestSeating,
   }));
   return resolved;
 }
