@@ -57,16 +57,19 @@ def main():
  works=json.loads((ROOT/"data/calendar/sacred-art-candidates.v1.json").read_text(encoding="utf8"))["artworks"]
  already={a["id"] for a in works}
  # Prefer actual gaps, not source image candidates already acquired.
- def has_original(t):
+ def original_count(t):
   key=t["id"];short=key.split(".",1)[1]
+  count=0
   for a in works:
    if not (a.get("acquisition") or {}).get("originalSha256"):continue
    icon=a.get("tags") or {}
-   if key.startswith("person.") and icon.get("portraitSubjectId")==short:return True
-   if key.startswith("scripture.") and short in (icon.get("scriptureIdentityKeys") or []):return True
-   if key.startswith("calendar.") and short in (icon.get("iconography") or []):return True
-  return False
- targets=[t for t in targets if not has_original(t) and t["id"].startswith(("scripture.","person.","calendar."))]
+   if key.startswith("person.") and icon.get("portraitSubjectId")==short:count+=1
+   elif key.startswith("scripture.") and short in (icon.get("scriptureIdentityKeys") or []):count+=1
+   elif key.startswith("calendar.") and short in (icon.get("iconography") or []):count+=1
+  return count
+ # Do not discard subjects with one painting but a two-/three-original collection-depth minimum.
+ targets=[t for t in targets if t["id"].startswith(("scripture.","person.","calendar."))
+          and original_count(t)<int(t.get("minimumOriginals") or 1)]
  targets.sort(key=lambda t:(0 if t["id"] in FOCUS_KEYS else 1,{"P0":0,"P1":1,"P2":2}.get(t.get("priority"),3),t["id"]))
  print("NGA_TARGETS",len(targets),flush=True)
  objects=csvrows(get(DATASET+"objects.csv",95_000_000))
