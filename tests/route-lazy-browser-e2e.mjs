@@ -81,8 +81,9 @@ try {
   assert.equal(reading.reader.contextDepth,"selected");
   assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-context-depth='selected'][aria-pressed='true']").count(),1);
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='chapter']").click();
-  assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-whole-chapter]").count(),1,
-    "Wider chapter reading must be available directly from cited verses");
+  await page.locator("#ao-scripture-overlay [data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
+  assert.ok(await page.locator("#ao-scripture-overlay .aoScriptureVerse").count()>=40,
+    "Wider chapter reading must display source text directly rather than redirect externally");
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
   const verified=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").first();
   await verified.waitFor({state:"visible",timeout:12000});
