@@ -118,7 +118,7 @@ def prepare_editorial_previews(rows):
         "artworks":report},indent=2)+"\n",encoding="utf-8")
 
 def main():
-    candidates=json.loads(REGISTRY.read_text(encoding="utf-8"))["artworks"]
+    candidates=[x for x in json.loads(REGISTRY.read_text(encoding="utf-8"))["artworks"] if x["id"].startswith("met-")]
     assert len({x["id"] for x in candidates})==len(candidates), "Duplicate candidate IDs"
     ORIGINALS.mkdir(parents=True,exist_ok=True)
     rows=[]
