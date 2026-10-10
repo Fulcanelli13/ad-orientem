@@ -107,7 +107,7 @@ assert.equal(ui.phases.at(-1).id,"absolution");
 ui=context({...req,requiemClass:1},{kind:"REQUIEM",language:"fr"});
 assert.match(ui.notes.join(" "),/Classe du Requiem : I/);
 ui=context(nuptial,{kind:"NUPTIAL",language:"en"});
-assert.deepEqual(ui.phases.map(p=>p.id),["nuptial-mass","nuptial-pater","nuptial-final","mass"]);
+assert.deepEqual(ui.phases.map(p=>p.id),["nuptial-mass","nuptial-pater","nuptial-final"]);
 assert.match(ui.intro,/appointed places/);
 ui=context(votive,{kind:"VOTIVE",language:"fr"});
 assert.match(ui.heading,/votive/);
