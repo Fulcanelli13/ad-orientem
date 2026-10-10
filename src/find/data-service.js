@@ -8,7 +8,7 @@ export const RESEARCH_PROVIDERS=Object.freeze([
   Object.freeze({key:"diocesan",file:"diocesan.v1.json"}),
   Object.freeze({key:"verified-local-round18",file:"verified-local-round18-20261010.v1.json"}),
   Object.freeze({key:"verified-global-round19",file:"verified-global-round19-20261010.v1.json"}),
-  Object.freeze({key:"una-voce-czech-round20",file:"una-voce-czech-round20-20261010.v1.json"}),
+  Object.freeze({key:"una-voce-czech-round20",file:"una-voce-czech-round20-20261010.v1.json",geoFile:"una-voce-czech-round20-20261010.geo.v1.json"}),
   Object.freeze({key:"sspx-district",file:"sspx-district-seed.v1.json",geoFile:"sspx-district-seed.geo.v1.json"}),
   Object.freeze({key:"sspx-france",file:"sspx-france-first-party.v1.json",geoFile:"sspx-france-first-party.geo.v1.json"}),
   Object.freeze({key:"sspx-france-second",file:"sspx-france-second-pass.v1.json",geoFile:"sspx-france-second-pass.geo.v1.json"}),
