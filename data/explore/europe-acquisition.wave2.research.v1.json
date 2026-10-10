@@ -1,0 +1,543 @@
+{
+  "schema": "AO_EXPLORE_EUROPE_RESEARCH_WAVE2_ZERO_COVERAGE_V1",
+  "as_of": "2026-10-10",
+  "status": "RESEARCH_ONLY_NO_PRODUCTION_ASSETS_OR_PINS",
+  "purpose": "Fill ten previously zero-coverage European jurisdictions with concrete church, state, UNESCO and Vatican source-backed heritage identity leads; keep the countries, categories and local tradition distinct.",
+  "countries": 10,
+  "country_codes": [
+    "AD",
+    "AL",
+    "BA",
+    "BY",
+    "DK",
+    "LV",
+    "MC",
+    "ME",
+    "SM",
+    "XK"
+  ],
+  "source_records": [
+    {
+      "source_id": "EUROPE:W2:SRC:1",
+      "url": "https://visitandorra.com/en/culture/sanctuary-of-meritxell/",
+      "role": "ANDORRA_TOURISM",
+      "site_name": "Sanctuari de Meritxell — Basilica of Our Lady of Meritxell",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:2",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/09/19/240919d.html",
+      "role": "VATICAN_DDF",
+      "site_name": "Medjugorje — Parish Church of Saint James",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:3",
+      "url": "https://ich.unesco.org/en/RL/celebration-in-honor-of-the-budsla-icon-of-our-lady-budsla-fest-01387",
+      "role": "UNESCO_INTANGIBLE_HERITAGE",
+      "site_name": "Budslaŭ — Catholic Marian pilgrimage sanctuary",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:4",
+      "url": "https://www.latvia.travel/en/sight/aglona-basilica",
+      "role": "LATVIAN_TOURISM_AUTHORITY",
+      "site_name": "Aglona — Basilica of the Assumption",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:5",
+      "url": "https://www.latvia.travel/en/ancient-latvian-traditions-and-christian-holidays",
+      "role": "LATVIAN_TOURISM_AUTHORITY",
+      "site_name": "Skaistkalne — Marian Shrine",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:6",
+      "url": "https://www.katolsk.dk/katolsk-tro-og-liv/valfart",
+      "role": "DANISH_CATHOLIC_CHURCH",
+      "site_name": "Aasebakken — Vor Frue Kloster Marian pilgrimage destination",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:7",
+      "url": "https://www.katolsk.dk/katolsk-tro-og-liv/valfart",
+      "role": "DANISH_CATHOLIC_CHURCH",
+      "site_name": "Øm — Vor Frue af Øm pilgrimage and Ømborgen",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:8",
+      "url": "https://kish.al/deklarate-zyrtare-nga-provinca-shqiptare-zoja-nunciate/",
+      "role": "ALBANIAN_BISHOPS_CONFERENCE",
+      "site_name": "Laç — Kisha e Shna Ndout, Saint Anthony pilgrimage church",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:9",
+      "url": "https://www.vaticannews.va/fr/eglise/news/2026-05/kosovo-mgr-gjergji-foi-pelerinage-paix.html",
+      "role": "VATICAN_NEWS_LOCAL_BISHOP",
+      "site_name": "Letnicë — Church of the Assumption, national Marian pilgrimage",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:10",
+      "url": "https://www.visitsanmarino.com/pub2/VisitSM/en/luogo/Arte-e-cultura/Basilica-del-Santo.html",
+      "role": "SAN_MARINO_OFFICIAL_TOURISM",
+      "site_name": "San Marino — Basilica del Santo, Basilica di San Marino",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:11",
+      "url": "https://prod.visitmonaco.com/en/routes-and-walks/26669/churches-and-cathedrals-itinerary",
+      "role": "MONACO_TOURISM_AUTHORITY",
+      "site_name": "Monaco — Église Sainte-Dévote",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:12",
+      "url": "https://wapi.gov.me/download/bfd84877-2473-45b3-8270-8eb202e1c200?version=1.0",
+      "role": "MONTENEGRO_GOVERNMENT_GUIDE",
+      "site_name": "Perast — Gospa od Škrpjela, Our Lady of the Rocks",
+      "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    }
+  ],
+  "place_leads": [
+    {
+      "research_id": "EUROPE:W2:PLACE:AD:sanctuari-de-meritxell-basilica-of-our-lady-of-meritxell",
+      "country_code": "AD",
+      "name": "Sanctuari de Meritxell — Basilica of Our Lady of Meritxell",
+      "identity_source_id": "EUROPE:W2:SRC:1",
+      "kind": "CATHOLIC_SANCTUARY",
+      "original_custodial_role": "ANDORRA_TOURISM",
+      "notes": "Roman Catholic Marian sanctuary, national patroness; note alternative original and modern chapel structures",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:BA:medjugorje-parish-church-of-saint-james",
+      "country_code": "BA",
+      "name": "Medjugorje — Parish Church of Saint James",
+      "identity_source_id": "EUROPE:W2:SRC:2",
+      "kind": "CATHOLIC_PILGRIMAGE_PARISH",
+      "original_custodial_role": "VATICAN_DDF",
+      "notes": "Pilgrimage center with 2024 nihil obstat for spiritual fruits, NO supernatural authenticity determination",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:BY:budslau-catholic-marian-pilgrimage-sanctuary",
+      "country_code": "BY",
+      "name": "Budslaŭ — Catholic Marian pilgrimage sanctuary",
+      "identity_source_id": "EUROPE:W2:SRC:3",
+      "kind": "CATHOLIC_MARIAN_SHRINE",
+      "original_custodial_role": "UNESCO_INTANGIBLE_HERITAGE",
+      "notes": "Roman Catholic pilgrims venerate Our Lady of Budslau icon, UNESCO-recorded feast",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:LV:aglona-basilica-of-the-assumption",
+      "country_code": "LV",
+      "name": "Aglona — Basilica of the Assumption",
+      "identity_source_id": "EUROPE:W2:SRC:4",
+      "kind": "CATHOLIC_MARIAN_BASILICA",
+      "original_custodial_role": "LATVIAN_TOURISM_AUTHORITY",
+      "notes": "Roman Catholic principal Marian shrine in Latvia, Assumption pilgrimage",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:LV:skaistkalne-marian-shrine",
+      "country_code": "LV",
+      "name": "Skaistkalne — Marian Shrine",
+      "identity_source_id": "EUROPE:W2:SRC:5",
+      "kind": "CATHOLIC_MARIAN_SHRINE",
+      "original_custodial_role": "LATVIAN_TOURISM_AUTHORITY",
+      "notes": "Roman Catholic Marian pilgrimage, separate from Aglona; confirm exact church name",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:DK:aasebakken-vor-frue-kloster-marian-pilgrimage-destination",
+      "country_code": "DK",
+      "name": "Aasebakken — Vor Frue Kloster Marian pilgrimage destination",
+      "identity_source_id": "EUROPE:W2:SRC:6",
+      "kind": "CATHOLIC_PILGRIMAGE_DESTINATION",
+      "original_custodial_role": "DANISH_CATHOLIC_CHURCH",
+      "notes": "Catholic diocesan Marian procession pilgrimage to Benedictine monastery",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:DK:m-vor-frue-af-m-pilgrimage-and-mborgen",
+      "country_code": "DK",
+      "name": "Øm — Vor Frue af Øm pilgrimage and Ømborgen",
+      "identity_source_id": "EUROPE:W2:SRC:7",
+      "kind": "CATHOLIC_PILGRIMAGE_DESTINATION",
+      "original_custodial_role": "DANISH_CATHOLIC_CHURCH",
+      "notes": "Catholic diocesan pilgrimage since 1950, pilgrimage complex separate from former Cistercian ruin",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:AL:lac-kisha-e-shna-ndout-saint-anthony-pilgrimage-church",
+      "country_code": "AL",
+      "name": "Laç — Kisha e Shna Ndout, Saint Anthony pilgrimage church",
+      "identity_source_id": "EUROPE:W2:SRC:8",
+      "kind": "CATHOLIC_PILGRIMAGE_CHURCH",
+      "original_custodial_role": "ALBANIAN_BISHOPS_CONFERENCE",
+      "notes": "Franciscan Laç Church and pilgrimage; 2025 planned rebuilding must not replace existing site identity",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:XK:letnice-church-of-the-assumption-national-marian-pilgrimage",
+      "country_code": "XK",
+      "name": "Letnicë — Church of the Assumption, national Marian pilgrimage",
+      "identity_source_id": "EUROPE:W2:SRC:9",
+      "kind": "CATHOLIC_MARIAN_SHRINE",
+      "original_custodial_role": "VATICAN_NEWS_LOCAL_BISHOP",
+      "notes": "Catholic national shrine and pilgrim destination in Letnicë, Kosovo; Mother Teresa historical link",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:SM:san-marino-basilica-del-santo-basilica-di-san-marino",
+      "country_code": "SM",
+      "name": "San Marino — Basilica del Santo, Basilica di San Marino",
+      "identity_source_id": "EUROPE:W2:SRC:10",
+      "kind": "CATHOLIC_BASILICA_RELIC_SITE",
+      "original_custodial_role": "SAN_MARINO_OFFICIAL_TOURISM",
+      "notes": "Catholic basilica and reported relics of founder St Marinus; explicit state-linked saint veneration",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:MC:monaco-eglise-sainte-devote",
+      "country_code": "MC",
+      "name": "Monaco — Église Sainte-Dévote",
+      "identity_source_id": "EUROPE:W2:SRC:11",
+      "kind": "CATHOLIC_PATRONAL_CHURCH",
+      "original_custodial_role": "MONACO_TOURISM_AUTHORITY",
+      "notes": "Roman Catholic church dedicated to St Devota, local 26-27 Jan barque ceremony",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "research_id": "EUROPE:W2:PLACE:ME:perast-gospa-od-skrpjela-our-lady-of-the-rocks",
+      "country_code": "ME",
+      "name": "Perast — Gospa od Škrpjela, Our Lady of the Rocks",
+      "identity_source_id": "EUROPE:W2:SRC:12",
+      "kind": "ROMAN_CATHOLIC_ISLAND_CHURCH",
+      "original_custodial_role": "MONTENEGRO_GOVERNMENT_GUIDE",
+      "notes": "Roman Catholic island church and local maritime ritual of dropping stones, historically qualified",
+      "canon_match_status": "NEW_CANDIDATE_NOT_APPROVED",
+      "canonical_place_id": null,
+      "coordinates": null,
+      "biography": null,
+      "image": null,
+      "publication_status": "RESEARCH_ONLY"
+    }
+  ],
+  "category_associations": [
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:AD:1:meritxell-patronal-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:AD:sanctuari-de-meritxell-basilica-of-our-lady-of-meritxell",
+      "source_ids": [
+        "EUROPE:W2:SRC:1"
+      ],
+      "claim": "Pilgrimage to Our Lady of Meritxell, a national Marian sanctuary; part of a Marian route",
+      "qualifier": "Route membership is not route geometry and not an exact anniversary schedule",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:BA:1:medjugorje-pastoral-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:BA:medjugorje-parish-church-of-saint-james",
+      "source_ids": [
+        "EUROPE:W2:SRC:2"
+      ],
+      "claim": "Vatican-authorized pastoral devotion and pilgrimage to Medjugorje",
+      "qualifier": "Nihil obstat is NOT a recognition of supernatural apparitions",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:APPARITIONS:BA:1:medjugorje-alleged-marian-apparitions",
+      "category": "APPARITIONS",
+      "site_research_id": "EUROPE:W2:PLACE:BA:medjugorje-parish-church-of-saint-james",
+      "source_ids": [
+        "EUROPE:W2:SRC:2"
+      ],
+      "claim": "DDF's 2024 pastoral discernment about events claimed since 1981",
+      "qualifier": "Nihil obstat recognizes spiritual fruits, not supernatural origin; alleged messages require separate discernment",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:BY:1:budslau-marian-annual-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:BY:budslau-catholic-marian-pilgrimage-sanctuary",
+      "source_ids": [
+        "EUROPE:W2:SRC:3"
+      ],
+      "claim": "Historic foot pilgrimages to the Budslau Marian icon, UNESCO-registered annual feast",
+      "qualifier": "Current itinerary and route geometry not verified",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:CUSTOMS:BY:1:budslau-night-procession-with-icon-and-candles",
+      "category": "CUSTOMS",
+      "site_research_id": "EUROPE:W2:PLACE:BY:budslau-catholic-marian-pilgrimage-sanctuary",
+      "source_ids": [
+        "EUROPE:W2:SRC:3"
+      ],
+      "claim": "UNESCO documents annual Budslau night procession and local pilgrimage practices",
+      "qualifier": "Belarusian regional practice, not universal Catholic or French custom",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:SACRED_IMAGE:BY:1:budslau-icon-of-our-lady",
+      "category": "SACRED_IMAGE",
+      "site_research_id": "EUROPE:W2:PLACE:BY:budslau-catholic-marian-pilgrimage-sanctuary",
+      "source_ids": [
+        "EUROPE:W2:SRC:3"
+      ],
+      "claim": "Historically venerated Marian icon at Budslau",
+      "qualifier": "Do not treat 1588 apparition legend as an ecclesiastically approved supernatural event",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:LV:1:aglona-assumption-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:LV:aglona-basilica-of-the-assumption",
+      "source_ids": [
+        "EUROPE:W2:SRC:4"
+      ],
+      "claim": "Annual August 15 Assumption foot pilgrimage at Catholic Aglona Basilica",
+      "qualifier": "Date belongs to Calendar; no route geometry inferred",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:SACRED_IMAGE:LV:1:our-lady-of-aglona-icon",
+      "category": "SACRED_IMAGE",
+      "site_research_id": "EUROPE:W2:PLACE:LV:aglona-basilica-of-the-assumption",
+      "source_ids": [
+        "EUROPE:W2:SRC:4"
+      ],
+      "claim": "17th-century Marian icon venerated at Catholic Aglona Basilica",
+      "qualifier": "Devotional object not independently miracle-certified by app",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:LV:2:skaistkalne-marian-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:LV:skaistkalne-marian-shrine",
+      "source_ids": [
+        "EUROPE:W2:SRC:5"
+      ],
+      "claim": "Local Marian pilgrim and celebration tradition at Skaistkalne",
+      "qualifier": "Exact church sanctuary name and formal juridical status pending",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:DK:1:aasebakken-diocesan-may-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:DK:aasebakken-vor-frue-kloster-marian-pilgrimage-destination",
+      "source_ids": [
+        "EUROPE:W2:SRC:6"
+      ],
+      "claim": "Diocesan spring pilgrimage to Our Lady of Aasebakken",
+      "qualifier": "Historical May timing not automatically next event",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:DK:2:our-lady-of-om-diocesan-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:DK:m-vor-frue-af-m-pilgrimage-and-mborgen",
+      "source_ids": [
+        "EUROPE:W2:SRC:7"
+      ],
+      "claim": "Diocesan pilgrimage to Vor Frue af Øm, 1950 antecedent to annual event",
+      "qualifier": "Pilgrimage complex not merely vanished Cistercian ruins",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:AL:1:shna-ndout-thirteen-tuesdays",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:AL:lac-kisha-e-shna-ndout-saint-anthony-pilgrimage-church",
+      "source_ids": [
+        "EUROPE:W2:SRC:8"
+      ],
+      "claim": "Laç Franciscan church attracts pilgrimage honoring Saint Anthony of Padua",
+      "qualifier": "2025 rebuilding plan and customary festival should not imply new constructed church already exists",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:PILGRIMAGES:XK:1:letnica-national-marian-pilgrimage",
+      "category": "PILGRIMAGES",
+      "site_research_id": "EUROPE:W2:PLACE:XK:letnice-church-of-the-assumption-national-marian-pilgrimage",
+      "source_ids": [
+        "EUROPE:W2:SRC:9"
+      ],
+      "claim": "National Marian pilgrimage to Catholic church of the Assumption in Letnica, Kosovo",
+      "qualifier": "No geometry or unverified Marian supernatural recognition",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:RELICS:SM:1:saint-marinus-bodily-relics",
+      "category": "RELICS",
+      "site_research_id": "EUROPE:W2:PLACE:SM:san-marino-basilica-del-santo-basilica-di-san-marino",
+      "source_ids": [
+        "EUROPE:W2:SRC:10"
+      ],
+      "claim": "Official state heritage identifies preserved founder relics at Catholic Basilica of Saint Marinus",
+      "qualifier": "Custodian report, not independent ecclesiastical authentication",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:CUSTOMS:SM:1:saint-marinus-relic-procession",
+      "category": "CUSTOMS",
+      "site_research_id": "EUROPE:W2:PLACE:SM:san-marino-basilica-del-santo-basilica-di-san-marino",
+      "source_ids": [
+        "EUROPE:W2:SRC:10"
+      ],
+      "claim": "Patronal September procession associated with saint founder in San Marino",
+      "qualifier": "Historical or annually reported custom; never copied as French domestic tradition",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:CUSTOMS:MC:1:sainte-devote-boat-ceremony",
+      "category": "CUSTOMS",
+      "site_research_id": "EUROPE:W2:PLACE:MC:monaco-eglise-sainte-devote",
+      "source_ids": [
+        "EUROPE:W2:SRC:11"
+      ],
+      "claim": "Symbolic boat arrival and burning, Saint Devota procession, patronal festival Monaco",
+      "qualifier": "Non-French national Monaco custom with historical Corsican ties; needs current schedule verification",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:CUSTOMS:ME:1:perast-fasinada-stone-laying",
+      "category": "CUSTOMS",
+      "site_research_id": "EUROPE:W2:PLACE:ME:perast-gospa-od-skrpjela-our-lady-of-the-rocks",
+      "source_ids": [
+        "EUROPE:W2:SRC:12"
+      ],
+      "claim": "Perast Marian icon island tradition of processional stone deposit at shrine",
+      "qualifier": "Regional maritime usage, not universal Catholic rule or French custom",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    },
+    {
+      "lead_id": "EUROPE:W2:SACRED_IMAGE:ME:1:gospa-od-skrpjela-marian-icon",
+      "category": "SACRED_IMAGE",
+      "site_research_id": "EUROPE:W2:PLACE:ME:perast-gospa-od-skrpjela-our-lady-of-the-rocks",
+      "source_ids": [
+        "EUROPE:W2:SRC:12"
+      ],
+      "claim": "Marian icon associated with Catholic island church and sailor legends",
+      "qualifier": "Legend of finding icon is not ecclesiastically approved apparition",
+      "object_type": null,
+      "location_claim_only": true,
+      "publication_status": "RESEARCH_ONLY_NOT_MAPPED"
+    }
+  ],
+  "counts": {
+    "source_records": 12,
+    "place_leads": 12,
+    "category_associations": 18,
+    "by_category": {
+      "APPARITIONS": 1,
+      "CUSTOMS": 4,
+      "PILGRIMAGES": 9,
+      "RELICS": 1,
+      "SACRED_IMAGE": 3
+    }
+  },
+  "evidence_guards": [
+    "No exact coordinates, route geometry, biographies, images or automatic publication.",
+    "Budslaŭ UNESCO fest is attested by UNESCO as a cultural practice; this does not certify supernatural apparitions.",
+    "Medjugorje 2024 Vatican nihil obstat permits public devotion, not supernatural event approval.",
+    "Customs outside French Catholic world are separate regional heritage, not imported as French domestic practice.",
+    "Site Catholic, Orthodox, historic, national or civic ownership must remain explicit when cross-referencing.",
+    "Canonical IDs and duplicates must be reconciled against both current main and previous Europe wave before promotion."
+  ]
+}
