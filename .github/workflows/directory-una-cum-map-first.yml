@@ -1,9 +1,5 @@
 name: Directory Una Cum Map-First Address Acquisition
 on:
-  pull_request:
-    paths:
-      - "tools/directory/acquire-una-cum-map-pins-r43.mjs"
-      - ".github/workflows/directory-una-cum-map-first.yml"
   workflow_dispatch:
 permissions:
   contents: read
