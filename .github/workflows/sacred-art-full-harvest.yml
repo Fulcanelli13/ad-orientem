@@ -7,6 +7,8 @@ on:
       - ".github/workflows/sacred-art-full-harvest.yml"
       - "tools/calendar/reconcile-sacred-art-full-harvest.py"
       - "tools/calendar/acquire-artic-bulk.py"
+      - "tools/calendar/acquire-nga-bulk-open-data.py"
+      - "tools/calendar/acquire-sacred-art-wide.py"
   workflow_dispatch:
 
 permissions:
