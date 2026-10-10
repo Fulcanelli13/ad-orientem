@@ -224,7 +224,7 @@ export function createFindOwner(win=globalThis){
       language:language(win),
       items,
       lens:state.lens,
-      counts:state.lens==="traditions"?{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions)}:projection?.counts??{},
+      counts:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions)},
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:data.directory?.loadedProviders??[],
       unavailableProviders:data.directory?.unavailableProviders??[],
