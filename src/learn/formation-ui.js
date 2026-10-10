@@ -18,7 +18,7 @@ ${roots} :is(.aoGlossHero,.aoLearnModHero,.aoSLHero,.aoL2Hero,.aoSLLessonHead){p
 ${roots} :is(.aoGlossHero h1,.aoLearnModHero h1,.aoSLHero h1,.aoL2Hero h1,.aoSLLessonHead h1,.aoMFStage h1){font:500 clamp(1.95rem,7vw,3rem)/1.08 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:-.015em}
 ${roots} :is(.aoGlossHero p,.aoLearnModHero p,.aoSLHero p,.aoL2Meta p,.aoLearnTradIntro,.aoMFIntro,.aoCSEIntro,.aoSLLessonHead p){font-size:max(15px,.9375rem);line-height:1.58;color:var(--ao-text-muted,var(--muted,#a9a5b1))}
 ${roots} :is(.aoSLBlock p,.aoL2Block p,.aoMFClaim p,.aoLearnTradCard p,.aoCSEAnswer,.aoCSEDebateStep p){font-size:max(15px,.9375rem);line-height:1.66}
-${roots} :is(.aoGlossSection,.aoGlossTerm,.aoSLRow,.aoCSERow,.aoMFStageRow,.aoLearnTradCard>summary,.aoL2Stage,.aoL2Lesson,.aoLearnModCardMain){min-height:54px}
+${roots} :is(.aoGlossSection,.aoGlossTerm,.aoSLRow,.aoCSERow,.aoMFStageRow,.aoLearnTradCard>summary,.aoL2Stage,.aoL2Lesson){min-height:54px}
 ${roots} :is(.aoSLSources summary,.aoCSESources summary,.aoL2Sources summary,.aoLearnTradSource summary,.aoL2Panel>summary){min-height:44px;display:flex;align-items:center;line-height:1.4}
 ${roots} :is(button,input,select,textarea,summary,a):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
 ${roots} :is(.aoSLSource a,.aoCSESource a,.aoLearnTradSource a,.aoMFSource a){text-decoration-color:color-mix(in srgb,var(--liturgical,#c9ad78) 50%,transparent);text-underline-offset:3px}
