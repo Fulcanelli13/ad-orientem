@@ -57,7 +57,7 @@ export function searchDiscovery(query,{sections=[],referenceEntries=[],contentEn
  }
  // A lightweight routing index, not a second content or approval owner.
   for(const entry of contentEntries){
-   if(!["topic","question","spiritual","latin"].includes(entry?.kind)||!entry.id||!entry.route)continue;
+   if(!["topic","question","spiritual","latin","catechism"].includes(entry?.kind)||!entry.id||!entry.route)continue;
    const rank=score(q,entry.title?.[0],[entry.title?.[1],entry.id,entry.terms]);
    if(rank>=0)all.push({id:entry.id,kind:"content",contentKind:entry.kind,route:entry.route,
      title:entry.title,subtitle:null,score:rank+2,group:"formation",familyId:entry.family,lesson:entry.lesson});
@@ -96,7 +96,7 @@ export function loadFormationContentDiscovery(win=globalThis){
    return response.json();
   }).then(data=>{
    if(data?.schema!=="AO_FORMATION_DISCOVERY_CONTENT_V1"||!Array.isArray(data.entries)||
-     data.entries.length!==254||data.entries.some(e=>!e.id||!e.route||!Array.isArray(e.title)))
+     data.entries.length!==687||data.entries.some(e=>!e.id||!e.route||!Array.isArray(e.title)))
      throw Error("Unexpected Formation discovery index");
    return Object.freeze(data.entries);
   }).catch(error=>{contentPending=null;throw error});
