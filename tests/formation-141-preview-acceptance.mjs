@@ -23,14 +23,17 @@ for(const {path,data} of packs){
  for(const d of data.dossiers){
    assert.ok(!owners.has(d.id),"Duplicate canonical owner "+d.id);
    assert.equal(d.sections.length,4);
-   assert.deepEqual(d.sections.map(s=>s.role),["answer","documented_position","critical_response","traditional_catholic_argument"]);
+   assert.ok(["documented_position","documented_objection"].includes(d.sections[1].role),d.id+" source-based dispute role");
+   assert.equal(d.sections[0].role,"answer");
+   assert.equal(d.sections[2].role,"critical_response");
+   assert.equal(d.sections[3].role,"traditional_catholic_argument");
    let count=0;
    for(const s of d.sections){
      assert.ok(s.text?.en?.trim()&&s.text?.fr?.trim(),d.id+" missing bilingual paragraph");
      assert.ok(s.source_ids?.length,d.id+" missing citation");
      assert.equal(s.original_context_approved,false);
      assert.equal(s.french_final_approved,false);
-     if(s.role==="documented_position")assert.ok(s.attribution?.length>=18,d.id+" source author missing");
+     if(["documented_position","documented_objection"].includes(s.role))assert.ok(s.attribution?.length>=18,d.id+" source author missing");
      for(const id of s.source_ids)assert.ok(registry.get(id)?.url?.startsWith("https://"),d.id+" source ID crosses pack boundary: "+id);
      for(const id of Object.keys(s.source_claim_locators||{}))
        assert.ok(s.source_ids.includes(id),d.id+" orphan claim locator");
