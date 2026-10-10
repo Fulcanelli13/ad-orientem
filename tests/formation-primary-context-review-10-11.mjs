@@ -7,6 +7,8 @@ const prior=m.review_ledgers.slice(0,9).flatMap(p=>read(p).findings);
 const ten=read(root+"formation-primary-context-review-10-2026-10-09.v1.json");
 const eleven=read(root+"formation-primary-context-review-11-2026-10-09.v1.json");
 const packs=m.source_packs.map(p=>({path:p,data:read(p)}));
+const amendments=read(root+"formation-priority-original-opponents-source-amendment-2026-10-10.v1.json");
+const superseded=new Map(amendments.original_findings_superseded.map(x=>[x.finding_id,x]));
 const owners=new Map(packs.flatMap(p=>p.data.dossiers.map(d=>[d.id,{d,reg:new Map(p.data.source_registry.map(s=>[s.id,s]))}])));
 assert.equal(m.review_ledgers.length,11);
 assert.equal(prior.length,345);
@@ -29,7 +31,15 @@ function check(f,method){
   seen.add(f.owner+"|"+f.role);
   const obj=owners.get(f.owner);assert.ok(obj,"unknown owner "+f.owner);
   const section=obj.d.sections.find(s=>s.role===f.role);
-  assert.ok(section?.source_ids.includes(f.source_id),"missing citation in substantive section "+f.id);
+  assert.ok(section,"historical review has no corresponding original role "+f.id);
+  if(!section.source_ids.includes(f.source_id)){
+    const old=superseded.get(f.id);
+    assert.ok(old,"original citation replaced without explicit historical amendment "+f.id);
+    assert.equal(old.owner,f.owner);assert.equal(old.role,f.role);assert.equal(old.previous_source_id,f.source_id);
+    assert.deepEqual(old.replacement_source_ids,section.source_ids);
+    assert.equal(old.historical_finding_retained,true);
+    assert.equal(old.new_citation_claims_independently_certified,false);
+  }
   const orig=obj.reg.get(f.source_id);assert.ok(orig,"missing canonical registry source "+f.id);
   assert.equal(orig.url,f.url,"citation URL changed "+f.id);
   assert.match(f.url,/^https:\/\/\S+/,"malformed original link "+f.id);
@@ -69,7 +79,7 @@ for(const [id,role,term] of [
  ["APOL-022","answer","Apostolicae curae"],
  ["APOL-024","critical_response","Baptist"],
  ["APOL-026","answer","John 20"],
- ["APOL-052","critical_response","Samaritanus bonus"],
+ ["APOL-052","critical_response","Veritatis splendor"],
  ["APOL-053","critical_response","Catechism"],
  ["APOL-059","traditional_catholic_argument","Rerum novarum"]]){
   const s=claim(id,role);
