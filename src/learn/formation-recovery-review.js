@@ -284,6 +284,12 @@ export function createFormationRecoveryReview(win=globalThis) {
   const dossierDetail=()=>{
     const d=state.dossiers.find(x=>x.id===state.dossierId);
     if(!d)return listView();
+    if(state.studyPreview)return '<div class="rrMuted">'+esc(d.id)+' · '+esc(familyName(d.family))+
+      '</div><h1>'+esc(d.title)+'</h1><div class="rrWarning">'+
+      esc(pick(win,
+        "Draft for study. Each argument cites sources, but individual claims, opposing quotations and French wording are not finally approved.",
+        "Projet de lecture. Les arguments renvoient à des sources ; les affirmations, objections et formulations françaises ne sont pas définitivement approuvées."))+
+      '</div>'+synthesisReading(d);
     const evidence=d.evidence;
     const leads=evidence?.legacy_thematic_and_research_bank_leads||[];
     const refs=[...(evidence?.apostolate_reference_only||[]),...(evidence?.proposed_not_live_AQ_leads||[])];
@@ -297,7 +303,6 @@ export function createFormationRecoveryReview(win=globalThis) {
           "Recherches originales sourcées regroupées dans ce dossier. Elles ne constituent pas une réponse complète certifiée et ne sont pas approuvées pour publication."))+'</div>'+
       (leads.length?'<p class="rrMuted">'+esc(pick(win,"Historical thematic leads (not recovered questions): ","Pistes historiques (non questions authentifiées) : "))+esc([...new Set(leads.map(x=>x.key))].join(", "))+'</p>':"")+
       (refs.length?'<p class="rrMuted">'+esc(pick(win,"Apostolate cross-references only: ","Références croisées d’apostolat : "))+esc(refs.join(", "))+'</p>':"");
-    if(state.studyPreview)return intro+synthesisReading(d);
     if(!d.research.length)return intro+synthesisReading(d)+
       '<p class="rrMuted">'+esc(d.synthesis?
         pick(win,"No earlier individually indexed research was recovered for this question; this new source-first article is an unpublished working draft.","Aucune recherche antérieure indexée individuellement n’a été retrouvée pour cette question ; ce nouvel article sourcé demeure un projet non publié."):
