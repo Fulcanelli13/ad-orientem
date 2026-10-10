@@ -1326,7 +1326,7 @@ try{
     const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
     return api.root.querySelector(".ao-reader-paragraph[data-paragraph-id='GF-COM-850-T']")?.textContent.trim();
   });
-  assert.match(receptionRubric??"","Et procedit ad distributionem Communionis.");
+  assert.match(receptionRubric??"",/Et procedit ad distributionem Communionis\./);
   assert.equal(await communionChoice.isVisible(),false);
   assert.equal(await gfPanel.isVisible(),true,
     "individual Communion completion was not exposed");
