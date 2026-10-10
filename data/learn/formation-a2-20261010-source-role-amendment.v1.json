@@ -1,0 +1,92 @@
+{
+  "schema": "formation-a2-source-role-amendment-v1",
+  "date": "2026-10-10",
+  "governing_rule": "Retain the 2026-10-09 historical original-document findings as dated evidence. Do not misapply them to a newly revised paragraph or promote any section to independently certified.",
+  "modified_roles": [
+    {
+      "owner": "APOL-036",
+      "role": "documented_position",
+      "previous_source_count": 2,
+      "current_source_count": 3,
+      "current_source_ids": [
+        "WLC109-A2",
+        "WCF",
+        "BIBLE-EX20"
+      ]
+    },
+    {
+      "owner": "APOL-037",
+      "role": "documented_position",
+      "previous_source_count": 2,
+      "current_source_count": 3,
+      "current_source_ids": [
+        "CALVIN-RELICS-A2",
+        "TRENT25",
+        "WCF"
+      ]
+    },
+    {
+      "owner": "APOL-037",
+      "role": "critical_response",
+      "previous_source_count": 3,
+      "current_source_count": 4,
+      "current_source_ids": [
+        "CALVIN-RELICS-A2",
+        "TRENT25",
+        "BIBLE-ACTS19",
+        "BIBLE-2K13"
+      ]
+    },
+    {
+      "owner": "APOL-041",
+      "role": "documented_position",
+      "previous_source_count": 2,
+      "current_source_count": 3,
+      "current_source_ids": [
+        "ADVENTIST-MILL-A2",
+        "WCF",
+        "BIBLE-MATT25"
+      ]
+    },
+    {
+      "owner": "APOL-041",
+      "role": "critical_response",
+      "previous_source_count": 2,
+      "current_source_count": 3,
+      "current_source_ids": [
+        "CCC-HELL",
+        "BIBLE-MATT25",
+        "ADVENTIST-MILL-A2"
+      ]
+    },
+    {
+      "owner": "APOL-050",
+      "role": "critical_response",
+      "previous_source_count": 2,
+      "current_source_count": 4,
+      "current_source_ids": [
+        "STH94",
+        "MACKIE-MORAL-A2",
+        "HARMAN-REL-A2",
+        "AIN2025"
+      ]
+    }
+  ],
+  "original_findings_superseded": [
+    {
+      "finding_id": "PSV7-016",
+      "owner": "APOL-050",
+      "role": "documented_position",
+      "previous_source_id": "HPLUS2009",
+      "replacement_source_ids": [
+        "MACKIE-MORAL-A2",
+        "HARMAN-REL-A2"
+      ],
+      "historical_finding_retained": true,
+      "retirement_reason": "The previous original-opponent paragraph addressed transhumanist enhancement instead of the canonical moral-objectivity question. Humanity+ remains in the archived research, and the main role now presents Mackie's error theory and Harman's limited moral relativism with their original writings.",
+      "new_citation_claims_independently_certified": false
+    }
+  ],
+  "publication_allowed": false,
+  "independent_certification": false
+}

@@ -512,6 +512,30 @@
       "locator": "30 March 2023, §§2–8, colonial harms, Sublimis Deus and repudiation",
       "original_context_approved": false,
       "original_passage_status": "pending_independent_context_review"
+    },
+    {
+      "id": "WLC109-A2",
+      "title": "Westminster Larger Catechism, Question 109: images and the second commandment",
+      "url": "https://westminsterstandards.org/westminster-larger-catechism/",
+      "locator": "Q109, prohibited religious worship and making a representation of God or of any divine person",
+      "original_context_approved": false,
+      "provenance": "A2 original opposing Reformed doctrinal confession; editorial pass 2026-10-10"
+    },
+    {
+      "id": "CALVIN-RELICS-A2",
+      "title": "John Calvin, A Treatise on Relics (1543; English translation by Valerian Krasinski)",
+      "url": "https://www.gutenberg.org/ebooks/32136",
+      "locator": "Calvin's original arguments over authenticity, multiplication of relics and risks of idolatrous veneration; translation details in Gutenberg edition",
+      "original_context_approved": false,
+      "provenance": "A2 primary opposing Reformation theological document; editorial pass 2026-10-10"
+    },
+    {
+      "id": "ADVENTIST-MILL-A2",
+      "title": "General Conference of Seventh-day Adventists, Fundamental Belief 27: The Millennium and the End of Sin",
+      "url": "https://adventist.org/beliefs/official/millennium-and-the-end-of-sin",
+      "locator": "Official doctrine: following the final resurrection the fire of God consumes the unrighteous and ends sin and sinners",
+      "original_context_approved": false,
+      "provenance": "A2 authentic opponent against eternal conscious punishment; editorial pass 2026-10-10"
     }
   ],
   "dossiers": [
@@ -1185,16 +1209,21 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Westminster's chapter XXI confines religious worship to God and the Reformed tradition has often excluded devotional images from worship. The original objection appeals to the risk of idolatry under Exodus 20, not merely to a dislike of Catholic artistic style. Catholic argument must distinguish a carved depiction from treating that object as a supernatural power.",
-            "fr": "Westminster (XXI) réserve le culte religieux à Dieu, et la tradition réformée a fréquemment exclu les images dévotionnelles du culte. L'objection originelle invoque le danger d'idolâtrie selon Exode 20, non une simple aversion pour l'art catholique. L'argument catholique doit distinguer la représentation sculptée de l'attribution d'une puissance surnaturelle à l'objet."
+            "en": "The Westminster Larger Catechism Q109 explicitly prohibits worship by uncommanded images and even the making of representations of God or any divine person. This is a precise Reformed objection grounded in the second commandment, not merely aesthetic distaste. The Westminster Confession XXI likewise reserves divine worship for God alone. Catholics must answer the stronger question—whether depictions of Christ after the Incarnation and relative honour paid to an image can be distinguished from forbidden worship—without pretending these confessions condemn every harmless picture of a landscape.",
+            "fr": "Le Grand Catéchisme de Westminster, question 109, interdit expressément le culte au moyen d'images non prescrites ainsi que la représentation de Dieu ou de l'une des personnes divines. C'est une objection réformée précise, fondée sur le deuxième commandement, non une simple répugnance esthétique. La Confession de Westminster, chapitre XXI, réserve de même le culte divin à Dieu seul. Le catholique doit répondre à la question plus forte : la représentation du Christ depuis l'Incarnation et l'honneur relatif rendu à une image peuvent-ils être distingués du culte interdit ? Il ne faut pas prétendre que ces confessions condamnent toute image innocente d'un paysage."
           },
           "source_ids": [
+            "WLC109-A2",
             "WCF",
             "BIBLE-EX20"
           ],
-          "attribution": "Westminster Confession XXI, worship restrictions and the first commandment",
+          "attribution": "Westminster Larger Catechism Q109 and Westminster Confession XXI (original Reformed second-commandment objection)",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WLC109-A2": "Westminster Larger Catechism Q109, second-commandment prohibited representations and worship",
+            "WCF": "Westminster Confession XXI on worship exclusively to God"
+          }
         },
         {
           "role": "critical_response",
@@ -1256,31 +1285,41 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The Council of Trent's Session XXV instructs Catholics to venerate martyrs' bodily remains and rejects the view that such veneration is inherently useless or impious. The Reformed worship standard in Westminster excludes devotional practices not instituted as divine worship and gives no comparable cult to relics. This is an identifiable disagreement about sacred honour and the interpretation of biblical miracles.",
-            "fr": "La session XXV de Trente commande d'honorer les restes des martyrs et refuse de qualifier ce geste de nécessairement inutile ou impie. La norme cultuelle réformée de Westminster exclut des usages dévotionnels non institués comme culte divin et n'attribue aucun culte comparable aux reliques. Le désaccord porte réellement sur l'honneur sacré et la portée des miracles bibliques."
+            "en": "John Calvin's Treatise on Relics (1543) objects that the extraordinary multiplication and doubtful provenance of supposed bodily remains and objects of Christ, Mary and the saints can encourage credulity, commerce and what he regarded as idolatrous veneration. These are identifiable criticisms of individual relic claims and devotional practices, not an argument manufactured from a modern Catholic summary. Trent's Session XXV later upheld appropriate veneration of genuine relics, so the disagreement includes both evidence for authenticity and whether veneration may be religiously legitimate. Calvin's French work is linked through a documented English translation.",
+            "fr": "Dans son Traité des reliques (1543), Jean Calvin critique la multiplication extraordinaire et la provenance douteuse des restes corporels et objets attribués au Christ, à Marie et aux saints : selon lui, ces prétentions favorisent la crédulité, le commerce et une vénération qu'il juge idolâtrique. Ce sont des critiques identifiables de reliques précises et de pratiques dévotionnelles, non une objection inventée à partir d'un résumé catholique contemporain. La session XXV du concile de Trente défend ensuite la vénération légitime des reliques authentiques ; le désaccord concerne donc à la fois leur authenticité et le principe de leur vénération. L'ouvrage français de Calvin est référencé ici dans une traduction anglaise identifiée."
           },
           "source_ids": [
+            "CALVIN-RELICS-A2",
             "TRENT25",
             "WCF"
           ],
-          "attribution": "Council of Trent Session XXV compared with Westminster Confession XXI",
+          "attribution": "Jean Calvin, Traité des reliques (1543), and Council of Trent, Session XXV",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "CALVIN-RELICS-A2": "1543 treatise, relic authenticity, multiple inconsistent claims and criticism of veneration",
+            "TRENT25": "Session XXV, relics decree"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "Unusual biblical miracles show that God can act through material signs, but do not authenticate the provenance of every object sold or exhibited as a relic. Historical identification, safeguards against fraud and proportionate devotion are essential. The faithful must neither purchase purported sacred power nor assume that a relic mechanically produces healing apart from God's will.",
-            "fr": "Des miracles bibliques extraordinaires montrent que Dieu peut agir par signes matériels, mais ils n'authentifient pas chaque objet vendu ou exposé comme relique. Identification historique, protection contre la fraude et dévotion mesurée sont indispensables. On ne peut acheter une puissance sacrée prétendue ni supposer une guérison mécanique indépendante de la volonté divine."
+            "en": "A claimed relic can be false: no Catholic is required to accept unsupported identifications of bones or objects. Calvin's catalogue of disputed artifacts is therefore a challenge to evidence and prudence that cannot be answered merely by invoking the holiness of saints. But the logical leap from counterfeit relics or abuse to the intrinsic illicitness of venerating any authentic relic does not follow. Trent distinguishes honour directed to the saint from divine worship owed to God; historical provenance, ecclesiastical oversight and rejection of profiteering remain essential.",
+            "fr": "Une relique prétendue peut être fausse : aucun catholique n'est tenu de croire à l'attribution insuffisamment établie d'ossements ou d'objets. Le catalogue de Calvin constitue donc une objection portant sur la preuve et la prudence, à laquelle la seule sainteté des saints ne répond pas. Mais l'existence de faux et d'abus ne démontre pas que toute vénération d'une relique authentique soit intrinsèquement illicite. Le concile de Trente distingue l'honneur qui se rapporte au saint de l'adoration due à Dieu ; l'étude de la provenance, le contrôle ecclésiastique et le refus du trafic restent indispensables."
           },
           "source_ids": [
+            "CALVIN-RELICS-A2",
+            "TRENT25",
             "BIBLE-ACTS19",
-            "BIBLE-2K13",
-            "TRENT25"
+            "BIBLE-2K13"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "CALVIN-RELICS-A2": "Calvin, Treatise on Relics, criticism of alleged authenticity and cults",
+            "TRENT25": "Session XXV, veneration, superstition and abuses"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -1552,30 +1591,41 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "The Westminster Confession chapter XXXIII also teaches everlasting punishment at the last judgement, showing that this is not a uniquely Catholic medieval innovation. A modern objection concerns whether unending separation can be just under a loving God; the documented historic Christian claim itself must not be conflated with images of God delighting in torture or with assertions about named individuals.",
-            "fr": "La Confession de Westminster (XXXIII) enseigne elle aussi la peine éternelle au jugement dernier, ce qui montre qu'il ne s'agit pas d'une invention médiévale exclusivement catholique. Une objection actuelle demande si une séparation sans fin peut être juste sous un Dieu aimant ; la doctrine historique ne doit pas être confondue avec l'image d'un Dieu aimant torturer ou avec des verdicts sur des personnes nommées."
+            "en": "The General Conference of Seventh-day Adventists teaches in its official Fundamental Belief 27 that the unrighteous are resurrected after the millennium and then consumed by fire, bringing an end to sin and sinners. In its explanatory teaching the second death is understood as final destruction rather than unending conscious punishment. This is a genuine Christian objection to the Catholic affirmation of eternal Hell and should not be confused with the Westminster Confession XXXIII, which *agrees* that punishment is everlasting. The question remains how the biblical language of destruction, everlasting fire and exclusion should be interpreted.",
+            "fr": "Dans sa croyance fondamentale officielle n° 27, la Conférence générale des adventistes du septième jour enseigne que les injustes ressuscitent après le millénium, puis sont consumés par le feu, ce qui met fin au péché et aux pécheurs. Son exposé interprète la seconde mort comme une destruction définitive et non comme une peine consciemment éprouvée sans fin. C'est une véritable objection chrétienne à la doctrine catholique de l'éternité de l'enfer ; il ne faut pas la confondre avec la Confession de Westminster, chapitre XXXIII, qui *affirme* au contraire la perpétuité du châtiment. Le débat porte sur l'interprétation de la destruction, du feu éternel et de l'exclusion dans l'Écriture."
           },
           "source_ids": [
+            "ADVENTIST-MILL-A2",
             "WCF",
             "BIBLE-MATT25"
           ],
-          "attribution": "Westminster Confession chapter XXXIII, final judgment and eternal punishment",
+          "attribution": "Seventh-day Adventist General Conference, Fundamental Belief 27; contrast Westminster Confession XXXIII",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "ADVENTIST-MILL-A2": "Fundamental Belief 27, destruction at end of millennium; official explanatory doctrine of second death",
+            "WCF": "Westminster Confession XXXIII, everlasting punishment"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "The permanence of a final choice is difficult to explain by imagining time in eternity as a succession of ordinary earthly opportunities. Christian theology must avoid declaring specific persons damned without divine authority, and avoid reducing Christ's warnings to harmless metaphors. God's mercy and the final seriousness of freedom belong within one account rather than mutually exclusive slogans.",
-            "fr": "La permanence d'un choix définitif ne s'explique pas par une éternité imaginée comme une suite d'occasions terrestres ordinaires. La théologie doit éviter de déclarer telle personne damnée sans autorité divine, et de réduire les avertissements du Christ à des métaphores anodines. Miséricorde divine et sérieux ultime de la liberté relèvent d'un même discours, non de slogans exclusifs."
+            "en": "The Adventist appeal to the destruction of the wicked must be taken as an exegetical argument, not dismissed as indifference toward judgement. Catholics in turn cite Matthew 25:46, which juxtaposes eternal punishment with eternal life, and the Church's teaching that final self-exclusion from God is everlasting (Catechism §§1033–1037). Destruction may describe irreversible loss without necessarily meaning cessation of the person; the dispute requires attention to the original texts and does not authorize confident claims about the fate of particular people.",
+            "fr": "L'appel adventiste à la destruction des impies doit être traité comme un argument exégétique sérieux, non comme une indifférence au jugement. Les catholiques invoquent à leur tour Matthieu 25,46, qui oppose le châtiment éternel à la vie éternelle, et l'enseignement selon lequel l'exclusion définitive de Dieu demeure sans fin (Catéchisme, §§1033–1037). Le mot destruction peut décrire une perte irréversible sans signifier nécessairement la cessation de la personne ; le désaccord exige l'examen des textes et n'autorise aucun jugement assuré sur le sort de personnes particulières."
           },
           "source_ids": [
             "CCC-HELL",
-            "BIBLE-MATT25"
+            "BIBLE-MATT25",
+            "ADVENTIST-MILL-A2"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "ADVENTIST-MILL-A2": "Fundamental Belief 27, destruction of wicked",
+            "BIBLE-MATT25": "Matthew 25:46, eternal punishment and eternal life",
+            "CCC-HELL": "Catechism §§1033–1037, eternal Hell"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -2391,7 +2441,7 @@
     "canonical_dossiers": 26,
     "english_substantive_paragraphs": 104,
     "french_substantive_paragraphs": 104,
-    "source_registry_entries": 64,
+    "source_registry_entries": 67,
     "public_routes_added": 0,
     "independent_approvals": 0
   }
