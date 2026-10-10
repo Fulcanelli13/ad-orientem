@@ -2596,13 +2596,24 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3936
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042604394",
+        "artifactId": 11665808910,
+        "archiveOriginal": "nga-originals/nga-505.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3936,
+        "originalSha256": "f3a7a3e350821593959bba5441953d9684810243d2db8b6848d47dd1ba01c014"
+      }
     },
     {
       "id": "nga-45890",
@@ -2636,13 +2647,24 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "ACQUISITION_IN_PROGRESS",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2768,
+          "height": 4096
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042604394",
+        "artifactId": 11665808910,
+        "archiveOriginal": "nga-originals/nga-45890.jpg",
+        "originalWidth": 2768,
+        "originalHeight": 4096,
+        "originalSha256": "34f2926591360e82a617888cee1dd7707462998f03e85ac71aab72239787f208"
+      }
     }
   ],
   "notes": [
