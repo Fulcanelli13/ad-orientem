@@ -15,7 +15,7 @@ OUT=ROOT/"artifacts/sacred-art-staedel"
 OUT.mkdir(parents=True,exist_ok=True)
 IMAGES=OUT/"originals"
 IMAGES.mkdir(exist_ok=True)
-ALLOW={"sammlung.staedelmuseum.de","www.staedelmuseum.de","staedelmuseum.de","images.staedelmuseum.de"}
+ALLOW={"sammlung.staedelmuseum.de","www.staedelmuseum.de","staedelmuseum.de","images.staedelmuseum.de","cdn.staedelmuseum.de"}
 UA={"User-Agent":"AdOrientem Museum Public-Domain Painting Research/1.0","Accept":"text/html,image/jpeg,image/png,image/webp,*/*"}
 def get(url,maxbytes=32_000_000):
     if urlparse(url).scheme!="https" or urlparse(url).hostname not in ALLOW:
