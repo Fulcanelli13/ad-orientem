@@ -116,6 +116,17 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
   transition:opacity .14s linear!important;
 }
 #aoPray435930 .aoP435930PrayerHead small:empty{display:none!important}
+/* Only the explicitly selected blessing stage receives a short arrival glow.
+   The public rite itself controls timing; there is no auto-advance or bell. */
+#aoPray435930 .aoP435930Body[data-ao-benediction-stage="blessing"] .aoP435930GuideNow{
+  background:radial-gradient(ellipse at 50% 30%,
+    var(--ao-liturgical-soft,rgba(215,203,173,.09)),transparent 72%)!important;
+  animation:aoReaderBlessingReveal .5s ease-out both;
+}
+@keyframes aoReaderBlessingReveal{
+  from{opacity:.78;filter:brightness(.90)}
+  to{opacity:1;filter:brightness(1)}
+}
 #aoPray435930 .aoP435930GuideNav button{
   border-radius:var(--ao-control-radius,11px)!important;
   font-family:var(--ao-font-ui,system-ui,sans-serif)!important;
@@ -130,6 +141,7 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
 }
 @media(prefers-reduced-motion:reduce){
   #aoPray435930 .aoReaderStageTrack>i{transition:none}
+  #aoPray435930 .aoP435930Body[data-ao-benediction-stage="blessing"] .aoP435930GuideNow{animation:none!important}
 }
 `;
 export function installPrayReaderConvergenceStyles(doc=globalThis.document){
