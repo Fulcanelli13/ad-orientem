@@ -43,9 +43,11 @@ for(const [childId,parentId,query] of cases){
  assert.equal(child.related_places[0].place_id,parentId);
  assert.equal(parent.related_places[0].place_id,childId);
  assert.equal(child.counts.shrines,0,"a parish church or candle chapel is not a second canonical shrine by association");
- assert.equal(child.geo.lat,null,"coordinates must not be inherited from the related shrine");
- assert.equal(child.geo.lng,null);
- assert.ok(child.directions_url.includes("query="),"a valid street address must be available for directions");
+ assert.ok(Number.isFinite(child.geo.lat)&&Number.isFinite(child.geo.lng),"the related church or chapel now has its own sourced site coordinates");
+ assert.notEqual(child.geo.lat,parent.geo.lat,"church/chapel coordinates must not be inherited from the related shrine");
+ assert.notEqual(child.geo.lng,parent.geo.lng,"church/chapel coordinates must remain independent");
+ assert.ok(child.geo.source_url?.startsWith("https://"),"independent georeference must have a source URL");
+ assert.ok(child.directions_url.includes("query="),"directions must resolve to the independent place, not its related shrine");
  assert.ok(!child.directions_url.includes("query=0%2C0"),"null coordinates must not send pilgrims to Null Island");
  assert.ok(parent.sources.some(x=>x.role==="RELATIONSHIP"&&x.url.startsWith("https://")));
  const hits=filterExploreItems(projection.byLens.shrines,{query});
@@ -58,4 +60,4 @@ for(const [childId,parentId,query] of cases){
  assert.match(fr,/LIEUX ASSOCIÉS/);
  assert.ok(!en.includes('data-explore-place-owner="'+childId+'"'),"the primary profile remains the selected owner until tapped");
 }
-console.log("PASS Explore related-place search, bidirectional links, EN/FR and null-coordinate address fallback");
+console.log("PASS Explore related-place search, bidirectional links, EN/FR and independently sourced chapel/church coordinates");
