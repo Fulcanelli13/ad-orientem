@@ -1,0 +1,352 @@
+{
+  "schema": "ao.holy-week.legacy-reconciliation.v1",
+  "asOf": "2026-10-10",
+  "governingIssue": 894,
+  "purpose": "Do not reconstruct or claim missing Holy Week texts before reconciling historical donors with the canonical current owner and printed-1962 edition.",
+  "state": "AUDITED_HISTORICAL_DELTA_NOT_FULL_USER_ACCEPTANCE",
+  "recordsReviewed": 20,
+  "byRite": {
+    "PALM_SUNDAY": 2,
+    "HOLY_THURSDAY": 4,
+    "GOOD_FRIDAY": 6,
+    "EASTER_VIGIL": 6,
+    "CROSS_CUTTING": 2
+  },
+  "provenance": {
+    "rebuild18": {
+      "kind": "historical_html",
+      "title": "Ad-Orientem-V2-Rebuild18.html",
+      "location": "ChatGPT Library file",
+      "evidence": "Optional Mandatum explicit question after sermon, Good Friday nine prayers, separate post-Mass rites",
+      "authority": "HISTORICAL_PRODUCT_DONOR_NOT_MISSAL"
+    },
+    "legacyV4333": {
+      "kind": "reassembled_archived_html",
+      "title": "v43.33 exact archived source",
+      "location": "legacy/v43.33.parts/chunk-005-p00.txt",
+      "shaManifest": "legacy/v43.33.parts/IMPORT-STATUS.json",
+      "evidence": "Good Friday nine Latin/English/French prayers; 4020-character Exsultet; Easter Vigil bridge summaries",
+      "authority": "HISTORICAL_PRODUCT_DONOR_NOT_MISSAL"
+    },
+    "rubricalSot": {
+      "kind": "historical_workbook",
+      "title": "Roman_Rite_1962_Congregational_Ordo_Cues_Source_of_Truth_v2_SYNCHRONIZED.xlsx",
+      "location": "ChatGPT Library file",
+      "evidence": "15_EASTER_VIGIL / 13_HOLY_THURSDAY / 14_GOOD_FRIDAY / 28_SPECIAL_SYNC",
+      "authority": "INTERNAL_RUBRICAL_SOT"
+    },
+    "specialSot": {
+      "kind": "historical_workbook",
+      "title": "Ad_Orientem_SOT-04_Special_Days_and_Rites_v2.xlsx",
+      "location": "ChatGPT Library file",
+      "evidence": "05_HOLY_WEEK / 03_MASS_HANDOFFS / 04_ACTIVATION_GUARDS / 11_GAPS_SUPERSEDED",
+      "authority": "INTERNAL_CANONICAL_RECONCILIATION_SOT"
+    }
+  },
+  "sourcePolicy": {
+    "donorNotAuthority": true,
+    "absoluteMissalSource": "Original printed Missale Romanum 1962 or approved later changes kept as distinct variants",
+    "editionFirewall": [
+      "PRINTED_1962",
+      "HOLY_SEE_2008",
+      "POSTCONCILIAR_1970"
+    ],
+    "sourceOfTruth": "GitHub main owns modular runtime; archived HTML is research donor, not active owner",
+    "originalImageSignoff": "OUTSTANDING",
+    "frenchEditorialApproval": "OUTSTANDING",
+    "userFacingAcceptance": "REQUIRED"
+  },
+  "donorPreservation": {
+    "fullV4333Archive": {
+      "file": "legacy/v43.33.parts/IMPORT-STATUS.json",
+      "fullBytes": 37954985,
+      "sha256": "7032ed01a76c747805a81d4290cf85fb8692153568767ad9d1bd66f1dc88ada3"
+    },
+    "exsultet": {
+      "archivedCharacters": 4020,
+      "currentCharacters": 4020,
+      "byteIdentical": true,
+      "donorArchivePart": "legacy/v43.33.parts/chunk-005-p00.txt"
+    },
+    "goodFridayNineOrations": {
+      "archived": 9,
+      "archivedEnglish": 9,
+      "archivedFrench": 9,
+      "currentLatin": 9,
+      "currentEnglishFrenchInPayload": 0,
+      "quarantinedOrationIndices": [
+        7,
+        8
+      ]
+    },
+    "canonicalEventTotals": {
+      "PALM": 12,
+      "HOLY_THURSDAY_MANDATUM": 6,
+      "HOLY_THURSDAY_POST": 6,
+      "GOOD_FRIDAY": 56,
+      "EASTER_VIGIL": 38
+    }
+  },
+  "priorityOrder": [
+    "P0 Restore native Mandatum six-event actor choreography/handoff rather than parallel one-card-only surface",
+    "P0 Reconcile Good Friday legacy bilingual texts with printed 1962, explicitly quarantining orations 7 and 8",
+    "P1 Verify Holy Thursday Canon original-1962 special wordings and selected Mandatum texts; expand only actual absent corpus",
+    "P1 Reconcile Good Friday and Palm Passion speaker roles and remaining vernacular",
+    "P2 Printed-1962 folio critical verification of recovered Vigil and Palm rites, then optional Roman Ritual infant/adult baptism branches",
+    "P2 Locate exact v43.74 donor; verify no remaining legacy unique values before final certification"
+  ],
+  "records": [
+    {
+      "id": "HW-L01",
+      "rite": "PALM_SUNDAY",
+      "feature": "Blessing/distribution/procession structure",
+      "status": "RETAINED_AND_REWRITTEN_AS_NATIVE",
+      "verifiedFinding": "Historical Palm rite already covered; current 12-event PALM graph and reader exist; do not recreate underlying ceremony.",
+      "canonicalOwner": "data/mass/special-days-extension.v1.3.json#graphs.PALM",
+      "donorRefs": [
+        "rebuild18",
+        "specialSot"
+      ],
+      "action": "Continue printed-text, French, posture QA only; preserve original branch activation."
+    },
+    {
+      "id": "HW-L02",
+      "rite": "PALM_SUNDAY",
+      "feature": "Passion proclamation and death cue",
+      "status": "RETAINED_STRUCTURALLY_TEXT_AUDIT_OPEN",
+      "verifiedFinding": "Historical reader knew Passion Gospel; verify full St Matthew Latin text in the resolved Proper and voice assignment in native reader rather than manufacturing another Passion.",
+      "canonicalOwner": "src/mass/reader-palm.js",
+      "donorRefs": [
+        "rebuild18",
+        "rubricalSot"
+      ],
+      "action": "Check resolved Proper source, Chronista/Christus/Synagoga, exact kneel/rise."
+    },
+    {
+      "id": "HW-L03",
+      "rite": "HOLY_THURSDAY",
+      "feature": "Optional Mandatum location and opt-in",
+      "status": "RETAINED_PARTIAL_RUNTIME",
+      "verifiedFinding": "Rebuild 18 asked user whether Mandatum occurred; 1962 six-event insert already encoded. New B08 card uses explicit opt-in but only selected chant text.",
+      "canonicalOwner": "src/mass/reader-holy-thursday-mandatum.js",
+      "donorRefs": [
+        "rebuild18",
+        "specialSot"
+      ],
+      "action": "Reconcile current selection/handoff to canonical SP-HT-MAND events; do not add another parallel rite."
+    },
+    {
+      "id": "HW-L04",
+      "rite": "HOLY_THURSDAY",
+      "feature": "Participant/congregation choreography, six events",
+      "status": "CANONICAL_SOURCE_PRESENT_READER_GAP",
+      "verifiedFinding": "Existing core has SP-HT-MAND-010..060, including participant remove/wash/replace right shoe and sock and return target MC-0026. B08 text card has no event/cue mapping.",
+      "canonicalOwner": "data/mass/special-days-core.v1.1.json#optional_inserts.HOLY_THURSDAY_MANDATUM",
+      "donorRefs": [
+        "specialSot",
+        "rubricalSot"
+      ],
+      "action": "Wire native display and active source state to those six IDs, with distinct participant/observer scopes."
+    },
+    {
+      "id": "HW-L05",
+      "rite": "HOLY_THURSDAY",
+      "feature": "Proper Canon variants",
+      "status": "GENUINE_CURRENT_CORRECTION",
+      "verifiedFinding": "Historical v43.33 ordinary Canon contained standard Qui pridie and did not supply hoc est hodie variant. B08 now substitutes four source-owned cues with no canonical corpus mutation.",
+      "canonicalOwner": "src/mass/reader-holy-thursday-canon.js",
+      "donorRefs": [
+        "legacyV4333",
+        "specialSot"
+      ],
+      "action": "Keep original 1962 printed page visual collation and EN/FR checks open."
+    },
+    {
+      "id": "HW-L06",
+      "rite": "HOLY_THURSDAY",
+      "feature": "Altar of repose and stripping",
+      "status": "RETAINED_AND_EXPANDED",
+      "verifiedFinding": "Legacy included Pange lingua/Tantum ergo and stripping; current native HT_POST six-state graph and Psalm 21 support follows Mass. This is not Mandatum.",
+      "canonicalOwner": "src/mass/reader-holy-thursday-post.js",
+      "donorRefs": [
+        "legacyV4333",
+        "specialSot"
+      ],
+      "action": "Do not duplicate in-Mass washing of feet in this post-Mass reader."
+    },
+    {
+      "id": "HW-L07",
+      "rite": "GOOD_FRIDAY",
+      "feature": "Nine solemn orations Latin",
+      "status": "RETAINED_WITH_EDITION_CONFLICTS",
+      "verifiedFinding": "Legacy had nine long trilingual texts and current payload has nine Latin intention/collect sets. Legacy seventh and eighth were not original printed-1962 variants.",
+      "canonicalOwner": "data/presentation/reader-good-friday.v1.json#solemnPrayers",
+      "donorRefs": [
+        "legacyV4333",
+        "specialSot"
+      ],
+      "action": "Hold item 7 and 8 donor variants; compare remaining Latin 1-6/9 against 1962 book before promoting."
+    },
+    {
+      "id": "HW-L08",
+      "rite": "GOOD_FRIDAY",
+      "feature": "Nine solemn orations English/French",
+      "status": "LOST_USER_FACING_TRANSLATIONS",
+      "verifiedFinding": "v43.33 has EN/FR for all nine; current GF payload is Latin-only (SOURCE_PINNED_1962_GOOD_FRIDAY_LATIN), so vernacular parity is not restored despite Latin presence.",
+      "canonicalOwner": "legacy/v43.33.parts/chunk-005-p00.txt",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Recover EN/FR only after edition-by-edition collation; do not import 1970 and 2008 variants as original-1962."
+    },
+    {
+      "id": "HW-L09",
+      "rite": "GOOD_FRIDAY",
+      "feature": "Oration 7 source-edition quarantine",
+      "status": "DONOR_VARIANT_NOT_1962",
+      "verifiedFinding": "Archived donor says Orémus et pro ómnibus frátribus nostris, qui in Christum credunt; current PRINTED_1962 explicitly says pro haereticis et schismaticis. Modern/unity prayer must not overwrite printed-1962.",
+      "canonicalOwner": "data/presentation/reader-good-friday.v1.json#solemnPrayers[6]",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Validate original printed text against image, separately tag any modern variant."
+    },
+    {
+      "id": "HW-L10",
+      "rite": "GOOD_FRIDAY",
+      "feature": "Oration 8 source-edition quarantine",
+      "status": "DONOR_VARIANT_2008_NOT_PRINTED_1962",
+      "verifiedFinding": "Archived donor says illuminet corda eorum, the form substituted by Holy See in 2008. Current Good Friday payload correctly differentiates PRINTED_1962 vs HOLY_SEE_2008.",
+      "canonicalOwner": "data/presentation/reader-good-friday.v1.json#solemnPrayers[7].variants",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Maintain variant separation; never promote old donor as printed 1962. Vatican decree: https://www.vatican.va/roman_curia/secretariat_state/2008/documents/rc_seg-st_20080204_nota-missale-romanum_en.html"
+    },
+    {
+      "id": "HW-L11",
+      "rite": "GOOD_FRIDAY",
+      "feature": "St John Passion",
+      "status": "OLDER_SUMMARY_CURRENT_FULLER",
+      "verifiedFinding": "Legacy Passion surface displayed source heading/references and death-kneel anchor; current native GF payload contains long pre-/post-death Latin text, but narrator/person voice roles and vernacular remain uncaptured.",
+      "canonicalOwner": "src/mass/reader-good-friday.js",
+      "donorRefs": [
+        "legacyV4333",
+        "rubricalSot"
+      ],
+      "action": "Recover speaker-owner mapping without reauthoring Latin Passion."
+    },
+    {
+      "id": "HW-L12",
+      "rite": "GOOD_FRIDAY",
+      "feature": "Cross veneration and communion",
+      "status": "RETAINED_AND_RESTRUCTURED",
+      "verifiedFinding": "Archived Good Friday steps include unveil, venerate, Sacrament return, Pater, Libera and Communion. Current separate 56-event GF graph covers distinct liturgical action.",
+      "canonicalOwner": "data/mass/special-days-core.v1.1.json#graphs.GF",
+      "donorRefs": [
+        "legacyV4333",
+        "specialSot"
+      ],
+      "action": "Keep local/personal one-simple-genuflection actor scope; no standard Mass graph."
+    },
+    {
+      "id": "HW-L13",
+      "rite": "EASTER_VIGIL",
+      "feature": "Exsultet full Latin",
+      "status": "IDENTICAL_BYTE_FOR_BYTE",
+      "verifiedFinding": "The v43.33 archived Exsultet Latin has 4,020 characters and is exactly identical to donor.exsultet.lat on current main. Do not reacquire or reauthor it.",
+      "canonicalOwner": "data/presentation/reader-easter-vigil.v1.json#donor.exsultet.lat",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Only authoritative printed-1962 collation and translation QA remain."
+    },
+    {
+      "id": "HW-L14",
+      "rite": "EASTER_VIGIL",
+      "feature": "Four prophecies",
+      "status": "OLDER_ABBREVIATED_CURRENT_EXPANDED",
+      "verifiedFinding": "Historical donor listed four readings and a wrong broad Isaiah 4:1–6 reference; current source-owned reader contains four extended Latin readings and correct Isaiah 4:2–6.",
+      "canonicalOwner": "data/presentation/reader-easter-vigil-prophecies.v1.json",
+      "donorRefs": [
+        "legacyV4333",
+        "specialSot"
+      ],
+      "action": "Do not substitute old abbreviated reference; collate current readings, canticles and collects against printed source."
+    },
+    {
+      "id": "HW-L15",
+      "rite": "EASTER_VIGIL",
+      "feature": "Two halves of the Litany",
+      "status": "OLDER_SUMMARY_B06_RESTORED",
+      "verifiedFinding": "Archived v43.33 litany is descriptive and contains no 46+30 invocation corpus; current B06 renders full 76 invocations with trilingual rows. This is a genuine recovered text delta.",
+      "canonicalOwner": "data/presentation/reader-easter-vigil.v1.json#bridge",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Verify source original facsimile; keep new corpus rather than reverting to summaries."
+    },
+    {
+      "id": "HW-L16",
+      "rite": "EASTER_VIGIL",
+      "feature": "Font blessing",
+      "status": "OLDER_SUMMARY_B07_RESTORED",
+      "verifiedFinding": "Archived v43.33 was descriptive and contained no full font blessing; current B07 contains 17 structured prayer/ritual segments and guarded font branches.",
+      "canonicalOwner": "data/presentation/reader-easter-vigil.v1.json#font1962",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Complete printed-image critical comparison; baptismal sacrament itself remains unresolved."
+    },
+    {
+      "id": "HW-L17",
+      "rite": "EASTER_VIGIL",
+      "feature": "Baptismal promises and aspersion",
+      "status": "OLDER_SUMMARY_B06_RESTORED",
+      "verifiedFinding": "Older v43.33 displayed summary of vows; current B06 has three renunciations, three professions and full Pater with corresponding participant role rows.",
+      "canonicalOwner": "data/presentation/reader-easter-vigil.v1.json#bridge.renewal",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Preserve B06 ritual text; printed-Missal collation pending."
+    },
+    {
+      "id": "HW-L18",
+      "rite": "EASTER_VIGIL",
+      "feature": "Conditional actual baptisms",
+      "status": "TEXT_OWNER_UNRESOLVED",
+      "verifiedFinding": "Old HTML references baptisms as a conditional event, but no complete universally applicable Rituale Romanum infant/adult sacrament. Current production explicitly marks ritual-owner hold.",
+      "canonicalOwner": "data/presentation/reader-easter-vigil.v1.json#font1962.conditionalBaptism",
+      "donorRefs": [
+        "legacyV4333",
+        "specialSot"
+      ],
+      "action": "Source Roman Ritual Title II separately, branch infant/adult and candidate conditions; no fabricated universal ritual."
+    },
+    {
+      "id": "HW-L19",
+      "rite": "CROSS_CUTTING",
+      "feature": "Canonical rite numbers versus end-user text",
+      "status": "STRUCTURE_NOT_TEXT_CERTIFICATION",
+      "verifiedFinding": "SOT-04 freezes 12 Palm, 6 Mandatum, 6 post-Mass, 56 Good Friday, 38 Vigil events. Their existence is not full Latin/EN/FR reader certification.",
+      "canonicalOwner": "data/mass/special-days-core.v1.1.json",
+      "donorRefs": [
+        "specialSot",
+        "rubricalSot"
+      ],
+      "action": "Maintain phase-specific certification; no arbitrary global completion percent."
+    },
+    {
+      "id": "HW-L20",
+      "rite": "CROSS_CUTTING",
+      "feature": "Later v43.74 donor availability",
+      "status": "UNVERIFIED_SOURCE_PENDING",
+      "verifiedFinding": "The v43.33 complete split archive, Rebuild18 and workbooks were directly inspected. A separately accessible exact v43.74 donor file has not yet been identified in this reconciliation. No content claims about it.",
+      "canonicalOwner": "legacy/v43.33.parts/IMPORT-STATUS.json",
+      "donorRefs": [
+        "legacyV4333"
+      ],
+      "action": "Locate v43.74 by immutable path/commit or uploaded binary before declaring exhaustive legacy closure."
+    }
+  ]
+}
