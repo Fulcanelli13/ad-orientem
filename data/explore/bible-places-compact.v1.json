@@ -1,12 +1,12 @@
 {
   "schema": "AO_EXPLORE_BIBLE_PLACES_COMPACT_V1",
-  "scope": "Compact Explore Bible Places collection of 40 major sites; no new map lens, maps, standalone atlas, or third-party runtime corpus",
+  "scope": "Compact Bible Places: 40 locations, with Christ's major Gospel events from Annunciation to Ascension as labeled in-app passage-linked episodes",
   "publication_policy": "Concise bilingual Scripture-linked context; date uncertainty and contested site identities expressed; no independent map pins.",
   "version": "2026-10-10",
   "groups": [
+    "CHRIST",
     "OT",
     "DEUTERO",
-    "CHRIST",
     "APOSTLES"
   ],
   "entries": [
@@ -30,80 +30,6 @@
       "published": true
     },
     {
-      "id": "bethlehem",
-      "group": "OT",
-      "title_en": "Bethlehem",
-      "title_fr": "Bethléem",
-      "summary_en": "Ruth returns to Bethlehem with Naomi. Centuries later, the Gospels place the birth of Christ there.",
-      "summary_fr": "Ruth revient à Bethléem avec Noémi. Des siècles plus tard, les Évangiles y situent la naissance du Christ.",
-      "period_en": "Judges and Roman periods",
-      "period_fr": "Époque des Juges et période romaine",
-      "persons_en": "Ruth, Naomi, Jesus",
-      "persons_fr": "Ruth, Noémi, Jésus",
-      "passages": [
-        "Ruth 1:19",
-        "Luke 2:4–7"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "egypt",
-      "group": "OT",
-      "title_en": "Egypt",
-      "title_fr": "Égypte",
-      "summary_en": "The Israelites suffer oppression in Egypt before Moses leads them toward freedom.",
-      "summary_fr": "Les Israélites subissent l’oppression en Égypte avant que Moïse les conduise vers la liberté.",
-      "period_en": "Exodus narrative · date uncertain",
-      "period_fr": "Récit de l’Exode · date incertaine",
-      "persons_en": "Moses, Israelites",
-      "persons_fr": "Moïse, Israélites",
-      "passages": [
-        "Exodus 1:8–14",
-        "Exodus 12:31–42"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "gibeon",
-      "group": "OT",
-      "title_en": "Gibeon",
-      "title_fr": "Gabaon",
-      "summary_en": "Joshua's campaign against a coalition of kings unfolds near Gibeon.",
-      "summary_fr": "La campagne de Josué contre une coalition de rois se déroule près de Gabaon.",
-      "period_en": "Conquest narrative · date uncertain",
-      "period_fr": "Récit de la conquête · date incertaine",
-      "persons_en": "Joshua",
-      "persons_fr": "Josué",
-      "passages": [
-        "Joshua 10:10–13"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "haran",
-      "group": "OT",
-      "title_en": "Haran",
-      "title_fr": "Harrân",
-      "summary_en": "Abraham leaves Haran for the land God will show him.",
-      "summary_fr": "Abraham quitte Harrân pour le pays que Dieu lui montrera.",
-      "period_en": "Patriarchal narratives · date uncertain",
-      "period_fr": "Récits patriarcaux · date incertaine",
-      "persons_en": "Abraham, Sarah, Lot",
-      "persons_fr": "Abraham, Sara, Lot",
-      "passages": [
-        "Genesis 12:4–5"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
       "id": "hebron",
       "group": "OT",
       "title_en": "Hebron / Mamre",
@@ -117,61 +43,6 @@
       "passages": [
         "Genesis 18:1–8",
         "Genesis 23:17–20"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "jericho",
-      "group": "OT",
-      "title_en": "Jericho",
-      "title_fr": "Jéricho",
-      "summary_en": "Joshua leads Israel at Jericho. Centuries later Jesus encounters Zacchaeus in the same region.",
-      "summary_fr": "Josué conduit Israël à Jéricho. Des siècles plus tard Jésus rencontre Zachée dans la même région.",
-      "period_en": "Conquest narrative and life of Christ",
-      "period_fr": "Récit de la conquête et vie du Christ",
-      "persons_en": "Joshua, Jesus, Zacchaeus",
-      "persons_fr": "Josué, Jésus, Zachée",
-      "passages": [
-        "Joshua 6:1–20",
-        "Luke 19:1–10"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "jerusalem",
-      "group": "OT",
-      "title_en": "Jerusalem",
-      "title_fr": "Jérusalem",
-      "summary_en": "David captures the stronghold of Zion and makes Jerusalem his royal centre.",
-      "summary_fr": "David prend la forteresse de Sion et fait de Jérusalem son centre royal.",
-      "period_en": "Early monarchy · about 10th century BC",
-      "period_fr": "Début de la monarchie · vers le Xe siècle av. J.-C.",
-      "persons_en": "David",
-      "persons_fr": "David",
-      "passages": [
-        "2Samuel 5:6–10"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "lachish",
-      "group": "OT",
-      "title_en": "Lachish",
-      "title_fr": "Lachis",
-      "summary_en": "The Assyrian king Sennacherib campaigns from Lachish during Hezekiah's reign.",
-      "summary_fr": "Le roi assyrien Sennachérib mène campagne depuis Lachis sous le règne d’Ézéchias.",
-      "period_en": "Late eighth century BC",
-      "period_fr": "Fin du VIIIe siècle av. J.-C.",
-      "persons_en": "Hezekiah, Sennacherib",
-      "persons_fr": "Ézéchias, Sennachérib",
-      "passages": [
-        "2Kings 18:13–17"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -250,25 +121,6 @@
       "published": true
     },
     {
-      "id": "susa",
-      "group": "OT",
-      "title_en": "Susa / Shushan",
-      "title_fr": "Suse",
-      "summary_en": "The Book of Esther places the Persian royal court at Susa; Nehemiah also mentions the city.",
-      "summary_fr": "Le livre d’Esther situe la cour royale perse à Suse ; Néhémie mentionne aussi cette ville.",
-      "period_en": "Persian period · fifth century BC",
-      "period_fr": "Époque perse · Ve siècle av. J.-C.",
-      "persons_en": "Esther, Nehemiah",
-      "persons_fr": "Esther, Néhémie",
-      "passages": [
-        "Esther 1:1–3",
-        "Nehemiah 1:1"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
       "id": "ur",
       "group": "OT",
       "title_en": "Ur of the Chaldees",
@@ -300,24 +152,6 @@
       "passages": [
         "Judith 7:1–7",
         "Judith 8:1–8"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "ecbatana",
-      "group": "DEUTERO",
-      "title_en": "Ecbatana",
-      "title_fr": "Ecbatane",
-      "summary_en": "Sarah, daughter of Raguel, lives at Ecbatana, an important setting in the Book of Tobit.",
-      "summary_fr": "Sara, fille de Raguel, habite Ecbatane, l’un des lieux importants du livre de Tobie.",
-      "period_en": "Tobit narrative · date uncertain",
-      "period_fr": "Récit de Tobie · date incertaine",
-      "persons_en": "Sarah, Raguel, Tobias",
-      "persons_fr": "Sara, Raguel, Tobie",
-      "passages": [
-        "Tobit 3:7"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -361,22 +195,240 @@
       "published": true
     },
     {
-      "id": "bethany",
+      "id": "nazareth",
       "group": "CHRIST",
-      "title_en": "Bethany",
-      "title_fr": "Béthanie",
-      "summary_en": "Jesus raises Lazarus from the dead near Bethany, the village of Martha and Mary.",
-      "summary_fr": "Jésus ressuscite Lazare près de Béthanie, village de Marthe et Marie.",
-      "period_en": "Public ministry · first century AD",
-      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Lazarus, Martha, Mary",
-      "persons_fr": "Jésus, Lazare, Marthe, Marie",
+      "title_en": "Nazareth",
+      "title_fr": "Nazareth",
+      "summary_en": "Gabriel announces the Incarnation to Mary in Nazareth. Jesus later teaches in the synagogue of the town.",
+      "summary_fr": "Gabriel annonce à Marie l’Incarnation à Nazareth. Jésus y enseigne ensuite dans la synagogue.",
+      "period_en": "Life of Christ · turn of the Christian era",
+      "period_fr": "Vie du Christ · autour du début de l’ère chrétienne",
+      "persons_en": "Mary, Jesus, Gabriel",
+      "persons_fr": "Marie, Jésus, Gabriel",
       "passages": [
-        "John 11:1–44"
+        "Luke 1:26–38",
+        "Matthew 2:19–23"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "INFANCY",
+      "events": [
+        {
+          "id": "nazareth-e1",
+          "title_en": "The Annunciation",
+          "title_fr": "L’Annonciation",
+          "reference": "Luke 1:26–38"
+        },
+        {
+          "id": "nazareth-e2",
+          "title_en": "Jesus grows up in Nazareth",
+          "title_fr": "Jésus grandit à Nazareth",
+          "reference": "Matthew 2:19–23"
+        },
+        {
+          "id": "nazareth-e3",
+          "title_en": "Jesus teaches in the synagogue",
+          "title_fr": "Jésus enseigne dans la synagogue",
+          "reference": "Luke 4:16–30"
+        }
+      ]
+    },
+    {
+      "id": "ein-karem",
+      "group": "CHRIST",
+      "title_en": "Judean hill country / Ein Karem",
+      "title_fr": "Montagnes de Judée / Aïn Karem",
+      "summary_en": "Mary visits Elizabeth in the Judean hills. Ein Karem is a later traditional identification, not a village named in Luke.",
+      "summary_fr": "Marie visite Élisabeth dans les monts de Judée. Aïn Karem est une identification traditionnelle, non un village nommé par Luc.",
+      "period_en": "Infancy narratives · date uncertain",
+      "period_fr": "Récits de l’Enfance · date incertaine",
+      "persons_en": "Mary, Elizabeth, John the Baptist",
+      "persons_fr": "Marie, Élisabeth, Jean-Baptiste",
+      "passages": [
+        "Luke 1:39–56",
+        "Luke 1:57–66"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "INFANCY",
+      "events": [
+        {
+          "id": "ein-karem-e1",
+          "title_en": "The Visitation",
+          "title_fr": "La Visitation",
+          "reference": "Luke 1:39–56"
+        },
+        {
+          "id": "ein-karem-e2",
+          "title_en": "Birth of John the Baptist",
+          "title_fr": "Naissance de saint Jean-Baptiste",
+          "reference": "Luke 1:57–66"
+        }
+      ]
+    },
+    {
+      "id": "bethlehem",
+      "group": "CHRIST",
+      "title_en": "Bethlehem",
+      "title_fr": "Bethléem",
+      "summary_en": "Jesus is born in Bethlehem; the shepherds and the Magi come to adore him.",
+      "summary_fr": "Jésus naît à Bethléem ; les bergers et les Mages viennent l’adorer.",
+      "period_en": "Nativity · turn of the Christian era",
+      "period_fr": "Nativité · début de l’ère chrétienne",
+      "persons_en": "Jesus, Mary, Joseph",
+      "persons_fr": "Jésus, Marie, Joseph",
+      "passages": [
+        "Luke 2:1–20",
+        "Matthew 2:1–12"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "INFANCY",
+      "events": [
+        {
+          "id": "bethlehem-e1",
+          "title_en": "Birth of Jesus and adoration of the shepherds",
+          "title_fr": "Naissance de Jésus et adoration des bergers",
+          "reference": "Luke 2:1–20"
+        },
+        {
+          "id": "bethlehem-e2",
+          "title_en": "The visit of the Magi",
+          "title_fr": "La visite des Mages",
+          "reference": "Matthew 2:1–12"
+        }
+      ]
+    },
+    {
+      "id": "jerusalem-temple",
+      "group": "CHRIST",
+      "title_en": "Jerusalem — the Temple",
+      "title_fr": "Jérusalem — le Temple",
+      "summary_en": "The Presentation, the finding of the child Jesus and later teaching take place in the Temple precincts.",
+      "summary_fr": "La Présentation, Jésus retrouvé enfant et son enseignement ultérieur se situent dans l’enceinte du Temple.",
+      "period_en": "Childhood and ministry · first century BC/AD",
+      "period_fr": "Enfance et ministère · Ier siècle av./ap. J.-C.",
+      "persons_en": "Mary, Joseph, Simeon, Anna, Jesus",
+      "persons_fr": "Marie, Joseph, Siméon, Anne, Jésus",
+      "passages": [
+        "Luke 2:22–38",
+        "Luke 2:41–52"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "INFANCY",
+      "events": [
+        {
+          "id": "jerusalem-temple-e1",
+          "title_en": "The Presentation of Jesus",
+          "title_fr": "La Présentation de Jésus",
+          "reference": "Luke 2:22–38"
+        },
+        {
+          "id": "jerusalem-temple-e2",
+          "title_en": "The twelve-year-old Jesus in the Temple",
+          "title_fr": "Jésus à douze ans au Temple",
+          "reference": "Luke 2:41–52"
+        },
+        {
+          "id": "jerusalem-temple-e3",
+          "title_en": "Jesus purifies the Temple",
+          "title_fr": "Jésus purifie le Temple",
+          "reference": "John 2:13–22"
+        }
+      ]
+    },
+    {
+      "id": "egypt",
+      "group": "CHRIST",
+      "title_en": "Egypt",
+      "title_fr": "Égypte",
+      "summary_en": "Joseph takes Mary and the infant Jesus to Egypt to escape Herod; the Holy Family later returns.",
+      "summary_fr": "Joseph conduit Marie et l’Enfant Jésus en Égypte pour fuir Hérode ; la Sainte Famille revient ensuite.",
+      "period_en": "Infancy · date uncertain",
+      "period_fr": "Enfance · date incertaine",
+      "persons_en": "Jesus, Mary, Joseph",
+      "persons_fr": "Jésus, Marie, Joseph",
+      "passages": [
+        "Matthew 2:13–15",
+        "Matthew 2:19–23"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "INFANCY",
+      "events": [
+        {
+          "id": "egypt-e1",
+          "title_en": "The flight into Egypt",
+          "title_fr": "La fuite en Égypte",
+          "reference": "Matthew 2:13–15"
+        },
+        {
+          "id": "egypt-e2",
+          "title_en": "Return from Egypt",
+          "title_fr": "Le retour d’Égypte",
+          "reference": "Matthew 2:19–23"
+        }
+      ]
+    },
+    {
+      "id": "jordan-baptism",
+      "group": "CHRIST",
+      "title_en": "Jordan River — Baptism of Jesus",
+      "title_fr": "Jourdain — Baptême de Jésus",
+      "summary_en": "John baptizes Jesus in the Jordan. The precise riverside location remains disputed.",
+      "summary_fr": "Jean baptise Jésus dans le Jourdain. L’emplacement précis sur le fleuve reste discuté.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, John the Baptist",
+      "persons_fr": "Jésus, Jean-Baptiste",
+      "passages": [
+        "Matthew 3:13–17"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "jordan-baptism-e1",
+          "title_en": "Baptism of Jesus",
+          "title_fr": "Le Baptême de Jésus",
+          "reference": "Matthew 3:13–17"
+        }
+      ]
+    },
+    {
+      "id": "judean-wilderness",
+      "group": "CHRIST",
+      "title_en": "Wilderness of Judea",
+      "title_fr": "Désert de Judée",
+      "summary_en": "After his Baptism, Jesus fasts and resists temptation in the wilderness. The exact location is not named.",
+      "summary_fr": "Après son Baptême, Jésus jeûne et résiste à la tentation au désert. Le lieu précis n’est pas nommé.",
+      "period_en": "Beginning of public ministry · first century AD",
+      "period_fr": "Début de la vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Satan",
+      "persons_fr": "Jésus, Satan",
+      "passages": [
+        "Matthew 4:1–11"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "judean-wilderness-e1",
+          "title_en": "The forty-day fast and temptations",
+          "title_fr": "Le jeûne de quarante jours et les tentations",
+          "reference": "Matthew 4:1–11"
+        }
+      ]
     },
     {
       "id": "cana",
@@ -394,7 +446,16 @@
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "cana-e1",
+          "title_en": "The wedding at Cana",
+          "title_fr": "Les noces de Cana",
+          "reference": "John 2:1–11"
+        }
+      ]
     },
     {
       "id": "capernaum",
@@ -408,120 +469,194 @@
       "persons_en": "Jesus, Peter",
       "persons_fr": "Jésus, Pierre",
       "passages": [
-        "Mark 1:21–28"
+        "Mark 1:21–28",
+        "Mark 2:1–12"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "capernaum-e1",
+          "title_en": "Teaching and exorcism in the synagogue",
+          "title_fr": "Enseignement et exorcisme à la synagogue",
+          "reference": "Mark 1:21–28"
+        },
+        {
+          "id": "capernaum-e2",
+          "title_en": "The healing of a paralytic",
+          "title_fr": "La guérison du paralytique",
+          "reference": "Mark 2:1–12"
+        },
+        {
+          "id": "capernaum-e3",
+          "title_en": "The discourse on the Bread of Life",
+          "title_fr": "Le discours sur le Pain de vie",
+          "reference": "John 6:24–59"
+        }
+      ]
     },
     {
-      "id": "emmaus",
+      "id": "galilee-sea",
       "group": "CHRIST",
-      "title_en": "Emmaus",
-      "title_fr": "Emmaüs",
-      "summary_en": "The risen Christ walks toward Emmaus with two disciples, who recognize him at the breaking of bread. Several modern sites are proposed.",
-      "summary_fr": "Le Christ ressuscité marche vers Emmaüs avec deux disciples, qui le reconnaissent à la fraction du pain. Plusieurs sites actuels sont proposés.",
-      "period_en": "Resurrection · first century AD",
-      "period_fr": "Résurrection · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Cleopas",
-      "persons_fr": "Jésus, Cléophas",
-      "passages": [
-        "Luke 24:13–35"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "gethsemane",
-      "group": "CHRIST",
-      "title_en": "Gethsemane",
-      "title_fr": "Gethsémani",
-      "summary_en": "Jesus prays in Gethsemane before his arrest; the traditional garden forms part of a larger pilgrimage area.",
-      "summary_fr": "Jésus prie à Gethsémani avant son arrestation ; le jardin traditionnel appartient à un ensemble de lieux de pèlerinage.",
-      "period_en": "Passion · first century AD",
-      "period_fr": "Passion · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Peter, James, John",
-      "persons_fr": "Jésus, Pierre, Jacques, Jean",
-      "passages": [
-        "Matthew 26:36–46"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "golgotha",
-      "group": "CHRIST",
-      "title_en": "Golgotha / Calvary",
-      "title_fr": "Golgotha / Calvaire",
-      "summary_en": "Christ is crucified at Golgotha, traditionally venerated within the Church of the Holy Sepulchre.",
-      "summary_fr": "Le Christ est crucifié au Golgotha, traditionnellement vénéré dans l’église du Saint-Sépulcre.",
-      "period_en": "Passion · first century AD",
-      "period_fr": "Passion · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Mary, John",
-      "persons_fr": "Jésus, Marie, Jean",
-      "passages": [
-        "John 19:17–30"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "jordan-baptism",
-      "group": "CHRIST",
-      "title_en": "Jordan River — Baptism of Jesus",
-      "title_fr": "Jourdain — Baptême de Jésus",
-      "summary_en": "John baptizes Jesus in the Jordan. The precise riverside location remains disputed.",
-      "summary_fr": "Jean baptise Jésus dans le Jourdain. L’emplacement précis sur le fleuve reste discuté.",
+      "title_en": "Sea of Galilee",
+      "title_fr": "Mer de Galilée",
+      "summary_en": "Jesus calls fishermen beside the lake, including Simon Peter and Andrew.",
+      "summary_fr": "Jésus appelle des pêcheurs au bord du lac, notamment Simon-Pierre et André.",
       "period_en": "Public ministry · first century AD",
       "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, John the Baptist",
-      "persons_fr": "Jésus, Jean-Baptiste",
+      "persons_en": "Jesus, Peter, Andrew",
+      "persons_fr": "Jésus, Pierre, André",
       "passages": [
-        "Mark 1:9–11"
+        "Mark 1:16–20",
+        "Mark 4:35–41"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "galilee-sea-e1",
+          "title_en": "The call of the fishermen",
+          "title_fr": "L’appel des pêcheurs",
+          "reference": "Mark 1:16–20"
+        },
+        {
+          "id": "galilee-sea-e2",
+          "title_en": "Jesus calms the storm",
+          "title_fr": "Jésus apaise la tempête",
+          "reference": "Mark 4:35–41"
+        },
+        {
+          "id": "galilee-sea-e3",
+          "title_en": "Jesus walks upon the water",
+          "title_fr": "Jésus marche sur les eaux",
+          "reference": "Matthew 14:22–33"
+        },
+        {
+          "id": "galilee-sea-e4",
+          "title_en": "The risen Jesus appears by the lake",
+          "title_fr": "Jésus ressuscité apparaît au bord du lac",
+          "reference": "John 21:1–14"
+        }
+      ]
     },
     {
-      "id": "ein-karem",
+      "id": "beatitudes",
       "group": "CHRIST",
-      "title_en": "Judean hill country / Ein Karem",
-      "title_fr": "Montagnes de Judée / Aïn Karem",
-      "summary_en": "Mary visits Elizabeth in the Judean hills. Ein Karem is a later traditional identification, not a village named in Luke.",
-      "summary_fr": "Marie visite Élisabeth dans les monts de Judée. Aïn Karem est une identification traditionnelle, non un village nommé par Luc.",
-      "period_en": "Infancy narratives · date uncertain",
-      "period_fr": "Récits de l’Enfance · date incertaine",
-      "persons_en": "Mary, Elizabeth, John the Baptist",
-      "persons_fr": "Marie, Élisabeth, Jean-Baptiste",
+      "title_en": "Mount of the Beatitudes",
+      "title_fr": "Mont des Béatitudes",
+      "summary_en": "Jesus delivers the Sermon on the Mount, teaching the Beatitudes. Its present pilgrimage location is traditional.",
+      "summary_fr": "Jésus prononce le Sermon sur la montagne et enseigne les Béatitudes. Le lieu actuel de pèlerinage est traditionnel.",
+      "period_en": "Galilean ministry · first century AD",
+      "period_fr": "Ministère en Galilée · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, disciples",
+      "persons_fr": "Jésus, disciples",
       "passages": [
-        "Luke 1:39–45"
+        "Matthew 5:1–12",
+        "Matthew 5:13–48"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "beatitudes-e1",
+          "title_en": "The Beatitudes",
+          "title_fr": "Les Béatitudes",
+          "reference": "Matthew 5:1–12"
+        },
+        {
+          "id": "beatitudes-e2",
+          "title_en": "The Sermon on the Mount",
+          "title_fr": "Le Sermon sur la montagne",
+          "reference": "Matthew 5:13–48"
+        }
+      ]
     },
     {
-      "id": "olives",
+      "id": "nain",
       "group": "CHRIST",
-      "title_en": "Mount of Olives",
-      "title_fr": "Mont des Oliviers",
-      "summary_en": "Jesus approaches Jerusalem from the Mount of Olives; Acts associates the Ascension with this area.",
-      "summary_fr": "Jésus s’approche de Jérusalem par le mont des Oliviers ; les Actes associent l’Ascension à cette région.",
-      "period_en": "Passion and Resurrection · first century AD",
-      "period_fr": "Passion et Résurrection · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Apostles",
-      "persons_fr": "Jésus, Apôtres",
+      "title_en": "Nain",
+      "title_fr": "Naïm",
+      "summary_en": "Jesus restores to life the only son of a widow near the gate of Nain.",
+      "summary_fr": "Jésus rend la vie au fils unique d’une veuve près de la porte de Naïm.",
+      "period_en": "Galilean ministry · first century AD",
+      "period_fr": "Ministère en Galilée · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, widow of Nain",
+      "persons_fr": "Jésus, veuve de Naïm",
       "passages": [
-        "Luke 19:37–44",
-        "Acts 1:9–12"
+        "Luke 7:11–17"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "nain-e1",
+          "title_en": "The raising of the widow's son",
+          "title_fr": "La résurrection du fils de la veuve",
+          "reference": "Luke 7:11–17"
+        }
+      ]
+    },
+    {
+      "id": "tabgha",
+      "group": "CHRIST",
+      "title_en": "Tabgha / lakeside feeding",
+      "title_fr": "Tabgha / multiplication au bord du lac",
+      "summary_en": "The multiplication of loaves takes place by the Sea of Galilee; identifying Tabgha as the exact site is a later tradition.",
+      "summary_fr": "La multiplication des pains a lieu près du lac de Galilée ; l’identification précise avec Tabgha relève de la tradition.",
+      "period_en": "Galilean ministry · first century AD",
+      "period_fr": "Ministère en Galilée · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, disciples, crowd",
+      "persons_fr": "Jésus, disciples, foule",
+      "passages": [
+        "John 6:1–15"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "tabgha-e1",
+          "title_en": "The feeding of the multitude",
+          "title_fr": "La multiplication des pains",
+          "reference": "John 6:1–15"
+        }
+      ]
+    },
+    {
+      "id": "caesarea-philippi",
+      "group": "CHRIST",
+      "title_en": "Caesarea Philippi",
+      "title_fr": "Césarée de Philippe",
+      "summary_en": "Peter confesses Jesus as the Christ in the district of Caesarea Philippi.",
+      "summary_fr": "Pierre confesse que Jésus est le Christ dans la région de Césarée de Philippe.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Peter, Apostles",
+      "persons_fr": "Jésus, Pierre, Apôtres",
+      "passages": [
+        "Matthew 16:13–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "caesarea-philippi-e1",
+          "title_en": "Peter's confession of faith",
+          "title_fr": "La confession de foi de Pierre",
+          "reference": "Matthew 16:13–20"
+        }
+      ]
     },
     {
       "id": "transfiguration",
@@ -539,44 +674,332 @@
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "transfiguration-e1",
+          "title_en": "The Transfiguration",
+          "title_fr": "La Transfiguration",
+          "reference": "Matthew 17:1–8"
+        }
+      ]
     },
     {
-      "id": "nazareth",
+      "id": "bethany",
       "group": "CHRIST",
-      "title_en": "Nazareth",
-      "title_fr": "Nazareth",
-      "summary_en": "Gabriel announces the Incarnation to Mary in Nazareth. Jesus later teaches in the synagogue of the town.",
-      "summary_fr": "Gabriel annonce à Marie l’Incarnation à Nazareth. Jésus y enseigne ensuite dans la synagogue.",
-      "period_en": "Life of Christ · turn of the Christian era",
-      "period_fr": "Vie du Christ · autour du début de l’ère chrétienne",
-      "persons_en": "Mary, Jesus, Gabriel",
-      "persons_fr": "Marie, Jésus, Gabriel",
-      "passages": [
-        "Luke 1:26–38",
-        "Luke 4:16–21"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "galilee-sea",
-      "group": "CHRIST",
-      "title_en": "Sea of Galilee",
-      "title_fr": "Mer de Galilée",
-      "summary_en": "Jesus calls fishermen beside the lake, including Simon Peter and Andrew.",
-      "summary_fr": "Jésus appelle des pêcheurs au bord du lac, notamment Simon-Pierre et André.",
+      "title_en": "Bethany",
+      "title_fr": "Béthanie",
+      "summary_en": "Jesus raises Lazarus from the dead near Bethany, the village of Martha and Mary.",
+      "summary_fr": "Jésus ressuscite Lazare près de Béthanie, village de Marthe et Marie.",
       "period_en": "Public ministry · first century AD",
       "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Peter, Andrew",
-      "persons_fr": "Jésus, Pierre, André",
+      "persons_en": "Jesus, Lazarus, Martha, Mary",
+      "persons_fr": "Jésus, Lazare, Marthe, Marie",
       "passages": [
-        "Mark 1:16–20"
+        "John 11:1–44",
+        "John 12:1–8"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "bethany-e1",
+          "title_en": "The raising of Lazarus",
+          "title_fr": "La résurrection de Lazare",
+          "reference": "John 11:1–44"
+        },
+        {
+          "id": "bethany-e2",
+          "title_en": "The anointing at Bethany",
+          "title_fr": "L’onction à Béthanie",
+          "reference": "John 12:1–8"
+        }
+      ]
+    },
+    {
+      "id": "jericho",
+      "group": "CHRIST",
+      "title_en": "Jericho",
+      "title_fr": "Jéricho",
+      "summary_en": "Jesus heals a blind man near Jericho and calls Zacchaeus to a new life.",
+      "summary_fr": "Jésus guérit un aveugle près de Jéricho et appelle Zachée à une vie nouvelle.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Zacchaeus",
+      "persons_fr": "Jésus, Zachée",
+      "passages": [
+        "Luke 18:35–43",
+        "Luke 19:1–10"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "jericho-e1",
+          "title_en": "The healing of the blind man",
+          "title_fr": "La guérison de l’aveugle",
+          "reference": "Luke 18:35–43"
+        },
+        {
+          "id": "jericho-e2",
+          "title_en": "The conversion of Zacchaeus",
+          "title_fr": "La conversion de Zachée",
+          "reference": "Luke 19:1–10"
+        }
+      ]
+    },
+    {
+      "id": "sychar",
+      "group": "CHRIST",
+      "title_en": "Sychar / Jacob's Well",
+      "title_fr": "Sychar / puits de Jacob",
+      "summary_en": "Jesus speaks with a Samaritan woman at Jacob's well and reveals the nature of true worship.",
+      "summary_fr": "Jésus parle à une Samaritaine près du puits de Jacob et révèle la nature du véritable culte.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Samaritan woman",
+      "persons_fr": "Jésus, Samaritaine",
+      "passages": [
+        "John 4:4–26"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PUBLIC",
+      "events": [
+        {
+          "id": "sychar-e1",
+          "title_en": "Jesus and the Samaritan woman",
+          "title_fr": "Jésus et la Samaritaine",
+          "reference": "John 4:4–26"
+        }
+      ]
+    },
+    {
+      "id": "bethphage",
+      "group": "CHRIST",
+      "title_en": "Bethphage",
+      "title_fr": "Bethphagé",
+      "summary_en": "Jesus sends disciples for a colt near Bethphage before entering Jerusalem.",
+      "summary_fr": "Jésus envoie des disciples chercher un ânon près de Bethphagé avant d’entrer à Jérusalem.",
+      "period_en": "Holy Week · first century AD",
+      "period_fr": "Semaine sainte · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, disciples",
+      "persons_fr": "Jésus, disciples",
+      "passages": [
+        "Matthew 21:1–7"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PASSION",
+      "events": [
+        {
+          "id": "bethphage-e1",
+          "title_en": "Preparation for entry into Jerusalem",
+          "title_fr": "Préparatifs de l’entrée à Jérusalem",
+          "reference": "Matthew 21:1–7"
+        }
+      ]
+    },
+    {
+      "id": "olives",
+      "group": "CHRIST",
+      "title_en": "Mount of Olives",
+      "title_fr": "Mont des Oliviers",
+      "summary_en": "Jesus approaches Jerusalem from the Mount of Olives; Acts associates the Ascension with this area.",
+      "summary_fr": "Jésus s’approche de Jérusalem par le mont des Oliviers ; les Actes associent l’Ascension à cette région.",
+      "period_en": "Passion and Resurrection · first century AD",
+      "period_fr": "Passion et Résurrection · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Apostles",
+      "persons_fr": "Jésus, Apôtres",
+      "passages": [
+        "Luke 19:37–44",
+        "Mark 13:3–13"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PASSION",
+      "events": [
+        {
+          "id": "olives-e1",
+          "title_en": "The triumphal entry into Jerusalem",
+          "title_fr": "L’entrée triomphale à Jérusalem",
+          "reference": "Luke 19:37–44"
+        },
+        {
+          "id": "olives-e2",
+          "title_en": "The discourse on the last things",
+          "title_fr": "Le discours sur les fins dernières",
+          "reference": "Mark 13:3–13"
+        },
+        {
+          "id": "olives-e3",
+          "title_en": "The Ascension of Our Lord",
+          "title_fr": "L’Ascension de Notre-Seigneur",
+          "reference": "Acts 1:6–12"
+        }
+      ]
+    },
+    {
+      "id": "cenacle",
+      "group": "CHRIST",
+      "title_en": "Upper Room / Cenacle",
+      "title_fr": "Cénacle / salle haute",
+      "summary_en": "Jesus celebrates the Last Supper with his Apostles. The later Cenacle's identification is traditional.",
+      "summary_fr": "Jésus célèbre la dernière Cène avec ses Apôtres. L’identification du Cénacle actuel est traditionnelle.",
+      "period_en": "Holy Thursday and Resurrection appearances · first century AD",
+      "period_fr": "Jeudi saint et apparitions pascales · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Apostles",
+      "persons_fr": "Jésus, Apôtres",
+      "passages": [
+        "Luke 22:7–20",
+        "John 13:1–17"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PASSION",
+      "events": [
+        {
+          "id": "cenacle-e1",
+          "title_en": "The Last Supper and institution of the Eucharist",
+          "title_fr": "La dernière Cène et l’institution de l’Eucharistie",
+          "reference": "Luke 22:7–20"
+        },
+        {
+          "id": "cenacle-e2",
+          "title_en": "The washing of the feet",
+          "title_fr": "Le lavement des pieds",
+          "reference": "John 13:1–17"
+        },
+        {
+          "id": "cenacle-e3",
+          "title_en": "The risen Lord appears to the Apostles",
+          "title_fr": "Le Ressuscité apparaît aux Apôtres",
+          "reference": "John 20:19–29"
+        }
+      ]
+    },
+    {
+      "id": "gethsemane",
+      "group": "CHRIST",
+      "title_en": "Gethsemane",
+      "title_fr": "Gethsémani",
+      "summary_en": "Jesus prays in Gethsemane before his arrest; the traditional garden forms part of a larger pilgrimage area.",
+      "summary_fr": "Jésus prie à Gethsémani avant son arrestation ; le jardin traditionnel appartient à un ensemble de lieux de pèlerinage.",
+      "period_en": "Passion · first century AD",
+      "period_fr": "Passion · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Peter, James, John",
+      "persons_fr": "Jésus, Pierre, Jacques, Jean",
+      "passages": [
+        "Matthew 26:36–46",
+        "Matthew 26:47–56"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PASSION",
+      "events": [
+        {
+          "id": "gethsemane-e1",
+          "title_en": "The agony in the garden",
+          "title_fr": "L’agonie au jardin",
+          "reference": "Matthew 26:36–46"
+        },
+        {
+          "id": "gethsemane-e2",
+          "title_en": "The arrest of Jesus",
+          "title_fr": "L’arrestation de Jésus",
+          "reference": "Matthew 26:47–56"
+        }
+      ]
+    },
+    {
+      "id": "jerusalem-trial",
+      "group": "CHRIST",
+      "title_en": "Jerusalem — the trials of Jesus",
+      "title_fr": "Jérusalem — les procès de Jésus",
+      "summary_en": "Jesus is questioned by the Jewish authorities and brought before Pilate. The precise sites of some hearings are disputed.",
+      "summary_fr": "Jésus est interrogé par les autorités juives et conduit devant Pilate. Le lieu précis de certaines audiences demeure discuté.",
+      "period_en": "Passion · first century AD",
+      "period_fr": "Passion · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, high priest, Pilate",
+      "persons_fr": "Jésus, grand prêtre, Pilate",
+      "passages": [
+        "Matthew 26:57–68",
+        "Matthew 27:11–26"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PASSION",
+      "events": [
+        {
+          "id": "jerusalem-trial-e1",
+          "title_en": "Jesus before the high priest",
+          "title_fr": "Jésus devant le grand prêtre",
+          "reference": "Matthew 26:57–68"
+        },
+        {
+          "id": "jerusalem-trial-e2",
+          "title_en": "Jesus before Pilate",
+          "title_fr": "Jésus devant Pilate",
+          "reference": "Matthew 27:11–26"
+        },
+        {
+          "id": "jerusalem-trial-e3",
+          "title_en": "The scourging and crowning with thorns",
+          "title_fr": "La flagellation et le couronnement d’épines",
+          "reference": "John 19:1–16"
+        }
+      ]
+    },
+    {
+      "id": "golgotha",
+      "group": "CHRIST",
+      "title_en": "Golgotha / Calvary",
+      "title_fr": "Golgotha / Calvaire",
+      "summary_en": "Christ is crucified at Golgotha, traditionally venerated within the Church of the Holy Sepulchre.",
+      "summary_fr": "Le Christ est crucifié au Golgotha, traditionnellement vénéré dans l’église du Saint-Sépulcre.",
+      "period_en": "Passion · first century AD",
+      "period_fr": "Passion · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Mary, John",
+      "persons_fr": "Jésus, Marie, Jean",
+      "passages": [
+        "Luke 23:26–32",
+        "John 19:17–30"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "PASSION",
+      "events": [
+        {
+          "id": "golgotha-e1",
+          "title_en": "The way to Calvary",
+          "title_fr": "Le chemin du Calvaire",
+          "reference": "Luke 23:26–32"
+        },
+        {
+          "id": "golgotha-e2",
+          "title_en": "The Crucifixion and death of Jesus",
+          "title_fr": "La Crucifixion et la mort de Jésus",
+          "reference": "John 19:17–30"
+        },
+        {
+          "id": "golgotha-e3",
+          "title_en": "Jesus and the good thief",
+          "title_fr": "Jésus et le bon larron",
+          "reference": "Luke 23:39–43"
+        }
+      ]
     },
     {
       "id": "christ-tomb",
@@ -590,11 +1013,60 @@
       "persons_en": "Jesus, Mary Magdalene, Peter",
       "persons_fr": "Jésus, Marie-Madeleine, Pierre",
       "passages": [
+        "John 19:38–42",
         "John 20:1–18"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
-      "published": true
+      "published": true,
+      "phase": "RESURRECTION",
+      "events": [
+        {
+          "id": "christ-tomb-e1",
+          "title_en": "The burial of Jesus",
+          "title_fr": "La sépulture de Jésus",
+          "reference": "John 19:38–42"
+        },
+        {
+          "id": "christ-tomb-e2",
+          "title_en": "The empty tomb and Mary Magdalene",
+          "title_fr": "Le tombeau vide et Marie-Madeleine",
+          "reference": "John 20:1–18"
+        },
+        {
+          "id": "christ-tomb-e3",
+          "title_en": "The angel announces the Resurrection",
+          "title_fr": "L’ange annonce la Résurrection",
+          "reference": "Matthew 28:1–10"
+        }
+      ]
+    },
+    {
+      "id": "emmaus",
+      "group": "CHRIST",
+      "title_en": "Emmaus",
+      "title_fr": "Emmaüs",
+      "summary_en": "The risen Christ walks toward Emmaus with two disciples, who recognize him at the breaking of bread. Several modern sites are proposed.",
+      "summary_fr": "Le Christ ressuscité marche vers Emmaüs avec deux disciples, qui le reconnaissent à la fraction du pain. Plusieurs sites actuels sont proposés.",
+      "period_en": "Resurrection · first century AD",
+      "period_fr": "Résurrection · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Cleopas",
+      "persons_fr": "Jésus, Cléophas",
+      "passages": [
+        "Luke 24:13–35"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true,
+      "phase": "RESURRECTION",
+      "events": [
+        {
+          "id": "emmaus-e1",
+          "title_en": "The risen Jesus walks to Emmaus",
+          "title_fr": "Le Ressuscité marche vers Emmaüs",
+          "reference": "Luke 24:13–35"
+        }
+      ]
     },
     {
       "id": "antioch",
@@ -609,24 +1081,6 @@
       "persons_fr": "Paul, Barnabé",
       "passages": [
         "Acts 11:19–26"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "caesarea",
-      "group": "APOSTLES",
-      "title_en": "Caesarea Maritima",
-      "title_fr": "Césarée maritime",
-      "summary_en": "Peter visits Cornelius at Caesarea, marking a crucial stage in the mission to the Gentiles.",
-      "summary_fr": "Pierre rend visite à Corneille à Césarée, étape majeure de la mission auprès des païens.",
-      "period_en": "Early Church · first century AD",
-      "period_fr": "Église primitive · Ier siècle ap. J.-C.",
-      "persons_en": "Peter, Cornelius",
-      "persons_fr": "Pierre, Corneille",
-      "passages": [
-        "Acts 10:1–48"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -669,60 +1123,6 @@
       "published": true
     },
     {
-      "id": "ephesus",
-      "group": "APOSTLES",
-      "title_en": "Ephesus",
-      "title_fr": "Éphèse",
-      "summary_en": "Paul teaches in Ephesus, where his mission prompts opposition connected with the cult of Artemis.",
-      "summary_fr": "Paul enseigne à Éphèse, où sa mission suscite une opposition liée au culte d’Artémis.",
-      "period_en": "Apostolic missions · first century AD",
-      "period_fr": "Missions apostoliques · Ier siècle ap. J.-C.",
-      "persons_en": "Paul",
-      "persons_fr": "Paul",
-      "passages": [
-        "Acts 19:1–20"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "joppa",
-      "group": "APOSTLES",
-      "title_en": "Joppa / Jaffa",
-      "title_fr": "Joppé / Jaffa",
-      "summary_en": "Peter raises Tabitha at Joppa and receives visitors sent by Cornelius.",
-      "summary_fr": "Pierre ressuscite Tabitha à Joppé et reçoit des visiteurs envoyés par Corneille.",
-      "period_en": "Early Church · first century AD",
-      "period_fr": "Église primitive · Ier siècle ap. J.-C.",
-      "persons_en": "Peter, Tabitha",
-      "persons_fr": "Pierre, Tabitha",
-      "passages": [
-        "Acts 9:36–43"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "philippi",
-      "group": "APOSTLES",
-      "title_en": "Philippi",
-      "title_fr": "Philippes",
-      "summary_en": "Paul and Silas preach in Philippi; Lydia is baptized and the two missionaries are imprisoned.",
-      "summary_fr": "Paul et Silas prêchent à Philippes ; Lydie reçoit le baptême et les deux missionnaires sont emprisonnés.",
-      "period_en": "Apostolic journeys · first century AD",
-      "period_fr": "Voyages apostoliques · Ier siècle ap. J.-C.",
-      "persons_en": "Paul, Silas, Lydia",
-      "persons_fr": "Paul, Silas, Lydie",
-      "passages": [
-        "Acts 16:11–40"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
       "id": "rome",
       "group": "APOSTLES",
       "title_en": "Rome",
@@ -740,5 +1140,15 @@
       "source_type": "SCRIPTURE",
       "published": true
     }
-  ]
+  ],
+  "christ_event_coverage": {
+    "phase_counts": {
+      "INFANCY": 5,
+      "PUBLIC": 13,
+      "PASSION": 6,
+      "RESURRECTION": 2
+    },
+    "event_count": 52,
+    "qualification": "Covers major narratively distinct events of Christ's life, not literally every Gospel pericope; some sites are traditional, disputed or collective regions."
+  }
 }
