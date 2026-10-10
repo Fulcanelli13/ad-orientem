@@ -349,6 +349,16 @@ export function mountFullMassPreflight({
     selectionFor,
     composeRitesFor,
     openCategory,
+    selectForm(value){
+      if(!MASS_FORMS.includes(value))throw new Error("MASS_FORM_UNKNOWN");
+      const current=selectionFor(getResolvedMass());
+      if(!current.formChangeAllowed)throw new Error("DISTINCT_LITURGY_NOT_A_MASS_FORM");
+      selected=value;explicit=true;refresh();return true;
+    },
+    selectReaderMode(value){
+      if(!["LIVE","SIMPLE","MISSAL"].includes(value))throw new Error("READER_MODE_UNKNOWN");
+      selectedMode=value;explicitMode=true;refresh();return true;
+    },
     refresh,
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
