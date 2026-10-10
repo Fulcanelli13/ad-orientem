@@ -1,0 +1,119 @@
+name: Sacred art — full museum harvest and checksum reconciliation
+
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - ".github/workflows/sacred-art-full-harvest.yml"
+      - "tools/calendar/reconcile-sacred-art-full-harvest.py"
+      - "tools/calendar/acquire-artic-bulk.py"
+      - "tools/calendar/acquire-nga-bulk-open-data.py"
+      - "tools/calendar/acquire-sacred-art-wide.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-full-harvest
+  cancel-in-progress: true
+
+jobs:
+  wide:
+    name: Museum harvest / ${{ matrix.group }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        group: [rosary, devotion, calendar, scripture, persons]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image checks
+        run: python -m pip install Pillow numpy
+      - name: Collect verified Met/Cleveland source originals
+        run: python tools/calendar/acquire-sacred-art-wide.py --group "${{ matrix.group }}" --max-originals 80
+      - name: Preserve source image bytes, checksums, failed-target records and contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-full-wide-${{ matrix.group }}
+          path: artifacts/sacred-art-wide/${{ matrix.group }}/
+          retention-days: 30
+          if-no-files-found: warn
+
+  nga:
+    name: NGA bulk / all remaining canonical subject types
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image checks
+        run: python -m pip install Pillow
+      - name: Collect NGA Painting/openaccess=1 original files
+        run: python tools/calendar/acquire-nga-bulk-open-data.py
+      - name: Preserve NGA image bytes and source ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-full-nga
+          path: artifacts/sacred-art-nga-bulk/
+          retention-days: 30
+          if-no-files-found: warn
+
+  artic:
+    name: Art Institute of Chicago / public-domain paintings
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image checks
+        run: python -m pip install Pillow
+      - name: Research verified painting objects, download official IIIF files one at a time
+        run: python tools/calendar/acquire-artic-bulk.py
+      - name: Preserve originals, checksums, all search results and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-full-artic
+          path: artifacts/sacred-art-artic-bulk/
+          retention-days: 30
+          if-no-files-found: warn
+
+  reconcile:
+    name: All six lanes / SHA-256 and deduplication
+    needs: [wide, nga, artic]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download seven harvest artifacts (missing lanes reported explicitly)
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sacred-art-full-*
+          path: artifacts/sacred-art-harvest
+          merge-multiple: false
+      - name: Recalculate SHA-256 from actual archived bytes; classify new versus duplicate
+        run: python tools/calendar/reconcile-sacred-art-full-harvest.py
+      - name: Preserve honest consolidated counts and reconciled proposed-original manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-full-reconciliation
+          path: artifacts/sacred-art-harvest-reconciliation/
+          retention-days: 30
+          if-no-files-found: warn

@@ -1,0 +1,205 @@
+{
+  "schema": "AO_SACRED_ART_LITURGICAL_PRIORITY_V1",
+  "ownerIssue": 885,
+  "createdOn": "2026-10-10",
+  "intent": "Liturgical-calendar-first source acquisition and coverage, without changing the live artwork selector.",
+  "authority": {
+    "liturgicalRank": "1960 Rubricae Generales nn. 6-8, 9-12, 21-27, 35-62, 91-99; observed 1962 DayResolver principal, not nominal civil feast title",
+    "liturgicalNormsUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=597",
+    "obligation": "Current canon 1246 and valid territorial norms, independent from the 1962 Roman Missal rank",
+    "obligationNormsUrl": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html"
+  },
+  "editorialSequence": [
+    {
+      "stage": 1,
+      "id": "major_feasts",
+      "label": "Principal feasts and major seasons",
+      "description": "Prioritise named high-importance celebrations, proper subjects and Holy Week; verify each date against the observed 1962 principal."
+    },
+    {
+      "stage": 2,
+      "id": "holy_days_of_obligation",
+      "label": "Sundays and territorially obligatory feasts",
+      "description": "Second visibility/priority overlay; do not infer obligation from 1962 rank or from a list absent a verified jurisdiction."
+    },
+    {
+      "stage": 3,
+      "id": "remaining_class_i",
+      "label": "Every remaining observed I-class day",
+      "description": "Mandatory one or more truly relevant original(s) for each observed I-class day, including Sundays and privileged ferias. Explicit source identity or appointed reading evidence required."
+    },
+    {
+      "stage": 4,
+      "id": "app_modules",
+      "label": "Pray, Formation, Scripture, Rosary, Stations, saints and devotions",
+      "description": "Keep existing module targets, sharing each artwork identity rather than duplicating image files or painted-subject records."
+    },
+    {
+      "stage": 5,
+      "id": "observed_class_ii",
+      "label": "Observed II-class days",
+      "description": "After I-class and modules, include Sundays, feasts, privileged ferias and vigils; not just saints."
+    },
+    {
+      "stage": 6,
+      "id": "observed_class_iii",
+      "label": "Observed III-class days",
+      "description": "Prioritise saints and distinctive appointed readings after II-class coverage."
+    },
+    {
+      "stage": 7,
+      "id": "observed_class_iv",
+      "label": "Observed IV-class days",
+      "description": "Mostly ferias; use carefully labelled seasonal/scriptural fallbacks, not invented IV-class saints."
+    }
+  ],
+  "requiredOriginalsPerObservedClassIDay": 1,
+  "idealOriginalsForFrequentlySeenMajorFeasts": 3,
+  "exactSubjectSelection": [
+    "verified observed principal",
+    "verified appointed Gospel",
+    "verified appointed Epistle/lesson",
+    "clearly labelled traditional devotional association",
+    "labelled seasonal fallback"
+  ],
+  "releaseRule": "Every counted source is an actual hashed acquired original and separately licensed. Source availability is not artistic, crop, rights or publication approval. Seasonal fallback never satisfies exact-feast coverage.",
+  "majorCalendarSubjectIds": [
+    "calendar.advent",
+    "calendar.christmas",
+    "calendar.epiphany",
+    "calendar.septuagesima",
+    "calendar.lent",
+    "calendar.passion",
+    "calendar.easter",
+    "calendar.ascension",
+    "calendar.pentecost",
+    "calendar.after-pentecost",
+    "calendar.holy-thursday",
+    "calendar.good-friday",
+    "calendar.holy-saturday",
+    "calendar.palm-sunday",
+    "calendar.christmas-eve",
+    "calendar.candlemas",
+    "calendar.holy-innocents",
+    "calendar.all-saints",
+    "calendar.all-souls",
+    "calendar.st-john-baptist",
+    "calendar.transfiguration",
+    "calendar.trinity",
+    "calendar.christ-king",
+    "calendar.corpus-christi",
+    "calendar.sacred-heart",
+    "calendar.assumption",
+    "calendar.annunciation",
+    "calendar.immaculate-conception",
+    "calendar.saint-joseph",
+    "calendar.holy-rosary",
+    "calendar.our-lady-sorrows"
+  ],
+  "obligationCandidates": [
+    {
+      "key": "sunday",
+      "label": "All Sundays",
+      "status": "UNIVERSAL_OBLIGATION",
+      "canonicalLaw": "canon 1246 §1",
+      "note": "The Sunday obligation applies universally; the observed 1962 liturgical day may have a feast as its principal."
+    },
+    {
+      "key": "nativity",
+      "label": "Christmas",
+      "calendarTargetId": "calendar.christmas"
+    },
+    {
+      "key": "epiphany",
+      "label": "Epiphany",
+      "calendarTargetId": "calendar.epiphany"
+    },
+    {
+      "key": "ascension",
+      "label": "Ascension",
+      "calendarTargetId": "calendar.ascension"
+    },
+    {
+      "key": "corpus_christi",
+      "label": "Corpus Christi",
+      "calendarTargetId": "calendar.corpus-christi"
+    },
+    {
+      "key": "mother_of_god_jan1",
+      "label": "1 January (current obligation: Mary, Mother of God; traditional 1962 Proper: Octave Day of Christmas)",
+      "calendarTargetId": "calendar.christmas"
+    },
+    {
+      "key": "immaculate_conception",
+      "label": "Immaculate Conception",
+      "calendarTargetId": "calendar.immaculate-conception"
+    },
+    {
+      "key": "assumption",
+      "label": "Assumption",
+      "calendarTargetId": "calendar.assumption"
+    },
+    {
+      "key": "st_joseph",
+      "label": "Saint Joseph",
+      "calendarTargetId": "calendar.saint-joseph"
+    },
+    {
+      "key": "peter_paul",
+      "label": "Saints Peter and Paul",
+      "calendarTargetId": null
+    },
+    {
+      "key": "all_saints",
+      "label": "All Saints",
+      "calendarTargetId": "calendar.all-saints"
+    }
+  ],
+  "obligationPolicy": "Apart from Sundays, canonical candidates are not a claim of current obligation in Mauritius, France or any other jurisdiction. Obtain diocesan/bishops conference territorial law, suspension/transfer rules and year before asserting any location-specific obligatory date. A 1962 liturgical principal and a current obligation title may differ.",
+  "evidenceGate": {
+    "classRank": "production resolved day.day.main rank plus canonical observed source ID",
+    "exactDayArt": "artwork.tags.observed1962Identifiers includes the resolved principal ID, verified subject/appointed readings",
+    "noFalseCompleteness": "An unverified seasonal, title or theme match cannot meet the class I daily minimum",
+    "independentYearAudit": "artifacts/calendar-oracle/1962-2026-full-year-audit.json",
+    "originalCorpus": "data/calendar/sacred-art-candidates.v1.json",
+    "canonicalSubjectTargets": [
+      "data/calendar/sacred-art-subject-targets.v2.json",
+      "data/learn/sacred-art-formation-targets.v1.json"
+    ]
+  },
+  "majorFeastsAndPrincipalDays": [
+    "calendar.christmas",
+    "calendar.epiphany",
+    "calendar.easter",
+    "calendar.ascension",
+    "calendar.pentecost",
+    "calendar.holy-thursday",
+    "calendar.good-friday",
+    "calendar.holy-saturday",
+    "calendar.palm-sunday",
+    "calendar.christmas-eve",
+    "calendar.candlemas",
+    "calendar.holy-innocents",
+    "calendar.all-saints",
+    "calendar.all-souls",
+    "calendar.st-john-baptist",
+    "calendar.transfiguration",
+    "calendar.trinity",
+    "calendar.christ-king",
+    "calendar.corpus-christi",
+    "calendar.sacred-heart",
+    "calendar.assumption",
+    "calendar.annunciation",
+    "calendar.immaculate-conception",
+    "calendar.saint-joseph",
+    "calendar.holy-rosary",
+    "calendar.our-lady-sorrows"
+  ],
+  "majorSeasonSupport": [
+    "calendar.advent",
+    "calendar.septuagesima",
+    "calendar.lent",
+    "calendar.passion",
+    "calendar.after-pentecost"
+  ]
+}

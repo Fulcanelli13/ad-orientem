@@ -66,11 +66,20 @@ try{
     const chunk=dates.slice(offset,offset+12);
     const response=await page.evaluate(async ids=>{
       const resolver=globalThis.AO_RUNTIME_V8?.resolver;
+      const scriptureOwner=await import("./src/calendar/scripture-handoff.js");
       if(!resolver||typeof resolver.resolveDay!=="function")throw Error("Production day resolver unavailable");
       return Promise.all(ids.map(async date=>{
         try{
           const r=await resolver.resolveDay(date);
           const d=r?.day?.main||{},p=r?.proper?.data||{};
+          let scriptureContexts=[];
+          try{
+            scriptureContexts=scriptureOwner.calendarScriptureContexts(r).map(x=>({
+              slot:x.slot,reference:x.reference,sourceReference:x.sourceReference,
+              passage:x.passage?.book?{book:x.passage.book,chapter:x.passage.chapter,verseStart:x.passage.verseStart,verseEnd:x.passage.verseEnd}:null,
+              witnessUrl:x.witnessUrl||null,properSourcePath:r?.proper?.sourcePath||p.sourcePath||null
+            }));
+          }catch(error){scriptureContexts=[];}
           const commRaw=r?.day?.commemorations||d.commemorations||r?.commemorations||[];
           const comms=(Array.isArray(commRaw)?commRaw:[commRaw]).map(x=>
             typeof x==="string"?x:String(x?.title||x?.name||x?.titleFr||x?.id||"")).filter(Boolean);
@@ -80,6 +89,7 @@ try{
             provenance:{dayTitle:d.title??null,dayColour:d.color??d.colour??null,properTitle:p.name??p.title?.en??null,properColour:p.color??p.colour??null,colourPlan:r?.colourPlan??null,dayCommemorations:d.commemorations??null,properCommemorations:p.commemorations??null},
             rawRank:p.rank??d.rank??null,rawColour:(/^tempora:Quad6-5r:/.test(String(d.id??""))?r?.colourPlan?.primary:r?.colourPlan?.massColor)??p.color??p.colour??d.color??d.colour??r?.colourPlan?.name??null,
             commemorations:comms,properStatus:String(r?.proper?.status||""),
+            scriptureContexts,
             composition:{
               commemorations:(p.calendarCommemorations||[]).map(x=>({name:x.name,path:x.path,prayerSourcePath:x.prayerSourcePath||null,rank:x.rank})),
               collects:(p.collects||[]).length,secrets:(p.secrets||[]).length,

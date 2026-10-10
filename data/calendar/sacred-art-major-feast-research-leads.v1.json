@@ -1,0 +1,396 @@
+{
+  "schema": "AO_SACRED_ART_MAJOR_FEAST_RESEARCH_LEADS_V1",
+  "createdOn": "2026-10-10",
+  "issue": 885,
+  "status": "SOURCE_PAGE_CONFIRMED_DOWNLOAD_AND_RIGHTS_PENDING",
+  "warnings": [
+    "Official museum/foundation object identity and painted medium verified at source page, but original image bytes/hash have not been downloaded or accepted.",
+    "Kress labels the original object image Public Domain; retain separate jurisdiction/reproduction rights review and do not claim CC0.",
+    "All acquired assets remain excluded from app and master registry until post-run reconciliation and artistic approval.",
+    "Contextual saint portraits or Last Judgment are NOT feast-specific for John Baptist Nativity, All Saints, or All Souls."
+  ],
+  "leads": [
+    {
+      "id": "kress-k2017",
+      "targetIds": [
+        "calendar.palm-sunday"
+      ],
+      "relation": "EXACT",
+      "title": "The Entry into Jerusalem",
+      "artist": "Maestro Bartolomé",
+      "date": "1480–88",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2017_3223_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "kress-k2016",
+      "targetIds": [
+        "calendar.transfiguration",
+        "rosary.lum4",
+        "scripture.transfiguration"
+      ],
+      "relation": "EXACT",
+      "title": "The Transfiguration",
+      "artist": "Maestro Bartolomé",
+      "date": "c. 1493–95",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2016_3222_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "kress-k1782",
+      "targetIds": [
+        "calendar.holy-innocents"
+      ],
+      "relation": "EXACT",
+      "title": "The Massacre of the Innocents",
+      "artist": "Follower of Raphael",
+      "date": "early 16th century",
+      "medium": "tempera on panel",
+      "museum": "Samuel H. Kress Foundation / Mead Art Museum",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f65fe27049161fdc04c5696d3b01d6c1f5a32680a87bfcb99d76bf69b39b7cb0",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k1782_3052_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "met-438462",
+      "targetIds": [
+        "calendar.holy-innocents"
+      ],
+      "relation": "EXACT",
+      "title": "The Massacre of the Innocents",
+      "artist": "François Joseph Navez",
+      "date": "1824",
+      "medium": "oil on canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438462",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438462",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED"
+    },
+    {
+      "id": "kress-k0355",
+      "targetIds": [
+        "calendar.st-john-baptist",
+        "person.john-baptist"
+      ],
+      "relation": "CONTEXTUAL_SAINT_NOT_NATIVITY_OR_MARTYRDOM",
+      "title": "Saint John the Baptist",
+      "artist": "Vittore Carpaccio",
+      "date": "c. 1490",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / Philbrook Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/61fd2920fc2ebf20a1fbb4205b36bbcea5a7707d09dcff52a61f0d55e9b4abf5",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k0355_3451_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "kress-k2027",
+      "targetIds": [
+        "calendar.all-saints",
+        "calendar.all-souls",
+        "formation.death-judgment"
+      ],
+      "relation": "CONTEXTUAL_LAST_JUDGMENT_NOT_FEAST_PROPER",
+      "title": "The Last Judgment",
+      "artist": "Fernando Gallego and Workshop",
+      "date": "1480–88",
+      "medium": "oil on panel",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/5cfc10f4fb81dd90a2088e868b50f68a66c11fc3525daa2e5b3c7530fa82d82f",
+      "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2027_3233_001.jpg",
+      "rights": "PUBLIC_DOMAIN_FOUNDATION_REUSE_REVIEW_HOLD"
+    },
+    {
+      "id": "met-442491",
+      "targetIds": [
+        "person.peter",
+        "person.paul",
+        "first-class.2026-06-29"
+      ],
+      "relation": "EXACT",
+      "title": "Saints Peter and Paul",
+      "artist": "Bartolomeo Manfredi",
+      "date": "1620s",
+      "medium": "oil on canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442491",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/442491",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED"
+    },
+    {
+      "id": "met-437336",
+      "targetIds": [
+        "calendar.holy-rosary"
+      ],
+      "relation": "DOCUMENTED_ROSARY_INSTITUTION",
+      "title": "Madonna and Child with Saints Francis and Dominic and Angels",
+      "artist": "Giulio Cesare Procaccini",
+      "date": "ca. 1612",
+      "medium": "oil on canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437336",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437336",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Museum curatorial description connects the altarpiece to the Institution of the Rosary and Saint Dominic; painting does not depict every mystery."
+    },
+    {
+      "id": "met-436578",
+      "targetIds": [
+        "calendar.all-saints"
+      ],
+      "relation": "EXACT",
+      "title": "All Saints",
+      "artist": "Greek Painter",
+      "date": "possibly 18th century",
+      "medium": "tempera on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436578",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436578",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED"
+    },
+    {
+      "id": "met-437578",
+      "targetIds": [
+        "calendar.christ-king",
+        "devotion.christ-king"
+      ],
+      "relation": "SYMBOLIC_MAJESTY_NOT_EXACT_FEAST",
+      "title": "Christ in Glory",
+      "artist": "Russian (Novgorod?) Painter",
+      "date": "late 15th century",
+      "medium": "tempera on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437578",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437578",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Glorified Christ is thematic iconography; does not substantiate a specific 1962 Christ-the-King feast artwork."
+    },
+    {
+      "id": "met-437216",
+      "targetIds": [
+        "calendar.holy-rosary",
+        "devotion.litanies"
+      ],
+      "relation": "EXACT_FIFTEEN_MYSTERIES_AND_VIRGIN_OF_ROSARY",
+      "title": "The Fifteen Mysteries and the Virgin of the Rosary",
+      "artist": "Netherlandish (Brussels) Painter",
+      "date": "ca. 1515–20",
+      "medium": "oil on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437216",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437216",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Curatorial museum text identifies the fifteen traditional mysteries and the Virgin of the Rosary."
+    },
+    {
+      "id": "met-437566",
+      "targetIds": [
+        "calendar.palm-sunday"
+      ],
+      "relation": "EXACT",
+      "title": "Christ's Entry into Jerusalem",
+      "artist": "Russian Painter",
+      "date": "probably 17th century",
+      "medium": "tempera on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437566",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437566",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED"
+    },
+    {
+      "id": "met-458984",
+      "targetIds": [
+        "calendar.st-john-baptist"
+      ],
+      "relation": "EXACT_NATIVITY",
+      "title": "The Birth and Naming of Saint John the Baptist",
+      "artist": "Sano di Pietro",
+      "date": "ca. 1450–55",
+      "medium": "tempera and gold on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/458984",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458984",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED"
+    },
+    {
+      "id": "met-438467",
+      "targetIds": [
+        "calendar.st-john-baptist"
+      ],
+      "relation": "EXACT_NATIVITY",
+      "title": "The Birth and Naming of Saint John the Baptist; (reverse) Trompe-l'oeil with Painting of The Man of Sorrows",
+      "artist": "Bernard van Orley",
+      "date": "ca. 1514–15",
+      "medium": "oil on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438467",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438467",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED"
+    },
+    {
+      "id": "met-436567",
+      "targetIds": [
+        "calendar.st-john-baptist"
+      ],
+      "relation": "EXACT_NATIVITY_AMONG_SCENES",
+      "title": "Scenes from the Life of Saint John the Baptist",
+      "artist": "Francesco Granacci",
+      "date": "ca. 1506–7",
+      "medium": "tempera, oil, and gold on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436567",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436567",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Museum provenance specifically identifies a birth scene in narrative multi-scene panels."
+    },
+    {
+      "id": "met-437821",
+      "targetIds": [
+        "scripture.feeding-five-thousand",
+        "first-class.2026-03-15",
+        "calendar.lent"
+      ],
+      "relation": "EXACT_APPOINTED_GOSPEL_FIVE_THOUSAND_NOT_FOUR_THOUSAND",
+      "title": "The Miracle of the Loaves and Fishes",
+      "artist": "Jacopo Tintoretto",
+      "date": "ca. 1545–50",
+      "medium": "oil on canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437821",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437821",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object text expressly identifies feeding of five thousand; John 6:1-15 is the appointed Gospel on 2026-03-15. Wide horizontal original requires later mobile crop audit."
+    },
+    {
+      "id": "met-458963",
+      "targetIds": [
+        "person.agnes",
+        "person.lucy",
+        "person.peter",
+        "person.paul",
+        "person.john-baptist",
+        "person.catherine-alexandria",
+        "calendar.annunciation"
+      ],
+      "relation": "MULTI_SAINT_COMPOSITE_SEPARATE_SCENES_NOT_EXACT_SINGLE_SAINT_PORTRAIT",
+      "title": "Madonna and Child Enthroned with Saint John the Evangelist, Saint Peter, Saint Agnes, Saint Catherine of Alexandria, Saint Lucy, an Unidentified Female Saint, Saint Paul, and Saint John the Baptist, with Eve and the Serpent; the Annunciation",
+      "artist": "Paolo di Giovanni Fei",
+      "date": "1390s",
+      "medium": "paint on panel or canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/458963",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458963",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object page identifies historic painting; literal object title must match official API, which independently verifies public-domain CC0 eligibility and source full resolution before accession."
+    },
+    {
+      "id": "met-437910",
+      "targetIds": [
+        "person.jerome",
+        "first-class.2026-09-30"
+      ],
+      "relation": "DIRECT_TITULAR_SAINT",
+      "title": "Saint Jerome",
+      "artist": "Workshop of Antonio Vivarini",
+      "date": "1440s",
+      "medium": "paint on panel or canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437910",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437910",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object page identifies historic painting; literal object title must match official API, which independently verifies public-domain CC0 eligibility and source full resolution before accession."
+    },
+    {
+      "id": "met-436908",
+      "targetIds": [
+        "person.catherine-alexandria",
+        "observed.2026-11-25"
+      ],
+      "relation": "DIRECT_CATHERINE_ALEXANDRIA_NOT_CATHERINE_SIENA",
+      "title": "Saint Catherine of Alexandria",
+      "artist": "Pietro Lorenzetti",
+      "date": "ca. 1342",
+      "medium": "paint on panel or canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436908",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436908",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object page identifies historic painting; literal object title must match official API, which independently verifies public-domain CC0 eligibility and source full resolution before accession."
+    },
+    {
+      "id": "met-438134",
+      "targetIds": [
+        "person.catherine-alexandria",
+        "observed.2026-11-25"
+      ],
+      "relation": "DIRECT_CATHERINE_ALEXANDRIA_PRISON_MARTYRDOM_NOT_CATHERINE_SIENA",
+      "title": "Saint Catherine of Alexandria in Prison",
+      "artist": "Paolo Veronese (Paolo Caliari)",
+      "date": "ca. 1585",
+      "medium": "paint on panel or canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438134",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/438134",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object page identifies historic painting; literal object title must match official API, which independently verifies public-domain CC0 eligibility and source full resolution before accession."
+    },
+    {
+      "id": "met-435900",
+      "targetIds": [
+        "calendar.christmas",
+        "person.catherine-alexandria"
+      ],
+      "relation": "PRIMARY_CHRISTMAS_SCENE_CATHERINE_ALEXANDRIA_ADDITIONAL_HISTORICAL_SAINT",
+      "title": "The Adoration of the Shepherds with Saint Catherine of Alexandria",
+      "artist": "Cigoli (Ludovico Cardi)",
+      "date": "1599",
+      "medium": "paint on panel or canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/435900",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435900",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object page identifies historic painting; literal object title must match official API, which independently verifies public-domain CC0 eligibility and source full resolution before accession."
+    },
+    {
+      "id": "met-435861",
+      "targetIds": [
+        "person.catherine-alexandria"
+      ],
+      "relation": "DIRECT_CATHERINE_ALEXANDRIA_NOT_CATHERINE_SIENA",
+      "title": "Saint Catherine of Alexandria",
+      "artist": "Workshop of Bernardo Cavallino",
+      "date": null,
+      "medium": "paint on panel or canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/435861",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435861",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object page identifies historic painting; literal object title must match official API, which independently verifies public-domain CC0 eligibility and source full resolution before accession."
+    },
+    {
+      "id": "met-435863",
+      "targetIds": [
+        "person.catherine-alexandria"
+      ],
+      "relation": "CATHERINE_ALEXANDRIA_DISPUTATION_NOT_CATHERINE_SIENA",
+      "title": "Saint Catherine Disputing and Two Donors",
+      "artist": "Cenni di Francesco di Ser Cenni",
+      "date": "possibly ca. 1380",
+      "medium": "paint on panel or canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/435863",
+      "metadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435863",
+      "rights": "CC0_MUSEUM_OBJECT_API_CHECK_REQUIRED",
+      "evidence": "Official Met object page identifies historic painting; literal object title must match official API, which independently verifies public-domain CC0 eligibility and source full resolution before accession."
+    }
+  ],
+  "excludedLead": {
+    "sourceUrl": "https://artmuseum.princeton.edu/art/collections/objects/29240",
+    "reason": "Exact Palm Sunday panel but highest exposed IIIF canvas is 2000 pixels, below current 2500-pixel original threshold; retained outside count."
+  }
+}

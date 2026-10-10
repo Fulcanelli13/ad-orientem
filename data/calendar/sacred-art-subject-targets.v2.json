@@ -1,0 +1,3278 @@
+{
+  "schema": "AO_SACRED_ART_SUBJECT_TARGETS_V2",
+  "createdOn": "2026-10-10",
+  "ownerIssue": 885,
+  "scope": "Source research/acquisition. Original digital files are not automatically curator-approved.",
+  "criticalNotes": [
+    "Prayer and 1962 observed date map to exact canonical subject keys; date title strings are not evidence.",
+    "The nine categories are not a claim of 365-day liturgical source correspondence; output mapping needs independent observed-calendar validation.",
+    "Station paintings often depict overlapping Passion events. Related composition is acceptable only with precise caption and explicit relationship.",
+    "Historically authenticated portrait is a separate gate from traditional painted saint iconography; St Pius X, Pope Leo XIII etc need verifiable original likeness.",
+    "The optional Luminous Rosary set is supplementary; the 15 traditional mysteries own the default.",
+    "Source acquisitions accept official CC0 or well documented PD-Art held separately pending worldwide commercial reuse assessment.",
+    "Arts reviews and phone crops are entirely deferred, per user request."
+  ],
+  "targets": [
+    {
+      "id": "devotion.adoration",
+      "title": "Eucharistic Adoration",
+      "queries": [
+        "Supper at Emmaus",
+        "Christ Blessing",
+        "The Last Supper"
+      ],
+      "minimumOriginals": 4,
+      "contexts": [
+        "pray.adoration",
+        "pray.benediction",
+        "pray.communion_treasury"
+      ],
+      "type": "devotional",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.angelus",
+      "title": "Angelus · Annunciation",
+      "queries": [
+        "Annunciation",
+        "The Annunciation"
+      ],
+      "minimumOriginals": 5,
+      "contexts": [
+        "pray.angelus",
+        "calendar.annunciation"
+      ],
+      "type": "recurring",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.immaculate-heart",
+      "title": "Immaculate Heart of Mary",
+      "queries": [
+        "Immaculate Heart of Mary"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "programme.first_saturday",
+        "pray.novenas:immaculate_heart"
+      ],
+      "type": "devotional",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.regina-caeli",
+      "title": "Regina Cæli · Resurrection",
+      "queries": [
+        "Resurrection of Christ",
+        "The Resurrection"
+      ],
+      "minimumOriginals": 4,
+      "contexts": [
+        "pray.regina-caeli",
+        "calendar.easter"
+      ],
+      "type": "recurring",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.sacred-heart",
+      "title": "Sacred Heart of Jesus",
+      "queries": [
+        "Sacred Heart of Jesus"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.sacred_heart",
+        "programme.first_friday",
+        "pray.novenas:sacred_heart"
+      ],
+      "type": "devotional",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.glo1",
+      "title": "Resurrection",
+      "queries": [
+        "Resurrection of Christ",
+        "The Resurrection"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.rosary:glo1"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.glo3",
+      "title": "Pentecost",
+      "queries": [
+        "Pentecost",
+        "Descent of the Holy Spirit"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.rosary:glo3"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.joy1",
+      "title": "Annunciation",
+      "queries": [
+        "Annunciation"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.rosary:joy1"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.healing-paralytic",
+      "title": "Healing of the Paralytic",
+      "queries": [
+        "Healing of the Paralytic",
+        "Christ Healing the Paralytic",
+        "Christ Healing a Paralytic"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.healing-paralytic"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 4,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.keys-to-peter",
+      "title": "Christ Entrusting the Keys to Saint Peter",
+      "queries": [
+        "Christ Giving the Keys to Saint Peter",
+        "Delivery of the Keys to Saint Peter",
+        "Christ Giving the Keys to St Peter"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.keys-to-peter"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 8,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.raising-widows-son",
+      "title": "Raising the Widow's Son at Nain",
+      "queries": [
+        "Raising the Widow's Son",
+        "Raising of the Widow's Son",
+        "Widow of Nain"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.raising-widows-son"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 5,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.talents",
+      "title": "Parable of the Talents",
+      "queries": [
+        "Parable of the Talents",
+        "The Talents"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.talents"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 7,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.tribute-money",
+      "title": "Render Unto Caesar / The Tribute Money",
+      "queries": [
+        "The Tribute Money",
+        "Christ and the Tribute Money",
+        "Render unto Caesar"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.tribute-money"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 4,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.wise-foolish-virgins",
+      "title": "Parable of the Ten Virgins",
+      "queries": [
+        "Wise and Foolish Virgins",
+        "Parable of the Ten Virgins"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.wise-foolish-virgins"
+      ],
+      "type": "biblical_event",
+      "priority": "P0",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 9,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "calendar.advent",
+      "title": "Advent: Annunciation / expectation",
+      "queries": [
+        "Annunciation",
+        "John the Baptist Preaching"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:advent"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.after-pentecost",
+      "title": "Time after Pentecost",
+      "queries": [
+        "Christ Blessing",
+        "Christ Healing"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "today.calendar:after-pentecost"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.all-saints",
+      "title": "All Saints",
+      "queries": [
+        "All Saints",
+        "Virgin and Saints"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:all-saints"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.all-souls",
+      "title": "All Souls",
+      "queries": [
+        "Souls in Purgatory",
+        "Resurrection of the Dead"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:all-souls"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.annunciation",
+      "title": "Annunciation",
+      "queries": [
+        "The Annunciation"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:annunciation"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.ascension",
+      "title": "Ascension season",
+      "queries": [
+        "Ascension of Christ"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:ascension"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.assumption",
+      "title": "Assumption",
+      "queries": [
+        "Assumption of the Virgin"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:assumption"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.candlemas",
+      "title": "Candlemas",
+      "queries": [
+        "Presentation in the Temple"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:candlemas"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.christ-king",
+      "title": "Christ the King",
+      "queries": [
+        "Christ in Majesty",
+        "Christ Enthroned"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:christ-king"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.christmas",
+      "title": "Nativity",
+      "queries": [
+        "Nativity",
+        "Adoration of the Shepherds"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "today.calendar:christmas"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.christmas-eve",
+      "title": "Vigil of Christmas",
+      "queries": [
+        "Nativity",
+        "Journey to Bethlehem"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:christmas-eve"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.corpus-christi",
+      "title": "Corpus Christi",
+      "queries": [
+        "Last Supper",
+        "Triumph of the Eucharist"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:corpus-christi"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.easter",
+      "title": "Resurrection season",
+      "queries": [
+        "Resurrection of Christ",
+        "Noli me tangere"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "today.calendar:easter"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.epiphany",
+      "title": "Epiphany",
+      "queries": [
+        "Adoration of the Magi",
+        "Baptism of Christ"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:epiphany"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.good-friday",
+      "title": "Good Friday",
+      "queries": [
+        "Crucifixion",
+        "Christ Carrying the Cross"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "today.calendar:good-friday"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.holy-innocents",
+      "title": "Holy Innocents",
+      "queries": [
+        "Massacre of the Innocents"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "today.calendar:holy-innocents"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.holy-rosary",
+      "title": "Our Lady of the Rosary",
+      "queries": [
+        "Our Lady of the Rosary",
+        "Madonna of the Rosary"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:holy-rosary"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.holy-saturday",
+      "title": "Holy Saturday / Burial",
+      "queries": [
+        "Entombment of Christ",
+        "Descent into Limbo"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:holy-saturday"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.holy-thursday",
+      "title": "Holy Thursday",
+      "queries": [
+        "Last Supper",
+        "Washing of the Feet"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:holy-thursday"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.immaculate-conception",
+      "title": "Immaculate Conception",
+      "queries": [
+        "Immaculate Conception"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:immaculate-conception"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.lent",
+      "title": "Lent: Christ temptation / penitence",
+      "queries": [
+        "Temptation of Christ",
+        "Penitent Magdalene"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:lent"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.our-lady-sorrows",
+      "title": "Our Lady of Sorrows",
+      "queries": [
+        "Mater Dolorosa",
+        "Seven Sorrows of Mary"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:our-lady-sorrows"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.palm-sunday",
+      "title": "Palm Sunday",
+      "queries": [
+        "Entry into Jerusalem",
+        "Christ Entering Jerusalem"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:palm-sunday"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.passion",
+      "title": "Passiontide",
+      "queries": [
+        "Christ Carrying the Cross",
+        "Crucifixion"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "today.calendar:passion"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.pentecost",
+      "title": "Pentecost season",
+      "queries": [
+        "Pentecost",
+        "Descent of the Holy Spirit"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:pentecost"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.sacred-heart",
+      "title": "Sacred Heart Feast",
+      "queries": [
+        "Sacred Heart of Jesus"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:sacred-heart"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.saint-joseph",
+      "title": "Saint Joseph",
+      "queries": [
+        "Saint Joseph with the Child Jesus"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:saint-joseph"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.septuagesima",
+      "title": "Preparation / fall of man",
+      "queries": [
+        "Expulsion from Paradise",
+        "Fall of Adam and Eve"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "today.calendar:septuagesima"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.st-john-baptist",
+      "title": "Nativity / martyrdom John Baptist",
+      "queries": [
+        "Birth of Saint John the Baptist",
+        "Beheading of Saint John"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:st-john-baptist"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.transfiguration",
+      "title": "Transfiguration",
+      "queries": [
+        "Transfiguration of Christ"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:transfiguration"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "calendar.trinity",
+      "title": "Holy Trinity",
+      "queries": [
+        "The Trinity",
+        "Holy Trinity"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "today.calendar:trinity"
+      ],
+      "type": "liturgical",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.christ-king",
+      "title": "Christ the King",
+      "queries": [
+        "Christ the King",
+        "Christ in Majesty",
+        "Christ Enthroned"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "calendar.christ-king",
+        "pray.novenas:christ_the_king"
+      ],
+      "type": "devotional",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.confession",
+      "title": "Confession and Penitence",
+      "queries": [
+        "Return of the Prodigal Son",
+        "Penitent Magdalene",
+        "Repentance of Saint Peter"
+      ],
+      "minimumOriginals": 4,
+      "contexts": [
+        "pray.confession",
+        "pray.nightly_examen",
+        "learn.rites.sick"
+      ],
+      "type": "devotional",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.corpus-christi",
+      "title": "Corpus Christi",
+      "queries": [
+        "Last Supper",
+        "Triumph of the Eucharist",
+        "Institution of the Eucharist"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.novenas:corpus_christi",
+        "calendar.corpus-christi"
+      ],
+      "type": "eucharistic",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.good-death",
+      "title": "Good Death / Viaticum",
+      "queries": [
+        "Death of Saint Joseph",
+        "Last Communion",
+        "Anointing of the Sick"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.good_death",
+        "pray.dying_companion",
+        "learn.rites.sick"
+      ],
+      "type": "pastoral",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.holy-family",
+      "title": "Holy Family",
+      "queries": [
+        "The Holy Family",
+        "Holy Family with Saint Joseph"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "calendar.holy-family",
+        "pray.morning_evening"
+      ],
+      "type": "devotional",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.holy-souls",
+      "title": "Holy Souls and Purgatory",
+      "queries": [
+        "Souls in Purgatory",
+        "Purgatory",
+        "Saint Teresa Interceding for Souls"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.de_profundis",
+        "pray.novenas:holy_souls",
+        "calendar.all-souls"
+      ],
+      "type": "devotional",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.holy-spirit",
+      "title": "Holy Spirit and Gifts",
+      "queries": [
+        "Pentecost",
+        "Descent of the Holy Spirit"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.novenas:holy_ghost",
+        "pray.sacred_hymns",
+        "pray.veni_creator"
+      ],
+      "type": "devotional",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.immaculate-conception",
+      "title": "Immaculate Conception",
+      "queries": [
+        "Immaculate Conception",
+        "Immacolata Concezione"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.novenas:immaculate_conception",
+        "calendar.immaculate-conception"
+      ],
+      "type": "marian",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.our-lady-perpetual-help",
+      "title": "Our Lady of Perpetual Help",
+      "queries": [
+        "Our Lady of Perpetual Help",
+        "Virgin and Child"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.novenas:perpetual_help"
+      ],
+      "type": "marian_iconography",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.seven-sorrows",
+      "title": "Seven Sorrows of Mary",
+      "queries": [
+        "Mater Dolorosa",
+        "Our Lady of Sorrows",
+        "Pietà"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.novenas:seven_sorrows",
+        "pray.stabat_mater"
+      ],
+      "type": "marian",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.st-anthony",
+      "title": "Saint Anthony of Padua",
+      "queries": [
+        "Saint Anthony of Padua and the Christ Child",
+        "Saint Anthony of Padua"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.novenas:st_anthony_nine_tuesdays"
+      ],
+      "type": "saint",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.st-joseph",
+      "title": "Saint Joseph with Child Jesus",
+      "queries": [
+        "Saint Joseph and the Christ Child",
+        "Holy Family",
+        "Saint Joseph"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.st_joseph",
+        "pray.novenas:st_joseph"
+      ],
+      "type": "saint",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.st-michael",
+      "title": "Saint Michael",
+      "queries": [
+        "Saint Michael Vanquishing Satan",
+        "Archangel Michael",
+        "Saint Michael and the Dragon"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.novenas:st_michael",
+        "pray.prayer_st_michael"
+      ],
+      "type": "saint",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.st-therese",
+      "title": "Saint Thérèse of Lisieux",
+      "queries": [
+        "Thérèse of Lisieux",
+        "Saint Therese of the Child Jesus"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.novenas:st_therese",
+        "calendar.saint-therese"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "person.agatha",
+      "title": "Saint Agatha",
+      "queries": [
+        "Saint Agatha",
+        "Saint Agatha of Sicily"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.agnes",
+      "title": "Saint Agnes of Rome",
+      "queries": [
+        "Saint Agnes",
+        "Saint Agnes of Rome"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.agnes-montepulciano",
+      "title": "Saint Agnes of Montepulciano",
+      "queries": [
+        "Saint Agnes of Montepulciano"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.alphonsus-liguori",
+      "title": "Saint Alphonsus Liguori",
+      "queries": [
+        "Saint Alphonsus Liguori"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.andrew-avellino",
+      "title": "Saint Andrew Avellino",
+      "queries": [
+        "Saint Andrew Avellino"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.andrew-corsini",
+      "title": "Saint Andrew Corsini",
+      "queries": [
+        "Saint Andrew Corsini"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.anthony-abbot",
+      "title": "Saint Anthony the Great (Abbot)",
+      "queries": [
+        "Saint Anthony Abbot",
+        "Saint Anthony the Great"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.catherine-alexandria",
+      "title": "Saint Catherine of Alexandria",
+      "queries": [
+        "Saint Catherine of Alexandria",
+        "Saint Catherine of Alexandria in Prison",
+        "Saint Catherine Disputing"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_scene",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_ALEXANDRIA_NOT_SIENA",
+      "creationReason": "2026-11-25 source-resolved 1962 Proper"
+    },
+    {
+      "id": "person.cecilia",
+      "title": "Saint Cecilia",
+      "queries": [
+        "Saint Cecilia"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.cyril-alexandria",
+      "title": "Saint Cyril of Alexandria",
+      "queries": [
+        "Saint Cyril of Alexandria"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.hilary-poitiers",
+      "title": "Saint Hilary of Poitiers",
+      "queries": [
+        "Saint Hilary of Poitiers"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.ignatius-loyola",
+      "title": "Saint Ignatius of Loyola",
+      "queries": [
+        "Saint Ignatius of Loyola"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.jerome-emiliani",
+      "title": "Saint Jerome Emiliani",
+      "queries": [
+        "Saint Jerome Emiliani",
+        "Saint Jerome Emilian"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.john-bosco",
+      "title": "Saint John Bosco",
+      "queries": [
+        "Saint John Bosco",
+        "Don Bosco"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.john-chrysostom",
+      "title": "Saint John Chrysostom",
+      "queries": [
+        "Saint John Chrysostom"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.joseph-calasanz",
+      "title": "Saint Joseph Calasanz",
+      "queries": [
+        "Saint Joseph Calasanz",
+        "Saint Joseph Calasance"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.joseph-cupertino",
+      "title": "Saint Joseph of Cupertino",
+      "queries": [
+        "Saint Joseph of Cupertino"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.lawrence",
+      "title": "Saint Lawrence",
+      "queries": [
+        "Saint Lawrence",
+        "Saint Laurence"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.lucy",
+      "title": "Saint Lucy",
+      "queries": [
+        "Saint Lucy",
+        "Saint Lucia"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.marcellus-i",
+      "title": "Pope Saint Marcellus I",
+      "queries": [
+        "Saint Marcellus I",
+        "Pope Marcellus"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.margaret-scotland",
+      "title": "Saint Margaret of Scotland",
+      "queries": [
+        "Saint Margaret of Scotland"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.martin-tours",
+      "title": "Saint Martin of Tours",
+      "queries": [
+        "Saint Martin of Tours"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.monica",
+      "title": "Saint Monica",
+      "queries": [
+        "Saint Monica"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.nicholas-myra",
+      "title": "Saint Nicholas of Myra",
+      "queries": [
+        "Saint Nicholas of Myra",
+        "Saint Nicholas"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.peter-canisius",
+      "title": "Saint Peter Canisius",
+      "queries": [
+        "Saint Peter Canisius"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.peter-nolasco",
+      "title": "Saint Peter Nolasco",
+      "queries": [
+        "Saint Peter Nolasco"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.peter-verona",
+      "title": "Saint Peter of Verona",
+      "queries": [
+        "Saint Peter of Verona"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.philip-neri",
+      "title": "Saint Philip Neri",
+      "queries": [
+        "Saint Philip Neri"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.polycarp",
+      "title": "Saint Polycarp",
+      "queries": [
+        "Saint Polycarp"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.rose-lima",
+      "title": "Saint Rose of Lima",
+      "queries": [
+        "Saint Rose of Lima"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.scholastica",
+      "title": "Saint Scholastica",
+      "queries": [
+        "Saint Scholastica"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.sebastian",
+      "title": "Saint Sebastian",
+      "queries": [
+        "Saint Sebastian"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.timothy",
+      "title": "Saint Timothy",
+      "queries": [
+        "Saint Timothy"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "person.vincent-ferrer",
+      "title": "Saint Vincent Ferrer",
+      "queries": [
+        "Saint Vincent Ferrer"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.sanctorale",
+        "formation.saints"
+      ],
+      "type": "saint_portrait",
+      "priority": "P1",
+      "matchingPolicy": "EXACT_PERSON_NOT_GIVEN_NAME_ONLY",
+      "creationReason": "OBSERVED_1962_TITULAR_SAINT_GAP"
+    },
+    {
+      "id": "rosary.glo2",
+      "title": "Ascension of Christ",
+      "queries": [
+        "Ascension of Christ"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:glo2"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.glo4",
+      "title": "Assumption of Mary",
+      "queries": [
+        "Assumption of the Virgin"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:glo4"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.glo5",
+      "title": "Coronation of Mary",
+      "queries": [
+        "Coronation of the Virgin"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:glo5"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.joy2",
+      "title": "Visitation of Mary",
+      "queries": [
+        "Visitation",
+        "Mary visiting Elizabeth"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:joy2"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.joy3",
+      "title": "Nativity",
+      "queries": [
+        "Nativity",
+        "Adoration of the Shepherds"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.rosary:joy3"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.joy4",
+      "title": "Presentation in the Temple",
+      "queries": [
+        "Presentation of Christ in the Temple",
+        "Presentation in the Temple"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:joy4"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.joy5",
+      "title": "Finding in the Temple",
+      "queries": [
+        "Christ among the Doctors",
+        "Jesus in the Temple"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:joy5"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.lum1",
+      "title": "Baptism of Christ",
+      "queries": [
+        "Baptism of Christ"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.rosary:lum1"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.lum2",
+      "title": "Wedding at Cana",
+      "queries": [
+        "Wedding at Cana",
+        "Marriage at Cana"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.rosary:lum2"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.lum3",
+      "title": "Preaching of the Kingdom",
+      "queries": [
+        "Christ Preaching",
+        "Sermon on the Mount"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.rosary:lum3"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.lum4",
+      "title": "Transfiguration",
+      "queries": [
+        "Transfiguration of Christ"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.rosary:lum4"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.lum5",
+      "title": "Institution of the Eucharist",
+      "queries": [
+        "Last Supper"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.rosary:lum5"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.sor1",
+      "title": "Agony in Gethsemane",
+      "queries": [
+        "Agony in the Garden",
+        "Christ in Gethsemane"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:sor1"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.sor2",
+      "title": "Scourging at the Pillar",
+      "queries": [
+        "Flagellation of Christ",
+        "Christ at the Column",
+        "Scourging of Christ"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:sor2"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.sor3",
+      "title": "Crowning with Thorns",
+      "queries": [
+        "Christ Crowned with Thorns",
+        "Mocking of Christ"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:sor3"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.sor4",
+      "title": "Carrying of the Cross",
+      "queries": [
+        "Christ Carrying the Cross",
+        "Procession to Calvary"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.rosary:sor4"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "rosary.sor5",
+      "title": "Crucifixion",
+      "queries": [
+        "Crucifixion",
+        "Christ on the Cross"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.rosary:sor5"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.anointing-bethany",
+      "title": "Mary of Bethany Anoints the Feet of Christ",
+      "queries": [
+        "Christ in the House of Simon",
+        "Anointing at Bethany",
+        "Mary Anointing Jesus"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.anointing-bethany"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 1,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.canaanite-woman",
+      "title": "Christ and the Canaanite Woman",
+      "queries": [
+        "Christ and the Canaanite Woman",
+        "Christ and the Woman of Canaan"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.canaanite-woman"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 1,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.centurion-servant",
+      "title": "Christ Healing the Centurion's Servant",
+      "queries": [
+        "The Centurion's Servant",
+        "Christ and the Centurion",
+        "Healing of the Centurion's Servant"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.centurion-servant"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.christ-and-children",
+      "title": "Jesus and the Children",
+      "queries": [
+        "Christ Blessing the Children",
+        "Christ and the Children"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.christ-and-children"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.cleansing-temple",
+      "title": "Christ Cleansing the Temple",
+      "queries": [
+        "Christ Driving the Money Changers",
+        "Cleansing of the Temple"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.cleansing-temple"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.exorcism-mute",
+      "title": "The Exorcism of a Mute Demoniac",
+      "queries": [
+        "Healing of the Mute Man",
+        "Christ Casting Out a Demon",
+        "Christ Healing a Mute"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.exorcism-mute"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 1,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.feeding-four-thousand",
+      "title": "Feeding of Four Thousand",
+      "queries": [
+        "Feeding of the Four Thousand",
+        "Multiplication of the Loaves and Fishes"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.feeding-four-thousand"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.great-supper",
+      "title": "Parable of the Great Supper",
+      "queries": [
+        "Parable of the Great Banquet",
+        "Parable of the Great Supper"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.great-supper"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.healing-deaf-mute",
+      "title": "Healing of the Deaf and Mute Man",
+      "queries": [
+        "Christ Healing the Deaf and Dumb",
+        "Healing of the Deaf Mute"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.healing-deaf-mute"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.healing-leper",
+      "title": "Christ Heals the Leper",
+      "queries": [
+        "Christ Healing a Leper",
+        "Healing of the Leper"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.healing-leper"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.jesus-disputes-pharisees",
+      "title": "Christ Disputing with the Pharisees",
+      "queries": [
+        "Christ and the Pharisees",
+        "Christ Disputing with the Pharisees"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.jesus-disputes-pharisees"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 2,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.laborers-vineyard",
+      "title": "Labourers in the Vineyard",
+      "queries": [
+        "Labourers in the Vineyard",
+        "Workers in the Vineyard",
+        "Parable of the Labourers"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.laborers-vineyard"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 2,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.lost-sheep",
+      "title": "The Lost Sheep",
+      "queries": [
+        "Parable of the Lost Sheep",
+        "The Lost Sheep"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.lost-sheep"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.parable-sower",
+      "title": "The Sower",
+      "queries": [
+        "Parable of the Sower",
+        "The Sower"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.parable-sower"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 2,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.parable-vine",
+      "title": "Christ the True Vine",
+      "queries": [
+        "Christ the True Vine",
+        "The True Vine"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.parable-vine"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.peter-denial",
+      "title": "Saint Peter Denying Christ",
+      "queries": [
+        "Denial of Saint Peter",
+        "Saint Peter Denying Christ"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.peter-denial"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 2,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.publican-pharisee",
+      "title": "The Pharisee and the Publican",
+      "queries": [
+        "Pharisee and the Publican",
+        "Pharisee and Tax Collector"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.publican-pharisee"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 2,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.raising-jairus",
+      "title": "Raising of Jairus's Daughter",
+      "queries": [
+        "The Raising of Jairus's Daughter",
+        "Raising of Jairus Daughter"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.raising-jairus"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.ten-lepers-scene",
+      "title": "Healing of the Ten Lepers",
+      "queries": [
+        "The Ten Lepers",
+        "Christ Healing the Ten Lepers"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.ten-lepers-scene"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 2,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.the-last-judgment",
+      "title": "Separation of Sheep and Goats",
+      "queries": [
+        "The Last Judgment",
+        "The Final Judgment"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.the-last-judgment"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 2,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.unforgiving-servant",
+      "title": "Parable of the Unforgiving Servant",
+      "queries": [
+        "Parable of the Unforgiving Servant",
+        "Unmerciful Servant"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.unforgiving-servant"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "scripture.wedding-feast",
+      "title": "Parable of the Wedding Feast",
+      "queries": [
+        "Parable of the Wedding Feast",
+        "Wedding Feast Parable"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.appointed-gospel",
+        "scripture.wedding-feast"
+      ],
+      "type": "biblical_event",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT",
+      "observed2026GapDatesEstimated": 3,
+      "creationReason": "MULTI_DAY_1962_APPOINTED_GOSPEL_RESEARCH"
+    },
+    {
+      "id": "station.01",
+      "title": "Jesus Condemned to Death",
+      "queries": [
+        "Christ before Pilate",
+        "Jesus before Pilate",
+        "Ecce Homo"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:1",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "station.02",
+      "title": "Jesus Takes the Cross",
+      "queries": [
+        "Christ Taking up the Cross",
+        "Christ Carrying the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:2",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "station.03",
+      "title": "First Fall under the Cross",
+      "queries": [
+        "Fall of Christ",
+        "Christ Falling under the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:3",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "VISUALLY_VALIDATE_RELATED_EVENT"
+    },
+    {
+      "id": "station.04",
+      "title": "Jesus Meets His Mother",
+      "queries": [
+        "Christ Meets His Mother",
+        "Christ Carrying the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:4",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "VISUALLY_VALIDATE_RELATED_EVENT"
+    },
+    {
+      "id": "station.05",
+      "title": "Simon of Cyrene Helps Jesus",
+      "queries": [
+        "Simon of Cyrene",
+        "Carrying of the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:5",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "station.06",
+      "title": "Veronica Wipes the Face",
+      "queries": [
+        "Saint Veronica",
+        "Veil of Veronica"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:6",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "station.07",
+      "title": "Second Fall under the Cross",
+      "queries": [
+        "Christ Falling",
+        "Carrying the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:7",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "VISUALLY_VALIDATE_RELATED_EVENT"
+    },
+    {
+      "id": "station.08",
+      "title": "Women of Jerusalem",
+      "queries": [
+        "Daughters of Jerusalem",
+        "Christ and the Weeping Women"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:8",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "VISUALLY_VALIDATE_RELATED_EVENT"
+    },
+    {
+      "id": "station.09",
+      "title": "Third Fall under the Cross",
+      "queries": [
+        "Christ Falling",
+        "Carrying the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:9",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "VISUALLY_VALIDATE_RELATED_EVENT"
+    },
+    {
+      "id": "station.10",
+      "title": "Stripping of Jesus",
+      "queries": [
+        "Stripping of Christ",
+        "Christ Stripped of His Garments"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:10",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "VISUALLY_VALIDATE_RELATED_EVENT"
+    },
+    {
+      "id": "station.11",
+      "title": "Nailing to the Cross",
+      "queries": [
+        "Nailing of Christ to the Cross",
+        "Crucifixion"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:11",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "VISUALLY_VALIDATE_RELATED_EVENT"
+    },
+    {
+      "id": "station.12",
+      "title": "Jesus Dies on the Cross",
+      "queries": [
+        "Crucifixion of Christ",
+        "Christ on the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:12",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "station.13",
+      "title": "Deposition from the Cross",
+      "queries": [
+        "Descent from the Cross",
+        "Deposition of Christ",
+        "Pietà"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:13",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "station.14",
+      "title": "Entombment",
+      "queries": [
+        "Entombment of Christ",
+        "Burial of Christ"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "pray.stations:14",
+        "calendar.passion"
+      ],
+      "type": "passion_station",
+      "priority": "P1",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.evening-prayer",
+      "title": "Evening Recollection",
+      "queries": [
+        "Flight into Egypt",
+        "Rest on Flight into Egypt",
+        "Nativity at Night"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.morning_evening",
+        "pray.nightly_examen"
+      ],
+      "type": "recurring",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.guardian-angel",
+      "title": "Guardian Angel",
+      "queries": [
+        "Guardian Angel",
+        "An Angel Protecting a Child"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.foundations_guardian_angel"
+      ],
+      "type": "devotional",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.holy-name",
+      "title": "Most Holy Name of Jesus",
+      "queries": [
+        "Adoration of the Holy Name",
+        "Christ Child with the Holy Name",
+        "Christ Blessing"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.holy_name_litany"
+      ],
+      "type": "devotional",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.litanies",
+      "title": "Litany of the Saints",
+      "queries": [
+        "All Saints",
+        "Virgin and Saints",
+        "Adoration of the Lamb"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "pray.litany_saints"
+      ],
+      "type": "devotional",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.morning-prayer",
+      "title": "Morning Offering",
+      "queries": [
+        "Christ Blessing",
+        "Virgin and Child"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "pray.morning_evening",
+        "pray.morning_offering"
+      ],
+      "type": "recurring",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.precious-blood",
+      "title": "Precious Blood",
+      "queries": [
+        "Blood of Christ",
+        "Mystic Winepress",
+        "Crucifixion"
+      ],
+      "minimumOriginals": 2,
+      "contexts": [
+        "calendar.precious-blood-month",
+        "pray.communion_treasury"
+      ],
+      "type": "devotional",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "devotion.saturday-marian",
+      "title": "Saturday Marian Devotion",
+      "queries": [
+        "Virgin and Child",
+        "Madonna and Child",
+        "Immaculate Conception"
+      ],
+      "minimumOriginals": 3,
+      "contexts": [
+        "calendar.saturday",
+        "programme.first_saturday"
+      ],
+      "type": "recurring",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "person.anthony-padua",
+      "title": "Saint Anthony of Padua",
+      "queries": [
+        "Saint Anthony of Padua"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:anthony-padua",
+        "calendar.saint:anthony-padua"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.augustine",
+      "title": "Saint Augustine",
+      "queries": [
+        "Saint Augustine"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:augustine",
+        "calendar.saint:augustine"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.benedict",
+      "title": "Saint Benedict",
+      "queries": [
+        "Saint Benedict"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:benedict",
+        "calendar.saint:benedict"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.catherine-siena",
+      "title": "Saint Catherine of Siena",
+      "queries": [
+        "Saint Catherine of Siena"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:catherine-siena",
+        "calendar.saint:catherine-siena"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.dominic",
+      "title": "Saint Dominic",
+      "queries": [
+        "Saint Dominic"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:dominic",
+        "calendar.saint:dominic"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.francis-assisi",
+      "title": "Saint Francis of Assisi",
+      "queries": [
+        "Saint Francis of Assisi"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:francis-assisi",
+        "calendar.saint:francis-assisi"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.francis-de-sales",
+      "title": "Saint Francis de Sales",
+      "queries": [
+        "Saint Francis de Sales"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:francis-de-sales",
+        "calendar.saint:francis-de-sales"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.gregory-i",
+      "title": "Pope Gregory I",
+      "queries": [
+        "Pope Gregory I"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:gregory-i",
+        "calendar.saint:gregory-i"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.jeanne-arc",
+      "title": "Saint Joan of Arc",
+      "queries": [
+        "Saint Joan of Arc"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:jeanne-arc",
+        "calendar.saint:jeanne-arc"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.john-cross",
+      "title": "Saint John of the Cross",
+      "queries": [
+        "Saint John of the Cross"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:john-cross",
+        "calendar.saint:john-cross"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.john-vianney",
+      "title": "Saint John Vianney",
+      "queries": [
+        "Saint John Vianney"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:john-vianney",
+        "calendar.saint:john-vianney"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.john-xxiii",
+      "title": "Pope John XXIII",
+      "queries": [
+        "Pope John XXIII"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:john-xxiii",
+        "calendar.saint:john-xxiii"
+      ],
+      "type": "authenticated_historical_portrait",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.joseph",
+      "title": "Saint Joseph",
+      "queries": [
+        "Saint Joseph"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:joseph",
+        "calendar.saint:joseph"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.leo-xiii",
+      "title": "Pope Leo XIII",
+      "queries": [
+        "Pope Leo XIII"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:leo-xiii",
+        "calendar.saint:leo-xiii"
+      ],
+      "type": "authenticated_historical_portrait",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.louis-ix",
+      "title": "Saint Louis of France",
+      "queries": [
+        "Saint Louis of France"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:louis-ix",
+        "calendar.saint:louis-ix"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.louis-marie-grignion",
+      "title": "Louis-Marie Grignion de Montfort",
+      "queries": [
+        "Louis-Marie Grignion de Montfort"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:louis-marie-grignion",
+        "calendar.saint:louis-marie-grignion"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.michael",
+      "title": "Saint Michael the Archangel",
+      "queries": [
+        "Saint Michael the Archangel"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:michael",
+        "calendar.saint:michael"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.paul",
+      "title": "Saint Paul",
+      "queries": [
+        "Saint Paul"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:paul",
+        "calendar.saint:paul"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.peter",
+      "title": "Saint Peter",
+      "queries": [
+        "Saint Peter"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:peter",
+        "calendar.saint:peter"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.pierre-julien-eymard",
+      "title": "Saint Peter Julian Eymard",
+      "queries": [
+        "Saint Peter Julian Eymard"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:pierre-julien-eymard",
+        "calendar.saint:pierre-julien-eymard"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.pierre-laval",
+      "title": "Blessed Jacques-Désiré Laval",
+      "queries": [
+        "Blessed Jacques-Désiré Laval"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:pierre-laval",
+        "calendar.saint:pierre-laval"
+      ],
+      "type": "authenticated_historical_portrait",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.pius-ix",
+      "title": "Pope Pius IX",
+      "queries": [
+        "Pope Pius IX"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:pius-ix",
+        "calendar.saint:pius-ix"
+      ],
+      "type": "authenticated_historical_portrait",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.pius-v",
+      "title": "Pope Pius V",
+      "queries": [
+        "Pope Pius V"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:pius-v",
+        "calendar.saint:pius-v"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.pius-x",
+      "title": "Pope Pius X",
+      "queries": [
+        "Pope Pius X"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:pius-x",
+        "calendar.saint:pius-x"
+      ],
+      "type": "authenticated_historical_portrait",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.pius-xi",
+      "title": "Pope Pius XI",
+      "queries": [
+        "Pope Pius XI"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:pius-xi",
+        "calendar.saint:pius-xi"
+      ],
+      "type": "authenticated_historical_portrait",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.teresa-avila",
+      "title": "Saint Teresa of Avila",
+      "queries": [
+        "Saint Teresa of Avila"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:teresa-avila",
+        "calendar.saint:teresa-avila"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.therese-lisieux",
+      "title": "Saint Therese of Lisieux",
+      "queries": [
+        "Saint Therese of Lisieux"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:therese-lisieux",
+        "calendar.saint:therese-lisieux"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "person.thomas-aquinas",
+      "title": "Saint Thomas Aquinas",
+      "queries": [
+        "Saint Thomas Aquinas"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "learn.biography:thomas-aquinas",
+        "calendar.saint:thomas-aquinas"
+      ],
+      "type": "saint_painting",
+      "priority": "P2",
+      "matchingPolicy": "REQUIRES_HISTORICALLY_AUTHENTIC_ATTRIBUTION"
+    },
+    {
+      "id": "scripture.blind-man",
+      "title": "blind man",
+      "queries": [
+        "Christ Healing the Blind"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:blind-man"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.christ-walking-water",
+      "title": "christ walking water",
+      "queries": [
+        "Christ Walking on the Water"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:christ-walking-water"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.doubting-thomas",
+      "title": "doubting thomas",
+      "queries": [
+        "Incredulity of Saint Thomas"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:doubting-thomas"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.emmaus",
+      "title": "emmaus",
+      "queries": [
+        "Supper at Emmaus"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:emmaus"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.feeding-five-thousand",
+      "title": "feeding five thousand",
+      "queries": [
+        "Multiplication of the Loaves"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:feeding-five-thousand"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.flight-egypt",
+      "title": "flight egypt",
+      "queries": [
+        "Flight into Egypt"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:flight-egypt"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.good-samaritan",
+      "title": "good samaritan",
+      "queries": [
+        "Good Samaritan"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:good-samaritan"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.good-shepherd",
+      "title": "good shepherd",
+      "queries": [
+        "Good Shepherd"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:good-shepherd"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.jesus-and-children",
+      "title": "jesus and children",
+      "queries": [
+        "Christ Blessing the Children"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:jesus-and-children"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.jesus-martha-mary",
+      "title": "jesus martha mary",
+      "queries": [
+        "Christ in the House of Mary and Martha"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:jesus-martha-mary"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.lazarus",
+      "title": "lazarus",
+      "queries": [
+        "Raising of Lazarus"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:lazarus"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.mary-magdalene",
+      "title": "mary magdalene",
+      "queries": [
+        "Mary Magdalene at the Tomb"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:mary-magdalene"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.miraculous-catch",
+      "title": "miraculous catch",
+      "queries": [
+        "Miraculous Draught of Fishes"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:miraculous-catch"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.nativity-virgin",
+      "title": "nativity virgin",
+      "queries": [
+        "Birth of the Virgin Mary"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:nativity-virgin"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.noli-me-tangere",
+      "title": "noli me tangere",
+      "queries": [
+        "Noli me tangere"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:noli-me-tangere"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.presentation-temple",
+      "title": "presentation temple",
+      "queries": [
+        "Presentation in the Temple"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:presentation-temple"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.prodigal-son",
+      "title": "prodigal son",
+      "queries": [
+        "Return of the Prodigal Son"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:prodigal-son"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.raising-jairus-daughter",
+      "title": "raising jairus daughter",
+      "queries": [
+        "Raising of Jairus Daughter"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:raising-jairus-daughter"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.rich-young-ruler",
+      "title": "rich young ruler",
+      "queries": [
+        "Christ and the Rich Young Ruler"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:rich-young-ruler"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.samaritan-woman",
+      "title": "samaritan woman",
+      "queries": [
+        "Christ and the Woman of Samaria"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:samaritan-woman"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.sermon-mount",
+      "title": "sermon mount",
+      "queries": [
+        "Sermon on the Mount"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:sermon-mount"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.storm-calmed",
+      "title": "storm calmed",
+      "queries": [
+        "Christ Calming the Storm"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:storm-calmed"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.temptation-christ",
+      "title": "temptation christ",
+      "queries": [
+        "Temptation of Christ"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:temptation-christ"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.ten-lepers",
+      "title": "ten lepers",
+      "queries": [
+        "Healing of the Ten Lepers"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:ten-lepers"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.transfiguration",
+      "title": "transfiguration",
+      "queries": [
+        "Transfiguration of Christ"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:transfiguration"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    },
+    {
+      "id": "scripture.wedding-cana",
+      "title": "wedding cana",
+      "queries": [
+        "The Marriage at Cana"
+      ],
+      "minimumOriginals": 1,
+      "contexts": [
+        "calendar.gospel:wedding-cana"
+      ],
+      "type": "gospel_fallback",
+      "priority": "P2",
+      "matchingPolicy": "TITLE_AND_MUSEUM_SUBJECT"
+    }
+  ],
+  "updatedOn": "2026-10-10",
+  "notes": [
+    "High-yield 1962 observed Mass Gospel and titular saint backfill. Do not conflate saint namesakes (Peter Nolasco vs St Peter Apostle; Jerome Emiliani vs St Jerome; St Andrew Corsini vs Apostle). Search targets are leads only until exact museum object identification and real source-original bytes."
+  ]
+}

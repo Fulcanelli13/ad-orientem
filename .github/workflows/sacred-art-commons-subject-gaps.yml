@@ -1,0 +1,35 @@
+name: Sacred art — exact-subject Commons gaps
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/acquire-commons-subject-gaps.py"
+      - ".github/workflows/sacred-art-commons-subject-gaps.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-commons-hard-gaps
+  cancel-in-progress: true
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow numpy
+      - name: Verify MediaWiki checksums and original-image screening
+        run: python tools/calendar/acquire-commons-subject-gaps.py --self-test
+      - name: Search exact sacred subjects and verify original file hashes
+        run: python tools/calendar/acquire-commons-subject-gaps.py
+      - name: Preserve only review-only originals and explicit rejection/rights ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-commons-subject-gaps
+          path: artifacts/sacred-art-commons-gaps/
+          if-no-files-found: warn
+          retention-days: 30

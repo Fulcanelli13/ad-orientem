@@ -1,0 +1,560 @@
+{
+  "schema": "AO_SACRED_ART_EDITORIAL_SUBJECT_CROSSWALK_V1",
+  "issue": 885,
+  "created": "2026-10-10",
+  "policy": "Exact subject keys reflect iconography as preliminarily tagged, NOT theological calendar or final artwork verification. RelatedSubject keys may be used only as clearly labelled symbolic or narrative fallback. Never elevate a related match to the feast/Scripture-specific tier.",
+  "exactIconography": {
+    "rosary.joy1": [
+      "annunciation"
+    ],
+    "rosary.joy2": [
+      "visitation"
+    ],
+    "rosary.joy3": [
+      "nativity",
+      "adoration-shepherds"
+    ],
+    "rosary.joy4": [
+      "presentation-jesus"
+    ],
+    "rosary.joy5": [
+      "finding-jesus-temple"
+    ],
+    "rosary.sor1": [
+      "agony-garden"
+    ],
+    "rosary.sor2": [
+      "flagellation"
+    ],
+    "rosary.sor3": [
+      "crowning-thorns"
+    ],
+    "rosary.sor4": [
+      "carrying-cross"
+    ],
+    "rosary.sor5": [
+      "crucifixion"
+    ],
+    "rosary.glo1": [
+      "resurrection"
+    ],
+    "rosary.glo2": [
+      "ascension-christ"
+    ],
+    "rosary.glo3": [
+      "pentecost",
+      "descent-holy-spirit"
+    ],
+    "rosary.glo4": [
+      "assumption-mary"
+    ],
+    "rosary.glo5": [
+      "coronation-virgin"
+    ],
+    "rosary.lum1": [
+      "baptism-christ"
+    ],
+    "rosary.lum2": [
+      "wedding-cana"
+    ],
+    "rosary.lum3": [
+      "christ-preaching"
+    ],
+    "rosary.lum4": [
+      "transfiguration"
+    ],
+    "rosary.lum5": [
+      "last-supper"
+    ],
+    "station.01": [
+      "christ-before-pilate",
+      "condemnation-christ"
+    ],
+    "station.02": [
+      "carrying-cross"
+    ],
+    "station.03": [
+      "first-fall-christ"
+    ],
+    "station.04": [
+      "christ-meets-mother"
+    ],
+    "station.05": [
+      "simon-cyrene"
+    ],
+    "station.06": [
+      "saint-veronica",
+      "holy-face"
+    ],
+    "station.07": [
+      "second-fall-christ"
+    ],
+    "station.08": [
+      "women-jerusalem"
+    ],
+    "station.09": [
+      "third-fall-christ"
+    ],
+    "station.10": [
+      "stripping-christ"
+    ],
+    "station.11": [
+      "nailing-cross"
+    ],
+    "station.12": [
+      "crucifixion"
+    ],
+    "station.13": [
+      "descent-cross",
+      "deposition-christ"
+    ],
+    "station.14": [
+      "entombment",
+      "burial-christ"
+    ],
+    "devotion.angelus": [
+      "annunciation",
+      "incarnation"
+    ],
+    "devotion.regina-caeli": [
+      "resurrection"
+    ],
+    "devotion.adoration": [
+      "eucharist",
+      "last-supper",
+      "supper-emmaus",
+      "christ-blessing"
+    ],
+    "devotion.confession": [
+      "repentance",
+      "penitent-magdalene",
+      "prodigal-son",
+      "denial-peter"
+    ],
+    "devotion.sacred-heart": [
+      "sacred-heart-jesus"
+    ],
+    "devotion.immaculate-heart": [
+      "immaculate-heart-mary"
+    ],
+    "devotion.holy-souls": [
+      "holy-souls",
+      "purgatory"
+    ],
+    "devotion.st-joseph": [
+      "saint-joseph",
+      "holy-family"
+    ],
+    "devotion.holy-spirit": [
+      "pentecost",
+      "descent-holy-spirit"
+    ],
+    "devotion.guardian-angel": [
+      "guardian-angel"
+    ],
+    "devotion.st-michael": [
+      "saint-michael"
+    ],
+    "devotion.st-therese": [
+      "saint-therese-lisieux"
+    ],
+    "devotion.st-anthony": [
+      "saint-anthony-padua"
+    ],
+    "devotion.our-lady-perpetual-help": [
+      "our-lady-perpetual-help"
+    ],
+    "devotion.seven-sorrows": [
+      "mater-dolorosa",
+      "lamentation",
+      "pieta"
+    ],
+    "devotion.immaculate-conception": [
+      "immaculate-conception"
+    ],
+    "devotion.corpus-christi": [
+      "eucharist",
+      "last-supper"
+    ],
+    "devotion.precious-blood": [
+      "precious-blood",
+      "crucifixion"
+    ],
+    "devotion.holy-name": [
+      "holy-name-jesus"
+    ],
+    "devotion.holy-family": [
+      "holy-family"
+    ],
+    "devotion.christ-king": [
+      "christ-king",
+      "christ-in-majesty"
+    ],
+    "devotion.good-death": [
+      "death-st-joseph",
+      "last-communion",
+      "viaticum"
+    ],
+    "devotion.morning-prayer": [
+      "christ-blessing",
+      "virgin-child"
+    ],
+    "devotion.evening-prayer": [
+      "rest-flight-egypt",
+      "flight-egypt"
+    ],
+    "devotion.saturday-marian": [
+      "virgin-child",
+      "marian"
+    ],
+    "devotion.litanies": [
+      "all-saints",
+      "adoration-lamb"
+    ],
+    "calendar.christmas": [
+      "nativity",
+      "adoration-shepherds"
+    ],
+    "calendar.epiphany": [
+      "adoration-magi",
+      "epiphany"
+    ],
+    "calendar.advent": [
+      "annunciation",
+      "incarnation"
+    ],
+    "calendar.septuagesima": [
+      "fall-adam-eve",
+      "expulsion-paradise"
+    ],
+    "calendar.lent": [
+      "temptation-christ",
+      "penitent-magdalene",
+      "repentance"
+    ],
+    "calendar.passion": [
+      "passion",
+      "crucifixion",
+      "carrying-cross"
+    ],
+    "calendar.easter": [
+      "resurrection"
+    ],
+    "calendar.ascension": [
+      "ascension-christ"
+    ],
+    "calendar.pentecost": [
+      "pentecost",
+      "descent-holy-spirit"
+    ],
+    "calendar.after-pentecost": [
+      "christ-blessing"
+    ],
+    "calendar.holy-thursday": [
+      "last-supper",
+      "washing-feet"
+    ],
+    "calendar.good-friday": [
+      "crucifixion",
+      "passion"
+    ],
+    "calendar.holy-saturday": [
+      "entombment",
+      "burial-christ"
+    ],
+    "calendar.palm-sunday": [
+      "entry-jerusalem"
+    ],
+    "calendar.christmas-eve": [
+      "nativity",
+      "adoration-shepherds"
+    ],
+    "calendar.candlemas": [
+      "presentation-jesus",
+      "candlemas"
+    ],
+    "calendar.holy-innocents": [
+      "holy-innocents",
+      "massacre-innocents"
+    ],
+    "calendar.all-saints": [
+      "all-saints"
+    ],
+    "calendar.all-souls": [
+      "holy-souls",
+      "purgatory"
+    ],
+    "calendar.st-john-baptist": [
+      "saint-john-baptist"
+    ],
+    "calendar.transfiguration": [
+      "transfiguration"
+    ],
+    "calendar.trinity": [
+      "holy-trinity"
+    ],
+    "calendar.christ-king": [
+      "christ-king",
+      "christ-in-majesty"
+    ],
+    "calendar.corpus-christi": [
+      "last-supper",
+      "eucharist"
+    ],
+    "calendar.sacred-heart": [
+      "sacred-heart-jesus"
+    ],
+    "calendar.assumption": [
+      "assumption-mary"
+    ],
+    "calendar.annunciation": [
+      "annunciation"
+    ],
+    "calendar.immaculate-conception": [
+      "immaculate-conception"
+    ],
+    "calendar.saint-joseph": [
+      "saint-joseph"
+    ],
+    "calendar.holy-rosary": [
+      "our-lady-rosary"
+    ],
+    "calendar.our-lady-sorrows": [
+      "mater-dolorosa",
+      "lamentation"
+    ],
+    "scripture.samaritan-woman": [
+      "woman-at-well"
+    ],
+    "scripture.blind-man": [
+      "blind-man",
+      "healing-blind"
+    ],
+    "scripture.prodigal-son": [
+      "prodigal-son"
+    ],
+    "scripture.good-shepherd": [
+      "good-shepherd"
+    ],
+    "scripture.lazarus": [
+      "raising-lazarus"
+    ],
+    "scripture.emmaus": [
+      "supper-emmaus"
+    ],
+    "scripture.presentation-temple": [
+      "presentation-jesus"
+    ],
+    "scripture.flight-egypt": [
+      "flight-egypt"
+    ],
+    "scripture.wedding-cana": [
+      "wedding-cana"
+    ],
+    "scripture.mary-magdalene": [
+      "saint-mary-magdalene"
+    ],
+    "scripture.noli-me-tangere": [
+      "noli-me-tangere"
+    ],
+    "scripture.temtation-christ": [
+      "temptation-christ"
+    ],
+    "formation.baptism": [
+      "baptism-christ",
+      "baptism-rite"
+    ],
+    "formation.confirmation": [
+      "pentecost",
+      "descent-holy-spirit",
+      "confirmation-rite"
+    ],
+    "formation.first-communion": [
+      "last-supper",
+      "last-communion",
+      "communion-apostles",
+      "eucharist"
+    ],
+    "formation.holy-orders": [
+      "ordination",
+      "ordination-saint-stephen",
+      "consecration-bishop"
+    ],
+    "formation.matrimony": [
+      "wedding-cana",
+      "holy-matrimony"
+    ],
+    "formation.sick": [
+      "anointing-sick",
+      "last-communion",
+      "viaticum"
+    ],
+    "formation.scapular": [
+      "our-lady-of-mount-carmel",
+      "scapular-simon-stock"
+    ],
+    "formation.confession": [
+      "prodigal-son",
+      "penitent-magdalene",
+      "repentance"
+    ],
+    "formation.mass": [
+      "mass-saint-gregory",
+      "last-supper",
+      "eucharist"
+    ],
+    "formation.serve-mass": [
+      "mass-saint-gregory",
+      "elevation-host"
+    ],
+    "formation.catechism": [
+      "christ-teaching",
+      "finding-jesus-temple",
+      "christ-blessing"
+    ],
+    "formation.spiritual-life": [
+      "saint-benedict",
+      "saint-teresa-avila",
+      "mary-martha"
+    ],
+    "formation.works-mercy": [
+      "good-samaritan",
+      "saint-martin-beggar",
+      "works-of-mercy"
+    ],
+    "formation.eucharistic-saint": [
+      "saint-peter-julian-eymard",
+      "last-communion"
+    ],
+    "formation.sacrament-all-seven": [
+      "seven-sacraments"
+    ],
+    "formation.fatherhood": [
+      "holy-family",
+      "saint-joseph"
+    ],
+    "formation.trinity": [
+      "holy-trinity"
+    ],
+    "formation.original-sin": [
+      "fall-adam-eve",
+      "expulsion-paradise"
+    ],
+    "formation.death-judgment": [
+      "last-judgment",
+      "resurrection-dead"
+    ],
+    "formation.papacy": [
+      "pius-x",
+      "leo-xiii",
+      "gregory-i"
+    ],
+    "formation.charity": [
+      "good-samaritan",
+      "saint-martin-beggar"
+    ],
+    "formation.marian-dogmas": [
+      "immaculate-conception",
+      "assumption-mary"
+    ],
+    "formation.doctor-church": [
+      "saint-thomas-aquinas",
+      "saint-augustine",
+      "saint-jerome"
+    ],
+    "person.peter": [
+      "saint-peter",
+      "saints-peter-paul"
+    ],
+    "person.paul": [
+      "saint-paul",
+      "saints-peter-paul"
+    ]
+  },
+  "relatedFallbackIconography": {
+    "station.03": [
+      "carrying-cross",
+      "passion"
+    ],
+    "station.04": [
+      "carrying-cross",
+      "passion"
+    ],
+    "station.05": [
+      "carrying-cross",
+      "passion"
+    ],
+    "station.07": [
+      "carrying-cross",
+      "passion"
+    ],
+    "station.08": [
+      "carrying-cross",
+      "passion"
+    ],
+    "station.09": [
+      "carrying-cross",
+      "passion"
+    ],
+    "station.10": [
+      "passion"
+    ],
+    "station.11": [
+      "crucifixion"
+    ],
+    "station.06": [
+      "passion"
+    ],
+    "station.12": [
+      "passion"
+    ],
+    "devotion.sacred-heart": [
+      "christ-blessing",
+      "crucifixion"
+    ],
+    "devotion.immaculate-heart": [
+      "virgin-child",
+      "marian"
+    ],
+    "devotion.good-death": [
+      "saint-joseph",
+      "holy-souls"
+    ],
+    "devotion.evening-prayer": [
+      "holy-family",
+      "nativity",
+      "virgin-child"
+    ],
+    "calendar.after-pentecost": [
+      "christ-blessing",
+      "virgin-child",
+      "marian"
+    ],
+    "calendar.lent": [
+      "crucifixion",
+      "passion"
+    ],
+    "calendar.advent": [
+      "virgin-child"
+    ],
+    "calendar.all-saints": [
+      "intercession-saints"
+    ],
+    "devotion.holy-name": [
+      "christ-blessing"
+    ],
+    "scripture.good-shepherd": [
+      "christ-blessing"
+    ],
+    "scripture.mary-magdalene": [
+      "penitent-magdalene"
+    ]
+  },
+  "noUnverifiedClaims": [
+    "A period-matched image is not evidence that it depicts the day's saint, Gospel or Proper.",
+    "Unknown individual saints and contemporary portraits require a separate identity/rights check.",
+    "Multi-scene altarpiece/diptych panels require iconographic inspection before mapping exact stations.",
+    "Programmes that are historically Catholic do not authorize copying a copyrighted photograph.",
+    "Station 03/07/09 falls may be represented by Passion narratives only as labelled contextual fallback, not an invented exact scene."
+  ]
+}

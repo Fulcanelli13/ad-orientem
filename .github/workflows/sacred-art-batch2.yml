@@ -1,0 +1,38 @@
+name: Sacred art batch 2 museum acquisition
+
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - "tools/calendar/collect-sacred-art-batch2.py"
+      - ".github/workflows/sacred-art-batch2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-batch2
+  cancel-in-progress: true
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow numpy
+      - name: Acquire CC0 paintings and record rejection reasons
+        run: python tools/calendar/collect-sacred-art-batch2.py
+      - name: Preserve museum originals and visual review sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-batch2-originals
+          path: artifacts/sacred-art-research-batch2/
+          if-no-files-found: warn
+          retention-days: 30
