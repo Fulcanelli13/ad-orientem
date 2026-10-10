@@ -1,0 +1,906 @@
+{
+  "schema": "AO_EXPLORE_EUROPE_FIVE_WAVE_SOURCE_REGISTER_V1",
+  "as_of": "2026-10-10",
+  "status": "FIVE_WAVE_DISCOVERY_IN_PROGRESS_COUNTRIES_NOT_CERTIFIED",
+  "previous_master": "data/explore/europe-acquisition.four-wave-master.review.v1.json",
+  "latest_wave": "data/explore/europe-acquisition.wave5-diocesan-index.research.v1.json",
+  "scope": {
+    "jurisdictions": 47,
+    "countries_without_site_or_lead": [],
+    "countries_with_at_most_two_total_sites": [
+      "AL",
+      "AD",
+      "BY",
+      "BA",
+      "EE",
+      "FI",
+      "GI",
+      "IS",
+      "XK",
+      "LV",
+      "LI",
+      "LU",
+      "MD",
+      "MC",
+      "ME",
+      "MK",
+      "RO",
+      "RS",
+      "SK",
+      "UA",
+      "VA"
+    ],
+    "audit_standard": "No country considered complete on strength of individual entries; national diocesan source index + relic/apparition/pilgrimage/customary domain closure separately required."
+  },
+  "totals": {
+    "source_research_site_leads": 187,
+    "existing_canonical_place_matches": 22,
+    "unmatched_place_candidates": 165,
+    "source_records": 131,
+    "category_associations": 160,
+    "by_category": {
+      "PILGRIMAGES": 94,
+      "RELICS": 18,
+      "APPARITIONS": 6,
+      "SACRED_IMAGE": 15,
+      "CUSTOMS": 27
+    },
+    "remaining_sparse_jurisdictions": 21
+  },
+  "country_audit": [
+    {
+      "country_code": "AL",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "AD",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "AT",
+      "published_canonical_places": 2,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 3,
+      "source_owned_category_links": 0,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "BY",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "BE",
+      "published_canonical_places": 3,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 5,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "BA",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "BG",
+      "published_canonical_places": 0,
+      "previous_research_leads": 3,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 3,
+      "total_including_published_places": 3,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 2,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "HR",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 11,
+      "total_research_leads": 12,
+      "total_including_published_places": 12,
+      "source_owned_category_links": 19,
+      "by_category": {
+        "PILGRIMAGES": 12,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 3,
+        "CUSTOMS": 4
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "CY",
+      "published_canonical_places": 0,
+      "previous_research_leads": 3,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 3,
+      "total_including_published_places": 3,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "CZ",
+      "published_canonical_places": 2,
+      "previous_research_leads": 4,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 4,
+      "total_including_published_places": 6,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 3,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "DK",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 1,
+      "total_research_leads": 3,
+      "total_including_published_places": 3,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 3,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "EE",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 2,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "FI",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "FR",
+      "published_canonical_places": 44,
+      "previous_research_leads": 28,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 28,
+      "total_including_published_places": 72,
+      "source_owned_category_links": 17,
+      "by_category": {
+        "PILGRIMAGES": 8,
+        "RELICS": 4,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 3
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "DE",
+      "published_canonical_places": 13,
+      "previous_research_leads": 8,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 8,
+      "total_including_published_places": 21,
+      "source_owned_category_links": 7,
+      "by_category": {
+        "PILGRIMAGES": 7,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "GI",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 0,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "GR",
+      "published_canonical_places": 1,
+      "previous_research_leads": 3,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 3,
+      "total_including_published_places": 4,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "HU",
+      "published_canonical_places": 1,
+      "previous_research_leads": 5,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 5,
+      "total_including_published_places": 6,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 2,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "IS",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "IE",
+      "published_canonical_places": 2,
+      "previous_research_leads": 4,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 4,
+      "total_including_published_places": 6,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "IT",
+      "published_canonical_places": 37,
+      "previous_research_leads": 21,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 21,
+      "total_including_published_places": 58,
+      "source_owned_category_links": 10,
+      "by_category": {
+        "PILGRIMAGES": 3,
+        "RELICS": 1,
+        "APPARITIONS": 2,
+        "SACRED_IMAGE": 2,
+        "CUSTOMS": 2
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "XK",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "LV",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 2,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "LI",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 2
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "LT",
+      "published_canonical_places": 2,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 3,
+      "source_owned_category_links": 0,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "LU",
+      "published_canonical_places": 1,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "MT",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 3,
+      "total_research_leads": 5,
+      "total_including_published_places": 5,
+      "source_owned_category_links": 6,
+      "by_category": {
+        "PILGRIMAGES": 4,
+        "RELICS": 0,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "MD",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "MC",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "ME",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "NL",
+      "published_canonical_places": 2,
+      "previous_research_leads": 0,
+      "additional_wave5_leads": 10,
+      "total_research_leads": 10,
+      "total_including_published_places": 12,
+      "source_owned_category_links": 11,
+      "by_category": {
+        "PILGRIMAGES": 10,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "MK",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "NO",
+      "published_canonical_places": 0,
+      "previous_research_leads": 3,
+      "additional_wave5_leads": 4,
+      "total_research_leads": 7,
+      "total_including_published_places": 7,
+      "source_owned_category_links": 7,
+      "by_category": {
+        "PILGRIMAGES": 4,
+        "RELICS": 3,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "PL",
+      "published_canonical_places": 7,
+      "previous_research_leads": 4,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 4,
+      "total_including_published_places": 11,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "PT",
+      "published_canonical_places": 2,
+      "previous_research_leads": 3,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 3,
+      "total_including_published_places": 5,
+      "source_owned_category_links": 4,
+      "by_category": {
+        "PILGRIMAGES": 3,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 1
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "RO",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 2,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "RU",
+      "published_canonical_places": 0,
+      "previous_research_leads": 4,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 4,
+      "total_including_published_places": 4,
+      "source_owned_category_links": 4,
+      "by_category": {
+        "PILGRIMAGES": 2,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 2
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "SM",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 3,
+      "total_research_leads": 4,
+      "total_including_published_places": 4,
+      "source_owned_category_links": 5,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 2,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 2
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "RS",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 3,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "SK",
+      "published_canonical_places": 0,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 2,
+      "source_owned_category_links": 1,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "SI",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 4,
+      "total_research_leads": 5,
+      "total_including_published_places": 5,
+      "source_owned_category_links": 7,
+      "by_category": {
+        "PILGRIMAGES": 5,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 1
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "ES",
+      "published_canonical_places": 6,
+      "previous_research_leads": 13,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 13,
+      "total_including_published_places": 19,
+      "source_owned_category_links": 6,
+      "by_category": {
+        "PILGRIMAGES": 4,
+        "RELICS": 0,
+        "APPARITIONS": 1,
+        "SACRED_IMAGE": 1,
+        "CUSTOMS": 0
+      },
+      "priority": "NATIONAL_COMPLETENESS_REVIEW",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "SE",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 2,
+      "total_research_leads": 3,
+      "total_including_published_places": 3,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 2,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "CH",
+      "published_canonical_places": 3,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 4,
+      "source_owned_category_links": 0,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "UA",
+      "published_canonical_places": 0,
+      "previous_research_leads": 1,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 1,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 0,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "GB",
+      "published_canonical_places": 4,
+      "previous_research_leads": 2,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 2,
+      "total_including_published_places": 6,
+      "source_owned_category_links": 2,
+      "by_category": {
+        "PILGRIMAGES": 1,
+        "RELICS": 1,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "MEDIUM_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    },
+    {
+      "country_code": "VA",
+      "published_canonical_places": 1,
+      "previous_research_leads": 0,
+      "additional_wave5_leads": 0,
+      "total_research_leads": 0,
+      "total_including_published_places": 1,
+      "source_owned_category_links": 0,
+      "by_category": {
+        "PILGRIMAGES": 0,
+        "RELICS": 0,
+        "APPARITIONS": 0,
+        "SACRED_IMAGE": 0,
+        "CUSTOMS": 0
+      },
+      "priority": "HIGH_UNDERREPRESENTED",
+      "certification": "INCOMPLETE_RESEARCH_ONLY"
+    }
+  ],
+  "guards": [
+    "Source indices are evidence of site identities and ecclesial vocabulary, not authoritative latitude/longitude or current pilgrim service schedules.",
+    "A diocese's pilgrimage-location register is not equivalent to national shrine designation.",
+    "Do not count nested chapels or replica grottos as automatically new buildings; inspect their physical hierarchy in geocoding phase.",
+    "Retain separate present vs historic Catholic ownership, temporary mobile relic versus custody, reported vision versus approved apparitions.",
+    "Only after Europe plus all other continents' candidate inventories are reconciled, add pin locations, followed by details and licensed images."
+  ],
+  "publication_state": "NO_NEW_PUBLIC_PLACES_OR_PINS"
+}
