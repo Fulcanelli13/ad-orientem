@@ -5,13 +5,13 @@ const DEFAULT_STYLE="https://tiles.openfreemap.org/styles/dark";
 // Web Mercator has finite latitude, and the atlas intentionally has one world.
 // MapLibre's default wrapped copies make multiple apparent Europes/Africas at
 // low zoom. Keep every physical Place on a single world, including after re-renders.
-export const EXPLORE_WORLD_BOUNDS=Object.freeze([Object.freeze([-180,-85.051129]),Object.freeze([180,85.051129])]);
+export const EXPLORE_WORLD_BOUNDS=Object.freeze([Object.freeze([-179.99,-85.051129]),Object.freeze([179.99,85.051129])]);
 const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
 export function boundedWorldViewport(viewport=null){
   const rawCenter=Array.isArray(viewport?.center)?viewport.center:[0,16];
   const longitude=Number(rawCenter[0]),latitude=Number(rawCenter[1]),zoom=Number(viewport?.zoom);
   return Object.freeze({
-    center:[clamp(Number.isFinite(longitude)?longitude:0,-180,180),clamp(Number.isFinite(latitude)?latitude:16,-85,85)],
+    center:[clamp(Number.isFinite(longitude)?longitude:0,-179.99,179.99),clamp(Number.isFinite(latitude)?latitude:16,-85,85)],
     zoom:clamp(Number.isFinite(zoom)?zoom:1,0,18),
   });
 }
@@ -19,6 +19,8 @@ export function boundedWorldMapOptions(viewport=null){
   const position=boundedWorldViewport(viewport);
   return {
     center:position.center,zoom:position.zoom,
+    // A full 360-degree maxBounds span triggers a MapLibre singular camera
+    // matrix; 359.98 degrees avoids it while retaining the finite world.
     renderWorldCopies:false,
     maxBounds:EXPLORE_WORLD_BOUNDS.map(pair=>[...pair]),
     minZoom:0,maxZoom:18,
