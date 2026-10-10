@@ -1,4 +1,4 @@
-import { formationReaderCss } from "./formation-ui.js";
+import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import {
   SPIRITUAL_LIFE_ROUTE_ID,
@@ -191,6 +191,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
     const lesson=currentLesson();
     node.innerHTML=state.view==="lesson"&&lesson?lessonHtml(win,lesson):listHtml(win);
     node.hidden=false;node.removeAttribute("aria-hidden");
+    installFormationNavigation(win,node);
     return true;
   }
 
