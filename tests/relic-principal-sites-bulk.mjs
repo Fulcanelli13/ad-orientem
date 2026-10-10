@@ -20,7 +20,7 @@ assert.equal(assertShrinesPilgrimagesRegistry({shrines:sh.shrines,pilgrimages:sh
 assert.equal(geo.places.length,217);
 assert.equal(sh.shrines.length,213);
 assert.equal(sh.pilgrimages.length,206);
-assert.equal(sources.sources.length,261);
+assert.equal(sources.sources.length,331);
 assert.equal(sacred.relics.length,122);
 const idset=new Set(),pmap=new Map(geo.places.map(p=>[p.place_id,p]));
 const sid=new Set(),selectionIds=new Set(selection.site_decisions.map(x=>x.selection_id));
