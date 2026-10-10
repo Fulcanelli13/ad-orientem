@@ -160,7 +160,7 @@ try{
    assert.equal(await page.locator('#ao-find-modular-root [data-find-filter="day"]').count(),0,
      "Unverified preliminary venue markers must not expose a timetable filter");
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ALL"]').tap();
-   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===1876,
+   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===1879,
      null,{timeout:12000});
    await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="SSPX"]').tap();
    await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===732,
