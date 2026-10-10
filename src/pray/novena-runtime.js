@@ -4,6 +4,8 @@ import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
 import { hammerHistoricalDayText } from "./novena-hammer-original-texts.v1.js";
 import { NOVENA_CONTEXT_V1, novenaContext } from "./novena-context-v1.js";
 import { installNovenaStyles } from "./novena-styles.js";
+import "./reader-convergence-styles.js";
+import { readingPositionMarkup } from "./reading-position.js";
 import { novenaStatusFor } from "../calendar/intelligence.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
@@ -96,7 +98,36 @@ function commonPrayers(n){return (n.commonPrayers||[]).map(x=>canonicalPrayer(x[
 function daySource(n,d){return n.form==='REPEAT_FORM'?n.repeatText:d.text}
 function novenaPattern(n){return n.pattern||(n.id==='immaculate_conception'?'OPENING_DAY_COMMON_CLOSE':'STANDARD')}
 function stages(n){const p=novenaPattern(n);return p==='HAMMER_MARIAN'?6:p==='OPENING_DAY_COMMON_CLOSE'?5:p==='COMMON_BEFORE_REPEAT'?4:(n.sharedClosingText?5:4)}
-function stageRail(n){const total=stages(n);return `<div class="aoN1StageRail" aria-label="${esc(L('Guided stages','Étapes guidées'))}">${Array.from({length:total},(_,i)=>`<span class="${i<N.stage?'done':i===N.stage?'current':''}"></span>`).join('')}</div>`}
+function novenaStageName(n,index){
+ const pattern=novenaPattern(n);
+ if(index===0)return L("Preparation","Préparation");
+ if(pattern==="HAMMER_MARIAN")return [
+   L("Preparation","Préparation"),L("Opening prayer","Prière d'ouverture"),
+   L("Prayer of the Church","Prière de l'Église"),L("Prayer of the day","Prière du jour"),
+   L("Invocation","Invocation"),L("Silent conclusion","Conclusion silencieuse"),
+ ][index]||"";
+ if(pattern==="COMMON_BEFORE_REPEAT")return [
+   L("Preparation","Préparation"),L("Common prayers","Prières communes"),
+   L("Historical prayer","Prière historique"),L("Silent conclusion","Conclusion silencieuse"),
+ ][index]||"";
+ if(pattern==="OPENING_DAY_COMMON_CLOSE")return [
+   L("Preparation","Préparation"),L("Common opening","Ouverture commune"),
+   L("Common prayers","Prières communes"),L("Prayer of the day","Prière du jour"),
+   L("Conclusion","Conclusion"),
+ ][index]||"";
+ if(index===1)return L("Prayer of the day","Prière du jour");
+ if(index===2)return L("Common prayers","Prières communes");
+ if(n.sharedClosingText&&index===3)return txt(n.sharedClosingLabel||{en:"Closing prayer",fr:"Prière de conclusion"});
+ return L("Silent conclusion","Conclusion silencieuse");
+}
+function stageRail(n){
+ const total=stages(n);
+ return readingPositionMarkup({
+  step:N.stage,total,
+  label:L("Current novena stage","Étape actuelle de la neuvaine"),
+  title:novenaStageName(n,N.stage),
+ });
+}
 function commonNote(n){if(n.commonNote)return txt(n.commonNote);return n.id==='st_joseph'?L('Moran directs three Our Fathers and three Hail Marys each day.','Moran prescrit trois Notre Père et trois Je vous salue Marie chaque jour.'):n.id==='holy_ghost'||n.id==='christmas'?L('The source directs one Our Father, one Hail Mary and one Glory Be after the daily prayer.','La source prescrit un Notre Père, un Je vous salue Marie et un Gloire au Père après la prière du jour.'):n.id==='immaculate_conception'?L('Moran directs nine Hail Marys and one Glory Be before the day prayer; they are kept here as a distinct guided stage.','Moran prescrit neuf Je vous salue Marie et un Gloire au Père avant la prière du jour ; ils sont conservés ici comme étape guidée distincte.'):L('The historical source does not prescribe an additional daily prayer sequence beyond the novena prayer itself.','La source historique ne prescrit pas de séquence quotidienne supplémentaire au-delà de la prière de neuvaine elle-même.')}
 function hammerChurchStage(n){return `${sourceWitness(n.churchPrayer,L('Historical “Prayer of the Church”','« Prière de l’Église » historique'))}${n.loretoCanonical?canonicalPrayer(n.loretoCanonical,1):''}`}
 function hammerTailStage(n){return `<div class="aoN1Info"><h3>${esc(L('Hail Mary & invocation','Je vous salue Marie et invocation'))}</h3><p>${esc(commonNote(n))}</p></div>${commonPrayers(n)}${sourceWitness(n.ejaculation,L('Historical ejaculation','Invocation historique'))}`}
