@@ -59,6 +59,7 @@ export function mountScriptureLibrary(root,{
  let section="read";
  let contextDepth="selected";
  let commentaryVisible=false;
+ let browseExpanded=!context?.reference;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
  function moveEdition(nextEdition){
@@ -111,7 +112,8 @@ export function mountScriptureLibrary(root,{
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
    // Citation reading is the primary surface. All-library navigation lives below it.
    const browse=element("details",null,"aoScriptureBrowse");
-   browse.open=!context?.reference;
+   browse.open=browseExpanded;
+   browse.addEventListener("toggle",()=>{if(browse.isConnected)browseExpanded=browse.open;});
    browse.append(element("summary",lang==="fr"?"Parcourir la Bible":"Browse the Bible"));
    const nav=element("div",null,"aoScriptureNav");
    const langControl=element("label",t.language);

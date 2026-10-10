@@ -68,6 +68,7 @@ try{
  assert.equal(await dialog.getByRole("button",{name:"Bookmarked"}).getAttribute("aria-pressed"),"true");
  await dialog.locator(".aoScriptureBookmarks summary").click();
  assert.equal(await dialog.locator(".aoScriptureBookmarks button").count(),1);
+ await dialog.locator(".aoScriptureSearch summary").click();
  await dialog.locator(".aoScriptureSearch input").fill("Tob");
  await dialog.locator(".aoScriptureResults button").first().click();
  assert.match(await dialog.locator(".aoScriptureReading h3").innerText(),/Tobit 1:1/);
@@ -168,7 +169,10 @@ try{
  await dialog.locator("[data-scripture-segment-index='1']").click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 27:1–60");
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.activeSegmentIndex),1);
+ await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("en");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
+   "Expanded navigation must survive a language change");
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/Matthew%2027%3A1-60/i);
@@ -206,6 +210,7 @@ try{
  assert.match(await notice.innerText(),/then 3:47–48, then 3:50–51/);
  assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,
    "Liturgical note must never unlock unlicensed Bible text");
+ await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await notice.innerText(),/ordre liturgique/);
  assert.match(await notice.innerText(),/Bible ci-dessous suit l’ordre canonique/);
