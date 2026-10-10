@@ -2031,13 +2031,24 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2463,
+          "height": 4096
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042094354",
+        "artifactId": 11666277565,
+        "archiveOriginal": "nga-originals/nga-41656.jpg",
+        "originalWidth": 2463,
+        "originalHeight": 4096,
+        "originalSha256": "3b3b11cba6e16eff2535fdd9655d598f617c29f7f9e50d9356972681c2f1e4e6"
+      }
     },
     {
       "id": "nga-41661",
@@ -2069,13 +2080,24 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2465,
+          "height": 4096
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042094354",
+        "artifactId": 11666277565,
+        "archiveOriginal": "nga-originals/nga-41661.jpg",
+        "originalWidth": 2465,
+        "originalHeight": 4096,
+        "originalSha256": "90278d47f17cd2b153f62688e6d91e20f9c9c891a262c42a0b5bac440e98511e"
+      }
     },
     {
       "id": "nga-12134",
@@ -2107,7 +2129,98 @@
         "source": "NGA_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 1652
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38042094354",
+        "artifactId": 11666277565,
+        "archiveOriginal": "nga-originals/nga-12134.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 1652,
+        "originalSha256": "b25871f518f5c0c12128e177b6d53981404fd9886a06666febd5a03181196cdf"
+      }
+    },
+    {
+      "id": "artic-41217",
+      "title": "Pentecost",
+      "artist": "Workshop of Bernard van Orley",
+      "dated": "c. 1520",
+      "medium": "painting",
+      "museum": "Art Institute of Chicago",
+      "source": {
+        "objectUrl": "https://www.artic.edu/artworks/41217",
+        "objectId": "41217",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://api.artic.edu/docs/",
+        "sourceEvidence": "Art Institute official collection API identifies Painting with is_public_domain=true; original IIIF download currently HTTP 403.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "pentecost"
+        ],
+        "seasonIds": [
+          "pentecost"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo3"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_PUBLIC_DOMAIN_VERIFIED",
+        "rights": "MUSEUM_API_PUBLIC_DOMAIN_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "DOWNLOAD_BLOCKED_403",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null
+    },
+    {
+      "id": "artic-16316",
+      "title": "Panels from the High Altar of the Charterhouse of Saint-Honoré, Thuison-les-Abbeville: Pentecost",
+      "artist": "French",
+      "dated": "c. 1495",
+      "medium": "painting",
+      "museum": "Art Institute of Chicago",
+      "source": {
+        "objectUrl": "https://www.artic.edu/artworks/16316",
+        "objectId": "16316",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://api.artic.edu/docs/",
+        "sourceEvidence": "Art Institute official collection API identifies Painting with is_public_domain=true; original IIIF download currently HTTP 403.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "pentecost"
+        ],
+        "seasonIds": [
+          "pentecost"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo3"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_PUBLIC_DOMAIN_VERIFIED",
+        "rights": "MUSEUM_API_PUBLIC_DOMAIN_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "DOWNLOAD_BLOCKED_403",
         "pixelDimensions": null,
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
@@ -2118,6 +2231,7 @@
   ],
   "notes": [
     "Explicit prayerKeys are editorial links for recurring prayer artwork pools. These do not approve artwork and are never inferred from the prayer date by the runtime.",
-    "Coverage-first 12 additional museum object candidates (8 Cleveland with archival originals, 1 Met, 3 NGA). CMA composite diptych requires iconographic review. Two CMA Assumption studies and a misassigned Presentation study are retained in acquisition archive only, not counted as direct artwork candidates."
+    "Coverage-first 12 additional museum object candidates (8 Cleveland with archival originals, 1 Met, 3 NGA). CMA composite diptych requires iconographic review. Two CMA Assumption studies and a misassigned Presentation study are retained in acquisition archive only, not counted as direct artwork candidates.",
+    "Two Art Institute painted Pentecost records close the source-catalogue zero for rosary.glo3, but IIIF image downloads returned HTTP 403; original image quality is not verified. They are leads, not acquired paintings."
   ]
 }
