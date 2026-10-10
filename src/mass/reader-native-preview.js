@@ -102,11 +102,10 @@ export function resolveGestureProjection(eventState, legacyGesture, {
   incarnatusAction="GENUFLECT",
 }={}) {
   const owner=eventState?.ownership?.gesture ?? null;
-  if(owner==="R17_NATIVE") return eventState.gesture ?? null;
-
   const adjudicated=Boolean(cueId && GLORIA_CREDO_FAITHFUL_GESTURES[cueId]);
   const cueGesture=cueId ? resolveFaithfulGestureForCue({cueId,gestureProfile,incarnatusAction}) : null;
   if(cueGesture) return cueGesture;
+  if(owner==="R17_NATIVE" && !adjudicated)return eventState.gesture ?? null;
 
   if(adjudicated || owner==="R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION") return null;
   return legacyGesture ?? null;
