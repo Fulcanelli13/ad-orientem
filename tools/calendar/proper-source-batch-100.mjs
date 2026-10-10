@@ -264,3 +264,7 @@ for(const path of ["Sancti/02-22","Sancti/05-25","Sancti/01-15",
 // never be displayed as completed liturgical conclusions.
 if(output.summary?.inheritedCoverageMismatch?.length)process.exitCode=4;
 if(output.summary?.unresolvedPointerTypes?.unexpanded_conclusion)process.exitCode=5;
+if(!FOCUSED_GAPS && output.summary?.unresolvedPointerTypes?.name_placeholder){
+  console.error("PROPER_100_UNRESOLVED_SAINT_NAMES",output.summary.unresolvedPointerTypes.name_placeholder);
+  process.exitCode=7;
+}
