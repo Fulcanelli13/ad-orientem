@@ -51,6 +51,9 @@ jobs:
           fi
           protected=$(gh api "repos/$REPO/branches/$BRANCH" --jq '.protected' 2>/dev/null) || { echo 'Protection status unavailable: retain'; exit 0; }
           [[ "$protected" == false ]] || { echo "Retained protected branch: $BRANCH"; exit 0; }
+          if gh api --paginate "repos/$REPO/pulls?state=open&per_page=100" --jq '.[].head.ref' | grep -Fxq -- "$BRANCH"; then
+            echo "Retained $BRANCH: another open PR still depends on this head"; exit 0
+          fi
           gh api -X DELETE "repos/$REPO/git/refs/heads/$BRANCH"
           echo "Removed merged PR head $BRANCH at $current"
 
@@ -72,6 +75,7 @@ jobs:
           set -euo pipefail
           operation=audit
           [[ "$GITHUB_EVENT_NAME" == push ]] && operation=prune
+          [[ "$GITHUB_EVENT_NAME" == schedule ]] && operation=prune
           [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]] && operation="${REQUESTED_OPERATION:-audit}"
           [[ "$operation" == audit || "$operation" == prune ]] || exit 2
           max_delete=150
@@ -83,6 +87,7 @@ jobs:
           candidates=0
           removed=0
           retained=0
+          declare -A seen=()
           while IFS= read -r remote; do
             branch="${remote#origin/}"
             case "$branch" in
@@ -95,6 +100,7 @@ jobs:
             [[ "$committed" -le "$cutoff" ]] || { retained=$((retained+1)); continue; }
             git merge-base --is-ancestor "$sha" refs/remotes/origin/main || { retained=$((retained+1)); continue; }
             candidates=$((candidates+1))
+            seen["$branch"]=1
             date_iso=$(date -u -d "@$committed" '+%Y-%m-%dT%H:%M:%SZ')
             decision=eligible
             if [[ "$operation" == prune && "$removed" -lt "$max_delete" ]]; then
@@ -113,6 +119,61 @@ jobs:
             fi
             printf '%s\t%s\t%s\t%s\n' "$branch" "$sha" "$date_iso" "$decision" >> "$report"
           done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/)
+          # Squash/rebase merges have PR heads not necessarily ancestral to main.
+          # The merged PR must identify this *exact* still-current remote SHA;
+          # closed-unmerged branches are deliberately never touched.
+          if ! gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=closed&per_page=100"               --jq '.[] | select(.merged_at != null) | [.head.ref,.head.sha,.merged_at] | @tsv'               > "$RUNNER_TEMP/merged-pr-heads.tsv"; then
+            echo "Unable to verify merged PR heads; refusing secondary cleanup" >&2
+            exit 1
+          fi
+          while IFS=
+            echo "Operation: **$operation** | eligible merged heads older than 72h: **$candidates** | deleted: **$removed** | retained/skipped: **$retained**"
+            echo "Safety: excludes archives, active PR heads, recently merged branches, unmerged PRs, changed heads and protected branches; deletion cap $max_delete per run."
+            echo ''
+            echo '```text'
+            head -n 31 "$report"
+            echo '```'
+            echo 'Full candidate and disposition log attached as artifact.'
+          } >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p artifacts/branch-hygiene
+          cp "$report" artifacts/branch-hygiene/branch-hygiene.tsv
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: branch-hygiene-report
+          path: artifacts/branch-hygiene/branch-hygiene.tsv
+          if-no-files-found: warn
+\t' read -r branch merged_sha merged_at; do
+            [[ -n "$branch" && -n "$merged_sha" && -n "$merged_at" ]] || continue
+            case "$branch" in
+              main|HEAD|gh-pages|archive/*|release/*|snapshot/*|baseline*|donor/*|production/*) continue ;;
+            esac
+            [[ "$branch" =~ ^[A-Za-z0-9_./-]+$ ]] && [[ "$branch" != *..* ]] || continue
+            [[ -z "${seen[$branch]+exists}" ]] || continue
+            grep -Fxq -- "$branch" "$RUNNER_TEMP/open-pr-heads.txt" && continue
+            merged_ts=$(date -u -d "$merged_at" +%s) || continue
+            [[ "$merged_ts" -le "$cutoff" ]] || continue
+            actual=$(git rev-parse -q --verify "refs/remotes/origin/$branch") || continue
+            [[ "$actual" == "$merged_sha" ]] || continue
+            candidates=$((candidates+1))
+            seen["$branch"]=1
+            decision=eligible-exact-merged-pr
+            if [[ "$operation" == prune && "$removed" -lt "$max_delete" ]]; then
+              live_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/$branch" --jq '.object.sha' 2>/dev/null) || live_sha=''
+              protected=$(gh api "repos/$GITHUB_REPOSITORY/branches/$branch" --jq '.protected' 2>/dev/null) || protected=unknown
+              if [[ "$live_sha" == "$merged_sha" && "$protected" == false ]]; then
+                if gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/$branch" >/dev/null; then
+                  decision=deleted-merged-pr
+                  removed=$((removed+1))
+                else
+                  decision=delete-failed
+                fi
+              else
+                decision=changed-or-protected
+              fi
+            fi
+            printf '%s\t%s\t%s\t%s\n' "$branch" "$merged_sha" "$merged_at" "$decision" >> "$report"
+          done < "$RUNNER_TEMP/merged-pr-heads.tsv"
           {
             echo '## Branch hygiene'
             echo "Operation: **$operation** | fully merged and older than 72h: **$candidates** | deleted: **$removed** | retained/skipped: **$retained**"
