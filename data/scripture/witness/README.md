@@ -14,10 +14,14 @@ They are **not** the certified edition packs used by
   https://sacredbible.org/catholic/index.htm . This **does not constitute**
   a comparison of the entire secondary transcription with the author's current
   73 original book pages; differences and errata remain under review.
-- **Douay–Rheims (Challoner)**: 4 complete Gospels, 3,777 verse slots, from
-  `AlvaroBalbin/catena/data/bible/drb`, which cites Project Gutenberg
-  eBook 1581 as its historical text source. Not labelled as a verified 1899
-  printing or a newly certified complete Douay Bible.
+- **Douay–Rheims (Challoner)**: all 73 Catholic books, 1,334 source chapters,
+  35,786 verse slots from `AlvaroBalbin/catena/data/bible/drb` (Project Gutenberg
+  eBook #1581 underlying text). The 69 newly imported books are bound to the
+  upstream commit `efe1bd084d918a34ca22ffeef2ecf711c593b392` and their
+  Git blob SHAs. This is a **complete digitized source witness, not a certified
+  reproduction of a particular 1899 printing**. Four source files that exceeded
+  GitHub's 1 MB Contents cutoff—Genesis, Jeremiah, Psalms, Sirach—were
+  recovered directly from their original Git blobs, not left empty.
 - **Crampon (French, 1923 label)**: original Lab-ora subset, 39 chapters in
   11 books, 1,460 nonblank verse slots; `Fulcanelli13/lab-ora/data/crampon-chapters`,
   with an upstream Scrollmapper Crampon source candidate. Source collation with
