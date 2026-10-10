@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {CSE_QUESTIONS,CSE_QUESTION_MAP} from "../src/learn/sexual-ethics-data/index.js";
 import {CSE_DEBATE_FIELDS,CSE_DEBATE_IDS,CSE_DEBATE_MAP} from "../src/learn/sexual-ethics-data/debates.js";
 import {CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/sources.js";
+import {cseSourceTargets} from "../src/learn/sexual-ethics-data/source-targets.js";
 import {CSE_HIGH_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-high24.js";
 import {CSE_REMAINING_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-remaining31.js";
 import {paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
@@ -14,7 +15,7 @@ assert.equal(CSE_DEBATE_IDS.length,55);
 assert.equal(report.cases.length,55);
 assert.deepEqual(report.cases.map(x=>x.id).sort(),[...CSE_DEBATE_IDS].sort());
 assert.equal(report.statistics.stages,440);
-assert.equal(report.statistics.direct_registered_source_references,612);
+assert.equal(report.statistics.direct_registered_source_references,636);
 assert.equal(report.statistics.bibliographic_only_rendered,0);
 assert.equal(report.statistics.full_certifications,0);
 assert.equal(report.statistics.publication_approval,false);
@@ -40,16 +41,24 @@ for(const review of report.cases){
    const actual=paragraphRefsFor(q,"debate",stage.stage);
    assert.deepEqual(actual.map(x=>x[0]),stage.selected_source_ids);
    assert.equal(stage.evidence_validation,"REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF");
-   for(const [sid] of actual){
-     assert.ok(CSE_SOURCE_MAP[sid]?.canonical_url?.startsWith("https://"),id+" "+sid+" URL invalid");
-     assert.ok(!CSE_SOURCE_MAP[sid].canonical_url.includes("books.google.com"),id+" bibliographic preview cited as evidence");
+   for(const [sid,locator] of actual){
+     const source=CSE_SOURCE_MAP[sid];
+     assert.ok(source?.canonical_url?.startsWith("https://"),id+" "+sid+" URL invalid");
+     const targets=cseSourceTargets(sid,locator,source);
+     assert.ok(targets.length&&targets.every(t=>t.url.startsWith("https://")),
+       id+" "+sid+" source cannot be opened");
+     assert.ok(targets.every(t=>t.scope!=="catalogue"&&t.scope!=="index"&&t.scope!=="unverified"),
+       id+" "+sid+" source citation resolves only to an unverified catalogue or index");
+     if(sid==="FLETCHER1966")
+       assert.ok(targets.every(t=>t.scope==="digitized-original"&&/not independently collated/.test(t.witness)),
+         id+" Fletcher 1966 text must remain explicitly uncollated original scan");
      refs++;
    }
    stages++;
  }
 }
 assert.equal(stages,440);
-assert.equal(refs,612);
+assert.equal(refs,636);
 for(const id of ["CSE008","CSE010","CSE145"]){
   const q=report.cases.find(x=>x.id===id);
   assert.equal(q.editorial_status,"ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED");
@@ -60,4 +69,4 @@ assert.equal(sources.CSE012.counter[0],"CURRAN_CDF1986");
 assert.ok(!JSON.stringify(sources).includes('"LBM"'));
 assert.ok(!JSON.stringify(sources).includes('"SINGER2011"'));
 assert.ok(!JSON.stringify(sources).includes('"CURRAN1978"'));
-console.log("PASS evidence-audit: 55 debates, all 440 bilingual stages, 612 live non-catalogue links; 0 unjustified complete certifications.");
+console.log("PASS evidence-audit: 55 debates, all 440 bilingual stages, 636 live non-catalogue resolved links; original-book scans uncollated; 0 unjustified complete certifications.");
