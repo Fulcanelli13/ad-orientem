@@ -150,4 +150,5 @@ export const HERITAGE_STYLE = String.raw`
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard .aoExploreCardOpen{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid #d9c59a20;font:650 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em;color:#d1b888}
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}
 @media(max-width:520px){.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs{display:flex;grid-template-columns:none;padding:9px 9px 6px}.aoExploreSurface:not(.aoHeritageSurface) .aoFindList{padding:0 9px 28px}.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard{padding:14px}}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCardRecognition{font:650 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);font-style:normal;letter-spacing:0;color:#d6bd88;border:1px solid #d9c59a33;border-radius:6px;padding:4px 6px}
 `;
