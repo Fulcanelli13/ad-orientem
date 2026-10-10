@@ -456,4 +456,5 @@ for(const id of ["att:DOM-006:PARAY","att:DOM-007:PARAY"]){
 }
 
 console.log("shrines and pilgrimages source-of-truth: PASS");
-\nawait import("./sacred-geography-profiles-editorial.mjs");\n
+
+await import("./sacred-geography-profiles-editorial.mjs");
