@@ -143,4 +143,16 @@ def main():
    "artworks":rows}
  (OUT/"research.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
  print("NGA_BULK_ACQUISITION",json.dumps({k:report[k] for k in ("targetCount","titleMatches","openAccessPaintingMatches","attemptedImages","originalsAcquired")}),flush=True)
+
+ # Print a capped machine-readable source-original ledger for exact GitHub
+ # connector reconciliation; NEVER promote missing hash, wrong class, or non-openaccess images.
+ good=[{
+  "id":a["id"],"title":a["title"],"medium":a["medium"],
+  "objectID":a["objectID"],"targetId":a["targetId"],
+  "iiifOriginalURL":a["iiifOriginalURL"],"imageUUID":a["imageUUID"],
+  "sourceUrl":a["sourceUrl"],"sha256":a["sha256"],
+  "width":a["width"],"height":a["height"],"filename":a["filename"]
+  } for a in rows if a["imageUsageStatus"]=="OFFICIAL_NGA_ORIGINAL_ACQUIRED_TECHNICALLY_ONLY"]
+ print("NGA_BULK_RECONCILE_JSON="+json.dumps(good,ensure_ascii=True,separators=(",",":")),flush=True)
+
 if __name__=="__main__":main()
