@@ -171,6 +171,12 @@ function buildLocal({dayIndex,hour,locale,daySource,thursdaySource,psalms}){
         push("M.RESP"+i,"RESPONSORY",cleanSection(local.get("Responsory"+i)),{nocturn:nocturn+1});
       }
     }
+    // Matins shown as a standalone Hour: under the 1960 Code n. 246 its
+    // closing oration is said here unless Matins runs directly into Lauds.
+    // Separate Matins and Lauds views must never silently omit that prayer.
+    const pater=PRAY_CANONICAL_DATA_V435930.prayers.foundations_our_father;
+    push("M.PATER","PRAYER",pater[locale]??pater.en,{saidSilently:true});
+    push("M.COLLECT","COLLECT",collectPrayer(local,thursday));
   }else if(hour==="LAUDS"){
     const ants=antiphons(local.get("Ant Laudes"));
     if(ants.length!==5)throw new Error(locale+" "+DAYS[dayIndex]+" Lauds expects five antiphons");
@@ -186,7 +192,7 @@ function buildLocal({dayIndex,hour,locale,daySource,thursdaySource,psalms}){
     push("L.PATER","PRAYER",p[locale]??p.en,{saidSilently:true});
     push("L.COLLECT","COLLECT",collectPrayer(local,thursday));
   }else throw new TypeError("Unknown Tenebrae Office "+hour);
-  if(rows.length!==(hour==="MATINS"?30:10))throw new Error("Unexpected Tenebrae hour length");
+  if(rows.length!==(hour==="MATINS"?32:10))throw new Error("Unexpected Tenebrae hour length");
   return rows;
 }
 export function compileTenebraeHour({dayIndex=0,hour="MATINS",sourceByLocale,thursdayByLocale,psalmsByLocale}={}){
