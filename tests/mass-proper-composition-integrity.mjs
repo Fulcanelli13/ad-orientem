@@ -93,4 +93,44 @@ assert.equal(canonicalSection("Commune/C11","Postcommunio ad missam",parsed),
 assert.equal(canonicalSection("Commune/C5","Oratio ad missam",
   {map:new Map([["Oratio ad missam",["direct original"]],["Oratio",["other"]]])}),
   "Oratio ad missam","original explicit section was overwritten by fallback");
+// Extract the actual production owner, with no shadow source-name dictionary.
+const canonicalNames=between("const NAMED_1962_COMMEMORATION_PRAYERS = Object.freeze({",
+  "async function mergeCommemorations(resolver, proper, day, diagnostic) {");
+const named=runInNewContext(canonicalNames+"\nresolve1962CommemorationSaintNames;");
+const singleton=(lat,en,fr)=>({lat,en,fr});
+const saintCases=[
+  {owner:"Sancti/01-23o",section:"collect",before:singleton("beátæ N. Vírginis","blessed N., Virgin","bienheureuse N., Vierge"),
+    after:singleton("beátæ Emerentiánæ Vírginis","blessed Emerentiana, Virgin","bienheureuse Émérentienne, Vierge")},
+  {owner:"Sancti/01-23o",section:"secret",before:singleton("beátæ N. Vírginis","blessed N., Virgin","bienheureuse N., Vierge"),
+    after:singleton("beátæ Emerentiánæ Vírginis","blessed Emerentiana, Virgin","bienheureuse Émérentienne, Vierge")},
+  {owner:"Sancti/01-23o",section:"postcommunion",before:singleton("beáta N. Vírgine","blessed N., Virgin","bienheureuse N., Vierge"),
+    after:singleton("beáta Emerentiána Vírgine","blessed Emerentiana, Virgin","bienheureuse Émérentienne, Vierge")},
+  {owner:"Sancti/02-15",section:"collect",before:singleton("Mártyrum N. et N.","Martyrs N. and N.","Martyrs Faustin et Jovite"),
+    after:singleton("Mártyrum Faustíni et Jovítæ","Martyrs Faustinus and Jovita","Martyrs Faustin et Jovite")},
+  {owner:"Sancti/03-04cc",section:"collect",before:singleton("per beátum N. Summum","blessed N., sovereign","bienheureux N., pape"),
+    after:singleton("per beátum Lúcium Summum","blessed Lucius, sovereign","bienheureux Lucien, pape")},
+  {owner:"Sancti/05-25o",section:"collect",before:singleton("Urbánum","Urban","bienheureux N., pape"),
+    after:singleton("Urbánum","Urban","bienheureux Urbain, pape")},
+  {owner:"Sancti/05-26o",section:"collect",before:singleton("per beátum N. Summum","blessed N., sovereign","bienheureux N., pape"),
+    after:singleton("per beátum Eleuthérium Summum","blessed Eleutherius, sovereign","bienheureux Éleuthère, pape")},
+  ...["collect","secret","postcommunion"].map(section=>({owner:"Sancti/06-19o",section,
+    before:singleton("Gervásii et Protásii","Martyrs N. and N.","Gervais et Protais"),
+    after:singleton("Gervásii et Protásii","Martyrs Gervasius and Protasius","Gervais et Protais")}))
+];
+let correctedLocaleBodies=0;
+for(const t of saintCases){
+  const result=named(t.owner,{[t.section]:t.before},{referencesResolved:[]});
+  for(const lang of ["lat","en","fr"]){
+    assert.equal(result[t.section][lang],t.after[lang],t.owner+"/"+t.section+"/"+lang);
+    if(/\bN\./u.test(t.before[lang]))correctedLocaleBodies++;
+  }
+}
+assert.equal(correctedLocaleBodies,21,"all six named owners and their 19 language/section substitutions tested");
+const untouched=named("Sancti/12-04pl",{collect:{lat:"not a source N."}},null);
+assert.equal(untouched.collect.lat,"not a source N.","unregistered names must remain unresolved");
+assert.throws(()=>named("Sancti/05-26o",{secret:{lat:"An invalid N. secret"}},
+  {referencesResolved:[]}),/not certified/,"unverified prayer section was silently substituted");
+assert.throws(()=>named("Sancti/02-15",{collect:{lat:"One stray N."}},
+  {referencesResolved:[]}),/unexpected name slot count/,"partially identified pair was accepted");
+
 console.log("PASS actual Proper conclusion and post-commemoration coverage logic (EN/FR/LA)");
