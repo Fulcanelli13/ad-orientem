@@ -912,8 +912,8 @@ try{
       ?.dataset.faithfulPosture==="STAND",null,{timeout:7000});
   await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("SIGN_OF_CROSS");
   await page.waitForFunction(()=>
-    document.querySelector("#ao-r17-native-reader-preview [data-role='gesture']")
-      ?.textContent?.includes("SIGN OF CROSS"),null,{timeout:7000});
+    document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']")
+      ?.title?.includes("SIGN OF CROSS"),null,{timeout:7000});
   assert.match(await page.evaluate(()=>localStorage.getItem("ao-mass-customary-v1")??""),/AO.SM.C0061/,
     "faithful paragraph icon customization was not saved");
   await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("DEFAULT");
