@@ -57,7 +57,7 @@ export function groupTraditionsForBrowse(items,{includeNovenaContext=false}={}){
         {label:"Documented examples",value:String(attestations.length)},
       ].filter(fact=>fact.value)),
       sections:Object.freeze([
-        ...(custom.guardrail?[{label:"Pastoral context",title:"",body:custom.guardrail}]:[]),
+        ...(custom.guardrail?[{label:"Pastoral context",label_fr:"Contexte pastoral",title:"",body:custom.guardrail}]:[]),
         ...novenaSections,
       ]),
       attestation_examples:Object.freeze(examples),
