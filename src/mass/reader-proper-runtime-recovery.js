@@ -57,17 +57,6 @@ async function recoverText(hostResolver,path,sectionIds,diagnostic){
   return Object.freeze(out);
 }
 
-// Some Calendar aliases identify the celebration date while Divinum stores
-// its orations under the saints' common source. This explicit alias is
-// SOURCE-ONLY, never a replacement for the calendar's liturgical identity.
-// Latin text must still match the composed commemoration before use.
-const COMMEMORATION_SOURCE_ALIASES=Object.freeze({
-  "Sancti/10-08c":Object.freeze({
-    sourcePath:"Sancti/10-07cc",
-    frenchSourceUrl:"https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Francais/Sancti/10-07cc.txt"
-  }),
-});
-
 function unwrap(proper){
   if(!proper||typeof proper!=="object")return{envelope:null,data:null};
   if(proper.status&&proper.data)return{envelope:proper,data:proper.data};
@@ -82,7 +71,12 @@ function unwrap(proper){
 // This is a source-path equivalence, not a calendar-day or text override.
 // https://github.com/mmolenda/missalemeum/blob/main/backend/resources/divinum-officium-local/web/www/missa/Latin/Sancti/10-08c.txt
 // https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Francais/Sancti/10-07cc.txt
-const FRENCH_SOURCE_ALIASES=Object.freeze({"Sancti/10-08c":"Sancti/10-07cc"});
+const FRENCH_SOURCE_ALIASES=Object.freeze({
+  "Sancti/10-08c":Object.freeze({
+    sourcePath:"Sancti/10-07cc",
+    frenchSourceUrl:"https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Francais/Sancti/10-07cc.txt"
+  }),
+});
 
 function latinOpening(value){
   return String(value??"").toLowerCase().normalize("NFD")
@@ -108,35 +102,24 @@ async function fillSourceBoundCommemorations(data,hostResolver,diagnostic){
       const provenance=refs[index-1];
       const path=String(provenance?.prayerSourcePath??provenance?.path??"").trim();
       if(!/^(Sancti|Tempora|Commune)\/[A-Za-z0-9_./-]+$/.test(path)||path.includes(".."))continue;
-      const alias=COMMEMORATION_SOURCE_ALIASES[path]??null;
-      const sourcePaths=[...(alias?[alias.sourcePath]:[]),path];
-      let witness=null,matchedPath=null;
-      for(const candidatePath of sourcePaths){
-        try{
-          const candidate=await recoverText(hostResolver,candidatePath,[section],diagnostic);
-          const expected=latinOpening(original.lat??original.la),actual=latinOpening(candidate.lat);
-          const shared=Math.min(expected.length,actual.length,50);
-          if(shared<35||expected.slice(0,shared)!==actual.slice(0,shared))continue;
-          if(!["en","fr"].some(lang=>!String(original[lang]??"").trim()&&String(candidate[lang]??"").trim()))continue;
-          witness=candidate;matchedPath=candidatePath;break;
-        }catch{continue}
-      }
-      if(!witness)continue;
+      let witness;
+      try{witness=await recoverText(hostResolver,path,[section],diagnostic)}catch{continue}
+      const expected=latinOpening(original.lat??original.la),actual=latinOpening(witness.lat);
+      const shared=Math.min(expected.length,actual.length,50);
+      if(shared<35||expected.slice(0,shared)!==actual.slice(0,shared))continue;
       const replacement={...original};
-      if(alias&&matchedPath===alias.sourcePath){
-        replacement.source_recovery=Object.freeze({
-          calendarSourcePath:path,
-          translationSourcePath:matchedPath,
-          frenchSourceUrl:alias.frenchSourceUrl,
-          verification:"MATCHED_LATIN_OPENING",
-        });
-      }
-      // Resolve French from its historical source path only after the pinned
-      // LA/EN source identity has matched the appointed commemorative oration.
-      if(!String(original.fr??"").trim()&&!String(witness.fr??"").trim()&&FRENCH_SOURCE_ALIASES[path]){
+      const frenchAlias=FRENCH_SOURCE_ALIASES[path]??null;
+      if(!String(original.fr??"").trim()&&!String(witness.fr??"").trim()&&frenchAlias){
         try{
-          const historical=await hostResolver.resolveSource(FRENCH_SOURCE_ALIASES[path],"fr",diagnostic);
-          witness={...witness,fr:cleanLines(parsedLines(historical,[section]),"fr")};
+          const historical=await hostResolver.resolveSource(frenchAlias.sourcePath,"fr",diagnostic);
+          const french=cleanLines(parsedLines(historical,[section]),"fr");
+          if(french){
+            witness={...witness,fr:french};
+            replacement.source_recovery=Object.freeze({
+              calendarSourcePath:path,translationSourcePath:frenchAlias.sourcePath,
+              frenchSourceUrl:frenchAlias.frenchSourceUrl,verification:"MATCHED_LATIN_OPENING",
+            });
+          }
         }catch{}
       }
       for(const lang of ["en","fr"]){
