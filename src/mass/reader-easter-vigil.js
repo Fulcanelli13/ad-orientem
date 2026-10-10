@@ -27,7 +27,7 @@ function bilingualRows(prefix,text,sourceIds=[]){
 // focusable, instead of a single scrolling paragraph or a prose placeholder.
 // The reading of the rubric is distinct from the people's spoken response.
 function ritualResponseRows(prefix,text,sourceIds=[],{cantors=false}={}){
-  const lang=Object.fromEntries(["lat","en","fr"].map(k=>[k,String(text?.[k]??"").trim().split(/\\n/).map(x=>x.trim()).filter(Boolean)]));
+  const lang=Object.fromEntries(["lat","en","fr"].map(k=>[k,String(text?.[k]??"").trim().split(/\n/).map(x=>x.trim()).filter(Boolean)]));
   if(lang.lat.length<3||lang.en.length!==lang.lat.length||lang.fr.length!==lang.lat.length)
     throw new Error("Easter Vigil line-by-line Latin/English/French parity required for "+prefix);
   return freeze(lang.lat.map((latin,i)=>{
