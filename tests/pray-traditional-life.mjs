@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "../src/pray/dying-companion-flow.js";
 import { readFileSync } from "node:fs";
 import {
   SACRED_HYMNS_V381,
@@ -140,6 +141,18 @@ assert.match(assets,/"pray\.sacred_heart"\s*:\s*"ao-rich-sacred-heart"/);
 assert.match(assets,/"pray\.communion_treasury"\s*:\s*"ao-rich-eucharistic-life"/);
 assert.match(assets,/"pray\.good_death"\s*:\s*"ao-rich-st-joseph"/);
 assert.match(assets,/"pray\.dying_companion"\s*:\s*"ao-rich-holy-souls"/);
+
+
+assert.deepEqual(DYING_COMPANION_STAGES,["now","pray","commend"]);
+assert.equal(nextDyingCompanionStage("now","previous"),null);
+assert.equal(nextDyingCompanionStage("now","next"),"pray");
+assert.equal(nextDyingCompanionStage("pray","previous"),"now");
+assert.equal(nextDyingCompanionStage("pray","next"),"commend");
+assert.equal(nextDyingCompanionStage("commend","next"),null);
+assert.equal(nextDyingCompanionStage("invalid","next"),null);
+assert.match(runtime,/data-tp381-dying-step="next"/,"Dying Companion lost optional forward guided progression");
+assert.match(runtime,/data-tp381-dying-step="previous"/,"Dying Companion lost optional backward guided progression");
+assert.match(runtime,/nextDyingCompanionStage\(S\.dying,b\.dataset\.tp381DyingStep\)/,"Bedside step controls are not wired to the route state");
 
 console.log("PASS modular v38.4 traditional PRAY + Good Death / Dying Companion convergence");
 

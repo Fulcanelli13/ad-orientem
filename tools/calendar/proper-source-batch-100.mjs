@@ -159,6 +159,26 @@ try{
               prayerSourcePath:x.prayerSourcePath,inseparable:!!x.inseparable,underOneConclusion:!!x.underOneConclusion})),
             sourceVersions:p.sourceRevisions||null,pinnedLatinSourceURL:expectedSourceURL,
             sourceRequests:actualSourceRequests,suspicious,
+            ...(focused&&["Sancti/01-15","Commune/C10c","Commune/C10Pasc","Commune/C10t","Sancti/02-06","Tempora/Quad3-3","Tempora/Quad5-4","Tempora/Quad1-4"].includes(p.sourcePath)?{
+              trace:await Promise.all(["la","en","fr"].map(async language=>{
+                const properResolver=resolver.properResolver;
+                const diagnostic={requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],
+                  structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]};
+                const sections=["Oratio","Lectio","Graduale","Evangelium","Offertorium","Communio"];
+                try{
+                  const root=await properResolver.loadLocalRoot(p.sourcePath,language,diagnostic);
+                  const built=await properResolver.resolveSource(p.sourcePath,language,diagnostic);
+                  const donorPath=/^Commune\/C10/.test(p.sourcePath)?"Commune/C11":"Commune/C5";
+                  const coronatio=await properResolver.loadUpstreamParsed(donorPath,language,diagnostic);
+                  return {language,rootSections:Object.fromEntries(sections.map(k=>[k,(root.map.get(k)||[]).slice(0,2)])),
+                    finalLengths:Object.fromEntries(sections.map(k=>[k,(built.map.get(k)||[]).join(" ").length])),
+                    donorLengths:Object.fromEntries(sections.map(k=>[k,(coronatio.map.get(k)||[]).join(" ").length])),
+                    references:diagnostic.referencesResolved.filter(v=>sections.some(k=>v.from.includes(":"+k))).slice(0,25),
+                    warnings:diagnostic.warnings.slice(0,12),donorPath,
+                    rootKeys:root.order.filter(x=>x==="Oratio"||x==="Communio"),sourceRequests:diagnostic.requestedFiles.filter(x=>x.includes("Commune/")).slice(0,20)};
+                }catch(e){return {language,error:String(e?.message||e),warnings:diagnostic.warnings};}
+              })),
+            }:{}),
             ...(focused?{
               detailedMissing:prayed.filter(section=>
                 section.lat.trim()&&(!section.en.trim()||!section.fr.trim())).map(section=>({
@@ -209,7 +229,7 @@ try{
   };
   if(FOCUSED_GAPS)console.log("PROPER_SOURCE_FOCUS_DETAILS "+JSON.stringify(records.map(r=>({
     date:r.date,path:r.resolvedPath,missing:r.ownComputedMissing,owners:r.composedCommemorations,
-    detailedMissing:r.detailedMissing,orationGroups:r.orationGroups,
+    detailedMissing:r.detailedMissing,orationGroups:r.orationGroups,trace:r.trace,
     unresolved:r.integrity?.unresolved?.slice(0,10),coverage:r.languageCoverage
   }))));
   console.log("PROPER_100_SUMMARY "+JSON.stringify({...output.summary,
@@ -226,8 +246,25 @@ try{
 console.log("Source-integrity artifact: "+dest);
 if(output.failures.length)process.exitCode=2;
 if(output.records.length!==(FOCUSED_GAPS?10:100))process.exitCode=3;
+// These two canonical Propers had 12 missing vernacular slots in the
+// original 100-case corpus. EN/FR must both survive the pinned donor path.
+// Every named source in the 2026-10-10 integrity register must now have
+// EN and FR for all Latin-bearing sections. No blank row may count as complete.
+for(const path of ["Sancti/02-22","Sancti/05-25","Sancti/01-15",
+  "Commune/C10c","Commune/C10Pasc","Commune/C10t","Sancti/02-06",
+  "Tempora/Quad3-3","Tempora/Quad5-4","Tempora/Quad1-4"]){
+  const entry=output.records.find(row=>row.resolvedPath===path);
+  if(!entry || ["en","fr"].some(lang=>entry.ownComputedMissing?.[lang]?.length)){
+    console.error("PROPER_BILINGUAL_SOURCE_UNRESOLVED",path,entry?.ownComputedMissing);
+    process.exitCode=6;
+  }
+}
 // Production cannot advertise translated Proper completeness while composed
 // prayers or readings still contain a placeholder, and source directives may
 // never be displayed as completed liturgical conclusions.
 if(output.summary?.inheritedCoverageMismatch?.length)process.exitCode=4;
 if(output.summary?.unresolvedPointerTypes?.unexpanded_conclusion)process.exitCode=5;
+if(!FOCUSED_GAPS && output.summary?.unresolvedPointerTypes?.name_placeholder){
+  console.error("PROPER_100_UNRESOLVED_SAINT_NAMES",output.summary.unresolvedPointerTypes.name_placeholder);
+  process.exitCode=7;
+}

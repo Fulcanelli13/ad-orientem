@@ -65,6 +65,72 @@ async function applyShiftedPostEpiphany(resolver, sources, date, path, diagnosti
     diagnostic.warnings.push('Restored post-Epiphany Sunday composition applied from XXIII Sunday after Pentecost.');
     return output;
 }
+// The pinned Divinum Officium [Name] clauses and the actual grammatical
+// context of these 1962 commemorative Commons identify the omitted N.
+// Readable witness: DivinumOfficium/divinum-officium@126a07f91ede04664108abb6fb20ace3f4de14b9
+// web/www/missa/{Latin,English,Francais}/Sancti/<path>.txt.
+// This is NOT a generic day/feast-name substitution: the exact commemoration
+// source owns each selected section, language, and Latin grammatical form.
+const NAMED_1962_COMMEMORATION_PRAYERS = Object.freeze({
+    'Sancti/01-23o': {
+        collect: {lat:'Emerentiánæ',en:'Emerentiana',fr:'Émérentienne'},
+        secret: {lat:'Emerentiánæ',en:'Emerentiana',fr:'Émérentienne'},
+        postcommunion: {lat:'Emerentiána',en:'Emerentiana',fr:'Émérentienne'}
+    },
+    'Sancti/02-15': {
+        collect: {lat:'Faustíni et Jovítæ',en:'Faustinus and Jovita',fr:'Faustin et Jovite'}
+    },
+    'Sancti/03-04cc': {
+        // "per beatum N. Summum Pontificem" demands the accusative Lucium.
+        collect: {lat:'Lúcium',en:'Lucius',fr:'Lucien'}
+    },
+    'Sancti/05-25o': {
+        collect: {fr:'Urbain'}
+    },
+    'Sancti/05-26o': {
+        // "per beatum N. Summum Pontificem" demands Eleutherium.
+        collect: {lat:'Eleuthérium',en:'Eleutherius',fr:'Eleuthère'}
+    },
+    'Sancti/06-19o': {
+        collect: {en:'Gervasius and Protasius'},
+        secret: {en:'Gervasius and Protasius'},
+        postcommunion: {en:'Gervasius and Protasius'}
+    }
+});
+function resolve1962CommemorationSaintNames(path, prayers, diagnostic) {
+    const bound = NAMED_1962_COMMEMORATION_PRAYERS[path];
+    if (!bound) return prayers;
+    const result = {...prayers};
+    for (const section of ['collect','secret','postcommunion']) {
+        const prayer = prayers[section];
+        if (!prayer) continue;
+        const corrected = {...prayer};
+        for (const language of ['lat','en','fr']) {
+            const value = String(prayer[language] || '');
+            const count = [...value.matchAll(/\bN\.(?![\p{L}\p{N}])/gu)].length;
+            if (!count) continue;
+            const name = bound[section]?.[language];
+            if (!name) throw new Error('1962 name case/source not certified: '+path+'/'+section+'/'+language);
+            const isPair = path === 'Sancti/02-15' || path === 'Sancti/06-19o';
+            if (count !== (isPair ? 2 : 1))
+                throw new Error('1962 unexpected name slot count: '+path+'/'+section+'/'+language+'/'+count);
+            if (isPair) {
+                const pairPattern = /\bN\.\s*(?:et|and)\s*N\.(?![\p{L}\p{N}])/u;
+                if (!pairPattern.test(value))
+                    throw new Error('1962 noncontiguous martyr name slots: '+path+'/'+section+'/'+language);
+                corrected[language] = value.replace(pairPattern, name);
+            } else {
+                corrected[language] = value.replace(/\bN\.(?![\p{L}\p{N}])/u, name);
+            }
+            if (/\bN\.(?![\p{L}\p{N}])/u.test(corrected[language]))
+                throw new Error('1962 saint-name slot remains unresolved: '+path+'/'+section+'/'+language);
+            diagnostic?.referencesResolved?.push({from:'named-commemoration:'+path+':'+section,
+                to:'source-name:'+path+':'+language,substitution:name});
+        }
+        result[section] = corrected;
+    }
+    return result;
+}
 async function mergeCommemorations(resolver, proper, day, diagnostic) {
     proper.calendarCommemorations = [];
     for (const commemoration of day.commemorations || []) {
@@ -181,6 +247,10 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
                 secret={...secret,...nameInPrayer(secret,'Bárbaræ')};
                 postcommunion={...postcommunion,...nameInPrayer(postcommunion,'Bárbara')};
             }
+            // Name case is a property of the exact commemorated source and
+            // its prayer section (not today's principal saint's Proper).
+            ({collect,secret,postcommunion} = resolve1962CommemorationSaintNames(
+                prayerSourcePath, {collect,secret,postcommunion}, diagnostic));
             if (collect)
                 proper.collects.push(collect);
             if (secret)
@@ -1442,6 +1512,23 @@ function mergeMissing(primary, fallback) {
     }
     return { map, order };
 }
+// The historical English Commons label their Mass-only Collect
+// [Oratio] (ad missam). parseSections deliberately canonicalizes that
+// higher-priority source heading to "Oratio". The normalized 1962 English
+// layer, however, requests "Oratio ad missam" explicitly. Reconnect only
+// source paths independently verified to provide that exact heading.
+const MASS_COLLECT_AD_MISSAM_DONORS = new Set([
+    "Commune/C2", "Commune/C5", "Commune/C5b",
+    "Commune/C6-1", "Commune/C6b", "Commune/C11"
+]);
+function canonicalReferencedProperSection(path, requested, parsed) {
+    if (parsed.map.has(requested)) return requested;
+    if (requested === "Oratio ad missam"
+      && MASS_COLLECT_AD_MISSAM_DONORS.has(path)
+      && parsed.map.has("Oratio"))
+        return "Oratio";
+    return requested;
+}
 function parseReference(line, defaultSection) {
     const value = String(line || "");
     if (!value.startsWith("@"))
@@ -2155,18 +2242,44 @@ class ProperResolver {
                 result.push(line);
                 continue;
             }
-            const targetPath = reference.path || path;
-            const targetSection = reference.section || section;
+            // Original 1962 Latin reference uses Commune/C2p for St Paul's
+            // January 15 Communion; old English Sancti/01-15 points instead
+            // at a missing C2ap file. C2ap's own pinned Latin source delegates
+            // to C2p. Restore only this exact EN antiphon donor identity.
+            const latinMatchedCommunion = language === "en" && path === "Sancti/01-15"
+              && section === "Communio" && reference.path === "Commune/C2ap"
+              && (!reference.section || reference.section === "Communio");
+            const targetPath = latinMatchedCommunion ? "Commune/C2p" : reference.path || path;
+            const rawSection = reference.section || section;
             const targetLayer = reference.path ? "upstream" : layer;
-            const visitKey = `${targetLayer}|${language}|${targetPath}|${targetSection}|${reference.subs}`;
+            const targetParsed = reference.path ? await this.loadUpstreamParsed(targetPath, language, diagnostic) : parsed;
+            const targetSection = canonicalReferencedProperSection(targetPath, rawSection, targetParsed);
+            // Page 543, July 12, of the printed 1962 Missale Romanum names
+            // "beati Ioannis Abbatis" in this COLLECT, not "Ioannis Gualberti".
+            // Missale Meum's normalized Latin reference inserted "Gualberti".
+            // Do not alter the Secret, Postcommunion, or EN/FR source texts.
+            const printed1962JohnGualbertCollect = language === "la"
+              && path === "Sancti/07-12" && section === "Oratio"
+              && targetPath === "Commune/C5b" && targetSection === "Oratio"
+              && reference.subs.includes("Joánnis Gualbérti");
+            const sourceSubs = printed1962JohnGualbertCollect
+              ? reference.subs.replace("Joánnis Gualbérti", "Joánnis")
+              : reference.subs;
+            const visitKey = `${targetLayer}|${language}|${targetPath}|${targetSection}|${sourceSubs}`;
             if (visited.has(visitKey))
                 throw new Error(`Reference cycle detected: ${visitKey}`);
             const next = new Set(visited);
             next.add(visitKey);
-            const targetParsed = reference.path ? await this.loadUpstreamParsed(targetPath, language, diagnostic) : parsed;
+            if (targetSection !== rawSection || latinMatchedCommunion)
+                diagnostic?.structuralInheritances?.push({
+                    language, path, section, from: reference.path || path,
+                    requested: rawSection, to: targetPath, resolvedSection: targetSection,
+                    evidence: "pinned-1962-latin-and-canonical-ad-missam-heading"
+                });
             let nested = await this.resolveSection(targetParsed, targetSection, targetPath, language, targetLayer, diagnostic, next, depth + 1);
-            nested = applySubstitutions(nested, reference.subs, diagnostic, `${targetPath}:${targetSection}`);
-            diagnostic.referencesResolved.push({ from: `${layer}:${path}:${section}`, to: `${targetLayer}:${targetPath}:${targetSection}`, substitution: reference.subs || null });
+            nested = applySubstitutions(nested, sourceSubs, diagnostic, `${targetPath}:${targetSection}`);
+            diagnostic.referencesResolved.push({ from: `${layer}:${path}:${section}`, to: `${targetLayer}:${targetPath}:${targetSection}`, substitution: sourceSubs || null,
+                printed1962Correction: printed1962JohnGualbertCollect ? "Missale Romanum 1962 July 12 p543: Ioannis Abbatis" : null });
             result.push(...nested);
         }
         return result;

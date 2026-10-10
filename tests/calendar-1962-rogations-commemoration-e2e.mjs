@@ -24,7 +24,11 @@ try{
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
  const dates=["2024-05-06","2027-05-03","2024-06-15","2027-07-17","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
    "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01","2024-12-04","2027-12-04","2026-12-04","2022-12-04",
-   "2024-01-25","2027-01-25","2024-02-22","2027-02-22",
+   "2024-01-23","2024-02-15","2024-03-04","2027-02-15",
+   "2027-05-26","2027-06-19",
+   "2024-01-15","2024-02-03","2024-02-06","2024-03-06","2024-03-21",
+   "2024-04-20","2027-02-18",
+   "2024-01-25","2027-01-25","2024-02-22","2027-02-22","2027-05-25",
    "2024-05-16","2024-06-12","2027-06-12","2024-10-03",
    "2024-03-28","2024-03-30","2027-03-25","2027-03-27"];
  const result=[];
@@ -40,7 +44,17 @@ try{
        inherited:p?.inheritedProper,calendarCommemorations:p?.calendarCommemorations,
        comms:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title,path:x.path,inseparable:x.inseparable})),
        collects:p?.collects?.length||0,secrets:p?.secrets?.length||0,postcommunions:p?.postcommunions?.length||0,
+       nameProof:["2024-01-23","2024-02-15","2024-03-04","2027-02-15",
+         "2027-05-25","2027-05-26","2027-06-19"].includes(date)
+         ?Object.fromEntries(["collects","secrets","postcommunions"].map(key=>
+           [key,(p?.[key]||[]).slice(1).map(v=>Object.fromEntries(["lat","en","fr"]
+             .map(lang=>[lang,String(v?.[lang]||"")])))])):null,
+       collectText:(p?.collects||[]).map(v=>Object.fromEntries(["lat","en","fr"].map(lang=>
+          [lang,String(v?.[lang]||"").length]))),
        lastCollect:p?.collects?.at(-1)||null,lastSecret:p?.secrets?.at(-1)||null,lastPostcommunion:p?.postcommunions?.at(-1)||null,
+       mainText:Object.fromEntries(["epistle","gradual","gospel","offertory","communion"].map(field=>[
+         field,Object.fromEntries(["lat","en","fr"].map(lang=>[
+           lang,String(p?.[field]?.[lang]||"").length]))])),
        languageCoverage:p?.languageCoverage||null,composedSourceIntegrity:p?.composedSourceIntegrity||null,
        firstCollect:p?.collects?.[0]||null,firstSecret:p?.secrets?.[0]||null,firstPostcommunion:p?.postcommunions?.[0]||null,
        temporale:(r?.day?.tempora||[]).map(x=>({id:x.id,path:x.path,color:x.color}))};
@@ -221,6 +235,89 @@ try{
    assert.match(row.lastPostcommunion.lat,/beáta Bárbara Vírgine/,
      date+": Barbara's Postcommunion requires her name in the ablative");
  }
+ // The pinned `Commune/Coronatio` Mass donor contains the appointed
+ // Petrine readings/chants in EN/FR. Transport must not redirect them to
+ // the absent Office (`horas`) common and silently lose translation text.
+ for(const [date,owner,sections] of [
+   ["2024-02-22","Sancti/02-22",["epistle","gradual","gospel","offertory","communion"]],
+   ["2027-02-22","Sancti/02-22",["epistle","gradual","gospel","offertory","communion"]],
+   ["2027-05-25","Sancti/05-25",["gradual","gospel","communion"]],
+ ]){
+   const row=result.find(x=>x.date===date);
+   assert.equal(row.status,"ready",date+": source resolver failed");
+   assert.equal(row.properStatus,"ready",date+": appointed Mass Proper failed");
+   assert.equal(row.path,owner,date+": liturgical Proper source identity changed");
+   for(const field of sections){
+     assert.ok(row.mainText?.[field]?.lat>45,date+": missing original Latin "+field);
+     for(const lang of ["en","fr"])assert.ok(row.mainText?.[field]?.[lang]>35,
+       date+": pinned "+lang+" Mass source was not inherited for "+field);
+   }
+ }
+ // Historical English [Oratio] (ad missam) is canonicalized to
+ // "Oratio" by the source parser. All ten formerly empty source slots
+ // must now resolve from their exact original Common, never a generated
+ // translation or a Latin fallback shown as English.
+ for(const [date,owner,slot] of [
+   ["2024-01-15","Sancti/01-15",[0,1]],
+   ["2024-02-03","Commune/C10c",[0]],
+   ["2024-02-06","Sancti/02-06",[1]],
+   ["2024-03-06","Tempora/Quad3-3",[1]],
+   ["2024-03-21","Tempora/Quad5-4",[1]],
+   ["2024-04-20","Commune/C10Pasc",[0]],
+   ["2024-06-15","Commune/C10t",[0]],
+   ["2027-02-18","Tempora/Quad1-4",[1]],
+ ]){
+   const row=result.find(r=>r.date===date);
+   assert.equal(row.status,"ready",date+": source resolver failed");
+   assert.equal(row.path,owner,date+": canonical proper owner shifted");
+   for(const index of slot)for(const lang of ["lat","en","fr"])
+     assert.ok(row.collectText?.[index]?.[lang]>80,
+       date+": missing "+lang+" source for Collect "+(index+1));
+   if(date==="2024-01-15"){
+     for(const lang of ["lat","en","fr"])assert.ok(row.mainText?.communion?.[lang]>60,
+       "15 January's Psalm 63 Communion must be source-bound in "+lang);
+   }
+ }
+ // All seven source/date cases from the original 23-name audit must
+ // be resolved in the ACTUAL composed Collect/Secret/Postcommunion rows.
+ // Grammar and form come from each commemorated saint's exact [Name] owner.
+ const nameCases=[
+  {date:"2024-01-23",path:"Sancti/01-23o",
+    terms:{collects:{lat:"Emerentiánæ",en:"Emerentiana",fr:"Émérentienne"},
+      secrets:{lat:"Emerentiánæ",en:"Emerentiana",fr:"Émérentienne"},
+      postcommunions:{lat:"Emerentiána",en:"Emerentiana",fr:"Émérentienne"}}},
+  ...["2024-02-15","2027-02-15"].map(date=>({
+    date,path:"Sancti/02-15",
+    terms:{collects:{lat:"Faustíni et Jovítæ",en:"Faustinus and Jovita",fr:"Faustin et Jovite"}}})),
+  {date:"2024-03-04",path:"Sancti/03-04cc",
+    terms:{collects:{lat:"Lúcium",en:"Lucius",fr:"Lucien"}}},
+  {date:"2027-05-25",path:"Sancti/05-25o",
+    terms:{collects:{fr:"Urbain"}}},
+  {date:"2027-05-26",path:"Sancti/05-26o",
+    terms:{collects:{lat:"Eleuthérium",en:"Eleutherius",fr:"Eleuthère"}}},
+  {date:"2027-06-19",path:"Sancti/06-19o",
+    terms:Object.fromEntries(["collects","secrets","postcommunions"].map(key=>
+      [key,{en:"Gervasius and Protasius"}]))}
+ ];
+ for(const testcase of nameCases){
+   const row=result.find(r=>r.date===testcase.date);
+   assert.equal(row?.status,"ready",testcase.date+": Mass unresolved");
+   assert.ok(row.calendarCommemorations?.some(x=>x.prayerSourcePath===testcase.path),
+     testcase.date+": source-owner commemoration lost: "+testcase.path);
+   const groups=row.nameProof;
+   for(const key of ["collects","secrets","postcommunions"]){
+     for(const text of groups?.[key]||[])for(const lang of ["lat","en","fr"]){
+       assert.doesNotMatch(text[lang]||"",/\bN\.(?![\p{L}\p{N}])/u,
+         testcase.date+": unidentified saint in "+key+"/"+lang);
+     }
+     const expected=testcase.terms[key]||{};
+     for(const [lang,name] of Object.entries(expected)){
+       assert.ok(groups?.[key]?.some(v=>(v[lang]||"").includes(name)),
+         testcase.date+": missing "+name+" in "+key+"/"+lang);
+     }
+   }
+ }
+
  const deferred=result.find(x=>x.date==="2022-12-04");
  assert.ok(!deferred.comms.some(x=>x.id==="commemoration:12-04-barbara:4:r"),
    "Advent Sunday must not acquire Barbara commemoration from Dec 4 civil-date rule");

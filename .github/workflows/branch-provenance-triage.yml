@@ -1,0 +1,47 @@
+name: Branch provenance triage
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 5 * * 1'
+  pull_request:
+    paths:
+      - '.github/workflows/branch-provenance-triage.yml'
+      - 'tools/governance/branch-provenance-triage.mjs'
+      - 'tools/governance/archive-closed-pr-heads.mjs'
+      - 'data/governance/closed-pr-archive-pilot-2026-10-10.json'
+      - '.github/workflows/branch-hygiene.yml'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch complete branch references for content audit
+        run: git fetch --no-tags --prune origin '+refs/heads/*:refs/remotes/origin/*'
+      - name: Classify without changing any branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/governance/branch-provenance-triage.mjs
+      - name: Validate historical PR archival proposal (read-only)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node --check tools/governance/archive-closed-pr-heads.mjs
+          node tools/governance/archive-closed-pr-heads.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: branch-provenance-inventory
+          path: artifacts/branch-triage/
+          if-no-files-found: warn

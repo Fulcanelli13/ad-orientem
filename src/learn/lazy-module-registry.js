@@ -42,7 +42,8 @@ export async function ensureLearnModule(id,win=globalThis){
  const key=aliases[id]||id,group=groupFor(key);
  if(!group)return true;
  if(!imported.has(group)){
-   const promise=loaders[group]().catch(err=>{imported.delete(group);throw err});
+   const loading=win?.AO_LOADING_DIRECTOR_V1?.begin?.("learn");
+   const promise=loaders[group]().catch(err=>{imported.delete(group);throw err}).finally(()=>loading?.end?.());
    imported.set(group,promise);
  }
  const mod=await imported.get(group);

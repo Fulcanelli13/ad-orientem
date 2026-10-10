@@ -161,9 +161,10 @@ export function createFindOwner(win=globalThis){
   async function ensureData(){
     if(dataset)return dataset;
     if(!loading){
+      const ticket=win?.AO_LOADING_DIRECTOR_V1?.begin?.("find");
       loading=loadExploreDataset({fetchImpl:win?.fetch?.bind?.(win)??fetch})
         .then(value=>{dataset=value;projection=projectExploreDataset(value);return value})
-        .finally(()=>{loading=null});
+        .finally(()=>{loading=null;ticket?.end?.()});
     }
     return loading;
   }

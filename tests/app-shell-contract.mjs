@@ -1,4 +1,8 @@
+import "./loading-director.mjs";
 import assert from "node:assert/strict";
+import "./liturgical-speaker-typography.mjs";
+import "./guide-coverage-two-function-audit.mjs";
+import "./prayer-guide-context-coverage.mjs";
 import "./scripture-context-mass-pray.mjs";
 import "./contextual-study.mjs";
 import "./glossary-context-lifecycle.mjs";

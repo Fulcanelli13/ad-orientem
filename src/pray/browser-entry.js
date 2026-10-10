@@ -20,6 +20,7 @@ export function ensurePrayReader({win=globalThis}={}){
   if(typeof window==="undefined" || typeof document==="undefined")return Promise.resolve(true);
   if(readerReady)return Promise.resolve(true);
   if(readerLoad)return readerLoad;
+  const loading=win?.AO_LOADING_DIRECTOR_V1?.begin?.("pray");
   readerLoad=(async()=>{
     await import("./presentation-coherence.js");
     await import("./novena-runtime.js");
@@ -40,7 +41,7 @@ export function ensurePrayReader({win=globalThis}={}){
     readerReady=true;
     readerError=null;
     return true;
-  })().catch(error=>{
+  })().finally(()=>loading?.end?.()).catch(error=>{
     readerError=error;
     readerLoad=null; // retry from a new navigation after transient failures
     throw error;

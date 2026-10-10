@@ -1,5 +1,7 @@
 # Ad Orientem
 
+> **Maintainers: [Start here — repository control centre](docs/REPOSITORY-START-HERE.md).** This one-page index identifies current issue owners, production branches, CI gates, evidence holds and the safe branch cleanup procedure. New work should use the [PR policy](docs/PR-PIPELINE-POLICY.md) and GitHub templates, not another parallel pipeline.
+
 Ad Orientem is a traditional Roman Mass companion for the 1962 Roman Rite, with calendar/Proper resolution, Mass preparation, native MISSAL / SIMPLE / LIVE readers, posture and gesture guidance, Schola state, liturgical actions, special rites, and devotional modules.
 
 ## Production architecture
