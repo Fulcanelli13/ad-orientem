@@ -68,6 +68,15 @@ try{
  assert.ok(over<4,"Mass hub has horizontal overflow at 390px: "+over);
  assert.ok(requests.some(path=>path.endsWith("/psalms-01.json")),"Tenebrae did not use local Psalter");
  assert.equal(errors.length,0,errors.join(" | "));
+ // A category is actionable, not a decorative hub tile. It must open the
+ // canonical Proper/rubrics preflight with the previously selected form/mode.
+ await page.locator('[data-mass-hub-category="CALENDAR"]').click();
+ await page.waitForFunction(()=>document.documentElement.dataset.aoMassHubOpen==="preflight",null,{timeout:15000});
+ const configured=await page.evaluate(()=>AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight);
+ assert.equal(configured?.chosenForm,"LOW","Mass hub Low form was not handed to the real preflight");
+ assert.equal(configured?.readerMode,"MISSAL","Mass hub Missal mode was not handed to the real preflight");
+ assert.equal(await page.locator("#ao-mass-modular-root").isHidden(),true,
+   "Mass hub obstructed the authoritative Proper selector");
  const home=await page.evaluate(()=>AO_APP_SHELL_V1.navigate("home"));
  assert.equal(home.ok,true);
  assert.equal(await page.locator("#ao-mass-modular-root").count(),0,"Mass hub survived Home route");
