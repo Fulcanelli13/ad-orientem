@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {parseScriptureContext} from "../src/scripture/context.js";
 import { readFileSync } from "node:fs";
 import {
   buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail,
@@ -9,7 +10,7 @@ const data=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact
 const stops=buildBibleAtlas(data.entries);
 const by=(era,placeId)=>stops.find(s=>s.era===era&&s.placeId===placeId);
 const named=name=>stops.find(s=>s.title_en===name);
-assert.equal(stops.length,143,"first expanded Catholic Bible milestone itinerary");
+assert.equal(stops.length,150,"first expanded Catholic Bible milestone itinerary");
 assert.equal(new Set(stops.map(s=>s.era)).size,11,"era transitions");
 assert.deepEqual(stops.map(s=>s.index),stops.map((_,i)=>i),"continuous stable milestone indices");
 assert.equal(stops[0].title_en,"Creation");
@@ -24,6 +25,7 @@ assert.ok(by("PUBLIC","jericho").reference,"multiple Jericho episodes stay on ti
 
 for(const stop of stops){
   assert.ok(stop.title_en&&stop.title_fr&&stop.reference,"bilingual Scripture reference per milestone");
+  assert.ok(parseScriptureContext(stop.reference),"Native Catholic Scripture reader rejects "+stop.reference);
   assert.ok(!String(stop.title_en).includes("undefined"),"no empty projected title");
   if(stop.geo){
     assert.ok(Number.isFinite(stop.geo.lat)&&Math.abs(stop.geo.lat)<=90);
@@ -65,9 +67,9 @@ const fr=renderBibleAtlasToString({language:"fr",atlasStops:stops,atlasIndex:71}
 assert.match(en,/data-bible-track/);
 assert.match(en,/data-bible-map/);
 assert.match(en,/data-bible-era-overlay/);
-assert.match(en,/data-bible-step="142"/);
+assert.match(en,/data-bible-step="149"/);
 assert.match(fr,/Atlas biblique/);
 assert.match(fr,/Lire le passage/);
 assert.match(en,/scroll-snap-type:x proximity/,"continuous horizontal swipe, not a rigid era carousel");
 assert.ok(!en.includes("maps.google.com"),"Scripture stays in native reader");
-console.log("PASS Biblical Atlas: 143 bilingual milestones, 11 eras, 35 site anchors, mobile timeline markup and canonical Scripture actions");
+console.log("PASS Biblical Atlas: 150 bilingual milestones, 11 eras, 35 site anchors, mobile timeline markup and canonical Scripture actions");
