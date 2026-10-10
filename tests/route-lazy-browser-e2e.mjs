@@ -88,7 +88,14 @@ try {
   await verified.waitFor({state:"visible",timeout:12000});
   assert.ok((await verified.getAttribute("href")).includes("ecatholic2000.com/catena/"),
     "Passage-specific patristic link lost provenance");
-  await page.locator("#ao-scripture-overlay .aoScriptureNav select").nth(1).selectOption("cpdv-2009");
+  // Scripture now hides full-Bible navigation inside an explicit disclosure.
+  // Verify the citation remains unobstructed; open the real user control
+  // before selecting an alternate source edition.
+  const bibleBrowse=page.locator("#ao-scripture-overlay details.aoScriptureBrowse");
+  assert.equal(await bibleBrowse.getAttribute("open"),null,"Context reader must start in citation-first mode");
+  await bibleBrowse.locator("summary").click();
+  assert.notEqual(await bibleBrowse.getAttribute("open"),null,"Bible browse disclosure did not expand");
+  await bibleBrowse.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.editionId),"cpdv-2009",
     "Bible selection does not survive reading-context expansion");
   await page.locator("#ao-scripture-overlay [data-scripture-close]").click();
