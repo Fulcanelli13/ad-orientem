@@ -1,3 +1,4 @@
+import { captureModuleOrigin, returnToObservedOrigin } from "../app/module-return.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
@@ -72,8 +73,12 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     node.addEventListener("click",event=>{
       const target=event.target?.closest?.("button");if(!target)return;
       if(target.matches("[data-ao-mf-close]")){event.preventDefault();close(true);return;}
-      if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){event.preventDefault();state.view="list";state.stageId=null;render();return;}
-      if(target.dataset.aoMfStage){event.preventDefault();state.view="stage";state.stageId=target.dataset.aoMfStage;render();return;}
+      if(target.matches("[data-ao-mf-back],[data-ao-mf-list]")){
+        event.preventDefault();
+        if(state.view==="stage"&&stageFromList){state.view="list";state.stageId=null;stageFromList=false;render();return;}
+        close(true);return;
+      }
+      if(target.dataset.aoMfStage){event.preventDefault();stageFromList=state.view==="list";state.view="stage";state.stageId=target.dataset.aoMfStage;render();return;}
       const stages=state.data?.stages??[],idx=stages.findIndex(x=>x.id===state.stageId);
       if(target.matches("[data-ao-mf-prev]")&&idx>0){event.preventDefault();state.stageId=stages[idx-1].id;render();return;}
       if(target.matches("[data-ao-mf-next]")&&idx>=0&&idx<stages.length-1){event.preventDefault();state.stageId=stages[idx+1].id;render();return;}
@@ -88,7 +93,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
     return true;
   }
+  let entryOrigin=null,stageFromList=false;
   async function open(opts={}){
+    entryOrigin=captureModuleOrigin(win,"learn");stageFromList=false;
     state.returnFocus=opts.trigger??win?.document?.activeElement??null;
     try{await ensureData()}catch(error){
       const node=ensureRoot();if(node)node.innerHTML=top(win,isFr(win)?"Comprendre la Messe":"Understand the Mass")+'<main class="aoMFWrap"><div class="aoMFError">'+esc(String(error?.message??error))+'</div></main>';
@@ -102,7 +109,9 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
   function close(returnToLearn=false){
     const node=root();try{node?.querySelector?.(":focus")?.blur?.()}catch{}node?.remove?.();win?.document?.body?.classList?.remove?.("aoMassFormationOpen");
     state.view="list";state.stageId=null;
-    if(returnToLearn)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
+    if(returnToLearn)return returnToObservedOrigin(win,entryOrigin,{
+      close:()=>{},restoreParent:()=>win?.AO_LEARN_APP_V1?.open?.()
+    });
     else try{state.returnFocus?.focus?.({preventScroll:true})}catch{}
     state.returnFocus=null;return true;
   }
