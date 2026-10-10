@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - "tools/directory/acquire-lmd-map-pins.mjs"
+      - "tools/directory/acquire-una-cum-map-pins-r43.mjs"
+      - "data/directory/research/staging/map-first-r37/r43-una-cum-geocode-queue.json"
       - ".github/workflows/directory-lmd-map-first.yml"
   workflow_dispatch:
 permissions:
@@ -24,5 +26,24 @@ jobs:
         with:
           name: lmd-public-map-coordinate-evidence
           path: /tmp/lmd-r39/
+          retention-days: 30
+          if-no-files-found: warn
+
+  research-una-cum:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Acquire provisional address pins for Rome-recognised communities
+        run: node tools/directory/acquire-una-cum-map-pins-r43.mjs --start=0 --max=460
+      - name: Upload geocoding evidence for reconciliation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r43-una-cum-address-coordinate-evidence
+          path: ${{ runner.temp }}/r43-una-cum-address-geocodes/
           retention-days: 30
           if-no-files-found: warn
