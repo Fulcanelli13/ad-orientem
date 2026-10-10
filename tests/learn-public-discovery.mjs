@@ -26,6 +26,12 @@ assert.ok(q("first communion").some(x=>x.kind==="module"&&x.id==="learn.rites.fi
 assert.ok(q("catéchisme").some(x=>x.kind==="module"&&x.id==="learn.catechism"));
 assert.ok(q("mariage").some(x=>x.kind==="module"&&x.id==="learn.rites.matrimony"));
 assert.ok(q("liturgie").some(x=>x.kind==="family"&&x.id==="liturgy-tradition"));
+assert.ok(q("apologétique").some(x=>x.kind==="family"&&x.id==="apologetics"),
+ "French Apologetics must resolve to its own category, never a phantom live module");
+assert.ok(q("crise dans l’église").some(x=>x.kind==="family"&&x.id==="church-crisis"),
+ "French Church Crisis must resolve to its own category");
+assert.ok(q("sexual ethics").some(x=>x.kind==="module"&&x.id==="learn.sexual_ethics"&&x.familyId==="questions"),
+ "Moral Questions must retain the canonical ethics reader");
 assert.ok(q("sanctuaire").some(x=>x.kind==="surface"&&x.id==="find"));
 assert.ok(q("adoration").some(x=>x.kind==="surface"&&x.id==="pray"));
 assert.equal(normalizeDiscovery("Æther Œuvre Grâce"),"aether oeuvre grace");
