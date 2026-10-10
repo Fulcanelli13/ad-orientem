@@ -65,6 +65,14 @@ function unwrap(proper){
 
 // Only use source text whose Latin opening agrees with the already-composed
 // commemoration. This protects both oration order and the appointed saint.
+// The martyrs' commemoration was transferred from 7 to 8 October in the
+// 1960/1962 calendar. The pinned Missale Meum LA/EN source uses 10-08c,
+// while Divinum Officium's original French orations remain at 10-07cc.
+// This is a source-path equivalence, not a calendar-day or text override.
+// https://github.com/mmolenda/missalemeum/blob/main/backend/resources/divinum-officium-local/web/www/missa/Latin/Sancti/10-08c.txt
+// https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Francais/Sancti/10-07cc.txt
+const FRENCH_SOURCE_ALIASES=Object.freeze({"Sancti/10-08c":"Sancti/10-07cc"});
+
 function latinOpening(value){
   return String(value??"").toLowerCase().normalize("NFD")
     .replace(/[\u0300-\u036f]/g,"").replace(/æ/g,"ae").replace(/œ/g,"oe")
@@ -95,6 +103,14 @@ async function fillSourceBoundCommemorations(data,hostResolver,diagnostic){
       const shared=Math.min(expected.length,actual.length,50);
       if(shared<35||expected.slice(0,shared)!==actual.slice(0,shared))continue;
       const replacement={...original};
+      // Resolve French from its historical source path only after the pinned
+      // LA/EN source identity has matched the appointed commemorative oration.
+      if(!String(original.fr??"").trim()&&!String(witness.fr??"").trim()&&FRENCH_SOURCE_ALIASES[path]){
+        try{
+          const historical=await hostResolver.resolveSource(FRENCH_SOURCE_ALIASES[path],"fr",diagnostic);
+          witness={...witness,fr:cleanLines(parsedLines(historical,[section]),"fr")};
+        }catch{}
+      }
       for(const lang of ["en","fr"]){
         if(!String(original[lang]??"").trim()&&String(witness[lang]??"").trim()){
           replacement[lang]=witness[lang];
