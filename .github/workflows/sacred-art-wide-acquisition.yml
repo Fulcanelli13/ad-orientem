@@ -33,7 +33,7 @@ jobs:
       - name: Install image inspector
         run: pip install Pillow numpy
       - name: Acquire official CC0 original paintings, tag by subject and module
-        run: python tools/calendar/acquire-sacred-art-wide.py --group ${{ matrix.group }} --max-originals 40
+        run: python tools/calendar/acquire-sacred-art-wide.py --group ${{ matrix.group }} --max-originals 80
       - name: Preserve originals + source evidence + no-hit reporting + contact sheets
         if: always()
         uses: actions/upload-artifact@v4
