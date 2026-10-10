@@ -483,6 +483,30 @@
       "locator": "Congregation for Divine Worship, 1994 communication on female altar servers",
       "provenance": "data/learn/traditional-mass-objections-026-050-recovered.v1.json",
       "original_context_approved": false
+    },
+    {
+      "id": "CCC156M",
+      "title": "Catechism of the Catholic Church §156: miracles as motives of credibility",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_three/article_1/iii_the_characteristics_of_faith.html",
+      "locator": "§156: miracles of Christ and saints, prophecy, signs of Revelation; faith not blind",
+      "provenance": "First 25 dossier source audit 2026-10-10, original Holy See text",
+      "original_context_approved": false
+    },
+    {
+      "id": "HUME-MIRACLE-X",
+      "title": "David Hume, An Enquiry Concerning Human Understanding, Section X: Of Miracles",
+      "url": "https://davidhume.org/texts/e/10",
+      "locator": "Section X, Part I and Part II: weighing human testimony against experience of natural regularities",
+      "provenance": "First 25 dossier source audit 2026-10-10, original philosophical opponent",
+      "original_context_approved": false
+    },
+    {
+      "id": "CCC548M",
+      "title": "Compendium of the Catechism of the Catholic Church Q108: signs and miracles",
+      "url": "https://press.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html",
+      "locator": "Question 108, referencing CCC §§547–550: miracles of Christ and purpose of the Kingdom",
+      "provenance": "First 25 dossier source audit 2026-10-10, Holy See catechetical reference",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -585,62 +609,74 @@
         {
           "role": "answer",
           "text": {
-            "en": "A miracle is a divine sign whose credibility requires discernment of testimony, context and the Church's judgement, not automatic belief in every reported wonder. Even an approved private revelation does not add a new dogma or complete Christ's public Revelation; the faithful must distinguish its historical evidence from disputed interpretations.",
-            "fr": "Un miracle est un signe divin dont la crédibilité demande l'examen des témoignages, du contexte et du jugement ecclésial, non l'acceptation de tout prodige allégué. Même une révélation privée approuvée n'ajoute aucun dogme à la Révélation publique du Christ ; il faut distinguer son fondement historique de ses interprétations contestées."
+            "en": "Miracles are possible if God, the Creator of nature, is able to act within the world he sustains. The Catholic claim is not that every unexplained event is supernatural: a miracle is a divine sign whose proposed occurrence must be assessed with evidence and sound judgement. Christ's signs accompany his proclamation and reveal the Kingdom; the Church calls miracles motives of credibility, not replacements for the free act of faith (Catechism §156; Compendium q.108).",
+            "fr": "Les miracles sont possibles si Dieu, créateur de la nature, peut agir dans le monde qu'il soutient. La thèse catholique n'est pas que tout événement inexpliqué serait surnaturel : un miracle est un signe divin dont la réalité alléguée doit être appréciée avec des preuves et un jugement prudent. Les signes du Christ accompagnent sa prédication et manifestent le Royaume ; l'Église y reconnaît des motifs de crédibilité, non des substituts à l'acte libre de foi (Catéchisme, §156 ; Compendium, question 108)."
           },
           "source_ids": [
-            "CCC67",
-            "FATIMA00"
-          ],
-          "attribution": null,
-          "original_context_approved": false,
-          "french_final_approved": false
-        },
-        {
-          "role": "documented_position",
-          "text": {
-            "en": "The Congregation for the Doctrine of the Faith published the visionary manuscript of the Third Secret of Fatima in 2000, together with a custody account and Cardinal Ratzinger's theological commentary. Critics associated with traditionalist circles have questioned whether the published vision exhausts everything Sister Lucia communicated; that is a real documentary controversy, not itself proof of concealment.",
-            "fr": "La Congrégation pour la doctrine de la foi publia en 2000 le manuscrit de la vision du troisième secret de Fatima, son historique et le commentaire théologique du cardinal Ratzinger. Certains critiques traditionalistes ont douté que cette publication épuise toutes les communications de sœur Lucie ; c'est une controverse documentaire réelle, non une preuve de dissimulation."
-          },
-          "source_ids": [
-            "FATIMA00",
-            "FATIMASSEDEV"
-          ],
-          "attribution": "CDF publication (2000) and Bishop Bernard Fellay's attributed criticism",
-          "original_context_approved": false,
-          "french_final_approved": false
-        },
-        {
-          "role": "critical_response",
-          "text": {
-            "en": "The CDF's 2000 publication supplies an identifiable Portuguese manuscript of the third part of the Fatima secret, a report of its custody and a 27 April 2000 meeting at which Sister Lucia identified the writing as hers. Its interpretation relates the vision of persecution and martyrdom to twentieth-century events, while Cardinal Ratzinger separately explains why visionary imagery is not a photographic prediction of a fixed future. The proposed existence of further unpublished communications is a distinct documentary hypothesis: it needs independently identifiable evidence of authorship and custody. Questions about the official interpretation should be tested on the published record rather than dismissed or treated as proof of a second authenticated text.",
-            "fr": "La publication de la CDF en 2000 fournit un manuscrit portugais identifiable de la troisième partie du secret de Fatima, un récit de conservation et un compte rendu de la rencontre du 27 avril 2000 où sœur Lucie reconnut son écriture. L'interprétation rapproche la vision de persécution et de martyre des événements du XXe siècle ; le cardinal Ratzinger explique séparément pourquoi une image visionnaire n'est pas la photographie d'un avenir fixé. L'hypothèse de communications supplémentaires non publiées est une question documentaire distincte, exigeant des preuves identifiables de rédaction et de conservation. Le commentaire officiel peut être soumis à l'examen des pièces publiées sans que toute question soit rejetée ni transformée en preuve d'un second texte authentifié."
-          },
-          "source_ids": [
-            "FATIMA00",
-            "FATIMASSEDEV"
+            "CCC156M",
+            "CCC548M"
           ],
           "attribution": null,
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
-            "FATIMA00": "CDF Message of Fatima (2000), part III Portuguese manuscript, Sister Lucia 27 April 2000 identification, interpretation and Ratzinger theological commentary",
-            "FATIMASSEDEV": "Traditional critic's actual claim, not documentary confirmation of an additional manuscript"
+            "CCC156M": "§156, external proofs of Revelation and motives of credibility",
+            "CCC548M": "Compendium question 108, miracles accompanying the Kingdom"
+          }
+        },
+        {
+          "role": "documented_position",
+          "text": {
+            "en": "David Hume argued in Section X, 'Of Miracles', of his Enquiry that reports of apparent violations of nature's regular course confront strong contrary experience. Testimony should be weighed against the probability that witnesses are mistaken, deceived or deceptive; in Hume's reasoning, the ordinary case for a religious miracle is defeated by that comparison. This is an original philosophical challenge to the credibility of miracles, not a Catholic position invented as an opponent.",
+            "fr": "Dans la section X, « Of Miracles », de son Enquiry, David Hume soutient que les récits d'événements apparemment contraires au cours régulier de la nature se heurtent à une forte expérience opposée. Il faut peser les témoignages contre la possibilité que les témoins soient trompés, se trompent ou trompent autrui ; selon son raisonnement, cette comparaison ruine ordinairement la preuve d'un miracle religieux. Il s'agit d'une objection philosophique authentique à la crédibilité des miracles, et non d'une position catholique travestie en opposition."
+          },
+          "source_ids": [
+            "HUME-MIRACLE-X"
+          ],
+          "attribution": "David Hume, An Enquiry Concerning Human Understanding, Section X (1748)",
+          "original_context_approved": false,
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "HUME-MIRACLE-X": "Enquiry X.1–X.2, treatment of testimony and regular experience"
+          }
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Hume is right that extraordinary testimony needs unusually careful testing and that a pious report is not proof. But a generally observed regularity tells us what ordinarily happens; it does not logically demonstrate that a transcendent cause cannot act. One must therefore examine witnesses, alternative natural explanations, transmission and the religious context without either assuming a miracle in advance or ruling out the possibility by definition. The Catholic position takes evidence seriously because miracles are proposed as signs of Revelation (Catechism §156).",
+            "fr": "Hume a raison d'exiger un examen particulièrement rigoureux des témoignages extraordinaires : un récit pieux ne suffit pas à établir un fait. Mais une régularité constatée décrit ce qui se produit ordinairement ; elle ne démontre pas logiquement qu'une cause transcendante soit incapable d'agir. Il faut donc examiner les témoins, les explications naturelles possibles, la transmission des récits et le contexte religieux, sans présupposer le miracle ni en exclure la possibilité par définition. La position catholique prend la preuve au sérieux précisément parce que les miracles sont proposés comme signes de la Révélation (Catéchisme, §156)."
+          },
+          "source_ids": [
+            "HUME-MIRACLE-X",
+            "CCC156M"
+          ],
+          "attribution": null,
+          "original_context_approved": false,
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "HUME-MIRACLE-X": "Section X, Hume's argument about proportional evidence",
+            "CCC156M": "§156, external signs"
           }
         },
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The point of authentic private revelation is conversion, prayer, penance and renewed fidelity to the Gospel, never a rival source of binding dogma. Catholics can seriously honor Our Lady of Fatima while distinguishing the Church's documentary findings, the devotion itself and conjectures about unpublished words.",
-            "fr": "La fin d'une révélation privée authentique est la conversion, la prière, la pénitence et la fidélité renouvelée à l'Évangile, non une source concurrente de dogmes obligatoires. Un catholique peut honorer profondément Notre-Dame de Fatima tout en distinguant les constatations documentaires de l'Église, la dévotion elle-même et les conjectures sur des paroles non publiées."
+            "en": "God is not a competing physical force but the source of the created order; an extraordinary divine sign is therefore neither a scientific explanation of ignorance nor an arbitrary superstition. The miracles of Christ testify to his saving mission and direct believers toward conversion, not the pursuit of marvels. Later reported wonders and private revelations demand discernment: even an approved private revelation adds nothing to the definitive public Revelation of Christ (Catechism §67). The Third Secret of Fatima is a separate documentary dispute, preserved in this dossier's linked research records rather than substituted for the general question about miracles.",
+            "fr": "Dieu n'est pas une force physique concurrente, mais la source même de l'ordre créé ; un signe divin extraordinaire n'est donc ni une explication scientifique de notre ignorance ni une superstition arbitraire. Les miracles du Christ attestent sa mission salvifique et invitent à la conversion, non à la recherche du merveilleux. Les prodiges allégués plus tard et les révélations privées exigent un discernement : même approuvée, une révélation privée n'ajoute rien à la Révélation publique définitive du Christ (Catéchisme, §67). La controverse documentaire sur le troisième secret de Fatima reste conservée dans les recherches liées au dossier, sans remplacer la question générale des miracles."
           },
           "source_ids": [
+            "CCC156M",
+            "CCC548M",
             "CCC67",
             "FATIMA00"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "CCC67": "§67, private revelation",
+            "FATIMA00": "2000 CDF publication; separate documentary case"
+          }
         }
       ],
       "original_claim_by_claim_source_context_certified": false,
