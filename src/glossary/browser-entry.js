@@ -349,7 +349,7 @@ export function createGlossaryRuntime(win=globalThis){
     const hasLiveParent=win?.AO_LEARN_APP_V1?.status?.()?.child===ROUTE_ID;
     if(returning){
       try{if(returning.scrollNode?.isConnected)returning.scrollNode.scrollTop=returning.scrollTop}catch{}
-      try{if(returning.trigger?.isConnected)returning.trigger.focus?.({preventScroll:true})}catch{}
+      try{if(returning.trigger?.isConnected){returning.trigger.disabled=false;returning.trigger.focus?.({preventScroll:true})}}catch{}
     }
     state.contextReturn=null;
     if(returnToLearn&&!hasLiveParent)Promise.resolve().then(()=>win?.AO_LEARN_APP_V1?.open?.());
