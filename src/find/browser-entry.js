@@ -307,7 +307,7 @@ export function createFindOwner(win=globalThis){
       try{
         const atlasMode=state.bibleAtlas;
         const nextHandle=await mountExploreMap(mapNode,atlasMode?atlasMapItems(atlasStops,state.bibleIndex):items,{
-          win,allowEmpty:atlasMode,initialViewport:atlasMode?{center:[35,31],zoom:3.6}:lastMapLens===state.lens?lastMapView:null,
+          win,allowEmpty:atlasMode,initialViewport:lastMapLens===state.lens&&!atlasMode?lastMapView:(atlasMode?{center:[35,31],zoom:3.6}:null),
           onSelect:id=>{
             if(atlasMode){
               updateBibleIndex(atlasIndexForPin(atlasStops,state.bibleIndex,id),{center:true});return;
