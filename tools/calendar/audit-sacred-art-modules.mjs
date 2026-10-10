@@ -5,14 +5,17 @@ import {buildLiturgicalYear} from "../../src/calendar/liturgical-year.js";
 const works=JSON.parse(readFileSync("data/calendar/sacred-art-candidates.v1.json","utf8"));
 const targets=JSON.parse(readFileSync("data/calendar/sacred-art-subject-targets.v2.json","utf8"));
 const legacy=JSON.parse(readFileSync("data/calendar/sacred-art-module-targets.v1.json","utf8"));
+const formation=JSON.parse(readFileSync("data/learn/sacred-art-formation-targets.v1.json","utf8"));
+assert.equal(formation.schema,"AO_SACRED_ART_FORMATION_TARGETS_V1");
+const allTargets=[...targets.targets,...formation.targets];
 const crosswalk=JSON.parse(readFileSync("data/calendar/sacred-art-editorial-crosswalk.v1.json","utf8"));
 assert.equal(crosswalk.schema,"AO_SACRED_ART_EDITORIAL_SUBJECT_CROSSWALK_V1");
 const outdir="artifacts/sacred-art-coverage";
 const counts={};
 assert.equal(targets.schema,"AO_SACRED_ART_SUBJECT_TARGETS_V2");
 assert.equal(works.tagSchema,"AO_SACRED_ART_SEMANTIC_TAGS_V2");
-assert.ok(targets.targets.length>130);
-assert.equal(new Set(targets.targets.map(x=>x.id)).size,targets.targets.length,"Duplicate subject targets");
+assert.ok(allTargets.length>=168);
+assert.equal(new Set(allTargets.map(x=>x.id)).size,allTargets.length,"Duplicate subject targets");
 assert.equal(new Set(works.artworks.map(x=>x.id)).size,works.artworks.length,"Duplicate painting records");
 const allPeriods=["advent","christmas","epiphany","after-epiphany","septuagesima","lent","passion","easter","ascension","pentecost","after-pentecost"];
 const allNovenaIds=new Set(["holy_ghost","christmas","corpus_christi","sacred_heart","immaculate_conception","annunciation","assumption","seven_sorrows","st_joseph","holy_souls","perpetual_help","st_therese","christ_the_king","immaculate_heart","st_michael","st_anthony_nine_tuesdays"]);
@@ -46,7 +49,7 @@ function explicitMatch(t,a){
  if(t.id.startsWith("person."))return a.tags.portraitSubjectId===t.id.slice(7);
  return false;
 }
-const subjectCoverage=targets.targets.map(t=>{
+const subjectCoverage=allTargets.map(t=>{
  const matching=works.artworks.filter(a=>explicitMatch(t,a));
  const iconRelated=crosswalk.relatedFallbackIconography[t.id]||[];
  const symbolicFallback=works.artworks.filter(a=>!matching.includes(a)&&(a.tags?.iconography||[]).some(k=>iconRelated.includes(k)));
@@ -75,10 +78,11 @@ for(const y of dateSweep.years)for(let i=0;i<(y===2024?366:365);i++){
  if(season[key]>0)dateSweep.seasonalOriginalAvailableDates++;else dateSweep.seasonalOriginalMissingDates++;
 }
 const summary={
- sourceTargets:targets.targets.length,
+ sourceTargets:allTargets.length,
+ formationSubjectTargets:formation.targets.length,
  exactCrosswalkTargets:Object.keys(crosswalk.exactIconography).length,
  symbolicFallbackTargets:Object.keys(crosswalk.relatedFallbackIconography).length,
- firstPartyModulesAndSubjectsAudited:new Set(targets.targets.flatMap(t=>t.contexts)).size,
+ firstPartyModulesAndSubjectsAudited:new Set(allTargets.flatMap(t=>t.contexts)).size,
  candidatePaintings:works.artworks.length,
  acquiredOriginals:works.artworks.filter(isAcquired).length,
  cc0AcquiredOriginals:works.artworks.filter(a=>isAcquired(a)&&isCC0(a)).length,
@@ -86,6 +90,7 @@ const summary={
  rosaryMysteriesSourceCovered:rosary.filter(x=>x.candidates>=x.required).length,
  rosaryMysteriesOriginalCovered:rosary.filter(x=>x.originals>=x.required).length,
  subjectsMeetingOriginalMinimum:subjectCoverage.filter(t=>!t.missingToMinimum).length,
+ formationSubjectsMeetingOriginalMinimum:subjectCoverage.filter(t=>t.type==="formation_scene"&&!t.missingToMinimum).length,
  subjectsWithNoExplicitlyMappedArtwork:subjectCoverage.filter(t=>t.sourceCandidates===0).length,
  subjectsWithOriginalAcquisitionGaps:subjectCoverage.filter(t=>t.missingToMinimum>0).length,
  approvedReleaseArtworks:0,
