@@ -227,7 +227,7 @@ try{
   };
   if(FOCUSED_GAPS)console.log("PROPER_SOURCE_FOCUS_DETAILS "+JSON.stringify(records.map(r=>({
     date:r.date,path:r.resolvedPath,missing:r.ownComputedMissing,owners:r.composedCommemorations,
-    detailedMissing:r.detailedMissing,orationGroups:r.orationGroups,
+    detailedMissing:r.detailedMissing,orationGroups:r.orationGroups,trace:r.trace,
     unresolved:r.integrity?.unresolved?.slice(0,10),coverage:r.languageCoverage
   }))));
   console.log("PROPER_100_SUMMARY "+JSON.stringify({...output.summary,
