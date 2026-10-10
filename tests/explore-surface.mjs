@@ -559,6 +559,10 @@ assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navig
 assert.match(practiceHtml,/>13<\/strong><span>practices/,"list count must describe practices, not attestations");
 
 const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
+assert.ok(atlasFacets.families.some(option=>option.value==="Sacred Heart"),"theme browsing must be independent of geography");
+const sacredHeartFamily=filterCustomsAtlasItems(customsAtlasItems,{atlasFamily:"Sacred Heart"});
+assert.ok(sacredHeartFamily.length>0&&sacredHeartFamily.every(item=>item.raw?.custom?.family==="Sacred Heart"),"theme filter must not infer a country");
+assert.equal(groupTraditionsForBrowse(sacredHeartFamily).length,2,"two Sacred Heart customs, not several country records");
 assert.ok(atlasFacets.areas.some(option=>option.value==="geo:country:FR"&&option.label==="France"),"French customs geography disappeared");
 assert.ok(atlasFacets.periods.some(option=>option.value==="Historical; largely declined"),"source-owned historical period was lost");
 assert.ok(atlasFacets.calendar.some(option=>option.value==="HINT:May"),"documented May Marian context was lost");
@@ -586,6 +590,7 @@ const atlasVm=buildExploreViewModel({
 });
 const atlasHtml=renderExploreToString(atlasVm);
 assert.match(atlasHtml,/Customs Atlas/);
+assert.match(atlasHtml,/data-atlas-filter="atlasFamily"/);
 assert.match(atlasHtml,/data-atlas-filter="atlasArea"/);
 assert.match(atlasHtml,/data-atlas-filter="atlasPeriod"/);
 assert.match(atlasHtml,/data-atlas-filter="atlasCalendar"/);
@@ -599,6 +604,7 @@ const atlasFrHtml=renderExploreToString(buildExploreViewModel({
   atlasFacets,filters:{atlasArea:"ANY",atlasPeriod:"ANY",atlasCalendar:"ANY"},view:"list",
 }));
 assert.match(atlasFrHtml,/Atlas des coutumes/);
+assert.match(atlasFrHtml,/Thème/);
 assert.match(atlasFrHtml,/Géographie/);
 assert.match(atlasFrHtml,/Période historique/);
 assert.match(atlasFrHtml,/Contexte calendaire/);
