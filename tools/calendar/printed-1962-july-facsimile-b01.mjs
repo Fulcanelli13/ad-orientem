@@ -69,13 +69,15 @@ try{
     });
     const rankAgree=actual.rank===item.rank;
     const sourceAgree=!item.proper||actual.sourcePath===item.proper;
+    const commemorationAgree=!item.commemorationSource
+      ||actual.commemorations.some(x=>x.sourcePath===item.commemorationSource);
     const result={date:item.date,printedObservance:item.observance,
       pdfPages:item.pdfPages,expectedRank:item.rank,expectedSourcePath:item.proper,
       runtime:{status:actual.status,error:actual.error,rank:actual.rank,title:actual.title,
         sourcePath:actual.sourcePath,commemorations:actual.commemorations},
-      rankAgree,sourceAgree,checks,
+      rankAgree,sourceAgree,commemorationAgree,checks,
       outcome:actual.status!=="ready"?"runtime-unresolved":
-        !rankAgree||!sourceAgree||checks.some(z=>!z.matched)?"review-discrepancy":
+        !rankAgree||!sourceAgree||!commemorationAgree||checks.some(z=>!z.matched)?"review-discrepancy":
         "transcription-level-agreement-visual-unchecked"};
     report.results.push(result);
     console.log("PRINTED_1962_JULY_SAMPLE "+JSON.stringify({date:item.date,
