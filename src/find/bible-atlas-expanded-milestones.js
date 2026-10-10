@@ -1,5 +1,5 @@
-// Supplemental Catholic-canon milestones. Deuterocanonical additions follow Douay chapter labels;
-// exact verse links must be edition-crosswalk audited against Crampon, CPDV and other witnesses.
+// Explicit Catholic-canon milestones; Scripture links use one chapter each.
+// Greek Esther/Daniel and Douay/Crampon numbering need edition-specific crosswalk.
 export const BEFORE_MILESTONES={
   "The departure from Egypt": [
     [
@@ -22,9 +22,9 @@ export const BEFORE_MILESTONES={
       "EXODUS",
       null,
       null,
-      "The ten plagues",
-      "Les dix plaies",
-      "Exodus 7:14–12:30"
+      "The plagues begin",
+      "Le début des plaies",
+      "Exodus 7:14–25"
     ],
     [
       "EXODUS",
@@ -796,9 +796,17 @@ export const AFTER_MILESTONES={
       "REVELATION",
       null,
       null,
-      "Letters to the seven churches",
-      "Les lettres aux sept Églises",
-      "Revelation 2:1–3:22"
+      "Letters to the four churches",
+      "Lettres aux quatre Églises",
+      "Revelation 2:1–29"
+    ],
+    [
+      "REVELATION",
+      null,
+      null,
+      "Letters to the three churches",
+      "Lettres aux trois Églises",
+      "Revelation 3:1–22"
     ],
     [
       "REVELATION",
