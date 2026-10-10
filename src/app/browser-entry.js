@@ -1,6 +1,7 @@
 import "./source-transport-compat.js";
 import "./offline-boot.js";
 import { installAppDesignSystem } from "./design-system.js";
+import { installAppLiturgicalTheme } from "./liturgical-theme.js";
 import { createScrollTapGuard } from "./scroll-tap-guard.js";
 import { installDateFormat } from "./date-format.js";
 import "./cinematic-runtime.js";
@@ -428,6 +429,8 @@ export function installAppShellBridge({
       state.disposeVisibleOwner = installVisibleRibbonOwner(win, state.controller, state, state.presentationFx);
       state.liveSessionGuards?.dispose?.();
       state.liveSessionGuards = installLiveSessionGuards({ win });
+      // Shared colour follows the verified selected calendar day; Mass has its own Proper-scoped palette.
+      installAppLiturgicalTheme({ win });
       setDataset("ready");
     } catch {
       state.blocked = true;
