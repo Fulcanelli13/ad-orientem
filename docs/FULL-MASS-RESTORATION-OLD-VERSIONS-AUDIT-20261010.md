@@ -46,3 +46,30 @@ Finally prove 390px phone acceptance, language fallbacks, reader mode switches, 
 - \`npm run test:full-mass-preflight\` — 4 forms × 4 categories; same source Proper; explicit overlay; Good Friday firewall and fail-closed unknown form.
 - \`npm run test:full-mass-phone\` — 390px touch; selected form follows R17; actual category and language; date reset; Good Friday blocked; no horizontal overflow.
 - Existing R17 Mass convergence, app convergence and visual workflows remain mandatory.
+
+
+## Phase II — source-projected exact catalogue and explicit rites
+
+The existing 1962 source resolver exposes the following candidate choices at this revision; these are **available to select for rubrical examination**, not a claim that every choice is permitted on every day:
+
+| Family | Verified paths in the historical live selector | Native presentation |
+| --- | --- | --- |
+| Votive | 19 source-owned choices, including Blessed Sacrament, Sacred Heart, Holy Ghost, Saturday BVM, St Joseph and intentions | Searchable list dynamically projected from source-owned buttons and IDs |
+| Requiem | 9 circumstances: funeral, death, burial, news of death, days 3/7/30, anniversary, cemetery, within eight days from All Souls, ordinary | Native list of original circumstances; permission and Dies iræ class remain host-owned |
+| Nuptial | One explicit Mass selection and source-owned rubric check | Original source button projected without inventing a Proper |
+| Other | External Solemnity and Special public occasion not yet exposed in the original implementation | Conservative historical list retained; neither is falsely enabled |
+
+The native catalogue uses the already-existing source buttons and delegates to their controls. No parallel votive/Requiem register, duplicated texts, unverified vernacular or bypass of rubrical conditions is introduced. The host still controls class, impediments, actual Proper and Start readiness. Removing the old picker completely requires migrating those same rubrical/formulary source APIs.
+
+**Explicit physical ceremonies:** this pass adds optional controls to the native preflight and composes them through the existing R17 preceding/following graph only when permitted. The selector never treats a feast/date as an automatic procession.
+
+- **Asperges / Vidi aquam:** may be explicitly marked before Sunday Sung/Solemn Mass when the actual aspersion occurs; original formula/season resolution remains authoritative.
+- **Absolution after Requiem:** only with a Requiem overlay, using the pinned Absolution graph, including body-present/burial details if known; an explicit unchecked decision suppresses the optional action.
+- **Corpus Christi procession:** only when the resolved celebration itself names Corpus Christi and the faithful confirms that a procession is actually held; the graph owns the distinct dismissal, no ordinary blessing and no Last Gospel.
+- **Generic following procession:** selectable only when already identified in the source. Palm and Rogation processions stay preceding rites, not post-Mass generic processions.
+
+Palm, Ash Wednesday, Candlemas, Rogations, Holy Thursday and Easter Vigil retain their independent source- or context-gated structures rather than appearing as unqualified toggles on every Mass. Choices reset when the actual celebration changes; form resets when the date changes.
+
+**Verification:** full-mass-preflight unit tests and 390px phone tests cover forms, source-delegated votive/Requiem selections, optional-rite decisions, date reset, non-Mass safeguards and absence of inferred processions. R17, app and visual acceptance remain release gates.
+
+**Not certified by this work:** complete removal of the historical picker, availability of all 30 historically recovered supplementary formularies, every local permission, every Proper translation or all local ceremonies. These require further source-backed migration.
