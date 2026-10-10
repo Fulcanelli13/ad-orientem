@@ -13,3 +13,62 @@ export const MANDATUM_1962=Object.freeze({
  ],
  omittedUntilCollation:["full 1962 antiphon and psalm verse repetitions","remaining appointed antiphons","Pater and versicle/response series"],
 });
+
+
+const freeze=Object.freeze;
+const HT_ROOT="Tempora/Quad6-4r";
+export function projectHolyThursdayMass(model,resolvedMass,{mandatumPresent=false,language="en"}={}){
+ const path=resolvedMass?.proper?.data?.sourcePath??resolvedMass?.proper?.sourcePath;
+ if(path!==HT_ROOT){
+   if(mandatumPresent)throw new Error("Mandatum cannot be inserted in a non-Holy-Thursday Proper");
+   return model;
+ }
+ if(!Array.isArray(model?.cards))throw new TypeError("Holy Thursday requires a ready Mass reader model");
+ const all=[...model.cards].filter(card=>card.sectionId!=="AO.CARD.009"&&card.sourceSectionId!=="AO.CARD.009");
+ if(mandatumPresent){
+   const at=all.findIndex(c=>c.sectionId==="AO.CARD.008"||c.sourceSectionId==="AO.CARD.008");
+   if(at<0)throw new Error("Holy Thursday Mandatum requires the Homily card");
+   const useFrench=String(language).toLowerCase().startsWith("fr");
+   const paragraphs=MANDATUM_1962.texts.map(t=>freeze({
+     id:"AO.HT.MANDATUM."+t.id,kind:"TEXT",primary:useFrench?t.fr:t.en,
+     secondary:null,alternate:t.lat,replaceOnToggle:true,sourceCueIds:freeze([]),
+     active:false,role:t.id==="05"?"CELEBRANT":"SCHOLA",
+     evidenceStatus:MANDATUM_1962.status
+   }));
+   const inserted=freeze({
+     schema:"ao-holy-thursday-mandatum-card-v1",sectionId:"AO.HT.MANDATUM",
+     title:"Mandatum · Washing of Feet",part:"Mass of the Catechumens",
+     sourceSequence:null,sourceSectionId:null,blocks:freeze([]),
+     paragraphs:freeze(paragraphs),stateOnly:false,optional:true,
+     actorScope:"SELECTED_MEN_AND_MINISTERS",faithfulPosture:"LOCAL_OR_INHERIT",
+     provenance:freeze({source:"MISSAL_1962_SECONDARY",textComplete:false,
+       placement:"AFTER_HOMILY_BEFORE_OFFERTORY",canonicalEventMutation:false}),
+   });
+   all.splice(at+1,0,inserted);
+ }
+ const cards=freeze(all.map((card,i)=>freeze({
+   ...card,sequence:i+1,
+   sourceSequence:card.sectionId==="AO.HT.MANDATUM"?null:(card.sourceSequence??card.sequence),
+ })));
+ const byId=new Map(cards.map(x=>[x.sectionId,x]));
+ function cardBySequence(n){const x=Number(n);return Number.isInteger(x)&&x>0&&x<=cards.length?cards[x-1]:null}
+ function neighbor(id,direction){
+   const here=byId.get(String(id));if(!here)return null;
+   return cardBySequence(here.sequence+(direction==="previous"?-1:direction==="next"?1:0));
+ }
+ function cardForEvent(eventId){
+   if(String(eventId).startsWith("MC-CRD-"))return null;
+   const hit=model.cardForEvent(eventId);if(!hit)return null;
+   const card=byId.get(hit.card.sectionId)||cards.find(x=>x.sourceSectionId===hit.card.sectionId);
+   if(!card)return null;
+   return freeze({...hit,card,progress:freeze({
+      index:card.sequence,total:cards.length,label:card.sequence+" / "+cards.length
+   })});
+ }
+ return freeze({...model,cards,totalCards:cards.length,
+   structureOwner:model.structureOwner+"+HOLY_THURSDAY_1962",
+   holyThursday:true,mandatumPresent:!!mandatumPresent,credoOmitted:true,
+   cardBySequence,cardForEvent,
+   previousCard:id=>neighbor(id,"previous"),nextCard:id=>neighbor(id,"next")
+ });
+}
