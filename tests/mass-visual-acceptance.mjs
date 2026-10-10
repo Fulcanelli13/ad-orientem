@@ -574,8 +574,10 @@ try{
   await scholaPause.click();
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola resume control did not resume");
 
-  const expectedScholaTranslation=await page.evaluate(()=>
-    globalThis.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.schola?.english??null);
+  const scholaBeforeTranslation=await page.evaluate(()=>
+    globalThis.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.schola??null);
+  const expectedScholaTranslation=scholaBeforeTranslation?.english??null;
+  const expectedScholaLatin=scholaBeforeTranslation?.latin??null;
   assert.ok(expectedScholaTranslation,"independent Schola source is missing a vernacular translation");
   await scholaDock.locator("[data-schola-translate]").click();
   assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not activate");
@@ -589,7 +591,7 @@ try{
   await scholaDock.locator("[data-schola-translate]").click();
   assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola text did not return to Latin");
   assert.equal((await scholaDock.locator("[data-role='schola']").textContent())?.trim(),
-    scholaState.latin,"Schola did not restore its original Latin in place");
+    expectedScholaLatin,"Schola did not restore its original Latin in place");
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola did not resume after translation closed");
 
   const missalTypography=await page.evaluate(()=>{
