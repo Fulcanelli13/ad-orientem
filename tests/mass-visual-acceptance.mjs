@@ -723,8 +723,8 @@ try{
   assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
   assert.match(elevationState.bellText,/ELEVATION BELL/i);
   assert.equal(elevationState.bellIconHidden,false,"Host elevation bell rail is active but its icon is hidden");
-  assert.match(elevationState.bellIconMask,/mass-v46\/bells\.svg/,
-    "Host elevation bell rail is active but is not using the exact v4.6 donor bell art");
+  assert.match(elevationState.bellIconMask,/^url\(["\x27]?data:image\/png;base64,/,
+    "Host elevation bell should use unwrapped exact v1.80 PNG alpha, not an opaque SVG wrapper");
   assert.equal(elevationState.cueStateSupported,true,
     "Sung cue-state controller is not active at the Host elevation: "+JSON.stringify(elevationState));
   assert.equal(elevationState.cueStateAction,"ELEVATES HOST",
