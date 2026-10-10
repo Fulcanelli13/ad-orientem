@@ -88,7 +88,7 @@ export const HERITAGE_STYLE = String.raw`
 .aoHeritageSurface .aoHeritageSecondary button{background:#17212c;border:1px solid #d9c59a20;min-height:45px;font:500 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
 .aoHeritageSurface .aoHeritageSecondary .aoHeritageMassShortcut{display:flex;justify-content:space-between;align-items:center;border-color:#d9c59a66;background:#30291f;color:#f0ddbc;font-weight:650}
 .aoHeritageSurface .aoHeritageCategories{padding:3px 12px 11px;gap:6px}
-.aoHeritageSurface .aoHeritageCategories button{border-radius:10px;border:1px solid #d9c59a2e;min-height:40px;padding:8px 13px;background:#101721;font-size:12px}
+.aoHeritageSurface .aoHeritageCategories button{border-radius:10px;border:1px solid #d9c59a2e;min-height:48px;padding:8px 13px;background:#101721;font-size:12px}
 .aoHeritageSurface .aoHeritageCategories button.active{background:#302a20;border-color:#c5a974;color:#f6e8ce}
 .aoHeritageSurface .aoHeritageBody.aoFindBody[data-find-view=map]{padding:0 6px 6px;min-height:230px}
 .aoHeritageSurface .aoHeritageBody .aoFindMap{border-radius:10px;background:#0e1923}
@@ -124,7 +124,7 @@ export const HERITAGE_STYLE = String.raw`
  .aoHeritageSurface .aoHeritageNearby{font-size:11px;padding:8px}
  .aoHeritageSurface .aoHeritageMore summary{font-size:11px;padding:0 9px}
  .aoHeritageSurface .aoHeritageCategories{padding:3px 8px 9px}
- .aoHeritageSurface .aoHeritageCategories button{min-height:39px;padding:8px 11px;font-size:11px}
+ .aoHeritageSurface .aoHeritageCategories button{min-height:48px;padding:8px 11px;font-size:11px}
  .aoHeritageSurface .aoHeritageBody.aoFindBody[data-find-view=map]{padding:0 3px 3px}
  .aoHeritageSurface .aoHeritagePreview{max-height:min(51dvh,430px);border-radius:16px 16px 0 0;padding:8px 16px max(18px,env(safe-area-inset-bottom))}
  .aoHeritageSurface .aoHeritagePreview .aoHeritageCardTitle{font-size:23px}
@@ -151,4 +151,13 @@ export const HERITAGE_STYLE = String.raw`
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}
 @media(max-width:520px){.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs{display:flex;grid-template-columns:none;padding:9px 9px 6px}.aoExploreSurface:not(.aoHeritageSurface) .aoFindList{padding:0 9px 28px}.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard{padding:14px}}
 .aoExploreSurface:not(.aoHeritageSurface) .aoExploreCardRecognition{font:650 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);font-style:normal;letter-spacing:0;color:#d6bd88;border:1px solid #d9c59a33;border-radius:6px;padding:4px 6px}
+
+/* Keep R53 destination controls subordinate to the map rather than another dashboard. */
+.aoHeritageSurface .aoExploreMainDestinations{padding:7px 12px 5px;gap:6px}
+.aoHeritageSurface .aoExploreMainDestinations>*{min-height:46px;border-radius:10px;font-weight:600;font-size:11px}
+.aoHeritageSurface .aoExploreMainDestinations>.active{background:#c6ae7f;color:#0b121b}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreSectionNav{margin:0 14px 8px;gap:12px}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreSectionNav>span{font-size:11px;letter-spacing:.06em}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreSectionSwitcher>summary{border-radius:10px;background:#17212b}
+@media(max-width:520px){.aoHeritageSurface .aoExploreMainDestinations{padding:5px 9px 4px}.aoHeritageSurface .aoExploreMainDestinations>*{min-height:46px;font-size:11px;padding:8px 5px}}
 `;
