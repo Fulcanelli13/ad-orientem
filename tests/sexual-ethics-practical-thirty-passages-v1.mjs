@@ -38,7 +38,7 @@ for(const x of next.records){
  assert.ok(CSE_DEBATE_MAP[x.id][x.stage][0].length>32&&CSE_DEBATE_MAP[x.id][x.stage][1].length>32);
  assert.ok(paragraphRefsFor(CSE_QUESTION_MAP[x.id],"debate",x.stage).some(([id])=>id===x.source_id));
  assert.equal(x.original_source_url,CSE_SOURCE_MAP[x.source_id].canonical_url);
- assert.ok(x.passage_locator.length>3);
+ assert.ok(x.passage_locator.length>3||/^§[0-9]+$/.test(x.passage_locator),"Exact numbered primary-source paragraphs are valid bounded locators");
  assert.ok(x.what_original_establishes_en.length>75&&x.what_it_does_not_establish_en.length>75,key+" incomplete source scope");
  assert.ok(x.classification.length>10);
  assert.equal(x.english_original_scope_checked,true);
