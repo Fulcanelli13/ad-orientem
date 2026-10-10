@@ -41,7 +41,7 @@ try{
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(2).locator("option").count(),73);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
- assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Hail, full of grace|Hail, full of grace|And the angel/i);
+ assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Forasmuch as many have taken in hand/i);
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
