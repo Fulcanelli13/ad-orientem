@@ -1,10 +1,10 @@
 // Shared visual grammar for Formation's existing canonical readers.
 // Layout only: no content ownership, translation, publication or route changes.
-export const FORMATION_UI_VERSION="formation-unified-layout-v1";
+export const FORMATION_UI_VERSION="formation-unified-navigation-v2";
 
 export function formationReaderCss(){
-  const roots=":is(#ao-glossary-root,#ao-learn-modular-root,#ao-spiritual-life-root,#ao-sexual-ethics-root,#ao-latin-course-root,#ao-learn-traditional-root,#ao-mass-formation-root)";
-  const top=":is(.aoGlossTop,.aoLearnModTop,.aoSLTop,.aoCSETop,.aoL2Top,.aoLearnTradTop,.aoMFTop)";
+  const roots=":is(#ao-glossary-root,#ao-learn-modular-root,#ao-spiritual-life-root,#ao-sexual-ethics-root,#ao-latin-course-root,#ao-learn-traditional-root,#ao-mass-formation-root,#ao-formation-recovery-review)";
+  const top=":is(.aoGlossTop,.aoLearnModTop,.aoSLTop,.aoCSETop,.aoL2Top,.aoLearnTradTop,.aoMFTop,.rrTop)";
   const wrap=":is(.aoGlossWrap,.aoLearnModWrap,.aoSLWrap,.aoCSEWrap,.aoL2Wrap,.aoLearnTradWrap,.aoMFWrap)";
   return `
 ${roots}{--ao-formation-column:760px;--ao-formation-gutter:var(--ao-page-gutter,14px);background:var(--ao-bg-canvas,var(--bg,#080c12));color:var(--ao-text-primary,var(--text,#e9e4d9));font-family:var(--ao-font-body,var(--font-body,Georgia,serif));overscroll-behavior:contain}
@@ -24,6 +24,35 @@ ${roots} :is(button,input,select,textarea,summary,a):focus-visible{outline:2px s
 ${roots} :is(.aoSLSource a,.aoCSESource a,.aoLearnTradSource a,.aoMFSource a){text-decoration-color:color-mix(in srgb,var(--liturgical,#c9ad78) 50%,transparent);text-underline-offset:3px}
 ${roots} :is(.aoSLBlock h2,.aoL2Block h2,.aoCSEMaritalDisputations h2,.aoLearnTradPrayer h2,.aoMFStageRow strong){font-family:var(--ao-font-display,var(--font-display,Georgia,serif))}
 ${roots} :is(.aoGlossCard,.aoGlossTerm,.aoLearnModCard,.aoL2Stage,.aoL2Lesson,.aoL2Panel,.aoL2Passage,.aoL2Exercise,.aoCSEAnswer){border-color:var(--ao-rule,var(--border,rgba(255,255,255,.14)));background:var(--ao-surface-1,var(--surface-1,#101821))}
+
+${roots} .aoFNav{position:sticky;top:var(--ao-fnav-top,65px);z-index:8;background:color-mix(in srgb,var(--ao-bg-canvas,#080c12) 94%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.12));font-family:var(--ao-font-ui,system-ui,sans-serif);animation:aoFNavAppear .22s ease-out}
+${roots} .aoFNavRail{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;max-width:760px;margin:auto;padding:7px var(--ao-formation-gutter,14px)}
+${roots} .aoFNav button{color:inherit;cursor:pointer}
+${roots} .aoFNavArrow{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--ao-rule,rgba(255,255,255,.16));border-radius:50%;background:var(--ao-surface-1,#101821);font:500 1.3rem/1 var(--ao-font-ui,system-ui,sans-serif)}
+${roots} .aoFNavArrow:disabled{opacity:.3;cursor:default}
+${roots} .aoFNavMain{display:flex;align-items:center;min-width:0;gap:9px;min-height:44px;padding:4px 11px;border:1px solid var(--ao-rule,rgba(255,255,255,.16));border-radius:13px;background:var(--ao-surface-1,#101821);text-align:left}
+${roots} .aoFNavIcon{flex:0 0 20px;font:1.1rem/1 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#c9ad78)}
+${roots} .aoFNavText{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
+${roots} .aoFNavCounter{font:650 .63rem/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.065em;text-transform:uppercase;color:var(--liturgical,#c9ad78)}
+${roots} .aoFNavTitle{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:500 .81rem/1.28 var(--ao-font-ui,system-ui,sans-serif)}
+${roots} .aoFNavChevron{color:var(--liturgical,#c9ad78);font-size:.95rem;transition:transform .18s ease}
+${roots} .aoFNavMain[aria-expanded=true] .aoFNavChevron{transform:rotate(180deg)}
+${roots} .aoFNavProgress{height:2px;background:var(--ao-rule,rgba(255,255,255,.14));overflow:hidden}
+${roots} .aoFNavProgress>span{display:block;transform:scaleX(var(--ao-fnav-progress,0));transform-origin:left center;height:100%;width:100%;background:var(--liturgical,#c9ad78);transition:transform .15s linear}
+${roots} .aoFNavMenu{max-height:min(45vh,320px);overflow-y:auto;overscroll-behavior:contain;padding:5px var(--ao-formation-gutter,14px) 13px;border-top:1px solid var(--ao-rule,rgba(255,255,255,.1))}
+${roots} .aoFNavMenu[hidden]{display:none!important}
+${roots} .aoFNavIndex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;max-width:760px;margin:auto}
+${roots} .aoFNavIndex button{display:flex;align-items:center;gap:8px;min-width:0;min-height:44px;padding:8px 10px;text-align:left;border:1px solid var(--ao-rule,rgba(255,255,255,.13));border-radius:10px;background:var(--ao-surface-1,#101821);font:500 .75rem/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+${roots} .aoFNavIndex button[aria-current=location]{border-color:var(--liturgical,#c9ad78);background:color-mix(in srgb,var(--liturgical,#c9ad78) 9%,var(--ao-surface-1,#101821))}
+${roots} .aoFNavIndex button>span:first-child{flex:0 0 auto;color:var(--liturgical,#c9ad78);font-size:.65rem;font-variant-numeric:tabular-nums}
+${roots} .aoFNavIndex button>span:last-child{min-width:0;overflow-wrap:break-word}
+${roots} .aoFNav :is(button):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
+${roots} .aoFNavTarget{scroll-margin-top:150px}
+${roots} main{animation:aoFReaderAppear .19s ease-out both}
+@keyframes aoFNavAppear{from{opacity:.5;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes aoFReaderAppear{from{opacity:.85}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){${roots} .aoFNav,${roots} main{animation:none!important}${roots} .aoFNav *{transition:none!important}}
+@media(max-width:430px){${roots} .aoFNavRail{gap:7px;padding:6px 12px}${roots} .aoFNavIndex{gap:6px}${roots} .aoFNavIndex button{font-size:.72rem;padding:8px}}
 @media(max-width:430px){
  ${roots} ${top}{gap:8px}
  ${roots} ${wrap}{padding:16px var(--ao-formation-gutter) 40px}
