@@ -137,8 +137,8 @@ assert.doesNotMatch(rendered,/ao-schola-translate-hint|tap text · translate/,
 assert.match(dom,/setScholaPaused\(true\)/,"translation must pause live Schola motion");
 assert.match(dom,/scholaPausedBeforeTranslation/);
 
-assert.match(iconMap,/ALTAR_GOSPEL_MISSAL:"priest_centre"/,
-  "v1.77 top PRIEST summary regressed to rich Gospel action art");
+assert.match(iconMap,/ALTAR_GOSPEL_MISSAL:"priest_gospel_rich"/,
+  "user-reviewed original v1.80 priest Gospel-side artwork missing");
 assert.match(iconMap,/FOOT_CENTER:"priest_foot"/,
   "v1.77 top PRIEST summary lost the plain foot-of-altar pictogram");
 assert.match(iconMap,/priestActionIconKey:priestActionKey/,

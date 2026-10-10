@@ -723,15 +723,15 @@ try{
   assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
   assert.match(elevationState.bellText,/ELEVATION BELL/i);
   assert.equal(elevationState.bellIconHidden,false,"Host elevation bell rail is active but its icon is hidden");
-  assert.match(elevationState.bellIconMask,/mass-v46\/bells\.svg/,
-    "Host elevation bell rail is active but is not using the exact v4.6 donor bell art");
+  assert.match(elevationState.bellIconMask,/^url\(["\x27]?data:image\/png;base64,/,
+    "Host elevation bell should use unwrapped exact v1.80 PNG alpha, not an opaque SVG wrapper");
   assert.equal(elevationState.cueStateSupported,true,
     "Sung cue-state controller is not active at the Host elevation: "+JSON.stringify(elevationState));
   assert.equal(elevationState.cueStateAction,"ELEVATES HOST",
     "loaded v1.80 priest-action registry does not expose the Host elevation action at AO.SM.C0174: "+JSON.stringify(elevationState));
   assert.equal(elevationState.projectedAction,"ELEVATES HOST",
     "native state projection dropped the Host elevation action after cue resolution");
-  assert.equal(elevationState.projectedActionIconKey,"priest_elevate_host_rich","Host elevation cue lost its exact v4.6 action key");
+  assert.equal(elevationState.projectedActionIconKey,"priest_elevation","Host elevation lost the reviewed v1.80 art");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
   const elevationBackdrop=await page.locator("#ao-r17-native-reader-preview [data-role='cinematic']").evaluate(el=>({
     backgroundColor:getComputedStyle(el).backgroundColor,
@@ -888,7 +888,7 @@ try{
   assert.equal(listenCue.active,"true","sung Collect did not activate the faithful LISTEN channel: "+JSON.stringify({collectListening,listenCue}));
   assert.equal(listenCue.display,"grid","LISTEN cue exists but is hidden by rail CSS");
   assert.equal(listenCue.iconHidden,false,"LISTEN cue lost its exact donor art");
-  assert.match(listenCue.iconMask,/listen\.svg/,"LISTEN cue resolved to the wrong donor key");
+  assert.match(listenCue.iconMask,/^url\(["\x27]?data:image\/png;base64,/,"LISTEN cue must use original unwrapped v1.80 PNG alpha");
   assert.equal(listenCue.postureCueActive,"false",
     "persistent STAND was duplicated as a second posture-change icon");
 

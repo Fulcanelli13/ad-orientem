@@ -2,6 +2,7 @@ import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
+import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -1027,10 +1028,10 @@ function syncRailVisibility(root){
   stage.dataset.rightRail=String(live);
 }
 
-// The v1.80 donor masks the original PNG pixel alpha via currentColor.
-// The frozen bank stores the exact PNG as an <image> in a local SVG transport
-// wrapper. CSS-masking that SVG wrapper directly flattens it to an opaque
-// viewport in Chromium, so unwrap only the PNG URI, without changing pixels.
+// The v1.80 bank uses SVG transport wrappers for 57 PNG alpha payloads,
+// including bells, Host elevation, breast strike and priest voice. Chromium
+// can flatten those wrappers to opaque CSS masks; unwrap by exact key rather
+// than checking the misleading _rich filename suffix.
 export function extractDonorRichMaskUri(svg){
   const match=String(svg??"").match(/<image\b[^>]*\bhref=(["'])(data:image\/png;base64,[A-Za-z0-9+/=]+)\1/i);
   return match?.[2]??null;
@@ -1081,7 +1082,7 @@ function applyIcon(root, slot, key, iconResolver){
     el.style.maskImage=cssUrl(uri);
     el.style.webkitMaskImage=cssUrl(uri);
   };
-  if(!/_rich$/.test(id)){
+  if(!R17_DONOR_PNG_ICON_KEYS.includes(id)){
     showMask(src);
     return;
   }
