@@ -24,6 +24,8 @@ try{
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
  const dates=["2024-05-06","2027-05-03","2024-06-15","2027-07-17","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
    "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01","2024-12-04","2027-12-04","2026-12-04","2022-12-04",
+   "2024-01-15","2024-02-03","2024-02-06","2024-03-06","2024-03-21",
+   "2024-04-20","2027-02-18",
    "2024-01-25","2027-01-25","2024-02-22","2027-02-22","2027-05-25",
    "2024-05-16","2024-06-12","2027-06-12","2024-10-03",
    "2024-03-28","2024-03-30","2027-03-25","2027-03-27"];
@@ -40,6 +42,8 @@ try{
        inherited:p?.inheritedProper,calendarCommemorations:p?.calendarCommemorations,
        comms:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title,path:x.path,inseparable:x.inseparable})),
        collects:p?.collects?.length||0,secrets:p?.secrets?.length||0,postcommunions:p?.postcommunions?.length||0,
+       collectText:(p?.collects||[]).map(v=>Object.fromEntries(["lat","en","fr"].map(lang=>
+          [lang,String(v?.[lang]||"").length]))),
        lastCollect:p?.collects?.at(-1)||null,lastSecret:p?.secrets?.at(-1)||null,lastPostcommunion:p?.postcommunions?.at(-1)||null,
        mainText:Object.fromEntries(["epistle","gradual","gospel","offertory","communion"].map(field=>[
          field,Object.fromEntries(["lat","en","fr"].map(lang=>[
@@ -240,6 +244,31 @@ try{
      assert.ok(row.mainText?.[field]?.lat>45,date+": missing original Latin "+field);
      for(const lang of ["en","fr"])assert.ok(row.mainText?.[field]?.[lang]>35,
        date+": pinned "+lang+" Mass source was not inherited for "+field);
+   }
+ }
+ // Historical English [Oratio] (ad missam) is canonicalized to
+ // "Oratio" by the source parser. All ten formerly empty source slots
+ // must now resolve from their exact original Common, never a generated
+ // translation or a Latin fallback shown as English.
+ for(const [date,owner,slot] of [
+   ["2024-01-15","Sancti/01-15",[0,1]],
+   ["2024-02-03","Commune/C10c",[0]],
+   ["2024-02-06","Sancti/02-06",[1]],
+   ["2024-03-06","Tempora/Quad3-3",[1]],
+   ["2024-03-21","Tempora/Quad5-4",[1]],
+   ["2024-04-20","Commune/C10Pasc",[0]],
+   ["2024-06-15","Commune/C10t",[0]],
+   ["2027-02-18","Tempora/Quad1-4",[1]],
+ ]){
+   const row=result.find(r=>r.date===date);
+   assert.equal(row.status,"ready",date+": source resolver failed");
+   assert.equal(row.path,owner,date+": canonical proper owner shifted");
+   for(const index of slot)for(const lang of ["lat","en","fr"])
+     assert.ok(row.collectText?.[index]?.[lang]>80,
+       date+": missing "+lang+" source for Collect "+(index+1));
+   if(date==="2024-01-15"){
+     for(const lang of ["lat","en","fr"])assert.ok(row.mainText?.communion?.[lang]>60,
+       "15 January's Psalm 63 Communion must be source-bound in "+lang);
    }
  }
  const deferred=result.find(x=>x.date==="2022-12-04");
