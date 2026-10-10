@@ -68,25 +68,32 @@ const latinStageOf=x=>x?.first_lesson?Math.ceil(Number(x.first_lesson)/5):0;
 
 export function createGlossaryRuntime(win=globalThis){
   const state={open:false,loaded:false,loading:false,error:"",view:"categories",categoryId:null,sectionId:null,latinStage:null,query:"",detailId:null,detailType:"concept",contextIds:[],origin:"learn",contextReturn:null,data:null,unsub:null,lastLanguage:null};
+  let openEpoch=0,loadPending=null;
 
   async function load(){
     if(state.loaded)return state.data;
+    // Reuse the same first-use load across overlapping contextual opens.
+    // A failed attempt clears the promise so Retry can fetch again.
+    if(loadPending)return loadPending;
     state.loading=true;
-    try{
-      const all=await Promise.all([fetchJson(win,NAV_URL),...CONCEPT_URLS.map(u=>fetchJson(win,u)),fetchJson(win,SOURCE_URL),fetchJson(win,LEXEME_URL),fetchJson(win,PHRASE_URL)]);
-      const nav=all[0],sourcesDoc=all[4],lexemeDoc=all[5],phraseDoc=all[6],entries=all.slice(1,4).flatMap(x=>x.entries);
-      const lexemes=lexemeDoc.items||[],phrases=phraseDoc.items||[];
-      state.data={
-        nav,entries,lexemes,phrases,
-        byId:new Map(entries.map(x=>[x.id,x])),
-        lexemeById:new Map(lexemes.map(x=>[x.id,x])),
-        phraseById:new Map(phrases.map(x=>[x.id,x])),
-        sources:new Map(sourcesDoc.sources.map(x=>[x.id,x]))
-      };
-      state.loaded=true;state.error="";
-    }catch(e){state.error=String(e?.message||e)}
-    finally{state.loading=false}
-    return state.data;
+    loadPending=(async()=>{
+      try{
+        const all=await Promise.all([fetchJson(win,NAV_URL),...CONCEPT_URLS.map(u=>fetchJson(win,u)),fetchJson(win,SOURCE_URL),fetchJson(win,LEXEME_URL),fetchJson(win,PHRASE_URL)]);
+        const nav=all[0],sourcesDoc=all[4],lexemeDoc=all[5],phraseDoc=all[6],entries=all.slice(1,4).flatMap(x=>x.entries);
+        const lexemes=lexemeDoc.items||[],phrases=phraseDoc.items||[];
+        state.data={
+          nav,entries,lexemes,phrases,
+          byId:new Map(entries.map(x=>[x.id,x])),
+          lexemeById:new Map(lexemes.map(x=>[x.id,x])),
+          phraseById:new Map(phrases.map(x=>[x.id,x])),
+          sources:new Map(sourcesDoc.sources.map(x=>[x.id,x]))
+        };
+        state.loaded=true;state.error="";
+      }catch(e){state.error=String(e?.message||e)}
+      finally{state.loading=false;loadPending=null}
+      return state.data;
+    })();
+    return loadPending;
   }
 
   function ensureRoot(){
@@ -242,7 +249,8 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   function render(){
-    const n=ensureRoot();if(!n||!state.open)return false;
+    if(!state.open)return false;
+    const n=ensureRoot();if(!n)return false;
     let body;
     if(state.loading)body=top()+'<main class="aoGlossWrap"><div class="aoGlossEmpty">'+esc(L(win,"Loading glossary…","Chargement du glossaire…"))+'</div></main>';
     else if(state.error)body=top()+'<main class="aoGlossWrap"><div class="aoGlossEmpty">'+esc(state.error)+'</div></main>';
@@ -283,6 +291,7 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   async function open(opts={}){
+    const attempt=++openEpoch;
     // A contextual launch owns no route. Preserve the actual trigger and the
     // scrollable reading surface; never reset its parent to the Formation hub.
     if(opts.origin==="context"){
@@ -293,7 +302,12 @@ export function createGlossaryRuntime(win=globalThis){
     }else state.contextReturn=null;
     state.open=true;state.view="categories";state.categoryId=null;state.sectionId=null;state.latinStage=null;state.query=String(opts.query||"");state.detailId=null;state.detailType="concept";state.contextIds=[];state.origin=String(opts.origin||"learn");
     ensureRoot();attach();state.loading=!state.loaded;render();
-    await load();state.loading=false;
+    await load();
+    // The user can close, navigate Home or request another definition while
+    // the seven first-use source files load. A superseded promise has no
+    // authority to remount Glossary or overwrite the newer selection.
+    if(!state.open||openEpoch!==attempt)return false;
+    if(!state.loaded||!state.data){render();return false}
     if(opts.categoryId&&categoryById(state.data,opts.categoryId)){state.categoryId=opts.categoryId;state.view="category"}
     if(opts.entryId&&state.data?.byId?.has(opts.entryId)){state.detailType="concept";state.detailId=opts.entryId}
     if(opts.lexemeId&&state.data?.lexemeById?.has(opts.lexemeId)){state.detailType="lexeme";state.detailId=opts.lexemeId;state.categoryId="latin_rubrics";state.view="lexemes"}
@@ -307,7 +321,9 @@ export function createGlossaryRuntime(win=globalThis){
   async function openLexeme(id){return open({lexemeId:String(id||"")})}
   async function openPhrase(id){return open({phraseId:String(id||"")})}
   async function openTerms(ids=[],opts={}){
-    await open({...opts,origin:"context"});
+    const pending=open({...opts,origin:"context"});
+    const attempt=openEpoch;
+    if(await pending!==true||!state.open||openEpoch!==attempt||!state.data)return false;
     const rows=[...new Set(ids.map(String))].map(id=>state.data.byId.get(id)).filter(Boolean);
     if(rows.length===1){state.detailId=rows[0].id;render();return true}
     if(rows.length){state.contextIds=rows.map(x=>x.id);state.view="context";state.query="";render();return true}
@@ -323,6 +339,7 @@ export function createGlossaryRuntime(win=globalThis){
   }
 
   function close(returnToLearn=false){
+    ++openEpoch;
     const returning=state.origin==="context"?state.contextReturn:null;
     const n=root(win);try{n?.querySelector?.(":focus")?.blur?.()}catch{}n?.remove?.();
     state.open=false;state.detailId=null;state.detailType="concept";state.query="";state.contextIds=[];state.latinStage=null;
