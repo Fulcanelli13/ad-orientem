@@ -308,7 +308,315 @@
       "verification": "WEB_RETRIEVED_BUT_EDITORIAL_VALIDATION_STILL_REQUIRED"
     }
   ],
-  "associations": [],
+  "associations": [
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:001",
+      "site_research_id": "EUROPE:W7:PLACE:AD:old-sanctuary-of-meritxell-historic-chapel",
+      "country_code": "AD",
+      "category": "PILGRIMAGES",
+      "record_kind": "HISTORIC_ANDORRAN_PATRONAL_PILGRIMAGE",
+      "source_ids": [
+        "AD-MERITXELL"
+      ],
+      "evidence_summary": "The original historic chapel is part of the Meritxell Marian pilgrimage complex and remains separately identified from the newer basilica.",
+      "qualification": "Not an additional independently mapped pin until the two physical chapel identities and entrance are reconciled.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:SACRED_IMAGE:002",
+      "site_research_id": "EUROPE:W7:PLACE:AD:old-sanctuary-of-meritxell-historic-chapel",
+      "country_code": "AD",
+      "category": "SACRED_IMAGE",
+      "record_kind": "DESTROYED_OLD_MARIAN_IMAGE",
+      "source_ids": [
+        "AD-MERITXELL"
+      ],
+      "evidence_summary": "The ancient venerated image of Our Lady of Meritxell was destroyed in the fire of September 1972; a modern replacement is venerated.",
+      "qualification": "A lost image is not a presently conserved relic, and images in old and new church should not be conflated.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:003",
+      "site_research_id": "EUROPE:W7:PLACE:BY:braslaw-sanctuary-of-our-lady-queen-of-the-lakes",
+      "country_code": "BY",
+      "category": "PILGRIMAGES",
+      "record_kind": "MARIAN_CATHOLIC_PILGRIMAGE",
+      "source_ids": [
+        "BY-REDEMPTOR"
+      ],
+      "evidence_summary": "Belarusian Redemptorists record a Catholic pilgrimage visiting the sanctuary of the Queen of the Lakes in Braslaw.",
+      "qualification": "A historical pilgrimage itinerary does not establish exact present services, path geometry, or shrine juridical status.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:004",
+      "site_research_id": "EUROPE:W7:PLACE:BY:gudogaj-sanctuary-of-our-lady-of-gudogaj",
+      "country_code": "BY",
+      "category": "PILGRIMAGES",
+      "record_kind": "MARIAN_CATHOLIC_PILGRIMAGE",
+      "source_ids": [
+        "BY-REDEMPTOR"
+      ],
+      "evidence_summary": "Catholic Redemptorist pilgrims visited the Marian sanctuary at Gudogaj, separately from the sanctuary at Braslaw.",
+      "qualification": "The source attests a pilgrimage visit, but no current source-valid opening timetable or GPS entrance.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:005",
+      "site_research_id": "EUROPE:W7:PLACE:BY:mosar-hill-of-crosses-pilgrimage-complex",
+      "country_code": "BY",
+      "category": "PILGRIMAGES",
+      "record_kind": "HILL_OF_CROSSES_PILGRIMAGE_CONTEXT",
+      "source_ids": [
+        "BY-REDEMPTOR"
+      ],
+      "evidence_summary": "The Catholic Redemptorist pilgrimage record refers to the Mosar Hill of Crosses during its devotional journey.",
+      "qualification": "The hill's exact boundaries and its relation to the nearby parish church remain unresolved.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:006",
+      "site_research_id": "EUROPE:W7:PLACE:BA:olovo-catholic-church-of-the-assumption-and-marian-sanctuary",
+      "country_code": "BA",
+      "category": "PILGRIMAGES",
+      "record_kind": "MARIAN_ASSUMPTION_PILGRIMAGE",
+      "source_ids": [
+        "BA-OLOVO"
+      ],
+      "evidence_summary": "Bosnian Catholic heritage lists the historic Marian Catholic Assumption shrine at Olovo as a devotional destination.",
+      "qualification": "Historical Marian church tradition does not itself establish an approved apparition or relic authenticity.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:007",
+      "site_research_id": "EUROPE:W7:PLACE:BA:kondzilo-marian-pilgrimage-hill-and-sanctuary",
+      "country_code": "BA",
+      "category": "PILGRIMAGES",
+      "record_kind": "KONDZILO_HILL_PILGRIMAGE",
+      "source_ids": [
+        "BA-KONDZILO",
+        "BA-KONDZILO-CATH"
+      ],
+      "evidence_summary": "Catholic Church and regional reporting document the Assumption pilgrimages to Kondžilo hill, distinct from the Olovo sanctuary.",
+      "qualification": "The hillside sanctuary and Komušina parish's associated icon are not automatically the same physical Place.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:CUSTOMS:008",
+      "site_research_id": "EUROPE:W7:PLACE:BA:kondzilo-marian-pilgrimage-hill-and-sanctuary",
+      "country_code": "BA",
+      "category": "CUSTOMS",
+      "record_kind": "BOSNIAN_CATHOLIC_ASSUMPTION_PROCESSION",
+      "source_ids": [
+        "BA-KONDZILO-CATH"
+      ],
+      "evidence_summary": "Local Bosnian Catholic sources describe annual Marian Assumption observances involving the hill of Kondžilo.",
+      "qualification": "A Bosnian local pilgrimage custom is not generalized as an established French domestic practice.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:009",
+      "site_research_id": "EUROPE:W7:PLACE:LV:pasiene-saint-dominic-roman-catholic-church",
+      "country_code": "LV",
+      "category": "PILGRIMAGES",
+      "record_kind": "LOCAL_MARIAN_CHURCH_PILGRIMAGE",
+      "source_ids": [
+        "LV-PASIENE"
+      ],
+      "evidence_summary": "Saint Dominic's Catholic Church in Pasiene welcomes pilgrims and maintains Catholic Marian prayer and devotion.",
+      "qualification": "An active Catholic parish with pilgrims is not thereby established as a designated national sanctuary.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:CUSTOMS:010",
+      "site_research_id": "EUROPE:W7:PLACE:LV:pasiene-saint-dominic-roman-catholic-church",
+      "country_code": "LV",
+      "category": "CUSTOMS",
+      "record_kind": "LOCAL_MARIAN_MONTHLY_DEVOTION",
+      "source_ids": [
+        "LV-PASIENE"
+      ],
+      "evidence_summary": "Pasiene's parish presents devotional observances and Marian prayer associated with its own pilgrim ministry.",
+      "qualification": "Local Latvian Catholic custom remains a regional record, not an automatic French Catholic usage.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:011",
+      "site_research_id": "EUROPE:W7:PLACE:LU:luxembourg-chapelle-du-glacis",
+      "country_code": "LU",
+      "category": "PILGRIMAGES",
+      "record_kind": "OCTAVE_PILGRIMAGE_HISTORIC_CHAPEL",
+      "source_ids": [
+        "LU-GLACIS",
+        "LU-2026"
+      ],
+      "evidence_summary": "Luxembourg archdiocesan accounts distinguish the historic Marian Glacis chapel from Notre-Dame Cathedral during the Octave.",
+      "qualification": "The Marian image now kept at the cathedral must not be assigned to the historic Glacis chapel.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:CUSTOMS:012",
+      "site_research_id": "EUROPE:W7:PLACE:LU:luxembourg-chapelle-du-glacis",
+      "country_code": "LU",
+      "category": "CUSTOMS",
+      "record_kind": "GLACIS_MARIAN_OCTAVE_HERITAGE",
+      "source_ids": [
+        "LU-GLACIS",
+        "LU-2026"
+      ],
+      "evidence_summary": "Catholic Luxembourg sources document a Marian Octave prayer tradition associated with the Glacis chapel and cathedral.",
+      "qualification": "This is a local Luxembourg devotional history with francophone borderland relevance, not a rule of French domestic practice.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:013",
+      "site_research_id": "EUROPE:W7:PLACE:MC:monaco-cathedral-of-our-lady-immaculate",
+      "country_code": "MC",
+      "category": "PILGRIMAGES",
+      "record_kind": "CATHOLIC_CATHEDRAL_HERITAGE_STOP",
+      "source_ids": [
+        "MC-MONACO"
+      ],
+      "evidence_summary": "Monaco's Catholic cathedral is a distinct principal church in the principality's religious heritage itinerary.",
+      "qualification": "The cathedral's princely tombs are secular burials, not saintly relic collections.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:014",
+      "site_research_id": "EUROPE:W7:PLACE:MC:monaco-eglise-saint-charles",
+      "country_code": "MC",
+      "category": "PILGRIMAGES",
+      "record_kind": "LOCAL_CATHOLIC_HERITAGE_CHURCH",
+      "source_ids": [
+        "MC-MONACO"
+      ],
+      "evidence_summary": "Monaco's official churches itinerary independently identifies the Catholic Church of Saint Charles.",
+      "qualification": "Inclusion on a tourism itinerary does not make the church an episcopally designated pilgrimage sanctuary.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:RELICS:015",
+      "site_research_id": "EUROPE:W7:PLACE:ME:kotor-catholic-cathedral-of-saint-tryphon",
+      "country_code": "ME",
+      "category": "RELICS",
+      "record_kind": "REPORTED_ST_TRYPHON_CUSTODY_HISTORICAL",
+      "source_ids": [
+        "ME-TRYPHON"
+      ],
+      "evidence_summary": "Heritage descriptions link Kotor's Catholic cathedral with the traditional relics of its patron Saint Tryphon.",
+      "qualification": "Secondary destination reporting is insufficient to certify exact current custodial inventory or relic authenticity.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:016",
+      "site_research_id": "EUROPE:W7:PLACE:ME:kotor-catholic-cathedral-of-saint-tryphon",
+      "country_code": "ME",
+      "category": "PILGRIMAGES",
+      "record_kind": "PATRONAL_TRYPHON_CATHEDRAL_HERITAGE",
+      "source_ids": [
+        "ME-TRYPHON"
+      ],
+      "evidence_summary": "The historic Roman Catholic Cathedral of Saint Tryphon remains a named patronal heritage destination in Kotor.",
+      "qualification": "Cathedral identity alone must not be misrepresented as a current official annual pilgrim programme.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:017",
+      "site_research_id": "EUROPE:W7:PLACE:GI:gibraltar-cathedral-of-saint-mary-the-crowned",
+      "country_code": "GI",
+      "category": "PILGRIMAGES",
+      "record_kind": "CATHOLIC_CATHEDRAL_AND_MARIAN_CHAPEL",
+      "source_ids": [
+        "GI-CATHEDRAL"
+      ],
+      "evidence_summary": "The Gibraltar diocese identifies the cathedral and its devotional Lourdes chapel as part of a single church complex.",
+      "qualification": "Lourdes chapel inside cathedral must not generate a second building or imply Marian apparitions took place in Gibraltar.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:018",
+      "site_research_id": "EUROPE:W7:PLACE:LI:vaduz-cathedral-of-saint-florin",
+      "country_code": "LI",
+      "category": "PILGRIMAGES",
+      "record_kind": "CATHOLIC_CATHEDRAL_HERITAGE",
+      "source_ids": [
+        "LI-FLORIN"
+      ],
+      "evidence_summary": "Vaduz's current Catholic Saint Florin cathedral remains distinguishable from the earlier chapel superseded in the nineteenth century.",
+      "qualification": "The dedication and cathedral's pilgrimage/heritage context do not independently prove formal national shrine status.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    },
+    {
+      "record_id": "EUROPE:W7:PILGRIMAGES:019",
+      "site_research_id": "EUROPE:W7:PLACE:XK:pristina-catholic-cathedral-of-saint-mother-teresa",
+      "country_code": "XK",
+      "category": "PILGRIMAGES",
+      "record_kind": "ST_MOTHER_TERESA_CATHEDRAL_DEVOTION",
+      "source_ids": [
+        "XK-TERESA"
+      ],
+      "evidence_summary": "Catholic authorities and Aid to the Church in Need document Saint Mother Teresa's Cathedral in Pristina and its 2017 consecration.",
+      "qualification": "Patron saint dedication is not proof of physical custody of Mother Teresa relics or a miraculous apparition.",
+      "publication": "RESEARCH_ONLY_NOT_MAPPED",
+      "map_pin": false,
+      "coordinates": null,
+      "route_geometry": null
+    }
+  ],
   "canonical_enrichments": [],
   "governance": [
     "At Meritxell, old chapel and new basilica are distinct buildings; 1972 fire destroyed the old venerated image, modern statue is a reproduction.",
@@ -324,7 +632,7 @@
   "counts": {
     "site_candidates": 14,
     "source_records": 13,
-    "association_records": 0,
+    "association_records": 19,
     "canonical_enrichments": 0,
     "by_country": {
       "AD": 1,
@@ -337,6 +645,13 @@
       "MC": 2,
       "ME": 1,
       "XK": 1
+    },
+    "by_category": {
+      "PILGRIMAGES": 14,
+      "RELICS": 1,
+      "APPARITIONS": 0,
+      "SACRED_IMAGE": 1,
+      "CUSTOMS": 3
     }
   }
 }
