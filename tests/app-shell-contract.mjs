@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import "./scripture-context-mass-pray.mjs";
 import "./contextual-study.mjs";
+import "./glossary-context-lifecycle.mjs";
 import "./contextual-study-coverage.mjs";
 import "./prayer-source-anchor-triage.mjs";
 import "./prayer-12-original-form.mjs";
