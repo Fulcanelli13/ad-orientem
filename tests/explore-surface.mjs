@@ -7,6 +7,7 @@ import {
   projectExploreDataset,
 } from "../src/find/explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "../src/find/explore-presentation.js";
+import { sacredPlaceSynopsis, compactHeritagePlaceSheet } from "../src/find/heritage-presentation.js";
 import { exploreMapFeatures } from "../src/find/map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "../src/find/traditions-browse.js";
@@ -682,6 +683,7 @@ assert.match(heritageHtml,/data-heritage-custom="DEV-006"/,"universal customs mu
 assert.doesNotMatch(heritageHtml,/class="aoFindList"/,"map-first Explore must not default to a result list");
 assert.match(heritageHtml,/data-heritage-nearby/,"map-first discovery must support user-requested nearby recentering");
 assert.match(heritageHtml,/aoHeritageMapHint/,"initial screen should explain pin interaction without a long list");
+assert.match(heritageHtml,/data-heritage-world/,"a world-view recovery control is required");
 assert.ok(heritageHtml.indexOf('class="aoHeritageTools"')<heritageHtml.indexOf('class="aoHeritageCategories"'),"search must appear before the category filters");
 assert.match(heritageHtml,/aoHeritageMore/,"technical record lists should be behind Browse");
 assert.match(heritageHtml,/data-find-filter-value="tlm"/,"Mass map shortcut remains reachable in Browse");
@@ -723,6 +725,23 @@ assert.match(expandedPlace,/class="aoPlaceAccordion"/,"long evidence lists shoul
 assert.doesNotMatch(expandedPlace,/class="aoFindFacts"/,"expanded Place should not open with numeric record counters");
 assert.match(expandedPlace,/Sources and geographic evidence/,"original evidence must remain one tap away");
 
+
+
+const mixedProfile={
+  place_id:"place:FR:mixed-test",name:"Mixed Sacred Place",
+  address:{city:"Lourdes",region:"Occitanie",country:"France"},
+  counts:{"shrines":1,"relics":1},geo:{precision:"site"},
+  shrines:[{summary:"SHRINE INTRO ORIGINAL"}],
+  relics:[{summary:"RELIC INTRO ORIGINAL",summary_fr:"INTRO RELIQUE FRANÇAISE"}],
+};
+assert.equal(sacredPlaceSynopsis(mixedProfile,{preferredCategory:"relics"}),"RELIC INTRO ORIGINAL");
+assert.equal(sacredPlaceSynopsis(mixedProfile,{preferredCategory:"relics",language:"fr"}),"INTRO RELIQUE FRANÇAISE");
+const relicPreview=compactHeritagePlaceSheet({selectedPlace:mixedProfile,language:"en",filters:{heritageCategories:["relics"]}});
+assert.match(relicPreview,/RELIC INTRO ORIGINAL/);
+assert.doesNotMatch(relicPreview,/SHRINE INTRO ORIGINAL/);
+assert.match(relicPreview,/aoHeritageCardLayer/);
+assert.match(relicPreview,/aria-modal="false"/);
+assert.match(relicPreview,/Lourdes · France/);
 
 console.log("PASS unified Explore projection, canonical customs and map-first heritage surface");
 await import("./heritage-place-reconciliation.mjs");
