@@ -992,11 +992,12 @@ function setText(root, role, value){
 }
 
 function setChannel(root, channel, value){
-  // Channels shared with the state ribbon (notably posture) must update
-  // their actual rail owner, not the first matching non-rail summary cell.
-  const item=root.querySelector(`.ao-rail [data-channel="${channel}"]`)
-    ??root.querySelector(`[data-channel="${channel}"]`);
-  if(item) item.dataset.active = String(Boolean(textValue(value)));
+  // The top state cell and its hidden persistent rail counterpart may share
+  // a semantic channel. Update both states: the top cell remains the only
+  // persistent visual owner, while transient rails have their own channel.
+  for(const item of root.querySelectorAll?.(`[data-channel="${channel}"]`)??[]){
+    item.dataset.active=String(Boolean(textValue(value)));
+  }
 }
 
 function syncRailVisibility(root){
