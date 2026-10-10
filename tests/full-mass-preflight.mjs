@@ -4,6 +4,7 @@ import {adaptV346ResolvedMass} from "../src/mass/host-adapter.js";
 import {compileMassPlan,makeResolvedMass} from "../src/mass/session-engine.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "../src/mass/full-mass-optional-rites.js";
 import {specialMassPresentation} from "../src/mass/full-mass-special-presentation.js";
+import {sourceOwnedSpecialStage} from "../src/mass/reader-special-stage.js";
 
 
 assert.deepEqual(FULL_MASS_FORM_OPTIONS.map(x=>x.id),[
@@ -139,5 +140,47 @@ assert.equal(live.sourceOwned,true);
 console.log("Special Mass UI: PASS — Requiem, Nuptial, Votive, Triduum, Palm/Ash/Candlemas, Holy Thursday and explicit Corpus.");
 
 console.log("Optional Mass rites: PASS — explicit-only Asperges/Absolution/Corpus; Good Friday, form, date, source gates.");
+
+
+const staged=(prepared,args={})=>sourceOwnedSpecialStage({prepared,language:"en",...args});
+const massPrepared=adaptV346ResolvedMass(day,{form:"SOLEMN",proper});
+assert.equal(staged({session:{resolvedMass:massPrepared,plan:compileMassPlan(massPrepared)}},
+ {owner:"R17_PARTIAL_EVENT_STATE",card:{sectionId:"AO.LIVE48.001.A",title:"Introit"}}),null,
+ "The ordinary day must not grow a special visual stage");
+const reqResolved=adaptV346ResolvedMass(req,{form:"LOW",proper,...composeOptionalMassRites(req,{
+ form:"LOW",kind:"REQUIEM",overrides:{REQUIEM_ABSOLUTION:true}},baseline)});
+const reqPrepared={session:{resolvedMass:reqResolved,plan:compileMassPlan(reqResolved)}};
+let stage=staged(reqPrepared,{owner:"R17_PARTIAL_EVENT_STATE",card:{sectionId:"AO.CARD.001",title:"Prayers at the Foot"}});
+assert.equal(stage.rite,"REQUIEM");
+assert.equal(stage.detail,null,"An ordinary card title cannot become a fictitious Requiem stage");
+stage=staged(reqPrepared,{owner:"R26_REQUIEM_ABSOLUTION_NATIVE",
+ recordId:"ABS:ABS-R03",state:{specialRite:"REQUIEM_ABSOLUTION"},
+ card:{id:"ABS-R03",title:"Libera me"}});
+assert.equal(stage.rite,"REQUIEM_ABSOLUTION");
+assert.equal(stage.detail,"Libera me");
+assert.equal(stage.sourceOwner,"NATIVE_RITE_CONTROLLER");
+const nuptialResolved=adaptV346ResolvedMass(nuptial,{form:"SOLEMN",proper});
+const nPrep={session:{resolvedMass:nuptialResolved,plan:compileMassPlan(nuptialResolved)}};
+stage=staged(nPrep,{owner:"R17_PARTIAL_EVENT_STATE",card:{sectionId:"AO.NUPTIAL.01",title:"First Nuptial Blessing"}});
+assert.equal(stage.rite,"NUPTIAL_BLESSING");
+assert.equal(stage.sourceOwner,"NUPTIAL_INSERTION");
+assert.equal(stage.detail,"First Nuptial Blessing");
+assert.equal(staged(nPrep,{owner:"R17_PARTIAL_EVENT_STATE",card:{sectionId:"AO.CARD.001",title:"Foot of Altar"}}).rite,"NUPTIAL");
+stage=staged({session:{resolvedMass:{overlays:["VOTIVE_PROPER"]},plan:{kind:"MASS"}}},
+ {owner:"R17_PARTIAL_EVENT_STATE",card:{sectionId:"AO.CARD.001"}});
+assert.equal(stage.rite,"VOTIVE");
+const gfPrep={session:{resolvedMass:{distinctRite:"GOOD_FRIDAY"},plan:{kind:"DISTINCT_RITE"}}};
+stage=staged(gfPrep,{owner:"R28_GOOD_FRIDAY_GRAPH",recordId:"GF-PASS-320",
+ state:{specialRite:"GOOD_FRIDAY",deathPause:true},card:{title:"Passion of Our Lord"}});
+assert.equal(stage.rite,"GOOD_FRIDAY");
+assert.equal(stage.title,"Good Friday");
+const vigilPrep={session:{resolvedMass:{distinctRite:"EASTER_VIGIL"},plan:{kind:"COMPOSITE_DISTINCT_RITE"}}};
+assert.equal(staged(vigilPrep,{owner:"R33_EASTER_VIGIL_GRAPH",recordId:"EV-010",card:{title:"Fire"}}).rite,"EASTER_VIGIL");
+assert.equal(staged(vigilPrep,{owner:"R33_EASTER_VIGIL_MASS",recordId:"MASS:AO.CARD.001",card:{title:"Introit"}}).rite,"EASTER_VIGIL_MASS");
+assert.equal(staged(reqPrepared,{owner:"R23_PALM_NATIVE",state:{specialRite:"PALM"},card:{title:"Procession"}}).rite,"PALM");
+assert.equal(staged(reqPrepared,{owner:"R24_CANDLEMAS_NATIVE",state:{specialRite:"CANDLEMAS"},card:{title:"Candles"}}).rite,"CANDLEMAS");
+assert.equal(staged(reqPrepared,{owner:"R25_ROGATIONS_NATIVE",state:{specialRite:"ROGATIONS"},card:{title:"Litanies"}}).rite,"ROGATIONS");
+assert.equal(staged(reqPrepared,{owner:"R27_CORPUS_CHRISTI_NATIVE",state:{specialRite:"CORPUS_CHRISTI_PROCESSION"},card:{title:"Procession"}}).rite,"CORPUS_CHRISTI_PROCESSION");
+console.log("Special reader stage: PASS — only source-owned rite, exact Nuptial insertion and actual GF/Vigil/procession transitions.");
 
 console.log("Full Mass composer: PASS — 4 forms × calendar/votive/Requiem/Nuptial; no Proper substitution, Good Friday not a Mass.");
