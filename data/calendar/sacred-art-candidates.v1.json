@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_CANDIDATES_V1",
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "ownerIssue": 885,
   "scope": "RESEARCH_CANDIDATES_ONLY",
   "rightsModel": "MUSEUM_OBJECT_LEVEL_CC0_AND_INDIVIDUAL_SOURCE_EVIDENCE",
@@ -19659,6 +19659,3382 @@
         "artCuratorApproval": false,
         "phoneHeroCropApproval": false
       }
+    },
+    {
+      "id": "nga-12205",
+      "title": "The Healing of the Paralytic",
+      "artist": "Netherlandish 16th Century",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/12205-healing-of-the-paralytic",
+        "objectId": "12205",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "healing-paralytic"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "PARALYTIC_HEALED_EPISODE_EXACT_BIBLICAL_PERICOPE_NOT_YET_IDENTIFIED",
+        "targetResearchIds": [
+          "scripture.healing-paralytic"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2892,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PARALYTIC_HEALED_EPISODE_EXACT_BIBLICAL_PERICOPE_NOT_YET_IDENTIFIED"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-12205.jpg",
+        "originalWidth": 2892,
+        "originalHeight": 4096,
+        "originalSha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/294e57e7-14ef-4e2e-8b3d-081b4cc05fd6/full/full/0/default.jpg",
+        "originalImageUUID": "294e57e7-14ef-4e2e-8b3d-081b4cc05fd6"
+      },
+      "tags": {
+        "iconography": [
+          "healing-paralytic"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "PARALYTIC_HEALED_EPISODE_EXACT_BIBLICAL_PERICOPE_NOT_YET_IDENTIFIED",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-129283",
+      "title": "Saint John the Baptist Preaching",
+      "artist": "Willem Reuter",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/129283-saint-john-the-baptist-preaching",
+        "objectId": "129283",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "john-baptist-preaching",
+          "saint-john-baptist"
+        ],
+        "seasonIds": [
+          "advent"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.advent"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3026
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-129283.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3026,
+        "originalSha256": "f5a7e4abe01ca01d26759e3ccac7300d85a0620ef8edf913c28f7a777f8501f9",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/cb8636ed-d3ea-40f6-9e4d-88e032e5f003/full/full/0/default.jpg",
+        "originalImageUUID": "cb8636ed-d3ea-40f6-9e4d-88e032e5f003"
+      },
+      "tags": {
+        "iconography": [
+          "john-baptist-preaching",
+          "saint-john-baptist"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "advent"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-33",
+      "title": "Christ Blessing",
+      "artist": "Grifo di Tancredi",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/33-christ-blessing",
+        "objectId": "33",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "christ-blessing",
+          "universal"
+        ],
+        "seasonIds": [
+          "after-pentecost"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.after-pentecost"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2910,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-33.jpg",
+        "originalWidth": 2910,
+        "originalHeight": 4096,
+        "originalSha256": "27a3a0bbdc229034805fa4ff322b3b29df755e7fc59c02e5d6faf4c76614f776",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/db7a87a5-e219-49fc-a3f3-0ef2248d33a3/full/full/0/default.jpg",
+        "originalImageUUID": "db7a87a5-e219-49fc-a3f3-0ef2248d33a3"
+      },
+      "tags": {
+        "iconography": [
+          "christ-blessing",
+          "universal"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "after-pentecost"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-46131",
+      "title": "The Assumption of the Virgin",
+      "artist": "Anonymous Artist; Sir Peter Paul Rubens",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/46131-assumption-of-the-virgin",
+        "objectId": "46131",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "assumption-mary"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.assumption"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3057,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-46131.jpg",
+        "originalWidth": 3057,
+        "originalHeight": 4096,
+        "originalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/7d846603-308b-4db8-89bd-6e21a3367a39/full/full/0/default.jpg",
+        "originalImageUUID": "7d846603-308b-4db8-89bd-6e21a3367a39"
+      },
+      "tags": {
+        "iconography": [
+          "assumption-mary"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-106787",
+      "title": "Garland of Flowers with Adoration of the Shepherds",
+      "artist": "Frans Francken the Younger; Master HDB",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/106787-garland-of-flowers-with-adoration-of-the-shepherds",
+        "objectId": "106787",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "seasonIds": [
+          "christmas"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "targetResearchIds": [
+          "calendar.christmas"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3441,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-106787.jpg",
+        "originalWidth": 3441,
+        "originalHeight": 4096,
+        "originalSha256": "03c0742ec06fba4e6f59191c48286109ceb881dac7ff49a27ab9454c1a9406d1",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/8b4801f8-9c5a-433c-80a2-33de1a3ea769/full/full/0/default.jpg",
+        "originalImageUUID": "8b4801f8-9c5a-433c-80a2-33de1a3ea769"
+      },
+      "tags": {
+        "iconography": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "christmas"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-12130",
+      "title": "The Last Supper",
+      "artist": "Sebastiano Ricci",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/12130-last-supper",
+        "objectId": "12130",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "last-supper",
+          "eucharist"
+        ],
+        "seasonIds": [
+          "after-pentecost"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.corpus-christi"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 2637
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-12130.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 2637,
+        "originalSha256": "699b5a374b42ae683f5802501df56c164f055cdda0dea75046e49244f57eb7bf",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/0db8b561-cb20-4940-bc13-3cf247f9c078/full/full/0/default.jpg",
+        "originalImageUUID": "0db8b561-cb20-4940-bc13-3cf247f9c078"
+      },
+      "tags": {
+        "iconography": [
+          "last-supper",
+          "eucharist"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "after-pentecost"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-41667",
+      "title": "Christ Carrying the Cross",
+      "artist": "Benvenuto di Giovanni",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/41667-christ-carrying-the-cross",
+        "objectId": "41667",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "carrying-cross",
+          "passion"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.good-friday"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3557
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-41667.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3557,
+        "originalSha256": "aa6811b8cf2a30934849e75ee21859b6ddbba3269d5580379498a3cd902a760b",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/64271c45-2acc-4011-a59f-0b79efc613db/full/full/0/default.jpg",
+        "originalImageUUID": "64271c45-2acc-4011-a59f-0b79efc613db"
+      },
+      "tags": {
+        "iconography": [
+          "carrying-cross",
+          "passion"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-401",
+      "title": "The Entombment of Christ",
+      "artist": "Fra Angelico",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/401-entombment-of-christ",
+        "objectId": "401",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "entombment",
+          "burial-christ"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.holy-saturday"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2514,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-401.jpg",
+        "originalWidth": 2514,
+        "originalHeight": 4096,
+        "originalSha256": "107243d3abfa8b90b1bb39d4ec73c87987815bf2238d62127e06f2297e7d4a7d",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/45fa82c0-494f-489b-9062-9b62c842008c/full/full/0/default.jpg",
+        "originalImageUUID": "45fa82c0-494f-489b-9062-9b62c842008c"
+      },
+      "tags": {
+        "iconography": [
+          "entombment",
+          "burial-christ"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-364",
+      "title": "The Annunciation and Expulsion from Paradise",
+      "artist": "Giovanni di Paolo",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/364-annunciation-and-expulsion-from-paradise",
+        "objectId": "364",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation",
+          "expulsion-paradise"
+        ],
+        "seasonIds": [
+          "septuagesima"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "targetResearchIds": [
+          "calendar.septuagesima"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3520
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-364.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3520,
+        "originalSha256": "84932116d6da6c1f2beb96f18e5fa629303b36c20d062b9450fca4b70859487c",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/19b78825-fea7-4eb3-a6de-1ae0939e7769/full/full/0/default.jpg",
+        "originalImageUUID": "19b78825-fea7-4eb3-a6de-1ae0939e7769"
+      },
+      "tags": {
+        "iconography": [
+          "annunciation",
+          "expulsion-paradise"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "septuagesima"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-41582",
+      "title": "The Feast of Herod and the Beheading of Saint John the Baptist",
+      "artist": "Benozzo Gozzoli",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/41582-feast-of-herod-and-the-beheading-of-saint-john-the-baptist",
+        "objectId": "41582",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "beheading-john-baptist",
+          "saint-john-baptist"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "BEHEADING_JOHN_NOT_JOHN_NATIVITY",
+        "targetResearchIds": [
+          "calendar.st-john-baptist"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 2858
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "BEHEADING_JOHN_NOT_JOHN_NATIVITY"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-41582.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 2858,
+        "originalSha256": "a0dac54ea77edf5c116fb490281fbe779b100939bb93743e8320e553cc3066f3",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/901465e5-58b1-458d-9579-4ef7ed508bd5/full/full/0/default.jpg",
+        "originalImageUUID": "901465e5-58b1-458d-9579-4ef7ed508bd5"
+      },
+      "tags": {
+        "iconography": [
+          "beheading-john-baptist",
+          "saint-john-baptist"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "BEHEADING_JOHN_NOT_JOHN_NATIVITY",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-1165",
+      "title": "Madonna and Child with Saint Martina and Saint Agnes",
+      "artist": "El Greco",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/1165-madonna-and-child-with-saint-martina-and-saint-agnes",
+        "objectId": "1165",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-agnes",
+          "saint-martina",
+          "virgin-child"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "targetResearchIds": [
+          "person.agnes"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2217,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-1165.jpg",
+        "originalWidth": 2217,
+        "originalHeight": 4096,
+        "originalSha256": "4b128cebc648104cba13538f9c207926704a4561c9a26f9be77b63b5fe2ec45d",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/ba5a6442-6fcd-40b3-a608-c023394f171b/full/full/0/default.jpg",
+        "originalImageUUID": "ba5a6442-6fcd-40b3-a608-c023394f171b"
+      },
+      "tags": {
+        "iconography": [
+          "saint-agnes",
+          "saint-martina",
+          "virgin-child"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-37635",
+      "title": "Deacon Saint, with Saint Anthony Abbot [right panel]",
+      "artist": "Martino di Bartolomeo",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/37635-deacon-saint-with-saint-anthony-abbot-right-panel",
+        "objectId": "37635",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-anthony-abbot"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "targetResearchIds": [
+          "person.anthony-abbot"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 1930,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-37635.jpg",
+        "originalWidth": 1930,
+        "originalHeight": 4096,
+        "originalSha256": "50983c77d756e9fcacf799cf0fbba9a7da8cdc4ee8a71b8f28ab17a5f8760929",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/fc84cac8-bdcf-4d3c-a6dc-e4bd0371af3b/full/full/0/default.jpg",
+        "originalImageUUID": "fc84cac8-bdcf-4d3c-a6dc-e4bd0371af3b"
+      },
+      "tags": {
+        "iconography": [
+          "saint-anthony-abbot"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-12118",
+      "title": "Saint Catherine of Alexandria",
+      "artist": "Bartolomeo Bulgarini",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/12118-saint-catherine-of-alexandria",
+        "objectId": "12118",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-catherine-alexandria"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "person.catherine-alexandria"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2338,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-12118.jpg",
+        "originalWidth": 2338,
+        "originalHeight": 4096,
+        "originalSha256": "7d8c7a8c2935861433057f7215d4f2b91f250fc03187c843c219a9e8335b97c1",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/b4ee3d5d-4397-4e7e-b946-20a22c878230/full/full/0/default.jpg",
+        "originalImageUUID": "b4ee3d5d-4397-4e7e-b946-20a22c878230"
+      },
+      "tags": {
+        "iconography": [
+          "saint-catherine-alexandria"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-106362",
+      "title": "The Martyrdom of Saint Lawrence",
+      "artist": "Jean Baptiste de Champaigne",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/106362-martyrdom-of-saint-lawrence",
+        "objectId": "106362",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-lawrence"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "person.lawrence"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3432,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-106362.jpg",
+        "originalWidth": 3432,
+        "originalHeight": 4096,
+        "originalSha256": "b86ccb14d2ba44302c83a1c8a244f712a14ef8c29d7628064a357fa8dea11148",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/a397a12f-ba08-4586-bf9d-9d8c099fbdf9/full/full/0/default.jpg",
+        "originalImageUUID": "a397a12f-ba08-4586-bf9d-9d8c099fbdf9"
+      },
+      "tags": {
+        "iconography": [
+          "saint-lawrence"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-369",
+      "title": "Saint Lucy",
+      "artist": "Francesco del Cossa",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/369-saint-lucy",
+        "objectId": "369",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-lucy"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "person.lucy"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2878,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-369.jpg",
+        "originalWidth": 2878,
+        "originalHeight": 4096,
+        "originalSha256": "10f17de2bed32d8e564cabd2f60d80dba19dae4df32a26574b2b7699bb91eb8d",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/2c9db5b0-7ce2-4772-abc6-9f3a417bfc2f/full/full/0/default.jpg",
+        "originalImageUUID": "2c9db5b0-7ce2-4772-abc6-9f3a417bfc2f"
+      },
+      "tags": {
+        "iconography": [
+          "saint-lucy"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": "lucy",
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-41644",
+      "title": "The Expectant Madonna with Saint Joseph",
+      "artist": "French 15th Century",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
+        "objectId": "41644",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-joseph",
+          "virgin-child",
+          "holy-family"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "targetResearchIds": [
+          "person.joseph"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2014,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-41644.jpg",
+        "originalWidth": 2014,
+        "originalHeight": 4096,
+        "originalSha256": "79288aef1a922ed49acc40312676d25daca19e4f35fa18c26a2779be1ce7bc74",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/25b31b7c-4edd-4b43-9bb8-c0497aed8a4d/full/full/0/default.jpg",
+        "originalImageUUID": "25b31b7c-4edd-4b43-9bb8-c0497aed8a4d"
+      },
+      "tags": {
+        "iconography": [
+          "saint-joseph",
+          "virgin-child",
+          "holy-family"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-195513",
+      "title": "The Good Shepherd",
+      "artist": "Henry Ossawa Tanner",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/195513-good-shepherd",
+        "objectId": "195513",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "good-shepherd"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "GOOD_SHEPHERD_TITLE_MAY_REPRESENT_PASTORAL_SCENE_VERIFY_CHRIST_ICONOGRAPHY",
+        "targetResearchIds": [
+          "scripture.good-shepherd"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3325,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "GOOD_SHEPHERD_TITLE_MAY_REPRESENT_PASTORAL_SCENE_VERIFY_CHRIST_ICONOGRAPHY"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-195513.jpg",
+        "originalWidth": 3325,
+        "originalHeight": 4096,
+        "originalSha256": "f97ed5494eb80330a30f8881c99291dfb1c23d75e783ce86e52936840f57145d",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/c1b2bf0b-2816-4663-9321-70e22613cb6c/full/full/0/default.jpg",
+        "originalImageUUID": "c1b2bf0b-2816-4663-9321-70e22613cb6c"
+      },
+      "tags": {
+        "iconography": [
+          "good-shepherd"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "GOOD_SHEPHERD_TITLE_MAY_REPRESENT_PASTORAL_SCENE_VERIFY_CHRIST_ICONOGRAPHY",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-1163",
+      "title": "The Raising of Lazarus",
+      "artist": "Benozzo Gozzoli",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/1163-raising-of-lazarus",
+        "objectId": "1163",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "raising-lazarus"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [
+          "raising-lazarus"
+        ],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "scripture.lazarus"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3278
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-1163.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3278,
+        "originalSha256": "d0ea6e04cdec7e478508700297d4c610ecbfada4e05301aa71e699e013a0c974",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/07fbd725-cfa8-484b-b4ff-ca45d60dc2b2/full/full/0/default.jpg",
+        "originalImageUUID": "07fbd725-cfa8-484b-b4ff-ca45d60dc2b2"
+      },
+      "tags": {
+        "iconography": [
+          "raising-lazarus"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "raising-lazarus"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-96688",
+      "title": "The Miraculous Draught of Fishes",
+      "artist": "Jacopo Bassano",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/96688-miraculous-draught-of-fishes",
+        "objectId": "96688",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "miraculous-catch"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [
+          "miraculous-catch"
+        ],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "scripture.miraculous-catch"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 2395
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-96688.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 2395,
+        "originalSha256": "33a71aea55a154469b961e128b5a766510d08693fdc41724547ccf256cd18248",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/f090d0ad-5d3d-4faf-a63c-8fddd765fb23/full/full/0/default.jpg",
+        "originalImageUUID": "f090d0ad-5d3d-4faf-a63c-8fddd765fb23"
+      },
+      "tags": {
+        "iconography": [
+          "miraculous-catch"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "miraculous-catch"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-46127",
+      "title": "The Presentation in the Temple",
+      "artist": "Master of the Prado \"Adoration of the Magi\"",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/46127-presentation-in-the-temple",
+        "objectId": "46127",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "presentation-jesus"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [
+          "presentation-jesus"
+        ],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "scripture.presentation-temple"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3392,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-46127.jpg",
+        "originalWidth": 3392,
+        "originalHeight": 4096,
+        "originalSha256": "f2fa7157db6d5c2b210cff8cfb960f51a7c691f0fe77a7a5c91bbb00c1d277a5",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/a1871fb3-fa75-4868-ab25-8870b9e833c7/full/full/0/default.jpg",
+        "originalImageUUID": "a1871fb3-fa75-4868-ab25-8870b9e833c7"
+      },
+      "tags": {
+        "iconography": [
+          "presentation-jesus"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "presentation-jesus"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-42494",
+      "title": "Christ and the Woman of Samaria",
+      "artist": "American 18th Century",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/42494-christ-and-the-woman-of-samaria",
+        "objectId": "42494",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "woman-at-well"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [
+          "woman-at-well"
+        ],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "scripture.samaritan-woman"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3143
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-42494.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3143,
+        "originalSha256": "1c6ff113797c015b4136a63a20fc2c1c45fc230c2aa463094f077c824f6eb73f",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/2eb9f5fc-772a-4839-8694-00bc5bfdbf2a/full/full/0/default.jpg",
+        "originalImageUUID": "2eb9f5fc-772a-4839-8694-00bc5bfdbf2a"
+      },
+      "tags": {
+        "iconography": [
+          "woman-at-well"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "woman-at-well"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-357",
+      "title": "The Angel of the Annunciation",
+      "artist": "Simone Martini",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/357-angel-of-the-annunciation",
+        "objectId": "357",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation-detail"
+        ],
+        "seasonIds": [
+          "advent"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "FRAGMENT_GABRIEL_ONLY_NOT_COMPLETE_ANNUNCIATION",
+        "targetResearchIds": [
+          "calendar.advent"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2781,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "FRAGMENT_GABRIEL_ONLY_NOT_COMPLETE_ANNUNCIATION"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-357.jpg",
+        "originalWidth": 2781,
+        "originalHeight": 4096,
+        "originalSha256": "d15af56ed1e568af7aeeda47251f0ab825ec4cc58d240d530ae9354a0b637803",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/1b266771-5762-4ce0-8968-688cae2ba81e/full/full/0/default.jpg",
+        "originalImageUUID": "1b266771-5762-4ce0-8968-688cae2ba81e"
+      },
+      "tags": {
+        "iconography": [
+          "annunciation-detail"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "advent"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "FRAGMENT_GABRIEL_ONLY_NOT_COMPLETE_ANNUNCIATION",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-50280",
+      "title": "The Assumption of the Virgin",
+      "artist": "Michel Sittow",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/50280-assumption-of-the-virgin",
+        "objectId": "50280",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "assumption-mary"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.assumption"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3177,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-50280.jpg",
+        "originalWidth": 3177,
+        "originalHeight": 4096,
+        "originalSha256": "39b453f320609288e56c361c26c05721a4761ccc0cd6e3096ba51ced6ee57bc9",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/7b1264b8-bb06-4d2a-992b-75bf1a3a5126/full/full/0/default.jpg",
+        "originalImageUUID": "7b1264b8-bb06-4d2a-992b-75bf1a3a5126"
+      },
+      "tags": {
+        "iconography": [
+          "assumption-mary"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-432",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Giorgione",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/432-adoration-of-the-shepherds",
+        "objectId": "432",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "seasonIds": [
+          "christmas"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.christmas"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3350
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-432.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3350,
+        "originalSha256": "3de350a364b46457544009f02ac19a92a17ef28f1f9eec63ddb33d2f2c800b49",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/77d22f22-777b-456f-adc6-baf1e010b832/full/full/0/default.jpg",
+        "originalImageUUID": "77d22f22-777b-456f-adc6-baf1e010b832"
+      },
+      "tags": {
+        "iconography": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "christmas"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-43198",
+      "title": "The Last Supper",
+      "artist": "William Blake",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/43198-last-supper",
+        "objectId": "43198",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "last-supper",
+          "eucharist"
+        ],
+        "seasonIds": [
+          "after-pentecost"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.corpus-christi"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 2642
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-43198.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 2642,
+        "originalSha256": "20ec33ceacf49a101efb7f9b57bdeeceb0d6c78e1cf58e82c30fb88df1cded45",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/018328c5-9864-47a7-9a06-0b73542d9fdc/full/full/0/default.jpg",
+        "originalImageUUID": "018328c5-9864-47a7-9a06-0b73542d9fdc"
+      },
+      "tags": {
+        "iconography": [
+          "last-supper",
+          "eucharist"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "after-pentecost"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-137505",
+      "title": "Christ Carrying the Cross",
+      "artist": "Cornelis van Poelenburch",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/137505-christ-carrying-the-cross",
+        "objectId": "137505",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "carrying-cross",
+          "passion"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.good-friday"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 2873
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-137505.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 2873,
+        "originalSha256": "698cb5de63454dbced72c21716ae6101e156ea49031210653d7b5252a478c580",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/255840fd-ecfe-472f-93eb-350781ac9671/full/full/0/default.jpg",
+        "originalImageUUID": "255840fd-ecfe-472f-93eb-350781ac9671"
+      },
+      "tags": {
+        "iconography": [
+          "carrying-cross",
+          "passion"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-206072",
+      "title": "Scenes from the Passion of Christ: The Agony in the Garden, the Crucifixion, and the Descent into Limbo [entire triptych]",
+      "artist": "Andrea di Vanni",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/206072-scenes-from-the-passion-of-christ-the-agony-in-the-garden-the-crucifixion-and-the-descent-into-",
+        "objectId": "206072",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "descent-limbo",
+          "holy-saturday"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "targetResearchIds": [
+          "calendar.holy-saturday"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 2006
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-206072.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 2006,
+        "originalSha256": "1f54124deae173160b0d95a92f122e2414cb5a335c5f22e865fefe23ba8bea04",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/a46e6f59-4fab-4795-8cad-1999b37c52ae/full/full/0/default.jpg",
+        "originalImageUUID": "a46e6f59-4fab-4795-8cad-1999b37c52ae"
+      },
+      "tags": {
+        "iconography": [
+          "descent-limbo",
+          "holy-saturday"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-41627",
+      "title": "Madonna and Child with Saint Anthony Abbot and Saint Sigismund",
+      "artist": "Neroccio de' Landi",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/41627-madonna-and-child-with-saint-anthony-abbot-and-saint-sigismund",
+        "objectId": "41627",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-anthony-abbot",
+          "saint-sigismund",
+          "virgin-child"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "targetResearchIds": [
+          "person.anthony-abbot"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3635,
+          "height": 4066
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-41627.jpg",
+        "originalWidth": 3635,
+        "originalHeight": 4066,
+        "originalSha256": "838c18059447e42812f4987c615ca7c28e7702207cb8e3a6e9d0f5e58c261c2f",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/fbec1a56-2a07-4566-8010-9e08edc5bc8c/full/full/0/default.jpg",
+        "originalImageUUID": "fbec1a56-2a07-4566-8010-9e08edc5bc8c"
+      },
+      "tags": {
+        "iconography": [
+          "saint-anthony-abbot",
+          "saint-sigismund",
+          "virgin-child"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-440",
+      "title": "Madonna and Child with Saint Jerome, Saint Catherine of Alexandria, and Angels",
+      "artist": "Matteo di Giovanni",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/440-madonna-and-child-with-saint-jerome-saint-catherine-of-alexandria-and-angels",
+        "objectId": "440",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-catherine-alexandria",
+          "saint-jerome",
+          "virgin-child"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "targetResearchIds": [
+          "person.catherine-alexandria"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2726,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-440.jpg",
+        "originalWidth": 2726,
+        "originalHeight": 4096,
+        "originalSha256": "600c3870d71812f4ff57abbcfdb34d47b51a7fffcddad2a75bdbadb52b8eec98",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/07572d12-752f-4283-be45-6afe3e352e0c/full/full/0/default.jpg",
+        "originalImageUUID": "07572d12-752f-4283-be45-6afe3e352e0c"
+      },
+      "tags": {
+        "iconography": [
+          "saint-catherine-alexandria",
+          "saint-jerome",
+          "virgin-child"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-12209",
+      "title": "Saint Lucy",
+      "artist": "Francisco de Zurbarán",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/12209-saint-lucy",
+        "objectId": "12209",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-lucy"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "person.lucy"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3032,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-12209.jpg",
+        "originalWidth": 3032,
+        "originalHeight": 4096,
+        "originalSha256": "c7962ee0819947968da7858da6d928c1b37fc52d209a9634e4d30b76cb3e7b9b",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/5074f3fc-e181-4c76-9c36-247d7c0978fa/full/full/0/default.jpg",
+        "originalImageUUID": "5074f3fc-e181-4c76-9c36-247d7c0978fa"
+      },
+      "tags": {
+        "iconography": [
+          "saint-lucy"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": "lucy",
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-18",
+      "title": "The Annunciation",
+      "artist": "Masolino da Panicale",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/18-annunciation",
+        "objectId": "18",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation"
+        ],
+        "seasonIds": [
+          "advent"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.advent"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3169,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-18.jpg",
+        "originalWidth": 3169,
+        "originalHeight": 4096,
+        "originalSha256": "d7b4db7f94ee9432d250082edadd4b716e94002d00d157e55769594e9ffbde72",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/e6497b39-66a9-4b6b-bf2b-c1633d20c0b6/full/full/0/default.jpg",
+        "originalImageUUID": "e6497b39-66a9-4b6b-bf2b-c1633d20c0b6"
+      },
+      "tags": {
+        "iconography": [
+          "annunciation"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "advent"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-46170",
+      "title": "The Assumption of the Virgin with Busts of the Archangel Gabriel and the Virgin of the Annunciation",
+      "artist": "Paolo di Giovanni Fei",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/46170-assumption-of-the-virgin-with-busts-of-the-archangel-gabriel-and-the-virgin-of-the-annunciation",
+        "objectId": "46170",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.assumption"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2639,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-46170.jpg",
+        "originalWidth": 2639,
+        "originalHeight": 4096,
+        "originalSha256": "9618fd9bb9bf44ff28352323108001e40edbf56657db0445c33866f3a8192f8f",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/40067869-f92c-459c-9808-2d3ae3009311/full/full/0/default.jpg",
+        "originalImageUUID": "40067869-f92c-459c-9808-2d3ae3009311"
+      },
+      "tags": {
+        "iconography": [
+          "annunciation"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-46185",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Giovanni Girolamo Savoldo",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/46185-adoration-of-the-shepherds",
+        "objectId": "46185",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "seasonIds": [
+          "christmas"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.christmas"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 2843
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-46185.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 2843,
+        "originalSha256": "15b39e8c36d0592c95487e8675ac3322296bfd332bb3e3dcb5e32779b4ff1d03",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/2503e799-4135-4df3-91bd-48bdfbbf2873/full/full/0/default.jpg",
+        "originalImageUUID": "2503e799-4135-4df3-91bd-48bdfbbf2873"
+      },
+      "tags": {
+        "iconography": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "christmas"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-167923",
+      "title": "Scenes from the Passion of Christ: The Crucifixion [middle panel]",
+      "artist": "Andrea di Vanni",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/167923-scenes-from-the-passion-of-christ-the-crucifixion-middle-panel",
+        "objectId": "167923",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "crucifixion",
+          "passion"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "targetResearchIds": [
+          "calendar.good-friday"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 4049
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-167923.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 4049,
+        "originalSha256": "971668734c33e005b3afd0cf873faeb43434ed002a32f33d543da410fdfe62ed",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/1911d50b-a4fd-4e32-a20c-cc2a613a33bb/full/full/0/default.jpg",
+        "originalImageUUID": "1911d50b-a4fd-4e32-a20c-cc2a613a33bb"
+      },
+      "tags": {
+        "iconography": [
+          "crucifixion",
+          "passion"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-198424",
+      "title": "Scenes from the Passion of Christ: The Descent into Limbo [right panel]",
+      "artist": "Andrea di Vanni",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/198424-scenes-from-the-passion-of-christ-the-descent-into-limbo-right-panel",
+        "objectId": "198424",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "descent-limbo",
+          "holy-saturday"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "targetResearchIds": [
+          "calendar.holy-saturday"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2130,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-198424.jpg",
+        "originalWidth": 2130,
+        "originalHeight": 4096,
+        "originalSha256": "f8fcb663be18b80aff466618caf66ae10143e676ecff20a5cfc5f7ab650ab490",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/4205a539-eadd-4486-89a7-3cff9c1ba428/full/full/0/default.jpg",
+        "originalImageUUID": "4205a539-eadd-4486-89a7-3cff9c1ba428"
+      },
+      "tags": {
+        "iconography": [
+          "descent-limbo",
+          "holy-saturday"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "COMPOSITE_OR_FRAGMENT_SCENE_REQUIRES_PANEL_CROP_AND_LABEL_REVIEW",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-6",
+      "title": "Saint Anthony Abbot [left panel]",
+      "artist": "Puccio di Simone; Allegretto Nuzi",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/6-saint-anthony-abbot-left-panel",
+        "objectId": "6",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-anthony-abbot"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "person.anthony-abbot"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4096,
+          "height": 3939
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-6.jpg",
+        "originalWidth": 4096,
+        "originalHeight": 3939,
+        "originalSha256": "7a98d8ad05454bf9ef5a3e9c43629b67f8962a3a703fb355e6f1a71bb15ebcab",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/e879ab8f-0a66-4d84-8f7c-bafd62d662ee/full/full/0/default.jpg",
+        "originalImageUUID": "e879ab8f-0a66-4d84-8f7c-bafd62d662ee"
+      },
+      "tags": {
+        "iconography": [
+          "saint-anthony-abbot"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-171695",
+      "title": "Madonna and Child with Two Angels, Saint Rose, and Saint Catherine of Alexandria",
+      "artist": "Anonymous Artist; Pietro Perugino",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/171695-madonna-and-child-with-two-angels-saint-rose-and-saint-catherine-of-alexandria",
+        "objectId": "171695",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-catherine-alexandria"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "targetResearchIds": [
+          "person.catherine-alexandria"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3868,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-171695.jpg",
+        "originalWidth": 3868,
+        "originalHeight": 4096,
+        "originalSha256": "b21e70b7138d6286f8c97521953adf5266d841d6f28ac23155c1ee64f976dbe8",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/ce3ab0ee-d293-4938-8e15-db27d8e555e1/full/full/0/default.jpg",
+        "originalImageUUID": "ce3ab0ee-d293-4938-8e15-db27d8e555e1"
+      },
+      "tags": {
+        "iconography": [
+          "saint-catherine-alexandria"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "SPECIFIED_SAINT_PRESENT_IN_COMPOSITE_PAINTING_NOT_SOLE_SUBJECT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-46147",
+      "title": "Saint Lucy and a Donor",
+      "artist": "Veronese; Gabriele Caliari",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/46147-saint-lucy-and-a-donor",
+        "objectId": "46147",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-lucy"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_SAINT_LUCY_WITH_DONOR_NOT_CONTEMPORARY_PORTRAIT",
+        "targetResearchIds": [
+          "person.lucy"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2571,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SAINT_LUCY_WITH_DONOR_NOT_CONTEMPORARY_PORTRAIT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-46147.jpg",
+        "originalWidth": 2571,
+        "originalHeight": 4096,
+        "originalSha256": "a29bad9c8b788982ea97609894d8d9cf6c9a6d5ec0d23ac4527956e17bcfd8c5",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/432afda0-85e7-45b4-96b4-c0f630746c4a/full/full/0/default.jpg",
+        "originalImageUUID": "432afda0-85e7-45b4-96b4-c0f630746c4a"
+      },
+      "tags": {
+        "iconography": [
+          "saint-lucy"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_SAINT_LUCY_WITH_DONOR_NOT_CONTEMPORARY_PORTRAIT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-46",
+      "title": "The Annunciation",
+      "artist": "Jan van Eyck",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/46-annunciation",
+        "objectId": "46",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation"
+        ],
+        "seasonIds": [
+          "advent"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.advent"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 1553,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-46.jpg",
+        "originalWidth": 1553,
+        "originalHeight": 4096,
+        "originalSha256": "defa94673a9416aa51a524e37cf939ebb0825d8a838279c835e9270681ea7167",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/46633bd6-4834-40fb-8ce0-fb975c731dc1/full/full/0/default.jpg",
+        "originalImageUUID": "46633bd6-4834-40fb-8ce0-fb975c731dc1"
+      },
+      "tags": {
+        "iconography": [
+          "annunciation"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "advent"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "nga-56668",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Adriaen Isenbrant",
+      "dated": null,
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/56668-adoration-of-the-shepherds",
+        "objectId": "56668",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official public CSV classification Paintings + published_images.openaccess=1; NGA-hosted primary IIIF original downloaded, SHA256 checked; museum author from objects_constituents+constituents official tables. Gallery URL slug is PROVISIONAL and needs canonical page redirect check.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "seasonIds": [
+          "christmas"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "targetResearchIds": [
+          "calendar.christmas"
+        ]
+      },
+      "review": {
+        "source": "NGA_OFFICIAL_PUBLIC_CSV_AND_IIIF_OPENACCESS",
+        "rights": "NGA_IMAGE_LEVEL_OPENACCESS_1",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3121,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38093287797",
+        "artifactId": 11684723858,
+        "archiveOriginal": "originals/nga-56668.jpg",
+        "originalWidth": 3121,
+        "originalHeight": 4096,
+        "originalSha256": "067c3f50117571d565ddd39f12fe494a8a935c6705d3580962e219fd099d13cd",
+        "iiifOriginalUrl": "https://api.nga.gov/iiif/c6b102a4-3e42-41bf-9077-6ea12968b04b/full/full/0/default.jpg",
+        "originalImageUUID": "c6b102a4-3e42-41bf-9077-6ea12968b04b"
+      },
+      "tags": {
+        "iconography": [
+          "adoration-shepherds",
+          "nativity"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "christmas"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "MUSEUM_PAINTED_SAINT_NOT_HISTORICALLY_AUTHENTIC_LIKENESS",
+        "associationConfidence": "DIRECT_OBJECT_TITLE_MUSEUM_SUBJECT_PENDING_EDITORIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "NGA_IMAGE_LEVEL_OPENACCESS_1"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_NGA_MUSEUM_IIIF_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
     }
   ],
   "notes": [
@@ -19680,7 +23056,8 @@
     "2026-10-10 added Caravaggio The Denial of Saint Peter as real hashed Met source original; eligible for distinct appointed Passion Gospel narrative passages where the actual denial occurs, not all Apostle Peter observances. Crop/rights/curator final audit remain separate.",
     "Research reuse repair: NGA-505 Piero di Cosimo Visitation already acquired. NGA identifies Nicholas of Myra and Anthony Abbot as distinct visible supporting figures; preserve subject Visitation as primary, tag saints for contextual date reuse only.",
     "High-yield physical-original batch: four official Met paintings and CMA Pittoni 1720s altarpiece (distinct identified saints Agnes, Scholastica, Benedict, Lucy, Veronica, Anthony OF PADUA), plus Catherine Alexandria direct scenes. Never confuse Catherine Alexandria with Catherine Siena, or Padua with Anthony Abbot. Composite fields are contextual. Three Met low-resolution leads excluded without upscaling.",
-    "Reused already acquired Met-437336 rosary-institution altarpiece, whose Met curatorial entry explicitly identifies St Dominic and St Francis as separate figures. Tags add these as secondary saint contextual uses, not separate portrait acquisitions."
+    "Reused already acquired Met-437336 rosary-institution altarpiece, whose Met curatorial entry explicitly identifies St Dominic and St Francis as separate figures. Tags add these as secondary saint contextual uses, not separate portrait acquisitions.",
+    "2026-10-11 official NGA Open Data bulk: forty previously unregistered unique source-original paintings acquired (NGA openaccess=1 image-level, strict painting classification and >2500px source), full official artist credits and image SHA256 archived at run 38093287797. Exact 1962 feast/saint/Gospel associations still await comprehensive user audit; contextual, partial and composite subjects explicitly distinguished. NGA website display slugs provisional, museum objectIDs and original IIIF URLs verified."
   ],
   "tagSchema": "AO_SACRED_ART_SEMANTIC_TAGS_V2"
 }
