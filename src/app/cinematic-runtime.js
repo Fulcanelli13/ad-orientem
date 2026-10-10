@@ -88,6 +88,8 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
   function hideLoader(){
     win.clearTimeout?.(loaderTimer); lastLoadingKey="";
     const el=d.getElementById(LOADER_ID); if(!el) return;
+    if(el.dataset?.aoLoadingDirector==="active")return; // ongoing lazy module owns current visual
+    win.AO_LOADING_DIRECTOR_V1?.releaseLegacy?.();
     el.classList.remove("aoCinemaLoaderOn"); el.removeAttribute("data-kind"); el.setAttribute("aria-hidden","true");
   }
   function syncLoading(s=state()){
@@ -101,6 +103,7 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
       const el=d.getElementById(LOADER_ID); if(!el) return;
       q("[data-ao-cinema-loader-title]",el).textContent=current.title; q("[data-ao-cinema-loader-sub]",el).textContent=current.sub;
       el.dataset.kind=current.key; el.classList.add("aoCinemaLoaderOn"); el.setAttribute("aria-hidden","false");
+      win.AO_LOADING_DIRECTOR_V1?.adoptLegacy?.(current.key);
     },220);
   }
   const ART_SELECTORS=[".aoProperArt img",".aoRuleModuleHero img",".aoV401RosaryHero img",".aoSaintArtCard img",".aoSaintReaderMedia img","[data-ao-proper-art] img",".aoV4311StationsArt img"];
@@ -133,6 +136,7 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
   }
   function finishBoot(reason="ready"){
     if(bootFinished) return false; bootFinished=true; win.clearTimeout?.(bootWatchdog);
+    win.AO_LOADING_DIRECTOR_V1?.endBoot?.();
     const el=d.getElementById(BOOT_ID); if(!el) return false;
     const s=state(),status=q("[data-ao-cinema-boot-status]",el),title=s?.resolution?.proper?.data?.name||s?.resolution?.day?.main?.title||"";
     if(status){status.textContent=title?(title+" · "+L("Ready","Prêt")):L("Ready","Prêt");status.classList.add("ready");}
