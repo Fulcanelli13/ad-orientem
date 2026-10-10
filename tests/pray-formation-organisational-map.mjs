@@ -92,6 +92,64 @@ for(const item of [...prayerEntries,...formationEntries]){
   assert.equal(item.guide_source_evidence.information,g?.information_status,item.id+" guide info status drift");
   assert.equal(item.guide_source_evidence.walkthrough,g?.walkthrough_status,item.id+" guide walkthrough drift");
 }
+// All live Apostolate handoffs must stay on existing owners. A declared route
+// is not automatically a tested phone journey or exact Mass subroute.
+const apostolateSources=[
+  "src/apostolate/corpus.js","src/apostolate/hs-corpus.js",
+  "src/apostolate/fh-corpus.js","src/apostolate/tf-corpus.js",
+  "src/apostolate/dv-corpus.js","src/apostolate/wc-corpus.js",
+];
+const actualHandoffs=[];
+for(const file of apostolateSources){
+  const source=read(file);
+  const cuts=[...source.matchAll(/id:"((?:AQ|HS|FH|TF|DV|WC)\d{2})",publication:/g)].map(match=>({id:match[1],index:match.index}));
+  for(let i=0;i<cuts.length;i++){
+    const section=source.slice(cuts[i].index,cuts[i+1]?.index??source.length);
+    for(const match of section.matchAll(/(owned|formation)\("([^"]+)","([^"]+)","([^"]+)"\)/g)){
+      actualHandoffs.push({from:"apostolate:"+cuts[i].id,to:match[3],source:file,reason:match[4]});
+    }
+  }
+}
+const handoffs=map.connections.apostolate_source_handoffs;
+assert.equal(handoffs.length,72,"Apostolate 72 existing handoffs incomplete");
+assert.deepEqual(
+  sort(handoffs.map(x=>[x.from,x.to,x.source,x.reason].join("|"))),
+  sort(actualHandoffs.map(x=>[x.from,x.to,x.source,x.reason].join("|"))),
+  "Apostolate graph no longer matches actual scenario source declarations"
+);
+const navigationRouteSet=new Set(navigation.routes.map(x=>x.id));
+const knownScenarios=new Set(apostolate.map(x=>x.scenario_id));
+for(const x of handoffs){
+  if(x.resolution==="MASS_PREPARE_SURFACE_ONLY"){
+    assert.equal(x.to,"mass.prepare");
+    assert.equal(x.phone_verified,false);
+  }else if(x.resolution==="SCENARIO_INTERNAL"){
+    assert.ok(knownScenarios.has(x.to),"Invalid Apostolate-to-Apostolate target "+x.to);
+  }else{
+    assert.equal(x.resolution,"REGISTERED_TARGET");
+    assert.ok(navigationRouteSet.has(x.to),"Unregistered Apostolate target "+x.to);
+  }
+}
+assert.equal(handoffs.filter(x=>x.resolution==="REGISTERED_TARGET").length,65);
+assert.equal(handoffs.filter(x=>x.resolution==="SCENARIO_INTERNAL").length,2);
+assert.equal(handoffs.filter(x=>x.resolution==="MASS_PREPARE_SURFACE_ONLY").length,5);
+assert.equal(handoffs.filter(x=>x.resolution==="UNRESOLVED_TARGET").length,0);
+for(const obsolete of ["pray.marian","pray.holy_souls"]){
+  assert.ok(!handoffs.some(x=>x.to===obsolete),"Obsolete Prayer route exposed from Apostolate: "+obsolete);
+}
+const prayerStyles=read("src/pray/presentation-styles.js");
+assert.match(prayerSource,/aoP435930RootOrganised/);
+assert.match(prayerStyles,/ao-pray-organised-family-entry-style/);
+const formationPresentation=read("src/learn/presentation.js");
+const formationBrowser=read("src/learn/browser-entry.js");
+assert.match(formationPresentation,/aoLearnIntentLayout/);
+assert.match(formationPresentation,/data-ao-learn-questions/);
+assert.match(formationBrowser,/data-ao-learn-questions/);
+assert.match(formationBrowser,/openModule\("learn\.sexual_ethics"\)/);
+assert.equal(map.pray.library_categories.reduce((n,x)=>n+x.count,0),48);
+assert.equal(map.formation.sexual_ethics_topic_projection.topics.length,50);
+assert.equal(map.formation.sexual_ethics_topic_projection.question_ids.length,150);
+assert.equal(map.formation.sexual_ethics_topic_projection.extended_debate_question_ids.length,55);
 assert.equal(map.acceptance.runtime_implemented,false);
 assert.equal(map.acceptance.phone_verified,false);
 console.log("PASS Pray-Formation IA: 23 Prayer doors, 15 Formation entries, 36 Apostolate scenarios, 100 Prayer leaves, 15 declared handoffs, 20 unimplemented proposals; publication gates intact");
