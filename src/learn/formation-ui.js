@@ -7,7 +7,7 @@ export function formationReaderCss(){
   const top=":is(.aoGlossTop,.aoLearnModTop,.aoSLTop,.aoCSETop,.aoL2Top,.aoLearnTradTop,.aoMFTop)";
   const wrap=":is(.aoGlossWrap,.aoLearnModWrap,.aoSLWrap,.aoCSEWrap,.aoL2Wrap,.aoLearnTradWrap,.aoMFWrap)";
   return `
-${roots}{--ao-formation-column:760px;--ao-formation-gutter:clamp(13px,3.8vw,24px);background:var(--ao-bg-canvas,var(--bg,#080c12));color:var(--ao-text-primary,var(--text,#e9e4d9));font-family:var(--ao-font-body,var(--font-body,Georgia,serif));overscroll-behavior:contain}
+${roots}{--ao-formation-column:760px;--ao-formation-gutter:var(--ao-page-gutter,14px);background:var(--ao-bg-canvas,var(--bg,#080c12));color:var(--ao-text-primary,var(--text,#e9e4d9));font-family:var(--ao-font-body,var(--font-body,Georgia,serif));overscroll-behavior:contain}
 ${roots} ${top}{position:sticky;top:0;z-index:9;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:10px;align-items:center;padding:calc(10px + var(--safe-top,0px)) var(--ao-formation-gutter) 10px;background:color-mix(in srgb,var(--ao-bg-canvas,var(--bg,#080c12)) 94%,transparent);border-bottom:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.14)));backdrop-filter:blur(var(--ao-topbar-blur,14px))}
 ${roots} ${top} button{width:44px;height:44px;min-width:44px;min-height:44px;padding:0;display:grid;place-items:center;border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.16)));border-radius:var(--ao-pill-radius,999px);background:var(--ao-surface-1,var(--surface-1,#101821));color:inherit}
 ${roots} ${top}>:nth-child(2){min-width:0;text-align:center}
