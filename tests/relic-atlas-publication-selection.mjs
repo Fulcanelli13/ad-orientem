@@ -92,5 +92,5 @@ assert.equal(preview.new_site_candidates,39);
 assert.equal(preview.exceptional_sacred_object_groupings,15);
 assert.equal(preview.production_pins_created,0);
 assert.equal(published.relics.length,122);
-assert.equal(places.places.length,182);
+assert.equal(places.places.length,217);
 console.log("PASS relic selection: 133 subject reach screens, "+assessed+" traceable reach indicators including "+universals+" apostolic roles, 71 associations → 66 sites (39 new candidates), 15 exceptional groups, 18 nonpin decisions; 0 production pins");
