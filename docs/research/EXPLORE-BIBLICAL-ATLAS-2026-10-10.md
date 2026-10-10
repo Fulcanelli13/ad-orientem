@@ -1,5 +1,53 @@
 # Biblical Atlas — Catholic Scripture places, figures, events and chronology
 
+## Import completed — pinned upstream data (10 October 2026)
+
+**The earlier "not yet imported" statements below are superseded by this completed acquisition.** The research-only master data is now in the existing draft PR, independent of the native app runtime.
+
+| Dataset | Actual records imported | Notes |
+| --- | ---: | --- |
+| [OpenBible ancient places](../../data/geography/research/vendor/openbible/ancient-01.jsonl) (five shards) | **1,342** | 8,742 place–verse addresses, in **61 books**; alternate modern identity hypotheses and source IDs retained |
+| [OpenBible modern place candidates](../../data/geography/research/vendor/openbible/modern-01.jsonl) (six shards) | **1,596** | Original lon/lat retained as **research-only** modern location hints, not approved canonical map pins |
+| [OpenBible source bibliography](../../data/geography/research/vendor/openbible/source.jsonl) | **442** | Original source IDs, authors, editions and URLs; these are distinct from the separate Explore 51-reference thematic bibliography |
+| [OpenBible geometry metadata](../../data/geography/research/vendor/openbible/geometry.jsonl) | **588** | Polygon/river/complex geometry metadata, not displayable features or embedded map shapes on its own |
+| [STEPBible-derived place entries](../../data/geography/research/vendor/stepbible/places-01.jsonl) (four shards) | **1,016** | Names, Greek/Hebrew forms, Strong IDs, source verses, Pleiades/Wikidata hints; descriptions and independent coordinates deliberately excluded |
+| [STEPBible-derived person entries](../../data/geography/research/vendor/stepbible/persons-01.jsonl) (nine shards) | **3,232** | Individual name disambiguation and kinship references; one repeated upstream ID `Malchijah_Ezr.10.25` remains on hold |
+
+**Provenance, pinned upstream revisions and rights:** [complete import manifest](../../data/geography/research/biblical-atlas-vendor-import-manifest-2026-10-10.v1.json). Original upstream Git blob IDs let us reproduce and compare full raw input without adding 11.6 MB ancient/3.2 MB modern unprocessed files to Ad Orientem. OpenBible 2026 source commit `7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f`. The STEPBible place/person adaptation is [PatristicTextArchive's 2024 snapshot](https://github.com/PatristicTextArchive/tipnr_data), **not** automatically identical to the current 2026 master TIPNR.
+
+### Real cross-source reconciliation
+
+The [all-1,016 place-name comparison](../../data/geography/research/biblical-atlas-step-openbible-crosswalk-2026-10-10.v1.json) matches TIPNR place names to OpenBible ancient identities and verifies shared explicit Scripture verse references after normalizing book abbreviations:
+
+| Source crosswalk status | Records |
+| --- | ---: |
+| Single name **and Scripture-verse** candidate | **899** |
+| Multiple plausible same-name + verse candidates | **69** |
+| No matching OpenBible title | **44** |
+| Name match without shared verse evidence | **4** |
+| **Total** | **1,016** |
+
+The 899 are **strong research candidates, not ratified equivalence relationships or app Place IDs**. Name collision is particularly common in biblical cities with reused names, multiple regional senses, and building/site subfeatures; 69 remain explicitly ambiguous. All original canonical identity and physical-place decisions remain held. Foreign-key checks of the normalized data passed: **1,342/1,342 unique ancient IDs, 1,596/1,596 unique modern IDs, zero broken ancient–modern links**. The single known duplicate personal name is preserved rather than silently deduped.
+
+### Actual 73-book coverage state
+
+[Book-code mapping against the live `src/scripture/canon.js`](../../data/geography/research/biblical-atlas-book-code-map-2026-10-10.v1.json) identifies **61 of 73 canonical books with one or more source geocoded verse mentions**. The 12 books with no imported OpenBible place mentions are **Tobit, Judith, 1 Maccabees, 2 Maccabees, Wisdom, Sirach, Baruch, Philemon, James, and 1/2/3 John**. Some genuinely might have no separately geocoded place references; they require a content audit and must **not** automatically become 12 "missing-site" failures. Esther/Daniel's deuterocanonical Greek additions require a separate version-alignment pass regardless.
+
+This is **61/73 book presence, not 83.6% of all biblical places completed**. Imported location-reference completeness is not certified until 73-book supplement + edition versification + place-sense audit.
+
+### Remaining integration gates (non-negotiable)
+
+1. **Catholic 73-book delta:** scan the seven deuterocanonical books and Greek additions, excluding spurious new locations and retaining original canonical verse-reference formats.
+2. **Modern geographical links:** compare OpenBible's 1,596 possible modern records and source scores with existing Ad Orientem physical `Place` owners. Do not automatically publish biblical locations; retain rivers, broad regions, historically displaced settlements, unknown sites and competing localisations.
+3. **STEP name-vs-verse exceptions:** review the 69 ambiguous, 44 missing, four name-only and one duplicate person ID against actual primary data, before joining to person profiles or geographical identities.
+4. **Experience:** create an atlas browse/search and contextual-place sheet inside Explore/Scripture **only after data and version-alignment acceptance**. The native 73-book Scripture reader remains authoritative for passage text, highlighting, language and commentary.
+5. **Copyright:** preserve CC BY 4.0 credits to OpenBible and STEPBible, credit the Patristic Text Archive adapter, review **OpenStreetMap-derived ODbL** obligations before shipping coordinate/geometry data, and source original user-facing historical descriptions independently. Imported vendor narratives/images were excluded.
+
+**No production Biblical Atlas UI, source text, ancient-map pins, release approval, or reader integration was changed by this acquisition batch.**
+
+---
+
+
 ## Decision: adopt existing biblical atlases, do not hand-build a new corpus
 
 **Supersedes the manual-seed approach in older sections below.** Following a review of public projects on 10 October 2026, the original **90 manually drafted place/event illustrations have been quarantined** and explicitly prohibited as an authoritative master gazetteer or production import. They can only demonstrate desired fields and reader behaviour after verification. There is no justification for drafting hundreds of biblical toponyms individually.
@@ -14,14 +62,14 @@
 
 ### Revised execution sequence
 
-1. Materialise a **pinned OpenBible ancient + modern + geometry + source** corpus with an import-only ingestion pass and full source/license manifest. The >1MB GitHub Contents request previously returned **empty text** despite a blob SHA; this is an access-method blocker, **not** proof the source is empty, nor a successful bulk import. Use a supported raw/blob/archive acquisition method that actually returns the full source.
+1. Materialise a **pinned OpenBible ancient + modern + geometry + source** corpus with an import-only ingestion pass and full source/license manifest. The >1MB GitHub Contents response previously returned empty; the workaround is now complete using GitHub Git-blob acquisition. Pinned sources are imported and transformed into sharded research JSONL.
 2. Count exact imported ancient place entities, verse links, modern site hypotheses and uncertain/unmapped entries. Count neither worldwide Catholic completeness nor unique map pins until dedup/site taxonomy.
 3. Materialise current pinned STEPBible TIPNR / relevant TVTMS mappings; attempt existing [PTA format adaptation](https://github.com/PatristicTextArchive/tipnr_data) first, then join by linked source IDs with source-ambiguity flags.
 4. Compare source locations to existing Scripture's **73-book** canon, physical `Place` registry and Europe seven-wave leads; **only supplement Catholic deuterocanonical and Greek-additions mentions**, plus novel site tradition and sourced chronological descriptions.
 5. Optional provider evaluation: test Bible Atlas public [verse-context endpoint](https://bible-atlas.com/developers) for online event references, avoiding theological and legal assumptions. The native Ad Orientem Passage / Full chapter / Commentary reader remains the sole Bible-text owner.
 6. Demonstrate with a small sample, then only implement Explore and native reader UI when provenance, canonical identity, licensing and phone navigation regressions pass.
 
-**Current verified state:** the prior 90-example JSON is marked `QUARANTINED_REFERENCE_SCENARIOS_SUPERSEDED_BY_EXISTING_OPEN_DATA_ADOPTION`; OpenBible master source **not yet downloaded into the repository**, STEPBible TIPNR **not yet imported**, and no production Biblical Atlas UI or canonical pins published. The number of actual imported master places is **zero**, not 90 or 1,342. This makes the next action an acquisition/integration rather than new research prose.
+**Historical pre-import state (superseded by the import-completed section above):** the prior 90-example JSON is marked `QUARANTINED_REFERENCE_SCENARIOS_SUPERSEDED_BY_EXISTING_OPEN_DATA_ADOPTION`; OpenBible master source **not yet downloaded into the repository**, STEPBible TIPNR **not yet imported**, and no production Biblical Atlas UI or canonical pins published. The number of actual imported master places is **zero**, not 90 or 1,342. This makes the next action an acquisition/integration rather than new research prose.
 
 ---
 
