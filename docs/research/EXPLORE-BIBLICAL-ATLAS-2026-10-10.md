@@ -1,5 +1,30 @@
 # Biblical Atlas — Catholic Scripture places, figures, events and chronology
 
+## Decision: adopt existing biblical atlases, do not hand-build a new corpus
+
+**Supersedes the manual-seed approach in older sections below.** Following a review of public projects on 10 October 2026, the original **90 manually drafted place/event illustrations have been quarantined** and explicitly prohibited as an authoritative master gazetteer or production import. They can only demonstrate desired fields and reader behaviour after verification. There is no justification for drafting hundreds of biblical toponyms individually.
+
+**Primary data import:** [OpenBible.info Bible-Geocoding-Data](https://github.com/openbibleinfo/Bible-Geocoding-Data) already publishes a documented **1,342 ancient scriptural place entries, 1,596 modern identification records and 442 source entries** (2021 release figures; actual counts must be verified against a pinned current commit). The core under **CC BY 4.0** includes ancient/modern equivalences, alternative scholarly identifications, probable areas, verse references, modern geography and scholarly witness pointers. ODbL rules apply to OpenStreetMap-derived material; image rights are separately listed. This is the default gazetteer. It is a **66-book Protestant source**, hence **Catholic 73-book enrichment** is required, but not rewriting its first 1,342 entries.
+
+**People and name identities:** [STEPBible TIPNR and TVTMS](https://github.com/STEPBible/STEPBible-Data), root README **CC BY 4.0**, provide individual person/place identities, original-language name forms, verse citations, and translation versification methods. The [Patristic Text Archive already converted TIPNR into JSON/XML and connected some places to Pleiades](https://github.com/PatristicTextArchive/tipnr_data). Prefer reuse and comparison with this existing converter over engineering name parsing from scratch. The exact pinned file source/version/right to redistribute must be preserved. TIPNR's long AI-generated biographical prose must **not** be copied into a sourced Catholic educational module.
+
+**Existing full interface and optional online API:** [Bible Atlas](https://bible-atlas.com/) advertises **3,067 people, 1,274 places, 450 events, and 66 books** and provides a documented [public keyless verse-context API and embeddable verse UI](https://bible-atlas.com/developers). It already covers the user's desired people–places–events navigation; use as inspiration and potentially as an optional online enrichment. Its **free public API is not evidence of a CC-licensed bulk downloadable database**; do not silently import the complete narrative/graph into a commercial/offline app without a rights grant, and don't substitute an iframe for the existing in-app Scripture reader.
+
+**Why not simply copy the ready-made Atlas product?** Its theology, chronology, data completeness and source/licensing assumptions are specific to its production; Ad Orientem requires the **Catholic canon**, Catholic historical context and original source support, retained native reader, source provenance and robust offline operation. Only **Catholic-specific differences**, original-site editorial context, translation alignment and the application's own presentation require our work.
+
+### Revised execution sequence
+
+1. Materialise a **pinned OpenBible ancient + modern + geometry + source** corpus with an import-only ingestion pass and full source/license manifest. The >1MB GitHub Contents request previously returned **empty text** despite a blob SHA; this is an access-method blocker, **not** proof the source is empty, nor a successful bulk import. Use a supported raw/blob/archive acquisition method that actually returns the full source.
+2. Count exact imported ancient place entities, verse links, modern site hypotheses and uncertain/unmapped entries. Count neither worldwide Catholic completeness nor unique map pins until dedup/site taxonomy.
+3. Materialise current pinned STEPBible TIPNR / relevant TVTMS mappings; attempt existing [PTA format adaptation](https://github.com/PatristicTextArchive/tipnr_data) first, then join by linked source IDs with source-ambiguity flags.
+4. Compare source locations to existing Scripture's **73-book** canon, physical `Place` registry and Europe seven-wave leads; **only supplement Catholic deuterocanonical and Greek-additions mentions**, plus novel site tradition and sourced chronological descriptions.
+5. Optional provider evaluation: test Bible Atlas public [verse-context endpoint](https://bible-atlas.com/developers) for online event references, avoiding theological and legal assumptions. The native Ad Orientem Passage / Full chapter / Commentary reader remains the sole Bible-text owner.
+6. Demonstrate with a small sample, then only implement Explore and native reader UI when provenance, canonical identity, licensing and phone navigation regressions pass.
+
+**Current verified state:** the prior 90-example JSON is marked `QUARANTINED_REFERENCE_SCENARIOS_SUPERSEDED_BY_EXISTING_OPEN_DATA_ADOPTION`; OpenBible master source **not yet downloaded into the repository**, STEPBible TIPNR **not yet imported**, and no production Biblical Atlas UI or canonical pins published. The number of actual imported master places is **zero**, not 90 or 1,342. This makes the next action an acquisition/integration rather than new research prose.
+
+---
+
 **10 October 2026 — research/specification only.** Extends the source-first Explore research [draft #923](https://github.com/Fulcanelli13/ad-orientem/pull/923). **Not a new Bible reader; not a published new Explore route; no new live map pins.**
 
 ## Vision and navigation
