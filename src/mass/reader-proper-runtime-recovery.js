@@ -80,6 +80,20 @@ function sourceTextComplete(value){
   return Boolean(String(value??"").trim() && !/(^|\n)\s*[$@]/m.test(String(value)));
 }
 
+// The pinned Missale Meum `Sancti/10-08c` has the martyrs' named
+// Latin/English prayers but no corresponding French text. Divinum Officium
+// retains the same three named Latin prayers and its French translation under
+// the older `10-07cc` identifier. This is a source identity equivalence,
+// never a date-based or generic translation fallback. Its Latin must still
+// independently match the source-owned composed row.
+// Sources:
+// https://github.com/mmolenda/missalemeum/blob/main/backend/resources/divinum-officium-local/web/www/missa/Latin/Sancti/10-08c.txt
+// https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/10-07cc.txt
+// https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Francais/Sancti/10-07cc.txt
+const VERIFIED_FRENCH_ORATION_EQUIVALENTS=Object.freeze({
+  "Sancti/10-08c":"Sancti/10-07cc",
+});
+
 function sourceOrationOwners(data,path){
   const commemorations=(data.calendarCommemorations??[])
     .filter(comm=>comm&&!comm.inseparable);
@@ -156,9 +170,22 @@ export async function recoverReaderProperOmissions(proper,{
     for(let index=0;index<rows.length;index++){
       const current=rows[index];
       if(hasThreeLanguages(current))continue;
-      const sourced=await recoverText(hostResolver,owners[index],[section],diagnostic);
+      let sourced=await recoverText(hostResolver,owners[index],[section],diagnostic);
       if(!sourceTextComplete(sourced.lat)||
          !agreesWithLatin(current?.lat??current?.la,sourced.lat))continue;
+      // A proven historical French alias may supply only the missing French,
+      // provided its own Latin text matches both the pinned source and the
+      // already composed row. Keep the canonical Mass/source identity intact.
+      const frenchAlias=VERIFIED_FRENCH_ORATION_EQUIVALENTS[owners[index]];
+      if(!sourceTextComplete(sourced.fr)&&frenchAlias){
+        const alternative=await recoverText(hostResolver,frenchAlias,[section],diagnostic);
+        if(sourceTextComplete(alternative.lat)&&
+           agreesWithLatin(sourced.lat,alternative.lat)&&
+           agreesWithLatin(current?.lat??current?.la,alternative.lat)&&
+           sourceTextComplete(alternative.fr)){
+          sourced={...sourced,fr:alternative.fr};
+        }
+      }
       const candidate={...current};
       for(const lang of ["lat","en","fr"]){
         if(!String(candidate[lang]??"").trim()){
