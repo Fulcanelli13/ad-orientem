@@ -684,6 +684,7 @@ const PRAY_ORG_ENTRY_CSS=`
 #aoPray435930 .aoP435930RootGroupDoors{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
 }
+#aoPray435930 .aoP435930RootGroupDoors .aoP435930FamilyDoor:only-child{grid-column:1/-1}
 #aoPray435930 .aoP435930RootGroupDoors .aoP435930FamilyDoor{
   width:100%;height:100%;min-height:122px;min-width:0;
 }
