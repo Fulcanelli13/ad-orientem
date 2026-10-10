@@ -1,3 +1,4 @@
+import { renderBiblePlacesSection } from "./bible-places.js";
 // Map-first Explore presentation. This is a secondary discovery surface;
 // canonical editorial records and source-specific Place details remain unchanged.
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&#039;"}[c]));
@@ -39,6 +40,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet}={}){
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+key+'">'+L(vm.language,en,fr)+'</button>';
   }
   html+='</nav><p>'+L(vm.language,"Pins show documented places. Customs without precise places remain thematic. Relic and apparition claims retain their qualifications.","Les repères indiquent des lieux attestés ; les coutumes sans lieu précis restent thématiques. Les reliques et apparitions conservent leurs réserves documentaires.")+'</p></div></details></div>';
+  html+=renderBiblePlacesSection(vm);
   html+='<div class="aoFindBody aoHeritageBody" data-find-view="map" data-explore-lens="heritage"><div class="aoFindMap" data-find-map><div class="aoFindMapFallback"><strong>'+L(vm.language,"Sacred places","Lieux sacrés")+'</strong><span>'+(vm.items.length?L(vm.language,"Loading documented places…","Chargement des lieux documentés…"):L(vm.language,"No mapped examples match these filters. Try another category or search.","Aucun exemple cartographié ne correspond. Essayez un autre thème ou une autre recherche."))+'</span></div></div>';
   const customs=arr(vm.customCards);
   if(customs.length){
