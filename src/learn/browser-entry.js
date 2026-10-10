@@ -223,6 +223,18 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         void navigateFromLearn("apostolate");
         return;
       }
+      // A Questions entrance points to the one published specialist reader.
+      // Other research dossiers remain source-gated; do not add fake cards.
+      const questions=event.target?.closest?.("[data-ao-learn-questions]");
+      if(questions){
+        event.preventDefault?.();
+        state.family="spiritual-moral";
+        state.lastFamily="spiritual-moral";
+        state.lastLauncher="learn.sexual_ethics";
+        state.error="";
+        void openModule("learn.sexual_ethics");
+        return;
+      }
       const surface=event.target?.closest?.("[data-ao-learn-discovery-surface]");
       if(surface){
         event.preventDefault?.();

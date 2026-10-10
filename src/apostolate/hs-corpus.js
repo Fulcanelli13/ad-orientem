@@ -134,7 +134,7 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
     sourceIds:Object.freeze(["TRENT-XXV-SAINTS-PURGATORY","MR62-REQUIEM","ST-PIUS-X-CATECHISM-FR"]),
     handoffs:Object.freeze([
       formation("HS05","learn.catechism","Deepen Catholic teaching on death, judgment, Purgatory and suffrage in the canonical Catechism owner."),
-      owned("pray","pray.holy_souls","Prayer for the dead belongs to the Holy Souls owner."),
+      owned("pray","pray.eternal_rest","Use the canonical Eternal Rest prayer for the departed."),
       owned("pray","pray.good_death","Good Death remains the ordinary preparation treasury, not a bereavement substitute."),
     ]),
   }),
@@ -162,7 +162,7 @@ export const APOSTOLATE_HS_SCENARIOS=Object.freeze([
       formation("HS06","learn.rites.sick","Serious Illness formation owns the sacramental explanation."),
       owned("pray","pray.dying_companion","The bedside action/prayer flow belongs to Dying Companion."),
       owned("pray","pray.confession","Confession preparation remains owned by PRAY where appropriate."),
-      owned("pray","pray.holy_souls","After death, switch to prayer for the dead rather than the dying-person flow."),
+      owned("pray","pray.eternal_rest","After death, use the canonical Eternal Rest prayer instead of the dying-person flow."),
     ]),
   }),
   Object.freeze({

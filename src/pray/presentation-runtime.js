@@ -539,7 +539,16 @@ function prayFamilyItem(item){
 }
 function renderPrayHome(){
  const families=prayFamilies();
- return `${head(L('Pray','Prier'),L('What do you need for prayer now?','De quoi avez-vous besoin pour prier maintenant ?'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Choose one path','Choisissez une voie'))}</h2><p>${esc(L('Begin with the kind of prayer you need; the full corpus stays one level deeper.','Commencez par le type de prière dont vous avez besoin ; le corpus complet reste au niveau suivant.'))}</p></section><div class="aoP435930ModuleGrid aoP435930FamilyGrid">${Object.entries(families).map(([id,family])=>prayFamilyDoor(id,family)).join('')}</div></main>`;
+ const door=id=>prayFamilyDoor(id,families[id]);
+ const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
+ const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
+ return `${head(L('Pray','Prier'),L('A place for daily prayer and devotion','Un lieu de prière et de dévotion'))}<main class="aoP435930Body aoP435930Home aoP435930RootOrganised">
+  <section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Enter into prayer','Entrer en prière'))}</h2><p>${esc(intro)}</p></section>
+  <section class="aoP435930RootFeatured" aria-label="${esc(L('Begin with daily prayer','Commencer par la prière quotidienne'))}">${door('daily')}</section>
+  ${group('Before the Blessed Sacrament','Devant le Saint-Sacrement',door('eucharistic'))}
+  ${group('Penance and the Passion','Pénitence et Passion',door('penance')+door('passion'))}
+  ${group('Devotions and prayers','Dévotions et prières',door('devotions')+door('library'))}
+ </main>`;
 }
 function renderPrayFamily(){
  const family=prayFamilies()[familyId];

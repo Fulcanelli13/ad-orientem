@@ -666,6 +666,40 @@ const PRAY_READING_TYPE_CSS=`
 }
 `;
 
+/* Grouping is presentational. Original six donor families, all 23 entry IDs,
+   exact readers, recitation states and first-use handoffs are preserved. */
+const PRAY_ORG_ENTRY_CSS=`
+#aoPray435930 .aoP435930RootOrganised{gap:19px}
+#aoPray435930 .aoP435930RootFeatured .aoP435930FamilyDoor{
+  width:100%;min-height:122px;text-align:left;
+  border-color:var(--liturgical-border,rgba(201,173,120,.4));
+  background:linear-gradient(125deg,rgba(201,173,120,.09),rgba(17,20,23,.03));
+}
+#aoPray435930 .aoP435930RootGroup{display:grid;gap:10px;min-width:0}
+#aoPray435930 .aoP435930RootGroup>h3{
+  margin:0;padding-top:13px;border-top:1px solid var(--ao-rule,rgba(37,34,27,.16));
+  font:600 1.13rem/1.3 var(--ao-font-display,Georgia,serif);
+  letter-spacing:.01em;color:inherit;
+}
+#aoPray435930 .aoP435930RootGroupDoors{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+}
+#aoPray435930 .aoP435930RootGroupDoors .aoP435930FamilyDoor:only-child{grid-column:1/-1}
+#aoPray435930 .aoP435930RootGroupDoors .aoP435930FamilyDoor{
+  width:100%;height:100%;min-height:122px;min-width:0;
+}
+#aoPray435930 .aoP435930RootGroupDoors .aoP435930ModuleDescription{
+  line-height:1.5;
+}
+#aoPray435930 .aoP435930RootOrganised :is(.aoP435930FamilyDoor):focus-visible{
+  outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px;
+}
+@media(max-width:560px){
+  #aoPray435930 .aoP435930RootGroupDoors{grid-template-columns:1fr}
+  #aoPray435930 .aoP435930RootGroupDoors .aoP435930FamilyDoor{min-height:98px}
+}
+`;
+
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
@@ -681,6 +715,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-visible-regression-guard-style",VISIBLE_REGRESSION_GUARD_CSS);
   ensureStyle(doc,"ao-pray-rosary-declutter-style",ROSARY_DECLUTTER_CSS);
   ensureStyle(doc,"ao-pray-readable-guidance-style",PRAY_READING_TYPE_CSS);
+  ensureStyle(doc,"ao-pray-organised-family-entry-style",PRAY_ORG_ENTRY_CSS);
   return true;
 }
 

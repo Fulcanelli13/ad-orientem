@@ -110,7 +110,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     if(!scenarioMap.has(key))return false;
     state.selectedId=key;
     state.selectedSkillId=null;
-    state.returnView=returnView||(practice?"practice":state.view==="help"?"help":"answer");
+    state.returnView=returnView||(practice?"practice":state.view==="help"?"help":state.view==="introduce"?"introduce":"answer");
     state.view=practice?"practice":"scenario";
     state.practiceRevealed=false;
     state.draft="";
@@ -123,7 +123,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
   function open(opts={}){
     const node=ensureRoot();
     if(!node)return false;
-    const explicit=Boolean(opts?.scenarioId||opts?.skillId||["answer","help","practice"].includes(opts?.view));
+    const explicit=Boolean(opts?.scenarioId||opts?.skillId||["answer","help","introduce","practice"].includes(opts?.view));
     const restoreSuspended=state.suspended&&!explicit;
     state.open=true;
     state.suspended=false;
@@ -152,7 +152,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
         state.draft="";
         state.practiceRevealed=false;
       }else resetHome();
-    }else if(["answer","help","practice"].includes(opts?.view)){
+    }else if(["answer","help","introduce","practice"].includes(opts?.view)){
       state.view=opts.view;state.returnView="home";state.selectedId=null;state.selectedSkillId=null;state.query="";state.draft="";state.practiceRevealed=false;
     }else resetHome();
     node.hidden=false;
@@ -206,7 +206,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     render();
     try{
       if(scenarioMap.has(target)){
-        return selectScenario(target,{practice:false,returnView:state.view==="practice"?"practice":"help"});
+        return selectScenario(target,{practice:false,returnView:state.view==="practice"?"practice":state.returnView==="introduce"?"introduce":"help"});
       }
       const surface=target.startsWith("learn.")?"learn":handoff.surface||
         (target.startsWith("pray.")?"pray":target.startsWith("mass")?"mass":target==="find"?"find":null);
