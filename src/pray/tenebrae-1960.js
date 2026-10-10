@@ -106,10 +106,9 @@ function resolveOfficeCollect(local,thursday,dayIndex){
     // In the 1960 Triduum the 1955/other-edition Psalm 50 instruction
     // in this DO block is omitted. Christus factus est, silent Pater and
     // final collect are represented as separate reader steps.
-    return cleanSection((oratio??"").split(/\r?\n/).filter(x=>
-      !x.trim().startsWith("&")&&!x.trim().startsWith("$")&&!x.trim().startsWith("@")&&
-      !/^\(sed rubrica/i.test(x)&&!/^\(/.test(x)
-    ).join("\n"));
+    const acclamation=String(oratio??"").split(/\r?\n/).find(x=>/^v\.\s*Christus/i.test(x));
+    if(!acclamation)throw new Error("Tenebrae source Christus factus est absent");
+    return acclamation.replace(/^v\.\s*/,"").trim();
   }
   const match=String(oratio??"").match(/^@Tempora\/Quad6-4[\w:]*(?::s\/)([^/]+)\/([^/]+)\//);
   if(!match)throw new Error("Tenebrae final Christus factus est unresolved source reference");
