@@ -54,6 +54,7 @@ export function mountFullMassPreflight({
   getResolvedMass,
   getDefaultForm=()=> "sung",
   language=()=> "en",
+  getCelebrationApi=()=>globalThis.AO_CELEBRATION_API,
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
@@ -68,6 +69,21 @@ export function mountFullMassPreflight({
   function selectionFor(legacy){
     const value=resolvedMassSummary(legacy,{form:activeForm(),language:language()});
     return Object.freeze({...value,explicitlyChosenForm:explicit});
+  }
+  function openCategory(kind){
+    const choices={CALENDAR:"[data-ao-select-day]",VOTIVE:'[data-ao-open="votive"]',
+      NUPTIAL:'[data-ao-open="nuptial"]',REQUIEM:'[data-ao-open="requiem"]',
+      OTHER:'[data-ao-open="other"]'};
+    if(!Object.hasOwn(choices,kind))throw new Error("Unknown Mass category");
+    const api=getCelebrationApi?.();
+    if(typeof api?.openChangeMass!=="function")throw new Error("CHANGE_MASS_OWNER_NOT_READY");
+    // Invoke the established resolver's public navigation: never infer a
+    // votive or Requiem file from the clicked category alone.
+    api.openChangeMass();
+    const control=flow()?.querySelector(choices[kind]);
+    if(!control)throw new Error("MASS_CELEBRATION_CHOICE_MISSING_"+kind);
+    control.click();
+    return true;
   }
   function refresh(){
     if(disposed)return;
@@ -86,12 +102,31 @@ export function mountFullMassPreflight({
       root.className="aoFullMassPreflight";
       root.setAttribute("aria-label","Mass preparation");
       root.innerHTML='<h3 data-full-mass-title></h3><p data-full-mass-celebration role="status"></p>'+
+        '<div class="aoFullMassCategories" role="group" data-full-mass-categories aria-label="Select actual Mass">'+
+        [["CALENDAR","Mass of the day","Messe du jour"],["VOTIVE","Votive","Votive"],
+         ["REQUIEM","Requiem","Requiem"],["NUPTIAL","Nuptial","Nuptiale"],
+         ["OTHER","Other","Autre"]].map(([id,en,fr])=>
+         '<button type="button" data-full-mass-category="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</button>').join("")+
+        '</div><p data-full-mass-category-error role="alert" hidden></p>'+
         '<p data-full-mass-resolver></p><fieldset data-full-mass-form-fieldset>'+
         '<legend data-full-mass-form-title></legend><div class="aoFullMassForms">'+
         FULL_MASS_FORM_OPTIONS.map(({id})=>
           '<label class="aoFullMassChoice"><input type="radio" name="ao-native-mass-form" value="'+id+'" data-full-mass-form>'+
           '<span data-full-mass-label="'+id+'"></span></label>').join("")+
         '</div></fieldset><p data-full-mass-note></p>';
+      root.addEventListener("click",e=>{
+        const button=e.target?.closest?.("[data-full-mass-category]");
+        if(!button)return;
+        e.preventDefault();
+        const notice=root?.querySelector("[data-full-mass-category-error]");
+        try{openCategory(button.dataset.fullMassCategory);}
+        catch(error){
+          if(notice){
+            notice.hidden=false;
+            notice.textContent=(french()?"Impossible d’ouvrir cette célébration : ":"Unable to open celebration: ")+String(error?.message??error);
+          }
+        }
+      });
       root.addEventListener("change",e=>{
         const el=e.target;
         if(el?.matches?.("[data-full-mass-form]")&&MASS_FORMS.includes(el.value)){
@@ -101,6 +136,20 @@ export function mountFullMassPreflight({
       target.insertAdjacentElement("beforebegin",root);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
+    const oldFormGrid=host.querySelector(".aoChoiceGrid:has([data-ao-form])");
+    if(oldFormGrid){
+      oldFormGrid.hidden=true;
+      oldFormGrid.style.display="none";
+      const header=oldFormGrid.previousElementSibling;
+      if(header?.classList.contains("aoFlowSection")){
+        header.hidden=true;header.style.display="none";
+      }
+    }
+    root.querySelectorAll("[data-full-mass-category]").forEach(button=>{
+      button.textContent=button.dataset[fr?"labelFr":"labelEn"];
+      const match=button.dataset.fullMassCategory===summary.kind;
+      button.setAttribute("aria-current",match?"true":"false");
+    });
     root.querySelector("[data-full-mass-title]").textContent=l("Prepare your Mass","Préparer votre messe");
     root.querySelector("[data-full-mass-form-title]").textContent=l("How is it celebrated?","Comment est-elle célébrée ?");
     root.querySelector("[data-full-mass-celebration]").textContent=
@@ -145,6 +194,7 @@ export function mountFullMassPreflight({
   refresh();
   return Object.freeze({
     selectionFor,
+    openCategory,
     refresh,
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null}),
