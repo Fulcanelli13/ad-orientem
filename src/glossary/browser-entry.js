@@ -352,7 +352,18 @@ export function createGlossaryRuntime(win=globalThis){
       try{
         const trigger=returning.trigger?.isConnected?returning.trigger:
           (returning.contextId?win?.document?.querySelector?.('[data-ao-glossary-context="'+returning.contextId+'"]'):null);
-        if(trigger?.isConnected){trigger.disabled=false;trigger.focus?.({preventScroll:true});}
+        if(trigger?.isConnected){
+          trigger.disabled=false;
+          trigger.focus?.({preventScroll:true});
+          // Other owning readers may flush their overlay/visibility after this
+          // close. Repeat on the next microtask only when focus was displaced;
+          // never navigate away or resurrect a detached trigger.
+          const defer=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
+          defer(()=>{
+            const live=trigger.isConnected?trigger:(returning.contextId?win?.document?.querySelector?.('[data-ao-glossary-context="'+returning.contextId+'"]'):null);
+            if(live?.isConnected&&win?.document?.activeElement!==live){live.disabled=false;live.focus?.({preventScroll:true});}
+          });
+        }
       }catch{}
     }
     state.contextReturn=null;
