@@ -697,6 +697,77 @@
       "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
       "access": "ORIGINAL_PAGE_OPENED",
       "note": "Pastoral permission for devotion is not supernatural authentication"
+    },
+    {
+      "id": "FR_QUERRIEN_DIOCESE",
+      "continent": "Europe",
+      "geo_scope": "France Brittany Querrien",
+      "title": "Diocese of Saint-Brieuc–Tréguier official Querrien sanctuary history",
+      "authority": "ORIGINAL_LOCAL_DIOCESE",
+      "url": "https://saintbrieuc-treguier.catholique.fr/le-diocese/le-sanctuaire/",
+      "subjects": [
+        "APPARITION",
+        "SHRINE",
+        "SACRED_WELL"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Diocese explicitly reports Bishop Denis de La Barde verified apparition in Sep 1652, canonical diocesan shrine in 2002. Original 1652 decree not acquired."
+    },
+    {
+      "id": "IN_THANJAVUR_VELANKANNI",
+      "continent": "Asia",
+      "geo_scope": "India Tamil Nadu",
+      "title": "Diocese of Thanjavur original history of Vailankanni Marian shrine",
+      "authority": "ORIGINAL_LOCAL_DIOCESE",
+      "url": "https://tanjorediocese.org/front/history",
+      "subjects": [
+        "APPARITION_TRADITION",
+        "SHRINE"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Local ordinary describes original Marian apparition tales as oral tradition with no surviving original historical record. Catholic basilica/shrine status is distinct from apparition approval."
+    },
+    {
+      "id": "PS_UNESCO_HEBRON",
+      "continent": "Asia",
+      "geo_scope": "Hebron/Al-Khalil",
+      "title": "UNESCO World Heritage Centre — Hebron old town and Tomb of Patriarchs compound",
+      "authority": "UNESCO_WORLD_HERITAGE",
+      "url": "https://whc.unesco.org/en/list/1565/",
+      "subjects": [
+        "BIBLICAL_BURIAL",
+        "HISTORIC_PILGRIMAGE"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Supports actual historic complex and multifaith traditional association, not body identification or relic authenticity."
+    },
+    {
+      "id": "JO_SBF_NEB0_ARCHEOLOGY",
+      "continent": "Asia",
+      "geo_scope": "Jordan Mount Nebo",
+      "title": "Studium Biblicum Franciscanum publication index — Mount Nebo new archaeological excavations",
+      "authority": "FRANCISCAN_ARCHAEOLOGICAL_INSTITUTE",
+      "url": "https://sbf.custodia.org/en/publications/collectio-maior/mount-nebo-new-archaeological-excavations-i",
+      "subjects": [
+        "BIBLICAL_MEMORIAL",
+        "ARCHAEOLOGY"
+      ],
+      "access": "BOOK_CATALOGUE_ONLY",
+      "note": "Archaeology monograph catalogue supports memorial study; the full scholarly monograph is not reproduced or acquired."
+    },
+    {
+      "id": "PS_CUSTODIA_TOMB_MARY_STATUS_QUO",
+      "continent": "Asia",
+      "geo_scope": "Jerusalem Gethsemane",
+      "title": "Franciscan Custody Assumption procession and Tomb of Mary status quo",
+      "authority": "ORIGINAL_SITE_CUSTODIAN",
+      "url": "https://www.custodia.org/en/news/in-the-footsteps-of-mary-jerusalem-gathers-around-the-assumption-to-rediscover-its-vocation/",
+      "subjects": [
+        "BIBLICAL_BURIAL_TRADITION",
+        "SITE_CUSTODY"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Greek Orthodox and Armenian Tomb of Mary custody reported; Franciscan Assumption procession access, not general custody/relic authentication."
     }
   ],
   "initial_source_derived_leads": [
@@ -1128,5 +1199,29 @@
     ],
     "audit_doc": "docs/research/EXPLORE-USER-FIVE-WIKIPEDIA-LISTS-2026-10-10.md",
     "review_stage": "SECONDARY_INDEX_GATE_PLUS_ORIGINAL_CUSTODY_HOLY_LAND_MAP_INDEX_NOT_FULL_SITE_IDENTITY"
+  },
+  "acquisition_checkpoint_batch7": {
+    "batch": "2026-10-10-ORIGINAL_HOLY_LAND_SITE_AND_CLAIM_RECONCILIATION",
+    "full_visible_custodia_directory_entries": 27,
+    "resolved_individual_custodian_or_franciscan_source_links": 27,
+    "direct_named_sanctuary_pages": 26,
+    "franciscan_convent_feast_alternate_for_inaccessible_listing": 1,
+    "site_title_and_original_page_resolved": 27,
+    "selected_site_content_reviewed": 18,
+    "remaining_site_text_to_audit": 9,
+    "explicit_site_fact_classifications": 27,
+    "burial_claims_with_original_institutional_source_checks": 5,
+    "querrien_historic_episcopal_approval_evidence": 1,
+    "velankanni_ordinary_oral_tradition_and_shrine_distinction": 1,
+    "marian_missing_cases_still_awaiting_primary_authentication": [
+      "Lezajsk",
+      "Cimbres Pesqueira",
+      "Quito Buen Suceso"
+    ],
+    "nonpublication_hold": true,
+    "no_new_canonical_places": true,
+    "total_global_source_registry_entries": 51,
+    "source_rights_note": "The Custody explicitly forbids third-party text/image reproduction without consent; source URLs and terse factual metadata only.",
+    "additional_source_index_entries_are_not_automatically_unique_sites": true
   }
 }
