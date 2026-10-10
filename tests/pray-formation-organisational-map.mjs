@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {LEARN_MODULE_IDS} from "../src/learn/presentation.js";
+import {HOLY_NAME_LITANY_V381} from "../src/pray/traditional-pray-data.js";
 
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const json=path=>JSON.parse(read(path));
@@ -18,8 +19,8 @@ assert.equal(map.schema,"AO_PRAY_FORMATION_ORGANISATIONAL_MAP_V1");
 assert.equal(map.status,"PARTIAL_ENTRY_PRESENTATION_IMPLEMENTED");
 assert.equal(map.acceptance.entry_presentation_implemented,true);
 assert.equal(map.acceptance.user_visible_content_crosslinks_implemented,true);
-assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="SOURCE_WIRED_PHONE_UNVERIFIED").length,9);
-assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="PROPOSED_NOT_WIRED").length,11);
+assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="SOURCE_WIRED_PHONE_UNVERIFIED").length,16);
+assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="PROPOSED_NOT_WIRED").length,4);
 const unique=(entries,label)=>{
   const ids=entries.map(x=>x.id);
   assert.equal(new Set(ids).size,ids.length,label+" duplicates a content ID");
@@ -161,9 +162,34 @@ assert.equal(map.pray.library_categories.reduce((n,x)=>n+x.count,0),48);
 assert.equal(map.guides.source_level_followup_count,25);
 assert.equal(map.guides.source_level_followups.length,25);
 assert.equal(map.guides.fully_verified_in_phone,false);
+const contextualRoutes=new Map(map.connections.editorially_proposed_item_links.map(x=>[x.from+" → "+x.to,x]));
+for(const key of ["learn.spiritual_life → pray.nightly_examen","learn.spiritual_life → pray.adoration","learn.rites.sick → pray.good_death","pray.communion_treasury → learn.rites.first_communion","pray.good_death → learn.rites.sick","learn.sexual_ethics → pray.confession","programme.first_friday → pray.sacred_heart"]){
+  assert.equal(contextualRoutes.get(key)?.state,"SOURCE_WIRED_PHONE_UNVERIFIED",key+" is not source wired");
+}
+const spiritualSource=read("src/learn/spiritual-life.js");
+assert.match(spiritualSource,/SL03:Object\.freeze\(\[\{surface:"pray",target:"pray\.adoration"/);
+assert.match(spiritualSource,/SL06:Object\.freeze\(\[\{surface:"pray",target:"pray\.nightly_examen"/);
+assert.match(spiritualSource,/lessonHandoffs\(lesson\)/);
+const traditionalFormation=read("src/learn/traditional-life.js");
+assert.match(traditionalFormation,/route:"pray\.good_death"/);
+assert.match(traditionalFormation,/route:"pray\.eternal_rest"/);
+assert.doesNotMatch(traditionalFormation,/route:"pray\.holy_souls"/);
+const traditionalPrayer=read("src/pray/traditional-pray-runtime.js");
+assert.match(traditionalPrayer,/data-tp381-route="learn\.rites\.first_communion"/);
+assert.match(traditionalPrayer,/data-tp381-route="learn\.rites\.sick"/);
+assert.match(traditionalPrayer,/data-tp381-litany-mode="guided"/);
+assert.match(traditionalPrayer,/data-tp381-litany-step/);
+assert.match(traditionalPrayer,/if\(b\.dataset\.tp381LitanyMode\)/);
+const sections=value=>String(value).trim().split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean);
+const latin=sections(HOLY_NAME_LITANY_V381.la),english=sections(HOLY_NAME_LITANY_V381.en),french=sections(HOLY_NAME_LITANY_V381.fr);
+assert.deepEqual([latin.length,english.length,french.length],[7,7,7],"Holy Name original text sections are not aligned");
+assert.deepEqual(latin.map(x=>x.split("\n").length),[5,4,38,23,3,2,3],"Litany source structural verses changed");
+for(const code of ["la","en","fr"])assert.equal(sections(HOLY_NAME_LITANY_V381[code]).join("\n\n"),HOLY_NAME_LITANY_V381[code].trim(),"Litany full source changed: "+code);
+assert.equal(map.guides.newly_implemented[0].id,"pray.holy_name_litany");
+assert.equal(map.guides.newly_implemented[0].phone_verified,false);
 assert.equal(map.formation.sexual_ethics_topic_projection.topics.length,50);
 assert.equal(map.formation.sexual_ethics_topic_projection.question_ids.length,150);
 assert.equal(map.formation.sexual_ethics_topic_projection.extended_debate_question_ids.length,55);
 assert.equal(map.acceptance.runtime_implemented,false);
 assert.equal(map.acceptance.phone_verified,false);
-console.log("PASS Pray-Formation IA: 23 Prayer doors, 15 Formation entries, 36 Apostolate scenarios, 100 Prayer leaves, 15 declared handoffs, 20 unimplemented proposals; publication gates intact");
+console.log("PASS Pray-Formation IA: 23 Prayer doors, 15 Formation entries, 36 Apostolate scenarios, 100 Prayer leaves, 15 declared handoffs, 16 source-wired/4 proposed contextual links, Holy Name seven stages aligned; publication gates intact");
