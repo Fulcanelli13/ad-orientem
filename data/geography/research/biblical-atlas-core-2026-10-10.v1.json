@@ -1286,11 +1286,11 @@
       "summary_en": "Ruth's story and the birth of Christ are both associated with Bethlehem.",
       "historic_location_status": "KNOWN_MODERN_CITY",
       "proposed_present_geo": null,
-      "shared_place_id": "place:PS:nativity-bethlehem",
+      "shared_place_id": null,
       "source_evidence": [
         "BIBLICAL_REFERENCE_PRIMARY",
         "GEOLOCATION_REVIEW_PENDING",
-        "HISTORICAL_COMPLEX_RELATION_REVIEW_REQUIRED"
+        "PARENT_MONUMENT_LINK_PROVISIONAL_NOT_BIBLICAL_PLACE_IDENTITY"
       ],
       "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
       "chronology": {
@@ -1300,7 +1300,11 @@
         "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
         "qualifier": "No exact year asserted"
       },
-      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING",
+      "associated_monument_place_ids": [
+        "place:PS:nativity-bethlehem"
+      ],
+      "modern_monument_relation": "NAMED_ANCIENT_TOWN_WITHIN_WHICH_NATIVITY_CHURCH_REMAINS"
     },
     {
       "row_id": "BA-CORE-030",
@@ -3047,11 +3051,11 @@
       "summary_en": "The Crucifixion takes place at Golgotha, incorporated into the Holy Sepulchre complex.",
       "historic_location_status": "HOLY_SEPULCHRE_SUBSITE",
       "proposed_present_geo": null,
-      "shared_place_id": "place:PS:holy-sepulchre-jerusalem",
+      "shared_place_id": null,
       "source_evidence": [
         "BIBLICAL_REFERENCE_PRIMARY",
         "GEOLOCATION_REVIEW_PENDING",
-        "HISTORICAL_COMPLEX_RELATION_REVIEW_REQUIRED"
+        "PARENT_MONUMENT_LINK_PROVISIONAL_NOT_BIBLICAL_PLACE_IDENTITY"
       ],
       "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
       "chronology": {
@@ -3061,7 +3065,11 @@
         "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
         "qualifier": "No exact year asserted"
       },
-      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING",
+      "associated_monument_place_ids": [
+        "place:PS:holy-sepulchre-jerusalem"
+      ],
+      "modern_monument_relation": "SUBFEATURE_OF_EXISTING_HOLY_SEPULCHRE_COMPLEX"
     },
     {
       "row_id": "BA-CORE-070",
@@ -3098,11 +3106,11 @@
       "summary_en": "Christ is buried and the empty tomb is discovered after the Resurrection.",
       "historic_location_status": "HOLY_SEPULCHRE_SUBSITE",
       "proposed_present_geo": null,
-      "shared_place_id": "place:PS:holy-sepulchre-jerusalem",
+      "shared_place_id": null,
       "source_evidence": [
         "BIBLICAL_REFERENCE_PRIMARY",
         "GEOLOCATION_REVIEW_PENDING",
-        "HISTORICAL_COMPLEX_RELATION_REVIEW_REQUIRED"
+        "PARENT_MONUMENT_LINK_PROVISIONAL_NOT_BIBLICAL_PLACE_IDENTITY"
       ],
       "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
       "chronology": {
@@ -3112,7 +3120,11 @@
         "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
         "qualifier": "No exact year asserted"
       },
-      "naming_evidence": "EXPLICIT_BURIAL_STRUCTURE_NOT_BIBLICAL_PROPER_NAME"
+      "naming_evidence": "EXPLICIT_BURIAL_STRUCTURE_NOT_BIBLICAL_PROPER_NAME",
+      "associated_monument_place_ids": [
+        "place:PS:holy-sepulchre-jerusalem"
+      ],
+      "modern_monument_relation": "SUBFEATURE_OF_EXISTING_HOLY_SEPULCHRE_COMPLEX"
     },
     {
       "row_id": "BA-CORE-071",
@@ -3993,5 +4005,6 @@
     ],
     "note": "A book can lack explicit geographic mentions, but every occurrence must be audited; initial curated seed is not Catholic-canon exhaustive."
   },
-  "geographic_identities_are_separate_from_biblical_mentions": true
+  "geographic_identities_are_separate_from_biblical_mentions": true,
+  "modern_monument_crosswalk_policy": "Ancient place sense is NEVER the same record as an archaeological monument or sanctuary; any existing shared Place ID is a related later physical site (monument/chapel/complex) with typed relation, not equality."
 }
