@@ -147,6 +147,7 @@ function familyById(id){
 
 function discoveryLabel(result,state){
  const langFr=isFr(state);
+ if(result.kind==="content")return ({topic:langFr?"Thème · Morale":"Topic · Ethics",question:langFr?"Question · Morale":"Question · Ethics",spiritual:langFr?"Leçon · Vie spirituelle":"Lesson · Spiritual Life",latin:langFr?"Leçon · Latin":"Lesson · Latin"})[result.contentKind]||"Formation";
  return result.kind==="reference"
   ?(langFr?"Définition · Glossaire":"Definition · Glossary"):
   result.kind==="module"?(langFr?"Formation":"Learn"):
@@ -154,12 +155,14 @@ function discoveryLabel(result,state){
   (langFr?"Autre rubrique":"Elsewhere");
 }
 
-export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],referenceStatus="idle"}={}){
- const langFr=isFr(state),results=searchDiscovery(query,{sections:LEARN_LAYOUT.sections,referenceEntries,limit:24});
+export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],referenceStatus="idle",contentEntries=[],contentStatus="idle"}={}){
+ const langFr=isFr(state),results=searchDiscovery(query,{sections:LEARN_LAYOUT.sections,referenceEntries,contentEntries,limit:24});
  if(!query.trim())return "";
  const items=results.map(result=>{
   const type=result.kind;
-  const attrs=type==="module"
+  const attrs=type==="content"
+    ?`data-ao-learn-module="${esc(result.route)}" data-ao-learn-discovery-family="${esc(result.familyId)}" data-ao-learn-content-id="${esc(result.id)}" data-ao-learn-content-kind="${esc(result.contentKind)}"`
+    :type==="module"
     ?`data-ao-learn-module="${esc(result.id)}" data-ao-learn-discovery-family="${esc(result.familyId)}"`
     :type==="family"?`data-ao-learn-family="${esc(result.id)}"`
     :type==="surface"?`data-ao-learn-discovery-surface="${esc(result.id)}"`
@@ -170,8 +173,8 @@ export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],ref
     ${assetMask("ao-ui-next")}
   </button>`;
  }).join("");
- const note=referenceStatus==="loading"?(langFr?"Recherche dans les références…":"Searching references…"):
-  referenceStatus==="unavailable"?(langFr?"Index des références indisponible. Les rubriques restent accessibles.":"Reference index unavailable. Sections remain accessible."):"";
+ const note=(referenceStatus==="loading"||contentStatus==="loading")?(langFr?"Recherche dans les leçons et références…":"Searching lessons and references…"):
+  (referenceStatus==="unavailable"||contentStatus==="unavailable")?(langFr?"Un index est indisponible ; les modules restent accessibles.":"One index is unavailable; modules remain accessible."):"";
  return `<div class="aoLearnDiscoveryResultsMeta" role="status">${results.length
    ?esc((langFr?"Résultats : ":"Results: ")+results.length)
    :esc(referenceStatus==="loading"?(langFr?"Recherche en cours…":"Searching…"):(langFr?"Aucun résultat disponible":"No available result"))}
@@ -210,14 +213,20 @@ export function learnPresentationCss(){
 .aoLearnModSection{padding:18px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}.aoLearnModSectionHead{margin:0 0 10px}.aoLearnModSectionHead h2{margin:0;font:600 1rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.02em}.aoLearnModSectionHead p{max-width:640px;margin:5px 0 0;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-sm,12px)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnModGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.aoLearnFamilyGrid .aoLearnModCardMain{min-height:132px}.aoLearnFamilyDoor strong{font-size:1.08rem}.aoLearnModCard{min-width:0;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-card-radius,15px);background:var(--surface-1,#101821);overflow:hidden}.aoLearnModCard.featured{border-color:var(--liturgical-border,rgba(201,173,120,.4));background:linear-gradient(145deg,var(--liturgical-soft,rgba(201,173,120,.08)),var(--surface-1,#101821))}
 .aoLearnModCardMain{position:relative;width:100%;min-height:112px;padding:13px 13px 14px;border:0;background:transparent;color:var(--text,#e9e4d9);text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:6px}.aoLearnModCardMain.iconized{padding-left:61px}.aoLearnModCardMain>.aoLearnModIcon{position:absolute;left:13px;top:15px;width:36px;height:36px;color:var(--liturgical,#c9ad78)}.aoLearnModCardMain .type{color:var(--liturgical,#c9ad78);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}.aoLearnModCardMain strong{font:600 1rem/1.22 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModCardMain p{margin:0;color:var(--muted,#9ba5b1);font-size:.82rem;line-height:1.4}.aoLearnModCardMain:hover,.aoLearnModCardMain:focus-visible{outline:none;background:rgba(255,255,255,.025)}.aoLearnModCardMain:focus-visible{box-shadow:inset 0 0 0 2px var(--liturgical,#c9ad78)}
  .aoLearnDossierReview{margin-top:14px}.aoLearnDossierReviewNote{margin:0 0 12px;color:var(--ao-text-muted,#a9a5a0);font:500 .77rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnDossierReview .aoLearnModCardMain{min-height:100px}
+ .aoLearnQuestionsBridge{min-height:94px}.aoLearnQuestionsBridge:focus-visible,.aoLearnApostolateBridge:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
+ .aoLearnDossierReview .aoLearnModGrid{margin-top:8px}.aoLearnDiscoveryResult{min-height:52px}.aoLearnDiscoveryResultInfo{min-width:0;overflow-wrap:anywhere}
  @media(max-width:430px){.aoLearnModWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}.aoLearnModGrid{grid-template-columns:1fr}.aoLearnModCardMain{min-height:96px}.aoLearnModHero{padding-top:14px}.aoLearnModHero h1{font-size:2.35rem}}
 `;
 }
 
-export function renderLearnPresentation(root,state,win,{error="",familyId=null,discoveryQuery="",referenceEntries=[],referenceStatus="idle"}={}){
+export function renderLearnPresentation(root,state,win,{error="",familyId=null,discoveryQuery="",referenceEntries=[],referenceStatus="idle",contentEntries=[],contentStatus="idle"}={}){
   if(!root)return false;
   const langFr=isFr(state);
-  const family=familyById(familyId);
+  const family=familyById(familyId)||(familyId==="questions"?{
+    id:"questions",title:["Questions & Debates","Questions et débats"],
+    description:["Catholic moral questions, Apologetics and the Crisis in the Church. Unapproved research is marked as preliminary.","Morale catholique, apologétique et crise dans l’Église. Les recherches non approuvées restent signalées."],
+    items:LEARN_LAYOUT.sections.flatMap(s=>s.items).filter(item=>item.id==="learn.sexual_ethics")
+  }:null);
   root.dataset.aoLearnPresentationOwner=LEARN_PRESENTATION_VERSION;
   root.dataset.aoLearnFamily=family?.id||"";
   root.lang=langFr?"fr":"en";
@@ -232,10 +241,10 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
     </header>
     <main class="aoLearnModWrap">
       <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(heroTitle)}</h1><p>${esc(heroIntro)}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
-      <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus})}</div></section>
+      <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus,contentEntries,contentStatus})}</div></section>
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
       ${family
-        ?`<section class="aoLearnModSection aoLearnFamilyModules"><div class="aoLearnModGrid">${family.items.map(item=>cardMarkup(item,state,win)).join("")}</div></section>`
+        ?`<section class="aoLearnModSection aoLearnFamilyModules" aria-label="${esc(heroTitle)}"><div class="aoLearnModGrid">${family.items.filter(item=>family.id==="questions"||item.id!=="learn.sexual_ethics").map(item=>cardMarkup(item,state,win)).join("")}</div>${family.id==="questions"?formationDossierReviewMarkup(state,win):""}</section>`
         :`<div class="aoLearnIntentLayout">
           <section class="aoLearnIntentGroup aoLearnIntentPrimary" aria-label="${esc(langFr?"Apprendre la foi":"Learn the Faith")}">
             <div class="aoLearnIntentHeading"><small>${esc(langFr?"APPRENDRE":"LEARN")}</small><h2>${esc(langFr?"Apprendre la foi":"Learn the Faith")}</h2><p>${esc(langFr?"Catéchisme, vie spirituelle, sacrements et latin — choisissez votre sujet.":"Catechism, spiritual life, sacraments and Latin — choose a subject.")}</p></div>
@@ -245,7 +254,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
             <button type="button" class="aoLearnQuestionsBridge" data-ao-learn-questions>
               ${assetMask("ao-refined-help")}<span><small>${esc(langFr?"QUESTIONS":"QUESTIONS")}</small><strong>${esc(langFr?"Questions et débats":"Questions & Debates")}</strong><em>${esc(langFr?"Morale catholique, apologétique et crise de l’Église · les brouillons sourcés sont clairement signalés.":"Catholic moral questions, Apologetics and Church Crisis · source-linked working drafts are clearly marked.")}</em></span>${assetMask("ao-ui-next")}
             </button>
-            ${formationDossierReviewMarkup(state,win)}
+            
           </section>
           <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Mettre la foi en pratique":"Put Faith into Practice")}">
             <button type="button" class="aoLearnApostolateBridge" data-ao-learn-apostolate>${assetMask("ao-refined-help")}<span><strong>${esc(langFr?"Mettre la foi en pratique":"Put Faith into Practice")}</strong><small>${esc(langFr?"Apostolat · répondre, aider, accompagner":"Apostolate · answer, help, accompany")}</small></span>${assetMask("ao-ui-next")}</button>
