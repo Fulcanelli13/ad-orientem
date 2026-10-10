@@ -54,8 +54,9 @@ for(const entry of R.place_crosswalk){
  const actual=expected.get(entry.place_id);
  const actualIds=Object.fromEntries([...actual].map(([key,ids])=>[key,[...ids].sort()]));
  assert.deepEqual(entry.record_ids,actualIds,"record crosswalk changed for "+entry.place_id);
- const status=!place.geo?"NO_GEO":place.geo.source_url?
-   "GEO_SOURCE_URL_PRESENT":"GEO_SOURCE_URL_REVIEW";
+ const hasCoordinates=Number.isFinite(place.geo?.lat)&&Number.isFinite(place.geo?.lng);
+ const status=!hasCoordinates?"PENDING_COORDINATES":place.geo?.source_url?
+   "GEO_SOURCE_URL_PRESENT":"COORDINATES_MISSING_SOURCE_URL";
  assert.equal(entry.geo_source_status,status,"geo source review drifted for "+entry.place_id);
  if(actual.size)linked++;
  if(heritageKinds.filter(kind=>actual.has(kind)).length>=2)multicategory++;
@@ -77,8 +78,10 @@ assert.deepEqual(R.exception_queues.places_without_direct_claim,noRefs);
 assert.equal(R.counts.places_without_direct_claim,noRefs.length);
 assert.deepEqual(R.exception_queues.dangling_place_references,[]);
 assert.deepEqual(R.exception_queues.dangling_pilgrimage_shrine_references,[]);
-assert.deepEqual(R.exception_queues.geo_source_url_needs_review,
- R.place_crosswalk.filter(p=>p.geo_source_status==="GEO_SOURCE_URL_REVIEW").map(p=>p.place_id));
+assert.deepEqual(R.exception_queues.places_pending_coordinates,
+ R.place_crosswalk.filter(p=>p.geo_source_status==="PENDING_COORDINATES").map(p=>p.place_id));
+assert.deepEqual(R.exception_queues.coordinates_without_source_url,
+ R.place_crosswalk.filter(p=>p.geo_source_status==="COORDINATES_MISSING_SOURCE_URL").map(p=>p.place_id));
 assert.deepEqual(R.exception_queues.customs_without_exact_place,
  C.attestations.filter(p=>!p.place_id).map(p=>({
    id:p.attestation_id,map_policy:p.map_policy,geo_area_id:p.geo_area_id??null
@@ -93,4 +96,4 @@ assert.ok(R.exception_queues.novena_context_without_exact_place.every(x=>x.map_p
  "a site-specific novena lost its site and must not be transformed into a pin");
 console.log("PASS heritage crosswalk: "+G.places.length+" Places; "+linked+
  " associated; "+multicategory+" multitype; "+noRefs.length+" contextual-only; "+
- R.exception_queues.geo_source_url_needs_review.length+" georeference reviews; no dangling IDs");
+ R.exception_queues.places_pending_coordinates.length+" unmapped Places; no dangling IDs");
