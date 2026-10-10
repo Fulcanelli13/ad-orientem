@@ -1,3 +1,4 @@
+import {installMassHubStyles} from "./hub-styles.js";
 // First-class Mass domain: an actual module like Calendar, not the old
 // preflight's parent navigation. Canonical host still owns Mass permissions,
 // Proper selection and the existing R17 native 48-card LIVE reader.
@@ -188,6 +189,7 @@ export function createMassHubOwner(win=globalThis,{
  }
  function open(){
   if(disposed||!doc?.body)return false;
+  installMassHubStyles(doc);
   if(!root){
    root=node(doc,"section","aoMassHubSurface");root.id="ao-mass-modular-root";
    root.dataset.aoMassHubOwner="modular-mass-hub-v1";
