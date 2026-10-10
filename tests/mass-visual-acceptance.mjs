@@ -884,7 +884,7 @@ try{
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
-  assert.equal(gloriaBow.posture,"SIT","Gloria should show the faithful sitting when the priest is at the sedilia");
+  assert.equal(gloriaBow.posture,"STAND","Gloria stays standing until Qui sedes ad dexteram Patris");
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
@@ -962,7 +962,7 @@ try{
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
   assert.match(incarnatus.gesture,/GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
-  assert.equal(incarnatus.posture,"SIT","Incarnatus transient genuflection must not replace the customary seated posture");
+  assert.equal(incarnatus.posture,"STAND","Credo stands through Incarnatus and sits only after the kneeling");
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
