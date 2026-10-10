@@ -1,8 +1,8 @@
 import {CATHOLIC_BOOK_IDS} from "./canon.js";
 const CATALOGUE=Object.freeze({
- "dr-challoner":Object.freeze(["Matthew","Mark","Luke","John"]),
+ "dr-challoner":CATHOLIC_BOOK_IDS,
  "cpdv-2009":CATHOLIC_BOOK_IDS,
- "crampon-1923":Object.freeze(["Matthew","Mark","Luke","John","Acts","1Corinthians","Revelation","SongOfSongs","Isaiah","Judith","Psalms"])
+ "crampon-1923":CATHOLIC_BOOK_IDS
 });
 const CACHE="ao-scripture-witness-v1";
 export function hasScriptureWitness(editionId,book){return Boolean(CATALOGUE[editionId]?.includes(book));}
@@ -12,6 +12,17 @@ export function validateScriptureWitness(data,editionId,book){
    data.book!==book||data.sourceStatus!=="UNCOLLATED_SOURCE_WITNESS"||
    typeof data.sourceRepository!=="string"||typeof data.sourcePath!=="string"||
    !Array.isArray(data.verses)||!data.verses.length)throw Error("Invalid historical Scripture source witness");
+ // The two expanded traditional witnesses are bound to fixed historical upstreams.
+ // CPDV remains separately identified as an uncollated secondary transcription.
+ if(editionId==="dr-challoner" && (data.sourceRepository!=="AlvaroBalbin/catena"||
+    data.sourceCommit!=="efe1bd084d918a34ca22ffeef2ecf711c593b392"||
+    data.sourcePath!=="data/bible/drb/"+book.replace(/([0-9])(?=[A-Z])/g,"$1-").replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase()+".jsonl"))
+    throw Error("Unpinned Douay witness");
+ if(editionId==="crampon-1923" && (data.sourceRepository!=="scrollmapper/bible_databases"||
+    data.sourceCommit!=="e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c"||
+    data.sourceBlobSha!=="a6c4a997fde1bda4d9025064aaf7c1dfe26f9001"||
+    data.sourcePath!=="formats/json/FreCrampon.json"))
+    throw Error("Unpinned Crampon witness");
  const ids=new Set();
  for(const row of data.verses){
    if(!Array.isArray(row)||row.length!==3||!Number.isSafeInteger(row[0])||row[0]<1||
@@ -24,7 +35,7 @@ export function validateScriptureWitness(data,editionId,book){
   editionId,book,chapter,verseStart,verseEnd:verseStart,text,
   sourceWitness:true,reviewed:false,sourceEdition:editionId,
   licenceId:"UNCOLLATED_CATHOLIC_SOURCE_WITNESS",
-  sourceUrl:"https://github.com/"+data.sourceRepository+"/blob/main/"+data.sourcePath,
+  sourceUrl:"https://github.com/"+data.sourceRepository+"/blob/"+(data.sourceCommit||"main")+"/"+data.sourcePath,
   sourceStatus:data.sourceStatus
  }));
 }
