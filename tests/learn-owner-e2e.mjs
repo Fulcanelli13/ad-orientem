@@ -501,10 +501,11 @@ try{
     assert.ok(child.buttons>0,"Formation child lacks user actions: "+spec.id);
     await assertFocusSafe("Formation "+spec.id+" opened");
     if(spec.exit==="daily"){
-      // Daily Catechism is an existing donor, not a new native reader.
-      await page.evaluate(()=>globalThis.AO_DAILY_CATECHISM?.close?.());
+      // Exercise the actual donor close control, not a programmatic API exit.
+      await page.locator(spec.root+" [data-dc-close]").tap({timeout:10000});
     }else if(spec.exit==="catechism"){
-      await page.evaluate(()=>globalThis.AO_TRADITIONAL_CATECHISM?.close?.());
+      // The overview's native Close button must restore its suspended family.
+      await page.locator(spec.root+" [data-cate-close]").tap({timeout:10000});
     }else{
       await page.locator(spec.root+" "+spec.exit).first().tap({timeout:10000});
     }
