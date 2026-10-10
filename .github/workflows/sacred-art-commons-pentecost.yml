@@ -1,0 +1,38 @@
+name: Sacred art — Commons Pentecost originals
+
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - "tools/calendar/acquire-commons-pentecost.py"
+      - ".github/workflows/sacred-art-commons-pentecost.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-commons-pentecost
+  cancel-in-progress: true
+
+jobs:
+  originals-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow numpy
+      - name: Acquire exact Commons originals and verify posted SHA1
+        run: python tools/calendar/acquire-commons-pentecost.py
+      - name: Preserve source evidence and originals, not production assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-pentecost-commons-originals
+          path: artifacts/sacred-art-pentecost-commons/
+          retention-days: 30
+          if-no-files-found: warn
