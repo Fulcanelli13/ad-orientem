@@ -1993,13 +1993,24 @@
         "source": "MET_OBJECT_PAGE",
         "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3895,
+          "height": 2998
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-436672.jpg",
+        "originalWidth": 3895,
+        "originalHeight": 2998,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      }
     },
     {
       "id": "nga-41656",
@@ -2405,13 +2416,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3851,
+          "height": 3330
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-437371.jpg",
+        "originalWidth": 3851,
+        "originalHeight": 3330,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      }
     },
     {
       "id": "met-442488",
@@ -2443,13 +2465,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3153,
+          "height": 4000
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-442488.jpg",
+        "originalWidth": 3153,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      }
     },
     {
       "id": "met-435580",
@@ -2519,13 +2552,24 @@
         "source": "OBJECT_PAGE_CHECKED",
         "rights": "OBJECT_PAGE_CHECKED",
         "artistic": "PENDING_HUMAN_CURATOR",
-        "image": "NOT_ACQUIRED",
-        "pixelDimensions": null,
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3549,
+          "height": 4000
+        },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
         "subjectConfidence": "DIRECT_SUBJECT"
       },
-      "image": null
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-436721.jpg",
+        "originalWidth": 3549,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      }
     },
     {
       "id": "met-436839",
@@ -2823,11 +2867,1536 @@
         "subjectConfidence": "SUBJECT_CONTEXT_REQUIRED"
       },
       "image": null
+    },
+    {
+      "id": "met-458966",
+      "title": "The Annunciation",
+      "artist": "Sassetta",
+      "dated": "1437–44",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/458966",
+        "objectId": "458966",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation",
+          "incarnation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "angelus",
+          "rosary.joy1"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2344,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-458966.jpg",
+        "originalWidth": 2344,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459055",
+      "title": "The Annunciation",
+      "artist": "Hans Memling",
+      "dated": "1480–89",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459055",
+        "objectId": "459055",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation",
+          "incarnation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "angelus",
+          "rosary.joy1"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2923,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459055.jpg",
+        "originalWidth": 2923,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-435899",
+      "title": "The Annunciation",
+      "artist": "Petrus Christus",
+      "dated": "ca. 1445",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/435899",
+        "objectId": "435899",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation",
+          "incarnation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "angelus",
+          "rosary.joy1"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3089,
+          "height": 3710
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-435899.jpg",
+        "originalWidth": 3089,
+        "originalHeight": 3710,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-436096",
+      "title": "The Annunciation",
+      "artist": "Gerard David",
+      "dated": "1506",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/436096",
+        "objectId": "436096",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation",
+          "incarnation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "angelus",
+          "rosary.joy1"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4000,
+          "height": 2426
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-436096.jpg",
+        "originalWidth": 4000,
+        "originalHeight": 2426,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459066",
+      "title": "Virgin and Child",
+      "artist": "Netherlandish (Antwerp?)",
+      "dated": "16th century",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459066",
+        "objectId": "459066",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "virgin-child",
+          "marian"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": []
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2966,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459066.jpg",
+        "originalWidth": 2966,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-435766",
+      "title": "Virgin and Child",
+      "artist": "Dieric Bouts",
+      "dated": "1475–99",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/435766",
+        "objectId": "435766",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "virgin-child",
+          "marian"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": []
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2927,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-435766.jpg",
+        "originalWidth": 2927,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-436100",
+      "title": "The Nativity",
+      "artist": "Gerard David",
+      "dated": "early 1480s",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/436100",
+        "objectId": "436100",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "joy3"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy3"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3083,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-436100.jpg",
+        "originalWidth": 3083,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459007",
+      "title": "The Nativity",
+      "artist": "Lorenzo Monaco",
+      "dated": "ca. 1406–10",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459007",
+        "objectId": "459007",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "joy3"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy3"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3811,
+          "height": 2544
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459007.jpg",
+        "originalWidth": 3811,
+        "originalHeight": 2544,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-435828",
+      "title": "The Presentation in the Temple",
+      "artist": "Byzantine Painter",
+      "dated": null,
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/435828",
+        "objectId": "435828",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "joy4"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy4"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3475,
+          "height": 3675
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-435828.jpg",
+        "originalWidth": 3475,
+        "originalHeight": 3675,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-437736",
+      "title": "Christ among the Doctors",
+      "artist": "Spanish (Catalan) Painter",
+      "dated": null,
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437736",
+        "objectId": "437736",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "joy5"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2832,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-437736.jpg",
+        "originalWidth": 2832,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-438466",
+      "title": "The Flagellation",
+      "artist": "Master of the Berswordt Altar",
+      "dated": "ca. 1400",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/438466",
+        "objectId": "438466",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "sor2"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor2"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2863,
+          "height": 3808
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-438466.jpg",
+        "originalWidth": 2863,
+        "originalHeight": 3808,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459021",
+      "title": "The Flagellation",
+      "artist": "Master of Forlì",
+      "dated": "ca. 1300–10",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459021",
+        "objectId": "459021",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "sor2"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor2"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2911,
+          "height": 3880
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459021.jpg",
+        "originalWidth": 2911,
+        "originalHeight": 3880,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459061",
+      "title": "Christ Carrying the Cross, with the Crucifixion; The Resurrection, with the Pilgrims of Emmaus",
+      "artist": "Gerard David",
+      "dated": "ca. 1510",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459061",
+        "objectId": "459061",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "sor4"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor4"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2565,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459061.jpg",
+        "originalWidth": 2565,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-435577",
+      "title": "The Crucifixion",
+      "artist": "Fra Angelico",
+      "dated": "ca. 1440",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/435577",
+        "objectId": "435577",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "sor5"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4000,
+          "height": 2977
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-435577.jpg",
+        "originalWidth": 4000,
+        "originalHeight": 2977,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459005",
+      "title": "The Crucifixion",
+      "artist": "Andrea di Cione (Orcagna)",
+      "dated": "ca. 1365",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459005",
+        "objectId": "459005",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "sor5"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2493,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459005.jpg",
+        "originalWidth": 2493,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-437639",
+      "title": "Christ before Pilate; The Resurrection",
+      "artist": "Ludwig Schongauer",
+      "dated": null,
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437639",
+        "objectId": "437639",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "glo1"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo1"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2096,
+          "height": 3812
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-437639.jpg",
+        "originalWidth": 2096,
+        "originalHeight": 3812,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-435656",
+      "title": "The Assumption of the Virgin",
+      "artist": "Bergognone",
+      "dated": "ca. 1510",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/435656",
+        "objectId": "435656",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "glo4"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo4"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 1859,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-435656.jpg",
+        "originalWidth": 1859,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-437673",
+      "title": "The Assumption of the Virgin with Saints Michael and Benedict",
+      "artist": "Luca Signorelli",
+      "dated": "ca. 1493–96",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437673",
+        "objectId": "437673",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "glo4"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo4"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2947,
+          "height": 3820
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-437673.jpg",
+        "originalWidth": 2947,
+        "originalHeight": 3820,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-458978",
+      "title": "Coronation of the Virgin",
+      "artist": "Giovanni di Paolo",
+      "dated": "ca. 1455",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/458978",
+        "objectId": "458978",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "glo5"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2748,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-458978.jpg",
+        "originalWidth": 2748,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-458961",
+      "title": "The Coronation of the Virgin",
+      "artist": "Niccolò di Buonaccorso",
+      "dated": "ca. 1380",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/458961",
+        "objectId": "458961",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "glo5"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2632,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-458961.jpg",
+        "originalWidth": 2632,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-437524",
+      "title": "The Coronation of the Virgin",
+      "artist": "Peter Paul Rubens",
+      "dated": "ca. 1632–33",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437524",
+        "objectId": "437524",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "glo5"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3036,
+          "height": 3716
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-437524.jpg",
+        "originalWidth": 3036,
+        "originalHeight": 3716,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459065",
+      "title": "Virgin and Child",
+      "artist": "Master of the Female Half-Lengths",
+      "dated": "ca. 1525–50",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459065",
+        "objectId": "459065",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "virgin-child",
+          "marian"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": []
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2832,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459065.jpg",
+        "originalWidth": 2832,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459053",
+      "title": "Virgin and Child",
+      "artist": "Hans Memling",
+      "dated": "early 16th century",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459053",
+        "objectId": "459053",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "virgin-child",
+          "marian"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": []
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2748,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459053.jpg",
+        "originalWidth": 2748,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-437698",
+      "title": "Christ Blessing",
+      "artist": "Andrea Solario",
+      "dated": "ca. 1524",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437698",
+        "objectId": "437698",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "christ-blessing"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "adoration"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2593,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-437698.jpg",
+        "originalWidth": 2593,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-436797",
+      "title": "The Holy Family",
+      "artist": "Joos van Cleve",
+      "dated": "ca. 1525",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/436797",
+        "objectId": "436797",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "holy-family",
+          "saint-joseph"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "saint-joseph"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2693,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-436797.jpg",
+        "originalWidth": 2693,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459059",
+      "title": "The Holy Family",
+      "artist": "Joos van Cleve",
+      "dated": "possibly 1527–33",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459059",
+        "objectId": "459059",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "holy-family",
+          "saint-joseph"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "saint-joseph"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2516,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459059.jpg",
+        "originalWidth": 2516,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459063",
+      "title": "Virgin and Child with Saint Joseph",
+      "artist": "Netherlandish Painter",
+      "dated": "16th century",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459063",
+        "objectId": "459063",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-joseph",
+          "virgin-child"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "saint-joseph"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3656,
+          "height": 3659
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459063.jpg",
+        "originalWidth": 3656,
+        "originalHeight": 3659,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-724811",
+      "title": "A Miracle of Saint Joseph of Cupertino",
+      "artist": "Placido Costanzi",
+      "dated": "1750",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/724811",
+        "objectId": "724811",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-joseph-of-cupertino"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": []
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2878,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-724811.jpg",
+        "originalWidth": 2878,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-459044",
+      "title": "Saints John the Evangelist and Mary Magdalene",
+      "artist": "Follower of Giotto",
+      "dated": "ca. 1335–45",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459044",
+        "objectId": "459044",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-mary-magdalene"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "confession"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2776,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-459044.jpg",
+        "originalWidth": 2776,
+        "originalHeight": 4000,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-436801",
+      "title": "The Marriage Feast at Cana",
+      "artist": "Juan de Flandes",
+      "dated": "ca. 1497",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/436801",
+        "objectId": "436801",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "lum2"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.lum2"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2851,
+          "height": 3722
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-436801.jpg",
+        "originalWidth": 2851,
+        "originalHeight": 3722,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
+    },
+    {
+      "id": "met-440393",
+      "title": "The Baptism of Christ",
+      "artist": "Jacopo Bassano",
+      "dated": "ca. 1590",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/440393",
+        "objectId": "440393",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Batch-2 Met official API verified Paintings and isPublicDomain=true and downloaded authenticated original JPEG; archive report includes SHA256 and detailed source metadata.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "lum1"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.lum1"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3143,
+          "height": 3857
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_OR_COMPOSITE_VERIFY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38040772457",
+        "artifactId": 11665744037,
+        "archiveOriginal": "museum-originals/met-440393.jpg",
+        "originalWidth": 3143,
+        "originalHeight": 3857,
+        "shaLocation": "research.json[artworks] in the same artifact"
+      },
+      "image": null
     }
   ],
   "notes": [
     "Explicit prayerKeys are editorial links for recurring prayer artwork pools. These do not approve artwork and are never inferred from the prayer date by the runtime.",
     "Coverage-first 12 additional museum object candidates (8 Cleveland with archival originals, 1 Met, 3 NGA). CMA composite diptych requires iconographic review. Two CMA Assumption studies and a misassigned Presentation study are retained in acquisition archive only, not counted as direct artwork candidates.",
-    "Two Art Institute painted Pentecost records close the source-catalogue zero for rosary.glo3, but IIIF image downloads returned HTTP 403; original image quality is not verified. They are leads, not acquired paintings."
+    "Two Art Institute painted Pentecost records close the source-catalogue zero for rosary.glo3, but IIIF image downloads returned HTTP 403; original image quality is not verified. They are leads, not acquired paintings.",
+    "Batch-2 Met original JPEG acquisition produced 35 technically passing source-authenticated paintings; subjects tagged with caution for composites and patron saint identity. No artist/phone-crop review and no production promotion."
   ]
 }
