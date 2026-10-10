@@ -78,7 +78,7 @@ assert.equal(loughDergProfile.seasonal_pilgrimages.length,1);
 assert.match(loughDergProfile.seasonal_pilgrimages[0].title,/Three Day Pilgrimage/);
 const ui=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"pilgrimages",items:projection.byLens.pilgrimages,view:"list",
-  placeProfiles:profiles,selectedPlaceId:parayProfile.place_id,counts:projection.counts,
+  placeProfiles:profiles,selectedPlaceId:parayProfile.place_id,expandPlace:true,counts:projection.counts,
 }));
 assert.match(ui,/NEUVAINES ET DÉVOTIONS ASSOCIÉES/);
 assert.match(ui,/data-explore-open-novena="sacred_heart"/);
