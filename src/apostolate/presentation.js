@@ -127,14 +127,21 @@ function listMarkup(mode,state,scenarios){
     const rows=filtered(all,state);
     return `<section class="aoApostolateListIntro"><h1>${esc(L(state,"Practise","S’exercer"))}</h1><p>${esc(L(state,"Choose a real situation, draft a short response, then compare it with the sourced guide. No score and no saved draft.","Choisissez une situation réelle, rédigez une réponse brève, puis comparez-la au guide sourcé. Aucun score et aucun brouillon enregistré."))}</p></section>${searchMarkup(state)}<div class="aoApostolateList">${rows.map(s=>scenarioButton(s,state)).join("")}</div>`;
   }
-  const groups=[
-    [L(state,"When someone wants to return or begin","Quand quelqu’un veut revenir ou commencer"),all.filter(s=>s.id.startsWith("HS")),true],
-    [L(state,"Family & home","Famille & foyer"),all.filter(s=>s.id.startsWith("FH")),false],
+  // Apostolate already has three practice engines. Organise their scenario
+  // catalogue by the person’s intention, without duplicating a scenario.
+  const groups=mode==="introduce"?[
     [L(state,"Teach or introduce the Faith","Transmettre ou introduire la foi"),all.filter(s=>s.id.startsWith("TF")),false],
     [L(state,"Introduce a devotion or practice","Introduire une dévotion ou une pratique"),all.filter(s=>s.id.startsWith("DV")),false],
     [L(state,"Work & social situations","Travail & vie sociale"),all.filter(s=>s.id.startsWith("WC")),false],
+  ]:[
+    [L(state,"When someone wants to return or begin","Quand quelqu’un veut revenir ou commencer"),all.filter(s=>s.id.startsWith("HS")),true],
+    [L(state,"Family & home","Famille & foyer"),all.filter(s=>s.id.startsWith("FH")),false],
   ];
-  return `<section class="aoApostolateListIntro"><h1>${esc(L(state,"Help someone","Aider quelqu’un"))}</h1><p>${esc(L(state,"Choose the situation that best matches the other person’s actual need. Apostolate does not replace a priest, sacrament or specialist owner.","Choisissez la situation qui correspond le mieux au besoin réel de l’autre personne. Apostolate ne remplace ni un prêtre, ni un sacrement, ni le module compétent."))}</p></section>${searchMarkup(state)}${groups.map(([title,records,quote])=>{const rows=filtered(records,state);return rows.length?`<section class="aoApostolateGroup"><h2>${esc(title)}</h2><div class="aoApostolateList">${rows.map(s=>scenarioButton(s,state,{quote})).join("")}</div></section>`:""}).join("")}`;
+  const title=mode==="introduce"?L(state,"Introduce the Faith","Faire découvrir la foi"):L(state,"Help someone","Aider quelqu’un");
+  const description=mode==="introduce"
+    ?L(state,"Teaching, inviting and introducing prayer or Catholic practice are distinct from answering objections and giving pastoral help.","Enseigner, inviter et introduire la prière ou une pratique catholique ne se confondent ni avec la réponse aux objections ni avec l’accompagnement pastoral.")
+    :L(state,"Choose the situation that best matches the other person’s actual need. Apostolate does not replace a priest, sacrament or specialist owner.","Choisissez la situation qui correspond le mieux au besoin réel de l’autre personne. Apostolate ne remplace ni un prêtre, ni un sacrement, ni le module compétent.");
+  return `<section class="aoApostolateListIntro"><h1>${esc(title)}</h1><p>${esc(description)}</p></section>${searchMarkup(state)}${groups.map(([title,records,quote])=>{const rows=filtered(records,state);return rows.length?`<section class="aoApostolateGroup"><h2>${esc(title)}</h2><div class="aoApostolateList">${rows.map(s=>scenarioButton(s,state,{quote})).join("")}</div></section>`:""}).join("")}`;
 }
 
 function skillDetailMarkup(skill,state,sources){
@@ -158,6 +165,7 @@ function homeMarkup(state){
   const cards=[
     ["answer","ao-ui-search",L(state,"Answer a question","Répondre à une question"),L(state,"Concise Catholic answers to common objections and questions.","Réponses catholiques concises aux questions et objections courantes.")],
     ["help","ao-refined-help",L(state,"Help someone","Aider quelqu’un"),L(state,"Pastoral, family and practical situations where the next step matters as much as the explanation.","Situations pastorales, familiales et pratiques où la prochaine étape compte autant que l’explication.")],
+    ["introduce","ao-refined-study",L(state,"Introduce the Faith","Faire découvrir la foi"),L(state,"Teach simply, invite respectfully and introduce someone to prayer and Catholic life.","Enseigner simplement, inviter avec respect et faire découvrir la prière et la vie catholique.")],
     ["practice","ao-refined-study",L(state,"Practise","S’exercer"),L(state,"Draft a real answer, then compare it with the sourced model and apostolic skills.","Rédigez une réponse réelle, puis comparez-la au modèle sourcé et aux compétences apostoliques.")],
   ];
   return `<section class="aoApostolateHero"><div class="aoApostolateEyebrow">APOSTOLATE</div><h1>${esc(L(state,"Help with clarity and charity","Aider avec clarté et charité"))}</h1><p>${esc(L(state,"Answer honestly, help the person in front of you, and know when to hand the question to Formation, Prayer, Explore or a priest.","Répondez honnêtement, aidez la personne devant vous et sachez quand orienter vers la Formation, la Prière, Explorer ou un prêtre."))}</p></section><div class="aoApostolateHomeGrid">${cards.map(([id,asset,title,desc])=>`<button type="button" class="aoApostolateHomeCard" data-ao-ap-mode="${id}">${icon(asset)}<span><strong>${esc(title)}</strong><small>${esc(desc)}</small></span>${icon("ao-ui-next")}</button>`).join("")}</div>`;
@@ -192,7 +200,7 @@ export function renderApostolatePresentation(root,state,{scenarios,skills,source
   root.lang=isFr(state)?"fr":"en";
   let body="";
   if(state.view==="home")body=homeMarkup(state);
-  else if(state.view==="answer"||state.view==="help")body=listMarkup(state.view,state,scenarios);
+  else if(state.view==="answer"||state.view==="help"||state.view==="introduce")body=listMarkup(state.view,state,scenarios);
   else if(state.view==="practice"&&!selected)body=listMarkup("practice",state,scenarios);
   else if(state.view==="practice"&&selected)body=practiceMarkup(selected,state,skills,sources);
   else if(state.view==="scenario")body=detailMarkup(selected,state,skills,sources);
