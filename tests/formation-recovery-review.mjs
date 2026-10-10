@@ -160,6 +160,15 @@ const windowLike={
 };
 const live=createFormationRecoveryReview(windowLike);
 assert.equal(await live.open(),true,"QA source files failed to mount");
+assert.equal(await live.open({corpus:"apologetics"}),true);
+const apolNode=nodes.get(RECOVERY_REVIEW_ROOT);
+assert.ok(apolNode.innerHTML.includes('data-rr-dossier="APOL-001"'),"Apologetics review has no dossiers");
+assert.ok(!apolNode.innerHTML.includes('data-rr-dossier="CR-LIT-05"'),"Apologetics review leaked Crisis dossiers");
+assert.ok(apolNode.innerHTML.includes("data-rr-family"),"Family filter missing");
+assert.equal(await live.open({corpus:"crisis"}),true);
+assert.ok(apolNode.innerHTML.includes('data-rr-dossier="CR-LIT-05"'),"Crisis review has no dossiers");
+assert.ok(!apolNode.innerHTML.includes('data-rr-dossier="APOL-001"'),"Crisis review leaked Apologetics dossiers");
+assert.equal(await live.open(),true,"Combined QA library must remain usable");
 assert.equal(live.status().researchRecords,123);
 assert.equal(live.status().newContemporaryDrafts,21);
 const node=nodes.get(RECOVERY_REVIEW_ROOT);
