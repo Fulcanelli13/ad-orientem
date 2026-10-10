@@ -1860,10 +1860,6 @@ export function createReaderDomAdapter({
 
   function renderMoment(moment){
     if(!prepared) throw new Error("Reader shell must be mounted before rendering moments");
-    const priorPosture=textValue(current?.posture);
-    const priorPostureCueId=current?.postureCue?.cueId??null;
-    const priorCueVisible=root.querySelector('.ao-rail-left [data-channel="posture-change"]')
-      ?.dataset.active==="true";
     current=normalizeReaderMoment(moment,current ?? {});
     setText(root,"section-title",current.sectionTitle);
     for(const button of root.querySelectorAll?.("[data-reader-section]")??[]){
@@ -1890,18 +1886,12 @@ export function createReaderDomAdapter({
     }
 
     setChannel(root,"posture",current.posture);
-    // A source posture anchor is not automatically a fresh transition:
-    // Collect STAND after Gloria STAND is a redundant marker, whereas STAND
-    // after EPISTLE SIT is a real action. A valid cue must match the resolved
-    // profile AND alter the preceding posture. Preserve an already-visible
-    // cue across repeated render calls with the same canonical source ID.
-    const newPosture=textValue(current.posture);
-    const cueId=current.postureCue?.cueId??null;
-    const postureCueMatches=Boolean(current.postureCue && newPosture &&
-      textValue(current.postureCue)===newPosture);
-    const continuingCue=Boolean(priorCueVisible&&cueId&&cueId===priorPostureCueId);
-    const postureChangeVisible=postureCueMatches &&
-      (priorPosture!==newPosture || continuingCue);
+    // Canonical R17 cue projection already distinguishes a true posture
+    // transition from a repeated source marker (e.g. Collect STAND after
+    // Gloria STAND). The DOM only guards against a conflicting local profile;
+    // navigating backward/forward must never redefine the source sequence.
+    const postureChangeVisible=Boolean(current.postureCue && current.posture &&
+      textValue(current.postureCue)===textValue(current.posture));
     setChannel(root,"posture-change",postureChangeVisible ? current.postureCue : null);
     const postureRail=root.querySelector('.ao-rail-left [data-channel="posture"]');
     if(postureRail)postureRail.dataset.change=String(postureChangeVisible);
