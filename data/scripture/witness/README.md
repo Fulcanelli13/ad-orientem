@@ -8,7 +8,7 @@ They are **not** the certified edition packs used by
 
 ## Coverage restored
 
-- **CPDV** (contemporary English): 73/73 Catholic books, 1,334 chapters and
+- **CPDV** (contemporary English): 73/73 Catholic books, 1,333 source chapters (including Esther\u2019s 15-chapter arrangement) and
   35,825 nonblank verse slots, from `exanx/bible-json/CPDV-73-Books` (secondary
   machine-readable distribution). Author's master and licence explanation:
   https://sacredbible.org/catholic/index.htm . This **does not constitute**
@@ -38,7 +38,7 @@ cached book. First use of an uncached book requires connectivity to the app.
 French Crampon Matthew 17:27 has a blank transcription entry. The recovered
 source notes also flag Psalm 44/45 and 131/132 numbering and the unusually
 grouped Judith 13 verses. Edition-specific chapter and verse identities for
-Psalms, Esther, the Song of Songs, and Greek additions need further collation.
+Psalms, Esther, the Song of Songs, and Greek additions need further collation. CPDV Esther\u2019s 15 chapter arrangement must not be forced into the 16-chapter Douay system.
 Source transcriptions are not automatically suitable for cross-translation
 verse alignment.
 
