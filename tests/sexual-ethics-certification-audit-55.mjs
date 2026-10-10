@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {CSE_QUESTIONS,CSE_QUESTION_MAP} from "../src/learn/sexual-ethics-data/index.js";
 import {CSE_DEBATE_FIELDS,CSE_DEBATE_IDS,CSE_DEBATE_MAP} from "../src/learn/sexual-ethics-data/debates.js";
 import {CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/sources.js";
+import {cseSourceTargets} from "../src/learn/sexual-ethics-data/source-targets.js";
 import {CSE_HIGH_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-high24.js";
 import {CSE_REMAINING_STAGE_SOURCE_IDS} from "../src/learn/sexual-ethics-data/stage-evidence-remaining31.js";
 import {paragraphRefsFor} from "../src/learn/sexual-ethics-data/provenance.js";
@@ -18,7 +19,7 @@ assert.equal(report.statistics.direct_registered_source_references,636);
 assert.equal(report.statistics.bibliographic_only_rendered,0);
 assert.equal(report.statistics.full_certifications,0);
 assert.equal(report.statistics.publication_approval,false);
-assert.equal(report.reconciliation?.changed_stage_selections,25);
+assert.equal(report.reconciliation?.changed_stage_selections,31);
 assert.equal(report.reconciliation?.bibliographic_only_rendered,0);
 assert.equal(report.reconciliation?.full_eight_stage_certifications,0);
 assert.equal(audit.summary.stage_full_text_certified,0);
@@ -43,9 +44,22 @@ for(const review of report.cases){
    const actual=paragraphRefsFor(q,"debate",stage.stage);
    assert.deepEqual(actual.map(x=>x[0]),stage.selected_source_ids);
    assert.equal(stage.evidence_validation,"REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF");
-   for(const [sid] of actual){
-     assert.ok(CSE_SOURCE_MAP[sid]?.canonical_url?.startsWith("https://"),id+" "+sid+" URL invalid");
-     assert.ok(!CSE_SOURCE_MAP[sid].canonical_url.includes("books.google.com"),id+" bibliographic preview cited as evidence");
+   for(const [sid,locator] of actual){
+     const source=CSE_SOURCE_MAP[sid];
+     assert.ok(source?.canonical_url?.startsWith("https://"),id+" "+sid+" URL invalid");
+     // Source links must be checked *after* the canonical resolver: Fletcher's
+     // index is bibliographic, but bounded 1966 locators are routed to the
+     // original digitized text. Unscoped books must never pass as evidence.
+     const targets=cseSourceTargets(sid,locator,source);
+     assert.ok(targets.length>0,id+" "+sid+" has no rendered citation");
+     for(const target of targets){
+       assert.match(target.url,/^https:\/\//);
+       assert.ok(!["catalogue","unverified"].includes(target.scope),id+" "+sid+" rendered a preview as passage proof");
+       if(sid==="FLETCHER1966"){
+         assert.equal(target.scope,"digitized-original");
+         assert.equal(target.url,source.original_digitized_text_url);
+       }
+     }
      refs++;
    }
    stages++;
