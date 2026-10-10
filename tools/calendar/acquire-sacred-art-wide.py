@@ -83,6 +83,10 @@ def existing_matches(target,works):
   elif key.startswith("devotion.") and key[9:] in links: counted.append(a)
   elif key.startswith("calendar.") and any(x=="calendar."+key[9:] for x in vals):
    if key[9:] in (assoc.get("subjectKeys") or []):counted.append(a)
+  elif key.startswith("scripture.") and key[10:] in (a.get("tags",{}).get("scriptureIdentityKeys") or []):
+   counted.append(a)
+  elif key.startswith("person.") and a.get("tags",{}).get("portraitSubjectId")==key[7:]:
+   counted.append(a)
  return [a for a in counted if a.get("review",{}).get("image")=="ACQUIRED_REVIEW_ARCHIVE_ONLY"
    and re.fullmatch("[0-9a-f]{64}",(a.get("acquisition") or {}).get("originalSha256") or "")]
 def search_met(q):
