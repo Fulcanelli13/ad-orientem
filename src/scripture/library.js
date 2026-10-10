@@ -10,6 +10,7 @@ import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 import {hasScriptureWitness} from "./witness-loader.js";
+import {scriptureWitnessEmptySlots} from "./witness-gaps.js";
 
 const L={
  en:{heading:"Sacred Scripture",notice:"Catholic Bible reading. Historical source transcriptions are labelled pending edition collation.",
@@ -310,11 +311,28 @@ export function mountScriptureLibrary(root,{
        sourceNotice.dataset.scriptureWitnessUnreviewed=editionId;
        textBlock.append(sourceNotice);
      }
-     for(const item of chapterEntries.filter(item=>contextDepth==="chapter"||!context?.reference|| (item.verseStart>=location.verseStart&&item.verseStart<=location.verseEnd))){
+     const entireChapter=contextDepth==="chapter"||!context?.reference;
+     const visible=chapterEntries.filter(item=>entireChapter||
+       (item.verseStart>=location.verseStart&&item.verseStart<=location.verseEnd));
+     const missing=scriptureWitnessEmptySlots(editionId,location.book,location.chapter)
+       .filter(v=>entireChapter||(v>=location.verseStart&&v<=location.verseEnd));
+     for(const item of visible){
        const verse=element("p",item.text,"aoScriptureVerse");verse.dataset.verse=String(item.verseStart);
        const sup=element("span",String(item.verseStart)+" ");sup.className="aoScriptureVerseNumber";
        verse.prepend(sup);textBlock.append(verse);
      }
+     if(missing.length){
+       const note=element("p",(lang==="fr"
+         ?"La transcription de la source ne contient pas le texte des versets : "
+         :"The source transcription has no text for verse(s): ")+
+         missing.join(", ")+".","aoScriptureNotice aoScriptureMissingVerses");
+       note.dataset.scriptureSourceGaps=missing.join(",");
+       textBlock.append(note);
+     }
+     if(!visible.length&&!missing.length)
+       textBlock.append(element("p",lang==="fr"
+         ?"Aucun texte disponible pour ces versets dans la transcription de référence."
+         :"The source transcription contains no text for these selected verses.","aoScriptureNotice"));
    } else textBlock.append(element("p",t.unavailable));
    main.append(textBlock);
    const textualNotes=cpdvTextualNotesFor(editionId,location);
@@ -404,7 +422,20 @@ export function mountScriptureLibrary(root,{
  return Object.freeze({
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
    setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
-   setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");const closeFocused=wrap.querySelector("[data-scripture-close]")===document.activeElement;records=next;draw();if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});},
+   setRecords(next){
+      if(!Array.isArray(next))throw new TypeError("Scripture records array required");
+      records=next;
+      // A source book may finish downloading as a reader types a new
+      // chapter/verse. Recreating the controls before their change event
+      // would discard the uncommitted number and reset navigation to verse 1.
+      const focused=document.activeElement;
+      const fields=wrap.querySelectorAll(".aoScriptureNav input");
+      if((focused===fields[0]&&focused.value!==String(location.chapter))||
+         (focused===fields[1]&&focused.value!==String(location.verseStart)))return;
+      const closeFocused=wrap.querySelector("[data-scripture-close]")===focused;
+      draw();
+      if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
+    },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
