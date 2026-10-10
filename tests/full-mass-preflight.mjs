@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import {FULL_MASS_FORM_OPTIONS,massCelebrationKind,resolvedMassSummary} from "../src/mass/full-mass-preflight.js";
 import {adaptV346ResolvedMass} from "../src/mass/host-adapter.js";
 import {compileMassPlan} from "../src/mass/session-engine.js";
+import {availableOptionalMassRites,composeOptionalMassRites} from "../src/mass/full-mass-optional-rites.js";
+
 
 assert.deepEqual(FULL_MASS_FORM_OPTIONS.map(x=>x.id),[
   "LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
@@ -54,4 +56,44 @@ assert.equal(massCelebrationKind({...day,exceptionalProfile:"easter-vigil-1962"}
 assert.equal(resolvedMassSummary({...req,canStart:false},{form:"solemn"}).canStart,false);
 assert.throws(()=>resolvedMassSummary(day,{form:"NOT_A_MASS_FORM"}),/Unsupported Mass form/);
 assert.throws(()=>adaptV346ResolvedMass({...req,proper:null},{celebrationForm:"LOW"}),/source-resolved Proper/);
+
+// Optional rites are explicit factual participation choices; dates cannot select them.
+const available=(legacy,form,kind)=>availableOptionalMassRites(legacy,{form,kind}).filter(r=>r.allowed).map(r=>r.id);
+assert.deepEqual(available(day,"MISSA_CANTATA_INCENSE","CALENDAR"),["ASPERGES"]);
+assert.deepEqual(available(day,"LOW","CALENDAR"),[]);
+assert.deepEqual(available(req,"SOLEMN","REQUIEM"),["ASPERGES","REQUIEM_ABSOLUTION"]);
+assert.deepEqual(available({...day,calendarDay:{id:"CORPUS_CHRISTI",title:"Corpus Christi"}},"SOLEMN","CALENDAR"),
+ ["ASPERGES","CORPUS_CHRISTI_PROCESSION"]);
+assert.deepEqual(available(goodFriday,"SOLEMN","GOOD_FRIDAY"),[]);
+const baseline={precedingRites:[],followingActions:[]};
+let rites=composeOptionalMassRites(day,{form:"SOLEMN",kind:"CALENDAR"},baseline);
+assert.deepEqual(rites,{precedingRites:[],followingActions:[]},"Sunday does not automatically enable Asperges");
+rites=composeOptionalMassRites(day,{form:"SOLEMN",kind:"CALENDAR",overrides:{ASPERGES:true}},baseline);
+assert.deepEqual(rites.precedingRites,["ASPERGES"]);
+let resolved=adaptV346ResolvedMass(day,{form:"SOLEMN",proper,...rites});
+assert.deepEqual(resolved.precedingRites,["ASPERGES"]);
+assert.ok(compileMassPlan(resolved).precedingGraphs.includes("ASPERGES"));
+rites=composeOptionalMassRites(req,{form:"LOW",kind:"REQUIEM",overrides:{REQUIEM_ABSOLUTION:true}},baseline);
+resolved=adaptV346ResolvedMass(req,{form:"LOW",proper,...rites});
+assert.ok(compileMassPlan(resolved).followingGraphs.includes("REQUIEM_ABSOLUTION"));
+const corpus={...day,calendarDay:{id:"CORPUS_CHRISTI",title:"Corpus Christi"}};
+rites=composeOptionalMassRites(corpus,{form:"SOLEMN",kind:"CALENDAR",
+ overrides:{CORPUS_CHRISTI_PROCESSION:true}},baseline);
+resolved=adaptV346ResolvedMass(corpus,{form:"SOLEMN",proper,...rites});
+const corpusPlan=compileMassPlan(resolved);
+assert.ok(corpusPlan.followingGraphs.includes("CORPUS_CHRISTI_PROCESSION"));
+assert.equal(corpusPlan.dismissal,"BENEDICAMUS_DOMINO");
+assert.throws(()=>composeOptionalMassRites(day,{form:"SOLEMN",kind:"CALENDAR",
+ overrides:{CORPUS_CHRISTI_PROCESSION:true}},baseline),/NOT_APPLICABLE/);
+assert.throws(()=>composeOptionalMassRites(day,{form:"LOW",kind:"CALENDAR",
+ overrides:{ASPERGES:true}},baseline),/NOT_APPLICABLE/);
+assert.throws(()=>composeOptionalMassRites(day,{form:"SOLEMN",kind:"CALENDAR",
+ overrides:{OTHER_RITE:true}},baseline),/NOT_RECOGNIZED/);
+const fromHost={...req,insertedRites:["Requiem absolution"]};
+const overrides=composeOptionalMassRites(fromHost,{
+ form:"SOLEMN",kind:"REQUIEM",overrides:{REQUIEM_ABSOLUTION:false},
+},{precedingRites:[],followingActions:["REQUIEM_ABSOLUTION"]});
+assert.deepEqual(overrides.followingActions,[],"Explicit absence should suppress source-proposed optional ceremony");
+console.log("Optional Mass rites: PASS — explicit-only Asperges/Absolution/Corpus; Good Friday, form, date, source gates.");
+
 console.log("Full Mass composer: PASS — 4 forms × calendar/votive/Requiem/Nuptial; no Proper substitution, Good Friday not a Mass.");
