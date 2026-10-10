@@ -1324,7 +1324,7 @@ try{
   assert.equal(learnParity.heroTitle,"Formation","Formation hero no longer preserves the locked A2 title");
   assert.ok(learnParity.intro.length>20,"Learn formation introduction is blank or collapsed");
   assert.ok(learnParity.context.length>0,"Learn lost its selected-day context line");
-  assert.deepEqual(learnParity.families,["foundations","spiritual-moral","liturgy-tradition","sacraments-life","latin","reference"],"Formation learning-intent doors diverged");
+  assert.deepEqual(learnParity.families,["foundations","spiritual-moral","liturgy-tradition","sacraments-life","questions","latin","reference"],"Formation learning-intent doors diverged");
   assert.deepEqual(learnParity.modules,[],"Formation landing regressed to exposing all module launchers at once");
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-module='today.saint']").count(),0,"Saint of the Day remained duplicated in Learn");
   assert.deepEqual(learnParity.featured,[],"Featured module cards should only appear inside a selected Formation family");
@@ -1332,7 +1332,7 @@ try{
   assert.equal(learnParity.sourcesUtility,0,"Sources incorrectly resurfaced as a Learn launcher");
   assert.equal(learnParity.calendarDashboard,0,"Calendar dashboard duplicated inside Learn");
   assert.ok(learnParity.overflow<=1,"Learn has horizontal overflow on 390px phone geometry");
-  assert.equal(learnParity.cards.length,6,"Formation landing should show six uncluttered learning-intent doors");
+  assert.equal(learnParity.cards.length,7,"Formation landing should show seven consistent subject doors");
   assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-dossier-review]").count(),0,
     "Preliminary study collections belong inside Questions, not the root");
   await page.locator("#ao-learn-modular-root [data-ao-learn-questions]").click();
