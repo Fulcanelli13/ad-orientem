@@ -570,9 +570,23 @@ async function openCalendarScripture(button){
       (await import("../scripture/browser-entry.js")).installScriptureBrowserOwner(globalThis);
     if(root()!==origin||state()?.selectedDate!==selected)return fail();
     const returnToCalendar=()=>{
-      if(root()!==origin||state()?.selectedDate!==selected||calendarView!=="day")return;
-      origin.scrollTop=atScroll;
-      origin.querySelector('[data-cal-scripture-date="'+selected+'"][data-cal-scripture-slot="'+slot+'"]')?.focus?.({preventScroll:true});
+      if(state()?.selectedDate!==selected||calendarView!=="day")return;
+      // Calendar may repaint the day while an on-demand Scripture book loads.
+      // Resolve the CURRENT calendar root and button, not the pre-open DOM node.
+      const live=root();
+      if(!live)return;
+      const selector='[data-cal-scripture-date="'+selected+'"][data-cal-scripture-slot="'+slot+'"]';
+      const restore=()=>{
+        if(state()?.selectedDate!==selected||calendarView!=="day")return;
+        const current=root(),target=current?.querySelector(selector);
+        if(!target)return;
+        target.disabled=false;
+        current.scrollTop=atScroll;
+        target.focus({preventScroll:true});
+      };
+      restore();
+      // Closing a modal during a pointer event can move focus back to body.
+      queueMicrotask(restore);
     };
     const options={language,onCloseReturn:returnToCalendar};
     const opened=reading.segments
