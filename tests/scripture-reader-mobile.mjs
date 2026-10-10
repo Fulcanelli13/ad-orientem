@@ -111,7 +111,6 @@ try{
  assert.equal(await dialog.locator("[data-crosswalk-unverified=Psalms]").count(),1);
  await dialog.locator(".aoScriptureNav input").nth(0).fill("22");
  await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
- console.log("TRACE_PSL_CHAPTER",JSON.stringify(await page.evaluate(()=>({status:globalThis.AO_SCRIPTURE_APP_V1.status().reader,nums:[...document.querySelectorAll(".aoScriptureNav input")].map(n=>n.value)}))));
  await dialog.locator(".aoScriptureNav input").nth(1).fill("1");
  await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1",
