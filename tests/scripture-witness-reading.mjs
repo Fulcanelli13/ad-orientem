@@ -37,7 +37,7 @@ assert.equal(hasScriptureWitness("cpdv-2009","Genesis"),true);
 const text=stored.get("cpdv-2009:Luke");
 assert.ok(validateScriptureWitness(text,"cpdv-2009","Luke").find(x=>x.chapter===1&&x.verseStart===28)?.text.length>30);
 assert.throws(()=>validateScriptureWitness({...text,sourceStatus:"APPROVED"},"cpdv-2009"),/Invalid historical Scripture/);
-assert.throws(()=>validateScriptureWitness({...text,verses:[...text.verses,text.verses[0]]},"cpdv-2009"),/Duplicate witness/);
+assert.throws(()=>validateScriptureWitness({...text,verses:[...text.verses,text.verses[0]]},"cpdv-2009","Luke"),/Duplicate witness/);
 let calls=0;
 const example=await loadScriptureWitness("cpdv-2009","Luke",{cacheStorage:null,fetcher:async url=>{
  calls++;assert.equal(url,"/data/scripture/witness/cpdv-2009/Luke.json");
