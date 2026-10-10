@@ -22,6 +22,7 @@ const FACT_LABELS=Object.freeze({
   Evidence:["Evidence","Preuve"],
   Class:["Class","Classe"],
   Period:["Period","Période"],
+  "Documented examples":["Documented examples","Exemples attestés"],
   Confidence:["Confidence","Confiance"],
   Category:["Category","Catégorie"],
   "Witness / tradition":["Witness / tradition","Témoin / tradition"],
