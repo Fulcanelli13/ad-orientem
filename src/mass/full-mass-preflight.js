@@ -55,6 +55,7 @@ export function mountFullMassPreflight({
   doc=globalThis.document,
   getResolvedMass,
   getDefaultForm=()=> "sung",
+  getDefaultReaderMode=()=> "LIVE",
   language=()=> "en",
   getCelebrationApi=()=>globalThis.AO_CELEBRATION_API,
   onBeforeCategoryChange=()=>{},
@@ -62,7 +63,7 @@ export function mountFullMassPreflight({
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
-  let root=null,selected=null,explicit=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
+  let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   const flow=()=>doc.getElementById("ao-mass-flow-v1");
   const anchor=()=>flow()?.querySelector(".aoFlowActions")??flow()?.querySelector("[data-ao-start-live]")?.parentElement;
   const french=()=>String(language()).startsWith("fr");
@@ -70,9 +71,15 @@ export function mountFullMassPreflight({
     try{return normalizeMassForm(explicit?selected:getDefaultForm());}
     catch{return "MISSA_CANTATA_INCENSE";}
   }
+  function activeReaderMode(){
+    const mode=String(explicitMode?selectedMode:getDefaultReaderMode()??"LIVE").toUpperCase();
+    if(mode==="MISSAL"||mode==="SIMPLE")return mode;
+    return "LIVE";
+  }
   function selectionFor(legacy){
     const value=resolvedMassSummary(legacy,{form:activeForm(),language:language()});
-    return Object.freeze({...value,explicitlyChosenForm:explicit});
+    return Object.freeze({...value,explicitlyChosenForm:explicit,
+      readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode});
   }
   function openCategory(kind){
     if(kind==="SOURCE_DATE"){onOpenSourceProper();return true;}
@@ -105,7 +112,7 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
@@ -131,6 +138,13 @@ export function mountFullMassPreflight({
           '<label class="aoFullMassChoice"><input type="radio" name="ao-native-mass-form" value="'+id+'" data-full-mass-form>'+
           '<span data-full-mass-label="'+id+'"></span></label>').join("")+
         '</div></fieldset>'+
+        '<fieldset data-full-mass-reader-fieldset><legend data-full-mass-reader-heading></legend>'+
+        '<div class="aoFullMassReaderModes">'+
+        [["MISSAL","Missal","Missel"],["SIMPLE","Simple","Simple"],["LIVE","LIVE","LIVE"]].map(([id,en,fr])=>
+          '<label class="aoFullMassChoice"><input type="radio" name="ao-native-reader-mode" value="'+id+'" data-full-mass-reader-mode>'+
+          '<span data-full-mass-reader-label="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</span></label>').join("")+
+        '</div></fieldset>'+
+
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
         '<p data-full-mass-note></p>'+
@@ -160,6 +174,9 @@ export function mountFullMassPreflight({
           if(!allowed){el.checked=false;return;}
           riteOverrides={...riteOverrides,[id]:el.checked};
           refresh();return;
+        }
+        if(el?.matches?.("[data-full-mass-reader-mode]")&&["MISSAL","SIMPLE","LIVE"].includes(el.value)){
+          selectedMode=el.value;explicitMode=true;refresh();return;
         }
         if(el?.matches?.("[data-full-mass-form]")&&MASS_FORMS.includes(el.value)){
           selected=el.value;explicit=true;refresh();
@@ -205,6 +222,11 @@ export function mountFullMassPreflight({
       span.textContent=txt(LABELS[span.dataset.fullMassLabel],fr);
     });
     root.querySelector("[data-full-mass-form-fieldset]").disabled=!summary.formChangeAllowed;
+    root.querySelector("[data-full-mass-reader-heading]").textContent=l("How to follow the Mass","Comment suivre la messe");
+    root.querySelectorAll("[data-full-mass-reader-mode]").forEach(input=>{input.checked=input.value===summary.readerMode;});
+    root.querySelectorAll("[data-full-mass-reader-label]").forEach(span=>{
+      span.textContent=span.dataset[fr?"labelFr":"labelEn"];
+    });
     const rites=availableOptionalMassRites(legacy,{form:summary.form,kind:summary.kind});
     const options=rites.filter(rite=>rite.allowed||rite.fromSource);
     const effectiveRites={
@@ -258,6 +280,7 @@ export function mountFullMassPreflight({
       [l("Date","Date"),date||"—"],
       [l("Celebration","Célébration"),summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"")],
       [l("Form","Forme"),summary.formLabel],
+      [l("Reader","Lecture"),summary.readerMode],
       [l("Source of Proper","Source du propre"),ownerPath||l("Resolved by calendar","Résolu par le calendrier")],
     ];
     if(observed){
@@ -293,6 +316,7 @@ export function mountFullMassPreflight({
     root.dataset.aoCelebrationKind=summary.kind;
     root.dataset.aoSpecialMassVariant=presentation.variant;
     root.dataset.aoChosenMassForm=summary.form;
+    root.dataset.aoChosenReaderMode=summary.readerMode;
     root.dataset.aoProperReady=String(summary.canStart);
     return summary;
   }
@@ -321,6 +345,7 @@ export function mountFullMassPreflight({
     openCategory,
     refresh,
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
+      readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides})}),
     dispose(){disposed=true;doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}
