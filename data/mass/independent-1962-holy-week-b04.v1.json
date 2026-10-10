@@ -1,0 +1,212 @@
+{
+  "schema": "AO_INDEPENDENT_MR1962_HOLY_WEEK_B04_V1",
+  "version": 1,
+  "reviewDate": "2026-10-10",
+  "historicalEdition": "1962 Holy Week after the 1955 restoration; older 12-lesson Easter Vigil and earlier Palm-Sunday palmarum blessing excluded",
+  "evidenceClass": "secondary 1962 rubrical Ordo crosswalk plus independently edited proper texts; NOT page-by-page visually signed original 1962 Vatican typica",
+  "criticalTextStatus": "not-certified: complete diplomatic printed-text visual collation remains open issue #894",
+  "datedChecks": [
+    {
+      "year": 2024,
+      "palm": "2024-03-24",
+      "holyThursday": "2024-03-28",
+      "goodFriday": "2024-03-29",
+      "easterVigil": "2024-03-30"
+    },
+    {
+      "year": 2026,
+      "palm": "2026-03-29",
+      "holyThursday": "2026-04-02",
+      "goodFriday": "2026-04-03",
+      "easterVigil": "2026-04-04"
+    },
+    {
+      "year": 2027,
+      "palm": "2027-03-21",
+      "holyThursday": "2027-03-25",
+      "goodFriday": "2027-03-26",
+      "easterVigil": "2027-03-27"
+    }
+  ],
+  "rites": [
+    {
+      "id": "PALM_1962",
+      "authority": "https://1962ordo.today/day/dominica-in-palmis-2-2-2-2-2-2-2/",
+      "additional": "https://www.missalemeum.com/en/calendar/2026-03-29",
+      "graph": "PALM",
+      "recordCount": 12,
+      "graphOrder": [
+        "PALM-BLS-010",
+        "PALM-DST-010",
+        "PALM-GSP-010",
+        "PALM-PRC-010",
+        "PALM-RET-010",
+        "PALM-MASS-010",
+        "PALM-MASS-020"
+      ],
+      "latinIncipits": [
+        {
+          "field": "openingAntiphon",
+          "incipit": "Hosanna filio David"
+        },
+        {
+          "field": "blessingPrayer",
+          "incipit": "Benedic quaesumus Domine hos palmarum ramos"
+        },
+        {
+          "field": "procedamus",
+          "incipit": "Procedamus in pace"
+        },
+        {
+          "field": "gloriaLaus",
+          "incipit": "Gloria laus et honor tibi sit"
+        },
+        {
+          "field": "ingrediente",
+          "incipit": "Ingrediente Domino in sanctam civitatem"
+        }
+      ],
+      "documentaryConstraints": [
+        "red-vestments-blessing-procession-violet-mass",
+        "distribution-after-blessing",
+        "Matthew-21-before-procession",
+        "Mass-Matthew-Passion-not-identical-to-blessing-Gospel",
+        "no-Asperges-no-Gloria-Credo-Mass",
+        "prayers-at-foot-and-Last-Gospel-omitted-ONLY-when-procession-immediately-preceded-Mass",
+        "without-procession-Passiontide-foot-prayers-and-proper-Last-Gospel"
+      ],
+      "fullPassionTextStatus": "holds: complete sung Matthew Passion prose and voice segmentation not independently compared line-by-line",
+      "appRootSourcePath": "Tempora/Quad6-0r"
+    },
+    {
+      "id": "HOLY_THURSDAY_1962",
+      "authority": "https://1962ordo.today/day/feria-v-cena-domini/",
+      "additional": "https://www.missalemeum.com/en/calendar/2026-04-02",
+      "graph": "HT_POST",
+      "recordCount": 6,
+      "graphOrder": [
+        "HT-TRN-010",
+        "HT-TRN-020",
+        "HT-TRN-030",
+        "HT-TRN-040",
+        "HT-STRIP-010",
+        "HT-POST-900"
+      ],
+      "documentaryConstraints": [
+        "white-Mass-with-Gloria-no-Credo",
+        "bell-at-Gloria-then-silent-to-Vigil-Gloria",
+        "proper-Communicantes-Hanc-Igitur-Qui-Pridie",
+        "no-Pax-no-Dona-Nobis-Pacem",
+        "Benedicamus-no-final-blessing-no-Last-Gospel",
+        "Pange-Lingua-Tantum-Ergo-translation-to-repose",
+        "stripping-after-reservation-with-Psalm-21",
+        "foot-washing-optional"
+      ],
+      "fullTextStatus": "Mass-Canon proper insertions and Mandatum complete liturgical text require separate printed collation",
+      "appRootSourcePath": "Tempora/Quad6-4r"
+    },
+    {
+      "id": "GOOD_FRIDAY_1962",
+      "authority": "https://1962ordo.today/day/feria-vi-in-parasceve-2-2/",
+      "additional": "https://www.missalemeum.com/en/calendar/2026-04-03",
+      "graph": "GF",
+      "recordCount": 56,
+      "graphOrder": [
+        "GF-OPEN-020",
+        "GF-LESS-110",
+        "GF-LESS-210",
+        "GF-PASS-310",
+        "GF-PASS-320",
+        "GF-PASS-330",
+        "GF-SOP-400",
+        "GF-SOP-01-K",
+        "GF-SOP-09-R",
+        "GF-X-510",
+        "GF-X-521",
+        "GF-X-522",
+        "GF-X-523",
+        "GF-VEN-600",
+        "GF-COM-800",
+        "GF-END-910"
+      ],
+      "appointedLessons": [
+        "Hosea 6:1–6",
+        "Exodus 12:1–11",
+        "John 18:1–40; 19:1–42"
+      ],
+      "solemnPrayerCount": 9,
+      "solemnPrayerNames": [
+        "HOLY_CHURCH",
+        "SUPREME_PONTIFF",
+        "ALL_ORDERS_AND_DEGREES",
+        "PUBLIC_OFFICIALS",
+        "CATECHUMENS",
+        "NEEDS_OF_FAITHFUL",
+        "HERETICS_AND_SCHISMATICS",
+        "CONVERSION_OF_JEWS",
+        "CONVERSION_OF_PAGANS"
+      ],
+      "documentaryConstraints": [
+        "distinct-rite-not-ordinary-Mass",
+        "black-then-violet-vesting",
+        "prostration-before-lessons",
+        "John-Passion-kneel-at-Death-then-stand",
+        "all-nine-solemn-prayers-with-Flectamus-and-Levate",
+        "1962-Jewish-prayer-default-not-2008",
+        "three-unveil-Ecce-Lignum",
+        "individual-Cross-veneration",
+        "optional-faithful-Communion",
+        "three-concluding-prayers"
+      ],
+      "fullTextStatus": "existing Good Friday Latin Passion corpus and prayers not yet diplomatically collated line by line to printed typica",
+      "appRootSourcePath": "Tempora/Quad6-5r"
+    },
+    {
+      "id": "EASTER_VIGIL_1962",
+      "authority": "https://1962ordo.today/day/sabbato-sancto-2/",
+      "additional": "https://www.missalemeum.com/en/widgets/propers/2026-04-04?theme=light",
+      "graph": "EV",
+      "recordCount": 38,
+      "graphOrder": [
+        "EV-FIRE-010",
+        "EV-FIRE-020",
+        "EV-PROC-100",
+        "EV-LUM-110",
+        "EV-LUM-120",
+        "EV-LUM-130",
+        "EV-EXS-200",
+        "EV-LESS-01-READ",
+        "EV-LESS-02-READ",
+        "EV-LESS-03-READ",
+        "EV-LESS-04-READ",
+        "EV-LIT1-400",
+        "EV-REN-490",
+        "EV-REN-500",
+        "EV-LIT2-600",
+        "EV-MASS-700"
+      ],
+      "appointedProphecies": [
+        "Genesis 1:1–31; 2:1–2",
+        "Exodus 14:24–31; 15:1",
+        "Isaiah 4:2–6",
+        "Deuteronomy 31:22–30"
+      ],
+      "documentaryConstraints": [
+        "new-fire-and-Paschal-candle-before-procession",
+        "three-Lumen-Christi-with-Deo-Gracias",
+        "Exsultet-before-four-prophecies",
+        "four-only-not-pre-1955-twelve",
+        "all-four-reading-prayer-kneel-rise-order",
+        "split-litany-font-or-no-font-renewal-litany",
+        "Kyrie-handoff-Mass-without-foot-prayers-or-Introit",
+        "Gloria-bells-Credo-omitted",
+        "Agnus-Dei-omitted-no-Communion-antiphon",
+        "Lauds-Benedictus",
+        "Last-Gospel-omitted"
+      ],
+      "fullTextStatus": "four long Latin prophecy texts recovered; English/French parity and source image-level critical collation pending",
+      "appRootSourcePath": "Tempora/Quad6-6r"
+    }
+  ],
+  "certificationRule": "Every assertion is a 1962 structural/text-boundary check, not proof of complete independent liturgical-text transcription. No fabricated 'fully certified' status."
+}
