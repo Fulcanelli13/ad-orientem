@@ -106,4 +106,5 @@ def main():
   "artworks":rows}
  (OUT/"acquisition.json").write_text(json.dumps(output,indent=2,ensure_ascii=False)+"\n",encoding="utf8")
  print("SUMMARY",json.dumps({k:output[k] for k in ("leadCount","acquiredCount","sourceClassifiedCC0","kressPublicDomainHeld")}),flush=True)
+ print("RECONCILE_MANIFEST",json.dumps([{k:a[k] for k in ("id","targetIds","relation","sha256","width","height","colourFraction","bytes","filename","rights")} for a in acquired],sort_keys=True),flush=True)
 if __name__=="__main__":main()
