@@ -34,5 +34,21 @@ try{
    flowMarkup:container?.outerHTML?.slice(0,17000)};
  });
  console.log("MASS_HOST_DISCOVERY "+JSON.stringify(snapshot));
+ const change=await page.evaluate(()=>{
+  const api=globalThis.AO_CELEBRATION_API;
+  const fn={};for(const name of ["openChangeMass","select","reset","setVotiveBasis","setCondition"]){
+   fn[name]=String(api[name]??"").slice(0,2000);
+  }
+  try{api.openChangeMass()}catch(e){return {error:String(e),functions:fn}}
+  const root=document.querySelector("#ao-mass-flow-v1");
+  const controls=[...(document.querySelectorAll("button,input,select,summary"))].filter(n=>
+    n.closest("#ao-mass-flow-v1")||n.closest("[role=dialog]")).map(n=>({
+      text:n.textContent?.trim().slice(0,120),tag:n.tagName,value:n.value,
+      attrs:[...n.attributes].filter(x=>x.name.startsWith("data-")).map(x=>[x.name,x.value])
+    })).slice(0,110);
+  return {functions:fn,controls,flowMarkup:root?.outerHTML?.slice(0,30000),
+   dialogs:[...document.querySelectorAll("[role=dialog]")].map(n=>({cls:n.className,id:n.id,html:n.outerHTML.slice(0,12000)})).slice(0,4)};
+ });
+ console.log("CHANGE_MASS_DISCOVERY "+JSON.stringify(change));
  console.log("CONSOLE_ERRORS "+JSON.stringify(errors.slice(0,4)));
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
