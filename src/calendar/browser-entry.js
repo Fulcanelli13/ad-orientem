@@ -14,11 +14,12 @@ export async function ensureCalendarRuntime(win=globalThis){
   const ready=runtime(win);
   if(ready){loaded=true;return ready;}
   if(!pending){
+    const loading=win?.AO_LOADING_DIRECTOR_V1?.begin?.("calendar");
     pending=import("./calendar-runtime.js").then(mod=>{
       const api=mod.installCalendarBrowserOwner(win);
       if(!api||api[facadeKey])throw Error("Canonical Calendar owner failed to install");
       loaded=true;lastError=null;return api;
-    }).catch(err=>{lastError=String(err?.message??err);pending=null;throw err});
+    }).catch(err=>{lastError=String(err?.message??err);pending=null;throw err}).finally(()=>loading?.end?.());
   }
   return pending;
 }
