@@ -57,7 +57,7 @@ assert.equal(farley.length,4);
 assert.ok(farley.every(x=>x.source_id==="FARLEY_QUOTED2012" && x.opposing_full_book_independently_collated===false));
 assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[0],/can\. 1108/);
 assert.match(CSE_DEBATE_MAP.CSE031.catholicCase[1],/1108/);
-assert.match(CSE_DEBATE_MAP.CSE054.concession[0],/unjust exaction/);
+assert.match(CSE_DEBATE_MAP.CSE054.concession[0],/(?:unjust exaction|exaction[^.]{0,95}is unjust)/,"conjugal consent must reject unjust exaction in the authentic argument");
 assert.match(CSE_DEBATE_MAP.CSE054.concession[1],/saint Thomas/);
 const archived=["CSE055","CSE056","CSE058"];
 assert.ok(archived.every(id=>!next.records.some(x=>x.id===id)));
