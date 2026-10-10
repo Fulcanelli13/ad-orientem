@@ -273,9 +273,14 @@ function questionHtml(win,item,reveal){
   const apostolateAction=apostolateTarget?`<button type="button" class="aoCSEBtn" data-ao-cse-apostolate>${esc(L(win,"Practise answering this objection","S’exercer à répondre à cette objection"))}</button>`:"";
   const attribution=attributionIsContext
     ?L(win,"Illustrative objection: cited sources establish context rather than a named advocate of these exact words.","Objection illustrative : les sources établissent le contexte, non un auteur soutenant exactement ces termes.")
-    :L(win,"The opposing argument is paraphrased, not a verbatim quotation.","L'argument adverse est reformulé, non cité littéralement.");
+    :L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the cited original text for the author’s words.","La position adverse est une reformulation sourcée, non une citation littérale. Consulter le texte original cité pour retrouver les propos de l’auteur.");
   const objection=isDebate?`<section class="aoCSEObjection" data-stage="opposition"><small>${esc(L(win,"Objection","Objection"))}</small><p>${esc(pick(win,item.debate.opposition))}</p>${debateSourceDisclosure(win,item,"debate","opposition",item.id==="CSE045"?"":attribution)}</section>`:"";
   return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${debateSourceDisclosure(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div>${objection}<p class="aoCSEAnswer">${esc(pick(win,item.a))}</p>${debateSourceDisclosure(win,item,"answer")}${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal aria-expanded="${reveal?"true":"false"}" aria-controls="ao-cse-argument-${esc(item.id)}">${esc(reveal?buttonOpen:buttonClosed)}</button><div id="ao-cse-argument-${esc(item.id)}" class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${isDebate?'data-cse-open-debate':''} ${reveal?"":"hidden"}>${isDebate?exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}</p>${debateSourceDisclosure(win,item,"detail")}`}</div></div>`:""}${marriageDisputationsHtml(win,item)}${relatedMarriageQuestionsHtml(win,item)}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+}
+
+// Exposes the existing read-only renderer for content-preservation acceptance checks.
+export function renderSexualEthicsQuestionMarkup(win,item,reveal=false){
+  return questionHtml(win,item,reveal);
 }
 
 export function createSexualEthicsRuntime(win=globalThis){
