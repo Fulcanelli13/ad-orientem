@@ -275,4 +275,11 @@ export const HERITAGE_STYLE = String.raw`
 .aoHeritageSurface .aoHeritagePreview .aoHeritageSynopsis{font-size:15px;line-height:1.5}
 .aoHeritageSurface .aoHeritageNearby{right:12px;bottom:12px}
 }
+
+/* Global header size tokens apply only to primary controls, not the More menu. */
+.aoHeritageSurface .aoFindHeader .aoHeritageSecondary button,
+.aoHeritageSurface .aoFindHeader .aoHeritageDefinitions{
+  width:100%!important;min-width:100%!important;height:auto!important;
+  min-height:44px!important;border-radius:9px!important;
+}
 `;
