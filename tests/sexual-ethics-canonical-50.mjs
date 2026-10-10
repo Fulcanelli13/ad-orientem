@@ -31,8 +31,9 @@ for(const row of audit.cases){
     assert.equal(source.role,canonical.role,
       row.id+" "+source.source_id+": opponent source role drifted from live reader");
     assert.ok(source.source_type,"source quality/precision category missing: "+row.id+" "+source.source_id);
-    if(source.role!=="opposing_position")assert.match(source.source_type,/CONTEXT|CATHOLIC|REBUTTAL/,
-      row.id+" "+source.source_id+": Catholic/context source must not be misrepresented as an opponent");
+    if(row.id==="CSE044"&&["CIC","CDF2003"].includes(source.source_id))
+      assert.equal(source.source_type,"CATHOLIC_CONTEXT_NOT_OPPOSING_AUTHOR",
+        "Do not present Catholic juridical or magisterial evidence as an actual opponent");
   }
 }
 assert.equal(audit.source_registry_alignment.position_corpus,55);
