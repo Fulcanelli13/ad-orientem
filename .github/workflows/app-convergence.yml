@@ -2,6 +2,7 @@ name: App convergence
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "src/app/**"
       - "src/find/**"
@@ -136,7 +137,7 @@ jobs:
 
   app-shell-phone:
     # Validate actual phone journeys on PRs, not only after merging into main.
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     needs: app-shell-contract
     runs-on: ubuntu-latest
     steps:
