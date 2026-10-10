@@ -25,6 +25,7 @@ if(typeof window!=="undefined"&&typeof document!=="undefined"&&!window.AO_PRAY_V
 
 (()=>{'use strict';
 const VERSION='43.59.30-pray-acceptance';
+let homeNavigationError=false,homeNavigationPending=false;
 const STORE_KEY='ao.pray.v435930';
 const ROOT_ID='aoPray435930';
 const DATA=window.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{},categories:{}};
@@ -282,6 +283,7 @@ function shell(){
 }
 function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
+  homeNavigationError=false;
   if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))clearRosaryDonorReturn();
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
   navStack=[];familyId=null;
@@ -1194,13 +1196,33 @@ function backToParent(){
  if(view!=='home'&&familyId){view='family';return render()}
  return close();
 }
-function goGlobalHome(){
+async function goGlobalHome(){
+ if(homeNavigationPending)return false;
+ homeNavigationPending=true;
+ const before=externalResume;
  externalResume=captureResume();
- close({silent:true,preserve:true});
- const nav=window?.AO_APP_SHELL_V1?.navigate?.('home');
- if(nav&&typeof nav.catch==='function')nav.catch(()=>window.AO_NAV_V362?.openHome?.());
- else if(!nav)window.AO_NAV_V362?.openHome?.();
- return true;
+ try{
+  // Only the canonical shell may close Prayer and activate Home. Unlike
+  // the former fire-and-forget code, a resolved {ok:false} is a failure.
+  const result=await window?.AO_APP_SHELL_V1?.navigate?.('home');
+  if(result===true||result?.ok===true){homeNavigationError=false;return true;}
+ }catch(error){console.error('PRAY Home navigation failed',error)}
+ finally{homeNavigationPending=false}
+ externalResume=before;
+ // A hard-Home attempt may have already closed Prayer. Restore its hub, not
+ // cleared private Confession/examination state, and show an actionable error.
+ let node=document.getElementById(ROOT_ID);
+ if(!node?.classList?.contains('open')){
+  try{await window?.AO_APP_SHELL_V1?.navigate?.('pray')}catch(error){console.error('PRAY recovery navigation failed',error)}
+  node=document.getElementById(ROOT_ID);
+  if(!node?.classList?.contains('open')){
+   open('pray.hub',{returnContext:PRAY_CTX});
+   try{window?.AO_APP_SHELL_V1?.syncSurface?.('pray')}catch{}
+  }
+ }
+ homeNavigationError=true;
+ render();
+ return false;
 }
 function touchBlocked(target){return !!target?.closest?.('button,a,input,textarea,select,summary,[contenteditable="true"],[data-p435930-flip],[data-p435930-card-flip]')}
 function horizontalStep(direction){
@@ -1381,7 +1403,8 @@ function fortyStageBody(){
 function renderFortyHours(){
  FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step));return `${head(L('Forty Hours','Quarante-Heures'),L('Live companion · follow the church, not a timer','Compagnon en direct · suivez l’église, pas un minuteur'))}<main class="aoP435930Body">${devotionalGuide('fortyHours')}${callout(esc(L('Use this by what is happening around you, not by a timer. Public worship always outranks the private sequence on the screen.','Utilisez ce guide selon ce qui se passe autour de vous, non selon un minuteur. Le culte public a toujours priorité sur la séquence privée affichée à l’écran.')),'rubric')}${litFlowRail(FORTY_STAGES.map(x=>L(x[0],x[1])),FORTY.step,'forty')}${fortyStageBody()}<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-forty-prev ${FORTY.step===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>${FORTY.step===FORTY_STAGES.length-1?`<button type="button" class="aoP435930Primary" data-p435930-forty-done>${esc(L('Done · return','Terminé · retour'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-forty-next>${esc(L('Continue','Continuer'))}</button>`}</div>${devotionalSource('Baltimore Manual · Forty Hours (1889)',L('Historical account and private prayer aids. This is not an original witness of every public Forty Hours ceremonial or a claim that old indulgence grants remain current.','Présentation historique et aides de prière privées. Ce document ne certifie ni tous les cérémoniaux publics ni le maintien actuel des anciennes indulgences.'),'fortyHours')}</main>`
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
+ ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
 function stopTimer(){if(ADOR.timer){clearInterval(ADOR.timer);ADOR.timer=null}ADOR.timerEnd=0}
 function startTimer(min){stopTimer();ADOR.timerEnd=Date.now()+Number(min)*60000;ADOR.timer=setInterval(()=>{if(Date.now()>=ADOR.timerEnd){stopTimer();render()}else render()},30000);render()}
 function routeOwn(id){if(id==='pray.hub')view='home';else view=id==='pray.confession'?'confession':id==='pray.benediction'?'benediction':id==='pray.adoration'?'adoration':id==='pray.stations'?'stations':id==='pray.library'?'library':id==='pray.penitential_psalms'?'penitential':id==='pray.litany_saints'?'litany':id==='pray.seven_words'?'sevenWords':id==='pray.forty_hours'?'fortyHours':id==='programme.first_friday'?'firstFriday':id==='programme.first_saturday'?'firstSaturday':'angelus';if(view==='stations')lastStationsFxStep=null;render()}
@@ -1420,7 +1443,7 @@ async function openExternalFamilyRoute(button,route,returnFamily){
 function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.matches('[data-p435930-close]'))return close();
- if(b.matches('[data-p435930-home]'))return goGlobalHome();
+ if(b.matches('[data-p435930-home]')||b.matches('[data-p435930-home-retry]'))return goGlobalHome();
  if(b.matches('[data-p435930-back]'))return backToParent()
  if(b.dataset.p435930Family){familyId=b.dataset.p435930Family;view='family';navStack=[];return render()}
  if(b.dataset.p435930RetryExternal){
