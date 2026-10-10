@@ -11,10 +11,11 @@ export function customsAtlasAttributes(item){
   const geoAreaId=clean(attestation.geo_area_id);
   const geoAreaName=clean(area?.name?.official??area?.name)||geoAreaId;
   // The canonical custom period is a broad description, not an app-calculated date.
+  const family=clean(custom.family);
   const period=clean(custom.period_label);
   const calendarHint=clean(custom.calendar_trigger_hint);
   const relatedNovena=item?.kind==="NOVENA_CONTEXT"||list(item?.actions).some(action=>Boolean(action?.novena_id));
-  return Object.freeze({geoAreaId,geoAreaName,period,calendarHint,relatedNovena});
+  return Object.freeze({family,geoAreaId,geoAreaName,period,calendarHint,relatedNovena});
 }
 
 function uniqueOptions(items,key,labelKey=key){
@@ -30,6 +31,7 @@ function uniqueOptions(items,key,labelKey=key){
 export function buildCustomsAtlasFacets(items){
   const calendarHints=uniqueOptions(items,"calendarHint");
   return Object.freeze({
+    families:uniqueOptions(items,"family"),
     areas:uniqueOptions(items,"geoAreaId","geoAreaName"),
     periods:uniqueOptions(items,"period"),
     calendar:Object.freeze([
@@ -40,12 +42,13 @@ export function buildCustomsAtlasFacets(items){
 }
 
 export function filterCustomsAtlasItems(items,{
-  query="",atlasArea="ANY",atlasPeriod="ANY",atlasCalendar="ANY",
+  query="",atlasFamily="ANY",atlasArea="ANY",atlasPeriod="ANY",atlasCalendar="ANY",
 }={}){
   const term=clean(query).toLowerCase();
   return Object.freeze(list(items).filter(item=>{
     if(term&&!String(item?.search_text??"").includes(term))return false;
     const attributes=customsAtlasAttributes(item);
+    if(atlasFamily!=="ANY"&&attributes.family!==atlasFamily)return false;
     if(atlasArea!=="ANY"&&attributes.geoAreaId!==atlasArea)return false;
     if(atlasPeriod!=="ANY"&&attributes.period!==atlasPeriod)return false;
     if(atlasCalendar==="NOVENA"&&!attributes.relatedNovena)return false;
