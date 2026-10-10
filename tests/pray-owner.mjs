@@ -59,3 +59,6 @@ assert.ok(runtimeSource.includes("result===true||result?.ok===true"),"PRAY exter
 assert.match(runtimeSource,/data-p435930-family-open-error/,"PRAY external family failure lacks a visible alert");
 assert.match(runtimeSource,/p435930RetryExternal/,"PRAY external module failure lacks an exact-route Retry action");
 assert.match(runtimeSource,/min-height:44px/,"PRAY retry target is too small");
+assert.ok(runtimeSource.includes("async function goGlobalHome()")&&runtimeSource.includes("result===true||result?.ok===true"),"Prayer Home must await an explicit successful shell navigation");
+assert.ok(runtimeSource.includes("data-p435930-home-retry")&&runtimeSource.includes("data-p435930-home-error"),"Failed Prayer Home navigation needs a visible retry");
+assert.ok(!runtimeSource.includes("nav.catch(()=>window.AO_NAV_V362?.openHome?.())"),"Prayer Home must not silently fall through to legacy navigation");

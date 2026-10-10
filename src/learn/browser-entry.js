@@ -128,6 +128,37 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     });
   }
 
+  async function navigateFromLearn(target){
+    const context={
+      family:state.family,lastFamily:state.lastFamily,
+      query:state.discoveryQuery,reference:state.lastDiscoveryReference,
+      launcher:state.lastLauncher
+    };
+    try{
+      const result=await win?.AO_APP_SHELL_V1?.navigate?.(target);
+      if(result===true||result?.ok===true)return true;
+    }catch(error){
+      try{win?.console?.error?.("Formation navigation failed",target,error)}catch{}
+    }
+    // hardHome() closes Formation before attempting the destination. Recover
+    // using the *same* canonical Formation owner, retaining its family/query
+    // instead of leaving an empty screen or substituting another module.
+    if(!state.open){
+      if(!open())return false;
+      state.family=context.family;
+      state.lastFamily=context.lastFamily;
+      state.discoveryQuery=context.query;
+      state.lastDiscoveryReference=context.reference;
+      state.lastLauncher=context.launcher;
+    }
+    if(state.open&&!state.child){
+      state.error=L(win,"This section could not be opened. Please retry.","Impossible d’ouvrir cette rubrique. Veuillez réessayer.");
+      paint();
+      try{win?.AO_APP_SHELL_V1?.syncSurface?.("learn")}catch{}
+    }
+    return false;
+  }
+
   function ensureRoot(){
     const doc=win?.document;
     if(!doc?.body)return null;
@@ -159,13 +190,13 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           queue(()=>root(win)?.querySelector?.(`[data-ao-learn-family="${state.lastFamily}"]`)?.focus?.({preventScroll:true}));
           return;
         }
-        void win?.AO_APP_SHELL_V1?.navigate?.("home");
+        void navigateFromLearn("home");
         return;
       }
       const home=event.target?.closest?.("[data-ao-learn-home]");
       if(home){
         event.preventDefault?.();
-        void win?.AO_APP_SHELL_V1?.navigate?.("home");
+        void navigateFromLearn("home");
         return;
       }
       // Only a family-door button changes the family. The page root also carries
@@ -189,7 +220,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
             const apostolate=event.target?.closest?.("[data-ao-learn-apostolate]");
       if(apostolate){
         event.preventDefault?.();
-        void win?.AO_APP_SHELL_V1?.navigate?.("apostolate");
+        void navigateFromLearn("apostolate");
         return;
       }
       const surface=event.target?.closest?.("[data-ao-learn-discovery-surface]");
@@ -197,16 +228,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         event.preventDefault?.();
         const target=surface.dataset?.aoLearnDiscoverySurface;
         if(["home","mass","pray","calendar","find","apostolate"].includes(target)){
-          void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.(target)).then(value=>{
-            if(value!==true&&value?.ok!==true){
-              state.error=L(win,"This section could not be opened.","Impossible d’ouvrir cette rubrique.");
-              paint();
-            }
-          }).catch(error=>{
-            try{win?.console?.error?.("Formation discovery navigation failed",error)}catch{}
-            state.error=L(win,"This section could not be opened.","Impossible d’ouvrir cette rubrique.");
-            paint();
-          });
+          void navigateFromLearn(target);
         }
         return;
       }
@@ -239,7 +261,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       }
       if(event.key==="Escape"&&!state.child){
         event.preventDefault?.();
-        void win?.AO_APP_SHELL_V1?.navigate?.("home");
+        void navigateFromLearn("home");
       }
     });
     doc.body.append(node);

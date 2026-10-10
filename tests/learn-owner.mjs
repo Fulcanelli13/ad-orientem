@@ -59,7 +59,7 @@ assert.match(presentation,/data-ao-learn-apostolate/,"Formation lost its Apostol
 assert.match(presentation,/data-ao-learn-back/,"Formation lost hierarchical Back");
 assert.match(presentation,/data-ao-learn-home/,"Formation lost explicit global Home");
 assert.match(presentation,/ao-refined-help/,"Formation Apostolate entry lost its canonical icon");
-assert.match(owner,/navigate\?\.\("apostolate"\)/,"Formation Apostolate action does not use the app-shell route");
+assert.ok(owner.includes('navigateFromLearn("apostolate")')&&owner.includes("AO_APP_SHELL_V1?.navigate?.(target)"),"Formation Apostolate action must use the canonical failure-aware app-shell route");
 assert.match(owner,/openModule\(id,opts=\{\}\)/,"Formation child launcher cannot receive a return context");
 assert.match(owner,/external\?\.surface==="apostolate"/,"Formation cannot restore a suspended Apostolate parent");
 assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint","today\.gospel",SPIRITUAL_LIFE_ROUTE_ID\]\)/,"Learn module set lost hidden Today compatibility routes or Spiritual Life");
@@ -143,3 +143,4 @@ console.log("PASS modular Learn owner: v43.59.30 hub plus Spiritual Life and v38
 
 await import("./learn-public-discovery.mjs");
 await import("./learn-direct-entry-stale-launch.mjs");
+await import("./learn-back-home-recovery.mjs");
