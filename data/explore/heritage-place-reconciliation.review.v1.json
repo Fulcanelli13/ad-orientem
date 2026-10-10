@@ -11,11 +11,11 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 217,
-    "places_with_linked_records": 215,
+    "places": 220,
+    "places_with_linked_records": 218,
     "places_without_direct_claim": 2,
     "multicategory_heritage_places": 178,
-    "shrines": 213,
+    "shrines": 216,
     "pilgrimages": 206,
     "relic_claims": 122,
     "apparition_accounts": 32,
@@ -830,6 +830,16 @@
         ],
         "relics": [
           "relic:ES:convento-san-juan-cruz-segovia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "display_name": "Real Monasterio de Santa María de Guadalupe",
+      "record_ids": {
+        "shrines": [
+          "shrine:ES:real-monasterio-santa-maria-guadalupe"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -1817,6 +1827,16 @@
       "record_ids": {
         "shrines": [
           "shrine:IL:basilica-of-the-transfiguration-mount-tabor"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "display_name": "Memorial of Saint Peter — Capernaum",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:capernaum-saint-peter-memorial"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3539,10 +3559,20 @@
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "display_name": "National Marian Shrine of Our Lady of La Vang",
+      "record_ids": {
+        "shrines": [
+          "shrine:VN:our-lady-la-vang-national-shrine"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
-    "shrines": 213,
+    "shrines": 216,
     "pilgrimages": 178,
     "relics": 92,
     "apparitions": 29,
