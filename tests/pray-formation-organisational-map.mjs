@@ -17,7 +17,9 @@ const familySource=prayerSource.slice(prayerSource.indexOf("function prayFamilie
 assert.equal(map.schema,"AO_PRAY_FORMATION_ORGANISATIONAL_MAP_V1");
 assert.equal(map.status,"PARTIAL_ENTRY_PRESENTATION_IMPLEMENTED");
 assert.equal(map.acceptance.entry_presentation_implemented,true);
-assert.equal(map.acceptance.user_visible_content_crosslinks_implemented,false);
+assert.equal(map.acceptance.user_visible_content_crosslinks_implemented,true);
+assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="SOURCE_WIRED_PHONE_UNVERIFIED").length,9);
+assert.equal(map.connections.editorially_proposed_item_links.filter(x=>x.state==="PROPOSED_NOT_WIRED").length,11);
 const unique=(entries,label)=>{
   const ids=entries.map(x=>x.id);
   assert.equal(new Set(ids).size,ids.length,label+" duplicates a content ID");
@@ -85,7 +87,9 @@ assert.equal(map.connections.editorially_proposed_item_links.length,20);
 for(const link of map.connections.editorially_proposed_item_links){
   assert.ok(reachable.has(link.from),link.from+" unknown origin");
   assert.ok(reachable.has(link.to),link.to+" unknown target");
-  assert.equal(link.state,"PROPOSED_NOT_WIRED","Proposal must not masquerade as implemented navigation");
+  assert.ok(["PROPOSED_NOT_WIRED","SOURCE_WIRED_PHONE_UNVERIFIED"].includes(link.state),"Invalid contextual link status");
+  if(link.state==="SOURCE_WIRED_PHONE_UNVERIFIED")assert.ok(link.evidence&&link.evidence.length>10,"Wired relation lacks an original handler/source witness");
+  else assert.equal(link.evidence,null,"Proposed relation must not pretend to have a verified handler");
   assert.equal(link.return_to_origin_required,true);
 }
 const guideById=new Map(guides.routes.map(x=>[x.id,x]));
@@ -149,6 +153,9 @@ assert.match(formationPresentation,/data-ao-learn-questions/);
 assert.match(formationBrowser,/data-ao-learn-questions/);
 assert.match(formationBrowser,/openModule\("learn\.sexual_ethics"\)/);
 assert.equal(map.pray.library_categories.reduce((n,x)=>n+x.count,0),48);
+assert.equal(map.guides.source_level_followup_count,25);
+assert.equal(map.guides.source_level_followups.length,25);
+assert.equal(map.guides.fully_verified_in_phone,false);
 assert.equal(map.formation.sexual_ethics_topic_projection.topics.length,50);
 assert.equal(map.formation.sexual_ethics_topic_projection.question_ids.length,150);
 assert.equal(map.formation.sexual_ethics_topic_projection.extended_debate_question_ids.length,55);
