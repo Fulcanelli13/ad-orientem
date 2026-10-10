@@ -1,0 +1,31 @@
+name: Directory Una Cum Map-First Address Acquisition
+on:
+  pull_request:
+    paths:
+      - "tools/directory/acquire-una-cum-map-pins-r43.mjs"
+      - ".github/workflows/directory-una-cum-map-first.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: directory-r43-geocoder-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Single-threaded one-time address acquisition with cache and conservative site-scale filters
+        run: node tools/directory/acquire-una-cum-map-pins-r43.mjs --start=0 --max=460
+      - name: Preserve evidence separately from production pins
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r43-una-cum-address-coordinate-evidence
+          path: ${{ runner.temp }}/r43-una-cum-address-geocodes/
+          retention-days: 30
+          if-no-files-found: error
