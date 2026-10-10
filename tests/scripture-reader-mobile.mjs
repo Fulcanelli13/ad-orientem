@@ -113,6 +113,14 @@ try{
  await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
  await dialog.locator(".aoScriptureNav input").nth(1).fill("1");
  await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1",
+   "Manual Psalter chapter navigation must retain the chosen location");
+ const psalmDebug=await page.evaluate(async()=>{
+   const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader;
+   const ref=await import("/src/scripture/reference-safety.js");
+   return {passage:p.passage,edition:p.editionId,mapping:ref.scriptureParallelReferenceState(p.passage,p.editionId,"cpdv-2009")};
+ });
+ console.log("PSALTER CROSSWALK DIAGNOSTIC",JSON.stringify(psalmDebug));
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1");
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
