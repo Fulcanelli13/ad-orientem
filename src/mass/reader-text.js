@@ -23,6 +23,17 @@ function macroId(sequence){
   return "AO.SM.M"+String(sequence).padStart(2,"0");
 }
 
+// PUBLIC_TEXT is not universally a chant: at the foot of the altar, for
+// example, prayers may be spoken. Only these source-owned public prayers
+// are explicitly chanted in the certified sung form, in addition to all
+// SCHOLA_PUBLIC units. Ordinary Versicles/Responses keep their own policy.
+const SUNG_PUBLIC_PRAYER_BLOCKS=new Set([
+  "AO.SM.B016", // Gloria intonation
+  "AO.SM.B027", // Credo intonation
+  "AO.SM.B062", // Pater noster introduction
+  "AO.SM.B063", // Pater noster
+]);
+
 function unitKind(unit){
   const latin=String(unit?.latin??"").trim();
   const clock=String(unit?.clock??"").toUpperCase();
@@ -101,7 +112,7 @@ function validateFrenchOrdinary(frenchOrdinary){
   return frenchOrdinary.byCue;
 }
 
-function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVariants=null}={}){
+function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVariants=null,form="LOW"}={}){
   const locale=languageKey(language);
   const frenchByCue=locale==="fr" ? validateFrenchOrdinary(frenchOrdinary) : null;
   const raw=(block.units??[])
@@ -124,7 +135,19 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
         sourceCueIds:Object.freeze([unit.cue_id]),
       };
     });
-  return composeOrdinaryReaderParagraphs(block,raw,{language:locale});
+  const composed=composeOrdinaryReaderParagraphs(block,raw,{language:locale});
+  const byCue=new Map((block.units??[]).map(u=>[u.cue_id,String(u.clock??"").toUpperCase()]));
+  const sungForm=String(form??"").toUpperCase()==="SUNG";
+  return Object.freeze(composed.map(p=>{
+    const cues=p.sourceCueIds??[p.id];
+    const clocks=cues.map(id=>byCue.get(id));
+    const isSung=sungForm && (
+      clocks.includes("SCHOLA_PUBLIC") ||
+      (SUNG_PUBLIC_PRAYER_BLOCKS.has(block.Block_ID)&&clocks.includes("PUBLIC_TEXT"))
+    );
+    const isPrivate=clocks.includes("PRIEST_PRIVATE");
+    return Object.freeze({...p,displayLanguage:isSung?"LATIN":isPrivate?"VERNACULAR":null});
+  }));
 }
 
 function stateOnlyBlock(block){
@@ -151,7 +174,8 @@ function properParagraphs(block,properSlots,{language="en"}={}){
       latin:p.latin ?? p.lat ?? null,
       vernacular:p.vernacular ?? p.english ?? p.en ?? null,
     }));
-    return composeProperReaderParagraphs(block.Block_ID,resolved,{language});
+    return composeProperReaderParagraphs(block.Block_ID,resolved,{language})
+      .map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
   }
   const latin=data.latin ?? data.Latin_Text ?? null;
   const english=data.vernacular ?? data.english ?? data.English_Text ?? null;
@@ -161,7 +185,7 @@ function properParagraphs(block,properSlots,{language="en"}={}){
     kind:"TEXT",
     latin,
     vernacular:english,
-  }],{language});
+  }],{language}).map(p=>Object.freeze({...p,displayLanguage:"VERNACULAR"}));
 }
 
 export function buildReaderSectionCard({
@@ -189,7 +213,7 @@ export function buildReaderSectionCard({
     );
     const raw=block.Proper_Slot
       ? properParagraphs(block,properSlots,{language:vernacularLanguage})
-      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants});
+      : ordinaryParagraphs(block,{language:vernacularLanguage,frenchOrdinary,ordinaryVariants,form:formFamily(corpus.form)});
     const stateOnly=stateOnlyBlock(block);
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");
