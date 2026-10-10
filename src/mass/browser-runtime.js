@@ -1,6 +1,7 @@
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { createReaderDomAdapter } from "./reader-dom.js";
 import { createMassReaderModel } from "./reader-model.js";
+import {loadMandatumSource,createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { structureSupport } from "./reader-structure.js";
 import { createAspergesReaderController, loadAspergesReaderData } from "./reader-asperges.js";
@@ -32,6 +33,7 @@ export function createBrowserMassRuntime({
   loadCorpusChristiData = loadCorpusChristiProcessionReaderData,
   loadHolyThursdayPostData = loadHolyThursdayPostReaderData,
   holyThursdayMandatumContext = null,
+  loadHolyThursdayMandatumData=loadMandatumSource,
   loadGenericProcessionData = loadGenericProcessionReaderData,
   loadGoodFridayData = loadGoodFridayReaderData, goodFridayContext = null,
   loadEasterVigilData = loadEasterVigilReaderData, easterVigilContext = null,
@@ -857,6 +859,10 @@ export function createBrowserMassRuntime({
           : Promise.resolve([]),
       ]);
       const plannedObjective=createPlanAwareObjectiveRuntime({events,prepared});
+      const needsMandatum=holyThursdayMandatumContext?.mandatumPresent===true||
+        prepared.session.resolvedMass?.provenance?.holyThursday?.mandatumPresent===true;
+      const mandatumData=needsMandatum?await Promise.resolve(loadHolyThursdayMandatumData(prepared)):null;
+      const mandatumSource=mandatumData?.source??mandatumData??null;
       const model = createMassReaderModel({
         resolvedMass: prepared.session.resolvedMass,
         sectionMap: data?.sectionMap,
@@ -865,6 +871,7 @@ export function createBrowserMassRuntime({
         canonSourceMap: data?.canonSourceMap,
         nuptialData: data?.nuptialData,
         holyThursdayMandatumPresent:holyThursdayMandatumContext?.mandatumPresent===true,
+        holyThursdayMandatumSource:mandatumSource,
         vernacularLanguage: prepared?.readerPreferences?.language??"en",
       });
 
