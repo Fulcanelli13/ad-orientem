@@ -2,6 +2,7 @@
 // Ceremony FORM and the liturgical CELEBRATION are different axes. The latter
 // remains owned by the 1962 calendar/Proper resolver; NEVER substitute a Proper.
 import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
+import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -58,7 +59,7 @@ export function mountFullMassPreflight({
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
-  let root=null,selected=null,explicit=false,lastDate=null,disposed=false,observer=null;
+  let root=null,selected=null,explicit=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   const flow=()=>doc.getElementById("ao-mass-flow-v1");
   const anchor=()=>flow()?.querySelector(".aoFlowActions")??flow()?.querySelector("[data-ao-start-live]")?.parentElement;
   const french=()=>String(language()).startsWith("fr");
@@ -85,6 +86,12 @@ export function mountFullMassPreflight({
     control.click();
     return true;
   }
+  function composeRitesFor(legacy,hostOptions={}){
+    const current=selectionFor(legacy);
+    return composeOptionalMassRites(legacy,{
+      form:current.form,kind:current.kind,overrides:riteOverrides,
+    },hostOptions);
+  }
   function refresh(){
     if(disposed)return;
     const host=flow(),target=anchor();
@@ -95,6 +102,10 @@ export function mountFullMassPreflight({
     // an override into another Mass. In-session changes remain live.
     if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;}
     lastDate=date;
+    const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
+      legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
+    if(lastCelebrationKey!==null&&lastCelebrationKey!==celebrationKey)riteOverrides={};
+    lastCelebrationKey=celebrationKey;
     if(root&&!root.isConnected)root=null;
     if(!root){
       root=doc.createElement("section");
@@ -113,7 +124,10 @@ export function mountFullMassPreflight({
         FULL_MASS_FORM_OPTIONS.map(({id})=>
           '<label class="aoFullMassChoice"><input type="radio" name="ao-native-mass-form" value="'+id+'" data-full-mass-form>'+
           '<span data-full-mass-label="'+id+'"></span></label>').join("")+
-        '</div></fieldset><p data-full-mass-note></p>';
+        '</div></fieldset>'+
+        '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
+        '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
+        '<p data-full-mass-note></p>';
       root.addEventListener("click",e=>{
         const button=e.target?.closest?.("[data-full-mass-category]");
         if(!button)return;
@@ -129,6 +143,16 @@ export function mountFullMassPreflight({
       });
       root.addEventListener("change",e=>{
         const el=e.target;
+        if(el?.matches?.("[data-full-mass-rite]")){
+          const id=el.dataset.fullMassRite;
+          const summary=selectionFor(getResolvedMass());
+          const allowed=availableOptionalMassRites(getResolvedMass(),{
+            form:summary.form,kind:summary.kind,
+          }).find(row=>row.id===id)?.allowed;
+          if(!allowed){el.checked=false;return;}
+          riteOverrides={...riteOverrides,[id]:el.checked};
+          refresh();return;
+        }
         if(el?.matches?.("[data-full-mass-form]")&&MASS_FORMS.includes(el.value)){
           selected=el.value;explicit=true;refresh();
         }
@@ -172,6 +196,35 @@ export function mountFullMassPreflight({
       span.textContent=txt(LABELS[span.dataset.fullMassLabel],fr);
     });
     root.querySelector("[data-full-mass-form-fieldset]").disabled=!summary.formChangeAllowed;
+    const rites=availableOptionalMassRites(legacy,{form:summary.form,kind:summary.kind});
+    const options=rites.filter(rite=>rite.allowed||rite.fromSource);
+    const detail=root.querySelector("[data-full-mass-rites]");
+    detail.hidden=options.length===0;
+    root.querySelector("[data-full-mass-rite-summary]").textContent=l("Rites actually taking place",
+      "Rites effectivement célébrés");
+    root.querySelector("[data-full-mass-rite-intro]").textContent=l(
+      "Choose only ceremonies truly taking place at this celebration. A feast or date never activates a procession.",
+      "Indiquez uniquement les cérémonies effectivement célébrées. Une fête ou une date ne déclenche jamais une procession.");
+    const list=root.querySelector("[data-full-mass-rite-list]");
+    const shown=[...list.querySelectorAll("[data-full-mass-rite]")].map(x=>x.dataset.fullMassRite);
+    const desired=options.map(x=>x.id);
+    if(shown.join("|")!==desired.join("|")){
+      list.replaceChildren(...options.map(rite=>{
+        const label=doc.createElement("label");label.className="aoFullMassRite";
+        const checkbox=doc.createElement("input");checkbox.type="checkbox";
+        checkbox.dataset.fullMassRite=rite.id;
+        const text=doc.createElement("span");text.textContent=fr?rite.fr:rite.en;
+        label.append(checkbox,text);return label;
+      }));
+    }
+    for(const rite of options){
+      const input=[...list.querySelectorAll("[data-full-mass-rite]")]
+        .find(x=>x.dataset.fullMassRite===rite.id);
+      if(!input)continue;
+      input.checked=riteOverrides[rite.id]??rite.fromSource;
+      input.disabled=!rite.allowed;
+      input.closest("label").querySelector("span").textContent=fr?rite.fr:rite.en;
+    }
     root.dataset.aoCelebrationKind=summary.kind;
     root.dataset.aoChosenMassForm=summary.form;
     root.dataset.aoProperReady=String(summary.canStart);
@@ -188,16 +241,22 @@ export function mountFullMassPreflight({
   observer=typeof doc.defaultView?.MutationObserver==="function"?
     new doc.defaultView.MutationObserver(records=>{
       if(records.some(record=>[...record.addedNodes].some(node=>
-        node.nodeType===1&&(node.id==="ao-mass-flow-v1"||node.querySelector?.("#ao-mass-flow-v1")))))refresh();
+        node.nodeType===1&&(
+          node.id==="ao-mass-flow-v1"||
+          node.matches?.(".aoFlowActions,.aoMassFlowBody")||
+          node.querySelector?.("#ao-mass-flow-v1,.aoFlowActions,.aoMassFlowBody")
+        ))))queueMicrotask(refresh);
     }):null;
   observer?.observe(doc.body,{subtree:true,childList:true});
   refresh();
   return Object.freeze({
     selectionFor,
+    composeRitesFor,
     openCategory,
     refresh,
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
-      chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null}),
+      chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
+      optionalRiteOverrides:Object.freeze({...riteOverrides})}),
     dispose(){disposed=true;doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}
   });
 }
