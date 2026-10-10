@@ -45,6 +45,12 @@ The [branch-hygiene workflow](../.github/workflows/branch-hygiene.yml) performs 
 
 > Initial 10 October audit: **953 branches** and **0 open PRs**; the first ancestry-only pass safely retired **94** fully merged heads. The 953 figure is a snapshot, not a live counter. Reachability / archive checks, not age or naming alone, determine removals.
 
+## Reversible archival of adjudicated closed PR histories
+
+[The frozen pilot ledger](../data/governance/closed-pr-archive-pilot-2026-10-10.json) lists ten historically closed-unmerged PR heads and their exact commit SHAs. The [GitHub archive script](../tools/governance/archive-closed-pr-heads.mjs) operates **only** on those records: closed-unmerged PR, unchanged SHA, no current PR on that head, more than 72 hours since closure, no protected branch or operational workflow reference. It creates and verifies an immutable `archive/closed-pr/prNNN` **Git tag** before any branch deletion. Deletion uses atomic `--force-with-lease` and cannot erase concurrently added commits. Failed checks retain the original branch. Every decision is recorded as a workflow artifact.
+
+A tag retains full Git ancestry; recover an original branch with `git switch -c restored refs/tags/archive/closed-pr/prNNN`. This is a limited, reversible pilot, **not** permission to delete the 244 unresolved branch histories or source-sensitive donor evidence. Expand an allowlist only after linking an individual disposition to a canonical owner. Archive tags must never be garbage-collected as routine branch cleanup.
+
 ## Build artifacts and workflows
 
 - Root `ao-inline-*`, `ao-packed-*` and `ao-boot-*` assets may be referenced by the active HTML, offline manifest or tests. **Do not delete by glob.** First produce an explicit dependency ledger, verify no reachable entry point needs the file, and re-run startup/offline smoke tests.
