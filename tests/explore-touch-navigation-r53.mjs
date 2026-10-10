@@ -59,7 +59,7 @@ const base=renderHeritageToString({language:"en",items:[],filters:{heritageCateg
 assert.match(base,/aoHeritageMassShortcut/);
 assert.match(base,/aoHeritageMore/);
 assert.doesNotMatch(base,/aoExploreMainDestinations/);
-assert.match(base,/Find a Mass/);
+assert.match(base,/Find a traditional Mass/);
 assert.match(base,/data-heritage-category="shrines"/);
 assert.match(base,/data-find-filter-value="traditions"/);
 console.log("PASS Explore R53: passive swipe protection, nested category architecture, section switcher");
