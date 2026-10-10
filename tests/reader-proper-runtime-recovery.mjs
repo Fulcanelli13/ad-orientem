@@ -85,7 +85,7 @@ const full=section=>({lat:extra.la.get(section)[0],en:extra.en.get(section)[0],f
 const extended={...authoritative,data:{
   ...authoritative.data,
   sourcePath:"Sancti/10-08",
-  calendarCommemorations:[{path:"Sancti/10-07cc",prayerSourcePath:"Sancti/10-07cc"}],
+  calendarCommemorations:[{path:"Sancti/10-08c",prayerSourcePath:"Sancti/10-08c"}],
   collects:[{lat:"Principal Latin collect",en:"Principal English collect",fr:"Collecte principale"},full("Oratio")],
   secrets:[{lat:"Principal Latin secret",en:"Principal English secret",fr:"Secrète principale"},full("Secreta")],
   postcommunions:[{lat:"Principal Latin postcommunion",en:"Principal English postcommunion",fr:"Postcommunion principale"},full("Postcommunio")],
@@ -94,8 +94,9 @@ const commCalls=[];
 const commemorativeResolver={
   async resolveSource(path,language){
     commCalls.push([path,language]);
-    if(path!=="Sancti/10-07cc")throw Error("Unexpected source "+path);
-    return {map:extra[language]};
+    if(path==="Sancti/10-08c")return {map:language==="fr"?new Map():extra[language]};
+    if(path==="Sancti/10-07cc"&&language==="fr")return {map:extra.fr};
+    throw Error("Unexpected source "+path+" / "+language);
   },
 };
 const fixed=await recoverReaderProperOmissions(extended,{hostResolver:commemorativeResolver});
@@ -106,7 +107,8 @@ for(const [field,section] of [["collects","Oratio"],["secrets","Secreta"],["post
   assert.equal(fixed.data[field][1].en,extended.data[field][1].en,field+" changed existing English");
   assert.match(fixed.data[field][1].fr,/Par Notre-Seigneur Jésus-Christ/,field+" failed exact source-based French recovery");
 }
-assert.equal(commCalls.length,9,"Expected three source languages for each of three commemorations");
+assert.equal(commCalls.length,12,"Each of three orations must use the pinned LA/EN and historical French alias");
+assert.equal(commCalls.filter(([path,lang])=>path==="Sancti/10-07cc"&&lang==="fr").length,3);
 const wrongLatin={...extended,data:{...extended.data,collects:[extended.data.collects[0],{lat:"Different martyr entirely and an unmatching Latin collect body.",en:"Existing English",fr:""}]}};
 const held=await recoverReaderProperOmissions(wrongLatin,{hostResolver:commemorativeResolver});
 assert.equal(held.data.collects[1].fr,"","Mismatched saint/oration was falsely repaired");
