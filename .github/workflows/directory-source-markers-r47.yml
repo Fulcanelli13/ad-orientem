@@ -1,8 +1,5 @@
 name: Directory R47 Direct Source Coordinates
 on:
-  pull_request:
-    paths:
-      - ".github/workflows/directory-source-markers-r47.yml"
   workflow_dispatch:
 permissions:
   contents: read
