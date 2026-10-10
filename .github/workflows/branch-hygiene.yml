@@ -200,3 +200,29 @@ jobs:
           name: merged-pr-branches-report
           path: artifacts/merged-pr-branches/report.tsv
           if-no-files-found: warn
+
+  archive-closed-pr-pilot:
+    # Exact one-time allowlist; never touches unknown unmerged research.
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch exact branch refs for SHA-lease protection
+        run: git fetch --no-tags --prune origin '+refs/heads/*:refs/remotes/origin/*'
+      - name: Reversibly archive adjudicated closed-PR branches
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/governance/archive-closed-pr-heads.mjs --apply
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: closed-pr-archive-pilot
+          path: artifacts/closed-pr-archive/
+          if-no-files-found: warn
