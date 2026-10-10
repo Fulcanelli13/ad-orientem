@@ -321,6 +321,7 @@ export function createFindOwner(win=globalThis){
         });
         if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
         mapHandle=nextHandle;
+        if(state.bibleAtlas)updateBibleIndex(state.bibleIndex);
       }catch(error){
         const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
         if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
@@ -335,6 +336,7 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    if(state.lens!=="heritage"){state.bibleAtlas=false;state.bibleIndex=0;}
     if(state.lens==="heritage"){
       state.view="map";
       if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
@@ -369,6 +371,7 @@ export function createFindOwner(win=globalThis){
     if(key==="view")state.view=value==="map"?"map":"list";
     else if(key==="lens"&&(value==="heritage"||EXPLORE_LENSES.includes(value))){
       state.lens=value;state.calendarKey=null;
+      state.bibleAtlas=false;state.bibleIndex=0;
       if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
