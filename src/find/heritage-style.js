@@ -187,4 +187,10 @@ export const HERITAGE_STYLE = String.raw`
  .aoHeritageSurface .aoHeritagePreviewActions{grid-template-columns:minmax(0,1fr)}
  .aoHeritageSurface .aoHeritagePreviewActions a{justify-content:center}
 }
+
+/* R54 individual-record previews share map click-through; the full record
+   reader and list-view previews retain normal modal focus semantics. */
+.aoExploreSurface .aoExploreQuickPreviewLayer{pointer-events:none;background:transparent}
+.aoExploreSurface .aoExploreQuickPreviewLayer .aoExploreQuickPreview{pointer-events:auto;overscroll-behavior:contain}
+.aoExploreSurface .aoExploreQuickPreviewLayer .aoExploreQuickPreview header button{min-width:44px;min-height:44px}
 `;
