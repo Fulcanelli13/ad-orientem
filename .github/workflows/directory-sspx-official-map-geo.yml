@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "tools/directory/acquire-sspx-official-map-geo.mjs"
+      - "tools/directory/acquire-lmd-map-pins.mjs"
       - "src/find/geo-provenance.js"
       - "tests/directory-sspx-official-map-geo.mjs"
       - ".github/workflows/directory-sspx-official-map-geo.yml"
@@ -36,6 +37,16 @@ jobs:
               exit 1
             }
           cat "$RUNNER_TEMP/sspx-official-map/harvest.log"
+      - name: Harvest public LMD map coordinates
+        run: node tools/directory/acquire-lmd-map-pins.mjs --countries=mu,ie,nz,za,au,ca
+      - name: Upload public LMD map research
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lmd-worldwide-map-r39-research
+          path: /tmp/lmd-r39/
+          retention-days: 30
+          if-no-files-found: warn
       - name: Preserve first-party geolocation research without publishing
         if: always()
         uses: actions/upload-artifact@v4
