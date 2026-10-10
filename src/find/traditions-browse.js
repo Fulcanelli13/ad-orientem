@@ -53,7 +53,6 @@ export function groupTraditionsForBrowse(items,{includeNovenaContext=false}={}){
       map_publishable:false,
       map_state:"NOT_MAPPED",
       facts:Object.freeze([
-        {label:"Class",value:clean(custom.custom_class).replaceAll("_"," ")},
         {label:"Period",value:clean(custom.period_label)},
         {label:"Documented examples",value:String(attestations.length)},
       ].filter(fact=>fact.value)),
