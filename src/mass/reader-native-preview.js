@@ -445,6 +445,8 @@ export async function mountNativeReaderPreview({
   loadCorpusChristiData=loadCorpusChristiProcessionReaderData,
   holyThursdayPostData=null,
   loadHolyThursdayPostData=loadHolyThursdayPostReaderData,
+  mandatumSourceData=null,
+  loadMandatumData=loadMandatumSource,
   genericProcessionData=null,
   loadGenericProcessionData=loadGenericProcessionReaderData,
   readLegacyActive=null,
