@@ -1,3 +1,4 @@
+import { syncAngelusNavigation, syncRosaryProgress, scrollToAngelusUnit } from "./reader-navigation.js";
 // v3.4.10 non-Mass reading activation extracted from the approved donor.
 // Presentation-only: it does not own devotional content, rails, routing or liturgical state.
 const VERSION="3.4.10";
@@ -68,13 +69,14 @@ function energy(nodes,current,mount,{cssVar,far,lastScroll,setLastScroll}){
 function angelus(main,mount){
   const cards=[...main.querySelectorAll(".aoP435930AngelusSequence .aoP435930PrayerUnit")];
   if(!cards.length)return;
-  const current=midpointCurrent(cards,focusLine(mount))||cards[0];
+  const current=mount.scrollTop<=8?cards[0]:(midpointCurrent(cards,focusLine(mount))||cards[0]);
   categorical(cards,current,"ao346");
   energy(cards,current,mount,{
     cssVar:"--ao346-focus-opacity",far:.50,lastScroll:lastAngelusScrollTop,
     setLastScroll:value=>{lastAngelusScrollTop=value}
   });
   main.dataset.aoFocusCurrent=current.dataset.aoAngelusIndex??"";
+  syncAngelusNavigation(main,current);
 }
 function stationPhases(main){
   const phases=[];
@@ -101,6 +103,7 @@ function stations(main,mount){
 function sync(){
   raf=0;
   const {mount,main,view}=context();
+  syncRosaryProgress(globalThis);
   if(!mount||!main||!["angelus","stations"].includes(view))return;
   mount.dataset.aoFocusContract="v3.4.10";
   if(view==="angelus")angelus(main,mount);
@@ -123,6 +126,46 @@ export function installPrayFocusRuntime(){
   if(window.AO_PRAY_FOCUS_V3410)return window.AO_PRAY_FOCUS_V3410;
   new MutationObserver(()=>scheduleBind()).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["data-ao-pray-view","lang"]});
   window.addEventListener("resize",queue,{passive:true});
+  // Buttons only navigate the currently open Angelus prayer; the text retains
+  // native vertical scrolling, and Mass/Rosary state is not touched.
+  document.addEventListener("click",event=>{
+    const button=event.target?.closest?.("[data-ao-angelus-jump]");
+    if(button){
+      const mount=button.closest(".aoP435930Mount[data-ao-pray-view='angelus']");
+      if(!mount)return;
+      const i=Number(button.dataset.aoAngelusJump);
+      if(!Number.isInteger(i))return;
+      event.preventDefault();
+      if(scrollToAngelusUnit(mount,i))queue();
+      return;
+    }
+    // Donor-owned Rosary step buttons may update on click without repainting
+    // the Pray mount; synchronize the read-only indicator on the next frame.
+    queue();
+  },true);
+  // Horizontal intent changes Angelus prayer sections; vertical gestures
+  // remain entirely native, and mode/translation controls are not hijacked.
+  let swipe=null;
+  document.addEventListener("touchstart",event=>{
+    const sequence=event.target?.closest?.(".aoP435930AngelusSequence");
+    const t=event.touches?.[0];
+    swipe=sequence&&event.touches?.length===1&&t
+      ?{sequence,x:t.clientX,y:t.clientY}:null;
+  },{passive:true,capture:true});
+  document.addEventListener("touchend",event=>{
+    const point=event.changedTouches?.[0],s=swipe;
+    swipe=null;
+    if(!s||!point)return;
+    const dx=point.clientX-s.x,dy=point.clientY-s.y;
+    if(Math.abs(dx)<85||Math.abs(dx)<Math.abs(dy)*1.65)return;
+    const mount=s.sequence.closest(".aoP435930Mount[data-ao-pray-view='angelus']");
+    if(!mount)return;
+    const main=mount.querySelector(".aoP435930Body");
+    const current=Number(main?.dataset?.aoFocusCurrent??0);
+    const next=current+(dx<0?1:-1);
+    if(scrollToAngelusUnit(mount,next))queue();
+  },{passive:true,capture:true});
+
   document.addEventListener("DOMContentLoaded",scheduleBind,{once:true});
   const api=Object.freeze({version:VERSION,bind:scheduleBind,sync:queue,focusLine});
   window.AO_PRAY_FOCUS_V3410=api;
