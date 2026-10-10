@@ -12,13 +12,13 @@ import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 import {hasScriptureWitness} from "./witness-loader.js";
 
 const L={
- en:{heading:"Sacred Scripture",notice:"Traditional Catholic Bible. The full text appears here only when an approved edition is installed.",
+ en:{heading:"Sacred Scripture",notice:"Catholic Bible reading. Historical source transcriptions are labelled pending edition collation.",
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
   readable:"Douay–Rheims is the traditional reading. CPDV is the selected free alternative for easier English, but its wording and verse numbering still require verification before full text can appear inside the app.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
- fr:{heading:"Sainte Écriture",notice:"Bible catholique traditionnelle. Le texte intégral n'apparaît qu'après validation et intégration d'une édition autorisée.",
+ fr:{heading:"Sainte Écriture",notice:"Lecture de la Bible catholique. Les transcriptions historiques non collationnées sont signalées.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
   bookmarks:"Signets",search:"Rechercher",find:"Chercher dans les textes autorisés",results:"Résultats",none:"Aucun texte local vérifié.",
   rosary:"Mystères du Rosaire",source:"Édition",unavailable:"Ce chapitre n'est pas disponible hors ligne. Consulter la source catholique.",
@@ -288,7 +288,7 @@ export function mountScriptureLibrary(root,{
    main.append(element("h3",passageReference(location)));
    const chapterEntries=records.filter(r=>validatedRecord(r,editionId)&&r.book===location.book&&r.chapter===location.chapter)
      .sort((a,b)=>a.verseStart-b.verseStart);
-   // An approved chapter is read here; the remote source is only a fallback when no pack is installed.
+   // Display a source witness only with an explicit unreviewed notice; approved text uses its separate contract.
    if(context?.reference&&contextDepth==="chapter"&&!commentaryVisible&&!chapterEntries.length){
      const chapterLink=element("a",lang==="fr"?"Lire le chapitre complet à la source ↗":"Read full chapter at source ↗");
      // Verse-specific links remain in the usual action; this link deliberately
@@ -303,6 +303,13 @@ export function mountScriptureLibrary(root,{
    }
    const textBlock=element("div",null,"aoScriptureText");
    if(chapterEntries.length){
+     if(chapterEntries.some(item=>item.sourceWitness)){
+       const sourceNotice=element("p",lang==="fr"
+         ?"Transcription de la source, pas encore collationnée avec l'édition imprimée. Vérifier les versets incomplets ou divergents."
+         :"Source transcription, not yet collated against the printed edition. Verify missing or divergent verses.","aoScriptureNotice aoScriptureWitnessNote");
+       sourceNotice.dataset.scriptureWitnessUnreviewed=editionId;
+       textBlock.append(sourceNotice);
+     }
      for(const item of chapterEntries.filter(item=>contextDepth==="chapter"||!context?.reference|| (item.verseStart>=location.verseStart&&item.verseStart<=location.verseEnd))){
        const verse=element("p",item.text,"aoScriptureVerse");verse.dataset.verse=String(item.verseStart);
        const sup=element("span",String(item.verseStart)+" ");sup.className="aoScriptureVerseNumber";
