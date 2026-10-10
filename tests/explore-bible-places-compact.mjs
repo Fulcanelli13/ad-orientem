@@ -27,8 +27,8 @@ assert.deepEqual(Object.fromEntries(["INFANCY","PUBLIC","PASSION","RESURRECTION"
  .map(phase=>[phase,christ.filter(x=>x.phase===phase).length])),
  {INFANCY:5,PUBLIC:31,PASSION:7,RESURRECTION:3});
 const gospelEvents=christ.flatMap(x=>x.events||[]);
-assert.equal(gospelEvents.length,165);
-assert.equal(new Set(gospelEvents.map(x=>x.id)).size,165);
+assert.equal(gospelEvents.length,166);
+assert.equal(new Set(gospelEvents.map(x=>x.id)).size,166);
 for(const event of gospelEvents){
  assert.ok(event.title_en?.length>6 && event.title_fr?.length>6,event.id+": missing bilingual episode label");
  assert.ok(parseScriptureContext(event.reference),event.id+": unparseable verse "+event.reference);
@@ -112,4 +112,4 @@ assert.match(service,/bible-places-compact\.v1\.json/);
 assert.match(service,/fetchJson\(EXPLORE_DATA_URLS\.biblePlaces,\{fetchImpl,optional:true\}\)/);
 const native=readFileSync(new URL("../src/scripture/browser-entry.js",import.meta.url),"utf8");
 assert.match(native,/data-ao-scripture-context/);
-console.log("PASS Explore Bible Places compact: 60 locations and 165 bilingual Life of Christ episodes, 37 miracles, Catholic passage links, bilingual disclosure, unchanged lens ownership");
+console.log("PASS Explore Bible Places compact: 60 locations and 166 bilingual Life of Christ episodes, 37 miracles, Catholic passage links, bilingual disclosure, unchanged lens ownership");
