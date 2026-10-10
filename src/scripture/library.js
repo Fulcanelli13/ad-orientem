@@ -116,7 +116,7 @@ export function mountScriptureLibrary(root,{
    // between traditional English, plain English and traditional French.
    const quick=element("nav",null,"aoScriptureQuickEditions");
    quick.setAttribute("aria-label",lang==="fr"?"Traductions de la Bible":"Bible translations");
-   for(const [id,title] of [["dr-challoner","Douay–Rheims"],["cpdv-2009","Plain English · CPDV"],["crampon-1923","Crampon · FR"]]){
+   for(const [id,title] of [["dr-challoner","Douay–Rheims"],["cpdv-2009","Plain English · CPDV*"],["crampon-1923","Crampon · FR"]]){
      const option=element("button",title);
      option.type="button";option.dataset.scriptureQuickEdition=id;
      option.setAttribute("aria-pressed",String(editionId===id));
@@ -317,6 +317,15 @@ export function mountScriptureLibrary(root,{
        "aoScriptureNotice aoScriptureTranscriptionStatus");
      notice.setAttribute("role","note");notice.dataset.scriptureSourceReview="pending";
      main.append(notice);
+     if(editionId==="cpdv-2009"){
+       const archive=element("p",lang==="fr"
+         ?"Cette transcription CPDV archivée présente des divergences connues avec le texte actuel de l'auteur. Consultez l'édition de l'auteur pour les passages sensibles."
+         :"Provisional CPDV archive: known wording and verse differences from the author's current master. For contested passages, consult the original author's text.",
+         "aoScriptureNotice aoScriptureArchivedSourceWarning");
+       archive.setAttribute("role","note");
+       archive.dataset.scriptureSourceArchive="cpdv";
+       main.append(archive);
+     }
      const missing=pack.missingByChapter?.[location.chapter]||[];
      if(missing.length){
        const warning=element("p",(lang==="fr"?"Versets absents de cette transcription : ":"Blank slots in this source transcription: ")+missing.join(", "),
