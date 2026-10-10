@@ -25,7 +25,8 @@ assert.equal(report.reconciliation?.full_eight_stage_certifications,0);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.book_catalog_preview_cases,31);
 assert.equal(audit.catalogue_cleanup_v1.remaining_live_book_catalogue_references,0);
-assert.equal(report.statistics.excerpt_via_secondary_case_ids.length,3);
+assert.deepEqual(report.statistics.excerpt_via_secondary_case_ids,["CSE145"]);
+assert.deepEqual(report.statistics.bounded_original_fletcher_1966_case_ids,["CSE008","CSE010"]);
 const sources={...CSE_HIGH_STAGE_SOURCE_IDS,...CSE_REMAINING_STAGE_SOURCE_IDS};
 let stages=0,refs=0;
 for(const review of report.cases){
@@ -67,11 +68,16 @@ for(const review of report.cases){
 }
 assert.equal(stages,440);
 assert.equal(refs,636);
-for(const id of ["CSE008","CSE010","CSE145"]){
+for(const id of ["CSE008","CSE010"]){
   const q=report.cases.find(x=>x.id===id);
-  assert.equal(q.editorial_status,"ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED");
-  assert.ok(sources[id].opposition.includes("FLETCHER_EXCERPTS"));
+  assert.equal(q.editorial_status,"BOUNDED_ORIGINAL_FLETCHER_1966_DIGITIZATION_NOT_EIGHT_STAGE_CERTIFIED");
+  assert.ok(sources[id].opposition.includes("FLETCHER1966"));
+  const x=cseSourceTargets("FLETCHER1966",paragraphRefsFor(CSE_QUESTION_MAP[id],"debate","opposition").find(([sid])=>sid==="FLETCHER1966")[1],CSE_SOURCE_MAP.FLETCHER1966)[0];
+  assert.equal(x.scope,"digitized-original");
 }
+const secondary=report.cases.find(x=>x.id==="CSE145");
+assert.equal(secondary.editorial_status,"ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED");
+assert.ok(sources.CSE145.opposition.includes("FLETCHER_EXCERPTS"));
 assert.deepEqual(sources.CSE123.opposition,["ACOG_ABORTION","SINGER_KUHSE1990"]);
 assert.equal(sources.CSE012.counter[0],"CURRAN_CDF1986");
 assert.ok(!JSON.stringify(sources).includes('"LBM"'));
