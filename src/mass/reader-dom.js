@@ -868,7 +868,7 @@ function guideSections(text){
     return {heading:null,body:block,tone:"",level:0};
   }).filter(Boolean);
 }
-function renderGuideSheet(pop,guide){
+function renderGuideSheet(pop,guide,language="en"){
   if(!pop||!guide)return;
   const doc=pop.ownerDocument??globalThis.document;
   if(!doc?.createElement)return;
@@ -882,7 +882,7 @@ function renderGuideSheet(pop,guide){
   intro.append(kicker,title,summary);
   if(guide.coverage==="INHERITED_MACRO_CONTEXT"&&guide.sourceMoment){
     const scope=doc.createElement("p");scope.className="ao-guide-scope";
-    scope.textContent="Part of: "+guide.sourceMoment;
+    scope.textContent=(String(language).toLowerCase().startsWith("fr")?"Partie de : ":"Part of: ")+guide.sourceMoment;
     intro.append(scope);
   }
   const close=doc.createElement("button");close.type="button";close.className="ao-guide-close";close.dataset.guideClose="true";close.setAttribute("aria-label","Close Guide");close.textContent="×";
@@ -1671,7 +1671,7 @@ export function createReaderDomAdapter({
         const pop=root.querySelector('[data-role="guide-popover"]');
         if(pop){
           if(pop.hidden){
-            renderGuideSheet(pop,current.guide);
+            renderGuideSheet(pop,current.guide,prepared?.readerPreferences?.language??"en");
             pop.hidden=false;
             pop.querySelector?.("[data-guide-close]")?.focus?.();
           }else closeGuide();
