@@ -39,7 +39,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet}={}){
   const customs=arr(vm.customCards);
   if(customs.length){
     html+='<div class="aoHeritageCustomStrip"><div class="aoHeritageStripHeading"><span>'+L(vm.language,"Living traditions","Traditions vivantes")+'</span>';
-    if(vm.filters?.highlightCustomId)html+='<button type="button" data-heritage-custom-clear>'+L(vm.language,"Clear","Effacer")+'</button>';
+    if(vm.filters?.highlightCustomId)html+='<span class="aoHeritageStripActions"><button type="button" data-heritage-custom-details>'+L(vm.language,"About","Découvrir")+'</button><button type="button" data-heritage-custom-clear>'+L(vm.language,"Clear","Effacer")+'</button></span>';
     html+='</div><div class="aoHeritageCustomRail" aria-label="'+L(vm.language,"Discover customs","Découvrir les coutumes")+'">';
     for(const custom of customs){
       const id=custom.raw?.custom?.custom_id;if(!id)continue;
