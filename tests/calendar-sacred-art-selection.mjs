@@ -7,7 +7,7 @@ import {
 const registry = JSON.parse(readFileSync("data/calendar/sacred-art-candidates.v1.json", "utf8"));
 assert.equal(registry.schema, "AO_SACRED_ART_CANDIDATES_V1");
 assert.equal(registry.ownerIssue, 885);
-assert.equal(registry.artworks.length, 29);
+assert.equal(registry.artworks.length, 40);
 assert.equal(new Set(registry.artworks.map(a => a.id)).size, 29);
 for (const candidate of registry.artworks) {
   assert.match(candidate.id, /^met-\d+$/);
@@ -80,4 +80,4 @@ for (const year of [2026,2028]){
     assert.equal(selectDailySacredArt({date},works).artwork.id,"met-5");
   }
 }
-console.log("PASS 29 museum objects source-listed as candidates; fail-closed QA, observed 1962 precedence, Scripture/season fallback, local-time Angelus and 365/366 algorithmic safety");
+console.log("PASS 40 museum objects source-listed as candidates; fail-closed QA, observed 1962 precedence, Scripture/season fallback, local-time Angelus and 365/366 algorithmic safety");
