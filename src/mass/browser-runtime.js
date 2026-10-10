@@ -31,6 +31,7 @@ export function createBrowserMassRuntime({
   requiemAbsolutionContext = null,
   loadCorpusChristiData = loadCorpusChristiProcessionReaderData,
   loadHolyThursdayPostData = loadHolyThursdayPostReaderData,
+  holyThursdayMandatumContext = null,
   loadGenericProcessionData = loadGenericProcessionReaderData,
   loadGoodFridayData = loadGoodFridayReaderData, goodFridayContext = null,
   loadEasterVigilData = loadEasterVigilReaderData, easterVigilContext = null,
@@ -863,6 +864,7 @@ export function createBrowserMassRuntime({
         sungCorpus: data?.sungCorpus,
         canonSourceMap: data?.canonSourceMap,
         nuptialData: data?.nuptialData,
+        holyThursdayMandatumPresent:holyThursdayMandatumContext?.mandatumPresent===true,
         vernacularLanguage: prepared?.readerPreferences?.language??"en",
       });
 
