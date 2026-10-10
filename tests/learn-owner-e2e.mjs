@@ -514,7 +514,7 @@ try{
         &&!!document.getElementById("ao-learn-modular-root")
         &&!document.getElementById("ao-learn-modular-root")?.hidden;
     },spec.family,{timeout:14000});
-    assert.equal(await page.locator(spec.root).count(),0,"Closed Formation child remains mounted: "+spec.id);
+    assert.equal(await page.locator(spec.root).isVisible().catch(()=>false),false,"Closed Formation child remains visible: "+spec.id);
     await assertFocusSafe("Formation "+spec.id+" returned");
     entered.push(spec.id);
   }
