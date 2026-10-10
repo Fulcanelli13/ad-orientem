@@ -42,7 +42,7 @@ export function rewriteResolvedSourceUrl(input){
     // Gregory VII Proper translations. Preserve the source's own Mass owner.
     // Pinned source: DivinumOfficium/divinum-officium@${DIVINUM_OFFICIUM_PIN}
     // web/www/missa/{English,Francais}/Commune/Coronatio.txt
-    if(ref===DIVINUM_OFFICIUM_PIN && /^Coronatio\\.txt$/i.test(file))return raw;
+    if(ref===DIVINUM_OFFICIUM_PIN && /^Coronatio\.txt$/i.test(file))return raw;
     return `${RAW_DO}${ref}/web/www/horas/${canonicalLanguage(language)}/Commune/${file}`;
   }
 
