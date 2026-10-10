@@ -3,7 +3,7 @@
 200+ canonical Ad Orientem art subjects; source originals and SHA held for full audit.
 NGA CC0 metadata alone DOES NOT imply all image links are open access.
 """
-import csv,hashlib,io,json,re,time
+import csv,hashlib,io,json,re,time,os
 from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote,urlparse
@@ -17,6 +17,7 @@ IMAGE_DIR.mkdir(exist_ok=True)
 DATASET="https://raw.githubusercontent.com/NationalGalleryOfArt/opendata/main/data/"
 USER_AGENT="AdOrientem Church Art Source Research/1.0 - NGA open data"
 MAX_IMAGES=40
+FOCUS_KEYS=("scripture.wise-foolish-virgins","scripture.keys-to-peter","scripture.talents","scripture.raising-widows-son","scripture.healing-paralytic","scripture.tribute-money")
 def get(url,limit,timeout=70):
  if urlparse(url).scheme!="https":raise ValueError("HTTPS only")
  req=Request(url,headers={"User-Agent":USER_AGENT,"Accept":"text/csv,image/jpeg,*/*"})
@@ -66,7 +67,7 @@ def main():
    if key.startswith("calendar.") and short in (icon.get("iconography") or []):return True
   return False
  targets=[t for t in targets if not has_original(t) and t["id"].startswith(("scripture.","person.","calendar."))]
- targets.sort(key=lambda t:({"P0":0,"P1":1,"P2":2}.get(t.get("priority"),3),t["id"]))
+ targets.sort(key=lambda t:(0 if t["id"] in FOCUS_KEYS else 1,{"P0":0,"P1":1,"P2":2}.get(t.get("priority"),3),t["id"]))
  print("NGA_TARGETS",len(targets),flush=True)
  objects=csvrows(get(DATASET+"objects.csv",95_000_000))
  object_map={}
