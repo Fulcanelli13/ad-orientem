@@ -3,7 +3,7 @@
 // by their established canonical engines.
 export const PRAY_READER_CONVERGENCE_VERSION="pray-reader-convergence-v1";
 const STYLE_ID="ao-pray-reader-convergence-css";
-export const PRAY_READER_CONVERGENCE_CSS=String.raw\`
+export const PRAY_READER_CONVERGENCE_CSS=String.raw`
 #aoPray435930 .aoReaderStageIndicator{
   position:sticky;top:76px;z-index:24;min-width:0;
   display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 10px;align-items:center;
@@ -122,7 +122,7 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw\`
 @media(prefers-reduced-motion:reduce){
   #aoPray435930 .aoReaderStageTrack>i{transition:none}
 }
-\`;
+`;
 export function installPrayReaderConvergenceStyles(doc=globalThis.document){
  if(!doc?.createElement||!doc?.head)return false;
  let node=doc.getElementById(STYLE_ID);
