@@ -2,8 +2,10 @@
 """Source-first broad sacred-art acquisition. NOT a publishing/quality certifier.
 
 Usage: python tools/calendar/acquire-sacred-art-wide.py --group calendar
-Only exact museum PD/CC0 Paintings, actual original pixels >=2500px, significant
-colour, and title/subject candidates. Every image remains rights/art/crop HELD.
+Only institution-confirmed museum public-domain/CC0 painted objects.
+Preferred >=2500px and adequately coloured; 1800px / subdued-colour
+borderline candidates are HELD and NEVER credited toward source minima.
+Every image remains rights/art/crop HELD.
 """
 import argparse, hashlib, io, json, re, time
 from pathlib import Path
@@ -16,6 +18,7 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
 TARGETS=ROOT/"data/calendar/sacred-art-subject-targets.v2.json"
 REGISTRY=ROOT/"data/calendar/sacred-art-candidates.v1.json"
+QA_POLICY=json.loads((ROOT/"data/calendar/sacred-art-research-qa-tiers.v2.json").read_text(encoding="utf8"))["automatedOriginalScreen"]
 MET="https://collectionapi.metmuseum.org/public/collection/"
 CMA="https://openaccess-api.clevelandart.org/api/artworks/"
 AGENT="AdOrientem-SacredArtResearch/2.0 public-domain original acquisition"
@@ -47,14 +50,18 @@ def picture_metadata(raw):
   im.load()
   im=ImageOps.exif_transpose(im)
   w,h=im.size
-  if max(w,h)<2500:raise ValueError(f"Original too small ({w}x{h})")
+  if max(w,h)<QA_POLICY["borderline"]["minimumLongestDimensionPx"]:
+   raise ValueError(f"Original below 1800px research floor ({w}x{h})")
   test=im.convert("RGB")
   test.thumbnail((260,260))
   rgb=np.asarray(test,dtype=np.int16)
   chroma=np.max(rgb,axis=2)-np.min(rgb,axis=2)
   colour=float(np.mean(chroma>18))
-  if colour<.07:raise ValueError("Near-monochrome")
-  return w,h,round(colour,4)
+  if colour<QA_POLICY["borderline"]["minimumColourFraction"]:raise ValueError("Near-monochrome")
+  preferred=(max(w,h)>=QA_POLICY["preferred"]["minimumLongestDimensionPx"]
+   and colour>=QA_POLICY["preferred"]["minimumColourFraction"])
+  tier="PREFERRED_SOURCE_ORIGINAL" if preferred else "BORDERLINE_HELD_FOR_IMAGE_REVIEW"
+  return w,h,round(colour,4),tier
 def norm(s):
  return re.sub(r"\s+"," ",re.sub(r"[^a-z0-9]+"," ",str(s or "").lower())).strip()
 def confidence(title,query):
@@ -64,7 +71,7 @@ def confidence(title,query):
  return None
 def disfavored(title):
  t=norm(title)
- return bool(re.search(r"\b(?:sketch|study|design|drawing|copy|after|follower|bozzetto|modello|photograph|fresco)\b",t))
+ return bool(re.search(r"\b(?:sketch|study|design|drawing|copy|after|follower|bozzetto|modello|photograph)\b",t))
 def existing_matches(target,works):
  key=target["id"]
  vals=target.get("contexts",[])
@@ -137,7 +144,7 @@ def main():
   need=max(0,t["minimumOriginals"]-len(existing_matches(t,existing)))
   report=dict(id=t["id"],type=t["type"],priority=t["priority"],
    requested=t["minimumOriginals"],alreadyAcquired=len(existing_matches(t,existing)),
-   added=0,searchQueries=[],status="UNSEARCHED")
+   added=0,borderlineHeld=0,searchQueries=[],status="UNSEARCHED")
   if need==0:
    report["status"]="EXISTING_ORIGINAL_COVERED";search_stats.append(report);continue
   if len(rows)>=args.max_originals:
@@ -169,17 +176,19 @@ def main():
         candidate_rejected.add(oid);continue
        match_count+=1
        raw=get(art["originalUrl"])
-       width,height,colour=picture_metadata(raw)
+       width,height,colour,qa_tier=picture_metadata(raw)
        filename=art["id"]+".jpg"
        (images/filename).write_bytes(raw)
        art.update(targetId=t["id"],contextIds=t["contexts"],subjectType=t["type"],
         targetLabel=t["title"],query=q,matchEvidence=evidence,
-        width=width,height=height,colourFraction=colour,
+        width=width,height=height,colourFraction=colour,qaTier=qa_tier,
         bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),filename=filename,
         originalReviewed=False,cropReviewed=False,publicationApproved=False,
-        status="ORIGINAL_ACQUIRED_TECHNICALLY_ONLY")
-       rows.append(art);known.add(art["id"]);report["added"]+=1
-       print("ACQUIRED",args.group,t["id"],art["id"],art["title"][:55],flush=True)
+        status="ORIGINAL_ACQUIRED_TECHNICALLY_ONLY" if qa_tier=="PREFERRED_SOURCE_ORIGINAL" else "ORIGINAL_RETAINED_BORDERLINE_NOT_COUNTED")
+       rows.append(art);known.add(art["id"])
+       if qa_tier=="PREFERRED_SOURCE_ORIGINAL":report["added"]+=1
+       else:report["borderlineHeld"]+=1
+       print("SOURCE",qa_tier,args.group,t["id"],art["id"],art["title"][:55],flush=True)
        time.sleep(.45)
       except Exception as e:
        report.setdefault("errors",[]).append(str(e)[:190])
@@ -193,8 +202,10 @@ def main():
  generate_contacts(rows,base)
  output=dict(schema="AO_SACRED_ART_WIDE_ACQUISITION_V1",group=args.group,
   warning="Originals are source-verified/technically filtered only; no visual, authenticity of subject, attribution, or user-app approval",
-  count=len(rows),artworks=rows,coverage=search_stats)
+  count=sum(a["qaTier"]=="PREFERRED_SOURCE_ORIGINAL" for a in rows),
+  borderlineHeldCount=sum(a["qaTier"]!="PREFERRED_SOURCE_ORIGINAL" for a in rows),
+  artworks=rows,coverage=search_stats)
  (base/"acquisition.json").write_text(json.dumps(output,indent=2,ensure_ascii=False)+"\n",encoding="utf8")
- print("FINISHED",args.group,"acquired",len(rows),"of",len(targets),"targets",
+ print("FINISHED",args.group,"preferred",sum(a["qaTier"]=="PREFERRED_SOURCE_ORIGINAL" for a in rows),"borderline-held",sum(a["qaTier"]!="PREFERRED_SOURCE_ORIGINAL" for a in rows),"of",len(targets),"targets",
        "unresolved",sum(r["status"] in ("UNRESOLVED","PARTIAL") for r in search_stats),flush=True)
 if __name__=="__main__":main()
