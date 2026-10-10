@@ -353,7 +353,13 @@ const SHELL_STYLE = `
 .ao-schola-main[data-schola-translate]:focus-visible{
   outline:2px solid var(--ao-mass-accent-text);outline-offset:2px;
 }
+.ao-schola-dock[data-show-translation="true"] .ao-schola-main{
+  align-items:flex-start;overflow-y:auto;overscroll-behavior:contain;
+  scrollbar-width:thin;padding:7px 3px 5px
+}
 .ao-schola-dock[data-show-translation="true"] [data-role="schola"]{
+  display:block;min-width:0;width:100%;white-space:normal;
+  overflow-wrap:break-word;transform:none!important;
   font-style:italic;color:var(--ao-mass-accent-text)
 }
 .ao-schola-meta{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px;min-height:0}
