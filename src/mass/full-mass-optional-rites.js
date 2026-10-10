@@ -15,7 +15,7 @@ function sourceRites(legacy){
   if(raw.includes("ASPERGES"))p.add("ASPERGES");
   if(raw.includes("REQUIEM")&&raw.includes("ABSOLUTION"))f.add("REQUIEM_ABSOLUTION");
   if(raw.includes("CORPUS")&&raw.includes("PROCESSION"))f.add("CORPUS_CHRISTI_PROCESSION");
-  else if(raw.includes("PROCESSION"))f.add("GENERIC_PROCESSION");
+  else if(raw.includes("PROCESSION")&&!/(?:ROGATION|PALM|ASH|CANDLEMAS|CANDLE)/.test(raw))f.add("GENERIC_PROCESSION");
  }
  return {precedingRites:p,followingActions:f};
 }
