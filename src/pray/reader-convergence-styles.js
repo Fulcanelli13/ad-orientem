@@ -80,6 +80,7 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
   outline-offset:-2px!important;
 }
 #aoPray435930 .aoP435930StageRail.aoReaderMacroRail{
+  top:132px!important;position:sticky!important;z-index:23!important;
   display:flex!important;gap:3px!important;background:transparent!important;
   padding:4px 10px 6px!important;
 }
@@ -105,6 +106,14 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
   font:600 clamp(.85rem,2.5vw,1.02rem)/1.3 var(--ao-font-display,Georgia,serif)!important;
   text-transform:uppercase!important;letter-spacing:.105em!important;
   color:var(--ao-text-primary,#e9e4d9)!important;
+}
+/* Apply the established light/mute focus outside Benediction without
+   allowing unfocused prayer text to disappear almost completely. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="adoration"] .aoP435930FluidUnit,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="library"] .aoP435930FluidUnit,
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="prayerOnly"] .aoP435930FluidUnit{
+  opacity:clamp(.54,var(--ao-pray-focus-opacity,1),1)!important;
+  transition:opacity .14s linear!important;
 }
 #aoPray435930 .aoP435930PrayerHead small:empty{display:none!important}
 #aoPray435930 .aoP435930GuideNav button{
