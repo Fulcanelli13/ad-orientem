@@ -1,0 +1,17 @@
+name: Full Mass host discovery
+on:
+  pull_request:
+    paths:
+      - "tests/full-mass-host-discovery.mjs"
+      - ".github/workflows/full-mass-host-discovery.yml"
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/full-mass-host-discovery.mjs
