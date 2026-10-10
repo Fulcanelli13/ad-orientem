@@ -63,9 +63,14 @@ export function sourceOwnedSpecialStage({prepared,owner,recordId,card,state,lang
   const cardTitle=(own||rite==="NUPTIAL_BLESSING")
     ?String(card?.title??card?.cardTitle??"").trim():null;
   const title=RITES[rite][fr?1:0];
-  const key=rite+"|"+(own||rite==="NUPTIAL_BLESSING"?String(recordId??sectionId):"MASS");
+  // Passion death is a separately certified R28 source event. This adds
+  // restrained visual emphasis, NOT an invented pause, bell or kneel order.
+  const exactFocus=rite==="GOOD_FRIDAY" && String(recordId)==="GF-PASS-320" &&
+    state.deathPause===true ? "PASSION_DEATH" : null;
+  const key=rite+"|"+(own||rite==="NUPTIAL_BLESSING"?String(recordId??sectionId):"MASS")+
+    (exactFocus?"|"+exactFocus:"");
   return Object.freeze({
-    rite,key,title,
+    rite,key,title,exactFocus,
     detail:cardTitle&&cardTitle.toLowerCase()!==title.toLowerCase()?cardTitle:null,
     sourceOwner:own?"NATIVE_RITE_CONTROLLER":rite==="NUPTIAL_BLESSING"?"NUPTIAL_INSERTION":"RESOLVED_MASS_OVERLAY",
   });
@@ -101,6 +106,8 @@ export function mountSpecialMassStage({preview,prepared,doc=globalThis.document}
   key=next.key;
   label.dataset.rite=next.rite;
   label.dataset.sourceOwner=next.sourceOwner;
+  if(next.exactFocus)label.dataset.exactFocus=next.exactFocus;
+  else delete label.dataset.exactFocus;
   // Replacing nodes on source stage changes restarts only a CSS entrance,
   // not a timer, scrolling gesture, cinematic or liturgical event.
   const title=doc.createElement("span");title.className="ao-reader-ceremony-name";title.textContent=next.title;
