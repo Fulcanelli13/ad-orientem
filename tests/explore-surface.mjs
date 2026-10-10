@@ -730,7 +730,7 @@ assert.match(expandedPlace,/Sources and geographic evidence/,"original evidence 
 const mixedProfile={
   place_id:"place:FR:mixed-test",name:"Mixed Sacred Place",
   address:{city:"Lourdes",region:"Occitanie",country:"France"},
-  counts:{shrines:1,relics:1},geo:{precision:"site"},
+  counts:{"shrines":1,"relics":1},geo:{precision:"site"},
   shrines:[{summary:"SHRINE INTRO ORIGINAL"}],
   relics:[{summary:"RELIC INTRO ORIGINAL",summary_fr:"INTRO RELIQUE FRANÇAISE"}],
 };
