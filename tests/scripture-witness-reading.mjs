@@ -25,7 +25,8 @@ for(const [edition,books] of [["cpdv-2009",CATHOLIC_BOOK_IDS],["dr-challoner",dr
 }
 assert.equal(CATHOLIC_BOOK_IDS.length,73);
 assert.equal(verses,35825,"The CPDV transcription census may only change after independent source audit");
-assert.equal(chapters,1334,"The CPDV source witness must contain the complete chapter structure");
+assert.equal(chapters,1333,"The CPDV source witness has 1,333 chapters: its Esther has 15 rather than Douay\u2019s 16");
+assert.equal(new Set(stored.get("cpdv-2009:Esther").verses.map(row=>row[0])).size,15);
 assert.equal(drVerses,3777);
 assert.equal(frenchChapters,39);
 assert.equal(frVerses,1460);
