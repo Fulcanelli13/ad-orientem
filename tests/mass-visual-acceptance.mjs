@@ -250,14 +250,26 @@ try{
             ?getComputedStyle(host.querySelector('.ao-rail-left [data-channel="posture"]')).display:null,
         };
       };
-      adapter.renderMoment({...base,postureCue:{label:"STAND"},postureChangeIconKey:"stand"});
+      adapter.renderMoment({...base,postureCue:{label:"STAND",cueId:"AO.SM.C0001"},
+        postureChangeIconKey:"stand"});
       const exact=snapshot();
+      // A repeated chrome update with the same source cue must not flash
+      // an already active transition off before the reader advances.
+      adapter.renderMoment({...base,cardUpdate:false,
+        postureCue:{label:"STAND",cueId:"AO.SM.C0001"}});
+      const continued=snapshot();
       adapter.renderMoment({...base,cardUpdate:false,postureCue:null});
       const afterwards=snapshot();
+      // A later Collect source row specifying the *same* STAND state is
+      // an informational marker, not a second instruction to stand.
+      adapter.renderMoment({...base,cardUpdate:false,
+        postureCue:{label:"STAND",cueId:"AO.SM.C0070"}});
+      const redundant=snapshot();
       adapter.renderMoment({...base,cardUpdate:false,posture:{label:"KNEEL"},
-        postureIconKey:"kneel",postureCue:{label:"STAND"},postureChangeIconKey:"stand"});
+        postureIconKey:"kneel",postureCue:{label:"STAND",cueId:"AO.SM.C0070"},
+        postureChangeIconKey:"stand"});
       const disagreement=snapshot();
-      return {exact,afterwards,disagreement};
+      return {exact,continued,afterwards,redundant,disagreement};
     }finally{adapter.destroy();host.remove();}
   });
   assert.equal(postureTransitions.exact.active,"true",
@@ -271,7 +283,9 @@ try{
   assert.equal(postureTransitions.exact.stablePosture,"STAND");
   assert.equal(postureTransitions.exact.permanentRail,"none",
     "persistent posture duplicated the top ribbon after restoring transient cue");
-  for(const state of [postureTransitions.afterwards,postureTransitions.disagreement]){
+  assert.equal(postureTransitions.continued.active,"true",
+    "same source cue re-render prematurely dropped its transition icon");
+  for(const state of [postureTransitions.afterwards,postureTransitions.redundant,postureTransitions.disagreement]){
     assert.equal(state.active,"false",
       "obsolete or profile-contradicting posture change persisted");
     assert.equal(state.display,"none");
