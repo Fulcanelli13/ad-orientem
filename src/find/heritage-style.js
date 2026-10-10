@@ -132,4 +132,22 @@ export const HERITAGE_STYLE = String.raw`
  .aoHeritageSearchResults{left:10px;width:calc(100% - 20px);bottom:10px;max-height:39dvh}
  .aoHeritageMapHint{left:14px;bottom:16px;max-width:205px}
 }
+
+/* Record readers retain source-rich detail, but their discovery controls use
+   the same hierarchy as the map instead of a dense six-column tab dashboard. */
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs{display:flex;grid-template-columns:none;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;gap:7px;padding:11px 14px 6px}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs::-webkit-scrollbar{display:none}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs button{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:none;min-height:42px;min-width:0;border-radius:10px;padding:10px 14px;font-size:12px;font-weight:550;white-space:nowrap}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs button small{display:none}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs .aoExploreReturnMap{grid-column:auto;background:#25251f;border-color:#c6aa7866;color:#e8d5b3;font-weight:700}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs button.active{background:#cbb78e;border-color:#cbb78e;color:#101923}
+.aoExploreSurface:not(.aoHeritageSurface) .aoFindList{gap:9px;padding:0 14px 32px}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard{display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:0;border:1px solid #d9c59a2a;background:#0f1721;border-radius:12px;padding:16px;text-align:left;box-shadow:none}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard .aoFindCardTop small{color:#c3aa7c;letter-spacing:.1em;font-size:10px}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard>strong{font:500 20px/1.19 var(--ao-font-display,Georgia,serif);letter-spacing:-.01em;color:#f1e6d1;margin:8px 0 4px}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard .aoExploreCardLocation{font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#a99e8d;margin:3px 0 0}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard p{font:14px/1.45 var(--ao-font-body,Georgia,serif);color:#d1c5b0;margin:11px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard .aoExploreCardOpen{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid #d9c59a20;font:650 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em;color:#d1b888}
+.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}
+@media(max-width:520px){.aoExploreSurface:not(.aoHeritageSurface) .aoExploreLensTabs{display:flex;grid-template-columns:none;padding:9px 9px 6px}.aoExploreSurface:not(.aoHeritageSurface) .aoFindList{padding:0 9px 28px}.aoExploreSurface:not(.aoHeritageSurface) .aoExploreCard{padding:14px}}
 `;
