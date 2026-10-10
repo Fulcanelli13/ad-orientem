@@ -1,0 +1,116 @@
+name: Directory SSPX official API acquisition probe
+
+# Manually requested evidence probe; external origin may block CI runner with 403.
+# Ordinary PR acceptance uses offline-safe contract and reconciliation tests.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sspx-api-probe-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  official-source-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright dependency
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium for official same-origin API fallback
+        run: npx playwright install --with-deps chromium
+      - name: Acquire worldwide SSPX source inventory
+        id: source
+        continue-on-error: true
+        run: |
+          mkdir -p "$RUNNER_TEMP/sspx-probe"
+          npm run directory:import:sspx -- --snapshot-only --out="$RUNNER_TEMP/sspx-probe" \
+            > "$RUNNER_TEMP/sspx-probe/acquisition.log" 2>&1
+          if [ -f "$RUNNER_TEMP/sspx-probe/acquisition-report.v1.json" ]; then
+            cat "$RUNNER_TEMP/sspx-probe/acquisition-report.v1.json"
+          fi
+      - name: Print acquisition outcome
+        if: always()
+        shell: bash
+        run: |
+          cat "$RUNNER_TEMP/sspx-probe/acquisition.log" 2>/dev/null || true
+          if [ "${{ steps.source.outcome }}" = "success" ]; then
+            echo "Official source inventory acquired; venue review remains separate."
+          else
+            echo "::warning::Official SSPX acquisition is still blocked or incomplete."
+          fi
+      - name: Acquire independent official HTML country index
+        id: html
+        continue-on-error: true
+        run: |
+          mkdir -p "$RUNNER_TEMP/sspx-html-index"
+          npm run directory:acquire:sspx-html -- --out="$RUNNER_TEMP/sspx-html-index" \
+            > "$RUNNER_TEMP/sspx-html-index/acquisition.log" 2>&1
+          cat "$RUNNER_TEMP/sspx-html-index/html-acquisition-report.v1.json"
+      - name: Print HTML inventory completeness and access diagnostics
+        if: always()
+        run: |
+          cat "$RUNNER_TEMP/sspx-html-index/acquisition.log" 2>/dev/null || true
+          if [ -f "$RUNNER_TEMP/sspx-html-index/html-acquisition-report.v1.json" ]; then
+            cat "$RUNNER_TEMP/sspx-html-index/html-acquisition-report.v1.json"
+          fi
+          if [ "${{ steps.html.outcome }}" = "success" ]; then
+            echo "Official HTML index acquired; no Mass schedules were published."
+          else
+            echo "::warning::Official HTML inventory acquisition incomplete or blocked."
+          fi
+      - name: Cross-check SSPX-hosted DICI development directory (research only)
+        id: dici_dev
+        continue-on-error: true
+        run: |
+          mkdir -p "$RUNNER_TEMP/sspx-dici-dev"
+          npm run directory:acquire:sspx-dici-discovery -- --out="$RUNNER_TEMP/sspx-dici-dev" \
+            > "$RUNNER_TEMP/sspx-dici-dev/acquisition.log" 2>&1
+          cat "$RUNNER_TEMP/sspx-dici-dev/dici-dev-discovery-report.v1.json"
+      - name: Report development-site findings without promoting them
+        if: always()
+        shell: bash
+        run: |
+          cat "$RUNNER_TEMP/sspx-dici-dev/acquisition.log" 2>/dev/null || true
+          if [ "${{ steps.dici_dev.outcome }}" = "success" ]; then
+            echo "Research-only DICI staging index recovered; production venue eligibility remains UNVERIFIED."
+          else
+            echo "::warning::DICI development source acquisition also failed or was incomplete."
+          fi
+      - name: Upload review-only evidence (never auto-publish)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sspx-official-source-probe
+          path: |
+            ${{ runner.temp }}/sspx-probe
+            ${{ runner.temp }}/sspx-html-index
+            ${{ runner.temp }}/sspx-dici-dev
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Fail when both official acquisition paths are incomplete
+        if: always()
+        shell: bash
+        run: |
+          echo "JSON acquisition: ${{ steps.source.outcome }}"
+          echo "HTML acquisition: ${{ steps.html.outcome }}"
+          if [ "${{ steps.source.outcome }}" = "success" ]; then
+            test -s "$RUNNER_TEMP/sspx-probe/raw-source-inventory.v1.json"
+            test -s "$RUNNER_TEMP/sspx-probe/acquisition-report.v1.json"
+            echo "PASS: complete JSON source inventory collected (not published)."
+            exit 0
+          fi
+          if [ "${{ steps.html.outcome }}" = "success" ]; then
+            test -s "$RUNNER_TEMP/sspx-html-index/html-source-rows.v1.json"
+            test -s "$RUNNER_TEMP/sspx-html-index/html-acquisition-report.v1.json"
+            echo "PASS: complete official HTML discovery inventory collected (not published)."
+            exit 0
+          fi
+          echo "::error::BLOCKED: neither official SSPX source acquisition produced a complete inventory."
+          exit 1
