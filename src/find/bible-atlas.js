@@ -171,8 +171,12 @@ export function atlasPinEpisodes(stops,records,key,index,lang){
   const id=title_en+"|"+reference;if(seen.has(id))return;seen.add(id);
   episodes.push({title_en,title_fr,reference});
  };
- for(const row of corpus)for(const event of row.events??[])
-  add(event.title_en,event.title_fr,event.reference);
+ if(["INFANCY","PUBLIC","PASSION","RESURRECTION"].includes(currentEra)){
+  for(const row of corpus)for(const event of row.events??[]){
+   const eventEra=event.chronology_phase??row.phase;
+   if(eventEra===currentEra)add(event.title_en,event.title_fr,event.reference);
+  }
+ }
  for(const stop of sameEra)add(stop.title_en,stop.title_fr,stop.reference);
  if(episodes.length<2)return "";
  const heading=L(lang,"Biblical episodes at this location","Épisodes bibliques en ce lieu");
