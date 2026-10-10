@@ -152,3 +152,51 @@ PAMI's [updated sanctuary census and world Marian map](https://www.pami.info/san
 - **Cross-source identity:** reconcile every row with the current 182 Places, the 211 earlier indexed rows, the prior European 187 research leads and the 16 initial global candidates; a matched source title is not a verified physical Place.
 - **Coverage denominator:** identify and acquire the principal institutional and printed inventories per country/diocese, recording source edition, index length, extraction percentages, contradictions and unavailability.
 - **Later:** canonical Place admission, accurate pins, biographies and artwork only after identities and editorial importance pass. No source-index item is automatically approved for map publication.
+
+## Batch 4 — four Philippine regional indexes and primary PAMI extraction
+
+### Philippines: complete named-title transcription of four retrieved regional listings
+
+Four new regional source files, with church/shrine titles, localities, ecclesiastical group and a reference to the original national association page, now contain the following **266 source rows**:
+
+| Regional source | Named rows acquired | Research file |
+| --- | ---: | --- |
+| Northern and Central Luzon | **77** | [North ACSP regional list](../../data/geography/research/philippines-acsp-north-complete-2026-10-10.v1.json) |
+| NCR + Southern Luzon | **129** | [NCR/South ACSP regional list](../../data/geography/research/philippines-acsp-ncr-southern-complete-2026-10-10.v1.json) |
+| Visayas | **55** | [Visayas ACSP regional list](../../data/geography/research/philippines-acsp-visayas-index-2026-10-10.v1.json) |
+| Mindanao | **5** | [Mindanao ACSP regional list](../../data/geography/research/philippines-acsp-mindanao-complete-2026-10-10.v1.json) |
+
+The Visayas site timed out on detailed re-fetch; its **55 named rows reflect the available retrieved content through Tagbilaran**, not a certified permanent snapshot of the live page. No individual association declaration dates or membership statuses are yet structured in these regional files, even where visible on the source page. The national 2024 ACSP report still states **305** shrines and **257** members; its listed five regional counts sum to **296**. The current live pages are a different observation window, so subtracting 266 from 305 as a missing-site count would be invalid. Source: [2024 member report](https://philippineshrines.org/2025/01/28/acsp-official-shrine-members/).
+
+The [unified crosswalk](../../data/geography/research/philippines-acsp-unified-crosswalk-2026-10-10.v1.json) preserves source-entry IDs without assigning canonical Place identities. It records:
+- **Three exact repeat pairs** by normalised church name and locality: Olongapo's Mary Magdalene/San Lorenzo Ruiz, Pateros' St Martha (two ecclesiastical headings), and Cebu Punta Princesa's Our Lady of Lourdes.
+- A **fourth probable repeat**: Masinloc's San Andres is listed with two locality spellings, one with `Poblacion`; independent physical inspection still required.
+- All **66 former PH priority selections** now have source index pointers: 56 one-title matches, two ambiguous repeated titles and eight expanded-title/alias matches. No canonical identity approval.
+- All **16 Malolos official source entries** have a corresponding ACSP named title or alias proposed, again without final site verification. Guiguinto's source inconsistency is preserved.
+- The current canonical `Place` registry contains **zero PH Places**; no new map pins were published in this work.
+
+### Italy: from bibliographic index to original source records
+
+The [PAMI diocesan case index](../../data/geography/research/pami-italy-rwanda-diocesan-cases-2026-10-10.v1.json) records **11 named diocesan sanctuary sites from Oppido Mamertina-Palmi** ([original article](https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/)) and **two from Tricarico** ([original article](https://www.pami.info/santuari/i-santuari-della-diocesi-di-tricarico/)). These 13 Italian entries include town, original source URL, legal shrine type/date where explicitly documented, and local feast/custom keywords for future site-specific links. They are **not** automatic public map Places or samples that estimate all Italy's shrine total.
+
+The same PAMI source family documents **Notre Dame de Fatima at Ruhengeri, Rwanda**, elevated to diocesan shrine in 2017 ([PAMI case](https://www.pami.info/santuari/sanctuaire-notre-dame-de-fatima-ruhengeri/)). This site is not the existing Kibeho canonical Place.
+
+A further [single original Italian MODI fiche](../../data/geography/research/italy-iccd-validated-records-2026-10-10.v1.json) has been examined for **Santuario diocesano di San Giovanni Paolo II, Les Combes, Introd, Valle d'Aosta**, [official 22-page source](https://www.pami.info/censimento_santuari/schede/Santuario_San_Giovanni_Paolo_II_Aosta.pdf). It records the official identifier `ICCD_MODI_8396884055071`, diocesan sanctuary designation in 2016, and an **approximately georeferenced source coordinate** (not an entrance-verified GPS fix). The fiche says a Saint John Paul II relic moves seasonally between the sanctuary and the local parish museum; no permanent relic pin may be inferred. Its rights statement requires author and sanctuary permission for broader republication of the fiche research; only short factual discovery fields and a source link were recorded. **No PDF reproduction, text corpus, photograph or artwork was imported.**
+
+Local Italian traditions such as San Rocco wax ex-votos, processions and San Biagio's blessing of throats are recorded **only as site-attached Italian cultural attestations**, not added wholesale to French domestic devotional customs. No new customs owner, Calendar feast or Apparition entry was created.
+
+### Chile: original full-catalogue archive located, extraction not completed
+
+The Chilean bishops' [Área Eclesial historical archive](https://www.iglesia.cl/area_eclesial.php) explicitly lists both an older *Catastro de Santuarios* and a *Lista de los santuarios y sus fiestas* in PDF/Excel, in addition to the online sanctuary search and the 2025 15-site illustrated map. The links returned errors in this research environment; **the underlying catalogue contents have not been read or copied**. Registering the index is progress in source discovery only. It does **not** change Chile's completed research-entry count, national denominator or app Place count.
+
+### Combined accounting and next closure gates
+
+The previous Batch-3 gross source list count was **297** (211 bounded listings + 66 selected PH anchors + 15 Chile map labels + 3 Irish references + 2 Africa records).
+
+For research-source accounting, the newly transcribed **266 PH ACSP regional rows replace, rather than supplement, the previously selected 66 overlapping PH rows**. Add the 14 detailed Italian/Rwandan site records and the one separate 22-page Italian fiche:
+
+`297 − 66 + 266 + 14 + 1 = 512`
+
+Thus the ledger now contains **512 source-list entries across different inventories**, not 512 unique physical sites, and includes duplicates between the Malolos directory and ACSP. It has **39 source reference entries**. All 512 are research-only; no public records or map pin totals changed.
+
+The next strict gates are (1) validate the Visayas source page's complete live tail and dates/membership statuses, (2) resolve the 2024 vs 2026 Philippine census discrepancies and deduplicate its candidate sites, (3) acquire the original Chile episcopal Excel/PDF and broaden global national-source coverage, and (4) extract the remaining 33 Italian diocesan catalogue documents in legally usable form. Map publication comes **only** after the physical identity, importance and source-rights gates, not as a by-product of index scraping.
