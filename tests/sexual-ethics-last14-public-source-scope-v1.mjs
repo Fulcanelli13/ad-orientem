@@ -33,11 +33,13 @@ assert.equal(stages,112);
 assert.deepEqual(counts,doc.summary.states);
 assert.match(CSE_DEBATE_MAP.CSE083.opposition[0],/Farley/);
 assert.match(CSE_DEBATE_MAP.CSE089.opposition[0],/Farley/);
-assert.match(CSE_DEBATE_MAP.CSE088.catholicCase[0],/not a psychiatric diagnosis/);
+assert.match(CSE_DEBATE_MAP.CSE088.catholicCase[0],/not, simply as such, a psychiatric diagnosis/);
 assert.match(CSE_DEBATE_MAP.CSE094.opposition[0],/2024 policy/);
 assert.match(CSE_DEBATE_MAP.CSE096.catholicCase[0],/abnormalities/);
 assert.match(CSE_DEBATE_MAP.CSE141.opposition[0],/Pope Francis/);
-assert.match(CSE_DEBATE_MAP.CSE145.opposition[0],/not a quotation/);
+assert.match(CSE_DEBATE_MAP.CSE145.opposition[0],/['"]Love is love['"] expresses a serious appeal/);
+assert.doesNotMatch(CSE_DEBATE_MAP.CSE145.opposition[0],/not a quotation|editorial reconstruction/i,
+ "Debate must present the actual objection, not meta-editorial commentary");
 assert.match(CSE_QUESTION_MAP.CSE096.a[0],/§60/);
 assert.match(CSE_QUESTION_MAP.CSE095.d[1],/pronoms/);
 assert.match(CSE_SOURCE_MAP.FRANCIS_SPADARO2013.canonical_url,/vatican\.va/);
