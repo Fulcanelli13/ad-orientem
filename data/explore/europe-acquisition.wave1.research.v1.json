@@ -354,6 +354,18 @@
       "url": "https://marija.si/en/mary-help-of-christians/miracles-of-mary-help/",
       "role": "SLOVENIAN_SITE_CUSTODIAN",
       "scope": "Site or devotional practice identity; not coordinates or ecclesiastical authentication"
+    },
+    {
+      "source_id": "SIRACUSA_TEARING",
+      "url": "https://www.madonnadellelacrime.it/29-agosto-1953/",
+      "role": "ITALIAN_CATHOLIC_SITE_CUSTODIAN",
+      "scope": "1953 sanctuary documented reported tearing and Sicilian bishops' ruling"
+    },
+    {
+      "source_id": "SIRACUSA_RELIQUARY",
+      "url": "https://www.madonnadellelacrime.it/il-reliquiario/",
+      "role": "ITALIAN_CATHOLIC_SITE_CUSTODIAN",
+      "scope": "custodian identifies vial of tears; NOT a corporeal saint relic"
     }
   ],
   "place_candidates": [
@@ -1912,6 +1924,22 @@
       "note": null,
       "geographic_coordinates": null,
       "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:santuario-madonna-delle-lacrime-siracusa",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Santuario della Madonna delle Lacrime — Siracusa",
+      "kind": "MARIAN_SANCTUARY_ASSOCIATED_WITH_IMAGE_PHENOMENON",
+      "identity_source_ids": [
+        "SIRACUSA_TEARING"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Original event in private house in Via degli Orti is NOT the same physical Place as the later sanctuary; preserve both if later researched",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
     }
   ],
   "other_category_leads": [
@@ -2786,6 +2814,63 @@
       "coordinates": null,
       "route_geometry": null,
       "review_gate": "VERIFIED_WAYPOINTS_AND_ROUTE_OWNERSHIP"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:IT:SIRACUSA-TEARS",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:IT:santuario-madonna-delle-lacrime-siracusa",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "SIRACUSA_TEARING"
+      ],
+      "claim_summary": "Pilgrimage to the Our Lady of Tears shrine commemorating reported weeping in 1953",
+      "qualifier": "Not a claim of a visual apparition of Mary",
+      "scope": "RESEARCH_SOURCE_HOLD",
+      "kind": "MARIAN_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "DO_NOT_CONFUSE_REPORTED_WEEPING_ICON_WITH_MARIAN_VISUAL_APPARITION"
+    },
+    {
+      "lead_id": "EUROPE:SACRED_IMAGE:IT:SIRACUSA-1953",
+      "category": "SACRED_IMAGE",
+      "proposed_owner": "SACRED_IMAGE_EVIDENCE",
+      "target_place_lead_id": "EUROPE:PLACE:IT:santuario-madonna-delle-lacrime-siracusa",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "SIRACUSA_TEARING"
+      ],
+      "claim_summary": "Custodian documents reported liquid tears from a plaster image and bishops' 1953 statement",
+      "qualifier": "Investigative and ecclesial reporting does not convert this into an apparition",
+      "scope": "RESEARCH_SOURCE_HOLD",
+      "kind": "DOCUMENTED_IMAGE_TEARING_CLAIM",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "DO_NOT_CONFUSE_REPORTED_WEEPING_ICON_WITH_MARIAN_VISUAL_APPARITION"
+    },
+    {
+      "lead_id": "EUROPE:SACRED_IMAGE:IT:SIRACUSA-VIAL",
+      "category": "SACRED_IMAGE",
+      "proposed_owner": "SACRED_IMAGE_EVIDENCE",
+      "target_place_lead_id": "EUROPE:PLACE:IT:santuario-madonna-delle-lacrime-siracusa",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "SIRACUSA_RELIQUARY"
+      ],
+      "claim_summary": "Site reliquary displays vial of preserved tears documented by custodian",
+      "qualifier": "Not classified as a saint's bodily relic or scientifically authenticated by app",
+      "scope": "RESEARCH_SOURCE_HOLD",
+      "kind": "OBJECT_OF_REPORTED_IMAGE_PHENOMENON",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "DO_NOT_CONFUSE_REPORTED_WEEPING_ICON_WITH_MARIAN_VISUAL_APPARITION"
     }
   ],
   "cross_reference_holds": [
@@ -2799,9 +2884,9 @@
     }
   ],
   "counts": {
-    "distinct_place_leads": 97,
+    "distinct_place_leads": 98,
     "existing_place_matches": 22,
-    "new_place_candidates": 75,
+    "new_place_candidates": 76,
     "new_place_by_country": {
       "BE": 1,
       "CZ": 4,
@@ -2813,7 +2898,7 @@
       "HR": 1,
       "HU": 5,
       "IE": 3,
-      "IT": 19,
+      "IT": 20,
       "LT": 1,
       "LU": 1,
       "MT": 2,
@@ -2827,12 +2912,12 @@
       "UA": 1
     },
     "by_category": {
-      "PILGRIMAGES": 23,
+      "PILGRIMAGES": 24,
       "RELICS": 5,
       "APPARITIONS": 4,
-      "SACRED_IMAGE": 3,
+      "SACRED_IMAGE": 5,
       "CUSTOMS": 10
     },
-    "cross_category_research_associations": 45
+    "cross_category_research_associations": 48
   }
 }
