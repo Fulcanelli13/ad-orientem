@@ -185,8 +185,8 @@ function placeSheet(vm){
 const translatedTitle=(item,language)=>language==="fr"&&item?.title_fr?item.title_fr:item?.title;
 const translatedSummary=(item,language)=>language==="fr"&&item?.summary_fr?item.summary_fr:item?.summary;
 function itemCard(item,vm){
-  const full=String(translatedSummary(item,vm.language)??"").replace(/\\s+/g," ").trim();
-  const cut=full.length>170?full.slice(0,170).replace(/\\s+\\S*$/u,"").trimEnd()+"…":full;
+  const full=String(translatedSummary(item,vm.language)??"").replace(/\s+/g," ").trim();
+  const cut=full.length>170?full.slice(0,170).replace(/\s+\S*$/u,"").trimEnd()+"…":full;
   return '<button type="button" class="aoFindCard aoExploreCard" data-explore-item="'+esc(item.item_id)+'" data-explore-lens="'+esc(item.lens)+'">'
     +'<span class="aoFindCardTop"><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small></span>'
     +'<strong>'+esc(translatedTitle(item,vm.language)||"")+'</strong>'
