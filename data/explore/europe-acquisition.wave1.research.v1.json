@@ -1,0 +1,1518 @@
+{
+  "schema": "AO_EXPLORE_EUROPE_SOURCE_ACQUISITION_WAVE1_V1",
+  "as_of": "2026-10-10",
+  "publication_status": "RESEARCH_ONLY_IDENTITY_AND_EVIDENCE_NO_PINS",
+  "stage": "CONTINENT_SOURCE_DISCOVERY_BEFORE_GEO_AND_MEDIA",
+  "scope": {
+    "continent": "EUROPE",
+    "categories": [
+      "SHRINES",
+      "PILGRIMAGES",
+      "RELICS",
+      "APPARITIONS",
+      "CUSTOMS"
+    ],
+    "policy": "source-first shortlist against active canonical registry, not an exhaustive European census",
+    "countries_with_new_candidates": [
+      "ES",
+      "FR",
+      "GB",
+      "GI",
+      "HR",
+      "HU",
+      "IT",
+      "LT",
+      "MT",
+      "NO",
+      "PT",
+      "RO",
+      "SE",
+      "SI",
+      "SK",
+      "UA"
+    ]
+  },
+  "governance": [
+    "A new candidate is not an approved shrine, a mapped Place or a user-facing object until reconciled separately against the canonical owner.",
+    "One physical site can have many separately sourced pilgrimage, relic and reported-apparition associations, but should have one canonical Place identity.",
+    "The Italian sanctuary association, the RME network, and bishops' curated selections are source discovery lists, not complete national registries.",
+    "A juridical sanctuary claim requires ecclesiastical status, especially in Spain: do not call Torreciudad a canonically recognized sanctuary on the strength of popular usage.",
+    "French-world domestic custom relevance gate remains in force; other regional events may be registered as contextual heritage only with explicit source and scope.",
+    "Coordinates, route geometry, opening hours, biographies and artwork are deliberately deferred.",
+    "Site institutional recognition and supernatural authenticity of apparitions must be independently checked, following DDF 2024 Norms."
+  ],
+  "sources": [
+    {
+      "source_id": "RME",
+      "url": "https://www.lourdes-france.org/le-reseau-marial-europeen/",
+      "role": "EUROPEAN_MARIAN_SANCTUARY_NETWORK",
+      "scope": "21 member names and associated national shrines, not a complete European enumeration"
+    },
+    {
+      "source_id": "CEF",
+      "url": "https://eglise.catholique.fr/guide-eglise-catholique-france/eveques-dioceses-france/liste-des-dioceses/a-decouverte-dioceses-de-france/focus-sur-les-sanctuaires-de-france/",
+      "role": "FRANCE_BISHOPS_CONFERENCE",
+      "scope": "select French sanctuaries; not all French pilgrimage sites"
+    },
+    {
+      "source_id": "CNS",
+      "url": "https://www.santuari.it/speciali/AssociatiCNS.asp",
+      "role": "ITALIAN_SANCTUARY_ASSOCIATION_LIST",
+      "scope": "listed sanctuary association members, not standalone proof of canonical juridical title"
+    },
+    {
+      "source_id": "IT_ABRUZZO",
+      "url": "https://www.santuari.it/Abruzzo/Teramo/Santuari-prov.asp?prov=TE",
+      "role": "ITALIAN_SANCTUARY_REGIONAL_CATALOGUE",
+      "scope": "Teramo province directory"
+    },
+    {
+      "source_id": "CEE",
+      "url": "https://www.conferenciaepiscopal.es/interesa/hazmemoria-2021/religiosidad-popular/",
+      "role": "SPANISH_BISHOPS_CONFERENCE",
+      "scope": "selected popular religious destinations, not a full index"
+    },
+    {
+      "source_id": "CEE_STATUS",
+      "url": "https://www.conferenciaepiscopal.es/nota-aclaratoria-sobre-los-santuarios-en-la-memoria-de-actividades-de-la-iglesia/",
+      "role": "SPANISH_BISHOPS_CANONICAL_STATUS_CORRECTION",
+      "scope": "Torreciudad status warning from December 2024"
+    },
+    {
+      "source_id": "NORWAY",
+      "url": "https://www.katolsk.no/praksis/valfart/pilereis",
+      "role": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "selected Catholic/historic Nordic pilgrimage destinations"
+    },
+    {
+      "source_id": "BREZJE",
+      "url": "https://marija.si/en/mary-help-of-christians/",
+      "role": "SITE_CUSTODIAN",
+      "scope": "national Marian pilgrimage identity"
+    },
+    {
+      "source_id": "VILNIUS",
+      "url": "https://ausrosvartai.lt/en/gate-of-dawn/the-chapel/",
+      "role": "SITE_CUSTODIAN",
+      "scope": "Gate of Dawn Marian chapel identity"
+    },
+    {
+      "source_id": "MARIJA_BISTRICA",
+      "url": "https://marija-bistrica.hr/svetiste/",
+      "role": "MUNICIPAL_AND_LOCAL_PILGRIMAGE_HISTORY",
+      "scope": "Marija Bistrica Croatian devotional place and pilgrimage tradition"
+    },
+    {
+      "source_id": "PARIS",
+      "url": "https://dioceseparis.fr/lieux-de-priere-a-paris",
+      "role": "PARIS_DIOCESE",
+      "scope": "exact Paris church/relic and shrine identities"
+    },
+    {
+      "source_id": "AYLESFORD",
+      "url": "https://rcaos.org.uk/diocese/southwark-shrines/aylesford-priory/",
+      "role": "ARCHDIOCESE_OF_SOUTHWARK",
+      "scope": "Aylesford shrine and St Simon Stock custody report"
+    },
+    {
+      "source_id": "CASTELPETROSO",
+      "url": "https://www.santuarioaddolorata.it/en/history/",
+      "role": "SITE_CUSTODIAN",
+      "scope": "Castelpetroso apparition narrative and Marian shrine"
+    },
+    {
+      "source_id": "TREFONTANE",
+      "url": "https://www.diocesidiroma.it/lanniversario-dellapparizione-della-vergine-della-divina-rivelazione/",
+      "role": "DIOCESE_OF_ROME",
+      "scope": "Tre Fontane Marian cult and narrative without assumption of supernatural finding"
+    },
+    {
+      "source_id": "BOM_JESUS",
+      "url": "https://diocese-braga.pt/index.php/noticia/2026-03-23-santuario-do-bom-jesus-acolheu-caminhada-quaresmal-centrada-na-esperanca-e-na-comunhao-69c27683c3fd8",
+      "role": "ARCHDIOCESE_OF_BRAGA",
+      "scope": "Bom Jesus shrine and penitential pilgrimage"
+    },
+    {
+      "source_id": "LAMEGO",
+      "url": "https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=73815",
+      "role": "PORTUGAL_CULTURAL_HERITAGE_AUTHORITY",
+      "scope": "Nossa Senhora dos Remédios sanctuary identity"
+    },
+    {
+      "source_id": "OROPA",
+      "url": "https://www.santuariodioropa.it/la-basilica-antica/",
+      "role": "SITE_CUSTODIAN",
+      "scope": "Black Madonna sanctuary and historically qualified traditions"
+    },
+    {
+      "source_id": "SUL_NORWAY",
+      "url": "https://www.katolsk.no/praksis/valfart/artikler/selja",
+      "role": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "historic Selja pilgrimage and St Sunniva"
+    },
+    {
+      "source_id": "ILE_BOUCHARD",
+      "url": "https://www.ilebouchard.com/histoire/apres-47.html",
+      "role": "SHRINE_TRANSCRIPTION_OF_EPISCOPAL_DECREE",
+      "scope": "2001 permission for public cult/pilgrimages, not supernatural approval"
+    },
+    {
+      "source_id": "OROPA_PROCESSION",
+      "url": "https://www.santuariodioropa.it/omelia-del-vescovo-per-la-processione-della-citta-di-biella/",
+      "role": "SITE_CUSTODIAN_BISHOP_HOMILY",
+      "scope": "annual votive procession from Biella"
+    },
+    {
+      "source_id": "BRAGA_PENITENCE",
+      "url": "https://www.diocese-braga.pt/documento/2056/36941",
+      "role": "ARCHDIOCESE_OF_BRAGA",
+      "scope": "historical penitential pilgrimage path/event; dated programme is not perpetual schedule"
+    },
+    {
+      "source_id": "SAMEIRO_EMIGRANT",
+      "url": "https://diocese-braga.pt/noticia/2026-07-14-peregrinacao-dos-emigrantes-convida-a-bailar-a-senhora-no-sameiro-6a563967ce761",
+      "role": "ARCHDIOCESE_OF_BRAGA",
+      "scope": "2026 emigrants' pilgrimage to existing Sameiro Place"
+    },
+    {
+      "source_id": "LAMEGO_PROCESSION",
+      "url": "https://www.patrimoniocultural.gov.pt/2025/06/procissao-de-triunfo-inscrita-no-inventario-nacional-do-patrimonio-cultural-imaterial/",
+      "role": "PORTUGUESE_CULTURAL_HERITAGE_AUTHORITY",
+      "scope": "Lamego Procissão de Triunfo tradition; source does not establish that it is French Catholic usage"
+    },
+    {
+      "source_id": "PARIS_GENEVIEVE",
+      "url": "https://dioceseparis.fr/sainte-genevieve-652.html",
+      "role": "PARIS_DIOCESE",
+      "scope": "Saint Étienne du Mont reliquary and historic Genevieve processions"
+    },
+    {
+      "source_id": "PARIS_CARMES",
+      "url": "https://dioceseparis.fr/la-crypte-des-carmes.html",
+      "role": "PARIS_DIOCESE",
+      "scope": "crypt of 1792 Martyrs, surviving remains"
+    },
+    {
+      "source_id": "PARIS_MARTYRS",
+      "url": "https://dioceseparis.fr/bienheureux-martyrs-de-septembre.html",
+      "role": "PARIS_DIOCESE",
+      "scope": "dated martyr cult and existing reliquary claim"
+    },
+    {
+      "source_id": "OROPA_PILGRIMAGE",
+      "url": "https://www.santuariodioropa.it/i-pellegrinaggi-estivi-delle-comunita-biellesi/",
+      "role": "SITE_CUSTODIAN",
+      "scope": "summer pilgrimages to Oropa, not precise routes"
+    },
+    {
+      "source_id": "CHURCH_ROCIO",
+      "url": "https://www.conferenciaepiscopal.es/interesa/hazmemoria-2021/religiosidad-popular/",
+      "role": "SPANISH_BISHOPS_CONFERENCE",
+      "scope": "El Rocío and the Javierada, processional and pilgrimage traditions"
+    },
+    {
+      "source_id": "NORWAY_SELJA",
+      "url": "https://www.katolsk.no/seljumannamessen2026",
+      "role": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "2026 Selja annual pilgrimage and liturgy"
+    },
+    {
+      "source_id": "NORWAY_ST_OLAV",
+      "url": "https://www.katolsk.no/praksis/valfart/pilereis",
+      "role": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "Catholic pilgrimage heritage of Nidaros; current cathedral ecclesial ownership not claimed"
+    },
+    {
+      "source_id": "NORWAY_ROLDAL",
+      "url": "https://www.katolsk.no/praksis/valfart/artikler/selja",
+      "role": "NORWEGIAN_CATHOLIC_CHURCH",
+      "scope": "historical Røldal crucifix destination"
+    },
+    {
+      "source_id": "CATHOLIC_CHEMIN",
+      "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-pelerinages/",
+      "role": "FRANCE_BISHOPS_CONFERENCE",
+      "scope": "Via Podiensis and other organized pilgrimages"
+    },
+    {
+      "source_id": "CEF_MARIES",
+      "url": "https://eglise.catholique.fr/actualites/362391-les-gitans-en-pelerinage-aux-saintes-maries-de-la-mer/",
+      "role": "FRANCE_BISHOPS_CONFERENCE",
+      "scope": "site-specific May gypsy pilgrimage"
+    },
+    {
+      "source_id": "VATICAN_NORMS",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_fr.html",
+      "role": "VATICAN_DDF_NORM",
+      "scope": "nihil obstat not equivalent to supernatural approval"
+    },
+    {
+      "source_id": "OROPA_RITUAL",
+      "url": "https://www.santuariodioropa.it/processioni-origini-antiche-di-unusanza-ancora-attuale/",
+      "role": "SITE_CUSTODIAN_ARCHIVE",
+      "scope": "Oropa historical processions and communal votive obligations"
+    },
+    {
+      "source_id": "VENICE_PASSION",
+      "url": "https://www.patriarcatovenezia.it/preghiera-musica-e-bellezza-a-san-marco-una-sosta-con-il-patriarca-in-venerazione-delle-reliquie-della-passione-di-cristo-venerdi-santo-ore-21-00/",
+      "role": "PATRIARCHATE_OF_VENICE",
+      "scope": "historical reports of relic inventory and revived Good Friday veneration"
+    }
+  ],
+  "place_candidates": [
+    {
+      "lead_id": "EUROPE:PLACE:DE:altotting-gnadenkapelle",
+      "continent": "EUROPE",
+      "country_code": "DE",
+      "name": "Altötting — Gnadenkapelle",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:DE:altoetting-gnadenkapelle",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:BE:banneux-vierge-des-pauvres",
+      "continent": "EUROPE",
+      "country_code": "BE",
+      "name": "Banneux — Vierge des Pauvres",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:BE:banneux",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:SI:brezje-basilica-of-mary-help",
+      "continent": "EUROPE",
+      "country_code": "SI",
+      "name": "Brezje — Basilica of Mary Help",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME",
+        "BREZJE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:RO:csiksomlyo-franciscan-marian-shrine",
+      "continent": "EUROPE",
+      "country_code": "RO",
+      "name": "Csíksomlyó — Franciscan Marian shrine",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:PL:czestochowa-jasna-gora",
+      "continent": "EUROPE",
+      "country_code": "PL",
+      "name": "Częstochowa — Jasna Góra",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:PL:jasna-gora",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:CH:einsiedeln-kloster",
+      "continent": "EUROPE",
+      "country_code": "CH",
+      "name": "Einsiedeln — Kloster",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:CH:einsiedeln-monastery",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:PT:fatima-santuario",
+      "continent": "EUROPE",
+      "country_code": "PT",
+      "name": "Fátima — Santuário",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:PT:fatima-sanctuary",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:GI:gibraltar-shrine-of-our-lady-of-europe",
+      "continent": "EUROPE",
+      "country_code": "GI",
+      "name": "Gibraltar — Shrine of Our Lady of Europe",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IE:knock-shrine-of-our-lady",
+      "continent": "EUROPE",
+      "country_code": "IE",
+      "name": "Knock — Shrine of Our Lady",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:IE:knock-shrine",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:SK:levoca-basilica-of-our-lady-of-the-visitation",
+      "continent": "EUROPE",
+      "country_code": "SK",
+      "name": "Levoča — Basilica of Our Lady of the Visitation",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:loreto-santa-casa",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Loreto — Santa Casa",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:IT:loreto-santa-casa",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:lourdes-sanctuaire-notre-dame",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Lourdes — Sanctuaire Notre-Dame",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:HU:mariapocs-marian-national-shrine",
+      "continent": "EUROPE",
+      "country_code": "HU",
+      "name": "Máriapócs — Marian national shrine",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:AT:mariazell-basilica",
+      "continent": "EUROPE",
+      "country_code": "AT",
+      "name": "Mariazell — Basilica",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:AT:mariazell-basilica",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:HR:marija-bistrica-marian-national-shrine",
+      "continent": "EUROPE",
+      "country_code": "HR",
+      "name": "Marija Bistrica — Marian national shrine",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME",
+        "MARIJA_BISTRICA"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:MT:mellie-a-marian-sanctuary",
+      "continent": "EUROPE",
+      "country_code": "MT",
+      "name": "Mellieħa — Marian sanctuary",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:LT:vilnius-gate-of-dawn-chapel",
+      "continent": "EUROPE",
+      "country_code": "LT",
+      "name": "Vilnius — Gate of Dawn chapel",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME",
+        "VILNIUS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:GB:walsingham-catholic-national-shrine",
+      "continent": "EUROPE",
+      "country_code": "GB",
+      "name": "Walsingham — Catholic National Shrine",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:GB:walsingham-catholic-shrine",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:zaragoza-basilica-del-pilar",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Zaragoza — Basílica del Pilar",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:UA:zarvanytsia-greek-catholic-marian-sanctuary",
+      "continent": "EUROPE",
+      "country_code": "UA",
+      "name": "Zarvanytsia — Greek Catholic Marian sanctuary",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:HU:matraverebely-szentkut-marian-sanctuary",
+      "continent": "EUROPE",
+      "country_code": "HU",
+      "name": "Mátraverebély-Szentkút — Marian sanctuary",
+      "kind": "MARIAN_SHRINE",
+      "identity_source_ids": [
+        "RME"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:alencon-sanctuaire-louis-et-zelie-martin",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Alençon — Sanctuaire Louis et Zélie Martin",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Shrine spans several associated Alençon sites; exact physical Place must be selected, not a city centre",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:sainte-anne-d-auray",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Sainte-Anne-d'Auray",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:sainte-anne-d-auray",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:cotignac-notre-dame-de-graces",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Cotignac — Notre-Dame de Grâces",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:notre-dame-graces-cotignac",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:notre-dame-de-la-font-sainte-cantal",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Notre-Dame de la Font-Sainte — Cantal",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:la-salette-sanctuaire-notre-dame",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "La Salette — Sanctuaire Notre-Dame",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:laghet-notre-dame-de-laghet",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Laghet — Notre-Dame de Laghet",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:l-ile-bouchard-notre-dame-de-la-priere-saint-gilles",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "L'Île-Bouchard — Notre-Dame de la Prière, Saint-Gilles",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF",
+        "ILE_BOUCHARD"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Episcopal decree authorizes pilgrimages and public cult, not a declaration of supernatural authenticity",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:lisieux-basilique-sainte-therese",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Lisieux — Basilique Sainte-Thérèse",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:montligeon-notre-dame-liberatrice",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Montligeon — Notre-Dame Libératrice",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:montligeon",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:nevers-espace-bernadette",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Nevers — Espace Bernadette",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:espace-bernadette-nevers",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:notre-dame-du-laus",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Notre-Dame du Laus",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:notre-dame-du-laus",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:paray-le-monial-sacre-c-ur",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Paray-le-Monial — Sacré-Cœur",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:pontmain-notre-dame",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Pontmain — Notre-Dame",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:pontmain",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:le-puy-en-velay-cathedrale",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Le Puy-en-Velay — Cathédrale",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": "place:FR:cathedrale-notre-dame-le-puy",
+      "proposed_disposition": "EXISTING_IDENTITY_SOURCE_ENRICHMENT",
+      "match_rule": "DIRECT_NAMED_EXISTING_PLACE",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:souvigny-sanctuaire-saints-mayeul-et-odilon",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Souvigny — Sanctuaire Saints Mayeul et Odilon",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:valcluse-notre-dame-de-valcluse",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Valcluse — Notre-Dame de Valcluse",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Exact ecclesiastical building/custodian review required",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:verdelais-basilique-notre-dame",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Verdelais — Basilique Notre-Dame",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CEF"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:oropa-santuario-della-madonna-nera",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Oropa — Santuario della Madonna Nera",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "OROPA"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:vicoforte-santuario-della-nativita-di-maria",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Vicoforte — Santuario della Natività di Maria",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:monte-berico-santuario-della-madonna",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Monte Berico — Santuario della Madonna",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:madonna-della-corona-ferrara-di-monte-baldo",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Madonna della Corona — Ferrara di Monte Baldo",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:san-luca-santuario-della-beata-vergine-bologna",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "San Luca — Santuario della Beata Vergine, Bologna",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:la-verna-santuario-francescano",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "La Verna — Santuario Francescano",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:montenero-santuario-madonna-delle-grazie-livorno",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Montenero — Santuario Madonna delle Grazie, Livorno",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:san-ubaldo-basilica-santuario-gubbio",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "San Ubaldo — Basilica Santuario, Gubbio",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:santa-maria-degli-angeli-porziuncola-assisi",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Santa Maria degli Angeli — Porziuncola, Assisi",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:divino-amore-santuario-della-madonna-rome",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Divino Amore — Santuario della Madonna, Rome",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:nostra-signora-della-guardia-ceranesi",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Nostra Signora della Guardia — Ceranesi",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:san-giuseppe-da-copertino-santuario-osimo",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "San Giuseppe da Copertino — Santuario, Osimo",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:san-nicola-da-tolentino-santuario-tolentino",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "San Nicola da Tolentino — Santuario, Tolentino",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:madonna-del-pettoruto-san-sosti",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Madonna del Pettoruto — San Sosti",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:madonna-del-frassino-peschiera-del-garda",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Madonna del Frassino — Peschiera del Garda",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:santa-maria-del-monte-varese",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Santa Maria del Monte — Varese",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "CNS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:san-gabriele-dell-addolorata-colledara",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "San Gabriele dell'Addolorata — Colledara",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "IT_ABRUZZO"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:madonna-addolorata-castelpetroso",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Madonna Addolorata — Castelpetroso",
+      "kind": "APPARITION_ASSOCIATED_SANCTUARY",
+      "identity_source_ids": [
+        "CASTELPETROSO"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:IT:vergine-della-rivelazione-tre-fontane-rome",
+      "continent": "EUROPE",
+      "country_code": "IT",
+      "name": "Vergine della Rivelazione — Tre Fontane, Rome",
+      "kind": "APPARITION_ASSOCIATED_SANCTUARY",
+      "identity_source_ids": [
+        "TREFONTANE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:montserrat-monestir-de-santa-maria",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Montserrat — Monestir de Santa Maria",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:el-rocio-ermita-de-la-virgen-del-rocio",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "El Rocío — Ermita de la Virgen del Rocío",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:covadonga-santa-cueva-and-sanctuary",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Covadonga — Santa Cueva and Sanctuary",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:fuensanta-santuario-de-la-virgen-murcia",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Fuensanta — Santuario de la Virgen, Murcia",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:guadalupe-real-monasterio-de-nuestra-senora-extremadura",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Guadalupe — Real Monasterio de Nuestra Señora, Extremadura",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:javier-santuario-and-castle-of-saint-francis-xavier",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Javier — Santuario and Castle of Saint Francis Xavier",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:caravaca-de-la-cruz-basilica-santuario-de-la-vera-cruz",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Caravaca de la Cruz — Basílica-Santuario de la Vera Cruz",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:loyola-santuario-de-san-ignacio",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Loyola — Santuario de San Ignacio",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:ES:andujar-virgen-de-la-cabeza-sanctuary",
+      "continent": "EUROPE",
+      "country_code": "ES",
+      "name": "Andújar — Virgen de la Cabeza Sanctuary",
+      "kind": "NAMED_POPULAR_PILGRIMAGE_CENTRE_CANONICAL_STATUS_REVIEW",
+      "identity_source_ids": [
+        "CEE"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:PT:bom-jesus-do-monte-braga",
+      "continent": "EUROPE",
+      "country_code": "PT",
+      "name": "Bom Jesus do Monte — Braga",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "BOM_JESUS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:PT:nossa-senhora-dos-remedios-lamego",
+      "continent": "EUROPE",
+      "country_code": "PT",
+      "name": "Nossa Senhora dos Remédios — Lamego",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "LAMEGO"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:NO:selja-saint-sunniva-pilgrimage-island",
+      "continent": "EUROPE",
+      "country_code": "NO",
+      "name": "Selja — Saint Sunniva pilgrimage island",
+      "kind": "HISTORICAL_CATHOLIC_PILGRIMAGE_OR_SHARED_HERITAGE",
+      "identity_source_ids": [
+        "NORWAY"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Historic medieval Catholic shrine; current pilgrimage recorded by Catholic Church",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:NO:r-ldal-crucifix-pilgrimage-church",
+      "continent": "EUROPE",
+      "country_code": "NO",
+      "name": "Røldal — Crucifix pilgrimage church",
+      "kind": "HISTORICAL_CATHOLIC_PILGRIMAGE_OR_SHARED_HERITAGE",
+      "identity_source_ids": [
+        "NORWAY"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Historic medieval Catholic pilgrimage; current church owner and practice require distinction",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:NO:nidaros-shrine-heritage-of-saint-olav",
+      "continent": "EUROPE",
+      "country_code": "NO",
+      "name": "Nidaros — Shrine heritage of Saint Olav",
+      "kind": "HISTORICAL_CATHOLIC_PILGRIMAGE_OR_SHARED_HERITAGE",
+      "identity_source_ids": [
+        "NORWAY"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Historic Catholic pilgrimage site, cathedral currently Lutheran; not a present Catholic-operated shrine",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:SE:vadstena-saint-bridget-pilgrimage-heritage",
+      "continent": "EUROPE",
+      "country_code": "SE",
+      "name": "Vadstena — Saint Bridget pilgrimage heritage",
+      "kind": "HISTORICAL_CATHOLIC_PILGRIMAGE_OR_SHARED_HERITAGE",
+      "identity_source_ids": [
+        "NORWAY"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": "Swedish saint and historic pilgrimage; current custodial identity must be checked",
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:GB:aylesford-priory-our-lady-of-mount-carmel",
+      "continent": "EUROPE",
+      "country_code": "GB",
+      "name": "Aylesford Priory — Our Lady of Mount Carmel",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "AYLESFORD"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:paris-eglise-saint-etienne-du-mont",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Paris — Église Saint-Étienne-du-Mont",
+      "kind": "RELIC_VENERATION_CHURCH",
+      "identity_source_ids": [
+        "PARIS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:paris-eglise-saint-joseph-des-carmes",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Paris — Église Saint-Joseph-des-Carmes",
+      "kind": "RELIC_VENERATION_CHURCH",
+      "identity_source_ids": [
+        "PARIS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "lead_id": "EUROPE:PLACE:FR:paris-sanctuaire-notre-dame-de-fatima-marie-mediatrice",
+      "continent": "EUROPE",
+      "country_code": "FR",
+      "name": "Paris — Sanctuaire Notre-Dame de Fatima Marie Médiatrice",
+      "kind": "SANCTUARY_OR_PILGRIMAGE_DESTINATION",
+      "identity_source_ids": [
+        "PARIS"
+      ],
+      "existing_place_id": null,
+      "proposed_disposition": "NEW_PLACE_IDENTITY_CANDIDATE",
+      "match_rule": "EXACT_SITE_AND_CANONICAL_NAME_REVIEW_PENDING",
+      "note": null,
+      "geographic_coordinates": null,
+      "publication_state": "RESEARCH_ONLY"
+    }
+  ],
+  "other_category_leads": [],
+  "cross_reference_holds": [
+    {
+      "label": "Torreciudad (Huesca), Spain",
+      "category": "SHRINE_CANONICAL_STATUS",
+      "country_code": "ES",
+      "source_id": "CEE_STATUS",
+      "decision": "DO_NOT_CLAIM_CANONICAL_SANCTUARY",
+      "note": "Spanish Bishops' Conference correction (2024): new church was improperly counted as sanctuary; classified as semi-public oratory in that communiqué."
+    }
+  ],
+  "counts": {
+    "distinct_place_leads": 76,
+    "existing_place_matches": 22,
+    "new_place_candidates": 54,
+    "new_place_by_country": {
+      "SI": 1,
+      "RO": 1,
+      "GI": 1,
+      "SK": 1,
+      "HU": 2,
+      "HR": 1,
+      "MT": 1,
+      "LT": 1,
+      "UA": 1,
+      "FR": 9,
+      "IT": 19,
+      "ES": 9,
+      "PT": 2,
+      "NO": 3,
+      "SE": 1,
+      "GB": 1
+    }
+  }
+}
