@@ -11,6 +11,9 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"artifacts/sacred-art-cma-gaps"
 IMAGES=OUT/"nga-originals"
 LEADS=[
+ {"id":"nga-505","prayerKey":"rosary.joy2","title":"The Visitation with Saint Nicholas and Saint Anthony Abbot",
+  "object":"https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot",
+  "original":"https://api.nga.gov/iiif/53a3d42d-c211-4df6-b199-88086fdbd5a9/full/full/0/default.jpg"},
  {"id":"nga-41656","prayerKey":"rosary.joy5","title":"Christ among the Doctors",
   "object":"https://www.nga.gov/artworks/41656-christ-among-doctors",
   "original":"https://api.nga.gov/iiif/a3148763-333a-4e64-ae77-bd37a93b4a34/full/full/0/default.jpg"},
