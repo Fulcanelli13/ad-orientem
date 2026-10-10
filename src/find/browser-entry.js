@@ -10,7 +10,8 @@ import {
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
-import { mapViewport, mountExploreMap } from "./map-runtime.js";
+import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
+import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, renderBibleAtlasToString } from "./bible-atlas.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "./heritage-map.js";
@@ -140,6 +141,8 @@ export function createFindOwner(win=globalThis){
     selectedId:null,
     selectedPlaceId:null,
     displayLimit:24,
+    bibleAtlas:false,
+    bibleIndex:0,
   };
 
   function glossaryTerms(){
@@ -285,6 +288,44 @@ export function createFindOwner(win=globalThis){
     // started another render while the shared load was in flight.
     if(token!==paintToken||!openState)return false;
     lastLoadError=null;
+
+    // A focused map-first view over the current Explore owner; do not
+    // replace the bounded-world map or recreate it on every timeline event.
+    if(state.bibleAtlas){
+      const atlasStops=buildBibleAtlas(data?.biblePlaces?.entries??[]);
+      node.innerHTML=renderBibleAtlasToString({language:language(win),atlasStops,atlasIndex:state.bibleIndex});
+      node.dataset.open=openState?"true":"false";
+      node.dataset.aoFindLoadState="ready";
+      node.dataset.exploreLens=state.lens;
+      mapHandle?.destroy?.();mapHandle=null;
+      const mapNode=node.querySelector?.("[data-bible-map]");
+      try{
+        const handle=await mountExploreMap(mapNode,atlasMapItems(atlasStops,state.bibleIndex),{
+          win,allowEmpty:true,initialViewport:{center:[35,31],zoom:3.6},
+          onSelect:id=>{
+            const index=atlasIndexForPin(atlasStops,state.bibleIndex,id);
+            updateBibleIndex(index,{center:true});
+            const detail=getRoot(win)?.querySelector?.("[data-bible-detail]");
+            if(detail)detail.insertAdjacentHTML("beforeend",atlasPinEpisodes(
+              atlasStops,data?.biblePlaces?.entries??[],String(id).replace(/^atlas:/,""),index,language(win)));
+          },
+        });
+        if(token!==paintToken||!openState||!state.bibleAtlas){handle?.destroy?.();return false;}
+        mapHandle=handle;
+        updateBibleIndex(state.bibleIndex);
+      }catch(error){
+        try{win?.console?.error?.("Biblical Atlas map unavailable",error)}catch{}
+        if(mapNode&&win?.document){
+          const fallback=win.document.createElement("div");
+          fallback.className="aoFindMapFallback";
+          fallback.textContent=language(win)==="fr"
+            ?"Carte indisponible. Parcourez la chronologie pour lire les Écritures."
+            :"Map unavailable. Use the timeline to read the Scriptures.";
+          mapNode.replaceChildren(fallback);
+        }
+      }
+      return true;
+    }
     const rawItems=filtered();
     // Canonical practice cards are a reading view over the immutable attestation
     // corpus. Site-backed map pins and Place-page deep links keep original IDs.
@@ -384,6 +425,7 @@ export function createFindOwner(win=globalThis){
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
     state.expandPlace=false;state.expandDetail=false;
+    state.bibleAtlas=false;state.bibleIndex=0;
     const node=ensureRoot(win);if(!node)return false;
     openState=true;node.dataset.open="true";
     node.dataset.aoFindLoadState="loading";
@@ -398,6 +440,7 @@ export function createFindOwner(win=globalThis){
   function close(){
     ++paintToken;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
+    state.bibleAtlas=false;state.bibleIndex=0;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
@@ -416,7 +459,7 @@ export function createFindOwner(win=globalThis){
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.displayLimit=24;
-    if(state.lens!==previousLens){lastMapView=null;lastMapLens=null;}
+    if(state.lens!==previousLens){lastMapView=null;lastMapLens=null;state.bibleAtlas=false;state.bibleIndex=0;}
     void paint();
   }
 
@@ -451,12 +494,95 @@ export function createFindOwner(win=globalThis){
     return false;
   }
 
+  // Update pins and camera *in place* as the timeline scrubs; never remount map on each stop.
+  function updateBibleIndex(next,{center=false}={}){
+    if(!openState||!state.bibleAtlas||!dataset)return;
+    const stops=buildBibleAtlas(dataset.biblePlaces?.entries??[]);
+    const index=Math.max(0,Math.min(stops.length-1,Math.floor(Number(next)||0)));
+    const previous=stops[state.bibleIndex],active=stops[index];
+    if(!active)return;
+    state.bibleIndex=index;
+    const root=getRoot(win),lang=language(win);
+    root?.querySelectorAll?.("[data-bible-step]")?.forEach(button=>{
+      const selected=Number(button.dataset.bibleStep)===index;
+      button.classList.toggle("active",selected);button.setAttribute("aria-pressed",String(selected));
+    });
+    const detail=root?.querySelector?.("[data-bible-detail]");
+    if(detail)detail.innerHTML=atlasDetail(active,lang);
+    const title=root?.querySelector?.("[data-bible-era-name]");
+    if(title)title.textContent=lang==="fr"?
+      ({ORIGINS:"Les origines",PATRIARCHS:"Les Patriarches",EXODUS:"L'Exode",ISRAEL:"Israël et les Prophètes",EXILE:"Exil et restauration",INFANCY:"L'Incarnation",PUBLIC:"La Vie publique",PASSION:"La Passion",RESURRECTION:"La Résurrection",APOSTLES:"L'Église apostolique",REVELATION:"L'Apocalypse"})[active.era]:
+      ({ORIGINS:"The Beginnings",PATRIARCHS:"The Patriarchs",EXODUS:"The Exodus",ISRAEL:"Israel and the Prophets",EXILE:"Exile and Restoration",INFANCY:"The Incarnation",PUBLIC:"The Public Ministry",PASSION:"The Passion",RESURRECTION:"The Resurrection",APOSTLES:"The Apostolic Church",REVELATION:"The Apocalypse"})[active.era];
+    if(previous?.era!==active.era&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true){
+      const overlay=root?.querySelector?.("[data-bible-era-overlay]");
+      if(overlay)overlay.innerHTML=atlasEraOverlay(active.era,lang);
+    }
+    const map=mapHandle?.map;
+    const sync=()=>{
+      const source=map?.getSource?.("ao-explore-items");if(!source)return;
+      source.setData?.({type:"FeatureCollection",features:exploreMapFeatures(atlasMapItems(stops,index))});
+      if(!active.geo){
+        try{map.setPaintProperty?.("ao-explore-points","circle-color","#79909f");}catch{}
+      }
+      if(!active.geo&&previous?.era!==active.era){
+        try{map.easeTo?.({center:[35,31],zoom:3.6,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});}catch{}
+      }
+      if(active.geo){
+        const key="atlas:"+active.geo.key;
+        try{
+          map.setPaintProperty?.("ao-explore-points","circle-color",["case",["==",["get","item_id"],key],"#edcb86","#79909f"]);
+          map.easeTo?.({center:[active.geo.lng,active.geo.lat],zoom:active.geo.key==="jerusalem"?10:active.era==="APOSTLES"?6:8,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});
+        }catch{}
+      }
+    };
+    if(map?.getSource?.("ao-explore-items"))sync();
+    else if(map?.once)map.once("load",sync);
+    if(center)centerBibleMilestone(index);
+  }
+  function centerBibleMilestone(index){
+    const target=getRoot(win)?.querySelector?.('[data-bible-step="'+index+'"]');
+    target?.scrollIntoView?.({block:"nearest",inline:"center",behavior:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"instant":"smooth"});
+  }
+  let bibleScrollFrame=0;
+  function onBibleTimelineScroll(event){
+    if(!openState||!state.bibleAtlas||!event?.target?.matches?.("[data-bible-track]"))return;
+    if(bibleScrollFrame)return;
+    const track=event.target;
+    const update=()=>{
+      bibleScrollFrame=0;
+      const middle=track.getBoundingClientRect().left+track.clientWidth/2;
+      let best=-1,distance=Infinity;
+      track.querySelectorAll("[data-bible-step]").forEach(button=>{
+        const rect=button.getBoundingClientRect(),diff=Math.abs(rect.left+rect.width/2-middle);
+        if(diff<distance){distance=diff;best=Number(button.dataset.bibleStep);}
+      });
+      if(best>=0&&best!==state.bibleIndex)updateBibleIndex(best);
+    };
+    bibleScrollFrame=win.requestAnimationFrame?win.requestAnimationFrame(update):1;
+    if(!win.requestAnimationFrame){bibleScrollFrame=0;update();}
+  }
+
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
     // A category/detail Back tap returns to the parent map; only Back from
     // Sacred Geography itself exits the Explore domain.
     // The swipe guard runs in capture phase before this handler.
+    if(target?.closest?.("[data-bible-atlas-open]")&&state.lens==="heritage"){
+      event.preventDefault?.();
+      if(!dataset?.biblePlaces?.entries?.length){actionError(language(win)==="fr"?"Données bibliques indisponibles.":"Biblical Atlas data is unavailable.");return;}
+      state.bibleAtlas=true;state.bibleIndex=0;
+      lastMapView=null;lastMapLens=null;
+      void paint().then(ok=>{if(!ok||!state.bibleAtlas)return;centerBibleMilestone(0);const overlay=getRoot(win)?.querySelector?.("[data-bible-era-overlay]");if(overlay&&win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches!==true)overlay.innerHTML=atlasEraOverlay("ORIGINS",language(win));});return;
+    }
+    if(target?.closest?.("[data-bible-atlas-close]")&&state.bibleAtlas){
+      event.preventDefault?.();state.bibleAtlas=false;state.bibleIndex=0;mapHandle?.destroy?.();mapHandle=null;lastMapView=null;lastMapLens=null;void paint();return;
+    }
+    const atlasStep=target?.closest?.("[data-bible-step]");
+    if(atlasStep&&state.bibleAtlas){event.preventDefault?.();updateBibleIndex(Number(atlasStep.dataset.bibleStep),{center:true});return;}
+    if(target?.closest?.("[data-bible-follow]")&&state.bibleAtlas){
+      event.preventDefault?.();centerBibleMilestone(state.bibleIndex);updateBibleIndex(state.bibleIndex);return;
+    }
     const retry=target?.closest?.("[data-find-retry]");
     if(retry){
       event.preventDefault?.();
@@ -627,6 +753,7 @@ export function createFindOwner(win=globalThis){
     setFilter(field.dataset.atlasFilter,field.value);
   }
 
+  win?.document?.addEventListener?.("scroll",onBibleTimelineScroll,true);
   win?.document?.addEventListener?.("click",onClick,true);
   win?.document?.addEventListener?.("input",onInput,true);
   win?.document?.addEventListener?.("change",onChange,true);
@@ -644,6 +771,8 @@ export function createFindOwner(win=globalThis){
       loadState:openState?(lastLoadError?"error":dataset?"ready":"loading"):"closed",
       lens:state.lens,
       view:state.view,
+      bibleAtlas:state.bibleAtlas,
+      bibleIndex:state.bibleIndex,
       selectedPlaceId:state.selectedPlaceId,
       counts:state.lens==="tlm"?{tlm:PRELIMINARY_R49_TOTAL}:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
@@ -652,6 +781,7 @@ export function createFindOwner(win=globalThis){
     }),
     dispose(){
       close();
+      win?.document?.removeEventListener?.("scroll",onBibleTimelineScroll,true);
       win?.document?.removeEventListener?.("click",onClick,true);
       win?.document?.removeEventListener?.("input",onInput,true);
       win?.document?.removeEventListener?.("change",onChange,true);
