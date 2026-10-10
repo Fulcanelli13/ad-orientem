@@ -122,4 +122,38 @@ const refused=await recoverReaderProperOmissions(wrongLatin,{hostResolver:source
 assert.equal(refused.data.collects[1].fr,"","mismatched source path silently acquired another feast's prayer");
 assert.equal(properToReaderSlots(refused.data,{language:"fr"}).ready,false);
 
+
+// Actual production discrepancy: Oct 8 Calendar owns the martyrs via the
+// normalized 10-08c (Latin/English) source; its French text is indexed under
+// the historic 10-07cc Divinum Officium file. Do not rename the Mass owner.
+const productionAliasRows=new Map(sourceOrations);
+for(const language of ["la","en"]){
+  productionAliasRows.set("Sancti/10-08c|"+language,
+    sourceOrations.get("Sancti/10-07cc|"+language));
+}
+productionAliasRows.set("Sancti/10-08c|fr",new Map());
+const aliasCalls=[];
+const aliasResolver={async resolveSource(path,language){
+  aliasCalls.push([path,language]);
+  const map=productionAliasRows.get(path+"|"+language)??new Map();
+  return {map,order:[...map.keys()]};
+}};
+const withHistoricalId={...multi,data:{...multi.data,
+  calendarCommemorations:[{path:"Sancti/10-08c",prayerSourcePath:"Sancti/10-08c"}]
+}};
+const withFrenchAlias=await recoverReaderProperOmissions(withHistoricalId,{hostResolver:aliasResolver});
+for(const [field] of sections){
+  assert.equal(withFrenchAlias.data[field].length,2,field+" commemoration dropped");
+  assert.match(withFrenchAlias.data[field][1].fr,/mérites des saints Martyrs/);
+  assert.equal(withFrenchAlias.data[field][1].lat,withHistoricalId.data[field][1].lat,
+    "the French equivalence rewrote the principal Latin owner");
+}
+assert.equal(properToReaderSlots(withFrenchAlias.data,{language:"fr"}).ready,true);
+assert.ok(aliasCalls.some(([path,language])=>path==="Sancti/10-07cc"&&language==="fr"));
+const wrongAliasLatin={...withHistoricalId,data:{...withHistoricalId.data,
+  secrets:[withHistoricalId.data.secrets[0],{...withHistoricalId.data.secrets[1],lat:"Wrong Latin source",fr:""}]
+}};
+const mustRefuse=await recoverReaderProperOmissions(wrongAliasLatin,{hostResolver:aliasResolver});
+assert.equal(mustRefuse.data.secrets[1].fr,"","verified French equivalence bypassed mismatched Latin");
+
 console.log("PASS reader Proper runtime recovery: exact missing base sections recovered without overriding host text.");
