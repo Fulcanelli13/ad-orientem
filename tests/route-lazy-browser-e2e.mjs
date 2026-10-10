@@ -256,6 +256,47 @@ try {
   assert.ok(hits.some(row=>row.path==="/src/apostolate/browser-entry.js"),"Apostolate dynamic import not requested");
   assert.equal(await page.evaluate(()=>globalThis.AO_APOSTOLATE_APP_V1?.status?.()?.installed===true),true,
     "Apostolate owner was not installed");
+  // Reproduce a rejected cross-module handoff on an actual visible control:
+  // the selected scenario must remain available with an explicit retry error.
+  assert.equal(await page.evaluate(()=>globalThis.AO_APOSTOLATE_APP_V1.open({
+    scenarioId:"HS02",practice:false
+  })),true);
+  await page.locator("#ao-apostolate-root [data-ao-ap-handoff='0']").waitFor({state:"visible",timeout:12000});
+  const originalShellReplaced=await page.evaluate(()=>{
+    const api=globalThis.AO_APP_SHELL_V1;
+    const desc=Object.getOwnPropertyDescriptor(globalThis,"AO_APP_SHELL_V1");
+    if(desc&&!desc.writable&&!desc.set)return false;
+    globalThis.__aoOriginalShellForHandoffTest=api;
+    globalThis.AO_APP_SHELL_V1={...api,navigate:async()=>({ok:false,reason:"INJECTED_ROUTE_FAILURE"})};
+    return true;
+  });
+  assert.equal(originalShellReplaced,true,"Apostolate handoff fault could not be injected");
+  try{
+    await page.locator("#ao-apostolate-root [data-ao-ap-handoff='0']").click();
+    await page.locator("#ao-apostolate-root [data-ao-ap-handoff-error][role='alert']").waitFor({state:"visible",timeout:12000});
+    const failed=await page.evaluate(()=>globalThis.AO_APOSTOLATE_APP_V1.status());
+    assert.equal(failed.selectedId,"HS02","A failed handoff erased the current Apostolate scenario");
+    assert.equal(failed.suspended,false,"A failed handoff stranded Apostolate as suspended");
+    assert.equal(failed.open,true,"A failed handoff silently removed Apostolate");
+    assert.equal(failed.handoffPending,false,"A failed handoff kept its control busy");
+    assert.match(failed.handoffError,/could not be opened/i,"No retry guidance after rejected handoff");
+    assert.equal(await page.locator("#ao-apostolate-root [data-ao-ap-handoff='0']").isEnabled(),true);
+  }finally{
+    await page.evaluate(()=>{
+      if(globalThis.__aoOriginalShellForHandoffTest)
+        globalThis.AO_APP_SHELL_V1=globalThis.__aoOriginalShellForHandoffTest;
+      delete globalThis.__aoOriginalShellForHandoffTest;
+    });
+  }
+  await page.locator("#ao-apostolate-root [data-ao-ap-back]").click();
+  assert.equal(await page.locator("#ao-apostolate-root [data-ao-ap-handoff-error]").count(),0,
+    "Apostolate Back did not clear stale handoff failure");
+  await page.evaluate(()=>globalThis.AO_APOSTOLATE_APP_V1.open({scenarioId:"HS02",practice:false}));
+  await page.locator("#ao-apostolate-root [data-ao-ap-handoff='0']").click();
+  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="learn",null,{timeout:20000});
+  assert.equal(await page.evaluate(()=>globalThis.AO_APOSTOLATE_APP_V1?.status?.().suspended),true,
+    "Successful Formation handoff must suspend, not discard, Apostolate context");
+
   assert.equal(await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.presentationOwner),
     "R17_NATIVE_PRODUCTION","Mass owner regressed after lazy routes");
 
