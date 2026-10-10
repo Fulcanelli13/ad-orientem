@@ -109,6 +109,42 @@ try{
  assert.equal(gf.fieldsetDisabled,true,"Non-Mass form selector still active: "+JSON.stringify(gf));
  assert.equal(gf.inputsDisabled,true,"Non-Mass radios still active: "+JSON.stringify(gf));
  assert.match(await page.locator("[data-full-mass-note]").innerText(),/ce n’est pas une messe/i);
+ // Source-owned catalogue: mobile projection uses the actual historical
+ // source buttons and delegates selection without manufacturing a Proper.
+ await page.evaluate(async()=>{
+  __full.dispose();
+  const {mountSourceOwnedMassCatalogue}=await import("/src/mass/full-mass-catalogue.js");
+  __catStage="votive";__catLanguage="en";__selectedSource=null;
+  const flow=document.getElementById("ao-mass-flow-v1");
+  flow.innerHTML='<section class="aoMassFlowBody"><p>Choose the source Proper</p>'+
+   '<button data-ao-celebration="sacred_heart"><b>Sacred Heart</b><span>Votive/Pent02-5</span></button>'+
+   '<button data-ao-celebration="holy_cross"><b>Holy Cross</b><span>Votive/Cross</span></button></section>';
+  flow.addEventListener("click",e=>{
+   const b=e.target.closest?.("[data-ao-celebration],[data-ao-requiem]");
+   if(b){__selectedSource=b.dataset.aoCelebration??b.dataset.aoRequiem;__catStage="preflight";}
+  });
+  __catalogue=mountSourceOwnedMassCatalogue({doc:document,stage:()=>__catStage,
+    language:()=>__catLanguage});
+ });
+ await page.waitForSelector('[data-ao-mass-catalogue-choice="sacred_heart"]');
+ assert.equal(await page.locator('[data-ao-mass-catalogue-choice]').count(),2);
+ assert.equal(await page.locator("[data-ao-mass-catalogue-search]").count(),0);
+ // The native search exists only for larger source-owned lists.
+ assert.equal((await page.locator("[data-ao-mass-catalogue]").innerText()).includes("Votive/Pent02-5"),true);
+ await page.locator('[data-ao-mass-catalogue-choice="sacred_heart"]').click();
+ assert.equal(await page.evaluate(()=>__selectedSource),"sacred_heart");
+ await page.evaluate(()=>{
+   __catStage="requiem";
+   document.querySelector("#ao-mass-flow-v1").innerHTML='<section class="aoMassFlowBody"><p>Occasion</p>'+
+    '<button data-ao-requiem="funeral"><b>Funeral Mass</b><span>I class</span></button>'+
+    '<button data-ao-requiem="anniversary"><b>Anniversary</b><span>II class</span></button></section>';
+   __catalogue.refresh();
+ });
+ await page.waitForSelector('[data-ao-mass-catalogue-choice="anniversary"]');
+ assert.equal(await page.locator('[data-ao-mass-catalogue-choice]').count(),2);
+ await page.locator('[data-ao-mass-catalogue-choice="anniversary"]').click();
+ assert.equal(await page.evaluate(()=>__selectedSource),"anniversary");
+ await page.evaluate(()=>__catalogue.dispose());
  const horizontal=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(horizontal<=1,"390px phone overflow: "+horizontal);
  assert.deepEqual(errors,[]);
