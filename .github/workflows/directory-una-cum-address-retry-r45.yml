@@ -1,10 +1,5 @@
 name: Directory R45 Alternate Address Recovery
 on:
-  pull_request:
-    paths:
-      - "tools/directory/retry-una-cum-address-geocodes-r45.mjs"
-      - ".github/workflows/directory-una-cum-address-retry-r45.yml"
-      - "data/directory/research/staging/map-first-r37/r45-alternate-address-queue.json"
   workflow_dispatch:
 permissions:
   contents: read
