@@ -1,4 +1,5 @@
 import "./traditional-pray-styles.js";
+import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
 import {
   SACRED_HYMNS_V381,
@@ -215,6 +216,19 @@ function renderGoodDeath(){
     <div class="aoTP381PrayerList"><button type="button" data-tp381-route="pray.dying_companion"><span><b>${esc(L("Someone may be dying now","Une personne est peut-être mourante maintenant"))}</b><small>${esc(L("Open the bedside Dying Companion","Ouvrir l’accompagnement au chevet du mourant"))}</small></span><i aria-hidden="true">→</i></button></div>
   </main>`;
 }
+function dyingCompanionStepNav(tab){
+  const index=DYING_COMPANION_STAGES.indexOf(tab);
+  const previous=nextDyingCompanionStage(tab,"previous");
+  const next=nextDyingCompanionStage(tab,"next");
+  const count=L("Step "+(index+1)+" of 3","Étape "+(index+1)+" sur 3");
+  return `<section data-ao-dying-step="${esc(tab)}" aria-label="${esc(L("Bedside guide","Guide au chevet"))}">
+    <p class="aoTP381GuideCount">${esc(count)}</p>
+    <nav class="aoTP381GuideNav" aria-label="${esc(L("Bedside steps","Étapes au chevet"))}">
+      <button type="button" data-tp381-dying-step="previous" ${previous?"":"disabled"}>${esc(L("Previous","Précédent"))}</button>
+      <button type="button" data-tp381-dying-step="next" ${next?"":"disabled"}>${esc(L("Next","Suivant"))}</button>
+    </nav>
+  </section>`;
+}
 function renderDyingCompanion(){
   const d=GOOD_DEATH_DYING_V384,tab=["now","pray","commend"].includes(S.dying)?S.dying:"now";
   let body="";
@@ -248,7 +262,7 @@ function renderDyingCompanion(){
       <details class="aoTP381Source"><summary>${esc(L("At the point of death · current indulgence","À l’article de la mort · indulgence actuelle"))}</summary><p>${esc(isFr()?d.currentIndulgence.fr:d.currentIndulgence.en)}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>
       <details class="aoTP381Source"><summary>${esc(L("Why Viaticum matters","Pourquoi le Viatique est important"))}</summary><p>${esc(L("The Church gives the Eucharist as Viaticum to those about to leave this life. Together with Penance and Anointing of the Sick, it belongs to the sacraments that complete the Christian’s earthly pilgrimage.","L’Église donne l’Eucharistie en Viatique à ceux qui sont sur le point de quitter cette vie. Avec la Pénitence et l’Onction des malades, il appartient aux sacrements qui achèvent le pèlerinage terrestre du chrétien."))}</p><p><a href="${esc(GOOD_DEATH_DYING_SOURCES_V384.viaticum)}" target="_blank" rel="noopener">${esc(L("Catechism · Viaticum","Catéchisme · Viatique"))} ↗</a></p></details>`;
   }
-  return `${head(L("Dying Companion","Accompagnement du mourant"),L("Priest · prayer · commendation","Prêtre · prière · recommandation"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>${body}</main>`;
+  return `${head(L("Dying Companion","Accompagnement du mourant"),L("Priest · prayer · commendation","Prêtre · prière · recommandation"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("A bedside companion for the faithful when death may be near. The first action is pastoral, not digital: obtain a priest when possible.","Un accompagnement au chevet pour les fidèles lorsque la mort peut être proche. La première action est pastorale, non numérique : obtenir un prêtre lorsque cela est possible."))}</p><div class="aoTP381Tabs"><button type="button" data-tp381-dying="now" class="${tab==="now"?"active":""}">${esc(L("Now","Maintenant"))}</button><button type="button" data-tp381-dying="pray" class="${tab==="pray"?"active":""}">${esc(L("Pray","Prier"))}</button><button type="button" data-tp381-dying="commend" class="${tab==="commend"?"active":""}">${esc(L("Commend","Recommander"))}</button></div>${body}${dyingCompanionStepNav(tab)}</main>`;
 }
 function renderPrayer(){
   const p=data().prayers?.[S.prayerId];
@@ -288,7 +302,8 @@ function open(route,opts={}){
   if(!ROUTES[route])return false;
   OPEN_OPTS={...opts};S={...S,route,screen:"module",prayerId:null,
     ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyStep:0,returnToDaily:false}:{})
-   ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{})};
+   ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
+    ...(route==="pray.dying_companion"?{dying:"now"}:{})};
   BASE_OPEN("pray.hub",opts);
   render();return true;
 }
@@ -307,7 +322,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -335,7 +350,8 @@ function handleClick(e){
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
   if(b.dataset.tp381Communion){S.communion=b.dataset.tp381Communion==="after"?"after":"before";return render()}
-  if(b.dataset.tp381Dying){S.dying=["now","pray","commend"].includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}
+  if(b.dataset.tp381Dying){S.dying=DYING_COMPANION_STAGES.includes(b.dataset.tp381Dying)?b.dataset.tp381Dying:"now";return render()}
+  if(b.dataset.tp381DyingStep){const stage=nextDyingCompanionStage(S.dying,b.dataset.tp381DyingStep);if(stage){S.dying=stage;return render()}return;}
   if(b.dataset.tp381Prayer){S.prayerId=b.dataset.tp381Prayer;S.screen="prayer";return render()}
   if(b.dataset.tp381Route){
     const route=b.dataset.tp381Route;
