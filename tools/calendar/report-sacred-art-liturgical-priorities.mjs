@@ -134,6 +134,40 @@ if(yearPath){
   sundayObligationDays:days.filter(d=>d.obligation.sundayUniversal).length,
   days};
 }
+// This research crosswalk is an observed-source priority worklist,
+// never a licence to infer appointed Scripture or assign final day coverage.
+if(report.observedYear.days&&report.observedYear.days[0]?.date.startsWith("2026-")){
+ const cross=read("data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json");
+ assert.equal(cross.schema,"AO_SACRED_ART_FIRST_CLASS_2026_RESEARCH_CROSSWALK_V1");
+ const principal=report.observedYear.days.filter(d=>d.rank===1);
+ assert.equal(cross.days.length,principal.length,"Research checklist must include all resolved I-class days");
+ const worklist=cross.days.map((r,i)=>{
+  const day=principal[i];
+  assert.equal(r.date,day.date,"I-class research date must match observed source");
+  assert.equal(r.observedPrincipalId,day.observedPrincipalId,"I-class research ID must match actual source");
+  const target=subjectById.get(r.researchTargetId);
+  assert.ok(target,"I-class worklist target must exist: "+r.researchTargetId);
+  return {date:r.date,id:r.observedPrincipalId,title:r.observedTitle,
+   associationTier:r.associationTier,researchTargetId:r.researchTargetId,
+   acquiredOriginalsInSubjectPool:target.downloadedOriginals,
+   contextualOrUnverifiedPoolOriginals:target.downloadedOriginals,
+   directObservedIdentityOriginals:day.acquiredExplicitObservedPrincipalOriginals,
+   status:target.downloadedOriginals?"POOL_HAS_SOURCE_ORIGINALS_LINK_UNREVIEWED":"NO_DIRECT_POOL_SOURCE_ORIGINAL"};
+ });
+ const subjectPoolDays=worklist.filter(x=>x.acquiredOriginalsInSubjectPool>0).length;
+ const exactTiers=new Set(["EXACT_FEAST","EXACT_DEVOTION"]);
+ const exact=worklist.filter(x=>exactTiers.has(x.associationTier));
+ report.firstClassResearchTriage={
+  year:2026,rankOneDays:worklist.length,
+  daysWithPotentiallyRelevantPoolOriginals:subjectPoolDays,
+  poolCoveragePct:percentage(subjectPoolDays,worklist.length),
+  exactFeastTargetDays:exact.length,
+  exactFeastTargetPoolWithOriginals:exact.filter(x=>x.acquiredOriginalsInSubjectPool>0).length,
+  noSubjectPoolOriginals:worklist.filter(x=>x.acquiredOriginalsInSubjectPool===0),
+  warning:"Subject-pool originals are NOT date-mapped, curator-approved, appointed-Gospel-certified, or guaranteed accurate. The observed ID direct count remains the only valid strict coverage metric.",
+  worklist
+ };
+}
 if(report.observedYear.days){
  console.log("FIRST_CLASS_OBSERVED_IDENTITIES="+JSON.stringify(
   report.observedYear.days.filter(x=>x.rank===1).map(x=>({
@@ -166,6 +200,11 @@ const L=[
  ?["No dated source-first production resolver artifact provided. All class-specific day coverage remains **NOT AUDITED**; 168 subject target totals cannot replace it."]
  :[
   "Source dates: "+report.observedYear.days+"; unresolved: "+report.observedYear.unresolvedDays+".",
+  ...(report.firstClassResearchTriage?[
+   "I-class research pools: "+report.firstClassResearchTriage.daysWithPotentiallyRelevantPoolOriginals+"/"+report.firstClassResearchTriage.rankOneDays+" have at least one source original under a RELATED TARGET (not direct 1962 artwork mapping).",
+   "Exact-feast research pools: "+report.firstClassResearchTriage.exactFeastTargetPoolWithOriginals+"/"+report.firstClassResearchTriage.exactFeastTargetDays+" contain originals requiring day association review.",
+   "These are research leads ONLY; do not compare these pool percentages with the strict 0% linked-principal-ID result."
+  ]:[]),
   ...[1,2,3,4].map(rank=>{
    const x=report.observedYear.classCounts[rank];
    return "Class "+rank+": "+x.explicitOriginalMappedDays+"/"+x.observedDays+" days ("+x.explicitOriginalMappedPct+"%) have acquired originals linked to **the actual observed source ID**; approved "+x.approvedDays+".";
@@ -190,5 +229,11 @@ console.log(JSON.stringify({
  majorCalendarTargets:major.length,majorTargetsBelowMinimum:report.calendarMajorSubjectPool.belowMinimum,
  otherTargets:minor.length,otherBelowMinimum:report.allOtherSubjectPool.belowMinimum,
  observedYearStatus:report.observedYear.status,observedClassCounts:report.observedYear.classCounts||null,
+ firstClassResearchPotentialSourcePools:report.firstClassResearchTriage?{
+  withOriginals:report.firstClassResearchTriage.daysWithPotentiallyRelevantPoolOriginals,
+  total:report.firstClassResearchTriage.rankOneDays,
+  exactFeastPoolsWithOriginals:report.firstClassResearchTriage.exactFeastTargetPoolWithOriginals,
+  exactFeastPoolsTotal:report.firstClassResearchTriage.exactFeastTargetDays
+ }:null,
  rightsAndArtStatus:"REVIEW_ONLY_NOT_PRODUCTION"
 },null,2));
