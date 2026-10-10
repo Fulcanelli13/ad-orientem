@@ -349,8 +349,11 @@ for(const language of ["en","fr"]){
     item.id+": full debate must have explicit collapsed state");
   assert.match(html,/class="aoCSEDetail aoCSEDebate" data-cse-open-debate hidden/,
     item.id+": optional detailed stages should not overwhelm first reading");
-  assert.equal((html.match(/data-stage="opposition"/g)||[]).length,item.id==="CSE045"?7:1,
-    item.id+": main debate objection accidentally repeated");
+  assert.equal((html.match(/<section class="aoCSEObjection" data-stage="opposition">/g)||[]).length,1,
+    item.id+": the visible main objection must appear only once");
+  assert.equal((html.match(/<section class="aoCSEDebateStep" data-stage="opposition">/g)||[]).length,
+    item.id==="CSE045"?6:0,
+    item.id+": expanded debate must not duplicate its already-visible objection");
   const open=renderSexualEthicsQuestionMarkup(win,item,true);
   assert.match(open,/data-ao-cse-reveal aria-expanded="true"/);
   for(const stage of CSE_DEBATE_FIELDS.filter(x=>x!=="opposition"))
