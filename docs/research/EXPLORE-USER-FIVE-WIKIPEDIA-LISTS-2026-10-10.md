@@ -49,3 +49,55 @@ Likewise, biblical burial sites include both **Joseph's Tomb at Nablus and compe
 Current production baseline: **182 physical Places**, **32 reported apparition phenomena**, and the Europe owner's **232 seven-wave research site leads**. Source-led research PR #923 also retains its pre-existing **512 gross source-list entries** and **38 thematic-heritage features**; none of these totals is inflated by the 93 secondary/original cross-index observations.
 
 Next: acquire the Franciscan Custody's individual 27 site fiches, other official Christian Holy Land custodians/archaeological sources, bishop/custodian attestation for key pilgrimage sites, and the original DDF/diocesan decision for missing Marian-claim candidates. Only then identify net-new physical Places, rank editorial significance and link biblical context to Scriptures, Formation and the Calendar through existing module contracts. **The final map must stay compact.**
+
+## Batch 7 — original site fiche acquisition and historically qualified claims
+
+### 27 of 27 Franciscan directory records have original links
+
+The [Custody source index](../../data/geography/research/holy-land-custodia-sanctuary-index-2026-10-10.v1.json) now resolves **all 27 displayed original Custody listings** to a direct source: **26 dedicated sanctuary pages** and **one replacement original convent + feast-report pair for Ain Karem's Visitation** (the former directory-page click returned an error). **18 site texts received selected factual review**, and the other **nine** have linked page titles/sources with their detailed historical facts still for review. Thus link acquisition: **27/27 (100%)**; individual site text factual review: **18/27 (66.7%)**. No current opening hours, routes, images, copyright-guarded narrative text or coordinates were imported.
+
+Physical identity:
+- [Gethsemane original sanctuary account](https://www.custodia.org/en/sanctuaries/gethsemane-basilica-agony/) distinguishes the Basilica of the Agony, Garden of Olives and the separate nearby Grotto of the Arrest. These are site *subfeatures* and never three automatically unrelated main map pins.
+- [St Francis Ad Coenaculum](https://www.custodia.org/en/sanctuaries/st-francis-ad-coenaculum/) occupies a monastery complex close to the historical Cenacle. It is **not** the Cenacle itself; their present liturgical access differs.
+- [Bethany](https://www.custodia.org/en/sanctuaries/bethany/) identifies a modern Franciscan Church of Lazarus and separately the traditional Lazarus Tomb outside it; historic archaeology corroborates the place of Christian veneration, **not** certain authenticity of the remains.
+- [Tabgha](https://www.custodia.org/en/sanctuaries/tabgha/) distinguishes the Chapel of the Primacy of Peter, the Benedictine Multiplication Church and the nearby Beatitudes tradition; one Tabgha-region label is not necessarily one building.
+- [Tiberias](https://www.custodia.org/en/convents/tiberias-saint-peters-monastery/), [Jaffa](https://www.custodia.org/en/sanctuaries/jaffa/) and [Acre](https://www.custodia.org/en/sanctuaries/acre/) identify particular Franciscan/Catholic churches, not a pin placed arbitrarily in the city centre.
+- [Ain Karem Saint John in the Desert](https://www.custodia.org/en/sanctuaries/ain-karem-st-john-desert/) includes a grotto, spring and traditional Tomb of Elizabeth; this hermitage is physically distinct from the Visitation Church and Saint John birthplace sanctuary.
+- [River Jordan Baptism](https://www.custodia.org/en/sanctuaries/river-jordan-site-baptism-jesus/) is the **west-bank Qasr al-Yahud** site in this source; it is geographically distinct from east-bank Jordanian Al-Maghtas.
+- [Emmaus El-Qubeibeh](https://www.custodia.org/en/sanctuaries/emmaus-el-qubeibeh/) explicitly reports historical Nicopolis and El-Qubeibeh alternatives. The traditional Gospel Emmaus location is not adjudicated as an archaeological certainty.
+- [Cana](https://www.custodia.org/en/sanctuaries/cana/) identifies the Franciscan Kafr Kanna tradition and records its historical localisations; do not turn rival identifications into one exact biblical GPS claim.
+
+**Rights:** The individual Custody pages explicitly state that their text and images may not be reused without permission. The project stores original URLs and short independently authored factual labels/qualifiers only. No protected descriptive article, photographs, maps or full text were copied into research files.
+
+### Burial traditions: five original or institutional crosschecks
+
+The [burial attribution crosswalk](../../data/geography/research/wikipedia-burial-attributions-2026-10-10.v1.json) now attaches primary institutional records for five cases or site associations:
+
+| Site or attribution | Strong source | What it actually establishes |
+| --- | --- | --- |
+| Cave of the Patriarchs in Hebron | [UNESCO Hebron WHC record](https://whc.unesco.org/en/list/1565/) | A historic monumental compound revered by Judaism, Christianity and Islam; not independently authenticated patriarchal bones |
+| Mount Nebo, Moses | [Franciscan Custody](https://www.custodia.org/en/sanctuaries/mount-nebo/) and [Studium Biblicum Franciscanum archaeological monograph index](https://sbf.custodia.org/en/publications/collectio-maior/mount-nebo-new-archaeological-excavations-i) | Memorial of Moses' view/death; **Deuteronomy 34:6 says the exact burial is unknown** |
+| Tomb of the Virgin Mary | [Custody's Assumption/site custody report](https://www.custodia.org/en/news/in-the-footsteps-of-mary-jerusalem-gathers-around-the-assumption-to-rediscover-its-vocation/) | Venerated historical tomb and liturgical tradition, with Greek Orthodox and Armenian current custody under the Holy Places status quo; not proof of bodily relic custody |
+| Lazarus traditional tomb | [Custody's Bethany site history](https://www.custodia.org/en/sanctuaries/bethany/) | A distinct traditional tomb in the Bethany devotional complex; archaeology and traditions are not certain identity of remains |
+| Tomb of Saint Elizabeth | [St John in the Desert hermitage](https://www.custodia.org/en/sanctuaries/ain-karem-st-john-desert/) | A custodian-described traditional tomb associated with hermitage cave/spring, not proven skeletal identification |
+
+The older seven-selected-case list continues to retain five unresolved primary-source claims, including conflicting modern attributions of figures such as Jonah and Daniel. No extra Place or Relics registry entries were authored.
+
+### Two Marian claim decisions materially improved
+
+| Research case | Original authority | Qualified verdict |
+| --- | --- | --- |
+| **Querrien — Notre-Dame de Toute-Aide, Brittany** | [Diocese of Saint-Brieuc–Tréguier](https://saintbrieuc-treguier.catholique.fr/le-diocese/le-sanctuaire/) | The living diocesan account attributes **historical episcopal authentication to Mgr Denis de La Barde in September 1652** and separately records a 1950 image coronation and 2002 diocesan shrine status. The original signed 1652 document is not acquired; record the documentary attribution accurately rather than calling the claim unapproved. |
+| **Vailankanni — Our Lady of Good Health, India** | [Diocese of Thanjavur history](https://tanjorediocese.org/front/history) plus [DDF prefect's 2024 shrine letter](https://www.vaticannews.va/en/vatican-city/news/2024-08/ddf-support-india-vailankanni-marian-shrine.html) | The ordinary reports the early appearances as **longstanding oral tradition without surviving early historical records**, while the shrine's approved devotion and basilica dignity are abundantly attested. The available 2024 DDF praise of pilgrimage does **not** amount to a supernatural-authenticity declaration. |
+
+Leżajsk, Pesqueira/Cimbres and Quito Buen Suceso remain in the **original-document acquisition queue**. Neither those cases nor Querrien/Vailankanni were added or changed in the live 32-phenomenon corpus; recognition claims are research evidence for the existing phenomena owner.
+
+### Counts and next eligibility gates
+
+- Global bibliography now **51** references, including five new original/institutional documents in this round; it previously held 46.
+- Holy Land direct original catalogue links: **27/27**, detailed site content checked: **18/27** (nine still require a factual deep pass).
+- Primary/source-institution burial/site attributions now reviewed: **5** qualified cases; this does not make five authentic tombs.
+- Two apparition cases source-reviewed with divergent outcomes. All app data still unchanged.
+- Worldwide 512 gross source entries, thematic 38 feature rows, 182 published Places, 232 European site research leads and 32 existing phenomena claims **have not increased from this verification work**.
+
+**Next phase**: complete the nine unreviewed Custody original page texts, deduplicate the 27 locations by physical site and nested features, acquire original diocesan statements for the remaining apparition claims, and route every accepted source-identity contribution to its domain owner before designing map pins, textual Holy Land Scripture context, or visiting directions.
