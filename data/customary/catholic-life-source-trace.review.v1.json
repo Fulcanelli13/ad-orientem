@@ -1,0 +1,379 @@
+{
+  "schema": "AO_CATHOLIC_LIFE_21_SOURCE_TRACE_REVIEW_V1",
+  "as_of": "2026-10-10",
+  "status": "EDITORIAL_SOURCE_TRACE_NOT_PRODUCTION_CITATION",
+  "source_annex": "data/customary/catholic-life-salvage.v1.json",
+  "scope": "21 inherited Catholic Life claims with no source_ids on the original source-owned Customary annex. Candidate doctrine and historical source passages are attached without rewriting original evidence or duplicating claims in Explore.",
+  "stats": {
+    "claims": 21,
+    "with_traces": 20,
+    "without_traces": 1,
+    "direct_or_historical": 9,
+    "partial_or_synthetic": 11
+  },
+  "authority_boundaries": [
+    "The 21 original claims remain in their existing canonical ownership domains; no duplicate Explore practice article is created.",
+    "Direct doctrinal support does not establish every pastoral implication or historical geographic exclusivity.",
+    "A secondary Catholic Answers answer is not a universal canonical norm.",
+    "Original Latin/French historical provenance remains preferable for French domestic customs.",
+    "Final claim-level publication requires owner verification of the linked passages, corrected qualifiers, and EN/FR copy."
+  ],
+  "sources": [
+    {
+      "source_id": "CCC_SACRAMENTALS",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html"
+    },
+    {
+      "source_id": "CANON_OBJECTS",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1166-1190_en.html"
+    },
+    {
+      "source_id": "CCC_IMAGES",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iv_you_shall_not_make_for_yourself_a_graven_image.index.html"
+    },
+    {
+      "source_id": "DPP_PRESENTATION",
+      "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+    },
+    {
+      "source_id": "RELIC_INSTRUCTION",
+      "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/csaints/documents/rc_con_csaints_doc_20171208_istruzione-reliquie_en.html"
+    },
+    {
+      "source_id": "OLD_ARTICLES",
+      "url": "https://www.catholic.com/qa/what-is-the-appropriate-means-to-dispose-of-an-old-bible"
+    },
+    {
+      "source_id": "FORTY_HOURS",
+      "url": "https://www.newadvent.org/cathen/06151a.htm"
+    },
+    {
+      "source_id": "PARISH_MISSIONS",
+      "url": "https://www.newadvent.org/cathen/10391a.htm"
+    },
+    {
+      "source_id": "RETREATS",
+      "url": "https://www.newadvent.org/cathen/12795b.htm"
+    },
+    {
+      "source_id": "CCC_NAMES",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_2/iii_the_christian_name.html"
+    }
+  ],
+  "reviews": [
+    {
+      "claim_id": "CL02-S01-Q002",
+      "existing_owner": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_SACRAMENTALS",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+          "source_locator": "§1668, holy-water sprinkling as sacramental context"
+        }
+      ],
+      "review_verdict": "PARTIAL_CONTEXT_NOT_CHURCH_ENTRY_OBLIGATION",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL02-S06-Q003",
+      "existing_owner": "CUSTOMARY_SOT.CHURCH_CONDUCT",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [],
+      "review_verdict": "PASTORAL_PRACTICAL_ADVICE_NO_PRIMARY_MANDATE_CLAIM",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S01-Q002",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_SACRAMENTALS",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+          "source_locator": "§§1667,1670, distinction between sacraments and sacramentals"
+        }
+      ],
+      "review_verdict": "DIRECT_DOCTRINAL_SUBSTANCE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S01-Q005",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_SACRAMENTALS",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+          "source_locator": "§1670, sacramentals act through the Church’s prayer and dispose users to cooperate"
+        }
+      ],
+      "review_verdict": "DIRECT_DOCTRINAL_SUBSTANCE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S02-Q001",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_SACRAMENTALS",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+          "source_locator": "§1668, sprinkling of holy water"
+        }
+      ],
+      "review_verdict": "DIRECT_DOCTRINAL_SUBSTANCE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S02-Q003",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "DPP_PRESENTATION",
+          "source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+          "source_locator": "§120, blessing and procession of candles on Presentation/Purification"
+        }
+      ],
+      "review_verdict": "DIRECT_HISTORICAL_CUSTOM_WITH_SEPARATE_NO_TALISMAN_GUARD",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S03-Q001",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_SACRAMENTALS",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_four/article_1.html",
+          "source_locator": "§§1670,1674, sacramentals and popular devotional prayer"
+        }
+      ],
+      "review_verdict": "PARTIAL_OBJECT_VS_PRAYER_DISTINCTION",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S03-Q002",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_IMAGES",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iv_you_shall_not_make_for_yourself_a_graven_image.index.html",
+          "source_locator": "§§2131–2132, veneration vs adoration"
+        }
+      ],
+      "review_verdict": "PARTIAL_NOT_TALISMAN_SYNTHESIS",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S03-Q004",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_IMAGES",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iv_you_shall_not_make_for_yourself_a_graven_image.index.html",
+          "source_locator": "§§2131–2132, sacred images and their prototypes"
+        }
+      ],
+      "review_verdict": "PARTIAL_NO_ICON_STATUE_RANKING_PROVEN",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S03-Q005",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_IMAGES",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iv_you_shall_not_make_for_yourself_a_graven_image.index.html",
+          "source_locator": "§2132, veneration of representation rather than its material"
+        }
+      ],
+      "review_verdict": "PARTIAL_NO_FORMAL_BLESSING_REQUIREMENT_ESTABLISHED",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S06-Q006",
+      "existing_owner": "CUSTOMARY_SOT.SACRAMENTALS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CANON_OBJECTS",
+          "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1166-1190_en.html",
+          "source_locator": "can. 1171 on reverence for properly blessed/dedicated objects"
+        }
+      ],
+      "review_verdict": "PARTIAL_OWNERSHIP_AND_BLESSING_EVIDENCE_OPEN",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S05-Q002",
+      "existing_owner": "CUSTOMARY_SOT.RELICS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "RELIC_INSTRUCTION",
+          "source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/csaints/documents/rc_con_csaints_doc_20171208_istruzione-reliquie_en.html",
+          "source_locator": "Introduction, significant and non-significant administrative classes"
+        }
+      ],
+      "review_verdict": "DIRECT_MODERN_ADMINISTRATIVE_TERMINOLOGY_NOT_HISTORY_OF_POPULAR_CLASSES",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S07-Q002",
+      "existing_owner": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "OLD_ARTICLES",
+          "source_url": "https://www.catholic.com/qa/what-is-the-appropriate-means-to-dispose-of-an-old-bible",
+          "source_locator": "Historical practice concerning worn religious articles and disposal"
+        }
+      ],
+      "review_verdict": "SECONDARY_CONTEXT_NO_GENERAL_LEGAL_MANDATE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S07-Q003",
+      "existing_owner": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "OLD_ARTICLES",
+          "source_url": "https://www.catholic.com/qa/what-is-the-appropriate-means-to-dispose-of-an-old-bible",
+          "source_locator": "Customary disposal by burning/burying, without positive law prescribing it"
+        }
+      ],
+      "review_verdict": "DIRECT_SECONDARY_CLAIM_SCOPE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL08-S07-Q004",
+      "existing_owner": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CANON_OBJECTS",
+          "source_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1166-1190_en.html",
+          "source_locator": "can. 1171 sacred objects require reverence"
+        }
+      ],
+      "review_verdict": "PASTORAL_APPLICATION_NOT_CANONICAL_REFERRAL_RULE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL09-S07-Q001",
+      "existing_owner": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "FORTY_HOURS",
+          "source_url": "https://www.newadvent.org/cathen/06151a.htm",
+          "source_locator": "historical Forty Hours public Eucharistic exposition and prayer"
+        }
+      ],
+      "review_verdict": "DIRECT_HISTORICAL_DEVOTION",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL09-S07-Q002",
+      "existing_owner": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "PARISH_MISSIONS",
+          "source_url": "https://www.newadvent.org/cathen/10391a.htm",
+          "source_locator": "Method and purpose of Catholic parochial missions"
+        }
+      ],
+      "review_verdict": "DIRECT_HISTORICAL_DEVOTION",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL09-S07-Q003",
+      "existing_owner": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "PARISH_MISSIONS",
+          "source_url": "https://www.newadvent.org/cathen/10391a.htm",
+          "source_locator": "Missions' public parish preaching pattern"
+        },
+        {
+          "source_id": "RETREATS",
+          "source_url": "https://www.newadvent.org/cathen/12795b.htm",
+          "source_locator": "Retreats' more secluded prayer/penance orientation"
+        }
+      ],
+      "review_verdict": "DISTINCTION_SYNTHESIS_FROM_TWO_HISTORICAL_SOURCES",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL10-S02-Q001",
+      "existing_owner": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_NAMES",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_2/iii_the_christian_name.html",
+          "source_locator": "§2156, saint patron and Christian mystery as name"
+        }
+      ],
+      "review_verdict": "DIRECT_DOCTRINAL_SUBSTANCE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL10-S02-Q002",
+      "existing_owner": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_NAMES",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_2/iii_the_christian_name.html",
+          "source_locator": "§2156 naming/patron principle; no particular name-disambiguation examples"
+        }
+      ],
+      "review_verdict": "PARTIAL_SPECIFIC_SAINT_IDENTITY_REVIEW",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    },
+    {
+      "claim_id": "CL10-S02-Q004",
+      "existing_owner": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "original_source_id_count": 0,
+      "proposed_source_traces": [
+        {
+          "source_id": "CCC_NAMES",
+          "source_url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_2/iii_the_christian_name.html",
+          "source_locator": "§2156 naming/patron principle; no first-name-only rule"
+        }
+      ],
+      "review_verdict": "PARTIAL_MULTIPLE_NAME_INFERENCE",
+      "publication_gate": "REQUIRES_OWNER_EDITORIAL_VALIDATION_BEFORE_CLAIM_CITATION",
+      "map_pin_eligible": false
+    }
+  ]
+}
