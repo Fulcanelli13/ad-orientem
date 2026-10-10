@@ -132,7 +132,7 @@ export function specialMassPresentation(source,{
       "Le calendrier de 1962 détermine le propre ; seuls les rites associés attestés par la source figurent ici.");
     break;
   }
-  add("mass","Celebration of Mass","Célébration de la messe");
+  if(currentKind==="CALENDAR")add("mass","Celebration of Mass","Célébration de la messe");
   if(following.has("HOLY_THURSDAY_POST")){
    variant="HOLY_THURSDAY";
    add("holy-thursday","Transfer to the Altar of Repose","Transfert au reposoir");
