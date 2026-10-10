@@ -18,7 +18,8 @@ const validFile = image => image
 export function eligibleSacredArtwork(work) {
   return !!work && work.medium === "painting"
     && work.source?.rights === "CC0"
-    && (work.source?.objectUrl?.startsWith("https://www.metmuseum.org/art/collection/search/")\n      || work.source?.objectUrl?.startsWith("https://www.artic.edu/artworks/"))
+    && (work.source?.objectUrl?.startsWith("https://www.metmuseum.org/art/collection/search/")
+      || work.source?.objectUrl?.startsWith("https://www.artic.edu/artworks/"))
     && work.review?.source === "OBJECT_PAGE_CHECKED"
     && work.review?.rights === "OBJECT_PAGE_CHECKED"
     && work.review?.artistic === "APPROVED"
