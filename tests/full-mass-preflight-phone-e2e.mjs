@@ -47,6 +47,34 @@ try{
   assert.equal(selected.explicitlyChosenForm,true);
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-mass-form"),form);
  }
+ assert.equal(await page.locator("[data-full-mass-category]").count(),5);
+ await page.evaluate(()=>{
+  globalThis.__categoryClicks=[];
+  globalThis.AO_CELEBRATION_API={
+   openChangeMass(){
+    const flow=document.querySelector("#ao-mass-flow-v1");
+    const panel=document.createElement("section");panel.dataset.testOldMassChooser="";
+    panel.innerHTML='<button data-ao-select-day>Day</button>'+
+      '<button data-ao-open="votive">Votive</button>'+
+      '<button data-ao-open="nuptial">Nuptial</button>'+
+      '<button data-ao-open="requiem">Requiem</button>'+
+      '<button data-ao-open="other">Other</button>';
+    panel.addEventListener("click",e=>{
+     const v=e.target.dataset.aoOpen??(e.target.hasAttribute("data-ao-select-day")?"day":null);
+     if(v)globalThis.__categoryClicks.push(v);
+    });
+    flow.querySelector("[data-test-old-mass-chooser]")?.remove();
+    flow.append(panel);
+   }
+  };
+ });
+ for(const [kind,expected] of [["VOTIVE","votive"],["NUPTIAL","nuptial"],["REQUIEM","requiem"],["OTHER","other"],["CALENDAR","day"]]){
+  await page.locator('[data-full-mass-category="'+kind+'"]').click();
+  const clicked=await page.evaluate(()=>__categoryClicks.at(-1));
+  assert.equal(clicked,expected,"Existing Mass selector not reached: "+kind);
+  assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).kind,"CALENDAR",
+    "Category click must not silently invent or substitute a Proper");
+ }
  await page.evaluate(()=>{__kind="REQUIEM";__lang="fr";__full.refresh()});
  assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/Requiem/);
  assert.match(await page.locator("[data-full-mass-form-title]").innerText(),/Comment/);
