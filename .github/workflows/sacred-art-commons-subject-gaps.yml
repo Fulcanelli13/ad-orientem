@@ -21,6 +21,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install Pillow numpy
+      - name: Verify MediaWiki checksums and original-image screening
+        run: python tools/calendar/acquire-commons-subject-gaps.py --self-test
       - name: Search exact sacred subjects and verify original file hashes
         run: python tools/calendar/acquire-commons-subject-gaps.py
       - name: Preserve only review-only originals and explicit rejection/rights ledger
