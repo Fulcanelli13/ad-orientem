@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "tools/directory/acquire-sspx-official-map-geo.mjs"
+      - "tools/directory/geocode-unmapped-provider-sites-r39.mjs"
+      - "tools/directory/acquire-lmd-map-pins.mjs"
       - "src/find/geo-provenance.js"
       - "tests/directory-sspx-official-map-geo.mjs"
       - ".github/workflows/directory-sspx-official-map-geo.yml"
@@ -36,6 +38,16 @@ jobs:
               exit 1
             }
           cat "$RUNNER_TEMP/sspx-official-map/harvest.log"
+      - name: Geocode unmapped diocesan and traditionalist venue addresses conservatively
+        run: node tools/directory/geocode-unmapped-provider-sites-r39.mjs
+      - name: Upload bounded geocoding evidence for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r39-diocesan-cmri-geocoding-research
+          path: /tmp/r39-provider-geocodes/
+          retention-days: 30
+          if-no-files-found: warn
       - name: Preserve first-party geolocation research without publishing
         if: always()
         uses: actions/upload-artifact@v4
