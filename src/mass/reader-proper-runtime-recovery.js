@@ -63,6 +63,52 @@ function unwrap(proper){
   return{envelope:null,data:proper};
 }
 
+// Only use source text whose Latin opening agrees with the already-composed
+// commemoration. This protects both oration order and the appointed saint.
+function latinOpening(value){
+  return String(value??"").toLowerCase().normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"").replace(/æ/g,"ae").replace(/œ/g,"oe")
+    .replace(/[^a-z]/g,"").slice(0,75);
+}
+
+async function fillSourceBoundCommemorations(data,hostResolver,diagnostic){
+  const refs=Array.isArray(data.calendarCommemorations)?data.calendarCommemorations:[];
+  if(!refs.length)return data;
+  let changed=false;
+  const next={...data};
+  // The first oration is the principal Mass; subsequent positions are the
+  // calendar's composed commemorations in the same order.
+  for(const [field,section] of [["collects","Oratio"],["secrets","Secreta"],["postcommunions","Postcommunio"]]){
+    const originals=Array.isArray(data[field])?data[field]:[];
+    if(originals.length<2)continue;
+    let patched=null;
+    for(let index=1;index<originals.length;index++){
+      const original=originals[index];
+      if(!textUsable(original)||
+         (String(original.en??"").trim()&&String(original.fr??"").trim()))continue;
+      const provenance=refs[index-1];
+      const path=String(provenance?.prayerSourcePath??provenance?.path??"").trim();
+      if(!/^(Sancti|Tempora|Commune)\/[A-Za-z0-9_./-]+$/.test(path)||path.includes(".."))continue;
+      let witness;
+      try{witness=await recoverText(hostResolver,path,[section],diagnostic)}catch{continue}
+      const expected=latinOpening(original.lat??original.la),actual=latinOpening(witness.lat);
+      if(expected.length<35||actual.length<35||expected!==actual)continue;
+      const replacement={...original};
+      for(const lang of ["en","fr"]){
+        if(!String(original[lang]??"").trim()&&String(witness[lang]??"").trim()){
+          replacement[lang]=witness[lang];
+        }
+      }
+      if(replacement.en===original.en&&replacement.fr===original.fr)continue;
+      if(!patched)patched=[...originals];
+      patched[index]=Object.freeze(replacement);
+      changed=true;
+    }
+    if(patched)next[field]=Object.freeze(patched);
+  }
+  return changed?Object.freeze(next):data;
+}
+
 function rewrap(envelope,data){
   if(!envelope)return Object.freeze(data);
   return Object.freeze({...envelope,data:Object.freeze(data)});
@@ -87,9 +133,10 @@ export async function recoverReaderProperOmissions(proper,{
     secrets:!arrayUsable(data.secrets)&&!textUsable(data.secret),
     postcommunions:!arrayUsable(data.postcommunions)&&!textUsable(data.postcommunion),
   };
-  if(!Object.values(needs).some(Boolean))return proper;
+  const repairedCommemorations=await fillSourceBoundCommemorations(data,hostResolver,diagnostic);
+  if(!Object.values(needs).some(Boolean))return repairedCommemorations===data?proper:rewrap(envelope,repairedCommemorations);
 
-  const next={...data};
+  const next={...repairedCommemorations};
   if(needs.epistle){
     const value=await recoverText(hostResolver,path,["Lectio"],diagnostic);
     if(textUsable(value))next.epistle=value;
