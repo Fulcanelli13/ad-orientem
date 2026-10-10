@@ -48,7 +48,7 @@ export function searchDiscovery(query,{sections=[],referenceEntries=[],contentEn
   if(familyScore>=0)all.push({id:section.id,kind:"family",title:section.title,subtitle:section.description,score:familyScore+2,group:"formation"});
   for(const item of section.items??[]){
    const rank=score(q,item.title?.[0],[item.title?.[1],...(item.description??[]),ALIASES[item.id],...section.title]);
-   if(rank>=0)all.push({id:item.id,kind:"module",title:item.title,subtitle:item.description,score:rank,group:"formation",familyId:section.id});
+   if(rank>=0)all.push({id:item.id,kind:"module",title:item.title,subtitle:item.description,score:rank,group:"formation",familyId:item.id==="learn.sexual_ethics"?"questions":section.id});
   }
  }
  for(const surface of DISCOVERY_SURFACES){
