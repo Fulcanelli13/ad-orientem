@@ -461,6 +461,17 @@ export function createFindOwner(win=globalThis){
       void paint().finally(()=>retry.removeAttribute?.("aria-busy"));
       return;
     }
+    const worldButton=target?.closest?.("[data-heritage-world]");
+    if(worldButton&&state.lens==="heritage"){
+      event.preventDefault?.();
+      // Reset the camera and content filters together so a distant selection
+      // cannot leave the user looking at an apparently empty world.
+      state.query="";state.heritageCategories=[...HERITAGE_CATEGORIES];
+      state.highlightCustomId=null;state.selectedId=null;
+      state.selectedPlaceId=null;state.expandPlace=false;
+      lastMapView=null;lastMapLens=null;
+      void paint();return;
+    }
     const nearButton=target?.closest?.("[data-heritage-nearby]");if(nearButton){event.preventDefault?.();locateNearby(nearButton);return;}
     const glossaryButton=target?.closest?.("[data-find-glossary]");if(glossaryButton){event.preventDefault?.();event.stopPropagation?.();void openGlossary(glossaryButton);return}
     if(target?.closest?.("[data-find-clear-calendar]")){
