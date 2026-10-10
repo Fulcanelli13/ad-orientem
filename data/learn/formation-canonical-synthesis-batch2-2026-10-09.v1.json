@@ -507,6 +507,13 @@
       "locator": "Question 108, referencing CCC §§547–550: miracles of Christ and purpose of the Kingdom",
       "provenance": "First 25 dossier source audit 2026-10-10, Holy See catechetical reference",
       "original_context_approved": false
+    },
+    {
+      "id": "CHAL451",
+      "title": "Council of Chalcedon (451), Definition of Faith",
+      "url": "https://www.newadvent.org/fathers/3811.htm",
+      "locator": "Fifth session: one Christ in two natures, without confusion, change, division or separation",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -772,12 +779,13 @@
         {
           "role": "answer",
           "text": {
-            "en": "The Trinity does not assert that one God is three gods or one person is three persons in the same respect. The Church confesses one divine nature subsisting in Father, Son and Holy Spirit; the Incarnation means that the eternal Son assumed a complete human nature without ceasing to be God.",
-            "fr": "La Trinité ne signifie pas qu'un Dieu serait trois dieux ou qu'une seule personne serait trois personnes sous le même rapport. L'Église confesse une unique nature divine en trois personnes, Père, Fils et Saint-Esprit ; l'Incarnation signifie que le Fils éternel a assumé une nature humaine complète sans cesser d'être Dieu."
+            "en": "The Trinity does not assert that one God is three gods or one person is three persons in the same respect. The Church confesses one divine nature subsisting in Father, Son and Holy Spirit; the Incarnation means that the eternal Son assumed a complete human nature without ceasing to be God. In particular, Chalcedon (451) taught that the same Son is truly God and truly man, complete in both natures, without confusion or division; the Incarnation does not erase Christ's humanity.",
+            "fr": "La Trinité ne signifie pas qu'un Dieu serait trois dieux ou qu'une seule personne serait trois personnes sous le même rapport. L'Église confesse une unique nature divine en trois personnes, Père, Fils et Saint-Esprit ; l'Incarnation signifie que le Fils éternel a assumé une nature humaine complète sans cesser d'être Dieu. En particulier, Chalcédoine (451) a enseigné que le même Fils est vraiment Dieu et vraiment homme, parfait selon ses deux natures, sans confusion ni division ; l'Incarnation ne supprime donc pas l'humanité du Christ."
           },
           "source_ids": [
             "NICEA325",
-            "JN1"
+            "JN1",
+            "CHAL451"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -800,13 +808,14 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "Calling the Son begotten does not, in Nicene theology, mean produced from nothing or beginning to exist in time. The distinction between generation and creation answers the central Arian premise; the Gospel's account of the Word with God and being God rules out treating the eternal Son as merely the first creature.",
-            "fr": "Dire que le Fils est engendré ne signifie pas, dans la théologie nicéenne, qu'il aurait été tiré du néant ou commencé d'exister dans le temps. La distinction entre génération et création répond à l'hypothèse arienne ; le Verbe auprès de Dieu et véritablement Dieu ne peut être réduit à la première des créatures."
+            "en": "Calling the Son begotten does not, in Nicene theology, mean produced from nothing or beginning to exist in time. The distinction between generation and creation answers the central Arian premise; the Gospel's account of the Word with God and being God rules out treating the eternal Son as merely the first creature. Chalcedon excludes two opposite Christological mistakes: dissolving Christ's real humanity into divinity and splitting the one incarnate Son into two persons. Its definition must not be confused with the distinct Nicene decision against the claim that the Son is a creature.",
+            "fr": "Dire que le Fils est engendré ne signifie pas, dans la théologie nicéenne, qu'il aurait été tiré du néant ou commencé d'exister dans le temps. La distinction entre génération et création répond à l'hypothèse arienne ; le Verbe auprès de Dieu et véritablement Dieu ne peut être réduit à la première des créatures. Chalcédoine exclut deux erreurs christologiques opposées : absorber l'humanité réelle du Christ dans la divinité ou diviser l'unique Fils incarné en deux personnes. Il ne faut pas confondre cette définition avec la décision distincte de Nicée contre l'idée que le Fils serait une créature."
           },
           "source_ids": [
             "NICEA325",
             "JN1",
-            "ATHANASIUS-ARIANS"
+            "ATHANASIUS-ARIANS",
+            "CHAL451"
           ],
           "attribution": null,
           "original_context_approved": false,
@@ -821,7 +830,8 @@
           "source_ids": [
             "NICEA325",
             "JN1",
-            "ATHANASIUS-ARIANS"
+            "ATHANASIUS-ARIANS",
+            "CHAL451"
           ],
           "attribution": null,
           "original_context_approved": false,
