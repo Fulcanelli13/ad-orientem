@@ -28,7 +28,7 @@ const major=config.majorCalendarSubjectIds.map(id=>{
  const t=subjectById.get(id);
  assert.ok(t,"Unknown canonical calendar target "+id);
  return {id,title:t.title,required:t.required,downloadedOriginals:t.downloadedOriginals,
-  missingToMinimum:t.missingToMinimum,approvalStatus:t.approvalStatus};
+  sourceCandidates:t.sourceCandidates,missingToMinimum:t.missingToMinimum,approvalStatus:t.approvalStatus};
 });
 const feastSet=new Set(config.majorFeastsAndPrincipalDays);
 const seasonSet=new Set(config.majorSeasonSupport);
@@ -40,7 +40,9 @@ const minor=subjectReport.subjects.filter(s=>!config.majorCalendarSubjectIds.inc
 const percentage=(n,d)=>d?Math.round(1000*n/d)/10:null;
 const summ=(rows)=>{
  const met=rows.filter(x=>x.missingToMinimum===0).length;
- return {targets:rows.length,meetingOriginalMinimum:met,meetingOriginalMinimumPct:percentage(met,rows.length),
+ const atLeastOne=rows.filter(x=>x.downloadedOriginals>0).length;
+ return {targets:rows.length,firstPassAtLeastOneOriginal:atLeastOne,firstPassCoveragePct:percentage(atLeastOne,rows.length),
+  meetingOriginalMinimum:met,meetingOriginalMinimumPct:percentage(met,rows.length),
  belowMinimum:rows.length-met,belowMinimumPct:percentage(rows.length-met,rows.length),
  missingSourceSlots:rows.reduce((n,x)=>n+x.missingToMinimum,0),
  zeroAcquiredOriginals:rows.filter(x=>x.downloadedOriginals===0).length,
@@ -288,7 +290,7 @@ const L=[
  "",
  "Priority: major feasts and solemn seasons → obligation (territorial-law overlay) → **every other observed I-class day** → app modules → observed II → III → IV class.",
  "",
- "Major feast/Triduum subjects: "+majorFeasts.length+"; "+report.majorFeastsAndPrincipalDays.meetingOriginalMinimum+" meet acquisition minimum; "+report.majorFeastsAndPrincipalDays.belowMinimum+" under target.",
+ "Major feast/Triduum subjects: "+majorFeasts.length+"; "+report.majorFeastsAndPrincipalDays.firstPassAtLeastOneOriginal+" have one or more sources ("+report.majorFeastsAndPrincipalDays.firstPassCoveragePct+"%); "+report.majorFeastsAndPrincipalDays.meetingOriginalMinimum+" meet optional depth minimum; "+report.majorFeastsAndPrincipalDays.belowMinimum+" below depth target.",
  "Secondary seasonal support: "+seasonSupport.length+"; "+report.seasonalSupport.meetingOriginalMinimum+" meet acquisition minimum; "+report.seasonalSupport.belowMinimum+" under target.",
  "All canonical calendar subject targets: "+major.length+".",
  "",
@@ -331,6 +333,8 @@ console.log(JSON.stringify({
  majorFeastsAndPrincipalDays:majorFeasts.length,majorFeastTargetsBelowMinimum:report.majorFeastsAndPrincipalDays.belowMinimum,
  seasonalSupportTargets:seasonSupport.length,seasonalSupportBelowMinimum:report.seasonalSupport.belowMinimum,
  majorFeastTargetsMeetingPct:report.majorFeastsAndPrincipalDays.meetingOriginalMinimumPct,
+ majorFeastFirstPassPct:report.majorFeastsAndPrincipalDays.firstPassCoveragePct,
+ majorFeastFirstPassCount:report.majorFeastsAndPrincipalDays.firstPassAtLeastOneOriginal,
  modulePercentages:Object.fromEntries(Object.entries(report.moduleCoverage).map(([k,v])=>[k,v.meetingOriginalMinimumPct])),
  majorCalendarTargets:major.length,majorTargetsBelowMinimum:report.calendarMajorSubjectPool.belowMinimum,
  otherTargets:minor.length,otherBelowMinimum:report.allOtherSubjectPool.belowMinimum,
