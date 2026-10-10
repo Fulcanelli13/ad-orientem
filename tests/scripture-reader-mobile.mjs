@@ -158,7 +158,7 @@ try{
    source:{license:"public-domain",url:"https://www.ecatholic2000.com/catena/untitled-62.shtml"},
    commented_verse_keys:["luke/1/28","luke/1/29"],
    segments:[{father:"Bede",text:"Tested original-source passage within the reader."}]};
- await page.route("**/data/catena/luke.jsonl",route=>route.fulfill({status:200,body:JSON.stringify(catenaFixture)+"\\n"}));
+ await page.route("**/data/catena/luke.jsonl",route=>route.fulfill({status:200,body:JSON.stringify(catenaFixture)}));
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:28",{language:"en"})),true);
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
  await dialog.locator(".aoScriptureFatherText").first().waitFor({state:"visible",timeout:12000});
