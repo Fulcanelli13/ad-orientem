@@ -292,7 +292,7 @@ export function createSexualEthicsRuntime(win=globalThis){
     // Remember the exact trigger and reading scroll; never create a second
     // Sexual Ethics owner or replace the Formation module's route.
     if(opts.origin==="context"&&opts.trigger){
-      const trigger=opts.trigger,origin=trigger.closest?.("[data-ao-traditional-learn-owner]")||trigger.closest?.("#ao-traditional-learn-root")||trigger.parentElement;
+      const trigger=opts.trigger,origin=trigger.closest?.("#ao-learn-traditional-root")||trigger.parentElement;
       state.contextReturn={trigger,origin,scrollTop:origin?.scrollTop??0};
     }else state.contextReturn=null;
     state.query="";state.reveal=false;
