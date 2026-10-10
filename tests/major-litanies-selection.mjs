@@ -5,18 +5,19 @@ import {
   isLesserRogationDay,litanyObservanceOn
 } from "../src/mass/litany-dates.js";
 import {projectRogationPreflight,resolvedRogationCandidate,
-  rogationPublicChoiceReady} from "../src/mass/rogation-preflight.js";
+  rogationPublicChoiceReady,majorRogationPublicChoiceReady} from "../src/mass/rogation-preflight.js";
 import {prepareMassSessionFromV346} from "../src/mass/host-adapter.js";
 import {contextualRogationCard} from "../src/mass/reader-rogations.js";
 const json=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const library={
  sourceGate:json("../data/mass/rogation-proper-source-gate.v1.json"),
  sourceProper:json("../data/mass/rogation-proper-trilingual.v1.json"),
- preface:json("../data/mass/rogation-easter-preface.v1.json")
+ preface:json("../data/mass/rogation-easter-preface.v1.json"),
+ majorGate:json("../data/mass/major-litany-release-gate.v1.json")
 };
 const release=json("../data/mass/major-litany-release-gate.v1.json");
-assert.equal(release.publicationAllowed,false);
-assert.equal(release.availableNow.majorVotive,false);
+assert.equal(release.publicationAllowed,true);
+assert.equal(release.availableNow.majorVotive,true);
 assert.equal(release.sourceReuse.reuseNineCommonSections,true);
 assert.equal(rogationPublicChoiceReady(library),true,
  "Minor publication cannot authorize Major seasonal variants");
@@ -57,7 +58,9 @@ for(const {date,rank,source} of [
  const candidate=resolvedRogationCandidate(host,resolved,{requireResolver:true});
  assert.equal(candidate.eligible,true,date);
  assert.equal(candidate.observance,"MAJOR");
- assert.equal(candidate.votiveAllowed,false,"Major votive not separately certified");
+ assert.equal(candidate.votiveAllowed,rank!==1,"Votive impeded exactly on I-class Major Litany day");
+ assert.equal(majorRogationPublicChoiceReady(library,candidate),rank!==1,
+  "Major votive requires its independent Eastertide release gate and non-I-class day");
  assert.equal(projectRogationPreflight({legacy:host,resolvedDay:resolved,
   requireResolver:true,library}).selection,null,"Date never starts a procession");
  const selection=projectRogationPreflight({
@@ -73,12 +76,37 @@ for(const {date,rank,source} of [
  assert.notEqual(compiled.resolvedMass.actualCelebration.id,"rogation-mass-1962");
  assert.equal(compiled.resolvedMass.provenance.rogationSelection.observance,"MAJOR");
  assert.equal(prepareMassSessionFromV346(host,{proper}).plan.massEntry,"FOOT_CLUSTER");
- const blocked=projectRogationPreflight({
+ const selected=projectRogationPreflight({
   legacy:host,resolvedDay:resolved,requireResolver:true,library,
   choice:"ROGATION_MASS",service:"PUBLIC_PROCESSION"
  });
- assert.equal(blocked.selection,null);
- assert.equal(blocked.reason,"MAJOR_LITANY_VOTIVE_NOT_SOURCE_CERTIFIED");
+ if(rank===1){
+  assert.equal(selected.selection,null);
+  assert.equal(selected.reason,"VOTIVE_II_CLASS_IMPEDED");
+ }else{
+  assert.equal(selected.available,true);
+  assert.equal(selected.selection.choice,"ROGATION_MASS");
+  const mass=prepareMassSessionFromV346(host,{proper,rogationSelection:selected.selection});
+  assert.equal(mass.plan.massEntry,"INTROIT");
+  assert.equal(mass.resolvedMass.actualCelebration.id,"rogation-mass-1962");
+  assert.equal(mass.resolvedMass.provenance.gloria,false);
+  const sunday=new Date(date+"T00:00:00Z").getUTCDay()===0;
+  assert.equal(mass.resolvedMass.provenance.credo,sunday,
+   "1960 §343(a) retains the Creed of an occurring Sunday");
+  assert.equal(mass.resolvedMass.proper.data.hasCredo,sunday);
+  assert.match(mass.resolvedMass.proper.data.preface.lat,/in hoc potissimum/);
+  for(const key of ["majorGate","sourceGate","sourceProper","sourcePreface"]){
+   const revoked={...selected.selection,[key]:
+    {...selected.selection[key],publicationAllowed:false}};
+   assert.throws(()=>prepareMassSessionFromV346(host,{proper,rogationSelection:revoked}),
+    /ROGATION_SELECTION_MAJOR_LITANY_VOTIVE_NOT_SOURCE_CERTIFIED/,
+    "Source gate "+key+" must independently fail closed");
+  }
+  const mistaken={...selected.selection,observance:"MINOR"};
+  assert.throws(()=>prepareMassSessionFromV346(host,{proper,rogationSelection:mistaken}),
+   /ROGATION_SELECTION_MAJOR_LITANY/,"Major date cannot masquerade as a Minor observance");
+ }
+
  const supplications=projectRogationPreflight({
   legacy:host,resolvedDay:resolved,requireResolver:true,library,
   choice:"DAY_MASS",service:"ORDINARY_AUTHORIZED_SUPPLICATIONS"
@@ -107,4 +135,4 @@ const walk=contextualRogationCard(r03,{observance:"MAJOR",selectedService:"PUBLI
 assert.equal(walk.posture,"PROCESSIONAL");
 assert.match(walk.title,/Greater Litanies/);
 assert.equal(walk.paragraphs,r03.paragraphs,"Canonical Litany source was copied/changed");
-console.log("1960 Greater Litanies transfer/seasonal-release gate, public-rite/day Proper, class-I and stationary choreography: PASS");
+console.log("1960 Greater Litanies: independently certified Eastertide votive, Sunday Credo, I-class block, public litany/day Mass and stationary choreography: PASS");
