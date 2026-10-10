@@ -171,9 +171,10 @@ function placeSheet(vm){
 
   // Never show a giant empty TLM section on every shrine page. Exact
   // Directory relationships remain accessible when source-verified.
-  if(arr(profile.tlm).length){
-    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"TLM AT THIS EXACT PLACE","MESSE TRADITIONNELLE EN CE LIEU EXACT"))+' · '+arr(profile.tlm).length+'</summary>'+placeRecordRows(profile.tlm,vm.language)+'</details></section>';
-  }
+  html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"TLM AT THIS EXACT PLACE","MESSE TRADITIONNELLE EN CE LIEU EXACT"))+'</summary>';
+  if(arr(profile.tlm).length)html+=placeRecordRows(profile.tlm,vm.language);
+  else html+='<p>'+esc(L(vm.language,"No TLM venue is currently linked to this exact Place. This does not make any claim about nearby Masses.","Aucun lieu de messe traditionnelle n’est actuellement relié à ce lieu exact. Cela ne dit rien des messes célébrées à proximité."))+'</p>';
+  html+='</details></section>';
   html+=placeSources(profile,vm.language);
   html+='<footer><small>'+esc(L(vm.language,"This page aggregates records by canonical Place ID. It does not infer relationships from geographic proximity.","Cette page agrège les fiches par identifiant canonique de lieu. Elle ne déduit aucune relation de la seule proximité géographique."))+'</small>';
   if(profile?.geo?.attribution)html+='<small class="aoFindGeoAttribution">'+esc(profile.geo.attribution)+'</small>';
