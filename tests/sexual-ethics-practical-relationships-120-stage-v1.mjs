@@ -34,7 +34,15 @@ for(const c of doc.cases){
    "CSE071.opposition":["FARLEY_QUOTED2012","FARLEY_RESPONSE2012"],
   };
   assert.deepEqual(live,revised[c.id+"."+s.stage]||historical,c.id+"."+s.stage+" source chain");
-  for(const source of s.selected_sources)assert.equal(source.url,CSE_SOURCE_MAP[source.id].canonical_url);
+  for(const source of s.selected_sources){
+   // Earlier Pew analysis URL linked the specific 2019 cohabitation finding;
+   // the current registry points to the full original 2019 report. Both are
+   // Pew primary sources; retain the exact historical witness of this batch.
+   if(source.id==="PEW_CO2019"){
+     assert.equal(source.url,"https://www.pewresearch.org/social-trends/2019/11/06/why-people-get-married-or-move-in-with-a-partner/");
+     assert.equal(CSE_SOURCE_MAP[source.id].canonical_url,"https://www.pewresearch.org/social-trends/2019/11/06/marriage-and-cohabitation-in-the-u-s/");
+   }else assert.equal(source.url,CSE_SOURCE_MAP[source.id].canonical_url);
+  }
   result[s.status]=(result[s.status]||0)+1;stageCount++;
  }
 }
