@@ -12,10 +12,10 @@ const label=(lang,key)=>L(lang,...CATEGORY_LABELS[key]);
 
 // Editorial text comes exclusively from canonical source-owned records.
 // No synthesized narratives, unsupported recognition claims or fallback biographies.
-export function sacredPlaceSynopsis(place,{maxLength=340}={}){
+export function sacredPlaceSynopsis(place,{maxLength=340,language="en"}={}){
   if(!place)return "";
   const refs=[...arr(place.shrines),...arr(place.pilgrimages),...arr(place.apparitions),...arr(place.relics),...arr(place.traditions)];
-  const summary=String(refs.map(item=>item?.summary).find(value=>String(value??"").trim())??"").trim().replace(/\s+/g," ");
+  const summary=String(refs.map(item=>language==="fr"?(item?.summary_fr||item?.summary):item?.summary).find(value=>String(value??"").trim())??"").trim().replace(/\s+/g," ");
   if(summary.length<=maxLength)return summary;
   const prefix=summary.slice(0,maxLength),boundary=prefix.lastIndexOf(" ");
   return prefix.slice(0,boundary>maxLength*.7?boundary:maxLength).trimEnd()+"…";
@@ -28,7 +28,7 @@ function shortArea(place){
 export function compactHeritagePlaceSheet(vm){
   const p=vm.selectedPlace;if(!p)return "";
   const related=Object.keys(CATEGORY_LABELS).filter(key=>Number(p.counts?.[key])>0);
-  const synopsis=sacredPlaceSynopsis(p);
+  const synopsis=sacredPlaceSynopsis(p,{language:vm.language});
   let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoHeritagePreview" role="dialog" aria-modal="true" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
   html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
   html+='<header><div><small>'+L(vm.language,"SACRED PLACE","LIEU SACRÉ")+'</small><h2>'+esc(p.name)+'</h2>'+(shortArea(p)?'<p>'+esc(shortArea(p))+'</p>':"")+'</div><button type="button" data-find-close-place aria-label="'+L(vm.language,"Close","Fermer")+'">×</button></header>';
