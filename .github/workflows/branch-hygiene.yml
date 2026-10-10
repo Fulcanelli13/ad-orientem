@@ -51,7 +51,10 @@ jobs:
           fi
           protected=$(gh api "repos/$REPO/branches/$BRANCH" --jq '.protected' 2>/dev/null) || { echo 'Protection status unavailable: retain'; exit 0; }
           [[ "$protected" == false ]] || { echo "Retained protected branch: $BRANCH"; exit 0; }
-          if gh api --paginate "repos/$REPO/pulls?state=open&per_page=100" --jq '.[].head.ref' | grep -Fxq -- "$BRANCH"; then
+          if ! gh api --paginate "repos/$REPO/pulls?state=open&per_page=100" --jq '.[].head.ref' > "$RUNNER_TEMP/open-pr-heads.txt"; then
+            echo 'Open PR inventory unavailable: retain branch' >&2; exit 1
+          fi
+          if grep -Fxq -- "$BRANCH" "$RUNNER_TEMP/open-pr-heads.txt"; then
             echo "Retained head used by another open PR: $BRANCH"; exit 0
           fi
           gh api -X DELETE "repos/$REPO/git/refs/heads/$BRANCH"
