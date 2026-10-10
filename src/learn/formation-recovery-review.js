@@ -90,7 +90,24 @@ const css = [
   "#ao-formation-recovery-review .rrArticleSection{border-bottom:1px solid var(--ao-rule,#3d3d40);padding:11px 0}",
   "#ao-formation-recovery-review .rrArticleSection h3{font:500 1.02rem var(--ao-font-display,Georgia,serif);margin:0 0 10px}",
   "#ao-formation-recovery-review .rrInspect{min-height:44px;padding:8px 12px;border:1px solid var(--ao-rule,#3d3d40);border-radius:10px;background:var(--ao-surface-1,#101821);font:.8rem var(--ao-font-ui,system-ui)}",
-  "@media(max-width:420px){#ao-formation-recovery-review main{padding:15px 12px 50px}}"
+  "#ao-formation-recovery-review .rrThemeLead{margin:7px 0 17px;font:500 .89rem/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0)}",
+  "#ao-formation-recovery-review .rrThemeHeading{margin:18px 0 10px;font:600 1.09rem/1.3 var(--ao-font-display,Georgia,serif)}",
+  "#ao-formation-recovery-review .rrThemeGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}",
+  "#ao-formation-recovery-review .rrThemeCard{position:relative;min-height:112px;display:flex;align-items:flex-start;flex-direction:column;gap:9px;min-width:0;text-align:left;padding:15px 29px 15px 14px;border:1px solid var(--ao-rule,rgba(255,255,255,.14));border-radius:var(--ao-card-radius,15px);background:var(--ao-surface-1,#101821)}",
+  "#ao-formation-recovery-review .rrThemeCard strong{font:600 1.01rem/1.3 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}",
+  "#ao-formation-recovery-review .rrThemeCount{color:var(--liturgical,#c9ad78);font:600 .74rem/1.3 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-formation-recovery-review .rrThemeArrow{position:absolute;right:12px;bottom:12px;color:var(--liturgical,#c9ad78);font:1.3rem/1 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-formation-recovery-review .rrThemeSearch{margin:16px 0 22px}#ao-formation-recovery-review .rrThemeSearch label,#ao-formation-recovery-review .rrFields label{display:block;font:500 .81rem/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0);margin-bottom:7px}",
+  "#ao-formation-recovery-review .rrThemeSearch input{margin-bottom:8px}#ao-formation-recovery-review [data-rr-search-matches][hidden]{display:none!important}",
+  "#ao-formation-recovery-review .rrBreadcrumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 17px;font:.8rem/1.5 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#a9a5a0)}",
+  "#ao-formation-recovery-review .rrBreadcrumb button{min-height:44px;padding:8px 10px;background:transparent;border:1px solid var(--ao-rule,#3d3d40);border-radius:9px;color:var(--liturgical,#c9ad78)}",
+  "#ao-formation-recovery-review .rrBreadcrumb strong{font-weight:500;color:var(--ao-text-primary,#e9e4da)}",
+  "#ao-formation-recovery-review .rrThemeChips{display:flex;gap:8px;flex-wrap:wrap;padding-bottom:10px}",
+  "#ao-formation-recovery-review .rrThemeChips button{min-height:44px;padding:8px 11px;text-align:left;background:var(--ao-surface-1,#101821);border:1px solid var(--ao-rule,#3d3d40);border-radius:11px;font:.82rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-formation-recovery-review .rrThemeChips small{color:var(--liturgical,#c9ad78);padding-left:5px}",
+  "#ao-formation-recovery-review .rrThemeCard:focus-visible,#ao-formation-recovery-review .rrThemeChips button:focus-visible,#ao-formation-recovery-review .rrBreadcrumb button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}",
+  "@media(max-width:420px){#ao-formation-recovery-review main{padding:15px 12px 50px}#ao-formation-recovery-review .rrThemeGrid{gap:8px}#ao-formation-recovery-review .rrThemeCard{min-height:130px;padding:13px 26px 13px 11px}#ao-formation-recovery-review .rrThemeCard strong{font-size:.94rem}}"
+
 ].join("\n");
 
 export function buildRecoveryReviewRows(packs) {
@@ -196,7 +213,7 @@ export function buildRecoveryDossierCoverage(rows,packs) {
 }
 
 export function createFormationRecoveryReview(win=globalThis) {
-  const state={open:false,view:"list",mode:"dossiers",corpus:"all",family:"all",studyPreview:false,dossierId:null,returnTo:"list",returnFocus:null,id:null,bank:"all",query:"",rows:[],dossiers:[],external:[],error:"",loading:false};
+  const state={open:false,view:"list",mode:"dossiers",corpus:"all",family:"all",themeDefinitions:{apologetics:[],crisis:[]},studyPreview:false,dossierId:null,dossierReturn:"list",returnTo:"list",returnFocus:null,id:null,bank:"all",query:"",rows:[],dossiers:[],external:[],error:"",loading:false};
   const root=()=>win?.document?.getElementById?.(RECOVERY_REVIEW_ROOT);
   const selected=()=>state.rows.find(x=>x.id===state.id);
   const ttl=r=>isFr(win)?r.title_fr||r.title_en:r.title_en;
@@ -243,7 +260,13 @@ export function createFormationRecoveryReview(win=globalThis) {
     moral:["Morality","Morale"],"identity-mission":["Identity & Mission","Identité et mission"],
     governance:["Governance","Gouvernance"]
   });
-  const familyName=id=>families[id]?.[isFr(win)?1:0]||id;
+  const themeGroups=()=>state.themeDefinitions[state.corpus]||[];
+  const familyName=id=>isFr(win)?families[id]?.[1]||id:
+    themeGroups().find(x=>x.id===id)?.title||families[id]?.[0]||id;
+  const themeCounts=()=>themeGroups().map(group=>Object.freeze({
+    id:group.id,title:familyName(group.id),
+    count:state.dossiers.filter(d=>d.corpus===state.corpus&&d.family===group.id).length
+  }));
   const visibleDossiers=()=>state.dossiers.filter(x=>
     (state.corpus==="all"||x.corpus===state.corpus)&&
     (state.family==="all"||x.family===state.family));
@@ -347,6 +370,64 @@ export function createFormationRecoveryReview(win=globalThis) {
         "Déplier chaque cas pour lire les réponses, positions adverses, répliques et arguments catholiques traditionnels qui existent effectivement, avec les liens de source de chaque paragraphe."))+'</p>'+
       d.research.map(dossierCase).join("");
   };
+  // The original nine/eight topic families, not an independently invented index.
+  // Both preview readers navigate themes -> questions -> source-linked answer.
+  const studyThemeLanding=()=>{
+    const count=state.dossiers.filter(d=>d.corpus===state.corpus).length;
+    const title=state.corpus==="apologetics"?pick(win,"Apologetics","Apologétique"):
+      pick(win,"Crisis in the Church","Crise dans l’Église");
+    const groups=themeCounts();
+    const hasQuery=searchKey(state.query).trim().length>=2;
+    return '<div class="rrMuted">'+esc(pick(win,"FORMATION · PRELIMINARY STUDY","FORMATION · ÉTUDE PRÉLIMINAIRE"))+'</div>'+
+      '<h1>'+esc(title)+'</h1>'+
+      '<p class="rrWarning">'+esc(pick(win,
+        "Source-linked drafts under review. Neither the arguments nor the French translations have received independent final approval.",
+        "Dossiers sourcés en cours de révision. Ni les arguments ni les traductions françaises n’ont reçu d’approbation indépendante définitive."))+'</p>'+
+      '<p class="rrThemeLead">'+esc(groups.length+' '+pick(win,"themes","thèmes")+' · '+count+' '+pick(win,"questions","questions"))+'</p>'+
+      '<section class="rrThemeSearch" role="search">'+
+      '<label for="rr-study-search">'+esc(pick(win,"Search across all questions","Rechercher parmi toutes les questions"))+'</label>'+
+      '<input id="rr-study-search" data-rr-search type="search" autocomplete="off" value="'+esc(state.query)+'" '+
+      'placeholder="'+esc(pick(win,"Enter a question, doctrine or keyword","Saisir une question, une doctrine ou un mot-clé"))+'">'+
+      '<div data-rr-search-matches'+(hasQuery?'':' hidden')+'><p class="rrMuted" data-rr-results-label>'+
+      esc(pick(win,"Matching questions","Questions trouvées"))+'</p><div class="rrList" data-rr-list>'+
+      (hasQuery?dossierRows():"")+'</div></div></section>'+
+      '<h2 class="rrThemeHeading">'+esc(pick(win,"Explore by theme","Explorer par thème"))+'</h2>'+
+      '<div class="rrThemeGrid" data-rr-theme-grid>'+groups.map(group=>
+        '<button type="button" class="rrThemeCard" data-rr-theme="'+esc(group.id)+'" data-rr-theme-count="'+group.count+'">'+
+        '<span class="rrThemeCount">'+esc(group.count)+' '+esc(pick(win,"questions","questions"))+'</span>'+
+        '<strong>'+esc(group.title)+'</strong><span class="rrThemeArrow" aria-hidden="true">›</span>'+
+        '</button>').join("")+'</div>';
+  };
+  const studyThemeList=()=>{
+    const groups=themeCounts();
+    const current=groups.find(group=>group.id===state.family);
+    if(!current)return studyThemeLanding();
+    const count=state.dossiers.filter(d=>d.corpus===state.corpus&&d.family===state.family).length;
+    return '<nav class="rrBreadcrumb" aria-label="'+esc(pick(win,"Formation navigation","Navigation de formation"))+'">'+
+      '<button type="button" data-rr-themes>'+esc(pick(win,"All themes","Tous les thèmes"))+'</button>'+
+      '<span aria-hidden="true">›</span><strong>'+esc(current.title)+'</strong></nav>'+
+      '<div class="rrMuted">'+esc(pick(win,"PRELIMINARY STUDY · ","ÉTUDE PRÉLIMINAIRE · ")+count+' '+pick(win,"questions","questions"))+'</div>'+
+      '<h1>'+esc(current.title)+'</h1>'+
+      '<p class="rrWarning">'+esc(pick(win,
+        "Questions and answers are source-linked working drafts, not independently certified teaching.",
+        "Les questions et réponses sont des brouillons sourcés, sans certification indépendante."))+'</p>'+
+      '<div class="rrFields"><label for="rr-study-search">'+esc(pick(win,"Search this theme","Rechercher dans ce thème"))+'</label>'+
+      '<input id="rr-study-search" data-rr-search type="search" value="'+esc(state.query)+'" autocomplete="off" '+
+      'placeholder="'+esc(pick(win,"Search the questions below","Rechercher parmi les questions ci-dessous"))+'"></div>'+
+      '<div class="rrList" data-rr-list>'+dossierRows()+'</div>'+
+      '<h2 class="rrThemeHeading">'+esc(pick(win,"Other themes","Autres thèmes"))+'</h2>'+
+      '<nav class="rrThemeChips" aria-label="'+esc(pick(win,"Other themes","Autres thèmes"))+'">'+
+      groups.filter(group=>group.id!==state.family).map(group=>'<button type="button" data-rr-theme="'+esc(group.id)+'">'+
+      esc(group.title)+' <small>'+group.count+'</small></button>').join("")+'</nav>';
+  };
+  function updateStudySearch(){
+    const n=root()?.querySelector?.("[data-rr-list]");
+    const hasQuery=searchKey(state.query).trim().length>=2;
+    if(n)n.innerHTML=state.view==="themes"?(hasQuery?dossierRows():""):
+      state.mode==="dossiers"?dossierRows():listRows();
+    const results=root()?.querySelector?.("[data-rr-search-matches]");
+    if(results)results.hidden=!hasQuery;
+  }
   const listRows=()=>{
     const q=state.query.toLowerCase().trim();
     const hits=state.rows.filter(x=>(state.bank==="all"||x.bank===state.bank)&&
@@ -414,13 +495,20 @@ export function createFormationRecoveryReview(win=globalThis) {
     el.addEventListener("click",e=>{
       const b=e.target?.closest?.("button");if(!b)return;
       if(b.hasAttribute("data-rr-back")){e.preventDefault?.();if(state.view==="detail"){state.view=state.returnTo;state.id=null;paint();}
-        else if(state.view==="dossier-detail"){state.view="list";state.dossierId=null;paint();}else close();return;}
+        else if(state.view==="dossier-detail"){state.view=state.dossierReturn;state.dossierId=null;paint();}
+        else if(state.view==="list"&&state.studyPreview){state.view="themes";state.family="all";state.query="";paint();}
+        else close();return;}
       if(b.hasAttribute("data-rr-home")){e.preventDefault?.();close();win?.AO_APP_SHELL_V1?.navigate?.("home");return;}
+      if(b.hasAttribute("data-rr-themes")){e.preventDefault?.();state.family="all";state.query="";state.view="themes";paint();root()?.scrollTo?.(0,0);return;}
+      if(b.dataset.rrTheme){e.preventDefault?.();
+        if(!themeGroups().some(group=>group.id===b.dataset.rrTheme))return;
+        state.family=b.dataset.rrTheme;state.query="";state.view="list";paint();root()?.scrollTo?.(0,0);return;
+      }
       if(b.dataset.rrMode){e.preventDefault?.();state.mode=b.dataset.rrMode;state.view="list";state.query="";paint();return;}
-      if(b.dataset.rrDossier){e.preventDefault?.();state.dossierId=b.dataset.rrDossier;state.view="dossier-detail";paint();root()?.scrollTo?.(0,0);return;}
+      if(b.dataset.rrDossier){e.preventDefault?.();state.dossierId=b.dataset.rrDossier;state.dossierReturn=state.view;state.view="dossier-detail";paint();root()?.scrollTo?.(0,0);return;}
       if(b.dataset.rrId){e.preventDefault?.();state.returnTo=state.view;state.id=b.dataset.rrId;state.view="detail";paint();root()?.scrollTo?.(0,0);}
     });
-    el.addEventListener("input",e=>{if(e.target?.hasAttribute?.("data-rr-search")){state.query=e.target.value;const n=root()?.querySelector?.("[data-rr-list]");if(n)n.innerHTML=state.mode==="dossiers"?dossierRows():listRows();}});
+    el.addEventListener("input",e=>{if(e.target?.hasAttribute?.("data-rr-search")){state.query=e.target.value;updateStudySearch();}});
     el.addEventListener("change",e=>{
       if(e.target?.hasAttribute?.("data-rr-bank"))state.bank=e.target.value;
       else if(e.target?.hasAttribute?.("data-rr-corpus")){state.corpus=e.target.value;state.family="all";paint();return;}
@@ -431,7 +519,8 @@ export function createFormationRecoveryReview(win=globalThis) {
     });
     el.addEventListener("keydown",e=>{if(e.key==="Escape"){e.preventDefault?.();
       if(state.view==="detail"){state.view=state.returnTo;state.id=null;paint();}
-      else if(state.view==="dossier-detail"){state.view="list";state.dossierId=null;paint();}
+      else if(state.view==="dossier-detail"){state.view=state.dossierReturn;state.dossierId=null;paint();}
+      else if(state.view==="list"&&state.studyPreview){state.view="themes";state.family="all";state.query="";paint();}
       else close();}});
     doc.body.append(el);return el;
   }
@@ -440,7 +529,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     el.lang=isFr(win)?"fr":"en";
     el.setAttribute("data-study-preview",state.studyPreview?"1":"0");
     const inner=state.loading?'<p class="rrMuted">Loading original source files…</p>':
-      state.error?'<p class="rrWarning">'+esc(state.error)+'</p>':state.view==="list"?listView():state.view==="dossier-detail"?dossierDetail():detailView();
+      state.error?'<p class="rrWarning">'+esc(state.error)+'</p>':state.view==="themes"?studyThemeLanding():state.view==="list"&&state.studyPreview?studyThemeList():state.view==="list"?listView():state.view==="dossier-detail"?dossierDetail():detailView();
     el.innerHTML='<style>'+css+'</style><header class="rrTop"><button type="button" data-rr-back aria-label="Back">‹</button>'+
       '<strong>'+esc(state.studyPreview?pick(win,"Formation · Study preview","Formation · Aperçu"):pick(win,"Source review · Unpublished","Examen des sources · Non publié"))+'</strong>'+
       '<button type="button" data-rr-home aria-label="Home">⌂</button></header><main>'+inner+'</main>';
@@ -449,7 +538,7 @@ export function createFormationRecoveryReview(win=globalThis) {
   async function open({corpus="all",returnFocus=null,studyPreview=false}={}){
     if(!ensure())return false;
     state.corpus=["apologetics","crisis"].includes(corpus)?corpus:"all";
-    state.studyPreview=!!studyPreview;state.family="all";state.mode="dossiers";state.view="list";state.query="";state.bank="all";state.returnFocus=returnFocus;
+    state.studyPreview=!!studyPreview;state.family="all";state.mode="dossiers";state.view=state.studyPreview?"themes":"list";state.query="";state.bank="all";state.returnFocus=returnFocus;
     state.open=true;state.loading=true;state.error="";paint();
     try {
       if(!win?.fetch)throw new Error("Fetch unavailable.");
@@ -458,9 +547,28 @@ export function createFormationRecoveryReview(win=globalThis) {
         if(!response.ok)throw new Error(file+" ("+response.status+")");
         return {label,doc:await response.json()};
       }));
+      state.themeDefinitions={
+        apologetics:docs.find(x=>x.label==="Apologetics dossiers")?.doc?.navigation_families||[],
+        crisis:docs.find(x=>x.label==="Church Crisis dossiers")?.doc?.families||[]
+      };
+      if(state.themeDefinitions.apologetics.length!==9||state.themeDefinitions.crisis.length!==8||
+        new Set(state.themeDefinitions.apologetics.map(x=>x.id)).size!==9||
+        new Set(state.themeDefinitions.crisis.map(x=>x.id)).size!==8)
+        throw new Error("Canonical Formation subtheme index incomplete");
       state.rows=[...buildRecoveryReviewRows(docs),...buildContemporaryDraftRows(docs)];
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
+      for(const corpus of ["apologetics","crisis"]){
+        const expected=corpus==="apologetics"?60:81;
+        const groups=state.themeDefinitions[corpus];
+        const indexed=groups.reduce((n,group)=>{
+          const count=state.dossiers.filter(d=>d.corpus===corpus&&d.family===group.id).length;
+          if(group.count!==undefined&&group.count!==count)throw new Error("Formation subtheme count mismatch: "+group.id);
+          if(!count)throw new Error("Empty canonical Formation subtheme: "+group.id);
+          return n+count;
+        },0);
+        if(indexed!==expected)throw new Error("Formation subthemes do not cover all "+expected+" "+corpus+" dossiers");
+      }
       state.external=coverage.external;
       state.questionSources=docs.find(x=>x.label==="BAQ questions")?.doc?.source_registry||[];
       state.error="";
@@ -477,7 +585,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     return true;
   }
   function status(){return Object.freeze({version:RECOVERY_REVIEW_VERSION,open:state.open,
-    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,assembledDossierReadings:state.dossiers.filter(d=>d.research.length&&d.evidence).length,synthesisDossiers:state.dossiers.filter(d=>d.synthesis).length,externalRecords:state.external.length,loading:state.loading,error:state.error,studyPreview:state.studyPreview,public:false});}
+    view:state.view,corpus:state.corpus,theme:state.family,themeCount:themeGroups().length,researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,assembledDossierReadings:state.dossiers.filter(d=>d.research.length&&d.evidence).length,synthesisDossiers:state.dossiers.filter(d=>d.synthesis).length,externalRecords:state.external.length,loading:state.loading,error:state.error,studyPreview:state.studyPreview,public:false});}
   return Object.freeze({open,close,paint,status});
 }
 export function installFormationRecoveryReview(win=globalThis) {
