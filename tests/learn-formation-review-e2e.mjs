@@ -35,6 +35,12 @@ try{
   const navigated=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn"));
   assert.equal(navigated?.ok,true,"Formation hub did not open");
   await page.locator("#ao-learn-modular-root").waitFor({state:"visible",timeout:12000});
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-dossier-review]").count(),0,
+    "Research previews must not crowd the Formation root");
+  await page.locator("#ao-learn-modular-root [data-ao-learn-questions]").tap();
+  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="questions",null,{timeout:10000});
+  assert.equal(await page.locator('#ao-learn-modular-root [data-ao-learn-module="learn.sexual_ethics"]').count(),1,
+    "Questions area lost the canonical Sexual Ethics owner");
   const selector="#ao-learn-modular-root [data-ao-learn-dossier-review]";
   assert.equal(await page.locator(selector).count(),2,"exactly two visible prepublication study entrances expected");
 
