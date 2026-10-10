@@ -69,7 +69,7 @@ assert.equal(liveReady.gestureMatrixState.audit.itemCount,142);
 assert.equal(liveReady.gestureMatrixState.audit.campionBackedCount,100);
 assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
 assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.label,"THREE CROSSES WITH HOST OVER CHALICE");
-assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.iconKey,null);
+assert.equal(liveReady.gestureMatrixState.project("AO.SM.C0202").primaryPriestAction.iconKey,"cross");
 assert.equal(liveReady.rubricState.project("AO.SM.C0058").primaryPriestAction.label,"BOWS HEAD");
 assert.equal(liveReady.rubricState.project("AO.SM.C0174").events.length,6);
 assert.equal(liveReady.rubricState.project("AO.SM.C0204").activeStates.THUMB_INDEX_JOINED.value,true);

@@ -35,6 +35,19 @@ let keys=iconKeysForReaderState({
 });
 assert.equal(keys.postureIconKey,"kneel");
 assert.equal(keys.gestureIconKey,"gospel_crosses");
+keys=iconKeysForReaderState({gesture:{owner:"GESTURE_MATRIX_SOT",
+  label:"Customary bow may follow local practice",iconKey:null}});
+assert.equal(keys.gestureIconKey,null,"quarantined customary gesture obtained an invented icon");
+keys=iconKeysForReaderState({priestAction:{owner:"GESTURE_MATRIX_SOT",
+  label:"RAISES EYES AND HANDS",iconKey:null}});
+assert.equal(keys.priestActionIconKey,null,"pending priest art was guessed from fallback labels");
+// Restore the primary test projection for all remaining claims.
+keys=iconKeysForReaderState({
+  posture:{value:"KNEEL"},gesture:{type:"GOSPEL_CROSSES"},
+  response:{text:"Amen"},priestVoice:{value:"LOW_VOICE"},
+  priestPosition:{station:"ALTAR_GOSPEL_MISSAL"},
+  priestAction:{label:"ELEVATES HOST"},schola:{label:"Credo"}
+});
 assert.equal(keys.responseIconKey,"response");
 assert.equal(keys.priestVoiceIconKey,"priest_silent");
 assert.equal(keys.priestPositionIconKey,"priest_centre");

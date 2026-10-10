@@ -1,3 +1,6 @@
+import { R17_FROZEN_ACTIVE_ICON_KEYS } from "./reader-icons.js";
+const V46_MASTER_KEYS=new Set(R17_FROZEN_ACTIVE_ICON_KEYS);
+
 export const READER_GESTURE_MATRIX_SCHEMA="ao-mass-gesture-matrix-v1";
 export const READER_GESTURE_MATRIX_FILE="../mass/gesture-matrix.v1.json";
 
@@ -63,6 +66,9 @@ export function validateReaderGestureMatrix(data){
     if(cueNumber(item.cueId)==null)throw new Error(item.id+": invalid cue");
     if(!ACTORS.has(item.actor))throw new Error(item.id+": invalid actor");
     if(!item.gesture||!item.label)throw new Error(item.id+": gesture/label missing");
+    if(item.iconKey&&!V46_MASTER_KEYS.has(item.iconKey))throw new Error(item.id+": unknown v4.6 master");
+    if(item.iconStatus==="V46_SEMANTIC_BINDING"&&!item.iconKey)throw new Error(item.id+": missing bound icon");
+    if(item.iconKey&&item.iconStatus!=="V46_SEMANTIC_BINDING")throw new Error(item.id+": invalid icon status");
     if(!Number.isInteger(item.sequenceOrder)||item.sequenceOrder<1)throw new Error(item.id+": invalid sequence order");
     if(!item.sources.length||item.sources.some(id=>!sourceIds.has(id)))throw new Error(item.id+": unresolved source");
     if(item.campionPages.length&&!item.sources.includes("CAMPION_1954"))throw new Error(item.id+": Campion pages without Campion source");
@@ -82,6 +88,8 @@ export function validateReaderGestureMatrix(data){
     faithfulCount:items.filter(x=>x.actor==="FAITHFUL").length,
     campionBackedCount:items.filter(x=>x.campionPages.length).length,
     primaryPriestCueCount:primaryPriestByCue.size,
+    iconBoundCount:items.filter(x=>Boolean(x.iconKey)).length,
+    iconPendingCount:items.filter(x=>!x.iconKey).length,
     items:Object.freeze(items),
   });
 }
@@ -105,6 +113,7 @@ function priestAction(item){
     label:item.label,
     action:item.label,
     iconKey:item.iconKey,
+    iconStatus:item.iconStatus,
     cueId:item.cueId,
     trigger:item.triggerLatin,
     sourceGestureId:item.id,

@@ -194,6 +194,7 @@ function faithfulGestureItemsFromMatrix(gestureMatrix,legacyItems){
       scope:"INSTANT",
       condition:item.condition,
       sourceGestureId:item.id,
+      iconKey:item.iconKey,
       sources:item.sources,
       campionPages:item.campionPages,
     }));
@@ -276,6 +277,7 @@ function sourceGesture(item){
     owner:matrixOwned?"GESTURE_MATRIX_SOT":"R17_CUE_SOURCE",
     cueId:item.cueId,
     sourceGestureId:item.sourceGestureId??null,
+    iconKey:item.iconKey??null,
     sources:item.sources??null,
     campionPages:item.campionPages??null,
     transient:true,

@@ -143,6 +143,9 @@ function token(value){
 }
 
 function priestActionKey(action){
+  // A source-owned gesture matrix expressly quarantines unmatched artwork.
+  // The older free-text v4.6 fallback is only for independent rubric actions.
+  if(action?.owner==="GESTURE_MATRIX_SOT"&&!action.iconKey)return null;
   const direct=String(action?.iconKey??"").trim();
   if(direct)return direct;
   const label=String(action?.label??action?.action??action?.value??"").trim().toUpperCase();
@@ -170,6 +173,9 @@ export function readerAttentionForState({priestVoice=null,response=null}={}){
 
 function gestureKey(gesture){
   if(!gesture)return null;
+  // Do not turn an explicitly pending/customary source gesture into a
+  // universal instruction by guessing from its label's words.
+  if(gesture.owner==="GESTURE_MATRIX_SOT")return gesture.iconKey??null;
   const direct=token(gesture.type??gesture.value);
   if(R17_ICON_KEYS.gesture[direct])return R17_ICON_KEYS.gesture[direct];
   const raw=String(gesture.action??gesture.label??"").toLowerCase();

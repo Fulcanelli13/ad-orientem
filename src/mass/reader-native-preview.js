@@ -1354,6 +1354,7 @@ export async function mountNativeReaderPreview({
     // Matrix text wins, but the same-cue rubric retains an authoritative
     // icon identity if the matrix has not bound its icon yet.
     const resolvedMatrixAction=matrixAction && !matrixAction.iconKey &&
+      matrixAction.iconStatus!=="PENDING_EXACT_MASTER" &&
       rubricAction?.iconKey && rubricAction.cueId===matrixAction.cueId
       ? Object.freeze({...matrixAction,iconKey:rubricAction.iconKey})
       : matrixAction;
