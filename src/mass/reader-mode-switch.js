@@ -22,6 +22,7 @@ export function buildReaderModeModels({prepared,data,mode}={}){
     canonSourceMap:data.canonSourceMap,
     nuptialData:data.nuptialData,
     frenchOrdinary:data.frenchOrdinary,
+    holyThursdayMandatumSource:data.mandatumSource??null,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
   const presentationModel=projectSourceFirst48Presentation(sourceModel);
