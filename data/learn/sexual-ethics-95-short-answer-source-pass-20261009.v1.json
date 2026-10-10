@@ -16,7 +16,9 @@
     "catalogue_only_short_answer_citations_removed": 5,
     "detail_texts_present": 20,
     "short_form_without_detail": 75,
-    "detail_field_crosswalk_reconciled": true
+    "detail_field_crosswalk_reconciled": true,
+    "source_snapshot_ids_reconciled": 9,
+    "question_source_identities_reconciled_to_current_corpus": true
   },
   "records": [
     {
@@ -538,7 +540,7 @@
         },
         {
           "source_id": "CIC",
-          "locator": "cann. 1055–1057",
+          "locator": "cann. 1055–1057, 1062 §§1–2 (engagement creates no enforceable marriage bond)",
           "original_full_text_url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html",
           "original_french_text_url": null
         }
@@ -1286,14 +1288,14 @@
       "all_cited_sources": [
         {
           "source_id": "SACRA",
-          "locator": "§§58–62",
+          "locator": "§58 (clergy formation context)",
           "original_full_text_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
           "original_french_text_url": "https://www.vatican.va/content/pius-xii/fr/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html"
         },
         {
-          "source_id": "ST43",
-          "locator": "aa.1, 7",
-          "original_full_text_url": "https://www.newadvent.org/summa/3043.htm",
+          "source_id": "PIUSX",
+          "locator": "Penance · dangerous occasions QQ68–69",
+          "original_full_text_url": "https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286",
           "original_french_text_url": null
         }
       ],
@@ -1956,13 +1958,19 @@
       "all_cited_sources": [
         {
           "source_id": "ST6",
-          "locator": "aa.1–8",
+          "locator": "aa.4–6",
           "original_full_text_url": "https://www.newadvent.org/summa/2006.htm",
           "original_french_text_url": null
         },
         {
+          "source_id": "ST151",
+          "locator": "a.1 (chastity cannot be destroyed by violence)",
+          "original_full_text_url": "https://www.newadvent.org/summa/3151.htm",
+          "original_french_text_url": null
+        },
+        {
           "source_id": "ASSAULT2024",
-          "locator": "physiological responses",
+          "locator": "2024 scoping-review abstract; genital response occurrence, prevalence unestablished",
           "original_full_text_url": "https://pubmed.ncbi.nlm.nih.gov/38724699/",
           "original_french_text_url": null
         }
@@ -2100,6 +2108,12 @@
           "original_french_text_url": null
         },
         {
+          "source_id": "ST151",
+          "locator": "a.1 ad 2 · chastity unaffected by violence against the will",
+          "original_full_text_url": "https://www.newadvent.org/summa/3151.htm",
+          "original_french_text_url": null
+        },
+        {
           "source_id": "PIUSX",
           "locator": "Penance",
           "original_full_text_url": "https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286",
@@ -2135,7 +2149,7 @@
         },
         {
           "source_id": "RAINN_CONSENT101",
-          "locator": "nonconsent, threats, freezing and submission",
+          "locator": "What Is Consent?; What Consent Is Not; If You Didn't or Couldn't Consent",
           "original_full_text_url": "https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust",
           "original_french_text_url": null
         }
@@ -2548,7 +2562,7 @@
       "all_cited_sources": [
         {
           "source_id": "ST6",
-          "locator": "aa.1–8",
+          "locator": "aa.1,4–8",
           "original_full_text_url": "https://www.newadvent.org/summa/2006.htm",
           "original_french_text_url": null
         },
@@ -2560,7 +2574,7 @@
         },
         {
           "source_id": "PIUSX",
-          "locator": "Penance",
+          "locator": "Penance · Confession Q80; Sixth and Ninth Commandments QQ4–5",
           "original_full_text_url": "https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286",
           "original_french_text_url": null
         }
@@ -2582,7 +2596,7 @@
       "all_cited_sources": [
         {
           "source_id": "ST6",
-          "locator": "aa.1–8",
+          "locator": "aa.1,4–8",
           "original_full_text_url": "https://www.newadvent.org/summa/2006.htm",
           "original_french_text_url": null
         },
@@ -2594,7 +2608,7 @@
         },
         {
           "source_id": "PIUSX",
-          "locator": "Penance",
+          "locator": "Sixth and Ninth Commandments QQ4–5; Penance · Confession Q80",
           "original_full_text_url": "https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286",
           "original_french_text_url": null
         }
@@ -2616,13 +2630,13 @@
       "all_cited_sources": [
         {
           "source_id": "SACRA",
-          "locator": "§§58–62",
+          "locator": "§§58–62 (clerical-formation context)",
           "original_full_text_url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html",
           "original_french_text_url": "https://www.vatican.va/content/pius-xii/fr/encyclicals/documents/hf_p-xii_enc_25031954_sacra-virginitas.html"
         },
         {
           "source_id": "PIUSX",
-          "locator": "Penance",
+          "locator": "Penance · Confession QQ19–22",
           "original_full_text_url": "https://www.ewtn.com/catholicism/library/catechism-of-st-pius-x-1286",
           "original_french_text_url": null
         }
@@ -2722,7 +2736,7 @@
       "all_cited_sources": [
         {
           "source_id": "VS",
-          "locator": "§§54–64",
+          "locator": "§§54–64, 78–82",
           "original_full_text_url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
           "original_french_text_url": "https://www.vatican.va/content/john-paul-ii/fr/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html"
         },
