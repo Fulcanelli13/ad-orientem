@@ -38,6 +38,18 @@ assert.equal(R.counts.new_place_candidates,newSites.length);
 const groups=Object.fromEntries([...new Set(newSites.map(x=>x.country_code))].sort().map(c=>[c,newSites.filter(x=>x.country_code===c).length]));
 assert.deepEqual(R.counts.new_place_by_country,groups);
 assert.ok(Object.keys(groups).length>=20,"not yet a Europe-wide source sample");
+assert.equal(R.country_coverage.length,47,"Europe source scope must account for minor jurisdictions too");
+assert.equal(new Set(R.country_coverage.map(x=>x.country_code)).size,47,"duplicate country");
+assert.equal(R.counts.coverage_countries,47);
+assert.equal(R.counts.countries_with_zero_sites_in_current_registry_and_wave,
+ R.country_coverage.filter(x=>x.coverage_state==="SOURCE_DISCOVERY_NOT_STARTED").length);
+for(const row of R.country_coverage){
+ assert.equal(row.existing_canonical_places,G.places.filter(p=>p.address.country_code===row.country_code).length);
+ assert.equal(row.new_site_leads,newSites.filter(p=>p.country_code===row.country_code).length);
+ assert.notEqual(row.coverage_state,"COMPLETE","no European country has passed full registry enumeration yet");
+}
+assert.ok(R.coverage_definition.includes("not a country-completion certificate"));
+
 const leads=new Set(R.other_category_leads.map(x=>x.lead_id));
 assert.equal(leads.size,R.other_category_leads.length,"duplicate assoc. identity");
 const allowed=new Set(["SHRINES","PILGRIMAGES","RELICS","APPARITIONS","SACRED_IMAGE","CUSTOMS"]);
