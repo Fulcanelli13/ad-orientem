@@ -24,6 +24,20 @@ let state=resolveReaderPostureChannel({preferences,cueProjection:source,cueId:"A
 assert.equal(state.posture.value,"SIT");
 assert.equal(state.owner,"LOCAL_OVERRIDE");
 assert.equal(state.localKey,"AO.SM.C0093");
+// Gloria/Credo local sitting persists until the next sourced posture event.
+const continued=resolveReaderPostureChannel({
+  preferences,
+  cueProjection:{cueId:"AO.SM.C0095",posture:{value:"STAND",cueId:"AO.SM.C0089",fixed:false}},
+  cueId:"AO.SM.C0095",
+});
+assert.equal(continued.posture.value,"SIT");
+assert.equal(continued.localKey,"AO.SM.C0093");
+const nextSource=resolveReaderPostureChannel({
+  preferences,
+  cueProjection:{cueId:"AO.SM.C0107",posture:{value:"STAND",cueId:"AO.SM.C0106",fixed:false}},
+  cueId:"AO.SM.C0107",
+});
+assert.equal(nextSource.posture.value,"STAND","local Credo custom leaked past sourced Offertory transition");
 state=resolveReaderPostureChannel({preferences,cueProjection:{
   ...source,posture:{...source.posture,fixed:true}
 },cueId:"AO.SM.C0093"});
