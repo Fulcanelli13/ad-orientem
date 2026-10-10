@@ -32,6 +32,15 @@ for(const cueId of cues){
   }
 }
 
+// Faithful posture-change icons belong to actual source transitions,
+ // not every source restatement or navigation-induced screen-state change.
+assert.equal(ctrl.project("AO.SM.C0070").postureTransition,false,
+  "Collect repeated STAND creates a duplicate left-rail posture instruction");
+assert.equal(ctrl.project("AO.SM.C0075").postureTransition,true,
+  "Epistle SIT failed to produce an actual posture transition");
+assert.equal(ctrl.project("AO.SM.C0082").postureTransition,true,
+  "Gospel STAND failed to produce an actual posture transition");
+
 // Persistent channels must be established from the first certified cue onward.
 const first=ctrl.project("AO.SM.C0001");
 assert.equal(first.priestPosition.owner,"R17_CUE_SOURCE");

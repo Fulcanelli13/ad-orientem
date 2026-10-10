@@ -59,6 +59,17 @@ assert.ok(auditHostIconBank(broken).missing.includes("priest_ascending_rich"));
 
 keys=iconKeysForReaderState({priestPosition:{station:"ALTAR_CENTER",facing:"PEOPLE"}});
 assert.equal(keys.priestPositionIconKey,"priest_facing_people","top PRIEST position ignored facing-people state");
+keys=iconKeysForReaderState({priestPosition:{
+  station:"SEDILIA",facing:"PEOPLE_OR_ALTAR_ACCORDING_TO_LAYOUT"
+}});
+assert.equal(keys.priestPositionIconKey,"priest_sedilia",
+  "layout-dependent sedilia stole the explicit facing-people pictogram");
+keys=iconKeysForReaderState({priestPosition:{
+  station:"ALTAR_CENTER",facing:"PEOPLE_DURING_TURN"
+}});
+assert.equal(keys.priestPositionIconKey,"priest_facing_people",
+  "explicit short turn to the people lost its donor pictogram");
+
 
 keys=iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}});
 assert.equal(keys.priestActionIconKey,"priest_genuflect");
