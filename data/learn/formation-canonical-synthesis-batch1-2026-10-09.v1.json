@@ -251,6 +251,13 @@
       "url": "https://www.sefaria.org/Mishneh_Torah%2C_Kings_and_Wars.11.4?lang=en&with=all",
       "locator": "Kings and Wars 11:4: expected Davidic Messiah to restore Temple, gather exiles, observe Torah; a failed or killed aspirant is not the Messiah (compare Christian claim about Jesus)",
       "original_context_approved": false
+    },
+    {
+      "id": "OTT69-CR",
+      "title": "Ottaviani–Bacci, Short Critical Study and signed 1969 letter, original traditional liturgical critique",
+      "url": "https://sourcebooks.web.fordham.edu/mod/1969ottoviani.asp",
+      "locator": "1969 signed letter raising question of doctrinal continuity of revised Mass with Trent; original critical argument, not binding condemnation",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -856,35 +863,41 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Benedict XVI's 2007 letter describes the 1962 and postconciliar Missals as two usages of the same Roman Rite and states that the earlier Missal had never been juridically abrogated. Francis's 2021 legislation adopts a different governing formula for the Roman Rite's lex orandi and restricts use of the older books. Those are real documentary differences in discipline and description; they must not be silently harmonized by deleting either text.",
-            "fr": "Dans sa lettre de 2007, Benoît XVI présente les missels de 1962 et de l'après-concile comme deux usages du même rite romain et affirme que l'ancien missel n'avait jamais été juridiquement abrogé. La législation de François en 2021 emploie une autre formule normative concernant la lex orandi du rite romain et restreint l'usage des livres anciens. Ces différences documentaires de discipline et de qualification existent et ne doivent pas être effacées."
+            "en": "The 1969 signed letter of Cardinals Ottaviani and Bacci accompanying the Short Critical Study criticises the revised Order of Mass as a notable departure, in both whole and detail, from the sacrificial theology given dogmatic expression at Trent. That is a specific traditionalist case for discontinuity, not merely a preference for the Latin language. Benedict XVI's 2007 letter, by contrast, speaks of two usages of one Roman Rite, while Francis's 2021 provisions regulate the earlier Missal differently. The legal and descriptive differences among those papal acts are real; the 1969 doctrinal criticism must be evaluated from the prayers themselves and not taken as an automatic judgment of invalidity.",
+            "fr": "La lettre signée en 1969 par les cardinaux Ottaviani et Bacci, accompagnant le Bref examen critique, reproche au nouvel Ordo Missae de s'éloigner sensiblement, dans son ensemble et dans ses détails, de la théologie sacrificielle exprimée dogmatiquement à Trente. Il s'agit d'un argument traditionaliste précis sur la discontinuité, non d'une simple préférence pour le latin. À l'inverse, la lettre de Benoît XVI en 2007 parle de deux usages d'un même rite romain, tandis que les dispositions de François en 2021 réglementent autrement l'ancien missel. Les différences juridiques et descriptives sont réelles ; la critique doctrinale de 1969 doit être examinée à partir des prières elles-mêmes, non tenue pour un verdict automatique d'invalidité."
           },
           "source_ids": [
             "BEN07",
             "TC21",
-            "FR21"
+            "FR21",
+            "OTT69-CR"
           ],
-          "attribution": "Benedict XVI (2007) and Francis (2021), official texts",
+          "attribution": "Cardinals Ottaviani and Bacci, signed 1969 Short Critical Study; contrasted with Benedict XVI 2007 and Francis 2021",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "OTT69-CR": "1969 letter, alleged doctrinal discontinuity with Trent in whole and detail"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "The conclusion 'valid Mass' does not prove 'pastorally optimal reform', while an established historical discontinuity does not itself prove invalidity. Sacrosanctum Concilium §23 requires careful scrutiny, a real and certain benefit and continuity that grows organically from older forms; §22 reserves liturgical legislation to competent authority. Paul VI's Missale Romanum is an actual promulgation, not evidence that every preliminary Consilium proposal was adopted unchanged. Therefore a claim of rupture must identify the precise 1962 and 1969 texts, any intervening version and the alleged doctrinal proposition before its gravity or canonical effect can be judged.",
-            "fr": "La conclusion « messe valide » ne démontre pas que la réforme serait « pastoralement optimale », tandis qu'une rupture historique établie ne prouve pas par elle-même l'invalidité. Sacrosanctum Concilium §23 impose enquête sérieuse, avantage réel et certain, et continuité organique avec les formes antérieures ; le §22 réserve la législation liturgique à l'autorité compétente. Missale Romanum de Paul VI est une véritable promulgation, non la preuve que chaque projet préparatoire du Consilium fut adopté sans changement. Une accusation de rupture doit donc identifier les textes précis de 1962 et 1969, les versions intermédiaires éventuelles et la proposition doctrinale litigieuse avant d'en apprécier la gravité ou les effets canoniques."
+            "en": "An objection concerning organic development must compare specified texts and ecclesial authorities: the 1962 Offertory and Canon, the revised offertory and Eucharistic Prayers, and the changes to the calendar and lectionary. The Ottaviani–Bacci study challenges continuity of doctrinal expression, whereas the existence of an authorised later Missal bears on juridical legitimacy; neither datum alone proves the other. Sacrosanctum Concilium §23 gives a continuity criterion, and Missale Romanum promulgates the new books. A historically serious judgement separates the merits of reform, fidelity to revealed doctrine and the validity of a particular celebration.",
+            "fr": "Une objection relative au développement organique doit confronter les textes et les autorités précises : offertoire et Canon de 1962, offertoire et Prières eucharistiques révisés, calendrier et lectionnaire. Le Bref examen critique conteste la continuité de l'expression doctrinale, tandis que l'existence d'un missel ultérieur autorisé relève de sa légitimité juridique ; ni l'un ni l'autre fait ne démontre à lui seul le second. Sacrosanctum Concilium, §23, fixe un critère de continuité, et Missale Romanum promulgue les nouveaux livres. Il faut distinguer la valeur de la réforme, la fidélité à la doctrine révélée et la validité d'une célébration donnée."
           },
           "source_ids": [
             "SC63",
             "MR69",
-            "BEN07"
+            "BEN07",
+            "OTT69-CR"
           ],
           "attribution": null,
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
             "SC63": "Sacrosanctum Concilium §§22–23, authority and organic-development criterion",
-            "MR69": "Missale Romanum apostolic constitution of Paul VI, final legislated rite"
+            "MR69": "Missale Romanum apostolic constitution of Paul VI, final legislated rite",
+            "OTT69-CR": "1969 original critical study compared with conciliar criterion"
           }
         },
         {
@@ -1085,7 +1098,7 @@
     "canonical_dossiers": 10,
     "english_substantive_paragraphs": 40,
     "french_substantive_paragraphs": 40,
-    "source_registry_entries": 31,
+    "source_registry_entries": 32,
     "public_routes_added": 0,
     "independent_approvals": 0
   },
