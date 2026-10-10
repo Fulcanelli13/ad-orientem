@@ -125,6 +125,17 @@ try{
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").first().evaluate(el=>el.disabled),false);
  await dialog.getByRole("button",{name:"Consulter la source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/fr\.wikisource\.org\/wiki\/Bible_Crampon_1923/);
+ // Recovery must allow opening previously absent full traditional books on mobile.
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Genesis");
+ await dialog.locator("[data-scripture-witness-unreviewed='crampon-1923']").waitFor({state:"visible",timeout:15000});
+ assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Au commencement Dieu créa/);
+ assert.ok(await dialog.locator(".aoScriptureVerse").count()>=30);
+ await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Matthew");
+ await dialog.locator(".aoScriptureNav input").first().fill("17");
+ await dialog.locator(".aoScriptureNav input").first().dispatchEvent("change");
+ await dialog.locator("[data-scripture-source-gaps='27']").waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator(".aoScriptureVerse[data-verse='27']").count(),0,
+   "Blank printed-witness slot cannot be filled with invented verse text");
  await dialog.locator(".aoScriptureRosary summary").click();
  assert.equal(await dialog.locator(".aoScriptureMystery").count(),20);
  assert.match(await dialog.locator(".aoScriptureMystery").first().innerText(),/Luc|Gabriel|Marie|Annonciation/i);
