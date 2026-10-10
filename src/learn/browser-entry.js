@@ -9,7 +9,7 @@ import {
   ensureLearnModule,installLazyLearnRegistry,TRADITIONAL_LEARN_ROUTES,
   SPIRITUAL_LIFE_ROUTE_ID,LATIN_COURSE_ROUTE_ID,GLOSSARY_ROUTE_ID,MASS_FORMATION_ROUTE,
 } from "./lazy-module-registry.js";
-import {loadReferenceDiscovery} from "./discovery.js";
+import {loadReferenceDiscovery,loadFormationContentDiscovery} from "./discovery.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
@@ -84,7 +84,7 @@ function closeChild(win,id){
 
 export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   let launchEpoch=0;
-  const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false,guidedAttempted:false,discoveryQuery:"",referenceEntries:[],referenceStatus:"idle",lastDiscoveryReference:null};
+  const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false,guidedAttempted:false,discoveryQuery:"",referenceEntries:[],referenceStatus:"idle",contentEntries:[],contentStatus:"idle",lastDiscoveryReference:null};
 
   function cancelMonitor(){
     if(state.monitor&&typeof win?.clearTimeout==="function")win.clearTimeout(state.monitor);
@@ -98,7 +98,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   function paint(){
     const node=root(win);
     if(!node||!state.open)return false;
-    renderLearnPresentation(node,appState(win),win,{error:state.error,familyId:state.family,discoveryQuery:state.discoveryQuery,referenceEntries:state.referenceEntries,referenceStatus:state.referenceStatus});
+    renderLearnPresentation(node,appState(win),win,{error:state.error,familyId:state.family,discoveryQuery:state.discoveryQuery,referenceEntries:state.referenceEntries,referenceStatus:state.referenceStatus,contentEntries:state.contentEntries,contentStatus:state.contentStatus});
     node.dataset.aoLearnOwner=VERSION;
     markRouteOwner();
     return true;
@@ -109,12 +109,25 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     const results=node?.querySelector?.("[data-ao-learn-discovery-results]");
     if(!results)return false;
     results.innerHTML=learnDiscoveryMarkup(appState(win),win,{
-      query:state.discoveryQuery,referenceEntries:state.referenceEntries,referenceStatus:state.referenceStatus
+      query:state.discoveryQuery,referenceEntries:state.referenceEntries,referenceStatus:state.referenceStatus,contentEntries:state.contentEntries,contentStatus:state.contentStatus
     });
     return true;
   }
 
+  function ensureContentDiscovery(){
+    if(state.contentStatus==="ready"||state.contentStatus==="loading")return;
+    state.contentStatus="loading";
+    void loadFormationContentDiscovery(win).then(entries=>{
+      state.contentEntries=entries;state.contentStatus="ready";
+      if(state.open&&!state.child)updateDiscovery();
+    }).catch(error=>{
+      state.contentStatus="unavailable";
+      try{win?.console?.warn?.("Formation content discovery unavailable",error)}catch{}
+      if(state.open&&!state.child)updateDiscovery();
+    });
+  }
   function ensureDiscovery(){
+    ensureContentDiscovery();
     if(state.referenceStatus==="ready"||state.referenceStatus==="loading")return;
     state.referenceStatus="loading";
     void loadReferenceDiscovery(win).then(entries=>{
@@ -239,19 +252,15 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         });
         return;
       }
-      // A Questions entrance points to the one published specialist reader.
-      // The canonical research previews are labelled as drafts, not certified public routes.
-      const questions=event.target?.closest?.("[data-ao-learn-questions]");
-      if(questions){
-        event.preventDefault?.();
-        state.family="spiritual-moral";
-        state.lastFamily="spiritual-moral";
-        state.lastLauncher="learn.sexual_ethics";
-        state.error="";
-        void openModule("learn.sexual_ethics");
-        return;
-      }
-      const surface=event.target?.closest?.("[data-ao-learn-discovery-surface]");
+      // Questions is a real study area, not a disguised Sexual Ethics shortcut.
+       const questions=event.target?.closest?.("[data-ao-learn-questions]");
+       if(questions){
+         event.preventDefault?.();
+         state.family="questions";state.lastFamily="questions";
+         state.discoveryQuery="";state.error="";
+         paint();return;
+       }
+       const surface=event.target?.closest?.("[data-ao-learn-discovery-surface]");
       if(surface){
         event.preventDefault?.();
         const target=surface.dataset?.aoLearnDiscoverySurface;
@@ -272,9 +281,16 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           state.family=familyId;
           state.lastFamily=familyId;
         }
-        const opts=referenceId&&["concept","lexeme","phrase"].includes(referenceKind)
-          ?{[referenceKind==="concept"?"entryId":referenceKind==="lexeme"?"lexemeId":"phraseId"]:referenceId}:{};
-        void openModule(state.lastLauncher,opts);
+        const contentId=launch.dataset?.aoLearnContentId??null;
+         const contentKind=launch.dataset?.aoLearnContentKind??null;
+         const opts=referenceId&&["concept","lexeme","phrase"].includes(referenceKind)
+           ?{[referenceKind==="concept"?"entryId":referenceKind==="lexeme"?"lexemeId":"phraseId"]:referenceId}
+           :contentId&&contentKind==="question"?{questionId:contentId}
+           :contentId&&contentKind==="topic"?{dossierId:contentId}
+           :contentId&&contentKind==="spiritual"?{lessonId:contentId}
+           :contentId&&contentKind==="latin"&&/^latin:([1-9]|[1-3][0-9]|40)$/.test(contentId)
+             ?{lessonNumber:Number(contentId.split(":")[1])}:{};
+         void openModule(state.lastLauncher,opts);
       }
     });
     node.addEventListener("keydown",event=>{
@@ -432,7 +448,11 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           ...(opts?.phraseId?{phraseId:opts.phraseId}:{})
         });
         result={ok:opened===true||opened?.ok===true,canonicalId:GLOSSARY_ROUTE_ID};
-      }else result=await registry.open(id);
+      }else result=await registry.open(id,opts);
+       if(result?.ok===true&&id===LATIN_COURSE_ROUTE_ID&&opts?.lessonNumber){
+         const focused=await win?.AO_LATIN_COURSE_V1?.openLesson?.(opts.lessonNumber);
+         if(focused===false)result={...result,ok:false,error:"LATIN_LESSON_UNAVAILABLE"};
+       }
     }catch(error){
       try{win?.console?.error?.("Modular Learn module launch failed",error);}catch{}
     }
