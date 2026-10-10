@@ -1,0 +1,261 @@
+{
+  "schema": "CUSTOMS_CANONICAL_SCOPE_REVIEW_V1",
+  "as_of": "2026-10-10",
+  "status": "EDITORIAL_REVIEW_NOT_PUBLISHED_GEO_DISTRIBUTION",
+  "purpose": "A mechanical crosswalk of the active Customs seed, not a claim of universal custom or complete historical coverage.",
+  "invariants": [
+    "Countries are evidence locations, never exclusive ownership or universal prevalence.",
+    "FRENCH_CATHOLIC_CUSTOM is a legacy mixed-axis class. Do not interpret it as limited to France.",
+    "No production source record or ID is modified by this review.",
+    "Review SOT-07 and other salvaged source claims before canonical taxonomy migration."
+  ],
+  "summary": {
+    "canonical_customs": 13,
+    "attestations": 71,
+    "source_backed_place_attestations": 58
+  },
+  "reviews": [
+    {
+      "custom_id": "DOM-002",
+      "name": "Domestic holy-water font / bénitier de chevet",
+      "current_class": "FRENCH_CATHOLIC_CUSTOM",
+      "attestation_count": 1,
+      "mapped_place_attestations": 0,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [
+        "GEOGRAPHIC_CLASS_MUST_NOT_IMPLY_EXCLUSIVE_FRENCH_OWNERSHIP",
+        "REVIEW_CATHOLIC_WIDE_PRACTICE_VS_LOCAL_VARIANT"
+      ],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DOM-006",
+      "name": "Family consecration to the Sacred Heart",
+      "current_class": "DEVOTIONAL_OPTION",
+      "attestation_count": 2,
+      "mapped_place_attestations": 1,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DOM-007",
+      "name": "Intronement of a Sacred Heart image in the home",
+      "current_class": "DEVOTIONAL_OPTION",
+      "attestation_count": 2,
+      "mapped_place_attestations": 1,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "LIFE-002",
+      "name": "Relevailles / blessing after childbirth",
+      "current_class": "FRENCH_CATHOLIC_CUSTOM",
+      "attestation_count": 1,
+      "mapped_place_attestations": 0,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [
+        "GEOGRAPHIC_CLASS_MUST_NOT_IMPLY_EXCLUSIVE_FRENCH_OWNERSHIP",
+        "REVIEW_CATHOLIC_WIDE_PRACTICE_VS_LOCAL_VARIANT"
+      ],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DEV-001",
+      "name": "May as the month of Mary",
+      "current_class": "FRENCH_CATHOLIC_CUSTOM",
+      "attestation_count": 1,
+      "mapped_place_attestations": 0,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [
+        "GEOGRAPHIC_CLASS_MUST_NOT_IMPLY_EXCLUSIVE_FRENCH_OWNERSHIP",
+        "REVIEW_CATHOLIC_WIDE_PRACTICE_VS_LOCAL_VARIANT"
+      ],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DEV-006",
+      "name": "Pilgrimage to a shrine or holy place",
+      "current_class": "DEVOTIONAL_OPTION",
+      "attestation_count": 13,
+      "mapped_place_attestations": 11,
+      "source_backed_country_codes": [
+        "BE",
+        "DE",
+        "FR",
+        "US"
+      ],
+      "global_scope_attestation_count": 1,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DEV-007",
+      "name": "Regional pardons and shrine anniversaries",
+      "current_class": "LOCAL_REGIONAL_CUSTOM",
+      "attestation_count": 36,
+      "mapped_place_attestations": 35,
+      "source_backed_country_codes": [
+        "BE",
+        "BR",
+        "CA",
+        "CH",
+        "CO",
+        "CZ",
+        "DE",
+        "FR",
+        "GB",
+        "IT",
+        "MX",
+        "NG",
+        "NL",
+        "NZ",
+        "PL",
+        "PT",
+        "UG",
+        "US"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [
+        "UMBRELLA_COMBINES_REGIONAL_PARDONS_WITH_DISTINCT_SHRINE_EVENTS"
+      ],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DEV-009",
+      "name": "Ex-votos",
+      "current_class": "FRENCH_CATHOLIC_CUSTOM",
+      "attestation_count": 2,
+      "mapped_place_attestations": 2,
+      "source_backed_country_codes": [
+        "DE",
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [
+        "GEOGRAPHIC_CLASS_MUST_NOT_IMPLY_EXCLUSIVE_FRENCH_OWNERSHIP",
+        "FRENCH_CLASS_HAS_NON_FRENCH_SOURCE_BACKED_EXAMPLES",
+        "REVIEW_CATHOLIC_WIDE_PRACTICE_VS_LOCAL_VARIANT"
+      ],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DEV-010",
+      "name": "Votive candle at a shrine",
+      "current_class": "FRENCH_CATHOLIC_CUSTOM",
+      "attestation_count": 7,
+      "mapped_place_attestations": 7,
+      "source_backed_country_codes": [
+        "AT",
+        "CA",
+        "DE",
+        "FR",
+        "US"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [
+        "GEOGRAPHIC_CLASS_MUST_NOT_IMPLY_EXCLUSIVE_FRENCH_OWNERSHIP",
+        "FRENCH_CLASS_HAS_NON_FRENCH_SOURCE_BACKED_EXAMPLES",
+        "REVIEW_CATHOLIC_WIDE_PRACTICE_VS_LOCAL_VARIANT"
+      ],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DEAD-001",
+      "name": "Prayerful cemetery visit",
+      "current_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "attestation_count": 2,
+      "mapped_place_attestations": 0,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 1,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "DEAD-003",
+      "name": "Prayer for the dead on 2 November",
+      "current_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "attestation_count": 2,
+      "mapped_place_attestations": 1,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "BELL-004",
+      "name": "Glas / death bell",
+      "current_class": "FRENCH_CATHOLIC_CUSTOM",
+      "attestation_count": 1,
+      "mapped_place_attestations": 0,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [
+        "GEOGRAPHIC_CLASS_MUST_NOT_IMPLY_EXCLUSIVE_FRENCH_OWNERSHIP",
+        "REVIEW_CATHOLIC_WIDE_PRACTICE_VS_LOCAL_VARIANT"
+      ],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    },
+    {
+      "custom_id": "FOOD-001",
+      "name": "Pain bénit",
+      "current_class": "LOCAL_REGIONAL_CUSTOM",
+      "attestation_count": 1,
+      "mapped_place_attestations": 0,
+      "source_backed_country_codes": [
+        "FR"
+      ],
+      "global_scope_attestation_count": 0,
+      "distribution_verdict": "UNASSESSED_DO_NOT_INFER",
+      "normative_status_review": "PENDING_SOURCE_REVIEW",
+      "issues": [],
+      "action": "REVIEW_KEEP_CANONICAL_ID"
+    }
+  ]
+}
