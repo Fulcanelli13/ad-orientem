@@ -47,6 +47,28 @@ try{
   assert.equal(selected.explicitlyChosenForm,true);
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-mass-form"),form);
  }
+ await page.locator("[data-full-mass-rites] summary").click();
+ assert.equal(await page.locator('[data-full-mass-rite="ASPERGES"]').count(),1,
+  "Sunday sung Mass must offer actual aspersion without imposing it");
+ assert.equal(await page.locator('[data-full-mass-rite="ASPERGES"]').isChecked(),false);
+ await page.locator('[data-full-mass-rite="ASPERGES"]').check();
+ const observed=await page.evaluate(()=>__full.composeRitesFor(__legacyMass(),{
+  precedingRites:[],followingActions:[],
+ }));
+ assert.deepEqual(observed.precedingRites,["ASPERGES"]);
+ await page.evaluate(()=>{__kind="REQUIEM";__full.refresh()});
+ assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').count(),1);
+ assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').isChecked(),false);
+ await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').check();
+ const funeral=await page.evaluate(()=>__full.composeRitesFor(__legacyMass(),{
+  precedingRites:[],followingActions:[],
+ }));
+ assert.ok(funeral.followingActions.includes("REQUIEM_ABSOLUTION"));
+ await page.evaluate(()=>{__kind="CALENDAR";__full.refresh()});
+ assert.equal(await page.locator('[data-full-mass-rite="REQUIEM_ABSOLUTION"]').count(),0,
+  "Requiem branch must not survive a new actual celebration");
+ assert.equal(await page.locator('[data-full-mass-rite="ASPERGES"]').isChecked(),false,
+  "An old actual-ceremony choice must not leak to a new celebration");
  assert.equal(await page.locator("[data-full-mass-category]").count(),5);
  await page.evaluate(()=>{
   globalThis.__categoryClicks=[];
