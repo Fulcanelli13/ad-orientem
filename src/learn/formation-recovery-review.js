@@ -236,9 +236,9 @@ export function createFormationRecoveryReview(win=globalThis) {
   const dossierRows=()=>{
     const q=state.query.toLowerCase().trim();
     const selected=visibleDossiers().filter(x=>
-      [x.id,x.title,x.family,familyName(x.family),...x.research.map(y=>y.title_en)].some(v=>String(v||"").toLowerCase().includes(q)));
+      [x.id,x.title,x.family,familyName(x.family),...x.research.flatMap(y=>[y.title_en,y.title_fr])].some(v=>String(v||"").toLowerCase().includes(q)));
     return selected.map(x=>'<button type="button" data-rr-dossier="'+esc(x.id)+'"><small>'+
-      esc(x.id)+' · '+esc(familyName(x.family))+' · '+esc(x.research.length+' '+pick(win,'linked research records','recherches liées'))+
+      esc(x.id)+' · '+esc(familyName(x.family))+' · '+esc(x.synthesis?pick(win,'Draft with source links','Brouillon avec sources'):pick(win,'Draft pending','Brouillon en attente'))+' · '+esc(x.research.length+' '+pick(win,'prior records','recherches antérieures'))+
       '</small>'+esc(x.title)+'</button>').join("")||
       '<p class="rrMuted">'+esc(pick(win,"No matching dossiers.","Aucun dossier correspondant."))+'</p>';
   };
@@ -322,9 +322,9 @@ export function createFormationRecoveryReview(win=globalThis) {
       '<p class="rrWarning">'+esc(pick(win,
       "Research links are not an approval of the text. Empty dossiers here mean no record in this recovered pack, not that the question was never researched.",
       "Ces liens ne valent pas approbation. Un dossier vide ici signifie seulement qu’aucune entrée de cette collection n’y est associée."))+'</p>'+
-      '<div class="rrMuted">'+esc(state.dossiers.filter(x=>x.research.length).length)+' / 141 '+
-      esc(pick(win,"dossiers have editorial research drafts; 5 legacy records belong elsewhere.",
-      "dossiers ont un projet de recherche ; 5 archives relèvent d’autres modules."))+'</div>'+
+      '<div class="rrMuted">'+esc(visibleDossiers().length)+' '+
+      esc(pick(win,"dossiers in this view. All 141 have unpublished source-linked draft readings; 53 contain indexed earlier research.",
+      "dossiers affichés. Les 141 possèdent un projet de lecture sourcé non publié ; 53 comportent des recherches anciennes indexées."))+'</div>'+
       '<div class="rrTabs" role="group" aria-label="Review mode">'+
       [['dossiers',pick(win,"Dossiers (141)","Dossiers (141)")],
        ['records',pick(win,"Research (123)","Recherches (123)")]].map(([value,label])=>
