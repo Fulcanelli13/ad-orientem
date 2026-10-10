@@ -60,6 +60,16 @@ def main():
             candidates.append(("nga", item, args.harvest / "sacred-art-full-nga" / str(item.get("filename",""))))
     else:
         missing_reports.append("nga")
+    artic_path = args.harvest / "sacred-art-full-artic" / "research.json"
+    if artic_path.is_file():
+        artic = read(artic_path)
+        source_reports.append({"lane":"artic", "artworkRows":len(artic.get("artworks",[])),
+                               "preferredClaimed":artic.get("count",0),
+                               "queries":artic.get("totalQueries",0)})
+        for item in artic.get("artworks",[]):
+            candidates.append(("artic", item, args.harvest / "sacred-art-full-artic" / "originals" / str(item.get("filename",""))))
+    else:
+        missing_reports.append("artic")
 
     proposals, incidents, seen_ids, seen_hashes = [], [], {}, {}
     counters = Counter()
@@ -74,6 +84,9 @@ def main():
             continue
         if lane == "nga" and (item.get("imageUsageStatus") != NGA_ACCEPT or str(item.get("imageOpenAccessFlag")) != "1"):
             counters["NGA_IMAGE_RIGHTS_OR_STATUS_HELD"] += 1
+            continue
+        if lane == "artic" and (item.get("rights") != "ARTIC_PUBLIC_DOMAIN_IMAGE" or not (item.get("sourceUrl") or "").startswith("https://www.artic.edu/artworks/")):
+            counters["ARTIC_RIGHTS_HELD"] += 1
             continue
         if not source_path.is_file() or not source_path.resolve().is_relative_to(args.harvest.resolve()):
             incidents.append({"id":ident,"lane":lane,"reason":"MISSING_OR_OUTSIDE_ARTIFACT_FILE"})
@@ -106,7 +119,7 @@ def main():
                "sourceLane":lane,"museum":"National Gallery of Art" if lane=="nga" else item.get("imageMuseum"),
                "objectUrl":item.get("sourceUrl"),"originalSha256":actual,
                "archiveOriginal":str(source_path.relative_to(args.harvest)),
-               "sourceArtifactName":"sacred-art-full-nga" if lane=="nga" else "sacred-art-full-wide-"+lane,
+               "sourceArtifactName":"sacred-art-full-nga" if lane=="nga" else "sacred-art-full-artic" if lane=="artic" else "sacred-art-full-wide-"+lane,
                "targetId":item.get("targetId"),
                "imageRights":"NGA_IMAGE_OPENACCESS_1" if lane=="nga" else item.get("rights"),
                "pixelWidth":item.get("width"),"pixelHeight":item.get("height"),
@@ -124,7 +137,7 @@ def main():
       "scope":"RESEARCH_ONLY_DO_NOT_ADD_TO_CANONICAL_WITHOUT_SOURCE_REVIEW",
       "baseline":{"paintingRecords":len(registry),"acquiredHashedOriginals":len(acquired),
                   "canonicalUniqueSha256":len(existing_hashes)},
-      "harvest":{"lanesExpected":list(GROUPS)+["nga"],"lanesPresent":[r["lane"] for r in source_reports],
+      "harvest":{"lanesExpected":list(GROUPS)+["nga","artic"],"lanesPresent":[r["lane"] for r in source_reports],
                  "missingReports":missing_reports,"reports":source_reports,
                  "rawArtworkRows":len(candidates),"proposedNewHashedOriginals":len(proposals),
                  "postReconciliationTechnicalPotential":len(acquired)+len(proposals),
