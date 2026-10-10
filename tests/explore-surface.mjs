@@ -675,5 +675,6 @@ const expandedPlace=renderExploreToString(buildExploreViewModel({
 assert.match(expandedPlace,/data-explore-place-item=/,"expanded Place must retain original source-owned records");
 
 console.log("PASS unified Explore projection, canonical customs and map-first heritage surface");
+await import("./heritage-place-reconciliation.mjs");
 await import("./explore-handoff-recovery.mjs");
 await import("./explore-first-load-recovery.mjs");
