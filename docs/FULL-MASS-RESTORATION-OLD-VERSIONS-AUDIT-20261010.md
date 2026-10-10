@@ -28,13 +28,14 @@ These are **historical coverage records**, not new re-certifications of every ca
 - An **in-app pre-Mass ceremonial-form chooser**, mounted before Start Mass and visible within the already-present Mass preflight, in English and French.
 - It exposes the exact four certified ceremonial forms, including the two independently researched Missa Cantata variants. No "Solemn minus ministers" shortcut.
 - User choice is **session-only**. It overrides the host's old form setting **for R17 preparation only**, leaving the celebration/Proper source, date, calendar rank and reader mode unchanged.
+- **Five working Change Mass shortcuts**: Mass of the day, Votive, Requiem, Nuptial, Other. Each calls the existing `AO_CELEBRATION_API.openChangeMass()` and clicks the established source-owned category control. The user then chooses the exact formulary/circumstance in that owner; no Proper is guessed from the category tap.
 - A clear **actual celebration summary** (Mass of the day / Votive / Requiem / Nuptial / Good Friday / Easter Vigil), derived from the source-owning host resolver, not computed from the chosen form.
 - Selection resets on a change of Mass date; Good Friday disables form selection. No unsupported type is forced into an ordinary Mass.
-- The remaining historical Mass-of-day/votive/Requiem/Nuptial picker stays operational and authoritative for the actual celebration/Proper; this pass does **not** duplicate or bypass it. Explicit source absence continues to block Start.
+- The original category and formulary picker remains **authoritative**; the new shortcuts navigate into it. The redundant old *Sung/Low* button grid is hidden while the native four-form selector is mounted. Explicit source absence continues to block Start.
 
 ## Completion criteria for the entire module
 
-The next Mass entry work should consolidate the historical celebration picker itself into one visible pre-Mass surface and retire duplicate historical controls **only after direct parity verification**. It must reconnect the full approved Proper catalogue (including seasonal Marian votives, All Souls formularies and the different Requiem classes) without assuming every votive is freely permitted on every date. Confirm generated actualMass/proper/overlays from the same single selected celebration, not from a static card label.
+The next Mass entry work should integrate the category subpages/formulary catalogue inside the new selector rather than navigating through the old Change Mass sheet, and retire that historical UI **only after direct parity verification**. It must reconnect the full approved Proper catalogue (including seasonal Marian votives, All Souls formularies and the different Requiem classes) without assuming every votive is freely permitted on every date. Confirm generated actualMass/proper/overlays from the same single selected celebration, not from a static card label.
 
 Then attach the optional rites and lifecycle switches (Asperges/Vidi aquam, Palm, Ash, Candlemas, Rogations, Nuptial, Absolution, Holy Thursday, Easter Vigil, Corpus Christi and generic processions) with the appropriate calendar, rank and physical-action gates. Optional processions **must never be activated by calendar date alone**.
 
