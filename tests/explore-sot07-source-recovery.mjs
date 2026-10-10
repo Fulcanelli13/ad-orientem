@@ -9,6 +9,13 @@ const N=read("data/customs/negative-knowledge.v1.json");
 const G=read("data/geography/seed-registry.v1.json");
 const R=read("data/explore/heritage-place-reconciliation.review.v1.json");
 
+function adler32(value){
+ let a=1,b=0;
+ for(const byte of Buffer.from(value,"utf8")){a=(a+byte)%65521;b=(b+a)%65521}
+ return (((b<<16)|a)>>>0).toString(16).padStart(8,"0");
+}
+
+
 assert.equal(S.schema,"AO_SOT07_FULL_CUSTOMARY_CROSSWALK_REVIEW_V1");
 assert.equal(S.status,"RESEARCH_RECOVERED_REVIEW_ONLY_NO_AUTOMATIC_PUBLICATION");
 assert.equal(S.source_sheet,"01_CUSTOMARY_REGISTER");
@@ -16,6 +23,8 @@ assert.equal(S.rows.length,63,"63 original SOT07 row identities must be recovere
 assert.equal(new Set(S.rows.map(x=>x.original_custom_id)).size,63,"SOT07 original IDs duplicated");
 assert.deepEqual(S.rows.map(x=>x.row_number),Array.from({length:63},(_,i)=>i+5));
 assert.ok(S.rows.every(x=>x.workbook_source_ids.length>0),"a research row lost all original bibliographic provenance");
+assert.equal(adler32(S.rows.map(x=>x.original_custom_id+"|"+x.workbook_source_ids.join(";")).join("\n")),"3146fda0","63 SOT-07 source identity/ID rows no longer match original workbook");
+
 const published=new Set(P.customs.map(x=>x.custom_id));
 const held=new Set(N.entries.filter(x=>x.decision==="HOLD").map(x=>x.custom_id));
 const rejected=new Set(N.entries.filter(x=>x.decision==="REJECT").map(x=>x.custom_id));
@@ -39,6 +48,8 @@ assert.deepEqual(A.counts,{families:53,complexes:21,geographic_attestations:135,
 const fam=new Set(A.families.map(x=>x.family_id)),areas=new Set(A.geographic_areas.map(x=>x.geo_id)),src=new Set(A.source_registry.map(x=>x.source_id)),att=new Set(A.attestations.map(x=>x.attestation_id));
 assert.equal(fam.size,53);assert.equal(areas.size,162);assert.equal(src.size,117);assert.equal(att.size,135);
 assert.equal(new Set(A.complexes.map(x=>x.complex_id)).size,21);
+assert.equal(adler32(A.attestations.map(x=>[x.attestation_id,x.family_id,x.geo_id,x.source_id,x.relation].join("|")).join("\n")),"c843578d","135 SOT-07G foreign-key tuples no longer match original workbook");
+
 assert.deepEqual(A.families.map(x=>x.workbook_row),Array.from({length:53},(_,i)=>i+5));
 assert.deepEqual(A.complexes.map(x=>x.workbook_row),Array.from({length:21},(_,i)=>i+5));
 assert.deepEqual(A.source_registry.map(x=>x.workbook_row),Array.from({length:117},(_,i)=>i+5));
