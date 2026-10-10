@@ -1,0 +1,115 @@
+{
+  "schema": "AO_SACRED_ART_BULK_ACQUISITION_QA_RECONCILIATION_V1",
+  "createdOn": "2026-10-10",
+  "ownerIssue": 885,
+  "bulkRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+  "reviewSummary": {
+    "downloadedPreferredRows": 28,
+    "uniquePreferredOriginalSha256": 24,
+    "importedPreferredSourceOriginals": 22,
+    "uniquePreferredFalseTargetPaintingsExcluded": 2,
+    "duplicateOriginalRowsRemoved": 4,
+    "borderlineOriginalsHeldWithoutMasterImport": 4,
+    "followupDirectRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38058367058",
+    "directSacredHeartSourceOriginalsImported": 2,
+    "productionApprovedOriginals": 0
+  },
+  "excluded": [
+    {
+      "id": "met-435885",
+      "title": "View of the Domaine Saint-Joseph",
+      "mistakenTargets": [
+        "person.joseph",
+        "devotion.st-joseph"
+      ],
+      "decision": "REJECT_FALSE_SAINT_NAME",
+      "reason": "The depicted subject is a LANDSCAPE associated with a geographic estate called Saint-Joseph; it is not a painting of Saint Joseph.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/435885"
+    },
+    {
+      "id": "cma-144270",
+      "title": "Saint Paul the Hermit",
+      "mistakenTargets": [
+        "person.paul"
+      ],
+      "decision": "REJECT_DISTINCT_PERSON",
+      "reason": "The painting depicts Saint Paul the Hermit, not Saint Paul the Apostle. It cannot fill the Apostle portrait slot.",
+      "sourceUrl": "https://clevelandart.org/art/1969.109"
+    }
+  ],
+  "keptWithCorrectedSubject": [
+    {
+      "id": "cma-142474",
+      "trueSubject": "Crucifixion of Saint Andrew",
+      "rejectedSuggestedTargets": [
+        "station.11",
+        "calendar.passion",
+        "devotion.precious-blood"
+      ],
+      "relation": "Reclassified as Saint Andrew's martyrdom, not the Crucifixion of Jesus."
+    },
+    {
+      "id": "cma-136922",
+      "trueSubject": "Virgin and Child with Saints",
+      "rejectedSuggestedTargets": [
+        "devotion.our-lady-perpetual-help"
+      ],
+      "relation": "General Madonna with saints lacks identifying features/provenance of Our Lady of Perpetual Help."
+    },
+    {
+      "id": "cma-142473",
+      "trueSubject": "Virgin and Child with Saints",
+      "rejectedSuggestedTargets": [
+        "devotion.our-lady-perpetual-help"
+      ],
+      "relation": "Historic Marian iconography, not certified specific Our Lady of Perpetual Help icon."
+    },
+    {
+      "id": "cma-515375",
+      "trueSubject": "Front-facing Lamentation and saints, Annunciation on reverse of wings",
+      "rejectedSuggestedTargets": [
+        "calendar.annunciation"
+      ],
+      "relation": "Do not count source file as depicting unseen Annunciation reverse without face-specific image/crop evidence."
+    },
+    {
+      "id": "cma-129386",
+      "trueSubject": "Christ on the Cross",
+      "rejectedSuggestedTargets": [
+        "station.12 as specifically timed death"
+      ],
+      "relation": "Exact Crucifixion image accepted; precise moment of death not proven and no Station-number source claim."
+    }
+  ],
+  "borderlineHeldOutsideMaster": [
+    {
+      "id": "cma-130981",
+      "title": "The Annunciation",
+      "reason": "2,048px longest dimension; source research-only QA tier.",
+      "sourceUrl": "https://clevelandart.org/art/1953.660.1"
+    },
+    {
+      "id": "met-438761",
+      "title": "The Annunciation",
+      "reason": "1,935px longest dimension; source research-only QA tier.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438761"
+    },
+    {
+      "id": "met-436299",
+      "title": "The Coronation of the Virgin, and Saints",
+      "reason": "1,941px longest dimension; faded image and source research-only QA tier; not automatically All Saints exact.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436299"
+    },
+    {
+      "id": "met-436068",
+      "title": "Christ Enthroned with Saints",
+      "reason": "1,905px longest dimension; Christ-King theological theme, not automatically exact proper feast. Research image held for personal artistic/crop review.",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436068"
+    }
+  ],
+  "nonClaims": [
+    "This ledger is research provenance and image identity screening, not a user-made Accept/Reject artistic selection.",
+    "Imported originals are counted once regardless of repeat appearance in five acquisition artifacts.",
+    "Borderline works remain in acquisition artifacts; their source originals and metadata are not yet automatically credited in the master coverage counts."
+  ]
+}
