@@ -1363,7 +1363,12 @@ export async function mountNativeReaderPreview({
     const response=transient.response;
     const bell=transient.bell;
     const cinematic=partCinematic ?? transient.cinematic;
-    const {priestVoice,priestPosition}=owned;
+    const {priestVoice}=owned;
+    const priestPosition=focusedFaithful?.conditionalSedilia
+      ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
+          value:"SEDILIA",owner:"CUSTOMARY_SEDILIA_WITNESS",
+          sourceCueId:focusedFaithful.priestStateWitness})
+      : owned.priestPosition;
 
     // Posture ownership is profile-aware. FOLLOW_CONGREGATION remains an
     // observed rollback channel; sourced/local profiles never silently inherit it.
@@ -1425,8 +1430,17 @@ export async function mountNativeReaderPreview({
     // deliberately resolved a different faithful posture.
     const localTransition=postureResolved.owner==="LOCAL_OVERRIDE" &&
       postureResolved.localKey===activeCueId && Boolean(posture);
-    const postureCue=localTransition
-      ? Object.freeze({...posture,cueId:activeCueId,owner:"LOCAL_CUSTOMARY_CUE"})
+    const sediliaMovement=focusedFaithful?.conditionalSedilia===true && (
+      ["AO.SM.C0055","AO.SM.C0090"].includes(activeCueId)
+    );
+    const sediliaReturn=focusedFaithful && !focusedFaithful.conditionalSedilia &&
+      customaryPrefs.followPriestSeating!==false &&
+      ["AO.SM.C0068","AO.SM.C0104"].includes(activeCueId);
+    const postureCue=(sediliaMovement||sediliaReturn)
+      ? Object.freeze({...posture,cueId:activeCueId,
+          owner:"CUSTOMARY_PRIEST_SEDILIA_TRANSITION"})
+      : localTransition
+        ? Object.freeze({...posture,cueId:activeCueId,owner:"LOCAL_CUSTOMARY_CUE"})
       : cueNative && cueProjection?.postureTransition===true &&
         cueProjection?.posture?.cueId===activeCueId &&
         String(posture?.value??posture?.label??"")===String(cueProjection.posture.value??cueProjection.posture.label??"")
@@ -1462,6 +1476,7 @@ export async function mountNativeReaderPreview({
         localPosture:customaryPrefs.localPostures[activeCueId]??"DEFAULT",
         localGesture:customaryPrefs.localGestures?.[activeCueId]??"DEFAULT",
         followPriestSeating:customaryPrefs.followPriestSeating,
+        localPostures:customaryPrefs.localPostures,
         cueId:activeCueId,
         localPostureEditable:Boolean(activeCueId && !cueProjection?.posture?.fixed),
       }),
