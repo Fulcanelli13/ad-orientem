@@ -2802,6 +2802,23 @@
         "SHR-IT-santuario-volto-santo-manoppello"
       ],
       "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:montecassino-abbey",
+      "place_id": "place:IT:montecassino-abbey",
+      "name": "Abbazia di Montecassino",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Benedict of Nursia and Saint Scholastica",
+      "origin_summary": "Founding Benedictine monastery and the monastery's traditionally attributed shared tomb of Benedict and Scholastica. See the competing Fleury relic-custody tradition; no independent object identity verdict.",
+      "associated_saints": [
+        "Saint Benedict of Nursia",
+        "Saint Scholastica"
+      ],
+      "source_ids": [
+        "SHR-IT-montecassino-abbey"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "pilgrimages": [
@@ -5710,6 +5727,19 @@
       "scope_note": "The Capuchin sanctuary welcomes pilgrims and publishes cathedral-style visitor information. The existence of the venerated image is documented; direct inspection arrangements should be checked. Do not equate the image with the original Roman Veronica or with an authenticated imprint of Christ. Source-proven access information can change; consult original institution. No Calendar rule or 1962 Mass is implied.",
       "source_ids": [
         "SHR-IT-santuario-volto-santo-manoppello"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:montecassino-abbey:destination",
+      "name": "Pilgrimage to the tomb of Saints Benedict and Scholastica at Montecassino",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:montecassino-abbey",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The abbey welcomes pilgrims at the tomb. Visiting times and access must be checked with the custodian. Fleury reports another Benedict relic tradition; neither is independently authenticated here. This entry does not provide 1962 Mass times.",
+      "source_ids": [
+        "SHR-IT-montecassino-abbey"
       ],
       "confidence": "MEDIUM_HIGH"
     }
