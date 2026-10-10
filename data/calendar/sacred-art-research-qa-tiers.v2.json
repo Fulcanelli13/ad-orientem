@@ -1,0 +1,59 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_QA_TIERS_V2",
+  "createdOn": "2026-10-10",
+  "ownerIssue": 885,
+  "purpose": "Accelerate broad source discovery without weakening publication, identity or reuse constraints.",
+  "automatedOriginalScreen": {
+    "preferred": {
+      "minimumLongestDimensionPx": 2500,
+      "minimumColourFraction": 0.07,
+      "interpretation": "Preserve high-res colour original as technically acquired research-only; no artist, crop, liturgy or rights approval."
+    },
+    "borderline": {
+      "minimumLongestDimensionPx": 1800,
+      "minimumColourFraction": 0.025,
+      "interpretation": "Retain borderline authentic painting source only in research artifact and contact sheet; do not credit as a target-minimum original or automatically publish."
+    },
+    "rejectBelow": {
+      "minimumLongestDimensionPx": 1800,
+      "minimumColourFraction": 0.025,
+      "interpretation": "Reject insufficient display resolution or nearly monochrome source for this artwork acquisition lane."
+    }
+  },
+  "sourceClasses": {
+    "autoAcquire": [
+      "Museum-classified painting with original image and object-level CC0 or equivalent source metadata."
+    ],
+    "manualReview": [
+      "Traditional painted panel icons with exact iconography and reproduction rights.",
+      "Frescoes and mural paintings when original photograph is eligible for worldwide commercial app reuse.",
+      "Historic altarpieces and coherent painted cycles where source reproduction is legally cleared."
+    ],
+    "neverAutoApprove": [
+      "Photographs of sculptures, museum installations or tourist objects.",
+      "Line engravings or prints disguised as full-colour paintings.",
+      "Modern copyrighted photos of old artworks without reproduction rights.",
+      "AI-generated paintings passed off as historical originals.",
+      "Subject inferred only from vague theological resemblance or calendar date."
+    ]
+  },
+  "coveragePolicy": {
+    "firstPassMinimumOriginalsPerFeast": 1,
+    "preferAlternatives": 2,
+    "keepCanonicalTargetMinimaUnchanged": true,
+    "allowCrossModuleReuse": true,
+    "metricGrades": {
+      "A": "Artwork specifically depicts observed subject / scripturally appointed event with source evidence.",
+      "B": "Observed day has a defensible relevant contextual religious image, qualified as context and not exact.",
+      "C": "Only thematic or uncertain leads; not a covered day."
+    }
+  },
+  "releaseGates": {
+    "artCuratorApprovalRequired": true,
+    "worldwideCommercialReproductionRightsRequired": true,
+    "sourceChecksumRequired": true,
+    "mobileCropApprovalRequired": true,
+    "noDirectRuntimeMutation": true,
+    "noAutomaticPromotionFromBorderline": true
+  }
+}
