@@ -75,7 +75,10 @@ assert.doesNotMatch(dom,/grid-template-columns:repeat\(3,1fr\).*ao-reader-top-ri
 
 assert.match(dom,/data-role="schola-page"/);
 assert.match(dom,/data-role="schola-progress"/);
-assert.match(dom,/data-role="schola-translation"/);
+assert.doesNotMatch(dom,/data-role="schola-translation"/,
+  "translation should not create a duplicate line beneath the Schola");
+assert.match(dom,/setText\(root,"schola",schola/,
+  "Schola vernacular must replace the same text node");
 assert.match(dom,/data-schola-translate/);
 assert.match(dom,/SCHOLA_SPEEDS=Object\.freeze\(\[0\.25,0\.35,0\.45,0\.60,0\.80,1\.00\]\)/);
 assert.match(dom,/SCHOLA_SPEED_STORAGE_KEY="ao-schola-speed"/);
