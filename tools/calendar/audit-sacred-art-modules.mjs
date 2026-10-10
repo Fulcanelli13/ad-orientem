@@ -5,6 +5,8 @@ import {buildLiturgicalYear} from "../../src/calendar/liturgical-year.js";
 const works=JSON.parse(readFileSync("data/calendar/sacred-art-candidates.v1.json","utf8"));
 const targets=JSON.parse(readFileSync("data/calendar/sacred-art-subject-targets.v2.json","utf8"));
 const legacy=JSON.parse(readFileSync("data/calendar/sacred-art-module-targets.v1.json","utf8"));
+const crosswalk=JSON.parse(readFileSync("data/calendar/sacred-art-editorial-crosswalk.v1.json","utf8"));
+assert.equal(crosswalk.schema,"AO_SACRED_ART_EDITORIAL_SUBJECT_CROSSWALK_V1");
 const outdir="artifacts/sacred-art-coverage";
 const counts={};
 assert.equal(targets.schema,"AO_SACRED_ART_SUBJECT_TARGETS_V2");
@@ -31,6 +33,9 @@ for(const a of works.artworks){
  assert.ok(isCC0(a)||isPDart(a),a.id+" unsupported rights type");
 }
 function explicitMatch(t,a){
+ const icon=new Set(a.tags.iconography||[]);
+ const exact=crosswalk.exactIconography[t.id]||[];
+ if(exact.some(x=>icon.has(x)))return true;
  const link=new Set(a.tags.prayerKeys||[]);
  if(t.id.startsWith("rosary."))return link.has(t.id);
  if(t.id.startsWith("devotion."))return link.has(t.id.slice(9))
@@ -43,14 +48,18 @@ function explicitMatch(t,a){
 }
 const subjectCoverage=targets.targets.map(t=>{
  const matching=works.artworks.filter(a=>explicitMatch(t,a));
+ const iconRelated=crosswalk.relatedFallbackIconography[t.id]||[];
+ const symbolicFallback=works.artworks.filter(a=>!matching.includes(a)&&(a.tags?.iconography||[]).some(k=>iconRelated.includes(k)));
  const original=matching.filter(isAcquired);
  return {id:t.id,title:t.title,priority:t.priority,type:t.type,contexts:t.contexts,
   required:t.minimumOriginals,sourceCandidates:matching.length,downloadedOriginals:original.length,
   cc0Originals:original.filter(isCC0).length,pdArtOriginalsHeld:original.filter(isPDart).length,
+  relatedSymbolicCandidates:symbolicFallback.length,
+  relatedSymbolicOriginals:symbolicFallback.filter(isAcquired).length,
   missingToMinimum:Math.max(0,t.minimumOriginals-original.length),
   acquisitionStatus:original.length>=t.minimumOriginals?"SUBJECT_ORIGINALS_AVAILABLE":"SOURCE_ORIGINAL_GAP",
   approvalStatus:"NOT_ARTISTICALLY_REVIEWED",
-  images:matching.map(a=>a.id)};
+  images:matching.map(a=>a.id),relatedImageIds:symbolicFallback.map(a=>a.id)};
 });
 const rosary=legacy.principalTraditionalRosaryMysteries.map(t=>({
  id:t.key,required:t.minimumMasterpieces,
@@ -67,6 +76,8 @@ for(const y of dateSweep.years)for(let i=0;i<(y===2024?366:365);i++){
 }
 const summary={
  sourceTargets:targets.targets.length,
+ exactCrosswalkTargets:Object.keys(crosswalk.exactIconography).length,
+ symbolicFallbackTargets:Object.keys(crosswalk.relatedFallbackIconography).length,
  firstPartyModulesAndSubjectsAudited:new Set(targets.targets.flatMap(t=>t.contexts)).size,
  candidatePaintings:works.artworks.length,
  acquiredOriginals:works.artworks.filter(isAcquired).length,
@@ -88,8 +99,8 @@ const report={schema:"AO_SACRED_ART_ALL_MODULE_COVERAGE_AUDIT_V2",date:"2026-10-
  "SourceOriginalsAvailable != museum-grade beauty, crop quality, reliable subject attribution or publication approval.",
  "Season fallback dates use a *pure liturgical-period index*, NOT proof of correct observed 1962 feast or appointed Scripture artwork.",
  "No dated mass/art mapping or full 2024/2027 image match certification is claimed.",
- "A strict explicit tag-based audit deliberately does not infer a subject from the image title or saint's nominal civil date.",
- "Some subject targets permit narrative-related paintings; final labels must distinguish exact event from symbolic support.",
+ "A strict explicit tag-based audit uses the curator-written iconographic crosswalk but does not infer the observed feast or app publishability from a translated title.",
+ "Related narrative/seasonal paintings are reported separately and NEVER satisfy exact source-specific subject quotas. Iconography tags are preliminary until manual review.",
  "Commons PD-Art images are held separately from source-certified CC0 originals."
  ],summary,rosary,seasonFallbackPool:season,seasonalDateSweep:dateSweep,subjects:subjectCoverage};
 writeFileSync(outdir+"/all-modules-v2.json",JSON.stringify(report,null,2)+"\n");
