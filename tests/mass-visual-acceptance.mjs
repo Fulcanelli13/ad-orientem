@@ -227,7 +227,7 @@ try{
       const style=getComputedStyle(shell);
       const fill=shell.querySelector(".ao-schola-progress>span");
       const posture=shell.querySelector('[data-icon-slot="posture-top"]');
-      const priest=shell.querySelector('[data-icon-slot="priest-position-top"]');
+      const priest=shell.querySelector('[data-icon-slot="priest-position"]');
       const rail=shell.querySelector('.ao-rail-right [data-channel="priest-voice"]');
       const rect=el=>el?({width:el.getBoundingClientRect().width,
         height:el.getBoundingClientRect().height}):null;
