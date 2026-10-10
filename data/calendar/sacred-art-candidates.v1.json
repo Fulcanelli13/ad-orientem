@@ -17911,6 +17911,182 @@
         "artCuratorApproval": false,
         "phoneHeroCropApproval": false
       }
+    },
+    {
+      "id": "nga-50726",
+      "title": "The Temptation of Christ",
+      "artist": "Juan de Flandes",
+      "dated": "c. 1500/1504",
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
+        "objectId": "50726",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/artworks/free-images-and-open-access",
+        "sourceEvidence": "NGA official oil-on-panel object, image public-domain notice and official full IIIF original downloaded, 3087x4096, colour/source SHA256 independently checked.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "temptation-christ"
+        ],
+        "seasonIds": [
+          "lent"
+        ],
+        "observedIds": [
+          "tempora:Quad1-0:1:v"
+        ],
+        "scriptureKeys": [
+          "temptation-christ"
+        ],
+        "prayerKeys": [],
+        "observedProof": "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
+      },
+      "review": {
+        "source": "NGA_OBJECT_PAGE",
+        "rights": "MUSEUM_OR_NGA_PUBLIC_DOMAIN_RESEARCH_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3087,
+          "height": 4096
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_MUSEUM_OBJECT_AND_APPOINTED_GOSPEL_RESEARCH"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38064988174",
+        "artifactId": 11674661988,
+        "archiveOriginal": "nga-originals/nga-50726.jpg",
+        "originalWidth": 3087,
+        "originalHeight": 4096,
+        "originalSha256": "a9225bb7ebdcabbd9b8610d88576b8d24aa7e382173078e7181ae192be34d9a6"
+      },
+      "tags": {
+        "iconography": [
+          "temptation-christ"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "lent"
+        ],
+        "observed1962Identifiers": [
+          "tempora:Quad1-0:1:v"
+        ],
+        "scriptureIdentityKeys": [
+          "temptation-christ"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "MUSEUM_OBJECT_AND_SOURCE_GOSPEL_MATCH_AWAITING_USER_AUDIT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-437821",
+      "title": "The Miracle of the Loaves and Fishes",
+      "artist": "Jacopo Tintoretto (Jacopo Robusti)",
+      "dated": "ca. 1545–50",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437821",
+        "objectId": "437821",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met official painting object metadata, public-domain CC0 API eligibility and downloaded primary original SHA256 checked, 3811x1686, 0.7822 colour fraction.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "feeding-five-thousand"
+        ],
+        "seasonIds": [
+          "lent"
+        ],
+        "observedIds": [
+          "tempora:Quad4-0:1:pv"
+        ],
+        "scriptureKeys": [
+          "feeding-five-thousand"
+        ],
+        "prayerKeys": [],
+        "observedProof": "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_OR_NGA_PUBLIC_DOMAIN_RESEARCH_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3811,
+          "height": 1686
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_MUSEUM_OBJECT_AND_APPOINTED_GOSPEL_RESEARCH"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38064988279",
+        "artifactId": 11674142020,
+        "archiveOriginal": "originals/met-437821.jpg",
+        "originalWidth": 3811,
+        "originalHeight": 1686,
+        "originalSha256": "ce43ad89383b7d1526b2763d03638e6b9d17adbb4b8ee24a557fc09186c638ea"
+      },
+      "tags": {
+        "iconography": [
+          "feeding-five-thousand"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "lent"
+        ],
+        "observed1962Identifiers": [
+          "tempora:Quad4-0:1:pv"
+        ],
+        "scriptureIdentityKeys": [
+          "feeding-five-thousand"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "MUSEUM_OBJECT_AND_SOURCE_GOSPEL_MATCH_AWAITING_USER_AUDIT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
     }
   ],
   "notes": [
@@ -17925,7 +18101,8 @@
     "Tagged all catalogue works with separately namespaced prayer routes, Rosary mysteries, historic novena subjects, liturgical periods and observed source identity; automatic tag projection does not imply liturgical applicability or artistic approval.",
     "Wide devotion batch ingested with exact-vs-symbolic semantic distinctions; generic Virgin and Child paintings are NOT falsely labeled Our Lady of Perpetual Help; Saint Andrew Crucifixion is a saint entry, NOT Precious Blood or Station XI.",
     "Wide Calendar/saints/Scripture pass imported only source-consistent subjects. Saint Andrew Crucifixion is not Christ's Passion; Cézanne's Domaine Saint-Joseph is not the saint; Beheading John the Baptist is not his Nativity; medieval saints are NOT authenticated contemporary likenesses.",
-    "Formation source acquisition reconciliation includes Tintoretto/Cranach Baptism, Joos Last Judgment, El Greco Saint Jerome, Mass of St Gregory, and Samaritan; composite altarpiece explicitly held from single-iconographic-match status."
+    "Formation source acquisition reconciliation includes Tintoretto/Cranach Baptism, Joos Last Judgment, El Greco Saint Jerome, Mass of St Gregory, and Samaritan; composite altarpiece explicitly held from single-iconographic-match status.",
+    "Class-I 2026 first Lent and Laetare Gospel scene originals physically acquired from NGA/Met with individual SHA256, first-party object metadata and strict exact source links. User editorial artwork/crop audit and production release remain pending. Tintoretto's 3811x1686-wide original must be inspected for portrait phone crop or dedicated landscape layout."
   ],
   "tagSchema": "AO_SACRED_ART_SEMANTIC_TAGS_V2"
 }
