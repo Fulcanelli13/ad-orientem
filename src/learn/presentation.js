@@ -223,6 +223,9 @@ export function learnPresentationCss(){
  .aoLearnFamilyDoor{justify-content:center}.aoLearnFamilyDoor p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:430px){.aoLearnModGrid.aoLearnFamilyGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:155px;justify-content:flex-end;padding:48px 11px 12px;gap:5px}.aoLearnFamilyGrid .aoLearnFamilyDoor.iconized{padding:48px 11px 12px}.aoLearnFamilyGrid .aoLearnModIcon{width:29px;height:29px;top:12px;left:11px}.aoLearnFamilyGrid .aoLearnFamilyDoor strong{font-size:.99rem;line-height:1.22}.aoLearnFamilyGrid .aoLearnFamilyDoor p{font-size:.75rem;line-height:1.34}}
 @media(max-width:350px){.aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:126px}.aoLearnFamilyGrid .aoLearnFamilyDoor p{display:none}}
+@media(max-width:430px){#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard,#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:155px!important}}
+@media(max-width:350px){#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyCard,#ao-learn-modular-root .aoLearnFamilyGrid .aoLearnFamilyDoor{min-height:126px!important}}
+
 .aoLearnDossierReview{margin-top:14px}.aoLearnDossierReviewNote{margin:0 0 12px;color:var(--ao-text-muted,#a9a5a0);font:500 .77rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnDossierReview .aoLearnModCardMain{min-height:100px}
  .aoLearnQuestionsBridge{min-height:94px}.aoLearnQuestionsBridge:focus-visible,.aoLearnApostolateBridge:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
  .aoLearnDossierReview .aoLearnModGrid{margin-top:8px}.aoLearnDiscoveryResult{min-height:52px}.aoLearnDiscoveryResultInfo{min-width:0;overflow-wrap:anywhere}
