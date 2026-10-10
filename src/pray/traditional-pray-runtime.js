@@ -88,7 +88,7 @@ function prayerRows(rows){
 }
 
 let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={};
-let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
+let S={litanyMode:"full",litanyStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
  const label=guidedStepLabel(step,total,isFr()?"fr":"en");
@@ -149,9 +149,17 @@ function traditionalContextGuide(kind){
  if(!info)return "";
  return `<details class="aoP435930GuideInfo" data-ao-traditional-pray-guide="${esc(kind)}"><summary>${esc(L("Guide · context and practice","Guide · contexte et pratique"))}</summary><div><p>${esc(info[0])}</p><p>${esc(info[1])}</p></div></details>`;
 }
+const HOLY_NAME_SECTION_LABELS=Object.freeze([["Opening invocations","Invocations initiales"],["The Holy Trinity","La Sainte Trinité"],["Names and attributes of Jesus","Noms et titres de Jésus"],["Deliver us, O Jesus","Délivrez-nous, ô Jésus"],["Lamb of God","Agneau de Dieu"],["Versicles and responses","Versets et réponses"],["Concluding prayer","Oraison finale"]]);
+function holyNameSections(value){return String(value||"").trim().split(/\n\s*\n/).map(part=>part.trim()).filter(Boolean)}
 function renderHolyName(){
-  const vern=isFr()?HOLY_NAME_LITANY_V381.fr:HOLY_NAME_LITANY_V381.en;
-  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique approuvée, conservée localement pour une prière entièrement hors ligne. Touchez le texte pour remplacer le français par le latin."))}</p>${status(L("Traditional · sourced · offline","Traditionnelle · sourcée · hors ligne"))}${traditionalContextGuide("holyName")}<article class="aoTP381PrayerCard"><h3>${esc(L(HOLY_NAME_LITANY_V381.title,HOLY_NAME_LITANY_V381.titleFr))}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(vern)}</span><span data-face-la hidden>${nl(HOLY_NAME_LITANY_V381.la)}</span></button></article>${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
+  const vern=isFr()?HOLY_NAME_LITANY_V381.fr:HOLY_NAME_LITANY_V381.en,latin=HOLY_NAME_LITANY_V381.la;
+  const enParts=holyNameSections(HOLY_NAME_LITANY_V381.en),frParts=holyNameSections(HOLY_NAME_LITANY_V381.fr),laParts=holyNameSections(latin);
+  const aligned=enParts.length===7&&frParts.length===7&&laParts.length===7,guided=aligned&&S.litanyMode==="guided",step=Math.max(0,Math.min(6,Number(S.litanyStep)||0));
+  const current=guided?(isFr()?frParts[step]:enParts[step]):vern,currentLatin=guided?laParts[step]:latin;
+  const mode=aligned?`<div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Litany view","Présentation des litanies"))}"><button type="button" data-tp381-litany-mode="full" aria-pressed="${!guided}">${esc(L("Full text","Texte intégral"))}</button><button type="button" data-tp381-litany-mode="guided" aria-pressed="${guided}">${esc(L("Guided · one section at a time","Guidé · une section à la fois"))}</button></div>`:"";
+  const card=`<article class="aoTP381PrayerCard"><h3>${esc(guided?L(...HOLY_NAME_SECTION_LABELS[step]):L(HOLY_NAME_LITANY_V381.title,HOLY_NAME_LITANY_V381.titleFr))}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(current)}</span><span data-face-la hidden>${nl(currentLatin)}</span></button></article>`;
+  const nav=guided?`<nav class="aoTP381GuideNav" aria-label="${esc(L("Litany sections","Sections des litanies"))}"><button type="button" data-tp381-litany-step="${step-1}" ${step===0?"disabled":""}>${esc(L("Previous","Précédent"))}</button><button type="button" data-tp381-litany-step="${step+1<7?step+1:0}">${esc(step===6?L("Return to beginning","Revenir au début"):L("Next","Suivant"))}</button></nav>`:"";
+  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique approuvée, conservée localement pour une prière entièrement hors ligne. Touchez le texte pour remplacer le français par le latin."))}</p>${status(L("Traditional · sourced · offline","Traditionnelle · sourcée · hors ligne"))}${traditionalContextGuide("holyName")}${mode}${guided?`<p class="aoTP381GuideCount" aria-live="polite">${esc(L("Section "+(step+1)+" of 7","Section "+(step+1)+" sur 7"))}</p>`:""}${card}${nav}${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
 }
 function renderNightlyExamen(){
  const steps=NIGHTLY_EXAMEN_CARDS,step=clampPrayerCardStep(S.examenStep,steps.length),item=steps[step];
@@ -345,7 +353,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -369,6 +377,8 @@ function handleClick(e){
    }
    if(b.hasAttribute("data-tp381-examen-overview")){S.examenStep=0;return render()}
 
+  if(b.dataset.tp381LitanyMode){S.litanyMode=b.dataset.tp381LitanyMode==="guided"?"guided":"full";S.litanyStep=0;return render()}
+  if(b.hasAttribute("data-tp381-litany-step")){S.litanyStep=Math.max(0,Math.min(6,Number(b.dataset.tp381LitanyStep)||0));return render()}
   if(b.dataset.tp381Hymn){S.hymn=SACRED_HYMNS_V381[b.dataset.tp381Hymn]?b.dataset.tp381Hymn:"te_deum";return render()}
   if(b.dataset.tp381HymnLang){S.hymnLang=["en","fr","la"].includes(b.dataset.tp381HymnLang)?b.dataset.tp381HymnLang:(isFr()?"fr":"en");return render()}
   if(b.dataset.tp381Heart){S.sacredHeart=["litany","reparation","consecration"].includes(b.dataset.tp381Heart)?b.dataset.tp381Heart:"litany";return render()}
