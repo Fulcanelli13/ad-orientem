@@ -678,6 +678,19 @@ for(const category of HERITAGE_CATEGORIES)assert.match(heritageHtml,new RegExp('
 assert.match(heritageHtml,/aoHeritageCustomRail/,"customs need a compact horizontal rail");
 assert.match(heritageHtml,/data-heritage-custom="DEV-006"/,"universal customs must remain visible without pins");
 assert.doesNotMatch(heritageHtml,/class="aoFindList"/,"map-first Explore must not default to a result list");
+assert.match(heritageHtml,/data-heritage-nearby/,"map-first discovery must support user-requested nearby recentering");
+assert.match(heritageHtml,/aoHeritageMapHint/,"initial screen should explain pin interaction without a long list");
+assert.doesNotMatch(heritageHtml,/aoHeritageSearchResults/,"unfiltered launch must not display search results");
+const searchableMap=projectHeritagePlaces(projection,{query:"Lourdes"});
+const searchHtml=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:searchableMap,
+  filters:{query:"Lourdes",heritageCategories:[...HERITAGE_CATEGORIES]},
+}));
+assert.match(searchHtml,/aoHeritageSearchResults/,"matching sites need a compact navigable search surface");
+assert.match(searchHtml,/data-explore-open-place=/,"search matches must open the canonical Place, not duplicate place records");
+assert.ok((searchHtml.match(/data-explore-open-place=/g)||[]).length<=6,"mobile search must not become an unbounded list");
+assert.doesNotMatch(searchHtml,/class="aoFindList"/,"search must remain map-first");
+
 const placeProfiles=buildExplorePlaceProfiles(dataset,projection);
 const heritagePreview=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
@@ -687,12 +700,21 @@ const heritagePreview=renderExploreToString(buildExploreViewModel({
 assert.match(heritagePreview,/data-explore-expand-place/,"map click must open compact Place preview");
 assert.match(heritagePreview,/Découvrir ce lieu/);
 assert.doesNotMatch(heritagePreview,/class="aoExplorePlaceRows"/,"Place preview must not open a dense record listing immediately");
+assert.match(heritagePreview,/aoHeritageSynopsis/,"sourced place explanation must be the salient preview");
+assert.doesNotMatch(heritagePreview,/class="aoFindFacts"/,"place previews should not be numerical dashboards");
+assert.match(heritagePreview,/data-find-close-place/,"Place preview must be dismissible");
+
 const expandedPlace=renderExploreToString(buildExploreViewModel({
   language:"en",lens:"heritage",view:"map",items:heritagePlaces,
   filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
   selectedPlaceId:lourdesCombined.place_id,placeProfiles,expandPlace:true,
 }));
 assert.match(expandedPlace,/data-explore-place-item=/,"expanded Place must retain original source-owned records");
+assert.match(expandedPlace,/aoHeritageOverview/,"expanded Place should start with sourced context");
+assert.match(expandedPlace,/class="aoPlaceAccordion"/,"long evidence lists should be opt-in disclosures");
+assert.doesNotMatch(expandedPlace,/class="aoFindFacts"/,"expanded Place should not open with numeric record counters");
+assert.match(expandedPlace,/Sources and geographic evidence/,"original evidence must remain one tap away");
+
 
 console.log("PASS unified Explore projection, canonical customs and map-first heritage surface");
 await import("./heritage-place-reconciliation.mjs");
