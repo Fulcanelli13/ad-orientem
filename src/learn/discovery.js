@@ -1,6 +1,7 @@
 // Source-first discovery across the currently public Formation routes and
 // the existing Glossary. This is a routing index, never a second text owner.
 export const REFERENCE_INDEX_URL=new URL("../../data/app/public-reference-discovery.v1.json",import.meta.url);
+export const FORMATION_CONTENT_INDEX_URL=new URL("../../data/app/formation-discovery-content.v1.json",import.meta.url);
 export const DISCOVERY_SURFACES=Object.freeze([
  Object.freeze({id:"home",en:"Today & Scripture",fr:"Aujourd'hui et Écriture",terms:"today gospel evangelium evangile évangile scripture bible daily jour",description:["The current liturgical day and Gospel","Jour liturgique et Évangile"]}),
  Object.freeze({id:"mass",en:"Mass reader",fr:"Missel et Messe",terms:"mass missa messe missal missel latin rubrics live",description:["Prepare for and follow the Roman Mass","Préparer et suivre la Messe romaine"]}),
@@ -38,7 +39,7 @@ const score=(q,title,other)=>{
  if(t.includes(q))return 2;
  return 3;
 };
-export function searchDiscovery(query,{sections=[],referenceEntries=[],limit=25}={}){
+export function searchDiscovery(query,{sections=[],referenceEntries=[],contentEntries=[],limit=25}={}){
  const q=normalizeDiscovery(query);
  if(q.length<2)return Object.freeze([]);
  const all=[];
@@ -54,7 +55,14 @@ export function searchDiscovery(query,{sections=[],referenceEntries=[],limit=25}
   const rank=score(q,surface.en,[surface.fr,surface.terms,...surface.description]);
   if(rank>=0)all.push({id:surface.id,kind:"surface",title:[surface.en,surface.fr],subtitle:surface.description,score:rank+3,group:"application"});
  }
- for(const ref of referenceEntries){
+ // A lightweight routing index, not a second content or approval owner.
+  for(const entry of contentEntries){
+   if(!["topic","question","spiritual","latin"].includes(entry?.kind)||!entry.id||!entry.route)continue;
+   const rank=score(q,entry.title?.[0],[entry.title?.[1],entry.id,entry.terms]);
+   if(rank>=0)all.push({id:entry.id,kind:"content",contentKind:entry.kind,route:entry.route,
+     title:entry.title,subtitle:null,score:rank+2,group:"formation",familyId:entry.family,lesson:entry.lesson});
+  }
+  for(const ref of referenceEntries){
   if(!["concept","lexeme","phrase"].includes(ref?.kind)||!ref?.id)continue;
   const rank=score(q,ref.en,[ref.fr,ref.la]);
   if(rank>=0)all.push({id:ref.id,kind:"reference",referenceKind:ref.kind,title:[ref.en,ref.fr||ref.en],subtitle:ref.la?[ref.la,ref.la]:null,score:rank+4,group:"reference"});
@@ -76,4 +84,22 @@ export function loadReferenceDiscovery(win=globalThis){
   }).catch(error=>{pending=null;throw error});
  }
  return pending;
+}
+
+let contentPending=null;
+export function loadFormationContentDiscovery(win=globalThis){
+ if(!contentPending){
+  const fetcher=win?.fetch?.bind(win)||globalThis.fetch?.bind(globalThis);
+  if(!fetcher)return Promise.reject(new Error("Formation discovery fetch unavailable"));
+  contentPending=Promise.resolve(fetcher(FORMATION_CONTENT_INDEX_URL)).then(response=>{
+   if(!response?.ok)throw Error("Formation discovery index unavailable");
+   return response.json();
+  }).then(data=>{
+   if(data?.schema!=="AO_FORMATION_DISCOVERY_CONTENT_V1"||!Array.isArray(data.entries)||
+     data.entries.length!==254||data.entries.some(e=>!e.id||!e.route||!Array.isArray(e.title)))
+     throw Error("Unexpected Formation discovery index");
+   return Object.freeze(data.entries);
+  }).catch(error=>{contentPending=null;throw error});
+ }
+ return contentPending;
 }
