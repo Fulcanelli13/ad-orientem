@@ -16,6 +16,7 @@ function readJson(relative) {
 
 const contract = readJson("../data/geography/geography-contract.v1.json");
 const seed = readJson("../data/geography/seed-registry.v1.json");
+const launch = readJson("../data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json");
 const candidates = readJson("../data/geography/directory-place-candidates.v1.json");
 
 assert.equal(contract.schema, EXPLORE_GEOGRAPHY_SCHEMA);
@@ -28,7 +29,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -230,6 +231,7 @@ assert.deepEqual(
     "place:AR:san-nicolas-virgen-rosario",
     "place:EG:zeitoun-coptic-saint-mary",
     "place:IT:santa-croce-gerusalemme-rome",
+    ...launch.promoted.map(item=>item.place_id),
   ].sort(),
 );
 
@@ -287,8 +289,8 @@ const registry = {
   directoryPlaceLinks: [confirmedLink],
 };
 assert.deepEqual(assertExploreGeographyRegistry(registry).counts, {
-  geoAreas: 41,
-  places: 183,
+  geoAreas: 50,
+  places: 218,
   directoryPlaceLinks: 1,
 });
 
