@@ -15228,6 +15228,98 @@
         "artCuratorApproval": false,
         "phoneHeroCropApproval": false
       }
+    },
+    {
+      "id": "met-442491",
+      "title": "Saints Peter and Paul",
+      "artist": "Bartolomeo Manfredi",
+      "dated": "1620s",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/442491",
+        "objectId": "442491",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Museum object identity confirms 1620s oil-on-canvas Saints Peter and Paul, public-domain Met API classification Paintings and approved CC0 open-access original; source image SHA-256 independently recorded in acquisition CI.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "saints-peter-paul",
+          "saint-peter",
+          "saint-paul"
+        ],
+        "seasonIds": [],
+        "observedIds": [
+          "sancti:06-29:1:r"
+        ],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "targetResearchIds": [
+          "person.peter",
+          "person.paul"
+        ],
+        "liturgicalProvenance": "2026-06-29 confirmed observed principal in 2026 production DayResolver, canonical source sancti:06-29:1:r; source identity and subject match. Does not imply painting is curator or phone approved."
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4000,
+          "height": 3113
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "EXACT_MUSEUM_OBJECT_TITLE_AND_OBSERVED_PRINCIPAL"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38053123235",
+        "artifactId": 11670365454,
+        "archiveOriginal": "originals/met-442491.jpg",
+        "originalSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+        "originalWidth": 4000,
+        "originalHeight": 3113,
+        "colourFraction": 0.3641,
+        "bytes": 3327528
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "saints-peter-paul",
+          "saint-peter",
+          "saint-paul"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar",
+          "learn.biography:peter",
+          "learn.biography:paul"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [
+          "sancti:06-29:1:r"
+        ],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "TRADITIONAL_SAINT_ICONOGRAPHY_NOT_HISTORICAL_LIFETIME_LIKENESS",
+        "associationConfidence": "EXACT_MUSEUM_TITLE_AND_ACTUAL_1962_PRINCIPAL_SOURCE_NO_ART_APPROVAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
     }
   ],
   "notes": [
