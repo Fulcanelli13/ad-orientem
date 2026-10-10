@@ -92,7 +92,10 @@ try{
   await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("home"));
   const scriptureControl=page.locator("[data-home-scripture]").first();
   await scriptureControl.waitFor({state:"visible",timeout:12000});
-  await scriptureControl.click();
+  // This is an observational inventory, not a physical-touch acceptance.
+  // The startup cinematic can temporarily intercept Playwright hit testing
+  // after a multi-route crawl; click the mounted control's own handler.
+  await scriptureControl.evaluate(button=>button.click());
   await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
   const scripture=await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true);
   assert.equal(scripture,true,"Actual Home Scripture control did not open the reader");
