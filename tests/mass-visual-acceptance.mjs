@@ -214,6 +214,70 @@ try{
   assert.equal(hierarchy.postureTopVisible,true,"top posture owner became unavailable");
   assert.equal(hierarchy.postureRailDisplay,"none","persistent posture is duplicated in LIVE rail and top state ribbon");
   assert.equal(hierarchy.badgeDisplay,"none","priest action appears in both top badge and right action rail");
+
+  // Exact posture transitions from R17 are same-valued on purpose: the
+  // resolved persistent posture has *just become* the source cue target.
+  // A previous "different from posture" test silently hid these LIVE cues.
+  // Render real DOM on a detached fixture, preserving the current Mass.
+  const postureTransitions=await page.evaluate(async()=>{
+    const [{createReaderDomAdapter},{createHostIconResolver},{R17_FROZEN_ACTIVE_ICON_ASSETS}]=await Promise.all([
+      import("/src/mass/reader-dom.js?posture-rail-audit=1"),
+      import("/src/mass/reader-icons.js"),
+      import("/src/mass/reader-icon-bank.js"),
+    ]);
+    const host=document.createElement("div");
+    host.style.cssText="position:absolute;left:-9999px;top:0;width:390px;height:844px";
+    document.body.appendChild(host);
+    const adapter=createReaderDomAdapter({
+      root:host,iconResolver:createHostIconResolver({assets:R17_FROZEN_ACTIVE_ICON_ASSETS}),
+      allowPresentationModeSwitch:false,
+    });
+    try{
+      adapter.mount({readerPreferences:{mode:"LIVE"},session:{resolvedMass:{
+        presentationMode:"LIVE",actualCelebration:{title:"Mass"}
+      }}});
+      const base={id:"POSTURE-CUE-TEST",sectionTitle:"Kyrie",cardTitle:"Kyrie",
+        posture:{label:"STAND"},postureIconKey:"stand",
+        paragraphs:[{id:"p1",primary:"Kyrie eleison",active:true}]};
+      const snapshot=()=>{
+        const el=host.querySelector('.ao-rail-left [data-channel="posture-change"]');
+        const icon=el?.querySelector('[data-icon-slot="posture-change"]');
+        return {
+          active:el?.dataset.active,display:el?getComputedStyle(el).display:null,
+          iconHidden:icon?.hidden,iconMask:icon?.style.maskImage??"",
+          stablePosture:host.querySelector('[data-role="posture"]')?.textContent,
+          permanentRail:host.querySelector('.ao-rail-left [data-channel="posture"]')
+            ?getComputedStyle(host.querySelector('.ao-rail-left [data-channel="posture"]')).display:null,
+        };
+      };
+      adapter.renderMoment({...base,postureCue:{label:"STAND"},postureChangeIconKey:"stand"});
+      const exact=snapshot();
+      adapter.renderMoment({...base,cardUpdate:false,postureCue:null});
+      const afterwards=snapshot();
+      adapter.renderMoment({...base,cardUpdate:false,posture:{label:"KNEEL"},
+        postureIconKey:"kneel",postureCue:{label:"STAND"},postureChangeIconKey:"stand"});
+      const disagreement=snapshot();
+      return {exact,afterwards,disagreement};
+    }finally{adapter.destroy();host.remove();}
+  });
+  assert.equal(postureTransitions.exact.active,"true",
+    "source-matched posture-change cue did not reach the left rail");
+  assert.equal(postureTransitions.exact.display,"grid",
+    "source-matched posture-change icon remains CSS-hidden");
+  assert.equal(postureTransitions.exact.iconHidden,false,
+    "v4.6 posture icon not painted at exact transition");
+  assert.match(postureTransitions.exact.iconMask,/stand\.svg/,
+    "posture cue used something other than the frozen donor stand master");
+  assert.equal(postureTransitions.exact.stablePosture,"STAND");
+  assert.equal(postureTransitions.exact.permanentRail,"none",
+    "persistent posture duplicated the top ribbon after restoring transient cue");
+  for(const state of [postureTransitions.afterwards,postureTransitions.disagreement]){
+    assert.equal(state.active,"false",
+      "obsolete or profile-contradicting posture change persisted");
+    assert.equal(state.display,"none");
+    assert.equal(state.iconHidden,true);
+  }
+
   assert.ok(hierarchy.activeOpacity>=.95,"active prayer lost primary visual focus: "+JSON.stringify(hierarchy));
   assert.ok(hierarchy.inactiveOpacity>=.59&&hierarchy.inactiveOpacity<=.7,
     "surrounding prayer text is unreadably dim or overwhelms active text: "+JSON.stringify(hierarchy));
