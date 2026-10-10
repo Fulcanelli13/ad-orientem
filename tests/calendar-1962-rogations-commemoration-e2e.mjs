@@ -24,7 +24,7 @@ try{
  await page.waitForFunction(()=>typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:45000});
  const dates=["2024-05-06","2027-05-03","2024-06-15","2027-07-17","2027-06-30","2027-08-15","2027-11-30","2027-12-08","2024-12-08",
    "2024-10-27","2027-10-31","2026-10-25","2024-01-07","2027-01-03","2027-01-10","2027-05-23","2028-08-06","2026-11-01","2024-12-04","2027-12-04","2026-12-04","2022-12-04",
-   "2024-01-25","2027-01-25","2024-02-22","2027-02-22",
+   "2024-01-25","2027-01-25","2024-02-22","2027-02-22","2027-05-25",
    "2024-05-16","2024-06-12","2027-06-12","2024-10-03",
    "2024-03-28","2024-03-30","2027-03-25","2027-03-27"];
  const result=[];
@@ -41,6 +41,9 @@ try{
        comms:(r?.day?.commemorations||[]).map(x=>({id:x.id,title:x.title,path:x.path,inseparable:x.inseparable})),
        collects:p?.collects?.length||0,secrets:p?.secrets?.length||0,postcommunions:p?.postcommunions?.length||0,
        lastCollect:p?.collects?.at(-1)||null,lastSecret:p?.secrets?.at(-1)||null,lastPostcommunion:p?.postcommunions?.at(-1)||null,
+       mainText:Object.fromEntries(["epistle","gradual","gospel","offertory","communion"].map(field=>[
+         field,Object.fromEntries(["lat","en","fr"].map(lang=>[
+           lang,String(p?.[field]?.[lang]||"").length]))])),
        languageCoverage:p?.languageCoverage||null,composedSourceIntegrity:p?.composedSourceIntegrity||null,
        firstCollect:p?.collects?.[0]||null,firstSecret:p?.secrets?.[0]||null,firstPostcommunion:p?.postcommunions?.[0]||null,
        temporale:(r?.day?.tempora||[]).map(x=>({id:x.id,path:x.path,color:x.color}))};
@@ -220,6 +223,24 @@ try{
      date+": Barbara's Secret must have her name in the genitive");
    assert.match(row.lastPostcommunion.lat,/beáta Bárbara Vírgine/,
      date+": Barbara's Postcommunion requires her name in the ablative");
+ }
+ // The pinned `Commune/Coronatio` Mass donor contains the appointed
+ // Petrine readings/chants in EN/FR. Transport must not redirect them to
+ // the absent Office (`horas`) common and silently lose translation text.
+ for(const [date,owner,sections] of [
+   ["2024-02-22","Sancti/02-22",["epistle","gradual","gospel","offertory","communion"]],
+   ["2027-02-22","Sancti/02-22",["epistle","gradual","gospel","offertory","communion"]],
+   ["2027-05-25","Sancti/05-25",["gradual","gospel","communion"]],
+ ]){
+   const row=result.find(x=>x.date===date);
+   assert.equal(row.status,"ready",date+": source resolver failed");
+   assert.equal(row.properStatus,"ready",date+": appointed Mass Proper failed");
+   assert.equal(row.path,owner,date+": liturgical Proper source identity changed");
+   for(const field of sections){
+     assert.ok(row.mainText?.[field]?.lat>45,date+": missing original Latin "+field);
+     for(const lang of ["en","fr"])assert.ok(row.mainText?.[field]?.[lang]>35,
+       date+": pinned "+lang+" Mass source was not inherited for "+field);
+   }
  }
  const deferred=result.find(x=>x.date==="2022-12-04");
  assert.ok(!deferred.comms.some(x=>x.id==="commemoration:12-04-barbara:4:r"),
