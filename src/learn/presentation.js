@@ -179,6 +179,25 @@ export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],ref
  </div><div class="aoLearnDiscoveryList">${items}</div>`;
 }
 
+// Source-controlled editorial access only, not a public Formation route.
+export function formationDossierReviewEnabled(win=globalThis){
+ return /(?:^\?|&)aoFormationReview=1(?:&|$)/.test(String(win?.location?.search||""));
+}
+function formationDossierReviewMarkup(state,win){
+ if(!formationDossierReviewEnabled(win))return "";
+ const fr=isFr(state);
+ const items=[
+  ["apologetics","Apologetics","Apologétique",60,"Defending the faith · nine themes","Défendre la foi · neuf thèmes"],
+  ["crisis","Crisis in the Church","Crise dans l’Église",81,"Contested questions · eight themes","Questions controversées · huit thèmes"]
+ ];
+ return '<div class="aoLearnDossierReview" data-ao-learn-review-section>'+
+  '<p class="aoLearnDossierReviewNote">'+esc(fr?"Aperçu éditorial non publié · sources en cours de certification":"Unpublished editorial preview · sources under certification")+'</p>'+
+  '<div class="aoLearnModGrid">'+items.map(item=>
+   '<article class="aoLearnModCard"><button type="button" class="aoLearnModCardMain" data-ao-learn-dossier-review="'+item[0]+'">'+
+   '<span class="type">'+esc((fr?"EN EXAMEN · ":"IN REVIEW · ")+item[3]+" dossiers")+'</span>'+
+   '<strong>'+esc(item[fr?2:1])+'</strong><p>'+esc(item[fr?5:4])+'</p></button></article>').join("")+'</div></div>';
+}
+
 export function learnPresentationCss(){
   return `
 #ao-learn-modular-root{position:fixed;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;z-index:var(--ao-z-surface,2147481800);background:var(--ao-bg-canvas,var(--bg,#080c12));color:var(--ao-text-primary,var(--text,#e9e4d9));overflow:auto;overscroll-behavior:contain;font-family:var(--ao-font-body,var(--font-body,Georgia,serif))}
@@ -190,7 +209,8 @@ export function learnPresentationCss(){
 .aoLearnIntentLayout{display:grid;gap:20px}.aoLearnIntentGroup{min-width:0}.aoLearnIntentHeading{margin:0 0 12px}.aoLearnIntentHeading small{font:700 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:var(--liturgical,#c9ad78)}.aoLearnIntentHeading h2{margin:5px 0;font:500 clamp(1.35rem,4vw,1.7rem)/1.17 var(--ao-font-display,Georgia,serif)}.aoLearnIntentHeading p{margin:5px 0 0;color:var(--muted,#9ba5b1);font:400 .92rem/1.55 var(--ao-font-body,Georgia,serif)}.aoLearnIntentSecondary,.aoLearnReferenceGroup{padding-top:15px;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12))}.aoLearnQuestionsBridge{width:100%;display:grid;grid-template-columns:28px minmax(0,1fr) 18px;gap:10px;align-items:center;min-height:70px;padding:12px;border:1px solid var(--liturgical-border,rgba(201,173,120,.38));border-radius:var(--ao-control-radius,11px);background:var(--ao-surface-1,#101821);color:inherit;text-align:left}.aoLearnQuestionsBridge span{display:grid;gap:4px}.aoLearnQuestionsBridge strong{font:600 1.07rem/1.3 var(--ao-font-display,Georgia,serif)}.aoLearnQuestionsBridge small{color:var(--liturgical,#c9ad78);font:700 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em}.aoLearnQuestionsBridge em{font:400 13px/1.45 var(--ao-font-body,Georgia,serif);font-style:normal;color:var(--muted,#9ba5b1)}.aoLearnQuestionsBridge:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}.aoLearnIntentSecondary .aoLearnApostolateBridge{margin:0;background:var(--ao-surface-1,#101821)}
 .aoLearnModSection{padding:18px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}.aoLearnModSectionHead{margin:0 0 10px}.aoLearnModSectionHead h2{margin:0;font:600 1rem/1.2 var(--ao-font-display,var(--font-display,Georgia,serif));letter-spacing:.02em}.aoLearnModSectionHead p{max-width:640px;margin:5px 0 0;color:var(--muted,#9ba5b1);font:500 var(--ao-type-ui-sm,12px)/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnModGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.aoLearnFamilyGrid .aoLearnModCardMain{min-height:132px}.aoLearnFamilyDoor strong{font-size:1.08rem}.aoLearnModCard{min-width:0;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--ao-card-radius,15px);background:var(--surface-1,#101821);overflow:hidden}.aoLearnModCard.featured{border-color:var(--liturgical-border,rgba(201,173,120,.4));background:linear-gradient(145deg,var(--liturgical-soft,rgba(201,173,120,.08)),var(--surface-1,#101821))}
 .aoLearnModCardMain{position:relative;width:100%;min-height:112px;padding:13px 13px 14px;border:0;background:transparent;color:var(--text,#e9e4d9);text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:6px}.aoLearnModCardMain.iconized{padding-left:61px}.aoLearnModCardMain>.aoLearnModIcon{position:absolute;left:13px;top:15px;width:36px;height:36px;color:var(--liturgical,#c9ad78)}.aoLearnModCardMain .type{color:var(--liturgical,#c9ad78);font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}.aoLearnModCardMain strong{font:600 1rem/1.22 var(--ao-font-display,var(--font-display,Georgia,serif))}.aoLearnModCardMain p{margin:0;color:var(--muted,#9ba5b1);font-size:.82rem;line-height:1.4}.aoLearnModCardMain:hover,.aoLearnModCardMain:focus-visible{outline:none;background:rgba(255,255,255,.025)}.aoLearnModCardMain:focus-visible{box-shadow:inset 0 0 0 2px var(--liturgical,#c9ad78)}
-@media(max-width:430px){.aoLearnModWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}.aoLearnModGrid{grid-template-columns:1fr}.aoLearnModCardMain{min-height:96px}.aoLearnModHero{padding-top:14px}.aoLearnModHero h1{font-size:2.35rem}}
+ .aoLearnDossierReview{margin-top:14px}.aoLearnDossierReviewNote{margin:0 0 12px;color:var(--ao-text-muted,#a9a5a0);font:500 .77rem/1.5 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnDossierReview .aoLearnModCardMain{min-height:100px}
+ @media(max-width:430px){.aoLearnModWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}.aoLearnModGrid{grid-template-columns:1fr}.aoLearnModCardMain{min-height:96px}.aoLearnModHero{padding-top:14px}.aoLearnModHero h1{font-size:2.35rem}}
 `;
 }
 
@@ -225,6 +245,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
             <button type="button" class="aoLearnQuestionsBridge" data-ao-learn-questions>
               ${assetMask("ao-refined-help")}<span><small>${esc(langFr?"QUESTIONS":"QUESTIONS")}</small><strong>${esc(langFr?"Questions et débats":"Questions & Debates")}</strong><em>${esc(langFr?"Questions publiées de morale catholique ; les débats approfondis exigent encore une vérification des sources.":"Published Catholic moral questions; deeper debates still require source verification.")}</em></span>${assetMask("ao-ui-next")}
             </button>
+            ${formationDossierReviewMarkup(state,win)}
           </section>
           <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Mettre la foi en pratique":"Put Faith into Practice")}">
             <button type="button" class="aoLearnApostolateBridge" data-ao-learn-apostolate>${assetMask("ao-refined-help")}<span><strong>${esc(langFr?"Mettre la foi en pratique":"Put Faith into Practice")}</strong><small>${esc(langFr?"Apostolat · répondre, aider, accompagner":"Apostolate · answer, help, accompany")}</small></span>${assetMask("ao-ui-next")}</button>
