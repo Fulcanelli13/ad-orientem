@@ -12,9 +12,14 @@ const label=(lang,key)=>L(lang,...CATEGORY_LABELS[key]);
 
 // Editorial text comes exclusively from canonical source-owned records.
 // No synthesized narratives, unsupported recognition claims or fallback biographies.
-export function sacredPlaceSynopsis(place,{maxLength=340,language="en"}={}){
+export function sacredPlaceSynopsis(place,{maxLength=340,language="en",preferredCategory=null}={}){
   if(!place)return "";
-  const refs=[...arr(place.shrines),...arr(place.pilgrimages),...arr(place.apparitions),...arr(place.relics),...arr(place.traditions)];
+  const categories=["shrines","pilgrimages","apparitions","relics","traditions"];
+  const ordered=categories.includes(preferredCategory)
+    ?[preferredCategory,...categories.filter(key=>key!==preferredCategory)]:categories;
+  // A relic or apparition selected on the map should not display an unrelated
+  // shrine introduction merely because that Place also has a shrine record.
+  const refs=ordered.flatMap(key=>arr(place[key]));
   const summary=String(refs.map(item=>language==="fr"?(item?.summary_fr||item?.summary):item?.summary).find(value=>String(value??"").trim())??"").trim().replace(/\s+/g," ");
   if(summary.length<=maxLength)return summary;
   const prefix=summary.slice(0,maxLength),boundary=prefix.lastIndexOf(" ");
@@ -22,16 +27,20 @@ export function sacredPlaceSynopsis(place,{maxLength=340,language="en"}={}){
 }
 function shortArea(place){
   const a=place?.address??{};
-  const region=[a.city,a.region,a.country].filter(Boolean);
-  return region.length?region.join(", "):place?.address_label??"";
+  // A card needs orientation, not an unbounded postal address.
+  const region=[a.city||a.region,a.country].filter(Boolean);
+  const unique=[...new Set(region.map(value=>String(value).trim()))];
+  return unique.length?unique.join(" · "):place?.address_label??"";
 }
 export function compactHeritagePlaceSheet(vm){
   const p=vm.selectedPlace;if(!p)return "";
   const related=Object.keys(CATEGORY_LABELS).filter(key=>Number(p.counts?.[key])>0);
-  const primary=related[0]??null;
-  const synopsis=sacredPlaceSynopsis(p,{maxLength:250,language:vm.language});
+  const active=arr(vm.filters?.heritageCategories);
+  const preferred=active.length===1&&related.includes(active[0])?active[0]:null;
+  const primary=preferred??related[0]??null;
+  const synopsis=sacredPlaceSynopsis(p,{maxLength:250,language:vm.language,preferredCategory:preferred});
   const area=shortArea(p);
-  let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoHeritagePreview" role="dialog" aria-modal="true" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
+  let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
   html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
   html+='<span class="aoHeritageCardKicker">'+esc(primary?label(vm.language,primary):L(vm.language,"Sacred place","Lieu sacré"))+'</span>';
@@ -100,6 +109,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet}={}){
   html+='</nav>';
   html+='<p class="aoHeritageLocationStatus" data-heritage-location-status role="status" aria-live="polite" hidden></p>';
   html+='<div class="aoFindBody aoHeritageBody" data-find-view="map" data-explore-lens="heritage"><div class="aoFindMap" data-find-map><div class="aoFindMapFallback"><strong>'+L(vm.language,"Sacred places","Lieux sacrés")+'</strong><span>'+(vm.items.length?L(vm.language,"Loading documented places…","Chargement des lieux documentés…"):L(vm.language,"No places match. Change the search or category.","Aucun lieu trouvé. Modifiez le thème ou la recherche."))+'</span></div></div>';
+  html+='<button type="button" class="aoHeritageWorldReset" data-heritage-world aria-label="'+L(vm.language,"Show all places on the world map","Afficher tous les lieux sur la carte du monde")+'">'+L(vm.language,"World view","Vue du monde")+'</button>';
   if(searching)html+=searchMatches(vm);
   else html+='<p class="aoHeritageMapHint">'+L(vm.language,"Tap a marker to discover a place","Touchez un repère pour découvrir le lieu")+'</p>';
   const customs=arr(vm.customCards);
