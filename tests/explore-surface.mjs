@@ -683,6 +683,7 @@ await import("./explore-europe-three-wave-coverage.mjs");
 await import("./explore-europe-national-depth-wave4.mjs");
 await import("./explore-europe-four-wave-master.mjs");
 await import("./explore-europe-diocesan-indices-wave5.mjs");
+await import("./explore-europe-eparchy-sanctuary-wave6.mjs");
 await import("./explore-research-ownership-gates.mjs");
 await import("./explore-customary-source-trace.mjs");
 await import("./explore-relic-final60-open20-source.mjs");
