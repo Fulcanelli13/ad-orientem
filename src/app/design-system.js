@@ -38,6 +38,13 @@ const CSS=`
   --ao-type-prose:16px;
   --ao-type-speaker-weight:650;
 
+  /* Reader grammar shared by Mass and devotional sequences. */
+  --ao-reader-focus-current:1;
+  --ao-reader-focus-near:.80;
+  --ao-reader-focus-far:.56;
+  --ao-reader-progress-height:3px;
+  --ao-reader-prayer-label-size:11px;
+
   /*
    * Shared elevation vocabulary. These retain the migration-safe high range
    * while legacy roots still exist, but feature CSS must consume the tokens
@@ -169,6 +176,59 @@ const CSS=`
   font-family:var(--ao-font-body,Georgia,serif);
   font-size:var(--ao-type-prose);
   line-height:1.65;
+}
+
+/* Shared sequence chrome. This is a location indicator, not a record of prayer. */
+#aoPray435930 .aoReaderSeqNav,
+#aoPrayerBookRoot .aoReaderSeqNav{
+  display:flex;flex-direction:column;gap:7px;min-width:0;
+  max-width:var(--ao-content-max,760px);margin:0 auto 10px;padding:6px 2px;
+  border:0;background:transparent;color:var(--ao-text-muted,#a1acb9);
+  font:600 var(--ao-type-ui-xs,11px)/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoReaderSeqPosition,
+#aoPrayerBookRoot .aoReaderSeqPosition{
+  display:block;text-align:center;font-size:var(--ao-type-ui-xs,11px);
+  letter-spacing:.10em;text-transform:uppercase;color:var(--ao-text-muted,#a1acb9);
+}
+#aoPray435930 .aoReaderSeqSegments{
+  display:flex;align-items:center;gap:3px;width:100%;
+  overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+}
+#aoPray435930 .aoReaderSeqSegments::-webkit-scrollbar{display:none}
+#aoPray435930 .aoReaderSeqSegments button{
+  appearance:none;display:grid;place-items:center;
+  flex:1 0 28px;min-width:28px;min-height:32px;
+  padding:4px;border:0;border-radius:5px;background:transparent;
+  color:inherit;touch-action:manipulation;cursor:pointer;
+}
+#aoPray435930 .aoReaderSeqSegments button>span{
+  display:block;width:100%;height:var(--ao-reader-progress-height,3px);
+  border-radius:2px;background:var(--ao-rule,rgba(255,255,255,.14));
+}
+#aoPray435930 .aoReaderSeqSegments button.current>span{
+  background:var(--ao-liturgical-accent,#c9ad78);
+  box-shadow:0 0 10px var(--ao-liturgical-soft,rgba(255,255,255,.1));
+}
+#aoPray435930 .aoReaderSeqSegments button:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#c9ad78);outline-offset:1px;
+}
+#aoPrayerBookRoot .aoReaderSeqTrack{
+  position:relative;width:100%;height:var(--ao-reader-progress-height,3px);
+  overflow:hidden;border-radius:2px;background:var(--ao-rule,rgba(255,255,255,.14));
+}
+#aoPrayerBookRoot .aoReaderSeqFill{
+  display:block;height:100%;width:0;background:var(--ao-liturgical-accent,#c9ad78);
+  transition:width .15s linear;
+}
+#aoPray435930 .aoReaderPrayerName{
+  display:block;margin:0 0 8px;
+  font:600 var(--ao-reader-prayer-label-size,11px)/1.4 var(--ao-font-display,Georgia,serif);
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ao-liturgical-accent-text,var(--ao-liturgical-accent,#c9ad78));
+}
+@media(prefers-reduced-motion:reduce){
+  #aoPrayerBookRoot .aoReaderSeqFill{transition:none}
 }
 
 /* Reusable source/provenance disclosure. Feature modules should converge here. */
