@@ -24,13 +24,22 @@ import {
   assert.equal(formationDossierReviewEnabled({location:{search:"?foo=aoFormationReview=1"}}),false);
   renderLearnPresentation(preview,{language:"en"},win,{familyId:"questions"});
   assert.match(preview.innerHTML,/data-ao-learn-module="learn.sexual_ethics"/);
-  assert.match(preview.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
-  assert.match(preview.innerHTML,/data-ao-learn-dossier-review="crisis"/);
-  assert.match(preview.innerHTML,/Early study preview/,"unapproved research must remain visibly marked");
+  assert.doesNotMatch(preview.innerHTML,/data-ao-learn-dossier-review=/,
+    "Moral Questions should never contain Apologetics or Crisis dossiers");
+  const apol=root();
+  renderLearnPresentation(apol,{language:"en"},win,{familyId:"apologetics"});
+  assert.match(apol.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
+  assert.doesNotMatch(apol.innerHTML,/data-ao-learn-dossier-review="crisis"/);
+  assert.match(apol.innerHTML,/Research preview/,"Apologetics must remain unapproved");
+  const crisis=root();
+  renderLearnPresentation(crisis,{language:"en"},win,{familyId:"church-crisis"});
+  assert.match(crisis.innerHTML,/data-ao-learn-dossier-review="crisis"/);
+  assert.doesNotMatch(crisis.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
+  assert.match(crisis.innerHTML,/Research preview/,"Church Crisis must remain unapproved");
   const french=root();
-  renderLearnPresentation(french,{language:"fr"},win,{familyId:"questions"});
-  assert.match(french.innerHTML,/Apologétique/);
+  renderLearnPresentation(french,{language:"fr"},win,{familyId:"church-crisis"});
   assert.match(french.innerHTML,/Crise dans l’Église/);
+  assert.match(french.innerHTML,/Aperçu de recherche/);
   const spiritual=root();
   renderLearnPresentation(spiritual,{language:"en"},win,{familyId:"spiritual-moral"});
   assert.match(spiritual.innerHTML,/data-ao-learn-module="learn.spiritual_life"/);
@@ -48,7 +57,9 @@ assert.deepEqual(
     ["Spiritual Life & Devotions","Vie spirituelle & dévotions"],
     ["Mass & Liturgy","Messe & liturgie"],
     ["Sacraments & Christian Life","Sacrements & vie chrétienne"],
-    ["Questions & Debates","Questions et débats"],
+    ["Moral Questions","Questions de morale"],
+    ["Apologetics","Apologétique"],
+    ["Crisis in the Church","Crise dans l’Église"],
     ["Latin","Latin"],
     ["Reference","Référence"],
   ],
@@ -109,7 +120,11 @@ assert.equal(liturgySection?.items.some(item=>item.id==="learn.scapular"),false,
 const questionSection=LEARN_LAYOUT.sections.find(section=>section.id==="questions");
 assert.deepEqual(questionSection?.items.map(item=>item.id),["learn.sexual_ethics"],"Sexual Ethics needs a single authoritative Questions category");
 assert.equal(spiritualSection?.items.some(item=>item.id==="learn.sexual_ethics"),false,"Moral debates were duplicated under Spiritual Life");
-assert.equal(LEARN_LAYOUT.sections.length,7,"Every Formation subject must have the same navigation level");
+assert.equal(LEARN_LAYOUT.sections.length,9,"All nine Formation subjects must have an equal navigation level");
+assert.equal(LEARN_LAYOUT.sections.find(x=>x.id==="apologetics")?.reviewCorpus,"apologetics");
+assert.equal(LEARN_LAYOUT.sections.find(x=>x.id==="church-crisis")?.reviewCorpus,"crisis");
+assert.deepEqual(LEARN_LAYOUT.sections.filter(x=>x.reviewCorpus).map(x=>x.id),
+ ["apologetics","church-crisis"],"Two distinct draft subject owners only");
 assert.equal(new Set(LEARN_MODULE_IDS).size,15,"Formation has duplicated canonical module routes");
 assert.match(presentation,/formationReaderCss/,"Formation hub has not joined the shared reader design");
 
