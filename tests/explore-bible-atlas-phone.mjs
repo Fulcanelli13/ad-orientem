@@ -37,8 +37,8 @@ try{
  await page.waitForTimeout(360);
  await page.locator("#ao-find-modular-root [data-bible-atlas-open]").tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===true&&
-  document.querySelector("[data-bible-atlas]"),null,{timeout:15000}).catch(async error=>{
-  const detail=await page.evaluate(()=>({status:globalThis.AO_FIND_APP_V1?.status?.(),load:document.querySelector("#ao-find-modular-root")?.dataset?.aoFindLoadState,error:document.querySelector("[data-find-action-error]")?.textContent,scriptErrors:document.querySelector("[data-bible-atlas]")?.outerHTML?.slice(0,200)}));
+  document.querySelector("[data-ao-bible-atlas]"),null,{timeout:15000}).catch(async error=>{
+  const detail=await page.evaluate(()=>({status:globalThis.AO_FIND_APP_V1?.status?.(),load:document.querySelector("#ao-find-modular-root")?.dataset?.aoFindLoadState,error:document.querySelector("[data-find-action-error]")?.textContent,scriptErrors:document.querySelector("[data-ao-bible-atlas]")?.outerHTML?.slice(0,200)}));
   console.error("ATLAS_ENTRY_DIAGNOSTIC",JSON.stringify(detail));
   throw error;
 });
@@ -69,7 +69,7 @@ try{
  await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true,null,{timeout:15000});
  await page.locator('#ao-scripture-overlay [data-scripture-close]').first().tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===false,null,{timeout:15000});
- assert.equal(await page.locator("#ao-find-modular-root [data-bible-atlas]").count(),1);
+ assert.equal(await page.locator("#ao-find-modular-root [data-ao-bible-atlas]").count(),1);
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(overflow<=1,"Biblical Atlas causes horizontal page overflow at 390px");
  await page.locator("#ao-find-modular-root [data-bible-atlas-close]").tap({timeout:15000});
