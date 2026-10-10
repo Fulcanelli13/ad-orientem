@@ -17,6 +17,15 @@ assert.equal(normalizeMassLiturgicalColour("Or"),"GOLD");
 assert.equal(normalizeMassLiturgicalColour("invented"),null);
 assert.equal(Object.keys(MASS_LITURGICAL_PALETTES).length,8);
 
+const donorAccents={
+  WHITE:"#d6caa6",RED:"#b7736b",GREEN:"#6d9575",VIOLET:"#927aa2",
+  ROSE:"#c58e9f",BLACK:"#a8aaa6",GOLD:"#c7aa6d"
+};
+for(const [colour,accent] of Object.entries(donorAccents))
+  assert.equal(MASS_LITURGICAL_PALETTES[colour].accent,accent,
+    colour+" accent drifted from the exact v1.80 donor palette");
+
+
 const sample=(proper,legacy={})=>({
   readerPreferences:{mode:"LIVE"},
   session:{resolvedMass:{
