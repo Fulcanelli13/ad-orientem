@@ -38,7 +38,7 @@ for(const pack of packs){
  }
 }
 assert.deepEqual([...seen].sort(),[...expected.keys()].sort());
-assert.equal(amended.modified_roles.length,10);
+assert.equal(amended.modified_roles.length,11);
 assert.equal(amended.publication_allowed,false);
 assert.equal(amended.original_passage_certified,false);
 console.log("PASS: six bilingual original-opponent repairs, live sources and unchanged publication locks");
