@@ -117,6 +117,7 @@ export function createPresentationFxBridge({
     if (spec.kind) el.dataset.kind = String(spec.kind);
     el.classList?.add?.("aoCinemaLoaderOn");
     el.setAttribute?.("aria-hidden", "false");
+    win?.AO_LOADING_DIRECTOR_V1?.adoptLegacy?.(spec.kind ?? "generic");
     return true;
   }
 
@@ -126,7 +127,8 @@ export function createPresentationFxBridge({
     }
     loaderTimer = null;
     const el = loaderElement(win);
-    if (!el) return;
+    if (!el || el.dataset?.aoLoadingDirector === "active") return;
+    win?.AO_LOADING_DIRECTOR_V1?.releaseLegacy?.();
     el.classList?.remove?.("aoCinemaLoaderOn");
     el.setAttribute?.("aria-hidden", "true");
   }
@@ -230,14 +232,15 @@ export function createPresentationFxBridge({
     const allowed = Boolean(
       next?.scripture?.loading ||
       (next?.resolving && active === "calendar") ||
-      el.dataset?.kind === "calendar-week"
+      el.dataset?.kind === "calendar-week" ||
+      el.dataset?.aoLoadingDirector === "active"
     );
     if (allowed) return true;
 
     const clearIfStillBackground = () => {
       const current = runtimeState(win);
       const node = loaderElement(win);
-      if (!node || node.dataset?.kind === "calendar-week") return;
+      if (!node || node.dataset?.kind === "calendar-week" || node.dataset?.aoLoadingDirector === "active") return;
       if (current?.scripture?.loading) return;
       if (current?.resolving && getActive?.() === "calendar") return;
       node.classList?.remove?.("aoCinemaLoaderOn");
