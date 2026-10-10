@@ -16,7 +16,8 @@
     "distinctTextWitnessProbes": 29,
     "dateObservations": 58,
     "missingThirdLent": "Third Sunday Lent PDF inaccessible in this batch; explicitly deferred not counted",
-    "palmPassion": "The long sung Matthew Passion and processional rite are separate source/rubric owners. This batch checks the Mass Proper incipits only; full Passion segmentation is not certified."
+    "palmPassion": "The long sung Matthew Passion and processional rite are separate source/rubric owners. This batch checks the Mass Proper incipits only; full Passion segmentation is not certified.",
+    "orthographicVariantPolicy": "Whitelist only section-bound variants confirmed in two named editions; count separately from exact parity, no app-text substitution."
   },
   "cases": [
     {
@@ -117,7 +118,12 @@
           "field": "communion",
           "latinIncipit": "Intellige clamorem meum intende voci orationis meae",
           "page": 1,
-          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=1"
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=1",
+          "orthographicVariants": [
+            "Intellege clamorem meum intende voci orationis meae"
+          ],
+          "variantType": "Different valid imperatives Intellige/Intellege; original edited 1962 booklet uses Intéllige, app normalized source and 1962 Missale Romanum OCR show Intéllege/Intellége. Not a substantive omitted prayer.",
+          "independentVariantWitness": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
         },
         {
           "field": "postcommunion",
