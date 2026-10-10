@@ -298,7 +298,7 @@ const SHELL_STYLE = `
   position:absolute;z-index:9;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);
   width:min(940px,calc(100% - 170px));height:var(--ao-schola-height);min-height:0;max-height:180px;
   padding:11px 16px 13px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 38%,transparent);border-radius:16px;
-  background:color-mix(in srgb,var(--ao-mass-panel) 94%,#080b10);box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
+  background:var(--ao-mass-panel);box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
 }
 .ao-schola-dock[data-active="false"]{display:none}
 /* Retain the manually collapsed SHOW handle between audible Schola cues. */
