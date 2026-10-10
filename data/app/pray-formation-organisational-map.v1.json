@@ -3362,9 +3362,10 @@
         "to": "pray.morning_evening",
         "relationship": "study_to_guided_practice",
         "context": "daily_rule_of_prayer",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "data/learn/spiritual-life-course.v1.json and src/learn/spiritual-life.js"
       },
       {
         "from": "learn.spiritual_life",
@@ -3373,7 +3374,8 @@
         "context": "examination_of_conscience",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "learn.spiritual_life",
@@ -3382,16 +3384,18 @@
         "context": "mental_prayer_and_adoration",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "learn.rites.sick",
         "to": "pray.dying_companion",
         "relationship": "sacrament_to_prayer",
         "context": "praying_at_bedside",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/learn/traditional-life.js"
       },
       {
         "from": "learn.rites.sick",
@@ -3400,16 +3404,18 @@
         "context": "preparation_and_perseverance",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "learn.rites.first_communion",
         "to": "pray.communion_treasury",
         "relationship": "sacrament_to_prayer",
         "context": "preparation_and_thanksgiving",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/learn/traditional-life.js"
       },
       {
         "from": "learn.sexual_ethics",
@@ -3418,7 +3424,8 @@
         "context": "penance_and_amendment",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "learn.rites.matrimony",
@@ -3427,7 +3434,8 @@
         "context": "marital_moral_questions",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "learn.latin",
@@ -3436,7 +3444,8 @@
         "context": "latin_lexemes",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "pray.confession",
@@ -3445,7 +3454,8 @@
         "context": "penance_doctrine_lookup",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "pray.adoration",
@@ -3454,7 +3464,8 @@
         "context": "eucharistic_doctrine_lookup",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "pray.communion_treasury",
@@ -3463,16 +3474,18 @@
         "context": "communion_context",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "pray.dying_companion",
         "to": "learn.rites.sick",
         "relationship": "prayer_to_study",
         "context": "anointing_viaticum",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/pray/traditional-pray-runtime.js"
       },
       {
         "from": "pray.good_death",
@@ -3481,7 +3494,8 @@
         "context": "serious_illness",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "programme.first_friday",
@@ -3490,52 +3504,58 @@
         "context": "sacred_heart",
         "state": "PROPOSED_NOT_WIRED",
         "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "return_to_origin_required": true,
+        "evidence": null
       },
       {
         "from": "programme.first_saturday",
         "to": "pray.rosary",
         "relationship": "devotion_to_related_devotion",
         "context": "rosary_meditation",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/pray/presentation-runtime.js"
       },
       {
         "from": "apostolate:AQ02",
         "to": "pray.confession",
         "relationship": "scenario_to_devotion",
         "context": "confession_and_penance",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/apostolate/corpus.js"
       },
       {
         "from": "apostolate:AQ02",
         "to": "learn.catechism",
         "relationship": "scenario_to_doctrine",
         "context": "sacrament_of_penance",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/apostolate/corpus.js"
       },
       {
         "from": "apostolate:AQ01",
         "to": "learn.catechism",
         "relationship": "scenario_to_doctrine",
         "context": "communion_of_saints",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/apostolate/corpus.js"
       },
       {
         "from": "apostolate:AQ01",
         "to": "pray.rosary",
         "relationship": "scenario_to_prayer",
         "context": "marian_prayer",
-        "state": "PROPOSED_NOT_WIRED",
-        "selection_rule": "link only from relevant verified section, never as a universal recommendation",
-        "return_to_origin_required": true
+        "state": "SOURCE_WIRED_PHONE_UNVERIFIED",
+        "selection_rule": "Use existing canonical owner and handler; do not add a second link control before UI acceptance.",
+        "return_to_origin_required": true,
+        "evidence": "src/apostolate/corpus.js"
       }
     ],
     "contextual_reference_ids": [
@@ -4203,6 +4223,12 @@
       "unresolved": 0,
       "verified_in_phone": 0,
       "meaning": "Registered means a declared route target, not successful navigation or source certification."
+    },
+    "content_level_relation_audit": {
+      "reviewed": 20,
+      "source_wired_not_phone_verified": 9,
+      "proposed_not_wired": 11,
+      "principle": "Prior source implementations are authoritative; new work must strengthen or contextualise an existing link rather than duplicate it."
     }
   },
   "guide_policy": {
@@ -4236,8 +4262,8 @@
     "apostolate_72_source_handoffs_audited": true,
     "entry_presentation_implemented": true,
     "apostolate_obsolete_prayer_handoffs_repaired": true,
-    "user_visible_content_crosslinks_implemented": false,
-    "reason": "Original readers and published routes remain canonical. Pray and Formation entry hierarchy is implemented; 20 new item relationships and Mass-preparation exact routes are not."
+    "user_visible_content_crosslinks_implemented": true,
+    "reason": "Pray and Formation entry hierarchy implemented; 9 of 20 contextual links were already source wired, 11 remain proposed; phone acceptance still outstanding."
   },
   "audit_findings": {
     "obsolete_apostolate_prayer_handoffs_fixed_on_branch": [
