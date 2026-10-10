@@ -107,7 +107,7 @@ export function createFindOwner(win=globalThis){
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
   const state={
-    lens:"tlm",
+    lens:"heritage",
     view:"map",
     directoryGroup:"ROME",
     query:"",
