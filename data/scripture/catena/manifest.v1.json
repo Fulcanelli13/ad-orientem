@@ -1,0 +1,56 @@
+{
+  "schema": "ao.catena-aurea.corpus-manifest.v1",
+  "edition": "Catena Aurea (Oxford, 1841–45), tr. John Henry Newman",
+  "origin": "AlvaroBalbin/catena",
+  "originCommit": "efe1bd084d918a34ca22ffeef2ecf711c593b392",
+  "license": "public-domain",
+  "scope": "Four Gospels only; Scripture text handled separately; Father labels and source extracts are verbatim from the pinned provider",
+  "books": [
+    {
+      "gospel": "matthew",
+      "pericopes": 278,
+      "fragments": 4825,
+      "commentedVerseKeys": 1063,
+      "distinctFatherLabels": 37,
+      "rawSize": 4537050,
+      "packedSize": 2182343,
+      "gitBlobSha": "f00ac7ebe66468b23aa000e9c91b8d646f499467",
+      "originBlobSha": "7c19218587120dd9cf8efb51826fca8d13bb884e"
+    },
+    {
+      "gospel": "mark",
+      "pericopes": 104,
+      "fragments": 1451,
+      "commentedVerseKeys": 676,
+      "distinctFatherLabels": 19,
+      "rawSize": 1508493,
+      "packedSize": 708281,
+      "gitBlobSha": "3df68d63927587e90da034629a2432a2878a9586",
+      "originBlobSha": "efeb0ee731a0631c8d15bc1a41891a6178210272"
+    },
+    {
+      "gospel": "luke",
+      "pericopes": 245,
+      "fragments": 3660,
+      "commentedVerseKeys": 1149,
+      "distinctFatherLabels": 28,
+      "rawSize": 3578133,
+      "packedSize": 1702142,
+      "gitBlobSha": "54b6c6da8c717439fd391ab8cf5ebc4cc91d16e7",
+      "originBlobSha": "57cad8bab1624b2fc3559868513a963622eae492"
+    },
+    {
+      "gospel": "john",
+      "pericopes": 187,
+      "fragments": 2756,
+      "commentedVerseKeys": 878,
+      "distinctFatherLabels": 17,
+      "rawSize": 2879153,
+      "packedSize": 1377033,
+      "gitBlobSha": "918d45845dff32f5836d7d099f0fec53a6844ac6",
+      "originBlobSha": "cc99fe62a303aadfd3fcfea79429103cf80b5acd"
+    }
+  ],
+  "totalPericopes": 814,
+  "totalFragments": 12692
+}

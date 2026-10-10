@@ -23,6 +23,27 @@ function bilingualRows(prefix,text,sourceIds=[]){
   return freeze([freeze({id:prefix,kind:"TEXT",latin,vernacular:en,english:en,french:fr,sourceIds:freeze([...sourceIds])})]);
 }
 
+// Each 1962 Litany invocation and baptismal-promise response is independently
+// focusable, instead of a single scrolling paragraph or a prose placeholder.
+// The reading of the rubric is distinct from the people's spoken response.
+function ritualResponseRows(prefix,text,sourceIds=[],{cantors=false}={}){
+  const lang=Object.fromEntries(["lat","en","fr"].map(k=>[k,String(text?.[k]??"").trim().split(/\n/).map(x=>x.trim()).filter(Boolean)]));
+  if(lang.lat.length<3||lang.en.length!==lang.lat.length||lang.fr.length!==lang.lat.length)
+    throw new Error("Easter Vigil line-by-line Latin/English/French parity required for "+prefix);
+  return freeze(lang.lat.map((latin,i)=>{
+    const lead=latin.startsWith("℣."),response=latin.startsWith("℟.");
+    const role=response?"ALL":lead?(cantors?"CANTORS":"CELEBRANT"):"CELEBRANT";
+    if((lead&&!lang.en[i].startsWith("℣."))||(response&&!lang.en[i].startsWith("℟."))||
+       (lead&&!lang.fr[i].startsWith("℣."))||(response&&!lang.fr[i].startsWith("℟.")))
+      throw new Error("Easter Vigil speaker alignment failed for "+prefix+" line "+(i+1));
+    return freeze({
+      id:prefix+"-"+String(i+1).padStart(3,"0"),kind:response?"RESPONSE":lead?"VERSICLE":"TEXT",
+      latin,vernacular:lang.en[i],english:lang.en[i],french:lang.fr[i],
+      speaker:role,sourceIds:freeze([...sourceIds])
+    });
+  }));
+}
+
 function validateGraph(graph){
   if(!Array.isArray(graph)||graph.length!==REQUIRED_COUNT)throw new Error("Certified 38-record Easter Vigil graph required");
   const ids=new Set();
@@ -99,19 +120,19 @@ function surfaceFor(record,payload){
   }
   if(id==="EV-EXS-200"||id==="EV-EXS-210")return freeze({key:"EXSULTET",title:"Exsultet",paragraphs:bilingualRows("EV-EXSULTET",payload.donor.exsultet,["EV-EXS-200","EV-EXS-210"])});
   if(id.startsWith("EV-LESS-"))return prophecySurface(id,payload);
-  if(id==="EV-LIT1-400")return freeze({key:"LITANY_I",title:"Litany of the Saints · I",paragraphs:bilingualRows("EV-LIT1",payload.bridge.litanyI,[id])});
+  if(id==="EV-LIT1-400")return freeze({key:"LITANY_I",title:"Litany of the Saints · I",paragraphs:ritualResponseRows("EV-LIT1",payload.bridge.litanyI,[id],{cantors:true})});
   if(id==="EV-FONT-410")return freeze({key:"NO_FONT",title:"No Baptismal Font Branch",paragraphs:bilingualRows("EV-NOFONT",payload.bridge.noFont,[id])});
   if(id==="EV-FONT-420")return freeze({key:"FONT_BLESSING",title:"Blessing of the Baptismal Font",paragraphs:freeze([...bilingualRows("EV-FONT",payload.bridge.font,[id]),...bilingualRows("EV-FONT-OVERVIEW",payload.donor.fontOverview,[id])])});
   if(id==="EV-BAPT-430")return freeze({key:"BAPTISMS",title:"Baptisms · if any",paragraphs:bilingualRows("EV-BAPT",payload.bridge.baptisms,[id])});
   if(id==="EV-FONT-440")return freeze({key:"BAPTISTERY",title:"Ministers at a Separate Baptistery",paragraphs:bilingualRows("EV-BAPTISTERY",payload.donor.fontOverview,[id])});
   if(id==="EV-FONT-450")return freeze({key:"FONT_RETURN",title:"Return from the Font",paragraphs:bilingualRows("EV-FONT-RETURN",payload.donor.fontOverview,[id])});
   if(id==="EV-REN-490")return freeze({key:"RENEWAL_PREP",title:"Prepare for the Baptismal Promises",paragraphs:bilingualRows("EV-REN-PREP",payload.bridge.renewal,[id])});
-  if(id==="EV-REN-500")return freeze({key:"RENEWAL",title:"Renewal of Baptismal Promises",paragraphs:bilingualRows("EV-REN",payload.bridge.renewal,[id])});
-  if(id==="EV-REN-510")return freeze({key:"RENUNCIATIONS",title:"Renunciations",paragraphs:bilingualRows("EV-REN-A",payload.bridge.renunciations,[id])});
-  if(id==="EV-REN-520")return freeze({key:"PROFESSION",title:"Profession of Faith",paragraphs:bilingualRows("EV-REN-C",payload.bridge.professions,[id])});
-  if(id==="EV-REN-530")return freeze({key:"RENEWAL_PATER",title:"Pater noster",paragraphs:bilingualRows("EV-REN-P",payload.bridge.pater,[id])});
+  if(id==="EV-REN-500")return freeze({key:"RENEWAL",title:"Renewal of Baptismal Promises",paragraphs:ritualResponseRows("EV-REN",payload.bridge.renewal,[id])});
+  if(id==="EV-REN-510")return freeze({key:"RENUNCIATIONS",title:"Renunciations",paragraphs:ritualResponseRows("EV-REN-A",payload.bridge.renunciations,[id])});
+  if(id==="EV-REN-520")return freeze({key:"PROFESSION",title:"Profession of Faith",paragraphs:ritualResponseRows("EV-REN-C",payload.bridge.professions,[id])});
+  if(id==="EV-REN-530")return freeze({key:"RENEWAL_PATER",title:"Pater noster",paragraphs:ritualResponseRows("EV-REN-P",payload.bridge.pater,[id])});
   if(id==="EV-REN-540")return freeze({key:"RENEWAL_ASPERSION",title:"Aspersion after the Promises",paragraphs:bilingualRows("EV-REN-S",payload.bridge.aspersion,[id])});
-  if(id==="EV-LIT2-600")return freeze({key:"LITANY_II",title:"Litany of the Saints · II",paragraphs:bilingualRows("EV-LIT2",payload.bridge.litanyII,[id])});
+  if(id==="EV-LIT2-600")return freeze({key:"LITANY_II",title:"Litany of the Saints · II",paragraphs:ritualResponseRows("EV-LIT2",payload.bridge.litanyII,[id],{cantors:true})});
   if(id==="EV-MASS-700")return freeze({key:"MASS_HANDOFF",title:"Mass begins with the Kyrie",paragraphs:freeze([row("EV-MASS-HANDOFF","Kýrie eléison.","TEXT",[id])])});
   throw new Error("No Easter Vigil reader surface for "+id);
 }
