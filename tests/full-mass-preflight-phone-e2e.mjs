@@ -36,6 +36,59 @@ try{
   globalThis.__full=mountFullMassPreflight({doc:document,
     getResolvedMass:__legacyMass,getDefaultForm:()=>__formDefault,language:()=>__lang});
  });
+
+ // Independent Mass source date: this must be available on *any* host Mass date
+ // without moving the liturgical Calendar, changing the rank, or fabricating text.
+ await page.evaluate(async()=>{
+  const {mountObservedMassSourceSelector}=await import("/src/mass/observed-mass-selector.js");
+  await import("/src/mass/observed-mass-styles.js");
+  const p=label=>({lat:label+" Latin",en:label+" English",fr:label+" Français"});
+  const source=(day,path,title)=>({status:"ready",date:day,
+   day:{main:{title,rank:2}},proper:{status:"ready",sourcePath:path,data:{
+    sourcePath:path,introit:p("Introit"),collects:[p("Collect")],epistle:p("Epistle"),
+    gradual:p("Gradual"),gospel:p("Gospel"),offertory:p("Offertory"),
+    secrets:[p("Secret")],preface:p("Preface"),communion:p("Communion"),
+    postcommunions:[p("Postcommunion")],
+   }}});
+  globalThis.__sources={
+   "2026-10-04":source("2026-10-04","Tempora/Pent19-0","19th Sunday"),
+   "2026-10-07":source("2026-10-07","Sancti/10-07","Most Holy Rosary")
+  };
+  __observed=mountObservedMassSourceSelector({
+   doc:document,getResolvedMass:__legacyMass,
+   resolveDay:async date=>__sources[date]??{status:"unavailable"},
+   language:()=>__lang,onSelectionChange:()=>__full.refresh(),
+  });
+ });
+ const picker=page.locator("[data-ao-observed-mass-picker]");
+ await picker.locator("summary").click();
+ await picker.locator("[data-observed-date]").fill("2026-10-07");
+ await picker.locator("[data-observed-lookup]").click();
+ await page.waitForSelector("[data-observed-candidate]:not([hidden])");
+ assert.match(await picker.locator("[data-observed-candidate]").innerText(),/Most Holy Rosary/);
+ assert.equal(await picker.locator("[data-observed-select]").isDisabled(),true,
+   "Sunday alternate Proper must not skip commemoration question");
+ await picker.locator("[data-observed-sunday-choice]").selectOption("COMMEMORATE_SUNDAY");
+ await picker.locator("[data-observed-select]").click();
+ await page.waitForFunction(()=>globalThis.__observed?.status?.().selected==="Sancti/10-07");
+ const actual=await page.evaluate(()=>{
+   const s=__observed.effectiveResolvedMass(__legacyMass());
+   return {massDate:s.date,source:s.properSource,kind:s.celebrationType,
+     calendar:s.calendarDay.title,sourceDate:s.sourceDiagnostics.actualMassSourceDate,
+     permission:s.sourceDiagnostics.independentRubricPermission,
+     commem:s.commemorations.length};
+ });
+ assert.deepEqual(actual,{
+  massDate:"2026-10-04",source:"Sancti/10-07",kind:"VOTIVE",
+  calendar:"Nineteenth Sunday after Pentecost",sourceDate:"2026-10-07",
+  permission:"NOT_VERIFIED",commem:1,
+ });
+ assert.equal(await picker.locator("[data-observed-sunday-choice]").inputValue(),"COMMEMORATE_SUNDAY");
+ await page.evaluate(()=>{__formDate="2026-10-11";__observed.update()});
+ assert.equal((await page.evaluate(()=>__observed.status())).selected,null,
+   "Observed source leaked into another actual Mass date");
+ await page.evaluate(()=>{__formDate="2026-10-04";__observed.update();});
+ await page.evaluate(()=>__observed.dispose());
  await page.waitForSelector("[data-ao-full-mass-preflight]");
  assert.equal(await page.locator("[data-full-mass-form]").count(),4);
  assert.equal(await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').isChecked(),true);
