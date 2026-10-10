@@ -158,7 +158,7 @@ const shrineVm=buildExploreViewModel({
 });
 const shrineHtml=renderExploreToString(shrineVm);
 assert.match(shrineHtml,/AD ORIENTEM · EXPLORE/);
-assert.match(shrineHtml,/>Explore</);
+assert.match(shrineHtml,/<h1>Shrines<\/h1>/,"R53 gives the active Explore section its own heading");
 assert.match(shrineHtml,/data-find-filter="lens"/);
 assert.match(shrineHtml,/Shrines/);
 assert.match(shrineHtml,/Traditions/);
