@@ -100,6 +100,34 @@
       "role": "MONTENEGRO_GOVERNMENT_GUIDE",
       "site_name": "Perast — Gospa od Škrpjela, Our Lady of the Rocks",
       "scope": "Site identity and history, not independent relic authentication, supernatural finding, GPS accuracy or schedule"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:AL-PILGRIMAGE",
+      "url": "https://akt.gov.al/en/atraksionet/kisha-e-shna-ndout-lac/",
+      "role": "ALBANIAN_NATIONAL_TOURISM",
+      "site_name": "Thirteen-Tuesday St Anthony pilgrimage",
+      "scope": "Thirteen-Tuesday St Anthony pilgrimage"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:SM-RELICS",
+      "url": "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/Vivi/ARTE-E-CULTURA.html",
+      "role": "SAN_MARINO_GOVERNMENT",
+      "site_name": "Saint Marinus relics in basilica",
+      "scope": "Saint Marinus relics in basilica"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:SM-PROCESSION",
+      "url": "https://www.visitsanmarino.com/pub2/VisitSM/en/evento/20260903_Festa_di_San_Marino.html",
+      "role": "SAN_MARINO_GOVERNMENT",
+      "site_name": "2026 patronal relic procession and Mass",
+      "scope": "2026 patronal relic procession and Mass"
+    },
+    {
+      "source_id": "EUROPE:W2:SRC:MC-DEVOTA",
+      "url": "https://www.visitmonaco.com/fr/evenement/traditions-culte/19958/traditions",
+      "role": "MONACO_TOURISM_ARCHIVE",
+      "site_name": "2016 patronal symbolic boat burning historical ritual",
+      "scope": "2016 patronal symbolic boat burning historical ritual"
     }
   ],
   "place_leads": [
@@ -433,7 +461,7 @@
       "category": "PILGRIMAGES",
       "site_research_id": "EUROPE:W2:PLACE:AL:lac-kisha-e-shna-ndout-saint-anthony-pilgrimage-church",
       "source_ids": [
-        "EUROPE:W2:SRC:8"
+        "EUROPE:W2:SRC:AL-PILGRIMAGE"
       ],
       "claim": "Laç Franciscan church attracts pilgrimage honoring Saint Anthony of Padua",
       "qualifier": "2025 rebuilding plan and customary festival should not imply new constructed church already exists",
@@ -459,7 +487,7 @@
       "category": "RELICS",
       "site_research_id": "EUROPE:W2:PLACE:SM:san-marino-basilica-del-santo-basilica-di-san-marino",
       "source_ids": [
-        "EUROPE:W2:SRC:10"
+        "EUROPE:W2:SRC:SM-RELICS"
       ],
       "claim": "Official state heritage identifies preserved founder relics at Catholic Basilica of Saint Marinus",
       "qualifier": "Custodian report, not independent ecclesiastical authentication",
@@ -472,7 +500,7 @@
       "category": "CUSTOMS",
       "site_research_id": "EUROPE:W2:PLACE:SM:san-marino-basilica-del-santo-basilica-di-san-marino",
       "source_ids": [
-        "EUROPE:W2:SRC:10"
+        "EUROPE:W2:SRC:SM-PROCESSION"
       ],
       "claim": "Patronal September procession associated with saint founder in San Marino",
       "qualifier": "Historical or annually reported custom; never copied as French domestic tradition",
@@ -485,7 +513,7 @@
       "category": "CUSTOMS",
       "site_research_id": "EUROPE:W2:PLACE:MC:monaco-eglise-sainte-devote",
       "source_ids": [
-        "EUROPE:W2:SRC:11"
+        "EUROPE:W2:SRC:MC-DEVOTA"
       ],
       "claim": "Symbolic boat arrival and burning, Saint Devota procession, patronal festival Monaco",
       "qualifier": "Non-French national Monaco custom with historical Corsican ties; needs current schedule verification",
@@ -521,7 +549,7 @@
     }
   ],
   "counts": {
-    "source_records": 12,
+    "source_records": 16,
     "place_leads": 12,
     "category_associations": 18,
     "by_category": {
