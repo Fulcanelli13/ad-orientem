@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync,existsSync} from "node:fs";
 import {LEARN_LAYOUT,LEARN_MODULE_IDS,renderLearnPresentation,learnDiscoveryMarkup} from "../src/learn/presentation.js";
-import {searchDiscovery,normalizeDiscovery,DISCOVERY_SURFACES,loadReferenceDiscovery} from "../src/learn/discovery.js";
+import {searchDiscovery,normalizeDiscovery,DISCOVERY_SURFACES,loadReferenceDiscovery,loadFormationContentDiscovery} from "../src/learn/discovery.js";
 
 const raw=JSON.parse(readFileSync("data/app/public-reference-discovery.v1.json","utf8"));
 assert.equal(raw.schema,"AO_PUBLIC_REFERENCE_DISCOVERY_V1");
@@ -65,4 +65,41 @@ assert.match(owner,/opts\?\.phraseId/);
 assert.match(owner,/state\.discoveryQuery/);
 assert.match(owner,/\["home","mass","pray","calendar","find","apostolate"\]/);
 assert.doesNotMatch(owner,/LEARN_MODULE_IDS\.push/);
-console.log("PASS 15 canonical Formation launchers, 880 Glossary references, bilingual search and fail-closed publication policy");
+
+const content=JSON.parse(readFileSync("data/app/formation-discovery-content.v1.json","utf8"));
+assert.equal(content.schema,"AO_FORMATION_DISCOVERY_CONTENT_V1");
+assert.equal(content.entries.length,254);
+assert.deepEqual(content.counts,{topic:50,question:150,spiritual:14,latin:40});
+assert.equal(new Set(content.entries.map(row=>row.id)).size,254,"Formation discovery duplicates a content owner");
+const cq=text=>searchDiscovery(text,{sections:LEARN_LAYOUT.sections,referenceEntries:raw.entries,
+  contentEntries:content.entries,limit:40});
+for(const [term,id,kind] of [["CSE123","CSE123","question"],["SEX-CORE-35","SEX-CORE-35","topic"],
+  ["SL01","SL01","spiritual"],["latin:40","latin:40","latin"]]){
+ assert.ok(cq(term).some(row=>row.kind==="content"&&row.id===id&&row.contentKind===kind),
+   "Missing direct canonical search destination "+id);
+}
+assert.ok(cq("vie intérieure").some(row=>row.id==="SL01"),"French spiritual lesson search failed");
+assert.ok(cq("contraception").some(row=>row.id==="SEX-CORE-17"),"Sexual Ethics topic search failed");
+assert.equal(content.entries.some(row=>/^(?:APOL-|CR-)/.test(row.id)),false,
+  "Unapproved 141-dossier research must not enter global discovery index");
+const searchHtml=learnDiscoveryMarkup(state,fakeWin,{query:"CSE123",referenceEntries:raw.entries,
+  referenceStatus:"ready",contentEntries:content.entries,contentStatus:"ready"});
+assert.match(searchHtml,/data-ao-learn-content-id="CSE123"/);
+assert.match(searchHtml,/data-ao-learn-content-kind="question"/);
+assert.match(searchHtml,/data-ao-learn-module="learn.sexual_ethics"/);
+let contentRequests=0;
+const loadedContent=await loadFormationContentDiscovery({fetch:async url=>{
+ contentRequests++;
+ assert.ok(String(url).includes("/data/app/formation-discovery-content.v1.json"));
+ return {ok:true,json:async()=>content};
+}});
+assert.equal(loadedContent.length,254);
+assert.equal(contentRequests,1);
+assert.equal(await loadFormationContentDiscovery({fetch:async()=>{throw Error("content refetch");}}),loadedContent);
+const ownerDeep=readFileSync("src/learn/browser-entry.js","utf8");
+assert.match(ownerDeep,/registry\.open\(id,opts\)/,"Module launch drops search deep-link options");
+assert.match(ownerDeep,/contentKind==="spiritual"/);
+assert.match(ownerDeep,/contentKind==="question"/);
+assert.match(ownerDeep,/opts\?\.lessonNumber/);
+console.log("PASS 15 Formation launchers, 880 Glossary references, 254 canonical search entries and gated 141-dossier research");
+
