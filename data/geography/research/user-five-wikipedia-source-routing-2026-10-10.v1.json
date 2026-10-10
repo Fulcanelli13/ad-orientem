@@ -1,0 +1,64 @@
+{
+  "schema": "EXPLORE_USER_WIKIPEDIA_SOURCE_ROUTING_V1",
+  "as_of": "2026-10-10",
+  "review_context": "User-supplied five URLs: reconcile to source-owned pilgrimage, biblical, relic, apparition and historic feature pipelines",
+  "source_pages": [
+    {
+      "id": "PILGRIM",
+      "url": "https://en.wikipedia.org/wiki/List_of_Christian_pilgrimage_sites",
+      "scope": "Cross-confessional world pilgrimage index; not exhaustive nor a Catholic-juridical source",
+      "source_type": "SECONDARY_DISCOVERY_ONLY",
+      "review_status": "PAGE_OPENED_NOT_CERTIFIED_EXHAUSTIVE"
+    },
+    {
+      "id": "BURIAL",
+      "url": "https://en.wikipedia.org/wiki/List_of_burial_places_of_Abrahamic_figures",
+      "scope": "Competing Jewish, Christian, Muslim and other traditional burial attributions",
+      "source_type": "SECONDARY_DISCOVERY_ONLY",
+      "review_status": "PAGE_OPENED_NOT_CERTIFIED_EXHAUSTIVE"
+    },
+    {
+      "id": "APPARITION",
+      "url": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "scope": "Historical claim inventory mixing positive, neutral and negative judgments",
+      "source_type": "SECONDARY_DISCOVERY_ONLY",
+      "review_status": "PAGE_OPENED_NOT_CERTIFIED_EXHAUSTIVE"
+    },
+    {
+      "id": "HOLY_LAND",
+      "url": "https://en.wikipedia.org/wiki/List_of_Christian_holy_places_in_the_Holy_Land",
+      "scope": "Biblical sites and rival localisations, sometimes same physical church",
+      "source_type": "SECONDARY_DISCOVERY_ONLY",
+      "review_status": "PAGE_OPENED_NOT_CERTIFIED_EXHAUSTIVE"
+    },
+    {
+      "id": "CATEGORY",
+      "url": "https://en.wikipedia.org/wiki/Category:Christian_pilgrimage_sites",
+      "scope": "Navigational category: seven subcategories, 19 displayed pages, self-referential and incomplete",
+      "source_type": "SECONDARY_DISCOVERY_ONLY",
+      "review_status": "PAGE_OPENED_NOT_CERTIFIED_EXHAUSTIVE"
+    }
+  ],
+  "authority_anchors": [
+    {
+      "url": "https://www.custodia.org/en/santuari/",
+      "kind": "ORIGINAL_HOLY_LAND_CATHOLIC_SHRINE_CUSTODIAN",
+      "extracted_index": "data/geography/research/holy-land-custodia-sanctuary-index-2026-10-10.v1.json"
+    },
+    {
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
+      "kind": "HOLY_SEE_2024_SUPERNATURAL_PHENOMENA_NORMS"
+    }
+  ],
+  "rules": [
+    "Names from Wikipedia are leads only; original ecclesiastical, archaeological, historic, site-custodian sources required for assertions.",
+    "Cave of Patriarchs, Church of Holy Sepulchre and all nested chapels share parent complexes where physically appropriate.",
+    "A traditional grave is not authenticated bodily relic custody.",
+    "A Marian shrine is not proof that its attributed apparition was approved as supernatural.",
+    "No confessional ownership inferred from a generic Christian pilgrimage category.",
+    "A Holy Land locality such as Jerusalem or Galilee is not a standalone pin.",
+    "User-supplied URLs remain linked as discovery provenance; do not add these five to counts of independent institutionally verified primary sources."
+  ],
+  "new_canonical_places": 0,
+  "publication_status": "RESEARCH_ONLY"
+}
