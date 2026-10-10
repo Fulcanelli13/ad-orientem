@@ -409,6 +409,12 @@ export function createReaderCueStateController({
     const positionItem=latestPassing(positions,activeSort,activeConditions);
     const voiceItem=latestPassing(voices,activeSort,activeConditions);
     const postureItem=latestPassing(cuePostures,activeSort,activeConditions);
+    const precedingPostureItem=latestPassing(cuePostures,activeSort-1,activeConditions);
+    // The exact source line may restate STAND after STAND (e.g. Collect
+    // after Gloria). Only a changed source posture is a faithful movement.
+    // Use canonical source order, not the previously *viewed* reader card.
+    const postureTransition=Boolean(postureItem?.cueId===cueId &&
+      postureItem.posture!==precedingPostureItem?.posture);
 
     return Object.freeze({
       supported:true,
@@ -422,6 +428,7 @@ export function createReaderCueStateController({
       priestPosition:sourcePosition(positionItem),
       priestVoice:sourceVoice(voiceItem),
       posture:sourcePosture(postureItem),
+      postureTransition,
       ownership:Object.freeze({
         gesture:gesture?.label ? (gesture.owner==="GESTURE_MATRIX_SOT"?"GESTURE_MATRIX_SOT":"R17_CUE_NATIVE") : gesture ? (gesture.owner==="GESTURE_MATRIX_SOT_ADVISORY"?"GESTURE_MATRIX_SOT_ADVISORY_FAIL_CLOSED":"R17_SOURCE_ADVISORY_FAIL_CLOSED") : "R17_EXACT_CUE_NONE",
         response:response ? "R17_CUE_NATIVE" : "R17_EXACT_CUE_NONE",
