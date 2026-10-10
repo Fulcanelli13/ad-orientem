@@ -1,10 +1,5 @@
 name: Una Cum Source Venue Marker Recovery R44
 on:
-  pull_request:
-    paths:
-      - "tools/directory/recover-una-cum-public-venue-markers-r44.mjs"
-      - ".github/workflows/directory-una-cum-source-markers-r44.yml"
-      - "data/directory/research/staging/map-first-r37/r44-locality-source-queue.json"
   workflow_dispatch:
 permissions:
   contents: read
