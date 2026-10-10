@@ -941,6 +941,14 @@ try{
   assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
     "Gloria previous-word ritual highlight leaked into the next cue");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
+  const beforeGloriaSit=await focusCanonicalCue("AO.SM.C0064");
+  assert.equal(beforeGloriaSit.posture,"STAND","Gloria sits too early before Qui sedes");
+  const gloriaSit=await focusCanonicalCue("AO.SM.C0065");
+  assert.equal(gloriaSit.posture,"SIT","Gloria must sit exactly at Qui sedes ad dexteram Patris");
+  await page.screenshot({path:resolve(out,"09a-mass-gloria-qui-sedes-sit.png"),fullPage:false});
+  const gloriaRise=await focusCanonicalCue("AO.SM.C0068");
+  assert.equal(gloriaRise.posture,"STAND","Gloria must rise at Cum Sancto Spiritu before Amen");
+  assert.match(gloriaRise.anchoredParagraphSource,/Cum Sancto Spíritu/i);
 
   // Source-owned v1.80 LISTEN cue appears during actual sung priest text,
   // but the separate faithful response and posture channels remain independent.
@@ -973,6 +981,11 @@ try{
     incarnatus.anchorWords.some(word=>/et homo factus est|and was made man|s.est fait homme/i.test(word)),
     "Credo Incarnatus sourced opening and closing words are not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
+  const credoSit=await focusCanonicalCue("AO.SM.C0097");
+  assert.equal(credoSit.posture,"SIT","Credo must sit at Crucifixus, after Incarnatus");
+  await page.screenshot({path:resolve(out,"10a-mass-credo-post-incarnatus-sit.png"),fullPage:false});
+  const credoRise=await focusCanonicalCue("AO.SM.C0104");
+  assert.equal(credoRise.posture,"STAND","Credo must rise at Et vitam before Amen");
 
   // Check unrelated phases, not just Gloria/Credo. These anchors belong to
   // their exact canonical cues, in the language the reader already displays.
