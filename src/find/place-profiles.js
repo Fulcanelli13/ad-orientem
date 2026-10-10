@@ -86,6 +86,7 @@ function itemRef(item){
     title:item?.title??"",
     status:item?.status??"",
     summary:item?.summary??"",
+    summary_fr:item?.summary_fr??null,
     eyebrow:item?.eyebrow??"",
   });
 }
