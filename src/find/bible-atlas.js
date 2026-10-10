@@ -71,6 +71,9 @@ const SEQUENCE=[
 // Traditional site pin is never proof of exact event geography. Jerusalem uses a city-level
 // reference for events with different or disputed local settings.
 export const ATLAS_GEO=Object.freeze({
+ shiloh:{key:"shiloh",lat:32.055703,lng:35.289536,kind:"settlement",url:"https://www.openbible.info/geo/modern/m12f296/khirbet-seilun"},
+ nineveh:{key:"nineveh",lat:36.3594,lng:43.1528,kind:"settlement",url:"https://www.openbible.info/geo/modern/m52bd87/nineveh"},
+ babylon:{key:"babylon",lat:32.543333,lng:44.422222,kind:"settlement",url:"https://www.openbible.info/geo/modern/md561de/babylon"},
  hebron:{key:"hebron",lat:31.525087,lng:35.102220,kind:"city_context",url:"https://www.openbible.info/geo/modern/m86f941/tel-rumeida"},
  nazareth:{key:"nazareth",lat:32.70209,lng:35.29779,kind:"settlement",url:"https://www.openstreetmap.org/way/97417380"},
  bethlehem:{key:"bethlehem",lat:31.704306,lng:35.207583,kind:"traditional",url:"https://www.wikidata.org/wiki/Q194504"},
