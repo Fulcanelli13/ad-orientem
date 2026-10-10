@@ -1,4 +1,4 @@
-import {findObservedMassSource,composeObservedMassSelection} from "./observed-mass-source.js";
+import {findObservedMassSource,composeObservedMassSelection,observedSourceEligibility} from "./observed-mass-source.js";
 
 // A source-date finder for the Mass *actually celebrated* on any actual date.
 // It leaves the canonical calendar and the established votive/Requiem/Nuptial
@@ -6,14 +6,15 @@ import {findObservedMassSource,composeObservedMassSelection} from "./observed-ma
 // certify an external solemnity, local permission or church indult.
 export function mountObservedMassSourceSelector({
  doc=globalThis.document,getResolvedMass,resolveDay,recoverProper,
- language=()=> "en",onSelectionChange=()=>{},
+ language=()=> "en",onSelectionChange=()=>{},mountTarget=null,
 }={}){
  if(!doc?.body||typeof getResolvedMass!=="function")
    throw new TypeError("Observed Mass selector requires a live host");
- let root=null,disposed=false,observer=null,latestDate=null,latestHostChoice=null;
+ let root=null,disposed=false,observer=null,latestDate=null,latestHostChoice=null,latestLanguage=null;
  let candidate=null,selection=null,pending=false,request=0,message="",sourceDate="",sundayChoice="UNDECIDED";
  const flow=()=>doc.getElementById("ao-mass-flow-v1");
- const anchor=()=>flow()?.querySelector(".aoFlowActions");
+ const anchor=()=>typeof mountTarget==="function"?mountTarget():null;
+ const fallbackAnchor=()=>flow()?.querySelector(".aoFlowActions");
  const fr=()=>String(language()).toLowerCase().startsWith("fr");
  const t=(en,frText)=>fr()?frText:en;
  const keyFor=mass=>[
@@ -35,14 +36,18 @@ export function mountObservedMassSourceSelector({
  function update(){
    if(disposed)return;
    const base=getResolvedMass(),massDate=String(base?.date??"");
-   const key=keyFor(base);
+   const key=keyFor(base),currentLanguage=String(language()??"en");
+   // Do not allow a source validated in English to become French-ready just
+   // because the user's interface language changed after confirmation.
+   if(latestLanguage!==null&&currentLanguage!==latestLanguage)clear({notify:true});
+   latestLanguage=currentLanguage;
    if(latestDate!==null&&massDate!==latestDate){
      clear({notify:true,eraseDate:true});
    }else if(latestHostChoice!==null&&key!==latestHostChoice){
      clear({notify:true});
    }
    latestDate=massDate;latestHostChoice=key;
-   const target=anchor();
+   const target=anchor()??fallbackAnchor();
    if(!target)return;
    if(!root?.isConnected){
      root=doc.createElement("section");root.className="aoObservedMassPicker";
@@ -84,9 +89,11 @@ export function mountObservedMassSourceSelector({
        if(button.matches("[data-observed-lookup]")){void lookup();return;}
        if(button.matches("[data-observed-select]")){void choose();return;}
      });
-     target.insertAdjacentElement("beforebegin",root);
+     if(target.hasAttribute?.("data-full-mass-source-slot"))target.append(root);
+     else target.insertAdjacentElement("beforebegin",root);
    }
    const active=selectionFor(base);
+   const eligibility=observedSourceEligibility(base);
    root.querySelector("[data-observed-heading]").textContent=active?
      t("Actual Mass: ","Messe célébrée : ")+active.title:
      t("Different Mass actually celebrated","Autre messe effectivement célébrée");
@@ -96,6 +103,7 @@ export function mountObservedMassSourceSelector({
    root.querySelector("[data-observed-date-label]").textContent=t("Source feast / Mass date","Date de la fête ou de la messe source");
    root.querySelector("[data-observed-date]").value=sourceDate;
    root.querySelector("[data-observed-lookup]").textContent=t("Find Proper","Chercher le propre");
+   root.querySelector("[data-observed-lookup]").disabled=pending||!eligibility.allowed;
    const c=root.querySelector("[data-observed-candidate]");
    c.hidden=!candidate;
    c.textContent=candidate?candidate.title+" · "+candidate.sourceDate+" · "+candidate.sourcePath:"";
@@ -114,11 +122,12 @@ export function mountObservedMassSourceSelector({
    choices.options[2].text=t("No Sunday commemoration in this celebration",
      "Pas de mémoire du dimanche dans cette célébration");
    root.querySelector("[data-observed-select]").textContent=t("Use this Mass's Proper","Utiliser ce propre");
-   root.querySelector("[data-observed-select]").disabled=pending||!candidate||base?.canStart!==true||
+   root.querySelector("[data-observed-select]").disabled=pending||!candidate||!eligibility.allowed||
      (sunday&&sundayChoice==="UNDECIDED");
    root.querySelector("[data-observed-clear]").textContent=t("Use Mass of the day","Revenir à la messe du jour");
    root.querySelector("[data-observed-status]").textContent=pending?t("Resolving source texts…","Résolution des textes sources…"):
-     message|| (active?t("Selected for this Mass only · not the calendar of the day.",
+     message||(!eligibility.allowed?t("Choose the ceremony’s own Proper in the Mass categories above.","Choisissez le propre propre à cette cérémonie dans les catégories ci-dessus."):
+     active?t("Selected for this Mass only · not the calendar of the day.",
        "Choisi uniquement pour cette messe, sans modifier le calendrier."):"");
    root.querySelector("[data-observed-source-note]").textContent=t(
     "This follows the Mass you report attending; it does not independently establish rubrical permission, local indults or external solemnity. The reader refuses incomplete source texts.",
@@ -127,6 +136,8 @@ export function mountObservedMassSourceSelector({
    if(active)root.querySelector("[data-observed-details]").open=true;
  }
  async function lookup(){
+   const eligibility=observedSourceEligibility(getResolvedMass());
+   if(!eligibility.allowed){message="OBSERVED_MASS_"+eligibility.reason;update();return;}
    const token=++request,base=getResolvedMass(),massDate=base?.date;
    candidate=null;selection=null;pending=true;message="";onSelectionChange();update();
    try{
@@ -144,6 +155,7 @@ export function mountObservedMassSourceSelector({
  }
  async function choose(){
    if(!candidate||pending)return;
+   if(!observedSourceEligibility(getResolvedMass()).allowed){clear();update();return;}
    const token=++request,base=getResolvedMass();
    pending=true;message="";update();
    try{
@@ -173,6 +185,14 @@ export function mountObservedMassSourceSelector({
  update();
  return Object.freeze({
   update,selectionFor,effectiveResolvedMass,
+  open:()=>{
+    update();
+    const details=root?.querySelector("[data-observed-details]");
+    if(!details)return false;
+    details.open=true;
+    root?.querySelector("[data-observed-date]")?.focus?.();
+    return true;
+  },
   clear:()=>{clear();update();},
   status:()=>Object.freeze({date:latestDate,sourceDate,selected:selection?.sourcePath??null,pending,hasCandidate:Boolean(candidate)}),
   dispose(){disposed=true;++request;doc.removeEventListener("click",schedule);doc.removeEventListener("change",schedule);observer?.disconnect();root?.remove();}
