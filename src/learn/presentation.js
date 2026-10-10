@@ -155,10 +155,11 @@ function cardMarkup(item,state,win){
 
 function sectionDoorMarkup(section,state,win){
   const representative=section.items[0];
-  const previewAsset=section.previewAssetId?resolveCanonicalAssetUrl(section.previewAssetId):null;
-  const icon=previewAsset
-    ?`<span class="aoLearnModIcon aoLearnModIconMask" data-ao-asset-id="${esc(section.previewAssetId)}" aria-hidden="true" style="background:currentColor;-webkit-mask:url('${esc(previewAsset)}') center/contain no-repeat;mask:url('${esc(previewAsset)}') center/contain no-repeat"></span>`
-    :iconMarkup(representative,win);
+  // The icon already exists as a source-owned SVG symbol in the local sprite.
+  // Respect that embedded source before asking for a missing legacy
+  // active/formation-module path through a CSS mask.
+  const icon=iconMarkup({assetId:section.previewAssetId},win)||
+    iconMarkup(representative,win);
   return `<article class="aoLearnModCard aoLearnFamilyCard">
     <button type="button" class="aoLearnModCardMain aoLearnFamilyDoor ${icon?"iconized":""}" data-ao-learn-family="${esc(section.id)}"${section.id==="questions"?" data-ao-learn-questions":""}>
       ${icon}
