@@ -1,0 +1,543 @@
+{
+  "schema": "AO_EXPLORE_RESEARCH_RECONCILIATION_GATE_V1",
+  "as_of": "2026-10-10",
+  "status": "REVIEW_ONLY_NOT_PUBLISHED",
+  "purpose": "Non-destructive, source-first accounting of inherited customary claims and relic-subject research against the existing Explore publication boundary; no inferred map pins or authoritative relic claims.",
+  "source_files": {
+    "customary_salvage": "data/customary/catholic-life-salvage.v1.json",
+    "published_customs": "data/customs/customs-atlas-seed.v1.json",
+    "custom_negative_knowledge": "data/customs/negative-knowledge.v1.json",
+    "relic_subject_census": "data/explore/worldwide-relic-subject-census.research.v1.json",
+    "relic_final60": "data/explore/relic-final60-new-subjects.review.v1.json",
+    "published_relics": "data/explore/sacred-phenomena-seed.v1.json"
+  },
+  "summary": {
+    "customary_salvage_claims": 55,
+    "customary_salvage_linkless_claims": 21,
+    "customary_registered_sources": 16,
+    "published_customs": 13,
+    "published_custom_attestations": 71,
+    "custom_hold_reject_records": 7,
+    "research_relic_subjects": 161,
+    "research_legacy_relic_object_links": 75,
+    "research_institutional_custody_leads": 22,
+    "defined_screening_queue": 133,
+    "final60_additional_subject_leads": 60,
+    "final60_source_screened": 40,
+    "final60_lacking_original_custodian_source": 20,
+    "published_relic_site_claims": 122
+  },
+  "domain_inventory": {
+    "CUSTOMARY_SOT.CHURCH_BEHAVIOUR": {
+      "claims": 4,
+      "without_source_refs": 1
+    },
+    "CUSTOMARY_SOT.CATHOLIC_GESTURES": {
+      "claims": 5,
+      "without_source_refs": 0
+    },
+    "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS": {
+      "claims": 4,
+      "without_source_refs": 0
+    },
+    "CUSTOMARY_SOT.CHURCH_CONDUCT": {
+      "claims": 3,
+      "without_source_refs": 1
+    },
+    "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS": {
+      "claims": 3,
+      "without_source_refs": 0
+    },
+    "CUSTOMARY_SOT.SACRAMENTALS": {
+      "claims": 18,
+      "without_source_refs": 9
+    },
+    "CUSTOMARY_SOT.RELICS": {
+      "claims": 6,
+      "without_source_refs": 1
+    },
+    "CUSTOMARY_SOT.SACRED_OBJECT_CARE": {
+      "claims": 5,
+      "without_source_refs": 3
+    },
+    "CUSTOMARY_SOT.PARISH_RHYTHMS": {
+      "claims": 3,
+      "without_source_refs": 3
+    },
+    "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS": {
+      "claims": 4,
+      "without_source_refs": 3
+    }
+  },
+  "claim_dispositions": [
+    {
+      "claim_id": "CL02-S01-Q001",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S01-Q002",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S01-Q003",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "source_ref_count": 2,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S01-Q004",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_BEHAVIOUR",
+      "source_ref_count": 2,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S04-Q001",
+      "original_domain": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "source_ref_count": 2,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S04-Q002",
+      "original_domain": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S04-Q003",
+      "original_domain": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S04-Q004",
+      "original_domain": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S04-Q005",
+      "original_domain": "CUSTOMARY_SOT.CATHOLIC_GESTURES",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S05-Q001",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S05-Q002",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S05-Q003",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "source_ref_count": 2,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S05-Q004",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_MOVEMENT_AND_PROCESSIONS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S06-Q001",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_CONDUCT",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S06-Q002",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_CONDUCT",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S06-Q003",
+      "original_domain": "CUSTOMARY_SOT.CHURCH_CONDUCT",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S07-Q001",
+      "original_domain": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S07-Q002",
+      "original_domain": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS",
+      "source_ref_count": 2,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL02-S07-Q003",
+      "original_domain": "CUSTOMARY_SOT.REGIONAL_AND_LOCAL_CUSTOMS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S01-Q001",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S01-Q002",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S01-Q003",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S01-Q004",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S01-Q005",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S02-Q001",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S02-Q002",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S02-Q003",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S02-Q004",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S02-Q005",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S03-Q001",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S03-Q002",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S03-Q003",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S03-Q004",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S03-Q005",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S06-Q002",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S06-Q003",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S06-Q006",
+      "original_domain": "CUSTOMARY_SOT.SACRAMENTALS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S05-Q001",
+      "original_domain": "CUSTOMARY_SOT.RELICS",
+      "source_ref_count": 2,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S05-Q002",
+      "original_domain": "CUSTOMARY_SOT.RELICS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S05-Q003",
+      "original_domain": "CUSTOMARY_SOT.RELICS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S05-Q004",
+      "original_domain": "CUSTOMARY_SOT.RELICS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S05-Q005",
+      "original_domain": "CUSTOMARY_SOT.RELICS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S05-Q006",
+      "original_domain": "CUSTOMARY_SOT.RELICS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S07-Q001",
+      "original_domain": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S07-Q002",
+      "original_domain": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S07-Q003",
+      "original_domain": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S07-Q004",
+      "original_domain": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL08-S07-Q005",
+      "original_domain": "CUSTOMARY_SOT.SACRED_OBJECT_CARE",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL09-S07-Q001",
+      "original_domain": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL09-S07-Q002",
+      "original_domain": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL09-S07-Q003",
+      "original_domain": "CUSTOMARY_SOT.PARISH_RHYTHMS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL10-S02-Q001",
+      "original_domain": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL10-S02-Q002",
+      "original_domain": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL10-S02-Q004",
+      "original_domain": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "source_ref_count": 0,
+      "review_status": "SOURCE_REFERENCE_REVIEW_REQUIRED",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    },
+    {
+      "claim_id": "CL10-S02-Q005",
+      "original_domain": "CUSTOMARY_SOT.NAMES_AND_NAME_DAYS",
+      "source_ref_count": 1,
+      "review_status": "OWNER_AND_PUBLICATION_REVIEW",
+      "map_policy": "DO_NOT_CREATE_PIN_FROM_SALVAGE"
+    }
+  ],
+  "custom_negative_knowledge": [
+    {
+      "custom_id": "DOM-005",
+      "decision": "HOLD",
+      "map_blocked": true
+    },
+    {
+      "custom_id": "DOM-008",
+      "decision": "REJECT",
+      "map_blocked": true
+    },
+    {
+      "custom_id": "DOM-015",
+      "decision": "HOLD",
+      "map_blocked": true
+    },
+    {
+      "custom_id": "LIFE-005",
+      "decision": "HOLD",
+      "map_blocked": true
+    },
+    {
+      "custom_id": "BELL-005",
+      "decision": "REJECT",
+      "map_blocked": true
+    },
+    {
+      "custom_id": "FAST-009",
+      "decision": "REJECT",
+      "map_blocked": true
+    },
+    {
+      "custom_id": "FAST-010",
+      "decision": "REJECT",
+      "map_blocked": true
+    }
+  ],
+  "relic_research": {
+    "publication_state": "RESEARCH_ONLY",
+    "initial_subjects_registered": 161,
+    "initial_screening_queue": 133,
+    "initial_legacy_objects": 75,
+    "institutionally_sourced_candidates": 22,
+    "later_additional_subjects": 60,
+    "later_source_reviewed": 40,
+    "later_pending_original_source": 20,
+    "later_pending_subject_ids": [
+      "subject:saint-albert-chmielowski",
+      "subject:saint-cajetan-of-thiene",
+      "subject:saint-charles-de-foucauld",
+      "subject:saint-euphrasia-eluvathingal",
+      "subject:saint-francis-solano",
+      "subject:saint-george-of-lydda",
+      "subject:saint-giuseppe-moscati",
+      "subject:saint-john-gabriel-perboyre",
+      "subject:saint-john-maron",
+      "subject:saint-jose-sanchez-del-rio",
+      "subject:saint-joseph-benedict-cottolengo",
+      "subject:saint-laura-montoya",
+      "subject:saint-mariam-baouardy",
+      "subject:saint-maximilian-kolbe",
+      "subject:saint-miguel-febres-cordero",
+      "subject:saint-moses-the-ethiopian",
+      "subject:saint-narcisa-de-jesus",
+      "subject:saint-pachomius-the-great",
+      "subject:saint-stanislaus-kostka",
+      "subject:saint-teresa-benedicta-of-the-cross"
+    ],
+    "source_owned_published_relic_site_claims": 122,
+    "important_distinction": "Source screening is not authentication. Subject, object, custody claim, exact Place and map publication must pass separate gates."
+  },
+  "explicit_unresolved_research": [
+    "SOT-07 was described as a 63-row research corpus, but this gate can audit only the published seed and inherited salvage until the original full row ledger is recovered.",
+    "Source-free annex claims cannot be promoted into new factual Explore cards or maps without claim-level supporting text.",
+    "Custody cases, saint biographies and historical relic associations are not interchangeable with geocoded custodian sites.",
+    "Do not duplicate Prayer, Mass, Calendar or Formation content when resolving customary/behavioural claims."
+  ],
+  "release_gates": [
+    "Every incoming research/legacy claim must receive a canonical owner, source review decision and duplicate/variant disposition before publication.",
+    "A country attestation cannot create a precise pin or imply national exclusivity.",
+    "Relic objects require separately identified subject, attributed material, custody, source authority and Place; no automatic authenticity verdict.",
+    "The 7 customs negative-knowledge controls remain enforced and cannot be reintroduced by generic browsing.",
+    "Zero source reference loss and no bulk promotion of unverified leads."
+  ]
+}
