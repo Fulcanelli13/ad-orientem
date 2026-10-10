@@ -7,6 +7,7 @@
 - [Product architecture](ARCHITECTURE.md) · [PR/reconciliation policy](PR-PIPELINE-POLICY.md) · [Release checklist](RELEASE-CHECKLIST.md)
 - [App convergence](APP-CONVERGENCE.md) · [R17 Mass evidence](R17-CONVERGENCE-PROVENANCE.md) · [Directory owner](DIRECTORY-SOT-V1.md) · [Explore geography owner](EXPLORE-GEOGRAPHY-SOT-V1.md)
 - [Canonical historical work register — #342](https://github.com/Fulcanelli13/ad-orientem/issues/342): evidence ledger, **not a queue of PRs to blindly resurrect**
+- [Full preserved 8–10 October reconciliation register](governance/ISSUE-342-HISTORICAL-WORK-REGISTER-2026-10-10.md): original detailed #342 inventory and closure rules, retained unabridged before operational index cleanup
 
 ## Open work: exactly one issue owner per outcome
 
