@@ -18,7 +18,7 @@ export function sourceOwnedCatalogueRows(body,stage){
  return Object.freeze(options.map((source,i)=>{
   const id=source.getAttribute(family.attr);
   const {title,note}=readable(source);
-  return Object.freeze({id,title,note,source,index:i});
+  return Object.freeze({id,title,note,source,disabled:source.disabled===true,index:i});
  }).filter(row=>row.id && row.title));
 }
 export function mountSourceOwnedMassCatalogue({
@@ -38,8 +38,8 @@ export function mountSourceOwnedMassCatalogue({
   if(!rows.length){
     showOriginals();panel?.remove();panel=null;signature="";return;
   }
-  const signatureNext=category+"|"+String(language())+"|"+rows.map(x=>x.id+":"+x.title+":"+x.note).join("|");
-  if(panel?.isConnected&&signature===signatureNext)return;
+  const signatureNext=category+"|"+String(language())+"|"+rows.map(x=>x.id+":"+x.title+":"+x.note+":"+x.disabled).join("|");
+  if(panel?.isConnected&&signature===signatureNext&&rows.every((x,i)=>x.source===lastOriginals[i]))return;
   signature=signatureNext;showOriginals();
   const previous=panel;
   panel=doc.createElement("section");panel.dataset.aoMassCatalogue="";
@@ -60,6 +60,7 @@ export function mountSourceOwnedMassCatalogue({
   for(const row of rows){
    const button=doc.createElement("button");button.type="button";button.dataset.aoMassCatalogueChoice=row.id;
    button.dataset.aoMassCatalogueIndex=String(row.index);
+   button.disabled=row.disabled;
    const name=doc.createElement("strong");name.textContent=row.title;
    button.append(name);
    if(row.note&&row.note!==row.title){
