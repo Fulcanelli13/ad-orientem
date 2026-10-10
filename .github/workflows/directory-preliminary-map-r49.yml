@@ -19,6 +19,11 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+# Only the latest revision of the same PR runs in this workflow; preserve independent manual and main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   unit:
     runs-on: ubuntu-latest

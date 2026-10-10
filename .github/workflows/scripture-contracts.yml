@@ -5,7 +5,6 @@ on:
       - 'src/scripture/**'
       - 'data/scripture/catena/**'
       - 'tests/scripture-*.mjs'
-      - 'package.json'
       - '.github/workflows/scripture-contracts.yml'
   push:
     branches: [main]
@@ -13,7 +12,6 @@ on:
       - 'src/scripture/**'
       - 'data/scripture/catena/**'
       - 'tests/scripture-*.mjs'
-      - 'package.json'
 # Cancel obsolete revisions of the same pull request; never cancel manual or main runs.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
