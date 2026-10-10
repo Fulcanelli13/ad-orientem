@@ -1,6 +1,6 @@
 // A swipe across navigation must never synthesize an app transition.
 // Observe movement passively: do not prevent native scrolling or map gestures.
-export function createScrollTapGuard(doc,{contains=()=>true,threshold=12,windowMs=280}={}){
+export function createScrollTapGuard(doc,{contains=()=>true,trackAnywhere=false,threshold=12,windowMs=280}={}){
   let touch=null,recent=null,pointer=null;
   const position=(event,kind)=>{
     const source=kind==="end"?event?.changedTouches?.[0]:event?.touches?.[0];
@@ -9,7 +9,7 @@ export function createScrollTapGuard(doc,{contains=()=>true,threshold=12,windowM
   };
   function start(event){
     const pos=position(event,"start");
-    touch=pos&&event.touches?.length===1&&contains(event.target)
+    touch=pos&&event.touches?.length===1&&(trackAnywhere||contains(event.target))
       ?{...pos,moved:false}:null;
   }
   function move(event){
@@ -27,7 +27,7 @@ export function createScrollTapGuard(doc,{contains=()=>true,threshold=12,windowM
     touch=null;
   }
   function pointerStart(event){
-    if(event.pointerType!=="mouse"||event.button!==0||!contains(event.target))return;
+    if(event.pointerType!=="mouse"||event.button!==0||!(trackAnywhere||contains(event.target)))return;
     pointer={x:event.clientX,y:event.clientY,moved:false};
   }
   function pointerMove(event){
