@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
 import { projectSourceFirst48Presentation, SOURCE_FIRST_48_TARGETS } from "../src/mass/reader-live-product48.js";
+import {guideForPresentationCard} from "../src/mass/reader-guide.js";
 
 const targetIds=Object.keys(SOURCE_FIRST_48_TARGETS);
 function targetCard(sourceId,sequence){
@@ -226,3 +227,23 @@ assert.equal(real48.sourceAuthorityModel.cardForEvent("MC-CNS-010")?.card?.secti
   "39-step source model stopped owning canonical event routing");
 
 console.log("PASS real source-first 48 integration: all canonical blocks/paragraphs preserved once; event authority remains on 39-step source model.");
+
+
+// 48-card Guide binding does not silently certify 48 independent rubrics:
+ // all cards have a source Guide; Canon/product subdivisions declare inheritance.
+const guideRegistry=load("../data/presentation/guide-registry.v1.json");
+const guideBindings=real48.cards.map(card=>({card,guide:guideForPresentationCard(guideRegistry,card)}));
+assert.equal(guideBindings.length,48);
+assert.ok(guideBindings.every(({guide})=>guide?.sourceLinks&&guide?.sourceLine),"LIVE 48 has an unbound or unsourced Guide");
+assert.equal(new Set(guideBindings.map(({guide})=>guide.presentationCardId)).size,48,"LIVE card titles or identities were lost");
+for(const {card,guide} of guideBindings){
+  const split=card.productPresentation48===true||card.liveSourceSegment===true;
+  assert.equal(guide.coverage,split?"INHERITED_MACRO_CONTEXT":"REGISTERED_MACRO_CONTEXT",card.sectionId);
+  if(split){
+    assert.equal(guide.moment,card.title,"Split LIVE Guide cannot show its parent title as this card's own title");
+    assert.ok(guide.sourceMoment,"Split LIVE Guide lost its wider-rite context");
+    assert.ok(guide.sourceMoment!==guide.moment||card.title===guide.sourceMoment);
+  }
+}
+assert.equal(guideBindings.filter(({guide})=>guide.coverage==="INHERITED_MACRO_CONTEXT").length,28);
+console.log("PASS all 48 LIVE Guide bindings: 28 explicit source-macro inheritances, unchanged rubric sources.");

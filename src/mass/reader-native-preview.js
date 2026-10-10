@@ -51,7 +51,7 @@ export function palmGospelFocusedRow({scrollTop=0,clientHeight=0,scrollHeight=0,
 }
 import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
-import { loadGuideRegistry, guideForSequence } from "./reader-guide.js";
+import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
@@ -1400,7 +1400,7 @@ export async function mountNativeReaderPreview({
     });
   }
   function guideForCurrent(card=current){
-    return card ? guideForSequence(ready.guide.registry,card.guideSequence??card.sourceSequence??card.sequence) : null;
+    return card ? guideForPresentationCard(ready.guide.registry,card) : null;
   }
 
   function aspergesMoment(){

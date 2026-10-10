@@ -382,7 +382,7 @@ assert.match(nativeSource,/structuralSupport\.reason/);
 assert.match(nativeSource,/canonSourceMap:data\?\.canonSourceMap/,"native reader lost certified Canon source-map input");
 assert.match(nativeSource,/V1_83_CARD_TRANSITION_CLEARED/);
 assert.match(nativeSource,/isGloriaCredoGestureSourceCue/);
-assert.match(nativeSource,/guideForSequence/,"native reader lost recovered Guide registry binding");
+assert.match(nativeSource,/guideForPresentationCard/,"native reader lost source-aware Guide registry binding for 48 LIVE cards");
 assert.match(nativeSource,/createNativeScholaController/,"native reader lost native Schola controller");
 assert.match(nativeSource,/createRequiemAbsolutionReaderController/,"native reader lost Requiem Absolution controller");
 assert.match(nativeSource,/createCorpusChristiProcessionReaderController/,"native reader lost Corpus Christi following-action controller");
