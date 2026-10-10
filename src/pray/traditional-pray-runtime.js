@@ -1,4 +1,6 @@
 import "./traditional-pray-styles.js";
+import "./reader-convergence-styles.js";
+import { readingPositionMarkup } from "./reading-position.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
 import {
@@ -96,9 +98,10 @@ function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false
  const controls=finished
    ? `<div class="aoTP381GuideNav"><button type="button" data-tp381-${onStep}-step="0">${esc(L("Start again","Recommencer"))}</button>${returnButton||`<button type="button" data-tp381-${onStep}-overview>${esc(L("See all prayers","Voir toutes les prières"))}</button>`}</div>`
    : `<nav class="aoTP381GuideNav" aria-label="${esc(L("Prayer steps","Étapes de prière"))}"><button type="button" data-tp381-${onStep}-step="${step-1}" ${step===0?'disabled':''}>${esc(L("Previous","Précédent"))}</button><button type="button" data-tp381-${onStep}-step="${step+1}">${esc(step===total-1?L("Finish","Terminer"):L("Next","Suivant"))}</button></nav>`;
- const titleMarkup=finished?L("Prayer completed","Prière terminée"):title;
- const copy=finished?L("You have reached the end of this prayer sequence. You may begin again or return to the overview.","Vous avez terminé cette suite de prières. Vous pouvez recommencer ou revenir à la liste."):body;
- return `<section class="aoTP381GuideCard" data-ao-pray-guide-card="${esc(id)}" data-guide-step="${step}" aria-label="${esc(label)}"><small class="aoTP381GuideCount">${esc(label)}</small><h2 tabindex="-1" data-ao-guided-focus>${esc(titleMarkup)}</h2>${copy}${controls}</section>`;
+ const titleMarkup=finished?L("End of sequence","Fin de la séquence"):title;
+ const copy=finished?L("You have reached the last screen. Restart or return to the overview whenever you wish.","Vous êtes arrivé au dernier écran. Recommencez ou revenez à la liste quand vous le souhaitez."):body;
+ const progress=finished?"":readingPositionMarkup({step,total,label:L("Current prayer","Prière actuelle"),title:titleMarkup});
+ return `${progress}<section class="aoTP381GuideCard" data-ao-pray-guide-card="${esc(id)}" data-guide-step="${step}" aria-label="${esc(label)}"><small class="aoTP381GuideCount">${esc(label)}</small><h2 tabindex="-1" data-ao-guided-focus>${esc(titleMarkup)}</h2>${copy}${controls}</section>`;
 }
 function renderDailyGuided(rows){
  const total=rows.length,step=clampPrayerCardStep(S.dailyStep,total);
@@ -159,7 +162,7 @@ function renderHolyName(){
   const mode=aligned?`<div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Litany view","Présentation des litanies"))}"><button type="button" data-tp381-litany-mode="full" aria-pressed="${!guided}">${esc(L("Full text","Texte intégral"))}</button><button type="button" data-tp381-litany-mode="guided" aria-pressed="${guided}">${esc(L("Guided · one section at a time","Guidé · une section à la fois"))}</button></div>`:"";
   const card=`<article class="aoTP381PrayerCard"><h3>${esc(guided?L(...HOLY_NAME_SECTION_LABELS[step]):L(HOLY_NAME_LITANY_V381.title,HOLY_NAME_LITANY_V381.titleFr))}</h3><button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v>${nl(current)}</span><span data-face-la hidden>${nl(currentLatin)}</span></button></article>`;
   const nav=guided?`<nav class="aoTP381GuideNav" aria-label="${esc(L("Litany sections","Sections des litanies"))}"><button type="button" data-tp381-litany-step="${step-1}" ${step===0?"disabled":""}>${esc(L("Previous","Précédent"))}</button><button type="button" data-tp381-litany-step="${step+1<7?step+1:0}">${esc(step===6?L("Return to beginning","Revenir au début"):L("Next","Suivant"))}</button></nav>`:"";
-  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique approuvée, conservée localement pour une prière entièrement hors ligne. Touchez le texte pour remplacer le français par le latin."))}</p>${status(L("Traditional · sourced · offline","Traditionnelle · sourcée · hors ligne"))}${traditionalContextGuide("holyName")}${mode}${guided?`<p class="aoTP381GuideCount" aria-live="polite">${esc(L("Section "+(step+1)+" of 7","Section "+(step+1)+" sur 7"))}</p>`:""}${card}${nav}${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
+  return `${head(L("Litany of the Holy Name of Jesus","Litanies du Saint Nom de Jésus"))}<main class="aoP435930Body aoTP381DonorBody"><p class="aoTP381Intro">${esc(L("Historical approved Roman form, stored locally for complete offline prayer. Tap the text to replace the vernacular with Latin.","Forme romaine historique approuvée, conservée localement pour une prière entièrement hors ligne. Touchez le texte pour remplacer le français par le latin."))}</p>${status(L("Traditional · sourced · offline","Traditionnelle · sourcée · hors ligne"))}${traditionalContextGuide("holyName")}${mode}${guided?readingPositionMarkup({step,total:7,label:L("Current litany section","Section actuelle des litanies"),title:L(...HOLY_NAME_SECTION_LABELS[step])}):""}${card}${nav}${source("Rituale Romanum · 1925",HOLY_NAME_LITANY_V381.sources.latin)}${source("French traditional witness · Litanies du Saint Nom de Jésus",HOLY_NAME_LITANY_V381.sources.french)}</main>`;
 }
 function renderNightlyExamen(){
  const steps=NIGHTLY_EXAMEN_CARDS,step=clampPrayerCardStep(S.examenStep,steps.length),item=steps[step];
