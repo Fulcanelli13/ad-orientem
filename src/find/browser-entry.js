@@ -296,7 +296,6 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
     if(options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
-    else if(!options?.lens&&!openState)state.lens="heritage";
     if(state.lens==="heritage"){
       state.view="map";
       if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
