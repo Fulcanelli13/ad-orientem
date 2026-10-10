@@ -31,8 +31,9 @@
       "external_ui_search_count": 2938,
       "count_definition": "Ancient AND modern indexed place objects together per website search, NOT number of distinct biblical places",
       "verified": "DOCUMENTATION_AND_LICENSE_REVIEWED",
-      "import_status": "NOT_IMPORTED_BULK_SOURCE_FILE_GT_1_MB_GITHUB_CONTENTS_INTERFACE_RETURNED_EMPTY",
-      "selection_note": "Preserve ancient place ID, distinct modern location ID, confidence/votes and unknown/special resolution. Do not auto-promote resolved lat/lon."
+      "import_status": "IMPORTED_RESEARCH_SHARDS_PINNED_1342_ANCIENT_1596_MODERN_442_SOURCE_588_GEOMETRY",
+      "selection_note": "Preserve ancient place ID, distinct modern location ID, confidence/votes and unknown/special resolution. Do not auto-promote resolved lat/lon.",
+      "import_file_manifest": "data/geography/research/biblical-atlas-vendor-import-manifest-2026-10-10.v1.json"
     },
     {
       "id": "STEPBIBLE_TIPNR",
@@ -43,8 +44,9 @@
       "license_claim": "Current repo README says CC BY 4.0; check license notice inside exact TIPNR file and exact commit before commercial distribution",
       "content_scope": "Biblical persons, places, names, original-language forms, known verse citations, relational data",
       "auto_content_caution": "Some later descriptive articles are AI-generated per upstream documentation; do not copy as authoritative site history; extract structured proper-name and verse relations only",
-      "import_status": "NOT_IMPORTED_SOURCE_SCHEMA_TO_REVIEW",
-      "canon_gap": "Do not assume complete Catholic deuterocanonical coverage from an ESV-centric base."
+      "import_status": "IMPORTED_PTA_2024_ADAPTATION_1016_PLACES_3232_PEOPLE_CURRENT_STEP_TIPNR_2026_NOT_SYCED",
+      "canon_gap": "Do not assume complete Catholic deuterocanonical coverage from an ESV-centric base.",
+      "note": "Current STEP master TIPNR blob has been acquired for format/license inspection, but cannot be claimed identical to converted PTA 2024 data without a version-diff."
     },
     {
       "id": "SCRIPTURE_CANON_73",
@@ -82,9 +84,9 @@
     "not_worldwide_completeness": true,
     "source_lineage": "data/geography/research/biblical-atlas-core-2026-10-10.v1.json",
     "source_corpus_imported_into_app": false,
-    "framing": "The hand-made 90 examples were quarantined and are NOT the project master index. Actual coverage percentage begins only after pinned OpenBible ancient dataset is materialized and counted, plus 73-book supplement gaps documented.",
-    "current_master_gazetteer_imported": false,
-    "first_curated_entries_status": "EXEMPLAR_ONLY"
+    "framing": "OpenBible ancient 1342 + modern 1596 reference corpus and PTA TIPNR structural entities actually imported on the research branch. The 90 handmade examples remain quarantined. Catholic 73-book completion and native app integration are still pending.",
+    "current_master_gazetteer_imported": true,
+    "first_curated_entries_status": "QUARANTINED_EXAMPLES_NOT_GAZETTEER"
   },
   "strict_completion_gate": [
     "Enumerate exact unique ancient place/place-sense IDs from imported upstream ancient.jsonl, separate from modern geographic object count.",
@@ -108,7 +110,7 @@
       "modern_location_count_documented": 1596,
       "source_reference_count_2021": 442,
       "license": "CC BY 4.0 core, ODbL OSM-dependent data, images per-file",
-      "status": "SELECTED_BUT_BULK_DATA_NOT_YET_IMPORTED",
+      "status": "RESEARCH_IMPORTED_1342_ANCIENT_1596_MODERN_442_SOURCES_588_GEOMETRY_NOT_LIVE_APP",
       "critical_gates": [
         "Pin Git commit SHA and download JSONL (GitHub Contents API returned >1MB core file as empty, do not count that as a successful import)",
         "Count actual ancient rows on pinned data, not ancient+modern combined",
@@ -123,7 +125,7 @@
       "source_url": "https://github.com/STEPBible/STEPBible-Data",
       "secondary_preparsed_url": "https://github.com/PatristicTextArchive/tipnr_data",
       "license": "CC BY 4.0 root README; exact source-file notices must be respected",
-      "status": "SELECTED_BUT_SOURCE_FILES_NOT_IMPORTED",
+      "status": "PTA_ADAPTED_JSON_STRUCTURAL_FIELDS_IMPORTED_1016_PLACES_3232_PEOPLE_CURRENT_2026_TIPNR_DIFF_REQUIRED",
       "critical_gates": [
         "Record source version and license, verify actual file content",
         "Use individualised proper-name IDs, prevent same-name person/place collapsing",
@@ -158,7 +160,7 @@
       "type": "POSSIBLE_READY_MADE_JSON_CONVERSION_AND_PLEIADES_CROSSWALK",
       "source_url": "https://github.com/PatristicTextArchive/tipnr_data",
       "license": "TIPNR source CC BY 4.0; adapter derivation/redistribution review",
-      "status": "PROVEN_PREEXISTING_CONVERSION_LOOKUP",
+      "status": "REUSED_PINNED_PTA_ADAPTER_FOR_RESEARCH_ONLY",
       "critical_gates": [
         "Compare converted 2024 version against live upstream TIPNR and any changed IDs",
         "Don't duplicate Pleiades identity if already present in OpenBible",
@@ -166,5 +168,39 @@
       ]
     }
   ],
-  "dataset_reuse_verdict": "No manual full gazetteer. Ingest OpenBible 1342 ancient-site reference dataset, join STEPBible named entities; treat existing Bible Atlas as optional API/UI comparison; add only Catholic 73-book delta, Catholic tradition/custodian/archaeology editorial annotations."
+  "dataset_reuse_verdict": "Existing scholarly data has now been imported on research branch with upstream Git object SHAs and licenses. Remaining work is canon-specific supplementation, source-verification, native-reader edition alignment and public release, not manual site-by-site gazetteer writing.",
+  "status": "PRIMARY_OPENBIBLE_AND_PTA_TIPNR_RESEARCH_CORPUS_IMPORTED_NATIVE_APP_AND_CATHOLIC_COMPLETENESS_HOLDS",
+  "import_manifest": "data/geography/research/biblical-atlas-vendor-import-manifest-2026-10-10.v1.json",
+  "import_counts": {
+    "ancient": 1342,
+    "modern": 1596,
+    "geometry": 588,
+    "sources": 442,
+    "verse_place_mentions": 8742,
+    "places_step": 1016,
+    "people_step": 3232,
+    "candidate_name_and_verse_crosswalk": 899,
+    "ambiguous_crosswalk": 69,
+    "unmatched_crosswalk": 44,
+    "name_only_crosswalk": 4
+  },
+  "current_source_canon_coverage": {
+    "catholic_books_total": 73,
+    "source_books_with_any_place_mentions": 61,
+    "books_absent_from_openbible_place_mentions": [
+      "Tobit",
+      "Judith",
+      "1Maccabees",
+      "2Maccabees",
+      "Wisdom",
+      "Sirach",
+      "Baruch",
+      "Philemon",
+      "James",
+      "1John",
+      "2John",
+      "3John"
+    ],
+    "interpretation": "This is not a percentage of biblical toponyms complete; five non-deuterocanonical books in the missing list may legitimately lack listed place mentions; Greek additions to Esther/Daniel need explicit Catholic checks."
+  }
 }
