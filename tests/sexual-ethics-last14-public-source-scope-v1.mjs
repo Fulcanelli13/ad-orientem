@@ -38,7 +38,8 @@ assert.match(CSE_DEBATE_MAP.CSE088.catholicCase[0],/not a finding of mental illn
 assert.match(CSE_DEBATE_MAP.CSE094.opposition[0],/2024 policy/);
 assert.match(CSE_DEBATE_MAP.CSE096.catholicCase[0],/abnormalities/);
 assert.match(CSE_DEBATE_MAP.CSE141.opposition[0],/Pope Francis/);
-assert.match(CSE_DEBATE_MAP.CSE145.opposition[0],/not a quotation/);
+assert.match(CSE_DEBATE_MAP.CSE145.opposition[0],/Love is love/,"CSE145 must present the actual popular objection, not editorial placeholder text");
+assert.equal(doc.cases.find(x=>x.id==="CSE145").stages.find(x=>x.stage==="opposition").original_entire_paragraph_collated,false,"CSE145 synthetic objection must never be marked a verified verbatim quotation");
 assert.match(CSE_QUESTION_MAP.CSE096.a[0],/§60/);
 assert.match(CSE_QUESTION_MAP.CSE095.d[1],/pronoms/);
 assert.match(CSE_SOURCE_MAP.FRANCIS_SPADARO2013.canonical_url,/vatican\.va/);
