@@ -992,7 +992,10 @@ function setText(root, role, value){
 }
 
 function setChannel(root, channel, value){
-  const item=root.querySelector(`[data-channel="${channel}"]`);
+  // Channels shared with the state ribbon (notably posture) must update
+  // their actual rail owner, not the first matching non-rail summary cell.
+  const item=root.querySelector(`.ao-rail [data-channel="${channel}"]`)
+    ??root.querySelector(`[data-channel="${channel}"]`);
   if(item) item.dataset.active = String(Boolean(textValue(value)));
 }
 
@@ -1882,11 +1885,17 @@ export function createReaderDomAdapter({
     }
 
     setChannel(root,"posture",current.posture);
-    const postureCueDistinct=Boolean(current.postureCue &&
-      textValue(current.postureCue)!==textValue(current.posture));
-    setChannel(root,"posture-change",postureCueDistinct ? current.postureCue : null);
+    // The cue announces a *newly reached* posture. At the exact source
+    // transition the target and the current faithful state MUST agree.
+    // The former "different" comparison hid every correctly resolved cue,
+    // while the persistent posture rail was deliberately hidden to avoid
+    // duplicating the top YOU state owner. Keep the transient on the left
+    // rail only at its source moment; never show contradictory profile cues.
+    const postureCueMatches=Boolean(current.postureCue && current.posture &&
+      textValue(current.postureCue)===textValue(current.posture));
+    setChannel(root,"posture-change",postureCueMatches ? current.postureCue : null);
     const postureRail=root.querySelector('.ao-rail-left [data-channel="posture"]');
-    if(postureRail)postureRail.dataset.change=String(Boolean(current.postureCue&&!postureCueDistinct));
+    if(postureRail)postureRail.dataset.change=String(postureCueMatches);
     setChannel(root,"attention",current.attention);
     setChannel(root,"priest-action",current.priestAction);
     setChannel(root,"gesture",current.gesture);
@@ -1903,7 +1912,7 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
-    applyIcon(root,"posture-change",postureCueDistinct ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
+    applyIcon(root,"posture-change",postureCueMatches ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
     applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
     applyIcon(root,"response",current.responseIconKey,iconResolver);
