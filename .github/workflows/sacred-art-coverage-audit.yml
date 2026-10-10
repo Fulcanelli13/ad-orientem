@@ -6,10 +6,14 @@ on:
       - "tools/calendar/audit-sacred-art-modules.mjs"
       - "tools/calendar/audit-sacred-art-prayer-slots.mjs"
       - "tools/calendar/report-sacred-art-liturgical-priorities.mjs"
+      - "tools/calendar/build-sacred-art-reuse-index.mjs"
       - "data/calendar/sacred-art-prayer-slots.v1.json"
       - "data/calendar/sacred-art-candidates.v1.json"
       - "data/calendar/sacred-art-subject-targets.v2.json"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
+      - "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
+      - "data/calendar/sacred-art-2026-i-class-contextual-reuse.v1.json"
+      - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
       - "data/learn/sacred-art-formation-targets.v1.json"
       - ".github/workflows/sacred-art-coverage-audit.yml"
   workflow_dispatch:
@@ -32,6 +36,7 @@ jobs:
           node tools/calendar/audit-sacred-art-modules.mjs
           node tools/calendar/audit-sacred-art-prayer-slots.mjs
           node tools/calendar/report-sacred-art-liturgical-priorities.mjs
+          node tools/calendar/build-sacred-art-reuse-index.mjs
       - name: Upload complete unresolved-source and coverage report
         if: always()
         uses: actions/upload-artifact@v4
