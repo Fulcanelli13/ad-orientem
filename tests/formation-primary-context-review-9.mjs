@@ -61,12 +61,17 @@ for(const [id,role,en,fr] of requiredRewrites){
 const evolutionPack = packs.find(p=>p.dossiers.some(d=>d.id==="APOL-002"));
 assert.match(evolutionPack.source_registry.find(s=>s.id==="HG1950").locator,/§37/,"Pius XII polygenism locator missing");
 assert.match(owners.get("APOL-002").d.sections.find(s=>s.role==="critical_response").source_claim_locators.HG1950,/§36–37/);
-assert.equal(matrix.review_ledgers.length,9);
+// Historical wave-nine invariants are recalculated from the first nine real
+// ledgers; later editorial batches must not make this regression test stale.
+assert.ok(matrix.review_ledgers.length>=9);
+const throughNine=matrix.review_ledgers.slice(0,9).flatMap(p=>read(p).findings);
+assert.equal(throughNine.length,345);
+assert.equal(new Set(throughNine.map(f=>f.owner+"|"+f.role)).size,304);
 assert.equal(matrix.metrics.canonical_dossiers,141);
 assert.equal(matrix.metrics.substantive_sections,564);
-assert.equal(matrix.metrics.bounded_source_review_findings,345);
-assert.equal(matrix.metrics.distinct_sections_with_bounded_review,304);
-assert.equal(matrix.metrics.distinct_sections_without_bounded_review,260);
+assert.ok(matrix.metrics.bounded_source_review_findings>=345);
+assert.ok(matrix.metrics.distinct_sections_with_bounded_review>=304);
+assert.ok(matrix.metrics.distinct_sections_without_bounded_review<=260);
 assert.equal(matrix.metrics.dossiers_independently_certified,0);
 assert.equal(matrix.metrics.dossiers_published,0);
 for(const pack of packs)for(const d of pack.dossiers){
