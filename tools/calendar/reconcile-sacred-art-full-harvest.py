@@ -3,7 +3,7 @@
 Run after GitHub Actions downloads all parallel harvest archives to artifacts/sacred-art-harvest.
 Outputs fully verified original hashes, source provenance and an honest capacity/coverage report.
 """
-import argparse, hashlib, json, re
+import argparse, csv, hashlib, json, re
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -133,21 +133,67 @@ def main():
         counters["NEW_VERIFIED_SOURCE_FILES_PROPOSED"] += 1
 
     proposals.sort(key=lambda x:(x["targetId"] or "",x["id"]))
+    original_rights = Counter((a.get("source") or {}).get("rights","UNKNOWN") for a in acquired)
+    original_museums = Counter(a.get("museum","UNKNOWN") for a in acquired)
+    proposed_by_lane = Counter(a["sourceLane"] for a in proposals)
+    proposed_by_subject = Counter(a["targetId"] or "UNCLASSIFIED" for a in proposals)
     report={"schema":"AO_SACRED_ART_FULL_HARVEST_RECONCILIATION_V1",
       "scope":"RESEARCH_ONLY_DO_NOT_ADD_TO_CANONICAL_WITHOUT_SOURCE_REVIEW",
       "baseline":{"paintingRecords":len(registry),"acquiredHashedOriginals":len(acquired),
-                  "canonicalUniqueSha256":len(existing_hashes)},
+                  "canonicalUniqueSha256":len(existing_hashes),
+                  "acquiredByRights":dict(original_rights),
+                  "acquiredByMuseum":dict(original_museums)},
       "harvest":{"lanesExpected":list(GROUPS)+["nga","artic"],"lanesPresent":[r["lane"] for r in source_reports],
                  "missingReports":missing_reports,"reports":source_reports,
                  "rawArtworkRows":len(candidates),"proposedNewHashedOriginals":len(proposals),
                  "postReconciliationTechnicalPotential":len(acquired)+len(proposals),
-                 "statuses":dict(counters),"collisionsOrIntegrityIncidents":incidents},
+                 "statuses":dict(counters),"newByLane":dict(proposed_by_lane),
+                 "newByTargetId":dict(sorted(proposed_by_subject.items())),
+                 "collisionsOrIntegrityIncidents":incidents},
       "calendarCoverage":{"baselineSpecificDays":102,"baselineDays":365,
          "newSpecificDaysVerified":None,
          "note":"Recalculate using observed 1962 DayResolver after association of promoted originals. Do not count titles or newly hashed images as exact calendar coverage."},
       "nextGates":["Review proposed identities against source museum records and original scene","Import eligible hashes/source associations into canonical research registry, preserving artifact run IDs","Run full 1962 year association audit","Generate single negative-exception HTML audit; rights, crop and release remain independent"]}
     (out/"report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     (out/"new-originals-proposals.json").write_text(json.dumps(proposals,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    with (out/"new-originals-proposals.csv").open("w",newline="",encoding="utf-8") as handle:
+        writer=csv.DictWriter(handle,fieldnames=list(proposals[0]) if proposals else ["id","originalSha256","sourceLane","targetId"])
+        writer.writeheader()
+        if proposals:writer.writerows(proposals)
+    summary_lines=[
+        "# Sacred Art / consolidated seven-lane source harvest",
+        "",
+        "Research-original technical reconciliation, not user acceptance, legal clearance or calendar publication.",
+        "",
+        "## Corpus and acquisition",
+        "",
+        f"- Canonical painting records: {len(registry)}",
+        f"- Canonical acquired originals (unique SHA-256): {len(acquired)}",
+        f"- New checksum-verified research proposals: {len(proposals)}",
+        f"- Potential research originals if imported after source verification: {len(acquired)+len(proposals)}",
+        "- Specifically researched 1962 days, pre-import: 102 of 365; no new calendar coverage inferred from acquisitions",
+        "- Human artistic approvals and production approvals: unchanged",
+        "",
+        "## Museum harvest",
+        "",
+        "| Lane | Candidate rows | Source originals reported | New unique verified originals |",
+        "| --- | ---: | ---: | ---: |",
+    ]
+    for x in source_reports:
+        lane=x["lane"]
+        summary_lines.append(f"| {lane} | {x['artworkRows']} | {x.get('preferredClaimed',0)} | {proposed_by_lane.get(lane,0)} |")
+    summary_lines += [
+        "", "## Reconciliation outcomes", "",
+        *[f"- {k}: {v}" for k,v in sorted(counters.items())],
+        "", "## Missing or failed lanes", "",
+        *(("- "+x) for x in missing_reports) if missing_reports else ["- None reported"],
+        "", "## Canonical rights labels (not worldwide reuse clearance)", "",
+        *[f"- {k}: {v}" for k,v in sorted(original_rights.items())],
+        "", "## Next gate", "",
+        "Review proposal object identity/scene, import hash-backed originals with artifact provenance, rerun full 1962 associations, then generate the single all-artworks exception-only HTML atlas.",
+        "",
+    ]
+    (out/"stats.md").write_text("\\n".join(summary_lines),encoding="utf-8")
     print("SACRED_ART_FULL_HARVEST_RECONCILED="+json.dumps(report["harvest"],separators=(",",":"),ensure_ascii=True))
     if incidents:
         raise SystemExit("Integrity incidents detected; leave held until investigated")
