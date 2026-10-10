@@ -159,21 +159,23 @@ try{
               prayerSourcePath:x.prayerSourcePath,inseparable:!!x.inseparable,underOneConclusion:!!x.underOneConclusion})),
             sourceVersions:p.sourceRevisions||null,pinnedLatinSourceURL:expectedSourceURL,
             sourceRequests:actualSourceRequests,suspicious,
-            ...(focused&&["Sancti/02-22","Sancti/05-25"].includes(p.sourcePath)?{
+            ...(focused&&["Sancti/01-15","Commune/C10c","Commune/C10Pasc","Commune/C10t","Sancti/02-06","Tempora/Quad3-3","Tempora/Quad5-4","Tempora/Quad1-4"].includes(p.sourcePath)?{
               trace:await Promise.all(["la","en","fr"].map(async language=>{
                 const properResolver=resolver.properResolver;
                 const diagnostic={requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],
                   structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]};
-                const sections=["Lectio","Graduale","Evangelium","Offertorium","Communio"];
+                const sections=["Oratio","Lectio","Graduale","Evangelium","Offertorium","Communio"];
                 try{
                   const root=await properResolver.loadLocalRoot(p.sourcePath,language,diagnostic);
                   const built=await properResolver.resolveSource(p.sourcePath,language,diagnostic);
-                  const coronatio=await properResolver.loadUpstreamParsed("Commune/Coronatio",language,diagnostic);
+                  const donorPath=/^Commune\/C10/.test(p.sourcePath)?"Commune/C11":"Commune/C5";
+                  const coronatio=await properResolver.loadUpstreamParsed(donorPath,language,diagnostic);
                   return {language,rootSections:Object.fromEntries(sections.map(k=>[k,(root.map.get(k)||[]).slice(0,2)])),
                     finalLengths:Object.fromEntries(sections.map(k=>[k,(built.map.get(k)||[]).join(" ").length])),
                     donorLengths:Object.fromEntries(sections.map(k=>[k,(coronatio.map.get(k)||[]).join(" ").length])),
                     references:diagnostic.referencesResolved.filter(v=>sections.some(k=>v.from.includes(":"+k))).slice(0,25),
-                    warnings:diagnostic.warnings.slice(0,12)};
+                    warnings:diagnostic.warnings.slice(0,12),donorPath,
+                    rootKeys:root.order.filter(x=>x==="Oratio"||x==="Communio"),sourceRequests:diagnostic.requestedFiles.filter(x=>x.includes("Commune/")).slice(0,20)};
                 }catch(e){return {language,error:String(e?.message||e),warnings:diagnostic.warnings};}
               })),
             }:{}),
