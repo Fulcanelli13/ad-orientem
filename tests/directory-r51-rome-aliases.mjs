@@ -1,0 +1,36 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,validateR49Snapshot,filterPreliminaryR49} from "../src/find/preliminary-directory-r49.js";
+const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
+const map=read("../data/directory/preliminary-map-r49.v1.json");
+const r50=read("../data/directory/research/staging/map-first-r37/R50-rome-source-aliases.json");
+const r51=read("../data/directory/research/staging/map-first-r37/R51-rome-venue-aliases.json");
+validateR49Snapshot(map);
+const pins=projectPreliminaryR49(map);
+const byId=new Map(map.records.map(row=>[row[0],row]));
+assert.equal(pins.length,1876);
+assert.equal(filterPreliminaryR49(pins,{directoryGroup:"ROME"}).length,1019);
+assert.equal(filterPreliminaryR49(pins,{directoryGroup:"SSPX"}).length,732);
+assert.equal(filterPreliminaryR49(pins,{directoryGroup:"UNKNOWN"}).length,125);
+assert.equal(r51.schema,"AO_DIRECTORY_R51_ROMERECOGNISED_ALIAS_CROSSWALK");
+assert.equal(r51.source_records,27);
+assert.equal(r51.records.length,27);
+assert.equal(r51.map_pins_added,0);
+const all=[...r50.records,...r51.records];
+assert.equal(new Set(all.map(x=>x.source_id)).size,all.length,"Duplicate source between rounds");
+let siteSpecific=0;
+for(const alias of r51.records){
+ const pin=byId.get(alias.pin_id);
+ assert.ok(pin,"Unpublished destination pin: "+alias.pin_id);
+ assert.equal(pin[2],alias.country,"Country conflict");
+ assert.equal(pin[5],"ROME","SSPX/unknown must remain separate");
+ assert.ok(["Diocesan","FSSP","ICKSP","IBP","Oratorians","AASJMV"].includes(alias.affiliation));
+ assert.equal(alias.status,"provisional_identity_crosswalk_not_new_pin");
+ assert.ok(alias.basis.includes("same country"));
+ assert.match(alias.source_url,/^https?:\/\//);
+ const item=pins.find(i=>i.source_id===alias.pin_id);
+ assert.ok(item?.source_links.length>=1);
+ if(item.source_links.some(x=>x.url===alias.source_url))siteSpecific++;
+}
+assert.ok(siteSpecific>=r51.site_source_links_added);
+console.log("PASS R51: 27 new source aliases, "+siteSpecific+" independently visible source links; 1,876 pins (1,019 Rome) unchanged");
