@@ -9,6 +9,7 @@ import {
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { mapViewport, mountExploreMap } from "./map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
+import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 
 const VERSION="explore-v1";
@@ -208,19 +209,27 @@ export function createFindOwner(win=globalThis){
     // started another render while the shared load was in flight.
     if(token!==paintToken||!openState)return false;
     lastLoadError=null;
-    const items=filtered();
+    const rawItems=filtered();
+    // Canonical practice cards are a reading view over the immutable attestation
+    // corpus. Site-backed map pins and Place-page deep links keep original IDs.
+    const items=state.lens==="traditions"&&state.view==="list"
+      ?groupTraditionsForBrowse(rawItems,{includeNovenaContext:Boolean(state.query.trim())||state.atlasCalendar==="NOVENA"})
+      :rawItems;
+    const selectedOverride=state.lens==="traditions"
+      ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null:null;
     const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
       language:language(win),
       items,
       lens:state.lens,
-      counts:projection?.counts??{},
+      counts:state.lens==="traditions"?{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions)}:projection?.counts??{},
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:data.directory?.loadedProviders??[],
       unavailableProviders:data.directory?.unavailableProviders??[],
       view:state.view,
       filters:state,
       selectedId:state.selectedId,
+      selectedOverride,
       displayLimit:state.displayLimit,
       placeProfiles,
       selectedPlaceId:state.selectedPlaceId,
@@ -288,7 +297,7 @@ export function createFindOwner(win=globalThis){
 
   function setFilter(key,value){
     if(key==="view")state.view=value==="map"?"map":"list";
-    else if(key==="lens"&&EXPLORE_LENSES.includes(value)){state.lens=value;state.calendarKey=null;}
+    else if(key==="lens"&&EXPLORE_LENSES.includes(value)){state.lens=value;state.calendarKey=null;if(value==="traditions")state.view="list";}
     else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;
     state.displayLimit=120;
