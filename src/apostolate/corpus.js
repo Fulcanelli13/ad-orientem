@@ -34,7 +34,7 @@ export const APOSTOLATE_AQ_SCENARIOS=Object.freeze([
     sourceIds:Object.freeze(["TRENT-XXV-SAINTS-PURGATORY","ST-PIUS-X-CATECHISM-FR","CAFFERATA-CATECHISM"]),
     handoffs:Object.freeze([
       formation("AQ01","learn.catechism","Deepen Communion of Saints and Marian doctrine in Formation."),
-      owned("pray","pray.marian","Move from explanation to owned Marian prayer only when the person actually wants to pray."),
+      owned("pray","pray.rosary","Open the canonical Rosary when the person wants Marian prayer; do not duplicate devotional content in Apostolate."),
     ]),
   }),
   Object.freeze({
@@ -182,7 +182,7 @@ export const APOSTOLATE_AQ_SCENARIOS=Object.freeze([
     sourceIds:Object.freeze(["TRENT-XXV-SAINTS-PURGATORY","ST-PIUS-X-CATECHISM-FR","CAFFERATA-CATECHISM"]),
     handoffs:Object.freeze([
       formation("AQ07","learn.catechism","Deepen the Last Things and Purgatory in Formation."),
-      owned("pray","pray.holy_souls","Prayer for the dead belongs to PRAY."),
+      owned("pray","pray.eternal_rest","The Eternal Rest prayer belongs to the canonical Prayer Library reader."),
     ]),
   }),
   Object.freeze({
