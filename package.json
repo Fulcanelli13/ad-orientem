@@ -136,7 +136,7 @@
     "directory:geocode": "node tools/directory/geocode-runtime-snapshots.mjs",
     "test:directory-geocoding": "node tests/directory-geocoding.mjs",
     "test:novena-context": "node tests/novena-context-sot.mjs",
-    "test:explore-surface": "node tests/explore-surface.mjs",
+    "test:explore-surface": "node tests/explore-surface.mjs && npm run test:explore-bible-atlas",
     "test:explore-place-profiles": "node tests/explore-place-profiles.mjs",
     "test:directory-official-geo": "node tests/directory-official-geo.mjs",
     "test:catholic-life-retirement": "node tests/catholic-life-retirement.mjs",
@@ -216,7 +216,9 @@
     "test:directory-sspx-html-inventory": "node tests/directory-sspx-html-inventory.mjs",
     "directory:acquire:sspx-html": "node tools/directory/acquire-sspx-html.mjs",
     "directory:acquire:sspx-dici-discovery": "node tools/directory/acquire-sspx-dici-dev.mjs",
-    "test:directory-sspx-dici-discovery": "node tests/directory-sspx-dici-discovery.mjs"
+    "test:directory-sspx-dici-discovery": "node tests/directory-sspx-dici-discovery.mjs",
+    "test:explore-bible-atlas": "node tests/explore-bible-atlas-timeline.mjs",
+    "test:explore-bible-atlas-phone": "node tests/explore-bible-atlas-phone.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
