@@ -111,3 +111,44 @@ Italy is a separate, deeper book/source census. The [ICCD diocesan source-list i
 - The initial 16 research leads are preserved intact, and **10/16 are now linked to a specific bounded-source index entry**, not a verified new Place. Europe’s older 165 unmatched leads remain unreconciled with this batch.
 
 **Source index acquisition completion is 211/211 (100%) within these four selected, finite lists, but worldwide inventory completeness and worldwide eligible-site reconciliation remain unknown.** The next research work should focus on source-index coverage in other countries, especially where the seed presently has no Places, while obtaining and crosswalking Italy's many diocesan source files and the French reference-book indexes. Do not author bios or map pins from index-only records.
+
+## Batch 3: Philippines, Chile, Ireland and African episcopal source cross-checks
+
+Following the initial four complete bounded source lists (211 source rows), the next wave records **86 more source-index rows** across Asia, South America, Europe and Africa (there are overlapping known sources, so do not call the new row total 86 new Places). The combined index-reference row count is now **297 before any cross-list entity deduplication**. The master bibliography currently holds **34 references** covering all six inhabited continents.
+
+| New research index | Records | Character / audit result |
+| --- | ---: | --- |
+| [Philippines: ACSP selected regional priorities](../../data/geography/research/philippines-acsp-priority-2026-10-10.v1.json) | 66 | 16 northern/central Luzon, 25 NCR/southern Luzon, 20 Visayas, five Mindanao. Explicit **selected** index, not entire national catalogue. |
+| [Chile: episcopal pilgrimage map](../../data/geography/research/chile-episcopal-shrines-map-2026-10-10.v1.json) | 15 | All 15 displayed place labels; some ambiguous, no speculative pins. The Chilean bishops have a **broader searchable shrine register and historical feast catalogue**, still pending extraction. |
+| [Ireland: episcopal national pilgrimage sites](../../data/geography/research/ireland-2025-national-pilgrimage-2026-10-10.v1.json) | 3 | Knock and Lough Derg already seeded; **Croagh Patrick not seeded**. Jubilee 2025 designation is a historical flag rather than enduring exclusive status. |
+| [Africa: diocesan/episcopal priority sources](../../data/geography/research/african-episcopal-priority-2026-10-10.v1.json) | 2 | Our Lady of Lusaka is a new seed-gap lead; Kenya's Subukia is a corroboration of the first-wave candidate, **not a second physical site**. |
+| **Additional source rows** | **86** | **No canonical Place count changed.** |
+
+### National PH census is more consequential than the Malolos-only sample
+
+The [Association of Catholic Shrines and Pilgrimages of the Philippines' official 2024 announcement](https://philippineshrines.org/2025/01/28/acsp-official-shrine-members/) reports **305 recognised shrines** (or **319 titles** if distinct dedications within one church are counted), of which **257 were enrolled association members** at the time. This is a substantive country-level denominator proposal, **not a certified count of independent physical churches**.
+
+Internal qualifications:
+- Reported region subtotals 80 + 73 + 65 + 56 + 22 = **296, not 305**. We must preserve this discrepancy rather than treating 305 as fully verified unique Places.
+- The live regional pages contain entries dated 2025 after the 2024 announcement and some repeated physical sites (e.g., Saint Martha, Pateros appears under both the Diocese of Pasig and the Military Ordinariate; Cebu Our Lady of Lourdes is repeated).
+- The Association's [Northern/Central Luzon](https://philippineshrines.org/northern-central-luzon/), [NCR and Southern Luzon](https://philippineshrines.org/national-capital-region-and-southern-luzon/), [Visayas](https://philippineshrines.org/visayas/) and [Mindanao](https://philippineshrines.org/mindanao/) pages list names, dioceses, declaration dates and membership states. **66 selected anchors** are now written to machine-readable research rows; full transcription of the remaining regional lists is **not finished**.
+- At Guiguinto, the diocesan shrine-page heading **San Isidro Labrador** conflicts with its own St Rita links. The association regional list calls the same site **Sta Rita de Cascia**, as does the [diocese's history](https://dioceseofmalolos.ph/history/). This strengthens the St Rita interpretation but the conflicting title remains preserved for a custodian/rector check; the distinct San Isidro shrine at Pulilan is not merged into it.
+
+### Chile is a distinct source-family breakthrough
+
+The [Chilean Episcopal Conference](https://www.iglesia.cl/area_eclesial.php) advertises a *Buscador de Santuarios*, an old **full shrine + religious feast inventory**, and associated popular-piety source material; the [current 2025 illustrated map](https://www.iglesia.cl/48774-el-peregrinar-su-sentido-y-finalidad.html) identifies 15 sites across Chile. The illustrated map was visually checked, but 15 map labels **are not the national denominator**. The searchable [national shrine interface](https://www.iglesia.cl/santuarios.php) and its detailed index remain acquisition work. Site-name ambiguity (e.g. `Inmaculada Concepción`) requires ecclesiastical and locality evidence before physical identity.
+
+These global geography witnesses do not automatically authorise publishing every local custom as a standalone French domestic practice. The custom atlas's French Catholic relevance editorial gate remains in force for its French-world domestic category; pilgrimage and site-local historical devotions may be evidenced in their original geographical context.
+
+### Africa and other source-routing
+
+The [Archdiocese of Lusaka reports an actual pilgrimage to Our Lady of Lusaka](https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/) from Roma Parish, with the annual site already corroborated historically by [AMECEA](https://communications.amecea.org/index.php/2013/08/30/zambia-pope-francis-sends-greetings-to/). Kenya's Subukia National Marian Shrine is confirmed by a [September 2026 AMECEA/KCCB report](https://communications.amecea.org/index.php/2026/09/25/kenya-kccb-dedicates-october-3rd-to-national-prayer-for-peaceful-cohesion/). The [Ghana Catholic Bishops' national diocesan directory](https://www.cbcgha.org/national-directory/) is logged strictly as a **route to diocesan sources**, not a shrine list.
+
+PAMI's [updated sanctuary census and world Marian map](https://www.pami.info/santuari-censimento/) now provides a further authoritative cross-check for Italian and international Marian sites. **Map data not yet extracted.**
+
+### Remaining gates
+
+- **Full indexes:** complete the live Philippines association directory (not merely 66), Chile's diocesan shrine database and shrine-feast register, Italy's 33 listed diocesan PDFs, and open French inventories.
+- **Cross-source identity:** reconcile every row with the current 182 Places, the 211 earlier indexed rows, the prior European 187 research leads and the 16 initial global candidates; a matched source title is not a verified physical Place.
+- **Coverage denominator:** identify and acquire the principal institutional and printed inventories per country/diocese, recording source edition, index length, extraction percentages, contradictions and unavailability.
+- **Later:** canonical Place admission, accurate pins, biographies and artwork only after identities and editorial importance pass. No source-index item is automatically approved for map publication.
