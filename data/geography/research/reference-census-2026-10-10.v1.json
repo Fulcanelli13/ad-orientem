@@ -66,7 +66,8 @@
       "authority": "STATE_HERITAGE_CENSUS",
       "url": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
       "access": "INDEX_ACCESSIBLE",
-      "note": "Italian Ministry of Culture/ICCD, diocesan-area lists under continuing updates; do not imply nationwide closure."
+      "note": "Italian Ministry of Culture/ICCD, diocesan-area lists under continuing updates; do not imply nationwide closure.",
+      "extracted_index": "data/geography/research/italy-iccd-diocesan-source-index-2026-10-10.v1.json"
     },
     {
       "id": "IT_TORINO_CONSOLATA_2026",
@@ -153,7 +154,8 @@
       "authority": "EPISCOPAL_INVENTORY",
       "url": "https://www.cccb.ca/the-catholic-church-in-canada/canadas-national-shrines/",
       "access": "INDEX_ACCESSIBLE",
-      "note": "Six official national shrines enumerated on accessible page."
+      "note": "Six official national shrines enumerated on accessible page.",
+      "extracted_index": "data/geography/research/canada-national-shrines-2026-10-10.v1.json"
     },
     {
       "id": "NA_NASPA_US",
@@ -167,7 +169,8 @@
       "authority": "SHRINE_ASSOCIATION_INDEX",
       "url": "https://www.catholicshrines.org/national-shrines",
       "access": "INDEX_ACCESSIBLE",
-      "note": "Association list of national shrines; check each site's individual designation and present status before publishing."
+      "note": "Association list of national shrines; check each site's individual designation and present status before publishing.",
+      "extracted_index": "data/geography/research/naspa-us-national-shrines-2026-10-10.v1.json"
     },
     {
       "id": "NA_USCCB_HERITAGE",
@@ -239,7 +242,8 @@
       "authority": "DIOCESAN_DIRECT_INDEX",
       "url": "https://dioceseofmalolos.ph/shrines-and-pilgrimage-sites/",
       "access": "INDEX_ACCESSIBLE",
-      "note": "Four national shrines and multiple diocesan shrines listed with named locality and designation dates; diocese-limited."
+      "note": "Four national shrines and multiple diocesan shrines listed with named locality and designation dates; diocese-limited.",
+      "extracted_index": "data/geography/research/malolos-shrines-2026-10-10.v1.json"
     },
     {
       "id": "AS_VAILANKANNI_VATICAN",
@@ -295,7 +299,8 @@
       "authority": "EPISCOPAL_PILGRIMAGE_INDEX",
       "url": "https://pilgrimsofhope.catholic.org.au/all/",
       "access": "INDEX_ACCESSIBLE",
-      "note": "117 Jubilee pilgrimage sites, eight paginated pages; a time-bounded programme, not all sacred sites historically."
+      "note": "117 Jubilee pilgrimage sites, eight paginated pages; a time-bounded programme, not all sacred sites historically.",
+      "extracted_index": "data/geography/research/australia-jubilee-2025-sites-2026-10-10.v1.json"
     },
     {
       "id": "OC_NZ_NATIONAL",
@@ -366,7 +371,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "CCCB-CA-05"
     },
     {
       "research_id": "NA_CANADA_VELYCHKOVSKY",
@@ -380,7 +386,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "CCCB-CA-06"
     },
     {
       "research_id": "NA_US_THERESE_JUNEAU",
@@ -394,7 +401,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "NASPA-US-001"
     },
     {
       "research_id": "NA_US_IMMACULATE_DC",
@@ -408,7 +416,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "NASPA-US-006"
     },
     {
       "research_id": "SA_BR_BOM_JESUS_CONGONHAS",
@@ -450,7 +459,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-03"
     },
     {
       "research_id": "AS_PH_ST_ANNE_HAGONOY",
@@ -464,7 +474,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-04"
     },
     {
       "research_id": "AS_PH_DIVINE_MERCY_MARILAO",
@@ -478,7 +489,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-05"
     },
     {
       "research_id": "AS_PH_SALAMBAO_OBANDO",
@@ -492,7 +504,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-06"
     },
     {
       "research_id": "AS_IN_VAILANKANNI",
@@ -534,7 +547,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "AU-JUBILEE25-005"
     },
     {
       "research_id": "OC_AU_LUTANA_VICTORIES",
@@ -548,7 +562,8 @@
       "place_id": null,
       "published": false,
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
-      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "AU-JUBILEE25-006"
     },
     {
       "research_id": "OC_NZ_STMARY_ANGELS",
@@ -564,5 +579,46 @@
       "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
       "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
     }
-  ]
+  ],
+  "acquisition_checkpoint": {
+    "batch": "2026-10-10-BATCH-2",
+    "official_or_shrine_association_bounded_indexes": [
+      {
+        "source_id": "NA_NASPA_US",
+        "listed_entries": 72,
+        "transcribed": 72,
+        "exact_name_or_location_based_seed_link_proposals": 10,
+        "possible_internal_duplicates": true
+      },
+      {
+        "source_id": "OC_AU_PILGRIMS_2025",
+        "listed_entries": 117,
+        "transcribed": 117,
+        "seed_equivalence_penrose_park": 1,
+        "jubilee_year": "2025",
+        "note": "117 designated sites, not 117 independently significant shrines"
+      },
+      {
+        "source_id": "NA_CCCB_NATIONAL",
+        "listed_entries": 6,
+        "transcribed": 6,
+        "preexisting_seed_place_candidates": 4
+      },
+      {
+        "source_id": "AS_MALOLOS_SHRINES",
+        "listed_entries": 16,
+        "transcribed": 16,
+        "breakdown": "2 minor basilicas; 4 national shrines; 10 diocesan shrines"
+      }
+    ],
+    "source_index_entries_transcribed": 211,
+    "italy_iccd_diocesan_list_links_catalogued": 33,
+    "italy_regional_monograph_sanctuaries_2025_12_31": {
+      "basilicata": 31,
+      "calabria": 162
+    },
+    "published_new_places": 0,
+    "source_screening_status": "INDEX_TRANSCRIPTION_COMPLETE_IN_4_BOUNDED_LISTS; PHYSICAL_IDENTITY_AND_RELEASE_ELIGIBILITY_UNRESOLVED",
+    "source_extraction_not_worldwide_completeness": true
+  }
 }
