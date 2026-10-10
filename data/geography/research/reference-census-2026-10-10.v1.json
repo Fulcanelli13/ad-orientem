@@ -9,10 +9,25 @@
     "canonical_geography_path": "data/geography/seed-registry.v1.json",
     "canonical_place_count": 182,
     "verified_seed_sha": "069c6cac66cfded1187269b3dc0b93ea6c6c96d6",
-    "europe_previous_research_leads": 187,
-    "europe_previous_matched": 22,
-    "europe_previous_unmatched": 165,
-    "note": "Previous European research-wave records are NOT assumed to have been crosswalked. The present leads cannot be added to 165 without dedup."
+    "note": "Europe wave-7 merged to main; prior 187/22/165 figures are historical only. Our European refs (Italy 15 research site cases, Ireland three) have a separate handoff crosswalk and MUST NOT be added to Europe's 232 site-lead denominator. Global bibliography owns sources; the European pipeline owns site identities.",
+    "europe_historical_five_wave": {
+      "leads": 187,
+      "matched": 22,
+      "unmatched": 165,
+      "as_of": "2026-10-10",
+      "status": "SUPERSEDED_SNAPSHOT"
+    },
+    "europe_current_seven_wave": {
+      "leads": 232,
+      "matched": 22,
+      "unmatched": 210,
+      "sources": 175,
+      "category_associations": 227,
+      "source_file": "data/explore/europe-acquisition.seven-wave-coverage.review.v1.json",
+      "source_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/919",
+      "owner": "EUROPE_COUNTRY_ACQUISITION",
+      "site_completeness": "UNCERTIFIED_ALL_47"
+    }
   },
   "rules": [
     "Reference-index review is not full-source extraction or site certification.",
@@ -937,6 +952,8 @@
     "italy_diocesan_pdf_lists": 33,
     "italy_detailed_fiches_reviewed": 1,
     "total_bibliography_sources": 39,
-    "safety": "RESEARCH_ONLY_NOT_PUBLISHED"
+    "safety": "RESEARCH_ONLY_NOT_PUBLISHED",
+    "cross_pipeline_handoff": "data/geography/research/europe-seven-wave-handoff-2026-10-10.v1.json",
+    "european_additional_unique_sites_approved": 0
   }
 }
