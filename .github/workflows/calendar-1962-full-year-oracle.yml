@@ -15,6 +15,8 @@ on:
       - "tests/calendar-source-feria-projection.mjs"
       - "tests/calendar-source-feria-browser-e2e.mjs"
       - "tools/calendar/proper-source-batch-100.mjs"
+      - "tools/calendar/printed-1962-july-facsimile-b01.mjs"
+      - "data/mass/printed-1962-july-facsimile-b01.v1.json"
   workflow_dispatch:
 
 permissions:
@@ -58,6 +60,8 @@ jobs:
         run: node tools/calendar/secondary-1962-oracle.mjs
       - name: Audit first 100 distinct pinned 1962 Mass Proper source identities
         run: node tools/calendar/proper-source-batch-100.mjs
+      - name: Probe printed-1962 Missal July facsimile transcription against actual Latin Proper
+        run: node tools/calendar/printed-1962-july-facsimile-b01.mjs
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
@@ -67,4 +71,5 @@ jobs:
             artifacts/calendar-1962-full-year-audit.json
             artifacts/calendar-1962-secondary-reconciliation.json
             artifacts/calendar-1962-proper-source-batch-100.json
+            artifacts/mass-printed-1962-july-facsimile-b01.json
           if-no-files-found: error
