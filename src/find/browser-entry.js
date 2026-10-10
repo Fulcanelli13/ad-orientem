@@ -10,6 +10,7 @@ import { buildExploreViewModel, renderExploreToString } from "./explore-presenta
 import { mapViewport, mountExploreMap } from "./map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
+import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 
 const VERSION="explore-v1";
@@ -100,14 +101,17 @@ export function createFindOwner(win=globalThis){
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
   const state={
-    lens:"tlm",
-    view:"list",
+    lens:"heritage",
+    view:"map",
     query:"",
     day:"ANY",
     affiliations:[],
     unaCum:"ANY",
     liturgy:"ANY",
     massType:"ANY",
+    heritageCategories:[...HERITAGE_CATEGORIES],
+    highlightCustomId:null,
+    expandPlace:false,
     atlasFamily:"ANY",
     atlasArea:"ANY",
     atlasPeriod:"ANY",
@@ -161,6 +165,7 @@ export function createFindOwner(win=globalThis){
 
   function filtered(){
     if(!dataset||!projection)return [];
+    if(state.lens==="heritage")return projectHeritagePlaces(projection,{categories:state.heritageCategories,query:state.query,customId:state.highlightCustomId});
     if(state.lens==="tlm"){
       const records=filterDirectoryRecords(dataset.directory?.records??[],state);
       return projectDirectoryItems(records,{communities:dataset.directory?.communities??[]});
@@ -217,14 +222,19 @@ export function createFindOwner(win=globalThis){
     const items=state.lens==="traditions"&&state.view==="list"
       ?groupTraditionsForBrowse(rawItems,{includeNovenaContext:Boolean(state.query.trim())||state.atlasCalendar==="NOVENA"})
       :rawItems;
+    const canonical=groupTraditionsForBrowse(projection.byLens.traditions);
     const selectedOverride=state.lens==="traditions"
-      ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null:null;
+      ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null
+      :state.lens==="heritage"?canonical.find(item=>item.item_id===state.selectedId)??null:null;
+    const customCards=state.lens==="heritage"
+      ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions"),query:state.query}):[];
     const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
       language:language(win),
       items,
       lens:state.lens,
-      counts:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions)},
+      counts:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
+      customCards,
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:data.directory?.loadedProviders??[],
       unavailableProviders:data.directory?.unavailableProviders??[],
@@ -235,6 +245,7 @@ export function createFindOwner(win=globalThis){
       displayLimit:state.displayLimit,
       placeProfiles,
       selectedPlaceId:state.selectedPlaceId,
+      expandPlace:state.expandPlace,
     });
     node.innerHTML=renderExploreToString(vm);
     if(searchFocus){
@@ -258,7 +269,13 @@ export function createFindOwner(win=globalThis){
       try{
         mapHandle=await mountExploreMap(mapNode,items,{
           win,initialViewport:lastMapLens===state.lens?lastMapView:null,
-          onSelect:id=>{state.selectedPlaceId=null;state.selectedId=id;void paint()},
+          onSelect:id=>{
+            const place=state.lens==="heritage"?items.find(item=>item.item_id===id):null;
+            state.selectedPlaceId=place?.place_id??null;
+            state.selectedId=place?null:id;
+            state.expandPlace=false;
+            void paint();
+          },
         });
       }catch(error){
         const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
@@ -273,11 +290,17 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
-    if(EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    if(options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    else if(!options?.lens&&!openState)state.lens="heritage";
+    if(state.lens==="heritage"){
+      state.view="map";
+      if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
+    }
     state.calendarKey=state.lens==="pilgrimages"&&typeof options?.calendarKey==="string"?options.calendarKey:null;
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
+    state.expandPlace=false;
     const node=ensureRoot(win);if(!node)return false;
     openState=true;node.dataset.open="true";
     node.dataset.aoFindLoadState="loading";
@@ -291,20 +314,24 @@ export function createFindOwner(win=globalThis){
 
   function close(){
     ++paintToken;
-    openState=false;state.selectedId=null;state.selectedPlaceId=null;
+    openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
   }
 
   function setFilter(key,value){
+    const previousLens=state.lens;
     if(key==="view")state.view=value==="map"?"map":"list";
-    else if(key==="lens"&&EXPLORE_LENSES.includes(value)){state.lens=value;state.calendarKey=null;if(value==="traditions")state.view="list";}
-    else if(Object.hasOwn(state,key))state[key]=value;
-    state.selectedId=null;state.selectedPlaceId=null;
+    else if(key==="lens"&&(value==="heritage"||EXPLORE_LENSES.includes(value))){
+      state.lens=value;state.calendarKey=null;
+      if(value==="heritage")state.view="map";
+      else if(value==="traditions")state.view="map";
+    }else if(Object.hasOwn(state,key))state[key]=value;
+    state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
     state.displayLimit=120;
-    mapHandle?.destroy?.();mapHandle=null;
-    lastMapView=null;lastMapLens=null;void paint();
+    if(state.lens!==previousLens){lastMapView=null;lastMapLens=null;}
+    void paint();
   }
 
   async function handoff(surface,openExact,label){
@@ -369,11 +396,43 @@ export function createFindOwner(win=globalThis){
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-place]")){
       event.preventDefault?.();state.selectedPlaceId=null;void paint();return;
     }
+    if(target?.closest?.("[data-explore-expand-place]")){
+      event.preventDefault?.();state.expandPlace=true;void paint();return;
+    }
+    const heritageCategory=target?.closest?.("[data-heritage-category]");
+    if(heritageCategory&&state.lens==="heritage"){
+      event.preventDefault?.();
+      const value=heritageCategory.dataset.heritageCategory;
+      if(value==="ALL")state.heritageCategories=[...HERITAGE_CATEGORIES];
+      else if(HERITAGE_CATEGORIES.includes(value)){
+        const current=state.heritageCategories;
+        state.heritageCategories=current.length===HERITAGE_CATEGORIES.length?[value]:
+          current.includes(value)?(current.length===1?[...HERITAGE_CATEGORIES]:current.filter(cat=>cat!==value)):
+          [...current,value];
+      }
+      state.highlightCustomId=null;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
+      void paint();return;
+    }
+    if(target?.closest?.("[data-heritage-custom-clear]")&&state.lens==="heritage"){
+      event.preventDefault?.();state.highlightCustomId=null;void paint();return;
+    }
+    const heritageCustom=target?.closest?.("[data-heritage-custom]");
+    if(heritageCustom&&state.lens==="heritage"){
+      event.preventDefault?.();
+      const id=heritageCustom.dataset.heritageCustom;
+      const custom=projection?.byLens?.traditions?.find(item=>item?.raw?.custom?.custom_id===id);
+      if(!custom)return;
+      state.heritageCategories=["traditions"];
+      state.highlightCustomId=state.highlightCustomId===id?null:id;
+      state.selectedId=state.highlightCustomId?"tradition:custom:"+id:null;
+      state.selectedPlaceId=null;state.expandPlace=false;
+      void paint();return;
+    }
     const openPlace=target?.closest?.("[data-explore-open-place]");
     if(openPlace){
       event.preventDefault?.();event.stopPropagation?.();
       state.selectedPlaceId=openPlace.dataset.exploreOpenPlace||null;
-      state.selectedId=null;
+      state.selectedId=null;state.expandPlace=false;
       void paint();return;
     }
     const placeItem=target?.closest?.("[data-explore-place-item]");
