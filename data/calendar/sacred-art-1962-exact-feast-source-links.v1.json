@@ -10,8 +10,8 @@
     "Multi-scene and double-sided objects need primary-image panel verification."
   ],
   "datedResolverRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38052691678",
-  "linkCount": 15,
-  "unique2026FirstClassDays": 13,
+  "linkCount": 18,
+  "unique2026FirstClassDays": 16,
   "links": [
     {
       "artworkId": "met-436984",
@@ -220,6 +220,50 @@
       "originalSha256": "f9293a3fe3c493805a59c912651cfbdc6ec6decbc75d0cf5c460638c1ad862e4",
       "association": "EXACT_FEAST_SUBJECT",
       "evidence": "Nativity exact feast event; Christmas night/appointed text link not certified",
+      "sourceRights": "CC0",
+      "approvedForProduction": false
+    },
+    {
+      "artworkId": "kress-k2016",
+      "observedPrincipalId": "tempora:Quad2-0:1:v",
+      "observedDate2026": "2026-03-01",
+      "observedTitle": "II Sunday of Lent",
+      "artist": "Maestro Bartolomé",
+      "artworkTitle": "The Transfiguration",
+      "museumObjectUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+      "originalSha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+      "association": "EXACT_APPOINTED_GOSPEL",
+      "evidence": "1962 Second Sunday of Lent Gospel is Matthew 17:1–9, the Transfiguration; museum original depicts that event.",
+      "appointedReading": "Matthew 17:1-9",
+      "appointedReadingSourceUrl": "https://missalemeum.com/en/calendar/2056-02-27",
+      "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+      "approvedForProduction": false
+    },
+    {
+      "artworkId": "met-437542",
+      "observedPrincipalId": "sancti:11-02m1:1:b",
+      "observedDate2026": "2026-11-02",
+      "observedTitle": "Commemoration of All Souls",
+      "artist": "Workshop of Peter Paul Rubens",
+      "artworkTitle": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437542",
+      "originalSha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "association": "EXACT_FEAST_SUBJECT",
+      "evidence": "Museum painting depicts intercession for souls in Purgatory, a specific All Souls devotional subject; Saint Teresa appears in the artwork.",
+      "sourceRights": "CC0",
+      "approvedForProduction": false
+    },
+    {
+      "artworkId": "met-437729",
+      "observedPrincipalId": "sancti:09-29:1:w",
+      "observedDate2026": "2026-09-29",
+      "observedTitle": "Dedication of St. Michael the Archangel",
+      "artist": "Ignacio de Ries",
+      "artworkTitle": "Saint Michael the Archangel",
+      "museumObjectUrl": "https://www.metmuseum.org/art/collection/search/437729",
+      "originalSha256": "26be17aa91fd738b87c38204430e9cff8333197c585fd4f95706d25e43fc3b4e",
+      "association": "EXACT_TITULAR_SAINT",
+      "evidence": "Museum painting depicts Saint Michael, the titular archangel of observed 29 September dedication; not a depiction of the historical basilica dedication.",
       "sourceRights": "CC0",
       "approvedForProduction": false
     }
