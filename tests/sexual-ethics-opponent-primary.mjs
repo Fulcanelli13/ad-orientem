@@ -10,7 +10,8 @@ const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-au
 const preview=readFileSync("src/learn/sexual-ethics.js","utf8");
 const directIds=["CURRAN1987","FARLEY_QUOTED2012","FARLEY_RESPONSE2012","CURRAN_CDF1986","ACOG_ECTOPIC","ACOG_ECTOPIC_GUIDELINE","MILL_IV_FULL"];
 assert.equal(new Set(CSE_SOURCES.map(s=>s.id)).size,CSE_SOURCES.length);
-assert.equal(CSE_SOURCES.length,89);
+// The canonical source registry now includes eight later source-recovery records.
+assert.equal(CSE_SOURCES.length,97);
 for(const id of directIds){assert.match(CSE_SOURCE_MAP[id].canonical_url,/^https:\/\//);assert.ok(CSE_SOURCE_MAP[id].title);}
 assert.equal(audit.summary.records,55);
 assert.equal(audit.cases.length,55);
