@@ -15,8 +15,9 @@ assert.deepEqual(APP_ROUTE_SURFACES,["home","mass","pray","learn","find","calend
 assert.equal(new Set(APP_ROUTE_SURFACES).size,APP_ROUTE_SURFACES.length);
 const home=read("src/home/browser-entry.js");
 const homePresentation=read("src/home/presentation.js");
-assert.ok(home.includes('navigateHomeShortcut("calendar"')&&homePresentation.includes("data-home-calendar"),
-  "Calendar must remain discoverable from Home after removing its tab");
+const todayV2=read("src/home/today-v2.js");
+assert.ok(home.includes('navigateHomeShortcut("calendar"')&&homePresentation.includes("renderTodayV2")&&todayV2.includes("data-home-calendar-view")&&todayV2.includes("data-home-calendar"),
+  "Calendar must remain discoverable from Today v2 and route to the canonical Calendar");
 
 const learn=read("src/learn/browser-entry.js");
 const learnLayout=read("src/learn/presentation.js");
