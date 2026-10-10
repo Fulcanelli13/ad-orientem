@@ -6,7 +6,7 @@ import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
 import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./reference-safety.js";
 import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
 import { verifiedScriptureCommentary } from "./context.js";
-import { inlineScriptureCommentary } from "./inline-commentary.js";
+import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 
@@ -40,7 +40,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},passage=null,context=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -232,33 +232,46 @@ export function mountScriptureLibrary(root,{
        const area=element("div",null,"aoScriptureContextCommentary");
        area.setAttribute("role","region");
        area.setAttribute("aria-label",lang==="fr"?"Commentaire vérifié":"Verified commentary");
-       if(verified){
-         area.append(element("h3",verified.title));
-         const inline=inlineScriptureCommentary(location);
-         if(inline){
-           area.append(element("p",lang==="fr"
-             ?"Notes de lecture rédigées à partir des commentaires cités ; il ne s’agit pas de citations littérales."
-             :"Source-based reading notes, paraphrased rather than quoted verbatim.","aoScriptureCommentaryDisclosure"));
-           for(const entry of inline.entries){
-             const paragraph=element("p",entry.summary[lang],"aoScriptureCommentaryParagraph");
-             paragraph.prepend(element("strong",entry.author+" — "));
-             area.append(paragraph);
+       if(isCatenaGospel(location)&&lang==="en"){
+         area.append(element("h3","Catena Aurea · St Thomas Aquinas"));
+         area.append(element("p","Original Father-attributed commentary (Oxford/Newman 1841–45), not an editorial paraphrase.","aoScriptureCommentaryDisclosure"));
+         const status=element("p","Loading original commentary…","aoScriptureCommentaryDisclosure");
+         status.setAttribute("role","status");area.append(status);
+         loadCatenaForPassage(location,{fetcher:fetchCommentary}).then(nodes=>{
+           if(!area.isConnected||!commentaryVisible||lang!=="en")return;
+           status.remove();
+           if(!nodes.length)area.append(element("p","No source fragment matches these exact verses.","aoScriptureCommentaryDisclosure"));
+           for(const node of nodes){
+             const item=element("section",null,"aoScriptureCatenaPericope");
+             item.append(element("h4",node.citation,"aoScriptureCatenaHeading"));
+             node.segments.forEach((segment,i)=>{
+               const father=element("details",null,"aoScriptureFather");father.open=i<2;
+               father.append(element("summary",segment.father));
+               father.append(element("p",segment.text,"aoScriptureFatherText"));
+               item.append(father);
+             });
+             if(node.source?.url){
+               const link=element("a","Original Catena source ↗");link.href=node.source.url;
+               link.target="_blank";link.rel="noopener noreferrer";
+               link.dataset.scriptureCommentarySource="verified";item.append(link);
+             }
+             area.append(item);
            }
-         }else{
-           area.append(element("p",lang==="fr"
-             ?"La source est identifiée, mais son commentaire n’est pas encore transcrit dans l’application."
-             :"The source is identified, but its commentary has not yet been transcribed for in-app reading.","aoScriptureCommentaryDisclosure"));
-         }
-         if(verified.scope==="PSALM_SECTION_IN_COMPLETE_WORK"){
-           area.append(element("p",(lang==="fr"?"Référence au Psaume ":"Traditional Psalm ")+location.chapter+
-             (lang==="fr"?" dans la numérotation de la Vulgate.":" in Vulgate numbering."),"aoScriptureCommentaryDisclosure"));
-         }
-         const link=element("a",lang==="fr"?"Consulter le texte original ↗":"Original commentary source ↗");
+         }).catch(()=>{if(area.isConnected)status.textContent="Source unavailable; no commentary has been invented.";});
+       }else if(isCatenaGospel(location)&&lang==="fr"){
+         area.append(element("p","Le commentaire patristique français n’est pas encore intégré. Aucun texte anglais n’est substitué.","aoScriptureCommentaryDisclosure"));
+       }else if(verified){
+         area.append(element("h3",verified.title));
+         area.append(element("p",lang==="fr"
+           ?"La source est identifiée, mais son texte n’est pas encore intégré ici."
+           :"The historical source is indexed, but its text is not yet transcribed here.","aoScriptureCommentaryDisclosure"));
+         if(verified.scope==="PSALM_SECTION_IN_COMPLETE_WORK")
+           area.append(element("p",(lang==="fr"?"Psaume ":"Traditional Psalm ")+location.chapter+" · Vulgate numbering","aoScriptureCommentaryDisclosure"));
+         const link=element("a",lang==="fr"?"Source originale ↗":"Original commentary source ↗");
          link.href=verified.url;link.target="_blank";link.rel="noopener noreferrer";
          link.dataset.scriptureCommentarySource="verified";area.append(link);
        }else area.append(element("p",lang==="fr"
-         ?"Aucun commentaire authentifié pour ce passage. Aucune attribution n’est inventée."
-         :"No authenticated passage-specific commentary is currently linked. No attribution is invented."));
+         ?"Aucun commentaire vérifié pour ce passage.":"No authenticated commentary for this passage."));
        contextBar.append(area);
      }
      wrap.append(contextBar);
