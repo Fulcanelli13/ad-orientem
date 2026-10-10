@@ -35,6 +35,16 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 .aoMassCatalogueShadowed{display:none!important}",
   "#ao-mass-flow-v1 .aoMassCatalogueShadowedSection{display:none!important}",
   "#ao-mass-flow-v1 .aoMassCatalogueNative button:focus-visible{outline:2px solid var(--liturgical,#d4b98b);outline-offset:2px}",
+  "#ao-mass-flow-v1 .aoSpecialMassContext,.aoMassSpecialReaderGuide .aoSpecialMassContext{margin:10px 0 15px;padding:13px 14px;border:1px solid rgba(201,174,128,.26);border-radius:12px;background:rgba(0,0,0,.12);min-width:0}",
+  "#ao-mass-flow-v1 .aoSpecialMassContext[hidden]{display:none!important}",
+  "#ao-mass-flow-v1 .aoSpecialMassHeading,.aoMassSpecialReaderGuide .aoSpecialMassHeading{margin:0 0 7px;font:500 1rem/1.35 Georgia,serif;color:var(--paper,#eee2ca)}",
+  "#ao-mass-flow-v1 .aoSpecialMassExplanation,.aoMassSpecialReaderGuide .aoSpecialMassExplanation{margin:0 0 12px;font-size:.79rem;line-height:1.55;color:var(--muted,#bcb5aa)}",
+  "#ao-mass-flow-v1 .aoSpecialMassSequence,.aoMassSpecialReaderGuide .aoSpecialMassSequence{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}",
+  "#ao-mass-flow-v1 .aoSpecialMassSequence li,.aoMassSpecialReaderGuide .aoSpecialMassSequence li{padding:7px 9px;border:1px solid rgba(201,174,128,.23);border-radius:7px;font:500 .73rem/1.4 system-ui,sans-serif;color:var(--text,#e8decf);max-width:100%;overflow-wrap:anywhere}",
+  "#ao-mass-flow-v1 .aoSpecialMassNotes p,.aoMassSpecialReaderGuide .aoSpecialMassNotes p{margin:10px 0 0;font-size:.76rem;line-height:1.45;color:var(--muted,#bcb5aa)}",
+  ".aoMassSpecialReaderGuide{margin:10px 0;border-top:1px solid rgba(201,174,128,.22);padding-top:7px;color:var(--text,#eee2ca)}",
+  ".aoMassSpecialReaderGuide>summary{min-height:44px;padding:11px 0;cursor:pointer;font:500 .84rem/1.45 system-ui,sans-serif;color:var(--liturgical,#d5bc8d)}",
+  ".aoMassSpecialReaderGuide .aoSpecialMassContext{background:transparent;margin:4px 0 10px}",
   "@media(max-width:370px){#ao-mass-flow-v1 .aoFullMassForms{grid-template-columns:1fr}}",
   ].join("\n");
   document.head.appendChild(el);
