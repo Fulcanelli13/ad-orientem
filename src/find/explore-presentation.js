@@ -107,7 +107,8 @@ function placeSheet(vm){
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
   // The place opens as a reader, not a dashboard of zero-valued record counters.
-  const synopsis=sacredPlaceSynopsis(profile,{maxLength:550,language:vm.language});
+  const preferredCategory=arr(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
+  const synopsis=sacredPlaceSynopsis(profile,{maxLength:550,language:vm.language,preferredCategory});
   if(synopsis)html+='<p class="aoHeritageOverview">'+esc(synopsis)+'</p>';
   if(profile.directions_url)html+='<div class="aoFindActions"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
   html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore documented history, devotions and original sources below.","Découvrez l’histoire, les dévotions et les sources originales ci-dessous."))+'</p>';
