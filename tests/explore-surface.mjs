@@ -155,6 +155,7 @@ const shrineVm=buildExploreViewModel({
   view:"list",
   filters:{query:"Sanctuaire Notre-Dame de Lourdes"},
   selectedId:lourdesShrine[0].item_id,
+  expandDetail:true,
 });
 const shrineHtml=renderExploreToString(shrineVm);
 assert.match(shrineHtml,/AD ORIENTEM · EXPLORE/);
@@ -181,6 +182,7 @@ const tlmVm=buildExploreViewModel({
   view:"list",
   filters:{query:"",day:"ANY",affiliations:[],unaCum:"ANY",liturgy:"ANY",massType:"ANY"},
   selectedId:tlm.item_id,
+  expandDetail:true,
 });
 const tlmHtml=renderExploreToString(tlmVm);
 assert.match(tlmHtml,/data-find-filter="unaCum"/);
@@ -573,7 +575,7 @@ assert.equal(searchedContexts.length,31,"18 novena contextual links should remai
 assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,13,"canonical practice identities must be unique");
 const practiceVm=buildExploreViewModel({
   language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:13},
-  view:"list",filters:{},selectedId:"tradition:custom:DEV-007",
+  view:"list",filters:{},selectedId:"tradition:custom:DEV-007",expandDetail:true,
 });
 const practiceHtml=renderExploreToString(practiceVm);
 assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
