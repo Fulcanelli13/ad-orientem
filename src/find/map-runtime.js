@@ -145,6 +145,40 @@ export function exploreMapFeatures(items){
   return out;
 }
 
+// Cluster expansion eventually stops, but distinct Places can still occupy the
+// same touch target at street zoom. Never let a drawn-on-top marker hide its peers.
+export function exploreDistinctPointChoices(features){
+  const seen=new Set(),choices=[];
+  for(const feature of Array.isArray(features)?features:[]){
+    const properties=feature?.properties??{},id=String(properties.item_id??"");
+    if(!id||seen.has(id))continue;
+    seen.add(id);
+    choices.push({item_id:id,name:String(properties.name??"").trim()||"Sacred place"});
+  }
+  return choices;
+}
+function explorePlaceChoicePopup({win,map,maplibre,coordinates,choices,onSelect}){
+  if(choices.length<2||!maplibre.Popup||!win?.document)return false;
+  const list=win.document.createElement("div");
+  list.className="aoExplorePlaceChoices";
+  list.style.cssText="max-height:min(52vh,320px);min-width:min(250px,70vw);overflow:auto;padding:6px 3px;color:#18212b";
+  const title=win.document.createElement("strong");
+  title.textContent="Places nearby · Lieux à proximité";
+  title.style.cssText="display:block;padding:6px;font-size:12px";
+  list.append(title);
+  const popup=new maplibre.Popup({closeButton:true,maxWidth:"340px"});
+  for(const choice of choices){
+    const button=win.document.createElement("button");
+    button.type="button";
+    button.textContent=choice.name;
+    button.setAttribute("aria-label",choice.name);
+    button.style.cssText="display:block;width:100%;padding:11px 8px;min-height:44px;text-align:left;border:0;border-bottom:1px solid #ddd;background:transparent;color:#18212b;cursor:pointer";
+    button.addEventListener("click",()=>{popup.remove?.();onSelect(choice.item_id)});
+    list.append(button);
+  }
+  popup.setLngLat(coordinates).setDOMContent(list).addTo(map);
+  return true;
+}
 export function mapFitBounds(features){
   const points=(Array.isArray(features)?features:[]).map(f=>f?.geometry?.coordinates)
     .filter(p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite));
@@ -204,7 +238,16 @@ export async function mountExploreMap(container,items,{
     }
     map.on("click",prefix+"-points",event=>{
       const id=event.features?.[0]?.properties?.item_id;
-      if(id)onSelect(id);
+      if(!id)return;
+      const point=event.point,nearby=point&&map.queryRenderedFeatures?.(
+        [[point.x-18,point.y-18],[point.x+18,point.y+18]],
+        {layers:[prefix+"-points"]}
+      );
+      const choices=exploreDistinctPointChoices(nearby?.length?nearby:event.features);
+      if(explorePlaceChoicePopup({win,map,maplibre,
+        coordinates:event.lngLat??event.features?.[0]?.geometry?.coordinates,
+        choices,onSelect}))return;
+      onSelect(id);
     });
     map.on("click",prefix+"-clusters",async event=>{
       const feature=event.features?.[0],clusterId=feature?.properties?.cluster_id,
@@ -213,7 +256,19 @@ export async function mountExploreMap(container,items,{
       try{
         const zoom=await source.getClusterExpansionZoom(clusterId);
         const coords=feature.geometry?.coordinates;
-        if(coords)map.easeTo({center:coords,zoom,duration:reducedMotion?0:420});
+        if(!coords)return;
+        // If the cluster has reached its maximum expansion zoom (or the user is
+        // already there), reveal every underlying Place instead of zooming into
+        // an apparently solitary marker that conceals neighbours.
+        const currentZoom=map.getZoom?.()??0;
+        if(zoom>currentZoom+0.25&&currentZoom<12.5){
+          map.easeTo({center:coords,zoom,duration:reducedMotion?0:420});
+          return;
+        }
+        const leaves=await source.getClusterLeaves?.(clusterId,500,0);
+        const choices=exploreDistinctPointChoices(leaves);
+        if(!explorePlaceChoicePopup({win,map,maplibre,
+          coordinates:coords,choices,onSelect})&&choices.length===1)onSelect(choices[0].item_id);
       }catch{}
     });
     for(const layer of [prefix+"-points",prefix+"-clusters"]){
