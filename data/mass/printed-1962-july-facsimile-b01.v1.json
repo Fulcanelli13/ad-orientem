@@ -119,12 +119,13 @@
       "rubrics": [
         "Credo",
         "Latin commemoration Collect/Secret/Postcommunion"
-      ]
+      ],
+      "commemorationSource": "Sancti/07-02cc"
     },
     {
       "date": "2026-07-03",
       "observance": "Saint Irenaeus, Bishop and Martyr",
-      "proper": null,
+      "proper": "Sancti/07-03r",
       "rank": 3,
       "pdfPages": [
         5,
@@ -160,7 +161,7 @@
           "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6"
         }
       ],
-      "note": "Missale Meum normalized Sancti/07-03 Latin source was not present at the pinned path: check canonical 1962 owner before fixing."
+      "note": "Confirmed 1962 app Proper source is Sancti/07-03r (not upstream retired Sancti/07-03). Printed sample's Irenaeus Collect, Epistle and Gospel incipits agree."
     },
     {
       "date": "2027-07-05",
@@ -307,7 +308,7 @@
     {
       "date": "2026-07-11",
       "observance": "Commemoration of Saint Pius I",
-      "proper": null,
+      "proper": "Commune/C10t",
       "rank": 4,
       "pdfPages": [
         10,
@@ -325,7 +326,8 @@
       "commemoration": "Saint Pius I, Pope and Martyr",
       "rubrics": [
         "Missa Si diligis me from Common of Supreme Pontiffs; commemoration only on the July 11 feria"
-      ]
+      ],
+      "commemorationSource": "Sancti/07-11"
     },
     {
       "date": "2027-07-12",
@@ -361,7 +363,16 @@
       "commemoration": "Saints Nabor and Felix",
       "rubrics": [
         "Commemorative Collect, Secret and Postcommunion"
-      ]
+      ],
+      "commemorationSource": "Sancti/07-12o",
+      "editorialCorrection": {
+        "section": "Collect 1 (Latin)",
+        "printedReading": "beati Ioannis Abbatis",
+        "priorNormalized": "beati Joannis Gualberti Abbatis",
+        "disposition": "Exact current Proper reference restricted to Sancti/07-12 Latin Oratio and Commune/C5b donor; printed 1962 source name governs",
+        "corroboration": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "criticalVisualCheck": "pending; the PDF screenshot interface returned a cache miss"
+      }
     }
   ]
 }
