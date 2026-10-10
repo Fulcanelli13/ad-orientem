@@ -19,6 +19,8 @@ on:
       - "data/mass/printed-1962-july-facsimile-b01.v1.json"
       - "tools/calendar/independent-1962-lent-sundays-b02.mjs"
       - "data/mass/independent-1962-lent-sundays-b02.v1.json"
+      - "tools/calendar/independent-1962-advent-ember-lent3-b03.mjs"
+      - "data/mass/independent-1962-advent-ember-lent3-b03.v1.json"
   workflow_dispatch:
 
 permissions:
@@ -66,6 +68,8 @@ jobs:
         run: node tools/calendar/printed-1962-july-facsimile-b01.mjs --strict
       - name: Compare five Lent and Palm Sunday formularies with independent Latin booklets
         run: node tools/calendar/independent-1962-lent-sundays-b02.mjs --strict
+      - name: Cross-check Advent, Lent III and Ember sources against independent liturgical witnesses
+        run: node tools/calendar/independent-1962-advent-ember-lent3-b03.mjs
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
@@ -77,4 +81,5 @@ jobs:
             artifacts/calendar-1962-proper-source-batch-100.json
             artifacts/mass-printed-1962-july-facsimile-b01.json
             artifacts/independent-1962-lent-sundays-b02.json
+            artifacts/independent-1962-advent-ember-lent3-b03.json
           if-no-files-found: error
