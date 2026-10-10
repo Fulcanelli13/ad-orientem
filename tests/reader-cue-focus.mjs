@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { pickActiveCue } from "../src/mass/reader-cue-focus.js";
+import { pickActiveCue, markActiveCue } from "../src/mass/reader-cue-focus.js";
 
 const items=[
   {cueId:"AO.SM.C0001",top:0,bottom:34},
@@ -38,5 +38,23 @@ assert.equal(pickActiveCue({
     {cueId:"AO.SM.C0102",top:100,bottom:120},
   ],
 }),"AO.SM.C0100","default LIVE focus point no longer sits in the approved ~39% reading zone");
+
+// A repeated projection must not rewrite unchanged paragraph attributes.
+const writes=[];
+function focusNode(cueId){
+  const backing={cueId,active:"false"};
+  const dataset=new Proxy(backing,{
+    set(obj,key,value){writes.push([cueId,key,value]);obj[key]=value;return true;}
+  });
+  return {dataset};
+}
+const nodes=[focusNode("AO.SM.C0001"),focusNode("AO.SM.C0002")];
+const container={querySelectorAll(){return nodes}};
+markActiveCue(container,"AO.SM.C0001");
+assert.equal(writes.length,1,"only selected cue state should mutate");
+markActiveCue(container,"AO.SM.C0001");
+assert.equal(writes.length,1,"redundant same-cue refresh rewrote DOM attributes");
+markActiveCue(container,"AO.SM.C0002");
+assert.equal(writes.length,3,"new cue selection must update two paragraphs");
 
 console.log("reader cue focus: PASS — top/bottom ownership, zero-lag geometry and 39% focus zone.");
