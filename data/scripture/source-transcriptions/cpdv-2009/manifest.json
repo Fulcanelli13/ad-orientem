@@ -1,0 +1,602 @@
+{
+  "schema": "ao.scripture.source-transcriptions.manifest.v1",
+  "editionId": "cpdv-2009",
+  "title": "Catholic Public Domain Version (archival candidate)",
+  "language": "en",
+  "bookCount": 73,
+  "rights": "public-domain",
+  "status": "SOURCE_TRANSCRIPTION_UNDER_REVIEW",
+  "editionCertified": false,
+  "sourceWitness": "Archived third-party CPDV transcription; NOT the current author-maintained master. Documented wording/verse differences require reconciliation",
+  "sourceCommit": "e1b254cef86d0e65b1a5d1a94b8b112d0f296a2c",
+  "sourceBlob": "a78e21ca67eae82a998b9fbf8dee7a29dab40628",
+  "books": [
+    {
+      "id": "Genesis",
+      "file": "Genesis.json",
+      "sha256": "ffc5452d3b0209df9834049ec5b5211027ebce78529114eceb857de18adec4df",
+      "chapters": 50,
+      "verses": 1530,
+      "blankSlots": 0
+    },
+    {
+      "id": "Exodus",
+      "file": "Exodus.json",
+      "sha256": "c47cdad936622287d49923764e33885807c3a65ff4f89b45b94b9be6a153c096",
+      "chapters": 40,
+      "verses": 1211,
+      "blankSlots": 0
+    },
+    {
+      "id": "Leviticus",
+      "file": "Leviticus.json",
+      "sha256": "d427856d0cca151731e18ddfa0e444dcf21cff317504ce1ca425930b0729caac",
+      "chapters": 27,
+      "verses": 858,
+      "blankSlots": 0
+    },
+    {
+      "id": "Numbers",
+      "file": "Numbers.json",
+      "sha256": "e7c74587886e8ea8f2257651ebba89e1403b84d80f44086abc985d31005794dd",
+      "chapters": 36,
+      "verses": 1288,
+      "blankSlots": 0
+    },
+    {
+      "id": "Deuteronomy",
+      "file": "Deuteronomy.json",
+      "sha256": "2528acc986b0afcaa12b7b73d1a4414cb4de2a1f5bbf17c68e810b327f674360",
+      "chapters": 34,
+      "verses": 959,
+      "blankSlots": 0
+    },
+    {
+      "id": "Joshua",
+      "file": "Joshua.json",
+      "sha256": "9a2c5ce711fe01b978e958a9a1f06df3f3a4d6a7e547804ad75941ae262eeaaa",
+      "chapters": 24,
+      "verses": 658,
+      "blankSlots": 0
+    },
+    {
+      "id": "Judges",
+      "file": "Judges.json",
+      "sha256": "c972282877a84e80653ee2c64290dcf4a8c0feda75eb7547947260d15928e966",
+      "chapters": 21,
+      "verses": 618,
+      "blankSlots": 0
+    },
+    {
+      "id": "Ruth",
+      "file": "Ruth.json",
+      "sha256": "6f492484bf20a0a78b732bd0e1b3ae6f798308e0688cc90dbcba828069fe3f17",
+      "chapters": 4,
+      "verses": 85,
+      "blankSlots": 0
+    },
+    {
+      "id": "1Samuel",
+      "file": "1Samuel.json",
+      "sha256": "5977718809f4c776232a25ceca983bc6db26d9eee409289f4e3426174cafbea6",
+      "chapters": 31,
+      "verses": 811,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Samuel",
+      "file": "2Samuel.json",
+      "sha256": "b903b80827a1d9d20cea4ea7add79cccd53e9d2ac71bf6ae92f0e65032833efe",
+      "chapters": 24,
+      "verses": 694,
+      "blankSlots": 1
+    },
+    {
+      "id": "1Kings",
+      "file": "1Kings.json",
+      "sha256": "afb87d7b7389fd1a78b38a8b5583a4ab2647d6516f3f79dda34d4c2e8334321d",
+      "chapters": 22,
+      "verses": 817,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Kings",
+      "file": "2Kings.json",
+      "sha256": "7bb98253a2ec7aa1006cb2b57dfacdbb3ab48c435055180367cb96ee48be4198",
+      "chapters": 25,
+      "verses": 719,
+      "blankSlots": 0
+    },
+    {
+      "id": "1Chronicles",
+      "file": "1Chronicles.json",
+      "sha256": "b1caf203a5a6d02e81ec3c6d23dc5360082f7db679f788ac0eb72a264b741e22",
+      "chapters": 29,
+      "verses": 940,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Chronicles",
+      "file": "2Chronicles.json",
+      "sha256": "0ccfb0fdb5750fb2f4b55070e99d13319f675cc2907894c2a8f876e21be03cfb",
+      "chapters": 36,
+      "verses": 822,
+      "blankSlots": 0
+    },
+    {
+      "id": "Ezra",
+      "file": "Ezra.json",
+      "sha256": "2e6d5e739a783119fe6b079e18f781c9691245a74d65223986f0925cc8510b82",
+      "chapters": 10,
+      "verses": 280,
+      "blankSlots": 0
+    },
+    {
+      "id": "Nehemiah",
+      "file": "Nehemiah.json",
+      "sha256": "a90a4ab0f4e3089babba89857764dae76b9598caf09faf49bdbdb2e27d38287a",
+      "chapters": 13,
+      "verses": 404,
+      "blankSlots": 0
+    },
+    {
+      "id": "Tobit",
+      "file": "Tobit.json",
+      "sha256": "43c32fbe501a49f4094924a1d6fa03f32c3c3c7338ab94a2cd0d8116650ab96e",
+      "chapters": 14,
+      "verses": 298,
+      "blankSlots": 0
+    },
+    {
+      "id": "Judith",
+      "file": "Judith.json",
+      "sha256": "76d77a265b688d493a1e93c75f9ea551642e550d66cba4ed2ff485ead1069f16",
+      "chapters": 16,
+      "verses": 346,
+      "blankSlots": 0
+    },
+    {
+      "id": "Esther",
+      "file": "Esther.json",
+      "sha256": "ebce50dda7e756551be14bdd761c870f05b284b26d1ee35c12cdebdae4e00268",
+      "chapters": 16,
+      "verses": 275,
+      "blankSlots": 0
+    },
+    {
+      "id": "1Maccabees",
+      "file": "1Maccabees.json",
+      "sha256": "2244c56bcbb5b2fe0be704a7cb9a87a71ddb856f925b93594cc1decbc3565915",
+      "chapters": 16,
+      "verses": 929,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Maccabees",
+      "file": "2Maccabees.json",
+      "sha256": "a3602f2d435c0fddc7329aab0e92be7f8bad242f79a77fb0da2ad264e7ec400f",
+      "chapters": 15,
+      "verses": 558,
+      "blankSlots": 0
+    },
+    {
+      "id": "Job",
+      "file": "Job.json",
+      "sha256": "f1a4c871457a4d48d8649a6aea96306eb722e698fa67ed087851fa7f8d01ff9a",
+      "chapters": 42,
+      "verses": 1070,
+      "blankSlots": 0
+    },
+    {
+      "id": "Psalms",
+      "file": "Psalms.json",
+      "sha256": "4ec517ca9fe3ec46719f82d5e3b963d80333767144781a6038cb95e140c8acdd",
+      "chapters": 150,
+      "verses": 2530,
+      "blankSlots": 1
+    },
+    {
+      "id": "Proverbs",
+      "file": "Proverbs.json",
+      "sha256": "0bd6aec04881a7a732f1ec5046b8f2038331530f4ec41eb9bccec99b734c682c",
+      "chapters": 31,
+      "verses": 915,
+      "blankSlots": 0
+    },
+    {
+      "id": "Ecclesiastes",
+      "file": "Ecclesiastes.json",
+      "sha256": "4237b3b56f8cf9fe889675a034e96dbc276d0acf433f06d9549e14a6190e63fd",
+      "chapters": 12,
+      "verses": 222,
+      "blankSlots": 0
+    },
+    {
+      "id": "SongOfSongs",
+      "file": "SongOfSongs.json",
+      "sha256": "225283c4e378d2046059016a0e3c64664755c3a3e7ad9c97059cbdde70b1f74e",
+      "chapters": 8,
+      "verses": 116,
+      "blankSlots": 0
+    },
+    {
+      "id": "Wisdom",
+      "file": "Wisdom.json",
+      "sha256": "692f86cf30c1a3908b02cfd1456e7de90ea786253d755ff1365b450340cfff0c",
+      "chapters": 19,
+      "verses": 439,
+      "blankSlots": 0
+    },
+    {
+      "id": "Sirach",
+      "file": "Sirach.json",
+      "sha256": "1b13619c90c697c9223d5887cfab756f29c7c5a757813dc5542eb4483fd237be",
+      "chapters": 51,
+      "verses": 1591,
+      "blankSlots": 1
+    },
+    {
+      "id": "Isaiah",
+      "file": "Isaiah.json",
+      "sha256": "0625f4f7a3b2582ad2ca375f5f0ffb3ff1c2d699d934849c6effd7b1a5e8e668",
+      "chapters": 66,
+      "verses": 1293,
+      "blankSlots": 0
+    },
+    {
+      "id": "Jeremiah",
+      "file": "Jeremiah.json",
+      "sha256": "4bb6a7b9498187e9dc16f2abec7ff9826995e3bc3e95077ccb614031d91b3612",
+      "chapters": 52,
+      "verses": 1363,
+      "blankSlots": 0
+    },
+    {
+      "id": "Lamentations",
+      "file": "Lamentations.json",
+      "sha256": "002a9b82db520c88ae3e7de553ce6381314562b0aa681450c257a58fd90def2a",
+      "chapters": 5,
+      "verses": 154,
+      "blankSlots": 0
+    },
+    {
+      "id": "Baruch",
+      "file": "Baruch.json",
+      "sha256": "e30fff081b4b2fea353ff45070edd4b25ac52b714d55e248b4b7ac7e401808b9",
+      "chapters": 6,
+      "verses": 213,
+      "blankSlots": 0
+    },
+    {
+      "id": "Ezekiel",
+      "file": "Ezekiel.json",
+      "sha256": "cc1de5f7f1210f179b385a0e2b548c663372c4daaa1b22a061d4ea76d99c2a81",
+      "chapters": 48,
+      "verses": 1272,
+      "blankSlots": 0
+    },
+    {
+      "id": "Daniel",
+      "file": "Daniel.json",
+      "sha256": "fffb2aaea4a83fc283c62c62960dd2f00d50c085ca5750ecac87d889931a4271",
+      "chapters": 14,
+      "verses": 531,
+      "blankSlots": 0
+    },
+    {
+      "id": "Hosea",
+      "file": "Hosea.json",
+      "sha256": "ffc2817914fce8fc451fb5d6f44d1b0c895407d556b50a386c8f52927fd3f17c",
+      "chapters": 14,
+      "verses": 198,
+      "blankSlots": 0
+    },
+    {
+      "id": "Joel",
+      "file": "Joel.json",
+      "sha256": "de67b092726b4bd9bd1c51b2131a0bf3071c998da75d7ebdfebe1a7fcda09921",
+      "chapters": 3,
+      "verses": 73,
+      "blankSlots": 0
+    },
+    {
+      "id": "Amos",
+      "file": "Amos.json",
+      "sha256": "952974bc735082dedb6b3e345150a32fad36800e26a2d765f45e8a95c9b0206d",
+      "chapters": 9,
+      "verses": 147,
+      "blankSlots": 0
+    },
+    {
+      "id": "Obadiah",
+      "file": "Obadiah.json",
+      "sha256": "44754c816323c8132c54efc26abeff5847db98728352a604a8f9e7836fdf893b",
+      "chapters": 1,
+      "verses": 21,
+      "blankSlots": 0
+    },
+    {
+      "id": "Jonah",
+      "file": "Jonah.json",
+      "sha256": "c48e92051e41510a569b8311462b385b92f5173cb43cc8dffd3b48b817173a59",
+      "chapters": 4,
+      "verses": 48,
+      "blankSlots": 0
+    },
+    {
+      "id": "Micah",
+      "file": "Micah.json",
+      "sha256": "d7129ee8241068585a3401bfb2c5a9ea3695005ac4d2cd883c35b54fb11fe337",
+      "chapters": 7,
+      "verses": 104,
+      "blankSlots": 0
+    },
+    {
+      "id": "Nahum",
+      "file": "Nahum.json",
+      "sha256": "7a6b3daa77c66ea123d6ede2a5575044d97e595db7c69f1b85318d0cd37e3538",
+      "chapters": 3,
+      "verses": 47,
+      "blankSlots": 0
+    },
+    {
+      "id": "Habakkuk",
+      "file": "Habakkuk.json",
+      "sha256": "1df1e783ae7c7b88eb7f870623b803b2d158f8909d8e3a88f63a68fad01506c4",
+      "chapters": 3,
+      "verses": 56,
+      "blankSlots": 0
+    },
+    {
+      "id": "Zephaniah",
+      "file": "Zephaniah.json",
+      "sha256": "b94ba6711e8860f1edd62728696350b71a70e00fac6b07ea6df1b0c59159680f",
+      "chapters": 3,
+      "verses": 53,
+      "blankSlots": 0
+    },
+    {
+      "id": "Haggai",
+      "file": "Haggai.json",
+      "sha256": "11b470f447613bdf428137649535f46fb071e58d100070182b76f251f09928f2",
+      "chapters": 2,
+      "verses": 38,
+      "blankSlots": 0
+    },
+    {
+      "id": "Zechariah",
+      "file": "Zechariah.json",
+      "sha256": "8cdfb5d6dea2eb21cb10f487d0ffc2678e38b92a101d09901fcd5a8a73d8183d",
+      "chapters": 14,
+      "verses": 211,
+      "blankSlots": 0
+    },
+    {
+      "id": "Malachi",
+      "file": "Malachi.json",
+      "sha256": "7192940edac62ef9e836d78b156cbc3e50a983ac96c6092ff5592d5692cb4324",
+      "chapters": 4,
+      "verses": 55,
+      "blankSlots": 0
+    },
+    {
+      "id": "Matthew",
+      "file": "Matthew.json",
+      "sha256": "4bbb356043c049f01d8f7080ea6ce3a990c6a5203414b855e568e137d9b85100",
+      "chapters": 28,
+      "verses": 1070,
+      "blankSlots": 0
+    },
+    {
+      "id": "Mark",
+      "file": "Mark.json",
+      "sha256": "0a3f91962071d6a0cd2ac6e169e56ba3c099cd70c6eac2dc5520b3ef0e742583",
+      "chapters": 16,
+      "verses": 677,
+      "blankSlots": 0
+    },
+    {
+      "id": "Luke",
+      "file": "Luke.json",
+      "sha256": "a97353b5851db9226e06c524de7d7c0514e6cd68f95b3c4d15f0aaaef812136c",
+      "chapters": 24,
+      "verses": 1151,
+      "blankSlots": 0
+    },
+    {
+      "id": "John",
+      "file": "John.json",
+      "sha256": "5f09bad3bb18392948a7e8ab296d45daaa7685f198f9b77afef82e506f63b369",
+      "chapters": 21,
+      "verses": 880,
+      "blankSlots": 0
+    },
+    {
+      "id": "Acts",
+      "file": "Acts.json",
+      "sha256": "a5e96978628b0d2f9bf94a7caa57fe3e9e99c046a96a35fd1cae56132a7038fe",
+      "chapters": 28,
+      "verses": 1004,
+      "blankSlots": 0
+    },
+    {
+      "id": "Romans",
+      "file": "Romans.json",
+      "sha256": "d2296e5dfc2d07204a68b11546bc981a6a0f99b72acf6bccb2b45e3e981884c9",
+      "chapters": 16,
+      "verses": 433,
+      "blankSlots": 0
+    },
+    {
+      "id": "1Corinthians",
+      "file": "1Corinthians.json",
+      "sha256": "ba6b41db8eb01268add6fd19e34a85f207b7591266f7837ddf3353ed4b8d07a5",
+      "chapters": 16,
+      "verses": 437,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Corinthians",
+      "file": "2Corinthians.json",
+      "sha256": "f16da08e1613f80960bc35cfda431435e80b44bb28287ba33ce1b436d0753b91",
+      "chapters": 13,
+      "verses": 256,
+      "blankSlots": 0
+    },
+    {
+      "id": "Galatians",
+      "file": "Galatians.json",
+      "sha256": "5052c4bb3f92ebc048721064095853f43cae03925f6d71ba3f73f5ca85c4ad0f",
+      "chapters": 6,
+      "verses": 149,
+      "blankSlots": 0
+    },
+    {
+      "id": "Ephesians",
+      "file": "Ephesians.json",
+      "sha256": "00656e05d2b80ac1f6459eae74f3c9cb525fb1c0bf0d9daa201ad80192c5eaa5",
+      "chapters": 6,
+      "verses": 155,
+      "blankSlots": 0
+    },
+    {
+      "id": "Philippians",
+      "file": "Philippians.json",
+      "sha256": "7f669da6d4f6935c6ea4133af7c3af706d53b6d190112b0e3f6d55f44f55babe",
+      "chapters": 4,
+      "verses": 104,
+      "blankSlots": 0
+    },
+    {
+      "id": "Colossians",
+      "file": "Colossians.json",
+      "sha256": "afe1eb2fd6e7b240efccd4d6a4f5b26cbe368b7ff3a359ade5870a4bc8451698",
+      "chapters": 4,
+      "verses": 95,
+      "blankSlots": 0
+    },
+    {
+      "id": "1Thessalonians",
+      "file": "1Thessalonians.json",
+      "sha256": "d84b856a49a04e4ce5c4508b5323d9e63fb83815703fce9a2f94585924816d15",
+      "chapters": 5,
+      "verses": 89,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Thessalonians",
+      "file": "2Thessalonians.json",
+      "sha256": "ac2d8a6b0ef6c7fd32c312c33dfbebc626637135eb5e33326d8d40c1c072ac6e",
+      "chapters": 3,
+      "verses": 46,
+      "blankSlots": 1
+    },
+    {
+      "id": "1Timothy",
+      "file": "1Timothy.json",
+      "sha256": "1316852a3e750710ace0caa437538be93c82dcc1b0a0a4ba52f12c9cc4531d14",
+      "chapters": 6,
+      "verses": 113,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Timothy",
+      "file": "2Timothy.json",
+      "sha256": "ad78106f5066a9f739dfb4dcf6b51f30f977221207972cd42d2a7771b5051bbb",
+      "chapters": 4,
+      "verses": 83,
+      "blankSlots": 0
+    },
+    {
+      "id": "Titus",
+      "file": "Titus.json",
+      "sha256": "285397ce0fb932190a45534f42dc7958744890a68abbefbb17d93b915fbe1413",
+      "chapters": 3,
+      "verses": 46,
+      "blankSlots": 0
+    },
+    {
+      "id": "Philemon",
+      "file": "Philemon.json",
+      "sha256": "d9064ff3bd34afb5f35a08b5dced39bb877591431ceb8f56f595a5d8085879fa",
+      "chapters": 1,
+      "verses": 25,
+      "blankSlots": 0
+    },
+    {
+      "id": "Hebrews",
+      "file": "Hebrews.json",
+      "sha256": "54e8d938c378817186ff96b22d4e6cc85ee185fdf48831a7080067c3168f4c52",
+      "chapters": 13,
+      "verses": 303,
+      "blankSlots": 0
+    },
+    {
+      "id": "James",
+      "file": "James.json",
+      "sha256": "0746e61cf633da4cf82d11401d358fbfdfc8177cf2eac16ea81603954956d928",
+      "chapters": 5,
+      "verses": 108,
+      "blankSlots": 0
+    },
+    {
+      "id": "1Peter",
+      "file": "1Peter.json",
+      "sha256": "c0ae7c1eeab64fbe1aa7027eddfb6c9560f021595db7a842b6152e84623b9c69",
+      "chapters": 5,
+      "verses": 105,
+      "blankSlots": 0
+    },
+    {
+      "id": "2Peter",
+      "file": "2Peter.json",
+      "sha256": "bc6fd918b81f4b3def0e456da5025dd31321631ba28e08eba4b8ba0f6eb08221",
+      "chapters": 3,
+      "verses": 61,
+      "blankSlots": 0
+    },
+    {
+      "id": "1John",
+      "file": "1John.json",
+      "sha256": "4d2e284a45d9302544b64862837a0a7dc2b9dcd819912088cb10b571a17d3827",
+      "chapters": 5,
+      "verses": 105,
+      "blankSlots": 0
+    },
+    {
+      "id": "2John",
+      "file": "2John.json",
+      "sha256": "68b8df6e4d0b51f45ef241ae45f8bbfbb4a21102d8fcc530d9f52a094191bbe6",
+      "chapters": 1,
+      "verses": 13,
+      "blankSlots": 0
+    },
+    {
+      "id": "3John",
+      "file": "3John.json",
+      "sha256": "ff2f16ed730ea78cf409294de382f74bd0838591509db440eefe7edeffa3c8dc",
+      "chapters": 1,
+      "verses": 14,
+      "blankSlots": 1
+    },
+    {
+      "id": "Jude",
+      "file": "Jude.json",
+      "sha256": "cc08279e7d4b0d7c5d856e777add92565fe1870e9d5a261bae0f765ae61fb6fc",
+      "chapters": 1,
+      "verses": 25,
+      "blankSlots": 0
+    },
+    {
+      "id": "Revelation",
+      "file": "Revelation.json",
+      "sha256": "1124cb3117c4f83d4fb1ca526ec31d251eee109cff8451bd615f1a417223af36",
+      "chapters": 22,
+      "verses": 405,
+      "blankSlots": 0
+    }
+  ],
+  "chapterCount": 1334,
+  "verseCount": 35812,
+  "blankSlots": 5
+}

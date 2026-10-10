@@ -156,8 +156,11 @@ try{
     await overlay.waitFor({state:"visible",timeout:15000});
     assert.equal((await overlay.locator(".aoScriptureContextTitle").innerText()).includes(reference),true);
     assert.equal(await overlay.locator(".aoScriptureReading h3").innerText(),firstPassage);
-    assert.equal(await overlay.locator(".aoScriptureVerse").count(),0,
-      "Uncleared local Bible editions cannot leak through the native rite");
+    await overlay.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:15000});
+     assert.ok(await overlay.locator(".aoScriptureVerse").count()>0,
+       "Source-backed Bible context must display its verses without changing the Latin Mass reader");
+     assert.equal(await overlay.locator("[data-scripture-source-review='pending']").count(),1,
+       "Source text must remain explicitly distinguished from a certified edition");
     await overlay.locator("[data-scripture-close]").click();
     await overlay.waitFor({state:"hidden",timeout:8000});
     await page.evaluate(id=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToEasterVigilRecord(

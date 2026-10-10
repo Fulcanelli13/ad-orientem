@@ -68,7 +68,12 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureFather{border-bottom:1px solid rgba(205,182,135,.12);padding:8px 0}
  .aoScriptureLibrary .aoScriptureFather summary{color:#e6d5af;font:600 13px/1.5 system-ui,sans-serif}
  .aoScriptureFatherText{white-space:pre-wrap;font:17px/1.74 Georgia,"Garamond",serif;color:#e5e0d5;margin:9px 0 14px}
- .aoHomeScriptureLink{margin:12px 0}
+ .aoScriptureQuickEditions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:16px 0 8px}
+ .aoScriptureLibrary .aoScriptureQuickEditions button{padding:10px 5px;min-height:44px;border:1px solid rgba(185,160,117,.24);background:transparent;border-radius:3px;color:#c6bca8;font:500 clamp(11px,2.7vw,13px)/1.4 system-ui,sans-serif;letter-spacing:.012em}
+ .aoScriptureLibrary .aoScriptureQuickEditions button[aria-pressed="true"]{border-color:#9f8356;background:rgba(170,139,87,.13);color:#f0e3c4}
+ .aoScriptureTranscriptionStatus{border-left:2px solid #98825d;padding:8px 12px;margin:14px 0;color:#c9c0af}
+ .aoScriptureMissingSlots{padding:7px 10px;background:rgba(140,112,77,.08);border:1px solid rgba(165,137,96,.24)}
+  .aoHomeScriptureLink{margin:12px 0}
  @media(max-width:700px){.aoScriptureNav{grid-template-columns:repeat(2,minmax(0,1fr))}.aoScriptureLibrary{padding:16px;border:0;border-radius:0}.aoScriptureText{font-size:19px}.aoScriptureContextControls{gap:3px}#ao-scripture-overlay{padding:0 0 max(16px,env(safe-area-inset-bottom))}.aoScriptureHeader{position:sticky;top:0;z-index:2;background:#0e151d;padding-top:max(10px,env(safe-area-inset-top))}}
  @media(prefers-reduced-motion:reduce){#ao-scripture-overlay *{scroll-behavior:auto!important;transition:none!important}}
  `;
