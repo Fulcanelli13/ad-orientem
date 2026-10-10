@@ -207,6 +207,7 @@ export async function mountExploreMap(container,items,{
     style:win.AO_EXPLORE_MAP_STYLE_URL||win.AO_DIRECTORY_MAP_STYLE_URL||DEFAULT_STYLE,
     center:initialViewport?.center??[0,20],
     zoom:initialViewport?.zoom??1.2,
+    renderWorldCopies:false,
     attributionControl:true,
   });
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");

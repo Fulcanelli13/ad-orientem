@@ -72,15 +72,20 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet}={}){
   let html='<section class="aoFindSurface aoExploreSurface aoHeritageSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+L(vm.language,"Back","Retour")+'">←</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+L(vm.language,"Sacred Geography","Géographie sacrée")+'</h1></div><button type="button" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button><span class="aoHeritageCount" aria-label="'+esc(String(vm.items.length))+' '+L(vm.language,"places","lieux")+'">'+esc(String(vm.items.length))+'</span></header>';
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
-  html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Map categories","Catégories de la carte")+'">';
+  html+='<nav class="aoExploreMainDestinations" aria-label="'+L(vm.language,"Explore destinations","Parcours Explorer")+'">';
+  html+='<span class="active" aria-current="page">'+L(vm.language,"Sacred places","Lieux sacrés")+'</span>';
+  html+='<button type="button" data-find-filter="lens" data-find-filter-value="tlm">'+L(vm.language,"Find a Mass","Trouver une messe")+'</button>';
+  html+='<button type="button" data-find-filter="lens" data-find-filter-value="traditions">'+L(vm.language,"Traditions","Traditions")+'</button>';
+  html+='</nav>';
+  html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Filter places on the map","Filtrer les lieux sur la carte")+'">';
   html+='<button type="button" data-heritage-category="ALL" aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+L(vm.language,"All places","Tous les lieux")+'</button>';
-  html+='<button type="button" class="aoHeritageMassShortcut" data-find-filter="lens" data-find-filter-value="tlm" aria-label="'+L(vm.language,"Traditional Mass world map","Carte mondiale des messes traditionnelles")+'">'+L(vm.language,"Mass map","Carte des messes")+'</button>';
+
   for(const key of Object.keys(CATEGORY_LABELS))html+='<button type="button" data-heritage-category="'+key+'" data-category="'+key+'" class="'+(active.includes(key)?"active":"")+'" aria-pressed="'+String(active.includes(key))+'">'+esc(label(vm.language,key))+'</button>';
   html+='</nav>';
   html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search a place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div>';
   html+='<button type="button" class="aoHeritageNearby" data-heritage-nearby aria-label="'+L(vm.language,"Centre map near me","Centrer la carte près de moi")+'">'+L(vm.language,"Near me","Autour de moi")+'</button>';
   html+='<details class="aoHeritageMore"><summary aria-label="'+L(vm.language,"Additional Explore sections","Autres sections d’Explorer")+'">'+L(vm.language,"More","Plus")+'</summary><div><strong>'+L(vm.language,"Other ways to explore","Autres façons d’explorer")+'</strong><nav class="aoHeritageSecondary">';
-  for(const [key,en,fr] of [["shrines","Shrine records","Fiches des sanctuaires"],["relics","Relic records","Fiches des reliques"],["pilgrimages","Pilgrimage records","Fiches des pèlerinages"],["apparitions","Apparition records","Fiches des apparitions"],["traditions","Customs evidence","Documents sur les coutumes"]]){
+  for(const [key,en,fr] of [["shrines","Shrine records","Fiches des sanctuaires"],["relics","Relic records","Fiches des reliques"],["pilgrimages","Pilgrimage records","Fiches des pèlerinages"],["apparitions","Apparition records","Fiches des apparitions"]]){
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+key+'">'+L(vm.language,en,fr)+'</button>';
   }
   html+='</nav><p>'+L(vm.language,"Pins identify physical places. Claims about relics and apparitions retain their original source qualifications.","Les repères désignent des lieux physiques. Les récits de reliques et d’apparitions conservent leurs réserves documentaires.")+'</p></div></details></div>';

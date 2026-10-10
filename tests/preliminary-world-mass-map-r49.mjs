@@ -46,9 +46,9 @@ assert.match(html,/non vérifiés|à vérifier/);
 const heritage=renderHeritageToString({
  language:"en",items:[],customCards:[],filters:{heritageCategories:["shrines","relics","pilgrimages","apparitions","traditions"],query:""}
 },{placeSheet:()=>"",detailSheet:()=>""});
-assert.match(heritage,/aoHeritageMassShortcut/);
+assert.match(heritage,/aoExploreMainDestinations/);
 assert.equal((heritage.match(/data-find-filter-value="tlm"/g)||[]).length,1,"One primary Mass map entry only");
-assert.ok(heritage.indexOf("Mass map")>=0);
+assert.ok(heritage.indexOf("Find a Mass")>=0);
 const invalid=structuredClone(raw);invalid.records[1][0]=invalid.records[0][0];
 assert.throws(()=>validateR49Snapshot(invalid),/duplicate/);
 console.log("PASS R49 1,876 provisional source-backed pins, 1,019 Rome-recognised, 732 SSPX, 125 unknown; safe map-first filters and entry");

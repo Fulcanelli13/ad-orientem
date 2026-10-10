@@ -1,0 +1,55 @@
+name: Explore R53 Mobile Architecture
+on:
+  pull_request:
+    paths:
+      - "src/find/**"
+      - "src/app/scroll-tap-guard.js"
+      - "src/app/browser-entry.js"
+      - "tests/explore-touch-navigation-r53.mjs"
+      - "tests/explore-surface.mjs"
+      - "tests/explore-reachability-phone.mjs"
+      - "tests/preliminary-world-mass-map-r49.mjs"
+      - ".github/workflows/explore-mobile-r53.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Module syntax checks
+        run: |
+          node --check src/app/scroll-tap-guard.js
+          node --check src/app/browser-entry.js
+          node --check src/find/browser-entry.js
+          node --check src/find/heritage-presentation.js
+          node --check src/find/explore-presentation.js
+          node --check src/find/map-runtime.js
+      - name: Touch intent and section model
+        run: node tests/explore-touch-navigation-r53.mjs
+      - name: Map, sources and existing surface contracts
+        run: |
+          node tests/preliminary-world-mass-map-r49.mjs
+          node tests/find-surface.mjs
+          node tests/explore-surface.mjs
+          node tests/directory-r50-rome-aliases.mjs
+          node tests/directory-r51-rome-aliases.mjs
+          node tests/directory-r52-named-worship.mjs
+  phone:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Real phone Explore journey and scroll safety
+        run: node tests/explore-reachability-phone.mjs

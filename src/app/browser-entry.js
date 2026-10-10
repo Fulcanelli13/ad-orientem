@@ -1,6 +1,7 @@
 import "./source-transport-compat.js";
 import "./offline-boot.js";
 import { installAppDesignSystem } from "./design-system.js";
+import { createScrollTapGuard } from "./scroll-tap-guard.js";
 import { installDateFormat } from "./date-format.js";
 import "./cinematic-runtime.js";
 import "./loading-director.js";
@@ -56,6 +57,13 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   let boundRibbon = null;
   let observedRibbon = null;
   const cleanups = [];
+  // Shell buttons are particularly sensitive because a stray tap leaves
+  // Explore or a LIVE Mass. Do not interpret a swipe as navigation.
+  const scrollGuard=createScrollTapGuard(doc,{
+    trackAnywhere:true,
+    contains:target=>Boolean(doc.getElementById("ao-global-ribbon")?.contains?.(target)),
+  });
+  cleanups.push(()=>scrollGuard.dispose());
 
   const isolatedNonMass=new Set(["calendar","pray","learn","settings","find","apostolate"]);
 
