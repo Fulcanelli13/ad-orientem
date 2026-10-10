@@ -82,3 +82,24 @@ export function guideForKey(registry,key){
     sourceLinks:entry.sourceLinks,
   });
 }
+
+/**
+ * The 48 visible Sung LIVE moments retain source ownership in the certified
+ * 30-macro / 39-source model. The original 32-entry Guide corpus is never
+ * relabelled as 48 newly approved Guide texts. Split moments carry their own
+ * navigational title and explicitly identify the wider source Guide.
+ */
+export function guideForPresentationCard(registry,card){
+  if(!card)return null;
+  const sequence=card.guideSequence??card.sourceSequence??card.sequence;
+  const inherited=guideForSequence(registry,sequence);
+  if(!inherited)return null;
+  const isSplit=card.productPresentation48===true||card.liveSourceSegment===true;
+  return Object.freeze({
+    ...inherited,
+    moment:isSplit ? String(card.title||inherited.moment) : inherited.moment,
+    coverage:isSplit ? "INHERITED_MACRO_CONTEXT" : "REGISTERED_MACRO_CONTEXT",
+    sourceMoment:inherited.moment,
+    presentationCardId:String(card.sectionId??""),
+  });
+}
