@@ -1394,10 +1394,14 @@ export async function mountNativeReaderPreview({
     // A native source transition may animate the selected posture owner.
     // Never issue a conflicting instruction when a local/observed profile
     // deliberately resolved a different faithful posture.
-    const postureCue=cueNative && cueProjection?.postureTransition===true &&
-      cueProjection?.posture?.cueId===activeCueId &&
-      String(posture?.value??posture?.label??"")===String(cueProjection.posture.value??cueProjection.posture.label??"")
-      ? cueProjection.posture : null;
+    const localTransition=postureResolved.owner==="LOCAL_OVERRIDE" &&
+      postureResolved.localKey===activeCueId && Boolean(posture);
+    const postureCue=localTransition
+      ? Object.freeze({...posture,cueId:activeCueId,owner:"LOCAL_CUSTOMARY_CUE"})
+      : cueNative && cueProjection?.postureTransition===true &&
+        cueProjection?.posture?.cueId===activeCueId &&
+        String(posture?.value??posture?.label??"")===String(cueProjection.posture.value??cueProjection.posture.label??"")
+        ? cueProjection.posture : null;
     const iconKeys=iconKeysForReaderState({
       priestPosition,posture,gesture,response,priestVoice,
       priestAction,bell,schola:scholaProjection.schola
