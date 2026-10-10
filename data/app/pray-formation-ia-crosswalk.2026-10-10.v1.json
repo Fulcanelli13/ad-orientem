@@ -1,0 +1,2368 @@
+{
+  "schema": "AO_PRAY_FORMATION_INFORMATION_ARCHITECTURE_V1",
+  "date": "2026-10-10",
+  "state": "PROPOSED_PRESENTATION_ARCHITECTURE_NO_RUNTIME_MUTATION",
+  "baseline_main": "75273300dcae8809885938d167f4a1f41b8bcced",
+  "sources": [
+    "src/pray/presentation-runtime.js",
+    "src/learn/presentation.js",
+    "src/apostolate/corpus.js",
+    "src/apostolate/hs-corpus.js",
+    "src/apostolate/fh-corpus.js",
+    "src/apostolate/tf-corpus.js",
+    "src/apostolate/dv-corpus.js",
+    "src/apostolate/wc-corpus.js",
+    "data/app/content-items-apostolate.v1.json",
+    "data/app/guide-coverage-two-function-audit.v1.json",
+    "data/app/content-navigation-registry.v1.json",
+    "data/learn/content-ownership-registry.v1.json",
+    "src/app/contextual-study.js",
+    "src/learn/discovery.js",
+    "src/pray/lazy-module-registry.js"
+  ],
+  "counts": {
+    "prayer_landing_routes": 23,
+    "formation_landing_routes": 15,
+    "apostolate_scenarios": 36,
+    "apostolate_skills": 9,
+    "declared_cross_surface_handoff_types": 15
+  },
+  "policy": [
+    "One canonical content owner, multiple contextual projections; no copied texts.",
+    "Keep existing published routes and old aliases valid.",
+    "Research-only Formation content remains unpublished.",
+    "Never turn map/place data, canonical Mass data or Calendar computations into second owners.",
+    "Cross-surface handoffs preserve origin/selection/scroll and return on error.",
+    "Presentation classification is proposed; not an independent publication certificate."
+  ],
+  "navigation": {
+    "global_permanent": [
+      "home",
+      "mass",
+      "pray",
+      "learn",
+      "find"
+    ],
+    "focus_scope": [
+      "pray",
+      "learn",
+      "apostolate"
+    ],
+    "pray": {
+      "landing": [
+        "pray-now",
+        "continue",
+        "featured-devotions",
+        "browse",
+        "search-prayer-library"
+      ],
+      "groups": [
+        {
+          "id": "daily-marian",
+          "title_en": "Daily & Marian prayer",
+          "families": [
+            "daily"
+          ]
+        },
+        {
+          "id": "eucharistic",
+          "title_en": "Before the Blessed Sacrament",
+          "families": [
+            "eucharistic"
+          ]
+        },
+        {
+          "id": "penance-passion",
+          "title_en": "Penance & the Passion",
+          "families": [
+            "penance",
+            "passion"
+          ]
+        },
+        {
+          "id": "devotions",
+          "title_en": "Novenas & Devotions",
+          "families": [
+            "devotions"
+          ],
+          "note": "End-of-life subsection is inside devotions, not another equal homepage tile."
+        },
+        {
+          "id": "end-of-life",
+          "title_en": "At Life's End",
+          "parent": "devotions"
+        },
+        {
+          "id": "library",
+          "title_en": "Prayer Library",
+          "families": [
+            "library"
+          ],
+          "presentation": "search-first"
+        }
+      ],
+      "rule": "Display groupings overlay the current six families; do not modify canonical ownership or player identifiers."
+    },
+    "formation": {
+      "landing_views": [
+        {
+          "id": "learn",
+          "title_en": "Learn the Faith",
+          "clusters": [
+            "foundations",
+            "christian-life",
+            "sacraments",
+            "worship-latin"
+          ],
+          "entry_type": "courses and guides"
+        },
+        {
+          "id": "questions",
+          "title_en": "Questions & Debates",
+          "published": [
+            "learn.sexual_ethics",
+            "learn.catechism"
+          ],
+          "gated": [
+            "learn.apologetics",
+            "learn.church_crisis"
+          ],
+          "entry_type": "search/answer/debate"
+        },
+        {
+          "id": "practice",
+          "title_en": "Put It into Practice",
+          "entry_type": "apostolate scenario and skill player",
+          "preserves_route": "apostolate"
+        }
+      ],
+      "reference_service": "learn.glossary",
+      "discovery_owner": "src/learn/discovery.js",
+      "note": "Scripture and Glossary are contextual services, not an extra permanent tab. Question view can project catechism questions without duplicating canonical Q&A."
+    }
+  },
+  "prayer": [
+    {
+      "id": "pray.morning_evening",
+      "title_en": "Morning & Evening Prayer",
+      "title_fr": "Prières du matin & du soir",
+      "current_family": "daily",
+      "primary_entrance": "daily-marian",
+      "launch_kind": "external",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.angelus_regina",
+      "title_en": "Angelus / Regina Cæli",
+      "title_fr": "Angélus / Regina Cæli",
+      "current_family": "daily",
+      "primary_entrance": "daily-marian",
+      "launch_kind": "own",
+      "experience": "prayer-reader",
+      "content_owner": "pray",
+      "secondary_contexts": [
+        "today:season-time"
+      ],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.rosary",
+      "title_en": "Holy Rosary",
+      "title_fr": "Saint Rosaire",
+      "current_family": "daily",
+      "primary_entrance": "daily-marian",
+      "launch_kind": "own",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [
+        "today:featured",
+        "formation:marian-practice"
+      ],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.meal_prayers",
+      "title_en": "Grace at Meals",
+      "title_fr": "Prières des repas",
+      "current_family": "daily",
+      "primary_entrance": "daily-marian",
+      "launch_kind": "external",
+      "experience": "recitation",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "NOT_APPLICABLE",
+        "requirement": "CONTEXT"
+      }
+    },
+    {
+      "id": "pray.nightly_examen",
+      "title_en": "Nightly Examination",
+      "title_fr": "Examen du soir",
+      "current_family": "daily",
+      "primary_entrance": "daily-marian",
+      "launch_kind": "external",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.adoration",
+      "title_en": "Adoration & Visit",
+      "title_fr": "Adoration & visite",
+      "current_family": "eucharistic",
+      "primary_entrance": "eucharistic",
+      "launch_kind": "own",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.benediction",
+      "title_en": "Benediction",
+      "title_fr": "Bénédiction",
+      "current_family": "eucharistic",
+      "primary_entrance": "eucharistic",
+      "launch_kind": "own",
+      "experience": "live-companion",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.forty_hours",
+      "title_en": "Forty Hours",
+      "title_fr": "Quarante-Heures",
+      "current_family": "eucharistic",
+      "primary_entrance": "eucharistic",
+      "launch_kind": "own",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.communion_treasury",
+      "title_en": "Traditional Communion Prayers",
+      "title_fr": "Prières traditionnelles de Communion",
+      "current_family": "eucharistic",
+      "primary_entrance": "eucharistic",
+      "launch_kind": "external",
+      "experience": "prayer-reader",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.confession",
+      "title_en": "Confession",
+      "title_fr": "Confession",
+      "current_family": "penance",
+      "primary_entrance": "penance-passion",
+      "launch_kind": "own",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [
+        "formation:penance",
+        "apostolate:pastoral"
+      ],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.penitential_psalms",
+      "title_en": "Seven Penitential Psalms",
+      "title_fr": "Sept psaumes pénitentiels",
+      "current_family": "penance",
+      "primary_entrance": "penance-passion",
+      "launch_kind": "own",
+      "experience": "prayer-reader",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.litany_saints",
+      "title_en": "Litany of the Saints",
+      "title_fr": "Litanies des saints",
+      "current_family": "penance",
+      "primary_entrance": "penance-passion",
+      "launch_kind": "own",
+      "experience": "prayer-reader",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.stations",
+      "title_en": "Stations of the Cross",
+      "title_fr": "Chemin de Croix",
+      "current_family": "passion",
+      "primary_entrance": "penance-passion",
+      "launch_kind": "own",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.seven_words",
+      "title_en": "Seven Words of Our Lord",
+      "title_fr": "Sept Paroles de Notre-Seigneur",
+      "current_family": "passion",
+      "primary_entrance": "penance-passion",
+      "launch_kind": "own",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.novenas",
+      "title_en": "Novenas",
+      "title_fr": "Neuvaines",
+      "current_family": "devotions",
+      "primary_entrance": "devotions",
+      "launch_kind": "external",
+      "experience": "programme",
+      "content_owner": "pray",
+      "secondary_contexts": [
+        "calendar:upcoming",
+        "explore:associated-devotion"
+      ],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "programme.first_friday",
+      "title_en": "Nine First Fridays",
+      "title_fr": "Neuf premiers vendredis",
+      "current_family": "devotions",
+      "primary_entrance": "devotions",
+      "launch_kind": "own",
+      "experience": "programme",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "programme.first_saturday",
+      "title_en": "Five First Saturdays",
+      "title_fr": "Cinq premiers samedis",
+      "current_family": "devotions",
+      "primary_entrance": "devotions",
+      "launch_kind": "own",
+      "experience": "programme",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.sacred_heart",
+      "title_en": "Sacred Heart of Jesus",
+      "title_fr": "Sacré-Cœur de Jésus",
+      "current_family": "devotions",
+      "primary_entrance": "devotions",
+      "launch_kind": "external",
+      "experience": "prayer-reader",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "title_en": "Litany of the Holy Name",
+      "title_fr": "Litanies du Saint Nom",
+      "current_family": "devotions",
+      "primary_entrance": "devotions",
+      "launch_kind": "external",
+      "experience": "prayer-reader",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "GAP_CANDIDATE",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.sacred_hymns",
+      "title_en": "Sacred Hymns & Canticles",
+      "title_fr": "Hymnes & cantiques sacrés",
+      "current_family": "devotions",
+      "primary_entrance": "devotions",
+      "launch_kind": "external",
+      "experience": "recitation",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "NOT_APPLICABLE",
+        "requirement": "CONTEXT"
+      }
+    },
+    {
+      "id": "pray.good_death",
+      "title_en": "Preparation for a Good Death",
+      "title_fr": "Préparation à une bonne mort",
+      "current_family": "devotions",
+      "primary_entrance": "end-of-life",
+      "launch_kind": "external",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.dying_companion",
+      "title_en": "Dying Companion",
+      "title_fr": "Accompagnement du mourant",
+      "current_family": "devotions",
+      "primary_entrance": "end-of-life",
+      "launch_kind": "external",
+      "experience": "guided",
+      "content_owner": "pray",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "pray.library",
+      "title_en": "Prayer Library",
+      "title_fr": "Livre de prières",
+      "current_family": "library",
+      "primary_entrance": "library",
+      "launch_kind": "own",
+      "experience": "reference-index",
+      "content_owner": "pray",
+      "secondary_contexts": [
+        "formation:source-prayer",
+        "apostolate:related-prayer"
+      ],
+      "guide": {
+        "information": "GAP_CANDIDATE",
+        "walkthrough": "NOT_APPLICABLE",
+        "requirement": "CONTEXT"
+      }
+    }
+  ],
+  "formation": [
+    {
+      "id": "learn.catechism.daily",
+      "title_en": "Daily Catechism",
+      "title_fr": "Catéchisme quotidien",
+      "current_family": "foundations",
+      "primary_view": "learn",
+      "topic_cluster": "foundations",
+      "content_type": "programme",
+      "featured_today": true,
+      "canonical_owner": "learn.catechism",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.catechism",
+      "title_en": "Traditional Catechism",
+      "title_fr": "Catéchisme traditionnel",
+      "current_family": "foundations",
+      "primary_view": "learn",
+      "topic_cluster": "foundations",
+      "content_type": "reference",
+      "featured_today": false,
+      "canonical_owner": "catechism",
+      "secondary_contexts": [
+        "questions:doctrine",
+        "apostolate:canonical-answer"
+      ],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "EDITORIAL_PREVIEW_ONLY",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.spiritual_life",
+      "title_en": "Spiritual Life",
+      "title_fr": "Vie spirituelle",
+      "current_family": "spiritual-moral",
+      "primary_view": "learn",
+      "topic_cluster": "christian-life",
+      "content_type": "course",
+      "featured_today": false,
+      "canonical_owner": "spiritual-life",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.sexual_ethics",
+      "title_en": "Catholic Sexual Ethics",
+      "title_fr": "Morale sexuelle catholique",
+      "current_family": "spiritual-moral",
+      "primary_view": "questions",
+      "topic_cluster": "christian-life",
+      "content_type": "reference",
+      "featured_today": false,
+      "canonical_owner": "sexual-ethics",
+      "secondary_contexts": [
+        "learn:moral-life",
+        "apostolate:relevant-scenarios"
+      ],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "GAP_CANDIDATE",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.scapular",
+      "title_en": "Brown Scapular",
+      "title_fr": "Scapulaire brun",
+      "current_family": "spiritual-moral",
+      "primary_view": "learn",
+      "topic_cluster": "christian-life",
+      "content_type": "guide",
+      "featured_today": false,
+      "canonical_owner": "formation-devotional-guide",
+      "secondary_contexts": [
+        "pray:devotional-execution"
+      ],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.mass",
+      "title_en": "Understand the Mass",
+      "title_fr": "Comprendre la Messe",
+      "current_family": "liturgy-tradition",
+      "primary_view": "learn",
+      "topic_cluster": "worship-latin",
+      "content_type": "course",
+      "featured_today": true,
+      "canonical_owner": "mass-formation",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.serve_mass.responses",
+      "title_en": "Serve Low Mass",
+      "title_fr": "Servir la Messe basse",
+      "current_family": "liturgy-tradition",
+      "primary_view": "learn",
+      "topic_cluster": "worship-latin",
+      "content_type": "practice",
+      "featured_today": false,
+      "canonical_owner": "mass-formation-practice",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.rites.sick",
+      "title_en": "Serious Illness & Dying",
+      "title_fr": "Maladie grave & fin de vie",
+      "current_family": "sacraments-life",
+      "primary_view": "learn",
+      "topic_cluster": "sacraments",
+      "content_type": "guide",
+      "featured_today": false,
+      "canonical_owner": "sacramental-formation",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.rites.baptism",
+      "title_en": "Baptism · Parents & Godparents",
+      "title_fr": "Baptême · Parents & parrains",
+      "current_family": "sacraments-life",
+      "primary_view": "learn",
+      "topic_cluster": "sacraments",
+      "content_type": "guide",
+      "featured_today": false,
+      "canonical_owner": "sacramental-formation",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.rites.first_communion",
+      "title_en": "First Holy Communion · Child & Family",
+      "title_fr": "Première Communion · Enfant & famille",
+      "current_family": "sacraments-life",
+      "primary_view": "learn",
+      "topic_cluster": "sacraments",
+      "content_type": "guide",
+      "featured_today": false,
+      "canonical_owner": "sacramental-formation",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.rites.confirmation",
+      "title_en": "Confirmation · Candidate & Sponsor",
+      "title_fr": "Confirmation · Confirmand & parrain/marraine",
+      "current_family": "sacraments-life",
+      "primary_view": "learn",
+      "topic_cluster": "sacraments",
+      "content_type": "guide",
+      "featured_today": false,
+      "canonical_owner": "sacramental-formation",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.rites.holy_orders",
+      "title_en": "Holy Orders · Understand the Ordinations",
+      "title_fr": "Ordre · Comprendre les ordinations",
+      "current_family": "sacraments-life",
+      "primary_view": "learn",
+      "topic_cluster": "sacraments",
+      "content_type": "guide",
+      "featured_today": false,
+      "canonical_owner": "sacramental-formation",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "NOT_APPLICABLE",
+        "requirement": "CONTEXT"
+      }
+    },
+    {
+      "id": "learn.rites.matrimony",
+      "title_en": "Matrimony · Bride & Groom",
+      "title_fr": "Mariage · Époux",
+      "current_family": "sacraments-life",
+      "primary_view": "learn",
+      "topic_cluster": "sacraments",
+      "content_type": "guide",
+      "featured_today": false,
+      "canonical_owner": "sacramental-formation",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.latin",
+      "title_en": "Latin for the Missal",
+      "title_fr": "Latin du Missel",
+      "current_family": "latin",
+      "primary_view": "learn",
+      "topic_cluster": "worship-latin",
+      "content_type": "course",
+      "featured_today": false,
+      "canonical_owner": "latin",
+      "secondary_contexts": [],
+      "guide": {
+        "information": "CODE_PRESENT",
+        "walkthrough": "CODE_PRESENT",
+        "requirement": "BOTH"
+      }
+    },
+    {
+      "id": "learn.glossary",
+      "title_en": "Catholic Glossary & Latin Reference",
+      "title_fr": "Glossaire catholique & référence latine",
+      "current_family": "reference",
+      "primary_view": "reference",
+      "topic_cluster": "reference",
+      "content_type": "reference",
+      "featured_today": false,
+      "canonical_owner": "glossary",
+      "secondary_contexts": [
+        "pray:contextual-term",
+        "formation:all-views"
+      ],
+      "guide": {
+        "information": "PARTIAL",
+        "walkthrough": "NOT_APPLICABLE",
+        "requirement": "CONTEXT"
+      }
+    }
+  ],
+  "apostolate": {
+    "scenarios": [
+      {
+        "id": "AQ01",
+        "title_en": "Why do Catholics pray to Mary and the saints?",
+        "title_fr": "Pourquoi les catholiques prient-ils Marie et les saints ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.marian",
+            "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "AQ02",
+        "title_en": "Why confess sins to a priest? Why not just tell God?",
+        "title_fr": "Pourquoi confesser ses péchés à un prêtre ? Pourquoi ne pas simplement les dire à Dieu ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.confession",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "AQ03",
+        "title_en": "Why do Catholics obey the Pope? Is he infallible about everything?",
+        "title_fr": "Pourquoi les catholiques obéissent-ils au Pape ? Est-il infaillible en tout ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "AQ04",
+        "title_en": "Doesn’t the Mass sacrifice Jesus again?",
+        "title_fr": "La Messe ne sacrifie-t-elle pas Jésus une nouvelle fois ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.mass",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "mass",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          }
+        ]
+      },
+      {
+        "id": "AQ05",
+        "title_en": "How can Catholics believe bread really becomes Jesus?",
+        "title_fr": "Comment les catholiques peuvent-ils croire que le pain devient réellement Jésus ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.mass",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.adoration",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "AQ06",
+        "title_en": "Why Latin? And why the traditional Mass?",
+        "title_fr": "Pourquoi le latin ? Et pourquoi la Messe traditionnelle ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.mass",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "AQ07",
+        "title_en": "Why Purgatory? Didn’t Jesus already pay for our sins?",
+        "title_fr": "Pourquoi le Purgatoire ? Jésus n’a-t-il pas déjà payé pour nos péchés ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.holy_souls",
+            "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "AQ08",
+        "title_en": "Why isn’t the Bible alone enough?",
+        "title_fr": "Pourquoi la Bible seule ne suffit-elle pas ?",
+        "primary_view": "practice",
+        "family": "AQ",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "HS01",
+        "title_en": "I want to come back to Mass. Where do I start?",
+        "title_fr": "Je veux revenir à la Messe. Par où commencer ?",
+        "primary_view": "practice",
+        "family": "HS",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.confession",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "mass.prepare",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          },
+          {
+            "to": "find",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "find"
+          }
+        ]
+      },
+      {
+        "id": "HS02",
+        "title_en": "I haven’t been to Confession in years. What do I do?",
+        "title_fr": "Je ne me suis pas confessé depuis des années. Que dois-je faire ?",
+        "primary_view": "practice",
+        "family": "HS",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.confession",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "HS03",
+        "title_en": "I think I want to become Catholic. What should I do?",
+        "title_fr": "Je pense vouloir devenir catholique. Que dois-je faire ?",
+        "primary_view": "practice",
+        "family": "HS",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "find",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "find"
+          }
+        ]
+      },
+      {
+        "id": "HS04",
+        "title_en": "I don’t really know how to pray.",
+        "title_fr": "Je ne sais pas vraiment comment prier.",
+        "primary_view": "practice",
+        "family": "HS",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.morning_evening",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "pray.rosary",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "HS05",
+        "title_en": "Someone has died. What can I do?",
+        "title_fr": "Quelqu’un est mort. Que puis-je faire ?",
+        "primary_view": "practice",
+        "family": "HS",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.holy_souls",
+            "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+            "surface": "pray"
+          },
+          {
+            "to": "pray.good_death",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "HS06",
+        "title_en": "Someone is seriously ill or dying. What should I do?",
+        "title_fr": "Quelqu’un est gravement malade ou mourant. Que dois-je faire ?",
+        "primary_view": "practice",
+        "family": "HS",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.rites.sick",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.dying_companion",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "pray.confession",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "pray.holy_souls",
+            "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "HS07",
+        "title_en": "Bad Catholics or bad clergy have made me distrust the Church.",
+        "title_fr": "De mauvais catholiques ou de mauvais clercs m’ont fait perdre confiance dans l’Église.",
+        "primary_view": "practice",
+        "family": "HS",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "find",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "find"
+          }
+        ]
+      },
+      {
+        "id": "FH01",
+        "title_en": "How do I start a family Rosary?",
+        "title_fr": "Comment commencer le Rosaire en famille ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.rosary",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "FH02",
+        "title_en": "How do we begin saying grace at meals?",
+        "title_fr": "Comment commencer le bénédicité aux repas ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.library",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "FH03",
+        "title_en": "How do we establish morning and evening prayer at home?",
+        "title_fr": "Comment établir la prière du matin et du soir à la maison ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.library",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "FH04",
+        "title_en": "How do I teach children their basic prayers?",
+        "title_fr": "Comment apprendre aux enfants leurs prières de base ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.library",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "FH05",
+        "title_en": "How do I prepare a child for First Confession and First Communion?",
+        "title_fr": "Comment préparer un enfant à la première Confession et à la première Communion ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.rites.first_communion",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "pray.confession",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "mass.prepare",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          }
+        ]
+      },
+      {
+        "id": "FH06",
+        "title_en": "What is a godparent actually supposed to do?",
+        "title_fr": "Quel est réellement le rôle d’un parrain ou d’une marraine ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.rites.baptism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "FH07",
+        "title_en": "What should a Confirmation sponsor actually do?",
+        "title_fr": "Que doit réellement faire un parrain ou une marraine de Confirmation ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.rites.confirmation",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "FH08",
+        "title_en": "How can a family begin devotion to the Sacred Heart?",
+        "title_fr": "Comment une famille peut-elle commencer la dévotion au Sacré-Cœur ?",
+        "primary_view": "practice",
+        "family": "FH",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.library",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "programme.first_friday",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "TF01",
+        "title_en": "How do I explain a Catechism answer to a child?",
+        "title_fr": "Comment expliquer une réponse du Catéchisme à un enfant ?",
+        "primary_view": "practice",
+        "family": "TF",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "TF02",
+        "title_en": "How do I explain Catholic doctrine to an adult who is new to it?",
+        "title_fr": "Comment expliquer la doctrine catholique à un adulte qui la découvre ?",
+        "primary_view": "practice",
+        "family": "TF",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "TF03",
+        "title_en": "What should I do when I don’t know the answer?",
+        "title_fr": "Que faire lorsque je ne connais pas la réponse ?",
+        "primary_view": "practice",
+        "family": "TF",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "TF04",
+        "title_en": "How do I teach someone to pray the Rosary?",
+        "title_fr": "Comment apprendre à quelqu’un à prier le Rosaire ?",
+        "primary_view": "practice",
+        "family": "TF",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.rosary",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "TF05",
+        "title_en": "How do I explain the traditional Mass to a newcomer?",
+        "title_fr": "Comment expliquer la Messe traditionnelle à un nouveau venu ?",
+        "primary_view": "practice",
+        "family": "TF",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.mass",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "mass",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          }
+        ]
+      },
+      {
+        "id": "DV01",
+        "title_en": "Bring someone to the traditional Mass for the first time",
+        "title_fr": "Accompagner quelqu’un à la Messe traditionnelle pour la première fois",
+        "primary_view": "practice",
+        "family": "DV",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "find",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "find"
+          },
+          {
+            "to": "mass.prepare",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          },
+          {
+            "to": "learn.mass",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "mass",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          }
+        ]
+      },
+      {
+        "id": "DV02",
+        "title_en": "Help somebody approach Confession for the first time",
+        "title_fr": "Aider quelqu’un à s’approcher de la Confession pour la première fois",
+        "primary_view": "practice",
+        "family": "DV",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.confession",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "find",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "find"
+          }
+        ]
+      },
+      {
+        "id": "DV03",
+        "title_en": "Introduce someone to Eucharistic Adoration or Benediction",
+        "title_fr": "Faire découvrir l’Adoration eucharistique ou la Bénédiction du Saint-Sacrement",
+        "primary_view": "practice",
+        "family": "DV",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.adoration",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "pray.benediction",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          }
+        ]
+      },
+      {
+        "id": "DV04",
+        "title_en": "Help someone begin a novena",
+        "title_fr": "Aider quelqu’un à commencer une neuvaine",
+        "primary_view": "practice",
+        "family": "DV",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "pray.novenas",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "calendar",
+            "status": "ROUTER_EXCLUDES_CALENDAR",
+            "surface": "calendar"
+          }
+        ]
+      },
+      {
+        "id": "DV05",
+        "title_en": "Introduce someone to First Friday / Sacred Heart devotion",
+        "title_fr": "Faire découvrir le premier vendredi et la dévotion au Sacré-Cœur",
+        "primary_view": "practice",
+        "family": "DV",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "programme.first_friday",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "pray.confession",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "mass.prepare",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          },
+          {
+            "to": "mass",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          },
+          {
+            "to": "pray.library",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "pray"
+          },
+          {
+            "to": "calendar",
+            "status": "ROUTER_EXCLUDES_CALENDAR",
+            "surface": "calendar"
+          },
+          {
+            "to": "FH08",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "apostolate"
+          }
+        ]
+      },
+      {
+        "id": "WC01",
+        "title_en": "A colleague asks me a serious religious question",
+        "title_fr": "Un collègue me pose une question religieuse sérieuse",
+        "primary_view": "practice",
+        "family": "WC",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "WC02",
+        "title_en": "Someone mocks or attacks the Faith",
+        "title_fr": "Quelqu’un se moque de la foi ou l’attaque",
+        "primary_view": "practice",
+        "family": "WC",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "learn.catechism",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          }
+        ]
+      },
+      {
+        "id": "WC03",
+        "title_en": "How do I invite someone to Mass?",
+        "title_fr": "Comment inviter quelqu’un à la Messe ?",
+        "primary_view": "practice",
+        "family": "WC",
+        "canonical_owner": "apostolate",
+        "publication_state": "READY_IN_RUNTIME_SOT",
+        "declared_handoffs": [
+          {
+            "to": "DV01",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "apostolate"
+          },
+          {
+            "to": "find",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "find"
+          },
+          {
+            "to": "mass.prepare",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          },
+          {
+            "to": "learn.mass",
+            "status": "DECLARED_NOT_PHONE_VERIFIED",
+            "surface": "learn"
+          },
+          {
+            "to": "mass",
+            "status": "MASS_DEFERRED",
+            "surface": "mass"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "id": "APF01",
+        "title_en": "Apostolic spirit",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF02",
+        "title_en": "Listen before answering",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF03",
+        "title_en": "Discern the real need",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF04",
+        "title_en": "Explain clearly",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF05",
+        "title_en": "Charity, fairness & tact",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF06",
+        "title_en": "Handle objections without wrangling",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF07",
+        "title_en": "Know what you do not know",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF08",
+        "title_en": "Know your boundaries",
+        "publication_state": "SKILL_REGISTERED"
+      },
+      {
+        "id": "APF09",
+        "title_en": "Practise, follow up & deepen",
+        "publication_state": "SKILL_REGISTERED"
+      }
+    ],
+    "handoff_edges": [
+      {
+        "from": "apostolate:AQ01",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ01",
+        "to": "pray.marian",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ02",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ02",
+        "to": "pray.confession",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ03",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ04",
+        "to": "learn.mass",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ04",
+        "to": "mass",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ05",
+        "to": "learn.mass",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ05",
+        "to": "pray.adoration",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ06",
+        "to": "learn.mass",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ07",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ07",
+        "to": "pray.holy_souls",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:AQ08",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/corpus.js"
+      },
+      {
+        "from": "apostolate:HS01",
+        "to": "pray.confession",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS01",
+        "to": "mass.prepare",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS01",
+        "to": "find",
+        "surface": "find",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS02",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS02",
+        "to": "pray.confession",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS03",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS03",
+        "to": "find",
+        "surface": "find",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS04",
+        "to": "pray.morning_evening",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS04",
+        "to": "pray.rosary",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS05",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS05",
+        "to": "pray.holy_souls",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS05",
+        "to": "pray.good_death",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "learn.rites.sick",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "pray.dying_companion",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "pray.confession",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "pray.holy_souls",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "PRAY_TARGET_NOT_IN_PUBLIC_ROUTE_REGISTRY",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS07",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:HS07",
+        "to": "find",
+        "surface": "find",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/hs-corpus.js"
+      },
+      {
+        "from": "apostolate:FH01",
+        "to": "pray.rosary",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH02",
+        "to": "pray.library",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH03",
+        "to": "pray.library",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH04",
+        "to": "pray.library",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH05",
+        "to": "learn.rites.first_communion",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH05",
+        "to": "pray.confession",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH05",
+        "to": "mass.prepare",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH06",
+        "to": "learn.rites.baptism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH07",
+        "to": "learn.rites.confirmation",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH08",
+        "to": "pray.library",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:FH08",
+        "to": "programme.first_friday",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/fh-corpus.js"
+      },
+      {
+        "from": "apostolate:TF01",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/tf-corpus.js"
+      },
+      {
+        "from": "apostolate:TF02",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/tf-corpus.js"
+      },
+      {
+        "from": "apostolate:TF03",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/tf-corpus.js"
+      },
+      {
+        "from": "apostolate:TF04",
+        "to": "pray.rosary",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/tf-corpus.js"
+      },
+      {
+        "from": "apostolate:TF05",
+        "to": "learn.mass",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/tf-corpus.js"
+      },
+      {
+        "from": "apostolate:TF05",
+        "to": "mass",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/tf-corpus.js"
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "find",
+        "surface": "find",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "mass.prepare",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "learn.mass",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "mass",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV02",
+        "to": "pray.confession",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV02",
+        "to": "find",
+        "surface": "find",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV03",
+        "to": "pray.adoration",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV03",
+        "to": "pray.benediction",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV04",
+        "to": "pray.novenas",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV04",
+        "to": "calendar",
+        "surface": "calendar",
+        "kind": "owned-surface",
+        "status": "ROUTER_EXCLUDES_CALENDAR",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "programme.first_friday",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "pray.confession",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "mass.prepare",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "mass",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "pray.library",
+        "surface": "pray",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "calendar",
+        "surface": "calendar",
+        "kind": "owned-surface",
+        "status": "ROUTER_EXCLUDES_CALENDAR",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "FH08",
+        "surface": "apostolate",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/dv-corpus.js"
+      },
+      {
+        "from": "apostolate:WC01",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/wc-corpus.js"
+      },
+      {
+        "from": "apostolate:WC02",
+        "to": "learn.catechism",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/wc-corpus.js"
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "DV01",
+        "surface": "apostolate",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/wc-corpus.js"
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "find",
+        "surface": "find",
+        "kind": "owned-surface",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/wc-corpus.js"
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "mass.prepare",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/wc-corpus.js"
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "learn.mass",
+        "surface": "learn",
+        "kind": "canonical-formation",
+        "status": "DECLARED_NOT_PHONE_VERIFIED",
+        "source": "src/apostolate/wc-corpus.js"
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "mass",
+        "surface": "mass",
+        "kind": "owned-surface",
+        "status": "MASS_DEFERRED",
+        "source": "src/apostolate/wc-corpus.js"
+      }
+    ]
+  },
+  "cross_surface_handoff_types": [
+    {
+      "from": "today",
+      "to": "calendar",
+      "action": "OPEN_DAY",
+      "canonical_owner": "calendar",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "today",
+      "to": "mass",
+      "action": "PREPARE_OR_RESUME",
+      "canonical_owner": "mass",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "today",
+      "to": "scripture",
+      "action": "OPEN_CONTEXT",
+      "canonical_owner": "scripture",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "calendar",
+      "to": "pray.novenas",
+      "action": "OPEN_NOVENA",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "calendar",
+      "to": "mass",
+      "action": "OPEN_RESOLVED_CELEBRATION",
+      "canonical_owner": "mass",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "pray",
+      "to": "scripture",
+      "action": "EXPAND_PASSAGE",
+      "canonical_owner": "scripture",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "learn",
+      "to": "scripture",
+      "action": "EXPAND_PASSAGE",
+      "canonical_owner": "scripture",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "apostolate",
+      "to": "learn",
+      "action": "OPEN_CANONICAL_DOSSIER_WHEN_PUBLISHED",
+      "canonical_owner": "learn",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "apostolate",
+      "to": "pray",
+      "action": "OPEN_OWNED_DEVOTION",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "explore",
+      "to": "pray.novenas",
+      "action": "OPEN_RELATED_DEVOTION",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "explore",
+      "to": "calendar",
+      "action": "OPEN_RELATED_LITURGICAL_DATE",
+      "canonical_owner": "calendar",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "explore",
+      "to": "mass-directory",
+      "action": "OPEN_SCHEDULE_AT_PLACE",
+      "canonical_owner": "mass-directory",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "learn",
+      "to": "glossary",
+      "action": "OPEN_DEFINITION",
+      "canonical_owner": "glossary",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "mass",
+      "to": "pray",
+      "action": "OPEN_CANONICAL_THANKSGIVING_PRAYER",
+      "canonical_owner": "pray",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    },
+    {
+      "from": "pray.confession",
+      "to": "learn",
+      "action": "OPEN_SACRAMENTAL_EXPLANATION",
+      "canonical_owner": "sacramental-formation",
+      "return_to_origin_required": true,
+      "source_copy_forbidden": true,
+      "published_target_gate": true
+    }
+  ],
+  "link_integrity_findings": [
+    {
+      "severity": "P1",
+      "issue": "Apostolate calendar targets rejected by current handoff surface allow-list.",
+      "target": "calendar",
+      "reference_count": 2,
+      "owner": "src/apostolate/browser-entry.js",
+      "remediation": "Extend the existing handler to permit the calendar canonical route, preserving return state; validate in phone journey. Do not add new Calendar module."
+    },
+    {
+      "severity": "P1",
+      "issue": "Apostolate references a Marian Prayer route not present in the 23-route Prayer presentation registry.",
+      "target": "pray.marian",
+      "reference_count": 1,
+      "owner": "src/apostolate/corpus.js",
+      "remediation": "Resolve the intended canonical existing prayer/route (e.g. Rosary or Prayer Library detail) and verify return. Do not create a parallel Marian module."
+    },
+    {
+      "severity": "P1",
+      "issue": "Apostolate references a Holy Souls Prayer route not present in the 23-route Prayer presentation registry.",
+      "target": "pray.holy_souls",
+      "reference_count": 3,
+      "owner": "src/apostolate/{corpus,hs-corpus}.js",
+      "remediation": "Resolve to an existing specific Prayer Library item or registered route using canonical prayer ID; do not invent a new route."
+    }
+  ],
+  "gates": {
+    "no_publication": [
+      "learn.apologetics",
+      "learn.church_crisis"
+    ],
+    "retired": [
+      "learn.catholic_life"
+    ],
+    "compatibility_aliases": [
+      "learn.seasonal_rites",
+      "pray.angelus"
+    ],
+    "mass_scope": "DEFERRED",
+    "required_qa": [
+      "23/23 Pray primary entrances",
+      "15/15 Formation cold entries and back",
+      "36/36 Apostolate scenario access",
+      "all declared Apostolate handoffs",
+      "EN/FR navigation and copy",
+      "no duplicate canonical source owners",
+      "no users exposed to research-only materials",
+      "320/360/390/430px touch, keyboard, offline and back/scroll restoration"
+    ]
+  }
+}
