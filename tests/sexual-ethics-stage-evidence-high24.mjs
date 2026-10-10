@@ -27,7 +27,13 @@ for(const id of CSE_HIGH_STAGE_IDS){
  const allOriginal=[...CSE_DEBATE_POSITION_REFS[id],...question.refs];
  for(const stage of CSE_DEBATE_FIELDS){
    const selected=live[stage];
-   assert.ok(selected.length>0&&selected.length<=3,id+" "+stage+" too broad/empty");
+   // Mirror the stricter 55-case source-integrity contract: four narrowly
+   // specified high-risk stages retain their necessary fourth witness.
+   const extra=(id==="CSE040"&&stage==="catholicCase")
+     ||(id==="CSE125"&&["catholicCase","response","bottom"].includes(stage));
+   const maximum=extra?4:3;
+   assert.ok(selected.length>0&&selected.length<=maximum,id+" "+stage+" too broad/empty");
+   if(extra)assert.equal(selected.length,4,id+" "+stage+" lost required fourth authority");
    assert.equal(new Set(selected).size,selected.length,id+" "+stage+" duplicates");
    const rendered=paragraphRefsFor(question,"debate",stage);
    assert.deepEqual(rendered.map(x=>x[0]),selected,id+" "+stage+" resolved wrong source");
@@ -41,10 +47,10 @@ for(const id of CSE_HIGH_STAGE_IDS){
  }
 }
 assert.equal(chains,192);
-assert.equal(references,pack.stage_reference_count||282);
+assert.equal(references,295);
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,612);
+assert.equal(audit.summary.stage_specific_mapping_references,636);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 const pending=CSE_DEBATE_IDS.filter(id=>!CSE_HIGH_STAGE_SOURCE_IDS[id]);
@@ -53,4 +59,4 @@ for(const id of pending){
  const item=CSE_QUESTION_MAP[id];
  assert.ok(paragraphRefsFor(item,"debate","opposition").length>0);
 }
-console.log("PASS high-priority Sexual Ethics: 192 stage-resolved chains and 282 intact original source locators; 31 additional debates are verified in separate stage-mapping test.");
+console.log("PASS high-priority Sexual Ethics: 192 stage-resolved chains and 295 intact original source locators; 31 additional debates are verified in separate stage-mapping test.");
