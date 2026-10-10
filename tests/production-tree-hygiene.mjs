@@ -80,9 +80,10 @@ for(const name of workflows){
 
 // Retire superseded PR revisions without cancelling independent manual
 // source-research runs or production-main verification.
+// Hold separate source-owner regression lanes (#342, #658) unchanged until their
+// actual data/provenance failures have been repaired.
 const supervisedPrWorkflows=[
   "calendar-1962-full-year-oracle.yml",
-  "content-architecture-census.yml",
   "cse-author-original-source-integrity.yml",
   "directory-sspx-world-index.yml",
   "five-destination-smoke.yml",
@@ -98,7 +99,6 @@ const supervisedPrWorkflows=[
   "scripture-contracts.yml",
   "scripture-reader-mobile.yml",
   "scripture-source-audit.yml",
-  "sexual-ethics-canonical.yml",
   "sspx-official-live-audit.yml",
 ];
 for(const name of supervisedPrWorkflows){
