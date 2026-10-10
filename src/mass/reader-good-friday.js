@@ -7,10 +7,10 @@ const JEWISH_VARIANTS=new Set(["PRINTED_1962","HOLY_SEE_2008"]);
 const VENERATION_MODES=new Set(["PERSONAL","CORPORATE_SILENT"]);
 
 function freeze(v){return Object.freeze(v)}
-function textRow(id,latin,kind="TEXT",sourceIds=[],speaker=null){
+function textRow(id,latin,kind="TEXT",sourceIds=[],speaker=null,repetitions=1){
   const value=String(latin??"").trim();
   if(!value)throw new Error("Good Friday text missing for "+id);
-  return freeze({id,kind,latin:value,sourceIds:freeze([...sourceIds]),...(speaker?{speaker}:{})});
+  return freeze({id,kind,latin:value,sourceIds:freeze([...sourceIds]),...(speaker?{speaker}:{}),...(repetitions>1?{repetitions}:{})});
 }
 function rows(prefix,values,sourceIds=[]){
   return freeze((values??[]).map((v,i)=>textRow(prefix+String(i+1),v,"TEXT",sourceIds)));
@@ -176,19 +176,28 @@ function surfaceFor(record,payload,jewishPrayerVariant){
     key:"IMMEDIATE_COMMUNION_PREP",title:"Preparation for Holy Communion",
     paragraphs:freeze([
       textRow("GF-COM-PER",payload.communion.perceptio,"TEXT",["GF-COM-840"],"CELEBRANT"),
-      textRow("GF-COM-DNSD",payload.communion.priestDomineNonSumDignus,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-DNSD",payload.communion.priestDomineNonSumDignus,"TEXT",["GF-COM-840"],"CELEBRANT",3),
       textRow("GF-COM-CORP",payload.communion.priestCommunion,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      // The deacon's Confiteor precedes the celebrant's two absolution
+      // prayers in the distinct Good Friday rite (1956 OHS, nn. 30-32).
+      // This rubric does not invent or abbreviate the confession itself.
+      textRow("GF-COM-CONF","Et continuo diaconus facit confessionem.","RUBRIC",["GF-COM-840"]),
       textRow("GF-COM-MIS",payload.communion.misereatur,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-MIS-R","Amen.","RESPONSE",["GF-COM-840"],"ALL"),
       textRow("GF-COM-IND",payload.communion.indulgentiam,"TEXT",["GF-COM-840"],"CELEBRANT"),
+      textRow("GF-COM-IND-R","Amen.","RESPONSE",["GF-COM-840"],"ALL"),
       textRow("GF-COM-ECCE",payload.communion.ecce,"TEXT",["GF-COM-840"],"CELEBRANT"),
-      textRow("GF-COM-FDNSD",payload.communion.faithfulDomineNonSumDignus,"TEXT",["GF-COM-840"],"COMMUNICANTS")
+      // 'Mox subdit ... quod iterum ac tertio repetit': the celebrant
+      // recites this three times, not a distinct communicants' response.
+      textRow("GF-COM-FDNSD",payload.communion.faithfulDomineNonSumDignus,"TEXT",["GF-COM-840"],"CELEBRANT",3)
     ])
   });
   if(id==="GF-COM-850")return freeze({
     key:"PERSONAL_COMMUNION",title:"Holy Communion",
+    // Distribution is a personal interaction, not another performance of
+    // the shared Ecce Agnus Dei / Domine non sum dignus from GF-COM-840.
     paragraphs:freeze([
-      textRow("GF-COM-850-E",payload.communion.ecce,"TEXT",["GF-COM-850"],"CELEBRANT"),
-      textRow("GF-COM-850-D",payload.communion.faithfulDomineNonSumDignus,"TEXT",["GF-COM-850"],"COMMUNICANTS")
+      textRow("GF-COM-850-T","Et procedit ad distributionem Communionis.","RUBRIC",["GF-COM-850"])
     ])
   });
   if(id==="GF-COM-860")return freeze({

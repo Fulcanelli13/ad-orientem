@@ -1271,11 +1271,27 @@ try{
   const preparationSpeakers=await displayedSpeakers("GF-COM-840");
   assert.deepEqual(preparationSpeakers.map(row=>row.speaker),[
     "CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT",
-    "CELEBRANT","CELEBRANT","COMMUNICANTS"
+    "ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"
   ]);
   assert.deepEqual(preparationSpeakers.map(row=>row.label).filter(Boolean),
-    ["Celebrant","Communicants"],
-    "Good Friday preparation labels should appear only at speaker transitions");
+    ["Celebrant","Celebrant","All present","Celebrant","All present","Celebrant"],
+    "Good Friday alternations between celebrant and responses were lost");
+  const communionWords=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    const rows=[...api.root.querySelectorAll(".ao-reader-paragraph")];
+    return {
+      responseIds:rows.filter(n=>["GF-COM-MIS-R","GF-COM-IND-R"].includes(n.dataset.paragraphId))
+        .map(n=>[n.dataset.paragraphId,n.dataset.speaker,n.textContent.trim()]),
+      repeated:rows.filter(n=>n.querySelector(".ao-good-friday-repeat"))
+        .map(n=>[n.dataset.paragraphId,n.querySelector(".ao-good-friday-repeat").textContent])
+    };
+  });
+  assert.deepEqual(communionWords.responseIds.map(row=>row.slice(0,2)),[
+    ["GF-COM-MIS-R","ALL"],["GF-COM-IND-R","ALL"]
+  ]);
+  assert.deepEqual(communionWords.repeated,[
+    ["GF-COM-DNSD","3 times"],["GF-COM-FDNSD","3 times"]
+  ]);
   const communionChoice=page.locator("#ao-r17-native-reader-preview [data-role='good-friday-communion-choice']");
   assert.equal(await communionChoice.isVisible(),true,
     "the faithful cannot select personal Communion during preparation");
@@ -1304,9 +1320,13 @@ try{
   assert.equal(receiving.posture,"KNEEL");
   assert.equal(receiving.personal,true);
   assert.equal(receiving.choice,true);
-  assert.deepEqual((await displayedSpeakers("GF-COM-850")).map(row=>[row.speaker,row.label]),[
-    ["CELEBRANT","Celebrant"],["COMMUNICANTS","Communicants"]
-  ],"the priest's Ecce and communicants' response were not distinguished");
+  assert.deepEqual(await displayedSpeakers("GF-COM-850"),[],
+    "personal reception must not re-display the shared celebrant formulas");
+  const receptionRubric=await page.evaluate(()=>{
+    const api=globalThis.__AO_GOOD_FRIDAY_VISUAL_API;
+    return api.root.querySelector(".ao-reader-paragraph[data-paragraph-id='GF-COM-850-T']")?.textContent.trim();
+  });
+  assert.match(receptionRubric??"",/Et procedit ad distributionem Communionis\./);
   assert.equal(await communionChoice.isVisible(),false);
   assert.equal(await gfPanel.isVisible(),true,
     "individual Communion completion was not exposed");

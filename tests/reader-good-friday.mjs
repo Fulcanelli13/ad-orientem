@@ -124,8 +124,8 @@ const communicant=buildGoodFridayReader({graph,payload,willReceiveCommunion:true
 // assumption that the celebrant alone says the entire Pater noster.
 const expectedCommunionSpeakers=[
   ["GF-COM-830",["CELEBRANT","ALL","CELEBRANT","ALL"]],
-  ["GF-COM-840",["CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT","CELEBRANT","COMMUNICANTS"]],
-  ["GF-COM-850",["CELEBRANT","COMMUNICANTS"]],
+  ["GF-COM-840",["CELEBRANT","CELEBRANT","CELEBRANT",undefined,"CELEBRANT","ALL","CELEBRANT","ALL","CELEBRANT","CELEBRANT"]],
+  ["GF-COM-850",[undefined]],
 ];
 for(const [recordId,expected] of expectedCommunionSpeakers){
   const step=communicant.steps.find(x=>x.recordId===recordId);
@@ -139,6 +139,19 @@ assert.deepEqual(
 );
 
 const receive=communicant.steps.find(x=>x.recordId==="GF-COM-850");
+assert.deepEqual(receive.paragraphs.map(row=>row.id),["GF-COM-850-T"],
+  "personal Communion card repeats the common Ecce / Domine non sum dignus");
+assert.equal(receive.paragraphs[0].kind,"RUBRIC");
+const preparation=communicant.steps.find(x=>x.recordId==="GF-COM-840");
+assert.equal(preparation.paragraphs.length,10);
+for(const id of ["GF-COM-DNSD","GF-COM-FDNSD"])
+  assert.equal(preparation.paragraphs.find(row=>row.id===id).repetitions,3,
+    id+" lost the triple repetition in the Good Friday order");
+assert.deepEqual(preparation.paragraphs.filter(row=>row.kind==="RESPONSE").map(row=>[row.id,row.latin,row.speaker]),[
+  ["GF-COM-MIS-R","Amen.","ALL"],
+  ["GF-COM-IND-R","Amen.","ALL"],
+],"faithful responses to Misereatur and Indulgentiam were omitted");
+assert.equal(preparation.paragraphs.find(row=>row.id==="GF-COM-CONF").kind,"RUBRIC");
 assert.equal(receive.actorScope,"COMMUNICANT");
 assert.equal(receive.personalOnly,true);
 assert.equal(receive.posture,"KNEEL");
@@ -212,7 +225,7 @@ const changing=createGoodFridayReaderController({graph,payload,willReceiveCommun
 changing.goToRecord("GF-COM-840");
 assert.equal(changing.project().willReceiveCommunion,false);
 assert.equal(changing.project().posture,"KNEEL");
-assert.equal(changing.project().card.paragraphs.length,7);
+assert.equal(changing.project().card.paragraphs.length,10);
 changing.setWillReceiveCommunion(true);
 assert.equal(changing.project().step.recordId,"GF-COM-840",
   "changing personal Communion choice unexpectedly restarted the rite");
