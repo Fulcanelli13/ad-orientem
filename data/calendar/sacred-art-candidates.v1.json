@@ -7,7 +7,8 @@
   "nonclaims": [
     "A museum object page does not establish image quality, pixel dimensions, exact in-app crop or completion of curatorial review.",
     "No candidates are approved for production or claimed to cover any calendar date.",
-    "Suggested subjects are descriptive; a verified liturgical/Scripture link must come from the observed 1962 day and appointed readings."
+    "Suggested subjects are descriptive; a verified liturgical/Scripture link must come from the observed 1962 day and appointed readings.",
+    "Kress Foundation source works acquired as public-domain-labelled research originals but rights-held independently from museum CC0 and Commons PD-Art; contextual John Baptist/Last Judgment scenes are not automatically counted as exact feast subjects."
   ],
   "artworks": [
     {
@@ -14704,6 +14705,524 @@
         },
         "reproducibility": {
           "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "kress-k2017",
+      "title": "The Entry into Jerusalem",
+      "artist": "Maestro Bartolomé",
+      "dated": "1480–88",
+      "medium": "painting",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "source": {
+        "objectUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+        "objectId": "K2017",
+        "rights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+        "rightsPolicyUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079",
+        "sourceEvidence": "Samuel H. Kress Foundation object page lists Public Domain and named oil/tempera panel; exact official original downloaded and SHA-256 verified. Reproduction/worldwide commercial reuse held pending further source review.",
+        "checkedOn": "2026-10-10",
+        "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2017_3223_001.jpg"
+      },
+      "association": {
+        "subjectKeys": [
+          "entry-jerusalem"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "EXACT",
+        "targetResearchIds": [
+          "calendar.palm-sunday"
+        ]
+      },
+      "review": {
+        "source": "OFFICIAL_OBJECT_AND_ORIGINAL_HASH_CONFIRMED",
+        "rights": "KRESS_REPRODUCTION_RIGHTS_REVIEW_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 5510,
+          "height": 7700
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "OFFICIAL_OBJECT_TITLE_PRELIMINARY",
+        "inclusion": "SOURCE_ACQUIRED_ONLY_NOT_APPROVED"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38052449434",
+        "artifactId": 11669761734,
+        "archiveOriginal": "originals/kress-k2017.jpg",
+        "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+        "originalWidth": 5510,
+        "originalHeight": 7700,
+        "colourFraction": 0.737,
+        "bytes": 13786731
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "entry-jerusalem"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "OFFICIAL_MUSEUM_SUBJECT_PRELIMINARY_NOT_CALENDAR_VALIDATED",
+        "sourceRights": {
+          "licence": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "jurisdictionGate": "WORLDWIDE_REPRODUCTION_REVIEW_PENDING"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_OFFICIAL_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "kress-k2016",
+      "title": "The Transfiguration",
+      "artist": "Maestro Bartolomé",
+      "dated": "c. 1493–95",
+      "medium": "painting",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "source": {
+        "objectUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+        "objectId": "K2016",
+        "rights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+        "rightsPolicyUrl": "https://www.kressfoundation.org/kress-collection/artwork/245f57ea5e77586917beceead35160a60ce0554a93de420bbf1d89e63bac8ccd",
+        "sourceEvidence": "Samuel H. Kress Foundation object page lists Public Domain and named oil/tempera panel; exact official original downloaded and SHA-256 verified. Reproduction/worldwide commercial reuse held pending further source review.",
+        "checkedOn": "2026-10-10",
+        "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2016_3222_001.jpg"
+      },
+      "association": {
+        "subjectKeys": [
+          "transfiguration"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [
+          "transfiguration"
+        ],
+        "prayerKeys": [
+          "rosary.lum4"
+        ],
+        "relationToTarget": "EXACT",
+        "targetResearchIds": [
+          "calendar.transfiguration",
+          "rosary.lum4",
+          "scripture.transfiguration"
+        ]
+      },
+      "review": {
+        "source": "OFFICIAL_OBJECT_AND_ORIGINAL_HASH_CONFIRMED",
+        "rights": "KRESS_REPRODUCTION_RIGHTS_REVIEW_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 5448,
+          "height": 7584
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "OFFICIAL_OBJECT_TITLE_PRELIMINARY",
+        "inclusion": "SOURCE_ACQUIRED_ONLY_NOT_APPROVED"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38052449434",
+        "artifactId": 11669761734,
+        "archiveOriginal": "originals/kress-k2016.jpg",
+        "originalSha256": "977f1dabcfa0adbcb21c9386fdf40f3eaf06754f348f1ba1d592c70146b13882",
+        "originalWidth": 5448,
+        "originalHeight": 7584,
+        "colourFraction": 0.7257,
+        "bytes": 12176651
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "transfiguration"
+        ],
+        "prayerKeys": [
+          "rosary.lum4"
+        ],
+        "prayerRoutes": [
+          "today.calendar",
+          "pray.rosary"
+        ],
+        "rosaryMysteries": [
+          "lum4"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "transfiguration"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "OFFICIAL_MUSEUM_SUBJECT_PRELIMINARY_NOT_CALENDAR_VALIDATED",
+        "sourceRights": {
+          "licence": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "jurisdictionGate": "WORLDWIDE_REPRODUCTION_REVIEW_PENDING"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_OFFICIAL_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "kress-k1782",
+      "title": "The Massacre of the Innocents",
+      "artist": "Follower of Raphael",
+      "dated": "early 16th century",
+      "medium": "painting",
+      "museum": "Samuel H. Kress Foundation / Mead Art Museum",
+      "source": {
+        "objectUrl": "https://www.kressfoundation.org/kress-collection/artwork/f65fe27049161fdc04c5696d3b01d6c1f5a32680a87bfcb99d76bf69b39b7cb0",
+        "objectId": "K1782",
+        "rights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+        "rightsPolicyUrl": "https://www.kressfoundation.org/kress-collection/artwork/f65fe27049161fdc04c5696d3b01d6c1f5a32680a87bfcb99d76bf69b39b7cb0",
+        "sourceEvidence": "Samuel H. Kress Foundation object page lists Public Domain and named oil/tempera panel; exact official original downloaded and SHA-256 verified. Reproduction/worldwide commercial reuse held pending further source review.",
+        "checkedOn": "2026-10-10",
+        "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k1782_3052_001.jpg"
+      },
+      "association": {
+        "subjectKeys": [
+          "massacre-innocents",
+          "holy-innocents"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "EXACT",
+        "targetResearchIds": [
+          "calendar.holy-innocents"
+        ]
+      },
+      "review": {
+        "source": "OFFICIAL_OBJECT_AND_ORIGINAL_HASH_CONFIRMED",
+        "rights": "KRESS_REPRODUCTION_RIGHTS_REVIEW_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 6301,
+          "height": 3114
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "OFFICIAL_OBJECT_TITLE_PRELIMINARY",
+        "inclusion": "SOURCE_ACQUIRED_ONLY_NOT_APPROVED"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38052449434",
+        "artifactId": 11669761734,
+        "archiveOriginal": "originals/kress-k1782.jpg",
+        "originalSha256": "09cd71f37399cf68435086b2bee3df1f8ef90d074d6d4c94b52875914d9b9c27",
+        "originalWidth": 6301,
+        "originalHeight": 3114,
+        "colourFraction": 0.9432,
+        "bytes": 9146294
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "massacre-innocents",
+          "holy-innocents"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "OFFICIAL_MUSEUM_SUBJECT_PRELIMINARY_NOT_CALENDAR_VALIDATED",
+        "sourceRights": {
+          "licence": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "jurisdictionGate": "WORLDWIDE_REPRODUCTION_REVIEW_PENDING"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_OFFICIAL_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-438462",
+      "title": "The Massacre of the Innocents",
+      "artist": "François Joseph Navez",
+      "dated": "1824",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/438462",
+        "objectId": "438462",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "The Met official object API verified isPublicDomain=true, classification=Paintings, exact object identity and original image, SHA-256 and automated quality screen passed",
+        "checkedOn": "2026-10-10",
+        "originalUrl": null
+      },
+      "association": {
+        "subjectKeys": [
+          "massacre-innocents",
+          "holy-innocents"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "EXACT",
+        "targetResearchIds": [
+          "calendar.holy-innocents"
+        ]
+      },
+      "review": {
+        "source": "OFFICIAL_OBJECT_AND_ORIGINAL_HASH_CONFIRMED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4000,
+          "height": 3487
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "OFFICIAL_OBJECT_TITLE_PRELIMINARY",
+        "inclusion": "SOURCE_ACQUIRED_ONLY_NOT_APPROVED"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38052449434",
+        "artifactId": 11669761734,
+        "archiveOriginal": "originals/met-438462.jpg",
+        "originalSha256": "315d83f40ce37d5a5816eb493c9b114295693cca1f1fffdc31164934fe57728f",
+        "originalWidth": 4000,
+        "originalHeight": 3487,
+        "colourFraction": 0.6261,
+        "bytes": 3841602
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "massacre-innocents",
+          "holy-innocents"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "OFFICIAL_MUSEUM_SUBJECT_PRELIMINARY_NOT_CALENDAR_VALIDATED",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_OFFICIAL_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "kress-k0355",
+      "title": "Saint John the Baptist",
+      "artist": "Vittore Carpaccio",
+      "dated": "c. 1490",
+      "medium": "painting",
+      "museum": "Samuel H. Kress Foundation / Philbrook Museum of Art",
+      "source": {
+        "objectUrl": "https://www.kressfoundation.org/kress-collection/artwork/61fd2920fc2ebf20a1fbb4205b36bbcea5a7707d09dcff52a61f0d55e9b4abf5",
+        "objectId": "K0355",
+        "rights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+        "rightsPolicyUrl": "https://www.kressfoundation.org/kress-collection/artwork/61fd2920fc2ebf20a1fbb4205b36bbcea5a7707d09dcff52a61f0d55e9b4abf5",
+        "sourceEvidence": "Samuel H. Kress Foundation object page lists Public Domain and named oil/tempera panel; exact official original downloaded and SHA-256 verified. Reproduction/worldwide commercial reuse held pending further source review.",
+        "checkedOn": "2026-10-10",
+        "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k0355_3451_001.jpg"
+      },
+      "association": {
+        "subjectKeys": [
+          "portrait-john-baptist"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "CONTEXTUAL_SAINT_NOT_NATIVITY_OR_MARTYRDOM",
+        "targetResearchIds": [
+          "calendar.st-john-baptist",
+          "person.john-baptist"
+        ]
+      },
+      "review": {
+        "source": "OFFICIAL_OBJECT_AND_ORIGINAL_HASH_CONFIRMED",
+        "rights": "KRESS_REPRODUCTION_RIGHTS_REVIEW_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2732,
+          "height": 6213
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "OFFICIAL_OBJECT_TITLE_PRELIMINARY",
+        "inclusion": "SOURCE_ACQUIRED_ONLY_NOT_APPROVED"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38052449434",
+        "artifactId": 11669761734,
+        "archiveOriginal": "originals/kress-k0355.jpg",
+        "originalSha256": "91c7a4fd4e5ed93721fddf45a4c17f2775afe2d6e95a6a007948e18d19105e09",
+        "originalWidth": 2732,
+        "originalHeight": 6213,
+        "colourFraction": 0.7572,
+        "bytes": 5690016
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "portrait-john-baptist"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": "john-baptist",
+        "portraitAuthenticity": "SAINT_ICONOGRAPHY_NOT_LIFETIME_LIKENESS",
+        "associationConfidence": "OFFICIAL_MUSEUM_SUBJECT_PRELIMINARY_NOT_CALENDAR_VALIDATED",
+        "sourceRights": {
+          "licence": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "jurisdictionGate": "WORLDWIDE_REPRODUCTION_REVIEW_PENDING"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_OFFICIAL_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "kress-k2027",
+      "title": "The Last Judgment",
+      "artist": "Fernando Gallego and Workshop",
+      "dated": "1480–88",
+      "medium": "painting",
+      "museum": "Samuel H. Kress Foundation / University of Arizona Museum of Art",
+      "source": {
+        "objectUrl": "https://www.kressfoundation.org/kress-collection/artwork/5cfc10f4fb81dd90a2088e868b50f68a66c11fc3525daa2e5b3c7530fa82d82f",
+        "objectId": "K2027",
+        "rights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+        "rightsPolicyUrl": "https://www.kressfoundation.org/kress-collection/artwork/5cfc10f4fb81dd90a2088e868b50f68a66c11fc3525daa2e5b3c7530fa82d82f",
+        "sourceEvidence": "Samuel H. Kress Foundation object page lists Public Domain and named oil/tempera panel; exact official original downloaded and SHA-256 verified. Reproduction/worldwide commercial reuse held pending further source review.",
+        "checkedOn": "2026-10-10",
+        "originalUrl": "https://bmmweb.blob.core.windows.net/kress/k2027_3233_001.jpg"
+      },
+      "association": {
+        "subjectKeys": [
+          "last-judgment"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "relationToTarget": "CONTEXTUAL_LAST_JUDGMENT_NOT_FEAST_PROPER",
+        "targetResearchIds": [
+          "calendar.all-saints",
+          "calendar.all-souls",
+          "formation.death-judgment"
+        ]
+      },
+      "review": {
+        "source": "OFFICIAL_OBJECT_AND_ORIGINAL_HASH_CONFIRMED",
+        "rights": "KRESS_REPRODUCTION_RIGHTS_REVIEW_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 5530,
+          "height": 7620
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "OFFICIAL_OBJECT_TITLE_PRELIMINARY",
+        "inclusion": "SOURCE_ACQUIRED_ONLY_NOT_APPROVED"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38052449434",
+        "artifactId": 11669761734,
+        "archiveOriginal": "originals/kress-k2027.jpg",
+        "originalSha256": "691f5f14d4a5242e6e316db34304301e170c42732f92dbf01f739775cb015ff7",
+        "originalWidth": 5530,
+        "originalHeight": 7620,
+        "colourFraction": 0.6646,
+        "bytes": 16176953
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "last-judgment"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "learn.catechism"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "OFFICIAL_MUSEUM_SUBJECT_PRELIMINARY_NOT_CALENDAR_VALIDATED",
+        "sourceRights": {
+          "licence": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "jurisdictionGate": "WORLDWIDE_REPRODUCTION_REVIEW_PENDING"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_OFFICIAL_ORIGINAL",
           "technicalColourResolution": "AUTOMATED_PASS"
         },
         "artCuratorApproval": false,
