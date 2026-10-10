@@ -29,7 +29,17 @@ for(const record of ledger.cases){
     assert.ok(debate[stage.stage][0]&&debate[stage.stage][1]);
     assert.equal(stage.independent_french_editorial_approval,false);
     assert.equal(stage.verbatim_opponent_quote_verified,false);
-    assert.deepEqual(stage.selected_sources.map(x=>x.id),paragraphRefsFor(q,"debate",stage.stage).map(x=>x[0]),record.id+"."+stage.stage+" references drift");
+    // The 9 October original-passage check is frozen at its witnessed scope.
+    // One later live source (MIDWIVES) was added to CSE064 Catholic case;
+    // retaining it must not retroactively mark that source independently checked.
+    const historicalIds=stage.selected_sources.map(x=>x.id);
+    const liveIds=paragraphRefsFor(q,"debate",stage.stage).map(x=>x[0]);
+    if(record.id==="CSE064"&&stage.stage==="catholicCase"){
+      assert.deepEqual(historicalIds,["HV"]);
+      assert.deepEqual(liveIds,["HV","MIDWIVES"]);
+    }else{
+      assert.deepEqual(historicalIds,liveIds,record.id+"."+stage.stage+" references drift");
+    }
     for(const source of stage.selected_sources){
       assert.equal(source.url,CSE_SOURCE_MAP[source.id].canonical_url,record.id+"."+stage.stage+" wrong original URL");
       assert.ok(source.url.startsWith("https://"));
@@ -50,7 +60,7 @@ for(const record of ledger.cases){
 assert.equal(supported,34);
 assert.equal(illustrative,8);
 assert.equal(stillOpen,6);
-assert.match(CSE_DEBATE_MAP.CSE061.opposition[0],/Charles E\. Curran argues/);
+assert.match(CSE_DEBATE_MAP.CSE061.opposition[0],/Charles Curran.*1987 essay criticizes.*physicalism/);
 assert.match(CSE_DEBATE_MAP.CSE061.appeal[0],/Curran identifies/);
 assert.match(CSE_DEBATE_MAP.CSE006.response[0],/does not automatically warrant civil prohibition/);
 console.log("PASS CSE original-passage batch: 6 debates, 48 stages, 34 bounded passage comparisons, 8 illustrative objections, 6 original checks open; zero full certifications.");

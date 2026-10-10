@@ -24,14 +24,32 @@ for(const rec of doc.cases){
   assert.equal(stage.original_full_paragraph_collation_complete,false);
   assert.equal(stage.verbatim_opponent_quote_certified,false);
   assert.equal(stage.independent_theological_and_french_approval,false);
-  assert.deepEqual(stage.source_references.map(x=>x.id),paragraphRefsFor(q,"debate",stage.stage).map(x=>x[0]),rec.id+"."+stage.stage+" stage links drift");
+  const historicalIds=stage.source_references.map(x=>x.id);
+  const liveIds=paragraphRefsFor(q,"debate",stage.stage).map(x=>x[0]);
+  // The 9 October original-passage classification is intentionally frozen.
+  // Exact modern live additions/reselections are checked separately, not
+  // retroactively certified as having been examined in that earlier batch.
+  const opposing=["opposition","appeal","counter"].includes(stage.stage);
+  if(opposing&&["CSE008","CSE010"].includes(rec.id)){
+    assert.deepEqual(liveIds,["FLETCHER1966"],rec.id+"."+stage.stage+" live original-book reference changed");
+    assert.ok(historicalIds.length===1&&["FLETCHER_EXCERPTS","FLETCHER_TABLET"].includes(historicalIds[0]));
+  }else if(opposing&&rec.id==="CSE021"){
+    assert.deepEqual(historicalIds,["FREUD1908"]);
+    assert.deepEqual(liveIds,["FREUD1924_FULL","FREUD1908"]);
+  }else assert.deepEqual(historicalIds,liveIds,rec.id+"."+stage.stage+" stage links drift");
   for(const x of stage.source_references)assert.equal(x.canonical_url,CSE_SOURCE_MAP[x.id].canonical_url);
   found[stage.status]=(found[stage.status]||0)+1;count++;
  }
 }
 assert.equal(count,80);
 assert.deepEqual(found,doc.summary.status_counts);
-for(const id of ["CSE012","CSE013","CSE014","CSE016","CSE018","CSE020","CSE021"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" not marked contextual");
+// Since this snapshot, original-author evidence has been linked for
+// CSE014/016/018/021. Preserve the narrower contextual warnings only for
+// the hypotheticals whose wording remains an editorial reconstruction.
+for(const id of ["CSE012","CSE013","CSE020"])
+ assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" not marked contextual");
+for(const id of ["CSE014","CSE016","CSE018","CSE021"])
+ assert.ok(!CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" later author-original evidence was hidden as merely contextual");
 assert.match(CSE_DEBATE_MAP.CSE016.response[0],/Donum Veritatis/);
 assert.match(CSE_DEBATE_MAP.CSE020.breakpoint[0],/drug addiction cannot establish/);
 assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/Freud/);

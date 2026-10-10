@@ -16,7 +16,7 @@ for(const id of ["CSE040","CSE058","CSE083","CSE101","CSE104","CSE112","CSE123",
 }
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,612);
+assert.equal(audit.summary.stage_specific_mapping_references,636);
 
 const ids=["CSE055","CSE070","CSE071","CSE125"];
 for(const id of ids){
