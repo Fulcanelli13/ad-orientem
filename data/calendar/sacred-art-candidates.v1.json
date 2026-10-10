@@ -3,7 +3,7 @@
   "updated": "2026-10-10",
   "ownerIssue": 885,
   "scope": "RESEARCH_CANDIDATES_ONLY",
-  "rightsModel": "MET_OA_CC0",
+  "rightsModel": "MUSEUM_OBJECT_LEVEL_CC0_AND_INDIVIDUAL_SOURCE_EVIDENCE",
   "nonclaims": [
     "A museum object page does not establish image quality, pixel dimensions, exact in-app crop or completion of curatorial review.",
     "No candidates are approved for production or claimed to cover any calendar date.",
@@ -1614,9 +1614,510 @@
         "status": "CANDIDATE"
       },
       "image": null
+    },
+    {
+      "id": "cma-128075",
+      "title": "The Visitation",
+      "artist": "Artist not identified in first API export",
+      "dated": "c. 1530–1550",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1950.91",
+        "objectId": "128075",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "visitation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy2"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-128075.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "cma-124118",
+      "title": "Diptych with the Passion of Christ (right wing): Crowning with Thorns and Agony in the Garden",
+      "artist": "Attribution pending inspection",
+      "dated": "c. 1400",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1945.115.b",
+        "objectId": "124118",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "agony-garden",
+          "crowning-thorns"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor1",
+          "rosary.sor3"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "COMPOSITE_SCENE_REQUIRES_PANEL_INSPECTION"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-124118.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "cma-124117",
+      "title": "Diptych with the Passion of Christ (left wing): Flagellation and Christ Before Pilate",
+      "artist": "Attribution pending inspection",
+      "dated": "c. 1400",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1945.115.a",
+        "objectId": "124117",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "flagellation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor2"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "COMPOSITE_SCENE_REQUIRES_PANEL_INSPECTION"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-124117.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "cma-111435",
+      "title": "Coronation of the Virgin",
+      "artist": "Master of the Fröndenberg Altarpiece",
+      "dated": "c. 1410",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1929.920",
+        "objectId": "111435",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "coronation-virgin"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-111435.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "cma-124076",
+      "title": "Coronation of the Virgin",
+      "artist": "Fra Angelico",
+      "dated": "1420s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1944.79",
+        "objectId": "124076",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "coronation-virgin"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-124076.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "cma-125248",
+      "title": "The Coronation of the Virgin with the Trinity",
+      "artist": "Master of Rubielos de Mora",
+      "dated": "c. 1400",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1947.208",
+        "objectId": "125248",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "coronation-virgin"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-125248.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "cma-78982",
+      "title": "The Resurrection of Christ",
+      "artist": "Johann König",
+      "dated": "1622",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/2017.192",
+        "objectId": "78982",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "resurrection",
+          "regina-caeli"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo1",
+          "regina-caeli"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-78982.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "cma-112626",
+      "title": "The Supper at Emmaus",
+      "artist": "Giovanni Battista Piazzetta",
+      "dated": "c. 1720",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1931.245",
+        "objectId": "112626",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Cleveland Open Access API records share_license_status=CC0 for this Painting; 3400px print JPEG acquired in review artifact.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "supper-emmaus"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "adoration"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "SCRIPTURE_SUBJECT_REQUIRES_LITURGICAL_USE_REVIEW"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38041653701",
+        "artifactId": 11666321660,
+        "archiveOriginal": "museum-originals/cma-112626.jpg"
+      },
+      "image": null
+    },
+    {
+      "id": "met-436672",
+      "title": "Christ among the Doctors",
+      "artist": "Abraham Hondius",
+      "dated": "1668",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/436672",
+        "objectId": "436672",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Official museum artwork record identifies a public-domain painting; NGA media open-access policy applies CC0 to image, Met Open Access to public-domain reproductions.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "finding-jesus-temple"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy5"
+        ]
+      },
+      "review": {
+        "source": "MET_OBJECT_PAGE",
+        "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "NOT_ACQUIRED",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null
+    },
+    {
+      "id": "nga-41656",
+      "title": "Christ among the Doctors",
+      "artist": "Master of the Catholic Kings",
+      "dated": "c. 1495–1497",
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/41656-christ-among-doctors",
+        "objectId": "41656",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/terms-and-notices",
+        "sourceEvidence": "Official museum artwork record identifies a public-domain painting; NGA media open-access policy applies CC0 to image, Met Open Access to public-domain reproductions.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "finding-jesus-temple"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy5"
+        ]
+      },
+      "review": {
+        "source": "NGA_OBJECT_PAGE",
+        "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "NOT_ACQUIRED",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null
+    },
+    {
+      "id": "nga-41661",
+      "title": "Christ among the Doctors [obverse]",
+      "artist": "Bernard van Orley",
+      "dated": "c. 1513",
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/41661-christ-among-doctors-obverse",
+        "objectId": "41661",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/terms-and-notices",
+        "sourceEvidence": "Official museum artwork record identifies a public-domain painting; NGA media open-access policy applies CC0 to image, Met Open Access to public-domain reproductions.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "finding-jesus-temple"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy5"
+        ]
+      },
+      "review": {
+        "source": "NGA_OBJECT_PAGE",
+        "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "NOT_ACQUIRED",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null
+    },
+    {
+      "id": "nga-12134",
+      "title": "The Coronation of the Virgin",
+      "artist": "Filippino Lippi",
+      "dated": "c. 1475",
+      "medium": "painting",
+      "museum": "National Gallery of Art, Washington",
+      "source": {
+        "objectUrl": "https://www.nga.gov/artworks/12134-coronation-virgin",
+        "objectId": "12134",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.nga.gov/terms-and-notices",
+        "sourceEvidence": "Official museum artwork record identifies a public-domain painting; NGA media open-access policy applies CC0 to image, Met Open Access to public-domain reproductions.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "coronation-virgin"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.glo5"
+        ]
+      },
+      "review": {
+        "source": "NGA_OBJECT_PAGE",
+        "rights": "POLICY_CONFIRMED_IMAGE_PENDING",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "NOT_ACQUIRED",
+        "pixelDimensions": null,
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_SUBJECT"
+      },
+      "image": null
     }
   ],
   "notes": [
-    "Explicit prayerKeys are editorial links for recurring prayer artwork pools. These do not approve artwork and are never inferred from the prayer date by the runtime."
+    "Explicit prayerKeys are editorial links for recurring prayer artwork pools. These do not approve artwork and are never inferred from the prayer date by the runtime.",
+    "Coverage-first 12 additional museum object candidates (8 Cleveland with archival originals, 1 Met, 3 NGA). CMA composite diptych requires iconographic review. Two CMA Assumption studies and a misassigned Presentation study are retained in acquisition archive only, not counted as direct artwork candidates."
   ]
 }
