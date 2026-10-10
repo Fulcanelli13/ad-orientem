@@ -47,6 +47,12 @@ jobs:
           path: /tmp/lmd-r39/
           retention-days: 30
           if-no-files-found: warn
+      - name: Reconcile offline cached OSM coordinates for diocesan and traditionalist records
+        run: |
+          node tools/directory/build-worldwide-geocode-overlays.mjs --write > "$RUNNER_TEMP/sspx-official-map/geo-cache-reuse.log"
+          head -n 70 "$RUNNER_TEMP/sspx-official-map/geo-cache-reuse.log"
+          cp data/directory/research/worldwide-geo-cache-reuse-report.v1.json "$RUNNER_TEMP/sspx-official-map/"
+          cp data/directory/generated/v19/*.geo.v1.json "$RUNNER_TEMP/sspx-official-map/" || true
       - name: Preserve first-party geolocation research without publishing
         if: always()
         uses: actions/upload-artifact@v4
