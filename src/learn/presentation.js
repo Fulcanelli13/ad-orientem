@@ -210,7 +210,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
       <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Accueil":"Home")}">${assetMask("ao-nav-home")}</button>
     </header>
     <main class="aoLearnModWrap">
-      <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(heroTitle)}</h1><p>${esc(heroIntro)}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
+      <section class="aoLearnModHero aoEditorialHero"><div class="kicker aoEditorialKicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1 class="aoEditorialTitle">${esc(heroTitle)}</h1><p class="aoEditorialLead">${esc(heroIntro)}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
       <section class="aoLearnDiscovery"><label for="ao-learn-discovery-input">${esc(langFr?"Rechercher un sujet, un parcours ou un terme":"Find a subject, course or term")}</label><input id="ao-learn-discovery-input" type="search" autocomplete="off" data-ao-learn-discovery-search value="${esc(discoveryQuery)}" placeholder="${esc(langFr?"Catéchisme, grâce, rosaire…":"Catechism, grace, Rosary…")}"><div data-ao-learn-discovery-results>${learnDiscoveryMarkup(state,win,{query:discoveryQuery,referenceEntries,referenceStatus})}</div></section>
       ${family?"":`<button type="button" class="aoLearnApostolateBridge" data-ao-learn-apostolate>${assetMask("ao-refined-help")}<span><strong>${esc(langFr?"Apostolat":"Apostolate")}</strong><small>${esc(langFr?"Répondre · aider · s’exercer":"Answer · help · practise")}</small></span>${assetMask("ao-ui-next")}</button>`}
       ${error?`<div class="aoLearnModError" role="status">${esc(error)}</div>`:""}
