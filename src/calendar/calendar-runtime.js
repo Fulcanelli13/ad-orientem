@@ -409,13 +409,7 @@ function seasonOf(r){
   const pair=map[key];
   return pair?(fr()?pair[1]:pair[0]):raw;
 }
-function liturgicalAccent(r){
-  const key=rawColour(r).trim().toLowerCase();
-  return ({
-    green:"#657a68",red:"#8f5650",white:"#d5ccb9",gold:"#b79a62",violet:"#725f7d",purple:"#725f7d",
-    black:"#66666a",rose:"#9a6a76"
-  })[key]||"#8f7d5e";
-}
+function liturgicalAccent(r){return calendarPaletteColour(rawColour(r));}
 function yearWheel(selected,r){
   // The compact fallback wheel must agree with the canonical Advent-to-Advent dashboard.
   const d=dateOf(selected),loc=fr()?"fr-FR":"en-GB",angle=(buildLiturgicalYear(selected).progress*360).toFixed(2),season=seasonOf(r);
@@ -458,9 +452,7 @@ function weekRail(selected){
   }).join("");
 }
 
-const periodUiColour=key=>({
-  violet:"#6d5a7f",white:"#d8cfb9",green:"#587761",red:"#984b42",black:"#55565a",rose:"#9a6a76"
-})[String(key||"").toLowerCase()]||"#81735c";
+const periodUiColour=calendarPaletteColour;
 const periodName=p=>fr()?p?.fr:p?.en;
 const celebrationName=x=>fr()?x?.fr:x?.en;
 const longDate=id=>displayDate(id);
