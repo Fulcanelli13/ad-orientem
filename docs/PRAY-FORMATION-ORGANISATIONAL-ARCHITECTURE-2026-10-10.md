@@ -87,6 +87,20 @@ The 10 October source-level audit records **29 information follow-ups and 15 wal
 
 **Shared:** Calendar-derived typography, dark sacred palette, sensible mobile-sized text and controls, no gamification, no nested duplicate navigation ribbons. Cards should indicate a deliberate entrance or progress state; ordinary chapters/questions are lists or continuous editorial rows where that is more scannable. EN/FR text and long French titles are acceptance criteria.
 
+## Implementation status — expanded organisational pass
+
+The branch now contains **bounded actual presentation and routing changes**, in addition to the architecture map:
+
+- `src/pray/presentation-runtime.js` and `src/pray/presentation-styles.js`: reorganise the Prayer home into a salient **daily** family, an **Eucharistic** family, a combined **Penance and Passion** visual group retaining its two distinct canonical readers, and **Devotions plus direct Library**. The five source-family IDs, sixth Library door, all 22 family cards and ten external lazy routes remain exactly as they were; this is not a prayer-text migration.
+- `src/learn/presentation.js` and `src/learn/browser-entry.js`: place the six existing internal family doors under **Learn the Faith** (five original groups) and **Reference** (one group), plus separate direct **Questions & Debates** and **Put Faith into Practice** entrances. Questions opens `learn.sexual_ethics`, the only currently published specialist Question/controversy launcher, preserving the `spiritual-moral` family return context. Apostolate continues through its original route. No APOL/CR preview is made public.
+- `src/apostolate/corpus.js` / `src/apostolate/hs-corpus.js`: replace four obsolete Prayer references. `pray.marian` becomes exact `pray.rosary` for AQ01; three `pray.holy_souls` handoffs (AQ07, HS05, HS06) become `pray.eternal_rest`. Both canonical destinations are already registered with real readers. This repairs route identity but real tap/back still requires phone validation.
+- Machine map expanded with **72 live Apostolate source-defined handoffs** spanning 36 scenarios, **65 registered target routes**, **2 intra-Apostolate scenario references**, and **5 Mass-preparation handoffs** whose exact `mass.prepare` subroute is not independently resolved by the Apostolate handler. These five remain for the Mass-last workstream; do not represent them as exact Prepare-entry success. There are **zero unresolved target IDs** after the four Prayer corrections.
+- Exact Prayer Library facet identities accounted for: `essentials` 15, `marian` 7, `eucharistic` 8, `massdev` 2, `holyghost` 2, `canticles` 1, `saints` 7, `hearts` 2, `dead` 4. These nine existing source categories are content filters, not independent text banks. 50 Sexual Ethics topic IDs map to 150 questions and 55 deeper debate records.
+
+**Tests added:** the app-shell IA contract now checks the complete 23/15/36/100 identities, that exact 72-target handoff ledger against actual corpus text, category counts, existing source definitions, absence of obsolete apostolate Prayer aliases, preservation of publication gates and the new UI linkage. This does not replace browser/phone acceptance and does not certify original texts or argument sourcing.
+
+This batch deliberately does not alter Mass, Calendar, full Prayer readers, Apostolate scenario prose, Scripture editions or content sources. The visual system of Today v3 may be applied later after route/interaction acceptance.
+
 ## Release sequence — production work after this IA lock
 
 1. **Integrity and routing (P0):** Validate the exact 23/15/36 IDs and all 100 Prayer leaf projections against the source owner. Preserve the ten lazy Prayer routes, three nested Prayer routes (`pray.visit_blessed_sacrament`, `pray.de_profundis`, `pray.eternal_rest`) and `pray.angelus` alias. Check return-to-origin, source errors, bilingual paths and publication gates. No visual changes.
