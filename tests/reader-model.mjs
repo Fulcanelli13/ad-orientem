@@ -7,6 +7,7 @@ const low=load("../data/presentation/reader-text-low.v1.json");
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
 const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
+const mandatumSource=load("../data/mass/special-days-core.v1.1.json").optional_inserts.HOLY_THURSDAY_MANDATUM;
 const t=(lat,en)=>({lat,en});
 const proper={
   sourcePath:"Sancti/10-07",
@@ -140,13 +141,28 @@ assert.equal(htQuiet.cardBySequence(9).sourceSequence,10);
 
 const htMandatum=createMassReaderModel({
  resolvedMass:holyThursdayResolved,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
- holyThursdayMandatumPresent:true
+ holyThursdayMandatumPresent:true,
+ holyThursdayMandatumSource:mandatumSource,
 });
 assert.equal(htMandatum.totalCards,39);
 assert.equal(htMandatum.cardBySequence(9).sectionId,"AO.HT.MANDATUM");
 assert.equal(htMandatum.cardBySequence(8).sourceSequence,8);
 assert.equal(htMandatum.cardBySequence(10).sourceSequence,10);
 assert.equal(htMandatum.mandatumPresent,true);
+assert.deepEqual(htMandatum.mandatumEventIds,mandatumSource.events.map(x=>x.id));
+assert.equal(htMandatum.cardBySequence(9).sourceRecordIds.length,6);
+for(const [i,record] of mandatumSource.events.entries()){
+  const found=htMandatum.cardForEvent(record.id);
+  assert.equal(found.canonicalEventId,record.id);
+  assert.equal(found.card.sectionId,"AO.HT.MANDATUM");
+  assert.equal(found.mandatumStageIndex,i);
+  assert.equal(found.mandatumEvent.actor_scope,record.actor_scope);
+}
+assert.throws(()=>createMassReaderModel({
+ resolvedMass:holyThursdayResolved,sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+ holyThursdayMandatumPresent:true
+}),/existing 1962 Mandatum source insert/);
+
 assert.equal(htMandatum.cardBySequence(9).provenance.textComplete,false,"selected antiphons are not full printed certification");
 assert.ok(htMandatum.cardBySequence(9).paragraphs.some(p=>p.alternate.includes("Mandátum novum do vobis")));
 assert.ok(htMandatum.cardBySequence(9).paragraphs.some(p=>p.alternate.includes("Ubi cáritas")));

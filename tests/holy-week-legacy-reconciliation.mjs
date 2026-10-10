@@ -13,6 +13,7 @@ const gf=load("../data/presentation/reader-good-friday.v1.json");
 const vigil=load("../data/presentation/reader-easter-vigil.v1.json");
 const prophecies=load("../data/presentation/reader-easter-vigil-prophecies.v1.json");
 const htReader=readFileSync(new URL("../src/mass/reader-holy-thursday-mandatum.js",import.meta.url),"utf8");
+const mandatumEvents=readFileSync(new URL("../src/mass/reader-holy-thursday-mandatum-events.js",import.meta.url),"utf8");
 
 assert.equal(ledger.schema,"ao.holy-week.legacy-reconciliation.v1");
 assert.equal(ledger.recordsReviewed,20);
@@ -70,9 +71,10 @@ assert.equal(mand.events[1].actor_scope,"MANDATUM_PARTICIPANT");
 assert.equal(mand.events[1].action_state,"REMOVE_RIGHT_SHOE_AND_SOCK");
 assert.equal(mand.events[3].action_state,"REPLACE_SOCK_AND_SHOE");
 assert.ok(htReader.includes('sectionId:"AO.HT.MANDATUM"'));
-assert.ok(!htReader.includes("SP-HT-MAND-"),
- "Mandatum graph now wired: reassess ledger HW-L04 and update this expected-debt gate");
-assert.equal(ledger.records.find(x=>x.id==="HW-L04").status,"CANONICAL_SOURCE_PRESENT_READER_GAP");
+assert.match(htReader,/mandatumSource\.events\.map/);
+assert.match(mandatumEvents,/MANDATUM_RECORD_IDS/);
+assert.match(mandatumEvents,/MANDATUM_PARTICIPANT/);
+assert.equal(ledger.records.find(x=>x.id==="HW-L04").status,"NATIVE_READER_SOURCE_EVENTS_RECOVERED");
 
 // Structural denominators are not promises of textual completeness.
 assert.equal(extension.graphs.PALM.length,12);
@@ -88,4 +90,4 @@ assert.equal(vigil.bridge.litanyII.lat.split("\n").filter(x=>x.startsWith("℣."
 assert.equal(ledger.donorPreservation.goodFridayNineOrations.archivedFrench,9);
 assert.equal(ledger.records.find(x=>x.id==="HW-L20").status,"UNVERIFIED_SOURCE_PENDING");
 
-console.log("Holy Week legacy reconciliation: PASS — 20 source-owned deltas; archived Exsultet EXACT; 9 archived trilingual orations; unsafe Good Friday 7/8 editions quarantined; six-event Mandatum gap explicit; Palm/GF/Vigil graph totals preserved.");
+console.log("Holy Week legacy reconciliation: PASS — 20 source-owned deltas; archived Exsultet EXACT; 9 archived trilingual orations; unsafe Good Friday 7/8 editions quarantined; six-event Mandatum native source recovery present; Palm/GF/Vigil graph totals preserved.");

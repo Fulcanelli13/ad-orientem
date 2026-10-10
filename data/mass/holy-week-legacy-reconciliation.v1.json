@@ -88,7 +88,7 @@
     }
   },
   "priorityOrder": [
-    "P0 Restore native Mandatum six-event actor choreography/handoff rather than parallel one-card-only surface",
+    "P0 Verify phone user-facing six-moment Mandatum and retain exact participant scope; native source recovery B09 implemented",
     "P0 Reconcile Good Friday legacy bilingual texts with printed 1962, explicitly quarantining orations 7 and 8",
     "P1 Verify Holy Thursday Canon original-1962 special wordings and selected Mandatum texts; expand only actual absent corpus",
     "P1 Reconcile Good Friday and Palm Passion speaker roles and remaining vernacular",
@@ -139,14 +139,14 @@
       "id": "HW-L04",
       "rite": "HOLY_THURSDAY",
       "feature": "Participant/congregation choreography, six events",
-      "status": "CANONICAL_SOURCE_PRESENT_READER_GAP",
-      "verifiedFinding": "Existing core has SP-HT-MAND-010..060, including participant remove/wash/replace right shoe and sock and return target MC-0026. B08 text card has no event/cue mapping.",
-      "canonicalOwner": "data/mass/special-days-core.v1.1.json#optional_inserts.HOLY_THURSDAY_MANDATUM",
+      "status": "NATIVE_READER_SOURCE_EVENTS_RECOVERED",
+      "verifiedFinding": "Six existing SP-HT-MAND-010..060 events now bound directly to one Mandatum reader card and a native six-moment controller, with participant versus observer and MC-0026 source handoff. The historical texts are only selected chants and remain critically incomplete. Browser fallback loads the same source; its stage-navigation acceptance remains separate.",
+      "canonicalOwner": "src/mass/reader-holy-thursday-mandatum-events.js",
       "donorRefs": [
         "specialSot",
         "rubricalSot"
       ],
-      "action": "Wire native display and active source state to those six IDs, with distinct participant/observer scopes."
+      "action": "Verify phone user-facing six-stage rail and original 1962 Latin chant complete corpus; do not replace with a parallel graph."
     },
     {
       "id": "HW-L05",

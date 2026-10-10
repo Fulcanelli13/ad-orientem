@@ -1,0 +1,52 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {
+  validateMandatumSource,createMandatumEventController,loadMandatumSource,MANDATUM_RECORD_IDS
+} from "../src/mass/reader-holy-thursday-mandatum-events.js";
+const root=JSON.parse(readFileSync(new URL("../data/mass/special-days-core.v1.1.json",import.meta.url),"utf8"));
+const source=root.optional_inserts.HOLY_THURSDAY_MANDATUM;
+assert.equal(validateMandatumSource(source),true);
+assert.deepEqual(source.events.map(x=>x.id),MANDATUM_RECORD_IDS);
+assert.equal(source.return_target,"MC-0026");
+const plain=createMandatumEventController({source});
+assert.equal(plain.project().sourceEventId,"SP-HT-MAND-010");
+assert.equal(plain.project().posture,"SIT");
+assert.equal(plain.project().participant,false);
+plain.next();
+assert.equal(plain.project().sourceEventId,"SP-HT-MAND-020");
+assert.equal(plain.project().action,null,"Observer must never remove a shoe");
+assert.equal(plain.project().posture,"LOCAL_OR_INHERIT");
+plain.setParticipant(true);
+assert.equal(plain.project().action,"REMOVE_RIGHT_SHOE_AND_SOCK");
+assert.equal(plain.project().personalState,"READY_FOR_WASHING");
+plain.next();
+assert.equal(plain.project().action,"RIGHT_FOOT_WASHED_AND_DRIED");
+plain.next();
+assert.equal(plain.project().action,"REPLACE_SOCK_AND_SHOE");
+plain.setParticipant(false);
+assert.equal(plain.project().action,null);
+plain.goToEvent("SP-HT-MAND-050");
+assert.equal(plain.project().posture,"STAND");
+plain.next();
+assert.equal(plain.project().sourceEventId,"SP-HT-MAND-060");
+assert.equal(plain.project().handoff,"MC-0026");
+assert.equal(plain.project().action,"RETURN_TO_MC");
+plain.next();
+assert.equal(plain.project().sourceEventId,"SP-HT-MAND-060");
+plain.previous();
+assert.equal(plain.project().sourceEventId,"SP-HT-MAND-050");
+plain.reset();
+assert.equal(plain.project().sourceEventId,"SP-HT-MAND-010");
+const fr=createMandatumEventController({source,language:"fr"});
+fr.next();
+assert.match(fr.project().title,/participant choisi/);
+assert.throws(()=>validateMandatumSource({...source,events:source.events.slice(1)}),/Six canonical Mandatum events/);
+assert.throws(()=>validateMandatumSource({...source,return_target:"MC-0001"}),/MC-0026/);
+assert.throws(()=>validateMandatumSource({...source,events:source.events.map((e,i)=>i===2?{...e,actor_scope:"CONGREGATION"}:e)}),/actor scope/);
+const network=await loadMandatumSource({
+ fetchImpl:async()=>({ok:true,json:async()=>root})
+});
+assert.equal(network.source.id,source.id);
+assert.match(network.sourceUrl,/special-days-core\.v1\.1\.json/);
+await assert.rejects(()=>loadMandatumSource({fetchImpl:async()=>({ok:false,status:404})}),/source fetch unavailable/);
+console.log("Mandatum source-native: PASS — six original events, French/English, participant-only gestures and exact Mass handoff.");

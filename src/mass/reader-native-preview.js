@@ -3,6 +3,7 @@
 // Legacy DOM/state is consulted only when an explicit rollback/shadow donor is supplied.
 
 import { createMassReaderModel } from "./reader-model.js";
+import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
@@ -227,6 +228,8 @@ export async function prepareNativeReaderPreview({
   loadCorpusChristiData=loadCorpusChristiProcessionReaderData,
   holyThursdayPostData=null,
   loadHolyThursdayPostData=loadHolyThursdayPostReaderData,
+  mandatumSourceData=null,
+  loadMandatumData=loadMandatumSource,
   genericProcessionData=null,
   loadGenericProcessionData=loadGenericProcessionReaderData,
 }={}){
@@ -331,6 +334,12 @@ export async function prepareNativeReaderPreview({
     hasHolyThursdayPost ? (holyThursdayPostData ?? Promise.resolve(loadHolyThursdayPostData(prepared))) : null,
     hasGenericProcession ? (genericProcessionData ?? Promise.resolve(loadGenericProcessionData(prepared))) : null,
   ]);
+  const mandatumActive=prepared?.session?.resolvedMass?.provenance?.holyThursday?.mandatumPresent===true;
+  const loadedMandatum=mandatumActive
+    ? (mandatumSourceData ?? await Promise.resolve(loadMandatumData(prepared)))
+    : null;
+  const mandatumSource=loadedMandatum?.source??loadedMandatum??null;
+  const presentationWithMandatum=Object.freeze({...data,mandatumSource});
   const model=createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
     sectionMap:data?.sectionMap,
@@ -339,6 +348,7 @@ export async function prepareNativeReaderPreview({
     canonSourceMap:data?.canonSourceMap,
     nuptialData:data?.nuptialData,
     frenchOrdinary:data?.frenchOrdinary,
+    holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
   const presentationModel=projectSourceFirst48Presentation(model);
@@ -396,7 +406,7 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,data,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
+    prepared,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -435,6 +445,8 @@ export async function mountNativeReaderPreview({
   loadCorpusChristiData=loadCorpusChristiProcessionReaderData,
   holyThursdayPostData=null,
   loadHolyThursdayPostData=loadHolyThursdayPostReaderData,
+  mandatumSourceData=null,
+  loadMandatumData=loadMandatumSource,
   genericProcessionData=null,
   loadGenericProcessionData=loadGenericProcessionReaderData,
   readLegacyActive=null,
@@ -452,7 +464,7 @@ export async function mountNativeReaderPreview({
     goodFridayData,loadGoodFridayData,
     easterVigilData,loadEasterVigilData,
     requiemAbsolutionData,loadRequiemAbsolutionData,corpusChristiData,loadCorpusChristiData,
-    holyThursdayPostData,loadHolyThursdayPostData,genericProcessionData,loadGenericProcessionData,
+    holyThursdayPostData,loadHolyThursdayPostData,mandatumSourceData,loadMandatumData,genericProcessionData,loadGenericProcessionData,
   });
 
   doc.getElementById?.(ROOT_ID)?.remove?.();
@@ -1111,6 +1123,11 @@ export async function mountNativeReaderPreview({
   }
   let sourceModel=ready.model;
   let readerModel=ready.presentationModel??ready.model;
+  const mandatumController=ready.model?.mandatumSource
+    ?createMandatumEventController({
+      source:ready.model.mandatumSource,
+      language:prepared?.readerPreferences?.language??"en"
+    }):null;
   let current=readerModel.cardBySequence(1);
   let reader=null;
   let inAsperges=Boolean(ready.aspergesController);
@@ -1162,16 +1179,24 @@ export async function mountNativeReaderPreview({
     const eligible=(kind==="PALM"&&["PALM-R04","PALM-R05"].includes(id)) ||
       (kind==="CANDLEMAS"&&["CND-R05","CND-R06"].includes(id)) ||
       (kind==="REQUIEM_ABSOLUTION"&&id==="ABS-R05") ||
-      (kind==="HOLY_THURSDAY_POST"&&id==="HT-R02");
+      (kind==="HOLY_THURSDAY_POST"&&id==="HT-R02") ||
+      (kind==="MANDATUM"&&current?.sectionId==="AO.HT.MANDATUM");
     riteChoice.hidden=!eligible;
     const stage=riteChoice.closest(".ao-reader-stage");
     if(stage)stage.dataset.riteChoice=String(eligible);
     if(!eligible)return;
     riteChoice.dataset.rite=kind;
     riteChoice.querySelector("[data-rite-choice-title]").textContent=
+      kind==="MANDATUM"?"Are you having your foot washed?":
       kind==="REQUIEM_ABSOLUTION"?"Follow the burial procession?":
       kind==="HOLY_THURSDAY_POST"?"After the Sacrament passes, will you follow?":"Join this procession?";
-    const selected=kind==="PALM" ? state.processionParticipant :
+    for(const button of riteChoice.querySelectorAll("[data-rite-participation]")){
+      button.textContent=kind==="MANDATUM"
+        ?(button.dataset.riteParticipation==="true"?"Participant":"Observer")
+        :(button.dataset.riteParticipation==="true"?"Join":"Remain");
+    }
+    const selected=kind==="MANDATUM"?state.participant:
+      kind==="PALM" ? state.processionParticipant :
       kind==="CANDLEMAS" ? state.processionParticipant :
       kind==="HOLY_THURSDAY_POST" ? (state.joiningState==="WAITING"
         ? null : state.joiningState==="JOINING") : state.burialParticipant;
@@ -1223,6 +1248,8 @@ export async function mountNativeReaderPreview({
       ready.candlemasController.setProcessionParticipant(participating);showCandlemas();
     }else if(riteChoice.dataset.rite==="REQUIEM_ABSOLUTION"&&inRequiemAbsolution){
       ready.requiemAbsolutionController.setBurialParticipant(participating);showRequiemAbsolution();
+    }else if(riteChoice.dataset.rite==="MANDATUM"&&mandatumController && current?.sectionId==="AO.HT.MANDATUM"){
+      mandatumController.setParticipant(participating);showMandatumStage();
     }else if(riteChoice.dataset.rite==="HOLY_THURSDAY_POST"&&inHolyThursdayPost){
       // Choosing Follow is itself the moment of joining, after the
       // Sacrament passes: WAITING must never become STAND_WALK by default.
@@ -1821,6 +1848,10 @@ export async function mountNativeReaderPreview({
       if(!state.atStart)ready.aspergesController.previous();
       return showAsperges();
     }
+    if(mandatumController&&current?.sectionId==="AO.HT.MANDATUM"){
+      const state=mandatumController.project();
+      if(!state.atStart){mandatumController.previous();return showMandatumStage();}
+    }
     const first=readerModel.cardBySequence(1);
     if(ready.rogationsController && current?.sectionId===first?.sectionId){
       ready.rogationsController.goTo("ROG-R06");
@@ -1916,6 +1947,10 @@ export async function mountNativeReaderPreview({
       ready.aspergesController.next();
       return showAsperges();
     }
+    if(mandatumController&&current?.sectionId==="AO.HT.MANDATUM"){
+      const state=mandatumController.project();
+      if(!state.atEnd){mandatumController.next();return showMandatumStage();}
+    }
     const card=nextVisibleCard(current,"next");
     if(!card)return enterLifecycleBoundary();
     return showCard(card);
@@ -1969,6 +2004,39 @@ export async function mountNativeReaderPreview({
       probe=candidate;
     }
     return null;
+  }
+
+  // A single optional card follows the original six Mandatum source events.
+  // The participant switch is local. No nonparticipant receives foot-washing
+  // instructions; no action is misattributed to the entire congregation.
+  function showMandatumStage(){
+    if(!mandatumController||current?.sectionId!=="AO.HT.MANDATUM")return null;
+    const state=mandatumController.project();
+    const action=state.action?state.action.replaceAll("_"," ").toLowerCase():null;
+    reader.renderMoment({
+      id:state.sourceEventId,sectionTitle:"Mandatum · Washing of Feet",
+      cardTitle:current.title,cardUpdate:false,
+      progress:"Mandatum "+String(state.index+1)+" / "+String(state.total),
+      posture:state.posture!=="LOCAL_OR_INHERIT"?{label:state.posture}:null,
+      gesture:action?{label:action}:null,
+      guide:{registryAvailable:true,text:state.title},
+      response:null,bell:null,cinematic:null,priestPosition:null,
+      priestVoice:null,schola:null,
+    });
+    syncRiteChoice("MANDATUM",{card:{id:"AO.HT.MANDATUM"},participant:state.participant});
+    root.dataset.r17NativeEvent=state.sourceEventId;
+    root.dataset.r17NativeCue="unresolved";
+    root.dataset.r17StateOwner="R17_MANDATUM_CANONICAL_EVENT";
+    root.dataset.r17OwnerPosture=state.actorScope==="MANDATUM_PARTICIPANT"
+      ?(state.participant?"MANDATUM_PARTICIPANT_SOURCE":"LOCAL_OR_INHERIT")
+      :"MANDATUM_CONGREGATION_SOURCE";
+    root.dataset.r17OwnerGesture=state.action?"MANDATUM_PARTICIPANT_SOURCE":"MANDATUM_NO_PERSONAL_ACTION";
+    globalThis.AO_R17_NATIVE_READER_STATE=Object.freeze({
+      specialRite:"MANDATUM",recordId:state.sourceEventId,
+      actorScope:state.actorScope,posture:state.posture,gesture:state.action,
+      participant:state.participant,handoff:state.handoff,sourceOwner:"SPECIAL_DAYS_CORE"
+    });
+    return state;
   }
 
   function showCard(card,{directJump=false}={}){
@@ -2032,6 +2100,10 @@ export async function mountNativeReaderPreview({
     if(scroll){
       scroll.scrollTop=0;
       cueTracker?.refresh?.();
+    }
+    if(current.sectionId==="AO.HT.MANDATUM"&&mandatumController){
+      mandatumController.reset();
+      showMandatumStage();
     }
     return visibleCard;
   }

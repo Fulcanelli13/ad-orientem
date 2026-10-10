@@ -1,0 +1,235 @@
+{
+  "schema": "ao.1962.good-friday.legacy-trilingual-candidates.v1",
+  "asOf": "2026-10-10",
+  "sourceAuthority": "UNVERIFIED_HISTORICAL_PRODUCT_DONOR",
+  "originalPrintedMissalAuthority": "NOT_CERTIFIED",
+  "activeReaderImport": false,
+  "editionFirewall": [
+    "PRINTED_1962",
+    "HOLY_SEE_2008",
+    "POSTCONCILIAR_LATER"
+  ],
+  "source": "Exact preserved v43.33 archive; original creator-authored translation, not independent Missal authority",
+  "counts": {
+    "archivedRows": 9,
+    "archivedEnglish": 9,
+    "archivedFrench": 9,
+    "heldForPrinted1962Collation": 7,
+    "quarantinedLaterEdition": 2,
+    "importedToReader": 0
+  },
+  "notes": [
+    "Prayer 7 historical donor wording is not the printed 1962 intention.",
+    "Prayer 8 historical donor wording belongs to the Holy See's 2008 replacement, not original printed 1962.",
+    "Do not promote translation by matching only header/title or after punctuation simplification; compare the full associated Latin text to the selected edition first."
+  ],
+  "candidates": [
+    {
+      "ordinal": 1,
+      "key": "HOLY_CHURCH",
+      "title": "Pro Sancta Ecclesia",
+      "donorEditionClass": "SOURCE_EDITION_UNCOLLATED",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "Archived vernacular candidate: match printed-1962 oration text to original folio before approval",
+      "historicalDonor": {
+        "latin": "Orémus, dilectíssimi nobis, pro Ecclésia sancta Dei: ut eam Deus et Dóminus noster pacificáre, adunáre et custodíre dignétur toto orbe terrárum.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, qui glóriam tuam ómnibus in Christo géntibus revelásti: custódi ópera misericórdiæ tuæ; ut Ecclésia tua, toto orbe diffúsa, stábili fide in confessióne tui nóminis persevéret. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray, dearly beloved, for the holy Church of God: that our God and Lord may deign to give her peace, unity and protection throughout the world.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, Who in Christ hast revealed Thy glory to all nations: guard the works of Thy mercy, that Thy Church spread throughout the world may persevere with steadfast faith in the confession of Thy Name. Through Christ our Lord. Amen.",
+        "french": "Prions, mes bien-aimés, pour la sainte Église de Dieu : que notre Dieu et Seigneur daigne lui donner la paix, l’unité et sa protection dans le monde entier.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, qui avez révélé dans le Christ votre gloire à toutes les nations : gardez l’œuvre de votre miséricorde, afin que votre Église répandue dans le monde entier persévère d’une foi ferme dans la confession de votre nom. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus, dilectissimi nobis, pro Ecclesia sancta Dei: ut eam Deus et Dominus noster pacificare, adunare, et custodire dignetur toto orbe terrarum: subiiciens ei principatus, et potestates: detque nobis quietam et tranquillam vitam degentibus, glorificare Deum Patrem omnipotentem.",
+        "prayer": "Omnipotens sempiterne Deus, qui gloriam tuam omnibus in Christo gentibus revelasti: custodi opera misericordiae tuae; ut Ecclesia tua toto orbe diffusa, stabili fide in confessione tui nominis perseveret. Per eundem Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[0]"
+      }
+    },
+    {
+      "ordinal": 2,
+      "key": "SUPREME_PONTIFF",
+      "title": "Pro Summo Pontifice",
+      "donorEditionClass": "SOURCE_EDITION_UNCOLLATED",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "Archived vernacular candidate: match printed-1962 oration text to original folio before approval",
+      "historicalDonor": {
+        "latin": "Orémus et pro beatíssimo Papa nostro N.: ut Deus et Dóminus noster, qui elégit eum in órdine episcopátus, salvum atque incólumem custódiat Ecclésiæ suæ sanctæ, ad regéndum pópulum sanctum Dei.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, cuius iudício univérsa fundántur: réspice propítius ad preces nostras, et eléctum nobis Antístitem tua pietáte consérva; ut christiána plebs, quæ te gubernátur auctóre, sub tanto Pontífice credulitátis suæ méritis augeátur. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray also for our most holy Father Pope N., that our God and Lord, Who chose him to the episcopate, may preserve him in health and safety for His holy Church, to govern the holy people of God.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, by Whose judgment all things are established: mercifully regard our prayers and preserve in Thy goodness the Bishop chosen for us, that the Christian people governed by Thy authority may grow in the merits of faith under so great a Pontiff. Through Christ our Lord. Amen.",
+        "french": "Prions aussi pour notre très saint Père le Pape N. : que notre Dieu et Seigneur, qui l’a choisi dans l’ordre épiscopal, le garde sain et sauf pour sa sainte Église, afin qu’il gouverne le saint peuple de Dieu.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, par le jugement duquel toutes choses sont établies : accueillez favorablement nos prières et conservez dans votre bonté le Pontife que vous nous avez choisi, afin que le peuple chrétien gouverné par votre autorité croisse sous un tel Pontife dans les mérites de sa foi. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus et pro beatissimo Papa nostro N., ut Deus et Dominus noster, qui elegit eum in ordine episcopatus, salvum atque incolumem custodiat Ecclesiae suae sanctae, ad regendum populum sanctum Dei.",
+        "prayer": "Omnipotens sempiterne Deus, cuius iudicio universa fundantur: respice propitius ad preces nostras, et electum nobis Antistitem tua pietate conserva; ut christiana plebs, quae te gubernatur auctore, sub tanto pontifice, credulitatis suae meritis augeatur. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[1]"
+      }
+    },
+    {
+      "ordinal": 3,
+      "key": "ALL_ORDERS_AND_DEGREES",
+      "title": "Pro Clero et Fidelibus",
+      "donorEditionClass": "SOURCE_EDITION_UNCOLLATED",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "Archived vernacular candidate: match printed-1962 oration text to original folio before approval",
+      "historicalDonor": {
+        "latin": "Orémus et pro ómnibus Epíscopis, Presbýteris, Diáconibus, Subdiáconibus, Acólythis, Exorcístis, Lectóribus, Ostiáriis, Confessóribus, Virgínibus, Víduis: et pro omni pópulo sancto Dei.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, cuius Spíritu totum corpus Ecclésiæ sanctificátur et régitur: exáudi nos pro univérsis ordínibus supplicántes; ut grátiæ tuæ múnere ab ómnibus tibi grádibus fidéliter serviátur. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray for all Bishops, Priests, Deacons, Subdeacons, Acolytes, Exorcists, Readers, Porters, Confessors, Virgins, Widows, and for all the holy people of God.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, by Whose Spirit the whole body of the Church is sanctified and governed: hear us as we pray for all her orders, that by the gift of Thy grace every rank may faithfully serve Thee. Through Christ our Lord. Amen.",
+        "french": "Prions pour tous les évêques, prêtres, diacres, sous-diacres, acolytes, exorcistes, lecteurs, portiers, confesseurs, vierges, veuves, et pour tout le saint peuple de Dieu.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, par l’Esprit duquel tout le corps de l’Église est sanctifié et gouverné : exaucez nos supplications pour tous ses ordres, afin que, par le don de votre grâce, tous les degrés vous servent fidèlement. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus et pro omnibus Episcopis, Presbyteris, Diaconibus, Subdiaconibus, Acolythis, Exorcistis, Lectoribus, Ostiariis, Confessoribus, Virginibus, Viduis: et pro omni populo sancto Dei.",
+        "prayer": "Omnipotens sempiterne Deus, cuius Spiritu totum corpus Ecclesiae sanctificatur et regitur: exaudi nos pro universis ordinibus supplicantes; ut gratiae tuae munere, ab omnibus tibi gradibus fideliter serviatur. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate eiusdem Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[2]"
+      }
+    },
+    {
+      "ordinal": 4,
+      "key": "PUBLIC_OFFICIALS",
+      "title": "Pro omnibus res publicas moderantibus",
+      "donorEditionClass": "SOURCE_EDITION_UNCOLLATED",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "Archived vernacular candidate: match printed-1962 oration text to original folio before approval",
+      "historicalDonor": {
+        "latin": "Orémus et pro ómnibus res públicas moderántibus, eorúmque ministériis et potestátibus: ut Deus et Dóminus noster mentes et corda eórum secúndum voluntátem suam dírigat ad nostram perpétuam pacem.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, in cuius manu sunt ómnium potestátes et ómnium iura populórum: réspice benígnus ad eos, qui nos in potestáte regunt; ut ubíque terrárum, déxtera tua protegénte, et religiónis intégritas et pátriæ secúritas indesinénter consístat. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray for all who govern states and for their ministries and authorities: that our God and Lord may direct their minds and hearts according to His will for our lasting peace.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, in Whose hand are all powers and the rights of all peoples: look graciously upon those who rule us, that under the protection of Thy right hand religious integrity and the security of our country may everywhere endure. Through Christ our Lord. Amen.",
+        "french": "Prions pour tous ceux qui gouvernent les États, pour leurs ministères et leurs pouvoirs : que notre Dieu et Seigneur dirige leurs esprits et leurs cœurs selon sa volonté, pour notre paix durable.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, entre les mains duquel sont tous les pouvoirs et les droits de tous les peuples : regardez avec bonté ceux qui nous gouvernent, afin que, votre droite nous protégeant, l’intégrité de la religion et la sécurité de la patrie demeurent fermes en tout lieu. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus et pro omnibus res publicas moderantibus, eorumque ministeriis et potestatibus: ut Deus et Dominus noster mentes et corda eorum secundum voluntatem suam dirigat ad nostram perpetuam pacem.",
+        "prayer": "Omnipotens sempiterne Deus, in cuius manu sunt omnium potestates et omnium iura populorum: respice benignus ad eos, qui nos in potestate regunt; ut ubique terrarum, dextera tua protegente, et religionis integritas, et patriae securitas indesinenter consistat. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[3]"
+      }
+    },
+    {
+      "ordinal": 5,
+      "key": "CATECHUMENS",
+      "title": "Pro catechumenis",
+      "donorEditionClass": "SOURCE_EDITION_UNCOLLATED",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "Archived vernacular candidate: match printed-1962 oration text to original folio before approval",
+      "historicalDonor": {
+        "latin": "Orémus et pro catechúmenis nostris: ut Deus et Dóminus noster adapériat aures præcordiórum ipsórum, ianuámque misericórdiæ; ut per lavácrum regeneratiónis accépta remissióne ómnium peccatórum, et ipsi inveniántur in Christo Iesu Dómino nostro.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, qui Ecclésiam tuam nova semper prole fecúndas: auge fidem et intelléctum catechúmenis nostris; ut renáti fonte baptísmatis, adoptiónis tuæ fíliis aggregéntur. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray for our catechumens: that our God and Lord may open the ears of their hearts and the gate of mercy, so that receiving the remission of all sins in the laver of regeneration they too may be found in Christ Jesus our Lord.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, Who ever makest Thy Church fruitful with new offspring: increase the faith and understanding of our catechumens, that being reborn at the font of Baptism they may be joined to the children of Thy adoption. Through Christ our Lord. Amen.",
+        "french": "Prions pour nos catéchumènes : que notre Dieu et Seigneur ouvre les oreilles de leur cœur et la porte de sa miséricorde ; afin qu’ayant reçu par le bain de la régénération la rémission de tous leurs péchés, ils soient eux aussi trouvés dans le Christ Jésus notre Seigneur.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, qui fécondez toujours votre Église d’une nouvelle descendance : augmentez la foi et l’intelligence de nos catéchumènes, afin que, renés à la fontaine du Baptême, ils soient agrégés aux fils de votre adoption. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus et pro catechumenis nostris: ut Deus et Dominus noster adaperiat aures praecordiorum ipsorum, ianuamque misericordiae; ut per lavacrum regenerationis accepta remissione omnium peccatorum, et ipsi inveniantur in Christo Iesu Domino nostro.",
+        "prayer": "Omnipotens sempiterne Deus, qui Ecclesiam tuam nova semper prole foecundas: auge fidem et intellectum catechumenis nostris; ut renati fonte baptismatis, adoptionis tuae filiis aggregentur. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[4]"
+      }
+    },
+    {
+      "ordinal": 6,
+      "key": "NEEDS_OF_FAITHFUL",
+      "title": "Pro fidelium necessitatibus",
+      "donorEditionClass": "SOURCE_EDITION_UNCOLLATED",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "Archived vernacular candidate: match printed-1962 oration text to original folio before approval",
+      "historicalDonor": {
+        "latin": "Orémus, dilectíssimi nobis, Deum Patrem omnipoténtem, ut cunctis mundum purget erróribus: morbos áuferat: famem depéllat: apériat cárceres: víncula dissólvat: peregrinántibus réditum: infirmántibus sanitátem: navigántibus portum salútis indúlgeat.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, mæstórum consolátio, laborántium fortitúdo: pervéniant ad te preces de quacúmque tribulatióne clamántium; ut omnes sibi in necessitátibus suis misericórdiam tuam gáudeant affuísse. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray, dearly beloved, to God the Father almighty, that He may cleanse the world of error, take away disease, drive away famine, open prisons, break chains, grant travellers a safe return, health to the sick and a haven of safety to those at sea.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, comfort of the sorrowful and strength of those who labour: let the prayers of all who cry to Thee in any tribulation reach Thee, that all may rejoice that Thy mercy has helped them in their needs. Through Christ our Lord. Amen.",
+        "french": "Prions Dieu le Père tout-puissant de purifier le monde de toute erreur, d’écarter les maladies, de chasser la famine, d’ouvrir les prisons, de briser les chaînes, d’accorder aux voyageurs le retour, aux malades la santé et aux navigateurs un port de salut.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, consolation des affligés et force de ceux qui peinent : que parviennent jusqu’à vous les prières de ceux qui crient vers vous dans toute tribulation, afin que tous se réjouissent d’avoir éprouvé votre miséricorde dans leurs nécessités. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus, dilectissimi nobis, Deum Patrem omnipotentem, ut cunctis mundum purget erroribus: morbos auferat: famem depellat: aperiat carceres: vincula dissolvat: peregrinantibus reditum: infirmantibus sanitatem: navigantibus portum salutis indulgeat.",
+        "prayer": "Omnipotens sempiterne Deus, maestorum consolatio, laborantium fortitudo: perveniant ad te preces de quacumque tribulatione clamantium; ut omnes sibi in necessitatibus suis misericordiam tuam gaudeant affuisse. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[5]"
+      }
+    },
+    {
+      "ordinal": 7,
+      "key": "HERETICS_AND_SCHISMATICS",
+      "title": "Pro unitate Ecclesiae",
+      "donorEditionClass": "LATER_ECUMENICAL_VARIANT_NOT_PRINTED_1962",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "LATER_ECUMENICAL_VARIANT_NOT_PRINTED_1962",
+      "historicalDonor": {
+        "latin": "Orémus et pro ómnibus frátribus nostris, qui in Christum credunt: ut Deus et Dóminus noster eos a cunctis erróribus erípere, et ad sanctam matrem Ecclésiam cathólicam atque apostólicam revocáre dignétur.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, qui salvas omnes et néminem vis períre: réspice ad ánimas diabólica fraude decéptas; ut, omni hærética pravitáte depósita, errántium corda resipíscant et ad veritátis tuæ rédeant unitátem. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray also for all our brethren who believe in Christ: that our God and Lord may deliver them from every error and deign to recall them to the holy mother Catholic and Apostolic Church.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, Who savest all and willest that none should perish: look upon souls deceived by error, that putting aside what separates them from the truth, their hearts may return to the unity of Thy truth. Through Christ our Lord. Amen.",
+        "french": "Prions aussi pour tous nos frères qui croient au Christ : que notre Dieu et Seigneur daigne les délivrer de toute erreur et les rappeler à la sainte Mère Église catholique et apostolique.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, qui sauvez tous les hommes et ne voulez qu’aucun périsse : regardez les âmes trompées par l’erreur ; que leurs cœurs reviennent à eux-mêmes et retournent à l’unité de votre vérité. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus et pro haereticis et schismaticis: ut Deus et Dominus noster eruat eos ab erroribus universis; et ad sanctam matrem Ecclesiam Catholicam atque Apostolicam revocare dignetur.",
+        "prayer": "Omnipotens sempiterne Deus, qui salvas omnes, et neminem vis perire: respice ad animas diabolica fraude deceptas; ut omni haeretica pravitate deposita, errantium corda resipiscant, et ad veritatis tuae redeant unitatem. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[6]"
+      }
+    },
+    {
+      "ordinal": 8,
+      "key": "CONVERSION_OF_JEWS",
+      "title": "Pro Iudaeis",
+      "donorEditionClass": "HOLY_SEE_2008_VARIANT_NOT_PRINTED_1962",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "HOLY_SEE_2008_VARIANT_NOT_PRINTED_1962",
+      "historicalDonor": {
+        "latin": "Orémus et pro Iudǽis: ut Deus et Dóminus noster illúminet corda eórum, ut agnóscant Iesum Christum salvatórem ómnium hóminum.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, qui vis ut omnes hómines salvi fiant et ad agnitiónem veritátis véniant, concéde propítius, ut plenitúdine géntium in Ecclésiam tuam intránte omnis Israel salvus fiat. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray also for the Jewish people: that our God and Lord may enlighten their hearts, so that they may acknowledge Jesus Christ, the Saviour of all men.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, Who willest that all men be saved and come to the knowledge of the truth: graciously grant that, as the fullness of the nations enters Thy Church, all Israel may be saved. Through Christ our Lord. Amen.",
+        "french": "Prions aussi pour les Juifs : que notre Dieu et Seigneur illumine leurs cœurs, afin qu’ils reconnaissent Jésus-Christ, Sauveur de tous les hommes.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, qui voulez que tous les hommes soient sauvés et parviennent à la connaissance de la vérité : accordez dans votre bonté que, la plénitude des nations entrant dans votre Église, tout Israël soit sauvé. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus et pro Iudaeis: ut Deus et Dominus noster auferat velamen de cordibus eorum; ut et ipsi agnoscant Iesum Christum Dominum nostrum.",
+        "prayer": "Omnipotens sempiterne Deus, qui Iudaeos etiam a tua misericordia non repellis: exaudi preces nostras, quas pro illius populi obcaecatione deferimus; ut, agnita veritatis tuae luce, quae Christus est, a suis tenebris eruantur. Per eundem Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[7]"
+      }
+    },
+    {
+      "ordinal": 9,
+      "key": "CONVERSION_OF_PAGANS",
+      "title": "Pro Paganis",
+      "donorEditionClass": "SOURCE_EDITION_UNCOLLATED",
+      "publishable": false,
+      "readyForDirectReaderImport": false,
+      "heldReason": "Archived vernacular candidate: match printed-1962 oration text to original folio before approval",
+      "historicalDonor": {
+        "latin": "Orémus et pro pagánis: ut Deus omnípotens áuferat iniquitátem a córdibus eórum; ut, relíctis idólis suis, convertántur ad Deum vivum et verum, et únicum Fílium eius Iesum Christum Deum et Dóminum nostrum.\n\nOrémus.\nFlectámus génua.\nLeváte.\nOmnípotens sempitérne Deus, qui non mortem peccatórum, sed vitam semper inquíris: súscipe propítius oratiónem nostram, et líbera eos ab idolórum cultúra; et ággrega Ecclésiæ tuæ sanctæ ad laudem et glóriam nóminis tui. Per Christum Dóminum nostrum. Amen.",
+        "english": "Let us pray also for the pagans: that almighty God may remove iniquity from their hearts, so that abandoning idols they may turn to the living and true God and to His only Son Jesus Christ, our God and Lord.\n\nLet us pray.\nLet us kneel.\nArise.\nAlmighty and everlasting God, Who seekest not the death of sinners but their life: graciously receive our prayer, deliver them from the worship of idols, and join them to Thy holy Church for the praise and glory of Thy Name. Through Christ our Lord. Amen.",
+        "french": "Prions aussi pour les païens : que Dieu tout-puissant ôte l’iniquité de leurs cœurs ; afin qu’abandonnant leurs idoles ils se convertissent au Dieu vivant et vrai et à son Fils unique Jésus-Christ, notre Dieu et Seigneur.\n\nPrions.\nFléchissons les genoux.\nLevez-vous.\nDieu tout-puissant et éternel, qui cherchez toujours non la mort mais la vie des pécheurs : accueillez favorablement notre prière, délivrez-les du culte des idoles et agréez-les à votre sainte Église pour la louange et la gloire de votre nom. Par le Christ notre Seigneur. Ainsi soit-il."
+      },
+      "referenceCurrentLatin": {
+        "intention": "Oremus et pro paganis: ut Deus omnipotens auferat iniquitatem a cordibus eorum; ut relictis idolis suis, convertantur ad Deum vivum et verum, et unicum Filium eius Iesum Christum Deum et Dominum nostrum.",
+        "prayer": "Omnipotens sempiterne Deus, qui non mortem peccatorum, sed vitam semper inquiris: suscipe propitius orationem nostram, et libera eos ab idolorum cultura; et aggrega Ecclesiae tuae sanctae ad laudem et gloriam nominis tui. Per Dominum nostrum Iesum Christum, Filium tuum: qui tecum vivit et regnat in unitate Spiritus Sancti Deus, per omnia saecula saeculorum. Amen."
+      },
+      "exactComparisonStatus": "NOT_YET_CRITICALLY_COLLATED",
+      "sourceRefs": {
+        "archive": "legacy/v43.33.parts/chunk-005-p00.txt",
+        "canonical": "data/presentation/reader-good-friday.v1.json#solemnPrayers[8]"
+      }
+    }
+  ]
+}
