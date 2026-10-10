@@ -1,11 +1,7 @@
-name: Sacred art — major feast approval gallery
+name: ARCHIVED pilot — 19-feast sacred-art sample gallery
+# Superseded by comprehensive all-year research and negative-exception audit.
+# Kept as manually retrievable proof of concept; never run on research updates.
 on:
-  push:
-    branches: [platform/885-sacred-art-candidates]
-    paths:
-      - "tools/calendar/build-sacred-art-priority-gallery.py"
-      - "data/calendar/sacred-art-priority-review-shortlist.v1.json"
-      - ".github/workflows/sacred-art-priority-review.yml"
   workflow_dispatch:
 
 permissions:

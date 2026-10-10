@@ -4,8 +4,6 @@ on:
     branches: [platform/885-sacred-art-candidates]
     paths:
       - "tools/calendar/audit-sacred-art-modules.mjs"
-      - "tools/calendar/build-sacred-art-priority-gallery.py"
-      - "data/calendar/sacred-art-priority-review-shortlist.v1.json"
       - "tools/calendar/audit-sacred-art-prayer-slots.mjs"
       - "tools/calendar/report-sacred-art-liturgical-priorities.mjs"
       - "tools/calendar/build-sacred-art-reuse-index.mjs"
@@ -47,22 +45,3 @@ jobs:
           path: artifacts/sacred-art-coverage/
           if-no-files-found: warn
 
-  priority-gallery:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install Pillow
-      - name: Generate human-review gallery with offline embedded official museum previews
-        run: python tools/calendar/build-sacred-art-priority-gallery.py
-      - name: Upload standalone priority gallery and preview-source verification report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ad-orientem-priority-art-gallery
-          path: artifacts/sacred-art-priority-review/
-          if-no-files-found: error
-          retention-days: 30
