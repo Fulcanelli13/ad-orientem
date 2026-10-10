@@ -9,6 +9,11 @@ on:
       - ".github/workflows/pray-guided-acceptance.yml"
   workflow_dispatch:
 
+# Cancel obsolete revisions of the same pull request; never cancel manual or main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   cards-and-prayers:
     runs-on: ubuntu-latest

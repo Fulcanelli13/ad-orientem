@@ -15,6 +15,11 @@ on:
       - 'tests/scripture-remaining-psalms.mjs'
       - '.github/workflows/scripture-source-audit.yml'
   workflow_dispatch:
+# Cancel obsolete revisions of the same pull request; never cancel manual or main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   source-candidates:
     runs-on: ubuntu-latest
