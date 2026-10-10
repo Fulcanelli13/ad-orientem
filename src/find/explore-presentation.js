@@ -1,10 +1,12 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+import { renderHeritageToString } from "./heritage-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
 const L=(language,en,fr)=>language==="fr"?fr:en;
 
 const LENS_LABELS=Object.freeze({
+  heritage:["Heritage","Patrimoine"],
   tlm:["TLM","TLM"],
   shrines:["Shrines","Sanctuaires"],
   apparitions:["Apparitions","Apparitions"],
@@ -302,6 +304,8 @@ export function buildExploreViewModel({
   selectedOverride=null,
   placeProfiles=[],
   selectedPlaceId=null,
+  expandPlace=false,
+  customCards=[],
   displayLimit=120,
 }={}){
   const list=arr(items);
@@ -321,6 +325,8 @@ export function buildExploreViewModel({
     filters,
     selected,
     selectedPlace,
+    expandPlace:Boolean(expandPlace),
+    customCards:arr(customCards),
     mapped,
     addressOnly,
     displayLimit:Number.isFinite(Number(displayLimit))?Math.max(60,Math.floor(Number(displayLimit))):120,
@@ -328,12 +334,13 @@ export function buildExploreViewModel({
 }
 
 export function renderExploreToString(vm){
+  if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet});
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.counts?.[vm.lens]??vm.items.length);
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
-  html+='<nav class="aoExploreLensTabs">';
+  html+='<nav class="aoExploreLensTabs"><button type="button" data-find-filter="lens" data-find-filter-value="heritage" class="aoExploreReturnMap">'+esc(L(vm.language,"Unified map","Carte générale"))+'</button>';
   for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
     const label=lensLabel(vm.language,lens);
     const count=vm.counts?.[lens];
