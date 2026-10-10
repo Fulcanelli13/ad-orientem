@@ -16,6 +16,17 @@ const properSlots=properToReaderSlots(proper);
 const prepared={session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}}};
 const schola=createNativeScholaController({sungCorpus:sung,properSlots,prepared});
 assert.equal(schola.supported,true);
+const frenchOrdinary=JSON.parse(readFileSync(new URL("../data/presentation/reader-french-ordinary.v1.json",import.meta.url),"utf8"));
+const frenchSchola=createNativeScholaController({
+  sungCorpus:sung,properSlots,
+  prepared:{session:prepared.session,readerPreferences:{language:"fr"}},
+  frenchOrdinary,
+});
+const frenchGloria=frenchSchola.selectTrack("GLORIA");
+assert.match(frenchGloria.schola.latin,/Deo/);
+assert.ok(frenchGloria.schola.english);
+assert.notEqual(frenchGloria.schola.english,frenchGloria.schola.latin);
+assert.equal(frenchGloria.schola.english,frenchOrdinary.byCue[frenchGloria.schola.cueId]);
 
 for(const id of ["INTROIT","KYRIE","GLORIA","GRADUAL","ALLELUIA_TRACT_SEQUENCE","CREDO","OFFERTORY","SANCTUS_BENEDICTUS","AGNUS_DEI","COMMUNION"]){
   assert.ok(schola.trackIds.includes(id),"missing native Schola track "+id);

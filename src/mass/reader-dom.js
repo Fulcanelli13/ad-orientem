@@ -350,11 +350,18 @@ const SHELL_STYLE = `
   display:inline-block;min-width:max-content;font:500 17px/1.25 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);
   color:#f2f3ed;white-space:nowrap;will-change:transform;backface-visibility:hidden
 }
-.ao-schola-translation{
-  display:none;margin-top:7px;padding:8px 10px;border-radius:9px;background:rgba(255,255,255,.035);
-  border:1px solid rgba(255,255,255,.05);font:400 14px/1.42 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);color:#d8dfd8
+.ao-schola-main[data-schola-translate]:focus-visible{
+  outline:2px solid var(--ao-mass-accent-text);outline-offset:2px;
 }
-.ao-schola-dock[data-show-translation="true"] .ao-schola-translation{display:block}
+.ao-schola-dock[data-show-translation="true"] .ao-schola-main{
+  align-items:flex-start;overflow-y:auto;overscroll-behavior:contain;
+  scrollbar-width:thin;padding:7px 3px 5px
+}
+.ao-schola-dock[data-show-translation="true"] [data-role="schola"]{
+  display:block;min-width:0;width:100%;white-space:normal;
+  overflow-wrap:break-word;transform:none!important;
+  font-style:italic;color:var(--ao-mass-accent-text)
+}
 .ao-schola-meta{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px;min-height:0}
 .ao-schola-progress{grid-row:1;width:100%;height:2px;max-width:none;min-width:0;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px;opacity:.76}
 .ao-schola-progress>span{display:block;height:100%;width:0;background:var(--ao-mass-accent);transition:none}
@@ -1024,8 +1031,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-page" data-role="schola-page"></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
-    <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Show Schola translation" aria-pressed="false" aria-disabled="true"><span data-role="schola">—</span></div>
-    <div class="ao-schola-translation" data-role="schola-translation" aria-live="polite"></div>
+    <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
       <div class="ao-schola-controls" aria-label="Schola text speed">
@@ -1495,23 +1501,31 @@ export function createReaderDomAdapter({
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
     if(changed){
+      const restoringFromTranslation=scholaTranslationVisible &&
+        !scholaPausedBeforeTranslation && !scholaUserPaused;
       scholaIdentity=identity;
       scholaTickerFinishedIdentity=null;
       scholaTranslationVisible=false;
       cancelScholaTicker({clearIdentity:true});
+      // A new independent chant returns to Latin and resumes only if
+      // translation (not a user pause) was what stopped the clock.
+      if(restoringFromTranslation){scholaPaused=false;syncScholaControls();}
     }
     dock.dataset.showTranslation=String(Boolean(scholaTranslationVisible && schola?.english));
     const translationTrigger=root.querySelector("[data-schola-translate]");
     if(translationTrigger){
       translationTrigger.setAttribute?.("aria-pressed",String(Boolean(scholaTranslationVisible && schola?.english)));
       translationTrigger.setAttribute?.("aria-disabled",String(!schola?.english));
-      translationTrigger.setAttribute?.("aria-label",scholaTranslationVisible?"Hide Schola translation":"Show Schola translation");
+      translationTrigger.setAttribute?.("aria-label",scholaTranslationVisible?"Restore Latin Schola text":"Translate Schola text in place");
       translationTrigger.tabIndex=schola?.english?0:-1;
     }
     const title=root.querySelector(".ao-schola-kicker");
     if(title)title.textContent=schola ? scholaTitle(schola.trackId) : "SCHOLA";
-    setText(root,"schola",schola ? (schola.latin??textValue(schola)) : null);
-    setText(root,"schola-translation",schola?.english??null);
+    setText(root,"schola",schola
+      ? (scholaTranslationVisible && schola.english
+          ? schola.english
+          : (schola.latin??textValue(schola)))
+      : null);
     const page=root.querySelector('[data-role="schola-page"]');
     if(page)page.textContent=schola?.total ? String((Number(schola.index)||0)+1)+" / "+String(schola.total) : "";
     const progress=root.querySelector('[data-role="schola-progress"]');
@@ -1621,11 +1635,15 @@ export function createReaderDomAdapter({
       scholaPausedBeforeTranslation=scholaPaused;
       scholaTranslationVisible=true;
       setScholaPaused(true);
+      cancelScholaTicker({clearIdentity:true});
+      const line=root.querySelector('[data-role="schola"]');
+      if(line?.style)line.style.transform="";
+      syncScholaContent();
     }else{
       scholaTranslationVisible=false;
+      syncScholaContent();
       if(!scholaPausedBeforeTranslation&&!scholaUserPaused)setScholaPaused(false);
     }
-    syncScholaContent();
     return true;
   }
 

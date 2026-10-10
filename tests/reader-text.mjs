@@ -128,8 +128,12 @@ const gloriaOpening=gloria.paragraphs.find(p=>Array.isArray(p.sourceCueIds) && p
 assert.ok(gloriaOpening,"Gloria opening composite was not built");
 assert.deepEqual(gloriaOpening.sourceCueIds,["AO.SM.C0053","AO.SM.C0054"],
   "Gloria opening lost canonical cue provenance");
-assert.equal(gloriaOpening.primary,"Glory to God in the highest.",
-  "Gloria English opening still contains segmented 'to God' duplication");
+assert.equal(gloriaOpening.primary,"Glória in excélsis Deo.",
+  "Sung Gloria opening is not Latin-first");
+assert.equal(gloriaOpening.alternate,"Glory to God in the highest.",
+  "Gloria English opening lost its exact replace-in-place translation");
+assert.equal(gloriaOpening.secondary,null,"sung Gloria should not add translation underneath");
+assert.equal(gloriaOpening.replaceOnToggle,true);
 
 for(const corpus of [low,sung]){
   const offertoryCard=buildReaderSectionCard({
@@ -151,6 +155,35 @@ const credo=buildReaderSectionCard({
 assert.ok(!credo.paragraphs.some(p=>["AO.SM.C0278","AO.SM.C0279"].includes(p.id)),
   "Credo state sentinels leaked into prayer text");
 
+// Language is owned by the exact source: Schola/public chant versus
+// private words versus the Proper, never by a generic TEXT kind.
+const latinSung=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.002"),properSlots});
+const vernLow=buildReaderSectionCard({corpus:low,section:sections.sectionById("AO.CARD.002"),properSlots});
+assert.match(latinSung.paragraphs[0].primary,/Kýrie/);
+assert.match(latinSung.paragraphs[0].alternate,/Lord, have mercy/);
+assert.match(vernLow.paragraphs[0].primary,/Lord, have mercy/);
+const sanctus=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.013"),properSlots});
+assert.match(sanctus.paragraphs[0].primary,/Sanctus/i);
+const agnus=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.021"),properSlots});
+assert.match(agnus.paragraphs[0].primary,/Agnus Dei/i);
+const credoOpening=credo.paragraphs.find(p=>p.sourceCueIds.includes("AO.SM.C0089"));
+assert.match(credoOpening.primary,/^Credo/);
+assert.equal(credoOpening.displayLanguage,"LATIN");
+const silent=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.014"),properSlots});
+const teIgitur=silent.paragraphs.find(p=>p.id==="AO.SM.C0150");
+assert.match(teIgitur.primary,/Therefore/i);
+assert.match(teIgitur.alternate,/Te igitur/i);
+assert.equal(teIgitur.displayLanguage,"VERNACULAR");
+for(const slot of ["COLLECT_SET","EPISTLE_OR_LESSON","GOSPEL","PREFACE","POSTCOMMUNION_SET","INTROIT","GRADUAL"]){
+  const card=sung.blocks.find(b=>b.Proper_Slot===slot);
+  const section=sections.sections.find(section=>section.sequence===Number(card.Macro_ID.slice(-2)));
+  const resolved=buildReaderSectionCard({corpus:sung,section,properSlots});
+  const p=resolved.paragraphs.find(row=>row.primary==="ENGLISH "+slot);
+  assert.ok(p,slot+" Proper was incorrectly Latin-first despite the source priority");
+  assert.equal(p.alternate,"LATIN "+slot);
+}
+const pater=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.019"),properSlots});
+assert.ok(pater.paragraphs.some(p=>/Pater noster/i.test(p.primary)),"sung Pater noster not Latin");
 const t=(lat,en)=>({lat,en});
 const currentProper=properToReaderSlots({
   sourcePath:"Sancti/10-07",
