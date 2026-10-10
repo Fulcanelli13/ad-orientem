@@ -1,14 +1,15 @@
 // Mass-specific liturgical palette. The selected/resolved celebration owns colour;
 // the calendar is context, never an override for a votive Mass or Requiem.
-// Theme tokens affect presentation only: no Mass graph, card, text or rite changes.
+// The seven named accents reproduce v1.80's v1.70 palette exactly; dark
+// ambience surfaces are contextual additions. No Mass graph/text changes.
 const PALETTES=Object.freeze({
-  WHITE:Object.freeze({bg:"#191815",top:"#211f19",bottom:"#151410",panel:"#27231d",accent:"#cbb992",accentText:"#e9dabc"}),
-  RED:Object.freeze({bg:"#1b1014",top:"#271418",bottom:"#140b10",panel:"#2b191d",accent:"#b96c70",accentText:"#e5a5a4"}),
-  GREEN:Object.freeze({bg:"#101a14",top:"#15241b",bottom:"#0b130f",panel:"#1a2a20",accent:"#79a080",accentText:"#b2d0b5"}),
-  VIOLET:Object.freeze({bg:"#17121e",top:"#21182b",bottom:"#110d18",panel:"#271d31",accent:"#a18ab9",accentText:"#c7b5d9"}),
-  ROSE:Object.freeze({bg:"#21151d",top:"#2d1d29",bottom:"#170e15",panel:"#33212f",accent:"#c88eac",accentText:"#ecc0d5"}),
-  BLACK:Object.freeze({bg:"#0c0e12",top:"#111319",bottom:"#08090d",panel:"#1b1c23",accent:"#9193a2",accentText:"#c4c5d1"}),
-  GOLD:Object.freeze({bg:"#1d1710",top:"#292015",bottom:"#141009",panel:"#302619",accent:"#d1a763",accentText:"#f0d5a5"}),
+  WHITE:Object.freeze({bg:"#191815",top:"#211f19",bottom:"#151410",panel:"#27231d",accent:"#d6caa6",accentText:"#e9dabc"}),
+  RED:Object.freeze({bg:"#1b1014",top:"#271418",bottom:"#140b10",panel:"#2b191d",accent:"#b7736b",accentText:"#e5a5a4"}),
+  GREEN:Object.freeze({bg:"#101a14",top:"#15241b",bottom:"#0b130f",panel:"#1a2a20",accent:"#6d9575",accentText:"#b2d0b5"}),
+  VIOLET:Object.freeze({bg:"#17121e",top:"#21182b",bottom:"#110d18",panel:"#271d31",accent:"#927aa2",accentText:"#c7b5d9"}),
+  ROSE:Object.freeze({bg:"#21151d",top:"#2d1d29",bottom:"#170e15",panel:"#33212f",accent:"#c58e9f",accentText:"#ecc0d5"}),
+  BLACK:Object.freeze({bg:"#0c0e12",top:"#111319",bottom:"#08090d",panel:"#1b1c23",accent:"#a8aaa6",accentText:"#c4c5d1"}),
+  GOLD:Object.freeze({bg:"#1d1710",top:"#292015",bottom:"#141009",panel:"#302619",accent:"#c7aa6d",accentText:"#f0d5a5"}),
   // An unresolved celebration must not silently become a green Mass.
   NEUTRAL:Object.freeze({bg:"#080c12",top:"#10151c",bottom:"#080b10",panel:"#181e27",accent:"#929ba8",accentText:"#c6cdd5"}),
 });
