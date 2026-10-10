@@ -147,8 +147,12 @@ if(report.observedYear.days&&report.observedYear.days[0]?.date.startsWith("2026-
   assert.equal(r.observedPrincipalId,day.observedPrincipalId,"I-class research ID must match actual source");
   const target=subjectById.get(r.researchTargetId);
   assert.ok(target,"I-class worklist target must exist: "+r.researchTargetId);
+  const candidateIds=(target.images||[]).filter(id=>validOriginals.some(a=>a.id===id));
+  assert.equal(candidateIds.length,target.downloadedOriginals,"Candidate image list should have the audited original count");
   return {date:r.date,id:r.observedPrincipalId,title:r.observedTitle,
    associationTier:r.associationTier,researchTargetId:r.researchTargetId,
+   candidateOriginalIds: candidateIds,
+   candidateEligibility:"RESEARCH_ONLY_NO_VISUAL_RIGHTS_OR_SCRIPTURE_CERTIFICATION",
    acquiredOriginalsInSubjectPool:target.downloadedOriginals,
    contextualOrUnverifiedPoolOriginals:target.downloadedOriginals,
    directObservedIdentityOriginals:day.acquiredExplicitObservedPrincipalOriginals,
