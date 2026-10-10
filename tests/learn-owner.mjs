@@ -144,3 +144,4 @@ console.log("PASS modular Learn owner: v43.59.30 hub plus Spiritual Life and v38
 await import("./learn-public-discovery.mjs");
 await import("./learn-direct-entry-stale-launch.mjs");
 await import("./learn-back-home-recovery.mjs");
+await import("./formation-qa-recovery-visibility.mjs");
