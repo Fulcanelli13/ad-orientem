@@ -67,8 +67,19 @@ try{
     "original Our Lady rose missing from application boot");
   assert.match(roses.loader?.mask??"",/rose-evangelists-v4343\.png/,
     "original Four Evangelists rose missing from asynchronous loader");
-  assert.equal(roses.boot?.animation,"aoRoseIllumine");
-  assert.equal(roses.loader?.animation,"aoRoseIllumine");
+  // The archived ::before remains as the no-JS fallback; the director can
+  // suppress that pulse to crossfade three exact masks as separate layers.
+  const enhancedBoot=await page.evaluate(()=>{
+    const mark=document.querySelector(".aoCinemaBootCross.aoBrandEmblem");
+    return {enhanced:mark?.dataset?.aoLoadingEnhanced,
+      count:mark?.querySelectorAll(".aoLoadingArtLayer")?.length??0,
+      first:mark?.querySelector('.aoLoadingArtLayer[data-visible="true"]')?.dataset?.art??null};
+  });
+  assert.equal(enhancedBoot.enhanced,"true","boot has not installed three-art loading owner");
+  assert.equal(enhancedBoot.count,3);
+  assert.equal(enhancedBoot.first,"marian");
+  assert.equal(roses.boot?.animation,"none","double-animated donor ::before obscures artwork crossfade");
+  assert.equal(roses.loader?.animation,"aoRoseIllumine","unchanged legacy loader must preserve its fallback artwork");
   assert.ok(roses.boot?.width>=130&&roses.boot?.height>=130,"boot rose lost donor scale");
   assert.ok(roses.loader?.width>=56&&roses.loader?.height>=56,"content rose lost donor scale");
   await page.screenshot({path:resolve(out,"01a-v4343-marian-boot-390.png"),fullPage:false});
@@ -83,6 +94,32 @@ try{
   await asyncLoader.evaluate(el=>{el.classList.add("aoCinemaLoaderOn");el.setAttribute("aria-hidden","false");});
   await page.screenshot({path:resolve(out,"01b-v4343-evangelists-async-390.png"),fullPage:false});
   await asyncLoader.evaluate(el=>{el.classList.remove("aoCinemaLoaderOn");el.setAttribute("aria-hidden","true");});
+
+  // Real asynchronous work produces the director's first artwork only after
+  // its debounce, and its second artwork only if the task remains pending.
+  await page.evaluate(()=>{window.__aoLoadingVisualTicket=window.AO_LOADING_DIRECTOR_V1.begin("learn");});
+  await page.waitForFunction(()=>document.querySelector("#ao-cinema-loader")?.dataset?.aoLoadingDirector==="active",
+    null,{timeout:2500});
+  const artwork=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-cinema-loader");
+    const mark=root.querySelector(".aoCinemaLoaderMark");
+    const first=mark.querySelector('.aoLoadingArtLayer[data-visible="true"]');
+    const layers=[...mark.querySelectorAll(".aoLoadingArtLayer")];
+    return {count:layers.length,selected:root.dataset.aoLoadingArt,
+      mask:getComputedStyle(first.querySelector(".aoLoadingArtSymbol")).maskImage,
+      logoMask:getComputedStyle(layers.find(x=>x.dataset.art==="logo").querySelector(".aoLoadingArtSymbol")).maskImage};
+  });
+  assert.equal(artwork.count,3);
+  assert.equal(artwork.selected,"evangelists");
+  assert.match(artwork.mask,/rose-evangelists-v4343.png/);
+  assert.match(artwork.logoMask,/ao-brand-emblem.png/);
+  await page.screenshot({path:resolve(out,"01c-loading-director-first-390.png"),fullPage:false});
+  await page.waitForFunction(()=>document.querySelector("#ao-cinema-loader")?.dataset?.aoLoadingArt==="logo",
+    null,{timeout:3500});
+  await page.screenshot({path:resolve(out,"01d-loading-director-second-390.png"),fullPage:false});
+  await page.evaluate(()=>{window.__aoLoadingVisualTicket.end();delete window.__aoLoadingVisualTicket});
+  assert.notEqual(await asyncLoader.getAttribute("data-ao-loading-director"),"active");
+  assert.equal(await asyncLoader.getAttribute("aria-hidden"),"true","completed workload left blocking loader");
 
   await page.emulateMedia({reducedMotion:"reduce"});
   const reducedRose=await page.evaluate(()=>
