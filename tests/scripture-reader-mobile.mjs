@@ -32,6 +32,9 @@ try{
  const dialog=page.locator("#ao-scripture-overlay");
  await dialog.waitFor({state:"visible",timeout:15000});
  assert.equal(await dialog.getAttribute("role"),"dialog");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").count(),1);
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
+   "Standalone Bible entry should expose book navigation");
  assert.equal(await dialog.getAttribute("aria-modal"),"true");
  assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-scripture-close")),true);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),2);
@@ -138,7 +141,11 @@ try{
  // complete-work locator, not pretend to be verse-specific patristic exegesis.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Psalms 129:1")),true);
  await dialog.waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false,
+   "Contextual Scripture reading must put the passage first");
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
+ assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/depths from which the penitent cries/i,
+   "Commentary must be readable in-app, not link-only");
  const bellarmine=dialog.locator("[data-scripture-commentary-source='verified']");
  await bellarmine.waitFor({state:"visible",timeout:12000});
  assert.match(await bellarmine.getAttribute("href"),/ecatholic2000\.com\/bellarmine\/commentary-on-psalms/);

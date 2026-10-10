@@ -6,6 +6,7 @@ import { searchCertifiedScripture, searchScriptureBooks } from "./search.js";
 import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./reference-safety.js";
 import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
 import { verifiedScriptureCommentary } from "./context.js";
+import { inlineScriptureCommentary } from "./inline-commentary.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 
@@ -108,7 +109,10 @@ export function mountScriptureLibrary(root,{
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
-   wrap.append(element("p",t.notice,"aoScriptureNotice"));
+   // Citation reading is the primary surface. All-library navigation lives below it.
+   const browse=element("details",null,"aoScriptureBrowse");
+   browse.open=!context?.reference;
+   browse.append(element("summary",lang==="fr"?"Parcourir la Bible":"Browse the Bible"));
    const nav=element("div",null,"aoScriptureNav");
    const langControl=element("label",t.language);
    const languageSelect=element("select");
@@ -139,8 +143,8 @@ export function mountScriptureLibrary(root,{
      draw();
    });
    editionControl.append(editionSelect);nav.append(editionControl);
-   if(lang==="en")wrap.append(element("p",t.readable,"aoScriptureNotice"));
-   if(editionId==="cpdv-2009")wrap.append(element("p","The source opens this book; the chapter and verse must be located there manually.","aoScriptureNotice"));
+   if(lang==="en")browse.append(element("p",t.readable,"aoScriptureNotice"));
+   if(editionId==="cpdv-2009")browse.append(element("p","The source opens this book; the chapter and verse must be located there manually.","aoScriptureNotice"));
    const bookControl=element("label",t.book);
    const books=element("select");
    for(const book of scriptureBookCatalogue()){const opt=element("option",book);opt.value=book;books.append(opt);}
@@ -161,8 +165,9 @@ export function mountScriptureLibrary(root,{
      });
      label.append(input);nav.append(label);
    }
-   wrap.append(nav);
-   // Context is a single quiet row beneath the Bible/edition controls.
+   browse.append(nav);
+   browse.append(element("p",t.notice,"aoScriptureNotice"));
+   // The chosen passage, its expanded chapter and its commentary share one reading surface.
    // It never changes or replaces the Mass Proper, Rosary meditation or source.
    if(context?.reference){
      const contextBar=element("section",null,"aoScriptureContextBar");
@@ -199,7 +204,7 @@ export function mountScriptureLibrary(root,{
          :"Segments follow the liturgical reading. Omitted verses are not restored.","aoScriptureNotice"));
      }
      const controls=element("div",null,"aoScriptureContextControls");
-     for(const [key,en,fr] of [["selected","Verses","Versets"],["chapter","Chapter","Chapitre"],["commentary","Commentary","Commentaire"]]){
+     for(const [key,en,fr] of [["selected","Passage","Passage"],["chapter","Full chapter","Chapitre entier"],["commentary","Commentary","Commentaire"]]){
        const button=element("button",lang==="fr"?fr:en);
        button.type="button";button.dataset.scriptureContextDepth=key;
        button.setAttribute("aria-pressed",String(key==="commentary"?commentaryVisible:!commentaryVisible&&contextDepth===key));
@@ -207,6 +212,8 @@ export function mountScriptureLibrary(root,{
          if(key==="commentary")commentaryVisible=!commentaryVisible;
          else{contextDepth=key;commentaryVisible=false;}
          draw();
+         // Recreated tabs remain keyboard reachable after the panel changes.
+         queueMicrotask(()=>wrap.querySelector(`[data-scripture-context-depth="${key}"]`)?.focus?.({preventScroll:true}));
        });
        controls.append(button);
      }
@@ -217,15 +224,27 @@ export function mountScriptureLibrary(root,{
        area.setAttribute("role","region");
        area.setAttribute("aria-label",lang==="fr"?"Commentaire vérifié":"Verified commentary");
        if(verified){
-         area.append(element("p",verified.title));
-         area.append(element("p",verified.type==="PATRISTIC_COMPILATION"
-           ?(lang==="fr"?"Compilation patristique attribuée, distincte du texte inspiré.":"Attributed patristic compilation, distinct from inspired Scripture.")
-           :(lang==="fr"?"Exégèse catholique historique ; interprétation humaine, non texte inspiré.":"Historical Catholic exegesis; human interpretation, not inspired Scripture.")));
-         if(verified.scope==="PSALM_SECTION_IN_COMPLETE_WORK"){
-           area.append(element("p",(lang==="fr"?"Ouvrez le sommaire à Psaume ":"Use the contents for Psalm ")+location.chapter+
-             (lang==="fr"?" ; numérotation traditionnelle.":"; traditional numbering.")));
+         area.append(element("h3",verified.title));
+         const inline=inlineScriptureCommentary(location);
+         if(inline){
+           area.append(element("p",lang==="fr"
+             ?"Notes de lecture rédigées à partir des commentaires cités ; il ne s’agit pas de citations littérales."
+             :"Source-based reading notes, paraphrased rather than quoted verbatim.","aoScriptureCommentaryDisclosure"));
+           for(const entry of inline.entries){
+             const paragraph=element("p",entry.summary[lang],"aoScriptureCommentaryParagraph");
+             paragraph.prepend(element("strong",entry.author+" — "));
+             area.append(paragraph);
+           }
+         }else{
+           area.append(element("p",lang==="fr"
+             ?"La source est identifiée, mais son commentaire n’est pas encore transcrit dans l’application."
+             :"The source is identified, but its commentary has not yet been transcribed for in-app reading.","aoScriptureCommentaryDisclosure"));
          }
-         const link=element("a",lang==="fr"?"Lire le commentaire à la source ↗":"Read commentary at source ↗");
+         if(verified.scope==="PSALM_SECTION_IN_COMPLETE_WORK"){
+           area.append(element("p",(lang==="fr"?"Référence au Psaume ":"Traditional Psalm ")+location.chapter+
+             (lang==="fr"?" dans la numérotation de la Vulgate.":" in Vulgate numbering."),"aoScriptureCommentaryDisclosure"));
+         }
+         const link=element("a",lang==="fr"?"Consulter le texte original ↗":"Original commentary source ↗");
          link.href=verified.url;link.target="_blank";link.rel="noopener noreferrer";
          link.dataset.scriptureCommentarySource="verified";area.append(link);
        }else area.append(element("p",lang==="fr"
@@ -244,7 +263,10 @@ export function mountScriptureLibrary(root,{
    }
    const main=element("div",null,"aoScriptureReading");
    main.append(element("h3",passageReference(location)));
-   if(context?.reference&&contextDepth==="chapter"&&!commentaryVisible){
+   const chapterEntries=records.filter(r=>validatedRecord(r,editionId)&&r.book===location.book&&r.chapter===location.chapter)
+     .sort((a,b)=>a.verseStart-b.verseStart);
+   // An approved chapter is read here; the remote source is only a fallback when no pack is installed.
+   if(context?.reference&&contextDepth==="chapter"&&!commentaryVisible&&!chapterEntries.length){
      const chapterLink=element("a",lang==="fr"?"Lire le chapitre complet à la source ↗":"Read full chapter at source ↗");
      // Verse-specific links remain in the usual action; this link deliberately
      // asks for the whole chapter in the selected textual witness.
@@ -256,8 +278,6 @@ export function mountScriptureLibrary(root,{
      main.append(chapterLink);
      if(lang==="fr")main.append(element("p","Repérez le livre et le chapitre dans la Bible Crampon ; ce lien mène à l’index de l’édition.","aoScriptureNotice"));
    }
-   const chapterEntries=records.filter(r=>validatedRecord(r,editionId)&&r.book===location.book&&r.chapter===location.chapter)
-     .sort((a,b)=>a.verseStart-b.verseStart);
    const textBlock=element("div",null,"aoScriptureText");
    if(chapterEntries.length){
      for(const item of chapterEntries.filter(item=>contextDepth==="chapter"||!context?.reference|| (item.verseStart>=location.verseStart&&item.verseStart<=location.verseEnd))){
@@ -294,9 +314,12 @@ export function mountScriptureLibrary(root,{
      button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
      actions.append(button);
    }
-   main.append(actions);wrap.append(main);
-   const searchSection=element("section",null,"aoScriptureSearch");
-   searchSection.append(element("h3",t.search));
+   main.append(actions);
+   // Commentary is a reading-depth panel, not an additional section competing with Scripture.
+   if(!commentaryVisible||!context?.reference)wrap.append(main);
+   wrap.append(browse);
+   const searchSection=element("details",null,"aoScriptureSearch");
+   searchSection.append(element("summary",t.search));
    const searchField=element("input");searchField.type="search";searchField.placeholder=t.find;searchField.value=query;
    const resultArea=element("div",null,"aoScriptureResults");
    const paintResults=()=>{

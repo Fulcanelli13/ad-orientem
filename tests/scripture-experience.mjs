@@ -5,6 +5,7 @@ import {cacheApprovedScripturePack} from "../src/scripture/offline.js";
 import {validateScriptureImport} from "../src/scripture/import-contract.js";
 import {installScriptureBrowserOwner} from "../src/scripture/browser-entry.js";
 import {parseScriptureContext,verifiedScriptureCommentary,scriptureContextCapsule} from "../src/scripture/context.js";
+import {inlineScriptureCommentary} from "../src/scripture/inline-commentary.js";
 import {readFileSync} from "node:fs";
 const memory=new Map(),storage={
  getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value)
@@ -60,6 +61,17 @@ assert.equal(parseScriptureContext("Luke 0:1"),null);
 assert.equal(parseScriptureContext("John 19:30; Mt 5:28"),null,"Multi-source strings require individual capsules");
 assert.equal(parseScriptureContext("Psalms 129:1").numbering,"SOURCE_EDITION_REQUIRED");
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Matthew 5:27–28").passage)?.type,"PATRISTIC_COMPILATION");
+for(const reference of ["Matthew 5:27–28","Luke 1:26–38","Luke 1:46–55","Psalms 129:1"]){
+ const passage=parseScriptureContext(reference).passage;
+ const inline=inlineScriptureCommentary(passage);
+ assert.equal(inline.kind,"SOURCE_BASED_EDITORIAL_PARAPHRASE",reference);
+ assert.ok(inline.entries.length>=2,reference);
+ assert.ok(inline.entries.every(entry=>entry.author&&entry.summary.en.length>60&&entry.summary.fr.length>60),reference);
+ assert.ok(verifiedScriptureCommentary(passage)?.url,reference+" needs a primary textual source");
+}
+assert.equal(inlineScriptureCommentary(parseScriptureContext("Psalms 128:1").passage),null,
+ "A Bellarmine source index must not masquerade as locally transcribed commentary");
+assert.equal(inlineScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null);
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null,
   "Never fabricate a patristic commentary for an uncollated passage");
 assert.match(scriptureContextCapsule("Mt 5:27–28"),/data-ao-scripture-context="Mt 5:27–28"/);
