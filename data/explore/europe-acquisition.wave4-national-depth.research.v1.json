@@ -108,6 +108,13 @@
       "authority": "ROMAN_CATHOLIC_DIOCESE_IASI",
       "scope": "Pilgrimage for sick at Cacica 2026; distinct event at same Place",
       "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "FR-SAINTE-CHAPELLE",
+      "url": "https://www.sainte-chapelle.fr/decouvrir/histoire-de-la-sainte-chapelle",
+      "authority": "FRENCH_CENTRE_DES_MONUMENTS_NATIONAUX",
+      "scope": "Historic chapel originally for Passion relics, no longer consecrated to worship, relics moved to Notre-Dame",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
     }
   ],
   "sites": [
@@ -471,10 +478,10 @@
       "site_id": "EUROPE:W4:PLACE:FR:sainte-chapelle-paris",
       "category": "RELICS",
       "source_ids": [
-        "FR-CULTURAL"
+        "FR-SAINTE-CHAPELLE"
       ],
       "claim": "Historic royal chapel associated with Passion relic housing in medieval Paris",
-      "qualification": "Historic custodial association ONLY; Crown of Thorns separately recorded at Notre-Dame de Paris",
+      "qualification": "Historic custody only: State monuments authority confirms Crown of Thorns transferred to Notre-Dame in 1806 and Sainte-Chapelle is no longer used for worship.",
       "kind": "HISTORIC_RELIC_SITE_NOT_PRESENT_CUSTODY",
       "publication": "RESEARCH_ONLY",
       "route_geometry": null,
@@ -687,7 +694,7 @@
   "counts": {
     "site_leads": 17,
     "new_identity_candidates": 17,
-    "source_records": 15,
+    "source_records": 16,
     "category_associations": 22,
     "by_country": {
       "DE": 7,
