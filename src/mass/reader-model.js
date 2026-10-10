@@ -46,6 +46,7 @@ export function createMassReaderModel({
   properNotApplicableSlots=Object.freeze([]),
   vernacularLanguage="en",
   holyThursdayMandatumPresent=false,
+  holyThursdayMandatumSource=null,
 }={}){
   if(!resolvedMass || resolvedMass.schema!=="ao-resolved-mass-v2") {
     throw new TypeError("ao-resolved-mass-v2 required");
@@ -128,6 +129,7 @@ export function createMassReaderModel({
   }
   projected=projectHolyThursdayMass(projected,resolvedMass,{
     mandatumPresent:holyThursdayMandatumPresent===true||resolvedMass?.provenance?.holyThursday?.mandatumPresent===true,
+    mandatumSource:holyThursdayMandatumSource,
     language:vernacularLanguage,
   });
   projected=projectEmberInsertionModel(projected,resolvedMass);
