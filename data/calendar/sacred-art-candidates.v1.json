@@ -19133,6 +19133,92 @@
         "artCuratorApproval": false,
         "phoneHeroCropApproval": false
       }
+    },
+    {
+      "id": "met-437986",
+      "title": "The Denial of Saint Peter",
+      "artist": "Caravaggio (Michelangelo Merisi)",
+      "dated": "1610",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437986",
+        "objectId": "437986",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Source is The Met collection API confirmed public-domain Painting classification and official museum original, with SHA256 verified from GitHub Actions original JPEG archive.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "denial-peter",
+          "peter-denial"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [
+          "peter-denial"
+        ],
+        "prayerKeys": [],
+        "relationToTarget": "PASSION_EPISODE_PETER_DENIAL_SUPPORTED_BY_GOSPEL_NARRATIVES_NOT_EVERY_PETER_FEAST"
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3904,
+          "height": 2904
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_MUSEUM_OBJECT_NAMED_PASSION_EVENT"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38064643844",
+        "artifactId": 11674893079,
+        "archiveOriginal": "originals/met-437986.jpg",
+        "originalWidth": 3904,
+        "originalHeight": 2904,
+        "originalSha256": "566616872ca68aa9301a91f4e8ebd7631433cc42358f963e3230cbe6dd913dea"
+      },
+      "tags": {
+        "iconography": [
+          "denial-peter",
+          "peter-denial"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [
+          "today.calendar"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "peter-denial"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NARRATIVE_PETER_NOT_HISTORICAL_PORTRAIT_LIKENESS",
+        "associationConfidence": "MUSEUM_OBJECT_DIRECT_PASSION_EPISODE",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
     }
   ],
   "notes": [
@@ -19150,7 +19236,8 @@
     "Formation source acquisition reconciliation includes Tintoretto/Cranach Baptism, Joos Last Judgment, El Greco Saint Jerome, Mass of St Gregory, and Samaritan; composite altarpiece explicitly held from single-iconographic-match status.",
     "Class-I 2026 first Lent and Laetare Gospel scene originals physically acquired from NGA/Met with individual SHA256, first-party object metadata and strict exact source links. User editorial artwork/crop audit and production release remain pending. Tintoretto's 3811x1686-wide original must be inspected for portrait phone crop or dedicated landscape layout.",
     "Seven source-verified saint paintings acquired; preserve Saint Lucy narrative at Agatha shrine as Lucy only, correct Bari/Myra versus Nicholas Tolentino, and composite altarpiece/young Sebastian representation. Rejected false met-435885 Cézanne Domaine Saint-Joseph landscape. Research only; not curatorial, crop or publication approval.",
-    "2026-10-10 multi-day breadth: six new ZIP-reverified Met/CMA CC0 original paintings, including Epiphany x2, John Baptist preaching, two Marian masterworks, St Francis at Cross devotional context. Physically excluded misleading Cézanne Domaine Saint-Joseph landscape. Virgin/Child is NOT the specific Our Lady of Perpetual Help icon; Francis before Crucifix is NOT historical Station XII."
+    "2026-10-10 multi-day breadth: six new ZIP-reverified Met/CMA CC0 original paintings, including Epiphany x2, John Baptist preaching, two Marian masterworks, St Francis at Cross devotional context. Physically excluded misleading Cézanne Domaine Saint-Joseph landscape. Virgin/Child is NOT the specific Our Lady of Perpetual Help icon; Francis before Crucifix is NOT historical Station XII.",
+    "2026-10-10 added Caravaggio The Denial of Saint Peter as real hashed Met source original; eligible for distinct appointed Passion Gospel narrative passages where the actual denial occurs, not all Apostle Peter observances. Crop/rights/curator final audit remain separate."
   ],
   "tagSchema": "AO_SACRED_ART_SEMANTIC_TAGS_V2"
 }
