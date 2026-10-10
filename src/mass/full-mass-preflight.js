@@ -55,13 +55,16 @@ export function mountFullMassPreflight({
   doc=globalThis.document,
   getResolvedMass,
   getDefaultForm=()=> "sung",
+  getDefaultReaderMode=()=> "LIVE",
   language=()=> "en",
   getCelebrationApi=()=>globalThis.AO_CELEBRATION_API,
   onBeforeCategoryChange=()=>{},
+  onOpenSourceProper=()=>{},
+  getSourceGate=()=>({ready:true,reason:null}),
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
-  let root=null,selected=null,explicit=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
+  let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   const flow=()=>doc.getElementById("ao-mass-flow-v1");
   const anchor=()=>flow()?.querySelector(".aoFlowActions")??flow()?.querySelector("[data-ao-start-live]")?.parentElement;
   const french=()=>String(language()).startsWith("fr");
@@ -69,11 +72,18 @@ export function mountFullMassPreflight({
     try{return normalizeMassForm(explicit?selected:getDefaultForm());}
     catch{return "MISSA_CANTATA_INCENSE";}
   }
+  function activeReaderMode(){
+    const mode=String(explicitMode?selectedMode:getDefaultReaderMode()??"LIVE").toUpperCase();
+    if(mode==="MISSAL"||mode==="SIMPLE")return mode;
+    return "LIVE";
+  }
   function selectionFor(legacy){
     const value=resolvedMassSummary(legacy,{form:activeForm(),language:language()});
-    return Object.freeze({...value,explicitlyChosenForm:explicit});
+    return Object.freeze({...value,explicitlyChosenForm:explicit,
+      readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode});
   }
   function openCategory(kind){
+    if(kind==="SOURCE_DATE"){onOpenSourceProper();return true;}
     const choices={CALENDAR:"[data-ao-select-day]",VOTIVE:'[data-ao-open="votive"]',
       NUPTIAL:'[data-ao-open="nuptial"]',REQUIEM:'[data-ao-open="requiem"]',
       OTHER:'[data-ao-open="other"]'};
@@ -103,7 +113,7 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
@@ -120,18 +130,27 @@ export function mountFullMassPreflight({
         '<div class="aoFullMassCategories" role="group" data-full-mass-categories aria-label="Select actual Mass">'+
         [["CALENDAR","Mass of the day","Messe du jour"],["VOTIVE","Votive","Votive"],
          ["REQUIEM","Requiem","Requiem"],["NUPTIAL","Nuptial","Nuptiale"],
-         ["OTHER","Other","Autre"]].map(([id,en,fr])=>
+         ["OTHER","Other","Autre"],["SOURCE_DATE","Other Proper","Autre propre"]].map(([id,en,fr])=>
          '<button type="button" data-full-mass-category="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</button>').join("")+
-        '</div><p data-full-mass-category-error role="alert" hidden></p>'+
+        '</div><div data-full-mass-source-slot></div><p data-full-mass-category-error role="alert" hidden></p>'+
+        '<details data-full-mass-review><summary data-full-mass-review-summary></summary>'+
+        '<div data-full-mass-review-body></div></details>'+
         '<p data-full-mass-resolver></p><fieldset data-full-mass-form-fieldset>'+
         '<legend data-full-mass-form-title></legend><div class="aoFullMassForms">'+
         FULL_MASS_FORM_OPTIONS.map(({id})=>
           '<label class="aoFullMassChoice"><input type="radio" name="ao-native-mass-form" value="'+id+'" data-full-mass-form>'+
           '<span data-full-mass-label="'+id+'"></span></label>').join("")+
         '</div></fieldset>'+
+        '<fieldset data-full-mass-reader-fieldset><legend data-full-mass-reader-heading></legend>'+
+        '<div class="aoFullMassReaderModes">'+
+        [["MISSAL","Missal","Missel"],["SIMPLE","Simple","Simple"],["LIVE","LIVE","LIVE"]].map(([id,en,fr])=>
+          '<label class="aoFullMassChoice"><input type="radio" name="ao-native-reader-mode" value="'+id+'" data-full-mass-reader-mode>'+
+          '<span data-full-mass-reader-label="'+id+'" data-label-en="'+en+'" data-label-fr="'+fr+'">'+en+'</span></label>').join("")+
+        '</div></fieldset>'+
+
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
-        '<p data-full-mass-note></p>';
+        '<p data-full-mass-note></p>';  
       root.addEventListener("click",e=>{
         const button=e.target?.closest?.("[data-full-mass-category]");
         if(!button)return;
@@ -157,6 +176,9 @@ export function mountFullMassPreflight({
           riteOverrides={...riteOverrides,[id]:el.checked};
           refresh();return;
         }
+        if(el?.matches?.("[data-full-mass-reader-mode]")&&["MISSAL","SIMPLE","LIVE"].includes(el.value)){
+          selectedMode=el.value;explicitMode=true;refresh();return;
+        }
         if(el?.matches?.("[data-full-mass-form]")&&MASS_FORMS.includes(el.value)){
           selected=el.value;explicit=true;refresh();
         }
@@ -175,14 +197,19 @@ export function mountFullMassPreflight({
     }
     root.querySelectorAll("[data-full-mass-category]").forEach(button=>{
       button.textContent=button.dataset[fr?"labelFr":"labelEn"];
-      const match=button.dataset.fullMassCategory===summary.kind;
+      const match=button.dataset.fullMassCategory===
+        (legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY"?"SOURCE_DATE":summary.kind);
       button.setAttribute("aria-current",match?"true":"false");
     });
     root.querySelector("[data-full-mass-title]").textContent=l("Prepare your Mass","Préparer votre messe");
     root.querySelector("[data-full-mass-form-title]").textContent=l("How is it celebrated?","Comment est-elle célébrée ?");
     root.querySelector("[data-full-mass-celebration]").textContent=
       summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"");
-    root.querySelector("[data-full-mass-resolver]").textContent=summary.canStart?
+    const sourceGate=getSourceGate();
+    root.querySelector("[data-full-mass-resolver]").textContent=!sourceGate.ready?
+      l("Finish choosing the other Proper, or return to the Mass of the day, before starting.",
+        "Terminez le choix de l’autre propre, ou revenez à la messe du jour, avant de commencer.") :
+      summary.canStart?
       l("The Mass of the day, Requiem, votive or Nuptial Proper is chosen in the celebration selector above. Its actual texts, rank and permitted changes must be resolved before starting.",
         "Le propre du jour, du Requiem, de la messe votive ou nuptiale se choisit dans le sélecteur de célébration ci-dessus. Les textes, le rang et les adaptations autorisées doivent être résolus avant de commencer.") :
       l("Choose a permitted celebration with a complete Proper before starting. No text is substituted.",
@@ -200,6 +227,11 @@ export function mountFullMassPreflight({
       span.textContent=txt(LABELS[span.dataset.fullMassLabel],fr);
     });
     root.querySelector("[data-full-mass-form-fieldset]").disabled=!summary.formChangeAllowed;
+    root.querySelector("[data-full-mass-reader-heading]").textContent=l("How to follow the Mass","Comment suivre la messe");
+    root.querySelectorAll("[data-full-mass-reader-mode]").forEach(input=>{input.checked=input.value===summary.readerMode;});
+    root.querySelectorAll("[data-full-mass-reader-label]").forEach(span=>{
+      span.textContent=span.dataset[fr?"labelFr":"labelEn"];
+    });
     const rites=availableOptionalMassRites(legacy,{form:summary.form,kind:summary.kind});
     const options=rites.filter(rite=>rite.allowed||rite.fromSource);
     const effectiveRites={
@@ -239,10 +271,59 @@ export function mountFullMassPreflight({
       input.disabled=!rite.allowed;
       input.closest("label").querySelector("span").textContent=fr?rite.fr:rite.en;
     }
+    // The compact review always reflects the *effective* Proper selected for
+    // this Mass, not a stale host Calendar Proper from before a source change.
+    const observed=legacy?.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY";
+    const proper=legacy?.proper?.data??legacy?.proper??null;
+    const ownerPath=String(legacy?.properSource??proper?.sourcePath??"").trim();
+    const review=root.querySelector("[data-full-mass-review]");
+    root.querySelector("[data-full-mass-review-summary]").textContent=l(
+      "Review Mass and Proper","Vérifier la messe et le propre");
+    const body=root.querySelector("[data-full-mass-review-body]");
+    if(observed)review.open=true;
+    body.replaceChildren();
+    const entries=[
+      [l("Date","Date"),date||"—"],
+      [l("Celebration","Célébration"),summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"")],
+      [l("Form","Forme"),summary.formLabel],
+      [l("Reader","Lecture"),summary.readerMode],
+      [l("Source of Proper","Source du propre"),ownerPath||l("Resolved by calendar","Résolu par le calendrier")],
+    ];
+    if(observed){
+      entries.push([l("Source feast date","Date de la fête source"),
+        String(legacy.sourceDiagnostics.actualMassSourceDate??"—")]);
+      entries.push([l("Sunday commemoration","Mémoire du dimanche"),
+        legacy.sourceDiagnostics.sundayCommemoration==="COMMEMORATE_SUNDAY"?
+          l("Included from this Sunday","Incluse depuis ce dimanche"):
+          l("Not included by selection","Non incluse par choix")]);
+      entries.push([l("Rubrical authorization","Autorisation rubricale"),
+        l("Not independently verified","Non vérifiée indépendamment")]);
+    }
+    if(Array.isArray(proper?.collects)){
+      const count=proper.collects.length;
+      if(count>0)entries.push([l("Collects / Secrets / Postcommunions","Collectes / Secrètes / Postcommunions"),
+        [proper.collects.length,proper.secrets?.length??0,proper.postcommunions?.length??0].join(" / ")]);
+    }
+    for(const [label,value] of entries){
+      const line=doc.createElement("p");line.className="aoFullMassReviewRow";
+      const tag=doc.createElement("strong");tag.textContent=label;
+      const contents=doc.createElement("span");contents.textContent=value;
+      line.append(tag,contents);body.append(line);
+    }
+    if(observed){
+      const caution=doc.createElement("p");caution.className="aoFullMassReviewCaution";
+      caution.textContent=l(
+        "This follows a celebration reported by the user; it does not certify a permitted external solemnity, votive Mass or local indult.",
+        "Ce choix suit une célébration indiquée par l’utilisateur ; il ne certifie ni solennité extérieure autorisée, ni messe votive, ni indult local.");
+      body.append(caution);
+    }
+    root.dataset.aoProperSource=ownerPath;
+    root.dataset.aoObservedSource=String(observed);
     root.dataset.aoCelebrationKind=summary.kind;
     root.dataset.aoSpecialMassVariant=presentation.variant;
     root.dataset.aoChosenMassForm=summary.form;
-    root.dataset.aoProperReady=String(summary.canStart);
+    root.dataset.aoChosenReaderMode=summary.readerMode;
+    root.dataset.aoProperReady=String(summary.canStart&&sourceGate.ready);
     return summary;
   }
   const onchange=()=>queueMicrotask(refresh);
@@ -270,6 +351,7 @@ export function mountFullMassPreflight({
     openCategory,
     refresh,
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
+      readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides})}),
     dispose(){disposed=true;doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}

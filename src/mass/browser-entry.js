@@ -687,13 +687,16 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
   // changes the prepared Mass, never the global Calendar or host API.
   const actualApi=observedSource ? {
     getResolvedMass:()=>{
+      const gate=observedSource.preparationGate();
+      if(!gate.ready)throw new Error(gate.reason);
       const base=api.getResolvedMass();
       return observedSource.effectiveResolvedMass(base);
     },
   } : api;
   return createMassEntryController({
     celebrationApi: actualApi,
-    readReaderPreferences: () => readerPreferences(),
+    readReaderPreferences: resolvedMass => ({...readerPreferences(),
+      mode:fullMassPreflight?.selectionFor?.(resolvedMass)?.readerMode??readerPreferences().mode}),
     resolveHostOptions: async (resolvedMass) => {
       const options=deriveHostOptions({
         resolvedMass,
@@ -762,9 +765,27 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
           (date)=>runtime().resolver.resolveDay(date):null,
         language:()=>runtimeState()?.language??"en"
       });
+      // One Mass-preparation surface: actual celebration, alternate source
+      // Proper, ceremonial form and optional real rites all live together.
+      // Mount the source-owning host categories first; the alternative source
+      // picker then occupies its dedicated slot, never a parallel screen.
+      state.fullMassPreflight=mountFullMassPreflight({
+         doc:document,
+         getResolvedMass:()=>{
+           const base=celebrationApi().getResolvedMass();
+           return state.observedSource?.effectiveResolvedMass(base)??base;
+         },
+         onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
+         onOpenSourceProper:()=>state.observedSource?.open?.(),
+         getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
+         getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
+         getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
+         language:()=>runtimeState()?.language??"en",
+       });
       state.observedSource=mountObservedMassSourceSelector({
         doc:document,
         getResolvedMass:()=>celebrationApi().getResolvedMass(),
+        mountTarget:()=>document.querySelector("[data-full-mass-source-slot]"),
         resolveDay:typeof runtime()?.resolver?.resolveDay==="function"
           ?date=>runtime().resolver.resolveDay(date):null,
         recoverProper:proper=>recoverReaderProperOmissions(proper,{
@@ -773,13 +794,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
         language:()=>runtimeState()?.language??"en",
         onSelectionChange:()=>state.fullMassPreflight?.refresh?.(),
       });
-      state.fullMassPreflight=mountFullMassPreflight({
-         doc:document,
-         getResolvedMass:()=>state.observedSource.effectiveResolvedMass(celebrationApi().getResolvedMass()),
-         onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
-         getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
-         language:()=>runtimeState()?.language??"en",
-       });
+      state.fullMassPreflight.refresh();
        state.fullMassCatalogue=mountSourceOwnedMassCatalogue({
          doc:document,
          stage:()=>arch()?.stage,

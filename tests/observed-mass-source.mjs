@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {findObservedMassSource,composeObservedMassSelection} from "../src/mass/observed-mass-source.js";
+import {findObservedMassSource,composeObservedMassSelection,observedSourceEligibility} from "../src/mass/observed-mass-source.js";
 import {adaptV346ResolvedMass} from "../src/mass/host-adapter.js";
 import {properToReaderSlots} from "../src/mass/proper-reader-slots.js";
 
@@ -61,6 +61,8 @@ assert.equal(rosary.legacy.calendarDay.title,"Mass of the day","Calendar identit
 assert.equal(rosary.legacy.celebrationType,"VOTIVE");
 assert.equal(rosary.legacy.celebrationTitle,"Our Lady of the Rosary");
 assert.equal(rosary.legacy.properSource,"Sancti/10-07");
+assert.equal(rosary.legacy.proper,rosary.proper,"The selected Proper did not reach preparation summary");
+assert.equal(rosary.legacy.proper.data.collects.length,2);
 assert.equal(rosary.legacy.sourceDiagnostics.independentRubricPermission,"NOT_VERIFIED");
 assert.equal(rosary.proper.data.collects.length,2,"Sunday Collect not composed");
 assert.equal(rosary.proper.data.secrets.length,2,"Sunday Secret not composed");
@@ -114,6 +116,17 @@ sources.set("2026-11-12",bad);
 await assert.rejects(()=>findObservedMassSource({
  massDate:"2026-11-05",sourceDate:"2026-11-12",resolveDay,language:"fr",
 }),/TRANSLATION_MISSING:GOSPEL/);
+for(const [type,exceptional] of [
+ ["CALENDAR","good-friday-1962"],["CALENDAR","easter-vigil-1962"],
+ ["REQUIEM",null],["NUPTIAL",null],
+]){
+ const original={...base("2026-10-04"),celebrationType:type,exceptionalProfile:exceptional};
+ assert.equal(observedSourceEligibility(original).allowed,false);
+ await assert.rejects(()=>composeObservedMassSelection(first,{
+   baseLegacy:original,sundayChoice:"COMMEMORATE_SUNDAY",resolveDay,language:"fr",
+ }),/OBSERVED_MASS_(DISTINCT_RITE_SOURCE_LOCKED|USE_CEREMONY_OWNED_PROPER)/);
+}
+assert.equal(observedSourceEligibility(base("2026-10-04")).allowed,true);
 assert.equal(properToReaderSlots(bad.proper.data,{language:"en"}).ready,true,
  "Language refusal should be specific to the chosen reader language");
 console.log("Observed Mass source: PASS — date-independent Proper, Oct 2026/27 Rosary, explicit Sunday orations, 1962 calendar untouched, source/language/host gates.");
