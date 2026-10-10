@@ -25,7 +25,14 @@ for(const row of doc.debates){
   assert.equal(stage.verbatim_opponent_quote_verified,false);
   assert.equal(stage.french_stage_scope_reworded,true);
   const actual=paragraphRefsFor(question,"debate",stage.stage).map(x=>x[0]);
-  assert.deepEqual(stage.source_refs.map(s=>s.id),actual,row.id+"."+stage.stage+" source map drift");
+  const historicalIds=stage.source_refs.map(s=>s.id);
+  // This 9 October seven-case review remains a frozen original-passage
+  // comparison. A later 2010 USCCB primary witness was attached to four
+  // CSE125 stages, but is not retroactively certified by this older review.
+  const laterUsccb=row.id==="CSE125"
+    &&["breakpoint","catholicCase","response","bottom"].includes(stage.stage);
+  assert.deepEqual(actual,laterUsccb?[...historicalIds,"USCCB_DIRECT2010"]:historicalIds,
+    row.id+"."+stage.stage+" source map drift");
   for(const ref of stage.source_refs){assert.equal(ref.url,CSE_SOURCE_MAP[ref.id]?.canonical_url);assert.ok(ref.locator.length>8);}
   results[stage.status]=(results[stage.status]||0)+1;
  }
