@@ -606,6 +606,97 @@
       "url": "https://www.iglesia.cl/area_eclesial.php",
       "access": "LINKED_ARCHIVAL_INDEX_ONLY",
       "note": "Historical archive advertises full sanctuary and feast PDF and Excel, plus sanctuary census in DOC/ZIP. Download links could not be opened with available web interface and are NOT transcribed."
+    },
+    {
+      "id": "WIKI_GLOBAL_PILGRIMAGES",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI GLOBAL PILGRIMAGES",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_Christian_pilgrimage_sites",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Cross-confessional selection not complete"
+    },
+    {
+      "id": "WIKI_ABRAHAMIC_BURIALS",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI ABRAHAMIC BURIALS",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_burial_places_of_Abrahamic_figures",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Conflicting burial/traditions, not relic evidence"
+    },
+    {
+      "id": "WIKI_MARIAN_APPARITIONS",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI MARIAN APPARITIONS",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Requires original episcopal/DDF judgments"
+    },
+    {
+      "id": "WIKI_HOLY_LAND_SITES",
+      "continent": "Global",
+      "geo_scope": "Middle East",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI HOLY LAND SITES",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_Christian_holy_places_in_the_Holy_Land",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Cross-confessional rival site identifications"
+    },
+    {
+      "id": "WIKI_CHRISTIAN_PILGRIMAGE_CATEGORY",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI CHRISTIAN PILGRIMAGE CATEGORY",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/Category:Christian_pilgrimage_sites",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "19 top-level page titles, not complete worldwide inventory"
+    },
+    {
+      "id": "HOLY_LAND_CUSTODIA_DIRECTORY",
+      "continent": "Global",
+      "geo_scope": "Holy Land",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "HOLY LAND CUSTODIA DIRECTORY",
+      "authority": "ORIGINAL_CHURCH_CUSTODIAN",
+      "url": "https://www.custodia.org/en/santuari/",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "27 displayed named sanctuary/map items; two already published Places directly named"
+    },
+    {
+      "id": "VATICAN_DDF_ALLEGED_2024",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "VATICAN DDF ALLEGED 2024",
+      "authority": "HOLY_SEE_NORMS",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Pastoral permission for devotion is not supernatural authentication"
     }
   ],
   "initial_source_derived_leads": [
@@ -1001,5 +1092,41 @@
     "net_new_european_site_identity_candidates": 0,
     "published_new_places": 0,
     "status": "RESEARCH_ONLY_SOURCE_HANDOFF_NO_MAP_PIN"
+  },
+  "acquisition_checkpoint_batch6": {
+    "batch": "2026-10-10-FIVE-USER-WIKIPEDIA-LINKS",
+    "source_pages_user_provided": 5,
+    "original_custodian_catalogues_added": 1,
+    "holy_see_norms_added": 1,
+    "raw_research_observations_new": 93,
+    "breakdown": {
+      "holy_land_franciscan_original": 27,
+      "wikipedia_category_top_level": 19,
+      "wikipedia_holy_land_concepts_selected": 17,
+      "wikipedia_burials_selected": 7,
+      "wikipedia_apparitions_selected": 12,
+      "wikipedia_pilgrimage_selected": 11
+    },
+    "primary_custodia_proposed_existing_places": 2,
+    "existing_apparition_phenomena_links": 7,
+    "source_registry_new_total": 46,
+    "secondary_source_pages_not_original_authentication": true,
+    "previous_gross_site_source_rows": 512,
+    "previous_thematic_feature_rows": 38,
+    "net_new_unique_canonical_places": 0,
+    "existing_canonical_places": 182,
+    "existing_phenomena_claims": 32,
+    "europe_seven_wave_research_leads": 232,
+    "created_files": [
+      "data/geography/research/user-five-wikipedia-source-routing-2026-10-10.v1.json",
+      "data/geography/research/holy-land-custodia-sanctuary-index-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-pilgrimage-category-names-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-burial-attributions-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-apparition-source-comparison-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-world-pilgrimage-overlap-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-holy-land-concepts-2026-10-10.v1.json"
+    ],
+    "audit_doc": "docs/research/EXPLORE-USER-FIVE-WIKIPEDIA-LISTS-2026-10-10.md",
+    "review_stage": "SECONDARY_INDEX_GATE_PLUS_ORIGINAL_CUSTODY_HOLY_LAND_MAP_INDEX_NOT_FULL_SITE_IDENTITY"
   }
 }
