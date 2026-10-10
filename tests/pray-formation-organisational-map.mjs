@@ -157,7 +157,7 @@ const formationPresentation=read("src/learn/presentation.js");
 const formationBrowser=read("src/learn/browser-entry.js");
 assert.match(formationPresentation,/aoLearnIntentLayout/);
 assert.match(formationPresentation,/data-ao-learn-questions/);
-assert.match(formationBrowser,/data-ao-learn-questions/);
+assert.match(formationBrowser,/data-ao-learn-family/);
 assert.match(formationBrowser,/state\.family="questions"/,"Questions should open its own categorised study doorway");
 assert.match(formationPresentation,/family\.id==="questions"/,"Question directory must own the Sexual Ethics and preview cards");
 assert.match(formationPresentation,/data-ao-learn-module/,"Questions must still retain canonical specialist launcher");
