@@ -1,0 +1,80 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_ADJUDICATIONS_V1",
+  "version": "1.0.0",
+  "purpose": "Curated, first-party-evidenced physical venue decisions. Source rows remain immutable; do not infer public Mass from upstream flags.",
+  "source_hierarchy": [
+    "LOCAL_APOSTOLATE",
+    "REGIONAL_OFFICIAL",
+    "INTERNATIONAL_OFFICIAL",
+    "HISTORICAL",
+    "SECONDARY"
+  ],
+  "state_vocabulary": [
+    "CURRENT_PUBLIC_MASS",
+    "CONDITIONAL_MASS",
+    "HOUSE_WITH_PUBLIC_CHAPEL",
+    "PROVIDER_HOUSE_ONLY",
+    "INSTITUTION_ONLY",
+    "DISPLACED_HISTORICAL",
+    "DUPLICATE_SOURCE_ROW",
+    "PENDING_CURRENT_EVIDENCE"
+  ],
+  "review_policy": "Only a dated current official witness with a specific physical location and explicit Mass schedule may promote a public Find venue. Exception/relocation and seasonal schedules must retain effective dates. Unverified research leads remain outside Find.",
+  "decisions": [
+    {
+      "upstream_id": "our-lady-of-the-holy-rosary-priory",
+      "state": "HOUSE_WITH_PUBLIC_CHAPEL",
+      "witness": {
+        "tier": "LOCAL_APOSTOLATE",
+        "url": "https://fsspx.africa/en/our-lady-holy-rosary-church-and-priory-44202",
+        "title": "Durban Priory — local Mass venue notice",
+        "checked_on": "2026-10-08",
+        "effective_from": "2026-09-08"
+      },
+      "review_note": "Local district apostolate separates the transitional Sunday site at Berea from weekday Masses at new Kloof premises. Do not transfer the Sunday timetable to Kloof or assume fixed weekday times.",
+      "physical_sites": [
+        {
+          "key": "berea-sunday",
+          "name": "Our Lady of the Holy Rosary — Berea Sunday chapel",
+          "venue_type": "chapel",
+          "state": "CURRENT_PUBLIC_MASS",
+          "address": {
+            "line1": "12 Gumtree Avenue",
+            "city": "Durban",
+            "region": "KwaZulu-Natal",
+            "country_code": "ZA",
+            "formatted": "12 Gumtree Avenue, Berea, Durban, South Africa"
+          },
+          "sunday_mass": true,
+          "weekday_mass": false,
+          "mass": {
+            "raw": "Sunday: 08:30 High Mass (confessions 07:45; Rosary 08:00). The Sunday site remains at 12 Gumtree Avenue, Berea, during the relocation; contact before travelling.",
+            "cadence": "WEEKLY",
+            "effective_from": "2026-09-08"
+          }
+        },
+        {
+          "key": "kloof-weekday",
+          "name": "Our Lady of the Holy Rosary — Kloof weekday chapel",
+          "venue_type": "chapel",
+          "state": "CONDITIONAL_MASS",
+          "address": {
+            "line1": "29 Abelia Road",
+            "city": "Kloof",
+            "region": "KwaZulu-Natal",
+            "postal_code": "3640",
+            "country_code": "ZA",
+            "formatted": "29 Abelia Road, Kloof, Durban 3640, South Africa"
+          },
+          "sunday_mass": false,
+          "weekday_mass": true,
+          "mass": {
+            "raw": "Weekday Masses at 29 Abelia Road, Kloof. Timetable may vary during the move; consult the local priory before travelling. Sunday Mass remains in Berea.",
+            "cadence": "IRREGULAR",
+            "effective_from": "2026-09-08"
+          }
+        }
+      ]
+    }
+  ]
+}

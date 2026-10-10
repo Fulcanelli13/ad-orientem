@@ -36,7 +36,14 @@ function directionsUrl(venue){
   return query?"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(query):null;
 }
 function rawSchedules(record){
-  return arr(record?.ministries).flatMap(m=>arr(m.schedules).map(s=>({community:m.community_id,schedule:s})));
+  const all=arr(record?.ministries).flatMap(m=>arr(m.schedules).map(s=>({community:m.community_id,schedule:s})));
+  // Reviewed local Mass schedules take precedence over stale imported assertions.
+  if(record?.venue?.upstream?.provider==="SSPX_MAP_API"&&
+    ["CURRENT_PUBLIC_MASS","CONDITIONAL_MASS"].includes(record?.venue?.publication_state)){
+    const verified=all.filter(x=>x.schedule?.service_type==="MASS"&&x.schedule?.verification?.state==="OFFICIAL_VERIFIED");
+    if(verified.length)return verified;
+  }
+  return all;
 }
 function scheduleFreshnessLabel(schedule,language){
   const state=scheduleFreshnessState(schedule);

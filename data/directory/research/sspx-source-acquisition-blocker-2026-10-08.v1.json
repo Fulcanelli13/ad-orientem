@@ -1,0 +1,30 @@
+{
+  "schema": "AO_DIRECTORY_SSPX_ACQUISITION_BLOCKER_V1",
+  "observed_at": "2026-10-08",
+  "production_api": {
+    "endpoint": "https://map.fsspx.org/api/v1/places?lang=en&limit=1000&offset=0",
+    "observed_status": "HTTP_403_FROM_GITHUB_ACTIONS_RUNNER",
+    "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37741748512",
+    "acquisition_complete": false
+  },
+  "official_html": {
+    "endpoint": "https://map.fsspx.org/en/countries",
+    "observed_result": "ZERO_RECORDS_RECOVERED_TWO_COUNTRY_FAILURES",
+    "workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/37741748512",
+    "acquisition_complete": false
+  },
+  "independent_discovery": {
+    "endpoint": "https://fe.dev.aws.fsspx.org/directory",
+    "environment": "SSPX_HOSTED_DEVELOPMENT",
+    "observed_total_operation_records": 1027,
+    "observed_pages": 42,
+    "release_eligible": false,
+    "warning": "Includes non-Mass entities and development/test entries; MUST NOT be merged into confirmed production Mass venues automatically."
+  },
+  "repository_work": {
+    "review_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/424",
+    "official_acquisition_gate": "Fail if neither production API nor official country index yields a complete source census",
+    "dici_development_gate": "Discovery only; never satisfies the production acquisition release gate",
+    "remaining": "Obtain approved production export; reconcile by source ID, physical venue, schedule, hierarchy and verification. Resolve PR conflicts with current main before merge."
+  }
+}

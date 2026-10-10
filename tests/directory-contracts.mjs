@@ -14,6 +14,8 @@ import { RESEARCH_MASS_REVIEW_DAYS, expandResearchProviderSnapshot, publishableD
 import { renderFindToString } from "../src/find/presentation.js";
 import {
   buildCanonicalSspxDataset,
+  fetchAllSspxPlaceSummaries,
+  fetchSspxPlaceDetails,
   mapSspxPlace,
 } from "../tools/directory/import-sspx.mjs";
 
@@ -470,6 +472,15 @@ const sspxFixture = {
 
 const mapped = mapSspxPlace(sspxFixture);
 assert.equal(mapped.ministry.community_id, "SSPX");
+assert.equal(mapped.venue.publication_state, "PENDING_CURRENT_EVIDENCE");
+assert.equal(publishableDirectoryRecords([{venue:mapped.venue,ministries:[{...mapped.ministry,schedules:mapped.schedules}]}]).length,0,
+  "unreviewed SSPX API entities must not enter Find");
+const adjudicatedVenue={...mapped.venue,publication_state:"CURRENT_PUBLIC_MASS"};
+assert.equal(publishableDirectoryRecords([{venue:adjudicatedVenue,ministries:[{...mapped.ministry,schedules:mapped.schedules}]}]).length,0,
+  "publication state alone is insufficient without a verified Mass schedule");
+const reviewedSchedule={...mapped.schedules[0],service_type:"MASS",verification:{state:"OFFICIAL_VERIFIED",checked_at:"2026-10-08T00:00:00Z"}};
+assert.equal(publishableDirectoryRecords([{venue:adjudicatedVenue,ministries:[{...mapped.ministry,schedules:[reviewedSchedule]}]}]).length,1,
+  "reviewed Mass venue should enter Find");
 assert.equal(mapped.ministry.community_profile_ref, "SSPX");
 assert.deepEqual(mapped.venue.contact.email, []);
 assert.equal(mapped.venue.contact.contact_form[0], "https://example.test/contact");
@@ -547,10 +558,42 @@ const dataset = buildCanonicalSspxDataset([sspxFixture, friendFixture], {
   retrievedAt: "2026-10-07T09:00:00Z",
 });
 assert.equal(dataset.report.place_count, 2);
+assert.equal(dataset.report.physical_venue_projection_complete,false);
+assert.equal(dataset.geojson.features.length,0,"unreviewed inventory leaked to the public map");
 assert.equal(dataset.report.venue_count, 2);
 assert.equal(dataset.report.ministry_count, 2);
 assert.equal(dataset.report.schedule_assertion_count, 2);
-assert.equal(dataset.report.geo_feature_count, 2);
+assert.equal(dataset.report.geo_feature_count, 0, "unreviewed source rows must not yield publishable coordinates");
 assert.equal(dataset.report.duplicate_upstream_id_count, 0);
+
+
+const mockPage = body => ({ok:true,json:async()=>body});
+const mockRecord = id => ({crmId:id,slug:id.toLowerCase()});
+const goodPages=async url=>{
+  const offset=Number(new URL(url).searchParams.get("offset"));
+  return mockPage({total:3,items:offset===0?[mockRecord("OPE-1"),mockRecord("OPE-2")]:[mockRecord("OPE-3")]});
+};
+const completeSspx=await fetchAllSspxPlaceSummaries({pageSize:2,fetchImpl:goodPages});
+assert.deepEqual(completeSspx.map(x=>x.crmId),["OPE-1","OPE-2","OPE-3"]);
+await assert.rejects(
+  fetchAllSspxPlaceSummaries({pageSize:2,fetchImpl:async url=>
+    mockPage({total:Number(new URL(url).searchParams.get("offset"))===0?3:4,
+      items:Number(new URL(url).searchParams.get("offset"))===0?[mockRecord("OPE-1"),mockRecord("OPE-2")]:[mockRecord("OPE-3")]})}),
+  /total changed/,
+);
+await assert.rejects(
+  fetchAllSspxPlaceSummaries({pageSize:2,fetchImpl:async url=>
+    mockPage({total:3,items:Number(new URL(url).searchParams.get("offset"))===0?[mockRecord("OPE-1"),mockRecord("OPE-2")]:[]})}),
+  /empty page/,
+);
+await assert.rejects(
+  fetchAllSspxPlaceSummaries({pageSize:2,fetchImpl:async ()=>
+    mockPage({total:2,items:[mockRecord("OPE-1"),mockRecord("OPE-1")]})}),
+  /duplicated upstream identifier/,
+);
+await assert.rejects(
+  fetchSspxPlaceDetails([mockRecord("OPE-1")],{fetchImpl:async()=>({ok:false,status:403})}),
+  /detail acquisition failed/,
+);
 
 console.log("directory source-of-truth and SSPX importer: PASS");
