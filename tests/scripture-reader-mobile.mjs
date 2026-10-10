@@ -157,6 +157,9 @@ try{
  // The shared reader must render the original Catena text, not just a link.
  await page.route("https://raw.githubusercontent.com/**",route=>route.abort());
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:28",{language:"en"})),true);
+ await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),1,"Reopened contextual reader restores the selected verse from memory");
+ assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
  await dialog.locator(".aoScriptureFatherText").first().waitFor({state:"visible",timeout:15000});
  assert.ok((await dialog.locator(".aoScriptureFatherText").first().innerText()).length>80,
