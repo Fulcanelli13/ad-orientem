@@ -52,7 +52,11 @@ for(const form of forms){
   assert.equal(prepared.session.resolvedMass.actualCelebration.type,family.type);
   assert.equal(prepared.session.resolvedMass.form,form);
   assert.equal(prepared.session.resolvedMass.date,"2026-10-04");
-  if(family.overlay)assert.ok(plan.segments.some(x=>x.id===family.overlay),form+"/"+family.kind);
+  if(family.overlay&&family.overlay!=="VOTIVE_PROPER")
+   assert.ok(plan.segments.some(x=>x.id===family.overlay),form+"/"+family.kind);
+  if(family.overlay==="VOTIVE_PROPER")
+   assert.ok(prepared.session.plan.overlayGraphs.includes("VOTIVE_PROPER"),
+     "The votive Proper selection disappeared from the compiled plan");
   const formController=createReaderFormCueStateController({
     formStateData:formState,registries,lowCorpus,sungCorpus,
     prepared,gestureMatrix:gestMatrix,
