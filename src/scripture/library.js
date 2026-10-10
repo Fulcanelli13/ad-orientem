@@ -422,7 +422,20 @@ export function mountScriptureLibrary(root,{
  return Object.freeze({
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
    setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
-   setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");const closeFocused=wrap.querySelector("[data-scripture-close]")===document.activeElement;records=next;draw();if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});},
+   setRecords(next){
+      if(!Array.isArray(next))throw new TypeError("Scripture records array required");
+      records=next;
+      // A source book may finish downloading as a reader types a new
+      // chapter/verse. Recreating the controls before their change event
+      // would discard the uncommitted number and reset navigation to verse 1.
+      const focused=document.activeElement;
+      const fields=wrap.querySelectorAll(".aoScriptureNav input");
+      if((focused===fields[0]&&focused.value!==String(location.chapter))||
+         (focused===fields[1]&&focused.value!==String(location.verseStart)))return;
+      const closeFocused=wrap.querySelector("[data-scripture-close]")===focused;
+      draw();
+      if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
+    },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
