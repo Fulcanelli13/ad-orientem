@@ -129,6 +129,7 @@ export function createFindOwner(win=globalThis){
     heritageCategories:[...HERITAGE_CATEGORIES],
     highlightCustomId:null,
     expandPlace:false,
+    expandDetail:false,
     atlasFamily:"ANY",
     atlasArea:"ANY",
     atlasPeriod:"ANY",
@@ -312,6 +313,7 @@ export function createFindOwner(win=globalThis){
       placeProfiles,
       selectedPlaceId:state.selectedPlaceId,
       expandPlace:state.expandPlace,
+      expandDetail:state.expandDetail,
     });
     node.innerHTML=renderExploreToString(vm);
     if(searchFocus){
@@ -339,7 +341,7 @@ export function createFindOwner(win=globalThis){
             const place=state.lens==="heritage"?items.find(item=>item.item_id===id):null;
             state.selectedPlaceId=place?.place_id??null;
             state.selectedId=place?null:id;
-            state.expandPlace=false;
+            state.expandPlace=false;state.expandDetail=false;
             void paint();
           },
         });
@@ -393,7 +395,7 @@ export function createFindOwner(win=globalThis){
 
   function close(){
     ++paintToken;
-    openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
+    openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
@@ -410,7 +412,7 @@ export function createFindOwner(win=globalThis){
       state.lens=value;state.calendarKey=null;
       if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(Object.hasOwn(state,key))state[key]=value;
-    state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
+    state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.displayLimit=24;
     if(state.lens!==previousLens){lastMapView=null;lastMapLens=null;}
     void paint();
@@ -473,8 +475,8 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-find-close]")){
       event.preventDefault?.();
-      if(state.selectedPlaceId){state.selectedPlaceId=null;state.expandPlace=false;void paint();return;}
-      if(state.selectedId){state.selectedId=null;void paint();return;}
+      if(state.selectedPlaceId){if(state.expandPlace){state.expandPlace=false;void paint();return;}state.selectedPlaceId=null;void paint();return;}
+      if(state.selectedId){if(state.expandDetail){state.expandDetail=false;void paint();return;}state.selectedId=null;void paint();return;}
       if(state.lens!=="heritage"){setFilter("lens","heritage");return;}
       close();void win?.AO_APP_SHELL_V1?.navigate?.("home");return;
     }
@@ -482,14 +484,23 @@ export function createFindOwner(win=globalThis){
     // must reach their own Place, Calendar, novena and source-link actions.
     if(target?.closest?.("button[data-find-close-detail]")||
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-detail]")){
-      event.preventDefault?.();state.selectedId=null;void paint();return;
+      event.preventDefault?.();state.selectedId=null;state.expandDetail=false;void paint();return;
     }
     if(target?.closest?.("button[data-find-close-place]")||
        target?.matches?.(".aoFindSheetBackdrop[data-find-close-place]")){
-      event.preventDefault?.();state.selectedPlaceId=null;void paint();return;
+      event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint();return;
     }
     if(target?.closest?.("[data-explore-expand-place]")){
       event.preventDefault?.();state.expandPlace=true;void paint();return;
+    }
+    if(target?.closest?.("[data-explore-collapse-place]")){
+      event.preventDefault?.();state.expandPlace=false;void paint();return;
+    }
+    if(target?.closest?.("[data-explore-expand-detail]")){
+      event.preventDefault?.();state.expandDetail=true;void paint();return;
+    }
+    if(target?.closest?.("[data-explore-collapse-detail]")){
+      event.preventDefault?.();state.expandDetail=false;void paint();return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
@@ -530,7 +541,7 @@ export function createFindOwner(win=globalThis){
     if(openPlace){
       event.preventDefault?.();event.stopPropagation?.();
       state.selectedPlaceId=openPlace.dataset.exploreOpenPlace||null;
-      state.selectedId=null;state.expandPlace=false;
+      state.selectedId=null;state.expandPlace=false;state.expandDetail=false;
       void paint();return;
     }
     const placeItem=target?.closest?.("[data-explore-place-item]");
@@ -541,6 +552,7 @@ export function createFindOwner(win=globalThis){
       state.query="";
       state.selectedPlaceId=null;
       state.selectedId=placeItem.dataset.explorePlaceItem||null;
+      state.expandDetail=false;
       void paint();return;
     }
     const calendarDate=target?.closest?.("[data-explore-calendar-date]");
@@ -572,7 +584,7 @@ export function createFindOwner(win=globalThis){
       void paint().then(()=>{const scroller=getRoot(win)?.querySelector?.(".aoFindSurface");if(scroller)scroller.scrollTop=previousScroll;});
       return;
     }
-    const item=target?.closest?.("[data-explore-item]");if(item){state.selectedPlaceId=null;state.selectedId=item.dataset.exploreItem;void paint();return}
+    const item=target?.closest?.("[data-explore-item]");if(item){state.selectedPlaceId=null;state.selectedId=item.dataset.exploreItem;state.expandDetail=false;void paint();return}
     const aff=target?.closest?.("[data-find-affiliation]");
     if(aff&&state.lens==="tlm"){
       const id=aff.dataset.findAffiliation,index=state.affiliations.indexOf(id);
@@ -584,8 +596,8 @@ export function createFindOwner(win=globalThis){
 
   function onKeyDown(event){
     if(!openState||event?.key!=="Escape")return;
-    if(state.selectedPlaceId){event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint();return;}
-    if(state.selectedId){event.preventDefault?.();state.selectedId=null;void paint();return;}
+    if(state.selectedPlaceId){event.preventDefault?.();if(state.expandPlace)state.expandPlace=false;else state.selectedPlaceId=null;void paint();return;}
+    if(state.selectedId){event.preventDefault?.();if(state.expandDetail)state.expandDetail=false;else state.selectedId=null;void paint();return;}
     const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open],.aoExploreSectionSwitcher[open]");
     if(disclosure){event.preventDefault?.();disclosure.open=false;return;}
     if(state.lens!=="heritage"){event.preventDefault?.();setFilter("lens","heritage");}
