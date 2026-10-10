@@ -72,6 +72,48 @@ def contact_sheets(rows):
             draw.text((x+12,y+950),str(rec["width"])+" × "+str(rec["height"]),fill=(65,65,65))
         sheet.save(OUT/("contact-sheet-%02d.jpg"%(1+off//8)),quality=90,optimize=True)
 
+
+def prepare_editorial_previews(rows):
+    """Create frametrimmed, compact *unpublished* variants for manual mobile QA."""
+    shortlist=json.loads((ROOT/"data/calendar/sacred-art-visual-shortlist.v1.json").read_text(encoding="utf-8"))
+    by_id={row["id"]:row for row in rows}
+    target=OUT/"editorial-previews"
+    target.mkdir(parents=True,exist_ok=True)
+    report=[]
+    for item in shortlist["artworks"]:
+        key=item["id"]
+        raw=by_id.get(key)
+        finding={"id":key,"status":"NOT_AVAILABLE"}
+        if not raw or raw["result"]!="TECHNICAL_SCREEN_PASS":
+            finding["reason"]=raw.get("rejectionReason","Not acquired") if raw else "Missing source"
+            report.append(finding)
+            continue
+        try:
+            bounds=item["cropFractionLTRB"]
+            if len(bounds)!=4 or not (0 <= bounds[0] < bounds[2] <= 1 and 0 <= bounds[1] < bounds[3] <= 1):
+                raise ValueError("Invalid image crop")
+            with Image.open(ORIGINALS/raw["filename"]) as original:
+                original=ImageOps.exif_transpose(original).convert("RGB")
+                w,h=original.size
+                crop=(round(bounds[0]*w),round(bounds[1]*h),round(bounds[2]*w),round(bounds[3]*h))
+                display=original.crop(crop)
+                display.thumbnail((2100,2100),Image.Resampling.LANCZOS)
+                output=target/(key+".webp")
+                display.save(output,"WEBP",quality=89,method=4)
+            finding.update(status="EDITORIAL_PREVIEW_ONLY",file=str(output.relative_to(OUT)),
+                           pixelCrop=crop,outputDimensions=list(display.size),
+                           sha256=hashlib.sha256(output.read_bytes()).hexdigest(),
+                           originalSha256=raw["sha256"],visualGrade=item["visualGrade"],
+                           museumObjectUrl=raw["objectUrl"],originalImageUrl=raw["originalImageUrl"])
+        except Exception as exc:
+            finding.update(status="FAILED",reason=str(exc))
+        report.append(finding)
+    (OUT/"editorial-previews-manifest.json").write_text(json.dumps({
+        "schema":"AO_SACRED_ART_EDITORIAL_PREVIEWS_V1",
+        "rights":"CC0 from Met API for originals only",
+        "warning":"Review-only frametrimmed copies, not user-facing or approved app assets.",
+        "artworks":report},indent=2)+"\n",encoding="utf-8")
+
 def main():
     candidates=json.loads(REGISTRY.read_text(encoding="utf-8"))["artworks"]
     assert len({x["id"] for x in candidates})==len(candidates), "Duplicate candidate IDs"
@@ -115,6 +157,7 @@ def main():
         print("[%d/%d] %s: %s %s"%(idx,len(candidates),key,rec["result"],rec.get("rejectionReason","")),flush=True)
         time.sleep(.7)
     contact_sheets(rows)
+    prepare_editorial_previews(rows)
     report={"schema":"AO_SACRED_ART_ACQUISITION_REPORT_V1",
             "warning":"Technical/source screening only. No curatorial, glare, frame, crop or app approval.",
             "entries":rows}
