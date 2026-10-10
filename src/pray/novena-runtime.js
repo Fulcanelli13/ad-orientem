@@ -155,7 +155,7 @@ function open(opts={}){
 }
 function back(){
  if(N.screen==='day'){N.screen='detail';N.stage=0;N.showEnglish=false;return render()}
- if(N.screen==='detail'&&detailFromOverview){N.screen='overview';N.id=null;detailFromOverview=false;return render()}
+ if(N.screen==='detail'){if(detailFromOverview){N.screen='overview';N.id=null;detailFromOverview=false;return render()}}
  return returnToObservedOrigin(window,entryOrigin,{
    close:()=>BASE_CLOSE({silent:true}),
    restoreParent:()=>{BASE_OPEN('pray.hub',OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);}
