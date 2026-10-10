@@ -244,6 +244,15 @@ try{
 console.log("Source-integrity artifact: "+dest);
 if(output.failures.length)process.exitCode=2;
 if(output.records.length!==(FOCUSED_GAPS?10:100))process.exitCode=3;
+// These two canonical Propers had 12 missing vernacular slots in the
+// original 100-case corpus. EN/FR must both survive the pinned donor path.
+for(const path of ["Sancti/02-22","Sancti/05-25"]){
+  const entry=output.records.find(row=>row.resolvedPath===path);
+  if(!entry || ["en","fr"].some(lang=>entry.ownComputedMissing?.[lang]?.length)){
+    console.error("PROPER_BILINGUAL_SOURCE_UNRESOLVED",path,entry?.ownComputedMissing);
+    process.exitCode=6;
+  }
+}
 // Production cannot advertise translated Proper completeness while composed
 // prayers or readings still contain a placeholder, and source directives may
 // never be displayed as completed liturgical conclusions.
