@@ -1,0 +1,33 @@
+name: Sacred art — coverage and tag audit
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/audit-sacred-art-modules.mjs"
+      - "data/calendar/sacred-art-candidates.v1.json"
+      - "data/calendar/sacred-art-subject-targets.v2.json"
+      - ".github/workflows/sacred-art-coverage-audit.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-module-coverage
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit all subject targets, original hashes and rights holds
+        run: node tools/calendar/audit-sacred-art-modules.mjs
+      - name: Upload complete unresolved-source and coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-all-modules-coverage
+          path: artifacts/sacred-art-coverage/
+          if-no-files-found: warn
