@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CSE_CANONICAL_VERSION,CSE_CANONICAL_DOSSIERS,CSE_CANONICAL_FAMILIES,CSE_CANONICAL_DOSSIER_MAP,CSE_QUESTION_OWNER_MAP} from "../src/learn/sexual-ethics-data/canonical.js";
-import {CSE_QUESTION_MAP,CSE_QUESTIONS} from "../src/learn/sexual-ethics-data/index.js";
+import {CSE_QUESTION_MAP,CSE_QUESTIONS,CSE_SOURCE_MAP} from "../src/learn/sexual-ethics-data/index.js";
 import {createSexualEthicsRuntime,SEXUAL_ETHICS_ROOT_ID} from "../src/learn/sexual-ethics.js";
 import {CSE_DEBATE_POSITION_REFS,CSE_POSITION_SOURCE_IDS} from "../src/learn/sexual-ethics-data/provenance.js";
 
@@ -20,8 +20,28 @@ assert.deepEqual(audit.cases.map(c=>c.id),[...CSE_POSITION_SOURCE_IDS]);
 for(const row of audit.cases){
   const refs=CSE_DEBATE_POSITION_REFS[row.id];
   assert.deepEqual(row.opponent_provenance.map(x=>[x.source_id,x.locator]),refs.map(x=>[...x]),"source provenance changed: "+row.id);
-  for(const source of row.opponent_provenance)assert.match(source.url,/^https:\/\//);
+  for(const source of row.opponent_provenance){
+    const canonical=CSE_SOURCE_MAP[source.source_id];
+    assert.ok(canonical,"source missing from canonical registry: "+source.source_id);
+    assert.match(source.url,/^https:\/\//);
+    assert.equal(source.url,canonical.canonical_url,
+      row.id+" "+source.source_id+": opponent ledger URL drifted from live reader");
+    assert.equal(source.title,canonical.title,
+      row.id+" "+source.source_id+": opponent source title drifted from live reader");
+    assert.equal(source.role,canonical.role,
+      row.id+" "+source.source_id+": opponent source role drifted from live reader");
+    assert.ok(source.source_type,"source quality/precision category missing: "+row.id+" "+source.source_id);
+    if(source.role!=="opposing_position")assert.match(source.source_type,/CONTEXT|CATHOLIC|REBUTTAL/,
+      row.id+" "+source.source_id+": Catholic/context source must not be misrepresented as an opponent");
+  }
 }
+assert.equal(audit.source_registry_alignment.position_corpus,55);
+assert.equal(audit.source_registry_alignment.position_reference_changes,22);
+assert.equal(audit.source_registry_alignment.full_passage_certified,false);
+assert.equal(audit.source_registry_alignment.stage_specific_certification_unchanged,true);
+assert.equal(audit.summary.stage_full_text_certified,0,"Reconciliation must not certify disputed theological arguments");
+assert.equal(audit.certification_audit_v3?.publication_approval,false,
+  "Synchronizing evidence links is not editorial or theological publication approval");
 assert.equal(audit.summary.selected_primary_position_checks,51);
 assert.equal(audit.summary.book_catalog_preview_cases,31);
 assert.equal(audit.summary.remaining_full_passage_review,55);
