@@ -8,12 +8,12 @@ const registry = JSON.parse(readFileSync("data/calendar/sacred-art-candidates.v1
 assert.equal(registry.schema, "AO_SACRED_ART_CANDIDATES_V1");
 assert.equal(registry.ownerIssue, 885);
 assert.ok(registry.artworks.length >= 40);
-assert.equal(new Set(registry.artworks.map(a => a.id)).size, 40);
+assert.equal(new Set(registry.artworks.map(a => a.id)).size, registry.artworks.length);
 for (const candidate of registry.artworks) {
-  assert.match(candidate.id, /^met-\d+$/);
+  assert.match(candidate.id, /^(met|cma|nga)-\d+$/);
   assert.equal(candidate.medium, "painting");
   assert.equal(candidate.source.rights, "CC0");
-  assert.match(candidate.source.objectUrl, /^https:\/\/www\.metmuseum\.org\/art\/collection\/search\/\d+$/);
+  assert.match(candidate.source.objectUrl, /^https:\/\/(?:www\.metmuseum\.org\/art\/collection\/search\/\d+|clevelandart\.org\/art\/[\d.a-z]+|www\.nga\.gov\/artworks\/\d+-[a-z0-9-]+)$/);
   assert.equal(candidate.review.status, "CANDIDATE");
   assert.equal(candidate.image, null);
   assert.equal(eligibleSacredArtwork(candidate), false, "Museum page alone is never production image approval");
