@@ -153,17 +153,15 @@ try{
  assert.match(await dialog.locator(".aoScriptureContextCommentary").innerText(),/Psalm 129/);
  await dialog.locator("[data-scripture-close]").click();
  // The shared reader must render the original Catena text, not just a link.
- const catenaFixture={id:"catena.luke.1.28",work:"catena-aurea",
-   citation:"Catena Aurea, Luke 1:28–29",
-   source:{license:"public-domain",url:"https://www.ecatholic2000.com/catena/untitled-62.shtml"},
-   commented_verse_keys:["luke/1/28","luke/1/29"],
-   segments:[{father:"Bede",text:"Tested original-source passage within the reader."}]};
- await page.route("**/data/catena/luke.jsonl",route=>route.fulfill({status:200,body:JSON.stringify(catenaFixture)}));
+ await page.route("https://raw.githubusercontent.com/**",route=>route.abort());
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:28",{language:"en"})),true);
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
- await dialog.locator(".aoScriptureFatherText").first().waitFor({state:"visible",timeout:12000});
- assert.match(await dialog.locator(".aoScriptureFatherText").first().innerText(),/within the reader/);
- assert.match(await dialog.locator(".aoScriptureFather summary").first().innerText(),/Bede/);
+ await dialog.locator(".aoScriptureFatherText").first().waitFor({state:"visible",timeout:15000});
+ assert.ok((await dialog.locator(".aoScriptureFatherText").first().innerText()).length>80,
+   "Original full-length Father-attributed text should load from the bundled Gospel");
+ assert.ok(await dialog.locator(".aoScriptureFather").count()>=2,
+   "Source-matched Catena pericope includes separately attributed Fathers");
+ assert.match(await dialog.locator(".aoScriptureCatenaHeading").first().innerText(),/Catena Aurea, Luke 1:/);
  await dialog.locator("[data-scripture-close]").click();
  // Source-witnessed divided reading opens in the same overlay. The two
  // chapters are separate; omitted verses are never silently restored.

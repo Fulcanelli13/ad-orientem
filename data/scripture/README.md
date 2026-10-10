@@ -30,3 +30,25 @@ Before running `node tools/scripture/compile-books.mjs INPUT OUTPUT`:
 No pack currently ships. The Home reader opens source sites when there is no
 validated in-app text. Full-text search and offline caching intentionally require
 licensed/certified packs; the interface does not claim unavailable Bible texts.
+
+## In-app Catena Aurea commentary (separate from Bible editions)
+
+The four files under `data/scripture/catena/` are **commentary**, not Bible
+text packs. They contain all 814 pericopes and 12,692 Father-attributed
+fragments from the *Catena Aurea* Oxford translation (1841–45, J. H. Newman).
+Source: `AlvaroBalbin/catena` pinned to commit
+`efe1bd084d918a34ca22ffeef2ecf711c593b392`, with individual upstream
+Git blob identifiers, edition label, source links and a corpus-wide manifest.
+
+These files are self-hosted by Ad Orientem: clicking Commentary reads them
+inside the existing Scripture overlay. Each Gospel is fetched only as needed,
+and after the first successful retrieval can be saved to CacheStorage for
+subsequent offline use. Initial use without connectivity still requires a
+previously cached Gospel file. No dependency on live GitHub Raw for runtime
+display. The original text fragments and attributed Father names are retained.
+
+Run `node tests/scripture-catena-corpus.mjs` to verify the complete manuscript
+census, attribution, source metadata, exact match against Gospel verse keys,
+and no remote-runtime dependency. **Do not confuse this commentary source
+approval with approval to reproduce the Bible translations**: the latter remain
+disabled pending their separate canonical edition and textual audits.
