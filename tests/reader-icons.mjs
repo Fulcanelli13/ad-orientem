@@ -1,3 +1,5 @@
+import { R17_DONOR_PNG_ICON_KEYS } from "../src/mass/reader-icon-bank.js";
+import { extractDonorRichMaskUri } from "../src/mass/reader-dom.js";
 import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import {
@@ -142,5 +144,55 @@ const unmapped=primaryMatrix.filter(row=>{
 });
 assert.deepEqual(unmapped.map(x=>x.cueId+":"+x.label),[],
   "source priest gestures missing a real v1.80 icon or rubric binding");
+
+
+const reviewed=JSON.parse(readFileSync(new URL("../data/presentation/mass-icon-user-selections-20261010.v1.json",import.meta.url),"utf8"));
+assert.deepEqual(reviewed.selectionCounts,{selected:42,investigate:10,total:52});
+assert.equal(Object.keys(reviewed.selected).length,42);
+assert.equal(reviewed.investigate.length,10);
+for(const [group,path] of Object.entries(reviewed.selected)){
+  assert.match(path,/^assets\/active\//,"untrusted icon path "+group);
+  assert.ok(readFileSync(new URL("../"+path,import.meta.url)).length>0,group+" preference has no real GitHub asset");
+}
+const approvedPosition={
+  ALTAR_STEPS_ASCENDING:"priest_ascending_rich",
+  ALTAR_CENTER:"priest_centre_rich",
+  ALTAR_EPISTLE_MISSAL:"priest_epistle_rich",
+  ALTAR_EPISTLE_SIDE:"priest_epistle_rich",
+  ALTAR_GOSPEL_MISSAL:"priest_gospel_rich",
+  ALTAR_GOSPEL_SIDE:"priest_gospel_rich",
+  SEDILIA:"priest_sedilia_rich",
+  COMMUNION_RAIL:"priest_rail_after_rich",
+  PREACHING_PLACE:"priest_ambo_rich",
+  PROCESSION_ROUTE:"priest_procession_rich",
+};
+for(const [station,wanted] of Object.entries(approvedPosition)){
+  assert.equal(iconKeysForReaderState({priestPosition:{station}}).priestPositionIconKey,wanted,
+    station+" did not render the approved v1.80 Mass art");
+}
+assert.equal(iconKeysForReaderState({priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,"priest_foot",
+  "unresolved foot-of-altar must not be marked as user-approved");
+assert.equal(iconKeysForReaderState({priestAction:{label:"ELEVATES HOST",owner:"GESTURE_MATRIX_SOT",iconKey:"priest_elevate_host_rich"}}).priestActionIconKey,
+  "priest_elevation","exact source-owned Host elevation did not honor the reviewed icon");
+assert.equal(iconKeysForReaderState({priestAction:{label:"ELEVATES CHALICE",owner:"GESTURE_MATRIX_SOT",iconKey:"priest_elevate_chalice_rich"}}).priestActionIconKey,
+  "priest_elevate_chalice_rich","Chalice elevation lost its own selected art");
+assert.equal(iconKeysForReaderState({priestAction:{label:"OFFERS HOST"}}).priestActionIconKey,
+  "priest_elevate_host_rich","Host offering was incorrectly replaced by Host elevation");
+assert.equal(iconKeysForReaderState({priestAction:{label:"TURNS TO PEOPLE"}}).priestActionIconKey,
+  "priest_facing_people","turning-to-people did not honor the review");
+assert.ok(reviewed.investigate.includes("priest:blessing"));
+assert.ok(reviewed.investigate.includes("priest:profound_bow"));
+assert.equal(reviewed.selected["you:head_bow"],"assets/active/mass-v46/head_bow.svg");
+assert.equal(reviewed.selected["other:ao-live-head-bow"],"assets/active/live-gesture/ao-live-head-bow.png");
+assert.equal(R17_DONOR_PNG_ICON_KEYS.length,57,"original embedded-PNG inventory incomplete");
+for(const key of ["bells","priest_elevation","priest_audible","priest_silent","breast_strike","priest_facing_people"]){
+  assert.ok(R17_DONOR_PNG_ICON_KEYS.includes(key),key+" PNG will flatten into an opaque SVG mask");
+  const wrapped=readFileSync(new URL("../assets/active/mass-v46/"+key+".svg",import.meta.url),"utf8");
+  assert.match(extractDonorRichMaskUri(wrapped)??"",/^data:image\/png;base64,/,
+    key+" embedded PNG alpha could not be unwrapped");
+}
+for(const key of ["stand","sit","cross","priest_genuflect"]){
+  assert.ok(!R17_DONOR_PNG_ICON_KEYS.includes(key),key+" is an original vector, not PNG");
+}
 
 console.log("reader icons: PASS — user-reviewed v1.80 position/action artwork and cue ownership.");
