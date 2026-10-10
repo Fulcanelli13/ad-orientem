@@ -49,7 +49,7 @@ export function mapInsertedRites(values = []) {
     if (raw.includes("REQUIEM") && raw.includes("ABSOLUTION")) add(followingActions, "REQUIEM_ABSOLUTION");
     if (raw.includes("HOLY_THURSDAY") || raw.includes("ALTAR_REPOSE")) add(followingActions, "HOLY_THURSDAY_POST");
     if (raw.includes("CORPUS") && raw.includes("PROCESSION")) add(followingActions, "CORPUS_CHRISTI_PROCESSION");
-    else if (raw.includes("PROCESSION")) add(followingActions, "GENERIC_PROCESSION");
+    else if (raw.includes("PROCESSION") && !/(?:ROGATION|PALM|ASH|CANDLEMAS|CANDLE)/.test(raw)) add(followingActions, "GENERIC_PROCESSION");
   }
   return Object.freeze({
     precedingRites: Object.freeze(precedingRites),
