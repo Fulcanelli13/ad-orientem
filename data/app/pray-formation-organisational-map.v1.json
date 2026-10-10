@@ -4278,5 +4278,264 @@
       "learn.catholic_life",
       "learn.seasonal_rites"
     ]
+  },
+  "guides": {
+    "source": "data/app/guide-coverage-two-function-audit.v1.json",
+    "scope": "38 current public entry routes",
+    "source_level_followups": [
+      {
+        "id": "learn.sexual_ethics",
+        "owner": "sexual-ethics",
+        "group": "questions_and_debates",
+        "information": "PARTIAL",
+        "walkthrough": "GAP_CANDIDATE",
+        "information_followup": true,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.holy_name_litany",
+        "owner": "pray",
+        "group": "devotions_and_novenas",
+        "information": "PARTIAL",
+        "walkthrough": "GAP_CANDIDATE",
+        "information_followup": true,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.communion_treasury",
+        "owner": "pray",
+        "group": "before_the_blessed_sacrament",
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "information_followup": true,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.dying_companion",
+        "owner": "pray",
+        "group": "devotions_and_novenas",
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "information_followup": true,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.good_death",
+        "owner": "pray",
+        "group": "devotions_and_novenas",
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "information_followup": true,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.library",
+        "owner": "pray",
+        "group": "prayer_library",
+        "information": "GAP_CANDIDATE",
+        "walkthrough": "NOT_APPLICABLE",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.sacred_heart",
+        "owner": "pray",
+        "group": "devotions_and_novenas",
+        "information": "PARTIAL",
+        "walkthrough": "PARTIAL",
+        "information_followup": true,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.catechism",
+        "owner": "catechism",
+        "group": "faith_foundations",
+        "information": "PARTIAL",
+        "walkthrough": "EDITORIAL_PREVIEW_ONLY",
+        "information_followup": true,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.catechism.daily",
+        "owner": "learn.catechism",
+        "group": "faith_foundations",
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.glossary",
+        "owner": "glossary",
+        "group": "reference",
+        "information": "PARTIAL",
+        "walkthrough": "NOT_APPLICABLE",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.rites.baptism",
+        "owner": "sacramental-formation",
+        "group": "christian_living_and_sacraments",
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "information_followup": false,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.rites.confirmation",
+        "owner": "sacramental-formation",
+        "group": "christian_living_and_sacraments",
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "information_followup": false,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.rites.first_communion",
+        "owner": "sacramental-formation",
+        "group": "christian_living_and_sacraments",
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "information_followup": false,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.rites.matrimony",
+        "owner": "sacramental-formation",
+        "group": "christian_living_and_sacraments",
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "information_followup": false,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.rites.sick",
+        "owner": "sacramental-formation",
+        "group": "christian_living_and_sacraments",
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "information_followup": false,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.scapular",
+        "owner": "formation-devotional-guide",
+        "group": "christian_living_and_sacraments",
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "information_followup": false,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "learn.serve_mass.responses",
+        "owner": "mass-formation-practice",
+        "group": "liturgy_and_latin",
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.angelus_regina",
+        "owner": "pray",
+        "group": "daily_marian",
+        "information": "CODE_PRESENT",
+        "walkthrough": "PARTIAL",
+        "information_followup": false,
+        "walkthrough_followup": true,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.litany_saints",
+        "owner": "pray",
+        "group": "penance_and_passion",
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.meal_prayers",
+        "owner": "pray",
+        "group": "daily_marian",
+        "information": "PARTIAL",
+        "walkthrough": "NOT_APPLICABLE",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.morning_evening",
+        "owner": "pray",
+        "group": "daily_marian",
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.nightly_examen",
+        "owner": "pray",
+        "group": "daily_marian",
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.penitential_psalms",
+        "owner": "pray",
+        "group": "penance_and_passion",
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.sacred_hymns",
+        "owner": "pray",
+        "group": "devotions_and_novenas",
+        "information": "PARTIAL",
+        "walkthrough": "NOT_APPLICABLE",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      },
+      {
+        "id": "pray.seven_words",
+        "owner": "pray",
+        "group": "penance_and_passion",
+        "information": "PARTIAL",
+        "walkthrough": "CODE_PRESENT",
+        "information_followup": true,
+        "walkthrough_followup": false,
+        "reason": "Source-level audit only; check live nested reader and any later merged fixes before writing or adding a Guide."
+      }
+    ],
+    "source_level_followup_count": 25,
+    "fully_verified_in_phone": false,
+    "policy": "Information and user-controlled walkthrough are different; inspect current target reader, historical source, user context and guide before implementing. Passive Library and Glossary lookups do not need fake guided steps."
   }
 }
