@@ -1,3 +1,4 @@
+import { captureModuleOrigin, returnToObservedOrigin } from "../app/module-return.js";
 import "./traditional-pray-styles.js";
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
@@ -87,7 +88,7 @@ function prayerRows(rows){
   return `<div class="aoTP381PrayerList">${rows.map(([id,title,note])=>`<button type="button" ${id.includes(".")?`data-tp381-route="${esc(id)}"`:`data-tp381-prayer="${esc(id)}"`}><span><b>${esc(title)}</b><small>${esc(note)}</small></span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
 }
 
-let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={};
+let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={};let entryOrigin=null,guidedFromList=false;
 let S={route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
@@ -300,7 +301,7 @@ function render(){
 }
 function open(route,opts={}){
   if(!ROUTES[route])return false;
-  OPEN_OPTS={...opts};S={...S,route,screen:"module",prayerId:null,
+  OPEN_OPTS={...opts};entryOrigin=captureModuleOrigin(window,"pray");guidedFromList=false;S={...S,route,screen:"module",prayerId:null,
     ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyStep:0,returnToDaily:false}:{})
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
     ...(route==="pray.dying_companion"?{dying:"now"}:{})};
@@ -310,8 +311,11 @@ function open(route,opts={}){
 function back(){
   if(S.screen==="prayer"){S.screen="module";S.prayerId=null;return render()}
   if(S.route==="pray.nightly_examen"&&S.returnToDaily){S.route="pray.morning_evening";S.returnToDaily=false;return render()}
-  if(S.route==="pray.morning_evening"&&S.dailyMode==="guided"){S.dailyMode="list";return render()}
-  BASE_OPEN("pray.hub",OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);return true;
+  if(S.route==="pray.morning_evening"&&S.dailyMode==="guided"&&guidedFromList){S.dailyMode="list";guidedFromList=false;return render()}
+  return returnToObservedOrigin(window,entryOrigin,{
+    close:()=>BASE_CLOSE({silent:true}),
+    restoreParent:()=>{BASE_OPEN("pray.hub",OPEN_OPTS);if(OPEN_OPTS.returnFamily)window.AO_PRAY_V435930?.openFamily?.(OPEN_OPTS.returnFamily);}
+  });
 }
 function goHome(){
   BASE_CLOSE();
@@ -329,7 +333,7 @@ function handleClick(e){
   if(b.matches("[data-tp381-glossary]")){const g=window?.AO_GLOSSARY_V1;if(typeof g?.openTerms==="function")void g.openTerms(glossaryTermsForState(),{origin:"pray"});return;}
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
   if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";S.dailyStep=0;return render()}
-   if(b.dataset.tp381DailyMode){S.dailyMode=b.dataset.tp381DailyMode==="list"?"list":"guided";return render()}
+   if(b.dataset.tp381DailyMode){if(S.dailyMode==="list"&&b.dataset.tp381DailyMode!=="list")guidedFromList=true;S.dailyMode=b.dataset.tp381DailyMode==="list"?"list":"guided";return render()}
    if(b.hasAttribute("data-tp381-daily-step")){
      S.dailyStep=clampPrayerCardStep(Number(b.dataset.tp381DailyStep),guidedDailyCards(S.daypart).length);return render();
    }
