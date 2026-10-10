@@ -158,12 +158,24 @@ export function buildRecoveryDossierCoverage(rows,packs) {
     if(!pack)continue;
     if(pack.version!==version||pack.dossiers?.length!==count||pack.publication_allowed!==false)
       throw new Error("Formation canonical synthesis data contract changed: "+label);
+    // Never flatten these source IDs across packs. Several labels reuse IDs for
+    // different editions, including Vatican I's Pastor aeternus (V1).
+    const originalSources=new Map((pack.source_registry||[]).map(source=>[source.id,source]));
+    if(originalSources.size!==pack.source_registry?.length)
+      throw new Error("Ambiguous Formation source identifier in "+label);
     for(const d of pack.dossiers){
       if(synthMap.has(d.id)||d.publication_allowed!==false||d.sections?.length!==4||
         d.independent_theological_canonical_approval!==false||d.native_french_copyapproval!==false||
         d.original_claim_by_claim_source_context_certified!==false)
         throw new Error("Formation duplicate or falsely certified synthesis "+d.id);
-      synthMap.set(d.id,d);
+      for(const section of d.sections){
+        if(!section.text?.en?.trim()||!section.text?.fr?.trim()||!section.source_ids?.length)
+          throw new Error("Missing bilingual Formation paragraph or source: "+d.id+"/"+section.role);
+        for(const sourceId of section.source_ids)
+          if(!originalSources.get(sourceId)?.url?.startsWith("https://"))
+            throw new Error("Unresolved Formation original source: "+d.id+"/"+sourceId);
+      }
+      synthMap.set(d.id,{...d,sourceRegistry:originalSources});
     }
   }
   const owners=new Map([...apo,...crisis].map(d=>[d.id,[]]));
@@ -282,7 +294,7 @@ export function createFormationRecoveryReview(win=globalThis) {
   };
   const synthesisReading=d=>{
     if(!d.synthesis)return "";
-    const corpus=state.synthesisSources||new Map();
+    const corpus=d.synthesis.sourceRegistry||new Map();
     const labels={
       answer:["Direct answer","Réponse directe"],
       documented_objection:["Documented objection","Objection documentée"],
@@ -447,11 +459,6 @@ export function createFormationRecoveryReview(win=globalThis) {
       state.rows=[...buildRecoveryReviewRows(docs),...buildContemporaryDraftRows(docs)];
       const coverage=buildRecoveryDossierCoverage(state.rows,docs);
       state.dossiers=coverage.dossiers;
-      state.synthesisSources=new Map();
-      for(const label of ["Canonical syntheses","Canonical syntheses II","Canonical syntheses III","Canonical source-first IV","Canonical source-first V","Church Crisis source-first VI","Church Crisis source-first VII","Church Crisis source-first VIII"]){
-        const doc=docs.find(x=>x.label===label)?.doc;
-        for(const s of doc?.source_registry||[])state.synthesisSources.set(s.id,s);
-      }
       state.external=coverage.external;
       state.questionSources=docs.find(x=>x.label==="BAQ questions")?.doc?.source_registry||[];
       state.error="";

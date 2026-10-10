@@ -10,6 +10,20 @@ const packs=m.source_packs.map(p=>({path:p,data:read(p)}));
 const amendments=read(root+"formation-priority-original-opponents-source-amendment-2026-10-10.v1.json");
 const superseded=new Map(amendments.original_findings_superseded.map(x=>[x.finding_id,x]));
 const owners=new Map(packs.flatMap(p=>p.data.dossiers.map(d=>[d.id,{d,reg:new Map(p.data.source_registry.map(s=>[s.id,s]))}])));
+const linkRepair=read(root+"formation-vatican-i-original-link-repair-2026-10-10.v1.json");
+const linkRepairFindings=new Map(linkRepair.findings.map(z=>[z.finding_id,z]));
+const verifyHistoricLink=(finding,liveUrl)=>{
+ if(liveUrl===finding.url)return;
+ const repaired=linkRepairFindings.get(finding.id);
+ assert.ok(repaired,finding.id+" source URL changed without a dated repair ledger");
+ assert.equal(repaired.owner,finding.owner);
+ assert.equal(repaired.source_id,finding.source_id);
+ assert.equal(finding.url,linkRepair.original_url,"historic original link was rewritten");
+ assert.equal(liveUrl,linkRepair.corrected_url,"link repair no longer points to verified original");
+ assert.equal(repaired.historical_record_not_edited,true);
+ assert.equal(repaired.new_claim_certified,false);
+};
+
 assert.equal(m.review_ledgers.length,11);
 assert.equal(prior.length,345);
 assert.equal(ten.findings.length,188);
@@ -41,7 +55,7 @@ function check(f,method){
     assert.equal(old.new_citation_claims_independently_certified,false);
   }
   const orig=obj.reg.get(f.source_id);assert.ok(orig,"missing canonical registry source "+f.id);
-  assert.equal(orig.url,f.url,"citation URL changed "+f.id);
+  verifyHistoricLink(f,orig.url);
   assert.match(f.url,/^https:\/\/\S+/,"malformed original link "+f.id);
   assert.ok(f.locator.length>=9&&f.document_finding.length>=60&&f.qualification.length>=60,"unsupported short finding "+f.id);
   assert.ok(f.claim_examined.length>=55,"unidentified claim being audited "+f.id);

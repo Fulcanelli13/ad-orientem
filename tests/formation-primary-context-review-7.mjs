@@ -16,13 +16,27 @@ const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
 const a2=read("data/learn/formation-a2-20261010-source-role-amendment.v1.json");
 const priority=read("data/learn/formation-priority-original-opponents-source-amendment-2026-10-10.v1.json");
 const a1Changed=new Map(a1.modified_roles.map(x=>[x.owner+"|"+x.role,x]));
+const linkRepair=read(root+"formation-vatican-i-original-link-repair-2026-10-10.v1.json");
+const linkRepairFindings=new Map(linkRepair.findings.map(z=>[z.finding_id,z]));
+const verifyHistoricLink=(finding,liveUrl)=>{
+ if(liveUrl===finding.url)return;
+ const repaired=linkRepairFindings.get(finding.id);
+ assert.ok(repaired,finding.id+" source URL changed without a dated repair ledger");
+ assert.equal(repaired.owner,finding.owner);
+ assert.equal(repaired.source_id,finding.source_id);
+ assert.equal(finding.url,linkRepair.original_url,"historic original link was rewritten");
+ assert.equal(liveUrl,linkRepair.corrected_url,"link repair no longer points to verified original");
+ assert.equal(repaired.historical_record_not_edited,true);
+ assert.equal(repaired.new_claim_certified,false);
+};
+
 const a1Superseded=new Map([...a1.original_findings_superseded,...a2.original_findings_superseded,...priority.original_findings_superseded].map(x=>[x.finding_id,x]));
 const validateReassigned=(f,section,sources)=>{
  const change=a1Superseded.get(f.id);
  assert.ok(change,f.id+": original citation removed without an explicit source-review disposition");
  assert.equal(change.owner,f.owner);assert.equal(change.role,f.role);
  assert.equal(change.previous_source_id,f.source_id);
- assert.equal(sources.get(f.source_id)?.url,f.url,"original dated source evidence was destroyed: "+f.id);
+ verifyHistoricLink(f,sources.get(f.source_id)?.url);
  assert.deepEqual(change.replacement_source_ids,section.source_ids,"replacement original-source pointers drifted: "+f.id);
  assert.equal(change.new_citation_claims_independently_certified,false);
 };
@@ -50,7 +64,7 @@ for (const [i,f] of seven.findings.entries()){
   const section=record.dossier.sections.find(s=>s.role===f.role);
   assert.ok(section,f.id+" missing owner role");
   if(!section.source_ids.includes(f.source_id))validateReassigned(f,section,record.sources);
-  assert.equal(record.sources.get(f.source_id)?.url,f.url,f.id+" link differs from source registry");
+  verifyHistoricLink(f,record.sources.get(f.source_id)?.url);
   assert.match(f.url,/^https:\/\/[^\s/]+\/\S+/);
   assert.ok(f.locator.length>=25&&f.document_finding.length>=70&&f.qualification.length>=60,f.id+" thin source finding");
   assert.ok(["BOUNDED_DIRECT_TEXT_EDITORIAL_COMPARISON_NO_INDEPENDENT_CERTIFICATION","LIMITED_BIBLIOGRAPHIC_ABSTRACT_ONLY"].includes(f.status));
