@@ -550,8 +550,18 @@ try{
   assert.equal(scholaState.speed,"0.45×","Schola no longer starts on donor default speed");
   assert.ok(scholaState.latin.length>0,"Schola stream is empty");
   const scholaBacking=await scholaDock.evaluate(el=>getComputedStyle(el).backgroundColor);
-  assert.equal(scholaBacking,"rgb(17, 25, 20)",
-    "Schola dock is translucent and shows competing Latin prayer text behind the controls");
+  const expectedScholaBacking=await scholaDock.evaluate(el=>{
+    const shell=el.closest("[data-ao-reader-shell]");
+    const panel=getComputedStyle(shell).getPropertyValue("--ao-mass-panel").trim();
+    const probe=document.createElement("span");
+    probe.style.backgroundColor=panel;
+    shell.appendChild(probe);
+    const result=getComputedStyle(probe).backgroundColor;
+    probe.remove();
+    return result;
+  });
+  assert.equal(scholaBacking,expectedScholaBacking,
+    "Schola must use an opaque palette-owned panel so moving Latin text cannot show through");
 
   await scholaDock.locator("[data-schola-faster]").click();
   assert.equal(await scholaDock.locator("[data-role='schola-speed']").textContent(),"0.60×","Schola faster control did not advance donor speed ladder");
