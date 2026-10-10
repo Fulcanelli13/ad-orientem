@@ -8,7 +8,8 @@
     "A museum object page does not establish image quality, pixel dimensions, exact in-app crop or completion of curatorial review.",
     "No candidates are approved for production or claimed to cover any calendar date.",
     "Suggested subjects are descriptive; a verified liturgical/Scripture link must come from the observed 1962 day and appointed readings.",
-    "Kress Foundation source works acquired as public-domain-labelled research originals but rights-held independently from museum CC0 and Commons PD-Art; contextual John Baptist/Last Judgment scenes are not automatically counted as exact feast subjects."
+    "Kress Foundation source works acquired as public-domain-labelled research originals but rights-held independently from museum CC0 and Commons PD-Art; contextual John Baptist/Last Judgment scenes are not automatically counted as exact feast subjects.",
+    "October 10 bulk five-lane search candidate titles were source-screened: Saint Paul the Hermit is not Apostle Paul, View of Domaine Saint-Joseph is not Saint Joseph, and the Crucifixion of Saint Andrew cannot satisfy Stations or the Crucifixion of Christ; misattributed search-target labels are never imported. New multi-scene sources use only what their original front-view images actually depict."
   ],
   "artworks": [
     {
@@ -15911,6 +15912,1794 @@
         "sourceRights": {
           "licence": "CC0",
           "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-130980",
+      "title": "The Annunciation and The Nativity",
+      "artist": "Jaume Ferrer the Younger",
+      "dated": "c. 1457",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1953.660",
+        "objectId": "1953.660",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 3400x2312; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=130980"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation",
+          "nativity"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy1"
+        ],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3400,
+          "height": 2312
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-130980.jpg",
+        "originalSha256": "918b2bb2ac6aa5cd5fcfc52e463d14c1c831db7da53895addfd49ef77953161f",
+        "originalWidth": 3400,
+        "originalHeight": 2312
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "annunciation",
+          "nativity"
+        ],
+        "prayerKeys": [
+          "rosary.joy1"
+        ],
+        "prayerRoutes": [],
+        "rosaryMysteries": [
+          "joy1"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-131820",
+      "title": "The Annunciation",
+      "artist": "Artist not identified in source API",
+      "dated": "1380s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1954.393",
+        "objectId": "1954.393",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2571x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=131820"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy1"
+        ],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2571,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-131820.jpg",
+        "originalSha256": "2f8a22e7f3e9dffd9d70da4d490f2be318687da96ce1dfec41cdb4d104ae9c6f",
+        "originalWidth": 2571,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "annunciation"
+        ],
+        "prayerKeys": [
+          "rosary.joy1"
+        ],
+        "prayerRoutes": [],
+        "rosaryMysteries": [
+          "joy1"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-436199",
+      "title": "Christ Healing the Sick",
+      "artist": "Christian Wilhelm Ernst Dietrich",
+      "dated": "1742",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/436199",
+        "objectId": "436199",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met public-domain painting object metadata; official original SHA256 checked from run 38056121980 artifact, 4000x3254; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436199"
+      },
+      "association": {
+        "subjectKeys": [
+          "christ-healing-sick"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "Christ healing is not assigned to a specific 1962 Gospel or Scripture pericope until identified."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4000,
+          "height": 3254
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/met-436199.jpg",
+        "originalSha256": "f68a9d408b8d03554f26cd84aa31a9c4f7f4eafd0693482bdba2ce69d7536a97",
+        "originalWidth": 4000,
+        "originalHeight": 3254
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "christ-healing-sick"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-515375",
+      "title": "Triptych with The Lamentation of Christ, St. Barbara and St. Catherine of Alexandria",
+      "artist": "Master of the Krainburg Altar",
+      "dated": "c. 1500",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/2022.86",
+        "objectId": "2022.86",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 3400x2244; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=515375"
+      },
+      "association": {
+        "subjectKeys": [
+          "lamentation",
+          "passion",
+          "saint-barbara",
+          "saint-catherine-alexandria"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "Annunciation depicted on reverse wings, not necessarily visible in primary downloaded front-view original. Do not credit Annunciation from this file."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3400,
+          "height": 2244
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-515375.jpg",
+        "originalSha256": "5a10a6e845a77b3bc1c383af115d004308d745822ed526d0312611c558957655",
+        "originalWidth": 3400,
+        "originalHeight": 2244
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "lamentation",
+          "passion",
+          "saint-barbara",
+          "saint-catherine-alexandria"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-459016",
+      "title": "The Annunciation",
+      "artist": "Sandro Botticelli",
+      "dated": "ca. 1490",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/459016",
+        "objectId": "459016",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met public-domain painting object metadata; official original SHA256 checked from run 38056121980 artifact, 3913x2571; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/459016"
+      },
+      "association": {
+        "subjectKeys": [
+          "annunciation"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy1"
+        ],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3913,
+          "height": 2571
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/met-459016.jpg",
+        "originalSha256": "054284b4a8e2e5d6cc89696f5ec6a9d7d3d8f44df0d23f08069fcc9d08ac1bf8",
+        "originalWidth": 3913,
+        "originalHeight": 2571
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "annunciation"
+        ],
+        "prayerKeys": [
+          "rosary.joy1"
+        ],
+        "prayerRoutes": [],
+        "rosaryMysteries": [
+          "joy1"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-97142",
+      "title": "Adoration of the Shepherds",
+      "artist": "Artist not identified in source API",
+      "dated": "c. 1480–1500",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1916.781",
+        "objectId": "1916.781",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 3289x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=97142"
+      },
+      "association": {
+        "subjectKeys": [
+          "nativity",
+          "adoration-shepherds"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.joy3"
+        ],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3289,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-97142.jpg",
+        "originalSha256": "593e798652fc21dd2ca886e1bb6163f36a294c3445590fb4e8fe0ea00f9cc932",
+        "originalWidth": 3289,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "nativity",
+          "adoration-shepherds"
+        ],
+        "prayerKeys": [
+          "rosary.joy3"
+        ],
+        "prayerRoutes": [],
+        "rosaryMysteries": [
+          "joy3"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-115394",
+      "title": "Adoration of the Magi",
+      "artist": "Konrad Laib",
+      "dated": "early 1440s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1936.18",
+        "objectId": "1936.18",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2111x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=115394"
+      },
+      "association": {
+        "subjectKeys": [
+          "epiphany",
+          "adoration-magi"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2111,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-115394.jpg",
+        "originalSha256": "4eaeeb997a94d719c1c77b958100895438017d0c209c429493899b98ed897324",
+        "originalWidth": 2111,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "epiphany",
+          "adoration-magi"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-122223",
+      "title": "The Adoration of the Magi",
+      "artist": "Giovanni di Paolo",
+      "dated": "1440–45",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1942.536",
+        "objectId": "1942.536",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 3400x2963; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=122223"
+      },
+      "association": {
+        "subjectKeys": [
+          "epiphany",
+          "adoration-magi"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3400,
+          "height": 2963
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-122223.jpg",
+        "originalSha256": "6055f95de874861bf78662655a689bf4c293b9331b9fe7cbf7363ead48342347",
+        "originalWidth": 3400,
+        "originalHeight": 2963
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "epiphany",
+          "adoration-magi"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-127664",
+      "title": "Crucifixion",
+      "artist": "Artist not identified in source API",
+      "dated": "1800s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1950.345",
+        "objectId": "1950.345",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2360x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=127664"
+      },
+      "association": {
+        "subjectKeys": [
+          "crucifixion",
+          "passion"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor5"
+        ],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2360,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-127664.jpg",
+        "originalSha256": "75cc02fe448b99a04a5a4ec5c43a8aae753e8c981008cbff8d32609b29eb6f19",
+        "originalWidth": 2360,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "crucifixion",
+          "passion"
+        ],
+        "prayerKeys": [
+          "rosary.sor5"
+        ],
+        "prayerRoutes": [],
+        "rosaryMysteries": [
+          "sor5"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-97147",
+      "title": "The Crucifixion",
+      "artist": "Sodoma",
+      "dated": "1500s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1916.786",
+        "objectId": "1916.786",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2673x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=97147"
+      },
+      "association": {
+        "subjectKeys": [
+          "crucifixion",
+          "passion"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor5"
+        ],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2673,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671777204,
+        "archiveOriginal": "originals/cma-97147.jpg",
+        "originalSha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+        "originalWidth": 2673,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "crucifixion",
+          "passion"
+        ],
+        "prayerKeys": [
+          "rosary.sor5"
+        ],
+        "prayerRoutes": [],
+        "rosaryMysteries": [
+          "sor5"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-458974",
+      "title": "Saint Catherine of Siena Receiving the Stigmata",
+      "artist": "Giovanni di Paolo",
+      "dated": "ca. 1447–65",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/458974",
+        "objectId": "458974",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met public-domain painting object metadata; official original SHA256 checked from run 38056121980 artifact, 2828x3878; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/458974"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-catherine-siena",
+          "stigmata-catherine-siena"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "A religious artwork depicting a saint is not a verified historical lifetime likeness."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2828,
+          "height": 3878
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671567582,
+        "archiveOriginal": "originals/met-458974.jpg",
+        "originalSha256": "c035bc36e358f71e0f48dac67ee2bcf7024d252d7dc9481eb4bfcd4f5571a9bb",
+        "originalWidth": 2828,
+        "originalHeight": 3878
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "saint-catherine-siena",
+          "stigmata-catherine-siena"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": "catherine-siena",
+        "portraitAuthenticity": "TRADITIONAL_SAINT_ICONOGRAPHY_NOT_LIFETIME_LIKENESS",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-435616",
+      "title": "Saint Dominic Resuscitating Napoleone Orsini",
+      "artist": "Bartolomeo degli Erri",
+      "dated": "1467–74",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/435616",
+        "objectId": "435616",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met public-domain painting object metadata; official original SHA256 checked from run 38056121980 artifact, 4000x3259; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/435616"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-dominic",
+          "miracle-saint-dominic"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "A religious artwork depicting a saint is not a verified historical lifetime likeness."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4000,
+          "height": 3259
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671567582,
+        "archiveOriginal": "originals/met-435616.jpg",
+        "originalSha256": "72a40ba5f4f3136162e19ff40eb81d1f6562f25a64be325bd6791f1570892b38",
+        "originalWidth": 4000,
+        "originalHeight": 3259
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "saint-dominic",
+          "miracle-saint-dominic"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": "dominic",
+        "portraitAuthenticity": "TRADITIONAL_SAINT_ICONOGRAPHY_NOT_LIFETIME_LIKENESS",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-142293",
+      "title": "The Virgin and Child Appearing to Saint Francis of Assisi",
+      "artist": "Luca Giordano",
+      "dated": "1680s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1966.125",
+        "objectId": "1966.125",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2780x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=142293"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-francis-assisi",
+          "virgin-child"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "A religious artwork depicting a saint is not a verified historical lifetime likeness."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2780,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671567582,
+        "archiveOriginal": "originals/cma-142293.jpg",
+        "originalSha256": "4dcee3822142655e6b1cb7286c7fe68f5f4d036bf6951a0ed1be8b3f9534cb02",
+        "originalWidth": 2780,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "saint-francis-assisi",
+          "virgin-child"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": "francis-assisi",
+        "portraitAuthenticity": "TRADITIONAL_SAINT_ICONOGRAPHY_NOT_LIFETIME_LIKENESS",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-128842",
+      "title": "Saint Peter Repentant",
+      "artist": "Georges de La Tour",
+      "dated": "1645",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1951.454",
+        "objectId": "1951.454",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2769x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=128842"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-peter",
+          "repentance-peter"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "A religious artwork depicting a saint is not a verified historical lifetime likeness."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2769,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671567582,
+        "archiveOriginal": "originals/cma-128842.jpg",
+        "originalSha256": "69c46448fb6c915bcc285774411afb77a16ae26a3b7ec1ad98a1a0c61ddcf772",
+        "originalWidth": 2769,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "saint-peter",
+          "repentance-peter"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": "peter",
+        "portraitAuthenticity": "TRADITIONAL_SAINT_ICONOGRAPHY_NOT_LIFETIME_LIKENESS",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-129386",
+      "title": "Christ on the Cross",
+      "artist": "El Greco",
+      "dated": "c. 1600–1610",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1952.222",
+        "objectId": "1952.222",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 1970x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=129386"
+      },
+      "association": {
+        "subjectKeys": [
+          "crucifixion",
+          "passion"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "rosary.sor5"
+        ],
+        "artResearchNotes": [
+          "Christ on Cross is a Crucifixion scene. Death-at-the-instant Station XII is not separately verified; do not assign station number."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 1970,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671671828,
+        "archiveOriginal": "originals/cma-129386.jpg",
+        "originalSha256": "a495cd94f5477d47f86a0ae9ed72c9c4bbf085c246ea7c2c5f0f0e93ca307505",
+        "originalWidth": 1970,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "crucifixion",
+          "passion"
+        ],
+        "prayerKeys": [
+          "rosary.sor5"
+        ],
+        "prayerRoutes": [],
+        "rosaryMysteries": [
+          "sor5"
+        ],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-437871",
+      "title": "The Supper at Emmaus",
+      "artist": "Diego Velázquez",
+      "dated": "1622–23",
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437871",
+        "objectId": "437871",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met public-domain painting object metadata; official original SHA256 checked from run 38056121980 artifact, 3538x3303; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437871"
+      },
+      "association": {
+        "subjectKeys": [
+          "supper-emmaus"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [
+          "emmaus"
+        ],
+        "prayerKeys": [],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3538,
+          "height": 3303
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671681939,
+        "archiveOriginal": "originals/met-437871.jpg",
+        "originalSha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+        "originalWidth": 3538,
+        "originalHeight": 3303
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "supper-emmaus"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "emmaus"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-143138",
+      "title": "Rest on the Flight into Egypt",
+      "artist": "Guercino",
+      "dated": "1624",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1967.123",
+        "objectId": "1967.123",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 3372x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=143138"
+      },
+      "association": {
+        "subjectKeys": [
+          "flight-egypt",
+          "holy-family"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [
+          "flight-egypt"
+        ],
+        "prayerKeys": [],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3372,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671681939,
+        "archiveOriginal": "originals/cma-143138.jpg",
+        "originalSha256": "36fcfd50c6b19294fb5f240fcf5ec9953d91a60c82baa7d9f535ee62c876bf5d",
+        "originalWidth": 3372,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "flight-egypt",
+          "holy-family"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [
+          "flight-egypt"
+        ],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-126768",
+      "title": "Holy Family with a Shepherd",
+      "artist": "Battista Dossi",
+      "dated": "early 1520s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1949.185",
+        "objectId": "1949.185",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2851x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=126768"
+      },
+      "association": {
+        "subjectKeys": [
+          "holy-family",
+          "saint-joseph"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2851,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671012741,
+        "archiveOriginal": "originals/cma-126768.jpg",
+        "originalSha256": "ad354b41cb5b18f54f1362c6bbee187b4d03859b6f8c0cc7dcd6078cf66698ad",
+        "originalWidth": 2851,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "holy-family",
+          "saint-joseph"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-370119",
+      "title": "Holy Family with the Mystic Marriage of Saint Catherine",
+      "artist": "Maso da San Friano",
+      "dated": "c. 1560",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/2019.168",
+        "objectId": "2019.168",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2596x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=370119"
+      },
+      "association": {
+        "subjectKeys": [
+          "holy-family",
+          "saint-joseph",
+          "mystic-marriage-catherine"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2596,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671012741,
+        "archiveOriginal": "originals/cma-370119.jpg",
+        "originalSha256": "f0e2a6a0727d4c323bf78ab9b999b1ad4c2240c79a696cc0e8b250ec58fc2d10",
+        "originalWidth": 2596,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "holy-family",
+          "saint-joseph",
+          "mystic-marriage-catherine"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-136922",
+      "title": "Virgin and Child with Saints",
+      "artist": "Ugolino di Nerio",
+      "dated": "c. 1320",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1961.40",
+        "objectId": "1961.40",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 3400x2179; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=136922"
+      },
+      "association": {
+        "subjectKeys": [
+          "virgin-child",
+          "saints-in-attendance"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "This historic Virgin-and-Child panel is NOT an identified Our Lady of Perpetual Help icon; source search target rejected."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3400,
+          "height": 2179
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671012741,
+        "archiveOriginal": "originals/cma-136922.jpg",
+        "originalSha256": "bbe1f62fabdd4018dc99cb8ca8bcca662451cd566a237ecd4834a84052afbf60",
+        "originalWidth": 3400,
+        "originalHeight": 2179
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "virgin-child",
+          "saints-in-attendance"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-142473",
+      "title": "Virgin and Child with Saints",
+      "artist": "Berlinghiero",
+      "dated": "c. 1230s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1966.237.a",
+        "objectId": "1966.237.a",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 2157x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=142473"
+      },
+      "association": {
+        "subjectKeys": [
+          "virgin-child",
+          "saints-in-attendance"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "This historic Virgin-and-Child panel is NOT an identified Our Lady of Perpetual Help icon; source search target rejected."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2157,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671012741,
+        "archiveOriginal": "originals/cma-142473.jpg",
+        "originalSha256": "8d23530f7c24d1a9b16bf6faa1584bee8fc283796af64e6de377ccd169acf17e",
+        "originalWidth": 2157,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "virgin-child",
+          "saints-in-attendance"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "cma-142474",
+      "title": "The Crucifixion of St. Andrew, with St. Francis and St. Paul below",
+      "artist": "Berlinghiero",
+      "dated": "c. 1230s",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1966.237.b",
+        "objectId": "1966.237.b",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access",
+        "sourceEvidence": "Cleveland open-access painting object metadata share_license_status=CC0; official original SHA256 checked from run 38056121980 artifact, 1065x3400; subject visually screened for correct category.",
+        "checkedOn": "2026-10-10",
+        "sourceApi": "https://openaccess-api.clevelandart.org/api/artworks/?id=142474"
+      },
+      "association": {
+        "subjectKeys": [
+          "martyrdom-st-andrew",
+          "saint-andrew",
+          "saint-francis-assisi",
+          "saint-paul"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [],
+        "artResearchNotes": [
+          "Do not confuse martyrdom of Saint Andrew with Crucifixion of Jesus or Stations XI/XII. Automated original search falsely attributed this to Stations and Precious Blood."
+        ],
+        "originalSourceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980"
+      },
+      "review": {
+        "source": "OFFICIAL_MUSEUM_API_AND_SHA256_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 1065,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "PAINTED_SCENE_IDENTITY_SCREENED_RESEARCH_ONLY"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38056121980",
+        "artifactId": 11671671828,
+        "archiveOriginal": "originals/cma-142474.jpg",
+        "originalSha256": "51625dce30cd831bc6e74f86cf12227b98ab4a46b4860aa48fa1ee27d63e7bd1",
+        "originalWidth": 1065,
+        "originalHeight": 3400
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "martyrdom-st-andrew",
+          "saint-andrew",
+          "saint-francis-assisi",
+          "saint-paul"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "SOURCE_OBJECT_CONFIRMED_RESEARCH_2026_10_10",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MUSEUM_OPEN_ACCESS_METADATA_FLAG_CHECKED"
         },
         "reproducibility": {
           "acquisition": "HASHED_MUSEUM_ORIGINAL",
