@@ -113,8 +113,15 @@ export function mountScriptureLibrary(root,{
    // Citation reading is the primary surface. All-library navigation lives below it.
    const browse=element("details",null,"aoScriptureBrowse");
    browse.open=browseExpanded;
-   browse.addEventListener("toggle",()=>{if(browse.isConnected)browseExpanded=browse.open;});
-   browse.append(element("summary",lang==="fr"?"Parcourir la Bible":"Browse the Bible"));
+   // Native toggle is asynchronous; retain disclosure state synchronously
+   // before selector change handlers rerender the reader.
+   const browseSummary=element("summary",lang==="fr"?"Parcourir la Bible":"Browse the Bible");
+   browseSummary.addEventListener("click",event=>{
+     event.preventDefault();
+     browseExpanded=!browse.open;
+     browse.open=browseExpanded;
+   });
+   browse.append(browseSummary);
    const nav=element("div",null,"aoScriptureNav");
    const langControl=element("label",t.language);
    const languageSelect=element("select");
