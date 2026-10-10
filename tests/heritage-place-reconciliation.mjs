@@ -63,6 +63,11 @@ for(const entry of R.place_crosswalk){
 }
 assert.equal(R.counts.places,G.places.length);
 assert.equal(R.counts.places_with_linked_records,linked);
+for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","novena_context","routes","directory_links"]){
+ const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
+ assert.equal(R.distinct_place_links[kind],distinct,"unique Place count drifted for "+kind);
+}
+assert.match(R.map_policy_note,/not counts of publishable map pins/);
 assert.equal(R.counts.multicategory_heritage_places,multicategory);
 for(const [count,value] of Object.entries({
  shrines:S.shrines.length,pilgrimages:S.pilgrimages.length,
