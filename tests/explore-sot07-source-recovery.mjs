@@ -56,7 +56,7 @@ assert.deepEqual(Object.fromEntries(["FR","DACH","NA","II","AU","GB","AFR"].map(
 for(const x of A.families.filter(x=>x.sot07_custom_id))
  assert.ok(S.rows.some(row=>row.original_custom_id===x.sot07_custom_id),"geographic family references absent SOT07: "+x.family_id);
 assert.ok(A.review_rules.some(x=>x.includes("French-world relevance")));
-assert.ok(A.blockers.some(x=>x.includes("not")));
+assert.ok(A.blockers.some(x=>x.includes("No app source registry link")),"original URLs must remain a publication gate");
 assert.ok(!("directory_venues" in A),"research companion crosswalk may not become a parallel TLM Directory");
 
 const nowMapped=[
