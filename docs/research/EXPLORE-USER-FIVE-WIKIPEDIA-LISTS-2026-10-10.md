@@ -54,7 +54,7 @@ Next: acquire the Franciscan Custody's individual 27 site fiches, other official
 
 ### 27 of 27 Franciscan directory records have original links
 
-The [Custody source index](../../data/geography/research/holy-land-custodia-sanctuary-index-2026-10-10.v1.json) now resolves **all 27 displayed original Custody listings** to a direct source: **26 dedicated sanctuary pages** and **one replacement original convent + feast-report pair for Ain Karem's Visitation** (the former directory-page click returned an error). **18 site texts received selected factual review**, and the other **nine** have linked page titles/sources with their detailed historical facts still for review. Thus link acquisition: **27/27 (100%)**; individual site text factual review: **18/27 (66.7%)**. No current opening hours, routes, images, copyright-guarded narrative text or coordinates were imported.
+The [Custody source index](../../data/geography/research/holy-land-custodia-sanctuary-index-2026-10-10.v1.json) now resolves **all 27 displayed original Custody listings** to a direct source: **26 dedicated sanctuary pages** and **one replacement original convent + feast-report pair for Ain Karem's Visitation** (the former directory-page click returned an error). **All 27 now have at least one source-specific historical or site-identification fact reviewed**; 18 received broader direct page reads and nine further entries were screened against primary page introductions or Custody news. Thus link acquisition and bounded focused-source-fact screening are **27/27 (100%)**; this is **not** exhaustive archaeological or entire page-text certification. No current opening hours, routes, images, copyright-guarded narrative text or coordinates were imported.
 
 Physical identity:
 - [Gethsemane original sanctuary account](https://www.custodia.org/en/sanctuaries/gethsemane-basilica-agony/) distinguishes the Basilica of the Agony, Garden of Olives and the separate nearby Grotto of the Arrest. These are site *subfeatures* and never three automatically unrelated main map pins.
@@ -95,9 +95,9 @@ Leżajsk, Pesqueira/Cimbres and Quito Buen Suceso remain in the **original-docum
 ### Counts and next eligibility gates
 
 - Global bibliography now **51** references, including five new original/institutional documents in this round; it previously held 46.
-- Holy Land direct original catalogue links: **27/27**, detailed site content checked: **18/27** (nine still require a factual deep pass).
+- Holy Land direct original catalogue links: **27/27**, focused original-source facts checked: **27/27** (18 broader site-text reviews plus nine introduction/news-supported reviews).
 - Primary/source-institution burial/site attributions now reviewed: **5** qualified cases; this does not make five authentic tombs.
 - Two apparition cases source-reviewed with divergent outcomes. All app data still unchanged.
 - Worldwide 512 gross source entries, thematic 38 feature rows, 182 published Places, 232 European site research leads and 32 existing phenomena claims **have not increased from this verification work**.
 
-**Next phase**: complete the nine unreviewed Custody original page texts, deduplicate the 27 locations by physical site and nested features, acquire original diocesan statements for the remaining apparition claims, and route every accepted source-identity contribution to its domain owner before designing map pins, textual Holy Land Scripture context, or visiting directions.
+**Next phase**: deepen site-level archaeology, biblical context and physically separate subfeatures beyond the initial 27-source-fact screen, deduplicate the 27 locations by physical site and nested features, acquire original diocesan statements for the remaining apparition claims, and route every accepted source-identity contribution to its domain owner before designing map pins, textual Holy Land Scripture context, or visiting directions.
