@@ -33,7 +33,7 @@ assert.equal(disputes.dossiers.length,2);
 assert.equal(disputes.schema,"SACRED_ATLAS_CONTESTED_BODILY_ATTRIBUTIONS_REVIEW_V1");
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:shrine.shrines,pilgrimages:shrine.pilgrimages,routes:shrine.routes,temporalLinks:shrine.temporalLinks,sources:sources.sources,places:geography.places}).pass,true);
-assert.deepEqual([geography.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length],[217,213,206,331,122]);
+assert.deepEqual([geography.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length],[220,216,206,337,122]);
 const map=new Map(geography.places.map(p=>[p.place_id,p]));
 const relics=new Map(sacred.relics.map(r=>[r.id,r]));
 for(const d of disputes.dossiers){

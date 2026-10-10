@@ -865,6 +865,24 @@
       "codes": {
         "iso_alpha2": "IL"
       }
+    },
+    {
+      "geo_area_id": "geo:country:VN",
+      "name": {
+        "official": "Vietnam",
+        "aliases": [
+          "Viêt Nam"
+        ]
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "VN"
+      }
     }
   ],
   "places": [
@@ -2275,14 +2293,15 @@
       ],
       "mappable": true,
       "geo": {
-        "lat": 19.4844,
-        "lng": -99.1168,
+        "lat": 19.48485,
+        "lng": -99.11786,
         "precision": "site",
-        "geocoding_source": "OTHER",
-        "source_url": "https://www.sacred-destinations.com/mexico/mexico-city-basilica-guadalupe",
-        "source_ref": "SACRED-DESTINATIONS:new-basilica",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/120733641",
+        "source_ref": "osm:way:120733641",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
         "matched_country_code": "MX",
-        "verified_at": "2026-10-09"
+        "verified_at": "2026-10-10"
       },
       "address": {
         "line1": "Fray Juan de Zumárraga No. 2",
@@ -8989,6 +9008,123 @@
       "source_ids": [
         "SG-SITE-AO-SG-GEO4-016",
         "SG-COORD-AO-SG-GEO4-016"
+      ]
+    },
+    {
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "name": {
+        "official": "Real Monasterio de Santa María de Guadalupe",
+        "aliases": [
+          "Royal Monastery of Santa María de Guadalupe"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 39.45285,
+        "lng": -5.3275,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://whc.unesco.org/en/list/665/maps/",
+        "source_ref": "UNESCO:665:property_coordinates",
+        "attribution": "UNESCO World Heritage Centre",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Guadalupe, Cáceres",
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Real Monasterio de Santa María de Guadalupe, Guadalupe, Cáceres, Spain"
+      },
+      "source_ids": [
+        "SG-MAJOR2-SITE-ES",
+        "SG-MAJOR2-GEO-ES"
+      ]
+    },
+    {
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "name": {
+        "official": "Memorial of Saint Peter — Capernaum",
+        "aliases": [
+          "Church of Saint Peter, Capernaum"
+        ]
+      },
+      "place_type": "pilgrimage_destination",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 32.880999,
+        "lng": 35.575371,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.octagonproject.org/news/the-modern-church-at-capernaum",
+        "source_ref": "OCTAGONPROJECT:modern_church_capernaum:coordinates",
+        "attribution": "Octagon Project, site coordinates",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Capernaum",
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Memorial of Saint Peter — Capernaum, Capernaum, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-MAJOR2-SITE-IL",
+        "SG-MAJOR2-GEO-IL"
+      ]
+    },
+    {
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "name": {
+        "official": "National Marian Shrine of Our Lady of La Vang",
+        "aliases": [
+          "Trung tâm Thánh Mẫu La Vang"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:VN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 16.70546,
+        "lng": 107.19586,
+        "precision": "complex_anchor",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/690204938",
+        "source_ref": "osm:way:690204938",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "VN",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "La Vang, Quảng Trị",
+        "region": null,
+        "country_code": "VN",
+        "country": "Vietnam",
+        "formatted": "National Marian Shrine of Our Lady of La Vang, La Vang, Quảng Trị, Vietnam"
+      },
+      "source_ids": [
+        "SG-MAJOR2-SITE-VN",
+        "SG-MAJOR2-GEO-VN"
       ]
     }
   ],
