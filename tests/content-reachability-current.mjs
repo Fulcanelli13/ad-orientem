@@ -36,12 +36,13 @@ assert.ok(first>=0&&last>first,"Canonical Prayer family projection moved");
 const familySource=pray.slice(first,last);
 const published=[...familySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
 const external=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
-assert.equal(published.length,22,"Prayer family cards drifted from the approved five families");
+assert.equal(published.length,23,"Prayer family cards drifted from the approved five families plus Tenebrae");
+assert.ok(published.includes("pray.tenebrae"),"Seasonal Tenebrae must remain in the Passion family");
 assert.equal(external.length,10,"External Prayer card count drifted");
 assert.ok(familySource.includes("direct:'pray.library'"),"Prayer Library direct family door missing");
-const actual=[...published,"pray.library"].sort();
+const actual=[...published.filter(id=>id!=="pray.tenebrae"),"pray.library"].sort();
 const prior=previous.routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).sort();
-assert.deepEqual(actual,prior,"Live Prayer family IDs are not the 23 audited canonical entries");
+assert.deepEqual(actual,prior,"Existing 23 audited Prayer family entries must remain unaltered by Tenebrae");
 const lazy=read("src/pray/lazy-module-registry.js");
 for(const id of external){
   assert.ok(lazy.includes('"'+id+'"'),"External Prayer card has no first-use registry entry "+id);
@@ -53,4 +54,4 @@ assert.equal(new Set(EXPLORE_LENSES).size,6);
 for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
   assert.ok(EXPLORE_LENSES.includes(lens),"Explore missing published lens "+lens);
 }
-console.log("PASS current app reachability contract: five tabs, three utility routes, 15 Formation cards, 23 Prayer family entries (10 lazy) and six Explore lenses");
+console.log("PASS current app reachability contract: five tabs, three utility routes, 15 Formation cards, 24 Prayer family entries including Tenebrae (10 lazy) and six Explore lenses");
