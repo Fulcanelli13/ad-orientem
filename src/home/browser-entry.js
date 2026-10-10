@@ -281,6 +281,13 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
       return;
     }
+    const artInfo=target?.closest?.("[data-td2-art-info]");
+    if(artInfo){
+      event.preventDefault?.();
+      const disclosure=win?.document?.querySelector?.(".homeScreen .td2-art-provenance");
+      if(disclosure){disclosure.open=true;disclosure.scrollIntoView?.({behavior:"smooth",block:"nearest"});disclosure.querySelector?.("summary")?.focus?.({preventScroll:true});}
+      return;
+    }
     const settings=target?.closest?.("[data-home-settings]");
     if(settings){
       event.preventDefault?.();
