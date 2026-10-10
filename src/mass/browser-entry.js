@@ -6,6 +6,8 @@ import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
+import { mountObservedMassSourceSelector } from "./observed-mass-selector.js";
+import "./observed-mass-styles.js";
 import { specialMassPresentation,renderSpecialMassContext } from "./full-mass-special-presentation.js";
 import { mountSpecialMassStage } from "./reader-special-stage.js";
 import "./reader-special-stage-styles.js";
@@ -677,11 +679,20 @@ export async function resumePersistedMass({
   });
 }
 
-export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null}={}) {
+export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
+  // The observer may explicitly select the source Proper of a different
+  // calendar day, while the real Mass date remains unchanged. This proxy only
+  // changes the prepared Mass, never the global Calendar or host API.
+  const actualApi=observedSource ? {
+    getResolvedMass:()=>{
+      const base=api.getResolvedMass();
+      return observedSource.effectiveResolvedMass(base);
+    },
+  } : api;
   return createMassEntryController({
-    celebrationApi: api,
+    celebrationApi: actualApi,
     readReaderPreferences: () => readerPreferences(),
     resolveHostOptions: async (resolvedMass) => {
       const options=deriveHostOptions({
@@ -690,7 +701,9 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
         arch: arch(),
         runtimeState: runtimeState(),
       });
-      const proper=await recoverReaderProperOmissions(options.proper,{
+      const observed=observedSource?.selectionFor?.(resolvedMass.date?
+        api.getResolvedMass():null)??null;
+      const proper=await recoverReaderProperOmissions(observed?.proper??options.proper,{
         hostResolver:runtime()?.resolver?.properResolver,
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
@@ -733,7 +746,7 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null };
 
   function tryInstall() {
     state.polls += 1;
@@ -749,9 +762,21 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
           (date)=>runtime().resolver.resolveDay(date):null,
         language:()=>runtimeState()?.language??"en"
       });
+      state.observedSource=mountObservedMassSourceSelector({
+        doc:document,
+        getResolvedMass:()=>celebrationApi().getResolvedMass(),
+        resolveDay:typeof runtime()?.resolver?.resolveDay==="function"
+          ?date=>runtime().resolver.resolveDay(date):null,
+        recoverProper:proper=>recoverReaderProperOmissions(proper,{
+          hostResolver:runtime()?.resolver?.properResolver,
+        }),
+        language:()=>runtimeState()?.language??"en",
+        onSelectionChange:()=>state.fullMassPreflight?.refresh?.(),
+      });
       state.fullMassPreflight=mountFullMassPreflight({
          doc:document,
-         getResolvedMass:()=>celebrationApi().getResolvedMass(),
+         getResolvedMass:()=>state.observedSource.effectiveResolvedMass(celebrationApi().getResolvedMass()),
+         onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
          language:()=>runtimeState()?.language??"en",
        });
@@ -763,6 +788,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
        state.controller = createBrowserMassController({
          rogationPreflight:state.rogationPreflight,
          fullMassPreflight:state.fullMassPreflight,
+         observedSource:state.observedSource,
        });
       state.installed = true;
       document.documentElement.dataset.aoR17MassBridge = "ready";
@@ -798,6 +824,8 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     status: () => Object.freeze({
       installed: state.installed,
       rogationPreflightMounted:Boolean(state.rogationPreflight),
+      observedMassSourceMounted:Boolean(state.observedSource),
+      observedMassSelection:state.observedSource?.status?.()??null,
        fullMassPreflight:state.fullMassPreflight?.status?.()??null,
        fullMassCatalogue:state.fullMassCatalogue?.status?.()??null,
       polls: state.polls,
