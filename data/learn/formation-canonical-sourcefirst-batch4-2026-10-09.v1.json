@@ -304,6 +304,27 @@
       "url": "https://davidhume.org/texts/d/10",
       "locator": "Part X: Philo's objections from human misery and the Epicurean questions",
       "original_context_approved": false
+    },
+    {
+      "id": "VIVEK-1893-OPP",
+      "title": "Swami Vivekananda, Response to Welcome, World's Parliament of Religions, 11 September 1893",
+      "url": "https://en.wikisource.org/wiki/The_Complete_Works_of_Swami_Vivekananda/Volume_1/Addresses_at_The_Parliament_of_Religions",
+      "locator": "11 September 1893 Response to Welcome: universal acceptance of religions and analogy of paths to God; distinguish universal acceptance from literal identity of doctrines",
+      "original_context_approved": false
+    },
+    {
+      "id": "HICK-INT-OPP",
+      "title": "John Hick, firsthand interview with Chris Sinkinson, One truth or many?, Reform Magazine (2013)",
+      "url": "https://www.reform-magazine.co.uk/2013/01/one-truth-or-many/",
+      "locator": "John Hick's direct statements on religious affiliation by birthplace, fairness of Christian-exclusive saving mediation and divine grace; interview contrasts Reformed inclusivism",
+      "original_context_approved": false
+    },
+    {
+      "id": "WCF-SCRIPT-OPP",
+      "title": "Westminster Confession of Faith, Chapter I.6 and I.10, Reformed confession of Scripture",
+      "url": "https://wts.edu/wcf",
+      "locator": "I.6 whole counsel of salvation in Scripture, no additions through traditions of men; I.10 Holy Spirit speaking in Scripture as supreme judge",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -540,16 +561,18 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Dominus Iesus rejects the theory that distinct religions provide complementary and equivalent saving revelations alongside the fullness given in Christ. This is an official Catholic judgement; it must be contrasted fairly with actual alternative religions rather than imagining that every non-Christian simply believes all doctrines are interchangeable.",
-            "fr": "Dominus Iesus refuse la théorie selon laquelle des religions distinctes offriraient des révélations salvifiques équivalentes et complémentaires à la plénitude du Christ. C'est un jugement catholique officiel ; il faut le confronter loyalement aux croyances réelles des autres religions, sans prétendre que chaque non-chrétien professe l'interchangeabilité de toutes les doctrines."
+            "en": "Swami Vivekananda, speaking at the 1893 World's Parliament of Religions, defended not only toleration but the acceptance of multiple religions as true and illustrated diverse religious paths converging toward God. His original address is a serious non-Catholic argument for religious universality, motivated in part by the harms of sectarian exclusion. It does not mean that he believed all doctrines were literally identical or that every follower of Hinduism holds his view. The challenge is whether apparently conflicting revelations can each give an ultimately valid path to the divine.",
+            "fr": "À l'Exposition universelle de Chicago de 1893, Swami Vivekananda défend non seulement la tolérance, mais l'acceptation de plusieurs religions comme vraies. Il illustre les diverses voies religieuses comme convergeant vers Dieu. Ce discours constitue un argument non catholique réel en faveur de l'universalité religieuse, soucieux des violences du sectarisme. Cela ne signifie ni que Vivekananda estimait toutes les doctrines littéralement identiques, ni que tous les hindous adhèrent à cette pensée. La question est de savoir si des révélations apparemment contradictoires peuvent toutes constituer des voies finalement valides vers le divin."
           },
           "source_ids": [
-            "DOMJES",
-            "DEIV"
+            "VIVEK-1893-OPP"
           ],
-          "attribution": "Congregation for the Doctrine of the Faith, Dominus Iesus §§5–7",
+          "attribution": "Swami Vivekananda, Response to Welcome, World's Parliament of Religions, Chicago, 11 September 1893",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "VIVEK-1893-OPP": "Response to Welcome, acceptance of religions and confluence-of-rivers analogy"
+          }
         },
         {
           "role": "critical_response",
@@ -752,29 +775,38 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Dominus Iesus rejects interpreting Jesus as one limited revelation whose saving work is complemented by autonomous and equivalent mediators from other religions. This is an exact Catholic response to a particular pluralist thesis, not permission to attribute that thesis to every Muslim, Hindu, Protestant or other non-Catholic individual.",
-            "fr": "Dominus Iesus rejette une conception où Jésus ne serait qu'une révélation limitée complétée par des médiateurs religieux autonomes et équivalents. C'est une réponse catholique précise à une thèse pluraliste déterminée, non la permission de l'attribuer indistinctement à tout musulman, hindou, protestant ou autre non-catholique."
+            "en": "In a published conversation with Reformed interlocutor Chris Sinkinson, the philosopher of religion John Hick argued that religious affiliation depends heavily on birthplace and family. He questioned the justice of insisting that saving grace derives exclusively from one tradition, even if God can reach others indirectly. His objection is not that Jesus has no value, but that independent religious paths can be genuine responses to divine reality. Hick's pluralist answer must be assessed as his own position, not attributed indiscriminately to all non-Christians or to the Catholic Magisterium.",
+            "fr": "Dans un entretien publié avec le théologien réformé Chris Sinkinson, le philosophe des religions John Hick fait observer que l'appartenance religieuse dépend largement du lieu de naissance et de la famille. Il conteste la justice d'une grâce salvatrice issue exclusivement d'une tradition, même si Dieu pouvait atteindre indirectement les autres. Son objection n'est pas que Jésus n'aurait aucune valeur, mais que des voies religieuses indépendantes pourraient constituer d'authentiques réponses au divin. Cette position pluraliste appartient à Hick : elle ne saurait être attribuée indistinctement aux non-chrétiens, ni au Magistère catholique."
           },
           "source_ids": [
-            "DOMJES"
+            "HICK-INT-OPP"
           ],
-          "attribution": "CDF, Dominus Iesus §§13–17, rejected parallel-mediation thesis",
+          "attribution": "John Hick, interview with Chris Sinkinson, Reform Magazine, January 2013",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "HICK-INT-OPP": "John Hick's statements in the 2013 'One truth or many?' interview, especially his birthplace/grace objections"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "Religious plurality is an observable fact, not in itself evidence that opposed propositions about Jesus can all be revealed by God. Conversely, admitting a unique Redeemer does not allow Catholics to issue ungrounded final verdicts on strangers' consciences. The doctrinal issue is the objective source of salvation; the personal issue involves knowledge, grace and response.",
-            "fr": "La pluralité des religions est un fait observable, non la preuve que des propositions opposées sur Jésus puissent toutes être révélées par Dieu. Inversement, l'unique Rédempteur ne permet pas de prononcer sans fondement un verdict définitif sur la conscience d'inconnus. La question doctrinale concerne la source objective du salut ; la question personnelle dépend de connaissance, grâce et réponse."
+            "en": "Hick identifies a genuine question of fairness: people often inherit a faith before they can investigate alternatives. Catholic teaching does not make birthplace a verdict on an individual's salvation (Lumen gentium §§14–16). It nevertheless maintains that all salvation, including grace received outside visible Catholic communion, comes through the unique mediation of Christ, not through independent and equally complete revelations (Dominus Iesus §§13–17, 20). One must therefore distinguish a person's culpability from a theory about the objective source of grace.",
+            "fr": "Hick soulève une vraie question de justice : bien des personnes héritent d'une religion avant de pouvoir examiner les autres. La doctrine catholique ne transforme pas le lieu de naissance en jugement sur le salut individuel (Lumen gentium, §§14–16). Elle affirme néanmoins que toute grâce salvatrice, même reçue hors de la communion catholique visible, provient de l'unique médiation du Christ, non de révélations indépendantes et également plénières (Dominus Iesus, §§13–17 et 20). Il faut donc distinguer la culpabilité personnelle de la source objective de la grâce."
           },
           "source_ids": [
+            "HICK-INT-OPP",
             "DOMJES",
             "LG"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "HICK-INT-OPP": "Interview, birthplace and fairness objection",
+            "DOMJES": "§§13–17, 20, unique mediation and salvific grace",
+            "LG": "§§14–16, Church, religious circumstances and culpability"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -891,31 +923,40 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Irenaeus, writing in the second century, points to identifiable episcopal successions and the faith professed in the churches as a public answer to secret alternative teachings. His appeal is an original early Catholic argument for transmissible ecclesial Tradition. It does not by itself authenticate every later claim that a cherished ceremony must be apostolic in origin.",
-            "fr": "Au IIe siècle, Irénée renvoie aux successions épiscopales identifiables et à la foi professée par les Églises pour répondre aux enseignements secrets concurrents. Son raisonnement est un argument chrétien ancien pour une Tradition ecclésiale publique et transmissible. Il ne prouve pas à lui seul que chaque cérémonie tardivement appréciée ait une origine apostolique."
+            "en": "Westminster Confession I.6 teaches that the whole counsel necessary for salvation, faith and life is contained in Scripture expressly or by valid inference, and that nothing may be added through later human traditions. I.10 designates the Holy Spirit speaking in Scripture as the supreme judge of doctrinal controversy. This is an original Reformed objection to a second, independently binding stream of unwritten Catholic Tradition. The confession nonetheless recognises the Church's witness and prudential ordering of worship and government; it should not be caricatured as denying that Christians ever inherited practices.",
+            "fr": "La Confession de Westminster, I.6, affirme que l'ensemble de la doctrine nécessaire au salut, à la foi et à la vie est contenu expressément dans l'Écriture ou peut en être déduit par une conséquence nécessaire, sans ajout de traditions humaines ultérieures. I.10 désigne l'Esprit Saint parlant dans l'Écriture comme juge suprême des controverses doctrinales. Il s'agit d'une objection réformée authentique à l'existence d'un second courant de Tradition catholique orale doté de sa propre autorité. La Confession reconnaît pourtant le témoignage ecclésial et des décisions prudentes pour le culte et le gouvernement ; elle ne nie pas toute transmission de pratiques chrétiennes."
           },
           "source_ids": [
-            "IR3",
-            "IR4"
+            "WCF-SCRIPT-OPP"
           ],
-          "attribution": "St Irenaeus, Against Heresies III.3–4",
+          "attribution": "Westminster Confession of Faith, Chapter I §§6 and 10",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WCF-SCRIPT-OPP": "I.6 written counsel and forbidden additions; I.10 final standard in disputes"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "If every inherited custom were immutably apostolic, disciplinary history would become impossible to understand; if nothing oral from the apostles bound the Church, the New Testament's references to transmitted teaching would be weakened. Historical identification requires tracing the content, ancient witnesses and authority of a particular Tradition, not invoking the label as a substitute for evidence.",
-            "fr": "Si chaque coutume héritée était apostolique et immuable, l'histoire disciplinaire deviendrait incompréhensible ; si aucune parole apostolique transmise ne liait l'Église, on affaiblirait le témoignage du Nouveau Testament. Identifier une Tradition suppose de retracer son contenu, ses témoins anciens et son autorité, non de brandir le mot en guise de preuve."
+            "en": "The dispute is about the authority and content of the apostolic deposit, not whether customs happen to exist. Westminster's insistence that human inventions must not displace revelation is a concern Catholics share; yet 2 Thessalonians 2:15 explicitly speaks of teachings delivered both orally and by letter, and Irenaeus points to public succession and transmitted apostolic teaching. A Catholic case must still show that a particular doctrine is genuinely apostolic, not simply call every venerable usage 'Tradition'. Church discipline may change; divine revelation cannot be invented anew.",
+            "fr": "Le désaccord porte sur l'autorité et le contenu du dépôt apostolique, non sur l'existence de simples coutumes. Le souci de Westminster de ne pas substituer des inventions humaines à la Révélation est aussi catholique. Toutefois, 2 Thessaloniciens 2,15 parle d'enseignements transmis oralement et par lettre ; saint Irénée invoque la succession publique et l'enseignement apostolique reçu. Un argument catholique doit toujours démontrer le caractère réellement apostolique d'une doctrine, et non baptiser « Tradition » tout usage ancien. La discipline peut évoluer ; on ne peut inventer une nouvelle Révélation."
           },
           "source_ids": [
+            "WCF-SCRIPT-OPP",
             "BIBLE-2TH",
             "DEIV",
             "IR3"
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "WCF-SCRIPT-OPP": "I.6 on Scripture and custom",
+            "BIBLE-2TH": "2:15 oral and written traditions",
+            "DEIV": "§§8–10 transmission and authority",
+            "IR3": "III.3 public apostolic succession"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -1738,7 +1779,7 @@
     "canonical_dossiers": 20,
     "english_substantive_paragraphs": 80,
     "french_substantive_paragraphs": 80,
-    "source_registry_entries": 43,
+    "source_registry_entries": 46,
     "public_routes_added": 0,
     "independent_approvals": 0
   }
