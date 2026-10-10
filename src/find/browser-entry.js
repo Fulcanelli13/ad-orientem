@@ -438,6 +438,9 @@ export function createFindOwner(win=globalThis){
     const sync=()=>{
       const source=map?.getSource?.("ao-explore-items");if(!source)return;
       source.setData?.({type:"FeatureCollection",features:exploreMapFeatures(atlasMapItems(stops,index))});
+      if(!active.geo){
+        try{map.setPaintProperty?.("ao-explore-points","circle-color","#79909f");}catch{}
+      }
       if(!active.geo&&previous?.era!==active.era){
         try{map.easeTo?.({center:[35,31],zoom:3.6,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:560});}catch{}
       }
