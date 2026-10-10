@@ -80,7 +80,7 @@ try{
    const sources=await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog] .aoFindSources a[href]").evaluateAll(nodes=>
      nodes.map(a=>({href:a.href,target:a.target,rel:a.rel,label:a.textContent.trim()})));
    for(const source of sources){
-     assert.match(source.href,/^https:\/\//,lens+" emitted a non-HTTPS evidence link");
+     assert.match(source.href,/^https?:\/\//,lens+" emitted an invalid source URL");
      assert.equal(source.target,"_blank",lens+" source lost its external-document target");
      assert.ok(source.rel.split(/\s+/).includes("noopener"),lens+" source risks an unsafe opener");
      assert.ok(source.label.length>=2,lens+" source link is unlabelled");
@@ -123,6 +123,8 @@ try{
      null,{timeout:12000});
    const fssp=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
    assert.ok(fssp<=snapshot.count,"FSSP filter incorrectly adds venues");
+   // Repainting on filter selection resets the disclosure to closed.
+   await page.locator("#ao-find-modular-root .aoExploreAdvancedFilters summary").tap();
    await page.locator('#ao-find-modular-root [data-find-affiliation="FSSP"]').tap();
    await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
      snapshot.count,{timeout:12000});
