@@ -33,6 +33,7 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   "#ao-mass-flow-v1 .aoMassCatalogueRows button small{color:var(--muted,#aaa597);font-size:.73rem;line-height:1.45}",
   "#ao-mass-flow-v1 .aoMassCatalogueRows button[hidden]{display:none!important}",
   "#ao-mass-flow-v1 .aoMassCatalogueShadowed{display:none!important}",
+  "#ao-mass-flow-v1 .aoMassCatalogueShadowedSection{display:none!important}",
   "#ao-mass-flow-v1 .aoMassCatalogueNative button:focus-visible{outline:2px solid var(--liturgical,#d4b98b);outline-offset:2px}",
   "@media(max-width:370px){#ao-mass-flow-v1 .aoFullMassForms{grid-template-columns:1fr}}",
   ].join("\n");
