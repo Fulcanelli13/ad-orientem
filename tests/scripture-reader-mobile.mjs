@@ -40,15 +40,19 @@ try{
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),2);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(2).locator("option").count(),73);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
- assert.match(await dialog.locator(".aoScriptureText").innerText(),/not available offline/i);
- assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"uncleared biblical text leaked to user");
+ await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:15000});
+ assert.equal(await dialog.locator(".aoScriptureQuickEditions button").count(),3);
+ assert.ok(await dialog.locator(".aoScriptureVerse").count()>0,"Douay source text should read in-app");
+ assert.equal(await dialog.locator("[data-scripture-source-review='pending']").count(),1);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
- assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"unverified CPDV text displayed as certified");
+ await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:15000});
+ assert.ok(await dialog.locator(".aoScriptureVerse").count()>0,"CPDV plain English text should read in-app");
+ assert.equal(await dialog.locator("[data-scripture-source-review='pending']").count(),1);
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.()?.reader?.editionId),"cpdv-2009");
@@ -58,7 +62,7 @@ try{
   await dialog.locator(".aoScriptureSourceNote summary").click();
   assert.match(await dialog.locator(".aoScriptureSourceNote").innerText(),/Mother of her Lord/);
   assert.equal(await dialog.locator(".aoScriptureSourceNote a").count(),2);
-  assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"critical note must not publish uncleared Scripture");
+  assert.ok(await dialog.locator(".aoScriptureVerse").count()>0,"Textual note must accompany in-app CPDV verses");
   await dialog.locator(".aoScriptureNav input").nth(1).fill("28");
   await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
   assert.equal(await dialog.locator(".aoScriptureSourceNote").count(),0);
@@ -187,9 +191,11 @@ try{
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/Matthew%2027%3A1-60/i);
- assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,"No uncertified Bible text may be shown");
+ await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:15000});
+ assert.ok(await dialog.locator(".aoScriptureVerse").count()>0,"Matthew's segmented text must read in-app");
  await dialog.locator("[data-scripture-context-depth='chapter']").click();
- assert.match(await dialog.locator("[data-scripture-whole-chapter]").getAttribute("href"),/Matthew%2027/);
+ await dialog.locator(".aoScriptureVerse").nth(40).waitFor({state:"visible",timeout:15000});
+ assert.ok(await dialog.locator(".aoScriptureVerse").count()>40,"Full chapter displayed inside app");
  assert.equal(await dialog.locator(".aoScriptureSegments button").count(),2,"Context depth must preserve source segments");
  await dialog.locator("[data-scripture-segment-index='0']").click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 26:36–75");
@@ -219,8 +225,9 @@ try{
  await notice.waitFor({state:"visible",timeout:8000});
  assert.match(await notice.innerText(),/Missal presents these verses in liturgical order/);
  assert.match(await notice.innerText(),/then 3:47–48, then 3:50–51/);
- assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,
-   "Liturgical note must never unlock unlicensed Bible text");
+ await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:15000});
+ assert.equal(await dialog.locator(".aoScriptureVerse").first().getAttribute("data-verse"),"47",
+   "Biblical verse display must retain canonical source order");
  await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await notice.innerText(),/ordre liturgique/);
