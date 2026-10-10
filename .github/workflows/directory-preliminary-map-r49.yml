@@ -10,6 +10,8 @@ on:
       - "tests/preliminary-world-mass-map-r49.mjs"
       - "tests/directory-r50-rome-aliases.mjs"
       - "data/directory/research/staging/map-first-r37/R50-rome-source-aliases.json"
+      - "data/directory/research/staging/map-first-r37/R51-rome-venue-aliases.json"
+      - "tests/directory-r51-rome-aliases.mjs"
       - "tests/explore-reachability-phone.mjs"
       - ".github/workflows/directory-preliminary-map-r49.yml"
   workflow_dispatch:
@@ -34,6 +36,7 @@ jobs:
         run: |
           node tests/preliminary-world-mass-map-r49.mjs
           node tests/directory-r50-rome-aliases.mjs
+          node tests/directory-r51-rome-aliases.mjs
       - name: Existing Find and Explore contracts
         run: |
           node tests/find-surface.mjs
