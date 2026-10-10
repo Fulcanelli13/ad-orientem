@@ -71,7 +71,7 @@ const SEQUENCE=[
 // Traditional site pin is never proof of exact event geography. Jerusalem uses a city-level
 // reference for events with different or disputed local settings.
 export const ATLAS_GEO=Object.freeze({
- hebron:{key:"hebron",lat:31.525087,lng:35.102220,kind:"settlement",url:"https://www.openbible.info/geo/modern/m86f941/tel-rumeida"},
+ hebron:{key:"hebron",lat:31.525087,lng:35.102220,kind:"city_context",url:"https://www.openbible.info/geo/modern/m86f941/tel-rumeida"},
  nazareth:{key:"nazareth",lat:32.70209,lng:35.29779,kind:"settlement",url:"https://www.openstreetmap.org/way/97417380"},
  bethlehem:{key:"bethlehem",lat:31.704306,lng:35.207583,kind:"traditional",url:"https://www.wikidata.org/wiki/Q194504"},
  "jerusalem-temple":{key:"jerusalem",lat:31.778333,lng:35.229722,kind:"city_context",url:"https://www.wikidata.org/wiki/Q187702"},
@@ -122,7 +122,7 @@ export function atlasDetail(s,lang){
  const geo=s.geo;
  const qualification=geo?.kind==="traditional"?L(lang,"Traditional site, not proof of the exact event location.","Site traditionnel, sans certitude sur le lieu exact de cet épisode.")
   :geo?.kind==="city_context"?L(lang,"City-level reference only, not the scene's precise location.","Repère de ville seulement, non le lieu précis de la scène.")
-  :!geo?L(lang,"No defensible exact map pin for this event.","Aucun repère exact établi pour cet événement."):"";
+  :!geo?(s.placeId?L(lang,"A map pin has not yet been certified for this location.","Le repère de ce lieu reste à vérifier."):L(lang,"No earthly location is assigned to this episode.","Aucun lieu terrestre n’est attribué à cet épisode.")):"";
  return '<div class="aoBibleAtlasEyebrow">'+esc(L(lang,ERAS[s.era][0],ERAS[s.era][1]))+' · '+(s.index+1)+'</div>'+
  '<h2>'+esc(L(lang,s.title_en,s.title_fr))+'</h2>'+
  (s.placeId?'<p class="aoBibleAtlasPlace">'+esc(L(lang,s.place_en,s.place_fr))+'</p>':"")+
