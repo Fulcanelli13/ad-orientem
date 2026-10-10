@@ -64,7 +64,8 @@ assert.ok((ownerSource.match(/navigateHomeShortcut\("mass",\{trigger:/g)||[]).le
 assert.ok(ownerSource.includes('navigateHomeShortcut("find",{trigger:find,routeId:"find"})'),"Home Find entry must use the failure-aware app shell");
 assert.match(ownerSource,/\[data-home-settings\]/,"Home does not own the new Settings utility entry");
 assert.match(ownerSource,/\[data-home-calendar\]/,"Today must own full Calendar entry");
-assert.match(readFileSync("src/home/presentation.js","utf8"),/data-home-calendar/,"Today missing explicit Full Calendar action");
+assert.match(readFileSync("src/home/today-v2.js","utf8"),/data-home-calendar/,"Today v2 missing explicit Full Calendar action");
+assert.match(ownerSource,/data-home-calendar-view/,"Today v2 Month and Year buttons must route through Calendar");
 assert.ok(ownerSource.includes('navigateHomeShortcut("settings",{trigger:settings,routeId:"settings"})'),"Home Settings utility must use the failure-aware shell");
 assert.match(ownerSource,/MutationObserver/,"Home does not continuously retire asynchronously reinserted donor enrichers");
 assert.match(ownerSource,/retireLegacyHomeEnrichers/,"Home donor enricher retirement helper is missing");
