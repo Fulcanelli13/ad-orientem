@@ -430,6 +430,7 @@ button.ao-schola-control{cursor:pointer}
   border-radius:999px;width:34px;height:34px;font:300 24px/1 var(--ao-font-ui,system-ui,sans-serif);
   cursor:pointer;flex:0 0 auto
 }
+.ao-guide-scope{margin:5px 0 0;color:var(--ao-muted);font:500 .73rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-guide-body{overflow:auto;-webkit-overflow-scrolling:touch;padding:8px 18px 34px}
 .ao-guide-section{margin:20px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.055)}
 .ao-guide-section:first-child{margin-top:7px;padding-top:0;border-top:0}
@@ -797,6 +798,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
         moment:moment.guide.moment == null ? momentTitle : String(moment.guide.moment),
         sourceLine:moment.guide.sourceLine == null ? null : String(moment.guide.sourceLine),
         sourceLinks:moment.guide.sourceLinks == null ? null : String(moment.guide.sourceLinks),
+        coverage:moment.guide.coverage == null ? null : String(moment.guide.coverage),
+        sourceMoment:moment.guide.sourceMoment == null ? null : String(moment.guide.sourceMoment),
       })
     : null;
 
@@ -877,6 +880,11 @@ function renderGuideSheet(pop,guide){
   const title=doc.createElement("h2");title.className="ao-guide-title";title.textContent=guide.moment||"Guide";
   const summary=doc.createElement("p");summary.className="ao-guide-summary";summary.textContent=guide.text||"";
   intro.append(kicker,title,summary);
+  if(guide.coverage==="INHERITED_MACRO_CONTEXT"&&guide.sourceMoment){
+    const scope=doc.createElement("p");scope.className="ao-guide-scope";
+    scope.textContent="Part of: "+guide.sourceMoment;
+    intro.append(scope);
+  }
   const close=doc.createElement("button");close.type="button";close.className="ao-guide-close";close.dataset.guideClose="true";close.setAttribute("aria-label","Close Guide");close.textContent="×";
   head.append(intro,close);sheet.append(head);
   const body=doc.createElement("div");body.className="ao-guide-body";
