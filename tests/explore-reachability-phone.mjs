@@ -134,13 +134,16 @@ try{
   await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
     snapshot.count,{timeout:12000});
   if(lens==="tlm"){
-   // Exercise a real timetable filter without claiming current schedules are verified.
-   await page.locator('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="SUNDAY"]').tap();
-   await page.waitForFunction(()=>Boolean(document.querySelector('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="SUNDAY"].active')),
+   // Preliminary map publishes venue locations only, never fabricated day-level schedules.
+   assert.equal(await page.locator('#ao-find-modular-root [data-find-filter="day"]').count(),0,
+     "Unverified preliminary venue markers must not expose a timetable filter");
+   await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ALL"]').tap();
+   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===1876,
      null,{timeout:12000});
-   const sunday=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
-   assert.ok(sunday<=snapshot.count,"Sunday filter incorrectly adds venues");
-   await page.locator('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="ANY"]').tap();
+   await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="SSPX"]').tap();
+   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===732,
+     null,{timeout:12000});
+   await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ROME"]').tap();
    await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
      snapshot.count,{timeout:12000});
    await page.locator("#ao-find-modular-root .aoExploreAdvancedFilters summary").tap();
