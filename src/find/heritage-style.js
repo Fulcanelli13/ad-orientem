@@ -1,6 +1,6 @@
 // Design layer for the map-first Sacred Geography landing view.
 // Uses the host's sacred dark palette; independent of source content.
-export const HERITAGE_STYLE = String.raw\`
+export const HERITAGE_STYLE = String.raw`
 .aoHeritageSurface{isolation:isolate}
 .aoHeritageSurface .aoFindHeader{border-bottom:0;background:#080c12;gap:8px;padding:11px 14px 8px}
 .aoHeritageSurface .aoFindHeader h1{font:600 clamp(20px,4vw,26px)/1.1 var(--ao-font-display,Georgia,serif);letter-spacing:-.025em}
@@ -72,4 +72,4 @@ export const HERITAGE_STYLE = String.raw\`
   .aoHeritageSurface .aoHeritagePreview{padding:7px 16px 20px}
 }
 @media(prefers-reduced-motion:reduce){.aoHeritageSurface *, .aoHeritageSurface *:before, .aoHeritageSurface *:after{scroll-behavior:auto!important;transition:none!important}}
-\`;
+`;
