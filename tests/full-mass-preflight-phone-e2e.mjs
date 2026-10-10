@@ -72,7 +72,14 @@ try{
   __full=mountFullMassPreflight({doc:document,getResolvedMass:__legacyMass,
     getDefaultForm:()=>__formDefault,language:()=>__lang});
  });
- assert.equal(await page.locator("[data-full-mass-form-fieldset]").isDisabled(),true);
+ const gf=await page.evaluate(()=>({
+   kind:document.querySelector("[data-ao-full-mass-preflight]")?.dataset.aoCelebrationKind,
+   fieldsetDisabled:document.querySelector("[data-full-mass-form-fieldset]")?.disabled,
+   inputsDisabled:[...document.querySelectorAll("[data-full-mass-form]")].every(x=>x.disabled),
+ }));
+ assert.equal(gf.kind,"GOOD_FRIDAY","Non-Mass rite not classified: "+JSON.stringify(gf));
+ assert.equal(gf.fieldsetDisabled,true,"Non-Mass form selector still active: "+JSON.stringify(gf));
+ assert.equal(gf.inputsDisabled,true,"Non-Mass radios still active: "+JSON.stringify(gf));
  assert.match(await page.locator("[data-full-mass-note]").innerText(),/ce n’est pas une messe/i);
  const horizontal=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.ok(horizontal<=1,"390px phone overflow: "+horizontal);
