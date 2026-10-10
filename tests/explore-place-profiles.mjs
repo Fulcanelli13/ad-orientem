@@ -171,7 +171,7 @@ const arcachon=explorePlaceProfile(profiles,"place:FR:notre-dame-des-marins-arca
 assert.ok(arcachon);
 assert.equal(arcachon.counts.shrines,1);
 assert.equal(arcachon.counts.pilgrimages,1);
-assert.equal(arcachon.map_publishable,false);
+assert.equal(arcachon.map_publishable,true,"Arcachon basilica now has its own mapped church footprint");
 
 const pontmain=explorePlaceProfile(profiles,"place:FR:pontmain");
 assert.ok(pontmain);
@@ -222,6 +222,8 @@ assert.equal(pereLaval.counts.pilgrimages,1);
 assert.ok(pereLaval.saints.includes("Blessed Jacques-Désiré Laval"));
 assert.ok(pereLaval.calendar.some(row=>row.semantic_key==="feast.blessed_jacques_desire_laval"&&row.date==="2027-09-09"));
 assert.equal(pereLaval.counts.tlm,0,"Mauritius shrine inferred a TLM link without a bridge");
+assert.equal(pereLaval.map_publishable,true,"Père Laval tomb is now a mapped complex anchor");
+assert.equal(pereLaval.geo.precision,"complex_anchor");
 
 const altoetting=explorePlaceProfile(profiles,"place:DE:altoetting-gnadenkapelle");
 assert.ok(altoetting);
@@ -243,6 +245,7 @@ assert.ok(kevelaerKerzen);
 assert.equal(kevelaerKerzen.counts.shrines,0);
 assert.equal(kevelaerKerzen.counts.pilgrimages,0);
 assert.equal(kevelaerKerzen.counts.tlm,0,"unresolved 1962-Mass candidate leaked into exact-place TLM projection");
+assert.equal(kevelaerKerzen.map_publishable,true,"mapped Candle Chapel remains contextual without shrine/TLM inference");
 
 const wigratzbad=explorePlaceProfile(profiles,"place:DE:wigratzbad-maria-vom-sieg");
 assert.ok(wigratzbad);
@@ -315,6 +318,8 @@ assert.ok(laSalette);
 assert.equal(laSalette.counts.shrines,1);
 assert.equal(laSalette.counts.pilgrimages,1);
 assert.equal(laSalette.counts.tlm,0);
+assert.equal(laSalette.map_publishable,true);
+assert.equal(laSalette.geo.precision,"complex_anchor");
 assert.equal(laSalette.calendar.length,0);
 
 const litchfield=explorePlaceProfile(profiles,"place:US:lourdes-litchfield");
@@ -399,6 +404,7 @@ assert.equal(martyrs.counts.shrines,1);
 assert.equal(martyrs.counts.pilgrimages,2);
 assert.equal(martyrs.calendar.length,0);
 assert.equal(martyrs.counts.tlm,0,"traditional pilgrimage evidence incorrectly created an exact-place TLM venue");
+assert.equal(martyrs.map_publishable,true);
 
 const loreto=explorePlaceProfile(profiles,"place:IT:loreto-santa-casa");
 assert.ok(loreto);
@@ -450,6 +456,8 @@ assert.ok(holywellChurch);
 assert.equal(holywellChurch.counts.shrines,0);
 assert.equal(holywellChurch.counts.pilgrimages,0);
 assert.equal(holywellChurch.counts.tlm,0,"unresolved Holywell parish candidate leaked into exact-place TLM projection");
+assert.equal(holywellChurch.map_publishable,true,"parish Church OSGB coordinate is independent from Holy Well shrine");
+assert.notEqual(holywellChurch.geo.lat,holywell.geo.lat,"church and holy well share an improper identical point");
 
 const penrose=explorePlaceProfile(profiles,"place:AU:penrose-park");
 assert.ok(penrose);
