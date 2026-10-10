@@ -4,6 +4,8 @@ on:
     branches: [platform/885-sacred-art-candidates]
     paths:
       - "tools/calendar/audit-sacred-art-modules.mjs"
+      - "tools/calendar/audit-sacred-art-prayer-slots.mjs"
+      - "data/calendar/sacred-art-prayer-slots.v1.json"
       - "data/calendar/sacred-art-candidates.v1.json"
       - "data/calendar/sacred-art-subject-targets.v2.json"
       - ".github/workflows/sacred-art-coverage-audit.yml"
@@ -23,7 +25,9 @@ jobs:
         with:
           node-version: '22'
       - name: Audit all subject targets, original hashes and rights holds
-        run: node tools/calendar/audit-sacred-art-modules.mjs
+        run: |
+          node tools/calendar/audit-sacred-art-modules.mjs
+          node tools/calendar/audit-sacred-art-prayer-slots.mjs
       - name: Upload complete unresolved-source and coverage report
         if: always()
         uses: actions/upload-artifact@v4
