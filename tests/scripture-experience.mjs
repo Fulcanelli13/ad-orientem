@@ -5,7 +5,7 @@ import {cacheApprovedScripturePack} from "../src/scripture/offline.js";
 import {validateScriptureImport} from "../src/scripture/import-contract.js";
 import {installScriptureBrowserOwner} from "../src/scripture/browser-entry.js";
 import {parseScriptureContext,verifiedScriptureCommentary,scriptureContextCapsule} from "../src/scripture/context.js";
-import {inlineScriptureCommentary} from "../src/scripture/inline-commentary.js";
+import {isCatenaGospel,selectCatenaPericopes,CATENA_SOURCE_COMMIT} from "../src/scripture/catena-inline.js";
 import {readFileSync} from "node:fs";
 const memory=new Map(),storage={
  getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value)
@@ -61,17 +61,16 @@ assert.equal(parseScriptureContext("Luke 0:1"),null);
 assert.equal(parseScriptureContext("John 19:30; Mt 5:28"),null,"Multi-source strings require individual capsules");
 assert.equal(parseScriptureContext("Psalms 129:1").numbering,"SOURCE_EDITION_REQUIRED");
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Matthew 5:27–28").passage)?.type,"PATRISTIC_COMPILATION");
-for(const reference of ["Matthew 5:27–28","Luke 1:26–38","Luke 1:46–55","Psalms 129:1"]){
- const passage=parseScriptureContext(reference).passage;
- const inline=inlineScriptureCommentary(passage);
- assert.equal(inline.kind,"SOURCE_BASED_EDITORIAL_PARAPHRASE",reference);
- assert.ok(inline.entries.length>=2,reference);
- assert.ok(inline.entries.every(entry=>entry.author&&entry.summary.en.length>60&&entry.summary.fr.length>60),reference);
- assert.ok(verifiedScriptureCommentary(passage)?.url,reference+" needs a primary textual source");
-}
-assert.equal(inlineScriptureCommentary(parseScriptureContext("Psalms 128:1").passage),null,
- "A Bellarmine source index must not masquerade as locally transcribed commentary");
-assert.equal(inlineScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null);
+assert.match(CATENA_SOURCE_COMMIT,/^[a-f0-9]{40}$/);
+assert.equal(isCatenaGospel(parseScriptureContext("Luke 1:26–38").passage),true);
+assert.equal(isCatenaGospel(parseScriptureContext("Psalms 129:1").passage),false);
+const sourceNode={id:"catena.luke.1.28",work:"catena-aurea",citation:"Catena Aurea, Luke 1:28–29",
+ source:{license:"public-domain",url:"https://www.ecatholic2000.com/catena/untitled-62.shtml"},
+ commented_verse_keys:["luke/1/28","luke/1/29"],segments:[{father:"Bede",text:"Source fragment fixture"}]};
+assert.equal(selectCatenaPericopes([sourceNode],parseScriptureContext("Luke 1:28").passage).length,1);
+assert.equal(selectCatenaPericopes([sourceNode],parseScriptureContext("Luke 1:30").passage).length,0);
+assert.equal(selectCatenaPericopes([{...sourceNode,source:{license:"unverified"}}],parseScriptureContext("Luke 1:28").passage).length,0);
+assert.equal(selectCatenaPericopes([{...sourceNode,segments:[{father:"",text:"unattributed"}]}],parseScriptureContext("Luke 1:28").passage).length,0);
 assert.equal(verifiedScriptureCommentary(parseScriptureContext("Luke 1:68").passage),null,
   "Never fabricate a patristic commentary for an uncollated passage");
 assert.match(scriptureContextCapsule("Mt 5:27–28"),/data-ao-scripture-context="Mt 5:27–28"/);
