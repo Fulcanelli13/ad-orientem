@@ -1,15 +1,12 @@
-# Explore: canonical catalogue and evidence-led geography (v2)
+# Explore: canonical data, map-first discovery and evidence-led geography (v3)
 
 Status: **implementation in stages**. This is a non-destructive migration proposal based on the 10 October 2026 active `main` inventories. Do not treat active seed counts as completion of accumulated research.
 
 ## Product decision
 
-Explore should answer two different questions without mixing their records:
+**Confirmed product direction, 10 October:** Explore is secondary to Mass, Prayers and Formation. Its entry surface is one compact **unified interactive map**, with category chips for Shrines, Relics, Pilgrimages, Apparitions and Customs, plus a horizontal Living Traditions strip for canonical practices. Lists are not the default. The map leads to a compact Place preview, with detailed evidence on deliberate expansion. TLM remains a separate first-class Directory route reachable as an optional action.
 
-1. **What is it?** Read a practice, relic subject, apparition claim, shrine, or pilgrimage in a subject-first catalogue.
-2. **Where is it?** Open a canonical Place page or a map for physical destinations and source-backed occurrences.
-
-The map is a **view of locatable evidence**, not a taxonomy of Catholic customs. A country is neither a custom owner nor evidence of exclusivity; a widespread practice can have local variants. Never infer worldwide prevalence merely because two or more countries are attested.
+The database remains subject-first: canonical identity, status, source, historical variation and geographic attestation are separate. The unified map is only a **view of locatable evidence**, not a taxonomy of Catholic customs. A country is neither a custom owner nor evidence of exclusivity; a widespread practice can have local variants. Never infer worldwide prevalence merely because two or more countries are attested.
 
 ## Separate identity, normative status, provenance and distribution
 
@@ -35,7 +32,7 @@ Keep `custom_class` in the v1 database until editorial crosswalks and evidence r
 
 | User-facing section | Canonical entity | Core navigation | Map policy |
 | --- | --- | --- | --- |
-| Customs & Catholic life | Custom / variant / guide | Theme, season, life event, historical status | Only attested locations as supporting links |
+| Customs & Catholic life | Custom / variant / guide | Horizontal thematic rail, search and map highlight | Only exact source-backed example Places produce pins |
 | Shrines & sacred places | Shrine -> shared Place | Dedication, saint, sanctuary type, region | Primary: physical Place |
 | Relics | Subject -> attributed object -> custody claim -> Place | Saint or subject, object type, claimed authenticity/custody | Place pins only for verified location evidence; never conflate custody with independent authentication |
 | Apparitions & sacred phenomena | Historical claim -> ecclesiastical reception -> associated Place | Subject, period, reception status | Place-based only; preserve recognition distinctions |
@@ -62,9 +59,11 @@ Never report `89 Traditions` as 89 customs: this is currently 71 attestation + 1
 
 ### A. Repair discovery without rewriting evidence (this branch)
 
-- Default the Home Traditions shortcut to **Practices**, not Map.
-- Collapse custom attestations into **one** list item per `custom_id`; show all places/evidence in an expandable detail.
-- Preserve the original attestation records, source links, exact Place deep links and attested-place map as secondary.
+- Default Explore to **one unified Map**, with independent source-backed category filters; Home Customs opens that map with the Customs filter active.
+- Keep custom attestations grouped as **one canonical concept per `custom_id`** in the editorial model, but offer them as a compact horizontal thematic strip rather than a scrolling catalogue.
+- When a practice is selected, map **only its documented exact-site examples**; do not create a fictitious universal or country pin.
+- Group overlapping Shrine / Pilgrimage / Relic / Apparition / Custom evidence by **exact shared Place ID**. Selection opens a concise Place preview; expansion reveals full source-owned records and directions.
+- Preserve original attestation records, source links, exact Place deep links, classification uncertainties and no-map fallback.
 - Keep novena context links searchable but out of the default customs tally.
 - Protect the existing `place_id` aggregation, TLM Directory data and calendar ownership.
 
