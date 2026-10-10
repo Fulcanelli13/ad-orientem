@@ -541,7 +541,7 @@ function renderPrayHome(){
  const families=prayFamilies();
  const door=id=>prayFamilyDoor(id,families[id]);
  const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
- const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors">${body}</div></section>`;
+ const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
  return `${head(L('Pray','Prier'),L('A place for daily prayer and devotion','Un lieu de prière et de dévotion'))}<main class="aoP435930Body aoP435930Home aoP435930RootOrganised">
   <section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Enter into prayer','Entrer en prière'))}</h2><p>${esc(intro)}</p></section>
   <section class="aoP435930RootFeatured" aria-label="${esc(L('Begin with daily prayer','Commencer par la prière quotidienne'))}">${door('daily')}</section>
