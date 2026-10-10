@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { renderSexualEthicsQuestionMarkup } from "../src/learn/sexual-ethics.js";
 import { CSE_MARRIAGE_AUTHORITY_DEBATES, CSE_MARRIAGE_AUTHORITY_SOURCES } from "../src/learn/sexual-ethics-data/marriage-authority-debates.js";
 import { readFileSync } from "node:fs";
 import { APOSTOLATE_SKILLS } from "../src/apostolate/contracts.js";
@@ -324,6 +325,43 @@ for(const id of ["CSE038","CSE039","CSE040","CSE055","CSE058","CSE112","CSE117",
 assert.ok(CSE_SOURCES.some(source=>source.id==="ABORT74"&&source.canonical_url));
 assert.ok(CSE_SOURCES.some(source=>source.id==="ABORTCLAR"&&source.canonical_url));
 assert.ok(CSE_SOURCES.some(source=>source.id==="MCHUGH"&&source.canonical_url));
+
+// Reader acceptance: real objections must be visible immediately. Long source
+// hyperlinks may appear only inside expandable disclosures, never instead of
+// the substance of any of the 52 public (55 total) bilingual debates.
+for(const language of ["en","fr"]){
+ const win={document:{documentElement:{lang:language}},AO_RUNTIME_V8:{store:{getState:()=>({language})}}};
+ for(const item of CSE_QUESTIONS.filter(x=>x.depth==="DEBATE")){
+  const html=renderSexualEthicsQuestionMarkup(win,item,false);
+  const objection=html.indexOf('<section class="aoCSEObjection" data-stage="opposition">');
+  const answer=html.indexOf('<p class="aoCSEAnswer">');
+  const expand=html.indexOf('data-ao-cse-reveal');
+  assert.ok(objection>=0&&answer>objection&&expand>answer,
+    item.id+" "+language+": objection must precede the visible direct answer and debate expander");
+  const rendered=html.slice(objection,answer);
+  assert.match(rendered,/<small>Objection<\\/small><p>[^<]{35,}<\\/p>/,
+    item.id+" "+language+": source links displaced actual objection prose");
+  assert.match(rendered,/<details class="aoCSEStageSources"[^>]*data-ao-cse-stage-sources="opposition">/,
+    item.id+" "+language+": opponent sources must be available within a disclosure");
+  assert.ok(!rendered.includes('<a ')||rendered.indexOf('<a ')>rendered.indexOf('<details '),
+    item.id+" "+language+": citation links must not precede objection text");
+  assert.match(html,/data-ao-cse-reveal aria-expanded="false"/,
+    item.id+": full debate must have explicit collapsed state");
+  assert.match(html,/class="aoCSEDetail aoCSEDebate" data-cse-open-debate hidden/,
+    item.id+": optional detailed stages should not overwhelm first reading");
+  assert.equal((html.match(/data-stage="opposition"/g)||[]).length,item.id==="CSE045"?7:1,
+    item.id+": main debate objection accidentally repeated");
+  const open=renderSexualEthicsQuestionMarkup(win,item,true);
+  assert.match(open,/data-ao-cse-reveal aria-expanded="true"/);
+  for(const stage of CSE_DEBATE_FIELDS.filter(x=>x!=="opposition"))
+   assert.ok(open.includes('data-stage="'+stage+'"'),item.id+" "+language+" missing stage "+stage);
+ }
+}
+for(const item of CSE_QUESTIONS.filter(x=>x.depth!=="DEBATE")){
+ const win={document:{documentElement:{lang:"en"}},AO_RUNTIME_V8:{store:{getState:()=>({language:"en"})}}};
+ const html=renderSexualEthicsQuestionMarkup(win,item,false);
+ assert.match(html,/data-ao-cse-stage-sources="answer"/,item.id+" answer sources lost");
+}
 
 const presentation=readFileSync("src/learn/presentation.js","utf8");
 const owner=readFileSync("src/learn/browser-entry.js","utf8");
