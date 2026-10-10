@@ -52,7 +52,9 @@
       "source": {
         "url": "https://www.sanctuairerocamadour.com/sanctuaire/vierge-noire/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Statue object, never a duplicate chapel/Place; coloration origin contested; heritage record IM46206958 also available"
+        "qualification": "Statue object, never a duplicate chapel/Place; coloration origin contested; heritage record IM46206958 also available",
+        "heritage_object_record": "IM46206958",
+        "independent_heritage_url": "https://pop.culture.gouv.fr/notice/palissy/IM46206958"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": "EUROPE:W4:PLACE:FR:sanctuaire-notre-dame-de-rocamadour",
@@ -75,7 +77,9 @@
       "source": {
         "url": "https://www.cathedrale-puy-en-velay.fr/en/decouvrir/histoire-du-monument",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Original destroyed in 1794; present venerated image or copies must not be described as the surviving medieval original"
+        "qualification": "Original destroyed in 1794; present venerated image or copies must not be described as the surviving medieval original",
+        "heritage_object_record": "HISTORIC_OBJECT_DESTROYED",
+        "independent_heritage_url": "https://www.musee.patrimoine.lepuyenvelay.fr/musee-crozatier/les-collections/les-oeuvres/histoire-et-artisanat-du-velay/vierges-noires/"
       },
       "existing_canonical_place_id": "place:FR:cathedrale-notre-dame-le-puy",
       "existing_europe_seven_wave_lead_id": null,
@@ -190,7 +194,8 @@
       "source": {
         "url": "https://www.patrimoine.bzh/gertrude-diffusion/dossier/IA00132041",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Heritage monument; 17th-century attribution, no automatic truth of reported healing"
+        "qualification": "Heritage monument; 17th-century attribution, no automatic truth of reported healing",
+        "heritage_record": "IA00132041"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -213,7 +218,8 @@
       "source": {
         "url": "https://patrimoine.bzh/gertrude-diffusion/dossier/IA00121555",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Dated 1675, used historically in pardons and pilgrimages"
+        "qualification": "Dated 1675, used historically in pardons and pilgrimages",
+        "heritage_record": "IA00121555"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -236,7 +242,8 @@
       "source": {
         "url": "https://patrimoine.bzh/gertrude-diffusion/dossier/IA00005969/corpus",
         "evidence_level": "COLLECTIVE_INDEX",
-        "qualification": "Individually listed IA00005967 inside official Pont-Croix collective inventory"
+        "qualification": "Individually listed IA00005967 inside official Pont-Croix collective inventory",
+        "heritage_record": "IA00005967"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -259,7 +266,8 @@
       "source": {
         "url": "https://patrimoine.bzh/gertrude-diffusion/dossier/IA00005969/corpus",
         "evidence_level": "COLLECTIVE_INDEX",
-        "qualification": "Individual heritage dossier IA00006056 linked in Pont-Croix corpus"
+        "qualification": "Individual heritage dossier IA00006056 linked in Pont-Croix corpus",
+        "heritage_record": "IA00006056"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -282,7 +290,8 @@
       "source": {
         "url": "https://patrimoine.bzh/gertrude-diffusion/dossier/IA00006169",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Original source records historical healing belief; not medical evidence"
+        "qualification": "Original source records historical healing belief; not medical evidence",
+        "heritage_record": "IA00006169"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -397,7 +406,8 @@
       "source": {
         "url": "https://www.patrimoine.bzh/gertrude-diffusion/dossier/IA00006263",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Dated 1814 by heritage inscription"
+        "qualification": "Dated 1814 by heritage inscription",
+        "heritage_record": "IA00006263"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -420,7 +430,8 @@
       "source": {
         "url": "https://patrimoine.bzh/gertrude-diffusion/dossier/IA00006264",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Site in ruins according to collective inventory; no accessible active pilgrimage assumed"
+        "qualification": "Site in ruins according to collective inventory; no accessible active pilgrimage assumed",
+        "heritage_record": "IA00006264"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -443,7 +454,8 @@
       "source": {
         "url": "https://pop.culture.gouv.fr/notice/merimee/IA00006183",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "1723 inscription, chapel context, note 1997 statue theft/replacement"
+        "qualification": "1723 inscription, chapel context, note 1997 statue theft/replacement",
+        "heritage_record": "IA00006183"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -464,9 +476,9 @@
       "locality": "Holywell, Flintshire, Wales",
       "feature_scope": "WELL_AT_PUBLISHED_SHRINE",
       "source": {
-        "url": "https://historicengland.org.uk/listing/the-list/list-entry/1018702?section=official-list-entry",
-        "evidence_level": "RELATED_ROUTE_WITNESS_ONLY",
-        "qualification": "Published Welsh Holywell is distinct from the historic Clutton well in England; primary source for Welsh well is published Place owner, this link here supports another St Winefride tradition; replace with direct Wales custodian evidence"
+        "url": "https://www.stwinefridesshrine.org/",
+        "evidence_level": "SITE_CUSTODIAN",
+        "qualification": "Welsh Holywell is explicitly maintained by Diocese of Wrexham, distinct from the Clutton Historic England record."
       },
       "existing_canonical_place_id": "place:GB:holywell-st-winefride",
       "existing_europe_seven_wave_lead_id": null,
@@ -512,7 +524,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-001; chapels are parts of site, no 1 pin per chapel"
+        "qualification": "UNESCO component 1068-001; chapels are parts of site, no 1 pin per chapel",
+        "world_heritage_component": "1068-001"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -535,7 +548,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-002"
+        "qualification": "UNESCO component 1068-002",
+        "world_heritage_component": "1068-002"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -558,7 +572,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-003"
+        "qualification": "UNESCO component 1068-003",
+        "world_heritage_component": "1068-003"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -581,7 +596,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-004; relation to existing European sanctuary candidate requires physical-complex review"
+        "qualification": "UNESCO component 1068-004; relation to existing European sanctuary candidate requires physical-complex review",
+        "world_heritage_component": "1068-004"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": "EUROPE:PLACE:IT:santa-maria-del-monte-varese",
@@ -604,7 +620,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-005; Oropa sanctuary already in European register, complex membership needs checking"
+        "qualification": "UNESCO component 1068-005; Oropa sanctuary already in European register, complex membership needs checking",
+        "world_heritage_component": "1068-005"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": "EUROPE:PLACE:IT:oropa-santuario-della-madonna-nera",
@@ -627,7 +644,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-006"
+        "qualification": "UNESCO component 1068-006",
+        "world_heritage_component": "1068-006"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -650,7 +668,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-007"
+        "qualification": "UNESCO component 1068-007",
+        "world_heritage_component": "1068-007"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -673,7 +692,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-008"
+        "qualification": "UNESCO component 1068-008",
+        "world_heritage_component": "1068-008"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -696,7 +716,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/1068/maps/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "UNESCO component 1068-009"
+        "qualification": "UNESCO component 1068-009",
+        "world_heritage_component": "1068-009"
       },
       "existing_canonical_place_id": null,
       "existing_europe_seven_wave_lead_id": null,
@@ -719,7 +740,8 @@
       "source": {
         "url": "https://whc.unesco.org/en/list/905/",
         "evidence_level": "INDIVIDUAL_SOURCE",
-        "qualification": "Existing published shrine Place, with park/chapels/path network; do not generate route lines"
+        "qualification": "Existing published shrine Place, with park/chapels/path network; do not generate route lines",
+        "world_heritage_property": "905"
       },
       "existing_canonical_place_id": "place:PL:kalwaria-zebrzydowska",
       "existing_europe_seven_wave_lead_id": null,
@@ -787,7 +809,7 @@
       "feature_scope": "FEATURE_WITHIN_EXISTING_SHRINE",
       "source": {
         "url": "https://www.lourdes-france.com/en/",
-        "evidence_level": "GENERAL_CUSTODIAN_RECHECK",
+        "evidence_level": "SITE_CUSTODIAN_GENERAL",
         "qualification": "Grotto is a feature of existing Lourdes sanctuary, not separate sanctuary pin; apparitions have their own source owner"
       },
       "existing_canonical_place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
@@ -809,8 +831,8 @@
       "locality": "Brive-la-Gaillarde, Corrèze",
       "feature_scope": "PUBLISHED_CAVE_SANCTUARY",
       "source": {
-        "url": "https://www.sanctuairesaintantoine.com/",
-        "evidence_level": "GENERAL_CUSTODIAN_RECHECK",
+        "url": "https://sanctuaire-saintantoine-brive.fr/le-sanctuaire/",
+        "evidence_level": "SITE_CUSTODIAN",
         "qualification": "Published sanctuary named for grottoes; detailed cave footprint and devotion need separate source verification"
       },
       "existing_canonical_place_id": "place:FR:grottes-saint-antoine-brive",
