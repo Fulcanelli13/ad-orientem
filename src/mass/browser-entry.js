@@ -609,6 +609,8 @@ export async function mountR17Preview({
 }
 
 async function openProductionReader(prepared, { resumeRecord = null } = {}) {
+  // R17 owns the whole screen as soon as the native Mass starts.
+  globalThis.AO_MASS_HUB_V1?.close?.();
   persistPrepared(prepared, { state: "active", resumeRecord });
   const readerUiMode="NATIVE";
   const previewState=await mountR17Preview({doc:document,prepared});
