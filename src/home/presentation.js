@@ -1,6 +1,7 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
+import { renderTodayV2 } from "./today-v2.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
@@ -113,34 +114,26 @@ export function buildHomeViewModel(state,win=globalThis){
 
 
 export function renderHomeToString(state,win=globalThis){
-  const vm=buildHomeViewModel(state,win),t=k=>tr(vm.language,k);
-  const status=vm.calendarFailed?`<div class="statusCard error"><strong>${esc(t("calendarUnavailable"))}</strong><span>${esc(t("calendarUnavailableBody"))}</span></div>`
-    :vm.properStatus==="failed"?`<div class="statusCard warning"><strong>${esc(t("properUnavailable"))}</strong><span>${esc(vm.properMessage)}</span></div>`:"";
-  const currentProper=state.resolution?.proper?.status==="ready"?state.resolution.proper.data:null;
-  const enrichers=buildHomeEnrichers(state,win);
-  const coverage=currentProper?.languageCoverage?.[vm.language];
-  const translationStatus=coverage&&!coverage.complete?`<div class="statusCard warning contentIntegrity"><strong>${vm.language==="fr"?"Traduction du Propre incomplète":"Proper translation incomplete"}</strong><span>${esc(`${coverage.available}/${coverage.expected} · ${coverage.missing.join(", ")}`)}</span></div>`:"";
-  const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b></button>`).join("");
-  const meta=[vm.rank,vm.colour?`${t("colour")} · ${vm.colour}`:"",vm.formularyLabel,vm.commemorationLabel].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
-  const chooser=vm.formularies.length?`<div class="formularyChooser" role="group" aria-label="${esc(t("formulary"))}">${vm.formularies.map(x=>`<button data-formulary="${x.index}" class="${x.selected?"selected":""}" aria-pressed="${x.selected}">${esc(x.label)}</button>`).join("")}</div>`:"";
-  const art=win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
-  const resume=readNativeMassResume(win);
-  const resumeMeta=resume?[
-    resume.date?formatDisplayDate(resume.date):"",
-    resume.stepNumber?String(resume.stepNumber):"",
-  ].filter(Boolean).join(" · "):"";
-  return `<main class="homeScreen" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
-<header class="homeHeader"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
-<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
-<section class="celebrationBlock"><div class="eyebrow">${esc(vm.weekday)}</div><h1>${esc(vm.celebration)}</h1><div class="metaLine">${meta}</div>${chooser}${art}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}</section>
-${status}${translationStatus}
-${resume?`<button class="resumeCard" data-resume-mass data-ao-resume-owner="${resume.source}"><span>${vm.language==="fr"?"Messe en cours":"Mass in progress"}</span><b>${vm.language==="fr"?"Reprendre":"Resume"}</b>${resumeMeta?`<small>${esc(resumeMeta)}</small>`:""}</button>`:""}
-<section class="homeSection aroundMass"><div class="sectionLabel">${esc(t("aroundMass"))}</div><div class="phaseActions"><button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(t("prepare"))}</b></button><button class="phaseButton primary" data-home-mass-entry><span>Ⅱ</span><b>${esc(t("followMass"))}</b></button><button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(t("giveThanks"))}</b></button></div></section>
-<section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p>${vm.gospelReference?scriptureContextCapsule(vm.gospelReference,{french:vm.language==="fr"}):""}<button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
-<section class="contentCard aoHomeScriptureLink"><div class="cardKicker">${esc(vm.language==="fr"?"SAINTE ÉCRITURE":"SACRED SCRIPTURE")}</div><p>${esc(vm.language==="fr"?"Lire et rechercher dans la Bible catholique traditionnelle ; conserver des signets.":"Read and explore the traditional Catholic Bible; keep bookmarks.")}</p><button type="button" class="textAction" data-home-scripture>${esc(vm.language==="fr"?"Ouvrir la Sainte Écriture":"Open Sacred Scripture")} <span>${assetIcon("ao-ui-next")}</span></button></section>
-${renderHomeEnrichersToString(enrichers,state,win)}
-<section class="contentCard findCard"><div><div class="cardKicker">${esc(vm.language==="fr"?"EXPLORER":"EXPLORE")}</div><p>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires, coutumes et pèlerinages — un seul atlas sourcé.":"Traditional Masses, shrines, customs and pilgrimages — one source-backed atlas.")}</p><button type="button" class="textAction aoHomeCustomsAtlasLink" data-home-customs-atlas>${esc(vm.language==="fr"?"Ouvrir l’Atlas des coutumes":"Open Customs Atlas")} ${assetIcon("ao-ui-next")}</button></div><button class="roundAction" data-home-find aria-label="${esc(vm.language==="fr"?"Ouvrir Explore":"Open Explore")}">${assetIcon("ao-ui-next")}</button></section>
-<div class="homeSpacer"></div></main>`;
+  const vm=buildHomeViewModel(state,win),fr=vm.language==="fr";
+  const resolution=state?.resolution,stale=resolution?.date&&resolution.date!==vm.dateIso;
+  // A stale async result cannot drive Today's feast title, rank, or artwork.
+  const safeState=stale?{...state,resolution:null}:state;
+  const safeVm=stale?buildHomeViewModel(safeState,win):vm;
+  const proper=safeState.resolution?.proper?.status==="ready"?safeState.resolution.proper.data:null;
+  const coverage=proper?.languageCoverage?.[safeVm.language];
+  const calendarError=safeVm.calendarFailed
+    ?'<div class="statusCard error"><strong>'+esc(tr(safeVm.language,"calendarUnavailable"))+'</strong><span>'+esc(tr(safeVm.language,"calendarUnavailableBody"))+'</span></div>':"";
+  const properError=safeVm.properStatus==="failed"
+    ?'<div class="statusCard warning"><strong>'+esc(tr(safeVm.language,"properUnavailable"))+'</strong><span>'+esc(safeVm.properMessage)+'</span></div>':"";
+  const translationWarning=coverage&&!coverage.complete
+    ?'<div class="statusCard warning contentIntegrity"><strong>'+(fr?"Traduction du Propre incomplète":"Proper translation incomplete")+'</strong><span>'+esc(coverage.available+'/'+coverage.expected+' · '+coverage.missing.join(", "))+'</span></div>':"";
+  let artMarkup="";
+  try{artMarkup=win?.AO_PHASE1_ART?.homeMarkup?.(safeState,safeVm.language)||""}catch{}
+  return renderTodayV2({
+    state:safeState,vm:safeVm,resume:readNativeMassResume(win),
+    artMarkup,enrichers:buildHomeEnrichers(safeState,win),
+    warnings:calendarError+properError+translationWarning,
+  });
 }
 
 export function renderHome(root,state,win=globalThis){
