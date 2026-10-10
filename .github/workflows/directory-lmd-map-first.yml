@@ -1,0 +1,28 @@
+name: Latin Mass Directory map-first coordinates
+on:
+  pull_request:
+    paths:
+      - "tools/directory/acquire-lmd-map-pins.mjs"
+      - ".github/workflows/directory-lmd-map-first.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Acquire venue map markers from publicly linked pages
+        run: node tools/directory/acquire-lmd-map-pins.mjs --countries=mu,ie,nz,za,au,ca
+      - name: Save staging evidence without production publication
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lmd-public-map-coordinate-evidence
+          path: /tmp/lmd-r39/
+          retention-days: 30
+          if-no-files-found: warn
