@@ -64,7 +64,7 @@ for(const s of publication.sites){
  const id="relic:"+s.slug,item=items.find(i=>i.source_id===id);
  assert.ok(item?.sections.some(section=>section.label==="Exposition & visitor access"),"Source-specific visitor guidance absent "+id);
  assert.ok(!item.sections.some(section=>section.title==="Temporary closure"),"Ordinary display restriction falsely labelled closure "+id);
- const rendered=renderExploreToString(buildExploreViewModel({language:"fr",lens:"relics",view:"list",items:[item],selectedId:item.item_id,counts:{relics:1}}));
+ const rendered=renderExploreToString(buildExploreViewModel({language:"fr",lens:"relics",view:"list",items:[item],selectedId:item.item_id,counts:{relics:1},expandDetail:true}));
  assert.ok(rendered.includes("Ostension et accès"),"French reader missing special-access explanation "+id);
 }
 const aachen=publication.sites.find(s=>s.group==="sacred-object-group:aachen-four-cloths");
