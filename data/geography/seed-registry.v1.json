@@ -721,6 +721,150 @@
       "codes": {
         "iso_alpha2": "HU"
       }
+    },
+    {
+      "geo_area_id": "geo:country:MT",
+      "name": {
+        "official": "Malta",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MT"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:HR",
+      "name": {
+        "official": "Croatia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "HR"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LK",
+      "name": {
+        "official": "Sri Lanka",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LK"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PH",
+      "name": {
+        "official": "Philippines",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PH"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:DZ",
+      "name": {
+        "official": "Algeria",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "DZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SN",
+      "name": {
+        "official": "Senegal",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SN"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CI",
+      "name": {
+        "official": "Côte d’Ivoire",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CI"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CL",
+      "name": {
+        "official": "Chile",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CL"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:IL",
+      "name": {
+        "official": "Israel / Holy Land",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "IL"
+      }
     }
   ],
   "places": [
@@ -7520,6 +7664,1331 @@
       },
       "source_ids": [
         "SHR-IT-montecassino-abbey"
+      ]
+    },
+    {
+      "place_id": "place:IT:sacro-monte-di-varallo",
+      "name": {
+        "official": "Sacro Monte di Varallo",
+        "aliases": []
+      },
+      "place_type": "pilgrimage_destination",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.8188,
+        "lng": 8.25595,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/494243748",
+        "source_ref": "osm:way:494243748",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Sacro Monte di Varallo, Italy"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-NEW-003",
+        "SG-COORD-SG-GEO-NEW-003"
+      ]
+    },
+    {
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "name": {
+        "official": "Sanctuary of Our Lady of Rocamadour",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:FR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.7993,
+        "lng": 1.6176,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q2974823",
+        "source_ref": "sg:SG-BATCH2-001",
+        "attribution": "Wikidata contributors (CC0)",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "FR",
+        "country": "France",
+        "formatted": "Sanctuary of Our Lady of Rocamadour, France"
+      },
+      "source_ids": [
+        "SG-SITE-SG-BATCH2-001",
+        "SG-COORD-SG-BATCH2-001"
+      ]
+    },
+    {
+      "place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "name": {
+        "official": "Santa Maria de Montserrat Abbey",
+        "aliases": [
+          "Monastery of Santa María de Montserrat"
+        ]
+      },
+      "place_type": "monastery",
+      "geo_area_ids": [
+        "geo:country:ES"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.59335,
+        "lng": 1.83809,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/W182384937",
+        "source_ref": "sg:SG-BATCH2-002",
+        "attribution": "Mapcarta (OpenStreetMap data)",
+        "matched_country_code": "ES",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "ES",
+        "country": "Spain",
+        "formatted": "Santa Maria de Montserrat Abbey, Spain"
+      },
+      "source_ids": [
+        "SG-SITE-SG-BATCH2-002",
+        "SG-COORD-SG-BATCH2-002"
+      ]
+    },
+    {
+      "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "name": {
+        "official": "National Shrine of Our Lady of Ta' Pinu",
+        "aliases": [
+          "National Shrine of Our Lady of Ta' Pinu, Gozo"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:MT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 36.06191,
+        "lng": 14.21491,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/W33779121",
+        "source_ref": "sg:SG-BATCH2-003",
+        "attribution": "Mapcarta (OpenStreetMap data)",
+        "matched_country_code": "MT",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "MT",
+        "country": "Malta",
+        "formatted": "National Shrine of Our Lady of Ta' Pinu, Malta"
+      },
+      "source_ids": [
+        "SG-SITE-SG-BATCH2-003",
+        "SG-COORD-SG-BATCH2-003"
+      ]
+    },
+    {
+      "place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "name": {
+        "official": "Divine Mercy Sanctuary, Kraków-Łagiewniki",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 50.01997,
+        "lng": 19.9376,
+        "precision": "complex_anchor",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/123144540",
+        "source_ref": "osm:way:123144540",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "Divine Mercy Sanctuary, Kraków-Łagiewniki, Poland"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-002",
+        "SG-COORD-SG-GEO-P3-002"
+      ]
+    },
+    {
+      "place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
+      "name": {
+        "official": "National Shrine of Saint Joseph, Karlovac",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:HR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 45.49539,
+        "lng": 15.53165,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/177574260",
+        "source_ref": "osm:way:177574260",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "HR",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "HR",
+        "country": "Croatia",
+        "formatted": "National Shrine of Saint Joseph, Karlovac, Croatia"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-003",
+        "SG-COORD-SG-GEO-P3-003"
+      ]
+    },
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "name": {
+        "official": "Divine Mercy Sanctuary, Vilnius",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:LT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 54.68148,
+        "lng": 25.28554,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/81296879",
+        "source_ref": "osm:way:81296879",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LT",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "LT",
+        "country": "Lithuania",
+        "formatted": "Divine Mercy Sanctuary, Vilnius, Lithuania"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-004",
+        "SG-COORD-SG-GEO-P3-004"
+      ]
+    },
+    {
+      "place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "name": {
+        "official": "Basilica of Our Lady of Luján",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:AR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -34.56444,
+        "lng": -59.12145,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/186577050",
+        "source_ref": "osm:way:186577050",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "AR",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "AR",
+        "country": "Argentina",
+        "formatted": "Basilica of Our Lady of Luján, Argentina"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-005",
+        "SG-COORD-SG-GEO-P3-005"
+      ]
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "name": {
+        "official": "Basilica of Our Lady of Good Health, Vailankanni",
+        "aliases": [
+          "Basilica of Our Lady of Good Health, Velankanni"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 10.68025,
+        "lng": 79.84964,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/672541959",
+        "source_ref": "osm:way:672541959",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IN",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IN",
+        "country": "India",
+        "formatted": "Basilica of Our Lady of Good Health, Vailankanni, India"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-006",
+        "SG-COORD-SG-GEO-P3-006"
+      ]
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "name": {
+        "official": "Basilica of Our Lady of Lourdes, Poondi",
+        "aliases": [
+          "Shrine of Our Lady of Lourdes, Poondi"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 10.86402,
+        "lng": 78.94122,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/424972317",
+        "source_ref": "osm:way:424972317",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IN",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IN",
+        "country": "India",
+        "formatted": "Basilica of Our Lady of Lourdes, Poondi, India"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-007",
+        "SG-COORD-SG-GEO-P3-007"
+      ]
+    },
+    {
+      "place_id": "place:LK:shrine-of-our-lady-of-madhu",
+      "name": {
+        "official": "Shrine of Our Lady of Madhu",
+        "aliases": [
+          "National Shrine of Our Lady of Madhu"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:LK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 8.85482,
+        "lng": 80.20298,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/483435994",
+        "source_ref": "osm:way:483435994",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LK",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "LK",
+        "country": "Sri Lanka",
+        "formatted": "Shrine of Our Lady of Madhu, Sri Lanka"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-008",
+        "SG-COORD-SG-GEO-P3-008"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "name": {
+        "official": "National Shrine of Our Lady of Lourdes, Quezon City",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.63018,
+        "lng": 120.99701,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/140348903",
+        "source_ref": "osm:way:140348903",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "National Shrine of Our Lady of Lourdes, Quezon City, Philippines"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-009",
+        "SG-COORD-SG-GEO-P3-009"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "name": {
+        "official": "National Shrine of Our Lady of Fatima, Valenzuela",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.68258,
+        "lng": 120.9806,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/50982921",
+        "source_ref": "osm:way:50982921",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "National Shrine of Our Lady of Fatima, Valenzuela, Philippines"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-010",
+        "SG-COORD-SG-GEO-P3-010"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "name": {
+        "official": "National Shrine of Our Lady of Guadalupe, Makati",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.56129,
+        "lng": 121.04555,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/153741157",
+        "source_ref": "osm:way:153741157",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "National Shrine of Our Lady of Guadalupe, Makati, Philippines"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-011",
+        "SG-COORD-SG-GEO-P3-011"
+      ]
+    },
+    {
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "name": {
+        "official": "Padre Pio Shrine, Santo Tomas, Batangas",
+        "aliases": [
+          "International Shrine of Saint Pio of Pietrelcina, Santo Tomas Batangas"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.0762,
+        "lng": 121.17749,
+        "precision": "complex_anchor",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/relation/4065077",
+        "source_ref": "osm:relation:4065077",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "Padre Pio Shrine, Santo Tomas, Batangas, Philippines"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-012",
+        "SG-COORD-SG-GEO-P3-012"
+      ]
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "name": {
+        "official": "National Shrine of Saint Joseph, Mandaue",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 10.32742,
+        "lng": 123.94216,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/855787222",
+        "source_ref": "osm:way:855787222",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "National Shrine of Saint Joseph, Mandaue, Philippines"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-013",
+        "SG-COORD-SG-GEO-P3-013"
+      ]
+    },
+    {
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "name": {
+        "official": "Basilica of Notre-Dame d’Afrique, Algiers",
+        "aliases": [
+          "Basilica of Notre-Dame d'Afrique, Algiers"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:DZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 36.80105,
+        "lng": 3.04262,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/26614341",
+        "source_ref": "osm:way:26614341",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "DZ",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "DZ",
+        "country": "Algeria",
+        "formatted": "Basilica of Notre-Dame d’Afrique, Algiers, Algeria"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-014",
+        "SG-COORD-SG-GEO-P3-014"
+      ]
+    },
+    {
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "name": {
+        "official": "Basilica of Our Lady of Deliverance, Popenguine",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:SN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.55468,
+        "lng": -17.11152,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/232424082",
+        "source_ref": "osm:way:232424082",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "SN",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "SN",
+        "country": "Senegal",
+        "formatted": "Basilica of Our Lady of Deliverance, Popenguine, Senegal"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-015",
+        "SG-COORD-SG-GEO-P3-015"
+      ]
+    },
+    {
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "name": {
+        "official": "Basilica of Our Lady of Peace, Yamoussoukro",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:CI"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 6.81129,
+        "lng": -5.29698,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/89584501",
+        "source_ref": "osm:way:89584501",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CI",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "CI",
+        "country": "Côte d’Ivoire",
+        "formatted": "Basilica of Our Lady of Peace, Yamoussoukro, Côte d’Ivoire"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-016",
+        "SG-COORD-SG-GEO-P3-016"
+      ]
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "name": {
+        "official": "Basilica of the National Shrine of the Immaculate Conception, Washington",
+        "aliases": [
+          "Basilica of the National Shrine of the Immaculate Conception, Washington DC"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 38.93336,
+        "lng": -77.00069,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/297739340",
+        "source_ref": "osm:way:297739340",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "Basilica of the National Shrine of the Immaculate Conception, Washington, United States"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-017",
+        "SG-COORD-SG-GEO-P3-017"
+      ]
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "name": {
+        "official": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+        "aliases": [
+          "National Shrine of Our Lady of Fatima, Lewiston"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:US"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 43.20036,
+        "lng": -79.0034,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/1251763730",
+        "source_ref": "osm:way:1251763730",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "US",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "US",
+        "country": "United States",
+        "formatted": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston, United States"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-018",
+        "SG-COORD-SG-GEO-P3-018"
+      ]
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "name": {
+        "official": "Sanctuary of Our Lady of La Tirana, Chile",
+        "aliases": [
+          "Sanctuary of Our Lady of La Tirana"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -20.33657,
+        "lng": -69.65634,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/157593768",
+        "source_ref": "osm:way:157593768",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "CL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "CL",
+        "country": "Chile",
+        "formatted": "Sanctuary of Our Lady of La Tirana, Chile, Chile"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-020",
+        "SG-COORD-SG-GEO-P3-020"
+      ]
+    },
+    {
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "name": {
+        "official": "Shrine of Our Lady of Lebanon, Harissa",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:LB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 33.98194,
+        "lng": 35.65167,
+        "precision": "complex_anchor",
+        "geocoding_source": "OTHER",
+        "source_url": "https://mapcarta.com/12881604",
+        "source_ref": "sg:SG-GEO-P3-021",
+        "attribution": "Mapcarta (OpenStreetMap data)",
+        "matched_country_code": "LB",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "LB",
+        "country": "Lebanon",
+        "formatted": "Shrine of Our Lady of Lebanon, Harissa, Lebanon"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-021",
+        "SG-COORD-SG-GEO-P3-021"
+      ]
+    },
+    {
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "name": {
+        "official": "National Basilica of Our Lady of Lanka, Tewatta",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:LK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 7.0326,
+        "lng": 79.93443,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/2362887712",
+        "source_ref": "osm:node:2362887712",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LK",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "LK",
+        "country": "Sri Lanka",
+        "formatted": "National Basilica of Our Lady of Lanka, Tewatta, Sri Lanka"
+      },
+      "source_ids": [
+        "SG-SITE-SG-GEO-P3-022",
+        "SG-COORD-SG-GEO-P3-022"
+      ]
+    },
+    {
+      "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "name": {
+        "official": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
+        "aliases": [
+          "Sanctuary of Our Lady of Fatima, Zakopane"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:PL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 49.28498,
+        "lng": 19.92297,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/218675752",
+        "source_ref": "osm:way:218675752",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "PL",
+        "country": "Poland",
+        "formatted": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki, Poland"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-001",
+        "SG-COORD-AO-SG-GEO4-001"
+      ]
+    },
+    {
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "name": {
+        "official": "National Shrine of Our Lady of Marija Bistrica",
+        "aliases": [
+          "National Shrine of Our Lady of Bistrica, Marija Bistrica"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:HR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 46.00452,
+        "lng": 16.1194,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/143372213",
+        "source_ref": "osm:way:143372213",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "HR",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "HR",
+        "country": "Croatia",
+        "formatted": "National Shrine of Our Lady of Marija Bistrica, Croatia"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-002",
+        "SG-COORD-AO-SG-GEO4-002"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "name": {
+        "official": "Church of the Primacy of Saint Peter, Tabgha",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 32.87181,
+        "lng": 35.55038,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/366377858",
+        "source_ref": "osm:way:366377858",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Church of the Primacy of Saint Peter, Tabgha, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-003",
+        "SG-COORD-AO-SG-GEO4-003"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "name": {
+        "official": "Church of Saint Peter in Gallicantu, Jerusalem",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 31.77128,
+        "lng": 35.23207,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/376137590",
+        "source_ref": "osm:way:376137590",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Church of Saint Peter in Gallicantu, Jerusalem, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-004",
+        "SG-COORD-AO-SG-GEO4-004"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "name": {
+        "official": "Church of Saint Peter, Jaffa",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 32.05475,
+        "lng": 34.75206,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/103818601",
+        "source_ref": "osm:way:103818601",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Church of Saint Peter, Jaffa, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-005",
+        "SG-COORD-AO-SG-GEO4-005"
+      ]
+    },
+    {
+      "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
+      "name": {
+        "official": "Saint Anne's National Shrine, Talawila",
+        "aliases": [
+          "National Shrine of Saint Anne, Talawila"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:LK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 8.11282,
+        "lng": 79.7036,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/6750542189",
+        "source_ref": "osm:node:6750542189",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "LK",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "LK",
+        "country": "Sri Lanka",
+        "formatted": "Saint Anne's National Shrine, Talawila, Sri Lanka"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-010",
+        "SG-COORD-AO-SG-GEO4-010"
+      ]
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "name": {
+        "official": "Basilica of the Annunciation, Nazareth",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 32.70209,
+        "lng": 35.29779,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/97417380",
+        "source_ref": "osm:way:97417380",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Basilica of the Annunciation, Nazareth, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-012",
+        "SG-COORD-AO-SG-GEO4-012"
+      ]
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "name": {
+        "official": "Basilica of the Transfiguration, Mount Tabor",
+        "aliases": [
+          "Church of the Transfiguration, Mount Tabor"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 32.68627,
+        "lng": 35.39242,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/255793567",
+        "source_ref": "osm:way:255793567",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Basilica of the Transfiguration, Mount Tabor, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-013",
+        "SG-COORD-AO-SG-GEO4-013"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-the-multiplication-tabgha",
+      "name": {
+        "official": "Church of the Multiplication, Tabgha",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 32.87342,
+        "lng": 35.54938,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/914205673",
+        "source_ref": "osm:node:914205673",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Church of the Multiplication, Tabgha, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-014",
+        "SG-COORD-AO-SG-GEO4-014"
+      ]
+    },
+    {
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "name": {
+        "official": "Church of the Visitation, Ein Karem",
+        "aliases": []
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 31.76446,
+        "lng": 35.15783,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/254157058",
+        "source_ref": "osm:way:254157058",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Church of the Visitation, Ein Karem, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-015",
+        "SG-COORD-AO-SG-GEO4-015"
+      ]
+    },
+    {
+      "place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "name": {
+        "official": "Dominus Flevit Church, Mount of Olives",
+        "aliases": [
+          "Chapel of Dominus Flevit, Mount of Olives"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:IL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 31.77799,
+        "lng": 35.24191,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/280345343",
+        "source_ref": "osm:way:280345343",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IL",
+        "verified_at": "2026-10-10"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": null,
+        "region": null,
+        "country_code": "IL",
+        "country": "Israel / Holy Land",
+        "formatted": "Dominus Flevit Church, Mount of Olives, Israel / Holy Land"
+      },
+      "source_ids": [
+        "SG-SITE-AO-SG-GEO4-016",
+        "SG-COORD-AO-SG-GEO4-016"
       ]
     }
   ],

@@ -9,13 +9,16 @@ const W5=read("data/explore/europe-acquisition.wave5-diocesan-index.research.v1.
 const M4=read("data/explore/europe-acquisition.four-wave-master.review.v1.json");
 const M5=read("data/explore/europe-acquisition.five-wave-master.review.v1.json");
 const G=read("data/geography/seed-registry.v1.json");
+// Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
+const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
+const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const id=x=>x.research_id||x.lead_id||x.id||x.site_id||x.place_id;
 const allBefore=[
  ...W1.place_candidates.map(x=>({id:id(x),cc:x.country_code,name:x.name})),
  ...W2.place_leads.map(x=>({id:id(x),cc:x.country_code,name:x.name})),
  ...W3.site_leads.map(x=>({id:id(x),cc:x.country_code,name:x.name})),
  ...W4.sites.map(x=>({id:id(x),cc:x.country_code,name:x.name})),
- ...G.places.map(x=>({id:id(x),cc:x.address.country_code,name:x.name.official}))
+ ...historicalPlaces.map(x=>({id:id(x),cc:x.address.country_code,name:x.name.official}))
 ];
 const normalize=x=>String(x).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]/g,"");
 assert.equal(W5.schema,"AO_EXPLORE_EUROPE_DIOCESAN_INDICES_WAVE5_RESEARCH_V1");
@@ -76,7 +79,7 @@ assert.deepEqual(M5.totals.by_category,Object.fromEntries(cats.map(k=>[k,(M4.sum
 assert.equal(M5.country_audit.length,47);
 const empty=[],sparse=[];
 for(const c of M5.country_audit){
- assert.equal(c.published_canonical_places,G.places.filter(x=>x.address.country_code===c.country_code).length);
+ assert.equal(c.published_canonical_places,historicalPlaces.filter(x=>x.address.country_code===c.country_code).length);
  assert.equal(c.additional_wave5_leads,W5.site_leads.filter(x=>x.country_code===c.country_code).length);
  assert.equal(c.total_research_leads,c.previous_research_leads+c.additional_wave5_leads);
  assert.equal(c.total_including_published_places,c.published_canonical_places+c.total_research_leads);

@@ -2,7 +2,10 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const R=JSON.parse(readFileSync("data/explore/europe-acquisition.wave1.research.v1.json","utf8"));
 const G=JSON.parse(readFileSync("data/geography/seed-registry.v1.json","utf8"));
-const oldPlaces=new Map(G.places.map(x=>[x.place_id,x]));
+// Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
+const publishedAfterFreeze=new Set(JSON.parse(readFileSync("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json","utf8")).promoted.map(p=>p.place_id));
+const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
+const oldPlaces=new Map(historicalPlaces.map(x=>[x.place_id,x]));
 const names=new Set(R.place_candidates.map(x=>x.lead_id));
 const sources=new Set(R.sources.map(x=>x.source_id));
 assert.equal(R.schema,"AO_EXPLORE_EUROPE_SOURCE_ACQUISITION_WAVE1_V1");
@@ -44,7 +47,7 @@ assert.equal(R.counts.coverage_countries,47);
 assert.equal(R.counts.countries_with_zero_sites_in_current_registry_and_wave,
  R.country_coverage.filter(x=>x.coverage_state==="SOURCE_DISCOVERY_NOT_STARTED").length);
 for(const row of R.country_coverage){
- assert.equal(row.existing_canonical_places,G.places.filter(p=>p.address.country_code===row.country_code).length);
+ assert.equal(row.existing_canonical_places,historicalPlaces.filter(p=>p.address.country_code===row.country_code).length);
  assert.equal(row.new_site_leads,newSites.filter(p=>p.country_code===row.country_code).length);
  assert.notEqual(row.coverage_state,"COMPLETE","no European country has passed full registry enumeration yet");
 }

@@ -11,11 +11,11 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 182,
-    "places_with_linked_records": 180,
+    "places": 217,
+    "places_with_linked_records": 215,
     "places_without_direct_claim": 2,
     "multicategory_heritage_places": 178,
-    "shrines": 178,
+    "shrines": 213,
     "pilgrimages": 206,
     "relic_claims": 122,
     "apparition_accounts": 32,
@@ -143,6 +143,16 @@
     "Places with null latitude/longitude are pending coordinates, not false claims that a known coordinate lacks attribution."
   ],
   "place_crosswalk": [
+    {
+      "place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "display_name": "Basilica of Our Lady of Luján",
+      "record_ids": {
+        "shrines": [
+          "shrine:AR:basilica-of-our-lady-of-lujan"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
     {
       "place_id": "place:AR:san-nicolas-virgen-rosario",
       "display_name": "Santuario María del Rosario de San Nicolás",
@@ -438,6 +448,26 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "display_name": "Basilica of Our Lady of Peace, Yamoussoukro",
+      "record_ids": {
+        "shrines": [
+          "shrine:CI:basilica-of-our-lady-of-peace-yamoussoukro"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "display_name": "Sanctuary of Our Lady of La Tirana, Chile",
+      "record_ids": {
+        "shrines": [
+          "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CO:chiquinquira-basilica",
       "display_name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá",
       "record_ids": {
@@ -719,6 +749,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "display_name": "Basilica of Notre-Dame d’Afrique, Algiers",
+      "record_ids": {
+        "shrines": [
+          "shrine:DZ:basilica-of-notre-dame-dafrique-algiers"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:EG:zeitoun-coptic-saint-mary",
       "display_name": "Church of the Virgin Mary, Zeitoun (Coptic Orthodox)",
       "record_ids": {
@@ -790,6 +830,16 @@
         ],
         "relics": [
           "relic:ES:convento-san-juan-cruz-segovia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "display_name": "Santa Maria de Montserrat Abbey",
+      "record_ids": {
+        "shrines": [
+          "shrine:ES:santa-maria-de-montserrat-abbey"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -1598,6 +1648,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "display_name": "Sanctuary of Our Lady of Rocamadour",
+      "record_ids": {
+        "shrines": [
+          "shrine:FR:sanctuary-of-our-lady-of-rocamadour"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:GB:holywell-st-winefride",
       "display_name": "St Winefride's Shrine & Well",
       "record_ids": {
@@ -1676,6 +1736,26 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "display_name": "National Shrine of Our Lady of Marija Bistrica",
+      "record_ids": {
+        "shrines": [
+          "shrine:HR:national-shrine-of-our-lady-of-marija-bistrica"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
+      "display_name": "National Shrine of Saint Joseph, Karlovac",
+      "record_ids": {
+        "shrines": [
+          "shrine:HR:national-shrine-of-saint-joseph-karlovac"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:HU:st-stephen-basilica-budapest",
       "display_name": "Saint Stephen's Basilica, Budapest",
       "record_ids": {
@@ -1722,6 +1802,86 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "display_name": "Basilica of the Annunciation, Nazareth",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:basilica-of-the-annunciation-nazareth"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "display_name": "Basilica of the Transfiguration, Mount Tabor",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:basilica-of-the-transfiguration-mount-tabor"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "display_name": "Church of Saint Peter in Gallicantu, Jerusalem",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:church-of-saint-peter-in-gallicantu-jerusalem"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "display_name": "Church of Saint Peter, Jaffa",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:church-of-saint-peter-jaffa"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:church-of-the-multiplication-tabgha",
+      "display_name": "Church of the Multiplication, Tabgha",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:church-of-the-multiplication-tabgha"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "display_name": "Church of the Primacy of Saint Peter, Tabgha",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:church-of-the-primacy-of-saint-peter-tabgha"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "display_name": "Church of the Visitation, Ein Karem",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:church-of-the-visitation-ein-karem"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "display_name": "Dominus Flevit Church, Mount of Olives",
+      "record_ids": {
+        "shrines": [
+          "shrine:IL:dominus-flevit-church-mount-of-olives"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IN:basilica-bom-jesus-old-goa",
       "display_name": "Basilica of Bom Jesus, Old Goa",
       "record_ids": {
@@ -1733,6 +1893,26 @@
         ],
         "relics": [
           "relic:IN:francis-xavier-goa"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "display_name": "Basilica of Our Lady of Good Health, Vailankanni",
+      "record_ids": {
+        "shrines": [
+          "shrine:IN:basilica-of-our-lady-of-good-health-vailankanni"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "display_name": "Basilica of Our Lady of Lourdes, Poondi",
+      "record_ids": {
+        "shrines": [
+          "shrine:IN:basilica-of-our-lady-of-lourdes-poondi"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2043,6 +2223,16 @@
         ],
         "relics": [
           "relic:IT:sacra-famiglia-bakhita-schio"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:sacro-monte-di-varallo",
+      "display_name": "Sacro Monte di Varallo",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:sacro-monte-di-varallo"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2382,6 +2572,56 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "display_name": "Shrine of Our Lady of Lebanon, Harissa",
+      "record_ids": {
+        "shrines": [
+          "shrine:LB:shrine-of-our-lady-of-lebanon-harissa"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "display_name": "National Basilica of Our Lady of Lanka, Tewatta",
+      "record_ids": {
+        "shrines": [
+          "shrine:LK:national-basilica-of-our-lady-of-lanka-tewatta"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
+      "display_name": "Saint Anne's National Shrine, Talawila",
+      "record_ids": {
+        "shrines": [
+          "shrine:LK:saint-anne-s-national-shrine-talawila"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LK:shrine-of-our-lady-of-madhu",
+      "display_name": "Shrine of Our Lady of Madhu",
+      "record_ids": {
+        "shrines": [
+          "shrine:LK:shrine-of-our-lady-of-madhu"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "display_name": "Divine Mercy Sanctuary, Vilnius",
+      "record_ids": {
+        "shrines": [
+          "shrine:LT:divine-mercy-sanctuary-vilnius"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:LT:siluva-apparition-chapel",
       "display_name": "Holy Virgin Mary’s Apparition Chapel, Šiluva",
       "record_ids": {
@@ -2425,6 +2665,16 @@
         ],
         "relics": [
           "relic:LU:basilica-st-willibrord-echternach"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "display_name": "National Shrine of Our Lady of Ta' Pinu",
+      "record_ids": {
+        "shrines": [
+          "shrine:MT:national-shrine-of-our-lady-of-ta-pinu"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2620,6 +2870,56 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "display_name": "National Shrine of Our Lady of Fatima, Valenzuela",
+      "record_ids": {
+        "shrines": [
+          "shrine:PH:national-shrine-of-our-lady-of-fatima-valenzuela"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "display_name": "National Shrine of Our Lady of Guadalupe, Makati",
+      "record_ids": {
+        "shrines": [
+          "shrine:PH:national-shrine-of-our-lady-of-guadalupe-makati"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "display_name": "National Shrine of Our Lady of Lourdes, Quezon City",
+      "record_ids": {
+        "shrines": [
+          "shrine:PH:national-shrine-of-our-lady-of-lourdes-quezon-city"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "display_name": "National Shrine of Saint Joseph, Mandaue",
+      "record_ids": {
+        "shrines": [
+          "shrine:PH:national-shrine-of-saint-joseph-mandaue"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "display_name": "Padre Pio Shrine, Santo Tomas, Batangas",
+      "record_ids": {
+        "shrines": [
+          "shrine:PH:padre-pio-shrine-santo-tomas-batangas"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PL:divine-mercy-plock",
       "display_name": "Sanktuarium Bożego Miłosierdzia, Płock",
       "record_ids": {
@@ -2631,6 +2931,16 @@
         ],
         "apparitions": [
           "apparition:PL:faustina-plock"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "display_name": "Divine Mercy Sanctuary, Kraków-Łagiewniki",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:divine-mercy-sanctuary-krakow-agiewniki"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2695,6 +3005,16 @@
         ],
         "customs": [
           "att:DEV-007:KALWARIA-ASSUMPTION"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "display_name": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
+      "record_ids": {
+        "shrines": [
+          "shrine:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2817,6 +3137,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "display_name": "Basilica of Our Lady of Deliverance, Popenguine",
+      "record_ids": {
+        "shrines": [
+          "shrine:SN:basilica-of-our-lady-of-deliverance-popenguine"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:SV:catedral-metropolitana-san-salvador",
       "display_name": "Catedral Metropolitana de San Salvador",
       "record_ids": {
@@ -2882,6 +3212,26 @@
         "routes": [
           "route:US:amsterdam-auriesville",
           "route:US:lake-george-auriesville-restoration"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "display_name": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "display_name": "Basilica of the National Shrine of the Immaculate Conception, Washington",
+      "record_ids": {
+        "shrines": [
+          "shrine:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3192,7 +3542,7 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 178,
+    "shrines": 213,
     "pilgrimages": 178,
     "relics": 92,
     "apparitions": 29,

@@ -7,6 +7,9 @@ const W2=read("data/explore/europe-acquisition.wave2.research.v1.json");
 const W3=read("data/explore/europe-acquisition.wave3.research.v1.json");
 const W4=read("data/explore/europe-acquisition.wave4-national-depth.research.v1.json");
 const G=read("data/geography/seed-registry.v1.json");
+// Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
+const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
+const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(A.schema,"AO_EXPLORE_EUROPE_FOUR_WAVE_MASTER_REVIEW_V1");
 assert.equal(A.status,"REGISTRY_RESEARCH_IN_PROGRESS_NONE_COMPLETE");
 assert.equal(A.publication_control,"ALL_INCOMING_WAVES_RESEARCH_ONLY_NO_NEW_PINS_NO_BIOGRAPHIES_NO_IMAGES");
@@ -31,10 +34,10 @@ assert.deepEqual(A.summary.by_category,Object.fromEntries(cat.map(k=>[k,assoc.fi
 assert.equal(A.country_review.length,47);
 assert.equal(new Set(A.country_review.map(x=>x.country_code)).size,47);
 let sparse=0,empty=0;
-const existingIds=new Set(G.places.map(x=>x.place_id));
+const existingIds=new Set(historicalPlaces.map(x=>x.place_id));
 for(const row of A.country_review){
  const cc=row.country_code,placeRows=all.filter(x=>x.cc===cc),acts=assoc.filter(x=>x.cc===cc);
- const existing=G.places.filter(p=>p.address.country_code===cc).length;
+ const existing=historicalPlaces.filter(p=>p.address.country_code===cc).length;
  assert.equal(row.published_canonical_places,existing);
  assert.equal(row.source_research_site_leads,placeRows.length);
  assert.equal(row.unmatched_research_site_leads,placeRows.filter(x=>!x.existing).length);

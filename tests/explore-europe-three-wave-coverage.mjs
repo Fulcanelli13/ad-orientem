@@ -6,6 +6,9 @@ const W2=read("data/explore/europe-acquisition.wave2.research.v1.json");
 const W3=read("data/explore/europe-acquisition.wave3.research.v1.json");
 const C=read("data/explore/europe-acquisition.three-wave-coverage.review.v1.json");
 const G=read("data/geography/seed-registry.v1.json");
+// Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
+const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
+const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W3.schema,"AO_EXPLORE_EUROPE_WAVE3_TEN_COUNTRY_ACQUISITION_REVIEW_V1");
 assert.equal(W3.status,"RESEARCH_ONLY_NO_LIVE_PINS");
 assert.equal(W3.source_register.length,25);
@@ -19,7 +22,7 @@ assert.equal(site.size,22,"duplicate Place candidate ID");
 const countrySet=new Set(W3.site_leads.map(x=>x.country_code));
 assert.equal(countrySet.size,10);
 const prev=new Set(W2.place_leads.map(x=>x.country_code));
-assert.ok([...countrySet].every(x=>!G.places.some(y=>y.address.country_code===x)),"new country is already in published registry");
+assert.ok([...countrySet].every(x=>!historicalPlaces.some(y=>y.address.country_code===x)),"new country is already in published registry");
 assert.ok([...countrySet].every(x=>!W1.place_candidates.some(y=>y.country_code===x)),"wave3 mislabeled earlier wave1 country");
 assert.ok([...countrySet].every(x=>!prev.has(x)),"wave3 mislabeled wave2 country");
 for(const x of W3.source_register){
