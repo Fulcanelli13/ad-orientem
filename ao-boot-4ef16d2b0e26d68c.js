@@ -2254,7 +2254,18 @@ class ProperResolver {
             const targetLayer = reference.path ? "upstream" : layer;
             const targetParsed = reference.path ? await this.loadUpstreamParsed(targetPath, language, diagnostic) : parsed;
             const targetSection = canonicalReferencedProperSection(targetPath, rawSection, targetParsed);
-            const visitKey = `${targetLayer}|${language}|${targetPath}|${targetSection}|${reference.subs}`;
+            // Page 543, July 12, of the printed 1962 Missale Romanum names
+            // "beati Ioannis Abbatis" in this COLLECT, not "Ioannis Gualberti".
+            // Missale Meum's normalized Latin reference inserted "Gualberti".
+            // Do not alter the Secret, Postcommunion, or EN/FR source texts.
+            const printed1962JohnGualbertCollect = language === "la"
+              && path === "Sancti/07-12" && section === "Oratio"
+              && targetPath === "Commune/C5b" && targetSection === "Oratio"
+              && reference.subs.includes("Joánnis Gualbérti");
+            const sourceSubs = printed1962JohnGualbertCollect
+              ? reference.subs.replace("Joánnis Gualbérti", "Joánnis")
+              : reference.subs;
+            const visitKey = `${targetLayer}|${language}|${targetPath}|${targetSection}|${sourceSubs}`;
             if (visited.has(visitKey))
                 throw new Error(`Reference cycle detected: ${visitKey}`);
             const next = new Set(visited);
@@ -2266,8 +2277,9 @@ class ProperResolver {
                     evidence: "pinned-1962-latin-and-canonical-ad-missam-heading"
                 });
             let nested = await this.resolveSection(targetParsed, targetSection, targetPath, language, targetLayer, diagnostic, next, depth + 1);
-            nested = applySubstitutions(nested, reference.subs, diagnostic, `${targetPath}:${targetSection}`);
-            diagnostic.referencesResolved.push({ from: `${layer}:${path}:${section}`, to: `${targetLayer}:${targetPath}:${targetSection}`, substitution: reference.subs || null });
+            nested = applySubstitutions(nested, sourceSubs, diagnostic, `${targetPath}:${targetSection}`);
+            diagnostic.referencesResolved.push({ from: `${layer}:${path}:${section}`, to: `${targetLayer}:${targetPath}:${targetSection}`, substitution: sourceSubs || null,
+                printed1962Correction: printed1962JohnGualbertCollect ? "Missale Romanum 1962 July 12 p543: Ioannis Abbatis" : null });
             result.push(...nested);
         }
         return result;

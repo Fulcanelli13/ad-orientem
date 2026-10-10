@@ -1,0 +1,378 @@
+{
+  "schema": "AO_PRINTED_1962_FACSIMILE_COLLATION_B01",
+  "version": 1,
+  "status": "independent-OCR-transcription-check-not-facsimile-image-certified",
+  "editorialDate": "2026-10-10",
+  "witness": {
+    "work": "Missale Romanum, editio typica 1962",
+    "url": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+    "landing": "https://propria.org/additional/",
+    "pdfPageNumbering": "one-based PDF page; indexed text marks pages P0–P10",
+    "pagesAvailable": 11,
+    "imageInspection": "pending: web PDF screenshot returned cache miss; checked searchable printed-sample transcription only",
+    "pdfScanReproduction": "do not bundle or republish source images without permission"
+  },
+  "comparator": {
+    "source": "current app's existing Latin ProperResolver",
+    "fieldNames": [
+      "collect",
+      "epistle",
+      "gospel",
+      "communion"
+    ],
+    "normalization": "Latin accent/ligature and j/i fold, case/spacing; OCR artifacts cannot by themselves prove typography",
+    "rules": "No implied agreement from title alone; all assertions retain status and provenance."
+  },
+  "cases": [
+    {
+      "date": "2026-07-01",
+      "observance": "Precious Blood of Our Lord",
+      "proper": "Sancti/07-01",
+      "rank": 1,
+      "pdfPages": [
+        1,
+        2
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Omnipotens sempiterne Deus",
+          "page": 1,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=1"
+        },
+        {
+          "field": "epistle",
+          "index": 0,
+          "latinIncipit": "Christus assistens pontifex",
+          "page": 1,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=1"
+        },
+        {
+          "field": "gospel",
+          "index": 0,
+          "latinIncipit": "Cum accepisset Jesus acetum",
+          "page": 2,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=2"
+        },
+        {
+          "field": "communion",
+          "index": 0,
+          "latinIncipit": "Christus semel oblatus est",
+          "page": 2,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=2"
+        }
+      ],
+      "rubrics": [
+        "Credo",
+        "In votive Mass omit words solemni cultu in the Collect"
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "observance": "Visitation of the Blessed Virgin Mary",
+      "proper": "Sancti/07-02",
+      "rank": 2,
+      "pdfPages": [
+        2,
+        3,
+        4
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Famulis tuis quaesumus Domine",
+          "page": 2,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=2"
+        },
+        {
+          "field": "epistle",
+          "index": 0,
+          "latinIncipit": "Ecce iste venit saliens",
+          "page": 3,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3"
+        },
+        {
+          "field": "gospel",
+          "index": 0,
+          "latinIncipit": "Exsurgens Maria abiit",
+          "page": 3,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3"
+        },
+        {
+          "field": "communion",
+          "index": 0,
+          "latinIncipit": "Beata viscera Mariae Virginis",
+          "page": 3,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3"
+        },
+        {
+          "field": "collect",
+          "index": 1,
+          "latinIncipit": "Deus qui nos sanctorum Martyrum tuorum Processi et Martiniani",
+          "page": 3,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=3"
+        }
+      ],
+      "commemoration": "Ss Processus and Martinian",
+      "rubrics": [
+        "Credo",
+        "Latin commemoration Collect/Secret/Postcommunion"
+      ],
+      "commemorationSource": "Sancti/07-02cc"
+    },
+    {
+      "date": "2026-07-03",
+      "observance": "Saint Irenaeus, Bishop and Martyr",
+      "proper": "Sancti/07-03r",
+      "rank": 3,
+      "pdfPages": [
+        5,
+        6
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Deus qui beato Irenaeo Martyri tuo atque Pontifici",
+          "page": 5,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=5"
+        },
+        {
+          "field": "epistle",
+          "index": 0,
+          "latinIncipit": "Permane in iis quae didicisti",
+          "page": 5,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=5"
+        },
+        {
+          "field": "gospel",
+          "index": 0,
+          "latinIncipit": "Nolite timere eos qui occidunt corpus",
+          "page": 5,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=5"
+        },
+        {
+          "field": "communion",
+          "index": 0,
+          "latinIncipit": "Videte quoniam non soli mihi laboravi",
+          "page": 6,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6"
+        }
+      ],
+      "note": "Confirmed 1962 app Proper source is Sancti/07-03r (not upstream retired Sancti/07-03). Printed sample's Irenaeus Collect, Epistle and Gospel incipits agree."
+    },
+    {
+      "date": "2027-07-05",
+      "observance": "Saint Anthony Mary Zaccaria",
+      "proper": "Sancti/07-05",
+      "rank": 3,
+      "pdfPages": [
+        6,
+        7
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Fac nos Domine Deus",
+          "page": 6,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6"
+        },
+        {
+          "field": "epistle",
+          "index": 0,
+          "latinIncipit": "Pietas ad omnia utilis",
+          "page": 6,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=6"
+        },
+        {
+          "field": "gospel",
+          "index": 0,
+          "latinIncipit": "Quisquis non receperit regnum Dei",
+          "page": 7,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7"
+        },
+        {
+          "field": "communion",
+          "index": 0,
+          "latinIncipit": "Imitatores mei estote fratres",
+          "page": 7,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=7"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "observance": "Saints Cyril and Methodius",
+      "proper": "Sancti/07-07",
+      "rank": 3,
+      "pdfPages": [
+        7,
+        8,
+        9
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Omnipotens sempiterne Deus qui Slavoniae gentes",
+          "page": 8,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=8"
+        },
+        {
+          "field": "epistle",
+          "index": 0,
+          "latinIncipit": "Plures facti sunt sacerdotes",
+          "page": 8,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=8"
+        },
+        {
+          "field": "gospel",
+          "index": 0,
+          "latinIncipit": "Designavit Dominus et alios septuaginta duos",
+          "page": 8,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=8"
+        },
+        {
+          "field": "communion",
+          "index": 0,
+          "latinIncipit": "Quod dico vobis in tenebris",
+          "page": 9,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "observance": "Saint Elizabeth of Portugal",
+      "proper": "Sancti/07-08",
+      "rank": 3,
+      "pdfPages": [
+        9
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Clementissime Deus qui beatam Elisabeth reginam",
+          "page": 9,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9"
+        }
+      ],
+      "rubrics": [
+        "Missa Cognovi de Communi non Virginum secundo loco"
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "observance": "Seven Holy Brothers, Saints Rufina and Secunda",
+      "proper": "Sancti/07-10",
+      "rank": 3,
+      "pdfPages": [
+        9,
+        10
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Praesta quaesumus omnipotens Deus",
+          "page": 9,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9"
+        },
+        {
+          "field": "epistle",
+          "index": 0,
+          "latinIncipit": "Mulierem fortem quis inveniet",
+          "page": 9,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=9"
+        },
+        {
+          "field": "gospel",
+          "index": 0,
+          "latinIncipit": "Loquente Iesu ad turbas",
+          "page": 10,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=10"
+        },
+        {
+          "field": "communion",
+          "index": 0,
+          "latinIncipit": "Quicumque fecerit voluntatem Patris mei",
+          "page": 10,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=10"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "observance": "Commemoration of Saint Pius I",
+      "proper": "Commune/C10t",
+      "rank": 4,
+      "pdfPages": [
+        10,
+        11
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 1,
+          "latinIncipit": "Gregem tuum Pastor aeterne",
+          "page": 10,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=10"
+        }
+      ],
+      "commemoration": "Saint Pius I, Pope and Martyr",
+      "rubrics": [
+        "Missa Si diligis me from Common of Supreme Pontiffs; commemoration only on the July 11 feria"
+      ],
+      "commemorationSource": "Sancti/07-11"
+    },
+    {
+      "date": "2027-07-12",
+      "observance": "Saint John Gualbert",
+      "proper": "Sancti/07-12",
+      "rank": 3,
+      "pdfPages": [
+        11
+      ],
+      "assertions": [
+        {
+          "field": "collect",
+          "index": 0,
+          "latinIncipit": "Intercessio nos quaesumus Domine beati Ioannis Abbatis",
+          "page": 11,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=11"
+        },
+        {
+          "field": "collect",
+          "index": 1,
+          "latinIncipit": "Praesta quaesumus Domine ut sicut nos sanctorum Martyrum tuorum Naboris et Felicis",
+          "page": 11,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=11"
+        },
+        {
+          "field": "gospel",
+          "index": 0,
+          "latinIncipit": "Audistis quia dictum est",
+          "page": 11,
+          "pdfUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf#page=11"
+        }
+      ],
+      "commemoration": "Saints Nabor and Felix",
+      "rubrics": [
+        "Commemorative Collect, Secret and Postcommunion"
+      ],
+      "commemorationSource": "Sancti/07-12o",
+      "editorialCorrection": {
+        "section": "Collect 1 (Latin)",
+        "printedReading": "beati Ioannis Abbatis",
+        "priorNormalized": "beati Joannis Gualberti Abbatis",
+        "disposition": "Exact current Proper reference restricted to Sancti/07-12 Latin Oratio and Commune/C5b donor; printed 1962 source name governs",
+        "corroboration": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "criticalVisualCheck": "pending; the PDF screenshot interface returned a cache miss"
+      }
+    }
+  ]
+}
