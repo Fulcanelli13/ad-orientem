@@ -36,6 +36,8 @@ jobs:
         run: node tests/explore-touch-navigation-r53.mjs
       - name: Preview and full documentation integrity
         run: node tests/explore-place-preview-r54.mjs
+      - name: Biblical Atlas chronology and source integrity
+        run: node tests/explore-bible-atlas-timeline.mjs
       - name: Map, sources and existing surface contracts
         run: |
           node tests/preliminary-world-mass-map-r49.mjs
@@ -59,3 +61,5 @@ jobs:
         run: node tests/explore-reachability-phone.mjs
       - name: Four-width Explore geometry and map-card audit
         run: node tests/explore-layout-phone.mjs
+      - name: 390px Biblical Atlas interaction and Scripture roundtrip
+        run: npm run test:explore-bible-atlas-phone
