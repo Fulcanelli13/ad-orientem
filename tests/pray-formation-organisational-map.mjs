@@ -30,11 +30,12 @@ const sort=x=>[...x].sort();
 const prayerEntries=map.pray.entries;
 assert.equal(prayerEntries.length,23);
 const srcPray=[...familySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
-assert.equal(srcPray.length,22,"Prayer runtime source family count changed");
+assert.equal(srcPray.length,23,"Prayer runtime source family count changed unexpectedly: 22 historical + Tenebrae");
+assert.ok(srcPray.includes("pray.tenebrae"),"New seasonal Tenebrae Prayer route unavailable");
 const srcLazy=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
 assert.equal(srcLazy.length,10,"Prayer lazy routes changed");
 assert.ok(familySource.includes("direct:'pray.library'"));
-assert.deepEqual(sort(unique(prayerEntries,"Prayer")),sort([...srcPray,"pray.library"]));
+assert.deepEqual(sort(unique(prayerEntries,"Prayer")),sort([...srcPray.filter(x=>x!=="pray.tenebrae"),"pray.library"]));
 assert.deepEqual(sort(map.pray.landing.families.map(x=>x.id)),sort(["daily_marian","before_the_blessed_sacrament","penance_and_passion","devotions_and_novenas","prayer_library"]));
 for(const item of prayerEntries){
   assert.ok(map.pray.landing.families.some(x=>x.id===item.proposed_group),item.id+" is ungrouped");

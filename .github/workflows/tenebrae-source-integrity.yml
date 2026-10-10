@@ -6,6 +6,13 @@ on:
       - 'data/pray/tenebrae-1960-source/**'
       - 'data/pray/tenebrae-source-registry.v1.json'
       - 'tests/tenebrae-1960-source-acquisition.mjs'
+      - 'tests/reader-tenebrae-1960.mjs'
+      - 'tests/tenebrae-phone-e2e.mjs'
+      - 'src/pray/tenebrae-1960.js'
+      - 'src/pray/tenebrae-presentation.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'src/pray/tenebrae-styles.js'
+      - 'package.json'
       - '.github/workflows/tenebrae-source-integrity.yml'
   push:
     branches: [main]
@@ -13,6 +20,12 @@ on:
       - 'data/pray/tenebrae-1960-source/**'
       - 'data/pray/tenebrae-source-registry.v1.json'
       - 'tests/tenebrae-1960-source-acquisition.mjs'
+      - 'tests/reader-tenebrae-1960.mjs'
+      - 'src/pray/tenebrae-1960.js'
+      - 'src/pray/tenebrae-presentation.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'src/pray/tenebrae-styles.js'
+      - 'package.json'
       - '.github/workflows/tenebrae-source-integrity.yml'
   workflow_dispatch:
 
@@ -26,3 +39,9 @@ jobs:
           node-version: '22'
       - name: Check nine pinned open-source Tenebrae proper leaves and edition firewall
         run: node tests/tenebrae-1960-source-acquisition.mjs
+      - name: Reconstruct six Matins and Lauds in three languages without external URLs
+        run: node tests/reader-tenebrae-1960.mjs
+      - name: Install browser dependencies
+        run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Verify Tenebrae full route on 390px phone
+        run: node tests/tenebrae-phone-e2e.mjs

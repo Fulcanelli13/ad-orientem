@@ -2,13 +2,15 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 const registry=JSON.parse(readFileSync(new URL("../data/pray/tenebrae-source-registry.v1.json",import.meta.url),"utf8"));
 assert.equal(registry.schema,"ao.pray.tenebrae.1960-acquisition.v1");
-assert.equal(registry.status,"NINE_SOURCE_LEAVES_PRESERVED_NOT_ASSEMBLED_OR_PUBLISHED");
+assert.equal(registry.status,"SIX_SOURCE_DERIVED_OFFICES_READER_IN_PRAY_PRINT_COLLATION_PENDING");
 assert.equal(registry.source.commit,"b9f8c8eb15d52b2b2c02e2ca24807cfaa73758f0");
-assert.equal(registry.publicationStatus,"RESEARCH_SOURCE_FREEZE_ONLY");
+assert.equal(registry.publicationStatus,"SIX_HOURS_SOURCE_DERIVED_READABLE__PRINT_CRITICAL_NOT_CERTIFIED");
 assert.equal(registry.dates.length,3);
 assert.equal(registry.progress.rawProperFilesPreserved,9);
-assert.equal(registry.progress.assembliesReady,0);
-assert.equal(registry.progress.readerRoutesPublished,0);
+assert.equal(registry.progress.assembliesReady,6);
+assert.equal(registry.progress.psalterSourceLeavesPreserved,111);
+assert.equal(registry.progress.independentPrintedBreviaryCertifiedHours,0);
+assert.equal(registry.progress.readerRoutesPublished,1);
 assert.equal(registry.assemblyHold.excluded.includes("full daily Divine Office"),true);
 assert.equal(registry.assemblyHold.excluded.includes("simulated universal 1962 evening Tenebrae"),true);
 const rights=readFileSync(new URL("../data/pray/tenebrae-1960-source/LICENSE",import.meta.url),"utf8");
@@ -36,4 +38,4 @@ for(const [dayIndex,day] of registry.dates.entries()){
 }
 assert.ok(unresolved>3,"Unexpected disappearance of source cross-references; re-audit edition");
 assert.equal(sections,162);
-console.log("Tenebrae 1960 source acquisition: PASS — 9 licensed Latin/English/French original leaves, 27 lessons + 27 responsories across 3 locales, zero false assembled offices.");
+console.log("Tenebrae 1960 source acquisition: PASS — 9 licensed Latin/English/French original leaves, 27 lessons + 27 responsories across 3 locales, 6 source-derived assembled offices with 0 false printed certifications.");

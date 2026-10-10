@@ -42,7 +42,7 @@ try{
  // from its visible button and return to the same family. The native readers,
  // 48 prayer texts and Rosary have independent mobile acceptance below.
  const expectedFamilyIds=JSON.parse(readFileSync("data/app/content-reachability-audit.v1.json","utf8"))
-   .routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).sort();
+   .routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).concat("pray.tenebrae").sort();
  const visibleFamilyIds=[],externalRoutes=[];
  for(const family of ["daily","eucharistic","penance","passion","devotions"]){
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
@@ -87,11 +87,11 @@ try{
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
  assert.equal(await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').count(),1,"Missing Prayer Library direct door");
  visibleFamilyIds.push("pray.library");
- assert.equal(visibleFamilyIds.length,23,"Prayer family entry count drifted");
- assert.equal(new Set(visibleFamilyIds).size,23,"Duplicate Prayer family entry");
+ assert.equal(visibleFamilyIds.length,24,"Prayer family entry count drifted");
+ assert.equal(new Set(visibleFamilyIds).size,24,"Duplicate Prayer family entry");
  assert.deepEqual(visibleFamilyIds.sort(),expectedFamilyIds,"Production Prayer family cards are not the declared routes");
  assert.equal(externalRoutes.length,10,"Expected ten external first-use Prayer buttons");
- console.log("PASS Prayer family reachability: all 23 visible routes, ten external first-use taps and exact-family returns");
+ console.log("PASS Prayer family reachability: all 24 visible routes, ten external first-use taps and exact-family returns");
  // Exercise the real Holy Name Guide on a touch-sized screen. The complete
  // source text remains available; guided reading only separates seven
  // original paragraphs and must preserve Latin replacement in each stage.
