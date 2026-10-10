@@ -393,7 +393,7 @@ export function createFormationRecoveryReview(win=globalThis) {
       (hasQuery?dossierRows():"")+'</div></div></section>'+
       '<h2 class="rrThemeHeading">'+esc(pick(win,"Explore by theme","Explorer par thème"))+'</h2>'+
       '<div class="rrThemeGrid" data-rr-theme-grid>'+groups.map(group=>
-        '<button type="button" class="rrThemeCard" data-rr-theme="'+esc(group.id)+'">'+
+        '<button type="button" class="rrThemeCard" data-rr-theme="'+esc(group.id)+'" data-rr-theme-count="'+group.count+'">'+
         '<span class="rrThemeCount">'+esc(group.count)+' '+esc(pick(win,"questions","questions"))+'</span>'+
         '<strong>'+esc(group.title)+'</strong><span class="rrThemeArrow" aria-hidden="true">›</span>'+
         '</button>').join("")+'</div>';
