@@ -39,6 +39,28 @@ try{
  // behind the explicit More disclosure and must be reachable on phones.
  assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.().lens),"heritage");
  await page.locator('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]').waitFor({state:"visible"});
+ // Small-screen acceptance: the landing view is a map, never a directory dump.
+ assert.equal(await page.locator("#ao-find-modular-root .aoHeritageSurface .aoFindList").count(),0);
+ const nearby=page.locator("#ao-find-modular-root [data-heritage-nearby]");
+ assert.equal(await nearby.count(),1,"opt-in nearby map control missing");
+ const nearbyBox=await nearby.boundingBox();
+ assert.ok(nearbyBox&&nearbyBox.height>=44&&nearbyBox.width>=44,"nearby control is too small for touch");
+ const mapSearch=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
+ await mapSearch.fill("Lourdes");
+ await page.waitForFunction(()=>Boolean(document.querySelector("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]")),null,{timeout:15000});
+ const options=page.locator("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]");
+ assert.ok(await options.count()<=6,"search opened an unbounded list instead of compact suggestions");
+ await options.first().tap();
+ await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
+ assert.ok(await page.locator("#ao-find-modular-root .aoHeritageSynopsis").count()>=1,"map pin preview lacks substantive source-owned introduction");
+ await page.locator("#ao-find-modular-root [data-explore-expand-place]").tap();
+ await page.locator("#ao-find-modular-root .aoExplorePlaceSheet").waitFor({state:"visible"});
+ assert.ok(await page.locator("#ao-find-modular-root .aoExplorePlaceSheet details.aoPlaceAccordion").count()>0,
+   "detailed source records are not progressively disclosed");
+ await page.locator("#ao-find-modular-root .aoExplorePlaceSheet button[data-find-close-place]").tap();
+ await page.locator("#ao-find-modular-root [data-find-query]").fill("");
+ await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoHeritageSearchResults"),null,{timeout:15000});
+
  const activeAll=page.locator('#ao-find-modular-root [data-heritage-category="ALL"]');
  assert.equal(await activeAll.getAttribute("aria-pressed"),"true");
  const shrineChip=page.locator('#ao-find-modular-root [data-heritage-category="shrines"]');
