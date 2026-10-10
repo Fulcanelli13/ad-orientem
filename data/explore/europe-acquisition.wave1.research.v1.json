@@ -1481,7 +1481,625 @@
       "publication_state": "RESEARCH_ONLY"
     }
   ],
-  "other_category_leads": [],
+  "other_category_leads": [
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:IT:OROPA-VOTIVE-PROCESSION",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:IT:oropa-santuario-della-madonna-nera",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "OROPA_PROCESSION"
+      ],
+      "claim_summary": "Communal votive procession from Biella to Oropa, historically linked with a city vow, recorded by shrine custodians.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "VOTIVE_PROCESSION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "DO_NOT_IMPLY_EXACT_ROUTE_OR_CURRENT_RECURRENCE"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:IT:OROPA-SUMMER-PILGRIMAGES",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:IT:oropa-santuario-della-madonna-nera",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "OROPA_PILGRIMAGE"
+      ],
+      "claim_summary": "Diocesan and parish pilgrimages to Oropa documented in custodian's 2023 schedule.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "ORGANIZED_SEASONAL_PILGRIMAGES",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "DATES_2023_ARE_HISTORICAL_NOT_CURRENT"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:SI:BREZJE-DESTINATION",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:SI:brezje-basilica-of-mary-help",
+      "known_existing_place_id": null,
+      "country_code": "SI",
+      "source_ids": [
+        "BREZJE"
+      ],
+      "claim_summary": "National Marian pilgrimage destination maintained by Franciscans.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "DESTINATION_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:HR:MARIJA-BISTRICA-CALENDAR",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:HR:marija-bistrica-marian-national-shrine",
+      "known_existing_place_id": null,
+      "country_code": "HR",
+      "source_ids": [
+        "MARIJA_BISTRICA"
+      ],
+      "claim_summary": "Locally documented seasonal and parish pilgrimages; source describes named proštenje traditions.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "LOCAL_RECURRING_PILGRIMAGES",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "CHECK_CURRENT_YEAR_BEFORE_DATES"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:PT:BOM-JESUS-PENITENTIAL",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:PT:bom-jesus-do-monte-braga",
+      "known_existing_place_id": null,
+      "country_code": "PT",
+      "source_ids": [
+        "BOM_JESUS",
+        "BRAGA_PENITENCE"
+      ],
+      "claim_summary": "Penitential Way of the Cross and Lent pilgrimage to Bom Jesus documented by Braga archdiocese.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "PENITENTIAL_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "NO_ROUTE_GEOMETRY_FROM_TEXT"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:PT:LAMEGO-REMEDIOS",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:PT:nossa-senhora-dos-remedios-lamego",
+      "known_existing_place_id": null,
+      "country_code": "PT",
+      "source_ids": [
+        "LAMEGO",
+        "LAMEGO_PROCESSION"
+      ],
+      "claim_summary": "Local Marian pilgrimage and September Triumph procession at the sanctuary.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "PATRONAL_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:PT:SAMEIRO-EMIGRANTS",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": null,
+      "known_existing_place_id": "place:PT:sameiro-braga",
+      "country_code": "PT",
+      "source_ids": [
+        "SAMEIRO_EMIGRANT"
+      ],
+      "claim_summary": "2026 Emigrants' pilgrimage from Bom Jesus to the existing Sameiro shrine, as reported by Braga archdiocese.",
+      "qualifier": "The 2026 itinerary is not a certified perennial route geometry or timetable.",
+      "scope": "EXISTING_PLACE_ADD_PILGRIMAGE_VARIANT",
+      "kind": "PILGRIMAGE_EVENT",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "VERIFY_RECURRENCE_AND_DISTINCT_PILGRIMAGE_ID"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:ES:ROCIO-ROMERIA",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:ES:el-rocio-ermita-de-la-virgen-del-rocio",
+      "known_existing_place_id": null,
+      "country_code": "ES",
+      "source_ids": [
+        "CEE"
+      ],
+      "claim_summary": "Major Andalusian Marian romería/pilgrimage named by Spanish bishops.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "ROMERIA",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "CONFIRM_EVENT_HISTORY_AND_PARISH_CUSTODIAN"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:ES:JAVIERADA",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:ES:javier-santuario-and-castle-of-saint-francis-xavier",
+      "known_existing_place_id": null,
+      "country_code": "ES",
+      "source_ids": [
+        "CEE"
+      ],
+      "claim_summary": "Javierada pilgrimage to Javier mentioned by Spanish bishops.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "NAMED_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "VERIFY_CURRENT_ROUTE_AND_SOURCE"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:FR:ILE-BOUCHARD",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:FR:l-ile-bouchard-notre-dame-de-la-priere-saint-gilles",
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "ILE_BOUCHARD"
+      ],
+      "claim_summary": "Public cult and pilgrimages authorized 8 December 2001 at Saint-Gilles church.",
+      "qualifier": "The decree does not certify a supernatural apparition.",
+      "scope": null,
+      "kind": "AUTHORIZED_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:NO:SELJA-PILGRIMAGE",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:NO:selja-saint-sunniva-pilgrimage-island",
+      "known_existing_place_id": null,
+      "country_code": "NO",
+      "source_ids": [
+        "NORWAY_SELJA",
+        "SUL_NORWAY"
+      ],
+      "claim_summary": "Modern Roman Catholic annual pilgrimage at historic Saint Sunniva island site.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "CURRENT_CATHOLIC_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "NO_PUBLISHED_ROUTE_GEOMETRY"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:NO:NIDAROS-HISTORIC",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:NO:nidaros-shrine-heritage-of-saint-olav",
+      "known_existing_place_id": null,
+      "country_code": "NO",
+      "source_ids": [
+        "NORWAY"
+      ],
+      "claim_summary": "Historical Catholic pilgrimage to Saint Olav's shrine at Nidaros.",
+      "qualifier": "Not a claim of present-day Catholic ownership of cathedral.",
+      "scope": null,
+      "kind": "HISTORIC_CATHOLIC_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:GB:AYLESFORD-CARMELITE",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:GB:aylesford-priory-our-lady-of-mount-carmel",
+      "known_existing_place_id": null,
+      "country_code": "GB",
+      "source_ids": [
+        "AYLESFORD"
+      ],
+      "claim_summary": "Carmelite pilgrimage centre and Our Lady of Mount Carmel shrine.",
+      "qualifier": null,
+      "scope": null,
+      "kind": "CARMELITE_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:FR:SAINTES-MARIES-DE-LA-MER",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": null,
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "CEF_MARIES"
+      ],
+      "claim_summary": "May pilgrimage of Catholic Gitans at Saintes-Maries-de-la-Mer documented by French bishops.",
+      "qualifier": "Distinct Place identity is not in current canonical seed or this wave 1 sanctuary shortlist; needs a new Place research candidate.",
+      "scope": "NEW_PLACE_HERITAGE_CANDIDATE_OUTSIDE_CURATED_SHRINE_LIST",
+      "kind": "NAMED_REGIONAL_PILGRIMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "FIRST_IDENTIFY_EXACT_CHURCH"
+    },
+    {
+      "lead_id": "EUROPE:PILGRIMAGES:ES:VIA-PODIENSIS-TO-COMPOSTELA",
+      "category": "PILGRIMAGES",
+      "proposed_owner": "PILGRIMAGE_SOT",
+      "target_place_lead_id": null,
+      "known_existing_place_id": "place:ES:santiago-compostela-cathedral",
+      "country_code": "FR",
+      "source_ids": [
+        "CATHOLIC_CHEMIN"
+      ],
+      "claim_summary": "Via Podiensis starts in Le Puy and leads toward Compostela according to French bishops' pilgrim overview.",
+      "qualifier": "A route concept, not a fabricated continuous polyline; endpoints remain under separate Place identities.",
+      "scope": "ROUTE_OR_NETWORK",
+      "kind": "HISTORICAL_ROUTE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "REQUIRES_SEGMENT_REFERENCE_AND_WAYPOINT_IDENTITY"
+    },
+    {
+      "lead_id": "EUROPE:RELICS:FR:SAINTE-GENEVIEVE",
+      "category": "RELICS",
+      "proposed_owner": "SACRED_PHENOMENA_RELICS",
+      "target_place_lead_id": "EUROPE:PLACE:FR:paris-eglise-saint-etienne-du-mont",
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "PARIS",
+        "PARIS_GENEVIEVE"
+      ],
+      "claim_summary": "Parish church houses a reliquary of Saint Geneviève with surviving relics and part of her former tomb.",
+      "qualifier": "Not a claim of preserved complete body, current public access hours or app authentication.",
+      "scope": null,
+      "kind": "CUSTODIAN_REPORTED_RELICS",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:RELICS:FR:MARTYRS-DES-CARMES",
+      "category": "RELICS",
+      "proposed_owner": "SACRED_PHENOMENA_RELICS",
+      "target_place_lead_id": "EUROPE:PLACE:FR:paris-eglise-saint-joseph-des-carmes",
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "PARIS_CARMES",
+        "PARIS_MARTYRS"
+      ],
+      "claim_summary": "Crypt contains relics of the September 1792 martyrs; diocesan description includes recovered bones.",
+      "qualifier": "Source describes plural martyrs rather than individually identified remains of every beatified person.",
+      "scope": null,
+      "kind": "RELICS_AND_OSSUARY",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:RELICS:FR:FREDERIC-OZANAM",
+      "category": "RELICS",
+      "proposed_owner": "SACRED_PHENOMENA_RELICS",
+      "target_place_lead_id": "EUROPE:PLACE:FR:paris-eglise-saint-joseph-des-carmes",
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "PARIS"
+      ],
+      "claim_summary": "Church crypt also associated with Blessed Frédéric Ozanam's body.",
+      "qualifier": "Detailed object and current custody checks remain open.",
+      "scope": null,
+      "kind": "HISTORICALLY_ATTESTED_BODY",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:RELICS:GB:ST-SIMON-STOCK",
+      "category": "RELICS",
+      "proposed_owner": "SACRED_PHENOMENA_RELICS",
+      "target_place_lead_id": "EUROPE:PLACE:GB:aylesford-priory-our-lady-of-mount-carmel",
+      "known_existing_place_id": null,
+      "country_code": "GB",
+      "source_ids": [
+        "AYLESFORD"
+      ],
+      "claim_summary": "Southwark archdiocese reports Saint Simon Stock's skull in Aylesford Priory's Relic Chapel.",
+      "qualifier": "Description is not independent authentication.",
+      "scope": null,
+      "kind": "CUSTODIAN_ARCHDIOCESAN_RELIC_REPORT",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:RELICS:IT:ST-MARK-PASSION-RELICS",
+      "category": "RELICS",
+      "proposed_owner": "SACRED_PHENOMENA_RELICS",
+      "target_place_lead_id": null,
+      "known_existing_place_id": "place:IT:basilica-san-marco-venezia",
+      "country_code": "IT",
+      "source_ids": [
+        "VENICE_PASSION"
+      ],
+      "claim_summary": "Patriarchate of Venice documents historical custody and veneration of multiple Passion relics at San Marco.",
+      "qualifier": "Do not treat ecclesiastical procession accounts as forensic authentication of asserted Passion provenance.",
+      "scope": "EXISTING_PLACE_OBJECT_CLAIMS_REVIEW",
+      "kind": "HISTORICAL_RELIC_INVENTORY",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "OBJECT_BY_OBJECT_DEDUP_AND_HISTORICAL_CONTEXT"
+    },
+    {
+      "lead_id": "EUROPE:APPARITIONS:IT:CASTELPETROSO-1888",
+      "category": "APPARITIONS",
+      "proposed_owner": "SACRED_PHENOMENA_APPARITIONS",
+      "target_place_lead_id": "EUROPE:PLACE:IT:madonna-addolorata-castelpetroso",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "CASTELPETROSO",
+        "VATICAN_NORMS"
+      ],
+      "claim_summary": "Shrine recounts reported Marian visions of Our Lady of Sorrows in 1888.",
+      "qualifier": "Shrine endorsement/visitation is not equivalent to a specific canonical determination of supernatural origin.",
+      "scope": null,
+      "kind": "MARIAN_APPARITION_ACCOUNT",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "RECOGNITION_RECORD_MUST_BE_SEPARATELY_CERTIFIED"
+    },
+    {
+      "lead_id": "EUROPE:APPARITIONS:IT:TRE-FONTANE-1947",
+      "category": "APPARITIONS",
+      "proposed_owner": "SACRED_PHENOMENA_APPARITIONS",
+      "target_place_lead_id": "EUROPE:PLACE:IT:vergine-della-rivelazione-tre-fontane-rome",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "TREFONTANE",
+        "VATICAN_NORMS"
+      ],
+      "claim_summary": "Rome diocese describes Bruno Cornacchiola's reported Virgin of Revelation experience in 1947.",
+      "qualifier": "Diocesan anniversary worship does not automatically imply an ecclesiastical verdict of supernatural authenticity.",
+      "scope": null,
+      "kind": "MARIAN_APPARITION_ACCOUNT",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "RECOGNITION_RECORD_MUST_BE_SEPARATELY_CERTIFIED"
+    },
+    {
+      "lead_id": "EUROPE:APPARITIONS:FR:ILE-BOUCHARD-1947",
+      "category": "APPARITIONS",
+      "proposed_owner": "SACRED_PHENOMENA_APPARITIONS",
+      "target_place_lead_id": "EUROPE:PLACE:FR:l-ile-bouchard-notre-dame-de-la-priere-saint-gilles",
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "ILE_BOUCHARD",
+        "VATICAN_NORMS"
+      ],
+      "claim_summary": "Local church recounts 1947 events; an episcopal decree authorized public devotion and pilgrimages.",
+      "qualifier": "1997 episcopal caution: Church could not guarantee supernatural character; 2001 decree permits devotion, not authentication.",
+      "scope": null,
+      "kind": "REPORTED_MARIAN_APPARITION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "PUBLIC_DEVOTION_AUTHORIZED_SUPERNATURALITY_NOT_RECOGNIZED"
+    },
+    {
+      "lead_id": "EUROPE:SACRED_IMAGE:HU:MARIAPOCS-WEEPING-ICON",
+      "category": "SACRED_IMAGE",
+      "proposed_owner": "SACRED_IMAGE_EVIDENCE",
+      "target_place_lead_id": "EUROPE:PLACE:HU:mariapocs-marian-national-shrine",
+      "known_existing_place_id": null,
+      "country_code": "HU",
+      "source_ids": [
+        "RME"
+      ],
+      "claim_summary": "Lourdes European network describes the 1696 weeping icon tradition.",
+      "qualifier": "A purported weeping icon is not, simply by classification, an apparition of Mary or a verified miracle.",
+      "scope": null,
+      "kind": "HISTORIC_IMAGE_TEARING_CLAIM",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "HISTORICAL_IMAGE_PHENOMENON_NOT_AUTOMATIC_APPARITION"
+    },
+    {
+      "lead_id": "EUROPE:SACRED_IMAGE:SI:BREZJE-IMAGE",
+      "category": "SACRED_IMAGE",
+      "proposed_owner": "SACRED_IMAGE_EVIDENCE",
+      "target_place_lead_id": "EUROPE:PLACE:SI:brezje-basilica-of-mary-help",
+      "known_existing_place_id": null,
+      "country_code": "SI",
+      "source_ids": [
+        "BREZJE"
+      ],
+      "claim_summary": "Marian shrine centers on an image of Mary Help of Christians.",
+      "qualifier": "Venerated image and reported healings do not imply approved apparition or independently verified miracle.",
+      "scope": null,
+      "kind": "VENERATED_IMAGE",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "IDENTITY_SOURCE_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:CUSTOMS:FR:GENEVIEVE-RELIC-PROCESSIONS",
+      "category": "CUSTOMS",
+      "proposed_owner": "CUSTOMARY_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:FR:paris-eglise-saint-etienne-du-mont",
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "PARIS_GENEVIEVE"
+      ],
+      "claim_summary": "Paris diocese documents historical processions and devotional veneration of Saint Geneviève's châsse.",
+      "qualifier": null,
+      "scope": "FRENCH_WORLD_DIRECT_SOURCE_AND_LOCALITY",
+      "kind": "HISTORIC_FRENCH_LOCAL_PROCESSION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "MAP_AS_ATTESTATION_ONLY_LINK_TO_EXISTING_CUSTOM_IF_CANONICAL"
+    },
+    {
+      "lead_id": "EUROPE:CUSTOMS:FR:CARME-MARTYRS-VENERATION",
+      "category": "CUSTOMS",
+      "proposed_owner": "CUSTOMARY_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:FR:paris-eglise-saint-joseph-des-carmes",
+      "known_existing_place_id": null,
+      "country_code": "FR",
+      "source_ids": [
+        "PARIS_MARTYRS"
+      ],
+      "claim_summary": "Local Paris martyr veneration at the crypt of the September 1792 beatified martyrs.",
+      "qualifier": null,
+      "scope": "FRENCH_WORLD_DIRECT_SOURCE_AND_LOCALITY",
+      "kind": "LOCAL_FRENCH_RELIC_VENERATION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "CANONICAL_OWNER_AND_RELIC_LINK_REVIEW"
+    },
+    {
+      "lead_id": "EUROPE:CUSTOMS:IT:OROPA-VOTIVE-CITY-PROCESSION",
+      "category": "CUSTOMS",
+      "proposed_owner": "CUSTOMARY_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:IT:oropa-santuario-della-madonna-nera",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "OROPA_PROCESSION",
+        "OROPA_RITUAL"
+      ],
+      "claim_summary": "Historic city vow and votive procession to Our Lady of Oropa.",
+      "qualifier": null,
+      "scope": "NON_FRENCH_REGION_CULTURAL_HERITAGE",
+      "kind": "PATRONAL_VOTIVE_PROCESSION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "RELEVANCE_GATE_ONLY_NO_FRENCH_UNIVERSAL_CLAIM"
+    },
+    {
+      "lead_id": "EUROPE:CUSTOMS:PT:LAMEGO-TRIUMPH-PROCESSION",
+      "category": "CUSTOMS",
+      "proposed_owner": "CUSTOMARY_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:PT:nossa-senhora-dos-remedios-lamego",
+      "known_existing_place_id": null,
+      "country_code": "PT",
+      "source_ids": [
+        "LAMEGO_PROCESSION"
+      ],
+      "claim_summary": "Procession of Triumph, associated with Lamego Marian cult, is documented in Portugal's intangible heritage inventory.",
+      "qualifier": null,
+      "scope": "NON_FRENCH_REGION_CULTURAL_HERITAGE",
+      "kind": "LOCAL_MARIAN_PROCESSION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "RELEVANCE_GATE_ONLY_NO_FRENCH_UNIVERSAL_CLAIM"
+    },
+    {
+      "lead_id": "EUROPE:CUSTOMS:HR:MARIJA-BISTRICA-PROSTENJE",
+      "category": "CUSTOMS",
+      "proposed_owner": "CUSTOMARY_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:HR:marija-bistrica-marian-national-shrine",
+      "known_existing_place_id": null,
+      "country_code": "HR",
+      "source_ids": [
+        "MARIJA_BISTRICA"
+      ],
+      "claim_summary": "Historic locality-specific parish proštenje pilgrimages at Marija Bistrica.",
+      "qualifier": null,
+      "scope": "NON_FRENCH_REGION_CULTURAL_HERITAGE",
+      "kind": "REGIONAL_PILGRIMAGE_TRADITION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "RELEVANCE_GATE_ONLY_NO_FRENCH_UNIVERSAL_CLAIM"
+    },
+    {
+      "lead_id": "EUROPE:CUSTOMS:SI:BREZJE-VOTIVE-IMAGES",
+      "category": "CUSTOMS",
+      "proposed_owner": "CUSTOMARY_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:SI:brezje-basilica-of-mary-help",
+      "known_existing_place_id": null,
+      "country_code": "SI",
+      "source_ids": [
+        "BREZJE"
+      ],
+      "claim_summary": "Shrine records votive images and gifts as expressions of gratitude by pilgrims.",
+      "qualifier": null,
+      "scope": "NON_FRENCH_REGION_CULTURAL_HERITAGE",
+      "kind": "EX_VOTO_ATTESTATION",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "EXISTING_EXVOTO_CANONICAL_CUSTOM_SCOPE_RECONCILIATION"
+    },
+    {
+      "lead_id": "EUROPE:CUSTOMS:IT:CASTELPETROSO-VIA-MATRIS",
+      "category": "CUSTOMS",
+      "proposed_owner": "CUSTOMARY_SOT",
+      "target_place_lead_id": "EUROPE:PLACE:IT:madonna-addolorata-castelpetroso",
+      "known_existing_place_id": null,
+      "country_code": "IT",
+      "source_ids": [
+        "CASTELPETROSO"
+      ],
+      "claim_summary": "Via Matris devotional pathway through seven chapels at Castelpetroso sanctuary.",
+      "qualifier": null,
+      "scope": "NON_FRENCH_REGION_CULTURAL_HERITAGE",
+      "kind": "LOCAL_WAY_OF_SORROWS",
+      "publication_status": "RESEARCH_ONLY",
+      "coordinates": null,
+      "route_geometry": null,
+      "review_gate": "NOT_SEVEN_MAP_POINTS_WITHOUT_SEPARATE_PLACE_EVIDENCE"
+    }
+  ],
   "cross_reference_holds": [
     {
       "label": "Torreciudad (Huesca), Spain",
@@ -1513,6 +2131,14 @@
       "NO": 3,
       "SE": 1,
       "GB": 1
-    }
+    },
+    "by_category": {
+      "PILGRIMAGES": 15,
+      "RELICS": 5,
+      "APPARITIONS": 3,
+      "SACRED_IMAGE": 2,
+      "CUSTOMS": 7
+    },
+    "cross_category_research_associations": 32
   }
 }
