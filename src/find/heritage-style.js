@@ -72,4 +72,64 @@ export const HERITAGE_STYLE = String.raw`
   .aoHeritageSurface .aoHeritagePreview{padding:7px 16px 20px}
 }
 @media(prefers-reduced-motion:reduce){.aoHeritageSurface *, .aoHeritageSurface *:before, .aoHeritageSurface *:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Explore editorial layout: restrained map chrome, distinct content hierarchy. */
+.aoHeritageSurface .aoFindHeader{display:grid;grid-template-columns:42px minmax(0,1fr) auto 42px;align-items:center;gap:10px;padding:12px 14px 9px;border-bottom:1px solid #bda47520}
+.aoHeritageSurface .aoFindHeader>div{min-width:0}
+.aoHeritageSurface .aoFindHeader small{font-size:9px;letter-spacing:.11em}
+.aoHeritageSurface .aoFindHeader h1{font-weight:500;letter-spacing:-.02em}
+.aoHeritageSurface .aoHeritageCount{min-width:40px;border:0;border-left:1px solid #d9c59a33;border-radius:0;background:none;padding:4px 8px;text-align:center;font:600 15px/1.1 var(--ao-font-display,Georgia,serif)}
+.aoHeritageSurface .aoHeritageCount small{display:block;font:500 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:0;color:#b1a18a}
+.aoHeritageSurface .aoHeritageTools{padding:10px 12px 7px;gap:7px}
+.aoHeritageSurface .aoHeritageTools .aoFindSearch input{background:#101925;border-color:#d9c59a44;border-radius:11px;min-height:48px;padding-left:40px}
+.aoHeritageSurface .aoHeritageTools .aoFindSearch:before{left:14px;top:9px}
+.aoHeritageSurface .aoHeritageNearby,.aoHeritageSurface .aoHeritageMore summary{background:#15202b;border:1px solid #d9c59a33;border-radius:11px;min-height:48px}
+.aoHeritageSurface .aoHeritageMore>div{background:#101823;border-color:#d9c59a55;box-shadow:0 16px 45px #000c}
+.aoHeritageSurface .aoHeritageSecondary button{background:#17212c;border:1px solid #d9c59a20;min-height:45px;font:500 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoHeritageSurface .aoHeritageSecondary .aoHeritageMassShortcut{display:flex;justify-content:space-between;align-items:center;border-color:#d9c59a66;background:#30291f;color:#f0ddbc;font-weight:650}
+.aoHeritageSurface .aoHeritageCategories{padding:3px 12px 11px;gap:6px}
+.aoHeritageSurface .aoHeritageCategories button{border-radius:10px;border:1px solid #d9c59a2e;min-height:40px;padding:8px 13px;background:#101721;font-size:12px}
+.aoHeritageSurface .aoHeritageCategories button.active{background:#302a20;border-color:#c5a974;color:#f6e8ce}
+.aoHeritageSurface .aoHeritageBody.aoFindBody[data-find-view=map]{padding:0 6px 6px;min-height:230px}
+.aoHeritageSurface .aoHeritageBody .aoFindMap{border-radius:10px;background:#0e1923}
+.aoHeritageMapHint{border-radius:9px;background:#090e16dc;bottom:18px;left:18px;font-size:11px;box-shadow:none}
+.aoHeritageSearchResults{background:#0d1721f5;border-radius:13px}
+.aoHeritageSearchResults button{min-height:58px;padding:11px}
+.aoHeritageSearchResults strong{font-size:15px}
+.aoHeritageSurface .aoFindSheetBackdrop{background:#0004}
+.aoHeritageSurface .aoHeritagePreview{box-sizing:border-box;max-height:min(56dvh,470px);overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(145deg,#19242d,#0e151e 90%);border:1px solid #d9c59a44;border-top:2px solid #ba9d63;padding:9px 21px max(20px,env(safe-area-inset-bottom));box-shadow:0 -12px 35px #000a}
+.aoHeritageSurface .aoHeritageSheetHandle{margin:0 auto 12px}
+.aoHeritageCardHeading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.aoHeritageCardIdentity{display:flex;min-width:0;flex-direction:column;gap:5px}
+.aoHeritageCardKicker{color:#c6a66f;font:700 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase}
+.aoHeritageCardLocation{color:#aaa08f;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:55ch}
+.aoHeritageCardClose{display:grid;flex:none;place-items:center;width:38px;height:38px;border:1px solid #d9c59a2a;border-radius:10px;color:#e9d8b7;background:#1c2832;font:26px/1 var(--ao-font-ui,system-ui,sans-serif)}
+.aoHeritageSurface .aoHeritagePreview .aoHeritageCardTitle{font:500 clamp(22px,4.5vw,30px)/1.13 var(--ao-font-display,Georgia,serif);letter-spacing:-.02em;color:#f1e7d6;margin:9px 0 0;max-width:580px;text-wrap:balance}
+.aoHeritageSurface .aoHeritageSynopsis,.aoHeritageSurface .aoHeritageCardEmpty{font:15px/1.5 var(--ao-font-body,Georgia,serif);color:#ded0bb;max-width:65ch;margin:11px 0 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.aoHeritageSurface .aoHeritagePlaceTags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.aoHeritageSurface .aoHeritagePlaceTags span{background:#d9c59a0c;border-color:#d9c59a24;color:#cbb997}
+.aoHeritageSurface .aoHeritagePreviewActions{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px}
+.aoHeritageSurface .aoHeritagePreviewActions button,.aoHeritageSurface .aoHeritagePreviewActions a{min-height:46px;border-radius:9px;padding:10px 13px;font-size:12px}
+.aoHeritageSurface .aoHeritagePreviewActions button:first-child{background:#ccaf7e;color:#0b1420;border-color:#ccaf7e}
+.aoHeritageSurface .aoHeritagePreviewActions a{background:#202b34;color:#f0ddbc}
+.aoHeritageSurface .aoHeritagePrecision{margin:10px 0 0;font-size:10px;color:#ab9e86}
+@media(min-width:760px){.aoHeritageSurface .aoHeritagePreview{max-width:540px;max-height:min(63dvh,520px);margin:0 0 25px 25px;border-radius:14px}.aoHeritageSurface .aoFindSheetBackdrop{align-items:flex-end;justify-content:flex-start}}
+@media(max-width:520px){
+ .aoHeritageSurface .aoFindHeader{grid-template-columns:38px minmax(0,1fr) auto 38px;gap:5px;padding:9px}
+ .aoHeritageSurface .aoFindHeader button{width:38px;height:38px}
+ .aoHeritageSurface .aoFindHeader h1{font-size:20px}
+ .aoHeritageSurface .aoHeritageCount{min-width:28px;padding:3px 5px;font-size:13px}
+ .aoHeritageSurface .aoHeritageCount small{display:none}
+ .aoHeritageSurface .aoHeritageTools{padding:9px 8px 7px;gap:6px}
+ .aoHeritageSurface .aoHeritageNearby{font-size:11px;padding:8px}
+ .aoHeritageSurface .aoHeritageMore summary{font-size:11px;padding:0 9px}
+ .aoHeritageSurface .aoHeritageCategories{padding:3px 8px 9px}
+ .aoHeritageSurface .aoHeritageCategories button{min-height:39px;padding:8px 11px;font-size:11px}
+ .aoHeritageSurface .aoHeritageBody.aoFindBody[data-find-view=map]{padding:0 3px 3px}
+ .aoHeritageSurface .aoHeritagePreview{max-height:min(51dvh,430px);border-radius:16px 16px 0 0;padding:8px 16px max(18px,env(safe-area-inset-bottom))}
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageCardTitle{font-size:23px}
+ .aoHeritageSurface .aoHeritageSynopsis{font-size:14px}
+ .aoHeritageSearchResults{left:10px;width:calc(100% - 20px);bottom:10px;max-height:39dvh}
+ .aoHeritageMapHint{left:14px;bottom:16px;max-width:205px}
+}
 `;
