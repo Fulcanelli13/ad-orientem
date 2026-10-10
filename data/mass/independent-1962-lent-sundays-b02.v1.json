@@ -1,0 +1,293 @@
+{
+  "schema": "AO_1962_INDEPENDENT_SUNDAY_PROPER_COLLATION_V2",
+  "editorialDate": "2026-10-10",
+  "editorialScope": "Five independently published 1962 Sunday Proper leaflets, on both 2024 and 2027 actual Calendar dates; critical source-status remains distinct from a contemporaneous scan of the printed Vatican typical edition.",
+  "sourceEdition": {
+    "publisher": "Usus Antiquior / St Stephen Church, Cleveland",
+    "indexUrl": "https://propria.org/propers-for-sundays/",
+    "witnessType": "independent modern 1962 Latin/English booklet (secondary edited transcription; not original printed Vatican facsimile)",
+    "sunday2VisualInspection": "PDF source page one rendered and manually inspected; other booklets indexed-text examined; no source PDF reproduced"
+  },
+  "interpretation": {
+    "comparison": "Latin incipits in the independently published Proper vs the assembled production ProperResolver",
+    "normalization": "case, stress accent, ligature, j/i and punctuation only",
+    "datesChecked": 10,
+    "uniqueSourceOwners": 5,
+    "distinctTextWitnessProbes": 29,
+    "dateObservations": 58,
+    "missingThirdLent": "Third Sunday Lent PDF inaccessible in this batch; explicitly deferred not counted",
+    "palmPassion": "The long sung Matthew Passion and processional rite are separate source/rubric owners. This batch checks the Mass Proper incipits only; full Passion segmentation is not certified.",
+    "orthographicVariantPolicy": "Whitelist only section-bound variants confirmed in two named editions; count separately from exact parity, no app-text substitution."
+  },
+  "cases": [
+    {
+      "id": "lent-1",
+      "title": "First Sunday of Lent",
+      "owner": "Tempora/Quad1-0",
+      "dates": [
+        "2024-02-18",
+        "2027-02-14"
+      ],
+      "rank": 1,
+      "pdf": {
+        "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-first-sunday-in-lent.pdf",
+        "pages": 2,
+        "sourceType": "independent edited liturgical booklet",
+        "visualLevel": "searchable text only"
+      },
+      "proofs": [
+        {
+          "field": "introit",
+          "latinIncipit": "Invocabit me et ego exaudiam eum",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-first-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "collect",
+          "latinIncipit": "Deus qui Ecclesiam tuam annua quadragesimali observatione purificas",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-first-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "epistle",
+          "latinIncipit": "Fratres exhortamur vos ne in vacuum gratiam Dei recipiatis",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-first-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "gospel",
+          "latinIncipit": "In illo tempore ductus est Iesus in desertum a Spiritu",
+          "page": 2,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-first-sunday-in-lent.pdf#page=2"
+        },
+        {
+          "field": "communion",
+          "latinIncipit": "Scapulis suis obumbrabit tibi Dominus",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-first-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "postcommunion",
+          "latinIncipit": "Tui nos Domine sacramenti libatio sancta restauret",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-first-sunday-in-lent.pdf#page=1"
+        }
+      ]
+    },
+    {
+      "id": "lent-2",
+      "title": "Second Sunday of Lent",
+      "owner": "Tempora/Quad2-0",
+      "dates": [
+        "2024-02-25",
+        "2027-02-21"
+      ],
+      "rank": 1,
+      "pdf": {
+        "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf",
+        "pages": 2,
+        "sourceType": "independent edited liturgical booklet",
+        "visualLevel": "one PDF page reviewed"
+      },
+      "proofs": [
+        {
+          "field": "introit",
+          "latinIncipit": "Reminiscere miserationum tuarum Domine",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "collect",
+          "latinIncipit": "Deus qui conspicis omni nos virtute destitui",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "epistle",
+          "latinIncipit": "Fratres rogamus vos et obsecramus in Domino Iesu",
+          "page": 2,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=2"
+        },
+        {
+          "field": "gospel",
+          "latinIncipit": "In illo tempore assumpsit Iesus Petrum et Iacobum",
+          "page": 2,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=2"
+        },
+        {
+          "field": "communion",
+          "latinIncipit": "Intellige clamorem meum intende voci orationis meae",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=1",
+          "orthographicVariants": [
+            "Intellege clamorem meum intende voci orationis meae"
+          ],
+          "variantType": "Different valid imperatives Intellige/Intellege; original edited 1962 booklet uses Intéllige, app normalized source and 1962 Missale Romanum OCR show Intéllege/Intellége. Not a substantive omitted prayer.",
+          "independentVariantWitness": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
+        },
+        {
+          "field": "postcommunion",
+          "latinIncipit": "Supplices te rogamus omnipotens Deus",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/02/propers-for-second-sunday-in-lent.pdf#page=1"
+        }
+      ]
+    },
+    {
+      "id": "lent-4",
+      "title": "Fourth Sunday of Lent (Laetare)",
+      "owner": "Tempora/Quad4-0",
+      "dates": [
+        "2024-03-10",
+        "2027-03-07"
+      ],
+      "rank": 1,
+      "pdf": {
+        "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-fourth-sunday-in-lent.pdf",
+        "pages": 2,
+        "sourceType": "independent edited liturgical booklet",
+        "visualLevel": "searchable text only"
+      },
+      "proofs": [
+        {
+          "field": "introit",
+          "latinIncipit": "Laetare Ierusalem et conventum facite omnes qui diligitis eam",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-fourth-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "collect",
+          "latinIncipit": "Concede quaesumus omnipotens Deus ut qui ex merito nostrae actionis affligimur",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-fourth-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "epistle",
+          "latinIncipit": "Fratres scriptum est quoniam Abraham duos filios habuit",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-fourth-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "gospel",
+          "latinIncipit": "In illo tempore abiit Iesus trans mare Galilaeae",
+          "page": 2,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-fourth-sunday-in-lent.pdf#page=2"
+        },
+        {
+          "field": "communion",
+          "latinIncipit": "Ierusalem quae aedificatur ut civitas",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-fourth-sunday-in-lent.pdf#page=1"
+        },
+        {
+          "field": "postcommunion",
+          "latinIncipit": "Da nobis quaesumus misericors Deus ut sancta tua",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-fourth-sunday-in-lent.pdf#page=1"
+        }
+      ]
+    },
+    {
+      "id": "passion-1",
+      "title": "Passion Sunday (First Sunday of Passiontide)",
+      "owner": "Tempora/Quad5-0",
+      "dates": [
+        "2024-03-17",
+        "2027-03-14"
+      ],
+      "rank": 1,
+      "pdf": {
+        "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-passion-sunday-judica-me.pdf",
+        "pages": 2,
+        "sourceType": "independent edited liturgical booklet",
+        "visualLevel": "searchable text only"
+      },
+      "proofs": [
+        {
+          "field": "introit",
+          "latinIncipit": "Iudica me Deus et discerne causam meam de gente non sancta",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-passion-sunday-judica-me.pdf#page=1"
+        },
+        {
+          "field": "collect",
+          "latinIncipit": "Quaesumus omnipotens Deus familiam tuam propitius respice",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-passion-sunday-judica-me.pdf#page=1"
+        },
+        {
+          "field": "epistle",
+          "latinIncipit": "Fratres Christus assistens pontifex futurorum bonorum",
+          "page": 2,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-passion-sunday-judica-me.pdf#page=2"
+        },
+        {
+          "field": "gospel",
+          "latinIncipit": "In illo tempore dicebat Iesus turbis Iudaeorum quis ex vobis arguet me de peccato",
+          "page": 2,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-passion-sunday-judica-me.pdf#page=2"
+        },
+        {
+          "field": "communion",
+          "latinIncipit": "Hoc corpus quod pro vobis tradetur",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-passion-sunday-judica-me.pdf#page=1"
+        },
+        {
+          "field": "postcommunion",
+          "latinIncipit": "Adesto nobis Domine Deus noster et quos tuis mysteriis recreasti",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-passion-sunday-judica-me.pdf#page=1"
+        }
+      ]
+    },
+    {
+      "id": "palm-1962",
+      "title": "Palm Sunday — reformed 1962, Mass after blessing and procession",
+      "owner": "Tempora/Quad6-0r",
+      "dates": [
+        "2024-03-24",
+        "2027-03-21"
+      ],
+      "rank": 1,
+      "pdf": {
+        "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-palm-sunday.pdf",
+        "pages": 10,
+        "sourceType": "independent edited liturgical booklet",
+        "visualLevel": "searchable text only"
+      },
+      "proofs": [
+        {
+          "field": "introit",
+          "latinIncipit": "Domine ne longe facias auxilium tuum a me",
+          "page": 9,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-palm-sunday.pdf#page=9"
+        },
+        {
+          "field": "collect",
+          "latinIncipit": "Omnipotens sempiterne Deus qui humano generi ad imitandum humilitatis exemplum",
+          "page": 9,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-palm-sunday.pdf#page=9"
+        },
+        {
+          "field": "epistle",
+          "latinIncipit": "Fratres hoc enim sentite in vobis quod et in Christo Iesu",
+          "page": 10,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-palm-sunday.pdf#page=10"
+        },
+        {
+          "field": "communion",
+          "latinIncipit": "Pater si non potest hic calix transire nisi bibam illum",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-palm-sunday.pdf#page=1"
+        },
+        {
+          "field": "postcommunion",
+          "latinIncipit": "Per huius Domine operationem mysterii et vitia nostra purgentur",
+          "page": 1,
+          "url": "https://propria.org/wp-content/uploads/2021/03/propers-for-palm-sunday.pdf#page=1"
+        }
+      ]
+    }
+  ]
+}
