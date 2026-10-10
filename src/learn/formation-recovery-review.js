@@ -404,7 +404,7 @@ export function createFormationRecoveryReview(win=globalThis) {
   function paint(){
     const el=ensure();if(!el||!state.open)return false;
     el.lang=isFr(win)?"fr":"en";
-    el.dataset.studyPreview=state.studyPreview?"1":"0";
+    el.setAttribute("data-study-preview",state.studyPreview?"1":"0");
     const inner=state.loading?'<p class="rrMuted">Loading original source files…</p>':
       state.error?'<p class="rrWarning">'+esc(state.error)+'</p>':state.view==="list"?listView():state.view==="dossier-detail"?dossierDetail():detailView();
     el.innerHTML='<style>'+css+'</style><header class="rrTop"><button type="button" data-rr-back aria-label="Back">‹</button>'+
