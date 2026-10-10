@@ -165,6 +165,32 @@ const SHELL_STYLE = `
 }
 .ao-prayer-card::-webkit-scrollbar{display:none}
 
+/* App-dark missal chrome with a liturgical accent rather than green ownership. */
+.ao-reader-shell{--ao-missal-face:var(--ao-font-liturgical,"EB Garamond",Garamond,Baskerville,Georgia,serif);
+  --ao-missal-display:var(--ao-font-display,Cinzel,Baskerville,Georgia,serif)}
+.ao-reader-shell{background:linear-gradient(180deg,color-mix(in srgb,var(--ao-mass-top) 35%,#080c12),color-mix(in srgb,var(--ao-mass-bottom) 26%,#080c12))}
+.ao-reader-shell .ao-reader-top-ribbon,.ao-reader-shell .ao-state-ribbon{background:color-mix(in srgb,var(--ao-mass-top) 40%,#080c12)}
+.ao-reader-shell .ao-reader-paragraph,
+.ao-reader-shell .ao-line-primary,.ao-reader-shell .ao-line-secondary,
+.ao-reader-shell .ao-schola-main,.ao-reader-shell .ao-schola-translation,
+.ao-reader-shell .ao-guide-summary,.ao-reader-shell .ao-guide-section p{font-family:var(--ao-missal-face)}
+.ao-reader-shell .ao-line-secondary{font-size:.73em;line-height:1.5;font-style:italic}
+.ao-reader-shell .ao-reader-paragraph[data-kind="RUBRIC"]{font-family:var(--ao-missal-face);font-style:italic;font-weight:400;
+  border-left-color:color-mix(in srgb,var(--ao-mass-accent) 50%,transparent);background:color-mix(in srgb,var(--ao-mass-accent) 6%,transparent)}
+.ao-reader-shell .ao-reader-paragraph[data-kind="RUBRIC"]::before{color:var(--ao-mass-accent-text)}
+.ao-reader-shell .ao-prayer-title,.ao-reader-shell .ao-section-jump,
+.ao-reader-shell .ao-cinematic-title{font-family:var(--ao-missal-display)}
+.ao-reader-shell .ao-reader-paragraph[data-opening="true"] .ao-line-primary::first-letter{
+  font-family:"UnifrakturCook","Old English Text MT",var(--ao-missal-display);font-size:1.35em;font-weight:600;color:var(--ao-mass-accent-text)}
+.ao-customary-controls label{display:grid;gap:5px;margin:9px 0;color:var(--ao-text);font:400 13px/1.3 var(--ao-missal-face)}
+.ao-customary-controls select{width:100%;min-height:44px;padding:7px;border-radius:8px;
+  border:1px solid color-mix(in srgb,var(--ao-mass-accent) 30%,transparent);
+  background:#10151c;color:var(--ao-text);font:500 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-customary-controls select:disabled{opacity:.45}
+.ao-customary-controls [data-customary-cue-note]{font:italic 12px/1.4 var(--ao-missal-face);
+  text-transform:none;letter-spacing:0;color:var(--ao-muted)}
+
+
 .ao-reader-shell[data-handoff="next"] .ao-reader-nav button[data-reader-nav="next"],
 .ao-reader-shell[data-handoff="previous"] .ao-reader-nav button[data-reader-nav="previous"]{opacity:.46;transform:scale(1)}
 .ao-prayer-card[data-card-arrival="next"]{animation:aoCardArriveNext .34s cubic-bezier(.18,.82,.20,1) both}
@@ -811,6 +837,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     cardUpdate:moment.cardUpdate !== false,
     paragraphs,
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
+    customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
     posture:persist(moment.posture, previous.posture),
     gesture:moment.gesture ?? null,
     response:moment.response ?? null,
@@ -944,6 +971,27 @@ export function buildReaderShellMarkup(prepared = {}) {
   <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
     <div class="ao-mass-prefs-head"><b>Mass preferences</b><button class="ao-mass-prefs-close" type="button" data-reader-preferences-close aria-label="Close preferences">×</button></div>
     <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","SIMPLE","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}"><span>${m}</span></button>`).join("")}</nav></div>
+    <div class="ao-mass-prefs-group ao-customary-controls" role="group" aria-label="Local Mass customs">
+      <small>Local participation customs</small>
+      <label>Posture tradition<select data-reader-customary="postureProfile" aria-label="Posture tradition">
+        <option value="FOLLOW_CONGREGATION">Follow congregation</option>
+        <option value="OCONNELL_1962_COMMUNITY">1962 guided</option>
+        <option value="TRADITIONAL_WALSH">Traditional</option>
+        <option value="MY_LOCAL">Only saved cues</option>
+      </select></label>
+      <label>Gesture guidance<select data-reader-customary="gestureProfile" aria-label="Gesture guidance">
+        <option value="ESSENTIAL">Essential</option>
+        <option value="GUIDED_1962">1962 guided</option>
+        <option value="TRADITIONAL">Traditional customs</option>
+      </select></label>
+      <label>Local posture for this passage<select data-reader-customary="localPosture" aria-label="Local posture for this cue" disabled>
+        <option value="DEFAULT">Use tradition</option>
+        <option value="STAND">Stand</option>
+        <option value="SIT">Sit</option>
+        <option value="KNEEL">Kneel</option>
+      </select></label>
+      <small data-customary-cue-note>Choose a source cue; fixed postures cannot be overridden.</small>
+    </div>
     <button class="ao-mass-prefs-more" type="button" data-reader-glossary>Terms & rubrics</button><button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
   </aside>
 
@@ -1126,6 +1174,7 @@ export function createReaderDomAdapter({
   onGuide = null,
   onHome = null,
   onParameters = null,
+  onCustomaryChange = null,
   onScholaAdvance = null,
   sections = [],
   onSectionSelect = null,
@@ -1138,6 +1187,7 @@ export function createReaderDomAdapter({
   let mode="LIVE";
   let bound=false;
   let rootClickListener=null;
+  let rootChangeListener=null;
   let rootKeydownListener=null;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let scholaCollapsed=false;
@@ -1588,8 +1638,10 @@ export function createReaderDomAdapter({
 
   function unbind(){
     if(rootClickListener)root.removeEventListener?.("click",rootClickListener);
+    if(rootChangeListener)root.removeEventListener?.("change",rootChangeListener);
     if(rootKeydownListener)root.removeEventListener?.("keydown",rootKeydownListener);
     rootClickListener=null;
+    rootChangeListener=null;
     rootKeydownListener=null;
     bound=false;
   }
@@ -1597,6 +1649,14 @@ export function createReaderDomAdapter({
   function bind(){
     if(bound) return;
     bound=true;
+    rootChangeListener=event=>{
+      const select=event.target?.closest?.("[data-reader-customary]");
+      if(!select||select.disabled||!current?.customary)return;
+      const kind=select.dataset.readerCustomary;
+      if(!["postureProfile","gestureProfile","localPosture"].includes(kind))return;
+      onCustomaryChange?.({kind,value:select.value,cueId:current.customary.cueId});
+    };
+    root.addEventListener?.("change",rootChangeListener);
     rootClickListener=event => {
       const homeButton=event.target?.closest?.("[data-reader-home]");
       if(homeButton){onHome?.(current,prepared);return;}
@@ -1892,6 +1952,24 @@ export function createReaderDomAdapter({
     setText(root,"bell",visibleBell ? [textValue(visibleBell),visibleBell.detail].filter(Boolean).join(" · ") : null);
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
+    if(current.customary){
+      for(const kind of ["postureProfile","gestureProfile","localPosture"]){
+        const select=root.querySelector('[data-reader-customary="'+kind+'"]');
+        if(select)select.value=current.customary[kind]??"DEFAULT";
+        if(select&&kind==="localPosture")select.disabled=!current.customary.localPostureEditable;
+      }
+      const note=root.querySelector("[data-customary-cue-note]");
+      if(note)note.textContent=current.customary.cueId
+        ? current.customary.localPostureEditable
+          ? "Applies only to "+current.customary.cueId
+          : "Fixed source cue: local overrides unavailable."
+        : "Select an exact Mass cue before setting a local posture.";
+    }else{
+      const select=root.querySelector('[data-reader-customary="localPosture"]');
+      if(select)select.disabled=true;
+      const note=root.querySelector("[data-customary-cue-note]");
+      if(note)note.textContent="Local choices apply to source-backed Mass cues.";
+    }
     const titleNode=root.querySelector('[data-role="card-title"]');
     if(titleNode)titleNode.hidden=true;
     const guideShort=root.querySelector('[data-role="guide-short"]');
@@ -1973,10 +2051,15 @@ export function createReaderDomAdapter({
       body.replaceChildren();
       const doc=body.ownerDocument ?? globalThis.document;
       if(doc?.createElement){
+        let openingSet=false;
+        const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
         for(const p of current.paragraphs){
           const node=doc.createElement("p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
+          if(decorateThisSection&&!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
+            node.dataset.opening="true";openingSet=true;
+          }
           node.dataset.active=String(p.active);
           node.dataset.paragraphId=p.id;
           if(p.kind==="RUBRIC"){
