@@ -476,10 +476,11 @@ export function createFindOwner(win=globalThis){
       const value=heritageCategory.dataset.heritageCategory;
       if(value==="ALL")state.heritageCategories=[...HERITAGE_CATEGORIES];
       else if(HERITAGE_CATEGORIES.includes(value)){
+        // Single-select thematic navigation: the next chip replaces the previous
+        // theme. Tapping the same chip again returns to the complete world.
         const current=state.heritageCategories;
-        state.heritageCategories=current.length===HERITAGE_CATEGORIES.length?[value]:
-          current.includes(value)?(current.length===1?[...HERITAGE_CATEGORIES]:current.filter(cat=>cat!==value)):
-          [...current,value];
+        state.heritageCategories=current.length===1&&current[0]===value
+          ?[...HERITAGE_CATEGORIES]:[value];
       }
       state.highlightCustomId=null;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
       void paint();return;
