@@ -33,8 +33,12 @@ export function scrollToAngelusUnit(mount,index){
   const units=[...mount.querySelectorAll(".aoP435930AngelusSequence .aoP435930PrayerUnit")];
   if(!units.length||!Number.isFinite(Number(index)))return false;
   const step=readerPosition(index,units.length);
-  const el=units[step.index],top=mount.getBoundingClientRect?.().top??0;
-  const target=Math.max(0,Number(mount.scrollTop||0)+(el.getBoundingClientRect().top-top)-Math.min(116,(mount.clientHeight||400)*.2));
+  const el=units[step.index];
+  const rootRect=mount.getBoundingClientRect(),head=mount.querySelector?.(":scope > .aoP435930Head");
+  const visibleTop=Math.max(rootRect.top,head?.getBoundingClientRect?.().bottom??rootRect.top);
+  const focusY=visibleTop+Math.max(90,(rootRect.bottom-visibleTop)*.4);
+  const rect=el.getBoundingClientRect();
+  const target=Math.max(0,Number(mount.scrollTop||0)+rect.top+Math.min(rect.height/2,64)-focusY);
   if(typeof mount.scrollTo==="function")mount.scrollTo({top:target,behavior:"auto"});
   else mount.scrollTop=target;
   return true;
@@ -76,10 +80,10 @@ export function syncRosaryProgress(win=globalThis){
     nav.appendChild(track);
     anchor.insertAdjacentElement("afterend",nav);
   }
-  const mi=Number(steps[position.index]?.mi);
-  const mystery=Number.isInteger(mi)&&mi>=0&&mi<15?" · "+(mi+1):"";
+  const mi=steps[position.index]?.mi;
+  const mystery=Number.isInteger(mi)&&mi>=0&&mi<15?String(mi+1):"";
   const language=win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr";
-  const label=(language?"Étape ":"Step ")+(position.index+1)+" / "+position.total+(mystery?(language?" · Mystère":" · Mystery")+mystery:"");
+  const label=(language?"Étape ":"Step ")+(position.index+1)+" / "+position.total+(mystery?(language?" · Mystère ":" · Mystery ")+mystery:"");
   const key=position.index+":"+position.total+":"+label;
   if(nav.dataset.aoReaderCurrent===key)return true;
   nav.dataset.aoReaderCurrent=key;
