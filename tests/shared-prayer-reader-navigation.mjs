@@ -55,6 +55,6 @@ assert.match(styles,/aoReaderPrayerName/);
 assert.match(styles,/text-transform:uppercase!important/);
 assert.match(styles,/opacity:var\(--ao-reader-focus-far,\.56\)!important/);
 assert.match(styles,/opacity:var\(--ao-reader-focus-near,\.80\)!important/);
-assert.doesNotMatch(mass,/opacity:var\\(--ao-reader-focus-far/,'byte-locked Mass donor must remain unchanged');
+assert.ok(!mass.includes('opacity:var(--ao-reader-focus-far'),'byte-locked Mass donor must remain unchanged');
 assert.equal(syncRosaryProgress({document:{querySelector:()=>null}}),false,"no Rosary donor: no side effects");
 console.log("PASS shared prayer reader navigation, focus grammar, named Angelus sections and gesture intent");
