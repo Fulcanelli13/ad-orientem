@@ -1262,6 +1262,110 @@
         "source": "src/pray/canonical-data.js",
         "source_state": "RUNTIME_CORPUS_REGISTERED"
       }
+    ],
+    "library_categories": [
+      {
+        "id": "essentials",
+        "count": 15,
+        "canonical_prayer_ids": [
+          "foundations_sign_of_cross",
+          "foundations_our_father",
+          "foundations_hail_mary",
+          "foundations_glory_be",
+          "foundations_apostles_creed",
+          "sacrament_act_of_contrition",
+          "foundations_act_of_faith",
+          "foundations_act_of_hope",
+          "foundations_act_of_love",
+          "foundations_guardian_angel",
+          "foundations_grace_before_meals",
+          "foundations_grace_after_meals",
+          "foundations_morning_offering",
+          "foundations_prayer_of_adoration",
+          "mass_confiteor"
+        ]
+      },
+      {
+        "id": "marian",
+        "count": 7,
+        "canonical_prayer_ids": [
+          "marian_hail_holy_queen",
+          "marian_memorare",
+          "weekday_magnificat",
+          "marian_consecration_immaculate_heart",
+          "sub_tuum",
+          "litany_loreto_1962",
+          "litany_loreto_current"
+        ]
+      },
+      {
+        "id": "eucharistic",
+        "count": 8,
+        "canonical_prayer_ids": [
+          "adoration_anima_christi",
+          "adoration_spiritual_communion",
+          "benediction_o_salutaris",
+          "benediction_tantum_ergo",
+          "benediction_divine_praises",
+          "adoration_litany_blessed_sacrament",
+          "benediction_versicles",
+          "benediction_adoremus_ps116"
+        ]
+      },
+      {
+        "id": "massdev",
+        "count": 2,
+        "canonical_prayer_ids": [
+          "adoration_lord_i_am_not_worthy",
+          "mass_devotion_leonine"
+        ]
+      },
+      {
+        "id": "holyghost",
+        "count": 2,
+        "canonical_prayer_ids": [
+          "sacrament_come_holy_spirit",
+          "traditional_veni_sancte_sequence"
+        ]
+      },
+      {
+        "id": "canticles",
+        "count": 1,
+        "canonical_prayer_ids": [
+          "weekday_benedictus"
+        ]
+      },
+      {
+        "id": "saints",
+        "count": 7,
+        "canonical_prayer_ids": [
+          "devotion_prayer_st_michael",
+          "devotion_memorare_st_joseph",
+          "devotion_consecration_christ_king",
+          "church_prayer_for_pope",
+          "devotion_st_anthony_lost_items",
+          "devotion_litany_st_joseph",
+          "devotion_ad_te_beate_ioseph"
+        ]
+      },
+      {
+        "id": "hearts",
+        "count": 2,
+        "canonical_prayer_ids": [
+          "sacred_heart_short_prayer",
+          "sacred_heart_aspiration_trust"
+        ]
+      },
+      {
+        "id": "dead",
+        "count": 4,
+        "canonical_prayer_ids": [
+          "foundations_eternal_rest",
+          "dead_de_profundis",
+          "dead_fidelium_deus",
+          "dead_eternal_rest_singular"
+        ]
+      }
     ]
   },
   "formation": {
@@ -1572,7 +1676,672 @@
       "learn.catholic_life",
       "learn.seasonal_rites"
     ],
-    "publication_policy": "Only published 15 launchers in ordinary navigation. APOL/CR dossier titles and Learn the Faith draft are research-only until paragraph-sourcing, opponent-origin and EN/FR approval; no new routes."
+    "publication_policy": "Only published 15 launchers in ordinary navigation. APOL/CR dossier titles and Learn the Faith draft are research-only until paragraph-sourcing, opponent-origin and EN/FR approval; no new routes.",
+    "sexual_ethics_topic_projection": {
+      "owner": "learn.sexual_ethics",
+      "topics": [
+        {
+          "id": "SEX-CORE-01",
+          "category": "foundations",
+          "question_ids": [
+            "CSE001",
+            "CSE002",
+            "CSE003"
+          ]
+        },
+        {
+          "id": "SEX-CORE-02",
+          "category": "foundations",
+          "question_ids": [
+            "CSE004",
+            "CSE005",
+            "CSE006",
+            "CSE007",
+            "CSE008",
+            "CSE009",
+            "CSE010"
+          ]
+        },
+        {
+          "id": "SEX-CORE-03",
+          "category": "foundations",
+          "question_ids": [
+            "CSE011",
+            "CSE012",
+            "CSE013",
+            "CSE014",
+            "CSE015"
+          ]
+        },
+        {
+          "id": "SEX-CORE-04",
+          "category": "foundations",
+          "question_ids": [
+            "CSE016",
+            "CSE017",
+            "CSE018",
+            "CSE019",
+            "CSE020"
+          ]
+        },
+        {
+          "id": "SEX-CORE-05",
+          "category": "foundations",
+          "question_ids": [
+            "CSE021",
+            "CSE022",
+            "CSE023",
+            "CSE024",
+            "CSE025",
+            "CSE026",
+            "CSE027"
+          ]
+        },
+        {
+          "id": "SEX-CORE-06",
+          "category": "foundations",
+          "question_ids": [
+            "CSE028",
+            "CSE029"
+          ]
+        },
+        {
+          "id": "SEX-CORE-07",
+          "category": "foundations",
+          "question_ids": [
+            "CSE030"
+          ]
+        },
+        {
+          "id": "SEX-CORE-08",
+          "category": "courtship",
+          "question_ids": [
+            "CSE031",
+            "CSE032",
+            "CSE033",
+            "CSE034"
+          ]
+        },
+        {
+          "id": "SEX-CORE-09",
+          "category": "courtship",
+          "question_ids": [
+            "CSE035",
+            "CSE036"
+          ]
+        },
+        {
+          "id": "SEX-CORE-10",
+          "category": "courtship",
+          "question_ids": [
+            "CSE037",
+            "CSE038",
+            "CSE039"
+          ]
+        },
+        {
+          "id": "SEX-CORE-11",
+          "category": "courtship",
+          "question_ids": [
+            "CSE040"
+          ]
+        },
+        {
+          "id": "SEX-CORE-12",
+          "category": "marriage",
+          "question_ids": [
+            "CSE041",
+            "CSE042",
+            "CSE043",
+            "CSE044",
+            "CSE045",
+            "CSE046"
+          ]
+        },
+        {
+          "id": "SEX-CORE-13",
+          "category": "marriage",
+          "question_ids": [
+            "CSE047",
+            "CSE048",
+            "CSE060"
+          ]
+        },
+        {
+          "id": "SEX-CORE-14",
+          "category": "marriage",
+          "question_ids": [
+            "CSE049",
+            "CSE050"
+          ]
+        },
+        {
+          "id": "SEX-CORE-15",
+          "category": "marriage",
+          "question_ids": [
+            "CSE051",
+            "CSE052",
+            "CSE053",
+            "CSE054",
+            "CSE059"
+          ]
+        },
+        {
+          "id": "SEX-CORE-16",
+          "category": "marriage",
+          "question_ids": [
+            "CSE055",
+            "CSE056",
+            "CSE057",
+            "CSE058"
+          ]
+        },
+        {
+          "id": "SEX-CORE-17",
+          "category": "marriage",
+          "question_ids": [
+            "CSE061"
+          ]
+        },
+        {
+          "id": "SEX-CORE-18",
+          "category": "marriage",
+          "question_ids": [
+            "CSE062",
+            "CSE063",
+            "CSE064",
+            "CSE065",
+            "CSE066",
+            "CSE067"
+          ]
+        },
+        {
+          "id": "SEX-CORE-19",
+          "category": "marriage",
+          "question_ids": [
+            "CSE068",
+            "CSE069",
+            "CSE070"
+          ]
+        },
+        {
+          "id": "SEX-CORE-20",
+          "category": "personal",
+          "question_ids": [
+            "CSE071",
+            "CSE072",
+            "CSE073"
+          ]
+        },
+        {
+          "id": "SEX-CORE-21",
+          "category": "personal",
+          "question_ids": [
+            "CSE074",
+            "CSE075",
+            "CSE076",
+            "CSE077",
+            "CSE078",
+            "CSE079",
+            "CSE080"
+          ]
+        },
+        {
+          "id": "SEX-CORE-22",
+          "category": "personal",
+          "question_ids": [
+            "CSE081",
+            "CSE082"
+          ]
+        },
+        {
+          "id": "SEX-CORE-23",
+          "category": "personal",
+          "question_ids": [
+            "CSE083",
+            "CSE084",
+            "CSE085",
+            "CSE086",
+            "CSE087",
+            "CSE088",
+            "CSE089"
+          ]
+        },
+        {
+          "id": "SEX-CORE-24",
+          "category": "personal",
+          "question_ids": [
+            "CSE090",
+            "CSE099"
+          ]
+        },
+        {
+          "id": "SEX-CORE-25",
+          "category": "personal",
+          "question_ids": [
+            "CSE091",
+            "CSE092",
+            "CSE093"
+          ]
+        },
+        {
+          "id": "SEX-CORE-26",
+          "category": "personal",
+          "question_ids": [
+            "CSE094",
+            "CSE095",
+            "CSE096",
+            "CSE097",
+            "CSE098"
+          ]
+        },
+        {
+          "id": "SEX-CORE-27",
+          "category": "personal",
+          "question_ids": [
+            "CSE100"
+          ]
+        },
+        {
+          "id": "SEX-CORE-28",
+          "category": "life",
+          "question_ids": [
+            "CSE101",
+            "CSE102",
+            "CSE103",
+            "CSE104"
+          ]
+        },
+        {
+          "id": "SEX-CORE-29",
+          "category": "life",
+          "question_ids": [
+            "CSE105",
+            "CSE109",
+            "CSE110"
+          ]
+        },
+        {
+          "id": "SEX-CORE-30",
+          "category": "life",
+          "question_ids": [
+            "CSE106",
+            "CSE107",
+            "CSE108"
+          ]
+        },
+        {
+          "id": "SEX-CORE-31",
+          "category": "life",
+          "question_ids": [
+            "CSE111",
+            "CSE112",
+            "CSE113",
+            "CSE114",
+            "CSE115",
+            "CSE117",
+            "CSE118",
+            "CSE120"
+          ]
+        },
+        {
+          "id": "SEX-CORE-32",
+          "category": "life",
+          "question_ids": [
+            "CSE116"
+          ]
+        },
+        {
+          "id": "SEX-CORE-33",
+          "category": "life",
+          "question_ids": [
+            "CSE119"
+          ]
+        },
+        {
+          "id": "SEX-CORE-34",
+          "category": "life",
+          "question_ids": [
+            "CSE121",
+            "CSE122"
+          ]
+        },
+        {
+          "id": "SEX-CORE-35",
+          "category": "life",
+          "question_ids": [
+            "CSE123",
+            "CSE124",
+            "CSE125"
+          ]
+        },
+        {
+          "id": "SEX-CORE-36",
+          "category": "life",
+          "question_ids": [
+            "CSE126"
+          ]
+        },
+        {
+          "id": "SEX-CORE-37",
+          "category": "life",
+          "question_ids": [
+            "CSE127",
+            "CSE128"
+          ]
+        },
+        {
+          "id": "SEX-CORE-38",
+          "category": "life",
+          "question_ids": [
+            "CSE129",
+            "CSE130"
+          ]
+        },
+        {
+          "id": "SEX-CORE-39",
+          "category": "pastoral",
+          "question_ids": [
+            "CSE131",
+            "CSE132",
+            "CSE133",
+            "CSE134",
+            "CSE135"
+          ]
+        },
+        {
+          "id": "SEX-CORE-40",
+          "category": "pastoral",
+          "question_ids": [
+            "CSE136",
+            "CSE137"
+          ]
+        },
+        {
+          "id": "SEX-CORE-41",
+          "category": "pastoral",
+          "question_ids": [
+            "CSE138",
+            "CSE140"
+          ]
+        },
+        {
+          "id": "SEX-CORE-42",
+          "category": "pastoral",
+          "question_ids": [
+            "CSE139"
+          ]
+        },
+        {
+          "id": "SEX-CORE-43",
+          "category": "pastoral",
+          "question_ids": [
+            "CSE141",
+            "CSE142",
+            "CSE143"
+          ]
+        },
+        {
+          "id": "SEX-CORE-44",
+          "category": "pastoral",
+          "question_ids": [
+            "CSE144"
+          ]
+        },
+        {
+          "id": "SEX-CORE-45",
+          "category": "objections",
+          "question_ids": [
+            "CSE145"
+          ]
+        },
+        {
+          "id": "SEX-CORE-46",
+          "category": "objections",
+          "question_ids": [
+            "CSE146"
+          ]
+        },
+        {
+          "id": "SEX-CORE-47",
+          "category": "objections",
+          "question_ids": [
+            "CSE147"
+          ]
+        },
+        {
+          "id": "SEX-CORE-48",
+          "category": "objections",
+          "question_ids": [
+            "CSE148"
+          ]
+        },
+        {
+          "id": "SEX-CORE-49",
+          "category": "objections",
+          "question_ids": [
+            "CSE149"
+          ]
+        },
+        {
+          "id": "SEX-CORE-50",
+          "category": "objections",
+          "question_ids": [
+            "CSE150"
+          ]
+        }
+      ],
+      "question_ids": [
+        "CSE001",
+        "CSE002",
+        "CSE003",
+        "CSE004",
+        "CSE005",
+        "CSE006",
+        "CSE007",
+        "CSE008",
+        "CSE009",
+        "CSE010",
+        "CSE011",
+        "CSE012",
+        "CSE013",
+        "CSE014",
+        "CSE015",
+        "CSE016",
+        "CSE017",
+        "CSE018",
+        "CSE019",
+        "CSE020",
+        "CSE021",
+        "CSE022",
+        "CSE023",
+        "CSE024",
+        "CSE025",
+        "CSE026",
+        "CSE027",
+        "CSE028",
+        "CSE029",
+        "CSE030",
+        "CSE031",
+        "CSE032",
+        "CSE033",
+        "CSE034",
+        "CSE035",
+        "CSE036",
+        "CSE037",
+        "CSE038",
+        "CSE039",
+        "CSE040",
+        "CSE041",
+        "CSE042",
+        "CSE043",
+        "CSE044",
+        "CSE045",
+        "CSE046",
+        "CSE047",
+        "CSE048",
+        "CSE049",
+        "CSE050",
+        "CSE051",
+        "CSE052",
+        "CSE053",
+        "CSE054",
+        "CSE055",
+        "CSE056",
+        "CSE057",
+        "CSE058",
+        "CSE059",
+        "CSE060",
+        "CSE061",
+        "CSE062",
+        "CSE063",
+        "CSE064",
+        "CSE065",
+        "CSE066",
+        "CSE067",
+        "CSE068",
+        "CSE069",
+        "CSE070",
+        "CSE071",
+        "CSE072",
+        "CSE073",
+        "CSE074",
+        "CSE075",
+        "CSE076",
+        "CSE077",
+        "CSE078",
+        "CSE079",
+        "CSE080",
+        "CSE081",
+        "CSE082",
+        "CSE083",
+        "CSE084",
+        "CSE085",
+        "CSE086",
+        "CSE087",
+        "CSE088",
+        "CSE089",
+        "CSE090",
+        "CSE091",
+        "CSE092",
+        "CSE093",
+        "CSE094",
+        "CSE095",
+        "CSE096",
+        "CSE097",
+        "CSE098",
+        "CSE099",
+        "CSE100",
+        "CSE101",
+        "CSE102",
+        "CSE103",
+        "CSE104",
+        "CSE105",
+        "CSE106",
+        "CSE107",
+        "CSE108",
+        "CSE109",
+        "CSE110",
+        "CSE111",
+        "CSE112",
+        "CSE113",
+        "CSE114",
+        "CSE115",
+        "CSE116",
+        "CSE117",
+        "CSE118",
+        "CSE119",
+        "CSE120",
+        "CSE121",
+        "CSE122",
+        "CSE123",
+        "CSE124",
+        "CSE125",
+        "CSE126",
+        "CSE127",
+        "CSE128",
+        "CSE129",
+        "CSE130",
+        "CSE131",
+        "CSE132",
+        "CSE133",
+        "CSE134",
+        "CSE135",
+        "CSE136",
+        "CSE137",
+        "CSE138",
+        "CSE139",
+        "CSE140",
+        "CSE141",
+        "CSE142",
+        "CSE143",
+        "CSE144",
+        "CSE145",
+        "CSE146",
+        "CSE147",
+        "CSE148",
+        "CSE149",
+        "CSE150"
+      ],
+      "extended_debate_question_ids": [
+        "CSE006",
+        "CSE007",
+        "CSE008",
+        "CSE010",
+        "CSE012",
+        "CSE013",
+        "CSE014",
+        "CSE016",
+        "CSE018",
+        "CSE020",
+        "CSE021",
+        "CSE029",
+        "CSE031",
+        "CSE035",
+        "CSE038",
+        "CSE039",
+        "CSE040",
+        "CSE043",
+        "CSE044",
+        "CSE045",
+        "CSE049",
+        "CSE050",
+        "CSE051",
+        "CSE054",
+        "CSE055",
+        "CSE056",
+        "CSE058",
+        "CSE061",
+        "CSE063",
+        "CSE064",
+        "CSE070",
+        "CSE071",
+        "CSE074",
+        "CSE076",
+        "CSE083",
+        "CSE084",
+        "CSE087",
+        "CSE088",
+        "CSE089",
+        "CSE093",
+        "CSE094",
+        "CSE095",
+        "CSE096",
+        "CSE101",
+        "CSE104",
+        "CSE112",
+        "CSE117",
+        "CSE123",
+        "CSE124",
+        "CSE125",
+        "CSE141",
+        "CSE142",
+        "CSE143",
+        "CSE145",
+        "CSE149"
+      ],
+      "publication_note": "Topics are navigation projections; debates not independently source-certified merely by being present."
+    }
   },
   "apostolate": {
     "parent": "formation/apostolate",
@@ -1616,7 +2385,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.rosary",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:AQ02",
@@ -1628,7 +2407,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.confession",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:AQ03",
@@ -1640,7 +2429,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:AQ04",
@@ -1652,7 +2447,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.mass",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:AQ05",
@@ -1664,7 +2469,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.mass",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.adoration",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:AQ06",
@@ -1676,7 +2491,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.mass",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:AQ07",
@@ -1688,7 +2509,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.eternal_rest",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:AQ08",
@@ -1700,7 +2531,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "AQ",
         "proposed_group": "answer_questions",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:HS01",
@@ -1712,7 +2549,21 @@
         "canonical_owner": "apostolate",
         "scenario_family": "HS",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.confession",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass.prepare",
+            "resolution": "MASS_PREPARE_SURFACE_ONLY"
+          },
+          {
+            "to": "find",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:HS02",
@@ -1724,7 +2575,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "HS",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.confession",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:HS03",
@@ -1736,7 +2597,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "HS",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "find",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:HS04",
@@ -1748,7 +2619,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "HS",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.morning_evening",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.rosary",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:HS05",
@@ -1760,7 +2641,21 @@
         "canonical_owner": "apostolate",
         "scenario_family": "HS",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.eternal_rest",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.good_death",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:HS06",
@@ -1772,7 +2667,25 @@
         "canonical_owner": "apostolate",
         "scenario_family": "HS",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.rites.sick",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.dying_companion",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.confession",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.eternal_rest",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:HS07",
@@ -1784,7 +2697,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "HS",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "find",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:FH01",
@@ -1796,7 +2719,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.rosary",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:FH02",
@@ -1808,7 +2737,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.library",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:FH03",
@@ -1820,7 +2755,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.library",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:FH04",
@@ -1832,7 +2773,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.library",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:FH05",
@@ -1844,7 +2791,21 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.rites.first_communion",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.confession",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass.prepare",
+            "resolution": "MASS_PREPARE_SURFACE_ONLY"
+          }
+        ]
       },
       {
         "id": "apostolate:FH06",
@@ -1856,7 +2817,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.rites.baptism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:FH07",
@@ -1868,7 +2835,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.rites.confirmation",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:FH08",
@@ -1880,7 +2853,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "FH",
         "proposed_group": "help_others",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.library",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "programme.first_friday",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:TF01",
@@ -1892,7 +2875,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "TF",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:TF02",
@@ -1904,7 +2893,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "TF",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:TF03",
@@ -1916,7 +2911,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "TF",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:TF04",
@@ -1928,7 +2929,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "TF",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.rosary",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:TF05",
@@ -1940,7 +2947,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "TF",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.mass",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:DV01",
@@ -1952,7 +2969,25 @@
         "canonical_owner": "apostolate",
         "scenario_family": "DV",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "find",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass.prepare",
+            "resolution": "MASS_PREPARE_SURFACE_ONLY"
+          },
+          {
+            "to": "learn.mass",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:DV02",
@@ -1964,7 +2999,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "DV",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.confession",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "find",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:DV03",
@@ -1976,7 +3021,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "DV",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.adoration",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.benediction",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:DV04",
@@ -1988,7 +3043,17 @@
         "canonical_owner": "apostolate",
         "scenario_family": "DV",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "pray.novenas",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "calendar",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:DV05",
@@ -2000,7 +3065,37 @@
         "canonical_owner": "apostolate",
         "scenario_family": "DV",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "programme.first_friday",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.confession",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass.prepare",
+            "resolution": "MASS_PREPARE_SURFACE_ONLY"
+          },
+          {
+            "to": "mass",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "pray.library",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "calendar",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "FH08",
+            "resolution": "SCENARIO_INTERNAL"
+          }
+        ]
       },
       {
         "id": "apostolate:WC01",
@@ -2012,7 +3107,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "WC",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:WC02",
@@ -2024,7 +3125,13 @@
         "canonical_owner": "apostolate",
         "scenario_family": "WC",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "learn.catechism",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       },
       {
         "id": "apostolate:WC03",
@@ -2036,7 +3143,29 @@
         "canonical_owner": "apostolate",
         "scenario_family": "WC",
         "proposed_group": "introduce_the_faith",
-        "state": "READY_IN_RUNTIME_SOT"
+        "state": "READY_IN_RUNTIME_SOT",
+        "outbound_handoffs": [
+          {
+            "to": "DV01",
+            "resolution": "SCENARIO_INTERNAL"
+          },
+          {
+            "to": "find",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass.prepare",
+            "resolution": "MASS_PREPARE_SURFACE_ONLY"
+          },
+          {
+            "to": "learn.mass",
+            "resolution": "REGISTERED_TARGET"
+          },
+          {
+            "to": "mass",
+            "resolution": "REGISTERED_TARGET"
+          }
+        ]
       }
     ],
     "skills": "Canonical nine APF skills remain owned by Apostolate; do not recast as study dossiers."
@@ -2415,7 +3544,666 @@
       "G301",
       "G419"
     ],
-    "rule": "An item may be projected from several entrances but owns no duplicate text. All links are precise, source/target-approved and return to their source state."
+    "rule": "An item may be projected from several entrances but owns no duplicate text. All links are precise, source/target-approved and return to their source state.",
+    "apostolate_source_handoffs": [
+      {
+        "from": "apostolate:AQ01",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen Communion of Saints and Marian doctrine in Formation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ01",
+        "to": "pray.rosary",
+        "target_surface": "pray",
+        "reason": "Open the canonical Rosary when the person wants Marian prayer; do not duplicate devotional content in Apostolate.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ02",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen the doctrine of Penance in Formation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ02",
+        "to": "pray.confession",
+        "target_surface": "pray",
+        "reason": "Confession preparation belongs to PRAY, not Apostolate.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ03",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen Church authority and the papacy in Formation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ04",
+        "to": "learn.mass",
+        "target_surface": "learn",
+        "reason": "Deepen sacrifice, memorial and participation in Understand the Mass.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ04",
+        "to": "mass",
+        "target_surface": "mass",
+        "reason": "The actual Mass remains owned by the Mass surface.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ05",
+        "to": "learn.mass",
+        "target_surface": "learn",
+        "reason": "Deepen the Eucharist and the Mass in Formation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ05",
+        "to": "pray.adoration",
+        "target_surface": "pray",
+        "reason": "Adoration belongs to PRAY when the user wants to act on the doctrine devotionally.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ06",
+        "to": "learn.mass",
+        "target_surface": "learn",
+        "reason": "Deepen the history, order and meaning of the traditional Roman Mass.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ07",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen the Last Things and Purgatory in Formation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ07",
+        "to": "pray.eternal_rest",
+        "target_surface": "pray",
+        "reason": "The Eternal Rest prayer belongs to the canonical Prayer Library reader.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:AQ08",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen Revelation, Scripture, Tradition and Church authority in Formation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS01",
+        "to": "pray.confession",
+        "target_surface": "pray",
+        "reason": "Confession preparation remains owned by PRAY.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS01",
+        "to": "mass.prepare",
+        "target_surface": "mass",
+        "reason": "Mass preparation remains owned by the Mass surface.",
+        "resolution": "MASS_PREPARE_SURFACE_ONLY",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS01",
+        "to": "find",
+        "target_surface": "find",
+        "reason": "Use Explore/Find to locate a traditional Mass or priest.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS02",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen the doctrine of Penance in the canonical Catechism owner.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS02",
+        "to": "pray.confession",
+        "target_surface": "pray",
+        "reason": "The actual preparation workflow belongs to PRAY.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS03",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Use the canonical Catechism owner for structured doctrinal formation while the person speaks with a priest.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS03",
+        "to": "find",
+        "target_surface": "find",
+        "reason": "Find/Explore can help locate a priest or traditional Catholic community.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS04",
+        "to": "pray.morning_evening",
+        "target_surface": "pray",
+        "reason": "Use the existing morning/evening prayer owner for a simple routine.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS04",
+        "to": "pray.rosary",
+        "target_surface": "pray",
+        "reason": "Rosary remains an owned devotional module rather than being rebuilt here.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS05",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen Catholic teaching on death, judgment, Purgatory and suffrage in the canonical Catechism owner.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS05",
+        "to": "pray.eternal_rest",
+        "target_surface": "pray",
+        "reason": "Use the canonical Eternal Rest prayer for the departed.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS05",
+        "to": "pray.good_death",
+        "target_surface": "pray",
+        "reason": "Good Death remains the ordinary preparation treasury, not a bereavement substitute.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "learn.rites.sick",
+        "target_surface": "learn",
+        "reason": "Serious Illness formation owns the sacramental explanation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "pray.dying_companion",
+        "target_surface": "pray",
+        "reason": "The bedside action/prayer flow belongs to Dying Companion.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "pray.confession",
+        "target_surface": "pray",
+        "reason": "Confession preparation remains owned by PRAY where appropriate.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS06",
+        "to": "pray.eternal_rest",
+        "target_surface": "pray",
+        "reason": "After death, use the canonical Eternal Rest prayer instead of the dying-person flow.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS07",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Deepen the doctrine of the Church while keeping actual harm distinct from an abstract apologetics question.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:HS07",
+        "to": "find",
+        "target_surface": "find",
+        "reason": "Find/Explore can help identify another priest or community when trust has broken down locally.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/hs-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH01",
+        "to": "pray.rosary",
+        "target_surface": "pray",
+        "reason": "The actual Rosary belongs to the canonical PRAY Rosary owner.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH02",
+        "to": "pray.library",
+        "target_surface": "pray",
+        "reason": "Use the Prayer Library for the stored grace before and after meals.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH03",
+        "to": "pray.library",
+        "target_surface": "pray",
+        "reason": "Use the Prayer Library for the canonical morning and evening texts.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH04",
+        "to": "pray.library",
+        "target_surface": "pray",
+        "reason": "Use the canonical Prayer Library for the actual formulas.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH05",
+        "to": "learn.rites.first_communion",
+        "target_surface": "learn",
+        "reason": "First Communion formation remains the canonical owner.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH05",
+        "to": "pray.confession",
+        "target_surface": "pray",
+        "reason": "The Confession preparation workflow remains owned by PRAY.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH05",
+        "to": "mass.prepare",
+        "target_surface": "mass",
+        "reason": "Mass preparation remains owned by the Mass surface.",
+        "resolution": "MASS_PREPARE_SURFACE_ONLY",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH06",
+        "to": "learn.rites.baptism",
+        "target_surface": "learn",
+        "reason": "Baptism formation owns the rite, sponsor criteria and aftercare explanation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH07",
+        "to": "learn.rites.confirmation",
+        "target_surface": "learn",
+        "reason": "Confirmation formation owns preparation, sponsor criteria and ritual explanation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH08",
+        "to": "pray.library",
+        "target_surface": "pray",
+        "reason": "Use the Prayer Library for Sacred Heart prayers and approved texts.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:FH08",
+        "to": "programme.first_friday",
+        "target_surface": "pray",
+        "reason": "First Friday remains the owned reparatory programme.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/fh-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:TF01",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Formation owns the canonical doctrine and exact Catechism content.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/tf-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:TF02",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Formation owns the doctrine; Apostolate owns the act of introducing it.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/tf-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:TF03",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Check canonical doctrine before answering an unresolved doctrinal question.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/tf-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:TF04",
+        "to": "pray.rosary",
+        "target_surface": "pray",
+        "reason": "The actual Rosary remains owned by PRAY.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/tf-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:TF05",
+        "to": "learn.mass",
+        "target_surface": "learn",
+        "reason": "Formation owns the structured course explaining the Roman Mass.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/tf-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:TF05",
+        "to": "mass",
+        "target_surface": "mass",
+        "reason": "The Mass reader owns live following during the liturgy.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/tf-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "find",
+        "target_surface": "find",
+        "reason": "Use Explore/Find to locate the church and practical venue information.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "mass.prepare",
+        "target_surface": "mass",
+        "reason": "Use the canonical Before Mass preparation owner.",
+        "resolution": "MASS_PREPARE_SURFACE_ONLY",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "learn.mass",
+        "target_surface": "learn",
+        "reason": "Formation owns the structured explanation of the traditional Mass.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV01",
+        "to": "mass",
+        "target_surface": "mass",
+        "reason": "The Mass reader owns live following once the liturgy begins.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV02",
+        "to": "pray.confession",
+        "target_surface": "pray",
+        "reason": "The canonical Confession preparation workflow belongs to PRAY.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV02",
+        "to": "find",
+        "target_surface": "find",
+        "reason": "Use Explore/Find when the person needs to identify a priest or church.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV03",
+        "to": "pray.adoration",
+        "target_surface": "pray",
+        "reason": "The canonical Adoration and Visit owner handles private Eucharistic prayer.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV03",
+        "to": "pray.benediction",
+        "target_surface": "pray",
+        "reason": "The canonical Benediction owner follows the public rite.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV04",
+        "to": "pray.novenas",
+        "target_surface": "pray",
+        "reason": "The canonical novena corpus owns texts, histories, modes and provenance.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV04",
+        "to": "calendar",
+        "target_surface": "calendar",
+        "reason": "Calendar owns temporal placement, starts and current/approaching presentation.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "programme.first_friday",
+        "target_surface": "pray",
+        "reason": "The nine-month guided programme owns First Friday execution and user-reported tracking.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "pray.confession",
+        "target_surface": "pray",
+        "reason": "Confession preparation remains owned by PRAY when needed before Communion.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "mass.prepare",
+        "target_surface": "mass",
+        "reason": "Mass preparation remains owned by the Mass surface.",
+        "resolution": "MASS_PREPARE_SURFACE_ONLY",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "mass",
+        "target_surface": "mass",
+        "reason": "The Mass reader owns live following.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "pray.library",
+        "target_surface": "pray",
+        "reason": "The Prayer Library owns the Sacred Heart prayer treasury.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "calendar",
+        "target_surface": "calendar",
+        "reason": "Calendar owns temporal placement and recurrence.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:DV05",
+        "to": "FH08",
+        "target_surface": "apostolate",
+        "reason": "FH08 covers adopting Sacred Heart devotion at the family level.",
+        "resolution": "SCENARIO_INTERNAL",
+        "source": "src/apostolate/dv-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:WC01",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Formation owns the canonical doctrinal content behind the answer; use the matching AQ scenario when a frozen objection applies.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/wc-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:WC02",
+        "to": "learn.catechism",
+        "target_surface": "learn",
+        "reason": "Formation owns doctrinal depth when a sincere objection remains; use the matching AQ scenario only for a genuine objection.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/wc-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "DV01",
+        "target_surface": "apostolate",
+        "reason": "DV01 owns the first-traditional-Mass on-ramp after the invitation is accepted.",
+        "resolution": "SCENARIO_INTERNAL",
+        "source": "src/apostolate/wc-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "find",
+        "target_surface": "find",
+        "reason": "Explore/Find owns venue discovery and practical church information.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/wc-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "mass.prepare",
+        "target_surface": "mass",
+        "reason": "Before Mass owns immediate liturgical preparation.",
+        "resolution": "MASS_PREPARE_SURFACE_ONLY",
+        "source": "src/apostolate/wc-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "learn.mass",
+        "target_surface": "learn",
+        "reason": "Formation owns deeper explanation of the traditional Mass.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/wc-corpus.js",
+        "phone_verified": false
+      },
+      {
+        "from": "apostolate:WC03",
+        "to": "mass",
+        "target_surface": "mass",
+        "reason": "The Mass reader owns live following once the liturgy begins.",
+        "resolution": "REGISTERED_TARGET",
+        "source": "src/apostolate/wc-corpus.js",
+        "phone_verified": false
+      }
+    ],
+    "audit": {
+      "total": 72,
+      "registered_targets": 65,
+      "internal_scenarios": 2,
+      "mass_prepare_surface_only": 5,
+      "unresolved": 0,
+      "verified_in_phone": 0,
+      "meaning": "Registered means a declared route target, not successful navigation or source certification."
+    }
   },
   "guide_policy": {
     "definitions": "Information/context and user-controlled walkthrough are distinct. Source-level classifications are not phone acceptance.",
@@ -2444,6 +4232,47 @@
     ],
     "runtime_implemented": false,
     "source_count_verified": true,
-    "phone_verified": false
+    "phone_verified": false,
+    "apostolate_72_source_handoffs_audited": true
+  },
+  "audit_findings": {
+    "obsolete_apostolate_prayer_handoffs_fixed_on_branch": [
+      {
+        "from": "apostolate:AQ01",
+        "old": "pray.marian",
+        "new": "pray.rosary"
+      },
+      {
+        "from": "apostolate:AQ05",
+        "old": "pray.holy_souls",
+        "new": "pray.eternal_rest"
+      },
+      {
+        "from": "apostolate:HS05",
+        "old": "pray.holy_souls",
+        "new": "pray.eternal_rest"
+      },
+      {
+        "from": "apostolate:HS07",
+        "old": "pray.holy_souls",
+        "new": "pray.eternal_rest"
+      }
+    ],
+    "mass_prepare_handoffs_preserved_for_mass_last": [
+      "apostolate:HS01",
+      "apostolate:FH05",
+      "apostolate:DV01",
+      "apostolate:DV05",
+      "apostolate:WC03"
+    ],
+    "principle": "Do not rename intrinsic Mass routes or reroute Mass lifecycle until final Mass workstream.",
+    "publication_blocks": [
+      "learn.apologetics",
+      "learn.church_crisis"
+    ],
+    "retired_aliases": [
+      "learn.catholic_life",
+      "learn.seasonal_rites"
+    ]
   }
 }
