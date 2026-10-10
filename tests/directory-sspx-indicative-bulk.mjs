@@ -61,7 +61,7 @@ const api=await fetchOfficialSspxPlaceIndex({fetchImpl:async(url)=>{
  requestLog.push(url);return {ok:true,json:async()=>({total:2,items:live.slice(0,2)})};
 }});
 assert.equal(requestLog.length,1);
-assert.ok(requestLog[0].includes("sundayMass=true"));
+assert.ok(!requestLog[0].includes("sundayMass=true"),"All official Mass places must include weekday-only chapels");
 assert.equal(api.length,2);
 assert.deepEqual(await fetchOfficialSspxPlaceIndex({fetchImpl:async()=>{throw Error("offline")}}),[]);
 const names=["sspx-district-seed","sspx-france-first-party","sspx-france-second-pass",

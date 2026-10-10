@@ -1,5 +1,6 @@
 import { auditVenue } from "./contracts.js";
 import { expandLicensedDirectoryFeed } from "./licensed-source-bridge.js";
+import { expandOfficialSspxMassPlaces } from "./official-sspx-discovery.js";
 import { isMapPublishableGeo } from "./geo-provenance.js";
 import {applyIndicativeSspxLocations,applyIndicativeOtherCommunities,fetchOfficialSspxPlaceIndex} from "./sspx-indicative-geo.js";
 export const DEFAULT_PROVIDERS=Object.freeze(["fssp","icksp","ibp","sspx"]);
@@ -334,14 +335,20 @@ export async function loadDirectoryDataset({fetchImpl=fetch,providers=DEFAULT_PR
   // One bulk locality pass: first-party existing registry points work offline.
   // Online, the official SSPX public place index improves local matches.
   // Country-only indicators are explicitly non-routing and never replace surveyed points.
-  const needsSspxCoarse=records.some(r=>r.ministries?.some(m=>m.community_id==="SSPX")
-    &&!isMapPublishableGeo(r.venue?.geo,r.venue?.address?.country_code));
-  const mapIndex=needsSspxCoarse?await fetchOfficialSspxPlaceIndex({fetchImpl}):[];
-  const indicated=applyIndicativeSspxLocations(records,{officialPlaces:mapIndex});
+  // First-party Mass-site discovery is independent of indicative map coverage.
+  // Existing identities are retained and ambiguous duplicates held; times not invented.
+  const hasSspx=records.some(r=>r.ministries?.some(m=>m.community_id==="SSPX"));
+  const mapIndex=hasSspx?await fetchOfficialSspxPlaceIndex({fetchImpl}):[];
+  const officialDiscovery=expandOfficialSspxMassPlaces(mapIndex,{existingRecords:records});
+  const allRecords=[...records,...officialDiscovery.records];
+  if(officialDiscovery.records.length)loaded.push("SSPX-official-global-Mass-list");
+  const indicated=applyIndicativeSspxLocations(allRecords,{officialPlaces:mapIndex});
   const other=applyIndicativeOtherCommunities(indicated.records);
   return Object.freeze({
     records:other.records,
     indicativeGeoSummary:indicated.summary,
+    officialSspxDiscoverySummary:officialDiscovery.summary,
+    officialSspxIdentityReviewCount:officialDiscovery.held.length,
     otherCommunitiesIndicativeGeoSummary:other.summary,
     skippedInvalidRecords:joined.length-sourceRecords.length,
     licensedListingSummary:licensed.summary,
