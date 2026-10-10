@@ -127,6 +127,44 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
   from{opacity:.78;filter:brightness(.90)}
   to{opacity:1;filter:brightness(1)}
 }
+/* Same compact reader grammar in lazy traditional-prayer and novena
+   modules; source texts and devotional state remain untouched. */
+#aoPray435930 .aoReadingPosition{margin:0 0 12px!important}
+#aoPray435930 .aoReadingPosition .aoReaderStageTitle:empty{display:none}
+#aoPray435930 .aoTP381GuideCard>h2,
+#aoPray435930 .aoTP381PrayerCard>h3,
+#aoPray435930 .aoN1CanonHead>b{
+  font-family:var(--ao-font-display,Georgia,serif)!important;
+  font-weight:600!important;font-size:clamp(.88rem,2.6vw,1.03rem)!important;
+  line-height:1.35!important;
+  text-transform:uppercase!important;letter-spacing:.10em!important;
+}
+#aoPray435930 .aoTP381GuideCard{
+  border:0!important;border-top:1px solid var(--ao-rule,rgba(255,255,255,.12))!important;
+  border-radius:0!important;background:transparent!important;
+  padding:16px 2px!important;margin-top:0!important;
+}
+#aoPray435930 .aoTP381GuideCount{
+  color:var(--ao-text-muted,#a1acb9)!important;
+  font-family:var(--ao-font-ui,system-ui,sans-serif)!important;
+}
+#aoPray435930 .aoTP381GuideNav button,
+#aoPray435930 .aoTP381GuideMode button,
+#aoPray435930 .aoTP381Tabs button,
+#aoPray435930 .aoN1Nav button{
+  min-height:44px!important;
+  border-radius:var(--ao-control-radius,11px)!important;
+}
+#aoPray435930 .aoTP381GuideNav button:focus-visible,
+#aoPray435930 .aoN1Nav button:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#c9ad78)!important;
+  outline-offset:2px!important;
+}
+#aoPray435930 .aoN1SourceText>small{
+  display:block;font:600 11px/1.35 var(--ao-font-display,Georgia,serif)!important;
+  letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ao-liturgical-accent-text,var(--ao-liturgical-accent,#c9ad78));
+}
 #aoPray435930 .aoP435930GuideNav button{
   border-radius:var(--ao-control-radius,11px)!important;
   font-family:var(--ao-font-ui,system-ui,sans-serif)!important;
