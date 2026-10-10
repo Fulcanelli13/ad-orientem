@@ -134,6 +134,46 @@ if(yearPath){
   sundayObligationDays:days.filter(d=>d.obligation.sundayUniversal).length,
   days};
 }
+// Every strict ID-linked acquired original must have a real 2026 DayResolver
+// identity, museum/foundation object provenance, a matching original hash, and
+// a curated research-only link. No implicit date/title mapping is permitted.
+if(report.observedYear.days&&report.observedYear.days[0]?.date.startsWith("2026-")){
+ const curated=read("data/calendar/sacred-art-1962-exact-feast-source-links.v1.json");
+ assert.equal(curated.schema,"AO_SACRED_ART_1962_EXACT_FEAST_SOURCE_LINKS_V1");
+ assert.equal(curated.linkCount,curated.links.length);
+ const artworkById=new Map(validOriginals.map(a=>[a.id,a]));
+ const dayById=new Map(report.observedYear.days.filter(d=>d.rank===1).map(d=>[d.observedPrincipalId,d]));
+ const used=new Set();
+ for(const link of curated.links){
+  const name=link.artworkId+"|"+link.observedPrincipalId;
+  assert.ok(!used.has(name),"Duplicate researched exact-feast source link "+name);
+  used.add(name);
+  assert.equal(link.association,"EXACT_FEAST_SUBJECT");
+  assert.equal(link.approvedForProduction,false,"Source research is not production approval");
+  const item=artworkById.get(link.artworkId);
+  assert.ok(item,"Missing physically acquired/sha256 referenced original "+link.artworkId);
+  assert.equal(link.originalSha256,item.acquisition.originalSha256,"Pinned source SHA-256 mismatch");
+  assert.equal(link.museumObjectUrl,item.source.objectUrl,"Official artwork page mismatch");
+  assert.ok(item.tags?.observed1962Identifiers?.includes(link.observedPrincipalId),"Canonical observed source ID absent from original "+name);
+  const day=dayById.get(link.observedPrincipalId);
+  assert.ok(day,"Source is not a 2026 first-class principal "+name);
+  assert.equal(link.observedDate2026,day.date);
+  assert.ok(link.evidence?.length>12,"Missing subject-to-feast evidence");
+ }
+ for(const a of validOriginals){
+  for(const id of a.tags?.observed1962Identifiers||[]){
+   if(dayById.has(id))assert.ok(used.has(a.id+"|"+id),"Observed first-class source ID has no curated acquisition evidence "+a.id+" "+id);
+  }
+ }
+ report.observedYear.curatedSourceAssociations={
+  exactSourceOriginalLinks:curated.links.length,
+  distinctObservedClassIDays:new Set(curated.links.map(l=>l.observedPrincipalId)).size,
+  coveragePct:percentage(new Set(curated.links.map(l=>l.observedPrincipalId)).size,dayById.size),
+  rightsHeldSourceOriginalLinks:curated.links.filter(l=>l.sourceRights!=="CC0").length,
+  publicationApprovedDays:0,
+  status:"SUBJECT_LINKS_RESEARCH_ONLY_NOT_VISUAL_OR_RIGHTS_CERTIFICATION"
+ };
+}
 // This research crosswalk is an observed-source priority worklist,
 // never a licence to infer appointed Scripture or assign final day coverage.
 if(report.observedYear.days&&report.observedYear.days[0]?.date.startsWith("2026-")){
@@ -233,6 +273,7 @@ console.log(JSON.stringify({
  majorCalendarTargets:major.length,majorTargetsBelowMinimum:report.calendarMajorSubjectPool.belowMinimum,
  otherTargets:minor.length,otherBelowMinimum:report.allOtherSubjectPool.belowMinimum,
  observedYearStatus:report.observedYear.status,observedClassCounts:report.observedYear.classCounts||null,
+ curatedExactSourceAssociations:report.observedYear.curatedSourceAssociations||null,
  firstClassResearchPotentialSourcePools:report.firstClassResearchTriage?{
   withOriginals:report.firstClassResearchTriage.daysWithPotentiallyRelevantPoolOriginals,
   total:report.firstClassResearchTriage.rankOneDays,
