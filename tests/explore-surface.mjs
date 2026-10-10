@@ -187,7 +187,7 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   filters:{},
 }));
 assert.match(shrineMapHtml,/Loading source-backed map points/i);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,171,"only provenance-locked shrine Places should publish map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"only provenance-locked shrine Places should publish map points");
 
 const chartresShrine=filterExploreItems(projection.byLens.shrines,{query:"Chartres"});
 assert.equal(chartresShrine.length,1);
@@ -334,7 +334,7 @@ assert.ok(namugongo[0].sections.some(section=>/Uganda Martyrs Day/.test(section.
 const munyonyo=filterExploreItems(projection.byLens.pilgrimages,{query:"Munyonyo"});
 assert.equal(munyonyo.length,1);
 assert.ok(munyonyo[0].sections.some(section=>/Uganda Martyrs/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,171,"Australasia/Africa mapped shrine count drifted");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"Australasia/Africa mapped shrine count drifted");
 
 const guadalupeMx=filterExploreItems(projection.byLens.pilgrimages,{query:"Santa María de Guadalupe"});
 assert.equal(guadalupeMx.length,1);
@@ -366,7 +366,7 @@ assert.equal(chiquinquira.length,1);
 assert.equal(chiquinquira[0].map_publishable,true);
 assert.ok(chiquinquira[0].sections.some(section=>/Chiquinquirá/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,171,"Latin America shrine pin count drifted");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"Latin America shrine pin count drifted");
 
 const banneux=filterExploreItems(projection.byLens.pilgrimages,{query:"Banneux"});
 assert.equal(banneux.length,1);
@@ -408,7 +408,7 @@ assert.equal(sameiro[0].map_publishable,true);
 assert.ok(sameiro[0].sections.some(section=>/Archdiocesan pilgrimage to Sameiro/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 assert.ok(sameiro[0].sections.some(section=>/Feast of Our Lady of Sameiro/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,171,"tranche 7 address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"tranche 7 mapped Place count changed unexpectedly");
 
 const bermontShrine=filterExploreItems(projection.byLens.shrines,{query:"Bermont"});
 assert.ok(bermontShrine.some(item=>item.source_id==="shrine:FR:bermont-greux"),"historical Bermont sanctuary missing from expanded shrine search");
@@ -442,7 +442,7 @@ assert.equal(rueDuBacPilgrimage.length,1);
 assert.equal(rueDuBacPilgrimage[0].map_publishable,true);
 assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Médaille Miraculeuse/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,171,"France tranche address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"France tranche mapped Place count changed unexpectedly");
 
 const wigratzbadShrine=filterExploreItems(projection.byLens.shrines,{query:"Wigratzbad"});
 assert.equal(wigratzbadShrine.length,1);
@@ -468,7 +468,7 @@ const vesperbild=filterExploreItems(projection.byLens.pilgrimages,{query:"Maria 
 assert.equal(vesperbild.length,1);
 assert.ok(vesperbild[0].sections.some(section=>/13th of every month/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,171,"Germany tranche address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"Germany tranche mapped Place count changed unexpectedly");
 
 const oswegoShrine=filterExploreItems(projection.byLens.shrines,{query:"St. Mary of the Assumption Parish and Shrine"});
 assert.equal(oswegoShrine.length,1);
@@ -488,7 +488,7 @@ assert.ok(stockbridgeMercy[0].sections.some(section=>/Divine Mercy Sunday/.test(
 
 const laSaletteShrine=filterExploreItems(projection.byLens.shrines,{query:"La Salette"});
 assert.ok(laSaletteShrine.some(item=>item.source_id==="shrine:US:la-salette-attleboro"),"US La Salette replica shrine lost its original identity");
-assert.equal(laSaletteShrine.find(item=>item.source_id==="shrine:US:la-salette-attleboro").map_publishable,false,"US address-only shrine must not borrow France GPS");
+assert.equal(laSaletteShrine.find(item=>item.source_id==="shrine:US:la-salette-attleboro").map_publishable,true,"US La Salette must use its own source-backed Attleboro complex point, never France GPS");
 assert.ok(laSaletteShrine.some(item=>item.place_id==="place:FR:notre-dame-la-salette-fallavaux"),"French original sanctuary absent from expanded search");
 
 const litchfieldShrine=filterExploreItems(projection.byLens.shrines,{query:"Lourdes in Litchfield"});
@@ -500,7 +500,7 @@ assert.equal(fiskdaleNovena.length,1);
 assert.equal(fiskdaleNovena[0].map_publishable,true);
 assert.ok(fiskdaleNovena[0].sections.some(section=>/18–26 July/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,171,"US Northeast address-only shrines unexpectedly published map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"US Northeast mapped Place count changed unexpectedly");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
@@ -626,7 +626,7 @@ assert.match(homeOwnerSource,/lens:"heritage",view:"map",categories:\["tradition
 // Each documented site appears once even when it has multiple independent claims.
 const heritagePlaces=projectHeritagePlaces(projection);
 assert.deepEqual(HERITAGE_CATEGORIES,["shrines","relics","pilgrimages","apparitions","traditions"]);
-assert.ok(heritagePlaces.length>=171,"mapped shrine places must survive the unified projection");
+assert.ok(heritagePlaces.length>=178,"mapped shrine places must survive the unified projection");
 assert.equal(new Set(heritagePlaces.map(item=>item.place_id)).size,heritagePlaces.length,"unified map duplicated a physical Place");
 assert.equal(exploreMapFeatures(heritagePlaces).length,heritagePlaces.length,"unified Place points must remain source-backed");
 const lourdesCombined=heritagePlaces.find(item=>item.place_id===lourdesShrine[0].place_id);
