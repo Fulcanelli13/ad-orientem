@@ -22,7 +22,7 @@ for(let day=0;day<3;day++){
   assert.equal(model.schema,"ao.tenebrae.1960.hour-reader.v1");
   assert.equal(model.dayIndex,day);
   assert.equal(model.hour,hour);
-  assert.equal(model.steps.length,hour==="MATINS"?30:10);
+  assert.equal(model.steps.length,hour==="MATINS"?32:10);
   assert.equal(model.textsCompleteForSourceDerivedReading,true);
   assert.equal(model.printEditionCriticallyCertified,false);
   assert.equal(model.parishRitualCeremonyCertified,false);
@@ -36,6 +36,8 @@ for(let day=0;day<3;day++){
    assert.deepEqual(model.steps.filter(x=>x.kind==="PSALM").map(x=>x.metadata.psalm),TENEBRAE_EXPECTED_PSALMS.matins[day]);
    assert.ok(model.steps.filter(x=>x.kind==="LESSON").every(x=>x.latin.length>150));
    assert.ok(model.steps.filter(x=>x.kind==="RESPONSORY").every(x=>x.latin.length>90));
+   assert.ok(model.steps.find(x=>x.id==="M.COLLECT").latin.includes("Réspice"));
+   assert.ok(model.steps.find(x=>x.id==="M.PATER").en.includes("Our Father"));
    assert.ok(model.steps.every(x=>!x.latin.includes("&Gloria")),"Wrong Passiontide doxology");
   }else{
    assert.deepEqual(model.steps.filter(x=>x.kind==="PSALM").map(x=>x.metadata.psalm),TENEBRAE_EXPECTED_PSALMS.lauds[day]);
@@ -65,4 +67,4 @@ assert.ok(sourceReads>=9&&sourceReads<=45,"Local source caching not applied: "+s
 const failed=renderTenebraeBody({error:"Source missing"});
 assert.ok(failed.includes('role="alert"')&&!failed.includes('data-tenebrae-section'));
 await assert.rejects(()=>loadTenebraeHour({dayIndex:0,hour:"VESPERS",fetchImpl:localFetch}),/Unknown Tenebrae Office/);
-console.log("Tenebrae full source-native reader: PASS — 6/6 aligned LAT/EN/FR offices; 27 Matins + 10 Lauds steps daily, original Psalter/canticles, 1960 timing and edition holds.");
+console.log("Tenebrae full source-native reader: PASS — 6/6 aligned LAT/EN/FR offices; 32 Matins + 10 Lauds steps daily, original Psalter/canticles, 1960 timing and edition holds.");
