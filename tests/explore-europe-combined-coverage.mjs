@@ -5,6 +5,9 @@ const W1=read("data/explore/europe-acquisition.wave1.research.v1.json");
 const W2=read("data/explore/europe-acquisition.wave2.research.v1.json");
 const C=read("data/explore/europe-acquisition.combined-coverage.review.v1.json");
 const G=read("data/geography/seed-registry.v1.json");
+// Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
+const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
+const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W2.schema,"AO_EXPLORE_EUROPE_RESEARCH_WAVE2_ZERO_COVERAGE_V1");
 assert.equal(W2.status,"RESEARCH_ONLY_NO_PRODUCTION_ASSETS_OR_PINS");
 assert.equal(W2.place_leads.length,12);
@@ -16,7 +19,7 @@ assert.equal(new Set(W2.category_associations.map(x=>x.lead_id)).size,18);
 assert.equal(new Set(W2.source_records.map(x=>x.source_id)).size,16);
 const ids=new Set(W2.place_leads.map(x=>x.research_id));
 const sources=new Set(W2.source_records.map(x=>x.source_id));
-const oldCountries=new Set(G.places.map(p=>p.address.country_code));
+const oldCountries=new Set(historicalPlaces.map(p=>p.address.country_code));
 const wave1Sites=new Set(W1.place_candidates.map(x=>x.lead_id));
 for(const p of W2.place_leads){
  assert.equal(p.publication_status,"RESEARCH_ONLY");
@@ -62,7 +65,7 @@ assert.equal(C.counts.category_associations,W1.other_category_leads.length+W2.ca
 assert.equal(C.counts.source_records,W1.sources.length+W2.source_records.length);
 const empty=[];
 for(const row of C.country_coverage){
- assert.equal(row.existing_canonical_places,G.places.filter(p=>p.address.country_code===row.country_code).length);
+ assert.equal(row.existing_canonical_places,historicalPlaces.filter(p=>p.address.country_code===row.country_code).length);
  assert.equal(row.new_site_leads,W1.place_candidates.filter(p=>p.country_code===row.country_code&&!p.existing_place_id).length);
  assert.equal(row.wave2_new_leads,W2.place_leads.filter(p=>p.country_code===row.country_code).length);
  assert.equal(row.combined_new_leads,row.new_site_leads+row.wave2_new_leads);
