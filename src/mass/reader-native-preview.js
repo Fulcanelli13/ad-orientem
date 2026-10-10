@@ -1431,7 +1431,8 @@ export async function mountNativeReaderPreview({
     const localTransition=postureResolved.owner==="LOCAL_OVERRIDE" &&
       postureResolved.localKey===activeCueId && Boolean(posture);
     const sediliaMovement=focusedFaithful?.conditionalSedilia===true && (
-      ["AO.SM.C0055","AO.SM.C0090"].includes(activeCueId)
+      activeCueId==="AO.SM.C0065" ||
+      activeCueId===customaryPrefs.credoSitStart
     );
     const sediliaReturn=focusedFaithful && !focusedFaithful.conditionalSedilia &&
       customaryPrefs.followPriestSeating!==false &&
@@ -1476,6 +1477,7 @@ export async function mountNativeReaderPreview({
         localPosture:customaryPrefs.localPostures[activeCueId]??"DEFAULT",
         localGesture:customaryPrefs.localGestures?.[activeCueId]??"DEFAULT",
         followPriestSeating:customaryPrefs.followPriestSeating,
+        credoSitStart:customaryPrefs.credoSitStart,
         localPostures:customaryPrefs.localPostures,
         cueId:activeCueId,
         localPostureEditable:Boolean(activeCueId && !cueProjection?.posture?.fixed),
