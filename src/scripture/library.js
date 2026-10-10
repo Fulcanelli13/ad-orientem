@@ -46,7 +46,7 @@ export function mountScriptureLibrary(root,{
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
  const prefs=createScripturePreferences(storage);
  const stored=Boolean(storage?.getItem?.("ao-scripture-v1"));
- const preference=stored?prefs.load().language:language;
+ const preference=context?language:(stored?prefs.load().language:language);
  let lang=["en","fr"].includes(preference)?preference:"en";
  let segmentSet=context?.segments?scriptureSegments(context.segments):null;
  if(segmentSet && context.reference!==scriptureSegmentsReference(segmentSet))
