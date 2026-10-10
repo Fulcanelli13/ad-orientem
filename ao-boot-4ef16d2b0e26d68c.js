@@ -65,6 +65,72 @@ async function applyShiftedPostEpiphany(resolver, sources, date, path, diagnosti
     diagnostic.warnings.push('Restored post-Epiphany Sunday composition applied from XXIII Sunday after Pentecost.');
     return output;
 }
+// The pinned Divinum Officium [Name] clauses and the actual grammatical
+// context of these 1962 commemorative Commons identify the omitted N.
+// Readable witness: DivinumOfficium/divinum-officium@126a07f91ede04664108abb6fb20ace3f4de14b9
+// web/www/missa/{Latin,English,Francais}/Sancti/<path>.txt.
+// This is NOT a generic day/feast-name substitution: the exact commemoration
+// source owns each selected section, language, and Latin grammatical form.
+const NAMED_1962_COMMEMORATION_PRAYERS = Object.freeze({
+    'Sancti/01-23o': {
+        collect: {lat:'Emerentiánæ',en:'Emerentiana',fr:'Émérentienne'},
+        secret: {lat:'Emerentiánæ',en:'Emerentiana',fr:'Émérentienne'},
+        postcommunion: {lat:'Emerentiána',en:'Emerentiana',fr:'Émérentienne'}
+    },
+    'Sancti/02-15': {
+        collect: {lat:'Faustíni et Jovítæ',en:'Faustinus and Jovita',fr:'Faustin et Jovite'}
+    },
+    'Sancti/03-04cc': {
+        // "per beatum N. Summum Pontificem" demands the accusative Lucium.
+        collect: {lat:'Lúcium',en:'Lucius',fr:'Lucien'}
+    },
+    'Sancti/05-25o': {
+        collect: {fr:'Urbain'}
+    },
+    'Sancti/05-26o': {
+        // "per beatum N. Summum Pontificem" demands Eleutherium.
+        collect: {lat:'Eleuthérium',en:'Eleutherius',fr:'Eleuthère'}
+    },
+    'Sancti/06-19o': {
+        collect: {en:'Gervasius and Protasius'},
+        secret: {en:'Gervasius and Protasius'},
+        postcommunion: {en:'Gervasius and Protasius'}
+    }
+});
+function resolve1962CommemorationSaintNames(path, prayers, diagnostic) {
+    const bound = NAMED_1962_COMMEMORATION_PRAYERS[path];
+    if (!bound) return prayers;
+    const result = {...prayers};
+    for (const section of ['collect','secret','postcommunion']) {
+        const prayer = prayers[section];
+        if (!prayer) continue;
+        const corrected = {...prayer};
+        for (const language of ['lat','en','fr']) {
+            const value = String(prayer[language] || '');
+            const count = [...value.matchAll(/\bN\.(?![\p{L}\p{N}])/gu)].length;
+            if (!count) continue;
+            const name = bound[section]?.[language];
+            if (!name) throw new Error('1962 name case/source not certified: '+path+'/'+section+'/'+language);
+            const isPair = path === 'Sancti/02-15' || path === 'Sancti/06-19o';
+            if (count !== (isPair ? 2 : 1))
+                throw new Error('1962 unexpected name slot count: '+path+'/'+section+'/'+language+'/'+count);
+            if (isPair) {
+                const pairPattern = /\bN\.\s*(?:et|and)\s*N\.(?![\p{L}\p{N}])/u;
+                if (!pairPattern.test(value))
+                    throw new Error('1962 noncontiguous martyr name slots: '+path+'/'+section+'/'+language);
+                corrected[language] = value.replace(pairPattern, name);
+            } else {
+                corrected[language] = value.replace(/\bN\.(?![\p{L}\p{N}])/u, name);
+            }
+            if (/\bN\.(?![\p{L}\p{N}])/u.test(corrected[language]))
+                throw new Error('1962 saint-name slot remains unresolved: '+path+'/'+section+'/'+language);
+            diagnostic?.referencesResolved?.push({from:'named-commemoration:'+path+':'+section,
+                to:'source-name:'+path+':'+language,substitution:name});
+        }
+        result[section] = corrected;
+    }
+    return result;
+}
 async function mergeCommemorations(resolver, proper, day, diagnostic) {
     proper.calendarCommemorations = [];
     for (const commemoration of day.commemorations || []) {
@@ -181,6 +247,10 @@ async function mergeCommemorations(resolver, proper, day, diagnostic) {
                 secret={...secret,...nameInPrayer(secret,'Bárbaræ')};
                 postcommunion={...postcommunion,...nameInPrayer(postcommunion,'Bárbara')};
             }
+            // Name case is a property of the exact commemorated source and
+            // its prayer section (not today's principal saint's Proper).
+            ({collect,secret,postcommunion} = resolve1962CommemorationSaintNames(
+                prayerSourcePath, {collect,secret,postcommunion}, diagnostic));
             if (collect)
                 proper.collects.push(collect);
             if (secret)
