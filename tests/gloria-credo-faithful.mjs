@@ -51,7 +51,7 @@ assert.equal(cue("AO.SM.C0061").gestureIconKey,"head_bow","default icon failed t
 assert.equal(updateMassCustomaryPreferences(prefs,{kind:"localGesture",cueId:"bad",value:"GENUFLECT"},storage),prefs);
 const markup=buildReaderShellMarkup({readerPreferences:{mode:"LIVE"},
   session:{resolvedMass:{actualCelebration:{title:"Mass"}}}});
-assert.match(markup,/data-faithful-icon-picker/);
+assert.match(markup,/data-role="faithful-icon-picker"/);
 assert.match(markup,/data-faithful-picker-gesture/);
 assert.match(markup,/data-faithful-picker-posture/);
 assert.match(markup,/data-faithful-icon-open/);
