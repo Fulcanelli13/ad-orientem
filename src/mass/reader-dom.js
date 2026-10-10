@@ -1,4 +1,5 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
+import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 
@@ -688,7 +689,7 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
   const raw=String(text??"");
   const fragments=active ? ritualAnchorFragments(anchor) : [];
   target.replaceChildren();
-  if(!fragments.length){target.textContent=raw;return false;}
+  if(!fragments.length){target.textContent=raw;decorateLiturgicalSpeaker(target,raw);return false;}
 
   const folded=foldRitualText(raw);
   let cursor=0,matched=false;
@@ -713,6 +714,7 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
     target.replaceChildren();
     target.textContent=raw;
   }
+  decorateLiturgicalSpeaker(target,raw);
   return matched;
 }
 
@@ -2019,6 +2021,7 @@ export function createReaderDomAdapter({
             const secondary=doc.createElement("span");
             secondary.className="ao-line-secondary";
             secondary.textContent=p.secondary;
+            decorateLiturgicalSpeaker(secondary,p.secondary);
             node.append(secondary);
           }
           body.append(node);
