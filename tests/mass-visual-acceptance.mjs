@@ -884,11 +884,20 @@ try{
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
-  assert.equal(gloriaBow.posture,"STAND","Gloria posture did not remain visible in the faithful state ribbon");
+  assert.equal(gloriaBow.posture,"SIT","Gloria should show the faithful sitting when the priest is at the sedilia");
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
   assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
+  const faithfulGloriaIcons=await page.evaluate(()=>{
+    const r=document.querySelector("#ao-r17-native-reader-preview");
+    const rows=[...r.querySelectorAll(".ao-reader-paragraph[data-faithful-row-id]")];
+    return {count:rows.length,eachHasPosture:rows.every(row=>Boolean(row.querySelector('[data-faithful-field="posture"] .ao-icon-mask'))),
+      current:rows.find(row=>row.dataset.cueId==="AO.SM.C0061")?.querySelector('[data-faithful-field="gesture"] .ao-icon-mask')?.hidden??null};
+  });
+  assert.ok(faithfulGloriaIcons.count>=1 && faithfulGloriaIcons.eachHasPosture,
+    "each visible Gloria paragraph requires its own faithful posture icon");
+  assert.equal(faithfulGloriaIcons.current,false,"Gloria bow missing from faithful paragraph itself");
   const priestBowArt=await page.evaluate(()=>{
     const root=document.getElementById("ao-r17-native-reader-preview");
     const rail=root?.querySelector('.ao-rail-right [data-channel="priest-action"]');
@@ -930,7 +939,7 @@ try{
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
   assert.match(incarnatus.gesture,/GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
-  assert.equal(incarnatus.posture,"STAND","Incarnatus transient genuflection incorrectly replaced the persistent standing posture");
+  assert.equal(incarnatus.posture,"SIT","Incarnatus transient genuflection must not replace the customary seated posture");
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
