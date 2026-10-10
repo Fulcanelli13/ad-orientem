@@ -245,7 +245,7 @@ assert.ok(kevelaerKerzen);
 assert.equal(kevelaerKerzen.counts.shrines,0);
 assert.equal(kevelaerKerzen.counts.pilgrimages,0);
 assert.equal(kevelaerKerzen.counts.tlm,0,"unresolved 1962-Mass candidate leaked into exact-place TLM projection");
-assert.equal(kevelaerKerzen.map_publishable,true,"mapped Candle Chapel remains contextual without shrine/TLM inference");
+assert.equal(kevelaerKerzen.map_publishable,false,"sourced location alone must not publish an unlinked Candle Chapel as an Explore claim");
 
 const wigratzbad=explorePlaceProfile(profiles,"place:DE:wigratzbad-maria-vom-sieg");
 assert.ok(wigratzbad);
@@ -456,7 +456,7 @@ assert.ok(holywellChurch);
 assert.equal(holywellChurch.counts.shrines,0);
 assert.equal(holywellChurch.counts.pilgrimages,0);
 assert.equal(holywellChurch.counts.tlm,0,"unresolved Holywell parish candidate leaked into exact-place TLM projection");
-assert.equal(holywellChurch.map_publishable,true,"parish Church OSGB coordinate is independent from Holy Well shrine");
+assert.equal(holywellChurch.map_publishable,false,"sourced parish location must remain absent from sacred pins without independently linked heritage records");
 assert.notEqual(holywellChurch.geo.lat,holywell.geo.lat,"church and holy well share an improper identical point");
 
 const penrose=explorePlaceProfile(profiles,"place:AU:penrose-park");
