@@ -274,6 +274,23 @@ function emptyState(vm){
 }
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
+  if(Object.hasOwn(f,"directoryGroup")){
+    let html='<section class="aoFindFilters aoExploreTlmFilters" aria-label="'+esc(L(vm.language,"Mass venue filters","Filtres des lieux de messe"))+'">';
+    html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"Show","Afficher"))+'</span>';
+    html+=pill("directoryGroup","ROME",L(vm.language,"Communities in communion with Rome","Communautés en communion avec Rome"),f.directoryGroup);
+    html+=pill("directoryGroup","ALL",L(vm.language,"All","Tous"),f.directoryGroup);
+    html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
+    html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
+    html+='</div><details class="aoExploreAdvancedFilters"><summary>'+esc(L(vm.language,"Affiliation filters","Filtres par affiliation"))+'</summary>';
+    html+='<section><small>'+esc(L(vm.language,"SOURCE-REPORTED COMMUNITY","COMMUNAUTÉ SELON LES SOURCES"))+'</small><div class="aoFindAffiliations">';
+    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"])
+      html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id)+'</button>';
+    html+='</div></section></details>';
+    html+='<p class="aoPreliminaryDirectoryNotice">'+esc(L(vm.language,
+      "Preliminary locations only. Affiliation comes from listings; an individual Mass’s una-cum status, current celebration and timetable have not been checked. Consult the linked source before visiting.",
+      "Lieux provisoires. L’appartenance est indiquée selon les sources ; le caractère una cum de chaque messe, sa célébration actuelle et ses horaires restent à vérifier. Consultez la source avant toute visite."))+'</p>';
+    return html+'</section>';
+  }
   let html='<div class="aoFindFilters aoExploreTlmFilters">';
   html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"When","Quand"))+'</span>'
     +pill("day","ANY",L(vm.language,"Any day","Tous les jours"),f.day||"ANY")
@@ -390,11 +407,11 @@ export function renderExploreToString(vm){
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
       html+='<div class="aoMapLegend" role="note" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'">'
-        +'<span class="aoMapLegendLabel">'+esc(L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
+        +'<span class="aoMapLegendLabel">'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"Source affiliation","Affiliation selon les sources"):L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
         +'<span data-group="FSSP">FSSP</span><span data-group="ICKSP">ICKSP</span>'
         +'<span data-group="SSPX">SSPX</span><span data-group="DIOCESAN">'+esc(L(vm.language,"Diocesan","Diocésain"))+'</span>'
         +'<span data-group="OTHER">'+esc(L(vm.language,"Other","Autre"))+'</span>'
-        +'<small>'+esc(L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
+        +'<small>'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"All pins provisional; exact entrances and Mass times are not verified.","Tous les repères sont provisoires ; entrées exactes et horaires des messes non vérifiés."):L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
         +'</div>';
     }
   }else if(vm.items.length){
