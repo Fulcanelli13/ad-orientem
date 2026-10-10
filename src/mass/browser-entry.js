@@ -5,6 +5,8 @@
 import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
+import { mountFullMassPreflight } from "./full-mass-preflight.js";
+import "./full-mass-preflight-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
@@ -642,7 +644,7 @@ export async function resumePersistedMass({
   });
 }
 
-export function createBrowserMassController({rogationPreflight=null}={}) {
+export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
   return createMassEntryController({
@@ -659,7 +661,11 @@ export function createBrowserMassController({rogationPreflight=null}={}) {
         hostResolver:runtime()?.resolver?.properResolver,
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
-      return Object.freeze({...options,proper,rogationSelection});
+      const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
+      if(chosen?.kind==="GOOD_FRIDAY" && chosen?.explicitlyChosenForm)
+        throw new Error("GOOD_FRIDAY_IS_NOT_A_MASS_FORM");
+      return Object.freeze({...options,proper,rogationSelection,
+        celebrationForm:chosen?.form??options.celebrationForm});
     },
     openReader: openProductionReader,
   });
@@ -689,7 +695,7 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null };
 
   function tryInstall() {
     state.polls += 1;
@@ -705,7 +711,16 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
           (date)=>runtime().resolver.resolveDay(date):null,
         language:()=>runtimeState()?.language??"en"
       });
-      state.controller = createBrowserMassController({rogationPreflight:state.rogationPreflight});
+      state.fullMassPreflight=mountFullMassPreflight({
+         doc:document,
+         getResolvedMass:()=>celebrationApi().getResolvedMass(),
+         getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
+         language:()=>runtimeState()?.language??"en",
+       });
+       state.controller = createBrowserMassController({
+         rogationPreflight:state.rogationPreflight,
+         fullMassPreflight:state.fullMassPreflight,
+       });
       state.installed = true;
       document.documentElement.dataset.aoR17MassBridge = "ready";
     } catch (error) {
@@ -740,6 +755,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     status: () => Object.freeze({
       installed: state.installed,
       rogationPreflightMounted:Boolean(state.rogationPreflight),
+       fullMassPreflight:state.fullMassPreflight?.status?.()??null,
       polls: state.polls,
       hostApi: Boolean(celebrationApi()?.getResolvedMass),
       presentationOwner: "R17_NATIVE_PRODUCTION",
