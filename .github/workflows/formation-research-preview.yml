@@ -30,6 +30,8 @@ on:
       - 'tests/formation-priority-six-fast-corrections.mjs'
       - 'data/learn/formation-crisis-priority-bulk-amendment-2026-10-10.v1.json'
       - 'tests/formation-crisis-priority-bulk.mjs'
+      - 'data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json'
+      - 'tests/formation-crisis-editorial-bulk.mjs'
       - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json'
@@ -206,6 +208,8 @@ jobs:
         run: node tests/formation-priority-six-fast-corrections.mjs
       - name: Verify 8 Church Crisis original-opponent corrections in 32 bilingual paragraphs
         run: node tests/formation-crisis-priority-bulk.mjs
+      - name: Verify six Church Crisis arguments and thirty historical evidence labels
+        run: node tests/formation-crisis-editorial-bulk.mjs
       - name: Validate all 53 canonical research-linked bilingual dossiers
         run: node tests/formation-canonical-synthesis-batch3.mjs
       - name: Validate new source-first Catholic foundation articles for previously unlinked owners
