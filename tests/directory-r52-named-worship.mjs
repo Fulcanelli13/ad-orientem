@@ -7,8 +7,8 @@ const alias=read("../data/directory/research/staging/map-first-r37/R52-named-wor
 assert.doesNotThrow(()=>validateR49Snapshot(raw));
 const items=projectPreliminaryR49(raw);
 const byPin=new Map(items.map(x=>[x.source_id,x]));
-assert.equal(items.length,1876);
-assert.equal(filterPreliminaryR49(items,{directoryGroup:"ROME"}).length,1019);
+assert.equal(items.length,1879);
+assert.equal(filterPreliminaryR49(items,{directoryGroup:"ROME"}).length,1022);
 assert.equal(filterPreliminaryR49(items,{directoryGroup:"SSPX"}).length,732);
 assert.equal(alias.schema,"AO_R52_NAMED_WORSHIP_SOURCE_ALIASES");
 assert.equal(alias.records.length,6);
