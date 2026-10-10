@@ -228,7 +228,8 @@ assert.equal(real48.sourceAuthorityModel.cardForEvent("MC-CNS-010")?.card?.secti
 
 console.log("PASS real source-first 48 integration: all canonical blocks/paragraphs preserved once; event authority remains on 39-step source model.");
 
-\n// 48-card Guide binding does not silently certify 48 independent rubrics:
+
+// 48-card Guide binding does not silently certify 48 independent rubrics:
  // all cards have a source Guide; Canon/product subdivisions declare inheritance.
 const guideRegistry=load("../data/presentation/guide-registry.v1.json");
 const guideBindings=real48.cards.map(card=>({card,guide:guideForPresentationCard(guideRegistry,card)}));
