@@ -3168,7 +3168,48 @@
         ]
       }
     ],
-    "skills": "Canonical nine APF skills remain owned by Apostolate; do not recast as study dossiers."
+    "skills": "Canonical nine APF skills remain owned by Apostolate; do not recast as study dossiers.",
+    "landing": {
+      "intents": [
+        {
+          "id": "answer",
+          "en": "Answer a question",
+          "fr": "Répondre à une question",
+          "source_scenario_prefixes": [
+            "AQ"
+          ],
+          "scenario_count": 8
+        },
+        {
+          "id": "help",
+          "en": "Help someone",
+          "fr": "Aider quelqu’un",
+          "source_scenario_prefixes": [
+            "HS",
+            "FH"
+          ],
+          "scenario_count": 15
+        },
+        {
+          "id": "introduce",
+          "en": "Introduce the Faith",
+          "fr": "Faire découvrir la foi",
+          "source_scenario_prefixes": [
+            "TF",
+            "DV",
+            "WC"
+          ],
+          "scenario_count": 13
+        }
+      ],
+      "utility": {
+        "id": "practice",
+        "en": "Practise",
+        "fr": "S’exercer",
+        "scope": "All 36 scenarios, source-owned model answers and skills, no saved draft"
+      },
+      "implementation": "src/apostolate/presentation.js and src/apostolate/browser-entry.js"
+    }
   },
   "content_census": {
     "formation": {
@@ -4263,7 +4304,8 @@
     "entry_presentation_implemented": true,
     "apostolate_obsolete_prayer_handoffs_repaired": true,
     "user_visible_content_crosslinks_implemented": true,
-    "reason": "Pray and Formation entry hierarchy implemented; 9 of 20 contextual links were already source wired, 11 remain proposed; phone acceptance still outstanding."
+    "reason": "Pray and Formation entry hierarchy implemented; 9 of 20 contextual links were already source wired, 11 remain proposed; phone acceptance still outstanding.",
+    "apostolate_intention_navigation_implemented": true
   },
   "audit_findings": {
     "obsolete_apostolate_prayer_handoffs_fixed_on_branch": [
