@@ -4,7 +4,7 @@ import {execFileSync} from "node:child_process";
 import {mkdirSync,writeFileSync} from "node:fs";
 const repo=process.env.GITHUB_REPOSITORY;
 if(!repo||!/^[\w.-]+\/[\w.-]+$/.test(repo))throw new Error("GITHUB_REPOSITORY missing");
-const api=path=>JSON.parse(execFileSync("gh",["api","--paginate",`repos/${repo}/${path}`],{encoding:"utf8",maxBuffer:35*1024*1024}));
+const api=path=>JSON.parse(execFileSync("gh",["api","--paginate","--slurp",`repos/${repo}/${path}`],{encoding:"utf8",maxBuffer:35*1024*1024})).flat();
 const branches=api("branches?per_page=100");
 const prs=api("pulls?state=all&per_page=100");
 const byBranch=new Map();
