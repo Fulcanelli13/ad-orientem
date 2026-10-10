@@ -50,8 +50,8 @@ keys=iconKeysForReaderState({
 });
 assert.equal(keys.responseIconKey,"response");
 assert.equal(keys.priestVoiceIconKey,"priest_silent");
-assert.equal(keys.priestPositionIconKey,"priest_centre");
-assert.equal(keys.priestActionIconKey,"priest_elevate_host_rich","recovered v4.6 Host elevation art is not wired");
+assert.equal(keys.priestPositionIconKey,"priest_gospel_rich");
+assert.equal(keys.priestActionIconKey,"priest_elevation","user-selected original v1.80 Host elevation artwork is not wired");
 assert.equal(keys.scholaIconKey,"schola");
 
 keys=iconKeysForReaderState({
@@ -75,7 +75,7 @@ assert.equal(keys.priestPositionIconKey,"priest_facing_people","top PRIEST posit
 keys=iconKeysForReaderState({priestPosition:{
   station:"SEDILIA",facing:"PEOPLE_OR_ALTAR_ACCORDING_TO_LAYOUT"
 }});
-assert.equal(keys.priestPositionIconKey,"priest_sedilia",
+assert.equal(keys.priestPositionIconKey,"priest_sedilia_rich",
   "layout-dependent sedilia stole the explicit facing-people pictogram");
 keys=iconKeysForReaderState({priestPosition:{
   station:"ALTAR_CENTER",facing:"PEOPLE_DURING_TURN"
@@ -143,4 +143,4 @@ const unmapped=primaryMatrix.filter(row=>{
 assert.deepEqual(unmapped.map(x=>x.cueId+":"+x.label),[],
   "source priest gestures missing a real v1.80 icon or rubric binding");
 
-console.log("reader icons: PASS — v1.77 plain position pictograms and exact v4.6 rich action art remain separately owned.");
+console.log("reader icons: PASS — user-reviewed v1.80 position/action artwork and cue ownership.");
