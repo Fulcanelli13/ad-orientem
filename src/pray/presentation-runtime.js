@@ -1,3 +1,4 @@
+import { captureModuleOrigin, returnToObservedOrigin } from "../app/module-return.js";
 import "./confession-path-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
 import "./canonical-data.js";
@@ -197,6 +198,7 @@ function load(){
 }
 let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
+let entryOrigin=null;
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false};
@@ -283,6 +285,7 @@ function shell(){
 }
 function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
+  entryOrigin=captureModuleOrigin(window,'pray');
   homeNavigationError=false;
   if(!document.getElementById('aoPrayerBookRoot')?.classList?.contains('open'))clearRosaryDonorReturn();
   returnContext=Object.prototype.hasOwnProperty.call(opts,'returnContext')?opts.returnContext:PRAY_CTX;returnFocus=opts.trigger||document.activeElement;
@@ -1191,10 +1194,13 @@ function backToParent(){
  if(view==='family'){view='home';familyId=null;navStack=[];return render()}
  if(view==='adoration'&&ADOR.mode!=='home'){ADOR.mode='home';return render()}
  if(view==='library'&&LIB.open){LIB.open=null;return render()}
- if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}
+ if(view==='prayerOnly'&&entryOrigin?.parentVisited){view=prayerReturnView||'library';return render()}
  if(view!=='home'&&navStack.length){popView();return render()}
  if(view!=='home'&&familyId){view='family';return render()}
- return close();
+ return returnToObservedOrigin(window,entryOrigin,{
+   close:()=>close({silent:true}),
+   restoreParent:()=>open('pray.hub',{returnContext:PRAY_CTX})
+ });
 }
 async function goGlobalHome(){
  if(homeNavigationPending)return false;
