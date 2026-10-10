@@ -23,7 +23,14 @@ export function returnToObservedOrigin(win=globalThis,receipt,{
 }={}){
   const origin=receipt?.surface;
   const parent=receipt?.parentVisited===true&&origin===receipt?.domain;
+  // The canonical Formation owner owns an explicitly registered return to a
+  // bedside Prayer module or Apostolate scenario. Its child monitor must see
+  // the child close and perform that exact return; reopening Formation here
+  // would cancel the monitor and strand the user on an unvisited landing.
+  const external=parent&&receipt?.domain==="learn"
+    ?win?.AO_LEARN_APP_V1?.status?.()?.externalReturn:null;
   close();
+  if(external?.surface==="pray"||external?.surface==="apostolate")return true;
   if(parent){
     // Restores the genuinely visited suspended section, preserving its
     // selected family/search. Never synthesise that parent for a deep link.
