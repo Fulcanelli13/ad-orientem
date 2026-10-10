@@ -453,12 +453,12 @@ try{
  const marriageRoot="#ao-learn-traditional-root";
  await page.locator(marriageRoot+" [data-ao-tradlearn-ethics-context]").waitFor({state:"attached",timeout:12000});
  await page.locator(marriageRoot+" [data-ao-tradlearn-ethics-context]").evaluate(el=>{const details=el.closest("details");if(details)details.open=true});
+ await page.locator(marriageRoot).evaluate(el=>{el.scrollTop=Math.min(180,Math.max(0,el.scrollHeight-el.clientHeight))});
  await page.locator(marriageRoot+" [data-ao-tradlearn-ethics-context]").tap();
  await page.waitForFunction(()=>globalThis.AO_SEXUAL_ETHICS_V1?.status?.()?.view==="section",null,{timeout:15000});
  assert.equal(await page.evaluate(()=>globalThis.AO_TRADITIONAL_LEARN_V381.status().route),"learn.rites.matrimony");
  const marriageScroll=await page.evaluate(()=>document.querySelector("#ao-learn-traditional-root").scrollTop);
  await page.evaluate(()=>document.querySelector("#ao-learn-traditional-root").scrollTop=0);
- await page.locator("#ao-sexual-ethics-root [data-ao-cse-back]").tap();
  await page.locator("#ao-sexual-ethics-root [data-ao-cse-back]").tap();
  assert.equal(await page.locator("#ao-sexual-ethics-root").count(),0,"Contextual Sexual Ethics failed to close");
  assert.equal(await page.evaluate(()=>document.querySelector("#ao-learn-traditional-root").scrollTop),marriageScroll,"Matrimony scroll position lost on contextual Back");
