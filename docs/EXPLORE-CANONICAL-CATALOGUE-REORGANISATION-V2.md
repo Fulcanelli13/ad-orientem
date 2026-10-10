@@ -55,6 +55,44 @@ Active published counts in the inspected seed:
 
 Never report `89 Traditions` as 89 customs: this is currently 71 attestation + 18 novena-context discovery items.
 
+## Reconciliation baseline — source-linked Places, 10 October 2026
+
+The review-only ledger is `data/explore/heritage-place-reconciliation.review.v1.json`.
+It is derived from the current published seeds and verified by
+`tests/heritage-place-reconciliation.mjs`. It is **not** a replacement for the
+geography, shrine, pilgrimage, apparition, relic, custom or novena registries.
+
+| Source-owned records | Records | Distinct referenced Places |
+| --- | ---: | ---: |
+| Shrines | 178 | 178 |
+| Pilgrimages | 206 | 178 |
+| Relic custody/veneration claims | 122 | 92 |
+| Apparition accounts | 32 | 29 |
+| Custom geographic attestations | 71 | 55 |
+| Novena/context links | 18 | 10 |
+| Documented routes | 20 | 18 |
+| Directory ↔ exact Place links | 9 | 9 |
+
+The 182-Place registry contains 180 Places associated with at least one of the
+above record families and two contextual Places with no direct published
+claim: Kerzenkapelle Kevelaer and St Winefride's RC Church, Holywell. These
+are retained, **not** removed or turned into speculative shrine markers.
+
+Nine Places have **pending coordinates** (`lat: null, lng: null`). This is
+different from having a published coordinate with no source URL. The review
+ledger flags them for future georeferencing. There are zero dangling Place IDs
+or pilgrimage-destination Shrine IDs in this audited seed snapshot.
+
+Distinct referenced Places are *not* necessarily mapped pins: a Place still
+requires the existing publication/provenance gate before it can be plotted.
+Unlocated country/area-only attestations remain documentary, never invented
+points. No independent claim about present opening hours, relic authenticity,
+or apparition supernatural character follows from the crosswalk.
+
+The map-first interface now leaves the default map unobstructed. Selecting the
+Customs filter opens the horizontal thematic strip; source-owned list views
+remain available inside the More disclosure without occupying the primary UI.
+
 ## Migration order
 
 ### A. Repair discovery without rewriting evidence (this branch)
