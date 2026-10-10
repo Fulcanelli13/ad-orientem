@@ -1,0 +1,94 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_MAJOR_EXCEPTIONS_V1",
+  "date": "2026-10-10",
+  "purpose": "Priority-only pinned launch: three major geographic exceptions and one existing Place pin correction",
+  "promoted": [
+    {
+      "candidate_id": "SG-INV-0107",
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "shrine_id": "shrine:ES:real-monasterio-santa-maria-guadalupe",
+      "name": "Real Monasterio de Santa María de Guadalupe",
+      "country": "ES",
+      "coordinates": {
+        "lat": 39.45285,
+        "lng": -5.3275
+      },
+      "precision": "complex_anchor",
+      "geoUrl": "https://whc.unesco.org/en/list/665/maps/",
+      "officialUrl": "https://whc.unesco.org/en/list/665/",
+      "note": "Monastery complex point supplied by UNESCO; not a specific entrance, church altar, or footprint."
+    },
+    {
+      "candidate_id": "SG-INV-0560",
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "shrine_id": "shrine:IL:capernaum-saint-peter-memorial",
+      "name": "Memorial of Saint Peter — Capernaum",
+      "country": "IL",
+      "coordinates": {
+        "lat": 32.880999,
+        "lng": 35.575371
+      },
+      "precision": "complex_anchor",
+      "geoUrl": "https://www.octagonproject.org/news/the-modern-church-at-capernaum",
+      "officialUrl": "https://www.custodia.org/en/sanctuaries/capernaum/",
+      "note": "Complex-level point shared by modern elevated church, fifth-century octagonal church ruins, and traditionally identified Peter's house; no claim of precise entrance or separate subsite."
+    },
+    {
+      "candidate_id": "SG-INV-0668",
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "shrine_id": "shrine:VN:our-lady-la-vang-national-shrine",
+      "name": "National Marian Shrine of Our Lady of La Vang",
+      "country": "VN",
+      "coordinates": {
+        "lat": 16.70546,
+        "lng": 107.19586
+      },
+      "precision": "complex_anchor",
+      "geoUrl": "https://www.openstreetmap.org/way/690204938",
+      "officialUrl": "https://www.vaticannews.va/en/church/news/2026-08/vietnam-celebrations-at-the-marian-shrine-of-la-vang.html",
+      "note": "Representative point at present basilica complex; not historic destroyed chapel, separate shrine monument, or asserted apparition location."
+    }
+  ],
+  "updated_existing": [
+    {
+      "candidate_id": "SG-INV-0426",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "canonical_identity_reused": true,
+      "old_geo": {
+        "lat": 19.4844,
+        "lng": -99.1168,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.sacred-destinations.com/mexico/mexico-city-basilica-guadalupe",
+        "source_ref": "SACRED-DESTINATIONS:new-basilica",
+        "matched_country_code": "MX",
+        "verified_at": "2026-10-09"
+      },
+      "new_geo": {
+        "lat": 19.48485,
+        "lng": -99.11786,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/120733641",
+        "source_ref": "osm:way:120733641",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "MX",
+        "verified_at": "2026-10-10"
+      },
+      "policy": "Use modern 1976 basilica building, not the old/historic church. Do not mint duplicate sanctuary marker."
+    }
+  ],
+  "held": [
+    {
+      "candidate_id": "SG-INV-0673",
+      "label": "La Vang subsite / Vietnamese Martyrs",
+      "reason": "Not a distinct independently geolocated building. Covered at parent sanctuary only, no extra pin."
+    }
+  ],
+  "control": [
+    "No new Bible Atlas route or candidate created.",
+    "No Directory venue relation inferred from pilgrimage status.",
+    "Campus point does not certify exact entrance or a supernatural event.",
+    "Current published pin counts become 220 Places / 216 Shrines."
+  ]
+}
