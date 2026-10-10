@@ -113,6 +113,16 @@ try{
  await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
  await dialog.locator(".aoScriptureNav input").nth(1).fill("1");
  await dialog.locator(".aoScriptureNav input").nth(1).dispatchEvent("change");
+ assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1",
+   "Manual Psalter chapter navigation must retain the chosen location");
+ const psalmSourceAlignment=await page.evaluate(async()=>{
+   const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader;
+   const ref=await import("/src/scripture/reference-safety.js");
+   return ref.scriptureParallelReferenceState(p.passage,p.editionId,"cpdv-2009");
+ });
+ assert.equal(psalmSourceAlignment.canAutoParallel,true,
+   "Source-verified Psalm 22:1 must preserve its reference when switching to CPDV");
+ assert.equal(psalmSourceAlignment.reference?.chapter,22);
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Psalms 22:1");
  await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
@@ -224,8 +234,9 @@ try{
  await notice.waitFor({state:"visible",timeout:8000});
  assert.match(await notice.innerText(),/Missal presents these verses in liturgical order/);
  assert.match(await notice.innerText(),/then 3:47–48, then 3:50–51/);
- assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,
-   "Liturgical note must never unlock unlicensed Bible text");
+ await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
+ assert.ok(await dialog.locator(".aoScriptureVerse").count()>=5,
+   "The canonically ordered Daniel witness should render while preserving liturgical-order warning");
  await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await notice.innerText(),/ordre liturgique/);
@@ -241,6 +252,33 @@ try{
    reference:"Daniel 3:47–51",liturgicalArrangement:{...arrangement,liturgicalVerseOrder:["Daniel 3:47–51"]}
   }),{daniel,arrangement}),false,
   "Unproven liturgical verse order must never open a misleading Context");
+ // Restored Douay now extends beyond the Gospels to the entire Catholic canon.
+ assert.equal(await page.evaluate(()=>
+   globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Genesis 1:1",{language:"en"})),true);
+ await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),1);
+ const douayGenesis=(await dialog.locator(".aoScriptureVerse").first().innerText()).trim();
+ assert.match(douayGenesis,/beginning/i);
+ await dialog.locator("[data-scripture-context-depth='chapter']").click();
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),31,
+   "All Genesis 1 verses should be readable in the app, not external links");
+ await dialog.locator(".aoScriptureBrowse summary").click();
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
+ await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),31);
+ const cpdvGenesis=(await dialog.locator(".aoScriptureVerse").first().innerText()).trim();
+ assert.notEqual(cpdvGenesis,douayGenesis,"The CPDV must provide genuinely different contemporary-English text");
+ await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
+ await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
+ assert.equal((await dialog.locator(".aoScriptureVerse").first().innerText()).trim(),douayGenesis);
+ await dialog.locator("[data-scripture-close]").click();
+ // Invalid or absent source verse coordinates must be announced, never rendered as a blank Bible.
+ assert.equal(await page.evaluate(()=>
+   globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Genesis 1:199",{language:"en"})),true);
+ await dialog.locator("[data-scripture-missing-verse='Genesis 1:199']").waitFor({state:"visible",timeout:12000});
+ assert.match(await dialog.locator(".aoScriptureVerseMissing").innerText(),/absent from this transcription/);
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),0);
+ await dialog.locator("[data-scripture-close]").click();
   assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{

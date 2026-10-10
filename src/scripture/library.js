@@ -310,7 +310,31 @@ export function mountScriptureLibrary(root,{
        sourceNotice.dataset.scriptureWitnessUnreviewed=editionId;
        textBlock.append(sourceNotice);
      }
-     for(const item of chapterEntries.filter(item=>contextDepth==="chapter"||!context?.reference|| (item.verseStart>=location.verseStart&&item.verseStart<=location.verseEnd))){
+     const selectedRows=chapterEntries.filter(item=>contextDepth==="chapter"||!context?.reference||
+        (item.verseStart>=location.verseStart&&item.verseStart<=location.verseEnd));
+     if(!selectedRows.length){
+       const missing=element("p",lang==="fr"
+         ?"Le verset demandé n'est pas présent dans cette transcription. Vérifiez la référence dans l'édition source."
+         :"The requested verse is absent from this transcription. Check its numbering against the source edition.","aoScriptureNotice aoScriptureVerseMissing");
+       missing.setAttribute("role","status");
+       missing.dataset.scriptureMissingVerse=location.book+" "+location.chapter+":"+location.verseStart;
+       textBlock.append(missing);
+     }
+     if(contextDepth==="chapter"&&chapterEntries[0]?.sourceWitness){
+       const gaps=[];
+       for(let i=1;i<chapterEntries.length;i++){
+         const previous=chapterEntries[i-1].verseStart,current=chapterEntries[i].verseStart;
+         for(let verse=previous+1;verse<current&&gaps.length<20;verse++)gaps.push(verse);
+       }
+       if(gaps.length){
+         const gapNote=element("p",(lang==="fr"
+           ?"Numéros de versets absents dans cette transcription : "
+           :"Missing verse numbers in this source transcription: ")+
+           gaps.join(", ")+(gaps.length===20?"…":""),"aoScriptureNotice aoScriptureVerseGap");
+         gapNote.setAttribute("role","status");textBlock.append(gapNote);
+       }
+     }
+     for(const item of selectedRows){
        const verse=element("p",item.text,"aoScriptureVerse");verse.dataset.verse=String(item.verseStart);
        const sup=element("span",String(item.verseStart)+" ");sup.className="aoScriptureVerseNumber";
        verse.prepend(sup);textBlock.append(verse);
@@ -404,7 +428,19 @@ export function mountScriptureLibrary(root,{
  return Object.freeze({
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
    setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
-   setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");const closeFocused=wrap.querySelector("[data-scripture-close]")===document.activeElement;records=next;draw();if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});},
+   setRecords(next){
+     if(!Array.isArray(next))throw new TypeError("Scripture records array required");
+     const current=document.activeElement;
+     const closeFocused=wrap.querySelector("[data-scripture-close]")===current;
+     records=next;
+     // Do not replace a live number input during an asynchronous fetch.
+     // A browser can still be composing or editing its value; recreating it
+     // makes a typed "22" become "1", "122", or otherwise lose the input.
+     // The chapter/verse change handler calls draw() when the edit commits.
+     if(current?.matches?.(".aoScriptureNav input"))return;
+     draw();
+     if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
+   },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });

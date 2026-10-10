@@ -1,6 +1,6 @@
 import {CATHOLIC_BOOK_IDS} from "./canon.js";
 const CATALOGUE=Object.freeze({
- "dr-challoner":Object.freeze(["Matthew","Mark","Luke","John"]),
+ "dr-challoner":CATHOLIC_BOOK_IDS,
  "cpdv-2009":CATHOLIC_BOOK_IDS,
  "crampon-1923":Object.freeze(["Matthew","Mark","Luke","John","Acts","1Corinthians","Revelation","SongOfSongs","Isaiah","Judith","Psalms"])
 });
@@ -24,7 +24,7 @@ export function validateScriptureWitness(data,editionId,book){
   editionId,book,chapter,verseStart,verseEnd:verseStart,text,
   sourceWitness:true,reviewed:false,sourceEdition:editionId,
   licenceId:"UNCOLLATED_CATHOLIC_SOURCE_WITNESS",
-  sourceUrl:"https://github.com/"+data.sourceRepository+"/blob/main/"+data.sourcePath,
+  sourceUrl:"https://github.com/"+data.sourceRepository+"/blob/"+(data.sourceCommit||"main")+"/"+data.sourcePath,
   sourceStatus:data.sourceStatus
  }));
 }
