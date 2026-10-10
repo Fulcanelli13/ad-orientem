@@ -31,6 +31,7 @@ try{
  await page.waitForSelector('[data-ao-app-surface="find"]',{state:"visible",timeout:30000});
  await page.locator('[data-ao-app-surface="find"]').tap();
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready",null,{timeout:60000});
+ await page.locator("#ao-find-modular-root .aoHeritageMore summary").tap({timeout:15000});
  await page.locator("#ao-find-modular-root [data-bible-atlas-open]").tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===true&&
   document.querySelector("[data-bible-atlas]"),null,{timeout:15000});
