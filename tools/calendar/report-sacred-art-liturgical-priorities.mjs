@@ -37,8 +37,15 @@ assert.ok(major.every(t=>feastSet.has(t.id)||seasonSet.has(t.id)));
 const majorFeasts=major.filter(t=>feastSet.has(t.id));
 const seasonSupport=major.filter(t=>seasonSet.has(t.id));
 const minor=subjectReport.subjects.filter(s=>!config.majorCalendarSubjectIds.includes(s.id));
-const summ=(rows)=>({targets:rows.length,meetingOriginalMinimum:rows.filter(x=>x.missingToMinimum===0).length,
- belowMinimum:rows.filter(x=>x.missingToMinimum>0).length,missingSourceSlots:rows.reduce((n,x)=>n+x.missingToMinimum,0)});
+const percentage=(n,d)=>d?Math.round(1000*n/d)/10:null;
+const summ=(rows)=>{
+ const met=rows.filter(x=>x.missingToMinimum===0).length;
+ return {targets:rows.length,meetingOriginalMinimum:met,meetingOriginalMinimumPct:percentage(met,rows.length),
+ belowMinimum:rows.length-met,belowMinimumPct:percentage(rows.length-met,rows.length),
+ missingSourceSlots:rows.reduce((n,x)=>n+x.missingToMinimum,0),
+ zeroAcquiredOriginals:rows.filter(x=>x.downloadedOriginals===0).length,
+ zeroExplicitSourceCandidates:rows.filter(x=>x.sourceCandidates===0).length};
+};
 const shaOk=a=>/^[a-f0-9]{64}$/i.test(String(a.acquisition?.originalSha256||""))&&!!a.acquisition?.archiveOriginal;
 const validOriginals=originals.artworks.filter(shaOk);
 const byObservedId=new Map();
@@ -91,8 +98,15 @@ const report={
  calendarMajorSubjectPool:{...summ(major),subjects:major},
  majorFeastsAndPrincipalDays:{...summ(majorFeasts),subjects:majorFeasts},
  seasonalSupport:{...summ(seasonSupport),subjects:seasonSupport},
+ moduleCoverage:Object.fromEntries(["rosary","station","devotion","scripture","person","formation"].map(key=>[
+  key,summ(minor.filter(x=>x.id.startsWith(key+".")))])),
+ traditionalRosary:{...summ(minor.filter(x=>/^rosary\.(?:joy|sor|glo)/.test(x.id)))},
  allOtherSubjectPool:{...summ(minor),subjectsBelowMinimum:minor.filter(x=>x.missingToMinimum>0).map(s=>({id:s.id,missing:s.missingToMinimum}))},
  obligationCandidateCount:config.obligationCandidates.length,
+ obligationCoverage:{status:"NOT_AUDITABLE_WITHOUT_JURISDICTION",universalSundays:"REQUIRES_2026_OBSERVED_YEAR_ARTWORK_MAPPING",
+  possibleWeekdayCategories:config.obligationCandidates.filter(x=>x.key!=="sunday").length,
+  locallyVerifiedWeekdayCategories:null,locallyCoveredPct:null,
+  note:"Not 0%: denominator of binding non-Sunday obligations must be determined from each local Church's rules."},
  obligationRules:"Sundays universally obligatory. No locally obligatory weekday can be labelled until territorial norms are sourced. Civil-date feast candidate is never sufficient.",
  observedYear:{status:"NOT_AUDITED",note:"Missing dated production DayResolver sweep. Calendar target minimum coverage does not establish all I-class days have artwork.",yearFile:null},
  releaseApprovedOriginals:0
@@ -106,6 +120,7 @@ if(yearPath){
   return [String(rank),{
    observedDays:subset.length,
    explicitOriginalMappedDays:subset.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>=1).length,
+   explicitOriginalMappedPct:percentage(subset.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>=1).length,subset.length),
    stillMissingOrUnresolved:subset.filter(d=>d.acquiredExplicitObservedPrincipalOriginals<1).length,
    approvedDays:subset.filter(d=>d.approvedOriginals>=1).length
   }];
@@ -113,6 +128,8 @@ if(yearPath){
  report.observedYear={status:days.some(d=>d.status==="UNRESOLVED_SOURCE_DAY")?"PARTIAL_RESOLVER_EVIDENCE":"COMPLETE_SOURCE_SWEEP_NOT_ART_CERTIFICATION",
   yearFile:yearPath,days:days.length,unresolvedDays:days.filter(d=>d.status==="UNRESOLVED_SOURCE_DAY").length,
   classCounts:perClass,
+  completeYearArtworkIdsMapped:days.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>0).length,
+  completeYearArtworkIdsMappedPct:percentage(days.filter(d=>d.acquiredExplicitObservedPrincipalOriginals>0).length,days.length),
   classIStillMissing:days.filter(d=>d.rank===1&&d.acquiredExplicitObservedPrincipalOriginals===0),
   sundayObligationDays:days.filter(d=>d.obligation.sundayUniversal).length,
   days};
@@ -128,6 +145,11 @@ const L=[
  "Major feast/Triduum subjects: "+majorFeasts.length+"; "+report.majorFeastsAndPrincipalDays.meetingOriginalMinimum+" meet acquisition minimum; "+report.majorFeastsAndPrincipalDays.belowMinimum+" under target.",
  "Secondary seasonal support: "+seasonSupport.length+"; "+report.seasonalSupport.meetingOriginalMinimum+" meet acquisition minimum; "+report.seasonalSupport.belowMinimum+" under target.",
  "All canonical calendar subject targets: "+major.length+".",
+ "",
+ "## Module source-original acquisition (not curator approval)",
+ ...Object.entries(report.moduleCoverage).map(([key,m])=>"- "+key+": "+m.meetingOriginalMinimum+"/"+m.targets+" targets ("+m.meetingOriginalMinimumPct+"%), "+m.missingSourceSlots+" missing subject-original slots."),
+ "Traditional Rosary: "+report.traditionalRosary.meetingOriginalMinimum+"/"+report.traditionalRosary.targets+" targets meet required originals ("+report.traditionalRosary.meetingOriginalMinimumPct+"%).",
+ "",
  "Other module and supplemental targets: "+minor.length+"; "+report.allOtherSubjectPool.belowMinimum+" under target.",
  "",
  "**This is a source-only audit. No original is approved for publication.**",
@@ -139,7 +161,7 @@ const L=[
   "Source dates: "+report.observedYear.days+"; unresolved: "+report.observedYear.unresolvedDays+".",
   ...[1,2,3,4].map(rank=>{
    const x=report.observedYear.classCounts[rank];
-   return "Class "+rank+": "+x.explicitOriginalMappedDays+"/"+x.observedDays+" days have acquired originals linked to **the actual observed source ID**; approved "+x.approvedDays+".";
+   return "Class "+rank+": "+x.explicitOriginalMappedDays+"/"+x.observedDays+" days ("+x.explicitOriginalMappedPct+"%) have acquired originals linked to **the actual observed source ID**; approved "+x.approvedDays+".";
   }),
   "",
   "### I-class days missing direct observed-source artwork associations",
@@ -156,6 +178,8 @@ writeFileSync(outdir+"/liturgical-priority-v1.md",L.join("\n")+"\n");
 console.log(JSON.stringify({
  majorFeastsAndPrincipalDays:majorFeasts.length,majorFeastTargetsBelowMinimum:report.majorFeastsAndPrincipalDays.belowMinimum,
  seasonalSupportTargets:seasonSupport.length,seasonalSupportBelowMinimum:report.seasonalSupport.belowMinimum,
+ majorFeastTargetsMeetingPct:report.majorFeastsAndPrincipalDays.meetingOriginalMinimumPct,
+ modulePercentages:Object.fromEntries(Object.entries(report.moduleCoverage).map(([k,v])=>[k,v.meetingOriginalMinimumPct])),
  majorCalendarTargets:major.length,majorTargetsBelowMinimum:report.calendarMajorSubjectPool.belowMinimum,
  otherTargets:minor.length,otherBelowMinimum:report.allOtherSubjectPool.belowMinimum,
  observedYearStatus:report.observedYear.status,observedClassCounts:report.observedYear.classCounts||null,
