@@ -28,7 +28,7 @@ try{
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2,locale:"en-GB"});
  const page=await context.newPage();
  const errors=[];
- page.on("pageerror",error=>errors.push(String(error?.message??error)));
+ page.on("pageerror",error=>errors.push(String(error?.stack??error?.message??error)));
  await page.goto("http://127.0.0.1:4205/index.html",{waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForSelector('[data-ao-app-surface="find"]',{state:"visible",timeout:30000});
  await page.locator('[data-ao-app-surface="find"]').tap();
@@ -225,7 +225,7 @@ try{
  await page.locator("#ao-find-modular-root [data-find-close]").tap({timeout:10000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home"
   &&globalThis.AO_FIND_APP_V1?.status?.().open===false,null,{timeout:12000});
- assert.equal(errors.length,0,"Explore phone journey threw runtime errors: "+errors.join(" | "));
+ assert.equal(errors.length,0,"Explore phone journey threw runtime errors: "+errors.slice(0,3).join(" | "));
  console.log("PASS six Explore lenses phone: list results, detail close, 120-item pagination, search/clear, map/list and Home return "+JSON.stringify(reached));
  await context.close();
 }finally{
