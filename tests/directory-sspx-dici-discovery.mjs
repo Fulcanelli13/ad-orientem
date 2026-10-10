@@ -47,7 +47,10 @@ try{
   await assert.rejects(
     acquireDiciDevelopmentIndex({out:join(out,"drifting"),fetchPage:async(_url,n)=>
       n===1?sample(1):{...sample(2),text:"25 of 28 operations — Page 2 of 2"}}),
-    /count changed/,
+    /count changed|page 2 incomplete/,
+    // The page-local incomplete count is sufficient evidence to fail closed
+    // before the later cross-page total comparison.
+
   );
 }finally{rmSync(out,{recursive:true,force:true});}
 console.log("SSPX DICI development source discovery: PASS");
