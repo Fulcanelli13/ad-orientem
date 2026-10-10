@@ -1,0 +1,138 @@
+{
+  "schema": "AO_DIRECTORY_UVCZ_ROUND20_CROSS_PROVIDER_DISPOSITIONS_V1",
+  "reviewed_on": "2026-10-10",
+  "total_national_listings": 28,
+  "new_approved_research_provider": 16,
+  "held_or_existing": 12,
+  "canonical_duplicate_auto_merges": 0,
+  "publication_rules": [
+    "FSSP-linked entries are not automatically new physical churches.",
+    "A privately celebrated Mass is not a certified public timetable.",
+    "A Mass lacking a time or having a contradictory worship-space identity is held.",
+    "Rosary, litany and adoration entries must never be mistaken for Mass times.",
+    "No geolocation coordinates may be inferred from a street or map link."
+  ],
+  "records": [
+    {
+      "index": "praha/hradec-kralove",
+      "place": "Kostel sv. Jana Křtitele — Hradec Králové",
+      "disposition": "EXISTING_PRODUCTION_VENUE",
+      "reason": "Round18 source-supported canonical research provider already includes same named physical church.",
+      "existing_upstream_id": "VL18-CZ-HRADEC-TREBES-ST-JOHN",
+      "decision_id": "UVCZ-HOLD-01",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "litomerice/litomerice-sv-jakub",
+      "place": "Kostel sv. Jakuba — Litoměřice",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "National association links the venue to FSSP. Confirm exact physical owner and schedule against FSSP source before separate publication.",
+      "decision_id": "UVCZ-HOLD-02",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "litomerice/varnsdorf",
+      "place": "Kostel sv. Františka z Assisi — Varnsdorf",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "National association links the venue to FSSP; entries include a Rosary at same clock time, which must not be imported as a Mass.",
+      "decision_id": "UVCZ-HOLD-03",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "ceske-budejovice/ceske-budejovice-sv-vaclav",
+      "place": "Kostel sv. Václava — České Budějovice",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "FSSP website supplies the venue schedule; avoid a second venue for the same church.",
+      "decision_id": "UVCZ-HOLD-04",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "ceske-budejovice/ceske-budejovice-obetovani",
+      "place": "Kostel Obětování Panny Marie — České Budějovice",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "FSSP website supplies venue schedule; cross-provider reconciliation required.",
+      "decision_id": "UVCZ-HOLD-05",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "ceske-budejovice/rimov",
+      "place": "Kostel sv. Ducha — Římov",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "FSSP supplies church and monastery cloister schedules; physical prayer spaces must be resolved before cross-provider merging.",
+      "decision_id": "UVCZ-HOLD-06",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "ceske-budejovice/rozmberk",
+      "place": "Kostel sv. Mikuláše — Rožmberk",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "FSSP-linked; first Saturday summer/winter and July/August rules require reconciliation with its primary source.",
+      "decision_id": "UVCZ-HOLD-07",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "plzen/nepomuk",
+      "place": "Kostel sv. Jakuba — Nepomuk",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "FSSP-linked, distinct from Hradec St John. Existing FSSP provider should retain canonical identity.",
+      "decision_id": "UVCZ-HOLD-08",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "brno/stranecka-zhor",
+      "place": "Kaple sv. Bernarda — Stránecká Zhoř",
+      "disposition": "CROSS_PROVIDER_FSSP_HOLD",
+      "reason": "Same chapel hosts FSSP Mass on some Sundays and diocesan Mass on second Saturdays. One venue, possibly two ministries, not two pins.",
+      "decision_id": "UVCZ-HOLD-09",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "plzen/utvina",
+      "place": "Kostel sv. Víta — Útvina",
+      "disposition": "TIME_UNRESOLVED",
+      "reason": "National source says Sunday but gives no time. Requires current parish announcement before publishing a travel-useful timetable.",
+      "decision_id": "UVCZ-HOLD-10",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "brno/reznovice",
+      "place": "Kostel sv. Petra a Pavla — Řeznovice",
+      "disposition": "PRIVATE_MASS_HOLD",
+      "reason": "National calendar labels the regular celebration soukromá (private), so it is not certified as a public-access Mass.",
+      "decision_id": "UVCZ-HOLD-11",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    },
+    {
+      "index": "ostrava-opava/frydek-mistek",
+      "place": "Kostel sv. Jošta — Frýdek-Místek",
+      "disposition": "PHYSICAL_USE_CONFLICT_HOLD",
+      "reason": "Una Voce calendar lists a Catholic traditional Mass on second/fourth Sundays, but its own venue description says the church has been rented to Orthodox community since 2008. Exact current Catholic worship space not proven.",
+      "decision_id": "UVCZ-HOLD-12",
+      "source_index": "https://www.unavoce.cz/mse",
+      "adjudicated_on": "2026-10-10",
+      "publication_state": "HELD_NOT_PUBLISHED"
+    }
+  ]
+}
