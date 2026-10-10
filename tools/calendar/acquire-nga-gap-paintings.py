@@ -11,6 +11,9 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/"artifacts/sacred-art-cma-gaps"
 IMAGES=OUT/"nga-originals"
 LEADS=[
+ {"id":"nga-41659","prayerKey":"stations","title":"Saint Veronica [obverse]",
+  "object":"https://www.nga.gov/artworks/41659-saint-veronica-obverse",
+  "original":"https://api.nga.gov/iiif/8788f9a6-142d-40b7-953b-a9a208ff2eef/full/full/0/default.jpg"},
  {"id":"nga-45890","prayerKey":"rosary.glo2","title":"The Ascension",
   "object":"https://www.nga.gov/artworks/45890-ascension",
   "original":"https://api.nga.gov/iiif/644d2492-3c7c-4f1e-ab33-c837edc019c2/full/full/0/default.jpg"},
