@@ -17,6 +17,8 @@ on:
       - "tools/calendar/proper-source-batch-100.mjs"
       - "tools/calendar/printed-1962-july-facsimile-b01.mjs"
       - "data/mass/printed-1962-july-facsimile-b01.v1.json"
+      - "tools/calendar/independent-1962-lent-sundays-b02.mjs"
+      - "data/mass/independent-1962-lent-sundays-b02.v1.json"
   workflow_dispatch:
 
 permissions:
@@ -62,6 +64,8 @@ jobs:
         run: node tools/calendar/proper-source-batch-100.mjs
       - name: Probe printed-1962 Missal July facsimile transcription against actual Latin Proper
         run: node tools/calendar/printed-1962-july-facsimile-b01.mjs --strict
+      - name: Compare five Lent and Palm Sunday formularies with independent Latin booklets
+        run: node tools/calendar/independent-1962-lent-sundays-b02.mjs
       - name: Upload independent calendar audit report
         if: always()
         uses: actions/upload-artifact@v4
@@ -72,4 +76,5 @@ jobs:
             artifacts/calendar-1962-secondary-reconciliation.json
             artifacts/calendar-1962-proper-source-batch-100.json
             artifacts/mass-printed-1962-july-facsimile-b01.json
+            artifacts/independent-1962-lent-sundays-b02.json
           if-no-files-found: error
