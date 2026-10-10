@@ -6,6 +6,7 @@ on:
       - platform/885-sacred-art-candidates
     paths:
       - "tools/calendar/fill-sacred-art-gaps.py"
+      - "tools/calendar/acquire-nga-gap-paintings.py"
       - ".github/workflows/sacred-art-gaps.yml"
   workflow_dispatch:
 
@@ -28,6 +29,9 @@ jobs:
       - run: pip install Pillow numpy
       - name: Search and download CC0 paintings matching missing Rosary subjects
         run: python tools/calendar/fill-sacred-art-gaps.py
+      - name: Acquire NGA direct official CC0 files for two missing mysteries
+        if: always()
+        run: python tools/calendar/acquire-nga-gap-paintings.py
       - name: Preserve source-linked originals, rejection log and review contact sheets
         if: always()
         uses: actions/upload-artifact@v4
