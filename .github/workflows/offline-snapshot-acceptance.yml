@@ -16,6 +16,11 @@ on:
       - "tests/offline-snapshot-e2e.mjs"
 permissions:
   contents: read
+# Cancel obsolete revisions of the same pull request; never cancel manual or main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   offline-browser:
     runs-on: ubuntu-latest
