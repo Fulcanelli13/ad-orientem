@@ -43,7 +43,13 @@ for(const rec of doc.cases){
 }
 assert.equal(count,80);
 assert.deepEqual(found,doc.summary.status_counts);
-for(const id of ["CSE012","CSE013","CSE014","CSE016","CSE018","CSE020","CSE021"])assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" not marked contextual");
+// Since this snapshot, original-author evidence has been linked for
+// CSE014/016/018/021. Preserve the narrower contextual warnings only for
+// the hypotheticals whose wording remains an editorial reconstruction.
+for(const id of ["CSE012","CSE013","CSE020"])
+ assert.ok(CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" not marked contextual");
+for(const id of ["CSE014","CSE016","CSE018","CSE021"])
+ assert.ok(!CSE_CONTEXT_ONLY_POSITION_IDS.includes(id),id+" later author-original evidence was hidden as merely contextual");
 assert.match(CSE_DEBATE_MAP.CSE016.response[0],/Donum Veritatis/);
 assert.match(CSE_DEBATE_MAP.CSE020.breakpoint[0],/drug addiction cannot establish/);
 assert.match(CSE_DEBATE_MAP.CSE021.opposition[0],/Freud/);
