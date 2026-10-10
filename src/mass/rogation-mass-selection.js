@@ -76,7 +76,7 @@ export function majorLitanyVotiveReady({
 export function resolveRogationMassVariant({
   choice = "DAY_MASS", observanceConfirmed = false, service = null,
   dayClass = null, sourceGate = null, sourceProper = null,
-  observance = null,date = null,majorGate = null,preface = null
+  observance = null,date = null,majorGate = null,sourcePreface = null
 } = {}) {
   if (!["DAY_MASS", "ROGATION_MASS"].includes(choice)) {
     throw new TypeError("Unknown Rogation Mass choice");
@@ -116,7 +116,7 @@ export function resolveRogationMassVariant({
   if (![1, 2, 3, 4].includes(dayClass)) return block("DAY_CLASS_NOT_VERIFIED");
   if (dayClass === 1) return block("VOTIVE_II_CLASS_IMPEDED");
   if (observance==="MAJOR"&&!majorLitanyVotiveReady({
-    date,dayClass,observance,majorGate,sourceGate,sourceProper,preface
+    date,dayClass,observance,majorGate,sourceGate,sourceProper,preface:sourcePreface
   }))return block("MAJOR_LITANY_VOTIVE_NOT_SOURCE_CERTIFIED");
   if (observance==="MAJOR"&&litanyObservanceOn(date)!=="MAJOR")
     return block("MAJOR_LITANY_DATE_NOT_VERIFIED");
