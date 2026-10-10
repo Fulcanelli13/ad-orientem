@@ -5048,13 +5048,21 @@
       },
       "association": {
         "subjectKeys": [
-          "visitation"
+          "visitation",
+          "saint-nicholas-myra",
+          "saint-anthony-abbot"
         ],
         "seasonIds": [],
         "observedIds": [],
         "scriptureKeys": [],
         "prayerKeys": [
           "rosary.joy2"
+        ],
+        "relationToTarget": "NGA_OBJECT_TEXT_DOCUMENTS_NICHOLAS_ON_LEFT_AND_ANTHONY_ABBOT_ON_RIGHT_IN_FOREGROUND_OF_VISITATION_CONTEXTUAL_SAINTS_NOT_SOLE_SUBJECT",
+        "targetResearchIds": [
+          "rosary.joy2",
+          "person.nicholas-myra",
+          "person.anthony-abbot"
         ]
       },
       "review": {
@@ -5068,7 +5076,7 @@
         },
         "crop": "NOT_REVIEWED",
         "status": "CANDIDATE",
-        "subjectConfidence": "DIRECT_SUBJECT"
+        "subjectConfidence": "DIRECT_VISITATION_AND_NGA_DOCUMENTED_SECONDARY_SAINTS_AWAIT_VISUAL_EDITORIAL_AUDIT"
       },
       "image": null,
       "acquisition": {
@@ -5081,7 +5089,9 @@
       },
       "tags": {
         "iconography": [
-          "visitation"
+          "visitation",
+          "saint-nicholas-myra",
+          "saint-anthony-abbot"
         ],
         "prayerKeys": [
           "rosary.joy2"
@@ -5099,7 +5109,7 @@
         "scriptureIdentityKeys": [],
         "portraitSubjectId": null,
         "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
-        "associationConfidence": "MUSEUM_TITLE_OR_ORIGINAL_TAG_PENDING_ICONOGRAPHIC_REVIEW",
+        "associationConfidence": "DIRECT_VISITATION_AND_NGA_DOCUMENTED_SECONDARY_SAINTS_AWAIT_VISUAL_EDITORIAL_AUDIT",
         "sourceRights": {
           "licence": "CC0",
           "jurisdictionGate": "METADATA_FLAG_CHECKED"
@@ -19237,7 +19247,8 @@
     "Class-I 2026 first Lent and Laetare Gospel scene originals physically acquired from NGA/Met with individual SHA256, first-party object metadata and strict exact source links. User editorial artwork/crop audit and production release remain pending. Tintoretto's 3811x1686-wide original must be inspected for portrait phone crop or dedicated landscape layout.",
     "Seven source-verified saint paintings acquired; preserve Saint Lucy narrative at Agatha shrine as Lucy only, correct Bari/Myra versus Nicholas Tolentino, and composite altarpiece/young Sebastian representation. Rejected false met-435885 Cézanne Domaine Saint-Joseph landscape. Research only; not curatorial, crop or publication approval.",
     "2026-10-10 multi-day breadth: six new ZIP-reverified Met/CMA CC0 original paintings, including Epiphany x2, John Baptist preaching, two Marian masterworks, St Francis at Cross devotional context. Physically excluded misleading Cézanne Domaine Saint-Joseph landscape. Virgin/Child is NOT the specific Our Lady of Perpetual Help icon; Francis before Crucifix is NOT historical Station XII.",
-    "2026-10-10 added Caravaggio The Denial of Saint Peter as real hashed Met source original; eligible for distinct appointed Passion Gospel narrative passages where the actual denial occurs, not all Apostle Peter observances. Crop/rights/curator final audit remain separate."
+    "2026-10-10 added Caravaggio The Denial of Saint Peter as real hashed Met source original; eligible for distinct appointed Passion Gospel narrative passages where the actual denial occurs, not all Apostle Peter observances. Crop/rights/curator final audit remain separate.",
+    "Research reuse repair: NGA-505 Piero di Cosimo Visitation already acquired. NGA identifies Nicholas of Myra and Anthony Abbot as distinct visible supporting figures; preserve subject Visitation as primary, tag saints for contextual date reuse only."
   ],
   "tagSchema": "AO_SACRED_ART_SEMANTIC_TAGS_V2"
 }
