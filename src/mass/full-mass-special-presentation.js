@@ -53,10 +53,10 @@ export function specialMassPresentation(source,{
  const after=reader?(data.followingActions??plan.followingGraphs??[]):inherited.following;
  // The native preflight passes *effective* optional choices, never merely date-derived suggestions.
  const chosen=selectedRites??{};
- const preceding=new Set([...before,...chosen.precedingRites??[]].map(norm));
- const following=new Set([...after,...chosen.followingActions??[]].map(norm));
+ const preceding=new Set([...before,...(chosen.precedingRites??[])].map(norm));
+ const following=new Set([...after,...(chosen.followingActions??[])].map(norm));
  if(!reader){
-  for(const id of ["ASPERGES","PALM","ASH","CANDLEMAS","ROGATIONS"]){
+  for(const id of ["ASPERGES"]){
    if(Array.isArray(chosen.precedingRites)&&!chosen.precedingRites.includes(id))preceding.delete(id);
   }
   for(const id of ["REQUIEM_ABSOLUTION","CORPUS_CHRISTI_PROCESSION","GENERIC_PROCESSION"]){
@@ -155,4 +155,29 @@ export function specialMassPresentation(source,{
   available:reader?true:data.canStart===true,
   sourceOwned:true,
  });
+}
+
+
+// Rendering is presentation-only: never changes a liturgical selection.
+export function renderSpecialMassContext(target,model,{compact=false}={}){
+ if(!target?.ownerDocument || !model)throw new TypeError("Special Mass context requires DOM and projection");
+ const doc=target.ownerDocument;
+ target.hidden=!model.distinct;
+ target.dataset.specialMassVariant=model.variant;
+ target.setAttribute("aria-label",model.heading);
+ if(!model.distinct){target.replaceChildren();return false;}
+ const head=doc.createElement(compact?"strong":"h3");
+ head.className="aoSpecialMassHeading";head.textContent=model.heading;
+ const line=doc.createElement("p");line.className="aoSpecialMassExplanation";line.textContent=model.intro;
+ const sequence=doc.createElement("ol");sequence.className="aoSpecialMassSequence";
+ for(const phase of model.phases){
+  const li=doc.createElement("li");li.dataset.aoSpecialPhase=phase.id;
+  li.textContent=phase.label;sequence.append(li);
+ }
+ const notes=doc.createElement("div");notes.className="aoSpecialMassNotes";
+ for(const note of model.notes){
+  const p=doc.createElement("p");p.textContent=note;notes.append(p);
+ }
+ target.replaceChildren(head,line,sequence,notes);
+ return true;
 }
