@@ -38,7 +38,7 @@ function fakeWindow(lang="en"){
  const nodes=new Map();
  const doc={
   documentElement:{lang},
-  body:{classList:{add(){},remove(){}},appendChild(node){nodes.set(node.id,node)}},
+  body:{classList:{add(){},remove(){}},appendChild(node){nodes.set(node.id,node)},append(node){nodes.set(node.id,node)}},
   getElementById(id){return nodes.get(id)||null},
   createElement(){return {
    id:"",innerHTML:"",hidden:false,dataset:{},
