@@ -1944,15 +1944,14 @@ export async function mountNativeReaderPreview({
   }
 
   function nextVisibleCard(from,direction){
-    // Navigate the *presentation* array, not the shorter source-nextCard
-    // resolver. A suppressed source card (Gloria or Credo) must never be
-    // mistaken for the end of the 48-card LIVE presentation.
-    const index=readerModel.cards.findIndex(card=>card.sectionId===from?.sectionId);
-    if(index<0)return null;
-    const delta=direction==="previous"?-1:1;
-    for(let i=index+delta;i>=0&&i<readerModel.cards.length;i+=delta){
-      const candidate=readerModel.cards[i];
+    let probe=from;
+    while(probe){
+      const candidate=direction==="previous"
+        ? readerModel.previousCard(probe.sectionId)
+        : readerModel.nextCard(probe.sectionId);
+      if(!candidate)return null;
       if(visibleCardAllowed(candidate))return candidate;
+      probe=candidate;
     }
     return null;
   }
