@@ -85,10 +85,15 @@ try{
     },date);
     const checks=source.proofs.map(proof=>{
       const got=actual.sections[proof.field]||"";
-      const ok=fold(got).includes(fold(proof.latinIncipit));
+      const exact=fold(got).includes(fold(proof.latinIncipit));
+      const listedVariants=proof.orthographicVariants||[];
+      const variant=!exact&&listedVariants.find(v=>fold(got).includes(fold(v)))||null;
+      const ok=exact||!!variant;
       return {field:proof.field,url:proof.url,page:proof.page,expectedIncipit:proof.latinIncipit,
-        actualExcerpt:got.slice(0,200),matched:ok,
-        state:!got?"runtime-section-empty":ok?"independent-incipit-agrees":"incipit-discrepancy"};
+        actualExcerpt:got.slice(0,200),matched:ok,strictTextMatch:exact,
+        acceptedVariant:variant,variantEvidence:variant?proof.independentVariantWitness:null,
+        state:!got?"runtime-section-empty":exact?"independent-incipit-agrees":
+          variant?"explicit-orthographic-variant":"incipit-discrepancy"};
     });
     const ownerMatches=actual.owner===source.owner,rankMatches=actual.rank===source.rank;
     const state=actual.status!=="ready"?"runtime-unavailable":
@@ -111,6 +116,9 @@ const checks=report.rows.flatMap(r=>r.checks);
 report.summary={
   datedForms:report.rows.length,passedDatedForms:report.rows.filter(r=>r.outcome==="booklet-transcription-parity").length,
   totalTextObservations:checks.length,matchingTextObservations:checks.filter(c=>c.matched).length,
+  exactTextObservations:checks.filter(c=>c.strictTextMatch).length,
+  independentlyDocumentedOrthographicVariants:checks.filter(c=>c.state==="explicit-orthographic-variant")
+    .map(c=>({field:c.field,page:c.page,variant:c.acceptedVariant,independentWitness:c.variantEvidence})),
   rankMismatch:report.rows.filter(r=>!r.rankMatches).map(r=>r.date),
   ownerMismatch:report.rows.filter(r=>!r.ownerMatches).map(r=>r.date),
   reviewNeeded:report.rows.filter(r=>r.outcome!=="booklet-transcription-parity").map(r=>r.date),
