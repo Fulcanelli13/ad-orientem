@@ -235,8 +235,10 @@
       "locality": "Stockbridge",
       "seed_exact_name_matches": [],
       "place_link": null,
-      "status": "NO_EXACT_SEED_NAME_MATCH",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:divine-mercy-stockbridge",
+      "crosswalk_basis": "Known locality/title variant corresponds to Place seed; final physical/authority check pending"
     },
     {
       "entry_id": "NASPA-US-024",
@@ -247,8 +249,10 @@
         "place:US:la-salette-attleboro"
       ],
       "place_link": null,
-      "status": "EXACT_NAME_CANDIDATE_NOT_PHYSICAL_CONFIRMATION",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:la-salette-attleboro",
+      "crosswalk_basis": "Existing Place official name or alias identical; same country, source state/city must still be checked before final link"
     },
     {
       "entry_id": "NASPA-US-025",
@@ -269,8 +273,10 @@
         "place:US:seton-emmitsburg"
       ],
       "place_link": null,
-      "status": "EXACT_NAME_CANDIDATE_NOT_PHYSICAL_CONFIRMATION",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:seton-emmitsburg",
+      "crosswalk_basis": "Existing Place official name or alias identical; same country, source state/city must still be checked before final link"
     },
     {
       "entry_id": "NASPA-US-027",
@@ -291,8 +297,10 @@
         "place:US:lourdes-grotto-emmitsburg"
       ],
       "place_link": null,
-      "status": "EXACT_NAME_CANDIDATE_NOT_PHYSICAL_CONFIRMATION",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:lourdes-grotto-emmitsburg",
+      "crosswalk_basis": "Existing Place official name or alias identical; same country, source state/city must still be checked before final link"
     },
     {
       "entry_id": "NASPA-US-029",
@@ -301,8 +309,10 @@
       "locality": "Baltimore",
       "seed_exact_name_matches": [],
       "place_link": null,
-      "status": "NO_EXACT_SEED_NAME_MATCH",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:st-alphonsus-baltimore",
+      "crosswalk_basis": "Known locality/title variant corresponds to Place seed; final physical/authority check pending"
     },
     {
       "entry_id": "NASPA-US-030",
@@ -435,8 +445,10 @@
         "place:US:auriesville-martyrs"
       ],
       "place_link": null,
-      "status": "EXACT_NAME_CANDIDATE_NOT_PHYSICAL_CONFIRMATION",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:auriesville-martyrs",
+      "crosswalk_basis": "Existing Place official name or alias identical; same country, source state/city must still be checked before final link"
     },
     {
       "entry_id": "NASPA-US-043",
@@ -608,8 +620,10 @@
         "place:US:st-john-neumann-philadelphia"
       ],
       "place_link": null,
-      "status": "EXACT_NAME_CANDIDATE_NOT_PHYSICAL_CONFIRMATION",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:st-john-neumann-philadelphia",
+      "crosswalk_basis": "Existing Place official name or alias identical; same country, source state/city must still be checked before final link"
     },
     {
       "entry_id": "NASPA-US-060",
@@ -651,8 +665,10 @@
         "place:US:czestochowa-doylestown"
       ],
       "place_link": null,
-      "status": "EXACT_NAME_CANDIDATE_NOT_PHYSICAL_CONFIRMATION",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:czestochowa-doylestown",
+      "crosswalk_basis": "Existing Place official name or alias identical; same country, source state/city must still be checked before final link"
     },
     {
       "entry_id": "NASPA-US-064",
@@ -722,8 +738,10 @@
       "locality": "Hubertus",
       "seed_exact_name_matches": [],
       "place_link": null,
-      "status": "NO_EXACT_SEED_NAME_MATCH",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:holy-hill",
+      "crosswalk_basis": "Known locality/title variant corresponds to Place seed; final physical/authority check pending"
     },
     {
       "entry_id": "NASPA-US-071",
@@ -742,8 +760,17 @@
       "locality": "New Franken",
       "seed_exact_name_matches": [],
       "place_link": null,
-      "status": "NO_EXACT_SEED_NAME_MATCH",
-      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES"
+      "status": "PROPOSED_SEED_PLACE_LINK_PENDING_CONFIRMATION",
+      "inclusion": "REVIEW_SIGNIFICANCE_AND_DUPLICATES",
+      "proposed_place_id": "place:US:champion-shrine",
+      "crosswalk_basis": "Known locality/title variant corresponds to Place seed; final physical/authority check pending"
     }
-  ]
+  ],
+  "crosswalk_summary": {
+    "rows": 72,
+    "proposed_seed_place_links": 10,
+    "no_proposed_link": 62,
+    "source_duplicate_alerts": 2,
+    "notes": "Proposed link is not a canonical Place mutation; physical complex and local custody still require resolution."
+  }
 }
