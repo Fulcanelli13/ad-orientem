@@ -149,7 +149,7 @@ try{
    assert.equal(await preview.locator("[data-explore-expand-detail]").count(),1,
      lens+" lacks explicit Details & sources navigation");
    const previewHeight=await preview.evaluate(node=>node.getBoundingClientRect().height);
-   assert.ok(previewHeight<innerHeight*.7||previewHeight<520,
+   assert.ok(previewHeight<520,
      lens+" preview blocks too much mobile map");
    await preview.locator("[data-explore-expand-detail]").tap();
    await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]:not(.aoExploreQuickPreview)").waitFor({state:"visible",timeout:12000});
