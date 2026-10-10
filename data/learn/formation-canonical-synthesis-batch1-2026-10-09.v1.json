@@ -244,6 +244,13 @@
       "locator": "Theological language for Mary's dependent association with Christ; exact § review pending",
       "role": "PAPAL_TEXT",
       "original_context_approved": false
+    },
+    {
+      "id": "MAIMON-11-4-044",
+      "title": "Maimonides, Mishneh Torah, Laws of Kings and Wars 11:4 — original medieval rabbinic Messiah criterion",
+      "url": "https://www.sefaria.org/Mishneh_Torah%2C_Kings_and_Wars.11.4?lang=en&with=all",
+      "locator": "Kings and Wars 11:4: expected Davidic Messiah to restore Temple, gather exiles, observe Torah; a failed or killed aspirant is not the Messiah (compare Christian claim about Jesus)",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -439,23 +446,29 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Nostra aetate §4 acknowledges the continuing spiritual bond between the Church and the descendants of Abraham and expressly rejects the charge that Jews today are collectively guilty of Christ's death or are cursed by God. That document must be read whole: it also declares Christ the reconciler of Jews and Gentiles and describes the Church as the new People of God.",
-            "fr": "Nostra aetate §4 reconnaît le lien spirituel durable entre l'Église et la descendance d'Abraham ; le texte rejette expressément l'idée d'une culpabilité collective des juifs actuels dans la mort du Christ ou d'une malédiction frappant leur peuple. Il faut lire le document tout entier : il proclame aussi le Christ réconciliateur des juifs et des païens et qualifie l'Église de nouveau Peuple de Dieu."
+            "en": "Maimonides, in Mishneh Torah, Laws of Kings and Wars 11:4, offers a genuine rabbinic criterion for the Messiah: a Davidic king who upholds the Torah, restores the Temple and gathers Israel's exiles. Someone who dies without completing the required mission is not, on this account, the promised Messiah. This is a substantive Jewish religious objection to the Christian confession that Jesus is the Messiah—not an argument that the same religion has remained unchanged from the Second Temple to modern rabbinic practice, nor a position held identically by every Jewish movement.",
+            "fr": "Maïmonide, dans le Mishneh Torah, Lois des rois et de leurs guerres 11,4, propose un critère rabbinique véritable du Messie : un roi issu de David, gardien de la Torah, restaurant le Temple et rassemblant les exilés d'Israël. Celui qui meurt sans accomplir cette mission ne serait pas, selon ce raisonnement, le Messie promis. C'est une objection juive religieuse substantielle à la confession chrétienne de Jésus comme Messie, non une preuve que le judaïsme moderne serait inchangé depuis le Second Temple ni la position uniforme de tous les courants juifs."
           },
           "source_ids": [
+            "MAIMON-11-4-044",
             "NA65"
           ],
-          "attribution": "Second Vatican Council, Nostra aetate §4",
+          "attribution": "Maimonides, Mishneh Torah, Kings and Wars 11:4; Catholic comparison in Nostra aetate §4",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "MAIMON-11-4-044": "11:4, messianic criteria and rejection of an unfinished Davidic mission",
+            "NA65": "§4, Jewish roots, Gospel confession and rejection of collective blame"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "Recognising the Church's Jewish roots does not mean affirming that the rabbis' religious teaching and the apostolic faith make identical claims about Jesus Christ. Justin's Dialogue with Trypho records vigorous ancient debate over the interpretation and transmission of biblical passages; its accusations must be evaluated as contested testimony rather than evidence of a crime by all later Jews. Nostra aetate §4 explicitly refuses making the Jewish people collectively culpable for the Passion and forbids anti-Jewish contempt. Accurate criticism of religious propositions is compatible with that duty; invented ethnic or manuscript-wide conspiracies are not.",
-            "fr": "Reconnaître les racines juives de l'Église ne signifie pas que la doctrine rabbinique et la foi apostolique affirment la même chose sur Jésus-Christ. Le Dialogue avec Tryphon de saint Justin consigne une controverse antique vigoureuse sur l'interprétation et la transmission de passages bibliques ; ses accusations doivent être examinées comme des témoignages disputés, non comme la preuve d'un délit de tous les juifs postérieurs. Nostra aetate §4 refuse expressément toute culpabilité collective du peuple juif pour la Passion et prohibe le mépris antijuif. Critiquer exactement les propositions religieuses demeure compatible avec cette exigence ; fabriquer un complot ethnique ou portant sur tous les manuscrits ne l'est pas."
+            "en": "Maimonides' objection cannot be dismissed by treating Judaism as if it accepted Christian claims about the Incarnation or the Resurrection. Christians answer with a different reading of the prophets, the suffering and rising Messiah, and the final completion of Christ's kingdom; Jewish interlocutors remain free to dispute that exegesis. Nostra aetate §4 recognises shared sacred roots while the Church continues to proclaim Christ. Justin Martyr's ancient debate is a historical source of Christian argument, not proof that Jewish texts were universally falsified, and no theological dispute warrants collective accusation or contempt.",
+            "fr": "L'objection de Maïmonide ne se réfute pas en supposant que le judaïsme reconnaîtrait l'Incarnation ou la Résurrection. Les chrétiens répondent par une autre lecture des prophètes, du Messie souffrant et ressuscité et de l'achèvement futur de son Royaume ; leurs interlocuteurs juifs peuvent contester cette exégèse. Nostra aetate, §4, reconnaît les racines sacrées communes tandis que l'Église annonce toujours le Christ. Le débat antique de saint Justin est un témoignage d'argumentation chrétienne, non la preuve d'une falsification généralisée des textes juifs, et aucun désaccord théologique ne justifie accusation collective ou mépris."
           },
           "source_ids": [
+            "MAIMON-11-4-044",
             "NA65",
             "JUSTIN71"
           ],
@@ -463,8 +476,9 @@
           "original_context_approved": false,
           "french_final_approved": false,
           "source_claim_locators": {
-            "NA65": "Nostra aetate §4, Jewish spiritual roots and collective Passion guilt repudiation",
-            "JUSTIN71": "Justin Martyr Dialogue with Trypho 71–73, ancient disputed Septuagint interpretation"
+            "MAIMON-11-4-044": "11:4, Jewish messianic expectations",
+            "NA65": "§4 and rejection of collective accusation",
+            "JUSTIN71": "Dialogue with Trypho, separate early Christian polemic"
           }
         },
         {
@@ -1071,7 +1085,7 @@
     "canonical_dossiers": 10,
     "english_substantive_paragraphs": 40,
     "french_substantive_paragraphs": 40,
-    "source_registry_entries": 30,
+    "source_registry_entries": 31,
     "public_routes_added": 0,
     "independent_approvals": 0
   },
