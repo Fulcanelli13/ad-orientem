@@ -1,0 +1,816 @@
+{
+  "schema": "AO_SOT07_FULL_CUSTOMARY_CROSSWALK_REVIEW_V1",
+  "as_of": "2026-10-10",
+  "status": "RESEARCH_RECOVERED_REVIEW_ONLY_NO_AUTOMATIC_PUBLICATION",
+  "source_workbook": "Ad_Orientem_SOT-07_Traditional_Catholic_Customary_French_World_v1.xlsx",
+  "source_sheet": "01_CUSTOMARY_REGISTER",
+  "source_library_file_id": "file_00000000e08c82088333eb7f2f9be424",
+  "source_start_row": 5,
+  "description": "All 63 original rows are crosswalked to the 13 published customs, 7 explicit HOLD/REJECT dispositions, and 43 rows belonging to other module owners or requiring editorial review. Source IDs are workbook research references, not proof of independently verified hyperlinks. No extra practices automatically added to Explore.",
+  "counts": {
+    "total": 63,
+    "published": 13,
+    "hold": 3,
+    "reject": 4,
+    "cross_module_or_review": 43
+  },
+  "rows": [
+    {
+      "original_custom_id": "DOM-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 5,
+      "workbook_source_ids": [
+        "WEISER-FAM",
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Learn + optional Pray",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 6,
+      "workbook_source_ids": [
+        "MUCEM-BENITIER"
+      ],
+      "original_owner_hint": "Learn",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DOM-002",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 7,
+      "workbook_source_ids": [
+        "TONNE-1950",
+        "MUCEM-BENITIER",
+        "RIT-WELLER"
+      ],
+      "original_owner_hint": "Learn + Pray",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-004",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 8,
+      "workbook_source_ids": [
+        "RIT-WELLER",
+        "CATHCULT-HOUSE"
+      ],
+      "original_owner_hint": "Learn / priestly blessing",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-005",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 9,
+      "workbook_source_ids": [
+        "ECF-MAY",
+        "FERON-1934"
+      ],
+      "original_owner_hint": "HOLD",
+      "disposition": "HOLD_NOT_PUBLISHED",
+      "canonical_custom_id": null,
+      "notes": "Modern French material exists, but pre-conciliar French customary status still needs direct verification."
+    },
+    {
+      "original_custom_id": "DOM-006",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 10,
+      "workbook_source_ids": [
+        "PARAY-CONSECRATION",
+        "MONTAGUE-1958"
+      ],
+      "original_owner_hint": "Pray + Calendar + Learn",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DOM-006",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-007",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 11,
+      "workbook_source_ids": [
+        "PARAY-INTRONISATION"
+      ],
+      "original_owner_hint": "Pray + Learn",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DOM-007",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-008",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 12,
+      "workbook_source_ids": [
+        "CATHCULT-HOUSE"
+      ],
+      "original_owner_hint": "REJECT",
+      "disposition": "REJECT_NOT_PUBLISHED",
+      "canonical_custom_id": null,
+      "notes": "A Roman Ritual house blessing does not establish universal or French-world lay chalking."
+    },
+    {
+      "original_custom_id": "DOM-009",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 13,
+      "workbook_source_ids": [
+        "WEISER-FAM",
+        "TONNE-1950",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Pray + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-010",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 14,
+      "workbook_source_ids": [
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-011",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 15,
+      "workbook_source_ids": [
+        "WEISER-FAM",
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-012",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 16,
+      "workbook_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / serious illness",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-013",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 17,
+      "workbook_source_ids": [
+        "WEISER-FAM",
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-014",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 18,
+      "workbook_source_ids": [
+        "MONTAGUE-1958"
+      ],
+      "original_owner_hint": "Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DOM-015",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 19,
+      "workbook_source_ids": [
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "HOLD",
+      "disposition": "HOLD_NOT_PUBLISHED",
+      "canonical_custom_id": null,
+      "notes": "French-world attestation remains insufficient."
+    },
+    {
+      "original_custom_id": "LIFE-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 20,
+      "workbook_source_ids": [
+        "RIT-WELLER",
+        "RR-PREGNANCY"
+      ],
+      "original_owner_hint": "Learn / blessing",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "LIFE-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 21,
+      "workbook_source_ids": [
+        "RIT-1878",
+        "SCHOLA-RELEVAILLES",
+        "FERON-1934"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "LIFE-002",
+      "notes": null
+    },
+    {
+      "original_custom_id": "LIFE-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 22,
+      "workbook_source_ids": [
+        "CATHCULT-RR-CHILD",
+        "RIT-WELLER"
+      ],
+      "original_owner_hint": "Learn / blessing",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "LIFE-004",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 23,
+      "workbook_source_ids": [
+        "RIT-WELLER",
+        "RR-SICK-CHILD"
+      ],
+      "original_owner_hint": "Learn / illness",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "LIFE-005",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 24,
+      "workbook_source_ids": [
+        "RIT-WELLER",
+        "FERON-1934"
+      ],
+      "original_owner_hint": "HOLD",
+      "disposition": "HOLD_NOT_PUBLISHED",
+      "canonical_custom_id": null,
+      "notes": "The exact lay-facing checklist still needs direct pre-conciliar verification."
+    },
+    {
+      "original_custom_id": "LIFE-006",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 25,
+      "workbook_source_ids": [
+        "BENEDICTIONALE"
+      ],
+      "original_owner_hint": "Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "LIFE-007",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 26,
+      "workbook_source_ids": [
+        "RIT-WELLER",
+        "RITUEL-PARVUM"
+      ],
+      "original_owner_hint": "Learn / source lock",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 27,
+      "workbook_source_ids": [
+        "ECF-MAY",
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Pray + Learn",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DEV-001",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 28,
+      "workbook_source_ids": [
+        "ECF-MAY"
+      ],
+      "original_owner_hint": "Calendar + Pray",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 29,
+      "workbook_source_ids": [
+        "ECF-MAY"
+      ],
+      "original_owner_hint": "Learn / local",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-004",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 30,
+      "workbook_source_ids": [
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-005",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 31,
+      "workbook_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar / governance",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-006",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 32,
+      "workbook_source_ids": [
+        "ECF-PILGRIMAGE",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Explore + Calendar context",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DEV-006",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-007",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 33,
+      "workbook_source_ids": [
+        "ECF-PILGRIMAGE"
+      ],
+      "original_owner_hint": "Explore / local variants",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DEV-007",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-008",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 34,
+      "workbook_source_ids": [
+        "HAEGY-1935",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Learn / relics",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-009",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 35,
+      "workbook_source_ids": [
+        "LAGHET-EXVOTO",
+        "ECF-PILGRIMAGE"
+      ],
+      "original_owner_hint": "Explore / ex-votos",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DEV-009",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEV-010",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 36,
+      "workbook_source_ids": [
+        "LOURDES-CANDLES"
+      ],
+      "original_owner_hint": "Explore / votive candles",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DEV-010",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEAD-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 37,
+      "workbook_source_ids": [
+        "DPP-2001",
+        "ECF-DEAD"
+      ],
+      "original_owner_hint": "Pray + Calendar + Learn",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DEAD-001",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEAD-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 38,
+      "workbook_source_ids": [
+        "DPP-2001",
+        "ECF-DEAD"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEAD-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 39,
+      "workbook_source_ids": [
+        "ECF-DEAD",
+        "DPP-2001"
+      ],
+      "original_owner_hint": "Pray + Calendar",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DEAD-003",
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEAD-004",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 40,
+      "workbook_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Pray + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "DEAD-005",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 41,
+      "workbook_source_ids": [
+        "FR-FAMILY-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / source detail",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "BELL-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 42,
+      "workbook_source_ids": [
+        "AO-ANGELUS-RESEARCH"
+      ],
+      "original_owner_hint": "Pray",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "BELL-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 43,
+      "workbook_source_ids": [
+        "AO-ANGELUS-RESEARCH"
+      ],
+      "original_owner_hint": "Pray / posture",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "BELL-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 44,
+      "workbook_source_ids": [
+        "AO-ANGELUS-RESEARCH"
+      ],
+      "original_owner_hint": "Pray",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "BELL-004",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 45,
+      "workbook_source_ids": [
+        "ECF-GLAS"
+      ],
+      "original_owner_hint": "Learn / history",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "BELL-004",
+      "notes": null
+    },
+    {
+      "original_custom_id": "BELL-005",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 46,
+      "workbook_source_ids": [
+        "ECF-GLAS"
+      ],
+      "original_owner_hint": "REJECT",
+      "disposition": "REJECT_NOT_PUBLISHED",
+      "canonical_custom_id": null,
+      "notes": "Research establishes regional variation rather than one standard pattern."
+    },
+    {
+      "original_custom_id": "FOOD-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 47,
+      "workbook_source_ids": [
+        "PAIN-BENIT"
+      ],
+      "original_owner_hint": "Explore / history",
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "FOOD-001",
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 48,
+      "workbook_source_ids": [
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 49,
+      "workbook_source_ids": [
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 50,
+      "workbook_source_ids": [
+        "CIC-919"
+      ],
+      "original_owner_hint": "Mass + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-004",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 51,
+      "workbook_source_ids": [
+        "SACRAM-COMMUNIONEM"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-005",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 52,
+      "workbook_source_ids": [
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar governance",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-006",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 53,
+      "workbook_source_ids": [
+        "AO-DISCIPLINE-RESEARCH",
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-007",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 54,
+      "workbook_source_ids": [
+        "AO-DISCIPLINE-RESEARCH",
+        "SCHUSTER"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-008",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 55,
+      "workbook_source_ids": [
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-009",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 56,
+      "workbook_source_ids": [
+        "CIC-1249-1253",
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "REJECT",
+      "disposition": "REJECT_NOT_PUBLISHED",
+      "canonical_custom_id": null,
+      "notes": "False as a current universal claim."
+    },
+    {
+      "original_custom_id": "FAST-010",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 57,
+      "workbook_source_ids": [
+        "AO-DEVOTIONAL-CALENDAR-RESEARCH"
+      ],
+      "original_owner_hint": "REJECT",
+      "disposition": "REJECT_NOT_PUBLISHED",
+      "canonical_custom_id": null,
+      "notes": "False as a universal 1962 claim; local historical rules may differ."
+    },
+    {
+      "original_custom_id": "FAST-011",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 58,
+      "workbook_source_ids": [
+        "AO-DEVOTIONAL-CALENDAR-RESEARCH"
+      ],
+      "original_owner_hint": "Learn / historical",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "FAST-012",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 59,
+      "workbook_source_ids": [
+        "CIC-1249-1253",
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar engine",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SEAS-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 60,
+      "workbook_source_ids": [
+        "SCHUSTER",
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SEAS-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 61,
+      "workbook_source_ids": [
+        "SCHUSTER",
+        "CIC-1249-1253"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SEAS-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 62,
+      "workbook_source_ids": [
+        "AO-DISCIPLINE-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Learn",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SEAS-004",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 63,
+      "workbook_source_ids": [
+        "WEISER-FAM",
+        "AO-DEVOTIONAL-CALENDAR-RESEARCH"
+      ],
+      "original_owner_hint": "Calendar + Pray",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SEAS-005",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 64,
+      "workbook_source_ids": [
+        "DPP-2001",
+        "ECF-DEAD",
+        "WEISER-FAM"
+      ],
+      "original_owner_hint": "Calendar + Pray",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SOT-PRINC-001",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 65,
+      "workbook_source_ids": [
+        "MASTER-RESEARCH-INDEX"
+      ],
+      "original_owner_hint": "Governance",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SOT-PRINC-002",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 66,
+      "workbook_source_ids": [
+        "MASTER-RESEARCH-INDEX",
+        "SOT-00"
+      ],
+      "original_owner_hint": "Governance",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    },
+    {
+      "original_custom_id": "SOT-PRINC-003",
+      "source_sheet": "01_CUSTOMARY_REGISTER",
+      "row_number": 67,
+      "workbook_source_ids": [
+        "AO-SCOPE-RULE"
+      ],
+      "original_owner_hint": "Governance",
+      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
+      "canonical_custom_id": null,
+      "notes": null
+    }
+  ],
+  "publication_policy": [
+    "One canonical concern, one owner. Preserve Mass/Prayer/Calendar/Formation ownership.",
+    "Original row count is 63; published count 13 is not intended to represent all Catholic customs.",
+    "Geographic attestation is independent of custom identity and is never an implied map pin.",
+    "HOLD/REJECT records remain blocked pending their explicit reopen conditions.",
+    "CROSS_MODULE_OR_EDITORIAL_REVIEW does not mean unreviewed content may be published."
+  ]
+}
