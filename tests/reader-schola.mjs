@@ -33,6 +33,27 @@ assert.equal(s.trackId,"GLORIA");
 assert.equal(s.schola.cueId,"AO.SM.C0056");
 assert.match(s.schola.latin,/Adorámus/);
 
+// Gloria and Credo advance on their own clocks, independently of the
+// main reader's scroll/card repaint, with no duplicate-cue rewind.
+s=schola.syncCue("AO.SM.C0056");
+const gloriaCue=s.schola.cueId;
+s=schola.next();
+const gloriaAfterManual=s.schola.segmentId;
+assert.notEqual(gloriaAfterManual,gloriaCue);
+s=schola.syncCue("AO.SM.C0056");
+assert.equal(s.schola.segmentId,gloriaAfterManual,"duplicate Gloria cue rewound independent Schola progress");
+s=schola.syncCue("AO.SM.C0001");
+assert.equal(s.schola.segmentId,gloriaAfterManual,"unrelated priest cue advanced the Schola");
+s=schola.activateForCard(3);
+assert.equal(s.schola.segmentId,gloriaAfterManual,"same-card Gloria redraw reset Schola");
+s=schola.activateForCard(9);
+assert.equal(s.trackId,"CREDO");
+const credoStart=s.schola.segmentId;
+s=schola.next();
+assert.notEqual(s.schola.segmentId,credoStart,"Credo track has no independent progression");
+s=schola.activateForCard(9);
+assert.notEqual(s.schola.segmentId,credoStart,"Credo redraw reset its independent clock");
+
 s=schola.activateForCard(6);
 assert.equal(s.trackId,"GRADUAL");
 assert.equal(s.schola.latin,"Graduale et Alleluia");
