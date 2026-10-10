@@ -36,14 +36,14 @@ try{
  const hub=page.locator("#ao-learn-modular-root");
  await hub.waitFor({state:"visible"});
  const doors=hub.locator("[data-ao-learn-family]");
- assert.equal(await doors.count(),7,"Formation homepage must have seven correctly categorised subject doors");
+ assert.equal(await doors.count(),9,"Formation homepage must have nine distinct subject doors");
  const grid=await doors.evaluateAll(nodes=>nodes.map(x=>{const b=x.getBoundingClientRect();return{x:b.x,y:b.y,w:b.width,h:b.height,id:x.dataset.aoLearnFamily}}));
  assert.ok(grid[1].x>grid[0].x+30&&Math.abs(grid[1].y-grid[0].y)<3,
    "320px Formation categories must use compact two-column geometry: "+JSON.stringify(grid.slice(0,2)));
  assert.ok(grid.every(x=>x.w>=128&&x.h>=120),
    "320px Formation subject cards are too small: "+JSON.stringify(grid));
  assert.deepEqual(grid.map(x=>x.id),
-   ["foundations","spiritual-moral","liturgy-tradition","sacraments-life","questions","latin","reference"]);
+   ["foundations","spiritual-moral","liturgy-tradition","sacraments-life","questions","apologetics","church-crisis","latin","reference"]);
  const search=hub.locator("[data-ao-learn-discovery-search]");
  async function find(id){
   await search.fill(id);
@@ -82,13 +82,22 @@ try{
  await hub.locator("[data-ao-learn-questions]").tap();
  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.()?.family==="questions",null,{timeout:10000});
  assert.equal(await hub.locator('[data-ao-learn-module="learn.sexual_ethics"]').count(),1);
- assert.equal(await hub.locator("[data-ao-learn-dossier-review]").count(),2);
+ assert.equal(await hub.locator("[data-ao-learn-dossier-review]").count(),0);
+ for(const [family,corpus] of [["apologetics","apologetics"],["church-crisis","crisis"]]){
+  await hub.locator("[data-ao-learn-back]").tap();
+  await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.()?.family,null,{timeout:10000});
+  await hub.locator('[data-ao-learn-family="'+family+'"]').tap();
+  await page.waitForFunction(expected=>globalThis.AO_LEARN_APP_V1?.status?.()?.family===expected,
+   family,{timeout:10000});
+  assert.equal(await hub.locator('[data-ao-learn-dossier-review="'+corpus+'"]').count(),1);
+  assert.equal(await hub.locator("[data-ao-learn-dossier-review]").count(),1);
+ }
  const mobile=await hub.evaluate(el=>({over:el.scrollWidth-el.clientWidth,
   width:el.clientWidth,links:[...el.querySelectorAll("button")].map(b=>b.getBoundingClientRect().height)}));
  assert.ok(mobile.over<=2,"Formation overflows at 320px: "+JSON.stringify(mobile));
  assert.ok(mobile.links.every(h=>h>=44),"Formation has undersized phone controls");
  assert.deepEqual(errors,[],"Formation navigation has page errors");
- console.log("PASS: 320px mobile, CSE123, SL01, PX1912-Q213, Latin lesson 40, return context and Questions directory");
+ console.log("PASS: 320px mobile, CSE123, SL01, PX1912-Q213, Latin lesson 40, return context and three distinct moral, Apologetics and Crisis directories");
 }finally{
  await browser?.close();
  await new Promise(done=>server.close(done));
