@@ -32,6 +32,8 @@ on:
       - 'tests/formation-crisis-priority-bulk.mjs'
       - 'data/learn/formation-crisis-editorial-bulk-2026-10-10.v1.json'
       - 'tests/formation-crisis-editorial-bulk.mjs'
+      - 'data/learn/formation-141-preview-acceptance-2026-10-10.v1.json'
+      - 'tests/formation-141-preview-acceptance.mjs'
       - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json'
@@ -210,6 +212,8 @@ jobs:
         run: node tests/formation-crisis-priority-bulk.mjs
       - name: Verify six Church Crisis arguments and thirty historical evidence labels
         run: node tests/formation-crisis-editorial-bulk.mjs
+      - name: Verify all 141 draft readers and pack-scoped citations without premature approvals
+        run: node tests/formation-141-preview-acceptance.mjs
       - name: Validate all 53 canonical research-linked bilingual dossiers
         run: node tests/formation-canonical-synthesis-batch3.mjs
       - name: Validate new source-first Catholic foundation articles for previously unlinked owners
