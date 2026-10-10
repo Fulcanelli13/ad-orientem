@@ -1,3 +1,4 @@
+import "./module-return-navigation.mjs";
 import "./loading-director.mjs";
 import assert from "node:assert/strict";
 import "./liturgical-speaker-typography.mjs";
