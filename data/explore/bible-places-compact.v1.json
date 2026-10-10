@@ -1,7 +1,7 @@
 {
   "schema": "AO_EXPLORE_BIBLE_PLACES_COMPACT_V1",
-  "scope": "One optional Explore disclosure, no standalone atlas and no new map pins",
-  "publication_policy": "All descriptions explicitly tied to Scripture passages; centuries are approximate where stated; modern site coordinates deliberately excluded; source imagery and big third-party imports not bundled",
+  "scope": "Compact Explore Bible Places collection of 40 major sites; no new map lens, maps, standalone atlas, or third-party runtime corpus",
+  "publication_policy": "Concise bilingual Scripture-linked context; date uncertainty and contested site identities expressed; no independent map pins.",
   "version": "2026-10-10",
   "groups": [
     "OT",
@@ -11,36 +11,19 @@
   ],
   "entries": [
     {
-      "id": "ur",
+      "id": "babylon",
       "group": "OT",
-      "title_en": "Ur of the Chaldees",
-      "title_fr": "Our des Chaldéens",
-      "summary_en": "Abraham's family leaves Ur for Haran on the journey toward Canaan.",
-      "summary_fr": "La famille d’Abraham quitte Our pour Harrân, en route vers le pays de Canaan.",
-      "period_en": "Patriarchal narratives · date uncertain",
-      "period_fr": "Récits patriarcaux · date incertaine",
-      "persons_en": "Abraham, Terah",
-      "persons_fr": "Abraham, Tharé",
+      "title_en": "Babylon",
+      "title_fr": "Babylone",
+      "summary_en": "The fall of Jerusalem leads to exile in Babylon, a major setting of the prophetic books.",
+      "summary_fr": "La chute de Jérusalem conduit à l’exil à Babylone, cadre majeur des livres prophétiques.",
+      "period_en": "Sixth century BC",
+      "period_fr": "VIe siècle av. J.-C.",
+      "persons_en": "Nebuchadnezzar, exiles",
+      "persons_fr": "Nabuchodonosor, exilés",
       "passages": [
-        "Genesis 11:31"
-      ],
-      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
-      "source_type": "SCRIPTURE",
-      "published": true
-    },
-    {
-      "id": "sinai",
-      "group": "OT",
-      "title_en": "Mount Sinai",
-      "title_fr": "Mont Sinaï",
-      "summary_en": "Israel receives the Law at Sinai after the departure from Egypt; the modern mountain identification is debated.",
-      "summary_fr": "Israël reçoit la Loi au Sinaï après la sortie d’Égypte ; l’identification de la montagne actuelle reste discutée.",
-      "period_en": "Exodus narrative · date uncertain",
-      "period_fr": "Récit de l’Exode · date incertaine",
-      "persons_en": "Moses, Israelites",
-      "persons_fr": "Moïse, Israélites",
-      "passages": [
-        "Exodus 19:16–20"
+        "2Kings 25:8–12",
+        "Daniel 1:1–6"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -66,6 +49,99 @@
       "published": true
     },
     {
+      "id": "egypt",
+      "group": "OT",
+      "title_en": "Egypt",
+      "title_fr": "Égypte",
+      "summary_en": "The Israelites suffer oppression in Egypt before Moses leads them toward freedom.",
+      "summary_fr": "Les Israélites subissent l’oppression en Égypte avant que Moïse les conduise vers la liberté.",
+      "period_en": "Exodus narrative · date uncertain",
+      "period_fr": "Récit de l’Exode · date incertaine",
+      "persons_en": "Moses, Israelites",
+      "persons_fr": "Moïse, Israélites",
+      "passages": [
+        "Exodus 1:8–14",
+        "Exodus 12:31–42"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "gibeon",
+      "group": "OT",
+      "title_en": "Gibeon",
+      "title_fr": "Gabaon",
+      "summary_en": "Joshua's campaign against a coalition of kings unfolds near Gibeon.",
+      "summary_fr": "La campagne de Josué contre une coalition de rois se déroule près de Gabaon.",
+      "period_en": "Conquest narrative · date uncertain",
+      "period_fr": "Récit de la conquête · date incertaine",
+      "persons_en": "Joshua",
+      "persons_fr": "Josué",
+      "passages": [
+        "Joshua 10:10–13"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "haran",
+      "group": "OT",
+      "title_en": "Haran",
+      "title_fr": "Harrân",
+      "summary_en": "Abraham leaves Haran for the land God will show him.",
+      "summary_fr": "Abraham quitte Harrân pour le pays que Dieu lui montrera.",
+      "period_en": "Patriarchal narratives · date uncertain",
+      "period_fr": "Récits patriarcaux · date incertaine",
+      "persons_en": "Abraham, Sarah, Lot",
+      "persons_fr": "Abraham, Sara, Lot",
+      "passages": [
+        "Genesis 12:4–5"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "hebron",
+      "group": "OT",
+      "title_en": "Hebron / Mamre",
+      "title_fr": "Hébron / Mambré",
+      "summary_en": "Abraham welcomes three visitors near Mamre. Hebron remains closely linked to the patriarchs.",
+      "summary_fr": "Abraham reçoit trois visiteurs près de Mambré. Hébron reste lié aux patriarches.",
+      "period_en": "Patriarchal narratives · date uncertain",
+      "period_fr": "Récits patriarcaux · date incertaine",
+      "persons_en": "Abraham, Sarah",
+      "persons_fr": "Abraham, Sara",
+      "passages": [
+        "Genesis 18:1–8",
+        "Genesis 23:17–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "jericho",
+      "group": "OT",
+      "title_en": "Jericho",
+      "title_fr": "Jéricho",
+      "summary_en": "Joshua leads Israel at Jericho. Centuries later Jesus encounters Zacchaeus in the same region.",
+      "summary_fr": "Josué conduit Israël à Jéricho. Des siècles plus tard Jésus rencontre Zachée dans la même région.",
+      "period_en": "Conquest narrative and life of Christ",
+      "period_fr": "Récit de la conquête et vie du Christ",
+      "persons_en": "Joshua, Jesus, Zacchaeus",
+      "persons_fr": "Josué, Jésus, Zachée",
+      "passages": [
+        "Joshua 6:1–20",
+        "Luke 19:1–10"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
       "id": "jerusalem",
       "group": "OT",
       "title_en": "Jerusalem",
@@ -78,6 +154,24 @@
       "persons_fr": "David",
       "passages": [
         "2Samuel 5:6–10"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "lachish",
+      "group": "OT",
+      "title_en": "Lachish",
+      "title_fr": "Lachis",
+      "summary_en": "The Assyrian king Sennacherib campaigns from Lachish during Hezekiah's reign.",
+      "summary_fr": "Le roi assyrien Sennachérib mène campagne depuis Lachis sous le règne d’Ézéchias.",
+      "period_en": "Late eighth century BC",
+      "period_fr": "Fin du VIIIe siècle av. J.-C.",
+      "persons_en": "Hezekiah, Sennacherib",
+      "persons_fr": "Ézéchias, Sennachérib",
+      "passages": [
+        "2Kings 18:13–17"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -102,19 +196,110 @@
       "published": true
     },
     {
-      "id": "nineveh",
-      "group": "DEUTERO",
-      "title_en": "Nineveh",
-      "title_fr": "Ninive",
-      "summary_en": "Tobit lives in exile at Nineveh; the city also receives Jonah's call to repentance.",
-      "summary_fr": "Tobie vit en exil à Ninive ; la ville reçoit aussi l’appel à la pénitence du prophète Jonas.",
-      "period_en": "Assyrian period · biblical narrative",
-      "period_fr": "Époque assyrienne · récit biblique",
-      "persons_en": "Tobit, Jonah",
-      "persons_fr": "Tobie, Jonas",
+      "id": "nebo",
+      "group": "OT",
+      "title_en": "Mount Nebo",
+      "title_fr": "Mont Nébo",
+      "summary_en": "Moses views the Promised Land from Mount Nebo. Scripture says his grave's location is unknown.",
+      "summary_fr": "Moïse contemple la Terre promise depuis le mont Nébo. L’Écriture dit que le lieu de sa tombe est inconnu.",
+      "period_en": "End of the Exodus narrative · date uncertain",
+      "period_fr": "Fin du récit de l’Exode · date incertaine",
+      "persons_en": "Moses",
+      "persons_fr": "Moïse",
       "passages": [
-        "Tobit 1:10",
-        "Jonah 3:1–10"
+        "Deuteronomy 34:1–6"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "sinai",
+      "group": "OT",
+      "title_en": "Mount Sinai",
+      "title_fr": "Mont Sinaï",
+      "summary_en": "Israel receives the Law at Sinai after the departure from Egypt; the modern mountain identification is debated.",
+      "summary_fr": "Israël reçoit la Loi au Sinaï après la sortie d’Égypte ; l’identification de la montagne actuelle reste discutée.",
+      "period_en": "Exodus narrative · date uncertain",
+      "period_fr": "Récit de l’Exode · date incertaine",
+      "persons_en": "Moses, Israelites",
+      "persons_fr": "Moïse, Israélites",
+      "passages": [
+        "Exodus 19:16–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "shiloh",
+      "group": "OT",
+      "title_en": "Shiloh",
+      "title_fr": "Silo",
+      "summary_en": "Hannah prays at the sanctuary of Shiloh, where the young Samuel later serves.",
+      "summary_fr": "Anne prie au sanctuaire de Silo, où le jeune Samuel sert ensuite.",
+      "period_en": "Period of the judges · date uncertain",
+      "period_fr": "Époque des Juges · date incertaine",
+      "persons_en": "Hannah, Eli, Samuel",
+      "persons_fr": "Anne, Héli, Samuel",
+      "passages": [
+        "1Samuel 1:9–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "susa",
+      "group": "OT",
+      "title_en": "Susa / Shushan",
+      "title_fr": "Suse",
+      "summary_en": "The Book of Esther places the Persian royal court at Susa; Nehemiah also mentions the city.",
+      "summary_fr": "Le livre d’Esther situe la cour royale perse à Suse ; Néhémie mentionne aussi cette ville.",
+      "period_en": "Persian period · fifth century BC",
+      "period_fr": "Époque perse · Ve siècle av. J.-C.",
+      "persons_en": "Esther, Nehemiah",
+      "persons_fr": "Esther, Néhémie",
+      "passages": [
+        "Esther 1:1–3",
+        "Nehemiah 1:1"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "ur",
+      "group": "OT",
+      "title_en": "Ur of the Chaldees",
+      "title_fr": "Our des Chaldéens",
+      "summary_en": "Abraham's family leaves Ur for Haran on the journey toward Canaan.",
+      "summary_fr": "La famille d’Abraham quitte Our pour Harrân, en route vers le pays de Canaan.",
+      "period_en": "Patriarchal narratives · date uncertain",
+      "period_fr": "Récits patriarcaux · date incertaine",
+      "persons_en": "Abraham, Terah",
+      "persons_fr": "Abraham, Tharé",
+      "passages": [
+        "Genesis 11:31"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "bethulia",
+      "group": "DEUTERO",
+      "title_en": "Bethulia",
+      "title_fr": "Béthulie",
+      "summary_en": "Judith's city is threatened by Holofernes. Its exact ancient location is not established.",
+      "summary_fr": "La ville de Judith est menacée par Holopherne. Son emplacement ancien exact n’est pas établi.",
+      "period_en": "Book of Judith · chronology debated",
+      "period_fr": "Livre de Judith · chronologie discutée",
+      "persons_en": "Judith, Holofernes",
+      "persons_fr": "Judith, Holopherne",
+      "passages": [
+        "Judith 7:1–7",
+        "Judith 8:1–8"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -157,37 +342,37 @@
       "published": true
     },
     {
-      "id": "nazareth",
-      "group": "CHRIST",
-      "title_en": "Nazareth",
-      "title_fr": "Nazareth",
-      "summary_en": "Gabriel announces the Incarnation to Mary in Nazareth. Jesus later teaches in the synagogue of the town.",
-      "summary_fr": "Gabriel annonce à Marie l’Incarnation à Nazareth. Jésus y enseigne ensuite dans la synagogue.",
-      "period_en": "Life of Christ · turn of the Christian era",
-      "period_fr": "Vie du Christ · autour du début de l’ère chrétienne",
-      "persons_en": "Mary, Jesus, Gabriel",
-      "persons_fr": "Marie, Jésus, Gabriel",
+      "id": "nineveh",
+      "group": "DEUTERO",
+      "title_en": "Nineveh",
+      "title_fr": "Ninive",
+      "summary_en": "Tobit lives in exile at Nineveh; the city also receives Jonah's call to repentance.",
+      "summary_fr": "Tobie vit en exil à Ninive ; la ville reçoit aussi l’appel à la pénitence du prophète Jonas.",
+      "period_en": "Assyrian period · biblical narrative",
+      "period_fr": "Époque assyrienne · récit biblique",
+      "persons_en": "Tobit, Jonah",
+      "persons_fr": "Tobie, Jonas",
       "passages": [
-        "Luke 1:26–38",
-        "Luke 4:16–21"
+        "Tobit 1:10",
+        "Jonah 3:1–10"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
     },
     {
-      "id": "capernaum",
+      "id": "bethany",
       "group": "CHRIST",
-      "title_en": "Capernaum",
-      "title_fr": "Capharnaüm",
-      "summary_en": "Jesus teaches and heals in Capernaum, one of the principal towns of his Galilean ministry.",
-      "summary_fr": "Jésus enseigne et guérit à Capharnaüm, l’un des principaux lieux de son ministère en Galilée.",
+      "title_en": "Bethany",
+      "title_fr": "Béthanie",
+      "summary_en": "Jesus raises Lazarus from the dead near Bethany, the village of Martha and Mary.",
+      "summary_fr": "Jésus ressuscite Lazare près de Béthanie, village de Marthe et Marie.",
       "period_en": "Public ministry · first century AD",
       "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Peter",
-      "persons_fr": "Jésus, Pierre",
+      "persons_en": "Jesus, Lazarus, Martha, Mary",
+      "persons_fr": "Jésus, Lazare, Marthe, Marie",
       "passages": [
-        "Mark 1:21–28"
+        "John 11:1–44"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -212,18 +397,36 @@
       "published": true
     },
     {
-      "id": "bethany",
+      "id": "capernaum",
       "group": "CHRIST",
-      "title_en": "Bethany",
-      "title_fr": "Béthanie",
-      "summary_en": "Jesus raises Lazarus from the dead near Bethany, the village of Martha and Mary.",
-      "summary_fr": "Jésus ressuscite Lazare près de Béthanie, village de Marthe et Marie.",
+      "title_en": "Capernaum",
+      "title_fr": "Capharnaüm",
+      "summary_en": "Jesus teaches and heals in Capernaum, one of the principal towns of his Galilean ministry.",
+      "summary_fr": "Jésus enseigne et guérit à Capharnaüm, l’un des principaux lieux de son ministère en Galilée.",
       "period_en": "Public ministry · first century AD",
       "period_fr": "Vie publique · Ier siècle ap. J.-C.",
-      "persons_en": "Jesus, Lazarus, Martha, Mary",
-      "persons_fr": "Jésus, Lazare, Marthe, Marie",
+      "persons_en": "Jesus, Peter",
+      "persons_fr": "Jésus, Pierre",
       "passages": [
-        "John 11:1–44"
+        "Mark 1:21–28"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "emmaus",
+      "group": "CHRIST",
+      "title_en": "Emmaus",
+      "title_fr": "Emmaüs",
+      "summary_en": "The risen Christ walks toward Emmaus with two disciples, who recognize him at the breaking of bread. Several modern sites are proposed.",
+      "summary_fr": "Le Christ ressuscité marche vers Emmaüs avec deux disciples, qui le reconnaissent à la fraction du pain. Plusieurs sites actuels sont proposés.",
+      "period_en": "Resurrection · first century AD",
+      "period_fr": "Résurrection · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Cleopas",
+      "persons_fr": "Jésus, Cléophas",
+      "passages": [
+        "Luke 24:13–35"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -266,18 +469,128 @@
       "published": true
     },
     {
-      "id": "damascus",
-      "group": "APOSTLES",
-      "title_en": "Damascus",
-      "title_fr": "Damas",
-      "summary_en": "Saul encounters the risen Christ on the road to Damascus and is baptized in the city.",
-      "summary_fr": "Saul rencontre le Christ ressuscité sur la route de Damas et reçoit le baptême dans la ville.",
-      "period_en": "Early Church · first century AD",
-      "period_fr": "Église primitive · Ier siècle ap. J.-C.",
-      "persons_en": "Paul, Ananias",
-      "persons_fr": "Paul, Ananie",
+      "id": "jordan-baptism",
+      "group": "CHRIST",
+      "title_en": "Jordan River — Baptism of Jesus",
+      "title_fr": "Jourdain — Baptême de Jésus",
+      "summary_en": "John baptizes Jesus in the Jordan. The precise riverside location remains disputed.",
+      "summary_fr": "Jean baptise Jésus dans le Jourdain. L’emplacement précis sur le fleuve reste discuté.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, John the Baptist",
+      "persons_fr": "Jésus, Jean-Baptiste",
       "passages": [
-        "Acts 9:1–22"
+        "Mark 1:9–11"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "ein-karem",
+      "group": "CHRIST",
+      "title_en": "Judean hill country / Ein Karem",
+      "title_fr": "Montagnes de Judée / Aïn Karem",
+      "summary_en": "Mary visits Elizabeth in the Judean hills. Ein Karem is a later traditional identification, not a village named in Luke.",
+      "summary_fr": "Marie visite Élisabeth dans les monts de Judée. Aïn Karem est une identification traditionnelle, non un village nommé par Luc.",
+      "period_en": "Infancy narratives · date uncertain",
+      "period_fr": "Récits de l’Enfance · date incertaine",
+      "persons_en": "Mary, Elizabeth, John the Baptist",
+      "persons_fr": "Marie, Élisabeth, Jean-Baptiste",
+      "passages": [
+        "Luke 1:39–45"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "olives",
+      "group": "CHRIST",
+      "title_en": "Mount of Olives",
+      "title_fr": "Mont des Oliviers",
+      "summary_en": "Jesus approaches Jerusalem from the Mount of Olives; Acts associates the Ascension with this area.",
+      "summary_fr": "Jésus s’approche de Jérusalem par le mont des Oliviers ; les Actes associent l’Ascension à cette région.",
+      "period_en": "Passion and Resurrection · first century AD",
+      "period_fr": "Passion et Résurrection · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Apostles",
+      "persons_fr": "Jésus, Apôtres",
+      "passages": [
+        "Luke 19:37–44",
+        "Acts 1:9–12"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "transfiguration",
+      "group": "CHRIST",
+      "title_en": "Mount of the Transfiguration / Tabor",
+      "title_fr": "Mont de la Transfiguration / Thabor",
+      "summary_en": "Jesus is transfigured on a high mountain. The traditional identification with Tabor is not stated in the Gospel.",
+      "summary_fr": "Jésus est transfiguré sur une haute montagne. L’identification traditionnelle au Thabor n’est pas précisée par l’Évangile.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Peter, James, John",
+      "persons_fr": "Jésus, Pierre, Jacques, Jean",
+      "passages": [
+        "Matthew 17:1–8"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "nazareth",
+      "group": "CHRIST",
+      "title_en": "Nazareth",
+      "title_fr": "Nazareth",
+      "summary_en": "Gabriel announces the Incarnation to Mary in Nazareth. Jesus later teaches in the synagogue of the town.",
+      "summary_fr": "Gabriel annonce à Marie l’Incarnation à Nazareth. Jésus y enseigne ensuite dans la synagogue.",
+      "period_en": "Life of Christ · turn of the Christian era",
+      "period_fr": "Vie du Christ · autour du début de l’ère chrétienne",
+      "persons_en": "Mary, Jesus, Gabriel",
+      "persons_fr": "Marie, Jésus, Gabriel",
+      "passages": [
+        "Luke 1:26–38",
+        "Luke 4:16–21"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "galilee-sea",
+      "group": "CHRIST",
+      "title_en": "Sea of Galilee",
+      "title_fr": "Mer de Galilée",
+      "summary_en": "Jesus calls fishermen beside the lake, including Simon Peter and Andrew.",
+      "summary_fr": "Jésus appelle des pêcheurs au bord du lac, notamment Simon-Pierre et André.",
+      "period_en": "Public ministry · first century AD",
+      "period_fr": "Vie publique · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Peter, Andrew",
+      "persons_fr": "Jésus, Pierre, André",
+      "passages": [
+        "Mark 1:16–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "christ-tomb",
+      "group": "CHRIST",
+      "title_en": "Tomb of Christ / Holy Sepulchre",
+      "title_fr": "Tombeau du Christ / Saint-Sépulcre",
+      "summary_en": "Mary Magdalene finds the empty tomb after the Resurrection. The traditional site belongs to the Holy Sepulchre complex.",
+      "summary_fr": "Marie-Madeleine découvre le tombeau vide après la Résurrection. Le site traditionnel appartient à l’ensemble du Saint-Sépulcre.",
+      "period_en": "Resurrection · first century AD",
+      "period_fr": "Résurrection · Ier siècle ap. J.-C.",
+      "persons_en": "Jesus, Mary Magdalene, Peter",
+      "persons_fr": "Jésus, Marie-Madeleine, Pierre",
+      "passages": [
+        "John 20:1–18"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
@@ -296,6 +609,96 @@
       "persons_fr": "Paul, Barnabé",
       "passages": [
         "Acts 11:19–26"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "caesarea",
+      "group": "APOSTLES",
+      "title_en": "Caesarea Maritima",
+      "title_fr": "Césarée maritime",
+      "summary_en": "Peter visits Cornelius at Caesarea, marking a crucial stage in the mission to the Gentiles.",
+      "summary_fr": "Pierre rend visite à Corneille à Césarée, étape majeure de la mission auprès des païens.",
+      "period_en": "Early Church · first century AD",
+      "period_fr": "Église primitive · Ier siècle ap. J.-C.",
+      "persons_en": "Peter, Cornelius",
+      "persons_fr": "Pierre, Corneille",
+      "passages": [
+        "Acts 10:1–48"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "corinth",
+      "group": "APOSTLES",
+      "title_en": "Corinth",
+      "title_fr": "Corinthe",
+      "summary_en": "Paul works and preaches in Corinth, where he meets Aquila and Priscilla.",
+      "summary_fr": "Paul travaille et prêche à Corinthe, où il rencontre Aquilas et Priscille.",
+      "period_en": "Apostolic missions · first century AD",
+      "period_fr": "Missions apostoliques · Ier siècle ap. J.-C.",
+      "persons_en": "Paul, Aquila, Priscilla",
+      "persons_fr": "Paul, Aquilas, Priscille",
+      "passages": [
+        "Acts 18:1–18"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "damascus",
+      "group": "APOSTLES",
+      "title_en": "Damascus",
+      "title_fr": "Damas",
+      "summary_en": "Saul encounters the risen Christ on the road to Damascus and is baptized in the city.",
+      "summary_fr": "Saul rencontre le Christ ressuscité sur la route de Damas et reçoit le baptême dans la ville.",
+      "period_en": "Early Church · first century AD",
+      "period_fr": "Église primitive · Ier siècle ap. J.-C.",
+      "persons_en": "Paul, Ananias",
+      "persons_fr": "Paul, Ananie",
+      "passages": [
+        "Acts 9:1–22"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "ephesus",
+      "group": "APOSTLES",
+      "title_en": "Ephesus",
+      "title_fr": "Éphèse",
+      "summary_en": "Paul teaches in Ephesus, where his mission prompts opposition connected with the cult of Artemis.",
+      "summary_fr": "Paul enseigne à Éphèse, où sa mission suscite une opposition liée au culte d’Artémis.",
+      "period_en": "Apostolic missions · first century AD",
+      "period_fr": "Missions apostoliques · Ier siècle ap. J.-C.",
+      "persons_en": "Paul",
+      "persons_fr": "Paul",
+      "passages": [
+        "Acts 19:1–20"
+      ],
+      "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
+      "source_type": "SCRIPTURE",
+      "published": true
+    },
+    {
+      "id": "joppa",
+      "group": "APOSTLES",
+      "title_en": "Joppa / Jaffa",
+      "title_fr": "Joppé / Jaffa",
+      "summary_en": "Peter raises Tabitha at Joppa and receives visitors sent by Cornelius.",
+      "summary_fr": "Pierre ressuscite Tabitha à Joppé et reçoit des visiteurs envoyés par Corneille.",
+      "period_en": "Early Church · first century AD",
+      "period_fr": "Église primitive · Ier siècle ap. J.-C.",
+      "persons_en": "Peter, Tabitha",
+      "persons_fr": "Pierre, Tabitha",
+      "passages": [
+        "Acts 9:36–43"
       ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
