@@ -1,4 +1,4 @@
-// Explicitly gated editorial QA only. Not a public Formation route or publication approval.
+// Canonical study preview and full editorial QA share one source; draft is not certified teaching.
 // The records load from their canonical research JSON files; this view does not duplicate the answer corpus.
 export const RECOVERY_REVIEW_VERSION = "FORMATION_RECOVERY_REVIEW_V1";
 export const RECOVERY_REVIEW_ROOT = "ao-formation-recovery-review";
@@ -70,6 +70,7 @@ const css = [
   "#ao-formation-recovery-review input,#ao-formation-recovery-review select{width:100%;min-height:46px;padding:10px 12px;color:inherit;background:var(--ao-surface-1,#101821);border:1px solid var(--ao-rule,#3d3d40);border-radius:10px;font:1rem var(--ao-font-ui,system-ui)}",
   "#ao-formation-recovery-review .rrList{display:grid;gap:9px;margin-top:15px}",
   "#ao-formation-recovery-review .rrList button{min-height:68px}",
+  '#ao-formation-recovery-review[data-study-preview="1"] .rrTabs,#ao-formation-recovery-review[data-study-preview="1"] [data-rr-corpus]{display:none}',
   "#ao-formation-recovery-review .rrList button:focus-visible,#ao-formation-recovery-review .rrTabs button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}",
   "#ao-formation-recovery-review .rrTabs{display:flex;gap:9px;margin:14px 0}",
   "#ao-formation-recovery-review .rrTabs button{padding:10px 12px;min-height:44px;border:1px solid var(--ao-rule,#3d3d40);background:transparent;border-radius:10px;font:.82rem var(--ao-font-ui,system-ui)}",
@@ -182,7 +183,7 @@ export function buildRecoveryDossierCoverage(rows,packs) {
 }
 
 export function createFormationRecoveryReview(win=globalThis) {
-  const state={open:false,view:"list",mode:"dossiers",corpus:"all",family:"all",dossierId:null,returnTo:"list",returnFocus:null,id:null,bank:"all",query:"",rows:[],dossiers:[],external:[],error:"",loading:false};
+  const state={open:false,view:"list",mode:"dossiers",corpus:"all",family:"all",studyPreview:false,dossierId:null,returnTo:"list",returnFocus:null,id:null,bank:"all",query:"",rows:[],dossiers:[],external:[],error:"",loading:false};
   const root=()=>win?.document?.getElementById?.(RECOVERY_REVIEW_ROOT);
   const selected=()=>state.rows.find(x=>x.id===state.id);
   const ttl=r=>isFr(win)?r.title_fr||r.title_en:r.title_en;
@@ -238,7 +239,7 @@ export function createFormationRecoveryReview(win=globalThis) {
     const selected=visibleDossiers().filter(x=>
       [x.id,x.title,x.family,familyName(x.family),...x.research.flatMap(y=>[y.title_en,y.title_fr])].some(v=>String(v||"").toLowerCase().includes(q)));
     return selected.map(x=>'<button type="button" data-rr-dossier="'+esc(x.id)+'"><small>'+
-      esc(x.id)+' · '+esc(familyName(x.family))+' · '+esc(x.synthesis?pick(win,'Draft with source links','Brouillon avec sources'):pick(win,'Draft pending','Brouillon en attente'))+' · '+esc(x.research.length+' '+pick(win,'prior records','recherches antérieures'))+
+      esc(x.id)+' · '+esc(familyName(x.family))+' · '+esc(state.studyPreview?pick(win,'Draft answer · sources linked','Brouillon sourcé'):(x.synthesis?pick(win,'Draft with source links','Brouillon avec sources'):pick(win,'Draft pending','Brouillon en attente')))+(state.studyPreview?'':' · '+esc(x.research.length+' '+pick(win,'prior records','recherches antérieures')))+
       '</small>'+esc(x.title)+'</button>').join("")||
       '<p class="rrMuted">'+esc(pick(win,"No matching dossiers.","Aucun dossier correspondant."))+'</p>';
   };
@@ -283,10 +284,16 @@ export function createFormationRecoveryReview(win=globalThis) {
   const dossierDetail=()=>{
     const d=state.dossiers.find(x=>x.id===state.dossierId);
     if(!d)return listView();
+    if(state.studyPreview)return '<div class="rrMuted">'+esc(d.id)+' · '+esc(familyName(d.family))+
+      '</div><h1>'+esc(d.title)+'</h1><div class="rrWarning">'+
+      esc(pick(win,
+        "Draft for study. Each argument cites sources, but individual claims, opposing quotations and French wording are not finally approved.",
+        "Projet de lecture. Les arguments renvoient à des sources ; les affirmations, objections et formulations françaises ne sont pas définitivement approuvées."))+
+      '</div>'+synthesisReading(d);
     const evidence=d.evidence;
     const leads=evidence?.legacy_thematic_and_research_bank_leads||[];
     const refs=[...(evidence?.apostolate_reference_only||[]),...(evidence?.proposed_not_live_AQ_leads||[])];
-    const intro='<div class="rrMuted">'+esc(d.id)+' · '+esc(d.family)+'</div><h1>'+esc(d.title)+'</h1>'+
+    const intro='<div class="rrMuted">'+esc(d.id)+' · '+esc(familyName(d.family))+'</div><h1>'+esc(d.title)+'</h1>'+
       '<div class="rrWarning">'+esc(d.synthesis?.research_anchor?.length===0?
         pick(win,
           "New source-first editorial argument under the existing canonical owner. The historical question and older research were not individually recovered; the answer is neither independently certified nor published.",
@@ -316,14 +323,14 @@ export function createFormationRecoveryReview(win=globalThis) {
   };
   const listView=()=>{
     const dossierMode=state.mode==="dossiers";
-    return '<div class="rrMuted">'+esc(pick(win,"Editorial research only · not published",
+    return '<div class="rrMuted">'+esc(state.studyPreview?pick(win,"Study preview · drafts under review","Aperçu de formation · textes en révision"):pick(win,"Editorial research only · not published",
       "Recherche éditoriale · non publiée"))+'</div>'+
       '<h1>'+esc(state.corpus==="apologetics"?pick(win,"Apologetics","Apologétique"):state.corpus==="crisis"?pick(win,"Crisis in the Church","Crise dans l’Église"):pick(win,"Formation recovery by topic","Récupération par sujet"))+'</h1>'+
-      '<p class="rrWarning">'+esc(pick(win,
+      '<p class="rrWarning">'+esc(state.studyPreview?pick(win,"Preliminary answers, not independently certified. Original sources are linked; theological and French reviews continue.","Réponses préliminaires non certifiées. Les sources originales sont liées ; les révisions théologique et française se poursuivent."):pick(win,
       "Research links are not an approval of the text. Empty dossiers here mean no record in this recovered pack, not that the question was never researched.",
       "Ces liens ne valent pas approbation. Un dossier vide ici signifie seulement qu’aucune entrée de cette collection n’y est associée."))+'</p>'+
       '<div class="rrMuted">'+esc(visibleDossiers().length)+' '+
-      esc(pick(win,"dossiers in this view. All 141 have unpublished source-linked draft readings; 53 contain indexed earlier research.",
+      esc(state.studyPreview?pick(win,"questions · filter by theme or search below.","questions · filtrer par thème ou rechercher ci-dessous."):pick(win,"dossiers in this view. All 141 have unpublished source-linked draft readings; 53 contain indexed earlier research.",
       "dossiers affichés. Les 141 possèdent un projet de lecture sourcé non publié ; 53 comportent des recherches anciennes indexées."))+'</div>'+
       '<div class="rrTabs" role="group" aria-label="Review mode">'+
       [['dossiers',pick(win,"Dossiers (141)","Dossiers (141)")],
@@ -397,17 +404,18 @@ export function createFormationRecoveryReview(win=globalThis) {
   function paint(){
     const el=ensure();if(!el||!state.open)return false;
     el.lang=isFr(win)?"fr":"en";
+    el.setAttribute("data-study-preview",state.studyPreview?"1":"0");
     const inner=state.loading?'<p class="rrMuted">Loading original source files…</p>':
       state.error?'<p class="rrWarning">'+esc(state.error)+'</p>':state.view==="list"?listView():state.view==="dossier-detail"?dossierDetail():detailView();
     el.innerHTML='<style>'+css+'</style><header class="rrTop"><button type="button" data-rr-back aria-label="Back">‹</button>'+
-      '<strong>'+esc(pick(win,"Source review · Unpublished","Examen des sources · Non publié"))+'</strong>'+
+      '<strong>'+esc(state.studyPreview?pick(win,"Formation · Study preview","Formation · Aperçu"):pick(win,"Source review · Unpublished","Examen des sources · Non publié"))+'</strong>'+
       '<button type="button" data-rr-home aria-label="Home">⌂</button></header><main>'+inner+'</main>';
     return true;
   }
-  async function open({corpus="all",returnFocus=null}={}){
+  async function open({corpus="all",returnFocus=null,studyPreview=false}={}){
     if(!ensure())return false;
     state.corpus=["apologetics","crisis"].includes(corpus)?corpus:"all";
-    state.family="all";state.mode="dossiers";state.view="list";state.query="";state.bank="all";state.returnFocus=returnFocus;
+    state.studyPreview=!!studyPreview;state.family="all";state.mode="dossiers";state.view="list";state.query="";state.bank="all";state.returnFocus=returnFocus;
     state.open=true;state.loading=true;state.error="";paint();
     try {
       if(!win?.fetch)throw new Error("Fetch unavailable.");
@@ -435,12 +443,12 @@ export function createFormationRecoveryReview(win=globalThis) {
   function close(){
     const el=root();try{el?.querySelector?.(":focus")?.blur?.();}catch{}
     el?.remove?.();state.open=false;state.view="list";state.id=null;state.dossierId=null;
-    const restore=state.returnFocus;state.returnFocus=null;
+    const restore=state.returnFocus;state.returnFocus=null;state.studyPreview=false;
     if(restore?.isConnected!==false)try{restore?.focus?.({preventScroll:true});}catch{}
     return true;
   }
   function status(){return Object.freeze({version:RECOVERY_REVIEW_VERSION,open:state.open,
-    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,assembledDossierReadings:state.dossiers.filter(d=>d.research.length&&d.evidence).length,synthesisDossiers:state.dossiers.filter(d=>d.synthesis).length,externalRecords:state.external.length,loading:state.loading,error:state.error,public:false});}
+    researchRecords:state.rows.length,newContemporaryDrafts:state.rows.filter(x=>x.bank==="Contemporary III · drafted").length,canonicalDossiers:state.dossiers.length,coveredDossiers:state.dossiers.filter(d=>d.research.length).length,assembledDossierReadings:state.dossiers.filter(d=>d.research.length&&d.evidence).length,synthesisDossiers:state.dossiers.filter(d=>d.synthesis).length,externalRecords:state.external.length,loading:state.loading,error:state.error,studyPreview:state.studyPreview,public:false});}
   return Object.freeze({open,close,paint,status});
 }
 export function installFormationRecoveryReview(win=globalThis) {

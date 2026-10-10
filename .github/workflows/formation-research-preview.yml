@@ -22,6 +22,8 @@ on:
       - 'data/learn/apologetics-a2-25-source-audit-2026-10-10.v1.json'
       - 'data/learn/formation-a2-20261010-source-role-amendment.v1.json'
       - 'tests/apologetics-a2-25-source-audit.mjs'
+      - 'data/learn/apologetics-a3-10-source-audit-2026-10-10.v1.json'
+      - 'tests/apologetics-a3-10-source-audit.mjs'
       - 'data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json'
       - 'data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json'
@@ -190,6 +192,8 @@ jobs:
         run: node tests/apologetics-a1-25-source-audit.mjs
       - name: Verify Apologetics A2 dossiers 26–50, original opponents and publication holds
         run: node tests/apologetics-a2-25-source-audit.mjs
+      - name: Verify final Apologetics A3 owners and original-source draft release locks
+        run: node tests/apologetics-a3-10-source-audit.mjs
       - name: Validate all 53 canonical research-linked bilingual dossiers
         run: node tests/formation-canonical-synthesis-batch3.mjs
       - name: Validate new source-first Catholic foundation articles for previously unlinked owners

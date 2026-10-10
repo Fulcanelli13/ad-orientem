@@ -179,22 +179,22 @@ export function learnDiscoveryMarkup(state,win,{query="",referenceEntries=[],ref
  </div><div class="aoLearnDiscoveryList">${items}</div>`;
 }
 
-// Source-controlled editorial access only, not a public Formation route.
+// Accessible preliminary source-linked study, not an approved public Formation module.
 export function formationDossierReviewEnabled(win=globalThis){
  return /(?:^\?|&)aoFormationReview=1(?:&|$)/.test(String(win?.location?.search||""));
 }
 function formationDossierReviewMarkup(state,win){
- if(!formationDossierReviewEnabled(win))return "";
+
  const fr=isFr(state);
  const items=[
   ["apologetics","Apologetics","Apologétique",60,"Defending the faith · nine themes","Défendre la foi · neuf thèmes"],
   ["crisis","Crisis in the Church","Crise dans l’Église",81,"Contested questions · eight themes","Questions controversées · huit thèmes"]
  ];
  return '<div class="aoLearnDossierReview" data-ao-learn-review-section>'+
-  '<p class="aoLearnDossierReviewNote">'+esc(fr?"Aperçu éditorial non publié · sources en cours de certification":"Unpublished editorial preview · sources under certification")+'</p>'+
+  '<p class="aoLearnDossierReviewNote">'+esc(fr?"Aperçu de lecture · réponses et sources encore en révision":"Early study preview · answers and sources still under review")+'</p>'+
   '<div class="aoLearnModGrid">'+items.map(item=>
    '<article class="aoLearnModCard"><button type="button" class="aoLearnModCardMain" data-ao-learn-dossier-review="'+item[0]+'">'+
-   '<span class="type">'+esc((fr?"EN EXAMEN · ":"IN REVIEW · ")+item[3]+" dossiers")+'</span>'+
+   '<span class="type">'+esc((fr?"APERÇU · ":"PREVIEW · ")+item[3]+" questions")+'</span>'+
    '<strong>'+esc(item[fr?2:1])+'</strong><p>'+esc(item[fr?5:4])+'</p></button></article>').join("")+'</div></div>';
 }
 
@@ -243,7 +243,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
           </section>
           <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Questions et débats":"Questions and Debates")}">
             <button type="button" class="aoLearnQuestionsBridge" data-ao-learn-questions>
-              ${assetMask("ao-refined-help")}<span><small>${esc(langFr?"QUESTIONS":"QUESTIONS")}</small><strong>${esc(langFr?"Questions et débats":"Questions & Debates")}</strong><em>${esc(langFr?"Questions publiées de morale catholique ; les débats approfondis exigent encore une vérification des sources.":"Published Catholic moral questions; deeper debates still require source verification.")}</em></span>${assetMask("ao-ui-next")}
+              ${assetMask("ao-refined-help")}<span><small>${esc(langFr?"QUESTIONS":"QUESTIONS")}</small><strong>${esc(langFr?"Questions et débats":"Questions & Debates")}</strong><em>${esc(langFr?"Morale catholique, apologétique et crise de l’Église · les brouillons sourcés sont clairement signalés.":"Catholic moral questions, Apologetics and Church Crisis · source-linked working drafts are clearly marked.")}</em></span>${assetMask("ao-ui-next")}
             </button>
             ${formationDossierReviewMarkup(state,win)}
           </section>

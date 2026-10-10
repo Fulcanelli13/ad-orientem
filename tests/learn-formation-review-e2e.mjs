@@ -28,7 +28,7 @@ try{
     deviceScaleFactor:2,serviceWorkers:"block"});
   const errors=[];
   page.on("pageerror",e=>errors.push(String(e?.message||e)));
-  await page.goto("http://127.0.0.1:4251/index.html?aoFormationReview=1",
+  await page.goto("http://127.0.0.1:4251/index.html",
     {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
     null,{timeout:30000});
@@ -36,7 +36,7 @@ try{
   assert.equal(navigated?.ok,true,"Formation hub did not open");
   await page.locator("#ao-learn-modular-root").waitFor({state:"visible",timeout:12000});
   const selector="#ao-learn-modular-root [data-ao-learn-dossier-review]";
-  assert.equal(await page.locator(selector).count(),2,"exactly two QA-only research doors expected");
+  assert.equal(await page.locator(selector).count(),2,"exactly two visible prepublication study entrances expected");
 
   async function openReview(corpus,firstId,otherId){
     const button=page.locator(selector+'[data-ao-learn-dossier-review="'+corpus+'"]');
@@ -47,10 +47,13 @@ try{
       !globalThis.AO_FORMATION_RECOVERY_REVIEW_V1?.status?.().loading,null,{timeout:30000});
     const status=await page.evaluate(()=>globalThis.AO_FORMATION_RECOVERY_REVIEW_V1.status());
     assert.equal(status.error,"","research source files unavailable");
-    assert.equal(status.public,false,"unreviewed theological research advertised as public");
+    assert.equal(status.public,false,"draft was marked independently published");
+    assert.equal(status.studyPreview,true,"user-facing study preview unexpectedly exposes raw editorial archive");
     assert.equal(await root.locator('[data-rr-dossier="'+firstId+'"]').count(),1,"canonical dossier missing");
     assert.equal(await root.locator('[data-rr-dossier="'+otherId+'"]').count(),0,"opposite corpus leaked");
     assert.equal(await root.locator("[data-rr-family]").count(),1,"topic-family selector missing");
+    assert.equal(await root.locator("[data-rr-mode]").isVisible().catch(()=>false),false,"internal research-bank tabs leaked to readers");
+    assert.ok(await root.locator(".rrWarning").first().textContent(),"draft caution missing");
     return root;
   }
 
@@ -88,7 +91,7 @@ try{
   }
   assert.equal(errors.filter(e=>/formation.recovery|formation.research|research files unavailable/i.test(e)).length,0,
     "Formation review raised a browser runtime exception: "+errors.join("; "));
-  console.log("PASS: Formation review phone route, APOL/CR corpus isolation, thematic filter, sources, Back/focus");
+  console.log("PASS: normal Formation navigation exposes preview, source status, isolated APOL/CR, themed search, links and phone Back/focus");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));

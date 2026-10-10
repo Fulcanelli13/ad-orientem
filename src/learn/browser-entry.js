@@ -3,7 +3,7 @@ import {
   LEARN_DONOR_RELEASE,
   LEARN_MODULE_IDS,
   LEARN_PRESENTATION_VERSION,
-  renderLearnPresentation,learnDiscoveryMarkup,formationDossierReviewEnabled,
+  renderLearnPresentation,learnDiscoveryMarkup,
 } from "./presentation.js";
 import {
   ensureLearnModule,installLazyLearnRegistry,TRADITIONAL_LEARN_ROUTES,
@@ -227,11 +227,11 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       if(research){
         event.preventDefault?.();
         const corpus=research.dataset?.aoLearnDossierReview;
-        if(!formationDossierReviewEnabled(win)||!["apologetics","crisis"].includes(corpus))return;
+        if(!["apologetics","crisis"].includes(corpus))return;
         void import("./formation-recovery-review.js").then(mod=>{
           if(!state.open||!root(win)?.contains?.(research))return;
           const review=mod.installFormationRecoveryReview(win);
-          void review.open({corpus,returnFocus:research});
+          void review.open({corpus,returnFocus:research,studyPreview:true});
         }).catch(error=>{
           state.error=L(win,"Research reader could not be opened.","Impossible d’ouvrir les recherches.");
           paint();
@@ -240,7 +240,7 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
         return;
       }
       // A Questions entrance points to the one published specialist reader.
-      // Other research dossiers remain source-gated; do not add fake cards.
+      // The canonical research previews are labelled as drafts, not certified public routes.
       const questions=event.target?.closest?.("[data-ao-learn-questions]");
       if(questions){
         event.preventDefault?.();
