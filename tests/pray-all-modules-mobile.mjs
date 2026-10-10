@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import http from "node:http";
 import {readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
@@ -37,6 +38,61 @@ try{
  assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,
    "The lightweight Prayer host must lazy-load the real prayer reader");
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+ // Reachability acceptance: open every *external* Prayer-family card
+ // from its visible button and return to the same family. The native readers,
+ // 48 prayer texts and Rosary have independent mobile acceptance below.
+ const expectedFamilyIds=JSON.parse(readFileSync("data/app/content-reachability-audit.v1.json","utf8"))
+   .routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).sort();
+ const visibleFamilyIds=[],externalRoutes=[];
+ for(const family of ["daily","eucharistic","penance","passion","devotions"]){
+   await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+   const door=page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]');
+   assert.equal(await door.count(),1,"Missing Prayer-family door "+family);
+   await door.tap({timeout:10000});
+   await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:10000});
+   const cards=await page.locator('#aoPray435930.open .aoP435930ModuleGrid [data-p435930-own],#aoPray435930.open .aoP435930ModuleGrid [data-p435930-external]')
+     .evaluateAll(nodes=>nodes.map(n=>({
+       id:n.dataset.p435930Own||n.dataset.p435930External,
+       external:!!n.dataset.p435930External,height:n.getBoundingClientRect().height
+     })));
+   assert.ok(cards.length>=2,"Empty Prayer family "+family);
+   for(const card of cards){
+     visibleFamilyIds.push(card.id);
+     assert.ok(card.height>=44,"Undersized Prayer launcher "+card.id);
+     if(!card.external)continue; // Existing native reader suites certify owned modules.
+     externalRoutes.push(card.id);
+     await page.locator('#aoPray435930.open [data-p435930-external="'+card.id+'"]').tap({timeout:10000});
+     const view=card.id==="pray.novenas"?"novenas":"traditional-pray";
+     await page.waitForFunction(({view,id})=>{
+       const el=document.querySelector("#aoPray435930.open .aoP435930Mount");
+       return el?.dataset?.aoPrayView===view
+         &&(view==="novenas"||el?.dataset?.aoTraditionalPrayRoute===id);
+     },{view,id:card.id},{timeout:15000});
+     const body=await page.locator("#aoPray435930.open .aoP435930Mount").innerText();
+     assert.ok(body.trim().length>=35,"Blank destination after Prayer tap "+card.id);
+     assert.equal(await page.locator("[data-p435930-family-open-error]").count(),0,"Prayer launch reported failure: "+card.id);
+     const back=card.id==="pray.novenas"?"[data-n1-back]":"[data-tp381-back]";
+     await page.locator("#aoPray435930.open "+back).first().tap({timeout:10000});
+     if(card.id==="pray.morning_evening"){
+       // Guided Morning Prayer's first Back switches to its list overview.
+       const inFamily=await page.evaluate(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView==="family");
+       if(!inFamily)await page.locator("#aoPray435930.open [data-tp381-back]").first().tap({timeout:10000});
+     }
+     await page.waitForFunction(id=>
+       document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset?.aoPrayView==="family"
+       &&!!document.querySelector('#aoPray435930.open [data-p435930-external="'+id+'"]'),
+       card.id,{timeout:12000});
+   }
+ }
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+ assert.equal(await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').count(),1,"Missing Prayer Library direct door");
+ visibleFamilyIds.push("pray.library");
+ assert.equal(visibleFamilyIds.length,23,"Prayer family entry count drifted");
+ assert.equal(new Set(visibleFamilyIds).size,23,"Duplicate Prayer family entry");
+ assert.deepEqual(visibleFamilyIds.sort(),expectedFamilyIds,"Production Prayer family cards are not the declared routes");
+ assert.equal(externalRoutes.length,10,"Expected ten external first-use Prayer buttons");
+ console.log("PASS Prayer family reachability: all 23 visible routes, ten external first-use taps and exact-family returns");
+
  // Confession paths must remain under one sacramental owner, with no sins entered.
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
  const conf="#aoPray435930.open";
