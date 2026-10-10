@@ -2220,9 +2220,26 @@ function cleanLines(lines, language) {
         // Divinum Officium uses distinct conclusion macros. Only expand
         // exact, independently established endings; never turn every formula
         // into the generic Per Dominum or change a saint's name placeholder.
-        const conclusionKey = line.startsWith("$") ? line.slice(1).trim().replace(/\s+/g, " ").toLowerCase() : "";
+        // Terminal period is punctuation on a source directive, not a distinct
+        // liturgical ending; leave all unknown directives unresolved.
+        const conclusionKey = line.startsWith("$") ? line.slice(1).trim().replace(/\s+/g, " ").replace(/\.$/, "").toLowerCase() : "";
         const conclusion = {
             "per dominum": PER_DOM,
+            // 1962 Pentecost orations: when the Holy Ghost is named in
+            // the prayer, the conclusion specifies the SAME Holy Ghost.
+            // Latin/EN: https://missale.online/proprium/en/tempore/dominica_pentecostes
+            // French below is an explicit editorial rendering of that exact
+            // liturgical conclusion; not a claimed historical edition.
+            "per dominum eiusdem": {
+                la: "Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte ejúsdem Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+                en: "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the same Holy Ghost, God, world without end. Amen.",
+                fr: "Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l’unité du même Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il."
+            },
+            "per dominum ejusdem": {
+                la: "Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte ejúsdem Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+                en: "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the same Holy Ghost, God, world without end. Amen.",
+                fr: "Par Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous dans l’unité du même Saint-Esprit, Dieu, dans tous les siècles des siècles. Ainsi soit-il."
+            },
             "per eundem": {
                 la: "Per eúndem Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
                 en: "Through the same Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
