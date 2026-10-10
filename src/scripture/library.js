@@ -430,26 +430,16 @@ export function mountScriptureLibrary(root,{
    setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
    setRecords(next){
      if(!Array.isArray(next))throw new TypeError("Scripture records array required");
-     // An asynchronously arriving book must not discard a chapter/verse
-     // currently being edited. Recreate that control with its exact value
-     // and focus, even when the user has not yet committed the change.
      const current=document.activeElement;
-     const inputList=[...wrap.querySelectorAll(".aoScriptureNav input")];
-     const editingIndex=inputList.indexOf(current);
-     const editingValue=editingIndex>=0?current.value:null;
-     const editingSelection=editingIndex>=0 && current.type!=="number"
-       ?[current.selectionStart,current.selectionEnd]:null;
      const closeFocused=wrap.querySelector("[data-scripture-close]")===current;
-     records=next;draw();
-     if(editingIndex>=0){
-       const preserved=wrap.querySelectorAll(".aoScriptureNav input")[editingIndex];
-       if(preserved){
-         preserved.value=editingValue;
-         preserved.focus({preventScroll:true});
-         if(editingSelection?.every(Number.isInteger))
-           try{preserved.setSelectionRange(...editingSelection);}catch{}
-       }
-     }else if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
+     records=next;
+     // Do not replace a live number input during an asynchronous fetch.
+     // A browser can still be composing or editing its value; recreating it
+     // makes a typed "22" become "1", "122", or otherwise lose the input.
+     // The chapter/verse change handler calls draw() when the edit commits.
+     if(current?.matches?.(".aoScriptureNav input"))return;
+     draw();
+     if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
    },
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
