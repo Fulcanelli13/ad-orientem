@@ -223,7 +223,7 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
           </section>
           <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Questions et débats":"Questions and Debates")}">
             <button type="button" class="aoLearnQuestionsBridge" data-ao-learn-questions>
-              ${assetMask("ao-refined-help")}<span><small>${esc(langFr?"QUESTIONS":"QUESTIONS")}</small><strong>${esc(langFr?"Questions et débats":"Questions & Debates")}</strong><em>${esc(langFr?"Réponses de morale catholique et objections documentées ; les autres dossiers attendent leur certification.":"Catholic moral answers and documented objections; other dossiers remain under source review.")}</em></span>${assetMask("ao-ui-next")}
+              ${assetMask("ao-refined-help")}<span><small>${esc(langFr?"QUESTIONS":"QUESTIONS")}</small><strong>${esc(langFr?"Questions et débats":"Questions & Debates")}</strong><em>${esc(langFr?"Questions publiées de morale catholique ; les débats approfondis exigent encore une vérification des sources.":"Published Catholic moral questions; deeper debates still require source verification.")}</em></span>${assetMask("ao-ui-next")}
             </button>
           </section>
           <section class="aoLearnIntentGroup aoLearnIntentSecondary" aria-label="${esc(langFr?"Mettre la foi en pratique":"Put Faith into Practice")}">
