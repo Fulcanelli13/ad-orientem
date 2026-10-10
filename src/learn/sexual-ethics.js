@@ -80,6 +80,19 @@ function css(){
 .aoCSESources{margin:17px 0 0;border-top:1px solid var(--border,rgba(255,255,255,.13));padding-top:11px}.aoCSESources summary{cursor:pointer;color:var(--muted);font-size:var(--ao-type-ui-sm,12px)}.aoCSESource{margin:9px 0;padding-left:10px;border-left:1px solid var(--border,rgba(255,255,255,.14));font-size:var(--ao-type-ui-sm,12px);line-height:1.45}.aoCSESource a{color:var(--liturgical,#c7ae6d)}.aoCSESource em{color:var(--muted);font-style:normal}
 .aoCSESourceScope{display:inline-block;margin-left:5px;color:var(--muted,#a9a5a0);font:500 max(13px,.8125rem)/1.4 var(--ao-font-ui,system-ui,sans-serif);text-decoration:none}
 .aoCSEAnswer,.aoCSEDebateStep p,.aoCSEIntro{font-size:max(15px,0.9375rem);line-height:1.6}.aoCSEInlineRefs{font-size:max(13px,.8125rem);line-height:1.5}.aoCSESource{font-size:max(13px,.8125rem);line-height:1.5}
+.aoCSEObjection{margin:13px 0 16px;padding:16px 17px;border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.16)));border-left:3px solid var(--liturgical,#c7ae6d);border-radius:12px;background:var(--ao-surface-1,var(--surface-1,#102235))}
+.aoCSEObjection small{display:block;color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-xs,11px)/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px}
+.aoCSEObjection p{margin:0;font:400 max(16px,1.04rem)/1.62 var(--ao-font-body,Georgia,serif)}
+.aoCSEStageSources{margin:10px 0 0;border-top:1px solid var(--ao-rule,rgba(255,255,255,.11));font:500 .8rem/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoCSEStageSources summary{display:flex;align-items:center;min-height:44px;padding:8px 0;color:var(--ao-text-muted,var(--muted,#a9a5a0));cursor:pointer}
+.aoCSEStageSources summary::marker{color:var(--liturgical,#c7ae6d)}
+.aoCSEStageSources[open] summary{color:var(--liturgical,#c7ae6d)}
+.aoCSEStageSources .aoCSEInlineRefs{display:flex;margin:0;padding:7px 0 12px;gap:7px;flex-wrap:wrap}
+.aoCSEStageSources .aoCSEInlineRef{white-space:normal;overflow-wrap:anywhere}
+.aoCSEStageSources .aoCSEAttributionNote{padding:7px 0}
+.aoCSEDebateStep p{display:block}
+.aoCSEDetail[data-cse-open-debate]{padding:0;background:transparent;border:0}
+.aoCSEExplore>.aoCSEBtn{width:100%;text-align:center;min-height:44px}
 .aoCSEEmpty{padding:22px 0;color:var(--muted);line-height:1.5}
 @media(max-width:520px){.aoCSEWrap{padding-left:13px;padding-right:13px}.aoCSETop{padding-left:8px;padding-right:8px}.aoCSESearch{grid-template-columns:1fr}.aoCSECount{justify-self:start}}
 ${formationReaderCss()}
@@ -133,6 +146,18 @@ function paragraphSourceLinks(win,item,kind,field=null){
     }).join("");
   }).filter(Boolean).join("");
   return links?`<span class="aoCSEInlineRefs" data-label="${esc(label)}">${links}</span>`:"";
+}
+
+
+function debateSourceDisclosure(win,item,kind,field=null,attribution=""){
+  const refs=paragraphRefsFor(item,kind,field);
+  if(!refs.length&&!attribution)return "";
+  const links=paragraphSourceLinks(win,item,kind,field);
+  return '<details class="aoCSEStageSources" data-ao-cse-stage-sources="'+esc(field||kind)+'">'+
+    '<summary>'+esc(L(win,"Sources & context","Sources et contexte"))+' · '+refs.length+'</summary>'+
+    (attribution?'<p class="aoCSEAttributionNote">'+esc(attribution)+'</p>':"")+
+    (links||'<p class="aoCSEAttributionNote">'+esc(L(win,"Original passage not yet verified.","Passage original non encore vérifié."))+'</p>')+
+    '</details>';
 }
 
 function sourceDetails(win,item){
@@ -200,11 +225,11 @@ function sectionHtml(win,section){
   return `${top(win,pick(win,section.title),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEList">${items.map(item=>questionRow(win,item)).join("")}</div></main>`;
 }
 
-function debateDetails(win,item){
+function debateDetails(win,item,{skipOpposition=false}={}){
   if(!item.debate)return "";
-  return Object.entries(DEBATE_LABELS).map(([field,label])=>{
+  return Object.entries(DEBATE_LABELS).filter(([field])=>!skipOpposition||field!=="opposition").map(([field,label])=>{
     const value=pick(win,item.debate[field]);
-    return value?`<section class="aoCSEDebateStep" data-stage="${esc(field)}"><small>${esc(L(win,label[0],label[1]))}</small><p>${esc(value)}${paragraphSourceLinks(win,item,"debate",field)}</p></section>`:"";
+    return value?`<section class="aoCSEDebateStep" data-stage="${esc(field)}"><small>${esc(L(win,label[0],label[1]))}</small><p>${esc(value)}</p>${debateSourceDisclosure(win,item,"debate",field)}</section>`:"";
   }).join("");
 }
 
@@ -221,7 +246,7 @@ function marriageDisputationsHtml(win,item){
       }).filter(Boolean).join("");
       const positionSide=["opposition","appeal","counter"].includes(field);
       const prefix=positionSide?L(win,"Opposing-position references:","Références de la position adverse :"):L(win,"Sources:","Sources :");
-      return `<section class="aoCSEDebateStep" data-stage="${esc(field)}"><small>${esc(pick(win,label))}</small><p>${esc(pick(win,entry[field]))}${refs?`<span class="aoCSEInlineRefs" data-label="${esc(prefix)}">${refs}</span>`:""}</p></section>`;
+      return `<section class="aoCSEDebateStep" data-stage="${esc(field)}"><small>${esc(pick(win,label))}</small><p>${esc(pick(win,entry[field]))}</p>${refs?`<details class="aoCSEStageSources"><summary>${esc(L(win,"Sources & context","Sources et contexte"))} · ${entry.sources[field].length}</summary><span class="aoCSEInlineRefs" data-label="${esc(prefix)}">${refs}</span></details>`:""}</section>`;
     }).join("");
     return `<details class="aoCSEDisputation" data-ao-cse-disputation="${esc(entry.id)}"><summary>${esc(pick(win,entry.question))}</summary><div class="aoCSEDebate">${stages}</div></details>`;
   }).join("");
@@ -237,16 +262,25 @@ function relatedMarriageQuestionsHtml(win,item){
 function questionHtml(win,item,reveal){
   const detail=item.d?pick(win,item.d):"";
   const isDebate=item.depth==="DEBATE"&&item.debate;
-  const exploreBody=isDebate?debateDetails(win,item):detail;
+  const exploreBody=isDebate?debateDetails(win,item,{skipOpposition:true}):detail;
   const dossier=CSE_CANONICAL_DOSSIER_MAP[CSE_QUESTION_OWNER_MAP[item.id]];
   const section=CSE_SECTION_MAP[item.section];
   const buttonClosed=isDebate?L(win,"Examine the argument","Examiner l’argument"):L(win,"Go deeper","Approfondir");
   const buttonOpen=isDebate?L(win,"Hide the argument","Masquer l’argument"):L(win,"Hide deeper explanation","Masquer l’explication approfondie");
   const attributionIsContext=CSE_CONTEXT_ONLY_POSITION_IDS.includes(item.id);
-  const debateAttribution=isDebate&&item.id!=="CSE045"?`<p class="aoCSEAttributionNote">${esc(attributionIsContext?L(win,"Illustrative objection: the linked sources document context or criticism, not a named advocate of the exact wording.","Objection illustrative : les sources liées documentent un contexte ou une critique, non un auteur défendant cette formulation exacte."):L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the linked texts for the author's original words.","La position adverse est une reformulation sourcée, non une citation littérale. Consultez les textes liés pour retrouver les paroles exactes de l’auteur."))}</p>`:"";
+
   const apostolateTarget=CSE_SOT_BY_ID[item.id]?.apostolateHandoff||null;
   const apostolateAction=apostolateTarget?`<button type="button" class="aoCSEBtn" data-ao-cse-apostolate>${esc(L(win,"Practise answering this objection","S’exercer à répondre à cette objection"))}</button>`:"";
-  return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${paragraphSourceLinks(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div><p class="aoCSEAnswer">${esc(pick(win,item.a))}${paragraphSourceLinks(win,item,"answer")}</p>${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal>${esc(reveal?buttonOpen:buttonClosed)}</button><div class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${reveal?"":"hidden"}>${isDebate?debateAttribution+exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}${paragraphSourceLinks(win,item,"detail")}</p>`}</div></div>`:""}${marriageDisputationsHtml(win,item)}${relatedMarriageQuestionsHtml(win,item)}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+  const attribution=attributionIsContext
+    ?L(win,"Illustrative objection: cited sources establish context rather than a named advocate of these exact words.","Objection illustrative : les sources établissent le contexte, non un auteur soutenant exactement ces termes.")
+    :L(win,"The opposing position is a sourced reconstruction, not a verbatim quotation. Consult the cited original text for the author’s words.","La position adverse est une reformulation sourcée, non une citation littérale. Consulter le texte original cité pour retrouver les propos de l’auteur.");
+  const objection=isDebate?`<section class="aoCSEObjection" data-stage="opposition"><small>${esc(L(win,"Objection","Objection"))}</small><p>${esc(pick(win,item.debate.opposition))}</p>${debateSourceDisclosure(win,item,"debate","opposition",item.id==="CSE045"?"":attribution)}</section>`:"";
+  return `${top(win,pick(win,dossier?.title||section?.title||["Catholic Sexual Ethics","Morale sexuelle catholique"]),L(win,"Catholic Sexual Ethics","Morale sexuelle catholique"))}<main class="aoCSEWrap"><div class="aoCSEQNum">CSE · ${esc(String(item.number).padStart(3,"0"))}</div><h1 class="aoCSEQuestion">${esc(pick(win,item.q))}</h1>${debateSourceDisclosure(win,item,"question")}<div class="aoCSESectionMeta"><span class="aoCSEBadge">${esc(depthLabel(win,item.depth))}</span><span class="aoCSELayer">${esc(layerLabel(win,item.layer))}</span></div>${objection}<p class="aoCSEAnswer">${esc(pick(win,item.a))}</p>${debateSourceDisclosure(win,item,"answer")}${exploreBody?`<div class="aoCSEExplore"><button type="button" class="aoCSEBtn" data-ao-cse-reveal aria-expanded="${reveal?"true":"false"}" aria-controls="ao-cse-argument-${esc(item.id)}">${esc(reveal?buttonOpen:buttonClosed)}</button><div id="ao-cse-argument-${esc(item.id)}" class="aoCSEDetail ${isDebate?"aoCSEDebate":""}" ${isDebate?'data-cse-open-debate':''} ${reveal?"":"hidden"}>${isDebate?exploreBody:`<p class="aoCSEDetailText">${esc(exploreBody)}</p>${debateSourceDisclosure(win,item,"detail")}`}</div></div>`:""}${marriageDisputationsHtml(win,item)}${relatedMarriageQuestionsHtml(win,item)}${apostolateAction}${relatedDetails(win,item)}${sourceDetails(win,item)}</main>`;
+}
+
+// Exposes the existing read-only renderer for content-preservation acceptance checks.
+export function renderSexualEthicsQuestionMarkup(win,item,reveal=false){
+  return questionHtml(win,item,reveal);
 }
 
 export function createSexualEthicsRuntime(win=globalThis){
@@ -266,7 +300,7 @@ export function createSexualEthicsRuntime(win=globalThis){
       if(target.dataset.aoCseSection){event.preventDefault?.();openSection(target.dataset.aoCseSection);return;}
       if(target.dataset.aoCseQuestion){event.preventDefault?.();openQuestion(target.dataset.aoCseQuestion);return;}
       if(target.dataset.aoCseRelated){event.preventDefault?.();openRelated(target.dataset.aoCseRelated);return;}
-      if(target.matches("[data-ao-cse-reveal]")){event.preventDefault?.();state.reveal=!state.reveal;render();return;}
+      if(target.matches("[data-ao-cse-reveal]")){event.preventDefault?.();state.reveal=!state.reveal;render();queueMicrotask(()=>root()?.querySelector?.("[data-ao-cse-reveal]")?.focus?.({preventScroll:true}));return;}
       if(target.matches("[data-ao-cse-apostolate]")){event.preventDefault?.();void openApostolateHandoff(state.questionId);return;}
     });
     node.addEventListener("input",event=>{
