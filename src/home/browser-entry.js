@@ -159,7 +159,7 @@ export function createHomeOwner(win=globalThis){
     const ok=await navigateHomeShortcut("find",{trigger,routeId:"find.traditions"});
     if(!ok)return false;
     try{
-      const result=await win?.AO_FIND_APP_V1?.open?.({lens:"traditions",view:"list",query:""});
+      const result=await win?.AO_FIND_APP_V1?.open?.({lens:"heritage",view:"map",categories:["traditions"],query:""});
       if(routeAccepted(result))return true;
     }catch(error){
       try{win?.console?.error?.("Customs Atlas unavailable",error)}catch{}
