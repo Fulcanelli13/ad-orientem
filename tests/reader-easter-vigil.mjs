@@ -27,6 +27,25 @@ assert.ok(built.steps.some(x=>x.recordId==="EV-FONT-420"));
 assert.ok(!built.steps.some(x=>x.recordId==="EV-FONT-410"));
 assert.ok(!built.steps.some(x=>x.recordId==="EV-FONT-440"));
 assert.ok(!built.steps.some(x=>x.recordId==="EV-BAPT-430"));
+
+const inChurchFont=built.steps.find(x=>x.recordId==="EV-FONT-420").paragraphs;
+assert.ok(inChurchFont.length>=25,"full blessing must show prayer, preface, candle and oils, not overview prose");
+assert.ok(inChurchFont.some(x=>x.latin.includes("Omnípotens sempitérne Deus, adésto")));
+assert.ok(inChurchFont.some(x=>x.latin.includes("Vere dignum et iustum est")));
+assert.ok(inChurchFont.some(x=>x.latin.includes("Descéndat in hanc plenitúdinem fontis")));
+assert.ok(inChurchFont.some(x=>x.latin.includes("Infúsio Chrísmatis")));
+assert.ok(inChurchFont.some(x=>x.latin.includes("Commíxtio Chrísmatis")));
+assert.ok(inChurchFont.every(x=>x.latin.length>5&&x.english.length>5&&x.french.length>5));
+assert.equal(new Set(inChurchFont.map(x=>x.id)).size,inChurchFont.length,"no duplicate blessing paragraphs");
+assert.ok(inChurchFont.some(x=>x.action==="LOWER_PASCHAL_CANDLE_INTO_WATER_AND_BREATHE_PSI"));
+assert.equal(payload.font1962.segments.length,17);
+assert.match(payload.font1962.status,/NOT_PRINTED_IMAGE_CERTIFIED/);
+const inChurchTransfer=built.steps.find(x=>x.recordId==="EV-FONT-450").paragraphs;
+assert.equal(inChurchTransfer.length,8,"Sicut cervus three-line canticle plus five font versicles/collect");
+assert.match(inChurchTransfer[0].latin,/Sicut cervus/);
+assert.match(inChurchTransfer[6].latin,/Omnípotens sempitérne Deus, réspice/);
+assert.doesNotMatch(inChurchTransfer[6].latin,/adésto magnæ/,"do not repeat original blessing after procession");
+
 assert.equal(built.steps.at(-1).recordId,"EV-MASS-700");
 assert.equal(built.steps.at(-1).handoffToMass,true);
 
@@ -66,11 +85,28 @@ const noFont=buildEasterVigilReader({graph,payload,fontMode:"NONE"});
 assert.ok(noFont.steps.some(x=>x.recordId==="EV-FONT-410"));
 assert.ok(!noFont.steps.some(x=>x.recordId==="EV-FONT-420"));
 assert.ok(!noFont.steps.some(x=>x.recordId==="EV-FONT-450"));
+assert.ok(!noFont.steps.some(x=>x.recordId==="EV-BAPT-430"));
+assert.throws(()=>buildEasterVigilReader({graph,payload,fontMode:"NONE",baptismPresent:true}),/configured font/);
+
 
 const separate=buildEasterVigilReader({graph,payload,fontMode:"SEPARATE_BAPTISTERY",baptismPresent:true});
 assert.ok(separate.steps.some(x=>x.recordId==="EV-FONT-440"));
 assert.ok(separate.steps.some(x=>x.recordId==="EV-FONT-450"));
 assert.ok(separate.steps.some(x=>x.recordId==="EV-BAPT-430"));
+const separateIds=separate.steps.map(x=>x.recordId);
+assert.ok(separateIds.indexOf("EV-FONT-440")<separateIds.indexOf("EV-BAPT-430"),"baptisms cannot precede baptismal water blessing");
+assert.ok(separateIds.indexOf("EV-BAPT-430")<separateIds.indexOf("EV-FONT-450"));
+const separateFont=separate.steps.find(x=>x.recordId==="EV-FONT-440").paragraphs;
+assert.ok(separateFont.length>=33);
+assert.match(separateFont[0].latin,/Sicut cervus/);
+assert.ok(separateFont.some(x=>x.latin.includes("Descéndat in hanc plenitúdinem fontis")));
+assert.equal(separate.steps.find(x=>x.recordId==="EV-FONT-450").paragraphs.length,1,"return from separate baptistery is silent");
+const baptismSurface=separate.steps.find(x=>x.recordId==="EV-BAPT-430").paragraphs;
+assert.equal(baptismSurface.length,1);
+assert.equal(baptismSurface[0].kind,"RUBRIC");
+assert.match(baptismSurface[0].sourceStatus,/RITUAL_OWNER_UNRESOLVED/);
+assert.doesNotMatch(baptismSurface[0].latin,/Ego te baptízo/,"not a fabricated baptismal formula");
+
 
 for(let n=1;n<=4;n++){
   const s=String(n).padStart(2,"0");
