@@ -1,4 +1,5 @@
 import { filterDirectoryRecords } from "./data-service.js";
+import { PRELIMINARY_R49_TOTAL,loadPreliminaryR49,filterPreliminaryR49 } from "./preliminary-directory-r49.js";
 import { loadExploreDataset } from "./explore-data-service.js";
 import {
   EXPLORE_LENSES,
@@ -93,6 +94,7 @@ function installStyle(win){
     "@media(min-width:800px){.aoFindSurface{max-width:980px;margin:auto;border-left:1px solid rgba(217,197,154,.08);border-right:1px solid rgba(217,197,154,.08)}.aoFindList{grid-template-columns:repeat(2,minmax(0,1fr))}.aoFindSheet{max-width:720px;margin:0 auto}.aoFindSheetBackdrop{justify-content:center}}",
     ".aoHeritageSurface{display:flex;flex-direction:column;height:100%;overflow:hidden;background:#080c12}.aoHeritageSurface .aoFindHeader{flex:none;padding:9px 12px;grid-template-columns:44px minmax(0,1fr) 44px auto}.aoHeritageSurface .aoFindHeader h1{font-size:21px}.aoHeritageCategories{display:flex;gap:7px;flex:none;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:10px 12px 8px}.aoHeritageCategories button{white-space:nowrap;min-height:42px;flex:none;border:1px solid rgba(217,197,154,.23);background:#101923;color:#c9bba3;border-radius:999px;padding:9px 12px;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritageCategories button.active{border-color:#d9c59a;color:#f5e5c3;background:#28271f}.aoHeritageCategories button[data-category]:before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#c1ad80;margin-right:6px}.aoHeritageCategories button[data-category=relics]:before{background:#a99bc5}.aoHeritageCategories button[data-category=apparitions]:before{background:#a0b5c8}.aoHeritageCategories button[data-category=pilgrimages]:before{background:#87ac9b}.aoHeritageCategories button[data-category=traditions]:before{background:#c49c93}",
     ".aoHeritageTools{display:flex;align-items:center;gap:8px;position:relative;padding:0 12px 9px;z-index:4;flex:none}.aoHeritageTools .aoFindSearch{padding:0;min-width:0;flex:1}.aoHeritageTools .aoFindSearch input{border-radius:999px;min-height:44px;padding:11px 16px;background:#101923}.aoHeritageMore{flex:none;position:relative;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritageMore summary{display:flex;align-items:center;justify-content:center;cursor:pointer;list-style:none;min-height:44px;padding:0 13px;border:1px solid rgba(217,197,154,.2);border-radius:999px;color:#e6d3af;background:#101923}.aoHeritageMore summary::-webkit-details-marker{display:none}.aoHeritageMore>div{position:absolute;z-index:8;top:50px;right:0;background:#101923;border:1px solid rgba(217,197,154,.23);border-radius:12px;padding:12px;width:min(310px,80vw);box-shadow:0 12px 26px #0009;color:#afa28f;line-height:1.4}.aoHeritageMore button{min-height:44px;color:#e8d7b7;background:transparent;border:1px solid rgba(217,197,154,.22);border-radius:9px;padding:10px;font:inherit}.aoHeritageMore>div{max-height:min(66dvh,520px);overflow:auto}.aoHeritageMore>div>strong{display:block;color:#e8d5b3;font:650 12px var(--ao-font-ui,system-ui,sans-serif);padding-bottom:10px}.aoHeritageSecondary{display:grid;grid-template-columns:1fr;gap:7px}.aoHeritageSecondary button{width:100%;text-align:left}.aoHeritageMore>div p{font-size:11px;line-height:1.4;color:#a69b89}",
+    ".aoHeritageMassShortcut{flex:none;min-height:44px;border:1px solid rgba(217,197,154,.45);border-radius:999px;background:#26231e;color:#e7d2ab;padding:0 15px;font:650 12px var(--ao-font-ui,system-ui,sans-serif);white-space:nowrap;cursor:pointer}.aoHeritageMassShortcut:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}@media(max-width:520px){.aoHeritageMassShortcut{padding:0 10px;font-size:11px}}",
     ".aoHeritageBody.aoFindBody[data-find-view=map]{flex:1;min-height:230px;position:relative;padding:0 8px 8px;overflow:hidden}.aoHeritageBody.aoFindBody[data-find-view=map] .aoFindMap{height:100%;min-height:0;margin:0;border-radius:12px}.aoHeritageCustomStrip{position:absolute;bottom:38px;left:16px;right:16px;max-width:720px;z-index:2;border:1px solid rgba(217,197,154,.22);border-radius:13px;background:rgba(8,12,18,.90);backdrop-filter:blur(12px);padding:8px 9px;box-shadow:0 10px 26px #0008}.aoHeritageStripHeading{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#e3d4b7;font:650 11px var(--ao-font-ui,system-ui,sans-serif);padding:1px 4px 7px;letter-spacing:.04em}.aoHeritageStripHeading button{border:0;background:transparent;color:#f0d9a6;text-decoration:underline;font:inherit;min-height:28px}.aoHeritageCustomRail{display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}.aoHeritageCustomRail button{flex:0 0 145px;min-height:68px;text-align:left;border:1px solid rgba(217,197,154,.16);border-radius:9px;background:#15202a;color:#efe6d4;padding:9px;cursor:pointer}.aoHeritageCustomRail button.active{border-color:#dac494;background:#302b22}.aoHeritageCustomRail strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font:600 13px/1.2 var(--ao-font-display,Georgia,serif)}.aoHeritageCustomRail small{display:block;margin-top:6px;color:#9b907c;font:500 10px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritageScope{margin:0;padding:3px 14px 7px;color:#a79d89;font:11px/1.3 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoHeritageSurface .aoFindSheetBackdrop{background:rgba(0,0,0,.34)}.aoHeritagePreview{max-width:660px;max-height:48vh}.aoHeritagePreview h2{font-size:21px}.aoHeritagePlaceTags{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.aoHeritagePlaceTags span{background:#19212b;border:1px solid rgba(217,197,154,.17);padding:6px 9px;border-radius:999px;color:#cbbca5;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritageCaution{font:12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#b2a58f;margin:9px 0}.aoHeritagePreviewActions{display:flex;gap:8px;margin-top:10px}.aoHeritagePreviewActions button,.aoHeritagePreviewActions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid rgba(217,197,154,.27);border-radius:999px;background:#1d2023;color:#e9d3a7;padding:10px 16px;text-decoration:none;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritagePreviewActions button:first-child{background:#dac494;color:#0b121b}",
     ".aoHeritageStripActions{display:flex;align-items:center;gap:8px}.aoExploreReturnMap{grid-column:1/-1}@media(max-width:520px){.aoHeritageCategories{padding:7px 8px}.aoHeritageTools{padding:0 8px 7px}.aoHeritageCustomStrip{left:12px;right:12px;bottom:34px}.aoHeritageCustomRail button{flex-basis:126px}.aoHeritagePreviewActions{flex-wrap:wrap}.aoHeritageSurface .aoFindHeader h1{font-size:19px}}",
@@ -102,12 +104,13 @@ function installStyle(win){
 }
 
 export function createFindOwner(win=globalThis){
-  let openState=false,dataset=null,projection=null,mapHandle=null,loading=null;
+  let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
   const state={
     lens:"heritage",
     view:"map",
+    directoryGroup:"ROME",
     query:"",
     day:"ANY",
     affiliations:[],
@@ -169,7 +172,19 @@ export function createFindOwner(win=globalThis){
     return loading;
   }
 
+  async function ensurePreliminary(){
+    if(preliminary)return preliminary;
+    if(!preliminaryLoading){
+      const ticket=win?.AO_LOADING_DIRECTOR_V1?.begin?.("find");
+      preliminaryLoading=loadPreliminaryR49({fetchImpl:win?.fetch?.bind?.(win)??fetch})
+        .then(value=>{preliminary=value;return value})
+        .finally(()=>{preliminaryLoading=null;ticket?.end?.()});
+    }
+    return preliminaryLoading;
+  }
+
   function filtered(){
+    if(state.lens==="tlm")return filterPreliminaryR49(preliminary??[],state);
     if(!dataset||!projection)return [];
     if(state.lens==="heritage")return projectHeritagePlaces(projection,{categories:state.heritageCategories,query:state.query,customId:state.highlightCustomId});
     if(state.lens==="tlm"){
@@ -210,8 +225,9 @@ export function createFindOwner(win=globalThis){
           scroll:node.querySelector?.(".aoFindSurface")?.scrollTop??0,
         }
       : null;
-    let data;
-    try{data=await ensureData()}catch(error){
+    let data=null;
+    const preliminaryMode=state.lens==="tlm";
+    try{if(preliminaryMode)await ensurePreliminary();else data=await ensureData()}catch(error){
       if(token!==paintToken||!openState)return false;
       lastLoadError=error;
       try{win?.console?.error?.("Explore data unavailable",error)}catch{}
@@ -228,22 +244,22 @@ export function createFindOwner(win=globalThis){
     const items=state.lens==="traditions"&&state.view==="list"
       ?groupTraditionsForBrowse(rawItems,{includeNovenaContext:Boolean(state.query.trim())||state.atlasCalendar==="NOVENA"})
       :rawItems;
-    const canonical=groupTraditionsForBrowse(projection.byLens.traditions);
+    const canonical=projection?groupTraditionsForBrowse(projection.byLens.traditions):[];
     const selectedOverride=state.lens==="traditions"
       ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null
       :state.lens==="heritage"?canonical.find(item=>item.item_id===state.selectedId)??null:null;
     const customCards=state.lens==="heritage"
       ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
-    const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
+    const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
       language:language(win),
       items,
       lens:state.lens,
-      counts:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
+      counts:preliminaryMode?{tlm:PRELIMINARY_R49_TOTAL}:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
       customCards,
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
-      loadedProviders:data.directory?.loadedProviders??[],
-      unavailableProviders:data.directory?.unavailableProviders??[],
+      loadedProviders:preliminaryMode?[]:data.directory?.loadedProviders??[],
+      unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
       view:state.view,
       filters:state,
       selectedId:state.selectedId,
@@ -332,8 +348,7 @@ export function createFindOwner(win=globalThis){
     if(key==="view")state.view=value==="map"?"map":"list";
     else if(key==="lens"&&(value==="heritage"||EXPLORE_LENSES.includes(value))){
       state.lens=value;state.calendarKey=null;
-      if(value==="heritage")state.view="map";
-      else if(value==="traditions")state.view="map";
+      if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
     state.displayLimit=120;
@@ -528,10 +543,10 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       view:state.view,
       selectedPlaceId:state.selectedPlaceId,
-      counts:projection?.counts??{},
+      counts:state.lens==="tlm"?{tlm:PRELIMINARY_R49_TOTAL}:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
       unavailableProviders:dataset?.directory?.unavailableProviders??[],
-      records:dataset?.directory?.records?.length??0,
+      records:preliminary?.length??dataset?.directory?.records?.length??0,
     }),
     dispose(){
       close();

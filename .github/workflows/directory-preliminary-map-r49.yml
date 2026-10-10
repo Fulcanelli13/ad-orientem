@@ -1,0 +1,49 @@
+name: Preliminary Mass Map R49 Acceptance
+on:
+  pull_request:
+    paths:
+      - "data/directory/preliminary-map-r49.v1.json"
+      - "src/find/preliminary-directory-r49.js"
+      - "src/find/browser-entry.js"
+      - "src/find/explore-presentation.js"
+      - "src/find/heritage-presentation.js"
+      - "tests/preliminary-world-mass-map-r49.mjs"
+      - "tests/explore-reachability-phone.mjs"
+      - ".github/workflows/directory-preliminary-map-r49.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check preliminary map modules
+        run: |
+          node --check src/find/preliminary-directory-r49.js
+          node --check src/find/browser-entry.js
+          node --check src/find/explore-presentation.js
+          node --check src/find/heritage-presentation.js
+      - name: Map-first unit acceptance
+        run: node tests/preliminary-world-mass-map-r49.mjs
+      - name: Existing Find and Explore contracts
+        run: |
+          node tests/find-surface.mjs
+          node tests/explore-surface.mjs
+  phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: unit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Native Find/Explore phone regression
+        run: node tests/explore-reachability-phone.mjs
