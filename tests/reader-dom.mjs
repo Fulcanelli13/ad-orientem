@@ -487,8 +487,8 @@ expect(html.includes("-webkit-line-clamp:3;max-height:3.5em"),
 
 expect(html.includes("background:radial-gradient(circle at center,rgba(226,211,158,.075),rgba(3,7,5,0) 43%),#070b08"),
   "Elevation regressed to a transparent backdrop that overlays Source rubric text");
-expect(html.includes("background:#111914;box-shadow:0 15px 46px"),
-  "Schola dock reverted to showing moving prayers through its background");
+expect(html.includes("background:color-mix(in srgb,var(--ao-mass-panel) 94%,#080b10);box-shadow:0 15px 46px"),
+  "Schola dock must keep an opaque, selected-colour backdrop over the moving prayer text");
 expect(html.includes('content:"READ FULL RUBRIC"'),
   "rubric full-text action is no longer readable");
 expect(readerDomSource.includes('node.setAttribute("aria-expanded","false")'),
