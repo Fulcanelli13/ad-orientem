@@ -78,6 +78,17 @@ try{
         },
         readerReady:reader?.ready??false,
         missing:reader?.missing??[],
+        orationWitnesses:Object.fromEntries([
+          ["COLLECT_SET",repaired?.collects?.length?repaired.collects:[repaired?.collect]],
+          ["SECRET_SET",repaired?.secrets?.length?repaired.secrets:[repaired?.secret]],
+          ["POSTCOMMUNION_SET",repaired?.postcommunions?.length?repaired.postcommunions:[repaired?.postcommunion]],
+        ].map(([slot,rows])=>[slot,(rows??[]).map((entry,index)=>({index,
+          latLen:String(entry?.lat??entry?.la??"").trim().length,
+          enLen:String(entry?.en??"").trim().length,
+          frLen:String(entry?.fr??"").trim().length,
+          sourceRef:entry?.sourceRef??entry?.sourcePath??null,
+          unresolvedMacro:/\\$[A-Za-z]/.test(String(entry?.fr??"")),
+        }))])),
       };
     },date);
     results.push(row);
