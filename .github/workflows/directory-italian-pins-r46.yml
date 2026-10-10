@@ -1,9 +1,5 @@
 name: Directory Italian Pins R46
 on:
-  pull_request:
-    paths:
-      - "tools/directory/recover-italy-markers-r46.mjs"
-      - ".github/workflows/directory-italian-pins-r46.yml"
   workflow_dispatch:
 permissions:
   contents: read
