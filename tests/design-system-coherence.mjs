@@ -21,6 +21,9 @@ const [
   novena,
   traditionalPray,
   mass,
+  home,
+  explore,
+  prayLanding,
 ]=await Promise.all([
   read("src/app/design-system.js"),
   read("src/app/browser-entry.js"),
@@ -31,9 +34,12 @@ const [
   read("src/pray/novena-styles.js"),
   read("src/pray/traditional-pray-styles.js"),
   read("src/mass/reader-dom.js"),
+  read("src/home/presentation.js"),
+  read("src/find/explore-presentation.js"),
+  read("src/pray/presentation-runtime.js"),
 ]);
 
-assert.match(design,/APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2"/);
+assert.match(design,/APP_DESIGN_SYSTEM_VERSION="ao-design-system-v3"/);
 for(const token of [
   "--ao-font-display","--ao-font-body","--ao-font-liturgical","--ao-font-ui",
   "--ao-content-max","--ao-content-wide","--ao-page-gutter","--ao-page-gutter-phone",
@@ -83,4 +89,11 @@ assert.match(mass,/var\(--ao-font-liturgical/);
 assert.match(mass,/var\(--ao-font-display/);
 assert.match(mass,/\.ao-prayer-card\{[\s\S]*border:0;border-radius:0/,"Mass reader must preserve its edge-to-edge reading geometry");
 
-console.log("Shared application typography, spacing, controls and card geometry: OK");
+for(const component of ["aoEditorialHero","aoEditorialKicker","aoEditorialTitle","aoEditorialLead","aoEditorialArtwork","aoEditorialPrimary"]){
+  assert.ok(design.includes("."+component),component+" absent from canonical design system");
+}
+for(const [owner,source] of [["Home",home],["Calendar",calendar],["Formation",learn],["Explore",explore],["Pray",prayLanding]]){
+  assert.ok(source.includes("aoEditorialHero")||source.includes("aoEditorialToolbar"),owner+" missing editorial hook");
+}
+assert.ok(!mass.includes("aoEditorialHero"),"R17 reader must not adopt editorial landing geometry");
+console.log("Shared app typography, spacing, controls and calendar-first editorial system: OK");
