@@ -130,7 +130,6 @@ const totalDays=dayIndex.length;
 const countA=dayIndex.filter(d=>d.grade==="A_EXACT").length;
 const countB=dayIndex.filter(d=>d.grade==="B_CONTEXTUAL").length;
 const countC=dayIndex.filter(d=>d.grade==="C_UNRESOLVED").length;
-assert.equal(countA+A.size-A.size,countA); // explicit A IDs are distinct days
 assert.equal(A.size,countA);assert.equal(B.size,countB);
 assert.equal(countA+countB+countC,totalDays);
 assert.equal(exact.links.length,originals.reduce((n,o)=>n+o.classIExact.length,0));
