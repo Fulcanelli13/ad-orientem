@@ -5,10 +5,10 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const data=JSON.parse(readFileSync(new URL("../data/explore/bible-places-compact.v1.json",import.meta.url),"utf8"));
 assert.equal(data.schema,"AO_EXPLORE_BIBLE_PLACES_COMPACT_V1");
-assert.equal(data.entries.length,40);
-assert.equal(new Set(data.entries.map(x=>x.id)).size,40);
+assert.equal(data.entries.length,60);
+assert.equal(new Set(data.entries.map(x=>x.id)).size,60);
 assert.deepEqual(Object.fromEntries(data.groups.map(g=>[g,data.entries.filter(x=>x.group===g).length])),{
- CHRIST:26,OT:7,DEUTERO:3,APOSTLES:4
+ CHRIST:46,OT:7,DEUTERO:3,APOSTLES:4
 });
 for(const row of data.entries){
  for(const k of ["title_en","title_fr","summary_en","summary_fr","period_en","period_fr","persons_en","persons_fr"]){
@@ -22,13 +22,13 @@ for(const row of data.entries){
 // An event-linked Life of Christ chronology is the primary content, not a
 // separate site map or a dozen chapter links with no named Gospel context.
 const christ=data.entries.filter(x=>x.group==="CHRIST");
-assert.equal(christ.length,26);
+assert.equal(christ.length,46);
 assert.deepEqual(Object.fromEntries(["INFANCY","PUBLIC","PASSION","RESURRECTION"]
  .map(phase=>[phase,christ.filter(x=>x.phase===phase).length])),
- {INFANCY:5,PUBLIC:13,PASSION:6,RESURRECTION:2});
+ {INFANCY:5,PUBLIC:31,PASSION:7,RESURRECTION:3});
 const gospelEvents=christ.flatMap(x=>x.events||[]);
-assert.equal(gospelEvents.length,52);
-assert.equal(new Set(gospelEvents.map(x=>x.id)).size,52);
+assert.equal(gospelEvents.length,165);
+assert.equal(new Set(gospelEvents.map(x=>x.id)).size,165);
 for(const event of gospelEvents){
  assert.ok(event.title_en?.length>6 && event.title_fr?.length>6,event.id+": missing bilingual episode label");
  assert.ok(parseScriptureContext(event.reference),event.id+": unparseable verse "+event.reference);
@@ -56,6 +56,15 @@ const important=[
 for(const [id,ref] of important){
  assert.ok(christ.find(x=>x.id===id)?.events.some(e=>e.reference===ref),id+": key Gospel event missing "+ref);
 }
+const miracleCensus=JSON.parse(readFileSync(new URL("../data/explore/bible-places-miracles.v1.json",import.meta.url),"utf8"));
+assert.equal(miracleCensus.miracles.length,37);
+assert.equal(new Set(miracleCensus.miracles.map(x=>x.id)).size,37);
+const references=new Set(gospelEvents.map(e=>e.miracle_id).filter(Boolean));
+assert.equal(references.size,37,"Each of 37 conventional miracles needs a linked in-app episode");
+assert.ok(miracleCensus.miracles.every(m=>references.has(m.id)&&parseScriptureContext(m.reference)));
+for(const m of miracleCensus.miracles)assert.ok(christ.some(x=>x.id===m.place_id),"Unresolved miracle place "+m.id);
+assert.ok(gospelEvents.some(x=>x.reference==="Luke 15:11–32"&&x.title_en.includes("prodigal")));
+assert.ok(gospelEvents.some(x=>x.reference==="John 21:15–19"&&x.title_en.includes("Peter")));
 const make=(language,selectedId=null,open=false)=>buildExploreViewModel({
  language,lens:"heritage",items:[],view:"map",
  biblePlaces:data.entries,filters:{heritageCategories:["shrines","relics","pilgrimages","apparitions","traditions"],bibleOpen:open,bibleSelectedId:selectedId}
@@ -66,7 +75,7 @@ assert.match(closed,/aria-expanded="false"/);
 assert.doesNotMatch(closed,/data-bible-place=/,"Closed surface should not expose all site buttons");
 const opened=renderExploreToString(make("en","nazareth",true));
 assert.match(opened,/aria-expanded="true"/);
-assert.equal((opened.match(/data-bible-place=/g)||[]).length,40);
+assert.equal((opened.match(/data-bible-place=/g)||[]).length,60);
 assert.match(opened,/The Angel Gabriel announces?|Gabriel announces/);
 assert.match(opened,/data-ao-scripture-context="Luke 1:26–38"/);
 assert.match(opened,/data-ao-scripture-context="Luke 4:16–30"/);
@@ -78,6 +87,17 @@ assert.match(ascension,/data-ao-scripture-context="Acts 1:6–12"/);
 const paschal=renderExploreToString(make("fr","christ-tomb",true));
 assert.match(paschal,/Le tombeau vide et Marie-Madeleine/);
 assert.match(paschal,/data-ao-scripture-context="Matthew 28:1–10"/);
+assert.match(opened,/data-bible-search/);
+assert.match(opened,/data-bible-scope="MIRACLES"/);
+const miracleVM=buildExploreViewModel({language:"en",lens:"heritage",items:[],view:"map",biblePlaces:data.entries,
+ filters:{heritageCategories:["shrines","relics","pilgrimages","apparitions","traditions"],bibleOpen:true,bibleSelectedId:"cana",bibleScope:"MIRACLES"}});
+const miraclesHTML=renderExploreToString(miracleVM);
+assert.match(miraclesHTML,/Healing of a royal official/);
+assert.doesNotMatch(miraclesHTML,/The choosing of the Twelve Apostles/);
+const queryVM=buildExploreViewModel({language:"fr",lens:"heritage",items:[],view:"map",biblePlaces:data.entries,
+ filters:{heritageCategories:["shrines","relics","pilgrimages","apparitions","traditions"],bibleOpen:true,bibleQuery:"Bethesda"}});
+const searched=renderExploreToString(queryVM);
+assert.equal((searched.match(/data-bible-place=/g)||[]).length,1);
 assert.doesNotMatch(opened,/data-find-filter-value="bible"/,"No new global Explore map lens");
 const french=renderExploreToString(make("fr","nineveh",true));
 assert.match(french,/Lieux de la Bible/);
@@ -92,4 +112,4 @@ assert.match(service,/bible-places-compact\.v1\.json/);
 assert.match(service,/fetchJson\(EXPLORE_DATA_URLS\.biblePlaces,\{fetchImpl,optional:true\}\)/);
 const native=readFileSync(new URL("../src/scripture/browser-entry.js",import.meta.url),"utf8");
 assert.match(native,/data-ao-scripture-context/);
-console.log("PASS Explore Bible Places compact: 40 places and 52 bilingual Life of Christ episodes, Catholic passage links, bilingual disclosure, unchanged lens ownership");
+console.log("PASS Explore Bible Places compact: 60 locations and 165 bilingual Life of Christ episodes, 37 miracles, Catholic passage links, bilingual disclosure, unchanged lens ownership");
