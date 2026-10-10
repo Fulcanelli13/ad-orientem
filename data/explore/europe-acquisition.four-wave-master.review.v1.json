@@ -19,7 +19,6 @@
     "distinct_source_urls": 105,
     "category_associations": 113,
     "by_category": {
-      "SHRINES": 0,
       "PILGRIMAGES": 60,
       "RELICS": 13,
       "APPARITIONS": 6,
@@ -32,6 +31,7 @@
   },
   "source_identity_duplicate_scan": [],
   "category_boundaries": [
+    "SHRINES are represented as Place site-identity candidates, not as separate association records; zero SHRINES in association counts would incorrectly imply zero shrine candidates.",
     "Shrines/site candidates and category claims are separate. A single site can be associated with several pilgrimages, relics, apparitions, images or customs.",
     "Research-only site candidates are NOT published app Places or map markers.",
     "APPARITIONS includes reported events without ecclesial certification; sacred-image phenomena are separate.",
@@ -46,7 +46,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -63,7 +62,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -80,7 +78,6 @@
       "unmatched_research_site_leads": 0,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -97,7 +94,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -114,7 +110,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -131,7 +126,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 1,
@@ -148,7 +142,6 @@
       "unmatched_research_site_leads": 3,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 2,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -165,7 +158,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -182,7 +174,6 @@
       "unmatched_research_site_leads": 3,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -199,7 +190,6 @@
       "unmatched_research_site_leads": 4,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 3,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -216,7 +206,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 2,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -233,7 +222,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 2,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -250,7 +238,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -267,7 +254,6 @@
       "unmatched_research_site_leads": 16,
       "source_research_associations": 17,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 8,
         "RELICS": 4,
         "APPARITIONS": 1,
@@ -284,7 +270,6 @@
       "unmatched_research_site_leads": 7,
       "source_research_associations": 7,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 7,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -301,7 +286,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -318,7 +302,6 @@
       "unmatched_research_site_leads": 3,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -335,7 +318,6 @@
       "unmatched_research_site_leads": 5,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -352,7 +334,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -369,7 +350,6 @@
       "unmatched_research_site_leads": 3,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -386,7 +366,6 @@
       "unmatched_research_site_leads": 20,
       "source_research_associations": 10,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 3,
         "RELICS": 1,
         "APPARITIONS": 2,
@@ -403,7 +382,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -420,7 +398,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 2,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -437,7 +414,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -454,7 +430,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -471,7 +446,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -488,7 +462,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 1,
@@ -505,7 +478,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -522,7 +494,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -539,7 +510,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -556,7 +526,6 @@
       "unmatched_research_site_leads": 0,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -573,7 +542,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -590,7 +558,6 @@
       "unmatched_research_site_leads": 3,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 2,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -607,7 +574,6 @@
       "unmatched_research_site_leads": 3,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -624,7 +590,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 4,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 3,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -641,7 +606,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 2,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -658,7 +622,6 @@
       "unmatched_research_site_leads": 4,
       "source_research_associations": 4,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 2,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -675,7 +638,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -692,7 +654,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -709,7 +670,6 @@
       "unmatched_research_site_leads": 2,
       "source_research_associations": 1,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -726,7 +686,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 3,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -743,7 +702,6 @@
       "unmatched_research_site_leads": 12,
       "source_research_associations": 6,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 4,
         "RELICS": 0,
         "APPARITIONS": 1,
@@ -760,7 +718,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -777,7 +734,6 @@
       "unmatched_research_site_leads": 0,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -794,7 +750,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
@@ -811,7 +766,6 @@
       "unmatched_research_site_leads": 1,
       "source_research_associations": 2,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 1,
         "RELICS": 1,
         "APPARITIONS": 0,
@@ -828,7 +782,6 @@
       "unmatched_research_site_leads": 0,
       "source_research_associations": 0,
       "category_associations": {
-        "SHRINES": 0,
         "PILGRIMAGES": 0,
         "RELICS": 0,
         "APPARITIONS": 0,
