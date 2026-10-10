@@ -32,6 +32,8 @@ export function resolveReaderPreferences(input = {}) {
     gestureProfile,
     language: input.language ?? "vernacular",
     localPostures: Object.freeze({ ...(input.localPostures ?? {}) }),
+    localGestures: Object.freeze({ ...(input.localGestures ?? {}) }),
+    followPriestSeating: input.followPriestSeating !== false,
   });
 }
 
