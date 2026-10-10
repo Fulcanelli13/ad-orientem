@@ -1,0 +1,33 @@
+name: Sacred art — major feast approval gallery
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/build-sacred-art-priority-gallery.py"
+      - "data/calendar/sacred-art-priority-review-shortlist.v1.json"
+      - ".github/workflows/sacred-art-priority-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow
+      - name: Verify museum CC0 metadata and embed real thumbnail paintings
+        run: python tools/calendar/build-sacred-art-priority-gallery.py
+      - name: Upload standalone offline HTML and preview provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-priority-art-gallery
+          path: artifacts/sacred-art-priority-review/
+          if-no-files-found: error
+          retention-days: 30
