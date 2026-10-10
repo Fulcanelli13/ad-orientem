@@ -1,3 +1,4 @@
+import {validateMandatumSource} from "./reader-holy-thursday-mandatum-events.js";
 // 1962 Holy Thursday Mandatum: optional in-Mass presentation overlay.
 // Not the post-Mass translation to the altar of repose.
 export const MANDATUM_1962=Object.freeze({
@@ -17,7 +18,7 @@ export const MANDATUM_1962=Object.freeze({
 
 const freeze=Object.freeze;
 const HT_ROOT="Tempora/Quad6-4r";
-export function projectHolyThursdayMass(model,resolvedMass,{mandatumPresent=false,language="en"}={}){
+export function projectHolyThursdayMass(model,resolvedMass,{mandatumPresent=false,language="en",mandatumSource=null}={}){
  const path=resolvedMass?.proper?.data?.sourcePath??resolvedMass?.proper?.sourcePath;
  if(path!==HT_ROOT){
    if(mandatumPresent)throw new Error("Mandatum cannot be inserted in a non-Holy-Thursday Proper");
@@ -26,6 +27,7 @@ export function projectHolyThursdayMass(model,resolvedMass,{mandatumPresent=fals
  if(!Array.isArray(model?.cards))throw new TypeError("Holy Thursday requires a ready Mass reader model");
  const all=[...model.cards].filter(card=>card.sectionId!=="AO.CARD.009"&&card.sourceSectionId!=="AO.CARD.009");
  if(mandatumPresent){
+   validateMandatumSource(mandatumSource);
    const at=all.findIndex(c=>c.sectionId==="AO.CARD.008"||c.sourceSectionId==="AO.CARD.008");
    if(at<0)throw new Error("Holy Thursday Mandatum requires the Homily card");
    const useFrench=String(language).toLowerCase().startsWith("fr");
@@ -40,6 +42,8 @@ export function projectHolyThursdayMass(model,resolvedMass,{mandatumPresent=fals
      title:"Mandatum · Washing of Feet",part:"Mass of the Catechumens",
      sourceSequence:null,sourceSectionId:null,blocks:freeze([]),
      paragraphs:freeze(paragraphs),stateOnly:false,optional:true,
+     sourceRecordIds:freeze(mandatumSource.events.map(e=>e.id)),
+     mandatumSourceEvents:freeze(mandatumSource.events.map(e=>freeze({...e}))),
      actorScope:"SELECTED_MEN_AND_MINISTERS",faithfulPosture:"LOCAL_OR_INHERIT",
      provenance:freeze({source:"MISSAL_1962_SECONDARY",textComplete:false,
        placement:"AFTER_HOMILY_BEFORE_OFFERTORY",canonicalEventMutation:false}),
@@ -57,7 +61,22 @@ export function projectHolyThursdayMass(model,resolvedMass,{mandatumPresent=fals
    return cardBySequence(here.sequence+(direction==="previous"?-1:direction==="next"?1:0));
  }
  function cardForEvent(eventId){
-   if(String(eventId).startsWith("MC-CRD-"))return null;
+   const id=String(eventId??"");
+   if(mandatumPresent){
+     const stepIndex=mandatumSource.events.findIndex(e=>e.id===id);
+     if(stepIndex>=0){
+       const card=byId.get("AO.HT.MANDATUM");
+       return freeze({
+         canonicalEventId:id,
+         section:freeze({sectionId:card.sectionId,name:card.title,eventIds:card.sourceRecordIds,canonicalAuthority:true}),
+         card,
+         mandatumEvent:mandatumSource.events[stepIndex],
+         mandatumStageIndex:stepIndex,
+         progress:freeze({index:card.sequence,total:cards.length,label:card.sequence+" / "+cards.length}),
+       });
+     }
+   }
+   if(id.startsWith("MC-CRD-"))return null;
    const hit=model.cardForEvent(eventId);if(!hit)return null;
    const card=byId.get(hit.card.sectionId)||cards.find(x=>x.sourceSectionId===hit.card.sectionId);
    if(!card)return null;
@@ -68,6 +87,8 @@ export function projectHolyThursdayMass(model,resolvedMass,{mandatumPresent=fals
  return freeze({...model,cards,totalCards:cards.length,
    structureOwner:model.structureOwner+"+HOLY_THURSDAY_1962",
    holyThursday:true,mandatumPresent:!!mandatumPresent,credoOmitted:true,
+   mandatumSource:mandatumPresent?mandatumSource:null,
+   mandatumEventIds:freeze(mandatumPresent?mandatumSource.events.map(e=>e.id):[]),
    cardBySequence,cardForEvent,
    previousCard:id=>neighbor(id,"previous"),nextCard:id=>neighbor(id,"next")
  });
