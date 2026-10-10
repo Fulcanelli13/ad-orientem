@@ -39,7 +39,7 @@ with Image.open(io.BytesIO(original)) as im:
  if max(w,h)<2500:raise ValueError("Actual original below image resolution floor")
  if len(x.getbands())<3:raise ValueError("No RGB colour channels")
 sha=hashlib.sha256(original).hexdigest()
-(OUT/"cma-"+str(work["id"])+".jpg").write_bytes(original)
+(OUT/("cma-"+str(work["id"])+".jpg")).write_bytes(original)
 record={"schema":"AO_SACRED_ART_SOURCE_ORIGINAL_V1","status":"ACQUIRED_FOR_RESEARCH_ONLY",
  "id":"cma-"+str(work["id"]),"title":work["title"],
  "artist":"Giovanni Battista Pittoni", "sourceUrl":SOURCE,"sourceApi":API+"?id="+str(work["id"]),
