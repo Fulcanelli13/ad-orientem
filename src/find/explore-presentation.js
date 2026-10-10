@@ -189,7 +189,7 @@ function itemCard(item,vm){
     +'<span class="aoFindCardTop"><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><i class="aoFindStatus" data-state="'+esc(item.map_publishable?"YES":"UNKNOWN")+'">'+esc(item.status||"")+'</i></span>'
     +'<strong>'+esc(translatedTitle(item,vm.language)||"")+'</strong>'
     +(item.subtitle?'<span>'+esc(item.subtitle)+'</span>':"")
-    +(item.summary?'<p>'+esc(String(translatedSummary(item,vm.language)).slice(0,240))+'</p>':"")
+    +(item.summary&&item.kind!=="TLM_VENUE"?'<p>'+esc(String(translatedSummary(item,vm.language)).slice(0,130))+'</p>':"")
     +'</button>';
 }
 function detailSheet(vm){
@@ -343,7 +343,7 @@ export function buildExploreViewModel({
     customCards:arr(customCards),
     mapped,
     addressOnly,
-    displayLimit:Number.isFinite(Number(displayLimit))?Math.max(60,Math.floor(Number(displayLimit))):120,
+    displayLimit:Number.isFinite(Number(displayLimit))?Math.max(24,Math.floor(Number(displayLimit))):24,
   });
 }
 
@@ -351,16 +351,18 @@ export function renderExploreToString(vm){
   if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet});
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.counts?.[vm.lens]??vm.items.length);
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
-  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
+  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
-  html+='<nav class="aoExploreLensTabs"><button type="button" data-find-filter="lens" data-find-filter-value="heritage" class="aoExploreReturnMap">'+esc(L(vm.language,"Unified map","Carte générale"))+'</button>';
+  html+='<nav class="aoExploreSectionNav" aria-label="'+esc(L(vm.language,"Explore navigation","Navigation Explorer"))+'">';
+  html+='<span>'+esc(L(vm.language,"SACRED GEOGRAPHY","GÉOGRAPHIE SACRÉE"))+' · '+esc(lensLabel(vm.language,vm.lens))+'</span>';
+  html+='<details class="aoExploreSectionSwitcher"><summary>'+esc(L(vm.language,"Other sections","Autres sections"))+'</summary><div>';
+  html+='<button type="button" data-find-filter="lens" data-find-filter-value="heritage">'+esc(L(vm.language,"Sacred places map","Carte des lieux sacrés"))+'</button>';
   for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
-    const label=lensLabel(vm.language,lens);
-    const count=vm.counts?.[lens];
-    html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+esc(lens)+'" class="'+(vm.lens===lens?"active":"")+'" aria-pressed="'+String(vm.lens===lens)+'"><span>'+esc(label)+'</span>'+(Number.isFinite(Number(count))?'<small>'+esc(count)+'</small>':"")+'</button>';
+    if(lens===vm.lens)continue;
+    html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+esc(lens)+'">'+esc(lensLabel(vm.language,lens))+'</button>';
   }
-  html+='</nav>';
+  html+='</div></details></nav>';
   if(vm.lens==="traditions")html+=customsAtlasPanel(vm);
   if(vm.lens==="pilgrimages"&&f.calendarKey)html+='<section class="aoExploreCalendarBridge"><span>'+esc(L(vm.language,"Pilgrimages associated with this Calendar observance","Pèlerinages associés à cette célébration du calendrier"))+' · '+esc(f.calendarKey)+'</span><button type="button" data-find-clear-calendar>'+esc(L(vm.language,"Show all pilgrimages","Tous les pèlerinages"))+'</button></section>';
 
