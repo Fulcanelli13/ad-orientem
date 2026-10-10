@@ -30,7 +30,7 @@ for(const c of now.records){
  assert.equal(c.source_url,CSE_SOURCE_MAP[c.source_id].canonical_url);
  assert.ok(oldStage.selected_sources.some(x=>x.id===c.source_id),"source not registered for stage "+c.id);
  assert.equal(c.original_en_text_examined,true);
- assert.ok(c.exact_locator.length>2 && c.bounded_finding_en.length>80 && c.not_supported_by_selected_passage_en.length>85);
+ assert.ok((c.exact_locator.length>2||/^§\d{1,3}$/.test(c.exact_locator)) && c.bounded_finding_en.length>80 && c.not_supported_by_selected_passage_en.length>85,"Recognize precise §6/§7/§9 locators without waiving substantive source-scope review: "+c.id);
  assert.ok(c.opponent_provenance_en.length>70 && c.opponent_provenance_class.length>15);
  assert.equal(c.original_complete_opponent_work_collated,false);
  assert.equal(c.entire_eight_stage_debate_certified,false);
