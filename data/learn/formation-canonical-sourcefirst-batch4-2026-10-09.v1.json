@@ -297,6 +297,13 @@
       "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/vii_the_acts_of_the_penitent.html",
       "locator": "§§1455–1467",
       "original_context_approved": false
+    },
+    {
+      "id": "HUME-EVIL-X",
+      "title": "David Hume, Dialogues Concerning Natural Religion, Part X",
+      "url": "https://davidhume.org/texts/d/10",
+      "locator": "Part X: Philo's objections from human misery and the Epicurean questions",
+      "original_context_approved": false
     }
   ],
   "dossiers": [
@@ -391,26 +398,29 @@
         {
           "role": "documented_position",
           "text": {
-            "en": "Augustine in his Enchiridion describes evil not as a second independent substance competing with God but as a privation or corruption of a good nature. This original Christian philosophical answer addresses the origin of moral defect; by itself it does not establish why this particular child suffers at this particular moment.",
-            "fr": "Dans son Enchiridion, saint Augustin décrit le mal non comme une substance indépendante opposée à Dieu mais comme privation ou corruption d'une nature bonne. Cette réponse philosophique chrétienne explique la possibilité de la défaillance morale ; elle ne démontre pas, à elle seule, pourquoi tel enfant souffre à tel instant."
+            "en": "In Part X of David Hume's Dialogues Concerning Natural Religion, the character Philo presses the problem of suffering against an inference from the world to a God who is at once unlimited in power and perfectly benevolent. The dialogue asks why a world containing profound animal and human misery would provide good evidence for those attributes; the old Epicurean dilemma asks why evil exists if God is both able and willing to prevent it. Hume is a genuine opposing philosophical source, not a Christian theologian arguing from inside Catholic premises.",
+            "fr": "Dans la partie X des Dialogues sur la religion naturelle de David Hume, le personnage Philon oppose la souffrance à la conclusion selon laquelle le monde révélerait un Dieu à la fois tout-puissant et parfaitement bienveillant. Le dialogue demande pourquoi un monde marqué par la misère humaine et animale prouverait ces attributs ; l'ancien dilemme attribué à Épicure demande pourquoi le mal existe si Dieu peut et veut l'empêcher. Hume constitue ici une source philosophique réellement opposée, non un théologien chrétien discutant à l'intérieur des prémisses catholiques."
           },
           "source_ids": [
-            "AUG-EVIL",
-            "CCC-EVIL"
+            "HUME-EVIL-X"
           ],
-          "attribution": "St Augustine, Enchiridion, chapter 11",
+          "attribution": "David Hume, Dialogues Concerning Natural Religion, Part X, Philo's objection",
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "HUME-EVIL-X": "Part X (Philo), Epicurean question and evidence of suffering"
+          }
         },
         {
           "role": "critical_response",
           "text": {
-            "en": "An appeal to free will is insufficient as a complete account of earthquakes or congenital disease, and a claim that every victim is being punished contradicts the distinction between moral responsibility and suffering. Catholic teaching admits the mystery of providence and refuses a simple one-to-one assignment of blame to the afflicted.",
-            "fr": "Le libre arbitre n'explique pas complètement séismes et maladies congénitales ; prétendre que chaque victime subit une peine particulière confond responsabilité morale et souffrance. L'enseignement catholique reconnaît le mystère de la Providence et refuse d'imputer mécaniquement une faute personnelle à celui qui endure le malheur."
+            "en": "Hume's challenge cannot be answered merely by saying that moral agents have free will: disease, natural disaster and the suffering of animals are not always the result of a victim's choices. Augustine's account of evil as privation explains why evil need not be a second, independent substance, while Catholic teaching on providence denies that God becomes morally guilty by permitting evil. Neither point yields a complete account of each tragedy. The Christian answer must acknowledge both the force of the objection and the mystery of providence rather than claim to have derived a painless world from first principles.",
+            "fr": "L'objection de Hume ne se résout pas en invoquant seulement le libre arbitre : la maladie, les catastrophes naturelles et la souffrance animale ne proviennent pas toujours du choix des victimes. L'analyse augustinienne du mal comme privation explique pourquoi il ne forme pas une seconde substance indépendante ; la doctrine catholique de la Providence distingue la permission du mal de sa responsabilité morale. Aucune de ces réponses n'explique entièrement chaque tragédie. La réponse chrétienne doit reconnaître la force de l'objection et le mystère de la Providence plutôt que prétendre déduire un monde sans souffrance à partir de principes abstraits."
           },
           "source_ids": [
             "CCC-EVIL",
-            "AUG-EVIL"
+            "AUG-EVIL",
+            "HUME-EVIL-X"
           ],
           "attribution": null,
           "original_context_approved": false,
