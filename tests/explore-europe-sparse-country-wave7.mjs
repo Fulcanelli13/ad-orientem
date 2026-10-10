@@ -11,6 +11,9 @@ const W7=read("data/explore/europe-acquisition.wave7-sparse-country.research.v1.
 const M6=read("data/explore/europe-acquisition.six-wave-coverage.review.v1.json");
 const M7=read("data/explore/europe-acquisition.seven-wave-coverage.review.v1.json");
 const G=read("data/geography/seed-registry.v1.json");
+// Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
+const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
+const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W7.schema,"AO_EXPLORE_EUROPE_WAVE7_SPARSE_COUNTRY_SOURCE_RESEARCH_V1");
 assert.equal(W7.status,"RESEARCH_ONLY_NO_NEW_PUBLIC_PLACES");
 assert.equal(W7.site_leads.length,14);assert.equal(W7.source_records.length,13);assert.equal(W7.associations.length,19);
@@ -18,7 +21,7 @@ assert.equal(W7.canonical_enrichments.length,0);
 const ids=new Set(W7.site_leads.map(x=>x.research_id)),sources=new Set(W7.source_records.map(x=>x.source_id));
 assert.equal(ids.size,14);assert.equal(sources.size,13);
 const prior=[...W1.place_candidates,...W2.place_leads,...W3.site_leads,...W4.sites,...W5.site_leads,...W6.site_leads].map(x=>({cc:x.country_code,name:x.name}));
-prior.push(...G.places.map(x=>({cc:x.address.country_code,name:x.name.official})));
+prior.push(...historicalPlaces.map(x=>({cc:x.address.country_code,name:x.name.official})));
 const norm=x=>String(x).normalize("NFD").toLowerCase().replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]/g,"");
 const keys=new Set(prior.map(x=>x.cc+":"+norm(x.name)));
 for(const s of W7.source_records){assert.match(s.url,/^https:\/\//);assert.ok(s.authority&&s.scope&&s.verification)}
