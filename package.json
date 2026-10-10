@@ -131,7 +131,7 @@
     "directory:geocode": "node tools/directory/geocode-runtime-snapshots.mjs",
     "test:directory-geocoding": "node tests/directory-geocoding.mjs",
     "test:novena-context": "node tests/novena-context-sot.mjs",
-    "test:explore-surface": "node tests/explore-surface.mjs",
+    "test:explore-surface": "node tests/explore-bible-places-compact.mjs && node tests/explore-surface.mjs",
     "test:explore-place-profiles": "node tests/explore-place-profiles.mjs",
     "test:directory-official-geo": "node tests/directory-official-geo.mjs",
     "test:catholic-life-retirement": "node tests/catholic-life-retirement.mjs",

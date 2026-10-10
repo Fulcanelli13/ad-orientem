@@ -8,7 +8,6 @@ import {
   projectExploreDataset,
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
-import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap } from "./map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
@@ -53,6 +52,13 @@ function installStyle(win){
     ".aoExploreLensTabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:14px 16px 4px}",
     ".aoExploreLensTabs button{min-width:0;border:1px solid rgba(217,197,154,.16);background:#0e151e;color:#c9bea8;border-radius:var(--ao-control-radius,11px);padding:10px 7px;font:650 var(--ao-type-ui-sm,12px)/1.15 var(--ao-font-ui,system-ui,sans-serif);display:grid;gap:4px;text-align:center}",
     ".aoExploreLensTabs button small{font-size:var(--ao-type-ui-xs,11px);color:#817765}.aoExploreLensTabs button.active{background:#d9c59a;color:#080c12;border-color:#d9c59a}.aoExploreLensTabs button.active small{color:#493f30}",
+    ".aoBiblePlacesCompact{margin:8px var(--ao-page-gutter,14px) 13px;border:1px solid rgba(217,197,154,.2);border-radius:13px;background:rgba(217,197,154,.025);overflow:hidden}",
+    ".aoBiblePlacesToggle{width:100%;min-height:54px;padding:11px 14px;border:0;background:transparent;color:#e9dfcd;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;cursor:pointer}.aoBiblePlacesToggle>span:first-child{display:grid;gap:3px}.aoBiblePlacesToggle strong{font:600 17px var(--ao-font-display,Georgia,serif)}.aoBiblePlacesToggle small{color:#afa38d;font:12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesToggle>span:last-child{color:#bba57b;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}",
+    ".aoBiblePlacesGroups{padding:4px 13px 12px;display:grid;gap:11px}.aoBiblePlacesGroup>small{display:block;margin-bottom:5px;color:#bba57b;font:650 10px var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase}.aoBiblePlacesGroup>div{display:flex;flex-wrap:wrap;gap:6px}.aoBiblePlacesGroup button{min-height:40px;padding:7px 10px;border:1px solid rgba(217,197,154,.16);border-radius:999px;background:#111b26;color:#dacfb8;cursor:pointer;font:12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesGroup button.active{background:#d9c59a;color:#080c12}",
+    ".aoBiblePlacesDetail{padding:12px 15px 16px;border-top:1px solid rgba(217,197,154,.16)}.aoBiblePlacesDetail h3{font:600 20px/1.2 var(--ao-font-display,Georgia,serif);margin:0 0 9px}.aoBiblePlacesDetail p{font:14px/1.6 var(--ao-font-body,Georgia,serif);color:#d1c4aa;margin:0 0 12px}.aoBiblePlacesDetail dl{display:grid;gap:7px;margin:0 0 14px}.aoBiblePlacesDetail dl>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:9px}.aoBiblePlacesDetail dt{color:#9f927d;font:11px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesDetail dd{margin:0;color:#e4d8bf;font:12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesRead{display:flex;flex-wrap:wrap;gap:8px}.aoBiblePlacesRead button{border:1px solid rgba(217,197,154,.35);border-radius:999px;background:#19232b;color:#e9d7b5;min-height:44px;padding:10px 12px;cursor:pointer;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesHint{margin:0;padding:0 13px 13px;color:#a99d88;font:12px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
+    ".aoBiblePhaseLabel{display:block;padding:8px 0 5px;color:#9f978b;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}.aoBiblePlacesChips{display:flex;flex-wrap:wrap;gap:6px}.aoBiblePlacesEpisode{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;padding:6px 0;border-bottom:1px solid rgba(217,197,154,.12)}.aoBiblePlacesEpisode:last-child{border-bottom:0}.aoBiblePlacesEpisode>span{min-width:0;flex:1;color:#d3c9bb;font:13px/1.4 var(--ao-font-body,Georgia,serif)}.aoBiblePlacesEpisode>button{flex-shrink:0}.aoBiblePlacesDetail .aoBiblePlacesRead{display:grid;grid-template-columns:minmax(0,1fr)}",
+    ".aoBiblePlacesControls{padding:4px 13px 12px;display:grid;gap:9px}.aoBiblePlacesControls input{box-sizing:border-box;width:100%;min-height:44px;border:1px solid rgba(217,197,154,.23);border-radius:10px;padding:10px 12px;background:#101923;color:#eee2ca;font:16px var(--ao-font-ui,system-ui,sans-serif)}.aoBibleScopeActions{display:flex;gap:7px}.aoBibleScopeActions button{min-height:40px;padding:9px 14px;border:1px solid rgba(217,197,154,.25);border-radius:999px;background:#121d29;color:#e0d5bd;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoBibleScopeActions button[aria-pressed=true]{background:#d9c59a;color:#080c12}.aoBiblePlacesChips button[hidden],.aoBiblePlacesChips[hidden],.aoBiblePlacesGroup[hidden],.aoBiblePhaseLabel[hidden]{display:none}",
+    ".aoBiblePlacesCompact button:focus-visible{outline:2px solid #e5cb92;outline-offset:2px}",
     ".aoCustomsAtlasPanel{margin:12px 16px 6px;padding:17px;border:1px solid rgba(217,197,154,.22);border-radius:16px;background:linear-gradient(145deg,rgba(217,197,154,.06),rgba(10,18,27,.6))}",
     ".aoCustomsAtlasHeading{display:flex;align-items:end;justify-content:space-between;gap:14px}.aoCustomsAtlasHeading small{font:650 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:#bba47a}.aoCustomsAtlasHeading h2{margin:5px 0 0;font:600 25px/1.1 var(--ao-font-display,Georgia,serif);color:#eadfcb}.aoCustomsAtlasHeading p{max-width:390px;margin:0;color:#ad9f8c;font:13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
     ".aoCustomsAtlasTopics{margin-top:14px;max-width:440px}.aoCustomsAtlasDiscovery{margin-top:12px;padding-top:10px;border-top:1px solid rgba(217,197,154,.14)}.aoCustomsAtlasDiscovery>summary{cursor:pointer;min-height:36px;color:#d9c59a;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);display:list-item;list-style-position:inside}.aoCustomsAtlasDiscovery>summary:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}",
@@ -100,7 +106,7 @@ function installStyle(win){
     ".aoHeritageSurface .aoFindSheetBackdrop{background:rgba(0,0,0,.34)}.aoHeritagePreview{max-width:660px;max-height:48vh}.aoHeritagePreview h2{font-size:21px}.aoHeritagePlaceTags{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.aoHeritagePlaceTags span{background:#19212b;border:1px solid rgba(217,197,154,.17);padding:6px 9px;border-radius:999px;color:#cbbca5;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritageCaution{font:12px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#b2a58f;margin:9px 0}.aoHeritagePreviewActions{display:flex;gap:8px;margin-top:10px}.aoHeritagePreviewActions button,.aoHeritagePreviewActions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid rgba(217,197,154,.27);border-radius:999px;background:#1d2023;color:#e9d3a7;padding:10px 16px;text-decoration:none;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}.aoHeritagePreviewActions button:first-child{background:#dac494;color:#0b121b}",
     ".aoHeritageStripActions{display:flex;align-items:center;gap:8px}.aoExploreReturnMap{grid-column:1/-1}@media(max-width:520px){.aoHeritageCategories{padding:7px 8px}.aoHeritageTools{padding:0 8px 7px}.aoHeritageCustomStrip{left:12px;right:12px;bottom:34px}.aoHeritageCustomRail button{flex-basis:126px}.aoHeritagePreviewActions{flex-wrap:wrap}.aoHeritageSurface .aoFindHeader h1{font-size:19px}}",
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(3,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}"
-  ].join("")+HERITAGE_STYLE;
+  ].join("");
   win.document.head?.append?.(style);
 }
 
@@ -121,6 +127,10 @@ export function createFindOwner(win=globalThis){
     heritageCategories:[...HERITAGE_CATEGORIES],
     highlightCustomId:null,
     expandPlace:false,
+    bibleOpen:false,
+    bibleSelectedId:null,
+    bibleScope:"ALL",
+    bibleQuery:"",
     atlasFamily:"ANY",
     atlasArea:"ANY",
     atlasPeriod:"ANY",
@@ -162,41 +172,6 @@ export function createFindOwner(win=globalThis){
       return false;
     }finally{button?.removeAttribute?.("aria-busy");}
   }
-  function nearbyStatus(message){
-    const label=getRoot(win)?.querySelector?.("[data-heritage-location-status]");
-    if(label){label.textContent=String(message||"");label.hidden=!message;}
-  }
-  // Explicit user gesture only. Coordinates never enter Ad Orientem's data
-  // registry and do not change the canonical point/source records.
-  function locateNearby(button){
-    if(state.lens!=="heritage")return;
-    nearbyStatus("");
-    const geo=win?.navigator?.geolocation;
-    if(!geo?.getCurrentPosition){
-      nearbyStatus(language(win)==="fr"?"Géolocalisation indisponible sur cet appareil.":"Location unavailable on this device.");
-      return;
-    }
-    if(!mapHandle?.map){
-      nearbyStatus(language(win)==="fr"?"Carte indisponible. Cherchez un lieu par son nom.":"Map unavailable. Search for a place by name.");
-      return;
-    }
-    button?.setAttribute?.("aria-busy","true");
-    geo.getCurrentPosition(position=>{
-      button?.removeAttribute?.("aria-busy");
-      if(!openState||state.lens!=="heritage"||!mapHandle?.map)return;
-      const lat=position?.coords?.latitude,lng=position?.coords?.longitude;
-      if(!Number.isFinite(lat)||!Number.isFinite(lng))return;
-      const currentZoom=mapHandle.map.getZoom?.()??2;
-      const options={center:[lng,lat],zoom:Math.max(currentZoom,7)};
-      if(win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)mapHandle.map.jumpTo?.(options);
-      else mapHandle.map.easeTo?.({...options,duration:450});
-      nearbyStatus(language(win)==="fr"?"Carte centrée sur votre position. Seuls les lieux documentés sont affichés.":"Map centred near you. Only documented sites are shown.");
-    },()=>{
-      button?.removeAttribute?.("aria-busy");
-      nearbyStatus(language(win)==="fr"?"Accès à la position refusé ou indisponible. Utilisez la recherche.":"Location permission denied or unavailable. Use search instead.");
-    },{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
-  }
-
   async function ensureData(){
     if(dataset)return dataset;
     if(!loading){
@@ -293,6 +268,7 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       counts:preliminaryMode?{tlm:PRELIMINARY_R49_TOTAL}:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
       customCards,
+      biblePlaces:dataset?.biblePlaces?.entries??[],
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:preliminaryMode?[]:data.directory?.loadedProviders??[],
       unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
@@ -338,20 +314,8 @@ export function createFindOwner(win=globalThis){
         if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
         mapHandle=nextHandle;
       }catch(error){
-        // MapLibre may fail offline or behind a tile/CDN blocker. It empties
-        // its container before construction; put an accessible recovery back.
-        if(mapNode&&win?.document){
-          const panel=win.document.createElement("div");
-          panel.className="aoFindMapFallback";
-          const title=win.document.createElement("strong");
-          title.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
-          const detail=win.document.createElement("span");
-          detail.textContent=language(win)==="fr"
-            ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
-            :"Use search above to open any place and its source references.";
-          panel.append(title,detail);
-          mapNode.replaceChildren(panel);
-        }
+        const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
+        if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
         console.error("Explore map failed",error);
       }
     }
@@ -386,6 +350,7 @@ export function createFindOwner(win=globalThis){
   function close(){
     ++paintToken;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;
+    state.bibleOpen=false;state.bibleSelectedId=null;state.bibleScope="ALL";state.bibleQuery="";
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
@@ -446,7 +411,6 @@ export function createFindOwner(win=globalThis){
       void paint().finally(()=>retry.removeAttribute?.("aria-busy"));
       return;
     }
-    const nearButton=target?.closest?.("[data-heritage-nearby]");if(nearButton){event.preventDefault?.();locateNearby(nearButton);return;}
     const glossaryButton=target?.closest?.("[data-find-glossary]");if(glossaryButton){event.preventDefault?.();event.stopPropagation?.();void openGlossary(glossaryButton);return}
     if(target?.closest?.("[data-find-clear-calendar]")){
       event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
@@ -469,6 +433,39 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-explore-expand-place]")){
       event.preventDefault?.();state.expandPlace=true;void paint();return;
+    }
+    const bibleToggle=target?.closest?.("[data-bible-toggle]");
+    if(bibleToggle&&state.lens==="heritage"){
+      event.preventDefault?.();
+      const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
+      state.bibleOpen=!state.bibleOpen;
+      if(!state.bibleOpen)state.bibleSelectedId=null;
+      void paint().then(()=>{
+        const surface=getRoot(win)?.querySelector?.(".aoFindSurface");
+        if(surface)surface.scrollTop=previousScroll;
+      });return;
+    }
+    const bibleScopeButton=target?.closest?.("[data-bible-scope]");
+    if(bibleScopeButton&&state.lens==="heritage"&&state.bibleOpen){
+      event.preventDefault?.();
+      const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
+      state.bibleScope=bibleScopeButton.dataset.bibleScope==="MIRACLES"?"MIRACLES":"ALL";
+      state.bibleSelectedId=null;
+      void paint().then(()=>{
+        const surface=getRoot(win)?.querySelector?.(".aoFindSurface");
+        if(surface)surface.scrollTop=previousScroll;
+      });return;
+    }
+    const biblePlace=target?.closest?.("[data-bible-place]");
+    if(biblePlace&&state.lens==="heritage"&&state.bibleOpen){
+      event.preventDefault?.();
+      const previousScroll=getRoot(win)?.querySelector?.(".aoFindSurface")?.scrollTop??0;
+      state.bibleSelectedId=biblePlace.dataset.biblePlace||null;
+      void paint().then(()=>{
+        const surface=getRoot(win)?.querySelector?.(".aoFindSurface");
+        if(surface)surface.scrollTop=previousScroll;
+        getRoot(win)?.querySelector?.(".aoBiblePlacesDetail")?.scrollIntoView?.({block:"nearest"});
+      });return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
@@ -561,16 +558,26 @@ export function createFindOwner(win=globalThis){
     const filter=target?.closest?.("[data-find-filter]");if(filter){setFilter(filter.dataset.findFilter,filter.dataset.findFilterValue);return}
   }
 
-  function onKeyDown(event){
-    if(!openState||event?.key!=="Escape")return;
-    if(state.selectedPlaceId){event.preventDefault?.();state.selectedPlaceId=null;state.expandPlace=false;void paint();return;}
-    if(state.selectedId){event.preventDefault?.();state.selectedId=null;void paint();return;}
-    const disclosure=getRoot(win)?.querySelector?.(".aoHeritageMore[open]");
-    if(disclosure){event.preventDefault?.();disclosure.open=false;}
-  }
-
   function onInput(event){
     if(!openState)return;
+    const bibleInput=event?.target?.closest?.("[data-bible-search]");
+    if(bibleInput&&state.lens==="heritage"&&state.bibleOpen){
+      state.bibleQuery=bibleInput.value||"";
+      const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+      const search=norm(state.bibleQuery.trim()),section=bibleInput.closest(".aoBiblePlacesCompact");
+      section?.querySelectorAll?.("[data-bible-place]")?.forEach(button=>{
+        button.hidden=!norm(button.dataset.bibleSearchText).includes(search);
+      });
+      section?.querySelectorAll?.(".aoBiblePlacesChips")?.forEach(container=>{
+        const visible=[...(container.querySelectorAll("[data-bible-place]"))].some(b=>!b.hidden);
+        container.hidden=!visible;
+        if(container.previousElementSibling?.classList?.contains("aoBiblePhaseLabel"))container.previousElementSibling.hidden=!visible;
+      });
+      section?.querySelectorAll?.(".aoBiblePlacesGroup")?.forEach(group=>{
+        group.hidden=![...(group.querySelectorAll("[data-bible-place]"))].some(b=>!b.hidden);
+      });
+      return;
+    }
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
     state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.displayLimit=120;
     void paint({preserveSearchFocus:true});
@@ -586,7 +593,6 @@ export function createFindOwner(win=globalThis){
   win?.document?.addEventListener?.("click",onClick,true);
   win?.document?.addEventListener?.("input",onInput,true);
   win?.document?.addEventListener?.("change",onChange,true);
-  win?.document?.addEventListener?.("keydown",onKeyDown,true);
   installStyle(win);ensureRoot(win);
 
   return Object.freeze({
@@ -601,6 +607,10 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       view:state.view,
       selectedPlaceId:state.selectedPlaceId,
+      bibleOpen:state.bibleOpen,
+      bibleSelectedId:state.bibleSelectedId,
+      bibleScope:state.bibleScope,
+      bibleQuery:state.bibleQuery,
       counts:state.lens==="tlm"?{tlm:PRELIMINARY_R49_TOTAL}:projection?.counts??{},
       loadedProviders:dataset?.directory?.loadedProviders??[],
       unavailableProviders:dataset?.directory?.unavailableProviders??[],
@@ -611,7 +621,6 @@ export function createFindOwner(win=globalThis){
       win?.document?.removeEventListener?.("click",onClick,true);
       win?.document?.removeEventListener?.("input",onInput,true);
       win?.document?.removeEventListener?.("change",onChange,true);
-      win?.document?.removeEventListener?.("keydown",onKeyDown,true);
       getRoot(win)?.remove?.();
     }
   });

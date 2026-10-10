@@ -132,6 +132,7 @@ jobs:
       - run: npm run test:learn-owner
       - run: node tests/catechism-guided-study.mjs
       - run: npm run test:source-transport
+      - run: npm run test:explore-surface
       - run: npm run check:app-release
 
   app-shell-phone:

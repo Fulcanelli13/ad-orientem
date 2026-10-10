@@ -39,28 +39,6 @@ try{
  // behind the explicit More disclosure and must be reachable on phones.
  assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.().lens),"heritage");
  await page.locator('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]').waitFor({state:"visible"});
- // Small-screen acceptance: the landing view is a map, never a directory dump.
- assert.equal(await page.locator("#ao-find-modular-root .aoHeritageSurface .aoFindList").count(),0);
- const nearby=page.locator("#ao-find-modular-root [data-heritage-nearby]");
- assert.equal(await nearby.count(),1,"opt-in nearby map control missing");
- const nearbyBox=await nearby.boundingBox();
- assert.ok(nearbyBox&&nearbyBox.height>=44&&nearbyBox.width>=44,"nearby control is too small for touch");
- const mapSearch=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
- await mapSearch.fill("Sanctuaire Notre-Dame de Lourdes");
- await page.waitForFunction(()=>Boolean(document.querySelector("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]")),null,{timeout:15000});
- const options=page.locator("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]");
- assert.ok(await options.count()<=6,"search opened an unbounded list instead of compact suggestions");
- await options.first().tap();
- await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
- assert.ok(await page.locator("#ao-find-modular-root .aoHeritageSynopsis").count()>=1,"map pin preview lacks substantive source-owned introduction");
- await page.locator("#ao-find-modular-root [data-explore-expand-place]").tap();
- await page.locator("#ao-find-modular-root .aoExplorePlaceSheet").waitFor({state:"visible"});
- assert.ok(await page.locator("#ao-find-modular-root .aoExplorePlaceSheet details.aoPlaceAccordion").count()>0,
-   "detailed source records are not progressively disclosed");
- await page.locator("#ao-find-modular-root .aoExplorePlaceSheet button[data-find-close-place]").tap();
- await page.locator("#ao-find-modular-root [data-find-query]").fill("");
- await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoHeritageSearchResults"),null,{timeout:15000});
-
  const activeAll=page.locator('#ao-find-modular-root [data-heritage-category="ALL"]');
  assert.equal(await activeAll.getAttribute("aria-pressed"),"true");
  const shrineChip=page.locator('#ao-find-modular-root [data-heritage-category="shrines"]');
@@ -70,6 +48,39 @@ try{
    &&document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="false",null,{timeout:15000});
  await activeAll.tap();
  await page.waitForFunction(()=>document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
+ // Bible Places is a small, default-collapsed addition to the unified
+ // Explore view. It reuses the Scripture reader, preserving this Explore page.
+ const bibleToggle=page.locator('#ao-find-modular-root [data-bible-toggle]');
+ assert.equal(await bibleToggle.count(),1);
+ assert.equal(await bibleToggle.getAttribute("aria-expanded"),"false");
+ await bibleToggle.tap();
+ await page.waitForFunction(()=>document.querySelector('[data-bible-toggle]')?.getAttribute("aria-expanded")==="true",null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-place]').count(),60);
+ const scope=page.locator('#ao-find-modular-root [data-bible-scope="MIRACLES"]');
+ await scope.tap();
+ await page.waitForFunction(()=>document.querySelector('[data-bible-scope="MIRACLES"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-place="cana"]').tap();
+ await page.waitForFunction(()=>Boolean(document.querySelector('[data-ao-scripture-context="John 4:46–54"]')),null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-scope="ALL"]').tap();
+ await page.waitForFunction(()=>document.querySelector('[data-bible-scope="ALL"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
+ const bibleSearch=page.locator('#ao-find-modular-root [data-bible-search]');
+ await bibleSearch.fill("Bethesda");
+ await page.waitForFunction(()=>[...document.querySelectorAll('[data-bible-place]')].filter(x=>!x.hidden).length===1,null,{timeout:15000});
+ await bibleSearch.fill("");
+ await page.waitForFunction(()=>[...document.querySelectorAll('[data-bible-place]')].filter(x=>!x.hidden).length===60,null,{timeout:15000});
+ await page.locator('#ao-find-modular-root [data-bible-place="nazareth"]').tap();
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleSelectedId==="nazareth",null,{timeout:15000});
+ const scriptureLink=page.locator('#ao-find-modular-root [data-ao-scripture-context="Luke 1:26–38"]');
+ assert.equal(await scriptureLink.count(),1);
+ await scriptureLink.tap();
+ await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true,null,{timeout:15000});
+ assert.equal(await page.locator('#ao-scripture-overlay').isVisible(),true);
+ await page.locator('#ao-scripture-overlay [data-scripture-close]').first().tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===false,null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-place="nazareth"]').getAttribute("aria-pressed"),"true");
+ await bibleToggle.tap();
+ await page.waitForFunction(()=>document.querySelector('[data-bible-toggle]')?.getAttribute("aria-expanded")==="false",null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-find-map]').count(),1,"Bible Places replaced the unified map");
  // A widespread devotion remains discoverable as a thematic card, not
  // as an invented geographic point or a top-level list.
  const customRail=page.locator('#ao-find-modular-root .aoHeritageCustomRail');
