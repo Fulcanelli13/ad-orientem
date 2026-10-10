@@ -487,6 +487,34 @@
       "url": "https://www.iglesia.cl/area_eclesial.php",
       "access": "INDEX_ACCESSIBLE",
       "note": "Festival catalogue, dates, popular devotions, canta a lo divino and Cuasimodo; Latin American customs distinct from French relevance-gated domestic customs."
+    },
+    {
+      "id": "AF_ZM_LUSAKA_DIOCESAN",
+      "continent": "Africa",
+      "geo_scope": "Zambia / Lusaka",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Lusaka Archdiocese – annual pilgrimage to Marian Shrine of Our Lady of Lusaka",
+      "authority": "ARCHDIOCESE_DIRECT",
+      "url": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/",
+      "access": "PAGE_ACCESSIBLE",
+      "note": "Named diocesan sanctuary and repeated pilgrimages; physical footprint/pin still unconfirmed",
+      "extracted_index": "data/geography/research/african-episcopal-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AF_GH_CBCG_DIRECTORY",
+      "continent": "Africa",
+      "geo_scope": "Ghana",
+      "subjects": [
+        "SOURCE_DISCOVERY"
+      ],
+      "title": "Ghana Catholic Bishops' Conference – national diocesan directory",
+      "authority": "EPISCOPAL_DIRECTORY",
+      "url": "https://www.cbcgha.org/national-directory/",
+      "access": "DIRECTORY_ACCESSIBLE",
+      "note": "Source-routing across Ghanaian dioceses; no shrine corpus extracted and no completed country inventory claimed."
     }
   ],
   "initial_source_derived_leads": [
@@ -767,8 +795,8 @@
     "source_extraction_not_worldwide_completeness": true
   },
   "acquisition_checkpoint_batch3": {
-    "added_source_references": 10,
-    "total_source_references": 32,
+    "added_source_references": 12,
+    "total_source_references": 34,
     "selected_philippine_shrine_rows": 66,
     "philippine_directories": "Four live regional ACSP pages; selective 66 significant or representative rows, not complete transcription of 305 reported shrines",
     "reported_philippine_shrine_total_2024": 305,
@@ -778,8 +806,14 @@
     "chilean_comprehensive_shrine_catalogue": "DISCOVERED_BUT_NOT_EXTRACTED",
     "ireland_three_site_episcopal_list": 3,
     "ireland_seed_missing": "Croagh Patrick",
-    "indexed_source_rows_combined_before_entity_dedup": 295,
+    "indexed_source_rows_combined_before_entity_dedup": 297,
     "published_new_places": 0,
-    "original_16_source_derived_leads_all_held": true
+    "original_16_source_derived_leads_all_held": true,
+    "african_crosschecks": {
+      "zambia_our_lady_lusaka": 1,
+      "kenya_subukia_recorroborated": 1,
+      "kenya_subukia_is_preexisting_research_lead": true,
+      "ghana_bishops_directory_routing_only": true
+    }
   }
 }
