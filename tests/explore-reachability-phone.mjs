@@ -48,6 +48,27 @@ try{
    &&document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="false",null,{timeout:15000});
  await activeAll.tap();
  await page.waitForFunction(()=>document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
+ // Bible Places is a small, default-collapsed addition to the unified
+ // Explore view. It reuses the Scripture reader, preserving this Explore page.
+ const bibleToggle=page.locator('#ao-find-modular-root [data-bible-toggle]');
+ assert.equal(await bibleToggle.count(),1);
+ assert.equal(await bibleToggle.getAttribute("aria-expanded"),"false");
+ await bibleToggle.tap();
+ await page.waitForFunction(()=>document.querySelector('[data-bible-toggle]')?.getAttribute("aria-expanded")==="true",null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-place]').count(),18);
+ await page.locator('#ao-find-modular-root [data-bible-place="nazareth"]').tap();
+ await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleSelectedId==="nazareth",null,{timeout:15000});
+ const scriptureLink=page.locator('#ao-find-modular-root [data-ao-scripture-context="Luke 1:26–38"]');
+ assert.equal(await scriptureLink.count(),1);
+ await scriptureLink.tap();
+ await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===true,null,{timeout:15000});
+ assert.equal(await page.locator('#ao-scripture-overlay').isVisible(),true);
+ await page.locator('#ao-scripture-overlay [data-scripture-close]').first().tap({timeout:15000});
+ await page.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1?.status?.().open===false,null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-bible-place="nazareth"]').getAttribute("aria-pressed"),"true");
+ await bibleToggle.tap();
+ await page.waitForFunction(()=>document.querySelector('[data-bible-toggle]')?.getAttribute("aria-expanded")==="false",null,{timeout:15000});
+ assert.equal(await page.locator('#ao-find-modular-root [data-find-map]').count(),1,"Bible Places replaced the unified map");
  // A widespread devotion remains discoverable as a thematic card, not
  // as an invented geographic point or a top-level list.
  const customRail=page.locator('#ao-find-modular-root .aoHeritageCustomRail');
