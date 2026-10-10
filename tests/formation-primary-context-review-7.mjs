@@ -13,8 +13,9 @@ const packs = [
   "formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"
 ].map(p => read(root+p));
 const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
+const a2=read("data/learn/formation-a2-20261010-source-role-amendment.v1.json");
 const a1Changed=new Map(a1.modified_roles.map(x=>[x.owner+"|"+x.role,x]));
-const a1Superseded=new Map(a1.original_findings_superseded.map(x=>[x.finding_id,x]));
+const a1Superseded=new Map([...a1.original_findings_superseded,...a2.original_findings_superseded].map(x=>[x.finding_id,x]));
 const validateReassigned=(f,section,sources)=>{
  const change=a1Superseded.get(f.id);
  assert.ok(change,f.id+": original citation removed without an explicit source-review disposition");
