@@ -404,7 +404,7 @@ export function mountScriptureLibrary(root,{
  return Object.freeze({
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
    setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
-   setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");records=next;draw();},
+   setRecords(next){if(!Array.isArray(next))throw new TypeError("Scripture records array required");const closeFocused=wrap.querySelector("[data-scripture-close]")===document.activeElement;records=next;draw();if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});},
    status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    destroy(){root.replaceChildren();}
  });
