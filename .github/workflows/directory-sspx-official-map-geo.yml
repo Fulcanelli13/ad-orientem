@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "tools/directory/acquire-sspx-official-map-geo.mjs"
+      - "tools/directory/geocode-unmapped-provider-sites-r39.mjs"
       - "tools/directory/acquire-lmd-map-pins.mjs"
       - "src/find/geo-provenance.js"
       - "tests/directory-sspx-official-map-geo.mjs"
@@ -37,22 +38,16 @@ jobs:
               exit 1
             }
           cat "$RUNNER_TEMP/sspx-official-map/harvest.log"
-      - name: Harvest public LMD map coordinates
-        run: node tools/directory/acquire-lmd-map-pins.mjs --countries=mu,ie,nz,za,au,ca
-      - name: Upload public LMD map research
+      - name: Geocode unmapped diocesan and traditionalist venue addresses conservatively
+        run: node tools/directory/geocode-unmapped-provider-sites-r39.mjs
+      - name: Upload bounded geocoding evidence for review
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lmd-worldwide-map-r39-research
-          path: /tmp/lmd-r39/
+          name: r39-diocesan-cmri-geocoding-research
+          path: /tmp/r39-provider-geocodes/
           retention-days: 30
           if-no-files-found: warn
-      - name: Reconcile offline cached OSM coordinates for diocesan and traditionalist records
-        run: |
-          node tools/directory/build-worldwide-geocode-overlays.mjs --write > "$RUNNER_TEMP/sspx-official-map/geo-cache-reuse.log"
-          head -n 70 "$RUNNER_TEMP/sspx-official-map/geo-cache-reuse.log"
-          cp data/directory/research/worldwide-geo-cache-reuse-report.v1.json "$RUNNER_TEMP/sspx-official-map/"
-          cp data/directory/generated/v19/*.geo.v1.json "$RUNNER_TEMP/sspx-official-map/" || true
       - name: Preserve first-party geolocation research without publishing
         if: always()
         uses: actions/upload-artifact@v4
