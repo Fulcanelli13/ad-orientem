@@ -103,7 +103,8 @@ try{
  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-proper-source"),"Sancti/10-07",
    "Mass preparation review continued to display the old Sunday Proper");
  assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/Most Holy Rosary/);
- await page.locator("[data-full-mass-review] summary").click();
+ assert.equal(await page.locator("[data-full-mass-review]").evaluate(el=>el.open),true,
+  "Alternative Proper review must open immediately on selection");
  assert.match(await page.locator("[data-full-mass-review-body]").innerText(),/Sancti\/10-07/);
  assert.match(await page.locator("[data-full-mass-review-body]").innerText(),/2026-10-04/);
  assert.match(await page.locator("[data-full-mass-review-body]").innerText(),/2 \/ 2 \/ 2/);
