@@ -1,8 +1,8 @@
 {
   "schema": "AO_1962_MAJOR_LITANY_VOTIVE_RELEASE_GATE_V1",
-  "status": "SOURCE_RESEARCH_ONLY_NOT_SELECTABLE",
-  "publicationAllowed": false,
-  "scope": "GREATER_LITANIES_ON_25_APRIL_OR_EASTER_TUESDAY_ONLY",
+  "status": "PUBLISHED_1962_MAJOR_LITANY_EASTERTIDE_VOTIVE",
+  "publicationAllowed": true,
+  "scope": "RUBRICALLY_FIXED_MAJOR_LITANY_APRIL_25_OR_PRESCRIBED_EASTER_TUESDAY_TRANSFER",
   "owner": "Shared DayResolver / R17 Mass selection, not date-only Calendar UI",
   "rubrics": {
     "majorDate": {
@@ -40,13 +40,13 @@
   },
   "unpublishedSeasonalVariants": {
     "outsideEastertide": {
-      "status": "RESEARCH_ONLY_VARIANTS_NOT_SELECTABLE",
+      "status": "NOT_PART_OF_FIXED_MAJOR_LITANY_IN_GREGORIAN_CALENDAR",
       "sources": [
         "https://gregobase.selapa.net/sources/42/430.png"
       ],
       "required": [
-        "1962 Gradual, Alleluia and Tract choices for pre-Lent, Lent/Passion and post-Easter season",
-        "correct original Preface of actual season and any feast-specific source exceptions"
+        "Any extraordinary locally displaced rite outside the fixed Greater Litany must have its own calendar authorization and seasonal chants, rather than reusing this fixed-date publication.",
+        "Outside-Eastertide Minor Rogation transfer remains separately uncertified."
       ]
     },
     "easterOctave": {
@@ -54,9 +54,9 @@
       "reason": "Easter octave first-class day impedes II-class votive; preserve Easter day Mass and proper Easter octave Preface."
     },
     "eastertideAfterOctave": {
-      "status": "NEEDS_EXPLICIT_MAJOR_SCOPE_CERTIFICATE",
+      "status": "PUBLISHED_1962_MAJOR_LITANY_EASTERTIDE_VOTIVE",
       "prefaceCandidate": "in hoc potissimum",
-      "reason": "Do not reclassify the published MINOR_ROGATIONS_IN_EASTERTIDE_ONLY certificate as a Major Litany certificate without a separate release gate and phone acceptance."
+      "reason": "Actual Major Litany fixed date after Easter octave always uses existing certified two-verse Easter Alleluia and Paschal Preface in hoc potissimum; Sunday may require Creed."
     },
     "easterTuesdayTransfer": {
       "status": "NOT_CERTIFIED_FOR_II_CLASS_ROGATION_VOTIVE",
@@ -65,16 +65,40 @@
   },
   "availableNow": {
     "dayMassAfterExplicitPublicAction": true,
-    "majorVotive": false,
-    "seasonalProperPublished": false,
-    "notes": "The public Litany uses the single canonical R17 six-stage ROG graph and its real day Mass, not a new reader. Do not infer observance from date without an explicit public action."
+    "majorVotive": true,
+    "seasonalProperPublished": true,
+    "notes": "For unimpeded after-Easter-octave Major Litany dates only (II-IV class) with explicit public rite, reused printed shared 1962 Exaudivit Proper and Easter Preface. On I class retain public Litany and day Mass."
   },
   "validationNeeded": [
-    "Gregorian Easter rule dates 2011-04-26 and 2038-04-27 are transferred; the displaced April 25 is not the Major Litany date.",
-    "2025-04-25 within Easter octave permits public Litanies + day Mass, but no II-class votive",
-    "2026-04-25 in Eastertide after the octave: day-Mass public action available; II-class votive gated pending separate Major certification.",
-    "2027-04-25 Eastertide Sunday requires actual-calendar Proper and 1960 II-class Sunday Credo/seasonal rank audit, not unconditional minor weekday no-Credo source override.",
-    "Outside Eastertide section-level chants and preface independently certified before enabling Major votive.",
-    "Full phone EN/FR calendar -> preflight -> public R17 Litany -> day Introit -> Back, no invented source/automatic rite."
-  ]
+    "Phone EN/FR production-data checks must pass on a weekday after octave and a Sunday II-class after octave, including Creed on Sunday.",
+    "Easter octave transfer remains impeded and day Mass is preserved.",
+    "No arbitrary local transfer or outside-Eastertide variant is enabled.",
+    "Three published Minor-source certificates and the separate Major source gate must each remain independently effective.",
+    "Complete source-first 48-card LIVE and no duplicated Litany stages."
+  ],
+  "verifiedRelease": {
+    "season": "EASTERTIDE_ONLY",
+    "calendarProof": "Gregorian Easter occurs March 22–April 25, so the fixed April 25 Greater Litany is always in Eastertide. If Easter Sunday or Monday collides, the Litany moves only to Easter Tuesday (Easter octave I class); the votive is impeded.",
+    "easterOffsetRangeForVotive": [
+      8,
+      34
+    ],
+    "sourceMissal": "Missale Romanum (1962), Vatican typical edition, pp.347–349, titled In Litaniis maioribus et minoribus",
+    "chantStructure": "TEMPOR(E)_PASCHALI_TWO_VERSE_ALLELUIA_AS_ALREADY_PUBLISHED_FOR_MINOR",
+    "preface": "Paschal Preface, in hoc potissimum; original Vatican 1962 pp.234–235; reused from published Eastertide Minor certificate",
+    "rubric346": "The II-class Rogation votive is prescribed when a public procession or authorized public supplications are actually held; a I-class day impedes it",
+    "rubric343": "Gloria is omitted in violet; Creed is ordinarily omitted except when prescribed by an occurring Sunday or octave. On an eligible II-class Sunday it is PRESENT.",
+    "sundayCredo": true,
+    "originalEnglishFrench": "Original internally reviewed EN/FR from existing published Minor Proper; not a new translation or independent imprimatur",
+    "externalImprimaturClaimed": false,
+    "references": [
+      "https://gregobase.selapa.net/sources/42/429.png",
+      "https://gregobase.selapa.net/sources/42/430.png",
+      "https://gregobase.selapa.net/sources/42/431.png",
+      "https://gregobase.selapa.net/sources/42/316.png",
+      "https://gregobase.selapa.net/sources/42/317.png",
+      "https://divinumofficium.hu/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+      "https://aa.usno.navy.mil/faq/easter"
+    ]
+  }
 }
