@@ -3,7 +3,7 @@ import {
   LEARN_DONOR_RELEASE,
   LEARN_MODULE_IDS,
   LEARN_PRESENTATION_VERSION,
-  renderLearnPresentation,learnDiscoveryMarkup,
+  renderLearnPresentation,learnDiscoveryMarkup,formationDossierReviewEnabled,
 } from "./presentation.js";
 import {
   ensureLearnModule,installLazyLearnRegistry,TRADITIONAL_LEARN_ROUTES,
@@ -221,6 +221,22 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
       if(apostolate){
         event.preventDefault?.();
         void navigateFromLearn("apostolate");
+        return;
+      }
+      const research=event.target?.closest?.("[data-ao-learn-dossier-review]");
+      if(research){
+        event.preventDefault?.();
+        const corpus=research.dataset?.aoLearnDossierReview;
+        if(!formationDossierReviewEnabled(win)||!["apologetics","crisis"].includes(corpus))return;
+        void import("./formation-recovery-review.js").then(mod=>{
+          if(!state.open||!root(win)?.contains?.(research))return;
+          const review=mod.installFormationRecoveryReview(win);
+          void review.open({corpus,returnFocus:research});
+        }).catch(error=>{
+          state.error=L(win,"Research reader could not be opened.","Impossible d’ouvrir les recherches.");
+          paint();
+          try{win?.console?.error?.("Formation research opening failed",error);}catch{}
+        });
         return;
       }
       // A Questions entrance points to the one published specialist reader.
