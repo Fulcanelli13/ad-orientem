@@ -232,7 +232,7 @@ export function createFindOwner(win=globalThis){
       ?projection.byLens.traditions.find(item=>item.item_id===state.selectedId)??null
       :state.lens==="heritage"?canonical.find(item=>item.item_id===state.selectedId)??null:null;
     const customCards=state.lens==="heritage"
-      ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions"),query:state.query}):[];
+      ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
     const placeProfiles=buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const vm=buildExploreViewModel({
       language:language(win),
