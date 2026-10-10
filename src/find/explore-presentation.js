@@ -192,6 +192,48 @@ function itemCard(item,vm){
     +(item.summary&&item.kind!=="TLM_VENUE"?'<p>'+esc(String(translatedSummary(item,vm.language)).slice(0,130))+'</p>':"")
     +'</button>';
 }
+// Map and list use the same two-stage pattern: compact preview first,
+// then detailed records and their source links on deliberate request.
+function compactExploreItemSheet(vm){
+  const item=vm.selected;
+  if(!item)return "";
+  const lang=vm.language;
+  const title=translatedTitle(item,lang)||"";
+  const area=[item.subtitle||"",item.subtitle?"":addressText(item.address)].filter(Boolean).join("");
+  const fullSummary=String(translatedSummary(item,lang)||"").replace(/\s+/g," ").trim();
+  const max=210;
+  const summary=fullSummary.length>max
+    ?fullSummary.slice(0,max).replace(/\s+\S*$/,"")+"…":fullSummary;
+  const isMass=item.kind==="TLM_VENUE";
+  const isRelic=item.lens==="relics";
+  const isApparition=item.lens==="apparitions";
+  let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet aoExploreQuickPreview" role="dialog" aria-modal="true" aria-label="'+esc(title)+'" data-explore-preview="'+esc(item.item_id)+'">';
+  html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
+  html+='<header><div><small>'+esc(item.eyebrow||lensLabel(lang,item.lens))+'</small><h2>'+esc(title)+'</h2>';
+  if(area)html+='<p>'+esc(area)+'</p>';
+  html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
+  if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
+  if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
+    "Provisional venue. Current Mass times, entrance and the una-cum status of individual celebrations are not verified.",
+    "Lieu provisoire. Horaires actuels, entrée et caractère una cum de chaque célébration non vérifiés."))+'</p>';
+  else if(item.geo?.approximate||item.geo?.indicative_only)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
+    "Map position is indicative, not a verified entrance.",
+    "Position indicative, non une entrée vérifiée."))+'</p>';
+  if(isRelic||isApparition)html+='<p class="aoExplorePreviewCaution">'+esc(isRelic
+    ?L(lang,"Reported custody does not authenticate a relic.","Le lieu de conservation rapporté n’authentifie pas la relique.")
+    :L(lang,"A reported apparition is not thereby authenticated.","Un récit d’apparition ne constitue pas une authentification."))+'</p>';
+  html+='<div class="aoExplorePreviewActions">';
+  html+='<button type="button" data-explore-expand-detail>'+esc(L(lang,
+    "Details & sources","Détails et sources"))+' <span aria-hidden="true">→</span></button>';
+  const primary=arr(item.actions).find(action=>action?.url&&action?.label==="Website");
+  if(primary)html+='<a href="'+esc(primary.url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Official site","Site officiel"))+'</a>';
+  html+='</div>';
+  const sources=arr(item.source_links).length;
+  if(sources)html+='<small class="aoExplorePreviewSourceCount">'+esc(String(sources))+' '+esc(L(lang,
+    sources===1?"source in details":"sources in details",
+    sources===1?"source dans la fiche":"sources dans la fiche"))+'</small>';
+  return html+'</section></div>';
+}
 function detailSheet(vm){
   const item=vm.selected;if(!item)return "";
   let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet" role="dialog" aria-modal="true">';
@@ -319,6 +361,7 @@ export function buildExploreViewModel({
   placeProfiles=[],
   selectedPlaceId=null,
   expandPlace=false,
+  expandDetail=false,
   customCards=[],
   displayLimit=120,
 }={}){
@@ -340,6 +383,7 @@ export function buildExploreViewModel({
     selected,
     selectedPlace,
     expandPlace:Boolean(expandPlace),
+    expandDetail:Boolean(expandDetail),
     customCards:arr(customCards),
     mapped,
     addressOnly,
@@ -419,6 +463,6 @@ export function renderExploreToString(vm){
     if(visible.length<vm.items.length)html+='<div class="aoFindMore"><span>'+esc(L(vm.language,"Showing ","Affichage de "))+visible.length+' / '+vm.items.length+'</span>'
       +'<button type="button" data-find-show-more>'+esc(L(vm.language,"Show more results","Afficher plus de résultats"))+'</button></div>';
   }else html+=emptyState(vm);
-  html+='</div>'+(vm.selectedPlace?placeSheet(vm):detailSheet(vm))+'</section>';
+  html+='</div>'+(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):""):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):""))+'</section>';
   return html;
 }
