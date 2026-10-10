@@ -198,7 +198,7 @@ try{
   });
  });
  assert.equal(await page.locator("[data-ao-special-reader-stage]").isVisible(),true);
- assert.equal(await page.locator(".ao-reader-ceremony-name").innerText(),"Requiem");
+ assert.equal(await page.locator(".ao-reader-ceremony-name").textContent(),"Requiem");
  await page.evaluate(()=>{
    __stageCard={id:"ABS-R03",title:"Libera me"};
    __stageRoot.dataset.r17StateOwner="R26_REQUIEM_ABSOLUTION_NATIVE";
