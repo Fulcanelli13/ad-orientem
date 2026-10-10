@@ -3200,5 +3200,16 @@
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
-  ]
+  ],
+  "distinct_place_links": {
+    "shrines": 178,
+    "pilgrimages": 178,
+    "relics": 92,
+    "apparitions": 29,
+    "customs": 55,
+    "novena_context": 10,
+    "routes": 18,
+    "directory_links": 9
+  },
+  "map_policy_note": "The distinct-place counts include address-only or coordinate-pending Places. They are not counts of publishable map pins."
 }
