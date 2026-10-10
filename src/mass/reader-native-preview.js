@@ -55,6 +55,7 @@ import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
+import { projectGloriaCredoFaithfulCue } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
@@ -102,11 +103,10 @@ export function resolveGestureProjection(eventState, legacyGesture, {
   incarnatusAction="GENUFLECT",
 }={}) {
   const owner=eventState?.ownership?.gesture ?? null;
-  if(owner==="R17_NATIVE") return eventState.gesture ?? null;
-
   const adjudicated=Boolean(cueId && GLORIA_CREDO_FAITHFUL_GESTURES[cueId]);
   const cueGesture=cueId ? resolveFaithfulGestureForCue({cueId,gestureProfile,incarnatusAction}) : null;
   if(cueGesture) return cueGesture;
+  if(owner==="R17_NATIVE" && !adjudicated)return eventState.gesture ?? null;
 
   if(adjudicated || owner==="R17_FAIL_CLOSED_PENDING_SOURCE_ADJUDICATION") return null;
   return legacyGesture ?? null;
@@ -1327,6 +1327,29 @@ export async function mountNativeReaderPreview({
       gestureProfile,
     });
     const cueNative=owned.cueNative;
+    const form=ready.prepared?.session?.resolvedMass?.form??"LOW";
+    const faithfulCueFor=id=>{
+      if(!id)return null;
+      const source=ready.cueState.supported?ready.cueState.project(id):null;
+      return projectGloriaCredoFaithfulCue({
+        cueId:id,form,preferences:customaryPrefs,
+        sourcedPosture:source?.posture??null,
+      });
+    };
+    const focusedFaithful=faithfulCueFor(activeCueId);
+    // Every Latin cue paragraph retains its own faithful posture/gesture.
+    // The priest's sedilia witness is advisory: no fabricated source cue.
+    const paragraphCues=Object.freeze(Object.fromEntries(
+      (current?.paragraphs??[]).flatMap(p=>{
+        const ids=p.sourceCueIds??[p.id];
+        const id=ids.find(v=>projectGloriaCredoFaithfulCue({
+          cueId:v,form,preferences:customaryPrefs,
+        }));
+        if(!id)return [];
+        const projection=faithfulCueFor(id);
+        return projection?[[String(p.id),projection]]:[];
+      })
+    ));
     const transientProjection=activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null);
     const rubricProjection=activeCueId ? ready.rubricState.project(activeCueId) : ready.rubricState.project(null);
     const gestureMatrixProjection=activeCueId ? ready.gestureMatrixState.project(activeCueId) : ready.gestureMatrixState.project(null);
@@ -1336,11 +1359,16 @@ export async function mountNativeReaderPreview({
       bell:transientProjection.bell,
       cinematic:eventCinematic,
     });
-    const gesture=transient.gesture;
+    const gesture=focusedFaithful ? focusedFaithful.gesture : transient.gesture;
     const response=transient.response;
     const bell=transient.bell;
     const cinematic=partCinematic ?? transient.cinematic;
-    const {priestVoice,priestPosition}=owned;
+    const {priestVoice}=owned;
+    const priestPosition=focusedFaithful?.conditionalSedilia
+      ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
+          value:"SEDILIA",owner:"CUSTOMARY_SEDILIA_WITNESS",
+          sourceCueId:focusedFaithful.priestStateWitness})
+      : owned.priestPosition;
 
     // Posture ownership is profile-aware. FOLLOW_CONGREGATION remains an
     // observed rollback channel; sourced/local profiles never silently inherit it.
@@ -1354,7 +1382,10 @@ export async function mountNativeReaderPreview({
       sectionId:current?.sourceSectionId??current?.sectionId??null,
       macroId:current?.macroId??null,
     });
-    const posture=postureResolved.posture;
+    const posture=focusedFaithful && !cueProjection?.posture?.fixed
+      ? Object.freeze({label:focusedFaithful.posture,value:focusedFaithful.posture,
+          owner:focusedFaithful.source,persistent:true})
+      : postureResolved.posture;
 
     const scholaProjection=ready.scholaState.project();
     const ownership=Object.freeze({
@@ -1371,7 +1402,7 @@ export async function mountNativeReaderPreview({
             : transientProjection.cinematic
               ? "R17_CUE_CINEMATIC_CONSUMED"
               : transientProjection.ownership.cinematic,
-      posture:postureResolved.owner,
+      posture:focusedFaithful ? focusedFaithful.source : postureResolved.owner,
       schola:scholaProjection.ownership,
       priestAction:cueProjection?.priestAction
         ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
@@ -1399,8 +1430,17 @@ export async function mountNativeReaderPreview({
     // deliberately resolved a different faithful posture.
     const localTransition=postureResolved.owner==="LOCAL_OVERRIDE" &&
       postureResolved.localKey===activeCueId && Boolean(posture);
-    const postureCue=localTransition
-      ? Object.freeze({...posture,cueId:activeCueId,owner:"LOCAL_CUSTOMARY_CUE"})
+    const sediliaMovement=focusedFaithful?.conditionalSedilia===true && (
+      ["AO.SM.C0055","AO.SM.C0090"].includes(activeCueId)
+    );
+    const sediliaReturn=focusedFaithful && !focusedFaithful.conditionalSedilia &&
+      customaryPrefs.followPriestSeating!==false &&
+      ["AO.SM.C0068","AO.SM.C0104"].includes(activeCueId);
+    const postureCue=(sediliaMovement||sediliaReturn)
+      ? Object.freeze({...posture,cueId:activeCueId,
+          owner:"CUSTOMARY_PRIEST_SEDILIA_TRANSITION"})
+      : localTransition
+        ? Object.freeze({...posture,cueId:activeCueId,owner:"LOCAL_CUSTOMARY_CUE"})
       : cueNative && cueProjection?.postureTransition===true &&
         cueProjection?.posture?.cueId===activeCueId &&
         String(posture?.value??posture?.label??"")===String(cueProjection.posture.value??cueProjection.posture.label??"")
@@ -1413,6 +1453,7 @@ export async function mountNativeReaderPreview({
       priestPosition,
       posture,
       postureCue,
+      paragraphCues,
       gesture,
       response,
       attention,
@@ -1433,6 +1474,9 @@ export async function mountNativeReaderPreview({
         postureProfile:customaryPrefs.postureProfile,
         gestureProfile:customaryPrefs.gestureProfile,
         localPosture:customaryPrefs.localPostures[activeCueId]??"DEFAULT",
+        localGesture:customaryPrefs.localGestures?.[activeCueId]??"DEFAULT",
+        followPriestSeating:customaryPrefs.followPriestSeating,
+        localPostures:customaryPrefs.localPostures,
         cueId:activeCueId,
         localPostureEditable:Boolean(activeCueId && !cueProjection?.posture?.fixed),
       }),

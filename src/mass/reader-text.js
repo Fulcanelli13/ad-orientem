@@ -127,6 +127,11 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
         const prefix=rolePrefix(unit.latin);
         vernacular=prefix ? prefix+" "+sourced : sourced;
       }
+      // The source places the devotional cross before the final Amen:
+      // Cum Sancto Spiritu ✠ / Et vitam ✠. Preserve that printed mark
+      // in translated presentation, without altering the corpus itself.
+      if(["AO.SM.C0068","AO.SM.C0104"].includes(unit.cue_id) &&
+        !String(vernacular??"").includes("✠"))vernacular=String(vernacular??"")+" ✠";
       return {
         id:unit.cue_id,
         kind:unitKind(unit),

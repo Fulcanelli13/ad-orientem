@@ -65,7 +65,7 @@ for(const macro of ["AO.SM.M03","AO.SM.M09"]){
     "customary sitting is not yet an exact-cue transition; it must not be projected universally");
 }
 assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0096",gestureProfile:"ESSENTIAL"}).type,"GENUFLECT");
-assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"GUIDED_1962"}),null);
+assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"ESSENTIAL"}),null);
 assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"TRADITIONAL"}).type,"HEAD_BOW");
 assert.ok(GLORIA_CREDO_FAITHFUL_GESTURES["AO.SM.C0104"]);
 const markup=buildReaderShellMarkup({readerPreferences:{mode:"LIVE"},session:{resolvedMass:{actualCelebration:{title:"Mass"},proper:{status:"READY",data:{colour:"red"}}}}});

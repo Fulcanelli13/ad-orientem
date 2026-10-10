@@ -256,6 +256,34 @@ const SHELL_STYLE = `
 .ao-ritual-cross-symbol.ao-ritual-trigger-live{animation:aoRitualCross 1.25s ease-out both}
 @keyframes aoRitualCross{0%{transform:scale(.92);filter:brightness(.8)}35%{transform:scale(1.28);filter:brightness(1.35)}100%{transform:scale(1.08);filter:none}}
 .ao-reader-paragraph[data-translate-toggle="true"]{cursor:pointer}
+/* Gloria/Credo: one source cue, one faithful display row. The mini-icons
+   belong on the faithful side, not beside the priest's transient actions. */
+.ao-reader-paragraph[data-faithful-cues="true"]{position:relative;padding-left:67px}
+.ao-faithful-paragraph-icons{position:absolute;top:2px;left:2px;display:flex;gap:2px;align-items:flex-start}
+.ao-faithful-icon-edit{appearance:none;display:grid;place-items:center;
+  width:32px;height:36px;padding:3px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 18%,transparent);
+  border-radius:8px;background:color-mix(in srgb,var(--ao-mass-panel) 93%,transparent);
+  color:var(--ao-mass-accent-text);cursor:pointer}
+.ao-faithful-icon-edit .ao-icon-mask{width:24px;height:24px;flex:0 0 24px}
+.ao-faithful-icon-edit[data-active="true"]{border-color:var(--ao-mass-accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--ao-mass-accent) 22%,transparent)}
+.ao-faithful-icon-edit:focus-visible,.ao-state-cell[data-faithful-icon-open]:focus-visible{
+  outline:2px solid var(--ao-mass-accent-text);outline-offset:2px}
+.ao-state-cell[data-faithful-icon-open]{cursor:pointer}
+.ao-faithful-icon-picker{position:absolute;z-index:38;left:50%;bottom:max(8px,env(safe-area-inset-bottom));
+  transform:translateX(-50%);width:min(370px,calc(100% - 24px));
+  max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain;
+  padding:14px 16px 17px;background:var(--ao-mass-panel);border:1px solid var(--ao-mass-accent);
+  border-radius:14px;box-shadow:0 16px 44px rgba(0,0,0,.63);color:var(--ao-text)}
+.ao-faithful-icon-picker[hidden]{display:none}
+.ao-faithful-icon-picker-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ao-faithful-icon-picker h3{margin:0;font:600 17px/1.4 var(--ao-missal-display)}
+.ao-faithful-icon-picker label{display:grid;gap:5px;margin-top:10px;font:400 14px/1.4 var(--ao-missal-face)}
+.ao-faithful-icon-picker select{width:100%;min-height:44px;background:#10151c;
+  color:var(--ao-text);border:1px solid color-mix(in srgb,var(--ao-mass-accent) 26%,transparent);
+  border-radius:8px;padding:8px;font:500 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-faithful-icon-picker small{display:block;margin-top:9px;color:var(--ao-muted);font:italic 12px/1.5 var(--ao-missal-face)}
+.ao-faithful-icon-picker-header button{min-width:44px;min-height:44px;background:transparent;
+  color:var(--ao-text);border:0;font-size:22px;cursor:pointer}
 .ao-reader-paragraph[data-translate-toggle="true"]:focus-visible{outline:1px solid color-mix(in srgb,var(--ao-mass-accent) 70%,transparent);outline-offset:4px}
 .ao-line-primary{display:block}
 .ao-line-secondary{
@@ -705,13 +733,13 @@ function foldRitualText(value){
   return {text,offsets};
 }
 
-function appendRitualFragment(target,text,doc){
+function appendRitualFragment(target,text,doc,{active=false}={}){
   const pieces=String(text??"").split("✠");
   pieces.forEach((piece,index)=>{
     if(piece)target.append(doc.createTextNode(piece));
     if(index<pieces.length-1){
       const cross=doc.createElement("span");
-      cross.className="ao-ritual-cross-symbol ao-ritual-trigger-live";
+      cross.className=active?"ao-ritual-cross-symbol ao-ritual-trigger-live":"ao-ritual-cross-symbol";
       cross.textContent="✠";
       target.append(cross);
     }
@@ -725,7 +753,11 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
   const raw=String(text??"");
   const fragments=active ? ritualAnchorFragments(anchor) : [];
   target.replaceChildren();
-  if(!fragments.length){target.textContent=raw;decorateLiturgicalSpeaker(target,raw);return false;}
+  if(!fragments.length){
+    if(raw.includes("✠"))appendRitualFragment(target,raw,doc);
+    else target.textContent=raw;
+    decorateLiturgicalSpeaker(target,raw);return false;
+  }
 
   const folded=foldRitualText(raw);
   let cursor=0,matched=false;
@@ -740,7 +772,7 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
     if(index>cursor)target.append(doc.createTextNode(raw.slice(cursor,index)));
     const span=doc.createElement("span");
     span.className="ao-ritual-trigger ao-ritual-trigger-live";
-    appendRitualFragment(span,raw.slice(index,end),doc);
+    appendRitualFragment(span,raw.slice(index,end),doc,{active:true});
     target.append(span);
     cursor=end;
     matched=true;
@@ -748,7 +780,8 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
   if(cursor<raw.length)target.append(doc.createTextNode(raw.slice(cursor)));
   if(!matched){
     target.replaceChildren();
-    target.textContent=raw;
+    if(raw.includes("✠"))appendRitualFragment(target,raw,doc);
+    else target.textContent=raw;
   }
   decorateLiturgicalSpeaker(target,raw);
   return matched;
@@ -846,6 +879,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     paragraphs,
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
     customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
+    paragraphCues:moment.paragraphCues??(moment.cardUpdate===false?previous.paragraphCues:Object.freeze({})),
     posture:persist(moment.posture, previous.posture),
     gesture:moment.gesture ?? null,
     response:moment.response ?? null,
@@ -959,7 +993,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   </header>
 
   <div class="ao-state-ribbon" aria-live="polite">
-    <div class="ao-state-cell" data-side="faithful" data-channel="posture">
+    <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span></span>
     </div>
@@ -1003,6 +1037,34 @@ export function buildReaderShellMarkup(prepared = {}) {
     <button class="ao-mass-prefs-more" type="button" data-reader-glossary>Terms & rubrics</button><button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
   </aside>
 
+  <aside class="ao-faithful-icon-picker" data-role="faithful-icon-picker" role="dialog" aria-label="Customize faithful cue" hidden>
+    <div class="ao-faithful-icon-picker-header">
+      <h3>My gesture at this passage</h3>
+      <button type="button" data-faithful-picker-close aria-label="Close customization">×</button>
+    </div>
+    <small data-role="faithful-picker-cue"></small>
+    <label>Posture
+      <select data-faithful-picker-posture aria-label="My posture">
+        <option value="DEFAULT">Follow the customary guide</option>
+        <option value="STAND">Stand</option><option value="SIT">Sit</option><option value="KNEEL">Kneel</option>
+      </select>
+    </label>
+    <label>Gesture
+      <select data-faithful-picker-gesture aria-label="My gesture">
+        <option value="DEFAULT">Follow the customary guide</option><option value="NONE">No gesture</option>
+        <option value="HEAD_BOW">Bow head</option><option value="PROFOUND_BOW">Profound bow</option>
+        <option value="GENUFLECT">Genuflect</option><option value="KNEEL">Kneel</option>
+        <option value="SIGN_OF_CROSS">Sign of the Cross</option>
+      </select>
+    </label>
+    <label>When priest uses the sedilia
+      <select data-faithful-picker-seating aria-label="Mirror priest sitting and standing">
+        <option value="true">Mirror sitting and standing (customary)</option>
+        <option value="false">Keep source standing unless I choose otherwise</option>
+      </select>
+    </label>
+    <small>This changes your personal cues, not the priest's movements or the Mass rubrics. Exact seating timing varies by celebration.</small>
+  </aside>
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
     <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
       <div class="ao-rail-item" data-channel="posture" data-active="true"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
@@ -1113,8 +1175,7 @@ export function createDonorRichMaskLoader(fetchAsset=globalThis.fetch?.bind(glob
 
 const loadDonorRichMask=createDonorRichMaskLoader();
 
-function applyIcon(root, slot, key, iconResolver){
-  const el=root.querySelector(`[data-icon-slot="${slot}"]`);
+function applyIconNode(el,key,iconResolver){
   if(!el)return;
   const id=String(key??"").trim();
   const src=id && typeof iconResolver==="function" ? iconResolver(id) : null;
@@ -1154,6 +1215,9 @@ function applyIcon(root, slot, key, iconResolver){
   entry.promise.then(uri=>{
     if(uri && el.__aoIconIdentity===identity)showMask(uri);
   });
+}
+function applyIcon(root,slot,key,iconResolver){
+  applyIconNode(root.querySelector(`[data-icon-slot="${slot}"]`),key,iconResolver);
 }
 
 export function toggleReaderTranslation(node){
@@ -1197,6 +1261,7 @@ export function createReaderDomAdapter({
   let rootChangeListener=null;
   let rootKeydownListener=null;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
+  let selectedFaithfulRowId=null;
   let scholaCollapsed=false;
   let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 166 : 150);
   let scholaExpandedHeight=scholaHeight;
@@ -1669,6 +1734,19 @@ export function createReaderDomAdapter({
     if(bound) return;
     bound=true;
     rootChangeListener=event=>{
+      const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+      if(picker && !picker.hidden){
+        const cueId=picker.dataset.cueId;
+        if(event.target?.matches?.("[data-faithful-picker-posture]")){
+          onCustomaryChange?.({kind:"localPosture",value:event.target.value,cueId});return;
+        }
+        if(event.target?.matches?.("[data-faithful-picker-gesture]")){
+          onCustomaryChange?.({kind:"localGesture",value:event.target.value,cueId});return;
+        }
+        if(event.target?.matches?.("[data-faithful-picker-seating]")){
+          onCustomaryChange?.({kind:"followPriestSeating",value:event.target.value==="true"});return;
+        }
+      }
       const select=event.target?.closest?.("[data-reader-customary]");
       if(!select||select.disabled||!current?.customary)return;
       const kind=select.dataset.readerCustomary;
@@ -1677,6 +1755,15 @@ export function createReaderDomAdapter({
     };
     root.addEventListener?.("change",rootChangeListener);
     rootClickListener=event => {
+      const iconPick=event.target?.closest?.("[data-faithful-icon-open]");
+      if(iconPick){
+        const id=iconPick.dataset.faithfulIconOpen;
+        openFaithfulPicker(id??null);
+        return;
+      }
+      if(event.target?.closest?.("[data-faithful-picker-close]")){
+        closeFaithfulPicker();return;
+      }
       const homeButton=event.target?.closest?.("[data-reader-home]");
       if(homeButton){onHome?.(current,prepared);return;}
       const preferencesButton=event.target?.closest?.("[data-reader-preferences]");
@@ -1810,6 +1897,13 @@ export function createReaderDomAdapter({
       },{passive:false});
     }
     rootKeydownListener=event=>{
+      if(event.key==="Escape" && !root.querySelector('[data-role="faithful-icon-picker"]')?.hidden){
+        closeFaithfulPicker();event.preventDefault?.();return;
+      }
+      if((event.key==="Enter"||event.key===" ") &&
+        event.target?.matches?.("[data-faithful-icon-open]")){
+        event.preventDefault?.();openFaithfulPicker(event.target.dataset.faithfulIconOpen??null);return;
+      }
       const key=event.key;
       const pop=root.querySelector?.('[data-role="guide-popover"]');
       const sectionMenu=root.querySelector?.('[data-role="section-menu"]');
@@ -1952,6 +2046,62 @@ export function createReaderDomAdapter({
     if(extra)card.style.setProperty("--ao-short-cue-tail",extra+"px");
   }
 
+  function closeFaithfulPicker(){
+    const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+    if(picker)picker.hidden=true;
+    selectedFaithfulRowId=null;
+  }
+  function openFaithfulPicker(rowId=null){
+    const entries=Object.entries(current?.paragraphCues??{});
+    const chosen=entries.find(([key,value])=>key===rowId||value.cueId===rowId) ??
+      entries.find(([,value])=>value.cueId===current?.customary?.cueId) ??
+      entries[0];
+    if(!chosen)return false;
+    selectedFaithfulRowId=chosen[0];
+    const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+    if(!picker)return false;
+    picker.hidden=false;
+    syncFaithfulPicker();
+    picker.querySelector('[data-faithful-picker-posture]')?.focus?.();
+    return true;
+  }
+  function syncFaithfulPicker(){
+    const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+    if(!picker||picker.hidden||!selectedFaithfulRowId)return;
+    const row=current?.paragraphCues?.[selectedFaithfulRowId];
+    if(!row){closeFaithfulPicker();return;}
+    picker.dataset.cueId=row.cueId;
+    const note=picker.querySelector('[data-role="faithful-picker-cue"]');
+    if(note)note.textContent=row.phase+" · "+row.cueId+
+      (row.conditionalSedilia?" · Priest seated (customary projection)":"");
+    const posture=picker.querySelector('[data-faithful-picker-posture]');
+    if(posture){
+      posture.value=current?.customary?.localPostures?.[row.cueId]??
+        row.savedPosture??"DEFAULT";
+      posture.disabled=row.fixedSourcePosture;
+    }
+    const gesture=picker.querySelector('[data-faithful-picker-gesture]');
+    if(gesture)gesture.value=row.savedGesture??"DEFAULT";
+    const seating=picker.querySelector('[data-faithful-picker-seating]');
+    if(seating)seating.value=String(current?.customary?.followPriestSeating!==false);
+  }
+  function syncFaithfulParagraphIcons(){
+    for(const node of root.querySelectorAll?.('.ao-reader-paragraph[data-faithful-row-id]')??[]){
+      const row=current?.paragraphCues?.[node.dataset.faithfulRowId];
+      if(!row)continue;
+      node.dataset.faithfulPosture=row.posture;
+      for(const button of node.querySelectorAll?.('[data-faithful-icon-open]')??[]){
+        const field=button.dataset.faithfulField;
+        const key=field==="gesture"?row.gestureIconKey:row.postureIconKey;
+        applyIconNode(button.querySelector(".ao-icon-mask"),key,iconResolver);
+        button.dataset.active=String(row.cueId===current?.customary?.cueId);
+        button.title=field==="gesture"
+          ? "My "+String(row.gesture?.label??"gesture")+" · tap to customize"
+          : "My "+row.posture+" · tap to customize";
+      }
+    }
+  }
+
   function renderMoment(moment){
     if(!prepared) throw new Error("Reader shell must be mounted before rendering moments");
     current=normalizeReaderMoment(moment,current ?? {});
@@ -1971,6 +2121,8 @@ export function createReaderDomAdapter({
     setText(root,"bell",visibleBell ? [textValue(visibleBell),visibleBell.detail].filter(Boolean).join(" · ") : null);
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
+    syncFaithfulPicker();
+    syncFaithfulParagraphIcons();
     if(current.customary){
       for(const kind of ["postureProfile","gestureProfile","localPosture"]){
         const select=root.querySelector('[data-reader-customary="'+kind+'"]');
@@ -2121,6 +2273,27 @@ export function createReaderDomAdapter({
             node.setAttribute("aria-label","Toggle Latin and vernacular text");
             node.setAttribute("aria-pressed","false");
           }
+          const own=current.paragraphCues?.[p.id];
+          if(own){
+            node.dataset.faithfulCues="true";
+            node.dataset.faithfulRowId=p.id;
+            const icons=doc.createElement("span");
+            icons.className="ao-faithful-paragraph-icons";
+            for(const field of ["posture","gesture"]){
+              if(field==="gesture" && !own.gestureIconKey)continue;
+              const button=doc.createElement("button");
+              button.type="button";
+              button.className="ao-faithful-icon-edit";
+              button.dataset.faithfulIconOpen=p.id;
+              button.dataset.faithfulField=field;
+              button.setAttribute("aria-label","Customize my "+field+" at "+own.cueId);
+              const art=doc.createElement("span");
+              art.className="ao-icon-mask";
+              art.dataset.faithfulIconField=field;
+              button.append(art);icons.append(button);
+            }
+            node.append(icons);
+          }
           const primary=doc.createElement("span");
           primary.className="ao-line-primary";
           // The initial paragraph.active state is not authoritative after
@@ -2144,6 +2317,7 @@ export function createReaderDomAdapter({
     // and prevent short cards from ever reaching their next invocation.
     if(current.cardUpdate)ensureShortCardCueTravel();
     syncReaderRitualHighlights(root,current.gesture);
+    syncFaithfulParagraphIcons();
     return current;
   }
 

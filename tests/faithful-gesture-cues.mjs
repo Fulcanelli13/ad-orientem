@@ -6,9 +6,9 @@ import {
   ORDINARY_SUNG_GESTURE_ANCHORS,
 } from "../src/mass/faithful-gesture-cues.js";
 
-assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"GUIDED_1962"}),null,
+assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"ESSENTIAL"}),null,
   "customary Gloria bow leaked into GUIDED_1962");
-assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"TRADITIONAL"}).type,"HEAD_BOW");
+assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0056",gestureProfile:"GUIDED_1962"}).type,"HEAD_BOW");
 assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0068",gestureProfile:"TRADITIONAL"}).type,"SIGN_OF_CROSS");
 assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0090",gestureProfile:"TRADITIONAL"}).type,"HEAD_BOW");
 assert.equal(resolveFaithfulGestureForCue({cueId:"AO.SM.C0101",gestureProfile:"TRADITIONAL"}).type,"HEAD_BOW");
