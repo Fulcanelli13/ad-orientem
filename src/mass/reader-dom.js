@@ -874,6 +874,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     paragraphs,
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
     customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
+    paragraphCues:moment.paragraphCues??(moment.cardUpdate===false?previous.paragraphCues:Object.freeze({})),
     posture:persist(moment.posture, previous.posture),
     gesture:moment.gesture ?? null,
     response:moment.response ?? null,
@@ -1255,6 +1256,7 @@ export function createReaderDomAdapter({
   let rootChangeListener=null;
   let rootKeydownListener=null;
   let sectionItems=Array.isArray(sections)?[...sections]:[];
+  let selectedFaithfulRowId=null;
   let scholaCollapsed=false;
   let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 166 : 150);
   let scholaExpandedHeight=scholaHeight;
@@ -1727,6 +1729,19 @@ export function createReaderDomAdapter({
     if(bound) return;
     bound=true;
     rootChangeListener=event=>{
+      const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+      if(picker && !picker.hidden){
+        const cueId=picker.dataset.cueId;
+        if(event.target?.matches?.("[data-faithful-picker-posture]")){
+          onCustomaryChange?.({kind:"localPosture",value:event.target.value,cueId});return;
+        }
+        if(event.target?.matches?.("[data-faithful-picker-gesture]")){
+          onCustomaryChange?.({kind:"localGesture",value:event.target.value,cueId});return;
+        }
+        if(event.target?.matches?.("[data-faithful-picker-seating]")){
+          onCustomaryChange?.({kind:"followPriestSeating",value:event.target.value==="true"});return;
+        }
+      }
       const select=event.target?.closest?.("[data-reader-customary]");
       if(!select||select.disabled||!current?.customary)return;
       const kind=select.dataset.readerCustomary;
@@ -1735,6 +1750,15 @@ export function createReaderDomAdapter({
     };
     root.addEventListener?.("change",rootChangeListener);
     rootClickListener=event => {
+      const iconPick=event.target?.closest?.("[data-faithful-icon-open]");
+      if(iconPick){
+        const id=iconPick.dataset.faithfulIconOpen;
+        openFaithfulPicker(id??null);
+        return;
+      }
+      if(event.target?.closest?.("[data-faithful-picker-close]")){
+        closeFaithfulPicker();return;
+      }
       const homeButton=event.target?.closest?.("[data-reader-home]");
       if(homeButton){onHome?.(current,prepared);return;}
       const preferencesButton=event.target?.closest?.("[data-reader-preferences]");
@@ -1868,6 +1892,13 @@ export function createReaderDomAdapter({
       },{passive:false});
     }
     rootKeydownListener=event=>{
+      if(event.key==="Escape" && !root.querySelector('[data-role="faithful-icon-picker"]')?.hidden){
+        closeFaithfulPicker();event.preventDefault?.();return;
+      }
+      if((event.key==="Enter"||event.key===" ") &&
+        event.target?.matches?.("[data-faithful-icon-open]")){
+        event.preventDefault?.();openFaithfulPicker(event.target.dataset.faithfulIconOpen??null);return;
+      }
       const key=event.key;
       const pop=root.querySelector?.('[data-role="guide-popover"]');
       const sectionMenu=root.querySelector?.('[data-role="section-menu"]');
@@ -2010,6 +2041,62 @@ export function createReaderDomAdapter({
     if(extra)card.style.setProperty("--ao-short-cue-tail",extra+"px");
   }
 
+  function closeFaithfulPicker(){
+    const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+    if(picker)picker.hidden=true;
+    selectedFaithfulRowId=null;
+  }
+  function openFaithfulPicker(rowId=null){
+    const entries=Object.entries(current?.paragraphCues??{});
+    const chosen=entries.find(([key,value])=>key===rowId||value.cueId===rowId) ??
+      entries.find(([,value])=>value.cueId===current?.customary?.cueId) ??
+      entries[0];
+    if(!chosen)return false;
+    selectedFaithfulRowId=chosen[0];
+    const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+    if(!picker)return false;
+    picker.hidden=false;
+    syncFaithfulPicker();
+    picker.querySelector('[data-faithful-picker-posture]')?.focus?.();
+    return true;
+  }
+  function syncFaithfulPicker(){
+    const picker=root.querySelector('[data-role="faithful-icon-picker"]');
+    if(!picker||picker.hidden||!selectedFaithfulRowId)return;
+    const row=current?.paragraphCues?.[selectedFaithfulRowId];
+    if(!row){closeFaithfulPicker();return;}
+    picker.dataset.cueId=row.cueId;
+    const note=picker.querySelector('[data-role="faithful-picker-cue"]');
+    if(note)note.textContent=row.phase+" · "+row.cueId+
+      (row.conditionalSedilia?" · Priest seated (customary projection)":"");
+    const posture=picker.querySelector('[data-faithful-picker-posture]');
+    if(posture){
+      posture.value=current?.customary?.localPostures?.[row.cueId]??
+        row.savedPosture??"DEFAULT";
+      posture.disabled=row.fixedSourcePosture;
+    }
+    const gesture=picker.querySelector('[data-faithful-picker-gesture]');
+    if(gesture)gesture.value=row.savedGesture??"DEFAULT";
+    const seating=picker.querySelector('[data-faithful-picker-seating]');
+    if(seating)seating.value=String(current?.customary?.followPriestSeating!==false);
+  }
+  function syncFaithfulParagraphIcons(){
+    for(const node of root.querySelectorAll?.('.ao-reader-paragraph[data-faithful-row-id]')??[]){
+      const row=current?.paragraphCues?.[node.dataset.faithfulRowId];
+      if(!row)continue;
+      node.dataset.faithfulPosture=row.posture;
+      for(const button of node.querySelectorAll?.('[data-faithful-icon-open]')??[]){
+        const field=button.dataset.faithfulField;
+        const key=field==="gesture"?row.gestureIconKey:row.postureIconKey;
+        applyIconNode(button.querySelector(".ao-icon-mask"),key,iconResolver);
+        button.dataset.active=String(row.cueId===current?.customary?.cueId);
+        button.title=field==="gesture"
+          ? "My "+String(row.gesture?.label??"gesture")+" · tap to customize"
+          : "My "+row.posture+" · tap to customize";
+      }
+    }
+  }
+
   function renderMoment(moment){
     if(!prepared) throw new Error("Reader shell must be mounted before rendering moments");
     current=normalizeReaderMoment(moment,current ?? {});
@@ -2029,6 +2116,8 @@ export function createReaderDomAdapter({
     setText(root,"bell",visibleBell ? [textValue(visibleBell),visibleBell.detail].filter(Boolean).join(" · ") : null);
     setText(root,"priest-voice",textValue(current.priestVoice));
     setText(root,"schola",current.scholaVisible ? textValue(current.schola) : null);
+    syncFaithfulPicker();
+    syncFaithfulParagraphIcons();
     if(current.customary){
       for(const kind of ["postureProfile","gestureProfile","localPosture"]){
         const select=root.querySelector('[data-reader-customary="'+kind+'"]');
@@ -2179,6 +2268,27 @@ export function createReaderDomAdapter({
             node.setAttribute("aria-label","Toggle Latin and vernacular text");
             node.setAttribute("aria-pressed","false");
           }
+          const own=current.paragraphCues?.[p.id];
+          if(own){
+            node.dataset.faithfulCues="true";
+            node.dataset.faithfulRowId=p.id;
+            const icons=doc.createElement("span");
+            icons.className="ao-faithful-paragraph-icons";
+            for(const field of ["posture","gesture"]){
+              if(field==="gesture" && !own.gestureIconKey)continue;
+              const button=doc.createElement("button");
+              button.type="button";
+              button.className="ao-faithful-icon-edit";
+              button.dataset.faithfulIconOpen=p.id;
+              button.dataset.faithfulField=field;
+              button.setAttribute("aria-label","Customize my "+field+" at "+own.cueId);
+              const art=doc.createElement("span");
+              art.className="ao-icon-mask";
+              art.dataset.faithfulIconField=field;
+              button.append(art);icons.append(button);
+            }
+            node.append(icons);
+          }
           const primary=doc.createElement("span");
           primary.className="ao-line-primary";
           // The initial paragraph.active state is not authoritative after
@@ -2202,6 +2312,7 @@ export function createReaderDomAdapter({
     // and prevent short cards from ever reaching their next invocation.
     if(current.cardUpdate)ensureShortCardCueTravel();
     syncReaderRitualHighlights(root,current.gesture);
+    syncFaithfulParagraphIcons();
     return current;
   }
 
