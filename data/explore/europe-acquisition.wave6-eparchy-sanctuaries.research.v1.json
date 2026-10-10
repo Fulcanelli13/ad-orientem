@@ -174,7 +174,7 @@
     },
     {
       "source_id": "LU-ECH-TRAD",
-      "url": "https://web.cathol.lu/2/mouvements/oeuvre-saint-willibrord/oeuvre-saint-willibrord/procession-dansante/le-sens-de-la-procession-dansante-d-echternach-et-sa-sauvegarde-precisions-utiles",
+      "url": "https://web.cathol.lu/2/mouvements/oeuvre-saint-willibrord/oeuvre-saint-willibrord/procession-dansante/article/le-sens-de-la-procession-dansante-d-echternach-et",
       "authority": "SAINT_WILLIBRORD_PILGRIMAGE_ORGANIZATION",
       "scope": "Local Pentecost Tuesday dancing procession, distinguish from stereotype three forward two backward",
       "review_class": "OFFICIAL_OR_CUSTODIAN_SOURCE_RESEARCH_NOT_PRODUCTION_APPROVAL"
@@ -1542,7 +1542,87 @@
       "images": null
     }
   ],
-  "existing_site_enrichments": [],
+  "existing_site_enrichments": [
+    {
+      "id": "EUROPE:W6:EXISTING:RO:CSIK:2026_PENTECOST_PILGRIMAGE",
+      "target_id": "EUROPE:PLACE:RO:csiksomlyo-franciscan-marian-shrine",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "RO-CSIK"
+      ],
+      "evidence": "2026 custodian/director explanation of Pentecost vow pilgrimage at Csíksomlyó; preserve existing single physical site.",
+      "publication": "SOURCE_ENRICHMENT_REQUIRES_DUPLICATE_RECONCILIATION",
+      "gate": "PLACE_IDENTITY_ALREADY_RECORDED_NO_DUPLICATE",
+      "creates_new_place": false,
+      "creates_new_map_pin": false
+    },
+    {
+      "id": "EUROPE:W6:EXISTING:SK:LEVOCA:PARISH_PILGRIMAGE",
+      "target_id": "EUROPE:PLACE:SK:levoca-basilica-of-our-lady-of-the-visitation",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "SK-LEVOCAPARISH"
+      ],
+      "evidence": "Levoča parish documents Mariánska hora's Catholic Visitation basilica and liturgical pilgrim history.",
+      "publication": "SOURCE_ENRICHMENT_REQUIRES_DUPLICATE_RECONCILIATION",
+      "gate": "PLACE_IDENTITY_ALREADY_RECORDED_NO_DUPLICATE",
+      "creates_new_place": false,
+      "creates_new_map_pin": false
+    },
+    {
+      "id": "EUROPE:W6:EXISTING:UA:ZARV:2026_ALL_UKR_PILGRIMAGE",
+      "target_id": "EUROPE:PLACE:UA:zarvanytsia-greek-catholic-marian-sanctuary",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "UA-ZARV-2026"
+      ],
+      "evidence": "Major Archbishop's 2026 account of All-Ukrainian Marian pilgrimage at Zarvanytsia.",
+      "publication": "SOURCE_ENRICHMENT_REQUIRES_DUPLICATE_RECONCILIATION",
+      "gate": "WAR_SAFETY_AND_EVENT_CURRENTNESS_GATES",
+      "creates_new_place": false,
+      "creates_new_map_pin": false
+    },
+    {
+      "id": "EUROPE:W6:EXISTING:LU:ECH:WILLIBRORD_PILGRIMAGE",
+      "target_id": "place:LU:basilica-st-willibrord-echternach",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "LU-ECH-ARCH"
+      ],
+      "evidence": "Luxembourg Catholic Archdiocese documents St Willibrord's 2026 Pentecost pilgrimage to Echternach basilica.",
+      "publication": "SOURCE_ENRICHMENT_REQUIRES_DUPLICATE_RECONCILIATION",
+      "gate": "NO_ADDITIONAL_PLACE_NO_ROUTE_POLYLINE",
+      "creates_new_place": false,
+      "creates_new_map_pin": false
+    },
+    {
+      "id": "EUROPE:W6:EXISTING:LU:ECH:RELIC_REPORT",
+      "target_id": "place:LU:basilica-st-willibrord-echternach",
+      "category": "RELICS",
+      "source_ids": [
+        "LU-ECH-RELIC"
+      ],
+      "evidence": "Custodian records Willibrord tomb and relic chapel with items associated with his cilice.",
+      "publication": "SOURCE_ENRICHMENT_REQUIRES_DUPLICATE_RECONCILIATION",
+      "gate": "SITE_REPORTED_CUSTODY_NOT_INDEPENDENT_AUTHENTICATION",
+      "creates_new_place": false,
+      "creates_new_map_pin": false
+    },
+    {
+      "id": "EUROPE:W6:EXISTING:LU:ECH:DANCING_PROCESSION",
+      "target_id": "place:LU:basilica-st-willibrord-echternach",
+      "category": "CUSTOMS",
+      "source_ids": [
+        "LU-ECH-ARCH",
+        "LU-ECH-TRAD"
+      ],
+      "evidence": "Historic Echternach Pentecost dancing procession honors Saint Willibrord and is documented by Catholic local organizers.",
+      "publication": "SOURCE_ENRICHMENT_REQUIRES_DUPLICATE_RECONCILIATION",
+      "gate": "CATHOLIC_FRANCOPHONE_BORDERLAND_CUSTOM_NOT_GENERIC_FRENCH_DOMESTIC",
+      "creates_new_place": false,
+      "creates_new_map_pin": false
+    }
+  ],
   "governance": [
     "One physical site, one Place. Related source-backed relics, pilgrimages, devotional image objects and reported apparitions are separate associations, not duplicate Place entries.",
     "The historic destruction, rebuilding or confessional change of a chapel does not demonstrate a current active Catholic-owned building; historical ownership is explicit.",
@@ -1555,7 +1635,7 @@
     "source_records": 31,
     "site_candidates": 31,
     "association_records": 48,
-    "existing_site_enrichments": 0,
+    "existing_site_enrichments": 6,
     "by_country": {
       "EE": 2,
       "FI": 2,
