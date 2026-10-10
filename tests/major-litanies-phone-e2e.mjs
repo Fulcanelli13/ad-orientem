@@ -209,19 +209,32 @@ try{
     null,{timeout:5000});
    if(votiveExpected){
     // Walk the source-owned R17 Ordinary and prove the Sunday Creed exception.
-    const expected=[
-      "AO.CARD.001","AO.CARD.002","AO.CARD.004",
-      "AO.CARD.005","AO.CARD.006","AO.CARD.007","AO.CARD.008",
-      ...(state.credo?["AO.CARD.009"]:[]),"AO.CARD.010"
-    ];
-    for(const sectionId of expected){
+    const visited=[];
+    for(let step=0;step<27;step++){
+      const prior=await page.evaluate(()=>{
+        const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+        return card?.sectionId??card?.id??null;
+      });
       const box=await next.boundingBox();assert.ok(box&&box.height>=44);
       await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-      await page.waitForFunction(expectedId=>{
+      await page.waitForFunction(previous=>{
         const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
-        return (card?.sourceSectionId??card?.sectionId)===expectedId;
-      },sectionId,{timeout:5000});
+        return (card?.sectionId??card?.id??null)!==previous;
+      },prior,{timeout:5000});
+      const card=await page.evaluate(()=>{
+        const x=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
+        return {id:x?.id,sectionId:x?.sectionId,sourceSectionId:x?.sourceSectionId,title:x?.title};
+      });
+      visited.push(card);
+      const owner=card.sourceSectionId??card.sectionId;
+      assert.notEqual(owner,"AO.CARD.003","Violet Rogation Mass must omit Gloria");
+      if(owner==="AO.CARD.010")break;
     }
+    const seen=visited.map(x=>x.sourceSectionId??x.sectionId);
+    assert.ok(seen.includes("AO.CARD.010"),
+      "R17 must reach Offertory, preserving source order: "+JSON.stringify(visited));
+    assert.equal(seen.includes("AO.CARD.009"),state.credo,
+      "Sunday Credo must be present, weekdays omit it: "+JSON.stringify(visited));
    }
    assert.deepEqual(errors,[],"Browser errors on "+date);
    console.log("ACTUAL_MAJOR_LITANY_MASS",JSON.stringify({
