@@ -1,0 +1,28 @@
+name: Tenebrae 1960 source integrity
+
+on:
+  pull_request:
+    paths:
+      - 'data/pray/tenebrae-1960-source/**'
+      - 'data/pray/tenebrae-source-registry.v1.json'
+      - 'tests/tenebrae-1960-source-acquisition.mjs'
+      - '.github/workflows/tenebrae-source-integrity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/pray/tenebrae-1960-source/**'
+      - 'data/pray/tenebrae-source-registry.v1.json'
+      - 'tests/tenebrae-1960-source-acquisition.mjs'
+      - '.github/workflows/tenebrae-source-integrity.yml'
+  workflow_dispatch:
+
+jobs:
+  source-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check nine pinned open-source Tenebrae proper leaves and edition firewall
+        run: node tests/tenebrae-1960-source-acquisition.mjs

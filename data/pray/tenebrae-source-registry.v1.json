@@ -1,0 +1,128 @@
+{
+  "schema": "ao.pray.tenebrae.1960-acquisition.v1",
+  "created": "2026-10-10",
+  "status": "NINE_SOURCE_LEAVES_PRESERVED_NOT_ASSEMBLED_OR_PUBLISHED",
+  "purpose": "Create a small seasonal Holy Week Tenebrae journey, not a generic Divine Office or musical feature.",
+  "source": {
+    "provider": "Divinum Officium Project",
+    "repository": "https://github.com/DivinumOfficium/divinum-officium",
+    "commit": "b9f8c8eb15d52b2b2c02e2ca24807cfaa73758f0",
+    "license": "MIT with copyright and permission notice retained; Divinum Officium team confirms text is open source in March 2026",
+    "licenseUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/b9f8c8eb15d52b2b2c02e2ca24807cfaa73758f0/LICENSE",
+    "textPermission": "https://github.com/DivinumOfficium/divinum-officium/discussions/5071",
+    "sourceFolder": "web/www/horas/{Latin,English,Francais}/Tempora/",
+    "rubrics": "Rubrics 1960 - 1960 / 1961 Breviarium Romanum",
+    "rubricsUrl": "https://www.divinumofficium.com/www/horas/Help/Rubrics/Breviary%201960.html",
+    "notAnIndependentPhotographedBreviary": true,
+    "attributionRequired": true
+  },
+  "dates": [
+    {
+      "id": "HOLY_THURSDAY",
+      "relativeToEasterDays": -3,
+      "sourceId": "Quad6-4",
+      "title": {
+        "en": "Holy Thursday",
+        "fr": "Jeudi saint",
+        "la": "Feria Quinta in Cena Domini"
+      },
+      "offices": [
+        "MATINS",
+        "LAUDS"
+      ],
+      "files": {
+        "la": "data/pray/tenebrae-1960-source/la/Quad6-4.txt",
+        "en": "data/pray/tenebrae-1960-source/en/Quad6-4.txt",
+        "fr": "data/pray/tenebrae-1960-source/fr/Quad6-4.txt"
+      },
+      "sectionExpectation": {
+        "lessonCount": 9,
+        "responsoryCount": 9,
+        "laudsAntiphons": true,
+        "completePsalterAndOrdinarium": false
+      },
+      "sourceNote": "Raw day proper source; full office requires psalter, office ordinary, cross-file substitutions and 1960 edition-specific rubric resolution."
+    },
+    {
+      "id": "GOOD_FRIDAY",
+      "relativeToEasterDays": -2,
+      "sourceId": "Quad6-5",
+      "title": {
+        "en": "Good Friday",
+        "fr": "Vendredi saint",
+        "la": "Feria Sexta in Parasceve"
+      },
+      "offices": [
+        "MATINS",
+        "LAUDS"
+      ],
+      "files": {
+        "la": "data/pray/tenebrae-1960-source/la/Quad6-5.txt",
+        "en": "data/pray/tenebrae-1960-source/en/Quad6-5.txt",
+        "fr": "data/pray/tenebrae-1960-source/fr/Quad6-5.txt"
+      },
+      "sectionExpectation": {
+        "lessonCount": 9,
+        "responsoryCount": 9,
+        "laudsAntiphons": true,
+        "completePsalterAndOrdinarium": false
+      },
+      "sourceNote": "Raw day proper source; full office requires psalter, office ordinary, cross-file substitutions and 1960 edition-specific rubric resolution."
+    },
+    {
+      "id": "HOLY_SATURDAY",
+      "relativeToEasterDays": -1,
+      "sourceId": "Quad6-6",
+      "title": {
+        "en": "Holy Saturday",
+        "fr": "Samedi saint",
+        "la": "Sabbato Sancto"
+      },
+      "offices": [
+        "MATINS",
+        "LAUDS"
+      ],
+      "files": {
+        "la": "data/pray/tenebrae-1960-source/la/Quad6-6.txt",
+        "en": "data/pray/tenebrae-1960-source/en/Quad6-6.txt",
+        "fr": "data/pray/tenebrae-1960-source/fr/Quad6-6.txt"
+      },
+      "sectionExpectation": {
+        "lessonCount": 9,
+        "responsoryCount": 9,
+        "laudsAntiphons": true,
+        "completePsalterAndOrdinarium": false
+      },
+      "sourceNote": "Raw day proper source; full office requires psalter, office ordinary, cross-file substitutions and 1960 edition-specific rubric resolution."
+    }
+  ],
+  "assemblyHold": {
+    "tasks": [
+      "Resolve the three 1960/1961 Matins psalm sets and Lauds psalms/canticle/ordinary from the Breviary Psalter and Ordinarium; no inferred missing prayers.",
+      "Apply version-tagged sections and substitutions, including @Tempora/Quad6-4 references, rather than displaying raw unresolved macros.",
+      "Validate all nine Lamentations/lessons and nine responsories per day with 1961 source, and French/English passage alignment.",
+      "Distinguish actual 1960 Office timing from optional pre-1955 historical evening Tenebrae. In the 1960 Code of Rubrics Lauds cannot be anticipated; avoid depicting strepitus/hiding last candle as required 1962 ceremony.",
+      "Build an in-app compact 3-day x 2-hour reader (Latin and French, English optional), with opening date/path, active passage and contextual rubrics. No external redirect in production.",
+      "Verify output against a separate Breviarium Romanum 1961/1962 witness and real mobile acceptance."
+    ],
+    "excluded": [
+      "full daily Divine Office",
+      "music playback",
+      "simulated universal 1962 evening Tenebrae",
+      "pre-1955 ceremonial asserted as mandatory"
+    ],
+    "sourceRubricComparisons": [
+      "https://www.newliturgicalmovement.org/2009/04/compendium-of-1955-holy-week-revisions_07.html",
+      "https://www.divinumofficium.com/www/horas/Help/Rubrics/Breviary%201960.html"
+    ]
+  },
+  "progress": {
+    "candidateDays": 3,
+    "sourceLocales": 3,
+    "rawProperFilesPreserved": 9,
+    "sourceFilesExpected": 9,
+    "assembliesReady": 0,
+    "readerRoutesPublished": 0
+  },
+  "publicationStatus": "RESEARCH_SOURCE_FREEZE_ONLY"
+}
