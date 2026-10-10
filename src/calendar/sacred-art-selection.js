@@ -18,7 +18,7 @@ const validFile = image => image
 export function eligibleSacredArtwork(work) {
   return !!work && work.medium === "painting"
     && work.source?.rights === "CC0"
-    && work.source?.objectUrl?.startsWith("https://www.metmuseum.org/art/collection/search/")
+    && (work.source?.objectUrl?.startsWith("https://www.metmuseum.org/art/collection/search/")\n      || work.source?.objectUrl?.startsWith("https://www.artic.edu/artworks/"))
     && work.review?.source === "OBJECT_PAGE_CHECKED"
     && work.review?.rights === "OBJECT_PAGE_CHECKED"
     && work.review?.artistic === "APPROVED"
@@ -87,4 +87,24 @@ export function selectTimedDevotionalSacredArt(context, artworks, preferences = 
   const devotion = regina ? "regina-caeli" : "angelus";
   const selected = pick(artworks, a => array(a.association?.subjectKeys).includes(devotion), context.date, "TIMED_DEVOTION");
   return selected ? { ...selected, devotion, slot: slots[0] } : null;
+}
+
+/**
+ * Stable painting variation for recurring Prayer modules. Only an explicitly
+ * curated association.prayerKeys entry may enter a pool. Never rotate random
+ * saint portraits into liturgical mysteries or change art on every render.
+ *
+ * For the three daily Angelus/Regina-Caeli slots, the slot offset guarantees
+ * distinct paintings when three or more approved works exist in the pool.
+ */
+export function selectRecurringPrayerSacredArt({date,prayerKey,slot="opening"}={}, artworks) {
+  if (!isIsoDate(date)||!/^[a-z0-9.-]+$/.test(prayerKey||"")) return null;
+  const eligible = sortedPool(artworks, work =>
+    array(work.association?.prayerKeys).includes(prayerKey));
+  if (!eligible.length) return null;
+  const ordinal = Number(date.replace(/-/g,""));
+  const offsets = {morning:0,midday:1,evening:2};
+  const salt = Object.hasOwn(offsets,slot) ? offsets[slot] : 0;
+  const artwork = eligible[(ordinal+salt)%eligible.length];
+  return {artwork,basis:"PRAYER_CURATED_POOL",prayerKey,slot,poolSize:eligible.length};
 }
