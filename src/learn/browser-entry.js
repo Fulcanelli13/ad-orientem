@@ -448,6 +448,21 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   }
 
   function open(){
+    // A specialist child may call AO_LEARN_APP_V1.open() on Back. If its
+    // existing parent is still alive, restore that suspended Formation
+    // family rather than rebuilding the landing. The app shell's fresh
+    // entry first calls close(), so normal re-entry still resets.
+    const returningToSuspendedFamily=state.open&&!state.externalReturn
+      &&(!state.child||(state.seenChild&&!childOpen(win,state.child)));
+    if(returningToSuspendedFamily){
+      cancelMonitor();
+      state.child=null;
+      state.guidedAttempted=false;
+      state.seenChild=false;
+      state.openPolls=0;
+      state.error="";
+      return showHub();
+    }
     ++launchEpoch;
     const doc=win?.document;
     if(!doc?.body||!runtime(win)?.store||typeof win?.AO_MODULES?.open!=="function")return false;
