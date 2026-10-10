@@ -22,6 +22,17 @@ PRAY surface: **Penance and the Passion → Office of Tenebrae**. The existing o
 
 From the [1960 Code of Rubrics](https://www.divinumofficium.com/www/horas/Help/Rubrics/Breviary%201960.html): §§144–145 (Matins may be anticipated by good reason after 2 PM; Lauds belongs in the morning), §197 (Lauds II ferial scheme), §201 (omit Gloria Patri in the Triduum), §208 (omit Matins absolution/blessings), §230 (omit Gloria Patri and reprise the complete responsory in Passiontide), §246 (oration at end of separately said Matins, omitted when recited together with Lauds). The reading paths do not simulate pre-1955 candle extinction, hiding, or *strepitus* as prescribed current rites.
 
+## Guided module extension (10 October 2026)
+
+**User entry:** PRAY → Passion & Stations → Office of Tenebrae. The existing six source-derived Offices remain the sole liturgical text authority; no duplication, retranscription, or additional Divine Office module.
+
+- **Simple / Guided:** both display the identical canonical text. Guided adds concise English/French passage explanations; Simple omits commentary. The mode is changed without restarting the selected text.
+- **Introduction:** a collapsible "Understanding Tenebrae" guide explains the three-day purpose, Matins and Lauds, their sequence, historical fifteen-candle practice and *strepitus*, and the 1960 distinction between anticipated Matins and morning Lauds. The app does not instruct the user to simulate a parish's ceremonial actions.
+- **Reading navigation:** jump to Nocturn I/II/III or concluding Matins prayers; at Lauds jump to psalms, Benedictus, Christus factus est and the final prayers. Prev/next and language switching remain intact.
+- **Per-passage guide:** psalms and antiphons, versicles, Lamentations (first nocturn), Augustine (second nocturn), Pauline/apostolic readings (third nocturn), responsories, silent Pater, Benedictus, Christus factus est and concluding oration. The three days have distinct introductory meditations. Notes are editorial commentary, not part of the Latin, French or English Office text.
+- **Sources:** [1960 Breviary rubrics §§144–145](https://www.divinumofficium.com/www/horas/Help/Rubrics/Breviary%201960.html); [Catholic Encyclopedia: Tenebræ](https://www.newadvent.org/cathen/14506a.htm); [Tenebræ hearse](https://www.newadvent.org/cathen/07162c.htm). Explanations are not presented as official rubric translations.
+- **Verification:** source-native tests cover both modes, guides and jump controls; the 390px phone test exercises toggling and nocturn jumps. As before, photographed 1961 printed-Breviary critical collation remains **not certified**.
+
 ## Acceptance and textual holds
 
 - `npm run test:reader-tenebrae`: all six office views in all three languages, correct Psalm source IDs, full lessons/responsories, zero raw `@`/`$`/`&Gloria` to users, suppressed obsolete variant instructions, local Psalter and French substitution recovery.
