@@ -29,20 +29,20 @@ for(const a of acquired){
 }
 const tagged=k=>tagMap.get(k)||[];
 const titles=[
- [/\b(?:saint|st)\s+andrew\b/,"saint-andrew"],
+ [/\b(?:saint|st)\s+andrew(?=$|\s+(?:apostle|the apostle)\b)/,"saint-andrew"],
  [/\b(?:saint|st)\s+anthony of padua\b/,"saint-anthony-padua"],
  [/\b(?:saint|st)\s+benedict\b(?!\s+joseph)/,"saint-benedict"],
  [/\b(?:saint|st)\s+catherine of siena\b/,"saint-catherine-siena"],
  [/\b(?:saint|st)\s+dominic\b(?!\s+savio)/,"saint-dominic"],
  [/\b(?:saint|st)\s+francis of assisi\b/,"saint-francis-assisi"],
- [/\b(?:saint|st)\s+jerome\b/,"saint-jerome"],
+ [/\b(?:saint|st)\s+jerome(?=$|\s+(?:priest|doctor|confessor)\b)/,"saint-jerome"],
  [/\b(?:saint|st)\s+john the baptist\b/,"saint-john-baptist"],
  [/\b(?:saint|st)\s+michael\b/,"saint-michael"],
- [/\b(?:saint|st)\s+paul\b(?!\s+(?:the hermit|of the cross|miki))/,"saint-paul"],
- [/\b(?:saint|st)\s+peter\b(?!\s+(?:martyr|damian|chrysologus|claver|of alcantara))/,"saint-peter"],
+ [/\b(?:saint|st)\s+paul(?=$|\s+(?:apostle|the apostle|commemoration)\b)/,"saint-paul"],
+ [/\b(?:saint|st)\s+peter(?=$|\s+(?:apostle|the apostle|chair|commemoration)\b)/,"saint-peter"],
  [/\b(?:saint|st)\s+thomas aquinas\b/,"saint-thomas-aquinas"],
- [/\b(?:saint|st)\s+joseph\b/,"saint-joseph"],
- [/\bepiphany\b/,"adoration-magi"],
+ [/\b(?:saint|st)\s+joseph(?=$|\s+(?:the workman|spouse of|patron of)\b)/,"saint-joseph"],
+ [/(?:^epiphany\b|\bfeast of the epiphany\b)/,"adoration-magi"],
  [/\bnativity of (?:our lord|the lord|jesus|christ)\b/,"nativity"],
  [/\bnativity of (?:saint|st) john (?:the )?baptist\b/,"nativity-john-baptist"],
  [/\b(?:candlemas|purification of the blessed virgin|presentation of (?:our lord|the lord|jesus|christ))\b/,"presentation-jesus"],
@@ -151,6 +151,21 @@ const perClass=Object.fromEntries([1,2,3,4].map(k=>{
   gospelSourceDates:ds.filter(d=>d.appointedScripture.some(s=>s.slot==="GOSPEL"&&s.passage)).length}];
 }));
 assert.deepEqual([1,2,3,4].map(n=>perClass[n].dates),[53,76,165,71]);
+const falseIdentityDays=[
+ ["2026-01-15","saint-paul"],["2026-01-18","adoration-magi"],
+ ["2026-01-25","adoration-magi"],["2026-01-28","saint-peter"],
+ ["2026-02-04","saint-andrew"],["2026-04-27","saint-peter"],
+ ["2026-04-29","saint-peter"],["2026-05-19","saint-peter"],
+ ["2026-07-20","saint-jerome"],["2026-08-27","saint-joseph"],
+ ["2026-09-18","saint-joseph"],["2026-11-08","adoration-magi"],
+ ["2026-11-10","saint-andrew"],["2026-11-15","adoration-magi"]
+];
+for(const [date,misidentified] of falseIdentityDays){
+ const row=days.find(d=>d.date===date);
+ assert.ok(row,"Missing 2026 date "+date);
+ assert.ok(!row.alternatives.some(x=>x.tier==="TITULAR_PERSON_OR_EVENT_CANDIDATE"&&x.evidence.includes("suggests "+misidentified+";")),
+  "Invalid identity: "+date+" as "+misidentified);
+}
 const summary={dates:days.length,uniqueSourceOriginals:acquired.length,
  distinctOriginalsLinked:new Set(days.flatMap(d=>d.alternatives.map(a=>a.artworkId))).size,
  datedArtworkAssociations:days.reduce((n,d)=>n+d.alternativeCount,0),
