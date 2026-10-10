@@ -10,6 +10,7 @@ on:
       - "tools/calendar/report-sacred-art-liturgical-priorities.mjs"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
       - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
+      - "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json"
       - ".github/workflows/calendar-1962-year-audit.yml"
   workflow_dispatch:
 
