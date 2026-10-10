@@ -1,0 +1,713 @@
+{
+  "schema": "AO_EXPLORE_EUROPE_NATIONAL_DEPTH_WAVE4_RESEARCH_V1",
+  "as_of": "2026-10-10",
+  "status": "EUROPE_RESEARCH_NO_PINS",
+  "description": "Source-linked depth acquisition in France, Germany, Spain and Romania, identifying exact sites and independent category associations; remains incomplete in each country.",
+  "sources": [
+    {
+      "id": "FR-ROCAMADOUR",
+      "url": "https://eglise.catholique.fr/actualites/359419-le-message-desperance-du-sanctuaire-de-rocamadour-a-1000-ans/",
+      "authority": "FR_BISHOPS_CONFERENCE",
+      "scope": "Diocesan shrine and Marian pilgrimage",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "FR-GARDE",
+      "url": "https://eglise.catholique.fr/guide-eglise-catholique-france/eveques-dioceses-france/liste-des-dioceses/a-decouverte-dioceses-de-france/diocese-de-marseille/482041-pere-spinosa-veille-dame-de-garde/",
+      "authority": "FR_BISHOPS_CONFERENCE",
+      "scope": "Marseille sanctuary, Marian devotion, procession and Corsican pilgrimage",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "FR-GARDE-EXVOTO",
+      "url": "https://eglise.catholique.fr/sengager-dans-la-societe/patrimoine-et-art-sacre/358935-a-marseille-les-800-ans-de-la-bonne-mere/",
+      "authority": "FR_BISHOPS_CONFERENCE",
+      "scope": "Ex-votos and sailors; shrine not associated with recognized apparition",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "FR-CULTURAL",
+      "url": "https://eglise.catholique.fr/wp-content/uploads/sites/2/2023/11/Dossier-de-Presse-Etats-generaux-du-patrimoine-religieux-11-2023.pdf",
+      "authority": "FR_BISHOPS_CONFERENCE",
+      "scope": "Names Conques, Fourvière, Sacred Heart, Sainte-Chapelle among heritage; inclusion alone not a juridical shrine certificate",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "FR-2026",
+      "url": "https://eglise.catholique.fr/guide-eglise-catholique-france/eveques-dioceses-france/liste-des-dioceses/a-decouverte-dioceses-de-france/focus-sur-les-sanctuaires-de-france/",
+      "authority": "FR_BISHOPS_CONFERENCE",
+      "scope": "France pastoral sanctuary thematic index, not a complete catalogue",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "DE-JUBILEE",
+      "url": "https://www2.erzbistum-muenchen.de/pfarrei/pv-grafing/aktuelles/cont/127651",
+      "authority": "MUNICH_FREISING_ARCHDIOCESE",
+      "scope": "Six diocesan 2025 jubilee pilgrim churches beyond cathedral; not perennial jubilee schedule",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "DE-MARIA-EICH",
+      "url": "https://www2.erzbistum-muenchen.de/pfarrei/pv-graefelfing/kirchen/wallfahrerweg",
+      "authority": "MUNICH_FREISING_ARCHDIOCESE",
+      "scope": "Documented walking pilgrimage and stations to Maria Eich",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "DE-BIRKENSTEIN",
+      "url": "https://www.erzbistum-muenchen.de/kunst-und-kultur/kunst/wege-der-hoffnung/in-stille-und-einsamkeit/wallfahrtskirche-mariae-himmelfahrt-birkenstein",
+      "authority": "MUNICH_FREISING_ARCHDIOCESE",
+      "scope": "Birkenstein shrine, founding priest's dream is history not approved Marian apparition",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "DE-ANDECHS",
+      "url": "https://www2.erzbistum-muenchen.de/newsletter/newsletter_8033/",
+      "authority": "MUNICH_FREISING_ARCHDIOCESE",
+      "scope": "2026 parish pilgrim walk to Andechs monastery; dates and sections specific to 2026",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "ES-EPISCOPAL",
+      "url": "https://www.conferenciaepiscopal.es/interesa/hazmemoria-2021/religiosidad-popular/",
+      "authority": "SPANISH_BISHOPS_CONFERENCE",
+      "scope": "Selected Marian shrines and pilgrimage traditions, not complete or proof of juridical status",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "ES-ALMUDENA",
+      "url": "https://oracionyliturgia.archimadrid.org/2024/11/09/nuestra-senora-de-la-almudena-patrona-de-la-archidiocesis-de-madrid-2024/",
+      "authority": "ARCHDIOCESE_OF_MADRID",
+      "scope": "Venerated Marian image at Almudena cathedral",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "ES-PONTEVEDRA",
+      "url": "https://delegacionclero.archicompostela.es/la-casa-del-inmaculado-corazon-de-maria-ultima-los-detalles-para-el-ano-jubilar/",
+      "authority": "ARCHDIOCESE_SANTIAGO",
+      "scope": "2025-26 jubilee at Dorothean historic site of reported 1925 experiences to Sister Lucia; not automatic supernatural approval",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "ES-PEREGRINA",
+      "url": "https://boa.archicompostela.es/wp-content/uploads/Boletin_pdf/B8_2020.pdf",
+      "authority": "ARCHDIOCESE_SANTIAGO_OFFICIAL_BULLETIN",
+      "scope": "Pontevedra Virgen Peregrina Catholic Marian shrine",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "RO-CACICA",
+      "url": "https://ercis.ro/stiri/pelerinajul-anual-la-sanctuarul-maicii-domnului-de-la-cacica-2026",
+      "authority": "ROMAN_CATHOLIC_DIOCESE_IASI",
+      "scope": "2026 Marian Assumption pilgrimage; St Francis relic visit is temporary, not permanent custody",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "RO-CACICA-HEALTH",
+      "url": "https://ercis.ro/stiri/cacica-pelerinajul-bolnavilor-va-avea-loc-sambata-9-mai-2026-202604078",
+      "authority": "ROMAN_CATHOLIC_DIOCESE_IASI",
+      "scope": "Pilgrimage for sick at Cacica 2026; distinct event at same Place",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    },
+    {
+      "id": "FR-SAINTE-CHAPELLE",
+      "url": "https://www.sainte-chapelle.fr/decouvrir/histoire-de-la-sainte-chapelle",
+      "authority": "FRENCH_CENTRE_DES_MONUMENTS_NATIONAUX",
+      "scope": "Historic chapel originally for Passion relics, no longer consecrated to worship, relics moved to Notre-Dame",
+      "acceptance": "SOURCE_SCREENED_REVIEW_ONLY"
+    }
+  ],
+  "sites": [
+    {
+      "site_id": "EUROPE:W4:PLACE:FR:sanctuaire-notre-dame-de-rocamadour",
+      "country_code": "FR",
+      "name": "Sanctuaire Notre-Dame de Rocamadour",
+      "source_ids": [
+        "FR-ROCAMADOUR"
+      ],
+      "kind": "DIOCESAN_MARIAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-notre-dame-de-la-garde-marseille",
+      "country_code": "FR",
+      "name": "Basilique Notre-Dame de la Garde — Marseille",
+      "source_ids": [
+        "FR-GARDE"
+      ],
+      "kind": "DIOCESAN_MARIAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-notre-dame-de-fourviere-lyon",
+      "country_code": "FR",
+      "name": "Basilique Notre-Dame de Fourvière — Lyon",
+      "source_ids": [
+        "FR-CULTURAL"
+      ],
+      "kind": "CATHOLIC_MARIAN_BASILICA",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:FR:abbatiale-sainte-foy-de-conques",
+      "country_code": "FR",
+      "name": "Abbatiale Sainte-Foy de Conques",
+      "source_ids": [
+        "FR-CULTURAL"
+      ],
+      "kind": "HISTORIC_CATHOLIC_PILGRIMAGE_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-du-sacre-c-ur-de-montmartre-paris",
+      "country_code": "FR",
+      "name": "Basilique du Sacré-Cœur de Montmartre — Paris",
+      "source_ids": [
+        "FR-CULTURAL"
+      ],
+      "kind": "CATHOLIC_BASILICA",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:FR:sainte-chapelle-paris",
+      "country_code": "FR",
+      "name": "Sainte-Chapelle — Paris",
+      "source_ids": [
+        "FR-CULTURAL"
+      ],
+      "kind": "HISTORIC_ROYAL_PASSION_RELIC_CHAPEL_NOT_CURRENT_CUSTODY",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-eich-planegg",
+      "country_code": "DE",
+      "name": "Wallfahrtskirche Maria Eich — Planegg",
+      "source_ids": [
+        "DE-MARIA-EICH"
+      ],
+      "kind": "CATHOLIC_MARIAN_WALLFAHRT",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-himmelfahrt-birkenstein",
+      "country_code": "DE",
+      "name": "Wallfahrtskirche Mariä Himmelfahrt — Birkenstein",
+      "source_ids": [
+        "DE-BIRKENSTEIN"
+      ],
+      "kind": "CATHOLIC_MARIAN_WALLFAHRT",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-eck-siegsdorf",
+      "country_code": "DE",
+      "name": "Wallfahrtskirche Maria Eck — Siegsdorf",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "kind": "CATHOLIC_MARIAN_WALLFAHRT",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-birnbaum-sielenbach",
+      "country_code": "DE",
+      "name": "Wallfahrtskirche Maria Birnbaum — Sielenbach",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "kind": "CATHOLIC_MARIAN_WALLFAHRT",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:DE:basilika-heilig-kreuz-benediktinerabtei-scheyern",
+      "country_code": "DE",
+      "name": "Basilika Heilig Kreuz — Benediktinerabtei Scheyern",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "kind": "CATHOLIC_ABBEY_JUBILEE_PILGRIM_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:DE:klosterkirche-andechs-heilig-berg",
+      "country_code": "DE",
+      "name": "Klosterkirche Andechs — Heilig Berg",
+      "source_ids": [
+        "DE-ANDECHS"
+      ],
+      "kind": "CATHOLIC_ABBEY_PILGRIMAGE_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:DE:jesuitenkirche-st-michael-munchen",
+      "country_code": "DE",
+      "name": "Jesuitenkirche St Michael — München",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "kind": "CATHOLIC_JUBILEE_2025_CHURCH",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:ES:catedral-de-santa-maria-la-real-de-la-almudena-madrid",
+      "country_code": "ES",
+      "name": "Catedral de Santa María la Real de la Almudena — Madrid",
+      "source_ids": [
+        "ES-ALMUDENA"
+      ],
+      "kind": "CATHOLIC_CATHEDRAL_MARIAN_IMAGE",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:ES:casa-del-inmaculado-corazon-de-maria-pontevedra",
+      "country_code": "ES",
+      "name": "Casa del Inmaculado Corazón de María — Pontevedra",
+      "source_ids": [
+        "ES-PONTEVEDRA"
+      ],
+      "kind": "HISTORIC_DOROTHEAN_CATHOLIC_JUBILEE_SITE",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:ES:santuario-de-la-virgen-peregrina-pontevedra",
+      "country_code": "ES",
+      "name": "Santuario de la Virgen Peregrina — Pontevedra",
+      "source_ids": [
+        "ES-PEREGRINA"
+      ],
+      "kind": "CATHOLIC_MARIAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    },
+    {
+      "site_id": "EUROPE:W4:PLACE:RO:sanctuarul-national-marian-adormirea-maicii-domnului-cacica",
+      "country_code": "RO",
+      "name": "Sanctuarul Național Marian Adormirea Maicii Domnului — Cacica",
+      "source_ids": [
+        "RO-CACICA"
+      ],
+      "kind": "ROMAN_CATHOLIC_NATIONAL_MARIAN_SANCTUARY",
+      "canonical_place_id": null,
+      "disposition": "EXACT_IDENTITY_RECONCILIATION_PENDING",
+      "geo": null,
+      "image": null,
+      "biography": null,
+      "publication": "RESEARCH_ONLY"
+    }
+  ],
+  "associations": [
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:1",
+      "site_id": "EUROPE:W4:PLACE:FR:sanctuaire-notre-dame-de-rocamadour",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "FR-ROCAMADOUR"
+      ],
+      "claim": "Historical Catholic Marian pilgrimage at diocesan shrine of Rocamadour",
+      "qualification": "Destination separate from precise Compostela route polyline",
+      "kind": "MARIAN_DESTINATION_PILGRIMAGE",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:2",
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-notre-dame-de-la-garde-marseille",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "FR-GARDE"
+      ],
+      "claim": "Diocesan sanctuary receives pilgrims and has Marseille Marian processions",
+      "qualification": "No assumption of exact annual event schedule",
+      "kind": "URBAN_MARIAN_PILGRIMAGE",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:CUSTOMS:3",
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-notre-dame-de-la-garde-marseille",
+      "category": "CUSTOMS",
+      "source_ids": [
+        "FR-GARDE-EXVOTO"
+      ],
+      "claim": "Maritime ex-voto plaques and ship models donated to Notre-Dame de la Garde",
+      "qualification": "French Mediterranean local testimony; link to ex-voto custom, not new universal custom",
+      "kind": "FRENCH_MARITIME_EX_VOTO",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:SACRED_IMAGE:4",
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-notre-dame-de-la-garde-marseille",
+      "category": "SACRED_IMAGE",
+      "source_ids": [
+        "FR-GARDE"
+      ],
+      "claim": "Venerated statue of the Blessed Virgin at Marseille sanctuary",
+      "qualification": "No ecclesial apparition recognition is claimed for this site",
+      "kind": "MARIAN_DEVOTIONAL_IMAGE",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:5",
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-notre-dame-de-fourviere-lyon",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "FR-CULTURAL"
+      ],
+      "claim": "Major Catholic Marian pilgrimage church recognized in French bishops' heritage overview",
+      "qualification": "Basilica identity independently review juridical sanctuary title",
+      "kind": "MARIAN_DESTINATION",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:6",
+      "site_id": "EUROPE:W4:PLACE:FR:abbatiale-sainte-foy-de-conques",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "FR-CULTURAL"
+      ],
+      "claim": "Historical Catholic pilgrimage church at Conques on Compostela networks",
+      "qualification": "Avoid inferring precise relic authenticity or route geometry from heritage reference",
+      "kind": "MEDIEVAL_PILGRIMAGE_STOP",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:7",
+      "site_id": "EUROPE:W4:PLACE:FR:basilique-du-sacre-c-ur-de-montmartre-paris",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "FR-CULTURAL"
+      ],
+      "claim": "Catholic devotional basilica named in French bishops' religious heritage overview",
+      "qualification": "Existing Eucharistic worship does not make all visitors pilgrims",
+      "kind": "CATHOLIC_BASILICA_CONTEXT",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:RELICS:8",
+      "site_id": "EUROPE:W4:PLACE:FR:sainte-chapelle-paris",
+      "category": "RELICS",
+      "source_ids": [
+        "FR-SAINTE-CHAPELLE"
+      ],
+      "claim": "Historic royal chapel associated with Passion relic housing in medieval Paris",
+      "qualification": "Historic custody only: State monuments authority confirms Crown of Thorns transferred to Notre-Dame in 1806 and Sainte-Chapelle is no longer used for worship.",
+      "kind": "HISTORIC_RELIC_SITE_NOT_PRESENT_CUSTODY",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:9",
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-eich-planegg",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "DE-MARIA-EICH"
+      ],
+      "claim": "Munich archdiocese documents a continuing pilgrimage footpath to Maria Eich",
+      "qualification": "Source pilgrimage trail is not a GPS geometry",
+      "kind": "WALKING_MARIAN_WALLFAHRT",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:10",
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-himmelfahrt-birkenstein",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "DE-BIRKENSTEIN"
+      ],
+      "claim": "Diocesan authority describes Marian pilgrimage church at Birkenstein",
+      "qualification": "Founding priest's dream is historical tradition, not an approved apparition claim",
+      "kind": "MARIAN_WALLFAHRT",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:11",
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-eck-siegsdorf",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "claim": "Maria Eck is listed as a named Catholic pilgrim church by Munich archdiocese in 2025",
+      "qualification": "Jubilee 2025 designation not assumed permanent liturgical status",
+      "kind": "CATHOLIC_MARIAN_WALLFAHRT",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:12",
+      "site_id": "EUROPE:W4:PLACE:DE:wallfahrtskirche-maria-birnbaum-sielenbach",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "claim": "Maria Birnbaum recognized as Catholic Marian pilgrimage church by archdiocese",
+      "qualification": "2025 special Jubilee status is historical",
+      "kind": "CATHOLIC_MARIAN_WALLFAHRT",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:13",
+      "site_id": "EUROPE:W4:PLACE:DE:basilika-heilig-kreuz-benediktinerabtei-scheyern",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "claim": "Benedictine Holy Cross basilica selected for 2025 archdiocesan pilgrim visits",
+      "qualification": "Holy Cross title is not automatically verified relic custody",
+      "kind": "BENEDICTINE_PILGRIMAGE_CHURCH",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:14",
+      "site_id": "EUROPE:W4:PLACE:DE:klosterkirche-andechs-heilig-berg",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "DE-ANDECHS"
+      ],
+      "claim": "Munich archdiocese records 2026 Gilching pilgrim walk to Andechs abbey church",
+      "qualification": "2026 organizer timetable is not a permanent pilgrimage event or full route data",
+      "kind": "ABBEY_WALLFAHRT",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:15",
+      "site_id": "EUROPE:W4:PLACE:DE:jesuitenkirche-st-michael-munchen",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "DE-JUBILEE"
+      ],
+      "claim": "Munich Jesuit church designated for archdiocesan 2025 Jubilee pilgrim visits",
+      "qualification": "A Jubilee church is not necessarily a juridical sanctuary",
+      "kind": "JUBILEE_TEMPORAL_CHURCH",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:SACRED_IMAGE:16",
+      "site_id": "EUROPE:W4:PLACE:ES:catedral-de-santa-maria-la-real-de-la-almudena-madrid",
+      "category": "SACRED_IMAGE",
+      "source_ids": [
+        "ES-ALMUDENA"
+      ],
+      "claim": "Madrid archdiocese describes venerated stone image of Nuestra Señora de la Almudena",
+      "qualification": "Ancient wall discovery narrative has historical-tradition status, not verified supernatural apparition",
+      "kind": "MARIAN_IMAGE_DEVOTION",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:APPARITIONS:17",
+      "site_id": "EUROPE:W4:PLACE:ES:casa-del-inmaculado-corazon-de-maria-pontevedra",
+      "category": "APPARITIONS",
+      "source_ids": [
+        "ES-PONTEVEDRA"
+      ],
+      "claim": "Archdiocese describes alleged December 1925 experiences involving Sister Lucia at the historic Dorothean house",
+      "qualification": "2025–26 Jubilee indulgence does not establish a formal supernatural authentication of every apparition claim",
+      "kind": "REPORTED_PRIVATE_REVELATION",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:18",
+      "site_id": "EUROPE:W4:PLACE:ES:casa-del-inmaculado-corazon-de-maria-pontevedra",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "ES-PONTEVEDRA"
+      ],
+      "claim": "2025–26 Jubilee pilgrims visit the historic site in Pontevedra",
+      "qualification": "Time-bound Jubilee; original house versus current building identity requires review",
+      "kind": "TEMPORARY_JUBILEE_PILGRIMAGE",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:19",
+      "site_id": "EUROPE:W4:PLACE:ES:santuario-de-la-virgen-peregrina-pontevedra",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "ES-PEREGRINA"
+      ],
+      "claim": "Santiago archdiocesan bulletin records worship at Santuario de la Virgen Peregrina",
+      "qualification": "Pontevedra sanctuary separate from Dorothean site",
+      "kind": "MARIAN_PILGRIMAGE",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:20",
+      "site_id": "EUROPE:W4:PLACE:RO:sanctuarul-national-marian-adormirea-maicii-domnului-cacica",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "RO-CACICA"
+      ],
+      "claim": "Iași Roman Catholic diocese reports large Assumption pilgrimage in August 2026",
+      "qualification": "Annual tradition distinguished from one-year timetable",
+      "kind": "CATHOLIC_NATIONAL_MARIAN_PILGRIMAGE",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:PILGRIMAGES:21",
+      "site_id": "EUROPE:W4:PLACE:RO:sanctuarul-national-marian-adormirea-maicii-domnului-cacica",
+      "category": "PILGRIMAGES",
+      "source_ids": [
+        "RO-CACICA-HEALTH"
+      ],
+      "claim": "Diocese documents separate 2026 pilgrimage for the sick at same Cacica sanctuary",
+      "qualification": "One physical Place remains a single destination; no duplicate shrine",
+      "kind": "DIOCESAN_PILGRIMAGE_VARIANT",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    },
+    {
+      "id": "EUROPE:W4:RELICS:22",
+      "site_id": "EUROPE:W4:PLACE:RO:sanctuarul-national-marian-adormirea-maicii-domnului-cacica",
+      "category": "RELICS",
+      "source_ids": [
+        "RO-CACICA"
+      ],
+      "claim": "2026 Cacica pilgrimage hosted touring relic material associated with St Francis of Assisi",
+      "qualification": "TEMPORARY visiting relics, not permanent Cacica custody or separately authenticated app object",
+      "kind": "TEMPORARY_RELIC_EXHIBITION",
+      "publication": "RESEARCH_ONLY",
+      "route_geometry": null,
+      "own_marker": false
+    }
+  ],
+  "governance": [
+    "A place may have many category records, but exactly one canonical physical identity after future reconciliation.",
+    "French cultural heritage list alone does not confer juridical pilgrimage shrine status or current relic custody.",
+    "Temporary Jubilee Churches and 2026 traveling relics do not become permanent properties of the site.",
+    "No biography, artwork, coordinates, event scheduling, or public map pins before full registry closure.",
+    "Ex-votos are historically attested at Marseille; no unsupported universal generalization."
+  ],
+  "counts": {
+    "site_leads": 17,
+    "new_identity_candidates": 17,
+    "source_records": 16,
+    "category_associations": 22,
+    "by_country": {
+      "DE": 7,
+      "ES": 3,
+      "FR": 6,
+      "RO": 1
+    },
+    "by_category": {
+      "APPARITIONS": 1,
+      "CUSTOMS": 1,
+      "PILGRIMAGES": 16,
+      "RELICS": 2,
+      "SACRED_IMAGE": 2
+    }
+  }
+}
