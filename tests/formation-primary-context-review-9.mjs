@@ -6,6 +6,18 @@ const matrix = read(root+"formation-141-claim-scope-matrix-2026-10-09.v1.json");
 const ledger = read(root+"formation-primary-context-review-9-2026-10-09.v1.json");
 const earlier = read(root+"formation-primary-context-review-8-2026-10-09.v1.json");
 const packs = matrix.source_packs.map(p=>read(p));
+const a1=read("data/learn/formation-a1-20261010-source-role-amendment.v1.json");
+const a1Changed=new Map(a1.modified_roles.map(x=>[x.owner+"|"+x.role,x]));
+const a1Superseded=new Map(a1.original_findings_superseded.map(x=>[x.finding_id,x]));
+const validateReassigned=(f,section,sources)=>{
+ const change=a1Superseded.get(f.id);
+ assert.ok(change,f.id+": original citation removed without an explicit source-review disposition");
+ assert.equal(change.owner,f.owner);assert.equal(change.role,f.role);
+ assert.equal(change.previous_source_id,f.source_id);
+ assert.equal(sources.get(f.source_id)?.url,f.url,"original dated source evidence was destroyed: "+f.id);
+ assert.deepEqual(change.replacement_source_ids,section.source_ids,"replacement original-source pointers drifted: "+f.id);
+ assert.equal(change.new_citation_claims_independently_certified,false);
+};
 const owners = new Map(packs.flatMap(p=>p.dossiers.map(d=>[d.id,{d,reg:new Map(p.source_registry.map(s=>[s.id,s]))}])));
 assert.equal(earlier.findings.length,50);
 assert.equal(ledger.version,"FORMATION_PRIMARY_CONTEXT_EDITORIAL_PASS9_20261009_V1");
@@ -24,7 +36,8 @@ for(const [i,f] of ledger.findings.entries()){
  assert.equal(f.id,"PSV9-"+String(i+1).padStart(3,"0"));
  assert.ok(["BOUNDED_DIRECT_PRIMARY_PARAGRAPH_SCOPE_CHECK","BOUNDED_DIRECT_LEGISLATIVE_TEXT_CHECK"].includes(f.status));
  const d=owners.get(f.owner);assert.ok(d,"unknown dossier "+f.owner);
- const role=d.d.sections.find(s=>s.role===f.role);assert.ok(role?.source_ids.includes(f.source_id),"source not owned by section "+f.id);
+ const role=d.d.sections.find(s=>s.role===f.role);assert.ok(role,"missing original role "+f.id);
+ if(!role.source_ids.includes(f.source_id))validateReassigned(f,role,d.reg);
  assert.equal(d.reg.get(f.source_id)?.url,f.url,"source href changed "+f.id);
  assert.match(f.url,/^https:\/\/[^\s/]+\/\S+/);
  assert.ok(f.locator.length>=25&&f.document_finding.length>=65&&f.qualification.length>=65,"thin source claim "+f.id);
@@ -42,7 +55,7 @@ const requiredRewrites=[
  ["CR-LIT-05","critical_response","Sacrosanctum Concilium","Sacrosanctum Concilium"],
  ["APOL-002","answer","Humani generis","Humani generis"],
  ["APOL-002","critical_response","Humani generis","Humani generis"],
- ["APOL-004","critical_response","27 April 2000","27 avril 2000"],
+ ["APOL-004","critical_response","Hume","Hume"],
  ["CR-LIT-02","answer","Sacrosanctum Concilium","Sacrosanctum Concilium"],
  ["CR-LIT-09","answer","Sacrosanctum Concilium","Sacrosanctum Concilium"],
  ["CR-LIT-09","traditional_catholic_argument","Sacrosanctum Concilium","Sacrosanctum Concilium"],
