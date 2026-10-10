@@ -25,6 +25,10 @@
 
 **Interpretation:** A merged implementation is not independent liturgical, theological, textual or historical certification. Keep human review gates open and explicit.
 
+## Historical branch evidence (separate from live work)
+
+The [branch-retirement triage](BRANCH-RETIREMENT-TRIAGE.md) and [dated head/PR evidence inventory](../data/governance/branch-disposition-audit-20261010.v1.json) classify the residual historical refs. The 10 October snapshot identified **254 branches needing human unique-delta review** (147 closed-unmerged PR heads, 17 moved PR heads, 90 with no closed PR); none is cleared for blanket deletion. Ordinary old merged heads continue to retire through the safety-gated workflow. Use #342 to record consolidated domain-level dispositions rather than opening hundreds of duplicate issues.
+
 ## Branch and PR rules
 
 1. **One issue → one active integration branch/PR per domain.** Link the canonical issue before opening a branch. Don't fork a second rescue architecture because `main` advanced.
