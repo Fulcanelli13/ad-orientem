@@ -5,7 +5,7 @@ Coverage-first research only. Source rights must be freely reusable worldwide:
 only explicit CC0 or old-master PD-Art 2D reproductions qualify as leads.
 Do not promote to runtime, or assert museum fidelity / portrait authenticity.
 """
-import hashlib, io, json, re, time
+import hashlib, io, json, re, sys, time
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -61,10 +61,24 @@ def is_allowed_license(ext):
  if licenses in ("public domain","public domain mark","pd-art") or ("pd-art" in templates):
   return "PD_ART_COMMONS_JURISDICTION_HOLD"
  return None
+def sha1_matches_mediawiki(raw,expected):
+ """MediaWiki imageinfo.sha1 is usually base-36 (31 chars), not hex."""
+ expected=str(expected or "").lower().strip()
+ if not expected:return False
+ digest=hashlib.sha1(raw).digest()
+ n=int.from_bytes(digest,"big")
+ chars="0123456789abcdefghijklmnopqrstuvwxyz"
+ b36=""
+ while n:
+  n,rem=divmod(n,36)
+  b36=chars[rem]+b36
+ return expected in (digest.hex(),b36.zfill(31))
+
 def check_image(raw):
  with Image.open(io.BytesIO(raw)) as im:
-  im.load();im=ImageOps.exif_transpose(im)
+  # exif_transpose() creates a copy that loses Pillow's im.format attribute.
   if im.format not in ("JPEG","PNG"):raise ValueError("Not JPEG/PNG")
+  im.load();im=ImageOps.exif_transpose(im)
   w,h=im.size
   if max(w,h)<2500:raise ValueError("Too small")
   im=im.convert("RGB");im.thumbnail((250,250))
@@ -106,7 +120,7 @@ def main():
     row["qualified"]+=1
     try:
      body=request(source)
-     if hashlib.sha1(body).hexdigest()!=inf.get("sha1"):raise ValueError("SHA1 did not match Wikimedia original")
+     if not sha1_matches_mediawiki(body,inf.get("sha1")):raise ValueError("SHA1 did not match Wikimedia original")
      w,h,chroma=check_image(body)
      filename=key+(".png" if source.lower().endswith(".png") else ".jpg")
      (OUT/"originals"/filename).write_bytes(body)
@@ -134,4 +148,15 @@ def main():
   bg.save(OUT/("contact-%02d.jpg"%(start//8+1)),quality=90)
  (OUT/"research.json").write_text(json.dumps({"schema":"AO_COMMONS_TARGETED_GAPS_V1","warning":"Title and Commons licence claims only; no painted medium attribution, worldwide legal approval, or aesthetic/phone approval.", "targets":report,"artworks":images},indent=2,ensure_ascii=False)+"\n")
  print("FINAL",len(images),"originals; research-only, rights held",flush=True)
-if __name__=="__main__":main()
+def self_test():
+ assert sha1_matches_mediawiki(b"abc","jt72fo5t4yobf0qugwuczbwj07max7h")
+ assert sha1_matches_mediawiki(b"abc","a9993e364706816aba3e25717850c26c9cd0d89d")
+ assert not sha1_matches_mediawiki(b"abc","0000000000000000000000000000000")
+ source=Image.new("RGB",(2500,40),(180,70,30))
+ buf=io.BytesIO();source.save(buf,format="JPEG",quality=92)
+ assert check_image(buf.getvalue())[:2]==(2500,40)
+ print("PASS: MediaWiki base36/hex SHA1 and JPEG format/resolution/colour")
+
+if __name__=="__main__":
+ if "--self-test" in sys.argv:self_test()
+ else:main()
