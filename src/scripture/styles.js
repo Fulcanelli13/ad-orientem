@@ -63,6 +63,11 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureCommentaryParagraph strong{font-weight:600;color:#e7d3a4}
  .aoScriptureContextCommentary .aoScriptureCommentaryDisclosure{font:12px/1.5 system-ui,sans-serif;color:#a9a08e;margin:8px 0}
  .aoScriptureContextCommentary a{display:inline-block;margin-top:14px;font:500 13px/1.5 system-ui,sans-serif}
+ .aoScriptureCatenaPericope{border-top:1px solid rgba(205,182,135,.24);padding:14px 0 18px}
+ .aoScriptureCatenaHeading{font:500 14px/1.5 system-ui,sans-serif;color:#dbcca9;margin:0 0 12px}
+ .aoScriptureFather{border-bottom:1px solid rgba(205,182,135,.12);padding:8px 0}
+ .aoScriptureLibrary .aoScriptureFather summary{color:#e6d5af;font:600 13px/1.5 system-ui,sans-serif}
+ .aoScriptureFatherText{white-space:pre-wrap;font:17px/1.74 Georgia,"Garamond",serif;color:#e5e0d5;margin:9px 0 14px}
  .aoHomeScriptureLink{margin:12px 0}
  @media(max-width:700px){.aoScriptureNav{grid-template-columns:repeat(2,minmax(0,1fr))}.aoScriptureLibrary{padding:16px;border:0;border-radius:0}.aoScriptureText{font-size:19px}.aoScriptureContextControls{gap:3px}#ao-scripture-overlay{padding:0 0 max(16px,env(safe-area-inset-bottom))}.aoScriptureHeader{position:sticky;top:0;z-index:2;background:#0e151d;padding-top:max(10px,env(safe-area-inset-top))}}
  @media(prefers-reduced-motion:reduce){#ao-scripture-overlay *{scroll-behavior:auto!important;transition:none!important}}
