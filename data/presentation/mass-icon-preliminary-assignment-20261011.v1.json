@@ -515,9 +515,9 @@
     }
   },
   "counts": {
-    "high": 492,
+    "high": 496,
     "provisional": 66,
-    "missing": 6,
+    "missing": 2,
     "nonvisual": 2,
     "confirmed": 42
   },
@@ -534,18 +534,17 @@
       "high": 23
     },
     "Faithful gestures": {
-      "high": 47,
-      "provisional": 11,
-      "missing": 1
+      "high": 48,
+      "provisional": 11
     },
     "Priest actions": {
       "high": 62,
       "provisional": 15
     },
     "Rubrical events": {
-      "high": 44,
+      "high": 47,
       "provisional": 8,
-      "missing": 5
+      "missing": 2
     },
     "Responses": {
       "high": 23
@@ -5861,13 +5860,20 @@
       "cue": "AO.SM.C0245"
     },
     "Faithful gestures:AO.SM.C0246:54": {
-      "primary": null,
-      "confidence": "missing",
-      "reason": "Exact gesture name matched to earlier user-selected Mass icon",
-      "source": "SOURCE_SEMANTIC",
-      "reviewGate": "Faithful gestures:AO.SM.C0246:54",
+      "primary": "mass:head_bow",
+      "confidence": "high",
+      "reason": "Clear faithful head-bow instruction; reuse user's selected 1254×1254 head bow",
+      "source": "USER_SELECTED_SEMANTIC_BELL_OR_BOW",
+      "reviewGate": null,
       "alternates": [],
-      "quality": null,
+      "quality": {
+        "transport": "RASTER_IN_SVG",
+        "pixels": [
+          1254,
+          1254
+        ],
+        "scalable": false
+      },
       "original": null,
       "actor": "FAITHFUL",
       "channel": "Faithful gestures",
@@ -7968,13 +7974,20 @@
       "cue": "AO.SM.C0161"
     },
     "Rubrical events:AO.RUB.C0161.02:24": {
-      "primary": null,
-      "confidence": "missing",
-      "reason": "Normative rubric event lacks a bound iconKey",
-      "source": "SOURCE_SEMANTIC",
-      "reviewGate": "Rubrical events:AO.RUB.C0161.02:24",
+      "primary": "mass:bells",
+      "confidence": "high",
+      "reason": "Warning bell is an audible altar-bell event; use user's selected bell icon",
+      "source": "USER_SELECTED_SEMANTIC_BELL_OR_BOW",
+      "reviewGate": null,
       "alternates": [],
-      "quality": null,
+      "quality": {
+        "transport": "RASTER_IN_SVG",
+        "pixels": [
+          906,
+          807
+        ],
+        "scalable": false
+      },
       "original": null,
       "actor": "SERVER",
       "channel": "Rubrical events",
@@ -8083,13 +8096,20 @@
       "cue": "AO.SM.C0174"
     },
     "Rubrical events:AO.RUB.C0174.03:30": {
-      "primary": null,
-      "confidence": "missing",
-      "reason": "Normative rubric event lacks a bound iconKey",
-      "source": "SOURCE_SEMANTIC",
-      "reviewGate": "Rubrical events:AO.RUB.C0174.03:30",
+      "primary": "mass:bells",
+      "confidence": "high",
+      "reason": "Host elevation bell uses the existing high-resolution altar-bell cue, without misplacing the Host image",
+      "source": "USER_SELECTED_SEMANTIC_BELL_OR_BOW",
+      "reviewGate": null,
       "alternates": [],
-      "quality": null,
+      "quality": {
+        "transport": "RASTER_IN_SVG",
+        "pixels": [
+          906,
+          807
+        ],
+        "scalable": false
+      },
       "original": null,
       "actor": "SERVER",
       "channel": "Rubrical events",
@@ -8208,13 +8228,20 @@
       "cue": "AO.SM.C0181"
     },
     "Rubrical events:AO.RUB.C0181.03:37": {
-      "primary": null,
-      "confidence": "missing",
-      "reason": "Normative rubric event lacks a bound iconKey",
-      "source": "SOURCE_SEMANTIC",
-      "reviewGate": "Rubrical events:AO.RUB.C0181.03:37",
+      "primary": "mass:bells",
+      "confidence": "high",
+      "reason": "Chalice elevation bell uses the same distinct altar-bell cue",
+      "source": "USER_SELECTED_SEMANTIC_BELL_OR_BOW",
+      "reviewGate": null,
       "alternates": [],
-      "quality": null,
+      "quality": {
+        "transport": "RASTER_IN_SVG",
+        "pixels": [
+          906,
+          807
+        ],
+        "scalable": false
+      },
       "original": null,
       "actor": "SERVER",
       "channel": "Rubrical events",
@@ -12886,10 +12913,12 @@
     "Rubrical events:AO.RUB.C0115.02:15",
     "Rubrical events:AO.RUB.C0115.03:16",
     "Rubrical events:AO.RUB.C0174.04:31",
+    "Rubrical events:AO.RUB.C0174.06:33",
     "Rubrical events:AO.RUB.C0181.04:38",
     "Rubrical events:AO.RUB.C0228.01:46",
     "Rubrical events:AO.RUB.C0232.02:48",
     "Rubrical events:AO.RUB.C0234.02:50",
+    "Rubrical events:AO.RUB.C0248.01:51",
     "review:priest:foot",
     "review:priest:return_altar",
     "review:priest:blessing",
@@ -12899,12 +12928,6 @@
     "review:other:epistle",
     "review:other:fraction",
     "review:other:gospel",
-    "review:other:incense",
-    "Faithful gestures:AO.SM.C0246:54",
-    "Rubrical events:AO.RUB.C0161.02:24",
-    "Rubrical events:AO.RUB.C0174.03:30",
-    "Rubrical events:AO.RUB.C0174.06:33",
-    "Rubrical events:AO.RUB.C0181.03:37",
-    "Rubrical events:AO.RUB.C0248.01:51"
+    "review:other:incense"
   ]
 }
