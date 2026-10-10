@@ -178,6 +178,42 @@ const windowLike={
   AO_RUNTIME_V8:{store:{getState:()=>({language:"en"})}}
 };
 const live=createFormationRecoveryReview(windowLike);
+// The study entrance must begin with the canonical nine/eight theme cards,
+// retaining full source-linked dossiers behind each original subtheme.
+for(const [corpus,expectedThemes,expectedQuestions,firstTheme,firstCount] of [
+  ["apologetics",9,60,"god-revelation",6],
+  ["crisis",8,81,"liturgical",12]
+]){
+  assert.equal(await live.open({corpus,studyPreview:true}),true);
+  const previewNode=nodes.get(RECOVERY_REVIEW_ROOT);
+  assert.equal(live.status().view,"themes");
+  assert.equal(live.status().themeCount,expectedThemes);
+  assert.ok(previewNode.innerHTML.includes('data-rr-theme="'+firstTheme+'"'));
+  assert.ok(previewNode.innerHTML.includes('data-rr-theme-count="'+firstCount+'"'));
+  assert.equal((previewNode.innerHTML.match(/class="rrThemeCard"/g)||[]).length,expectedThemes);
+  assert.ok(previewNode.innerHTML.includes(expectedQuestions+" questions"));
+  assert.ok(!previewNode.innerHTML.includes('data-rr-dossier="'),
+    "Study entrance should show subthemes, not the full question warehouse");
+  assert.ok(!previewNode.innerHTML.includes('data-rr-mode="'),
+    "Editorial tabs must not appear in study navigation");
+  previewNode.listeners.click({
+    preventDefault(){},
+    target:{closest:()=>({hasAttribute:()=>false,dataset:{rrTheme:firstTheme}})}
+  });
+  assert.equal(live.status().view,"list");
+  assert.equal(live.status().theme,firstTheme);
+  assert.ok(previewNode.innerHTML.includes('data-rr-dossier="'));
+  assert.ok(previewNode.innerHTML.includes("data-rr-themes"));
+  assert.ok(!previewNode.innerHTML.includes('data-rr-family'),
+    "Subtheme list must use breadcrumb navigation, not the old dropdown");
+  previewNode.listeners.click({
+    preventDefault(){},
+    target:{closest:()=>({hasAttribute:k=>k==="data-rr-back",dataset:{}})}
+  });
+  assert.equal(live.status().view,"themes","Back should return to the full subtheme overview");
+  assert.equal(live.status().theme,"all");
+  live.close();
+}
 assert.equal(await live.open(),true,"QA source files failed to mount");
 assert.equal(await live.open({corpus:"apologetics"}),true);
 const apolNode=nodes.get(RECOVERY_REVIEW_ROOT);
