@@ -78,6 +78,17 @@ try{
         },
         readerReady:reader?.ready??false,
         missing:reader?.missing??[],
+        commemorationSources:(proper?.calendarCommemorations??[]).map(row=>({
+          path:row?.path??null,prayerSourcePath:row?.prayerSourcePath??null,
+        })),
+        orationLanguages:Object.fromEntries([
+          ["collects",repaired?.collects??[]],
+          ["secrets",repaired?.secrets??[]],
+          ["postcommunions",repaired?.postcommunions??[]],
+        ].map(([key,rows])=>[key,rows.map(row=>({
+          latin:Boolean(String(row?.lat??row?.la??"").trim()),
+          en:Boolean(String(row?.en??"").trim()),fr:Boolean(String(row?.fr??"").trim()),
+        }))])),
       };
     },date);
     results.push(row);
