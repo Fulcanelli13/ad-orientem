@@ -1,3 +1,4 @@
+import { formationReaderCss } from "./formation-ui.js";
 import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { searchDiscovery } from "./discovery.js";
@@ -223,6 +224,7 @@ export function learnPresentationCss(){
  .aoLearnQuestionsBridge{min-height:94px}.aoLearnQuestionsBridge:focus-visible,.aoLearnApostolateBridge:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:3px}
  .aoLearnDossierReview .aoLearnModGrid{margin-top:8px}.aoLearnDiscoveryResult{min-height:52px}.aoLearnDiscoveryResultInfo{min-width:0;overflow-wrap:anywhere}
  @media(max-width:430px){.aoLearnModWrap{padding-left:var(--ao-page-gutter-phone,12px);padding-right:var(--ao-page-gutter-phone,12px)}.aoLearnModGrid{grid-template-columns:1fr}.aoLearnModCardMain{min-height:96px}.aoLearnModHero{padding-top:14px}.aoLearnModHero h1{font-size:2.35rem}}
+${formationReaderCss()}
 `;
 }
 
