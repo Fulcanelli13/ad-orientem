@@ -43,31 +43,22 @@ for(const name of workflows){
     assert.match(source,/git\s+push\s+origin\s+["']HEAD:\$\{GITHUB_REF_NAME\}["']/i,
       name+" must push only back to the triggering review branch");
   }else if(name==="branch-hygiene.yml"){
-    // The GitHub-maintenance job introduced on main has one bounded write
-    // permission: delete provably merged, non-protected refs. Validate the
-    // exact safeguards; never grant arbitrary workflows mutation rights.
-    assert.match(source,/permissions:\\s*[\\s\\S]*?contents:\\s*write/i,
-      "branch hygiene must explicitly declare its bounded write permission");
-    assert.match(source,/types:\\s*\\[closed\\]/i);
-    assert.match(source,/pull_request\\.merged\\s*==\\s*true/i,
-      "only merged PR heads may be automatically retired");
-    assert.match(source,/pull_request\\.head\\.repo\\.full_name\\s*==\\s*github\\.repository/i,
-      "branch cleaner must not affect fork or external PR heads");
+    // Only this exact maintenance workflow may delete verified, unprotected,
+    // fully merged branch refs. A generic writes exception is forbidden.
+    assert.match(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
+      "branch hygiene requires an explicit permission declaration");
+    assert.match(source,/types:\s*\[closed\]/i);
+    assert.match(source,/pull_request\.merged\s*==\s*true/i);
+    assert.match(source,/pull_request\.head\.repo\.full_name\s*==\s*github\.repository/i);
     assert.match(source,/MERGED_HEAD/);
-    assert.match(source,/current[^\\n]*MERGED_HEAD/,
-      "head SHA lease must be checked before deletion");
-    assert.match(source,/protected[^\\n]*==\\s*false/,
-      "protected branches must remain untouched");
-    assert.match(source,/git merge-base --is-ancestor "\\$sha" refs\\/remotes\\/origin\\/main/,
-      "old branches may be pruned only when fully merged into main");
-    assert.match(source,/72 hours ago/,
-      "branch retention grace period must remain intact");
-    assert.match(source,/open-pr-heads\\.txt/,
-      "active PR heads must be retained");
-    assert.match(source,/gh api -X DELETE/,
-      "mutations limited to scoped GitHub ref deletion");
-    assert.doesNotMatch(source,/git\\s+push\\b/i,
-      "maintenance must not write production files");
+    assert.match(source,/current[^\n]*MERGED_HEAD/,"check exact head before removal");
+    assert.match(source,/protected[^\n]*==\s*false/,"never remove protected branches");
+    assert.ok(source.includes('git merge-base --is-ancestor "$sha" refs/remotes/origin/main'),
+      "only fully merged branches may be retired");
+    assert.match(source,/72 hours ago/,"minimum branch retention grace period");
+    assert.match(source,/open-pr-heads\.txt/,"open PR heads must be retained");
+    assert.match(source,/gh api -X DELETE/,"bounded ref deletion required");
+    assert.doesNotMatch(source,/git\s+push\b/i);
   }else{
     assert.doesNotMatch(source,/permissions:\s*[\s\S]*?contents:\s*write/i,
       name+" regained contents: write");
