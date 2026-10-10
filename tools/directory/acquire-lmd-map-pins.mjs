@@ -2,12 +2,25 @@ import fs from 'node:fs/promises';
 const BASE='https://www.latinmassdir.org';
 const codes=(process.argv.find(x=>x.startsWith('--countries='))||'--countries=mu,ie,nz,za,au,ca').split('=')[1].split(',');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const entities=s=>String(s||'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#039;|&#x27;/g,"'").replace(/&nbsp;/g,' ').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+const entities=s=>String(s||'')
+  .replace(/&#(x[0-9a-f]+|[0-9]+);/gi,(m,n)=>{const cp=n[0].toLowerCase()==='x'?parseInt(n.slice(1),16):Number(n);return Number.isInteger(cp)&&cp>=0&&cp<=0x10ffff?String.fromCodePoint(cp):m})
+  .replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/&apos;/gi,"'")
+  .replace(/&nbsp;/gi,' ').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>');
 const clean=s=>entities(String(s||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim());
 let last=0,req=0;
 async function get(url){const d=Date.now()-last;if(d<1150)await sleep(1150-d);last=Date.now();req++;const response=await fetch(url,{headers:{'User-Agent':'AdOrientemSiteResearch/1.0 (+https://github.com/Fulcanelli13/ad-orientem)','Accept':'text/html'},signal:AbortSignal.timeout(20000)});if(!response.ok)throw new Error('HTTP '+response.status);return await response.text()}
 function links(html){const out=new Set();for(const m of html.matchAll(/href\s*=\s*["']([^"']*\/venue\/[^"'#?]+\/?)["']/gi)){try{const u=new URL(entities(m[1]),BASE);if(u.hostname==='www.latinmassdir.org')out.add(u.origin+u.pathname)}catch{}}return [...out]}
 function point(html){const x=entities(html);for(const m of x.matchAll(/https?:\/\/(?:www\.)?google\.com\/maps\/search\/\?[^"'<> \t\r\n]+/gi)){try{const u=new URL(m[0]),q=u.searchParams.get('query')||'',p=q.match(/^\s*([-+]?\d+(?:\.\d+)?)\s*,\s*([-+]?\d+(?:\.\d+)?)\s*$/);if(p){const a=Number(p[1]),b=Number(p[2]);if(Math.abs(a)<=90&&Math.abs(b)<=180&&(a||b))return {lat:a,lng:b,url:u.href}}}catch{}}return null}
+if(process.argv.includes('--self-test')){
+  for(const encoded of ['&amp;','&#038;','&#38;','&#x26;']){
+    const html='<a href="https://www.google.com/maps/search/?api=1'+encoded+'query=-20.3218789%2C57.5242987">View map</a>';
+    const pos=point(html);
+    if(!pos||Math.abs(pos.lat+20.3218789)>0.000001||Math.abs(pos.lng-57.5242987)>0.000001){
+      throw new Error('MAP_POINT_DECODE_FAILED: '+encoded);
+    }
+  }
+  console.log('LMD_POINT_PARSER_SELF_TEST_PASSED');process.exit(0);
+}
 let features=[],holds=[],failures=[],byCountry={},processed=0;
 try{const robots=await get(BASE+'/robots.txt');let ua='',deny=false;for(const ln of robots.split(/\r?\n/)){const t=ln.trim();if(/^user-agent:/i.test(t))ua=t.slice(11).trim();if((ua==='*'||/AdOrientem/i.test(ua))&&/^disallow:\s*(\/|\/venue\/?|\/country\/?)\s*$/i.test(t))deny=true;}if(deny)throw new Error('ROBOTS_BLOCKS_ACQUISITION')}catch(e){if(String(e).includes('ROBOTS_BLOCKS_ACQUISITION'))throw e;console.log('robots check unavailable',String(e))}
 const seen=new Set();
