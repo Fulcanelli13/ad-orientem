@@ -1,0 +1,133 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "as_of": "2026-10-10",
+    "source": "Latin Mass Directory public venue pages and their explicit View map coordinate links",
+    "new_markers": 3,
+    "existing_map_aliases": 2,
+    "not_entrance_certified": true,
+    "do_not_import_schedules": true
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.5242987,
+          -20.3218789
+        ]
+      },
+      "properties": {
+        "source_id": "LMD:chapelle-de-la-maison-bienheureux-pere-laval-curepipe-mauritius",
+        "name": "Chapelle de la Maison Bienheureux-Père-Laval",
+        "iso": "MU",
+        "city": "Curepipe",
+        "affiliation": "ICKSP",
+        "source_url": "https://www.latinmassdir.org/venue/chapelle-de-la-maison-bienheureux-pere-laval-curepipe-mauritius/",
+        "source_matched_ids": [
+          "ICKSP-STG-094",
+          "LMD-AFR-06"
+        ],
+        "source_geometry_precision": "source_marker_unassessed",
+        "disposition": "new_provisional_pin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.5230809,
+          -20.3203394
+        ]
+      },
+      "properties": {
+        "source_id": "LMD:chapelle-du-college-saint-joseph-saint-josephs-college-chapel-curepipe-mauritius",
+        "name": "Chapelle du Collège Saint-Joseph",
+        "iso": "MU",
+        "city": "Curepipe",
+        "affiliation": "ICKSP",
+        "source_url": "https://www.latinmassdir.org/venue/chapelle-du-college-saint-joseph-saint-josephs-college-chapel-curepipe-mauritius/",
+        "source_matched_ids": [
+          "ICKSP-STG-092",
+          "LMD-AFR-07"
+        ],
+        "source_geometry_precision": "source_marker_unassessed",
+        "disposition": "new_provisional_pin"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.5022113,
+          -20.1689306
+        ]
+      },
+      "properties": {
+        "source_id": "LMD:chapelle-saint-jean-de-dieu-de-lhopital-civil-port-louis-mauritius",
+        "name": "Chapelle Saint-Jean-de-Dieu de l’hôpital civil",
+        "iso": "MU",
+        "city": "Port Louis",
+        "affiliation": "ICKSP",
+        "source_url": "https://www.latinmassdir.org/venue/chapelle-saint-jean-de-dieu-de-lhopital-civil-port-louis-mauritius/",
+        "source_matched_ids": [
+          "ICKSP-STG-096",
+          "LMD-AFR-08",
+          "ICKSP-MU-JEETOO"
+        ],
+        "source_geometry_precision": "source_marker_unassessed",
+        "disposition": "existing_map_alias"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.5246459,
+          -20.3196748
+        ]
+      },
+      "properties": {
+        "source_id": "LMD:eglise-sainte-therese-curepipe-mauritius",
+        "name": "Église Sainte-Thérèse",
+        "iso": "MU",
+        "city": "Curepipe",
+        "affiliation": "ICKSP",
+        "source_url": "https://www.latinmassdir.org/venue/eglise-sainte-therese-curepipe-mauritius/",
+        "source_matched_ids": [
+          "LMD-AFR-09"
+        ],
+        "source_geometry_precision": "source_marker_unassessed",
+        "disposition": "existing_map_alias"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.4962066,
+          -20.170451
+        ]
+      },
+      "properties": {
+        "source_id": "LMD:sanctuaire-marie-reine-de-la-paix-mary-queen-of-peace-sanctuary-port-louis-mauritius",
+        "name": "Sanctuaire Marie-Reine-de-la-Paix",
+        "iso": "MU",
+        "city": "Port Louis",
+        "affiliation": "ICKSP",
+        "source_url": "https://www.latinmassdir.org/venue/sanctuaire-marie-reine-de-la-paix-mary-queen-of-peace-sanctuary-port-louis-mauritius/",
+        "source_matched_ids": [
+          "ICKSP-STG-095",
+          "LMD-AFR-10"
+        ],
+        "source_geometry_precision": "source_marker_unassessed",
+        "disposition": "new_provisional_pin"
+      }
+    }
+  ]
+}
