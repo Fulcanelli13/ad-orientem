@@ -1,0 +1,106 @@
+{
+  "schema": "ao.github.closed-pr-archival-pilot.v1",
+  "date": "2026-10-10",
+  "mode": "exact-commit-tags-with-branch-retirement",
+  "safety": "Only exact, unprotected branch heads of closed-unmerged PRs older than 72h without open PR dependencies; archive tags verified before atomic SHA-lease deletion. If any check fails leave branch.",
+  "records": [
+    {
+      "pr": 198,
+      "branch": "recovery/exact-donor-rails-v2",
+      "sha": "b7f07c7e507cc44f4004dc8e8592270ca0f4646c",
+      "archive_tag": "archive/closed-pr/pr198",
+      "rationale": "Decomposed into merged #203/#204/#205 exact donor rails",
+      "successor_prs": [
+        203,
+        204,
+        205
+      ]
+    },
+    {
+      "pr": 208,
+      "branch": "fix/nonmass-pray-visible-regressions-v1",
+      "sha": "193687ee07766949bfc51d6a4bccbadb5b3efa29",
+      "archive_tag": "archive/closed-pr/pr208",
+      "rationale": "Historical PRAY repair rebased into subsequent #211/#217/#219 series",
+      "successor_prs": [
+        211,
+        217,
+        219
+      ]
+    },
+    {
+      "pr": 211,
+      "branch": "fix/nonmass-pray-visible-regressions-v2",
+      "sha": "144e35b3762a3cfcfdb46e500b675e38ebdd425e",
+      "archive_tag": "archive/closed-pr/pr211",
+      "rationale": "Superseded by #217 and later current-main PRAY convergence",
+      "successor_prs": [
+        217,
+        219
+      ]
+    },
+    {
+      "pr": 217,
+      "branch": "fix/nonmass-pray-visible-regressions-v3",
+      "sha": "959af54fcea8a203dd3a82729d7c3da7219c4c33",
+      "archive_tag": "archive/closed-pr/pr217",
+      "rationale": "Superseded by #219 after #218 merged upstream CSS repair",
+      "successor_prs": [
+        218,
+        219
+      ]
+    },
+    {
+      "pr": 219,
+      "branch": "fix/nonmass-pray-visible-regressions-v4",
+      "sha": "fb9ef3824752352e4ff291bb47acf37efe6c52ed",
+      "archive_tag": "archive/closed-pr/pr219",
+      "rationale": "Closed as superseded by later production PRAY and Rosary convergence",
+      "successor_prs": []
+    },
+    {
+      "pr": 238,
+      "branch": "repair/rosary-declutter-reader",
+      "sha": "2c345d35e0299e315ffeecb56c72760ca3b59a2b",
+      "archive_tag": "archive/closed-pr/pr238",
+      "rationale": "Exact Rosary declutter reconciled and merged in #250",
+      "successor_prs": [
+        250
+      ]
+    },
+    {
+      "pr": 647,
+      "branch": "prayer-confession-full-guided-journeys-20261009",
+      "sha": "f9ba6f467b3a9e77ceaa58ea8376a6c190f17044",
+      "archive_tag": "archive/closed-pr/pr647",
+      "rationale": "Confession guided journeys reconciled into merged #650",
+      "successor_prs": [
+        650
+      ]
+    },
+    {
+      "pr": 206,
+      "branch": "fix/mass-definitive-single-owner-v1",
+      "sha": "ad1c286cb74db6df3784620d0b6d6639b3837601",
+      "archive_tag": "archive/closed-pr/pr206",
+      "rationale": "Closed as superseded by current canonical R17 native Mass owner",
+      "successor_prs": []
+    },
+    {
+      "pr": 15,
+      "branch": "fix/source-first-canon-structure-r2",
+      "sha": "66b939c6465e0a5c3b326ac97304e400b64fbab6",
+      "archive_tag": "archive/closed-pr/pr15",
+      "rationale": "Source-first Canon delta integrated directly onto active R17 convergence",
+      "successor_prs": []
+    },
+    {
+      "pr": 32,
+      "branch": "integration/requiem-plan-only-overlay",
+      "sha": "75c59883d0561ee3271a206344e2cf1d7324bbd0",
+      "archive_tag": "archive/closed-pr/pr32",
+      "rationale": "Requiem plan overlay applied directly to active native Mass convergence",
+      "successor_prs": []
+    }
+  ]
+}
