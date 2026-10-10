@@ -731,7 +731,7 @@ try{
     "loaded v1.80 priest-action registry does not expose the Host elevation action at AO.SM.C0174: "+JSON.stringify(elevationState));
   assert.equal(elevationState.projectedAction,"ELEVATES HOST",
     "native state projection dropped the Host elevation action after cue resolution");
-  assert.equal(elevationState.projectedActionIconKey,"priest_elevate_host_rich","Host elevation cue lost its exact v4.6 action key");
+  assert.equal(elevationState.projectedActionIconKey,"priest_elevation","Host elevation lost the reviewed v1.80 art");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
   const elevationBackdrop=await page.locator("#ao-r17-native-reader-preview [data-role='cinematic']").evaluate(el=>({
     backgroundColor:getComputedStyle(el).backgroundColor,
