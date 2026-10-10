@@ -36,9 +36,9 @@
 
 ## Branch retirement — safe automation
 
-The [branch-hygiene workflow](../.github/workflows/branch-hygiene.yml) inventories branch refs and can remove **only** ordinary branch heads demonstrably reachable from `origin/main` and older than 72 hours. It always excludes `main`, `archive/*`, `release/*`, `snapshot/*`, pinned donor/baseline refs, active open-PR branches and unmerged heads. Its summary lists every removed branch. The one-time initial run is limited to 150 refs and can be rerun via **Actions → Branch hygiene → Run workflow**; choose audit to review candidates or prune to apply. Weekly scheduled runs audit only. Do **not** delete all branches from the Branches page in bulk: a closed PR may still contain unique research work.
+The [branch-hygiene workflow](../.github/workflows/branch-hygiene.yml) performs **two separately audited safe retirement checks**: (1) ordinary branch heads provably ancestral to `main`, and (2) exact unchanged heads of GitHub PRs already recorded **merged**, including squash/rebase merges. Both require at least 72 hours' age and independently verify the live head SHA, branch protection and absence of an open PR before deletion. `main`, `archive/*`, `release/*`, `snapshot/*`, pinned donor/baseline refs, active research, closed-unmerged PRs and unverified heads are excluded. Each pass deletes at most 150 refs and publishes its own TSV artifact. Scheduled weekly runs safely prune eligible merged work; **Actions → Branch hygiene → Run workflow → audit** previews without deletion. Do **not** mass-delete the remaining branches: an unmerged or superseded research head may contain unique evidence.
 
-> Initial 10 October audit: **953 branches** and **0 open PRs**. The 953 figure is a snapshot, not a live counter. Reachability / archive checks, not age or naming alone, determine removals.
+> Initial 10 October audit: **953 branches** and **0 open PRs**; the first ancestry-only pass safely retired **94** fully merged heads. The 953 figure is a snapshot, not a live counter. Reachability / archive checks, not age or naming alone, determine removals.
 
 ## Build artifacts and workflows
 
