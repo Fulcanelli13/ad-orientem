@@ -110,11 +110,26 @@ function resolveOfficeCollect(local,thursday,dayIndex){
     if(!acclamation)throw new Error("Tenebrae source Christus factus est absent");
     return acclamation.replace(/^v\.\s*/,"").trim();
   }
-  const match=String(oratio??"").match(/^@Tempora\/Quad6-4[\w:]*(?::s\/)([^/]+)\/([^/]+)\//);
-  if(!match)throw new Error("Tenebrae final Christus factus est unresolved source reference");
+  const original=String(oratio??"").trim();
+  const match=original.match(/^@Tempora\/Quad6-4[\w:]*(?::s\/)([^/]+)\/([^/]+)\//);
+  if(!match){
+    // French Holy Saturday source has a partially truncated DO substitution
+    // header but preserves the entire vernacular Christus factus est body.
+    // Recover exactly that written body; do not invent a translation.
+    const sourced=original.split(":s/")[1]?.trim();
+    if(dayIndex===2 && sourced?.startsWith("Le Christ") && sourced.length>100 &&
+       sourced.includes("au-dessus de tout nom"))return sourced;
+    throw new Error("Tenebrae final Christus factus est unresolved source reference");
+  }
   const base=resolveOfficeCollect(thursday,thursday,0);
-  if(!base.includes(match[1]))throw new Error("Tenebrae edition macro substitution not present in source");
-  return base.replace(match[1],match[2]);
+  if(base.includes(match[1]))return base.replace(match[1],match[2]);
+  // Good Friday's French Oratio macro erroneously references Latin rather
+  // than French words in DO's donor. Its same-day Compline macro preserves
+  // the exact French substitution; recover those, not a guessed translation.
+  const other=String(local.get("Special Completorium")??"");
+  const variant=other.match(/:s\/([^/]+)\/([^/]+)\//);
+  if(variant && base.includes(variant[1]))return base.replace(variant[1],variant[2]);
+  throw new Error("Tenebrae edition macro substitution not present in source");
 }
 function collectPrayer(local,thursday){
   let text=local.get("Oratio Matutinum");
