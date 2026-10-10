@@ -45,6 +45,8 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     language:language(win),
     unsub:null,
     suspended:false,
+    handoffPending:false,
+    handoffError:"",
   };
 
   const root=()=>win?.document?.getElementById?.(APOSTOLATE_ROOT_ID)??null;
@@ -100,6 +102,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     state.practiceRevealed=false;
     state.draft="";
     state.query="";
+    state.handoffError="";
   }
 
   function selectScenario(id,{practice=false,returnView=null}={}){
@@ -112,6 +115,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     state.practiceRevealed=false;
     state.draft="";
     state.query="";
+    state.handoffError="";
     render();
     return true;
   }
@@ -181,50 +185,65 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
     node?.remove?.();
     win?.document?.body?.classList?.remove?.("aoApostolateOpen");
     if(win?.document?.documentElement?.dataset)win.document.documentElement.dataset.aoApostolateVisibility="route";
-    state.suspended=false;
-    resetHome();
+    // The app shell calls close while an explicit outbound handoff navigates.
+    // In that case preserve the selected scenario and unsaved practice draft
+    // for the returning Formation/Prayer visitor. Normal close still resets.
+    if(!(state.suspended&&state.handoffPending)){
+      state.suspended=false;
+      state.handoffPending=false;
+      resetHome();
+    }
     return true;
   }
 
   async function followHandoff(index){
     const scenario=state.selectedId?scenarioMap.get(state.selectedId):null;
     const handoff=scenario?.handoffs?.[Number(index)]??null;
-    if(!handoff)return false;
+    if(!handoff||state.handoffPending)return false;
     const target=String(handoff.targetId??"");
-    if(scenarioMap.has(target)){
-      return selectScenario(target,{practice:false,returnView:state.view==="practice"?"practice":"help"});
-    }
-    if(target.startsWith("learn.")){
+    state.handoffPending=true;
+    state.handoffError="";
+    render();
+    try{
+      if(scenarioMap.has(target)){
+        return selectScenario(target,{practice:false,returnView:state.view==="practice"?"practice":"help"});
+      }
+      const surface=target.startsWith("learn.")?"learn":handoff.surface||
+        (target.startsWith("pray.")?"pray":target.startsWith("mass")?"mass":target==="find"?"find":null);
+      if(!["learn","pray","find","mass"].includes(surface))throw new Error("Unknown handoff destination");
       suspend();
-      const nav=await win?.AO_APP_SHELL_V1?.navigate?.("learn");
-      if(nav?.ok===false){open();return false;}
-      return (await win?.AO_LEARN_APP_V1?.openModule?.(target,{returnContext:{surface:"apostolate"}}))!==false;
-    }
-    const surface=handoff.surface||
-      (target.startsWith("pray.")?"pray":target.startsWith("mass")?"mass":target==="find"?"find":null);
-    if(surface==="pray"){
-      suspend();
-      const nav=await win?.AO_APP_SHELL_V1?.navigate?.("pray");
-      if(nav?.ok===false){open();return false;}
-      if(target&&target!=="pray")try{await win?.AO_MODULES?.open?.(target,{returnContext:{surface:"apostolate"}})}catch{}
+      const nav=await win?.AO_APP_SHELL_V1?.navigate?.(surface);
+      if(nav?.ok!==true)throw new Error("Destination navigation failed");
+      if(surface==="learn"){
+        const opened=await win?.AO_LEARN_APP_V1?.openModule?.(target,{returnContext:{surface:"apostolate"}});
+        if(opened==null||opened===false||opened?.ok===false)throw new Error("Formation module did not open");
+      }
+      if(surface==="pray"&&target&&target!=="pray"){
+        const opened=await win?.AO_MODULES?.open?.(target,{returnContext:{surface:"apostolate"}});
+        if(opened==null||opened===false||opened?.ok===false)throw new Error("Prayer module did not open");
+      }
       return true;
+    }catch(error){
+      try{win?.console?.error?.("Apostolate handoff failed",error)}catch{}
+      // Never strand the user on an empty destination or report false success.
+      // Preserve the selected scenario and unsaved draft for a retry.
+      if(state.suspended){
+        try{await win?.AO_APP_SHELL_V1?.navigate?.("apostolate")}catch{}
+        if(!state.open)open();
+      }
+      state.handoffError=language(win)==="fr"
+        ?"Impossible d’ouvrir cette destination. Veuillez réessayer."
+        :"This destination could not be opened. Please try again.";
+      render();
+      return false;
+    }finally{
+      state.handoffPending=false;
+      if(state.open)render();
     }
-    if(surface==="find"){
-      suspend();
-      const nav=await win?.AO_APP_SHELL_V1?.navigate?.("find");
-      if(nav?.ok===false){open();return false;}
-      return true;
-    }
-    if(surface==="mass"){
-      suspend();
-      const nav=await win?.AO_APP_SHELL_V1?.navigate?.("mass");
-      if(nav?.ok===false){open();return false;}
-      return true;
-    }
-    return false;
   }
 
   function goBack(){
+    state.handoffError="";
     if(state.view==="skill"){resetHome();render();return true;}
     if(state.view==="scenario"){
       const target=state.returnView||"answer";
@@ -260,7 +279,7 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
       state.practiceRevealed=!state.practiceRevealed;render();return;
     }
     if(button.dataset?.aoApHandoff!==undefined){
-      void followHandoff(button.dataset.aoApHandoff);return;
+      event.preventDefault?.();void followHandoff(button.dataset.aoApHandoff);return;
     }
   }
 
@@ -328,6 +347,8 @@ export function createApostolateOwner(win=globalThis,{scenarios=[],skills=[]}={}
       view:state.open?state.view:null,
       selectedId:state.selectedId,
       selectedSkillId:state.selectedSkillId,
+      handoffPending:state.handoffPending,
+      handoffError:state.handoffError,
       practiceDraftPersistence:"NONE",
       ribbonExposed:Boolean(win?.document?.querySelector?.("[data-ao-app-surface='apostolate'],[data-ao-ribbon='apostolate']")),
       readyFamilies:Object.freeze(
