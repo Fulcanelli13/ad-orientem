@@ -17,11 +17,11 @@ assert.equal(manifest.sites.length,39);
 assert.equal(manifest.one_relic_aggregate_per_site,true);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:sh.shrines,pilgrimages:sh.pilgrimages,routes:sh.routes,temporalLinks:sh.temporalLinks,sources:sources.sources,places:geo.places}).pass,true);
-assert.equal(geo.places.length,181);
-assert.equal(sh.shrines.length,177);
-assert.equal(sh.pilgrimages.length,205);
-assert.equal(sources.sources.length,260);
-assert.equal(sacred.relics.length,121);
+assert.equal(geo.places.length,182);
+assert.equal(sh.shrines.length,178);
+assert.equal(sh.pilgrimages.length,206);
+assert.equal(sources.sources.length,261);
+assert.equal(sacred.relics.length,122);
 const idset=new Set(),pmap=new Map(geo.places.map(p=>[p.place_id,p]));
 const sid=new Set(),selectionIds=new Set(selection.site_decisions.map(x=>x.selection_id));
 for(const group of manifest.sites){
@@ -63,4 +63,4 @@ assert.equal(rome.length,3,"Original Holy Crown/Cross/Nail remain independent re
 assert.equal(points.filter(p=>rome.some(x=>x.item_id===p.properties.item_id)).length,1,"Original multi-object relic sites must not flood the pin map");
 const remaining=selection.site_decisions.filter(x=>!x.existing_place_id&&!manifest.sites.some(g=>g.selection_ids.includes(x.selection_id)));
 assert.ok(remaining.length===0,"All 39 originally shortlisted new Places are now mapped");
-console.log("PASS 39 principal relic destinations, 43 saint associations, one marker per Place, 121 relic records, 177 shrines, 205 pilgrimages");
+console.log("PASS 39 principal relic destinations, 43 saint associations, one marker per Place, 122 relic records, 178 shrines, 206 pilgrimages");
