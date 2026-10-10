@@ -24,6 +24,7 @@ const validHash=/^[a-f0-9]{64}$/;
 const isAcquired=a=>validHash.test(a.acquisition?.originalSha256||"")&&!!a.acquisition?.archiveOriginal;
 const isCC0=a=>a.source?.rights==="CC0";
 const isPDart=a=>a.source?.rights==="PUBLIC_DOMAIN_PD_ART_PDM";
+const isKressHeld=a=>a.source?.rights==="PUBLIC_DOMAIN_KRESS_REUSE_HOLD";
 const noArtCertification=a=>a.tags?.artCuratorApproval!==true&&a.tags?.phoneHeroCropApproval!==true&&a.review?.status==="CANDIDATE"&&a.image===null;
 for(const a of works.artworks){
  assert.equal(a.medium,"painting",a.id+": no engraving/fresco/photo may enter painting registry");
@@ -33,7 +34,8 @@ for(const a of works.artworks){
  for(const r of a.tags.liturgicalSeasonIds||[])assert.ok(allPeriods.includes(r),a.id+" unknown liturgical period "+r);
  assert.ok(noArtCertification(a),a.id+" accidentally promoted before human review");
  if(isPDart(a))assert.equal(a.review.rights,"PD_ART_JURISDICTION_REVIEW_PENDING");
- assert.ok(isCC0(a)||isPDart(a),a.id+" unsupported rights type");
+ if(isKressHeld(a))assert.equal(a.review.rights,"KRESS_REPRODUCTION_RIGHTS_REVIEW_PENDING");
+ assert.ok(isCC0(a)||isPDart(a)||isKressHeld(a),a.id+" unsupported rights type");
 }
 function explicitMatch(t,a){
  const icon=new Set(a.tags.iconography||[]);
@@ -57,6 +59,7 @@ const subjectCoverage=allTargets.map(t=>{
  return {id:t.id,title:t.title,priority:t.priority,type:t.type,contexts:t.contexts,
   required:t.minimumOriginals,sourceCandidates:matching.length,downloadedOriginals:original.length,
   cc0Originals:original.filter(isCC0).length,pdArtOriginalsHeld:original.filter(isPDart).length,
+  kressRightsHeldOriginals:original.filter(isKressHeld).length,
   relatedSymbolicCandidates:symbolicFallback.length,
   relatedSymbolicOriginals:symbolicFallback.filter(isAcquired).length,
   missingToMinimum:Math.max(0,t.minimumOriginals-original.length),
@@ -87,6 +90,7 @@ const summary={
  acquiredOriginals:works.artworks.filter(isAcquired).length,
  cc0AcquiredOriginals:works.artworks.filter(a=>isAcquired(a)&&isCC0(a)).length,
  pdArtRightsHeldOriginals:works.artworks.filter(a=>isAcquired(a)&&isPDart(a)).length,
+ kressRightsHeldOriginals:works.artworks.filter(a=>isAcquired(a)&&isKressHeld(a)).length,
  rosaryMysteriesSourceCovered:rosary.filter(x=>x.candidates>=x.required).length,
  rosaryMysteriesOriginalCovered:rosary.filter(x=>x.originals>=x.required).length,
  subjectsMeetingOriginalMinimum:subjectCoverage.filter(t=>!t.missingToMinimum).length,
@@ -106,7 +110,7 @@ const report={schema:"AO_SACRED_ART_ALL_MODULE_COVERAGE_AUDIT_V2",date:"2026-10-
  "No dated mass/art mapping or full 2024/2027 image match certification is claimed.",
  "A strict explicit tag-based audit uses the curator-written iconographic crosswalk but does not infer the observed feast or app publishability from a translated title.",
  "Related narrative/seasonal paintings are reported separately and NEVER satisfy exact source-specific subject quotas. Iconography tags are preliminary until manual review.",
- "Commons PD-Art images are held separately from source-certified CC0 originals."
+ "Commons PD-Art and Kress Foundation public-domain images are held separately from source-certified CC0 originals; neither implies worldwide commercial permission."
  ],summary,rosary,seasonFallbackPool:season,seasonalDateSweep:dateSweep,subjects:subjectCoverage};
 writeFileSync(outdir+"/all-modules-v2.json",JSON.stringify(report,null,2)+"\n");
 const lines=[
@@ -115,7 +119,7 @@ const lines=[
  "Exact tags only. Every source image requires separate artistic, subject, licence and phone-crop review.",
  "",
  "Scope: "+summary.sourceTargets+" named subjects across Pray, Calendar, Formation and Scripture; "+summary.candidatePaintings+" painting records.",
- "Original images acquired: "+summary.acquiredOriginals+"; of these "+summary.cc0AcquiredOriginals+" CC0 and "+summary.pdArtRightsHeldOriginals+" PD-Art held for rights clearance.",
+ "Original images acquired: "+summary.acquiredOriginals+"; of these "+summary.cc0AcquiredOriginals+" museum CC0, "+summary.pdArtRightsHeldOriginals+" Commons PD-Art held, and "+summary.kressRightsHeldOriginals+" Kress Foundation public-domain held for rights clearance.",
  "Traditional Rosary: "+summary.rosaryMysteriesOriginalCovered+"/15 mysteries with >=2 acquired originals.",
  "Target subject minimums: "+summary.subjectsMeetingOriginalMinimum+"/"+summary.sourceTargets+" met on explicitly assigned original sources.",
  "Full observed-date calendar mapping: NOT DONE, despite "+dateSweep.seasonalOriginalAvailableDates+"/"+dateSweep.dates+" seasonal fallback logical possibilities.",
@@ -132,7 +136,7 @@ const lines=[
  "",
  "## Rights gate",
  "",
- "The "+summary.pdArtRightsHeldOriginals+" Commons PD-Art originals remain outside app publication, without silent conversion to CC0.",
+ "The "+summary.pdArtRightsHeldOriginals+" Commons PD-Art and "+summary.kressRightsHeldOriginals+" Kress Foundation public-domain originals remain outside app publication, without silent conversion to CC0.",
  "",
  "CI source of truth: data/calendar/sacred-art-candidates.v1.json and data/calendar/sacred-art-subject-targets.v2.json."
 ];
