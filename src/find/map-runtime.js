@@ -10,6 +10,9 @@ export function massMapProviderGroup(value){
   const key=String(value??"").toUpperCase();
   return Object.hasOwn(MASS_MAP_GROUP_COLORS,key)?key:"OTHER";
 }
+const HERITAGE_POINT_COLOR=["match",["get","heritage_primary"],
+  "shrines","#c9ae75","relics","#a99bc5","pilgrimages","#87ac9b",
+  "apparitions","#a0b5c8","traditions","#c49c93","#b8b1a2"];
 const POINT_COLOR=["match",["get","provider_group"],
   "FSSP",MASS_MAP_GROUP_COLORS.FSSP,
   "ICKSP",MASS_MAP_GROUP_COLORS.ICKSP,
@@ -130,6 +133,7 @@ export function exploreMapFeatures(items){
       properties:{
         item_id:String(item.item_id??""),
         lens:String(item.lens??""),
+        heritage_primary:String(item.heritage_primary??""),
         name:String(item.title??""),
         precision:String(g.precision??"unknown"),
         approximate:Boolean(g.approximate),
@@ -189,7 +193,7 @@ export async function mountExploreMap(container,items,{
       paint:{"text-color":"#080c12"}});
     map.addLayer({id:prefix+"-points",type:"circle",source:sourceId,filter:["!",["has","point_count"]],
       paint:{"circle-radius":["case",["get","approximate"],6,8],
-        "circle-color":POINT_COLOR,
+        "circle-color":["case",["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR],
         "circle-opacity":["case",["get","approximate"],0.65,0.97],
         "circle-stroke-width":["case",["get","approximate"],1.6,2.4],
         "circle-stroke-color":["case",["get","approximate"],"#17212d","#f0e7d4"]}});
