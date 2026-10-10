@@ -1,0 +1,271 @@
+{
+  "schema": "AO_SACRED_ART_MODULE_TARGETS_V1",
+  "ownerIssue": 885,
+  "status": "ACQUISITION_WORKLIST_NOT_UI_APPROVAL",
+  "editorialRule": "Masterpieces first, exact subject second, substantial variety for recurring prayers. Never invent a saint portrait or attribute devotional subject based on a loose keyword.",
+  "principalTraditionalRosaryMysteries": [
+    {
+      "key": "rosary.joy1",
+      "title": "Annunciation",
+      "reference": "Luke 1:26–38",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.joy2",
+      "title": "Visitation",
+      "reference": "Luke 1:39–56",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.joy3",
+      "title": "Nativity",
+      "reference": "Luke 2:1–20",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.joy4",
+      "title": "Presentation in the Temple",
+      "reference": "Luke 2:22–38",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.joy5",
+      "title": "Finding the Child Jesus in the Temple",
+      "reference": "Luke 2:41–52",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.sor1",
+      "title": "Agony in the Garden",
+      "reference": "Luke 22:39–46",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.sor2",
+      "title": "Scourging at the Pillar",
+      "reference": "John 19:1",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.sor3",
+      "title": "Crowning with Thorns",
+      "reference": "Matthew 27:27–31",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.sor4",
+      "title": "Carrying of the Cross",
+      "reference": "John 19:17",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.sor5",
+      "title": "Crucifixion",
+      "reference": "John 19:18–30",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.glo1",
+      "title": "Resurrection",
+      "reference": "Matthew 28:1–10",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.glo2",
+      "title": "Ascension",
+      "reference": "Acts 1:6–11",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.glo3",
+      "title": "Descent of the Holy Ghost",
+      "reference": "Acts 2:1–13",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.glo4",
+      "title": "Assumption of Our Lady",
+      "reference": "Traditional sacred subject (not a biblical scene described in one verse)",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    },
+    {
+      "key": "rosary.glo5",
+      "title": "Coronation of Our Lady",
+      "reference": "Traditional sacred subject (not a biblical scene described in one verse)",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "HIGH",
+      "requiresSubjectEvidence": true
+    }
+  ],
+  "recurringPrayerTargets": [
+    {
+      "key": "angelus",
+      "subject": "Annunciation/Incarnation",
+      "minimumMasterpieces": 3,
+      "idealMasterpieces": 8,
+      "priority": "HIGHEST",
+      "slots": [
+        "morning",
+        "midday",
+        "evening"
+      ]
+    },
+    {
+      "key": "regina-caeli",
+      "subject": "Resurrection / Paschal joy with Marian connection",
+      "minimumMasterpieces": 3,
+      "idealMasterpieces": 6,
+      "priority": "HIGHEST",
+      "slots": [
+        "morning",
+        "midday",
+        "evening"
+      ]
+    },
+    {
+      "key": "adoration",
+      "subject": "Blessed Sacrament, Last Supper, Disciples at Emmaus where appropriate",
+      "minimumMasterpieces": 3,
+      "idealMasterpieces": 6,
+      "priority": "HIGH"
+    },
+    {
+      "key": "stations",
+      "subject": "Stations of the Cross / Passion narrative",
+      "minimumMasterpieces": 14,
+      "idealMasterpieces": 28,
+      "priority": "HIGH",
+      "note": "Some Stations may have no outstanding unique panel painting: prefer a sound related Passion painting over a cheap illustration."
+    },
+    {
+      "key": "sacred-heart",
+      "subject": "Sacred Heart of Jesus, source-confirmed iconographic depiction",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 5,
+      "priority": "MEDIUM"
+    },
+    {
+      "key": "immaculate-heart",
+      "subject": "Immaculate Heart of Mary, source-confirmed iconographic depiction",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 5,
+      "priority": "MEDIUM"
+    },
+    {
+      "key": "confession",
+      "subject": "Penitent Magdalene, Return of Prodigal Son, Repentance of Peter",
+      "minimumMasterpieces": 3,
+      "idealMasterpieces": 6,
+      "priority": "MEDIUM"
+    },
+    {
+      "key": "saint-joseph",
+      "subject": "Saint Joseph with the Child Jesus / Holy Family",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 5,
+      "priority": "MEDIUM"
+    },
+    {
+      "key": "holy-souls",
+      "subject": "All Souls / Purgatory, verified historically Catholic depiction",
+      "minimumMasterpieces": 2,
+      "idealMasterpieces": 4,
+      "priority": "LATER"
+    }
+  ],
+  "portraitTargets": [
+    {
+      "personId": "pius-x",
+      "label": "Saint Pius X",
+      "kind": "historically contemporary oil portrait preferred",
+      "portraitNotEqualSaintIcon": true,
+      "candidateEvidence": [
+        {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pope_Pius_X_(by_Adolfo_M%C3%BCller-Ury)_%E2%80%93_The_Catholic_University_of_America.jpg",
+          "artist": "Adolfo Müller-Ury",
+          "observedMaxDimension": 2150,
+          "status": "HOLD_BELOW_2500_LONG_SIDE"
+        },
+        {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Otto_Hierl-Deronco_-_Papst_Pius_X._-_10400_-_Bavarian_State_Painting_Collections.jpg",
+          "artist": "Otto Hierl-Deronco",
+          "observedMaxDimension": 768,
+          "status": "REJECT_LOW_RESOLUTION"
+        },
+        {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Pio_X,_Pedro_Subercaseaux_1912.jpg",
+          "artist": "Pedro Subercaseaux",
+          "observedMaxDimension": 800,
+          "status": "REJECT_LOW_RESOLUTION"
+        },
+        {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muller-Ury_-_Pius_X.jpg",
+          "artist": "Adolfo Müller-Ury",
+          "observedMaxDimension": null,
+          "status": "RESEARCH_SOURCE_IMAGE_QUALITY"
+        }
+      ]
+    },
+    {
+      "personId": "pius-v",
+      "label": "Saint Pius V",
+      "kind": "authentic old-master portrait vs later devotional depiction",
+      "status": "RESEARCH_REQUIRED"
+    },
+    {
+      "personId": "gregory-i",
+      "label": "Saint Gregory the Great",
+      "kind": "traditional saint iconography, not an authenticated lifetime portrait",
+      "status": "RESEARCH_REQUIRED"
+    }
+  ],
+  "licensing": "Prefer museum CC0 or public-domain faithful 2D reproductions. A Commons PD-Art label alone does not certify museum grade, resolution, or global commercial rights.",
+  "nonclaims": [
+    "This is a sourcing plan. It does not mean artworks have been acquired or editorially approved.",
+    "Luminous Rosary mysteries are optional later additions, not the 15 traditional mysteries.",
+    "Portfolio diversification never overrides the 1962 observed calendar or verified sources."
+  ]
+}
