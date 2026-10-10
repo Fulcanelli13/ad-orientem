@@ -61,4 +61,65 @@ const untouched=await recoverReaderProperOmissions(authoritative,{hostResolver})
 assert.equal(untouched,authoritative,"complete host Proper should remain authoritative by identity");
 assert.deepEqual(calls,[],"complete host Proper triggered unnecessary source recovery");
 
+
+// The October 8 shape is one principal prayer + one source-owned ordinary
+// commemoration in each of the three oration groups. Recover the missing
+// French commemoration, not an English fallback or another copy of St Bridget.
+const ownedPaths=["Sancti/10-08","Sancti/10-07cc"];
+const sections=[["collects","Oratio"],["secrets","Secreta"],["postcommunions","Postcommunio"]];
+const sourceOrations=new Map();
+for(const [index,owner] of ownedPaths.entries()){
+  for(const language of ["la","en","fr"]){
+    const map=new Map();
+    for(const [,section] of sections){
+      const body=language==="la"
+        ? (index===0?"Dómine Deus noster, qui beátæ Birgíttæ intercessióne":"Sanctórum Mártyrum tuórum nos, Dómine, Sérgii")
+        : language==="fr"
+          ? (index===0?"Seigneur notre Dieu, par l’intercession de Brigitte":"Faites, Seigneur, que les mérites des saints Martyrs")
+          : (index===0?"O Lord God, through Saint Bridget":"May the blessed merits of Your holy Martyrs");
+      map.set(section,[body+" "+section+".","$Per Dominum"]);
+    }
+    sourceOrations.set(owner+"|"+language,map);
+  }
+}
+const tracked=[];
+const sourceOwnerResolver={async resolveSource(path,language){
+  tracked.push([path,language]);
+  const map=sourceOrations.get(path+"|"+language);
+  if(!map)return {map:new Map(),order:[]};
+  return {map,order:[...map.keys()]};
+}};
+const basePrayers=Object.fromEntries(sections.map(([field,section])=>[field,ownedPaths.map((p,index)=>({
+  lat:sourceOrations.get(p+"|la").get(section)[0],
+  en:sourceOrations.get(p+"|en").get(section)[0],
+  fr:index===0?sourceOrations.get(p+"|fr").get(section)[0]:""
+}))]));
+const multi={
+  ...authoritative,
+  data:{
+    ...authoritative.data,
+    sourcePath:ownedPaths[0],
+    calendarCommemorations:[{path:ownedPaths[1],prayerSourcePath:ownedPaths[1],inseparable:false}],
+    ...basePrayers,
+  }
+};
+const restored=await recoverReaderProperOmissions(multi,{hostResolver:sourceOwnerResolver});
+for(const [field] of sections){
+  assert.equal(restored.data[field].length,2,"lost a commemorative "+field);
+  assert.equal(restored.data[field][0].fr,multi.data[field][0].fr,"overwrote the host principal prayer");
+  assert.match(restored.data[field][1].fr,/mérites des saints Martyrs/);
+  assert.match(restored.data[field][1].fr,/Par Notre-Seigneur Jésus-Christ/);
+  assert.deepEqual(restored.data[field][1].lat,multi.data[field][1].lat);
+}
+assert.equal(tracked.every(([path])=>path===ownedPaths[1]),true,
+  "recovered the commemoration from the wrong source owner");
+const {properToReaderSlots}=await import("../src/mass/proper-reader-slots.js");
+assert.equal(properToReaderSlots(restored.data,{language:"fr"}).ready,true,
+  "two-oratio French source recovery did not restore the source-first R17 reader");
+const wrongLatin={...multi,data:{...multi.data,
+  collects:[multi.data.collects[0],{...multi.data.collects[1],lat:"Unrelated martyr oration",fr:""}]}};
+const refused=await recoverReaderProperOmissions(wrongLatin,{hostResolver:sourceOwnerResolver});
+assert.equal(refused.data.collects[1].fr,"","mismatched source path silently acquired another feast's prayer");
+assert.equal(properToReaderSlots(refused.data,{language:"fr"}).ready,false);
+
 console.log("PASS reader Proper runtime recovery: exact missing base sections recovered without overriding host text.");
