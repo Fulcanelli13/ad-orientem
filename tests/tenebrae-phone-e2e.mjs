@@ -61,7 +61,7 @@ try{
   return el?el.scrollWidth-el.clientWidth:null
  });
  assert.ok(overflow!==null&&overflow<4,"Tenebrae horizontal mobile overflow: "+overflow);
- assert.deepEqual(external.filter(url=>/Quad6-[456]|Psalm(?:50|68|231)\\.txt/i.test(url)),[],
+ assert.deepEqual(external.filter(url=>/Quad6-[456]|Psalm(?:50|68|231)/i.test(url)),[],
    "Tenebrae text/psalter must never request upstream URLs at runtime");
  assert.ok(requests.some(r=>r.endsWith("/psalms-01.json")),"Offline Psalter not loaded");
  assert.equal(errors.length,0,"Tenebrae phone console errors: "+errors.join(" | "));
