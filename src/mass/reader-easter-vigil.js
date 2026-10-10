@@ -44,6 +44,42 @@ function ritualResponseRows(prefix,text,sourceIds=[],{cantors=false}={}){
   }));
 }
 
+// Recovered 1962 blessing text, including the rubrically distinct processions.
+// The original 38-state graph owns events; prayer subdivisions are display-only.
+function fontRows(payload,{atSeparateBaptistery=false}={}){
+  const book=payload.font1962;
+  if(book?.schema!=="AO_1962_EASTER_VIGIL_FONT_B07"||book.segments?.length!==17)
+    throw new Error("1962 font blessing source is required");
+  const sourceIds=atSeparateBaptistery?["EV-FONT-440"]:["EV-FONT-420"];
+  const blessing=book.segments.flatMap((part,i)=>{
+    if(!part.latin||!part.english||!part.french)throw new Error("Untranslated font prayer: "+part.id);
+    const languages=["latin","english","french"].map(k=>part[k].split(/\n/));
+    if(languages.some(x=>x.length!==languages[0].length))throw new Error("Font prayer alignment: "+part.id);
+    return languages[0].map((latin,j)=>freeze({
+      id:"EV-FONT-B07-"+part.id+"-"+(j+1),kind:latin.startsWith("℟.")?"RESPONSE":latin.startsWith("℣.")?"VERSICLE":"TEXT",
+      latin,vernacular:languages[1][j],english:languages[1][j],french:languages[2][j],
+      speaker:latin.startsWith("℟.")?"ALL":"CELEBRANT",
+      sourceIds:freeze([...sourceIds]),action:part.action,sourceSection:part.section
+    }));
+  });
+  if(atSeparateBaptistery){
+    return freeze([...processionRows(payload,"EV-FONT-440",{includeCollect:true}),...blessing]);
+  }
+  return freeze(blessing);
+}
+function processionRows(payload,id,{includeCollect=true}={}){
+  const c=payload.font1962?.procession;
+  if(!c||c.chant?.length!==3||c.atFont?.length!==5)
+    throw new Error("1962 Sicut cervus procession and font collect missing");
+  const lines=[...c.chant,...(includeCollect?c.atFont:[])];
+  return freeze(lines.map((p,i)=>freeze({
+    id:"EV-FONT-B07-"+id+"-P"+(i+1),kind:p.latin.startsWith("℟.")?"RESPONSE":p.latin.startsWith("℣.")?"VERSICLE":"TEXT",
+    latin:p.latin,vernacular:p.english,english:p.english,french:p.french,
+    speaker:p.role||(p.latin.startsWith("℟.")?"ALL":"CELEBRANT"),
+    sourceIds:freeze([id])
+  })));
+}
+
 function validateGraph(graph){
   if(!Array.isArray(graph)||graph.length!==REQUIRED_COUNT)throw new Error("Certified 38-record Easter Vigil graph required");
   const ids=new Set();
@@ -63,6 +99,8 @@ function validatePayload(payload){
     if(!payload.donor?.[key]?.lat)throw new Error("Easter Vigil donor text missing "+key);
   }
   if(!payload.bridge?.litanyI?.lat||!payload.bridge?.litanyII?.lat||!payload.bridge?.renewal?.lat)throw new Error("Easter Vigil bridge payload incomplete");
+  if(payload.font1962?.segments?.length!==17||payload.font1962.conditionalBaptism?.status!=="RITUAL_OWNER_UNRESOLVED__DO_NOT_PRESENT_AS_COMPLETE")
+    throw new Error("1962 full font blessing required with baptism-source critical hold");
   if(EASTER_VIGIL_PROPHECY_READINGS.length!==4)throw new Error("Exactly four source-pinned 1962 prophecies required");
   EASTER_VIGIL_PROPHECY_READINGS.forEach((p,index)=>{
     if(p.stateId!=="EV-LESS-"+String(index+1).padStart(2,"0")+"-READ"||
@@ -122,10 +160,26 @@ function surfaceFor(record,payload){
   if(id.startsWith("EV-LESS-"))return prophecySurface(id,payload);
   if(id==="EV-LIT1-400")return freeze({key:"LITANY_I",title:"Litany of the Saints · I",paragraphs:ritualResponseRows("EV-LIT1",payload.bridge.litanyI,[id],{cantors:true})});
   if(id==="EV-FONT-410")return freeze({key:"NO_FONT",title:"No Baptismal Font Branch",paragraphs:bilingualRows("EV-NOFONT",payload.bridge.noFont,[id])});
-  if(id==="EV-FONT-420")return freeze({key:"FONT_BLESSING",title:"Blessing of the Baptismal Font",paragraphs:freeze([...bilingualRows("EV-FONT",payload.bridge.font,[id]),...bilingualRows("EV-FONT-OVERVIEW",payload.donor.fontOverview,[id])])});
-  if(id==="EV-BAPT-430")return freeze({key:"BAPTISMS",title:"Baptisms · if any",paragraphs:bilingualRows("EV-BAPT",payload.bridge.baptisms,[id])});
-  if(id==="EV-FONT-440")return freeze({key:"BAPTISTERY",title:"Ministers at a Separate Baptistery",paragraphs:bilingualRows("EV-BAPTISTERY",payload.donor.fontOverview,[id])});
-  if(id==="EV-FONT-450")return freeze({key:"FONT_RETURN",title:"Return from the Font",paragraphs:bilingualRows("EV-FONT-RETURN",payload.donor.fontOverview,[id])});
+  if(id==="EV-FONT-420")return freeze({key:"FONT_BLESSING",title:"Blessing of the Baptismal Water",paragraphs:fontRows(payload)});
+  if(id==="EV-BAPT-430")return freeze({
+    key:"BAPTISMS",title:"Baptisms · conditional Roman Ritual rite",
+    paragraphs:freeze([
+      freeze({id:"EV-BAPT-430-HOLD",kind:"RUBRIC",
+        latin:"Si adsunt baptizandi, baptismus confertur secundum Rituale Romanum, titulum II.",
+        english:"Where candidates are present, Baptism is administered according to the applicable rite of the Roman Ritual, Title II. Full baptismal texts have not yet been independently collated in this reader.",
+        french:"En présence de candidats, le baptême est conféré selon le rite applicable du Rituel romain, titre II. Les textes complets du baptême restent à collationner dans ce lecteur.",
+        sourceIds:freeze([id]),sourceStatus:"RITUAL_OWNER_UNRESOLVED__DO_NOT_PRESENT_AS_COMPLETE"})
+    ])
+  });
+  if(id==="EV-FONT-440")return freeze({key:"BAPTISTERY",title:"At the Separate Baptistery · Water Blessing",paragraphs:fontRows(payload,{atSeparateBaptistery:true})});
+  if(id==="EV-FONT-450")return freeze({
+    key:"FONT_RETURN",title:"Translation of the Blessed Baptismal Water / Return from Baptistery",
+    paragraphs:payload.__fontMode==="SEPARATE_BAPTISTERY"?freeze([
+      freeze({id:"EV-FONT-450-SILENT",kind:"RUBRIC",latin:"In silentio revertuntur in ecclesiam.",
+        english:"The ministers return to the church in silence.",french:"Les ministres reviennent à l'église en silence.",
+        sourceIds:freeze([id])})
+    ]):processionRows(payload,id)
+  });
   if(id==="EV-REN-490")return freeze({key:"RENEWAL_PREP",title:"Prepare for the Baptismal Promises",paragraphs:bilingualRows("EV-REN-PREP",payload.bridge.renewal,[id])});
   if(id==="EV-REN-500")return freeze({key:"RENEWAL",title:"Renewal of Baptismal Promises",paragraphs:ritualResponseRows("EV-REN",payload.bridge.renewal,[id])});
   if(id==="EV-REN-510")return freeze({key:"RENUNCIATIONS",title:"Renunciations",paragraphs:ritualResponseRows("EV-REN-A",payload.bridge.renunciations,[id])});
@@ -138,23 +192,38 @@ function surfaceFor(record,payload){
 }
 
 function activeGraph(graph,{fontMode,baptismPresent}){
-  return freeze(graph.filter(r=>{
+  const selected=graph.filter(r=>{
     if(r.branch_condition==="FONT_MODE=NONE")return fontMode==="NONE";
     if(r.branch_condition==="FONT_MODE=IN_CHURCH")return fontMode==="IN_CHURCH";
     if(r.branch_condition==="FONT_MODE=SEPARATE_BAPTISTERY")return fontMode==="SEPARATE_BAPTISTERY";
     if(r.branch_condition==="FONT_MODE!=NONE")return fontMode!=="NONE";
     if(r.branch_condition==="BAPTISM_PRESENT=true")return baptismPresent;
     return true;
-  }));
+  });
+  // The canonical 38-record inventory places the separate-baptistery branch
+  // after the optional baptism record. In the actually selected branch the
+  // font MUST be blessed before any baptisms. Reorder projection only.
+  if(fontMode==="SEPARATE_BAPTISTERY"){
+    const font=selected.findIndex(r=>r.id==="EV-FONT-440");
+    const bapt=selected.findIndex(r=>r.id==="EV-BAPT-430");
+    if(bapt>=0&&font>bapt){
+      const [record]=selected.splice(font,1);
+      selected.splice(bapt,0,record);
+    }
+  }
+  return freeze(selected);
 }
 
 export function buildEasterVigilReader({graph,payload,fontMode="IN_CHURCH",baptismPresent=false}={}){
   validateGraph(graph);validatePayload(payload);
   if(!FONT_MODES.has(fontMode))throw new Error("Unsupported Easter Vigil font mode: "+fontMode);
+  if(fontMode==="NONE"&&baptismPresent)
+    throw new Error("Baptism present requires a configured font branch; do not invent a ritual");
   const active=activeGraph(graph,{fontMode,baptismPresent:Boolean(baptismPresent)});
+  const readerPayload=freeze({...payload,__fontMode:fontMode});
   const steps=freeze(active.map((record,index)=>{
-    const surface=surfaceFor(record,payload);
-    const previous=index?surfaceFor(active[index-1],payload):null;
+    const surface=surfaceFor(record,readerPayload);
+    const previous=index?surfaceFor(active[index-1],readerPayload):null;
     return freeze({
       index,total:active.length,recordId:record.id,phase:record.phase,triggerKey:record.trigger_key,
       actorScope:record.actor_scope,posture:record.posture_state??null,action:record.action_state??null,
