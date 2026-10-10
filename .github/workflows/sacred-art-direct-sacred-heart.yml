@@ -1,0 +1,35 @@
+name: Sacred art — direct Sacred Heart originals
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "data/calendar/sacred-art-direct-sacred-heart-leads.v1.json"
+      - "tools/calendar/acquire-direct-sacred-heart.py"
+      - "data/calendar/sacred-art-research-qa-tiers.v2.json"
+      - ".github/workflows/sacred-art-direct-sacred-heart.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-direct-sacred-heart
+  cancel-in-progress: true
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow numpy
+      - name: Acquire only verified historical painting reproductions, SHA-check originals
+        run: python tools/calendar/acquire-direct-sacred-heart.py
+      - name: Preserve original pixels, source rights and original checksums for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-direct-sacred-heart
+          path: artifacts/sacred-art-direct-sacred-heart/
+          retention-days: 30
+          if-no-files-found: warn
