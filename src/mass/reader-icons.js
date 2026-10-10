@@ -19,24 +19,24 @@ export const R17_ICON_KEYS=Object.freeze({
     RISE:"stand",
   }),
   priestPosition:Object.freeze({
-    // v1.77 FINAL authority: top PRIEST summary is position-only and uses
-    // the plain v4.6 pictogram family. Rich art remains action-only.
+    // 2026-10-10 user-selected original v1.80 artwork for named stations.
+    // Priest position remains independent of the transient priest action.
     FOOT_CENTER:"priest_foot",
-    ALTAR_STEPS_ASCENDING:"priest_ascending",
-    ALTAR_CENTER:"priest_centre",
-    ALTAR_EPISTLE_MISSAL:"priest_centre",
-    ALTAR_EPISTLE_SIDE:"priest_centre",
-    ALTAR_FRONT_EPISTLE_HALF:"priest_centre",
-    ALTAR_GOSPEL_MISSAL:"priest_centre",
-    ALTAR_GOSPEL_SIDE:"priest_centre",
-    ALTAR_FRONT_GOSPEL_HALF:"priest_centre",
-    ALTAR_BACK_ROUTE:"priest_centre",
-    SEDILIA:"priest_sedilia",
-    COMMUNION_RAIL:"priest_rail",
-    PREACHING_PLACE:"preaching",
-    ROUTE_CONTROLLED:"priest_centre",
-    PRIEST_TRACK_ASYNC:"priest_centre",
-    PROCESSION_ROUTE:"priest_centre",
+    ALTAR_STEPS_ASCENDING:"priest_ascending_rich",
+    ALTAR_CENTER:"priest_centre_rich",
+    ALTAR_EPISTLE_MISSAL:"priest_epistle_rich",
+    ALTAR_EPISTLE_SIDE:"priest_epistle_rich",
+    ALTAR_FRONT_EPISTLE_HALF:"priest_epistle_rich",
+    ALTAR_GOSPEL_MISSAL:"priest_gospel_rich",
+    ALTAR_GOSPEL_SIDE:"priest_gospel_rich",
+    ALTAR_FRONT_GOSPEL_HALF:"priest_gospel_rich",
+    ALTAR_BACK_ROUTE:"priest_centre_rich",
+    SEDILIA:"priest_sedilia_rich",
+    COMMUNION_RAIL:"priest_rail_after_rich",
+    PREACHING_PLACE:"priest_ambo_rich",
+    ROUTE_CONTROLLED:"priest_centre_rich",
+    PRIEST_TRACK_ASYNC:"priest_centre_rich",
+    PROCESSION_ROUTE:"priest_procession_rich",
   }),
   response:"response",
   schola:"schola",
@@ -99,8 +99,8 @@ const ACTION_ICON_KEYS=Object.freeze({
   "GENUFLECTS":"priest_genuflect",
   "PROFOUND BOW":"priest_profound_bow_rich",
   "KISSES ALTAR":"priest_kiss_altar_rich",
-  "ELEVATES HOST":"priest_elevate_host_rich",
-  "SHOWS SACRED HOST":"priest_elevate_host_rich",
+  "ELEVATES HOST":"priest_elevation",
+  "SHOWS SACRED HOST":"priest_elevation",
   "ELEVATES CHALICE":"priest_elevate_chalice_rich",
   "MINOR ELEVATION":"canon",
   "OFFERS HOST":"priest_elevate_host_rich",
@@ -114,7 +114,7 @@ const ACTION_ICON_KEYS=Object.freeze({
   "BLESSES PEOPLE":"priest_blessing_rich",
   "PROCLAIMS GOSPEL":"priest_gospel_rich",
   "READS EPISTLE":"priest_epistle_rich",
-  "TURNS TO PEOPLE":"priest_turn_people_rich",
+  "TURNS TO PEOPLE":"priest_facing_people",
   "TURNS TO ALTAR":"priest_return_altar_rich",
   "TURNS TO MISSAL":"priest_epistle_rich",
   "GOES TO GOSPEL SIDE":"priest_gospel_rich",
@@ -147,8 +147,10 @@ function priestActionKey(action){
   // The older free-text v4.6 fallback is only for independent rubric actions.
   if(action?.owner==="GESTURE_MATRIX_SOT"&&!action.iconKey)return null;
   const direct=String(action?.iconKey??"").trim();
-  if(direct)return direct;
   const label=String(action?.label??action?.action??action?.value??"").trim().toUpperCase();
+  // Exact source-owned Host elevation; do not alter "OFFERS HOST".
+  if((label==="ELEVATES HOST"||label==="SHOWS SACRED HOST") && direct==="priest_elevate_host_rich")return "priest_elevation";
+  if(direct)return direct;
   return ACTION_ICON_KEYS[label]??null;
 }
 
