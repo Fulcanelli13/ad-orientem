@@ -1153,7 +1153,9 @@ export async function mountNativeReaderPreview({
   let lastEventCinemaCue=null;
   const transientGuard=createCardTransitionTransientGuard();
   const win=doc.defaultView ?? globalThis;
-  let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,win.localStorage);
+  let customStorage=null;
+  try{customStorage=win.localStorage??null;}catch{}
+  let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
   let riteChoice=null;
   let palmGospelCueVisible=null;
 
@@ -2189,7 +2191,7 @@ export async function mountNativeReaderPreview({
     sections:sectionItems(),
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
-      customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,win.localStorage);
+      customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
       queue();
     },
     onScholaAdvance:()=>{
