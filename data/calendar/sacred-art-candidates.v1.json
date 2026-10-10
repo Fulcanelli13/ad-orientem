@@ -9018,6 +9018,350 @@
         "artCuratorApproval": false,
         "phoneHeroCropApproval": false
       }
+    },
+    {
+      "id": "cma-148758",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "dated": "1607",
+      "medium": "painting",
+      "museum": "Cleveland Museum of Art",
+      "source": {
+        "objectUrl": "https://clevelandart.org/art/1976.2",
+        "objectId": "148758",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.clevelandart.org/open-access-api",
+        "sourceEvidence": "Official museum public-domain painting flag and actual original JPEG verified in GitHub Action 38044853035; subject recategorised against source title.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "saint-andrew",
+          "martyrdom-st-andrew"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": []
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2563,
+          "height": 3400
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "EXACT_SAINT_SUBJECT_NOT_A_PASSION_STATION"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035",
+        "artifactId": 11667422693,
+        "archiveOriginal": "originals/cma-148758.jpg",
+        "originalWidth": 2563,
+        "originalHeight": 3400,
+        "originalSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833"
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "saint-andrew",
+          "martyrdom-st-andrew"
+        ],
+        "prayerKeys": [],
+        "prayerRoutes": [],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "EXACT_SAINT_SUBJECT_NOT_A_PASSION_STATION",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-910391",
+      "title": "Christ on the Cross",
+      "artist": "Cecco del Caravaggio (Francesco Buoneri)",
+      "dated": null,
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/910391",
+        "objectId": "910391",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Official museum public-domain painting flag and actual original JPEG verified in GitHub Action 38044853035; subject recategorised against source title.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "crucifixion",
+          "passion"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "stations",
+          "rosary.sor5"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3000,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_CRUCIFIXION"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035",
+        "artifactId": 11667422693,
+        "archiveOriginal": "originals/met-910391.jpg",
+        "originalWidth": 3000,
+        "originalHeight": 4000,
+        "originalSha256": "b192547889db56e37f3a46d49fca02c78bbbc60b981380c309c8106696c8bb35"
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "crucifixion",
+          "passion"
+        ],
+        "prayerKeys": [
+          "stations",
+          "rosary.sor5"
+        ],
+        "prayerRoutes": [
+          "pray.stations"
+        ],
+        "rosaryMysteries": [
+          "sor5"
+        ],
+        "stationNumbers": [
+          12
+        ],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "DIRECT_CRUCIFIXION",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-437008",
+      "title": "The Descent from the Cross",
+      "artist": "Master of the Holy Blood",
+      "dated": null,
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437008",
+        "objectId": "437008",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Official museum public-domain painting flag and actual original JPEG verified in GitHub Action 38044853035; subject recategorised against source title.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "descent-cross",
+          "deposition-christ",
+          "passion"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "stations"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 4000,
+          "height": 2614
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_DESCENT"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035",
+        "artifactId": 11667422693,
+        "archiveOriginal": "originals/met-437008.jpg",
+        "originalWidth": 4000,
+        "originalHeight": 2614,
+        "originalSha256": "d1b9128deb55d1df3de1bd4b751d042f99e8bac5639e22938954a43531a67b11"
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "descent-cross",
+          "deposition-christ",
+          "passion"
+        ],
+        "prayerKeys": [
+          "stations"
+        ],
+        "prayerRoutes": [
+          "pray.stations"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [
+          13
+        ],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "DIRECT_DESCENT",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-438338",
+      "title": "The Burial of Christ",
+      "artist": "Annibale Carracci",
+      "dated": null,
+      "medium": "painting",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/438338",
+        "objectId": "438338",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Official museum public-domain painting flag and actual original JPEG verified in GitHub Action 38044853035; subject recategorised against source title.",
+        "checkedOn": "2026-10-10"
+      },
+      "association": {
+        "subjectKeys": [
+          "burial-christ",
+          "entombment",
+          "passion"
+        ],
+        "seasonIds": [
+          "passion"
+        ],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "stations"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3122,
+          "height": 3875
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "DIRECT_BURIAL"
+      },
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035",
+        "artifactId": 11667422693,
+        "archiveOriginal": "originals/met-438338.jpg",
+        "originalWidth": 3122,
+        "originalHeight": 3875,
+        "originalSha256": "6146de5ad9544812623cee4499e7cc717d1b0c152500be72c73103a781fc5757"
+      },
+      "image": null,
+      "tags": {
+        "iconography": [
+          "burial-christ",
+          "entombment",
+          "passion"
+        ],
+        "prayerKeys": [
+          "stations"
+        ],
+        "prayerRoutes": [
+          "pray.stations"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [
+          14
+        ],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [
+          "passion"
+        ],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "DIRECT_BURIAL",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "METADATA_FLAG_CHECKED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
     }
   ],
   "notes": [
