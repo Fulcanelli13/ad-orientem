@@ -2050,7 +2050,13 @@ export function createReaderDomAdapter({
       (Number(card.scrollTop)||0);
     // Allow at least one meaningful scroll interval per distinct cue, capped
     // at 240px on longer devices. Never modify individual prayer line heights.
-    const travel=Math.min(240,Math.max(68,(cueCount-1)*56));
+    // Gloria and Credo end with two distinct word-owned events:
+    // rise at Cum Sancto Spiritu / Et vitam, then the concluding Amen.
+    // The last-cue edge guard must not swallow the penultimate cue.
+    // Give those dense Ordinary cards extra end scroll *territory*,
+    // without stretching prayer paragraphs or moving their text anchors.
+    const closingOrdinary=/\b(?:Gloria|Credo)\b/i.test(current?.sectionTitle??"");
+    const travel=Math.min(closingOrdinary?340:240,Math.max(68,(cueCount-1)*56));
     const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
     if(extra)card.style.setProperty("--ao-short-cue-tail",extra+"px");
   }
