@@ -12,6 +12,11 @@ on:
       - 'src/scripture/**'
       - 'tests/scripture-*.mjs'
       - 'package.json'
+# Cancel obsolete revisions of the same pull request; never cancel manual or main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   contracts:
     runs-on: ubuntu-latest
