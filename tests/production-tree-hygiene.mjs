@@ -110,6 +110,38 @@ for(const name of supervisedPrWorkflows){
 }
 
 
+
+// Queue ownership: changes in package.json must not launch unrelated
+// specialist source/research suites. App convergence remains the catch-all.
+const narrowWorkflows=[
+  "directory-foundation.yml",
+  "scripture-contracts.yml",
+  "rosary-edition-collation.yml",
+  "tenebrae-source-integrity.yml",
+];
+for(const name of narrowWorkflows){
+  const source=readFileSync(join(workflowDir,name),"utf8");
+  assert.doesNotMatch(source,/^\s*-\s*["']package\.json["']\s*$/m,
+    name+" broad package.json trigger reintroduced");
+}
+const additionalCancelledPrLanes=[
+  "directory-preliminary-map-r49.yml",
+  "tenebrae-source-integrity.yml",
+  "explore-mobile-r53.yml",
+  "sexual-ethics-canonical.yml",
+  "content-architecture-census.yml",
+];
+for(const name of additionalCancelledPrLanes){
+  const source=readFileSync(join(workflowDir,name),"utf8");
+  assert.ok(source.includes("group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}"),
+    name+" cannot isolate superseded PR attempts");
+  assert.ok(source.includes("cancel-in-progress: ${{ github.event_name == 'pull_request' }}"),
+    name+" must preserve main and manually launched verification");
+}
+const appWorkflow=readFileSync(join(workflowDir,"app-convergence.yml"),"utf8");
+assert.match(appWorkflow,/^\s*-\s*["']package\.json["']\s*$/m,
+  "app-wide package and dependency verification owner disappeared");
+
 const productionIndex=readFileSync("index.html","utf8");
 const massBrowserEntryTags=productionIndex.match(
   /<script\b[^>]*\bsrc=["']\.\/src\/mass\/browser-entry\.js["'][^>]*><\/script>/gi

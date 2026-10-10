@@ -12,7 +12,6 @@ on:
       - 'src/pray/tenebrae-presentation.js'
       - 'src/pray/presentation-runtime.js'
       - 'src/pray/tenebrae-styles.js'
-      - 'package.json'
       - '.github/workflows/tenebrae-source-integrity.yml'
   push:
     branches: [main]
@@ -25,9 +24,13 @@ on:
       - 'src/pray/tenebrae-presentation.js'
       - 'src/pray/presentation-runtime.js'
       - 'src/pray/tenebrae-styles.js'
-      - 'package.json'
       - '.github/workflows/tenebrae-source-integrity.yml'
   workflow_dispatch:
+
+# Only the latest revision of the same PR runs in this workflow; preserve independent manual and main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   source-check:

@@ -8,7 +8,6 @@ on:
       - 'data/pray/rosary-primary-edition-review.v1.json'
       - 'data/pray/rosary-drc-crampon-collation.v1.json'
       - 'tests/rosary-drc-crampon-collation.mjs'
-      - 'package.json'
   workflow_dispatch:
 permissions:
   contents: read
