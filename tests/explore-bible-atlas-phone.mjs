@@ -32,9 +32,16 @@ try{
  await page.locator('[data-ao-app-surface="find"]').tap();
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready",null,{timeout:60000});
  await page.locator("#ao-find-modular-root .aoHeritageMore summary").tap({timeout:15000});
+ await page.locator("#ao-find-modular-root .aoHeritageMore[open] [data-bible-atlas-open]").waitFor({state:"visible",timeout:15000});
+ // Wait past the swipe guard's 280ms suppression window after the Browse reveal.
+ await page.waitForTimeout(360);
  await page.locator("#ao-find-modular-root [data-bible-atlas-open]").tap({timeout:15000});
  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().bibleAtlas===true&&
-  document.querySelector("[data-bible-atlas]"),null,{timeout:15000});
+  document.querySelector("[data-bible-atlas]"),null,{timeout:15000}).catch(async error=>{
+  const detail=await page.evaluate(()=>({status:globalThis.AO_FIND_APP_V1?.status?.(),load:document.querySelector("#ao-find-modular-root")?.dataset?.aoFindLoadState,error:document.querySelector("[data-find-action-error]")?.textContent,scriptErrors:document.querySelector("[data-bible-atlas]")?.outerHTML?.slice(0,200)}));
+  console.error("ATLAS_ENTRY_DIAGNOSTIC",JSON.stringify(detail));
+  throw error;
+});
  const stops=page.locator("#ao-find-modular-root [data-bible-step]");
  assert.equal(await stops.count(),151,"all milestones are one continuous ribbon");
  const track=page.locator("#ao-find-modular-root [data-bible-track]");
