@@ -1,0 +1,371 @@
+{
+  "type": "FeatureCollection",
+  "schema": "AO_SACRED_GEOGRAPHY_NEW_GEO_PIN_BATCH2_V1",
+  "date": "2026-10-10",
+  "not_production": true,
+  "summary": {
+    "new_geographic_candidates": 11,
+    "existing_places_reused": 2,
+    "italian_unesco_sacri_monti_new_complex_points": 8,
+    "italian_nine_sacri_monti_total_with_previous_varallo": 9
+  },
+  "source_governance": [
+    "UNESCO 9 components count includes Varallo candidate from previous #936",
+    "Do not count historical/images/features as additional buildings when site parent exists",
+    "Historic religious or devotional significance is not automatically a canonical shrine title",
+    "Map point at complex represents campus/landscape, never each subsidiary chapel or exact entrance",
+    "Name + coordinate proximity + institutional site source for existing reuse; no independent pin minted"
+  ],
+  "reused_existing_places": [
+    {
+      "candidate_id": "SG-INV-0002",
+      "name": "Sanctuary of Our Lady of La Salette",
+      "confirmed_canonical_place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "coordinate_source": "https://mapcarta.com/fr/36457084",
+      "check_distance_m": 5.8,
+      "authoritative_site": "https://lasalette.cef.fr/",
+      "action": "REUSE_CURRENT_PLACE_AND_PIN"
+    },
+    {
+      "candidate_id": "SG-INV-0121",
+      "name": "Cathedral of Santiago de Compostela",
+      "confirmed_canonical_place_id": "place:ES:santiago-compostela-cathedral",
+      "coordinate_source": "https://www.caminodesantiago.gal/en/recurso/-/recurso/3444/catedral-de-santiago-de-compostela",
+      "check_distance_m": 61.1,
+      "authoritative_site": "https://www.catedraldesantiago.es/",
+      "action": "REUSE_CURRENT_PLACE_AND_PIN"
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.6176,
+          44.7993
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0006",
+        "name": "Sanctuary of Our Lady of Rocamadour",
+        "country": "FR",
+        "latitude": 44.7993,
+        "longitude": 1.6176,
+        "coordinate_source": "https://www.wikidata.org/wiki/Q2974823",
+        "catholic_or_heritage_authority_url": "https://www.sanctuairerocamadour.com/sanctuaire/vierge-noire/",
+        "geometry_precision": "COMPLEX_REPRESENTATIVE",
+        "original_osm_feature": null,
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:FR:grottes-saint-antoine-brive",
+          "distance_km": 39.1
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.83809,
+          41.59335
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0106",
+        "name": "Santa Maria de Montserrat Abbey",
+        "country": "ES",
+        "latitude": 41.59335,
+        "longitude": 1.83809,
+        "coordinate_source": "https://mapcarta.com/W182384937",
+        "catholic_or_heritage_authority_url": "https://abadiamontserrat.cat/en/sanctuary/start",
+        "geometry_precision": "OSM_COMPLEX_AREA",
+        "original_osm_feature": "https://www.openstreetmap.org/way/182384937",
+        "parent_or_existing_lead": "SG-NEW-MONTSERRAT-COVA",
+        "nearest_current_place": {
+          "id": "place:FR:couvent-jacobins-toulouse",
+          "distance_km": 225.9
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.21491,
+          36.06191
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0351",
+        "name": "National Shrine of Our Lady of Ta' Pinu",
+        "country": "MT",
+        "latitude": 36.06191,
+        "longitude": 14.21491,
+        "coordinate_source": "https://mapcarta.com/W33779121",
+        "catholic_or_heritage_authority_url": "https://tapinu.org/",
+        "geometry_precision": "OSM_SHRINE_BUILDING",
+        "original_osm_feature": "https://www.openstreetmap.org/way/33779121",
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:IT:cattedrale-sant-agata-catania",
+          "distance_km": 178
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.26972,
+          45.09472
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-di-crea",
+        "name": "Sacro Monte di Crea",
+        "country": "IT",
+        "latitude": 45.09472,
+        "longitude": 8.26972,
+        "coordinate_source": "https://mapcarta.com/27412878",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "SACRED_LANDSCAPE_REPRESENTATIVE",
+        "original_osm_feature": null,
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:IT:duomo-sant-eusebio-vercelli",
+          "distance_km": 28.8
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.41009,
+          45.79734
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-d-orta",
+        "name": "Sacro Monte d'Orta",
+        "country": "IT",
+        "latitude": 45.79734,
+        "longitude": 8.41009,
+        "coordinate_source": "https://mapcarta.com/36019210",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "SACRED_LANDSCAPE_REPRESENTATIVE",
+        "original_osm_feature": null,
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:IT:duomo-sant-eusebio-vercelli",
+          "distance_km": 52
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.79029,
+          45.86152
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-del-rosario-di-varese",
+        "name": "Sacro Monte del Rosario di Varese",
+        "country": "IT",
+        "latitude": 45.86152,
+        "longitude": 8.79029,
+        "coordinate_source": "https://mapcarta.com/33606278",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "SACRED_LANDSCAPE_PARENT_COMPLEX",
+        "original_osm_feature": null,
+        "parent_or_existing_lead": "EUROPE:PLACE:IT:santa-maria-del-monte-varese",
+        "nearest_current_place": {
+          "id": "place:IT:sant-ambrogio-milano",
+          "distance_km": 53.5
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.978056,
+          45.628611
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-di-oropa",
+        "name": "Sacro Monte di Oropa",
+        "country": "IT",
+        "latitude": 45.628611,
+        "longitude": 7.978056,
+        "coordinate_source": "https://fr.wikipedia.org/wiki/Mont_Sacr%C3%A9_d%27Oropa",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "SACRED_LANDSCAPE_WITHIN_OROPA_SHRINE",
+        "original_osm_feature": null,
+        "parent_or_existing_lead": "EUROPE:PLACE:IT:oropa-santuario-della-madonna-nera",
+        "nearest_current_place": {
+          "id": "place:IT:duomo-sant-eusebio-vercelli",
+          "distance_km": 48
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17731,
+          45.97471
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-di-ossuccio",
+        "name": "Sacro Monte di Ossuccio",
+        "country": "IT",
+        "latitude": 45.97471,
+        "longitude": 9.17731,
+        "coordinate_source": "https://mapcarta.com/36157886",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "SACRED_LANDSCAPE_REPRESENTATIVE",
+        "original_osm_feature": null,
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:IT:duomo-milano",
+          "distance_km": 56.8
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.61621,
+          45.96247
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-di-ghiffa",
+        "name": "Sacro Monte di Ghiffa",
+        "country": "IT",
+        "latitude": 45.96247,
+        "longitude": 8.61621,
+        "coordinate_source": "https://mapcarta.com/N2281882649",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "SACRED_LANDSCAPE_REPRESENTATIVE",
+        "original_osm_feature": "https://www.openstreetmap.org/node/2281882649",
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:IT:sant-ambrogio-milano",
+          "distance_km": 70.6
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2869,
+          46.1077
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-calvario-di-domodossola",
+        "name": "Sacro Monte Calvario di Domodossola",
+        "country": "IT",
+        "latitude": 46.1077,
+        "longitude": 8.2869,
+        "coordinate_source": "https://mapcarta.com/W542609949",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "NATURE_RESERVE_REPRESENTATIVE_NOT_ENTRANCE",
+        "original_osm_feature": "https://www.openstreetmap.org/way/542609949",
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:IT:duomo-sant-eusebio-vercelli",
+          "distance_km": 87.1
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SG-BATCH2-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.63285,
+          45.3687
+        ]
+      },
+      "properties": {
+        "candidate_id": "THEME26:IT:SACRED_LANDSCAPE:sacro-monte-di-belmonte",
+        "name": "Sacro Monte di Belmonte",
+        "country": "IT",
+        "latitude": 45.3687,
+        "longitude": 7.63285,
+        "coordinate_source": "https://mapcarta.com/W200362926",
+        "catholic_or_heritage_authority_url": "https://whc.unesco.org/en/list/1068/",
+        "geometry_precision": "CATHOLIC_SHRINE_BUILDING_REPRESENTATIVE",
+        "original_osm_feature": "https://www.openstreetmap.org/way/200362926",
+        "parent_or_existing_lead": null,
+        "nearest_current_place": {
+          "id": "place:IT:maria-ausiliatrice-torino",
+          "distance_km": 32.2
+        },
+        "publication": "RESEARCH_ONLY",
+        "canonical_place_id": null,
+        "geographic_source_terms": "Retain OSM ODbL or GeoNames attribution according to actual source; UNESCO page establishes heritage identity, not pin coordinates."
+      }
+    }
+  ]
+}
