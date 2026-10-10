@@ -7,7 +7,12 @@
     {
       "name": "Cave of Patriarchs",
       "location": "Hebron",
-      "cave_and_figures": "Abraham Sarah Isaac Rebecca Jacob Leah"
+      "cave_and_figures": "Abraham Sarah Isaac Rebecca Jacob Leah",
+      "primary_url": "https://whc.unesco.org/en/list/1565/",
+      "original_role": "UNESCO_WORLD_HERITAGE_INSTITUTIONAL",
+      "source_result": "Hebron al-Ibrahimi Mosque/Tomb of Patriarchs is a real monumental complex traditionally venerated as patriarchal burials by Jews, Christians and Muslims",
+      "finding_limit": "UNESCO listing verifies place and living tradition, not bones or actual archaeological identity",
+      "claim_status": "ATTESTED_MULTIFAITH_TRADITION_NOT_AUTHENTICATED_HUMAN_REMAINS"
     },
     {
       "name": "Rachel's Tomb",
@@ -20,7 +25,13 @@
     {
       "name": "Mount Nebo",
       "location": "Jordan",
-      "caution": "Moses burial location unknown; death-site memorial only"
+      "caution": "Moses burial location unknown; death-site memorial only",
+      "primary_url": "https://www.custodia.org/en/sanctuaries/mount-nebo/",
+      "secondary_primary_url": "https://sbf.custodia.org/en/publications/collectio-maior/mount-nebo-new-archaeological-excavations-i",
+      "original_role": "FRANCISCAN_CUSTODIAN_AND_ARCHAEOLOGY_CATALOGUE",
+      "source_result": "Mount Nebo / Ras Siyagha memorial commemorates Moses viewing the promised land",
+      "finding_limit": "No identified biblical grave; Deuteronomy 34:6 says Moses' burial place unknown",
+      "claim_status": "MEMORIAL_RESEARCH_CLOSED_NOT_IDENTIFIED_GRAVE"
     },
     {
       "name": "Tomb of Aaron",
@@ -36,5 +47,41 @@
     }
   ],
   "status": "UNVERIFIED_TRADITION_NOT_RELIC_AUTHENTICATION",
-  "canonical_place_ids_assigned": 0
+  "canonical_place_ids_assigned": 0,
+  "additional_primary_checks": [
+    {
+      "case": "Traditional Tomb of the Virgin Mary at foot of Mount of Olives",
+      "source_url": "https://www.custodia.org/en/news/in-the-footsteps-of-mary-jerusalem-gathers-around-the-assumption-to-rediscover-its-vocation/",
+      "source_role": "FRANCISCAN_SITE_CUSTODIAN_REPORT",
+      "site_current_custody": "Greek Orthodox and Armenian custodians per status quo",
+      "pilgrimage_note": "Franciscans have special annual Assumption procession/prayer access; routine Catholic site management cannot be inferred",
+      "authentication_limit": "Tomb tradition not physical proof of Mary's bodily remains; doctrine of Assumption separate",
+      "research_status": "HISTORIC_CUSTODY_AND_ATTRIBUTION_DOCUMENTED"
+    },
+    {
+      "case": "Traditional Tomb of Lazarus at Bethany",
+      "source_url": "https://www.custodia.org/en/sanctuaries/bethany/",
+      "source_role": "FRANCISCAN_SITE_CUSTODIAN_ARCHEOLOGICAL_HISTORY",
+      "site_current_custody": "Separate traditional tomb near Franciscan church and nearby other Christian sites",
+      "physical_note": "Custody describes tomb entrance around 50 metres from church, with site fabric remodeled across centuries",
+      "authentication_limit": "Historic pilgrim tradition does not prove identification of original Lazarus burial remains",
+      "research_status": "DISTINCT_PHYSICAL_TOMB_HISTORIC_ATTRIBUTION"
+    },
+    {
+      "case": "Traditional Tomb of Saint Elizabeth at Saint John in the Desert",
+      "source_url": "https://www.custodia.org/en/sanctuaries/ain-karem-st-john-desert/",
+      "source_role": "FRANCISCAN_SITE_CUSTODIAN",
+      "site_current_custody": "Franciscan hermitage area near Ain Karem, with grotto, spring, traditional tomb",
+      "authentication_limit": "Site reference is a tradition and not independent authentication",
+      "research_status": "SOURCE_ATTESTED_ASSOCIATED_SUBFEATURE"
+    }
+  ],
+  "original_source_checkpoint": {
+    "original_institution_site_claims_researched": 5,
+    "from_initial_seven": 2,
+    "extra_associated_sites": 3,
+    "unreviewed_initial_cases": 5,
+    "claim_warning": "Do not use source coverage as supernatural/relic authentication, and do not auto-create independent map pins or grant religious affiliation to non-Catholic sites",
+    "publications": 0
+  }
 }
