@@ -42,6 +42,8 @@ export function renderTodayV2({state,vm,resume=null,artMarkup="",enrichers=null,
  const resumeMeta=resume?[resume.date?dateFormat(resume.date,fr,{day:"2-digit",month:"2-digit",year:"numeric"}):"",resume.stepNumber||""].filter(Boolean).join(" · "):"";
  const massButton=resume?`data-resume-mass data-ao-resume-owner="${esc(resume.source)}"`:"data-home-mass-entry";
  const proper=vm.celebration,season=fr?period.fr:period.en;
+ const sourceProper=observed?state.resolution?.proper?.data:null;
+ const latin=sourceProper?.nameLa||sourceProper?.nameLat||state.resolution?.day?.main?.titleLatin||"";
  const nextTitle=event=>fr?event.fr:event.en;
  return `<style id="ao-today-v2-styles">${TODAY_V2_CSS}</style>
  <main class="homeScreen td2" data-ao-today-version="${TODAY_V2_VERSION}" data-ao-home-presentation-owner="modular-home-presentation-v1" data-home-language="${esc(vm.language)}">
@@ -60,7 +62,8 @@ export function renderTodayV2({state,vm,resume=null,artMarkup="",enrichers=null,
    <div class="td2-art" data-art-ready="${art.available}">
      ${art.html}<div class="td2-art-scrim"></div>
      <small class="td2-art-kicker">CALENDARIUM ROMANUM · 1962</small>
-     <div class="td2-art-heading"><h1>${esc(proper)}</h1></div>
+     ${art.available?`<button type="button" class="td2-art-info" data-td2-art-info aria-label="${esc(L("Artwork and sources","Œuvre et sources"))}">i</button>`:""}
+     <div class="td2-art-heading">${latin?`<div class="td2-art-latin">${esc(latin)}</div>`:""}<h1>${esc(proper)}</h1></div>
    </div>
    <div class="td2-hero-actions">
      <div class="td2-meta">
