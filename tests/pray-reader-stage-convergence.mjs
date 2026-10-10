@@ -35,7 +35,7 @@ assert.match(css,/\.aoP435930PrayerHead h3/);
 assert.match(css,/data-ao-pray-view="adoration"/);
 assert.match(css,/data-ao-pray-view="library"/);
 assert.match(css,/prefers-reduced-motion/);
-assert.match(css,/aria-current/);
+assert.match(runtime,/aria-current="step"/);
 assert.match(installer,/import "\.\/reader-convergence-styles\.js"/);
 assert.match(contract,/spiritual acts are never inferred or automatically certified/i);
 assert.match(design,/--ao-reader-focus-far/);
