@@ -15,7 +15,9 @@ import {
   const root=()=>({dataset:{},innerHTML:""});
   const normal=root();
   renderLearnPresentation(normal,{language:"en"},{location:{search:""},document:{getElementById:()=>null}});
-  assert.doesNotMatch(normal.innerHTML,/data-ao-learn-dossier-review=/);
+  assert.match(normal.innerHTML,/data-ao-learn-dossier-review="apologetics"/,"Apologetics not visible without hidden query flag");
+  assert.match(normal.innerHTML,/data-ao-learn-dossier-review="crisis"/,"Church Crisis not visible without hidden query flag");
+  assert.match(normal.innerHTML,/Early study preview/,"unapproved sources must be conspicuous");
   const preview=root();
   const win={location:{search:"?aoFormationReview=1"},document:{getElementById:()=>null}};
   assert.equal(formationDossierReviewEnabled(win),true);
@@ -24,7 +26,7 @@ import {
   renderLearnPresentation(preview,{language:"en"},win);
   assert.match(preview.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
   assert.match(preview.innerHTML,/data-ao-learn-dossier-review="crisis"/);
-  assert.match(preview.innerHTML,/Unpublished editorial preview/);
+  assert.match(preview.innerHTML,/Early study preview/);
   const french=root();
   renderLearnPresentation(french,{language:"fr"},win);
   assert.match(french.innerHTML,/Apologétique/);
