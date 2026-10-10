@@ -121,6 +121,13 @@ try{
           const latinExpected=prayed.filter(x=>x.lat.trim());
           const missing=Object.fromEntries(["lat","en","fr"].map(lang=>[lang,
             latinExpected.filter(x=>!x[lang].trim()).map(x=>x.section)]));
+          // Blank translations and *visible* unresolved source tokens are
+          // different categories. Keep the blank-only historical metric intact,
+          // but compare the engine's post-composition readiness against both.
+          const incompleteByIntegrity=Object.fromEntries(["en","fr"].map(lang=>[lang,
+            latinExpected.filter(x=>!x[lang].trim() ||
+              /\$[A-Za-z][A-Za-z -]*|\bN\.(?=\s|$)/.test(x[lang]))
+              .map(x=>x.section)]));
           const suspicious=[];
           for(const x of prayed)for(const lang of ["lat","en","fr"]){
             const hit=x[lang].match(/(^|\W)N\.(?=\s|,|;|$)|@[A-Za-z]+\/|\$(?:Per Dominum|Qui tecum)/i);
@@ -143,6 +150,7 @@ try{
           return {...item,identity:r?.day?.main?.id||null,status:r?.status||"missing",properStatus:r?.proper?.status||"missing",
             error:r?.error||r?.proper?.error||null,resolvedPath:p.sourcePath||null,
             languageCoverage:p.languageCoverage||null,ownComputedMissing:missing,
+            ownComposedIncomplete:incompleteByIntegrity,
             missingLatinCore,sectionCount:prayed.length,sectionNames:prayed.map(x=>x.section),
             commemorations:(r?.day?.commemorations||[]).map(x=>({id:x.id,path:x.path||null})),
             prayerCounts:{collects:p.collects?.length||0,secrets:p.secrets?.length||0,
@@ -179,7 +187,7 @@ try{
     .map(x=>({date:x.date,id:x.id,path:x.path,stage:"source load",error:x.error||x.properStatus}));
   const coverageMismatch=records.filter(x=>
     ["en","fr"].some(lang=>{
-      const old=x.languageCoverage?.[lang],actual=x.ownComputedMissing?.[lang]||[];
+      const old=x.languageCoverage?.[lang],actual=x.ownComposedIncomplete?.[lang]||[];
       const expected=x.sectionNames?.length||0;
       return old&&old.missing?.length!==actual.length && expected>0;
     })).map(x=>({date:x.date,path:x.resolvedPath,engine:x.languageCoverage,actual:x.ownComputedMissing}));
@@ -218,3 +226,8 @@ try{
 console.log("Source-integrity artifact: "+dest);
 if(output.failures.length)process.exitCode=2;
 if(output.records.length!==(FOCUSED_GAPS?10:100))process.exitCode=3;
+// Production cannot advertise translated Proper completeness while composed
+// prayers or readings still contain a placeholder, and source directives may
+// never be displayed as completed liturgical conclusions.
+if(output.summary?.inheritedCoverageMismatch?.length)process.exitCode=4;
+if(output.summary?.unresolvedPointerTypes?.unexpanded_conclusion)process.exitCode=5;
