@@ -1846,8 +1846,20 @@
       "persons_fr": "Jésus, disciples",
       "phase": "PUBLIC",
       "location_semantics": "PROPOSED_MODERN_IDENTIFICATION",
-      "events": [],
-      "passages": [],
+      "events": [
+        {
+          "id": "ephraim-withdrawal",
+          "title_en": "Jesus withdraws to Ephraim",
+          "title_fr": "Jésus se retire à Éphraïm",
+          "reference": "John 11:54–57",
+          "category": "LIFE_EVENT",
+          "site_basis": "EXPLICIT_CITY_PROPOSED_MODERN_IDENTIFICATION",
+          "chronology_phase": "PUBLIC"
+        }
+      ],
+      "passages": [
+        "John 11:54–57"
+      ],
       "geolocation": "NOT_IN_THIS_COMPACT_FEATURE",
       "source_type": "SCRIPTURE",
       "published": true
@@ -2633,7 +2645,7 @@
       "PASSION": 7,
       "RESURRECTION": 2
     },
-    "event_count": 165,
+    "event_count": 166,
     "qualification": "Covers major narratively distinct events of Christ's life, not literally every Gospel pericope; some sites are traditional, disputed or collective regions.",
     "event_kinds": {
       "OTHER": 43,
