@@ -6,6 +6,7 @@ import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
+import { specialMassPresentation,renderSpecialMassContext } from "./full-mass-special-presentation.js";
 import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
 import "./full-mass-preflight-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
@@ -466,6 +467,28 @@ function installReaderScriptureBridge(preview,prepared){
   }});
 }
 
+// Secondary liturgical map in R17: never a second prayer-card owner.
+function installReaderSpecialMassContext(preview,prepared){
+ const root=preview?.root;
+ const panel=root?.querySelector?.('[data-role="mass-preferences"]');
+ if(!panel?.ownerDocument)return null;
+ const fr=String(prepared?.readerPreferences?.language??"en").startsWith("fr");
+ const model=specialMassPresentation(prepared,{mode:"reader",language:fr?"fr":"en"});
+ if(!model.distinct)return null;
+ root.dataset.aoSpecialMassVariant=model.variant;
+ const details=panel.ownerDocument.createElement("details");
+ details.dataset.aoReaderSpecialMass="";
+ details.className="aoMassSpecialReaderGuide";
+ const summary=panel.ownerDocument.createElement("summary");
+ summary.textContent=fr?"Déroulement de cette célébration":"Order of this celebration";
+ const content=panel.ownerDocument.createElement("section");
+ content.className="aoSpecialMassContext";
+ renderSpecialMassContext(content,model,{compact:true});
+ details.append(summary,content);
+ panel.append(details);
+ return Object.freeze({dispose(){details.remove()}});
+}
+
 function installReaderParametersBridge(preview,prepared){
   return installReaderSurfaceBridge(preview,{
     selector:"[data-reader-parameters]",
@@ -591,6 +614,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
+  installReaderSpecialMassContext(previewState.preview,prepared);
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,
