@@ -45,7 +45,7 @@ try{
    },{day,hour},{timeout:25000});
    assert.equal(await page.locator('#aoPray435930 .aoTenebReading').count(),1);
    assert.equal(await page.locator('#aoPray435930 .aoTenebReading[data-tenebrae-section]').getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1");
-   assert.equal(await page.locator('#aoPray435930 .aoTenebFooter span').text(),hour==="MATINS"?"1 / 32":"1 / 10");
+   assert.equal(await page.locator('#aoPray435930 .aoTenebFooter span').textContent(),hour==="MATINS"?"1 / 32":"1 / 10");
    await page.locator('#aoPray435930 [data-p435930-tenebrae-move="next"]').click();
    assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2");
   }
