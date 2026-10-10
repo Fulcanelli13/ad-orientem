@@ -1,0 +1,46 @@
+{
+  "schema": "EXPLORE_IRELAND_EPISCOPAL_PILGRIMAGE_INDEX_V1",
+  "as_of": "2026-10-10",
+  "designation_year": 2025,
+  "scope": "The three Jubilee 2025 national pilgrimage destinations named by the Irish Catholic Bishops, not all pilgrimage sites in Ireland",
+  "source_url": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+  "source_url_recent": "https://www.catholicbishops.ie/2025/07/21/archbishop-francis-duffy-to-meet-pilgrims-at-croagh-patrick-on-reek-sunday/",
+  "records": [
+    {
+      "entry_id": "IE-CBC-2025-01",
+      "name": "Knock Shrine",
+      "locality": "Knock, Co Mayo",
+      "kind": "MARIAN_SHRINE",
+      "proposed_place_id": "place:IE:knock-shrine",
+      "existing_seed_id_available": true,
+      "source": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "canonical_link_approved": false,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "IE-CBC-2025-02",
+      "name": "Croagh Patrick",
+      "locality": "Murrisk / Westport, Co Mayo",
+      "kind": "HISTORIC_MOUNTAIN_PILGRIMAGE",
+      "proposed_place_id": null,
+      "existing_seed_id_available": false,
+      "source": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "canonical_link_approved": false,
+      "publication_status": "RESEARCH_ONLY"
+    },
+    {
+      "entry_id": "IE-CBC-2025-03",
+      "name": "Saint Patrick's Purgatory, Lough Derg",
+      "locality": "Station Island, Co Donegal",
+      "kind": "HISTORIC_PILGRIMAGE",
+      "proposed_place_id": "place:IE:lough-derg-station-island",
+      "existing_seed_id_available": true,
+      "source": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "canonical_link_approved": false,
+      "publication_status": "RESEARCH_ONLY"
+    }
+  ],
+  "known_seed_places": 2,
+  "absent_from_seed": 1,
+  "calendar_note": "Reek Sunday and Croagh Patrick devotion can be linked to Calendar, but not inferred from Jubilee-only designation."
+}
