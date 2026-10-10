@@ -67,6 +67,11 @@ assert.deepEqual(sort(unique(apostolate,"Apostolate")),sort(sourceScenarios.map(
 assert.equal(apostolate.filter(x=>x.proposed_group==="answer_questions").length,8);
 assert.equal(apostolate.filter(x=>x.proposed_group==="help_others").length,15);
 assert.equal(apostolate.filter(x=>x.proposed_group==="introduce_the_faith").length,13);
+const apostolatePresentation=read("src/apostolate/presentation.js");
+const apostolateBrowser=read("src/apostolate/browser-entry.js");
+assert.match(apostolatePresentation,/\["introduce","ao-refined-study"/,"Apostolate does not expose the Introductory Path");
+assert.match(apostolatePresentation,/mode==="introduce"/,"Apostolate cannot filter introduced scenarios");
+assert.match(apostolateBrowser,/\["answer","help","introduce","practice"\]/,"Apostolate owner rejects Introduce route");
 for(const item of apostolate)assert.equal(item.canonical_owner,"apostolate");
 
 assert.equal(map.pray.leaf_projections.length,100);
