@@ -78,6 +78,23 @@ try{
         },
         readerReady:reader?.ready??false,
         missing:reader?.missing??[],
+        // A rejected composed prayer is not self-diagnosing: expose which
+        // principal/commemorative row lacks which language, without weakening
+        // the source-first acceptance assertion.
+        orationAudit:reader&&!reader.ready?{
+          properKeys:Object.keys(proper),
+          commemorationOwners:proper.commemorations??resolution?.commemorations??[],
+          groups:Object.fromEntries(["collects","secrets","postcommunions"].map(group=>[
+            group,(proper[group]??[]).map((value,index)=>({
+              index,keys:Object.keys(value??{}),
+              latLength:String(value?.lat??value?.la??"").length,
+              enLength:String(value?.en??"").length,
+              frLength:String(value?.fr??"").length,
+              latinOpening:String(value?.lat??value?.la??"").slice(0,90),
+              path:value?.sourcePath??value?.sourceRef??null
+            }))
+          ])),
+        }:null,
       };
     },date);
     results.push(row);
