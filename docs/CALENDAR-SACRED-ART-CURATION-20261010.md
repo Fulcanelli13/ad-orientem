@@ -4,7 +4,7 @@
 
 ## Outcome
 
-- 29 *distinct colour paintings* with individually inspected **Met object pages**, across Annunciation, Nativity, Epiphany, Baptism, Passion, Crucifixion, Resurrection, Ascension, the Samaritan woman, denial of Peter, Virgin and Child, and Christ Blessing.
+- 40 *distinct colour paintings* with individually inspected **Met object pages**, across Annunciation, Nativity, Epiphany, Baptism, Passion, Crucifixion, Resurrection, Ascension, the Samaritan woman, denial of Peter, Virgin and Child, and Christ Blessing.
 - All are linked to their original holding-institution object pages in [the candidate registry](../data/calendar/sacred-art-candidates.v1.json). Those pages identify eligible works as Public Domain, under [The Met's CC0 Open Access terms](https://www.metmuseum.org/hubs/open-access). Each painting is only a **source-verified candidate**, not a visually certified app asset.
 - No engravings, drawings, frescoes, murals, monochrome reproductions, sculptures, photographic tourist shots, generated fakes, or standalone generic icon-bank symbols are part of this catalogue.
 - Existing app icons and frozen semantic asset identities are untouched.
@@ -43,7 +43,7 @@ The **optional**, **disabled-by-default** selector accepts already-local time as
 
 ## Integration sequencing / honest coverage
 
-- **Batch 1 here:** 29 object-page/source/CC0 candidates, a pure selector, regression tests. **0 production image assets**. **0 daily dates visually approved**. No new Calendar hero yet.
+- **Batch 1 here:** 40 museum source candidates, a pure selector, regression tests. **0 production image assets**. **0 daily dates visually approved**. No new Calendar hero yet.
 - **Batch 2:** Acquire source originals and manually approve images, using a curated 40–50-masterpiece target, rather than approving every candidate. Add image manifests/crops, rejection reasons and resolution evidence.
 - **Batch 3:** Map source-linked 1962 observed principal identifiers and **actual reading IDs** for complete ordinary and leap years. Verify per-date results (A exact, B Scriptural, C seasonal, D documented devotional, E universal) and no unapproved works; report reuse distribution and thin days. Distinguish calendar days with logical fallback from verified paintings with safe mobile crops.
 - **Batch 4:** Integrate into redesigned Today and Calendar with full-image credits and a locally configurable Angelus/Regina Cæli overlay; test desktop/phone, offline, international date/time, no flicker, colour accessibility and transition behaviour.
