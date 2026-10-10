@@ -228,6 +228,9 @@ export async function runOfficialGeoHarvest({root=ROOT,out=null,fetchImpl=fetch}
     const allPlaces=stageAllOfficialMapPinEvidence(feed.items);
     await fs.writeFile(path.join(out,"official-sspx-all-relationship-places.geojson"),JSON.stringify(allPlaces,null,2)+"\n");
     await fs.writeFile(path.join(out,"official-sspx-all-relationship-report.v1.json"),JSON.stringify({source_total:feed.total,...allPlaces.metadata,staging_features:allPlaces.features.length},null,2)+"\n");
+    const existingGeo=path.join(root,"data/directory/research/staging/map-first-r37/provider-pins-merged.geojson");
+    try{await fs.copyFile(existingGeo,path.join(out,"prior-github-map-layer.geojson"));}
+    catch(error){if(error.code!=="ENOENT")throw error;}
   }
   return {report,...result};
 }
