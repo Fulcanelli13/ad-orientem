@@ -195,6 +195,79 @@ try{
   assert.equal(opening.historicalIdentityClaim,false,"source-first product 48 must not masquerade as recovered historical C01-C48 identity");
   assert.ok(opening.shellRect?.width<=390.5&&opening.shellRect?.height<=844.5,"native LIVE shell overflows phone viewport");
 
+  // v1.80 phone visual colour matrix. The underlying canonical Rosary Mass
+  // remains unchanged; only the presentation palette is temporarily exercised.
+  // This audits the real 390px browser CSS/silhouettes, rather than producing
+  // a claimed liturgical celebration from an invented calendar fixture.
+  const paletteBase=await page.evaluate(()=>{
+    const shell=document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]");
+    return {style:shell?.getAttribute("style")??"",colour:shell?.dataset.liturgicalColour,
+      source:shell?.dataset.liturgicalSource};
+  });
+  const paletteColours=["WHITE","RED","GREEN","VIOLET","ROSE","BLACK","GOLD","NEUTRAL"];
+  const paletteAudit=[];
+  for(const colour of paletteColours){
+    const audit=await page.evaluate(async(selected)=>{
+      const {resolveMassLiturgicalTheme}=await import("/src/mass/reader-liturgical-theme.js");
+      const theme=resolveMassLiturgicalTheme(selected==="NEUTRAL"
+        ? {session:{resolvedMass:{actualCelebration:{title:"Unresolved"}}}}
+        : {session:{resolvedMass:{actualCelebration:{title:"Colour study"},
+          proper:{status:"READY",data:{colour:selected}},provenance:{colour:"GREEN"}}},
+          legacyResolvedMass:{calendarDay:{colour:"GREEN"}}});
+      const shell=document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]");
+      for(const [name,value] of Object.entries(theme.tokens))
+        shell.style.setProperty("--ao-mass-"+name.replace(/[A-Z]/g,c=>"-"+c.toLowerCase()),value);
+      shell.dataset.liturgicalColour=theme.key;
+      shell.dataset.liturgicalSource=theme.source;
+      const probe=document.createElement("span");
+      probe.className="ao-ritual-cross-symbol";
+      probe.textContent="+";
+      probe.style.cssText="position:absolute;left:0;top:0;visibility:hidden";
+      shell.appendChild(probe);
+      const style=getComputedStyle(shell);
+      const fill=shell.querySelector(".ao-schola-progress>span");
+      const posture=shell.querySelector('[data-icon-slot="posture-top"]');
+      const priest=shell.querySelector('[data-icon-slot="priest-position"]');
+      const rail=shell.querySelector('.ao-rail-right [data-channel="priest-voice"]');
+      const rect=el=>el?({width:el.getBoundingClientRect().width,
+        height:el.getBoundingClientRect().height}):null;
+      const result={colour:theme.key,source:theme.source,tokens:theme.tokens,
+        background:style.backgroundImage,topColour:getComputedStyle(probe).color,
+        progressColour:fill?getComputedStyle(fill).backgroundColor:null,
+        posture:rect(posture),priest:rect(priest),rail:rect(rail),
+        viewportWidth:document.documentElement.scrollWidth};
+      probe.remove();
+      return result;
+    },colour);
+    assert.equal(audit.colour,colour,"selected Mass theme did not resolve: "+colour);
+    assert.equal(audit.source,colour==="NEUTRAL"?"UNRESOLVED":"SELECTED_PROPER");
+    const rgb=hex=>{const bytes=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));
+      return "rgb("+bytes.join(", ")+")";};
+    assert.equal(audit.topColour,rgb(audit.tokens.accentText),
+      colour+" ritual cross did not use the source-selected accent text");
+    assert.equal(audit.progressColour,rgb(audit.tokens.accent),
+      colour+" Schola progress remained fixed green");
+    assert.ok(audit.background.includes("linear-gradient("),colour+" Mass background lost the dark ambience");
+    assert.ok(audit.posture?.width>=48&&audit.posture?.height>=48,
+      colour+" top faithful icon no longer meets v1.77/v1.80 scale");
+    assert.ok(audit.priest?.width>=48&&audit.priest?.height>=48,
+      colour+" top priest icon no longer meets donor scale");
+    assert.ok(audit.rail?.width>=46&&audit.rail?.width<=52,
+      colour+" right cue rail no longer matches 48px phone geometry");
+    assert.ok(audit.viewportWidth<=391,colour+" palette adds horizontal phone overflow");
+    paletteAudit.push({colour,source:audit.source,accent:audit.tokens.accent,
+      accentText:audit.tokens.accentText,posture:audit.posture,priest:audit.priest,rail:audit.rail});
+    await page.screenshot({path:resolve(out,"v180-palette-"+colour.toLowerCase()+"-390.png"),fullPage:false});
+  }
+  await page.evaluate(original=>{
+    const shell=document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]");
+    shell.setAttribute("style",original.style);
+    shell.dataset.liturgicalColour=original.colour;
+    shell.dataset.liturgicalSource=original.source;
+  },paletteBase);
+  await writeFile(resolve(out,"v180-palette-mobile-audit.json"),
+    JSON.stringify({source:"Definitive v1.80 donor; simulated colours on live Rosary reader, 390px",colours:paletteAudit},null,2));
+
   // LIVE visual hierarchy: one instance for persistent posture and priest
   // action, while surrounding prose remains readable at rest.
   await page.waitForTimeout(400);
@@ -477,8 +550,18 @@ try{
   assert.equal(scholaState.speed,"0.45×","Schola no longer starts on donor default speed");
   assert.ok(scholaState.latin.length>0,"Schola stream is empty");
   const scholaBacking=await scholaDock.evaluate(el=>getComputedStyle(el).backgroundColor);
-  assert.equal(scholaBacking,"rgb(17, 25, 20)",
-    "Schola dock is translucent and shows competing Latin prayer text behind the controls");
+  const expectedScholaBacking=await scholaDock.evaluate(el=>{
+    const shell=el.closest("[data-ao-reader-shell]");
+    const panel=getComputedStyle(shell).getPropertyValue("--ao-mass-panel").trim();
+    const probe=document.createElement("span");
+    probe.style.backgroundColor=panel;
+    shell.appendChild(probe);
+    const result=getComputedStyle(probe).backgroundColor;
+    probe.remove();
+    return result;
+  });
+  assert.equal(scholaBacking,expectedScholaBacking,
+    "Schola must use an opaque palette-owned panel so moving Latin text cannot show through");
 
   await scholaDock.locator("[data-schola-faster]").click();
   assert.equal(await scholaDock.locator("[data-role='schola-speed']").textContent(),"0.60×","Schola faster control did not advance donor speed ladder");

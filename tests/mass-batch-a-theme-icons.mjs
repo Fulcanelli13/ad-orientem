@@ -62,6 +62,18 @@ assert.match(markup,/data-liturgical-source="SELECTED_PROPER"/);
 assert.match(markup,/--ao-mass-bg:#191815/);
 assert.match(markup,/background:linear-gradient\(180deg,var\(--ao-mass-top\),var\(--ao-mass-bottom\)\)/);
 assert.doesNotMatch(markup,/--ao-bg:#0d120f/);
+const shellCss=markup.slice(0,markup.indexOf("</style>"));
+for(const rule of [
+  /\.ao-ritual-trigger-live\{[^}]*--ao-mass-accent/,
+  /\.ao-ritual-cross-symbol\{[^}]*--ao-mass-accent-text/,
+  /\.ao-schola-dock\{[^}]*--ao-mass-accent/,
+  /\.ao-schola-progress>span\{[^}]*--ao-mass-accent/,
+  /\.ao-rail-item\{[^}]*--ao-mass-panel/,
+  /\.ao-mode-ribbon button\[aria-pressed="true"\]>span\{[^}]*--ao-mass-accent/,
+])assert.match(shellCss,rule,"Mass chrome must follow selected celebration colour");
+assert.doesNotMatch(shellCss,/rgba\(132,169,141|rgba\(151,194,162|color:#8dac92|background:#111914/,
+  "fixed green highlights survived the selected-colour transition");
+
 
 const matrix=JSON.parse(await readFile(fileURLToPath(new URL("../data/mass/gesture-matrix.v1.json",import.meta.url)),"utf8"));
 const audit=validateReaderGestureMatrix(matrix);
