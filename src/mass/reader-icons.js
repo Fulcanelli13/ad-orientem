@@ -196,7 +196,10 @@ export function iconKeysForReaderState(state={}){
     responseIconKey:state.response ? R17_ICON_KEYS.response : null,
     priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label),
     scholaIconKey:state.schola ? R17_ICON_KEYS.schola : null,
-    priestPositionIconKey:/PEOPLE/.test(facing)
+    // Only an explicit turn toward the congregation owns this pictogram.
+    // SEDILIA may face people OR altar depending on local layout; the
+    // ambiguous profile must keep its sedilia station icon.
+    priestPositionIconKey:(facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN")
       ? "priest_facing_people"
       : (R17_ICON_KEYS.priestPosition[station]??null),
     priestActionIconKey:priestActionKey(state.priestAction),
