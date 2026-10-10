@@ -43,7 +43,7 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
 #aoPray435930 .aoP435930StageRail.aoReaderStageRail::-webkit-scrollbar{display:none}
 #aoPray435930 .aoP435930StageRail.aoReaderStageRail>button{
   appearance:none;position:relative;
-  flex:1 0 42px!important;min-width:42px!important;min-height:44px!important;
+  flex:1 0 44px!important;min-width:44px!important;min-height:44px!important;
   max-width:64px;padding:4px 6px 9px!important;margin:0!important;
   display:grid!important;place-items:center!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;
