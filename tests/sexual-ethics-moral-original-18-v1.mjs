@@ -27,7 +27,7 @@ for(const x of ledger.records){
  assert.ok(CSE_DEBATE_FIELDS.includes(x.stage));
  assert.ok(CSE_DEBATE_MAP[x.id][x.stage][0].length>45);
  assert.ok(CSE_DEBATE_MAP[x.id][x.stage][1].length>45);
- assert.ok(x.exact_locator.length>4&&x.passage_supports_en.length>75&&x.passage_does_not_support_en.length>75);
+ assert.ok((x.exact_locator.length>4||/^§[0-9]+$/.test(x.exact_locator))&&x.passage_supports_en.length>75&&x.passage_does_not_support_en.length>75,"An exact numbered Veritatis Splendor paragraph is a valid bounded locator");
  assert.ok(x.original_passage_urls.length>0&&x.original_passage_urls.every(y=>y.startsWith("https://")));
  assert.equal(x.original_english_or_latin_passage_examined,true);
  assert.equal(x.original_author_language_collated,false);
