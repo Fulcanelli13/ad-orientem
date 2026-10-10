@@ -54,6 +54,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
+import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
@@ -1152,6 +1153,9 @@ export async function mountNativeReaderPreview({
   let lastEventCinemaCue=null;
   const transientGuard=createCardTransitionTransientGuard();
   const win=doc.defaultView ?? globalThis;
+  let customStorage=null;
+  try{customStorage=win.localStorage??null;}catch{}
+  let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
   let riteChoice=null;
   let palmGospelCueVisible=null;
 
@@ -1310,7 +1314,7 @@ export async function mountNativeReaderPreview({
     // response, action, position, voice and posture source may project. The
     // eventAllowed flag only controls legacy event-state fallback above.
     const cueProjection=activeCueId ? ready.cueState.project(activeCueId) : null;
-    const gestureProfile=prepared?.readerPreferences?.gestureProfile ?? "GUIDED_1962";
+    const gestureProfile=customaryPrefs.gestureProfile;
     const owned=resolveCueOwnedChannels({
       cueControllerSupported:ready.cueState.supported,
       cueProjection,
@@ -1338,7 +1342,7 @@ export async function mountNativeReaderPreview({
     // Posture ownership is profile-aware. FOLLOW_CONGREGATION remains an
     // observed rollback channel; sourced/local profiles never silently inherit it.
     const postureResolved=resolveReaderPostureChannel({
-      preferences:prepared.readerPreferences,
+      preferences:customaryPrefs,
       cueProjection:cueNative ? cueProjection : null,
       legacyPosture:eventAllowed ? legacy.posture : null,
       cueId:activeCueId,
@@ -1418,6 +1422,13 @@ export async function mountNativeReaderPreview({
       gestureMatrixPriest:gestureMatrixProjection?.priest??Object.freeze([]),
       gestureMatrixFaithful:gestureMatrixProjection?.faithful??Object.freeze([]),
       sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
+      customary:Object.freeze({
+        postureProfile:customaryPrefs.postureProfile,
+        gestureProfile:customaryPrefs.gestureProfile,
+        localPosture:customaryPrefs.localPostures[activeCueId]??"DEFAULT",
+        cueId:activeCueId,
+        localPostureEditable:Boolean(activeCueId && !cueProjection?.posture?.fixed),
+      }),
       ...iconKeys,
       nativeEventId:eventState?.canonicalEventId??null,
       nativeCueId:activeCueId,
@@ -2179,6 +2190,10 @@ export async function mountNativeReaderPreview({
     allowPresentationModeSwitch:true,
     sections:sectionItems(),
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
+    onCustomaryChange:change=>{
+      customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
+      queue();
+    },
     onScholaAdvance:()=>{
       const value=ready.scholaState.next();
       queue();
