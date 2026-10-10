@@ -1063,7 +1063,13 @@ export function buildReaderShellMarkup(prepared = {}) {
         <option value="false">Keep source standing unless I choose otherwise</option>
       </select>
     </label>
-    <small>This changes your personal cues, not the priest's movements or the Mass rubrics. Exact seating timing varies by celebration.</small>
+    <label>Credo sitting after the Incarnatus
+      <select data-faithful-picker-credo-start aria-label="When to sit during the Credo">
+        <option value="AO.SM.C0097">At Crucifixus etiam pro nobis (first paragraph)</option>
+        <option value="AO.SM.C0098">At Et iterum venturus est (following paragraph)</option>
+      </select>
+    </label>
+    <small>The priest's sedilia is a source-backed state, but these word-level sitting and rising cues follow local custom. They do not rewrite the Mass rubrics.</small>
   </aside>
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
     <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
@@ -1746,6 +1752,9 @@ export function createReaderDomAdapter({
         if(event.target?.matches?.("[data-faithful-picker-seating]")){
           onCustomaryChange?.({kind:"followPriestSeating",value:event.target.value==="true"});return;
         }
+        if(event.target?.matches?.("[data-faithful-picker-credo-start]")){
+          onCustomaryChange?.({kind:"credoSitStart",value:event.target.value});return;
+        }
       }
       const select=event.target?.closest?.("[data-reader-customary]");
       if(!select||select.disabled||!current?.customary)return;
@@ -2084,6 +2093,11 @@ export function createReaderDomAdapter({
     if(gesture)gesture.value=row.savedGesture??"DEFAULT";
     const seating=picker.querySelector('[data-faithful-picker-seating]');
     if(seating)seating.value=String(current?.customary?.followPriestSeating!==false);
+    const credoStart=picker.querySelector("[data-faithful-picker-credo-start]");
+    if(credoStart){
+      credoStart.value=current?.customary?.credoSitStart??"AO.SM.C0097";
+      credoStart.parentElement.hidden=row.phase!=="CREDO";
+    }
   }
   function syncFaithfulParagraphIcons(){
     for(const node of root.querySelectorAll?.('.ao-reader-paragraph[data-faithful-row-id]')??[]){
