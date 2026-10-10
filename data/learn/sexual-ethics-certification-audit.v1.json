@@ -210,7 +210,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -218,7 +218,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
-            "FLETCHER_TABLET"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -252,7 +252,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -294,7 +294,7 @@
         {
           "stage": "opposition",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -302,7 +302,7 @@
         {
           "stage": "appeal",
           "selected_source_ids": [
-            "FLETCHER_TABLET"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -334,7 +334,7 @@
         {
           "stage": "counter",
           "selected_source_ids": [
-            "FLETCHER_EXCERPTS"
+            "FLETCHER1966"
           ],
           "evidence_validation": "REGISTERED_DIRECT_LINK_NO_FULL_PARAGRAPH_PROOF",
           "argument_status": "OPPONENT_POSITION_OR_EXPLICITLY_ILLUSTRATIVE_NOT_LITERAL_QUOTATION"
@@ -4531,10 +4531,14 @@
   "reconciliation": {
     "date": "2026-10-10",
     "kind": "STAGE_SELECTED_SOURCE_IDS_MATCH_LIVE_55_CASE_REGISTRY",
-    "changed_stage_selections": 25,
+    "changed_stage_selections": 31,
     "direct_registered_source_references": 636,
     "bibliographic_only_rendered": 0,
     "full_eight_stage_certifications": 0,
-    "publication_approval": false
+    "publication_approval": false,
+    "original_digitized_scope_source_ids": [
+      "FLETCHER1966"
+    ],
+    "source_url_resolver": "src/learn/sexual-ethics-data/source-targets.js"
   }
 }
