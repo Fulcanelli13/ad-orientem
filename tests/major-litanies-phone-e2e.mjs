@@ -252,10 +252,37 @@ try{
               }};
           }catch(e){return {error:String(e?.stack??e)}}
         });
+        const navDetails=await page.evaluate(()=>{
+          const api=globalThis.AO_R17_NATIVE_READER_PREVIEW,root=api?.root;
+          const b=root?.querySelector('[data-reader-nav="next"]');
+          const rect=b?.getBoundingClientRect?.();
+          const center=rect?{x:rect.x+rect.width/2,y:rect.y+rect.height/2}:null;
+          const hit=center?document.elementFromPoint(center.x,center.y):null;
+          return {
+            rootNavInput:root?.dataset?.aoLastNavInput,
+            rootNavResult:root?.dataset?.aoLastNavResult,
+            buttonOuter:b?.outerHTML?.slice(0,520),buttonDisabled:b?.disabled,
+            center,hitTag:hit?.tagName,hitClass:hit?.className,
+            hitMarkup:hit?.outerHTML?.slice(0,450),
+            pointerEvents:b?getComputedStyle(b).pointerEvents:null,
+            effectiveNav:api?.reader?.getState?.()?.id,
+            lifecycleState:root?.dataset?.r17StateOwner
+          };
+        });
+        const clickResponse=await page.evaluate(()=>{
+          const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+          const button=api?.root?.querySelector('[data-reader-nav="next"]');
+          button?.click();
+          const c=api?.getCurrentCard?.();
+          return {card:c?.sectionId??c?.id,navInput:api?.root?.dataset?.aoLastNavInput,
+            navResult:api?.root?.dataset?.aoLastNavResult};
+        });
         throw new Error("ROGATION_NAV_EXPECTED_"+sectionId+" got "+
           JSON.stringify(card)+" after "+JSON.stringify(visited)+
           " browserErrors="+JSON.stringify(errors)+
-          " directNext="+JSON.stringify(direct)+"; "+
+          " directNext="+JSON.stringify(direct)+
+          " navDetails="+JSON.stringify(navDetails)+
+          " syntheticClick="+JSON.stringify(clickResponse)+"; "+
           String(error?.message??error));
       }
       visited.push(sectionId);
