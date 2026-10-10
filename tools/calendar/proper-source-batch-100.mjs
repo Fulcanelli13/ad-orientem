@@ -99,7 +99,7 @@ try{
   const chunks=[];
   for(let n=0;n<cases.length;n+=5)chunks.push(cases.slice(n,n+5));
   for(const chunk of chunks){
-    const records=await page.evaluate(async list=>{
+    const records=await page.evaluate(async ({list,focused})=>{
       const resolver=globalThis.AO_RUNTIME_V8.resolver;
       return Promise.all(list.map(async item=>{
         try{
@@ -151,7 +151,7 @@ try{
               prayerSourcePath:x.prayerSourcePath,inseparable:!!x.inseparable,underOneConclusion:!!x.underOneConclusion})),
             sourceVersions:p.sourceRevisions||null,pinnedLatinSourceURL:expectedSourceURL,
             sourceRequests:actualSourceRequests,suspicious,
-            ...(FOCUSED_GAPS?{
+            ...(focused?{
               detailedMissing:prayed.filter(section=>
                 section.lat.trim()&&(!section.en.trim()||!section.fr.trim())).map(section=>({
                   section:section.section,latinStart:section.lat.slice(0,140),
@@ -169,7 +169,7 @@ try{
             };
         }catch(error){return {...item,status:"exception",properStatus:"failed",error:String(error?.message||error)};}
       }));
-    },chunk);
+    },{list:chunk,focused:FOCUSED_GAPS});
     output.records.push(...records);
     console.log("PROPER_100_PROGRESS "+output.records.length+"/100");
   }
