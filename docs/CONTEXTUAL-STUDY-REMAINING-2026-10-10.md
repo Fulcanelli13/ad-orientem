@@ -29,6 +29,16 @@ No doctrines, moral answers, Latin exercises or prayers are authored here. No so
 
 No Mass source, R17 cards, Calendar engine, prayer recording, private confession capture, devotional completion or unrelated art/styling PR is modified.
 
+## Integration gate repair — prior failures investigated
+
+These checks failed on the earlier PR head even though the affected files were not previously changed by this navigation batch:
+
+1. **Sexual Ethics source provenance:** `data/learn/sexual-ethics-opponent-source-audit.v1.json` was behind the canonical source-identity and locator map in `src/learn/sexual-ethics-data/provenance.js`. All **55** audited debate cases have now been reconciled: **22** changed arrays/locators, adding **14** established canonical source references. Existing URLs, source roles and source-type assessments are retained; newly introduced references use the registry's canonical URL, title and role and are not classified as full-text certified on the basis of a link. All **55 full-passage-review holds** remain in force. No opposing or Catholic argument is fabricated, and no stage is upgraded to full-text certification.
+2. **Scripture's navigation disclosure:** `tests/route-lazy-browser-e2e.mjs` had attempted to select a hidden `aoScriptureNav` child after the Scripture reader adopted citation-first progressive disclosure. The regression now opens the *actual, visible* “Browse the Bible” summary and asserts the disclosure is open before changing source edition. It still requires the chosen edition to survive expansion; it does not disable the control or bypass the user flow.
+3. **Matrimony return acceptance:** The Sexual Ethics contextual Back now closes directly to the Matrimony parent, keeping the same trigger and scroll rather than unnecessarily visiting the Sexual Ethics catalogue. The phone test requires **one Back**, not two.
+
+These are source integrity and interaction fidelity corrections, not changed Catholic doctrine. Their acceptance depends on fresh GitHub checks.
+
 ## Acceptance
 
 Source assertions in `tests/pray-formation-organisational-map.mjs` check 18/2 states, exact section/category arguments, source ownership, and absence of false Catechism wiring. Phone/browser tests must cover both specialist overlays (open, owner visible, return to same child position/focus) and the two Prayer Glossary capsules, in EN/FR at small viewports. Remain in a draft PR until App convergence and visual, Prayer and Marian gates pass.
