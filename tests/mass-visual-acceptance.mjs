@@ -574,13 +574,45 @@ try{
   await scholaPause.click();
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola resume control did not resume");
 
+  const expectedScholaTranslation=await page.evaluate(()=>
+    globalThis.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.schola?.english??null);
+  assert.ok(expectedScholaTranslation,"independent Schola source is missing a vernacular translation");
   await scholaDock.locator("[data-schola-translate]").click();
-  assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not open");
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not activate");
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola translation did not pause moving text");
-  assert.ok(((await scholaDock.locator("[data-role='schola-translation']").textContent())??"").trim().length>0,"Schola translation is empty");
+  assert.equal((await scholaDock.locator("[data-role='schola']").textContent())?.trim(),
+    expectedScholaTranslation,"Schola translation did not replace the very same visible line");
+  assert.equal(await scholaDock.locator("[data-role='schola-translation']").count(),0,
+    "a second Schola translation below the Latin is forbidden");
+  assert.equal(await scholaDock.locator("[data-schola-translate]").getAttribute("aria-pressed"),"true");
+  await page.screenshot({path:resolve(out,"06a-schola-inline-vernacular.png"),fullPage:false});
   await scholaDock.locator("[data-schola-translate]").click();
-  assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola translation did not close");
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola text did not return to Latin");
+  assert.equal((await scholaDock.locator("[data-role='schola']").textContent())?.trim(),
+    scholaState.latin,"Schola did not restore its original Latin in place");
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola did not resume after translation closed");
+
+  const missalTypography=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const reader=root?.querySelector(".ao-reader-paragraph:not([data-kind='RUBRIC'])");
+    const main=reader?.querySelector(".ao-line-primary");
+    const shell=root?.querySelector("[data-ao-reader-shell]");
+    const dock=root?.querySelector(".ao-schola-main");
+    return {
+      prayerFont:main?getComputedStyle(main).fontFamily:null,
+      scholaFont:dock?getComputedStyle(dock).fontFamily:null,
+      backdrop:shell?getComputedStyle(shell).backgroundImage:null,
+      colour:shell?.dataset?.liturgicalColour??null,
+      scholaRect:dock?.getBoundingClientRect().toJSON()??null,
+    };
+  });
+  assert.match(missalTypography.prayerFont??"",/Garamond|Baskerville|Georgia/i,
+    "Mass prayer text is not in a missal-style serif family");
+  assert.match(missalTypography.scholaFont??"",/Garamond|Baskerville|Georgia/i,
+    "Schola chant must share the Mass's book-like serif family");
+  assert.match(missalTypography.backdrop??"",/gradient/,
+    "Mass lost its app-dark palette gradient");
+  assert.ok(missalTypography.scholaRect?.height>=35,"Schola text touch target is too small");
 
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
