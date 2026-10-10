@@ -593,9 +593,9 @@ function daySurface(selected,r){
   const season=periodName(p),properReady=!!properOf(r),printReady=assessPrintableProper(r,{language:fr()?"fr":"en"}).ok;
   return `
     ${dayNavigator(selected)}
-    <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
-      <small class="aoCalV2Eyebrow">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
-      <h2>${esc(titleOf(r))}</h2>
+    <section class="aoCalV2Hero aoEditorialHero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
+      <small class="aoCalV2Eyebrow aoEditorialKicker">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
+      <h2 class="aoEditorialTitle">${esc(titleOf(r))}</h2>
       <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
       ${sourceStatus(r)}
       ${daySourceDetails(r)}
@@ -629,7 +629,7 @@ function yearSurface(selected,r){
   const y=buildLiturgicalYear(selected),p=y.currentPeriod,next=nextResolvedMajorCelebration(selected),gradient=ringGradient(y);
   const nextSeason=y.nextPeriod||{en:"Advent",fr:"Avent",start:addDaysIso(y.end,1)};
   return `
-    <section class="aoCalV2YearHero">
+    <section class="aoCalV2YearHero aoEditorialHero">
       <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL YEAR","ANNÉE LITURGIQUE"))}</small><h2>${esc(y.label)}</h2></div>
       <div class="aoCalV2YearHeroGrid">
         <div class="aoCalV2Ring" style="--year-angle:${(y.progress*360).toFixed(2)}deg;--year-gradient:conic-gradient(from -90deg,${gradient})">

@@ -1,4 +1,4 @@
-export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2";
+export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v3";
 const STYLE_ID="ao-app-design-system";
 
 const CSS=`
@@ -27,6 +27,12 @@ const CSS=`
   --ao-control-radius:11px;
   --ao-pill-radius:999px;
   --ao-section-gap:18px;
+  --ao-editorial-title:clamp(30px,5.5vw,46px);
+  --ao-editorial-kicker:12px;
+  --ao-editorial-lead:16px;
+  --ao-editorial-rule:rgba(228,218,198,.13);
+  --ao-editorial-warm:#d1bea0;
+  --ao-editorial-art-ratio:4/3;
   --ao-topbar-blur:16px;
 
   /* Shared UI type scale. Do not create new micro-sizes in feature CSS. */
@@ -169,6 +175,59 @@ const CSS=`
   font-family:var(--ao-font-body,Georgia,serif);
   font-size:var(--ao-type-prose);
   line-height:1.65;
+}
+
+
+/* Calendar-first editorial primitives, not a second layout or data owner.
+   Use only on entry/landing surfaces; R17 Mass cards remain untouched. */
+.aoEditorialHero{position:relative;min-width:0}
+.aoEditorialKicker{
+  color:var(--ao-liturgical-accent,#c9ad78)!important;
+  font:700 var(--ao-editorial-kicker)/1.4 var(--ao-font-ui)!important;
+  letter-spacing:.12em!important;text-transform:uppercase;
+}
+.aoEditorialTitle{
+  color:var(--ao-text-primary,#e9e4d9);font-family:var(--ao-font-display)!important;
+  font-size:var(--ao-editorial-title)!important;font-weight:400!important;
+  line-height:1.08!important;letter-spacing:-.025em;overflow-wrap:break-word;text-wrap:balance;
+}
+.aoEditorialLead{
+  color:var(--ao-text-muted,#9ba5b1)!important;
+  font:400 var(--ao-editorial-lead)/1.55 var(--ao-font-body)!important;
+  max-width:65ch;
+}
+.aoEditorialMeta{color:var(--ao-text-muted,#9ba5b1);font:500 13px/1.55 var(--ao-font-ui)}
+.aoEditorialSection{border-top:1px solid var(--ao-editorial-rule)}
+.aoEditorialReading{border-color:var(--ao-editorial-rule)!important}
+.aoEditorialPrimary{
+  min-height:48px!important;font-size:14px!important;line-height:1.3!important;touch-action:manipulation;
+}
+.aoEditorialArtwork{
+  position:relative;display:block;overflow:hidden;isolation:isolate;width:100%;
+  aspect-ratio:var(--ao-editorial-art-ratio);background:var(--ao-surface-2,#0d141c);
+}
+.aoEditorialArtwork>img{display:block;width:100%;height:100%;object-fit:cover}
+.aoEditorialArtwork[data-art-status="unavailable"]{
+  background:radial-gradient(circle at 50% 25%,rgba(201,173,120,.1),transparent 65%),var(--ao-surface-2,#0d141c);
+}
+.aoEditorialToolbar .aoEditorialTitle{font-size:clamp(21px,4vw,28px)!important;line-height:1.15!important}
+/* Pray: the family landing page only. Do not alter prayer text or guided rails. */
+#aoPray435930 .aoP435930HomeIntro.aoEditorialHero>small{
+  color:var(--ao-liturgical-accent,#c9ad78);font:700 12px/1.4 var(--ao-font-ui);letter-spacing:.12em;
+}
+#aoPray435930 .aoP435930HomeIntro.aoEditorialHero>h2{
+  font-family:var(--ao-font-display)!important;font-weight:400!important;
+  font-size:clamp(27px,5vw,38px)!important;line-height:1.12!important;
+}
+:is(.homeScreen,#ao-calendar-modular-root,#ao-learn-modular-root,#ao-find-modular-root,#aoPray435930) .aoEditorialPrimary:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#c9ad78)!important;outline-offset:3px;
+}
+@media(max-width:430px){
+  :root{--ao-editorial-title:clamp(27px,8vw,36px);--ao-editorial-lead:15px}
+  .aoEditorialKicker{letter-spacing:.085em!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .aoEditorialArtwork,.aoEditorialPrimary{transition:none!important;animation:none!important}
 }
 
 /* Reusable source/provenance disclosure. Feature modules should converge here. */

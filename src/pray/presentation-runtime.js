@@ -539,12 +539,12 @@ function prayFamilyItem(item){
 }
 function renderPrayHome(){
  const families=prayFamilies();
- return `${head(L('Pray','Prier'),L('What do you need for prayer now?','De quoi avez-vous besoin pour prier maintenant ?'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Choose one path','Choisissez une voie'))}</h2><p>${esc(L('Begin with the kind of prayer you need; the full corpus stays one level deeper.','Commencez par le type de prière dont vous avez besoin ; le corpus complet reste au niveau suivant.'))}</p></section><div class="aoP435930ModuleGrid aoP435930FamilyGrid">${Object.entries(families).map(([id,family])=>prayFamilyDoor(id,family)).join('')}</div></main>`;
+ return `${head(L('Pray','Prier'),L('What do you need for prayer now?','De quoi avez-vous besoin pour prier maintenant ?'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro aoEditorialHero"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Choose one path','Choisissez une voie'))}</h2><p>${esc(L('Begin with the kind of prayer you need; the full corpus stays one level deeper.','Commencez par le type de prière dont vous avez besoin ; le corpus complet reste au niveau suivant.'))}</p></section><div class="aoP435930ModuleGrid aoP435930FamilyGrid">${Object.entries(families).map(([id,family])=>prayFamilyDoor(id,family)).join('')}</div></main>`;
 }
 function renderPrayFamily(){
  const family=prayFamilies()[familyId];
  if(!family){familyId=null;view='home';return renderPrayHome()}
- return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}</div></main>`;
+ return `${head(family.title,L('Choose a prayer or devotion','Choisissez une prière ou une dévotion'))}<main class="aoP435930Body aoP435930Home"><section class="aoP435930HomeIntro aoEditorialHero"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p>${({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId]?'<div class="aoP435930ContextRow">'+glossaryContextCapsule(({eucharistic:'G301',penance:'G036',passion:'G419'})[familyId],{french:isFr()})+'</div>':''}</section><div class="aoP435930ModuleGrid">${family.items.map(prayFamilyItem).join('')}</div></main>`;
 }
 function openFamily(id){
  const family=prayFamilies()[String(id??'')];
