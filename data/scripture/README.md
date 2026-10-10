@@ -52,3 +52,35 @@ census, attribution, source metadata, exact match against Gospel verse keys,
 and no remote-runtime dependency. **Do not confuse this commentary source
 approval with approval to reproduce the Bible translations**: the latter remain
 disabled pending their separate canonical edition and textual audits.
+
+## Source-backed in-app reading (separate from approved editions)
+
+`source-transcriptions/{dr-challoner,cpdv-2009,crampon-1923}/` contains
+**on-demand per-book, source-identified research transcriptions**, not
+certified Scripture editions and not "reviewed: true" packs. Their goal is to
+restore the previous in-app **Passage / Full chapter** experience while
+editorial collation proceeds.
+
+English Douay and French Crampon come from pinned Scrollmapper digital
+witnesses with their original Git blob SHA checked by the acquisition script.
+The CPDV transcription is taken instead from Ronald L. Conte Jr.'s **primary
+author-maintained pages** (independently downloaded, checked by byte SHA-256,
+and not from the dated third-party CPDV file). Every book is separate, with a
+manifest SHA-256, source URL, status `SOURCE_TRANSCRIPTION_UNDER_REVIEW`,
+and explicit blank verse slots. The runtime verifies the SHA-256 before display
+and caches only validated data. It never turns these records into certified
+texts or marks them `reviewed: true`.
+
+Source headings and notices must always disclose that textual and theological
+edition review is outstanding. Unavailable or blank source verses are never
+fabricated. Translation crosswalks remain unchanged, especially the Catholic
+Esther additions, Psalms and Song of Songs.
+
+To reconstruct, run:
+`node tools/scripture/fetch-upstream.mjs`
+`node tools/scripture/collate-cpdv-master.mjs artifacts/scripture-candidates 73`
+`node tools/scripture/publish-source-transcriptions.mjs artifacts/scripture-candidates data/scripture/source-transcriptions`
+
+The dedicated source-generation workflow runs these steps and commits
+validated output to the feature branch. Formal `SCRIPTURE_EDITIONS.enabled`,
+`loadScriptureBook` and the 73-book review gates are deliberately unaffected.
