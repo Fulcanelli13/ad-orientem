@@ -60,6 +60,7 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   // Shell buttons are particularly sensitive because a stray tap leaves
   // Explore or a LIVE Mass. Do not interpret a swipe as navigation.
   const scrollGuard=createScrollTapGuard(doc,{
+    trackAnywhere:true,
     contains:target=>Boolean(doc.getElementById("ao-global-ribbon")?.contains?.(target)),
   });
   cleanups.push(()=>scrollGuard.dispose());
