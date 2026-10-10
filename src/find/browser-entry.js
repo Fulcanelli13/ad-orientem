@@ -272,7 +272,7 @@ export function createFindOwner(win=globalThis){
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
       try{
-        mapHandle=await mountExploreMap(mapNode,items,{
+        const nextHandle=await mountExploreMap(mapNode,items,{
           win,initialViewport:lastMapLens===state.lens?lastMapView:null,
           onSelect:id=>{
             const place=state.lens==="heritage"?items.find(item=>item.item_id===id):null;
@@ -282,6 +282,8 @@ export function createFindOwner(win=globalThis){
             void paint();
           },
         });
+        if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
+        mapHandle=nextHandle;
       }catch(error){
         const fallback=mapNode?.querySelector?.(".aoFindMapFallback");
         if(fallback)fallback.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
@@ -433,6 +435,9 @@ export function createFindOwner(win=globalThis){
       state.highlightCustomId=state.highlightCustomId===id?null:id;
       state.selectedId=null; // Keep the map visible; extended practice text is opt-in.
       state.selectedPlaceId=null;state.expandPlace=false;
+      // A selected practice can have geographically distant examples. Fit
+      // their source-backed pins rather than preserving an unrelated viewport.
+      lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
       void paint();return;
     }
     const openPlace=target?.closest?.("[data-explore-open-place]");
