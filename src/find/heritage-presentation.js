@@ -49,7 +49,11 @@ function searchMatches(vm){
       const title=String(item.title??"").toLocaleLowerCase();
       return title===normalized?0:title.startsWith(normalized)?1:title.includes(normalized)?2:3;
     };
-    return rank(a)-rank(b)||String(a.title).localeCompare(String(b.title));
+    // Within a name match, prefer places supported by more distinct
+    // source-owned records; e.g. Lourdes itself before similarly named chapels.
+    return rank(a)-rank(b)
+      ||(Number(b.heritage_record_count)||0)-(Number(a.heritage_record_count)||0)
+      ||String(a.title).localeCompare(String(b.title));
   });
   let html='<div class="aoHeritageSearchResults" role="region" aria-label="'+L(vm.language,"Matching places","Lieux correspondants")+'">';
   html+='<div class="aoHeritageSearchCount" role="status">'+(results.length
