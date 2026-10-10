@@ -4006,5 +4006,12 @@
     "note": "A book can lack explicit geographic mentions, but every occurrence must be audited; initial curated seed is not Catholic-canon exhaustive."
   },
   "geographic_identities_are_separate_from_biblical_mentions": true,
-  "modern_monument_crosswalk_policy": "Ancient place sense is NEVER the same record as an archaeological monument or sanctuary; any existing shared Place ID is a related later physical site (monument/chapel/complex) with typed relation, not equality."
+  "modern_monument_crosswalk_policy": "Ancient place sense is NEVER the same record as an archaeological monument or sanctuary; any existing shared Place ID is a related later physical site (monument/chapel/complex) with typed relation, not equality.",
+  "editorial_status": "QUARANTINED_REFERENCE_SCENARIOS_SUPERSEDED_BY_EXISTING_OPEN_DATA_ADOPTION",
+  "production_import_allowed": false,
+  "master_gazetteer_allowed": false,
+  "upstream_precedence": "OpenBible.info ancient.jsonl + modern.jsonl + STEPBible TIPNR proper names/verse references, with Catholic 73-book delta; this 90-entry hand-created pilot is never to be used as master site census or baseline completeness.",
+  "pilot_utility": "Human-readable example event/story cases only, to evaluate field design and UI links after canonical upstream join. Each passage/event/location relationship still needs source verification.",
+  "denominator_warning": "90 manually sampled cases are NOT 90 unique ancient places, not 90 map pins, not 37 percent of biblical geography; 27 of 73 books have one or more sampled references only.",
+  "ancient_identity_matches_complete": false
 }
