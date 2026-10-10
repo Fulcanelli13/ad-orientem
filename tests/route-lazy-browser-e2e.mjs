@@ -84,8 +84,9 @@ try {
   assert.equal(await page.locator("#ao-scripture-overlay [data-scripture-whole-chapter]").count(),1,
     "Wider chapter reading must be available directly from cited verses");
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
-  const verified=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
+  const verified=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").first();
   await verified.waitFor({state:"visible",timeout:12000});
+  assert.ok(await page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").count()>=1,"No source-verified commentary witnesses");
   assert.ok((await verified.getAttribute("href")).includes("ecatholic2000.com/catena/"),
     "Passage-specific patristic link lost provenance");
   // Scripture now hides full-Bible navigation inside an explicit disclosure.
@@ -105,7 +106,7 @@ try {
   await page.locator("#ao-test-scripture-context-launcher").evaluate(node=>node.remove());
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 1:26–38")),true);
   await page.locator("#ao-scripture-overlay [data-scripture-context-depth='commentary']").click();
-  const annunciationCommentary=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']");
+  const annunciationCommentary=page.locator("#ao-scripture-overlay [data-scripture-commentary-source='verified']").first();
   await annunciationCommentary.waitFor({state:"visible",timeout:12000});
   assert.ok((await annunciationCommentary.getAttribute("href")).includes("ecatholic2000.com/catena/"),
     "Source-verified Annunciation commentary must retain its original link");
