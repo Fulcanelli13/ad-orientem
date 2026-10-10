@@ -306,6 +306,7 @@ export function buildExploreViewModel({
   selectedPlaceId=null,
   expandPlace=false,
   customCards=[],
+  biblePlaces=[],
   displayLimit=120,
 }={}){
   const list=arr(items);
@@ -327,6 +328,7 @@ export function buildExploreViewModel({
     selectedPlace,
     expandPlace:Boolean(expandPlace),
     customCards:arr(customCards),
+    biblePlaces:arr(biblePlaces),
     mapped,
     addressOnly,
     displayLimit:Number.isFinite(Number(displayLimit))?Math.max(60,Math.floor(Number(displayLimit))):120,
