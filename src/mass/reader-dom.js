@@ -733,13 +733,13 @@ function foldRitualText(value){
   return {text,offsets};
 }
 
-function appendRitualFragment(target,text,doc){
+function appendRitualFragment(target,text,doc,{active=false}={}){
   const pieces=String(text??"").split("✠");
   pieces.forEach((piece,index)=>{
     if(piece)target.append(doc.createTextNode(piece));
     if(index<pieces.length-1){
       const cross=doc.createElement("span");
-      cross.className="ao-ritual-cross-symbol ao-ritual-trigger-live";
+      cross.className=active?"ao-ritual-cross-symbol ao-ritual-trigger-live":"ao-ritual-cross-symbol";
       cross.textContent="✠";
       target.append(cross);
     }
@@ -753,7 +753,11 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
   const raw=String(text??"");
   const fragments=active ? ritualAnchorFragments(anchor) : [];
   target.replaceChildren();
-  if(!fragments.length){target.textContent=raw;decorateLiturgicalSpeaker(target,raw);return false;}
+  if(!fragments.length){
+    if(raw.includes("✠"))appendRitualFragment(target,raw,doc);
+    else target.textContent=raw;
+    decorateLiturgicalSpeaker(target,raw);return false;
+  }
 
   const folded=foldRitualText(raw);
   let cursor=0,matched=false;
@@ -768,7 +772,7 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
     if(index>cursor)target.append(doc.createTextNode(raw.slice(cursor,index)));
     const span=doc.createElement("span");
     span.className="ao-ritual-trigger ao-ritual-trigger-live";
-    appendRitualFragment(span,raw.slice(index,end),doc);
+    appendRitualFragment(span,raw.slice(index,end),doc,{active:true});
     target.append(span);
     cursor=end;
     matched=true;
@@ -776,7 +780,8 @@ function renderReaderText(target,text,{anchor=null,active=false}={}){
   if(cursor<raw.length)target.append(doc.createTextNode(raw.slice(cursor)));
   if(!matched){
     target.replaceChildren();
-    target.textContent=raw;
+    if(raw.includes("✠"))appendRitualFragment(target,raw,doc);
+    else target.textContent=raw;
   }
   decorateLiturgicalSpeaker(target,raw);
   return matched;
