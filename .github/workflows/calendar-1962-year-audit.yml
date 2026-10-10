@@ -9,6 +9,7 @@ on:
       - "tests/calendar-1962-full-year-audit.mjs"
       - "tools/calendar/report-sacred-art-liturgical-priorities.mjs"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
+      - "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json"
       - ".github/workflows/calendar-1962-year-audit.yml"
   workflow_dispatch:
 
