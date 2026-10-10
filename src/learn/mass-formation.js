@@ -1,4 +1,4 @@
-import { formationReaderCss } from "./formation-ui.js";
+import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 
 export const MASS_FORMATION_VERSION="mass-formation-campion-v1";
@@ -86,6 +86,7 @@ export function createMassFormationRuntime(win=globalThis,{fetchImpl=globalThis.
     const stage=state.data.stages.find(x=>x.id===state.stageId);
     node.innerHTML=state.view==="stage"&&stage?stageHtml(win,state.data,stage):listHtml(win,state.data);
     node.hidden=false;node.removeAttribute("aria-hidden");node.scrollTop=0;
+    installFormationNavigation(win,node);
     queueMicrotask(()=>node.querySelector("button,a[href]")?.focus?.({preventScroll:true}));
     return true;
   }
