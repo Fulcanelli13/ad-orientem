@@ -1860,6 +1860,10 @@ export function createReaderDomAdapter({
 
   function renderMoment(moment){
     if(!prepared) throw new Error("Reader shell must be mounted before rendering moments");
+    const priorPosture=textValue(current?.posture);
+    const priorPostureCueId=current?.postureCue?.cueId??null;
+    const priorCueVisible=root.querySelector('.ao-rail-left [data-channel="posture-change"]')
+      ?.dataset.active==="true";
     current=normalizeReaderMoment(moment,current ?? {});
     setText(root,"section-title",current.sectionTitle);
     for(const button of root.querySelectorAll?.("[data-reader-section]")??[]){
@@ -1886,17 +1890,21 @@ export function createReaderDomAdapter({
     }
 
     setChannel(root,"posture",current.posture);
-    // The cue announces a *newly reached* posture. At the exact source
-    // transition the target and the current faithful state MUST agree.
-    // The former "different" comparison hid every correctly resolved cue,
-    // while the persistent posture rail was deliberately hidden to avoid
-    // duplicating the top YOU state owner. Keep the transient on the left
-    // rail only at its source moment; never show contradictory profile cues.
-    const postureCueMatches=Boolean(current.postureCue && current.posture &&
-      textValue(current.postureCue)===textValue(current.posture));
-    setChannel(root,"posture-change",postureCueMatches ? current.postureCue : null);
+    // A source posture anchor is not automatically a fresh transition:
+    // Collect STAND after Gloria STAND is a redundant marker, whereas STAND
+    // after EPISTLE SIT is a real action. A valid cue must match the resolved
+    // profile AND alter the preceding posture. Preserve an already-visible
+    // cue across repeated render calls with the same canonical source ID.
+    const newPosture=textValue(current.posture);
+    const cueId=current.postureCue?.cueId??null;
+    const postureCueMatches=Boolean(current.postureCue && newPosture &&
+      textValue(current.postureCue)===newPosture);
+    const continuingCue=Boolean(priorCueVisible&&cueId&&cueId===priorPostureCueId);
+    const postureChangeVisible=postureCueMatches &&
+      (priorPosture!==newPosture || continuingCue);
+    setChannel(root,"posture-change",postureChangeVisible ? current.postureCue : null);
     const postureRail=root.querySelector('.ao-rail-left [data-channel="posture"]');
-    if(postureRail)postureRail.dataset.change=String(postureCueMatches);
+    if(postureRail)postureRail.dataset.change=String(postureChangeVisible);
     setChannel(root,"attention",current.attention);
     setChannel(root,"priest-action",current.priestAction);
     setChannel(root,"gesture",current.gesture);
@@ -1913,7 +1921,7 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
-    applyIcon(root,"posture-change",postureCueMatches ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
+    applyIcon(root,"posture-change",postureChangeVisible ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
     applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
     applyIcon(root,"response",current.responseIconKey,iconResolver);
