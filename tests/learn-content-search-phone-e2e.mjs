@@ -53,6 +53,13 @@ try{
  await find("SL01");
  await page.waitForFunction(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.()?.lessonId==="SL01",null,{timeout:12000});
  await returnToHub(()=>globalThis.AO_SPIRITUAL_LIFE_V1?.close?.());
+ await find("PX1912-Q213");
+ await page.waitForFunction(()=>globalThis.AO_TRADITIONAL_CATECHISM?.getState?.()?.detail===213,
+  null,{timeout:15000});
+ assert.equal(await page.locator("#ao-cate-root").isVisible(),true,
+  "Catechism global search did not open its existing native question reader");
+ await returnToHub(()=>globalThis.AO_TRADITIONAL_CATECHISM?.close?.());
+ assert.equal(await search.inputValue(),"PX1912-Q213","Catechism question search context lost");
  await find("latin:40");
  await page.waitForFunction(()=>globalThis.AO_LATIN_COURSE_V1?.status?.()?.lesson===40,null,{timeout:15000});
  const latinRoot=page.locator("#ao-latin-course-root");
@@ -72,7 +79,7 @@ try{
  assert.ok(mobile.over<=2,"Formation overflows at 320px: "+JSON.stringify(mobile));
  assert.ok(mobile.links.every(h=>h>=44),"Formation has undersized phone controls");
  assert.deepEqual(errors,[],"Formation navigation has page errors");
- console.log("PASS: 320px mobile, CSE123, SL01, Latin lesson 40, return context and Questions directory");
+ console.log("PASS: 320px mobile, CSE123, SL01, PX1912-Q213, Latin lesson 40, return context and Questions directory");
 }finally{
  await browser?.close();
  await new Promise(done=>server.close(done));
