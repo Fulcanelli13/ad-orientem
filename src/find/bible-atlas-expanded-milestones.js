@@ -1,5 +1,4 @@
-// Supplemental bilingual narrative milestones. Explicit biblical references only;
-// non-point events and unverified locations must remain visible without fabricated pins.
+// Supplemental bilingual narrative milestones: biblical references; geographic pins require separate evidence.
 export const BEFORE_MILESTONES={
   "The departure from Egypt": [
     [
@@ -33,6 +32,40 @@ export const BEFORE_MILESTONES={
       "The first Passover",
       "La première Pâque",
       "Exodus 12:1–28"
+    ]
+  ],
+  "The Maccabean resistance": [
+    [
+      "EXILE",
+      null,
+      null,
+      "The seven brothers' witness",
+      "Le témoignage des sept frères",
+      "2Maccabees 7:1–42"
+    ]
+  ],
+  "olives-e1": [
+    [
+      "PASSION",
+      "bethphage",
+      "bethphage-e1"
+    ]
+  ],
+  "jericho-e2": [
+    [
+      "PUBLIC",
+      "jericho",
+      "jericho-e1"
+    ]
+  ],
+  "The Flood": [
+    [
+      "ORIGINS",
+      null,
+      null,
+      "Cain and Abel",
+      "Caïn et Abel",
+      "Genesis 4:1–16"
     ]
   ]
 };
@@ -374,14 +407,6 @@ export const AFTER_MILESTONES={
       "EXILE",
       null,
       null,
-      "The seven brothers' witness",
-      "Le témoignage des sept frères",
-      "2Maccabees 7:1–42"
-    ],
-    [
-      "EXILE",
-      null,
-      null,
       "The gift of Wisdom",
       "Le don de la Sagesse",
       "Wisdom 7:7–14"
@@ -515,11 +540,6 @@ export const AFTER_MILESTONES={
   "jericho-e2": [
     [
       "PUBLIC",
-      "jericho",
-      "jericho-e1"
-    ],
-    [
-      "PUBLIC",
       "bethesda",
       "bethesda-miracle-18"
     ],
@@ -641,19 +661,19 @@ export const AFTER_MILESTONES={
   "The disciples at Antioch": [
     [
       "APOSTLES",
-      "jerusalem-temple",
-      null,
-      "Council of Jerusalem",
-      "Le concile de Jérusalem",
-      "Acts 15:1–29"
-    ],
-    [
-      "APOSTLES",
       "lystra",
       null,
       "Paul heals a man in Lystra",
       "Paul guérit un homme à Lystres",
       "Acts 14:8–18"
+    ],
+    [
+      "APOSTLES",
+      "jerusalem-temple",
+      null,
+      "Council of Jerusalem",
+      "Le concile de Jérusalem",
+      "Acts 15:1–29"
     ],
     [
       "APOSTLES",
@@ -715,6 +735,14 @@ export const AFTER_MILESTONES={
     ]
   ],
   "St John's vision": [
+    [
+      "REVELATION",
+      null,
+      null,
+      "Letters to the seven churches",
+      "Les lettres aux sept Églises",
+      "Revelation 2:1–3:22"
+    ],
     [
       "REVELATION",
       null,
