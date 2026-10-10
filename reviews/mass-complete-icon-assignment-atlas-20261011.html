@@ -94,8 +94,18 @@ function get(t){return changes[t.id]??{}}
 function primary(t){const entry=get(t);return Object.hasOwn(entry,"primary")?entry.primary:t.originalIcon}
 function fileUrl(asset){if(!asset?.path)return "";return "../"+asset.path}
 function art(asset){if(!asset)return '<span class="muted">No icon</span>';if(!asset.available)return '<span class="muted" title="Source not externally available">Not externalized</span>';
- const src=fileUrl(asset);return '<img loading="lazy" src="'+esc(src)+'" alt="'+esc(asset.label)+'">';}
+ const src=fileUrl(asset);
+ const fallback="https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/main/"+asset.path;
+ return '<img loading="lazy" src="'+esc(src)+'" data-remote="'+esc(fallback)+'" alt="'+esc(asset.label)+'">';}
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+// If opened as a single downloaded HTML outside the Git checkout, use the
+// exact GitHub raw asset path. A local checkout keeps its local file first.
+document.addEventListener("error",e=>{
+ const img=e.target;
+ if(img?.tagName==="IMG"&&img.dataset?.remote&&!img.dataset.remoteTried){
+   img.dataset.remoteTried="1";img.src=img.dataset.remote;
+ }
+},true);
 function targetLabel(t){return (t.label??"")+" "+t.cue+" "+t.actor+" "+t.semantic+" "+t.campionPages.join(" ")}
 const groups=[...new Set(DATA.assets.flatMap(a=>a.groups))].sort();
 for(const g of groups){const o=document.createElement("option");o.value=g;o.textContent=g;$("assetGroup").append(o)}
