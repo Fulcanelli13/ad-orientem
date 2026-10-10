@@ -1220,8 +1220,8 @@
         {
           "role": "answer",
           "text": {
-            "en": "Papal infallibility protects a definition of faith or morals delivered by the pope ex cathedra as universal shepherd, intended to bind the whole Church. It is not personal sinlessness, scientific omniscience, or infallibility of interviews, administrative policies and private opinions. The bishops also participate in infallible teaching under the specified conditions of Catholic doctrine.",
-            "fr": "L'infaillibilité pontificale protège une définition de foi ou de mœurs prononcée ex cathedra par le pape pasteur universel pour obliger l'Église entière. Elle n'est ni impeccabilité personnelle, ni omniscience scientifique, ni infaillibilité d'interviews, mesures administratives ou opinions privées. Les évêques participent aussi à l'enseignement infaillible selon les conditions doctrinales établies."
+            "en": "Vatican I defined papal infallibility in Pastor aeternus chapter IV under specific conditions: the Roman Pontiff, acting as pastor and teacher of all Christians with supreme apostolic authority, definitively teaches a doctrine of faith or morals to be held by the universal Church. Such a definition is irreformable in itself, not because of later consent. Vatican I did not define the Pope as personally impeccable, divinely inspired in every utterance or incapable of mistaken appointments and prudential decisions. Lumen gentium §25 distinguishes such definitive teaching from the religious submission owed to authentic, non-definitive teaching.",
+            "fr": "Vatican I a défini l'infaillibilité pontificale dans Pastor aeternus, chapitre IV, sous des conditions précises : le Pontife romain, comme pasteur et docteur de tous les chrétiens et en vertu de sa suprême autorité apostolique, définit une doctrine de foi ou de mœurs à tenir par toute l'Église. Cette définition est irréformable en elle-même, non par le consentement postérieur. Le Concile n'a pas défini le pape comme personnellement impeccable, inspiré dans chaque parole ni incapable d'erreur de prudence ou de nomination. Lumen gentium §25 distingue cet enseignement définitif de la soumission religieuse due à l'enseignement authentique non définitif."
           },
           "source_ids": [
             "V1",
@@ -1230,7 +1230,11 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "V1": "Pastor aeternus chapter IV, conditions of definition ex cathedra",
+            "LG": "Lumen gentium §25, definitive and non-definitive teachings"
+          }
         },
         {
           "role": "documented_position",
@@ -1334,8 +1338,8 @@
         {
           "role": "traditional_catholic_argument",
           "text": {
-            "en": "The faith belongs to Christ rather than any generation of theologians or church politicians. Growth should make apostolic truth clearer and better defended, never replace it with an expedient contrary assertion. Catholic fidelity therefore requires both serious examination of apparent difficulties and confidence that divine revelation cannot contradict itself.",
-            "fr": "La foi appartient au Christ, non à une génération de théologiens ou de responsables politiques ecclésiastiques. La croissance doit éclaircir et mieux défendre la vérité apostolique, jamais la remplacer par une assertion contraire commode. La fidélité catholique exige donc examen sérieux des difficultés et confiance dans la non-contradiction de la Révélation."
+            "en": "St Vincent of Lérins, Commonitorium chapter 23, compares doctrinal development to the growth of a human body: it matures without turning into a different species. He requires the same dogma, meaning and judgment through genuine development. Dei Verbum §§8–10 acknowledges a deepening grasp of revelation while insisting that the Magisterium serves rather than stands above God's Word. A new expression may explicate a truth previously implicit, but it cannot make a proposition and its contradictory negation equally revealed or definitive.",
+            "fr": "Saint Vincent de Lérins, dans le Commonitorium, chapitre 23, compare le développement doctrinal à la croissance d'un corps humain : il mûrit sans devenir une autre espèce. Il maintient le même dogme, le même sens et le même jugement au sein du véritable développement. Dei Verbum (§§8–10) reconnaît un approfondissement de la Révélation tout en rappelant que le Magistère sert la Parole de Dieu et ne la domine pas. Une formulation nouvelle peut rendre explicite une vérité implicite, mais non présenter comme également révélées et définitives deux propositions contradictoires."
           },
           "source_ids": [
             "VIN",
@@ -1344,7 +1348,11 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "VIN": "Commonitorium chapter 23, same dogma, same sense, same judgment",
+            "DEIV": "Dei Verbum §§8–10, developing understanding within one deposit"
+          }
         }
       ],
       "original_claim_by_claim_source_context_certified": false,
@@ -1361,8 +1369,8 @@
         {
           "role": "answer",
           "text": {
-            "en": "The Church of England retains Christian Scripture, worship and historical community, but Catholic doctrine does not treat its Orders as automatically valid because an episcopal title survived. Leo XIII's Apostolicae curae judged the Anglican Ordinal defective in sacramental form and intention. This ruling concerns sacramental acts, not an assertion that every Anglican lacks sincere Christian faith.",
-            "fr": "L'Église d'Angleterre conserve Écritures, culte et communauté historique, mais la doctrine catholique ne tient pas ses Ordres pour valides du seul fait de titres épiscopaux conservés. Apostolicae curae de Léon XIII jugea l'ordinal anglican défectueux quant à la forme et l'intention sacramentelles. Ce jugement porte sur les actes sacramentels, non sur la sincérité de chaque anglican."
+            "en": "Leo XIII's Apostolicae curae (1896) declared Anglican ordinations by the Edwardine Ordinal invalid because of defects in the sacramental form and intention of that rite. The judgment is neither a statement about the sincerity of individual Anglicans nor a claim that episcopal vestments guarantee sacramental orders. It asks whether the ordination rite signifies the Catholic priestly office and the Eucharistic sacrifice in apostolic continuity. Later exceptional cases involving different episcopal consecrators or distinct formulas require concrete facts rather than pretending the 1896 historical judgment anticipated every imaginable new combination.",
+            "fr": "Léon XIII, dans Apostolicae curae (1896), déclara invalides les ordinations anglicanes selon l'Ordinal édouardien en raison des défauts de forme et d'intention sacramentelles de ce rite. Ce jugement ne porte ni sur la sincérité des anglicans individuels ni sur les vêtements épiscopaux comme preuve des ordres. Il examine si le rite d'ordination signifie le sacerdoce catholique et le sacrifice eucharistique dans la continuité apostolique. Des cas exceptionnels postérieurs impliquant d'autres consécrateurs ou des formules différentes demandent des faits concrets, sans prétendre que le jugement historique de 1896 aurait anticipé toute combinaison imaginable."
           },
           "source_ids": [
             "APOST",
@@ -1370,7 +1378,10 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "APOST": "Apostolicae curae (1896), Anglican ordinal, defect of sacramental form and intention"
+          }
         },
         {
           "role": "documented_position",
@@ -1530,8 +1541,8 @@
         {
           "role": "critical_response",
           "text": {
-            "en": "The New Testament connects baptism and personal faith but also describes divine action in the sacrament and whole households entering the Church. A household baptism is not itself proof that infants were physically present. The Catholic case therefore also relies on ancient ecclesial reception and the Church's faith carried by parents and godparents.",
-            "fr": "Le Nouveau Testament lie baptême et foi personnelle, mais rapporte aussi l'action divine sacramentelle et l'entrée de maisons entières dans l'Église. Un baptême de maisonnée ne prouve pas à lui seul la présence de nourrissons. L'argument catholique invoque aussi la réception ecclésiale ancienne et la foi de l'Église portée par parents et parrains."
+            "en": "The 1689 Second London Baptist Confession chapter 29 §2 says that those who actually profess repentance, faith and obedience are proper subjects of baptism. That is a positive Baptist account of believers' baptism, not a denial that Jesus instituted it. The Catholic reply starts from John 3 on rebirth by water and Spirit and the Church's account of baptism as unearned grace rather than a reward for intellectual maturity. Catechism §§1250–1255 expressly explains the baptism of infants within the faith of the Church and the duties of parents and godparents. Such baptism demands later catechesis and conversion rather than dispensing with them.",
+            "fr": "La seconde Confession baptiste de Londres (1689, chapitre 29, §2) désigne comme sujets propres du baptême ceux qui professent effectivement repentir, foi et obéissance. C'est une défense positive du baptême des croyants, non une négation de son institution par Jésus. La réponse catholique part de Jean 3, de la renaissance par l'eau et l'Esprit, et de la grâce baptismale reçue sans l'avoir méritée par maturité intellectuelle. Le Catéchisme (§§1250–1255) explique le baptême des petits enfants dans la foi de l'Église et les devoirs des parents et parrains. Ce baptême appelle une catéchèse et une conversion ultérieures plutôt qu'il n'en dispense."
           },
           "source_ids": [
             "CCC-BAPTISM-INF",
@@ -1540,7 +1551,11 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "BAPT1689": "Second London Baptist Confession chapter 29 §2, professing believers",
+            "CCC-BAPTISM-INF": "Catechism §§1250–1255, infant baptism and faith of the Church"
+          }
         },
         {
           "role": "traditional_catholic_argument",
@@ -1642,8 +1657,8 @@
         {
           "role": "answer",
           "text": {
-            "en": "Christ alone is the source of forgiveness, but he commissioned apostles to forgive and retain sins in his name. The sacrament of Penance exercises this entrusted ministry: the priest does not compete with God as another independent redeemer. A penitent requires contrition, truthful confession and the purpose to amend life, rather than a mechanical recital of faults.",
-            "fr": "Le Christ seul est source du pardon, mais il chargea les apôtres de remettre et retenir les péchés en son nom. La pénitence exerce ce ministère confié : le prêtre ne concurrence pas Dieu comme rédempteur indépendant. Le pénitent doit éprouver contrition, accusation véridique et résolution de conversion, non réciter mécaniquement des fautes."
+            "en": "In John 20:21–23 Christ gives the apostles a mission and entrusts to them the authority to forgive or retain sins. Catholic Penance exercises this ministerial authority in dependence on God's mercy; it does not make the priest an independent source of forgiveness or reduce confession to a therapeutic conversation. Catechism §§1440–1445 says sin wounds communion with God and the Church; §§1455–1460 then explain the truthful accusation of grave sins, absolution and satisfaction. Contrition and a purpose of amendment remain necessary to return to communion with God.",
+            "fr": "Dans Jean 20,21–23, le Christ confie aux apôtres une mission et le pouvoir de remettre ou de retenir les péchés. La pénitence catholique exerce cette autorité ministérielle dans la dépendance de la miséricorde divine ; elle ne fait ni du prêtre une source autonome du pardon ni de la confession un simple entretien thérapeutique. Le Catéchisme (§§1440–1445) rappelle que le péché blesse la communion avec Dieu et l'Église ; les §§1455–1460 traitent ensuite de l'aveu des fautes graves, de l'absolution et de la satisfaction. Contrition et ferme propos restent nécessaires pour revenir à la communion avec Dieu."
           },
           "source_ids": [
             "BIBLE-JN20",
@@ -1652,7 +1667,12 @@
           ],
           "attribution": null,
           "original_context_approved": false,
-          "french_final_approved": false
+          "french_final_approved": false,
+          "source_claim_locators": {
+            "BIBLE-JN20": "John 20:21–23, forgiveness and retention entrusted to apostles",
+            "CCC-PEN": "Catechism §§1440–1445, reconciliation with God and Church",
+            "CCC-PEN2": "Catechism §§1455–1460, confession and satisfaction"
+          }
         },
         {
           "role": "documented_position",
