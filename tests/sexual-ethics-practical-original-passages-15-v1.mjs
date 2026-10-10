@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { CSE_DEBATE_MAP, CSE_DEBATE_FIELDS, CSE_SOURCE_MAP } from "../src/learn/sexual-ethics-data/index.js";
+import { CSE_DEBATE_MAP, CSE_DEBATE_FIELDS } from "../src/learn/sexual-ethics-data/debates.js";
+import { CSE_SOURCE_MAP } from "../src/learn/sexual-ethics-data/index.js";
 const old=JSON.parse(readFileSync("data/learn/sexual-ethics-practical-relationships-source-batch-20261009.v1.json","utf8"));
 const now=JSON.parse(readFileSync("data/learn/sexual-ethics-practical-original-passages-15-20261009.v1.json","utf8"));
 const ids=old.cases.map(x=>x.id).sort();
