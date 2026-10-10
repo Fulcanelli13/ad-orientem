@@ -46,7 +46,7 @@ try{
  const nearbyBox=await nearby.boundingBox();
  assert.ok(nearbyBox&&nearbyBox.height>=44&&nearbyBox.width>=44,"nearby control is too small for touch");
  const mapSearch=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
- await mapSearch.fill("Lourdes");
+ await mapSearch.fill("Sanctuaire Notre-Dame de Lourdes");
  await page.waitForFunction(()=>Boolean(document.querySelector("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]")),null,{timeout:15000});
  const options=page.locator("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]");
  assert.ok(await options.count()<=6,"search opened an unbounded list instead of compact suggestions");
