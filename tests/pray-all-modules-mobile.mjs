@@ -92,6 +92,31 @@ try{
  assert.deepEqual(visibleFamilyIds.sort(),expectedFamilyIds,"Production Prayer family cards are not the declared routes");
  assert.equal(externalRoutes.length,10,"Expected ten external first-use Prayer buttons");
  console.log("PASS Prayer family reachability: all 23 visible routes, ten external first-use taps and exact-family returns");
+ // Exercise the real Holy Name Guide on a touch-sized screen. The complete
+ // source text remains available; guided reading only separates seven
+ // original paragraphs and must preserve Latin replacement in each stage.
+ const litanyOpen=await page.evaluate(async()=>await globalThis.AO_MODULES.open("pray.holy_name_litany",{returnContext:null}));
+ assert.notEqual(litanyOpen?.ok,false,"Holy Name litany is not reachable through the canonical module registry");
+ await page.waitForSelector("#aoPray435930.open [data-tp381-litany-mode='guided']",{state:"visible",timeout:12000});
+ const litany="#aoPray435930.open";
+ assert.equal(await page.locator(litany+" [data-tp381-litany-mode='full']").getAttribute("aria-pressed"),"true");
+ await page.locator(litany+" [data-tp381-litany-mode='guided']").tap();
+ assert.equal(await page.locator(litany+" [data-tp381-litany-mode='guided']").getAttribute("aria-pressed"),"true");
+ assert.match(await page.locator(litany+" .aoTP381GuideCount").innerText(),/Section 1 of 7/);
+ assert.equal(await page.locator(litany+" [data-tp381-litany-step='-1']").isDisabled(),true);
+ await page.locator(litany+" [data-tp381-flip]").tap();
+ assert.equal(await page.locator(litany+" [data-face-la]").isVisible(),true,"Guided Litany Latin replacement is not visible");
+ assert.equal(await page.locator(litany+" [data-face-v]").isVisible(),false,"Litany shows Latin and vernacular simultaneously");
+ for(let step=2;step<=7;step++){
+   await page.locator(litany+" [data-tp381-litany-step='"+(step-1)+"']").tap();
+   assert.match(await page.locator(litany+" .aoTP381GuideCount").innerText(),new RegExp("Section "+step+" of 7"));
+ }
+ await page.locator(litany+" [data-tp381-litany-mode='full']").tap();
+ assert.equal(await page.locator(litany+" .aoTP381GuideCount").count(),0,"Full Holy Name Litany retained guided section count");
+ assert.match(await page.locator(litany+" .aoTP381PrayerCard").innerText(),/Jesus|Lord/i,"Full Holy Name text is incomplete");
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
+ console.log("PASS Holy Name guided Litany: seven original-source sections, reversible Latin, complete text retained");
+
 
  // Confession paths must remain under one sacramental owner, with no sins entered.
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null}));
