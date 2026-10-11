@@ -454,6 +454,12 @@ export function installAppShellBridge({
       }
       return state.presentationFx?.navigate?.(surface, () => state.controller.go(surface)) ?? state.controller.go(surface);
     },
+    back() {
+      if (!state.controller) return Promise.resolve(Object.freeze({
+        ok:false,surface:null,reason:"APP_SHELL_NOT_READY",
+      }));
+      return state.controller.back();
+    },
     getActive() {
       return state.controller?.getActive?.() ?? null;
     },
