@@ -172,6 +172,12 @@ export function renderHome(root,state,win=globalThis){
     try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
     catch(error){win?.console?.warn?.("Approved Today artwork unavailable",error)}
     if(art)slot.innerHTML=art;
+    // Donor fallback labels are not approved sacred paintings; retain the
+    // devotional typographic hero but do not reserve an empty image column.
+    const hasArt=Boolean(slot.querySelector("img[src],picture source[srcset],video[poster],canvas"));
+    const hero=root.querySelector(".aoTodayV2Frontispiece");
+    hero?.classList?.toggle("aoTodayV2ArtMissing",!hasArt);
+    if(!hasArt)slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
   }
   reconcileTodayHero(root);
   return true;
