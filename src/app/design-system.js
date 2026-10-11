@@ -41,7 +41,7 @@ const CSS=`
   /* Reader grammar shared by Mass and devotional sequences. */
   --ao-reader-focus-current:1;
   --ao-reader-focus-near:.80;
-  --ao-reader-focus-far:.56;
+  --ao-reader-focus-far:.64;
   --ao-reader-progress-height:3px;
   --ao-reader-prayer-label-size:11px;
 
