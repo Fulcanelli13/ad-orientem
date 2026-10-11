@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {MERCY_PRAYERS,MERCY_WITNESSES,divineMercySteps,mercyStepText,rosaryPlan,rosaryJourney,rosaryJourneyAt,rosaryJourneyEvents,rosaryJourneyTransition,ROSARY_METHODS} from "../src/pray/devotional-methods-v1.js";
+import {MERCY_PRAYERS,MERCY_WITNESSES,divineMercySteps,mercyStepText,rosaryPlan,rosaryJourney,rosaryJourneyAt,rosaryJourneyEvents,rosaryJourneyTransition,createContinuousRosaryBridge,ROSARY_METHODS} from "../src/pray/devotional-methods-v1.js";
 const base=divineMercySteps();
 assert.equal(base.length,62,"4 opening + 5*(1+10) + 3 concluding prayers");
 assert.deepEqual(base.slice(0,4).map(x=>x.key),["cross","pater","ave","creed"]);
@@ -40,6 +40,26 @@ assert.equal(rosaryJourneyTransition(events,0).previous,null);
 assert.equal(rosaryJourneyTransition(events,events.length-1).complete,true);
 assert.equal(rosaryJourneyTransition(events,-1),null);
 assert.equal(rosaryJourneyEvents({decades:5}).length,12);
+assert.equal(createContinuousRosaryBridge(null).supported,false);
+const sets=[],starts=[];
+const bridge=createContinuousRosaryBridge({state:()=>({}),steps:()=>[],setStep:()=>true},{
+ selectSet:s=>{sets.push(s);return true},
+ beginSet:m=>{starts.push(m.id);return true}
+});
+assert.equal(bridge.supported,true);
+assert.equal(bridge.advance(),false,"No advance before start");
+assert.equal(bridge.start(),true);
+assert.equal(bridge.start(),false,"Cannot repeat opening");
+for(let i=1;i<15;i++)assert.equal(bridge.advance(),true);
+assert.deepEqual(sets,["joyful","sorrowful","glorious"]);
+assert.deepEqual(starts,journey.map(m=>m.id));
+assert.equal(bridge.state().index,14);
+assert.equal(bridge.advance(),true,"Final completion");
+assert.equal(bridge.state().finished,true);
+assert.equal(bridge.advance(),false,"No second conclusion");
+const denied=createContinuousRosaryBridge({state:()=>({}),steps:()=>[],setStep:()=>true},{selectSet:()=>false,beginSet:()=>true});
+assert.equal(denied.start(),false);
+assert.equal(denied.state().started,false);
 assert.ok(journey.every(Object.isFrozen));
 assert.deepEqual(journey.map(x=>x.number),Array.from({length:15},(_,i)=>i+1));
 assert.deepEqual(journey.map(x=>x.localMystery),[1,2,3,4,5,1,2,3,4,5,1,2,3,4,5]);
