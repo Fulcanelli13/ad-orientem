@@ -75,6 +75,29 @@ const E=(doc,tag,className,textContent)=>{
  return e;
 };
 /**
+ * The preserved PrayerBook installs capture handlers that can stop propagation
+ * before a navigation click reaches an inserted nav element. A narrowly-scoped
+ * window capture listener hands only cinematic buttons to the canonical bridge.
+ * It never handles the donor's Next/Prev, prayer cards, beads or preference UI.
+ */
+export function bindRosaryCinematicCapture(win=globalThis){
+ if(!win?.document||!win.addEventListener)return false;
+ if(win.__aoRosaryCinematicCaptureV1)return true;
+ win.addEventListener("click",event=>{
+  const button=event.target?.closest?.(".aoRosaryCinemaStop[data-ao-rosary-cinema-jump]");
+  const host=button?.closest?.(".aoRosaryCinema[data-ao-rosary-cinema-owner='v1']");
+  const root=host?.closest?.("#aoPrayerBookRoot.open");
+  if(!button||!host||!root||typeof host.__aoRosaryCinemaOnJump!=="function")return;
+  const target=Number(button.dataset.aoRosaryCinemaJump);
+  if(!Number.isSafeInteger(target)||target<0)return;
+  event.preventDefault();
+  event.stopPropagation();
+  host.__aoRosaryCinemaOnJump(target);
+ },true);
+ win.__aoRosaryCinematicCaptureV1=true;
+ return true;
+}
+/**
  * Progressive enhancement: one visual surface, one horizontal chapter strip.
  * No mutation or re-parenting of native prayers, beads, donor controls.
  * The caller exclusively owns the actual state transition via onJump().
@@ -127,17 +150,10 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
   const bar=root.querySelector(".aoP435930RosaryBar");
   if(bar)bar.insertAdjacentElement("afterend",host);
   else owner.querySelector(".lab-view-head,.pbTop,.pbHead,header")?.insertAdjacentElement("afterend",host);
-  nav.addEventListener("click",event=>{
-   const button=event.target?.closest?.("[data-ao-rosary-cinema-jump]");
-   if(!button||!host.contains(button))return;
-   const target=Number(button.dataset.aoRosaryCinemaJump);
-   if(!Number.isSafeInteger(target))return;
-   host.dataset.aoCinemaLastJump=String(target);
-   const jumped=onJump(target);
-   host.dataset.aoCinemaJumpResult=String(jumped);
-  });
   image.addEventListener("error",()=>{stage.dataset.artwork="unavailable";image.removeAttribute("src");});
  }
+ host.__aoRosaryCinemaOnJump=onJump;
+ bindRosaryCinematicCapture(win);
  const stage=host.querySelector(".aoRosaryCinemaStage");
  const image=stage.querySelector(".aoRosaryCinemaImage");
  const current=rosaryCinematicCurrent(info),mi=current?.mi??null;
