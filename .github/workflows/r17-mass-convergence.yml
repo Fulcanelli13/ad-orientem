@@ -53,3 +53,23 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: npm run test:phone
+
+  curated65-phone:
+    # Deliberately independent of the broad npm test job: an unrelated
+    # Shrine corpus assertion must not suppress Mass phone acceptance.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:phone-curated65
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: curated65-mass-phone-screenshots
+          path: artifacts/curated65-phone/*.png
+          if-no-files-found: ignore
+          retention-days: 7
