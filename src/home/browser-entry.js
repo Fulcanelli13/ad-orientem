@@ -418,6 +418,20 @@ export function createHomeOwner(win=globalThis){
   }
 
   function open(){
+    // In-page Calendar is still the Home destination. Boot/enricher owners can
+    // request Home again during first-use Calendar resolution: that is not an
+    // instruction to discard the user's selected Year or Month view.
+    if(inlineCalendarView&&state(win)?.route==="home"){
+      const slot=win?.document?.querySelector?.(".homeScreen.aoTodayV2 [data-home-calendar-inline]");
+      if(slot){
+        ensureRetiredEnricherWatch();
+        attachPresentation();
+        if(!slot.querySelector("#ao-calendar-modular-root"))
+          void openHomeCalendar(inlineCalendarView);
+        markOwner();
+        return true;
+      }
+    }
     inlineCalendarView=null;
     closeTransientSurfaces(win);
     resetCoreRoute(win);
