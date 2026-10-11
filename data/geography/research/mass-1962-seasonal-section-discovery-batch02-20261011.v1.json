@@ -1,0 +1,157 @@
+{
+  "schema": "MASS_SEASONAL_SECTION_DISCOVERY_BATCH02_V1",
+  "date": "2026-10-11",
+  "stats": {
+    "files": 6,
+    "retrieved": 6,
+    "withChantSections": 3
+  },
+  "rows": [
+    {
+      "path": "Tempora/Adv1-2",
+      "retrieved": true,
+      "headings": [
+        "Officium",
+        "Rank",
+        "Rule"
+      ],
+      "notes": [],
+      "references": [],
+      "certified1962": false,
+      "publishable": false
+    },
+    {
+      "path": "Tempora/Epi1-2",
+      "retrieved": true,
+      "headings": [
+        "Officium",
+        "Rank",
+        "Rule"
+      ],
+      "notes": [],
+      "references": [],
+      "certified1962": false,
+      "publishable": false
+    },
+    {
+      "path": "Tempora/Quad3-5t",
+      "retrieved": true,
+      "headings": [
+        "Officium",
+        "Rank",
+        "Rule",
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Graduale",
+        "Evangelium",
+        "Offertorium",
+        "Secreta",
+        "Communio",
+        "Postcommunio",
+        "Super populum"
+      ],
+      "notes": [
+        "!Ps 85:17.",
+        "!Ps 85:1",
+        "!Num 20:1, 3, 6-13",
+        "!Ps 27:7, 1",
+        "!Tractus",
+        "!Ps 102:10",
+        "!Ps 78:8-9 ",
+        "!Joann 4:5-42",
+        "!Ps 5:3-4",
+        "!Joann 4:13, 14",
+        "!Oratio super populum"
+      ],
+      "references": [],
+      "certified1962": false,
+      "publishable": false
+    },
+    {
+      "path": "Tempora/Pasc0-3",
+      "retrieved": true,
+      "headings": [
+        "Officium",
+        "Rank",
+        "Rule",
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Graduale",
+        "Sequentia",
+        "Evangelium",
+        "Offertorium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "notes": [
+        "!Matt 25:34",
+        "!Ps 95:1",
+        "!Acts 3:13-15; 3:17-19",
+        "!Ps 117:24; 117:16",
+        "!Luc 24:34",
+        "!Joannes 21:1-14",
+        "!Ps 77:23-25",
+        "!Rom 6:9"
+      ],
+      "references": [
+        "@Tempora/Pasc0-0:Sequentia"
+      ],
+      "certified1962": false,
+      "publishable": false
+    },
+    {
+      "path": "Tempora/Pent01-0t",
+      "retrieved": true,
+      "headings": [
+        "Officium",
+        "Rank",
+        "Rule",
+        "Introitus",
+        "Oratio",
+        "Commemoratio Oratio",
+        "Lectio",
+        "Graduale",
+        "Evangelium",
+        "Offertorium",
+        "Secreta",
+        "Commemoratio Secreta",
+        "Communio",
+        "Postcommunio",
+        "Commemoratio Postcommunio"
+      ],
+      "notes": [
+        "!Pro Dominicam I post Pentecosten",
+        "!Rom 11:33-36.",
+        "!Dan 3:55-56",
+        "!Dan 3:52",
+        "!Matt 28:18-20",
+        "!Tob 12:6.",
+        "!Pro Dominica",
+        "!Tob 12:6",
+        "!Pro Dominica"
+      ],
+      "references": [
+        "@Tempora/Pent01-0r:Introitus"
+      ],
+      "certified1962": false,
+      "publishable": false
+    },
+    {
+      "path": "Tempora/Nat04",
+      "retrieved": true,
+      "headings": [
+        "Officium",
+        "Rank",
+        "Rule"
+      ],
+      "notes": [],
+      "references": [],
+      "certified1962": false,
+      "publishable": false
+    }
+  ],
+  "publicationGate": "CLOSED"
+}
