@@ -3,6 +3,14 @@
 // intonation may span a PUBLIC_TEXT cue and a SCHOLA_PUBLIC donor cue.
 // This layer never alters canonical cues, event timing or source text.
 const EXPLICIT=Object.freeze({
+  // Exact speaker initials preserved in the 1962 Low Mass text witness;
+  // the Sung donor omitted those initials on these opening dialogues.
+  "AO.SM.C0001":Object.freeze({role:"PRIEST",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"S."}),
+  "AO.SM.C0016":Object.freeze({role:"PRIEST",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"S."}),
+  "AO.SM.C0019":Object.freeze({role:"MINISTERS",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"M.",kind:"RESPONSE"}),
+  "AO.SM.C0021":Object.freeze({role:"MINISTERS",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"M.",kind:"RESPONSE"}),
+  "AO.SM.C0024":Object.freeze({role:"PRIEST",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"S."}),
+  "AO.SM.C0026":Object.freeze({role:"PRIEST",evidence:"LOW_MASS_DIALOGUE_PREFIX",prefix:"S."}),
   // In the preparatory prayers the Low Mass witness identifies the
   // priest's Amen followed by responses from the minister(s).
   "AO.SM.C0020":Object.freeze({role:"PRIEST",evidence:"LOW_MASS_PUBLISHED_DIALOGUE",prefix:"S.",kind:"TEXT"}),
@@ -87,6 +95,15 @@ export function correctSungPreparatoryAmen(cueId,latin,{form="SUNG"}={}){
   return explicit.prefix+" "+String(latin).trim();
 }
 
+// Add only initials whose exact source witness survives in the Low Mass
+// corpus; never prefix a priest's private prayer or a public chant by guess.
+export function applySungSpeakerPrefix(cueId,text,{form="SUNG"}={}){
+  if(String(form).toUpperCase()!=="SUNG")return text;
+  const first=EXPLICIT[String(cueId)]?.prefix;
+  const raw=String(text??"").trim();
+  if(!first||!raw||/^(?:S\.|M\.|R\.|V\.|℟\.|℣\.)\s*/u.test(raw))return text;
+  return first+" "+raw;
+}
 export function ordinarySpeakerOverrides(){
   return EXPLICIT;
 }
