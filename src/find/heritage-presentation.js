@@ -131,7 +131,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={
   html+='</nav>';
   html+='<p class="aoHeritageLocationStatus" data-heritage-location-status role="status" aria-live="polite" hidden></p>';
   html+='<div class="aoFindBody aoHeritageBody" data-find-view="map" data-explore-lens="heritage"><div class="aoFindMap" data-find-map><div class="aoFindMapFallback"><strong>'+L(vm.language,"Sacred places","Lieux sacrés")+'</strong><span>'+(vm.items.length?L(vm.language,"Loading documented places…","Chargement des lieux documentés…"):L(vm.language,"No places match. Change the search or category.","Aucun lieu trouvé. Modifiez le thème ou la recherche."))+'</span></div></div>';
-  html+='<button type="button" class="aoHeritageNearby" data-heritage-nearby aria-label="'+L(vm.language,"Centre map near me","Centrer la carte près de moi")+'">'+L(vm.language,"Near me","Près de moi")+'</button>';
+  if(!arr(vm.nearby).length)html+='<button type="button" class="aoHeritageNearby" data-heritage-nearby aria-label="'+L(vm.language,"Find documented places near me","Trouver des lieux documentés près de moi")+'">'+L(vm.language,"Near me","Près de moi")+'</button>';
   html+='<button type="button" class="aoHeritageWorldReset" data-heritage-world aria-label="'+L(vm.language,"Show all places on the world map","Afficher tous les lieux sur la carte du monde")+'">'+L(vm.language,"World view","Vue du monde")+'</button>';
   if(searching)html+=searchMatches(vm);
   else if(arr(vm.nearby).length)html+=nearbyPanel(vm);
