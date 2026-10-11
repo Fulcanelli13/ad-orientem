@@ -11,7 +11,7 @@ const read=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8")
 const events=[1,2,3,4,5,6].flatMap(n=>read("../data/mass/mc-events-0"+n+".v1.json").events);
 const audit=auditOrdinarySungPriestEventAlignment(events);
 assert.deepEqual({all:audit.sourceOnlyCues,matched:audit.eventMatched,pending:audit.pending},
-  {all:15,matched:7,pending:8});
+  {all:15,matched:9,pending:6});
 assert.equal(ORDINARY_SUNG_PRIEST_EVENT_ALIGNMENT.length,ORDINARY_SUNG_SOURCE_ONLY_CUES.length);
 const bad=events.map(e=>({...e}));
 bad.find(e=>e.id==="MC-GLR-040").actor="SCHOLA";
@@ -52,6 +52,22 @@ for(const [id,section,position] of [
   assert.equal(observed(id,section,[]),null,"No unselected sedilia movement");
   assert.equal(observed(id,"AO.CARD.010",context),null,"Cross-chapter event leak");
 }
+// Priest-side Introit is not synchronized to the Schola entrance.
+const introit=observed("MC-INT-020","AO.CARD.001");
+assert.equal(introit?.cueId,"AO.SM.C0043");
+assert.equal(introit?.priestPosition?.station,"ALTAR_EPISTLE_MISSAL");
+assert.match(introit?.priestVoice?.value??"",/QUIET PRIEST TRACK/);
+assert.equal(observed("MC-INT-020","AO.CARD.003"),null,
+  "Priest's Introit may not update after entering Gloria");
+// Communion antiphon recitation is after ablutions, not the Schola's
+// Communion antiphon at distribution. This source station is async-only.
+const communion=observed("MC-END-010","AO.CARD.026");
+assert.equal(communion?.cueId,"AO.SM.C0249");
+assert.match(communion?.priestVoice?.value??"",/QUIET PRIEST TRACK/);
+assert.equal(communion.priestPosition,null,
+  "PRIEST_TRACK_ASYNC is not a drawable priest position");
+assert.equal(observed("MC-COM-305","AO.CARD.026"),null,
+  "Schola's Communion chant must not advance celebrant recitation");
 const secret=observed("MC-SEC-010","AO.CARD.011");
 assert.ok(secret);
 assert.match(secret.priestVoice?.value??"",/SECRET|LOW/);
@@ -62,7 +78,7 @@ assert.equal(observed("MC-GSP-060","AO.CARD.007")?.cueId,"AO.SM.C0086");
 assert.equal(projectObservedOrdinaryPriestEvent({...base,form:"SOLEMN",observedEventId:"MC-GSP-060",
   sourceSectionId:"AO.CARD.007"}),null,
   "Solemn Gospel minister is not necessarily the priest");
-for(const id of ["MC-INT-020","MC-EPI-020","MC-CHT-010","MC-OFF-030","MC-COM-305",
+for(const id of ["MC-INT-010","MC-EPI-020","MC-CHT-010","MC-OFF-030","MC-COM-305",
                  "MC-COM-260","MC-END-030"]){
   assert.equal(observed(id,"AO.CARD.001"),null,
     id+" lacked an exact one-to-one priest cue and must fail closed");
@@ -74,4 +90,4 @@ assert.equal(projectObservedOrdinaryPriestEvent({...base,observedEventId:"MC-SEC
   sourceSectionId:"AO.CARD.011",form:"LOW"}),null,"Low Mass not licensed by Sung event map");
 assert.equal(projectObservedOrdinaryPriestEvent({...base,observedEventId:"MC-SEC-010",
   sourceSectionId:"AO.CARD.011",eventIndex:new Map()}),null,"Unknown event must fail closed");
-console.log("Mass source-only priest event alignment PASS: 15 classified; 7 exact observable; 8 held; form/condition/context/actor/faithful lanes fail closed.");
+console.log("Mass source-only priest event alignment PASS: 15 classified; 9 exact observable; 6 held; form/condition/context/actor/faithful lanes fail closed.");
