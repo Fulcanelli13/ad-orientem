@@ -2307,7 +2307,7 @@ export function createReaderDomAdapter({
             : {PRIEST:"Priest",MINISTERS:"Servers",RESPONDERS:"Response",SCHOLA:"Schola",
                GOSPEL_PROCLAIMER:"Gospel minister",DISMISSAL_MINISTER:"Dismissal minister"};
           if(speakerRole && speakerRole!==previousSpeakerRole && ownerLabels[speakerRole] &&
-             p.kind!=="RUBRIC" && !/^(?:[SMVR]\\.|℣\\.|℟\\.)\\s*/u.test(String(p.primary??""))){
+             p.kind!=="RUBRIC" && !/^(?:[SMVR]\.|℣\.|℟\.)\s*/u.test(String(p.primary??""))){
             const speakerTag=doc.createElement("small");
             speakerTag.className="ao-speaker-turn";
             speakerTag.textContent=ownerLabels[speakerRole];
