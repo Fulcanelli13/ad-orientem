@@ -30,6 +30,7 @@ def build(args):
  works=read(ROOT/"data/calendar/sacred-art-candidates.v1.json")
  targets=read(ROOT/"data/calendar/sacred-art-subject-targets.v2.json")["targets"]
  mapping=read(ROOT/"data/calendar/sacred-art-editorial-crosswalk.v1.json")["exactIconography"]
+ replacementLeads=read(ROOT/"data/calendar/sacred-art-user-refusal-replacements.v1.json")["leads"]
  visually=read(ROOT/"data/calendar/sacred-art-visual-shortlist.v1.json")["artworks"]
  grades={a["id"]:a["visualGrade"] for a in visually}
  by_id={a["id"]:a for a in works["artworks"]}
@@ -73,9 +74,14 @@ def build(args):
           for p in original.get("pendingSourceLinks",[])
           if any(q.get("targetId")==key and q.get("id")==p.get("id")
              for q in read(ROOT/"data/calendar/sacred-art-primary-museum-leads-20261011.v1.json")["items"])]
+   dedicated=[{"title":p["title"],"artist":p["artist"],"url":p["museumObjectUrl"],
+             "museum":p["museum"],"rights":p["reproductionRights"],
+             "relation":p["iconographyRelation"],"notes":p["curatorialReason"],
+             "status":"MUSEUM_OBJECT_LEAD_NOT_USER_APPROVED_OR_SOURCE_PACKAGED"}
+            for p in replacementLeads if p["targetId"]==key]
    output.append({"id":key,"section":section,"title":t["title"],
                   "candidates":[id for score,id in candidates],
-                  "leads":leads,
+                  "leads":dedicated+leads,
                   "scope":"ONE_RECOMMENDED_ORIGINAL_THEN_ON_DEMAND_ALTERNATIVES",
                   "sourceOnly":True})
  assert len(output)==sum(len(x) for x in IDS.values())
@@ -186,9 +192,9 @@ function makeCard(g,i){
  const a=byId.get(chosen(g));const el=document.createElement("article");el.className="card";
  let h='<div class="hdr"><div class="num">'+esc(g.section)+' · '+(i+1)+' / '+data.subjectCount+'</div><h2>'+esc(g.title)+'</h2><div class="subject">'+esc(g.id)+'</div></div>';
  if(!a){const declined=[...refusals.values()].filter(x=>x.targetId===g.id);
- h+='<div class="body"><p>No suitable acquired painting remains from the current shortlist. '+declined.length+' earlier candidate(s) were declined for this subject. More targeted research is required.</p>';
+ h+='<div class="body"><p>'+declined.length+' previous proposals declined for this context. '+g.leads.length+' museum source lead(s) for alternative research are linked below. These are not yet acquired or approved.</p>';
+ for(const [i,lead] of g.leads.entries())h+='<div class="alt"><div class="subject">'+(i+1)+'. '+esc(lead.relation||"MUSEUM_SOURCE_LEAD")+'</div><h2>'+esc(lead.title)+'</h2><p>'+esc(lead.artist)+' · '+esc(lead.museum||"Museum object")+'</p><p>'+esc(lead.notes||"Original pixels/rights pending")+'</p><small>'+esc(lead.rights||"Reproduction approval pending")+'</small><a class="url" href="'+esc(lead.url)+'" target="_blank" rel="noopener noreferrer">Open original museum page ↗</a></div>';
  if(declined.length)h+='<button data-act="reconsider">Reconsider previously declined options ('+declined.length+')</button>';
- for(const lead of g.leads)h+='<p><b>'+esc(lead.title)+'</b> · '+esc(lead.artist)+'<a class="url" href="'+esc(lead.url)+'" target="_blank" rel="noopener noreferrer">'+esc(lead.url)+'</a></p>';
  h+='</div>';el.innerHTML=h;
  const retry=el.querySelector('button[data-act="reconsider"]');
  if(retry)retry.onclick=()=>{for(const [k,x] of refusals)if(x.targetId===g.id)refusals.delete(k);save();draw()};
@@ -228,7 +234,9 @@ function makeCard(g,i){
 function draw(){
  const sec=$("section").value,q=$("query").value.trim().toLowerCase(),review=$("reviewStatus").value;
  const filtered=groups.filter(g=>(review==="all"||(review==="remaining"?!selections.has(g.id):selections.has(g.id)))&&
- (!sec||g.section===sec)&&(!q||[g.title,g.id,g.section,...g.candidates.flatMap(id=>{const a=byId.get(id);return a?[a.title,a.artist]:[]})].join(" ").toLowerCase().includes(q)));
+ (!sec||g.section===sec)&&(!q||[g.title,g.id,g.section,...g.candidates.flatMap(id=>{const a=byId.get(id);return a?[a.title,a.artist]:[]})].join(" ").toLowerCase().includes(q)))
+ .sort((a,b)=>{const focus=["devotion.adoration","devotion.st-joseph","scripture.healing-paralytic"];
+ const ap=focus.indexOf(a.id),bp=focus.indexOf(b.id);return (ap<0?999:ap)-(bp<0?999:bp)});
  const display=filtered.slice(0,shown),list=$("cards");list.replaceChildren();
  for(const [i,g] of display.entries())list.append(makeCard(g,groups.indexOf(g)));
  $("remaining").textContent=display.length+" of "+filtered.length+" subjects shown";
