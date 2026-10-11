@@ -2083,6 +2083,12 @@ export async function mountNativeReaderPreview({
     return Boolean(planAwareCard(card));
   }
 
+  function visibleProgress(card){
+    const visible=readerModel.cards.filter(visibleCardAllowed);
+    const at=visible.findIndex(candidate=>candidate.sectionId===card?.sectionId);
+    return at<0 ? null : String(at+1)+" / "+String(visible.length);
+  }
+
   function nextVisibleCard(from,direction){
     let probe=from;
     while(probe){
@@ -2169,7 +2175,7 @@ export async function mountNativeReaderPreview({
       cardTitle:visibleCard.title,
       cardUpdate:true,
       paragraphs:visibleCard.paragraphs,
-      progress:visibleCard.sequence+" / "+readerModel.totalCards,
+      progress:visibleProgress(visibleCard),
       guide:guideForCurrent(visibleCard),
       ...state,
     });
@@ -2295,7 +2301,7 @@ export async function mountNativeReaderPreview({
       id:current?.sectionId ?? "",
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
-      progress:current ? current.sequence+" / "+readerModel.totalCards : null,
+      progress:current ? visibleProgress(current) : null,
       guide:guideForCurrent(current),
       ...state,
     });
