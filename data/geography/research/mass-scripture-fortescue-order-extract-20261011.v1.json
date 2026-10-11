@@ -436,13 +436,8 @@
       "liturgicalAnchor": "In spiritu humilitatis",
       "scripture": [
         {
-          "reference": "Daniel 3:39–40 (Catholic Greek additions",
+          "reference": "Daniel 3:39–40",
           "sourceBookChapterUrl": "https://www.newadvent.org/bible/dan003.htm",
-          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
-        },
-        {
-          "reference": "numbering edition-specific)",
-          "sourceBookChapterUrl": null,
           "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
         }
       ],
@@ -468,13 +463,8 @@
       "liturgicalAnchor": "Dirigatur oratio mea sicut incensum",
       "scripture": [
         {
-          "reference": "Psalms 140:2–4 (Vulgate",
+          "reference": "Psalms 140:2–4",
           "sourceBookChapterUrl": "https://www.newadvent.org/bible/psa140.htm",
-          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
-        },
-        {
-          "reference": "Psalm 141 modern)",
-          "sourceBookChapterUrl": null,
           "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
         }
       ],
@@ -500,13 +490,8 @@
       "liturgicalAnchor": "Lavabo inter innocentes manus meas",
       "scripture": [
         {
-          "reference": "Psalms 25:6–12 (Vulgate",
+          "reference": "Psalms 25:6–12",
           "sourceBookChapterUrl": "https://www.newadvent.org/bible/psa025.htm",
-          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
-        },
-        {
-          "reference": "Psalm 26 modern)",
-          "sourceBookChapterUrl": null,
           "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
         }
       ],
@@ -768,8 +753,8 @@
       "liturgicalAnchor": "in sublime altare tuum",
       "scripture": [
         {
-          "reference": "Revelation 8:3–4 (later parallel only)",
-          "sourceBookChapterUrl": null,
+          "reference": "Revelation 8:3–4",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/rev008.htm",
           "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
         }
       ],
@@ -967,5 +952,9 @@
         "publishable": false
       }
     }
+  ],
+  "corrections": [
+    "Source links are book/chapter-only; Vulgate/Douay/Crampon numbering concordance remains pending.",
+    "No semicolon inside an editorial parenthesis may create a phantom Scripture reference. Psalm/Daniel/Revelation qualifiers live in authorial explanations and evidence classes."
   ]
 }
