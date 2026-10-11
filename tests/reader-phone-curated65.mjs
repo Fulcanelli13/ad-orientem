@@ -93,12 +93,22 @@ try{
           scrollWidth:shell?.scrollWidth,
           clientWidth:shell?.clientWidth,
           track:api.getScholaState()?.trackId??null,
+          prayerOpacity:Number(getComputedStyle(shell.querySelector('.ao-reader-paragraph')).opacity),
+          readerBottom:shell.querySelector('.ao-prayer-card')?.getBoundingClientRect()?.bottom??null,
+          scholaTop:shell.querySelector('.ao-schola-dock[data-active="true"]')?.getBoundingClientRect()?.top??null,
         };
       },title);
       assert.equal(state.found,true,"Missing curated landmark "+title);
       assert.equal(state.current,state.expected,"Reader navigated to wrong curated card "+title);
       assert.ok(state.paragraphs>0,"Blank curated prayer card "+title);
       assert.ok(state.scrollWidth<=state.clientWidth+3,"Horizontal overflow at "+title);
+      assert.ok(state.prayerOpacity>=.80,
+        "Inactive liturgical text still unreadably dim: "+title+" opacity "+state.prayerOpacity);
+      if(state.scholaTop!=null){
+        assert.ok(state.readerBottom<=state.scholaTop+3,
+          "Schola overlay still covers the real prayer reading viewport: "+title+
+          " "+state.readerBottom+" vs "+state.scholaTop);
+      }
       if(title==="Gloria · The Celebrant's Intonation")assert.equal(state.track,null);
       if(title==="Gloria · Praise and Supplication")assert.equal(state.track,"GLORIA");
       if(title==="Sanctus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
@@ -167,7 +177,7 @@ try{
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
   }
-  console.log("Curated 65 phone: PASS — complete 64 visible/65 optional LIVE sequence at 320/390/768px EN and 390px FR; Schola, Guide, no card overflow.");
+  console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and Guide.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(()=>done()));
