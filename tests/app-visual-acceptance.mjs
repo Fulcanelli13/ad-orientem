@@ -174,14 +174,18 @@ try{
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
-    canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
-    fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
+    // Embedded symbols and canonical mask assets are both valid rendered
+    // icons. Count the actual Coming Up rows, not only one SVG renderer.
+    comingUpRows:document.querySelectorAll(".aoHomeComingUp .aoHomeCuRow").length,
+    canonicalIcons:document.querySelectorAll('.aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="embedded"], .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="mask"]').length,
+    fallbackIcons:document.querySelectorAll(".aoHomeComingUp .aoHomeCuIconMissing, .aoHomeComingUp .aoHomeCuIconFallback").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.equal(homeAudit.canonicalIcons,3,"Home Coming Up did not render all canonical embedded symbols");
+  assert.equal(homeAudit.comingUpRows,3,"Home Coming Up must show the three canonical destinations");
+  assert.equal(homeAudit.canonicalIcons,homeAudit.comingUpRows,"Every Coming Up row must render canonical SVG or mask artwork");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
   assert.equal(homeAudit.presentationFx?.legacyCinematicAvailable,true,"v43.12 cinematic owner is not bridged into the modular shell");
