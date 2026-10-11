@@ -342,6 +342,18 @@ try{
   await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet").first().scrollIntoViewIfNeeded();
   await page.screenshot({path:resolve(captures,"06-fifteen-decade-conclusion-390.png"),fullPage:false,animations:"disabled"});
 
+  // The browser locale is not the application language: explicitly switch the runtime.
+  await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"}));
+  assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.getState().language),"fr");
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
+  await page.locator("#aoPray435930.open .aoMercyPrayer").waitFor({timeout:12000});
+  assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Au nom du Père/);
+  await page.screenshot({path:resolve(captures,"07-divine-mercy-french-390.png"),fullPage:false,animations:"disabled"});
+  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
+  await page.locator("#aoPray435930.open [data-ao-rosary-chooser]").waitFor({timeout:12000});
+  assert.match(await page.locator("#aoPray435930.open [data-ao-rosary-chooser]").innerText(),/Traditionnel/);
+  await page.screenshot({path:resolve(captures,"08-rosary-methods-french-390.png"),fullPage:false,animations:"disabled"});
+
  assert.equal(pageErrors.filter(x=>/angelus-guide|rosary-guide|presentation-runtime|undefined/i.test(x)).length,0,"Marian reader threw a runtime error: "+pageErrors.join(" | "));
  console.log("PASS Marian Angelus/Regina Caeli and Rosary mobile Guide acceptance");
  await context.close();
