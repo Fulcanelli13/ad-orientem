@@ -179,6 +179,40 @@ try{
     });
     assert.ok(resolvedIcons.length>=1,
       "Frozen production icon bank not resolved in the actual curated phone fixture");
+    // A visible priest intonation is one paragraph with two source cue
+    // records; it still needs a unique active cue for voice, rubric and
+    // scroll-focus ownership. Do not drop either canonical source ID.
+    const intonationFocus=await page.evaluate(async()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const results=[];
+      for(const [first,second] of [
+        ["AO.SM.C0053","AO.SM.C0054"],
+        ["AO.SM.C0089","AO.SM.C0090"],
+      ]){
+        const card=api.model.cards.find(c=>c.paragraphs.some(p=>
+          (p.sourceCueIds??[]).includes(first)));
+        api.showSequence(card.sequence);
+        await new Promise(done=>requestAnimationFrame(()=>
+          requestAnimationFrame(done)));
+        const paragraph=[...document.querySelectorAll('.ao-reader-paragraph')]
+          .find(node=>(node.dataset.sourceCueIds??"").split(" ").includes(first));
+        results.push({
+          first,second,
+          id:paragraph?.dataset.cueId??null,
+          ownsBoth:(paragraph?.dataset.sourceCueIds??"").split(" ").includes(second),
+          focused:api.getActiveCue(),
+          active:paragraph?.dataset.active??null,
+        });
+      }
+      return results;
+    });
+    for(const state of intonationFocus){
+      assert.equal(state.ownsBoth,true,"Intonation dropped canonical second cue "+state.second);
+      assert.equal(state.id,state.first,"Combined priest intonation lost source-cue DOM identity");
+      assert.equal(state.focused,state.first,
+        "Native LIVE cue tracker failed to focus the priest intonation "+state.first);
+      assert.equal(state.active,"true","Combined intonation was not visually focused");
+    }
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
