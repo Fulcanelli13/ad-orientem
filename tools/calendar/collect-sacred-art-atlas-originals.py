@@ -10,6 +10,7 @@ import io
 import json
 import os
 import shutil
+import subprocess
 import sys
 import time
 import urllib.error
@@ -36,6 +37,30 @@ class StripCrossHostAuthorization(urllib.request.HTTPRedirectHandler):
             forwarded.remove_unredirected_header("Authorization") if hasattr(forwarded, "remove_unredirected_header") else None
         return forwarded
 
+def fetch_zip_with_gh(artifact_id, dest):
+    """Use GitHub CLI's authenticated redirect handling as a second transport.
+
+    The artifact remains identified by its exact immutable numeric ID, and
+    extraction below still verifies every original against its recorded SHA256.
+    """
+    gh = shutil.which("gh")
+    if not gh:
+        raise RuntimeError("GitHub CLI unavailable for artifact recovery fallback")
+    endpoint = f"repos/Fulcanelli13/ad-orientem/actions/artifacts/{artifact_id}/zip"
+    with dest.open("wb") as out:
+        result = subprocess.run(
+            [gh, "api", "--method", "GET", "-H", "Accept: application/octet-stream", endpoint],
+            stdout=out, stderr=subprocess.PIPE, timeout=180, check=False)
+    if result.returncode != 0 or not zipfile.is_zipfile(dest):
+        detail = result.stderr.decode("utf-8", "replace")[:240]
+        dest.unlink(missing_ok=True)
+        raise RuntimeError(f"Authenticated GitHub CLI artifact retrieval failed: {detail}")
+    size = dest.stat().st_size
+    if size > MAX_ZIP_BYTES:
+        dest.unlink(missing_ok=True)
+        raise ValueError("Artifact exceeds immutable ZIP size cap")
+    return size
+
 def fetch_zip(artifact_id, dest, token):
     url = API + "/" + str(artifact_id) + "/zip"
     headers = {"Accept": "application/vnd.github+json",
@@ -58,7 +83,12 @@ def fetch_zip(artifact_id, dest, token):
             return total
         except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError) as err:
             if dest.exists(): dest.unlink()
-            if isinstance(err, urllib.error.HTTPError) and err.code in (401, 403, 404, 410):
+            if isinstance(err, urllib.error.HTTPError) and err.code in (401, 403):
+                # A signed storage redirect can reject urllib while authenticated
+                # GitHub CLI succeeds. Never treat a failed fetch as an approved asset.
+                print("ARTIFACT_AUTH_FALLBACK", artifact_id, err.code, flush=True)
+                return fetch_zip_with_gh(artifact_id, dest)
+            if isinstance(err, urllib.error.HTTPError) and err.code in (404, 410):
                 host = urllib.parse.urlparse(err.url).hostname
                 raise RuntimeError("Artifact " + str(artifact_id) + " not downloadable at host " + str(host) + ": " + str(err))
             if attempt == 2: raise
