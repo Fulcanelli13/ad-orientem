@@ -250,7 +250,7 @@ export function createHomeOwner(win=globalThis){
       if(["day","year","picker"].includes(view))
         win?.AO_CALENDAR_APP_V1?.setView?.(view);
       const opening=navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
-      if(view==="day"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(date||"")){
+      if(view==="day"&&/^\d{4}-\d{2}-\d{2}$/.test(date||"")){
         // Await the real Calendar owner before selecting a particular future
         // date. Never fake calendar observance data on Home itself.
         void opening.then(opened=>opened?win?.AO_CALENDAR_APP_V1?.select?.(date):false);
