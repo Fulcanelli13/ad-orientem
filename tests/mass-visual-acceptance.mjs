@@ -154,7 +154,7 @@ try{
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(opening.liturgicalColour,"WHITE","selected Rosary Mass must own its white theme, not the Sunday calendar");
   assert.equal(opening.liturgicalSource,"SELECTED_PROPER");
-  assert.equal(opening.massBackground,"#191815");
+  assert.equal(opening.massBackground,"#080b10","Mass LIVE keeps production deep-night canvas");
   assert.equal(opening.legacyStarts,0);
   assert.equal(opening.modeButtons,3);
   assert.equal(opening.livePressed,"true");
@@ -1728,6 +1728,7 @@ try{
   await page.locator("#targets .target").first().waitFor({timeout:20000});
   assert.ok(await page.locator("#assets .asset").count()>=50,
     "complete asset bank failed to display image candidates");
+  await page.locator("#targetStatus").selectOption("");
   await page.locator("#findTarget").fill("AO.SM.C0068");
   await page.locator("#targets .target").first().click();
   await page.locator("#findAsset").fill("cross");
