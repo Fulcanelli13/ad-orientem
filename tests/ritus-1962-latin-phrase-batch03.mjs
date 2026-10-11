@@ -9,6 +9,7 @@ const map=new Map(sung.blocks.flatMap(bl=>bl.units.filter(u=>/^AO\.SM\.C\d{4}$/.
 const compact=x=>String(x??"").replace(/[æÆ]/g,"ae").replace(/[✠+]/g,"").normalize("NFD").replace(/\p{M}/gu,"").toLowerCase().replace(/[^a-z]/g,"");
 assert.equal(map.size,279);
 assert.equal(a.items.length,36);
+assert.equal(a.rubricPresentationPolicy.priestOnly,true);
 assert.equal(b.events.length,46);
 assert.equal(c.events.length,67);
 assert.equal(a.invariants.runtimeImportAllowed,false);
@@ -22,6 +23,9 @@ for(const item of a.items){
   item.id+" incorrect phrase: "+item.latinTrigger);
  assert.equal(item.facsimileReviewed,false);
  assert.equal(item.liveEnabled,false);
+ assert.equal(item.frenchEditorialReviewed,false);
+ assert(item.rubricFrShort?.length>10,item.id+" missing French short rubric");
+ assert(item.rubricFrDetail?.length>30,item.id+" missing French detailed rubric");
  assert(!item.actionKey.startsWith("FAITHFUL_"),"rubrical priest act misattributed to lay faithful");
 }
 const find=action=>a.items.find(x=>x.actionKey===action);
