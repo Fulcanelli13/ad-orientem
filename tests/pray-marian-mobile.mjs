@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, mkdir } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
@@ -69,6 +69,7 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-p435930-angelus-appendix]").count(),0,"Angelus-only appendix leaked into Regina Caeli");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null}));
  await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:18000});
+
  const guide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
  assert.equal(await guide.locator(".aoRosaryGuideSection").count(),6);
  assert.equal(await guide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
@@ -85,6 +86,73 @@ try{
  const setButton=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
  if(await setButton.count())await setButton.evaluate(x=>x.click());
  await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:12000});
+ // Cinematic Rosary is a visual mirror of the canonical player, not a new bead owner.
+ await page.waitForSelector("#aoPrayerBookRoot.open .aoRosaryCinemaTimeline",{timeout:9000}).catch(async error=>{
+   const detail=await page.evaluate(()=>{
+    const r=document.querySelector("#aoPrayerBookRoot.open"),api=window.AO_ROSARY_V381,st=api?.state?.(),steps=api?.steps?.()||[];
+    const mysteries=steps.filter(s=>s.kind==="mystery").map(s=>({kind:s.kind,mi:s.mi,key:s.key,phase:s.phase})).slice(0,12);
+    return {rootOpen:!!r,owner:r?.querySelector(".pbShell")?.dataset.aoRosaryExactDonor,
+      active:r?.dataset.aoRosaryActiveRoot,
+      set:st?.set,step:st?.step,steps:steps.length,mysteries,
+      cinemaNodes:r?.querySelectorAll(".aoRosaryCinema").length,
+      cinemaVisible:r?.querySelector(".aoRosaryCinemaTimeline")?.getBoundingClientRect?.()?.height,
+      recentErrors:[...document.querySelectorAll("body .aoError")].map(x=>x.textContent.slice(0,100))};
+   });
+   throw new Error("Rosary cinema diagnostic: "+JSON.stringify(detail)+"; "+String(error));
+ });
+ const cinema="#aoPrayerBookRoot.open .aoRosaryCinema";
+ assert.equal(await page.locator(cinema+" .aoRosaryCinemaStop").count(),5,"Missing five-mystery timeline");
+ assert.equal(await page.locator(cinema+" .aoRosaryCinemaStage").count(),1,"Duplicate Rosary cinematic visual surfaces");
+ await mkdir(resolve(root,"reviews/captures/rosary-cinema"),{recursive:true});
+ const observed=[];
+ for(let mi=0;mi<5;mi++){
+   const button=page.locator(cinema+" .aoRosaryCinemaStop[data-ao-rosary-cinema-mi='"+mi+"']");
+   const target=Number(await button.getAttribute("data-ao-rosary-cinema-jump"));
+   assert.ok(Number.isSafeInteger(target)&&target>=0,"Mystery button lacks native first-step anchor");
+   await button.evaluate(n=>n.click());
+   await page.waitForFunction(n=>Number(window.AO_ROSARY_V381?.state?.()?.step)===n,target,{timeout:7500}).catch(async error=>{
+     const diagnostics=await page.evaluate(target=>{
+       const api=window.AO_ROSARY_V381,st=api?.state?.(),r=document.querySelector("#aoPrayerBookRoot.open");
+       const h=r?.querySelector(".aoRosaryCinema"),nav=r?.querySelector(".aoRosaryCinemaTimeline");
+       const directReturn=api?.setStep?.(target);
+       const directState=api?.state?.();
+       return {target,state:st,directReturn,directState,steps:api?.steps?.()?.length,
+         head:r?.querySelector(".pbShell")?.dataset.aoRosaryStep,
+         cinema:h?.dataset,navExists:!!nav,
+         nativeButton:r?.querySelector("[data-lab-rosary-next]")?.outerHTML?.slice(0,180)};
+     },target);
+     throw new Error("Rosary native mystery-jump diagnostic "+JSON.stringify(diagnostics)+"; "+String(error));
+   });
+   assert.equal(await page.locator(cinema+" .aoRosaryCinemaStop[aria-current='step']").count(),1);
+   assert.equal(await page.locator(cinema+" .aoRosaryCinemaStage").isVisible(),true);
+   assert.equal(await page.locator("#aoPrayerBookRoot.open .pbShell").getAttribute("data-ao-rosary-mi"),null,
+     "Cinema wrote mystery index into canonical donor-owned attributes");
+   const stageInfo=await page.locator(cinema).evaluate(node=>({
+     set:node.dataset.aoCinemaSet,mystery:node.dataset.aoCinemaMystery,
+     image:node.querySelector(".aoRosaryCinemaImage")?.getAttribute("src")||null
+   }));
+   assert.equal(stageInfo.mystery,String(mi),"Visual scene drifted from canonical mystery");
+   observed.push(stageInfo);
+   // Observe settled devotional composition: a prior app-level splash can
+   // otherwise sit above the genuine mystery surface during an instant jump.
+   await page.waitForTimeout(1600);
+   const visual=await page.locator(cinema).evaluate(node=>{
+     const nav=node.querySelector(".aoRosaryCinemaTimeline"),title=node.querySelector(".aoRosaryCinemaTitle"),img=node.querySelector(".aoRosaryCinemaImage");
+     const rect=node.getBoundingClientRect(),top=document.elementFromPoint(rect.left+rect.width/2,rect.top+Math.min(70,rect.height/2));
+     return {visible:node.getClientRects().length>0,navHeight:nav?.getBoundingClientRect().height,
+       title:title?.textContent,art:node.querySelector(".aoRosaryCinemaStage")?.dataset.artwork,
+       imageSrc:img?.getAttribute("src"),hit:top?.tagName+"."+(top?.className||"").toString().slice(0,110)};
+   });
+   console.log("Rosary settled cinema "+(mi+1)+": "+JSON.stringify(visual));
+   assert.ok(visual.navHeight>=36,"Rosary timeline has no visible navigation");
+   assert.ok(visual.title?.length>=5,"Rosary art transition has no mystery title");
+   await page.locator(cinema).screenshot({
+     path:resolve(root,"reviews/captures/rosary-cinema/390-mystery-"+(mi+1)+".png"),
+     animations:"disabled"
+   });
+ }
+ assert.equal(observed.length,5);
+
  // Guided depth must provide a readable bilingual edition-linked context
  // at the mystery opening, without restoring arbitrary ten-bead quotations.
  const guided=page.locator("#aoPrayerBookRoot.open [data-p435930-rosary-depth='guided']").first();
