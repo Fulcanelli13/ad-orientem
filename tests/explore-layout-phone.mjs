@@ -26,6 +26,8 @@ try{
      {width:430,height:932,locale:"fr-FR"},{width:768,height:1000,locale:"en-GB"}]){
     const {width,height,locale}=config;
     const context=await browser.newContext({viewport:{width,height},hasTouch:true,isMobile:width<600,locale,deviceScaleFactor:1});
+    await context.grantPermissions(["geolocation"],{origin:"http://127.0.0.1:4206"});
+    await context.setGeolocation({latitude:43.09738,longitude:-0.05875,accuracy:100});
     const page=await context.newPage(),errors=[];
     page.on("pageerror",e=>errors.push(e.message));
     // Native Explore acceptance elsewhere tests live MapLibre; use a deterministic
@@ -35,9 +37,11 @@ try{
         constructor(options){
           this.options=options;this.center={lng:options.center[0],lat:options.center[1]};this.zoom=options.zoom;
           window.__EXPLORE_LAYOUT_MAP_OPTIONS__=options;
+          window.__EXPLORE_LAYOUT_MAP_MOUNTS__=(window.__EXPLORE_LAYOUT_MAP_MOUNTS__||0)+1;
           const canvas=document.createElement("canvas");canvas.className="aoLayoutMapCanvas";
           canvas.style.cssText="display:block;width:100%;height:100%";
           options.container.append(canvas);
+          window.__EXPLORE_FIRST_CANVAS__??=canvas;
         }
         addControl(){} on(){} getCenter(){return this.center;}
         getZoom(){return this.zoom;} remove(){}
@@ -66,9 +70,22 @@ try{
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
     assert.equal(initial.wrap,false,width+"px repeated world enabled");
     assert.deepEqual(initial.bounds,[[-179.99,-85.051129],[179.99,85.051129]]);
+    await page.locator('.aoHeritageNearby').tap();
+    await page.locator('.aoHeritageNearbyPanel').waitFor({state:"visible"});
+    const nearby=await page.locator('.aoHeritageNearbyResult').count();
+    assert.ok(nearby>0&&nearby<=6,width+"px Near me must show compact distance-ranked records");
+    assert.match(await page.locator('.aoHeritageNearbyPanel').innerText(),/km/);
+    await page.locator('[data-heritage-nearby-close]').tap();
+    assert.equal(await page.locator('.aoHeritageNearbyPanel').count(),0);
+    assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
+      width+"px Nearby action reconstructed map canvas");
     await page.locator('.aoHeritageSurface [data-find-query]').fill("Sanctuaire Notre-Dame de Lourdes");
     await page.locator('.aoHeritageSearchResults [data-explore-open-place]').first().tap();
     await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
+    assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
+      width+"px selecting a Place recreated the map");
+    assert.equal(await page.evaluate(()=>window.__EXPLORE_FIRST_CANVAS__===document.querySelector('.aoLayoutMapCanvas')),true,
+      width+"px selecting a Place replaced the existing canvas");
     const card=await page.evaluate(()=>{
       const el=document.querySelector('.aoHeritageCardLayer .aoHeritagePreview');
       const world=document.querySelector('.aoHeritageWorldReset');
@@ -84,6 +101,10 @@ try{
     assert.ok(card.height<height*.60,width+"px card covers too much map");
     assert.ok(card.actionHeights.every(h=>h>=44),width+"px undersized card action");
     assert.ok(card.overflow<=1,width+"px card overflows viewport");
+    await page.locator('.aoHeritageCardLayer .aoHeritageSheetHandle').tap();
+    await page.locator('.aoExplorePlaceSheet').waitFor({state:"visible"});
+    await page.locator('[data-explore-collapse-place]').tap();
+    await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
     await page.locator('.aoHeritageWorldReset').tap();
     await page.waitForFunction(()=>!document.querySelector('.aoHeritageCardLayer')&&
       document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true"&&
@@ -92,6 +113,8 @@ try{
     await page.waitForFunction(()=>document.querySelector('[data-heritage-category="relics"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
     await page.locator('.aoHeritageWorldReset').tap();
     await page.waitForFunction(()=>document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
+    assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
+      width+"px searching, selecting and filtering remounted the map canvas");
     assert.deepEqual(errors,[],width+"px JavaScript errors: "+errors.slice(0,3).join(" | "));
     snapshots.push({screen:width+"x"+height,locale,mapHeight:Math.round(initial.map.height),
       searchWidth:Math.round(initial.searchWidth),cardHeight:Math.round(card.height),

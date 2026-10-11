@@ -234,4 +234,157 @@ export const HERITAGE_STYLE = String.raw`
  .aoHeritageSurface .aoExploreMainDestinations>*{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.aoHeritageSurface .aoHeritageCategories{scroll-snap-type:none}}
+
+/* R55 map-first chrome: one header, one search, one category rail. */
+.aoHeritageSurface .aoFindHeader{grid-template-columns:44px minmax(0,1fr) 44px 56px;gap:7px;padding:8px 12px 7px;border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.11));background:var(--ao-bg-canvas,#080c12)}
+.aoHeritageSurface .aoFindHeader>div{min-width:0}
+.aoHeritageSurface .aoFindHeader h1{font-size:clamp(19px,3.8vw,24px);color:var(--ao-text-primary,#e9e4d9)}
+.aoHeritageSurface .aoFindHeader small{color:var(--ao-text-muted,#9ba5b1)}
+.aoHeritageSurface .aoFindHeader .aoHeritageMassShortcut{font:650 12px/1.1 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-primary,#e9e4d9);background:var(--ao-surface-1,#101821);border-color:var(--ao-liturgical-border,rgba(201,173,120,.38))}
+.aoHeritageSurface .aoHeritageMore{position:relative;min-width:56px;flex:none}
+.aoHeritageSurface .aoHeritageMore summary{display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:56px;min-height:44px;height:44px;padding:0 9px;background:var(--ao-surface-1,#101821);border:1px solid var(--ao-rule,rgba(255,255,255,.11));border-radius:10px;color:var(--ao-text-primary,#e9e4d9);font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoHeritageSurface .aoHeritageMore>div{position:absolute;right:0;left:auto;top:calc(100% + 8px);width:min(300px,84vw);max-height:min(65dvh,470px);overflow-y:auto;padding:13px;background:var(--ao-surface-1,#101821);border:1px solid var(--ao-rule,rgba(255,255,255,.11));border-radius:13px;box-shadow:0 18px 48px #000c;z-index:10}
+.aoHeritageSurface .aoHeritageSecondary{display:grid;gap:5px;margin-top:9px}
+.aoHeritageSurface .aoHeritageSecondary button,.aoHeritageSurface .aoHeritageDefinitions{width:100%;min-height:44px;text-align:left;padding:10px 12px;color:var(--ao-text-primary,#e9e4d9);background:var(--ao-surface-2,#0d141c);border:1px solid var(--ao-rule,rgba(255,255,255,.11));border-radius:9px;font:500 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoHeritageSurface .aoHeritageDefinitions{margin-top:8px}
+.aoHeritageSurface .aoHeritageTools{padding:5px 12px 7px;display:block}
+.aoHeritageSurface .aoHeritageTools .aoFindSearch{padding:0;width:100%}
+.aoHeritageSurface .aoHeritageTools .aoFindSearch input{min-height:46px;font-size:16px;background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);border-color:var(--ao-rule,rgba(255,255,255,.11))}
+.aoHeritageSurface .aoHeritageCategories{padding:0 12px 7px;gap:6px}
+.aoHeritageSurface .aoHeritageCategories button{min-height:44px;height:44px;background:var(--ao-surface-1,#101821);border-color:var(--ao-rule,rgba(255,255,255,.11));font-size:var(--ao-type-ui-sm,12px)}
+.aoHeritageSurface .aoHeritageCategories button.active{background:var(--ao-liturgical-soft,rgba(201,173,120,.08));border-color:var(--ao-liturgical-border,rgba(201,173,120,.38));color:var(--ao-text-primary,#e9e4d9)}
+.aoHeritageSurface .aoHeritageBody.aoFindBody[data-find-view=map]{min-height:300px}
+.aoHeritageSurface .aoHeritageNearby{position:absolute;right:16px;bottom:15px;z-index:3;min-height:44px;padding:9px 12px;border-radius:10px;background:rgba(8,12,18,.94);color:var(--ao-text-primary,#e9e4d9);border-color:var(--ao-liturgical-border,rgba(201,173,120,.38));box-shadow:0 4px 18px #0009}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritageSheetHandle{display:block;width:64px;height:44px;min-height:44px;margin:0 auto;border:0;background:transparent;cursor:pointer;border-radius:8px}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritageSheetHandle:after{content:"";display:block;width:38px;height:4px;margin:auto;border-radius:99px;background:var(--ao-text-muted,#9ba5b1);opacity:.78}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritageSheetHandle:focus-visible{outline:2px solid var(--ao-liturgical-accent,#c9ad78)}
+.aoHeritageSurface .aoHeritageCardLayer .aoHeritagePreview{padding-top:0}
+.aoHeritageSurface .aoHeritageSaints{font:500 12px/1.45 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#9ba5b1);margin:8px 0 0}
+.aoHeritageSurface .aoHeritageFeastLink{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin-top:10px;padding:8px 10px;background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);border:1px solid var(--ao-rule,rgba(255,255,255,.11));border-radius:9px;text-align:left;font:500 12px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.aoHeritageSurface .aoHeritageFeastLink span{flex:none;color:var(--ao-text-muted,#9ba5b1)}
+.aoHeritageSurface .aoHeritagePreviewActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.aoHeritageSurface .aoHeritagePreviewActions button,.aoHeritageSurface .aoHeritagePreviewActions a{display:flex;align-items:center;justify-content:center;min-width:0;flex:1 1 90px;min-height:48px;padding:10px 12px;font:600 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-align:center}
+.aoHeritageSurface .aoHeritagePreviewActions button:first-child{justify-content:space-between;flex:2 1 130px;gap:8px;color:var(--ao-bg-canvas,#080c12);background:var(--ao-liturgical-accent,#c9ad78);border-color:var(--ao-liturgical-accent,#c9ad78)}
+.aoHeritageSurface .aoHeritagePreviewActions .aoHeritagePrayAction{color:var(--ao-text-primary,#e9e4d9);background:var(--ao-surface-1,#101821);border-color:var(--ao-liturgical-border,rgba(201,173,120,.38))}
+@media(max-width:520px){
+.aoHeritageSurface .aoFindHeader{grid-template-columns:44px minmax(0,1fr) 44px 56px;gap:5px;padding:7px 9px 6px}
+.aoHeritageSurface .aoFindHeader h1{font-size:19px}
+.aoHeritageSurface .aoHeritageTools{padding:4px 9px 6px}
+.aoHeritageSurface .aoHeritageCategories{padding:0 9px 6px}
+.aoHeritageSurface .aoHeritageBody.aoFindBody[data-find-view=map]{min-height:300px}
+.aoHeritageSurface .aoHeritagePreview .aoHeritageSynopsis{font-size:15px;line-height:1.5}
+.aoHeritageSurface .aoHeritageNearby{right:12px;bottom:12px}
+}
+
+/* Global header size tokens apply only to primary controls, not the More menu. */
+.aoHeritageSurface .aoFindHeader .aoHeritageSecondary button,
+.aoHeritageSurface .aoFindHeader .aoHeritageDefinitions{
+  width:100%!important;min-width:100%!important;height:auto!important;
+  min-height:44px!important;border-radius:9px!important;
+}
+
+/* Keep the contextual Glossary discoverable without another navigation row. */
+.aoHeritageSurface .aoHeritageTools{display:flex;align-items:center;gap:7px}
+.aoHeritageSurface .aoHeritageTools .aoFindSearch{flex:1;min-width:0}
+.aoHeritageSurface .aoHeritageGlossaryButton{
+  display:grid;place-items:center;flex:none;min-width:44px;width:44px;
+  min-height:44px;height:44px;border-radius:10px;
+  color:var(--ao-text-primary,#e9e4d9);
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  background:var(--ao-surface-1,#101821);
+  font:650 17px/1 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer;
+}
+.aoHeritageSurface .aoHeritageGlossaryButton:focus-visible{outline:2px solid var(--ao-liturgical-accent,#c9ad78);outline-offset:2px}
+
+/* R56: Nearby is a small map overlay, not a second full-screen directory. */
+.aoHeritageSurface .aoHeritageNearbyPanel{
+  box-sizing:border-box;position:absolute;z-index:5;bottom:12px;
+  left:12px;right:12px;width:min(430px,calc(100% - 24px));
+  max-height:min(43dvh,400px);overflow-y:auto;overscroll-behavior:contain;
+  border:1px solid var(--ao-liturgical-border,rgba(201,173,120,.38));
+  border-radius:14px;background:var(--ao-surface-1,#101821);
+  box-shadow:0 12px 38px #000b;
+  color:var(--ao-text-primary,#e9e4d9);
+}
+.aoHeritageSurface .aoHeritageNearbyPanel>header{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:8px;
+  position:sticky;top:0;z-index:1;padding:11px 12px 8px;
+  background:var(--ao-surface-1,#101821);
+  border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.11));
+}
+.aoHeritageNearbyPanel>header>div{min-width:0;display:grid;gap:3px}
+.aoHeritageNearbyPanel>header strong{
+  font:600 18px/1.2 var(--ao-font-display,Georgia,serif);
+}
+.aoHeritageNearbyPanel>header small{
+  font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-text-muted,#9ba5b1);
+}
+.aoHeritageSurface .aoHeritageNearbyPanel>header button{
+  min-width:44px;width:44px;min-height:44px;height:44px;flex:none;
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  border-radius:10px;background:var(--ao-surface-2,#0d141c);
+  color:var(--ao-text-primary,#e9e4d9);font:24px/1 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoHeritageNearbyResult{
+  display:flex;width:100%;min-height:57px;align-items:center;
+  justify-content:space-between;gap:11px;padding:10px 13px;
+  border:0;border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  background:transparent;color:var(--ao-text-primary,#e9e4d9);
+  text-align:left;cursor:pointer;
+}
+.aoHeritageNearbyResult>span:first-child{min-width:0;display:grid;gap:3px}
+.aoHeritageNearbyResult strong{
+  font:600 14px/1.25 var(--ao-font-display,Georgia,serif);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.aoHeritageNearbyResult small{
+  font:400 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-text-muted,#9ba5b1);
+}
+.aoHeritageNearbyDistance{
+  flex:none;white-space:nowrap;color:var(--ao-liturgical-accent,#c9ad78);
+  font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  font-variant-numeric:tabular-nums;
+}
+.aoHeritageSurface .aoHeritageNearbyResult:focus-visible,
+.aoHeritageSurface .aoHeritageNearbyPanel>header button:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#c9ad78);outline-offset:-2px;
+}
+@media(max-width:520px){
+ .aoHeritageSurface .aoHeritageNearbyPanel{
+   left:8px;right:8px;bottom:8px;width:calc(100% - 16px);
+   max-height:min(42dvh,370px);
+ }
+}
+
+/* Images are absent until the separate, licensed Place media registry approves
+   an exact-match physical-site image. Never render decorative substitute art. */
+.aoHeritageSurface .aoHeritagePlaceThumb{
+  float:right;width:102px;max-width:33%;margin:8px 0 9px 14px;
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  border-radius:8px;overflow:hidden;background:var(--ao-surface-2,#0d141c);
+}
+.aoHeritageSurface .aoHeritagePlaceThumb img{
+  display:block;width:100%;height:85px;object-fit:cover;
+}
+.aoHeritageSurface .aoHeritagePlaceThumb figcaption{
+  color:var(--ao-text-muted,#9ba5b1);font:400 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  padding:4px 6px;max-height:27px;overflow:hidden;
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia{
+  margin:11px 0 16px;border-radius:12px;overflow:hidden;
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  background:var(--ao-surface-2,#0d141c);
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia img{
+  display:block;width:100%;max-height:260px;object-fit:cover;
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia figcaption{
+  padding:9px 12px;color:var(--ao-text-muted,#9ba5b1);
+  font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia a{
+  color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;
+}
 `;

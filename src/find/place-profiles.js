@@ -4,6 +4,25 @@ import { calendarDateForSemanticKey } from "../calendar/intelligence.js";
 const arr=value=>Array.isArray(value)?value:[];
 const text=value=>String(value??"").trim();
 
+/** Only reviewed, source-identified local media may enter a Place page.
+ * A research candidate, hotlink, unrelated painting or uncredited image
+ * must never silently become a published shrine photograph. */
+export function resolveApprovedPlaceMedia(records,placeId){
+  const approvedLicenses=new Set(["CC0-1.0","CC-BY-4.0","CC-BY-SA-4.0","PUBLIC_DOMAIN"]);
+  const record=arr(records).find(row=>row?.place_id===placeId&&row?.status==="APPROVED");
+  if(!record)return null;
+  const path=text(record.asset_path);
+  if(!/^assets\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
+     !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
+     !approvedLicenses.has(record.license)||
+     !/^https:\/\/[^\s]+$/.test(text(record.source_url))||
+     !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr))return null;
+  return Object.freeze({
+    asset_path:path,credit:text(record.credit),license:text(record.license),
+    source_url:text(record.source_url),alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
+  });
+}
+
 function placeIdForItem(item){
   if(item?.place_id)return item.place_id;
   if(item?.raw?.place?.place_id)return item.raw.place.place_id;
@@ -173,6 +192,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       name:place?.name?.official??placeId,
       aliases:Object.freeze(arr(place?.name?.aliases).filter(Boolean)),
       place_type:place?.place_type??"other",
+      media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),
       address:place?.address??null,
       address_label:addressLabel(place?.address),
       geo:place?.geo??null,

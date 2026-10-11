@@ -11,7 +11,7 @@ Do not delete research/source branches simply because a PR closes. Closing a sup
 
 | Lane | Current release route | Keep distinct / holds |
 | --- | --- | --- |
-| Shared UI colour | #989 → #992 → #995 | #993 Calendar wheel and #997 Today depend on #989; #896 has unique editorial design hooks explicitly held for reconciliation |
+| Shared UI colour/readers | #999 consolidated current-main integration | Earlier #989 → #992 → #995 have been closed in favour of #999; #993 Calendar wheel and #997 Today still target the earlier theme branch and **must be reconciled/retargeted after #999**, not merged on stale base. #896 retains unique editorial UI hooks. |
 | Biblical Atlas | #998 current-main integration (draft) | #963 and #990 older stacked merge routes closed; #923 remains separate research corpus |
 | Scripture | #938 73-book Douay + French Crampon | #922 and #932 superseded merge routes closed; source witness and verse data still require certification |
 | Mass / Tenebrae | #973 Mass entry; #934 Tenebrae Prayer | Distinct owners until handoff between the Office and Mass hub is settled |
@@ -35,7 +35,15 @@ Do not delete research/source branches simply because a PR closes. Closing a sup
 - Closed unmerged #922 and #932: superseded Scripture merge routes; #938 retains the intended full 73-book bilingual recovery, subject to independent audit.
 - Closed unmerged #963 and #990: superseded Atlas merge routes; #998 is the current-main candidate.
 - Preserved #887/#949 sacred-art research and review holds, #896 held editorial/UI work, #923 geographic research, and #926 directory research; **no research branches deleted**.
+- Closed unmerged #1002 (overlapping Today v2 implementation on held #896) in favour of #997 (theme-first, tests). Unique frontispiece CSS/geometry remains on #1002's branch for reconciliation; no visual design authority is discarded.
+- A parallel UI integration has consolidated #989, #992 and #995 into #999 on current main. Do not continue their closed stacked routes; #997 and #993 still point at an older theme base and need a single rebase/retarget after #999 passes acceptance.
+- Returned #887 art acquisition and #915 source-blocked Formation/Prayer to draft status pending their explicit gates. No source corpus was discarded.
+- Verified existing source-owner CI failures on an unrelated workflow-only PR: Content Architecture geographic Places 182 vs 220, and Sexual Ethics `unjust exaction` wording assertion. These need separate owner review; **do not relax data or doctrinal gates as a queue workaround**.
 - Scoped CI cleanup in `ci/queue-signal-routing-20261011`: deduplicate PR runs in R49, Explore, Tenebrae, Sexual Ethics and Content census; remove unrelated `package.json` triggers from four specialist workflows; test that app-wide dependency verification remains intact.
+
+## Draft CI scheduling (follow-on #1004)
+
+Draft PRs should still receive relevant source/unit-contract feedback, but full App, Explore, preliminary-map mobile and visual screenshot matrices are deferred until `ready_for_review` (or manual dispatch / production push). Workflow subscriptions must include `ready_for_review` explicitly so a promotion triggers actual phone acceptance on the same branch head without a meaningless extra commit. This reduces noisy draft-pipeline queuing without certifying untested drafts. Parent feature branches in an existing stack must be refreshed against `main` to inherit the latest CI routing changes.
 
 ## Safe next cleanup
 

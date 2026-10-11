@@ -44,16 +44,19 @@ try{
  const layout=await page.evaluate(()=>{
    const root=document.querySelector("#ao-find-modular-root .aoHeritageSurface");
    const map=root?.querySelector(".aoHeritageBody .aoFindMap");
-   const panels=[".aoFindHeader",".aoExploreMainDestinations",".aoHeritageTools",".aoHeritageCategories"];
+   const panels=[".aoFindHeader",".aoHeritageTools",".aoHeritageCategories"];
    const box=element=>{const r=element?.getBoundingClientRect();return r?{width:r.width,height:r.height,top:r.top,bottom:r.bottom}:null};
    return {map:box(map),root:box(root),chrome:panels.map(x=>box(root?.querySelector(x))),
-     targets:[...root.querySelectorAll(".aoExploreMainDestinations button,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")].map(box),
+     targets:[...root.querySelectorAll(".aoHeritageMassShortcut,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")].map(box),
      overflow:document.documentElement.scrollWidth-innerWidth};
  });
  assert.ok(layout.map?.height>=300,"Explore mobile chrome squeezed the map below 300px");
  assert.ok(layout.map.width>=300,"Explore map is narrower than its intended phone canvas");
  assert.ok(layout.chrome.every(Boolean),"Explore navigation has missing layout sections");
  assert.ok(layout.targets.every(x=>x.height>=44),"Explore filter or navigation control below 44px");
+ const glossary=page.locator("#ao-find-modular-root .aoHeritageGlossaryButton");
+ await glossary.waitFor({state:"visible"});
+ assert.ok((await glossary.boundingBox())?.height>=44,"Contextual glossary must remain visible on phones");
  assert.ok(layout.overflow<=1,"Explore mobile chrome causes horizontal page overflow");
 
  const nearby=page.locator("#ao-find-modular-root [data-heritage-nearby]");
