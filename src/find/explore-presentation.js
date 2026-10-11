@@ -93,31 +93,42 @@ function placeRecordRows(records,language){
 function placeSources(profile,language){
   const links=arr(profile?.sources).filter(source=>source?.url);
   if(!links.length)return "";
-  return '<section class="aoFindSources"><details class="aoPlaceAccordion"><summary>'+esc(L(language,"Sources and geographic evidence","Sources et références géographiques"))+' · '+links.length+'</summary><div>'
+  return '<section class="aoFindSources" data-explore-place-chapter="sources"><details class="aoPlaceAccordion"><summary>'+esc(L(language,"Sources and geographic evidence","Sources et références géographiques"))+' · '+links.length+'</summary><div>'
     +links.map(source=>'<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.issuer||source.title||L(language,"Source","Source"))+'</a>').join("")
     +'</div></details></section>';
 }
 function placeSheet(vm){
   const profile=vm.selectedPlace;if(!profile)return "";
-  let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
-  html+='<header><div><small>'+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
+  let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet'+(profile.editorial_feature?' aoExplorePlaceEditorial':'')+'" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
+  html+='<header><div><small>'+(profile.editorial_feature?esc(L(vm.language,"IN FOCUS","À DÉCOUVRIR"))+' · ':"")+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
   if(profile.address_label)html+='<p>'+esc(profile.address_label)+'</p>';
   html+='</div><button type="button" data-find-close-place aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-place>'+esc(L(vm.language,"← Back to place preview","← Retour à l’aperçu"))+'</button></div>';
   if(arr(profile.aliases).length)html+='<p class="aoExploreLead">'+esc(profile.aliases.join(" · "))+'</p>';
   if(profile.media){
-    html+='<figure class="aoExplorePlaceMedia"><img loading="lazy" decoding="async" src="'+esc(profile.media.asset_path)+'" alt="'+esc(vm.language==="fr"?profile.media.alt_fr:profile.media.alt_en)+'">';
-    html+='<figcaption>'+esc(profile.media.credit)+' · '+esc(profile.media.license)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a></figcaption></figure>';
+    html+='<figure class="aoExplorePlaceMedia" data-photo-orientation="'+esc(profile.media.orientation)+'"><img loading="lazy" decoding="async" src="'+esc(profile.media.asset_path)+'" alt="'+esc(vm.language==="fr"?profile.media.alt_fr:profile.media.alt_en)+'">';
+    html+='<figcaption>'+esc(profile.media.credit)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a> · <a href="'+esc(profile.media.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(profile.media.license)+'</a> · '+esc(vm.language==="fr"?profile.media.changes_fr:profile.media.changes_en)+'</figcaption></figure>';
   }
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
-  // The place opens as a reader, not a dashboard of zero-valued record counters.
+  // Reader-first: only source-owned text and already linked devotions appear.
+  // Chapter shortcuts scroll this Place sheet, never leave the application.
   const preferredCategory=arr(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
-  const synopsis=sacredPlaceSynopsis(profile,{maxLength:550,language:vm.language,preferredCategory});
-  if(synopsis)html+='<p class="aoHeritageOverview">'+esc(synopsis)+'</p>';
-  if(profile.directions_url)html+='<div class="aoFindActions"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
-  html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore documented history, devotions and original sources below.","Découvrez l’histoire, les dévotions et les sources originales ci-dessous."))+'</p>';
+  const synopsis=sacredPlaceSynopsis(profile,{maxLength:750,language:vm.language,preferredCategory});
+  const hasNovenas=arr(profile.novenas).length>0;
+  const hasSources=arr(profile.sources).some(source=>source?.url);
+  if(profile.editorial_feature){
+    html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
+    if(synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
+    if(hasNovenas)html+='<button type="button" data-explore-place-jump="pray">'+esc(L(vm.language,"Pray","Prier"))+'</button>';
+    if(profile.directions_url)html+='<button type="button" data-explore-place-jump="visit">'+esc(L(vm.language,"Visit","Visiter"))+'</button>';
+    if(hasSources)html+='<button type="button" data-explore-place-jump="sources">'+esc(L(vm.language,"Sources","Sources"))+'</button>';
+    html+='</nav>';
+  }
+  if(synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
+  if(!synopsis)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
 
   if(arr(profile.related_places).length){
     html+='<section class="aoExplorePlaceGroup" data-explore-related-places><small>'+esc(L(vm.language,"RELATED PLACES","LIEUX ASSOCIÉS"))+'</small><div class="aoExplorePlaceRows">';
@@ -137,7 +148,7 @@ function placeSheet(vm){
   }
 
   if(arr(profile.novenas).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"RELATED NOVENAS & DEVOTIONS","NEUVAINES ET DÉVOTIONS ASSOCIÉES"))+'</small>';
+    html+='<section class="aoExplorePlaceGroup" data-explore-place-chapter="pray"><small>'+esc(L(vm.language,"RELATED NOVENAS & DEVOTIONS","NEUVAINES ET DÉVOTIONS ASSOCIÉES"))+'</small>';
     for(const novena of profile.novenas){
       const name=vm.language==="fr"?novena.title_fr:novena.title_en;
       html+='<article><div><strong>'+esc(name)+'</strong>'+(arr(novena.notes).length?'<p>'+esc(novena.notes.join(" "))+'</p>':"")+'</div><button type="button" data-explore-open-novena="'+esc(novena.id)+'">'+esc(L(vm.language,"Pray novena","Prier la neuvaine"))+'</button></article>';
@@ -377,6 +388,7 @@ export function buildExploreViewModel({
   expandPlace=false,
   expandDetail=false,
   customCards=[],
+  featuredPlaces=[],
   nearby=[],
   displayLimit=120,
 }={}){
@@ -400,6 +412,7 @@ export function buildExploreViewModel({
     expandPlace:Boolean(expandPlace),
     expandDetail:Boolean(expandDetail),
     customCards:arr(customCards),
+    featuredPlaces:arr(featuredPlaces),
     nearby:arr(nearby),
     mapped,
     addressOnly,

@@ -370,7 +370,7 @@ export const HERITAGE_STYLE = String.raw`
 }
 .aoHeritageSurface .aoHeritagePlaceThumb figcaption{
   color:var(--ao-text-muted,#9ba5b1);font:400 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
-  padding:4px 6px;max-height:27px;overflow:hidden;
+  padding:5px 6px;max-height:none;overflow-wrap:anywhere;
 }
 .aoExplorePlaceSheet .aoExplorePlaceMedia{
   margin:11px 0 16px;border-radius:12px;overflow:hidden;
@@ -386,5 +386,89 @@ export const HERITAGE_STYLE = String.raw`
 }
 .aoExplorePlaceSheet .aoExplorePlaceMedia a{
   color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;
+}
+
+/* R57 editorial focus; imagery remains exclusively rights-gated by Place ID. */
+.aoHeritageSurface .aoHeritageFeatured{border-top:1px solid var(--ao-rule,rgba(255,255,255,.11));margin-top:11px;padding-top:8px}
+.aoHeritageSurface .aoHeritageFeatured>summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--ao-liturgical-accent,#c9ad78);font:600 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);list-style:none}
+.aoHeritageSurface .aoHeritageFeatured>summary::-webkit-details-marker{display:none}
+.aoHeritageSurface .aoHeritageFeatured>summary:after{content:"+";margin-left:auto}
+.aoHeritageSurface .aoHeritageFeatured[open]>summary:after{content:"−"}
+.aoHeritageSurface .aoHeritageFeatured>div{display:grid;gap:5px;padding:5px 0}
+.aoHeritageSurface .aoHeritageFeatured button{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;
+  min-height:52px;width:100%!important;height:auto!important;
+  padding:8px 12px;border-radius:9px!important;background:var(--ao-surface-2,#0d141c);
+  color:var(--ao-text-primary,#e9e4d9);border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  font:500 13px/1.25 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoHeritageFeatured button>span:first-child{display:grid;gap:4px;min-width:0}
+.aoHeritageSurface .aoHeritageFeatured button strong{font:600 13px/1.3 var(--ao-font-display,Georgia,serif)}
+.aoHeritageSurface .aoHeritageFeatured button small{font:400 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#9ba5b1)}
+.aoHeritageSurface .aoHeritageFeatured button>span:last-child{flex:none;color:var(--ao-liturgical-accent,#c9ad78)}
+.aoHeritageSurface .aoHeritageEditorialPreview{
+  border-top:2px solid var(--ao-liturgical-accent,#c9ad78);
+  background:radial-gradient(ellipse at 95% 0%,var(--ao-liturgical-soft,rgba(201,173,120,.08)),transparent 52%),var(--ao-surface-1,#101821);
+}
+.aoHeritageSurface .aoHeritageEditorialPreview .aoHeritageCardKicker{
+  letter-spacing:.07em;
+}
+.aoExplorePlaceSheet.aoExplorePlaceEditorial{
+  background:radial-gradient(ellipse 65% 220px at 80% 0%,var(--ao-liturgical-soft,rgba(201,173,120,.08)),transparent),var(--ao-bg-canvas,#080c12);
+}
+.aoExplorePlaceSheet.aoExplorePlaceEditorial>header{
+  position:relative;padding-bottom:19px;margin-bottom:12px;
+  border-bottom:1px solid var(--ao-liturgical-border,rgba(201,173,120,.38));
+}
+.aoExplorePlaceSheet.aoExplorePlaceEditorial>header:after{
+  content:"";position:absolute;bottom:-1px;left:0;width:67px;height:2px;background:var(--ao-liturgical-accent,#c9ad78);
+}
+.aoExplorePlaceSheet.aoExplorePlaceEditorial>header h2{
+  max-width:660px;font:500 clamp(29px,5.6vw,43px)/1.12 var(--ao-font-display,Georgia,serif);
+  letter-spacing:-.022em;text-wrap:balance;
+}
+.aoExplorePlaceSheet .aoExplorePlaceChapters{
+  display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 0 14px;
+}
+.aoExplorePlaceSheet .aoExplorePlaceChapters button{
+  flex:none;min-height:44px;padding:9px 13px;border-radius:999px;
+  border:1px solid var(--ao-liturgical-border,rgba(201,173,120,.38));
+  background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);
+  font:600 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExplorePlaceSheet .aoExplorePlaceOpening{
+  margin:4px 0 18px;padding:13px 0 16px;
+  border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  scroll-margin-top:12px;
+}
+.aoExplorePlaceSheet .aoExplorePlaceOpening>small{
+  font:650 11px/1.25 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.11em;color:var(--ao-liturgical-accent,#c9ad78);
+}
+.aoExplorePlaceSheet .aoExplorePlaceOpening .aoHeritageOverview{
+  margin:12px 0 0;font:400 clamp(17px,2.2vw,20px)/1.65 var(--ao-font-body,Georgia,serif);
+}
+.aoExplorePlaceSheet [data-explore-place-chapter]{scroll-margin-top:12px}
+.aoExplorePlaceSheet .aoExplorePlaceVisit{margin:9px 0 17px}
+@media(max-width:520px){
+ .aoExplorePlaceSheet.aoExplorePlaceEditorial>header h2{font-size:29px}
+ .aoExplorePlaceSheet .aoExplorePlaceOpening .aoHeritageOverview{font-size:17px;line-height:1.58}
+}
+@media(prefers-reduced-motion:reduce){
+ .aoExplorePlaceSheet .aoExplorePlaceChapters{scroll-behavior:auto}
+}
+
+.aoHeritageSurface .aoHeritagePlaceThumb figcaption a{
+  color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;
+}
+
+/* Portrait shrine photographs preserve the whole site, not crop out towers. */
+.aoHeritageSurface .aoHeritagePlaceThumb[data-photo-orientation="portrait"] img{
+  object-fit:contain;background:var(--ao-surface-2,#0d141c);
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia[data-photo-orientation="portrait"] img{
+  height:min(46dvh,420px);max-height:420px;object-fit:contain;
+  background:var(--ao-surface-2,#0d141c);
 }
 `;

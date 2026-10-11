@@ -8,17 +8,31 @@ const text=value=>String(value??"").trim();
  * A research candidate, hotlink, unrelated painting or uncredited image
  * must never silently become a published shrine photograph. */
 export function resolveApprovedPlaceMedia(records,placeId){
-  const approvedLicenses=new Set(["CC0-1.0","CC-BY-4.0","CC-BY-SA-4.0","PUBLIC_DOMAIN"]);
+  const approvedLicenses=Object.freeze({
+    "CC0-1.0":/^https:\/\/creativecommons\.org\/publicdomain\/zero\/1\.0\//,
+    "CC-BY-4.0":/^https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//,
+    "CC-BY-SA-4.0":/^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\//,
+    "PUBLIC_DOMAIN":/^https:\/\/creativecommons\.org\/publicdomain\/mark\/1\.0\//,
+  });
   const record=arr(records).find(row=>row?.place_id===placeId&&row?.status==="APPROVED");
   if(!record)return null;
   const path=text(record.asset_path);
-  if(!/^assets\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
+  // Research and staging directories are *never* valid public image paths.
+  // All files must be copied into the separately curated approved asset tree.
+  const width=Number(record.width),height=Number(record.height);
+  const orientation=height>width?"portrait":"landscape";
+  if(!/^assets\/(?:places|approved\/place-media)\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
      !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
-     !approvedLicenses.has(record.license)||
+     !approvedLicenses[record.license]?.test(text(record.license_url))||
      !/^https:\/\/[^\s]+$/.test(text(record.source_url))||
-     !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr))return null;
+     !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr)||
+     !text(record.changes_en)||!text(record.changes_fr)||
+     !Number.isFinite(width)||!Number.isFinite(height)||width<100||height<100||
+     record.orientation!==orientation)return null;
   return Object.freeze({
     asset_path:path,credit:text(record.credit),license:text(record.license),
+    license_url:text(record.license_url),changes_en:text(record.changes_en),
+    changes_fr:text(record.changes_fr),orientation,
     source_url:text(record.source_url),alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
   });
 }
@@ -155,9 +169,14 @@ function relatedItemsForPlace(projection,placeId){
 
 export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}={}){
   const profiles=[];
+  // Curation is an editorial discovery index, not a new evidence owner.
+  // Only exact existing source IDs and physical Place identities qualify.
+  const featured=new Map(arr(dataset?.editorial?.featured).map((entry,index)=>[entry?.place_id,{...entry,ordinal:index}]));
   for(const place of arr(dataset?.geography?.places)){
     const placeId=place?.place_id;
     if(!placeId)continue;
+    const curated=featured.get(placeId);
+    const featuredPlace=curated&&arr(place?.source_ids).includes(curated.source_id)?curated:null;
     const related=relatedItemsForPlace(projection,placeId);
     const tlm=exactTlmItems(dataset,projection,placeId);
     const relatedPlaces=relatedPlacesForPlace(dataset?.geography,placeId);
@@ -190,6 +209,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     profiles.push(Object.freeze({
       place_id:placeId,
       name:place?.name?.official??placeId,
+      editorial_feature:featuredPlace?Object.freeze({ordinal:featuredPlace.ordinal,source_id:featuredPlace.source_id}):null,
       aliases:Object.freeze(arr(place?.name?.aliases).filter(Boolean)),
       place_type:place?.place_type??"other",
       media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),

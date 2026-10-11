@@ -23,6 +23,15 @@ const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
 const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
 const novenaSot=readJson("data/pray/novena-sot.v1.json");
+const featuredEditorial=readJson("data/geography/major-places-editorial.v1.json");
+assert.equal(featuredEditorial.schema,"AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1");
+assert.equal(featuredEditorial.items.length,20);
+assert.equal(new Set(featuredEditorial.items.map(row=>row.place_id)).size,20,"Curated Place identities must be unique");
+for(const item of featuredEditorial.items){
+  const place=geography.places.find(p=>p.place_id===item.place_id);
+  assert.ok(place?.source_ids?.includes(item.source_id),"Featured site must cite an original Place source: "+item.place_id);
+  assert.equal(item.media_review,"NOT_CURATED","No site photograph may be implied approved");
+}
 
 const records=joinDirectoryRecords({
   venues:[{
@@ -53,6 +62,7 @@ const records=joinDirectoryRecords({
 });
 
 const dataset={
+  editorial:{featured:featuredEditorial.items},
   directory:{
     records,
     communities:[{id:"FSSP",abbreviation:"FSSP",name:"Priestly Fraternity of Saint Peter"}],
@@ -701,16 +711,32 @@ assert.ok((searchHtml.match(/data-explore-open-place=/g)||[]).length<=6,"mobile 
 assert.doesNotMatch(searchHtml,/class="aoFindList"/,"search must remain map-first");
 
 const placeProfiles=buildExplorePlaceProfiles(dataset,projection);
+const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
+  .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
+assert.ok(featuredPlaces.length>=12,"Editorial list should expose numerous actual source-backed map Places");
+assert.ok(featuredPlaces.every(p=>p.sources.some(source=>source.url)),"No unsourced editorial Place should be featured");
+const featuredMenu=renderExploreToString(buildExploreViewModel({
+ language:"en",lens:"heritage",view:"map",items:heritagePlaces,featuredPlaces,
+ filters:{heritageCategories:[...HERITAGE_CATEGORIES]}
+}));
+assert.match(featuredMenu,/aoHeritageFeatured/);
+assert.match(featuredMenu,/data-explore-open-place="place:FR:sanctuaire-notre-dame-de-lourdes"/);
+assert.doesNotMatch(featuredMenu,/aoExploreMainDestinations/);
+const invalidFeatured=buildExplorePlaceProfiles({...dataset,editorial:{featured:[{place_id:featuredPlaces[0].place_id,source_id:"UNRELATED"}]}},projection);
+assert.equal(invalidFeatured.find(p=>p.place_id===featuredPlaces[0].place_id).editorial_feature,null,"A mismatched source must never yield editorial promotion");
 const heritagePreview=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
   filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
-  selectedPlaceId:lourdesCombined.place_id,placeProfiles,
+  selectedPlaceId:lourdesCombined.place_id,placeProfiles,featuredPlaces,
 }));
 assert.match(heritagePreview,/data-explore-expand-place/,"map click must open compact Place preview");
 assert.match(heritagePreview,/Découvrir/);
 assert.match(heritagePreview,/data-explore-sheet-toggle/);
 assert.match(heritagePreview,/data-explore-calendar-date/);
 assert.match(heritagePreview,/data-explore-open-novena/);
+assert.match(heritagePreview,/aoHeritageEditorialPreview/);
+assert.match(heritagePreview,/À DÉCOUVRIR/);
+assert.doesNotMatch(heritagePreview,/<img/,"Unapproved site photographs must not appear in the compact card");
 assert.match(heritagePreview,/aoHeritageCardHeading/,"place preview should show its type and location compactly");
 assert.match(heritagePreview,/aoHeritageCardTitle/,"place name must be the main visual identity");
 assert.doesNotMatch(heritagePreview,/aoHeritageCaution/,"source qualifications belong in the expanded record, not the small card");
@@ -726,6 +752,12 @@ const expandedPlace=renderExploreToString(buildExploreViewModel({
 }));
 assert.match(expandedPlace,/data-explore-place-item=/,"expanded Place must retain original source-owned records");
 assert.match(expandedPlace,/aoHeritageOverview/,"expanded Place should start with sourced context");
+assert.match(expandedPlace,/aoExplorePlaceEditorial/);
+assert.match(expandedPlace,/aoExplorePlaceChapters/);
+assert.match(expandedPlace,/data-explore-place-jump="story"/);
+assert.match(expandedPlace,/data-explore-place-jump="pray"/);
+assert.match(expandedPlace,/data-explore-place-jump="sources"/);
+assert.doesNotMatch(expandedPlace,/aoExplorePlaceMedia/,"Unapproved site images must not be inserted into Place pages");
 assert.match(expandedPlace,/class="aoPlaceAccordion"/,"long evidence lists should be opt-in disclosures");
 assert.doesNotMatch(expandedPlace,/class="aoFindFacts"/,"expanded Place should not open with numeric record counters");
 assert.match(expandedPlace,/Sources and geographic evidence/,"original evidence must remain one tap away");
@@ -772,17 +804,59 @@ await import("./explore-first-load-recovery.mjs");
 
 const mediaRegistry=readJson("data/geography/approved-place-media.v1.json");
 assert.equal(mediaRegistry.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(mediaRegistry.items.length,0,"No unlicensed Place photos may be published by default");
+assert.equal(mediaRegistry.items.length,18,"Exactly eighteen reviewed physical-site photographs should be published");
 const mediaFixture={
   place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
   source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",
+  license_url:"https://creativecommons.org/licenses/by/4.0/",
+  changes_en:"Resized and converted to WebP",changes_fr:"Redimensionnée et convertie en WebP",
+  width:1200,height:900,orientation:"landscape",
   rights_verified:true,subject_verified:true,crop_reviewed:true,
   alt_en:"View of the physical sanctuary",alt_fr:"Vue du sanctuaire physique",
 };
+const realMedia=readJson("data/geography/approved-place-media.v1.json");
+const reviewedProfiles=buildExplorePlaceProfiles({...dataset,media:{approved:realMedia.items}},projection);
+const reviewedLourdes=reviewedProfiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
+assert.equal(reviewedLourdes?.media?.license,"CC-BY-SA-4.0","Exact Place should expose screened photograph");
+assert.match(reviewedLourdes.media.asset_path,/^assets\/approved\/place-media\//);
+assert.ok(reviewedProfiles.find(p=>p.place_id==="place:FR:chartres-notre-dame")?.media,
+ "The previous portal detail must be replaced by the source-confirmed full Chartres facade");
+assert.equal(reviewedProfiles.find(p=>p.place_id==="place:MU:pere-laval-sainte-croix")?.media,null,
+ "Older-licence Père Laval documentary photograph remains research-only");
+const reviewedPreview=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:reviewedLourdes.place_id,placeProfiles:reviewedProfiles,
+}));
+assert.match(reviewedPreview,/aoHeritagePlaceThumb/,"Screened image must appear within canonical Place preview");
+assert.match(reviewedPreview,/CC-BY-SA-4.0/,"Compact preview credits the photographer and licence without undersized links");
+const reviewedExpanded=renderExploreToString(buildExploreViewModel({
+  language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:reviewedLourdes.place_id,placeProfiles:reviewedProfiles,expandPlace:true,
+}));
+assert.match(reviewedExpanded,/aoExplorePlaceMedia/,"Screened image must appear in Place reading view");
+assert.match(reviewedExpanded,/convertie en WebP/,"Image modification must be disclosed in French");
+assert.match(reviewedExpanded,/commons.wikimedia.org/,"Image source must link to the original file");
+assert.match(reviewedExpanded,/creativecommons.org\/licenses\/by-sa\/4\.0/,
+  "Expanded reader must link the actual image licence");
+
 const approved=resolveApprovedPlaceMedia([mediaFixture],mediaFixture.place_id);
 assert.equal(approved.asset_path,mediaFixture.asset_path,"Approved Place media must resolve by exact identity");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,asset_path:"https://example.org/image.jpg"}],mediaFixture.place_id),null,
   "External hotlinked photos must never be published");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,asset_path:"assets/staged/place-media/lourdes.webp"}],mediaFixture.place_id),null,
+  "Review-only staged photos must never be publishable");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:"https://creativecommons.org/licenses/by-sa/4.0/"}],mediaFixture.place_id),null,
+  "Licence link must exactly match licence identifier");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:""}],mediaFixture.place_id),null,
+  "No image without a licence URL");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes_en:""}],mediaFixture.place_id),null,
+  "All image modifications must be disclosed");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes_fr:""}],mediaFixture.place_id),null,
+  "French modification disclosure must be present");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,orientation:"portrait"}],mediaFixture.place_id),null,
+  "Image orientation must match actual dimensions");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,rights_verified:false}],mediaFixture.place_id),null,
   "Unverified rights must fail closed");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,alt_fr:""}],mediaFixture.place_id),null,
@@ -795,6 +869,7 @@ const auditedCard=compactHeritagePlaceSheet({language:"en",
  filters:{heritageCategories:[...HERITAGE_CATEGORIES]}});
 assert.match(auditedCard,/aoHeritagePlaceThumb/,"Approved photography must have a visible, credited card slot");
 assert.match(auditedCard,/Photographer Name/);
+assert.match(auditedCard,/CC-BY-4.0/,"The thumbnail credits licence in readable, noninteractive text");
 
 const nearbyFixtures=[
   {place_id:"place:FR:lourdes",title:"Lourdes",subtitle:"France",place_type:"shrine",map_publishable:true,geo:{lat:43.09738,lng:-0.05875}},
@@ -825,4 +900,6 @@ const classifiedFeatures=exploreMapFeatures([{
 }]);
 assert.equal(classifiedFeatures[0].properties.place_type,"cathedral","Map must inherit source-owned physical site category");
 
+await import("./explore-photo-research.mjs");
+await import("./explore-photo-r59.mjs");
 await import("./explore-world-boundaries.mjs");
