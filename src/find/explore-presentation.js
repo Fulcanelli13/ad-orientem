@@ -1,5 +1,5 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
-import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis } from "./heritage-presentation.js";
+import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
@@ -99,12 +99,16 @@ function placeSources(profile,language){
 function placeSheet(vm){
   const profile=vm.selectedPlace;if(!profile)return "";
   let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
-  html+='<header><div><small>'+esc(L(vm.language,"PLACE","LIEU"))+'</small><h2>'+esc(profile.name||"")+'</h2>';
+  html+='<header><div><small>'+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
   if(profile.address_label)html+='<p>'+esc(profile.address_label)+'</p>';
   html+='</div><button type="button" data-find-close-place aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-place>'+esc(L(vm.language,"← Back to place preview","← Retour à l’aperçu"))+'</button></div>';
   if(arr(profile.aliases).length)html+='<p class="aoExploreLead">'+esc(profile.aliases.join(" · "))+'</p>';
+  if(profile.media){
+    html+='<figure class="aoExplorePlaceMedia"><img loading="lazy" decoding="async" src="'+esc(profile.media.asset_path)+'" alt="'+esc(vm.language==="fr"?profile.media.alt_fr:profile.media.alt_en)+'">';
+    html+='<figcaption>'+esc(profile.media.credit)+' · '+esc(profile.media.license)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a></figcaption></figure>';
+  }
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
   // The place opens as a reader, not a dashboard of zero-valued record counters.
