@@ -11,7 +11,7 @@ const get=id=>ev.find(e=>e.id==="MR62.SOL.B02."+id);
 
 assert.equal(cues.size,279);
 assert.equal(ev.length,67);
-assert.equal(earlier.events.length,44);
+assert.equal(earlier.events.length,46);
 assert.equal(minister.invariants.noRuntimeImport,true);
 assert.equal(minister.invariants.preserveLIVE48,true);
 assert.equal(minister.invariants.faithfulPostureUnchanged,true);
