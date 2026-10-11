@@ -80,6 +80,7 @@ export function installCalendarBrowserOwner(win=globalThis){
      return opened===true||opened?.ok===true;
    }catch(error){try{win.console?.error?.("Calendar first-use import failed",error)}catch{};return false}
   },
+  openEmbedded:async(host,options={})=>{try{const owner=await ensureCalendarRuntime(win);return owner.openEmbedded?.(host,options)===true}catch(error){try{win.console?.error?.("Inline Calendar unavailable",error)}catch{}return false}},
   close:opts=>real()?.close?.(opts)??true,
   status,
   paint:(...a)=>real()?.paint?.(...a)??false,
