@@ -255,6 +255,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       const previous=groupedNovenas.get(link.novena_id);
       const citations=arr(link.source_ids).map(id=>novenaSources.get(id)).filter(Boolean);
       if(previous){
+        if(link.note&&!previous.notes.includes(link.note))previous.notes.push(link.note);
         for(const source of citations)if(!previous.sources.some(row=>row.url===source.url))previous.sources.push(source);
         continue;
       }
@@ -263,10 +264,14 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
         title_en:record.title_en??record.title_fr??link.novena_id,
         title_fr:record.title_fr??record.title_en??link.novena_id,
         sources:citations,
+        notes:link.note?[link.note]:[],
       });
     }
     const novenas=Object.freeze([...groupedNovenas.values()].map(row=>Object.freeze({
       id:row.id,title_en:row.title_en,title_fr:row.title_fr,
+      // Research-side notes remain available for provenance/regression only,
+      // but are never printed in the user-facing devotional cards.
+      notes:Object.freeze(row.notes),
       sources:Object.freeze(row.sources.map(source=>Object.freeze({
         url:source.url,title:source.title??source.id,
       }))),
