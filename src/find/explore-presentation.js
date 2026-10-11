@@ -163,7 +163,7 @@ function placeSheet(vm){
   const hasNovenas=arr(profile.novenas).length>0;
   const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
   const hasSources=arr(profile.sources).some(source=>source?.url);
-  if(profile.editorial_feature||chapters.length){
+  if(profile.editorial_feature||chapters.length||hasGuide){
     html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
     if(chapters.length||synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
     if(hasGuide)html+='<button type="button" data-explore-place-jump="guide">'+esc(L(vm.language,"Pilgrimage guide","Guide du pèlerin"))+'</button>';
