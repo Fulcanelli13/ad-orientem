@@ -50,10 +50,10 @@ export function compactHeritagePlaceSheet(vm){
   const primary=preferred??related[0]??null;
   const synopsis=sacredPlaceSynopsis(p,{maxLength:250,language:vm.language,preferredCategory:preferred});
   const area=shortArea(p);
-  let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
+  let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview'+(p.editorial_feature?' aoHeritageEditorialPreview':'')+'" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
   html+='<button type="button" class="aoHeritageSheetHandle" data-explore-sheet-toggle aria-label="'+L(vm.language,"Open full place details","Ouvrir la fiche complète du lieu")+'"></button>';
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
-  html+='<span class="aoHeritageCardKicker">'+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
+  html+='<span class="aoHeritageCardKicker">'+(p.editorial_feature?L(vm.language,"IN FOCUS","À DÉCOUVRIR")+' · ':"")+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
   if(area)html+='<span class="aoHeritageCardLocation">'+esc(area)+'</span>';
   html+='</div><button type="button" class="aoHeritageCardClose" data-find-close-place aria-label="'+L(vm.language,"Close place preview","Fermer l’aperçu du lieu")+'">×</button></div>';
   html+='<h2 class="aoHeritageCardTitle">'+esc(p.name)+'</h2>';
@@ -123,7 +123,16 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={
   for(const [key,en,fr] of [["traditions","Living traditions","Traditions vivantes"],["shrines","Shrine records","Fiches des sanctuaires"],["relics","Relic records","Fiches des reliques"],["pilgrimages","Pilgrimage records","Fiches des pèlerinages"],["apparitions","Apparition records","Fiches des apparitions"]]){
     html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+key+'">'+L(vm.language,en,fr)+'</button>';
   }
-  html+='</nav></div></details></header>';
+  html+='</nav>';
+  const featured=arr(vm.featuredPlaces);
+  if(featured.length){
+    html+='<details class="aoHeritageFeatured"><summary>'+L(vm.language,"Places in focus","Lieux à découvrir")+'</summary><div>';
+    for(const place of featured){
+      html+='<button type="button" data-explore-open-place="'+esc(place.place_id)+'"><span><strong>'+esc(place.name)+'</strong><small>'+esc(placeTypeLabel(vm.language,place.place_type))+'</small></span><span aria-hidden="true">→</span></button>';
+    }
+    html+='</div></details>';
+  }
+  html+='</div></details></header>';
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<div class="aoHeritageTools"><div class="aoFindSearch"><input type="search" data-find-query value="'+esc(vm.filters?.query||"")+'" aria-label="'+L(vm.language,"Search sacred places","Chercher un lieu sacré")+'" placeholder="'+L(vm.language,"Search place, saint or devotion","Lieu, saint ou dévotion")+'" autocomplete="off" spellcheck="false"></div><button type="button" class="aoHeritageGlossaryButton" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button></div>';
   html+='<nav class="aoHeritageCategories" aria-label="'+L(vm.language,"Filter places on the map","Filtrer les lieux sur la carte")+'">';

@@ -79,6 +79,26 @@ try{
     assert.equal(await page.locator('.aoHeritageNearbyPanel').count(),0);
     assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
       width+"px Nearby action reconstructed map canvas");
+    if(width===390){
+      const menu=page.locator('.aoHeritageSurface .aoHeritageMore');
+      await menu.locator('summary').first().tap();
+      const section=menu.locator('.aoHeritageFeatured');
+      await section.locator('summary').tap();
+      assert.ok((await section.locator('[data-explore-open-place]').count())>=12,
+        "Curated menu must show actual canonical Places without adding a map strip");
+      await section.locator('[data-explore-open-place="place:FR:sanctuaire-notre-dame-de-lourdes"]').tap();
+      await page.locator('.aoHeritageEditorialPreview').waitFor({state:"visible"});
+      await page.locator('.aoHeritageEditorialPreview [data-explore-expand-place]').tap();
+      await page.locator('.aoExplorePlaceEditorial').waitFor({state:"visible"});
+      assert.ok((await page.locator('.aoExplorePlaceChapters [data-explore-place-jump]').count())>=2);
+      await page.locator('[data-explore-place-jump="sources"]').tap();
+      assert.equal(await page.locator('[data-explore-place-chapter="sources"] details').getAttribute('open'),'',
+        "In-place Sources shortcut must reveal original evidence rather than opening another screen");
+      await page.locator('[data-explore-collapse-place]').tap();
+      await page.locator('.aoHeritageEditorialPreview button[data-find-close-place]').tap();
+      assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
+        "Editorial Place navigation must preserve the original map canvas");
+    }
     await page.locator('.aoHeritageSurface [data-find-query]').fill("Sanctuaire Notre-Dame de Lourdes");
     await page.locator('.aoHeritageSearchResults [data-explore-open-place]').first().tap();
     await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});

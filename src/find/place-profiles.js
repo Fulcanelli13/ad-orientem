@@ -155,9 +155,14 @@ function relatedItemsForPlace(projection,placeId){
 
 export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}={}){
   const profiles=[];
+  // Curation is an editorial discovery index, not a new evidence owner.
+  // Only exact existing source IDs and physical Place identities qualify.
+  const featured=new Map(arr(dataset?.editorial?.featured).map((entry,index)=>[entry?.place_id,{...entry,ordinal:index}]));
   for(const place of arr(dataset?.geography?.places)){
     const placeId=place?.place_id;
     if(!placeId)continue;
+    const curated=featured.get(placeId);
+    const featuredPlace=curated&&arr(place?.source_ids).includes(curated.source_id)?curated:null;
     const related=relatedItemsForPlace(projection,placeId);
     const tlm=exactTlmItems(dataset,projection,placeId);
     const relatedPlaces=relatedPlacesForPlace(dataset?.geography,placeId);
@@ -190,6 +195,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     profiles.push(Object.freeze({
       place_id:placeId,
       name:place?.name?.official??placeId,
+      editorial_feature:featuredPlace?Object.freeze({ordinal:featuredPlace.ordinal,source_id:featuredPlace.source_id}):null,
       aliases:Object.freeze(arr(place?.name?.aliases).filter(Boolean)),
       place_type:place?.place_type??"other",
       media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),
