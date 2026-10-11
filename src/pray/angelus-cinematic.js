@@ -62,14 +62,14 @@ function artworkFor(win,form,id){
   if(!value||!validLocalArtworkUrl(value.src))return null;
   return {src:value.src,alt:typeof value.alt==="string"?value.alt:"",credit:typeof value.credit==="string"?value.credit:""};
 }
-function transitionStill(win,frame,scene){
-  const img=frame.querySelector(".aoAngelusCinemaArtwork.current");
-  if(!img)return;
+function transitionStill(win,frame,form,scene){
+  const target=artworkFor(win,form,scene.id);
+  if(!target)return;
   const doc=docOf(win);
   const overlay=el(doc,"div","aoAngelusCinemaInterstitial");
   overlay.setAttribute("aria-hidden","true");
   const still=el(doc,"img");
-  still.src=img.src;
+  still.src=target.src;
   still.alt="";
   overlay.append(still,el(doc,"div","aoAngelusCinemaInterstitialShade"),el(doc,"p","aoAngelusCinemaInterstitialTitle",scene.latin));
   frame.closest(".aoP435930Sheet")?.append(overlay);
@@ -163,7 +163,7 @@ export function installAngelusCinematic({win=globalThis,root=docOf(win),form="an
   function setStep(value,{initial=false}={}){
     const nextStep=Math.max(0,Math.min(scenes.length-1,Number(value)||0));
     if(!initial&&nextStep===step)return step;
-    if(!initial&&!motionReduced(win)&&lastImg)transitionStill(win,frame,scenes[nextStep]);
+    if(!initial&&!motionReduced(win)&&lastImg)transitionStill(win,frame,form,scenes[nextStep]);
     step=nextStep;
     sceneApply();
     if(!initial){scrollToScene();onStageChange(step);}
