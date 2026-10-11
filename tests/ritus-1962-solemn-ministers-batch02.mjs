@@ -5,7 +5,7 @@ const read=name=>JSON.parse(readFileSync(new URL("../data/"+name,import.meta.url
 const corpus=read("presentation/reader-text-sung.v1.json");
 const minister=read("mass/ritus-1962-solemn-ministers-batch02.v1.json");
 const earlier=read("mass/ritus-1962-verified-ceremonial-batch01.v1.json");
-const cues=new Map(corpus.blocks.flatMap(b=>(b.units||[]).map(u=>[u.cue_id,{macro:b.Macro_ID,latin:u.latin,branch:b.Branch_Status}])));
+const cues=new Map(corpus.blocks.flatMap(b=>(b.units||[]).filter(u=>/^AO\.SM\.C\d{4}$/.test(u.cue_id)).map(u=>[u.cue_id,{macro:b.Macro_ID,latin:u.latin,branch:b.Branch_Status}])));
 const ev=minister.events;
 const get=id=>ev.find(e=>e.id==="MR62.SOL.B02."+id);
 
