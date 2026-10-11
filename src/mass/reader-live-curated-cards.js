@@ -1,3 +1,4 @@
+import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
 // Opt-in review only: source-first production 48 remains the default.
@@ -229,6 +230,10 @@ export function projectCuratedOrdinaryLiveCards(model){
     nextCard:id=>neighbor(id,1),
     cardForEvent:undefined,
     sourceAuthorityModel:model,
+    // Source-only priest/Proper clock cues have NO prayer paragraph.
+    // Retain them as audit metadata, never as an inferred spoken line,
+    // movement, or automatic gesture/position/sound trigger.
+    sourceOnlyCueRegister:ORDINARY_SUNG_SOURCE_ONLY_CUES,
     curatedPresentationReview:true,
   });
 }
