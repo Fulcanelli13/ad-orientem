@@ -8,6 +8,11 @@ on:
       - "data/geography/research/mass-scripture-source-extractions-20261011.v1.json"
       - "data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json"
       - "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json"
+      - "data/geography/research/mass-1962-cue-scripture-crosswalk-20261011.v1.json"
+      - "data/geography/research/mass-dujardin-1962-order-bridge-20261011.v1.json"
+      - "docs/research/MASS-1962-LATIN-SOURCE-CUE-BIBLE-ALIGNMENT-20261011.md"
+      - "tests/mass-1962-cue-scripture-crosswalk.mjs"
+      - "tests/mass-dujardin-1962-order-bridge.mjs"
       - "docs/research/MASS-ALPHONSUS-DUJARDIN-TWO-JOURNEYS-20261011.md"
       - "tests/mass-alphonsus-xiii-two-journeys.mjs"
       - "docs/research/MASS-SCRIPTURE-FORTESCUE-PRIMARY-EXTRACTION-20261011.md"
@@ -45,6 +50,10 @@ jobs:
         run: node tests/mass-scripture-fortescue-order-extract.mjs
       - name: Validate St Alphonsus volume and meditative/Scripture ownership
         run: node tests/mass-alphonsus-xiii-two-journeys.mjs
+      - name: Validate 1962 source-owned Latin phrase and Scripture crosswalk
+        run: node tests/mass-1962-cue-scripture-crosswalk.mjs
+      - name: Validate all Dujardin meditative positions without forged Propers
+        run: node tests/mass-dujardin-1962-order-bridge.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
