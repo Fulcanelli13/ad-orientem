@@ -6,27 +6,27 @@
 // Keep source identities intact for future event/real-rite alignment.
 const rows=[
   // Canonical Proper source-slot clocks, distinct from the resolved text.
-  ["AO.SM.C0042","AO.SM.B014","INTROIT","PROPER_BLOCK_ASYNC"],
-  ["AO.SM.C0043","AO.SM.B014","INTROIT","PROPER_BLOCK_ASYNC"],
-  ["AO.SM.C0075","AO.SM.B020","EPISTLE_OR_LESSON","PROPER_BLOCK_ACTION"],
-  ["AO.SM.C0077","AO.SM.B021","GRADUAL","PROPER_BLOCK_ASYNC"],
-  ["AO.SM.C0086","AO.SM.B026","GOSPEL","PROPER_BLOCK_ACTION"],
-  ["AO.SM.C0109","AO.SM.B030","OFFERTORY","PROPER_BLOCK_ASYNC"],
-  ["AO.SM.C0134","AO.SM.B040","SECRET_SET","PROPER_BLOCK_ACTION"],
-  ["AO.SM.C0144","AO.SM.B045","PREFACE","PROPER_BLOCK_ACTION"],
-  ["AO.SM.C0249","AO.SM.B085","COMMUNION","PROPER_BLOCK_ASYNC"],
-  ["AO.SM.C0250","AO.SM.B085","COMMUNION","PROPER_BLOCK_ACTION"],
-  ["AO.SM.C0256","AO.SM.B088","POSTCOMMUNION_SET","PROPER_BLOCK_ACTION"],
+  ["AO.SM.C0042","AO.SM.B014","INTROIT","PROPER_BLOCK_ASYNC",42],
+  ["AO.SM.C0043","AO.SM.B014","INTROIT","PROPER_BLOCK_ASYNC",43],
+  ["AO.SM.C0075","AO.SM.B020","EPISTLE_OR_LESSON","PROPER_BLOCK_ACTION",75],
+  ["AO.SM.C0077","AO.SM.B021","GRADUAL","PROPER_BLOCK_ASYNC",77],
+  ["AO.SM.C0086","AO.SM.B026","GOSPEL","PROPER_BLOCK_ACTION",86],
+  ["AO.SM.C0109","AO.SM.B030","OFFERTORY","PROPER_BLOCK_ASYNC",109],
+  ["AO.SM.C0134","AO.SM.B040","SECRET_SET","PROPER_BLOCK_ACTION",134],
+  ["AO.SM.C0144","AO.SM.B045","PREFACE","PROPER_BLOCK_ACTION",144],
+  ["AO.SM.C0249","AO.SM.B085","COMMUNION","PROPER_BLOCK_ASYNC",249],
+  ["AO.SM.C0250","AO.SM.B085","COMMUNION","PROPER_BLOCK_ACTION",250],
+  ["AO.SM.C0256","AO.SM.B088","POSTCOMMUNION_SET","PROPER_BLOCK_ACTION",256],
   // Conditional priest/servers at sedilia while the Schola is chanting.
   // Neither side can be inferred merely from the current Gloria/Credo verse.
-  ["AO.SM.C0276","AO.SM.B016",null,"SEDILIA_STATE_CONDITIONAL"],
-  ["AO.SM.C0277","AO.SM.B016",null,"SEDILIA_STATE_CONDITIONAL"],
-  ["AO.SM.C0278","AO.SM.B027",null,"SEDILIA_STATE_CONDITIONAL"],
-  ["AO.SM.C0279","AO.SM.B027",null,"SEDILIA_STATE_CONDITIONAL"],
+  ["AO.SM.C0276","AO.SM.B016",null,"SEDILIA_STATE_CONDITIONAL",69.1],
+  ["AO.SM.C0277","AO.SM.B016",null,"SEDILIA_STATE_CONDITIONAL",69.9],
+  ["AO.SM.C0278","AO.SM.B027",null,"SEDILIA_STATE_CONDITIONAL",105.1],
+  ["AO.SM.C0279","AO.SM.B027",null,"SEDILIA_STATE_CONDITIONAL",105.9],
 ];
 export const ORDINARY_SUNG_SOURCE_ONLY_CUES=Object.freeze(rows.map(
-  ([cueId,blockId,properSlot,classification])=>Object.freeze({
-    cueId,blockId,properSlot,classification,
+  ([cueId,blockId,properSlot,classification,sourceSort])=>Object.freeze({
+    cueId,blockId,properSlot,classification,sourceSort,
     visibility:"NO_PRAYER_PARAGRAPH",
     runtimePolicy:"REQUIRE_INDEPENDENT_SOURCE_EVENT_TRIGGER",
     automatedIconAllowed:false,
@@ -66,6 +66,7 @@ export function auditOrdinarySungSourceOnlyCues({sungCorpus,sourceModel,registri
       const original=byCue.get(id);
       if(!original || original.block.Block_ID!==spec.blockId ||
          (original.block.Proper_Slot??null)!==spec.properSlot ||
+         Number(original.unit.sort)!==spec.sourceSort ||
          String(original.unit.latin??"").trim() ||
          String(original.unit.english??"").trim())
         throw new Error(family+": invalid original source-only identity "+id);
