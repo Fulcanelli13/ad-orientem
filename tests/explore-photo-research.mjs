@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {createHash} from "node:crypto";
 
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const research=read("data/geography/research/place-media-candidates-r58.v1.json");
@@ -24,6 +25,12 @@ for(const item of approved.items){
   assert.equal(item.orientation,item.height>item.width?"portrait":"landscape");
   const related=research.candidates.find(row=>row.place_id===item.place_id);
   assert.equal(item.source_url,related?.source_page_url,"Approved image must match original Commons source identity");
+  const asset=readFileSync(item.asset_path);
+  assert.ok(asset.length>50000,"Approved file must contain image bytes");
+  assert.equal(asset.toString("ascii",0,4),"RIFF","Optimized asset must be WebP");
+  assert.equal(asset.toString("ascii",8,12),"WEBP","Optimized asset must be WebP");
+  assert.equal(createHash("sha256").update(asset).digest("hex"),item.derivative_sha256,
+    "Approved photo bytes must match source stage report for "+item.place_id);
 }
 for(const held of research.held){
  assert.equal(approvedIds.has(held.place_id),false,"Older-licensed or identity-held photo cannot publish");
