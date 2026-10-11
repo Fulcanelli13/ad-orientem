@@ -10,6 +10,8 @@ on:
       - "data/calendar/sacred-art-prayer-slots.v1.json"
       - "data/calendar/sacred-art-candidates.v1.json"
       - "data/calendar/sacred-art-editorial-crosswalk.v1.json"
+      - "data/calendar/sacred-art-primary-museum-leads-20261011.v1.json"
+      - "tools/calendar/build-sacred-art-batch-worklist.mjs"
       - "tests/calendar-sacred-art-selection.mjs"
       - "data/calendar/sacred-art-subject-targets.v2.json"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
@@ -40,6 +42,7 @@ jobs:
           node tools/calendar/audit-sacred-art-prayer-slots.mjs
           node tools/calendar/report-sacred-art-liturgical-priorities.mjs
           node tools/calendar/build-sacred-art-reuse-index.mjs
+          node tools/calendar/build-sacred-art-batch-worklist.mjs
       - name: Upload complete unresolved-source and coverage report
         if: always()
         uses: actions/upload-artifact@v4
