@@ -381,14 +381,15 @@ try{
     return {nested:Boolean(root),open:slot?.hidden===false,
       route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
       inset:root?parseFloat(getComputedStyle(root.querySelector(".aoCalModBody")).paddingLeft):0,
-      overflow:root?root.scrollWidth-root.clientWidth:Infinity};
+      overflow:root?root.scrollWidth-root.clientWidth:Infinity,
+      offenders:root?[...root.querySelectorAll("*")].map(el=>({el,r:el.getBoundingClientRect()})).filter(x=>x.r.right>root.getBoundingClientRect().right+2||x.r.left<root.getBoundingClientRect().left-2).slice(0,9).map(x=>({tag:x.el.tagName,cls:String(x.el.className).slice(0,90),right:Math.round(x.r.right),left:Math.round(x.r.left)})):[]};
   });
   assert.equal(inPageCalendar.nested,true,"Calendar must remain embedded in Today");
   assert.equal(inPageCalendar.open,true,"Calendar in-page slot is hidden");
   assert.equal(inPageCalendar.route,"home","Calendar wrongly replaces global Today destination");
   assert.ok(inPageCalendar.inset>=4&&inPageCalendar.inset<=12,
     "embedded Calendar lost bounded inner padding");
-  assert.ok(inPageCalendar.overflow<=1,"Calendar Day overflows phone width");
+  assert.ok(inPageCalendar.overflow<=1,"Calendar Day overflows phone width: "+JSON.stringify(inPageCalendar));
   await shot("02-calendar-day");
 
   const todayTabs=".homeScreen.aoTodayV2 .aoTodayV2Tabs";
