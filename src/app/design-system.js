@@ -253,6 +253,31 @@ const CSS=`
   #aoPrayerBookRoot .aoReaderSeqFill{transition:none}
 }
 
+/* Mass chrome: the top ribbon is the sole owner of persistent posture.
+ * Keep the transient posture-change cue in its left rail, but do not render
+ * the second standing/kneeling picture in Simple or Missal modes. */
+.ao-reader-shell .ao-rail-left .ao-rail-item[data-channel="posture"]{
+  display:none!important;
+}
+/* The central section menu has two lines available: never truncate its
+ * liturgical section name to an uninformative word fragment on phones. */
+@media(max-width:560px){
+  .ao-reader-shell .ao-section-jump{
+    min-width:0;
+    font-size:13px;
+    line-height:1.18;
+    white-space:normal;
+  }
+  .ao-reader-shell .ao-section-jump [data-role="section-title"]{
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    white-space:normal;
+    line-height:1.17;
+    text-align:center;
+  }
+}
 /* Single global command language for every section header. The native
  * handlers stay with their owning modules; do not synthesize navigation here. */
 .aoAppHeader{
