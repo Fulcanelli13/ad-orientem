@@ -141,6 +141,12 @@ export function mountFullMassPreflight({
         '<p><span data-mass-calendar-actual-colour></span><span data-mass-calendar-gospel></span></p></div>'+
         '</div><p data-mass-calendar-source class="aoMassLiturgicalSource"></p>'+
         '<p data-mass-calendar-error role="alert" hidden></p></section>'+
+        '<details data-mass-calendar-details class="aoMassCalendarEmbeddedDetails"><summary data-mass-calendar-details-label>Explore the liturgical calendar</summary>'+
+        '<nav data-mass-calendar-tabs aria-label="Liturgical calendar views">'+
+        '<button type="button" data-mass-calendar-view="day">Day</button>'+
+        '<button type="button" data-mass-calendar-view="picker">Month</button>'+
+        '<button type="button" data-mass-calendar-view="year">Liturgical Year</button></nav>'+
+        '<div data-mass-calendar-host aria-label="Full liturgical calendar"></div></details>'+
         '<p data-full-mass-celebration role="status"></p>'+
         '<section class="aoSpecialMassContext" data-full-mass-special hidden></section>'+
         '<div class="aoFullMassCategories" role="group" data-full-mass-categories aria-label="Select actual Mass">'+
@@ -174,11 +180,27 @@ export function mountFullMassPreflight({
           const notice=root.querySelector("[data-mass-calendar-error]");
           if(notice)notice.hidden=true;
           if(typeof onOpenCalendar!=="function")return;
-          Promise.resolve().then(()=>onOpenCalendar(String(getResolvedMass()?.date??"")))
+          const details=root.querySelector("[data-mass-calendar-details]");
+          if(details)details.open=true;
+          Promise.resolve().then(()=>onOpenCalendar(String(getResolvedMass()?.date??""),"day",root.querySelector("[data-mass-calendar-host]")))
             .then(opened=>{if(opened===true||opened?.ok===true)return;
               if(notice){notice.textContent=french()?
                 "Impossible d’ouvrir le calendrier.":"Unable to open Calendar.";notice.hidden=false;}})
             .catch(error=>{if(notice){notice.textContent=String(error?.message??error);notice.hidden=false;}});
+          return;
+        }
+        const viewButton=e.target?.closest?.("[data-mass-calendar-view]");
+        if(viewButton){
+          e.preventDefault();e.stopPropagation();
+          const details=root.querySelector("[data-mass-calendar-details]");
+          if(details)details.open=true;
+          const holder=root.querySelector("[data-mass-calendar-host]");
+          const view=viewButton.dataset.massCalendarView;
+          void Promise.resolve(onOpenCalendar?.(String(getResolvedMass()?.date??""),view,holder))
+            .then(ok=>{if(ok!==true&&ok?.ok!==true){
+              const notice=root.querySelector("[data-mass-calendar-error]");
+              if(notice){notice.hidden=false;notice.textContent=french()?"Calendrier indisponible.":"Calendar unavailable."}
+            }});
           return;
         }
         const button=e.target?.closest?.("[data-full-mass-category]");
@@ -217,6 +239,12 @@ export function mountFullMassPreflight({
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
     const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language());
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
+    const detailsLabel=root.querySelector("[data-mass-calendar-details-label]");
+    if(detailsLabel)detailsLabel.textContent=fr?"Explorer le calendrier liturgique":"Explore the liturgical calendar";
+    for(const button of root.querySelectorAll("[data-mass-calendar-view]")){
+      const v=button.dataset.massCalendarView;
+      button.textContent=v==="day"?l("Day","Jour"):v==="picker"?l("Month","Mois"):l("Liturgical Year","Année liturgique");
+    }
     if(typeof onOpenCalendar!=="function"){
       const calendarOpen=root.querySelector("[data-mass-calendar-open]");
       if(calendarOpen)calendarOpen.hidden=true;
