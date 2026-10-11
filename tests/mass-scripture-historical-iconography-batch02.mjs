@@ -12,5 +12,5 @@ assert.ok(sv.historicalEvidence.some(x=>x.url.includes("cultura.gov.it")));
 assert.ok(sv.imageCandidates.some(x=>x.license==="CC BY-SA 4.0"&&x.requiredCredit?.includes("Ribeiro")));
 assert.ok(sv.imageCandidates.some(x=>x.type==="HISTORICAL_ARCHIVE_PHOTO_RIGHTS_UNCLEAR"&&x.approval==="NOT_APPROVED"));
 assert.ok(sa.dateRange.includes("restored")&&sa.imageCandidates.length===0);
-assert.ok(D.publicationGates.some(x=>x.includes("Biblical")));
+assert.ok(D.publicationGates.some(x=>x.includes("Bible event")));
 console.log("PASS 3 original early-Christian artwork research objects; rights and location constraints preserved");
