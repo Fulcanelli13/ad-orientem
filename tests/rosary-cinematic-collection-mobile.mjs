@@ -23,24 +23,21 @@ await new Promise((ok,fail)=>{server.once("error",fail);server.listen(4289,"127.
 let browser;
 try{
  browser=await chromium.launch({headless:true,channel:"chromium"});
- const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,
-  isMobile:true,hasTouch:true,locale:"fr-FR",reducedMotion:"reduce"});
- const page=await context.newPage(),errors=[];
- page.on("pageerror",e=>errors.push(String(e)));
- await page.goto("http://127.0.0.1:4289/index.html",{waitUntil:"domcontentloaded",timeout:60000});
- await page.waitForFunction(()=>typeof window.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
- assert.equal(await page.evaluate(async()=>window.AO_PRAY_APP_V1.open()),true);
- await page.waitForFunction(()=>typeof window.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
- assert.equal(await page.evaluate(()=>window.AO_PRAY_V435930.open("pray.rosary",{returnContext:null})),true);
  const out="reviews/captures/rosary-art-coherence";
  await mkdir(resolve(root,out),{recursive:true});
- const collected=[];
+ const errors=[],collected=[];
  for(const set of ["joyful","sorrowful","glorious","luminous"]){
-  if(collected.length){
-   const change=page.locator("#aoPrayerBookRoot.open [data-lab-rosary-change],#aoPrayerBookRoot.open [data-pb-rosary-change]").first();
-   assert.ok(await change.count(),"Canonical mystery set-change button unavailable");
-   await change.evaluate(x=>x.click());
-  }
+  // New isolated native Rosary session per set. This artwork test does not
+  // rely on the unrelated legacy Change Mysteries navigation handler.
+  const context=await browser.newContext({viewport:{width:390,height:844},
+   deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"fr-FR",reducedMotion:"reduce"});
+  const page=await context.newPage();
+  page.on("pageerror",e=>errors.push(String(e)));
+  await page.goto("http://127.0.0.1:4289/index.html",{waitUntil:"domcontentloaded",timeout:60000});
+  await page.waitForFunction(()=>typeof window.AO_PRAY_APP_V1?.open==="function",null,{timeout:30000});
+  assert.equal(await page.evaluate(async()=>window.AO_PRAY_APP_V1.open()),true);
+  await page.waitForFunction(()=>typeof window.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+  assert.equal(await page.evaluate(()=>window.AO_PRAY_V435930.open("pray.rosary",{returnContext:null})),true);
   const button=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='"+set+"']").first();
   await button.waitFor({state:"visible",timeout:7000}).catch(async error=>{
     const diag=await page.evaluate((wanted)=>{
@@ -90,6 +87,7 @@ try{
   }
   console.log("ART COHERENCE "+set+": "+
    collected.filter(x=>x.set===set).map(x=>x.name+" ["+x.width+"x"+x.height+"]").join(" | "));
+  await context.close();
  }
  assert.equal(collected.length,20);
  assert.equal(new Set(collected.map(x=>x.id)).size,20);
