@@ -1,0 +1,59 @@
+name: Mass 1962 full printed Missal anchor discovery
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research/mass-1962-pdf-anchor-discovery.mjs'
+      - 'tests/mass-1962-pdf-anchor-discovery.mjs'
+      - '.github/workflows/mass-1962-full-pdf-anchor-research.yml'
+jobs:
+  compare-printed-ocr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify reader and Poppler availability
+        run: |
+          node --check scripts/research/mass-1962-pdf-anchor-discovery.mjs
+          pdftotext -v
+          pdfinfo -v
+      - name: Download CMAA full 1962-labelled Missal (ephemeral, not committed)
+        run: |
+          mkdir -p artifacts
+          curl --fail --location --retry 3 --connect-timeout 20 --max-time 480 --silent --show-error \
+            "https://media.musicasacra.com/pdf/missale62.pdf" -o artifacts/missale62.pdf
+          test "$(stat -c%s artifacts/missale62.pdf)" -gt 50000000
+          pdfinfo artifacts/missale62.pdf | grep -E '^Pages:|^Title:'
+      - name: Extract existing PDF text layer (no new OCR performed)
+        run: |
+          pdftotext -layout -enc UTF-8 artifacts/missale62.pdf artifacts/missale62.txt
+          test -s artifacts/missale62.txt
+          echo "MISSAL_WITNESS_SHA256=$(sha256sum artifacts/missale62.pdf | awk '{print $1}')" >> "$GITHUB_ENV"
+      - name: Compare all 100 source packets to printed page candidates
+        run: |
+          node scripts/research/mass-1962-pdf-anchor-discovery.mjs artifacts/missale62.txt \
+            data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json
+      - name: Check candidate accounting and no publication claims
+        run: node tests/mass-1962-pdf-anchor-discovery.mjs
+      - name: Upload only compact research concordance (not the whole PDF)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-full-pdf-100-anchor-review
+          path: data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json
+          if-no-files-found: warn
+      - name: Commit research-only concordance into the existing PR branch
+        if: success() && github.ref == 'refs/heads/research/biblical-people-genealogy-explorer-20261011'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json
+          if ! git diff --staged --quiet; then
+            git commit -m "data(research): compare 100 high-priority paths with full 1962 Missal OCR page candidates"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
