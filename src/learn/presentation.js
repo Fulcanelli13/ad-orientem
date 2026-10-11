@@ -1,3 +1,4 @@
+import { navigationActionAttrs, navigationActionIcon } from "../app/interface-grammar.js";
 import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import { canonicalAssetIdForLearnRoute, getCanonicalAsset, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate } from "../app/date-format.js";
@@ -267,10 +268,10 @@ export function renderLearnPresentation(root,state,win,{error="",familyId=null,d
   const heroIntro=family?pick(family.description,state):pick(LEARN_LAYOUT.intro,state);
   const backLabel=family?(langFr?"Retour à Formation":"Back to Formation"):(langFr?"Retour à l’accueil":"Back to Home");
   root.innerHTML=`<style data-ao-learn-style>${learnPresentationCss()}</style>
-    <header class="aoLearnModTop">
-      <button type="button" data-ao-learn-back aria-label="${esc(backLabel)}">${assetMask("ao-ui-back")}</button>
+    <header class="aoLearnModTop aoAppHeader">
+      <button type="button" data-ao-learn-back ${navigationActionAttrs("back",langFr?"fr":"en",backLabel)}>${navigationActionIcon("back")}</button>
       <div class="aoLearnModTopTitle"><small>AD ORIENTEM</small><strong>${esc(pick(LEARN_LAYOUT.title,state))}</strong></div>
-      <button type="button" data-ao-learn-home aria-label="${esc(langFr?"Accueil":"Home")}">${assetMask("ao-nav-home")}</button>
+      <button type="button" data-ao-learn-home ${navigationActionAttrs("home",langFr?"fr":"en")}>${navigationActionIcon("home")}</button>
     </header>
     <main class="aoLearnModWrap">
       <section class="aoLearnModHero"><div class="kicker">${esc(pick(LEARN_LAYOUT.kicker,state))}</div><h1>${esc(heroTitle)}</h1><p>${esc(heroIntro)}</p><div class="aoLearnModContext">${esc(contextLabel(state,win))}</div></section>
