@@ -1,11 +1,14 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const captureDir=resolve(root,"artifacts/missal-phone-review");
+await mkdir(captureDir,{recursive:true});
+const audit=[];
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
  ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
@@ -48,10 +51,21 @@ try{
     sizeTranslation:parseFloat(getComputedStyle(translated).fontSize),
     secondaryVisible:getComputedStyle(translated).display!=="none",
     stateRibbon:getComputedStyle(shell.querySelector(".ao-state-ribbon")).display,
+    readerProgress:getComputedStyle(shell.querySelector(".ao-reader-progress")).display,
     schola:getComputedStyle(shell.querySelector(".ao-schola-dock")).display,
     viewportOverflow:document.documentElement.scrollWidth-innerWidth,
     primaryText:primary.textContent,secondaryText:translated.textContent};
   });
+  // Viewport screenshots complement assertions; they do not constitute real-handset signoff.
+  const filename="missal-"+width+"-"+lang+".png";
+  await page.screenshot({path:resolve(captureDir,filename),fullPage:false});
+  audit.push({viewport:{width,height},language:lang,file:filename,
+    mode:measure.mode,pairedRows:measure.rows,gridColumns:measure.gridColumns,
+    leftX:measure.textLeft,rightX:measure.textRight,
+    viewportOverflowPx:measure.viewportOverflow,readerProgressDisplay:measure.readerProgress,
+    serifFontsMatch:measure.fontPrimary===measure.fontTranslation,
+    equalFontSize:measure.sizePrimary===measure.sizeTranslation});
+  await writeFile(resolve(captureDir,"metrics.json"),JSON.stringify(audit,null,2)+"\n");
   assert.equal(measure.mode,"MISSAL",width+"px reader did not open in Missal");
   assert.ok(measure.rows>0,width+"px Missal has no bilingual paragraph pairs");
   assert.ok(measure.textRight>measure.textLeft+30,width+"px Latin and vernacular are not side by side: "+JSON.stringify(measure));
@@ -60,6 +74,7 @@ try{
   assert.equal(measure.sizePrimary,measure.sizeTranslation,"Missal vernacular text uses an inconsistent size");
   assert.equal(measure.secondaryVisible,true,"Missal translation is not visible");
   assert.equal(measure.stateRibbon,"none","Minimal Missal has the LIVE posture ribbon");
+  assert.equal(measure.readerProgress,"none","MISSAL book text is obscured by LIVE section progress overlay");
   assert.equal(measure.schola,"none","Minimal Missal has the Schola overlay");
   assert.ok(measure.viewportOverflow<=1,width+"px Missal overflows phone width");
   assert.ok(measure.primaryText?.trim()&&measure.secondaryText?.trim(),"Both sourced columns must contain text");

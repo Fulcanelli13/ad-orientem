@@ -27,6 +27,8 @@ on:
       - "tests/sacred-geography-profiles-editorial.mjs"
       - "tests/fixtures/reader-phone-harness.html"
       - "index.html"
+      - ".github/workflows/required-main-gate.yml"
+      - "tests/required-main-gate-contract.mjs"
       - ".github/workflows/r17-mass-convergence.yml"
 
 concurrency:
@@ -41,6 +43,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - run: node tests/required-main-gate-contract.mjs
       - run: npm test
 
   phone-browser:
@@ -54,3 +57,11 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: npm run test:phone
+      - name: Retain bilingual Missal book-view phone evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bilingual-missal-phone-book
+          path: artifacts/missal-phone-review/
+          if-no-files-found: warn
+          retention-days: 30
