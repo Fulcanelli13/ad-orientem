@@ -2,7 +2,7 @@
 export const ANGELUS_CINEMATIC_STYLE_VERSION="angelus-cinematic-styles-v1";
 if(typeof document!=="undefined"&&!document.getElementById("ao-angelus-cinematic-style")){
   const CSS=[
-    "#aoPray435930:has([data-ao-angelus-form]) .aoP435930Sheet{background:#080c12;color:#e8e8e7;border-color:color-mix(in srgb,var(--liturgical,#827b7a) 22%,#343b46)}",
+    "#aoPray435930:has([data-ao-angelus-form]) .aoP435930Sheet{position:relative;background:#080c12;color:#e8e8e7;border-color:color-mix(in srgb,var(--liturgical,#827b7a) 22%,#343b46)}",
     "#aoPray435930:has([data-ao-angelus-form]) .aoP435930Head{background:rgba(8,12,18,.96);border-color:rgba(255,255,255,.085)}",
     "#aoPray435930:has([data-ao-angelus-form]) .aoP435930Head button{background:#121820;color:#e8e8e7;border-color:rgba(255,255,255,.13)}",
     "#aoPray435930:has([data-ao-angelus-form]) .aoP435930Head small{color:var(--liturgical,#bdbdb9)}",
