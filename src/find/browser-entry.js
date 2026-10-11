@@ -114,6 +114,7 @@ export function createFindOwner(win=globalThis){
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
+  let hasExploreReturnContext=false,lastSurfaceScrollTop=0;
   // Ephemeral ranked results only. Device location is never stored or persisted.
   let nearbyResults=null;
   const queryByLens=new Map();
@@ -410,16 +411,22 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
+    // Re-entering Explore through the ribbon is a return, not a new search.
+    // An explicit deep link is different: it overrides the saved lens/record.
+    const hasOwn=key=>Object.prototype.hasOwnProperty.call(options??{},key);
+    const exactDestination=["lens","categories","view","query","placeId","calendarKey"]
+      .some(hasOwn);
+    const returning=!openState&&!exactDestination&&hasExploreReturnContext;
     if(options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
-    if(state.lens==="heritage"){
-      state.view="map";
-      if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
-    }
-    state.calendarKey=state.lens==="pilgrimages"&&typeof options?.calendarKey==="string"?options.calendarKey:null;
+    if(state.lens==="heritage"&&!returning&&!hasOwn("view"))state.view="map";
+    if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
+    if(hasOwn("calendarKey"))state.calendarKey=state.lens==="pilgrimages"&&typeof options.calendarKey==="string"?options.calendarKey:null;
+    else if(exactDestination&&state.lens!=="pilgrimages")state.calendarKey=null;
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
-    if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
-    state.expandPlace=false;state.expandDetail=false;
+    if(typeof options?.placeId==="string"){state.selectedPlaceId=options.placeId;state.selectedId=null}
+    if(!returning){state.expandPlace=false;state.expandDetail=false}
+    const restoreScroll=returning?lastSurfaceScrollTop:null;
     const node=ensureRoot(win);if(!node)return false;
     openState=true;node.dataset.open="true";
     node.dataset.aoFindLoadState="loading";
@@ -427,16 +434,33 @@ export function createFindOwner(win=globalThis){
     // than a blank overlay or a rejected navigation promise.
     const rendered=await paint();
     if(!rendered)return false;
+    if(Number.isFinite(restoreScroll)){
+      const surface=node.querySelector?.(".aoFindSurface");
+      if(surface)surface.scrollTop=restoreScroll;
+    }
+    hasExploreReturnContext=true;
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("find")}catch{}
     return true;
   }
 
   function close(){
     ++paintToken;
-    openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
-    lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
+    // Preserve the exact in-memory map camera and currently selected record
+    // before the hard-Home domain isolation destroys the underlying canvas.
+    // Never save the map, query or location to localStorage or an external log.
+    const node=getRoot(win);
+    if(openState){
+      lastSurfaceScrollTop=node?.querySelector?.(".aoFindSurface")?.scrollTop??0;
+      if(mapHandle?.map&&state.view==="map"){
+        const viewport=mapViewport(mapHandle.map);
+        if(viewport){lastMapView=viewport;lastMapLens=state.lens}
+      }
+      hasExploreReturnContext=true;
+    }
+    openState=false;
+    mapHandle?.destroy?.();mapHandle=null;
     nearbyResults=null;
-    const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
+    if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
   }
 
