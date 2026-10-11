@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-ceremonial-research-contract-v2",
-  "version": "2.2.0-research",
+  "version": "2.3.0-book-scoped",
   "status": "RESEARCH_NOT_RUNTIME",
   "sourceOfAuthority": {
     "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -106,18 +106,16 @@
   ],
   "historicalParallelRegister": "data/mass/ritus-1962-alphonsus-fortescue-parallels.v1.json",
   "certificationLimits": [
-    "Do not interpret green CI as liturgical certification",
-    "Original printed Latin facsimile not reviewed line by line",
-    "Bilingual Latin transcription and English 1962 Ritus checked for selected triggers",
-    "Practical timing of subdeacon's paten at Pater remains open",
-    "Faithful postures may vary by local customary practice"
+    "Historical texts predate the 1962 rubrics: conflicting or omitted instructions are unresolved unless the existing 1962 SOT settles them",
+    "No new editions/websites/ceremonial manuals are to be sought for this scope",
+    "The matrix's existing 1962 form rules are preserved; do not infer unsupported variants"
   ],
   "priorities": [
-    "Finish printed 1962 Latin facsimile editorial review",
-    "Review source ownership of minister movements and precise positions",
-    "Validate all 23 sung plus separately archived Low Mass faithful posture variants",
-    "Translate long/short rubrics into French for actual Priest Mode only after source certification",
-    "Perform phone LIVE regression for all Mass forms after runtime integration"
+    "Extract all relevant ceremonial directions from both supplied books in large batches with PDF and printed page locators",
+    "Join each described action to existing AO.SM.C canonical cue or mark unanchored ceremonial state",
+    "Compare Low, Missa Cantata and Solemn branches using existing workbook and repository form contracts",
+    "Verify French rubrics using book passages and do not elevate pre-1962 descriptions to 1962 universal law",
+    "Close actor and branch tests, then propose runtime changes separately"
   ],
   "correctionsSinceV2": [
     "C0163 opening Quam oblationem precedes crosses; C0164 three crosses on benedictam, adscriptam, ratam; C0165 Corpus-only, C0166 Sanguis-only.",
@@ -125,5 +123,19 @@
     "Foot-of-altar C0010 Gloria Patri tied to Judica me III.6 and unavailable where that Psalm is omitted.",
     "Wine poured into chalice before priest begins C0112 Deus qui humanae.",
     "All 23 faithful sung postures are usage/profile-guidance, not universal rubrical mandates."
-  ]
+  ],
+  "userSourceRestriction": {
+    "effective": "2026-10-11",
+    "booksOnly": [
+      "The Holy Mass — St Alphonsus de Liguori",
+      "The Mass: A Study of the Roman Liturgy — Adrian Fortescue"
+    ],
+    "noAdditionalResearchSources": true,
+    "existing1962MatricesRemainAuthorityFor1962Variants": true,
+    "unresolved1962Differences": "FLAG_AND_DEFER_NOT_SEARCH",
+    "noExternalSourceSearches": true,
+    "doNotRequireMoreFacsimiles": true,
+    "workbookSource": "Ad_Orientem_1962_Sung_Mass_CANONICAL_BLUEPRINT_v1.1_PROTOTYPE_READY.xlsx",
+    "directBookEvidenceFile": "data/mass/alphonsus-fortescue-direct-book-evidence.v1.json"
+  }
 }
