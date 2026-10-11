@@ -282,4 +282,17 @@ export const HERITAGE_STYLE = String.raw`
   width:100%!important;min-width:100%!important;height:auto!important;
   min-height:44px!important;border-radius:9px!important;
 }
+
+/* Keep the contextual Glossary discoverable without another navigation row. */
+.aoHeritageSurface .aoHeritageTools{display:flex;align-items:center;gap:7px}
+.aoHeritageSurface .aoHeritageTools .aoFindSearch{flex:1;min-width:0}
+.aoHeritageSurface .aoHeritageGlossaryButton{
+  display:grid;place-items:center;flex:none;min-width:44px;width:44px;
+  min-height:44px;height:44px;border-radius:10px;
+  color:var(--ao-text-primary,#e9e4d9);
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  background:var(--ao-surface-1,#101821);
+  font:650 17px/1 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer;
+}
+.aoHeritageSurface .aoHeritageGlossaryButton:focus-visible{outline:2px solid var(--ao-liturgical-accent,#c9ad78);outline-offset:2px}
 `;
