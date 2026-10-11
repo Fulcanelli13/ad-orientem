@@ -1334,7 +1334,7 @@ function labRosaryDevotionalStep(step,idx){
 }
 function labRosaryDecadeBar(step){return `<div class="lab-decade-bar" aria-hidden="true">${Array.from({length:5},(_,i)=>`<i class="${step?.mi>i?'done':step?.mi===i?'current':''}"></i>`).join('')}</div>`}
 function labRosaryBeads(step){
- if(step?.phase==='opening')return `<div class="lab-bead-stage">${Array.from({length:7},(_,i)=>`<i class="lab-bead ${i<S.rosaryStep?'past':i===S.rosaryStep?'current':''}"></i>`).join('')}</div>`;
+ if(step?.phase==='opening'){const total=labRosarySteps(S.rosarySet).filter(x=>x.phase==='opening').length;return `<div class="lab-bead-stage">${Array.from({length:total},(_,i)=>`<i class="lab-bead ${i<S.rosaryStep?'past':i===S.rosaryStep?'current':''}"></i>`).join('')}</div>`;}
  if(step?.mi===undefined)return '';
  const active=step.bead||0;
  return `<div class="lab-bead-stage" aria-label="${t('Decade beads','Perles de la dizaine')}">${Array.from({length:10},(_,i)=>`<i class="lab-bead ${active>i+1?'past':active===i+1?'current':''}"></i>`).join('')}</div>`;
