@@ -961,7 +961,20 @@ function open({embeddedIn=null,onClose=null}={}){
   if(calendarView==="picker")pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
   installWeekCacheApi();seedCurrent();root()?.remove?.();
   const r=doc.createElement("section");r.id=ROOT_ID;r.dataset.aoAssetId=canonicalAssetIdForSurface("calendar")||"";r.setAttribute("role",embeddedIn?"region":"dialog");if(!embeddedIn)r.setAttribute("aria-modal","true");r.setAttribute("aria-label",L("Calendar","Calendrier"));if(embeddedIn)r.dataset.aoCalendarEmbedded="true";r.innerHTML=`<style>${css()}${calendarAuditCss()}${calendarScriptureStyles()}</style><div class="aoCalModTop"><button type="button" data-cal-close aria-label="${L("Back to Home","Retour à l’accueil")}">${assetIcon("ao-ui-back")}</button><h1>${L("Calendar","Calendrier")}</h1><button type="button" data-cal-glossary aria-label="${L("Terms and definitions","Termes et définitions")}">?</button><p data-cal-glossary-error hidden role="status" class="aoCalGlossaryError"></p></div><main class="aoCalModBody" data-cal-body></main>`;if(embeddedIn){const holder=typeof embeddedIn==="string"?doc.querySelector(embeddedIn):embeddedIn;if(!holder?.isConnected)return false;embeddedReturn={onClose};holder.append(r)}else{embeddedReturn=null;doc.body.append(r)}bind(r);paint();try{unsub?.()}catch{}unsub=runtime().store.subscribe(()=>queueMicrotask(paint));if(!embeddedIn)r.querySelector("[data-cal-close]")?.focus?.();loadCalendarPilgrimagePlaces();
-  const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});return true;
+  const selected=state()?.selectedDate||iso(new Date());if(calendarView==="picker")requestPickerMonth();
+  // Embedding the Calendar in Today or Mass must be observational when the
+  // selected 1962 day is already resolved. revealDate() dispatches
+  // resolve-complete, causing the legacy Home owner to replace the host DOM,
+  // which otherwise creates a Home -> Calendar -> Home render loop.
+  const current=state();
+  const alreadyResolved=Boolean(current?.selectedDate===selected&&!current.resolving
+    &&current?.resolution?.date===selected&&current?.resolution?.day?.main);
+  if(embeddedIn&&alreadyResolved){
+    void prepareWeek(selected,{foreground:false}).then(()=>{
+      if(root()&&state()?.selectedDate===selected)paint();
+    }).catch(error=>console.warn("Embedded Calendar background week",error));
+  }else void revealDate(selected,{forceLoader:!weekReady(selected),prefetch:true});
+  return true;
 }
 function status(){const selected=state()?.selectedDate||iso(new Date());return Object.freeze({version:VERSION,installed:true,open:Boolean(root()),owner:root()?.dataset?.aoCalendarOwner??null,view:calendarView,monthView:calendarMonthView,dataServiceReady:typeof runtime()?.resolver?.resolveDay==="function",selectedDate:state()?.selectedDate??null,resolutionDate:state()?.resolution?.date??null,weekReady:weekReady(selected),weekCacheSize:weekCache.size,pickerMonthId,monthReady:pickerMonthId?monthReady(pickerMonthId):false,monthLoading:pickerMonthId?monthLoads.has(pickerMonthId):false,monthCachedDays:pickerMonthId?monthGridIds(pickerMonthId).filter(x=>weekCache.has(x)).length:0,donorPanelActive:globalThis.AO_NAV_V25?.getState?.()?.panel==="calendar"})}
 export function installCalendarBrowserOwner(win=globalThis){if(win.AO_CALENDAR_APP_V1&&!win.AO_CALENDAR_APP_V1.__aoCalendarLazyPlaceholder)return win.AO_CALENDAR_APP_V1;const api=Object.freeze({version:VERSION,open,openEmbedded:(embeddedIn,{view="day",onClose=null}={})=>{if(!embeddedIn?.isConnected)return false;if(root()?.parentElement===embeddedIn){setView(view);return true}if(root())close({silent:true});requestedView=view;return open({embeddedIn,onClose})},close,paint,status,select,setView,setMonthView,prepareMonth,monthGridIds,monthReady,monthIndexEntries});win.AO_CALENDAR_APP_V1=api;return api}
