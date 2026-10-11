@@ -62,6 +62,12 @@ try{
           return hit===cta||cta.contains(hit);
         })():false,massButtonClasses:[...root.querySelectorAll("[data-home-mass-entry],[data-resume-mass]")].map(x=>x.className),scrollWidth:document.documentElement.scrollWidth,artWidth:art?.getBoundingClientRect().width,
         heroWidth:hero?.getBoundingClientRect().width,cta:!!cta,ctaHeight:rect?.height,ctaBottom:bottom,
+        ctaText:cta?.textContent?.trim()||"",ctaBackground:cta?getComputedStyle(cta).backgroundColor:null,
+        ctaLabel:(()=>{const label=cta?.querySelector("b");if(!label)return null;
+          const cs=getComputedStyle(label),r=label.getBoundingClientRect();
+          return {color:cs.color,fill:cs.webkitTextFillColor,opacity:cs.opacity,display:cs.display,
+            visibility:cs.visibility,width:r.width,height:r.height,filter:cs.filter};
+        })(),
         artworkTitle:title?.textContent?.trim(),sections,
         prayCount:root.querySelectorAll(".aoTodayV2PrayerFeature").length,
         massCount:root.querySelectorAll(".aoTodayV2PrimaryMass").length,
@@ -77,6 +83,9 @@ try{
     assert.equal(info.cta,true,"Mass CTA missing at "+width);
     assert.equal(info.heroContainsCTA,true,"Donor artwork escaped and closed the Mass frontispiece at "+width);
     assert.equal(info.ctaHit,true,"Mass CTA is not actually hit-testable above overlays at "+width);
+    assert.ok(info.ctaText.length>3&&info.ctaLabel?.width>0&&info.ctaLabel?.height>0&&info.ctaLabel?.opacity==="1"&&info.ctaLabel?.visibility==="visible",
+      "Primary Mass action label is hidden at "+width+": "+JSON.stringify(info.ctaLabel));
+    assert.notEqual(info.ctaLabel.color,info.ctaBackground,"Mass CTA foreground and background are identical at "+width);
     assert.equal(info.massCount,1,"Duplicate primary Mass entry at "+width);
     assert.ok(info.ctaHeight>=44,"Mass CTA touch target too small at "+width);
     assert.ok(info.scrollWidth<=width+3,"Home horizontal overflow at "+width+": "+JSON.stringify(info));
