@@ -170,7 +170,8 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
   const bar=root.querySelector(".aoP435930RosaryBar");
   if(bar)bar.insertAdjacentElement("afterend",host);
   else owner.querySelector(".lab-view-head,.pbTop,.pbHead,header")?.insertAdjacentElement("afterend",host);
-  image.addEventListener("error",()=>{stage.dataset.artwork="unavailable";image.removeAttribute("src");});
+  // onerror is assigned for each selected painting, so a failed museum image
+  // can fall back to the existing art without two competing error handlers.
  }
  host.__aoRosaryCinemaOnJump=onJump;
  const artPack=win?.AO_ROSARY_ANTWERP_CLEARED_V1;
