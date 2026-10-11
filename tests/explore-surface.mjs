@@ -808,6 +808,7 @@ assert.equal(mediaRegistry.items.length,0,"No unlicensed Place photos may be pub
 const mediaFixture={
   place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
   source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",
+  license_url:"https://creativecommons.org/licenses/by/4.0/",changes:"Resized and converted to WebP",
   rights_verified:true,subject_verified:true,crop_reviewed:true,
   alt_en:"View of the physical sanctuary",alt_fr:"Vue du sanctuaire physique",
 };
@@ -815,6 +816,14 @@ const approved=resolveApprovedPlaceMedia([mediaFixture],mediaFixture.place_id);
 assert.equal(approved.asset_path,mediaFixture.asset_path,"Approved Place media must resolve by exact identity");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,asset_path:"https://example.org/image.jpg"}],mediaFixture.place_id),null,
   "External hotlinked photos must never be published");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,asset_path:"assets/staged/place-media/lourdes.webp"}],mediaFixture.place_id),null,
+  "Review-only staged photos must never be publishable");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:"https://creativecommons.org/licenses/by-sa/4.0/"}],mediaFixture.place_id),null,
+  "Licence link must exactly match licence identifier");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:""}],mediaFixture.place_id),null,
+  "No image without a licence URL");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes:""}],mediaFixture.place_id),null,
+  "All image modifications must be disclosed");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,rights_verified:false}],mediaFixture.place_id),null,
   "Unverified rights must fail closed");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,alt_fr:""}],mediaFixture.place_id),null,
@@ -827,6 +836,7 @@ const auditedCard=compactHeritagePlaceSheet({language:"en",
  filters:{heritageCategories:[...HERITAGE_CATEGORIES]}});
 assert.match(auditedCard,/aoHeritagePlaceThumb/,"Approved photography must have a visible, credited card slot");
 assert.match(auditedCard,/Photographer Name/);
+assert.match(auditedCard,/creativecommons.org\/licenses\/by\/4\.0/,"The preview must link its actual licence");
 
 const nearbyFixtures=[
   {place_id:"place:FR:lourdes",title:"Lourdes",subtitle:"France",place_type:"shrine",map_publishable:true,geo:{lat:43.09738,lng:-0.05875}},
