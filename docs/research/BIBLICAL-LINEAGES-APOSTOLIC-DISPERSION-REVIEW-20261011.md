@@ -35,3 +35,14 @@ The UI is an **offline design review**. It does not include the complete Catholi
 3. Replace demonstration geography with already verified Sacred Geography place identities; avoid importing region centroids as precise sites.
 4. Extend patristic source dossiers for named Apostles and refuse unnamed, undated tradition as definite routes.
 5. Port only the approved navigation/cinematic interactions into the production Atlas PR #998; keep the wider 151+ biblical-event corpus and linked Scripture reader.
+
+
+## Corrective review pass (11 October 2026, follow-up)
+- Corrected all 117 displayed genealogy references from chapterless verse labels to Matthew 1:2–16 and Luke 3:23–38, preserving separately sourced sequences.
+- Fixed two ancestral Joseph records incorrectly tagged `legal-or-putative`: the status now applies only to St Joseph in Luke 3:23 and Matthew 1:16 in this pilot.
+- Added five *named or specifically described women* to Matthew's source positions, without artificially inserting them as extra paternal ancestors: Tamar, Rahab, Ruth, the wife of Urias (Bathsheba) and the Blessed Virgin Mary.
+- Changed split David-branch viewer to independently controlled Matthew and Luke tracks. Visually aligned positions are not asserted to be equivalent generations.
+- Added James son of Alphaeus and Judas Iscariot as separately selectable figures (20 profiles, 55 entries); corrected St Luke's hold citation to Colossians 4:14. Judas Iscariot is distinguished from Jude/Thaddeus.
+- Outside-basemap broad associations (India) now appear as text-only, with a clearly visible warning, not as a floating precise pin on ocean/cartographic blank space. A certified wider map is still required before a plotted India region.
+- Added regression gates for embedded-data parity, precise verse references, legal/putative designation, independent lineages, additional profiles, associated women, and India map extent.
+- Research-only review branch remains unmerged; the full 3,231-person index and production Atlas are not modified by this pass.
