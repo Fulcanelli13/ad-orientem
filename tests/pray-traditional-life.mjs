@@ -87,8 +87,8 @@ assert.match(runtime,/Foundational prayers may recur later in the Rosary or anot
 assert.match(runtime,/A deliberately small traditional collection with identified sources/,"Sacred Hymns user-facing introduction drifted");
 assert.match(runtime,/Historical approved Roman form, stored locally for complete offline prayer/,"Holy Name offline donor introduction drifted");
 assert.doesNotMatch(runtime,/Traditional · source-locked · offline|A source-locked treasury|are source-locked historical forms/,"Traditional PRAY leaked pipeline source-lock wording into the UI");
-assert.match(runtime,/ao-ui-back/,"Traditional PRAY Back control is not using the canonical utility asset");
-assert.match(runtime,/ao-nav-home/,"Traditional PRAY Home control is not using the canonical utility asset");
+assert.match(runtime,/navigationActionIcon\("back"\)/,"Traditional PRAY Back control bypasses the canonical interface grammar");
+assert.match(runtime,/navigationActionIcon\("home"\)/,"Traditional PRAY Today control bypasses the canonical interface grammar");
 assert.match(runtime,/data-tp381-home/,"Traditional PRAY header lost explicit global Home control");
 assert.doesNotMatch(runtime,/data-tp381-close/,"Traditional PRAY header regressed to ambiguous Close control");
 assert.doesNotMatch(runtime,/prov\.url\|\|p\.sourceUrl\|\|TRADITIONAL_PRAY_SOURCES_V381\.baltimore/,"Unattributed prayers must not receive a misleading Baltimore citation");
