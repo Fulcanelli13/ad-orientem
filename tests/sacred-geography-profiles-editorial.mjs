@@ -78,7 +78,7 @@ assert.ok(updated.length>=38,"the original 38 completed profiles must remain bil
 for(const id of ORIGINAL_38)assert.ok(updated.some(s=>s.shrine_id===id),id+" original bilingual introduction disappeared");
 const sourceMap=new Map(sourceRegistry.sources.map(s=>[s.id,s]));
 assert.equal(sourceMap.size,sourceRegistry.sources.length,"source IDs must be unique");
-assert.equal(sourceRegistry.sources.length,349,"12 additional original sources must be retained");
+assert.ok(sourceRegistry.sources.length>=349,"the original 349 registered sources must be retained while later reviewed sources are added");
 for(const site of updated){
   const minimum=ORIGINAL_38.has(site.shrine_id)?110:(R60_MAJOR_PLACE_IDS.has(site.shrine_id)?100:90);
   assert.ok(site.origin_summary.length>=minimum&&site.origin_summary_fr.length>=minimum,site.shrine_id+" has a placeholder synopsis");
