@@ -54,6 +54,24 @@ export function rosaryJourneyAt(journey,index){
  if(!Array.isArray(journey)||!Number.isSafeInteger(index))return null;
  return journey[index]??null;
 }
+/** Canonical Rosary journey: opening once, fifteen decade cycles, conclusion once.
+ * An adapter can consume these semantic events without changing prayer text.
+ */
+export function rosaryJourneyEvents(options={}){
+ const mysteries=rosaryJourney(options);
+ const events=[Object.freeze({kind:"opening",id:"opening"})];
+ for(const m of mysteries){
+  events.push(Object.freeze({kind:"mystery",id:m.id,set:m.set,number:m.number,total:m.total}));
+  events.push(Object.freeze({kind:"decade",id:m.id,set:m.set,number:m.number,total:m.total}));
+ }
+ events.push(Object.freeze({kind:"conclusion",id:"conclusion"}));
+ return Object.freeze(events);
+}
+export function rosaryJourneyTransition(events,index){
+ if(!Array.isArray(events)||!Number.isSafeInteger(index)||index<0||index>=events.length)return null;
+ return Object.freeze({current:events[index],previous:events[index-1]??null,next:events[index+1]??null,
+  complete:index===events.length-1});
+}
 export const MERCY_WITNESSES=Object.freeze({
  en:"https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html",
  fr:"https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html"
