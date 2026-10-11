@@ -17,6 +17,12 @@ const sample={visible:true,comingUp:{rows:[{id:"angelus.noon",kind:"route",route
 const projection=buildTodayV2Sections(state,vm,sample);
 assert.equal(projection.period.id,"after-pentecost");
 assert.equal(projection.saintOrFeast,"Saint Francis Borgia");
+assert.equal(buildTodayV2Sections({...state,resolution:{...state.resolution,date:undefined}},vm,sample).saintOrFeast,
+  "Saint Francis Borgia","A date-less canonical resolver result must still show the observed feast");
+assert.equal(buildTodayV2Sections({...state,resolving:true},vm,sample).saintOrFeast,null,
+  "Never display an old saint while a selection is resolving");
+assert.equal(buildTodayV2Sections({...state,resolution:{...state.resolution,date:"2026-10-09"}},vm,sample).saintOrFeast,null,
+  "Explicit date mismatch must suppress stale observed feast");
 assert.deepEqual(projection.upcoming.map(x=>x.date),["2026-10-25","2026-11-01"]);
 const html=renderTodayV2Sections(projection,vm);
 for(const cls of ["aoTodayV2Context","aoTodayV2PrayNow","aoTodayV2ReadReflect","aoTodayV2Approaching"]){
