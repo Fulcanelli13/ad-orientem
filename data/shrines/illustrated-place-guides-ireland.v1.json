@@ -1,8 +1,8 @@
 {
   "schema": "AO_ILLUSTRATED_PLACE_GUIDES_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "reviewed_on": "2026-10-11",
-  "scope": "Ireland pilot based on original custodians, not reproduced third-party destination prose",
+  "scope": "Ireland live illustrated pilgrimage guides: five canonical Place owners, three published new physical pins",
   "source_policy": "Every rendered narrative paragraph, event, chapel and visit note cites an exact original publisher HTTPS URL",
   "media_policy": "Only already-approved, locally stored photographs may render; no hotlinked guide art or unlicensed hero images",
   "guides": [
@@ -329,13 +329,461 @@
         "fr": "Réserver auprès du sanctuaire officiel. Le pèlerinage de trois jours exige une préparation préalable, une inscription, une traversée en bateau, le jeûne, la veille et la prière pieds nus. L'accès hors des périodes organisées n'est pas garanti.",
         "source_url": "https://www.loughderg.org/3daypilgrimage.html"
       }
+    },
+    {
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.murrisk.ie/C-ClimbingCroaghPatrick.html",
+      "region_en": "Murrisk · County Mayo · Archdiocese of Tuam",
+      "region_fr": "Murrisk · comté de Mayo · archidiocèse de Tuam",
+      "subtitle_en": "Ireland’s penitential holy mountain, approached from Murrisk.",
+      "subtitle_fr": "La montagne sainte du pèlerinage pénitentiel irlandais, depuis Murrisk.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "patricks-fast",
+          "title_en": "Patrick and the holy mountain",
+          "title_fr": "Saint Patrick et la montagne sainte",
+          "paragraphs": [
+            {
+              "en": "Croagh Patrick rises above Clew Bay in County Mayo. Local pilgrimage tradition links the mountain with Saint Patrick and a forty-day fast in the fifth century. The year 441 often given in that tradition is not an independently established exact date for his presence at the summit.",
+              "fr": "Croagh Patrick domine Clew Bay, dans le comté de Mayo. La tradition locale relie la montagne à saint Patrick et à un jeûne de quarante jours au Ve siècle. L'année 441 traditionnellement citée ne constitue pas une date historique établie de sa présence au sommet.",
+              "source_url": "https://murrisk.ie/C-TheHolyMountain.html"
+            },
+            {
+              "en": "Before the present-day pilgrimage, the mountain and its surroundings had long been places of religious activity. The local historical account mentions early standing stones, ancient tombs and longstanding sacred associations; these should not be presented as evidence of later Christian miracles.",
+              "fr": "Avant le pèlerinage actuel, la montagne et ses environs étaient depuis longtemps associés à des pratiques religieuses. Le récit historique local mentionne des mégalithes et des tombeaux anciens ; ceux-ci ne prouvent pas pour autant des miracles chrétiens postérieurs.",
+              "source_url": "https://murrisk.ie/C-TheHolyMountain.html"
+            }
+          ]
+        },
+        {
+          "id": "reek-sunday",
+          "title_en": "The climb and Reek Sunday",
+          "title_fr": "L'ascension et le Reek Sunday",
+          "paragraphs": [
+            {
+              "en": "The principal traditional gathering is Reek Sunday, held on the last Sunday in July. Pilgrims climb from the foot of the mountain near Murrisk; the source describes this as a national pilgrimage rather than as a weekday walk with a fixed daily liturgy.",
+              "fr": "Le grand rassemblement traditionnel est le Reek Sunday, dernier dimanche de juillet. Les pèlerins gravissent la montagne depuis Murrisk ; la source décrit un pèlerinage national, et non une marche assortie d'une liturgie quotidienne garantie.",
+              "source_url": "https://www.murrisk.ie/C-ClimbingCroaghPatrick.html"
+            },
+            {
+              "en": "Sport Ireland's mapped trail record identifies the public car park at the base of Croagh Patrick at 53.77811, −9.639078. The map marker is for the starting point and deliberately does not claim to identify the mountaintop chapel or its precise entrance.",
+              "fr": "La fiche de Sport Ireland situe le parking public au pied de Croagh Patrick à 53,77811, −9,639078. Le repère cartographique indique le départ de l'ascension ; il ne prétend pas représenter la chapelle du sommet ni son entrée exacte.",
+              "source_url": "https://www.sportireland.ie/outdoors/walking/trails/murrisk-loop"
+            }
+          ]
+        },
+        {
+          "id": "practical",
+          "title_en": "A demanding outdoor pilgrimage",
+          "title_fr": "Un pèlerinage de montagne exigeant",
+          "paragraphs": [
+            {
+              "en": "Murrisk's local walking guidance recommends weather checks, sturdy boots, warm clothing, water, food and a telephone. It cautions that exposed mountain conditions can deteriorate and that the walk is rough and difficult in places; pilgrims should assess their fitness and not treat this as an ordinary sanctuary visit.",
+              "fr": "Les recommandations locales de Murrisk invitent à vérifier la météo, prévoir des chaussures solides, des vêtements chauds, de l'eau, de la nourriture et un téléphone. Elles rappellent que les conditions peuvent se dégrader rapidement et que le terrain est parfois difficile : il faut évaluer son aptitude à l'ascension.",
+              "source_url": "https://www.murrisk.ie/C-ClimbingCroaghPatrick.html"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "base",
+          "name_en": "Murrisk pilgrimage starting car park",
+          "name_fr": "Parking de départ à Murrisk",
+          "description_en": "The precise mapped access point for the mountain, not its summit.",
+          "description_fr": "Le point d'accès cartographié au pied de la montagne, et non son sommet.",
+          "source_url": "https://www.sportireland.ie/outdoors/walking/trails/murrisk-loop"
+        },
+        {
+          "id": "ascent",
+          "name_en": "Penitential mountain path",
+          "name_fr": "Sentier pénitentiel de montagne",
+          "description_en": "A demanding mountain ascent; current route and conditions need a local safety check.",
+          "description_fr": "Une ascension exigeante dont l'itinéraire et les conditions demandent vérification locale.",
+          "source_url": "https://www.murrisk.ie/C-ClimbingCroaghPatrick.html"
+        },
+        {
+          "id": "summit",
+          "name_en": "Summit pilgrimage tradition",
+          "name_fr": "Tradition de pèlerinage au sommet",
+          "description_en": "Associated with Patrick's forty-day fast in local tradition; no separate unverified summit pin is created.",
+          "description_fr": "Associée dans la tradition au jeûne de quarante jours de Patrick ; aucun repère approximatif du sommet n'est créé.",
+          "source_url": "https://murrisk.ie/C-TheHolyMountain.html"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "5th century (tradition)",
+          "when_kind": "APPROXIMATE_TRADITIONAL_PERIOD",
+          "title_en": "Patrick's forty-day fast is placed here in tradition",
+          "title_fr": "Le jeûne de quarante jours de Patrick est situé ici par la tradition",
+          "source_url": "https://murrisk.ie/C-TheHolyMountain.html"
+        },
+        {
+          "when": "last Sunday of July (recurring tradition)",
+          "when_kind": "OBSERVANCE_DESCRIPTION_NOT_SCHEDULE",
+          "title_en": "Reek Sunday national pilgrimage",
+          "title_fr": "Pèlerinage national du Reek Sunday",
+          "source_url": "https://www.murrisk.ie/C-ClimbingCroaghPatrick.html"
+        },
+        {
+          "when": "2026-07-26",
+          "when_kind": "CALCULATED_FROM_SOURCE_RECURRENCE",
+          "title_en": "Reek Sunday in 2026",
+          "title_fr": "Reek Sunday en 2026",
+          "source_url": "https://murrisk.ie/C-TheHolyMountain.html"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "reek-sunday-2026",
+          "label_en": "Reek Sunday 2026",
+          "label_fr": "Reek Sunday 2026",
+          "start_date": "2026-07-26",
+          "end_date": "2026-07-26",
+          "date_kind": "YEAR_SPECIFIC_CALCULATED_FROM_RECURRING_TRADITION",
+          "details_en": "The last Sunday of July fell on 26 July 2026. This is a calendar-derived pilgrimage observance, not independently confirmed Mass times or a specific 2026 event programme.",
+          "details_fr": "Le dernier dimanche de juillet tombait le 26 juillet 2026. Il s'agit d'une date déduite de la tradition de pèlerinage, non d'horaires de messes ni d'un programme 2026 certifié.",
+          "source_url": "https://murrisk.ie/C-TheHolyMountain.html"
+        },
+        {
+          "id": "safety",
+          "label_en": "Climb planning and safety",
+          "label_fr": "Préparation et sécurité de l'ascension",
+          "date_kind": "VISITOR_ADVICE_NO_FIXED_DATE",
+          "details_en": "Mountain visits require weather checks, appropriate equipment and individual judgement. Consult current local mountain guidance before travel.",
+          "details_fr": "Toute ascension exige la vérification de la météo, un équipement adapté et une appréciation des risques. Consulter les informations locales actualisées.",
+          "source_url": "https://www.murrisk.ie/C-ClimbingCroaghPatrick.html"
+        }
+      ],
+      "visit": {
+        "en": "The marked Place is the public starting car park at the mountain's foot. Walking to the summit is not guaranteed safe or suitable for all pilgrims, and summit liturgies must be verified independently.",
+        "fr": "Le repère indique le parking de départ au pied de la montagne. L'ascension n'est pas adaptée à tous les pèlerins ; toute liturgie au sommet doit être vérifiée séparément.",
+        "source_url": "https://www.sportireland.ie/outdoors/walking/trails/murrisk-loop"
+      }
+    },
+    {
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/",
+      "region_en": "Drogheda · County Louth · Archdiocese of Armagh",
+      "region_fr": "Drogheda · comté de Louth · archidiocèse d'Armagh",
+      "subtitle_en": "The Irish martyr’s national shrine and the custody of his head relic.",
+      "subtitle_fr": "Le sanctuaire national du martyr irlandais et la garde de la relique de son chef.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "life",
+          "title_en": "Archbishop in an age of persecution",
+          "title_fr": "Archevêque au temps des persécutions",
+          "paragraphs": [
+            {
+              "en": "Oliver Plunkett was born in 1625, trained for the priesthood in Rome and was named Archbishop of Armagh in 1669. He continued his pastoral ministry during the period of restrictions on Catholic worship in Ireland, including periods when he was forced into hiding.",
+              "fr": "Né en 1625, Olivier Plunkett fut formé au sacerdoce à Rome et nommé archevêque d'Armagh en 1669. Il poursuivit son ministère pastoral durant les restrictions imposées au culte catholique en Irlande, y compris lorsqu'il dut se cacher.",
+              "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+            },
+            {
+              "en": "Plunkett was convicted in England after a trial for treason and executed at Tyburn on 1 July 1681. The archdiocese recounts the accusations as false and remembers him as a martyr of the Catholic faith.",
+              "fr": "Condamné en Angleterre pour haute trahison, Plunkett fut exécuté à Tyburn le 1er juillet 1681. L'archidiocèse considère les accusations comme mensongères et commémore le prélat comme martyr de la foi catholique.",
+              "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+            }
+          ]
+        },
+        {
+          "id": "relic",
+          "title_en": "How the relic came to Saint Peter’s",
+          "title_fr": "Comment la relique arriva à Saint-Pierre",
+          "paragraphs": [
+            {
+              "en": "According to the Archdiocese of Armagh, the relic of Plunkett's head passed through Rome and was then safeguarded for generations by Dominican nuns in Drogheda. It was installed in Saint Peter's Catholic Church on 29 June 1921, after his beatification in 1920.",
+              "fr": "Selon l'archidiocèse d'Armagh, la relique du chef de Plunkett passa par Rome avant d'être conservée pendant des générations par des religieuses dominicaines à Drogheda. Elle fut installée dans l'église catholique Saint-Pierre le 29 juin 1921, après sa béatification en 1920.",
+              "source_url": "https://www.armagharchdiocese.org/stoliverplunkett/"
+            },
+            {
+              "en": "Saint Oliver was canonised in 1975. A new shrine at Saint Peter's was dedicated in 1995, and the archdiocese records John Paul II's veneration of the relic in 1979. These dates refer to distinct events in the devotional history of one Catholic church.",
+              "fr": "Saint Olivier fut canonisé en 1975. Un nouveau sanctuaire à Saint-Pierre fut dédié en 1995, et l'archidiocèse rapporte la vénération de la relique par Jean-Paul II en 1979. Ces dates renvoient à des étapes distinctes de la vie dévotionnelle d'une même église catholique.",
+              "source_url": "https://www.armagharchdiocese.org/stoliverplunkett/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrim",
+          "title_en": "Prayer, feast and practical visit",
+          "title_fr": "Prière, fête et visite",
+          "paragraphs": [
+            {
+              "en": "The shrine is inside Saint Peter's on West Street in Drogheda; the tourism office publishes the church's physical coordinates as 53.7149, −6.35242. It points visitors to the current parish for Mass times, which must not be inferred from historic diocesan schedules.",
+              "fr": "Le sanctuaire se trouve dans l'église Saint-Pierre de West Street, à Drogheda. L'office de tourisme donne les coordonnées 53,7149, −6,35242. Il renvoie à la paroisse pour les horaires actuels des messes, qui ne doivent pas être déduits d'anciens programmes diocésains.",
+              "source_url": "https://www.discoverboynevalley.ie/boyne-valley-drive/heritage-sites/st-peters-church-drogheda"
+            },
+            {
+              "en": "The archdiocese describes celebrations around his feast on 1 July and a procession of the relic in Drogheda. The feast's historical date is not proof that a particular procession or Mass is scheduled this year.",
+              "fr": "L'archidiocèse décrit les célébrations autour de sa fête du 1er juillet et une procession de la relique à Drogheda. La date historique de sa fête ne prouve pas qu'une procession ou une messe soit programmée cette année.",
+              "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "church",
+          "name_en": "Saint Peter’s Catholic Church",
+          "name_fr": "Église catholique Saint-Pierre",
+          "description_en": "West Street, Drogheda; the church and the national shrine share one physical Place.",
+          "description_fr": "West Street, Drogheda ; l'église et le sanctuaire national occupent un même lieu physique.",
+          "source_url": "https://www.discoverboynevalley.ie/boyne-valley-drive/heritage-sites/st-peters-church-drogheda"
+        },
+        {
+          "id": "shrine",
+          "name_en": "Shrine of Saint Oliver Plunkett",
+          "name_fr": "Sanctuaire de saint Olivier Plunkett",
+          "description_en": "The revered head relic is housed here according to its Catholic custodians.",
+          "description_fr": "La relique vénérée du chef y est conservée, selon ses responsables catholiques.",
+          "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+        },
+        {
+          "id": "memorial",
+          "name_en": "Martyrdom and relic history",
+          "name_fr": "Mémoire du martyre et de la relique",
+          "description_en": "Historical testimony in the shrine tells of the 1681 martyrdom, 1921 installation and 1975 canonisation.",
+          "description_fr": "Le sanctuaire rappelle le martyre de 1681, l'installation de 1921 et la canonisation de 1975.",
+          "source_url": "https://www.armagharchdiocese.org/stoliverplunkett/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1625-11-01",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Birth of Oliver Plunkett",
+          "title_fr": "Naissance d'Olivier Plunkett",
+          "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+        },
+        {
+          "when": "1681-07-01",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Martyrdom at Tyburn",
+          "title_fr": "Martyre à Tyburn",
+          "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+        },
+        {
+          "when": "1921-06-29",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Relic installed at Saint Peter’s",
+          "title_fr": "Installation de la relique à Saint-Pierre",
+          "source_url": "https://www.armagharchdiocese.org/stoliverplunkett/"
+        },
+        {
+          "when": "1975",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Canonisation",
+          "title_fr": "Canonisation",
+          "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+        },
+        {
+          "when": "1995-05-07",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "New shrine dedicated",
+          "title_fr": "Dédicace du nouveau sanctuaire",
+          "source_url": "https://www.armagharchdiocese.org/stoliverplunkett/"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "feast-oliver",
+          "label_en": "Feast of Saint Oliver Plunkett",
+          "label_fr": "Fête de saint Olivier Plunkett",
+          "month_day": "07-01",
+          "date_kind": "HISTORICAL_FEAST_NOT_LIVE_SCHEDULE",
+          "details_en": "A historic annual feast on 1 July; consult the parish or archdiocese to verify this year's procession and Mass programme.",
+          "details_fr": "Fête annuelle au 1er juillet ; vérifier auprès de la paroisse ou de l'archidiocèse les processions et les messes de l'année.",
+          "source_url": "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/"
+        },
+        {
+          "id": "canonisation",
+          "label_en": "Canonisation anniversary",
+          "label_fr": "Anniversaire de la canonisation",
+          "month_day": "10-12",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "Canonised 12 October 1975. The anniversary is historical context, not a standing Mass or event reservation.",
+          "details_fr": "Canonisé le 12 octobre 1975. Cette date relève de l'histoire et ne constitue pas une annonce d'office ou d'événement.",
+          "source_url": "https://www.armagharchdiocese.org/never-again-war-archbishop-eamon-martin-marks-the-50th-anniversary-of-the-canonisation-of-st-oliver-plunkett/"
+        }
+      ],
+      "visit": {
+        "en": "Find the shrine inside Saint Peter's Catholic Church on West Street. Consult the present parish for openings, Mass times, procession details and access to the relic.",
+        "fr": "Le sanctuaire se trouve dans l'église catholique Saint-Pierre de West Street. Consulter la paroisse pour les horaires, les messes, les processions et l'accès à la relique.",
+        "source_url": "https://www.discoverboynevalley.ie/boyne-valley-drive/heritage-sites/st-peters-church-drogheda"
+      }
+    },
+    {
+      "place_id": "place:IE:solas-bhride-kildare",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://solasbhride.ie/",
+      "region_en": "Kildare Town · County Kildare · Brigidine Sisters",
+      "region_fr": "Ville de Kildare · comté de Kildare · sœurs brigittines",
+      "subtitle_en": "Walking in Saint Brigid’s footsteps across distinct sacred places.",
+      "subtitle_fr": "Marcher sur les pas de sainte Brigitte entre des lieux sacrés distincts.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "Brigid and Kildare",
+          "title_fr": "Brigitte et Kildare",
+          "paragraphs": [
+            {
+              "en": "Kildare is deeply associated with the early Christian tradition of Saint Brigid and a monastic foundation linked with her name. Solas Bhríde, a ministry of the Brigidine Sisters, is a modern Christian spirituality centre rather than the medieval monastic complex itself.",
+              "fr": "Kildare est profondément liée à la tradition chrétienne ancienne de sainte Brigitte et à une fondation monastique associée à son nom. Solas Bhríde, œuvre des sœurs brigittines, est un centre contemporain de spiritualité chrétienne et non le monastère médiéval lui-même.",
+              "source_url": "https://solasbhride.ie/development/"
+            },
+            {
+              "en": "The Brigidine Sisters trace their initiative to an earlier centre established in 1992; the new Solas Bhríde Centre opened in January 2015. The centre welcomes pilgrimage, prayerful reflection and exploration of Brigid's legacy at its site on Tully Road.",
+              "fr": "Les sœurs brigittines rattachent leur initiative à un premier centre établi en 1992 ; le nouveau centre Solas Bhríde fut ouvert en janvier 2015. Sur Tully Road, il accueille les pèlerinages, le recueillement et la découverte de l'héritage de Brigitte.",
+              "source_url": "https://solasbhride.ie/development/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrim-walk",
+          "title_en": "A town-wide pilgrimage, not one complex",
+          "title_fr": "Un pèlerinage dans la ville, pas dans un ensemble unique",
+          "paragraphs": [
+            {
+              "en": "The centre offers group walks that may include Saint Brigid's wells, the Catholic parish church, the Kildare heritage centre, and the historic cathedral. These are different physical locations, so the Solas Bhríde map point denotes the Brigidine centre alone and does not represent the full walking route.",
+              "fr": "Le centre propose des marches en groupe passant notamment par les puits de sainte Brigitte, l'église paroissiale catholique, le centre du patrimoine de Kildare et la cathédrale historique. Ces lieux sont physiquement distincts ; le repère Solas Bhríde ne représente que le centre brigittin, non le parcours entier.",
+              "source_url": "https://solasbhride.ie/pilgrimages/"
+            },
+            {
+              "en": "The medieval Cathedral of Saint Brigid stands on an early Christian site but today belongs to the Church of Ireland and its Anglican worshipping community. Its historic Catholic significance must not be mistaken for a present Catholic liturgical service.",
+              "fr": "La cathédrale médiévale Sainte-Brigitte s'élève sur un site chrétien ancien, mais relève aujourd'hui de l'Église d'Irlande et de sa communauté anglicane. Son importance historique catholique ne doit pas être confondue avec une célébration catholique actuelle.",
+              "source_url": "https://stbrigidscathedral.com/"
+            }
+          ]
+        },
+        {
+          "id": "visitor",
+          "title_en": "Pilgrimage, prayer and published events",
+          "title_fr": "Pèlerinage, prière et événements publiés",
+          "paragraphs": [
+            {
+              "en": "Solas Bhríde offers contemplative walks in its grounds, a labyrinth, visits to the wells and locally organised pilgrim routes. Group experiences require booking; its published contact information gives Tully Road, Kildare Town, R51 Y281.",
+              "fr": "Solas Bhríde propose des marches méditatives dans son jardin, un labyrinthe, des visites aux puits et des itinéraires de pèlerinage dans la ville. Les groupes doivent réserver ; son adresse officielle est Tully Road, Kildare Town, R51 Y281.",
+              "source_url": "https://solasbhride.ie/pilgrimages/"
+            },
+            {
+              "en": "A particular walking pilgrimage held on 1 September 2026 assembled at the centre and visited Saint Brigid's cathedral, Catholic parish and holy well. This completed event is documented as a dated example rather than advertised as a fixed weekly itinerary.",
+              "fr": "Un pèlerinage pédestre organisé le 1er septembre 2026 partait du centre et visitait la cathédrale Sainte-Brigitte, la paroisse catholique et le puits sacré. Cet événement passé sert d'exemple documenté, sans être présenté comme un parcours hebdomadaire permanent.",
+              "source_url": "https://solasbhride.ie/event/a-pilgrimage-in-the-footsteps-of-st-brigid-of-kildare/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "centre",
+          "name_en": "Solas Bhríde Centre and Hermitages",
+          "name_fr": "Centre Solas Bhríde et ermitages",
+          "description_en": "Brigidine-run centre on Tully Road; this is the pinned physical Place.",
+          "description_fr": "Centre brigittin sur Tully Road ; il s'agit du lieu cartographié.",
+          "source_url": "https://solasbhride.ie/contact-us/"
+        },
+        {
+          "id": "wells",
+          "name_en": "Saint Brigid’s holy wells",
+          "name_fr": "Puits sacrés de sainte Brigitte",
+          "description_en": "Separate pilgrimage stops reached on some hosted walks; precise wells not conflated into the centre pin.",
+          "description_fr": "Étapes distinctes de certains pèlerinages ; les puits ne sont pas confondus avec le repère du centre.",
+          "source_url": "https://solasbhride.ie/pilgrimages/"
+        },
+        {
+          "id": "parish",
+          "name_en": "Saint Brigid’s Catholic parish church",
+          "name_fr": "Église paroissiale catholique Sainte-Brigitte",
+          "description_en": "A separate Catholic parish stop; distinct from the historic Anglican cathedral.",
+          "description_fr": "Une étape paroissiale catholique distincte de la cathédrale historique anglicane.",
+          "source_url": "https://solasbhride.ie/event/a-pilgrimage-in-the-footsteps-of-st-brigid-of-kildare/"
+        },
+        {
+          "id": "cathedral",
+          "name_en": "Historic Saint Brigid’s Cathedral — Church of Ireland",
+          "name_fr": "Cathédrale Sainte-Brigitte historique — Église d'Irlande",
+          "description_en": "An Anglican place of worship today, preserving the site of earlier Christian tradition.",
+          "description_fr": "Lieu de culte anglican aujourd'hui, lié à une tradition chrétienne plus ancienne.",
+          "source_url": "https://stbrigidscathedral.com/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "5th century (tradition)",
+          "when_kind": "APPROXIMATE_TRADITIONAL_PERIOD",
+          "title_en": "Saint Brigid’s early Kildare foundation",
+          "title_fr": "Fondation ancienne de sainte Brigitte à Kildare",
+          "source_url": "https://stbrigidscathedral.com/"
+        },
+        {
+          "when": "1992",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Brigidine Sisters begin Solas Bhríde ministry in Kildare",
+          "title_fr": "Les sœurs brigittines commencent l'œuvre Solas Bhríde",
+          "source_url": "https://solasbhride.ie/development/"
+        },
+        {
+          "when": "2015-01-30",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "New centre officially opens",
+          "title_fr": "Ouverture officielle du nouveau centre",
+          "source_url": "https://solasbhride.ie/development/"
+        },
+        {
+          "when": "2026-09-01",
+          "when_kind": "YEAR_SPECIFIC_EVENT",
+          "title_en": "Documented walking pilgrimage from Solas Bhríde",
+          "title_fr": "Pèlerinage pédestre documenté depuis Solas Bhríde",
+          "source_url": "https://solasbhride.ie/event/a-pilgrimage-in-the-footsteps-of-st-brigid-of-kildare/"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "brigid-feast",
+          "label_en": "Saint Brigid’s feast",
+          "label_fr": "Fête de sainte Brigitte",
+          "month_day": "02-01",
+          "date_kind": "HISTORICAL_FEAST_NOT_LIVE_SCHEDULE",
+          "details_en": "Traditional feast context. Organised local pilgrimages and events must be checked against the Brigidine and parish programmes.",
+          "details_fr": "Repère de fête traditionnelle. Les pèlerinages et événements locaux doivent être vérifiés auprès des brigittines et de la paroisse.",
+          "source_url": "https://solasbhride.ie/pilgrimages/"
+        },
+        {
+          "id": "walk-2026",
+          "label_en": "Pilgrimage in Brigid’s footsteps — 2026",
+          "label_fr": "Pèlerinage sur les pas de Brigitte — 2026",
+          "start_date": "2026-09-01",
+          "end_date": "2026-09-01",
+          "date_kind": "VERIFIED_YEAR_SPECIFIC_PAST",
+          "details_en": "The 1 September 2026 guided walk is a published, completed event. No recurrence is inferred.",
+          "details_fr": "La marche guidée du 1er septembre 2026 est un événement publié et terminé. Aucune récurrence n'est supposée.",
+          "source_url": "https://solasbhride.ie/event/a-pilgrimage-in-the-footsteps-of-st-brigid-of-kildare/"
+        }
+      ],
+      "visit": {
+        "en": "Find the Brigidine centre at Tully Road, R51 Y281. Individual access and group pilgrimage bookings follow Solas Bhríde's published hours. The historic cathedral, wells and Catholic parish require separate visitor checks.",
+        "fr": "Le centre brigittin se trouve sur Tully Road, R51 Y281. Les visites et réservations suivent les horaires de Solas Bhríde. La cathédrale historique, les puits et l'église catholique nécessitent chacun une vérification distincte.",
+        "source_url": "https://solasbhride.ie/contact-us/"
+      }
     }
   ],
   "candidates": [
     {
       "reference_key": "IE-CROAGH-PATRICK",
       "place_name": "Croagh Patrick, County Mayo",
-      "state": "SOURCE_REVIEW_COMPLETE_MAP_PUBLICATION_HOLD",
+      "state": "PUBLISHED_R65",
       "potential_site_kind": "PILGRIMAGE_MOUNTAIN",
       "physical_focus": "Pilgrim trail from Murrisk and summit oratory",
       "evidence": [
@@ -345,12 +793,14 @@
       "historical_context_en": "Tuam archdiocesan histories distinguish the ancient tradition of Patrick's forty-day fast from medieval documentary evidence for the climb. The principal pilgrimage is Reek Sunday, the last Sunday of July.",
       "historical_context_fr": "Les récits de l'archidiocèse de Tuam distinguent la tradition ancienne du jeûne de quarante jours de Patrick des documents médiévaux relatifs à l'ascension. Le grand pèlerinage est le Reek Sunday, dernier dimanche de juillet.",
       "known_2026_date": "2026-07-26",
-      "hold_reason": "Need an independently verified summit/entrance geographic anchor and pilgrim safety / access source before publishing a new Place."
+      "hold_reason": "Publication uses exact Sport Ireland base trailhead, not the mountain summit. Pending: summit chapel exact identity, 2027 programme and approved photographs.",
+      "published_place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "resolution": "Official Sport Ireland Murrisk trailhead GPS; does not assert summit coordinates"
     },
     {
       "reference_key": "IE-DROGHEDA-OLIVER",
       "place_name": "Saint Peter's Church and Saint Oliver Plunkett shrine, Drogheda",
-      "state": "SOURCE_REVIEW_COMPLETE_MAP_PUBLICATION_HOLD",
+      "state": "PUBLISHED_R65",
       "potential_site_kind": "CATHOLIC_RELIC_SHRINE",
       "physical_focus": "Saint Peter's Catholic Church, West Street, Drogheda",
       "evidence": [
@@ -360,12 +810,14 @@
       "historical_context_en": "The Archdiocese of Armagh documents Saint Oliver Plunkett's martyrdom at Tyburn on 1 July 1681, the custody of his head by Dominican sisters and its installation in Saint Peter's in June 1921.",
       "historical_context_fr": "L'archidiocèse d'Armagh documente le martyre de saint Olivier Plunkett à Tyburn le 1er juillet 1681, la garde de son chef par des dominicaines et son installation à Saint-Pierre en juin 1921.",
       "annual_date_kind": "07-01_HISTORICAL_FEAST_NOT_LIVE_PROGRAMME",
-      "hold_reason": "Confirm exact parish building pin, reuse rights for relic photography and relationship to other Drogheda historical sites before publication."
+      "hold_reason": "Exact church pin published; pending: approved church and shrine-relic photographs, current parish visitation and relic access details.",
+      "published_place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "resolution": "Tourism publisher's exact St Peter's Church coordinate; Catholic Archdiocese establishes shrine custody"
     },
     {
       "reference_key": "IE-KILDARE-BRIGID",
       "place_name": "Kildare — Saint Brigid pilgrimage cluster",
-      "state": "SOURCE_REVIEW_COMPLETE_MAP_PUBLICATION_HOLD",
+      "state": "PARTIAL_PUBLICATION_R65",
       "potential_site_kind": "MULTI_CUSTODIAN_HISTORIC_CLUSTER",
       "physical_focus": "Catholic parish church of Saint Brigid, Solas Bhríde, holy wells; medieval cathedral separately identified",
       "evidence": [
@@ -377,7 +829,9 @@
       "historical_context_en": "The Catholic parish and Brigidine sisters maintain living Catholic devotion and a pilgrimage walk. The medieval Saint Brigid's Cathedral is currently Church of Ireland, not a Catholic Mass venue.",
       "historical_context_fr": "La paroisse catholique et les sœurs brigittines perpétuent la dévotion catholique et un parcours de pèlerinage. La cathédrale médiévale Sainte-Brigitte relève actuellement de l'Église d'Irlande, non d'un lieu de messe catholique.",
       "annual_date_kind": "02-01_FEAST_LOCAL_EVENTS_REQUIRE_YEARLY_CHECK",
-      "hold_reason": "Reconcile three separate actual physical sites and current denominational ownership; do not collapse a multi-stop town itinerary into an invented single Catholic cathedral pin."
+      "hold_reason": "Solas Bhríde Centre pinned; separate Catholic parish church, wells and historic Anglican cathedral remain unpinned stops until reconciled individually.",
+      "published_place_id": "place:IE:solas-bhride-kildare",
+      "resolution": "Published Solas Bhríde anchor only, while cathedral, wells and Catholic parish remain separate unpinned pilgrimage stops"
     }
   ]
 }

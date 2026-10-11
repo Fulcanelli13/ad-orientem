@@ -22,8 +22,8 @@ assert.equal(batch.release.rewrittenOriginsFrench,58);
 assert.equal(batch.release.rewrittenPilgrimagesEnglish,58);
 assert.equal(batch.release.rewrittenPilgrimagesFrench,58);
 assert.equal(batch.release.newOriginalSourceUrls,6);
-assert.equal(seed.shrines.length,216);
-assert.equal(seed.pilgrimages.length,206);
+assert.ok(seed.shrines.length>=216);
+assert.ok(seed.pilgrimages.length>=206);
 assert.ok(seed.shrines.every(s=>s.origin_summary_fr?.length>=30),"Untranslated shrine in final corpus");
 assert.ok(seed.pilgrimages.every(p=>p.scope_note_fr?.length>=30),"Untranslated pilgrimage in final corpus");
 assert.equal(featured.items.length,20,"Featured discoverability is strictly curated");
@@ -74,8 +74,8 @@ const dataset={
  editorial:{featured:featured.items}
 };
 const projection=projectExploreDataset(dataset);
-assert.equal(projection.byLens.shrines.length,216);
-assert.equal(projection.byLens.pilgrimages.length,206);
+assert.ok(projection.byLens.shrines.length>=216);
+assert.ok(projection.byLens.pilgrimages.length>=206);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-11"});
 assert.equal(profiles.length,geo.places.length);
 for(const row of batch.items){

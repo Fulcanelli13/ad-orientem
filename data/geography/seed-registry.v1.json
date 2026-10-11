@@ -9126,6 +9126,129 @@
         "SG-MAJOR2-SITE-VN",
         "SG-MAJOR2-GEO-VN"
       ]
+    },
+    {
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "name": {
+        "official": "Croagh Patrick — Murrisk Pilgrimage Base",
+        "aliases": [
+          "Cruach Phádraig",
+          "Croagh Patrick"
+        ]
+      },
+      "place_type": "pilgrimage_destination",
+      "geo_area_ids": [
+        "geo:country:IE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 53.77811,
+        "lng": -9.639078,
+        "precision": "complex_anchor",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://www.sportireland.ie/outdoors/walking/trails/murrisk-loop",
+        "source_ref": "Sport Ireland: Murrisk Loop trailhead parking GPS",
+        "attribution": "Sport Ireland National Trails Register",
+        "matched_country_code": "IE",
+        "verified_at": "2026-10-11",
+        "indicative_only": true,
+        "reference_point_name": "Croagh Patrick starting car park at Murrisk — NOT the summit"
+      },
+      "address": {
+        "line1": "Croagh Patrick car park, Murrisk",
+        "line2": null,
+        "postal_code": null,
+        "city": "Murrisk",
+        "region": "County Mayo",
+        "country_code": "IE",
+        "country": "Ireland",
+        "formatted": "Croagh Patrick pilgrim trailhead car park, Murrisk, County Mayo, Ireland"
+      },
+      "source_ids": [
+        "SG-R65-IE-CROAGH-LOCAL",
+        "SG-R65-IE-CROAGH-TRAIL"
+      ]
+    },
+    {
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "name": {
+        "official": "Saint Peter’s Catholic Church — Saint Oliver Plunkett Shrine",
+        "aliases": [
+          "St Peter's Church, West Street",
+          "National Shrine to St Oliver Plunkett"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 53.7149,
+        "lng": -6.35242,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://www.discoverboynevalley.ie/boyne-valley-drive/heritage-sites/st-peters-church-drogheda",
+        "source_ref": "Discover Boyne Valley St Peter Catholic Church GPS",
+        "attribution": "Boyne Valley Tourism / Louth Meath tourism source",
+        "matched_country_code": "IE",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "West Street",
+        "line2": null,
+        "postal_code": null,
+        "city": "Drogheda",
+        "region": "County Louth",
+        "country_code": "IE",
+        "country": "Ireland",
+        "formatted": "St Peter's Catholic Church, West Street, Drogheda, County Louth, Ireland"
+      },
+      "source_ids": [
+        "SG-R65-IE-OLIVER-ARMAGH",
+        "SG-R65-IE-OLIVER-TOURISM"
+      ]
+    },
+    {
+      "place_id": "place:IE:solas-bhride-kildare",
+      "name": {
+        "official": "Solas Bhríde Centre and Hermitages",
+        "aliases": [
+          "Solas Bhríde — Saint Brigid pilgrimage centre",
+          "St Brigid's pilgrimage centre, Kildare"
+        ]
+      },
+      "place_type": "pilgrimage_destination",
+      "geo_area_ids": [
+        "geo:country:IE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 53.14821,
+        "lng": -6.90623,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/4571427638",
+        "source_ref": "osm:node:4571427638",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0; site address cross-checked with Solas Bhríde",
+        "matched_country_code": "IE",
+        "verified_at": "2026-10-11"
+      },
+      "address": {
+        "line1": "Tully Road",
+        "line2": null,
+        "postal_code": "R51 Y281",
+        "city": "Kildare Town",
+        "region": "County Kildare",
+        "country_code": "IE",
+        "country": "Ireland",
+        "formatted": "Solas Bhríde Centre, Tully Road, Kildare Town, R51 Y281, Ireland"
+      },
+      "source_ids": [
+        "SG-R65-IE-BRIGID-CENTRE",
+        "SG-R65-IE-BRIGID-PILGRIMAGE",
+        "SG-R65-IE-BRIGID-OSM"
+      ]
     }
   ],
   "directoryPlaceLinks": [

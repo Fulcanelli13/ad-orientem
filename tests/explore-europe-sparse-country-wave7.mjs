@@ -14,6 +14,8 @@ const G=read("data/geography/seed-registry.v1.json");
 // Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
 const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
 for(const p of read("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json").promoted)publishedAfterFreeze.add(p.place_id);
+// R65 Irish publications are later than this research baseline.
+for(const c of read("data/shrines/illustrated-place-guides-ireland.v1.json").candidates??[])if(c.published_place_id)publishedAfterFreeze.add(c.published_place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W7.schema,"AO_EXPLORE_EUROPE_WAVE7_SPARSE_COUNTRY_SOURCE_RESEARCH_V1");
 assert.equal(W7.status,"RESEARCH_ONLY_NO_NEW_PUBLIC_PLACES");

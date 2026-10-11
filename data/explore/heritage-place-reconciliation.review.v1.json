@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 220,
-    "places_with_linked_records": 218,
+    "places": 223,
+    "places_with_linked_records": 221,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 178,
-    "shrines": 216,
-    "pilgrimages": 206,
+    "multicategory_heritage_places": 181,
+    "shrines": 219,
+    "pilgrimages": 209,
     "relic_claims": 122,
     "apparition_accounts": 32,
     "canonical_customs": 13,
@@ -1782,6 +1782,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "display_name": "Croagh Patrick — Murrisk Pilgrimage Base",
+      "record_ids": {
+        "shrines": [
+          "shrine:IE:croagh-patrick-pilgrimage"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IE:croagh-patrick-reek-sunday"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IE:knock-shrine",
       "display_name": "Knock Shrine",
       "record_ids": {
@@ -1807,6 +1820,32 @@
         ],
         "pilgrimages": [
           "pilgrimage:IE:lough-derg-three-day"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IE:solas-bhride-kildare",
+      "display_name": "Solas Bhríde Centre and Hermitages",
+      "record_ids": {
+        "shrines": [
+          "shrine:IE:solas-bhride-kildare"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IE:solas-bhride-kildare-walk"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "display_name": "Saint Peter’s Catholic Church — Saint Oliver Plunkett Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:IE:st-oliver-plunkett-drogheda"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IE:st-oliver-plunkett-drogheda"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3572,8 +3611,8 @@
     }
   ],
   "distinct_place_links": {
-    "shrines": 216,
-    "pilgrimages": 178,
+    "shrines": 219,
+    "pilgrimages": 181,
     "relics": 92,
     "apparitions": 29,
     "customs": 55,
