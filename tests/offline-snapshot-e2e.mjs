@@ -82,12 +82,46 @@ try{
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
  await context.setOffline(false);
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
+ // Open the real Rosary through its production Prayer owner before staging the next release.
+ // A staged update must never navigate away or move a bead without user consent.
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:20000});
+ assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,"Prayer owner unavailable in installed-style PWA");
+ await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:25000});
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
+ const chooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
+ await chooser.waitFor({timeout:10000});
+ await chooser.locator("[data-p435930-rosary-choose='ordinary']").tap();
+ await chooser.locator("[data-p435930-rosary-decades='15']").tap();
+ await chooser.locator("[data-p435930-rosary-begin]").tap();
+ await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful"&&
+   document.querySelector("#aoPrayerBookRoot.open [data-lab-rosary-next]"),null,{timeout:15000});
+ await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").first().tap();
+ const activeRosary=await page.evaluate(()=>({
+   step:globalThis.AO_ROSARY_V381.state().step,
+   set:globalThis.AO_ROSARY_V381.state().set,
+   method:globalThis.AO_ROSARY_V381.getMethod(),
+   path:location.pathname
+ }));
+ assert.equal(activeRosary.method,"ordinary");
+ assert.ok(activeRosary.step>0,"Rosary did not advance to a meaningful prayer step");
+ const assertRosaryUninterrupted=async stage=>{
+   const current=await page.evaluate(()=>({
+     step:globalThis.AO_ROSARY_V381?.state?.()?.step,
+     set:globalThis.AO_ROSARY_V381?.state?.()?.set,
+     method:globalThis.AO_ROSARY_V381?.getMethod?.(),
+     path:location.pathname,
+     playerOpen:Boolean(document.querySelector("#aoPrayerBookRoot.open"))
+   }));
+   assert.deepEqual(current,{...activeRosary,playerOpen:true},
+     "PWA update "+stage+" interrupted active Rosary before consent");
+ };
  // A deliberately incomplete release must NOT replace a usable version.
  variant=3;failedPath="/__ao_offline_test_3.js";
  const failed=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
  assert.equal(failed.ok,false,"Broken update unexpectedly committed");
  const afterFail=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(afterFail.version,original.version,"Failed staging invalidated old snapshot");
+ await assertRosaryUninterrupted("failed staging");
  variant=2;failedPath=null;
  const update=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
  assert.equal(update.ok,true,"Valid second release did not stage: "+JSON.stringify(update));
@@ -96,7 +130,8 @@ try{
  await page.waitForSelector("#ao-offline-update-ready",{timeout:10000});
  const old=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(old.version,original.version,"Staged update changed the active tab before user confirmation");
- await page.locator("#ao-offline-update-ready button").last().click();
+ await assertRosaryUninterrupted("ready prompt");
+ await page.locator("#ao-offline-update-ready button").last().tap();
  await page.waitForFunction(()=>globalThis.AO_OFFLINE_TEST_ASSET===2,null,{timeout:60000});
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,update.version,{timeout:20000});
  const now=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
@@ -106,7 +141,7 @@ try{
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
  assert.equal(await page.evaluate(()=>globalThis.AO_OFFLINE_TEST_ASSET),2,"New release not available offline after consent");
  assert.deepEqual(errs.filter(x=>/SyntaxError|ReferenceError|TypeError/.test(x)),[],"Offline/update script error");
- console.log("PASS offline Home fallback, staged failure rollback, explicit update, project prefix and offline reload");
+ console.log("PASS offline Home fallback, failed staging with active Rosary preserved, touch-consent update, project prefix and offline reload");
  console.log("OFFLINE_RESULTS="+JSON.stringify({original:original.version,update:update.version,failed:failed.error,cacheCount:cachesNames.length,networkRequests:served}));
  await context.close();
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
