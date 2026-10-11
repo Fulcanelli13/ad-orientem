@@ -54,6 +54,9 @@ try{
  assert.ok(layout.map.width>=300,"Explore map is narrower than its intended phone canvas");
  assert.ok(layout.chrome.every(Boolean),"Explore navigation has missing layout sections");
  assert.ok(layout.targets.every(x=>x.height>=44),"Explore filter or navigation control below 44px");
+ const glossary=page.locator("#ao-find-modular-root .aoHeritageGlossaryButton");
+ await glossary.waitFor({state:"visible"});
+ assert.ok((await glossary.boundingBox())?.height>=44,"Contextual glossary must remain visible on phones");
  assert.ok(layout.overflow<=1,"Explore mobile chrome causes horizontal page overflow");
 
  const nearby=page.locator("#ao-find-modular-root [data-heritage-nearby]");
