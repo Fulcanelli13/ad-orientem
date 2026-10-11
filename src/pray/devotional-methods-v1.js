@@ -1,7 +1,7 @@
 /**
  * Authenticated prayer-sequence definitions. NOT a second Rosary bead owner.
- * Rosary method selections are declarative until the canonical v3.4.14 player
- * accepts a verified method adapter. No undocumented Dominican/Montfortian words.
+ * The canonical donor owns every live method. Unsupported or unverified
+ * alternatives remain declarative; no second bead owner is introduced.
  */
 export const DEVOTIONAL_METHOD_VERSION="2026-10-11-r1";
 export const ROSARY_METHODS=Object.freeze({
@@ -14,12 +14,15 @@ export const ROSARY_METHODS=Object.freeze({
  montfort:Object.freeze({id:"montfort",label:{en:"St Louis-Marie de Montfort",fr:"Saint Louis-Marie de Montfort"},
   status:"adapted-active",source:"https://www.montfort.org/content/uploads/pdf/PDF_FR_30_1.pdf",
   policy:"First method: adapted five-decade opening, decade offerings and petitions for the grace of each mystery. Original French linked; not a verbatim translation."}),
- scriptural:Object.freeze({id:"scriptural",label:{en:"Scriptural meditation",fr:"Méditation biblique"},
-  status:"edition-collation-required",source:"https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html",
-  policy:"Only source-verified Catholic text; use existing short editorials until collation."}),
+ montfort_short:Object.freeze({id:"montfort_short",label:{en:"Montfort · second, shorter method",fr:"Montfort · deuxième méthode abrégée"},
+  status:"source-verified-active",source:"https://www.montfort.org/content/uploads/pdf/PDF_FR_30_1.pdf#page=3",
+  policy:"One original French mystery clause follows Jesus in all ten Hail Marys of each decade. English and Latin are editorial translations; a group prayer concludes five decades."}),
+ scriptural:Object.freeze({id:"scriptural",label:{en:"Scripture-linked Rosary",fr:"Rosaire relié aux Écritures"},
+  status:"editorial-meditations-active",source:"https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html",
+  policy:"Uses the existing guided editorial meditations with linked Douay–Rheims and Crampon readings, not unverified biblical quotations."}),
  clausules:Object.freeze({id:"clausules",label:{en:"With clausules",fr:"Avec clausules"},
   status:"traditional-text-verification",source:"https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
-  policy:"Mystery phrases follow Jesus; must not silently rewrite the canonical prayer donor."})
+  policy:"General or per-bead clausule editions remain held for independent source collation; distinct from Montfort’s second method."})
 });
 export const TRADITIONAL_MYSTERY_ORDER=Object.freeze([
  ...Array.from({length:5},(_,i)=>"joy"+(i+1)),
@@ -34,7 +37,7 @@ export function rosaryPlan({method="ordinary",decades=5,set="joyful",guidance="g
  const ids=decades===15?TRADITIONAL_MYSTERY_ORDER:
    Object.freeze(Array.from({length:5},(_,i)=>({joyful:"joy",sorrowful:"sor",glorious:"glo"})[set]+(i+1)));
  return Object.freeze({method,decades,guidance,ids:Object.freeze([...ids]),
-  readyForLive:method==="ordinary"||(decades===5&&["dominican","montfort"].includes(method)),
+  readyForLive:method==="ordinary"||(decades===5&&["dominican","montfort","montfort_short","scriptural"].includes(method)),
   canonicalOwner:"AO_ROSARY_V381",
   source:ROSARY_METHODS[method].source});
 }
