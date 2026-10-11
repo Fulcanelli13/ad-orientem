@@ -112,15 +112,20 @@ try {
     async()=>{await page.locator('[data-ao-app-surface="mass"]').click()});
    await capture("pray-hub","#aoPray435930.open",
     async()=>{await page.locator('[data-ao-app-surface="pray"]').click()});
-   await capture("rosary","#aoPray435930.open .aoP435930Mount",
+   await capture("rosary","#aoPrayerBookRoot.open .pbShell",
     async()=>{
      const result=await page.evaluate(()=>window.AO_PRAY_V435930?.open?.("pray.rosary",{returnContext:null}));
      if(result===false)throw Error("Canonical Rosary route rejected");
-     await page.waitForFunction(()=>document.querySelector(
-      '#aoPray435930.open .aoP435930Mount')?.dataset?.aoPrayView!=="hub",null,{timeout:10000});
+     await page.waitForFunction(()=>!!document.querySelector(
+      "#aoPrayerBookRoot.open .pbShell"),null,{timeout:18000});
     });
    await capture("formation","#ao-learn-modular-root",
-    async()=>{await page.locator('[data-ao-app-surface="learn"]').click()});
+    async()=>{
+     const back=page.locator("#aoPrayerBookRoot.open .lab-back").first();
+     if(await back.count())await back.click();
+     await page.waitForFunction(()=>!document.querySelector("#aoPrayerBookRoot.open"),null,{timeout:10000});
+     await page.locator('[data-ao-app-surface="learn"]').click();
+    });
    await capture("scripture","#ao-scripture-overlay:not([hidden])",
     async()=>{
      const opened=await page.evaluate(()=>window.AO_SCRIPTURE_CONTEXT_V1?.open?.("Luke 1:28"));
