@@ -94,7 +94,7 @@ for(const [form,actor,delivery,allowed] of [
     assert.equal(result.cueId,"AO.SM.C0075");
     assert.equal(result.priestPosition,null,"Lector/celebrant location cannot be assumed");
     assert.equal(result.priestAction?.label,"READS EPISTLE");
-    assert.equal(result.priestVoice?.value,delivery==="READ"?"READ / AUDIBLE":"SUNG / CLEAR");
+    assert.equal(result.priestVoice?.value,delivery==="READ"?"READ / NOT SUNG":"SUNG / CLEAR");
     assert.equal(result.faithfulPosture,null,"Epistle celebrant does not determine faithful posture");
   }
 }
