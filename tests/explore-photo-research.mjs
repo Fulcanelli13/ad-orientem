@@ -13,19 +13,20 @@ assert.equal(editorialReview.counts.approved,10);
 assert.equal(editorialReview.counts.needs_replacement,8);
 assert.equal(editorialReview.counts.held_license,2);
 assert.equal(editorialReview.counts.coverage,20);
-assert.deepEqual(
- new Set(editorialReview.approved.map(x=>x.place_id)),
- new Set(approved.items.map(x=>x.place_id)),
- "The production list must match separately reviewed exact Place IDs");
+assert.ok(editorialReview.approved.every(x=>approved.items.some(item=>item.place_id===x.place_id)),
+ "All ten original R58 approvals must remain published");
 const excluded=[...editorialReview.needs_replacement,...editorialReview.held].map(x=>x.place_id);
 assert.equal(new Set(excluded).size,10);
-assert.ok(excluded.every(id=>!approved.items.some(item=>item.place_id===id)),
- "Weak or licence-held candidate must not appear as approved Place media");
+const r59=read("data/geography/research/place-media-candidates-r59.v1.json");
+assert.ok(editorialReview.held.every(x=>!approved.items.some(item=>item.place_id===x.place_id)),
+ "Older-licence hold must remain unpublished");
+assert.ok(editorialReview.needs_replacement.every(x=>r59.candidates.some(y=>y.place_id===x.place_id)),
+ "All eight R58 quality holds must be replaced only by R59 curated sources");
 
 assert.equal(research.schema,"AO_EXPLORE_PLACE_MEDIA_RESEARCH_V1");
 assert.equal(curated.schema,"AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1");
 assert.equal(approved.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(approved.items.length,10,"Exactly ten screened site photographs are in the first publishable batch");
+assert.equal(approved.items.length,18,"Eight R59 replacements extend the original ten approved site photographs");
 const approvedIds=new Set();
 for(const item of approved.items){
   assert.ok(!approvedIds.has(item.place_id));approvedIds.add(item.place_id);
@@ -39,7 +40,9 @@ for(const item of approved.items){
   assert.ok(Number(item.width)>=640&&Number(item.height)>=480);
   assert.equal(item.orientation,item.height>item.width?"portrait":"landscape");
   const related=research.candidates.find(row=>row.place_id===item.place_id);
-  assert.equal(item.source_url,related?.source_page_url,"Approved image must match original Commons source identity");
+  const upgraded=r59.candidates.find(row=>row.place_id===item.place_id);
+  assert.equal(item.source_url,upgraded?.source_page_url||related?.source_page_url,
+    "Approved image must match an exact verified Commons site source");
   const asset=readFileSync(item.asset_path);
   assert.ok(asset.length>50000,"Approved file must contain image bytes");
   assert.equal(asset.toString("ascii",0,4),"RIFF","Optimized asset must be WebP");
@@ -79,4 +82,4 @@ assert.match(stagingScript,/STAGED_NOT_APPROVED/);
 assert.match(stagingScript,/rights|license|LicenseUrl|LicenseShortName/i);
 assert.doesNotMatch(stagingScript,/APPROVED\.write_text|APPROVED\.open\(/,
   "Importer must not write directly into the publication registry");
-console.log("PASS Explore R58: 20/20 staged/researched, 10 editorially approved, 8 withheld for quality, 2 licence holds");
+console.log("PASS Explore R58+59: historical first ten preserved, eight exact-photo upgrades, two holds");
