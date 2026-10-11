@@ -1,6 +1,7 @@
 import { normalizePresentationMode } from "./session-engine.js";
 import { createMassReaderModel } from "./reader-model.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
+import { projectExpandedOrdinaryLiveCards } from "./reader-live-expanded-cards.js";
 
 function modeResolvedMass(prepared,mode){
   const normalized=normalizePresentationMode(mode);
