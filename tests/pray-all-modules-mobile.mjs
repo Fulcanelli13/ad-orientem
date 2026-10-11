@@ -192,6 +192,29 @@ try{
  const daily="#aoPray435930.open [data-ao-pray-guide-card]";
  await page.waitForSelector(daily);
  assert.equal(await page.locator(daily).count(),1,"Morning guidance must show one card, not 11 stacked");
+ // Verify that the complete Prayer header can render at narrow phone widths.
+ for(const width of [320,390]){
+   await page.setViewportSize({width,height:width===320?700:844});
+   const metrics=await page.locator("#aoPray435930.open .aoP435930Head h1").evaluate(el=>{
+     const style=getComputedStyle(el),copy=el.cloneNode(true);
+     copy.removeAttribute("id");
+     copy.style.setProperty("display","block","important");
+     copy.style.setProperty("-webkit-line-clamp","unset","important");
+     copy.style.setProperty("height","auto","important");
+     copy.style.setProperty("max-height","none","important");
+     copy.style.setProperty("overflow","visible","important");
+     copy.style.setProperty("white-space","normal","important");
+     el.parentNode.appendChild(copy);
+     const full=copy.getBoundingClientRect().height,shown=el.getBoundingClientRect().height;
+     copy.remove();
+     return {full,shown,title:el.textContent,overflow:document.documentElement.scrollWidth-innerWidth,font:parseFloat(style.fontSize)};
+   });
+   assert.match(metrics.title,/Morning.*Evening/i);
+   assert.ok(metrics.font>=17,width+"px Prayer heading is too small: "+JSON.stringify(metrics));
+   assert.ok(metrics.full<=metrics.shown+2,width+"px Prayer header truncates full title: "+JSON.stringify(metrics));
+   assert.ok(metrics.overflow<=1,width+"px Prayer heading causes horizontal overflow");
+ }
+
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"0");
  assert.equal(await page.locator(daily+" .aoTP381PrayerCard").count(),1,"Guidance must display complete canonical prayer");
  assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 11");
