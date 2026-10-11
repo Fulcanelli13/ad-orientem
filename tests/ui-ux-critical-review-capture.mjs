@@ -107,6 +107,11 @@ try {
      await page.waitForFunction(()=>document.querySelector(
       '.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]'),
       null,{timeout:20000});
+     // Do not confuse a half-populated month (e.g. 4/42) with the final grid.
+     // Captures still proceed with partial data when transport is unavailable.
+     await page.waitForFunction(()=>/42\s*\/\s*42/.test(
+      document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root")?.textContent||""
+     ),null,{timeout:20000}).catch(()=>{});
     });
    await capture("mass-entry","#ao-mass-flow-v1 .aoMassFlowBackdrop",
     async()=>{
@@ -141,7 +146,11 @@ try {
    // Close the Scripture overlay before opening Explore.
    await page.evaluate(()=>window.AO_SCRIPTURE_APP_V1?.close?.());
    await capture("explore","#ao-find-modular-root",
-    async()=>{await page.locator('[data-ao-app-surface="find"]').click()});
+    async()=>{
+     await page.locator('[data-ao-app-surface="find"]').click();
+     await page.waitForFunction(()=>window.AO_FIND_APP_V1?.status?.().loadState==="ready",
+      null,{timeout:30000});
+    });
    await capture("settings","#ao-settings-modular-root",
     async()=>{const ok=await page.evaluate(()=>window.AO_SETTINGS_APP_V1?.open?.());if(!ok)throw Error("Settings unavailable")});
   }catch(error){
