@@ -18,7 +18,9 @@ def main():
           {"id":"test-1","title":"Test Painting","artist":"Sample Artist","museum":"Sample Museum",
            "dated":"1600","source":{"objectUrl":"https://example.org/object","rights":"CC0"},
            "association":{"subjectKeys":["annunciation"],"prayerKeys":["rosary.joy1"]},
-           "acquisition":{"originalSha256":sha,"archiveOriginal":"originals/test-1.jpg"}}
+           "acquisition":{"originalSha256":sha,"archiveOriginal":"originals/test-1.jpg"}},
+          {"id":"test-2","title":"Unacquired Painting","artist":"Another Artist","museum":"Another Museum",
+           "source":{"objectUrl":"https://example.org/another","rights":"CC0"}}
         ]}
         days=[]
         for i in range(365):
@@ -37,9 +39,11 @@ def main():
                         "--images-root",str(originals),"--output",str(html),"--strict-images"],check=True)
         content=html.read_text(encoding="utf8")
         for required in ("AO_SACRED_ART_FULL_YEAR_NEGATIVE_EXCEPTION_REVIEW_V1",
-                         "sacred-art-negative-exceptions.json","MISPLACED_ON_DAY",
+                         "sacred-art-curator-review.json","APPROVE_ARTWORK_EDITORIALLY",
+                         "AO_SACRED_ART_CURATOR_REVIEW_V2","MISPLACED_ON_DAY",
                          "REJECT_ARTWORK_GLOBALLY","INVESTIGATE_FURTHER",
-                         "2026-01-01","Test Painting","data:image/webp;base64,"):
+                         "2026-01-01","Test Painting","Unacquired Painting",
+                         "https://example.org/object","data:image/webp;base64,"):
             assert required in content,required
         report=json.loads((base/"build-stats.json").read_text(encoding="utf8"))
         assert report["artworks"]==1 and report["calendarDates"]==365
