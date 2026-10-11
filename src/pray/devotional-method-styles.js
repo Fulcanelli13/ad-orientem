@@ -1,4 +1,4 @@
-const CSS=String.raw\`
+const CSS=String.raw`
 #aoPray435930 .aoMercyReader{max-width:800px;margin:0 auto;padding:16px clamp(14px,4vw,28px) 72px}
 #aoPray435930 .aoMercyModes{display:flex;gap:6px;margin:0 0 18px}
 #aoPray435930 .aoMercyModes button{min-height:42px;border:1px solid rgba(208,191,157,.28);padding:8px 18px;border-radius:9px;color:inherit;background:transparent}
@@ -39,7 +39,7 @@ const CSS=String.raw\`
 #aoPrayerBookRoot .aoRosaryMethodStage button{min-height:44px;margin-top:8px;padding:9px 15px;border-radius:8px;background:rgba(213,193,161,.17);color:inherit;border:1px solid rgba(213,193,161,.4)}
 @media(max-width:390px){#aoPray435930 .aoMercyControls button{min-width:100px;padding:10px 13px}#aoPray435930 .aoMercyVernacular{font-size:1.2rem}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoMercyPrayer,#aoPrayerBookRoot .aoRosaryMethods{animation:none!important;transition:none!important}}
-\`;
+`;
 export function installDevotionalMethodStyles(doc=globalThis.document){
  if(!doc?.head)return false;
  if(doc.getElementById("ao-pray-devotional-methods-styles"))return true;
