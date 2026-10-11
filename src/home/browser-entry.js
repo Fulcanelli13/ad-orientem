@@ -1,4 +1,4 @@
-import { HOME_PRESENTATION_VERSION, renderHome } from "./presentation.js";
+import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 
 const VERSION="modular-home-v2";
 
@@ -359,7 +359,7 @@ export function createHomeOwner(win=globalThis){
     if(!rendered)return false;
     markOwner();
     const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
-    queue(()=>rehydrateRemainingHomeDonors(win));
+    queue(()=>{rehydrateRemainingHomeDonors(win);reconcileTodayHero(appRoot)});
     return true;
   }
 
