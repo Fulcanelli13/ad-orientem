@@ -38,6 +38,40 @@ export function resolveApprovedPlaceMedia(records,placeId){
 }
 
 
+
+/** Independently approved gallery assets only; never render hotlinks, candidate art or
+ * a photograph assigned to a different physical Place. */
+export function resolveApprovedPlaceGallery(records,placeId){
+  const seen=new Set(),out=[];
+  for(const record of arr(records)){
+    if(record?.place_id!==placeId||record?.status!=="APPROVED"||record?.kind!=="PHOTO")continue;
+    const path=text(record.asset_path);
+    const id=text(record.media_id);
+    const width=Number(record.width),height=Number(record.height);
+    if(!id||seen.has(id)||!/^assets\/approved\/place-gallery\/[a-zA-Z0-9_-]+\.webp$/.test(path)||
+       !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
+       record.license!=="CC-BY-SA-4.0"||
+       !/^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\//.test(text(record.license_url))||
+       !/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(text(record.source_url))||
+       !/^[a-f0-9]{40}$/.test(text(record.source_sha1))||
+       !/^[a-f0-9]{64}$/.test(text(record.derivative_sha256))||
+       !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr)||
+       !text(record.label_en)||!text(record.label_fr)||
+       !Number.isFinite(width)||!Number.isFinite(height)||Math.min(width,height)<500||
+       record.orientation!==(height>width?"portrait":"landscape"))continue;
+    seen.add(id);
+    out.push(Object.freeze({
+      media_id:id,asset_path:path,chapter_id:text(record.chapter_id),
+      source_url:text(record.source_url),license_url:text(record.license_url),
+      license:text(record.license),credit:text(record.credit),orientation:record.orientation,
+      alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
+      label_en:text(record.label_en),label_fr:text(record.label_fr),
+      changes_en:text(record.changes_en),changes_fr:text(record.changes_fr),
+    }));
+  }
+  return Object.freeze(out);
+}
+
 function publishedIllustratedPlaceGuide(guides,placeId){
   const guide=arr(guides).find(row=>row?.place_id===placeId&&row?.publication==="PUBLISHED");
   if(!guide||!/^https:\/\/[^\s]+$/.test(text(guide.official_url)))return null;
@@ -307,6 +341,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       aliases:Object.freeze(arr(place?.name?.aliases).filter(Boolean)),
       place_type:place?.place_type??"other",
       media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),
+      gallery:resolveApprovedPlaceGallery(dataset?.media?.gallery,placeId),
       illustrated_guide:publishedIllustratedPlaceGuide(dataset?.editorial?.placeGuides,placeId),
       address:place?.address??null,
       address_label:addressLabel(place?.address),
