@@ -9,6 +9,7 @@ The in-Mass pilot revealed that 48 LIVE cards are insufficient, speaking roles a
 - Sung donor `AO.SM.C0020`: unlabelled `Amen.` after `Misereatur tui` -> **S. Amen.** (priest).
 - Sung donor `AO.SM.C0025`: unlabelled `Amen.` after `Misereatur vestri` -> **M. Amen.** (minister(s)).
 - Sung donor `AO.SM.C0027`: unlabelled `Amen.` after `Indulgentiam` -> **M. Amen.** (minister(s)).
+- Proper Collect response `AO.SM.C0074` and Postcommunion response `AO.SM.C0255`: the source response events had no printed text in their Proper blocks. Restore one explicit **℟. Amen.** after the resolved prayers by their canonical cue IDs; do not invent per-commemoration responses until each separate conclusion is sourced.
 - Gloria `AO.SM.C0053 + C0054`: the complete **Gloria in excelsis Deo** belongs to the priest's intonation. The Schola should start at `C0055 Et in terra pax`, not `C0054 Deo`.
 - Credo `AO.SM.C0089 + C0090`: **Credo in unum Deum** belongs to the priest's intonation. The Schola should start at `C0091 Patrem omnipotentem`, not `C0090 in unum Deum`.
 - Remaining source clock values are preserved. In particular, a private priestly `Amen` is **not** automatically a congregational response; a `USER_RESPONSE` cue means the response is available to participating faithful, not that every parish necessarily sings it.
