@@ -205,7 +205,7 @@ export function createFindOwner(win=globalThis){
       else mapHandle.map.easeTo?.({...options,duration:450});
       nearbyResults=nearbyHeritagePlaces(filtered(),{lat,lng},{limit:6});
       if(!nearbyResults.length){
-        nearbyStatus(language(win)==="fr"?"Aucun lieu publié pour ces filtres.":"Aucun lieu publié pour ces filtres.");
+        nearbyStatus(language(win)==="fr"?"Aucun lieu publié pour ces filtres.":"No mapped places match the current filters.");
       }else{
         void paint();
       }
