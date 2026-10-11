@@ -28,6 +28,7 @@ jobs:
       - name: Install image transcoder
         run: python -m pip install "Pillow==11.3.0"
       - name: Verify and build fifteen original Antwerp Commons photos
+        # Respect Commons rate limits; retry with the revised backoff policy.
         run: python tools/build-rosary-antwerp-art.py
       - uses: actions/setup-node@v4
         with:
