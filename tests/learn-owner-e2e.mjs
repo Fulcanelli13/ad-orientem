@@ -594,8 +594,8 @@ try{
   await assertNoMass("Learn -> Pray");
   await assertFocusSafe("Learn -> Pray");
 
-  // Calendar remains directly routable, but its visible user journey is
-  // Formation -> Today -> Full Calendar rather than a sixth ribbon slot.
+  // Calendar remains directly routable through the shell for cross-domain
+  // journeys. Today V2 owns separate embedded Month/Year interactions.
   await openLearn();
   await page.locator("[data-ao-app-surface='home']").tap();
   await page.waitForFunction(()=>
@@ -603,7 +603,7 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await page.locator("[data-home-calendar]").tap();
+  await page.evaluate(async()=>await globalThis.AO_APP_SHELL_V1.navigate("calendar"));
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
     globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&
