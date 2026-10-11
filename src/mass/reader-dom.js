@@ -2408,7 +2408,7 @@ export function createReaderDomAdapter({
           // proclamation heading can own the faithful's Gospel crosses.
           if(p.id==="PALM-R03-01" && p.sourceCueIds?.includes("PALM-GSP-010"))
             node.dataset.cueId="PALM-R03-01";
-          if(p.replaceOnToggle && p.alternate){
+          if(mode!=="MISSAL" && p.replaceOnToggle && p.alternate){
             node.dataset.translateToggle="true";
             node.dataset.primaryText=p.primary;
             node.dataset.altText=p.alternate;
