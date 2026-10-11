@@ -86,6 +86,7 @@ export function createHomeOwner(win=globalThis){
   let retryTimer=null;
   let enricherClicksBound=false;
   let retiredEnricherObserver=null;
+  let inlineCalendarView=null;
 
   function ensureRetiredEnricherWatch(){
     if(retiredEnricherObserver)return;
@@ -219,6 +220,39 @@ export function createHomeOwner(win=globalThis){
     try{return win?.AO_MODULES?.open?.(id)??false;}catch{return false;}
   }
 
+  function showHomeToday(){
+    inlineCalendarView=null;
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+    if(screen){
+      try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home"})}catch{}
+      delete screen.dataset.aoHomeCalendarView;
+      const slot=screen.querySelector("[data-home-calendar-inline]");
+      if(slot)slot.hidden=true;
+    }
+    paint(state(win));
+    return true;
+  }
+  async function openHomeCalendar(view="picker",date=null){
+    if(!["day","picker","year"].includes(view))view="picker";
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+    const slot=screen?.querySelector?.("[data-home-calendar-inline]");
+    if(!screen||!slot||state(win)?.route!=="home")return false;
+    inlineCalendarView=view;
+    slot.hidden=false;
+    screen.dataset.aoHomeCalendarView=view;
+    for(const button of screen.querySelectorAll(".aoTodayV2Tabs [aria-current]"))
+      button.removeAttribute("aria-current");
+    const selectedTab=screen.querySelector('.aoTodayV2Tabs [data-home-calendar-view="'+view+'"]');
+    selectedTab?.setAttribute("aria-current","page");
+    const api=win?.AO_CALENDAR_APP_V1;
+    const opened=await api?.openEmbedded?.(slot,{view,onClose:()=>{
+      if(inlineCalendarView)showHomeToday();
+    }});
+    if(opened!==true){showHomeToday();return false}
+    if(date&&/^\d{4}-\d{2}-\d{2}$/.test(date))await api.select?.(date,{closeAfter:false});
+    return true;
+  }
+
   function onEnricherClick(event){
     const target=event?.target;
     const retry=target?.closest?.("[data-home-shortcut-retry]");
@@ -250,20 +284,16 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"});
       return;
     }
+    const backToday=target?.closest?.("[data-home-calendar-today]");
+    if(backToday){event.preventDefault?.();event.stopImmediatePropagation?.();showHomeToday();return}
     const calendar=target?.closest?.("[data-home-calendar]");
     if(calendar){
-      event.preventDefault?.();
-      event.stopImmediatePropagation?.();
-      const view=calendar.dataset?.homeCalendarView;
-      const date=calendar.dataset?.homeCalendarDate;
-      if(["day","year","picker"].includes(view))
-        win?.AO_CALENDAR_APP_V1?.setView?.(view);
-      const opening=navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
-      if(view==="day"&&/^\d{4}-\d{2}-\d{2}$/.test(date||"")){
-        // Await the real Calendar owner before selecting a particular future
-        // date. Never fake calendar observance data on Home itself.
-        void opening.then(opened=>opened?win?.AO_CALENDAR_APP_V1?.select?.(date):false);
-      }else void opening;
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const view=calendar.dataset?.homeCalendarView||"picker";
+      const date=calendar.dataset?.homeCalendarDate||null;
+      void openHomeCalendar(view,date).then(ok=>{
+        if(!ok)showRouteError("calendar",calendar);
+      });
       return;
     }
     const settings=target?.closest?.("[data-home-settings]");
@@ -362,6 +392,7 @@ export function createHomeOwner(win=globalThis){
 
   function paint(next=state(win)){
     if(next?.route!=="home")return false;
+    if(inlineCalendarView&&win?.document?.querySelector?.(".homeScreen.aoTodayV2 [data-home-calendar-inline] #ao-calendar-modular-root"))return true;
     const appRoot=root(win);
     if(!appRoot)return false;
     const rendered=renderHome(appRoot,next,win);
@@ -387,6 +418,7 @@ export function createHomeOwner(win=globalThis){
   }
 
   function open(){
+    inlineCalendarView=null;
     closeTransientSurfaces(win);
     resetCoreRoute(win);
     try{win?.AO_SETTINGS_APP_V1?.restoreHome?.();}catch{}
