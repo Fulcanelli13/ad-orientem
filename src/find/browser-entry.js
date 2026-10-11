@@ -13,7 +13,7 @@ import { HERITAGE_STYLE } from "./heritage-style.js";
 import { mapViewport, mountExploreMap } from "./map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
-import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "./heritage-map.js";
+import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
 
 const VERSION="explore-v1";
@@ -114,6 +114,8 @@ export function createFindOwner(win=globalThis){
   let openState=false,dataset=null,projection=null,mapHandle=null,loading=null,preliminary=null,preliminaryLoading=null;
   let paintToken=0,lastLoadError=null;
   let lastMapView=null,lastMapLens=null;
+  // Ephemeral ranked results only. Device location is never stored or persisted.
+  let nearbyResults=null;
   const queryByLens=new Map();
   const scrollGuard=createScrollTapGuard(win?.document,{
     contains:target=>Boolean(getRoot(win)?.contains?.(target)),
@@ -201,7 +203,12 @@ export function createFindOwner(win=globalThis){
       const options={center:[lng,lat],zoom:Math.max(currentZoom,7)};
       if(win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)mapHandle.map.jumpTo?.(options);
       else mapHandle.map.easeTo?.({...options,duration:450});
-      nearbyStatus(language(win)==="fr"?"Carte centrée sur votre position. Seuls les lieux documentés sont affichés.":"Map centred near you. Only documented sites are shown.");
+      nearbyResults=nearbyHeritagePlaces(filtered(),{lat,lng},{limit:6});
+      if(!nearbyResults.length){
+        nearbyStatus(language(win)==="fr"?"Aucun lieu publié pour ces filtres.":"No mapped places match the current filters.");
+      }else{
+        void paint();
+      }
     },()=>{
       button?.removeAttribute?.("aria-busy");
       nearbyStatus(language(win)==="fr"?"Accès à la position refusé ou indisponible. Utilisez la recherche.":"Location permission denied or unavailable. Use search instead.");
@@ -304,6 +311,7 @@ export function createFindOwner(win=globalThis){
       lens:state.lens,
       counts:preliminaryMode?{tlm:PRELIMINARY_R49_TOTAL}:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
       customCards,
+      nearby:state.lens==="heritage"?nearbyResults:[],
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:preliminaryMode?[]:data.directory?.loadedProviders??[],
       unavailableProviders:preliminaryMode?[]:data.directory?.unavailableProviders??[],
@@ -427,6 +435,7 @@ export function createFindOwner(win=globalThis){
     ++paintToken;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
+    nearbyResults=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
     return true;
   }
@@ -439,7 +448,7 @@ export function createFindOwner(win=globalThis){
         queryByLens.set(previousLens,state.query);
         state.query=queryByLens.get(value)??"";
       }
-      state.lens=value;state.calendarKey=null;
+      state.lens=value;state.calendarKey=null;nearbyResults=null;
       if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(Object.hasOwn(state,key))state[key]=value;
     state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
@@ -499,10 +508,14 @@ export function createFindOwner(win=globalThis){
       state.query="";state.heritageCategories=[...HERITAGE_CATEGORIES];
       state.highlightCustomId=null;state.selectedId=null;
       state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
+      nearbyResults=null;
       lastMapView=null;lastMapLens=null;
       void paint();return;
     }
     const nearButton=target?.closest?.("[data-heritage-nearby]");if(nearButton){event.preventDefault?.();locateNearby(nearButton);return;}
+    if(target?.closest?.("[data-heritage-nearby-close]")){
+      event.preventDefault?.();nearbyResults=null;void paint();return;
+    }
     const glossaryButton=target?.closest?.("[data-find-glossary]");if(glossaryButton){event.preventDefault?.();event.stopPropagation?.();void openGlossary(glossaryButton);return}
     if(target?.closest?.("[data-find-clear-calendar]")){
       event.preventDefault?.();state.calendarKey=null;state.query="";void paint();return;
@@ -556,6 +569,7 @@ export function createFindOwner(win=globalThis){
           ?[...HERITAGE_CATEGORIES]:[value];
       }
       state.highlightCustomId=null;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
+      nearbyResults=null;
       void paint();return;
     }
     if(target?.closest?.("[data-heritage-custom-clear]")&&state.lens==="heritage"){
@@ -666,7 +680,7 @@ export function createFindOwner(win=globalThis){
   function onInput(event){
     if(!openState)return;
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
-    state.query=input.value??"";state.selectedId=null;state.selectedPlaceId=null;state.expandDetail=false;state.displayLimit=24;
+    state.query=input.value??"";nearbyResults=null;state.selectedId=null;state.selectedPlaceId=null;state.expandDetail=false;state.displayLimit=24;
     void paint({preserveSearchFocus:true});
   }
 

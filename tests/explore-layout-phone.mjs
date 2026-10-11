@@ -26,6 +26,8 @@ try{
      {width:430,height:932,locale:"fr-FR"},{width:768,height:1000,locale:"en-GB"}]){
     const {width,height,locale}=config;
     const context=await browser.newContext({viewport:{width,height},hasTouch:true,isMobile:width<600,locale,deviceScaleFactor:1});
+    await context.grantPermissions(["geolocation"],{origin:"http://127.0.0.1:4206"});
+    await context.setGeolocation({latitude:43.09738,longitude:-0.05875,accuracy:100});
     const page=await context.newPage(),errors=[];
     page.on("pageerror",e=>errors.push(e.message));
     // Native Explore acceptance elsewhere tests live MapLibre; use a deterministic
@@ -68,6 +70,15 @@ try{
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
     assert.equal(initial.wrap,false,width+"px repeated world enabled");
     assert.deepEqual(initial.bounds,[[-179.99,-85.051129],[179.99,85.051129]]);
+    await page.locator('.aoHeritageNearby').tap();
+    await page.locator('.aoHeritageNearbyPanel').waitFor({state:"visible"});
+    const nearby=await page.locator('.aoHeritageNearbyResult').count();
+    assert.ok(nearby>0&&nearby<=6,width+"px Near me must show compact distance-ranked records");
+    assert.match(await page.locator('.aoHeritageNearbyPanel').innerText(),/km/);
+    await page.locator('[data-heritage-nearby-close]').tap();
+    assert.equal(await page.locator('.aoHeritageNearbyPanel').count(),0);
+    assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
+      width+"px Nearby action reconstructed map canvas");
     await page.locator('.aoHeritageSurface [data-find-query]').fill("Sanctuaire Notre-Dame de Lourdes");
     await page.locator('.aoHeritageSearchResults [data-explore-open-place]').first().tap();
     await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
