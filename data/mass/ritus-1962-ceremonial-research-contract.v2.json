@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-ceremonial-research-contract-v2",
-  "version": "2.0.0-research",
+  "version": "2.1.0-research",
   "status": "RESEARCH_NOT_RUNTIME",
   "sourceOfAuthority": {
     "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -24,12 +24,17 @@
     "requiresHumanReview": true
   },
   "ministrations": {
-    "SOLEMN": {
-      "DEACON": 34,
-      "SUBDEACON": 22,
+    "sourceCheckedSolemnDetailedBatch": "data/mass/ritus-1962-solemn-ministers-batch02.v1.json",
+    "events": 67,
+    "byActor": {
+      "DEACON": 31,
+      "SUBDEACON": 23,
       "ACOLYTES": 5,
-      "THURIFER": 4
+      "THURIFER": 4,
+      "PRIEST": 4
     },
+    "requiemEvents": 12,
+    "earlierUnreconciledCandidateEvents": 65,
     "notEquivalentToMissaCantata": true
   },
   "frenchRubrics": {
@@ -72,5 +77,26 @@
     "FAITHFUL_LIVE",
     "PRIEST_LIVE"
   ],
-  "fullDatasetCommitted": false
+  "fullDatasetCommitted": false,
+  "sourceCheckedBatches": [
+    {
+      "file": "data/mass/ritus-1962-verified-ceremonial-batch01.v1.json",
+      "events": 44,
+      "canonicalAnchors": 31
+    },
+    {
+      "file": "data/mass/ritus-1962-solemn-ministers-batch02.v1.json",
+      "events": 67,
+      "canonicalAnchorCount": 65,
+      "branchOnlyAnchors": 3
+    }
+  ],
+  "historicalParallelRegister": "data/mass/ritus-1962-alphonsus-fortescue-parallels.v1.json",
+  "certificationLimits": [
+    "44 action candidates are source checked in English Ritus translation",
+    "67 minister candidates source checked in English translation and 1962 ceremonial reconciliation, not Latin certified",
+    "Research-only scripts pass GH Actions; runtime unchanged",
+    "Unresolved subdeacon paten micro-timing and subdeacon Requiem water formula",
+    "Every source passage and each French rubric requires Latin 1962 editorial certification"
+  ]
 }
