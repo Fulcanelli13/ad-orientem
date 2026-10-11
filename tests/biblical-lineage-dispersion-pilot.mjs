@@ -72,13 +72,12 @@ try{
   assert.match(await page.locator("#detailTitle").innerText(),/Jesus/);
   await page.locator('[data-line="genesis"]').click();
   assert.ok(await page.locator("#navFamily").isVisible());
-  assert.equal(await page.locator("#progress").getAttribute("max"),"23");
+  assert.equal(await page.locator("#progress").getAttribute("max"),"24");
   await page.locator("#progress").evaluate(el=>{el.value=23;el.dispatchEvent(new Event("input",{bubbles:true}))});
   assert.ok(await page.locator('#graph [data-gen="Jacob"]').count()===1);
   assert.ok(await page.locator('#graph [data-gen="Judah"]').count()===1);
   assert.ok(await page.locator('#graph [data-gen="Benjamin"]').count()===1);
   assert.equal(await page.locator('#graph [data-gen="Enoch"]').count(),2,"two separate biblical Enochs appear");
-  assert.ok((await page.locator("#atlasBridge").innerText()).includes("Atlas")===false || true);
   await page.locator('#graph [data-gen="Jacob"]').click();
   assert.equal(await page.locator('#graph [data-gen="Judah"]').count(),0,"Jacob branch collapses");
   await page.locator('#graph [data-gen="Jacob"]').click();
