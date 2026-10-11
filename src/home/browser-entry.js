@@ -87,6 +87,7 @@ export function createHomeOwner(win=globalThis){
   let enricherClicksBound=false;
   let retiredEnricherObserver=null;
   let inlineCalendarView=null;
+  let inlineCalendarRestoring=false;
 
   function ensureRetiredEnricherWatch(){
     if(retiredEnricherObserver)return;
@@ -94,6 +95,26 @@ export function createHomeOwner(win=globalThis){
       if(state(win)?.route==="home"){
         retireLegacyHomeEnrichers(win);
         retireUnresolvedSaintArt(win);
+        // The historical Home donor may repaint #app asynchronously while the
+        // current destination remains Today. Restore the *same* shared Calendar
+        // in the new slot rather than losing Year/Month to a silent DOM swap.
+        if(inlineCalendarView&&!inlineCalendarRestoring){
+          const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+          const slot=screen?.querySelector?.("[data-home-calendar-inline]");
+          const calendar=slot?.querySelector?.("#ao-calendar-modular-root");
+          const intact=Boolean(calendar?.isConnected&&!slot.hidden&&
+            screen?.dataset?.aoHomeCalendarView===inlineCalendarView);
+          if(slot&&!intact){
+            inlineCalendarRestoring=true;
+            queueMicrotask(()=>{
+              if(!inlineCalendarView||state(win)?.route!=="home"){
+                inlineCalendarRestoring=false;return;
+              }
+              Promise.resolve(openHomeCalendar(inlineCalendarView))
+                .finally(()=>{inlineCalendarRestoring=false});
+            });
+          }
+        }
       }
     });
     retireLegacyHomeEnrichers(win);
