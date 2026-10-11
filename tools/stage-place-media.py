@@ -31,7 +31,7 @@ def load(path):
 
 def request_bytes(url, max_bytes=15_000_000):
     host = urllib.parse.urlparse(url).hostname
-    if host not in {"commons.wikimedia.org", "upload.wikimedia.org"}:
+    if host not in {"commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org"}:
         raise ValueError("Source host not allowlisted: " + str(host))
     last_error = None
     for attempt in range(3):
@@ -78,8 +78,8 @@ def metadata_for(title):
     if not license_url.startswith("https://creativecommons.org/licenses/by-sa/4.0"):
         raise ValueError("Licence URL does not match CC BY-SA 4.0")
     image_url = info.get("thumburl") or info.get("url")
-    if urllib.parse.urlparse(image_url).hostname != "upload.wikimedia.org":
-        raise ValueError("Image source not from Wikimedia upload host")
+    if urllib.parse.urlparse(image_url).hostname not in {"upload.wikimedia.org", "thumb.wikimedia.org"}:
+        raise ValueError("Image source is not from Wikimedia image delivery hosts")
     return {"source_image_url": image_url, "original_url": info.get("url"),
             "source_sha1": info.get("sha1"), "author": get("Artist"),
             "license": "CC-BY-SA-4.0", "license_url": license_url,
