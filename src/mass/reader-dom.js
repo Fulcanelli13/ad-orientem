@@ -714,7 +714,8 @@ button.ao-schola-control{cursor:pointer}
    across prayer rows in the visual scroll window. Reserve real viewport
    space instead of only adding invisible content after the last paragraph. */
 #ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-card-viewport{
-  padding-bottom:var(--ao-schola-reserve)
+  /* Dock sits 9px above the safe-area edge; reserve that extra strip too. */
+  padding-bottom:calc(var(--ao-schola-reserve) + max(12px,env(safe-area-inset-bottom)))
 }
 #ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-prayer-card{
   padding-bottom:clamp(92px,22vh,250px)
