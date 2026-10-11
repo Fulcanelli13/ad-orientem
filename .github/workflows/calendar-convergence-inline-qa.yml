@@ -47,3 +47,11 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Phone 320/390 embedded complete Calendar
         run: node tests/calendar-embedded-home-mass-e2e.mjs
+      - name: Home, liturgical wheel and Mass visual captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-in-today-and-mass
+          path: artifacts/calendar-convergence/
+          retention-days: 30
+          if-no-files-found: warn
