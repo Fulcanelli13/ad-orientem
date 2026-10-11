@@ -165,6 +165,9 @@ jobs:
       # Fail fast on incomplete composed Mass prayers before costly full-phone journeys.
       - run: node tools/calendar/proper-source-batch-100.mjs --focus-gaps
       - run: npm run test:field-current-week
+      # Run compact four-width release routing first: catch outdated surfaces
+      # before incurring the full cross-module phone acceptance matrix.
+      - run: npm run test:rc-field-qa
       - run: node tests/per-icon-svg-e2e.mjs
       - run: node tests/external-svg-sprite-e2e.mjs
       - run: node tests/route-lazy-browser-e2e.mjs
@@ -184,4 +187,3 @@ jobs:
       - run: npm run test:rc-interaction-qa
       - run: npm run test:phone
       - run: node tests/app-shell-journey-e2e.mjs
-      - run: npm run test:rc-field-qa

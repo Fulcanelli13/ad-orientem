@@ -47,8 +47,10 @@ async function click(node){
  await flush();
 }
 for(const [kind,route] of [["mass","mass"],["resume","mass"],["calendar","calendar"],["settings","settings"],["explore","find"],["all","calendar"]]){
+ const before=nav.length;
  await click(btns.get(kind));
- assert.equal(nav.at(-1),route);
+ if(kind==="calendar")assert.equal(nav.length,before,"Today Calendar tabs must not force a separate app route");
+ else assert.equal(nav.at(-1),route);
  const boxes=screen.querySelectorAll("[data-home-shortcut-error]");
  assert.equal(boxes.length,1,kind+" failure did not display a message");
  assert.equal(boxes[0].role,"alert");

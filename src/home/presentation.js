@@ -2,6 +2,8 @@ import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
+import { TODAY_V2_CSS } from "./today-v2-styles.js";
+import { buildTodayV2Sections, renderTodayV2Sections } from "./today-v2-sections.js";
 
 export const HOME_PRESENTATION_VERSION="modular-home-presentation-v1";
 
@@ -123,28 +125,61 @@ export function renderHomeToString(state,win=globalThis){
   const week=vm.week.map(c=>`<button class="dayCell${c.selected?" selected":""}${c.today?" today":""}" data-date="${esc(c.date)}" aria-pressed="${c.selected}"><span>${esc(c.day)}</span><b>${esc(c.number)}</b></button>`).join("");
   const meta=[vm.rank,vm.colour?`${t("colour")} · ${vm.colour}`:"",vm.formularyLabel,vm.commemorationLabel].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("");
   const chooser=vm.formularies.length?`<div class="formularyChooser" role="group" aria-label="${esc(t("formulary"))}">${vm.formularies.map(x=>`<button data-formulary="${x.index}" class="${x.selected?"selected":""}" aria-pressed="${x.selected}">${esc(x.label)}</button>`).join("")}</div>`:"";
-  const art=win?.AO_PHASE1_ART?.homeMarkup?.(state,vm.language)||"";
+  // Artwork is mounted into its own DOM island by renderHome.
+  // Donor markup must not rebalance the Home/Mass hero structure.
   const resume=readNativeMassResume(win);
   const resumeMeta=resume?[
     resume.date?formatDisplayDate(resume.date):"",
     resume.stepNumber?String(resume.stepNumber):"",
   ].filter(Boolean).join(" · "):"";
-  return `<main class="homeScreen" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
-<header class="homeHeader"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
-<div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
-<section class="celebrationBlock"><div class="eyebrow">${esc(vm.weekday)}</div><h1>${esc(vm.celebration)}</h1><div class="metaLine">${meta}</div>${chooser}${art}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}</section>
+  return `<style data-ao-today-v2-style>${TODAY_V2_CSS}</style><main class="homeScreen aoTodayV2" data-home-language="${vm.language}" data-ao-asset-id="${canonicalAssetIdForSurface("home")||""}" data-ao-home-presentation-owner="${HOME_PRESENTATION_VERSION}">
+<header class="homeHeader aoTodayV2Header"><div class="brandRow"><div class="brandMark aoBrandEmblem" aria-hidden="true"></div><div class="brandText"><div class="brandName">${esc(t("brand"))}</div><div class="brandSub">${esc(t("subtitle"))}</div></div><button type="button" class="iconButton homeUtilityButton" data-home-settings aria-label="${esc(vm.language==="fr"?"Réglages":"Settings")}">${assetIcon("ao-ui-settings")}</button></div>
+<nav class="aoTodayV2Tabs" aria-label="Calendar views"><button type="button" data-home-calendar-today aria-current="page">${esc(vm.language==="fr"?"Aujourd’hui":"Today")}</button><button type="button" data-home-calendar data-home-calendar-view="picker">${esc(vm.language==="fr"?"Mois":"Month")}</button><button type="button" data-home-calendar data-home-calendar-view="year">${esc(vm.language==="fr"?"Année liturgique":"Liturgical Year")}</button></nav><div class="aoTodayV2CalendarInline" data-home-calendar-inline hidden aria-label="${esc(vm.language==="fr"?"Calendrier liturgique":"Liturgical calendar")}"></div><div class="dateNavigator"><button class="iconButton" data-nav="previous" aria-label="${esc(t("previousDay"))}">${assetIcon("ao-ui-previous")}</button><button class="dateTitle" data-nav="today"><span>${esc(vm.weekday)}</span><b>${esc(vm.dateLong)}</b></button><button class="iconButton" data-nav="next" aria-label="${esc(t("nextDay"))}">${assetIcon("ao-ui-next")}</button></div><div class="dateRail" aria-label="Week">${week}</div><div class="aoHomeCalendarAccess"><button type="button" class="aoHomeCalendarAction" data-home-calendar aria-label="${esc(vm.language==="fr"?"Ouvrir le calendrier liturgique complet":"Open full liturgical calendar")}">${assetIcon("ao-nav-calendar")}<span>${esc(vm.language==="fr"?"Calendrier complet":"Full Calendar")}</span>${assetIcon("ao-ui-next")}</button></div></header>
+<section class="celebrationBlock aoEditorialHero aoTodayV2Frontispiece"><div class="aoTodayV2Art"><div class="aoTodayV2ArtSource" data-ao-home-art-slot><div class="aoTodayV2NoArt" aria-label="Artwork awaiting editorial approval"></div></div><div class="aoTodayV2ArtOverlay"><span class="eyebrow aoEditorialKicker">CALENDARIUM ROMANUM · 1962</span><h1 class="aoEditorialTitle">${esc(vm.celebration)}</h1></div></div><div class="aoTodayV2HeroActions"><div class="metaLine aoEditorialMeta">${meta}</div>${chooser}${vm.loading?'<div class="loadingLine"><span></span>'+esc(t("loading"))+"</div>":""}<section class="aoTodayV2Mass">
+<div class="sectionLabel">${esc(t("aroundMass"))}</div>
+${resume?
+`<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-resume-mass data-ao-resume-owner="${resume.source}">
+<span>${esc(vm.language==="fr"?"Messe en cours":"Mass in progress")}${resumeMeta?" · "+esc(resumeMeta):""}</span><b>${esc(vm.language==="fr"?"Reprendre la messe":"Resume Mass")} →</b></button>`:
+`<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-home-mass-entry>
+<b>${esc(t("openMass"))} →</b></button>`}
+<div class="aoTodayV2SecondaryMass"><button type="button" data-action="prepare">${esc(t("prepare"))}</button><button type="button" data-action="thanks">${esc(t("giveThanks"))}</button></div>
+</section></div></section>
 ${status}${translationStatus}
-${resume?`<button class="resumeCard" data-resume-mass data-ao-resume-owner="${resume.source}"><span>${vm.language==="fr"?"Messe en cours":"Mass in progress"}</span><b>${vm.language==="fr"?"Reprendre":"Resume"}</b>${resumeMeta?`<small>${esc(resumeMeta)}</small>`:""}</button>`:""}
-<section class="homeSection aroundMass"><div class="sectionLabel">${esc(t("aroundMass"))}</div><div class="phaseActions"><button class="phaseButton secondary" data-action="prepare"><span>Ⅰ</span><b>${esc(t("prepare"))}</b></button><button class="phaseButton primary" data-home-mass-entry><span>Ⅱ</span><b>${esc(t("followMass"))}</b></button><button class="phaseButton secondary" data-action="thanks"><span>Ⅲ</span><b>${esc(t("giveThanks"))}</b></button></div></section>
-<section class="contentCard gospelCard"><div class="cardKicker">${esc(t("holyGospel"))}</div>${vm.gospelReference?`<div class="scriptureRef">${esc(vm.gospelReference)}</div>`:""}<p>${esc(vm.gospelExcerpt)}</p>${vm.gospelReference?scriptureContextCapsule(vm.gospelReference,{french:vm.language==="fr"}):""}<button class="textAction" data-action="gospel">${esc(t("exploreGospel"))} <span>${assetIcon("ao-ui-next")}</span></button></section>
-<section class="contentCard aoHomeScriptureLink"><div class="cardKicker">${esc(vm.language==="fr"?"SAINTE ÉCRITURE":"SACRED SCRIPTURE")}</div><p>${esc(vm.language==="fr"?"Lire et rechercher dans la Bible catholique traditionnelle ; conserver des signets.":"Read and explore the traditional Catholic Bible; keep bookmarks.")}</p><button type="button" class="textAction" data-home-scripture>${esc(vm.language==="fr"?"Ouvrir la Sainte Écriture":"Open Sacred Scripture")} <span>${assetIcon("ao-ui-next")}</span></button></section>
-${renderHomeEnrichersToString(enrichers,state,win)}
-<section class="contentCard findCard"><div><div class="cardKicker">${esc(vm.language==="fr"?"EXPLORER":"EXPLORE")}</div><p>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires, coutumes et pèlerinages — un seul atlas sourcé.":"Traditional Masses, shrines, customs and pilgrimages — one source-backed atlas.")}</p><button type="button" class="textAction aoHomeCustomsAtlasLink" data-home-customs-atlas>${esc(vm.language==="fr"?"Ouvrir l’Atlas des coutumes":"Open Customs Atlas")} ${assetIcon("ao-ui-next")}</button></div><button class="roundAction" data-home-find aria-label="${esc(vm.language==="fr"?"Ouvrir Explore":"Open Explore")}">${assetIcon("ao-ui-next")}</button></section>
+${renderTodayV2Sections(buildTodayV2Sections(state,vm,enrichers),vm)}
+<div class="aoTodayExploreFoot"><button type="button" data-home-find><strong>${esc(vm.language==="fr"?"Explorer les lieux sacrés":"Explore sacred places")}</strong><small>${esc(vm.language==="fr"?"Messes traditionnelles, sanctuaires, coutumes et pèlerinages":"Traditional Masses, shrines, customs and pilgrimages")}</small></button><button type="button" data-home-customs-atlas><strong>${esc(vm.language==="fr"?"Coutumes catholiques traditionnelles":"Traditional Catholic customs")}</strong><small>${esc(vm.language==="fr"?"Explorer les coutumes par lieu":"Explore local customs by place")}</small></button></div>
 <div class="homeSpacer"></div></main>`;
+}
+
+export function reconcileTodayHero(root){
+  const screen=root?.querySelector?.(".homeScreen")??root;
+  const hero=screen?.querySelector?.(".aoTodayV2Frontispiece");
+  const actions=screen?.querySelector?.(".aoTodayV2HeroActions");
+  const mass=screen?.querySelector?.(".aoTodayV2Mass");
+  if(!hero||!actions||!mass)return false;
+  // Enforce one authored structural parent after legacy home rehydration.
+  // No new state, listener or duplicate Mass button is created.
+  if(!hero.contains(actions))hero.append(actions);
+  if(!actions.contains(mass))actions.append(mass);
+  return hero.contains(mass);
 }
 
 export function renderHome(root,state,win=globalThis){
   if(!root||state?.route!=="home")return false;
   root.innerHTML=renderHomeToString(state,win);
+  const slot=root.querySelector?.("[data-ao-home-art-slot]");
+  if(slot){
+    const language=state?.language==="fr"?"fr":"en";
+    let art="";
+    try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
+    catch(error){win?.console?.warn?.("Approved Today artwork unavailable",error)}
+    if(art)slot.innerHTML=art;
+    // Donor fallback labels are not approved sacred paintings; retain the
+    // devotional typographic hero but do not reserve an empty image column.
+    const hasArt=Boolean(slot.querySelector("img[src],picture source[srcset],video[poster],canvas"));
+    const hero=root.querySelector(".aoTodayV2Frontispiece");
+    hero?.classList?.toggle("aoTodayV2ArtMissing",!hasArt);
+    if(!hasArt)slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
+  }
+  reconcileTodayHero(root);
   return true;
 }

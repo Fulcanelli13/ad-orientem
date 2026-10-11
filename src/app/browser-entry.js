@@ -1,6 +1,7 @@
 import "./source-transport-compat.js";
 import "./offline-boot.js";
 import { installAppDesignSystem } from "./design-system.js";
+import { installAppLiturgicalTheme } from "./liturgical-theme.js";
 import { createScrollTapGuard } from "./scroll-tap-guard.js";
 import { installDateFormat } from "./date-format.js";
 import "./cinematic-runtime.js";
@@ -420,6 +421,8 @@ export function installAppShellBridge({
         win,
         getActive: () => state.controller?.getActive?.() ?? null,
       });
+      // Calendar-owned dark accents, preserving independent selected-Proper Mass colours.
+      installAppLiturgicalTheme({ win });
       try {
         installNonMassConvergence({ win });
       } catch (error) {

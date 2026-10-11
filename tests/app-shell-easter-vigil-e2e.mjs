@@ -156,19 +156,17 @@ try{
     await overlay.waitFor({state:"visible",timeout:15000});
     assert.equal((await overlay.locator(".aoScriptureContextTitle").innerText()).includes(reference),true);
     assert.equal(await overlay.locator(".aoScriptureReading h3").innerText(),firstPassage);
-    // Separate Scripture study is allowed to display *labelled uncollated*
-    // historical witness transcriptions. The actual 1962 Mass reading may
-    // never inherit this text or silently certify its edition status.
-    const scriptureVerses=await overlay.locator(".aoScriptureVerse").count();
-    if(scriptureVerses>0){
-      const pendingWitness=overlay.locator("[data-scripture-witness-unreviewed]");
-      await pendingWitness.waitFor({state:"visible",timeout:10000});
-      assert.match(await pendingWitness.innerText(),/not yet collated/i,
-        "Unreviewed Catholic Bible source witness has no collation warning");
-    }
-    assert.equal(await page.locator(
-      "#ao-r17-native-reader-preview .aoScriptureVerse").count(),0,
-      "Uncollated Bible witness leaked into the native 1962 Mass reading");
+    // Full historical witnesses are now readable only inside the separate
+    // Bible overlay. They remain uncollated and must never become an
+    // implicitly certified translation of the 1962 native prophecy.
+    const witness=overlay.locator("[data-scripture-witness-unreviewed='dr-challoner']");
+    await witness.waitFor({state:"visible",timeout:12000});
+    assert.match(await witness.innerText(),/not yet collated/i,
+      "The restored Douay witness must carry its source-collation warning");
+    assert.ok(await overlay.locator(".aoScriptureVerse").count()>0,
+      "The source-bound Scripture overlay lost its historical text");
+    assert.equal(await page.locator("#ao-r17-native-reader-preview .aoScriptureVerse").count(),0,
+      "Historical Bible witness leaked into the source-owned native Mass reading");
     await overlay.locator("[data-scripture-close]").click();
     await overlay.waitFor({state:"hidden",timeout:8000});
     await page.evaluate(id=>globalThis.AO_R17_NATIVE_READER_PREVIEW.goToEasterVigilRecord(

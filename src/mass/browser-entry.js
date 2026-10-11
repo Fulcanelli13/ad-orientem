@@ -778,6 +778,19 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
+         getCalendarState:()=>runtimeState(),
+         subscribeCalendarState:notify=>runtime()?.store?.subscribe?.(notify)??null,
+         onOpenCalendar:async(date,view="day",host)=>{
+           if(!host?.isConnected||!["day","picker","year"].includes(view))return false;
+           const api=globalThis.AO_CALENDAR_APP_V1;
+           if(!api?.openEmbedded)return false;
+           // The Calendar is embedded in preparation; it must never replace
+           // the selected Proper, ceremony form or the R17 reader.
+           return api.openEmbedded(host,{view,onClose:()=>{
+             const details=host.closest("[data-mass-calendar-details]");
+             if(details)details.open=false;
+           }});
+         },
          getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
          getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
          language:()=>runtimeState()?.language??"en",

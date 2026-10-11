@@ -9,6 +9,8 @@ const G=read("data/geography/seed-registry.v1.json");
 // Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
 const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
 for(const p of read("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json").promoted)publishedAfterFreeze.add(p.place_id);
+// Post-freeze Ireland R65 promotions must not rewrite this 10 October research snapshot.
+for(const c of read("data/shrines/illustrated-place-guides-ireland.v1.json").candidates??[])if(c.published_place_id)publishedAfterFreeze.add(c.published_place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(W3.schema,"AO_EXPLORE_EUROPE_WAVE3_TEN_COUNTRY_ACQUISITION_REVIEW_V1");
 assert.equal(W3.status,"RESEARCH_ONLY_NO_LIVE_PINS");

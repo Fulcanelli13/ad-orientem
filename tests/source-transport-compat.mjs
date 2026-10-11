@@ -42,6 +42,9 @@ assert.equal(rewriteResolvedSourceUrl(ordinary),ordinary,"ordinary Proper URL wa
 const absent=[
   doBase+"web/www/horas/English/Commune/Coronatio.txt",
   doBase+"web/www/horas/Francais/Commune/Coronatio.txt",
+  doBase+"web/www/horas/Latin/Commune/C10t.txt",
+  doBase+"web/www/horas/English/Commune/C10t.txt",
+  doBase+"web/www/horas/Francais/Commune/C10t.txt",
   doBase+"web/www/missa/Latin/Sancti/10-08c.txt",
   doBase+"web/www/horas/Latin/Sancti/10-08c.txt",
 ];
@@ -60,6 +63,11 @@ const compat=installSourceTransportCompat(fakeWin);
 const miss=await fakeWin.fetch(absent[0]);
 assert.equal(miss.status,404);
 assert.equal(nativeCalls,0,"known absent source still emitted a network request");
+for(const url of absent.filter(url=>url.endsWith("/C10t.txt"))){
+  const unavailable=await fakeWin.fetch(url);
+  assert.equal(unavailable.status,404,"Missing 1962 Common must remain explicitly unavailable");
+  assert.equal(nativeCalls,0,"Missing 1962 Common triggered an unnecessary upstream request: "+url);
+}
 const coronatio=doBase+"web/www/missa/English/Commune/Coronatio.txt";
 const massSource=await fakeWin.fetch(coronatio);
 assert.equal(massSource.status,200,"source transport incorrectly blocked valid English Coronatio");

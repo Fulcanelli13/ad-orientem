@@ -1,0 +1,60 @@
+name: Calendar convergence — in-page Home and Mass
+on:
+  push:
+    branches: [feature/calendar-embedded-home-mass-20261011]
+  pull_request:
+    paths:
+      - "src/calendar/**"
+      - "src/home/**"
+      - "src/mass/calendar-preflight-context.js"
+      - "src/mass/full-mass-preflight.js"
+      - "src/mass/full-mass-preflight-styles.js"
+      - "src/mass/browser-entry.js"
+      - "tests/calendar-embedded-home-mass-e2e.mjs"
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: ESM source syntax
+        run: |
+          node --check src/calendar/calendar-runtime.js
+          node --check src/calendar/year-colour-wheel.js
+          node --check src/calendar/year-journey.js
+          node --check src/app/liturgical-theme.js
+          node --check src/mass/reader-liturgical-theme.js
+          node --check src/calendar/browser-entry.js
+          node --check src/home/browser-entry.js
+          node --check src/home/presentation.js
+          node --check src/home/today-v2-styles.js
+          node --check src/mass/browser-entry.js
+          node --check src/mass/calendar-preflight-context.js
+          node --check src/mass/full-mass-preflight.js
+      - name: Calendar and Mass ownership
+        run: |
+          node tests/calendar-liturgical-year.mjs
+          node tests/app-liturgical-theme.mjs
+          node tests/mass-batch-a-theme-icons.mjs
+          node tests/full-mass-preflight.mjs
+          node tests/app-shell-contract.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Phone 320/390 embedded complete Calendar
+        run: node tests/calendar-embedded-home-mass-e2e.mjs
+      - name: Home, liturgical wheel and Mass visual captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-in-today-and-mass
+          path: artifacts/calendar-convergence/
+          retention-days: 30
+          if-no-files-found: warn
