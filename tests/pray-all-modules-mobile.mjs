@@ -338,7 +338,7 @@ try{
      const prayerBody=await detail.innerText();
      assert.match(prayerBody,/Our Father/);
      assert.match(prayerBody,/Hail Mary/);
-     assert.match(prayerBody,/Glory Be/);
+     assert.match(prayerBody,/Glory Be/i,"Canonical Glory Be must remain present regardless of display capitalization");
      assert.match(prayerBody,/Si quæris miracula|If, then, thou seekest miracles/i,"Traditional responsory not reused from Prayer corpus");
      await detail.locator("[data-n1-back]").tap();
    }
