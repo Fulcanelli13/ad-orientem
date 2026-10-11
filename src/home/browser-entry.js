@@ -244,13 +244,17 @@ export function createHomeOwner(win=globalThis){
     const calendar=target?.closest?.("[data-home-calendar]");
     if(calendar){
       event.preventDefault?.();
+      event.stopImmediatePropagation?.();
       const view=calendar.dataset?.homeCalendarView;
-      if(view==="year"||view==="picker"){
-        // Set requested first-use Calendar view before navigation, avoiding a
-        // transient Day flash while the lazy Calendar runtime loads.
+      const date=calendar.dataset?.homeCalendarDate;
+      if(["day","year","picker"].includes(view))
         win?.AO_CALENDAR_APP_V1?.setView?.(view);
-      }
-      void navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
+      const opening=navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
+      if(view==="day"&&/^\\d{4}-\\d{2}-\\d{2}$/.test(date||"")){
+        // Await the real Calendar owner before selecting a particular future
+        // date. Never fake calendar observance data on Home itself.
+        void opening.then(opened=>opened?win?.AO_CALENDAR_APP_V1?.select?.(date):false);
+      }else void opening;
       return;
     }
     const settings=target?.closest?.("[data-home-settings]");
@@ -277,7 +281,13 @@ export function createHomeOwner(win=globalThis){
     const daily=target?.closest?.("[data-home-daily-catechism]");
     if(daily){
       event.preventDefault?.();
-      try{win?.AO_DAILY_CATECHISM?.open?.();}catch{}
+      try{
+        const opened=win?.AO_DAILY_CATECHISM?.open?.();
+        if(opened===undefined||opened===false)showRouteError("today.daily-catechism",daily);
+      }catch(error){
+        win?.console?.error?.("Daily Catechism could not open",error);
+        showRouteError("today.daily-catechism",daily);
+      }
       return;
     }
     const dynamic=target?.closest?.("[data-home-cu-dynamic]");
