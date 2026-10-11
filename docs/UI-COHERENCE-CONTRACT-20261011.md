@@ -44,6 +44,33 @@ The five primary global destinations remain Today, Mass, Pray, Formation and Exp
 - Explore vertical scroll and map drag must not trigger accidental category changes.
 - Settings opened while Mass LIVE must behave as an overlay, without silently abandoning the live session.
 
+## Implementation notes — continuity pass
+
+The integration branch now includes scoped in-memory state preservation for two
+previously destructive app-shell journeys:
+
+- **Explore:** shell-driven module exit captures the MapLibre camera before
+  destroying the canvas. Returning without an explicit new destination restores
+  centre, zoom, lens, filters, search, selected pin, preview and scroll; a new
+  lens/search/deep link intentionally supersedes the old selection. Nothing is
+  persisted to device storage. The responsive phone test checks
+  Explore → Today → Explore at 320, 390, 430 and 768px.
+- **Formation:** the app shell passes a `preserveContext` request to the
+  Formation owner when changing domains. Its selected subject family, search
+  and hub scroll return on re-entry; an explicit owner close still clears them.
+  Specialist course/question child owners remain responsible for their own
+  reading position. A 320px journey test exercises Formation → Today → Formation.
+- **Visual QA:** Coming Up must show three real canonical assets, allowing both
+  embedded SVG and masked artwork. The Calendar day may show its saint-detail
+  action only when the observed principal cycle is sanctorale.
+- **Mass:** its canonical top-ribbon Home/Settings masks now agree with the rest
+  of the app. Native Schola drag/hide state ownership is deliberately
+  unchanged pending actual responsive visual approval.
+
+**These are localized continuity fixes, not a general cross-module browser
+history implementation.** Context-aware Back from every child reader and
+Schola viewport ergonomics remain open acceptance work.
+
 ## Acceptance gates
 
 Test at 320px, 390px and tablet/desktop widths, in French and English, with different liturgical colours. Verify geometry, source text, tap targets, preserved return state, actual on-screen icons and Back/Close distinction; source tests alone are insufficient.
