@@ -39,3 +39,25 @@ The proposed boundaries are **candidates**. They require editorial confirmation 
 `npm run test:mass-speaking-roles` tests named dialogue roles and intonation, independently anchored Schola segments, full real-data card projection and preservation of all original paragraph IDs.
 
 **Release status:** Draft research/implementation; do not merge into today's live Mass pilot until CI + real-device test and source review. The new review projection is deliberately gated and is not already deployed.
+
+## Second source-wide batch — 11 October
+
+- Added `data/mass/ordinary-sung-speaker-audit.v1.json` with **280/280** canonical sung cue records across all **96** blocks, each carrying source clock, text owner, evidence type, potential participation, branch status, and form conditionality. The eight effective role categories are **priest (151), responders (36), ministers (13), priest action (29), Schola (47), Gospel minister (2), dismissal minister (1), and editorial Guide (1)**. No fixed Ordinary cue remains role-unassigned. The count is an editorial coverage denominator, **not** proof that each liturgical participation variant is certified.
+- Expanded preparatory speaker-initial reconstruction from the companion Low Mass witness (e.g. priest's and ministers' Confiteor, Misereatur and Indulgentiam) rather than merely the three original Amens.
+- Restored the **Credo in unum Deum** celebrant intonation as one source-owned visual paragraph (`C0089+C0090`), analogous to Gloria's `C0053+C0054`. Schola remains independently attached to `C0091`.
+- Added seven source-cue-targeted **presentation-only sentence breaks** for long Gloria/Credo lines in Latin, English, and French. All words, translations, cue IDs and gesture ownership are unchanged. Breaks do **not** claim universal choir/people antiphonal divisions.
+- Enlarged the review projection to **116 cards** by dividing Psalm 42, closing preparatory versicles, Kyrie/Christe/Kyrie, Orate fratres/Suscipiat, Sanctus/Benedictus, both Consecrations, Libera nos, and the Last Gospel, as well as the existing Gloria and Credo stages.
+- Added restrained bilingual LIVE-only speaker-turn labels where the original line does not already say S./M./V./R.; Missal presentation remains unaltered.
+- `tests/reader-speaker-roles.mjs` now checks the full 280-cue registry against runtime speaker assignments; `tests/reader-chant-line-layout.mjs` checks Latin/EN/FR phrase preservation; `tests/reader-mode-switch.mjs` asserts all 116 card paragraphs remain complete/in order and that crucial Host/Chalice/Last Gospel boundaries retain exact cues.
+
+## Interpretation
+
+For Sung Mass, `RESPONDERS` denotes the liturgical response owner but **does not** assert that every lay person sings each answer; minister/schola/congregational practice depends on Mass form and local usage. The Gospel and dismissal ministers are expressly form-conditional. The **second Confiteor** remains optional/local and must not be promoted to normative 1962 practice.
+
+This batch is a robust text and presentation inventory. A count of 116 cards is not by itself the final UI acceptance: the existing Schola track-to-card number lookup, Guide inheritance, swipe behavior, cue focus, special-day form insertions, mobile screenshots, and individual concurrent sung/priest sequences still need to be certified before the expanded projection can be set as the default.
+
+## CI status (current cycle)
+
+- **PASS** full 280-record speaking-role tests, Latin/EN/FR chant-layout tests, real-data 116-card expansion/paragraph conservation, existing 48-card regression, and Schola tests in the Mass job.
+- The full R17 workflow remains **red** because the Sacred Geography profile test still assumes **38** previously empty shrine profiles where the current active corpus has more; this is not a reader regression.
+- The fine-card projection remains **review-opt-in only** through `reviewExpandedCards:true` and is not deployed as the LIVE reader default.
