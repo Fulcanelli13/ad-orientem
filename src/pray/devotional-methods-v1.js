@@ -9,11 +9,11 @@ export const ROSARY_METHODS=Object.freeze({
   status:"canonical-active",source:"https://www.newadvent.org/cathen/13184b.htm",
   policy:"Use unchanged canonical Rosary prayers and 15 mysteries."}),
  dominican:Object.freeze({id:"dominican",label:{en:"Dominican opening",fr:"Ouverture dominicaine"},
-  status:"opening-source-verified",source:"https://rosaryconfraternity.org/the-rosary/how-to-pray-the-rosary/",
-  policy:"Only source-attested opening and concluding prayers; never replace Marian mysteries."}),
+  status:"canonical-active",source:"https://rosaryconfraternity.org/the-rosary/how-to-pray-the-rosary/",
+  policy:"Dominican versicles and responses, the same traditional mysteries, and the Dominican closing prayers."}),
  montfort:Object.freeze({id:"montfort",label:{en:"St Louis-Marie de Montfort",fr:"Saint Louis-Marie de Montfort"},
-  status:"original-french-source-located",source:"https://www.montfort.org/content/uploads/pdf/PDF_FR_30_1.pdf",
-  policy:"Offerings, virtues and optional clauses. The modern English edition is copyrighted; do not reproduce."}),
+  status:"adapted-active",source:"https://www.montfort.org/content/uploads/pdf/PDF_FR_30_1.pdf",
+  policy:"First method: adapted five-decade opening, decade offerings and petitions for the grace of each mystery. Original French linked; not a verbatim translation."}),
  scriptural:Object.freeze({id:"scriptural",label:{en:"Scriptural meditation",fr:"Méditation biblique"},
   status:"edition-collation-required",source:"https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html",
   policy:"Only source-verified Catholic text; use existing short editorials until collation."}),
@@ -34,7 +34,7 @@ export function rosaryPlan({method="ordinary",decades=5,set="joyful",guidance="g
  const ids=decades===15?TRADITIONAL_MYSTERY_ORDER:
    Object.freeze(Array.from({length:5},(_,i)=>({joyful:"joy",sorrowful:"sor",glorious:"glo"})[set]+(i+1)));
  return Object.freeze({method,decades,guidance,ids:Object.freeze([...ids]),
-  readyForLive:method==="ordinary",
+  readyForLive:["ordinary","dominican","montfort"].includes(method),
   canonicalOwner:"AO_ROSARY_V381",
   source:ROSARY_METHODS[method].source});
 }
