@@ -121,7 +121,17 @@ try{
     const donor=document.getElementById("ao-v37-root");
     const ribbon=document.getElementById("ao-global-ribbon");
     const rr=root?.getBoundingClientRect(),rb=ribbon?.getBoundingClientRect();
-    const tapTargets=[...root.querySelectorAll("button")].map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height}});
+    const tapTargets=[...root.querySelectorAll("button")].map(node=>{
+      const r=node.getBoundingClientRect();
+      const hiddenAncestor=node.closest("[hidden],[inert]");
+      const css=getComputedStyle(node);
+      return {
+        w:r.width,h:r.height,
+        visible:node.getClientRects().length>0&&!hiddenAncestor&&css.visibility!=="hidden"&&css.display!=="none",
+        label:node.getAttribute("aria-label")||node.textContent?.trim().slice(0,65)||"",
+        selector:node.className||node.dataset.aoFnavGo||node.outerHTML.slice(0,100)
+      };
+    });
     const oldLearn=document.getElementById("ao-learn-root");
     const oldCate=document.getElementById("ao-cate-root");
     const oldDaily=document.getElementById("ao-daily-cate-root");
@@ -167,8 +177,24 @@ try{
   assert.ok(learned.geometry.width>300,"Learn phone surface collapsed");
   assert.ok(learned.geometry.scrollWidth<=learned.geometry.clientWidth+1,"Learn phone surface has horizontal overflow");
   assert.ok(learned.geometry.rootBottom<=learned.geometry.ribbonTop+2,"Learn surface covers the global app ribbon");
-  assert.ok(learned.geometry.tapTargets.length>=6,"Learn surface lost expected controls");
-  for(const target of learned.geometry.tapTargets)assert.ok(target.w>=44&&target.h>=44,"Learn touch target fell below 44px");
+  const visibleLearnTargets=learned.geometry.tapTargets.filter(target=>target.visible);
+  assert.ok(visibleLearnTargets.length>=6,"Learn surface lost expected visible controls");
+  for(const target of visibleLearnTargets)
+    assert.ok(target.w>=44&&target.h>=44,
+      "Visible Learn touch target fell below 44px: "+JSON.stringify(target));
+  // Collapsed section-index buttons are non-rendered; also audit their actual
+  // hitboxes when the user opens that menu, rather than counting them as 0px.
+  const formationNavToggle=page.locator('#ao-learn-modular-root [data-ao-fnav-action="toggle"]');
+  if(await formationNavToggle.count()){
+    await formationNavToggle.tap();
+    const openIndexTargets=await page.locator('#ao-learn-modular-root .aoFNavMenu:not([hidden]) [data-ao-fnav-go]').evaluateAll(nodes=>
+      nodes.map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height,label:node.textContent?.trim().slice(0,65)}}));
+    assert.ok(openIndexTargets.length>=2,"Opened Formation section index lost its navigation buttons");
+    for(const target of openIndexTargets)
+      assert.ok(target.w>=44&&target.h>=44,
+        "Opened Formation index touch target fell below 44px: "+JSON.stringify(target));
+    await formationNavToggle.tap();
+  }
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
 
