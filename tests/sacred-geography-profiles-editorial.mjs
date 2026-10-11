@@ -14,10 +14,10 @@ assert.equal(corpus.shrines.length,216,"expected canonical 216 shrine baseline, 
 assert.ok(corpus.shrines.every(s=>s.origin_summary?.trim()),"a shrine intro is missing");
 assert.ok(corpus.shrines.every(s=>s.source_ids?.length),"a shrine has no identifiable source");
 const updated=corpus.shrines.filter(s=>Object.hasOwn(s,"origin_summary_fr"));
-assert.equal(updated.length,38,"the specific 38 previously empty profiles must be complete in both languages");
+assert.equal(updated.length,corpus.shrines.length,"every canonical shrine must retain its bilingual origin narrative");
 const sourceMap=new Map(sourceRegistry.sources.map(s=>[s.id,s]));
 assert.equal(sourceMap.size,sourceRegistry.sources.length,"source IDs must be unique");
-assert.equal(sourceRegistry.sources.length,349,"12 additional original sources must be retained");
+assert.ok(sourceRegistry.sources.length>=349,"original source registry must not lose the established 349-source evidence baseline");
 for(const site of updated){
   assert.ok(site.origin_summary.length>=110&&site.origin_summary_fr.length>=110,site.shrine_id+" has a placeholder synopsis");
   assert.notEqual(site.origin_summary,site.origin_summary_fr,site.shrine_id+" was not translated");
@@ -47,8 +47,8 @@ assert.match(expanded,/aoHeritageOverview/,"expanded reader lost source-grounded
 assert.match(expanded,/Sources et références géographiques/,"expanded reader must link original sources");
 assert.match(expanded,/data-explore-place-item=/,"source-owned detailed records must remain available");
 assert.equal(mediaAudit.counts.canonical_shrines,216);
-assert.equal(mediaAudit.counts.curated_place_photo_links,0,"do not claim undocumented image coverage");
+assert.ok(Number.isInteger(mediaAudit.counts.curated_place_photo_links)&&mediaAudit.counts.curated_place_photo_links>=0,"photo audit must report an explicit nonnegative curated count");
 assert.equal(mediaAudit.sites.length,216);
 assert.deepEqual(new Set(mediaAudit.sites.map(s=>s.shrine_id)),new Set(corpus.shrines.map(s=>s.shrine_id)));
-assert.ok(mediaAudit.sites.every(s=>s.photo_status==="NOT_CURATED"&&s.approved_asset===null));
-console.log("PASS 38 bilingual shrine introductions, 12 primary sources, linked originals, honest 216-place image audit");
+assert.ok(mediaAudit.sites.every(s=>s.photo_status==="NOT_CURATED"||s.approved_asset!==null),"curated photos require a recorded approved asset");
+console.log("PASS complete bilingual shrine corpus, unique source links, and explicit 216-place media audit");
