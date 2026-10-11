@@ -1131,7 +1131,7 @@
       "id": "MR62.SOL.B02.062",
       "actor": "DEACON",
       "cueId": null,
-      "anchorType": "NON_TEXT_RITE_EVENT",
+      "anchorType": "BRANCH_ONLY_RITE_EVENT",
       "actionKey": "SING_HUMILIATE_CAPITA_VESTRA_DEO",
       "condition": "ORATIO_SUPER_POPULUM",
       "ritus": "XI.3",
@@ -1143,7 +1143,8 @@
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": null
+      "sourceCueText": null,
+      "branchMoment": "ORATIO_SUPER_POPULUM_AFTER_POSTCOMMUNION_BEFORE_DISMISSAL"
     },
     {
       "id": "MR62.SOL.B02.063",
