@@ -112,13 +112,18 @@ for(const item of transitionRegistry){
   assert.ok(owner.paragraphs.some(p=>(p.sourceCueIds??[]).includes(cueId)),
     cueId+" response must remain with its source paragraph");
 }
-for(const [preceding,response] of [
-  ["AO.SM.C0073","AO.SM.C0074"], // Collect and its Amen
-  ["AO.SM.C0131","AO.SM.C0132"], // Orate fratres and Suscipiat
-  ["AO.SM.C0254","AO.SM.C0255"], // Postcommunion and its Amen
+assert.equal(projectedCueCards.get("AO.SM.C0131"),projectedCueCards.get("AO.SM.C0132"),
+  "Orate fratres and Suscipiat should not create an extra swipe");
+for(const [response,properSlot] of [
+  ["AO.SM.C0074","COLLECT"],
+  ["AO.SM.C0255","POSTCOMMUNION"],
 ]){
-  assert.equal(projectedCueCards.get(preceding),projectedCueCards.get(response),
-    "Short liturgical response "+response+" should not create an extra swipe");
+  // Proper prayers are resolved dynamically and do not necessarily retain
+  // a static donor source cue for the prayer line; the original R. Amen
+  // must still be in the SAME visible card as that resolved Proper.
+  const card=projectedCueCards.get(response);
+  assert.ok(card&&card.blocks.some(block=>String(block.properSlot??"").includes(properSlot)),
+    response+" lost its resolved Proper prayer context");
 }
 for(const [words,action] of [
   ["AO.SM.C0173","AO.SM.C0174"],
