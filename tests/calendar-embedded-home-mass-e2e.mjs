@@ -33,8 +33,6 @@ try{
  browser=await chromium.launch({headless:true});
  for(const width of [390,320]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true,locale:"en-GB"});
-  await page.addInitScript(()=>{globalThis.__aoCalendarTrace=true});
-  page.on("console",m=>{if(m.text().startsWith("AO_"))console.log("BROWSER_TRACE",m.text())});
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
   // Do not visually certify a Home that is still behind the cinematic splash.
@@ -83,6 +81,8 @@ try{
     throw error;
   });
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearTrack').count(),1,"The canonical liturgical-year timeline must be retained");
+  assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2Tabs').isVisible(),false,
+    "Embedded Calendar must not repeat the host Day/Month/Year tabs");
   await waitForWeekLoader(page);
   if(await page.locator(".aoTodayExploreFoot").isVisible()){
     console.log("FOOTER_LAYOUT_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
@@ -125,6 +125,8 @@ try{
   await page.waitForSelector('[data-mass-calendar-host] #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('[data-mass-calendar-host] .aoCalV2Ring').count(),1,"Calendar year must render within Mass preparation");
   assert.equal(await page.locator("[data-mass-calendar-host] .aoCalYearDailyTrack").count(),1);
+  assert.equal(await page.locator('[data-mass-calendar-host] #ao-calendar-modular-root .aoCalV2Tabs').isVisible(),false,
+    "Mass preparation already owns its three Calendar tabs");
   await waitForWeekLoader(page);
   await page.screenshot({path:resolve(shots,"mass-calendar-year-"+width+".png"),fullPage:true});
   await page.locator('[data-mass-calendar-view="picker"]').click();
