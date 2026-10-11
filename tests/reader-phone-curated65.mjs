@@ -570,8 +570,11 @@ try{
         {waitUntil:"networkidle",timeout:45000});
       await page.waitForFunction(()=>["true","error"].includes(document.documentElement.dataset.harnessReady),
         null,{timeout:20000});
-      assert.equal(await page.evaluate(()=>document.documentElement.dataset.harnessReady),
-        "true",form+" fixture failed to mount");
+      const mount=await page.evaluate(()=>({
+        status:document.documentElement.dataset.harnessReady,
+        error:window.__AO_PHONE_HARNESS_ERROR??null,
+      }));
+      assert.equal(mount.status,"true",form+" fixture failed to mount: "+mount.error);
       const result=await page.evaluate(form=>{
         const api=window.__AO_PHONE_PREVIEW;
         const base={cards:api.model.totalCards,sourceCards:api.sourceModel.totalCards};
