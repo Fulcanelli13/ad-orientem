@@ -95,3 +95,18 @@ The editorial record for a link must contain: canonical liturgical prayer/phrase
 ## VI. Current publication decision
 
 Research only. **No Mass reader or Atlas UI change.** Bibliographic existence is verified for the above works; only selected textual locations have been inspected in full. A complete Mass-to-Scripture link corpus is **not** yet certified.
+
+## Critical reading — batch 1 completed (11 Oct 2026)
+
+**[Read the 54-record structured evidence register](../../data/geography/research/mass-scripture-source-extractions-20261011.v1.json)** and **[full critical synthesis](MASS-SCRIPTURE-CRITICAL-EXTRACTION-BATCH01-20261011.md)**.
+
+54 distinct source-attributed candidate connections in 28 research phases are now recorded, with 13 explicit critical holds; none is approved for publication. They comprise 16 quotation/adaptation candidates, three figures explicitly named in the Canon, four patristic typological readings, 19 later devotional readings, eight historical proposals requiring critical verification, and four distinct medieval allegorical readings. The structure requires exact author/source URL and section locator per record; prospective 1962 text and biblical edition certification is marked incomplete on every record.
+
+The new research identifies three especially useful source conflicts for future formation:
+1. **Water and wine:** Cyprian's link between wine and Christ's Blood and between water and the faithful versus Guéranger's human/divine nature comparison. Both are attributed; neither silently replaces the other. [Cyprian letter to Caecilius](https://www.newadvent.org/fathers/050662.htm); [Guéranger Offertoire](https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/).
+2. **Supplices te rogamus:** Guéranger's literary image of the heavenly altar versus Aquinas's explicit denial that the consecrated species physically ascend to heaven. The artistic metaphor must never contradict theological explanation. [Aquinas ST III q.83 a.4 reply to objection 9](https://www.newadvent.org/summa/4083.htm).
+3. **The meaning of a gesture:** Durandus provides several alternative interpretations of the same three signs of the Cross and different ways to divide the Canon. These are evidence for *medieval exegetical diversity*, not a single ritual origin; Guéranger and Le Brun already warn against theatrical reconstruction. [Durandus IV chapter 36](https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_36), [Le Brun's preface](https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30).
+
+The direct text of Gihr has been located [in the 1902 Internet Archive OCR](https://archive.org/download/holysacrificeofm00gihriala/holysacrificeofm00gihriala_djvu.txt), and his edition's preface is inspectable. **However a stable full chapter-by-chapter text extraction and independent claim collation were not completed in this pass.** Likewise Le Brun's complete work and Jungmann are not yet claim-by-claim attested. Bibliographic availability is not called substantive certification.
+
+**Production status:** untouched; this is research on PR #1018 only. Run `node tests/mass-scripture-extraction-batch01.mjs` for referential/source-status invariants; GitHub review CI runs this research test ahead of phone regression.
