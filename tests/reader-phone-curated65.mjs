@@ -263,13 +263,26 @@ try{
           if(!node){observed.push({cueId,missing:true});continue;}
           const rect=node.getBoundingClientRect(),root=scroller.getBoundingClientRect();
           const center=rect.top-root.top+scroller.scrollTop+rect.height/2;
-          scroller.scrollTop=Math.max(0,center-scroller.clientHeight*.39);
-          scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
-          await nextFrame();
-          await nextFrame();
+          const maxScroll=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+          // The 39% focus rule deliberately ramps upward at the top of
+          // short cards. A single center-minus-39% scroll offset will be
+          // clamped to zero for the first replies. Search actual reachable
+          // finger-scroll offsets instead of asserting an impossible ideal.
+          const ideal=center-scroller.clientHeight*.39;
+          const start=Math.max(0,Math.floor(Math.min(ideal-100,center-150)/16)*16);
+          const stop=Math.min(maxScroll,Math.max(center+145,ideal+150));
+          const candidates=[0,maxScroll];
+          for(let y=start;y<=stop;y+=16)candidates.push(y);
+          let located=false;
+          for(const amount of [...new Set(candidates)]){
+            scroller.scrollTop=Math.max(0,Math.min(maxScroll,amount));
+            scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+            await nextFrame();
+            if(api.getActiveCue()===cueId){located=true;break;}
+          }
           const state=api.getCueState();
           observed.push({
-            cueId,focused:api.getActiveCue(),
+            cueId,focused:api.getActiveCue(),reachable:located,
             response:state?.response?.text??null,
             gesture:state?.gesture?.action??null,
             priestAction:state?.priestAction?.label??null,
@@ -290,6 +303,8 @@ try{
       for(const state of ritualFocus){
         assert.equal(state.missing,undefined,
           "No actual DOM cue paragraph for "+state.cueId);
+        assert.equal(state.reachable,true,
+          "User scroll cannot reach "+state.cueId+" in the LIVE 39% focus window");
         assert.equal(state.focused,state.cueId,
           "User scroll could not place "+state.cueId+" into exact LIVE cue focus");
         const expected=gate[state.cueId];
