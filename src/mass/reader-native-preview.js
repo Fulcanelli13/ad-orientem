@@ -6,6 +6,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
+import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
@@ -199,6 +200,7 @@ export function createCardTransitionTransientGuard(){
 
 export async function prepareNativeReaderPreview({
   prepared,
+  reviewCuratedCards=false,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
@@ -352,7 +354,18 @@ export async function prepareNativeReaderPreview({
     holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  const presentationModel=projectSourceFirst48Presentation(model);
+  // The 65-card visual acceptance is explicitly opt-in, ordinary Sung only.
+  // Every structural special rite, Low/Missal mode and unsupported overlay
+  // retains the certified existing production projection.
+  const curatedEligible=reviewCuratedCards===true &&
+    model.totalCards===39 &&
+    String(model.corpusFamily)==="SUNG" &&
+    String(model.presentationMode)==="LIVE" &&
+    !preceding.length && !following.length &&
+    (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
+  const presentationModel=curatedEligible
+    ? projectCuratedOrdinaryLiveCards(model)
+    : projectSourceFirst48Presentation(model);
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
   const cueState=createReaderFormCueStateController({
@@ -410,7 +423,7 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
+    prepared,curatedEligible,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -419,6 +432,7 @@ export async function prepareNativeReaderPreview({
 export async function mountNativeReaderPreview({
   doc=globalThis.document,
   prepared,
+  reviewCuratedCards=false,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
@@ -460,8 +474,10 @@ export async function mountNativeReaderPreview({
   if(!doc?.body || !doc?.createElement) throw new TypeError("Document/body required");
 
   // Validate everything before adding a single preview node.
+  const reviewEnabled=reviewCuratedCards===true ||
+    /(?:^|[?&])aoLiveCards=65(?:&|$)/.test(String(doc?.defaultView?.location?.search??""));
   const ready=await prepareNativeReaderPreview({
-    prepared,presentationData,loadPresentationData,eventData,loadEventData,
+    prepared,reviewCuratedCards:reviewEnabled,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
     candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
@@ -1559,7 +1575,9 @@ export async function mountNativeReaderPreview({
 
 
   function introitOnlyCard(){
-    const card=readerModel.cardBySequence(1);
+    // Curated Introit is a dedicated source block, not sequence 1.
+    const card=readerModel.cards.find(value=>
+      value.blocks?.some(block=>block.blockId==="AO.SM.B014"));
     if(!card)return null;
     const block=card.blocks?.find?.(value=>value.blockId==="AO.SM.B014");
     if(!block || block.firstParagraphIndex==null || !block.paragraphCount){
@@ -2199,6 +2217,7 @@ export async function mountNativeReaderPreview({
       prepared:ready.prepared,
       data:ready.data,
       mode:nextMode,
+      reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
     });
     sourceModel=rebuilt.sourceModel;
     readerModel=rebuilt.presentationModel;
