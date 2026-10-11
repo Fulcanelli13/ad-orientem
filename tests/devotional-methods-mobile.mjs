@@ -65,7 +65,15 @@ try{
   await page.locator("#aoPrayerBookRoot.open [data-ao-rosary-method-option='dominican']").evaluate(n=>n.click());
   assert.equal(await page.locator("#aoPrayerBookRoot.open .aoRosaryDominicanOpening p").count()>5,true);
   await page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first().evaluate(n=>n.click());
-  await page.waitForFunction(()=>window.AO_ROSARY_V381?.state?.()?.set==="joyful");
+  await page.waitForFunction(()=>window.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:4000}).catch(async error=>{
+   const evidence=await page.evaluate(()=>{
+    const a=window.AO_ROSARY_V381,r=document.querySelector("#aoPrayerBookRoot.open");
+    const before=a?.state?.(),choice=r?.querySelector(".aoRosaryMethods");
+    const direct=a?.selectSet?.("joyful",{skipOpening:true});
+    return {before,bridgePresent:typeof a?.selectSet==="function",methodControls:choice?.outerHTML.slice(0,900),
+      source:r?.querySelector(".pbShell")?.dataset.aoRosaryExactDonor,afterDirect:direct,after:a?.state?.()};
+   });throw new Error("Dominican set selection diagnostic "+JSON.stringify(evidence)+"; "+error);
+  });
   const state=await page.evaluate(()=>{
     const api=window.AO_ROSARY_V381,steps=api.steps();
     return {step:api.state().step,first:steps.findIndex(x=>x.kind==="mystery"&&x.mi===0)};
