@@ -1,0 +1,32 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const D=load("data/geography/research/mass-ember-passion-lesson-order-batch01-20261011.v1.json");
+const original=load("data/mass/scripture-segmented-proper.v1.json");
+const registries=[...load("data/mass/scripture-reading-witness-register.v1.json").celebrations,...load("data/mass/scripture-feast-reading-supplement.v1.json").celebrations];
+assert.equal(D.schema,"MASS_EXTENDED_1962_LESSON_SOURCE_ORDER_V1");
+assert.equal(D.status,"SOURCE_ORDER_RESEARCH_ONLY_NOT_FINAL_1962_LESSON_CERT");
+assert.equal(D.sourcePaths.length,6);
+assert.ok(D.sourcePaths.every(x=>registries.some(r=>r.sourcePath===x)));
+assert.equal(D.records.length,55);
+assert.equal(D.records.filter(x=>x.biblicalCitationNotes.length).length,46);
+assert.equal(D.exceptions.length,28);
+assert.ok(D.records.every(x=>D.sourcePaths.includes(x.sourcePath)));
+assert.ok(D.records.every(x=>x.sourceUrl.endsWith(x.sourcePath+".txt")&&x.sourceFileLine>0));
+assert.ok(D.records.every(x=>!x.acceptedAsAppReading&&!x.scriptureVerifiedAgainstBibleText&&!x.verifiedAgainst1962Missal));
+assert.ok(D.records.every(x=>x.nonBiblicalExclamationNotes.every(n=>!x.biblicalCitationNotes.includes(n))));
+for(const sp of D.sourcePaths){
+ const arr=D.records.filter(x=>x.sourcePath===sp);
+ assert.ok(arr.length>0);
+ assert.ok(arr.every((x,i)=>i===0||x.sourceSectionOrder>arr[i-1].sourceSectionOrder));
+}
+const palm=D.comparisonHolds.find(x=>x.code==="PALM_PASSION_SOURCE_SCOPE_CONFLICT");
+const existing=original.readings.find(x=>x.sourcePath==="Tempora/Quad6-0"&&x.slot==="GOSPEL");
+assert.ok(palm);
+assert.equal(palm.currentSegmentedReaderReference,existing.reference);
+assert.ok(palm.sourceNote.some(x=>x.includes("26:1-75")));
+assert.notEqual(palm.currentSegmentedReaderReference,palm.sourceNote[0],"do not silently merge incompatible source windows");
+assert.ok(D.records.some(x=>x.sourcePath==="Tempora/Quad6-0"&&x.nonBiblicalExclamationNotes.some(n=>n.includes("genuflectitur"))),"Passion kneel cue is a rubric, NOT a Bible citation");
+assert.ok(D.comparisonHolds.some(x=>x.code==="EMBER_MULTIPLE_LESSONS"));
+assert.ok(D.comparisonHolds.every(x=>x.status==="NOT_RECONCILED"));
+console.log("PASS source-order Ember/Passion: 6 source files, 55 source sections, 46 annotated, 28 holds, Palm Gospel verse scope disagreement protected");
