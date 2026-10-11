@@ -638,8 +638,9 @@ try{
   await assertNoMass("Learn -> Pray");
   await assertFocusSafe("Learn -> Pray");
 
-  // Calendar remains directly routable, but its visible user journey is
-  // Formation -> Today -> Full Calendar rather than a sixth ribbon slot.
+  // Calendar is now embedded in Today (PR #1023), not a standalone
+  // sixth app destination. Use the exact Month control, not the nine
+  // context-specific buttons sharing data-home-calendar.
   await openLearn();
   await page.locator("[data-ao-app-surface='home']").tap();
   await page.waitForFunction(()=>
@@ -647,15 +648,19 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await page.locator("[data-home-calendar]").tap();
-  await page.waitForFunction(()=>
-    globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
-    globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&
-    !document.getElementById("ao-learn-modular-root"),
-    null,{timeout:10000}
-  );
-  await assertNoMass("Learn -> Today -> Calendar");
-  await assertFocusSafe("Learn -> Today -> Calendar");
+  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').tap();
+  await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
+    {state:"visible",timeout:15000});
+  assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
+    "Formation -> Today -> Month must open the canonical Calendar body");
+  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"home",
+    "Embedded Calendar must preserve Today as the app surface");
+  await assertNoMass("Learn -> Today -> Month");
+  await assertFocusSafe("Learn -> Today -> Month");
+  await page.locator("[data-home-calendar-today]").tap();
+  await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
+  assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,
+    "Return from Month must restore Today without an orphaned Calendar");
 
   await openLearn();
   // Settings is a contextual app overlay, not the sixth global ribbon tab.
