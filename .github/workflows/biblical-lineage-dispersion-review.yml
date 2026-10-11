@@ -7,6 +7,9 @@ on:
       - "data/geography/research/biblical-atlas-151-181-crosswalk-20261011.v1.json"
       - "data/geography/research/mass-scripture-source-extractions-20261011.v1.json"
       - "data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json"
+      - "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json"
+      - "docs/research/MASS-ALPHONSUS-DUJARDIN-TWO-JOURNEYS-20261011.md"
+      - "tests/mass-alphonsus-xiii-two-journeys.mjs"
       - "docs/research/MASS-SCRIPTURE-FORTESCUE-PRIMARY-EXTRACTION-20261011.md"
       - "tests/mass-scripture-fortescue-order-extract.mjs"
       - "data/geography/research/mass-scripture-primary-controls-batch02-20261011.v1.json"
@@ -40,6 +43,8 @@ jobs:
         run: node tests/mass-scripture-historical-iconography-batch02.mjs
       - name: Validate Fortescue 1914 evidence and existing learn.mass ownership
         run: node tests/mass-scripture-fortescue-order-extract.mjs
+      - name: Validate St Alphonsus volume and meditative/Scripture ownership
+        run: node tests/mass-alphonsus-xiii-two-journeys.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
