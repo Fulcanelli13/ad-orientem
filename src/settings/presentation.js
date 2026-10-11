@@ -1,3 +1,4 @@
+import { navigationActionAttrs, navigationActionIcon } from "../app/interface-grammar.js";
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { DEFAULT_PREFERENCES } from "./donor-state.js";
 
@@ -57,7 +58,7 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   const icon=(id,cls="aoSetInlineIcon")=>{const u=resolveCanonicalAssetUrl(id);return u?`<span class="${cls}" aria-hidden="true" data-ao-asset-id="${id}" style="-webkit-mask:url('${esc(u)}') center/contain no-repeat;mask:url('${esc(u)}') center/contain no-repeat"></span>`:"";};
   const path=(obj,key)=>String(key).split(".").reduce((v,k)=>v?.[k],obj);
-  const header=(title,landing=false)=>`<header class="aoSetTop">${landing?`<span></span>`:`<button type="button" data-settings-back aria-label="${esc(L("Back","Retour"))}">${icon("ao-ui-back","aoSetTopIcon")}</button>`}<div class="aoSetTitle"><small>${esc(L("SETTINGS","RÉGLAGES"))}</small><strong>${esc(title)}</strong></div><button type="button" data-settings-close aria-label="${esc(L("Close","Fermer"))}">${icon("ao-ui-close","aoSetTopIcon")}</button></header>`;
+  const header=(title,landing=false)=>`<header class="aoSetTop aoAppHeader">${landing?`<span></span>`:`<button type="button" data-settings-back ${navigationActionAttrs("back",vm.language)}>${navigationActionIcon("back")}</button>`}<div class="aoSetTitle"><small>${esc(L("SETTINGS","RÉGLAGES"))}</small><strong>${esc(title)}</strong></div><button type="button" data-settings-close ${navigationActionAttrs("close",vm.language)}>${navigationActionIcon("close")}</button></header>`;
   const section=(title,body)=>`<section class="aoSetSection"><h2>${esc(title)}</h2><div class="aoSetGroup">${body}</div></section>`;
   const row=(title,sub,end="",attrs="")=>`<button type="button" class="aoSetRow" ${attrs}><span class="aoSetRowText"><b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:""}</span><span class="aoSetRowEnd">${end}</span></button>`;
   const routeRow=(title,sub,r)=>row(title,sub,icon("ao-ui-next"),`data-settings-route="${esc(r)}"`);
