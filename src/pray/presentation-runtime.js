@@ -10,6 +10,7 @@ import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleRespon
 import { rosaryGuideSections } from "./rosary-guide-data.js";
 import {divineMercySteps,mercyStepInfo,MERCY_GUIDE,DEVOTIONAL_METHOD_SOURCES,ROSARY_METHODS,DOMINICAN_OPENING,MONTFORT_GRACES,FIFTEEN_CYCLE,nextFullRosarySet,lastDecadeBoundary,firstMysteryIndex} from "./devotional-methods.js";
 import {renderMercyReader} from "./mercy-reader.js";
+import {paintRosaryMethods} from "./rosary-methods-ui.js";
 import "./devotional-method-styles.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
@@ -993,14 +994,63 @@ function ensureRosaryGuide(r){
  rosaryGuideOpen=guide.open===true;
  return guide;
 }
+/**
+ * All method actions delegate to the v3.4.14 canonical Rosary bead owner.
+ * This listener is installed before the donor's stopImmediatePropagation handler.
+ */
+let rosaryMethodsCaptureBound=false;
+function bindRosaryMethodControls(){
+ if(rosaryMethodsCaptureBound)return true;
+ window.addEventListener("click",e=>{
+  const button=e.target?.closest?.("button"),root=button?.closest?.("#aoPrayerBookRoot.open");
+  if(!button||!root||!root.querySelector(".pbShell"))return;
+  const method=button.dataset.aoRosaryMethodOption,length=button.dataset.aoRosaryLengthOption;
+  if(method){
+   if(!ROSARY_METHODS.some(m=>m.id===method&&m.enabled))return;
+   e.preventDefault();e.stopImmediatePropagation();
+   ROSARY_METHOD.method=method;ROSARY_METHOD.fullActive=false;
+   paintRosaryMethods({root,info:rosaryLiveInfo(),choice:ROSARY_METHOD,language:lang(),corpus:DATA.prayers});
+   return;
+  }
+  if(length){
+   const n=Number(length);if(n!==5&&n!==15)return;
+   e.preventDefault();e.stopImmediatePropagation();
+   ROSARY_METHOD.length=n;ROSARY_METHOD.fullActive=false;
+   paintRosaryMethods({root,info:rosaryLiveInfo(),choice:ROSARY_METHOD,language:lang(),corpus:DATA.prayers});
+   return;
+  }
+  const next=button.dataset.aoRosaryContinue;
+  if(next&&nextFullRosarySet(window.AO_ROSARY_V381?.state?.()?.set)===next&&ROSARY_METHOD.fullActive){
+   e.preventDefault();e.stopImmediatePropagation();
+   if(window.AO_ROSARY_V381?.selectSet?.(next,{skipOpening:true})!==false){
+    decorateRosary();setTimeout(decorateRosary,0);
+   }
+   return;
+  }
+  const chosen=button.dataset.pbRosarySet;
+  if(!chosen||!["joyful","sorrowful","glorious","luminous"].includes(chosen))return;
+  if(ROSARY_METHOD.length===15||ROSARY_METHOD.method==="dominican"){
+   const set=ROSARY_METHOD.length===15?"joyful":chosen;
+   e.preventDefault();e.stopImmediatePropagation();
+   if(window.AO_ROSARY_V381?.selectSet?.(set,{skipOpening:ROSARY_METHOD.method==="dominican"})!==false){
+    ROSARY_METHOD.fullActive=ROSARY_METHOD.length===15;
+    decorateRosary();setTimeout(decorateRosary,0);
+   }
+  }else ROSARY_METHOD.fullActive=false;
+ },true);
+ rosaryMethodsCaptureBound=true;return true;
+}
+
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  r.querySelectorAll('.flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true')});
+ bindRosaryMethodControls();
  r.classList.toggle('aoP435930RosarySimple',S.rosary.mode==='simple');r.classList.toggle('aoP435930RosaryGuided',S.rosary.mode==='guided');
  let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';bar.setAttribute('aria-label',L('Rosary reading depth','Profondeur du Rosaire'));const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
  if(bar)bar.innerHTML=`<button type="button" data-p435930-rosary-depth="simple" class="${S.rosary.mode==='simple'?'active':''}" aria-pressed="${S.rosary.mode==='simple'}">${esc(L('Simple','Simple'))}</button><button type="button" data-p435930-rosary-depth="guided" class="${S.rosary.mode==='guided'?'active':''}" aria-pressed="${S.rosary.mode==='guided'}">${esc(L('Guided','Guidé'))}</button>`;
  if(S.rosary.mode==='guided'&&!r.querySelector('.aoP435930SilencePrompt')){const target=r.querySelector('.lab-contemplation');if(target){const n=document.createElement('div');n.className='aoP435930SilencePrompt';n.textContent=L('Silence · remain with the mystery before moving on.','Silence · demeurez avec le mystère avant de poursuivre.');target.appendChild(n)}}
  decorateRosaryExact(r);
+ paintRosaryMethods({root:r,info:rosaryLiveInfo(),choice:ROSARY_METHOD,language:lang(),corpus:DATA.prayers});
  ensureRosaryGuide(r);
  declutterRosaryDonor(r);
 }
