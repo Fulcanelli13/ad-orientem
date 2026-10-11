@@ -735,6 +735,15 @@ button.ao-schola-control{cursor:pointer}
     var(--ao-short-cue-tail,0px) + max(12px,env(safe-area-inset-bottom)))
 }
 
+/* Dynamic Schola dock is independent of the reader. Reserve an
+   actually shorter scrolling viewport while its separate panel is open;
+   padding alone does not constrain the scroller's outer rectangle. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-schola-visible="true"] .ao-prayer-card{
+  height:calc(100% - var(--ao-schola-reserve) - max(12px,env(safe-area-inset-bottom)))
+}
+
+
 `;
 
 function esc(value){
