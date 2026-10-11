@@ -72,10 +72,10 @@ assert.equal(journey[14].isFinal,true);
 assert.equal(rosaryJourneyAt(journey,-1),null);
 assert.equal(rosaryJourneyAt(journey,15),null);
 assert.equal(rosaryJourney({decades:5,set:"glorious"}).length,5);
-assert.equal(ROSARY_METHODS.dominican.status,"opening-source-verified");
-assert.equal(ROSARY_METHODS.montfort.status,"original-french-source-located");
-assert.equal(rosaryPlan({method:"montfort"}).readyForLive,false);
-assert.equal(rosaryPlan({method:"dominican"}).readyForLive,false);
+assert.equal(ROSARY_METHODS.dominican.status,"canonical-active");
+assert.equal(ROSARY_METHODS.montfort.status,"adapted-active");
+assert.equal(rosaryPlan({method:"montfort"}).readyForLive,true);
+assert.equal(rosaryPlan({method:"dominican"}).readyForLive,true);
 assert.equal(rosaryPlan({method:"ordinary"}).readyForLive,true);
 assert.equal(Object.keys(ROSARY_METHODS).length,5);
 assert.throws(()=>rosaryPlan({decades:10}));
@@ -88,9 +88,46 @@ assert.match(runtime,/launchRosaryPlayer/,"Original Rosary must retain donor");
 for(const marker of ["data-p435930-rosary-fifteen","function launchFifteenRosary()","ROSARY_FIFTEEN.active","api.setMysterySet?.(set)","nextSteps.findIndex","nextSteps.findLastIndex"]){
  assert.ok(runtime.includes(marker),"Missing live fifteen-decade transition: "+marker);
 }
-assert.match(runtime,/ROSARY_FIFTEEN\.active=false;return open\('pray\.rosary'/,"The canonical five-decade launch must remain separate");
+assert.match(runtime,/launchTraditionalRosaryMethod\('ordinary'\)/,"The canonical five-decade launch must remain separate");
 const donorBundle=readFileSync("ao-packed-04392ad5e156c05227d9.js","utf8");
 assert.match(donorBundle,/setMysterySet:\(set,\{step=0\}=\{\}\)=>/,"Canonical runtime must expose in-place mystery-set switching");
 assert.match(donorBundle,/\['joyful','sorrowful','glorious'\]\.includes\(set\)/,"Reject nontraditional sets in 15-decade API");
 assert.match(donorBundle,/S\.rosarySet=set;[\s\S]{0,100}labRosarySteps\(set\)/,"Reuse canonical Rosary data and render path");
+
+for(const marker of ["data-p435930-rosary-method-launch","function launchTraditionalRosaryMethod(method)","api.setMethod(method)"]){
+ assert.ok(runtime.includes(marker),"Method picker not integrated: "+marker);
+}
+assert.match(donorBundle,/setMethod:\(method\)=>/,"Method setting must be owned by the canonical donor");
+const extracted=donorBundle.match(/function labRosarySteps\(set\)\{([\s\S]*?)\n\}\nfunction labRosaryDevotionalStep/);
+assert.ok(extracted,"Canonical step builder must remain extractable");
+const compileSteps=new Function("S","labRosaryIds","AO_ROSARY_DEPTH","AO_MONTFORT_FRUITS",
+ "return function labRosarySteps(set){"+extracted[1]+"\n}");
+const mockIds=set=>Array.from({length:5},(_,i)=>({joyful:"joy",sorrowful:"sor",glorious:"glo"})[set]+(i+1));
+const expectedIds=["joy","sor","glo"].flatMap(prefix=>Array.from({length:5},(_,i)=>prefix+(i+1)));
+for(const id of expectedIds)assert.ok(donorBundle.includes(id+":["),"Missing Montfort mystery fruit "+id);
+const fruits=Object.fromEntries(expectedIds.map(id=>[id,["grâce","grace"]]));
+const build=method=>compileSteps({rosaryMethod:method,rosaryForm:"standard",rosaryFatima:true},
+ mockIds,{},fruits)("joyful");
+const normal=build("ordinary"),dom=build("dominican"),mont=build("montfort");
+assert.equal(normal.length,78,"Unchanged normal five-decade reader");
+assert.deepEqual(normal.slice(0,3).map(x=>x.key),["sign","credo","pater"]);
+assert.equal(normal.at(-1).kind,"conclusion");
+assert.equal(dom.length,74,"Dominican opening and conclusion replace, not repeat, standard prayers");
+assert.deepEqual(dom.slice(0,4).map(x=>x.kind),["prayer","dominican-opening","prayer","mystery"]);
+assert.equal(dom.at(-1).kind,"dominican-conclusion");
+assert.equal(dom.filter(x=>x.key==="credo").length,0);
+assert.equal(dom.filter(x=>x.key==="ave").length,50);
+assert.equal(mont.length,89,"Montfort opening plus offering and fruit petition per decade");
+assert.equal(mont.filter(x=>x.kind==="montfort-opening").length,1);
+assert.equal(mont.filter(x=>x.kind==="montfort-offering").length,5);
+assert.equal(mont.filter(x=>x.kind==="montfort-fruit").length,5);
+assert.equal(mont.filter(x=>x.key==="ave"&&x.bead>0).length,50);
+for(const set of ["joyful","sorrowful","glorious"]){
+ const steps=compileSteps({rosaryMethod:"montfort",rosaryForm:"standard",rosaryFatima:true},mockIds,{},fruits)(set);
+ assert.equal(steps.filter(x=>x.kind==="montfort-offering").length,5);
+ assert.equal(steps.filter(x=>x.kind==="montfort-fruit").length,5);
+}
+assert.ok(donorBundle.indexOf("rosary-dom-collect")<donorBundle.indexOf("rosary-dom-assistance"),"Dominican closing order");
+assert.match(donorBundle,/AO_ROSARY_METHOD_SOURCE\.montfort/,"Original French source link must be retained");
+
 console.log("PASS Divine Mercy 62 canonical prayers, optional 63rd, full 15 mystery Rosary plan, source-gated method selection");
