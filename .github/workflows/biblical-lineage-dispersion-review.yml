@@ -5,6 +5,10 @@ on:
       - "data/geography/research/biblical-curated-lineage-dispersion-20261011.v1.json"
       - "data/geography/research/biblical-atlas-lineage-chronology-bridge-20261011.v1.json"
       - "data/geography/research/biblical-atlas-151-181-crosswalk-20261011.v1.json"
+      - "data/geography/research/mass-scripture-source-extractions-20261011.v1.json"
+      - "docs/research/MASS-SCRIPTURE-SOURCES-LITERATURE-CENSUS-20261011.md"
+      - "docs/research/MASS-SCRIPTURE-CRITICAL-EXTRACTION-BATCH01-20261011.md"
+      - "tests/mass-scripture-extraction-batch01.mjs"
       - "reviews/biblical-lineage-apostolic-dispersion-cinematic-20261011.html"
       - "tests/biblical-lineage-dispersion-pilot.mjs"
       - ".github/workflows/biblical-lineage-dispersion-review.yml"
@@ -20,6 +24,8 @@ jobs:
         with: {node-version: 22}
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Validate Mass–Scripture critical research source ownership
+        run: node tests/mass-scripture-extraction-batch01.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
