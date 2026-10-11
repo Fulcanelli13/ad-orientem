@@ -131,9 +131,27 @@ try{
         const actual=api.getCurrentCard();
         const shell=document.querySelector('[data-ao-reader-shell]');
         const progress=document.querySelector('[data-role="progress"]')?.textContent?.trim();
-        const rows=document.querySelectorAll('.ao-reader-paragraph').length;
+        const domRows=[...document.querySelectorAll('.ao-reader-paragraph')];
+        const rows=domRows.length;
         if(actual?.sectionId!==card.sectionId)defects.push("wrong card "+card.title);
         if(!rows && card.paragraphs.length)defects.push("blank rendered card "+card.title);
+        // Every canonical spoken/prayed paragraph must be independently
+        // focusable even when one intonation owns two source workbook cues.
+        // An untagged row silently disables gestures, responses and voice.
+        for(const paragraph of card.paragraphs){
+          const cueIds=(paragraph.sourceCueIds??[]).filter(id=>/^AO\.SM\.C\d{4}$/.test(id));
+          if(!cueIds.length)continue;
+          const dom=domRows.find(el=>el.dataset.sourceCueIds?.split(" ").includes(cueIds[0]));
+          if(!dom){defects.push("missing cue DOM row "+cueIds[0]+" in "+card.title);continue}
+          const allowedComposite=(cueIds.join("|")==="AO.SM.C0053|AO.SM.C0054" ||
+            cueIds.join("|")==="AO.SM.C0089|AO.SM.C0090");
+          if(cueIds.length===1 || allowedComposite){
+            if(dom.dataset.cueId!==cueIds[0])
+              defects.push("missing exact focus owner "+cueIds[0]+" in "+card.title);
+          }else if(!dom.dataset.cueId){
+            defects.push("unowned multi-cue paragraph "+cueIds.join(",")+" in "+card.title);
+          }
+        }
         if(shell && shell.scrollWidth>shell.clientWidth+3)defects.push("overflow "+card.title);
         if(!/^[0-9]+ \/ [0-9]+$/.test(progress??""))defects.push("invalid progress "+card.title+": "+progress);
         visited.push({title:card.title,progress,sequence:card.sequence});
