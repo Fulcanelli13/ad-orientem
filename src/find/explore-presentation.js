@@ -115,19 +115,49 @@ function placeSheet(vm){
   // Chapter shortcuts scroll this Place sheet, never leave the application.
   const preferredCategory=arr(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
   const synopsis=sacredPlaceSynopsis(profile,{maxLength:750,language:vm.language,preferredCategory});
+  // A relic-only or apparition-only map selection must not silently inherit
+  // a different Shrine account simply because the physical Place is shared.
+  const storyKindForFilter={shrines:"ORIGIN",pilgrimages:"PILGRIMAGE",
+    apparitions:"APPARITION",relics:"RELIC",traditions:"TRADITION"};
+  const restricted=vm.lens==="heritage"&&arr(vm.filters?.heritageCategories).length===1
+    ?arr(vm.filters.heritageCategories)[0]:null;
+  const chapters=restricted&&storyKindForFilter[restricted]
+    ?arr(profile.story_chapters).filter(row=>row.kind===storyKindForFilter[restricted])
+    :arr(profile.story_chapters);
   const hasNovenas=arr(profile.novenas).length>0;
+  const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
   const hasSources=arr(profile.sources).some(source=>source?.url);
   if(profile.editorial_feature){
     html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
-    if(synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
+    if(chapters.length||synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
     if(hasNovenas)html+='<button type="button" data-explore-place-jump="pray">'+esc(L(vm.language,"Pray","Prier"))+'</button>';
+    if(hasCalendar)html+='<button type="button" data-explore-place-jump="calendar">'+esc(L(vm.language,"Calendar","Calendrier"))+'</button>';
     if(profile.directions_url)html+='<button type="button" data-explore-place-jump="visit">'+esc(L(vm.language,"Visit","Visiter"))+'</button>';
     if(hasSources)html+='<button type="button" data-explore-place-jump="sources">'+esc(L(vm.language,"Sources","Sources"))+'</button>';
     html+='</nav>';
   }
-  if(synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  if(chapters.length){
+    const KIND_LABELS={
+      ORIGIN:["The sanctuary","Le sanctuaire"],
+      PILGRIMAGE:["Pilgrimage","Pèlerinage"],
+      APPARITION:["Apparition account","Récit d’apparition"],
+      RELIC:["Relics and custody","Reliques et conservation"],
+      TRADITION:["Devotional practice","Pratique dévotionnelle"],
+    };
+    html+='<section class="aoExplorePlaceOpening aoExploreSourcedStory" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small>';
+    for(const [index,chapter] of chapters.entries()){
+      const caption=KIND_LABELS[chapter.kind]??["Record","Fiche"];
+      const narrative=vm.language==="fr"?chapter.body_fr:chapter.body_en;
+      html+='<article class="aoExploreStoryChapter" data-story-kind="'+esc(chapter.kind)+'">'
+        +'<h3>'+esc(L(vm.language,...caption))+(chapter.kind==="PILGRIMAGE"&&chapters.filter(row=>row.kind==="PILGRIMAGE").length>1?' · '+String(chapters.slice(0,index+1).filter(row=>row.kind==="PILGRIMAGE").length):"")+'</h3>'
+        +'<p>'+esc(narrative)+'</p><div class="aoExploreStoryEvidence" aria-label="'+esc(L(vm.language,"Sources for this paragraph","Sources de ce paragraphe"))+'">';
+      for(const source of arr(chapter.sources))html+='<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(source.title)+'">'+esc(source.issuer||source.title||L(vm.language,"Original source","Source originale"))+' <span aria-hidden="true">↗</span></a>';
+      html+='</div></article>';
+    }
+    html+='</section>';
+  }else if(synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
   if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
-  if(!synopsis)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
+  if(!chapters.length&&!synopsis)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
 
   if(arr(profile.related_places).length){
     html+='<section class="aoExplorePlaceGroup" data-explore-related-places><small>'+esc(L(vm.language,"RELATED PLACES","LIEUX ASSOCIÉS"))+'</small><div class="aoExplorePlaceRows">';
@@ -150,13 +180,16 @@ function placeSheet(vm){
     html+='<section class="aoExplorePlaceGroup" data-explore-place-chapter="pray"><small>'+esc(L(vm.language,"RELATED NOVENAS & DEVOTIONS","NEUVAINES ET DÉVOTIONS ASSOCIÉES"))+'</small>';
     for(const novena of profile.novenas){
       const name=vm.language==="fr"?novena.title_fr:novena.title_en;
-      html+='<article><div><strong>'+esc(name)+'</strong>'+(arr(novena.notes).length?'<p>'+esc(novena.notes.join(" "))+'</p>':"")+'</div><button type="button" data-explore-open-novena="'+esc(novena.id)+'">'+esc(L(vm.language,"Pray novena","Prier la neuvaine"))+'</button></article>';
+      html+='<article><div><strong>'+esc(name)+'</strong>';
+      const association=arr(novena.sources).find(source=>/^https:\/\/[^\s]+$/i.test(source?.url||""));
+      if(association)html+='<p class="aoExploreNovenaEvidence"><a href="'+esc(association.url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Devotional association — source","Lien dévotionnel — source"))+' ↗</a></p>';
+      html+='</div><button type="button" data-explore-open-novena="'+esc(novena.id)+'">'+esc(L(vm.language,"Pray novena","Prier la neuvaine"))+'</button></article>';
     }
     html+='</section>';
   }
 
   if(arr(profile.calendar).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"CALENDAR","CALENDRIER"))+'</small>';
+    html+='<section class="aoExplorePlaceGroup" data-explore-place-chapter="calendar"><small>'+esc(L(vm.language,"DATED OBSERVANCES","CÉLÉBRATIONS DATÉES"))+'</small>';
     for(const event of profile.calendar){
       html+='<article><strong>'+esc(event.title)+'</strong>'+(event.date_label?'<button type="button" data-explore-calendar-date="'+esc(event.date)+'">'+esc(event.date_label)+' →</button>':'<span>'+esc(L(vm.language,"Seasonal / local schedule","Saison / calendrier local"))+'</span>')+'</article>';
     }
@@ -164,7 +197,7 @@ function placeSheet(vm){
   }
 
   if(arr(profile.seasonal_pilgrimages).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"SEASONAL / VARIABLE PILGRIMAGE DATES","PÈLERINAGES SAISONNIERS / DATES VARIABLES"))+'</small>';
+    html+='<section class="aoExplorePlaceGroup"'+(arr(profile.calendar).length?'':' data-explore-place-chapter="calendar"')+'><small>'+esc(L(vm.language,"SEASONAL / VARIABLE PILGRIMAGE DATES","PÈLERINAGES SAISONNIERS / DATES VARIABLES"))+'</small>';
     for(const row of profile.seasonal_pilgrimages){
       html+='<article><strong>'+esc(row.title)+'</strong><span>'+esc(L(vm.language,"Check local programme","Voir le programme local"))+'</span></article>';
     }
