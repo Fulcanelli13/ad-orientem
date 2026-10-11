@@ -8,6 +8,7 @@ on:
       - "data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json"
       - "data/mass/alphonsus-fortescue-semantic-reconciliation-remaining97.v1.json"
       - "tests/ritus-1962-*.mjs"
+      - "tests/mass-ceremonial-cue-owner-reconciliation13.mjs"
       - "tests/mass-book-only-evidence-v1.mjs"
       - "tests/mass-two-books-source-evidence-batch02.mjs"
       - "tests/mass-two-books-form-differences-adjudication.mjs"
@@ -18,6 +19,7 @@ on:
     paths:
       - "data/mass/ritus-1962-*.json"
       - "tests/ritus-1962-*.mjs"
+      - "tests/mass-ceremonial-cue-owner-reconciliation13.mjs"
   workflow_dispatch:
 
 permissions:
@@ -48,3 +50,5 @@ jobs:
         run: node tests/mass-two-books-form-differences-adjudication.mjs
       - name: Certify semantic audit coverage for 97 remaining historic action records
         run: node tests/mass-two-books-semantic-remaining97.mjs
+      - name: Guard 13 ceremonial actor and cue owner reconciliations
+        run: node tests/mass-ceremonial-cue-owner-reconciliation13.mjs
