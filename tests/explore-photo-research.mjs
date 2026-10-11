@@ -9,7 +9,25 @@ const approved=read("data/geography/approved-place-media.v1.json");
 assert.equal(research.schema,"AO_EXPLORE_PLACE_MEDIA_RESEARCH_V1");
 assert.equal(curated.schema,"AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1");
 assert.equal(approved.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(approved.items.length,0,"Research may not publish unreviewed site images");
+assert.equal(approved.items.length,10,"Exactly ten screened site photographs are in the first publishable batch");
+const approvedIds=new Set();
+for(const item of approved.items){
+  assert.ok(!approvedIds.has(item.place_id));approvedIds.add(item.place_id);
+  assert.equal(item.status,"APPROVED");
+  assert.ok(item.rights_verified&&item.subject_verified&&item.crop_reviewed);
+  assert.match(item.asset_path,/^assets\\/approved\\/place-media\\/[a-zA-Z0-9_.-]+\\.webp$/);
+  assert.equal(item.license,"CC-BY-SA-4.0");
+  assert.equal(item.license_url,"https://creativecommons.org/licenses/by-sa/4.0/");
+  assert.ok(item.source_sha1&&item.derivative_sha256);
+  assert.ok(item.changes_en&&item.changes_fr&&item.alt_en&&item.alt_fr);
+  assert.ok(Number(item.width)>=640&&Number(item.height)>=480);
+  assert.equal(item.orientation,item.height>item.width?"portrait":"landscape");
+  const related=research.candidates.find(row=>row.place_id===item.place_id);
+  assert.equal(item.source_url,related?.source_page_url,"Approved image must match original Commons source identity");
+}
+for(const held of research.held){
+ assert.equal(approvedIds.has(held.place_id),false,"Older-licensed or identity-held photo cannot publish");
+}
 assert.equal(research.candidates.length,18);
 assert.equal(research.held.length,2);
 
