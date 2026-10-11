@@ -6,10 +6,12 @@ on:
       - "data/mass/ritus-1962-*.json"
       - "data/mass/alphonsus-fortescue-direct-book-evidence*.json"
       - "data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json"
+      - "data/mass/alphonsus-fortescue-semantic-reconciliation-remaining97.v1.json"
       - "tests/ritus-1962-*.mjs"
       - "tests/mass-book-only-evidence-v1.mjs"
       - "tests/mass-two-books-source-evidence-batch02.mjs"
       - "tests/mass-two-books-form-differences-adjudication.mjs"
+      - "tests/mass-two-books-semantic-remaining97.mjs"
       - ".github/workflows/ritus-1962-ceremonial-research.yml"
   push:
     branches: [main]
@@ -44,3 +46,5 @@ jobs:
         run: node tests/mass-two-books-source-evidence-batch02.mjs
       - name: Audit all 16 Low/Sung action differences against sourced books and form ownership
         run: node tests/mass-two-books-form-differences-adjudication.mjs
+      - name: Certify semantic audit coverage for 97 remaining historic action records
+        run: node tests/mass-two-books-semantic-remaining97.mjs
