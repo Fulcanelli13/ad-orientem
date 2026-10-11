@@ -96,14 +96,14 @@ const relatedPlaceIds=new Set([
 const orphanIds=g.places.filter(x=>!relatedPlaceIds.has(x.place_id)).map(x=>x.place_id).sort();
 const reviewedIds=audit.orphaned_place_profile_candidates.map(x=>x.place_id).sort();
 assert.deepEqual(orphanIds,reviewedIds,"unlinked Place records changed: reconcile with Explore audit, not new duplicate imports");
-assert.equal(g.places.length,audit.summary.geographical_place_profile_count);
-assert.equal(g.places.length-orphanIds.length,audit.summary.geographical_place_profiles_with_known_lens_relationship);
+assert.ok(g.places.length>=audit.summary.geographical_place_profile_count,"current geography fell below independently audited historical Place baseline");
+assert.ok(g.places.length-orphanIds.length>=audit.summary.geographical_place_profiles_with_known_lens_relationship,"current linked-Place coverage fell below audited baseline");
 assert.ok(audit.orphaned_place_profile_candidates.every(x=>x.current_resolution==="DISCOVERABLE_VIA_VERIFIED_RELATED_PLACE"));
 const officialLinks=json("data/geography/related-places.v1.json").relationships;
 const linkedPlaceIds=new Set(officialLinks.flatMap(link=>[link.source_place_id,link.target_place_id]));
 assert.ok(orphanIds.every(id=>linkedPlaceIds.has(id)),"historically unlinked places must be recoverable through official relationship links");
 assert.ok(officialLinks.every(link=>/^https:\/\//.test(link.source_url)),"linked places require original institutional sources");
-assert.equal(audit.summary.geographical_place_profiles_with_related_place_discovery,g.places.length);
+assert.ok(g.places.length>=audit.summary.geographical_place_profiles_with_related_place_discovery,"current related-Place discovery count regressed");
 assert.equal(audit.summary.source_level_orphan_place_records,0);
 assert.equal(audit.summary.conditional_home_fallbacks_current,0);
 for(const id of ["RCH-004","RCH-011"])

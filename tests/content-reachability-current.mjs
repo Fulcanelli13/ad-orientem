@@ -36,11 +36,12 @@ assert.ok(first>=0&&last>first,"Canonical Prayer family projection moved");
 const familySource=pray.slice(first,last);
 const published=[...familySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
 const external=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
-assert.equal(published.length,23,"Prayer family cards drifted from the approved five families plus Tenebrae");
+assert.equal(published.length,24,"Prayer families should retain the approved baseline and add Divine Mercy");
+assert.ok(published.includes("pray.divine_mercy"),"Divine Mercy must have a discoverable native Prayer-family card");
 assert.ok(published.includes("pray.tenebrae"),"Seasonal Tenebrae must remain in the Passion family");
 assert.equal(external.length,10,"External Prayer card count drifted");
 assert.ok(familySource.includes("direct:'pray.library'"),"Prayer Library direct family door missing");
-const actual=[...published.filter(id=>id!=="pray.tenebrae"),"pray.library"].sort();
+const actual=[...published.filter(id=>id!=="pray.tenebrae"&&id!=="pray.divine_mercy"),"pray.library"].sort();
 const prior=previous.routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).sort();
 assert.deepEqual(actual,prior,"Existing 23 audited Prayer family entries must remain unaltered by Tenebrae");
 const lazy=read("src/pray/lazy-module-registry.js");
@@ -54,4 +55,4 @@ assert.equal(new Set(EXPLORE_LENSES).size,6);
 for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
   assert.ok(EXPLORE_LENSES.includes(lens),"Explore missing published lens "+lens);
 }
-console.log("PASS current app reachability contract: five tabs, three utility routes, 15 Formation cards, 24 Prayer family entries including Tenebrae (10 lazy) and six Explore lenses");
+console.log("PASS current app reachability contract: five tabs, three utility routes, 15 Formation cards, 25 Prayer family entries including Tenebrae and Divine Mercy (10 lazy) and six Explore lenses");
