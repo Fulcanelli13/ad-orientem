@@ -5,6 +5,8 @@ const G=JSON.parse(readFileSync("data/geography/seed-registry.v1.json","utf8"));
 // Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
 const publishedAfterFreeze=new Set(JSON.parse(readFileSync("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json","utf8")).promoted.map(p=>p.place_id));
 for(const p of JSON.parse(readFileSync("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json","utf8")).promoted)publishedAfterFreeze.add(p.place_id);
+// Post-freeze Ireland R65 promotions must not rewrite this 10 October research snapshot.
+for(const c of JSON.parse(readFileSync("data/shrines/illustrated-place-guides-ireland.v1.json","utf8")).candidates??[])if(c.published_place_id)publishedAfterFreeze.add(c.published_place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const oldPlaces=new Map(historicalPlaces.map(x=>[x.place_id,x]));
 const names=new Set(R.place_candidates.map(x=>x.lead_id));
