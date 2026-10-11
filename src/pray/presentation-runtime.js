@@ -731,7 +731,9 @@ function bindRosaryDonorBack(root){
 }
 function syncRosaryPrefs(raw=S.rosary){
  const prefs=normalizeRosaryPrefs(raw);
- try{window.AO_ROSARY_V381?.setForm?.(prefs.form)}catch{}
+ // v41 setForm resets the canonical step to zero even when the form is unchanged.
+ // Only change form on a genuine preference transition; never erase a mystery jump.
+ try{if(window.AO_ROSARY_V381?.getForm?.()!==prefs.form)window.AO_ROSARY_V381?.setForm?.(prefs.form)}catch{}
  try{localStorage.setItem('ao-prayer-recitation-mode',prefs.recitation)}catch{}
  try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(prefs.recitation)}catch{}
  return prefs
