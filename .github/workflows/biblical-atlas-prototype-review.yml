@@ -5,6 +5,8 @@ on:
       - "reviews/biblical-atlas-cinematic-prototype-20261011.html"
       - "docs/biblical-atlas-cinematic-review-20261011.md"
       - "tests/biblical-atlas-cinematic-prototype.mjs"
+      - "reviews/biblical-atlas-cinematic-expanded-181-20261011.html"
+      - "tests/biblical-atlas-expanded-prototype.mjs"
       - ".github/workflows/biblical-atlas-prototype-review.yml"
   workflow_dispatch:
 permissions:
@@ -26,9 +28,13 @@ jobs:
         run: node --check tests/biblical-atlas-cinematic-prototype.mjs
       - name: Execute standalone phone and desktop experience
         run: node tests/biblical-atlas-cinematic-prototype.mjs
+      - name: Execute expanded 181-scene Biblical Atlas phone acceptance
+        run: node tests/biblical-atlas-expanded-prototype.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: biblical-atlas-prototype-review
-          path: artifacts/biblical-atlas-prototype/
+          path: |
+            artifacts/biblical-atlas-prototype/
+            artifacts/biblical-atlas-expanded/
           if-no-files-found: ignore
