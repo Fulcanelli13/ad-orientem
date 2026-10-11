@@ -39,6 +39,14 @@ assert.ok(d.variableProperSlots.filter(row=>row.readerResolution==="EXISTING_EXA
 const properIndex=read("data/mass/scripture-reading-witness-register.v1.json");
 const feastIndex=read("data/mass/scripture-feast-reading-supplement.v1.json");
 const segmentedIndex=read("data/mass/scripture-segmented-proper.v1.json");
+assert.equal(properIndex.celebrations.length,50);
+assert.equal(feastIndex.celebrations.length,55);
+assert.equal(segmentedIndex.readings.length,15);
+const claimed=[...properIndex.celebrations,...feastIndex.celebrations].flatMap(c=>Object.keys(c.readings||{}).map(slot=>c.sourcePath+"|"+slot))
+ .concat(segmentedIndex.readings.map(c=>c.sourcePath+"|"+c.slot));
+assert.equal(claimed.length,210);
+assert.equal(new Set(claimed).size,210,"No duplicate Proper path+slot including segmented Scripture");
+assert.equal(new Set([...properIndex.celebrations,...feastIndex.celebrations,...segmentedIndex.readings].map(c=>c.sourcePath)).size,105);
 const inv=d.currentProperEvidenceInventory;
 assert.equal(inv.standaloneVerifiedProperPaths,105);
 assert.equal(inv.witnessedProperPathSlotPairs,210);
