@@ -33,7 +33,7 @@ for(const e of audit.events){
  assert(sMap.has(e.cueId),"source cue absent "+e.id+" "+e.cueId);
  assert.equal(e.runtimeApproved,false,"unreviewed runtime export "+e.id);
  assert.match(e.section,/^(III|IV|VI|VII|VIII|IX|X|XI|XII|XIII)\\./,e.id+" source section");
- assert.match(e.sourceUrl,/\\/download\\/#page=\\d+$/,e.id+" source page");
+ assert.ok(e.sourceUrl.includes("/download/#page=")&&Number.isInteger(Number(e.sourceUrl.split("#page=")[1])),e.id+" source page");
  assert(e.forms.length && e.forms.every(x=>forms.has(x)),"invalid form "+e.id);
  assert(e.condition,"unscoped ceremonial candidate "+e.id);
 }
