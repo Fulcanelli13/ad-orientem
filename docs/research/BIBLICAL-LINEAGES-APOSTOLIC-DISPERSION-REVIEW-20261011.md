@@ -61,3 +61,19 @@ The UI is an **offline design review**. It does not include the complete Catholi
 - Browser assertions compare the embedded bridge byte-for-byte in parsed form against its source registry, verify all 151 numbered milestones, and check generation expansion and Apostolic chronology deep links at 320, 390 and 768 px.
 - Correct generated genealogical labels and maintain separate Matthew/Luke textual lineages; preserve the strict evidence distinctions Scripture, patristic witness, later tradition, identification qualification and holds.
 - Ensure authoring changes to the 151-event Atlas invalidate the pinned snapshot pending re-review; do not merge this snapshot automatically with an independent 181-scene design pilot.
+
+## Cinematic 151↔181 source reconciliation (11 October 2026)
+
+This is a **research crosswalk**, not a third competing chronology, and it does not touch PR #998 production code or PR #1010's 181-scene design review. The source-pinned editable file is [biblical-atlas-151-181-crosswalk-20261011.v1.json](../../data/geography/research/biblical-atlas-151-181-crosswalk-20261011.v1.json).
+
+- Source heads: existing 151-milestone PR #998 at `99656bf2c7057c5169df34be82b774c0a0cfb725`; 181-scene prototype PR #1010 at `3d4c99d84627e161a24153a41ac9a113e8a3d1b3`.
+- **65** of the 181 scenes share an exact normalized chapter/verse reference with one of the 151 Atlas milestones. Exact source citation **does not by itself approve the same event, pin, or historical date**.
+- **29** more 181 scenes overlap chapter-and-verse ranges from existing Atlas events. These are candidate comparisons **only** and are not merged automatically.
+- **87** of the 181 scenes have no direct biblical passage match in the 151 corpus. They remain valid research candidates without being invented or force-fit into the source Atlas.
+- **86** of the 151 source milestones have no exact-citation cinematic equivalent, including Creation, Judges/prophetic history, much of the exile and Greek additions, and Revelation. All remain protected rather than removed to accommodate the four cinematic story arcs.
+- The **14** cinematic chapters now expose their existing art references only upon an explicit comparison action in the standalone genealogy review. Nine have proposed artwork URLs, five rely on a dark textual fallback. Artwork remains external to the HTML, with source credit where supplied; network failure leaves the source review functional. No image is cleared for app shipping by this change.
+- The review gallery identifies exact-reference matches versus overlapping-verses proposals. Each reference is accompanied by a warning that the matching does not certify ancient coordinates, travel routes, or chronological dating. The full 181-scene prototype is still independently accessible.
+- Textual-edition holds are explicit for Matthew 1:11/Jeconias, Luke 3:36/the second Cainan, Joseph’s legal role, Catholic Greek Esther and Daniel chapter numbering, and Luke 2:21's malformed single-verse display reference. Edition-aware Vulgate, Douay and Crampon crosswalks remain outstanding; this batch does not claim their completion.
+- The browser suite validates correspondence against the embedded crosswalk at 320, 390 and 768 px. Only a validated scene *selection* may open a chapter artwork; selecting a matching Scripture chapter never automatically assigns the artwork as an authoritative historical image.
+
+**Integration policy:** the original 151-event source chronology remains authoritative for the live Atlas until the final approved merged research plan. The 181-scene work contributes candidates, verified references and art direction only. Changes to either source PR head require a regenerated crosswalk and fresh review.
