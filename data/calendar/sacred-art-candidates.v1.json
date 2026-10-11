@@ -23035,6 +23035,172 @@
         "artCuratorApproval": false,
         "phoneHeroCropApproval": false
       }
+    },
+    {
+      "id": "met-438434",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "dated": "1852",
+      "medium": "oil on canvas",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/438434",
+        "objectId": "438434",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met museum API classification=Paintings, isPublicDomain=true, exact title, official original JPEG. Hash verified on curator replacement acquisition run.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "adoration-of-host",
+          "eucharist"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "adoration"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 3122,
+          "height": 3813
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "MET_MUSEUM_DIRECT_HOST_ADORATION_UNREVIEWED"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38153953954",
+        "artifactId": 11707214604,
+        "archiveOriginal": "originals/met-438434.jpg",
+        "originalWidth": 3122,
+        "originalHeight": 3813,
+        "originalSha256": "973f73b66952bf34619cc75c6f6bfb38109a8877e95b48655605576c552ad934"
+      },
+      "tags": {
+        "iconography": [
+          "adoration-of-host",
+          "eucharist",
+          "marian-host-adoration"
+        ],
+        "prayerKeys": [
+          "adoration"
+        ],
+        "prayerRoutes": [
+          "pray.adoration",
+          "pray.benediction"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "MET_MUSEUM_DIRECT_HOST_ADORATION_UNREVIEWED",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MET_MUSEUM_CC0_API_VERIFIED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
+    },
+    {
+      "id": "met-437527",
+      "title": "The Glorification of the Eucharist",
+      "artist": "Peter Paul Rubens",
+      "dated": "c. 1630–1632",
+      "medium": "oil on wood",
+      "museum": "The Metropolitan Museum of Art",
+      "source": {
+        "objectUrl": "https://www.metmuseum.org/art/collection/search/437527",
+        "objectId": "437527",
+        "rights": "CC0",
+        "rightsPolicyUrl": "https://www.metmuseum.org/hubs/open-access",
+        "sourceEvidence": "Met museum API classification=Paintings, isPublicDomain=true, exact title, official original JPEG. Hash verified on curator replacement acquisition run.",
+        "checkedOn": "2026-10-11"
+      },
+      "association": {
+        "subjectKeys": [
+          "glorification-eucharist",
+          "eucharist"
+        ],
+        "seasonIds": [],
+        "observedIds": [],
+        "scriptureKeys": [],
+        "prayerKeys": [
+          "adoration"
+        ]
+      },
+      "review": {
+        "source": "MUSEUM_API_CC0_VERIFIED",
+        "rights": "MUSEUM_API_CC0_VERIFIED",
+        "artistic": "PENDING_HUMAN_CURATOR",
+        "image": "ACQUIRED_REVIEW_ARCHIVE_ONLY",
+        "pixelDimensions": {
+          "width": 2773,
+          "height": 4000
+        },
+        "crop": "NOT_REVIEWED",
+        "status": "CANDIDATE",
+        "subjectConfidence": "MET_MUSEUM_EUCHARISTIC_ALLEGORY_UNREVIEWED"
+      },
+      "image": null,
+      "acquisition": {
+        "runUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38153953954",
+        "artifactId": 11707214604,
+        "archiveOriginal": "originals/met-437527.jpg",
+        "originalWidth": 2773,
+        "originalHeight": 4000,
+        "originalSha256": "521b3051abc5f86aa0d069f884fb731cbd339160f1667d8472ee6b35dc72ca65"
+      },
+      "tags": {
+        "iconography": [
+          "glorification-eucharist",
+          "eucharist",
+          "eucharistic-allegory"
+        ],
+        "prayerKeys": [
+          "adoration"
+        ],
+        "prayerRoutes": [
+          "pray.adoration",
+          "pray.benediction"
+        ],
+        "rosaryMysteries": [],
+        "stationNumbers": [],
+        "novenaIds": [],
+        "liturgicalSeasonIds": [],
+        "observed1962Identifiers": [],
+        "scriptureIdentityKeys": [],
+        "portraitSubjectId": null,
+        "portraitAuthenticity": "NOT_A_PORTRAIT_CLAIM",
+        "associationConfidence": "MET_MUSEUM_EUCHARISTIC_ALLEGORY_UNREVIEWED",
+        "sourceRights": {
+          "licence": "CC0",
+          "jurisdictionGate": "MET_MUSEUM_CC0_API_VERIFIED"
+        },
+        "reproducibility": {
+          "acquisition": "HASHED_MUSEUM_ORIGINAL",
+          "technicalColourResolution": "AUTOMATED_PASS"
+        },
+        "artCuratorApproval": false,
+        "phoneHeroCropApproval": false
+      }
     }
   ],
   "notes": [
@@ -23057,7 +23223,8 @@
     "Research reuse repair: NGA-505 Piero di Cosimo Visitation already acquired. NGA identifies Nicholas of Myra and Anthony Abbot as distinct visible supporting figures; preserve subject Visitation as primary, tag saints for contextual date reuse only.",
     "High-yield physical-original batch: four official Met paintings and CMA Pittoni 1720s altarpiece (distinct identified saints Agnes, Scholastica, Benedict, Lucy, Veronica, Anthony OF PADUA), plus Catherine Alexandria direct scenes. Never confuse Catherine Alexandria with Catherine Siena, or Padua with Anthony Abbot. Composite fields are contextual. Three Met low-resolution leads excluded without upscaling.",
     "Reused already acquired Met-437336 rosary-institution altarpiece, whose Met curatorial entry explicitly identifies St Dominic and St Francis as separate figures. Tags add these as secondary saint contextual uses, not separate portrait acquisitions.",
-    "2026-10-11 official NGA Open Data bulk: forty previously unregistered unique source-original paintings acquired (NGA openaccess=1 image-level, strict painting classification and >2500px source), full official artist credits and image SHA256 archived at run 38093287797. Exact 1962 feast/saint/Gospel associations still await comprehensive user audit; contextual, partial and composite subjects explicitly distinguished. NGA website display slugs provisional, museum objectIDs and original IIIF URLs verified."
+    "2026-10-11 official NGA Open Data bulk: forty previously unregistered unique source-original paintings acquired (NGA openaccess=1 image-level, strict painting classification and >2500px source), full official artist credits and image SHA256 archived at run 38093287797. Exact 1962 feast/saint/Gospel associations still await comprehensive user audit; contextual, partial and composite subjects explicitly distinguished. NGA website display slugs provisional, museum objectIDs and original IIIF URLs verified.",
+    "2026-10-11: Added two new Met CC0 Eucharistic originals (Ingress 438434, Rubens 437527) with strict role separation. These are research originals, NOT user-approved or published."
   ],
   "tagSchema": "AO_SACRED_ART_SEMANTIC_TAGS_V2"
 }
