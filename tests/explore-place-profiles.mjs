@@ -675,6 +675,36 @@ assert.match(html,/No TLM venue is currently linked to this exact Place/);
 assert.match(html,/data-explore-place-item=/);
 assert.match(html,/data-explore-place-lens="pilgrimages"/);
 assert.match(html,/This page aggregates records by canonical Place ID/);
+assert.match(html,/aoExploreSourcedStory/,"Featured place must show a provenance-anchored reading sequence");
+assert.match(html,/data-story-kind="ORIGIN"/);
+assert.match(html,/data-story-kind="PILGRIMAGE"/);
+assert.match(html,/aoExploreStoryEvidence/);
+assert.match(html,/data-explore-place-jump="calendar"/);
+assert.match(html,/lourdes-france\.com/);
+
+const frenchReader=renderExploreToString(buildExploreViewModel({
+ language:"fr",items:[lourdesShrine],lens:"shrines",counts:projection.counts,
+ view:"list",filters:{query:"Lourdes"},placeProfiles:profiles,
+ selectedPlaceId:lourdes.place_id,expandPlace:true,
+}));
+assert.match(frenchReader,/Sanctuaire de pèlerinage lié aux apparitions/);
+assert.match(frenchReader,/Lieu de pèlerinage ouvert toute l’année/);
+assert.match(frenchReader,/Sources de ce paragraphe/);
+assert.match(frenchReader,/data-explore-place-jump="calendar"/);
+assert.doesNotMatch(frenchReader,/Pilgrimage sanctuary associated/,"French reader leaked the original English story");
+assert.doesNotMatch(frenchReader,/Promoted to the canonical|exact frozen AO prayer form|Shared canonical place ID/,
+ "Internal link research commentary must never leak into public devotional cards");
+const parayReader=renderExploreToString(buildExploreViewModel({
+ language:"fr",items:projection.byLens.shrines.filter(x=>x.place_id===paray.place_id),
+ lens:"shrines",view:"list",filters:{},placeProfiles:profiles,
+ selectedPlaceId:paray.place_id,expandPlace:true,
+}));
+assert.match(parayReader,/sainte Marguerite-Marie Alacoque/);
+assert.match(parayReader,/data-explore-open-novena="sacred_heart"/);
+assert.match(parayReader,/Lien dévotionnel — source/);
+assert.match(parayReader,/sacrecoeur-paray.org/);
+assert.doesNotMatch(parayReader,/AO['’]s exact|Promoted to the canonical|same devotional family as family consecration/);
+
 
 const detailHtml=renderExploreToString(buildExploreViewModel({
   language:"en",
