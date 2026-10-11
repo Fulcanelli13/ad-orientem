@@ -45,7 +45,7 @@ assert.equal(ev.filter(e=>e.actor==="THURIFER").length,4);
 assert.equal(ev.filter(e=>e.condition==="REQUIEM").length,12);
 
 assert.equal(get("049").cueId,"AO.SM.C0209");
-assert.match(cues.get(get("049").cueId).latin.normalize("NFD").replace(/\\p{M}/gu,""),/dimitte nobis debita nostra/i,
+assert.match(cues.get(get("049").cueId).latin.normalize("NFD").replace(/\p{M}/gu,""),/dimitte nobis debita nostra/i,
   "Pater movement must trigger INSIDE the Pater text, not at block opening");
 assert.equal(get("049").anchorType,"WITHIN_TEXT_CUE");
 assert.equal(get("024").actionKey,"HOLD_PATEN_BEHIND_CELEBRANT_UNTIL_PATERNOSTER");
