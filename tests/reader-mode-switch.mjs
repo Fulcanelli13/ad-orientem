@@ -73,6 +73,14 @@ assert.equal(cardForCue("AO.SM.C0089"),cardForCue("AO.SM.C0090"),
   "Credo priestly intonation must stay together");
 assert.notEqual(cardForCue("AO.SM.C0090"),cardForCue("AO.SM.C0091"),
   "Schola's Patrem omnipotentem must start a separate prayer card");
+for(const id of ["AO.SM.C0074","AO.SM.C0255"]){
+  const parent=cardForCue(id);
+  assert.ok(parent,id+": actual canonical R. Amen response missing after resolved Proper");
+  const line=parent.paragraphs.find(p=>(p.sourceCueIds??[]).includes(id));
+  assert.equal(line.kind,"RESPONSE");
+  assert.equal(line.primary,"℟. Amen.");
+  assert.equal(line.speakerRole,"RESPONDERS");
+}
 assert.equal(cardForCue("AO.SM.C0020").paragraphs.find(p=>
   p.sourceCueIds.includes("AO.SM.C0020")).speakerRole,"PRIEST");
 assert.equal(cardForCue("AO.SM.C0025").paragraphs.find(p=>
