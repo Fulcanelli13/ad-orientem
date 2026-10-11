@@ -33,7 +33,7 @@ try{
  // Tanner cinematic acceptance: one offline painting, four explicit stages,
  // retained prayer cards, mobile crops, nonblocking translation and no interstitial.
  const seq="#aoPray435930.open .aoP435930AngelusSequence";
- await page.waitForSelector(seq+" [data-ao-cinematic-enhanced='1']",{timeout:12000}).catch(()=>{});
+ await page.waitForSelector(seq+" .aoAngelusCinemaTimeline",{timeout:12000});
  assert.equal(await page.locator(seq+" .aoAngelusCinemaMilestone").count(),4,"Angelus four-part timeline missing");
  assert.equal(await page.locator(seq+" .aoP435930PrayerUnit").count(),8,"Original Angelus prayer units were dropped");
  await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoAngelusCinemaArtwork")?.naturalWidth>=1500,null,{timeout:14000});
