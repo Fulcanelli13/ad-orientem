@@ -1810,6 +1810,14 @@ window.AO_RC2_MODULE_UX={version:'RC2',preferencesKey:RC2_PREF_KEY,openGuide:(m)
 window.AO_ROSARY_V381={
  version:'41-bridge',
  getForm:()=>S.rosaryForm==='devotional'?'devotional':'standard',
+ setMysterySet:(set,{step=0}={})=>{
+  if(!['joyful','sorrowful','glorious'].includes(set)||!Number.isSafeInteger(step)||step<0)return false;
+  const previousSet=S.rosarySet,previousStep=S.rosaryStep;
+  S.rosarySet=set;
+  const steps=labRosarySteps(set);
+  if(step>=steps.length){S.rosarySet=previousSet;S.rosaryStep=previousStep;return false;}
+  S.rosaryStep=step;render();return true;
+ },
  setForm:(v)=>{S.rosaryForm=v==='devotional'?'devotional':'standard';S.rosaryStep=0;render();return true},
  steps:()=>S.rosarySet?labRosarySteps(S.rosarySet):[],
  setStep:(n)=>{if(!S.rosarySet)return false;const xs=labRosarySteps(S.rosarySet),v=Math.max(0,Math.min(xs.length-1,Math.trunc(Number(n)||0)));S.rosaryStep=v;render();return true},
