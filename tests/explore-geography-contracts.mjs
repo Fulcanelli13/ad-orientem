@@ -47,8 +47,10 @@ for (const place of seed.places) {
     assert.ok(place.address?.city||place.address?.formatted,place.place_id+" address-only Place lost usable address");
   }
 }
+const r65PublishedPlaces=new Set(["place:IE:croagh-patrick-murrisk-pilgrimage-base","place:IE:st-peters-oliver-plunkett-drogheda","place:IE:solas-bhride-kildare"]);
+for(const id of r65PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R65 Place lost");
 assert.deepEqual(
-  seed.places.map(place => place.place_id).sort(),
+  seed.places.filter(place=>!r65PublishedPlaces.has(place.place_id)).map(place => place.place_id).sort(),
   [
     "place:FR:sanctuaire-notre-dame-de-laghet",
     "place:FR:sanctuaire-notre-dame-de-lourdes",
