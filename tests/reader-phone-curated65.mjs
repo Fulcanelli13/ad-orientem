@@ -274,15 +274,20 @@ try{
           const candidates=[0,maxScroll];
           for(let y=start;y<=stop;y+=16)candidates.push(y);
           let located=false;
+          const trace=[];
           for(const amount of [...new Set(candidates)]){
             scroller.scrollTop=Math.max(0,Math.min(maxScroll,amount));
             scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
             await nextFrame();
+            trace.push([Math.round(scroller.scrollTop),api.getActiveCue()]);
             if(api.getActiveCue()===cueId){located=true;break;}
           }
           const state=api.getCueState();
           observed.push({
             cueId,focused:api.getActiveCue(),reachable:located,
+            diagnostics:{maxScroll:Math.round(maxScroll),center:Math.round(center),
+              height:Math.round(scroller.clientHeight),domCueCount:scroller.querySelectorAll(".ao-reader-paragraph[data-cue-id]").length,
+              trace:trace.slice(0,30)},
             response:state?.response?.text??null,
             gesture:state?.gesture?.action??null,
             priestAction:state?.priestAction?.label??null,
@@ -304,7 +309,7 @@ try{
         assert.equal(state.missing,undefined,
           "No actual DOM cue paragraph for "+state.cueId);
         assert.equal(state.reachable,true,
-          "User scroll cannot reach "+state.cueId+" in the LIVE 39% focus window");
+          "User scroll cannot reach "+state.cueId+" in the LIVE 39% focus window: "+JSON.stringify(state.diagnostics));
         assert.equal(state.focused,state.cueId,
           "User scroll could not place "+state.cueId+" into exact LIVE cue focus");
         const expected=gate[state.cueId];
