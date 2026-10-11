@@ -15,7 +15,9 @@ const known=new Set(places.places.map(p=>p.place_id));
 const live=new Set(published.items.map(p=>p.place_id));
 let four=0,two=0,three=0;
 for(const c of batch.candidates){
-  assert.ok(known.has(c.place_id)&&!live.has(c.place_id),"Must not republish an approved Place");
+  assert.ok(known.has(c.place_id),"Must only describe a canonical physical Place");
+  if(c.expected_license==="CC-BY-SA-4.0")assert.ok(live.has(c.place_id),"R59 photo release must include all eight reviewed updates");
+  else assert.ok(!live.has(c.place_id),"Older-licence research must remain unpublished");
   assert.equal(c.publication_approved,false);
   assert.equal(c.subject_crop_reviewed,false);
   assert.equal(c.status,"RESEARCH_UNREVIEWED");
@@ -28,6 +30,7 @@ for(const c of batch.candidates){
   else assert.fail("Unreviewed licence "+c.expected_license);
 }
 assert.deepEqual([four,three,two],[8,1,1]);
+assert.equal(published.items.length,18);
 assert.deepEqual(batch.candidates.filter(p=>p.expected_license!=="CC-BY-SA-4.0").map(p=>p.place_id).sort(),[
 "place:GB:walsingham-catholic-shrine","place:MU:pere-laval-sainte-croix"
 ]);
