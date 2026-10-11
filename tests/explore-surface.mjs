@@ -857,4 +857,5 @@ const classifiedFeatures=exploreMapFeatures([{
 }]);
 assert.equal(classifiedFeatures[0].properties.place_type,"cathedral","Map must inherit source-owned physical site category");
 
+await import("./explore-photo-research.mjs");
 await import("./explore-world-boundaries.mjs");
