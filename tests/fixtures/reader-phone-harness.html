@@ -11,6 +11,8 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080c12}
 <body>
 <script type="module">
 import { mountNativeReaderPreview } from "../../src/mass/reader-native-preview.js";
+import { createHostIconResolver } from "../../src/mass/reader-icons.js";
+import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "../../src/mass/reader-icon-bank.js";
 
 const params=new URLSearchParams(location.search);
 const lang=params.get("lang")==="fr"?"fr":"en";
@@ -73,7 +75,8 @@ const prepared={
 };
 
 try{
-  window.__AO_PHONE_PREVIEW=await mountNativeReaderPreview({doc:document,prepared});
+  window.__AO_PHONE_PREVIEW=await mountNativeReaderPreview({doc:document,prepared,
+    iconResolver:createHostIconResolver({assets:R17_FROZEN_ACTIVE_ICON_ASSETS})});
   document.documentElement.dataset.harnessReady="true";
 }catch(error){
   window.__AO_PHONE_HARNESS_ERROR=String(error?.stack??error);
