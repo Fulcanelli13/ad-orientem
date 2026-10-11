@@ -64,8 +64,8 @@ try{
     });
     // Map data can load before MapLibre's third-party background. The map
     // must communicate this independently of the canonical search/results.
-    const visibleMapStatus=await page.locator('.aoFindMap[data-ao-map-state="loading"] .aoExploreMapLoading').first();
-    assert.equal(await visibleMapStatus.count(),1,width+"px remote map import has no visible loading state");
+    const visibleMapStatus=page.locator('.aoFindMap[data-ao-map-state="loading"] .aoExploreMapLoading').first();
+    await visibleMapStatus.waitFor({state:"visible",timeout:10000});
     const pending=await visibleMapStatus.evaluate(el=>({
       role:el.getAttribute("role"),text:el.textContent,
       pointerEvents:getComputedStyle(el).pointerEvents
