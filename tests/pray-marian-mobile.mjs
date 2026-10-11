@@ -157,9 +157,11 @@ try{
  // rather than existing only as metadata in the catalogue.
  for(const method of ["dominican","montfort"]){
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
-  const button=page.locator("#aoPray435930.open [data-p435930-rosary-method-launch='"+method+"']");
+  const button=page.locator("#aoPray435930.open [data-p435930-rosary-choose='"+method+"']");
   await button.waitFor({timeout:12000});
   await button.evaluate(x=>x.click());
+  assert.equal(await page.locator("#aoPray435930.open [data-p435930-rosary-decades='15']").isDisabled(),true,"Alternative methods must not advertise unverified 15 decades");
+  await page.locator("#aoPray435930.open [data-p435930-rosary-begin]").evaluate(x=>x.click());
   await page.waitForFunction(m=>globalThis.AO_ROSARY_V381?.getMethod?.()===m &&
     !!document.querySelector("#aoPrayerBookRoot.open"),method,{timeout:14000});
   if(method==="montfort")await page.waitForFunction(()=>{
@@ -199,9 +201,11 @@ try{
  // Newly exposed source-bound Rosary methods, exercised through real phone controls.
  for(const method of ["montfort_short","scriptural"]){
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
-  const button=page.locator("#aoPray435930.open [data-p435930-rosary-method-launch='"+method+"']");
+  const button=page.locator("#aoPray435930.open [data-p435930-rosary-choose='"+method+"']");
   await button.waitFor({timeout:12000});
   await button.evaluate(el=>el.click());
+  assert.equal(await page.locator("#aoPray435930.open [data-p435930-rosary-decades='15']").isDisabled(),true);
+  await page.locator("#aoPray435930.open [data-p435930-rosary-begin]").evaluate(el=>el.click());
   await page.waitForFunction(m=>globalThis.AO_ROSARY_V381?.getMethod?.()===m &&
    !!document.querySelector("#aoPrayerBookRoot.open"),method,{timeout:14000});
   if(method==="montfort_short")await page.waitForFunction(()=>{
@@ -252,6 +256,69 @@ try{
  await normalSet.evaluate(x=>x.click());
  assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381.steps().filter(x=>/^(dominican|montfort)-/.test(x.kind)).length),
   0,"Alternative method cards leaked into the ordinary Rosary");
+
+
+ // One, genuinely continuous journey through the canonical phone reader.
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
+ const chooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
+ await chooser.waitFor({timeout:12000});
+ assert.equal(await chooser.locator("[data-p435930-rosary-choose]").count(),5,"One coherent method chooser is required");
+ assert.equal(await chooser.locator("[data-p435930-rosary-begin]").count(),1,"Only one start action");
+ await chooser.locator("[data-p435930-rosary-choose='ordinary']").evaluate(x=>x.click());
+ await chooser.locator("[data-p435930-rosary-decades='15']").evaluate(x=>x.click());
+ assert.equal(await chooser.locator("[data-p435930-rosary-decades='15']").getAttribute("aria-pressed"),"true");
+ await chooser.locator("[data-p435930-rosary-begin]").evaluate(x=>x.click());
+ await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful" &&
+   !!document.querySelector("#aoPrayerBookRoot.open [data-lab-rosary-next]"),null,{timeout:14000});
+ const wholeRosary=await page.evaluate(()=>{
+  const api=globalThis.AO_ROSARY_V381;
+  const expected=['joyful','sorrowful','glorious'],seen=[],crossings=[];
+  let opening=0,conclusions=0,turns=0,reversePasses=0;
+  const button=which=>document.querySelector("#aoPrayerBookRoot.open [data-lab-rosary-"+which+"]");
+  while(turns<270){
+   const st=api.state(),steps=api.steps(),step=steps[st.step];
+   if(!step)throw new Error("Rosary lost current step at turn "+turns);
+   if(step.phase==="opening")opening++;
+   if(step.kind==="mystery"){
+    seen.push(step.id);
+    if(step.id==="sor1"||step.id==="glo1"){
+     const back=button("prev");
+     if(!back)throw new Error("Previous control missing at "+step.id);
+     back.click();
+     const prior=api.state(),priorStep=api.steps()[prior.step];
+     if(prior.set!==expected[expected.indexOf(st.set)-1]||priorStep.id!==(step.id==="sor1"?"joy5":"sor5"))
+      throw new Error("Backward mystery group handoff broken at "+step.id);
+     reversePasses++;
+     const forward=button("next");
+     if(!forward)throw new Error("Forward control missing during boundary round trip");
+     forward.click();
+     if(api.state().set!==st.set||api.steps()[api.state().step].id!==step.id)
+      throw new Error("Forward return from prior mystery group broken at "+step.id);
+    }
+   }
+   if(step.phase==="conclusion"){
+    conclusions++;
+    if(st.set!=="glorious")throw new Error("Premature conclusion in "+st.set);
+    break;
+   }
+   const forward=button("next");
+   if(!forward)throw new Error("Rosary next control disappeared");
+   forward.click();
+   const after=api.state();
+   if(after.set!==st.set)crossings.push(st.set+"→"+after.set);
+   turns++;
+  }
+  return {turns,opening,conclusions,seen,crossings,reversePasses,
+   endSet:api.state().set,endKind:api.steps()[api.state().step]?.kind};
+ });
+ assert.equal(wholeRosary.opening,7,"Opening prayers must run exactly once");
+ assert.equal(wholeRosary.conclusions,1,"A single final conclusion must follow the fifteenth decade");
+ assert.deepEqual(wholeRosary.crossings,["joyful→sorrowful","sorrowful→glorious"]);
+ assert.deepEqual(wholeRosary.seen,["joy1","joy2","joy3","joy4","joy5",
+  "sor1","sor2","sor3","sor4","sor5","glo1","glo2","glo3","glo4","glo5"]);
+ assert.equal(wholeRosary.reversePasses,2);
+ assert.equal(wholeRosary.endSet,"glorious");
+ assert.equal(wholeRosary.endKind,"conclusion");
 
  assert.equal(pageErrors.filter(x=>/angelus-guide|rosary-guide|presentation-runtime|undefined/i.test(x)).length,0,"Marian reader threw a runtime error: "+pageErrors.join(" | "));
  console.log("PASS Marian Angelus/Regina Caeli and Rosary mobile Guide acceptance");
