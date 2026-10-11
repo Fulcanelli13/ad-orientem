@@ -8,17 +8,26 @@ const text=value=>String(value??"").trim();
  * A research candidate, hotlink, unrelated painting or uncredited image
  * must never silently become a published shrine photograph. */
 export function resolveApprovedPlaceMedia(records,placeId){
-  const approvedLicenses=new Set(["CC0-1.0","CC-BY-4.0","CC-BY-SA-4.0","PUBLIC_DOMAIN"]);
+  const approvedLicenses=Object.freeze({
+    "CC0-1.0":/^https:\/\/creativecommons\.org\/publicdomain\/zero\/1\.0\//,
+    "CC-BY-4.0":/^https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//,
+    "CC-BY-SA-4.0":/^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\//,
+    "PUBLIC_DOMAIN":/^https:\/\/creativecommons\.org\/publicdomain\/mark\/1\.0\//,
+  });
   const record=arr(records).find(row=>row?.place_id===placeId&&row?.status==="APPROVED");
   if(!record)return null;
   const path=text(record.asset_path);
-  if(!/^assets\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
+  // Research and staging directories are *never* valid public image paths.
+  // All files must be copied into the separately curated approved asset tree.
+  if(!/^assets\/(?:places|approved\/place-media)\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
      !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
-     !approvedLicenses.has(record.license)||
+     !approvedLicenses[record.license]?.test(text(record.license_url))||
      !/^https:\/\/[^\s]+$/.test(text(record.source_url))||
-     !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr))return null;
+     !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr)||
+     !text(record.changes))return null;
   return Object.freeze({
     asset_path:path,credit:text(record.credit),license:text(record.license),
+    license_url:text(record.license_url),changes:text(record.changes),
     source_url:text(record.source_url),alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
   });
 }
