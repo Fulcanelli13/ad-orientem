@@ -41,6 +41,7 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2 .aoTodayV2Mass{padding:12px 18px 18px!important}
 .aoTodayV2 .aoTodayV2PrimaryMass{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;min-height:54px;border-radius:10px;padding:10px 12px!important;background:var(--liturgical,#c6b692)!important;color:var(--liturgical-ink,var(--bg,#080c12))!important;text-align:center;border:1px solid var(--liturgical,#c6b692)!important}
 .aoTodayV2 .aoTodayV2PrimaryMass b{font:750 14px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2 .aoTodayV2PrimaryMass b,.aoTodayV2 .aoTodayV2PrimaryMass span{display:block!important;opacity:1!important;visibility:visible!important;color:var(--liturgical-ink,var(--bg,#080c12))!important;text-shadow:none!important;filter:none!important}
 .aoTodayV2 .aoTodayV2PrimaryMass span{font:600 11px/1.25 var(--ao-font-ui,system-ui,sans-serif)}
 .aoTodayV2 .aoTodayV2SecondaryMass{display:flex;justify-content:center;gap:28px;margin-top:8px}
 .aoTodayV2 .aoTodayV2SecondaryMass button{min-height:40px;padding:7px 4px;color:var(--text-muted,var(--muted,#c4b7a0));border:0;background:transparent;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
