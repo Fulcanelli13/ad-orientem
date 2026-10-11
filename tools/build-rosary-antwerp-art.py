@@ -9,6 +9,7 @@ import hashlib
 import io
 import json
 import re
+from html import unescape
 import sys
 import time
 from pathlib import Path
@@ -24,7 +25,7 @@ LEDGER=Path("data/pray/rosary-antwerp-production-pack.v1.json")
 MAX_DOWNLOAD=23_000_000
 MAX_WEBP=750_000
 LICENSE_OK=("public domain","cc0","creative commons zero")
-USER_AGENT="AdOrientemRosaryResearch/1.0 (credited PD-art prototype; non-scraping single acquisition)"
+USER_AGENT="AdOrientemRosaryResearch/1.1 (https://github.com/Fulcanelli13/ad-orientem; research image acquisition; 15 fixed files)"
 
 def fetched(url):
     if urlparse(url).scheme!="https":
@@ -50,14 +51,37 @@ def fetched(url):
             time.sleep(min(25,3*(attempt+1)))
     raise RuntimeError("Download retry exhausted")
 
-def image_info(name):
+def normalized_title(name):
+    return name.replace("_"," ").strip().casefold()
+
+def image_infos(names):
+    """One read-only batched Action API request, not 15 individual queries."""
     q=urlencode({"action":"query","format":"json","formatversion":2,
-        "prop":"imageinfo","iiprop":"url|size|extmetadata","titles":"File:"+name})
+        "prop":"imageinfo","iiprop":"url|size|extmetadata",
+        "titles":"|".join("File:"+name for name in names)})
     data=json.loads(fetched("https://commons.wikimedia.org/w/api.php?"+q))
     pages=data.get("query",{}).get("pages",[])
-    if len(pages)!=1 or not pages[0].get("imageinfo"):
-        raise RuntimeError("Missing Commons imageinfo for "+name)
-    return pages[0]["imageinfo"][0]
+    found={}
+    for page in pages:
+        title=page.get("title","")
+        if not title.startswith("File:") or not page.get("imageinfo"): continue
+        key=normalized_title(title[5:])
+        if key in found: raise RuntimeError("Duplicate Commons file returned: "+title)
+        found[key]=page["imageinfo"][0]
+    if len(found)!=len(names):
+        missing=[n for n in names if normalized_title(n) not in found]
+        raise RuntimeError("Commons metadata incomplete: "+str(missing))
+    return found
+
+def source_credit(metadata):
+    """Record verifiable credit when present, otherwise refer back to file page."""
+    clean=lambda val: unescape(re.sub(r"<[^>]*>"," ",str(val or "")))
+    for key in ("Credit","Attribution","Source"):
+        field=metadata.get(key,{})
+        text=" ".join(clean(field.get("value","")).split())
+        if text and len(text)<230 and "public domain" not in text.lower():
+            return text
+    return "Wikimedia Commons file record (see source file page for photographer)"
 
 def webp_derivative(raw,expected):
     img=Image.open(io.BytesIO(raw));img.load()
@@ -85,11 +109,14 @@ def main():
               *(f"glo{i}" for i in range(1,6))]
     if [x["id"] for x in originals]!=expected:
         raise RuntimeError("Antwerp image ordering drift")
+    # Wikimedia recommends batching imageinfo titles in one request.
+    metadata=image_infos([item["fileName"] for item in originals])
     compiled=[];outputs=[]
     for item in originals:
         id,name=item["id"],item["fileName"]
-        info=image_info(name)
-        right=(info.get("extmetadata",{}).get("LicenseShortName",{}).get("value","")).strip()
+        info=metadata[normalized_title(name)]
+        ext=info.get("extmetadata",{})
+        right=(ext.get("LicenseShortName",{}).get("value","")).strip()
         if not any(x in right.lower() for x in LICENSE_OK):
             raise RuntimeError(f"{id} has non-cleared Commons source licence: {right!r}")
         original_url=info.get("url","")
@@ -103,7 +130,7 @@ def main():
         record={
           "id":id,"src":local,"rightsStatus":"cleared",
           "licenceEvidenceUrl":item["filePage"],"rightsDescription":right,
-          "photographerCredit":"Wikimedia Commons · credited original-file reproduction",
+          "photographerCredit":source_credit(ext),
           "sourceUrl":original_url,"sourceFilePage":item["filePage"],
           "sourceFileName":name,"sourceDimensions":item["expectedDimensions"],
           "sourceSha256":hashlib.sha256(raw).hexdigest(),
@@ -113,7 +140,7 @@ def main():
         compiled.append(record)
         outputs.append((DEST/(id+".webp"),result))
         print(id,":",right,",",size,",",len(result),"bytes",flush=True)
-        time.sleep(6)  # Public Wikimedia Commons; intentionally avoid rapid-fire requests.
+        time.sleep(8)  # Responsible sequential media fetches from Wikimedia CDN.
     pack={"version":"antwerp-15-cleared-v1","sourceEdition":"Commons-PD-Art approved candidate set · Oct 2026",
           "artworkCatalogueUrl":manifest["workCatalogueUrl"],
           "licensePolicy":"Commons per-file licence and local SHA-256 verified; do not use museum press photographs",
