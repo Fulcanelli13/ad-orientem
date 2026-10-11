@@ -875,7 +875,6 @@ window.AO_RC2_MODULE_UX={version:'RC2',preferencesKey:RC2_PREF_KEY,openGuide:(m)
 window.AO_ROSARY_V381={
  version:'41-bridge',
  getForm:()=>S.rosaryForm==='devotional'?'devotional':'standard',
- selectSet:(set,{skipOpening=false}={})=>{if(!['joyful','sorrowful','glorious','luminous'].includes(set)||S.view!=='rosary')return false;S.rosarySet=set;const xs=labRosarySteps(set);S.rosaryStep=skipOpening?Math.max(0,xs.findIndex(x=>x.kind==='mystery'&&x.mi===0)):0;render();return true},
  setForm:(v)=>{S.rosaryForm=v==='devotional'?'devotional':'standard';S.rosaryStep=0;render();return true},
  steps:()=>S.rosarySet?labRosarySteps(S.rosarySet):[],
  setStep:(n)=>{if(!S.rosarySet)return false;const xs=labRosarySteps(S.rosarySet),v=Math.max(0,Math.min(xs.length-1,Math.trunc(Number(n)||0)));S.rosaryStep=v;render();return true},
