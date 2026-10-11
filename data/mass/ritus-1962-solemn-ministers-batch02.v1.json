@@ -911,20 +911,22 @@
     {
       "id": "MR62.SOL.B02.050",
       "actor": "SUBDEACON",
-      "cueId": "AO.SM.C0210",
-      "anchorType": "AFTER_CUE",
+      "cueId": "AO.SM.C0209",
+      "anchorType": "WITHIN_TEXT_CUE",
       "actionKey": "BRING_PATEN_AT_END_PATERNOSTER",
       "condition": "NOT_REQUIEM",
       "ritus": "X.8",
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
       "sourcePdfPage": 21,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=21",
-      "shortRubricFr": "Porte la patène au diacre après la fin du Pater.",
+      "shortRubricFr": "Vers la fin du Pater, le sous-diacre rapporte la patène au diacre. La chronologie fine à Et dimitte requiert rapprochement avec O'Connell.",
       "formScope": "SOLEMN",
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": null
+      "sourceCueText": null,
+      "reviewNote": "Ritus X.8 says 'around the end of the Lord's Prayer', while O'Connell's 1962 synopsis has subdeacon moving at Et dimitte nobis. Do not mark micro-timing certified.",
+      "secondarySource": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf"
     },
     {
       "id": "MR62.SOL.B02.051",
@@ -1251,6 +1253,21 @@
     {
       "eventId": "MR62.SOL.B02.018",
       "reason": "Water blessing excluded in Requiem; subdeacon verbal formula needs further research."
+    }
+  ],
+  "reviewGates": [
+    {
+      "key": "SOLEMN_PATEN_MICRO_TIMING",
+      "status": "OPEN",
+      "affectedEvents": [
+        "MR62.SOL.B02.024",
+        "MR62.SOL.B02.049",
+        "MR62.SOL.B02.050"
+      ],
+      "primary": "Ritus X.8",
+      "secondary": "O'Connell synopsis Solemn Mass Pater",
+      "difference": "around end Pater vs Et dimitte for subdeacon",
+      "runtimeRule": "DO_NOT_ASSERT_INSTANT_TIMING_BEFORE_ADJUDICATION"
     }
   ]
 }
