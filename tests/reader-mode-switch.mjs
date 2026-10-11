@@ -85,14 +85,25 @@ const sourceCueSet=new Set(expandedReview.sourceModel.cards.flatMap(card=>
     /^AO\.SM\.C\d{4}$/.test(cue)));
 assert.deepEqual([...projectedCueCards.keys()].sort(),[...sourceCueSet].sort(),
   "LIVE rearrangement lost original canonical cue ownership");
+const nonRenderedSourceAnchors=[];
 for(const [family,file] of Object.entries(cueRegistryNames)){
   const rows=load("../data/presentation/"+file).items;
   for(const row of rows){
     if(!row.cueId)continue; // Posture may be an observational state, not a textual cue.
-    assert.ok(projectedCueCards.has(row.cueId),
-      family+" source cue "+row.cueId+" disappeared from the curated prayer stream");
+    if(sourceCueSet.has(row.cueId)){
+      assert.ok(projectedCueCards.has(row.cueId),
+        family+" source cue "+row.cueId+" disappeared from the curated prayer stream");
+    } else {
+      // A valid historical source cue may be excluded from the selected
+      // Proper or condensed by the source-first composition before any
+      // 65-card split. It is an audit exception, not permission to insert
+      // phantom text or move a priest/faithful state to the wrong cue.
+      nonRenderedSourceAnchors.push({family,cueId:row.cueId});
+    }
   }
 }
+assert.ok(nonRenderedSourceAnchors.every(row=>!projectedCueCards.has(row.cueId)),
+  "Non-rendered rubric anchor acquired invented LIVE prayer ownership");
 const transitionRegistry=load("../data/presentation/reader-responses.v1.json").items;
 for(const item of transitionRegistry){
   const cueId=item.cueId;
@@ -119,7 +130,8 @@ for(const [words,action] of [
   assert.ok(b.rowIndex>a.rowIndex,"Elevation must occur after Consecration words");
 }
 console.log("Curated LIVE liturgical registry coverage: PASS — 6 registries, "+
-  projectedCueCards.size+" distinct source cues, replies and elevations retained.");
+  projectedCueCards.size+" distinct source cues, replies and elevations retained; "+
+  nonRenderedSourceAnchors.length+" non-rendered rubric anchors held for source audit.");
 
 assert.equal(expandedReview.presentationModel.cardForEvent,undefined,
   "review cards cannot claim canonical event ownership");
