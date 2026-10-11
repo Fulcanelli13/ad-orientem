@@ -108,7 +108,7 @@ for(const marker of ["data-p435930-rosary-method-launch","function launchTraditi
 assert.match(donorBundle,/setMethod:\(method\)=>/,"Method setting must be owned by the canonical donor");
 const extracted=donorBundle.match(/function labRosarySteps\(set\)\{([\s\S]*?)\n\}\nfunction labRosaryDevotionalStep/);
 assert.ok(extracted,"Canonical step builder must remain extractable");
-const compileSteps=new Function("S","labRosaryIds","AO_ROSARY_DEPTH","AO_MONTFORT_FRUITS",
+const compileSteps=new Function("S","labRosaryIds","AO_ROSARY_DEPTH","AO_MONTFORT_FRUITS","AO_MONTFORT_SHORT_GROUPS",
  "return function labRosarySteps(set){"+extracted[1]+"\n}");
 const mockIds=set=>Array.from({length:5},(_,i)=>({joyful:"joy",sorrowful:"sor",glorious:"glo"})[set]+(i+1));
 const expectedIds=["joy","sor","glo"].flatMap(prefix=>Array.from({length:5},(_,i)=>prefix+(i+1)));
@@ -172,7 +172,7 @@ assert.match(shortApi.groups.sorrowful.fr,/mystères douloureux/);
 assert.match(shortApi.groups.glorious.fr,/mystères glorieux/);
 for(const set of ["joyful","sorrowful","glorious"]){
  const short=compileSteps({rosaryMethod:"montfort_short",rosaryForm:"standard",rosaryFatima:true},
-  mockIds,{},fruits)(set);
+  mockIds,{},fruits,shortApi.groups)(set);
  assert.equal(short.filter(x=>x.kind==="montfort-short-grace").length,1);
  assert.equal(short.filter(x=>x.key==="ave"&&x.bead).length,50);
  assert.equal(short.at(-2).kind,"montfort-short-grace","Conclude each five-decade group once");
