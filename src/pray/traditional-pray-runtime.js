@@ -1,3 +1,4 @@
+import { navigationActionAttrs, navigationActionIcon } from "../app/interface-grammar.js";
 import "./traditional-pray-styles.js";
 import "./reader-convergence-styles.js";
 import { readingPositionMarkup } from "./reading-position.js";
@@ -59,7 +60,7 @@ function assetMarkup(route){
 }
 
 function head(title,sub=""){
-  return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-tp381-back aria-label="${esc(L("Back","Retour"))}">${uiIcon("ao-ui-back")}</button><div><small>${esc(L("PRAY","PRIER"))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:""}</div><button type="button" class="aoP435930Home" data-tp381-home aria-label="${esc(L("Home","Accueil"))}">${uiIcon("ao-nav-home")}</button></header>`;
+  return `<header class="aoP435930Head aoAppHeader"><button type="button" class="aoP435930Back" data-tp381-back ${navigationActionAttrs("back",isFr()?"fr":"en")}>${navigationActionIcon("back")}</button><div><small>${esc(L("PRAY","PRIER"))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:""}</div><button type="button" class="aoP435930Home" data-tp381-home ${navigationActionAttrs("home",isFr()?"fr":"en")}>${navigationActionIcon("home")}</button></header>`;
 }
 function source(label,url){
   let href="";
