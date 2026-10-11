@@ -70,7 +70,7 @@ export function createAppHostAdapter(win = globalThis) {
     hardHome() {
       // Close modular domain presentations before mounting Home. These owners
       // are deliberately independent of the historical hard-Home reset.
-      try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
+      try { win?.AO_LEARN_APP_V1?.close?.({ preserveContext: true }); } catch {}
       try { win?.AO_PRAY_APP_V1?.close?.(); } catch {}
       try { win?.AO_CALENDAR_APP_V1?.close?.({ surface: "home" }); } catch {}
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
@@ -192,7 +192,7 @@ export function createAppHostAdapter(win = globalThis) {
     openSettings() {
       // Settings is modular and fail-closed. Close Learn before mounting the
       // Settings overlay so only one non-Mass state owns the visible surface.
-      try { win?.AO_LEARN_APP_V1?.close?.(); } catch {}
+      try { win?.AO_LEARN_APP_V1?.close?.({ preserveContext: true }); } catch {}
       try { win?.AO_FIND_APP_V1?.close?.(); } catch {}
       try { win?.AO_APOSTOLATE_APP_V1?.close?.(); } catch {}
       const api = settingsApi(win);
