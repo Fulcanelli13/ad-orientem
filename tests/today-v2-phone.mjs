@@ -31,7 +31,7 @@ try{
     page.on("pageerror",e=>errors.push(String(e?.message||e)));
     await page.goto("http://127.0.0.1:4194/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
     await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
-    await page.waitForSelector(".homeScreen.aoTodayV2PrayNow",{state:"visible",timeout:12000});
+    await page.waitForSelector(".homeScreen .aoTodayV2PrayNow",{state:"visible",timeout:12000});
     const info=await page.evaluate(()=>{
       const root=document.querySelector(".homeScreen"),hero=root?.querySelector(".aoTodayV2Frontispiece"),
         art=hero?.querySelector(".aoTodayV2Art"),title=art?.querySelector("h1"),
