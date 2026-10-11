@@ -43,12 +43,24 @@ try{
       const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
       return s?.route==="home"&&!s.resolving&&Boolean(s.resolution?.day?.main);
     },null,{timeout:30000});
+    // Wait through the existing 540ms hero entrance; a screenshot taken during
+    // the blur/fade can falsely depict a missing feast and blank CTA.
+    await page.waitForTimeout(950);
     const info=await page.evaluate(()=>{
       const root=document.querySelector(".homeScreen"),hero=root?.querySelector(".aoTodayV2Frontispiece"),
         art=hero?.querySelector(".aoTodayV2Art"),title=art?.querySelector("h1"),
         cta=root?.querySelector(".aoTodayV2PrimaryMass"),rect=cta?.getBoundingClientRect(),
         bottom=cta?.getBoundingClientRect().bottom,sections=[...root.querySelectorAll(".aoTodayV2Zone")].map(x=>x.className);
-      return {vw:innerWidth,heroContainsCTA:Boolean(hero?.contains(cta)),heroActionsContainsCTA:Boolean(root.querySelector(".aoTodayV2HeroActions")?.contains(cta)),ctaParents:cta?[cta.parentElement?.className,cta.parentElement?.parentElement?.className,cta.parentElement?.parentElement?.parentElement?.className]:[],bootPresent:Boolean(document.getElementById("ao-cinema-boot")),massButtonClasses:[...root.querySelectorAll("[data-home-mass-entry],[data-resume-mass]")].map(x=>x.className),scrollWidth:document.documentElement.scrollWidth,artWidth:art?.getBoundingClientRect().width,
+      return {vw:innerWidth,heroContainsCTA:Boolean(hero?.contains(cta)),heroActionsContainsCTA:Boolean(root.querySelector(".aoTodayV2HeroActions")?.contains(cta)),ctaParents:cta?[cta.parentElement?.className,cta.parentElement?.parentElement?.className,cta.parentElement?.parentElement?.parentElement?.className]:[],
+        splashBlocks: Boolean(document.querySelector("#ao-cinema-boot,#ao-cinema-loader")&&
+          [...document.querySelectorAll("#ao-cinema-boot,#ao-cinema-loader")].some(el=>{
+            const cs=getComputedStyle(el),r=el.getBoundingClientRect();
+            return cs.display!=="none"&&cs.visibility!=="hidden"&&Number(cs.opacity)>.03&&r.width>100&&r.height>100;
+          })),
+        ctaHit:cta?(()=>{
+          const r=cta.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);
+          return hit===cta||cta.contains(hit);
+        })():false,massButtonClasses:[...root.querySelectorAll("[data-home-mass-entry],[data-resume-mass]")].map(x=>x.className),scrollWidth:document.documentElement.scrollWidth,artWidth:art?.getBoundingClientRect().width,
         heroWidth:hero?.getBoundingClientRect().width,cta:!!cta,ctaHeight:rect?.height,ctaBottom:bottom,
         artworkTitle:title?.textContent?.trim(),sections,
         prayCount:root.querySelectorAll(".aoTodayV2PrayerFeature").length,
@@ -60,9 +72,11 @@ try{
     });
     await page.screenshot({path:resolve(dir,"today-v2-"+width+".png"),fullPage:true});
     console.log("TODAY_V2_PHONE_DIAGNOSTIC",JSON.stringify(info));
-    assert.equal(info.bootPresent,false,"Boot overlay still hides Today at "+width);
+    assert.equal(info.splashBlocks,false,"An opaque splash or loader still obscures Today at "+width);
     assert.ok(!/Resolving|Loading|Chargement|Résolution/i.test(info.artworkTitle||""),"Liturgical identity unresolved at "+width);
     assert.equal(info.cta,true,"Mass CTA missing at "+width);
+    assert.equal(info.heroContainsCTA,true,"Donor artwork escaped and closed the Mass frontispiece at "+width);
+    assert.equal(info.ctaHit,true,"Mass CTA is not actually hit-testable above overlays at "+width);
     assert.equal(info.massCount,1,"Duplicate primary Mass entry at "+width);
     assert.ok(info.ctaHeight>=44,"Mass CTA touch target too small at "+width);
     assert.ok(info.scrollWidth<=width+3,"Home horizontal overflow at "+width+": "+JSON.stringify(info));
