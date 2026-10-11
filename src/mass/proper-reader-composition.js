@@ -34,7 +34,7 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
         en:"℟. Thanks be to God.",
         fr:"℟. Nous rendons grâces à Dieu.",
       }),
-      role:"FIXED_RESPONSE",
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
     }),
   ]),
   "AO.SM.B026": Object.freeze([
@@ -46,7 +46,7 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
         en:"℟. Praise be to Thee, O Christ.",
         fr:"℟. Louange à vous, ô Christ.",
       }),
-      role:"FIXED_RESPONSE",
+      role:"FIXED_RESPONSE",speakerRole:"RESPONDERS",
     }),
     Object.freeze({
       id:"AO.SM.C0088",
@@ -56,7 +56,7 @@ export const PINNED_PROPER_FOLLOWUPS = Object.freeze({
         en:"By the words of the Gospel may our sins be blotted out.",
         fr:"Que par les paroles de l’Évangile nos péchés soient effacés.",
       }),
-      role:"PRIEST_PRIVATE",
+      role:"PRIEST_PRIVATE",speakerRole:"PRIEST",
     }),
   ]),
 });
