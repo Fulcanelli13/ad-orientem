@@ -51,7 +51,7 @@ try{
         art=hero?.querySelector(".aoTodayV2Art"),title=art?.querySelector("h1"),
         cta=root?.querySelector(".aoTodayV2PrimaryMass"),rect=cta?.getBoundingClientRect(),
         bottom=cta?.getBoundingClientRect().bottom,sections=[...root.querySelectorAll(".aoTodayV2Zone")].map(x=>x.className);
-      return {vw:innerWidth,heroContainsCTA:Boolean(hero?.contains(cta)),heroActionsContainsCTA:Boolean(root.querySelector(".aoTodayV2HeroActions")?.contains(cta)),ctaParents:cta?[cta.parentElement?.className,cta.parentElement?.parentElement?.className,cta.parentElement?.parentElement?.parentElement?.className]:[],
+      return {vw:innerWidth,heroContainsCTA:Boolean(hero?.contains(cta)),heroActionsContainsCTA:Boolean(root.querySelector(".aoTodayV2HeroActions")?.contains(cta)),heroActionsCount:root.querySelectorAll(".aoTodayV2HeroActions").length,heroActionsParent:root.querySelector(".aoTodayV2HeroActions")?.parentElement?.className||null,heroCount:root.querySelectorAll(".aoTodayV2Frontispiece").length,heroInnerEnd:hero?.innerHTML?.slice(-160)||"",ctaParents:cta?[cta.parentElement?.className,cta.parentElement?.parentElement?.className,cta.parentElement?.parentElement?.parentElement?.className]:[],
         splashBlocks: Boolean(document.querySelector("#ao-cinema-boot,#ao-cinema-loader")&&
           [...document.querySelectorAll("#ao-cinema-boot,#ao-cinema-loader")].some(el=>{
             const cs=getComputedStyle(el),r=el.getBoundingClientRect();
