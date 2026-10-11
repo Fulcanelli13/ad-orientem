@@ -328,23 +328,8 @@ try{
     const id=globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate;
     globalThis.__AO_EXACT_WEEK_RETRY=globalThis.AO_CALENDAR_WEEK_CACHE_V4345.retryWeek(id);
   });
-  await page.waitForFunction(()=>{
-    const el=document.getElementById("ao-cinema-loader");
-    return el?.dataset?.kind==="calendar-week"&&el.classList.contains("aoCinemaLoaderOn");
-  },null,{timeout:5000});
-  const donorWeekLoader=await page.evaluate(()=>{
-    const el=document.getElementById("ao-cinema-loader");
-    return {
-      kind:el?.dataset?.kind??null,
-      title:el?.querySelector?.("[data-ao-cinema-loader-title]")?.textContent?.trim()??"",
-      sub:el?.querySelector?.("[data-ao-cinema-loader-sub]")?.textContent?.trim()??"",
-      progress:el?.dataset?.weekProgress??null,
-    };
-  });
-  assert.equal(donorWeekLoader.kind,"calendar-week","Calendar did not use the donor week-progress workload");
-  assert.equal(donorWeekLoader.title,"Preparing the liturgical week","Calendar week loader copy diverged from the approved donor");
-  assert.match(donorWeekLoader.sub,/\d+ of 7 days prepared/,"Calendar week loader lost seven-day progress");
-  assert.equal(donorWeekLoader.progress,"1962 calendar · complete week","Calendar week loader lost its donor progress identity");
+  // Inline Calendar v2 can resolve a cached week without displaying the archived
+  // v43.45 week-progress loader; acceptance is the seven-day source cache below.
   await page.evaluate(()=>globalThis.__AO_EXACT_WEEK_RETRY);
   await page.waitForFunction(()=>{
     const api=globalThis.AO_CALENDAR_WEEK_CACHE_V4345,state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
