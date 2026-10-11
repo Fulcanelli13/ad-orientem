@@ -1538,12 +1538,6 @@
         "reference": "Acts 11:19–26",
         "kind": "episode-neighborhood"
       },
-      "event-26": {
-        "milestoneIndex": 129,
-        "era": "APOSTLES",
-        "reference": "Acts 8:26–40",
-        "kind": "episode-neighborhood"
-      },
       "event-1": {
         "milestoneIndex": 66,
         "era": "INFANCY",
@@ -1573,6 +1567,18 @@
         "era": "INFANCY",
         "reference": "Matthew 2:13–15",
         "kind": "episode-neighborhood"
+      },
+      "event-9": {
+        "milestoneIndex": 127,
+        "era": "APOSTLES",
+        "reference": "Acts 3:1–10",
+        "kind": "episode-neighborhood"
+      },
+      "event-14": {
+        "milestoneIndex": 126,
+        "era": "APOSTLES",
+        "reference": "Acts 2:1–41",
+        "kind": "episode-neighborhood"
       }
     }
   },
@@ -1580,6 +1586,8 @@
     "Source milestone order is narrative, not absolute chronological dates.",
     "An episode-neighborhood does not prove that the selected person attended every referenced scene.",
     "No patristic or later tradition is elevated to a Scriptural historical route.",
-    "Integration requires source-commit reconciliation and editorial review."
+    "Integration requires source-commit reconciliation and editorial review.",
+    "Apostolic event links require the person and actual narrated episode to overlap with the Atlas milestone; neighboring but different Acts 8 scenes must not be identified.",
+    "When a selected mission event lacks an episode-matched chronology anchor, omit the link rather than defaulting to an unrelated personal biography context."
   ]
 }
