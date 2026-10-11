@@ -17,6 +17,19 @@ const css=`
 #aoPray435930 .aoMercyBeads i.active{background:rgba(205,185,150,.85)}
 #aoPray435930 .aoMercyMethod{padding:14px 0;border-top:1px solid rgba(205,185,150,.2)}
 #aoPray435930 .aoMercyMethod small{display:block;color:var(--ao-muted,#cbbfb2)}
+
+#aoPray435930 .aoRosaryChooser{display:flex;flex-direction:column;gap:24px}
+#aoPray435930 .aoRosaryChoiceGrid{display:grid;grid-template-columns:1fr;gap:9px}
+#aoPray435930 .aoRosaryChoice{display:flex;flex-direction:column;align-items:flex-start;text-align:left;width:100%;padding:13px 16px;background:transparent;border:1px solid rgba(205,185,150,.25);border-radius:8px;color:inherit;min-height:64px}
+#aoPray435930 .aoRosaryChoice strong{font:500 1.08rem Georgia,serif}
+#aoPray435930 .aoRosaryChoice small,#aoPray435930 .aoRosaryChooserOptions small{font:400 .87rem/1.45 system-ui,sans-serif;color:var(--ao-muted,#cbbfb2);margin-top:4px}
+#aoPray435930 .aoRosaryChoice[aria-pressed=true],#aoPray435930 .aoMercyOptions button[aria-pressed=true]{border-color:rgba(210,190,151,.85);background:rgba(210,190,151,.13)}
+#aoPray435930 .aoRosaryChooser .aoMercyOptions button{min-height:44px}
+#aoPray435930 .aoRosaryChooser .aoMercyOptions button:disabled{opacity:.3}
+#aoPray435930 .aoRosaryBegin{width:100%;padding:14px 18px;min-height:52px;border-radius:8px;border:1px solid rgba(210,190,151,.9);color:var(--ao-ink,#eee6dc);background:rgba(210,190,151,.17);font:500 1.1rem Georgia,serif}
+#aoPray435930 .aoRosaryHeld{font-size:.86rem;color:var(--ao-muted,#cbbfb2);border-top:1px solid rgba(205,185,150,.2);padding-top:14px}
+#aoPray435930 .aoRosaryChooser .aoMercySource small{display:block;margin-top:6px}
+@media(min-width:650px){#aoPray435930 .aoRosaryChoiceGrid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoMercyReader *{animation:none!important;transition:none!important}}
 `;
 if(typeof document!=="undefined"&&!document.getElementById("ao-pray-devotional-method-styles")){
