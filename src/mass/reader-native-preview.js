@@ -2135,7 +2135,7 @@ export async function mountNativeReaderPreview({
       root.dataset.r17NativeCue="unresolved";
     }
     current=card;
-    ready.scholaState.activateForCard(card.sourceSequence??card.guideSequence??card.sequence);
+    ready.scholaState.activateForCard(visibleCard);
     const state=projectedState();
     reader.renderMoment({
       id:visibleCard.sectionId,
@@ -2218,7 +2218,7 @@ export async function mountNativeReaderPreview({
     ));
     activeCueId=cueStillPresent ? desiredCue : null;
     if(activeCueId)transientGuard.resolveCue(activeCueId);
-    ready.scholaState.activateForCard(current.sourceSequence??current.guideSequence??current.sequence);
+    ready.scholaState.activateForCard(current);
 
     root.dataset.r17PresentationMode=rebuilt.mode;
     root.dataset.r17SourceModelCards=String(sourceModel.totalCards);
