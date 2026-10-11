@@ -33,7 +33,8 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2 .gospelCard .cardKicker{letter-spacing:.1em;color:var(--muted,#b2afa9)}
 .aoTodayV2 .homeSection{margin-top:0}
 .aoTodayV2Frontispiece.aoTodayV2ArtMissing{display:block!important}
-.aoTodayV2ArtMissing .aoTodayV2Art{height:clamp(205px,46vw,280px)!important;background:radial-gradient(ellipse at 50% 40%,var(--liturgical-soft,rgba(143,154,165,.10)),transparent 68%),var(--surface-1,#101720)}
+.aoTodayV2ArtMissing .aoTodayV2Art{height:clamp(138px,36vw,175px)!important;background:radial-gradient(ellipse at 50% 40%,var(--liturgical-soft,rgba(143,154,165,.10)),transparent 68%),var(--surface-1,#101720)}
+.aoTodayV2ArtMissing .aoTodayV2ArtOverlay{inset:12px 16px 15px}
 .aoTodayV2ArtMissing .aoTodayV2ArtOverlay h1{max-width:660px;margin-inline:auto}
 .aoTodayV2ArtMissing .aoTodayV2HeroActions{max-width:700px;margin-inline:auto}
 @media(min-width:700px){.aoTodayV2Art{height:410px}.aoTodayV2Frontispiece{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr)}.aoTodayV2Art{height:410px}.aoTodayV2HeroActions{display:grid;align-content:center;padding:20px 30px}.aoTodayV2ArtOverlay h1{font-size:42px}}
