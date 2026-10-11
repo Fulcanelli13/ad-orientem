@@ -1,0 +1,859 @@
+{
+  "schema": "AO_SACRED_ART_CURATOR_RECONCILIATION_V1",
+  "sourceExportSchema": "AO_SACRED_ART_CURATOR_REVIEW_V2",
+  "sourceExportedAt": "2026-10-11T15:38:53.031Z",
+  "sourceOriginalFileSha256": "8f59829290323e1de778c84a0f84f5c3114226a8e17a6634fb5d617c71f107c7",
+  "reviewYear": 2026,
+  "baselineUniqueSHA": 264,
+  "status": "USER_EDITORIAL_REVIEW_ONLY_NOT_PUBLISHED",
+  "ownerPR": 887,
+  "editorialRule": "Explicit approval is a subject selection; a subject refusal applies to that subject only and never rejects the artwork globally. Technical rights, historical identity, crop, rubrical 1962 date matching, module integration and production acceptance remain separate.",
+  "summary": {
+    "subjectSelections": 44,
+    "approvedDistinctOriginals": 35,
+    "subjectRefusals": 30,
+    "exceptions": 0,
+    "reviewedDistinctSubjects": 47,
+    "selectionModules": {
+      "calendar": 21,
+      "rosary": 15,
+      "devotion": 3,
+      "person": 5
+    }
+  },
+  "approvals": [
+    {
+      "artworkId": "cma-143784",
+      "originalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-436984",
+      "originalSha256": "254e94beee4b50c8d61e9f214cfee1663bb31bedd0cc51a47164a3717c1515c7",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-438724",
+      "originalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-459131",
+      "originalSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "kress-k2017",
+      "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "nga-46127",
+      "originalSha256": "f2fa7157db6d5c2b210cff8cfb960f51a7c691f0fe77a7a5c91bbb00c1d277a5",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-459087",
+      "originalSha256": "2220c79ddf9ae2ccc23a9853a8055217079a52e6c1eb8f921a627eb8a858ee26",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-437156",
+      "originalSha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "cma-78982",
+      "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-436835",
+      "originalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "commons-baroncelli-pentecost",
+      "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "cma-136507",
+      "originalSha256": "161aa1edd73d63709ed835e5e20e3ee5e7a175358d0a52a00a8c0ea86840a050",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-437722",
+      "originalSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "nga-46131",
+      "originalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "cma-135659",
+      "originalSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-437336",
+      "originalSha256": "934a14aa1e9c3efe31a9170825f24bf37b5bd6083953ebeb5c91cdc7265baf27",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-437342",
+      "originalSha256": "1ee5a9ab525bb63b42b49d346dd1b6029a3d4f50cd8bcf268e92dabc764602f0",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "cma-160143",
+      "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-437738",
+      "originalSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "kress-k1782",
+      "originalSha256": "09cd71f37399cf68435086b2bee3df1f8ef90d074d6d4c94b52875914d9b9c27",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "nga-505",
+      "originalSha256": "f3a7a3e350821593959bba5441953d9684810243d2db8b6848d47dd1ba01c014",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "nga-41656",
+      "originalSha256": "3b3b11cba6e16eff2535fdd9655d598f617c29f7f9e50d9356972681c2f1e4e6",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-442488",
+      "originalSha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-436721",
+      "originalSha256": "69fe6aae9e565c621b05515ed4205044b216be63a5bcff6d7fe87163deb97623",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-438466",
+      "originalSha256": "b7d5f85771e4e270adb5fae5e01061f52004d195278c8705bde2482e8f0341c6",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "cma-129386",
+      "originalSha256": "a495cd94f5477d47f86a0ae9ed72c9c4bbf085c246ea7c2c5f0f0e93ca307505",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "cma-124076",
+      "originalSha256": "5477d80f450d3e4b4f22fec263bcbb7482094f61412a8a12e0e77c927854a6fc",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-437423",
+      "originalSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-436839",
+      "originalSha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-442491",
+      "originalSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-441971",
+      "originalSha256": "d3575d5455b46be66e0fc14e7ee1e7daf9194d2e8f68bd29d99608fea4a6e68e",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-437970",
+      "originalSha256": "79a8500d9cca058ac4c68160a6f401ba7920244a70bb3271072a017f22701d61",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "cma-142293",
+      "originalSha256": "4dcee3822142655e6b1cb7286c7fe68f5f4d036bf6951a0ed1be8b3f9534cb02",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    },
+    {
+      "artworkId": "met-436054",
+      "originalSha256": "cc552dd61308c10b3b12d85771ffc882ea609aff4cbe6a208eaeb0ab9218f7b5",
+      "status": "EDITORIALLY_APPROVED_ONLY"
+    }
+  ],
+  "selections": [
+    {
+      "targetId": "calendar.christmas",
+      "artworkId": "cma-143784",
+      "originalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1968.22"
+    },
+    {
+      "targetId": "calendar.epiphany",
+      "artworkId": "met-436984",
+      "originalSha256": "254e94beee4b50c8d61e9f214cfee1663bb31bedd0cc51a47164a3717c1515c7",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436984"
+    },
+    {
+      "targetId": "calendar.annunciation",
+      "artworkId": "met-438724",
+      "originalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724"
+    },
+    {
+      "targetId": "calendar.holy-thursday",
+      "artworkId": "met-459131",
+      "originalSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459131"
+    },
+    {
+      "targetId": "calendar.palm-sunday",
+      "artworkId": "kress-k2017",
+      "originalSha256": "f3922cf491cb80e66db98abe25d7b4e1960469be631ce5c1972e2430d7adfbff",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f4832967ceb5ef3d4a16d197598a9e0d9316988535614e23179d576261b6b079"
+    },
+    {
+      "targetId": "calendar.candlemas",
+      "artworkId": "nga-46127",
+      "originalSha256": "f2fa7157db6d5c2b210cff8cfb960f51a7c691f0fe77a7a5c91bbb00c1d277a5",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/46127-presentation-in-the-temple"
+    },
+    {
+      "targetId": "calendar.good-friday",
+      "artworkId": "met-459087",
+      "originalSha256": "2220c79ddf9ae2ccc23a9853a8055217079a52e6c1eb8f921a627eb8a858ee26",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459087"
+    },
+    {
+      "targetId": "calendar.holy-saturday",
+      "artworkId": "met-437156",
+      "originalSha256": "6825656670d25b88c12aa833984db007876698c7d6fbdbdadeb6d020cf1bbb67",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437156"
+    },
+    {
+      "targetId": "calendar.easter",
+      "artworkId": "cma-78982",
+      "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/2017.192"
+    },
+    {
+      "targetId": "calendar.ascension",
+      "artworkId": "met-436835",
+      "originalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436835"
+    },
+    {
+      "targetId": "calendar.pentecost",
+      "artworkId": "commons-baroncelli-pentecost",
+      "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+    },
+    {
+      "targetId": "calendar.trinity",
+      "artworkId": "cma-136507",
+      "originalSha256": "161aa1edd73d63709ed835e5e20e3ee5e7a175358d0a52a00a8c0ea86840a050",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1960.79"
+    },
+    {
+      "targetId": "calendar.corpus-christi",
+      "artworkId": "met-437722",
+      "originalSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437722"
+    },
+    {
+      "targetId": "calendar.sacred-heart",
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+    },
+    {
+      "targetId": "calendar.assumption",
+      "artworkId": "nga-46131",
+      "originalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/46131-assumption-of-the-virgin"
+    },
+    {
+      "targetId": "calendar.immaculate-conception",
+      "artworkId": "cma-135659",
+      "originalSha256": "9630b345caf4062287f16d9d8e0b728b87938f4a3b22eb1ae43d888c518f9d6a",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1959.189"
+    },
+    {
+      "targetId": "calendar.holy-rosary",
+      "artworkId": "met-437336",
+      "originalSha256": "934a14aa1e9c3efe31a9170825f24bf37b5bd6083953ebeb5c91cdc7265baf27",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437336"
+    },
+    {
+      "targetId": "calendar.our-lady-sorrows",
+      "artworkId": "met-437342",
+      "originalSha256": "1ee5a9ab525bb63b42b49d346dd1b6029a3d4f50cd8bcf268e92dabc764602f0",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437342"
+    },
+    {
+      "targetId": "calendar.saint-joseph",
+      "artworkId": "cma-160143",
+      "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1998.10"
+    },
+    {
+      "targetId": "calendar.st-john-baptist",
+      "artworkId": "met-437738",
+      "originalSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437738"
+    },
+    {
+      "targetId": "calendar.holy-innocents",
+      "artworkId": "kress-k1782",
+      "originalSha256": "09cd71f37399cf68435086b2bee3df1f8ef90d074d6d4c94b52875914d9b9c27",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+      "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/f65fe27049161fdc04c5696d3b01d6c1f5a32680a87bfcb99d76bf69b39b7cb0"
+    },
+    {
+      "targetId": "rosary.joy2",
+      "artworkId": "nga-505",
+      "originalSha256": "f3a7a3e350821593959bba5441953d9684810243d2db8b6848d47dd1ba01c014",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/505-visitation-saint-nicholas-and-saint-anthony-abbot"
+    },
+    {
+      "targetId": "rosary.joy1",
+      "artworkId": "met-438724",
+      "originalSha256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438724"
+    },
+    {
+      "targetId": "rosary.joy3",
+      "artworkId": "cma-143784",
+      "originalSha256": "5de97b5cb76dbbaaf40dad652b5788667fa1e41a65327db10363e7d675eef2cc",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1968.22"
+    },
+    {
+      "targetId": "rosary.joy5",
+      "artworkId": "nga-41656",
+      "originalSha256": "3b3b11cba6e16eff2535fdd9655d598f617c29f7f9e50d9356972681c2f1e4e6",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/41656-christ-among-doctors"
+    },
+    {
+      "targetId": "rosary.joy4",
+      "artworkId": "nga-46127",
+      "originalSha256": "f2fa7157db6d5c2b210cff8cfb960f51a7c691f0fe77a7a5c91bbb00c1d277a5",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/46127-presentation-in-the-temple"
+    },
+    {
+      "targetId": "rosary.sor1",
+      "artworkId": "met-442488",
+      "originalSha256": "acc13b2f34ed893edb300bbebd0dea66ddd95d824b8bd9fb94bc1e2a9d17abaf",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442488"
+    },
+    {
+      "targetId": "rosary.sor3",
+      "artworkId": "met-436721",
+      "originalSha256": "69fe6aae9e565c621b05515ed4205044b216be63a5bcff6d7fe87163deb97623",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436721"
+    },
+    {
+      "targetId": "rosary.sor2",
+      "artworkId": "met-438466",
+      "originalSha256": "b7d5f85771e4e270adb5fae5e01061f52004d195278c8705bde2482e8f0341c6",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/438466"
+    },
+    {
+      "targetId": "rosary.sor4",
+      "artworkId": "met-459087",
+      "originalSha256": "2220c79ddf9ae2ccc23a9853a8055217079a52e6c1eb8f921a627eb8a858ee26",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459087"
+    },
+    {
+      "targetId": "rosary.sor5",
+      "artworkId": "cma-129386",
+      "originalSha256": "a495cd94f5477d47f86a0ae9ed72c9c4bbf085c246ea7c2c5f0f0e93ca307505",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1952.222"
+    },
+    {
+      "targetId": "rosary.glo1",
+      "artworkId": "cma-78982",
+      "originalSha256": "f213c24c55e83432752c310ab3e6bf7c533c4627f22ceefc4481b7eee17af6e5",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/2017.192"
+    },
+    {
+      "targetId": "rosary.glo2",
+      "artworkId": "met-436835",
+      "originalSha256": "889c57548f01237cb9031d81650832e74ac9f89112131a5bf32ded0317353a90",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436835"
+    },
+    {
+      "targetId": "rosary.glo5",
+      "artworkId": "cma-124076",
+      "originalSha256": "5477d80f450d3e4b4f22fec263bcbb7482094f61412a8a12e0e77c927854a6fc",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1944.79"
+    },
+    {
+      "targetId": "rosary.glo4",
+      "artworkId": "nga-46131",
+      "originalSha256": "4644923c39a6170ef8d2d9c81fe9e0638942bd67f8d1720f6061ef145938776d",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/46131-assumption-of-the-virgin"
+    },
+    {
+      "targetId": "rosary.glo3",
+      "artworkId": "commons-baroncelli-pentecost",
+      "originalSha256": "1cbd9f1f47143245a4336a4ecd4dfa0d637f93ce2f5ebfbfb5409aebc46e4f49",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg"
+    },
+    {
+      "targetId": "devotion.immaculate-heart",
+      "artworkId": "met-437423",
+      "originalSha256": "db8e29b4bd81ab1481b32564b69ec6e40056cf28a3184fb0ba4da2bbe86e697a",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437423"
+    },
+    {
+      "targetId": "devotion.sacred-heart",
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "originalSha256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg"
+    },
+    {
+      "targetId": "devotion.confession",
+      "artworkId": "met-436839",
+      "originalSha256": "408b6ed786d8a1bb24a9f407c0a0fa8bf6f4211c2d30dd0f4d14b9bea9047d18",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436839"
+    },
+    {
+      "targetId": "person.paul",
+      "artworkId": "met-442491",
+      "originalSha256": "68d501d009183a6aca17628e8323a8edaedf676cc4d7293b97f1afa3380470bc",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/442491"
+    },
+    {
+      "targetId": "person.peter",
+      "artworkId": "met-441971",
+      "originalSha256": "d3575d5455b46be66e0fc14e7ee1e7daf9194d2e8f68bd29d99608fea4a6e68e",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/441971"
+    },
+    {
+      "targetId": "person.benedict",
+      "artworkId": "met-437970",
+      "originalSha256": "79a8500d9cca058ac4c68160a6f401ba7920244a70bb3271072a017f22701d61",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437970"
+    },
+    {
+      "targetId": "person.francis-assisi",
+      "artworkId": "cma-142293",
+      "originalSha256": "4dcee3822142655e6b1cb7286c7fe68f5f4d036bf6951a0ed1be8b3f9534cb02",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1966.125"
+    },
+    {
+      "targetId": "person.dominic",
+      "artworkId": "met-436054",
+      "originalSha256": "cc552dd61308c10b3b12d85771ffc882ea609aff4cbe6a208eaeb0ab9218f7b5",
+      "status": "SELECTED_FOR_SUBJECT_EDITORIALLY_ONLY",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436054"
+    }
+  ],
+  "refusals": [
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-437722",
+      "originalSha256": "666c631f181f2ea3a096a2c0ccad76f37c7f68087a77a0fd96cd31678eaa321a",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437722",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-437871",
+      "originalSha256": "a95fc8ee98280bf7e29c191ecdec02f5e7a8bdb4b6596b9c125794e47f1ab1fc",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437871",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-439327",
+      "originalSha256": "cd131e409fc0b83366df017d216e2085ad21776fba13503a3cc300e37a57117f",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/439327",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-459131",
+      "originalSha256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459131",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "nga-12130",
+      "originalSha256": "699b5a374b42ae683f5802501df56c164f055cdda0dea75046e49244f57eb7bf",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/12130-last-supper",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "nga-33",
+      "originalSha256": "27a3a0bbdc229034805fa4ff322b3b29df755e7fc59c02e5d6faf4c76614f776",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/33-christ-blessing",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "nga-43198",
+      "originalSha256": "20ec33ceacf49a101efb7f9b57bdeeceb0d6c78e1cf58e82c30fb88df1cded45",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/43198-last-supper",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-437698",
+      "originalSha256": "d2de9b64a4490a9feafab89ae621e4f8f129923ea16be47073ae9b52041bd68c",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437698",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-437649",
+      "originalSha256": "93b45b9525945bd4beb57131b87984df40db23cfa353ac6fa1fadfd54578c42d",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437649",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-437466",
+      "originalSha256": "f3108896cae02f1d8cf3b46960d5c7121940278a6425507215dc508dfd908944",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437466",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-437213",
+      "originalSha256": "c5831a7dd244e516abd5ed14623cd472df83fe26a520bf6d9d64c50e65ded3d2",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437213",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "met-436035",
+      "originalSha256": "acb7948243971ebd7d97fb4a4ad4f626b17b5662771efc98d3277d613f9ba723",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436035",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.adoration",
+      "artworkId": "cma-112626",
+      "originalSha256": "8e839b5a58229decac79b7f6d9458f6713043c0fc5c9ca6dbf565839d0746d48",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1931.245",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-160143",
+      "originalSha256": "6edb1762e9001a78a19efb71173959befeb9cf7f90a9538bab62b6bffd3f3814",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1998.10",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-170814",
+      "originalSha256": "cca07856c983260deb9bf9c9e1bf637e648efd9b5cfcebcf86e9918d88325f9a",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/2013.312",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-370119",
+      "originalSha256": "f0e2a6a0727d4c323bf78ab9b999b1ad4c2240c79a696cc0e8b250ec58fc2d10",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/2019.168",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "met-436793",
+      "originalSha256": "ede2bd3ed5c747b59e84921f06d0fe7ca4a855a577e2345f63680707f5b0f113",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436793",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "met-436797",
+      "originalSha256": "0de98139856e52e8f517d67cb3b12daa794fde71ce112ff5afa32e1fe61e6414",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436797",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "met-437458",
+      "originalSha256": "6c980df07e2fd9ddc2bfc4b00b913fb6b60890f06fee9f11a8d640f8488b3abe",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437458",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "met-459059",
+      "originalSha256": "08bc8d4fec61ce91dcfb961f3b9587b347e63737203af8a44bb200f405520992",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459059",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "met-459063",
+      "originalSha256": "fddbdac3ac431af8ef0470922e20cd266ca482cc9602473626be9c89810b5e1c",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/459063",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "nga-41644",
+      "originalSha256": "79288aef1a922ed49acc40312676d25daca19e4f35fa18c26a2779be1ce7bc74",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/41644-expectant-madonna-with-saint-joseph",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-150389",
+      "originalSha256": "4d3e81096c456cb1b5ad9d36c69e82cba0e14655a1cd0a68a1d4776b4b1f55aa",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1981.18",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-143138",
+      "originalSha256": "36fcfd50c6b19294fb5f240fcf5ec9953d91a60c82baa7d9f535ee62c876bf5d",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1967.123",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-130392",
+      "originalSha256": "87c75f556071d28bbda0584a070886d9704cd8ad68245dd1942ef4030ed5b414",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1953.156",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-126768",
+      "originalSha256": "ad354b41cb5b18f54f1362c6bbee187b4d03859b6f8c0cc7dcd6078cf66698ad",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1949.185",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-113202",
+      "originalSha256": "93fe169c654cac0a872d2db89ee955facf9ca66c2e996327eeaacad11fcafc05",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1932.227",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "cma-108541",
+      "originalSha256": "6d0e62e90be1ef3513474a309b983d2e2101b6781c62ed40acbcfa2db07111b3",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://clevelandart.org/art/1926.247",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "artworkId": "met-436102",
+      "originalSha256": "3a9ca2b198d9d8cb1bb4ec7651961bcd855346b7a98b7f5a9b0c0f3272a5037b",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/436102",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    },
+    {
+      "targetId": "scripture.healing-paralytic",
+      "artworkId": "nga-12205",
+      "originalSha256": "3723b116592415bd2538d6e64e53897d374223b489b2e6ce2506716014fc39b2",
+      "status": "NOT_SUITABLE_FOR_SUBJECT",
+      "sourceRights": "CC0",
+      "sourceUrl": "https://www.nga.gov/artworks/12205-healing-of-the-paralytic",
+      "kind": "NOT_SUITABLE_FOR_SUBJECT"
+    }
+  ],
+  "exceptions": [],
+  "researchPriority": [
+    {
+      "targetId": "devotion.adoration",
+      "refusedCandidates": 13,
+      "request": "Source visually stronger artwork for Eucharistic Adoration and Benediction, not just unrelated Last Supper associations."
+    },
+    {
+      "targetId": "devotion.st-joseph",
+      "refusedCandidates": 16,
+      "request": "Find subject-exact Saint Joseph devotional painting; distinguish Holy Family art suitable for Calendar Saint Joseph from user-declined prayer art."
+    },
+    {
+      "targetId": "scripture.healing-paralytic",
+      "refusedCandidates": 1,
+      "request": "Acquire a different exact episode artwork; do not silently recycle rejected NGA 12205."
+    }
+  ],
+  "approvalBoundary": {
+    "appRegistryPromotion": false,
+    "globalRejectedImages": 0,
+    "publishedAssets": 0,
+    "rightsClearedByReview": false,
+    "phoneCropClearedByReview": false,
+    "calendarDayCertifiedByReview": false
+  },
+  "consistencyChecks": {
+    "uniqueApprovedSha": true,
+    "overlappingSelectionRefusalPairs": 0,
+    "unknownArtworks": 0,
+    "unknownTargets": 0
+  }
+}
