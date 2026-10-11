@@ -6,6 +6,8 @@ on:
       - 'scripts/research/mass-1962-ocr-cluster-review-queue.mjs'
       - 'tests/mass-1962-printed-page-cluster-review.mjs'
       - '.github/workflows/mass-1962-page-cluster-triage.yml'
+      - 'data/geography/research/mass-1962-cmaa-visual-10-page-source-spotchecks-20261011.v1.json'
+      - 'tests/mass-1962-visual-page-spotchecks.mjs'
 jobs:
   build-conservative-page-queue:
     runs-on: ubuntu-latest
@@ -20,6 +22,8 @@ jobs:
         run: node scripts/research/mass-1962-ocr-cluster-review-queue.mjs
       - name: Validate unambiguous coverage and closed publication gates
         run: node tests/mass-1962-printed-page-cluster-review.mjs
+      - name: Validate ten visually inspected PDF pages and the August commemoration hold
+        run: node tests/mass-1962-visual-page-spotchecks.mjs
       - name: Upload review queue for per-page checking
         if: always()
         uses: actions/upload-artifact@v4
