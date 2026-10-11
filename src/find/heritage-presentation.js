@@ -1,3 +1,4 @@
+import { navigationActionAttrs, navigationActionIcon } from "../app/interface-grammar.js";
 // Map-first Sacred Geography: one physical Place, one pin, short preview.
 // Full scholarly records remain accessible on explicit request.
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -90,7 +91,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={
   const active=arr(vm.filters?.heritageCategories),all=active.length===Object.keys(CATEGORY_LABELS).length;
   const searching=Boolean(String(vm.filters?.query??"").trim());
   let html='<section class="aoFindSurface aoExploreSurface aoHeritageSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
-  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+L(vm.language,"Back","Retour")+'">←</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+L(vm.language,"Sacred Geography","Géographie sacrée")+'</h1></div><span class="aoHeritageCount" aria-label="'+esc(String(vm.items.length))+' '+L(vm.language,"places on this map","lieux sur cette carte")+'">'+esc(String(vm.items.length))+' <small>'+L(vm.language,"places","lieux")+'</small></span><button type="button" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button></header>';
+  html+='<header class="aoFindHeader aoAppHeader"><button type="button" data-find-close '+navigationActionAttrs("back",vm.language)+'">'+navigationActionIcon("back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+L(vm.language,"Sacred Geography","Géographie sacrée")+'</h1></div><span class="aoHeritageCount" aria-label="'+esc(String(vm.items.length))+' '+L(vm.language,"places on this map","lieux sur cette carte")+'">'+esc(String(vm.items.length))+' <small>'+L(vm.language,"places","lieux")+'</small></span><button type="button" data-find-glossary aria-label="'+L(vm.language,"Definitions","Définitions")+'">?</button></header>';
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
   html+='<nav class="aoExploreMainDestinations" aria-label="'+L(vm.language,"Explore destinations","Parcours Explorer")+'">';
   html+='<span class="active" aria-current="page">'+L(vm.language,"Sacred places","Lieux sacrés")+'</span>';
