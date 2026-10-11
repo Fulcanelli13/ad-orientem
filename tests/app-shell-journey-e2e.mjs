@@ -69,7 +69,7 @@ try{
     massMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
-    homeCanonicalIcons:document.querySelectorAll(' .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="embedded"], .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="mask"]'.trim()).length,
+    homeCanonicalIcons:document.querySelectorAll('.aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="embedded"], .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="mask"]').length,
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
