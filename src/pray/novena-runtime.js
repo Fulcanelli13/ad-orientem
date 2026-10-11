@@ -1,3 +1,4 @@
+import { navigationActionAttrs, navigationActionIcon } from "../app/interface-grammar.js";
 import { NOVENA_CORPUS_V4 as CORPUS, NOVENA_START_KIND } from "./novena-corpus-v4.js";
 import { novenaSourceAccess } from "./novena-source-access.v1.js";
 import { hammerHistoricalDayWitness } from "./novena-hammer-day-witness.v1.js";
@@ -48,7 +49,7 @@ function selectedDate(){
 }
 function fmt(d){return formatDisplayDate(d)}
 function calStatus(n){const now=selectedDate(),key=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-'),c=novenaStatusFor(n,key,{fr:isFr()});const w={start:new Date(c.window.start+'T12:00:00'),end:new Date(c.window.end+'T12:00:00'),feast:new Date(c.window.feast+'T12:00:00')};return{kind:c.kind,day:c.day,label:c.label,w}}
-function head(title,sub=''){return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-n1-back aria-label="${esc(L('Back','Retour'))}">${n1UiIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY · NOVENAS','PRIER · NEUVAINES'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div><button type="button" class="aoP435930Home" data-n1-home aria-label="${esc(L('Home','Accueil'))}">${n1UiIcon('ao-nav-home')}</button></header>`}
+function head(title,sub=''){return `<header class="aoP435930Head aoAppHeader"><button type="button" class="aoP435930Back" data-n1-back ${navigationActionAttrs("back",isFr()?"fr":"en")}>${navigationActionIcon("back")}</button><div><small>${esc(L('PRAY · NOVENAS','PRIER · NEUVAINES'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div><button type="button" class="aoP435930Home" data-n1-home ${navigationActionAttrs("home",isFr()?"fr":"en")}>${navigationActionIcon("home")}</button></header>`}
 function modeNav(){return `<div class="aoP435930Seg" role="group" aria-label="${esc(L('Depth','Profondeur'))}"><button type="button" class="${N.mode==='simple'?'active':''}" aria-pressed="${N.mode==='simple'}" data-n1-mode="simple">${esc(L('Simple','Simple'))}</button><button type="button" class="${N.mode==='guided'?'active':''}" aria-pressed="${N.mode==='guided'}" data-n1-mode="guided">${esc(L('Guided','Guidé'))}</button></div>`}
 function sourceDetails(n){
  const s=n.source||{},section=novenaSourceAccess(n.id),url=String(s.url||'');
