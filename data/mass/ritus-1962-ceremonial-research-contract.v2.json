@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-ceremonial-research-contract-v2",
-  "version": "2.4.0-book-only-full-chapter-pass",
+  "version": "2.5.0-book-meaning-semantic-audit",
   "status": "RESEARCH_NOT_RUNTIME",
   "sourceOfAuthority": {
     "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -111,11 +111,11 @@
     "The matrix's existing 1962 form rules are preserved; do not infer unsupported variants"
   ],
   "priorities": [
-    "Reconcile 113 located Alphonsus actions and 27 Fortescue historical contexts with existing source of truth, working in grouped chapters",
-    "For the 16 Low/Sung donor action differences, determine whether difference is valid by form, not necessarily an error",
-    "Mark historical exceptions (Requiem, second Confiteor, bishop present, exposed Sacrament) as 1962-inapplicable or 1962-review-needed",
-    "Derive short and long French priest rubrics only from directly checked passages with direct source page and correct actor",
-    "Keep faithful posture customs observational and independent of priest gestures; preserve canonical 48-card LIVE"
+    "Treat 113 supplied-book passage candidates as semantically audited, but not universally certified 1962 rubrics",
+    "Resolve 6 text boundary mismatches and 7 prior actor/Schola ownership questions without modifying canonical text",
+    "No new event for five Per ipsum crosses: already complete at C0202+C0203",
+    "Keep historic-only exposed Sacrament, bishop, Requiem and second Confiteor conditional",
+    "Once current 1962 SOT reconciles remaining cases, propose narrow Priest Mode presentation PR and real phone tests"
   ],
   "correctionsSinceV2": [
     "C0163 opening Quam oblationem precedes crosses; C0164 three crosses on benedictam, adscriptam, ratam; C0165 Corpus-only, C0166 Sanguis-only.",
@@ -151,5 +151,46 @@
     "sourceEvidenceStatus": "ALL_113_PAGE_EXCERPTS_LOCATED_SEMANTIC_AND_1962_APPLICABILITY_OPEN",
     "externalSourcesConsulted": false,
     "priestGuideTextAutomaticallyPromoted": false
+  },
+  "bookSemanticReview": {
+    "file": "data/mass/alphonsus-fortescue-semantic-reconciliation-remaining97.v1.json",
+    "priorReview": "data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json",
+    "totalSourcePassages": 113,
+    "alreadyAssessedLowSung": 16,
+    "newSemanticAssessments": 97,
+    "all113NowReviewedForPassageMeaning": true,
+    "counts": {
+      "directHistoric": 41,
+      "caveated": 30,
+      "correctedSourceExcerpt": 8,
+      "needsReanchor": 6,
+      "historic1962Unresolved": 9,
+      "excludedOlderConfiteor": 1,
+      "expresslyRejectedPositiveAction": 1,
+      "researchSummaryOnlyIncomplete": 1
+    },
+    "controllingPrinciple": "All substantive claims sourced solely to two user-supplied historical books, with existing 1962 SOT determining modern form applicability. Green research tests do not establish 1962 normative certification.",
+    "critical": [
+      {
+        "cue": "AO.SM.C0150",
+        "issue": "altar kiss after petimus before C0151"
+      },
+      {
+        "cue": "AO.SM.C0202/C0203",
+        "issue": "all 5 Per ipsum crosses ALREADY in canonical matrix; repair research summary only"
+      },
+      {
+        "cue": "AO.SM.C0112",
+        "issue": "pre-text wine pour / water blessing and Requiem exception require separate actor/object event"
+      },
+      {
+        "cue": "AO.SM.C0180/C0181",
+        "issue": "historical book puts first chalice genuflection at Haec quotiescumque boundary; requires existing 1962 SOT reconciliation"
+      },
+      {
+        "cue": "BISHOP_WATER_BLESSING",
+        "issue": "Alphonsus rejects this practice as not prescribed; no positive gesture"
+      }
+    ]
   }
 }
