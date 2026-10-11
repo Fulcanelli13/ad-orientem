@@ -69,6 +69,10 @@ try{
     massMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
+    prayNow:document.querySelectorAll(".aoTodayV2Below .aoTodayV2PrayNow [data-home-cu-route='pray.rosary']").length,
+    scripture:document.querySelectorAll(".aoTodayV2Below [data-home-scripture]").length,
+    gospel:document.querySelectorAll(".aoTodayV2Below [data-action='gospel']").length,
+    catechism:document.querySelectorAll(".aoTodayV2Below [data-home-daily-catechism]").length,
     todayV2PrayNow:document.querySelectorAll(".homeScreen.aoTodayV2 .aoTodayV2PrayNow").length,
     todayV2ReadReflect:document.querySelectorAll(".homeScreen.aoTodayV2 .aoTodayV2ReadReflect").length,
     todayV2Upcoming:document.querySelectorAll(".homeScreen.aoTodayV2 .aoTodayV2Upcoming").length,
@@ -515,7 +519,8 @@ try{
   assert.equal(homeOwnership.installed,true);
   assert.equal(homeOwnership.presentationAttached,true,"modular Home presentation is not subscribed to runtime state");
   assert.equal(homeOwnership.enrichersOwner,"modular-home-enrichers-v1","Home transition did not restore modular enrichers");
-  assert.equal(homeOwnership.modularEnrichers,2,"Home transition did not restore both modular enricher cards");
+  assert.equal(homeOwnership.modularEnrichers,1,"Home transition lost Today v2 editorial owner");
+  for(const slot of ["prayNow","scripture","gospel","catechism"])assert.equal(homeOwnership[slot],1,"Home return lost Today v2 "+slot+" handoff");
   assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
   assert.equal(homeOwnership.homeSuppressed,"false","Home suppression survived return to Home");
