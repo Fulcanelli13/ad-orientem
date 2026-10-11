@@ -1236,22 +1236,62 @@ const AO_DEVOTIONAL_ROSARY_V38=Object.freeze({
   souls:{title:{en:'For the Holy Souls',fr:'Pour les âmes du purgatoire'},lead:{en:'Let us pray for the holy souls in purgatory.',la:'Oremus pro animabus in purgatorio.',fr:'Prions pour les saintes âmes du purgatoire.'},prayers:['pater','ave'],closing:{en:'℣. May they rest in peace.\n℟. Amen.',la:'℣. Requiescant in pace.\n℟. Amen.',fr:'℣. Qu’ils reposent en paix.\n℟. Ainsi soit-il.'}}
  }
 });
+/* Source-bounded methods live in the existing canonical Rosary owner. */
+const AO_ROSARY_METHOD_SOURCE=Object.freeze({
+ dominican:'https://rosaryconfraternity.org/the-rosary/how-to-pray-the-rosary/',
+ montfort:'https://www.montfort.org/content/uploads/pdf/PDF_FR_30_1.pdf'
+});
+const AO_DOMINICAN_OPENING=Object.freeze({
+ la:'℣. Ave Maria, gratia plena, Dominus tecum.\n℟. Benedicta tu in mulieribus, et benedictus fructus ventris tui, Iesus.\n℣. Domine, labia mea aperies.\n℟. Et os meum annuntiabit laudem tuam.\n℣. Deus, in adiutorium meum intende.\n℟. Domine, ad adiuvandum me festina.',
+ fr:'℣. Je vous salue, Marie, pleine de grâce, le Seigneur est avec vous.\n℟. Vous êtes bénie entre toutes les femmes, et Jésus, le fruit de vos entrailles, est béni.\n℣. Seigneur, ouvrez mes lèvres.\n℟. Et ma bouche publiera votre louange.\n℣. Ô Dieu, venez à mon aide.\n℟. Seigneur, hâtez-vous de me secourir.',
+ en:'℣. Hail Mary, full of grace, the Lord is with thee.\n℟. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus.\n℣. O Lord, open my lips.\n℟. And my mouth shall proclaim thy praise.\n℣. O God, come to my assistance.\n℟. O Lord, make haste to help me.'
+});
+const AO_DOMINICAN_FINAL=Object.freeze({
+ la:'℣. Regina sacratissimi Rosarii, ora pro nobis.\n℟. Ut digni efficiamur promissionibus Christi.\n℣. Divinum auxilium maneat semper nobiscum.\n℟. Et animae fidelium defunctorum per misericordiam Dei requiescant in pace. Amen.',
+ fr:'℣. Reine du très saint Rosaire, priez pour nous.\n℟. Afin que nous soyons rendus dignes des promesses du Christ.\n℣. Que le secours divin demeure toujours avec nous.\n℟. Et que les âmes des fidèles défunts reposent en paix par la miséricorde de Dieu. Ainsi soit-il.',
+ en:'℣. Queen of the Most Holy Rosary, pray for us.\n℟. That we may be made worthy of the promises of Christ.\n℣. May divine assistance remain always with us.\n℟. And may the souls of the faithful departed, through the mercy of God, rest in peace. Amen.'
+});
+const AO_MONTFORT_FRUITS=Object.freeze({
+ joy1:['humilité du cœur','humility of heart'],
+ joy2:['charité envers le prochain','charity toward our neighbour'],
+ joy3:['détachement des richesses et amour des pauvres','detachment from riches and love for the poor'],
+ joy4:['sagesse et pureté','wisdom and purity'],
+ joy5:['conversion véritable','true conversion'],
+ sor1:['contrition et conformité à la volonté de Dieu','contrition and conformity to God’s will'],
+ sor2:['mortification des sens','mortification of the senses'],
+ sor3:['renoncement à l’esprit du monde','freedom from worldly vanity'],
+ sor4:['patience à porter la croix','patience in carrying the cross'],
+ sor5:['amour de la Croix et grâce d’une bonne mort','love of the Cross and the grace of a holy death'],
+ glo1:['foi vive','living faith'],
+ glo2:['espérance ferme et désir du Ciel','steadfast hope and longing for Heaven'],
+ glo3:['sagesse divine pour connaître et pratiquer la vérité','divine wisdom to know and practise the truth'],
+ glo4:['véritable dévotion envers Marie','true devotion to Mary'],
+ glo5:['persévérance dans la vertu jusqu’à la mort','perseverance in virtue until death']
+});
 function labRosarySteps(set){
  const ids=labRosaryIds(set),steps=[];
  const prayer=(key,phase,extra={})=>steps.push({kind:'prayer',key,phase,...extra});
- if(S.rosaryForm==='devotional'){
+ if(S.rosaryMethod==='dominican'){
+  prayer('sign','opening');steps.push({kind:'dominican-opening',phase:'opening'});prayer('gloria','opening');
+ }else if(S.rosaryForm==='devotional'&&S.rosaryMethod!=='montfort'){
   prayer('sign','opening');steps.push({kind:'devotional-opening',phase:'opening'});prayer('gloria','opening');
  }else{
-  prayer('sign','opening');prayer('credo','opening');prayer('pater','opening');
+  prayer('sign','opening');
+  if(S.rosaryMethod==='montfort')steps.push({kind:'montfort-opening',phase:'opening'});
+  prayer('credo','opening');prayer('pater','opening');
   for(let n=1;n<=3;n++)prayer('ave','opening',{openingAve:n});prayer('gloria','opening');
  }
  ids.forEach((id,mi)=>{
    const info=AO_ROSARY_DEPTH[id];steps.push({kind:'mystery',id,mi,phase:'decade'});
+   if(S.rosaryMethod==='montfort'&&AO_MONTFORT_FRUITS[id])steps.push({kind:'montfort-offering',id,mi,phase:'decade'});
    prayer('pater','decade',{id,mi});
    for(let bead=1;bead<=10;bead++)prayer('ave','decade',{id,mi,bead,cue:info?.cues?.[bead-1]||null});
-   prayer('gloria','decade',{id,mi});if(S.rosaryFatima!==false)prayer('fatima','decade',{id,mi});
+   prayer('gloria','decade',{id,mi});
+   if(S.rosaryMethod==='montfort'&&AO_MONTFORT_FRUITS[id])steps.push({kind:'montfort-fruit',id,mi,phase:'decade'});
+   if(S.rosaryFatima!==false)prayer('fatima','decade',{id,mi});
  });
- if(S.rosaryForm==='devotional'){
+ if(S.rosaryMethod==='dominican')steps.push({kind:'dominican-conclusion',phase:'conclusion'});
+ else if(S.rosaryForm==='devotional'&&S.rosaryMethod!=='montfort'){
    steps.push({kind:'devotional-salve',phase:'conclusion'});
    steps.push({kind:'devotional-prayer',prayerId:'sub_tuum',phase:'conclusion'});
    steps.push({kind:'devotional-prayer',prayerId:'litany_loreto_1962',phase:'conclusion'});
@@ -1265,6 +1305,15 @@ function labRosarySteps(set){
 }
 function labRosaryDevotionalStep(step,idx){
  const l=lang(),rp=D.rosaryPrayers;
+ if(step.kind==='dominican-opening')return '<article class="lab-prayer-sheet"><p class="rubric">'+t('Dominican opening','Ouverture dominicaine')+'</p><h2>'+t('Versicles and responses','Versets et répons')+'</h2>'+labFlip(AO_DOMINICAN_OPENING.la,AO_DOMINICAN_OPENING[l]||AO_DOMINICAN_OPENING.en,'rosary-dom-opening')+'<p class="lab-practice-note"><a href="'+AO_ROSARY_METHOD_SOURCE.dominican+'" target="_blank" rel="noopener noreferrer">'+t('Dominican Confraternity source','Source : Confrérie dominicaine')+' ↗</a></p></article>';
+ if(step.kind==='dominican-conclusion')return '<article class="lab-prayer-sheet"><p class="rubric">'+t('Dominican conclusion','Conclusion dominicaine')+'</p><h2>Salve Regina</h2>'+labFlip(D.salve.la,D.salve[l]||D.salve.en,'rosary-dom-salve')+labFlip(AO_DOMINICAN_FINAL.la,AO_DOMINICAN_FINAL[l]||AO_DOMINICAN_FINAL.en,'rosary-dom-final')+'<h2>'+t('Rosary collect','Oraison du Rosaire')+'</h2>'+labFlip(D.rosaryCollect.la,D.rosaryCollect[l]||D.rosaryCollect.en,'rosary-dom-collect')+'<p class="lab-practice-note"><a href="'+AO_ROSARY_METHOD_SOURCE.dominican+'" target="_blank" rel="noopener noreferrer">'+t('Dominican Confraternity source','Source : Confrérie dominicaine')+' ↗</a></p></article>';
+ if(step.kind==='montfort-opening')return '<article class="lab-prayer-sheet"><p class="rubric">'+t('Montfort · first method','Montfort · première méthode')+'</p><h2>'+t('Offering the Rosary','Offrande du Rosaire')+'</h2><p>'+t('Come, Holy Spirit. With the saints in Heaven and the faithful on earth, I offer this Rosary to honour Jesus and His holy Mother. Free my mind from distractions and unite my heart to their love.','Venez, Esprit-Saint. Avec les saints du Ciel et les fidèles de la terre, j’offre ce Rosaire pour honorer Jésus et sa sainte Mère. Délivrez mon esprit des distractions et unissez mon cœur à leur amour.')+'</p><p class="lab-practice-note">'+t('Adapted devotional formulation, not a verbatim transcription.','Formulation dévotionnelle adaptée, non transcription littérale.')+' <a href="'+AO_ROSARY_METHOD_SOURCE.montfort+'" target="_blank" rel="noopener noreferrer">'+t('Original French text','Texte français original')+' ↗</a></p></article>';
+ if(step.kind==='montfort-offering'||step.kind==='montfort-fruit'){
+  const fruit=AO_MONTFORT_FRUITS[step.id],name=rosaryNames()[S.rosarySet][step.mi],offering=step.kind==='montfort-offering';
+  const prayer=offering?t('Lord Jesus, I offer this decade in honour of ','Seigneur Jésus, je vous offre cette dizaine en l’honneur de ')+name+t('. Through the intercession of your holy Mother, grant me ','. Par l’intercession de votre sainte Mère, accordez-moi ')+fruit[l==='fr'?0:1]+'.':
+   t('Through the grace of this mystery, form in my soul ','Par la grâce de ce mystère, formez dans mon âme ')+fruit[l==='fr'?0:1]+'.';
+  return '<article class="lab-prayer-sheet"><p class="rubric">'+t('Montfort · first method (adapted)','Montfort · première méthode (adaptée)')+'</p><h2>'+(offering?t('Offering of the decade','Offrande de la dizaine'):t('Prayer for the fruit','Prière pour le fruit'))+'</h2><p>'+esc(prayer)+'</p><p class="lab-practice-note"><a href="'+AO_ROSARY_METHOD_SOURCE.montfort+'" target="_blank" rel="noopener noreferrer">'+t('Montfort’s original French method','Méthode française originale de Montfort')+' ↗</a></p></article>';
+ }
  if(step.kind==='devotional-opening')return `<article class="lab-prayer-sheet"><p class="rubric">${t('Devotional opening','Ouverture dévotionnelle')}</p><h2>${t('Opening versicles','Versets d’ouverture')}</h2>${labFlip(AO_DEVOTIONAL_ROSARY_V38.opening.la,AO_DEVOTIONAL_ROSARY_V38.opening[l]||AO_DEVOTIONAL_ROSARY_V38.opening.en,'rosary-dev-open')}</article>`;
  if(step.kind==='devotional-salve')return `<article class="lab-prayer-sheet"><p class="rubric">${t('Devotional conclusion','Conclusion dévotionnelle')}</p><h2>Salve Regina</h2>${labFlip(D.salve.la,D.salve[l]||D.salve.en,'rosary-salve')}</article>`;
  if(step.kind==='devotional-collect')return `<article class="lab-prayer-sheet"><p class="rubric">${t('Rosary collect','Oraison du Rosaire')}</p><h2>${t('Let us pray','Prions')}</h2>${labFlip(D.rosaryCollect.la,D.rosaryCollect[l]||D.rosaryCollect.en,'rosary-collect')}</article>`;
@@ -1301,7 +1350,7 @@ renderRosary=function(){
    return `<div class="pbShell">${labHead(t('Pray the Rosary today','Prier le Rosaire aujourd’hui'),t('The Holy Rosary','Le Saint Rosaire'))}<section class="lab-rosary-hero"><small>${t('Suggested today','Suggérés aujourd’hui')}</small><strong>${labRosarySetLabel(sug)}</strong><p>${t('Choose the standard opening or the fuller Devotional Rosary. Both use the same mysteries and decades.','Choisissez l’ouverture standard ou le Rosaire dévotionnel plus développé. Les deux utilisent les mêmes mystères et dizaines.')}</p><button data-lab-rosary-today="${sug}">${t('Pray today’s mysteries','Prier les mystères du jour')}</button></section><div class="v38RosaryForm"><button type="button" class="${S.rosaryForm==='standard'?'active':''}" data-v38-rosary-form="standard"><strong>${t('Standard','Standard')}</strong><span>${t('Creed · introductory beads · five decades','Credo · grains d’introduction · cinq dizaines')}</span></button><button type="button" class="${S.rosaryForm==='devotional'?'active':''}" data-v38-rosary-form="devotional"><strong>${t('Devotional Rosary','Rosaire dévotionnel')}</strong><span>${t('Versicles · five decades · Salve · Sub tuum · Loreto · intentions','Versets · cinq dizaines · Salve · Sub tuum · Lorette · intentions')}</span></button></div><div class="lab-option-bar"><label><input type="checkbox" data-pb-fatima ${S.rosaryFatima!==false?'checked':''}> ${t('Fatima prayer','Prière de Fatima')}</label><span class="lab-step-count">${t('Latin prayer text flips to the current vernacular on tap.','Le texte latin passe au vernaculaire courant au toucher.')}</span></div><div class="lab-mystery-grid">${['joyful','sorrowful','glorious','luminous'].map(set=>`<button class="lab-mystery-card ${set===sug?'recommended':''}" data-pb-rosary-set="${set}"><small>${set===sug?t('Suggested today','Suggérés aujourd’hui'):set==='luminous'?t('Optional · 2002','Facultatifs · 2002'):t('Traditional cycle','Cycle traditionnel')}</small><strong>${labRosarySetLabel(set)}</strong><ol>${names[set].map(x=>`<li>${esc(x)}</li>`).join('')}</ol></button>`).join('')}</div>${aoRosaryPracticeIntro()}</div>`;
  }
  const steps=labRosarySteps(S.rosarySet);if(S.rosaryStep>=steps.length)S.rosaryStep=steps.length-1;if(S.rosaryStep<0)S.rosaryStep=0;const idx=S.rosaryStep,step=steps[idx];
- const content=step.kind==='mystery'?labRosaryContemplation(step):step.kind==='conclusion'?`<article class="lab-prayer-sheet"><p class="rubric">${t('Conclusion','Conclusion')}</p><h2>${t('Conclude the Rosary','Concluez le Rosaire')}</h2><div style="margin-bottom:22px">${labFlip(D.salve.la,D.salve[lang()],'rosary-salve')}</div><div>${labFlip(D.rosaryCollect.la,D.rosaryCollect[lang()],'rosary-collect')}</div><p class="lab-practice-note">${t('The Litany of Loreto may be added as a further Marian devotion.','Les Litanies de Lorette peuvent être ajoutées comme dévotion mariale supplémentaire.')}</p></article>`:step.kind.startsWith('devotional-')?labRosaryDevotionalStep(step,idx):labRosaryPrayer(step,idx,steps.length);
+ const content=step.kind==='mystery'?labRosaryContemplation(step):step.kind==='conclusion'?`<article class="lab-prayer-sheet"><p class="rubric">${t('Conclusion','Conclusion')}</p><h2>${t('Conclude the Rosary','Concluez le Rosaire')}</h2><div style="margin-bottom:22px">${labFlip(D.salve.la,D.salve[lang()],'rosary-salve')}</div><div>${labFlip(D.rosaryCollect.la,D.rosaryCollect[lang()],'rosary-collect')}</div><p class="lab-practice-note">${t('The Litany of Loreto may be added as a further Marian devotion.','Les Litanies de Lorette peuvent être ajoutées comme dévotion mariale supplémentaire.')}</p></article>`:/^(devotional-|dominican-|montfort-)/.test(step.kind)?labRosaryDevotionalStep(step,idx):labRosaryPrayer(step,idx,steps.length);
  return `<div class="pbShell">${labHead(step.kind==='mystery'?rosaryNames()[S.rosarySet][step.mi]:labRosarySetLabel(S.rosarySet),S.rosaryForm==='devotional'?t('Devotional Rosary','Rosaire dévotionnel'):t('The Holy Rosary','Le Saint Rosaire'))}${labRosaryDecadeBar(step)}${labRosaryBeads(step)}${content}<div class="lab-player-controls"><button data-lab-rosary-prev ${idx===0?'disabled':''}>← ${t('Previous','Précédent')}</button><button class="primary" data-lab-rosary-next>${idx===steps.length-1?t('Finish','Terminer'):t('Next','Suivant')} →</button></div><button class="lab-change" data-lab-rosary-change>${t('Change mysteries','Changer de mystères')}</button></div>`;
 };
 
@@ -1810,6 +1859,13 @@ window.AO_RC2_MODULE_UX={version:'RC2',preferencesKey:RC2_PREF_KEY,openGuide:(m)
 window.AO_ROSARY_V381={
  version:'41-bridge',
  getForm:()=>S.rosaryForm==='devotional'?'devotional':'standard',
+ getMethod:()=>['ordinary','dominican','montfort'].includes(S.rosaryMethod)?S.rosaryMethod:'ordinary',
+ setMethod:(method)=>{
+  if(!['ordinary','dominican','montfort'].includes(method))return false;
+  S.rosaryMethod=method;
+  if(method!=='ordinary')S.rosaryForm='standard';
+  S.rosaryStep=0;render();return true;
+ },
  setMysterySet:(set,{step=0}={})=>{
   if(!['joyful','sorrowful','glorious'].includes(set)||!Number.isSafeInteger(step)||step<0)return false;
   const previousSet=S.rosarySet,previousStep=S.rosaryStep;
