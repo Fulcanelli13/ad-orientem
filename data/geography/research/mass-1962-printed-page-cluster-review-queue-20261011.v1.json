@@ -1,0 +1,2378 @@
+{
+  "schema": "MASS_1962_PRINTED_OCR_MULTI_SECTION_CLUSTER_TRIAGE_V1",
+  "date": "2026-10-11",
+  "inputConcordance": "data/geography/research/mass-1962-full-pdf-ocr-100-source-candidates-20261011.v1.json",
+  "sourcePdfUrl": "https://media.musicasacra.com/pdf/missale62.pdf",
+  "sourcePdfSHA256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+  "pdfPages": 1088,
+  "algorithm": "Require at least two distinct matching section names inside three consecutive PDF pages and at least one section match exclusive to a single PDF page; ranked by anchor length and singularity. This ranks printed-page review locations, NOT assigned 1962 liturgical formularies.",
+  "stats": {
+    "sourcePaths": 100,
+    "pathsWithAnyOCRAnchor": 86,
+    "pathsWithMultiSectionPageClusters": 44,
+    "pathsWithoutMultiSectionClusters": 56,
+    "totalTopThreeClusterCandidates": 47,
+    "visuallyPageChecked": 0,
+    "editionCertified": 0,
+    "releaseApproved": 0
+  },
+  "rows": [
+    {
+      "sourcePath": "Commune/Coronatio",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 876,
+          "pdfPageEnd": 878,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 4,
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "score": 37,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Commune/Propaganda",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 894,
+          "pdfPageEnd": 896,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 18,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-03n",
+      "anchors": 6,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-18",
+      "anchors": 6,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-19",
+      "anchors": 5,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Introitus",
+        "Graduale",
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-20",
+      "anchors": 4,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 688,
+          "pdfPageEnd": 690,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 24,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-21",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-25",
+      "anchors": 5,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 652,
+          "pdfPageEnd": 654,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 16,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-25r",
+      "anchors": 5,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-26",
+      "anchors": 5,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-27",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-28t",
+      "anchors": 4,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/01-31",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 543,
+          "pdfPageEnd": 545,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 4,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "score": 30,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-01",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 544,
+          "pdfPageEnd": 546,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 17,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-05",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-06",
+      "anchors": 4,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-11",
+      "anchors": 5,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 656,
+          "pdfPageEnd": 658,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        },
+        {
+          "pdfPageStart": 555,
+          "pdfPageEnd": 557,
+          "distinctSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "score": 19,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-12",
+      "anchors": 6,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-22",
+      "anchors": 6,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-24",
+      "anchors": 5,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/02-27",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 563,
+          "pdfPageEnd": 565,
+          "distinctSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        },
+        {
+          "pdfPageStart": 625,
+          "pdfPageEnd": 627,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 14,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/03-19",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 572,
+          "pdfPageEnd": 574,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 14,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/03-19t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 572,
+          "pdfPageEnd": 574,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 14,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/03-24",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 751,
+          "pdfPageEnd": 753,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 4,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 23,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/03-25",
+      "anchors": 4,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/03-27",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 578,
+          "pdfPageEnd": 580,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "score": 24,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/03-28",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 579,
+          "pdfPageEnd": 581,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "score": 26,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/04-14",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/04-28",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 594,
+          "pdfPageEnd": 596,
+          "distinctSourceSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/05-13",
+      "anchors": 5,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 610,
+          "pdfPageEnd": 612,
+          "distinctSourceSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "score": 17,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/05-20",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/05-26",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/05-28",
+      "anchors": 5,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/05-31",
+      "anchors": 7,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-02",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 704,
+          "pdfPageEnd": 706,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 16,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-04",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-05",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 627,
+          "pdfPageEnd": 629,
+          "distinctSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-09",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-18t",
+      "anchors": 4,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-21",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-24",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-28",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 659,
+          "pdfPageEnd": 661,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Tractus",
+            "Communio"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/06-30",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 652,
+          "pdfPageEnd": 654,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 16,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-01",
+      "anchors": 6,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-03r",
+      "anchors": 6,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-05",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 660,
+          "pdfPageEnd": 662,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-10",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-13pl",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 1029,
+          "pdfPageEnd": 1031,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 4,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "score": 30,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-15pl",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-20",
+      "anchors": 5,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 674,
+          "pdfPageEnd": 676,
+          "distinctSourceSections": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "score": 18,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/07-24pl",
+      "anchors": 1,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/08-02",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 692,
+          "pdfPageEnd": 694,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "score": 13,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/08-08",
+      "anchors": 6,
+      "searchableCandidateAnchors": 5,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Introitus",
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 700,
+          "pdfPageEnd": 702,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "score": 19,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/08-16",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 544,
+          "pdfPageEnd": 546,
+          "distinctSourceSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Tractus"
+          ],
+          "score": 17,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/08-22",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 714,
+          "pdfPageEnd": 716,
+          "distinctSourceSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "score": 18,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/09-01pl",
+      "anchors": 1,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/09-03",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/09-09n",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 1008,
+          "pdfPageEnd": 1010,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "score": 36,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/09-15",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/09-18",
+      "anchors": 5,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 742,
+          "pdfPageEnd": 744,
+          "distinctSourceSections": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 17,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-02",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 751,
+          "pdfPageEnd": 753,
+          "distinctSourceSections": [
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Tractus",
+            "Offertorium"
+          ],
+          "score": 18,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        },
+        {
+          "pdfPageStart": 754,
+          "pdfPageEnd": 756,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "score": 14,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-03",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 755,
+          "pdfPageEnd": 757,
+          "distinctSourceSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "score": 14,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-04",
+      "anchors": 6,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-07",
+      "anchors": 4,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-09",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 763,
+          "pdfPageEnd": 765,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-17",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 769,
+          "pdfPageEnd": 771,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus"
+          ],
+          "score": 14,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-20",
+      "anchors": 5,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 774,
+          "pdfPageEnd": 776,
+          "distinctSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "score": 16,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-21pl",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-24",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/10-DU",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 779,
+          "pdfPageEnd": 781,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium"
+          ],
+          "score": 26,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/11-11",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/12-08",
+      "anchors": 6,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 519,
+          "pdfPageEnd": 521,
+          "distinctSourceSections": [
+            "Graduale",
+            "Tractus",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 4,
+          "uniquePageAnchorSections": [
+            "Graduale"
+          ],
+          "score": 22,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/12-21",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/12-26",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/12-27",
+      "anchors": 6,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Tractus",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 107,
+          "pdfPageEnd": 109,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "score": 24,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/12-28",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Sancti/12-31",
+      "anchors": 3,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-1",
+      "anchors": 5,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 412,
+          "pdfPageEnd": 414,
+          "distinctSourceSections": [
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "score": 20,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-2",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 415,
+          "pdfPageEnd": 417,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 13,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-2t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-3",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 416,
+          "pdfPageEnd": 418,
+          "distinctSourceSections": [
+            "Graduale",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 13,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-3t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-4",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-4t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5",
+      "anchors": 5,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 420,
+          "pdfPageEnd": 422,
+          "distinctSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "score": 13,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-5t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 420,
+          "pdfPageEnd": 422,
+          "distinctSourceSections": [
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "score": 13,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-6",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc0-6t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-1",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-2",
+      "anchors": 5,
+      "searchableCandidateAnchors": 1,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-4",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-4t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-5t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pasc7-6t",
+      "anchors": 10,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 157,
+          "pdfPageEnd": 159,
+          "distinctSourceSections": [
+            "Graduale",
+            "Offertorium"
+          ],
+          "distinctSectionsCount": 2,
+          "uniquePageAnchorSections": [
+            "Offertorium"
+          ],
+          "score": 15,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pent02-5o",
+      "anchors": 6,
+      "searchableCandidateAnchors": 2,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "Offertorium"
+      ],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NEEDS_HEADER_OR_INHERITANCE_REVIEW",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pent03-0",
+      "anchors": 4,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "anchors": 4,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Quad4-3t",
+      "anchors": 5,
+      "searchableCandidateAnchors": 4,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "GradualeL1",
+        "Graduale",
+        "Offertorium",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 191,
+          "pdfPageEnd": 193,
+          "distinctSourceSections": [
+            "GradualeL1",
+            "Graduale",
+            "Offertorium",
+            "Communio"
+          ],
+          "distinctSectionsCount": 4,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 22,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Quad5-5",
+      "anchors": 7,
+      "searchableCandidateAnchors": 3,
+      "sourceSectionsFoundOnAnyPdfPage": [
+        "Graduale",
+        "GradualeA",
+        "Communio"
+      ],
+      "pageClusterCandidates": [
+        {
+          "pdfPageStart": 737,
+          "pdfPageEnd": 739,
+          "distinctSourceSections": [
+            "Graduale",
+            "GradualeA",
+            "Communio"
+          ],
+          "distinctSectionsCount": 3,
+          "uniquePageAnchorSections": [
+            "Communio"
+          ],
+          "score": 18,
+          "status": "POSSIBLE_SAME_FORMULARY_PAGE_CLUSTER_NOT_PRINTED_EDITION_CERTIFIED"
+        }
+      ],
+      "recommendedReviewMethod": "PRINTED_PAGE_VISUAL_CHECK_REQUIRED",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    },
+    {
+      "sourcePath": "Tempora/Quad6-4",
+      "anchors": 4,
+      "searchableCandidateAnchors": 0,
+      "sourceSectionsFoundOnAnyPdfPage": [],
+      "pageClusterCandidates": [],
+      "recommendedReviewMethod": "NO_DIRECT_LATIN_PAGE_EVIDENCE",
+      "missalEditionEligible": null,
+      "calendarIdentityChecked": false,
+      "fullLatinCompared": false,
+      "biblicalEditionCompared": false,
+      "approvedForApp": false
+    }
+  ],
+  "publicationStatus": "RESEARCH_ONLY"
+}
