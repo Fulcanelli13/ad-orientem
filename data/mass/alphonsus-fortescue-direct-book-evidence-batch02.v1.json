@@ -1,0 +1,3406 @@
+{
+  "schema": "ao-supplied-books-ceremonial-evidence-batch02-v1",
+  "version": "2.1.0-book-only-evidence-crosslinked-to-existing-sot",
+  "authority": "HISTORICAL_BOOK_EVIDENCE_ONLY_NOT_1962_RUBRIC_CERTIFICATION",
+  "files": {
+    "alphonsus": "the_holy_mass.pdf",
+    "fortescue": "massstudyofroman00fort_bw.pdf"
+  },
+  "methods": [
+    "Read supplied PDFs (text layer) directly; 1-based PDF page and printed page verified.",
+    "Each action requested by editor; search and return matched passage. Mere term presence does NOT certify entire action or its 1962 validity.",
+    "Do not infer faithful gestures or posture from celebrant instructions.",
+    "Use existing canonical cue registry and retain explicit historic variants.",
+    "Fortescue historical parallel page mapping: scanned supplied 1914 PDF. 1-based PDF page equals printed page plus 22. Not normative 1962 movement verification."
+  ],
+  "items": [
+    {
+      "id": "ALPH.BK2.001",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "historicalAction": "ARRIVE_FOOT_REMOVE_BIRETTA",
+      "actionType": "STATION",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 96,
+        "pdfPageOneBased": 96,
+        "matchedText": "uncovers his head",
+        "evidenceWindow": "g6 The Ceremonies of the Mass. Having arrived at the altar, the priest stops at the foot of it, before the first step, uncovers his head, and gives the biretta to the server. If he also wears a skull-cap he must take it off, unless it is permitted him by an apostolic dispensation to wear it during Mass; in this case he may wear it til"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Makes the Sign of the Cross",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Makes the Sign of the Cross",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.002",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "historicalAction": "BOW_OR_GENUFLECT_ON_ENTRY",
+      "actionType": "POSTURE",
+      "formConditionReview": "sacrament-dependent",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 102,
+        "pdfPageOneBased": 102,
+        "matchedText": "profound inclination of the body or a genuflection",
+        "evidenceWindow": "es of the fingers should be held more towards the face of the celebrant than towards the altar. He makes to the cross a profound inclination of the body or a genuflection, 1 if the Blessed Sacrament is in the tabernacle. When he genuflects, he lowers the knee near the heel of the left foot; and when he stands, the feet should be not far apart, but joined. 2. The Pries"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Makes the Sign of the Cross",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Makes the Sign of the Cross",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.003",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "historicalAction": "SIGN_SELF_AT_IN_NOMINE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 102,
+        "pdfPageOneBased": 102,
+        "matchedText": "makes the sign of the cross",
+        "evidenceWindow": "he knee near the heel of the left foot; and when he stands, the feet should be not far apart, but joined. 2. The Priest makes the Sign of the Cross. &quot; Stans igitur celebrans ante infimum gradum altaris, ut supra, producens manu dextra a fronte ad pectus signum Crucis, dicit intelligibili voce : hi nomine Pains, et Filii, et Spiritus Sancti."
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Makes the Sign of the Cross",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Makes the Sign of the Cross",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.004",
+      "cueId": "AO.SM.C0004",
+      "actor": "PRIEST",
+      "historicalAction": "RECITE_JUDICA_FOOT_OF_ALTAR",
+      "actionType": "VOICE",
+      "formConditionReview": "omit in Requiem and Passiontide",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 104,
+        "pdfPageOneBased": 104,
+        "matchedText": "psalm Judica",
+        "evidenceWindow": " within the Mass are preceptive, and bind even under a grave fault, if the matter is grave. 1 3. The Priest recites the Psalm Judica Me. &quot; Postquam dixerit : In nomine Patris, etc., ut supra ; jungens iterum manus ante pectus, pronuntiat clara voce antiphonam, Introibo ad Altare Dei. Minister vero retro post eum ad sinis- tra"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Alternates Psalm 42 with minister/server at foot of altar.",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Alternates Psalm 42 with minister/server at foot of altar.",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.005",
+      "cueId": "AO.SM.C0010",
+      "actor": "PRIEST",
+      "historicalAction": "BOW_AT_GLORIA_PATRI_OF_JUDICA",
+      "actionType": "GESTURE",
+      "formConditionReview": "only when Judica sung",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 105,
+        "pdfPageOneBased": 105,
+        "matchedText": "At the Gloria Patri a simple inclination",
+        "evidenceWindow": " also in the votive Masses that are celebrated in the same week, even if the votive Masses are de Passione or de Cruce. At the Gloria Patri a simple inclination of the head is made, which is called, as has been mentioned above, minimarum maxima: this should always be observed when this versick is recited. After having repeated the antiphon Introibo, he signs"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Alternates Psalm 42 with minister/server at foot of altar.",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Alternates Psalm 42 with minister/server at foot of altar.",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.006",
+      "cueId": "AO.SM.C0014",
+      "actor": "PRIEST",
+      "historicalAction": "SIGN_AT_ADJUTORIUM",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 105,
+        "pdfPageOneBased": 105,
+        "matchedText": "signs himself with the sign of the cross",
+        "evidenceWindow": "um maxima: this should always be observed when this versick is recited. After having repeated the antiphon Introibo, he signs himself with the sign of the cross, saying, Adjutorium nostrum in nomine Domini; these words are so distributed that when he says Adjutorium, the hand touches the fore head; when he says nostrum, the breast; when he says in nomine, th"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Makes the Sign of the Cross at Adiutorium nostrum",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Makes the Sign of the Cross at Adiutorium nostrum",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.007",
+      "cueId": "AO.SM.C0016",
+      "actor": "PRIEST",
+      "historicalAction": "CONFITEOR_PROFOUND_INCLINATION",
+      "actionType": "POSTURE",
+      "formConditionReview": "priest Confiteor",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 106,
+        "pdfPageOneBased": 106,
+        "matchedText": "so profoundly that he can touch the knees",
+        "evidenceWindow": "Ceremonies of the Mass. When he says the Confiteor he holds his hands joined, as has been said above, 1 and he inclines so profoundly that he can touch the knees with his hands; he re mains thus inclined till the Misereatur tui, etc., has been said; then he answers Amen, and assumes an erect pos ture. It is not permitted while saying the Confiteor to add the "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Profound bow; hands joined",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Profound bow; hands joined",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.008",
+      "cueId": "AO.SM.C0017",
+      "actor": "PRIEST",
+      "historicalAction": "THREE_CONFITEOR_BREAST_STRIKES",
+      "actionType": "GESTURE",
+      "formConditionReview": "priest Confiteor",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 106,
+        "pdfPageOneBased": 106,
+        "matchedText": "strikes his breast",
+        "evidenceWindow": "same thing while saying the Misereatur, according to the opinion of Gavantus, Rub. 12. When he says Mea culpa, etc., he strikes his breast three times with all the fingers of the right hand joined together, holding his left below the breast. Merati does not disapprove of the practice of striking the breast with the open palm of the hand"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Strikes breast three times",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Strikes breast three times",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.009",
+      "cueId": "AO.SM.C0021",
+      "actor": "SERVER",
+      "historicalAction": "SERVER_CONFITEOR_RESPONSE",
+      "actionType": "VOICE",
+      "formConditionReview": "server not priest",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 106,
+        "pdfPageOneBased": 106,
+        "matchedText": "minister.*Confiteor",
+        "evidenceWindow": "er. 3 But in a solemn Mass, when the cele brant says vobis fratres and vos fratres, he should turn a little towards the ministers; and he observes the same thing while saying the Misereatur, according to the opinion of Gavantus, Rub. 12. When he says Mea culpa, etc., he strikes his breast three times with all the fingers of the right hand joined together, holding his left below the breast. Merati does not disapprove of the practice of striking the breast with the open palm of the hand, but the common opinion wishes that the fingers be joined together. It must be here observed that the breast should not be struck with great violence. Having said mca maxima culpa, he immediately joins his hands. After the server has finished the Confiteor, the cele brant continues saying Misereatur vestri, etc.; and when he says Indulgentiam he signs himself with the cross, so arranging the words that at Indulgentiam he touches his forehead; at absolutionem, his breast; at remissionem, 1 Page 93. 2 There are various decrees forbidding the adding to the Confiteor of the name of a saint. However, the S. C. R., through a special favor, has allowed religious communities to use the name of the founder. If the priest celebrates without a server, he should not say the Confiteor twice. 3 According to the Rubric of the Mass which is celebrated by a bishop, it is not allowed the ministers to say: tibi vel te Reverendissime Pater, "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Stands and listens to the ministers' Confiteor; no later absolution action is inherited into this row.",
+        "sungVoice": "MINISTER RESPONSE / QUIET",
+        "lowAction": "Stands and listens to the ministers' Confiteor; no later absolution action is inherited into this row.",
+        "lowVoice": "LISTENS",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.010",
+      "cueId": "AO.SM.C0026",
+      "actor": "PRIEST",
+      "historicalAction": "INDULGENTIAM_CROSS",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 106,
+        "pdfPageOneBased": 106,
+        "matchedText": "when he says Indulgentiam he signs himself",
+        "evidenceWindow": "ns his hands. After the server has finished the Confiteor, the cele brant continues saying Misereatur vestri, etc.; and when he says Indulgentiam he signs himself with the cross, so arranging the words that at Indulgentiam he touches his forehead; at absolutionem, his breast; at remissionem, 1 Page 93. 2 There are various decrees forbidding the adding to the C"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Makes the Sign of the Cross",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Makes the Sign of the Cross",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.011",
+      "cueId": "AO.SM.C0037",
+      "actor": "PRIEST",
+      "historicalAction": "ASCEND_WITH_AUFER_A_NOBIS",
+      "actionType": "STATION",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 107,
+        "pdfPageOneBased": 107,
+        "matchedText": "ascends the altar",
+        "evidenceWindow": "ut while saying Oremus he opens his hands and again joins them. Then standing erect, he says in a low voice Aitfer, and ascends the altar, raising at first the right foot, and slowly ascends so that when he reaches the middle of the altar he has finished the prayer. "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "ALTAR_STEPS_ASCENDING",
+        "sungAction": "Ascends while praying Aufer a nobis",
+        "sungVoice": "SECRET / QUIET WHILE MOVING",
+        "lowAction": "Ascends while praying Aufer a nobis",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.012",
+      "cueId": "AO.SM.C0039",
+      "actor": "PRIEST",
+      "historicalAction": "KISS_ALTAR_AT_QUORUM_RELIQUIAE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 109,
+        "pdfPageOneBased": 109,
+        "matchedText": "he kisses the altar",
+        "evidenceWindow": "he altar as far as the wrist, on both sides, a little outside of the corporal, and bend ing his head in a straight line he kisses the altar in the middle, and not on the side. This he should always do when the altar is to be kissed; but after the Conse cration the hands are placed on the corporal. In order that the altar may be more easi"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Kisses the altar at the beginning of this continuation, then completes the prayer.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Kisses the altar at the beginning of this continuation, then completes the prayer.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.013",
+      "cueId": "AO.SM.C0042",
+      "actor": "PRIEST",
+      "historicalAction": "GO_EPISTLE_SIDE_INTROIT",
+      "actionType": "STATION",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 109,
+        "pdfPageOneBased": 109,
+        "matchedText": "Epistle corner",
+        "evidenceWindow": " the altar the priest joins his hands, and without making any inclination to the cross he goes at a natural walk to the Epistle corner, continuing to say et omnium Sanctorum, etc., as appears from the Rubric that says: Osculato altari accedit ad cornu ejus sinistrum. When he arrives at the place where the Missal is, he turns toward "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "At the Epistle side, makes the Sign of the Cross from forehead to breast before beginning the Introit.",
+        "sungVoice": "SILENT",
+        "lowAction": "Makes the Sign of the Cross and begins the Introit at the Epistle side.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.014",
+      "cueId": "AO.SM.C0053",
+      "actor": "PRIEST",
+      "historicalAction": "GLORIA_HANDS_EXPAND_AND_JOIN",
+      "actionType": "GESTURE",
+      "formConditionReview": "when Gloria appointed",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 111,
+        "pdfPageOneBased": 111,
+        "matchedText": "he says Gloria",
+        "evidenceWindow": "Amen. (Rub. Miss. tit. IV. n. 3.) The last Kyrie having been said, while yet standing erect at the middle of the altar, he says Gloria, extend ing his hands the width of his body and raising them to the height of his shoulders, so that they do not pass higher than his nose; 1 when he says in excelsis he joins them before his breast,"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M03",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Extends and elevates hands for the intonation.",
+        "sungVoice": "SUNG / PUBLIC",
+        "lowAction": "Extends and elevates his hands and begins the Gloria.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.015",
+      "cueId": "AO.SM.C0061",
+      "actor": "PRIEST",
+      "historicalAction": "GLORIA_BOW_AT_JESU_CHRISTE",
+      "actionType": "GESTURE",
+      "formConditionReview": "when Gloria appointed",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 111,
+        "pdfPageOneBased": 111,
+        "matchedText": "Jesu Christe",
+        "evidenceWindow": "uo erecto, stans junctis manibus ante pectus, prosequitur usque ad finem. Cum dicit Adoramus te, Gratias agimus tibi, etjesu Christe, Suscipc deprecationem nostram, et iterum, Jesu Christe, caput Cruci inclinat. Cum dicit, in fine Cum sancto Spiritu, seipsum a fronte, ad pectus signat, interim absolvens In gloria Dei Patris, Amen."
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M03",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Bows his head at the Holy Name Iesu Christe.",
+        "sungVoice": "QUIET PRIVATE RECITATION",
+        "lowAction": "Bows his head at the Holy Name Iesu Christe.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.016",
+      "cueId": "AO.SM.C0068",
+      "actor": "PRIEST",
+      "historicalAction": "SIGN_SELF_CUM_SANCTO_SPIRITU",
+      "actionType": "GESTURE",
+      "formConditionReview": "when Gloria appointed",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 111,
+        "pdfPageOneBased": 111,
+        "matchedText": "Cum sancto Spiritu",
+        "evidenceWindow": " tibi, etjesu Christe, Suscipc deprecationem nostram, et iterum, Jesu Christe, caput Cruci inclinat. Cum dicit, in fine Cum sancto Spiritu, seipsum a fronte, ad pectus signat, interim absolvens In gloria Dei Patris, Amen. (Rub. Miss. tit. IV. n. 3.) The last Kyrie having been said, while yet standing erect at the middle of the altar, he"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M03",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Begins the Sign of the Cross.",
+        "sungVoice": "QUIET PRIVATE RECITATION",
+        "lowAction": "Begins the Sign of the Cross.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.017",
+      "cueId": "AO.SM.C0070",
+      "actor": "PRIEST",
+      "historicalAction": "ALTAR_KISS_TURN_DOMINUS_VOBISCUM",
+      "actionType": "STATION",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 114,
+        "pdfPageOneBased": 114,
+        "matchedText": "kisses the altar",
+        "evidenceWindow": "r as the wrists exclusively, on both sides of the altar, outside of the corporal, as has been said above (Chap. IV. i), kisses the altar, and then with his hands again joined before his breast, and with his eyes cast down, but not closed, so that he can see about three feet beyond the steps of the altar, he turns from the Epistle side"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M04",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns toward people for greeting",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Turns toward people for greeting",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.018",
+      "cueId": "AO.SM.C0072",
+      "actor": "PRIEST",
+      "historicalAction": "OREMUS_HEAD_BOW",
+      "actionType": "GESTURE",
+      "formConditionReview": "collects",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 116,
+        "pdfPageOneBased": 116,
+        "matchedText": "simple minimarum maxima inclination",
+        "evidenceWindow": " his hands and again joins them, and turning a little towards the cross, without raising his eyes, makes to the cross a simple minimarum maxima inclination, say ing at the same time in an intelligible voice Oremus, and then in the same intelligible voice he continues the prayer, standing erect and with his hands so extended that one palm faces the other"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M04",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "Turns to missal / opens hands for oration",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Turns to missal / opens hands for oration",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.019",
+      "cueId": "AO.SM.C0075",
+      "actor": "PRIEST",
+      "historicalAction": "EPISTLE_READ_FROM_MISSAL",
+      "actionType": "VOICE",
+      "formConditionReview": "not sung by subdeacon",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 124,
+        "pdfPageOneBased": 124,
+        "matchedText": "reads the Epistle",
+        "evidenceWindow": "24 The Ceremonies of the Mass. CHAPTER VI. THE EPISTLE, THE GRADUAL, THE GOSPEL, AND THE CREDO. I. The Priest reads the Epistle, the Gradual, and what follows. &quot; Diet-is Oration ibus, celebrans, positis super librum vel super altare manibus, ita ut palmse librum tangant ; vel (ut placuerit) librum tenens, legit Epistolam"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M05",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "Reads/chants the Epistle or Lesson at the Missal.",
+        "sungVoice": "SUNG / CLEAR (MISSA CANTATA)",
+        "lowAction": "Reads the Epistle or Lesson at the Missal.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.020",
+      "cueId": "AO.SM.C0076",
+      "actor": "SERVER",
+      "historicalAction": "DEO_GRATIAS_AFTER_EPISTLE",
+      "actionType": "VOICE",
+      "formConditionReview": "response ownership varies by form",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 124,
+        "pdfPageOneBased": 124,
+        "matchedText": "Deo gratias",
+        "evidenceWindow": "palmse librum tangant ; vel (ut placuerit) librum tenens, legit Epistolam intelligibili voce, et respondetur a ministro Deo gratias ; et similiter stans eodem modo, prose- quitur Graduate, Alleluja, et Tractum, ac Sequcntiam si dicenda sint. Quibus dictis, Sacerdos si privatim celebret, ipsemet, seu minister portat librum Missali"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M05",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "Receives/listens to response; no preceding gesture is inherited.",
+        "sungVoice": "SUNG / CLEAR (MISSA CANTATA)",
+        "lowAction": "Minister/server responds Deo gratias; celebrant remains at the Missal and listens.",
+        "lowVoice": "LISTENS",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.021",
+      "cueId": "AO.SM.C0079",
+      "actor": "PRIEST",
+      "historicalAction": "MUNDA_COR_MEUM_CENTRE_BOW",
+      "actionType": "POSTURE",
+      "formConditionReview": "solemn actor exception",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 125,
+        "pdfPageOneBased": 125,
+        "matchedText": "Munda cor meum",
+        "evidenceWindow": "ans, junctis manibus ante pectus, levatisque ad Deum oculis et statim demissis, turn profunde inclinatus, dicit secreto Munda cor meum, et Jube Dominc benedicere, Dominus sit in corde mco ut in Ordinario. Quibus dictis, vadit ad librum Missalis, ubi stans versus ilium, junctis manibus ante pectus, (licit intelligibili voce Dominus v"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M07",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Profoundly bowed at centre; prays Munda cor meum.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Profoundly bowed at centre; prays Munda cor meum.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.022",
+      "cueId": "AO.SM.C0081",
+      "actor": "PRIEST",
+      "historicalAction": "GO_TO_GOSPEL_SIDE",
+      "actionType": "STATION",
+      "formConditionReview": "solemn actor exception",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 126,
+        "pdfPageOneBased": 126,
+        "matchedText": "goes to the Gospel",
+        "evidenceWindow": "rder to recite Munda cor me itin, etc., as has been said above. Then, with his hands still joined before his breast, he goes to the Gospel corner, and there so places the Missal that it looks not towards the front, but obliquely towards the angle of the altar. Then with his hands joined before his breast, without resting them or his arm"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M07",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Goes to the Missal at the Gospel side and stands facing it with hands joined.",
+        "sungVoice": "SILENT",
+        "lowAction": "Arrives at the Gospel-side Missal and stands facing it with hands joined.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.023",
+      "cueId": "AO.SM.C0084",
+      "actor": "PRIEST",
+      "historicalAction": "SMALL_GOSPEL_CROSSES",
+      "actionType": "GESTURE",
+      "formConditionReview": "deacon performs in Solemn",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 127,
+        "pdfPageOneBased": 127,
+        "matchedText": "signs the book",
+        "evidenceWindow": "wards himself. The signs of the cross are thus distributed according to the words: While saying Sequentia or Initium he signs the book; at the words sancti Evangelii, the forehead; while signing the mouth he says nothing, because it should be closed; while saying secundum Joannem, etc., he signs his breast. After the server has answ"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M07",
+        "sungStation": "ALTAR_GOSPEL_MISSAL",
+        "sungAction": "Signs book and forehead/lips/breast as prescribed",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Signs book and forehead/lips/breast as prescribed",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.024",
+      "cueId": "AO.SM.C0086",
+      "actor": "PRIEST",
+      "historicalAction": "READ_GOSPEL",
+      "actionType": "VOICE",
+      "formConditionReview": "priest sung role differs",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 127,
+        "pdfPageOneBased": 127,
+        "matchedText": "reads the Gospel",
+        "evidenceWindow": "he server has answered: Gloria tibi Domine, the priest joins his hands before his breast, and in an intel ligible voice reads the Gospel, inclining the head at the name of Jesus or of Mary towards the Missal, towards which he also genuflects if a genuflection must be made. The Gospel having been said, the priest raises the Missal a li"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M07",
+        "sungStation": "ALTAR_GOSPEL_MISSAL",
+        "sungAction": "Proclaims the Gospel at the Gospel side.",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Proclaims the Gospel at the Gospel side.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.025",
+      "cueId": "AO.SM.C0088",
+      "actor": "PRIEST",
+      "historicalAction": "KISS_GOSPEL_AND_PRAYER",
+      "actionType": "GESTURE",
+      "formConditionReview": "Requiem omission",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 127,
+        "pdfPageOneBased": 127,
+        "matchedText": "kisses the beginning of the text",
+        "evidenceWindow": "ust be made. The Gospel having been said, the priest raises the Missal a little with both hands, inclines somewhat, and kisses the beginning of the text of the Gospel, saying in a low tone of voice: Per Evangelica dicta, etc. After having kissed the Missal the celebrant places it with both hands on the cushion or stand near the cor poral, so that he "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M07",
+        "sungStation": "ALTAR_GOSPEL_MISSAL",
+        "sungAction": "Kisses the Gospel text/book while saying the formula quietly.",
+        "sungVoice": "QUIET / LOW",
+        "lowAction": "Kisses the Gospel text while saying Per evangelica dicta quietly.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.026",
+      "cueId": "AO.SM.C0089",
+      "actor": "PRIEST",
+      "historicalAction": "BEGIN_CREDO_WITH_HANDS",
+      "actionType": "GESTURE",
+      "formConditionReview": "when appointed",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 128,
+        "pdfPageOneBased": 128,
+        "matchedText": "begins the Credo",
+        "evidenceWindow": "1 28 The Ceremonies of the Mass. Gloria, begins the Credo, At the word Credo he extends and raises his hands; at the words in unum he joins them; at the word Deum he inclines his head, raising neither his eyes nor his head. He continues as at the Gloria. At"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M09",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Intones Credo.",
+        "sungVoice": "SUNG / PUBLIC",
+        "lowAction": "Begins the Credo at the centre of the altar.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.027",
+      "cueId": "AO.SM.C0096",
+      "actor": "PRIEST",
+      "historicalAction": "GENUFLECT_INCARNATUS",
+      "actionType": "POSTURE",
+      "formConditionReview": "when Credo appointed",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 128,
+        "pdfPageOneBased": 128,
+        "matchedText": "incarnatus est",
+        "evidenceWindow": "ntinues as at the Gloria. At the words Jesum Christum he makes a simple mini- marum maxima inclination. When he says Et incarnatus est, which words it is proper to recite slowly so that all may be done rightly, he begins to bend the right knee, and finishes this genuflection at the words et homo factus est, so that at these words he"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M09",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects while reciting Et incarnatus est through et homo factus est.",
+        "sungVoice": "QUIET PRIVATE RECITATION",
+        "lowAction": "Genuflects while reciting Et incarnatus est through et homo factus est.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.028",
+      "cueId": "AO.SM.C0104",
+      "actor": "PRIEST",
+      "historicalAction": "SIGN_CROSS_ET_VITAM",
+      "actionType": "GESTURE",
+      "formConditionReview": "when Credo appointed",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 127,
+        "pdfPageOneBased": 127,
+        "matchedText": "et vitam",
+        "evidenceWindow": "natus est usque ad, Et homo factus est inclusive, genuflectit. Cum dicit simul adoratur caput Cruci inclinat. Cum dicit Et vitam venturi scccult, Amen, pro- ducit sibi manu dextra signum Crucis a fronte ad pectus.&quot; (Rub. Miss. tit. VI. 3.) If the Credo is to be said, the priest standing erect immediately extends his hands"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M09",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Begins the Sign of the Cross at Et vitam.",
+        "sungVoice": "QUIET PRIVATE RECITATION",
+        "lowAction": "Begins the Sign of the Cross at Et vitam.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.029",
+      "cueId": "AO.SM.C0109",
+      "actor": "PRIEST",
+      "historicalAction": "READ_OFFERTORY_AT_EPISTLE",
+      "actionType": "STATION",
+      "formConditionReview": "proper slot",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 131,
+        "pdfPageOneBased": 131,
+        "matchedText": "Offertory",
+        "evidenceWindow": "CHAP, vii.] Offertory, Sccreta, and Preface. 131 CHAPTER VII. THE OFFERTORY, THE SECRETA, AND THE PREFACE. i. The Priest recites the Offertory. &quot; Dicto Symbolo, vel, si non sit dicendum, post Evangelium, celebrans os"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Begins the altar preparation while the public Offertory chant proceeds; no preceding Dominus/Oremus gesture is inherited.",
+        "sungVoice": "SUNG/CLEAR OPENING → SECRET OFFERTORY",
+        "lowAction": "Reads the Offertory antiphon at the Missal.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.030",
+      "cueId": "AO.SM.C0110",
+      "actor": "PRIEST",
+      "historicalAction": "OFFER_HOST_PATEN_CHEST_HEIGHT",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 133,
+        "pdfPageOneBased": 133,
+        "matchedText": "paten with the Host",
+        "evidenceWindow": " wine and water into the chalice. 1 He takes with the right hand, between the thumb, forefinger, and middle finger, the paten with the Host, and raises it as high as his breast, namely, with both thumbs, forefingers, and middle fingers around the paten, and sustains it with the other fingers extended and joined under the paten. At the sa"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Holds the Paten with the Host elevated at chest level; raises eyes to God then immediately lowers them and offers the Host while praying.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Holds the Paten with the Host elevated at chest level; raises eyes to God then immediately lowers them and offers the Host while praying.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.031",
+      "cueId": "AO.SM.C0111",
+      "actor": "PRIEST",
+      "historicalAction": "SIGN_WITH_PATEN_AND_PLACE_HOST",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 134,
+        "pdfPageOneBased": 134,
+        "matchedText": "forms with the paten a cross",
+        "evidenceWindow": "m its place, and at the Offertory directs his intention also to the particles. 1 Having finished the prayer Suscipe, he forms with the paten a cross (unius palmi) nine inches in length, over the corporal, holding the paten (circa medium palmuni) about four inches above the corporal. Then [inclining the paten he causes the Host to slide from the f"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "After the prayer, makes the Sign of the Cross with the Paten over the corporal, places the Host on the corporal, and places the Paten partly beneath the corporal as prescribed.",
+        "sungVoice": "SILENT",
+        "lowAction": "After the prayer, makes the Sign of the Cross with the Paten over the corporal, places the Host on the corporal, and places the Paten partly beneath the corporal as prescribed.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.032",
+      "cueId": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "historicalAction": "POUR_WINE_INTO_CHALICE",
+      "actionType": "OBJECT",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 136,
+        "pdfPageOneBased": 136,
+        "matchedText": "wine having been poured",
+        "evidenceWindow": "ice a little inclined, he pours into it at the inclined part such a proper quantity as can be drunk at one draught. The wine having been poured in and the cruet having been returned to the server, while holding the chalice in the same way, he blesses the water, making the sign of the cross over the water cruet (this blessing being omitted in"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.033",
+      "cueId": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "historicalAction": "SIGN_WATER_BEFORE_MIXTURE",
+      "actionType": "GESTURE",
+      "formConditionReview": "Requiem no blessing",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 136,
+        "pdfPageOneBased": 136,
+        "matchedText": "he blesses the water",
+        "evidenceWindow": "wine having been poured in and the cruet having been returned to the server, while holding the chalice in the same way, he blesses the water, making the sign of the cross over the water cruet (this blessing being omitted in Masses for the Dead), and says at the same time: Deus, qui humana substantice, etc.; 3 and pouring into the chalice "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.034",
+      "cueId": "AO.SM.C0114",
+      "actor": "PRIEST",
+      "historicalAction": "OFFER_CHALICE_ELEVATED",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 137,
+        "pdfPageOneBased": 137,
+        "matchedText": "right he takes the chalice at the knob",
+        "evidenceWindow": "d at the middle and made the usual in clination towards the cross, 2 he places his left hand on the altar, but with his right he takes the chalice at the knob so that he holds his thumb in front of the chalice and the rest of his fingers behind it. Then he supports the foot of the chalice with the longer fingers of his left hand underneath it; and thus hol"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "At the centre, holds the uncovered Chalice elevated with both hands and eyes directed toward God while offering it.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "At the centre, holds the uncovered Chalice elevated with both hands and eyes directed toward God while offering it.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.035",
+      "cueId": "AO.SM.C0115",
+      "actor": "PRIEST",
+      "historicalAction": "CHALICE_CROSS_AND_COVER",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 138,
+        "pdfPageOneBased": 138,
+        "matchedText": "makes with the chalice.*cross",
+        "evidenceWindow": "138 The Ceremonies of the Mass. do), he makes with the chalice which he holds erect a cross over the corporal, holding it in the same position as when the offering was made. He makes the cross, with the chalice raised four or five inches over the corporal: he makes it not by jerks, but in straight lines of about a palm in length, and may begin from the end of the corporal as far as the Host; but the chalice should not be moved over the Host. He puts the chalice behind the Host, but on the consecrated stone at the distance of about the size of another Host, and covers the chalice with the pall, while holding his left hand on the altar: this is to be done as often as he has to cover or uncover the chalice. Some put the hand on the foot of the chalice lest, they say, they should upset it; but to them we may reply, that the ceremonies should be performed quietly, not hurriedly: then there will be no reason to fear any accident. 4. The Priest blesses the Bread and the Wine. &quot; Deinde, junctis manibus super altari positis, aliqnantulum inclinatus, dicit secreto, In sptritu humilitatis, etc. Postea erectus, elevans oculos, manusque expandens, et statim jungens ante pectus (quod semper facit quando aliquid est benedic- turus) dicit Veni sanctificator, etc., cum dicit Et benedic, signat rnanu dextra communiter super hostiam et calicem, sinistra posita super altare.&quot; (7?z^. Miss. tit. VII. 5.) Then he places his hands on the altar in such a way that the little fingers, being extended and united with the others (as has been said above 1 ), touch the front of the altar, and moderately inclined he says in a low tone of voice: In spiritu humilitatis, etc. Then standing erect, , he raises his eyes towards the cross, while at the same time he extends his hands and raises them as high as his shoulders; then he immediately lowers his eyes, and joining his hands before his breast (as is done when 1 Page 1 08. "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "After the prayer, makes the Sign of the Cross with the Chalice over the corporal, places it behind the Host, and covers it with the Pall.",
+        "sungVoice": "SILENT",
+        "lowAction": "After the prayer, makes the Sign of the Cross with the Chalice over the corporal, places it behind the Host, and covers it with the Pall.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.036",
+      "cueId": "AO.SM.C0116",
+      "actor": "PRIEST",
+      "historicalAction": "IN_SPIRITU_PROFOUNDLY_BOWED",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 138,
+        "pdfPageOneBased": 138,
+        "matchedText": "In spiritu humilitatis",
+        "evidenceWindow": "hers (as has been said above 1 ), touch the front of the altar, and moderately inclined he says in a low tone of voice: In spiritu humilitatis, etc. Then standing erect, , he raises his eyes towards the cross, while at the same time he extends his hands and raises them as high as his shoulders; then he immediately lowers his eyes, and joini"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Bows profoundly with hands joined on altar",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Bows profoundly with hands joined on altar",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.037",
+      "cueId": "AO.SM.C0119",
+      "actor": "PRIEST",
+      "historicalAction": "CROSS_AT_BENEDIC",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 139,
+        "pdfPageOneBased": 139,
+        "matchedText": "sign of the cross over the chalice",
+        "evidenceWindow": "ace. 139 Oremus is said before the prayer) he says: Veni sanctifi- cator, etc.; and when he says Bene^dic, he makes the sign of the cross over the chalice and the Host at the same time, keeping his left hand on the altar. Here it must be observed: 1. When Veni sanctificator is said, at the word Deus the head is not inclined, as Merati and many others t"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes the Sign of the Cross over Host and Chalice at benedic.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Makes the Sign of the Cross over Host and Chalice at benedic.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.038",
+      "cueId": "AO.SM.C0125",
+      "actor": "PRIEST",
+      "historicalAction": "LAVABO_WASH_TIPS_4_FINGERS",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 140,
+        "pdfPageOneBased": 140,
+        "matchedText": "washes the extremities of four fingers",
+        "evidenceWindow": " he again joins his hands, inclines towards the cross, 1 and with his hands joined goes to the Epistle corner, where he washes the extremities of four fingers, namely, of the two thumbs and forefingers, holding the two fingers of the right hand upon the other two fingers of the left hand, so that while the water is being poured on the fingers of the right "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_EPISTLE_SIDE",
+        "sungAction": "At the Epistle side, washes the prescribed fingers while reciting Psalm 25.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "At the Epistle side, washes the prescribed fingers while reciting Psalm 25.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.039",
+      "cueId": "AO.SM.C0126",
+      "actor": "PRIEST",
+      "historicalAction": "LAVABO_GLORIA_PATRI",
+      "actionType": "VOICE",
+      "formConditionReview": "omitted certain days",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 140,
+        "pdfPageOneBased": 140,
+        "matchedText": "Gloria Patri",
+        "evidenceWindow": "140 The Ceremonies of the Mass. mitates digitorum pollicis et indicis, dicens psalmum, Lavabo inter innocentes cum Gloria Patri, qui versus Gloria Patri prsetermittitur in Missis de Tempore a Dominica de Passione us que ad Sabbatum Sanctum exclusive.&quot; (Rub. Miss. tit. VII. 6.) Having made the sign of the cross, he again "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_EPISTLE_SIDE",
+        "sungAction": "Bows his head at Gloria Patri.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Bows his head at Gloria Patri.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.040",
+      "cueId": "AO.SM.C0128",
+      "actor": "PRIEST",
+      "historicalAction": "SUSCIPE_SANCTA_TRINITAS_BOW",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 140,
+        "pdfPageOneBased": 140,
+        "matchedText": "Suscipe sancta Trinitas",
+        "evidenceWindow": "ses of the Passion and of the Cross the Gloria of this psalm is prescribed even in Passion Week. 6. The Priest says the Suscipe Sancta Trinitas, the Orate Fratres, and the Secreta. &quot; Celebrans, lotis manibus, eas tergit, et, illis ante pectus junc- tis, revertitur ad medium altaris, ubi stans, oculosque ad Deum elevans, et statim demitt"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "At the centre, bows somewhat with hands joined on the altar while saying the prayer privately.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "At the centre, bows somewhat with hands joined on the altar while saying the prayer privately.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.041",
+      "cueId": "AO.SM.C0130",
+      "actor": "PRIEST",
+      "historicalAction": "ORATE_FRATRES_TURN_CELEBRANT",
+      "actionType": "POSITION",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 141,
+        "pdfPageOneBased": 141,
+        "matchedText": "turns towards the people",
+        "evidenceWindow": " a low tone of voice: Suscipe sancta Trinitas, etc.; then he kisses the altar in the middle, again joins his hands, and turns towards the people in the same way that he does when he says the Dominus vobiscum; but he lingers some what, and extending his hands and again joining them, he says in a moderate tone of voice: Orate fratres; and while"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M11",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns toward the people while saying Orate, fratres.",
+        "sungVoice": "AUDIBLE / ELEVATED",
+        "lowAction": "Turns toward the people while saying Orate, fratres.",
+        "lowVoice": "AUDIBLE / ELEVATED",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.042",
+      "cueId": "AO.SM.C0131",
+      "actor": "PRIEST",
+      "historicalAction": "ORATE_FRATRES_LOW_VOICE_CONTINUATION",
+      "actionType": "VOICE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 140,
+        "pdfPageOneBased": 140,
+        "matchedText": "low voice",
+        "evidenceWindow": "le the water is being poured on the fingers of the right hand the rest may be washed; and in the mean time he says in a low voice: Lavabo, etc. At the Gloria Patri he makes an inclination towards the cross, and then, while con tinuing Sicut erat, etc., he returns to the middle of the altar. Some are of opinion that if the pries"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M11",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Completes the turn back to the altar while finishing the formula quietly.",
+        "sungVoice": "QUIET / LOW",
+        "lowAction": "Completes the turn back to the altar while finishing the formula quietly.",
+        "lowVoice": "QUIET / LOW",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.043",
+      "cueId": "AO.SM.C0143",
+      "actor": "PRIEST",
+      "historicalAction": "PREFACE_DIALOGUE_HANDS",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 142,
+        "pdfPageOneBased": 142,
+        "matchedText": "Deo nostro",
+        "evidenceWindow": "s usque ad pectus, ita ut palma unius manus respiciat alteram. Cum dicit Grattas agamus Domino, jungit manus. Cum dicit Deo nostro, oculos elevat, et statim cruci caput inclinat. Response, Dignum et justum est, elevatis et extensis ut prius manibus; prosequitur Prcefattonem, propriam, vel communem, ut tempus requirit. Cum dicit "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M12",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Receives/listens to response; no preceding gesture is inherited.",
+        "sungVoice": "LISTENS",
+        "lowAction": "Receives/listens to response; no preceding gesture is inherited.",
+        "lowVoice": "LISTENS",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.044",
+      "cueId": "AO.SM.C0145",
+      "actor": "PRIEST",
+      "historicalAction": "SANCTUS_HEAD_BOW",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 142,
+        "pdfPageOneBased": 142,
+        "matchedText": "Sanctus",
+        "evidenceWindow": " elevatis et extensis ut prius manibus; prosequitur Prcefattonem, propriam, vel communem, ut tempus requirit. Cum dicit Sanctus, junctis ante pectus manibus, et inclinatus, voce mediocri prosequitur, ministro interim parvam campa- nulam pulsante. Cum dicit, Benedictus qui vcnit in nomine Domini, etc., erigit se, et signum cru"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M13",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "In his parallel priest track, stands inclined with hands joined while reciting the Sanctus through the first Hosanna.",
+        "sungVoice": "QUIET PRIEST TRACK → SECRET CANON",
+        "lowAction": "stands inclined with hands joined and recites the Sanctus through the first Hosanna.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.045",
+      "cueId": "AO.SM.C0148",
+      "actor": "PRIEST",
+      "historicalAction": "SIGN_AT_BENEDICTUS",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 142,
+        "pdfPageOneBased": 142,
+        "matchedText": "Benedictus",
+        "evidenceWindow": "nte pectus manibus, et inclinatus, voce mediocri prosequitur, ministro interim parvam campa- nulam pulsante. Cum dicit, Benedictus qui vcnit in nomine Domini, etc., erigit se, et signum crucis sibi producit a fronte ad pectus.&quot; (Rub. Miss, tit. VII. 8.) Having come as far as the words Per omnia scecula SCECU- lorum in the c"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M13",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "In his priest track, stands erect and makes the Sign of the Cross at Benedictus qui venit.",
+        "sungVoice": "QUIET PRIEST TRACK → SECRET CANON",
+        "lowAction": "stands erect and makes the Sign of the Cross at Benedictus qui venit.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.046",
+      "cueId": "AO.SM.C0150",
+      "actor": "PRIEST",
+      "historicalAction": "TE_IGITUR_PROFOUND_BOW",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 145,
+        "pdfPageOneBased": 145,
+        "matchedText": "profund.*inclin",
+        "evidenceWindow": "um elevat manus, oculisque elevatis ad Deum, et sine mora devote demissis, ac manibus junctis, et super altare positis, profunde inclinatus incipit Ca- nonem, secreto dicens, Te igitur, etc., ut in Ordine Missae. Cum dicit, uti accepta habeas et benedicas, prius osculatur altare in medio, deinde erigit se, et stat, junctis manibus an"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Raises eyes and hands, then bows profoundly with hands joined on the altar.",
+        "sungVoice": "SECRET",
+        "lowAction": "Raises eyes and hands, then bows profoundly with hands joined on the altar.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.047",
+      "cueId": "AO.SM.C0151",
+      "actor": "PRIEST",
+      "historicalAction": "CANON_KISS_AT_UTI_ACCEPTA",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 146,
+        "pdfPageOneBased": 146,
+        "matchedText": "kisses the altar",
+        "evidenceWindow": "lections, the raising of the Host and of the chalice, etc., that are performed without words. After the word petimus he kisses the altar, and then, standing erect, he joins his hands and says uti accepta habeas et benedicas; and having immediately placed his left hand on the altar outside of the corporal, he makes with his right hand "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Kisses the altar, then rises with hands joined.",
+        "sungVoice": "SECRET",
+        "lowAction": "Kisses the altar, then rises with hands joined.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.048",
+      "cueId": "AO.SM.C0152",
+      "actor": "PRIEST",
+      "historicalAction": "HAEC_DONA_THREE_CROSSES",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 146,
+        "pdfPageOneBased": 146,
+        "matchedText": "cross three times over the chalice",
+        "evidenceWindow": "dicas; and having immediately placed his left hand on the altar outside of the corporal, he makes with his right hand a cross three times over the chalice and the Host, saying: Hczc * dona, hcec * munera, hcec sancta % sacrificia illibata. How these crosses are to be formed we have explained above. 1 Then with his hands extended as in the Preface, he c"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes three Signs of the Cross over Host and Chalice.",
+        "sungVoice": "SECRET",
+        "lowAction": "Makes three Signs of the Cross over Host and Chalice.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.049",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "historicalAction": "MEMENTO_LIVING_HANDS_JOINED",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 147,
+        "pdfPageOneBased": 147,
+        "matchedText": "Cum dicit, Memento Domine",
+        "evidenceWindow": "e is vacant the words Pro famulo tuo Papa nostro N. are omitted. 2. The Priest makes the Memento for the Living, &quot; Cum dicit, Memento Domine, elevans et jungens manus usque ad faciem, vel pectus, sic junctis manibus stat paulisper in quiete, demisso aliquantulum capita, faciens commemora- tionem vivorum Christi fidelium ad suam voluntatem"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Pauses with hands joined/raised for the persons remembered.",
+        "sungVoice": "SILENT",
+        "lowAction": "Pauses with hands joined/raised for the persons remembered.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.050",
+      "cueId": "AO.SM.C0158",
+      "actor": "PRIEST",
+      "historicalAction": "COMMUNICANTES_BOW_AT_IESU",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 151,
+        "pdfPageOneBased": 151,
+        "matchedText": "Jesu Christi",
+        "evidenceWindow": "nsis ut prius manibus, continuat, Et omnium circumstantium, etc. Similiter stans prosequitur, Communicantes. Cum dicit, Jesu Christi, caput Cruci inclinat : in conclusione, quando dicit Per eumdem, jungit manus. Cum dicit, Hanc igitur oblationem expandit manus simul super oblata, ita ut palmae sint apertae versus ac super calicem "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Bows his head at the Holy Name.",
+        "sungVoice": "SECRET",
+        "lowAction": "Bows his head at the Holy Name.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.051",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "historicalAction": "HANC_IGITUR_HANDS_OVER_OBLATIONS",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 151,
+        "pdfPageOneBased": 151,
+        "matchedText": "Hanc igitur",
+        "evidenceWindow": "to tJic Consecration. 1 5 1 3. The Priest finishes the Prayer Memento, and says the fol lowing Prayers : Communicantes, Hanc igitur, et Quam oblationem. &quot;Commemoratione vivorum facta, demissis et extensis ut prius manibus, continuat, Et omnium circumstantium, etc. Similiter stans prosequitur, Communicantes. Cum dicit, Jesu C"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Extends both hands over the oblations.",
+        "sungVoice": "SECRET",
+        "lowAction": "Extends both hands over the oblations.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.052",
+      "cueId": "AO.SM.C0164",
+      "actor": "PRIEST",
+      "historicalAction": "QUAM_OBLATIONEM_THREE_CROSSES",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 152,
+        "pdfPageOneBased": 152,
+        "matchedText": "bene.*dictam",
+        "evidenceWindow": "of the corporal, and with his right hand he makes three crosses over the chalice and the Host at the same time, saying: Bene* dictam, ad^scriptam, raJ^tam, etc., in the same manner as has been mentioned above. 1 Then he makes another sign of the cross over the Host, saying: Ut nobis cor^pus; while making this sign he does not lowe"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes three Signs of the Cross over the oblations.",
+        "sungVoice": "SECRET",
+        "lowAction": "Makes three Signs of the Cross over the oblations.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.053",
+      "cueId": "AO.SM.C0165",
+      "actor": "PRIEST",
+      "historicalAction": "CORPUS_CROSS_OVER_HOST",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 153,
+        "pdfPageOneBased": 153,
+        "matchedText": "Corpus",
+        "evidenceWindow": "e of this word, an incon venience seems to occur from being obliged to delay a little until the other cross at the word corpus is to be made over the Host; this has given rise to different opinions. I will only mention here the opinion that pleases me; it is this: after having with the right hand made the cross at the word r"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes a Sign of the Cross over the Host.",
+        "sungVoice": "SECRET",
+        "lowAction": "Makes a Sign of the Cross over the Host.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.054",
+      "cueId": "AO.SM.C0166",
+      "actor": "PRIEST",
+      "historicalAction": "SANGUIS_CROSS_OVER_CHALICE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 153,
+        "pdfPageOneBased": 153,
+        "matchedText": "San.guis",
+        "evidenceWindow": " in order that he may form a transverse line over the Host. After wards he makes another cross over the chalice, saying San&guis. These two crosses over the Host and the chalice should be shorter than the usual crosses. As the Rubric indicates that the cross at the word ratam should be made in the middle of this word, an incon"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M14",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes a Sign of the Cross over the Chalice.",
+        "sungVoice": "SECRET",
+        "lowAction": "Makes a Sign of the Cross over the Chalice.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.055",
+      "cueId": "AO.SM.C0169",
+      "actor": "PRIEST",
+      "historicalAction": "EYES_LIFTED_AT_ELEVATIS_OCULIS",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 153,
+        "pdfPageOneBased": 153,
+        "matchedText": "elevat.*ocul",
+        "evidenceWindow": " dicit, accepit panem in sanetas ac venerabiles manus suas, elevansque ad coelum oculos, et statim demittens, dicit, et elevatis oculis in coelum ad te Deum Paircm szium oni- nipotentem, caputque aliquantulum inclinans, dicit, tibi gratias "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M15",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Raises his eyes to heaven, then lowers them.",
+        "sungVoice": "SECRET",
+        "lowAction": "Raises his eyes to heaven, then lowers them.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.056",
+      "cueId": "AO.SM.C0171",
+      "actor": "PRIEST",
+      "historicalAction": "CROSS_HOST_BENEDIXIT",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 155,
+        "pdfPageOneBased": 155,
+        "matchedText": "While saying bene",
+        "evidenceWindow": "te Deum Patrem suum omnipotentem; then he immediately lowers them, and inclining the head, he says, tibi gratias agens. While saying benefrdixit he makes with his right hand a cross over the Host, which, as has been said, he holds somewhat raised above the corporal. If there is behind the chalice a ciborium, he puts it by the side of t"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M15",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes the Sign of the Cross over the Host.",
+        "sungVoice": "SECRET",
+        "lowAction": "Makes the Sign of the Cross over the Host.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.057",
+      "cueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "historicalAction": "HOST_CONSECRATION_STOOP",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 156,
+        "pdfPageOneBased": 156,
+        "matchedText": "the priest, when he consecrates the Host",
+        "evidenceWindow": "bric), as it were, breathing them forth (a fiato], so that he may not be heard by the bystanders, saying, Hoc est, etc. The priest, when he consecrates the Host, should take care not to make any movement of the head or mouth, not to pronounce the form with a certain vehemence, not to bring the Host too near his mouth, or his mouth too near the Host; but he s"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M15",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Pronounces the words over the Host while bowed.",
+        "sungVoice": "SECRET",
+        "lowAction": "Pronounces the words over the Host while bowed.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.058",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "historicalAction": "HOST_GENUFLECT_FIRST",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 156,
+        "pdfPageOneBased": 156,
+        "matchedText": "genuflect",
+        "evidenceWindow": "orporal. Then he genu flects only on one knee, without an inclination of the head ; for it must be observed that when a genuflection is made the head must not be inclined, as some wrongly do. This genuflection should be made with greater reverence, and therefore with a slight pause, 1 and the same thing should be observed in th"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M15",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "sungVoice": "SILENT",
+        "lowAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.059",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "historicalAction": "HOST_ELEVATE_AFTER_CONSECRATION",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 156,
+        "pdfPageOneBased": 156,
+        "matchedText": "he raises the Host perpendicularly",
+        "evidenceWindow": "n of the chalice. After hav ing made this first adoration, and while holding his hands joined and his fingers extended, he raises the Host perpendicularly over the place where the corporal is, a little higher than his head so that his wrists are on a level with his eyes, without moving the Host over his head, but he elevates it so that it may be seen a"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M15",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "sungVoice": "SILENT",
+        "lowAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.060",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "historicalAction": "HOST_REPLACE_AND_GENUFLECT",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 156,
+        "pdfPageOneBased": 156,
+        "matchedText": "slowly lowers it and puts it in the place",
+        "evidenceWindow": " but he elevates it so that it may be seen and adored by the people; and after having thus held it for a short time, he slowly lowers it and puts it in the place whence he took it. In order to do this more easily, he puts while laying down the Host the ends of his fingers on the corporal at a distance of about three inches 1 Authors are not agreed whether or "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M15",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "sungVoice": "SILENT",
+        "lowAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.061",
+      "cueId": "AO.SM.C0177",
+      "actor": "PRIEST",
+      "historicalAction": "CROSS_CHALICE_BENEDIXIT",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 159,
+        "pdfPageOneBased": 159,
+        "matchedText": "dextra signal super eum",
+        "evidenceWindow": " etc., cum dicit, Item tibi gratias agens, caput inclinat, cum dicit, Benc^dixit, sinistra calicem infra cuppam teuens, dextra signal super eum ; et prosequens Deditque discipulis suis, etc., et ambabus manibus tenens calicem, videlicet, sinistra pedem, dextra nodum infra cuppam, cubitis super altare positis, et capite inclinato, profert att"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M16",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes the Sign of the Cross over the Chalice.",
+        "sungVoice": "SECRET",
+        "lowAction": "Makes the Sign of the Cross over the Chalice.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.062",
+      "cueId": "AO.SM.C0179",
+      "actor": "PRIEST",
+      "historicalAction": "CHALICE_CONSECRATION",
+      "actionType": "VOICE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 159,
+        "pdfPageOneBased": 159,
+        "matchedText": "cubitis super altare",
+        "evidenceWindow": "editque discipulis suis, etc., et ambabus manibus tenens calicem, videlicet, sinistra pedem, dextra nodum infra cuppam, cubitis super altare positis, et capite inclinato, profert attente, continuate, et secreto, ut supra, verba Consecration is Sanguinis : Hie est enim Calix, etc. Quibus dictis, reponit calicem super corporate, dicens secr"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M16",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Pronounces the words over the Chalice while bowed.",
+        "sungVoice": "SECRET",
+        "lowAction": "Pronounces the words over the Chalice while bowed.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.063",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "historicalAction": "CHALICE_GENUFLECT_FIRST",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 160,
+        "pdfPageOneBased": 160,
+        "matchedText": "genuflects",
+        "evidenceWindow": "ds he again places the chalice on the corporal, and says: H&amp;lt;zc quotiescumque, etc., at the same time he devoutly genuflects and adores. Having risen, he takes hold of the chalice with the right hand at the knob in the above-mentioned way, namely, with the thumb and the forefinger in front, holding the foot with the three "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M16",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects, elevates the Chalice for the faithful, replaces and covers it, and genuflects again.",
+        "sungVoice": "SILENT",
+        "lowAction": "Genuflects, elevates the Chalice for the faithful, replaces and covers it, and genuflects again.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.064",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "historicalAction": "CHALICE_ELEVATE_AND_REPLACE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 160,
+        "pdfPageOneBased": 160,
+        "matchedText": "He raises the chalice perpendicularly",
+        "evidenceWindow": "oned way, namely, with the thumb and the forefinger in front, holding the foot with the three fingers of the left hand. He raises the chalice perpendicularly, always following it with his eyes, without, however, turning it around in a circle above his head, as many awkwardly do; he raises it so high that the eyes of the celebrant can see below the foot of"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M16",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects, elevates the Chalice for the faithful, replaces and covers it, and genuflects again.",
+        "sungVoice": "SILENT",
+        "lowAction": "Genuflects, elevates the Chalice for the faithful, replaces and covers it, and genuflects again.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.065",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "historicalAction": "CHALICE_GENUFLECT_SECOND",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 161,
+        "pdfPageOneBased": 161,
+        "matchedText": "having adored it by making a genuflection",
+        "evidenceWindow": "r. Cum dicit, per eumdem, jungit manus.&quot; (Rub. Miss. tit. IX. c. i.) HAVING replaced the chalice on the altar, and having adored it by making a genuflection, the celebrant rises, and standing erect, with his hands extended before his breast, and turned towards the Missal, he says: Unde et memores Domine, etc. At the words de tuis donis ac datis, he joins"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M16",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects, elevates the Chalice for the faithful, replaces and covers it, and genuflects again.",
+        "sungVoice": "SILENT",
+        "lowAction": "Genuflects, elevates the Chalice for the faithful, replaces and covers it, and genuflects again.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.066",
+      "cueId": "AO.SM.C0182",
+      "actor": "PRIEST",
+      "historicalAction": "THUMB_AND_INDEX_TOUCH_AFTER_CONSECRATION",
+      "actionType": "STATE",
+      "formConditionReview": "until ablutions",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 158,
+        "pdfPageOneBased": 158,
+        "matchedText": "thumbs and the fore fingers should thenceforth remain joined",
+        "evidenceWindow": "words of Jesus Christ must not be interrupted by the insertion of vocal or mental prayers. It must be observed that the thumbs and the fore fingers should thenceforth remain joined till their ablu tion, which takes place after the receiving of the pre cious blood, and are opened only when the Host is to be taken up. 5. The Priest consecrates the Chalice. &quot;Celebrans, adorat"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M17",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Hands extended.",
+        "sungVoice": "SECRET",
+        "lowAction": "Hands extended.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.067",
+      "cueId": "AO.SM.C0193",
+      "actor": "PRIEST",
+      "historicalAction": "MEMENTO_DEAD_HANDS_JOINED",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 162,
+        "pdfPageOneBased": 162,
+        "matchedText": "Memento",
+        "evidenceWindow": "elow the breast; and at the words Per eumdem, etc., he joins his hands according to the Rubric. 2. The Priest makes the Memento for the Dead. &quot;Cum dicit, Memento etiam, Domine famulorum famula- rumque tuarum, etc,, extensis et junctis manibus ante pectus, et usque ad faciem elevatis, et intentis oculis ad Sacramentum sup"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M17",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Pauses for those remembered.",
+        "sungVoice": "SILENT",
+        "lowAction": "Pauses for those remembered.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.068",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "historicalAction": "NOBIS_QUOQUE_BREAST_STRIKE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 164,
+        "pdfPageOneBased": 164,
+        "matchedText": "strikes his breast",
+        "evidenceWindow": "Sacramentum adorat.&quot; (Rub. Miss. til. IX. 3.) Then he puts his left hand upon the corporal, and standing erect, he strikes his breast with the extremities of his three fingers, saying in a moderate voice: Nobis quoque peccatoribus, and with his hands extended as before he continues, and again joins them when he says: Per Christum D"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M17",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Raises his voice slightly and strikes his breast.",
+        "sungVoice": "BRIEFLY AUDIBLE / THEN LOW",
+        "lowAction": "Raises his voice slightly at Nobis quoque peccatoribus and strikes his breast.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.069",
+      "cueId": "AO.SM.C0200",
+      "actor": "PRIEST",
+      "historicalAction": "SANCTIFICAS_CROSSES",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 164,
+        "pdfPageOneBased": 164,
+        "matchedText": "he forms three crosses conjointly",
+        "evidenceWindow": "m nostrum. And thus continuing in the same attitude he says: Per quern htzc omnia, Domine, sem per bona creas, and then he forms three crosses conjointly, as has been explained above, saying: Sanctfoficas, vivi* ficas, bene^rdicis, et pr&stas nobis. Afterwards with his right hand he uncovers the chalice, his left hand being placed on the corporal, or,"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M17",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes the three prescribed Signs of the Cross over the offerings.",
+        "sungVoice": "SECRET",
+        "lowAction": "Makes the three prescribed Signs of the Cross over the offerings.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.070",
+      "cueId": "AO.SM.C0202",
+      "actor": "PRIEST",
+      "historicalAction": "PER_IPSUM_THREE_CROSSES",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 164,
+        "pdfPageOneBased": 164,
+        "matchedText": "Per ipq",
+        "evidenceWindow": "1 64 The Ceremonies of the Mass. circa nodum infra cuppam, signal ter a labio ad labium, dicens, Per ipq?sum, et cum ^ ipso, et in ip^so. Similiter cum Hostia signal bis inter Calicem et pectus, incipiens a labio Calicis, el dicit, est tibi Deo Pa^tri omnipotenti in unitate Spiritus^ sancti. Deinde lene"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M18",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes three crosses with the Host over the Chalice.",
+        "sungVoice": "SECRET UNTIL CONCLUSION",
+        "lowAction": "Makes three crosses with the Host over the Chalice.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.071",
+      "cueId": "AO.SM.C0209",
+      "actor": "PRIEST",
+      "historicalAction": "PATER_NOSTER_HANDS_EXTENDED",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 166,
+        "pdfPageOneBased": 166,
+        "matchedText": "Cum incipit Pater nosier extendit manus",
+        "evidenceWindow": "s, dicit intelligibili voce Per omnia scccula saculorum, et cum dicit Oremits jungit manus, caput Sacramento inclinans. Cum incipit Pater nosier extendit manus, et stans, oculis ad Sacramentum intentis, prosequitur usque ad finem. Response a mimstro Sed libera nos a malo, et a celebrante, submissa voce Amen, manu dextra, pollice et indice non disjunctis, pa"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M19",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Joins hands and inclines head at Oremus/Praeceptis.",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Joins hands and inclines head at Oremus/Praeceptis.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.072",
+      "cueId": "AO.SM.C0211",
+      "actor": "PRIEST",
+      "historicalAction": "TAKE_PATEN_WHILE_LIBERA_NOS",
+      "actionType": "OBJECT",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 167,
+        "pdfPageOneBased": 167,
+        "matchedText": "takes.*paten",
+        "evidenceWindow": "CH. x.] From Pater Noster to Communion. 167 Afterwards, 1 placing his left hand on the corporal, he takes with his right hand the purificator without sepa rating the forefinger from the thumb, and slightly rubs the paten drawn from under the corporal; he leaves the purificator a short distance from the corporal on the Epistle side. Then taking the paten between the fore finger and the middle finger he holds it upright so that the gilt or concave side looks towards the Host, and its edge rests on the altar cloth, but not on the corporal; he keeps his hand on the upper part of the paten, and thus standing he says the prayer Libera nos, etc. 2. The Priest continues until after the Agnus Dei. &quot; Antequam celebrans dicat Da propitius pacem, elevat manu dextra patenam de altari, et seipsum cum ea signat signo crucis a fronte ad pectus dicens, Da propitius pacem in diebus nostris. Cum signat se, manum sinistram ponit infra pectus : deinde patenam ipsam osculatur, et, prosequens, ut ope misericordia tucp, etc., submittit patenam Hostiae, quam indice sinistro accom- modat super patenam, discooperit Calicem et genuflexus Sacra- mentum adorat ; turn, se erigens, accipit Hostiam inter pollicem et indicem dextrae manus et cum illis, ac pollice et indice sinis- trae manus earn super Calicem tenens, reverenter frangit per medium, dicens, Per eumdem Dominum nostrum Jesum Christum Filium tuum, et mediam partem, quam inter pollicem et indi cem dextrae manus tenet, ponit super patenam : de ilia media, quam sinistra manu tenet, frangit cum pollice et indice dextrae manus particulam, prosequens, Qui tecum viva et regnat, etc., et earn inter ipsos dextrae manus pollicem et indicem retinens, partem majorem, quam sinistra tenet, adjungit mediae, super patenam positae, interim dicens, in unitate Spiritus sancti Deus, et particulam Hostiae, quam in dextra manu retinuit, tenens super Calicem, quern sinistra per nodum infra cuppam retinet- intelligibili voc"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M19",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Joins hands and inclines head at Oremus/Praeceptis.",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Says Amen secretly before beginning Libera nos.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.073",
+      "cueId": "AO.SM.C0216",
+      "actor": "PRIEST",
+      "historicalAction": "BREAK_SACRED_HOST",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 167,
+        "pdfPageOneBased": 167,
+        "matchedText": "frang",
+        "evidenceWindow": "cem et indicem dextrae manus et cum illis, ac pollice et indice sinis- trae manus earn super Calicem tenens, reverenter frangit per medium, dicens, Per eumdem Dominum nostrum Jesum Christum Filium tuum, et mediam partem, quam inter pollicem et indi cem dextrae manus tenet, ponit super patenam : de ilia media, quam sinistra "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M20",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Breaks the Sacred Host as prescribed toward the conclusion.",
+        "sungVoice": "SECRET / LOW",
+        "lowAction": "Breaks the Sacred Host as prescribed toward the conclusion.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.074",
+      "cueId": "AO.SM.C0219",
+      "actor": "PRIEST",
+      "historicalAction": "PAX_DOMINI_CROSS_WITH_PARTICLE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 167,
+        "pdfPageOneBased": 167,
+        "matchedText": "Pax Domini",
+        "evidenceWindow": "i voce dicit, Per omnia sacula scrculorum. R. Amen, et cum ipsa particula signans ter a labio ad labium Calicis, dicit, Pax Domini sit semper vobiscum. Response per ministrum, Et 1 Note the word afterwards (posted), for then only after the priest has said Au ii, and not before he places his left hand on the corporal, etc* "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M20",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Makes three crosses with the Particle over the Chalice",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Makes three crosses with the Particle over the Chalice",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.075",
+      "cueId": "AO.SM.C0221",
+      "actor": "PRIEST",
+      "historicalAction": "DROP_PARTICLE_INTO_CHALICE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 170,
+        "pdfPageOneBased": 170,
+        "matchedText": "lets the particle fall",
+        "evidenceWindow": "i 70 The Ceremonies of the Mass. swered Et cum Spiritu tuo, tne priest lets the particle fall into the chalice, saying in a low voice: Hcec com- mixtio, etc. At the name fesu Christi\\\\e makes a simple minimarum maxima inclination. Then he rubs his fingers over the chalice, covers the chalice "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M20",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Places Particle in Chalice; covers Chalice; genuflects",
+        "sungVoice": "SECRET",
+        "lowAction": "Places Particle in Chalice; covers Chalice; genuflects",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.076",
+      "cueId": "AO.SM.C0222",
+      "actor": "PRIEST",
+      "historicalAction": "AGNUS_DEI_FIRST_BREAST_STRIKE",
+      "actionType": "GESTURE",
+      "formConditionReview": "Requiem no striking",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 170,
+        "pdfPageOneBased": 170,
+        "matchedText": "While saying Miserere nobis",
+        "evidenceWindow": "inclining only the head \\Capite inclinato versus Sacramentum, says the Rubric] he says in a loud voice: Agnus Dei, etc. While saying Miserere nobis he places his left hand on the corporal, and keeps it there until he has said Agnus Dei three times, and striking his breast three times with the last three fingers of his right hand, he says Miserer"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M21",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Strikes breast once at each Agnus invocation",
+        "sungVoice": "QUIET PRIEST TRACK",
+        "lowAction": "Strikes breast once at each Agnus invocation",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.077",
+      "cueId": "AO.SM.C0223",
+      "actor": "PRIEST",
+      "historicalAction": "AGNUS_DEI_SECOND_BREAST_STRIKE",
+      "actionType": "GESTURE",
+      "formConditionReview": "Requiem no striking",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 168,
+        "pdfPageOneBased": 168,
+        "matchedText": "secundo, miserere nobis",
+        "evidenceWindow": "a super corporale posita, dicit, miserere nobis, et deinde non jungit manus, sed iterum percutit sibi pectus, cum dicit secundo, miserere nobis, quod et tertio facit, cum dicit, dona nobis pacem,&quot; (Rub. Miss. tit. X, 2.) After the words omnibus Sanctis and before he says Da propitius pacem, he makes with the paten the sign of the cross "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M21",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Strikes breast once at each Agnus invocation",
+        "sungVoice": "QUIET PRIEST TRACK",
+        "lowAction": "Strikes breast once at each Agnus invocation",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.078",
+      "cueId": "AO.SM.C0224",
+      "actor": "PRIEST",
+      "historicalAction": "AGNUS_DEI_THIRD_BREAST_STRIKE",
+      "actionType": "GESTURE",
+      "formConditionReview": "Requiem no striking",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 168,
+        "pdfPageOneBased": 168,
+        "matchedText": "dona nobis pacem",
+        "evidenceWindow": " non jungit manus, sed iterum percutit sibi pectus, cum dicit secundo, miserere nobis, quod et tertio facit, cum dicit, dona nobis pacem,&quot; (Rub. Miss. tit. X, 2.) After the words omnibus Sanctis and before he says Da propitius pacem, he makes with the paten the sign of the cross on himself, holding his left hand below his breast;"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M21",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Strikes breast once at each Agnus invocation",
+        "sungVoice": "QUIET PRIEST TRACK",
+        "lowAction": "Strikes breast once at each Agnus invocation",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.079",
+      "cueId": "AO.SM.C0225",
+      "actor": "PRIEST",
+      "historicalAction": "PRIVATE_PAX_PRAYER_BOW",
+      "actionType": "POSTURE",
+      "formConditionReview": "Requiem omits first",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 171,
+        "pdfPageOneBased": 171,
+        "matchedText": "three prayers",
+        "evidenceWindow": "g of Chapter IV,, 1 and inclining mod erately, with his eyes fixed on the Blessed Sacrament, he says in a Low voice the three prayers of the MissaL 2 Having recited these prayers, he genuflects, and in a low voice says: Pancm ccelestem accipiam, etc.; then with the thumb and forefinger of the right hand he reverently takes from the"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M22",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Bows over altar with hands joined",
+        "sungVoice": "SECRET",
+        "lowAction": "Bows over altar with hands joined",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.080",
+      "cueId": "AO.SM.C0228",
+      "actor": "PRIEST",
+      "historicalAction": "PANEM_COELESTEM_ADORATION",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 170,
+        "pdfPageOneBased": 170,
+        "matchedText": "Panem",
+        "evidenceWindow": " ut in Ordine Missae. &quot; Quibus orationibus dictis, genuflectens Sacramentum adorat, et, se erigens, dicit secreto, Panem ccelestem accipiam, etc., quo dicto, dextra manu accipit de patena reverenter ambas partes Hostise, et collocat inter pollicem et indicem sinistrae manus, qui- bus patenam inter eumdem indicem et med"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M22",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Takes the Sacred Host",
+        "sungVoice": "SEMI-AUDIBLE / LOW",
+        "lowAction": "Takes the Sacred Host",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.081",
+      "cueId": "AO.SM.C0229",
+      "actor": "PRIEST",
+      "historicalAction": "DOMINE_NON_SUM_DIGNUS_BREAST",
+      "actionType": "GESTURE",
+      "formConditionReview": "priest three times",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 170,
+        "pdfPageOneBased": 170,
+        "matchedText": "Domine non sum dignus",
+        "evidenceWindow": " inclinatus, dextra tribus vicibus percutit pectus suum, interim etiam tribus vicibus dicens voce aliquantulum elevata, Domine non sum dignus, et secreto prose- quitur, ut intres, etc. &quot; Quibus tertio dictis, ex sinistra accipit ambas partes prae- dictas Hostise inter pollicem et indicem dextrae manus, et cum ilia super patenam signat"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M22",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Strikes breast once",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Says Dómine, non sum dignus with the opening words slightly raised, then continues secretly; strikes his breast once.",
+        "lowVoice": "RAISED ENTRY → SECRET CONTINUATION",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.082",
+      "cueId": "AO.SM.C0232",
+      "actor": "PRIEST",
+      "historicalAction": "RECEIVE_HOST_WITH_PATEN",
+      "actionType": "OBJECT",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 172,
+        "pdfPageOneBased": 172,
+        "matchedText": "reverently receives Holy Commu",
+        "evidenceWindow": "and inclining his heacfat the name Jesu Christi, etc. Then leaning his arms on the altar, and moder ately inclining, he reverently receives Holy Commu nion, holding the paten under the Host. He should pay attention while taking the Host not to put his tongue out of his mouth, and not to chew the Host; and in order that it may not adhere to the roof"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M23",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Signs himself with the Host and receives",
+        "sungVoice": "SECRET / LOW",
+        "lowAction": "Signs himself with the Host and receives",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.083",
+      "cueId": "AO.SM.C0233",
+      "actor": "PRIEST",
+      "historicalAction": "QUiD_RETRIBUAM_PREPARE_CHALICE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 172,
+        "pdfPageOneBased": 172,
+        "matchedText": "Quid retribuam",
+        "evidenceWindow": "tion on the Blessed Sacrament. 4. The Priest takes the Precious Blood. &quot; Deinde, depositis manibus, dicit secreto, Quid retribuam Domino pro omnibus qua retribuit mihi? et interim discooperit Calicem, genuflectit, surgit, accipit patenam, inspicit corporale, colligit fragmenta cum patena, si quae sint in eo, patenamque diligent"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M23",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Takes the Chalice",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Takes the Chalice",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.084",
+      "cueId": "AO.SM.C0234",
+      "actor": "PRIEST",
+      "historicalAction": "RECEIVE_PRECIOUS_BLOOD",
+      "actionType": "OBJECT",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 173,
+        "pdfPageOneBased": 173,
+        "matchedText": "sumit totum San",
+        "evidenceWindow": "igno crucis cum Calice, dicit, Sanguis Domini nostri, etc., et maim sinistra supponens patenam Calici, stans reverenter sumit totum San- guinem cum particula in Calice posita.&quot; (Rttb. Miss. tit. X. 4 etsO Then having disjoined his hands, he places his left hand on the corporal or on the foot of the chalice, and uncovers the chal"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M23",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Signs himself with the Chalice and receives",
+        "sungVoice": "SECRET / LOW",
+        "lowAction": "Signs himself with the Chalice and receives",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.085",
+      "cueId": "AO.SM.C0235",
+      "actor": "SERVER",
+      "historicalAction": "SECOND_CONFITEOR_PRE1962",
+      "actionType": "VOICE",
+      "formConditionReview": "HISTORIC_ONLY_OMIT_STRICT_1962",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 185,
+        "pdfPageOneBased": 185,
+        "matchedText": "server.*Confiteor",
+        "evidenceWindow": "it in the middle of the altar uncovers it, again genuflects, and with his hands joined before his breast waits till the server finishes the Confiteor. Then he turns around in order to say the prayers Miscrcatur and Indulgentiam, and gives Communion in the manner above mentioned. Having returned to the altar, he puts down the cibo rium, covers it, "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M24",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Waits / turns according local ceremonial",
+        "sungVoice": "LISTENS",
+        "lowAction": "Waits / turns according local ceremonial",
+        "lowVoice": "LISTENS",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.086",
+      "cueId": "AO.SM.C0242",
+      "actor": "PRIEST",
+      "historicalAction": "ECCE_AGNUS_DEI_PRESENT_HOST",
+      "actionType": "GESTURE",
+      "formConditionReview": "only when distributing to faithful",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 183,
+        "pdfPageOneBased": 183,
+        "matchedText": "Ecce Agnus Dei",
+        "evidenceWindow": " et indicem tenet aliquantulum elevatam super pyxidem seu patenam, et conversus ad communicandos in medio altaris dicit Ecce Agnus Dei, ecce qui tollit peccata mundi Deinde dicit: Domine non sum dignus, ut intres sub tectum meum, sed tantum die verbo, et sanabititr an IMa mca. Qui bus verbis tertio repetitis, accedit ad eorum dextra"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M24",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Shows the Sacred Host to the faithful",
+        "sungVoice": "CLEAR SPOKEN",
+        "lowAction": "Shows the Sacred Host to the faithful",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.087",
+      "cueId": "AO.SM.C0246",
+      "actor": "PRIEST",
+      "historicalAction": "DISTRIBUTE_COMMUNION",
+      "actionType": "OBJECT",
+      "formConditionReview": "only when faithful communicate",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 184,
+        "pdfPageOneBased": 184,
+        "matchedText": "distributing Communion",
+        "evidenceWindow": "e the priest takes the paten with the Host, according to the Rubric quoted above. 2 Some authors say that the priest in distributing Communion may use a purificator different from the purificator that he uses at Mass, and that he may take it between the forefinger and middle finger of his left hand, so that it hangs on both sides of the las"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M25",
+        "sungStation": "COMMUNION_RAIL",
+        "sungAction": "Makes Sign of Cross with Host over each communicant and administers Communion",
+        "sungVoice": "QUIET INDIVIDUAL FORMULA",
+        "lowAction": "Makes Sign of Cross with Host over each communicant and administers Communion",
+        "lowVoice": "QUIET INDIVIDUAL FORMULA",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.088",
+      "cueId": "AO.SM.C0247",
+      "actor": "PRIEST",
+      "historicalAction": "QUOD_ORE_ABLUTION_WITH_WINE",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 175,
+        "pdfPageOneBased": 175,
+        "matchedText": "Quod ore",
+        "evidenceWindow": "e Priest takes the Ablutions, then covers the Chalice with the Veil and the Burse. &quot;Quibus sumptis, dicit secreto, Quod ore sumpsinius, etc., et super altare porrigit calicem minjstro in cornu Epistolse, quo vinum fundente, se purificat ; deinde vino et aqua abluit pol- lices et indices super calicem, quos abstergit purif"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M26",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "First ablution / purification",
+        "sungVoice": "SECRET / LOW",
+        "lowAction": "First ablution / purification",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.089",
+      "cueId": "AO.SM.C0248",
+      "actor": "PRIEST",
+      "historicalAction": "CORPUS_TUUM_ABLUTION_WATER",
+      "actionType": "GESTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 176,
+        "pdfPageOneBased": 176,
+        "matchedText": "Corpus tuum",
+        "evidenceWindow": "outside of the cor poral towards the Epistle side, and wipes his fingers with the purificator, saying in the mean time: Corpus tuum Domine, quod sumpsi, etc. This prayer having been finished in the middle of the altar, he makes an inclina tion to the cross, 2 puts with his left hand the purificator under his chin, takes the chali"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M26",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Second ablution / purification",
+        "sungVoice": "SECRET / LOW",
+        "lowAction": "Second ablution / purification",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.090",
+      "cueId": "AO.SM.C0249",
+      "actor": "PRIEST",
+      "historicalAction": "RETURN_EPISTLE_SIDE_COMMUNION_ANTIPHON",
+      "actionType": "STATION",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 179,
+        "pdfPageOneBased": 179,
+        "matchedText": "antiphon, which is called Communio",
+        "evidenceWindow": ". 1 79 in Chapter X., holding his hands before his breast, goes to the Epistle side, where in a loud voice he reads the antiphon, which is called Communio; he returns imme diately after to the middle of the altar, kisses it, and turn ing towards the people says as usual, Dominus vobiscum. Then he returns to the book, and recites the prayer called Post "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M26",
+        "sungStation": "PRIEST_TRACK_ASYNC",
+        "sungAction": "Reads Communion antiphon at Missal in priest's own track",
+        "sungVoice": "QUIET PRIEST TRACK",
+        "lowAction": "Reads the Communion antiphon at the Missal after the ablutions.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.091",
+      "cueId": "AO.SM.C0254",
+      "actor": "PRIEST",
+      "historicalAction": "POSTCOMMUNION_AT_EPISTLE",
+      "actionType": "STATION",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 178,
+        "pdfPageOneBased": 178,
+        "matchedText": "Post.communio",
+        "evidenceWindow": "onies of the Mass. CHAPTER XI. THE PRAYERS AFTER COMMUNION, AND THE END OF MASS i. The Priest recites the Communio, the Post-communio, and the Ite Missa est. &quot;Celebrante purificato, dum calicem collocat in altari, liber Missalis defertur per ministrum ad cornu Epistolae, et collocatur ut in Introitu. Ipse autem minister genufl"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M27",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "At the Missal with hands extended; resolver supplies the prescribed Postcommunion set.",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "At the Missal with hands extended; resolver supplies the prescribed Postcommunion set.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.092",
+      "cueId": "AO.SM.C0259",
+      "actor": "PRIEST",
+      "historicalAction": "DISMISSAL_ITE_MISSA_EST",
+      "actionType": "VOICE",
+      "formConditionReview": "solemn deacon differs",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 179,
+        "pdfPageOneBased": 179,
+        "matchedText": "he says: Ite Missa est",
+        "evidenceWindow": " vobiscum; then while turned towards the pepple, his hands being joined before his breast, without inclin ing his head, he says: Ite Missa est. During the octave of Easter he adds two alleluias. The Ite Missa est is said at all the Masses in which the Gloria in excelsis is said; but if the Gloria in excelsis was not said, the priest after t"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M28",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Faces people for dismissal",
+        "sungVoice": "SUNG / PUBLIC",
+        "lowAction": "Faces people for dismissal",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.093",
+      "cueId": "AO.SM.C0261",
+      "actor": "PRIEST",
+      "historicalAction": "PLACEAT_BOW_HANDS_ALTAR",
+      "actionType": "POSTURE",
+      "formConditionReview": "ordinary",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 180,
+        "pdfPageOneBased": 180,
+        "matchedText": "he says in a low voice: Placeat",
+        "evidenceWindow": ". tit. XII. i.) Then holding his hands joined on the altar and in clining his head (capite inclinato, says the Rubric), he says in a low voice: Placeat tibi, sanefa Trinitas, etc.; he lays his hands extended on the altar, kisses it in the middle, and having raised himself up, lifts his eyes to the cross; elevating his hands at the same time, joining"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M29",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "At the centre, bows his head with hands joined upon the altar while saying Placeat privately.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "At the centre, bows his head with hands joined upon the altar while saying Placeat privately.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.094",
+      "cueId": "AO.SM.C0263",
+      "actor": "PRIEST",
+      "historicalAction": "BOW_HEAD_BEFORE_FINAL_BLESSING",
+      "actionType": "GESTURE",
+      "formConditionReview": "not Requiem",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 180,
+        "pdfPageOneBased": 180,
+        "matchedText": "elevat ad coelum oculos et manus",
+        "evidenceWindow": ", extensis manibus hinc inde super altare positis, ipsum in medio osculatur; turn erigens se, adhuc stans versus illud, elevat ad coelum oculos et manus, quas extendit et jungit, caputque Cruci inclinans, dicit voce intelligibili B-enedicat vos o))inipotens Dens, et junctis manibus, ac demissis ad terram oculis, vertens se ad populum a sinistro later"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M29",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Facing the altar, elevates eyes and hands, joins them, and inclines his head to the Cross.",
+        "sungVoice": "SILENT",
+        "lowAction": "Facing the altar, elevates eyes and hands, joins them, and inclines his head to the Cross.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.095",
+      "cueId": "AO.SM.C0265",
+      "actor": "PRIEST",
+      "historicalAction": "FINAL_BLESSING_TO_PEOPLE",
+      "actionType": "GESTURE",
+      "formConditionReview": "not Requiem",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 180,
+        "pdfPageOneBased": 180,
+        "matchedText": "bless.*people",
+        "evidenceWindow": " oculis, says the Rubric), he turns round to the people by the Epistle side, and with his left hand below his breast he blesses the people with his right hand extended and his fingers united, saying: Pater, et Filius ^et Spiritus Sane- tits. .. While saying Pater, he begins to make the cross with his hand extended and raised to the heig"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M29",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns and gives one Sign of the Cross over the people",
+        "sungVoice": "CLEAR SPOKEN",
+        "lowAction": "Turns and gives one Sign of the Cross over the people",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.096",
+      "cueId": "AO.SM.C0269",
+      "actor": "PRIEST",
+      "historicalAction": "LAST_GOSPEL_SMALL_CROSSES",
+      "actionType": "GESTURE",
+      "formConditionReview": "when Last Gospel present",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 181,
+        "pdfPageOneBased": 181,
+        "matchedText": "sign of the cross",
+        "evidenceWindow": "s hands joined and his face turned towards the altar, he says: Dominus vobiscum. Then he makes with his right thumb the sign of the cross, at first on the altar (or on the book at the beginning of the Gospel), then on himself on his forehead, mouth, and breast, and says the Gospel of St. John: Initium sancti Evangclii (or another Gospe"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M30",
+        "sungStation": "ALTAR_GOSPEL_MISSAL",
+        "sungAction": "Signs altar/book and forehead/lips/breast",
+        "sungVoice": "CLEAR SPOKEN / local audibility",
+        "lowAction": "Signs altar/book and forehead/lips/breast",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.097",
+      "cueId": "AO.SM.C0273",
+      "actor": "PRIEST",
+      "historicalAction": "GENUFLECT_ET_VERBUM_CARO",
+      "actionType": "POSTURE",
+      "formConditionReview": "when Last Gospel present",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 180,
+        "pdfPageOneBased": 180,
+        "matchedText": "Verbum caro factum",
+        "evidenceWindow": "neralibus, et R. Gloria tibi Domine, junctis manibus legit Evangelinm In principio, vel aliud ut convenit. Cum dicit Et Verbum caro factum est genuflectit "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M30",
+        "sungStation": "ALTAR_GOSPEL_MISSAL",
+        "sungAction": "Genuflects at Et Verbum caro factum est",
+        "sungVoice": "CLEAR SPOKEN / local audibility",
+        "lowAction": "Genuflects at Et Verbum caro factum est",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.098",
+      "cueId": "AO.SM.C0004",
+      "actor": "PRIEST",
+      "historicalAction": "REQUIEM_OMIT_JUDICA",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "REQUIEM",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 192,
+        "pdfPageOneBased": 192,
+        "matchedText": "Psalmus Judica",
+        "evidenceWindow": "s. CHAPTER XIV. WHAT IS OMITTED IN THE MASSES OF THE DEAD. &quot;In Missa pro Defunctis, ante confessionem, non dicitur Psalmus Judica me Deus, sed, pronuntiata antiphona Introibo ad Altare Dei, et response a ministro, Ad Deum qui latificat, etc. dicitur V. Adjutorium nostrum, et Confessio, cum reliquis ut supra. Cum celebrans ad al"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Alternates Psalm 42 with minister/server at foot of altar.",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Alternates Psalm 42 with minister/server at foot of altar.",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.099",
+      "cueId": "AO.SM.C0042",
+      "actor": "PRIEST",
+      "historicalAction": "REQUIEM_SIGN_BOOK_NOT_SELF_INTROIT",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "REQUIEM",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 192,
+        "pdfPageOneBased": 192,
+        "matchedText": "Introit",
+        "evidenceWindow": "qui latificat, etc. dicitur V. Adjutorium nostrum, et Confessio, cum reliquis ut supra. Cum celebrans ad altare incipit Introitum, non signat se, sed manu dextra extensa, facit signum crucis super librum, quasi aliquem benedicens. Non dicitur Gloria Patri, sed post Psalmum repetitur Requiem ceternam; nee dicitur Gloria in ex-"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "At the Epistle side, makes the Sign of the Cross from forehead to breast before beginning the Introit.",
+        "sungVoice": "SILENT",
+        "lowAction": "Makes the Sign of the Cross and begins the Introit at the Epistle side.",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.100",
+      "cueId": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "historicalAction": "REQUIEM_NO_WATER_BLESSING",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "REQUIEM",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 193,
+        "pdfPageOneBased": 193,
+        "matchedText": "water.*bless",
+        "evidenceWindow": "ere, nor Dominus sit in corde meo, nor is the book kissed at the end of the Gospel. 2 The Credo is not said, nor is the water that is poured into the chalice blessed, but the prayer Deus qui humance substantice, etc., is said; nor is Gloria Patri said after the psalm Lavabo. From the Agnus Dei till the end of Mass. At the Agnus Dei* the priest says, not miserer"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.101",
+      "cueId": "AO.SM.C0222",
+      "actor": "PRIEST",
+      "historicalAction": "REQUIEM_AGNUS_WORDS_NO_BREAST_STRIKES",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "REQUIEM",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 193,
+        "pdfPageOneBased": 193,
+        "matchedText": "breast is not struck",
+        "evidenceWindow": "s, not miserere nobis, nor dona nobis pacem, but twice dona eis requiem, and once dona eis requiem sempiternam; and the breast is not struck. He omits the first of the three prayers that precede the Communion. At the end of Mass, instead of the Ite Missa est or Benedicamus Domino, Requicscant in pace must be said. 4 1 According to a decis"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M21",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Strikes breast once at each Agnus invocation",
+        "sungVoice": "QUIET PRIEST TRACK",
+        "lowAction": "Strikes breast once at each Agnus invocation",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.102",
+      "cueId": "AO.SM.C0265",
+      "actor": "PRIEST",
+      "historicalAction": "REQUIEM_NO_FINAL_BLESSING",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "REQUIEM",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 194,
+        "pdfPageOneBased": 194,
+        "matchedText": "no blessing given",
+        "evidenceWindow": "1 94 The Ceremonies of the Mass. Then there is no blessing given, but after having said Placeat and kissed the altar, the priest goes to the Gospel side and says: Dominus vobiscum, and the Gospel of St. John In principle, and the rest as in other Masses. inter apo"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M29",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns and gives one Sign of the Cross over the people",
+        "sungVoice": "CLEAR SPOKEN",
+        "lowAction": "Turns and gives one Sign of the Cross over the people",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.103",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "historicalAction": "EXPOSED_SACRAMENT_DOUBLE_KNEE",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "EXPOSED_SACRAMENT_OLDER_CUSTOM_NEEDS_1962_GATE",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 195,
+        "pdfPageOneBased": 195,
+        "matchedText": "both knees",
+        "evidenceWindow": "exposed the celebrant gives his biretta to the server, and when he arrives at the middle of the altar he genu flects on both knees /// piano, making also a profound inclination of the head. Having ascended the altar and placed the chalice on the Gospel side, he genuflects on one knee, but does not incline the head. He then takes"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Makes the Sign of the Cross",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Makes the Sign of the Cross",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.104",
+      "cueId": "AO.SM.C0039",
+      "actor": "PRIEST",
+      "historicalAction": "EXPOSED_SACRAMENT_GENUFLECT_AFTER_ALTAR_KISS",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "EXPOSED_SACRAMENT_OLDER_CUSTOM_NEEDS_1962_GATE",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 195,
+        "pdfPageOneBased": 195,
+        "matchedText": "kisses the altar",
+        "evidenceWindow": "g again ascended the altar he genuflects, and then says the prayer Oramus te Domine, etc.; after having finished it, he kisses the altar, again genuflects and goes to read the Introit. He then returns to the middle of the altar, where, having made a genuflection, he says the Kyrie and the Gloria. Then having kissed the altar he genufl"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Kisses the altar at the beginning of this continuation, then completes the prayer.",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Kisses the altar at the beginning of this continuation, then completes the prayer.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.105",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "historicalAction": "BEFORE_BISHOP_SALUTE_PRELATE",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "BISHOP_PRESENT_HISTORIC_1962_REVIEW",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 198,
+        "pdfPageOneBased": 198,
+        "matchedText": "he salutes the prelate",
+        "evidenceWindow": " covers his head, makes an inclination towards the cross or a genuflection if the Blessed Sacrament is kept there. Then he salutes the prelate with a profound inclination and goes to the Epistle side, standing in piano before the lowest step; after having received the sign, he again in clines towards the prelate, and turning a little toward"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M01",
+        "sungStation": "FOOT_CENTER",
+        "sungAction": "Makes the Sign of the Cross",
+        "sungVoice": "LOW / QUIET",
+        "lowAction": "Makes the Sign of the Cross",
+        "lowVoice": "LOW / QUIET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.106",
+      "cueId": "AO.SM.C0070",
+      "actor": "PRIEST",
+      "historicalAction": "BEFORE_BISHOP_BEGIN_FROM_EPISTLE_SIDE",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "BISHOP_PRESENT_HISTORIC_1962_REVIEW",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 198,
+        "pdfPageOneBased": 198,
+        "matchedText": "he begins Mass",
+        "evidenceWindow": "e again in clines towards the prelate, and turning a little towards the altar (the server kneeling on the Epistle side) he begins Mass. This holds good when the bishop hears Mass in front of the altar, but not when he is present at the side; in this case the priest may begin Mass in the middle, because then he does not turn his back"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M04",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns toward people for greeting",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Turns toward people for greeting",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.107",
+      "cueId": "AO.SM.C0088",
+      "actor": "PRIEST",
+      "historicalAction": "BEFORE_BISHOP_NO_GOSPEL_KISS_BY_PRIEST",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "BISHOP_PRESENT_HISTORIC_1962_REVIEW",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 199,
+        "pdfPageOneBased": 199,
+        "matchedText": "does not kiss the Missal",
+        "evidenceWindow": "ore a Bishop. 1 99 lowest step, he begins Aufer a nobis, and ascends the altar. The Gospel having been read, the priest does not kiss the Missal, nor does he say Per Evangelica dicta, because the server without making an inclination to the prelate must carry the Missal to him to be kissed; the prelate, however, having kissed the book, says Pe"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M07",
+        "sungStation": "ALTAR_GOSPEL_MISSAL",
+        "sungAction": "Kisses the Gospel text/book while saying the formula quietly.",
+        "sungVoice": "QUIET / LOW",
+        "lowAction": "Kisses the Gospel text while saying Per evangelica dicta quietly.",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": true
+      }
+    },
+    {
+      "id": "ALPH.BK2.108",
+      "cueId": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "historicalAction": "BISHOP_WATER_BLESSING_NOT_PRESCRIBED",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "BISHOP_PRESENT_HISTORIC_1962_REVIEW",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 199,
+        "pdfPageOneBased": 199,
+        "matchedText": "it should be omitted",
+        "evidenceWindow": "lustrissime et Reverendissime Pater; and the bishop blesses the water; but as this is pre scribed nowhere in the Rubric it should be omitted. At the end of Mass the celebrant, having said Benedicat vos omnipotent Deus, makes a profound inclination to the prelate, and blesses those that are present, taking care to make the sign of the cros"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M10",
+        "sungStation": "ALTAR_EPISTLE_MISSAL",
+        "sungAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "sungVoice": "SECRET / QUIET",
+        "lowAction": "Makes the Sign of the Cross over the water cruet (the cross is omitted in Masses for the dead).",
+        "lowVoice": "SECRET",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.109",
+      "cueId": "AO.SM.C0265",
+      "actor": "PRIEST",
+      "historicalAction": "BEFORE_BISHOP_BLESS_WITHOUT_CROSSING_PRELATE",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "BISHOP_PRESENT_HISTORIC_1962_REVIEW",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 199,
+        "pdfPageOneBased": 199,
+        "matchedText": "towards that place where the prelate is not",
+        "evidenceWindow": "es a profound inclination to the prelate, and blesses those that are present, taking care to make the sign of the cross towards that place where the prelate is not. If the prelate is outside the place of his jurisdiction, the celebrant gives the blessing in the usual manner, when, namely, he celebrates in a public church; but in private oratories, as has been s"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M29",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns and gives one Sign of the Cross over the people",
+        "sungVoice": "CLEAR SPOKEN",
+        "lowAction": "Turns and gives one Sign of the Cross over the people",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.110",
+      "cueId": "AO.SM.C0070",
+      "actor": "PRIEST",
+      "historicalAction": "EXPOSED_SACRAMENT_TURN_SIDEWAYS_TO_PEOPLE",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "EXPOSED_SACRAMENT_OLDER_CUSTOM_NEEDS_1962_GATE",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 196,
+        "pdfPageOneBased": 196,
+        "matchedText": "not to turn his back",
+        "evidenceWindow": "196 7Yz Ceremonies of the Mass. not to turn his back to the Blessed Sacrament, and says Dominus vobiscum. Thus he should always act as often as he has to turn towards the people, that is, he genu flects before and after. And then he continues to say Ma"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M04",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns toward people for greeting",
+        "sungVoice": "SUNG / CLEAR",
+        "lowAction": "Turns toward people for greeting",
+        "lowVoice": "CLEAR SPOKEN",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.111",
+      "cueId": "AO.SM.C0130",
+      "actor": "PRIEST",
+      "historicalAction": "EXPOSED_SACRAMENT_ORATE_NO_FULL_CIRCLE",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "EXPOSED_SACRAMENT_OLDER_CUSTOM_NEEDS_1962_GATE",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 196,
+        "pdfPageOneBased": 196,
+        "matchedText": "without completing the circle",
+        "evidenceWindow": "lects, and turning a little towards the people, with his shoulders towards the Gospel side, he says Orate Fratres. Then without completing the circle, so that he may not turn his back to the Blessed Sacrament, he turns ;owards the altar, again genuflects, and continues the rest till the Communion. At the Sanctus and at the Elevation the bell is no"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M11",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Turns toward the people while saying Orate, fratres.",
+        "sungVoice": "AUDIBLE / ELEVATED",
+        "lowAction": "Turns toward the people while saying Orate, fratres.",
+        "lowVoice": "AUDIBLE / ELEVATED",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.112",
+      "cueId": "AO.SM.C0174",
+      "actor": "SERVER",
+      "historicalAction": "EXPOSED_SACRAMENT_NO_ELEVATION_BELL",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "EXPOSED_SACRAMENT_OLDER_CUSTOM_NEEDS_1962_GATE",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 196,
+        "pdfPageOneBased": 196,
+        "matchedText": "At the Sanctus and at the Elevation the bell is not rung",
+        "evidenceWindow": "back to the Blessed Sacrament, he turns ;owards the altar, again genuflects, and continues the rest till the Communion. At the Sanctus and at the Elevation the bell is not rung. After the Communion, and after the first ablution has been taken, he places the chalice outside of the corporal towards the Epistle side, and having made a genuflec tion he goes to the Epistle corne"
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M15",
+        "sungStation": "ALTAR_CENTER",
+        "sungAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "sungVoice": "SILENT",
+        "lowAction": "Genuflects, elevates the Sacred Host for the faithful, replaces It on the corporal, and genuflects again.",
+        "lowVoice": "SILENT",
+        "lowSungActionDifference": false
+      }
+    },
+    {
+      "id": "ALPH.BK2.113",
+      "cueId": "AO.SM.C0275",
+      "actor": "PRIEST",
+      "historicalAction": "EXPOSED_SACRAMENT_DOUBLE_KNEE_AT_EXIT",
+      "actionType": "EXCEPTION",
+      "formConditionReview": "EXPOSED_SACRAMENT_OLDER_CUSTOM_NEEDS_1962_GATE",
+      "sourceStatus": "TEXT_LOCATED_SEMANTIC_REVIEW",
+      "alphonsusEvidence": {
+        "file": "the_holy_mass.pdf",
+        "printedPage": 197,
+        "pdfPageOneBased": 197,
+        "matchedText": "genuflects on both knees",
+        "evidenceWindow": "e altar, genuflects, takes the chalice, descends to the foot of the altar in piano, where, before leaving the altar, he genuflects on both knees, and inclines the head profoundly, as he did at the beginning of Mass; then he covers his head with the biretta and returns to the sacristy. "
+      },
+      "historicalDoesNotCertify1962": true,
+      "fortescuePrimaryForGesture": false,
+      "canonicalCrosswalk": {
+        "sungMacro": "AO.SM.M30",
+        "sungStation": "ALTAR_GOSPEL_MISSAL",
+        "sungAction": "Receives/listens to response; no preceding gesture is inherited.",
+        "sungVoice": "CLEAR SPOKEN / local audibility",
+        "lowAction": "Receives/listens to response; no preceding gesture is inherited.",
+        "lowVoice": "LISTENS",
+        "lowSungActionDifference": false
+      }
+    }
+  ],
+  "metrics": {
+    "requestedActions": 113,
+    "passageMatches": 113,
+    "noMatch": 0,
+    "fortescueHistoricalTopics": 27,
+    "fortescueUnmatchedTopics": 0,
+    "cueSotJoined": 113,
+    "distinctCanonicalCues": 91,
+    "lowSungActionDifferences": 16
+  },
+  "fortescueHistoricalTopics": [
+    {
+      "id": "FORT.HIST.001",
+      "macroId": "AO.SM.M01",
+      "theme": "INTROIT_HISTORICAL",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 216,
+      "pdfPageOneBased": 238,
+      "evidenceWindow": "216 THE MASS Mass of the Catechumens Introit (The Celebrant's preparation) First incensing of the altar Kyrie eleison, Gloria, Collects, Lessons and Gradual. (End of the Mass ot the Catechumens.) Mass of the Faithf",
+      "keywordMatched": "Introit",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.002",
+      "macroId": "AO.SM.M01",
+      "theme": "PRIEST_PREPARATION_ORIGIN",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 225,
+      "pdfPageOneBased": 247,
+      "evidenceWindow": "TO THE COLLECTS 225 § 3. The Celebrant's Preparation. It was also natural, even inevitable, that while the procession moved up the church chanting the Introit, the celebrant should prepare himself for the act he was about ",
+      "keywordMatched": "preparation",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.003",
+      "macroId": "AO.SM.M02",
+      "theme": "KYRIE_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 230,
+      "pdfPageOneBased": 252,
+      "evidenceWindow": " and, after all, you must incense an altar somehow ; it does not hurt to be told how to do so. § 5. Kyrie eleison. 4 We know that the holy liturgy was originally cele- brated at Rome in Greek (pp. 1 26-1 27). \" Kyrie eleison \" is the only Greek formula in our normal Mass now",
+      "keywordMatched": "Kyrie",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.004",
+      "macroId": "AO.SM.M03",
+      "theme": "GLORIA_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 240,
+      "pdfPageOneBased": 262,
+      "evidenceWindow": "240 THE MASS best-known and certainly finest of all, the Gloria in excelsis. The rhythm of the Gloria is more obvious in the original Greek (by accent, of course) ; for instance : \" Kvpie (3a<TL\\ev eirovpavoe, Oee irarep Travro/cpdro",
+      "keywordMatched": "Gloria",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.005",
+      "macroId": "AO.SM.M04",
+      "theme": "COLLECTS_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 243,
+      "pdfPageOneBased": 265,
+      "evidenceWindow": "TO THE COLLECTS 243 that has a full office, except in Advent and Septuage- sima and the feast of the Innocents, both priests and bishops say Gloria in excelsis\". 1 This is still our rul",
+      "keywordMatched": "collects",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.006",
+      "macroId": "AO.SM.M05",
+      "theme": "EPISTLE_READERS_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 263,
+      "pdfPageOneBased": 285,
+      "evidenceWindow": "egorian Sacramen- tary : \" deinde sequitur Apostolus.\" l It was not originally the privilege of the subdeacon to read it. At first all lessons (including the Gospel) were read by Lectors. 2 The admonition to those about to be ordained subdeacon in the Roman Ponti- fical describe",
+      "keywordMatched": "subdeacon",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.007",
+      "macroId": "AO.SM.M06",
+      "theme": "GRADUAL_HISTORICAL",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 269,
+      "pdfPageOneBased": 291,
+      "evidenceWindow": "e. The verse (versus alleluiaticus) is by no means so commonly taken from the psalms as that ©f the Gradual. 3 There are many cases, especially on Saints' days, in which it is not a biblical text. So for St. Lawrence (10 Aug.) the alleluiatic verse is : \" Levita Laurentius bon",
+      "keywordMatched": "Gradual",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.008",
+      "macroId": "AO.SM.M07",
+      "theme": "GOSPEL_BOOK_AND_PROCESSION",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 280,
+      "pdfPageOneBased": 302,
+      "evidenceWindow": " 1 The Benedicite at this place still remains at Milan on some days. 2 In some Western Churches the Gospel was con- sidered part of the arcanum, and the Catechumens were dismissed before it was read. 3 It seems that this was the custom at Rome. There is no direct evidence as ",
+      "keywordMatched": "Gospel",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.009",
+      "macroId": "AO.SM.M09",
+      "theme": "CREDO_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 288,
+      "pdfPageOneBased": 310,
+      "evidenceWindow": "288 THE MASS dum. 1 We happen to have an exact notice of the introduction of the creed in the Roman Mass. Berno of Reichenau tells what he himself saw and heard in 1 01 4. He was then in Rome with the Emperor Henry II (1 002-1024). St. Henry noticed that t",
+      "keywordMatched": "Creed",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.010",
+      "macroId": "AO.SM.M10",
+      "theme": "OFFERTORY_PRESENTATION",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 295,
+      "pdfPageOneBased": 317,
+      "evidenceWindow": "he faithful survived in the Bidding Prayer (bidding the beads) which was said about the time of the Offertory down to the Reformation. The bede-roll contained the names of people for whom to pray. The Salisbury rule was that the bidding-prayer be given out in cathedrals and coll",
+      "keywordMatched": "Offertory",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.011",
+      "macroId": "AO.SM.M10",
+      "theme": "INCENSATION_OF_GIFTS",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 308,
+      "pdfPageOneBased": 330,
+      "evidenceWindow": "nvocations the classical Epiklesis is only one among others. And that fact is important. 1 § 6. The Incensing- and Washing: of Hands. After these prayers, as part of the Offertory act, the celebrant incenses the gifts and the altar. This too is a late addition. The old Roman ",
+      "keywordMatched": "incens",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.012",
+      "macroId": "AO.SM.M10",
+      "theme": "LAVABO_DEVELOPMENT",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 310,
+      "pdfPageOneBased": 332,
+      "evidenceWindow": "er the long business of receiving loaves and flasks of wine from the people. The exact place of the Lavabo at Rome was not fixed for some time ; there are in many Ordines two washings, one before and one after the offertory act. In the first Ordo there is a general washing of",
+      "keywordMatched": "lavabo",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.013",
+      "macroId": "AO.SM.M12",
+      "theme": "PREFACE_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 315,
+      "pdfPageOneBased": 337,
+      "evidenceWindow": "CHAPTER VIII. THE CANON. I. The Preface. THOUGH the title \" Canon Missae \" now stands after the Sanctus, it is important to remember that the Pre- face is really part of the Canon. Originally it was counted as",
+      "keywordMatched": "preface",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.014",
+      "macroId": "AO.SM.M13",
+      "theme": "SANCTUS_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 320,
+      "pdfPageOneBased": 342,
+      "evidenceWindow": "xceedingly beautifully introduced. There are three forms by which the angels are introduced for the Sanctus. The commonest is: \"per quern maiestatem tuam laudant angeli \" ; 5 the form : \" et ideo cum angelis \" occurs for Christmas, Epiphany, Easter, Ascension, Apostles and: \"q",
+      "keywordMatched": "Sanctus",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.015",
+      "macroId": "AO.SM.M14",
+      "theme": "CANON_STRUCTURE",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 325,
+      "pdfPageOneBased": 347,
+      "evidenceWindow": "THE CANON 325 We must now say that the Canon begins at the Te igitur. It ends with the ekphonesis (\"per omnia saecula saeculorum \") before the Pater noster. So Gregory I says that",
+      "keywordMatched": "Canon",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.016",
+      "macroId": "AO.SM.M14",
+      "theme": "QUAM_OBLATIONEM_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 334,
+      "pdfPageOneBased": 356,
+      "evidenceWindow": "334 THE MASS Quam oblationem is certainly an invocation, though not of the Holy Ghost. Mr. W. C. Bishop (p. 147), and Mr. Edmund Bishop (id. n. 3) think that this is the Epiklesis of the Roman rite.",
+      "keywordMatched": "Quam oblationem",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.017",
+      "macroId": "AO.SM.M15",
+      "theme": "HOST_ELEVATION_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 337,
+      "pdfPageOneBased": 359,
+      "evidenceWindow": "rs. In the middle ages the last words : \" Haec quoties- cumque \" etc. were sometimes said after the elevation. 5 § 5. The Elevation. We must distinguish between the idea of an elevation in general and our present elevation immediately after the words of institution. All liturgie",
+      "keywordMatched": "elevation",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.018",
+      "macroId": "AO.SM.M16",
+      "theme": "CHALICE_ELEVATION_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 337,
+      "pdfPageOneBased": 359,
+      "evidenceWindow": "THE CANON 337 Hallel cup (p. 71). The words of institution for the chalice are mainly from St Matthew; \"Calix san- guinis mei \" is adapted from St. Luke and St Paul ; \" pro vobis \" from St Luke, \" pro multis \" from St Matthew. The last clause :",
+      "keywordMatched": "chalice",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.019",
+      "macroId": "AO.SM.M17",
+      "theme": "UNDE_ET_MEMORES_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 346,
+      "pdfPageOneBased": 368,
+      "evidenceWindow": "HE MASS Greek rites is called the Anamnesis (eh rrjv e/jurjv avd/j,v7)- criv). Our Anamnesis is the Unde et memores. The mysteries mentioned vary. All Eastern liturgies name not only the passion and death, but also the resurrec- tion and especially our expectation of the second coming",
+      "keywordMatched": "Unde et memores",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.020",
+      "macroId": "AO.SM.M18",
+      "theme": "PER_IPSUM_AND_FINAL_DOXOLOGY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 359,
+      "pdfPageOneBased": 381,
+      "evidenceWindow": " (not in Gelas.) are obviously attracted by the words : \" Sanctificas \" etc. The final doxology : \" per ipsum \" etc. makes a very splendid end to the Canon, suggested by Rom. xi, 36. 3 During this doxology we have our second elevation, corresponding to the elevation before Commu",
+      "keywordMatched": "Per ipsum",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.021",
+      "macroId": "AO.SM.M19",
+      "theme": "PATERNOSTER_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 365,
+      "pdfPageOneBased": 387,
+      "evidenceWindow": "ican fraction, still kept in the Mozarabic rite. It took place, as we have seen (p. 361) before the Pater noster. The original idea was to arrange the frag- ments in the form of a cross. 8 Then they were ar- ranged in exact order, each representing a mystery of our Lord's life. 9 M",
+      "keywordMatched": "Pater noster",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.022",
+      "macroId": "AO.SM.M20",
+      "theme": "FRACTION_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 366,
+      "pdfPageOneBased": 388,
+      "evidenceWindow": "ASS certain dose of superstition was introduced early in this rite \". 1 Milan has adopted the Roman fraction, except that it is done before the Lord's prayer. Meanwhile in the Gallican and Milanese rites a special (variable) antiphon is sung, the Confractorium. In Spain this is",
+      "keywordMatched": "fraction",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.023",
+      "macroId": "AO.SM.M21",
+      "theme": "AGNUS_DEI_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 371,
+      "pdfPageOneBased": 393,
+      "evidenceWindow": "ce in our Mass. A slight dislocation has removed the actual moment of the kiss to after the (later) Agnus Dei and prayer: \" Domine Iesu Christe qui dixisti \". But in Ordo Rom. I, II, and III it comes at the words \"Pax Domini,\" 4 obviously the Roman formula for the kiss. In the E",
+      "keywordMatched": "Agnus Dei",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.024",
+      "macroId": "AO.SM.M22",
+      "theme": "PAX_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 370,
+      "pdfPageOneBased": 392,
+      "evidenceWindow": "which say nothing about the fraction and mixture, though they undoubtedly existed at the time. § 3. Kiss of Peace. We have here the same difficulty as about the place of the Lord's Prayer (p. 361). Africa had the Kiss of Peace just where Rome has it now, in connection with the Lord'",
+      "keywordMatched": "kiss of peace",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.025",
+      "macroId": "AO.SM.M23",
+      "theme": "PRIEST_COMMUNION_HISTORY",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 375,
+      "pdfPageOneBased": 397,
+      "evidenceWindow": "THE COMMUNION 375 nection between the deacon and the chalice in the fact that at the offertory he offers the chalice (only) with the celebrant (p. 306). With regard to the deacon givi",
+      "keywordMatched": "Communion",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.026",
+      "macroId": "AO.SM.M27",
+      "theme": "POSTCOMMUNION_DEVELOPMENT",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 386,
+      "pdfPageOneBased": 408,
+      "evidenceWindow": " 2 probably because the Agnus Dei took more time. So Durandus notes that this chant is often called Postcommunion. 3 About the same time it was gradually shortened, a result of the lessening of the number of communicants at a sung Mass. Now we have only the antiphon. It is generally",
+      "keywordMatched": "postcommunion",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    },
+    {
+      "id": "FORT.HIST.027",
+      "macroId": "AO.SM.M30",
+      "theme": "FINAL_BLESSING_LAST_GOSPEL",
+      "sourceType": "HISTORICAL_CONTEXT",
+      "printedPage": 392,
+      "pdfPageOneBased": 414,
+      "evidenceWindow": "ion is, of course, that the three elements after \" Ite missa est,\" the Placeat prayer, blessing and last gospel, are all late additions, originally private devotions which have found their way into the official text, just as have the cele- 1 Ordo Rom. I, 21 (P.L. Ixxviii, 948) ; I",
+      "keywordMatched": "last Gospel",
+      "canCertify1962Gesture": false,
+      "status": "HISTORICAL_PARALLEL_PAGE_LOCATED"
+    }
+  ],
+  "sourceStatusPolicy": "Text quotation located in the supplied PDF. A word match does not certify the full action, date-conditional exception, or its inclusion under 1962."
+}
