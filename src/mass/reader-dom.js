@@ -744,7 +744,7 @@ button.ao-schola-control{cursor:pointer}
      than its nominal 100% scroll-child containing block. Deduct a guarded
      88px as well as the live dock to keep the actual scroll rectangle
      above the panel; the extra height remains accessible by finger scroll. */
-  height:calc(100% - var(--ao-schola-reserve) - 88px)
+  height:calc(100% - var(--ao-schola-reserve) - 88px)!important
 }
 
 
