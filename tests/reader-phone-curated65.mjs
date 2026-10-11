@@ -556,6 +556,106 @@ try{
     await sheet.screenshot({path:resolve(out,"priest-field-review-390.png")});
     assert.deepEqual(fieldErrors,[],"Human field sheet produced browser errors");
   }finally{await fieldContext.close()}
+  // Multi-form real browser simulation. Neither a choir advancing early nor
+  // a late celebrant cue may cause cross-lane ownership or minister confusion.
+  // This is deterministic synthetic input, never claimed as field evidence.
+  for(const form of ["SOLEMN","MISSA_CANTATA_SIMPLE","LOW"]){
+    const context=await browser.newContext({viewport:{width:390,height:844},
+      isMobile:true,hasTouch:true,deviceScaleFactor:1});
+    try{
+      const page=await context.newPage();
+      const errors=[];
+      page.on("pageerror",e=>errors.push(String(e?.message??e)));
+      await page.goto("http://127.0.0.1:4282/tests/fixtures/reader-phone-harness.html?aoLiveCards=65&lang=en&form="+form,
+        {waitUntil:"networkidle",timeout:45000});
+      await page.waitForFunction(()=>document.documentElement.dataset.harnessReady!=="undefined",
+        null,{timeout:20000});
+      assert.equal(await page.evaluate(()=>document.documentElement.dataset.harnessReady),
+        "true",form+" fixture failed to mount");
+      const result=await page.evaluate(form=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        const base={cards:api.model.totalCards,sourceCards:api.sourceModel.totalCards};
+        if(form==="LOW"){
+          return {...base,scholaAbsent:api.getScholaState()?.structuralAbsence===true,
+            observes:api.observePriestCeremonialEvent("MC-OBS-INT-POS",{
+              observedActor:"PRIEST",observedPosition:"ALTAR_EPISTLE_MISSAL"})};
+        }
+        const block=id=>api.model.cards.find(c=>c.blocks?.some(x=>x.blockId===id));
+        const go=id=>{const b=block(id);if(!b)throw Error("Missing "+id);api.showSequence(b.sequence)};
+        if(form==="SOLEMN"){
+          go("AO.SM.B021");
+          const scholaBefore=api.getScholaState();
+          const noEvidence=api.observePriestCeremonialEvent("MC-OBS-GRADUAL");
+          const priestRead=api.observePriestCeremonialEvent("MC-OBS-GRADUAL",{
+            observedActor:"PRIEST",observedDelivery:"READ"});
+          const observedCue=api.getObservedPriestEvent()?.cueId??null;
+          const scholaAtPriest=api.getScholaState();
+          api.nextSchola();
+          const scholaAfter=api.getScholaState();
+          const priestAfterChoirAdvance=api.getObservedPriestEvent()?.cueId??null;
+          go("AO.SM.B020");
+          const oldCueOnEpistle=api.getObservedPriestEvent();
+          const falseCelebrant=api.observePriestCeremonialEvent("MC-EPI-020",{
+            observedActor:"PRIEST",observedDelivery:"SUNG"});
+          go("AO.SM.B026");
+          const falseGospel=api.observePriestCeremonialEvent("MC-GSP-060");
+          return {...base,scholaBefore:scholaBefore?.trackId??null,
+            noEvidence,priestRead,observedCue,
+            scholaUnchanged:scholaAtPriest?.trackId===scholaBefore?.trackId &&
+              scholaAtPriest?.index===scholaBefore?.index &&
+              scholaAtPriest?.complete===scholaBefore?.complete,
+            scholaAfter:scholaAfter?.trackId??null,
+            choirAdvanced:scholaAfter?.index!==scholaAtPriest?.index ||
+              scholaAfter?.complete!==scholaAtPriest?.complete,
+            priestAfterChoirAdvance,oldCueOnEpistle,
+            falseCelebrant,falseGospel};
+        }
+        go("AO.SM.B020");
+        const choirBefore=api.getScholaState();
+        const lector=api.observePriestCeremonialEvent("MC-EPI-020",{
+          observedActor:"LECTOR",observedDelivery:"SUNG"});
+        const celebrant=api.observePriestCeremonialEvent("MC-EPI-020",{
+          observedActor:"PRIEST",observedDelivery:"READ"});
+        const priestState=api.getObservedPriestEvent();
+        const choirAfter=api.getScholaState();
+        go("AO.SM.B030");
+        const reset=api.getObservedPriestEvent();
+        return {...base,lector,celebrant,priestCue:priestState?.cueId??null,
+          scholaUnchanged:choirBefore?.trackId===choirAfter?.trackId &&
+            choirBefore?.index===choirAfter?.index,
+          reset};
+      },form);
+      if(form==="SOLEMN"){
+        assert.equal(result.cards,65,"Solemn 65-card reviewed model regressed");
+        assert.equal(result.scholaBefore,"GRADUAL");
+        assert.equal(result.noEvidence,false);
+        assert.equal(result.priestRead,true);
+        assert.equal(result.observedCue,"AO.SM.C0077");
+        assert.equal(result.scholaUnchanged,true,"Priest read must not advance choir");
+        assert.equal(result.scholaAfter,"GRADUAL");
+        assert.equal(result.choirAdvanced,true,"Simulated choir advancement did not happen");
+        assert.equal(result.priestAfterChoirAdvance,"AO.SM.C0077",
+          "Schola advancing must not clear/update the priest's independent Gradual");
+        assert.equal(result.oldCueOnEpistle,null,"Priest event leaked across source sections");
+        assert.equal(result.falseCelebrant,false,"Solemn Epistle lector became priest");
+        assert.equal(result.falseGospel,false,"Solemn deacon Gospel became priest");
+      }else if(form==="MISSA_CANTATA_SIMPLE"){
+        assert.equal(result.cards,65);
+        assert.equal(result.lector,false);
+        assert.equal(result.celebrant,true);
+        assert.equal(result.priestCue,"AO.SM.C0075");
+        assert.equal(result.scholaUnchanged,true);
+        assert.equal(result.reset,null);
+      }else{
+        assert.notEqual(result.cards,65,"Low Mass unexpectedly selected the Sung review");
+        assert.equal(result.scholaAbsent,true);
+        assert.equal(result.observes,false,
+          "Low Mass accepted source-only Sung celebrant event");
+      }
+      assert.deepEqual(errors,[],form+" browser simulation JavaScript errors");
+      await page.screenshot({path:resolve(out,"priest-dual-clock-"+form.toLowerCase()+".png")});
+    }finally{await context.close()}
+  }
   console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and Guide.");
 }finally{
   await browser?.close();
