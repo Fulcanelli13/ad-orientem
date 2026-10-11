@@ -6,14 +6,14 @@ import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
 // the exact MC-* event. In particular, a swipe cannot trigger the priest.
 const ROWS=Object.freeze([
   ["AO.SM.C0042",null,null,null,null,"PARALLEL_INTOIT_POSITION_UNRESOLVED"],
-  ["AO.SM.C0043",null,null,null,null,"PARALLEL_INTOIT_RECITATION_UNRESOLVED"],
+  ["AO.SM.C0043","MC-INT-020","INTROIT","PRIEST","proper.introit","INDEPENDENT_INTROIT_PRIEST_RECITATION"],
   ["AO.SM.C0075",null,null,null,null,"EPISTLE_PROCLAIMER_FORM_UNRESOLVED"],
   ["AO.SM.C0077",null,null,null,null,"ASYNCHRONOUS_GRADUAL_UNRESOLVED"],
   ["AO.SM.C0086","MC-GSP-060","GOSPEL","PRIEST","proper.gospel","MISSA_CANTATA_ONLY"],
   ["AO.SM.C0109",null,null,null,null,"ASYNCHRONOUS_OFFERTORY_UNRESOLVED"],
   ["AO.SM.C0134","MC-SEC-010","SECRET","PRIEST","proper.secrets[]","PRIEST_EVENT_EXACT"],
   ["AO.SM.C0144","MC-PREF-040","PREFACE","PRIEST","proper.preface","PRIEST_EVENT_EXACT"],
-  ["AO.SM.C0249",null,null,null,null,"ASYNCHRONOUS_COMMUNION_UNRESOLVED"],
+  ["AO.SM.C0249","MC-END-010","CONCLUSION","PRIEST","proper.communion","PRIEST_COMMUNION_ANTIPHON_AFTER_ABLUTIONS"],
   ["AO.SM.C0250",null,null,null,null,"PRIEST_TURN_EVENT_UNRESOLVED"],
   ["AO.SM.C0256",null,null,null,null,"POSTCOMMUNION_TURN_UNRESOLVED"],
   ["AO.SM.C0276","MC-GLR-040","GLORIA","PRIEST","ordinary.gloria","SEDILIA_DURING_CHANT"],
@@ -43,7 +43,7 @@ export function auditOrdinarySungPriestEventAlignment(events){
      expected.size!==15)throw Error("Source-only priest event mapping no longer covers exactly 15 cues");
   const index=new Map(events.map(e=>[e.id,e]));
   if(index.size!==events.length)throw Error("Duplicate canonical MC event");
-  if(rowByEvent.size!==7)throw Error("Expected seven exact ceremonial event boundaries");
+  if(rowByEvent.size!==9)throw Error("Expected nine exact ceremonial event boundaries");
   for(const row of rows.filter(x=>x.eventId)){
     const e=index.get(row.eventId);
     if(!e||e.phase!==row.phase||e.actor!==row.actor||
@@ -56,7 +56,7 @@ export function auditOrdinarySungPriestEventAlignment(events){
       throw Error(e.id+": expected an independently reported priest prayer/event");
   }
   return Object.freeze({schema:"ao-ordinary-sung-priest-event-alignment-v1",
-    sourceOnlyCues:15,eventMatched:7,pending:8,
+    sourceOnlyCues:15,eventMatched:9,pending:6,
     matchedEvents:Object.freeze(rows.filter(x=>x.eventId).map(x=>x.eventId)),
     pendingCueIds:Object.freeze(rows.filter(x=>!x.eventId).map(x=>x.cueId)),
   });
@@ -91,6 +91,8 @@ export function projectObservedOrdinaryPriestEvent({
   const sourceSection=block?.blockId==="AO.SM.B016"?"AO.CARD.003"
     :block?.blockId==="AO.SM.B027"?"AO.CARD.009"
     :block?.blockId==="AO.SM.B026"?"AO.CARD.007"
+    :block?.blockId==="AO.SM.B014"?"AO.CARD.001"
+    :block?.blockId==="AO.SM.B085"?"AO.CARD.026"
     :block?.blockId==="AO.SM.B040"?"AO.CARD.011"
     :block?.blockId==="AO.SM.B045"?"AO.CARD.012":null;
   if(!sourceSection || sourceSection!==sourceSectionId)return null;
@@ -104,7 +106,10 @@ export function projectObservedOrdinaryPriestEvent({
   return Object.freeze({
     cueId:row.cueId,eventId:row.eventId,gate:row.gate,
     owner:"EXPLICIT_SOURCE_PRIEST_EVENT",
-    priestPosition:cue.priestPosition??null,
+    // The positional literal PRIEST_TRACK_ASYNC is a scheduling marker,
+    // not a physical altar station. Never display it as a priest icon.
+    priestPosition:cue.priestPosition?.station==="PRIEST_TRACK_ASYNC"
+      ? null : cue.priestPosition??null,
     priestVoice:cue.priestVoice??null,
     priestAction:cue.priestAction??null,
     priestPosture:null,faithfulPosture:null,faithfulGesture:null,
