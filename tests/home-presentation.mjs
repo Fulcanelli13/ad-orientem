@@ -75,12 +75,20 @@ assert.match(en,/data-ao-resume-owner="R17_NATIVE"/,"Home Resume is not owned by
 assert.match(en,/07\/10\/2026 · 5/,"Home Resume lost native checkpoint date/position");
 assert.match(en,/data-formulary="1"/);
 assert.match(en,/Around the Mass/);
-assert.match(en,/data-home-mass-entry/,"Home Follow Mass is not owned by modular app navigation");
+assert.match(en,/data-resume-mass/,"Active R17 checkpoint must produce one Resume Mass action");
+assert.doesNotMatch(en,/data-home-mass-entry/,"Active session must not show a second competing Open Mass button");
 assert.doesNotMatch(en,/data-action="follow"/,"Home Follow Mass still depends on the historical Home click controller");
-assert.match(en,/Holy Gospel/);
+assert.match(en,/Gospel of the Mass/);
+assert.match(en,/aoTodayV2Frontispiece/);
+assert.match(en,/aoTodayV2PrayNow/);
+assert.match(en,/aoTodayV2ReadReflect/);
+assert.match(en,/aoTodayV2Approaching/);
+assert.match(en,/data-home-calendar-view="picker"/);
+assert.match(en,/data-home-calendar-view="year"/);
+assert.match(en,/data-ao-home-enricher-owner=/);
 assert.doesNotMatch(en,/data-action="today-mass"/,"duplicate Today’s Mass Home card returned");
-assert.match(en,/data-home-find/,"Home does not expose the Explore entry");
-assert.match(en,/Traditional Masses, shrines, customs and pilgrimages/,"Home Explore card lost cross-domain explanation");
+assert.doesNotMatch(en,/class="contentCard findCard"/,"Redundant Explore promotion returned to the compact Today page");
+assert.doesNotMatch(en,/aoHomeComingUp/,"Duplicate modular Coming Up card returned");
 assert.match(en,/data-home-settings/,"Home header lost the utility Settings entry");
 assert.match(en,/data-ao-asset-id="ao-ui-settings"/,"Home Settings entry is not using the canonical utility asset");
 assert.doesNotMatch(en,/class="languageSwitch"/,"Home still owns a duplicate language selector");
@@ -92,8 +100,10 @@ assert.doesNotMatch(en,/next migration stage/i,"Home still exposes migration-era
 const fr=renderHomeToString({...base,language:"fr"},r17Win);
 assert.match(fr,/Saint Rosaire/);
 assert.match(fr,/Autour de la Messe/);
-assert.match(fr,/Saint Évangile/);
-assert.match(fr,/EXPLORER/,"French Home does not expose the Explore entry");
+assert.match(fr,/Évangile de la messe/);
+assert.match(fr,/Prier maintenant/);
+assert.match(fr,/Lire et méditer/);
+assert.match(fr,/À venir/);
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
 assert.match(fr,/data-home-settings/);
@@ -103,6 +113,8 @@ assert.doesNotMatch(fr,/étape suivante de la migration/i,"French Home still exp
 
 
 const historicalOnly=renderHomeToString(base,{AO_DISPLAY_DATE:()=> "07/10/2026"});
+assert.match(historicalOnly,/data-home-mass-entry/,"Without R17 checkpoint Home must offer Open Mass");
+assert.doesNotMatch(historicalOnly,/data-resume-mass/,"Home must not fabricate an active Mass from legacy state.resume");
 assert.doesNotMatch(historicalOnly,/data-resume-mass/,"historical state.resume regained production Resume ownership");
 
 const retiredSettings=renderHomeToString({
