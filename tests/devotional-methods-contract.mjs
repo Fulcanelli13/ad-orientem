@@ -67,12 +67,15 @@ const fake=[
 assert.equal(firstMysteryIndex(fake),1);
 assert.equal(lastDecadeBoundary(fake),3);
 const donor=readFileSync("ao-inline-a45824678e308933fad5.js","utf8");
-assert.match(donor,/selectSet:\(set,\{skipOpening=false\}=\{\}\)=>/);
-assert.match(donor,/S\.rosarySet=set;const xs=labRosarySteps\(set\)/);
+assert.doesNotMatch(donor,/selectSet:\(set,/,"Frozen legacy donor must not be patched outside its packed build");
+assert.match(donor,/setStep:\(n\)=>/,"Canonical donor step controller must remain available");
 const presentation=readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.match(presentation,/else if\(id==='pray\.divine_mercy'\)/);
 assert.match(presentation,/renderDivineMercy\(\)/);
 assert.match(presentation,/nextFullRosarySet\(st\?\.set\)/);
+assert.match(presentation,/selectNativeRosarySet\(set,/);
+assert.match(presentation,/choice\.onclick\(\)/);
+assert.match(presentation,/change\.onclick\(\)/);
 assert.match(presentation,/paintRosaryMethods/);
 assert.match(presentation,/data-p435930-mercy-mode/);
 assert.match(presentation,/ROSARY_METHOD\.fullActive/);
