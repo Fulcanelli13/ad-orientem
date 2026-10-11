@@ -124,7 +124,7 @@ try{
  for(const lens of lenses){
   const selector='#ao-find-modular-root [data-find-filter="lens"][data-find-filter-value="'+lens+'"]';
   const more=page.locator("#ao-find-modular-root .aoHeritageMore");
-  await more.locator("summary").tap({timeout:15000});
+  await more.locator(":scope > summary").tap({timeout:15000});
   const lensButton=page.locator(selector);
   assert.equal(await lensButton.count(),1,"Explore lens has no unique detail control: "+lens);
   await lensButton.tap({timeout:15000});
