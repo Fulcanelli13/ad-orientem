@@ -6,6 +6,7 @@ import {resolveApprovedPlaceGallery,buildExplorePlaceProfiles} from "../src/find
 import {projectExploreDataset} from "../src/find/explore-projection.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const load=p=>JSON.parse(readFileSync(p,"utf8"));
+const htmlEsc=value=>String(value).replace(/[&<>"\']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#039;"}[c]));
 const manifest=load("data/geography/research/explore-r68-reviewed-photo-sources.v1.json");
 const gallery=load("data/geography/approved-place-gallery.v1.json");
 const geo=load("data/geography/seed-registry.v1.json");
@@ -83,8 +84,8 @@ for(const lang of ["en","fr"]){
  for(const m of gallery.items){
   assert.ok(html.includes(m.asset_path));
   assert.ok(html.includes(m.source_url.replace(/&/g,"&amp;")));
-  assert.ok(html.includes(m["label_"+lang]));
-  assert.ok(html.includes(m["alt_"+lang]));
+  assert.ok(html.includes(htmlEsc(m["label_"+lang])));
+  assert.ok(html.includes(htmlEsc(m["alt_"+lang])));
   assert.ok(html.includes("creativecommons.org/licenses/by-sa/4.0/"));
  }
 }
