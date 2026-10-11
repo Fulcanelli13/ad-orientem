@@ -121,7 +121,7 @@ const lough=explorePlaceProfile(profiles,"place:IE:lough-derg-station-island");
 assert.equal(lough.exact_tlm_link_state,"NONE");
 assert.equal(lough.editorial_feature,null);
 const untranslated=shrines.shrines.filter(s=>!s.origin_summary_fr);
-assert.ok(untranslated.length>=100,"The release must not auto-translate unsupported records");
+assert.ok(untranslated.length<=108,"Later sourced French batches must preserve or improve R61 coverage");
 assert.ok(untranslated.every(s=>!selected.has(s.place_id)));
 
 console.log("PASS Explore R61: 50 bilingual sourced Places, 70 canonical pilgrim passages, 20 featured unchanged; no invented Mass/place joins");
