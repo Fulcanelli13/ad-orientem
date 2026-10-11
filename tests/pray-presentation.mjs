@@ -44,7 +44,9 @@ assert.match(coherence,/aoPrayerBookRoot/);
 assert.match(coherence,/aoPray435930/);
 assert.match(styles,/ao-v435930-pray-audit-style/);
 assert.match(styles,/ao-v435930-pray-coherence-style/);
-for(const id of ["ao-ui-back","ao-nav-home","ao-ui-next","ao-ui-search"]){
+assert.match(runtime,/navigationActionIcon\("back"\)/,"PRAY lost shared canonical Back");
+assert.match(runtime,/navigationActionIcon\("home"\)/,"PRAY lost shared canonical Today");
+for(const id of ["ao-ui-next","ao-ui-search"]){
   assert.match(runtime,new RegExp(id),"PRAY lost canonical V4 control: "+id);
 }
 assert.match(runtime,/canonicalAssetIdForPrayRoute/,"PRAY module cards no longer resolve through the canonical route asset registry");
