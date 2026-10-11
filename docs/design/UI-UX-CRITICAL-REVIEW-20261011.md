@@ -19,7 +19,7 @@ Limitations: browser captures are not physical phone acceptance; Explore tiles m
 | Mass Entry | Source-confirmed | Celebration, form, reader mode, calendar and local exceptions are crowded together | Separate actual Mass from reading choice; collapse advanced differences | One understandable Start, no invented Proper or rites |
 | LIVE | Source-confirmed | 7–10px ribbon/Guide labels and fixed 120px top chrome compete with prayer text | Raise secondary font size, protect reading viewport, hide inactive channels | Meaningful cues legible with 48-card production unchanged |
 | Missal | Proposed, PR #1037 unmerged | Two columns on a small phone may compromise legibility | Single-column phone option; paired columns when space permits | No truncated Latin/French; section anchor conserved |
-| Pray | Source-confirmed | The 94dvh cream bottom-sheet does not resemble the dark main app | Make Prayer a real full-screen destination; parchment reading optional | Consistent navigation while preserving all source prayers |
+| Pray | Source-confirmed | The legacy cream-sheet CSS exists, but actual production screenshots show a dark integrated Prayer hub; the outstanding concerns are overly small captions and vertical content density | Preserve the current integrated dark Prayer hub; refine microtype and section density; keep parchment only if useful inside reading | Consistent navigation while preserving all source prayers |
 | Rosary and Stations | Design risk | Method, meditation, progression and artwork may compete with recitation | Remember preference; one Begin, optional guide, restrained art | All original mysteries/methods/prayers retained |
 | Formation | Source-confirmed | Two-column cards still forced below 430px; many long descriptions | Full-width intent-first navigation: search, question, course | Short answers accessible without excessive category traversal |
 | Scripture | Architecture risk | Context reading and book-library controls coexist in one overlay | Prioritize cited verses and progressive disclosure | Accurate citations and exact return context |
@@ -48,3 +48,22 @@ A source-code observation must be marked SOURCE-CONFIRMED, a screenshot-visible 
 5. Every accepted change requires its original domain tests, current app convergence and affected phone/visual acceptance. Human approval remains explicit.
 
 This is an audit branch; it changes no production UI, Mass canon, Prayer texts, maps or source registries.
+
+## First real-screen visual adjudication — 11 October
+
+First run: 48/54 frames; six Mass Entry captures absent because the test chose the hidden legacy host rather than opening the real Home preflight. The capture was corrected using the canonical Today action.
+
+**Second run: 54/54 frames captured, CI green, zero measured global horizontal overflow.** [Actions run](https://github.com/Fulcanelli13/ad-orientem/actions/runs/38158624770). This certifies the capture harness, **not** product visual quality.
+
+Confirmed from actual screenshots:
+
+1. **P1 French UI-content mismatch** — FR Today and FR Mass Preflight show the observed liturgical title **“XX SUNDAY AFTER PENTECOST”** in English and an English Marian commemoration. Labels around them are French. Fix display-name provenance/translation centrally and source-first; do not invent a translated feast or mutate the 1962 resolved observance. The user-facing French title is NOT certified.
+2. **P1 Mass Entry ambiguous close/back** — two visually similar × affordances occupy both top corners, at 320 and 390 widths. Verify their handlers and eliminate ambiguity without losing cancellation/safe leave behaviour.
+3. **P1 Today no-art density** — large vacant painting block above the Mass CTA at 320 and 390 widths. Separate focused draft PR #1052 reduces only the no-art fallback block; approved artwork remains immersive. Requires after-shot acceptance.
+4. **P1 Mass Preflight density** — separate header for observed day, repeat Mass of the Day selection, Vox/Missal, three language-availability badges and the deeper “Prepare your Mass” section compete at the initial viewport. Simplify flow without removing the source readiness gate.
+5. **P1 tiny secondary text** — measured visible samples below 11 CSS pixels in Today, Pray, Rosary and Mass; enough to warrant targeted per-control review, not a global blanket font override.
+6. **P1 Formation scanning** — two-column 390px introductory family cards truncate long explanatory text; a full-width, intent-first alternative should be compared before changing all sections.
+7. **PENDING Explore** — early captures show “Loading documented places...” rather than rendered map. A screenshot of a loading screen cannot establish map appearance or map failure. The next capture must await the canonical Explore loadState=ready and mark source/tile readiness explicitly.
+8. **CORRECTION Pray** — production Prayer hub screenshots **are dark and integrated**; the older cream-sheet stylesheet does not justify labelling the current product visually disconnected. Preserve the live design and focus on text size/selection depth.
+
+No claims are made that the French liturgical source, Mass actual actions, or map loading have been fixed. Separate mobile human review remains required.
