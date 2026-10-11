@@ -29,7 +29,10 @@ def build(args):
  assert review["schema"]=="AO_SACRED_ART_CURATOR_RECONCILIATION_V1"
  works=read(ROOT/"data/calendar/sacred-art-candidates.v1.json")
  targets=read(ROOT/"data/calendar/sacred-art-subject-targets.v2.json")["targets"]
- mapping=read(ROOT/"data/calendar/sacred-art-editorial-crosswalk.v1.json")["exactIconography"]
+ crosswalk=read(ROOT/"data/calendar/sacred-art-editorial-crosswalk.v1.json")
+ mapping=crosswalk["exactIconography"]
+ related=crosswalk["relatedFallbackIconography"]
+ specialMedia=read(ROOT/"data/calendar/sacred-art-special-media-leads.v1.json")["leads"]
  replacementLeads=read(ROOT/"data/calendar/sacred-art-user-refusal-replacements.v1.json")["leads"]
  visually=read(ROOT/"data/calendar/sacred-art-visual-shortlist.v1.json")["artworks"]
  grades={a["id"]:a["visualGrade"] for a in visually}
@@ -49,22 +52,24 @@ def build(args):
    t=target_by_id.get(key)
    if t is None:raise ValueError("No canonical subject target for "+key)
    terms=set(mapping.get(key,[]))
+   contextualTerms=set(related.get(key,[]))
+   candidateRelations={}
    candidates=[]
    for a in images.values():
     canonical=by_id[a["id"]]
     tags=canonical.get("tags") or {}
     icons=set(tags.get("iconography") or [])
     links=set(tags.get("prayerKeys") or [])
-    if not terms.intersection(icons) and not (
-      (section=="Rosary" and key in links) or
-      (section=="Devotions" and token in links) or
-      (section=="Saints" and tags.get("portraitSubjectId")==token) or
-      (section=="Gospel" and token in set(tags.get("scriptureIdentityKeys") or []))
-    ):continue
+    exactMatched=bool(terms.intersection(icons))
+    contextualMatched=bool(contextualTerms.intersection(icons))
+    linkedMatched=(section=="Rosary" and key in links) or (section=="Devotions" and token in links) or (section=="Saints" and tags.get("portraitSubjectId")==token) or (section=="Gospel" and token in set(tags.get("scriptureIdentityKeys") or []))
+    if not (exactMatched or linkedMatched or contextualMatched):continue
+    candidateRelations[a["id"]]="THEMATIC_CONTEXT_ONLY_NOT_EXACT_FEAST" if contextualMatched and not (exactMatched or linkedMatched) else "SUBJECT_MATCH_RESEARCH_PENDING"
     grade=grades.get(a["id"],"")
     score={"A+":110,"A":70,"B":-20}.get(grade,0)
     score+=25 if a["rights"]=="CC0" else -60
-    score+=10 if terms.intersection(icons) else 0
+    score+=10 if exactMatched else 0
+    if contextualMatched and not (exactMatched or linkedMatched):score-=30
     if key=="devotion.adoration" and "adoration-of-host" in icons:score+=220
     if key=="devotion.adoration" and "glorification-eucharist" in icons:score+=75
     score+=8 if token in canonical.get("association",{}).get("observedIds",[]) else 0
@@ -81,9 +86,15 @@ def build(args):
              "relation":p["iconographyRelation"],"notes":p["curatorialReason"],
              "status":"MUSEUM_OBJECT_LEAD_NOT_USER_APPROVED_OR_SOURCE_PACKAGED"}
             for p in replacementLeads if p["targetId"]==key]
+   special=[{"title":p["title"],"artist":p.get("artist","Historical devotional original"),
+             "url":p["sourceUrl"],"museum":p["custodian"],
+             "rights":p["rightsStatus"],"relation":p["mediumClass"],"notes":p["notes"],
+             "status":"AUTHENTIC_CUSTODIAL_SOURCE_RIGHTS_HELD"}
+            for p in specialMedia if p["targetId"]==key and not p.get("sourceImageAcquired")]
    output.append({"id":key,"section":section,"title":t["title"],
                   "candidates":[id for score,id in candidates],
-                  "leads":dedicated+leads,
+                  "candidateRelations":candidateRelations,
+                  "leads":dedicated+special+leads,
                   "scope":"ONE_RECOMMENDED_ORIGINAL_THEN_ON_DEMAND_ALTERNATIVES",
                   "sourceOnly":True})
  assert len(output)==sum(len(x) for x in IDS.values())
@@ -202,7 +213,9 @@ function makeCard(g,i){
  if(retry)retry.onclick=()=>{for(const [k,x] of refusals)if(x.targetId===g.id)refusals.delete(k);save();draw()};
  return el;}
  const approved=selections.get(g.id)?.artworkId===a.id;
- h+='<div class="art">'+preview(a)+'</div><div class="body"><h2>'+esc(a.title)+'</h2><div class="meta">'+esc(a.artist)+' · '+esc(a.museum)+' · '+esc(a.dateCreated)+'</div><div class="status">'+esc(a.rights)+(approved?" · SELECTED FOR THIS SUBJECT":" · Proposed first choice")+'</div>';
+ const subjectRelation=g.candidateRelations?.[a.id]||"SUBJECT_MATCH_RESEARCH_PENDING";
+ h+='<div class="art">'+preview(a)+'</div><div class="body"><h2>'+esc(a.title)+'</h2><div class="meta">'+esc(a.artist)+' · '+esc(a.museum)+' · '+esc(a.dateCreated)+'</div><div class="status">'+esc(a.rights)+(approved?" · SELECTED FOR THIS SUBJECT":" · Proposed first choice")+'</div>'+
+ (subjectRelation==="THEMATIC_CONTEXT_ONLY_NOT_EXACT_FEAST"?'<p class="meta">Thematic iconography only — not a depiction made for this specific feast or Proper.</p>':'');
  h+='<a class="url" href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer">'+esc(a.source)+'</a>';
  h+='<div class="actions"><button data-act="choose" class="good '+(approved?"active":"")+'">'+(approved?"Approved ✓":"Approve for this subject")+'</button>';
  h+='<button data-act="skip">Not suitable here → next</button><button data-act="reject" class="bad">Reject image everywhere</button><button data-act="inspect">Investigate</button></div>';
