@@ -204,15 +204,15 @@ try{
   await button.evaluate(el=>el.click());
   await page.waitForFunction(m=>globalThis.AO_ROSARY_V381?.getMethod?.()===m &&
    !!document.querySelector("#aoPrayerBookRoot.open"),method,{timeout:14000});
+  if(method==="montfort_short")await page.waitForFunction(()=>{
+   const el=document.querySelector("#aoPrayerBookRoot.open [data-pb-rosary-set='luminous']");
+   return !!el&&el.disabled&&el.hidden;
+  },null,{timeout:10000});
   const choose=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
   await choose.waitFor({timeout:12000});
   await choose.evaluate(el=>el.click());
   await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:10000});
   if(method==="montfort_short"){
-   await page.waitForFunction(()=>{
-    const el=document.querySelector("#aoPrayerBookRoot.open [data-pb-rosary-set='luminous']");
-    return !!el && el.disabled && el.hidden;
-   },null,{timeout:10000});
    const first=await page.evaluate(()=>{
     const api=globalThis.AO_ROSARY_V381,steps=api.steps(),idx=steps.findIndex(x=>x.key==="ave"&&x.bead===1);
     api.setStep(idx);return idx;
