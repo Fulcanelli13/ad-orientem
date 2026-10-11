@@ -32,7 +32,10 @@
     "eusebius3": "https://www.newadvent.org/fathers/250103.htm",
     "irenaeus": "https://www.newadvent.org/fathers/0103303.htm",
     "irenaeus2": "https://www.newadvent.org/fathers/0103301.htm",
-    "india": "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060927.html"
+    "india": "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060927.html",
+    "mary_dormition": "https://www.custodia.org/en/news/celebrations-feast-assumption-mary-heaven-tomb-mary/",
+    "mary_rival": "https://www.newadvent.org/cathen/02006b.htm",
+    "magdalene": "https://www.saintebaume.org/grotte/"
   },
   "genealogies": {
     "matthew": {
@@ -2276,6 +2279,32 @@
       "order": 7
     },
     {
+      "person": "mary",
+      "title": "Jerusalem Dormition and tomb tradition",
+      "fr": "Tradition de la Dormition et du tombeau à Jérusalem",
+      "place": "jerusalem",
+      "reference": "Franciscan Custody of the Holy Land, Assumption celebrations",
+      "kind": "later",
+      "source": "https://www.custodia.org/en/news/celebrations-feast-assumption-mary-heaven-tomb-mary/",
+      "note": "Commemorated at Jerusalem; this source describes a later liturgical and apocryphal-derived tradition, not a proven exact place of Mary's death.",
+      "id": "tradition-mary-jerusalem",
+      "group": "apostolic",
+      "order": 8
+    },
+    {
+      "person": "mary",
+      "title": "Competing Ephesus residence tradition",
+      "fr": "Tradition concurrente du séjour à Éphèse",
+      "place": "ephesus",
+      "reference": "Catholic Encyclopedia, Assumption of Mary (1907)",
+      "kind": "later",
+      "source": "https://www.newadvent.org/cathen/02006b.htm",
+      "note": "Alternative traditional association, not an established itinerary or proven place of Mary's departure from earth. Jerusalem and Ephesus are rival location traditions.",
+      "id": "tradition-mary-ephesus",
+      "group": "apostolic",
+      "order": 9
+    },
+    {
       "id": "event-9",
       "person": "john",
       "title": "With Peter in Jerusalem",
@@ -2286,7 +2315,7 @@
       "source": "https://www.newadvent.org/bible/act003.htm",
       "note": "",
       "group": "apostolic",
-      "order": 8
+      "order": 10
     },
     {
       "id": "event-10",
@@ -2299,7 +2328,7 @@
       "source": "https://www.newadvent.org/bible/act008.htm",
       "note": "",
       "group": "apostolic",
-      "order": 9
+      "order": 11
     },
     {
       "id": "event-11",
@@ -2312,7 +2341,7 @@
       "source": "https://www.newadvent.org/fathers/0103303.htm",
       "note": "Ephesus attested by Irenaeus; not an exact dated journey.",
       "group": "apostolic",
-      "order": 10
+      "order": 12
     },
     {
       "id": "event-12",
@@ -2325,7 +2354,7 @@
       "source": "https://www.newadvent.org/bible/rev001.htm",
       "note": "The text names John; identifying him with John son of Zebedee is a traditional attribution, not settled by the verse alone.",
       "group": "apostolic",
-      "order": 11
+      "order": 13
     },
     {
       "id": "event-13",
@@ -2338,7 +2367,7 @@
       "source": "https://www.newadvent.org/fathers/250103.htm",
       "note": "Eusebius cites a return from Patmos to Ephesus.",
       "group": "apostolic",
-      "order": 12
+      "order": 14
     },
     {
       "id": "event-14",
@@ -2351,7 +2380,7 @@
       "source": "https://www.newadvent.org/bible/act002.htm",
       "note": "",
       "group": "apostolic",
-      "order": 13
+      "order": 15
     },
     {
       "id": "event-15",
@@ -2364,7 +2393,7 @@
       "source": "https://www.newadvent.org/bible/act008.htm",
       "note": "",
       "group": "apostolic",
-      "order": 14
+      "order": 16
     },
     {
       "id": "event-16",
@@ -2377,7 +2406,7 @@
       "source": "https://www.newadvent.org/bible/act009.htm",
       "note": "",
       "group": "apostolic",
-      "order": 15
+      "order": 17
     },
     {
       "id": "event-17",
@@ -2390,7 +2419,7 @@
       "source": "https://www.newadvent.org/bible/act009.htm",
       "note": "",
       "group": "apostolic",
-      "order": 16
+      "order": 18
     },
     {
       "id": "event-18",
@@ -2403,7 +2432,7 @@
       "source": "https://www.newadvent.org/bible/act010.htm",
       "note": "",
       "group": "apostolic",
-      "order": 17
+      "order": 19
     },
     {
       "id": "event-19",
@@ -2416,7 +2445,7 @@
       "source": "https://www.newadvent.org/bible/act015.htm",
       "note": "",
       "group": "apostolic",
-      "order": 18
+      "order": 20
     },
     {
       "id": "event-20",
@@ -2429,7 +2458,7 @@
       "source": "https://www.newadvent.org/bible/gal002.htm",
       "note": "",
       "group": "apostolic",
-      "order": 19
+      "order": 21
     },
     {
       "id": "event-21",
@@ -2442,7 +2471,7 @@
       "source": "https://www.newadvent.org/fathers/250103.htm",
       "note": "",
       "group": "apostolic",
-      "order": 20
+      "order": 22
     },
     {
       "id": "event-22",
@@ -2455,7 +2484,7 @@
       "source": "https://www.newadvent.org/bible/act012.htm",
       "note": "Acts records his execution in Jerusalem.",
       "group": "apostolic",
-      "order": 21
+      "order": 23
     },
     {
       "id": "event-23",
@@ -2468,7 +2497,7 @@
       "source": "https://www.newadvent.org/fathers/250103.htm",
       "note": "A regional field of mission, not a documented itinerary.",
       "group": "apostolic",
-      "order": 22
+      "order": 24
     },
     {
       "id": "event-24",
@@ -2481,7 +2510,7 @@
       "source": "https://www.newadvent.org/fathers/250103.htm",
       "note": "A regional tradition; no intermediate stops specified.",
       "group": "apostolic",
-      "order": 23
+      "order": 25
     },
     {
       "id": "event-25",
@@ -2494,7 +2523,7 @@
       "source": "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060927.html",
       "note": "The Pope explicitly identifies these as ancient traditions, including sources such as the apocryphal Acts of Thomas; they are not proof of a traversable historical route.",
       "group": "apostolic",
-      "order": 24
+      "order": 26
     },
     {
       "id": "event-26",
@@ -2507,7 +2536,7 @@
       "source": "https://www.newadvent.org/bible/act008.htm",
       "note": "Philip the Evangelist, distinct from Philip the Apostle.",
       "group": "apostolic",
-      "order": 25
+      "order": 27
     },
     {
       "id": "event-27",
@@ -2520,7 +2549,7 @@
       "source": "https://www.newadvent.org/bible/act021.htm",
       "note": "",
       "group": "apostolic",
-      "order": 26
+      "order": 28
     },
     {
       "id": "event-28",
@@ -2533,7 +2562,7 @@
       "source": "https://www.newadvent.org/bible/jhn001.htm",
       "note": "A broad Galilee region, not a missionary assignment.",
       "group": "apostolic",
-      "order": 27
+      "order": 29
     },
     {
       "id": "event-29",
@@ -2546,7 +2575,7 @@
       "source": "https://www.newadvent.org/bible/act012.htm",
       "note": "",
       "group": "apostolic",
-      "order": 28
+      "order": 30
     },
     {
       "id": "event-30",
@@ -2559,7 +2588,7 @@
       "source": "https://www.newadvent.org/bible/act015.htm",
       "note": "",
       "group": "apostolic",
-      "order": 29
+      "order": 31
     },
     {
       "id": "event-31",
@@ -2572,7 +2601,7 @@
       "source": "https://www.newadvent.org/fathers/250102.htm",
       "note": "",
       "group": "apostolic",
-      "order": 30
+      "order": 32
     },
     {
       "id": "event-32",
@@ -2585,7 +2614,7 @@
       "source": "https://www.newadvent.org/bible/act004.htm",
       "note": "",
       "group": "apostolic",
-      "order": 31
+      "order": 33
     },
     {
       "id": "event-33",
@@ -2598,7 +2627,7 @@
       "source": "https://www.newadvent.org/bible/act011.htm",
       "note": "",
       "group": "apostolic",
-      "order": 32
+      "order": 34
     },
     {
       "id": "event-34",
@@ -2611,7 +2640,7 @@
       "source": "https://www.newadvent.org/bible/act013.htm",
       "note": "",
       "group": "apostolic",
-      "order": 33
+      "order": 35
     },
     {
       "id": "event-35",
@@ -2624,7 +2653,7 @@
       "source": "https://www.newadvent.org/bible/act015.htm",
       "note": "",
       "group": "apostolic",
-      "order": 34
+      "order": 36
     },
     {
       "id": "event-36",
@@ -2637,7 +2666,7 @@
       "source": "https://www.newadvent.org/bible/act009.htm",
       "note": "",
       "group": "apostolic",
-      "order": 35
+      "order": 37
     },
     {
       "id": "event-37",
@@ -2650,7 +2679,7 @@
       "source": "https://www.newadvent.org/bible/act011.htm",
       "note": "",
       "group": "apostolic",
-      "order": 36
+      "order": 38
     },
     {
       "id": "event-38",
@@ -2663,7 +2692,7 @@
       "source": "https://www.newadvent.org/bible/act016.htm",
       "note": "",
       "group": "apostolic",
-      "order": 37
+      "order": 39
     },
     {
       "id": "event-39",
@@ -2676,7 +2705,7 @@
       "source": "https://www.newadvent.org/bible/act017.htm",
       "note": "",
       "group": "apostolic",
-      "order": 38
+      "order": 40
     },
     {
       "id": "event-40",
@@ -2689,7 +2718,7 @@
       "source": "https://www.newadvent.org/bible/act018.htm",
       "note": "",
       "group": "apostolic",
-      "order": 39
+      "order": 41
     },
     {
       "id": "event-41",
@@ -2702,7 +2731,7 @@
       "source": "https://www.newadvent.org/bible/act019.htm",
       "note": "",
       "group": "apostolic",
-      "order": 40
+      "order": 42
     },
     {
       "id": "event-42",
@@ -2715,7 +2744,7 @@
       "source": "https://www.newadvent.org/bible/act028.htm",
       "note": "",
       "group": "apostolic",
-      "order": 41
+      "order": 43
     },
     {
       "id": "event-43",
@@ -2728,7 +2757,7 @@
       "source": "https://www.newadvent.org/bible/mrk015.htm",
       "note": "",
       "group": "apostolic",
-      "order": 42
+      "order": 44
     },
     {
       "id": "event-44",
@@ -2741,7 +2770,20 @@
       "source": "https://www.newadvent.org/bible/jhn020.htm",
       "note": "",
       "group": "apostolic",
-      "order": 43
+      "order": 45
+    },
+    {
+      "person": "magdalene",
+      "title": "Sainte-Baume: Provençal tradition",
+      "fr": "La Sainte-Baume : tradition provençale",
+      "place": "provence",
+      "reference": "Sanctuaire de la Sainte-Baume, La Grotte",
+      "kind": "later",
+      "source": "https://www.saintebaume.org/grotte/",
+      "note": "The Dominican sanctuary explicitly identifies the voyage to Provence and the grotto association as traditional, not a narrative in the canonical Gospels.",
+      "id": "tradition-magdalene-provence",
+      "group": "apostolic",
+      "order": 46
     },
     {
       "id": "event-45",
@@ -2754,7 +2796,7 @@
       "source": "https://www.newadvent.org/bible/act001.htm",
       "note": "This person is indexed; no unsupported destination is asserted.",
       "group": "apostolic",
-      "order": 44
+      "order": 47
     },
     {
       "id": "event-46",
@@ -2767,7 +2809,7 @@
       "source": "https://www.newadvent.org/bible/act001.htm",
       "note": "This person is indexed; no unsupported destination is asserted.",
       "group": "apostolic",
-      "order": 45
+      "order": 48
     },
     {
       "id": "event-47",
@@ -2780,7 +2822,7 @@
       "source": "https://www.newadvent.org/bible/act001.htm",
       "note": "This person is indexed; no unsupported destination is asserted.",
       "group": "apostolic",
-      "order": 46
+      "order": 49
     },
     {
       "id": "event-48",
@@ -2793,7 +2835,7 @@
       "source": "https://www.newadvent.org/bible/act001.htm",
       "note": "This person is indexed; no unsupported destination is asserted.",
       "group": "apostolic",
-      "order": 47
+      "order": 50
     },
     {
       "id": "event-49",
@@ -2806,7 +2848,7 @@
       "source": "https://www.newadvent.org/bible/act001.htm",
       "note": "This person is indexed; no unsupported destination is asserted.",
       "group": "apostolic",
-      "order": 48
+      "order": 51
     },
     {
       "id": "event-50",
@@ -2819,7 +2861,7 @@
       "source": "https://www.newadvent.org/bible/act001.htm",
       "note": "This person is indexed; no unsupported destination is asserted.",
       "group": "apostolic",
-      "order": 49
+      "order": 52
     }
   ],
   "guards": [
