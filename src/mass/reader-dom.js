@@ -630,6 +630,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon,
 .ao-reader-shell[data-mode="MISSAL"] .ao-schola-dock,
 .ao-reader-shell[data-mode="MISSAL"] .ao-progress-track,
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-progress,
 .ao-reader-shell[data-mode="MISSAL"] .ao-cinematic,
 .ao-reader-shell[data-mode="MISSAL"] .ao-faithful-paragraph-icons{display:none!important}
 .ao-reader-shell[data-mode="MISSAL"] .ao-card-viewport{
