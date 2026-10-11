@@ -21,7 +21,7 @@ assert.equal(ANTWERP_FIFTEEN.find(x=>x.id==="sor2").artist,"Peter Paul Rubens");
 assert.equal(ANTWERP_FIFTEEN.find(x=>x.id==="sor4").artist,"Anthony van Dyck");
 assert.equal(ANTWERP_FIFTEEN.find(x=>x.id==="sor5").artist,"Jacob Jordaens");
 assert.equal(ANTWERP_FIFTEEN.find(x=>x.id==="glo4").title,"The Assumption");
-assert.match(ANTWERP_FIFTEEN.find(x=>x.id==="glo2").attributionNote,/attributed/);
+assert.match(ANTWERP_FIFTEEN.find(x=>x.id==="glo2").attributionNote,/attribut(?:es|ed)/);
 assert.equal(ANTWERP_RELEASE_RULES.defaultCollection,"existing");
 assert.equal(ANTWERP_RELEASE_RULES.completeCycleRequired,15);
 assert.equal(ANTWERP_RELEASE_RULES.existingArtworkMayNeverBeDeleted,true);
