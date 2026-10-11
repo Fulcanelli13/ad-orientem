@@ -719,6 +719,12 @@ function bindRosaryDonorBack(root){
      const current=Math.max(0,Math.min(steps.length-1,Math.trunc(Number(st?.step)||0))),
       delta=nav.matches('[data-lab-rosary-prev]')?-1:1,
       target=Math.max(0,Math.min(steps.length-1,current+delta));
+     const nextSet=ROSARY_METHOD.fullActive&&ROSARY_METHOD.length===15?nextFullRosarySet(st?.set):null;
+     if(nextSet&&delta>0&&current===lastDecadeBoundary(steps)){
+      e.preventDefault();e.stopImmediatePropagation();
+      if(api.selectSet?.(nextSet,{skipOpening:true})!==false){decorateRosary();setTimeout(decorateRosary,0)}
+      return;
+     }
      if(target!==current){
       e.preventDefault();e.stopImmediatePropagation();
       if(api.setStep(target)!==false){decorateRosary();setTimeout(decorateRosary,0)}
