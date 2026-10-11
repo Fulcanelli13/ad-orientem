@@ -123,6 +123,27 @@ try{
   width:el.clientWidth,links:[...el.querySelectorAll("button")].map(b=>b.getBoundingClientRect().height)}));
  assert.ok(mobile.over<=2,"Formation overflows at 320px: "+JSON.stringify(mobile));
  assert.ok(mobile.links.every(h=>h>=44),"Formation has undersized phone controls");
+ // Navigate completely out of Formation, then return via the global shell.
+ // Its selected family, search and vertical position should survive, whereas
+ // pressing a module's explicit Close must still be allowed to clear context.
+ const roundTrip=await page.evaluate(async()=>{
+   const el=document.getElementById("ao-learn-modular-root");
+   el.scrollTop=Math.min(120,Math.max(0,el.scrollHeight-el.clientHeight));
+   const before={family:AO_LEARN_APP_V1.status().family,
+     query:AO_LEARN_APP_V1.status().discoveryQuery,scroll:el.scrollTop};
+   const leave=await AO_APP_SHELL_V1.navigate("home");
+   const returnTo=await AO_APP_SHELL_V1.navigate("learn");
+   const returned=document.getElementById("ao-learn-modular-root");
+   return {before,leave:leave?.ok===true,returnTo:returnTo?.ok===true,
+     family:AO_LEARN_APP_V1.status().family,
+     query:AO_LEARN_APP_V1.status().discoveryQuery,
+     scroll:returned?.scrollTop??-1};
+ });
+ assert.equal(roundTrip.leave,true,"Formation→Today cross-module transition failed");
+ assert.equal(roundTrip.returnTo,true,"Today→Formation return failed");
+ assert.equal(roundTrip.family,roundTrip.before.family,"Formation lost its subject family");
+ assert.equal(roundTrip.query,roundTrip.before.query,"Formation lost its search query");
+ assert.equal(roundTrip.scroll,roundTrip.before.scroll,"Formation lost its scroll position");
  assert.deepEqual(errors,[],"Formation navigation has page errors");
  console.log("PASS: 320px mobile, CSE123, SL01, PX1912-Q213, Latin lesson 40, return context and three distinct moral, Apologetics and Crisis directories");
 }finally{
