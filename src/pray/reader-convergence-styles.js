@@ -17,10 +17,11 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
   font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);font-variant-numeric:tabular-nums;
 }
 #aoPray435930 .aoReaderStageTitle{
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  overflow:hidden;white-space:normal;overflow-wrap:anywhere;
   color:var(--ao-text-primary,#e9e4d9);
-  font:500 12px/1.3 var(--ao-font-display,Georgia,serif);
-  letter-spacing:.025em;
+  font:500 14px/1.35 var(--ao-font-display,Georgia,serif);
+  letter-spacing:.01em;
 }
 #aoPray435930 .aoReaderStageTrack{
   display:block;grid-column:1/-1;height:3px;overflow:hidden;border-radius:2px;
