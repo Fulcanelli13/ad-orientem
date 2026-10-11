@@ -114,7 +114,9 @@ try{
      const diagnostics=await page.evaluate(target=>{
        const api=window.AO_ROSARY_V381,st=api?.state?.(),r=document.querySelector("#aoPrayerBookRoot.open");
        const h=r?.querySelector(".aoRosaryCinema"),nav=r?.querySelector(".aoRosaryCinemaTimeline");
-       return {target,state:st,steps:api?.steps?.()?.length,
+       const directReturn=api?.setStep?.(target);
+       const directState=api?.state?.();
+       return {target,state:st,directReturn,directState,steps:api?.steps?.()?.length,
          head:r?.querySelector(".pbShell")?.dataset.aoRosaryStep,
          cinema:h?.dataset,navExists:!!nav,
          nativeButton:r?.querySelector("[data-lab-rosary-next]")?.outerHTML?.slice(0,180)};
