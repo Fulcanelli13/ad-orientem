@@ -3,6 +3,11 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   const el=document.createElement("style");el.id="ao-full-mass-preflight-styles";
   el.textContent=[
   "#ao-mass-flow-v1 .aoFullMassPreflight{padding:15px 14px;margin:14px 0;border:1px solid var(--liturgical-border,rgba(202,180,144,.27));border-radius:12px;background:var(--liturgical-soft,rgba(211,188,143,.045));color:var(--text,#ece4d5);font:inherit;min-width:0}",
+  "#ao-mass-flow-v1 .aoMassCalendarEmbeddedDetails{margin:8px 0 15px;border:1px solid var(--ao-rule,rgba(230,230,230,.13));border-radius:10px;overflow:visible;background:var(--ao-surface-1,#0e1720)}",
+  "#ao-mass-flow-v1 .aoMassCalendarEmbeddedDetails>summary{padding:13px 12px;min-height:48px;cursor:pointer;color:var(--ao-text-primary,#e7e9e9);font:600 13px/1.5 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-mass-flow-v1 [data-mass-calendar-tabs]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:4px 10px 6px}",
+  "#ao-mass-flow-v1 [data-mass-calendar-view]{min-width:0;min-height:44px;padding:7px 3px;border:1px solid var(--ao-rule,rgba(230,230,230,.18));border-radius:8px;background:var(--ao-surface-2,#17202b);color:var(--ao-text-primary,#e7e9e9);font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)}",
+  "#ao-mass-flow-v1 [data-mass-calendar-host]{min-width:0;padding:3px 8px 12px}",
   "#ao-mass-flow-v1 .aoMassLiturgicalContext{display:grid;gap:9px;margin:7px 0 15px;padding:13px 12px;border:1px solid var(--ao-rule,var(--border,rgba(255,255,255,.13)));border-radius:10px;background:var(--ao-surface-1,var(--surface-1,#101821));min-width:0}",
   "#ao-mass-flow-v1 .aoMassLiturgicalContextHeader{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px}",
   "#ao-mass-flow-v1 [data-mass-calendar-heading]{font:700 var(--ao-type-ui-xs,11px)/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:var(--ao-text-muted,var(--muted,#abb0af))}",
