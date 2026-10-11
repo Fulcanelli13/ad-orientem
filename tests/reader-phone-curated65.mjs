@@ -433,7 +433,7 @@ try{
       "A lector's Epistle must not appear as the celebrant's action");
     assert.equal(priestProper.priest,true);
     assert.equal(priestProper.epistleCue,"AO.SM.C0075");
-    assert.equal(priestProper.epistleVoice,"READ / AUDIBLE");
+    assert.equal(priestProper.epistleVoice,"READ / NOT SUNG");
     assert.equal(priestProper.early,false,
       "Schola's Communion proper is not the priest's post-ablution reading");
     assert.equal(priestProper.communion,true);
