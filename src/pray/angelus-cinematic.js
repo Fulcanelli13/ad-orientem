@@ -2,6 +2,7 @@
 // The canonical verses, prayer buttons, translation faces and ritual rails remain
 // owned by presentation-runtime.js. This layer moves their existing DOM nodes.
 import "./angelus-cinematic-styles.js";
+import { TANNER_ANGELUS_STORYBOARD, TANNER_ANGELUS_MASTER, tannerScene } from "./angelus-tanner-storyboard.js";
 
 export const ANGELUS_CINEMATIC_VERSION = "angelus-cinematic-v1";
 export const ANGELUS_CINEMATIC_SCENES = Object.freeze({
@@ -62,9 +63,11 @@ function artworkFor(win,form,id){
   if(!value||!validLocalArtworkUrl(value.src))return null;
   return {src:value.src,alt:typeof value.alt==="string"?value.alt:"",credit:typeof value.credit==="string"?value.credit:""};
 }
-function transitionStill(win,frame,form,scene){
+function transitionStill(win,frame,form,scene,currentSrc){
   const target=artworkFor(win,form,scene.id);
-  if(!target)return;
+  // The Tanner pilot uses one original painting; pan the existing canvas instead
+  // of obscuring the prayer with a full-sheet duplicate of the same picture.
+  if(!target||target.src===currentSrc)return;
   const doc=docOf(win);
   const overlay=el(doc,"div","aoAngelusCinemaInterstitial");
   overlay.setAttribute("aria-hidden","true");
@@ -163,7 +166,7 @@ export function installAngelusCinematic({win=globalThis,root=docOf(win),form="an
   function setStep(value,{initial=false}={}){
     const nextStep=Math.max(0,Math.min(scenes.length-1,Number(value)||0));
     if(!initial&&nextStep===step)return step;
-    if(!initial&&!motionReduced(win)&&lastImg)transitionStill(win,frame,form,scenes[nextStep]);
+    if(!initial&&!motionReduced(win)&&lastImg)transitionStill(win,frame,form,scenes[nextStep],lastArtworkSrc);
     step=nextStep;
     sceneApply();
     if(!initial){scrollToScene();onStageChange(step);}
@@ -171,6 +174,15 @@ export function installAngelusCinematic({win=globalThis,root=docOf(win),form="an
   }
   function sceneApply(){
     const scene=scenes[step];
+    const shot=form==="angelus"?tannerScene(scene.id):null;
+    frame.dataset.aoMasterArt=shot?TANNER_ANGELUS_MASTER.id:"";
+    if(shot){
+      frame.style.setProperty("--ao-tanner-x",shot.focus.x+"%");
+      frame.style.setProperty("--ao-tanner-y",shot.focus.y+"%");
+      frame.style.setProperty("--ao-tanner-zoom",String(shot.focus.scale));
+      frame.style.setProperty("--ao-tanner-transition",shot.durationMs+"ms");
+      frame.style.setProperty("--ao-tanner-glow",String(shot.glow));
+    }
     sequence.dataset.aoCinematicStep=String(step);
     frame.dataset.sceneId=scene.id;
     frame.dataset.effect=scene.effect;
@@ -223,6 +235,8 @@ export function installAngelusCinematic({win=globalThis,root=docOf(win),form="an
 
   setStep(initialStep,{initial:true});
   const api=Object.freeze({version:ANGELUS_CINEMATIC_VERSION,count:scenes.length,form,
+    artworkDirection:form==="angelus"?"Henry Ossawa Tanner — The Annunciation (1898)":null,
+    storyboard:form==="angelus"?TANNER_ANGELUS_STORYBOARD:null,
     sceneIds:scenes.map(s=>s.id),getStep:()=>step,setStep});
   sequence.__aoAngelusCinematic=api;
   return api;
