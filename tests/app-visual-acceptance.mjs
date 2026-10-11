@@ -240,20 +240,21 @@ try{
 
   assert.equal(await page.locator(".aoSaintArtCard .aoSaintArtPlaceholder").filter({hasText:/No reusable artwork|No artwork is assigned|not approved for production/i}).count(),0,"Home exposed a terminal saint-art placeholder instead of suppressing the unresolved card");
   const homeParity=await page.evaluate(()=>({
-    celebrationTitles:document.querySelectorAll(".homeScreen .celebrationBlock > h1").length,
-    aroundMassActions:document.querySelectorAll(".homeScreen .aroundMass .phaseButton").length,
+    celebrationTitles:document.querySelectorAll(".homeScreen .aoTodayV2ArtOverlay > h1").length,
+    aroundMassActions:document.querySelectorAll(".homeScreen .aoTodayV2Mass .aoTodayV2PrimaryMass").length,
     followMass:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
-    gospelCards:document.querySelectorAll(".homeScreen .gospelCard").length,
-    comingUp:document.querySelectorAll(".homeScreen .aoHomeComingUp").length,
-    dailyCatechism:document.querySelectorAll(".homeScreen .aoHomeDailyCatechism").length,
+    gospelCards:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-action=\"gospel\"]").length,
+    comingUp:document.querySelectorAll(".homeScreen .aoTodayV2Approaching").length,
+    dailyCatechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
     calendarDashboard:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
     brand:document.querySelector(".homeScreen .brandName")?.textContent?.trim()??"",
-    celebration:document.querySelector(".homeScreen .celebrationBlock > h1")?.textContent?.trim()??"",
-    gospel:document.querySelector(".homeScreen .gospelCard p")?.textContent?.trim()??"",
+    celebration:document.querySelector(".homeScreen .aoTodayV2ArtOverlay > h1")?.textContent?.trim()??"",
+    gospel:document.querySelector(".homeScreen .aoTodayV2ReadReflect [data-action=\"gospel\"] small")?.textContent?.trim()??"",
     displayedDate:document.querySelector(".homeScreen .dateTitle b")?.textContent?.trim()??"",
   }));
   assert.equal(homeParity.celebrationTitles,1,"Home lost its single liturgical-day identity");
-  assert.equal(homeParity.aroundMassActions,3,"Home lost the Prepare / Follow Mass / Give thanks triad");
+  assert.equal(homeParity.aroundMassActions,1,"Home must expose exactly one Open/Resume Mass action");
+  assert.equal(await page.locator(".homeScreen .aoTodayV2SecondaryMass button").count(),2,"Prepare / Give thanks secondary controls missing");
   assert.equal(homeParity.followMass,1,"Home does not expose exactly one canonical Follow Mass action");
   assert.equal(homeParity.gospelCards,1,"Home lost its single Gospel-in-context surface");
   assert.equal(homeParity.comingUp,1,"Home lost modular Coming Up");
@@ -266,9 +267,9 @@ try{
   const designBaseline=await page.evaluate(()=>({
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
-    displayFont:getComputedStyle(document.querySelector(".homeScreen .celebrationBlock > h1")).fontFamily,
+    displayFont:getComputedStyle(document.querySelector(".homeScreen .aoTodayV2ArtOverlay > h1")).fontFamily,
     bodyFont:getComputedStyle(document.querySelector(".homeScreen")).fontFamily,
-    cardRadius:getComputedStyle(document.querySelector(".homeScreen .contentCard")).borderRadius,
+    cardRadius:getComputedStyle(document.querySelector(".homeScreen .aoTodayV2PrayerFeature")).borderRadius,
     gutter:getComputedStyle(document.documentElement).getPropertyValue("--ao-page-gutter").trim(),
     controlHeight:getComputedStyle(document.documentElement).getPropertyValue("--ao-control-h").trim(),
   }));
@@ -276,7 +277,7 @@ try{
   assert.equal(designBaseline.stylePresent,true,"shared app design-system stylesheet is missing");
   assert.ok(designBaseline.displayFont.length>0,"Home display font did not resolve");
   assert.ok(designBaseline.bodyFont.length>0,"Home body font did not resolve");
-  assert.equal(designBaseline.cardRadius,"15px","Home content cards diverged from the canonical card radius");
+  assert.equal(designBaseline.cardRadius,"10px","Today prayer feature radius diverged from v2 specification");
   assert.equal(designBaseline.gutter,"12px","390px phone did not resolve the canonical phone gutter");
   assert.equal(designBaseline.controlHeight,"44px","canonical touch-control height drifted");
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().presentationFx?.version==="modular-presentation-fx-v3",null,{timeout:5000});
