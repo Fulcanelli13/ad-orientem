@@ -718,6 +718,11 @@ button.ao-schola-control{cursor:pointer}
   padding-bottom:calc(var(--ao-schola-reserve) + max(12px,env(safe-area-inset-bottom)))
 }
 #ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-prayer-card{
+  /* The viewport owns the visible height. Bottom cue-travel padding must
+     remain INSIDE that box instead of expanding a 100%-high content-box
+     beneath the persistent Schola dock. */
+  box-sizing:border-box;
+  height:100%;
   /* Preserve the native short-card cue-travel variable. The previous
      fixed clamp masked this inherited reserve and left short responses
      impossible to reach by scrolling (C0071). Keep actual scroll
