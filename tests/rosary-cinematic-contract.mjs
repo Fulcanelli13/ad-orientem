@@ -51,6 +51,8 @@ assert.match(runtime,/const cinema=syncRosaryCinematic\(\{root:r,info,win:window
 assert.match(runtime,/if\(!cinema\)rosaryDonorMysteryFx\(r,info\)/);
 assert.match(module,/host\.__aoRosaryCinemaOnJump\(target\)/,"Canonical Rosary player must own every jump");
 assert.match(module,/win\.addEventListener\("click",event=>/,"Milestone delegation must run at capture layer");
+assert.match(module,/win\.AO_ROSARY_V381\.changeSet\(\)/,"Change mysteries must use canonical Rosary owner");
+assert.match(readFileSync("ao-inline-a45824678e308933fad5.js","utf8"),/changeSet:\(\)=>\{if\(S\.view!==\x27rosary\x27\)return false;/);
 assert.match(module,/event\.stopPropagation\(\)/,"Milestone clicks must not fall into competing donor handlers");
 assert.doesNotMatch(module,/localStorage|sessionStorage|setInterval|class RosaryState/,"Cinema must never own Rosary persistence or invent a bead state");
 assert.match(module,/step\?\.kind==="mystery"/,"Milestone targets must open mysteries");
