@@ -38,6 +38,10 @@ try{
   assert.ok(await page.locator('#graph [data-gen="Jacob"]').count()===1);
   assert.ok(await page.locator('#graph [data-gen="Judah"]').count()===1);
   assert.ok(await page.locator('#graph [data-gen="Benjamin"]').count()===1);
+  await page.locator('#graph [data-gen="Jacob"]').click();
+  assert.equal(await page.locator('#graph [data-gen="Judah"]').count(),0,"Jacob branch collapses");
+  await page.locator('#graph [data-gen="Jacob"]').click();
+  assert.equal(await page.locator('#graph [data-gen="Judah"]').count(),1,"Jacob branch expands again");
   await page.locator("#modeMission").click();
   assert.ok(await page.locator("#map").isVisible());
   assert.ok(await page.locator("#eventTimeline button").count()>=8);
