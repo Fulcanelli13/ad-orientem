@@ -59,6 +59,11 @@ function motionReduced(win){
     win?.AO_RUNTIME_V8?.store?.getState?.()?.settings?.reducedMotion);
 }
 function artworkFor(win,form,id){
+  if(form==="angelus" && tannerScene(id)) return {
+    src:TANNER_ANGELUS_MASTER.localPath,
+    alt:"Henry Ossawa Tanner, The Annunciation (1898)",
+    credit:"Henry Ossawa Tanner · Philadelphia Museum of Art · PDM / Wikimedia Commons"
+  };
   const value=win?.AO_ANGELUS_ARTWORK_V1?.[form]?.[id];
   if(!value||!validLocalArtworkUrl(value.src))return null;
   return {src:value.src,alt:typeof value.alt==="string"?value.alt:"",credit:typeof value.credit==="string"?value.credit:""};
@@ -152,9 +157,11 @@ export function installAngelusCinematic({win=globalThis,root=docOf(win),form="an
     const img=el(doc,"img","aoAngelusCinemaArtwork current");
     img.loading="eager";img.decoding="async";img.alt="";
     img.setAttribute("aria-hidden","true");
+    img.addEventListener("error",()=>{frame.dataset.artwork="unavailable";img.remove();lastImg=null;artCredit.textContent="";},{once:true});
+    img.addEventListener("load",()=>{frame.dataset.artwork="selected";},{once:true});
     img.src=art.src;
     lastImg=img;currentArtwork.append(img);
-    frame.dataset.artwork="selected";
+    frame.dataset.artwork="loading";
     frame.setAttribute("aria-label",art.alt||scene[locale==="fr"?"fr":"en"]);
     artCredit.textContent=art.credit;
   }
