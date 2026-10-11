@@ -1,0 +1,560 @@
+{
+  "schema": "MASS_DUJARDIN_1962_ORDER_POSITION_BRIDGE_V1",
+  "status": "RESEARCH_ORDER_ANCHORS_VERIFIED_NOT_BIBLE_CERTIFIED",
+  "date": "2026-10-11",
+  "sourceMeditations": "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json",
+  "sourceSung": "data/presentation/reader-text-sung.v1.json",
+  "sourceLow": "data/presentation/reader-text-low.v1.json",
+  "scope": "Links meditative stages to textual positions, not causal historical liturgical origins. No hardcoded date or 'full biblical coverage' assumption.",
+  "records": [
+    {
+      "meditationId": "DJ01",
+      "originalMeditationHeading": "Preparation",
+      "mappingKind": "OUTSIDE_MASS_NO_FIXED_CUE",
+      "sourceCueIds": [],
+      "sourceBlockIds": [],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 1, printed pp. 17–21",
+        "webTextStartLine": 934,
+        "webTextEndLine": 947,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Meditation preparation precedes the source-owned Mass Order; must not force C0001 as its historical origin.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ02",
+      "originalMeditationHeading": "The beginning of Mass",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0002"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B002"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 2, printed pp. 17–21",
+        "webTextStartLine": 948,
+        "webTextEndLine": 970,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "The entry into the Mass is the textual location; Fall narrative is Dujardin's contemplation only.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ03",
+      "originalMeditationHeading": "Kyrie eleison",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0044"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B015"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 3, printed pp. 17–21",
+        "webTextStartLine": 972,
+        "webTextEndLine": 983,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Kyrie is present; expectation of the Messiah is not literal Kyrie text.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ04",
+      "originalMeditationHeading": "Gloria",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0053",
+        "AO.SM.C0055"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B016"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 4, printed pp. 17–21",
+        "webTextStartLine": 984,
+        "webTextEndLine": 990,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Only the opening Gloria wording is Luke 2; rest of hymn has separate history.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ05",
+      "originalMeditationHeading": "Prayer / Collect",
+      "mappingKind": "VARIABLE_PROPER_SLOT",
+      "sourceCueIds": [],
+      "sourceBlockIds": [
+        "AO.SM.B019"
+      ],
+      "properSlot": "COLLECT_SET",
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 5, printed pp. 17–21",
+        "webTextStartLine": 991,
+        "webTextEndLine": 999,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Collect text changes by feast/date; Christ's hidden life is Dujardin's meditation, not each Collect's Scripture.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ06",
+      "originalMeditationHeading": "Epistle",
+      "mappingKind": "VARIABLE_PROPER_SLOT",
+      "sourceCueIds": [],
+      "sourceBlockIds": [
+        "AO.SM.B020"
+      ],
+      "properSlot": "EPISTLE_OR_LESSON",
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 6, printed pp. 17–21",
+        "webTextStartLine": 1000,
+        "webTextEndLine": 1009,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Actual Epistle passage must come from resolved 1962 Proper, not Dujardin's precursor allegory.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ07",
+      "originalMeditationHeading": "Gospel",
+      "mappingKind": "VARIABLE_PROPER_SLOT",
+      "sourceCueIds": [],
+      "sourceBlockIds": [
+        "AO.SM.B026"
+      ],
+      "properSlot": "GOSPEL",
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 7, printed pp. 17–21",
+        "webTextStartLine": 1011,
+        "webTextEndLine": 1022,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Actual Gospel passage must come from resolved 1962 Proper; Dujardin's general ministry is thematic.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ08",
+      "originalMeditationHeading": "Credo",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0089"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B027"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 8, printed pp. 17–21",
+        "webTextStartLine": 1023,
+        "webTextEndLine": 1030,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Credo is fixed doctrinal formulation, not one geographically located biblical event.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ09",
+      "originalMeditationHeading": "Offertory",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0110"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B031"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 9, printed pp. 17–21",
+        "webTextStartLine": 1033,
+        "webTextEndLine": 1039,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Offertory is an anchor for meditation on Last Supper, not historically the Last Supper's bread action.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ10",
+      "originalMeditationHeading": "Lavabo",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0125"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B037"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 10, printed pp. 17–21",
+        "webTextStartLine": 1040,
+        "webTextEndLine": 1047,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Lavabo is a Psalm and practical handwashing; John 13 is solely a named devotional meditation.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ11",
+      "originalMeditationHeading": "Orate fratres",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0130"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B039"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 11, printed pp. 17–21",
+        "webTextStartLine": 1048,
+        "webTextEndLine": 1053,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Orate fratres is fixed; no Bible event forced.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ12",
+      "originalMeditationHeading": "Preface",
+      "mappingKind": "VARIABLE_PROPER_SLOT",
+      "sourceCueIds": [],
+      "sourceBlockIds": [
+        "AO.SM.B045"
+      ],
+      "properSlot": "PREFACE",
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 12, printed pp. 17–21",
+        "webTextStartLine": 1054,
+        "webTextEndLine": 1061,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Preface varies; author contemplates Christ's thanksgiving, not exact text of any day's Preface.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ13",
+      "originalMeditationHeading": "Memento for living",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0154"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B048"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 13, printed pp. 17–21",
+        "webTextStartLine": 1062,
+        "webTextEndLine": 1071,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Memento of living; Gethsemane and Christ's prayer are devotional parallels.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ14",
+      "originalMeditationHeading": "Hanc igitur",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0161"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B050"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 14, printed pp. 17–21",
+        "webTextStartLine": 1073,
+        "webTextEndLine": 1086,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Hanc igitur source phrase is fixed; Leviticus 1:4 comparison does not explain ritual origin.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ15",
+      "originalMeditationHeading": "Consecration",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0173",
+        "AO.SM.C0179"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B052",
+        "AO.SM.B053"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 15, printed pp. 17–21",
+        "webTextStartLine": 1088,
+        "webTextEndLine": 1101,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Two actual consecrations, one and the same Sacrifice sacramentally present; not a second bloody execution.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ16",
+      "originalMeditationHeading": "Memento for dead",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0192"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B057"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 16, printed pp. 17–21",
+        "webTextStartLine": 1102,
+        "webTextEndLine": 1112,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Memento for dead source cue; Purgatory/limbus distinctions require doctrinal review.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ17",
+      "originalMeditationHeading": "Pater noster",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0209"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B063"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 17, printed pp. 17–21",
+        "webTextStartLine": 1113,
+        "webTextEndLine": 1116,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Lord's Prayer is direct Scripture; Dujardin's tomb meditation is a different relationship.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ18",
+      "originalMeditationHeading": "Pax Domini",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0219",
+        "AO.SM.C0221"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B066",
+        "AO.SM.B067"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 18, printed pp. 17–21",
+        "webTextStartLine": 1117,
+        "webTextEndLine": 1124,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Pax Domini and commixture occur separately; Resurrection symbolism is only devotional.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ19",
+      "originalMeditationHeading": "Agnus Dei",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0222"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B068"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 19, printed pp. 17–21",
+        "webTextStartLine": 1125,
+        "webTextEndLine": 1141,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Agnus Dei from John 1, while Dujardin contemplates Communion.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ20",
+      "originalMeditationHeading": "Post-Communion",
+      "mappingKind": "VARIABLE_PROPER_SLOT",
+      "sourceCueIds": [],
+      "sourceBlockIds": [
+        "AO.SM.B088"
+      ],
+      "properSlot": "POSTCOMMUNION_SET",
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 20, printed pp. 17–21",
+        "webTextStartLine": 1144,
+        "webTextEndLine": 1152,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Postcommunion prayers vary; Ascension and Cenacle are authorial contemplations.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ21",
+      "originalMeditationHeading": "Blessing",
+      "mappingKind": "EXACT_ORDER_ANCHOR",
+      "sourceCueIds": [
+        "AO.SM.C0264"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B092"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 21, printed pp. 17–21",
+        "webTextStartLine": 1154,
+        "webTextEndLine": 1156,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "Final blessing is an Order anchor for Pentecost contemplation, not biblical origin of benediction.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    },
+    {
+      "meditationId": "DJ22",
+      "originalMeditationHeading": "Last Gospel",
+      "mappingKind": "EXACT_ORDER_ANCHOR_SUBJECT_TO_RITE",
+      "sourceCueIds": [
+        "AO.SM.C0271"
+      ],
+      "sourceBlockIds": [
+        "AO.SM.B095"
+      ],
+      "properSlot": null,
+      "originalSourceWitness": {
+        "url": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+        "sourceSection": "Grimm Preface III, meditation 22, printed pp. 17–21",
+        "webTextStartLine": 1157,
+        "webTextEndLine": 1163,
+        "edition": "Grimm English 1889 text transcription, OCR may contain minor errors",
+        "access": "TRANSCRIBED_BODY_TEXT_NOT_PDF_PAGE_CERTIFIED"
+      },
+      "qualification": "John 1 is the usual Last Gospel in the source corpus; individual special Masses may replace or omit it.",
+      "scripturalReferencesRemainEditorial": true,
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "meditationDoesNotProveHistoricalOrigin": true,
+      "approvedForPublication": false
+    }
+  ],
+  "exceptions": [
+    "Preparation predates the Mass and has no source cue.",
+    "Collect, Epistle, Gospel, Preface and Postcommunion slots are variable and require verified day/feast Proper.",
+    "Solemn, Sung and Low form semantics and historical ceremonies cannot be inferred merely from matching Latin cue IDs.",
+    "Dujardin's 1889 English passage references are transcription-level, not original page-image verified.",
+    "Last Gospel John 1 is not guaranteed on every special day.",
+    "None of the editorial Bible suggestions supplied for Dujardin are claimed to be Dujardin's own chapter:verse citations."
+  ]
+}
