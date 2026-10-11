@@ -32,7 +32,7 @@ for(const e of audit.events){
  assert(!ids.has(e.id),"duplicate event "+e.id);ids.add(e.id);
  assert(sMap.has(e.cueId),"source cue absent "+e.id+" "+e.cueId);
  assert.equal(e.runtimeApproved,false,"unreviewed runtime export "+e.id);
- assert.match(e.section,/^(III|IV|VI|VII|VIII|IX|X|XI|XII|XIII)\\./,e.id+" source section");
+ assert.ok(new Set(["III","IV","VI","VII","VIII","IX","X","XI","XII","XIII"]).has(e.section.split(".")[0]),e.id+" source section");
  assert.ok(e.sourceUrl.includes("/download/#page=")&&Number.isInteger(Number(e.sourceUrl.split("#page=")[1])),e.id+" source page");
  assert(e.forms.length && e.forms.every(x=>forms.has(x)),"invalid form "+e.id);
  assert(e.condition,"unscoped ceremonial candidate "+e.id);
