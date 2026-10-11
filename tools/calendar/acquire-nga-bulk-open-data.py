@@ -54,22 +54,38 @@ def valid_nga_image(i):
  except ValueError:return False
 def main():
  targets=json.loads((ROOT/"data/calendar/sacred-art-subject-targets.v2.json").read_text(encoding="utf8"))["targets"]
+ formation=json.loads((ROOT/"data/learn/sacred-art-formation-targets.v1.json").read_text(encoding="utf8"))["targets"]
+ crosswalk=json.loads((ROOT/"data/calendar/sacred-art-editorial-crosswalk.v1.json").read_text(encoding="utf8"))
  works=json.loads((ROOT/"data/calendar/sacred-art-candidates.v1.json").read_text(encoding="utf8"))["artworks"]
+ targets+=formation
  already={a["id"] for a in works}
- # Prefer actual gaps, not source image candidates already acquired.
- def original_count(t):
+ # Match EXACTLY the same source-tag crosswalk as the all-module coverage audit.
+ # Previously this skipped acquired iconographic originals, e.g. NGA 12205
+ # Healing of the Paralytic, causing unnecessary duplicate source searches.
+ def source_matches(t,a):
   key=t["id"];short=key.split(".",1)[1]
-  count=0
-  for a in works:
-   if not (a.get("acquisition") or {}).get("originalSha256"):continue
-   icon=a.get("tags") or {}
-   if key.startswith("person.") and icon.get("portraitSubjectId")==short:count+=1
-   elif key.startswith("scripture.") and short in (icon.get("scriptureIdentityKeys") or []):count+=1
-   elif key.startswith("calendar.") and short in (icon.get("iconography") or []):count+=1
-  return count
- # Do not discard subjects with one painting but a two-/three-original collection-depth minimum.
- targets=[t for t in targets if t["id"].startswith(("scripture.","person.","calendar."))
-          and original_count(t)<int(t.get("minimumOriginals") or 1)]
+  tags=a.get("tags") or {}
+  icons=set(tags.get("iconography") or [])
+  if icons.intersection(crosswalk["exactIconography"].get(key,[])):return True
+  linked=set(tags.get("prayerKeys") or [])
+  if key.startswith("rosary."):return key in linked
+  if key.startswith("devotion."):
+   return short in linked or any(v.startswith("pray.novenas:") and
+     v.split(":",1)[1] in (tags.get("novenaIds") or []) for v in t.get("contexts",[]))
+  if key.startswith("calendar."):return short in icons
+  if key.startswith("station."):return int(short) in (tags.get("stationNumbers") or [])
+  if key.startswith("scripture."):return short in (tags.get("scriptureIdentityKeys") or [])
+  if key.startswith("person."):return short==tags.get("portraitSubjectId")
+  return False
+ def original_count(t):
+  return sum(1 for a in works if
+   re.fullmatch(r"[a-f0-9]{64}",(a.get("acquisition") or {}).get("originalSha256") or "") and
+   (a.get("acquisition") or {}).get("archiveOriginal") and source_matches(t,a))
+ # Research-only named subject acquisition. Do not count depictions of
+ # background/secondary saints as authenticated principal portraits.
+ targets=[t for t in targets if t["id"].startswith(
+          ("scripture.","person.","calendar.","formation.")) and
+          original_count(t)<int(t.get("minimumOriginals") or 1)]
  targets.sort(key=lambda t:(0 if t["id"] in FOCUS_KEYS else 1,{"P0":0,"P1":1,"P2":2}.get(t.get("priority"),3),t["id"]))
  print("NGA_TARGETS",len(targets),flush=True)
  objects=csvrows(get(DATASET+"objects.csv",95_000_000))
