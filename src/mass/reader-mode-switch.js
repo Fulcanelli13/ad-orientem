@@ -26,7 +26,9 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=fa
     holyThursdayMandatumSource:data.mandatumSource??null,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  const presentationModel=projectSourceFirst48Presentation(sourceModel);
+  const presentationModel=reviewExpandedCards
+    ? projectExpandedOrdinaryLiveCards(sourceModel)
+    : projectSourceFirst48Presentation(sourceModel);
   return Object.freeze({mode:normalized,sourceModel,presentationModel});
 }
 
