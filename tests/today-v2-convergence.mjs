@@ -67,6 +67,8 @@ assert.doesNotMatch(primary,/class="contentCard findCard/);
 assert.doesNotMatch(primary,/aoHomeComingUp/);
 assert.equal((primary.match(/data-home-scripture/g)||[]).length,1,"Scripture must retain one compact native entry without duplicate cards");
 assert.doesNotMatch(primary,/data-resume-mass/);
+assert.match(TODAY_V2_CSS, /@media\(max-width:699px\)\{\s*\.aoTodayV2ArtMissing \.aoTodayV2Art\{height:clamp\(138px,36vw,175px\)!important/,
+  "Compact no-art fallback is strictly phone-scoped, leaving desktop layout unchanged");
 assert.match(TODAY_V2_CSS, /\.aoTodayV2ArtMissing \.aoTodayV2Art\{height:clamp\(138px,36vw,175px\)!important/,
   "No-art celebration fallback must be compact instead of reserving a large blank painting");
 assert.match(TODAY_V2_CSS, /\.aoTodayV2Art\{position:relative;height:clamp\(235px,67vw,355px\)/,
