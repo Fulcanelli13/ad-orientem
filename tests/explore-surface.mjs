@@ -11,7 +11,7 @@ import { sacredPlaceSynopsis, compactHeritagePlaceSheet } from "../src/find/heri
 import { exploreMapFeatures } from "../src/find/map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "../src/find/traditions-browse.js";
-import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "../src/find/heritage-map.js";
+import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "../src/find/heritage-map.js";
 import { buildExplorePlaceProfiles } from "../src/find/place-profiles.js";
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
@@ -767,5 +767,35 @@ await import("./explore-relic-final60-open20-source.mjs");
 await import("./explore-sot07-source-recovery.mjs");
 await import("./explore-handoff-recovery.mjs");
 await import("./explore-first-load-recovery.mjs");
+
+
+const nearbyFixtures=[
+  {place_id:"place:FR:lourdes",title:"Lourdes",subtitle:"France",place_type:"shrine",map_publishable:true,geo:{lat:43.09738,lng:-0.05875}},
+  {place_id:"place:FR:tarbes",title:"Tarbes",subtitle:"France",place_type:"cathedral",map_publishable:true,geo:{lat:43.23,lng:0.07,precision:"complex_anchor"}},
+  {place_id:"place:FR:unmapped",title:"Unmapped",map_publishable:false,geo:{lat:43.09,lng:0}},
+  {place_id:"place:FR:lourdes",title:"Duplicate Lourdes",map_publishable:true,geo:{lat:43.1,lng:0}},
+];
+const nearest=nearbyHeritagePlaces(nearbyFixtures,{lat:43.09738,lng:-0.05875});
+assert.equal(nearest.length,2,"Nearby must deduplicate and exclude unpublished markers");
+assert.equal(nearest[0].place_id,"place:FR:lourdes");
+assert.equal(nearest[0].distance_km,0);
+assert.ok(nearest[1].distance_km>0&&nearest[1].indicative,"Nearby must expose distance and indicative precision");
+assert.equal(nearbyHeritagePlaces(nearbyFixtures,{lat:null,lng:0}).length,0,"Invalid position must not resolve to equator");
+assert.ok(nearbyHeritagePlaces([
+  {place_id:"place:dateline",title:"Across date line",map_publishable:true,geo:{lat:0,lng:-179.9}},
+],{lat:0,lng:179.9})[0].distance_km<25,"Nearby must respect the antimeridian");
+const nearbyMarkup=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:nearbyFixtures,nearby:nearest,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+}));
+assert.match(nearbyMarkup,/aoHeritageNearbyPanel/,"Nearby needs discoverable source-backed results");
+assert.match(nearbyMarkup,/Straight-line|straight-line/,"Nearby distances must not be mistaken for driving time");
+assert.match(nearbyMarkup,/data-explore-open-place="place:FR:lourdes"/);
+assert.doesNotMatch(nearbyMarkup,/data-heritage-nearby aria-label/,"Nearby panel must not overlap the geolocation action");
+const classifiedFeatures=exploreMapFeatures([{
+  item_id:"heritage:place:FR:tarbes",place_id:"place:FR:tarbes",lens:"heritage",title:"Tarbes",
+  place_type:"cathedral",heritage_primary:"shrines",map_publishable:true,geo:{lat:43.23,lng:0.07},
+}]);
+assert.equal(classifiedFeatures[0].properties.place_type,"cathedral","Map must inherit source-owned physical site category");
 
 await import("./explore-world-boundaries.mjs");
