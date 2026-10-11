@@ -1,0 +1,52 @@
+name: Explore R68 rights-reviewed Pontmain gallery acquisition
+
+on:
+  push:
+    branches:
+      - feature/explore-r68-pontmain-reviewed-gallery-20261011
+    paths:
+      - .github/workflows/explore-r68-approved-gallery.yml
+      - tools/acquire-approved-place-gallery-r68.py
+      - data/geography/research/explore-r68-reviewed-photo-sources.v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  acquire-verify-and-publish-branch-images:
+    if: github.ref == 'refs/heads/feature/explore-r68-pontmain-reviewed-gallery-20261011'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Acquire exact Commons images and verify release metadata
+        run: python tools/acquire-approved-place-gallery-r68.py
+      - name: Verify local assets and metadata before branch publication
+        run: python tests/explore-r68-gallery-file-audit.py
+      - name: Upload source-checked review photographs and ledger
+        uses: actions/upload-artifact@v4
+        with:
+          name: r68-pontmain-reviewed-gallery
+          path: |
+            assets/approved/place-gallery/*.webp
+            data/geography/approved-place-gallery.v1.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit verified images and registry to the feature branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/approved/place-gallery/ data/geography/approved-place-gallery.v1.json
+          git diff --cached --exit-code && exit 0
+          git commit -m "Explore R68: add verified Pontmain chapel-gallery assets and SHA-bound ledger"
+          git push origin HEAD:feature/explore-r68-pontmain-reviewed-gallery-20261011
