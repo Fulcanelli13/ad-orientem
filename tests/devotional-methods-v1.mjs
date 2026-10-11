@@ -77,6 +77,8 @@ assert.equal(ROSARY_METHODS.montfort.status,"adapted-active");
 assert.equal(rosaryPlan({method:"montfort"}).readyForLive,true);
 assert.equal(rosaryPlan({method:"dominican"}).readyForLive,true);
 assert.equal(rosaryPlan({method:"ordinary"}).readyForLive,true);
+assert.equal(rosaryPlan({method:"dominican",decades:15}).readyForLive,false);
+assert.equal(rosaryPlan({method:"montfort",decades:15}).readyForLive,false);
 assert.equal(Object.keys(ROSARY_METHODS).length,5);
 assert.throws(()=>rosaryPlan({decades:10}));
 assert.throws(()=>rosaryPlan({method:"made-up"}));
