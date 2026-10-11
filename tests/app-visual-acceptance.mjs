@@ -310,7 +310,7 @@ try{
     return {on:Boolean(el?.classList?.contains("aoCinemaTransitionOn")),title};
   });
   assert.notEqual(genericCalendarTransition.title,"Calendar","Calendar ribbon navigation regressed to the fabricated generic destination cinematic");
-  await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset?.aoPresentationFx==="entered",null,{timeout:3000});
+  await page.waitForFunction(()=>document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").length===3,null,{timeout:5000});
   await waitForFxSettled();
   await assertHomeHidden("Calendar");
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.version==="43.45-modular-exact",null,{timeout:5000});
