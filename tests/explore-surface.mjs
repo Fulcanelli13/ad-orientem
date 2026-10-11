@@ -804,7 +804,7 @@ await import("./explore-first-load-recovery.mjs");
 
 const mediaRegistry=readJson("data/geography/approved-place-media.v1.json");
 assert.equal(mediaRegistry.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(mediaRegistry.items.length,10,"Only the ten individually reviewed physical-site photographs may be published");
+assert.equal(mediaRegistry.items.length,18,"Exactly eighteen reviewed physical-site photographs should be published");
 const mediaFixture={
   place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
   source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",
@@ -819,8 +819,10 @@ const reviewedProfiles=buildExplorePlaceProfiles({...dataset,media:{approved:rea
 const reviewedLourdes=reviewedProfiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.equal(reviewedLourdes?.media?.license,"CC-BY-SA-4.0","Exact Place should expose screened photograph");
 assert.match(reviewedLourdes.media.asset_path,/^assets\/approved\/place-media\//);
-assert.equal(reviewedProfiles.find(p=>p.place_id==="place:FR:chartres-notre-dame")?.media,null,
- "Portal-detail image must remain withheld from primary Place photo");
+assert.ok(reviewedProfiles.find(p=>p.place_id==="place:FR:chartres-notre-dame")?.media,
+ "The previous portal detail must be replaced by the source-confirmed full Chartres facade");
+assert.equal(reviewedProfiles.find(p=>p.place_id==="place:MU:pere-laval-sainte-croix")?.media,null,
+ "Older-licence Père Laval documentary photograph remains research-only");
 const reviewedPreview=renderExploreToString(buildExploreViewModel({
   language:"en",lens:"heritage",view:"map",items:heritagePlaces,
   filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
@@ -899,4 +901,5 @@ const classifiedFeatures=exploreMapFeatures([{
 assert.equal(classifiedFeatures[0].properties.place_type,"cathedral","Map must inherit source-owned physical site category");
 
 await import("./explore-photo-research.mjs");
+await import("./explore-photo-r59.mjs");
 await import("./explore-world-boundaries.mjs");

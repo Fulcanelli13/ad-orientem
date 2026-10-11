@@ -1,0 +1,41 @@
+name: Explore R59 remaining-place photo review
+
+on:
+  push:
+    branches: [feature/explore-r59-remaining-place-photos-20261011]
+    paths:
+      - data/geography/research/place-media-candidates-r59.v1.json
+      - tools/stage-place-media-r59.py
+      - tools/build-place-media-contact-sheet-r59.py
+      - .github/workflows/explore-place-photo-review-r59.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  photo-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image decoding dependency
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify exact sites, existing release and licences
+        run: python tools/stage-place-media-r59.py --validate-only
+      - name: Recheck Commons live rights and retrieve images for review only
+        run: python tools/stage-place-media-r59.py
+      - name: Generate three site contact sheets
+        run: python tools/build-place-media-contact-sheet-r59.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: explore-r59-ten-site-image-review
+          path: |
+            assets/staged/place-media-r59/*.webp
+            assets/staged/place-media-review-r59*.webp
+            data/geography/research/place-media-stage-report-r59.v1.json
+          if-no-files-found: error
+          retention-days: 30
