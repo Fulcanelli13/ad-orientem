@@ -114,6 +114,9 @@ try{
   assert.equal(await page.locator("#sceneReviewCandidates button").count(),1);
   assert.match(await page.locator("#sceneReviewClass").innerText(),/SAME CITATION/);
   assert.match(await page.locator("#sceneReviewCredit").innerText(),/Pieter Lastman/);
+  assert.equal(await page.locator("#sceneScriptureSources a").count(),2,"Source passage and French source-book links");
+  assert.ok((await page.locator("#sceneScriptureSources a").first().getAttribute("href")).includes("gen021"));
+  assert.ok((await page.locator("#sceneScriptureSources a").last().getAttribute("href")).includes("wikisource.org"));
   assert.ok((await page.locator("#sceneReviewCredit a").getAttribute("href")).includes("commons.wikimedia.org"));
   await page.locator("#closeSceneReview").click();
   await page.locator('[data-chron-index="7"]').click();
