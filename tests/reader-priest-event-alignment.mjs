@@ -36,11 +36,6 @@ for(const row of ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS){
   assert.match(row.sourceUrl,/^https:\/\//);
   assert.ok(row.rubric && row.sourceSectionId);
   assert.ok(row.forbiddenProxyEvents.length>=2);
-  for(const eventId of row.forbiddenProxyEvents)
-    assert.equal(projectObservedOrdinaryPriestEvent({
-      observedEventId:eventId,independentlyObserved:true,form:"MISSA_CANTATA_INCENSE",
-      sourceSectionId:row.sourceSectionId,eventIndex:new Map(),cueController:null,
-    }),null,"Proxy events must not imply the pending source cue");
 }
 
 const bad=events.map(e=>({...e}));
@@ -63,6 +58,18 @@ const base={independentlyObserved:true,form:"MISSA_CANTATA_INCENSE",eventIndex:i
 const observed=(eventId,sectionId,conditions=[])=>projectObservedOrdinaryPriestEvent({
   ...base,observedEventId:eventId,sourceSectionId:sectionId,conditions,
 });
+// Against the REAL event index/controller: existing proxy events can legitimately
+// project their *own* canonical cue (e.g. MC-INT-020 -> C0043), but must
+// never claim one of these five unobserved movements or private actions.
+for(const row of ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS){
+  assert.equal(observed(row.observationKey,row.sourceSectionId),null,
+    "A descriptive observation key must not be treated as a canonical MC ID");
+  for(const eventId of row.forbiddenProxyEvents){
+    assert.ok(index.has(eventId),"A prohibited proxy must name a real existing MC event: "+eventId);
+    assert.notEqual(observed(eventId,row.sourceSectionId)?.cueId,row.cueId,
+      eventId+" must not turn into unbound "+row.cueId);
+  }
+}
 const sit=["SEDILIA_USED","SEDILIA_USED_AND_CHANT_CONTINUES"];
 for(const [id,section,position] of [
   ["MC-GLR-040","AO.CARD.003","SEDILIA"],
