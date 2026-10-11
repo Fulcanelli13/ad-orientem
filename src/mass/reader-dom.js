@@ -1,5 +1,6 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
+import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
@@ -248,6 +249,8 @@ const SHELL_STYLE = `
   font-size:clamp(1.45rem,3.8vw,2rem);line-height:1.34;letter-spacing:.035em;color:#fff
 }
 .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"] .ao-line-secondary{margin-top:8px;font-size:.60em;color:#b8c2b9}
+.ao-reader-paragraph[data-chant-phrased="true"] .ao-line-primary,
+.ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:14px;border-left:2px solid rgba(200,217,233,.50);color:#dbe5ee}
 .ao-ritual-trigger{border-radius:.18em;background:linear-gradient(transparent 72%,color-mix(in srgb,var(--ao-mass-accent) 18%,transparent) 72%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .ao-ritual-trigger-live{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--ao-mass-accent) 38%,transparent) 62%);text-shadow:0 0 12px color-mix(in srgb,var(--ao-mass-accent) 10%,transparent);animation:aoRitualWordCue 1.25s ease-out both}
@@ -850,6 +853,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       replaceOnToggle=false;
     }
     if(latinProminent && /\b(?:Hoc est enim Corpus meum|Hic est enim Calix)\b/i.test(primary))kind="CONSECRATION_WORDS";
+    const cueIds=p.sourceCueIds??(p.id?[p.id]:[]);
+    primary=insertChantPhraseBreaks(primary,cueIds);
+    secondary=insertChantPhraseBreaks(secondary,cueIds);
+    alternate=insertChantPhraseBreaks(alternate,cueIds);
     return Object.freeze({
       id:String(p.id ?? index),kind,primary,secondary,alternate,replaceOnToggle,
       active:p.active === true,
@@ -2268,6 +2275,8 @@ export function createReaderDomAdapter({
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
           if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
+          if([p.primary,p.secondary,p.alternate].some(value=>String(value??"").includes("\n")))
+            node.dataset.chantPhrased="true";
           if(decorateThisSection&&!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
             node.dataset.opening="true";openingSet=true;
           }
