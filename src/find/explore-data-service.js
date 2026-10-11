@@ -27,6 +27,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   novenaBridge:moduleUrl("../../data/customs/novena-context-links.v1.json"),
   novenaSot:moduleUrl("../../data/pray/novena-sot.v1.json"),
   approvedPlaceMedia:moduleUrl("../../data/geography/approved-place-media.v1.json"),
+  approvedPlaceGallery:moduleUrl("../../data/geography/approved-place-gallery.v1.json"),
   majorPlaceEditorial:moduleUrl("../../data/geography/major-places-editorial.v1.json"),
   illustratedPlaceGuides:moduleUrl("../../data/shrines/illustrated-place-guides-ireland.v1.json"),
   illustratedFrenchGuides:moduleUrl("../../data/shrines/illustrated-place-guides-france.v1.json"),
@@ -34,7 +35,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
 });
 
 export async function loadExploreDataset({fetchImpl=fetch}={}){
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -46,6 +47,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.sacredPhenomena,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.relatedPlaces,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.approvedPlaceMedia,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.approvedPlaceGallery,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.majorPlaceEditorial,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedPlaceGuides,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedFrenchGuides,{fetchImpl,optional:true}),
@@ -72,7 +74,10 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
       temporalLinks:safeArray(shrines?.temporalLinks),
       sources:safeArray(shrineSources?.sources),
     }),
-    media:Object.freeze({approved:approvedPlaceMedia?.schema==="AO_APPROVED_PLACE_MEDIA_V1"?safeArray(approvedPlaceMedia?.items):[]}),
+    media:Object.freeze({
+      approved:approvedPlaceMedia?.schema==="AO_APPROVED_PLACE_MEDIA_V1"?safeArray(approvedPlaceMedia?.items):[],
+      gallery:approvedPlaceGallery?.schema==="AO_APPROVED_PLACE_GALLERY_V1"?safeArray(approvedPlaceGallery?.items):[],
+    }),
     editorial:Object.freeze({
       featured:majorPlaceEditorial?.schema==="AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1"?safeArray(majorPlaceEditorial?.items):[],
       placeGuides:[...((illustratedPlaceGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedPlaceGuides?.guides):[]),...((illustratedFrenchGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedFrenchGuides?.guides):[]),...((illustratedFrenchR67?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedFrenchR67?.guides):[])].filter(row=>row?.publication==="PUBLISHED"),

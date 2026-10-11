@@ -1,0 +1,43 @@
+name: Explore R68 read-only photograph provenance verification
+
+on:
+  push:
+    branches:
+      - feature/explore-r68-pontmain-reviewed-gallery-20261011
+    paths:
+      - .github/workflows/explore-r68-approved-gallery.yml
+      - tools/acquire-approved-place-gallery-r68.py
+      - data/geography/research/explore-r68-reviewed-photo-sources.v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire-and-verify-review-artifact:
+    if: github.ref == 'refs/heads/feature/explore-r68-pontmain-reviewed-gallery-20261011'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Acquire exact Commons images and verify release metadata
+        run: python tools/acquire-approved-place-gallery-r68.py
+      - name: Verify local assets and metadata against original source ledger
+        run: python tests/explore-r68-gallery-file-audit.py
+      - name: Upload source-checked review photographs and ledger
+        uses: actions/upload-artifact@v4
+        with:
+          name: r68-pontmain-reviewed-gallery
+          path: |
+            assets/approved/place-gallery/*.webp
+            data/geography/approved-place-gallery.v1.json
+          if-no-files-found: error
+          retention-days: 30
