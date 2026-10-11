@@ -362,8 +362,20 @@ try{
       const refused=api.observePriestCeremonialEvent("MC-GLR-040",{
         conditions:["SEDILIA_USED","SEDILIA_USED_AND_CHANT_CONTINUES"]
       });
+      api.showSequence(first.sequence);
+      api.observePriestCeremonialEvent("MC-GLR-040",{
+        conditions:["SEDILIA_USED","SEDILIA_USED_AND_CHANT_CONTINUES"]
+      });
+      await Promise.resolve(api.setPresentationMode("MISSAL"));
+      const hiddenInMissal=api.getObservedPriestEvent();
+      const refusedInMissal=api.observePriestCeremonialEvent("MC-GLR-040",{
+        conditions:["SEDILIA_USED","SEDILIA_USED_AND_CHANT_CONTINUES"]
+      });
+      await Promise.resolve(api.setPresentationMode("LIVE"));
+      const staleOnReturn=api.getObservedPriestEvent();
       return {notObserved,accepted,seated:seated?.cueId??null,
-        visual,scholaUnchanged,stays,cleared,refused};
+        visual,scholaUnchanged,stays,cleared,refused,
+        hiddenInMissal,refusedInMissal,staleOnReturn};
     });
     assert.equal(independentPriest.notObserved,null);
     assert.equal(independentPriest.accepted,true);
@@ -377,6 +389,12 @@ try{
       "Priest state leaked across Gloria to Credo");
     assert.equal(independentPriest.refused,false,
       "Wrong-section priest observation must fail closed");
+    assert.equal(independentPriest.hiddenInMissal,null,
+      "Priest event leaked into Missal reading mode");
+    assert.equal(independentPriest.refusedInMissal,false,
+      "Missal reading may not accept a priest-mode ceremonial event");
+    assert.equal(independentPriest.staleOnReturn,null,
+      "A Mass mode switch cannot replay a previous priest movement");
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
