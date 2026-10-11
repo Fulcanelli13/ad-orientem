@@ -23,7 +23,7 @@ const expected={
  PASS_HISTORIC_SEMANTIC:41,
  PASS_WITH_EXPLICIT_CAVEAT:30,
  PASS_AFTER_CORRECTED_PASSAGE:8,
- INCOMPLETE_ACTION:1,
+ RESEARCH_SUMMARY_INCOMPLETE:1,
  EXCLUDE_STRICT_1962:1,
  HISTORICAL_VARIANT_NOT_CERTIFIED:9,
  REJECT_POSITIVE_ACTION:1
@@ -51,7 +51,9 @@ const at=id=>batch.items.find(x=>x.evidenceRecordId==="ALPH.BK2."+id);
 assert.equal(at("047").semanticStatus,"REANCHOR_REQUIRED");
 assert.match(at("047").reviewFinding,/AFTER petimus|after petimus/i);
 assert.equal(at("042").semanticStatus,"PASS_AFTER_CORRECTED_PASSAGE");
-assert.equal(at("070").semanticStatus,"INCOMPLETE_ACTION");
+assert.equal(at("070").semanticStatus,"RESEARCH_SUMMARY_INCOMPLETE");
+assert.equal(at("070").canonicalCorrectionNeeded,false);
+assert.equal(at("070").researchOnlyDescriptionCorrectionNeeded,true);
 assert.match(at("070").reviewFinding,/five|5|two more/i);
 assert.equal(at("108").semanticStatus,"REJECT_POSITIVE_ACTION");
 assert.match(at("108").reviewFinding,/OMITTED|omitted/i);
