@@ -11,7 +11,7 @@ import json
 import re
 import runpy
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit
 
 from PIL import Image, ImageOps
 
@@ -61,7 +61,9 @@ def fetch_info(title):
     value=lambda k: cleaned((fields.get(k) or {}).get("value"))
     lic=value("LicenseShortName").replace("-"," ").upper().replace("  "," ")
     assert lic=="CC BY SA 4.0", "Commons licence mismatch: "+lic
-    assert value("LicenseUrl").startswith(LICENSE)
+    license_raw=value("LicenseUrl").strip()
+    license_parsed=urlsplit(license_raw)
+    assert license_parsed.scheme in {"http","https"} and license_parsed.hostname=="creativecommons.org" and license_parsed.path.rstrip("/")=="/licenses/by-sa/4.0", "Unexpected Commons licence URL: "+license_raw
     assert "GO69" in value("Artist"), "Photographer identity differs from reviewed source"
     assert re.fullmatch("[0-9a-f]{40}",info["sha1"])
     return info
