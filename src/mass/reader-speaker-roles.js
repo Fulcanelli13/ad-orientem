@@ -16,9 +16,43 @@ const EXPLICIT=Object.freeze({
   "AO.SM.C0089":Object.freeze({role:"PRIEST",evidence:"SUNG_INTONATION",prefix:null,kind:"TEXT"}),
   "AO.SM.C0090":Object.freeze({role:"PRIEST",evidence:"SUNG_INTONATION",prefix:null,kind:"TEXT"}),
 });
+// Explicit section ownership is needed because PUBLIC_TEXT only describes
+// audibility, not which minister is speaking. These scopes are read with
+// the 1962 Ordinary's speaking order; contingent ministries remain conditional.
+const BLOCK_ACTORS=Object.freeze({
+  "AO.SM.B001":"PRIEST",
+  "AO.SM.B005":"PRIEST",
+  "AO.SM.B006":"MINISTERS",
+  "AO.SM.B007":"MINISTERS",
+  "AO.SM.B008":"PRIEST",
+  "AO.SM.B009":"PRIEST",
+  "AO.SM.B013":"PRIEST",
+  "AO.SM.B018":"PRIEST",
+  "AO.SM.B025":"GOSPEL_PROCLAIMER",
+  "AO.SM.B029":"PRIEST",
+  "AO.SM.B039":"PRIEST",
+  "AO.SM.B041":"PRIEST",
+  "AO.SM.B044":"PRIEST",
+  "AO.SM.B058":"PRIEST",
+  "AO.SM.B062":"PRIEST",
+  "AO.SM.B063":"PRIEST",
+  "AO.SM.B080":"PRIEST",
+  "AO.SM.B081":"RESPONDERS",
+  "AO.SM.B082":"PRIEST",
+  "AO.SM.B087":"PRIEST",
+  "AO.SM.B092":"PRIEST",
+  "AO.SM.B094":"PRIEST",
+  "AO.SM.B095":"PRIEST",
+});
+const VERSICLE_ACTORS=Object.freeze({
+  // Dismissal/Gospel dialogues belong to the celebrant at Missa Cantata,
+  // but to the sacred minister where prescribed at Solemn Mass.
+  "AO.SM.B024":"GOSPEL_PROCLAIMER",
+  "AO.SM.B090":"DISMISSAL_MINISTER",
+});
 export const SUNG_ORDINARY_INTONATION_CUES=Object.freeze(["AO.SM.C0053","AO.SM.C0054","AO.SM.C0089","AO.SM.C0090"]);
 
-export function resolveOrdinarySpeaker(unit,{form="SUNG"}={}){
+export function resolveOrdinarySpeaker(unit,{form="SUNG",blockId=null}={}){
   const cueId=String(unit?.cue_id??"");
   const override=EXPLICIT[cueId];
   if(override)return override;
@@ -32,9 +66,15 @@ export function resolveOrdinarySpeaker(unit,{form="SUNG"}={}){
   if(clock==="MINISTER_RESPONSE")return Object.freeze({role:"MINISTERS",evidence:"CANONICAL_RESPONSE_CLOCK"});
   if(clock==="USER_RESPONSE")return Object.freeze({role:"RESPONDERS",evidence:"CANONICAL_RESPONSE_CLOCK"});
   if(clock==="PRIEST_ACTION")return Object.freeze({role:"PRIEST_ACTION",evidence:"CANONICAL_ACTION_CLOCK"});
+  if(clock==="GUIDE")return Object.freeze({role:"EDITORIAL_GUIDE",evidence:"CANONICAL_GUIDE_CLOCK"});
+  if(clock==="PUBLIC_TEXT" && BLOCK_ACTORS[String(blockId)]){
+    return Object.freeze({role:BLOCK_ACTORS[String(blockId)],evidence:"1962_BLOCK_CEREMONIAL_SCOPE"});
+  }
   // V. by itself specifies a versicle, not necessarily the celebrant:
   // Gospel ministers vary between Low, Missa Cantata and Solemn forms.
-  if(/^(?:℣\.|V\.)\s*/u.test(text))return Object.freeze({role:"VERSICLE_LEADER",evidence:"EXPLICIT_V_PREFIX"});
+  if(/^(?:℣\.|V\.)\s*/u.test(text)){
+    return Object.freeze({role:VERSICLE_ACTORS[String(blockId)]??"PRIEST",evidence:"1962_VERSICLE_CEREMONIAL_SCOPE"});
+  }
   return Object.freeze({role:"UNRESOLVED",evidence:"NO_SPEAKER_CLAIM"});
 }
 
