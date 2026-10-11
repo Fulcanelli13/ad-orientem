@@ -441,6 +441,64 @@ try{
     assert.equal(priestProper.communionStation,null,
       "Asynchronous track placeholder must never show as a priest station");
     assert.equal(priestProper.scholaUnchanged,true);
+    // Five exact observer-only priest events must never be driven by the
+    // Schola or card transitions. Verify the four supported by this
+    // Missa Cantata fixture, and the Solemn-only Gradual is refused here.
+    const priestObservedFive=await page.evaluate(async()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const findBlock=id=>api.model.cards.find(c=>c.blocks?.some(b=>b.blockId===id));
+      const goto=id=>api.showSequence(findBlock(id).sequence);
+      const priest={observedActor:"PRIEST"};
+      goto("AO.SM.B014");
+      const noIntroit=api.observePriestCeremonialEvent("MC-OBS-INT-POS");
+      const trueIntroit=api.observePriestCeremonialEvent("MC-OBS-INT-POS",{
+        ...priest,observedPosition:"ALTAR_EPISTLE_MISSAL"});
+      const introitCue=api.getObservedPriestEvent()?.cueId??null;
+      goto("AO.SM.B021");
+      const noGradualInCantata=api.observePriestCeremonialEvent("MC-OBS-GRADUAL",{
+        ...priest,observedDelivery:"READ"});
+      goto("AO.SM.B030");
+      const choirBefore=api.getScholaState()?.trackId??null;
+      const noOffertory=api.observePriestCeremonialEvent("MC-OBS-OFFERTORY",priest);
+      const trueOffertory=api.observePriestCeremonialEvent("MC-OBS-OFFERTORY",{
+        ...priest,observedDelivery:"READ"});
+      const offState=api.getObservedPriestEvent();
+      const choirAfter=api.getScholaState()?.trackId??null;
+      goto("AO.SM.B085");
+      const noTurn=api.observePriestCeremonialEvent("MC-OBS-PC-TURN",priest);
+      const trueTurn=api.observePriestCeremonialEvent("MC-OBS-PC-TURN",{
+        ...priest,observedAction:"TURN_TO_PEOPLE"});
+      const turnCue=api.getObservedPriestEvent()?.cueId??null;
+      goto("AO.SM.B088");
+      const noFinalTurn=api.observePriestCeremonialEvent("MC-OBS-DISMISS-TURN",{
+        ...priest,conditions:["ORATIO_SUPER_POPULUM_PRESENT"],
+        observedAction:"TURN_TO_PEOPLE"});
+      const finalTurn=api.observePriestCeremonialEvent("MC-OBS-DISMISS-TURN",{
+        ...priest,conditions:["ORATIO_SUPER_POPULUM_PRESENT","ORATIO_SUPER_POPULUM_COMPLETED"],
+        observedAction:"TURN_TO_PEOPLE"});
+      const finalCue=api.getObservedPriestEvent()?.cueId??null;
+      return {noIntroit,trueIntroit,introitCue,noGradualInCantata,
+        noOffertory,trueOffertory,offCue:offState?.cueId??null,
+        offFaithfulPosture:offState?.faithfulPosture??null,
+        choirUnchanged:choirBefore===choirAfter,
+        noTurn,trueTurn,turnCue,noFinalTurn,finalTurn,finalCue};
+    });
+    assert.equal(priestObservedFive.noIntroit,false);
+    assert.equal(priestObservedFive.trueIntroit,true);
+    assert.equal(priestObservedFive.introitCue,"AO.SM.C0042");
+    assert.equal(priestObservedFive.noGradualInCantata,false);
+    assert.equal(priestObservedFive.noOffertory,false);
+    assert.equal(priestObservedFive.trueOffertory,true);
+    assert.equal(priestObservedFive.offCue,"AO.SM.C0109");
+    assert.equal(priestObservedFive.offFaithfulPosture,null,
+      "Priest's private Offertory may not trigger faithful SIT");
+    assert.equal(priestObservedFive.choirUnchanged,true);
+    assert.equal(priestObservedFive.noTurn,false);
+    assert.equal(priestObservedFive.trueTurn,true);
+    assert.equal(priestObservedFive.turnCue,"AO.SM.C0250");
+    assert.equal(priestObservedFive.noFinalTurn,false);
+    assert.equal(priestObservedFive.finalTurn,true);
+    assert.equal(priestObservedFive.finalCue,"AO.SM.C0256");
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
