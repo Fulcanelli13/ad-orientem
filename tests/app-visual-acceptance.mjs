@@ -176,12 +176,17 @@ try{
     suppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     canonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
+    todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
+    todayV2Sections:document.querySelectorAll(".aoTodayV2Below .aoTodayV2Zone").length,
+    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2Below [data-home-calendar]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.equal(homeAudit.canonicalIcons,3,"Home Coming Up did not render all canonical embedded symbols");
+  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===3 && homeAudit.todayV2CalendarLinks>=1,
+    "canonical Today v2 must render three sections and its Calendar handoffs: "+JSON.stringify(homeAudit));
+  assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
   assert.equal(homeAudit.presentationFx?.legacyCinematicAvailable,true,"v43.12 cinematic owner is not bridged into the modular shell");
