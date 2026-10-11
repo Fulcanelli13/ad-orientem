@@ -13,13 +13,75 @@ const mediaAudit=read("data/shrines/research/sacred-geography-shrine-image-audit
 assert.equal(corpus.shrines.length,216,"expected canonical 216 shrine baseline, not world coverage");
 assert.ok(corpus.shrines.every(s=>s.origin_summary?.trim()),"a shrine intro is missing");
 assert.ok(corpus.shrines.every(s=>s.source_ids?.length),"a shrine has no identifiable source");
+// R60 adds twenty concise, source-linked principal Place synopses. Keep the
+// original 38 fuller profiles on their stronger editorial-length threshold,
+// while requiring accurate bilingual text and traceable evidence for all 58.
+const R60_MAJOR_PLACE_IDS=new Set([
+  "shrine:FR:lourdes-our-lady","shrine:FR:paray-sacred-heart",
+  "shrine:FR:chartres-notre-dame","shrine:FR:sainte-anne-d-auray",
+  "shrine:IE:knock","shrine:MU:pere-laval",
+  "shrine:DE:altoetting-our-lady","shrine:CA:sainte-anne-de-beaupre",
+  "shrine:IT:loreto-holy-house","shrine:IT:pompei-rosary",
+  "shrine:PL:jasna-gora-czestochowa","shrine:GB:walsingham-our-lady",
+  "shrine:UG:namugongo-martyrs","shrine:MX:guadalupe-tepeyac",
+  "shrine:BR:aparecida-our-lady","shrine:PT:fatima",
+  "shrine:FR:rue-du-bac","shrine:20261009:FR:basilique-sainte-therese-lisieux",
+  "shrine:20261009:IT:basilica-san-francesco-assisi",
+  "shrine:20261009:IN:basilica-bom-jesus-old-goa",
+]);
+// Preserve the separately reviewed original 38 substantial introductions.
+// R61 adds concise, bilingual map synopses with longer, source-linked story
+// chapters owned by its own editorial dataset and tests: do not apply the
+// 110-character full-introduction gate to those deliberately short previews.
+const ORIGINAL_38=new Set([
+  "shrine:IT:sacro-monte-di-varallo",
+  "shrine:FR:sanctuary-of-our-lady-of-rocamadour",
+  "shrine:ES:santa-maria-de-montserrat-abbey",
+  "shrine:MT:national-shrine-of-our-lady-of-ta-pinu",
+  "shrine:PL:divine-mercy-sanctuary-krakow-agiewniki",
+  "shrine:HR:national-shrine-of-saint-joseph-karlovac",
+  "shrine:LT:divine-mercy-sanctuary-vilnius",
+  "shrine:AR:basilica-of-our-lady-of-lujan",
+  "shrine:IN:basilica-of-our-lady-of-good-health-vailankanni",
+  "shrine:IN:basilica-of-our-lady-of-lourdes-poondi",
+  "shrine:LK:shrine-of-our-lady-of-madhu",
+  "shrine:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+  "shrine:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+  "shrine:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+  "shrine:PH:padre-pio-shrine-santo-tomas-batangas",
+  "shrine:PH:national-shrine-of-saint-joseph-mandaue",
+  "shrine:DZ:basilica-of-notre-dame-dafrique-algiers",
+  "shrine:SN:basilica-of-our-lady-of-deliverance-popenguine",
+  "shrine:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+  "shrine:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+  "shrine:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+  "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+  "shrine:LB:shrine-of-our-lady-of-lebanon-harissa",
+  "shrine:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+  "shrine:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+  "shrine:HR:national-shrine-of-our-lady-of-marija-bistrica",
+  "shrine:IL:church-of-the-primacy-of-saint-peter-tabgha",
+  "shrine:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+  "shrine:IL:church-of-saint-peter-jaffa",
+  "shrine:LK:saint-anne-s-national-shrine-talawila",
+  "shrine:IL:basilica-of-the-annunciation-nazareth",
+  "shrine:IL:basilica-of-the-transfiguration-mount-tabor",
+  "shrine:IL:church-of-the-multiplication-tabgha",
+  "shrine:IL:church-of-the-visitation-ein-karem",
+  "shrine:IL:dominus-flevit-church-mount-of-olives",
+  "shrine:ES:real-monasterio-santa-maria-guadalupe",
+  "shrine:IL:capernaum-saint-peter-memorial",
+  "shrine:VN:our-lady-la-vang-national-shrine"
+]);
 const updated=corpus.shrines.filter(s=>Object.hasOwn(s,"origin_summary_fr"));
-assert.equal(updated.length,corpus.shrines.length,"every canonical shrine requires a nonempty French origin narrative");
+assert.equal(updated.length,corpus.shrines.length,"every canonical shrine must have a French origin narrative");
+for(const id of ORIGINAL_38)assert.ok(updated.some(s=>s.shrine_id===id),id+" original bilingual introduction disappeared");
 const sourceMap=new Map(sourceRegistry.sources.map(s=>[s.id,s]));
 assert.equal(sourceMap.size,sourceRegistry.sources.length,"source IDs must be unique");
-assert.ok(sourceRegistry.sources.length>=355,"the 355 established original-source records must be retained");
+assert.ok(sourceRegistry.sources.length>=355,"the 355 established source records must be retained while future sources are added");
 for(const site of updated){
-  assert.ok(site.origin_summary.trim().length>=90&&site.origin_summary_fr.trim().length>=90,site.shrine_id+" has a placeholder synopsis");
+  const minimum=ORIGINAL_38.has(site.shrine_id)?110:(R60_MAJOR_PLACE_IDS.has(site.shrine_id)?100:90);
+  assert.ok(site.origin_summary.length>=minimum&&site.origin_summary_fr.length>=minimum,site.shrine_id+" has a placeholder synopsis");
   assert.notEqual(site.origin_summary,site.origin_summary_fr,site.shrine_id+" was not translated");
   assert.ok(site.source_ids.some(id=>sourceMap.get(id)?.url?.startsWith("https://")),site.shrine_id+" has no linked full original");
   assert.ok(!/^\s*(?:Lorem ipsum|TODO|TBD)/i.test(site.origin_summary),site.shrine_id+" has editorial text instead of a brief");
@@ -29,7 +91,7 @@ assert.equal(projected.length,216);
 for(const site of updated){
   const item=projected.find(p=>p.source_id===site.shrine_id);
   assert.ok(item&&item.summary===site.origin_summary&&item.summary_fr===site.origin_summary_fr,"bilingual projection lost "+site.shrine_id);
-  assert.ok(item.source_links.length>=1,"a canonical original source must remain clickable: "+site.shrine_id);
+  assert.ok(item.source_links.length>=(ORIGINAL_38.has(site.shrine_id)?2:1),"source-backed bilingual profile must expose its original provenance: "+site.shrine_id);
 }
 // Exercise the actual preview and expanded place source renderer in French.
 const testPlace="place:FR:sanctuary-of-our-lady-of-rocamadour";
@@ -51,4 +113,4 @@ assert.equal(mediaAudit.counts.curated_place_photo_links,0,"do not claim undocum
 assert.equal(mediaAudit.sites.length,216);
 assert.deepEqual(new Set(mediaAudit.sites.map(s=>s.shrine_id)),new Set(corpus.shrines.map(s=>s.shrine_id)));
 assert.ok(mediaAudit.sites.every(s=>s.photo_status==="NOT_CURATED"&&s.approved_asset===null));
-console.log("PASS 216 bilingual shrine origins, at least 355 registered sources, linked originals, and frozen 2026-10-10 photo-research audit");
+console.log("PASS all 216 bilingual shrines, original 38/R60 narrative thresholds, 355-source floor, linked originals and frozen photo research audit");
