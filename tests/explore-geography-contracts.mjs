@@ -30,7 +30,7 @@ for (const area of seed.geoAreas) {
 }
 assert.deepEqual(
   seed.geoAreas.filter(area => area.area_type === "country").map(area => area.codes.iso_alpha2),
-  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN"],
+  ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM"],
 );
 
 const culturalScope = seed.geoAreas.find(area => area.geo_area_id === "geo:culture:french-catholic-world");
@@ -49,8 +49,18 @@ for (const place of seed.places) {
 }
 const r65PublishedPlaces=new Set(["place:IE:croagh-patrick-murrisk-pilgrimage-base","place:IE:st-peters-oliver-plunkett-drogheda","place:IE:solas-bhride-kildare"]);
 for(const id of r65PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R65 Place lost");
+const r70PublishedPlaces=new Set([
+ "place:SG:church-our-lady-of-lourdes-ophir",
+ "place:SG:nativity-blessed-virgin-mary-hougang",
+ "place:MA:cathedrale-saint-pierre-rabat",
+ "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+ "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+ "place:ZM:archdiocese-lusaka-marian-shrine",
+]);
+for(const id of r70PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R70 Place lost");
+const laterPublishedPlaces=new Set([...r65PublishedPlaces,...r70PublishedPlaces]);
 assert.deepEqual(
-  seed.places.filter(place=>!r65PublishedPlaces.has(place.place_id)).map(place => place.place_id).sort(),
+  seed.places.filter(place=>!laterPublishedPlaces.has(place.place_id)).map(place => place.place_id).sort(),
   [
     "place:FR:sanctuaire-notre-dame-de-laghet",
     "place:FR:sanctuaire-notre-dame-de-lourdes",
