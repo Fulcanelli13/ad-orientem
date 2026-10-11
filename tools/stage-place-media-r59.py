@@ -55,7 +55,7 @@ def metadata(title,expected):
     url=f("LicenseUrl")
     p=urlparse(url)
     expected_tail="/licenses/by-sa/"+expected.rsplit("-",1)[-1]+"/"
-    if p.hostname!="creativecommons.org" or not p.path.startswith(expected_tail):
+    if p.hostname!="creativecommons.org" or p.path.rstrip("/")!=expected_tail.rstrip("/"):
         raise ValueError("Unmatched original license URL "+url)
     img=inf.get("thumburl") or inf.get("url")
     if urlparse(img).hostname not in {"upload.wikimedia.org","thumb.wikimedia.org"}:
