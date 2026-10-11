@@ -1,0 +1,885 @@
+{
+  "schema": "AO_ILLUSTRATED_PLACE_GUIDES_V1",
+  "version": "1.0.0",
+  "reviewed_on": "2026-10-11",
+  "scope": "Explore R67 source-backed French pilgrimage batch",
+  "source_policy": "Original institutional sources on every claim",
+  "media_policy": "APPROVED_PLACE_MEDIA_ONLY",
+  "guides": [
+    {
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.therese-de-lisieux.catholique.fr/",
+      "region_en": "Lisieux · Calvados · Normandy",
+      "region_fr": "Lisieux · Calvados · Normandie",
+      "subtitle_en": "From the Carmel to the twentieth-century basilica of Saint Thérèse.",
+      "subtitle_fr": "Du Carmel à la basilique du XXe siècle dédiée à sainte Thérèse.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "The making of a pilgrimage",
+          "title_fr": "La naissance d'un pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Saint Thérèse died in Lisieux in 1897; the publication of Histoire d'une âme in 1898 made her testimony widely known. Pilgrims first visited her grave and the Carmel. After her canonisation in 1925, a new basilica was planned to welcome far greater numbers of pilgrims.",
+              "fr": "Sainte Thérèse mourut à Lisieux en 1897 ; la publication d'Histoire d'une âme en 1898 fit connaître son témoignage. Les pèlerins visitèrent d'abord sa tombe et le Carmel. Après sa canonisation en 1925, on projeta une nouvelle basilique pour accueillir des foules bien plus nombreuses.",
+              "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+            },
+            {
+              "en": "The new church was begun in 1929 under architect Louis-Marie Cordonnier. Cardinal Pacelli blessed it in 1937; building work was interrupted by the war and the basilica was consecrated in 1954. This is a modern pilgrimage monument, distinct from Thérèse's own Carmelite convent.",
+              "fr": "La nouvelle église fut commencée en 1929 sous la direction de l'architecte Louis-Marie Cordonnier. Le cardinal Pacelli la bénit en 1937 ; les travaux furent interrompus par la guerre et la basilique consacrée en 1954. Ce monument de pèlerinage moderne est distinct du couvent où Thérèse vécut.",
+              "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+            }
+          ]
+        },
+        {
+          "id": "places",
+          "title_en": "The basilica and the places of her life",
+          "title_fr": "La basilique et les lieux de sa vie",
+          "paragraphs": [
+            {
+              "en": "The basilica's dome, mosaics, crypt and reliquary give architectural expression to the pilgrimage. But the official sanctuary itinerary also visits the Carmel, Les Buissonnets family house and the cathedral: these are separate physical places and should not be mapped as rooms of the basilica.",
+              "fr": "La coupole, les mosaïques, la crypte et le reliquaire donnent forme architecturale au pèlerinage. Mais le parcours officiel comprend aussi le Carmel, la maison familiale des Buissonnets et la cathédrale : ce sont des lieux distincts, non des salles de la basilique.",
+              "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+            }
+          ]
+        },
+        {
+          "id": "prayer",
+          "title_en": "The Little Way in practice",
+          "title_fr": "La petite voie dans la prière",
+          "paragraphs": [
+            {
+              "en": "Saint Thérèse's spiritual teaching gives the visit a purpose beyond sightseeing: trust in God's mercy, charity and the simplicity of the Little Way. The official summer 2026 programme offered guided pilgrim walks and prayer by the reliquary; those programme times are not year-round opening guarantees.",
+              "fr": "L'enseignement spirituel de sainte Thérèse donne à la visite un but autre que touristique : confiance en la miséricorde de Dieu, charité et simplicité de la petite voie. Le programme estival officiel de 2026 proposait des parcours guidés et la prière auprès du reliquaire ; ces horaires ne sont pas des garanties valables toute l'année.",
+              "source_url": "https://www.therese-de-lisieux.catholique.fr/en/lhistoire/la-spiritualite-de-therese/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "basilica",
+          "name_en": "Basilica and reliquary",
+          "name_fr": "Basilique et reliquaire",
+          "description_en": "Twentieth-century monumental sanctuary for pilgrims.",
+          "description_fr": "Sanctuaire monumental du XXe siècle destiné aux pèlerins.",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+        },
+        {
+          "id": "carmel",
+          "name_en": "Carmel chapel",
+          "name_fr": "Chapelle du Carmel",
+          "description_en": "Separate convent where Thérèse lived the religious life.",
+          "description_fr": "Couvent distinct où Thérèse vécut sa vie religieuse.",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+        },
+        {
+          "id": "buissonnets",
+          "name_en": "Les Buissonnets",
+          "name_fr": "Les Buissonnets",
+          "description_en": "The Martin family's house in Lisieux, not part of the basilica.",
+          "description_fr": "Maison de la famille Martin à Lisieux, distincte de la basilique.",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1897",
+          "title_en": "Death of Thérèse",
+          "title_fr": "Mort de Thérèse",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1898",
+          "title_en": "Histoire d'une âme published",
+          "title_fr": "Publication d'Histoire d'une âme",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1925",
+          "title_en": "Canonisation",
+          "title_fr": "Canonisation",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1929",
+          "title_en": "Basilica work begins",
+          "title_fr": "Début des travaux de la basilique",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1937",
+          "title_en": "Blessing by Cardinal Pacelli",
+          "title_fr": "Bénédiction par le cardinal Pacelli",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1954",
+          "title_en": "Consecration of the basilica",
+          "title_fr": "Consécration de la basilique",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf",
+          "when_kind": "HISTORICAL_YEAR"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "lisieux-annual",
+          "label_en": "Saint Thérèse — annual celebrations",
+          "label_fr": "Sainte Thérèse — célébrations annuelles",
+          "date_kind": "CURRENT_YEAR_SOURCE_REQUIRED",
+          "details_en": "Consult the sanctuary for the year's feast programme; dates may differ between the 1962 and modern calendars.",
+          "details_fr": "Consulter le programme annuel du sanctuaire ; les dates peuvent différer entre le calendrier de 1962 et le calendrier actuel.",
+          "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2022/02/Dossier-de-Presse.pdf"
+        }
+      ],
+      "visit": {
+        "en": "The basilica, Carmel, family home and cathedral require distinct visiting arrangements. Confirm current access and the guided-visit programme.",
+        "fr": "La basilique, le Carmel, la maison familiale et la cathédrale ont des modalités de visite distinctes. Vérifier les accès et le programme des visites guidées.",
+        "source_url": "https://www.therese-de-lisieux.catholique.fr/wp-content/uploads/2026/06/Programme-de-lete-page-a-page.pdf"
+      }
+    },
+    {
+      "place_id": "place:FR:chartres-notre-dame",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.cathedrale-chartres.org/",
+      "region_en": "Chartres · Eure-et-Loir · France",
+      "region_fr": "Chartres · Eure-et-Loir · France",
+      "subtitle_en": "Marian pilgrimage through the veil, the ancient crypt, stained glass and labyrinth.",
+      "subtitle_fr": "Pèlerinage marial autour du Voile, de la crypte ancienne, des vitraux et du labyrinthe.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "heritage",
+          "title_en": "The veil and the ancient cathedral",
+          "title_fr": "Le Voile et l'ancienne cathédrale",
+          "paragraphs": [
+            {
+              "en": "The cathedral connects its Marian pilgrimage to the relic known as the Voile de la Vierge, said to have reached Chartres through Charles the Bald around 876. Its association with Mary's clothing is a devotional attribution, not a proven archaeological identification.",
+              "fr": "La cathédrale rattache le pèlerinage marial à la relique appelée Voile de la Vierge, qui serait parvenue à Chartres par Charles le Chauve vers 876. Son attribution au vêtement de Marie relève de la tradition dévotionnelle, non d'une identification archéologique démontrée.",
+              "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/",
+              "qualifier": "RELIC_TRADITION"
+            },
+            {
+              "en": "A fire on 10 June 1194 destroyed much of the earlier cathedral, but the veil was reported saved below ground. The present Gothic cathedral was built approximately from 1194 to 1230, over earlier fabric that includes Fulbert's eleventh-century crypt.",
+              "fr": "Un incendie du 10 juin 1194 détruisit une grande partie de l'ancienne cathédrale, mais le Voile aurait été sauvé dans l'église basse. La cathédrale gothique actuelle fut construite approximativement entre 1194 et 1230, sur des structures antérieures comprenant la crypte de Fulbert au XIe siècle.",
+              "source_url": "https://www.cathedrale-chartres.org/cathedrale/monument/lhistoire/les-grandes-dates/"
+            }
+          ]
+        },
+        {
+          "id": "images",
+          "title_en": "Scripture in stone and coloured glass",
+          "title_fr": "L'Écriture dans la pierre et les vitraux",
+          "paragraphs": [
+            {
+              "en": "The portals and stained-glass windows lead pilgrims through Scripture and the story of salvation. Within the cathedral, the veil, Notre-Dame du Pilier and Notre-Dame de la Belle Verrière provide distinct places of Marian prayer, while the Gothic building itself remains one physical cathedral.",
+              "fr": "Les portails et les vitraux conduisent les pèlerins à travers l'Écriture et l'histoire du salut. Dans la cathédrale, le Voile, Notre-Dame du Pilier et Notre-Dame de la Belle Verrière offrent des lieux distincts de prière mariale, mais l'édifice gothique demeure un même lieu physique.",
+              "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/pelerinages-dun-jour/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrim",
+          "title_en": "The labyrinth and the pilgrimage processions",
+          "title_fr": "Le labyrinthe et les pèlerinages",
+          "paragraphs": [
+            {
+              "en": "The thirteenth-century pavement labyrinth is described by the cathedral as a path of interior pilgrimage. Organised pilgrimages, including Notre-Dame de Chrétienté, visit Chartres, but individual devotional practices and access to the labyrinth must be checked against the cathedral's current rules.",
+              "fr": "Le labyrinthe pavé du XIIIe siècle est présenté par la cathédrale comme un chemin de pèlerinage intérieur. Des pèlerinages organisés, dont Notre-Dame de Chrétienté, rejoignent Chartres, mais les pratiques individuelles et l'accès au labyrinthe doivent être vérifiés selon les règles actuelles.",
+              "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "veil",
+          "name_en": "Voile de la Vierge",
+          "name_fr": "Voile de la Vierge",
+          "description_en": "Traditionally identified relic associated with the Incarnation.",
+          "description_fr": "Relique traditionnellement identifiée, associée à l'Incarnation.",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/pelerinages-dun-jour/"
+        },
+        {
+          "id": "crypt",
+          "name_en": "Crypt of Fulbert",
+          "name_fr": "Crypte de Fulbert",
+          "description_en": "Lower church preserving the earlier medieval sanctuary.",
+          "description_fr": "Église basse conservant le sanctuaire médiéval antérieur.",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/monument/lieu-dexception/la-crypte/"
+        },
+        {
+          "id": "pilier",
+          "name_en": "Notre-Dame du Pilier",
+          "name_fr": "Notre-Dame du Pilier",
+          "description_en": "Marian image and prayer location inside the cathedral.",
+          "description_fr": "Image mariale et lieu de prière dans la cathédrale.",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/pelerinages-dun-jour/"
+        },
+        {
+          "id": "labyrinth",
+          "name_en": "Nave labyrinth",
+          "name_fr": "Labyrinthe de la nef",
+          "description_en": "Medieval pavement proposed for interior pilgrimage.",
+          "description_fr": "Pavement médiéval proposé comme pèlerinage intérieur.",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "c.876",
+          "title_en": "Traditional gift of the veil",
+          "title_fr": "Don traditionnel du Voile",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/",
+          "when_kind": "APPROXIMATE_HISTORICAL_YEAR"
+        },
+        {
+          "when": "1020–1024",
+          "title_en": "Fulbert crypt constructed",
+          "title_fr": "Construction de la crypte de Fulbert",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/monument/lieu-dexception/la-crypte/",
+          "when_kind": "HISTORICAL_RANGE"
+        },
+        {
+          "when": "1194-06-10",
+          "title_en": "Fire of the earlier cathedral",
+          "title_fr": "Incendie de l'ancienne cathédrale",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/monument/lhistoire/les-grandes-dates/",
+          "when_kind": "HISTORICAL_DATE"
+        },
+        {
+          "when": "1194–c.1230",
+          "title_en": "Present Gothic cathedral built",
+          "title_fr": "Construction de la cathédrale gothique",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/monument/lhistoire/les-grandes-dates/",
+          "when_kind": "HISTORICAL_RANGE"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "chartres-pentecost",
+          "label_en": "Notre-Dame de Chrétienté pilgrimage",
+          "label_fr": "Pèlerinage de Notre-Dame de Chrétienté",
+          "date_kind": "VARIABLE_WITH_LITURGICAL_CALENDAR",
+          "details_en": "Annual pilgrimage associated with Pentecost; consult current organisers for verified dates and route.",
+          "details_fr": "Pèlerinage annuel lié à la Pentecôte ; consulter les organisateurs pour les dates et l'itinéraire confirmés.",
+          "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/"
+        }
+      ],
+      "visit": {
+        "en": "Verify the current pilgrimage programme, relic access and labyrinth arrangements with the cathedral.",
+        "fr": "Vérifier le programme actuel, l'accès à la relique et au labyrinthe auprès de la cathédrale.",
+        "source_url": "https://www.cathedrale-chartres.org/cathedrale/pelerinages/pelerinages-dun-jour/"
+      }
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/",
+      "region_en": "Paris · 140 rue du Bac",
+      "region_fr": "Paris · 140 rue du Bac",
+      "subtitle_en": "Saint Catherine Labouré and the chapel of the Miraculous Medal.",
+      "subtitle_fr": "Sainte Catherine Labouré et la chapelle de la Médaille miraculeuse.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "catherine",
+          "title_en": "Catherine Labouré's 1830 Marian visions",
+          "title_fr": "Les visions mariales de Catherine Labouré",
+          "paragraphs": [
+            {
+              "en": "Catherine Labouré entered the Daughters of Charity's motherhouse in 1830 and reported Marian encounters during the night of 18–19 July and on 27 November, followed by another in December. The November account inspired the design of the Miraculous Medal and its subsequent devotional diffusion.",
+              "fr": "Catherine Labouré entra à la maison mère des Filles de la Charité en 1830 et rapporta des rencontres mariales dans la nuit du 18 au 19 juillet, le 27 novembre et en décembre. Le récit de novembre inspira le modèle de la Médaille miraculeuse et sa diffusion dévotionnelle.",
+              "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/langues/english/histoire-dune-famille-gb/",
+              "qualifier": "REPORTED_VISION"
+            },
+            {
+              "en": "After her novitiate, Catherine spent decades caring for poor and elderly people in Reuilly. Her biography joins Marian devotion to the Vincentian charism of practical charity; the place should not be reduced to the medal alone.",
+              "fr": "Après son noviciat, Catherine passa des décennies au service des pauvres et des personnes âgées à Reuilly. Sa vie unit la dévotion mariale au charisme vincentien de la charité concrète ; le lieu ne se réduit pas à la seule médaille.",
+              "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/langues/english/histoire-dune-famille-gb/"
+            }
+          ]
+        },
+        {
+          "id": "chapel",
+          "title_en": "The chapel and its treasured relics",
+          "title_fr": "La chapelle et ses reliques",
+          "paragraphs": [
+            {
+              "en": "The motherhouse at 140 rue du Bac has been associated with the Daughters of Charity since 1815. The chapel predates the events of 1830, was enlarged in 1849 and later restored, so today's layout is not an unchanged reproduction of its nineteenth-century appearance.",
+              "fr": "La maison mère du 140 rue du Bac est liée aux Filles de la Charité depuis 1815. La chapelle précède les événements de 1830, fut agrandie en 1849 puis restaurée ; son plan actuel n'est donc pas une reproduction inchangée de son aspect au XIXe siècle.",
+              "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/la-chapelle-aujourdhui/"
+            },
+            {
+              "en": "The chapel preserves the remains of Saint Catherine Labouré, relics of Saint Louise de Marillac and the heart of Saint Vincent de Paul. These physically venerated remains belong to the history of their custodians and should not be confused with artistic recreations of the Marian visions.",
+              "fr": "La chapelle conserve le corps de sainte Catherine Labouré, des reliques de sainte Louise de Marillac et le cœur de saint Vincent de Paul. Ces restes vénérés relèvent de l'histoire de leur conservation et ne doivent pas être confondus avec les représentations artistiques des visions mariales.",
+              "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/la-chapelle-aujourdhui/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrim",
+          "title_en": "The medal and the pilgrim's prayer",
+          "title_fr": "La médaille et la prière du pèlerin",
+          "paragraphs": [
+            {
+              "en": "The Association of the Miraculous Medal was approved under Pope Saint Pius X in 1909. Its aims include devotion to Mary and support for missionary and religious vocations. The chapel continues to offer prayer and pilgrim hospitality with separate arrangements for visiting groups.",
+              "fr": "L'Association de la Médaille miraculeuse fut approuvée sous saint Pie X en 1909. Ses buts comprennent la dévotion à Marie et le soutien aux vocations missionnaires et religieuses. La chapelle propose toujours la prière et l'accueil des pèlerins, avec des modalités distinctes pour les groupes.",
+              "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/la-chapelle-aujourdhui/association-de-la-medaille-miraculeuse/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "altar",
+          "name_en": "Chapel of the Marian visions",
+          "name_fr": "Chapelle des visions mariales",
+          "description_en": "The community chapel associated with Catherine's 1830 accounts.",
+          "description_fr": "Chapelle de la communauté liée aux récits de Catherine en 1830.",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/origine-et-transformations/"
+        },
+        {
+          "id": "catherine",
+          "name_en": "Remains of Saint Catherine Labouré",
+          "name_fr": "Corps de sainte Catherine Labouré",
+          "description_en": "Transferred to the motherhouse chapel in 1933.",
+          "description_fr": "Transféré à la chapelle de la maison mère en 1933.",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/langues/english/histoire-dune-famille-gb/"
+        },
+        {
+          "id": "vincentian",
+          "name_en": "Saint Vincent and Saint Louise relics",
+          "name_fr": "Reliques des saints Vincent et Louise",
+          "description_en": "Separate relic veneration within the chapel.",
+          "description_fr": "Vénération des reliques au sein de la chapelle.",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/la-chapelle-aujourdhui/"
+        },
+        {
+          "id": "entrance",
+          "name_en": "140 rue du Bac pilgrim entrance",
+          "name_fr": "Accueil des pèlerins au 140 rue du Bac",
+          "description_en": "The official reception point for visits and groups.",
+          "description_fr": "Le lieu d'accueil officiel des visites et des groupes.",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/informations-pratiques/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1815",
+          "title_en": "Daughters of Charity at rue du Bac",
+          "title_fr": "Présence des Filles de la Charité rue du Bac",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/la-chapelle-aujourdhui/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1830-07-18/19",
+          "title_en": "First Marian encounter reported",
+          "title_fr": "Première rencontre mariale rapportée",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/langues/english/histoire-dune-famille-gb/",
+          "when_kind": "HISTORICAL_NIGHT"
+        },
+        {
+          "when": "1830-11-27",
+          "title_en": "Vision associated with the medal",
+          "title_fr": "Vision associée à la médaille",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/langues/english/histoire-dune-famille-gb/",
+          "when_kind": "HISTORICAL_DATE"
+        },
+        {
+          "when": "1849",
+          "title_en": "Chapel enlarged",
+          "title_fr": "Agrandissement de la chapelle",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/la-chapelle-aujourdhui/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1909",
+          "title_en": "Association of the medal approved",
+          "title_fr": "Association de la médaille approuvée",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/la-chapelle-aujourdhui/association-de-la-medaille-miraculeuse/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1933",
+          "title_en": "Catherine's remains transferred",
+          "title_fr": "Transfert du corps de Catherine",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/langues/english/histoire-dune-famille-gb/",
+          "when_kind": "HISTORICAL_YEAR"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "rue-bac-nov27",
+          "label_en": "Miraculous Medal apparition anniversary",
+          "label_fr": "Anniversaire de la vision de la Médaille miraculeuse",
+          "month_day": "11-27",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "The anniversary is historical; confirm the current year's celebrations with the chapel.",
+          "details_fr": "L'anniversaire est historique ; vérifier les célébrations de l'année auprès de la chapelle.",
+          "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/langues/english/histoire-dune-famille-gb/"
+        }
+      ],
+      "visit": {
+        "en": "Consult the chapel's up-to-date visitor guidance for opening, Mass and confessions; pilgrim groups should reserve.",
+        "fr": "Consulter les informations actuelles pour l'ouverture, les messes et les confessions ; les groupes doivent réserver.",
+        "source_url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/informations-pratiques/"
+      }
+    },
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://sanctuaire-laghet.fr/",
+      "region_en": "La Trinité · Alpes-Maritimes · Diocese of Nice",
+      "region_fr": "La Trinité · Alpes-Maritimes · diocèse de Nice",
+      "subtitle_en": "A Marian sanctuary of ex-votos and the nine-circuit novena, not an apparition site.",
+      "subtitle_fr": "Un sanctuaire marial d'ex-voto et de la neuvaine des neuf tours, sans apparition.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "1652",
+          "title_en": "The chapel and reported favours of 1652",
+          "title_fr": "La chapelle et les faveurs rapportées de 1652",
+          "paragraphs": [
+            {
+              "en": "The rural chapel at Laghet was restored in 1625 by the priest Jacques Fighiera. Reports of healings and deliverances attracted pilgrims in 1652, but the sanctuary explicitly distinguishes these favours from an apparition: no Marian appearance or spoken message is claimed.",
+              "fr": "La chapelle rurale de Laghet fut restaurée en 1625 par le prêtre Jacques Fighiera. En 1652, des récits de guérisons et de délivrances attirèrent les pèlerins, mais le sanctuaire distingue expressément ces grâces d'une apparition : aucune vision mariale ni parole révélée n'est revendiquée.",
+              "source_url": "https://sanctuaire-laghet.fr/mission-2/",
+              "qualifier": "NO_APPARITION"
+            },
+            {
+              "en": "Fighiera donated a wooden Virgin and Child carved by Pierre Moïse and painted by Jean Rocca. White Penitents brought it in procession from Èze on 24 June 1652. This image remains an important physical focus of the local devotion.",
+              "fr": "Fighiera offrit une Vierge à l'Enfant en bois sculptée par Pierre Moïse et peinte par Jean Rocca. Les Pénitents blancs l'apportèrent d'Èze en procession le 24 juin 1652. Cette image demeure un centre matériel important de la dévotion locale.",
+              "source_url": "https://sanctuaire-laghet.fr/histoire/"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "title_en": "A sanctuary of investigated ex-votos",
+          "title_fr": "Un sanctuaire d'ex-voto et d'enquêtes",
+          "paragraphs": [
+            {
+              "en": "The sanctuary's account describes an episcopal commission in the first year of reports: of 36 claims in 1652, 22 were accepted by its investigating theologians. This historical finding is not a certification of every one of the thousands of objects now displayed in the sanctuary.",
+              "fr": "Le sanctuaire rapporte l'enquête d'une commission épiscopale la première année : sur 36 cas évoqués en 1652, 22 furent acceptés par les théologiens chargés de l'examen. Cette conclusion historique ne certifie pas chacun des milliers d'objets exposés aujourd'hui.",
+              "source_url": "https://sanctuaire-laghet.fr/ex-votos/"
+            },
+            {
+              "en": "The present church was inaugurated in 1656. Discalced Carmelites served here from 1674 until their departure under the laws of 1903; the sanctuary's architecture and Marian patronal customs bear traces of this Carmelite period.",
+              "fr": "L'église actuelle fut inaugurée en 1656. Les carmes déchaux y servirent de 1674 jusqu'à leur départ à la suite des lois de 1903 ; l'architecture et les coutumes mariales patronales conservent des traces de cette période carmélitaine.",
+              "source_url": "https://sanctuaire-laghet.fr/renovation-salle-carmes/"
+            }
+          ]
+        },
+        {
+          "id": "devotion",
+          "title_en": "The ex-votos and nine turns",
+          "title_fr": "Les ex-voto et les neuf tours",
+          "paragraphs": [
+            {
+              "en": "More than four thousand ex-votos are held in the museum, cloister and crypt. The local novena asks pilgrims to make nine circuits of the cloister while meditating on nine journeys of Mary, a distinctive practice that developed from one of the 1652 traditions.",
+              "fr": "Plus de quatre mille ex-voto sont conservés au musée, dans le cloître et la crypte. La neuvaine locale propose neuf tours du cloître en méditant neuf voyages de Marie, pratique distinctive issue de l'une des traditions de 1652.",
+              "source_url": "https://sanctuaire-laghet.fr/neuvaine-ndl/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "statue",
+          "name_en": "Virgin and Child statue",
+          "name_fr": "Statue de la Vierge à l'Enfant",
+          "description_en": "Seventeenth-century image brought from Èze.",
+          "description_fr": "Image du XVIIe siècle apportée d'Èze.",
+          "source_url": "https://sanctuaire-laghet.fr/histoire/"
+        },
+        {
+          "id": "exvotos",
+          "name_en": "Ex-voto museum",
+          "name_fr": "Musée des ex-voto",
+          "description_en": "Records of votive thanksgiving, not automatic proof of miracles.",
+          "description_fr": "Témoignages d'action de grâce, non preuves automatiques de miracles.",
+          "source_url": "https://sanctuaire-laghet.fr/ex-votos/"
+        },
+        {
+          "id": "cloister",
+          "name_en": "Cloister prayer circuits",
+          "name_fr": "Tours de prière du cloître",
+          "description_en": "Place for the traditional nine-turn novena.",
+          "description_fr": "Lieu de la neuvaine traditionnelle des neuf tours.",
+          "source_url": "https://sanctuaire-laghet.fr/neuvaine-ndl/"
+        },
+        {
+          "id": "crypt",
+          "name_en": "Sanctuary crypt",
+          "name_fr": "Crypte du sanctuaire",
+          "description_en": "Another custodial location for ex-votos.",
+          "description_fr": "Autre lieu de conservation des ex-voto.",
+          "source_url": "https://sanctuaire-laghet.fr/ex-votos/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1625",
+          "title_en": "Jacques Fighiera repairs the chapel",
+          "title_fr": "Jacques Fighiera répare la chapelle",
+          "source_url": "https://sanctuaire-laghet.fr/histoire/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1652-06-24",
+          "title_en": "Virgin statue brought in procession",
+          "title_fr": "Arrivée de la statue en procession",
+          "source_url": "https://sanctuaire-laghet.fr/histoire/",
+          "when_kind": "HISTORICAL_DATE"
+        },
+        {
+          "when": "1656-11-21",
+          "title_en": "Sanctuary church inaugurated",
+          "title_fr": "Inauguration de l'église du sanctuaire",
+          "source_url": "https://sanctuaire-laghet.fr/renovation-salle-carmes/",
+          "when_kind": "HISTORICAL_DATE"
+        },
+        {
+          "when": "1674",
+          "title_en": "Discalced Carmelites arrive",
+          "title_fr": "Arrivée des carmes déchaux",
+          "source_url": "https://sanctuaire-laghet.fr/renovation-salle-carmes/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1903",
+          "title_en": "Carmelites leave",
+          "title_fr": "Départ des carmes",
+          "source_url": "https://sanctuaire-laghet.fr/renovation-salle-carmes/",
+          "when_kind": "HISTORICAL_YEAR"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "laghet-carmel",
+          "label_en": "Our Lady of Mount Carmel — patronal context",
+          "label_fr": "Notre-Dame du Mont-Carmel — tradition patronale",
+          "month_day": "07-16",
+          "date_kind": "HISTORICAL_FEAST_NOT_LIVE_SCHEDULE",
+          "details_en": "The historic Carmelite patronal celebration has a July date; verify the local annual programme.",
+          "details_fr": "La fête patronale carmélitaine a une date de juillet ; vérifier le programme local de l'année.",
+          "source_url": "https://sanctuaire-laghet.fr/renovation-salle-carmes/"
+        }
+      ],
+      "visit": {
+        "en": "Use the shrine's original novena instructions and verify its present opening of the museum and cloister.",
+        "fr": "Utiliser les instructions officielles de la neuvaine et vérifier l'ouverture actuelle du musée et du cloître.",
+        "source_url": "https://sanctuaire-laghet.fr/neuvaine-ndl/"
+      }
+    },
+    {
+      "place_id": "place:FR:pontmain",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.sanctuaire-pontmain.fr/",
+      "region_en": "Pontmain · Mayenne · Diocese of Laval",
+      "region_fr": "Pontmain · Mayenne · diocèse de Laval",
+      "subtitle_en": "The 1871 Marian account and a pilgrimage of prayer for peace.",
+      "subtitle_fr": "Le récit marial de 1871 et un pèlerinage de prière pour la paix.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A village's testimony in January 1871",
+          "title_fr": "Le témoignage d'un village en janvier 1871",
+          "paragraphs": [
+            {
+              "en": "On the evening of 17 January 1871, children at Pontmain reported an apparition of the Virgin Mary. In the context of the Franco-Prussian War, the account was received as a call to prayer and hope for peace. The Diocese of Laval preserves the reported message in its own proper liturgical history.",
+              "fr": "Le soir du 17 janvier 1871, des enfants de Pontmain rapportèrent une apparition de la Vierge Marie. Dans le contexte de la guerre franco-prussienne, le récit fut accueilli comme un appel à la prière et à l'espérance de paix. Le diocèse de Laval conserve ce message rapporté dans son propre liturgique.",
+              "source_url": "https://diocesedelaval.fr/le-propre-du-diocese-de-laval/",
+              "qualifier": "REPORTED_APPARITION"
+            },
+            {
+              "en": "Bishop Casimir-Alexis-Joseph Wicart recognised the apparition on 2 February 1872. The act of recognition must be distinguished from independent verification of every devotional narrative subsequently associated with Pontmain.",
+              "fr": "Mgr Casimir-Alexis-Joseph Wicart reconnut l'apparition le 2 février 1872. Cet acte de reconnaissance doit être distingué de la vérification indépendante de tous les récits dévotionnels associés ensuite à Pontmain.",
+              "source_url": "https://diocesedelaval.fr/lanniversaire-de-notre-diocese/"
+            }
+          ]
+        },
+        {
+          "id": "place",
+          "title_en": "The basilica and its places of prayer",
+          "title_fr": "La basilique et ses lieux de prière",
+          "paragraphs": [
+            {
+              "en": "The basilica is the principal meeting place for the diocesan pilgrimage, but the published anniversary observances also refer to the parish church and the apparition memorial column. These are different locations within the village and should not be presented as a single room or reconstructed walking route.",
+              "fr": "La basilique est le principal lieu de rassemblement du pèlerinage diocésain, mais les célébrations de l'anniversaire mentionnent aussi l'église paroissiale et la colonne commémorative de l'apparition. Ces lieux distincts dans le village ne doivent pas être présentés comme une salle unique ni comme un itinéraire reconstitué.",
+              "source_url": "https://diocesedelaval.fr/tous-a-pontmain-le-17-janvier-le-diocese-de-laval-organise-le-pelerinage-en-bus/"
+            }
+          ]
+        },
+        {
+          "id": "tradition",
+          "title_en": "Prayer, anniversary and Assumption",
+          "title_fr": "Prière, anniversaire et Assomption",
+          "paragraphs": [
+            {
+              "en": "The diocese's special 155th-anniversary observances in January 2026 included a week of liturgies and procession from 11 to 18 January. They are evidence of a particular year's programme, not a permanent timetable for every future anniversary.",
+              "fr": "Les célébrations du 155e anniversaire de janvier 2026 comprenaient une semaine de liturgies et de processions du 11 au 18 janvier. Elles attestent le programme d'une année particulière, non un horaire permanent pour tous les anniversaires futurs.",
+              "source_url": "https://diocesedelaval.fr/155e-anniversaire-lapparition-de-la-vierge-marie-a-pontmain-un-rendez-vous-pour-la-paix/"
+            },
+            {
+              "en": "Pontmain also receives large diocesan gatherings on the Assumption. The diocese reported a 15 August 2026 Marian celebration with Mass and common prayer, separate from the events of January.",
+              "fr": "Pontmain accueille également de grands rassemblements diocésains à l'Assomption. Le diocèse a relaté une célébration mariale le 15 août 2026 avec messe et prière commune, distincte des événements de janvier.",
+              "source_url": "https://diocesedelaval.fr/a-pontmain-plus-de-3-000-pelerins-reunis-pour-celebrer-lassomption/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "basilica",
+          "name_en": "Basilica of Our Lady of Pontmain",
+          "name_fr": "Basilique Notre-Dame de Pontmain",
+          "description_en": "Principal church used for the diocesan pilgrimage.",
+          "description_fr": "Église principale du pèlerinage diocésain.",
+          "source_url": "https://diocesedelaval.fr/155e-anniversaire-lapparition-de-la-vierge-marie-a-pontmain-un-rendez-vous-pour-la-paix/"
+        },
+        {
+          "id": "parish",
+          "name_en": "Parish church",
+          "name_fr": "Église paroissiale",
+          "description_en": "Separate historic worship place in anniversary celebrations.",
+          "description_fr": "Lieu de culte historique distinct dans les célébrations d'anniversaire.",
+          "source_url": "https://diocesedelaval.fr/tous-a-pontmain-le-17-janvier-le-diocese-de-laval-organise-le-pelerinage-en-bus/"
+        },
+        {
+          "id": "column",
+          "name_en": "Apparition memorial column",
+          "name_fr": "Colonne commémorative de l'Apparition",
+          "description_en": "A named memorial prayer stop in published diocesan programmes.",
+          "description_fr": "Étape de prière commémorative indiquée dans les programmes diocésains.",
+          "source_url": "https://diocesedelaval.fr/tous-a-pontmain-le-17-janvier-le-diocese-de-laval-organise-le-pelerinage-en-bus/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1871-01-17",
+          "title_en": "Reported Marian apparition",
+          "title_fr": "Apparition mariale rapportée",
+          "source_url": "https://diocesedelaval.fr/le-propre-du-diocese-de-laval/",
+          "when_kind": "HISTORICAL_DATE"
+        },
+        {
+          "when": "1872-02-02",
+          "title_en": "Bishop Wicart recognises the apparition",
+          "title_fr": "Mgr Wicart reconnaît l'apparition",
+          "source_url": "https://diocesedelaval.fr/lanniversaire-de-notre-diocese/",
+          "when_kind": "HISTORICAL_DATE"
+        },
+        {
+          "when": "2026-01-11/18",
+          "title_en": "Diocesan anniversary week",
+          "title_fr": "Semaine diocésaine d'anniversaire",
+          "source_url": "https://diocesedelaval.fr/155e-anniversaire-lapparition-de-la-vierge-marie-a-pontmain-un-rendez-vous-pour-la-paix/",
+          "when_kind": "YEAR_SPECIFIC_EVENT"
+        },
+        {
+          "when": "2026-08-15",
+          "title_en": "Diocesan Assumption pilgrimage",
+          "title_fr": "Pèlerinage diocésain de l'Assomption",
+          "source_url": "https://diocesedelaval.fr/a-pontmain-plus-de-3-000-pelerins-reunis-pour-celebrer-lassomption/",
+          "when_kind": "YEAR_SPECIFIC_EVENT"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "pontmain-jan",
+          "label_en": "Anniversary of the reported apparition",
+          "label_fr": "Anniversaire de l'apparition rapportée",
+          "month_day": "01-17",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "The diocesan anniversary occurs 17 January; year-specific activities require separate verification.",
+          "details_fr": "L'anniversaire diocésain tombe le 17 janvier ; les activités de l'année nécessitent une vérification distincte.",
+          "source_url": "https://diocesedelaval.fr/le-propre-du-diocese-de-laval/"
+        },
+        {
+          "id": "pontmain-aug",
+          "label_en": "Assumption pilgrimage",
+          "label_fr": "Pèlerinage de l'Assomption",
+          "month_day": "08-15",
+          "date_kind": "HISTORICAL_FEAST_NOT_LIVE_SCHEDULE",
+          "details_en": "The sanctuary receives Assumption pilgrims, but current-year Mass and procession times are not inferred.",
+          "details_fr": "Le sanctuaire accueille les pèlerins de l'Assomption, sans déduire les horaires de messe ni de procession pour l'année actuelle.",
+          "source_url": "https://diocesedelaval.fr/a-pontmain-plus-de-3-000-pelerins-reunis-pour-celebrer-lassomption/"
+        }
+      ],
+      "visit": {
+        "en": "Consult the Diocese of Laval and sanctuary for this year's liturgical and pilgrim arrangements, not the 2026 anniversary programme.",
+        "fr": "Consulter le diocèse de Laval et le sanctuaire pour les célébrations et l'accueil de l'année, sans reprendre automatiquement le programme de 2026.",
+        "source_url": "https://diocesedelaval.fr/155e-anniversaire-lapparition-de-la-vierge-marie-a-pontmain-un-rendez-vous-pour-la-paix/"
+      }
+    },
+    {
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.sanctuairerocamadour.com/",
+      "region_en": "Rocamadour · Lot · Diocese of Cahors",
+      "region_fr": "Rocamadour · Lot · diocèse de Cahors",
+      "subtitle_en": "The Black Virgin above the Alzou, and the uncertain medieval identity of Saint Amadour.",
+      "subtitle_fr": "La Vierge noire au-dessus de l'Alzou et l'identité médiévale incertaine de saint Amadour.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "earliest",
+          "title_en": "A medieval pilgrimage with uncertain beginnings",
+          "title_fr": "Un pèlerinage médiéval aux origines incertaines",
+          "paragraphs": [
+            {
+              "en": "The sanctuary's own historical account states that the origins of the Rocamadour pilgrimage are unknown. It refers to a papal document associated with 1050 and a transfer of the oratory in 1105. These records must be distinguished from legendary claims about Roland's visit in 778.",
+              "fr": "Le récit historique du sanctuaire indique lui-même que les origines du pèlerinage de Rocamadour sont inconnues. Il évoque un document pontifical lié à 1050 et une transmission de l'oratoire en 1105. Ces documents doivent être distingués des traditions légendaires concernant une visite de Roland en 778.",
+              "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/histoire/mille-ans-histoire-foi/",
+              "qualifier": "TRADITION_NOT_CERTAINTY"
+            },
+            {
+              "en": "During the twelfth century, the religious site expanded against the cliff. A Book of Miracles appeared in 1172 and helped spread its fame; later pilgrim traditions included penitential ascent of the great stair, said in the sanctuary's history to have been followed by Saint Louis in 1244.",
+              "fr": "Au XIIe siècle, l'ensemble religieux s'étendit contre la falaise. Un Livre des miracles parut en 1172 et contribua à sa renommée ; les traditions ultérieures comprennent la montée pénitentielle du grand escalier, que l'histoire du sanctuaire attribue notamment à saint Louis en 1244.",
+              "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/histoire/mille-ans-histoire-foi/"
+            }
+          ]
+        },
+        {
+          "id": "mary",
+          "title_en": "The Black Virgin and the sacred cliff",
+          "title_fr": "La Vierge noire et la falaise sacrée",
+          "paragraphs": [
+            {
+              "en": "The image of the Black Virgin with the Christ Child, housed in the Chapel of Our Lady, remains the focus of Marian prayer. Rocamadour is a cluster of chapels in the rock above the Alzou valley, but the main pilgrimage complex retains a single physical identity in the map.",
+              "fr": "L'image de la Vierge noire avec l'Enfant Jésus, conservée dans la chapelle Notre-Dame, demeure le centre de la prière mariale. Rocamadour comprend plusieurs chapelles dans le rocher dominant l'Alzou, mais l'ensemble principal de pèlerinage conserve une seule identité physique sur la carte.",
+              "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/"
+            }
+          ]
+        },
+        {
+          "id": "amadour",
+          "title_en": "An uncertain relic identification",
+          "title_fr": "Une identification reliquaire incertaine",
+          "paragraphs": [
+            {
+              "en": "A body was found near the Marian chapel in 1166. The sanctuary explicitly describes the man as unidentified and only tentatively associates him with an earlier hermit. The later name Amadour is a devotional tradition rather than an independently established biographical identification.",
+              "fr": "Un corps fut trouvé près de la chapelle mariale en 1166. Le sanctuaire le décrit explicitement comme un homme non identifié, peut-être un ancien ermite. Le nom ultérieur d'Amadour relève d'une tradition dévotionnelle plutôt que d'une identification biographique établie indépendamment.",
+              "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/saint-amadour/",
+              "qualifier": "RELIC_IDENTITY_UNCERTAIN"
+            },
+            {
+              "en": "Relics attributed to Saint Amadour were presented again for veneration in the basilica in 2016, according to the shrine. The precise status of the remains should continue to be described as an attribution, not promoted to verified personal identity.",
+              "fr": "Selon le sanctuaire, les reliques attribuées à saint Amadour furent à nouveau présentées à la vénération dans la basilique en 2016. Le statut exact des restes doit continuer à être décrit comme une attribution, sans en faire une identité personnelle vérifiée.",
+              "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/saint-amadour/",
+              "qualifier": "RELIC_IDENTITY_UNCERTAIN"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "virgin",
+          "name_en": "Chapel of the Black Virgin",
+          "name_fr": "Chapelle de la Vierge noire",
+          "description_en": "Principal Marian chapel built against the cliff.",
+          "description_fr": "Chapelle mariale principale aménagée contre le rocher.",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/"
+        },
+        {
+          "id": "stairs",
+          "name_en": "Great pilgrimage staircase",
+          "name_fr": "Grand escalier des pèlerins",
+          "description_en": "Historical penitential approach to the sanctuary.",
+          "description_fr": "Accès pénitentiel historique au sanctuaire.",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/histoire/mille-ans-histoire-foi/"
+        },
+        {
+          "id": "relics",
+          "name_en": "Basilica and attributed relics of Saint Amadour",
+          "name_fr": "Basilique et reliques attribuées à saint Amadour",
+          "description_en": "Relics displayed in recent times with historically uncertain identification.",
+          "description_fr": "Reliques exposées de nos jours avec une identification historique incertaine.",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/saint-amadour/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "c.1050",
+          "title_en": "Early documentary mention",
+          "title_fr": "Première mention documentaire",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/histoire/mille-ans-histoire-foi/",
+          "when_kind": "APPROXIMATE_HISTORICAL_YEAR"
+        },
+        {
+          "when": "1105",
+          "title_en": "Oratory custodianship confirmed",
+          "title_fr": "Confirmation de la garde de l'oratoire",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/histoire/mille-ans-histoire-foi/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1166",
+          "title_en": "Unidentified body discovered",
+          "title_fr": "Découverte d'un corps non identifié",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/saint-amadour/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1172",
+          "title_en": "Book of Miracles published",
+          "title_fr": "Publication du Livre des miracles",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/histoire/mille-ans-histoire-foi/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "1244",
+          "title_en": "Royal pilgrimage tradition of Saint Louis",
+          "title_fr": "Tradition du pèlerinage royal de saint Louis",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/histoire/mille-ans-histoire-foi/",
+          "when_kind": "HISTORICAL_YEAR"
+        },
+        {
+          "when": "2016",
+          "title_en": "Attributed relics displayed again",
+          "title_fr": "Nouvelle présentation des reliques attribuées",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/saint-amadour/",
+          "when_kind": "HISTORICAL_YEAR"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "rocamadour-visits",
+          "label_en": "Current pilgrim calendar",
+          "label_fr": "Calendrier actuel des pèlerinages",
+          "date_kind": "CURRENT_YEAR_SOURCE_REQUIRED",
+          "details_en": "No unverified recurring annual route or programme is inferred from medieval pilgrimage history.",
+          "details_fr": "Aucun parcours annuel récurrent ou programme non vérifié n'est déduit de l'histoire médiévale.",
+          "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/"
+        }
+      ],
+      "visit": {
+        "en": "Check the active sanctuary programme and access to the chapel and pilgrim stair. The identification of Amadour remains uncertain.",
+        "fr": "Vérifier le programme actuel et l'accès à la chapelle et au grand escalier. L'identification d'Amadour demeure incertaine.",
+        "source_url": "https://www.sanctuairerocamadour.com/sanctuaire/presentation/"
+      }
+    }
+  ]
+}
