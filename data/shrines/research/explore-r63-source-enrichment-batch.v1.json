@@ -1,0 +1,1004 @@
+{
+  "schema": "AO_EXPLORE_R63_SOURCE_ENRICHED_STORIES_V1",
+  "version": "1.0.0",
+  "updated_at": "2026-10-11",
+  "ownership": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "baseline": {
+    "shrines": 216,
+    "pilgrimages": 206,
+    "frenchShrines": 158,
+    "frenchPilgrimages": 148
+  },
+  "release": {
+    "rewrittenOriginsEnglish": 58,
+    "rewrittenOriginsFrench": 58,
+    "rewrittenPilgrimagesEnglish": 58,
+    "rewrittenPilgrimagesFrench": 58,
+    "newOriginalSourceUrls": 6,
+    "finalFrenchShrines": 216,
+    "finalFrenchPilgrimages": 206,
+    "newPlaces": 0,
+    "featuredMenuAdditions": 0
+  },
+  "source_access_note": "Source links retain exact registry ownership. Registered URLs are not a guarantee of successful live fetch or contemporary public access; see original publishers and current custodians.",
+  "evidence_boundaries": [
+    "Historical traditions are identified as tradition",
+    "Current Anglican and Orthodox custodians are not presented as Catholic liturgical providers",
+    "Custody, access, special displays, Mass schedules and Calendar dates never inferred from map position",
+    "Source links are preserved per exact canonical Shrine or Pilgrimage owner"
+  ],
+  "items": [
+    {
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:BE:sanctuaire-sainte-julienne-cornillon:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-BE-sanctuaire-sainte-julienne-cornillon",
+          "url": "https://www.saintejulienne.org/",
+          "issuer": "Sanctuaire Sainte Julienne de Cornillon",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-le-puy",
+      "shrine_id": "shrine:20261009:FR:cathedrale-notre-dame-le-puy",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:cathedrale-notre-dame-le-puy:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-cathedrale-notre-dame-le-puy",
+          "url": "https://www.catholique-lepuy.fr/sanctuaires/le-sanctuaire-cathedrale-de-notre-dame-du-puy/",
+          "issuer": "Diocese of Le Puy",
+          "directness": "OFFICIAL_DIOCESAN"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "shrine_id": "shrine:20261009:FR:basilique-notre-dame-victoires-paris",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-notre-dame-victoires-paris:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-basilique-notre-dame-victoires-paris",
+          "url": "https://www.notredamedesvictoires.com/nous-contacter/",
+          "issuer": "Basilique Notre Dame des Victoires",
+          "directness": "OFFICIAL_SHRINE"
+        },
+        {
+          "source_id": "R63-NDV-HISTORY",
+          "url": "https://www.notredamedesvictoires.com/histoire/",
+          "issuer": "Basilique Notre-Dame des Victoires",
+          "directness": "OFFICIAL_SHRINE"
+        },
+        {
+          "source_id": "R63-NDV-PILGRIMS",
+          "url": "https://www.notredamedesvictoires.com/venir-en-pelerinage/",
+          "issuer": "Basilique Notre-Dame des Victoires",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "shrine_id": "shrine:20261009:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-notre-dame-perpetuel-secours-paris:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-basilique-notre-dame-perpetuel-secours-paris",
+          "url": "https://basilique-ndps.fr/",
+          "issuer": "Paroisse Notre Dame du Perpétuel Secours",
+          "directness": "OFFICIAL_SHRINE"
+        },
+        {
+          "source_id": "R63-NDPS-HISTORY",
+          "url": "https://basilique-ndps.fr/la-basilique/lhistorique-de-la-basilique/",
+          "issuer": "Paroisse Notre-Dame du Perpétuel-Secours",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "shrine_id": "shrine:20261009:FR:grottes-saint-antoine-brive",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:grottes-saint-antoine-brive:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-grottes-saint-antoine-brive",
+          "url": "https://sanctuaire-saintantoine-brive.fr/le-sanctuaire/",
+          "issuer": "Sanctuaire Saint Antoine de Brive",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "shrine_id": "shrine:20261009:FR:basilique-saint-martin-tours",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-saint-martin-tours:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-basilique-saint-martin-tours",
+          "url": "https://musees.tours.fr/visiter/sites-patrimoniaux/basilique-saint-martin/",
+          "issuer": "Ville de Tours, Musée du patrimoine",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-montfort-saint-laurent:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-basilique-montfort-saint-laurent",
+          "url": "https://www.basiliquemontfort.com/infos-pratiques/",
+          "issuer": "Basilique Montfort",
+          "directness": "OFFICIAL_SHRINE"
+        },
+        {
+          "source_id": "R63-MONTFORT-HISTORY",
+          "url": "https://www.basiliquemontfort.com/basilique-histoire-visite/",
+          "issuer": "Basilique Saint-Louis-Marie-Grignion-de-Montfort",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-basilique-sainte-marie-madeleine-saint-maximin",
+          "url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+          "issuer": "Diocese of Fréjus–Toulon",
+          "directness": "OFFICIAL_DIOCESAN"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:abbaye-fleury-saint-benoit-loire:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-abbaye-fleury-saint-benoit-loire",
+          "url": "https://www.abbaye-fleury.com/contact.html",
+          "issuer": "Abbaye de Fleury",
+          "directness": "OFFICIAL_SHRINE"
+        },
+        {
+          "source_id": "R63-FLEURY-HISTORY",
+          "url": "https://www.abbaye-fleury.com/histoire.html",
+          "issuer": "Abbaye de Fleury",
+          "directness": "OFFICIAL_SHRINE"
+        },
+        {
+          "source_id": "R63-FLEURY-PILGRIMAGE",
+          "url": "https://www.abbaye-fleury.com/preacutevoir-une-visite.html",
+          "issuer": "Abbaye de Fleury",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:saint-joseph-bessillon:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-saint-joseph-bessillon",
+          "url": "https://www.saintjosephcotignac.com/",
+          "issuer": "Sanctuaire Saint Joseph du Bessillon",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:notre-dame-graces-cotignac",
+      "shrine_id": "shrine:20261009:FR:notre-dame-graces-cotignac",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-graces-cotignac:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-notre-dame-graces-cotignac",
+          "url": "https://mairiecotignac.fr/decouvrir-le-village/patrimoine/patrimoine-sanctuaires/",
+          "issuer": "Commune de Cotignac",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "shrine_id": "shrine:20261009:FR:notre-dame-la-salette-fallavaux",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-la-salette-fallavaux:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-notre-dame-la-salette-fallavaux",
+          "url": "https://lasalette.cef.fr/",
+          "issuer": "Sanctuaire Notre Dame de La Salette",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:abbaye-mont-saint-michel:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-abbaye-mont-saint-michel",
+          "url": "https://don.diocese50.fr/sanctuaire-msm/",
+          "issuer": "Diocese of Coutances and Avranches",
+          "directness": "OFFICIAL_DIOCESAN"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:san-michele-gargano",
+      "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:san-michele-gargano:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-IT-san-michele-gargano",
+          "url": "https://www.santuariosanmichele.it/",
+          "issuer": "Santuario San Michele Arcangelo",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:carmel-lisieux",
+      "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:carmel-lisieux:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-carmel-lisieux",
+          "url": "https://carmeldelisieux.fr/contact/",
+          "issuer": "Carmel de Lisieux",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:espace-bernadette-nevers:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-espace-bernadette-nevers",
+          "url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/pelerinage/pelerinage-individuel/",
+          "issuer": "Sanctuaire Sainte Bernadette de Nevers",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-ars",
+      "shrine_id": "shrine:20261009:FR:basilique-ars",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-ars:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-basilique-ars",
+          "url": "https://www.arsnet.org/pelerins/",
+          "issuer": "Sanctuaire d’Ars",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:notre-dame-du-laus",
+      "shrine_id": "shrine:20261009:FR:notre-dame-du-laus",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-du-laus:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-notre-dame-du-laus",
+          "url": "https://www.sanctuaire-notredamedulaus.com/le-message/histoire",
+          "issuer": "Sanctuaire Notre Dame du Laus",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:PL:divine-mercy-plock:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-PL-divine-mercy-plock",
+          "url": "https://faustynaplock.pl/historia-sanktuarium/",
+          "issuer": "Sanktuarium Bożego Miłosierdzia w Płocku",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "shrine_id": "shrine:20261009:IT:basilica-sant-antonio-padova",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:basilica-sant-antonio-padova:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-IT-basilica-sant-antonio-padova",
+          "url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
+          "issuer": "Basilica del Santo, Padova",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:basilica-santa-rita-cascia:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-IT-basilica-santa-rita-cascia",
+          "url": "https://santaritadacascia.org/santuario/basilica/",
+          "issuer": "Santuario Santa Rita da Cascia",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "shrine_id": "shrine:20261009:IT:basilica-san-nicola-bari",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:basilica-san-nicola-bari:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-IT-basilica-san-nicola-bari",
+          "url": "https://www.basilicasannicola.it/",
+          "issuer": "Basilica San Nicola di Bari",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:santuario-san-pio-rotondo:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-IT-santuario-san-pio-rotondo",
+          "url": "https://www.conventosantuariopadrepio.it/it/archivio/visita-a-san-pio.html",
+          "issuer": "Santuario Padre Pio",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:RW:sanctuaire-kibeho",
+      "shrine_id": "shrine:20261009:RW:sanctuaire-kibeho",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:RW:sanctuaire-kibeho:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-RW-sanctuaire-kibeho",
+          "url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2001/06/29/0382/01118.html",
+          "issuer": "Holy See Press Office — diocesan declaration",
+          "directness": "OFFICIAL_CHURCH"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:notre-dame-paris",
+      "shrine_id": "shrine:20261009:FR:notre-dame-paris",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:FR:notre-dame-paris:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-BULK-FR-notre-dame-paris",
+          "url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/",
+          "issuer": "Cathédrale Notre-Dame de Paris",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:VA:saint-peter-vatican:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-VA-saint-peter-vatican",
+          "url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+          "issuer": "St Peter's Basilica",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:saint-paul-outside-walls-rome:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-IT-saint-paul-outside-walls-rome",
+          "url": "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+          "issuer": "Holy See — Basilica of St Paul Outside the Walls",
+          "directness": "OFFICIAL_CHURCH"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "shrine_id": "shrine:20261009:IT:santa-maria-maggiore-rome",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:santa-maria-maggiore-rome:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-IT-santa-maria-maggiore-rome",
+          "url": "https://www.basilicasantamariamaggiore.va/en/basilica/storia-e-arte.html",
+          "issuer": "Papal Basilica of Saint Mary Major",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:IT:scala-santa-rome:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-IT-scala-santa-rome",
+          "url": "https://www.scala-santa.com/info-eng/",
+          "issuer": "Passionists — Pontifical Shrine of the Holy Stairs",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:ES:santiago-compostela-cathedral:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-ES-santiago-compostela-cathedral",
+          "url": "https://catedraldesantiago.es/en/pilgrimage/",
+          "issuer": "Cathedral of Santiago de Compostela",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "shrine_id": "shrine:20261009:ES:basilica-del-pilar-zaragoza",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:ES:basilica-del-pilar-zaragoza:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-ES-basilica-del-pilar-zaragoza",
+          "url": "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/",
+          "issuer": "Cathedral Chapter of Zaragoza",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:ES:santo-toribio-liebana",
+      "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:ES:santo-toribio-liebana:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-ES-santo-toribio-liebana",
+          "url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+          "issuer": "Diocese of Santander",
+          "directness": "OFFICIAL_DIOCESAN"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:ES:carmel-alba-tormes",
+      "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:ES:carmel-alba-tormes:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PIL-ES-carmel-alba-tormes",
+          "url": "https://carmelitasalba.org/",
+          "issuer": "Discalced Carmelites, Alba de Tormes",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-sernin-toulouse:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-FR-basilique-saint-sernin-toulouse",
+          "url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+          "issuer": "Basilique Saint-Sernin de Toulouse",
+          "directness": "PRIMARY_INSTITUTIONAL"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-nicolas-de-port:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-FR-basilique-saint-nicolas-de-port",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
+          "issuer": "Ministère de la Culture (POP)",
+          "directness": "PRIMARY_INSTITUTIONAL"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-quentin-aisne:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-FR-basilique-saint-quentin-aisne",
+          "url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+          "issuer": "Ministère de la Culture (POP)",
+          "directness": "PRIMARY_INSTITUTIONAL"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-saint-etienne-sens:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-FR-cathedrale-saint-etienne-sens",
+          "url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
+          "issuer": "Musées de Sens",
+          "directness": "PRIMARY_INSTITUTIONAL"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+      "pilgrimage_ids": [
+        "pilgrimage:ES:convento-san-juan-cruz-segovia:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-ES-convento-san-juan-cruz-segovia",
+          "url": "https://www.spain.info/en/places-of-interest/convent-san-juan-cruz-padres-carmelitas-descalzos/",
+          "issuer": "Named public heritage or tourism authority",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:san-geremia-santa-lucia-venezia:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-IT-san-geremia-santa-lucia-venezia",
+          "url": "https://www.patriarcatovenezia.it/santa-lucia-il-13-dicembre-le-celebrazioni-a-venezia-e-poi-la-partenza-in-pellegrinaggio-verso-la-sicilia-dove-rimarra-fino-a-fine-dicembre/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_DIOCESAN"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:GR:saint-titus-heraklion",
+      "shrine_id": "shrine:GR:saint-titus-heraklion",
+      "pilgrimage_ids": [
+        "pilgrimage:GR:saint-titus-heraklion:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-GR-saint-titus-heraklion",
+          "url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html",
+          "issuer": "Named public heritage or tourism authority",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": [
+        "CURRENT_CUSTODIAN_NOT_CATHOLIC"
+      ]
+    },
+    {
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+      "pilgrimage_ids": [
+        "pilgrimage:US:cathedral-katharine-drexel-philadelphia:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-US-cathedral-katharine-drexel-philadelphia",
+          "url": "https://cathedralphila.org/drexel/about/history/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_CHURCH"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+      "pilgrimage_ids": [
+        "pilgrimage:SV:catedral-metropolitana-san-salvador:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-SV-catedral-metropolitana-san-salvador",
+          "url": "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/",
+          "issuer": "Named public heritage or tourism authority",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+      "pilgrimage_ids": [
+        "pilgrimage:LB:monastery-saint-maron-annaya:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-LB-monastery-saint-maron-annaya",
+          "url": "https://saintcharbel.com/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:sacra-famiglia-bakhita-schio:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-IT-sacra-famiglia-bakhita-schio",
+          "url": "https://www.visitschio.it/en/scopri/5/Chiesa-della-Sacra-Famiglia-Santa-Giuseppina-Bakhita",
+          "issuer": "Named public heritage or tourism authority",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+      "pilgrimage_ids": [
+        "pilgrimage:US:carmel-mission-basilica-serra:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-US-carmel-mission-basilica-serra",
+          "url": "https://carmelmission.org/serra-grave/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+      "pilgrimage_ids": [
+        "pilgrimage:PE:convento-santo-domingo-lima:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PE-convento-santo-domingo-lima",
+          "url": "https://www.conventosantodomingo.com.pe/basilica/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_CHURCH"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+      "pilgrimage_ids": [
+        "pilgrimage:GB:westminster-abbey-st-edward:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-GB-westminster-abbey-st-edward",
+          "url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "PRIMARY_INSTITUTIONAL"
+        }
+      ],
+      "flags": [
+        "CURRENT_CUSTODIAN_NOT_CATHOLIC"
+      ]
+    },
+    {
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+      "pilgrimage_ids": [
+        "pilgrimage:LU:basilica-st-willibrord-echternach:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-LU-basilica-st-willibrord-echternach",
+          "url": "https://basilika.lu/en/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+      "pilgrimage_ids": [
+        "pilgrimage:PL:wawel-cathedral-stanislaus:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PL-wawel-cathedral-stanislaus",
+          "url": "https://www.katedra-wawelska.pl/en/historia-katedry/katedra-biskupow-krakowskich/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_CHURCH"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+      "pilgrimage_ids": [
+        "pilgrimage:LT:vilnius-cathedral-st-casimir:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-LT-vilnius-cathedral-st-casimir",
+          "url": "https://www.govilnius.lt/visit-vilnius/routes/experience-pilgrimage-in-vilnius/vilnius-cathedral-basilica-of-st-stanislaus-and-st-ladislaus",
+          "issuer": "Named public heritage or tourism authority",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+      "pilgrimage_ids": [
+        "pilgrimage:HU:st-stephen-basilica-budapest:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-HU-st-stephen-basilica-budapest",
+          "url": "https://bazilikabudapest.hu/2024/04/12/szentjobb/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_CHURCH"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+      "pilgrimage_ids": [
+        "pilgrimage:PL:gniezno-cathedral-adalbert:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-PL-gniezno-cathedral-adalbert",
+          "url": "https://archidiecezja.pl/co-kryja-relikwiarze/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_DIOCESAN"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:abbey-san-colombano-bobbio:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-IT-abbey-san-colombano-bobbio",
+          "url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_DIOCESAN"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+      "pilgrimage_ids": [
+        "pilgrimage:BR:pateo-do-collegio-sao-paulo:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-BR-pateo-do-collegio-sao-paulo",
+          "url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "OFFICIAL_CHURCH"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:saint-hilaire-le-grand-poitiers:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-FR-saint-hilaire-le-grand-poitiers",
+          "url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/",
+          "issuer": "Named public heritage or tourism authority",
+          "directness": "SECONDARY"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:santa-maria-vallicella-rome:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-IT-santa-maria-vallicella-rome",
+          "url": "https://www.oratoriosanfilippo.org/la-roma-filippina/",
+          "issuer": "Named original custodian or ecclesiastical institution",
+          "directness": "PRIMARY_INSTITUTIONAL"
+        }
+      ],
+      "flags": []
+    },
+    {
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "shrine_id": "shrine:IT:santuario-volto-santo-manoppello",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:santuario-volto-santo-manoppello:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-IT-santuario-volto-santo-manoppello",
+          "url": "https://www.voltosanto.it/volto-santo.html",
+          "issuer": "Capuchin Friars, Basilica of the Holy Face",
+          "directness": "OFFICIAL_SHRINE"
+        }
+      ],
+      "flags": [
+        "ATTRIBUTION_UNRESOLVED"
+      ]
+    },
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "shrine_id": "shrine:IT:montecassino-abbey",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:montecassino-abbey:destination"
+      ],
+      "source_links": [
+        {
+          "source_id": "SHR-IT-montecassino-abbey",
+          "url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/",
+          "issuer": "Benedictine Abbey of Montecassino",
+          "directness": "PRIMARY_INSTITUTIONAL"
+        }
+      ],
+      "flags": [
+        "ATTRIBUTION_UNRESOLVED"
+      ]
+    }
+  ]
+}

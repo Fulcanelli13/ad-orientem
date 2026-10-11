@@ -39,7 +39,7 @@ assert.deepEqual(result.counts,{
   pilgrimages:206,
   routes:20,
   temporalLinks:77,
-  sources:349,
+  sources:355,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
