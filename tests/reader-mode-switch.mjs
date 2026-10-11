@@ -111,14 +111,19 @@ assert.equal(cardForCue("AO.SM.C0179"),cardForCue("AO.SM.C0181"),
   "Chalice elevation must remain linked to the exact words without a blank transition");
 distinct("AO.SM.C0015","AO.SM.C0016","The celebrant Confiteor starts its own prayer card");
 distinct("AO.SM.C0020","AO.SM.C0021","The server Confiteor starts its own prayer card");
-distinct("AO.SM.C0036","AO.SM.C0042","The Introit is a separate liturgical stage");
+assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Introit" && c.paragraphs.length),
+  "The Introit requires a separate prayer card with resolved Proper text");
 distinct("AO.SM.C0094","AO.SM.C0095","The Credo Incarnation starts a separate stage");
 assert.equal(cardForCue("AO.SM.C0095"),cardForCue("AO.SM.C0096"),
   "The Credo genuflection and its doctrinal context must stay on one card");
-distinct("AO.SM.C0108","AO.SM.C0109","Offertory antiphon should retain source-prayer transition only within first stage");
+assert.equal(cardForCue("AO.SM.C0108")?.title,"Offertory · Invitation and Antiphon",
+  "Short Orémus and the antiphon should not create two swipe screens");
 distinct("AO.SM.C0116","AO.SM.C0120","Incensation is a distinct conditional stage");
 distinct("AO.SM.C0237","AO.SM.C0242","Optional Communion Confiteor must not blend into Ecce Agnus Dei");
-distinct("AO.SM.C0249","AO.SM.C0250","Ablutions and Communion antiphon need distinct ownership");
+assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Communion Antiphon" && c.paragraphs.length),
+  "Communion antiphon should have a separate card with resolved Proper text");
+assert.equal(cardForCue("AO.SM.C0248")?.title,"Ablutions",
+  "Priest's private ablutions must remain distinct from Communion chant");
 distinct("AO.SM.C0262","AO.SM.C0264","Final Blessing must not merge with Placeat");
 console.log("Curated Mass LIVE review: "+expandedReview.presentationModel.totalCards+
   " unique liturgical cards; all source prayer paragraphs retained.");
