@@ -12,6 +12,10 @@ const events=[1,2,3,4,5,6].flatMap(n=>read("../data/mass/mc-events-0"+n+".v1.jso
 const audit=auditOrdinarySungPriestEventAlignment(events);
 assert.deepEqual({all:audit.sourceOnlyCues,matched:audit.eventMatched,pending:audit.pending},
   {all:15,matched:10,pending:5});
+assert.deepEqual([...audit.pendingCueIds].sort(),[
+  "AO.SM.C0042","AO.SM.C0077","AO.SM.C0109",
+  "AO.SM.C0250","AO.SM.C0256",
+].sort(),"Guarded movements should never acquire approximate automatic event triggers");
 assert.equal(ORDINARY_SUNG_PRIEST_EVENT_ALIGNMENT.length,ORDINARY_SUNG_SOURCE_ONLY_CUES.length);
 const bad=events.map(e=>({...e}));
 bad.find(e=>e.id==="MC-GLR-040").actor="SCHOLA";
