@@ -731,8 +731,12 @@ button.ao-schola-control{cursor:pointer}
      fixed clamp masked this inherited reserve and left short responses
      impossible to reach by scrolling (C0071). Keep actual scroll
      territory, not inflated prayer paragraph heights. */
-  padding-bottom:calc(max(42vh,240px) + var(--ao-schola-reserve) +
-    var(--ao-short-cue-tail,0px) + max(12px,env(safe-area-inset-bottom)))
+  /* The Schola dock already shortens the reading viewport. A second
+     42vh + 166px fixed padding forced the scroll box to expand to its
+     510px padding minimum despite a smaller declared height. Keep the
+     56px breathing strip and let ensureShortCardCueTravel calculate the
+     remaining scroll distance from actual cue geometry. */
+  padding-bottom:calc(56px + var(--ao-short-cue-tail,0px))
 }
 
 /* Dynamic Schola dock is independent of the reader. Reserve an
