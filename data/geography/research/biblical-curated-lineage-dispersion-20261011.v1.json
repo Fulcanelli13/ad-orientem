@@ -1,0 +1,2835 @@
+{
+  "schema": "BIBLICAL_LINEAGE_DISPERSION_CURATED_V1",
+  "status": "EDITORIAL_PILOT_NOT_PUBLICATION_APPROVED",
+  "date": "2026-10-11",
+  "citations": {
+    "mat": "https://www.newadvent.org/bible/mat001.htm",
+    "luk": "https://www.newadvent.org/bible/luk003.htm",
+    "gen": "https://www.newadvent.org/bible/gen001.htm",
+    "acts1": "https://www.newadvent.org/bible/act001.htm",
+    "acts2": "https://www.newadvent.org/bible/act002.htm",
+    "acts8": "https://www.newadvent.org/bible/act008.htm",
+    "acts9": "https://www.newadvent.org/bible/act009.htm",
+    "acts10": "https://www.newadvent.org/bible/act010.htm",
+    "acts11": "https://www.newadvent.org/bible/act011.htm",
+    "acts12": "https://www.newadvent.org/bible/act012.htm",
+    "acts13": "https://www.newadvent.org/bible/act013.htm",
+    "acts15": "https://www.newadvent.org/bible/act015.htm",
+    "acts16": "https://www.newadvent.org/bible/act016.htm",
+    "acts18": "https://www.newadvent.org/bible/act018.htm",
+    "acts21": "https://www.newadvent.org/bible/act021.htm",
+    "acts28": "https://www.newadvent.org/bible/act028.htm",
+    "gal": "https://www.newadvent.org/bible/gal002.htm",
+    "john": "https://www.newadvent.org/bible/jhn019.htm",
+    "john2": "https://www.newadvent.org/bible/jhn002.htm",
+    "john20": "https://www.newadvent.org/bible/jhn020.htm",
+    "luke1": "https://www.newadvent.org/bible/luk001.htm",
+    "luke2": "https://www.newadvent.org/bible/luk002.htm",
+    "matt2": "https://www.newadvent.org/bible/mat002.htm",
+    "rev": "https://www.newadvent.org/bible/rev001.htm",
+    "mark15": "https://www.newadvent.org/bible/mrk015.htm",
+    "eusebius2": "https://www.newadvent.org/fathers/250102.htm",
+    "eusebius3": "https://www.newadvent.org/fathers/250103.htm",
+    "irenaeus": "https://www.newadvent.org/fathers/0103303.htm",
+    "irenaeus2": "https://www.newadvent.org/fathers/0103301.htm",
+    "india": "https://www.vatican.va/content/benedict-xvi/en/speeches/2011/may/documents/hf_ben-xvi_spe_20110516_ad-limina-india.html"
+  },
+  "genealogies": {
+    "matthew": {
+      "source": "https://www.newadvent.org/bible/mat001.htm",
+      "nodes": [
+        {
+          "id": "Matthew-0",
+          "person": "Abraham",
+          "index": 0,
+          "reference": "Matthew 2",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 2",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-1",
+          "person": "Isaac",
+          "index": 1,
+          "reference": "Matthew 2",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 2",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-2",
+          "person": "Jacob",
+          "index": 2,
+          "reference": "Matthew 2",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 2",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-3",
+          "person": "Judah",
+          "index": 3,
+          "reference": "Matthew 2",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 2",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-4",
+          "person": "Perez",
+          "index": 4,
+          "reference": "Matthew 3",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 3",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-5",
+          "person": "Hezron",
+          "index": 5,
+          "reference": "Matthew 3",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 3",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-6",
+          "person": "Ram",
+          "index": 6,
+          "reference": "Matthew 3",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 3",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-7",
+          "person": "Amminadab",
+          "index": 7,
+          "reference": "Matthew 4",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 4",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-8",
+          "person": "Nahshon",
+          "index": 8,
+          "reference": "Matthew 4",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 4",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-9",
+          "person": "Salmon",
+          "index": 9,
+          "reference": "Matthew 4",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 4",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-10",
+          "person": "Boaz",
+          "index": 10,
+          "reference": "Matthew 5",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 5",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-11",
+          "person": "Obed",
+          "index": 11,
+          "reference": "Matthew 5",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 5",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-12",
+          "person": "Jesse",
+          "index": 12,
+          "reference": "Matthew 5",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 5",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-13",
+          "person": "David",
+          "index": 13,
+          "reference": "Matthew 6",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 6",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-14",
+          "person": "Solomon",
+          "index": 14,
+          "reference": "Matthew 6",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 6",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-15",
+          "person": "Rehoboam",
+          "index": 15,
+          "reference": "Matthew 7",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 7",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-16",
+          "person": "Abijah",
+          "index": 16,
+          "reference": "Matthew 7",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 7",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-17",
+          "person": "Asa",
+          "index": 17,
+          "reference": "Matthew 7",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 7",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-18",
+          "person": "Jehoshaphat",
+          "index": 18,
+          "reference": "Matthew 8",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 8",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-19",
+          "person": "Joram",
+          "index": 19,
+          "reference": "Matthew 8",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 8",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-20",
+          "person": "Uzziah",
+          "index": 20,
+          "reference": "Matthew 8",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 8",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-21",
+          "person": "Jotham",
+          "index": 21,
+          "reference": "Matthew 9",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 9",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-22",
+          "person": "Ahaz",
+          "index": 22,
+          "reference": "Matthew 9",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 9",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-23",
+          "person": "Hezekiah",
+          "index": 23,
+          "reference": "Matthew 9",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 9",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-24",
+          "person": "Manasseh",
+          "index": 24,
+          "reference": "Matthew 10",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 10",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-25",
+          "person": "Amon",
+          "index": 25,
+          "reference": "Matthew 10",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 10",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-26",
+          "person": "Josiah",
+          "index": 26,
+          "reference": "Matthew 10",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 10",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-27",
+          "person": "Jechoniah",
+          "index": 27,
+          "reference": "Matthew 11",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 11",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-28",
+          "person": "Shealtiel",
+          "index": 28,
+          "reference": "Matthew 12",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 12",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-29",
+          "person": "Zerubbabel",
+          "index": 29,
+          "reference": "Matthew 12",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 12",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-30",
+          "person": "Abiud",
+          "index": 30,
+          "reference": "Matthew 13",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 13",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-31",
+          "person": "Eliakim",
+          "index": 31,
+          "reference": "Matthew 13",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 13",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-32",
+          "person": "Azor",
+          "index": 32,
+          "reference": "Matthew 13",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 13",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-33",
+          "person": "Zadok",
+          "index": 33,
+          "reference": "Matthew 14",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 14",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-34",
+          "person": "Achim",
+          "index": 34,
+          "reference": "Matthew 14",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 14",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-35",
+          "person": "Eliud",
+          "index": 35,
+          "reference": "Matthew 14",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 14",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-36",
+          "person": "Eleazar",
+          "index": 36,
+          "reference": "Matthew 15",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 15",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-37",
+          "person": "Matthan",
+          "index": 37,
+          "reference": "Matthew 15",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 15",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-38",
+          "person": "Jacob",
+          "index": 38,
+          "reference": "Matthew 15",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Matthew 15",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-39",
+          "person": "Joseph",
+          "index": 39,
+          "reference": "Matthew 16",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "legal-or-putative",
+          "edgeSource": {
+            "reference": "Matthew 16",
+            "url": "https://www.newadvent.org/bible/mat001.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Matthew-40",
+          "person": "Jesus",
+          "index": 40,
+          "reference": "Matthew 16",
+          "url": "https://www.newadvent.org/bible/mat001.htm",
+          "type": "terminus",
+          "edgeSource": null
+        }
+      ],
+      "description": "Matthew 1:2–16; the written lineage terminates at Joseph, husband of Mary, of whom Jesus was born; not a claim Joseph physically fathered Jesus."
+    },
+    "luke": {
+      "source": "https://www.newadvent.org/bible/luk003.htm",
+      "nodes": [
+        {
+          "id": "Luke-0",
+          "person": "Adam",
+          "index": 0,
+          "reference": "Luke 38",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 38",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-1",
+          "person": "Seth",
+          "index": 1,
+          "reference": "Luke 38",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 38",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-2",
+          "person": "Enos",
+          "index": 2,
+          "reference": "Luke 38",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 38",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-3",
+          "person": "Cainan",
+          "index": 3,
+          "reference": "Luke 37",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 37",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-4",
+          "person": "Mahalaleel",
+          "index": 4,
+          "reference": "Luke 37",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 37",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-5",
+          "person": "Jared",
+          "index": 5,
+          "reference": "Luke 37",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 37",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-6",
+          "person": "Enoch",
+          "index": 6,
+          "reference": "Luke 37",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 37",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-7",
+          "person": "Methuselah",
+          "index": 7,
+          "reference": "Luke 37",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 37",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-8",
+          "person": "Lamech",
+          "index": 8,
+          "reference": "Luke 36",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 36",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-9",
+          "person": "Noah",
+          "index": 9,
+          "reference": "Luke 36",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 36",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-10",
+          "person": "Shem",
+          "index": 10,
+          "reference": "Luke 36",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 36",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-11",
+          "person": "Arphaxad",
+          "index": 11,
+          "reference": "Luke 36",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 36",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-12",
+          "person": "Cainan",
+          "index": 12,
+          "reference": "Luke 36",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 36",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-13",
+          "person": "Shelah",
+          "index": 13,
+          "reference": "Luke 35",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 35",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-14",
+          "person": "Eber",
+          "index": 14,
+          "reference": "Luke 35",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 35",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-15",
+          "person": "Peleg",
+          "index": 15,
+          "reference": "Luke 35",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 35",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-16",
+          "person": "Reu",
+          "index": 16,
+          "reference": "Luke 35",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 35",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-17",
+          "person": "Serug",
+          "index": 17,
+          "reference": "Luke 35",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 35",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-18",
+          "person": "Nahor",
+          "index": 18,
+          "reference": "Luke 34",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 34",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-19",
+          "person": "Terah",
+          "index": 19,
+          "reference": "Luke 34",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 34",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-20",
+          "person": "Abraham",
+          "index": 20,
+          "reference": "Luke 34",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 34",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-21",
+          "person": "Isaac",
+          "index": 21,
+          "reference": "Luke 34",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 34",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-22",
+          "person": "Jacob",
+          "index": 22,
+          "reference": "Luke 34",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 34",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-23",
+          "person": "Judah",
+          "index": 23,
+          "reference": "Luke 33",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 33",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-24",
+          "person": "Perez",
+          "index": 24,
+          "reference": "Luke 33",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 33",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-25",
+          "person": "Hezron",
+          "index": 25,
+          "reference": "Luke 33",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 33",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-26",
+          "person": "Ram",
+          "index": 26,
+          "reference": "Luke 33",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 33",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-27",
+          "person": "Amminadab",
+          "index": 27,
+          "reference": "Luke 33",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 33",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-28",
+          "person": "Nahshon",
+          "index": 28,
+          "reference": "Luke 32",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 32",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-29",
+          "person": "Salmon",
+          "index": 29,
+          "reference": "Luke 32",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 32",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-30",
+          "person": "Boaz",
+          "index": 30,
+          "reference": "Luke 32",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 32",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-31",
+          "person": "Obed",
+          "index": 31,
+          "reference": "Luke 32",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 32",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-32",
+          "person": "Jesse",
+          "index": 32,
+          "reference": "Luke 32",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 32",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-33",
+          "person": "David",
+          "index": 33,
+          "reference": "Luke 31",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 31",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-34",
+          "person": "Nathan",
+          "index": 34,
+          "reference": "Luke 31",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 31",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-35",
+          "person": "Mattatha",
+          "index": 35,
+          "reference": "Luke 31",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 31",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-36",
+          "person": "Menna",
+          "index": 36,
+          "reference": "Luke 31",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 31",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-37",
+          "person": "Melea",
+          "index": 37,
+          "reference": "Luke 31",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 31",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-38",
+          "person": "Eliakim",
+          "index": 38,
+          "reference": "Luke 30",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 30",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-39",
+          "person": "Jonam",
+          "index": 39,
+          "reference": "Luke 30",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 30",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-40",
+          "person": "Joseph",
+          "index": 40,
+          "reference": "Luke 30",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "legal-or-putative",
+          "edgeSource": {
+            "reference": "Luke 30",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-41",
+          "person": "Judah",
+          "index": 41,
+          "reference": "Luke 30",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 30",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-42",
+          "person": "Simeon",
+          "index": 42,
+          "reference": "Luke 30",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 30",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-43",
+          "person": "Levi",
+          "index": 43,
+          "reference": "Luke 29",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 29",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-44",
+          "person": "Matthat",
+          "index": 44,
+          "reference": "Luke 29",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 29",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-45",
+          "person": "Jorim",
+          "index": 45,
+          "reference": "Luke 29",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 29",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-46",
+          "person": "Eliezer",
+          "index": 46,
+          "reference": "Luke 29",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 29",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-47",
+          "person": "Joshua",
+          "index": 47,
+          "reference": "Luke 29",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 29",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-48",
+          "person": "Er",
+          "index": 48,
+          "reference": "Luke 28",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 28",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-49",
+          "person": "Elmadam",
+          "index": 49,
+          "reference": "Luke 28",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 28",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-50",
+          "person": "Cosam",
+          "index": 50,
+          "reference": "Luke 28",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 28",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-51",
+          "person": "Addi",
+          "index": 51,
+          "reference": "Luke 28",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 28",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-52",
+          "person": "Melchi",
+          "index": 52,
+          "reference": "Luke 28",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 28",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-53",
+          "person": "Neri",
+          "index": 53,
+          "reference": "Luke 27",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 27",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-54",
+          "person": "Shealtiel",
+          "index": 54,
+          "reference": "Luke 27",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 27",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-55",
+          "person": "Zerubbabel",
+          "index": 55,
+          "reference": "Luke 27",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 27",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-56",
+          "person": "Rhesa",
+          "index": 56,
+          "reference": "Luke 27",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 27",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-57",
+          "person": "Joanan",
+          "index": 57,
+          "reference": "Luke 27",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 27",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-58",
+          "person": "Joda",
+          "index": 58,
+          "reference": "Luke 26",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 26",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-59",
+          "person": "Josech",
+          "index": 59,
+          "reference": "Luke 26",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 26",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-60",
+          "person": "Semein",
+          "index": 60,
+          "reference": "Luke 26",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 26",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-61",
+          "person": "Mattathias",
+          "index": 61,
+          "reference": "Luke 26",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 26",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-62",
+          "person": "Maath",
+          "index": 62,
+          "reference": "Luke 26",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 26",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-63",
+          "person": "Naggai",
+          "index": 63,
+          "reference": "Luke 25",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 25",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-64",
+          "person": "Esli",
+          "index": 64,
+          "reference": "Luke 25",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 25",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-65",
+          "person": "Nahum",
+          "index": 65,
+          "reference": "Luke 25",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 25",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-66",
+          "person": "Amos",
+          "index": 66,
+          "reference": "Luke 25",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 25",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-67",
+          "person": "Mattathias",
+          "index": 67,
+          "reference": "Luke 25",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 25",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-68",
+          "person": "Joseph",
+          "index": 68,
+          "reference": "Luke 24",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "legal-or-putative",
+          "edgeSource": {
+            "reference": "Luke 24",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-69",
+          "person": "Jannai",
+          "index": 69,
+          "reference": "Luke 24",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 24",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-70",
+          "person": "Melchi",
+          "index": 70,
+          "reference": "Luke 24",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 24",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-71",
+          "person": "Levi",
+          "index": 71,
+          "reference": "Luke 24",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 24",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-72",
+          "person": "Matthat",
+          "index": 72,
+          "reference": "Luke 24",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 24",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-73",
+          "person": "Heli",
+          "index": 73,
+          "reference": "Luke 23",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "textual-lineage",
+          "edgeSource": {
+            "reference": "Luke 23",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-74",
+          "person": "Joseph",
+          "index": 74,
+          "reference": "Luke 23",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "legal-or-putative",
+          "edgeSource": {
+            "reference": "Luke 23",
+            "url": "https://www.newadvent.org/bible/luk003.htm",
+            "kind": "textual-genealogy"
+          }
+        },
+        {
+          "id": "Luke-75",
+          "person": "Jesus",
+          "index": 75,
+          "reference": "Luke 23",
+          "url": "https://www.newadvent.org/bible/luk003.htm",
+          "type": "terminus",
+          "edgeSource": null
+        }
+      ],
+      "description": "Luke 3:23–38; text says Jesus was Joseph's son as supposed. This ascending genealogy is displayed from Adam to Christ without equating Heli with Mary's father."
+    },
+    "genesis": {
+      "source": "https://www.newadvent.org/bible/gen005.htm",
+      "edges": [
+        {
+          "parent": "Adam",
+          "child": "Seth",
+          "reference": "Genesis 4:25",
+          "url": "https://www.newadvent.org/bible/gen004.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Seth",
+          "child": "Enos",
+          "reference": "Genesis 4:26",
+          "url": "https://www.newadvent.org/bible/gen004.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Enos",
+          "child": "Kenan",
+          "reference": "Genesis 5:9",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Kenan",
+          "child": "Mahalalel",
+          "reference": "Genesis 5:12",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Mahalalel",
+          "child": "Jared",
+          "reference": "Genesis 5:15",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jared",
+          "child": "Enoch",
+          "reference": "Genesis 5:18",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Enoch",
+          "child": "Methuselah",
+          "reference": "Genesis 5:21",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Methuselah",
+          "child": "Lamech",
+          "reference": "Genesis 5:25",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Lamech",
+          "child": "Noah",
+          "reference": "Genesis 5:28–29",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Noah",
+          "child": "Shem",
+          "reference": "Genesis 5:32",
+          "url": "https://www.newadvent.org/bible/gen005.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Shem",
+          "child": "Arphaxad",
+          "reference": "Genesis 11:10",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Arphaxad",
+          "child": "Shelah",
+          "reference": "Genesis 11:12",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Shelah",
+          "child": "Eber",
+          "reference": "Genesis 11:14",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Eber",
+          "child": "Peleg",
+          "reference": "Genesis 11:16",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Peleg",
+          "child": "Reu",
+          "reference": "Genesis 11:18",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Reu",
+          "child": "Serug",
+          "reference": "Genesis 11:20",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Serug",
+          "child": "Nahor",
+          "reference": "Genesis 11:22",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Nahor",
+          "child": "Terah",
+          "reference": "Genesis 11:24",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Terah",
+          "child": "Abraham",
+          "reference": "Genesis 11:26",
+          "url": "https://www.newadvent.org/bible/gen011.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Abraham",
+          "child": "Isaac",
+          "reference": "Genesis 21:3",
+          "url": "https://www.newadvent.org/bible/gen021.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Abraham",
+          "child": "Ishmael",
+          "reference": "Genesis 16:15",
+          "url": "https://www.newadvent.org/bible/gen016.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Abraham",
+          "child": "Midian",
+          "reference": "Genesis 25:2",
+          "url": "https://www.newadvent.org/bible/gen025.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Isaac",
+          "child": "Esau",
+          "reference": "Genesis 25:25",
+          "url": "https://www.newadvent.org/bible/gen025.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Isaac",
+          "child": "Jacob",
+          "reference": "Genesis 25:26",
+          "url": "https://www.newadvent.org/bible/gen025.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Reuben",
+          "reference": "Genesis 29:32",
+          "url": "https://www.newadvent.org/bible/gen029.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Simeon",
+          "reference": "Genesis 29:33",
+          "url": "https://www.newadvent.org/bible/gen029.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Levi",
+          "reference": "Genesis 29:34",
+          "url": "https://www.newadvent.org/bible/gen029.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Judah",
+          "reference": "Genesis 29:35",
+          "url": "https://www.newadvent.org/bible/gen029.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Dan",
+          "reference": "Genesis 30:6",
+          "url": "https://www.newadvent.org/bible/gen030.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Naphtali",
+          "reference": "Genesis 30:8",
+          "url": "https://www.newadvent.org/bible/gen030.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Gad",
+          "reference": "Genesis 30:11",
+          "url": "https://www.newadvent.org/bible/gen030.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Asher",
+          "reference": "Genesis 30:13",
+          "url": "https://www.newadvent.org/bible/gen030.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Issachar",
+          "reference": "Genesis 30:18",
+          "url": "https://www.newadvent.org/bible/gen030.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Zebulun",
+          "reference": "Genesis 30:20",
+          "url": "https://www.newadvent.org/bible/gen030.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Joseph",
+          "reference": "Genesis 30:24",
+          "url": "https://www.newadvent.org/bible/gen030.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Jacob",
+          "child": "Benjamin",
+          "reference": "Genesis 35:18",
+          "url": "https://www.newadvent.org/bible/gen035.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Judah",
+          "child": "Perez",
+          "reference": "Genesis 38:29",
+          "url": "https://www.newadvent.org/bible/gen038.htm",
+          "kind": "scripture-parentage"
+        },
+        {
+          "parent": "Judah",
+          "child": "Zerah",
+          "reference": "Genesis 38:30",
+          "url": "https://www.newadvent.org/bible/gen038.htm",
+          "kind": "scripture-parentage"
+        }
+      ],
+      "description": "Sample source-checked branches from Genesis 4–11; 16, 21, 25, 29–30, 35 and 38. Not every progeny is present."
+    }
+  },
+  "locations": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "lat": 31.777,
+      "lng": 35.234,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "nazareth",
+      "name": "Nazareth",
+      "lat": 32.702,
+      "lng": 35.298,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "bethlehem",
+      "name": "Bethlehem",
+      "lat": 31.704,
+      "lng": 35.208,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "judea",
+      "name": "Judean hill country",
+      "lat": 31.74,
+      "lng": 35.2,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt (unspecified residence)",
+      "lat": 30.1,
+      "lng": 31.2,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "cana",
+      "name": "Cana, traditional identification",
+      "lat": 32.75,
+      "lng": 35.34,
+      "kind": "traditional",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "samaria",
+      "name": "Samaria (region)",
+      "lat": 32.3,
+      "lng": 35.2,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "lydda",
+      "name": "Lydda",
+      "lat": 31.951,
+      "lng": 34.895,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "joppa",
+      "name": "Joppa",
+      "lat": 32.052,
+      "lng": 34.751,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "caesarea",
+      "name": "Caesarea Maritima",
+      "lat": 32.5,
+      "lng": 34.893,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "antioch",
+      "name": "Antioch",
+      "lat": 36.23,
+      "lng": 36.17,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "lat": 41.892,
+      "lng": 12.485,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "ephesus",
+      "name": "Ephesus",
+      "lat": 37.94,
+      "lng": 27.34,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "patmos",
+      "name": "Patmos",
+      "lat": 37.334,
+      "lng": 26.55,
+      "kind": "island",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "parthia",
+      "name": "Parthia (large region)",
+      "lat": 35,
+      "lng": 54,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "scythia",
+      "name": "Scythia (vast region)",
+      "lat": 46,
+      "lng": 34,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "cyprus",
+      "name": "Cyprus",
+      "lat": 35.13,
+      "lng": 33.42,
+      "kind": "island",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "alexandria",
+      "name": "Alexandria",
+      "lat": 31.2,
+      "lng": 29.92,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "galilee",
+      "name": "Galilee (region)",
+      "lat": 32.7,
+      "lng": 35.5,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "india",
+      "name": "India (broad tradition)",
+      "lat": 12,
+      "lng": 77,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "damascus",
+      "name": "Damascus",
+      "lat": 33.513,
+      "lng": 36.3,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "corinth",
+      "name": "Corinth",
+      "lat": 37.91,
+      "lng": 22.88,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "philippi",
+      "name": "Philippi",
+      "lat": 41.01,
+      "lng": 24.29,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "athens",
+      "name": "Athens",
+      "lat": 37.97,
+      "lng": 23.72,
+      "kind": "city",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    },
+    {
+      "id": "provence",
+      "name": "Provence (later tradition)",
+      "lat": 43.46,
+      "lng": 5.9,
+      "kind": "region",
+      "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "certified": false
+    }
+  ],
+  "profiles": [
+    {
+      "id": "mary",
+      "name": "Our Lady",
+      "fr": "Notre-Dame",
+      "icon": "mary"
+    },
+    {
+      "id": "john",
+      "name": "St John",
+      "fr": "Saint Jean",
+      "icon": "john"
+    },
+    {
+      "id": "peter",
+      "name": "St Peter",
+      "fr": "Saint Pierre",
+      "icon": "peter"
+    },
+    {
+      "id": "james",
+      "name": "St James the Greater",
+      "fr": "Saint Jacques le Majeur",
+      "icon": "james"
+    },
+    {
+      "id": "andrew",
+      "name": "St Andrew",
+      "fr": "Saint André",
+      "icon": "andrew"
+    },
+    {
+      "id": "thomas",
+      "name": "St Thomas",
+      "fr": "Saint Thomas",
+      "icon": "thomas"
+    },
+    {
+      "id": "philip-apostle",
+      "name": "St Philip the Apostle",
+      "fr": "Saint Philippe apôtre",
+      "icon": "philip"
+    },
+    {
+      "id": "philip-evangelist",
+      "name": "Philip the Evangelist",
+      "fr": "Philippe l'Évangéliste",
+      "icon": "philip"
+    },
+    {
+      "id": "mark",
+      "name": "St Mark",
+      "fr": "Saint Marc",
+      "icon": "mark"
+    },
+    {
+      "id": "barnabas",
+      "name": "St Barnabas",
+      "fr": "Saint Barnabé",
+      "icon": "barnabas"
+    },
+    {
+      "id": "paul",
+      "name": "St Paul",
+      "fr": "Saint Paul",
+      "icon": "paul"
+    },
+    {
+      "id": "magdalene",
+      "name": "St Mary Magdalene",
+      "fr": "Sainte Marie-Madeleine",
+      "icon": "mary"
+    },
+    {
+      "id": "matthew",
+      "name": "St Matthew",
+      "fr": "Saint Matthieu",
+      "icon": "matthew"
+    },
+    {
+      "id": "bartholomew",
+      "name": "St Bartholomew",
+      "fr": "Saint Barthélemy",
+      "icon": "bartholomew"
+    },
+    {
+      "id": "simon",
+      "name": "St Simon",
+      "fr": "Saint Simon",
+      "icon": "simon"
+    },
+    {
+      "id": "jude",
+      "name": "St Jude",
+      "fr": "Saint Jude",
+      "icon": "jude"
+    },
+    {
+      "id": "matthias",
+      "name": "St Matthias",
+      "fr": "Saint Matthias",
+      "icon": "matthias"
+    },
+    {
+      "id": "luke",
+      "name": "St Luke",
+      "fr": "Saint Luc",
+      "icon": "luke"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "person": "mary",
+      "title": "The Annunciation",
+      "fr": "L'Annonciation",
+      "place": "nazareth",
+      "reference": "Luke 1:26–38",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/luk001.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 0
+    },
+    {
+      "id": "event-2",
+      "person": "mary",
+      "title": "The Visitation",
+      "fr": "La Visitation",
+      "place": "judea",
+      "reference": "Luke 1:39–56",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/luk001.htm",
+      "note": "Judean hill country; Ain Karem is a traditional localization.",
+      "group": "apostolic",
+      "order": 1
+    },
+    {
+      "id": "event-3",
+      "person": "mary",
+      "title": "The Nativity",
+      "fr": "La Nativité",
+      "place": "bethlehem",
+      "reference": "Luke 2:1–20",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/luk002.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 2
+    },
+    {
+      "id": "event-4",
+      "person": "mary",
+      "title": "Presentation of Jesus",
+      "fr": "Présentation de Jésus",
+      "place": "jerusalem",
+      "reference": "Luke 2:22–38",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/luk002.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 3
+    },
+    {
+      "id": "event-5",
+      "person": "mary",
+      "title": "Flight into Egypt",
+      "fr": "La fuite en Égypte",
+      "place": "egypt",
+      "reference": "Matthew 2:13–15",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/mat002.htm",
+      "note": "The Gospel does not name an Egyptian settlement.",
+      "group": "apostolic",
+      "order": 4
+    },
+    {
+      "id": "event-6",
+      "person": "mary",
+      "title": "At Cana",
+      "fr": "À Cana",
+      "place": "cana",
+      "reference": "John 2:1–11",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/jhn002.htm",
+      "note": "Village identification is traditional.",
+      "group": "apostolic",
+      "order": 5
+    },
+    {
+      "id": "event-7",
+      "person": "mary",
+      "title": "At the Cross",
+      "fr": "Au pied de la Croix",
+      "place": "jerusalem",
+      "reference": "John 19:25–27",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/jhn019.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 6
+    },
+    {
+      "id": "event-8",
+      "person": "mary",
+      "title": "With the disciples in prayer",
+      "fr": "Avec les disciples en prière",
+      "place": "jerusalem",
+      "reference": "Acts 1:12–14",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act001.htm",
+      "note": "Jerusalem supplied by narrative context.",
+      "group": "apostolic",
+      "order": 7
+    },
+    {
+      "id": "event-9",
+      "person": "john",
+      "title": "With Peter in Jerusalem",
+      "fr": "Avec Pierre à Jérusalem",
+      "place": "jerusalem",
+      "reference": "Acts 3:1–11",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act003.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 8
+    },
+    {
+      "id": "event-10",
+      "person": "john",
+      "title": "John and Peter sent to Samaria",
+      "fr": "Jean et Pierre envoyés en Samarie",
+      "place": "samaria",
+      "reference": "Acts 8:14–25",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act008.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 9
+    },
+    {
+      "id": "event-11",
+      "person": "john",
+      "title": "John's ministry in Asia",
+      "fr": "Ministère de Jean en Asie",
+      "place": "ephesus",
+      "reference": "Irenaeus, Against Heresies III.3.4",
+      "kind": "patristic",
+      "source": "https://www.newadvent.org/fathers/0103303.htm",
+      "note": "Ephesus attested by Irenaeus; not an exact dated journey.",
+      "group": "apostolic",
+      "order": 10
+    },
+    {
+      "id": "event-12",
+      "person": "john",
+      "title": "Patmos, author named John",
+      "fr": "Patmos, auteur nommé Jean",
+      "place": "patmos",
+      "reference": "Revelation 1:9",
+      "kind": "identification",
+      "source": "https://www.newadvent.org/bible/rev001.htm",
+      "note": "The text names John; identifying him with John son of Zebedee is a traditional attribution, not settled by the verse alone.",
+      "group": "apostolic",
+      "order": 11
+    },
+    {
+      "id": "event-13",
+      "person": "john",
+      "title": "Ephesus in later historical testimony",
+      "fr": "Éphèse selon la tradition ancienne",
+      "place": "ephesus",
+      "reference": "Eusebius, Church History III.23.6",
+      "kind": "patristic",
+      "source": "https://www.newadvent.org/fathers/250103.htm",
+      "note": "Eusebius cites a return from Patmos to Ephesus.",
+      "group": "apostolic",
+      "order": 12
+    },
+    {
+      "id": "event-14",
+      "person": "peter",
+      "title": "Peter among the disciples",
+      "fr": "Pierre avec les disciples",
+      "place": "jerusalem",
+      "reference": "Acts 2:14",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act002.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 13
+    },
+    {
+      "id": "event-15",
+      "person": "peter",
+      "title": "Peter and John in Samaria",
+      "fr": "Pierre et Jean en Samarie",
+      "place": "samaria",
+      "reference": "Acts 8:14–25",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act008.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 14
+    },
+    {
+      "id": "event-16",
+      "person": "peter",
+      "title": "The healing of Aeneas",
+      "fr": "Guérison d'Énée",
+      "place": "lydda",
+      "reference": "Acts 9:32–35",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act009.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 15
+    },
+    {
+      "id": "event-17",
+      "person": "peter",
+      "title": "Tabitha raised at Joppa",
+      "fr": "Tabitha ressuscitée à Joppé",
+      "place": "joppa",
+      "reference": "Acts 9:36–43",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act009.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 16
+    },
+    {
+      "id": "event-18",
+      "person": "peter",
+      "title": "At the house of Cornelius",
+      "fr": "Chez Corneille",
+      "place": "caesarea",
+      "reference": "Acts 10:24–48",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act010.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 17
+    },
+    {
+      "id": "event-19",
+      "person": "peter",
+      "title": "Peter at the Council",
+      "fr": "Pierre au concile",
+      "place": "jerusalem",
+      "reference": "Acts 15:7–11",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act015.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 18
+    },
+    {
+      "id": "event-20",
+      "person": "peter",
+      "title": "Paul meets Peter at Antioch",
+      "fr": "Paul rencontre Pierre à Antioche",
+      "place": "antioch",
+      "reference": "Galatians 2:11–14",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/gal002.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 19
+    },
+    {
+      "id": "event-21",
+      "person": "peter",
+      "title": "Peter in Rome, martyrdom testimony",
+      "fr": "Pierre à Rome, témoignage du martyre",
+      "place": "rome",
+      "reference": "Eusebius, Church History III.1.2",
+      "kind": "patristic",
+      "source": "https://www.newadvent.org/fathers/250103.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 20
+    },
+    {
+      "id": "event-22",
+      "person": "james",
+      "title": "James, brother of John, in Jerusalem",
+      "fr": "Jacques, frère de Jean, à Jérusalem",
+      "place": "jerusalem",
+      "reference": "Acts 12:1–2",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act012.htm",
+      "note": "Acts records his execution in Jerusalem.",
+      "group": "apostolic",
+      "order": 21
+    },
+    {
+      "id": "event-23",
+      "person": "andrew",
+      "title": "Andrew's mission associated with Scythia",
+      "fr": "Mission d'André associée à la Scythie",
+      "place": "scythia",
+      "reference": "Eusebius, Church History III.1.1",
+      "kind": "patristic",
+      "source": "https://www.newadvent.org/fathers/250103.htm",
+      "note": "A regional field of mission, not a documented itinerary.",
+      "group": "apostolic",
+      "order": 22
+    },
+    {
+      "id": "event-24",
+      "person": "thomas",
+      "title": "Thomas associated with Parthia",
+      "fr": "Thomas associé à la Parthie",
+      "place": "parthia",
+      "reference": "Eusebius, Church History III.1.1",
+      "kind": "patristic",
+      "source": "https://www.newadvent.org/fathers/250103.htm",
+      "note": "A regional tradition; no intermediate stops specified.",
+      "group": "apostolic",
+      "order": 23
+    },
+    {
+      "id": "event-25",
+      "person": "thomas",
+      "title": "St Thomas and Indian Christianity",
+      "fr": "Saint Thomas et le christianisme indien",
+      "place": "india",
+      "reference": "Benedict XVI, address to the bishops of India (2011)",
+      "kind": "later",
+      "source": "https://www.vatican.va/content/benedict-xvi/en/speeches/2011/may/documents/hf_ben-xvi_spe_20110516_ad-limina-india.html",
+      "note": "Tradition and ecclesiastical memory; not a GPS route or precise locality.",
+      "group": "apostolic",
+      "order": 24
+    },
+    {
+      "id": "event-26",
+      "person": "philip-evangelist",
+      "title": "Philip preaches in Samaria",
+      "fr": "Philippe prêche en Samarie",
+      "place": "samaria",
+      "reference": "Acts 8:5–13",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act008.htm",
+      "note": "Philip the Evangelist, distinct from Philip the Apostle.",
+      "group": "apostolic",
+      "order": 25
+    },
+    {
+      "id": "event-27",
+      "person": "philip-evangelist",
+      "title": "Philip in Caesarea",
+      "fr": "Philippe à Césarée",
+      "place": "caesarea",
+      "reference": "Acts 21:8–9",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act021.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 26
+    },
+    {
+      "id": "event-28",
+      "person": "philip-apostle",
+      "title": "Philip among the Twelve",
+      "fr": "Philippe parmi les Douze",
+      "place": "galilee",
+      "reference": "John 1:43–46",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/jhn001.htm",
+      "note": "A broad Galilee region, not a missionary assignment.",
+      "group": "apostolic",
+      "order": 27
+    },
+    {
+      "id": "event-29",
+      "person": "mark",
+      "title": "The home of John Mark's mother",
+      "fr": "Maison de la mère de Jean-Marc",
+      "place": "jerusalem",
+      "reference": "Acts 12:12",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act012.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 28
+    },
+    {
+      "id": "event-30",
+      "person": "mark",
+      "title": "Mark travels with Barnabas",
+      "fr": "Marc accompagne Barnabé",
+      "place": "cyprus",
+      "reference": "Acts 15:39",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act015.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 29
+    },
+    {
+      "id": "event-31",
+      "person": "mark",
+      "title": "Mark associated with Alexandria",
+      "fr": "Marc associé à Alexandrie",
+      "place": "alexandria",
+      "reference": "Eusebius, Church History II.16.1",
+      "kind": "patristic",
+      "source": "https://www.newadvent.org/fathers/250102.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 30
+    },
+    {
+      "id": "event-32",
+      "person": "barnabas",
+      "title": "Barnabas in Jerusalem",
+      "fr": "Barnabé à Jérusalem",
+      "place": "jerusalem",
+      "reference": "Acts 4:36–37",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act004.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 31
+    },
+    {
+      "id": "event-33",
+      "person": "barnabas",
+      "title": "Barnabas at Antioch",
+      "fr": "Barnabé à Antioche",
+      "place": "antioch",
+      "reference": "Acts 11:22–26",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act011.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 32
+    },
+    {
+      "id": "event-34",
+      "person": "barnabas",
+      "title": "Barnabas sent to Cyprus",
+      "fr": "Barnabé envoyé à Chypre",
+      "place": "cyprus",
+      "reference": "Acts 13:4–5",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act013.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 33
+    },
+    {
+      "id": "event-35",
+      "person": "barnabas",
+      "title": "Barnabas and Mark sail to Cyprus",
+      "fr": "Barnabé et Marc partent à Chypre",
+      "place": "cyprus",
+      "reference": "Acts 15:39",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act015.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 34
+    },
+    {
+      "id": "event-36",
+      "person": "paul",
+      "title": "Saul's conversion near Damascus",
+      "fr": "Conversion de Saul près de Damas",
+      "place": "damascus",
+      "reference": "Acts 9:1–19",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act009.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 35
+    },
+    {
+      "id": "event-37",
+      "person": "paul",
+      "title": "Paul among the brethren in Antioch",
+      "fr": "Paul parmi les frères à Antioche",
+      "place": "antioch",
+      "reference": "Acts 11:25–26",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act011.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 36
+    },
+    {
+      "id": "event-38",
+      "person": "paul",
+      "title": "Preaching at Philippi",
+      "fr": "Prédication à Philippes",
+      "place": "philippi",
+      "reference": "Acts 16:11–15",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act016.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 37
+    },
+    {
+      "id": "event-39",
+      "person": "paul",
+      "title": "Paul speaks in Athens",
+      "fr": "Paul parle à Athènes",
+      "place": "athens",
+      "reference": "Acts 17:16–34",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act017.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 38
+    },
+    {
+      "id": "event-40",
+      "person": "paul",
+      "title": "Paul at Corinth",
+      "fr": "Paul à Corinthe",
+      "place": "corinth",
+      "reference": "Acts 18:1–18",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act018.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 39
+    },
+    {
+      "id": "event-41",
+      "person": "paul",
+      "title": "Paul preaches at Ephesus",
+      "fr": "Paul prêche à Éphèse",
+      "place": "ephesus",
+      "reference": "Acts 19:1–10",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act019.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 40
+    },
+    {
+      "id": "event-42",
+      "person": "paul",
+      "title": "Paul arrives in Rome",
+      "fr": "Paul arrive à Rome",
+      "place": "rome",
+      "reference": "Acts 28:14–16",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/act028.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 41
+    },
+    {
+      "id": "event-43",
+      "person": "magdalene",
+      "title": "Mary Magdalene at the Crucifixion",
+      "fr": "Marie-Madeleine à la Crucifixion",
+      "place": "jerusalem",
+      "reference": "Mark 15:40–41",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/mrk015.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 42
+    },
+    {
+      "id": "event-44",
+      "person": "magdalene",
+      "title": "Mary Magdalene meets the Risen Lord",
+      "fr": "Marie-Madeleine rencontre le Ressuscité",
+      "place": "jerusalem",
+      "reference": "John 20:1–18",
+      "kind": "scripture",
+      "source": "https://www.newadvent.org/bible/jhn020.htm",
+      "note": "",
+      "group": "apostolic",
+      "order": 43
+    },
+    {
+      "id": "event-45",
+      "person": "matthew",
+      "title": "Apostolic witness; no verified itinerary yet",
+      "fr": "Témoignage apostolique ; aucun itinéraire encore attesté",
+      "place": null,
+      "reference": "Acts 1:13–26",
+      "kind": "hold",
+      "source": "https://www.newadvent.org/bible/act001.htm",
+      "note": "This person is indexed; no unsupported destination is asserted.",
+      "group": "apostolic",
+      "order": 44
+    },
+    {
+      "id": "event-46",
+      "person": "bartholomew",
+      "title": "Apostolic witness; no verified itinerary yet",
+      "fr": "Témoignage apostolique ; aucun itinéraire encore attesté",
+      "place": null,
+      "reference": "Acts 1:13–26",
+      "kind": "hold",
+      "source": "https://www.newadvent.org/bible/act001.htm",
+      "note": "This person is indexed; no unsupported destination is asserted.",
+      "group": "apostolic",
+      "order": 45
+    },
+    {
+      "id": "event-47",
+      "person": "simon",
+      "title": "Apostolic witness; no verified itinerary yet",
+      "fr": "Témoignage apostolique ; aucun itinéraire encore attesté",
+      "place": null,
+      "reference": "Acts 1:13–26",
+      "kind": "hold",
+      "source": "https://www.newadvent.org/bible/act001.htm",
+      "note": "This person is indexed; no unsupported destination is asserted.",
+      "group": "apostolic",
+      "order": 46
+    },
+    {
+      "id": "event-48",
+      "person": "jude",
+      "title": "Apostolic witness; no verified itinerary yet",
+      "fr": "Témoignage apostolique ; aucun itinéraire encore attesté",
+      "place": null,
+      "reference": "Acts 1:13–26",
+      "kind": "hold",
+      "source": "https://www.newadvent.org/bible/act001.htm",
+      "note": "This person is indexed; no unsupported destination is asserted.",
+      "group": "apostolic",
+      "order": 47
+    },
+    {
+      "id": "event-49",
+      "person": "matthias",
+      "title": "Apostolic witness; no verified itinerary yet",
+      "fr": "Témoignage apostolique ; aucun itinéraire encore attesté",
+      "place": null,
+      "reference": "Acts 1:13–26",
+      "kind": "hold",
+      "source": "https://www.newadvent.org/bible/act001.htm",
+      "note": "This person is indexed; no unsupported destination is asserted.",
+      "group": "apostolic",
+      "order": 48
+    },
+    {
+      "id": "event-50",
+      "person": "luke",
+      "title": "Apostolic witness; no verified itinerary yet",
+      "fr": "Témoignage apostolique ; aucun itinéraire encore attesté",
+      "place": null,
+      "reference": "Acts 1:13–26",
+      "kind": "hold",
+      "source": "https://www.newadvent.org/bible/act001.htm",
+      "note": "This person is indexed; no unsupported destination is asserted.",
+      "group": "apostolic",
+      "order": 49
+    }
+  ],
+  "guards": [
+    "All Matthew and Luke textual parent lines are separate; no data-merge into one biological tree.",
+    "Jesus: Joseph is legal/putative father; never infer his biological fatherhood or introduce siblings as Mary's biological children.",
+    "Acts 8 Philip the Evangelist is not Philip the Apostle.",
+    "Revelation's John cannot silently be identified with the son of Zebedee; separate authorship attribution.",
+    "Travel paths connect narrated scriptural stops only in narrative order; they are schematic straight lines, not ancient roads.",
+    "Patristic and later mission regions are association markers, never assumed travelled segments.",
+    "Undocumented Apostles stay discoverable as hold dossiers, with zero fabricated pins.",
+    "Place coordinates are approximate editorial map anchors; physical/geographical certification not complete."
+  ]
+}
