@@ -1,0 +1,106 @@
+// Focused production-browser acceptance for non-Mass phone readability.
+// No localization, liturgical source or content edits.
+import assert from "node:assert/strict";
+import http from "node:http";
+import {mkdir,readFile} from "node:fs/promises";
+import {extname,resolve,sep} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const out=resolve(root,"artifacts/nonmass-phone-readability");
+await mkdir(out,{recursive:true});
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
+  ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
+  ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
+  ".jpg":"image/jpeg",".jpeg":"image/jpeg",".webp":"image/webp"};
+const server=http.createServer(async(req,res)=>{
+ try{
+  const url=new URL(req.url,"http://127.0.0.1");
+  const file=resolve(root,"."+decodeURIComponent(url.pathname));
+  if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end("Forbidden");return;}
+  const bytes=await readFile(file);
+  res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});
+  res.end(bytes);
+ }catch(error){res.writeHead(error.code==="ENOENT"?404:500);res.end(String(error.message));}
+});
+await new Promise((yes,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",yes);});
+const base="http://127.0.0.1:"+server.address().port;
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ for(const width of [320,390,430,768]){
+  const height=width===768?1000:width===320?700:width===390?844:932;
+  const context=await browser.newContext({viewport:{width,height},hasTouch:true,
+    isMobile:width<600,deviceScaleFactor:1,locale:"en-GB",reducedMotion:"reduce"});
+  const page=await context.newPage();
+  const errors=[];
+  page.on("pageerror",error=>errors.push(String(error.message||error)));
+  try{
+   await page.goto(base+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:90000});
+   await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,
+     null,{timeout:35000});
+   await page.waitForFunction(()=>!document.getElementById("ao-cinema-boot"),
+     null,{timeout:18000});
+   await page.locator('[data-ao-app-surface="learn"]').click();
+   await page.locator("#ao-learn-modular-root .aoLearnFamilyGrid").waitFor({state:"visible",timeout:18000});
+   const formation=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-learn-modular-root");
+    const cards=[...root.querySelectorAll(".aoLearnFamilyGrid .aoLearnFamilyCard")];
+    const buttons=cards.map(card=>card.querySelector(".aoLearnFamilyDoor"));
+    const boxes=cards.map(card=>{const r=card.getBoundingClientRect();return{x:r.x,y:r.y,w:r.width,h:r.height};});
+    const desc=buttons.map(b=>b.querySelector("p")).filter(Boolean).map(el=>{
+      const s=getComputedStyle(el),r=el.getBoundingClientRect();
+      return {display:s.display,font:parseFloat(s.fontSize),height:r.height,text:el.textContent.trim()};
+    });
+    return {cards:cards.length,boxes,desc,
+      scrollWidth:document.documentElement.scrollWidth,innerWidth,
+      clickTargets:buttons.map(b=>b.getBoundingClientRect().height)};
+   });
+   assert.ok(formation.cards>=8,"Formation subjects missing at "+width+"px");
+   if(width<=430){
+    assert.ok(formation.boxes.every(x=>x.w>=width-45),
+      "Phone Formation family rows remain cramped: "+JSON.stringify(formation.boxes.slice(0,2)));
+    assert.ok(formation.boxes.slice(1).every((b,i)=>b.y>formation.boxes[i].y+8),
+      "Phone Formation still uses two horizontal columns");
+    assert.ok(formation.desc.every(x=>x.display!=="none"&&x.height>0&&x.font>=13),
+      "Phone Formation descriptions hidden or unreadable: "+JSON.stringify(formation.desc));
+    assert.ok(formation.clickTargets.every(h=>h>=44),
+      "Phone Formation has an undersized subject target");
+   }else{
+    assert.ok(formation.boxes[1].y<formation.boxes[0].y+10,
+      "Tablet Formation lost its two-column scannability");
+   }
+   assert.ok(formation.scrollWidth<=formation.innerWidth+1,"Formation overflow at "+width+"px");
+   await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
+   await page.locator('[data-ao-app-surface="pray"]').click();
+   await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
+   const prayer=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
+    const visible=selector=>[...document.querySelectorAll(selector)].filter(el=>{
+      const s=getComputedStyle(el),r=el.getBoundingClientRect();
+      return s.display!=="none"&&s.visibility!=="hidden"&&r.height>0&&r.width>0;
+    });
+    const kind=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind");
+    const descriptions=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription");
+    const font=el=>parseFloat(getComputedStyle(el).fontSize);
+    return {root:!!root,kind:kind.map(font),descriptions:descriptions.map(font),
+      scrollWidth:document.documentElement.scrollWidth,innerWidth,
+      rootButtons:[...root.querySelectorAll("button")].length};
+   });
+   assert.ok(prayer.kind.length>=4&&prayer.descriptions.length>=4,
+     "Prayer family list unavailable at "+width+"px");
+   assert.ok(prayer.kind.every(px=>px>=11),"Prayer category microtype still <11px: "+JSON.stringify(prayer));
+   assert.ok(prayer.descriptions.every(px=>px>=13),
+     "Prayer descriptions still below 13px: "+JSON.stringify(prayer));
+   assert.ok(prayer.scrollWidth<=prayer.innerWidth+1,"Prayer overflow at "+width+"px");
+   await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
+   assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
+   console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
+     prayer.kind.length+" Prayer family kinds, no viewport overflow");
+  }finally{await context.close();}
+ }
+}finally{
+ await browser?.close();
+ await new Promise(ok=>server.close(ok));
+}
