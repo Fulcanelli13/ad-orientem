@@ -27,10 +27,11 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   novenaBridge:moduleUrl("../../data/customs/novena-context-links.v1.json"),
   novenaSot:moduleUrl("../../data/pray/novena-sot.v1.json"),
   approvedPlaceMedia:moduleUrl("../../data/geography/approved-place-media.v1.json"),
+  majorPlaceEditorial:moduleUrl("../../data/geography/major-places-editorial.v1.json"),
 });
 
 export async function loadExploreDataset({fetchImpl=fetch}={}){
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,majorPlaceEditorial]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -42,6 +43,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.sacredPhenomena,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.relatedPlaces,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.approvedPlaceMedia,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.majorPlaceEditorial,{fetchImpl,optional:true}),
   ]);
   return Object.freeze({
     directory,
@@ -65,6 +67,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
       sources:safeArray(shrineSources?.sources),
     }),
     media:Object.freeze({approved:approvedPlaceMedia?.schema==="AO_APPROVED_PLACE_MEDIA_V1"?safeArray(approvedPlaceMedia?.items):[]}),
+    editorial:Object.freeze({featured:majorPlaceEditorial?.schema==="AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1"?safeArray(majorPlaceEditorial?.items):[]}),
     novenas:Object.freeze({
       records:safeArray(novenaSot?.novenas),
       links:safeArray(novenaBridge?.links),
