@@ -295,4 +295,66 @@ export const HERITAGE_STYLE = String.raw`
   font:650 17px/1 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer;
 }
 .aoHeritageSurface .aoHeritageGlossaryButton:focus-visible{outline:2px solid var(--ao-liturgical-accent,#c9ad78);outline-offset:2px}
+
+/* R56: Nearby is a small map overlay, not a second full-screen directory. */
+.aoHeritageSurface .aoHeritageNearbyPanel{
+  box-sizing:border-box;position:absolute;z-index:5;bottom:12px;
+  left:12px;right:12px;width:min(430px,calc(100% - 24px));
+  max-height:min(43dvh,400px);overflow-y:auto;overscroll-behavior:contain;
+  border:1px solid var(--ao-liturgical-border,rgba(201,173,120,.38));
+  border-radius:14px;background:var(--ao-surface-1,#101821);
+  box-shadow:0 12px 38px #000b;
+  color:var(--ao-text-primary,#e9e4d9);
+}
+.aoHeritageSurface .aoHeritageNearbyPanel>header{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:8px;
+  position:sticky;top:0;z-index:1;padding:11px 12px 8px;
+  background:var(--ao-surface-1,#101821);
+  border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.11));
+}
+.aoHeritageNearbyPanel>header>div{min-width:0;display:grid;gap:3px}
+.aoHeritageNearbyPanel>header strong{
+  font:600 18px/1.2 var(--ao-font-display,Georgia,serif);
+}
+.aoHeritageNearbyPanel>header small{
+  font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-text-muted,#9ba5b1);
+}
+.aoHeritageSurface .aoHeritageNearbyPanel>header button{
+  min-width:44px;width:44px;min-height:44px;height:44px;flex:none;
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  border-radius:10px;background:var(--ao-surface-2,#0d141c);
+  color:var(--ao-text-primary,#e9e4d9);font:24px/1 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoHeritageNearbyResult{
+  display:flex;width:100%;min-height:57px;align-items:center;
+  justify-content:space-between;gap:11px;padding:10px 13px;
+  border:0;border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  background:transparent;color:var(--ao-text-primary,#e9e4d9);
+  text-align:left;cursor:pointer;
+}
+.aoHeritageNearbyResult>span:first-child{min-width:0;display:grid;gap:3px}
+.aoHeritageNearbyResult strong{
+  font:600 14px/1.25 var(--ao-font-display,Georgia,serif);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.aoHeritageNearbyResult small{
+  font:400 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-text-muted,#9ba5b1);
+}
+.aoHeritageNearbyDistance{
+  flex:none;white-space:nowrap;color:var(--ao-liturgical-accent,#c9ad78);
+  font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  font-variant-numeric:tabular-nums;
+}
+.aoHeritageSurface .aoHeritageNearbyResult:focus-visible,
+.aoHeritageSurface .aoHeritageNearbyPanel>header button:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#c9ad78);outline-offset:-2px;
+}
+@media(max-width:520px){
+ .aoHeritageSurface .aoHeritageNearbyPanel{
+   left:8px;right:8px;bottom:8px;width:calc(100% - 16px);
+   max-height:min(42dvh,370px);
+ }
+}
 `;
