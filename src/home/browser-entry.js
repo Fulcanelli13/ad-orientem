@@ -242,7 +242,6 @@ export function createHomeOwner(win=globalThis){
   }
 
   function showHomeToday(){
-    if(win?.__aoCalendarTrace)win.console?.warn?.("AO_HOME_SHOW_TODAY",new Error().stack);
     inlineCalendarView=null;
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
     if(screen){
@@ -255,7 +254,6 @@ export function createHomeOwner(win=globalThis){
     return true;
   }
   async function openHomeCalendar(view="picker",date=null){
-    if(win?.__aoCalendarTrace)win.console?.warn?.("AO_HOME_OPEN_CALENDAR",view,new Error().stack);
     if(!["day","picker","year"].includes(view))view="picker";
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
     const slot=screen?.querySelector?.("[data-home-calendar-inline]");
@@ -271,7 +269,6 @@ export function createHomeOwner(win=globalThis){
     const opened=await api?.openEmbedded?.(slot,{view,onClose:()=>{
       if(inlineCalendarView)showHomeToday();
     }});
-    if(win?.__aoCalendarTrace)win.console?.warn?.("AO_HOME_EMBEDDED_RESULT",opened,view);
     if(opened!==true){showHomeToday();return false}
     if(date&&/^\d{4}-\d{2}-\d{2}$/.test(date))await api.select?.(date,{closeAfter:false});
     return true;
@@ -442,7 +439,6 @@ export function createHomeOwner(win=globalThis){
   }
 
   function open(){
-    if(win?.__aoCalendarTrace)win.console?.warn?.("AO_HOME_OPEN",inlineCalendarView,new Error().stack);
     // In-page Calendar is still the Home destination. Boot/enricher owners can
     // request Home again during first-use Calendar resolution: that is not an
     // instruction to discard the user's selected Year or Month view.
