@@ -6,10 +6,10 @@ const [input,output]=process.argv.slice(2);
 if(!input||!output)throw Error("Usage: node script input-pdftotext.txt output.json");
 const prefix="data/geography/research/";
 const packets=JSON.parse(readFileSync(prefix+"mass-1962-high-priority-100-evidence-packets-20261011.v1.json","utf8"));
-const normalize=s=>(s||"").replace(/([A-Za-zæœ])[-\\u00ad]\\s*\\n\\s*([A-Za-zæœ])/gi,"$1$2")
+const normalize=s=>(s||"").replace(/([A-Za-zæœ])[-\u00ad]\s*\n\s*([A-Za-zæœ])/gi,"$1$2")
  .toLowerCase().replace(/æ/g,"ae").replace(/œ/g,"oe").normalize("NFD")
- .replace(/[\\u0300-\\u036f\\u00ad\\u0002]/g,"").replace(/j/g,"i").replace(/v/g,"u")
- .replace(/[^a-z]+/g," ").replace(/\\s+/g," ").trim();
+ .replace(/[\u0300-\u036f\u00ad\u0002]/g,"").replace(/j/g,"i").replace(/v/g,"u")
+ .replace(/[^a-z]+/g," ").replace(/\s+/g," ").trim();
 const rawPages=readFileSync(input,"utf8").split("\f");
 if(!rawPages.at(-1).trim())rawPages.pop();
 if(rawPages.length<900)throw Error("Not a full scanned Missal: "+rawPages.length+" pages");
