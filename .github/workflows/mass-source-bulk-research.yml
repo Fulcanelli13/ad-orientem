@@ -6,6 +6,7 @@ on:
       - 'scripts/research/mass-source-bulk-audit.mjs'
       - 'data/geography/research/mass-1962-uninspected-source-triage-20261011.v1.json'
       - '.github/workflows/mass-source-bulk-research.yml'
+      - 'tests/mass-source-bulk-audit-947.mjs'
 jobs:
   inspect-sources:
     runs-on: ubuntu-latest
@@ -30,6 +31,8 @@ jobs:
         env:
           MASS_AUDIT_FAMILY: SANCTORAL_FIXED_DATE_SOURCE
           MASS_AUDIT_CONCURRENCY: '6'
+      - name: Validate 947-file source population and fail-closed publication gates
+        run: node tests/mass-source-bulk-audit-947.mjs
       - name: Upload raw research results
         if: always()
         uses: actions/upload-artifact@v4
