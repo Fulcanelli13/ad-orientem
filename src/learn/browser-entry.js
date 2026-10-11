@@ -84,6 +84,8 @@ function closeChild(win,id){
 
 export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   let launchEpoch=0;
+  // In-memory hub context only: never persist questions/searches to device storage.
+  let suspendedHubContext=null;
   const state={open:false,child:null,family:null,lastFamily:null,externalReturn:null,error:"",monitor:null,unsub:null,lastLauncher:null,openPolls:0,seenChild:false,guidedAttempted:false,discoveryQuery:"",referenceEntries:[],referenceStatus:"idle",contentEntries:[],contentStatus:"idle",lastDiscoveryReference:null};
 
   function cancelMonitor(){
@@ -474,8 +476,17 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     return true;
   }
 
-  function close(){
+  function close({preserveContext=false}={}){
     ++launchEpoch;
+    const leavingRoot=root(win);
+    if(preserveContext&&state.open){
+      suspendedHubContext={
+        family:state.family,lastFamily:state.lastFamily,
+        discoveryQuery:state.discoveryQuery,
+        lastDiscoveryReference:state.lastDiscoveryReference,
+        scrollTop:Math.max(0,Number(leavingRoot?.scrollTop)||0),
+      };
+    }else if(!preserveContext){suspendedHubContext=null}
     state.open=false;
     cancelMonitor();
     if(state.child)closeChild(win,state.child);
@@ -516,12 +527,14 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     if(!doc?.body||!runtime(win)?.store||typeof win?.AO_MODULES?.open!=="function")return false;
     cancelMonitor();
     if(state.child)closeChild(win,state.child);
+    const resume=suspendedHubContext;
+    suspendedHubContext=null;
     state.open=true;
     state.child=null;
-    state.family=null;
-    state.lastFamily=null;
-    state.discoveryQuery="";
-    state.lastDiscoveryReference=null;
+    state.family=resume?.family??null;
+    state.lastFamily=resume?.lastFamily??null;
+    state.discoveryQuery=resume?.discoveryQuery??"";
+    state.lastDiscoveryReference=resume?.lastDiscoveryReference??null;
     state.seenChild=false;
     state.openPolls=0;
     state.error="";
@@ -534,10 +547,12 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
     node.removeAttribute("aria-hidden");
     try{node.inert=false;}catch{}
     paint();
+    if(state.discoveryQuery.trim().length>=2)ensureDiscovery();
+    if(resume)node.scrollTop=resume.scrollTop;
     markRouteOwner();
     try{win?.AO_APP_SHELL_V1?.syncSurface?.("learn");}catch{}
     const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
-    queue(()=>root(win)?.querySelector?.("[data-ao-learn-home]")?.focus?.({preventScroll:true}));
+    if(!resume)queue(()=>root(win)?.querySelector?.("[data-ao-learn-home]")?.focus?.({preventScroll:true}));
     return true;
   }
 
