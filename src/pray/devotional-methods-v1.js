@@ -34,7 +34,7 @@ export function rosaryPlan({method="ordinary",decades=5,set="joyful",guidance="g
  const ids=decades===15?TRADITIONAL_MYSTERY_ORDER:
    Object.freeze(Array.from({length:5},(_,i)=>({joyful:"joy",sorrowful:"sor",glorious:"glo"})[set]+(i+1)));
  return Object.freeze({method,decades,guidance,ids:Object.freeze([...ids]),
-  readyForLive:["ordinary","dominican","montfort"].includes(method),
+  readyForLive:method==="ordinary"||(decades===5&&["dominican","montfort"].includes(method)),
   canonicalOwner:"AO_ROSARY_V381",
   source:ROSARY_METHODS[method].source});
 }
