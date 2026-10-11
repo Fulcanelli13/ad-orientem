@@ -472,6 +472,26 @@ export const HERITAGE_STYLE = String.raw`
   background:var(--ao-surface-2,#0d141c);
 }
 
+/* Search must reveal the actual church/shrine name before its category.
+   Names remain full in data and are limited to two visible lines on phones.
+   The short location line stays legible without adding map chrome. */
+.aoHeritageSurface .aoHeritageSearchResults button>span:first-child{min-width:0;flex:1}
+.aoHeritageSurface .aoHeritageSearchResults strong{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  white-space:normal;overflow:hidden;text-overflow:ellipsis;
+  line-height:1.35;overflow-wrap:anywhere
+}
+.aoHeritageSurface .aoHeritageSearchResults small{
+  font-size:12px;line-height:1.4;overflow-wrap:anywhere
+}
+.aoHeritageSurface .aoHeritageSearchResults button{
+  min-height:58px;height:auto;align-items:center
+}
+@media(max-width:430px){
+  .aoHeritageSurface .aoHeritageSearchResults{max-height:42dvh}
+  .aoHeritageSurface .aoHeritageSearchResults button{padding:11px 10px}
+}
+
 /* MapLibre's remote style can lag independently of the local directory.
    Keep a legible non-blocking status, without pretending to render a basemap. */
 .aoFindMap{position:relative}

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import {attachExploreMapStatus} from "../src/find/map-status.js";
 
 function createHarness({fr=false,alreadyLoaded=false}={}){
@@ -64,4 +65,10 @@ function createHarness({fr=false,alreadyLoaded=false}={}){
  assert.equal(h.timers.size,0);
  status.dispose();
 }
+// Keep import latency distinct from irrecoverable map failure: a slow CDN
+// cannot cause a late successful map to be destroyed.
+const ownerSource=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
+assert.match(ownerSource,/pending\.className="aoExploreMapLoading aoExploreMapStalled"/);
+assert.doesNotMatch(ownerSource,/if\s*\(\s*importStalled\s*\)/,
+  "A delayed but successful map import must remain recoverable");
 console.log("PASS Explore map status: loading, stalled, recovery and cleanup");

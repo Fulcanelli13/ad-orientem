@@ -397,17 +397,24 @@ export function createFindOwner(win=globalThis){
         panel.append(title,detail);mapNode.replaceChildren(panel);
         if(mapNode.dataset)mapNode.dataset.aoMapState=noMappedPins?"empty":"unavailable";
       };
+      // Keep import-time status independent of map style/tile status.
+      // A slow CDN response must be allowed to recover, not destroy the map.
+      let pending=null;
       if(mapNode?.append&&win.document?.createElement){
         if(mapNode.dataset)mapNode.dataset.aoMapState="loading";
-        const pending=win.document.createElement("div");
+        pending=win.document.createElement("div");
         pending.className="aoExploreMapLoading";
         pending.setAttribute("role","status");pending.setAttribute("aria-live","polite");
         pending.textContent=language(win)==="fr"?"Chargement du fond de carte…":"Loading map background…";
         mapNode.append(pending);
       }
-      let importStalled=false;
       const importTimer=win.setTimeout?.(()=>{
-        importStalled=true;showMapRecovery();
+        if(token!==paintToken||!openState||!pending)return;
+        pending.className="aoExploreMapLoading aoExploreMapStalled";
+        pending.textContent=language(win)==="fr"
+          ?"Le fond de carte tarde à répondre. La recherche et les fiches restent disponibles."
+          :"The map background is taking longer than expected. Search and place details remain available.";
+        if(mapNode.dataset)mapNode.dataset.aoMapState="stalled";
       },12000);
       try{
         const nextHandle=await mountExploreMap(mapNode,items,{
@@ -423,12 +430,6 @@ export function createFindOwner(win=globalThis){
         if(importTimer!==undefined)win.clearTimeout?.(importTimer);
         if(token!==paintToken||!openState){
           nextHandle?.destroy?.();return false;
-        }
-        if(importStalled){
-          nextHandle?.destroy?.();
-          // A delayed CDN response may have erased the recovery panel.
-          // The Explore route still opened successfully: search remains usable.
-          showMapRecovery();return true;
         }
         if(!nextHandle){
           // Zero publishable pins is not a network failure or failed Explore route.
