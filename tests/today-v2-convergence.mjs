@@ -25,6 +25,7 @@ for(const cls of ["aoTodayV2Context","aoTodayV2PrayNow","aoTodayV2ReadReflect","
 for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.adoration"])
   assert.ok(html.includes('data-home-cu-route="'+route+'"'),"Noncanonical or missing Pray route: "+route);
 assert.match(html,/data-home-daily-catechism/);
+assert.match(html,/data-home-scripture/);
 assert.match(html,/data-action="gospel"/);
 assert.match(html,/data-home-calendar-view="year"/);
 assert.match(html,/data-home-calendar-view="picker"/);
@@ -57,6 +58,6 @@ assert.equal((primary.match(/aoTodayV2PrayNow/g)||[]).length,1);
 assert.doesNotMatch(primary,/class="contentCard gospelCard/);
 assert.doesNotMatch(primary,/class="contentCard findCard/);
 assert.doesNotMatch(primary,/aoHomeComingUp/);
-assert.doesNotMatch(primary,/data-home-scripture/);
+assert.equal((primary.match(/data-home-scripture/g)||[]).length,1,"Scripture must retain one compact native entry without duplicate cards");
 assert.doesNotMatch(primary,/data-resume-mass/);
 console.log("PASS Today v2 lower-half: one prayer, sourced calendar leads, canonically routed reading, no duplicate cards");
