@@ -205,7 +205,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
           queue(()=>root(win)?.querySelector?.(`[data-ao-learn-family="${state.lastFamily}"]`)?.focus?.({preventScroll:true}));
           return;
         }
-        void navigateFromLearn("home");
+        if(typeof win?.AO_APP_SHELL_V1?.back==="function")void win.AO_APP_SHELL_V1.back();
+        else void navigateFromLearn("home");
         return;
       }
       const home=event.target?.closest?.("[data-ao-learn-home]");
