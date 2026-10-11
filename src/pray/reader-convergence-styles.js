@@ -1,3 +1,7 @@
+import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
+const PREVIOUS_ICON=resolveCanonicalAssetUrl("ao-ui-previous");
+const NEXT_ICON=resolveCanonicalAssetUrl("ao-ui-next");
+
 // Shared devotional reading presentation. Strictly visual: original prayer
 // order, module state, response roles, timers, and source provenance remain owned
 // by their established canonical engines.
@@ -171,8 +175,23 @@ export const PRAY_READER_CONVERGENCE_CSS=String.raw`
   font-family:var(--ao-font-ui,system-ui,sans-serif)!important;
   min-height:44px!important;
 }
-#aoPray435930 .aoP435930GuideNav .aoP435930Secondary::before{content:"‹";margin-right:.6em;font-size:1.25em}
-#aoPray435930 .aoP435930GuideNav .aoP435930Primary::after{content:"›";margin-left:.6em;font-size:1.25em}
+/* Decorative passage direction glyphs use the same canonical bank as global Back/Next.
+   The full button text remains visible to screen readers and sighted readers. */
+#aoPray435930 .aoP435930GuideNav .aoP435930Secondary::before,
+#aoPray435930 .aoP435930GuideNav .aoP435930Primary::after{
+  content:"";display:inline-block;width:1.05em;height:1.05em;
+  background:currentColor;vertical-align:-.18em;
+}
+#aoPray435930 .aoP435930GuideNav .aoP435930Secondary::before{
+  margin-right:.55em;
+  -webkit-mask:url("${PREVIOUS_ICON}") center/contain no-repeat;
+  mask:url("${PREVIOUS_ICON}") center/contain no-repeat;
+}
+#aoPray435930 .aoP435930GuideNav .aoP435930Primary::after{
+  margin-left:.55em;
+  -webkit-mask:url("${NEXT_ICON}") center/contain no-repeat;
+  mask:url("${NEXT_ICON}") center/contain no-repeat;
+}
 #aoPray435930 .aoP435930GuideNav button:disabled{opacity:.35!important}
 @media(max-width:560px){
   #aoPray435930 .aoReaderStageIndicator{top:76px;padding-inline:12px!important}
