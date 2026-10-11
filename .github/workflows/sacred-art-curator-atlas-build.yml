@@ -6,13 +6,14 @@ on:
     paths:
       - "tools/calendar/collect-sacred-art-atlas-originals.py"
       - "tools/calendar/build-sacred-art-final-atlas.py"
+      - "tools/calendar/build-sacred-art-priority-review.py"
       - "tests/test_sacred_art_final_atlas.py"
       - "data/calendar/sacred-art-candidates.v1.json"
       - "data/calendar/sacred-art-primary-museum-leads-20261011.v1.json"
       - ".github/workflows/sacred-art-curator-atlas-build.yml"
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 concurrency:
@@ -50,6 +51,26 @@ jobs:
         run: |
           python tools/calendar/build-sacred-art-final-atlas.py --images-root artifacts/sacred-art-final-atlas/source-originals --output artifacts/sacred-art-final-atlas/index.html
           python tests/test_sacred_art_final_atlas.py
+      - name: Generate manageable subject-first review page
+        run: |
+          python tools/calendar/build-sacred-art-priority-review.py --atlas artifacts/sacred-art-final-atlas/index.html --output reviews/sacred-art-curator-priority.html
+          python - <<'PY'
+          import json,re,subprocess
+          from pathlib import Path
+          p=Path("reviews/sacred-art-curator-priority.html")
+          s=p.read_text(encoding="utf8")
+          m=re.search(r'<script id="payload" type="application/json">(.+?)</script>',s,re.S)
+          assert m,"Shortlist review JSON not found"
+          data=json.loads(m.group(1))
+          assert len(data["groups"])>=50
+          assert len(data["items"])==264
+          assert data["dateUses"]>=2000
+          assert "Not suitable here" in s and "Approve for this subject" in s
+          part=s.rsplit("<script>",1)[1].split("</script>",1)[0]
+          Path("/tmp/sacred-art-priority-ui.js").write_text(part,encoding="utf8")
+          subprocess.run(["node","--check","/tmp/sacred-art-priority-ui.js"],check=True)
+          print("SHORTLIST_VALIDATED",p.stat().st_size,len(data["groups"]))
+          PY
       - name: Validate visual-source completeness and release safety
         run: |
           python - <<'PY'
@@ -65,6 +86,18 @@ jobs:
           assert not s["missingPreviews"], "Atlas must show all acquired artwork previews"
           print("ALL_VISUAL_SOURCE_PREVIEWS_LOADED",s["artworks"])
           PY
+      - name: Publish public self-contained HTML to research branch
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f reviews/sacred-art-curator-priority.html
+          if git diff --cached --quiet; then
+            echo "Shortlist HTML already current"
+          else
+            git commit -m "Publish public priority sacred-art review HTML [skip ci]"
+            git push origin HEAD:refs/heads/platform/885-sacred-art-candidates
+          fi
       - name: Upload single-file visual atlas and provenance proof (no full-size originals)
         if: always()
         uses: actions/upload-artifact@v4
@@ -74,5 +107,6 @@ jobs:
             artifacts/sacred-art-final-atlas/index.html
             artifacts/sacred-art-final-atlas/build-stats.json
             artifacts/sacred-art-final-atlas/source-recovery-report.json
+            reviews/sacred-art-curator-priority.html
           retention-days: 30
           if-no-files-found: warn
