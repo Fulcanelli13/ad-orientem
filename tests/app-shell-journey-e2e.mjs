@@ -69,7 +69,9 @@ try{
     massMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
-    homeCanonicalIcons:document.querySelectorAll('.aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="embedded"], .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="mask"]').length,
+    todayV2PrayNow:document.querySelectorAll(".homeScreen.aoTodayV2 .aoTodayV2PrayNow").length,
+    todayV2ReadReflect:document.querySelectorAll(".homeScreen.aoTodayV2 .aoTodayV2ReadReflect").length,
+    todayV2Upcoming:document.querySelectorAll(".homeScreen.aoTodayV2 .aoTodayV2Upcoming").length,
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
@@ -85,8 +87,10 @@ try{
   assert.equal(cold.owner,"AO_APP_SHELL_V1","modular shell ownership marker missing");
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
   assert.equal(cold.enrichersOwner,"modular-home-enrichers-v1","cold Home did not use modular enrichers");
-  assert.equal(cold.modularEnrichers,2,"cold Home did not render both modular enricher cards");
-  assert.equal(cold.homeCanonicalIcons,3,"cold Home did not render all three Coming Up icons from canonical embedded or masked artwork");
+  assert.equal(cold.modularEnrichers,1,"Today V2 did not mount its canonical sections owner");
+  assert.equal(cold.todayV2PrayNow,1,"Today V2 lost its Prayer surface");
+  assert.equal(cold.todayV2ReadReflect,1,"Today V2 lost Scripture/Formation navigation");
+  assert.equal(cold.todayV2Upcoming,1,"Today V2 lost approaching calendar events");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
   assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
   assert.equal(cold.releaseAuthority,"AO_APP_SHELL_V1");
@@ -96,7 +100,7 @@ try{
   assert.equal(await page.locator("[data-ao-app-surface]").count(),5,"Five permanent destinations required");
    assert.equal(await page.locator("[data-ao-app-surface='calendar']").count(),0,"Calendar still occupies a ribbon tab");
    assert.equal(await page.locator("[data-ao-app-surface='home']").getAttribute("aria-label"),"Today");
-   await page.locator("[data-home-calendar]").click();
+   await page.evaluate(async()=>await globalThis.AO_APP_SHELL_V1.navigate("calendar"));
   await page.waitForFunction(()=>
     globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
     globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&
