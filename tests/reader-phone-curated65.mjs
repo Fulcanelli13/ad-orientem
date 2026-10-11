@@ -96,6 +96,18 @@ try{
           prayerOpacity:Number(getComputedStyle(shell.querySelector('.ao-reader-paragraph')).opacity),
           readerBottom:shell.querySelector('.ao-prayer-card')?.getBoundingClientRect()?.bottom??null,
           scholaTop:shell.querySelector('.ao-schola-dock[data-active="true"]')?.getBoundingClientRect()?.top??null,
+          layoutDiagnostics:(()=>{
+            const sc=shell.querySelector(".ao-prayer-card");
+            const vp=shell.querySelector(".ao-card-viewport");
+            const cs=getComputedStyle(sc),cv=getComputedStyle(vp);
+            return {curated:document.querySelector("#ao-r17-native-reader-preview")?.dataset.r17CuratedReview,
+              reserve:shell.style.getPropertyValue("--ao-schola-reserve"),
+              dockFlag:shell.dataset.scholaVisible,
+              cardHeight:cs.height,cardBox:cs.boxSizing,cardPadding:cs.paddingBottom,
+              viewportHeight:cv.height,viewportBox:cv.boxSizing,
+              viewportPadding:cv.paddingBottom,
+              viewportBottom:vp.getBoundingClientRect().bottom};
+          })(),
         };
       },title);
       assert.equal(state.found,true,"Missing curated landmark "+title);
@@ -107,7 +119,7 @@ try{
       if(state.scholaTop!=null){
         assert.ok(state.readerBottom<=state.scholaTop+3,
           "Schola overlay still covers the real prayer reading viewport: "+title+
-          " "+state.readerBottom+" vs "+state.scholaTop);
+          " "+state.readerBottom+" vs "+state.scholaTop+" "+JSON.stringify(state.layoutDiagnostics));
       }
       if(title==="Gloria · The Celebrant's Intonation")assert.equal(state.track,null);
       if(title==="Gloria · Praise and Supplication")assert.equal(state.track,"GLORIA");
