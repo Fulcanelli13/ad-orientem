@@ -25,6 +25,17 @@ try{
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true,locale:"en-GB"});
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
+  // Do not visually certify a Home that is still behind the cinematic splash.
+  await page.waitForFunction(()=>{
+    const splash=document.querySelector("#ao-cinema-boot");
+    if(splash&&splash.isConnected&&getComputedStyle(splash).display!=="none"
+      &&getComputedStyle(splash).visibility!=="hidden"
+      &&splash.getAttribute("aria-hidden")!=="true")return false;
+    const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+    return state?.route==="home"&&!state.resolving&&Boolean(state.resolution?.day?.main);
+  },null,{timeout:45000});
+  await page.waitForTimeout(850);
+
   await page.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed&&globalThis.AO_CALENDAR_APP_V1?.openEmbedded),null,{timeout:40000});
   assert.equal(await page.locator(".homeScreen .aoTodayV2Frontispiece").count(),1);
   await page.screenshot({path:resolve(shots,"today-"+width+".png"),fullPage:true});
@@ -39,6 +50,26 @@ try{
   assert.match(wheel.gradient,/conic-gradient/,"Daily wheel must be sourced from real 1962 dates");
   assert.match(wheel.season,/conic-gradient/,"Inner seasons must remain independent from daily Mass colours");
   await page.screenshot({path:resolve(shots,"today-year-"+width+".png"),fullPage:true});
+  await page.waitForFunction(()=>{
+    const home=document.querySelector(".homeScreen.aoTodayV2");
+    const slot=home?.querySelector("[data-home-calendar-inline]");
+    const wheel=slot?.querySelector(".aoCalV2Ring");
+    const timeline=slot?.querySelector(".aoCalYearTrack");
+    if(!wheel||!timeline)return false;
+    const style=getComputedStyle(slot),wr=wheel.getBoundingClientRect(),tr=timeline.getBoundingClientRect();
+    return home.dataset.aoHomeCalendarView==="year"&&!slot.hidden&&
+      style.display!=="none"&&wr.width>90&&wr.height>90&&tr.width>120&&tr.height>25;
+  },null,{timeout:15000}).catch(async error=>{
+    console.log("YEAR_VISUAL_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
+      const h=document.querySelector(".homeScreen.aoTodayV2"),slot=h?.querySelector("[data-home-calendar-inline]");
+      const root=slot?.querySelector("#ao-calendar-modular-root");
+      const child=root?.querySelector(".aoCalV2Ring"),track=root?.querySelector(".aoCalYearTrack");
+      const data=node=>node?({outer:node.outerHTML.slice(0,300),rect:node.getBoundingClientRect().toJSON(),display:getComputedStyle(node).display}):null;
+      return {homeView:h?.dataset.aoHomeCalendarView,tabs:[...h?.querySelectorAll(".aoTodayV2Tabs button")||[]].map(n=>({text:n.textContent,active:n.getAttribute("aria-current")})),
+        slot:data(slot),root:data(root),wheel:data(child),timeline:data(track),calendarStatus:globalThis.AO_CALENDAR_APP_V1?.status?.()};
+    })));
+    throw error;
+  });
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearTrack').count(),1,"The canonical liturgical-year timeline must be retained");
   assert.equal(await page.locator('#ao-calendar-modular-root[aria-modal="true"]').count(),0,"Embedded calendar cannot be an independent modal");
   assert.equal(await page.locator('.aoTodayV2CalendarInline [data-cal-body]').count(),1);
