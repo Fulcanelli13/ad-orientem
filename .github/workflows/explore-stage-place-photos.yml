@@ -45,6 +45,8 @@ jobs:
           git add assets/staged/place-media assets/staged/place-media-review-*-r58.webp data/geography/research/place-media-stage-report-r58.v1.json
           if ! git diff --cached --quiet; then
             git commit -m "Explore R58: stage licensed candidate derivatives for exact-site review [skip ci]"
+            git fetch origin feature/explore-place-photo-acquisition-r58-20261011
+            git rebase origin/feature/explore-place-photo-acquisition-r58-20261011
             git push origin HEAD:feature/explore-place-photo-acquisition-r58-20261011
           fi
       - name: Report publication boundary
