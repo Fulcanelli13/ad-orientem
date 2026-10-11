@@ -1,0 +1,49 @@
+name: One-time Antwerp Rosary Commons art import
+
+on:
+  push:
+    branches: [feature/rosary-cinematic-timeline-20261011]
+    paths: [.github/workflows/rosary-antwerp-import-once.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rosary-antwerp-art-one-time
+  cancel-in-progress: false
+
+jobs:
+  materialize-15-public-domain-artworks:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/feature/rosary-cinematic-timeline-20261011'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/rosary-cinematic-timeline-20261011
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image transcoder
+        run: python -m pip install "Pillow==11.3.0"
+      - name: Verify and build fifteen original Antwerp Commons photos
+        run: python tools/build-rosary-antwerp-art.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify complete 15-image pack before commit
+        run: npm run test:rosary-antwerp-art
+      - name: Commit vetted local WebP images, full metadata and image registry to this branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ad-orientem-art-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/pray/rosary/antwerp/*.webp \
+            data/pray/rosary-antwerp-production-pack.v1.json \
+            src/pray/rosary-antwerp-licences.v1.js
+          git diff --cached --quiet && exit 0
+          git commit -m "asset(pray): add 15 verified Commons public-domain Antwerp Rosary paintings [offline]"
+          git pull --rebase origin feature/rosary-cinematic-timeline-20261011
+          git push origin HEAD:feature/rosary-cinematic-timeline-20261011
