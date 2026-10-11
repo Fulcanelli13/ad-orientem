@@ -70,6 +70,22 @@ try{
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null}));
  await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:18000});
 
+ const guide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
+ assert.equal(await guide.locator(".aoRosaryGuideSection").count(),6);
+ assert.equal(await guide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
+ const before=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step??null);
+ await guide.locator("summary").evaluate(x=>x.click());
+ assert.equal(await guide.evaluate(x=>x.open),true);
+ const after=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step??null);
+ assert.equal(after,before,"opening Rosary Guide must not advance beads");
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.rosary",{returnContext:null}));
+ await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:15000});
+ assert.equal(await page.locator("#aoPrayerBookRoot.open .aoRosaryGuide").evaluate(x=>x.open),true,"reopened Rosary player lost Guide state");
+ // The 200 inherited English cue extracts are archived for verification, not
+ // rendered as authoritative Scripture in the actively selected decade.
+ const setButton=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
+ if(await setButton.count())await setButton.evaluate(x=>x.click());
+ await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:12000});
  // Cinematic Rosary is a visual mirror of the canonical player, not a new bead owner.
  await page.waitForSelector("#aoPrayerBookRoot.open .aoRosaryCinemaTimeline",{timeout:9000}).catch(async error=>{
    const detail=await page.evaluate(()=>{
@@ -111,22 +127,7 @@ try{
    });
  }
  assert.equal(observed.length,5);
- const guide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
- assert.equal(await guide.locator(".aoRosaryGuideSection").count(),6);
- assert.equal(await guide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
- const before=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step??null);
- await guide.locator("summary").evaluate(x=>x.click());
- assert.equal(await guide.evaluate(x=>x.open),true);
- const after=await page.evaluate(()=>globalThis.AO_ROSARY_V381?.state?.()?.step??null);
- assert.equal(after,before,"opening Rosary Guide must not advance beads");
- await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.rosary",{returnContext:null}));
- await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:15000});
- assert.equal(await page.locator("#aoPrayerBookRoot.open .aoRosaryGuide").evaluate(x=>x.open),true,"reopened Rosary player lost Guide state");
- // The 200 inherited English cue extracts are archived for verification, not
- // rendered as authoritative Scripture in the actively selected decade.
- const setButton=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='joyful']").first();
- if(await setButton.count())await setButton.evaluate(x=>x.click());
- await page.waitForFunction(()=>globalThis.AO_ROSARY_V381?.state?.()?.set==="joyful",null,{timeout:12000});
+
  // Guided depth must provide a readable bilingual edition-linked context
  // at the mystery opening, without restoring arbitrary ten-bead quotations.
  const guided=page.locator("#aoPrayerBookRoot.open [data-p435930-rosary-depth='guided']").first();
