@@ -14,7 +14,7 @@ assert.ok(b.dossiers.every(x=>x.evidence?.length && x.evidence.every(s=>s.url.st
 assert.ok(b.dossiers.every(x=>x.certification.publishable===false && x.certification.latin1962PhraseChecked===false && x.certification.secondaryHistoricalClaimsRequireIndependentManuscriptReview===true));
 assert.ok(b.dossiers.every(x=>x.productRisk.includes("no automatic link")));
 assert.ok(b.dossiers.find(x=>x.id==="H003").evidence.some(x=>x.url.includes("De_sacramentis")));
-assert.ok(b.dossiers.find(x=>x.id==="H004").carefullyQualifiedClaim.includes("plural"));
+assert.ok(b.dossiers.find(x=>x.id==="H004").carefullyQualifiedClaim.includes("singular angel language"));
 assert.ok(b.dossiers.find(x=>x.id==="H013").claimType==="LEXICAL_CAUTION");
 assert.ok(b.dossiers.find(x=>x.id==="H023").evidence.some(x=>x.url.includes("Lebrun")));
 const gihr=b.dossiers.find(x=>x.id==="H024");
