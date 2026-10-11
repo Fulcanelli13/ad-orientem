@@ -1,0 +1,766 @@
+{
+  "schema": "AO_EXPLORE_R62_BILINGUAL_STORY_BATCH_V1",
+  "version": "1.0.0",
+  "reviewed_at": "2026-10-11",
+  "ownership": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "baseline": {
+    "totalShrines": 216,
+    "totalPilgrimages": 206,
+    "frenchShrines": 108,
+    "frenchPilgrimages": 94
+  },
+  "release": {
+    "newShrinesFrench": 50,
+    "newPilgrimageFrench": 54,
+    "featuredMenuAdditions": 0,
+    "translatedShrineTotal": 158,
+    "translatedPilgrimageTotal": 148
+  },
+  "criteria": [
+    "Every text corresponds to an existing exact Place and canonical Shrine or Pilgrimage ID",
+    "French prose respects only source-owned English facts, preserves local and relic caveats",
+    "Every original source ID resolves to the canonical HTTPS registry",
+    "No new inferred feasts, Mass schedules, physical pins, apparition conclusions or relic authentications"
+  ],
+  "items": [
+    {
+      "shrine_id": "shrine:US:auriesville-martyrs",
+      "place_id": "place:US:auriesville-martyrs",
+      "pilgrimage_ids": [
+        "pilgrimage:US:auriesville-destination",
+        "pilgrimage:US:auriesville-restoration",
+        "pilgrimage:US:auriesville-amsterdam"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-AURIESVILLE-MARTYRS",
+          "url": "https://www.ourladyofmartyrsshrine.org/about-the-shrine",
+          "issuer": "National Shrine of Our Lady of Martyrs — About and History"
+        },
+        {
+          "source_id": "PIL-AURIESVILLE-RESTORATION",
+          "url": "https://pilgrimage-for-restoration.org/",
+          "issuer": "Pilgrimage for Restoration 2026"
+        },
+        {
+          "source_id": "PIL-AURIESVILLE-AMSTERDAM",
+          "url": "https://www.ourladyofmartyrsshrine.org/featured-events",
+          "issuer": "Annual Walking Eucharistic Pilgrimage: Amsterdam to Auriesville"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:US:divine-mercy-stockbridge",
+      "place_id": "place:US:divine-mercy-stockbridge",
+      "pilgrimage_ids": [
+        "pilgrimage:US:divine-mercy-stockbridge-destination",
+        "pilgrimage:US:divine-mercy-sunday-stockbridge"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-DIVINE-MERCY-STOCKBRIDGE",
+          "url": "https://shrineofdivinemercy.org/visiting",
+          "issuer": "Plan Your Visit — National Shrine of The Divine Mercy"
+        },
+        {
+          "source_id": "PIL-DIVINE-MERCY-SUNDAY",
+          "url": "https://www.shrineofdivinemercy.org/Divine-Mercy-Sunday-Weekend",
+          "issuer": "Divine Mercy Sunday Celebrations at the National Shrine"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:US:la-salette-attleboro",
+      "place_id": "place:US:la-salette-attleboro",
+      "pilgrimage_ids": [
+        "pilgrimage:US:la-salette-attleboro-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-LA-SALETTE-ATTLEBORO",
+          "url": "https://www.lasaletteattleboroshrine.org/",
+          "issuer": "National Shrine of Our Lady La Salette — Attleboro"
+        },
+        {
+          "source_id": "OBS-LA-SALETTE-SEP19",
+          "url": "https://www.lasaletteattleboroshrine.org/the-la-salette-story",
+          "issuer": "The La Salette Story"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:US:lourdes-litchfield",
+      "place_id": "place:US:lourdes-litchfield",
+      "pilgrimage_ids": [
+        "pilgrimage:US:lourdes-litchfield-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-LOURDES-LITCHFIELD",
+          "url": "https://www.shrinect.org/",
+          "issuer": "Lourdes in Litchfield"
+        },
+        {
+          "source_id": "PIL-LOURDES-LITCHFIELD",
+          "url": "https://www.shrinect.org/visit",
+          "issuer": "Visit — Lourdes in Litchfield"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:US:st-anne-fiskdale",
+      "place_id": "place:US:st-anne-fiskdale",
+      "pilgrimage_ids": [
+        "pilgrimage:US:st-anne-fiskdale-destination",
+        "pilgrimage:US:st-anne-fiskdale-novena"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ST-ANNE-FISKDALE",
+          "url": "https://www.stannestpatrickparish.com/st-annes-shrine",
+          "issuer": "St. Anne Shrine — Fiskdale"
+        },
+        {
+          "source_id": "PIL-ST-ANNE-NOVENA",
+          "url": "https://www.stannestpatrickparish.com/novena-to-st-anne",
+          "issuer": "Novena to St. Anne"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:PL:gietrzwald",
+      "place_id": "place:PL:gietrzwald-basilica",
+      "pilgrimage_ids": [
+        "pilgrimage:PL:gietrzwald-visit"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-GIETRZWALD-ARCHDIOCESE",
+          "url": "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/",
+          "issuer": "Sanctuary of Our Lady of Gietrzwałd · documented pilgrimage and shrine context"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:LT:siluva",
+      "place_id": "place:LT:siluva-apparition-chapel",
+      "pilgrimage_ids": [
+        "pilgrimage:LT:siluva-visit"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-SILUVA-OFFICIAL",
+          "url": "https://siluva.lt/apie-sventove/",
+          "issuer": "Our Lady of Šiluva — Apparition Chapel · documented pilgrimage and shrine context"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:NI:cuapa",
+      "place_id": "place:NI:cuapa-national-shrine",
+      "pilgrimage_ids": [
+        "pilgrimage:NI:cuapa-visit"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-CUAPA-MARIAN-FATHERS",
+          "url": "https://thedivinemercy.org/articles/who-was-our-lady-cuapa",
+          "issuer": "National Shrine of Our Lady of Cuapa · documented pilgrimage and shrine context"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:VE:betania",
+      "place_id": "place:VE:finca-betania",
+      "pilgrimage_ids": [
+        "pilgrimage:VE:betania-visit"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-BETANIA-ASSOCIATION",
+          "url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/",
+          "issuer": "Our Lady of Betania Diocesan Shrine · documented pilgrimage and shrine context"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:AR:san-nicolas",
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "pilgrimage_ids": [
+        "pilgrimage:AR:san-nicolas-visit"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-SAN-NICOLAS-EPC",
+          "url": "https://episcopado.org/ver/1310",
+          "issuer": "Sanctuary of Mary of the Rosary of San Nicolás · documented pilgrimage and shrine context"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:santa-croce-rome",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:santa-croce-rome-visit"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-SANTA-CROCE-RELICS",
+          "url": "https://www.santacroceroma.it/en/features-3/reliquie.html",
+          "issuer": "Basilica of Santa Croce in Gerusalemme · documented pilgrimage and shrine context"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:20261009:PS:holy-sepulchre-jerusalem",
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:PS:holy-sepulchre-jerusalem:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-PIL-PS-holy-sepulchre-jerusalem",
+          "url": "https://www.custodia.org/fr/sanctuaries/basilique-du-saint-sepulcre/",
+          "issuer": "Church of the Holy Sepulchre — shared Christian sanctuary — historic sanctuary, worship and pilgrimage"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:20261009:PS:nativity-bethlehem",
+      "place_id": "place:PS:nativity-bethlehem",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:PS:nativity-bethlehem:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-PIL-PS-nativity-bethlehem",
+          "url": "https://www.custodia.org/en/sanctuaries/bethlehem-basilica-of-the-nativity/",
+          "issuer": "Church of the Nativity — shared Christian sanctuary — historic sanctuary, worship and pilgrimage"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:20261009:JP:our-lady-akita-convent",
+      "place_id": "place:JP:our-lady-akita-convent",
+      "pilgrimage_ids": [
+        "pilgrimage:20261009:JP:our-lady-akita-convent:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-PIL-JP-our-lady-akita-convent",
+          "url": "https://www.1260.org/Mary/Apparitions_Akita/Akita_Ito_Letter_of_approval_en.htm",
+          "issuer": "Seitai Hoshikai — Our Lady of Akita Chapel — historic sanctuary, worship and pilgrimage"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "pilgrimage_ids": [
+        "pilgrimage:CA:oratoire-saint-joseph-montreal:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ORATOIRE-MONTREAL",
+          "url": "https://saint-joseph.org/en/",
+          "issuer": "Saint Joseph's Oratory — official shrine and pilgrimage"
+        },
+        {
+          "source_id": "SHR-ORATOIRE-MONTREAL-TOMB",
+          "url": "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/",
+          "issuer": "Tomb of Brother André — official on-site description"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-denis",
+      "place_id": "place:FR:basilique-saint-denis",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-denis:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-SAINT-DENIS-OFFICIAL",
+          "url": "https://www.saintdenis.fr/basilique-cathedrale",
+          "issuer": "Basilique cathédrale de Saint-Denis — institutional history and custody"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "pilgrimage_ids": [
+        "pilgrimage:PL:sanktuarium-jana-pawla-ii-krakow:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-JPII-KRAKOW-OFFICIAL",
+          "url": "https://sjanpawel2.pl/en/misja-cjp/",
+          "issuer": "Sanktuarium św. Jana Pawła II Wielkiego w Krakowie — institutional history and custody"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-denys-argenteuil:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-ARGENTEUIL-TUNIQUE",
+          "url": "https://saintetunique.com/contact/",
+          "issuer": "Basilique Saint-Denys d’Argenteuil — sanctuary and relic history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-notre-dame-amiens:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-AMIENS-JEAN-BAPTISTE",
+          "url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste",
+          "issuer": "Cathédrale Notre-Dame d’Amiens — sanctuary and relic history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:basilique-sainte-marie-madeleine-vezelay:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-VEZELAY-MADELEINE",
+          "url": "https://www.basiliquedevezelay.org/samedi-saint/",
+          "issuer": "Basilique Sainte-Marie-Madeleine de Vézelay — sanctuary and relic history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "pilgrimage_ids": [
+        "pilgrimage:CH:abbaye-saint-maurice-agaune:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-CH-abbaye-saint-maurice-agaune",
+          "url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/",
+          "issuer": "Abbaye de Saint-Maurice d'Agaune: relic custody and historic sanctuary"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:DE:kolner-dom-three-kings",
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:kolner-dom-three-kings:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-DE-kolner-dom-three-kings",
+          "url": "https://www.colognecathedral.de/shrine-of-three-kings.html",
+          "issuer": "Hohe Domkirche St. Petrus, Köln: relic custody and historic sanctuary"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:basilica-san-marco-venezia",
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:basilica-san-marco-venezia:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-basilica-san-marco-venezia",
+          "url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
+          "issuer": "Basilica Cattedrale Patriarcale di San Marco: relic custody and historic sanctuary"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:basilica-san-domenico-bologna",
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:basilica-san-domenico-bologna:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-basilica-san-domenico-bologna",
+          "url": "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en",
+          "issuer": "Basilica di San Domenico, Bologna: relic custody and historic sanctuary"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:amalfi-sant-andrea",
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:amalfi-sant-andrea:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-amalfi-sant-andrea",
+          "url": "https://museodiocesanoamalfi.it/app/it/la-cripta/",
+          "issuer": "Duomo Sant'Andrea, Amalfi: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:ortona-san-tommaso",
+      "place_id": "place:IT:ortona-san-tommaso",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:ortona-san-tommaso:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-ortona-san-tommaso",
+          "url": "https://diocesilanciano.it/?p=6295",
+          "issuer": "Basilica Concattedrale di San Tommaso, Ortona: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:salerno-duomo",
+      "place_id": "place:IT:salerno-duomo",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:salerno-duomo:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-salerno-duomo",
+          "url": "https://www.cattedraledisalerno.it/la-cripta.html",
+          "issuer": "Cattedrale di Salerno: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:DE:trier-sankt-matthias",
+      "place_id": "place:DE:trier-sankt-matthias",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:trier-sankt-matthias:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-DE-trier-sankt-matthias",
+          "url": "https://www.trierer-dom.de/gottesdienste/innenstadtkirchen/sankt-matthias/index.html",
+          "issuer": "Benediktinerabtei St Matthias, Trier: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:san-bartolomeo-isola",
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:san-bartolomeo-isola:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-san-bartolomeo-isola",
+          "url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+          "issuer": "Basilica San Bartolomeo all'Isola, Rome: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:sant-ambrogio-milano",
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:sant-ambrogio-milano:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-sant-ambrogio-milano",
+          "url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+          "issuer": "Basilica Sant'Ambrogio, Milan: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:san-pietro-ciel-doro:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-san-pietro-ciel-doro",
+          "url": "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro",
+          "issuer": "Basilica San Pietro in Ciel d'Oro, Pavia: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:santa-giustina-padova",
+      "place_id": "place:IT:santa-giustina-padova",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:santa-giustina-padova:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-santa-giustina-padova",
+          "url": "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/",
+          "issuer": "Abbazia di Santa Giustina, Padua: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-milano",
+      "place_id": "place:IT:duomo-milano",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:duomo-milano:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-duomo-milano",
+          "url": "https://www.duomomilano.it/en/restoration-scurolo-st-carlo-duomo/",
+          "issuer": "Duomo di Milano: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:santa-chiara-assisi",
+      "place_id": "place:IT:santa-chiara-assisi",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:santa-chiara-assisi:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-santa-chiara-assisi",
+          "url": "https://www.assisisantachiara.it/la-cripta-e-le-reliquie/il-corpo-di-santa-chiara/?print=pdf",
+          "issuer": "Basilica di Santa Chiara, Assisi: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:santa-maria-minerva-rome",
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:santa-maria-minerva-rome:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-santa-maria-minerva-rome",
+          "url": "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html",
+          "issuer": "Santa Maria sopra Minerva, Rome: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:chiesa-gesu-rome",
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:chiesa-gesu-rome:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-chiesa-gesu-rome",
+          "url": "https://gesuiti.it/chi-siamo/ignazio-di-loyola/",
+          "issuer": "Chiesa del Gesù, Rome: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:couvent-jacobins-toulouse:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-couvent-jacobins-toulouse",
+          "url": "https://jacobins.toulouse.fr/fr/histoire/",
+          "issuer": "Couvent des Jacobins, Toulouse: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:collegiale-sainte-marthe-tarascon:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-collegiale-sainte-marthe-tarascon",
+          "url": "https://www.saintemarthe13.fr/sainte-marthe-decouvrir-sainte-marthe/",
+          "issuer": "Collégiale Sainte-Marthe de Tarascon: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-visitation-annecy",
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:basilique-visitation-annecy:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-basilique-visitation-annecy",
+          "url": "https://visitationannecy.org/la-basilique-dannecy/",
+          "issuer": "Basilique de la Visitation, Annecy: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:sant-agostino-campo-marzio:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-sant-agostino-campo-marzio",
+          "url": "https://www.santagostinoroma.it/",
+          "issuer": "Basilica Sant'Agostino in Campo Marzio, Rome: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:maria-ausiliatrice-torino:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-maria-ausiliatrice-torino",
+          "url": "https://salesians.org/blog/salesian-house-built-living-stones",
+          "issuer": "Basilica Maria Ausiliatrice, Turin: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:sant-alfonso-pagani",
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:sant-alfonso-pagani:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-sant-alfonso-pagani",
+          "url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/",
+          "issuer": "Basilica Sant'Alfonso de Liguori, Pagani: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:cattedrale-sant-agata-catania:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-cattedrale-sant-agata-catania",
+          "url": "https://diocesi.catania.it/2026/07/08/ostensione-straordinaria-la-reliquia-del-capo-di-santagata-e-il-prezioso-busto-reliquiari/",
+          "issuer": "Basilica Cattedrale di Catania: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:duomo-sant-eusebio-vercelli:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-duomo-sant-eusebio-vercelli",
+          "url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/",
+          "issuer": "Cattedrale di Sant'Eusebio, Vercelli: institutional relic custody and pilgrimage history"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-torino-sindone",
+      "place_id": "place:IT:duomo-torino-sindone",
+      "pilgrimage_ids": [
+        "pilgrimage:IT:duomo-torino-sindone:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-IT-duomo-torino-sindone",
+          "url": "https://sindone.org/en/home-english/the-shroud/where-is-the-shroud-now/",
+          "issuer": "Cattedrale di San Giovanni Battista — Holy Shroud, Turin — direct institution/heritage testimony"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:aachener-dom-four-textiles:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-DE-aachener-dom-four-textiles",
+          "url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/",
+          "issuer": "Aachener Dom — Four Sacred Textiles — direct institution/heritage testimony"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:DE:trierer-dom-heiliger-rock",
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:trierer-dom-heiliger-rock:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-DE-trierer-dom-heiliger-rock",
+          "url": "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html",
+          "issuer": "Trierer Dom — Holy Robe — direct institution/heritage testimony"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-cahors",
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-saint-etienne-cahors:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-cathedrale-saint-etienne-cahors",
+          "url": "https://saintecoiffedecahors.com/index.php/2020/02/13/les-activites-de-pelerinage/",
+          "issuer": "Cathédrale Saint-Étienne — Sainte Coiffe de Cahors — direct institution/heritage testimony"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:ES:catedral-san-salvador-oviedo",
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "pilgrimage_ids": [
+        "pilgrimage:ES:catedral-san-salvador-oviedo:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ES-catedral-san-salvador-oviedo",
+          "url": "https://catedraldeoviedo.com/visita-cultural/prepara-tu-visita/preguntas-frecuentes/",
+          "issuer": "Catedral de San Salvador — Cámara Santa, Oviedo — direct institution/heritage testimony"
+        }
+      ]
+    },
+    {
+      "shrine_id": "shrine:FR:abbatiale-sainte-trinite-fecamp",
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:abbatiale-sainte-trinite-fecamp:destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-FR-abbatiale-sainte-trinite-fecamp",
+          "url": "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/",
+          "issuer": "Abbatiale de la Sainte-Trinité — Précieux Sang, Fécamp — direct institution/heritage testimony"
+        }
+      ]
+    }
+  ]
+}

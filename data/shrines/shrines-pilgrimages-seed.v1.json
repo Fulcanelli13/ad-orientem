@@ -1,6 +1,6 @@
 {
   "schema": "SHRINES_PILGRIMAGES_SEED_V1",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "shrines": [
     {
       "shrine_id": "shrine:FR:lourdes-our-lady",
@@ -17,7 +17,8 @@
         "SHR-LOURDES-CONTACT",
         "SHR-LOURDES-PILGRIMAGE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire de pèlerinage lié aux apparitions de la Vierge Marie à sainte Bernadette Soubirous, à Massabielle, en 1858."
     },
     {
       "shrine_id": "shrine:FR:laghet-our-lady",
@@ -32,7 +33,8 @@
         "SHR-LAGHET-CONTACT",
         "SHR-LAGHET-EXVOTO"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial où les prodiges attestés et la tradition des ex-voto remontent à 1652, donnant naissance à un pèlerinage toujours vivant."
     },
     {
       "shrine_id": "shrine:FR:paray-sacred-heart",
@@ -50,7 +52,8 @@
         "SHR-PARAY-CONTACT",
         "SHR-PARAY-MARGUERITE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire du Sacré-Cœur lié aux révélations reçues par sainte Marguerite-Marie Alacoque à Paray-le-Monial entre 1673 et 1675."
     },
     {
       "shrine_id": "shrine:FR:chartres-notre-dame",
@@ -65,7 +68,8 @@
         "SHR-CHARTRES-CATHEDRAL",
         "PIL-CHARTRES-NDC"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Cathédrale historique et lieu de pèlerinage marial ; le pèlerinage annuel de Notre-Dame de Chrétienté, à la Pentecôte, s’achève à la cathédrale."
     },
     {
       "shrine_id": "shrine:FR:sainte-anne-d-auray",
@@ -82,7 +86,8 @@
         "SHR-SAINTE-ANNE-IDENTITY",
         "PIL-SAINTE-ANNE-GRAND-PARDON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire breton consacré à sainte Anne, marqué par un cycle annuel de pèlerinages et le Grand Pardon des 25 et 26 juillet."
     },
     {
       "shrine_id": "shrine:IE:knock",
@@ -100,7 +105,8 @@
         "SHR-KNOCK-IDENTITY",
         "PIL-KNOCK-ANNIVERSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire eucharistique et marial international lié à l’apparition silencieuse de Knock du 21 août 1879."
     },
     {
       "shrine_id": "shrine:IE:lough-derg",
@@ -117,7 +123,8 @@
         "SHR-LOUGH-DERG-CONTACT",
         "PIL-LOUGH-DERG-THREE-DAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Ancien sanctuaire de pèlerinage pénitentiel sur Station Island, connu pour le pèlerinage traditionnel de trois jours, fait de prière, de veilles et de jeûne."
     },
     {
       "shrine_id": "shrine:MU:pere-laval",
@@ -134,7 +141,8 @@
         "SHR-PERE-LAVAL-CENTRE",
         "PIL-PERE-LAVAL-ANNUAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu de pèlerinage diocésain à Sainte-Croix, centré sur le tombeau du bienheureux Jacques-Désiré Laval."
     },
     {
       "shrine_id": "shrine:DE:altoetting-our-lady",
@@ -148,7 +156,8 @@
       "source_ids": [
         "SHR-ALTOETTING-PILGRIMAGE-SITE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu historique de pèlerinage marial en Bavière, centré sur la chapelle des Grâces (Gnadenkapelle), avec une longue tradition de pèlerinages et de témoignages votifs."
     },
     {
       "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
@@ -163,7 +172,8 @@
         "SHR-KEVELAER-GNADENKAPELLE",
         "SHR-KEVELAER-1962-SCHEDULE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire de pèlerinage marial de Kevelaer, centré sur la chapelle des Grâces et l'image de Notre-Dame Consolatrice des Affligés."
     },
     {
       "shrine_id": "shrine:AT:mariazell-our-lady",
@@ -178,7 +188,8 @@
         "SHR-MARIAZELL-CONTACT",
         "SHR-MARIAZELL-PILGRIMAGE-SCHEDULE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Grande basilique mariale de pèlerinage en Autriche, avec une saison de pèlerinages, des messes pour les pèlerins et des pratiques de dévotion vivantes."
     },
     {
       "shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
@@ -193,7 +204,8 @@
         "SHR-MARIA-TAFERL-CONTACT",
         "SHR-MARIA-TAFERL-HISTORY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Basilique autrichienne de pèlerinage dont l'histoire est liée aux événements de 1633 et 1642, puis au développement du pèlerinage sur le Taferlberg."
     },
     {
       "shrine_id": "shrine:CH:einsiedeln-our-lady",
@@ -210,7 +222,8 @@
         "SHR-EINSIEDELN-PILGRIMAGE",
         "SHR-EINSIEDELN-ENGELWEIHE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Monastère bénédictin et grand lieu de pèlerinage marial centré sur la chapelle des Grâces."
     },
     {
       "shrine_id": "shrine:CH:mariastein-our-lady",
@@ -225,7 +238,8 @@
         "SHR-MARIASTEIN-CONTACT",
         "SHR-MARIASTEIN-MONTHLY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Monastère bénédictin de pèlerinage dont la chapelle des Grâces constitue le centre de la dévotion de Mariastein."
     },
     {
       "shrine_id": "shrine:US:champion-our-lady",
@@ -240,7 +254,8 @@
         "SHR-CHAMPION-HOME",
         "PIL-CHAMPION-SOLEMNITY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial national lié aux apparitions de 1859 à Adele Brise, sur le seul site d'apparition mariale aux États-Unis reconnu par l'Église."
     },
     {
       "shrine_id": "shrine:US:guadalupe-la-crosse",
@@ -257,7 +272,8 @@
         "SHR-GUADALUPE-SCHEDULE",
         "SHR-GUADALUPE-PILGRIMAGE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial de pèlerinage à La Crosse, comprenant un parcours de pèlerins, des espaces de dévotion et un programme actuel de messe traditionnelle latine."
     },
     {
       "shrine_id": "shrine:US:holy-hill-mary-help",
@@ -272,7 +288,8 @@
         "SHR-HOLY-HILL-OFFICIAL",
         "PIL-HOLY-HILL-SSPX"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial historique du Wisconsin confié aux Carmes déchaux, avec des pèlerinages individuels, collectifs et annuels."
     },
     {
       "shrine_id": "shrine:CA:sainte-anne-de-beaupre",
@@ -289,7 +306,8 @@
         "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
         "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire historique québécois consacré à sainte Anne, accueillant les pèlerins depuis plus de trois siècles et marqué par la neuvaine et la fête de juillet."
     },
     {
       "shrine_id": "shrine:CA:notre-dame-du-cap",
@@ -304,7 +322,8 @@
         "SHR-NDC-CONTACT",
         "PIL-NDC-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial québécois de Cap-de-la-Madeleine, riche d'une longue tradition de pèlerinage et d'une neuvaine de l'Assomption devenue sa principale célébration annuelle."
     },
     {
       "shrine_id": "shrine:CA:martyrs-midland",
@@ -322,7 +341,8 @@
         "SHR-MARTYRS-CONTACT",
         "SHR-MARTYRS-MINISTRY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire national de pèlerinage à Midland, consacré aux martyrs canadiens et desservi par les Jésuites."
     },
     {
       "shrine_id": "shrine:IT:loreto-holy-house",
@@ -338,7 +358,8 @@
         "SHR-LORETO-HOLY-HOUSE",
         "PIL-LORETO-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire pontifical marial centré sur la Sainte Maison, traditionnellement associée à la maison de Nazareth et à l’Annonciation."
     },
     {
       "shrine_id": "shrine:IT:pompei-rosary",
@@ -355,7 +376,8 @@
         "SHR-POMPEI-CONTACT",
         "PIL-POMPEI-SUPPLICA-MAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire pontifical marial fondé grâce à l’apostolat de saint Bartolo Longo, consacré à la dévotion au Rosaire et à la Supplica."
     },
     {
       "shrine_id": "shrine:PL:jasna-gora-czestochowa",
@@ -370,7 +392,8 @@
         "SHR-JASNA-GORA-CONTACT",
         "PIL-JASNA-GORA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Monastère paulinien et grand sanctuaire marial polonais, centré sur l’icône de Notre-Dame de Częstochowa."
     },
     {
       "shrine_id": "shrine:PL:kalwaria-zebrzydowska",
@@ -385,7 +408,8 @@
         "SHR-KALWARIA-CONTACT",
         "PIL-KALWARIA-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire de pèlerinage franciscain bernardin consacré à la Passion et à la Vierge Marie, avec des chemins de dévotion, la pratique du rosaire et de grandes célébrations de l'Assomption."
     },
     {
       "shrine_id": "shrine:GB:walsingham-our-lady",
@@ -401,7 +425,8 @@
         "PIL-WALSINGHAM-FEAST",
         "PIL-WALSINGHAM-LMS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire national catholique et basilique de Walsingham, restaurés autour de la Slipper Chapel et consacrés au mystère de l’Incarnation et à Notre-Dame de Walsingham."
     },
     {
       "shrine_id": "shrine:GB:holywell-st-winefride",
@@ -420,7 +445,8 @@
         "PIL-HOLYWELL-FEAST",
         "PIL-HOLYWELL-LMS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Ancien sanctuaire catholique gallois centré sur la fontaine de sainte Winefride, marqué par une tradition ininterrompue de pèlerinage et de vénération."
     },
     {
       "shrine_id": "shrine:AU:penrose-our-lady-mercy",
@@ -435,7 +461,8 @@
         "SHR-PENROSE-IDENTITY",
         "SHR-PENROSE-FINDUS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial diocésain des Southern Highlands, en Nouvelle-Galles du Sud, fondé par les Pères pauliniens et centré sur une copie de l'icône de Jasna Góra."
     },
     {
       "shrine_id": "shrine:AU:marian-valley-help-christians",
@@ -450,7 +477,8 @@
         "SHR-MARIAN-VALLEY-CONTACT",
         "PIL-MARIAN-VALLEY-PROGRAMME"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial de l'archidiocèse de Brisbane confié aux Pères pauliniens, doté de chapelles, d'un chemin de croix et d'un programme de pèlerinages et de dévotions."
     },
     {
       "shrine_id": "shrine:NZ:st-peter-chanel-russell",
@@ -467,7 +495,8 @@
         "SHR-ST-PETER-CHANEL-NZ",
         "PIL-NGA-TAPUWAE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire catholique national à Russell conservant une relique de saint Pierre Chanel, premier martyr et saint patron de l'Océanie, inscrit dans l'itinéraire catholique de pèlerinage Ngā Tapuwae."
     },
     {
       "shrine_id": "shrine:NZ:pukekaraka-mary",
@@ -481,7 +510,8 @@
       "source_ids": [
         "SHR-PUKEKARAKA-WELLINGTON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Ancienne mission catholique et lieu de pèlerinage marial à Ōtaki, reconnu par l'archidiocèse de Wellington comme site sacré et destination de pèlerinage."
     },
     {
       "shrine_id": "shrine:NG:ugwogo-perpetual-help",
@@ -495,7 +525,8 @@
       "source_ids": [
         "SHR-UGWOGO-NATIONAL-MARIAN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Centre national de pèlerinage marial à Enugu, établi par les Rédemptoristes pour la prière, le culte eucharistique, les retraites et la dévotion mariale."
     },
     {
       "shrine_id": "shrine:NG:nne-enyemaka-umuaka",
@@ -510,7 +541,8 @@
         "SHR-NNE-ENYEMAKA-FSSP",
         "PIL-NNE-ENYEMAKA-ROSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial et paroisse personnelle desservie par la Fraternité sacerdotale Saint-Pierre dans le diocèse d'Orlu, où la messe traditionnelle latine est établie et des processions du rosaire parcourent de longues distances."
     },
     {
       "shrine_id": "shrine:UG:namugongo-martyrs",
@@ -528,7 +560,8 @@
         "SHR-NAMUGONGO-OFFICIAL",
         "PIL-NAMUGONGO-MARTYRS-DAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Grand sanctuaire catholique de l’archidiocèse de Kampala consacré aux martyrs de l’Ouganda, où se tient chaque année un pèlerinage national le 3 juin."
     },
     {
       "shrine_id": "shrine:UG:munyonyo-martyrs",
@@ -546,7 +579,8 @@
       "source_ids": [
         "SHR-MUNYONYO-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire des martyrs de l'Ouganda à Munyonyo, l'un des principaux lieux de la région de Kampala associés au martyre et au pèlerinage en leur honneur."
     },
     {
       "shrine_id": "shrine:MX:guadalupe-tepeyac",
@@ -563,7 +597,8 @@
         "SHR-GUADALUPE-MX-CONTACT",
         "PIL-GUADALUPE-MX-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial national de Tepeyac, à Mexico, accueillant de nombreux pèlerins autour de la dévotion à Notre-Dame de Guadalupe."
     },
     {
       "shrine_id": "shrine:MX:zapopan-our-lady",
@@ -578,7 +613,8 @@
         "SHR-ZAPOPAN-IDENTITY",
         "PIL-ZAPOPAN-ROMERIA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Basilique mariale historique de Zapopan, destination de la Romería annuelle qui ramène l'image de Notre-Dame de Zapopan depuis Guadalajara."
     },
     {
       "shrine_id": "shrine:BR:aparecida-our-lady",
@@ -593,7 +629,8 @@
         "SHR-APARECIDA-CONTACT",
         "PIL-APARECIDA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial national du Brésil et grand centre de pèlerinage, où la neuvaine et la fête de Notre-Dame d’Aparecida culminent le 12 octobre."
     },
     {
       "shrine_id": "shrine:BR:nazare-belem",
@@ -608,7 +645,8 @@
         "SHR-NAZARE-BELEM-CONTACT",
         "PIL-CIRIO-NAZARE-2026"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial de l'archidiocèse de Belém et destination du grand cycle de pèlerinages du Círio de Nazaré."
     },
     {
       "shrine_id": "shrine:CO:las-lajas",
@@ -623,7 +661,8 @@
         "SHR-LAS-LAJAS-OFFICIAL",
         "PIL-LAS-LAJAS-HISTORY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire de pèlerinage marial situé dans le canyon du Guáitara, près d'Ipiales, marqué par une longue tradition de pèlerinage en septembre et de fêtes patronales."
     },
     {
       "shrine_id": "shrine:CO:chiquinquira",
@@ -640,7 +679,8 @@
         "SHR-CHIQUINQUIRA-DIOCESE",
         "PIL-CHIQUINQUIRA-JULY9"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Basilique mariale dominicaine et centre national de pèlerinage dans le Boyacá, avec plusieurs grandes célébrations annuelles, dont celle du 9 juillet."
     },
     {
       "shrine_id": "shrine:BE:banneux-virgin-poor",
@@ -655,7 +695,8 @@
         "SHR-BANNEUX-CONTACT",
         "PIL-BANNEUX-ANNIVERSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial belge de Banneux, associé aux apparitions de 1933 à Mariette Beco et à une tradition internationale de pèlerinage toujours vivante."
     },
     {
       "shrine_id": "shrine:BE:beauraing-golden-heart",
@@ -669,7 +710,8 @@
       "source_ids": [
         "SHR-BEAURAING-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial belge sur le lieu des apparitions de Beauraing de 1932 à 1933, reconnues par l'Église, devenu une destination internationale de pèlerinage."
     },
     {
       "shrine_id": "shrine:CZ:svata-hora",
@@ -684,7 +726,8 @@
         "SHR-SVATA-HORA-OFFICIAL",
         "PIL-SVATA-HORA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Basilique historique de pèlerinage marial au-dessus de Příbram, centrée sur une image vénérée de la Vierge et une fête annuelle de pèlerinage autour de l'Assomption."
     },
     {
       "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
@@ -701,7 +744,8 @@
         "SHR-STARA-BOLESLAV-OFFICIAL",
         "PIL-ST-WENCESLAS-NATIONAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu national de pèlerinage tchèque associé au martyre de saint Venceslas, accueillant chaque année le pèlerinage national de la Saint-Venceslas."
     },
     {
       "shrine_id": "shrine:NL:heiloo-olv-ter-nood",
@@ -716,7 +760,8 @@
         "SHR-HEILOO-CONTACT",
         "PIL-HEILOO-FIRST-SATURDAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire historique de pèlerinage marial à Heiloo, aux Pays-Bas, avec un programme liturgique et dévotionnel continu comprenant un pèlerinage régulier le premier samedi."
     },
     {
       "shrine_id": "shrine:NL:maastricht-sterre-der-zee",
@@ -731,7 +776,8 @@
         "SHR-MAASTRICHT-STERRE-DER-ZEE",
         "PIL-MAASTRICHT-STERRE-DER-ZEE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Basilique mariale historique de Maastricht, centrée sur l'image de la Sterre der Zee, « Étoile de la Mer », et une tradition séculaire de pèlerinage et de prière en chemin."
     },
     {
       "shrine_id": "shrine:PT:fatima",
@@ -749,7 +795,8 @@
         "SHR-FATIMA-CONTACT",
         "PIL-FATIMA-MAY13"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial international de la Cova da Iria, lié aux apparitions de 1917 et aux grands pèlerinages anniversaires."
     },
     {
       "shrine_id": "shrine:PT:sameiro",
@@ -764,7 +811,8 @@
         "SHR-SAMEIRO-CONTACT",
         "PIL-SAMEIRO-PILGRIMAGES"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Grand sanctuaire marial portugais dominant Braga, avec un pèlerinage diocésain récurrent, une fête liturgique et des processions aux flambeaux."
     },
     {
       "shrine_id": "shrine:US:alphonsus-baltimore",
@@ -781,7 +829,8 @@
       "source_ids": [
         "SHR-ALPHONSUS-BALTIMORE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Église-sanctuaire historique de Baltimore, dédicacée en 1845 et aujourd'hui confiée à la Fraternité sacerdotale Saint-Pierre pour la célébration de la messe traditionnelle latine."
     },
     {
       "shrine_id": "shrine:US:neumann-philadelphia",
@@ -798,7 +847,8 @@
         "SHR-NEUMANN-PHILADELPHIA",
         "PIL-NEUMANN-PHILADELPHIA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire national situé dans l'église Saint-Pierre-Apôtre de Philadelphie, conservant les restes de saint Jean Népomucène Neumann et proposant un accueil des pèlerins et des retraites."
     },
     {
       "shrine_id": "shrine:US:miraculous-medal-philadelphia",
@@ -815,7 +865,8 @@
         "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
         "PIL-MIRACULOUS-MEDAL-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire-basilique marial de Philadelphie, lié à la Central Association of the Miraculous Medal et à la neuvaine perpétuelle du lundi, célébrée sans interruption depuis 1930."
     },
     {
       "shrine_id": "shrine:US:czestochowa-doylestown",
@@ -830,7 +881,8 @@
         "SHR-CZESTOCHOWA-US",
         "PIL-CZESTOCHOWA-US-WALK"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial polono-américain fondé à Doylestown en 1955, accueillant encore des pèlerinages à pied de plusieurs jours."
     },
     {
       "shrine_id": "shrine:US:seton-emmitsburg",
@@ -847,7 +899,8 @@
         "SHR-SETON-EMMITSBURG",
         "PIL-SETON-SEA-SERVICES-2026"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire national à Emmitsburg préservant les lieux liés à sainte Élisabeth Ann Seton et accueillant pèlerinages individuels, collectifs et institutionnels."
     },
     {
       "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
@@ -864,7 +917,8 @@
         "SHR-GROTTO-LOURDES-EMMITSBURG",
         "PIL-GROTTO-LOURDES-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial d'Emmitsburg dont la réplique de la grotte de Lourdes fut construite dix-sept ans après les apparitions de 1858 et qui conserve une neuvaine annuelle pour la fête de Notre-Dame de Lourdes."
     },
     {
       "shrine_id": "shrine:FR:bermont-greux",
@@ -880,7 +934,8 @@
       "source_ids": [
         "SHR-BERMONT-GREUX"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Ancien sanctuaire marial près de Domrémy où sainte Jeanne d'Arc se rendait en pèlerinage pour prier et offrir des cierges et des fleurs, comme l'attestent les sources."
     },
     {
       "shrine_id": "shrine:FR:arcachon-marins",
@@ -894,7 +949,8 @@
       "source_ids": [
         "SHR-ARCACHON-MARINS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial d'Arcachon lié aux marins depuis 1519 ; la Vierge y fut couronnée en 1870 et l'église élevée au rang de basilique mineure en 1953."
     },
     {
       "shrine_id": "shrine:FR:pontmain",
@@ -910,7 +966,8 @@
         "PIL-PONTMAIN-JAN17",
         "PIL-PONTMAIN-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial de Pontmain centré sur l'apparition du 17 janvier 1871, avec une vie de pèlerinage diocésaine et nationale toujours active."
     },
     {
       "shrine_id": "shrine:FR:pellevoisin",
@@ -925,7 +982,8 @@
         "SHR-PELLEVOISIN",
         "PIL-PELLEVOISIN-ANNUAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial de Pellevoisin qui conserve la chapelle des apparitions et une tradition de dévotion vivante, notamment le scapulaire du Sacré-Cœur et le pèlerinage annuel."
     },
     {
       "shrine_id": "shrine:FR:montligeon",
@@ -940,7 +998,8 @@
         "SHR-MONTLIGEON",
         "PIL-MONTLIGEON-CIEL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire du diocèse de Séez particulièrement consacré à la prière pour les défunts, qui accueille des pèlerins toute l'année."
     },
     {
       "shrine_id": "shrine:FR:rue-du-bac",
@@ -960,7 +1019,8 @@
         "PIL-RUE-DU-BAC",
         "OBS-RUE-DU-BAC-NOV27"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Chapelle parisienne liée aux apparitions de 1830 à sainte Catherine Labouré ; elle est devenue un lieu de pèlerinage marial consacré à Notre-Dame de la Médaille miraculeuse."
     },
     {
       "shrine_id": "shrine:DE:wigratzbad-maria-vom-sieg",
@@ -975,7 +1035,8 @@
         "SHR-WIGRATZBAD",
         "PIL-WIGRATZBAD-SUEHNE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu diocésain de prière mariale dans le diocèse d'Augsbourg, centré sur la chapelle des Grâces et l'église expiatoire des Sacrés-Cœurs de Jésus et de Marie, avec pèlerinages, confessions et adoration eucharistique."
     },
     {
       "shrine_id": "shrine:DE:mariahilf-amberg",
@@ -990,7 +1051,8 @@
         "SHR-MARIAHILF-AMBERG",
         "PIL-MARIAHILF-AMBERG-BERGFEST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Grande église de pèlerinage marial du Haut-Palatinat, née du vœu fait pendant la peste de 1634, consacrée à l'image de Marie Auxiliatrice et à la fête annuelle du Bergfest."
     },
     {
       "shrine_id": "shrine:DE:st-leonhard-nussdorf",
@@ -1007,7 +1069,8 @@
         "SHR-ST-LEONHARD-NUSSDORF",
         "PIL-ST-LEONHARD-NUSSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Église historique de pèlerinage de Nußdorf, liée à une ancienne confrérie du scapulaire et à la reprise de la procession équestre de saint Léonard (Leonhardiritt)."
     },
     {
       "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
@@ -1024,7 +1087,8 @@
         "SHR-ST-APOLLINARIS-FRIELINGSDORF",
         "PIL-ST-APOLLINARIS-FRIELINGSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Église de pèlerinage de Frielingsdorf consacrée à saint Apollinaire, où se poursuit chaque année en juillet une octave autour de sa fête."
     },
     {
       "shrine_id": "shrine:DE:bettbrunn-st-salvator",
@@ -1039,7 +1103,8 @@
         "SHR-BETTBRUNN-ST-SALVATOR",
         "PIL-BETTBRUNN-PREITH"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Le diocèse de Ratisbonne présente Bettbrunn comme le plus ancien pèlerinage eucharistique attesté de Bavière ; après la disparition de l'hostie médiévale, l'image du Sauveur est devenue le centre du pèlerinage."
     },
     {
       "shrine_id": "shrine:DE:maria-vesperbild",
@@ -1054,7 +1119,8 @@
         "SHR-MARIA-VESPERBILD",
         "PIL-MARIA-VESPERBILD-FATIMA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu actif de pèlerinage marial en Souabe, dans le diocèse d'Augsbourg, se présentant comme la « capitale souabe de Marie » et accueillant régulièrement messes et journées de pèlerinage de Fátima."
     },
     {
       "shrine_id": "shrine:US:st-mary-assumption-oswego",
@@ -1068,7 +1134,8 @@
       "source_ids": [
         "SHR-OSWEGO-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire diocésain d'Oswego confié à l'Institut du Christ Roi Souverain Prêtre, avec un programme de messes traditionnelles latines et une vie paroissiale et dévotionnelle active."
     },
     {
       "shrine_id": "shrine:US:auriesville-martyrs",
@@ -1089,7 +1156,8 @@
         "PIL-AURIESVILLE-RESTORATION",
         "PIL-AURIESVILLE-AMSTERDAM"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Auriesville, sur le site historique d’Ossernenon, ce sanctuaire honore les martyrs d’Amérique du Nord et conserve la mémoire de sainte Kateri Tekakwitha. Il demeure un lieu important de pèlerinage catholique aux États-Unis."
     },
     {
       "shrine_id": "shrine:US:divine-mercy-stockbridge",
@@ -1106,7 +1174,8 @@
         "SHR-DIVINE-MERCY-STOCKBRIDGE",
         "PIL-DIVINE-MERCY-SUNDAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Établi à Eden Hill, à Stockbridge, ce sanctuaire national est confié aux Pères mariens de l’Immaculée-Conception. Il reçoit des pèlerins individuels et des groupes, particulièrement lors du dimanche de la Divine Miséricorde."
     },
     {
       "shrine_id": "shrine:US:la-salette-attleboro",
@@ -1121,7 +1190,8 @@
         "SHR-LA-SALETTE-ATTLEBORO",
         "OBS-LA-SALETTE-SEP19"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Ouvert en 1953 à Attleboro par les Missionnaires de Notre-Dame de La Salette, ce sanctuaire national transmet aux États-Unis le message de réconciliation lié à l’apparition de La Salette."
     },
     {
       "shrine_id": "shrine:US:lourdes-litchfield",
@@ -1139,7 +1209,8 @@
         "SHR-LOURDES-LITCHFIELD",
         "PIL-LOURDES-LITCHFIELD"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Au Connecticut, les Missionnaires montfortains entretiennent un sanctuaire de Lourdes comprenant une grotte en pierre, un chemin de croix et des espaces extérieurs de prière, fréquentés chaque année par de nombreux pèlerins."
     },
     {
       "shrine_id": "shrine:US:st-anne-fiskdale",
@@ -1157,7 +1228,8 @@
         "SHR-ST-ANNE-FISKDALE",
         "PIL-ST-ANNE-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Fiskdale, près de Sturbridge, le sanctuaire Sainte-Anne est un lieu de pèlerinage de Nouvelle-Angleterre depuis plus d’un siècle. Ses chapelles et sa neuvaine annuelle de neuf jours sont liées à une procession du rosaire."
     },
     {
       "shrine_id": "shrine:PL:gietrzwald",
@@ -1171,7 +1243,8 @@
       "source_ids": [
         "SHR-GIETRZWALD-ARCHDIOCESE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Gietrzwałd, ce sanctuaire marial rappelle les apparitions de 1877. La dévotion locale attire notamment les pèlerins autour de la Nativité de la Vierge Marie, célébrée le 8 septembre."
     },
     {
       "shrine_id": "shrine:LT:siluva",
@@ -1185,7 +1258,8 @@
       "source_ids": [
         "SHR-SILUVA-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Šiluva, en Lituanie, la chapelle des apparitions fait partie d’un sanctuaire catholique lié au pèlerinage annuel de Šilinės. Le détail des journées et célébrations dépend du programme publié chaque année."
     },
     {
       "shrine_id": "shrine:NI:cuapa",
@@ -1199,7 +1273,8 @@
       "source_ids": [
         "SHR-CUAPA-MARIAN-FATHERS"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Cuapa, au Nicaragua, ce sanctuaire est lié aux expériences mariales rapportées en 1980. Il reçoit des visiteurs pour la prière et le pèlerinage, sans qu’une date annuelle universelle puisse être établie par la source."
     },
     {
       "shrine_id": "shrine:VE:betania",
@@ -1213,7 +1288,8 @@
       "source_ids": [
         "SHR-BETANIA-ASSOCIATION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Le sanctuaire diocésain de Betania, au Venezuela, est lié aux événements mariaux rapportés entre 1976 et 1984 et à leur reconnaissance diocésaine. La documentation disponible ne fixe pas un programme annuel précis."
     },
     {
       "shrine_id": "shrine:AR:san-nicolas",
@@ -1227,7 +1303,8 @@
       "source_ids": [
         "SHR-SAN-NICOLAS-EPC"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À San Nicolás, en Argentine, le sanctuaire de Marie du Rosaire est associé à des pèlerinages annuels ; la Conférence épiscopale argentine documente notamment la fête du sanctuaire du 25 septembre."
     },
     {
       "shrine_id": "shrine:IT:santa-croce-rome",
@@ -1243,7 +1320,8 @@
       "source_ids": [
         "SHR-SANTA-CROCE-RELICS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Rome, la basilique Sainte-Croix-de-Jérusalem figure sur le parcours des sept églises et conserve des reliques de la Passion. En avril 2026, le sanctuaire signalait la fermeture provisoire de la chapelle des reliques pour travaux."
     },
     {
       "shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
@@ -1252,14 +1330,15 @@
       "shrine_kind": "SAINT",
       "recognition_class": "OFFICIAL_SANCTUARY",
       "dedication": "St Thérèse of the Child Jesus",
-      "origin_summary": "Documented Catholic shrine, basilica or pilgrimage destination associated with St Thérèse of the Child Jesus. The linked source establishes the location or active devotion, not a particular app prayer form.",
+      "origin_summary": "The Basilica of Saint Thérèse at Lisieux welcomes pilgrims praying in the footsteps of Saint Thérèse of the Child Jesus, including at her reliquary.",
       "associated_saints": [
         "Saint Thérèse of Lisieux"
       ],
       "source_ids": [
         "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "La basilique Sainte-Thérèse de Lisieux accueille les pèlerins venus prier sur les pas de sainte Thérèse de l’Enfant-Jésus, notamment auprès de son reliquaire."
     },
     {
       "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
@@ -1578,14 +1657,15 @@
       "shrine_kind": "SAINT",
       "recognition_class": "OFFICIAL_SANCTUARY",
       "dedication": "St Francis of Assisi",
-      "origin_summary": "Documented Catholic shrine, basilica or pilgrimage destination associated with St Francis of Assisi. The linked source establishes the location or active devotion, not a particular app prayer form.",
+      "origin_summary": "The Basilica of Saint Francis at Assisi houses the tomb of Saint Francis in the crypt of the Lower Church. Pilgrims visit his resting place for prayer.",
       "associated_saints": [
         "Saint Francis of Assisi"
       ],
       "source_ids": [
         "SHR-PIL-BULK-IT-basilica-san-francesco-assisi"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "La basilique Saint-François d’Assise abrite le tombeau de saint François dans la crypte de l’église inférieure. Le sanctuaire accueille les pèlerins venus se recueillir auprès de sa sépulture."
     },
     {
       "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
@@ -1642,14 +1722,15 @@
       "shrine_kind": "SAINT",
       "recognition_class": "OTHER_OFFICIAL",
       "dedication": "St Francis Xavier",
-      "origin_summary": "Documented Catholic shrine, basilica or pilgrimage destination associated with St Francis Xavier. The linked source establishes the location or active devotion, not a particular app prayer form.",
+      "origin_summary": "The Basilica of Bom Jesus at Old Goa houses the reliquary of Saint Francis Xavier in a chapel of its southern transept; the saint's tomb is a pilgrimage destination.",
       "associated_saints": [
         "Saint Francis Xavier"
       ],
       "source_ids": [
         "SHR-PIL-BULK-IN-basilica-bom-jesus-old-goa"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "Dans le Vieux-Goa, la basilique du Bon-Jésus conserve la châsse de saint François Xavier dans une chapelle du transept sud. Sa tombe est un lieu de pèlerinage."
     },
     {
       "shrine_id": "shrine:20261009:RW:sanctuaire-kibeho",
@@ -1810,14 +1891,15 @@
       "shrine_kind": "CHRISTOLOGICAL",
       "recognition_class": "OTHER_OFFICIAL",
       "dedication": "Calvary and the Empty Tomb of the Risen Christ",
-      "origin_summary": "Source-documented pilgrimage destination: Calvary and the Empty Tomb of the Risen Christ. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "origin_summary": "The Church of the Holy Sepulchre encompasses Calvary and the Empty Tomb of the Risen Christ. Catholics of the Franciscan Custody share responsibility for the sanctuary with Greek Orthodox and Armenian Apostolic communities.",
       "associated_saints": [],
       "source_ids": [
         "SHR-PIL-PS-holy-sepulchre-jerusalem"
       ],
       "confidence": "HIGH",
       "access_notice": "Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
-      "ownership_note": "Ecumenical shared holy place; not exclusive Catholic property or TLM Directory evidence."
+      "ownership_note": "Ecumenical shared holy place; not exclusive Catholic property or TLM Directory evidence.",
+      "origin_summary_fr": "La basilique du Saint-Sépulcre, à Jérusalem, englobe le Calvaire et le tombeau vide du Christ ressuscité. La garde des lieux est partagée notamment entre les franciscains catholiques, les orthodoxes grecs et les Arméniens apostoliques."
     },
     {
       "shrine_id": "shrine:20261009:PS:nativity-bethlehem",
@@ -1826,14 +1908,15 @@
       "shrine_kind": "CHRISTOLOGICAL",
       "recognition_class": "OTHER_OFFICIAL",
       "dedication": "Grotto and Basilica of the Nativity",
-      "origin_summary": "Source-documented pilgrimage destination: Grotto and Basilica of the Nativity. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "origin_summary": "The Basilica and Grotto of the Nativity commemorate the birth of Christ at Bethlehem. The Catholic Franciscans share custodianship with the Greek Orthodox and Armenian Apostolic Churches.",
       "associated_saints": [],
       "source_ids": [
         "SHR-PIL-PS-nativity-bethlehem"
       ],
       "confidence": "HIGH",
       "access_notice": "Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
-      "ownership_note": "Ecumenical shared holy place; not exclusive Catholic property or TLM Directory evidence."
+      "ownership_note": "Ecumenical shared holy place; not exclusive Catholic property or TLM Directory evidence.",
+      "origin_summary_fr": "À Bethléem, la basilique et la grotte de la Nativité commémorent la naissance du Christ. Le sanctuaire relève d’une garde partagée entre les franciscains catholiques, les orthodoxes grecs et les Arméniens apostoliques."
     },
     {
       "shrine_id": "shrine:20261009:JP:our-lady-akita-convent",
@@ -1842,12 +1925,13 @@
       "shrine_kind": "MARIAN",
       "recognition_class": "OTHER_OFFICIAL",
       "dedication": "Our Lady of Akita (historically approved local account)",
-      "origin_summary": "Source-documented pilgrimage destination: Our Lady of Akita (historically approved local account). No particular traditional Latin Mass or rite is implied.",
+      "origin_summary": "At Akita in Japan, the Seitai Hoshikai chapel is associated with a Marian account that received a historical local approval. This is not a claim about the status of a traditional Latin Mass there.",
       "associated_saints": [],
       "source_ids": [
         "SHR-PIL-JP-our-lady-akita-convent"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Akita, au Japon, la chapelle de la communauté Seitai Hoshikai est associée aux récits mariaux ayant reçu une approbation locale historique. Cette reconnaissance doit être distinguée de toute affirmation plus large sur leur statut actuel."
     },
     {
       "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
@@ -1865,7 +1949,8 @@
         "SHR-ORATOIRE-MONTREAL",
         "SHR-ORATOIRE-MONTREAL-TOMB"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Fondé par saint frère André, l’Oratoire Saint-Joseph du Mont-Royal, à Montréal, est dédié à saint Joseph. Le tombeau de son fondateur et le reliquaire de son cœur sont deux lieux de mémoire distincts au sein du sanctuaire."
     },
     {
       "shrine_id": "shrine:FR:basilique-saint-denis",
@@ -1881,7 +1966,8 @@
       "source_ids": [
         "SHR-SAINT-DENIS-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Édifiée sur le lieu traditionnellement identifié comme la sépulture de saint Denis, la basilique-cathédrale de Saint-Denis associe une longue histoire de dévotion à la fonction de nécropole des rois de France."
     },
     {
       "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
@@ -1897,7 +1983,8 @@
       "source_ids": [
         "SHR-JPII-KRAKOW-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Cracovie, ce sanctuaire diocésain est dédié à saint Jean-Paul II. Ses responsables y documentent notamment la conservation d’une relique de son sang."
     },
     {
       "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
@@ -1913,7 +2000,8 @@
       "source_ids": [
         "SHR-FR-ARGENTEUIL-TUNIQUE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "La basilique Saint-Denys d’Argenteuil conserve la Sainte Tunique, traditionnellement associée à la Passion du Christ. La vénération habituelle de cette relique doit être distinguée des ostensions publiques exceptionnelles."
     },
     {
       "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
@@ -1929,7 +2017,8 @@
       "source_ids": [
         "SHR-FR-AMIENS-JEAN-BAPTISTE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Le trésor de la cathédrale Notre-Dame d’Amiens conserve un reliquaire traditionnellement présenté comme contenant le chef de saint Jean-Baptiste, dont la présence à Amiens est rapportée depuis 1206."
     },
     {
       "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
@@ -1945,7 +2034,8 @@
       "source_ids": [
         "SHR-FR-VEZELAY-MADELEINE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "La basilique Sainte-Marie-Madeleine de Vézelay conserve dans sa crypte des reliques traditionnellement attribuées à sainte Marie-Madeleine. Cette tradition est distincte de celle du sanctuaire de Saint-Maximin."
     },
     {
       "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
@@ -2025,7 +2115,8 @@
       "source_ids": [
         "SHR-CH-abbaye-saint-maurice-agaune"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "L’abbaye de Saint-Maurice d’Agaune, en Suisse, entretient la mémoire de saint Maurice et des martyrs de la légion thébaine. Son patrimoine et sa tradition reliquaire font partie de l’histoire de ce lieu de pèlerinage."
     },
     {
       "shrine_id": "shrine:DE:kolner-dom-three-kings",
@@ -2041,7 +2132,8 @@
       "source_ids": [
         "SHR-DE-kolner-dom-three-kings"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "La cathédrale de Cologne est liée à la vénération des reliques traditionnellement attribuées aux trois Rois mages. Leur châsse constitue un point majeur de l’histoire des pèlerinages à Cologne."
     },
     {
       "shrine_id": "shrine:IT:basilica-san-marco-venezia",
@@ -2057,7 +2149,8 @@
       "source_ids": [
         "SHR-IT-basilica-san-marco-venezia"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Venise, la basilique patriarcale Saint-Marc est associée à la tradition de conservation des reliques de saint Marc l’Évangéliste. Ce lien fait partie de l’identité religieuse et historique de la basilique."
     },
     {
       "shrine_id": "shrine:IT:basilica-san-domenico-bologna",
@@ -2073,7 +2166,8 @@
       "source_ids": [
         "SHR-IT-basilica-san-domenico-bologna"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "À Bologne, la basilique Saint-Dominique garde la mémoire du fondateur de l’Ordre des Prêcheurs et la tradition de conservation de ses reliques. Elle demeure un lieu de dévotion dominicaine."
     },
     {
       "shrine_id": "shrine:IT:amalfi-sant-andrea",
@@ -2089,7 +2183,8 @@
       "source_ids": [
         "SHR-IT-amalfi-sant-andrea"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La cathédrale d’Amalfi et sa crypte sont liées à la tradition de conservation des reliques de saint André, apôtre. Cette tradition constitue l’un des principaux motifs religieux du pèlerinage à Amalfi."
     },
     {
       "shrine_id": "shrine:IT:ortona-san-tommaso",
@@ -2105,7 +2200,8 @@
       "source_ids": [
         "SHR-IT-ortona-san-tommaso"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Ortona, la basilique-cocathédrale Saint-Thomas est un lieu historique de dévotion lié aux reliques traditionnellement attribuées à saint Thomas, apôtre."
     },
     {
       "shrine_id": "shrine:IT:salerno-duomo",
@@ -2121,7 +2217,8 @@
       "source_ids": [
         "SHR-IT-salerno-duomo"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La cathédrale de Salerne abrite une crypte associée à la tradition de conservation des reliques de saint Matthieu, apôtre et évangéliste."
     },
     {
       "shrine_id": "shrine:DE:trier-sankt-matthias",
@@ -2137,7 +2234,8 @@
       "source_ids": [
         "SHR-DE-trier-sankt-matthias"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "L’abbaye bénédictine Saint-Matthias de Trèves est un lieu historique de dévotion à saint Matthias, apôtre, lié à une tradition de conservation de ses reliques."
     },
     {
       "shrine_id": "shrine:IT:san-bartolomeo-isola",
@@ -2153,7 +2251,8 @@
       "source_ids": [
         "SHR-IT-san-bartolomeo-isola"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "Sur l’île Tibérine, à Rome, la basilique Saint-Barthélemy est historiquement associée aux reliques traditionnellement attribuées à l’apôtre Barthélemy."
     },
     {
       "shrine_id": "shrine:IT:sant-ambrogio-milano",
@@ -2171,7 +2270,8 @@
       "source_ids": [
         "SHR-IT-sant-ambrogio-milano"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Milan, la basilique Saint-Ambroise perpétue la mémoire de l’évêque Ambroise et des martyrs Gervais et Protais, dont les reliques y font l’objet d’une dévotion ancienne."
     },
     {
       "shrine_id": "shrine:IT:san-pietro-ciel-doro",
@@ -2187,7 +2287,8 @@
       "source_ids": [
         "SHR-IT-san-pietro-ciel-doro"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Pavie, la basilique Saint-Pierre-au-Ciel-d’Or est un lieu de dévotion lié à la tradition de conservation des reliques de saint Augustin d’Hippone."
     },
     {
       "shrine_id": "shrine:IT:santa-giustina-padova",
@@ -2203,7 +2304,8 @@
       "source_ids": [
         "SHR-IT-santa-giustina-padova"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Padoue, l’abbaye Sainte-Justine est liée à la tradition de conservation des reliques de saint Luc l’Évangéliste. La communauté documente ce lieu de mémoire dans sa basilique."
     },
     {
       "shrine_id": "shrine:IT:duomo-milano",
@@ -2219,7 +2321,8 @@
       "source_ids": [
         "SHR-IT-duomo-milano"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La cathédrale de Milan conserve la mémoire et les reliques de saint Charles Borromée. Le sanctuaire documente notamment les aménagements consacrés à son tombeau."
     },
     {
       "shrine_id": "shrine:IT:santa-chiara-assisi",
@@ -2235,7 +2338,8 @@
       "source_ids": [
         "SHR-IT-santa-chiara-assisi"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Assise, la basilique Sainte-Claire abrite une crypte liée à la conservation des reliques de sainte Claire, fondatrice des Pauvres Dames."
     },
     {
       "shrine_id": "shrine:IT:santa-maria-minerva-rome",
@@ -2251,7 +2355,8 @@
       "source_ids": [
         "SHR-IT-santa-maria-minerva-rome"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Rome, l’église Santa Maria sopra Minerva conserve le tombeau de sainte Catherine de Sienne, figure majeure de la tradition dominicaine."
     },
     {
       "shrine_id": "shrine:IT:chiesa-gesu-rome",
@@ -2267,7 +2372,8 @@
       "source_ids": [
         "SHR-IT-chiesa-gesu-rome"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "L’église du Gesù, à Rome, est liée à saint Ignace de Loyola, fondateur de la Compagnie de Jésus, et à la tradition de conservation de ses reliques."
     },
     {
       "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
@@ -2283,7 +2389,8 @@
       "source_ids": [
         "SHR-FR-couvent-jacobins-toulouse"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Toulouse, le couvent des Jacobins est lié à la conservation des reliques de saint Thomas d’Aquin et à la mémoire historique des dominicains."
     },
     {
       "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
@@ -2299,7 +2406,8 @@
       "source_ids": [
         "SHR-FR-collegiale-sainte-marthe-tarascon"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Tarascon, la collégiale Sainte-Marthe transmet une tradition provençale de dévotion à sainte Marthe de Béthanie et aux reliques qui lui sont attribuées."
     },
     {
       "shrine_id": "shrine:FR:basilique-visitation-annecy",
@@ -2316,7 +2424,8 @@
       "source_ids": [
         "SHR-FR-basilique-visitation-annecy"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Annecy, la basilique de la Visitation est liée aux reliques de saint François de Sales et de sainte Jeanne-Françoise de Chantal, fondateurs de l’Ordre de la Visitation."
     },
     {
       "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
@@ -2332,7 +2441,8 @@
       "source_ids": [
         "SHR-IT-sant-agostino-campo-marzio"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Rome, la basilique Saint-Augustin au Champ de Mars est liée à la tradition de conservation des reliques de sainte Monique, mère de saint Augustin."
     },
     {
       "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
@@ -2348,7 +2458,8 @@
       "source_ids": [
         "SHR-IT-maria-ausiliatrice-torino"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Turin, la basilique Marie-Auxiliatrice fait partie de l’héritage spirituel salésien et de la mémoire de saint Jean Bosco, dont les reliques y sont vénérées."
     },
     {
       "shrine_id": "shrine:IT:sant-alfonso-pagani",
@@ -2364,7 +2475,8 @@
       "source_ids": [
         "SHR-IT-sant-alfonso-pagani"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Pagani, la basilique Saint-Alphonse-de-Liguori conserve la mémoire et la tradition reliquaire du fondateur des Rédemptoristes."
     },
     {
       "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
@@ -2380,7 +2492,8 @@
       "source_ids": [
         "SHR-IT-cattedrale-sant-agata-catania"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Catane, la cathédrale est liée à la dévotion à sainte Agathe. Le diocèse documente notamment des présentations exceptionnelles de ses reliques et du buste-reliquaire."
     },
     {
       "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
@@ -2396,7 +2509,8 @@
       "source_ids": [
         "SHR-IT-duomo-sant-eusebio-vercelli"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Verceil, la cathédrale Saint-Eusèbe conserve une châsse liée à saint Eusèbe, ancien évêque de la cité, dont le trésor de la cathédrale documente la tradition reliquaire."
     },
     {
       "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
@@ -2715,7 +2829,8 @@
       "source_ids": [
         "SHR-IT-duomo-torino-sindone"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "L’archidiocèse de Turin conserve le Saint Suaire dans la cathédrale Saint-Jean-Baptiste et organise des ostensions exceptionnelles. Son identification au linceul funéraire du Christ relève de la tradition et n’est pas établie comme fait historique."
     },
     {
       "shrine_id": "shrine:DE:aachener-dom-four-textiles",
@@ -2731,7 +2846,8 @@
       "source_ids": [
         "SHR-DE-aachener-dom-four-textiles"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La cathédrale d’Aix-la-Chapelle conserve quatre tissus vénérés par la tradition : la robe de Marie, les langes de Jésus, son pagne et un tissu associé à la tête de saint Jean-Baptiste. Leur conservation et leur culte ne prouvent pas chacune de ces attributions."
     },
     {
       "shrine_id": "shrine:DE:trierer-dom-heiliger-rock",
@@ -2745,7 +2861,8 @@
       "source_ids": [
         "SHR-DE-trierer-dom-heiliger-rock"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Trèves, la cathédrale conserve une tradition pluriséculaire relative à la Sainte Tunique. Elle précise que son authenticité ne peut être établie avec certitude par les méthodes historiques ou scientifiques."
     },
     {
       "shrine_id": "shrine:FR:cathedrale-saint-etienne-cahors",
@@ -2759,7 +2876,8 @@
       "source_ids": [
         "SHR-FR-cathedrale-saint-etienne-cahors"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "À Cahors, une tradition médiévale identifie la Sainte Coiffe à un tissu qui aurait recouvert la tête du Christ au tombeau. L’existence de cette dévotion et la conservation du reliquaire sont documentées, sans prouver l’identité matérielle de l’objet."
     },
     {
       "shrine_id": "shrine:ES:catedral-san-salvador-oviedo",
@@ -2773,7 +2891,8 @@
       "source_ids": [
         "SHR-ES-catedral-san-salvador-oviedo"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La cathédrale d’Oviedo conserve un linge traditionnellement associé à la sépulture de Jésus. Sa conservation historique est documentée, mais son identité avec le linge de Turin ou un lien matériel démontré avec celui-ci ne sont pas établis."
     },
     {
       "shrine_id": "shrine:FR:abbatiale-sainte-trinite-fecamp",
@@ -2787,7 +2906,8 @@
       "source_ids": [
         "SHR-FR-abbatiale-sainte-trinite-fecamp"
       ],
-      "confidence": "MEDIUM"
+      "confidence": "MEDIUM",
+      "origin_summary_fr": "À Fécamp, le culte du Précieux Sang s’appuie sur plusieurs traditions médiévales, dont un récit de miracle eucharistique et un récit de transfert depuis la Terre sainte. Ces traditions ne constituent pas une authentification matérielle du sang du Christ."
     },
     {
       "shrine_id": "shrine:IT:santuario-volto-santo-manoppello",
@@ -3456,7 +3576,8 @@
         "SHR-LOURDES-PILGRIMAGE",
         "SHR-LOURDES-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l’année, accueillant des pèlerins individuels et des groupes organisés."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:laghet-destination",
@@ -3470,7 +3591,8 @@
         "SHR-LAGHET-CONTACT",
         "SHR-LAGHET-EXVOTO"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial régional, ouvert aux pèlerins dans la continuité d'une longue tradition."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:laghet-paillon-deanery",
@@ -3487,7 +3609,8 @@
       "source_ids": [
         "SHR-LAGHET-DEANERY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel attesté du doyenné, avec un groupe de marcheurs partant de La Trinité."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:paray-sacred-heart",
@@ -3505,7 +3628,8 @@
         "SHR-PARAY-PILGRIM-PATH",
         "SHR-PARAY-SACRED-HEART"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage proposant un parcours officiel en quatre étapes sur le site."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:chartres-pentecost",
@@ -3523,7 +3647,8 @@
         "PIL-CHARTRES-NDC",
         "SHR-CHARTRES-CATHEDRAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel de trois jours à pied, de Saint-Sulpice à Paris jusqu’à Notre-Dame de Chartres, pendant la Pentecôte."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:sainte-anne-d-auray-destination",
@@ -3539,7 +3664,8 @@
         "SHR-SAINTE-ANNE-IDENTITY",
         "PIL-SAINTE-ANNE-CHEMIN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage breton ouvert, accueillant chaque année des pèlerinages organisés."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:sainte-anne-grand-pardon",
@@ -3554,7 +3680,8 @@
       "source_ids": [
         "PIL-SAINTE-ANNE-GRAND-PARDON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand Pardon annuel autour de la fête de sainte Anne, dont les principales célébrations ont lieu les 25 et 26 juillet."
     },
     {
       "pilgrimage_id": "pilgrimage:IE:knock-destination",
@@ -3568,7 +3695,8 @@
         "SHR-KNOCK-IDENTITY",
         "PIL-KNOCK-ORGANISERS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial et eucharistique international, accueillant des groupes durant la saison des pèlerinages."
     },
     {
       "pilgrimage_id": "pilgrimage:IE:knock-apparition-anniversary",
@@ -3583,7 +3711,8 @@
       "source_ids": [
         "PIL-KNOCK-ANNIVERSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Commémoration annuelle de l’apparition de Knock du 21 août 1879, avec marche des témoins et messe d’action de grâces."
     },
     {
       "pilgrimage_id": "pilgrimage:IE:lough-derg-three-day",
@@ -3599,7 +3728,8 @@
         "PIL-LOUGH-DERG-THREE-DAY",
         "SHR-LOUGH-DERG-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage pénitentiel traditionnel sur Station Island, comprenant prières, marche pieds nus, veilles et jeûne ; sa saison prend fin chaque année le 15 août."
     },
     {
       "pilgrimage_id": "pilgrimage:MU:pere-laval-annual",
@@ -3618,7 +3748,8 @@
         "PIL-PERE-LAVAL-ANNUAL",
         "SHR-PERE-LAVAL-CENTRE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage diocésain annuel à Sainte-Croix, à l’approche de la fête du bienheureux Jacques-Désiré Laval, avec des départs à pied attestés depuis Port-Louis et Terre-Rouge."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:altoetting-destination",
@@ -3631,7 +3762,8 @@
       "source_ids": [
         "SHR-ALTOETTING-PILGRIMAGE-SITE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial autour de la chapelle des Grâces, accueillant des groupes inscrits et un programme régulier de célébrations."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:altoetting-assumption",
@@ -3646,7 +3778,8 @@
       "source_ids": [
         "SHR-ALTOETTING-CURRENT-PROGRAMME"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Célébrations annuelles de l’Assomption : grande procession aux flambeaux le 14 août et procession solennelle le 15 août."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:kevelaer-destination",
@@ -3662,7 +3795,8 @@
         "SHR-KEVELAER-GNADENKAPELLE",
         "SHR-KEVELAER-1962-SCHEDULE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial dont la saison officielle va du 1er mai au 1er novembre, avec des célébrations quotidiennes pendant cette période."
     },
     {
       "pilgrimage_id": "pilgrimage:AT:mariazell-destination",
@@ -3678,7 +3812,8 @@
         "SHR-MARIAZELL-CONTACT",
         "SHR-MARIAZELL-PILGRIMAGE-SCHEDULE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Important lieu de pèlerinage marial, principalement de mai à octobre, avec messes pour les pèlerins et célébrations dévotionnelles récurrentes."
     },
     {
       "pilgrimage_id": "pilgrimage:AT:maria-taferl-destination",
@@ -3687,12 +3822,13 @@
       "destination_shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Historic Marian pilgrimage destination at Maria Taferl, retained without a forced local Calendar recurrence in this tranche.",
+      "scope_note": "Historic Marian pilgrimage destination at Maria Taferl, on the Taferlberg heights.",
       "source_ids": [
         "SHR-MARIA-TAFERL-CONTACT",
         "SHR-MARIA-TAFERL-HISTORY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu historique de pèlerinage marial à Maria Taferl, sur les hauteurs du Taferlberg."
     },
     {
       "pilgrimage_id": "pilgrimage:CH:einsiedeln-destination",
@@ -3705,7 +3841,8 @@
       "source_ids": [
         "SHR-EINSIEDELN-PILGRIMAGE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert, avec messes pour les pèlerins et un bureau d'accueil dédié au monastère."
     },
     {
       "pilgrimage_id": "pilgrimage:CH:einsiedeln-engelweihe",
@@ -3721,7 +3858,8 @@
         "SHR-EINSIEDELN-ENGELWEIHE",
         "SHR-EINSIEDELN-PILGRIMAGE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Célébration annuelle de la dédicace de la chapelle des Grâces, le 14 septembre ; la source décrit une grande procession lors des célébrations les plus solennelles."
     },
     {
       "pilgrimage_id": "pilgrimage:CH:mariastein-destination",
@@ -3737,7 +3875,8 @@
         "SHR-MARIASTEIN-CONTACT",
         "SHR-MARIASTEIN-MONTHLY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial bénédictin où est attesté un pèlerinage mensuel le premier mercredi."
     },
     {
       "pilgrimage_id": "pilgrimage:US:champion-destination",
@@ -3750,7 +3889,8 @@
       "source_ids": [
         "SHR-CHAMPION-HOME"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage individuel et en groupe, sur le site des apparitions reconnues de Champion."
     },
     {
       "pilgrimage_id": "pilgrimage:US:champion-solemnity",
@@ -3765,7 +3905,8 @@
       "source_ids": [
         "PIL-CHAMPION-SOLEMNITY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Solennité annuelle du sanctuaire le 9 octobre, anniversaire de l'apparition, avec messe et procession eucharistique accompagnée du rosaire."
     },
     {
       "pilgrimage_id": "pilgrimage:US:walk-to-mary",
@@ -3782,7 +3923,8 @@
       "source_ids": [
         "PIL-CHAMPION-EVENTS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel à pied le premier samedi de mai, du sanctuaire national Saint-Joseph au St. Norbert College jusqu'au sanctuaire national Notre-Dame de Champion."
     },
     {
       "pilgrimage_id": "pilgrimage:US:guadalupe-la-crosse-destination",
@@ -3798,7 +3940,8 @@
         "SHR-GUADALUPE-PILGRIMAGE",
         "SHR-GUADALUPE-SCHEDULE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert, avec parcours de prière, église du sanctuaire, chapelle des cierges et accueil organisé des pèlerinages."
     },
     {
       "pilgrimage_id": "pilgrimage:US:holy-hill-destination",
@@ -3811,7 +3954,8 @@
       "source_ids": [
         "SHR-HOLY-HILL-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert à la basilique et au sanctuaire national de Marie Auxiliatrice."
     },
     {
       "pilgrimage_id": "pilgrimage:US:holy-hill-traditional",
@@ -3826,7 +3970,8 @@
       "source_ids": [
         "PIL-HOLY-HILL-SSPX"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage catholique traditionnel de trois jours à pied vers Holy Hill, organisé par la chapelle Saint-Pie-V et la FSSPX, qui se termine à la basilique."
     },
     {
       "pilgrimage_id": "pilgrimage:CA:sainte-anne-de-beaupre-destination",
@@ -3842,7 +3987,8 @@
         "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
         "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu historique de pèlerinage à sainte Anne, marqué par la neuvaine du 17 au 25 juillet et par la fête du 26 juillet."
     },
     {
       "pilgrimage_id": "pilgrimage:CA:notre-dame-du-cap-destination",
@@ -3858,7 +4004,8 @@
         "SHR-NDC-CONTACT",
         "PIL-NDC-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial dont le principal programme annuel comprend la neuvaine de l'Assomption, du 7 au 15 août."
     },
     {
       "pilgrimage_id": "pilgrimage:CA:martyrs-midland-destination",
@@ -3872,7 +4019,8 @@
         "SHR-MARTYRS-CONTACT",
         "SHR-MARTYRS-MINISTRY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert à Midland, consacré aux martyrs canadiens."
     },
     {
       "pilgrimage_id": "pilgrimage:CA:canadian-martyrs-traditional",
@@ -3889,7 +4037,8 @@
       "source_ids": [
         "PIL-MARTYRS-SSPX"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage traditionnel à pied organisé par chapitres, avec vénération des reliques au sanctuaire des Martyrs et messe solennelle dans la région missionnaire de Midland."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:loreto-destination",
@@ -3905,7 +4054,8 @@
         "SHR-LORETO-HOLY-HOUSE",
         "PIL-LORETO-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage autour de la Sainte Maison, avec les célébrations annuelles de la Venuta et de Notre-Dame de Lorette les 9 et 10 décembre."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:pompei-destination",
@@ -3921,7 +4071,8 @@
         "SHR-POMPEI-CONTACT",
         "PIL-POMPEI-SUPPLICA-MAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage du Rosaire, où la Supplica du 8 mai rassemble chaque année de nombreux pèlerins."
     },
     {
       "pilgrimage_id": "pilgrimage:PL:jasna-gora-destination",
@@ -3937,7 +4088,8 @@
         "SHR-JASNA-GORA-CONTACT",
         "PIL-JASNA-GORA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand lieu de pèlerinage marial en Pologne, accueillant de nombreux groupes et marcheurs, notamment pour la fête de Notre-Dame de Częstochowa le 26 août."
     },
     {
       "pilgrimage_id": "pilgrimage:PL:kalwaria-destination",
@@ -3953,7 +4105,8 @@
         "SHR-KALWARIA-CONTACT",
         "PIL-KALWARIA-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage consacré à la Passion et à Marie, avec chemins de dévotion et un important cycle annuel de l'Assomption, du 9 au 16 août."
     },
     {
       "pilgrimage_id": "pilgrimage:GB:walsingham-destination",
@@ -3969,7 +4122,8 @@
         "SHR-WALSINGHAM-CONTACT",
         "PIL-WALSINGHAM-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire national catholique de pèlerinage, où Notre-Dame de Walsingham est célébrée le 24 septembre."
     },
     {
       "pilgrimage_id": "pilgrimage:GB:walsingham-lms",
@@ -3987,7 +4141,8 @@
         "PIL-WALSINGHAM-LMS",
         "SHR-WALSINGHAM-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel traditionnel à pied d’Ely à Walsingham, avec messes traditionnelles solennelles, dévotions et procession au sanctuaire national catholique."
     },
     {
       "pilgrimage_id": "pilgrimage:GB:holywell-destination",
@@ -4003,7 +4158,8 @@
         "SHR-HOLYWELL-CONTACT",
         "PIL-HOLYWELL-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Ancien lieu de pèlerinage gallois autour de la fontaine, de la vénération des reliques et de la dévotion à sainte Winefride, fêtée localement le 3 novembre."
     },
     {
       "pilgrimage_id": "pilgrimage:GB:holywell-lms",
@@ -4021,7 +4177,8 @@
         "PIL-HOLYWELL-LMS",
         "SHR-HOLYWELL-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage traditionnel annuel le premier dimanche de juillet, avec grand-messe, procession du rosaire jusqu'à la fontaine de sainte Winefride et vénération de ses reliques."
     },
     {
       "pilgrimage_id": "pilgrimage:AU:penrose-destination",
@@ -4037,7 +4194,8 @@
         "SHR-PENROSE-IDENTITY",
         "PIL-PENROSE-FATIMA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert, avec une journée mensuelle de Fátima et des dévotions régulières au sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:AU:marian-valley-destination",
@@ -4053,7 +4211,8 @@
         "SHR-MARIAN-VALLEY-CONTACT",
         "PIL-MARIAN-VALLEY-PROGRAMME"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial de l'archidiocèse, avec dévotions et processions eucharistiques le premier samedi et lors de la journée mensuelle de Fátima."
     },
     {
       "pilgrimage_id": "pilgrimage:NZ:st-peter-chanel-destination",
@@ -4071,7 +4230,8 @@
         "SHR-ST-PETER-CHANEL-NZ",
         "PIL-NGA-TAPUWAE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire national consacré au saint et étape majeure du pèlerinage Ngā Tapuwae, « Pas sacrés », à travers l'histoire catholique du Northland."
     },
     {
       "pilgrimage_id": "pilgrimage:NZ:pukekaraka-destination",
@@ -4084,7 +4244,8 @@
       "source_ids": [
         "SHR-PUKEKARAKA-WELLINGTON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Ancien lieu de pèlerinage marial et missionnaire à Ōtaki, accueillant des pèlerinages diocésains et des rassemblements de dévotion catholiques māoris."
     },
     {
       "pilgrimage_id": "pilgrimage:NG:ugwogo-destination",
@@ -4099,7 +4260,8 @@
       "source_ids": [
         "SHR-UGWOGO-NATIONAL-MARIAN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu national de pèlerinage marial à Enugu, consacré à la dévotion à Notre-Dame du Perpétuel Secours."
     },
     {
       "pilgrimage_id": "pilgrimage:NG:nne-enyemaka-destination",
@@ -4117,7 +4279,8 @@
         "SHR-NNE-ENYEMAKA-FSSP",
         "PIL-NNE-ENYEMAKA-ROSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire marial traditionnel et lieu de pèlerinage, avec messe traditionnelle latine le dimanche et processions du rosaire de 30 km entre mai et octobre."
     },
     {
       "pilgrimage_id": "pilgrimage:UG:namugongo-martyrs-day",
@@ -4133,7 +4296,8 @@
         "PIL-NAMUGONGO-MARTYRS-DAY",
         "SHR-NAMUGONGO-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel national et international à Namugongo, le 3 juin, pour la fête des martyrs de l’Ouganda."
     },
     {
       "pilgrimage_id": "pilgrimage:UG:munyonyo-destination",
@@ -4148,7 +4312,8 @@
       "source_ids": [
         "SHR-MUNYONYO-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage des martyrs de l'Ouganda à Munyonyo, participant au cycle annuel plus large de dévotions et de pèlerinages consacrés aux martyrs."
     },
     {
       "pilgrimage_id": "pilgrimage:MX:guadalupe-destination",
@@ -4164,7 +4329,8 @@
         "SHR-GUADALUPE-MX-CONTACT",
         "PIL-GUADALUPE-MX-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand lieu de pèlerinage marial à Tepeyac, dont les principales célébrations de Notre-Dame de Guadalupe se tiennent le 12 décembre."
     },
     {
       "pilgrimage_id": "pilgrimage:MX:zapopan-destination",
@@ -4177,7 +4343,8 @@
       "source_ids": [
         "SHR-ZAPOPAN-IDENTITY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert à la basilique de Zapopan."
     },
     {
       "pilgrimage_id": "pilgrimage:MX:zapopan-romeria",
@@ -4195,7 +4362,8 @@
         "PIL-ZAPOPAN-ROMERIA",
         "SHR-ZAPOPAN-IDENTITY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel du 12 octobre ramenant la Vierge de Zapopan de la cathédrale de Guadalajara à la basilique de Zapopan."
     },
     {
       "pilgrimage_id": "pilgrimage:BR:aparecida-destination",
@@ -4211,7 +4379,8 @@
         "SHR-APARECIDA-CONTACT",
         "PIL-APARECIDA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand pèlerinage marial national, avec une neuvaine du 3 au 12 octobre qui s’achève par la fête patronale et une procession solennelle."
     },
     {
       "pilgrimage_id": "pilgrimage:BR:nazare-destination",
@@ -4224,7 +4393,8 @@
       "source_ids": [
         "SHR-NAZARE-BELEM-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert à la basilique-sanctuaire de Belém."
     },
     {
       "pilgrimage_id": "pilgrimage:BR:cirio-nazare",
@@ -4242,7 +4412,8 @@
         "PIL-CIRIO-NAZARE-2026",
         "SHR-NAZARE-BELEM-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Cycle annuel du Círio de Nazaré à Belém, dont la procession principale a lieu le deuxième dimanche d'octobre, accompagné de plusieurs romarias."
     },
     {
       "pilgrimage_id": "pilgrimage:CO:las-lajas-destination",
@@ -4258,7 +4429,8 @@
         "SHR-LAS-LAJAS-OFFICIAL",
         "PIL-LAS-LAJAS-HISTORY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu andin de pèlerinage marial près d'Ipiales, avec des célébrations patronales en septembre, notamment le 15 septembre."
     },
     {
       "pilgrimage_id": "pilgrimage:CO:chiquinquira-destination",
@@ -4274,7 +4446,8 @@
         "SHR-CHIQUINQUIRA-DIOCESE",
         "PIL-CHIQUINQUIRA-JULY9"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu national de pèlerinage marial dans le Boyacá, dont l'une des principales célébrations annuelles a lieu le 9 juillet."
     },
     {
       "pilgrimage_id": "pilgrimage:BE:banneux-destination",
@@ -4290,7 +4463,8 @@
         "SHR-BANNEUX-CONTACT",
         "PIL-BANNEUX-ANNIVERSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu international de pèlerinage marial, où les commémorations annuelles des apparitions commencent le 15 janvier."
     },
     {
       "pilgrimage_id": "pilgrimage:BE:beauraing-destination",
@@ -4303,7 +4477,8 @@
       "source_ids": [
         "SHR-BEAURAING-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert sur le site des apparitions reconnues de Beauraing."
     },
     {
       "pilgrimage_id": "pilgrimage:CZ:svata-hora-destination",
@@ -4319,7 +4494,8 @@
         "SHR-SVATA-HORA-OFFICIAL",
         "PIL-SVATA-HORA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu historique de pèlerinage marial, avec une fête annuelle autour de l'Assomption comprenant rosaire, procession, bénédictions et vénération de l'image."
     },
     {
       "pilgrimage_id": "pilgrimage:CZ:stara-boleslav-wenceslas",
@@ -4335,7 +4511,8 @@
         "SHR-STARA-BOLESLAV-OFFICIAL",
         "PIL-ST-WENCESLAS-NATIONAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage national tchèque annuel à Stará Boleslav, pour la fête de saint Venceslas."
     },
     {
       "pilgrimage_id": "pilgrimage:NL:heiloo-destination",
@@ -4351,7 +4528,8 @@
         "SHR-HEILOO-CONTACT",
         "PIL-HEILOO-FIRST-SATURDAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial néerlandais, avec un pèlerinage régulier le premier samedi, comprenant confession, rosaire, messe, adoration et bénédiction du Saint-Sacrement."
     },
     {
       "pilgrimage_id": "pilgrimage:NL:maastricht-sterre-der-zee",
@@ -4369,7 +4547,8 @@
         "SHR-MAASTRICHT-STERRE-DER-ZEE",
         "PIL-MAASTRICHT-STERRE-DER-ZEE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial pluriséculaire à Maastricht ; un pèlerinage à pied pour la fête diocésaine rejoint la basilique depuis Winthagen, par Schin op Geul et Houthem."
     },
     {
       "pilgrimage_id": "pilgrimage:PT:fatima-destination",
@@ -4385,7 +4564,8 @@
         "SHR-FATIMA-CONTACT",
         "PIL-FATIMA-MAY13"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial international, marqué par les pèlerinages anniversaires de mai à octobre et par la commémoration du 13 mai."
     },
     {
       "pilgrimage_id": "pilgrimage:PT:sameiro-destination",
@@ -4404,7 +4584,8 @@
         "SHR-SAMEIRO-CONTACT",
         "PIL-SAMEIRO-PILGRIMAGES"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand lieu de pèlerinage marial au Portugal, avec pèlerinage archidiocésain depuis la cathédrale de Braga le premier dimanche de juin et fête du sanctuaire le 12 juin."
     },
     {
       "pilgrimage_id": "pilgrimage:US:alphonsus-baltimore-destination",
@@ -4417,7 +4598,8 @@
       "source_ids": [
         "SHR-ALPHONSUS-BALTIMORE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire historique national de Baltimore, avec messe traditionnelle latine, célébrations publiques et visites sur rendez-vous."
     },
     {
       "pilgrimage_id": "pilgrimage:US:neumann-philadelphia-destination",
@@ -4430,7 +4612,8 @@
       "source_ids": [
         "PIL-NEUMANN-PHILADELPHIA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert, individuel ou en groupe, auprès du tombeau de saint Jean Neumann, avec rosaire, messe, musée et visite du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:US:miraculous-medal-philadelphia-destination",
@@ -4446,7 +4629,8 @@
         "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
         "PIL-MIRACULOUS-MEDAL-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu ouvert de pèlerinages et de retraites mariales, dont le programme de dévotion comprend la neuvaine perpétuelle historique du lundi."
     },
     {
       "pilgrimage_id": "pilgrimage:US:czestochowa-doylestown-destination",
@@ -4459,7 +4643,8 @@
       "source_ids": [
         "SHR-CZESTOCHOWA-US"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial polono-américain ouvert à Doylestown."
     },
     {
       "pilgrimage_id": "pilgrimage:US:czestochowa-walking",
@@ -4476,7 +4661,8 @@
       "source_ids": [
         "PIL-CZESTOCHOWA-US-WALK"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage à pied de plusieurs jours vers Doylestown, avec des groupes venant de Great Meadows, Trenton et Philadelphie ; les dates sont publiées dans le programme du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:US:seton-emmitsburg-destination",
@@ -4489,7 +4675,8 @@
       "source_ids": [
         "SHR-SETON-EMMITSBURG"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu national de pèlerinage à Emmitsburg, avec maisons historiques, basilique, prière et visites guidées."
     },
     {
       "pilgrimage_id": "pilgrimage:US:seton-sea-services",
@@ -4504,7 +4691,8 @@
       "source_ids": [
         "PIL-SETON-SEA-SERVICES-2026"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage et messe annuels réunissant au sanctuaire de sainte Seton les membres des services maritimes des États-Unis, leurs familles et le public."
     },
     {
       "pilgrimage_id": "pilgrimage:US:lourdes-grotto-emmitsburg-destination",
@@ -4520,7 +4708,8 @@
         "SHR-GROTTO-LOURDES-EMMITSBURG",
         "PIL-GROTTO-LOURDES-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial à Emmitsburg, avec une neuvaine annuelle de messes culminant lors de la fête de Notre-Dame de Lourdes au sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:bermont-destination",
@@ -4533,7 +4722,8 @@
       "source_ids": [
         "SHR-BERMONT-GREUX"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Ancien lieu de pèlerinage marial près de Domrémy, directement associé aux visites de dévotion attestées de sainte Jeanne d'Arc."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:arcachon-marins-destination",
@@ -4546,7 +4736,8 @@
       "source_ids": [
         "SHR-ARCACHON-MARINS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire marial maritime et basilique mineure d'Arcachon, marqué par une longue tradition de pèlerinage local et de dévotion des marins."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pontmain-destination",
@@ -4559,7 +4750,8 @@
       "source_ids": [
         "SHR-PONTMAIN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l'année sur le site de l'apparition de 1871."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pontmain-jan17",
@@ -4574,7 +4766,8 @@
       "source_ids": [
         "PIL-PONTMAIN-JAN17"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel du 17 janvier commémorant l'anniversaire de l'apparition à Pontmain."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pontmain-assumption",
@@ -4589,7 +4782,8 @@
       "source_ids": [
         "PIL-PONTMAIN-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand rassemblement annuel de pèlerins pour l'Assomption à Pontmain, avec vigile, messe solennelle et processions mariales."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pellevoisin-destination",
@@ -4602,7 +4796,8 @@
       "source_ids": [
         "SHR-PELLEVOISIN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert toute l'année à la chapelle des apparitions de Pellevoisin."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pellevoisin-annual",
@@ -4617,7 +4812,8 @@
       "source_ids": [
         "PIL-PELLEVOISIN-ANNUAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand pèlerinage annuel le dernier week-end d'août, avec procession, rosaire, imposition du scapulaire et messe."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:montligeon-destination",
@@ -4630,7 +4826,8 @@
       "source_ids": [
         "SHR-MONTLIGEON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l'année, consacré à la prière pour les défunts et à la consolation des personnes en deuil."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:montligeon-ciel",
@@ -4645,7 +4842,8 @@
       "source_ids": [
         "PIL-MONTLIGEON-CIEL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Cycle de pèlerinages en novembre pour la prière des défunts ; les dates précises varient selon l'année et le programme du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:rue-du-bac-destination",
@@ -4661,7 +4859,8 @@
         "PIL-RUE-DU-BAC",
         "OBS-RUE-DU-BAC-NOV27"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial international, associé aux apparitions de 1830 et à la célébration de Notre-Dame de la Médaille miraculeuse le 27 novembre."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:wigratzbad-destination",
@@ -4677,7 +4876,8 @@
         "SHR-WIGRATZBAD",
         "PIL-WIGRATZBAD-SUEHNE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu diocésain de pèlerinage marial, avec confession, adoration eucharistique et célébrations régulières du samedi de réparation (Sühnesamstag)."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:mariahilf-amberg-destination",
@@ -4690,7 +4890,8 @@
       "source_ids": [
         "SHR-MARIAHILF-AMBERG"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l'année sur le Mariahilfberg d'Amberg."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:mariahilf-amberg-bergfest",
@@ -4705,7 +4906,8 @@
       "source_ids": [
         "PIL-MARIAHILF-AMBERG-BERGFEST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Cycle annuel du Bergfest autour de la fête principale de la Visitation, le 2 juillet, attirant des pèlerins à pied de toute la région."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-leonhard-nussdorf-destination",
@@ -4718,7 +4920,8 @@
       "source_ids": [
         "PIL-ST-LEONHARD-NUSSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Église historique de pèlerinage à Nußdorf, où subsistent des coutumes locales de dévotion."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-leonhard-nussdorf-ritt",
@@ -4733,7 +4936,8 @@
       "source_ids": [
         "PIL-ST-LEONHARD-NUSSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Leonhardiritt annuel rétabli le 6 novembre, avec messe en plein air et bénédiction des chevaux."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-apollinaris-frielingsdorf-destination",
@@ -4746,7 +4950,8 @@
       "source_ids": [
         "PIL-ST-APOLLINARIS-FRIELINGSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage consacré à saint Apollinaire à Frielingsdorf."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-apollinaris-frielingsdorf-octave",
@@ -4762,7 +4967,8 @@
         "SHR-ST-APOLLINARIS-FRIELINGSDORF",
         "PIL-ST-APOLLINARIS-FRIELINGSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Octave annuelle de juillet à l'église Saint-Apollinaire de Frielingsdorf, centrée sur la fête du 23 juillet."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:bettbrunn-destination",
@@ -4775,7 +4981,8 @@
       "source_ids": [
         "SHR-BETTBRUNN-ST-SALVATOR"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu historique de pèlerinage eucharistique et de dévotion au Sauveur, accueillant chaque année de nombreux groupes paroissiaux et pèlerins."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:bettbrunn-preith",
@@ -4792,7 +4999,8 @@
       "source_ids": [
         "PIL-BETTBRUNN-PREITH"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel de deux jours à pied, de Preith à Bettbrunn, le week-end après l'Ascension, dont la tradition est attestée depuis 1578."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:bettbrunn-men",
@@ -4807,7 +5015,8 @@
       "source_ids": [
         "SHR-BETTBRUNN-ST-SALVATOR"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand pèlerinage annuel des hommes à Bettbrunn le deuxième dimanche d'octobre."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:maria-vesperbild-destination",
@@ -4823,7 +5032,8 @@
         "SHR-MARIA-VESPERBILD",
         "PIL-MARIA-VESPERBILD-FATIMA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial actif, avec messe des pèlerins le dimanche et journée de pèlerinage de Fátima le 13 de chaque mois."
     },
     {
       "pilgrimage_id": "pilgrimage:US:oswego-assumption-destination",
@@ -4836,7 +5046,8 @@
       "source_ids": [
         "SHR-OSWEGO-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire desservi par l'Institut du Christ Roi Souverain Prêtre, où est célébrée la messe traditionnelle latine."
     },
     {
       "pilgrimage_id": "pilgrimage:US:auriesville-destination",
@@ -4849,7 +5060,8 @@
       "source_ids": [
         "SHR-AURIESVILLE-MARTYRS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Le sanctuaire accueille des pèlerins venus honorer les martyrs d’Amérique du Nord et sainte Kateri Tekakwitha sur le site historique d’Ossernenon."
     },
     {
       "pilgrimage_id": "pilgrimage:US:auriesville-restoration",
@@ -4866,7 +5078,8 @@
       "source_ids": [
         "PIL-AURIESVILLE-RESTORATION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Ce pèlerinage traditionnel se déroule à pied pendant trois jours, du lac George à Auriesville, sur environ 61 miles (98 km). Inspiré du pèlerinage de Chartres, il publie chaque année ses dates propres."
     },
     {
       "pilgrimage_id": "pilgrimage:US:auriesville-amsterdam",
@@ -4883,7 +5096,8 @@
       "source_ids": [
         "PIL-AURIESVILLE-AMSTERDAM"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Un pèlerinage eucharistique à pied relie chaque année Amsterdam, dans l’État de New York, au sanctuaire d’Auriesville. Sa date précise doit être vérifiée dans le programme annuel."
     },
     {
       "pilgrimage_id": "pilgrimage:US:divine-mercy-stockbridge-destination",
@@ -4896,7 +5110,8 @@
       "source_ids": [
         "SHR-DIVINE-MERCY-STOCKBRIDGE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Le sanctuaire accueille des pèlerinages tout au long de l’année, avec chemin de croix, confession, adoration, chapelet, chapelet de la Divine Miséricorde et bénédiction d’objets de piété."
     },
     {
       "pilgrimage_id": "pilgrimage:US:divine-mercy-sunday-stockbridge",
@@ -4911,7 +5126,8 @@
       "source_ids": [
         "PIL-DIVINE-MERCY-SUNDAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Son grand pèlerinage annuel se tient autour du dimanche qui suit Pâques : messes, confessions, chapelet de la Divine Miséricorde, exposition du Saint-Sacrement, bénédiction et bénédiction d’objets de piété."
     },
     {
       "pilgrimage_id": "pilgrimage:US:la-salette-attleboro-destination",
@@ -4925,7 +5141,8 @@
         "SHR-LA-SALETTE-ATTLEBORO",
         "OBS-LA-SALETTE-SEP19"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial inspiré de La Salette, le sanctuaire accueille des fidèles de plusieurs langues ; son programme comprend notamment une messe dominicale en français, à vérifier auprès du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:US:lourdes-litchfield-destination",
@@ -4939,7 +5156,8 @@
         "SHR-LOURDES-LITCHFIELD",
         "PIL-LOURDES-LITCHFIELD"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Les pèlerins peuvent prier à la grotte de Lourdes, parcourir le chemin de croix et participer aux messes en plein air prévues pendant la saison ; les horaires relèvent du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:US:st-anne-fiskdale-destination",
@@ -4952,7 +5170,8 @@
       "source_ids": [
         "SHR-ST-ANNE-FISKDALE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Le sanctuaire dédié à sainte Anne possède plusieurs chapelles de dévotion. Les pèlerins y trouvent le chapelet quotidien et une neuvaine annuelle bien établie."
     },
     {
       "pilgrimage_id": "pilgrimage:US:st-anne-fiskdale-novena",
@@ -4967,7 +5186,8 @@
       "source_ids": [
         "PIL-ST-ANNE-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Du 18 au 26 juillet, la neuvaine de sainte Anne rassemble les fidèles pour la messe et une procession du rosaire en soirée ; elle s’achève à la fête des saints Anne et Joachim."
     },
     {
       "pilgrimage_id": "pilgrimage:PL:gietrzwald-visit",
@@ -4978,11 +5198,12 @@
       "temporal_link_ids": [
         "temporal:gietrzwald:local-observance"
       ],
-      "scope_note": "1877 Marian apparition shrine; annual Marian pilgrimage focused on the Nativity of Mary and locally observed 8 September ceremonies.",
+      "scope_note": "Pilgrims gather at Gietrzwałd to commemorate the reported 1877 Marian apparitions, especially for local celebrations around the Nativity of Mary on 8 September.",
       "source_ids": [
         "SHR-GIETRZWALD-ARCHDIOCESE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Le pèlerinage marial de Gietrzwałd est lié à la mémoire des apparitions de 1877 et aux célébrations locales du 8 septembre, fête de la Nativité de Notre-Dame."
     },
     {
       "pilgrimage_id": "pilgrimage:LT:siluva-visit",
@@ -4993,11 +5214,12 @@
       "temporal_link_ids": [
         "temporal:siluva:local-observance"
       ],
-      "scope_note": "Lithuanian Catholic sanctuary and annual Šilinės pilgrimage; individual programme days vary from year to year.",
+      "scope_note": "The annual Šilinės pilgrimage brings worshippers to Šiluva; the sanctuary publishes the programme of individual prayer days each year.",
       "source_ids": [
         "SHR-SILUVA-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Le pèlerinage de Šilinės rassemble les fidèles à Šiluva ; ses diverses journées de prière et leurs horaires doivent être consultés dans le programme annuel du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:NI:cuapa-visit",
@@ -5008,11 +5230,12 @@
       "temporal_link_ids": [
         "temporal:cuapa:variable-pilgrimage"
       ],
-      "scope_note": "Site of reported 1980 Marian experiences, visited for prayer and pilgrimage; no single universal annual day asserted.",
+      "scope_note": "Visitors come to Cuapa to pray at the site associated with the reported 1980 Marian experiences. No single universal annual pilgrimage date is established.",
       "source_ids": [
         "SHR-CUAPA-MARIAN-FATHERS"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins viennent prier dans le lieu associé aux récits mariaux de 1980. Les dates et célébrations locales sont à rechercher auprès des responsables du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:VE:betania-visit",
@@ -5023,11 +5246,12 @@
       "temporal_link_ids": [
         "temporal:betania:variable-pilgrimage"
       ],
-      "scope_note": "Shrine associated with the 1976–1984 reported Marian events and diocesan recognition; no exact recurring programme presumed.",
+      "scope_note": "Pilgrims visit Betania to pray in connection with the reported Marian events of 1976–1984; consult the sanctuary for any recurring local celebrations.",
       "source_ids": [
         "SHR-BETANIA-ASSOCIATION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Betania reçoit des pèlerins pour la prière en mémoire des événements mariaux rapportés entre 1976 et 1984. Les célébrations récurrentes ne doivent pas être présumées sans programme local."
     },
     {
       "pilgrimage_id": "pilgrimage:AR:san-nicolas-visit",
@@ -5038,11 +5262,12 @@
       "temporal_link_ids": [
         "temporal:san-nicolas:local-observance"
       ],
-      "scope_note": "Official Argentine bishops' press coverage of the 25 September shrine feast and annual pilgrimages.",
+      "scope_note": "The San Nicolás pilgrimage associated with Mary of the Rosary includes the shrine celebration of 25 September reported by Argentina's bishops.",
       "source_ids": [
         "SHR-SAN-NICOLAS-EPC"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La célébration du 25 septembre attire des pèlerins au sanctuaire de Marie du Rosaire de San Nicolás, selon les informations publiées par les évêques argentins."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:santa-croce-rome-visit",
@@ -5053,11 +5278,12 @@
       "temporal_link_ids": [
         "temporal:santa-croce-rome:variable-pilgrimage"
       ],
-      "scope_note": "Roman Seven Churches pilgrimage site and permanent relic collection. The Relics Chapel is temporarily closed for building works as announced April 2026; do not infer public access.",
+      "scope_note": "Santa Croce is a stop on the Roman Seven Churches pilgrimage. Following the April 2026 closure notice, confirm access to the Relics Chapel before planning a visit.",
       "source_ids": [
         "SHR-SANTA-CROCE-RELICS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Étape du pèlerinage romain des sept églises, la basilique conserve une collection de reliques. Un avis d’avril 2026 signale des travaux dans leur chapelle : l’accès actuel doit être confirmé auprès de la basilique."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:FR:basilique-sainte-therese-lisieux:destination",
@@ -5066,11 +5292,12 @@
       "destination_shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Documented destination pilgrimage or shrine visit. Local dates, pilgrimage programmes and special indulgences are not asserted without independent liturgical evidence.",
+      "scope_note": "Pilgrims can join prayer services and follow a guided pilgrimage in the footsteps of Saint Thérèse; consult the sanctuary for current programmes.",
       "source_ids": [
         "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La basilique propose des temps de prière et un pèlerinage sur les pas de sainte Thérèse ; le programme et les horaires dépendent du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:BE:sanctuaire-sainte-julienne-cornillon:destination",
@@ -5339,11 +5566,12 @@
       "destination_shrine_id": "shrine:20261009:IT:basilica-san-francesco-assisi",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Documented destination pilgrimage or shrine visit. Local dates, pilgrimage programmes and special indulgences are not asserted without independent liturgical evidence.",
+      "scope_note": "Pilgrims visit the basilica and tomb of Saint Francis; consult the sanctuary for current visitor arrangements.",
       "source_ids": [
         "SHR-PIL-BULK-IT-basilica-san-francesco-assisi"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La basilique et le tombeau de saint François accueillent les pèlerins ; consultez le sanctuaire pour les conditions et les horaires de visite."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:IT:basilica-santa-rita-cascia:destination",
@@ -5391,11 +5619,12 @@
       "destination_shrine_id": "shrine:20261009:IN:basilica-bom-jesus-old-goa",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Documented destination pilgrimage or shrine visit. Local dates, pilgrimage programmes and special indulgences are not asserted without independent liturgical evidence.",
+      "scope_note": "The Basilica of Bom Jesus, containing the reliquary of Saint Francis Xavier, is a pilgrimage destination; consult the site for current visitor arrangements.",
       "source_ids": [
         "SHR-PIL-BULK-IN-basilica-bom-jesus-old-goa"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La basilique du Bon-Jésus, qui conserve la châsse de saint François Xavier, est un lieu de pèlerinage ; les visites suivent le programme propre au sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:RW:sanctuaire-kibeho:destination",
@@ -5538,11 +5767,12 @@
       "destination_shrine_id": "shrine:20261009:PS:holy-sepulchre-jerusalem",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Source-documented pilgrimage destination: Calvary and the Empty Tomb of the Risen Christ. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "scope_note": "Pilgrims visit Calvary and the Holy Tomb at this shared sanctuary. Access and travel conditions can change unexpectedly; follow the Franciscan Custody and local-authority notices.",
       "source_ids": [
         "SHR-PIL-PS-holy-sepulchre-jerusalem"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Les pèlerins se rendent au Calvaire et au tombeau du Christ dans ce sanctuaire partagé entre plusieurs Églises. Les conditions de déplacement et d’entrée peuvent changer rapidement : consulter les avis de la Custodie de Terre sainte et des autorités."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:PS:nativity-bethlehem:destination",
@@ -5551,11 +5781,12 @@
       "destination_shrine_id": "shrine:20261009:PS:nativity-bethlehem",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Source-documented pilgrimage destination: Grotto and Basilica of the Nativity. Shared custodianship by the Catholic Franciscans, Greek Orthodox and Armenian Apostolic Churches. Travel and entrance may face unpredictable restrictions: check current Custody and authority notices.",
+      "scope_note": "Pilgrims come to Bethlehem to pray at the Basilica and Grotto of the Nativity. Confirm current access and travel restrictions with the Franciscan Custody and local authorities.",
       "source_ids": [
         "SHR-PIL-PS-nativity-bethlehem"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Le pèlerinage à Bethléem conduit à la grotte de la Nativité et à la basilique. Avant tout déplacement, vérifier les conditions d’accès auprès de la Custodie de Terre sainte et des autorités compétentes."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:JP:our-lady-akita-convent:destination",
@@ -5564,11 +5795,12 @@
       "destination_shrine_id": "shrine:20261009:JP:our-lady-akita-convent",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Source-documented pilgrimage destination: Our Lady of Akita (historically approved local account). No particular traditional Latin Mass or rite is implied.",
+      "scope_note": "The Akita convent chapel remains associated with locally approved historical Marian reports; practical visitor access must be confirmed with its custodians.",
       "source_ids": [
         "SHR-PIL-JP-our-lady-akita-convent"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La chapelle d’Akita est un lieu de prière lié aux récits mariaux locaux. Les horaires et modalités d’accueil doivent être recherchés auprès des responsables ; aucune célébration particulière selon le missel de 1962 n’est établie."
     },
     {
       "pilgrimage_id": "pilgrimage:CA:oratoire-saint-joseph-montreal:destination",
@@ -5581,7 +5813,8 @@
       "source_ids": [
         "SHR-ORATOIRE-MONTREAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "L’Oratoire reçoit des pèlerins tout au long de l’année pour la prière à saint Joseph et sur les lieux liés à saint frère André. Les célébrations et horaires particuliers sont à vérifier auprès du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:basilique-saint-denis:destination",
@@ -5594,7 +5827,8 @@
       "source_ids": [
         "SHR-SAINT-DENIS-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La basilique-cathédrale reste un lieu de culte et de visite lié à saint Denis et à l’histoire royale française. Les horaires de célébration doivent être vérifiés localement."
     },
     {
       "pilgrimage_id": "pilgrimage:PL:sanktuarium-jana-pawla-ii-krakow:destination",
@@ -5607,7 +5841,8 @@
       "source_ids": [
         "SHR-JPII-KRAKOW-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Les pèlerins viennent se recueillir dans le sanctuaire consacré à saint Jean-Paul II et devant les reliques qui y sont conservées. Les horaires de visite et de culte relèvent du programme officiel."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:basilique-saint-denys-argenteuil:destination",
@@ -5620,7 +5855,8 @@
       "source_ids": [
         "SHR-FR-ARGENTEUIL-TUNIQUE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "À Argenteuil, les pèlerins vénèrent la Sainte Tunique selon les modalités habituelles de la basilique ; les ostensions exceptionnelles font l’objet d’annonces distinctes. Aucun calendrier processionnel précis ne peut être déduit de cette notice."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:cathedrale-notre-dame-amiens:destination",
@@ -5633,7 +5869,8 @@
       "source_ids": [
         "SHR-FR-AMIENS-JEAN-BAPTISTE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La cathédrale d’Amiens est un lieu de dévotion lié au reliquaire du chef de saint Jean-Baptiste. Les possibilités de visite et de vénération sont à confirmer auprès de la cathédrale."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:basilique-sainte-marie-madeleine-vezelay:destination",
@@ -5646,7 +5883,8 @@
       "source_ids": [
         "SHR-FR-VEZELAY-MADELEINE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La visite de Vézelay s’inscrit dans une longue tradition de pèlerinage auprès de sainte Marie-Madeleine. Les reliques de la crypte doivent être distinguées de celles revendiquées à Saint-Maximin."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:basilique-saint-sernin-toulouse:destination",
@@ -5711,7 +5949,8 @@
       "source_ids": [
         "SHR-CH-abbaye-saint-maurice-agaune"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "À Saint-Maurice, le pèlerinage s’enracine dans la mémoire des martyrs thébains et dans la vie de l’abbaye. Les possibilités de visite et de culte sont à vérifier auprès de la communauté."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:kolner-dom-three-kings:destination",
@@ -5724,7 +5963,8 @@
       "source_ids": [
         "SHR-DE-kolner-dom-three-kings"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Les fidèles viennent à la cathédrale de Cologne se recueillir auprès de la châsse des Rois mages. Les modalités actuelles de visite et de prière sont précisées par la cathédrale."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:basilica-san-marco-venezia:destination",
@@ -5737,7 +5977,8 @@
       "source_ids": [
         "SHR-IT-basilica-san-marco-venezia"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La basilique Saint-Marc est un lieu de pèlerinage lié à la mémoire de l’Évangéliste et à la tradition de ses reliques. Les conditions d’accès se vérifient auprès du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:basilica-san-domenico-bologna:destination",
@@ -5750,7 +5991,8 @@
       "source_ids": [
         "SHR-IT-basilica-san-domenico-bologna"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Les visiteurs de la basilique Saint-Dominique viennent notamment se recueillir auprès du lieu associé aux reliques de saint Dominique. Les horaires de culte doivent être vérifiés localement."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:amalfi-sant-andrea:destination",
@@ -5763,7 +6005,8 @@
       "source_ids": [
         "SHR-IT-amalfi-sant-andrea"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Le pèlerinage à la cathédrale d’Amalfi est lié à la crypte et aux reliques traditionnellement attribuées à saint André. Les conditions de visite et de vénération relèvent de l’institution locale."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:ortona-san-tommaso:destination",
@@ -5776,7 +6019,8 @@
       "source_ids": [
         "SHR-IT-ortona-san-tommaso"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins se rendent à Ortona dans la basilique consacrée à saint Thomas et liée à ses reliques. Il convient de consulter le diocèse pour les heures de prière et d’accès."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:salerno-duomo:destination",
@@ -5789,7 +6033,8 @@
       "source_ids": [
         "SHR-IT-salerno-duomo"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La visite de la cathédrale de Salerne conduit notamment à la crypte liée aux reliques traditionnellement attribuées à saint Matthieu. Vérifier localement les horaires d’accès."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:trier-sankt-matthias:destination",
@@ -5802,7 +6047,8 @@
       "source_ids": [
         "SHR-DE-trier-sankt-matthias"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "À Trèves, les pèlerins honorent la mémoire de saint Matthias à l’abbaye qui porte son nom. Les cérémonies et les conditions d’accueil sont à rechercher auprès de la communauté."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:san-bartolomeo-isola:destination",
@@ -5815,7 +6061,8 @@
       "source_ids": [
         "SHR-IT-san-bartolomeo-isola"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La basilique Saint-Barthélemy sur l’île Tibérine est un lieu de prière lié à la mémoire de l’apôtre. Les visites et célébrations dépendent des horaires du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:sant-ambrogio-milano:destination",
@@ -5828,7 +6075,8 @@
       "source_ids": [
         "SHR-IT-sant-ambrogio-milano"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins de la basilique Saint-Ambroise viennent notamment honorer saint Ambroise et les saints Gervais et Protais. La basilique publie les conditions de visite et de prière."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:san-pietro-ciel-doro:destination",
@@ -5841,7 +6089,8 @@
       "source_ids": [
         "SHR-IT-san-pietro-ciel-doro"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Le pèlerinage à Saint-Pierre-au-Ciel-d’Or permet de se recueillir dans un lieu historiquement lié à saint Augustin et à ses reliques. Les horaires sont ceux de la basilique."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:santa-giustina-padova:destination",
@@ -5854,7 +6103,8 @@
       "source_ids": [
         "SHR-IT-santa-giustina-padova"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La basilique de l’abbaye Sainte-Justine reçoit les fidèles qui souhaitent prier sur les lieux associés aux reliques de saint Luc. Les modalités de visite relèvent de la communauté."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:duomo-milano:destination",
@@ -5867,7 +6117,8 @@
       "source_ids": [
         "SHR-IT-duomo-milano"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins de la cathédrale de Milan peuvent se recueillir dans les lieux associés à saint Charles Borromée. Les conditions d’accès à ces espaces peuvent varier."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:santa-chiara-assisi:destination",
@@ -5880,7 +6131,8 @@
       "source_ids": [
         "SHR-IT-santa-chiara-assisi"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les fidèles viennent à Sainte-Claire d’Assise se recueillir dans la basilique et sa crypte, liées au souvenir et aux reliques de la sainte. Vérifier les horaires du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:santa-maria-minerva-rome:destination",
@@ -5893,7 +6145,8 @@
       "source_ids": [
         "SHR-IT-santa-maria-minerva-rome"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins peuvent venir prier auprès du tombeau de sainte Catherine de Sienne à Santa Maria sopra Minerva. Les modalités de visite dépendent de l’église."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:chiesa-gesu-rome:destination",
@@ -5906,7 +6159,8 @@
       "source_ids": [
         "SHR-IT-chiesa-gesu-rome"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Au Gesù, les fidèles honorent saint Ignace de Loyola dans un lieu central de l’histoire jésuite. Les heures d’ouverture et de célébration doivent être vérifiées localement."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:couvent-jacobins-toulouse:destination",
@@ -5919,7 +6173,8 @@
       "source_ids": [
         "SHR-FR-couvent-jacobins-toulouse"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les visiteurs du couvent des Jacobins peuvent y découvrir le lieu traditionnellement associé aux reliques de saint Thomas d’Aquin. Les possibilités d’accès et de prière sont à vérifier."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:collegiale-sainte-marthe-tarascon:destination",
@@ -5932,7 +6187,8 @@
       "source_ids": [
         "SHR-FR-collegiale-sainte-marthe-tarascon"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La collégiale Sainte-Marthe de Tarascon est une destination de dévotion associée à sainte Marthe. Les pratiques et horaires locaux sont à confirmer auprès de ses responsables."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:basilique-visitation-annecy:destination",
@@ -5945,7 +6201,8 @@
       "source_ids": [
         "SHR-FR-basilique-visitation-annecy"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins visitent la basilique de la Visitation pour honorer saint François de Sales et sainte Jeanne de Chantal. Les horaires de culte et d’accès sont publiés localement."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:sant-agostino-campo-marzio:destination",
@@ -5958,7 +6215,8 @@
       "source_ids": [
         "SHR-IT-sant-agostino-campo-marzio"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les fidèles se rendent à la basilique Saint-Augustin pour se recueillir auprès du lieu associé à sainte Monique. Les conditions de visite dépendent de la basilique."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:maria-ausiliatrice-torino:destination",
@@ -5971,7 +6229,8 @@
       "source_ids": [
         "SHR-IT-maria-ausiliatrice-torino"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La basilique Marie-Auxiliatrice accueille les fidèles dans un lieu lié à saint Jean Bosco et à la tradition salésienne. Consulter ses informations pratiques pour les célébrations."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:sant-alfonso-pagani:destination",
@@ -5984,7 +6243,8 @@
       "source_ids": [
         "SHR-IT-sant-alfonso-pagani"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins viennent à Pagani pour prier dans la basilique consacrée à saint Alphonse de Liguori. Les horaires de visite et de dévotion sont précisés par les Rédemptoristes."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:cattedrale-sant-agata-catania:destination",
@@ -5997,7 +6257,8 @@
       "source_ids": [
         "SHR-IT-cattedrale-sant-agata-catania"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "À Catane, le culte de sainte Agathe marque la vie de la cathédrale. Toute exposition extraordinaire des reliques doit être vérifiée dans les annonces diocésaines."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:duomo-sant-eusebio-vercelli:destination",
@@ -6010,7 +6271,8 @@
       "source_ids": [
         "SHR-IT-duomo-sant-eusebio-vercelli"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins et visiteurs peuvent découvrir le patrimoine religieux lié à saint Eusèbe dans la cathédrale de Verceil. Les modalités de visite relèvent du trésor et de la cathédrale."
     },
     {
       "pilgrimage_id": "pilgrimage:ES:convento-san-juan-cruz-segovia:destination",
@@ -6270,7 +6532,8 @@
       "source_ids": [
         "SHR-IT-duomo-torino-sindone"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Le Saint Suaire est conservé dans un dispositif protégé et n’est normalement pas visible. Les pèlerins peuvent prier dans sa chapelle ; toute ostension publique exige une annonce distincte. Il faut consulter l’archidiocèse pour les conditions actuelles d’accès."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:aachener-dom-four-textiles:destination",
@@ -6283,7 +6546,8 @@
       "source_ids": [
         "SHR-DE-aachener-dom-four-textiles"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les quatre tissus sont conservés dans la châsse mariale et présentés lors de grands pèlerinages exceptionnels, non au cours d’une visite ordinaire. La cathédrale annonce un prochain pèlerinage pour 2028 : confirmer les modalités officielles avant le voyage."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:trierer-dom-heiliger-rock:destination",
@@ -6296,7 +6560,8 @@
       "source_ids": [
         "SHR-DE-trierer-dom-heiliger-rock"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La Sainte Tunique est conservée dans un reliquaire à atmosphère contrôlée et n’est normalement pas exposée. L’accès à sa chapelle est lui-même limité à certaines journées de dévotion, sans présentation habituelle de la relique ; vérifier toute annonce d’ostension."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:cathedrale-saint-etienne-cahors:destination",
@@ -6309,7 +6574,8 @@
       "source_ids": [
         "SHR-FR-cathedrale-saint-etienne-cahors"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Le reliquaire de la Sainte Coiffe est généralement visible de l’extérieur de sa chapelle, derrière le chœur de la cathédrale. L’accès à la chapelle et le passage sous la relique sont réservés aux ostensions solennelles annoncées, notamment autour de Pâques et de la Pentecôte."
     },
     {
       "pilgrimage_id": "pilgrimage:ES:catedral-san-salvador-oviedo:destination",
@@ -6322,7 +6588,8 @@
       "source_ids": [
         "SHR-ES-catedral-san-salvador-oviedo"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "L’original est conservé dans la Cámara Santa et n’est généralement pas exposé de façon permanente ; une reproduction peut être présentée. Des présentations particulières sont annoncées à la Semaine sainte et au jubilé de la Sainte-Croix en septembre : vérifier le programme de l’année."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:abbatiale-sainte-trinite-fecamp:destination",
@@ -6335,7 +6602,8 @@
       "source_ids": [
         "SHR-FR-abbatiale-sainte-trinite-fecamp"
       ],
-      "confidence": "MEDIUM"
+      "confidence": "MEDIUM",
+      "scope_note_fr": "L’abbatiale de la Sainte-Trinité accueille des visiteurs suivant les offices et les avis locaux. L’histoire du pèlerinage du Précieux Sang est documentée, mais la source n’établit pas une exposition actuelle de la substance présumée pour une vénération individuelle."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:santuario-volto-santo-manoppello:destination",

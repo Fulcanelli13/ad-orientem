@@ -421,6 +421,8 @@ export function installAppShellBridge({
         win,
         getActive: () => state.controller?.getActive?.() ?? null,
       });
+      // Calendar-owned dark accents, preserving independent selected-Proper Mass colours.
+      installAppLiturgicalTheme({ win });
       try {
         installNonMassConvergence({ win });
       } catch (error) {

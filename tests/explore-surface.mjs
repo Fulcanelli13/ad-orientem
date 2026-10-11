@@ -751,7 +751,11 @@ const expandedPlace=renderExploreToString(buildExploreViewModel({
   selectedPlaceId:lourdesCombined.place_id,placeProfiles,expandPlace:true,
 }));
 assert.match(expandedPlace,/data-explore-place-item=/,"expanded Place must retain original source-owned records");
-assert.match(expandedPlace,/aoHeritageOverview/,"expanded Place should start with sourced context");
+assert.match(expandedPlace,/aoExploreSourcedStory/,"featured Place should open with a source-cited, multi-stage story");
+assert.match(expandedPlace,/aoExploreStoryEvidence/,"each editorial paragraph needs a direct original source");
+assert.match(expandedPlace,/data-story-kind="ORIGIN"/);
+assert.match(expandedPlace,/data-story-kind="PILGRIMAGE"/);
+assert.doesNotMatch(expandedPlace,/The linked institution records this mary apparition/,"generic evidence placeholder is not editorial narrative");
 assert.match(expandedPlace,/aoExplorePlaceEditorial/);
 assert.match(expandedPlace,/aoExplorePlaceChapters/);
 assert.match(expandedPlace,/data-explore-place-jump="story"/);
@@ -902,4 +906,6 @@ assert.equal(classifiedFeatures[0].properties.place_type,"cathedral","Map must i
 
 await import("./explore-photo-research.mjs");
 await import("./explore-photo-r59.mjs");
+await import("./explore-r61-bilingual-stories.mjs");
+await import("./explore-r62-bilingual-stories.mjs");
 await import("./explore-world-boundaries.mjs");

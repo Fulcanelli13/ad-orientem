@@ -1,0 +1,985 @@
+{
+  "schema": "AO_EXPLORE_R61_BILINGUAL_STORY_BATCH_V1",
+  "version": "1.0.0",
+  "reviewed_at": "2026-10-11",
+  "ownership": "Canonical shrine and pilgrimage corpus; no new text owner",
+  "baseline": {
+    "totalShrines": 216,
+    "featuredOriginal": 20,
+    "initialNonFeaturedMissingFrench": 158
+  },
+  "release": {
+    "newShrinesFrench": 50,
+    "newPilgrimageFrench": 70,
+    "featuredMenuAdditions": 0
+  },
+  "criteria": [
+    "Existing exact canonical place_id and shrine_id",
+    "A faithful source-owned French summary for Shrine and every destination Pilgrimage",
+    "Existing original institutional source URL per owning Shrine and Pilgrimage",
+    "Retain all original Calendar temporal IDs and local schedule qualifiers",
+    "Expose reader chapters only when both origin and pilgrimage have independent linked evidence"
+  ],
+  "items": [
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "shrine_id": "shrine:FR:laghet-our-lady",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:laghet-destination",
+        "pilgrimage:FR:laghet-paillon-deanery"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-LAGHET-CONTACT",
+          "url": "https://sanctuaire-laghet.fr/contact/",
+          "issuer": "Sanctuaire Notre-Dame de Laghet"
+        },
+        {
+          "source_id": "SHR-LAGHET-EXVOTO",
+          "url": "https://sanctuaire-laghet.fr/ex-votos/",
+          "issuer": "Sanctuaire Notre-Dame de Laghet"
+        },
+        {
+          "source_id": "SHR-LAGHET-DEANERY",
+          "url": "https://sanctuaire-laghet.fr/pelerinage-du-doyenne/",
+          "issuer": "Sanctuaire Notre-Dame de Laghet"
+        }
+      ]
+    },
+    {
+      "place_id": "place:IE:lough-derg-station-island",
+      "shrine_id": "shrine:IE:lough-derg",
+      "pilgrimage_ids": [
+        "pilgrimage:IE:lough-derg-three-day"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-LOUGH-DERG-CONTACT",
+          "url": "https://www.loughderg.org/contact.html",
+          "issuer": "Lough Derg"
+        },
+        {
+          "source_id": "PIL-LOUGH-DERG-THREE-DAY",
+          "url": "https://www.loughderg.org/3daypilgrimage.html",
+          "issuer": "Lough Derg"
+        }
+      ]
+    },
+    {
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:kevelaer-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-KEVELAER-GNADENKAPELLE",
+          "url": "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+          "issuer": "Kath. Pfarr- und Wallfahrtsgemeinde St. Marien Kevelaer"
+        },
+        {
+          "source_id": "SHR-KEVELAER-1962-SCHEDULE",
+          "url": "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung",
+          "issuer": "Kath. Pfarr- und Wallfahrtsgemeinde St. Marien Kevelaer"
+        }
+      ]
+    },
+    {
+      "place_id": "place:AT:mariazell-basilica",
+      "shrine_id": "shrine:AT:mariazell-our-lady",
+      "pilgrimage_ids": [
+        "pilgrimage:AT:mariazell-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MARIAZELL-CONTACT",
+          "url": "https://www.basilika-mariazell.at/site/en/kontakt",
+          "issuer": "Basilika Mariazell"
+        },
+        {
+          "source_id": "SHR-MARIAZELL-PILGRIMAGE-SCHEDULE",
+          "url": "https://www.basilika-mariazell.at/site/en/info/gottesdienste",
+          "issuer": "Basilika Mariazell"
+        }
+      ]
+    },
+    {
+      "place_id": "place:AT:maria-taferl-basilica",
+      "shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
+      "pilgrimage_ids": [
+        "pilgrimage:AT:maria-taferl-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MARIA-TAFERL-CONTACT",
+          "url": "https://basilika.at/kontakt/index.php",
+          "issuer": "Wallfahrtsbasilika Maria Taferl"
+        },
+        {
+          "source_id": "SHR-MARIA-TAFERL-HISTORY",
+          "url": "https://basilika.at/info/geschichte/index.html",
+          "issuer": "Wallfahrtsbasilika Maria Taferl"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CH:einsiedeln-monastery",
+      "shrine_id": "shrine:CH:einsiedeln-our-lady",
+      "pilgrimage_ids": [
+        "pilgrimage:CH:einsiedeln-destination",
+        "pilgrimage:CH:einsiedeln-engelweihe"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-EINSIEDELN-PILGRIMAGE",
+          "url": "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/einsiedeln_handreichung.pdf",
+          "issuer": "Kloster Einsiedeln"
+        },
+        {
+          "source_id": "SHR-EINSIEDELN-ENGELWEIHE",
+          "url": "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/wallfahrtskalender_2025_definitiv.pdf",
+          "issuer": "Kloster Einsiedeln"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CH:kloster-mariastein",
+      "shrine_id": "shrine:CH:mariastein-our-lady",
+      "pilgrimage_ids": [
+        "pilgrimage:CH:mariastein-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MARIASTEIN-CONTACT",
+          "url": "https://www.kloster-mariastein.ch/en/information-on/contact-us/",
+          "issuer": "Kloster Mariastein"
+        },
+        {
+          "source_id": "SHR-MARIASTEIN-MONTHLY",
+          "url": "https://www.kloster-mariastein.ch/wallfahrt/gottesdienste/",
+          "issuer": "Kloster Mariastein"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:champion-shrine",
+      "shrine_id": "shrine:US:champion-our-lady",
+      "pilgrimage_ids": [
+        "pilgrimage:US:champion-destination",
+        "pilgrimage:US:champion-solemnity",
+        "pilgrimage:US:walk-to-mary"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-CHAMPION-HOME",
+          "url": "https://championshrine.org/",
+          "issuer": "National Shrine of Our Lady of Champion"
+        },
+        {
+          "source_id": "PIL-CHAMPION-SOLEMNITY",
+          "url": "https://championshrine.org/oloc-solemnity/",
+          "issuer": "National Shrine of Our Lady of Champion"
+        },
+        {
+          "source_id": "PIL-CHAMPION-EVENTS",
+          "url": "https://championshrine.org/events/",
+          "issuer": "National Shrine of Our Lady of Champion"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "shrine_id": "shrine:US:guadalupe-la-crosse",
+      "pilgrimage_ids": [
+        "pilgrimage:US:guadalupe-la-crosse-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-GUADALUPE-SCHEDULE",
+          "url": "https://guadalupeshrine.org/mass-schedules/",
+          "issuer": "Shrine of Our Lady of Guadalupe"
+        },
+        {
+          "source_id": "SHR-GUADALUPE-PILGRIMAGE",
+          "url": "https://guadalupeshrine.org/pilgrimage-experience/",
+          "issuer": "Shrine of Our Lady of Guadalupe"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:holy-hill",
+      "shrine_id": "shrine:US:holy-hill-mary-help",
+      "pilgrimage_ids": [
+        "pilgrimage:US:holy-hill-destination",
+        "pilgrimage:US:holy-hill-traditional"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-HOLY-HILL-OFFICIAL",
+          "url": "https://www.holyhill.com/welcome",
+          "issuer": "Holy Hill"
+        },
+        {
+          "source_id": "PIL-HOLY-HILL-SSPX",
+          "url": "https://mukwonago.wi.sspx.org/en/events/holy-hill-pilgrimage-2026-57859",
+          "issuer": "Saint Pius V Chapel / Society of Saint Pius X"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "shrine_id": "shrine:CA:notre-dame-du-cap",
+      "pilgrimage_ids": [
+        "pilgrimage:CA:notre-dame-du-cap-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-NDC-CONTACT",
+          "url": "https://www.sanctuaire-ndc.ca/nous-joindre/",
+          "issuer": "Sanctuaire Notre-Dame-du-Cap"
+        },
+        {
+          "source_id": "PIL-NDC-ASSUMPTION",
+          "url": "https://www.sanctuaire-ndc.ca/activitesetevenements/parcours-les-decouvertes/",
+          "issuer": "Sanctuaire Notre-Dame-du-Cap"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "shrine_id": "shrine:CA:martyrs-midland",
+      "pilgrimage_ids": [
+        "pilgrimage:CA:martyrs-midland-destination",
+        "pilgrimage:CA:canadian-martyrs-traditional"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MARTYRS-CONTACT",
+          "url": "https://martyrs-shrine.com/contact-us/",
+          "issuer": "Martyrs' Shrine"
+        },
+        {
+          "source_id": "SHR-MARTYRS-MINISTRY",
+          "url": "https://martyrs-shrine.com/our-ministry/",
+          "issuer": "Martyrs' Shrine"
+        },
+        {
+          "source_id": "PIL-MARTYRS-SSPX",
+          "url": "https://ontario.sspx.ca/en/events/canadian-martyrs-pilgrimage-2026-transmitting-faith-next-generation-60303",
+          "issuer": "Society of Saint Pius X — Ontario"
+        }
+      ]
+    },
+    {
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "shrine_id": "shrine:PL:kalwaria-zebrzydowska",
+      "pilgrimage_ids": [
+        "pilgrimage:PL:kalwaria-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-KALWARIA-CONTACT",
+          "url": "https://kalwaria.eu/english/",
+          "issuer": "Sanktuarium w Kalwarii Zebrzydowskiej"
+        },
+        {
+          "source_id": "PIL-KALWARIA-ASSUMPTION",
+          "url": "https://kalwaria.eu/kalendarium-uroczystosci/",
+          "issuer": "Sanktuarium w Kalwarii Zebrzydowskiej"
+        }
+      ]
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride",
+      "shrine_id": "shrine:GB:holywell-st-winefride",
+      "pilgrimage_ids": [
+        "pilgrimage:GB:holywell-destination",
+        "pilgrimage:GB:holywell-lms"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-HOLYWELL-CONTACT",
+          "url": "https://www.stwinefrideswell.org.uk/contact.html",
+          "issuer": "St Winefride's Shrine & Well / Diocese of Wrexham"
+        },
+        {
+          "source_id": "PIL-HOLYWELL-FEAST",
+          "url": "https://www.stwinefrideswell.org.uk/pilgrimages-2022--group-bookings.html",
+          "issuer": "St Winefride's Shrine & Well / Diocese of Wrexham"
+        },
+        {
+          "source_id": "PIL-HOLYWELL-LMS",
+          "url": "https://lms.org.uk/pilgrimages",
+          "issuer": "Latin Mass Society"
+        }
+      ]
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "shrine_id": "shrine:AU:penrose-our-lady-mercy",
+      "pilgrimage_ids": [
+        "pilgrimage:AU:penrose-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-PENROSE-IDENTITY",
+          "url": "https://penrosepark.com.au/shrine/",
+          "issuer": "Shrine of Our Lady of Mercy Penrose Park"
+        },
+        {
+          "source_id": "SHR-PENROSE-FINDUS",
+          "url": "https://penrosepark.com.au/findus/",
+          "issuer": "Shrine of Our Lady of Mercy Penrose Park"
+        },
+        {
+          "source_id": "PIL-PENROSE-FATIMA",
+          "url": "https://penrosepark.com.au/",
+          "issuer": "Shrine of Our Lady of Mercy Penrose Park"
+        }
+      ]
+    },
+    {
+      "place_id": "place:AU:marian-valley",
+      "shrine_id": "shrine:AU:marian-valley-help-christians",
+      "pilgrimage_ids": [
+        "pilgrimage:AU:marian-valley-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MARIAN-VALLEY-CONTACT",
+          "url": "https://marianvalley.org.au/contact-us/",
+          "issuer": "Marian Valley — Shrine of Our Lady Help of Christians"
+        },
+        {
+          "source_id": "PIL-MARIAN-VALLEY-PROGRAMME",
+          "url": "https://marianvalley.org.au/events/",
+          "issuer": "Marian Valley — Shrine of Our Lady Help of Christians"
+        }
+      ]
+    },
+    {
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+      "pilgrimage_ids": [
+        "pilgrimage:NZ:st-peter-chanel-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ST-PETER-CHANEL-NZ",
+          "url": "https://www.aucklandcatholic.org.nz/wp-content/uploads/2025/01/NGA-TAPUWAE-Route-Overview-1.pdf",
+          "issuer": "Catholic Diocese of Auckland"
+        },
+        {
+          "source_id": "PIL-NGA-TAPUWAE",
+          "url": "https://www.aucklandcatholic.org.nz/lifeinfaith/nga_tapuwae/",
+          "issuer": "Catholic Diocese of Auckland"
+        }
+      ]
+    },
+    {
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "shrine_id": "shrine:NZ:pukekaraka-mary",
+      "pilgrimage_ids": [
+        "pilgrimage:NZ:pukekaraka-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-PUKEKARAKA-WELLINGTON",
+          "url": "https://www.wn.catholic.org.nz/adw_community/pilgrimage-of-hope/",
+          "issuer": "Catholic Archdiocese of Wellington"
+        }
+      ]
+    },
+    {
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "shrine_id": "shrine:NG:ugwogo-perpetual-help",
+      "pilgrimage_ids": [
+        "pilgrimage:NG:ugwogo-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-UGWOGO-NATIONAL-MARIAN",
+          "url": "https://nationalmarianshrine.org.ng/",
+          "issuer": "National Shrine of Our Mother of Perpetual Help"
+        }
+      ]
+    },
+    {
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "shrine_id": "shrine:NG:nne-enyemaka-umuaka",
+      "pilgrimage_ids": [
+        "pilgrimage:NG:nne-enyemaka-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-NNE-ENYEMAKA-FSSP",
+          "url": "https://fsspnigeria.org/",
+          "issuer": "FSSP Nigeria / Nne Enyemaka Parish"
+        },
+        {
+          "source_id": "PIL-NNE-ENYEMAKA-ROSARY",
+          "url": "https://www.fsspnigeria.org/pages/donate/associate-membership.php",
+          "issuer": "FSSP Nigeria / Nne Enyemaka Parish"
+        }
+      ]
+    },
+    {
+      "place_id": "place:UG:munyonyo-martyrs",
+      "shrine_id": "shrine:UG:munyonyo-martyrs",
+      "pilgrimage_ids": [
+        "pilgrimage:UG:munyonyo-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MUNYONYO-OFFICIAL",
+          "url": "https://munyonyo-shrine.ug/",
+          "issuer": "Munyonyo Martyrs Shrine"
+        }
+      ]
+    },
+    {
+      "place_id": "place:MX:basilica-zapopan",
+      "shrine_id": "shrine:MX:zapopan-our-lady",
+      "pilgrimage_ids": [
+        "pilgrimage:MX:zapopan-destination",
+        "pilgrimage:MX:zapopan-romeria"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ZAPOPAN-IDENTITY",
+          "url": "https://arquidiocesisgdl.org/visitas_virgen.php",
+          "issuer": "Arquidiócesis de Guadalajara"
+        },
+        {
+          "source_id": "PIL-ZAPOPAN-ROMERIA",
+          "url": "https://arquidiocesisgdl.org/boletin/2010-12-5.php",
+          "issuer": "Arquidiócesis de Guadalajara"
+        }
+      ]
+    },
+    {
+      "place_id": "place:BR:nazare-belem",
+      "shrine_id": "shrine:BR:nazare-belem",
+      "pilgrimage_ids": [
+        "pilgrimage:BR:nazare-destination",
+        "pilgrimage:BR:cirio-nazare"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-NAZARE-BELEM-CONTACT",
+          "url": "https://www.basilicadenazare.com.br/",
+          "issuer": "Basílica Santuário de Nossa Senhora de Nazaré do Desterro"
+        },
+        {
+          "source_id": "PIL-CIRIO-NAZARE-2026",
+          "url": "https://www.ciriodenazare.com.br/",
+          "issuer": "Círio de Nazaré"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CO:las-lajas-ipiales",
+      "shrine_id": "shrine:CO:las-lajas",
+      "pilgrimage_ids": [
+        "pilgrimage:CO:las-lajas-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-LAS-LAJAS-OFFICIAL",
+          "url": "https://laslajas.org/",
+          "issuer": "Parroquia de Nuestra Señora de las Lajas"
+        },
+        {
+          "source_id": "PIL-LAS-LAJAS-HISTORY",
+          "url": "https://laslajas.org/historia/",
+          "issuer": "Parroquia de Nuestra Señora de las Lajas"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CO:chiquinquira-basilica",
+      "shrine_id": "shrine:CO:chiquinquira",
+      "pilgrimage_ids": [
+        "pilgrimage:CO:chiquinquira-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-CHIQUINQUIRA-DIOCESE",
+          "url": "https://www.diocesisdechiquinquira.org/bas%C3%ADlica-nuestra-se%C3%B1ora-del-rosario-chiquinquir%C3%A1-boyac%C3%A1",
+          "issuer": "Diócesis de Chiquinquirá"
+        },
+        {
+          "source_id": "PIL-CHIQUINQUIRA-JULY9",
+          "url": "https://www.diocesisdechiquinquira.org/bas%C3%ADlica-nuestra-se%C3%B1ora-del-rosario-chiquinquir%C3%A1-boyac%C3%A1",
+          "issuer": "Diócesis de Chiquinquirá"
+        }
+      ]
+    },
+    {
+      "place_id": "place:BE:banneux",
+      "shrine_id": "shrine:BE:banneux-virgin-poor",
+      "pilgrimage_ids": [
+        "pilgrimage:BE:banneux-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-BANNEUX-CONTACT",
+          "url": "https://banneux-nd.be/en/contacts/",
+          "issuer": "Sanctuaire de la Vierge des Pauvres"
+        },
+        {
+          "source_id": "PIL-BANNEUX-ANNIVERSARY",
+          "url": "https://banneux-nd.be/fr/calendrier/",
+          "issuer": "Sanctuaire de la Vierge des Pauvres"
+        }
+      ]
+    },
+    {
+      "place_id": "place:BE:beauraing",
+      "shrine_id": "shrine:BE:beauraing-golden-heart",
+      "pilgrimage_ids": [
+        "pilgrimage:BE:beauraing-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-BEAURAING-CONTACT",
+          "url": "https://sanctuairedebeauraing.be/",
+          "issuer": "Sanctuaire Notre-Dame de Beauraing"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CZ:svata-hora-pribram",
+      "shrine_id": "shrine:CZ:svata-hora",
+      "pilgrimage_ids": [
+        "pilgrimage:CZ:svata-hora-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-SVATA-HORA-OFFICIAL",
+          "url": "https://svata-hora.cz/",
+          "issuer": "Římskokatolická farnost Příbram – Svatá Hora"
+        },
+        {
+          "source_id": "PIL-SVATA-HORA-FEAST",
+          "url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
+          "issuer": "Římskokatolická farnost Příbram – Svatá Hora"
+        }
+      ]
+    },
+    {
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+      "pilgrimage_ids": [
+        "pilgrimage:CZ:stara-boleslav-wenceslas"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-STARA-BOLESLAV-OFFICIAL",
+          "url": "https://www.staraboleslav.com/",
+          "issuer": "Poutní místo Stará Boleslav"
+        },
+        {
+          "source_id": "PIL-ST-WENCESLAS-NATIONAL",
+          "url": "https://www.staraboleslav.com/narodni-svatovaclavska-pout/",
+          "issuer": "Poutní místo Stará Boleslav"
+        }
+      ]
+    },
+    {
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "shrine_id": "shrine:NL:heiloo-olv-ter-nood",
+      "pilgrimage_ids": [
+        "pilgrimage:NL:heiloo-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-HEILOO-CONTACT",
+          "url": "https://olvternood.nl/contact/",
+          "issuer": "Heiligdom Onze Lieve Vrouw ter Nood"
+        },
+        {
+          "source_id": "PIL-HEILOO-FIRST-SATURDAY",
+          "url": "https://olvternood.nl/over-het-heiligdom-olvternood/",
+          "issuer": "Heiligdom Onze Lieve Vrouw ter Nood"
+        }
+      ]
+    },
+    {
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "shrine_id": "shrine:NL:maastricht-sterre-der-zee",
+      "pilgrimage_ids": [
+        "pilgrimage:NL:maastricht-sterre-der-zee"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MAASTRICHT-STERRE-DER-ZEE",
+          "url": "https://olv-sintpieter.nl/kerken/",
+          "issuer": "Parochiefederatie Onze Lieve Vrouw en Sint Pieter"
+        },
+        {
+          "source_id": "PIL-MAASTRICHT-STERRE-DER-ZEE",
+          "url": "https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/",
+          "issuer": "Parochiefederatie Onze Lieve Vrouw en Sint Pieter"
+        }
+      ]
+    },
+    {
+      "place_id": "place:PT:sameiro-braga",
+      "shrine_id": "shrine:PT:sameiro",
+      "pilgrimage_ids": [
+        "pilgrimage:PT:sameiro-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-SAMEIRO-CONTACT",
+          "url": "https://santuariodosameiro.pt/contatos-e-horarios/",
+          "issuer": "Santuário de Nossa Senhora do Sameiro"
+        },
+        {
+          "source_id": "PIL-SAMEIRO-PILGRIMAGES",
+          "url": "https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/",
+          "issuer": "Santuário de Nossa Senhora do Sameiro"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "shrine_id": "shrine:US:alphonsus-baltimore",
+      "pilgrimage_ids": [
+        "pilgrimage:US:alphonsus-baltimore-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ALPHONSUS-BALTIMORE",
+          "url": "https://stalphonsusbalt.org/",
+          "issuer": "National Shrine of Saint Alphonsus Liguori"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "shrine_id": "shrine:US:neumann-philadelphia",
+      "pilgrimage_ids": [
+        "pilgrimage:US:neumann-philadelphia-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-NEUMANN-PHILADELPHIA",
+          "url": "https://www.stjohnneumann.org/",
+          "issuer": "National Shrine of St. John Neumann"
+        },
+        {
+          "source_id": "PIL-NEUMANN-PHILADELPHIA",
+          "url": "https://www.stjohnneumann.org/pilgrimagesandretreats",
+          "issuer": "National Shrine of St. John Neumann"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "shrine_id": "shrine:US:miraculous-medal-philadelphia",
+      "pilgrimage_ids": [
+        "pilgrimage:US:miraculous-medal-philadelphia-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
+          "url": "https://miraculousmedal.org/visit-us/",
+          "issuer": "Central Association of the Miraculous Medal"
+        },
+        {
+          "source_id": "PIL-MIRACULOUS-MEDAL-NOVENA",
+          "url": "https://miraculousmedal.org/pray/perpetual-novena/",
+          "issuer": "Central Association of the Miraculous Medal"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:czestochowa-doylestown",
+      "shrine_id": "shrine:US:czestochowa-doylestown",
+      "pilgrimage_ids": [
+        "pilgrimage:US:czestochowa-doylestown-destination",
+        "pilgrimage:US:czestochowa-walking"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-CZESTOCHOWA-US",
+          "url": "https://czestochowa.us/",
+          "issuer": "National Shrine of Our Lady of Czestochowa"
+        },
+        {
+          "source_id": "PIL-CZESTOCHOWA-US-WALK",
+          "url": "https://czestochowa.us/en/ministries/6-pilgrimage",
+          "issuer": "National Shrine of Our Lady of Czestochowa"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "shrine_id": "shrine:US:seton-emmitsburg",
+      "pilgrimage_ids": [
+        "pilgrimage:US:seton-emmitsburg-destination",
+        "pilgrimage:US:seton-sea-services"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-SETON-EMMITSBURG",
+          "url": "https://setonshrine.org/hours-directions/",
+          "issuer": "National Shrine of Saint Elizabeth Ann Seton"
+        },
+        {
+          "source_id": "PIL-SETON-SEA-SERVICES-2026",
+          "url": "https://setonshrine.org/press-release-the-national-shrine-of-saint-elizabeth-ann-seton-hosts-annual-pilgrimage-and-mass-for-the-sea-services/",
+          "issuer": "National Shrine of Saint Elizabeth Ann Seton"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+      "pilgrimage_ids": [
+        "pilgrimage:US:lourdes-grotto-emmitsburg-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-GROTTO-LOURDES-EMMITSBURG",
+          "url": "https://www.nsgrotto.org/",
+          "issuer": "National Shrine Grotto of Our Lady of Lourdes"
+        },
+        {
+          "source_id": "PIL-GROTTO-LOURDES-FEAST",
+          "url": "https://www.nsgrotto.org/lourdesenrollment.html",
+          "issuer": "National Shrine Grotto of Our Lady of Lourdes"
+        }
+      ]
+    },
+    {
+      "place_id": "place:FR:bermont-greux",
+      "shrine_id": "shrine:FR:bermont-greux",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:bermont-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-BERMONT-GREUX",
+          "url": "https://www.nd-bermont.fr/",
+          "issuer": "Association Notre Dame de Bermont – sainte Jehanne d’Arc"
+        }
+      ]
+    },
+    {
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "shrine_id": "shrine:FR:arcachon-marins",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:arcachon-marins-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ARCACHON-MARINS",
+          "url": "https://bordeaux.catholique.fr/le-diocese/decouvrir-le-diocese/les-sanctuaires/notre-dame-des-marins/",
+          "issuer": "Diocèse de Bordeaux"
+        }
+      ]
+    },
+    {
+      "place_id": "place:FR:pontmain",
+      "shrine_id": "shrine:FR:pontmain",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:pontmain-destination",
+        "pilgrimage:FR:pontmain-jan17",
+        "pilgrimage:FR:pontmain-assumption"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-PONTMAIN",
+          "url": "https://sanctuaire-pontmain.fr/",
+          "issuer": "Sanctuaire Notre-Dame de Pontmain"
+        },
+        {
+          "source_id": "PIL-PONTMAIN-JAN17",
+          "url": "https://sanctuaire-pontmain.fr/programme-pour-le-155eme-anniversaire-de-lapparition/",
+          "issuer": "Sanctuaire Notre-Dame de Pontmain"
+        },
+        {
+          "source_id": "PIL-PONTMAIN-ASSUMPTION",
+          "url": "https://sanctuaire-pontmain.fr/15-aout-programme-de-lassomption-au-sanctuaire-de-pontmain/",
+          "issuer": "Sanctuaire Notre-Dame de Pontmain"
+        }
+      ]
+    },
+    {
+      "place_id": "place:FR:pellevoisin",
+      "shrine_id": "shrine:FR:pellevoisin",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:pellevoisin-destination",
+        "pilgrimage:FR:pellevoisin-annual"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-PELLEVOISIN",
+          "url": "https://www.pellevoisin.net/",
+          "issuer": "Sanctuaire de Pellevoisin"
+        },
+        {
+          "source_id": "PIL-PELLEVOISIN-ANNUAL",
+          "url": "https://www.pellevoisin.net/activites-du-sanctuaire-2/le-pelerinage-annuel/",
+          "issuer": "Sanctuaire de Pellevoisin"
+        }
+      ]
+    },
+    {
+      "place_id": "place:FR:montligeon",
+      "shrine_id": "shrine:FR:montligeon",
+      "pilgrimage_ids": [
+        "pilgrimage:FR:montligeon-destination",
+        "pilgrimage:FR:montligeon-ciel"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MONTLIGEON",
+          "url": "https://montligeon.org/le-sanctuaire-notre-dame-de-montligeon/",
+          "issuer": "Sanctuaire Notre-Dame de Montligeon"
+        },
+        {
+          "source_id": "PIL-MONTLIGEON-CIEL",
+          "url": "https://montligeon.org/les-pelerinages-du-ciel/",
+          "issuer": "Sanctuaire Notre-Dame de Montligeon"
+        }
+      ]
+    },
+    {
+      "place_id": "place:DE:wigratzbad-maria-vom-sieg",
+      "shrine_id": "shrine:DE:wigratzbad-maria-vom-sieg",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:wigratzbad-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-WIGRATZBAD",
+          "url": "https://www.gebetsstaette.de/",
+          "issuer": "Gebetsstätte Wigratzbad / Bistum Augsburg"
+        },
+        {
+          "source_id": "PIL-WIGRATZBAD-SUEHNE",
+          "url": "https://www.gebetsstaette.de/aktuelles/gottesdienstordnung/",
+          "issuer": "Gebetsstätte Wigratzbad"
+        }
+      ]
+    },
+    {
+      "place_id": "place:DE:mariahilf-amberg",
+      "shrine_id": "shrine:DE:mariahilf-amberg",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:mariahilf-amberg-destination",
+        "pilgrimage:DE:mariahilf-amberg-bergfest"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MARIAHILF-AMBERG",
+          "url": "https://www.mariahilfberg-amberg.de/index.html",
+          "issuer": "Mariahilfberg-Kirchenstiftung"
+        },
+        {
+          "source_id": "PIL-MARIAHILF-AMBERG-BERGFEST",
+          "url": "https://www.mariahilfberg-amberg.de/geschichte-428638.html",
+          "issuer": "Mariahilfberg-Kirchenstiftung"
+        }
+      ]
+    },
+    {
+      "place_id": "place:DE:st-leonhard-nussdorf",
+      "shrine_id": "shrine:DE:st-leonhard-nussdorf",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:st-leonhard-nussdorf-destination",
+        "pilgrimage:DE:st-leonhard-nussdorf-ritt"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ST-LEONHARD-NUSSDORF",
+          "url": "https://www2.erzbistum-muenchen.de/pfarrei/pv-neubeuern-nussdorf/Kontakt",
+          "issuer": "Erzbistum München und Freising"
+        },
+        {
+          "source_id": "PIL-ST-LEONHARD-NUSSDORF",
+          "url": "https://www.nussdorf.de/leben-in-nussdorf/soziales/kirchen-und-pfarraemter/kirche-st-leonhard",
+          "issuer": "Gemeinde Nußdorf am Inn"
+        }
+      ]
+    },
+    {
+      "place_id": "place:DE:st-apollinaris-frielingsdorf",
+      "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:st-apollinaris-frielingsdorf-destination",
+        "pilgrimage:DE:st-apollinaris-frielingsdorf-octave"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-ST-APOLLINARIS-FRIELINGSDORF",
+          "url": "https://www.katholisch-in-lindlar.de/news/Oktav-Frielingsdorf-2026-Einfach-WIR/",
+          "issuer": "Seelsorgebereich Lindlar"
+        },
+        {
+          "source_id": "PIL-ST-APOLLINARIS-FRIELINGSDORF",
+          "url": "https://www.erzbistum-koeln.de/export/sites/ebkportal/thema/kinderpilgern/.content/.galleries/downloads/wallfahrtsorte_im_Bistum.pdf",
+          "issuer": "Erzbistum Köln"
+        }
+      ]
+    },
+    {
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "shrine_id": "shrine:DE:bettbrunn-st-salvator",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:bettbrunn-destination",
+        "pilgrimage:DE:bettbrunn-preith",
+        "pilgrimage:DE:bettbrunn-men"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-BETTBRUNN-ST-SALVATOR",
+          "url": "https://bistum-regensburg.de/news/die-hostienwallfahrt-von-bettbrunn",
+          "issuer": "Bistum Regensburg"
+        },
+        {
+          "source_id": "PIL-BETTBRUNN-PREITH",
+          "url": "https://preith.bistum-eichstaett.de/wallfahrt/",
+          "issuer": "Pfarrei Preith / Bistum Eichstätt"
+        }
+      ]
+    },
+    {
+      "place_id": "place:DE:maria-vesperbild",
+      "shrine_id": "shrine:DE:maria-vesperbild",
+      "pilgrimage_ids": [
+        "pilgrimage:DE:maria-vesperbild-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-MARIA-VESPERBILD",
+          "url": "https://maria-vesperbild.de/",
+          "issuer": "Wallfahrtsdirektion Maria Vesperbild"
+        },
+        {
+          "source_id": "PIL-MARIA-VESPERBILD-FATIMA",
+          "url": "https://maria-vesperbild.de/",
+          "issuer": "Wallfahrtsdirektion Maria Vesperbild"
+        }
+      ]
+    },
+    {
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "shrine_id": "shrine:US:st-mary-assumption-oswego",
+      "pilgrimage_ids": [
+        "pilgrimage:US:oswego-assumption-destination"
+      ],
+      "original_sources": [
+        {
+          "source_id": "SHR-OSWEGO-ASSUMPTION",
+          "url": "https://institute-christ-king.org/oswego-home",
+          "issuer": "Institute of Christ the King Sovereign Priest"
+        }
+      ]
+    }
+  ]
+}

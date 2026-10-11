@@ -390,6 +390,7 @@ export function projectPilgrimageItems({pilgrimages=[],shrines=[],routes=[],temp
       title:pilgrimage?.name||"Pilgrimage",
       subtitle:shrine?.name||addressLabel(place?.address),
       summary:pilgrimage?.scope_note??"",
+      summary_fr:pilgrimage?.scope_note_fr??pilgrimage?.scope_note??"",
       address:place?.address??null,
       geo,
       map_publishable:Boolean(mapped&&geo),
