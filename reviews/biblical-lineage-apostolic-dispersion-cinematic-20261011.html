@@ -165,8 +165,7 @@ $("atlasBridge").addEventListener("click",()=>showAtlas(atlasAnchor));
 $("chronEra").addEventListener("change",e=>{const m=B.milestones.find(x=>x.era===e.target.value);if(m){chronIndex=m.index;renderChron();cinema(m.era,L("Biblical chapter","Chapitre biblique"));}});
 $("chronList").addEventListener("click",e=>{const n=e.target.closest("[data-chron-index]");if(!n)return;const oldEra=B.milestones[chronIndex].era;chronIndex=Number(n.dataset.chronIndex);renderChron();if(B.milestones[chronIndex].era!==oldEra)cinema(B.milestones[chronIndex].era,L("New era","Nouvelle époque"));});
 $("navFamily").addEventListener("click",e=>{const n=e.target.closest("[data-family-focus]");if(n){focusFamily(n.dataset.familyFocus);cinema(namesById.get(n.dataset.familyFocus),L("Scripture-linked family branch","Branche généalogique sourcée"));}});
-$("modeMission").addEventListener("click",()=>{mode="mission";$("chronEra").innerHTML=[...new Set(B.milestones.map(m=>m.era))].map(era=>'<option value="'+esc(era)+'">'+esc(era)+'</option>').join("");
-renderProfiles();renderAll();cinema(L("THE APOSTOLIC AGE","L'ÂGE APOSTOLIQUE"),L("Lives, missions and documented traditions","Vies, missions et traditions documentées"))});
+$("modeMission").addEventListener("click",()=>{mode="mission";renderProfiles();renderAll();cinema(L("THE APOSTOLIC AGE","L'ÂGE APOSTOLIQUE"),L("Lives, missions and documented traditions","Vies, missions et traditions documentées"))});
 $("navLineage").addEventListener("click",e=>{let b=e.target.closest("[data-line]");if(!b)return;if(playing){clearInterval(playing);playing=null;$("play").textContent="Play";}lineage=b.dataset.line;pos=0;compareM=0;compareL=0;comparedSelected=null;renderAll();cinema(lineage==="genesis"?L("THE PATRIARCHS","LES PATRIARCHES"):lineage==="compare"?L("THE HOUSE OF DAVID","LA MAISON DE DAVID"):lineage.toUpperCase(),L("Let the sources determine the branches","Les sources déterminent les lignées"))});
 $("navMission").addEventListener("click",e=>{let b=e.target.closest("[data-profile]");if(!b)return;person=b.dataset.profile;renderProfiles();renderMission(true);cinema(lang==="fr"?personObj().fr:personObj().name,L("A life through places and testimony","Une vie à travers les lieux et les témoignages"))});
 $("progress").addEventListener("input",e=>{pos=Number(e.target.value);updateLine()});
@@ -197,6 +196,7 @@ $("map").addEventListener("pointerup",()=>{dragging=null});
 $("map").addEventListener("pointercancel",()=>{dragging=null});
 $("mapReset").addEventListener("click",()=>{follow=true;missionMap();});
 $("lang").addEventListener("click",()=>{lang=lang==="en"?"fr":"en";renderProfiles();renderAll()});
+$("chronEra").innerHTML=[...new Set(B.milestones.map(m=>m.era))].map(era=>'<option value="'+esc(era)+'">'+esc(era)+'</option>').join("");
 renderProfiles();renderAll();
 })();
 </script></body></html>
