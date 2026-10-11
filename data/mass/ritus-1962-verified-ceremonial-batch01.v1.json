@@ -1,0 +1,928 @@
+{
+  "schema": "ao-ritus-1962-ceremonial-evidence-batch-v1",
+  "version": "1.0.0",
+  "status": "SOURCE_CHECKED_ENGLISH_TRANSLATION_NOT_LATIN_AND_NOT_RUNTIME_CERTIFIED",
+  "authority": "1962_RITUS_SERVANDUS",
+  "source": {
+    "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+    "language": "English translation",
+    "originalLatinCheck": "PENDING",
+    "historicComparators": [
+      "Alphonsus The Holy Mass 1889",
+      "Fortescue The Mass 1914"
+    ]
+  },
+  "invariants": {
+    "canonicalCueIdsPreserved": true,
+    "massTextUnchanged": true,
+    "faithfulPostureNotInferredFromPriest": true,
+    "onlyExactCueOrConditionalEvent": true,
+    "noRuntimeImport": true,
+    "secondConfiteorExcludedFromNormative1962": true,
+    "lowMassIncenseForbidden": true
+  },
+  "researchCorrections": [
+    {
+      "id": "R01",
+      "pinpoints": [
+        "MR62.057",
+        "MR62.058"
+      ],
+      "fix": "M18 -> M17 for C0196 and C0200 only; do not mutate original cue ids",
+      "correctMacro": "AO.SM.M17"
+    },
+    {
+      "id": "R02",
+      "pinpoints": [
+        "MR62.086"
+      ],
+      "fix": "Second Confiteor belongs to M24 historical block, not M01; strict 1962 excludes C0235–C0241",
+      "correctMacro": "AO.SM.M24"
+    },
+    {
+      "id": "R03",
+      "pinpoints": [
+        "MR62.091"
+      ],
+      "fix": "First incensation anchored to M01 C0041, not M10",
+      "correctMacro": "AO.SM.M01"
+    },
+    {
+      "id": "R04",
+      "cueId": "AO.SM.C0041",
+      "fix": "Low donor contains incense text; it is form-inapplicable, not a valid Low Mass priest cue"
+    }
+  ],
+  "events": [
+    {
+      "id": "B01-001",
+      "cueId": "AO.SM.C0001",
+      "actor": "PRIEST",
+      "action": "SIGN_SELF_AT_OPENING",
+      "section": "III.4",
+      "sourcePage": 3,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=3",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Le célébrant fait le signe de croix.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-002",
+      "cueId": "AO.SM.C0010",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_AT_GLORIA_PATRI_OF_INTROIT",
+      "section": "IV.2",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM",
+      "microOrder": null,
+      "rubricFr": "Il incline la tête à Gloria Patri.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-003",
+      "cueId": "AO.SM.C0056",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_ADORAMUS_TE",
+      "section": "IV.3",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "GLORIA_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il incline la tête à Adoramus te.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-004",
+      "cueId": "AO.SM.C0058",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_GRATIAS_AGIMUS_TIBI",
+      "section": "IV.3",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "GLORIA_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il incline la tête à Gratias agimus tibi.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-005",
+      "cueId": "AO.SM.C0061",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_JESU_CHRISTE",
+      "section": "IV.3",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "GLORIA_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il incline la tête au nom de Jésus-Christ.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-006",
+      "cueId": "AO.SM.C0064",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_SUSCIPE_DEPRECATIONEM",
+      "section": "IV.3",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "GLORIA_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il incline la tête à Suscipe deprecationem nostram.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-007",
+      "cueId": "AO.SM.C0067",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_JESU_CHRISTE_SECOND_OCCURRENCE",
+      "section": "IV.3",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "GLORIA_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il incline de nouveau la tête à Jesu Christe.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-008",
+      "cueId": "AO.SM.C0068",
+      "actor": "PRIEST",
+      "action": "SIGN_SELF_AT_CUM_SANCTO_SPIRITU",
+      "section": "IV.3",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "GLORIA_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il fait le signe de croix à Cum Sancto Spiritu.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-009",
+      "cueId": "AO.SM.C0084",
+      "actor": "PRIEST",
+      "action": "TRIPLE_SMALL_CROSSES_GOSPEL",
+      "section": "VI.2",
+      "sourcePage": 8,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=8",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM_OMISSION_OF_PREPARATORY_PRAYERS_ONLY",
+      "microOrder": null,
+      "rubricFr": "Il signe le commencement de l'Évangile, puis son front, ses lèvres et sa poitrine.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-010",
+      "cueId": "AO.SM.C0093",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_JESUM_CHRISTUM_CREDO",
+      "section": "VI.3",
+      "sourcePage": 8,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=8",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "CREDO_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il incline la tête à Jesum Christum.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-011",
+      "cueId": "AO.SM.C0096",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_ET_INCARNATUS_THROUGH_ET_HOMO_FACTUS",
+      "section": "VI.3",
+      "sourcePage": 8,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=8",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "CREDO_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il s'agenouille de Et incarnatus est à Et homo factus est inclus.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-012",
+      "cueId": "AO.SM.C0101",
+      "actor": "PRIEST",
+      "action": "BOW_HEAD_SIMUL_ADORATUR",
+      "section": "VI.3",
+      "sourcePage": 8,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=8",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "CREDO_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il incline la tête à simul adoratur.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-013",
+      "cueId": "AO.SM.C0104",
+      "actor": "PRIEST",
+      "action": "SIGN_SELF_ET_VITAM_VENTURI",
+      "section": "VI.3",
+      "sourcePage": 8,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=8",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "CREDO_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il se signe à Et vitam venturi saeculi.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-014",
+      "cueId": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "action": "BLESS_WATER_AT_CHALICE_PREPARATION",
+      "section": "VII.4",
+      "sourcePage": 10,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=10",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM",
+      "microOrder": null,
+      "rubricFr": "Il bénit l'eau avant de la verser dans le calice.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-015",
+      "cueId": "AO.SM.C0112",
+      "actor": "PRIEST",
+      "action": "DO_NOT_BLESS_WATER_REQUIEM",
+      "section": "XIII.1",
+      "sourcePage": 24,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=24",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "REQUIEM",
+      "microOrder": null,
+      "rubricFr": "À la messe des défunts, il ne bénit pas l'eau.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-016",
+      "cueId": "AO.SM.C0114",
+      "actor": "PRIEST",
+      "action": "OFFER_CHALICE_IN_BOTH_HANDS",
+      "section": "VII.5",
+      "sourcePage": 10,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=10",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il élève légèrement le calice à l'offertoire.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-017",
+      "cueId": "AO.SM.C0152",
+      "actor": "PRIEST",
+      "action": "THREE_CROSSES_OVER_OBLATIONS_HAEC_DONA",
+      "section": "VIII.1",
+      "sourcePage": 13,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=13",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il trace trois croix sur les oblats.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-018",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "action": "HANDS_SPREAD_OVER_OBLATION_HANC_IGITUR",
+      "section": "VIII.4",
+      "sourcePage": 14,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il étend les mains sur les oblats pendant Hanc igitur.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-019",
+      "cueId": "AO.SM.C0163",
+      "actor": "PRIEST",
+      "action": "THREE_CROSSES_QUAM_OBLATIONEM",
+      "section": "VIII.4",
+      "sourcePage": 14,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il trace trois croix au début de Quam oblationem.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-020",
+      "cueId": "AO.SM.C0173",
+      "actor": "PRIEST",
+      "action": "CONSECRATION_HOST_QUIETLY_BOWED_ELBOWS_ON_ALTAR",
+      "section": "VIII.5",
+      "sourcePage": 15,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il prononce secrètement les paroles de la consécration, incliné sur l'autel.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-021",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_AFTER_HOST_CONSECRATION",
+      "section": "VIII.5",
+      "sourcePage": 15,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 1,
+      "rubricFr": "Il adore l'Hostie consacrée par une génuflexion.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-022",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "action": "ELEVATE_HOST_FOR_ADORATION",
+      "section": "VIII.5",
+      "sourcePage": 15,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 2,
+      "rubricFr": "Il élève l'Hostie et la présente à l'adoration des fidèles.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-023",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "action": "REPLACE_HOST_ON_CORPORAL",
+      "section": "VIII.5",
+      "sourcePage": 15,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 3,
+      "rubricFr": "Il repose l'Hostie sur le corporal.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-024",
+      "cueId": "AO.SM.C0174",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_AGAIN_AFTER_HOST_ELEVATION",
+      "section": "VIII.6",
+      "sourcePage": 15,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 4,
+      "rubricFr": "Il fait de nouveau la génuflexion.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-025",
+      "cueId": "AO.SM.C0174",
+      "actor": "SERVER",
+      "action": "RING_AT_HOST_ELEVATION",
+      "section": "VIII.6",
+      "sourcePage": 15,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "SERVER_PRESENT",
+      "microOrder": 2,
+      "rubricFr": "Le servant sonne pendant l'élévation; modalités précisées par le rite.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-026",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_AFTER_CHALICE_CONSECRATION",
+      "section": "VIII.7",
+      "sourcePage": 16,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 1,
+      "rubricFr": "Il adore le Précieux Sang par une génuflexion.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-027",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "action": "ELEVATE_CHALICE_FOR_ADORATION",
+      "section": "VIII.7",
+      "sourcePage": 16,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 2,
+      "rubricFr": "Il élève le calice et le présente à l'adoration.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-028",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "action": "REPLACE_CHALICE_ON_CORPORAL",
+      "section": "VIII.7",
+      "sourcePage": 16,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 3,
+      "rubricFr": "Il repose le calice sur le corporal.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-029",
+      "cueId": "AO.SM.C0181",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_AGAIN_AFTER_CHALICE_ELEVATION",
+      "section": "VIII.7",
+      "sourcePage": 16,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": 4,
+      "rubricFr": "Il fait de nouveau la génuflexion.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-030",
+      "cueId": "AO.SM.C0181",
+      "actor": "SERVER",
+      "action": "RING_AT_CHALICE_ELEVATION",
+      "section": "VIII.6-7",
+      "sourcePage": 16,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "SERVER_PRESENT",
+      "microOrder": 2,
+      "rubricFr": "Le servant sonne pendant l'élévation du calice.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-031",
+      "cueId": "AO.SM.C0196",
+      "actor": "PRIEST",
+      "action": "STRIKE_BREAST_NOBIS_QUOQUE_AND_SPEAK_SLIGHTLY_LOUDER",
+      "section": "IX.3",
+      "sourcePage": 17,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il élève légèrement la voix et se frappe la poitrine à Nobis quoque.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-032",
+      "cueId": "AO.SM.C0200",
+      "actor": "PRIEST",
+      "action": "THREE_CROSSES_SANCTIFICAS_VIVIFICAS_BENEDICIS",
+      "section": "IX.3",
+      "sourcePage": 17,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il trace trois croix sur les saintes espèces.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-033",
+      "cueId": "AO.SM.C0202",
+      "actor": "PRIEST",
+      "action": "CROSS_WITH_HOST_OVER_CHALICE_AT_PER_IPSUM",
+      "section": "IX.3",
+      "sourcePage": 17,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "DEFAULT",
+      "microOrder": null,
+      "rubricFr": "Il trace les croix avec l'Hostie sur le calice.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-034",
+      "cueId": "AO.SM.C0222",
+      "actor": "PRIEST",
+      "action": "STRIKE_BREAST_AT_AGNUS_DEI",
+      "section": "X.3",
+      "sourcePage": 19,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=19",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM",
+      "microOrder": null,
+      "rubricFr": "Il se frappe la poitrine au premier Agnus Dei.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-035",
+      "cueId": "AO.SM.C0222",
+      "actor": "PRIEST",
+      "action": "DO_NOT_STRIKE_BREAST_REQUIEM_AGNUS",
+      "section": "XIII.1",
+      "sourcePage": 24,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=24",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "REQUIEM",
+      "microOrder": null,
+      "rubricFr": "À la messe des défunts, il ne se frappe pas la poitrine à l'Agnus Dei.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-036",
+      "cueId": "AO.SM.C0242",
+      "actor": "PRIEST",
+      "action": "SHOW_HOST_AND_SAY_ECCE_AGNUS_DEI",
+      "section": "X.6",
+      "sourcePage": 20,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=20",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "FAITHFUL_COMMUNICANTS_PRESENT",
+      "microOrder": null,
+      "rubricFr": "Il présente une Hostie aux communiants et dit Ecce Agnus Dei.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-037",
+      "cueId": "AO.SM.C0243",
+      "actor": "PRIEST",
+      "action": "DOMINE_NON_SUM_DIGNUS_FAITHFUL_FIRST",
+      "section": "X.6",
+      "sourcePage": 20,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=20",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "FAITHFUL_COMMUNICANTS_PRESENT",
+      "microOrder": null,
+      "rubricFr": "Il dit Domine, non sum dignus pour les communiants.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-038",
+      "cueId": "AO.SM.C0259",
+      "actor": "PRIEST",
+      "action": "SING_DISMISSAL_IN_MISSA_CANTATA",
+      "section": "XI.3",
+      "sourcePage": 22,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=22",
+      "forms": [
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE"
+      ],
+      "condition": "DISMISSAL_ITE",
+      "microOrder": null,
+      "rubricFr": "Le célébrant chante Ite, missa est.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-039",
+      "cueId": "AO.SM.C0259",
+      "actor": "DEACON",
+      "action": "SING_DISMISSAL_IN_SOLEMN",
+      "section": "XI.3",
+      "sourcePage": 22,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=22",
+      "forms": [
+        "SOLEMN"
+      ],
+      "condition": "DISMISSAL_ITE",
+      "microOrder": null,
+      "rubricFr": "Le diacre chante Ite, missa est.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-040",
+      "cueId": "AO.SM.C0273",
+      "actor": "PRIEST",
+      "action": "GENUFLECT_ET_VERBUM_CARO_FACTUM_EST",
+      "section": "XII.1",
+      "sourcePage": 23,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=23",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "LAST_GOSPEL_APPOINTED",
+      "microOrder": null,
+      "rubricFr": "Il fait la génuflexion à Et Verbum caro factum est.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-041",
+      "cueId": "AO.SM.C0075",
+      "actor": "SUBDEACON",
+      "action": "SING_EPISTLE_SOLEMN",
+      "section": "VI.4",
+      "sourcePage": 8,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=8",
+      "forms": [
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM_SPECIAL_GESTURE_EXCEPTIONS",
+      "microOrder": null,
+      "rubricFr": "Le sous-diacre chante l'Épître.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-042",
+      "cueId": "AO.SM.C0084",
+      "actor": "DEACON",
+      "action": "SING_GOSPEL_SOLEMN",
+      "section": "VI.5",
+      "sourcePage": 9,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=9",
+      "forms": [
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM_CEREMONIAL_VARIANTS",
+      "microOrder": null,
+      "rubricFr": "Le diacre chante l'Évangile.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-043",
+      "cueId": "AO.SM.C0041",
+      "actor": "PRIEST",
+      "action": "INCENSE_CROSS_ALTAR_AT_ENTRANCE_SOLEMN",
+      "section": "IV.4",
+      "sourcePage": 5,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
+      "forms": [
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM",
+      "microOrder": null,
+      "rubricFr": "Le célébrant encense la croix et l'autel.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    },
+    {
+      "id": "B01-044",
+      "cueId": "AO.SM.C0041",
+      "actor": "PRIEST",
+      "action": "SUPPRESS_FIRST_INCENSATION_REQUIEM",
+      "section": "XIII.2",
+      "sourcePage": 24,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=24",
+      "forms": [
+        "SOLEMN"
+      ],
+      "condition": "REQUIEM",
+      "microOrder": null,
+      "rubricFr": "À la messe solennelle de Requiem, l'autel n'est pas encensé à l'entrée.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false
+    }
+  ],
+  "reviewBoundaries": [
+    "No automatic runtime adoption",
+    "Full Latin rubrical comparison",
+    "Separate minister route timing",
+    "Separate congregation/custom profiles",
+    "Solemn Requiem modifier validation"
+  ]
+}
