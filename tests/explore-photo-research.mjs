@@ -7,6 +7,21 @@ const research=read("data/geography/research/place-media-candidates-r58.v1.json"
 const curated=read("data/geography/major-places-editorial.v1.json");
 const geography=read("data/geography/seed-registry.v1.json");
 const approved=read("data/geography/approved-place-media.v1.json");
+const editorialReview=read("data/geography/research/place-media-publication-review-r58.v1.json");
+assert.equal(editorialReview.schema,"AO_EXPLORE_PLACE_MEDIA_PUBLICATION_REVIEW_V1");
+assert.equal(editorialReview.counts.approved,10);
+assert.equal(editorialReview.counts.needs_replacement,8);
+assert.equal(editorialReview.counts.held_license,2);
+assert.equal(editorialReview.counts.coverage,20);
+assert.deepEqual(
+ new Set(editorialReview.approved.map(x=>x.place_id)),
+ new Set(approved.items.map(x=>x.place_id)),
+ "The production list must match separately reviewed exact Place IDs");
+const excluded=[...editorialReview.needs_replacement,...editorialReview.held].map(x=>x.place_id);
+assert.equal(new Set(excluded).size,10);
+assert.ok(excluded.every(id=>!approved.items.some(item=>item.place_id===id)),
+ "Weak or licence-held candidate must not appear as approved Place media");
+
 assert.equal(research.schema,"AO_EXPLORE_PLACE_MEDIA_RESEARCH_V1");
 assert.equal(curated.schema,"AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1");
 assert.equal(approved.schema,"AO_APPROVED_PLACE_MEDIA_V1");
@@ -64,4 +79,4 @@ assert.match(stagingScript,/STAGED_NOT_APPROVED/);
 assert.match(stagingScript,/rights|license|LicenseUrl|LicenseShortName/i);
 assert.doesNotMatch(stagingScript,/APPROVED\.write_text|APPROVED\.open\(/,
   "Importer must not write directly into the publication registry");
-console.log("PASS Explore R58: 20/20 site-specific photo targets; 18 CC BY-SA 4 candidates, 2 held, 0 approved");
+console.log("PASS Explore R58: 20/20 staged/researched, 10 editorially approved, 8 withheld for quality, 2 licence holds");
