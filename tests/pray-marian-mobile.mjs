@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, mkdir } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
@@ -69,6 +69,36 @@ try{
  assert.equal(await page.locator("#aoPray435930 [data-p435930-angelus-appendix]").count(),0,"Angelus-only appendix leaked into Regina Caeli");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary",{returnContext:null}));
  await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:18000});
+
+ // Cinematic Rosary is a visual mirror of the canonical player, not a new bead owner.
+ await page.waitForSelector("#aoPrayerBookRoot.open .aoRosaryCinemaTimeline",{timeout:15000});
+ const cinema="#aoPrayerBookRoot.open .aoRosaryCinema";
+ assert.equal(await page.locator(cinema+" .aoRosaryCinemaStop").count(),5,"Missing five-mystery timeline");
+ assert.equal(await page.locator(cinema+" .aoRosaryCinemaStage").count(),1,"Duplicate Rosary cinematic visual surfaces");
+ await mkdir(resolve(root,"reviews/captures/rosary-cinema"),{recursive:true});
+ const observed=[];
+ for(let mi=0;mi<5;mi++){
+   const button=page.locator(cinema+" .aoRosaryCinemaStop[data-ao-rosary-cinema-mi='"+mi+"']");
+   const target=Number(await button.getAttribute("data-ao-rosary-cinema-jump"));
+   assert.ok(Number.isSafeInteger(target)&&target>=0,"Mystery button lacks native first-step anchor");
+   await button.evaluate(n=>n.click());
+   await page.waitForFunction(n=>window.AO_ROSARY_V381?.state?.()?.step===n,target,{timeout:9000});
+   assert.equal(await page.locator(cinema+" .aoRosaryCinemaStop[aria-current='step']").count(),1);
+   assert.equal(await page.locator(cinema+" .aoRosaryCinemaStage").isVisible(),true);
+   assert.equal(await page.locator("#aoPrayerBookRoot.open .pbShell").getAttribute("data-ao-rosary-mi"),null,
+     "Cinema wrote mystery index into canonical donor-owned attributes");
+   const stageInfo=await page.locator(cinema).evaluate(node=>({
+     set:node.dataset.aoCinemaSet,mystery:node.dataset.aoCinemaMystery,
+     image:node.querySelector(".aoRosaryCinemaImage")?.getAttribute("src")||null
+   }));
+   assert.equal(stageInfo.mystery,String(mi),"Visual scene drifted from canonical mystery");
+   observed.push(stageInfo);
+   await page.locator(cinema).screenshot({
+     path:resolve(root,"reviews/captures/rosary-cinema/390-mystery-"+(mi+1)+".png"),
+     animations:"disabled"
+   });
+ }
+ assert.equal(observed.length,5);
  const guide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
  assert.equal(await guide.locator(".aoRosaryGuideSection").count(),6);
  assert.equal(await guide.locator(".aoRosaryGuideSection a[href^='https://']").count(),6);
