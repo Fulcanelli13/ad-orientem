@@ -1,0 +1,971 @@
+{
+  "schema": "MASS_SCRIPTURE_FORTESCUE_ORDER_EXTRACT_V1",
+  "status": "SOURCE_INSPECTED_1912_OCR_1962_MATCH_PENDING",
+  "date": "2026-10-11",
+  "source": {
+    "author": "Adrian Fortescue",
+    "title": "The Mass: A Study of the Roman Liturgy",
+    "edition": "Longmans Green 1912; supplied Internet Archive digitisation",
+    "originalOcrUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+    "scanPdfUrl": "https://dn760108.eu.archive.org/0/items/massstudyofroman00fort/massstudyofroman00fort_bw.pdf",
+    "inspection": "Part I chapter I, Part II relevant sections and page-labeled OCR passages; remaining book and 1912 footnotes not exhaustively audited",
+    "note": "Printed-page loci not PDF-image index. OCR line windows are text-source locators, not verbatim text quotes."
+  },
+  "constraints": [
+    "Historical description of an early Christian practice does not prove the exact 1962 Latin prayer or gesture was present in that period.",
+    "Exact biblical wording, possible allusion, patristic typology, and later meditative re-enactment have different evidence grades.",
+    "Source chapters are external bibliographic checks; production Scripture must use existing app reader with edition-aware local text, not these URLs.",
+    "No production prayer/card change; anchor by stable liturgical phrase not a card count.",
+    "Biblical episodes and sacred-art locations cannot acquire unverified historical coordinates.",
+    "Fortescue's conjectural claims about early Jewish liturgy and origin of Roman Canon must be challenged against modern source criticism, not treated as infallible."
+  ],
+  "records": [
+    {
+      "id": "FT001",
+      "massPhase": "SCRIPTURE_ASSEMBLY",
+      "liturgicalAnchor": "readings",
+      "scripture": [
+        {
+          "reference": "1 Timothy 4:13",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1ti004.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Thessalonians 5:27",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1th005.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Colossians 4:16",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/col004.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 3,
+      "fortescueSection": "Part I ch.I §1",
+      "ocrLines": "843–855",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "Fortescue cites commands to read Scripture or apostolic letters publicly; he does not say that the later Roman Epistle slot uses one fixed reading.",
+      "existingStudyIds": [
+        "MS010"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT002",
+      "massPhase": "SCRIPTURE_ASSEMBLY",
+      "liturgicalAnchor": "homily",
+      "scripture": [
+        {
+          "reference": "1 Corinthians 14:26",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1co014.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Acts 20:7",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/act020.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 3,
+      "fortescueSection": "Part I ch.I §1",
+      "ocrLines": "847–860",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "Exposition and exhortation in Christian assemblies; not evidence for one later Mass sermon formula.",
+      "existingStudyIds": [],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT003",
+      "massPhase": "SCRIPTURE_ASSEMBLY",
+      "liturgicalAnchor": "psalmody and hymns",
+      "scripture": [
+        {
+          "reference": "1 Corinthians 14:26",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1co014.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Ephesians 5:19",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/eph005.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Colossians 3:16",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/col003.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 3,
+      "fortescueSection": "Part I ch.I §1",
+      "ocrLines": "852–860",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "Early congregational psalms and hymns, later differentiated into the chants of Roman Mass. No claim of identical medieval chants.",
+      "existingStudyIds": [
+        "MS006",
+        "MS011"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT004",
+      "massPhase": "SCRIPTURE_ASSEMBLY",
+      "liturgicalAnchor": "intercession for all",
+      "scripture": [
+        {
+          "reference": "1 Timothy 2:1–2",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1ti002.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Acts 2:42",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/act002.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 3,
+      "fortescueSection": "Part I ch.I §1",
+      "ocrLines": "861–868",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "Early public intercession and prayers. A correspondence of function is not an exact origin of the particular Te igitur and Memento texts.",
+      "existingStudyIds": [
+        "MS026",
+        "MS027"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT005",
+      "massPhase": "OFFERTORY_GIFTS",
+      "liturgicalAnchor": "offerings and alms",
+      "scripture": [
+        {
+          "reference": "Romans 15:26",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/rom015.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Corinthians 16:1–2",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1co016.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "2 Corinthians 9:10–13",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/2co009.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 3,
+      "fortescueSection": "Part I ch.I §1",
+      "ocrLines": "862–868",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "Early collections for the poor are attested, but cannot be equated word-for-word with later private offertory prayers.",
+      "existingStudyIds": [
+        "MS014",
+        "MS017"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT006",
+      "massPhase": "CREDO",
+      "liturgicalAnchor": "profession of faith",
+      "scripture": [
+        {
+          "reference": "1 Timothy 6:12",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1ti006.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 4,
+      "fortescueSection": "Part I ch.I §1",
+      "ocrLines": "881–890",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "Public confession of Christian faith is evidenced; it does not establish the date or text of the Niceno-Constantinopolitan Creed at Roman Mass.",
+      "existingStudyIds": [
+        "MS013"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT007",
+      "massPhase": "PAX",
+      "liturgicalAnchor": "kiss of peace",
+      "scripture": [
+        {
+          "reference": "Romans 16:16",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/rom016.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Corinthians 16:20",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1co016.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Thessalonians 5:26",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1th005.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Peter 5:14",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1pe005.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 4,
+      "fortescueSection": "Part I ch.I §1",
+      "ocrLines": "886–889",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "The New Testament contains a greeting of peace in apostolic assemblies, not proof of identical 1962 Solemn Mass kiss ritual.",
+      "existingStudyIds": [],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT008",
+      "massPhase": "CANON_CONSECRATION",
+      "liturgicalAnchor": "Qui pridie – Hoc est enim Corpus meum",
+      "scripture": [
+        {
+          "reference": "Matthew 26:26–28",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/mat026.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Mark 14:22–24",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/mar014.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Luke 22:19–20",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/luk022.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Corinthians 11:23–25",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1co011.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 1,
+      "fortescueSection": "Part I ch.I §1; Part II ch.VIII §4",
+      "ocrLines": "766–807; 16228–16245",
+      "evidenceType": "BIBLICAL_INSTITUTION_NUCLEUS",
+      "authorialExplanation": "Fortescue deliberately collates four Last Supper witnesses, notes wording and order differences, and identifies the Eucharistic nucleus; not one verbatim later Roman Canon text.",
+      "existingStudyIds": [
+        "MS030",
+        "MS031",
+        "H001"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT009",
+      "massPhase": "CANON_UNDE_ET_MEMORES",
+      "liturgicalAnchor": "Unde et memores – anamnesis",
+      "scripture": [
+        {
+          "reference": "Luke 22:19",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/luk022.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Corinthians 11:24–26",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1co011.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 1,
+      "fortescueSection": "Part I ch.I §1; Part II ch.VIII §6",
+      "ocrLines": "809–826; 16753–16768",
+      "evidenceType": "BIBLICAL_INSTITUTION_NUCLEUS",
+      "authorialExplanation": "Commemoration of Christ's Passion and commanded remembrance in Eucharistic action; the full later Latin prayer is independently developed.",
+      "existingStudyIds": [
+        "MS032",
+        "H002"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT010",
+      "massPhase": "PRAYERS_AT_FOOT",
+      "liturgicalAnchor": "Introibo ad altare Dei – Iudica me",
+      "scripture": [
+        {
+          "reference": "Psalms 42:4 (Vulgate, Psalm 43 in Hebrew numbering)",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/psa042.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 225,
+      "fortescueSection": "Part II ch.V §3",
+      "ocrLines": "index printed p.225–226",
+      "evidenceType": "TEXTUAL_PSALM_SOURCE",
+      "authorialExplanation": "Identifies Iudica me within celebrant's preparatory prayers; psalm numbering must be edition-aware, and this preparation is not the nucleus of apostolic Eucharist.",
+      "existingStudyIds": [
+        "MS001",
+        "MS048"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT011",
+      "massPhase": "GLORIA",
+      "liturgicalAnchor": "Gloria in excelsis Deo",
+      "scripture": [
+        {
+          "reference": "Luke 2:14",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/luk002.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 239,
+      "fortescueSection": "Part II ch.V §6",
+      "ocrLines": "11788–11808",
+      "evidenceType": "SCRIPTURAL_TEXT_IN_HYMN",
+      "authorialExplanation": "The opening is Luke's angelic hymn, but the complete Gloria has a separate history of Christian hymn composition. Fortescue traces its earlier Greek forms.",
+      "existingStudyIds": [
+        "MS008"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT012",
+      "massPhase": "OFFERTORY_WATER_WINE",
+      "liturgicalAnchor": "Deus qui humanae substantiae",
+      "scripture": [
+        {
+          "reference": "2 Peter 1:4",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/2pe001.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Genesis 1:26–27",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/gen001.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 306,
+      "fortescueSection": "Part II ch.VII §5",
+      "ocrLines": "14910–14921",
+      "evidenceType": "DEVOTIONAL_SCRIPTURE_ASSOCIATION_NOT_ORIGIN",
+      "authorialExplanation": "Fortescue explains that mixing wine with water was an ancient dining custom; Christ's two natures and union of Christians with Christ are later symbolic interpretations. He traces the water-prayer to a Christmas collect.",
+      "existingStudyIds": [
+        "MS015",
+        "MS016",
+        "H008",
+        "H009"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT013",
+      "massPhase": "OFFERTORY",
+      "liturgicalAnchor": "In spiritu humilitatis",
+      "scripture": [
+        {
+          "reference": "Daniel 3:39–40 (Catholic Greek additions",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/dan003.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "numbering edition-specific)",
+          "sourceBookChapterUrl": null,
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 307,
+      "fortescueSection": "Part II ch.VII §5",
+      "ocrLines": "14946–14957",
+      "evidenceType": "SCRIPTURAL_PRAYER_ADAPTATION",
+      "authorialExplanation": "Fortescue explicitly identifies Daniel 3:39–40 behind this Offertory prayer. Do not conflate editions with different Greek-addition verse numbering.",
+      "existingStudyIds": [
+        "MS018"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT014",
+      "massPhase": "OFFERTORY_INCENSE",
+      "liturgicalAnchor": "Dirigatur oratio mea sicut incensum",
+      "scripture": [
+        {
+          "reference": "Psalms 140:2–4 (Vulgate",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/psa140.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Psalm 141 modern)",
+          "sourceBookChapterUrl": null,
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 309,
+      "fortescueSection": "Part II ch.VII §6",
+      "ocrLines": "15046–15052",
+      "evidenceType": "TEXTUAL_PSALM_SOURCE",
+      "authorialExplanation": "The priest's incensation formula uses Psalm 140; its ceremonial form developed in the Middle Ages. A scriptural text source is not the historical origin of the incense procession.",
+      "existingStudyIds": [
+        "MS020"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT015",
+      "massPhase": "OFFERTORY_LAVABO",
+      "liturgicalAnchor": "Lavabo inter innocentes manus meas",
+      "scripture": [
+        {
+          "reference": "Psalms 25:6–12 (Vulgate",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/psa025.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Psalm 26 modern)",
+          "sourceBookChapterUrl": null,
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 310,
+      "fortescueSection": "Part II ch.VII §6",
+      "ocrLines": "15050–15078",
+      "evidenceType": "TEXTUAL_PSALM_SOURCE",
+      "authorialExplanation": "Washing hands is a practical preparation for handling offerings and acquires moral symbolism; the associated prayer cites Psalm 25. Do not derive the rite solely from the episode of Pilate or footwashing.",
+      "existingStudyIds": [
+        "MS021"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT016",
+      "massPhase": "PREFACE",
+      "liturgicalAnchor": "Gratias agamus Domino Deo nostro",
+      "scripture": [
+        {
+          "reference": "Luke 22:19",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/luk022.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Corinthians 11:23",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1co011.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 319,
+      "fortescueSection": "Part II ch.VIII §1",
+      "ocrLines": "15484–15509",
+      "evidenceType": "BIBLICAL_THANKSGIVING_THEMATIC",
+      "authorialExplanation": "Fortescue compares Eucharistic thanksgiving and Jewish meal blessings but does not claim that Luke specifies the exact Latin preface dialogue.",
+      "existingStudyIds": [
+        "MS022"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT017",
+      "massPhase": "SANCTUS",
+      "liturgicalAnchor": "Sanctus Sanctus Sanctus Dominus Deus Sabaoth",
+      "scripture": [
+        {
+          "reference": "Isaiah 6:3",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/isa006.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 321,
+      "fortescueSection": "Part II ch.VIII §2",
+      "ocrLines": "15599–15605",
+      "evidenceType": "DIRECT_SCRIPTURE_QUOTATION",
+      "authorialExplanation": "Fortescue distinguishes the Vulgate wording of Isaiah 6:3 from Greek and Hebrew variants and identifies it as the Roman Sanctus's textual source.",
+      "existingStudyIds": [
+        "MS023"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT018",
+      "massPhase": "BENEDICTUS",
+      "liturgicalAnchor": "Benedictus qui venit in nomine Domini; Hosanna",
+      "scripture": [
+        {
+          "reference": "Matthew 21:9",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/mat021.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Psalms 117:25–26 (Vulgate, Psalm 118 modern)",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/psa117.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 322,
+      "fortescueSection": "Part II ch.VIII §2",
+      "ocrLines": "15610–15618",
+      "evidenceType": "DIRECT_SCRIPTURE_QUOTATION",
+      "authorialExplanation": "Fortescue separates the Psalm acclamation from the Palm Sunday crowd's words; these are connected sources not a single Bible event.",
+      "existingStudyIds": [
+        "MS025"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT019",
+      "massPhase": "CANON_QUAM_OBLATIONEM",
+      "liturgicalAnchor": "rationabilem acceptabilemque",
+      "scripture": [
+        {
+          "reference": "Romans 12:1",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/rom012.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 335,
+      "fortescueSection": "Part II ch.VIII §4",
+      "ocrLines": "16177–16208",
+      "evidenceType": "TEXTUAL_SCRIPTURE_ALLUSION",
+      "authorialExplanation": "Fortescue explicitly derives the 'rationabilis' sacrificial idiom from Romans 12:1. This is biblical vocabulary, not a claim the entire Quam oblationem is Paul's original formula.",
+      "existingStudyIds": [
+        "MS029"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT020",
+      "massPhase": "CANON_UNDE_ET_MEMORES",
+      "liturgicalAnchor": "de tuis donis ac datis",
+      "scripture": [
+        {
+          "reference": "1 Chronicles 29:14 (Vulgate 1 Paralipomenon 29:14)",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1ch029.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 347,
+      "fortescueSection": "Part II ch.VIII §6",
+      "ocrLines": "16784–16790",
+      "evidenceType": "POSSIBLE_SCRIPTURAL_ALLUSION",
+      "authorialExplanation": "Fortescue says the offering phrase may be suggested by 1 Paralipomenon 29:14. Explicitly preserve his uncertainty; do not mark a verified direct quotation.",
+      "existingStudyIds": [
+        "MS032"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT021",
+      "massPhase": "CANON_SUPRA_QUAE",
+      "liturgicalAnchor": "munera pueri tui iusti Abel",
+      "scripture": [
+        {
+          "reference": "Genesis 4:4",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/gen004.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 348,
+      "fortescueSection": "Part II ch.VIII §6",
+      "ocrLines": "16828–16897",
+      "evidenceType": "LITURGICAL_EXPLICIT_FIGURE",
+      "authorialExplanation": "Fortescue analyses this Canon prayer and parallels from Apostolic Constitutions and other anaphoras. The Roman liturgy itself names Abel.",
+      "existingStudyIds": [
+        "MS033",
+        "H003"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT022",
+      "massPhase": "CANON_SUPRA_QUAE",
+      "liturgicalAnchor": "sacrificium patriarchae nostri Abrahae",
+      "scripture": [
+        {
+          "reference": "Genesis 22:1–19",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/gen022.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 348,
+      "fortescueSection": "Part II ch.VIII §6",
+      "ocrLines": "16828–16897",
+      "evidenceType": "LITURGICAL_EXPLICIT_FIGURE",
+      "authorialExplanation": "Fortescue identifies Abraham within the accepted-sacrifice comparison. Do not ascribe an exact ancient place-pin to the episode from later iconography.",
+      "existingStudyIds": [
+        "MS034",
+        "H003"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT023",
+      "massPhase": "CANON_SUPRA_QUAE",
+      "liturgicalAnchor": "quod tibi obtulit summus sacerdos tuus Melchisedech",
+      "scripture": [
+        {
+          "reference": "Genesis 14:18–20",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/gen014.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Hebrews 7:1–17",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/heb007.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 349,
+      "fortescueSection": "Part II ch.VIII §6",
+      "ocrLines": "16851–16929",
+      "evidenceType": "LITURGICAL_EXPLICIT_FIGURE",
+      "authorialExplanation": "Fortescue compares several early prayers naming Melchizedek and discusses received text variants. The Hebrew account's verb does not itself prove a bread-and-wine immolation.",
+      "existingStudyIds": [
+        "MS035",
+        "MS047",
+        "H003",
+        "H013"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT024",
+      "massPhase": "CANON_SUPPLICES",
+      "liturgicalAnchor": "in sublime altare tuum",
+      "scripture": [
+        {
+          "reference": "Revelation 8:3–4 (later parallel only)",
+          "sourceBookChapterUrl": null,
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 350,
+      "fortescueSection": "Part II ch.VIII §6",
+      "ocrLines": "16930–16969",
+      "evidenceType": "ANCIENT_LITURGY_PARALLEL",
+      "authorialExplanation": "Fortescue compares heavenly altar and angelic ministry in early liturgies; this is not a direct quotation of Revelation 8 or a geographic report about heaven.",
+      "existingStudyIds": [
+        "MS036",
+        "H004"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT025",
+      "massPhase": "PATER_NOSTER",
+      "liturgicalAnchor": "Pater noster",
+      "scripture": [
+        {
+          "reference": "Matthew 6:9–13",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/mat006.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Luke 11:2–4",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/luk011.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 361,
+      "fortescueSection": "Part II ch.IX §1",
+      "ocrLines": "17491–17518",
+      "evidenceType": "DIRECT_SCRIPTURE_QUOTATION",
+      "authorialExplanation": "The prayer is Christ's; Fortescue discusses historical evidence about its place within Mass and contested readings of a letter of Gregory, not a new first-century Roman Canon text.",
+      "existingStudyIds": [
+        "MS039",
+        "H012"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT026",
+      "massPhase": "PAX",
+      "liturgicalAnchor": "Pax Domini; kiss of peace",
+      "scripture": [
+        {
+          "reference": "Romans 16:16",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/rom016.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "1 Peter 5:14",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/1pe005.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 369,
+      "fortescueSection": "Part II ch.IX §3; Part I ch.I §1",
+      "ocrLines": "886–889",
+      "evidenceType": "EARLY_PRACTICE_PARALLEL",
+      "authorialExplanation": "The apostolic greeting of peace is a useful historical parallel to liturgical Pax, but Fortescue separately traces the placement and ministerial rite.",
+      "existingStudyIds": [],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT027",
+      "massPhase": "COMMUNION_PREPARATION",
+      "liturgicalAnchor": "Domine non sum dignus ... anima mea",
+      "scripture": [
+        {
+          "reference": "Matthew 8:8",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/mat008.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 383,
+      "fortescueSection": "Part II ch.IX §6",
+      "ocrLines": "18438–18444",
+      "evidenceType": "DIRECT_SCRIPTURE_ADAPTATION",
+      "authorialExplanation": "Fortescue identifies the centurion's words and explicitly notes the Roman adaptation 'anima' in place of 'puer'. Separate source narrative and later liturgical adaptation.",
+      "existingStudyIds": [
+        "MS043"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT028",
+      "massPhase": "AGNUS_DEI",
+      "liturgicalAnchor": "Agnus Dei qui tollis peccata mundi",
+      "scripture": [
+        {
+          "reference": "John 1:29",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/joh001.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 387,
+      "fortescueSection": "Part II ch.IX §7",
+      "ocrLines": "18614–18625",
+      "evidenceType": "DIRECT_SCRIPTURE_ADAPTATION",
+      "authorialExplanation": "John the Baptist's acclamation supplies the words, while the Agnus Dei's placement at the Fraction has a distinct Roman historical development.",
+      "existingStudyIds": [
+        "MS041"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT029",
+      "massPhase": "LAST_GOSPEL",
+      "liturgicalAnchor": "In principio erat Verbum",
+      "scripture": [
+        {
+          "reference": "John 1:1–14",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/joh001.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 394,
+      "fortescueSection": "Part II ch.X §3",
+      "ocrLines": "18949–18960",
+      "evidenceType": "DIRECT_SCRIPTURE_QUOTATION",
+      "authorialExplanation": "The Last Gospel is the prologue of John; Fortescue questions its status as an integral part of Mass and distinguishes it from older dismissal practice.",
+      "existingStudyIds": [
+        "MS044"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    },
+    {
+      "id": "FT030",
+      "massPhase": "COMMUNION_OF_FAITHFUL",
+      "liturgicalAnchor": "Ecce Agnus Dei; Domine non sum dignus",
+      "scripture": [
+        {
+          "reference": "John 1:29",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/joh001.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        },
+        {
+          "reference": "Matthew 8:8",
+          "sourceBookChapterUrl": "https://www.newadvent.org/bible/mat008.htm",
+          "linkedStatus": "SOURCE_CHAPTER_ONLY_1962_AND_VULGATE_VERSE_NOT_YET_COLLATED"
+        }
+      ],
+      "printedPageStart": 383,
+      "fortescueSection": "Part II ch.IX §6",
+      "ocrLines": "18491–18509",
+      "evidenceType": "LATER_RITUAL_REUSE_OF_SCRIPTURE",
+      "authorialExplanation": "Fortescue identifies these words in a later pre-Communion package used for distribution outside Mass; he traces their subsequent entry into Missals, not a first-century fixed Roman Communion rite.",
+      "existingStudyIds": [
+        "MS041",
+        "MS043"
+      ],
+      "sourceUrl": "https://archive.org/stream/massstudyofroman00fort/massstudyofroman00fort_djvu.txt",
+      "editorial": {
+        "originalTextLocusLocated": true,
+        "exact1962PrayerMatched": false,
+        "doctrinalHistoricalCert": false,
+        "publishable": false
+      }
+    }
+  ]
+}
