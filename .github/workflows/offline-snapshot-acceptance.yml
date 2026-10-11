@@ -7,6 +7,7 @@ on:
       - "src/app/browser-entry.js"
       - "tests/offline-snapshot-e2e.mjs"
       - "tests/pwa-installability-contract.mjs"
+      - "tools/pwa-icon-contact.mjs"
       - "Ad-Orientem-v43.19.webmanifest"
       - ".github/workflows/offline-snapshot-acceptance.yml"
   push:
@@ -36,5 +37,12 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: node tools/pwa-icon-contact.mjs
       - run: node tests/pwa-installability-contract.mjs
       - run: node tests/offline-snapshot-e2e.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pwa-icon-review
+          path: artifacts/pwa-icon-review
+          if-no-files-found: warn
