@@ -34,7 +34,7 @@ try{
   assert.ok((await page.locator(".person").count())>=3,"Isaac branch expands");
   await page.locator("#search").fill("Mary");
   await page.locator('#searchResults [data-person-search]').first().waitFor();
-  await page.locator('[data-pick="Mary_Mat.1.16"]').click();
+  await page.locator('[data-person-search="'+D.P.findIndex(p=>p[0]==="Mary_Mat.1.16")+'"]').click();
   assert.equal(await page.locator("#personName").innerText(),"Mary");
   assert.ok((await page.locator("#personChildren").innerText()).includes("Jesus"));
   assert.ok(!(await page.locator("#personChildren").innerText()).includes("James"),"Mary other offspring blocked");
