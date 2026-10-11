@@ -47,7 +47,7 @@ const evidence=high.map(row=>{
     sectionEvidence,witnessPositions,
     rawNoteOccurrences:notes.length,
     rawDirectiveOccurrences:directives.length,
-    reviewRequired:["CHECK_1962_MISSAL_EDITION_AND_CALENDAR","COMPARE_ACTUAL_LATIN_CHANT_ORDER","FOLLOW_INHERITANCE_WITH_SECTION_CYCLE_DETECTION","VERIFY_VERSE_WITH_CLEMENTINE_AND_CRAM PON".replace(" ",""),"CHECK_APPLICABLE_ALLELUIA_TRACT_SEQUENCE_VARIANTS"],
+    reviewRequired:["CHECK_1962_MISSAL_EDITION_AND_CALENDAR","COMPARE_ACTUAL_LATIN_CHANT_ORDER","FOLLOW_INHERITANCE_WITH_SECTION_CYCLE_DETECTION","VERIFY_VERSE_WITH_CLEMENTINE_AND_CRAMPON","CHECK_APPLICABLE_ALLELUIA_TRACT_SEQUENCE_VARIANTS"],
     publicationStatus:"RESEARCH_ONLY_NOT_CERTIFIED",publishable:false
   };
 });
@@ -58,7 +58,7 @@ const out={schema:"MASS_1962_HIGH_PRIORITY_100_SOURCE_EVIDENCE_PACKETS_V1",date:
  sourceQueue:"data/geography/research/mass-1962-edition-certification-priority-queue-20261011.v1.json",
  preliminaryPrintedComparison:"data/geography/research/mass-1962-contextual-primary-witness-pilot-20261011.v1.json",
  stats:{
-   highPriorityPaths:evidence.length,uninspectedPrintedEdition:evidence.length,
+   highPriorityPaths:evidence.length,fullyEditionCertified:0,
    withExtractedSectionEvidence:evidence.filter(x=>x.sectionEvidence.length).length,
    withFourSlotWitnessEvidence:evidence.filter(x=>x.witnessPositions.length).length,
    candidateChantSectionOccurrences:all.length,
