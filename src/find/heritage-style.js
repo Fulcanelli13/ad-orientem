@@ -543,4 +543,17 @@ export const HERITAGE_STYLE = String.raw`
 .aoExplorePlaceSheet .aoExploreIllustratedGuide .aoExploreStoryEvidence{margin-top:5px}
 .aoExplorePlaceSheet .aoExploreGuideIntro .aoExploreStoryEvidence{margin-top:12px}
 @media(max-width:520px){.aoExplorePlaceSheet .aoExploreIllustratedGuide{gap:18px}.aoExplorePlaceSheet .aoExploreGuideIntro{padding:18px 13px}.aoExplorePlaceSheet .aoExploreGuideTimeline li{grid-template-columns:92px 1fr;gap:9px}}
+
+/* Reviewed in-repository imagery: entire original frame, dark sacred palette, source credits. */
+.aoExplorePlaceSheet .aoExploreGuideGallery{min-width:0;display:grid;gap:14px}
+.aoExplorePlaceSheet .aoExploreGuideGallery h4{font:500 clamp(18px,3vw,23px)/1.3 var(--ao-font-display,Georgia,serif);margin:0;padding-bottom:9px;border-bottom:1px solid rgba(201,174,117,.25);color:var(--ao-text-primary,#e9e4d9)}
+.aoExplorePlaceSheet .aoExploreGalleryGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:13px;min-width:0}
+.aoExplorePlaceSheet .aoExploreGalleryImage{margin:0;min-width:0;display:flex;flex-direction:column;border:1px solid rgba(201,174,117,.21);border-radius:12px;overflow:hidden;background:#111923}
+.aoExplorePlaceSheet .aoExploreGalleryImage img{width:100%;height:clamp(190px,32vw,350px);display:block;object-fit:contain;background:#080c12}
+.aoExplorePlaceSheet .aoExploreGalleryImage figcaption{padding:12px 13px 14px;display:grid;gap:6px;font:400 12px/1.48 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#aab4be)}
+.aoExplorePlaceSheet .aoExploreGalleryImage figcaption strong{font:550 15px/1.42 var(--ao-font-body,Georgia,serif);color:var(--ao-text-primary,#e9e4d9)}
+.aoExplorePlaceSheet .aoExploreGalleryCredits{display:flex;gap:10px;flex-wrap:wrap}
+.aoExplorePlaceSheet .aoExploreGalleryCredits a{color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;min-height:32px;display:inline-flex;align-items:center;outline-offset:3px}
+.aoExplorePlaceSheet .aoExploreGalleryImage small{font-size:11px;line-height:1.4;color:var(--ao-text-muted,#aab4be)}
+@media(max-width:520px){.aoExplorePlaceSheet .aoExploreGalleryGrid{grid-template-columns:1fr}.aoExplorePlaceSheet .aoExploreGalleryImage img{height:300px}}
 `;
