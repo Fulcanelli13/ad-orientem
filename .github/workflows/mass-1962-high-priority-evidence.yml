@@ -1,0 +1,42 @@
+name: Mass 1962 high-priority source packets
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research/mass-1962-high-priority-packets.mjs'
+      - 'tests/mass-1962-high-priority-evidence-packets.mjs'
+      - 'data/geography/research/mass-1962-precious-blood-printed-source-batch-20261011.v1.json'
+      - '.github/workflows/mass-1962-high-priority-evidence.yml'
+jobs:
+  build-evidence:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check
+        run: node --check scripts/research/mass-1962-high-priority-packets.mjs
+      - name: Generate exactly 100 source-evidence packets
+        run: node scripts/research/mass-1962-high-priority-packets.mjs
+      - name: Validate source ownership, variants and closed publication
+        run: node tests/mass-1962-high-priority-evidence-packets.mjs
+      - name: Upload review artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-high-priority-100-evidence
+          path: data/geography/research/mass-1962-high-priority-100-evidence-packets-20261011.v1.json
+          if-no-files-found: warn
+      - name: Commit source-only research evidence
+        if: success() && github.ref == 'refs/heads/research/biblical-people-genealogy-explorer-20261011'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/geography/research/mass-1962-high-priority-100-evidence-packets-20261011.v1.json
+          if ! git diff --staged --quiet; then
+            git commit -m "data(research): generate 100 Missal source evidence packets"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
