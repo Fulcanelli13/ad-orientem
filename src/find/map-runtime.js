@@ -159,6 +159,7 @@ export function exploreMapFeatures(items){
         item_id:String(item.item_id??""),
         lens:String(item.lens??""),
         heritage_primary:String(item.heritage_primary??""),
+        place_type:String(item.place_type??"other"),
         name:String(item.title??""),
         precision:String(g.precision??"unknown"),
         approximate:Boolean(g.approximate),
@@ -250,11 +251,24 @@ export async function mountExploreMap(container,items,{
       layout:{"text-field":["get","point_count_abbreviated"],"text-size":12},
       paint:{"text-color":"#080c12"}});
     map.addLayer({id:prefix+"-points",type:"circle",source:sourceId,filter:["!",["has","point_count"]],
-      paint:{"circle-radius":["case",["get","approximate"],6,8],
+      paint:{"circle-radius":["case",["get","approximate"],6,
+          ["==",["get","lens"],"heritage"],
+          ["match",["get","place_type"],"cathedral",11,"basilica",10,"shrine",9,8],
+          8],
         "circle-color":["case",["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR],
         "circle-opacity":["case",["get","approximate"],0.65,0.97],
         "circle-stroke-width":["case",["get","approximate"],1.6,2.4],
         "circle-stroke-color":["case",["get","approximate"],"#17212d","#f0e7d4"]}});
+    // Editorial hierarchy is derived only from canonical physical site type.
+    // This does not assert ecclesiastical prominence or authenticated status.
+    // Labels emerge only after zooming into an area; collisions stay hidden.
+    map.addLayer({id:prefix+"-place-labels",type:"symbol",source:sourceId,
+      minzoom:9,filter:["all",["!",["has","point_count"]],["==",["get","lens"],"heritage"]],
+      layout:{"text-field":["get","name"],"text-size":11,"text-max-width":12,
+        "text-variable-anchor":["top","bottom"],"text-radial-offset":1.5,
+        "text-optional":true},
+      paint:{"text-color":"#e9dfcc","text-halo-color":"#08121b",
+        "text-halo-width":1.4,"text-opacity":0.92}});
     if(!initialViewport){
       const bounds=mapFitBounds(features);
       if(bounds)map.fitBounds(bounds,{padding:48,maxZoom:10,duration:0});
