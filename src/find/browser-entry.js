@@ -375,6 +375,33 @@ export function createFindOwner(win=globalThis){
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
+      // Local directory readiness is not proof the third-party map library or
+      // tiles have loaded. Show state before the remote module import starts.
+      const showMapRecovery=()=>{
+        if(!mapNode||token!==paintToken||!openState)return;
+        const panel=win.document.createElement("div");
+        panel.className="aoFindMapFallback";
+        const title=win.document.createElement("strong");
+        title.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
+        const detail=win.document.createElement("span");
+        detail.textContent=language(win)==="fr"
+          ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
+          :"Use search above to open any place and its source references.";
+        panel.append(title,detail);mapNode.replaceChildren(panel);
+        mapNode.dataset.aoMapState="unavailable";
+      };
+      if(mapNode){
+        mapNode.dataset.aoMapState="loading";
+        const pending=win.document.createElement("div");
+        pending.className="aoExploreMapLoading";
+        pending.setAttribute("role","status");pending.setAttribute("aria-live","polite");
+        pending.textContent=language(win)==="fr"?"Chargement du fond de carte…":"Loading map background…";
+        mapNode.append(pending);
+      }
+      let importStalled=false;
+      const importTimer=win.setTimeout?.(()=>{
+        importStalled=true;showMapRecovery();
+      },12000);
       try{
         const nextHandle=await mountExploreMap(mapNode,items,{
           win,initialViewport:lastMapLens===state.lens?lastMapView:null,
@@ -386,23 +413,19 @@ export function createFindOwner(win=globalThis){
             void paint({selectionOnly:true});
           },
         });
-        if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
+        if(importTimer!==undefined)win.clearTimeout?.(importTimer);
+        if(importStalled||token!==paintToken||!openState){
+          nextHandle?.destroy?.();return false;
+        }
+        if(!nextHandle){
+          showMapRecovery();return false;
+        }
         mapHandle=nextHandle;
       }catch(error){
-        // MapLibre may fail offline or behind a tile/CDN blocker. It empties
-        // its container before construction; put an accessible recovery back.
-        if(mapNode&&win?.document){
-          const panel=win.document.createElement("div");
-          panel.className="aoFindMapFallback";
-          const title=win.document.createElement("strong");
-          title.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
-          const detail=win.document.createElement("span");
-          detail.textContent=language(win)==="fr"
-            ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
-            :"Use search above to open any place and its source references.";
-          panel.append(title,detail);
-          mapNode.replaceChildren(panel);
-        }
+        if(importTimer!==undefined)win.clearTimeout?.(importTimer);
+        // A blocked CDN or failed module import must show the existing
+        // recovery instructions, rather than leaving an empty map canvas.
+        showMapRecovery();
         console.error("Explore map failed",error);
       }
     }
