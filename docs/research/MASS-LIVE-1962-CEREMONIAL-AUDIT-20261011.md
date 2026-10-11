@@ -79,3 +79,16 @@ Earlier noncertified IntraText variant: https://www.intratext.com/IXT/LAT0820/_P
 ### Current acceptance gate
 
 CI checks confirm **structure and exact canonical phrase matching**, not historical/academic authority beyond the source evidence. The main app is unchanged. Before moving these records into LIVE/Priest Mode: check printed 1962 Latin against each phrase, resolve prior incomplete minister choreography and any local custom, complete French editorial review, and run actual Low/Missa Cantata/Solemn/Requiem phone regressions. Keep the 48-card LIVE identity and independent Schola and faithful state lanes intact.
+
+## Active source restriction — 11 October 2026 (user directive)
+
+**Supersedes the external-source expansion planned earlier in this document.** Work from only the two complete supplied volumes already present in the project:
+
+1. St Alphonsus de Liguori, *The Holy Mass* (especially *The Ceremonies of the Mass*).
+2. Adrian Fortescue, *The Mass: A Study of the Roman Liturgy* (historical commentary and development).
+
+Cross-reference each source directly against the **already-established canonical Low/Sung/Solemn Mass SOT, cue registry and earlier Excel matrices**. No need to search additional editions, external translations, facsimiles, websites, liturgical manuals, or other references.
+
+Record the precise printed page and available PDF page, word/phrase trigger, actor, movement, station/position, gesture, voice, form and conditional exception. Alphonsus's procedural statements may corroborate gestures; Fortescue's mainly historical statements are context, not independent proof of precise 1962 priest action. These books predate 1962: if a discrepancy cannot be settled from the existing 1962 SOT, **flag it as unresolved instead of widening research**.
+
+First direct, page-linked book-only reconciliation: `data/mass/alphonsus-fortescue-direct-book-evidence.v1.json` (20 cue-specific priest-action records). Existing historical/source files remain preserved for audit lineage but do not authorize any new source acquisition or mandatory facsimile-review pipeline.
