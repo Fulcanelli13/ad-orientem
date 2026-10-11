@@ -77,9 +77,14 @@ assert.equal(ROSARY_METHODS.montfort.status,"adapted-active");
 assert.equal(rosaryPlan({method:"montfort"}).readyForLive,true);
 assert.equal(rosaryPlan({method:"dominican"}).readyForLive,true);
 assert.equal(rosaryPlan({method:"ordinary"}).readyForLive,true);
+assert.equal(rosaryPlan({method:"montfort_short",decades:5}).readyForLive,true);
+assert.equal(rosaryPlan({method:"scriptural",decades:5}).readyForLive,true);
+assert.equal(rosaryPlan({method:"montfort_short",decades:15}).readyForLive,false);
+assert.equal(rosaryPlan({method:"scriptural",decades:15}).readyForLive,false);
+assert.equal(ROSARY_METHODS.clausules.status,"traditional-text-verification");
 assert.equal(rosaryPlan({method:"dominican",decades:15}).readyForLive,false);
 assert.equal(rosaryPlan({method:"montfort",decades:15}).readyForLive,false);
-assert.equal(Object.keys(ROSARY_METHODS).length,5);
+assert.equal(Object.keys(ROSARY_METHODS).length,6);
 assert.throws(()=>rosaryPlan({decades:10}));
 assert.throws(()=>rosaryPlan({method:"made-up"}));
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
@@ -132,5 +137,52 @@ for(const set of ["joyful","sorrowful","glorious"]){
 }
 assert.ok(donorBundle.indexOf("rosary-dom-collect")<donorBundle.indexOf("rosary-dom-assistance"),"Dominican closing order");
 assert.match(donorBundle,/AO_ROSARY_METHOD_SOURCE\.montfort/,"Original French source link must be retained");
+
+for(const method of ["montfort_short","scriptural"]){
+ assert.ok(runtime.includes("data-p435930-rosary-method-launch"),"Method catalogue launcher absent");
+ assert.ok(donorBundle.includes("'"+method+"'"),"Canonical donor missing method "+method);
+}
+const rawBlock=donorBundle.slice(donorBundle.indexOf("const AO_MONTFORT_SHORT_CLAUSES="),
+ donorBundle.indexOf("function labRosarySteps(set)"));
+assert.ok(rawBlock.includes("function aoMontfortShortPrayer"),"Short-method source-bound utterance missing");
+const shortApi=new Function("S",rawBlock+";return {utter:aoMontfortShortPrayer,clauses:AO_MONTFORT_SHORT_CLAUSES,groups:AO_MONTFORT_SHORT_GROUPS};")({rosaryMethod:"montfort_short"});
+assert.equal(Object.keys(shortApi.clauses).length,15);
+assert.equal(Object.keys(shortApi.groups).length,3);
+const inputs={
+ fr:"Je vous salue, Marie, et Jésus, le fruit de vos entrailles, est béni.",
+ en:"Hail Mary, blessed is the fruit of thy womb, Jesus. Holy Mary.",
+ la:"Ave Maria, benedictus fructus ventris tui, Iesus. Sancta Maria."
+};
+const step={key:"ave",bead:1,id:"joy1"};
+assert.match(shortApi.utter(inputs.fr,step,"fr"),/Jésus incarné, le fruit/);
+assert.match(shortApi.utter(inputs.en,step,"en"),/Jesus incarnate\. Holy/);
+assert.match(shortApi.utter(inputs.la,step,"la"),/Iesus incarnatus\. Sancta/);
+assert.equal(shortApi.utter(inputs.fr,{key:"ave",openingAve:1},"fr"),inputs.fr,
+ "Never alter introductory Hail Mary");
+assert.equal(shortApi.utter(inputs.fr,step,"fr").match(/incarné/g).length,1,
+ "Clausule must appear exactly once");
+assert.equal(inputs.fr,"Je vous salue, Marie, et Jésus, le fruit de vos entrailles, est béni.",
+ "No donor text mutation");
+for(const id of expectedIds){
+ assert.ok(shortApi.clauses[id]?.fr && shortApi.clauses[id]?.la && shortApi.clauses[id]?.en);
+ assert.notEqual(shortApi.utter(inputs.fr,{key:"ave",bead:10,id},"fr"),inputs.fr);
+}
+assert.match(shortApi.groups.joyful.fr,/Grâce des mystères joyeux/);
+assert.match(shortApi.groups.sorrowful.fr,/mystères douloureux/);
+assert.match(shortApi.groups.glorious.fr,/mystères glorieux/);
+for(const set of ["joyful","sorrowful","glorious"]){
+ const short=compileSteps({rosaryMethod:"montfort_short",rosaryForm:"standard",rosaryFatima:true},
+  mockIds,{},fruits)(set);
+ assert.equal(short.filter(x=>x.kind==="montfort-short-grace").length,1);
+ assert.equal(short.filter(x=>x.key==="ave"&&x.bead).length,50);
+ assert.equal(short.at(-2).kind,"montfort-short-grace","Conclude each five-decade group once");
+}
+const scriptural=compileSteps({rosaryMethod:"scriptural",rosaryForm:"standard",rosaryFatima:true},
+ mockIds,{},fruits)("joyful");
+assert.deepEqual(scriptural.map(x=>({kind:x.kind,key:x.key})),normal.map(x=>({kind:x.kind,key:x.key})),
+ "Scriptural meditation must not rewrite or add canonical prayer steps");
+assert.match(runtime,/method==='scriptural'.*S\.rosary\.mode='guided'/s,
+ "Scriptural selection must activate the existing source-linked guided meditation");
+
 
 console.log("PASS Divine Mercy 62 canonical prayers, optional 63rd, full 15 mystery Rosary plan, source-gated method selection");
