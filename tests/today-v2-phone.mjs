@@ -99,6 +99,24 @@ try{
     assert.equal(info.sections.length,3,"Expected Pray now, Read & reflect and Approaching at "+width);
     if(width<700)assert.ok(info.ctaBottom<=height-30,"Primary Mass action below the first mobile viewport at "+width+": "+info.ctaBottom);
     assert.deepEqual(errors,[],"Page errors at "+width+": "+JSON.stringify(errors));
+    if(width===390){
+      await page.locator('.aoTodayV2Tabs [data-home-calendar-view="year"]').click();
+      await page.waitForFunction(()=>{
+        const c=globalThis.AO_CALENDAR_APP_V1?.status?.();
+        return c?.open===true&&c.view==="year";
+      },null,{timeout:22000});
+      assert.equal(await page.locator("#ao-calendar-modular-root").count(),1,
+        "Today Liturgical Year tab did not open canonical Calendar");
+      await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.close?.({surface:"home"}));
+      await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:10000});
+      await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
+      await page.waitForFunction(()=>{
+        const c=globalThis.AO_CALENDAR_APP_V1?.status?.();
+        return c?.open===true&&c.view==="picker";
+      },null,{timeout:22000});
+      await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.close?.({surface:"home"}));
+      console.log("TODAY_V2_CALENDAR_HANDOFF_PASS=year+month");
+    }
     report.push({width,height,...info,errors});
     await context.close();
   }
