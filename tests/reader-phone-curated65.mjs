@@ -163,6 +163,22 @@ try{
       const after=walked.visited.find(x=>x.sequence===walked.optionalSeq+1);
       assert.ok(before&&after,"Optional Confiteor interrupted the navigation stream");
     }
+    // The historical phone fixture omitted the frozen icon resolver,
+    // producing misleading empty icon frames. Verify production icon assets
+    // are resolved when source-owned cues become visible in the review.
+    const resolvedIcons=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const stage=api.model.cards.find(c=>c.title==="Sanctus");
+      api.showSequence(stage.sequence);
+      return [...document.querySelectorAll('[data-icon-slot]')].filter(el=>
+        !el.hidden && el.getBoundingClientRect().width>0 &&
+        (getComputedStyle(el).backgroundImage!=="none" ||
+         getComputedStyle(el).webkitMaskImage!=="none" ||
+         getComputedStyle(el).maskImage!=="none")
+      ).map(el=>el.dataset.iconSlot);
+    });
+    assert.ok(resolvedIcons.length>=1,
+      "Frozen production icon bank not resolved in the actual curated phone fixture");
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
