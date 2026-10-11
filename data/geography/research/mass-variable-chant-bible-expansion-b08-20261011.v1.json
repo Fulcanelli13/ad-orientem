@@ -1,0 +1,425 @@
+{
+  "schema": "MASS_CHANT_GLOBAL_COVERAGE_EXPANSION_V1",
+  "batch": 8,
+  "scope": "Sundays 20–24 Pentecost plus transferred Sunday after Epiphany",
+  "sourcePaths": [
+    "Tempora/Pent20-0",
+    "Tempora/Pent21-0",
+    "Tempora/Pent22-0",
+    "Tempora/Pent23-0",
+    "Tempora/Pent24-0",
+    "Tempora/PentEpi3-0"
+  ],
+  "rows": [
+    {
+      "sourcePath": "Tempora/Pent20-0",
+      "properSlot": "INTROIT",
+      "sourceSection": "Introitus",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent20-0.txt",
+      "biblicalCitationNotes": [
+        "Dan 3:31; 31:29; 31:35",
+        "Ps 118:1"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "v. Omnia, quæ fecísti nobis, Dómine, in vero judício fecísti, quia peccávimus tibi et mandátis tuis non obœdívimus: sed da glóriam nómini tuo, et fac ",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent20-0",
+      "properSlot": "GRADUAL",
+      "sourceSection": "Graduale",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent20-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 144:15-16",
+        "Ps 107:2"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Oculi ómnium in te sperant, Dómine: et tu das illis escam in témpore opportúno.~",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent20-0",
+      "properSlot": "OFFERTORY",
+      "sourceSection": "Offertorium",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent20-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 136:1"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Super flúmina Babylónis illic sédimus et flévimus: dum recordarémur tui, Sion.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent20-0",
+      "properSlot": "COMMUNION",
+      "sourceSection": "Communio",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent20-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [
+        "@Tempora/Quad5-4:Communio"
+      ],
+      "latinIncipit": null,
+      "status": "INHERITED_UNRESOLVED",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent21-0",
+      "properSlot": "INTROIT",
+      "sourceSection": "Introitus",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent21-0.txt",
+      "biblicalCitationNotes": [
+        "Esth 13:9; 13:10-11",
+        "Ps 118:1"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "v. In voluntáte tua, Dómine, univérsa sunt pósita, et non est, qui possit resístere voluntáti tuæ: tu enim fecísti ómnia, cœlum et terram et univérsa,",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent21-0",
+      "properSlot": "GRADUAL",
+      "sourceSection": "Graduale",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent21-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 89:1-2",
+        "Ps 113:1"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Dómine, refúgium factus es nobis, a generatióne et progénie.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent21-0",
+      "properSlot": "OFFERTORY",
+      "sourceSection": "Offertorium",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent21-0.txt",
+      "biblicalCitationNotes": [
+        "Job 1.1"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Vir erat in terra Hus, nómine Job: simplex et rectus ac timens Deum: quem Satan pétiit ut tentáret: et data est ei potéstas a Dómino in facultátes et ",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent21-0",
+      "properSlot": "COMMUNION",
+      "sourceSection": "Communio",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent21-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 118:81; 118:84; 118:86"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "In salutári tuo ánima mea, et in verbum tuum sperávi: quando fácies de persequéntibus me judícium? iníqui persecúti sunt me, ádjuva me, Dómine, Deus m",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "properSlot": "INTROIT",
+      "sourceSection": "Introitus",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 129:3-4",
+        "Ps 129:1-2"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "v. Si iniquitátes observáveris, Dómine: Dómine, quis sustinébit? quia apud te propitiátio est, Deus Israël.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "properSlot": "GRADUAL",
+      "sourceSection": "Graduale",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 132:1-2",
+        "Ps 113:11"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Ecce, quam bonum et quam jucúndum, habitáre fratres in unum!",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "properSlot": "OFFERTORY",
+      "sourceSection": "Offertorium",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+      "biblicalCitationNotes": [
+        "Esth 14:12; 14:13"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Recordáre mei, Dómine, omni potentátui dóminans: et da sermónem rectum in os meum, ut pláceant verba mea in conspéctu príncipis.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "properSlot": "COMMUNION",
+      "sourceSection": "Communio",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent22-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 16:6"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Ego clamávi, quóniam exaudísti me, Deus: inclína aurem tuam et exáudi verba mea.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent23-0",
+      "properSlot": "INTROIT",
+      "sourceSection": "Introitus",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "biblicalCitationNotes": [
+        "Jer 29:11; 29:12; 29:14",
+        "Ps 84:2"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "v. Dicit Dóminus: Ego cógito cogitatiónes pacis, et non afflictiónis: invocábitis me, et ego exáudiam vos: et redúcam captivitátem vestram de cunctis ",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent23-0",
+      "properSlot": "GRADUAL",
+      "sourceSection": "Graduale",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 43:8-9",
+        "Ps 129:1-2"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Liberásti nos, Dómine, ex affligéntibus nos: et eos, qui nos odérunt, confudísti.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent23-0",
+      "properSlot": "OFFERTORY",
+      "sourceSection": "Offertorium",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "biblicalCitationNotes": [
+        "Ps 129:1-2"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "De profúndis clamávi ad te, Dómine: Dómine, exáudi oratiónem meam: de profúndis clamávi ad te, Dómine.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent23-0",
+      "properSlot": "COMMUNION",
+      "sourceSection": "Communio",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent23-0.txt",
+      "biblicalCitationNotes": [
+        "Marc 11:24"
+      ],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": "Amen, dico vobis, quidquid orántes pétitis, crédite, quia accipiétis, et fiet vobis.",
+      "status": "SOURCE_ANNOTATION_PRESENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "properSlot": "INTROIT",
+      "sourceSection": "Introitus",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent24-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": null,
+      "status": "SECTION_ABSENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "properSlot": "GRADUAL",
+      "sourceSection": "Graduale",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent24-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": null,
+      "status": "SECTION_ABSENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "properSlot": "OFFERTORY",
+      "sourceSection": "Offertorium",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent24-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": null,
+      "status": "SECTION_ABSENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/Pent24-0",
+      "properSlot": "COMMUNION",
+      "sourceSection": "Communio",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent24-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [],
+      "latinIncipit": null,
+      "status": "SECTION_ABSENT",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "INTROIT",
+      "sourceSection": "Introitus",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi3-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [
+        "@Tempora/Pent23-0:Introitus"
+      ],
+      "latinIncipit": null,
+      "status": "INHERITED_UNRESOLVED",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "GRADUAL",
+      "sourceSection": "Graduale",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi3-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [
+        "@Tempora/Pent23-0:Graduale"
+      ],
+      "latinIncipit": null,
+      "status": "INHERITED_UNRESOLVED",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "OFFERTORY",
+      "sourceSection": "Offertorium",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi3-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [
+        "@Tempora/Pent23-0:Offertorium"
+      ],
+      "latinIncipit": null,
+      "status": "INHERITED_UNRESOLVED",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    },
+    {
+      "sourcePath": "Tempora/PentEpi3-0",
+      "properSlot": "COMMUNION",
+      "sourceSection": "Communio",
+      "sourceUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/PentEpi3-0.txt",
+      "biblicalCitationNotes": [],
+      "seasonalMarkers": [],
+      "inheritanceDirectives": [
+        "@Tempora/Pent23-0:Communio"
+      ],
+      "latinIncipit": null,
+      "status": "INHERITED_UNRESOLVED",
+      "sourceError": null,
+      "verseChecked": false,
+      "facsimile1962Checked": false,
+      "publishable": false
+    }
+  ],
+  "sourceSource": "DivinumOfficium master Latin files",
+  "certification": "ANNOTATION_ONLY_UNPUBLISHED"
+}
