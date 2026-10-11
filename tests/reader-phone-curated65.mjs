@@ -568,7 +568,7 @@ try{
       page.on("pageerror",e=>errors.push(String(e?.message??e)));
       await page.goto("http://127.0.0.1:4282/tests/fixtures/reader-phone-harness.html?aoLiveCards=65&lang=en&form="+form,
         {waitUntil:"networkidle",timeout:45000});
-      await page.waitForFunction(()=>document.documentElement.dataset.harnessReady!=="undefined",
+      await page.waitForFunction(()=>["true","error"].includes(document.documentElement.dataset.harnessReady),
         null,{timeout:20000});
       assert.equal(await page.evaluate(()=>document.documentElement.dataset.harnessReady),
         "true",form+" fixture failed to mount");
