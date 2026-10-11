@@ -52,8 +52,9 @@ export function massCalendarPreflightContext(legacy,calendarState={},language="e
     differs:false,sourceDate:null,openable:false});
   const calendar=calendarDay(legacy,calendarState,date);
   const selectedKind=String(legacy?.celebrationType??"CALENDAR").trim().toUpperCase();
-  const kind=String(legacy?.exceptionalProfile||"").toLowerCase().includes("good-friday")
-    ?"GOOD_FRIDAY":selectedKind;
+  const exceptional=String(legacy?.exceptionalProfile??legacy?.distinctRite??"").toLowerCase();
+  const kind=/good[-_]friday/.test(exceptional)?"GOOD_FRIDAY":
+    /easter[-_]vigil/.test(exceptional)?"EASTER_VIGIL":selectedKind;
   const actualTitle=text(legacy?.actualCelebration?.title)||
     text(legacy?.celebrationTitle)||
     (kind==="CALENDAR"?calendar.title:null);
