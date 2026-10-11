@@ -1,6 +1,6 @@
 {
   "schema": "SHRINES_PILGRIMAGES_SEED_V1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "shrines": [
     {
       "shrine_id": "shrine:FR:lourdes-our-lady",
@@ -865,7 +865,8 @@
         "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
         "PIL-MIRACULOUS-MEDAL-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire-basilique marial de Philadelphie, lié à la Central Association of the Miraculous Medal et à la neuvaine perpétuelle du lundi, célébrée sans interruption depuis 1930."
     },
     {
       "shrine_id": "shrine:US:czestochowa-doylestown",
@@ -880,7 +881,8 @@
         "SHR-CZESTOCHOWA-US",
         "PIL-CZESTOCHOWA-US-WALK"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial polono-américain fondé à Doylestown en 1955, accueillant encore des pèlerinages à pied de plusieurs jours."
     },
     {
       "shrine_id": "shrine:US:seton-emmitsburg",
@@ -897,7 +899,8 @@
         "SHR-SETON-EMMITSBURG",
         "PIL-SETON-SEA-SERVICES-2026"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire national à Emmitsburg préservant les lieux liés à sainte Élisabeth Ann Seton et accueillant pèlerinages individuels, collectifs et institutionnels."
     },
     {
       "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
@@ -914,7 +917,8 @@
         "SHR-GROTTO-LOURDES-EMMITSBURG",
         "PIL-GROTTO-LOURDES-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial d'Emmitsburg dont la réplique de la grotte de Lourdes fut construite dix-sept ans après les apparitions de 1858 et qui conserve une neuvaine annuelle pour la fête de Notre-Dame de Lourdes."
     },
     {
       "shrine_id": "shrine:FR:bermont-greux",
@@ -930,7 +934,8 @@
       "source_ids": [
         "SHR-BERMONT-GREUX"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Ancien sanctuaire marial près de Domrémy où sainte Jeanne d'Arc se rendait en pèlerinage pour prier et offrir des cierges et des fleurs, comme l'attestent les sources."
     },
     {
       "shrine_id": "shrine:FR:arcachon-marins",
@@ -944,7 +949,8 @@
       "source_ids": [
         "SHR-ARCACHON-MARINS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial d'Arcachon lié aux marins depuis 1519 ; la Vierge y fut couronnée en 1870 et l'église élevée au rang de basilique mineure en 1953."
     },
     {
       "shrine_id": "shrine:FR:pontmain",
@@ -960,7 +966,8 @@
         "PIL-PONTMAIN-JAN17",
         "PIL-PONTMAIN-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial de Pontmain centré sur l'apparition du 17 janvier 1871, avec une vie de pèlerinage diocésaine et nationale toujours active."
     },
     {
       "shrine_id": "shrine:FR:pellevoisin",
@@ -975,7 +982,8 @@
         "SHR-PELLEVOISIN",
         "PIL-PELLEVOISIN-ANNUAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial de Pellevoisin qui conserve la chapelle des apparitions et une tradition de dévotion vivante, notamment le scapulaire du Sacré-Cœur et le pèlerinage annuel."
     },
     {
       "shrine_id": "shrine:FR:montligeon",
@@ -990,7 +998,8 @@
         "SHR-MONTLIGEON",
         "PIL-MONTLIGEON-CIEL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire du diocèse de Séez particulièrement consacré à la prière pour les défunts, qui accueille des pèlerins toute l'année."
     },
     {
       "shrine_id": "shrine:FR:rue-du-bac",
@@ -1026,7 +1035,8 @@
         "SHR-WIGRATZBAD",
         "PIL-WIGRATZBAD-SUEHNE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu diocésain de prière mariale dans le diocèse d'Augsbourg, centré sur la chapelle des Grâces et l'église expiatoire des Sacrés-Cœurs de Jésus et de Marie, avec pèlerinages, confessions et adoration eucharistique."
     },
     {
       "shrine_id": "shrine:DE:mariahilf-amberg",
@@ -1041,7 +1051,8 @@
         "SHR-MARIAHILF-AMBERG",
         "PIL-MARIAHILF-AMBERG-BERGFEST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Grande église de pèlerinage marial du Haut-Palatinat, née du vœu fait pendant la peste de 1634, consacrée à l'image de Marie Auxiliatrice et à la fête annuelle du Bergfest."
     },
     {
       "shrine_id": "shrine:DE:st-leonhard-nussdorf",
@@ -1058,7 +1069,8 @@
         "SHR-ST-LEONHARD-NUSSDORF",
         "PIL-ST-LEONHARD-NUSSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Église historique de pèlerinage de Nußdorf, liée à une ancienne confrérie du scapulaire et à la reprise de la procession équestre de saint Léonard (Leonhardiritt)."
     },
     {
       "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
@@ -1075,7 +1087,8 @@
         "SHR-ST-APOLLINARIS-FRIELINGSDORF",
         "PIL-ST-APOLLINARIS-FRIELINGSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Église de pèlerinage de Frielingsdorf consacrée à saint Apollinaire, où se poursuit chaque année en juillet une octave autour de sa fête."
     },
     {
       "shrine_id": "shrine:DE:bettbrunn-st-salvator",
@@ -1090,7 +1103,8 @@
         "SHR-BETTBRUNN-ST-SALVATOR",
         "PIL-BETTBRUNN-PREITH"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Le diocèse de Ratisbonne présente Bettbrunn comme le plus ancien pèlerinage eucharistique attesté de Bavière ; après la disparition de l'hostie médiévale, l'image du Sauveur est devenue le centre du pèlerinage."
     },
     {
       "shrine_id": "shrine:DE:maria-vesperbild",
@@ -1105,7 +1119,8 @@
         "SHR-MARIA-VESPERBILD",
         "PIL-MARIA-VESPERBILD-FATIMA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu actif de pèlerinage marial en Souabe, dans le diocèse d'Augsbourg, se présentant comme la « capitale souabe de Marie » et accueillant régulièrement messes et journées de pèlerinage de Fátima."
     },
     {
       "shrine_id": "shrine:US:st-mary-assumption-oswego",
@@ -1119,7 +1134,8 @@
       "source_ids": [
         "SHR-OSWEGO-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire diocésain d'Oswego confié à l'Institut du Christ Roi Souverain Prêtre, avec un programme de messes traditionnelles latines et une vie paroissiale et dévotionnelle active."
     },
     {
       "shrine_id": "shrine:US:auriesville-martyrs",
@@ -3762,7 +3778,7 @@
         "SHR-MARIA-TAFERL-HISTORY"
       ],
       "confidence": "HIGH",
-      "scope_note_fr": "Lieu historique de pèlerinage marial à Maria Taferl ; aucune date fixe propre au sanctuaire n'est attribuée sans preuve liturgique."
+      "scope_note_fr": "Lieu historique de pèlerinage marial à Maria Taferl, sur les hauteurs du Taferlberg."
     },
     {
       "pilgrimage_id": "pilgrimage:CH:einsiedeln-destination",
@@ -4563,7 +4579,8 @@
         "SHR-MIRACULOUS-MEDAL-PHILADELPHIA",
         "PIL-MIRACULOUS-MEDAL-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu ouvert de pèlerinages et de retraites mariales, dont le programme de dévotion comprend la neuvaine perpétuelle historique du lundi."
     },
     {
       "pilgrimage_id": "pilgrimage:US:czestochowa-doylestown-destination",
@@ -4576,7 +4593,8 @@
       "source_ids": [
         "SHR-CZESTOCHOWA-US"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial polono-américain ouvert à Doylestown."
     },
     {
       "pilgrimage_id": "pilgrimage:US:czestochowa-walking",
@@ -4593,7 +4611,8 @@
       "source_ids": [
         "PIL-CZESTOCHOWA-US-WALK"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage à pied de plusieurs jours vers Doylestown, avec des groupes venant de Great Meadows, Trenton et Philadelphie ; les dates sont publiées dans le programme du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:US:seton-emmitsburg-destination",
@@ -4606,7 +4625,8 @@
       "source_ids": [
         "SHR-SETON-EMMITSBURG"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu national de pèlerinage à Emmitsburg, avec maisons historiques, basilique, prière et visites guidées."
     },
     {
       "pilgrimage_id": "pilgrimage:US:seton-sea-services",
@@ -4621,7 +4641,8 @@
       "source_ids": [
         "PIL-SETON-SEA-SERVICES-2026"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage et messe annuels réunissant au sanctuaire de sainte Seton les membres des services maritimes des États-Unis, leurs familles et le public."
     },
     {
       "pilgrimage_id": "pilgrimage:US:lourdes-grotto-emmitsburg-destination",
@@ -4637,7 +4658,8 @@
         "SHR-GROTTO-LOURDES-EMMITSBURG",
         "PIL-GROTTO-LOURDES-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial à Emmitsburg, avec une neuvaine annuelle de messes culminant lors de la fête de Notre-Dame de Lourdes au sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:bermont-destination",
@@ -4650,7 +4672,8 @@
       "source_ids": [
         "SHR-BERMONT-GREUX"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Ancien lieu de pèlerinage marial près de Domrémy, directement associé aux visites de dévotion attestées de sainte Jeanne d'Arc."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:arcachon-marins-destination",
@@ -4663,7 +4686,8 @@
       "source_ids": [
         "SHR-ARCACHON-MARINS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire marial maritime et basilique mineure d'Arcachon, marqué par une longue tradition de pèlerinage local et de dévotion des marins."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pontmain-destination",
@@ -4676,7 +4700,8 @@
       "source_ids": [
         "SHR-PONTMAIN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l'année sur le site de l'apparition de 1871."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pontmain-jan17",
@@ -4691,7 +4716,8 @@
       "source_ids": [
         "PIL-PONTMAIN-JAN17"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel du 17 janvier commémorant l'anniversaire de l'apparition à Pontmain."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pontmain-assumption",
@@ -4706,7 +4732,8 @@
       "source_ids": [
         "PIL-PONTMAIN-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand rassemblement annuel de pèlerins pour l'Assomption à Pontmain, avec vigile, messe solennelle et processions mariales."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pellevoisin-destination",
@@ -4719,7 +4746,8 @@
       "source_ids": [
         "SHR-PELLEVOISIN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial ouvert toute l'année à la chapelle des apparitions de Pellevoisin."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:pellevoisin-annual",
@@ -4734,7 +4762,8 @@
       "source_ids": [
         "PIL-PELLEVOISIN-ANNUAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand pèlerinage annuel le dernier week-end d'août, avec procession, rosaire, imposition du scapulaire et messe."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:montligeon-destination",
@@ -4747,7 +4776,8 @@
       "source_ids": [
         "SHR-MONTLIGEON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l'année, consacré à la prière pour les défunts et à la consolation des personnes en deuil."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:montligeon-ciel",
@@ -4762,7 +4792,8 @@
       "source_ids": [
         "PIL-MONTLIGEON-CIEL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Cycle de pèlerinages en novembre pour la prière des défunts ; les dates précises varient selon l'année et le programme du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:rue-du-bac-destination",
@@ -4795,7 +4826,8 @@
         "SHR-WIGRATZBAD",
         "PIL-WIGRATZBAD-SUEHNE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu diocésain de pèlerinage marial, avec confession, adoration eucharistique et célébrations régulières du samedi de réparation (Sühnesamstag)."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:mariahilf-amberg-destination",
@@ -4808,7 +4840,8 @@
       "source_ids": [
         "SHR-MARIAHILF-AMBERG"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l'année sur le Mariahilfberg d'Amberg."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:mariahilf-amberg-bergfest",
@@ -4823,7 +4856,8 @@
       "source_ids": [
         "PIL-MARIAHILF-AMBERG-BERGFEST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Cycle annuel du Bergfest autour de la fête principale de la Visitation, le 2 juillet, attirant des pèlerins à pied de toute la région."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-leonhard-nussdorf-destination",
@@ -4836,7 +4870,8 @@
       "source_ids": [
         "PIL-ST-LEONHARD-NUSSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Église historique de pèlerinage à Nußdorf, où subsistent des coutumes locales de dévotion."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-leonhard-nussdorf-ritt",
@@ -4851,7 +4886,8 @@
       "source_ids": [
         "PIL-ST-LEONHARD-NUSSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Leonhardiritt annuel rétabli le 6 novembre, avec messe en plein air et bénédiction des chevaux."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-apollinaris-frielingsdorf-destination",
@@ -4864,7 +4900,8 @@
       "source_ids": [
         "PIL-ST-APOLLINARIS-FRIELINGSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage consacré à saint Apollinaire à Frielingsdorf."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:st-apollinaris-frielingsdorf-octave",
@@ -4880,7 +4917,8 @@
         "SHR-ST-APOLLINARIS-FRIELINGSDORF",
         "PIL-ST-APOLLINARIS-FRIELINGSDORF"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Octave annuelle de juillet à l'église Saint-Apollinaire de Frielingsdorf, centrée sur la fête du 23 juillet."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:bettbrunn-destination",
@@ -4893,7 +4931,8 @@
       "source_ids": [
         "SHR-BETTBRUNN-ST-SALVATOR"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu historique de pèlerinage eucharistique et de dévotion au Sauveur, accueillant chaque année de nombreux groupes paroissiaux et pèlerins."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:bettbrunn-preith",
@@ -4910,7 +4949,8 @@
       "source_ids": [
         "PIL-BETTBRUNN-PREITH"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel de deux jours à pied, de Preith à Bettbrunn, le week-end après l'Ascension, attesté sans interruption depuis 1578."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:bettbrunn-men",
@@ -4925,7 +4965,8 @@
       "source_ids": [
         "SHR-BETTBRUNN-ST-SALVATOR"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand pèlerinage annuel des hommes à Bettbrunn le deuxième dimanche d'octobre."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:maria-vesperbild-destination",
@@ -4941,7 +4982,8 @@
         "SHR-MARIA-VESPERBILD",
         "PIL-MARIA-VESPERBILD-FATIMA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial actif, avec messe des pèlerins le dimanche et journée de pèlerinage de Fátima le 13 de chaque mois."
     },
     {
       "pilgrimage_id": "pilgrimage:US:oswego-assumption-destination",
@@ -4954,7 +4996,8 @@
       "source_ids": [
         "SHR-OSWEGO-ASSUMPTION"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire desservi par l'Institut du Christ Roi Souverain Prêtre, où est célébrée la messe traditionnelle latine."
     },
     {
       "pilgrimage_id": "pilgrimage:US:auriesville-destination",
