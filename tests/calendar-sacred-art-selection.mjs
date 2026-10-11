@@ -22,6 +22,31 @@ for (const candidate of registry.artworks) {
 }
 assert.equal(selectDailySacredArt({date:"2026-10-10",seasonId:"after-pentecost"},registry.artworks),null);
 
+// Preserve source-original reuse when new appointed-Gospel targets are added.
+// This is an acquisition association, not approval or a 1962 date certification.
+const crosswalk=JSON.parse(readFileSync("data/calendar/sacred-art-editorial-crosswalk.v1.json","utf8"));
+const newGospelIconography={
+  "scripture.healing-paralytic":"healing-paralytic",
+  "scripture.keys-to-peter":"keys-to-peter",
+  "scripture.raising-widows-son":"raising-widows-son",
+  "scripture.talents":"parable-talents",
+  "scripture.tribute-money":"tribute-money",
+  "scripture.wise-foolish-virgins":"wise-foolish-virgins"
+};
+for(const [key,icon] of Object.entries(newGospelIconography)){
+  assert.ok(crosswalk.exactIconography[key]?.includes(icon),key+": repeat-Gospel target must have canonical exact iconography");
+}
+const ngaParalytic=registry.artworks.find(a=>a.id==="nga-12205");
+assert.ok(ngaParalytic,"Preserve the existing NGA Healing of the Paralytic original");
+assert.equal(ngaParalytic.medium,"painting");
+assert.ok(ngaParalytic.tags.iconography.includes("healing-paralytic"));
+assert.match(ngaParalytic.acquisition.originalSha256,/^[a-f0-9]{64}$/);
+assert.ok(crosswalk.exactIconography["scripture.healing-paralytic"]
+  .some(icon=>ngaParalytic.tags.iconography.includes(icon)),
+  "Reconcile source-owned painting with the new Scripture target without a duplicate acquisition");
+assert.equal(eligibleSacredArtwork(ngaParalytic),false,"Research association must never bypass art/crop/rights gate");
+
+
 const mock = (id,subjectKeys=[],seasonIds=[],observedIds=[]) => ({
   id:"met-"+id,title:id,artist:"Test painting",medium:"painting",
   source:{rights:"CC0",objectUrl:"https://www.metmuseum.org/art/collection/search/"+id},
