@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-ceremonial-research-contract-v2",
-  "version": "2.5.0-book-meaning-semantic-audit",
+  "version": "2.6.0-13-cue-reconciliation-with-priest-clock-poc",
   "status": "RESEARCH_NOT_RUNTIME",
   "sourceOfAuthority": {
     "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -111,11 +111,11 @@
     "The matrix's existing 1962 form rules are preserved; do not infer unsupported variants"
   ],
   "priorities": [
-    "Treat 113 supplied-book passage candidates as semantically audited, but not universally certified 1962 rubrics",
-    "Resolve 6 text boundary mismatches and 7 prior actor/Schola ownership questions without modifying canonical text",
-    "No new event for five Per ipsum crosses: already complete at C0202+C0203",
-    "Keep historic-only exposed Sacrament, bishop, Requiem and second Confiteor conditional",
-    "Once current 1962 SOT reconciles remaining cases, propose narrow Priest Mode presentation PR and real phone tests"
+    "Prevent unobserved priest gesture inference from Schola chant in source-backed LIVE/Priest Mode as first future production integration",
+    "Correct priest altar-kiss phrase boundary only when existing 1962 source-control approval confirms the historical source timing",
+    "Implement distinct Low priest paten movement and Solemn sacred-minister handoff, never as a single universal cue",
+    "Close historical pre-opening, Requiem water and Epistle response role predicates",
+    "Run source/voice/posture/gesture matrix parity and physical-phone checks before merging code into main"
   ],
   "correctionsSinceV2": [
     "C0163 opening Quam oblationem precedes crosses; C0164 three crosses on benedictam, adscriptam, ratam; C0165 Corpus-only, C0166 Sanguis-only.",
@@ -192,5 +192,31 @@
         "issue": "Alphonsus rejects this practice as not prescribed; no positive gesture"
       }
     ]
+  },
+  "priestCueOwnerReconciliation": {
+    "file": "data/mass/ritus-1962-priest-cue-owner-reconciliation13.v1.json",
+    "total": 13,
+    "alreadyCoveredInCanonical": 4,
+    "partiallyCovered": 3,
+    "needsAdditionalReviewOrImplementation": 6,
+    "mostImportant": [
+      "Prevent SCHOLA_PUBLIC cues C0145 and C0148 from automatically driving priest gestures",
+      "Correct altar kiss after petimus at end of C0150 rather than opening of C0151, after existing 1962 SOT acceptance",
+      "Resolve pre-Mass entrance reverence nontext triggers, recipient/minister response and form-specific paten actions"
+    ],
+    "previewModule": "tools/mass/priest-owner-independent-clock-preview.mjs",
+    "previewTest": "tests/mass-priest-owner-independent-clock-preview.mjs",
+    "pureResearchOnly": true,
+    "notImportedIntoProduction": true,
+    "priestObservationRequiredForIndependentGesture": true,
+    "noNewCanonicalCues": true,
+    "faithfulPostureUnchanged": true,
+    "knownAlreadyCovered": [
+      "Gospel-route movement C0081 to C0082",
+      "Nobis quoque brief elevated voice C0196",
+      "Three priest Communion breast strikes C0229-0231",
+      "Chalice-elevation microevents already under C0181; historical book timing nuance remains open"
+    ],
+    "bookOnlyPolicy": true
   }
 }
