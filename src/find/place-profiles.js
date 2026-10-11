@@ -138,7 +138,7 @@ function itemRef(item){
  */
 export function sourceBoundPlaceChapters(related){
   const chapters=[],seen=new Set();
-  const groups=[["shrines","ORIGIN",1],["pilgrimages","PILGRIMAGE",2],
+  const groups=[["shrines","ORIGIN",1],["pilgrimages","PILGRIMAGE",3],
     ["apparitions","APPARITION",1],["relics","RELIC",1],["traditions","TRADITION",1]];
   for(const [group,kind,max] of groups){
     let added=0;
@@ -276,7 +276,14 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
         url:source.url,title:source.title??source.id,
       }))),
     })));
-    const sourceBoundChapters=featuredPlace?sourceBoundPlaceChapters(related):Object.freeze([]);
+    const candidateChapters=sourceBoundPlaceChapters(related);
+    // All exactly linked Places may become editorial readers, without adding
+    // them to the separate 20-site "In focus" discovery menu. Require both
+    // a sourced bilingual shrine account and a sourced bilingual pilgrimage
+    // witness; untranslated/general records remain in their original lenses.
+    const sourceBoundChapters=candidateChapters.some(row=>row.kind==="ORIGIN")
+      &&candidateChapters.some(row=>row.kind==="PILGRIMAGE")
+      ?candidateChapters:Object.freeze([]);
 
     profiles.push(Object.freeze({
       place_id:placeId,
