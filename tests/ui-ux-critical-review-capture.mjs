@@ -82,6 +82,24 @@ try {
     const filename=label+"-"+name+".png";
     await page.screenshot({path:resolve(output,filename),fullPage:false,animations:"disabled"});
     Object.assign(record,{status:"captured",filename,metrics:await measure(selector)});
+    // A captured Explore route is NOT proof that remote tiles have painted.
+    // Keep the physical map acceptance state separate from screenshot existence.
+    if(name==="explore"){
+      record.mapVisual=await page.evaluate(()=>{
+        const map=document.querySelector("#ao-find-modular-root .aoFindMap");
+        const canvas=map?.querySelector(".maplibregl-canvas, canvas");
+        const box=canvas?.getBoundingClientRect();
+        const css=canvas?getComputedStyle(canvas):null;
+        const canvasVisible=Boolean(box?.width>10&&box?.height>10&&css?.display!=="none"&&css?.visibility!=="hidden");
+        const mapState=map?.dataset.aoMapState||"unmarked";
+        return {mapState,localDataState:window.AO_FIND_APP_V1?.status?.().loadState||"unknown",
+          canvasPresent:Boolean(canvas),canvasVisible,
+          renderedCandidate:mapState==="ready"&&canvasVisible,
+          notice:map?.querySelector(".aoExploreMapLoading,.aoFindMapFallback")?.textContent?.trim()?.slice(0,200)||null};
+      });
+      record.mapAcceptance=record.mapVisual.renderedCandidate
+        ?"RENDERED_CANDIDATE_NEEDS_HUMAN_REVIEW":"MAP_UNVERIFIED";
+    }
    }catch(e){record.status="missing";record.error=String(e.message||e).slice(0,350);}
    record.pageErrors=[...errors].slice(-12);
    rows.push(record);
@@ -150,6 +168,13 @@ try {
      await page.locator('[data-ao-app-surface="find"]').click();
      await page.waitForFunction(()=>window.AO_FIND_APP_V1?.status?.().loadState==="ready",
       null,{timeout:30000});
+     // The dataset can be ready before an independently fetched MapLibre style.
+     // Stop at actual map load or an explicit recoverable/unavailable state;
+     // otherwise preserve the unresolved status rather than inventing readiness.
+     await page.waitForFunction(()=>{
+       const state=document.querySelector("#ao-find-modular-root .aoFindMap")?.dataset.aoMapState;
+       return ["ready","stalled","unavailable","empty"].includes(state);
+     },null,{timeout:17000}).catch(()=>{});
     });
    await capture("settings","#ao-settings-modular-root",
     async()=>{const ok=await page.evaluate(()=>window.AO_SETTINGS_APP_V1?.open?.());if(!ok)throw Error("Settings unavailable")});
@@ -167,6 +192,12 @@ const summary={
  generatedAt:new Date().toISOString(),matrix:"3 viewport widths x 2 languages x 9 surfaces",
  total:rows.length,captured:rows.filter(x=>x.status==="captured").length,
  missing:rows.filter(x=>x.status!=="captured").length,
+ exploreMap:{
+  total:rows.filter(x=>x.name==="explore").length,
+  renderedCandidates:rows.filter(x=>x.name==="explore"&&x.mapVisual?.renderedCandidate).length,
+  unverified:rows.filter(x=>x.name==="explore"&&!x.mapVisual?.renderedCandidate)
+   .map(x=>({language:x.language,width:x.width,mapState:x.mapVisual?.mapState||"missing",notice:x.mapVisual?.notice||null}))
+ },
  horizontalOverflow:rows.filter(x=>x.metrics?.horizontalOverflowPx>1).map(x=>({
   case:x.language+"-"+x.width+"-"+x.name,pixels:x.metrics.horizontalOverflowPx
  })),
@@ -177,11 +208,18 @@ const htmlEscape=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":
 const panels=rows.map(r=>{
  const label=htmlEscape(r.name+" · "+r.width+"px · "+r.language.toUpperCase());
  const image=r.filename?'<a href="'+r.filename+'"><img src="'+r.filename+'" loading="lazy" alt="'+label+'"></a>':'<p>Capture missing: '+htmlEscape(r.error||"unknown")+'</p>';
- return '<article><h2>'+label+'</h2>'+image+'<p>Status: '+r.status+' · overflow: '+(r.metrics?.horizontalOverflowPx??"?")+'px · microtype: '+(r.metrics?.microTextSamples?.length??"?")+' sampled · small targets: '+(r.metrics?.smallTargetSamples?.length??"?")+' sampled</p></article>';
+ const mapLabel=r.name==="explore"
+  ?'<p><strong>Map visual: '+htmlEscape(r.mapAcceptance||"MAP_UNVERIFIED")
+   +'</strong> · local data '+htmlEscape(r.mapVisual?.localDataState||"unknown")
+   +' · map state '+htmlEscape(r.mapVisual?.mapState||"unknown")
+   +' · canvas '+(r.mapVisual?.canvasVisible?"visible":"not confirmed")
+   +(r.mapVisual?.notice?' · '+htmlEscape(r.mapVisual.notice):"")+'</p>'
+  :"";
+ return '<article><h2>'+label+'</h2>'+image+mapLabel+'<p>Status: '+r.status+' · overflow: '+(r.metrics?.horizontalOverflowPx??"?")+'px · microtype: '+(r.metrics?.microTextSamples?.length??"?")+' sampled · small targets: '+(r.metrics?.smallTargetSamples?.length??"?")+' sampled</p></article>';
 }).join("\n");
 await writeFile(resolve(output,"index.html"),
  '<!doctype html><html lang="en"><meta charset="utf-8"><title>Ad Orientem · UI critical review</title>'+
  '<style>body{background:#0c1118;color:#eee7da;font:14px system-ui;margin:20px}h1{font:32px Georgia}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:15px}article{border:1px solid #46413b;padding:12px;border-radius:8px}article img{width:100%;max-width:430px;display:block}article p{font-size:12px;color:#b7b4ac}</style>'+
  '<h1>UI/UX critical review — phone matrix</h1><p>Read-only captures of actual GitHub production routes, not mocked designs. Open matrix.json for measurements, route failures and language states. Automated detection is triage, not human visual approval.</p><main>'+panels+'</main></html>');
-console.log("UI/UX matrix captured "+summary.captured+"/"+summary.total+" views; "+summary.horizontalOverflow.length+" overflow cases.");
+console.log("UI/UX matrix captured "+summary.captured+"/"+summary.total+" views; "+summary.horizontalOverflow.length+" overflow cases; "+summary.exploreMap.renderedCandidates+"/"+summary.exploreMap.total+" Explore map-render candidates (not handset certified).");
 if(summary.missing)process.exitCode=1;
