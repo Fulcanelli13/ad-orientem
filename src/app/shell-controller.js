@@ -25,6 +25,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
     if(returnTrail.length>16)returnTrail.shift();
   }
 
+
   function emit() {
     for (const listener of listeners) listener(active);
   }
@@ -45,11 +46,12 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
   const unsubscribeCore = host.subscribeCoreRoute?.(syncCoreRoute) ?? (() => {});
   syncCoreRoute(host.currentCoreRoute?.());
 
-  async function go(surface) {
+  async function go(surface, {resume=false}={}) {
     if (disposed) return result(false, active, { reason: "DISPOSED" });
     const target = normalizeAppSurface(surface);
     if (!target) return result(false, active, { reason: "UNKNOWN_SURFACE" });
     const origin=active;
+    if (resume&&target!=="mass") return result(false,active,{reason:"RESUME_MASS_ONLY"});
 
     // Settings is a top-level overlay and may be opened over an active Mass.
     // The locked donor deliberately handled it before the live-Mass leave guard.
@@ -86,14 +88,20 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
       }
     }
 
-    if (target === "mass" && Boolean(host.hasResumableMass?.())) {
-      const opened = Boolean(
-        await (host.defer?.(() => host.openDomain?.("mass")) ?? host.openDomain?.("mass")),
+    // A saved session must never hijack ordinary Mass entry. This was
+    // bypassing every celebration/Proper/form/reader choice on the home screen.
+    // Resuming is an explicit action only, with no silent fresh-session fallback.
+    if (target === "mass" && resume) {
+      if (!Boolean(host.hasResumableMass?.()))
+        return result(false,active,{reason:"NO_RESUMABLE_MASS"});
+      const opened=Boolean(
+        await (host.defer?.(()=>host.openDomain?.("mass",{resume:true})) ??
+          host.openDomain?.("mass",{resume:true}))
       );
-      if (!opened) return result(false, active, { reason: "DOMAIN_OWNER_UNAVAILABLE" });
+      if(!opened)return result(false,active,{reason:"MASS_RESUME_UNAVAILABLE"});
       remember(origin,"mass");
       setActive("mass");
-      return result(true, "mass", { resumedMass: true });
+      return result(true,"mass",{resumedMass:true});
     }
 
     if (target === "home") {

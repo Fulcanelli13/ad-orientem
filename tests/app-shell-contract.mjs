@@ -119,10 +119,25 @@ function host({ route = "home", confirm = true } = {}) {
   h.hasResumableMass = () => true;
   const shell = createAppShellController({ host: h });
   const nav = await shell.go("mass");
-  assert.equal(nav.ok, true);
-  assert.equal(nav.resumedMass, true);
-  assert.equal(shell.getActive(), "mass");
-  assert.deepEqual(h.calls, ["dismiss-settings", "defer", "domain:mass"]);
+  assert.equal(nav.ok,true);
+  assert.equal(nav.resumedMass,undefined,
+    "Tapping Mass must not jump into a saved reader and bypass its preflight");
+  assert.equal(shell.getActive(),"mass");
+  assert.deepEqual(h.calls,["dismiss-settings","home","defer","domain:mass"]);
+  h.calls.length=0;
+  const restored=await shell.go("mass",{resume:true});
+  assert.equal(restored.ok,true);
+  assert.equal(restored.resumedMass,true);
+  assert.deepEqual(h.calls,["dismiss-settings","defer","domain:mass"]);
+}
+{
+  const h=host();
+  h.hasResumableMass=()=>false;
+  const shell=createAppShellController({host:h});
+  const result=await shell.go("mass",{resume:true});
+  assert.equal(result.ok,false);
+  assert.equal(result.reason,"NO_RESUMABLE_MASS");
+  assert.deepEqual(h.calls,["dismiss-settings"]);
 }
 
 {
@@ -163,7 +178,10 @@ function host({ route = "home", confirm = true } = {}) {
     },
   };
   const adapter=createAppHostAdapter(win);
-  assert.equal(await adapter.openDomain("mass"),true);
+  assert.equal(await adapter.openDomain("mass"),false,
+    "A saved Mass must not be resumed by an ordinary Mass entry");
+  assert.deepEqual(calls,[]);
+  assert.equal(await adapter.openDomain("mass",{resume:true}),true);
   assert.deepEqual(calls,["mass:resume"]);
   assert.equal(adapter.leaveLiveMass(),true);
   assert.deepEqual(calls,["mass:resume","mass:suspend"]);
@@ -188,6 +206,13 @@ function host({ route = "home", confirm = true } = {}) {
   assert.deepEqual(calls,["mass:preflight"],"fresh Mass did not open resolved-celebration preflight");
   assert.equal(calls.some(x=>x.startsWith("donor:")),false,"fresh Mass fell through to historical V37 domain");
   assert.equal(calls.includes("mass:enter"),false,"fresh app navigation bypassed preflight and started R17 directly");
+  // Even when an inactive stored Mass is present, Follow Mass must show the
+  // form/Proper chooser; only the explicit Resume command may restore.
+  win.AO_R17_BROWSER_ENTRY.hasResumable=()=>true;
+  assert.equal(await adapter.openDomain("mass"),true);
+  assert.deepEqual(calls,["mass:preflight","mass:preflight"]);
+  assert.equal(calls.includes("mass:enter"),false);
+
 }
 
 {

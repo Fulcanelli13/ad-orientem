@@ -59,8 +59,12 @@ assert.doesNotMatch(ownerSource,/AO_DAILY_CATECHISM\?\.ensureHome|AO_DAILY_CATEC
 assert.doesNotMatch(ownerSource,/AO_V37_SHELL\?\.openDomain\?\.\("learn"\)|AO_V37_SHELL\.openDomain\("learn"\)/,"Home enrichers revive historical Learn domain");
 assert.ok(ownerSource.includes('navigateHomeShortcut("calendar",{trigger:all,routeId:"calendar"})'),"Coming Up View all no longer routes through modular Calendar");
 assert.match(ownerSource,/\[data-resume-mass\]/,"Home Resume is not intercepted by the modular owner");
-assert.ok(ownerSource.includes('navigateHomeShortcut("mass",{trigger:resumeMass,routeId:"mass.current"})'),"Home Resume must preserve exact Mass target and retry");
-assert.ok((ownerSource.match(/navigateHomeShortcut\("mass",\{trigger:/g)||[]).length>=2,"Home fresh entry and Resume must share the result-aware Mass route");
+assert.ok(ownerSource.includes('AO_APP_SHELL_V1?.navigate?.("mass",{resume:true})'),
+  "Only explicit Home Resume may restore an existing LIVE Mass checkpoint");
+assert.ok(ownerSource.includes('navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"})'),
+  "Home Follow Mass must open preparation through the normal Mass route");
+assert.ok(ownerSource.includes('showRouteError("mass.resume",resumeMass)'),
+  "Failed explicit Mass resume must have a visible recovery action");
 assert.ok(ownerSource.includes('navigateHomeShortcut("find",{trigger:find,routeId:"find"})'),"Home Find entry must use the failure-aware app shell");
 assert.match(ownerSource,/\[data-home-settings\]/,"Home does not own the new Settings utility entry");
 assert.match(ownerSource,/\[data-home-calendar\]/,"Today must own full Calendar entry");

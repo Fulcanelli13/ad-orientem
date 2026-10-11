@@ -114,12 +114,15 @@ export function createAppHostAdapter(win = globalThis) {
       return fallbackHome();
     },
 
-    openDomain(domain) {
+    openDomain(domain,{resume=false}={}) {
       if (!new Set(["mass", "pray", "learn", "find", "apostolate"]).has(domain)) return false;
       if (domain === "mass") {
-        const mass = win?.AO_R17_BROWSER_ENTRY;
-        if (typeof mass?.hasResumable === "function" && mass.hasResumable()) {
-          if (typeof mass?.resume !== "function") return false;
+        // The presence of a saved checkpoint never authorizes direct entry.
+        // Only an explicit Resume Mass command may restore the reader.
+        if(resume===true){
+          const mass=win?.AO_R17_BROWSER_ENTRY;
+          if(typeof mass?.hasResumable!=="function"||!mass.hasResumable()||
+             typeof mass?.resume!=="function")return false;
           return Promise.resolve(mass.resume()).then(openedSuccessfully);
         }
         const celebration = win?.AO_CELEBRATION_API;

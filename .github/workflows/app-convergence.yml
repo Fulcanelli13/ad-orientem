@@ -108,6 +108,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  urgent-mass-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Mass versus explicit resume contract
+        run: node tests/app-shell-contract.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Real phone — Follow Mass must expose source-owned preflight
+        run: node tests/mass-preflight-entry-phone.mjs
+
   app-shell-contract:
     runs-on: ubuntu-latest
     steps:
