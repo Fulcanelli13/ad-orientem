@@ -1,0 +1,77 @@
+name: Sacred art — full visual curator atlas
+on:
+  workflow_dispatch:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - "tools/calendar/collect-sacred-art-atlas-originals.py"
+      - "tools/calendar/build-sacred-art-final-atlas.py"
+      - "tests/test_sacred_art_final_atlas.py"
+      - "data/calendar/sacred-art-candidates.v1.json"
+      - "data/calendar/sacred-art-primary-museum-leads-20261011.v1.json"
+      - ".github/workflows/sacred-art-curator-atlas-build.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: sacred-art-curator-atlas-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install 1962 Calendar browser and thumbnail dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          python -m pip install Pillow
+      - name: Rebuild full source-resolved 2026 observed-day associations
+        run: |
+          node tests/calendar-1962-full-year-audit.mjs
+          node tools/calendar/report-sacred-art-liturgical-priorities.mjs --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
+          node tools/calendar/build-sacred-art-full-year-associations.mjs
+      - name: Recover exact-source originals and verify SHA256 against catalogue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/calendar/collect-sacred-art-atlas-originals.py
+      - name: Build self-contained visual review HTML with local thumbnail images
+        run: |
+          python tools/calendar/build-sacred-art-final-atlas.py --images-root artifacts/sacred-art-final-atlas/source-originals --output artifacts/sacred-art-final-atlas/index.html
+          python tests/test_sacred_art_final_atlas.py
+      - name: Validate visual-source completeness and release safety
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("artifacts/sacred-art-final-atlas")
+          r=json.loads((p/"source-recovery-report.json").read_text())
+          s=json.loads((p/"build-stats.json").read_text())
+          assert s["artworks"]==r["expectedAcquiredOriginals"]
+          assert s["calendarDates"]==365
+          assert s["linkedArtworkDayAssociations"]>=2000
+          assert not r["missingOrInvalid"], "Some archived source images are missing; inspect recovery report"
+          assert not s["missingPreviews"], "Atlas must show all acquired artwork previews"
+          print("ALL_VISUAL_SOURCE_PREVIEWS_LOADED",s["artworks"])
+          PY
+      - name: Upload single-file visual atlas and provenance proof (no full-size originals)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-complete-curator-atlas
+          path: |
+            artifacts/sacred-art-final-atlas/index.html
+            artifacts/sacred-art-final-atlas/build-stats.json
+            artifacts/sacred-art-final-atlas/source-recovery-report.json
+          retention-days: 30
+          if-no-files-found: warn
