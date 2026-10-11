@@ -43,7 +43,6 @@ for(const row of r59Review.held){
  assert.equal(published.items.some(x=>x.place_id===row.place_id),false);
 }
 let four=0,two=0,three=0;
-let four=0,two=0,three=0;
 for(const c of batch.candidates){
   assert.ok(known.has(c.place_id),"Must only describe a canonical physical Place");
   if(c.expected_license==="CC-BY-SA-4.0")assert.ok(live.has(c.place_id),"R59 photo release must include all eight reviewed updates");
