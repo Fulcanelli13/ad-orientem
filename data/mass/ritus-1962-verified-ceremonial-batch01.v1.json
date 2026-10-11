@@ -1,6 +1,6 @@
 {
   "schema": "ao-ritus-1962-ceremonial-evidence-batch-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "SOURCE_CHECKED_ENGLISH_TRANSLATION_NOT_LATIN_AND_NOT_RUNTIME_CERTIFIED",
   "authority": "1962_RITUS_SERVANDUS",
   "source": {
@@ -78,8 +78,8 @@
       "id": "B01-002",
       "cueId": "AO.SM.C0010",
       "actor": "PRIEST",
-      "action": "BOW_HEAD_AT_GLORIA_PATRI_OF_INTROIT",
-      "section": "IV.2",
+      "action": "BOW_HEAD_AT_GLORIA_PATRI_OF_JUDICA_PSALM",
+      "section": "III.6",
       "sourcePage": 5,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=5",
       "forms": [
@@ -88,11 +88,12 @@
         "MISSA_CANTATA_INCENSE",
         "SOLEMN"
       ],
-      "condition": "NOT_REQUIEM",
+      "condition": "JUDICA_ME_PSALM_PRESENT",
       "microOrder": null,
-      "rubricFr": "Il incline la tête à Gloria Patri.",
+      "rubricFr": "Au Gloria Patri du psaume Iudica me au bas de l'autel, le célébrant incline la tête vers la croix.",
       "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
-      "runtimeApproved": false
+      "runtimeApproved": false,
+      "sourceStatus": "LATIN_1962_BILINGUAL_TEXT_CHECKED"
     },
     {
       "id": "B01-003",
@@ -416,9 +417,9 @@
     },
     {
       "id": "B01-019",
-      "cueId": "AO.SM.C0163",
+      "cueId": "AO.SM.C0164",
       "actor": "PRIEST",
-      "action": "THREE_CROSSES_QUAM_OBLATIONEM",
+      "action": "THREE_CROSSES_BENEDICTAM_ADSCRIPTAM_RATAM",
       "section": "VIII.4",
       "sourcePage": 14,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
@@ -430,9 +431,12 @@
       ],
       "condition": "DEFAULT",
       "microOrder": null,
-      "rubricFr": "Il trace trois croix au début de Quam oblationem.",
+      "rubricFr": "Sur bene✠dictam, adscrip✠tam et ra✠tam, il trace trois croix communes sur l'Hostie et le calice.",
       "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
-      "runtimeApproved": false
+      "runtimeApproved": false,
+      "exactLatinTrigger": "benedictam, adscriptam, ratam",
+      "sourceStatus": "LATIN_1962_BILINGUAL_TEXT_CHECKED",
+      "sourceLatinReference": "Ritus servandus VIII.4"
     },
     {
       "id": "B01-020",
@@ -718,7 +722,7 @@
       "id": "B01-034",
       "cueId": "AO.SM.C0222",
       "actor": "PRIEST",
-      "action": "STRIKE_BREAST_AT_AGNUS_DEI",
+      "action": "STRIKE_BREAST_FIRST_AGNUS_MISERERE",
       "section": "X.3",
       "sourcePage": 19,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=19",
@@ -730,9 +734,11 @@
       ],
       "condition": "NOT_REQUIEM",
       "microOrder": null,
-      "rubricFr": "Il se frappe la poitrine au premier Agnus Dei.",
+      "rubricFr": "À miserére nobis du premier Agnus Dei, le célébrant se frappe la poitrine de la main droite.",
       "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
-      "runtimeApproved": false
+      "runtimeApproved": false,
+      "exactLatinTrigger": "miserere nobis",
+      "sourceStatus": "LATIN_1962_BILINGUAL_TEXT_CHECKED"
     },
     {
       "id": "B01-035",
@@ -916,6 +922,50 @@
       "rubricFr": "À la messe solennelle de Requiem, l'autel n'est pas encensé à l'entrée.",
       "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
       "runtimeApproved": false
+    },
+    {
+      "id": "B01-045",
+      "cueId": "AO.SM.C0223",
+      "actor": "PRIEST",
+      "action": "STRIKE_BREAST_SECOND_AGNUS_MISERERE",
+      "section": "X.3",
+      "sourcePage": 19,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=19",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM",
+      "microOrder": null,
+      "rubricFr": "À miserére nobis du deuxième Agnus Dei, il se frappe de nouveau la poitrine.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false,
+      "exactLatinTrigger": "miserere nobis",
+      "sourceStatus": "LATIN_1962_BILINGUAL_TEXT_CHECKED"
+    },
+    {
+      "id": "B01-046",
+      "cueId": "AO.SM.C0224",
+      "actor": "PRIEST",
+      "action": "STRIKE_BREAST_THIRD_AGNUS_DONA_NOBIS_PACEM",
+      "section": "X.3",
+      "sourcePage": 19,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=19",
+      "forms": [
+        "LOW",
+        "MISSA_CANTATA_SIMPLE",
+        "MISSA_CANTATA_INCENSE",
+        "SOLEMN"
+      ],
+      "condition": "NOT_REQUIEM",
+      "microOrder": null,
+      "rubricFr": "À dona nobis pacem du troisième Agnus Dei, il se frappe de nouveau la poitrine.",
+      "evidence": "1962_RITUS_TRANSLATION_DIRECT_CHECK",
+      "runtimeApproved": false,
+      "exactLatinTrigger": "miserere nobis",
+      "sourceStatus": "LATIN_1962_BILINGUAL_TEXT_CHECKED"
     }
   ],
   "reviewBoundaries": [
@@ -924,5 +974,22 @@
     "Separate minister route timing",
     "Separate congregation/custom profiles",
     "Solemn Requiem modifier validation"
+  ],
+  "latinVerifications": [
+    {
+      "id": "B01-019",
+      "sourceSection": "VIII.4",
+      "reason": "three signs begin at bene-dictam (C0164), NOT at Quam oblationem opening (C0163)"
+    },
+    {
+      "id": "B01-002",
+      "sourceSection": "III.6",
+      "reason": "C0010 Gloria Patri belongs to Judica me at foot; Judica omitted in Requiem and from Passion Sunday through Maundy Thursday"
+    },
+    {
+      "id": "B01-034",
+      "sourceSection": "X.2",
+      "reason": "three breast strikes occur at the three response phrases across C0222 C0223 C0224, not at the first alone"
+    }
   ]
 }
