@@ -9,6 +9,9 @@ on:
       - "data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json"
       - "data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json"
       - "data/geography/research/mass-1962-cue-scripture-crosswalk-20261011.v1.json"
+      - "data/geography/research/mass-proper-chant-bible-witnesses-batch01-20261011.v1.json"
+      - "docs/research/MASS-PROPER-CHANT-SCRIPTURE-BATCH01-20261011.md"
+      - "tests/mass-proper-chant-bible-batch01.mjs"
       - "data/geography/research/mass-variable-chant-bible-batch01-20261011.v1.json"
       - "data/geography/research/mass-variable-chant-bible-batch02-20261011.v1.json"
       - "data/geography/research/mass-variable-chant-bible-batch03-20261011.v1.json"
@@ -61,6 +64,8 @@ jobs:
         run: node tests/mass-dujardin-1962-order-bridge.mjs
       - name: Validate variable Mass chant Bible source citations and inheritance holds
         run: node tests/mass-variable-chant-scripture-discovery.mjs
+      - name: Validate actual source-marked Mass Proper chants
+        run: node tests/mass-proper-chant-bible-batch01.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
