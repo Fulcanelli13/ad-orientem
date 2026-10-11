@@ -1,6 +1,6 @@
 {
   "schema": "ao-solemn-minister-ritus1962-batch02",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "status": "RESEARCH_SOURCE_CHECKED_NOT_RUNTIME_CERTIFIED",
   "description": "Fine-grained Solemn Mass priest/deacon/subdeacon/acolyte/thurifer movements, with Requiem branch gates. English 1962 translation source checked; Latin facsimile and concurrent event timing pending.",
   "authority": {
@@ -317,7 +317,7 @@
       "id": "MR62.SOL.B02.017",
       "actor": "DEACON",
       "cueId": "AO.SM.C0112",
-      "anchorType": "WITHIN_TEXT_CUE",
+      "anchorType": "BEFORE_CUE",
       "actionKey": "POUR_WINE_INTO_CHALICE",
       "condition": "ALL",
       "ritus": "VII.9",
@@ -329,7 +329,8 @@
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": "Deus, qui humánæ substántiæ dignitátem mirabíliter condidísti, et mirabílius reformásti:"
+      "sourceCueText": "Deus, qui humánæ substántiæ dignitátem mirabíliter condidísti, et mirabílius reformásti:",
+      "reviewNote": "Ritus VII.9 specifies wine poured before the water blessing prayer Deus qui humanae at C0112, not during the prayer."
     },
     {
       "id": "MR62.SOL.B02.018",
@@ -1269,6 +1270,12 @@
       "secondary": "O'Connell synopsis Solemn Mass Pater",
       "difference": "around end Pater vs Et dimitte for subdeacon",
       "runtimeRule": "DO_NOT_ASSERT_INSTANT_TIMING_BEFORE_ADJUDICATION"
+    }
+  ],
+  "latinSectionCorrections": [
+    {
+      "id": "MR62.SOL.B02.017",
+      "reason": "Wine transfer precedes the text of C0112."
     }
   ]
 }
