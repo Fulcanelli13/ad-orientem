@@ -43,6 +43,14 @@
       "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
       "edition": "1843 facsimile p. xv–xvi excerpt on true reasons for gestures",
       "caution": "Historical caution on symbolic versus physical causes; rest of full volume not yet extracted."
+    },
+    {
+      "id": "D13",
+      "author": "Guillaume Durand (Durandus)",
+      "title": "Rationale divinorum officiorum, IV",
+      "edition": "French translation Charles Barthélemy, Paris 1854, Book IV; compared sections XXXVI, XLII, LI",
+      "url": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_36",
+      "caution": "Medieval interpretations and alternate rubrical usages; verify Latin original before publication."
     }
   ],
   "classification": [
@@ -50,7 +58,8 @@
     "LITURGICAL_EXPLICIT_FIGURE",
     "SCRIPTURAL_TYPOLOGY_PATRISTIC",
     "DEVOTIONAL_ANALOGY",
-    "HISTORICAL_ATTESTATION"
+    "HISTORICAL_ATTESTATION",
+    "MEDIEVAL_ALLEGORY"
   ],
   "records": [
     {
@@ -1309,6 +1318,157 @@
         "historicalOrigin": "NOT_CERTIFIED",
         "forPublishing": false
       }
+    },
+    {
+      "id": "MS049",
+      "phase": "CANON_TE_IGITUR",
+      "liturgicalAnchor": "Haec dona haec munera haec sancta sacrificia illibata",
+      "biblicalReferences": "Genesis 4:4; Genesis 14:18; Genesis 22:1–19",
+      "relationType": "MEDIEVAL_ALLEGORY",
+      "attributableClaim": "Durandus offers multiple non-exclusive interpretations of three crosses: Trinity, stages before Moses, Passion-related meanings, and more. The specific pre-Mosaic genealogy of Adam→Noah→Abraham→Moses is his medieval symbolic scheme, not an actual linear history of the Roman Canon.",
+      "sources": [
+        {
+          "author": "Guillaume Durand (Durandus), Rationale IV, French trans. Charles Barthélemy 1854",
+          "url": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_36",
+          "locator": "Book IV chapter 36 §§VII–IX",
+          "webLineRange": "129–153",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS050",
+      "phase": "FRACTION",
+      "liturgicalAnchor": "Fractio Hostiae and Emmaus",
+      "biblicalReferences": "Luke 24:30–35",
+      "relationType": "MEDIEVAL_ALLEGORY",
+      "attributableClaim": "Durandus explicitly says that recognition of the Lord in the breaking of the bread at Emmaus illuminates the fraction; unlike a direct Mass quotation, this is a medieval authorial comparison.",
+      "sources": [
+        {
+          "author": "Guillaume Durand (Durandus), Rationale IV, French trans. Charles Barthélemy 1854",
+          "url": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_51",
+          "locator": "Book IV chapter 51, section on breaking the bread",
+          "webLineRange": "130–135",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS051",
+      "phase": "COMMIXTURE",
+      "liturgicalAnchor": "Haec commixtio as Resurrection unity",
+      "biblicalReferences": "John 20:19–23; Psalms 15:10 (Vulgate numbering)",
+      "relationType": "MEDIEVAL_ALLEGORY",
+      "attributableClaim": "Durandus offers a resurrection/return-of-the-soul interpretation for the commixture, while also recounting distinct medieval sequences for doing it. That variation is itself evidence against a timeless single symbol-to-rubric explanation.",
+      "sources": [
+        {
+          "author": "Guillaume Durand (Durandus), Rationale IV, French trans. Charles Barthélemy 1854",
+          "url": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_51",
+          "locator": "Book IV chapter 51 §§XVI–XIX",
+          "webLineRange": "168–176",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "Commixture, second part of the Mass",
+          "webLineRange": "699–705",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS052",
+      "phase": "CANON_CONSECRATION",
+      "liturgicalAnchor": "mysterium fidei in the consecration formula",
+      "biblicalReferences": "Matthew 26:28; Mark 14:24; Luke 22:20; 1 Corinthians 11:25",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "Durandus attributes to Innocent III the observation that the Gospel writers did not use the precise phrase mysterium fidei. Do not invent a Gospel verse containing the phrase; mark the Roman formula and the biblical institution accounts as distinct.",
+      "sources": [
+        {
+          "author": "Guillaume Durand (Durandus), Rationale IV, French trans. Charles Barthélemy 1854",
+          "url": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_42",
+          "locator": "Book IV chapter 42 §XX",
+          "webLineRange": "189–192",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS053",
+      "phase": "CANON_TE_IGITUR",
+      "liturgicalAnchor": "Canon divisions: Te igitur; Memento; Communicantes ...",
+      "biblicalReferences": "—",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "Durandus reports rival divisions of the Canon into 11, 12, 6 and 5 textual groups. These are medieval analytical schemes, not the modern Mass-reading card count; never impose one medieval structure over the app's liturgical source-first arrangement.",
+      "sources": [
+        {
+          "author": "Guillaume Durand (Durandus), Rationale IV, French trans. Charles Barthélemy 1854",
+          "url": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_36",
+          "locator": "Book IV chapter 36 §§I–IV",
+          "webLineRange": "121–128",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS054",
+      "phase": "CANON_TE_IGITUR",
+      "liturgicalAnchor": "Te igitur and the Holy of Holies",
+      "biblicalReferences": "Leviticus 16; Hebrews 9:11–12",
+      "relationType": "MEDIEVAL_ALLEGORY",
+      "attributableClaim": "Durandus connects the prayer of the priest, the Temple high priest and Christ entering the heavenly sanctuary. The prayer's genuine liturgical language and later interpretative image must remain visibly separate.",
+      "sources": [
+        {
+          "author": "Guillaume Durand (Durandus), Rationale IV, French trans. Charles Barthélemy 1854",
+          "url": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_36",
+          "locator": "Book IV chapter 36 §V",
+          "webLineRange": "129–132",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
     }
   ],
   "criticalMethodWitness": {
@@ -1378,6 +1538,24 @@
       "note": "Guéranger's 'reunion of Body and Blood' for commixture is attributed interpretation and is not an archaeological/historical explanation.",
       "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
       "loc": "COMMIxture 699–705"
+    },
+    {
+      "code": "D13_MULTIPLE_SYMBOLISMS",
+      "note": "Durandus gives several competing symbolic explanations for the same three signs of the Cross, proof that the medieval text is not a unique historical explanation.",
+      "source": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_36",
+      "loc": "Book IV chapter 36 §§I–VIII"
+    },
+    {
+      "code": "D13_EMMAUS_NOT_ORIGIN",
+      "note": "Durandus does relate the Eucharistic fraction to Emmaus, but this is medieval exegesis; do not assert the Rite of Fraction was founded to depict Emmaus.",
+      "source": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_51",
+      "loc": "Book IV ch.51, paragraph on recognition at Emmaus"
+    },
+    {
+      "code": "D13_MY_FEIDEI",
+      "note": "Historical liturgical ‘mysterium fidei’ is not a literal phrase of the four biblical institution passages; keep Roman Canon words and exact Gospel wording apart.",
+      "source": "https://fr.wikisource.org/wiki/Rational_(Durand_de_Mende)/Volume_2/Quatri%C3%A8me_livre/Chapitre_42",
+      "loc": "Book IV ch.42 §XX"
     }
   ]
 }
