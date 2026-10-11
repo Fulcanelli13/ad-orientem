@@ -1092,6 +1092,7 @@ function bindRosaryMethodControls(){
    const set=ROSARY_METHOD.length===15?"joyful":chosen;
    e.preventDefault();e.stopImmediatePropagation();
    ROSARY_METHOD.fullActive=ROSARY_METHOD.length===15;
+   rosaryFullCycleHandoff="";
    if(!selectNativeRosarySet(set,{skipOpening:ROSARY_METHOD.method==="dominican"})){
     ROSARY_METHOD.fullActive=false;
    }
