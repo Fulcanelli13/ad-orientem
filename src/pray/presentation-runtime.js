@@ -797,7 +797,7 @@ function launchTraditionalRosaryMethod(method){
  ROSARY_FIFTEEN.active=false;
  if(method!=='ordinary'){S.rosary.form='standard';if(method==='scriptural')S.rosary.mode='guided';save()}
  if(api.setMethod(method)!==true)return false;
- if(launchRosaryPlayer(captureResume()))return true;
+ if(launchRosaryPlayer(captureResume())){setTimeout(decorateRosary,0);return true}
  api.setMethod('ordinary');return false;
 }
 function launchFifteenRosary(){
@@ -1040,6 +1040,12 @@ function ensureRosaryGuide(r){
 }
 function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
+ // Montfort's historical methods cover fifteen traditional mysteries only.
+ if(['montfort','montfort_short'].includes(window.AO_ROSARY_V381?.getMethod?.())){
+  r.querySelectorAll('[data-pb-rosary-set="luminous"]').forEach(b=>{
+   b.hidden=true;b.disabled=true;b.setAttribute('aria-hidden','true');
+  });
+ }
  r.querySelectorAll('.flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true')});
  r.classList.toggle('aoP435930RosarySimple',S.rosary.mode==='simple');r.classList.toggle('aoP435930RosaryGuided',S.rosary.mode==='guided');
  let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';bar.setAttribute('aria-label',L('Rosary reading depth','Profondeur du Rosaire'));const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
