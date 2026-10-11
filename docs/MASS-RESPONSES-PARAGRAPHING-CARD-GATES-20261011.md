@@ -151,3 +151,30 @@ Machine-readable authority: [reader-source-only-cues.js](../src/mass/reader-sour
 **Disposition:** 11 Proper-related source-only cues (20 registry references) and four conditional Gloria/Credo sedilia state cues (eight references). All are accounted for; none can be assigned an automatic prayer-word focus, gesture, voice change or priest position simply by projecting the 65-card text. The review model now carries their immutable sourceOnlyCueRegister for later priest-mode/event alignment, with automatedIconAllowed=false and runtimePolicy=REQUIRE_INDEPENDENT_SOURCE_EVENT_TRIGGER.
 
 **Before enabling these events:** match each to its actual priest-side ceremonial event, retain explicit sung/solemn distinctions (particularly Epistle/Gospel proclaimers), and require the relevant posture/customary conditions for the Gloria/Credo sedilia states. Synchronization between independent Schola and priest clocks must be validated in a real service. These are **15 documented event-alignment tasks**, not 28 unaccounted text defects and not a reason to increase the ordinary LIVE card count.
+
+
+## Priest-side event reconciliation — 10 / 15 event-identified
+
+The independent priest-event bridge now identifies **10 of 15** original source-only cues against named canonical MC events; **five remain fail-closed**. These numbers denote *registered event bindings*, **not automated ceremony detection**. Real-time execution requires an independent priest observer; scrolling or the Schola's chant never triggers a movement.
+
+Three additions to the previous seven bindings:
+
+| Canonical cue | Exact MC event | Form/trigger | What may project |
+|---|---|---|---|
+| C0043 | MC-INT-020 | Independently observed priest's Introit recitation | Quiet priest voice and persistent physically sourced position from C0042, never from Schola's MC-INT-010 |
+| C0075 | MC-EPI-020 | Only Missa Cantata **and** confirmed priest (rather than lector) **and** independently reported READ or SUNG delivery | Reads Epistle action; voice reflects observed spoken/sung delivery, no guessed position or faithful posture |
+| C0249 | MC-END-010 | Independently observed priest's Communion antiphon **after ablutions** | Quiet recitation; **suppress** PRIEST_TRACK_ASYNC, which is a scheduling placeholder and not a location; no activation from Schola's MC-COM-305 |
+
+The 1962 [*Ritus servandus* VI.8](https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/) explicitly allows the Epistle to be sung by a minister; otherwise the celebrant may read it or sing it. See also [*Rubricae generales Missalis Romani*, 514](https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html). Accordingly, the generic MC-EPI-020 actor RESOLVED_READER **does not by itself certify a priest action**. The bridge requires separately observed celebrant identity and delivery. This is essential for the Low/Missa Cantata/Solemn distinction.
+
+Five unresolved cases that must **not** be auto-mapped:
+
+| Cue | Reason for retaining explicit pending status |
+|---|---|
+| C0042 | Physical transfer to the Epistle-side Missal lacks a separately identifiable canonical movement event; the valid position is inherited at the independently observed C0043 recitation, not fired during Schola's Introit |
+| C0077 | Gradual is a Schola chant; the priest's asynchronous side activity is not synchronized to the Schola start or end |
+| C0109 | Proper Offertory is Schola material; the celebrant's independent change into quiet Offertory prayers has no matching exact public canonical action |
+| C0250 | Turning from Communion antiphon toward the congregation for Postcommunion greeting needs an explicit turning event; MC-END-020 only records returning to the centre, while MC-END-030 records a spoken greeting |
+| C0256 | Turning after Postcommunion toward the final dismissal needs an explicit priest-turn event; the final Dominus vobiscum is not proof of the exact preceding turn |
+
+Regression gates: repository `tests/reader-priest-event-alignment.mjs` pins **10 event-identified and five pending** cues, denies unresolved lector/celebrant actors and unobserved movement; Chromium `tests/reader-phone-curated65.mjs` exercises the true priest Introit, Epistle and Communion tracks, Schola independence and correct source-only position suppression. No new prayer card or source text was created, and production 48 remains the default. The unresolved five require a new independently certified MC action/movement event or human input, not another textual cue grouping.
