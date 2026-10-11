@@ -622,6 +622,113 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-rail-left .ao-rail-item[data-channel="posture"],
 .ao-reader-shell[data-mode="LIVE"] .ao-priest-action-badge{display:none}
 
+/* Dedicated bilingual book view. This is intentionally scoped to
+ * MISSAL, leaving LIVE gesture/cue and SIMPLE narration untouched. */
+.ao-reader-shell[data-mode="MISSAL"]{
+  --ao-missal-column-gap:clamp(16px,3.4vw,48px);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon,
+.ao-reader-shell[data-mode="MISSAL"] .ao-schola-dock,
+.ao-reader-shell[data-mode="MISSAL"] .ao-progress-track,
+.ao-reader-shell[data-mode="MISSAL"] .ao-cinematic,
+.ao-reader-shell[data-mode="MISSAL"] .ao-faithful-paragraph-icons{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-card-viewport{
+  padding:0!important;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-prayer-card{
+  padding:24px clamp(12px,4vw,50px) 72px!important;
+  scroll-padding-top:20px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-prayer-body{
+  max-width:1120px;width:100%;gap:0;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  column-gap:var(--ao-missal-column-gap);
+  align-items:start;margin:0;padding:10px 0;
+  border:0;border-bottom:1px solid color-mix(in srgb,var(--ao-text-primary,#e9e4d9) 10%,transparent);
+  border-radius:0;background:none;box-shadow:none;
+  opacity:1!important;transform:none!important;filter:none!important;
+  text-shadow:none!important;
+  color:var(--ao-text-primary,#e9e4d9);
+  font:400 clamp(15px,1.75vw,21px)/1.46 var(--ao-missal-face);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph .ao-line-primary,
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph .ao-line-secondary{
+  display:block;min-width:0;width:auto;margin:0;padding:0;
+  border:0;background:none;box-shadow:none;
+  font:inherit!important;font-family:var(--ao-missal-face)!important;
+  font-size:1em!important;line-height:1.46!important;
+  font-style:normal!important;text-indent:0;
+  white-space:pre-wrap;overflow-wrap:break-word;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph .ao-line-secondary{
+  color:color-mix(in srgb,var(--ao-text-primary,#e9e4d9) 78%,var(--ao-bg-canvas,#080c12));
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-missal-primary-language="VERNACULAR"]>.ao-line-primary{grid-column:2;grid-row:1}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-missal-primary-language="VERNACULAR"]>.ao-line-secondary{grid-column:1;grid-row:1}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-missal-primary-language="LATIN"]>.ao-line-primary{grid-column:1;grid-row:1}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-missal-primary-language="LATIN"]>.ao-line-secondary{grid-column:2;grid-row:1}
+.ao-reader-shell:not([data-mode="MISSAL"]) .ao-line-secondary[data-missal-only="true"]{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-translate-toggle="true"]{
+  cursor:default;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"]{
+  display:block;padding:9px 0;margin:8px 0;
+  font-size:clamp(13px,1.5vw,16px)!important;
+  font-family:var(--ao-missal-face)!important;
+  font-style:italic!important;
+  color:var(--ao-text-muted,#b5b8b4);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"] .ao-line-secondary{display:none}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{
+  font-size:clamp(16px,1.9vw,23px)!important;
+  text-align:left;background:none!important;
+}
+/* Liturgical serif for all translation text; menus use one legible UI scale
+ * rather than 8px legacy labels and platform-dependent serif select fonts. */
+.ao-reader-shell .ao-line-secondary{
+  font-family:var(--ao-missal-face)!important;
+  font-weight:400;
+}
+.ao-reader-shell:not([data-mode="MISSAL"]) .ao-line-secondary{
+  font-size:.83em;line-height:1.55;
+}
+.ao-reader-shell .ao-section-menu button{
+  min-height:44px;padding:10px 14px;
+  font:500 15px/1.42 var(--ao-missal-face)!important;
+  letter-spacing:0;
+}
+.ao-reader-shell .ao-mass-prefs-group>small{
+  font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.065em;
+}
+.ao-reader-shell .ao-customary-controls label,
+.ao-reader-shell .ao-faithful-icon-picker label{
+  font:400 15px/1.4 var(--ao-missal-face);
+}
+.ao-reader-shell .ao-customary-controls select,
+.ao-reader-shell .ao-faithful-icon-picker select{
+  font:500 14px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+.ao-reader-shell .ao-mass-prefs-group option,
+.ao-reader-shell .ao-faithful-icon-picker option{
+  font:500 14px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+@media(max-width:560px){
+  .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph{
+    font-size:clamp(13.5px,3.6vw,17px);
+    line-height:1.35;
+  }
+  .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph .ao-line-primary,
+  .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph .ao-line-secondary{
+    line-height:1.38!important;
+  }
+  .ao-reader-shell[data-mode="MISSAL"] .ao-prayer-card{
+    padding:18px 12px 64px!important;
+  }
+  .ao-reader-shell[data-mode="MISSAL"]{--ao-missal-column-gap:14px}
+}
 /* A readable background to the active line, without flattening the focus
    hierarchy. Preserve the recovered donor values above as the baseline for
    other presentation modes. */
@@ -852,6 +959,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     if(latinProminent && /\b(?:Hoc est enim Corpus meum|Hic est enim Calix)\b/i.test(primary))kind="CONSECRATION_WORDS";
     return Object.freeze({
       id:String(p.id ?? index),kind,primary,secondary,alternate,replaceOnToggle,
+      displayLanguage:latinProminent&&secondary?"LATIN":p.displayLanguage??null,
       active:p.active === true,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
@@ -1832,7 +1940,7 @@ export function createReaderDomAdapter({
         return;
       }
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
-      if(translatable){
+      if(translatable && mode!=="MISSAL"){
         toggleReaderTranslation(translatable);
         translatable.dataset.ritualCueActive="false";
         syncReaderRitualHighlights(root,current?.gesture);
@@ -1935,7 +2043,7 @@ export function createReaderDomAdapter({
       const tag=String(event.target?.tagName??"").toUpperCase();
       if(key==="Enter"||key===" "){
         const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
-        if(translatable){
+        if(translatable && mode!=="MISSAL"){
           event.preventDefault?.();
           toggleReaderTranslation(translatable);
           translatable.dataset.ritualCueActive="false";
@@ -2300,7 +2408,7 @@ export function createReaderDomAdapter({
           // proclamation heading can own the faithful's Gospel crosses.
           if(p.id==="PALM-R03-01" && p.sourceCueIds?.includes("PALM-GSP-010"))
             node.dataset.cueId="PALM-R03-01";
-          if(p.replaceOnToggle && p.alternate){
+          if(mode!=="MISSAL" && p.replaceOnToggle && p.alternate){
             node.dataset.translateToggle="true";
             node.dataset.primaryText=p.primary;
             node.dataset.altText=p.alternate;
@@ -2331,6 +2439,18 @@ export function createReaderDomAdapter({
             }
             node.append(icons);
           }
+          // MISSAL never uses tap-to-replace as its primary reading
+          // experience. Source-projected Latin and vernacular are rendered
+          // together in the same physical row, regardless of which language
+          // owns the LIVE/SIMPLE text. No fallback translation is fabricated.
+          const hasParallelText=Boolean(p.secondary||p.alternate);
+          if(hasParallelText&&p.kind!=="RUBRIC"){
+            const known=p.displayLanguage;
+            const primaryLanguage=known==="LATIN"||known==="VERNACULAR"
+              ?known:(p.secondary||p.kind==="RESPONSE"||p.kind==="CONSECRATION_WORDS"?"LATIN":"VERNACULAR");
+            node.dataset.missalPrimaryLanguage=primaryLanguage;
+            node.dataset.missalPaired="true";
+          }
           const primary=doc.createElement("span");
           primary.className="ao-line-primary";
           // The initial paragraph.active state is not authoritative after
@@ -2338,11 +2458,13 @@ export function createReaderDomAdapter({
           // DOM focus and the *same* projected gesture as the rail below.
           renderReaderText(primary,p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary);
           node.append(primary);
-          if(p.secondary){
+          const parallel=p.kind==="RUBRIC"?p.secondary:(p.secondary??p.alternate);
+          if(parallel){
             const secondary=doc.createElement("span");
             secondary.className="ao-line-secondary";
-            secondary.textContent=p.secondary;
-            decorateLiturgicalSpeaker(secondary,p.secondary);
+            if(!p.secondary)secondary.dataset.missalOnly="true";
+            secondary.textContent=parallel;
+            decorateLiturgicalSpeaker(secondary,parallel);
             node.append(secondary);
           }
           body.append(node);
