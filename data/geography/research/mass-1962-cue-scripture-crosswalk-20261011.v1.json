@@ -1243,5 +1243,30 @@
     "Same cue may have multiple Bible events and alternative traditional interpretations; never collapse them.",
     "No new Atlas pins for narrative typology, heavenly liturgy or works of sacred art.",
     "Original Latin, gestures, prayer units, section model, 48-card presentation and variable Proper content unchanged."
-  ]
+  ],
+  "currentProperEvidenceInventory": {
+    "indexSourcePaths": [
+      "src/mass/scripture-reading-witness-index.js",
+      "src/mass/scripture-feast-reading-index.js",
+      "src/mass/scripture-segmented-reading-index.js"
+    ],
+    "inspectedAt": "2026-10-11",
+    "standaloneVerifiedProperPaths": 105,
+    "classifiedSourcePaths": {
+      "basic": 50,
+      "feast": 55,
+      "segmented": 15
+    },
+    "witnessedProperPathSlotPairs": 210,
+    "segmentedDiscontinuousReadingCount": 15,
+    "segmentedSlotDistribution": {
+      "GOSPEL": 4,
+      "EPISTLE_OR_LESSON": 11
+    },
+    "baseRegisterExplicitHeldSlots": 5,
+    "uniqueProperPathCount": 105,
+    "allTheseReferencesRequireResolvedLatinText": true,
+    "denominatorCaution": "105 witness-confirmed Proper source paths and 210 source+reading-slot references are NOT the count of all days and feasts in the 1962 liturgical year; no general canon coverage ratio is asserted.",
+    "design": "The strict Gospel/Epistle resolver requires source path, textual Latin incipit (and segmented passage order) and vetoes conflicting references; other Proper slots remain date/rite-dependent without fabricated universal chapter:verse."
+  }
 }
