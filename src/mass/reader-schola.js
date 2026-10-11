@@ -1,4 +1,8 @@
 // Native Schola state for certified sung forms. Low Mass is a structural absence; Solemn shares the recovered sung Schola donor.
+// The opening intonations of Gloria and Credo belong to the celebrant,
+// even though their trailing donor syllables were catalogued SCHOLA_PUBLIC.
+const PRIEST_INTONATION_END_CUES=new Set(["AO.SM.C0054","AO.SM.C0090"]);
+
 // The Schola has its own progression clock. Reader card changes may select a
 // relevant track, but only exact Schola cues or explicit Schola navigation
 // advance within that track.
@@ -26,7 +30,7 @@ function ordinarySegments(corpus,macroId,{language="en",frenchOrdinary=null}={})
   const rows=[];
   for(const block of blocks){
     for(const unit of block.units??[]){
-      if(unit.clock!=="SCHOLA_PUBLIC")continue;
+      if(unit.clock!=="SCHOLA_PUBLIC"||PRIEST_INTONATION_END_CUES.has(unit.cue_id))continue;
       const latin=clean(unit.latin);
       const fr=String(language).toLowerCase().startsWith("fr");
       // The Schola's translation follows the reader's language, but Latin
