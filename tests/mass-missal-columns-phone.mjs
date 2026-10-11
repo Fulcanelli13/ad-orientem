@@ -1,0 +1,79 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import {readFile} from "node:fs/promises";
+import {extname,resolve,sep} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
+ ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
+ ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
+ ".woff2":"font/woff2"};
+const server=http.createServer(async(req,res)=>{
+ try{
+  const file=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname));
+  if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end("forbidden");return}
+  const bytes=await readFile(file);res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream"});
+  res.end(bytes);
+ }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message??e))}
+});
+await new Promise((resolve,reject)=>{server.once("error",reject);server.listen(4288,"127.0.0.1",resolve)});
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ for(const {width,height,lang} of [
+  {width:320,height:700,lang:"en"},{width:390,height:844,lang:"en"},
+  {width:390,height:844,lang:"fr"},{width:768,height:1000,lang:"fr"}]){
+  const context=await browser.newContext({viewport:{width,height},hasTouch:true,isMobile:width<600,deviceScaleFactor:1});
+  const page=await context.newPage(),errors=[];
+  page.on("pageerror",e=>errors.push(String(e?.message??e)));
+  await page.goto(`http://127.0.0.1:4288/tests/fixtures/reader-phone-harness.html?mode=MISSAL&lang=${lang}`,{waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:60000});
+  const measure=await page.evaluate(()=>{
+   const shell=document.querySelector("[data-ao-reader-shell]");
+   const paired=[...document.querySelectorAll(".ao-reader-paragraph[data-missal-paired='true']")];
+   const row=paired.find(r=>r.querySelector(".ao-line-primary")&&r.querySelector(".ao-line-secondary"));
+   if(!row)return {mode:shell?.dataset.mode,rows:paired.length};
+   const primary=row.querySelector(".ao-line-primary"),translated=row.querySelector(".ao-line-secondary");
+   const p=primary.getBoundingClientRect(),t=translated.getBoundingClientRect();
+   const style=getComputedStyle(row);
+   return {mode:shell.dataset.mode,rows:paired.length,
+    textLeft:row.dataset.missalPrimaryLanguage==="LATIN"?p.x:t.x,
+    textRight:row.dataset.missalPrimaryLanguage==="LATIN"?t.x:p.x,
+    gridColumns:style.gridTemplateColumns,
+    fontPrimary:getComputedStyle(primary).fontFamily,
+    fontTranslation:getComputedStyle(translated).fontFamily,
+    sizePrimary:parseFloat(getComputedStyle(primary).fontSize),
+    sizeTranslation:parseFloat(getComputedStyle(translated).fontSize),
+    secondaryVisible:getComputedStyle(translated).display!=="none",
+    stateRibbon:getComputedStyle(shell.querySelector(".ao-state-ribbon")).display,
+    schola:getComputedStyle(shell.querySelector(".ao-schola-dock")).display,
+    viewportOverflow:document.documentElement.scrollWidth-innerWidth,
+    primaryText:primary.textContent,secondaryText:translated.textContent};
+  });
+  assert.equal(measure.mode,"MISSAL",width+"px reader did not open in Missal");
+  assert.ok(measure.rows>0,width+"px Missal has no bilingual paragraph pairs");
+  assert.ok(measure.textRight>measure.textLeft+30,width+"px Latin and vernacular are not side by side: "+JSON.stringify(measure));
+  assert.ok(measure.gridColumns?.split(" ").length>=2,width+"px missal rows are not a two-column grid");
+  assert.equal(measure.fontPrimary,measure.fontTranslation,"Missal typography changes between Latin and translation");
+  assert.equal(measure.sizePrimary,measure.sizeTranslation,"Missal vernacular text uses an inconsistent size");
+  assert.equal(measure.secondaryVisible,true,"Missal translation is not visible");
+  assert.equal(measure.stateRibbon,"none","Minimal Missal has the LIVE posture ribbon");
+  assert.equal(measure.schola,"none","Minimal Missal has the Schola overlay");
+  assert.ok(measure.viewportOverflow<=1,width+"px Missal overflows phone width");
+  assert.ok(measure.primaryText?.trim()&&measure.secondaryText?.trim(),"Both sourced columns must contain text");
+  const clickable=page.locator(".ao-reader-paragraph[data-translate-toggle='true']").first();
+  if(await clickable.count()){
+   const before=await clickable.locator(".ao-line-primary").innerText();
+   await clickable.click({force:true});
+   assert.equal(await clickable.locator(".ao-line-primary").innerText(),before,"A Missal column was replaced on tap");
+  }
+  assert.deepEqual(errors,[],width+"px Missal runtime errors: "+errors.join(" | "));
+  await context.close();
+ }
+ console.log("PASS minimal MISSAL two-column Latin/vernacular alignment, equal serif font, no Schola/ribbon, EN/FR at 320/390/768");
+}finally{
+ await browser?.close().catch(()=>{});
+ await new Promise(r=>server.close(r));
+}
