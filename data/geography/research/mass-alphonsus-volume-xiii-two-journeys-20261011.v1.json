@@ -1396,5 +1396,370 @@
       "ACTUAL_CALENDAR_PROPERS"
     ],
     "publishedDataOwner": "learn.mass existing eight-stage reader and merged Scripture context overlay, no new full-app module"
+  },
+  "biblicalHorizonCrosswalk": [
+    {
+      "id": "HORIZON_CREATION",
+      "biblicalReference": "Genesis 1–2",
+      "massAnchor": "PRAYERS_AT_FOOT",
+      "supportingClaimIds": [
+        "DJ01",
+        "DJ02"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "Creation and first humanity are meditated during preparatory ceremonies, not quoted in the Ordo",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_FALL",
+      "biblicalReference": "Genesis 3",
+      "massAnchor": "PRAYERS_AT_FOOT",
+      "supportingClaimIds": [
+        "DJ02"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "Fall, contrition and promised Redemption",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ABEL",
+      "biblicalReference": "Genesis 4:4",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX18",
+        "MS033"
+      ],
+      "evidenceClass": "EXPLICIT_CANON_PERSON",
+      "qualification": "Abel named in Supra quae",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_NOAH",
+      "biblicalReference": "Genesis 8:20–21",
+      "massAnchor": "OFFERTORY",
+      "supportingClaimIds": [
+        "ALPX04"
+      ],
+      "evidenceClass": "THEOLOGICAL_SACRIFICIAL_TYPE",
+      "qualification": "Noah's holocaust used by Alphonsus in wider sacrificial theology, not explicitly named in the fixed Roman Canon",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ABRAHAM",
+      "biblicalReference": "Genesis 22:1–19",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX18",
+        "MS034"
+      ],
+      "evidenceClass": "EXPLICIT_CANON_PERSON",
+      "qualification": "Abraham named in Supra quae",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_MELCHIZEDEK",
+      "biblicalReference": "Genesis 14:18–20",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX18",
+        "MS035"
+      ],
+      "evidenceClass": "EXPLICIT_CANON_PERSON",
+      "qualification": "Melchizedek named in Supra quae; Genesis does not itself explicitly call bread and wine a sacrificial immolation",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PASSOVER",
+      "biblicalReference": "Exodus 12:3–14",
+      "massAnchor": "CANON_CONSECRATION",
+      "supportingClaimIds": [
+        "ALPX04",
+        "ALPX10"
+      ],
+      "evidenceClass": "THEOLOGICAL_PASSOVER_TYPOLOGY",
+      "qualification": "Passover lamb and Eucharist linked theologically in the treatise",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_MANNA",
+      "biblicalReference": "Exodus 16:13–36",
+      "massAnchor": "EUCHARISTIC_TYPES",
+      "supportingClaimIds": [
+        "MS046",
+        "H005"
+      ],
+      "evidenceClass": "PATRISTIC_EUCHARISTIC_TYPOLOGY",
+      "qualification": "Manna read as figure of Eucharistic bread in late antique Christian commentary",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ATONEMENT",
+      "biblicalReference": "Leviticus 16:8–22",
+      "massAnchor": "CANON_UNDE_ET_MEMORES",
+      "supportingClaimIds": [
+        "ALPX01"
+      ],
+      "evidenceClass": "SAINT_AUTHOR_SACRIFICIAL_TYPOLOGY",
+      "qualification": "Scapegoat, Isaiah's suffering servant and Christ outside camp",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_LAYING_HANDS",
+      "biblicalReference": "Leviticus 1:4",
+      "massAnchor": "CANON_HANC_IGITUR",
+      "supportingClaimIds": [
+        "DJ14",
+        "ALPX17"
+      ],
+      "evidenceClass": "AUTHORIAL_GESTURE_ALLEGORY",
+      "qualification": "Ritual laying-on comparison; the authors did not certify Roman historical origin",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PS_JUDICA",
+      "biblicalReference": "Psalms 42:4 (Vulgate)",
+      "massAnchor": "PRAYERS_AT_FOOT",
+      "supportingClaimIds": [
+        "MS001"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Psalm quoted at foot of altar in relevant forms",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PS_LAVABO",
+      "biblicalReference": "Psalms 25:6–12 (Vulgate)",
+      "massAnchor": "OFFERTORY_LAVABO",
+      "supportingClaimIds": [
+        "MS021"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Psalm 25 during Lavabo; practical handwashing remains distinct",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PS_INCENSE",
+      "biblicalReference": "Psalms 140:2 (Vulgate)",
+      "massAnchor": "OFFERTORY_INCENSE",
+      "supportingClaimIds": [
+        "MS020"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Dirigatur sicut incensum words",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_MESSIANIC",
+      "biblicalReference": "Isaiah 53:6",
+      "massAnchor": "CANON_UNDE_ET_MEMORES",
+      "supportingClaimIds": [
+        "ALPX01"
+      ],
+      "evidenceClass": "THEOLOGICAL_PROPHECY_FULFILMENT",
+      "qualification": "Christ bearing sins as the suffering servant",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ISAIAH_SANCTUS",
+      "biblicalReference": "Isaiah 6:3",
+      "massAnchor": "SANCTUS",
+      "supportingClaimIds": [
+        "MS023"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Threefold Sanctus",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_DANIEL_CONTRITION",
+      "biblicalReference": "Daniel 3:39–40 (Catholic additions)",
+      "massAnchor": "OFFERTORY",
+      "supportingClaimIds": [
+        "MS018"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "In spiritu humilitatis; Catholic versification concordance needed",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_LUKE_GLORIA",
+      "biblicalReference": "Luke 2:14",
+      "massAnchor": "GLORIA",
+      "supportingClaimIds": [
+        "DJ04",
+        "ALPX12",
+        "MS008"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_AND_MEDITATION",
+      "qualification": "Angelic opening distinct from entire later Christian hymn",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_JOHN_BAPTIST",
+      "biblicalReference": "John 1:29",
+      "massAnchor": "AGNUS_DEI",
+      "supportingClaimIds": [
+        "MS041"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_WORDING_CANDIDATE",
+      "qualification": "Agnus Dei from Baptist, not the whole later liturgical refrain",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_CENTURION",
+      "biblicalReference": "Matthew 8:8",
+      "massAnchor": "COMMUNION_PREPARATION",
+      "supportingClaimIds": [
+        "MS043"
+      ],
+      "evidenceClass": "DIRECT_SCRIPTURAL_ADAPTATION_CANDIDATE",
+      "qualification": "Centurion words adapted to healing of the soul",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_INSTITUTION",
+      "biblicalReference": "Luke 22:19–20; 1 Corinthians 11:23–26",
+      "massAnchor": "CANON_CONSECRATION",
+      "supportingClaimIds": [
+        "ALPX10",
+        "MS030",
+        "MS031"
+      ],
+      "evidenceClass": "INSTITUTION_TEXT_AND_DOCTRINE",
+      "qualification": "Roman formula not verbatim a single NT account",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_ROMANS_REASONABLE",
+      "biblicalReference": "Romans 12:1",
+      "massAnchor": "CANON_QUAM_OBLATIONEM",
+      "supportingClaimIds": [
+        "MS029",
+        "FT019"
+      ],
+      "evidenceClass": "SPECIFIC_SCRIPTURAL_IDIOM",
+      "qualification": "Rationabilem as a biblical sacrificial term in scholarly historical comparison",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PRIESTHOOD",
+      "biblicalReference": "Hebrews 7; Psalms 109:4 (Vulgate)",
+      "massAnchor": "CANON_SUPRA_QUAE",
+      "supportingClaimIds": [
+        "ALPX08"
+      ],
+      "evidenceClass": "BIBLICAL_PRIESTHOOD_THEOLOGY",
+      "qualification": "Priesthood of Melchizedek as type of Christ, not the origin of each gesture",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_EMMAUS",
+      "biblicalReference": "Luke 24:30–35",
+      "massAnchor": "FRACTION",
+      "supportingClaimIds": [
+        "MS050"
+      ],
+      "evidenceClass": "MEDIEVAL_ALLEGORY_ONLY",
+      "qualification": "Durandus links Eucharistic fraction to Emmaus; historical origin not proved",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_RESURRECTION",
+      "biblicalReference": "John 20:19–23",
+      "massAnchor": "PAX_DOMINI",
+      "supportingClaimIds": [
+        "DJ18"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "Dujardin's commixture/resurrection allegory",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_PENTECOST",
+      "biblicalReference": "Acts 2:1–4",
+      "massAnchor": "BLESSING",
+      "supportingClaimIds": [
+        "DJ21"
+      ],
+      "evidenceClass": "AUTHORIAL_MEDITATION",
+      "qualification": "The blessing prompts recollection of Pentecost, not a claim the rite depicts a historical event",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_REVELATION_SANCTUS",
+      "biblicalReference": "Revelation 4:8",
+      "massAnchor": "SANCTUS",
+      "supportingClaimIds": [
+        "MS024"
+      ],
+      "evidenceClass": "THEOLOGICAL_HEAVENLY_PARALLEL",
+      "qualification": "Vision of four living creatures separate from Isaiah 6",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_HEAVENLY_ALTAR",
+      "biblicalReference": "Revelation 8:3–4",
+      "massAnchor": "CANON_SUPPLICES",
+      "supportingClaimIds": [
+        "MS036",
+        "ALPX19"
+      ],
+      "evidenceClass": "COMMENTATOR_PARALLEL_NOT_PHYSICAL_LOCATION",
+      "qualification": "Prayer invokes heavenly altar; no coordinates or literal transfer of species",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    },
+    {
+      "id": "HORIZON_JOHN_PROLOGUE",
+      "biblicalReference": "John 1:1–14",
+      "massAnchor": "LAST_GOSPEL",
+      "supportingClaimIds": [
+        "DJ22",
+        "ALPX22",
+        "MS044"
+      ],
+      "evidenceClass": "DIRECT_GOSPEL_TEXT_AND_AUTHORIAL_MEDITATION",
+      "qualification": "John Prologue as Last Gospel, later placement at end of Mass",
+      "locationStatus": "DO_NOT_CREATE_ATLAS_PLACE_FROM_TYPOLOGY",
+      "sourceStatus": "RESEARCH_ONLY_1962_PHRASE_LINK_PENDING"
+    }
+  ],
+  "biblicalHorizonScope": {
+    "status": "SELECTED_SOURCED_EXAMPLES_NOT_COMPLETE_COVERAGE_OF_BIBLE",
+    "sourceMethods": [
+      "actual Latin wording of ordinary Mass",
+      "author-attributed Dujardin meditation",
+      "specific Alphonsus argument",
+      "documented patristic/medieval typology",
+      "actual calendar Proper (must be looked up at Mass date independently)"
+    ],
+    "nonExclusivePerspectives": true,
+    "uncoveredBooksMustNotReceiveInventedOrdinaryLinks": true
   }
 }
