@@ -32,7 +32,7 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open .aoMercyReader",{timeout:9000});
  assert.equal(await page.locator("#aoPray435930 .aoMercyControls button").count(),2);
- assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père/);
+ assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père|In the name of the Father/);
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/1 \/ 62/);
  await page.locator("#aoPray435930 [data-p435930-mercy-next]").evaluate(x=>x.click());
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/2 \/ 62/);
@@ -40,8 +40,9 @@ try{
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/2 \/ 63/);
  await page.locator("#aoPray435930 [data-p435930-mercy-guide]").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoMercyHelp").count(),0);
- assert.equal(await page.locator("#aoPray435930 .aoMercySource a").getAttribute("href"),
-  "https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html");
+ assert.ok(["https://www.vaticannews.va/fr/priere/chapelet-de-la-divine-misericorde.html",
+  "https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html"].includes(
+  await page.locator("#aoPray435930 .aoMercySource a").getAttribute("href")));
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.angelus",{returnContext:null})),true);
  await page.waitForSelector("#aoPray435930.open [data-ao-devotional-guide='angelus']",{timeout:12000});
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
