@@ -10,7 +10,16 @@ const sourceRegistry=read("data/shrines/source-registry.v1.json");
 const geography=read("data/geography/seed-registry.v1.json");
 const mediaAudit=read("data/shrines/research/sacred-geography-shrine-image-audit-2026-10-10.v1.json");
 
-assert.equal(corpus.shrines.length,216,"expected canonical 216 shrine baseline, not world coverage");
+// R65 adds named pilgrimage Places after the frozen 10 October 216-shrine
+// media census. Validate current corpus and the frozen audit independently.
+assert.ok(corpus.shrines.length>=219,"the 216-shrine corpus and three verified Irish R65 additions must remain");
+const currentShrineIds=new Set(corpus.shrines.map(site=>site.shrine_id));
+assert.equal(currentShrineIds.size,corpus.shrines.length,"canonical shrine IDs must remain unique");
+for(const id of [
+  "shrine:IE:croagh-patrick-pilgrimage",
+  "shrine:IE:st-oliver-plunkett-drogheda",
+  "shrine:IE:solas-bhride-kildare"
+])assert.ok(currentShrineIds.has(id),"R65 published pilgrimage shrine missing: "+id);
 assert.ok(corpus.shrines.every(s=>s.origin_summary?.trim()),"a shrine intro is missing");
 assert.ok(corpus.shrines.every(s=>s.source_ids?.length),"a shrine has no identifiable source");
 // R60 adds twenty concise, source-linked principal Place synopses. Keep the
@@ -78,7 +87,7 @@ assert.equal(updated.length,corpus.shrines.length,"every canonical shrine must h
 for(const id of ORIGINAL_38)assert.ok(updated.some(s=>s.shrine_id===id),id+" original bilingual introduction disappeared");
 const sourceMap=new Map(sourceRegistry.sources.map(s=>[s.id,s]));
 assert.equal(sourceMap.size,sourceRegistry.sources.length,"source IDs must be unique");
-assert.ok(sourceRegistry.sources.length>=355,"the 355 established source records must be retained while future sources are added");
+assert.ok(sourceRegistry.sources.length>=366,"the R65 baseline of 366 source records must be retained while future sources are added");
 for(const site of updated){
   const minimum=ORIGINAL_38.has(site.shrine_id)?110:(R60_MAJOR_PLACE_IDS.has(site.shrine_id)?100:90);
   assert.ok(site.origin_summary.length>=minimum&&site.origin_summary_fr.length>=minimum,site.shrine_id+" has a placeholder synopsis");
@@ -87,7 +96,7 @@ for(const site of updated){
   assert.ok(!/^\s*(?:Lorem ipsum|TODO|TBD)/i.test(site.origin_summary),site.shrine_id+" has editorial text instead of a brief");
 }
 const projected=projectShrineItems({shrines:corpus.shrines,places:geography.places,sources:sourceRegistry.sources});
-assert.equal(projected.length,216);
+assert.equal(projected.length,corpus.shrines.length,"project all current canonical shrines, not a frozen audit count");
 for(const site of updated){
   const item=projected.find(p=>p.source_id===site.shrine_id);
   assert.ok(item&&item.summary===site.origin_summary&&item.summary_fr===site.origin_summary_fr,"bilingual projection lost "+site.shrine_id);
@@ -111,6 +120,11 @@ assert.match(expanded,/data-explore-place-item=/,"source-owned detailed records 
 assert.equal(mediaAudit.counts.canonical_shrines,216);
 assert.equal(mediaAudit.counts.curated_place_photo_links,0,"do not claim undocumented image coverage");
 assert.equal(mediaAudit.sites.length,216);
-assert.deepEqual(new Set(mediaAudit.sites.map(s=>s.shrine_id)),new Set(corpus.shrines.map(s=>s.shrine_id)));
+const frozenAuditIds=new Set(mediaAudit.sites.map(site=>site.shrine_id));
+assert.equal(frozenAuditIds.size,mediaAudit.sites.length,"frozen 10 October photo audit must not duplicate shrine IDs");
+assert.ok([...frozenAuditIds].every(id=>currentShrineIds.has(id)),
+  "current publication cannot drop a shrine from the frozen photograph audit");
+assert.ok(corpus.shrines.length>=frozenAuditIds.size+3,
+  "the historical photo audit cannot silently absorb R65's three new shrines");
 assert.ok(mediaAudit.sites.every(s=>s.photo_status==="NOT_CURATED"&&s.approved_asset===null));
-console.log("PASS all 216 bilingual shrines, original 38/R60 narrative thresholds, 355-source floor, linked originals and frozen photo research audit");
+console.log("PASS "+corpus.shrines.length+" bilingual shrines, original 38/R60 thresholds, 366-source floor, linked originals, R65 IDs and frozen 216-place photo audit");
