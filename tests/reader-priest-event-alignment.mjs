@@ -11,7 +11,7 @@ const read=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8")
 const events=[1,2,3,4,5,6].flatMap(n=>read("../data/mass/mc-events-0"+n+".v1.json").events);
 const audit=auditOrdinarySungPriestEventAlignment(events);
 assert.deepEqual({all:audit.sourceOnlyCues,matched:audit.eventMatched,pending:audit.pending},
-  {all:15,matched:9,pending:6});
+  {all:15,matched:10,pending:5});
 assert.equal(ORDINARY_SUNG_PRIEST_EVENT_ALIGNMENT.length,ORDINARY_SUNG_SOURCE_ONLY_CUES.length);
 const bad=events.map(e=>({...e}));
 bad.find(e=>e.id==="MC-GLR-040").actor="SCHOLA";
@@ -68,6 +68,32 @@ assert.equal(communion.priestPosition,null,
   "PRIEST_TRACK_ASYNC is not a drawable priest position");
 assert.equal(observed("MC-COM-305","AO.CARD.026"),null,
   "Schola's Communion chant must not advance celebrant recitation");
+// Rubricae Generales Missalis Romani 1960/1962, n. 514:
+ // Missa Cantata permits a sung Epistle by a lector or a reading/singing
+ // by the priest. The canonical actor is RESOLVED_READER, never automatically PRIEST.
+assert.equal(observed("MC-EPI-020","AO.CARD.005"),null,
+  "Unspecified reader must not be reported as the celebrant");
+for(const [form,actor,delivery,allowed] of [
+  ["MISSA_CANTATA_SIMPLE","PRIEST","READ",true],
+  ["MISSA_CANTATA_INCENSE","PRIEST","SUNG",true],
+  ["MISSA_CANTATA_INCENSE","LECTOR","SUNG",false],
+  ["MISSA_CANTATA_SIMPLE","PRIEST",null,false],
+  ["MISSA_CANTATA_SIMPLE",null,"READ",false],
+  ["SOLEMN","PRIEST","SUNG",false],
+]){
+  const result=projectObservedOrdinaryPriestEvent({...base,form,
+    observedEventId:"MC-EPI-020",sourceSectionId:"AO.CARD.005",
+    observedActor:actor,observedDelivery:delivery});
+  assert.equal(Boolean(result),allowed,
+    "Unjustified Epistle priest identity/voice projection "+[form,actor,delivery]);
+  if(result){
+    assert.equal(result.cueId,"AO.SM.C0075");
+    assert.equal(result.priestPosition,null,"Lector/celebrant location cannot be assumed");
+    assert.equal(result.priestAction?.label,"READS EPISTLE");
+    assert.equal(result.priestVoice?.value,delivery==="READ"?"READ / AUDIBLE":"SUNG / CLEAR");
+    assert.equal(result.faithfulPosture,null,"Epistle celebrant does not determine faithful posture");
+  }
+}
 const secret=observed("MC-SEC-010","AO.CARD.011");
 assert.ok(secret);
 assert.match(secret.priestVoice?.value??"",/SECRET|LOW/);
@@ -90,4 +116,4 @@ assert.equal(projectObservedOrdinaryPriestEvent({...base,observedEventId:"MC-SEC
   sourceSectionId:"AO.CARD.011",form:"LOW"}),null,"Low Mass not licensed by Sung event map");
 assert.equal(projectObservedOrdinaryPriestEvent({...base,observedEventId:"MC-SEC-010",
   sourceSectionId:"AO.CARD.011",eventIndex:new Map()}),null,"Unknown event must fail closed");
-console.log("Mass source-only priest event alignment PASS: 15 classified; 9 exact observable; 6 held; form/condition/context/actor/faithful lanes fail closed.");
+console.log("Mass source-only priest event alignment PASS: 15 classified; 10 event-identified (Epistle needs resolved actor/delivery); 5 held; conditional/form/context/faithful lanes fail closed.");
