@@ -148,7 +148,7 @@ assert.match(browserSource,/mountExploreMap/);
 assert.match(browserSource,/navigate\?\.\("home"\)/);
 assert.doesNotMatch(browserSource,/Église Saint-Test|Sydney Apostolate/,"Find browser owner hardcodes fixture locations");
 assert.match(browserSource,/var\(--ao-z-surface,2147481800\)/,"Explore root is not on the shared elevation vocabulary");
-assert.match(explorePresentation,/ao-ui-back/,"Explore Back control is not using the canonical utility icon");
+assert.match(explorePresentation,/navigationActionIcon\("back"\)/,"Explore Back control must use the shared canonical utility icon");
 assert.match(explorePresentation,/aoMapLegend/,"TLM map provider legend not wired");
 assert.match(browserSource,/initialViewport:lastMapLens===state.lens/,"Map loses viewport when a point opens");
 assert.ok(browserSource.includes("aoMapLegend>span[data-group"),"Map visual legend styling missing");
