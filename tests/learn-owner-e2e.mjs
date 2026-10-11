@@ -358,7 +358,13 @@ try{
   const spiritualLanding=await page.evaluate(()=>{
     const root=document.getElementById("ao-spiritual-life-root");
     const rect=root?.getBoundingClientRect();
-    const buttons=[...root.querySelectorAll("button")].map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height}});
+    const buttons=[...root.querySelectorAll("button")]
+      .filter(node=>node.getClientRects().length>0&&!node.closest("[hidden],[inert]")&&getComputedStyle(node).visibility!=="hidden")
+      .map(node=>{const r=node.getBoundingClientRect();return {
+        w:r.width,h:r.height,
+        label:node.getAttribute("aria-label")||node.textContent?.trim().slice(0,65)||"",
+        selector:node.className||node.outerHTML.slice(0,100)
+      };});
     return {
       status:globalThis.AO_SPIRITUAL_LIFE_V1?.status?.()??null,
       lessons:root?.querySelectorAll("[data-ao-sl-lesson]").length??0,
@@ -377,7 +383,19 @@ try{
   assert.ok(spiritualLanding.width>300,"Spiritual Life phone surface collapsed");
   assert.ok(spiritualLanding.overflow<=1,"Spiritual Life has horizontal overflow on 390px phone geometry");
   assert.match(spiritualLanding.text,/There is no score|Il n’y a ni score/,"Spiritual Life lost its anti-scoring boundary");
-  for(const target of spiritualLanding.buttons)assert.ok(target.w>=44&&target.h>=44,"Spiritual Life landing touch target fell below 44px");
+  assert.ok(spiritualLanding.buttons.length>=6,"Spiritual Life landing lost visible touch controls");
+  for(const target of spiritualLanding.buttons)
+    assert.ok(target.w>=44&&target.h>=44,"Visible Spiritual Life landing touch target fell below 44px: "+JSON.stringify(target));
+  const spiritualIndexToggle=page.locator('#ao-spiritual-life-root [data-ao-fnav-action="toggle"]');
+  if(await spiritualIndexToggle.count()){
+    await spiritualIndexToggle.tap();
+    const indexHitboxes=await page.locator('#ao-spiritual-life-root .aoFNavMenu:not([hidden]) [data-ao-fnav-go]').evaluateAll(nodes=>
+      nodes.map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height,label:node.textContent?.trim().slice(0,65)}}));
+    assert.ok(indexHitboxes.length>=2,"Opened Spiritual Life section index lost navigation buttons");
+    for(const target of indexHitboxes)
+      assert.ok(target.w>=44&&target.h>=44,"Opened Spiritual Life section index target below 44px: "+JSON.stringify(target));
+    await spiritualIndexToggle.tap();
+  }
   await assertNoMass("Spiritual Life landing");
   await assertFocusSafe("Spiritual Life landing");
 
