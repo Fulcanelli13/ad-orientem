@@ -227,6 +227,16 @@ try{
   noteFr:"Le missel présente ces versets dans l’ordre liturgique : Daniel 3,49, puis 3,47–48, puis 3,50–51. La Bible ci-dessous suit l’ordre canonique 3,47–51. Le cantique qui suit est un texte liturgique distinct.",
   separateHymn:"Daniel 3:52–59"
  };
+ // Read the same canonical verses without a liturgical order note first.
+ // Source-witness availability must be identical with and without the note.
+ assert.equal(await page.evaluate(daniel=>
+  globalThis.AO_SCRIPTURE_CONTEXT_V1.openSegments(daniel,{
+   reference:"Daniel 3:47–51",language:"en"
+  }),daniel),true);
+ await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
+ const baselineDanielVerses=await dialog.locator(".aoScriptureVerse").count();
+ assert.equal(baselineDanielVerses,5,"The uncollated Daniel witness must expose all five source verses");
+ await dialog.locator("[data-scripture-close]").click();
  assert.equal(await page.evaluate(({daniel,arrangement})=>
   globalThis.AO_SCRIPTURE_CONTEXT_V1.openSegments(daniel,{
    reference:"Daniel 3:47–51",language:"en",liturgicalArrangement:arrangement
@@ -237,8 +247,10 @@ try{
  await notice.waitFor({state:"visible",timeout:8000});
  assert.match(await notice.innerText(),/Missal presents these verses in liturgical order/);
  assert.match(await notice.innerText(),/then 3:47–48, then 3:50–51/);
- assert.equal(await dialog.locator(".aoScriptureVerse").count(),0,
-   "Liturgical note must never unlock unlicensed Bible text");
+ assert.equal(await dialog.locator(".aoScriptureVerse").count(),baselineDanielVerses,
+   "A liturgical arrangement may explain source order but never unlock additional Bible text");
+ assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
+   "The five uncollated source verses must remain explicitly unreviewed");
  await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await notice.innerText(),/ordre liturgique/);
