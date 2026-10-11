@@ -1,0 +1,24 @@
+name: Mass 1962 printed July source regression
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tests/mass-1962-printed-july-source-samples.mjs'
+      - 'data/geography/research/mass-1962-precious-blood-printed-source-batch-20261011.v1.json'
+      - 'data/geography/research/mass-1962-zaccaria-printed-source-batch-20261011.v1.json'
+      - 'data/geography/research/mass-1962-irenaeus-calendar-alias-primary-source-20261011.v1.json'
+      - '.github/workflows/mass-1962-printed-july-source-regression.yml'
+jobs:
+  july-sample-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check script syntax
+        run: node --check tests/mass-1962-printed-july-source-samples.mjs
+      - name: Check 27 printed-source matches and holds
+        run: node tests/mass-1962-printed-july-source-samples.mjs
