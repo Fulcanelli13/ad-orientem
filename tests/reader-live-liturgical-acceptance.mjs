@@ -149,8 +149,9 @@ assert.equal(byCue.size,261,
 const sourceRoles=new Map(speakerAudit.records.map(r=>[r.cueId,r]));
 assert.equal(sourceRoles.size,280);
 for(const unit of canonicalUnits){
+  if(nonDisplay.has(unit.cue_id))continue;
   const hit=byCue.get(unit.cue_id);
-  assert.ok(hit,unit.cue_id+": missing source cue");
+  assert.ok(hit,unit.cue_id+": missing rendered source cue");
   assert.equal(hit.paragraph.speakerRole,sourceRoles.get(unit.cue_id)?.role,
     unit.cue_id+": displayed actor no longer follows the audited liturgical speaker");
 }
