@@ -1274,6 +1274,9 @@ function backToParent(){
  if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}
  if(view!=='home'&&navStack.length){popView();return render()}
  if(view!=='home'&&familyId){view='family';return render()}
+ // Leaving the PRAY root is not the same as the explicit Today action.
+ // Retain nested prayer history and use the shell's cross-domain Back.
+ if(typeof window?.AO_APP_SHELL_V1?.back==="function")return void window.AO_APP_SHELL_V1.back();
  return close();
 }
 async function goGlobalHome(){
