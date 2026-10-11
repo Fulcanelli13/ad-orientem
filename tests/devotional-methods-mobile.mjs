@@ -94,7 +94,16 @@ try{
   assert.equal(before.set,"joyful","Full Rosary must always start with Joyful");
   await page.evaluate(i=>window.AO_ROSARY_V381.setStep(i),before.boundary);
   await page.locator("#aoPrayerBookRoot.open [data-lab-rosary-next]").first().evaluate(n=>n.click());
-  await page.waitForFunction(()=>window.AO_ROSARY_V381?.state?.()?.set==="sorrowful",{timeout:9000});
+  await page.waitForFunction(()=>window.AO_ROSARY_V381?.state?.()?.set==="sorrowful",null,{timeout:4000}).catch(async error=>{
+   const evidence=await page.evaluate(()=>{
+    const a=window.AO_ROSARY_V381,r=document.querySelector("#aoPrayerBookRoot.open");
+    return {state:a?.state?.(),current:a?.steps?.()?.[a?.state?.()?.step],
+      stage:r?.querySelector(".aoRosaryMethodStage")?.outerHTML.slice(0,1800),
+      next:r?.querySelector("[data-lab-rosary-next]")?.outerHTML,
+      options:r?.querySelectorAll("[data-pb-rosary-set]")?.length};
+   });
+   throw new Error("Full Rosary native handoff diagnostic "+JSON.stringify(evidence)+"; "+error);
+  });
   await page.waitForSelector("#aoPrayerBookRoot.open .aoRosaryMethodStage",{timeout:9000});
   before=await page.evaluate(()=>{const a=window.AO_ROSARY_V381,steps=a.steps();return {set:a.state().set,boundary:steps.map((x,i)=>[x,i]).filter(([x])=>x.phase==="decade"&&x.mi===4).pop()[1]}});
   assert.equal(before.set,"sorrowful");
