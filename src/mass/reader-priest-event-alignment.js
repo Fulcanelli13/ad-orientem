@@ -123,7 +123,7 @@ export function projectObservedOrdinaryPriestEvent({
       ? null : cue.priestPosition??null,
     priestVoice:row.gate==="CELEBRANT_EPISTLE_OBSERVED"
       ? Object.freeze({label:observedDelivery==="READ"?"READS EPISTLE":"SINGS EPISTLE",
-        value:observedDelivery==="READ"?"READ / AUDIBLE":"SUNG / CLEAR",
+        value:observedDelivery==="READ"?"READ / NOT SUNG":"SUNG / CLEAR",
         owner:"1962_RUBRIC_514_OBSERVED_PRIEST_DELIVERY"})
       : cue.priestVoice??null,
     priestAction:cue.priestAction??null,
