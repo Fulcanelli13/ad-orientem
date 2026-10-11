@@ -35,7 +35,14 @@ Do not delete research/source branches simply because a PR closes. Closing a sup
 - Closed unmerged #922 and #932: superseded Scripture merge routes; #938 retains the intended full 73-book bilingual recovery, subject to independent audit.
 - Closed unmerged #963 and #990: superseded Atlas merge routes; #998 is the current-main candidate.
 - Preserved #887/#949 sacred-art research and review holds, #896 held editorial/UI work, #923 geographic research, and #926 directory research; **no research branches deleted**.
+- Closed unmerged #1002 (overlapping Today v2 implementation on held #896) in favour of #997 (theme-first, tests). Unique frontispiece CSS/geometry remains on #1002's branch for reconciliation; no visual design authority is discarded.
+- Returned #887 art acquisition and #915 source-blocked Formation/Prayer to draft status pending their explicit gates. No source corpus was discarded.
+- Verified existing source-owner CI failures on an unrelated workflow-only PR: Content Architecture geographic Places 182 vs 220, and Sexual Ethics `unjust exaction` wording assertion. These need separate owner review; **do not relax data or doctrinal gates as a queue workaround**.
 - Scoped CI cleanup in `ci/queue-signal-routing-20261011`: deduplicate PR runs in R49, Explore, Tenebrae, Sexual Ethics and Content census; remove unrelated `package.json` triggers from four specialist workflows; test that app-wide dependency verification remains intact.
+
+## Draft CI scheduling (follow-on #1004)
+
+Draft PRs should still receive relevant source/unit-contract feedback, but full App, Explore, preliminary-map mobile and visual screenshot matrices are deferred until `ready_for_review` (or manual dispatch / production push). Workflow subscriptions must include `ready_for_review` explicitly so a promotion triggers actual phone acceptance on the same branch head without a meaningless extra commit. This reduces noisy draft-pipeline queuing without certifying untested drafts. Parent feature branches in an existing stack must be refreshed against `main` to inherit the latest CI routing changes.
 
 ## Safe next cleanup
 
