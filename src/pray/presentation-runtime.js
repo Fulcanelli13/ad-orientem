@@ -3,6 +3,7 @@ import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, 
 import "./canonical-data.js";
 import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
+import "./devotional-methods-styles.js";
 import "./tenebrae-styles.js";
 import {loadTenebraeHour} from "./tenebrae-1960.js";
 import {renderTenebraeBody} from "./tenebrae-presentation.js";
