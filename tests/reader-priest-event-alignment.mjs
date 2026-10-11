@@ -1,3 +1,4 @@
+import {ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS} from "../src/mass/reader-priest-pending-observations.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {createReaderCueStateController} from "../src/mass/reader-cue-state.js";
@@ -17,6 +18,31 @@ assert.deepEqual([...audit.pendingCueIds].sort(),[
   "AO.SM.C0250","AO.SM.C0256",
 ].sort(),"Guarded movements should never acquire approximate automatic event triggers");
 assert.equal(ORDINARY_SUNG_PRIEST_EVENT_ALIGNMENT.length,ORDINARY_SUNG_SOURCE_ONLY_CUES.length);
+
+// These five observation predicates are documented but NOT MC event bindings.
+// A Schola cue, a nearby priest utterance, a swipe, or even host preparation
+// is insufficient evidence to turn one into an automatic priest event.
+assert.equal(ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS.length,5);
+assert.deepEqual(ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS.map(x=>x.cueId).sort(),
+  [...audit.pendingCueIds].sort());
+assert.equal(new Set(ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS.map(x=>x.observationKey)).size,5);
+for(const row of ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS){
+  assert.equal(row.eventId,null,"An observation key is not a fabricated canonical MC event");
+  assert.equal(row.activation,"SPECIFIED_UNBOUND_NO_TRIGGER");
+  assert.equal(row.automatedIconAllowed,false);
+  assert.equal(row.faithfulPostureAllowed,false);
+  assert.equal(row.scholaClockAllowed,false);
+  assert.ok(row.observationCriterion.length>70);
+  assert.match(row.sourceUrl,/^https:\/\//);
+  assert.ok(row.rubric && row.sourceSectionId);
+  assert.ok(row.forbiddenProxyEvents.length>=2);
+  for(const eventId of row.forbiddenProxyEvents)
+    assert.equal(projectObservedOrdinaryPriestEvent({
+      observedEventId:eventId,independentlyObserved:true,form:"MISSA_CANTATA_INCENSE",
+      sourceSectionId:row.sourceSectionId,eventIndex:new Map(),cueController:null,
+    }),null,"Proxy events must not imply the pending source cue");
+}
+
 const bad=events.map(e=>({...e}));
 bad.find(e=>e.id==="MC-GLR-040").actor="SCHOLA";
 assert.throws(()=>auditOrdinarySungPriestEventAlignment(bad),/mismatched canonical/);
