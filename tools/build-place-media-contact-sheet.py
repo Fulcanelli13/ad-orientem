@@ -40,7 +40,8 @@ def render(rows, label, outfile):
         x=MARGIN+(idx%COLS)*(CELL_W+GAP)
         draw.rounded_rectangle((x,y,x+CELL_W-1,y+CELL_H-1),radius=10,fill=(20,29,40),outline=(64,59,46))
         asset=ROOT / row["asset_path"]
-        if not asset.resolve().is_relative_to((ROOT / "assets/staged/place-media").resolve()):
+        roots=(ROOT / "assets/staged/place-media",ROOT / "assets/staged/place-media-r59")
+        if not any(asset.resolve().is_relative_to(root.resolve()) for root in roots):
             continue
         try:
             with Image.open(asset) as source:
