@@ -1,6 +1,6 @@
 {
   "schema": "SHRINES_PILGRIMAGES_SEED_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "shrines": [
     {
       "shrine_id": "shrine:FR:lourdes-our-lady",
@@ -17,7 +17,8 @@
         "SHR-LOURDES-CONTACT",
         "SHR-LOURDES-PILGRIMAGE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire de pèlerinage lié aux apparitions de la Vierge Marie à sainte Bernadette Soubirous, à Massabielle, en 1858."
     },
     {
       "shrine_id": "shrine:FR:laghet-our-lady",
@@ -50,7 +51,8 @@
         "SHR-PARAY-CONTACT",
         "SHR-PARAY-MARGUERITE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire du Sacré-Cœur lié aux révélations reçues par sainte Marguerite-Marie Alacoque à Paray-le-Monial entre 1673 et 1675."
     },
     {
       "shrine_id": "shrine:FR:chartres-notre-dame",
@@ -65,7 +67,8 @@
         "SHR-CHARTRES-CATHEDRAL",
         "PIL-CHARTRES-NDC"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Cathédrale historique et lieu de pèlerinage marial ; le pèlerinage annuel de Notre-Dame de Chrétienté, à la Pentecôte, s’achève à la cathédrale."
     },
     {
       "shrine_id": "shrine:FR:sainte-anne-d-auray",
@@ -82,7 +85,8 @@
         "SHR-SAINTE-ANNE-IDENTITY",
         "PIL-SAINTE-ANNE-GRAND-PARDON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire breton consacré à sainte Anne, marqué par un cycle annuel de pèlerinages et le Grand Pardon des 25 et 26 juillet."
     },
     {
       "shrine_id": "shrine:IE:knock",
@@ -100,7 +104,8 @@
         "SHR-KNOCK-IDENTITY",
         "PIL-KNOCK-ANNIVERSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire eucharistique et marial international lié à l’apparition silencieuse de Knock du 21 août 1879."
     },
     {
       "shrine_id": "shrine:IE:lough-derg",
@@ -134,7 +139,8 @@
         "SHR-PERE-LAVAL-CENTRE",
         "PIL-PERE-LAVAL-ANNUAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu de pèlerinage diocésain à Sainte-Croix, centré sur le tombeau du bienheureux Jacques-Désiré Laval."
     },
     {
       "shrine_id": "shrine:DE:altoetting-our-lady",
@@ -148,7 +154,8 @@
       "source_ids": [
         "SHR-ALTOETTING-PILGRIMAGE-SITE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Lieu historique de pèlerinage marial en Bavière, centré sur la chapelle des Grâces (Gnadenkapelle), avec une longue tradition de pèlerinages et de témoignages votifs."
     },
     {
       "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
@@ -289,7 +296,8 @@
         "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
         "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire historique québécois consacré à sainte Anne, accueillant les pèlerins depuis plus de trois siècles et marqué par la neuvaine et la fête de juillet."
     },
     {
       "shrine_id": "shrine:CA:notre-dame-du-cap",
@@ -338,7 +346,8 @@
         "SHR-LORETO-HOLY-HOUSE",
         "PIL-LORETO-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire pontifical marial centré sur la Sainte Maison, traditionnellement associée à la maison de Nazareth et à l’Annonciation."
     },
     {
       "shrine_id": "shrine:IT:pompei-rosary",
@@ -355,7 +364,8 @@
         "SHR-POMPEI-CONTACT",
         "PIL-POMPEI-SUPPLICA-MAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire pontifical marial fondé grâce à l’apostolat de saint Bartolo Longo, consacré à la dévotion au Rosaire et à la Supplica."
     },
     {
       "shrine_id": "shrine:PL:jasna-gora-czestochowa",
@@ -370,7 +380,8 @@
         "SHR-JASNA-GORA-CONTACT",
         "PIL-JASNA-GORA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Monastère paulinien et grand sanctuaire marial polonais, centré sur l’icône de Notre-Dame de Częstochowa."
     },
     {
       "shrine_id": "shrine:PL:kalwaria-zebrzydowska",
@@ -401,7 +412,8 @@
         "PIL-WALSINGHAM-FEAST",
         "PIL-WALSINGHAM-LMS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire national catholique et basilique de Walsingham, restaurés autour de la Slipper Chapel et consacrés au mystère de l’Incarnation et à Notre-Dame de Walsingham."
     },
     {
       "shrine_id": "shrine:GB:holywell-st-winefride",
@@ -528,7 +540,8 @@
         "SHR-NAMUGONGO-OFFICIAL",
         "PIL-NAMUGONGO-MARTYRS-DAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Grand sanctuaire catholique de l’archidiocèse de Kampala consacré aux martyrs de l’Ouganda, où se tient chaque année un pèlerinage national le 3 juin."
     },
     {
       "shrine_id": "shrine:UG:munyonyo-martyrs",
@@ -563,7 +576,8 @@
         "SHR-GUADALUPE-MX-CONTACT",
         "PIL-GUADALUPE-MX-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial national de Tepeyac, à Mexico, accueillant de nombreux pèlerins autour de la dévotion à Notre-Dame de Guadalupe."
     },
     {
       "shrine_id": "shrine:MX:zapopan-our-lady",
@@ -593,7 +607,8 @@
         "SHR-APARECIDA-CONTACT",
         "PIL-APARECIDA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial national du Brésil et grand centre de pèlerinage, où la neuvaine et la fête de Notre-Dame d’Aparecida culminent le 12 octobre."
     },
     {
       "shrine_id": "shrine:BR:nazare-belem",
@@ -749,7 +764,8 @@
         "SHR-FATIMA-CONTACT",
         "PIL-FATIMA-MAY13"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Sanctuaire marial international de la Cova da Iria, lié aux apparitions de 1917 et aux grands pèlerinages anniversaires."
     },
     {
       "shrine_id": "shrine:PT:sameiro",
@@ -960,7 +976,8 @@
         "PIL-RUE-DU-BAC",
         "OBS-RUE-DU-BAC-NOV27"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "Chapelle parisienne liée aux apparitions de 1830 à sainte Catherine Labouré ; elle est devenue un lieu de pèlerinage marial consacré à Notre-Dame de la Médaille miraculeuse."
     },
     {
       "shrine_id": "shrine:DE:wigratzbad-maria-vom-sieg",
@@ -1252,14 +1269,15 @@
       "shrine_kind": "SAINT",
       "recognition_class": "OFFICIAL_SANCTUARY",
       "dedication": "St Thérèse of the Child Jesus",
-      "origin_summary": "Documented Catholic shrine, basilica or pilgrimage destination associated with St Thérèse of the Child Jesus. The linked source establishes the location or active devotion, not a particular app prayer form.",
+      "origin_summary": "The Basilica of Saint Thérèse at Lisieux welcomes pilgrims praying in the footsteps of Saint Thérèse of the Child Jesus, including at her reliquary.",
       "associated_saints": [
         "Saint Thérèse of Lisieux"
       ],
       "source_ids": [
         "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "La basilique Sainte-Thérèse de Lisieux accueille les pèlerins venus prier sur les pas de sainte Thérèse de l’Enfant-Jésus, notamment auprès de son reliquaire."
     },
     {
       "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
@@ -1578,14 +1596,15 @@
       "shrine_kind": "SAINT",
       "recognition_class": "OFFICIAL_SANCTUARY",
       "dedication": "St Francis of Assisi",
-      "origin_summary": "Documented Catholic shrine, basilica or pilgrimage destination associated with St Francis of Assisi. The linked source establishes the location or active devotion, not a particular app prayer form.",
+      "origin_summary": "The Basilica of Saint Francis at Assisi houses the tomb of Saint Francis in the crypt of the Lower Church. Pilgrims visit his resting place for prayer.",
       "associated_saints": [
         "Saint Francis of Assisi"
       ],
       "source_ids": [
         "SHR-PIL-BULK-IT-basilica-san-francesco-assisi"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "origin_summary_fr": "La basilique Saint-François d’Assise abrite le tombeau de saint François dans la crypte de l’église inférieure. Le sanctuaire accueille les pèlerins venus se recueillir auprès de sa sépulture."
     },
     {
       "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
@@ -1642,14 +1661,15 @@
       "shrine_kind": "SAINT",
       "recognition_class": "OTHER_OFFICIAL",
       "dedication": "St Francis Xavier",
-      "origin_summary": "Documented Catholic shrine, basilica or pilgrimage destination associated with St Francis Xavier. The linked source establishes the location or active devotion, not a particular app prayer form.",
+      "origin_summary": "The Basilica of Bom Jesus at Old Goa houses the reliquary of Saint Francis Xavier in a chapel of its southern transept; the saint's tomb is a pilgrimage destination.",
       "associated_saints": [
         "Saint Francis Xavier"
       ],
       "source_ids": [
         "SHR-PIL-BULK-IN-basilica-bom-jesus-old-goa"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "Dans le Vieux-Goa, la basilique du Bon-Jésus conserve la châsse de saint François Xavier dans une chapelle du transept sud. Sa tombe est un lieu de pèlerinage."
     },
     {
       "shrine_id": "shrine:20261009:RW:sanctuaire-kibeho",
@@ -3456,7 +3476,8 @@
         "SHR-LOURDES-PILGRIMAGE",
         "SHR-LOURDES-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage ouvert toute l’année, accueillant des pèlerins individuels et des groupes organisés."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:laghet-destination",
@@ -3505,7 +3526,8 @@
         "SHR-PARAY-PILGRIM-PATH",
         "SHR-PARAY-SACRED-HEART"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage proposant un parcours officiel en quatre étapes sur le site."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:chartres-pentecost",
@@ -3523,7 +3545,8 @@
         "PIL-CHARTRES-NDC",
         "SHR-CHARTRES-CATHEDRAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel de trois jours à pied, de Saint-Sulpice à Paris jusqu’à Notre-Dame de Chartres, pendant la Pentecôte."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:sainte-anne-d-auray-destination",
@@ -3539,7 +3562,8 @@
         "SHR-SAINTE-ANNE-IDENTITY",
         "PIL-SAINTE-ANNE-CHEMIN"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage breton ouvert, accueillant chaque année des pèlerinages organisés."
     },
     {
       "pilgrimage_id": "pilgrimage:FR:sainte-anne-grand-pardon",
@@ -3554,7 +3578,8 @@
       "source_ids": [
         "PIL-SAINTE-ANNE-GRAND-PARDON"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand Pardon annuel autour de la fête de sainte Anne, dont les principales célébrations ont lieu les 25 et 26 juillet."
     },
     {
       "pilgrimage_id": "pilgrimage:IE:knock-destination",
@@ -3568,7 +3593,8 @@
         "SHR-KNOCK-IDENTITY",
         "PIL-KNOCK-ORGANISERS"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial et eucharistique international, accueillant des groupes durant la saison des pèlerinages."
     },
     {
       "pilgrimage_id": "pilgrimage:IE:knock-apparition-anniversary",
@@ -3583,7 +3609,8 @@
       "source_ids": [
         "PIL-KNOCK-ANNIVERSARY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Commémoration annuelle de l’apparition de Knock du 21 août 1879, avec marche des témoins et messe d’action de grâces."
     },
     {
       "pilgrimage_id": "pilgrimage:IE:lough-derg-three-day",
@@ -3618,7 +3645,8 @@
         "PIL-PERE-LAVAL-ANNUAL",
         "SHR-PERE-LAVAL-CENTRE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage diocésain annuel à Sainte-Croix, à l’approche de la fête du bienheureux Jacques-Désiré Laval, avec des départs à pied attestés depuis Port-Louis et Terre-Rouge."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:altoetting-destination",
@@ -3631,7 +3659,8 @@
       "source_ids": [
         "SHR-ALTOETTING-PILGRIMAGE-SITE"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial autour de la chapelle des Grâces, accueillant des groupes inscrits et un programme régulier de célébrations."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:altoetting-assumption",
@@ -3646,7 +3675,8 @@
       "source_ids": [
         "SHR-ALTOETTING-CURRENT-PROGRAMME"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Célébrations annuelles de l’Assomption : grande procession aux flambeaux le 14 août et procession solennelle le 15 août."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:kevelaer-destination",
@@ -3842,7 +3872,8 @@
         "SHR-SAINT-ANNE-BEAUPRE-CONTACT",
         "PIL-SAINT-ANNE-BEAUPRE-NOVENA"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu historique de pèlerinage à sainte Anne, marqué par la neuvaine du 17 au 25 juillet et par la fête du 26 juillet."
     },
     {
       "pilgrimage_id": "pilgrimage:CA:notre-dame-du-cap-destination",
@@ -3905,7 +3936,8 @@
         "SHR-LORETO-HOLY-HOUSE",
         "PIL-LORETO-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage autour de la Sainte Maison, avec les célébrations annuelles de la Venuta et de Notre-Dame de Lorette les 9 et 10 décembre."
     },
     {
       "pilgrimage_id": "pilgrimage:IT:pompei-destination",
@@ -3921,7 +3953,8 @@
         "SHR-POMPEI-CONTACT",
         "PIL-POMPEI-SUPPLICA-MAY"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage du Rosaire, où la Supplica du 8 mai rassemble chaque année de nombreux pèlerins."
     },
     {
       "pilgrimage_id": "pilgrimage:PL:jasna-gora-destination",
@@ -3937,7 +3970,8 @@
         "SHR-JASNA-GORA-CONTACT",
         "PIL-JASNA-GORA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand lieu de pèlerinage marial en Pologne, accueillant de nombreux groupes et marcheurs, notamment pour la fête de Notre-Dame de Częstochowa le 26 août."
     },
     {
       "pilgrimage_id": "pilgrimage:PL:kalwaria-destination",
@@ -3969,7 +4003,8 @@
         "SHR-WALSINGHAM-CONTACT",
         "PIL-WALSINGHAM-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Sanctuaire national catholique de pèlerinage, où Notre-Dame de Walsingham est célébrée le 24 septembre."
     },
     {
       "pilgrimage_id": "pilgrimage:GB:walsingham-lms",
@@ -3987,7 +4022,8 @@
         "PIL-WALSINGHAM-LMS",
         "SHR-WALSINGHAM-CONTACT"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel traditionnel à pied d’Ely à Walsingham, avec messes traditionnelles solennelles, dévotions et procession au sanctuaire national catholique."
     },
     {
       "pilgrimage_id": "pilgrimage:GB:holywell-destination",
@@ -4133,7 +4169,8 @@
         "PIL-NAMUGONGO-MARTYRS-DAY",
         "SHR-NAMUGONGO-OFFICIAL"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Pèlerinage annuel national et international à Namugongo, le 3 juin, pour la fête des martyrs de l’Ouganda."
     },
     {
       "pilgrimage_id": "pilgrimage:UG:munyonyo-destination",
@@ -4164,7 +4201,8 @@
         "SHR-GUADALUPE-MX-CONTACT",
         "PIL-GUADALUPE-MX-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand lieu de pèlerinage marial à Tepeyac, dont les principales célébrations de Notre-Dame de Guadalupe se tiennent le 12 décembre."
     },
     {
       "pilgrimage_id": "pilgrimage:MX:zapopan-destination",
@@ -4211,7 +4249,8 @@
         "SHR-APARECIDA-CONTACT",
         "PIL-APARECIDA-FEAST"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Grand pèlerinage marial national, avec une neuvaine du 3 au 12 octobre qui s’achève par la fête patronale et une procession solennelle."
     },
     {
       "pilgrimage_id": "pilgrimage:BR:nazare-destination",
@@ -4385,7 +4424,8 @@
         "SHR-FATIMA-CONTACT",
         "PIL-FATIMA-MAY13"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial international, marqué par les pèlerinages anniversaires de mai à octobre et par la commémoration du 13 mai."
     },
     {
       "pilgrimage_id": "pilgrimage:PT:sameiro-destination",
@@ -4661,7 +4701,8 @@
         "PIL-RUE-DU-BAC",
         "OBS-RUE-DU-BAC-NOV27"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "Lieu de pèlerinage marial international, associé aux apparitions de 1830 et à la célébration de Notre-Dame de la Médaille miraculeuse le 27 novembre."
     },
     {
       "pilgrimage_id": "pilgrimage:DE:wigratzbad-destination",
@@ -5066,11 +5107,12 @@
       "destination_shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Documented destination pilgrimage or shrine visit. Local dates, pilgrimage programmes and special indulgences are not asserted without independent liturgical evidence.",
+      "scope_note": "Pilgrims can join prayer services and follow a guided pilgrimage in the footsteps of Saint Thérèse; consult the sanctuary for current programmes.",
       "source_ids": [
         "SHR-PIL-BULK-FR-basilique-sainte-therese-lisieux"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La basilique propose des temps de prière et un pèlerinage sur les pas de sainte Thérèse ; le programme et les horaires dépendent du sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:BE:sanctuaire-sainte-julienne-cornillon:destination",
@@ -5339,11 +5381,12 @@
       "destination_shrine_id": "shrine:20261009:IT:basilica-san-francesco-assisi",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Documented destination pilgrimage or shrine visit. Local dates, pilgrimage programmes and special indulgences are not asserted without independent liturgical evidence.",
+      "scope_note": "Pilgrims visit the basilica and tomb of Saint Francis; consult the sanctuary for current visitor arrangements.",
       "source_ids": [
         "SHR-PIL-BULK-IT-basilica-san-francesco-assisi"
       ],
-      "confidence": "HIGH"
+      "confidence": "HIGH",
+      "scope_note_fr": "La basilique et le tombeau de saint François accueillent les pèlerins ; consultez le sanctuaire pour les conditions et les horaires de visite."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:IT:basilica-santa-rita-cascia:destination",
@@ -5391,11 +5434,12 @@
       "destination_shrine_id": "shrine:20261009:IN:basilica-bom-jesus-old-goa",
       "route_ids": [],
       "temporal_link_ids": [],
-      "scope_note": "Documented destination pilgrimage or shrine visit. Local dates, pilgrimage programmes and special indulgences are not asserted without independent liturgical evidence.",
+      "scope_note": "The Basilica of Bom Jesus, containing the reliquary of Saint Francis Xavier, is a pilgrimage destination; consult the site for current visitor arrangements.",
       "source_ids": [
         "SHR-PIL-BULK-IN-basilica-bom-jesus-old-goa"
       ],
-      "confidence": "MEDIUM_HIGH"
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La basilique du Bon-Jésus, qui conserve la châsse de saint François Xavier, est un lieu de pèlerinage ; les visites suivent le programme propre au sanctuaire."
     },
     {
       "pilgrimage_id": "pilgrimage:20261009:RW:sanctuaire-kibeho:destination",
