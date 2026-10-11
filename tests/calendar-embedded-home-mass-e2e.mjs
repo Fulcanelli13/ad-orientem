@@ -84,6 +84,17 @@ try{
   });
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoCalYearTrack').count(),1,"The canonical liturgical-year timeline must be retained");
   await waitForWeekLoader(page);
+  if(await page.locator(".aoTodayExploreFoot").isVisible()){
+    console.log("FOOTER_LAYOUT_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
+      const foot=document.querySelector(".aoTodayExploreFoot");
+      const home=document.querySelector(".homeScreen.aoTodayV2");
+      const trail=[];let node=foot;
+      while(node&&trail.length<8){trail.push({tag:node.tagName,cls:node.className,display:getComputedStyle(node).display,hidden:node.hidden});node=node.parentElement}
+      return {view:home?.dataset.aoHomeCalendarView,rootContains:home?.contains(foot),trail,
+        inlineVisible:Boolean(home?.querySelector("[data-home-calendar-inline] #ao-calendar-modular-root")),
+        footStyle:getComputedStyle(foot).display,stylesheetCount:document.querySelectorAll("[data-ao-today-v2-style]").length};
+    })));
+  }
   assert.equal(await page.locator(".aoTodayExploreFoot").isVisible(),false,
     "Old Today editorials must be hidden while viewing the Calendar");
   await page.screenshot({path:resolve(shots,"today-year-"+width+".png"),fullPage:true});
