@@ -1,0 +1,28 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+
+const S=JSON.parse(readFileSync(new URL("../data/geography/research/mass-alphonsus-volume-xiii-two-journeys-20261011.v1.json",import.meta.url),"utf8"));
+const mass=JSON.parse(readFileSync(new URL("../data/learn/mass-formation-campion.v1.json",import.meta.url),"utf8"));
+const fortescue=JSON.parse(readFileSync(new URL("../data/geography/research/mass-scripture-fortescue-order-extract-20261011.v1.json",import.meta.url),"utf8"));
+assert.equal(S.schema,"MASS_ALPHONSUS_XIII_DUAL_READING_V1");
+assert.equal(S.status,"RESEARCH_SOURCE_INDEX_NO_PRODUCT_IMPLEMENTATION");
+assert.equal(S.sourceUnits.length,7);
+assert.equal(S.dujardinMeditativeStations.length,22);
+assert.equal(S.alphonsusResearchTopics.length,10);
+assert.ok(S.edition.volume.includes("Volume XIII") && S.edition.editor.includes("Grimm"));
+assert.ok(S.sourceUnits.find(x=>x.id==="V13_PREFACE_DUJARDIN").author.includes("Dujardin"));
+assert.ok(S.sourceUnits.find(x=>x.id==="V13_ALPHONSUS_SACRIFICE").author.startsWith("St Alphonsus"));
+assert.ok(S.sourceUnits.find(x=>x.id==="V13_EDITOR_MIRACLE").author.includes("Editorial"));
+assert.ok(S.editorialOwnership.dujardin.includes("NOT written by St Alphonsus"));
+assert.ok(S.editorialOwnership.anonymousFrenchAuthor.includes("uncertain"));
+assert.deepEqual(S.dujardinMeditativeStations.map(x=>x.sequence),Array.from({length:22},(_,i)=>i+1));
+assert.equal(new Set(S.dujardinMeditativeStations.map(x=>x.id)).size,22);
+assert.ok(S.dujardinMeditativeStations.every(x=>!x.publishable && !x.authorialBiblicalCitationsCertified));
+assert.ok(S.dujardinMeditativeStations.every(x=>x.note.includes("do not attribute exact verse labels")));
+assert.ok(S.dujardinMeditativeStations.find(x=>x.id==="DJ16").evidenceClass==="DOCTRINAL_REVIEW_REQUIRED");
+assert.ok(S.publicationConstraints.some(x=>x.includes("all of Scripture")));
+assert.ok(S.publicationConstraints.some(x=>x.includes("Crampon")));
+assert.equal(mass.route,"learn.mass");
+assert.equal(mass.stages.length,8);
+assert.ok(fortescue.existingProductionOwners.scriptureReadingBridge.includes("scripture-reading-context.js"));
+console.log("PASS St Alphonsus XIII volume/source ownership:",S.sourceUnits.length,"source units; Dujardin",S.dujardinMeditativeStations.length,"optional meditations; independent Bible theology:",S.alphonsusResearchTopics.length,"study leads");
