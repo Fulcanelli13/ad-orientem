@@ -18,6 +18,20 @@ MEDIA="https://commons.wikimedia.org/w/api.php"
 UA="AdOrientemResearch/2.0 (public-domain sacred-art research, 10 Oct 2026)"
 # Upfront iconographic/source targets; search results are title-only hints.
 TASKS=[
+# Repeated-Gospel P0 targets: official museum originals are independently
+# catalogued in data/calendar/sacred-art-primary-museum-leads-20261011.v1.json.
+# Search Commons strictly as a *separate* source-image reproduction lane;
+# titles/licence claims never certify identity, painting medium or app use.
+("scripture.keys-to-peter","Guido Reni Christ giving keys Peter painting",
+ r"\bchrist.*(?:giving|entrusting).*keys.*peter\b|\bconsegna delle chiavi\b|\bremettant les cl[eé]s\b",1),
+("scripture.raising-widows-son","Resurrection son widow of Nain Kotarbinski painting",
+ r"\b(?:raising|resurrection).*widow.*nain\b|\bwskrzeszenie syna wdowy z nain\b|\b(?:youth|son).*of nain\b",2),
+("scripture.tribute-money","Titian Tribute Money oil painting",
+ r"\btribute money\b|\bdenier de c[eé]sar\b|\btributo di cesare\b",2),
+("scripture.wise-foolish-virgins","Wise and Foolish Virgins oil painting",
+ r"\bwise and foolish virgins\b|\bwise virgins and foolish virgins\b|\bvierges sages.*vierges folles\b",2),
+("scripture.talents","Parable of the Talents oil painting",
+ r"\bparable of the talents\b|\bparabola dei talenti\b|\bparabole des talents\b",1),
 ("calendar.palm-sunday","Entry into Jerusalem painting",r"\bentry into jerusalem\b|\bchrist entering jerusalem\b",2),
 ("calendar.transfiguration","Transfiguration of Christ oil painting",r"\btransfiguration\b",2),
 ("calendar.holy-rosary","Our Lady of the Rosary oil painting",r"\bour lady of the rosary\b|\bmadonna of the rosary\b",2),
