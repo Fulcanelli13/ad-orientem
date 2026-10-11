@@ -92,3 +92,17 @@ Cross-reference each source directly against the **already-established canonical
 Record the precise printed page and available PDF page, word/phrase trigger, actor, movement, station/position, gesture, voice, form and conditional exception. Alphonsus's procedural statements may corroborate gestures; Fortescue's mainly historical statements are context, not independent proof of precise 1962 priest action. These books predate 1962: if a discrepancy cannot be settled from the existing 1962 SOT, **flag it as unresolved instead of widening research**.
 
 First direct, page-linked book-only reconciliation: `data/mass/alphonsus-fortescue-direct-book-evidence.v1.json` (20 cue-specific priest-action records). Existing historical/source files remain preserved for audit lineage but do not authorize any new source acquisition or mandatory facsimile-review pipeline.
+
+
+## Resolution of 16 Low-vs-Sung action differences — user-supplied books only
+
+Evidence reviewed directly in the supplied St Alphonsus *The Holy Mass* (PDF text at printed pp. 109, 111, 124, 126–128, 131, 142–143, 164, 166–170, 179, 192–193, 199), and cross-linked to existing 1962 SOT; Fortescue's historical study supplies context, **not** a second source of binding choreography.
+
+- **Six valid form/voice differences:** C0042 (Introit), C0053 (Gloria), C0075 (Epistle, conditioned actor), C0089 (Credo), C0109 (Offertory antiphon), C0249 (Communion antiphon). Do not collapse parallel priest and Schola clocks.
+- **Seven actor/timing/voice ownership questions:** C0076 (*Deo gratias* is a minister/choir response, not a priest sung text); C0081 (centre-to-Gospel-side movement must represent departure and arrival separately); C0145/C0148 (priest's Sanctus/Benedictus actions cannot be keyed to the Schola's chant time); C0196 (audible Nobis quoque only at entry); C0211 (paten object transition after Amen, with form-specific minister hand-off); C0229–0231 (three *Domine non sum dignus* repetitions require one priest breast strike each, not three on the first cue).
+- **One shared gesture with different wording:** C0088 Gospel-book kiss, quiet vs secret; not a Low/Sung action difference.
+- **Two historical overlays, not Low/Sung deltas:** C0042 Requiem (the celebrant signs over the book, not himself); C0088 before a bishop (historical prelate-book-kiss protocol); both must pass the existing 1962 form-compatibility gate before runtime application.
+
+These are **16 evidence records on 14 distinct canonical cue IDs** (C0042 and C0088 each have ordinary plus exceptional rows). Every record, source excerpt, proposed correction and human-review caveat is stored in `data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json`. The regression test `tests/mass-two-books-form-differences-adjudication.mjs` verifies the review map against the original 113 source locators and the canonical Low/Sung corpora.
+
+**Next integration priorities:** reconcile the seven actor/timing entries with actual runtime ownership before adding any new rendered gesture; implement 1962 form gates for Requiem and bishop contexts; retain separately certified Low and Missa Cantata variants; then test the phone LIVE 48-card projection and Priest Mode against the existing canon.
