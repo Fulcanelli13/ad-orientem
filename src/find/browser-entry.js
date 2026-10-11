@@ -377,21 +377,28 @@ export function createFindOwner(win=globalThis){
       const mapNode=node.querySelector?.("[data-find-map]");
       // Local directory readiness is not proof the third-party map library or
       // tiles have loaded. Show state before the remote module import starts.
-      const showMapRecovery=()=>{
-        if(!mapNode||token!==paintToken||!openState)return;
+      const showMapRecovery=(noMappedPins=false)=>{
+        if(!mapNode||token!==paintToken||!openState||
+           typeof mapNode.replaceChildren!=="function")return;
         const panel=win.document.createElement("div");
         panel.className="aoFindMapFallback";
         const title=win.document.createElement("strong");
-        title.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
+        title.textContent=noMappedPins
+          ?(language(win)==="fr"?"Aucun lieu cartographié":"No mapped places")
+          :(language(win)==="fr"?"Carte indisponible":"Map unavailable");
         const detail=win.document.createElement("span");
-        detail.textContent=language(win)==="fr"
-          ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
-          :"Use search above to open any place and its source references.";
+        detail.textContent=noMappedPins
+          ?(language(win)==="fr"
+            ?"Essayez un autre filtre ou recherchez un lieu par son nom."
+            :"Try another filter or search for a place by name.")
+          :(language(win)==="fr"
+            ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
+            :"Use search above to open any place and its source references.");
         panel.append(title,detail);mapNode.replaceChildren(panel);
-        mapNode.dataset.aoMapState="unavailable";
+        if(mapNode.dataset)mapNode.dataset.aoMapState=noMappedPins?"empty":"unavailable";
       };
-      if(mapNode){
-        mapNode.dataset.aoMapState="loading";
+      if(mapNode?.append&&win.document?.createElement){
+        if(mapNode.dataset)mapNode.dataset.aoMapState="loading";
         const pending=win.document.createElement("div");
         pending.className="aoExploreMapLoading";
         pending.setAttribute("role","status");pending.setAttribute("aria-live","polite");
@@ -424,8 +431,8 @@ export function createFindOwner(win=globalThis){
           showMapRecovery();return true;
         }
         if(!nextHandle){
-          // Having zero publishable map pins is not a failed Explore route.
-          showMapRecovery();return true;
+          // Zero publishable pins is not a network failure or failed Explore route.
+          showMapRecovery(true);return true;
         }
         mapHandle=nextHandle;
       }catch(error){
