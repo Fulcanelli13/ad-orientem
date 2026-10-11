@@ -1,0 +1,531 @@
+{
+  "schema": "MASS_ALPHONSUS_XIII_DUAL_READING_V1",
+  "status": "RESEARCH_SOURCE_INDEX_NO_PRODUCT_IMPLEMENTATION",
+  "date": "2026-10-11",
+  "edition": {
+    "volume": "The Complete Ascetical Works of St. Alphonsus, Volume XIII: The Holy Mass",
+    "editor": "Rev. Eugene Grimm, C.SS.R.",
+    "imprint": "Benziger English Centenary Edition 1889",
+    "primaryPdf": "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+    "textMirror": "https://www.scribd.com/document/401813611/alphonsusworks13-pdf",
+    "separateAlphonsusTreatiseWikisource": "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ",
+    "accessCaveat": "PDF original too large for page-rendering tool here; contents and source passages inspected through independently indexed full-volume transcription and existing short-treatise Wikisource. Printed pages not PDF page indices."
+  },
+  "editorialOwnership": {
+    "dujardin": "Only editorial preface meditation §III is Dujardin. It is NOT written by St Alphonsus.",
+    "alphonsus": "The Sacrifice of Jesus Christ, Short Explanation, major practical/ascetical treatises originate with St Alphonsus; verify Grimm additions and later contributors individually.",
+    "anonymousFrenchAuthor": "St Alphonsus expressly acknowledges adapting a learned French author's work; Grimm speculates on Pierre de Condren/derivative published by Quesnel but does NOT conclusively identify original.",
+    "sourceDistinction": "Dujardin's Passion/Salvation-allegory is a voluntary meditation; Alphonsus biblical sacrifice is a theological synthesis; Fortescue is a historical-liturgical external check."
+  },
+  "sourceUnits": [
+    {
+      "id": "V13_PREFACE_DUJARDIN",
+      "title": "Mass considered in its Relations to the Life of Jesus Christ, to the Ecclesiastical Year, and to the Universal History of Religion",
+      "author": "Rev. Léopold J. Dujardin, C.SS.R.",
+      "editionPosition": "Grimm editorial Preface §III",
+      "printedPages": "17–21",
+      "contentKind": "AUTHORIAL_DEVOTIONAL_ALLEGORY",
+      "theme": "Mass gestures contemplated as episodes of salvation history, Christ's life and ecclesiastical year",
+      "use": "OPTIONAL_CHRIST_LIFE_MEDITATION",
+      "doNot": "Do not assign the text to St Alphonsus or infer historical origin of ceremonies",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_ALPHONSUS_SACRIFICE",
+      "title": "The Sacrifice of Jesus Christ",
+      "author": "St Alphonsus Maria de Liguori",
+      "editionPosition": "Treatise part I, sections I–II",
+      "printedPages": "25–37",
+      "contentKind": "ASCETICAL_SACRIFICIAL_TYPOLOGY",
+      "theme": "Four purposes of sacrifice, five characteristics of Old Law victims, fulfilment in Incarnation, Calvary, sacramental Eucharist and heavenly life",
+      "use": "BIBLICAL_SALVATION_HISTORY_AND_THEOLOGY",
+      "doNot": "This adaptation acknowledges an unidentified earlier French author; Grimm raises Condren as a possible underlying source but leaves identity unresolved",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ"
+      ]
+    },
+    {
+      "id": "V13_ALPHONSUS_PRAYER_EXPLANATION",
+      "title": "Short Explanation of the Prayers of Mass",
+      "author": "St Alphonsus Maria de Liguori",
+      "editionPosition": "After Sacrifice treatise, six segments",
+      "printedPages": "38–67",
+      "contentKind": "LITURGICAL_PRAYER_COMMENTARY_WITH_SOME_HISTORICAL_CLAIMS",
+      "theme": "Foot of altar; Introit–Credo; Offertory–Preface; Canon; Pater noster–Communion; thanksgiving",
+      "use": "SOURCE_CLAIMS_TO_LEARN_MASS_PRAYER_ANCHORS",
+      "doNot": "Historical dates/assignments must be compared with Fortescue/Jungmann and 1962 wording",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://en.wikisource.org/wiki/The_Complete_Ascetical_Works_of_St._Alphonsus/Volume_6/The_Sacrifice_of_Jesus_Christ"
+      ]
+    },
+    {
+      "id": "V13_EDITOR_MIRACLE",
+      "title": "Account of a striking miracle: Hosts discovered near Naples (1772)",
+      "author": "Editorial addition to Grimm's edition",
+      "editionPosition": "Between prayer exposition and ceremonial treatise",
+      "printedPages": "68–76",
+      "contentKind": "EDITORIAL_DEVOTIONAL_HISTORICAL_ACCOUNT",
+      "theme": "Eucharistic miracle story",
+      "use": "OPTIONAL_HAGIOGRAPHICAL_RESEARCH_ONLY",
+      "doNot": "Not a Scriptural typology, not automatic production miracle claim; individual factual verification required",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_ALPHONSUS_CEREMONIES",
+      "title": "The Ceremonies of the Mass",
+      "author": "St Alphonsus Maria de Liguori, with editor-supplied appendix and notes",
+      "editionPosition": "Part II, chapters I–XVII, appendix and related dissertation",
+      "printedPages": "79–265",
+      "contentKind": "PRACTICAL_CEREMONIAL_HISTORICAL_REFERENCE",
+      "theme": "Priest's preparation, celebrant's gestures, rubrical order, Requiem, Communion, ceremony irregularities and nineteenth-century editorial apparatus",
+      "use": "COMPARE_GESTURES_WITH_1962_RITUS_SERVANDUS",
+      "doNot": "Not an authoritative 1962 norm; nineteenth-century footnotes/editorial prescriptions differ from 1962",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_PREPARATION_THANKSGIVING",
+      "title": "Preparation for Mass and Thanksgiving after It",
+      "author": "Compilations of St Alphonsus's works and attributed prayers, with historical contributors",
+      "editionPosition": "Part III, three component parts",
+      "printedPages": "267–415",
+      "contentKind": "DEVOTIONAL_PRAYERS_AND_MEDITATIONS",
+      "theme": "Before/after Mass, weekly considerations, Passion meditations, before/after Communion and attributed traditional prayers",
+      "use": "PRAYER_LIBRARY_AND_PRE_POST_MASS_DEVOTION",
+      "doNot": "Do not attribute every included prayer to St Alphonsus (e.g. St Thomas, St Bonaventure and St Francis de Sales are named)",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    },
+    {
+      "id": "V13_HURRIED_MASS_OFFICE",
+      "title": "The Mass and the Office that are Hurriedly Said",
+      "author": "St Alphonsus Maria de Liguori",
+      "editionPosition": "Part IV",
+      "printedPages": "417–464",
+      "contentKind": "ASCETICAL_PASTORAL_EXHORTATION",
+      "theme": "Attention, dignity, priestly dispositions and reverent celebration",
+      "use": "PRIEST_FORMATION_OR_CELEBRANT_CONTEXT_NOT_MAIN_BIBLE_ATLAS",
+      "doNot": "Not a Bible chronology or proof of ceremony origins",
+      "sourceLinks": [
+        "https://www.papastronsay.com/publications/library/Saint%20Alphonsus/the_holy_mass.pdf",
+        "https://www.scribd.com/document/401813611/alphonsusworks13-pdf"
+      ]
+    }
+  ],
+  "dujardinMeditativeStations": [
+    {
+      "id": "DJ01",
+      "sequence": 1,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "Preparation",
+      "prayerAnchor": "PREPARATION",
+      "authorialMeditationSummary": "Creation, angels and redemption",
+      "bibleResearchSuggestions": "Genesis 1–2; Revelation 5",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ02",
+      "sequence": 2,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "The beginning of Mass",
+      "prayerAnchor": "PRAYERS_AT_FOOT",
+      "authorialMeditationSummary": "Adam's homage, reception of God's law, the Fall, repentance and promised Redeemer",
+      "bibleResearchSuggestions": "Genesis 1–3",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ03",
+      "sequence": 3,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "Kyrie eleison",
+      "prayerAnchor": "KYRIE",
+      "authorialMeditationSummary": "Patriarchs and prophets longing for Messiah",
+      "bibleResearchSuggestions": "Genesis 12; Isaiah 9",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ04",
+      "sequence": 4,
+      "sourceSection": "Preface §III, printed p.17–18",
+      "printedHeading": "Gloria",
+      "prayerAnchor": "GLORIA",
+      "authorialMeditationSummary": "Angels and shepherds at the Nativity",
+      "bibleResearchSuggestions": "Luke 2:8–14",
+      "evidenceClass": "LITURGICAL_WORDS_AND_MEDITATION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ05",
+      "sequence": 5,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Prayer / Collect",
+      "prayerAnchor": "COLLECT",
+      "authorialMeditationSummary": "Christ's hidden life and fast in the wilderness",
+      "bibleResearchSuggestions": "Luke 2:39–52; Matthew 4:1–11",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ06",
+      "sequence": 6,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Epistle",
+      "prayerAnchor": "EPISTLE",
+      "authorialMeditationSummary": "Prophets and precursor preparing the people for Christ",
+      "bibleResearchSuggestions": "Isaiah 40:3; Mark 1:1–8",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ07",
+      "sequence": 7,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Gospel",
+      "prayerAnchor": "GOSPEL",
+      "authorialMeditationSummary": "Christ instructing the faithful in the Gospels",
+      "bibleResearchSuggestions": "Matthew 5–7",
+      "evidenceClass": "EDITORIAL_BIBLE_CONTEXT",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ08",
+      "sequence": 8,
+      "sourceSection": "Preface §III, printed p.18–19",
+      "printedHeading": "Credo",
+      "prayerAnchor": "CREDO",
+      "authorialMeditationSummary": "Profession of revealed truths and conciliar symbol",
+      "bibleResearchSuggestions": "—",
+      "evidenceClass": "NON_EPISODIC_CHURCH_DOCTRINE",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ09",
+      "sequence": 9,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Offertory",
+      "prayerAnchor": "OFFERTORY",
+      "authorialMeditationSummary": "Last Supper and transition from Old Covenant figures to New sacrifice",
+      "bibleResearchSuggestions": "Luke 22:7–20; Exodus 12",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ10",
+      "sequence": 10,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Lavabo",
+      "prayerAnchor": "LAVABO",
+      "authorialMeditationSummary": "Washing of apostles' feet",
+      "bibleResearchSuggestions": "John 13:1–17",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ11",
+      "sequence": 11,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Orate fratres",
+      "prayerAnchor": "ORATE_FRATRES",
+      "authorialMeditationSummary": "Faithful united with the priest's intercession",
+      "bibleResearchSuggestions": "—",
+      "evidenceClass": "NON_EPISODIC_DEVOTIONAL_INSTRUCTION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ12",
+      "sequence": 12,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Preface",
+      "prayerAnchor": "PREFACE",
+      "authorialMeditationSummary": "Christ giving thanks before institution of Eucharist",
+      "bibleResearchSuggestions": "Matthew 26:26–27",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ13",
+      "sequence": 13,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Memento for living",
+      "prayerAnchor": "CANON_MEMENTO_VIVOS",
+      "authorialMeditationSummary": "Christ's intercession leaving Upper Room for Gethsemane",
+      "bibleResearchSuggestions": "John 17; Luke 22:39–46",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ14",
+      "sequence": 14,
+      "sourceSection": "Preface §III, printed p.19–20",
+      "printedHeading": "Hanc igitur",
+      "prayerAnchor": "CANON_HANC_IGITUR",
+      "authorialMeditationSummary": "Old Law laying on of hands over sacrificial victim",
+      "bibleResearchSuggestions": "Leviticus 1:4",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ15",
+      "sequence": 15,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Consecration",
+      "prayerAnchor": "CANON_CONSECRATION",
+      "authorialMeditationSummary": "Crucifixion, death and elevation contemplated with Eucharistic mystery",
+      "bibleResearchSuggestions": "John 19:16–30",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ16",
+      "sequence": 16,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Memento for dead",
+      "prayerAnchor": "CANON_MEMENTO_DEFUNCTORUM",
+      "authorialMeditationSummary": "Christ's death and descent among the dead as devotional rationale for prayers for deceased",
+      "bibleResearchSuggestions": "1 Peter 3:18–20; 1 Peter 4:6",
+      "evidenceClass": "DOCTRINAL_REVIEW_REQUIRED",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ17",
+      "sequence": 17,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Pater noster",
+      "prayerAnchor": "PATER_NOSTER",
+      "authorialMeditationSummary": "Tomb of Christ and the Lord's prayer",
+      "bibleResearchSuggestions": "Matthew 6:9–13; John 19:38–42",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ18",
+      "sequence": 18,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Pax Domini",
+      "prayerAnchor": "PAX_DOMINI",
+      "authorialMeditationSummary": "Resurrection represented by commingling",
+      "bibleResearchSuggestions": "John 20:19–23",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ19",
+      "sequence": 19,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Agnus Dei",
+      "prayerAnchor": "AGNUS_DEI",
+      "authorialMeditationSummary": "Lamb of God and reception or spiritual Communion",
+      "bibleResearchSuggestions": "John 1:29",
+      "evidenceClass": "LITURGICAL_WORDS_AND_MEDITATION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ20",
+      "sequence": 20,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Post-Communion",
+      "prayerAnchor": "POSTCOMMUNION",
+      "authorialMeditationSummary": "Ascension and apostles with Mary in Cenacle",
+      "bibleResearchSuggestions": "Acts 1:9–14",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ21",
+      "sequence": 21,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Blessing",
+      "prayerAnchor": "BLESSING",
+      "authorialMeditationSummary": "Descent of Holy Ghost at Pentecost",
+      "bibleResearchSuggestions": "Acts 2:1–4",
+      "evidenceClass": "DEVOTIONAL_MEDITATION_NOT_RITE_ORIGIN",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    },
+    {
+      "id": "DJ22",
+      "sequence": 22,
+      "sourceSection": "Preface §III, printed p.20–21",
+      "printedHeading": "Last Gospel",
+      "prayerAnchor": "LAST_GOSPEL",
+      "authorialMeditationSummary": "Preaching of Gospel to nations; light against darkness",
+      "bibleResearchSuggestions": "John 1:1–14; Matthew 28:18–20",
+      "evidenceClass": "LITURGICAL_WORDS_AND_MEDITATION",
+      "authorialBiblicalCitationsCertified": false,
+      "note": "Biblical book/chapter hints supplied as modern research associations. Dujardin's prose must be read separately; do not attribute exact verse labels to him.",
+      "publishable": false
+    }
+  ],
+  "alphonsusResearchTopics": [
+    {
+      "id": "ALP01",
+      "section": "Sacrifice of Jesus Christ §I, printed 27–31",
+      "topic": "Four Old Law sacrificial ends: peace, thanksgiving, expiation, impetration",
+      "biblicalSources": [
+        "Leviticus 16",
+        "Isaiah 53:6",
+        "Hebrews 13:12",
+        "Hebrews 10:5–10"
+      ],
+      "status": "SAINT_ALPHONSUS_EXPLICIT_THEME_BUT_VERSE_CONCORDANCE_PENDING"
+    },
+    {
+      "id": "ALP02",
+      "section": "Sacrifice of Jesus Christ §I, printed 28–31",
+      "topic": "Five conditions: sanctification, oblation, immolation, consumption and participation",
+      "biblicalSources": [
+        "Deuteronomy 15:21",
+        "John 1:29",
+        "Hebrews 10:5–10"
+      ],
+      "status": "SAINT_ALPHONSUS_TYPOLOGICAL_FRAMEWORK"
+    },
+    {
+      "id": "ALP03",
+      "section": "Sacrifice of Jesus Christ §II, printed 31–37",
+      "topic": "Christ's consecration as victim through Incarnation",
+      "biblicalSources": [
+        "John 10:36",
+        "Luke 1:35",
+        "Hebrews 10:5–10"
+      ],
+      "status": "SAINT_ALPHONSUS_EXPLICIT_BIBLICAL_ARGUMENT"
+    },
+    {
+      "id": "ALP04",
+      "section": "Sacrifice of Jesus Christ §II, printed 32–35",
+      "topic": "Eternal priesthood in order of Melchizedek",
+      "biblicalSources": [
+        "Psalms 109:4 (Vulgate)",
+        "Hebrews 7"
+      ],
+      "status": "SAINT_ALPHONSUS_EXPLICIT_BIBLICAL_ARGUMENT"
+    },
+    {
+      "id": "ALP05",
+      "section": "Sacrifice of Jesus Christ §II, printed 33–37",
+      "topic": "Cross, Resurrection, Eucharist and heavenly participation: author argues with his anonymous French predecessor",
+      "biblicalSources": [
+        "John 17:5",
+        "1 Corinthians 11:26"
+      ],
+      "status": "DISTINGUISH_SAINT_AUTHORS_VIEW_FROM_ANONYMOUS_FRENCH_SOURCE_AND_GRIMM_FOOTNOTE"
+    },
+    {
+      "id": "ALP06",
+      "section": "Short Explanation, printed 38–41",
+      "topic": "Prayers at foot: Psalm Judica and ascent to altar",
+      "biblicalSources": [
+        "Psalms 42:4 (Vulgate)"
+      ],
+      "status": "SCRIPTURAL_TEXT_AND_OLDER_HISTORICAL_ASSERTIONS_TO_VERIFY"
+    },
+    {
+      "id": "ALP07",
+      "section": "Short Explanation, printed 41–43",
+      "topic": "Gloria's angelic opening versus Church's later hymn text",
+      "biblicalSources": [
+        "Luke 2:14"
+      ],
+      "status": "DIRECT_TEXT_SOURCE_AND_COMPOSITION_HISTORY"
+    },
+    {
+      "id": "ALP08",
+      "section": "Short Explanation, printed 44–47",
+      "topic": "Offertory gifts; water and wine and Incarnation / participation",
+      "biblicalSources": [
+        "2 Peter 1:4"
+      ],
+      "status": "AUTHORIAL_SYMBOLISM_NOT_HISTORICAL_ORIGIN"
+    },
+    {
+      "id": "ALP09",
+      "section": "Short Explanation, printed 44–47",
+      "topic": "Offertory penitence, Lavabo, prayer of sacrifice",
+      "biblicalSources": [
+        "Daniel 3:39–40",
+        "Psalms 25:6–12 (Vulgate)"
+      ],
+      "status": "LITURGICAL_BIBLICAL_LANGUAGE_EDITION_COLLECT_PENDING"
+    },
+    {
+      "id": "ALP10",
+      "section": "Short Explanation, printed 47–55",
+      "topic": "Preface, Canon, the Last Supper, sacrifice and saints",
+      "biblicalSources": [
+        "Matthew 26:26–28",
+        "Luke 22:19–20",
+        "Genesis 4:4",
+        "Genesis 14:18–20",
+        "Genesis 22:1–19"
+      ],
+      "status": "PRAYER_LEVEL_SEGMENTATION_PENDING"
+    }
+  ],
+  "publicationConstraints": [
+    "An original Mass ceremony is not necessarily instituted to dramatize a Bible event; no ritual-history causal claim from Dujardin's analogies.",
+    "The Eucharistic Sacrifice makes present the once-for-all offering of Christ sacramentally; do not claim that it repeats all of Scripture or literally re-performs all biblical events.",
+    "'Full Bible' means a curated Scripture-horizon reaching from Genesis through Revelation, not a forced link for every biblical book or verse.",
+    "Dujardin's dates (e.g. 4000 years) are meditation rhetoric not defensible scientific timeline.",
+    "Dujardin's descent to Limbo/Purgatory and remarks about Jesus not being on altar after Communion require Catholic doctrinal and 1962 rubric review before any presentation.",
+    "St Alphonsus's eighteenth-century rubrical notes and Grimm's nineteenth-century annotations may not describe 1962 practice.",
+    "Edition-aware Latin Vulgate/English Douay/French Crampon links and canonical 1962 prayer IDs required before publish.",
+    "Reproduce no full copyright-encumbered modern text; original-source links and attribution maintained; no external navigation substituting for existing Scripture reader."
+  ]
+}
