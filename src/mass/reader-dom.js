@@ -2329,6 +2329,9 @@ export function createReaderDomAdapter({
           // liturgical source has not already supplied S., M., V. or R.
           // Do not label action-only or rubric paragraphs as spoken prayers.
           const speakerRole=String(p.speakerRole??"");
+          // Retain the verified actor on its rendered prayer paragraph.
+          // This is presentation metadata, not a second liturgical owner.
+          if(speakerRole)node.dataset.speakerRole=speakerRole;
           const ownerLabels=String(prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr")
             ? {PRIEST:"Prêtre",MINISTERS:"Servants",RESPONDERS:"Réponse",SCHOLA:"Schola",
                GOSPEL_PROCLAIMER:"Ministre de l'Évangile",DISMISSAL_MINISTER:"Ministre du renvoi"}
