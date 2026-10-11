@@ -1,4 +1,7 @@
+import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 export const APP_DESIGN_SYSTEM_VERSION="ao-design-system-v2";
+const MASS_NAV_HOME=resolveCanonicalAssetUrl("ao-nav-home");
+const MASS_NAV_SETTINGS=resolveCanonicalAssetUrl("ao-ui-settings");
 const STYLE_ID="ao-app-design-system";
 
 const CSS=`
@@ -253,6 +256,25 @@ const CSS=`
   #aoPrayerBookRoot .aoReaderSeqFill{transition:none}
 }
 
+/* Only the Mass-specific *visuals* are replaced: preserve the original
+ * focus, Home, preferences actions and all DOM event ownership. */
+.ao-reader-shell .ao-reader-top-icon[data-ao-donor-icon="home"],
+.ao-reader-shell .ao-reader-top-icon[data-ao-donor-icon="preferences"]{
+  display:block;background:currentColor;
+  width:29px;height:29px;
+}
+.ao-reader-shell .ao-reader-top-icon[data-ao-donor-icon="home"]{
+  -webkit-mask:url("${MASS_NAV_HOME}") center/contain no-repeat;
+  mask:url("${MASS_NAV_HOME}") center/contain no-repeat;
+}
+.ao-reader-shell .ao-reader-top-icon[data-ao-donor-icon="preferences"]{
+  -webkit-mask:url("${MASS_NAV_SETTINGS}") center/contain no-repeat;
+  mask:url("${MASS_NAV_SETTINGS}") center/contain no-repeat;
+}
+.ao-reader-shell .ao-reader-top-icon[data-ao-donor-icon="home"] svg,
+.ao-reader-shell .ao-reader-top-icon[data-ao-donor-icon="preferences"] svg{
+  display:none;
+}
 /* Mass chrome: the top ribbon is the sole owner of persistent posture.
  * Keep the transient posture-change cue in its left rail, but do not render
  * the second standing/kneeling picture in Simple or Missal modes. */
