@@ -1,3 +1,4 @@
+import { navigationActionAttrs, navigationActionIcon } from "../app/interface-grammar.js";
 import "./confession-path-styles.js";
 import { confessionExaminationCards, confessionRiteCards, confessionAfterCards, confessionStepAt, confessionPath, CONFESSION_PATHS, CONFESSION_SOURCE_LINKS } from "./confession-paths.js";
 import "./canonical-data.js";
@@ -330,8 +331,8 @@ function close({silent=false,preserve=false}={}){
   try{returnFocus?.focus?.()}catch{} returnFocus=null;
 }
 function head(title,sub=''){
- const trailing=`<button type="button" class="aoP435930Home" data-p435930-home aria-label="${esc(L('Home','Accueil'))}">${assetIcon('ao-nav-home')}</button>`;
- return `<header class="aoP435930Head"><button type="button" class="aoP435930Back" data-p435930-back aria-label="${esc(L('Back','Retour'))}">${assetIcon('ao-ui-back')}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>`;
+ const trailing=`<button type="button" class="aoP435930Home" data-p435930-home ${navigationActionAttrs("home",lang())}>${navigationActionIcon("home")}</button>`;
+ return `<header class="aoP435930Head aoAppHeader"><button type="button" class="aoP435930Back" data-p435930-back ${navigationActionAttrs("back",lang())}>${navigationActionIcon("back")}</button><div><small>${esc(L('PRAY','PRIER'))}</small><h1 id="aoP435930Title">${esc(title)}</h1>${sub?`<p>${esc(sub)}</p>`:''}</div>${trailing}</header>`;
 }
 function nav(title,items,active){return `<div class="aoP435930Seg" role="group" aria-label="${esc(title)}">${items.map(x=>`<button type="button" class="${x[0]===active?'active':''}" aria-pressed="${x[0]===active?'true':'false'}" data-p435930-seg="${esc(x[0])}">${esc(L(x[1],x[2]))}</button>`).join('')}</div>`}
 function callout(text,type='info'){return `<div class="aoP435930Callout ${esc(type)}">${text}</div>`}
