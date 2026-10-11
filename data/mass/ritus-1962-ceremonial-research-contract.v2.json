@@ -1,0 +1,76 @@
+{
+  "schema": "ao-1962-ceremonial-research-contract-v2",
+  "version": "2.0.0-research",
+  "status": "RESEARCH_NOT_RUNTIME",
+  "sourceOfAuthority": {
+    "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+    "historicalExplanation": [
+      "St Alphonsus: The Holy Mass (1889)",
+      "Fortescue: The Mass (1914)"
+    ]
+  },
+  "baseIdentity": {
+    "lowCues": 275,
+    "sungCues": 279,
+    "comparativeRows": 554,
+    "canonicalCueId": "AO.SM.C####",
+    "noTextMutation": true,
+    "noCardMutation": true
+  },
+  "sourceAlignment": {
+    "rubricProvisions": 98,
+    "textLinkedIncludingSplits": 73,
+    "conditionalOrVisibleOrCrossMacro": 25,
+    "requiresHumanReview": true
+  },
+  "ministrations": {
+    "SOLEMN": {
+      "DEACON": 34,
+      "SUBDEACON": 22,
+      "ACOLYTES": 5,
+      "THURIFER": 4
+    },
+    "notEquivalentToMissaCantata": true
+  },
+  "frenchRubrics": {
+    "shortAndDetailedDrafts": 98,
+    "publishableWithoutQA": false
+  },
+  "knownAnomalies": [
+    {
+      "ref": "GATE-1962-001",
+      "cues": [
+        "AO.SM.C0235",
+        "AO.SM.C0236",
+        "AO.SM.C0237",
+        "AO.SM.C0238",
+        "AO.SM.C0239",
+        "AO.SM.C0240",
+        "AO.SM.C0241"
+      ],
+      "policy": "NO_SECOND_CONFITEOR_STRICT_1962"
+    },
+    {
+      "ref": "GATE-1962-002",
+      "cue": "AO.SM.C0196",
+      "correctMacro": "AO.SM.M17"
+    },
+    {
+      "ref": "GATE-1962-002",
+      "cue": "AO.SM.C0200",
+      "correctMacro": "AO.SM.M17"
+    }
+  ],
+  "prohibitions": [
+    "DO_NOT_IMPORT_AS_RUNTIME",
+    "DO_NOT_INFER_FROM_SUBSTRINGS",
+    "DO_NOT_ASSIGN_FAITHFUL_POSTURE_FROM_PRIEST",
+    "DO_NOT_MUTATE_LIVE48",
+    "DO_NOT_TREAT_HISTORIC_BOOKS_AS_1962_LAW"
+  ],
+  "targetSeparateModes": [
+    "FAITHFUL_LIVE",
+    "PRIEST_LIVE"
+  ],
+  "fullDatasetCommitted": false
+}
