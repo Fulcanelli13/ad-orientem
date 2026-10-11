@@ -1,0 +1,28 @@
+name: Biblical Lineage & Apostolic Dispersion Review
+on:
+  pull_request:
+    paths:
+      - "data/geography/research/biblical-curated-lineage-dispersion-20261011.v1.json"
+      - "reviews/biblical-lineage-apostolic-dispersion-cinematic-20261011.html"
+      - "tests/biblical-lineage-dispersion-pilot.mjs"
+      - ".github/workflows/biblical-lineage-dispersion-review.yml"
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  historical-interaction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Validate mobile and source evidence in actual Chromium
+        run: node tests/biblical-lineage-dispersion-pilot.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: biblical-lineage-dispersion-phone
+          path: artifacts/biblical-lineage-dispersion/
+          if-no-files-found: ignore
