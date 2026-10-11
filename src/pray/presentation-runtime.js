@@ -765,7 +765,7 @@ function bindRosaryDonorBack(root){
 }
 function syncRosaryPrefs(raw=S.rosary){
  const prefs=normalizeRosaryPrefs(raw);
- try{window.AO_ROSARY_V381?.setForm?.(prefs.form)}catch{}
+ try{const donor=window.AO_ROSARY_V381;if(donor?.getForm?.()!==prefs.form)donor?.setForm?.(prefs.form)}catch{}
  try{localStorage.setItem('ao-prayer-recitation-mode',prefs.recitation)}catch{}
  try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(prefs.recitation)}catch{}
  return prefs
@@ -808,7 +808,7 @@ function launchFifteenRosary(){
  ROSARY_FIFTEEN.active=true;
  if(!launchRosaryPlayer(captureResume())){ROSARY_FIFTEEN.active=false;return false}
  // A newly opened canonical donor is always started in the Joyful set.
- if(api.setMysterySet('joyful',{step:0})===true)return true;
+ if(api.setMysterySet('joyful',{step:0})===true){decorateRosary();return true;}
  ROSARY_FIFTEEN.active=false;return false;
 }
 function launchRosaryPlayer(resume=captureResume()){
@@ -1562,7 +1562,7 @@ function renderRosaryMethods(){
   return '<button type="button" class="aoRosaryChoice'+(active?' active':'')+'" data-p435930-rosary-choose="'+esc(id)+'" aria-pressed="'+active+'"><strong>'+esc(choices[id][0])+'</strong><small>'+esc(choices[id][1])+'</small></button>';
  }).join('');
  const size=[5,15].map(count=>'<button type="button" data-p435930-rosary-decades="'+count+'" aria-pressed="'+(decades===count)+'"'+(count===15&&method!=='ordinary'?' disabled':'')+'>'+esc(count===5?L('Five decades','Cinq dizaines'):L('Fifteen decades','Quinze dizaines'))+'</button>').join('');
- const depths=['simple','guided'].map(mode=>'<button type="button" data-p435930-rosary-guidance="'+mode+'" aria-pressed="'+(ROSARY_CHOOSER.guide===mode)+'">'+esc(mode==='simple'?L('Simple','Simple'):L('Guided','Guidé'))+'</button>').join('');
+ const depths=['simple','guided'].map(mode=>'<button type="button" data-p435930-rosary-guidance="'+mode+'" aria-pressed="'+(ROSARY_CHOOSER.guide===mode)+'"'+(method==='scriptural'&&mode==='simple'?' disabled':'')+'>'+esc(mode==='simple'?L('Simple','Simple'):L('Guided','Guidé'))+'</button>').join('');
  return `${head(L('Holy Rosary','Saint Rosaire'),L('Choose how to pray','Choisissez comment prier'))}
  <main class="aoP435930Body aoMercyMethods aoRosaryChooser" data-ao-rosary-chooser>
   <section><p class="aoMercyKicker">${esc(L('Prayer method','Méthode de prière'))}</p><div class="aoRosaryChoiceGrid" role="group" aria-label="${esc(L('Rosary method','Méthode du Rosaire'))}">${methods}</div></section>
@@ -1625,7 +1625,7 @@ function onClick(e){
  if(b.hasAttribute('data-p435930-rosary-methods')){view='rosaryMethods';navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-choose')){const id=b.dataset.p435930RosaryChoose;if(!['ordinary','dominican','montfort','montfort_short','scriptural'].includes(id))return;ROSARY_CHOOSER.method=id;if(id!=='ordinary')ROSARY_CHOOSER.decades=5;if(id==='scriptural')ROSARY_CHOOSER.guide='guided';return render()}
  if(b.hasAttribute('data-p435930-rosary-decades')){const n=Number(b.dataset.p435930RosaryDecades);if(![5,15].includes(n)||n===15&&ROSARY_CHOOSER.method!=='ordinary')return;ROSARY_CHOOSER.decades=n;return render()}
- if(b.hasAttribute('data-p435930-rosary-guidance')){const mode=b.dataset.p435930RosaryGuidance;if(!['simple','guided'].includes(mode))return;ROSARY_CHOOSER.guide=mode;return render()}
+ if(b.hasAttribute('data-p435930-rosary-guidance')){const mode=b.dataset.p435930RosaryGuidance;if(!['simple','guided'].includes(mode)||ROSARY_CHOOSER.method==='scriptural'&&mode==='simple')return;ROSARY_CHOOSER.guide=mode;return render()}
  if(b.hasAttribute('data-p435930-rosary-begin')){S.rosary.mode=ROSARY_CHOOSER.guide;save();return ROSARY_CHOOSER.method==='ordinary'&&ROSARY_CHOOSER.decades===15?launchFifteenRosary():launchTraditionalRosaryMethod(ROSARY_CHOOSER.method)}
  if(b.hasAttribute('data-p435930-rosary-original'))return launchTraditionalRosaryMethod('ordinary');
  if(b.hasAttribute('data-p435930-rosary-method-launch'))return launchTraditionalRosaryMethod(b.dataset.p435930RosaryMethodLaunch);
