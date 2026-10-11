@@ -32,6 +32,7 @@ assert.ok(cRaw,"Offline cinematic comparison must be embedded");const C=JSON.par
 const Cregistry=JSON.parse(readFileSync(new URL("../data/geography/research/biblical-atlas-151-181-crosswalk-20261011.v1.json",import.meta.url),"utf8"));
 assert.deepEqual(C,Cregistry,"Cinematic comparison must use current editable source snapshot");
 assert.equal(C.sceneCrosswalk.length,181);
+assert.ok(C.sceneCrosswalk.every(s=>s.pilotSynopsis?.en&&s.pilotSynopsis?.fr),"181 pilot scene synopses preserved as unverified review text");
 assert.equal(C.cinematicChapters.length,14);
 assert.deepEqual([C.counts.exactReference181,C.counts.overlappingPassage181,C.counts.noDirectPassage181],[65,29,87]);
 assert.ok(C.sceneCrosswalk.every(s=>s.decision==="NOT_APPROVED_FOR_AUTO_MERGE"));
@@ -114,6 +115,9 @@ try{
   assert.equal(await page.locator("#sceneReviewCandidates button").count(),1);
   assert.match(await page.locator("#sceneReviewClass").innerText(),/SAME CITATION/);
   assert.match(await page.locator("#sceneReviewCredit").innerText(),/Pieter Lastman/);
+  assert.ok((await page.locator("#sceneReviewNarrative").innerText()).length>20,"Cinematic pilot synopsis shown with source hold");
+  assert.match(await page.locator("#sceneNarrativeLabel").innerText(),/PENDING EDITORIAL REVIEW/);
+  assert.equal(await page.locator("#sceneArtwork").evaluate(el=>getComputedStyle(el).animationName),"none","reduced motion disables artwork camera animation");
   assert.equal(await page.locator("#sceneScriptureSources a").count(),2,"Source passage and French source-book links");
   assert.ok((await page.locator("#sceneScriptureSources a").first().getAttribute("href")).includes("gen021"));
   assert.ok((await page.locator("#sceneScriptureSources a").last().getAttribute("href")).includes("wikisource.org"));
