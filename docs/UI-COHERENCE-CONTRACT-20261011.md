@@ -71,6 +71,17 @@ previously destructive app-shell journeys:
 history implementation.** Context-aware Back from every child reader and
 Schola viewport ergonomics remain open acceptance work.
 
+## Scoped follow-through — user priorities
+
+- **Mass LIVE is frozen.** No change to its 48-card content mapping, faithful posture/gesture cue ownership, celebration selection, Schola ticker controls, or animated elevations.
+- **Mass MISSAL is intentionally a different reading experience:** paired Latin left and source-backed vernacular right in each aligned row, including originally replace-on-tap translations. No fabricated parallel translation, no event-driven scroll cue switching, persistent posture ribbon, Schola overlay or cue progress clutter. Rubrics are quiet full-width book annotations. Passage anchors are preserved across mode switches; mobile typography matches the liturgical serif rather than platform-dependent sans/italic spans. The native source model continues to own the 30 Missal sections. Dedicated real 320/390/768px phone checks cover both languages.
+- **Mass settings and section menus:** larger, coherent control typography and titles; native options remain owned by Mass.
+- **Non-Mass contextual Back:** `src/app/shell-controller.js` now retains a small, bounded in-memory destination trail; `back()` returns to the last successful app surface without echoing it back into history. Prayer's own inner stack, Formation families, Calendar day/week, and Explore sheets still have priority. Home remains an explicit destination. No app location or private query is persisted.
+- **Explore and Formation continuity:** host and Home cleanup both preserve their source-owned in-memory return context. Calendar, Explore, Prayer and Formation root Back use the shell trail; Settings Close remains a dismissal, not a Back.
+- **Parallel pipeline reconciliation:** current `main` place media, photo review and other source data are included; only the scoped Explore header, return-state and phone-contract edits were reapplied to their newest versions.
+
+**Remaining review, not a claim of certification:** actual 320/390/768px phone appearance, translated Missal columns with long text, body-font appearance in rendered device screenshots, and domain-specific settings/overlay dismissal. CI must pass on the final merged-base commit before marking these done.
+
 ## Acceptance gates
 
 Test at 320px, 390px and tablet/desktop widths, in French and English, with different liturgical colours. Verify geometry, source text, tap targets, preserved return state, actual on-screen icons and Back/Close distinction; source tests alone are insufficient.
