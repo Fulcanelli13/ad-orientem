@@ -415,7 +415,11 @@ export function createFindOwner(win=globalThis){
         });
         if(importTimer!==undefined)win.clearTimeout?.(importTimer);
         if(importStalled||token!==paintToken||!openState){
-          nextHandle?.destroy?.();return false;
+          nextHandle?.destroy?.();
+          // A delayed CDN response may have erased the recovery panel while
+          // completing MapLibre construction; restore it only on current route.
+          if(importStalled)showMapRecovery();
+          return false;
         }
         if(!nextHandle){
           showMapRecovery();return false;
