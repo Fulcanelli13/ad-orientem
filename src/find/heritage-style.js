@@ -471,4 +471,50 @@ export const HERITAGE_STYLE = String.raw`
   height:min(46dvh,420px);max-height:420px;object-fit:contain;
   background:var(--ao-surface-2,#0d141c);
 }
+
+/* R60: a reading sequence of independently sourced canonical witnesses,
+   not an unsourced manufactured pilgrimage narrative. */
+.aoExplorePlaceSheet .aoExploreSourcedStory{
+  display:grid;gap:14px;padding-bottom:17px;
+}
+.aoExplorePlaceSheet .aoExploreSourcedStory>small{
+  margin-bottom:0;
+}
+.aoExplorePlaceSheet .aoExploreStoryChapter{
+  position:relative;margin:0;padding:14px 0 15px;
+  border-top:1px solid var(--ao-rule,rgba(255,255,255,.11));
+}
+.aoExplorePlaceSheet .aoExploreStoryChapter:first-of-type{border-top:0;padding-top:5px}
+.aoExplorePlaceSheet .aoExploreStoryChapter h3{
+  margin:0 0 9px;font:600 12px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.075em;text-transform:uppercase;color:var(--ao-liturgical-accent,#c9ad78);
+}
+.aoExplorePlaceSheet .aoExploreStoryChapter p{
+  margin:0;color:var(--ao-text-primary,#e9e4d9);
+  font:400 clamp(16px,2.15vw,19px)/1.64 var(--ao-font-body,Georgia,serif);
+  text-wrap:pretty;
+}
+.aoExplorePlaceSheet .aoExploreStoryEvidence{
+  display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;margin-top:11px;
+}
+.aoExplorePlaceSheet .aoExploreStoryEvidence a{
+  display:inline-flex;align-items:center;min-height:44px;max-width:100%;
+  font:500 11px/1.32 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-text-muted,#9ba5b1);text-decoration:underline;
+  text-underline-offset:3px;overflow-wrap:anywhere;
+}
+.aoExplorePlaceSheet .aoExploreStoryEvidence a:hover,
+.aoExplorePlaceSheet .aoExploreStoryEvidence a:focus-visible{
+  color:var(--ao-liturgical-accent,#c9ad78);
+}
+.aoExplorePlaceSheet .aoExploreNovenaEvidence{margin:4px 0 0}
+.aoExplorePlaceSheet .aoExploreNovenaEvidence a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;
+}
+@media(max-width:520px){
+ .aoExplorePlaceSheet .aoExploreStoryChapter p{font-size:17px;line-height:1.55}
+ .aoExplorePlaceSheet .aoExploreStoryChapter{padding:12px 0}
+}
 `;
