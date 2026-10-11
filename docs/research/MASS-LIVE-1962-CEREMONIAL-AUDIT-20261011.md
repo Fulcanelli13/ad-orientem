@@ -47,3 +47,35 @@
 5. Only then propose a runtime-data PR, with original 48-card LIVE and Low-Mass regression tests. Existing LIVE must remain unchanged until that QA passes.
 
 Research register owner: **separate review layer**; original canonical `data/mass/gesture-matrix.v1.json`, `data/presentation/reader-*.v1.json` and Mass text corpora stay untouched.
+
+
+## Latin-verification pass — batch 3 and lay-posture separation — batch 4
+
+The revised research stack (all **non-runtime**) adds:
+
+- **46** general/priest/server ceremonial actions in batch 01 (up from 44 after splitting the three `Agnus Dei` breast strikes);
+- **67** Solemn-Mass actor events in batch 02 (including 12 Requiem conditional cases);
+- **36** exact Latin phrase/cue matches in batch 03, each with a short and detailed **draft** French priest rubric;
+- **23** faithful Sung-posture state/classification rows in batch 04; **five** tagged as purely local customs and **five** requiring an observed non-text state.
+
+These are overlapping matrices, not 46+67+36 independently certified unique moments. The Latin phrase data uses a labelled 1962 bilingual transcription; it is **not** independent line-by-line certification of the original printed Latin 1962 facsimile.
+
+### Three corrected source ownership errors
+
+1. **`Quam oblationem`**: at `C0163` the celebrant has joined hands; the three crosses start on **`C0164`** at `benedictam, adscriptam, ratam`. The subsequent Host-only and chalice-only crosses are respectively **`C0165`** and **`C0166`**. See *Ritus* VIII.4.
+2. **`Agnus Dei`**: priest's three successive breast strikes occur at **`C0222`**, **`C0223`**, and **`C0224`** on the words `miserere nobis`, `miserere nobis`, `dona nobis pacem`. No breast strikes in the Requiem branch. See *Ritus* X.2, X.4.
+3. **`Gloria Patri` at `C0010`**: belongs to the foot-of-altar `Iudica me` Psalm, not the Introit, and is omitted when that Psalm is suppressed in Requiem and from Passion Sunday through Holy Thursday inclusive. See *Ritus* III.6.
+
+### Another source-provenance warning
+
+The IntraText Latin `LAT0820` rendering is **not** to be silently identified with the exact 1962 edition: its solemn Offertory rubric VII.9 includes `et in Feria VI Parasceve` in the subdeacon-paten exception, whereas the 1962 printed/labelled witnesses examined here retain the Requiem exception only. Treat IntraText as a **non-certified variant text for 1962**, useful for discovery, never as the controlling 1962 witness.
+
+1962 labelled Latin/French transcription: https://fr.scribd.com/document/542057936/Ritus-Servandus-1962
+
+1962 Latin printed facsimile for next review: https://www.musicasacra.com/pdf/missale62.pdf
+
+Earlier noncertified IntraText variant: https://www.intratext.com/IXT/LAT0820/_PI.HTM
+
+### Current acceptance gate
+
+CI checks confirm **structure and exact canonical phrase matching**, not historical/academic authority beyond the source evidence. The main app is unchanged. Before moving these records into LIVE/Priest Mode: check printed 1962 Latin against each phrase, resolve prior incomplete minister choreography and any local custom, complete French editorial review, and run actual Low/Missa Cantata/Solemn/Requiem phone regressions. Keep the 48-card LIVE identity and independent Schola and faithful state lanes intact.
