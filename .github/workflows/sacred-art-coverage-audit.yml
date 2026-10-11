@@ -14,6 +14,8 @@ on:
       - "tools/calendar/build-sacred-art-batch-worklist.mjs"
       - "tests/calendar-sacred-art-selection.mjs"
       - "tests/calendar-sacred-art-curator-decisions.mjs"
+      - "tests/calendar-sacred-art-curator-replacements.mjs"
+      - "data/calendar/sacred-art-user-refusal-replacements.v1.json"
       - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
       - "data/calendar/sacred-art-subject-targets.v2.json"
       - "data/calendar/sacred-art-liturgical-priorities.v1.json"
@@ -42,6 +44,7 @@ jobs:
           node tools/calendar/audit-sacred-art-modules.mjs
           node tests/calendar-sacred-art-selection.mjs
           node tests/calendar-sacred-art-curator-decisions.mjs
+          node tests/calendar-sacred-art-curator-replacements.mjs
           node tools/calendar/audit-sacred-art-prayer-slots.mjs
           node tools/calendar/report-sacred-art-liturgical-priorities.mjs
           node tools/calendar/build-sacred-art-reuse-index.mjs
