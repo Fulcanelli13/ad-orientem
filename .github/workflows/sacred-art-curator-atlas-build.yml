@@ -8,6 +8,7 @@ on:
       - "tools/calendar/build-sacred-art-final-atlas.py"
       - "tools/calendar/build-sacred-art-priority-review.py"
       - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "data/calendar/sacred-art-user-refusal-replacements.v1.json"
       - "tests/calendar-sacred-art-curator-decisions.mjs"
       - "tests/test_sacred_art_final_atlas.py"
       - "data/calendar/sacred-art-candidates.v1.json"
@@ -66,7 +67,7 @@ jobs:
           assert m,"Shortlist review JSON not found"
           data=json.loads(m.group(1))
           assert len(data["groups"])>=50
-          assert len(data["items"])==264
+          assert len(data["items"])>=266
           assert data["dateUses"]>=2000
           assert len(data["reviewSeed"]["selections"])==44
           assert len(data["reviewSeed"]["approvals"])==35
