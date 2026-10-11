@@ -273,6 +273,8 @@ try{
     version:document.documentElement.dataset.aoDesignSystem??null,
     stylePresent:Boolean(document.getElementById("ao-app-design-system")),
     bodyFont:getComputedStyle(document.querySelector(".homeScreen")).fontFamily,
+    displayFont:getComputedStyle(document.querySelector(".homeScreen .aoTodayV2Frontispiece h1")).fontFamily,
+    cardRadius:getComputedStyle(document.documentElement).getPropertyValue("--ao-card-radius").trim(),
     gutter:getComputedStyle(document.documentElement).getPropertyValue("--ao-page-gutter").trim(),
     controlHeight:getComputedStyle(document.documentElement).getPropertyValue("--ao-control-h").trim(),
   }));
