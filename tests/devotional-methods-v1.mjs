@@ -85,6 +85,10 @@ for(const a of ["pray.divine_mercy","renderMercy()","data-p435930-mercy-next","d
  assert.ok(runtime.includes(a),"Missing native chaplet integration: "+a);
 assert.match(runtime,/else if\(id==='pray\.rosary'\)/,"Original Rosary canonical route must survive");
 assert.match(runtime,/launchRosaryPlayer/,"Original Rosary must retain donor");
+for(const marker of ["data-p435930-rosary-fifteen","function launchFifteenRosary()","ROSARY_FIFTEEN.active","api.setMysterySet?.(set)","nextSteps.findIndex","nextSteps.findLastIndex"]){
+ assert.ok(runtime.includes(marker),"Missing live fifteen-decade transition: "+marker);
+}
+assert.match(runtime,/ROSARY_FIFTEEN\.active=false;return open\('pray\.rosary'/,"The canonical five-decade launch must remain separate");
 const donorBundle=readFileSync("ao-packed-04392ad5e156c05227d9.js","utf8");
 assert.match(donorBundle,/setMysterySet:\(set,\{step=0\}=\{\}\)=>/,"Canonical runtime must expose in-place mystery-set switching");
 assert.match(donorBundle,/\['joyful','sorrowful','glorious'\]\.includes\(set\)/,"Reject nontraditional sets in 15-decade API");
