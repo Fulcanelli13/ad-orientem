@@ -14,6 +14,7 @@ const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
 const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
 const novenaSot=readJson("data/pray/novena-sot.v1.json");
+const curatedMajor=readJson("data/geography/major-places-editorial.v1.json");
 
 const records=joinDirectoryRecords({
   venues:[{
@@ -109,6 +110,7 @@ function buildDataset(directoryPlaceLinks=geography.directoryPlaceLinks){
       temporalLinks:shrineSeed.temporalLinks,
       sources:shrineSources.sources
     },
+    editorial:{featured:curatedMajor.items},
     novenas:{
       records:novenaSot.novenas,
       links:novenaBridge.links,
@@ -123,6 +125,41 @@ const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
 assert.equal(profiles.length,220,"every seeded canonical Place should have one Place profile");
+
+// Twenty featured places must render two independently source-credited,
+// bilingual passages without creating facts or cross-Place associations.
+assert.equal(curatedMajor.items.length,20);
+for(const selected of curatedMajor.items){
+ const profile=explorePlaceProfile(profiles,selected.place_id);
+ assert.ok(profile?.editorial_feature,"Editorial place lost its canonical identity "+selected.place_id);
+ const chapters=profile.story_chapters;
+ assert.ok(chapters.length>=2,"Featured Place needs source-owned origin and pilgrimage "+selected.place_id);
+ assert.equal(chapters[0].kind,"ORIGIN","History must retain Shrine owner "+selected.place_id);
+ assert.ok(chapters.some(c=>c.kind==="PILGRIMAGE"),"No pilgrim context "+selected.place_id);
+ for(const chapter of chapters){
+  assert.ok(chapter.body_en.length>=28&&chapter.body_fr.length>=28,
+    "Missing substantial bilingual record body "+selected.place_id);
+  assert.notEqual(chapter.body_en,chapter.body_fr,
+    "French page must not silently revert to English "+selected.place_id);
+  assert.ok(chapter.sources.length>0,"Narrative paragraph has no direct original source "+selected.place_id);
+  assert.ok(chapter.sources.every(x=>/^https:\/\//.test(x.url)));
+  const owner=[...profile.shrines,...profile.pilgrimages,...profile.apparitions,...profile.relics,...profile.traditions]
+    .find(record=>record.item_id===chapter.item_id);
+  assert.ok(owner,"Narrative sourced to another physical Place "+selected.place_id);
+  assert.ok(chapter.sources.every(x=>owner.source_links.some(y=>y.url===x.url)),
+    "A narrative has evidence borrowed from an unrelated record "+selected.place_id);
+ }
+}
+// The official witness stays the source; a user's French translation must
+// never change the provenanced English shrine claim.
+const upgradedSaints=[
+ ["place:FR:basilique-sainte-therese-lisieux","Thérèse"],
+ ["place:IT:basilica-san-francesco-assisi","François"],
+ ["place:IN:basilica-bom-jesus-old-goa","François Xavier"],
+];
+for(const [id,name] of upgradedSaints)
+ assert.match(explorePlaceProfile(profiles,id).story_chapters[0].body_fr,new RegExp(name));
+
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
