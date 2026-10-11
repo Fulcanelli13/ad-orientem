@@ -19,15 +19,20 @@ export function resolveApprovedPlaceMedia(records,placeId){
   const path=text(record.asset_path);
   // Research and staging directories are *never* valid public image paths.
   // All files must be copied into the separately curated approved asset tree.
+  const width=Number(record.width),height=Number(record.height);
+  const orientation=height>width?"portrait":"landscape";
   if(!/^assets\/(?:places|approved\/place-media)\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
      !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
      !approvedLicenses[record.license]?.test(text(record.license_url))||
      !/^https:\/\/[^\s]+$/.test(text(record.source_url))||
      !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr)||
-     !text(record.changes))return null;
+     !text(record.changes_en)||!text(record.changes_fr)||
+     !Number.isFinite(width)||!Number.isFinite(height)||width<100||height<100||
+     record.orientation!==orientation)return null;
   return Object.freeze({
     asset_path:path,credit:text(record.credit),license:text(record.license),
-    license_url:text(record.license_url),changes:text(record.changes),
+    license_url:text(record.license_url),changes_en:text(record.changes_en),
+    changes_fr:text(record.changes_fr),orientation,
     source_url:text(record.source_url),alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
   });
 }
