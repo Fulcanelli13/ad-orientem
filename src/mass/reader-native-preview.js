@@ -1328,6 +1328,8 @@ export async function mountNativeReaderPreview({
       conditions:[...(ready.cueState.conditions??[]),...observedPriestEvent.conditions],
       sourceSectionId:current.sourceSectionId??current.sectionId,
       eventIndex:priestEventIndex,cueController:ready.cueState,
+      observedActor:observedPriestEvent.observedActor??null,
+      observedDelivery:observedPriestEvent.observedDelivery??null,
     });
   }
 
@@ -2479,11 +2481,14 @@ export async function mountNativeReaderPreview({
     // MC event; swiping a card or changing Schola lyrics never calls this.
     // Invalid/unmatched form, source section or conditional sedilia events
     // fail closed. Production 48 and special rites do not accept events.
-    observePriestCeremonialEvent:(eventId,{conditions=[]}={})=>{
+    observePriestCeremonialEvent:(eventId,{
+      conditions=[],observedActor=null,observedDelivery=null,
+    }={})=>{
       if(!ready.curatedEligible || !eventId || !Array.isArray(conditions)){
         observedPriestEvent=null;queue();return false;
       }
-      observedPriestEvent={eventId:String(eventId),conditions:[...conditions]};
+      observedPriestEvent={eventId:String(eventId),conditions:[...conditions],
+        observedActor,observedDelivery};
       const matched=currentObservedPriestEvent();
       if(!matched){observedPriestEvent=null;queue();return false;}
       queue();return true;
