@@ -441,7 +441,7 @@ export function installAppShellBridge({
     contract: NON_MASS_DONOR_CONTRACT,
     get installed() { return Boolean(state.controller); },
     get polls() { return state.polls; },
-    navigate(surface) {
+    navigate(surface,options={}) {
       if (!state.controller) {
         return Promise.resolve(Object.freeze({
           ok: false,
@@ -449,7 +449,9 @@ export function installAppShellBridge({
           reason: state.blocked ? "APP_SHELL_BLOCKED" : "APP_SHELL_NOT_READY",
         }));
       }
-      return state.presentationFx?.navigate?.(surface, () => state.controller.go(surface)) ?? state.controller.go(surface);
+      // Preserve explicit-only resume while ordinary Mass ribbon/Follow Mass
+      // commands always open the resolved preparation flow.
+      return state.presentationFx?.navigate?.(surface, () => state.controller.go(surface,options)) ?? state.controller.go(surface,options);
     },
     getActive() {
       return state.controller?.getActive?.() ?? null;
