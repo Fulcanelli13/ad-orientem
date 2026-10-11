@@ -14,6 +14,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+import urllib.parse
 import zipfile
 from collections import defaultdict
 from pathlib import Path
@@ -26,16 +27,26 @@ API = "https://api.github.com/repos/Fulcanelli13/ad-orientem/actions/artifacts"
 MAX_ZIP_BYTES = 1_500_000_000
 MAX_ORIGINAL_BYTES = 85_000_000
 
+class StripCrossHostAuthorization(urllib.request.HTTPRedirectHandler):
+    """GitHub artifacts redirect to a signed object-store URL; never send a GH Bearer token there."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        forwarded = super().redirect_request(req, fp, code, msg, headers, newurl)
+        if forwarded is not None and urllib.parse.urlparse(newurl).hostname != urllib.parse.urlparse(req.full_url).hostname:
+            forwarded.remove_header("Authorization")
+            forwarded.remove_unredirected_header("Authorization") if hasattr(forwarded, "remove_unredirected_header") else None
+        return forwarded
+
 def fetch_zip(artifact_id, dest, token):
     url = API + "/" + str(artifact_id) + "/zip"
     headers = {"Accept": "application/vnd.github+json",
                "Authorization": "Bearer " + token,
                "X-GitHub-Api-Version": "2022-11-28",
                "User-Agent": "AdOrientem-SacredArtAtlas-CuratorialSourceRecovery"}
+    opener = urllib.request.build_opener(StripCrossHostAuthorization())
     for attempt in range(3):
         try:
             request = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(request, timeout=120) as response, dest.open("wb") as out:
+            with opener.open(request, timeout=120) as response, dest.open("wb") as out:
                 total = 0
                 while True:
                     buf = response.read(1024 * 1024)
@@ -48,7 +59,8 @@ def fetch_zip(artifact_id, dest, token):
         except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError) as err:
             if dest.exists(): dest.unlink()
             if isinstance(err, urllib.error.HTTPError) and err.code in (401, 403, 404, 410):
-                raise RuntimeError("Artifact " + str(artifact_id) + " not downloadable: " + str(err))
+                host = urllib.parse.urlparse(err.url).hostname
+                raise RuntimeError("Artifact " + str(artifact_id) + " not downloadable at host " + str(host) + ": " + str(err))
             if attempt == 2: raise
             time.sleep(2 * (attempt + 1))
 
