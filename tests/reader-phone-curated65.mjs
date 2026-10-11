@@ -106,7 +106,11 @@ try{
               cardHeight:cs.height,cardBox:cs.boxSizing,cardPadding:cs.paddingBottom,
               viewportHeight:cv.height,viewportBox:cv.boxSizing,
               viewportPadding:cv.paddingBottom,
-              viewportBottom:vp.getBoundingClientRect().bottom};
+              viewportBottom:vp.getBoundingClientRect().bottom,
+              cssLoaded:!!document.querySelector("[data-ao-reader-shell-style]")?.textContent?.includes("100dvh"),
+              selectorMatch:!!document.querySelector('#ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-reader-shell[data-schola-visible="true"] .ao-prayer-card'),
+              inlineHeight:sc.style.height,
+              inlinePriority:sc.style.getPropertyPriority("height")};
           })(),
         };
       },title);
