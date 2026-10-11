@@ -492,6 +492,7 @@ export async function mountNativeReaderPreview({
   const root=doc.createElement("section");
   root.id=ROOT_ID;
   root.setAttribute("aria-label","Ad Orientem Mass reader");
+  root.dataset.r17CuratedReview=String(ready.curatedEligible===true);
   root.dataset.r17TextOwner="R17_VERIFIED_CORPUS";
   root.dataset.r17CardOwner="R17_READER_MODEL";
   root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
