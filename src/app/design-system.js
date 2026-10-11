@@ -253,6 +253,56 @@ const CSS=`
   #aoPrayerBookRoot .aoReaderSeqFill{transition:none}
 }
 
+/* Single global command language for every section header. The native
+ * handlers stay with their owning modules; do not synthesize navigation here. */
+.aoAppHeader{
+  box-sizing:border-box;
+  min-height:56px;
+  background:color-mix(in srgb,var(--ao-bg-canvas,#080c12) 94%,transparent);
+  backdrop-filter:blur(var(--ao-topbar-blur,16px));
+  border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  color:var(--ao-text-primary,#e9e4d9);
+}
+.aoAppHeader>div,.aoAppHeader .aoLearnModTopTitle,
+.aoAppHeader .aoSetTitle{min-width:0}
+.aoAppHeader :is(h1,.aoLearnModTopTitle strong,.aoSetTitle strong){
+  display:block;min-width:0;margin:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font:600 clamp(16px,3.9vw,19px)/1.2 var(--ao-font-display,Georgia,serif);
+  letter-spacing:.015em;
+}
+.aoAppHeader :is(.aoLearnModTopTitle small,.aoSetTitle small)>span{font-family:inherit}
+.aoAppHeader>div>small{
+  display:block;color:var(--ao-text-muted,#9ba5b1);
+  font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.09em;text-transform:uppercase;
+}
+.aoAppHeader [data-ao-nav-action]{
+  box-sizing:border-box;display:grid;place-items:center;
+  flex:0 0 44px;min-width:44px;min-height:44px;
+  width:44px;height:44px;margin:0;padding:0;
+  border:1px solid transparent;border-radius:var(--ao-control-radius,11px);
+  background:transparent;color:var(--ao-text-primary,#e9e4d9);
+  touch-action:manipulation;cursor:pointer;
+}
+.aoAppHeader [data-ao-nav-action]:is(:hover,:active){
+  background:var(--ao-liturgical-soft,rgba(201,173,120,.08));
+}
+.aoAppHeader [data-ao-nav-action]:focus-visible{
+  outline:2px solid var(--ao-liturgical-accent,#c9ad78);outline-offset:2px;
+}
+.aoAppHeader .aoNavGlyph{
+  display:inline-block;flex:none;
+  width:22px;height:22px;min-width:22px;min-height:22px;
+  color:inherit;
+}
+.aoExploreSurface .aoFindHeader>div>small{display:none}
+@media(max-width:560px){
+  .aoAppHeader{min-height:56px}
+  .aoAppHeader :is(h1,.aoLearnModTopTitle strong,.aoSetTitle strong){
+    font-size:16px;letter-spacing:0;
+  }
+}
 /* Reusable source/provenance disclosure. Feature modules should converge here. */
 .aoSourceDisclosure{
   margin-top:12px;
