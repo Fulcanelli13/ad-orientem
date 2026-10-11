@@ -5,6 +5,7 @@
 "use strict";
 const D=JSON.parse(document.getElementById("researchData").textContent),$=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const L=(en,fr)=>lang==="fr"?fr:en,loc=new Map(D.locations.map(x=>[x.id,x]));
+const collapsedGenesis=new Set();
 let lang="en",mode="genealogy",lineage="compare",person="mary",pos=0,activeNode="",eventIndex=0,playing=null,chapterTimer=null,follow=true;
 const arr=(key)=>D.genealogies[key].nodes;const ms=()=>D.events.filter(e=>e.person===person);
 const personObj=()=>D.profiles.find(p=>p.id===person),refLabel=s=>s.replace(/([0-9])–/g,"$1–");
@@ -55,7 +56,7 @@ function generateGenesis(){
   if(depth>pos||depth>23||visited.has(name))return;visited.add(name);
   if(!levels[depth])levels[depth]=[];
   levels[depth].push(name);nodeRows.push({name,depth,branch});
-  for(const e of (kids.get(name)||[]))visit(e.child,depth+1,name);
+  if(!collapsedGenesis.has(name))for(const e of (kids.get(name)||[]))visit(e.child,depth+1,name);
  }
  visit("Adam",0,"");
  const maxDepth=Math.max(0,...nodeRows.map(n=>n.depth));let columns=0;
@@ -71,7 +72,7 @@ function generateGenesis(){
    if(link&&lastParent.has(n.branch)){const from=lastParent.get(n.branch);
     path+='<path class="edge '+(expandedPath.has(n.name)?'active':'')+'" d="M'+from.x+' '+(from.y+23)+' C'+from.x+' '+(from.y+48)+','+n.x+' '+(n.y-40)+','+n.x+' '+(n.y-23)+'"/>';
    }
-   nodes+='<g class="treeNode'+(n.name===activeNode?' selected':'')+'" data-gen="'+esc(n.name)+'" role="button" tabindex="0"><rect x="'+(n.x-61)+'" y="'+(n.y-24)+'" width="122" height="49" rx="9"/><text x="'+n.x+'" y="'+(n.y+2)+'">'+esc(n.name)+'</text><text x="'+n.x+'" y="'+(n.y+17)+'" class="smallnode">'+((kids.get(n.name)||[]).length?L("+ branches","+ branches"):"")+'</text></g>';
+   nodes+='<g class="treeNode'+(n.name===activeNode?' selected':'')+'" data-gen="'+esc(n.name)+'" role="button" tabindex="0"><rect x="'+(n.x-61)+'" y="'+(n.y-24)+'" width="122" height="49" rx="9"/><text x="'+n.x+'" y="'+(n.y+2)+'">'+esc(n.name)+'</text><text x="'+n.x+'" y="'+(n.y+17)+'" class="smallnode">'+((kids.get(n.name)||[]).length?(collapsedGenesis.has(n.name)?L("+ open","+ ouvrir"):L("− collapse","− réduire")):"")+'</text></g>';
  }
  const h=120+(maxDepth*75);$("graph").setAttribute("viewBox","0 0 "+wide+" "+h);
  $("graph").setAttribute("width",wide);$("graph").setAttribute("height",h);$("graph").innerHTML=path+nodes;
@@ -147,7 +148,7 @@ $("progress").addEventListener("input",e=>{pos=Number(e.target.value);updateLine
 $("prev").addEventListener("click",()=>{pos=Math.max(0,pos-1);$("progress").value=pos;updateLine()});
 $("next").addEventListener("click",()=>{pos=Math.min(Number($("progress").max),pos+1);$("progress").value=pos;updateLine()});
 $("play").addEventListener("click",()=>{if(playing){clearInterval(playing);playing=null;$("play").textContent="Play";return;}$("play").textContent="Pause";playing=setInterval(()=>{if(pos>=Number($("progress").max)){clearInterval(playing);playing=null;$("play").textContent="Play";return;}pos++;$("progress").value=pos;updateLine()},900)});
-$("graph").addEventListener("click",e=>{let n=e.target.closest("[data-node]");if(n){pos=Number(n.dataset.node);$("progress").value=pos;updateLine()}let g=e.target.closest("[data-gen]");if(g){activeNode=g.dataset.gen;generateGenesis()}});
+$("graph").addEventListener("click",e=>{let n=e.target.closest("[data-node]");if(n){pos=Number(n.dataset.node);$("progress").value=pos;updateLine()}let g=e.target.closest("[data-gen]");if(g){activeNode=g.dataset.gen;if(collapsedGenesis.has(activeNode))collapsedGenesis.delete(activeNode);else collapsedGenesis.add(activeNode);generateGenesis()}});
 $("eventTimeline").addEventListener("click",e=>{const b=e.target.closest("[data-index]");if(b){eventIndex=Number(b.dataset.index);renderMission();}});
 $("map").addEventListener("click",e=>{const c=e.target.closest("[data-event]");if(!c)return;const idx=ms().findIndex(x=>x.id===c.dataset.event);if(idx>=0){eventIndex=idx;renderMission();}});
 let dragging=null;
