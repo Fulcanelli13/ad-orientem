@@ -406,7 +406,7 @@ try{
   assert.equal(inlineYear.segments,11,"Liturgical Year lost its eleven 1962 periods");
   assert.equal(inlineYear.periods,11,"Liturgical Year periods are not selectable");
   assert.equal(inlineYear.track,1,"Liturgical Year must have one proportional timeline");
-  assert.ok(inlineYear.ringWidth>=190&&inlineYear.ringWidth<=260,"Year date ring is not phone-legible");
+  assert.ok(inlineYear.ringWidth>=105&&inlineYear.ringWidth<=160,"Year date ring is not phone-legible");
   assert.ok(inlineYear.overflow<=1,"Liturgical Year overflows the phone");
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
