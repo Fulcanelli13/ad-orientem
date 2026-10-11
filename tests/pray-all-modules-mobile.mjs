@@ -210,7 +210,7 @@ try{
    assert.equal(await page.locator(daily).getAttribute("data-guide-step"),String(step));
    assert.equal(await page.locator(daily).count(),1);
  }
- assert.match(await page.locator(daily).innerText(),/Prayer completed/);
+ assert.match(await page.locator(daily).innerText(),/End of sequence/);
  await tapStep("#aoPray435930.open [data-tp381-daily-step='0']",0);
  await page.locator("#aoPray435930.open [data-tp381-daypart='evening']").tap();
  assert.equal(await page.locator(daily+" .aoTP381GuideCount").innerText(),"Step 1 of 13");
@@ -223,7 +223,7 @@ try{
    await tapStep("#aoPray435930.open [data-tp381-examen-step='"+step+"']",step);
    assert.equal(await page.locator(daily).getAttribute("data-guide-step"),String(step));
  }
- assert.match(await page.locator(daily).innerText(),/Prayer completed/);
+ assert.match(await page.locator(daily).innerText(),/End of sequence/);
  await page.locator("#aoPray435930.open [data-tp381-examen-return]").tap();
  assert.equal(await page.locator(daily).getAttribute("data-guide-step"),"9","Examen must resume Evening Prayer at contrition");
  assert.equal(await page.locator(daily).getAttribute("data-ao-pray-guide-card"),"sacrament_act_of_contrition");
