@@ -65,6 +65,7 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - run: node tests/reader-phone-acceptance.mjs
       - run: npm run test:phone-curated65
       - uses: actions/upload-artifact@v4
         if: always()
