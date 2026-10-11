@@ -14,6 +14,16 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
   let active = normalizeAppSurface(initialSurface) ?? "home";
   let disposed = false;
   const listeners = new Set();
+  // One in-memory navigation vocabulary. Module owners continue to manage
+  // their internal pages; the shell remembers only successful destinations.
+  const returnTrail=[];
+  let returning=false;
+  function remember(before,to){
+    if(returning||before===to||before==="settings")return;
+    if(!["home","mass","pray","learn","calendar","find","apostolate"].includes(before))return;
+    if(returnTrail[returnTrail.length-1]!==before)returnTrail.push(before);
+    if(returnTrail.length>16)returnTrail.shift();
+  }
 
   function emit() {
     for (const listener of listeners) listener(active);
@@ -39,6 +49,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
     if (disposed) return result(false, active, { reason: "DISPOSED" });
     const target = normalizeAppSurface(surface);
     if (!target) return result(false, active, { reason: "UNKNOWN_SURFACE" });
+    const origin=active;
 
     // Settings is a top-level overlay and may be opened over an active Mass.
     // The locked donor deliberately handled it before the live-Mass leave guard.
@@ -80,6 +91,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
         await (host.defer?.(() => host.openDomain?.("mass")) ?? host.openDomain?.("mass")),
       );
       if (!opened) return result(false, active, { reason: "DOMAIN_OWNER_UNAVAILABLE" });
+      remember(origin,"mass");
       setActive("mass");
       return result(true, "mass", { resumedMass: true });
     }
@@ -87,6 +99,7 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
     if (target === "home") {
       const opened = Boolean(await host.hardHome?.());
       if (!opened) return result(false, active, { reason: "HOME_OWNER_UNAVAILABLE" });
+      remember(origin,"home");
       setActive("home");
       host.restoreSettingsHome?.();
       return result(true, "home");
@@ -115,13 +128,31 @@ export function createAppShellController({ host, initialSurface = "home" } = {})
       });
     }
 
+    remember(origin,target);
     setActive(target);
     return result(true, target);
   }
 
+  async function back(){
+    if(disposed)return result(false,active,{reason:"DISPOSED"});
+    const origin=active;
+    const candidate=returnTrail.pop()??"home";
+    // Opening a previously visited destination does not push a new history
+    // entry; this prevents an infinite Back→Forward→Back loop.
+    returning=true;
+    try{
+      const destination=candidate===origin?"home":candidate;
+      const resultBack=await go(destination);
+      if(resultBack.ok)return resultBack;
+      if(destination!=="home")return go("home");
+      return resultBack;
+    }finally{returning=false}
+  }
   return Object.freeze({
     surfaces: APP_SURFACES,
     go,
+    back,
+    getReturnTrail:()=>Object.freeze([...returnTrail]),
     setActive,
     syncCoreRoute,
     getActive: () => active,
