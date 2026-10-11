@@ -71,7 +71,19 @@ try{
  await page.waitForFunction(()=>!!document.querySelector("#aoPrayerBookRoot.open .aoRosaryGuide"),null,{timeout:18000});
 
  // Cinematic Rosary is a visual mirror of the canonical player, not a new bead owner.
- await page.waitForSelector("#aoPrayerBookRoot.open .aoRosaryCinemaTimeline",{timeout:15000});
+ await page.waitForSelector("#aoPrayerBookRoot.open .aoRosaryCinemaTimeline",{timeout:9000}).catch(async error=>{
+   const detail=await page.evaluate(()=>{
+    const r=document.querySelector("#aoPrayerBookRoot.open"),api=window.AO_ROSARY_V381,st=api?.state?.(),steps=api?.steps?.()||[];
+    const mysteries=steps.filter(s=>s.kind==="mystery").map(s=>({kind:s.kind,mi:s.mi,key:s.key,phase:s.phase})).slice(0,12);
+    return {rootOpen:!!r,owner:r?.querySelector(".pbShell")?.dataset.aoRosaryExactDonor,
+      active:r?.dataset.aoRosaryActiveRoot,
+      set:st?.set,step:st?.step,steps:steps.length,mysteries,
+      cinemaNodes:r?.querySelectorAll(".aoRosaryCinema").length,
+      cinemaVisible:r?.querySelector(".aoRosaryCinemaTimeline")?.getBoundingClientRect?.()?.height,
+      recentErrors:[...document.querySelectorAll("body .aoError")].map(x=>x.textContent.slice(0,100))};
+   });
+   throw new Error("Rosary cinema diagnostic: "+JSON.stringify(detail)+"; "+String(error));
+ });
  const cinema="#aoPrayerBookRoot.open .aoRosaryCinema";
  assert.equal(await page.locator(cinema+" .aoRosaryCinemaStop").count(),5,"Missing five-mystery timeline");
  assert.equal(await page.locator(cinema+" .aoRosaryCinemaStage").count(),1,"Duplicate Rosary cinematic visual surfaces");
