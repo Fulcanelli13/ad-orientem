@@ -1319,7 +1319,8 @@ export async function mountNativeReaderPreview({
   }
 
   function currentObservedPriestEvent(){
-    if(!ready.curatedEligible || !observedPriestEvent || !current)return null;
+    if(!ready.curatedEligible || !readerModel?.curatedPresentationReview ||
+       !observedPriestEvent || !current)return null;
     return projectObservedOrdinaryPriestEvent({
       observedEventId:observedPriestEvent.eventId,
       independentlyObserved:true,
@@ -2255,6 +2256,9 @@ export async function mountNativeReaderPreview({
   }
 
   function switchPresentationMode(nextMode){
+    // A mode switch is editorial navigation, not an independently observed
+    // priest action. Require a fresh priest event after every mode change.
+    observedPriestEvent=null;
     const anchor=captureReaderModeAnchor(current,{activeCueId});
     const desiredCue=anchor.cueId;
     const rebuilt=buildReaderModeModels({
