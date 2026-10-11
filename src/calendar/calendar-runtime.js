@@ -843,7 +843,7 @@ function paint(){
   requestAnimationFrame(()=>centerSelectedDay(r));return true;
 }
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
-function close({surface="home",silent=false}={}){cancelPendingNavigation();yearColourLoad=null;const previous=embeddedReturn;embeddedReturn=null;root()?.remove?.();try{unsub?.()}catch{}unsub=null;if(silent)return true;if(previous){try{previous.onClose?.()}catch{}return true}syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
+function close({surface="home",silent=false}={}){if(globalThis.__aoCalendarTrace)console.warn("AO_CALENDAR_CLOSE",silent,new Error().stack);cancelPendingNavigation();yearColourLoad=null;const previous=embeddedReturn;embeddedReturn=null;root()?.remove?.();try{unsub?.()}catch{}unsub=null;if(silent)return true;if(previous){try{previous.onClose?.()}catch{}return true}syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
 async function waitForResolution(target,{attempts=120,delay=50}={}){
   for(let i=0;i<attempts;i+=1){
     const s=state(),r=s?.resolution;
