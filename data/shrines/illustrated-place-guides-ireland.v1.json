@@ -1,0 +1,383 @@
+{
+  "schema": "AO_ILLUSTRATED_PLACE_GUIDES_V1",
+  "version": "1.0.0",
+  "reviewed_on": "2026-10-11",
+  "scope": "Ireland pilot based on original custodians, not reproduced third-party destination prose",
+  "source_policy": "Every rendered narrative paragraph, event, chapel and visit note cites an exact original publisher HTTPS URL",
+  "media_policy": "Only already-approved, locally stored photographs may render; no hotlinked guide art or unlicensed hero images",
+  "guides": [
+    {
+      "place_id": "place:IE:knock-shrine",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.knockshrine.ie/",
+      "region_en": "County Mayo · Archdiocese of Tuam",
+      "region_fr": "Comté de Mayo · archidiocèse de Tuam",
+      "subtitle_en": "An apparition without spoken words; a pilgrimage centred on Mary and the Eucharistic Lamb.",
+      "subtitle_fr": "Une apparition silencieuse ; un pèlerinage tourné vers Marie et l'Agneau eucharistique.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "apparition",
+          "title_en": "The apparition and its witnesses",
+          "title_fr": "L'apparition et ses témoins",
+          "paragraphs": [
+            {
+              "en": "On the evening of 21 August 1879, witnesses at the parish church in Knock described an apparition beside its gable wall. Their accounts place the Blessed Virgin Mary, Saint Joseph and Saint John the Evangelist with an altar, a Lamb and a cross. Unlike many reported Marian apparitions, no spoken message was recorded.",
+              "fr": "Le soir du 21 août 1879, des témoins réunis près de l'église paroissiale de Knock décrivirent une apparition contre son mur-pignon. Leurs récits situent la Vierge Marie, saint Joseph et saint Jean l'Évangéliste près d'un autel, d'un Agneau et d'une croix. Contrairement à de nombreux autres récits marials, aucun message oral ne fut rapporté.",
+              "source_url": "https://www.knockshrine.ie/history/",
+              "qualifier": "APPARITION_ACCOUNT"
+            },
+            {
+              "en": "The shrine preserves the witnesses' statements and historical archives. These original records allow pilgrims to distinguish the testimony of 1879 from later artistic representations and interpretation.",
+              "fr": "Le sanctuaire conserve les témoignages et les archives historiques. Ces documents originaux permettent de distinguer les récits de 1879 de leurs représentations artistiques et de leurs interprétations postérieures.",
+              "source_url": "https://www.knockshrine.ie/downloads/",
+              "qualifier": "ORIGINAL_TESTIMONY"
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "title_en": "From village church to international sanctuary",
+          "title_fr": "De l'église villageoise au sanctuaire international",
+          "paragraphs": [
+            {
+              "en": "The nineteenth-century parish church, the Apparition Chapel and the later Basilica of Our Lady, Queen of Ireland represent different phases in the growth of Knock. They belong to one pilgrimage campus, not to multiple map pins.",
+              "fr": "L'église paroissiale du XIXe siècle, la chapelle de l'Apparition et la basilique Notre-Dame-Reine-d'Irlande représentent des étapes différentes du développement de Knock. Elles font partie d'un même ensemble de pèlerinage et ne nécessitent pas plusieurs repères cartographiques.",
+              "source_url": "https://www.knockshrine.ie/plan-your-visit/planning-your-visit-to-knock-shrine/"
+            },
+            {
+              "en": "The Apparition Chapel protects the original gable wall. Carrara marble figures by Lorenzo Ferri portray the witnesses' vision; the figures were made in 1960. The site was visited by John Paul II in 1979 and Francis in 2018.",
+              "fr": "La chapelle de l'Apparition protège le mur-pignon d'origine. Des statues en marbre de Carrare réalisées par Lorenzo Ferri représentent la vision des témoins ; elles furent sculptées en 1960. Jean-Paul II visita le lieu en 1979 et François en 2018.",
+              "source_url": "https://www.knockshrine.ie/plan-your-visit/the-apparition-chapel/"
+            }
+          ]
+        },
+        {
+          "id": "prayer",
+          "title_en": "Pilgrimage and prayer",
+          "title_fr": "Pèlerinage et prière",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may pray at the original apparition wall, attend celebrations in the basilica and follow the Stations of the Cross. The shrine's published visitor guide also identifies the parish church, museum, gardens and Holy Water fonts.",
+              "fr": "Les pèlerins peuvent prier près du mur de l'apparition, participer aux célébrations dans la basilique et suivre le chemin de croix. Le guide officiel indique également l'église paroissiale, le musée, les jardins et les fontaines d'eau bénite.",
+              "source_url": "https://www.knockshrine.ie/plan-your-visit/planning-your-visit-to-knock-shrine/"
+            },
+            {
+              "en": "The National Novena at Knock has been organised since 1977. For 2026, the official programme ran 13–21 August, including evening candlelight processions when weather permitted. These dates describe the verified 2026 programme, not a rule for every future year.",
+              "fr": "La neuvaine nationale de Knock est organisée depuis 1977. En 2026, le programme officiel s'est déroulé du 13 au 21 août, avec des processions aux flambeaux en soirée lorsque le temps le permettait. Ces dates concernent 2026 et ne constituent pas une règle fixe pour les années suivantes.",
+              "source_url": "https://www.knockshrine.ie/national-novena-13-21-august-2026/",
+              "qualifier": "YEAR_SPECIFIC_PROGRAMME"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "chapel",
+          "name_en": "Apparition Chapel",
+          "name_fr": "Chapelle de l'Apparition",
+          "description_en": "The preserved parish-church gable and the marble representation of the 1879 testimony.",
+          "description_fr": "Le mur-pignon préservé de l'église paroissiale et la représentation en marbre du témoignage de 1879.",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/the-apparition-chapel/"
+        },
+        {
+          "id": "basilica",
+          "name_en": "Basilica of Our Lady, Queen of Ireland",
+          "name_fr": "Basilique Notre-Dame-Reine-d'Irlande",
+          "description_en": "The principal pilgrimage church, with the large Apparition mosaic and Stations of the Cross.",
+          "description_fr": "La principale église de pèlerinage, avec la grande mosaïque de l'Apparition et le chemin de croix.",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/planning-your-visit-to-knock-shrine/"
+        },
+        {
+          "id": "parish",
+          "name_en": "Historic parish church",
+          "name_fr": "Église paroissiale historique",
+          "description_en": "The church built in 1828 next to the site of the apparition.",
+          "description_fr": "L'église construite en 1828 près du lieu de l'apparition.",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/planning-your-visit-to-knock-shrine/"
+        },
+        {
+          "id": "museum",
+          "name_en": "Knock Museum and pilgrimage gardens",
+          "name_fr": "Musée de Knock et jardins du pèlerinage",
+          "description_en": "Historic exhibits and quieter grounds for reflection; current openings are published by the shrine.",
+          "description_fr": "Des expositions historiques et des espaces de recueillement ; les conditions de visite sont publiées par le sanctuaire.",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/planning-your-visit-to-knock-shrine/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1828",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Parish church built",
+          "title_fr": "Construction de l'église paroissiale",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/planning-your-visit-to-knock-shrine/"
+        },
+        {
+          "when": "1879-08-21",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Witnessed apparition",
+          "title_fr": "Apparition rapportée par les témoins",
+          "source_url": "https://www.knockshrine.ie/history/"
+        },
+        {
+          "when": "1960",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Marble apparition tableau sculpted",
+          "title_fr": "Sculpture du groupe en marbre",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/the-apparition-chapel/"
+        },
+        {
+          "when": "1979-09",
+          "when_kind": "HISTORICAL_MONTH",
+          "title_en": "Visit of Pope John Paul II",
+          "title_fr": "Visite de Jean-Paul II",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/the-apparition-chapel/"
+        },
+        {
+          "when": "2018-08",
+          "when_kind": "HISTORICAL_MONTH",
+          "title_en": "Visit of Pope Francis",
+          "title_fr": "Visite du pape François",
+          "source_url": "https://www.knockshrine.ie/plan-your-visit/the-apparition-chapel/"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "novena-2026",
+          "label_en": "National Novena 2026",
+          "label_fr": "Neuvaine nationale 2026",
+          "start_date": "2026-08-13",
+          "end_date": "2026-08-21",
+          "date_kind": "VERIFIED_YEAR_SPECIFIC_PAST",
+          "details_en": "Daily afternoon and evening ceremonies; candlelight procession after the evening ceremony, weather permitting.",
+          "details_fr": "Célébrations l'après-midi et le soir ; procession aux flambeaux après la célébration du soir, si le temps le permet.",
+          "source_url": "https://www.knockshrine.ie/national-novena-13-21-august-2026/"
+        },
+        {
+          "id": "apparition-anniversary",
+          "label_en": "Anniversary of the 1879 apparition",
+          "label_fr": "Anniversaire de l'apparition de 1879",
+          "month_day": "08-21",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "Historical anniversary; consult Knock for any current-year celebration.",
+          "details_fr": "Anniversaire historique ; consulter Knock pour le programme de l'année en cours.",
+          "source_url": "https://www.knockshrine.ie/history/"
+        }
+      ],
+      "visit": {
+        "en": "Visit the official shrine website for current celebrations, opening conditions, prayer resources and pilgrimage arrangements. The published 2026 Novena has already concluded.",
+        "fr": "Consulter le site officiel pour les célébrations, les horaires, les ressources de prière et l'accueil des pèlerins. La neuvaine publiée pour 2026 est terminée.",
+        "source_url": "https://www.knockshrine.ie/plan-your-visit/planning-your-visit-to-knock-shrine/"
+      }
+    },
+    {
+      "place_id": "place:IE:lough-derg-station-island",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.loughderg.org/",
+      "region_en": "County Donegal · Diocese of Clogher",
+      "region_fr": "Comté de Donegal · diocèse de Clogher",
+      "subtitle_en": "An ancient island pilgrimage of penance, prayer, fasting and vigil.",
+      "subtitle_fr": "Un pèlerinage insulaire ancien fait de pénitence, prière, jeûne et veille.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "The sacred islands and the Patrick tradition",
+          "title_fr": "Les îles sacrées et la tradition de saint Patrick",
+          "paragraphs": [
+            {
+              "en": "Lough Derg's pilgrimage tradition is connected with Saint Patrick and an early monastic foundation on Saints Island. The current pilgrimage is performed on a different island, Station Island. These should not be confused or represented by duplicate destination pins.",
+              "fr": "La tradition de pèlerinage de Lough Derg est liée à saint Patrick et à une première fondation monastique sur Saints Island. Le pèlerinage actuel se déroule sur une autre île, Station Island. Ces deux îles ne doivent pas être confondues ni représentées par des repères cartographiques doublons.",
+              "source_url": "https://www.loughderg.org/history.html",
+              "qualifier": "HISTORICAL_TRADITION"
+            },
+            {
+              "en": "The name Saint Patrick's Purgatory evokes the medieval accounts of a cave and visions associated with the saint. The shrine's own history distinguishes this inherited tradition from the physical practice of the modern pilgrimage.",
+              "fr": "Le nom de « Purgatoire de saint Patrick » évoque les récits médiévaux d'une caverne et de visions associées au saint. L'histoire publiée par le sanctuaire distingue cette tradition ancienne de la pratique concrète du pèlerinage actuel.",
+              "source_url": "https://www.loughderg.org/history.html",
+              "qualifier": "MEDIEVAL_TRADITION"
+            }
+          ]
+        },
+        {
+          "id": "penitence",
+          "title_en": "The penitential journey",
+          "title_fr": "Le cheminement pénitentiel",
+          "paragraphs": [
+            {
+              "en": "The traditional Three Day Pilgrimage takes place on Station Island and combines barefoot penitential prayer, fasting and a sustained vigil. The rounds of prayer known as stations give the island its name. This is a demanding religious observance, not an ordinary sightseeing visit.",
+              "fr": "Le pèlerinage traditionnel de trois jours se déroule sur Station Island et unit prière pénitentielle pieds nus, jeûne et veille prolongée. Les cycles de prière appelés « stations » ont donné leur nom à l'île. Il s'agit d'une observance religieuse exigeante, non d'une simple visite touristique.",
+              "source_url": "https://www.loughderg.org/3daypilgrimage.html"
+            },
+            {
+              "en": "Pilgrims travel by boat from the mainland after registering. The shrine asks participants to assess their ability to fast, kneel and undertake the full programme, with a minimum age of fifteen years for the Three Day Pilgrimage.",
+              "fr": "Après l'inscription, les pèlerins gagnent l'île en bateau depuis la rive. Le sanctuaire demande à chacun d'évaluer sa capacité à jeûner, à s'agenouiller et à accomplir l'ensemble du programme ; le pèlerinage de trois jours est réservé aux personnes âgées d'au moins quinze ans.",
+              "source_url": "https://www.loughderg.org/3daypilgrimage.html",
+              "qualifier": "OFFICIAL_PARTICIPATION_CONDITIONS"
+            }
+          ]
+        },
+        {
+          "id": "programme",
+          "title_en": "Seasonal pilgrimage and retreat",
+          "title_fr": "Pèlerinages et retraites selon la saison",
+          "paragraphs": [
+            {
+              "en": "For 2026, the official Three Day Pilgrimage season opened 29 May and closed 15 August; the last day on which a pilgrim could begin was 13 August. The sanctuary advised pre-booking. These are verified 2026 dates only.",
+              "fr": "En 2026, la saison officielle du pèlerinage de trois jours s'est ouverte le 29 mai et achevée le 15 août ; le dernier jour possible de départ était le 13 août. Le sanctuaire conseillait la réservation. Il s'agit uniquement des dates confirmées pour 2026.",
+              "source_url": "https://www.loughderg.org/3daypilgrimage.html",
+              "qualifier": "YEAR_SPECIFIC_PROGRAMME"
+            },
+            {
+              "en": "The sanctuary also offers one-day retreats on selected days outside the Three Day Pilgrimage season. Because dates and the themes vary each year, consult the current programme rather than inferring a standing liturgical calendar obligation.",
+              "fr": "Le sanctuaire organise aussi des retraites d'une journée à certaines dates hors de la saison du pèlerinage de trois jours. Les dates et thèmes variant d'une année à l'autre, il faut consulter le programme courant plutôt que supposer un calendrier fixe.",
+              "source_url": "https://www.loughderg.org/",
+              "qualifier": "YEAR_SPECIFIC_PROGRAMME"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "island",
+          "name_en": "Station Island",
+          "name_fr": "Station Island",
+          "description_en": "The active pilgrimage island, reached from the mainland by the sanctuary's boat.",
+          "description_fr": "L'île du pèlerinage actuel, desservie par la navette du sanctuaire.",
+          "source_url": "https://www.loughderg.org/3daypilgrimage.html"
+        },
+        {
+          "id": "stations",
+          "name_en": "Penitential stations and prayer beds",
+          "name_fr": "Stations pénitentielles et lits de prière",
+          "description_en": "The customary rounds of barefoot penitential prayer that structure the pilgrimage.",
+          "description_fr": "Les parcours coutumiers de prière pénitentielle pieds nus qui structurent le pèlerinage.",
+          "source_url": "https://www.loughderg.org/history.html"
+        },
+        {
+          "id": "historic",
+          "name_en": "Saints Island — historic monastic site",
+          "name_fr": "Saints Island — ancien site monastique",
+          "description_en": "Associated with the early monastery; distinct from the accessible pilgrimage island and not a visitor itinerary.",
+          "description_fr": "Associée au premier monastère ; distincte de l'île du pèlerinage accessible et non proposée comme parcours de visite.",
+          "source_url": "https://www.loughderg.org/history.html"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "5th century (tradition)",
+          "when_kind": "APPROXIMATE_TRADITIONAL_PERIOD",
+          "title_en": "Early Christian foundation associated with Patrick and Saint Davog",
+          "title_fr": "Première fondation chrétienne associée à Patrick et saint Davog",
+          "source_url": "https://www.loughderg.org/about-lough-derg.html"
+        },
+        {
+          "when": "medieval period",
+          "when_kind": "BROAD_HISTORICAL_PERIOD",
+          "title_en": "Accounts of Saint Patrick's Purgatory circulated",
+          "title_fr": "Diffusion des récits du Purgatoire de saint Patrick",
+          "source_url": "https://www.loughderg.org/history.html"
+        },
+        {
+          "when": "2026-05-29",
+          "when_kind": "YEAR_SPECIFIC_EVENT",
+          "title_en": "Three Day Pilgrimage season began in 2026",
+          "title_fr": "Ouverture du pèlerinage de trois jours en 2026",
+          "source_url": "https://www.loughderg.org/3daypilgrimage.html"
+        },
+        {
+          "when": "2026-08-15",
+          "when_kind": "YEAR_SPECIFIC_EVENT",
+          "title_en": "Three Day Pilgrimage season ended in 2026",
+          "title_fr": "Fin de la saison du pèlerinage de trois jours en 2026",
+          "source_url": "https://www.loughderg.org/3daypilgrimage.html"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "three-day-2026",
+          "label_en": "Three Day Pilgrimage 2026",
+          "label_fr": "Pèlerinage de trois jours 2026",
+          "start_date": "2026-05-29",
+          "end_date": "2026-08-15",
+          "latest_start": "2026-08-13",
+          "date_kind": "VERIFIED_YEAR_SPECIFIC_PAST",
+          "details_en": "The 2026 programme ended on 15 August; new starts ceased on 13 August. Booking is advised in the official guidance.",
+          "details_fr": "Le programme 2026 s'est terminé le 15 août ; les nouveaux départs ont cessé le 13 août. La réservation est recommandée par le sanctuaire.",
+          "source_url": "https://www.loughderg.org/3daypilgrimage.html"
+        },
+        {
+          "id": "day-retreats-2026",
+          "label_en": "One Day Retreats 2026",
+          "label_fr": "Retraites d'une journée 2026",
+          "date_kind": "VERIFIED_YEAR_SPECIFIC_SELECTED_DATES",
+          "details_en": "Selected days in May, August and September, not a daily programme. Check the original sanctuary notices for each date.",
+          "details_fr": "Certaines journées en mai, août et septembre, non un programme quotidien. Vérifier chaque date dans les annonces originales.",
+          "source_url": "https://www.loughderg.org/",
+          "year": 2026,
+          "date_note_en": "Selected days in May, August and September 2026; not a continuous season.",
+          "date_note_fr": "Certaines journées de mai, août et septembre 2026 ; pas une saison continue."
+        }
+      ],
+      "visit": {
+        "en": "Book through the official sanctuary. The Three Day Pilgrimage requires advance preparation, registration, a boat transfer, fasting, vigil and barefoot prayer. There is no guarantee of access outside organised dates.",
+        "fr": "Réserver auprès du sanctuaire officiel. Le pèlerinage de trois jours exige une préparation préalable, une inscription, une traversée en bateau, le jeûne, la veille et la prière pieds nus. L'accès hors des périodes organisées n'est pas garanti.",
+        "source_url": "https://www.loughderg.org/3daypilgrimage.html"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "reference_key": "IE-CROAGH-PATRICK",
+      "place_name": "Croagh Patrick, County Mayo",
+      "state": "SOURCE_REVIEW_COMPLETE_MAP_PUBLICATION_HOLD",
+      "potential_site_kind": "PILGRIMAGE_MOUNTAIN",
+      "physical_focus": "Pilgrim trail from Murrisk and summit oratory",
+      "evidence": [
+        "https://www.tuamarchdiocese.org/history-of-the-tuam-archdiocese/",
+        "https://www.croaghpatrick.org/news/categories/newsletter"
+      ],
+      "historical_context_en": "Tuam archdiocesan histories distinguish the ancient tradition of Patrick's forty-day fast from medieval documentary evidence for the climb. The principal pilgrimage is Reek Sunday, the last Sunday of July.",
+      "historical_context_fr": "Les récits de l'archidiocèse de Tuam distinguent la tradition ancienne du jeûne de quarante jours de Patrick des documents médiévaux relatifs à l'ascension. Le grand pèlerinage est le Reek Sunday, dernier dimanche de juillet.",
+      "known_2026_date": "2026-07-26",
+      "hold_reason": "Need an independently verified summit/entrance geographic anchor and pilgrim safety / access source before publishing a new Place."
+    },
+    {
+      "reference_key": "IE-DROGHEDA-OLIVER",
+      "place_name": "Saint Peter's Church and Saint Oliver Plunkett shrine, Drogheda",
+      "state": "SOURCE_REVIEW_COMPLETE_MAP_PUBLICATION_HOLD",
+      "potential_site_kind": "CATHOLIC_RELIC_SHRINE",
+      "physical_focus": "Saint Peter's Catholic Church, West Street, Drogheda",
+      "evidence": [
+        "https://www.armagharchdiocese.org/shrineofstoliverplunkettdrogheda/",
+        "https://www.armagharchdiocese.org/stoliverplunkett/"
+      ],
+      "historical_context_en": "The Archdiocese of Armagh documents Saint Oliver Plunkett's martyrdom at Tyburn on 1 July 1681, the custody of his head by Dominican sisters and its installation in Saint Peter's in June 1921.",
+      "historical_context_fr": "L'archidiocèse d'Armagh documente le martyre de saint Olivier Plunkett à Tyburn le 1er juillet 1681, la garde de son chef par des dominicaines et son installation à Saint-Pierre en juin 1921.",
+      "annual_date_kind": "07-01_HISTORICAL_FEAST_NOT_LIVE_PROGRAMME",
+      "hold_reason": "Confirm exact parish building pin, reuse rights for relic photography and relationship to other Drogheda historical sites before publication."
+    },
+    {
+      "reference_key": "IE-KILDARE-BRIGID",
+      "place_name": "Kildare — Saint Brigid pilgrimage cluster",
+      "state": "SOURCE_REVIEW_COMPLETE_MAP_PUBLICATION_HOLD",
+      "potential_site_kind": "MULTI_CUSTODIAN_HISTORIC_CLUSTER",
+      "physical_focus": "Catholic parish church of Saint Brigid, Solas Bhríde, holy wells; medieval cathedral separately identified",
+      "evidence": [
+        "https://kildareparish.ie/kildare-town/",
+        "https://solasbhride.ie/event/a-pilgrimage-in-the-footsteps-of-st-brigid-of-kildare/",
+        "https://stbrigidscathedral.com/",
+        "https://solasbhride.ie/feile-bride-2026/"
+      ],
+      "historical_context_en": "The Catholic parish and Brigidine sisters maintain living Catholic devotion and a pilgrimage walk. The medieval Saint Brigid's Cathedral is currently Church of Ireland, not a Catholic Mass venue.",
+      "historical_context_fr": "La paroisse catholique et les sœurs brigittines perpétuent la dévotion catholique et un parcours de pèlerinage. La cathédrale médiévale Sainte-Brigitte relève actuellement de l'Église d'Irlande, non d'un lieu de messe catholique.",
+      "annual_date_kind": "02-01_FEAST_LOCAL_EVENTS_REQUIRE_YEARLY_CHECK",
+      "hold_reason": "Reconcile three separate actual physical sites and current denominational ownership; do not collapse a multi-stop town itinerary into an invented single Catholic cathedral pin."
+    }
+  ]
+}

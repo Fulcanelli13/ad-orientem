@@ -37,6 +37,21 @@ export function resolveApprovedPlaceMedia(records,placeId){
   });
 }
 
+
+function publishedIllustratedPlaceGuide(guides,placeId){
+  const guide=arr(guides).find(row=>row?.place_id===placeId&&row?.publication==="PUBLISHED");
+  if(!guide||!/^https:\/\/[^\s]+$/.test(text(guide.official_url)))return null;
+  const sourced=value=>/^https:\/\/[^\s]+$/.test(text(value?.source_url));
+  const paragraphs=arr(guide.sections).flatMap(section=>arr(section?.paragraphs));
+  if(!paragraphs.length||!paragraphs.every(row=>text(row?.en)&&text(row?.fr)&&sourced(row)))return null;
+  if(!arr(guide.stops).every(row=>text(row?.name_en)&&text(row?.name_fr)&&sourced(row)))return null;
+  if(!arr(guide.chronology).every(row=>text(row?.when)&&sourced(row)))return null;
+  if(!arr(guide.programmes).every(row=>text(row?.date_kind)&&sourced(row)))return null;
+  // Candidate research can never become a place guide through fallback titles or pins.
+  // Artwork is independently licensed through the existing approved-media registry.
+  return Object.freeze({...guide,gallery:Object.freeze([])});
+}
+
 function placeIdForItem(item){
   if(item?.place_id)return item.place_id;
   if(item?.raw?.place?.place_id)return item.raw.place.place_id;
@@ -292,6 +307,7 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       aliases:Object.freeze(arr(place?.name?.aliases).filter(Boolean)),
       place_type:place?.place_type??"other",
       media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),
+      illustrated_guide:publishedIllustratedPlaceGuide(dataset?.editorial?.placeGuides,placeId),
       address:place?.address??null,
       address_label:addressLabel(place?.address),
       geo:place?.geo??null,

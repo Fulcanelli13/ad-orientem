@@ -517,4 +517,30 @@ export const HERITAGE_STYLE = String.raw`
  .aoExplorePlaceSheet .aoExploreStoryChapter p{font-size:17px;line-height:1.55}
  .aoExplorePlaceSheet .aoExploreStoryChapter{padding:12px 0}
 }
+
+/* Source-owned Ireland guide: no new unlicensed photographs or independent app route. */
+.aoExplorePlaceSheet .aoExploreIllustratedGuide{padding:22px 0 10px;border-top:1px solid rgba(209,177,122,.28);display:grid;gap:24px;min-width:0}
+.aoExplorePlaceSheet .aoExploreGuideIntro{padding:22px 18px;background:linear-gradient(140deg,rgba(201,174,117,.13),rgba(25,33,43,.38));border:1px solid rgba(201,174,117,.19);border-radius:14px}
+.aoExplorePlaceSheet .aoExploreGuideIntro small{font:600 10px/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.16em;color:var(--ao-liturgical-accent,#c9ad78)}
+.aoExplorePlaceSheet .aoExploreGuideIntro h3{font:500 clamp(20px,3.5vw,28px)/1.28 var(--ao-font-display,Georgia,serif);margin:8px 0;color:var(--ao-text-primary,#f1eadf)}
+.aoExplorePlaceSheet .aoExploreGuideIntro p{font:400 13px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#abb3bd);margin:0}
+.aoExplorePlaceSheet .aoExploreGuideSection{display:grid;gap:14px;min-width:0}
+.aoExplorePlaceSheet .aoExploreGuideSection h4{font:500 clamp(18px,3vw,23px)/1.3 var(--ao-font-display,Georgia,serif);margin:0;padding:0 0 9px;border-bottom:1px solid rgba(201,174,117,.25);color:var(--ao-text-primary,#e9e4d9)}
+.aoExplorePlaceSheet .aoExploreGuideParagraph p,.aoExplorePlaceSheet .aoExploreGuideVisit>p{margin:0;font:400 clamp(16px,2.1vw,18px)/1.65 var(--ao-font-body,Georgia,serif);color:var(--ao-text-primary,#e9e4d9)}
+.aoExplorePlaceSheet .aoExploreGuideParagraph+.aoExploreGuideParagraph{margin-top:10px}
+.aoExplorePlaceSheet .aoExploreGuideStops{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.aoExplorePlaceSheet .aoExploreGuideStops article{border:1px solid rgba(201,174,117,.21);border-radius:11px;padding:13px 14px;background:rgba(18,24,32,.7)}
+.aoExplorePlaceSheet .aoExploreGuideStops h5{font:600 15px/1.4 var(--ao-font-body,Georgia,serif);margin:0 0 6px;color:var(--ao-text-primary,#e9e4d9)}
+.aoExplorePlaceSheet .aoExploreGuideStops p,.aoExplorePlaceSheet .aoExploreGuideDate p{font:400 14px/1.55 var(--ao-font-ui,system-ui,sans-serif);margin:0;color:var(--ao-text-secondary,#bec5cc)}
+.aoExplorePlaceSheet .aoExploreGuideTimeline{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.aoExplorePlaceSheet .aoExploreGuideTimeline li{display:grid;grid-template-columns:minmax(95px,30%) 1fr;gap:13px;padding:12px 0;border-bottom:1px solid rgba(201,174,117,.12)}
+.aoExplorePlaceSheet .aoExploreGuideTimeline time{font:600 12px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-liturgical-accent,#c9ad78)}
+.aoExplorePlaceSheet .aoExploreGuideTimeline strong{font:500 15px/1.45 var(--ao-font-body,Georgia,serif);color:var(--ao-text-primary,#e9e4d9)}
+.aoExplorePlaceSheet .aoExploreGuideDate{display:grid;gap:7px;padding:12px 14px;border:1px solid rgba(201,174,117,.18);border-radius:10px}
+.aoExplorePlaceSheet .aoExploreGuideDate strong{font:600 15px/1.4 var(--ao-font-body,Georgia,serif);color:var(--ao-text-primary,#e9e4d9)}
+.aoExplorePlaceSheet .aoExploreGuideDate time{font:500 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-liturgical-accent,#c9ad78)}
+.aoExplorePlaceSheet .aoExploreGuideDate small{font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#9ca6b3)}
+.aoExplorePlaceSheet .aoExploreIllustratedGuide .aoExploreStoryEvidence{margin-top:5px}
+.aoExplorePlaceSheet .aoExploreGuideIntro .aoExploreStoryEvidence{margin-top:12px}
+@media(max-width:520px){.aoExplorePlaceSheet .aoExploreIllustratedGuide{gap:18px}.aoExplorePlaceSheet .aoExploreGuideIntro{padding:18px 13px}.aoExplorePlaceSheet .aoExploreGuideTimeline li{grid-template-columns:92px 1fr;gap:9px}}
 `;
