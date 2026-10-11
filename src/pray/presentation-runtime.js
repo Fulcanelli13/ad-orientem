@@ -300,6 +300,7 @@ function open(id,opts={}){
   else if(id==='pray.angelus'||id==='pray.angelus_regina')view='angelus';
   else if(id==='pray.rosary'){
     ROSARY_FIFTEEN.active=false;
+    window.AO_ROSARY_V381?.setMethod?.('ordinary');
     view='home';navStack=[];
     return launchRosaryPlayer({view:'home',navStack:[],prayerReturnView:null,prayerId:null});
   }
@@ -790,9 +791,18 @@ function renderRosary(){
  const rs=window.AO_ROSARY_V381?.state?.()||{};
  return `${head(L('Holy Rosary','Saint Rosaire'))}<main class="aoP435930Body aoP435930RosaryFallback"><button type="button" class="aoP435930Primary" data-p435930-launch-rosary>${esc(rs.set?L('Continue Rosary','Continuer le Rosaire'):L('Begin Rosary','Commencer le Rosaire'))}</button></main>`;
 }
+function launchTraditionalRosaryMethod(method){
+ const api=window.AO_ROSARY_V381;
+ if(!['ordinary','dominican','montfort'].includes(method)||typeof api?.setMethod!=='function')return false;
+ ROSARY_FIFTEEN.active=false;
+ if(api.setMethod(method)!==true)return false;
+ if(launchRosaryPlayer(captureResume()))return true;
+ api.setMethod('ordinary');return false;
+}
 function launchFifteenRosary(){
  const api=window.AO_ROSARY_V381;
  if(typeof api?.setMysterySet!=='function')return false;
+ if(api.setMethod?.('ordinary')!==true)return false;
  ROSARY_FIFTEEN.active=true;
  if(!launchRosaryPlayer(captureResume())){ROSARY_FIFTEEN.active=false;return false}
  // A newly opened canonical donor is always started in the Joyful set.
@@ -1531,7 +1541,7 @@ function renderMercy(){
 function renderRosaryMethods(){
  const names={ordinary:L('Traditional Rosary','Rosaire traditionnel'),dominican:L('Dominican Rosary','Rosaire dominicain'),montfort:L('Montfortian method','Méthode montfortaine'),scriptural:L('Scriptural meditation','Méditation biblique'),clausules:L('Rosary with clausules','Rosaire avec clausules')};
  const fifteen='<article class="aoMercyMethod"><h3>'+esc(L('Complete fifteen-decade Rosary','Rosaire complet de quinze dizaines'))+'</h3><p>'+esc(L('Joyful, Sorrowful and Glorious mysteries in one journey.','Mystères joyeux, douloureux et glorieux dans une même prière.'))+'</p><button type="button" data-p435930-rosary-fifteen>'+esc(L('Begin fifteen decades','Commencer quinze dizaines'))+'</button></article>';
- const rows=Object.values(ROSARY_METHODS).map(v=>'<article class="aoMercyMethod"><h3>'+esc(names[v.id])+'</h3><p>'+esc(v.policy)+'</p><a href="'+esc(v.source)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Primary source','Source principale'))+' ↗</a> '+(v.status==='canonical-active'?'<button type="button" data-p435930-rosary-original>'+esc(L('Open Rosary','Ouvrir le Rosaire'))+'</button>':'<small>'+esc(L('Further text verification required before live activation','Vérification des textes requise avant activation'))+'</small>')+'</article>').join('');
+ const rows=Object.values(ROSARY_METHODS).map(v=>'<article class="aoMercyMethod"><h3>'+esc(names[v.id])+'</h3><p>'+esc(v.policy)+'</p><a href="'+esc(v.source)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Primary source','Source principale'))+' ↗</a> '+(['ordinary','dominican','montfort'].includes(v.id)?'<button type="button" data-p435930-rosary-method-launch="'+esc(v.id)+'">'+esc(v.id==='ordinary'?L('Open Rosary','Ouvrir le Rosaire'):v.id==='dominican'?L('Pray Dominican Rosary','Prier le Rosaire dominicain'):L('Pray adapted Montfort method','Prier la méthode adaptée de Montfort'))+'</button>':'<small>'+esc(L('Original-text verification pending','Vérification du texte original en attente'))+'</small>')+'</article>').join('');
  return `${head(L('Traditional Rosary methods','Méthodes traditionnelles du Rosaire'),L('Original texts first','Priorité aux textes originaux'))}<main class="aoP435930Body aoMercyMethods"><p>${esc(L('The fifteen-decade option uses the canonical Rosary player. Alternative traditional methods remain subject to original-text verification.','Le Rosaire de quinze dizaines utilise le lecteur canonique. Les autres méthodes traditionnelles exigent encore une vérification des textes originaux.'))}</p>${fifteen}${rows}</main>`;
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
@@ -1575,7 +1585,8 @@ function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-methods')){view='rosaryMethods';navStack=[];return render()}
- if(b.hasAttribute('data-p435930-rosary-original')){ROSARY_FIFTEEN.active=false;return open('pray.rosary',{returnContext:PRAY_CTX});}
+ if(b.hasAttribute('data-p435930-rosary-original'))return launchTraditionalRosaryMethod('ordinary');
+ if(b.hasAttribute('data-p435930-rosary-method-launch'))return launchTraditionalRosaryMethod(b.dataset.p435930RosaryMethodLaunch);
  if(b.hasAttribute('data-p435930-rosary-fifteen'))return launchFifteenRosary();
  if(view==='mercy'){
   if(b.hasAttribute('data-p435930-mercy-prev')){MERCY.step=Math.max(0,MERCY.step-1);return render()}
