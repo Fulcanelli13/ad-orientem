@@ -108,8 +108,15 @@ try {
       '.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]'),
       null,{timeout:20000});
     });
-   await capture("mass-entry","#ao-mass-flow-v1",
-    async()=>{await page.locator('[data-ao-app-surface="mass"]').click()});
+   await capture("mass-entry","#ao-mass-flow-v1 .aoMassFlowBackdrop",
+    async()=>{
+     // Production's Mass entry is a Home action. Opening the ribbon alone
+     // does not guarantee that the preflight backdrop has been requested.
+     await page.locator('.aoTodayV2Tabs [data-home-calendar-today]').click();
+     await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:15000});
+     await page.locator('.homeScreen [data-home-mass-entry]').click();
+     await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:12000});
+    });
    await capture("pray-hub","#aoPray435930.open",
     async()=>{await page.locator('[data-ao-app-surface="pray"]').click()});
    await capture("rosary","#aoPrayerBookRoot.open .pbShell",
