@@ -302,7 +302,15 @@
             95
           ]
         }
-      ]
+      ],
+      "visualCandidate": {
+        "status": "DRAFT_ARTWORK_NOT_APPROVED",
+        "path": "assets/review/mass-campion-priest_raises_eyes_hands-candidate-v1.svg",
+        "version": "v1",
+        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
+        "mode": "256x256 native SVG currentColor",
+        "compareSource": "priest_centre_arms_rich"
+      }
     },
     {
       "id": "P_MEMENTO",
@@ -350,7 +358,15 @@
             66
           ]
         }
-      ]
+      ],
+      "visualCandidate": {
+        "status": "DRAFT_ARTWORK_NOT_APPROVED",
+        "path": "assets/review/mass-campion-priest_memento_hands-candidate-v1.svg",
+        "version": "v1",
+        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
+        "mode": "256x256 native SVG currentColor",
+        "compareSource": "priest_centre_hands_rich"
+      }
     },
     {
       "id": "P_OBLATIONS",
@@ -381,7 +397,15 @@
             53
           ]
         }
-      ]
+      ],
+      "visualCandidate": {
+        "status": "DRAFT_ARTWORK_NOT_APPROVED",
+        "path": "assets/review/mass-campion-priest_hands_over_oblations-candidate-v1.svg",
+        "version": "v1",
+        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
+        "mode": "256x256 native SVG currentColor",
+        "compareSource": "priest_centre_arms_rich"
+      }
     },
     {
       "id": "P_EYES",
@@ -413,7 +437,15 @@
             56
           ]
         }
-      ]
+      ],
+      "visualCandidate": {
+        "status": "DRAFT_ARTWORK_NOT_APPROVED",
+        "path": "assets/review/mass-campion-priest_raises_eyes-candidate-v1.svg",
+        "version": "v1",
+        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
+        "mode": "256x256 native SVG currentColor",
+        "compareSource": "priest_centre_rich"
+      }
     },
     {
       "id": "P_MINOR_ELEVATION",
@@ -446,7 +478,24 @@
             70
           ]
         }
-      ]
+      ],
+      "visualCandidate": {
+        "status": "DRAFT_ARTWORK_NOT_APPROVED",
+        "path": "assets/review/mass-campion-priest_minor_elevation-candidate-v1.svg",
+        "version": "v1",
+        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
+        "mode": "256x256 native SVG currentColor",
+        "compareSource": "canon"
+      }
     }
-  ]
+  ],
+  "visualArtworkDraft": {
+    "newCandidates": 5,
+    "priestCueRowsCovered": 7,
+    "otherFaithfulCueRows": 10,
+    "approvedCandidates": 0,
+    "productionRuntimeBindingsChanged": 0,
+    "html": "reviews/mass-campion-five-priest-artwork-20261011.html",
+    "validation": "Visual rendering tested 24/32/44 CSS pixels and review UI tested at 360/390/768/1280 widths; visual fidelity and rubrical approval pending."
+  }
 }
