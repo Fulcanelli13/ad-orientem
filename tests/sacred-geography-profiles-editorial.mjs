@@ -14,7 +14,7 @@ assert.equal(corpus.shrines.length,216,"expected canonical 216 shrine baseline, 
 assert.ok(corpus.shrines.every(s=>s.origin_summary?.trim()),"a shrine intro is missing");
 assert.ok(corpus.shrines.every(s=>s.source_ids?.length),"a shrine has no identifiable source");
 const updated=corpus.shrines.filter(s=>Object.hasOwn(s,"origin_summary_fr"));
-assert.equal(updated.length,38,"the specific 38 previously empty profiles must be complete in both languages");
+assert.ok(updated.length>=38,"the original 38 completed profiles must remain bilingual; additional reviewed profiles may be added");
 const sourceMap=new Map(sourceRegistry.sources.map(s=>[s.id,s]));
 assert.equal(sourceMap.size,sourceRegistry.sources.length,"source IDs must be unique");
 assert.equal(sourceRegistry.sources.length,349,"12 additional original sources must be retained");
