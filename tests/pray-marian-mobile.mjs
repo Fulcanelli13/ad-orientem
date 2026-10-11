@@ -110,7 +110,17 @@ try{
    const target=Number(await button.getAttribute("data-ao-rosary-cinema-jump"));
    assert.ok(Number.isSafeInteger(target)&&target>=0,"Mystery button lacks native first-step anchor");
    await button.evaluate(n=>n.click());
-   await page.waitForFunction(n=>window.AO_ROSARY_V381?.state?.()?.step===n,target,{timeout:9000});
+   await page.waitForFunction(n=>Number(window.AO_ROSARY_V381?.state?.()?.step)===n,target,{timeout:7500}).catch(async error=>{
+     const diagnostics=await page.evaluate(target=>{
+       const api=window.AO_ROSARY_V381,st=api?.state?.(),r=document.querySelector("#aoPrayerBookRoot.open");
+       const h=r?.querySelector(".aoRosaryCinema"),nav=r?.querySelector(".aoRosaryCinemaTimeline");
+       return {target,state:st,steps:api?.steps?.()?.length,
+         head:r?.querySelector(".pbShell")?.dataset.aoRosaryStep,
+         cinema:h?.dataset,navExists:!!nav,
+         nativeButton:r?.querySelector("[data-lab-rosary-next]")?.outerHTML?.slice(0,180)};
+     },target);
+     throw new Error("Rosary native mystery-jump diagnostic "+JSON.stringify(diagnostics)+"; "+String(error));
+   });
    assert.equal(await page.locator(cinema+" .aoRosaryCinemaStop[aria-current='step']").count(),1);
    assert.equal(await page.locator(cinema+" .aoRosaryCinemaStage").isVisible(),true);
    assert.equal(await page.locator("#aoPrayerBookRoot.open .pbShell").getAttribute("data-ao-rosary-mi"),null,
