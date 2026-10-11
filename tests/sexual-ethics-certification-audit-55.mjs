@@ -15,7 +15,7 @@ assert.equal(CSE_DEBATE_IDS.length,55);
 assert.equal(report.cases.length,55);
 assert.deepEqual(report.cases.map(x=>x.id).sort(),[...CSE_DEBATE_IDS].sort());
 assert.equal(report.statistics.stages,440);
-assert.equal(report.statistics.direct_registered_source_references,636);
+assert.equal(report.statistics.direct_registered_source_references,640);
 assert.equal(report.statistics.bibliographic_only_rendered,0);
 assert.equal(report.statistics.full_certifications,0);
 assert.equal(report.statistics.publication_approval,false);
@@ -58,7 +58,7 @@ for(const review of report.cases){
  }
 }
 assert.equal(stages,440);
-assert.equal(refs,636);
+assert.equal(refs,640);
 for(const id of ["CSE008","CSE010","CSE145"]){
   const q=report.cases.find(x=>x.id===id);
   assert.equal(q.editorial_status,"ATTRIBUTED_ORIGINAL_AUTHOR_EXCERPTS_VIA_SECONDARY_FULL_BOOK_NOT_REVIEWED");
@@ -72,4 +72,4 @@ assert.equal(sources.CSE012.counter[0],"CURRAN_CDF1986");
 assert.ok(!JSON.stringify(sources).includes('"LBM"'));
 assert.ok(!JSON.stringify(sources).includes('"SINGER2011"'));
 assert.ok(!JSON.stringify(sources).includes('"CURRAN1978"'));
-console.log("PASS evidence-audit: 55 debates, all 440 bilingual stages, 636 live non-catalogue resolved links; original-book scans uncollated; 0 unjustified complete certifications.");
+console.log("PASS evidence-audit: 55 debates, all 440 bilingual stages, 640 live non-catalogue resolved links; original-book scans uncollated; 0 unjustified complete certifications.");
