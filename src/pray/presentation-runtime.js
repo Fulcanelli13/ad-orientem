@@ -1589,6 +1589,15 @@ async function openExternalFamilyRoute(button,route,returnFamily){
  return false;
 }
 function onClick(e){
+ // Explicit native-details toggle: iOS/Chromium touch and keyboard share one
+ // source-disclosure action; cancel the default to prevent a double toggle.
+ const sourceSummary=e.target.closest?.('details.aoP435930Source > summary');
+ if(sourceSummary){
+  e.preventDefault();
+  const detail=sourceSummary.parentElement;
+  if(detail?.tagName==='DETAILS')detail.open=!detail.open;
+  return;
+ }
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-methods')){view='rosaryMethods';navStack=[];return render()}
