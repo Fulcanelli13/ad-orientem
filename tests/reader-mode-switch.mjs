@@ -5,6 +5,7 @@ import {
   captureReaderModeAnchor,
   findReaderModeAnchorCard,
 } from "../src/mass/reader-mode-switch.js";
+import { guideForPresentationCard } from "../src/mass/reader-guide.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -109,6 +110,32 @@ assert.equal(cardForCue("AO.SM.C0173"),cardForCue("AO.SM.C0174"),
   "Host elevation must remain linked to the exact words without a blank transition");
 assert.equal(cardForCue("AO.SM.C0179"),cardForCue("AO.SM.C0181"),
   "Chalice elevation must remain linked to the exact words without a blank transition");
+const guide=load("../data/presentation/guide-registry.v1.json");
+for(const card of expandedReview.presentationModel.cards){
+  const inherited=guideForPresentationCard(guide,card);
+  assert.ok(inherited?.sourceLinks?.length,card.sectionId+": lost original Guide citations");
+  assert.equal(inherited.moment,card.title,card.sectionId+": Guide title mismatched new stage");
+  assert.equal(inherited.coverage,"INHERITED_MACRO_CONTEXT",
+    "65-card titles must not pretend their Guide content is newly sourced");
+}
+const curatedHostWords=cardForCue("AO.SM.C0173");
+const curatedHostAnchor=captureReaderModeAnchor(curatedHostWords,{activeCueId:"AO.SM.C0173"});
+assert.equal(
+  findReaderModeAnchorCard(expandedReview.presentationModel,curatedHostAnchor),
+  curatedHostWords,"curated exact cue anchor must recover the Host words card");
+assert.equal(
+  findReaderModeAnchorCard(live.presentationModel,curatedHostAnchor)?.paragraphs.some(
+    p=>(p.sourceCueIds??[]).includes("AO.SM.C0173")),true,
+  "switching curated review to 48-card LIVE lost the same Host cue");
+assert.equal(
+  expandedReview.presentationModel.previousCard(expandedReview.presentationModel.cards[1].sectionId)?.sectionId,
+  expandedReview.presentationModel.cards[0].sectionId,
+  "curated navigation must preserve previous-card sequence");
+assert.equal(
+  expandedReview.presentationModel.nextCard(expandedReview.presentationModel.cards[0].sectionId)?.sectionId,
+  expandedReview.presentationModel.cards[1].sectionId,
+  "curated navigation must preserve next-card sequence");
+
 distinct("AO.SM.C0015","AO.SM.C0016","The celebrant Confiteor starts its own prayer card");
 distinct("AO.SM.C0020","AO.SM.C0021","The server Confiteor starts its own prayer card");
 assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Introit" && c.paragraphs.length),
