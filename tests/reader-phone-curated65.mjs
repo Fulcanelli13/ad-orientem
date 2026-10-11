@@ -395,6 +395,52 @@ try{
       "Missal reading may not accept a priest-mode ceremonial event");
     assert.equal(independentPriest.staleOnReturn,null,
       "A Mass mode switch cannot replay a previous priest movement");
+    // The true celebrant track is distinct from concurrent choir/lector
+    // clocks. No inferred celebrant for an unspecified Epistle reader.
+    const priestProper=await page.evaluate(async()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const findBlock=id=>api.model.cards.find(c=>c.blocks?.some(b=>b.blockId===id));
+      api.showSequence(findBlock("AO.SM.B014").sequence);
+      const introit=api.observePriestCeremonialEvent("MC-INT-020");
+      const introitCue=api.getObservedPriestEvent()?.cueId??null;
+      api.showSequence(findBlock("AO.SM.B020").sequence);
+      const anonymous=api.observePriestCeremonialEvent("MC-EPI-020");
+      const lector=api.observePriestCeremonialEvent("MC-EPI-020",
+        {observedActor:"LECTOR",observedDelivery:"SUNG"});
+      const priest=api.observePriestCeremonialEvent("MC-EPI-020",
+        {observedActor:"PRIEST",observedDelivery:"READ"});
+      await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+      const epistle=api.getObservedPriestEvent();
+      const epistleVoice=window.AO_R17_NATIVE_READER_STATE?.priestVoice?.value??null;
+      api.showSequence(findBlock("AO.SM.B085").sequence);
+      const scholaBefore=api.getScholaState()?.trackId??null;
+      const early=api.observePriestCeremonialEvent("MC-COM-305");
+      const communion=api.observePriestCeremonialEvent("MC-END-010");
+      await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+      const communionCue=api.getObservedPriestEvent()?.cueId??null;
+      const communionStation=api.getObservedPriestEvent()?.priestPosition??null;
+      const scholaAfter=api.getScholaState()?.trackId??null;
+      return {introit,introitCue,anonymous,lector,priest,
+        epistleCue:epistle?.cueId??null,epistleVoice,early,
+        communion,communionCue,communionStation,
+        scholaUnchanged:scholaBefore===scholaAfter};
+    });
+    assert.equal(priestProper.introit,true);
+    assert.equal(priestProper.introitCue,"AO.SM.C0043");
+    assert.equal(priestProper.anonymous,false,
+      "Epistle's unresolved proclaimer cannot be presumed to be priest");
+    assert.equal(priestProper.lector,false,
+      "A lector's Epistle must not appear as the celebrant's action");
+    assert.equal(priestProper.priest,true);
+    assert.equal(priestProper.epistleCue,"AO.SM.C0075");
+    assert.equal(priestProper.epistleVoice,"READ / AUDIBLE");
+    assert.equal(priestProper.early,false,
+      "Schola's Communion proper is not the priest's post-ablution reading");
+    assert.equal(priestProper.communion,true);
+    assert.equal(priestProper.communionCue,"AO.SM.C0249");
+    assert.equal(priestProper.communionStation,null,
+      "Asynchronous track placeholder must never show as a priest station");
+    assert.equal(priestProper.scholaUnchanged,true);
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
