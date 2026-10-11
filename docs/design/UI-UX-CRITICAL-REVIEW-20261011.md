@@ -67,3 +67,22 @@ Confirmed from actual screenshots:
 8. **CORRECTION Pray** — production Prayer hub screenshots **are dark and integrated**; the older cream-sheet stylesheet does not justify labelling the current product visually disconnected. Preserve the live design and focus on text size/selection depth.
 
 No claims are made that the French liturgical source, Mass actual actions, or map loading have been fixed. Separate mobile human review remains required.
+
+## Explore basemap acceptance correction — 11 October
+
+The audit's successful 54/54 **route screenshots** must not be treated as 54
+successful visual approvals. Its prior Explore screenshots included a
+`Loading documented places…` screen without rendered geography or pins.
+
+The capture now records distinct `localDataState` and `mapState`, a visible
+canvas probe and explicit `mapAcceptance` classification. A screenshot with
+loading, stalled, empty or unavailable map is `MAP_UNVERIFIED`; even a canvas
+with `mapState=ready` is only `RENDERED_CANDIDATE_NEEDS_HUMAN_REVIEW`.
+The `matrix.json` summary includes totals and unresolved examples, while the
+HTML review board shows each Explore state alongside its capture.
+
+This keeps the 54-frame route-coverage number separate from **actual basemap
+visual acceptance**. The status and late-CDN recovery fix belongs to existing
+[Explore PR #1058](https://github.com/Fulcanelli13/ad-orientem/pull/1058),
+not to this read-only design review. It makes no claim about pin source
+accuracy, tile provider availability, or physical phone acceptance.
