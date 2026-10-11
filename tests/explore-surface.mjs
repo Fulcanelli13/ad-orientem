@@ -686,6 +686,8 @@ assert.match(heritageHtml,/aoHeritageMapHint/,"initial screen should explain pin
 assert.match(heritageHtml,/data-heritage-world/,"a world-view recovery control is required");
 assert.ok(heritageHtml.indexOf('class="aoHeritageTools"')<heritageHtml.indexOf('class="aoHeritageCategories"'),"search must appear before the category filters");
 assert.match(heritageHtml,/aoHeritageMore/,"technical record lists should be behind Browse");
+assert.equal((heritageHtml.match(/data-find-glossary/g)||[]).length,1,"Glossary should have one visible entry beside search");
+assert.match(heritageHtml,/aoHeritageGlossaryButton/);
 assert.match(heritageHtml,/data-find-filter-value="tlm"/,"Mass map shortcut remains reachable in Browse");
 assert.doesNotMatch(heritageHtml,/aoHeritageSearchResults/,"unfiltered launch must not display search results");
 const searchableMap=projectHeritagePlaces(projection,{query:"Lourdes"});
