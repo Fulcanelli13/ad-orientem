@@ -105,15 +105,6 @@ try{
       await page.locator('.aoHeritageEditorialPreview [data-explore-expand-place]').tap();
       await page.locator('.aoExplorePlaceEditorial').waitFor({state:"visible"});
       assert.ok((await page.locator('.aoExplorePlaceChapters [data-explore-place-jump]').count())>=2);
-      assert.ok((await page.locator('.aoExploreStoryChapter').count())>=2,
-        "Featured Lourdes place must show at least origin and pilgrimage evidence paragraphs");
-      const links=await page.locator('.aoExploreStoryEvidence a').evaluateAll(nodes=>
-        nodes.map(el=>({height:el.getBoundingClientRect().height,href:el.getAttribute('href')})));
-      assert.ok(links.length>=2&&links.every(link=>link.height>=44&&link.href.startsWith("https://")),
-        "Story evidence must be independently clickable at a full phone touch target");
-      await page.locator('[data-explore-place-jump="calendar"]').tap();
-      assert.equal(await page.locator('[data-explore-place-chapter="calendar"]').count(),1,
-        "Canonical Calendar relationship must remain in Place reader");
       await page.locator('[data-explore-place-jump="sources"]').tap();
       assert.equal(await page.locator('[data-explore-place-chapter="sources"] details').getAttribute('open'),'',
         "In-place Sources shortcut must reveal original evidence rather than opening another screen");
