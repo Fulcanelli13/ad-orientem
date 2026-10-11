@@ -304,12 +304,13 @@
         }
       ],
       "visualCandidate": {
-        "status": "DRAFT_ARTWORK_NOT_APPROVED",
-        "path": "assets/review/mass-campion-priest_raises_eyes_hands-candidate-v1.svg",
-        "version": "v1",
-        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
-        "mode": "256x256 native SVG currentColor",
-        "compareSource": "priest_centre_arms_rich"
+        "status": "REVIEW_ONLY_VECTOR_PASS_VISUAL_APPROVAL_PENDING",
+        "path": "assets/review/mass-campion-priest_raises_eyes_hands-candidate-v2.svg",
+        "version": "v2",
+        "reviewPage": "reviews/mass-campion-five-priest-svg-v2-review-20261011.html",
+        "mode": "single-path, evenodd transparent cutouts, native SVG currentColor",
+        "compareSource": "priest_centre_arms_rich",
+        "previousV1Path": "assets/review/mass-campion-priest_raises_eyes_hands-candidate-v1.svg"
       }
     },
     {
@@ -360,12 +361,13 @@
         }
       ],
       "visualCandidate": {
-        "status": "DRAFT_ARTWORK_NOT_APPROVED",
-        "path": "assets/review/mass-campion-priest_memento_hands-candidate-v1.svg",
-        "version": "v1",
-        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
-        "mode": "256x256 native SVG currentColor",
-        "compareSource": "priest_centre_hands_rich"
+        "status": "REVIEW_ONLY_VECTOR_PASS_VISUAL_APPROVAL_PENDING",
+        "path": "assets/review/mass-campion-priest_memento_hands-candidate-v2.svg",
+        "version": "v2",
+        "reviewPage": "reviews/mass-campion-five-priest-svg-v2-review-20261011.html",
+        "mode": "single-path, evenodd transparent cutouts, native SVG currentColor",
+        "compareSource": "priest_centre_hands_rich",
+        "previousV1Path": "assets/review/mass-campion-priest_memento_hands-candidate-v1.svg"
       }
     },
     {
@@ -399,12 +401,13 @@
         }
       ],
       "visualCandidate": {
-        "status": "DRAFT_ARTWORK_NOT_APPROVED",
-        "path": "assets/review/mass-campion-priest_hands_over_oblations-candidate-v1.svg",
-        "version": "v1",
-        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
-        "mode": "256x256 native SVG currentColor",
-        "compareSource": "priest_centre_arms_rich"
+        "status": "REVIEW_ONLY_VECTOR_PASS_VISUAL_APPROVAL_PENDING",
+        "path": "assets/review/mass-campion-priest_hands_over_oblations-candidate-v2.svg",
+        "version": "v2",
+        "reviewPage": "reviews/mass-campion-five-priest-svg-v2-review-20261011.html",
+        "mode": "single-path, evenodd transparent cutouts, native SVG currentColor",
+        "compareSource": "priest_centre_arms_rich",
+        "previousV1Path": "assets/review/mass-campion-priest_hands_over_oblations-candidate-v1.svg"
       }
     },
     {
@@ -439,12 +442,13 @@
         }
       ],
       "visualCandidate": {
-        "status": "DRAFT_ARTWORK_NOT_APPROVED",
-        "path": "assets/review/mass-campion-priest_raises_eyes-candidate-v1.svg",
-        "version": "v1",
-        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
-        "mode": "256x256 native SVG currentColor",
-        "compareSource": "priest_centre_rich"
+        "status": "REVIEW_ONLY_VECTOR_PASS_VISUAL_APPROVAL_PENDING",
+        "path": "assets/review/mass-campion-priest_raises_eyes-candidate-v2.svg",
+        "version": "v2",
+        "reviewPage": "reviews/mass-campion-five-priest-svg-v2-review-20261011.html",
+        "mode": "single-path, evenodd transparent cutouts, native SVG currentColor",
+        "compareSource": "priest_centre_rich",
+        "previousV1Path": "assets/review/mass-campion-priest_raises_eyes-candidate-v1.svg"
       }
     },
     {
@@ -480,12 +484,13 @@
         }
       ],
       "visualCandidate": {
-        "status": "DRAFT_ARTWORK_NOT_APPROVED",
-        "path": "assets/review/mass-campion-priest_minor_elevation-candidate-v1.svg",
-        "version": "v1",
-        "reviewPage": "reviews/mass-campion-five-priest-artwork-20261011.html",
-        "mode": "256x256 native SVG currentColor",
-        "compareSource": "canon"
+        "status": "REVIEW_ONLY_VECTOR_PASS_VISUAL_APPROVAL_PENDING",
+        "path": "assets/review/mass-campion-priest_minor_elevation-candidate-v2.svg",
+        "version": "v2",
+        "reviewPage": "reviews/mass-campion-five-priest-svg-v2-review-20261011.html",
+        "mode": "single-path, evenodd transparent cutouts, native SVG currentColor",
+        "compareSource": "canon",
+        "previousV1Path": "assets/review/mass-campion-priest_minor_elevation-candidate-v1.svg"
       }
     }
   ],
@@ -495,7 +500,7 @@
     "otherFaithfulCueRows": 10,
     "approvedCandidates": 0,
     "productionRuntimeBindingsChanged": 0,
-    "html": "reviews/mass-campion-five-priest-artwork-20261011.html",
-    "validation": "Visual rendering tested 24/32/44 CSS pixels and review UI tested at 360/390/768/1280 widths; visual fidelity and rubrical approval pending."
+    "html": "reviews/mass-campion-five-priest-svg-v2-review-20261011.html",
+    "validation": "5 SVGs individually checked in GitHub branch: viewBox, single currentColor vector path, transparent evenodd cutouts, no image/mask/filter/fixed colour. Local CairoSVG renders tested at 24/32/44px and in five palette hues with invariant silhouette alpha. Dedicated mobile browser acceptance remains pending because local Chromium blocked file and localhost navigation."
   }
 }
