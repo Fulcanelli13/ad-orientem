@@ -37,6 +37,7 @@ try{
         constructor(options){
           this.options=options;this.center={lng:options.center[0],lat:options.center[1]};this.zoom=options.zoom;
           window.__EXPLORE_LAYOUT_MAP_OPTIONS__=options;
+          window.__EXPLORE_LAST_MAP__=this;
           window.__EXPLORE_LAYOUT_MAP_MOUNTS__=(window.__EXPLORE_LAYOUT_MAP_MOUNTS__||0)+1;
           const canvas=document.createElement("canvas");canvas.className="aoLayoutMapCanvas";
           canvas.style.cssText="display:block;width:100%;height:100%";
@@ -115,6 +116,37 @@ try{
     await page.waitForFunction(()=>document.querySelector('[data-heritage-category="ALL"]')?.getAttribute("aria-pressed")==="true",null,{timeout:15000});
     assert.equal(await page.evaluate(()=>window.__EXPLORE_LAYOUT_MAP_MOUNTS__),1,
       width+"px searching, selecting and filtering remounted the map canvas");
+
+    // Real shell round-trip: selecting a pin and leaving Explore must not
+    // discard the exact map camera, query, category, or record on return.
+    await page.locator('.aoHeritageSurface [data-find-query]').fill("Sanctuaire Notre-Dame de Lourdes");
+    await page.locator('.aoHeritageSearchResults [data-explore-open-place]').first().tap();
+    await page.locator('.aoHeritageCardLayer .aoHeritagePreview').waitFor({state:"visible"});
+    const contextBefore=await page.evaluate(()=>{
+      window.__EXPLORE_LAST_MAP__.center={lng:2.3,lat:48.85};
+      window.__EXPLORE_LAST_MAP__.zoom=8.5;
+      return {selection:window.AO_FIND_APP_V1.status().selectedPlaceId,
+        query:document.querySelector('.aoHeritageSurface [data-find-query]')?.value};
+    });
+    assert.ok(contextBefore.selection,width+"px pin selection missing before round trip");
+    const roundTrip=await page.evaluate(async()=>{
+      const shell=window.AO_APP_SHELL_V1;
+      const exited=await shell.navigate("home");
+      const returned=await shell.navigate("find");
+      return {exited:exited?.ok===true,returned:returned?.ok===true,
+        selected:window.AO_FIND_APP_V1.status().selectedPlaceId,
+        query:document.querySelector('.aoHeritageSurface [data-find-query]')?.value,
+        camera:window.__EXPLORE_LAYOUT_MAP_OPTIONS__?.center,
+        zoom:window.__EXPLORE_LAYOUT_MAP_OPTIONS__?.zoom,
+        preview:!!document.querySelector('.aoHeritageCardLayer .aoHeritagePreview')};
+    });
+    assert.equal(roundTrip.exited,true,width+"px exit Explore via Today failed");
+    assert.equal(roundTrip.returned,true,width+"px re-enter Explore via shell failed");
+    assert.equal(roundTrip.selected,contextBefore.selection,width+"px return lost selected pin");
+    assert.equal(roundTrip.query,contextBefore.query,width+"px return lost search query");
+    assert.deepEqual(roundTrip.camera,[2.3,48.85],width+"px return lost map centre");
+    assert.equal(roundTrip.zoom,8.5,width+"px return lost map zoom");
+    assert.equal(roundTrip.preview,true,width+"px return lost place preview");
     assert.deepEqual(errors,[],width+"px JavaScript errors: "+errors.slice(0,3).join(" | "));
     snapshots.push({screen:width+"x"+height,locale,mapHeight:Math.round(initial.map.height),
       searchWidth:Math.round(initial.searchWidth),cardHeight:Math.round(card.height),
