@@ -9,6 +9,13 @@ const CATEGORY_LABELS=Object.freeze({
   traditions:["Customs","Coutumes"],
 });
 const label=(lang,key)=>L(lang,...CATEGORY_LABELS[key]);
+const PLACE_TYPES=Object.freeze({
+  cathedral:["Cathedral","Cathédrale"],basilica:["Basilica","Basilique"],
+  shrine:["Shrine","Sanctuaire"],monastery:["Monastery","Monastère"],
+  chapel:["Chapel","Chapelle"],church:["Church","Église"],
+  convent:["Convent","Couvent"],pilgrimage_destination:["Pilgrimage site","Lieu de pèlerinage"],
+});
+const placeTypeLabel=(language,type)=>PLACE_TYPES[type]?L(language,...PLACE_TYPES[type]):L(language,"Sacred place","Lieu sacré");
 
 // Editorial text comes exclusively from canonical source-owned records.
 // No synthesized narratives, unsupported recognition claims or fallback biographies.
@@ -46,14 +53,14 @@ export function compactHeritagePlaceSheet(vm){
   let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
   html+='<button type="button" class="aoHeritageSheetHandle" data-explore-sheet-toggle aria-label="'+L(vm.language,"Open full place details","Ouvrir la fiche complète du lieu")+'"></button>';
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
-  html+='<span class="aoHeritageCardKicker">'+esc(primary?label(vm.language,primary):L(vm.language,"Sacred place","Lieu sacré"))+'</span>';
+  html+='<span class="aoHeritageCardKicker">'+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
   if(area)html+='<span class="aoHeritageCardLocation">'+esc(area)+'</span>';
   html+='</div><button type="button" class="aoHeritageCardClose" data-find-close-place aria-label="'+L(vm.language,"Close place preview","Fermer l’aperçu du lieu")+'">×</button></div>';
   html+='<h2 class="aoHeritageCardTitle">'+esc(p.name)+'</h2>';
   if(synopsis)html+='<p class="aoHeritageSynopsis">'+esc(synopsis)+'</p>';
   else html+='<p class="aoHeritageCardEmpty">'+L(vm.language,"Explore the original records and sources associated with this place.","Consultez les documents et les sources associés à ce lieu.")+'</p>';
   if(arr(p.saints).length)html+='<p class="aoHeritageSaints">'+esc(L(vm.language,"Associated saints","Saints associés"))+' · '+esc(p.saints.slice(0,2).join(" · "))+'</p>';
-  if(related.length>1)html+='<div class="aoHeritagePlaceTags" aria-label="'+L(vm.language,"Also associated with","Également associé à")+'">'+related.slice(1,4).map(key=>'<span data-category="'+key+'">'+esc(label(vm.language,key))+'</span>').join("")+'</div>';
+  if(related.length)html+='<div class="aoHeritagePlaceTags" aria-label="'+L(vm.language,"Associated themes","Thèmes associés")+'">'+related.slice(0,3).map(key=>'<span data-category="'+key+'">'+esc(label(vm.language,key))+'</span>').join("")+'</div>';
   const feast=arr(p.calendar).find(entry=>/^\d{4}-\d{2}-\d{2}$/.test(entry?.date??""));
   if(feast)html+='<button type="button" class="aoHeritageFeastLink" data-explore-calendar-date="'+esc(feast.date)+'">'+esc(feast.title)+' <span>'+esc(feast.date_label??"")+' →</span></button>';
   html+='<div class="aoHeritagePreviewActions"><button type="button" data-explore-expand-place>'+L(vm.language,"Discover","Découvrir")+' <span aria-hidden="true">→</span></button>';
@@ -65,6 +72,20 @@ export function compactHeritagePlaceSheet(vm){
   return html+'</section></div>';
 }
 
+function nearbyPanel(vm){
+  const nearest=arr(vm.nearby);
+  if(!nearest.length)return "";
+  let html='<section class="aoHeritageNearbyPanel" role="region" aria-label="'+L(vm.language,"Nearest documented places","Lieux documentés les plus proches")+'">';
+  html+='<header><div><strong>'+L(vm.language,"Around you","Autour de vous")+'</strong><small>'+L(vm.language,"Approximate straight-line distances · not journey times","Distances approximatives à vol d’oiseau · pas des temps de trajet")+'</small></div><button type="button" data-heritage-nearby-close aria-label="'+L(vm.language,"Close nearby places","Fermer les lieux proches")+'">×</button></header>';
+  for(const item of nearest){
+    const d=Number(item.distance_km);
+    const amount=Number.isFinite(d)?(d<10?d.toFixed(1):Math.round(d).toLocaleString(vm.language==="fr"?"fr-FR":"en-GB"))+" km":"";
+    html+='<button type="button" class="aoHeritageNearbyResult" data-explore-open-place="'+esc(item.place_id)+'">';
+    html+='<span><strong>'+esc(item.title)+'</strong><small>'+esc(placeTypeLabel(vm.language,item.place_type))+(item.indicative?" · "+L(vm.language,"Indicative pin","Repère indicatif"):"")+'</small></span>';
+    html+='<span class="aoHeritageNearbyDistance">'+esc(amount)+'</span></button>';
+  }
+  html+='</section>';return html;
+}
 function searchMatches(vm){
   const query=String(vm.filters?.query??"").trim();
   if(!query)return "";
@@ -113,6 +134,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={
   html+='<button type="button" class="aoHeritageNearby" data-heritage-nearby aria-label="'+L(vm.language,"Centre map near me","Centrer la carte près de moi")+'">'+L(vm.language,"Near me","Près de moi")+'</button>';
   html+='<button type="button" class="aoHeritageWorldReset" data-heritage-world aria-label="'+L(vm.language,"Show all places on the world map","Afficher tous les lieux sur la carte du monde")+'">'+L(vm.language,"World view","Vue du monde")+'</button>';
   if(searching)html+=searchMatches(vm);
+  else if(arr(vm.nearby).length)html+=nearbyPanel(vm);
   else html+='<p class="aoHeritageMapHint">'+L(vm.language,"Tap a marker to discover a place","Touchez un repère pour découvrir le lieu")+'</p>';
   const customs=arr(vm.customCards);
   if(customs.length){
