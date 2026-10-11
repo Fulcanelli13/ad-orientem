@@ -92,17 +92,23 @@ for(const a of ["pray.divine_mercy","renderMercy()","data-p435930-mercy-next","d
  assert.ok(runtime.includes(a),"Missing native chaplet integration: "+a);
 assert.match(runtime,/else if\(id==='pray\.rosary'\)/,"Original Rosary canonical route must survive");
 assert.match(runtime,/launchRosaryPlayer/,"Original Rosary must retain donor");
-for(const marker of ["data-p435930-rosary-fifteen","function launchFifteenRosary()","ROSARY_FIFTEEN.active","api.setMysterySet?.(set)","nextSteps.findIndex","nextSteps.findLastIndex"]){
+for(const marker of ["data-p435930-rosary-begin","function launchFifteenRosary()","ROSARY_FIFTEEN.active","api.setMysterySet?.(set)","nextSteps.findIndex","nextSteps.findLastIndex"]){
  assert.ok(runtime.includes(marker),"Missing live fifteen-decade transition: "+marker);
 }
-assert.match(runtime,/launchTraditionalRosaryMethod\('ordinary'\)/,"The canonical five-decade launch must remain separate");
+assert.match(runtime,/launchTraditionalRosaryMethod\(ROSARY_CHOOSER.method\)/,"Five-decade choices must launch the canonical owner");
+
+for(const marker of ["data-p435930-rosary-decades","data-p435930-rosary-guidance","data-p435930-rosary-begin","data-ao-rosary-chooser"]){
+ assert.ok(runtime.includes(marker),"Single Rosary chooser missing "+marker);
+}
+assert.match(runtime,/ROSARY_CHOOSER\.method==='ordinary'&&ROSARY_CHOOSER\.decades===15\?launchFifteenRosary\(\)/,
+ "Fifteen-decade entry must use the canonical Rosary bridge");
 const packedManifest=JSON.parse(readFileSync("data/presentation/startup-thin-shell.v1.json","utf8"));
 const donorBundle=readFileSync(packedManifest.pack.file,"utf8");
 assert.match(donorBundle,/setMysterySet:\(set,\{step=0\}=\{\}\)=>/,"Canonical runtime must expose in-place mystery-set switching");
 assert.match(donorBundle,/\['joyful','sorrowful','glorious'\]\.includes\(set\)/,"Reject nontraditional sets in 15-decade API");
 assert.match(donorBundle,/S\.rosarySet=set;[\s\S]{0,100}labRosarySteps\(set\)/,"Reuse canonical Rosary data and render path");
 
-for(const marker of ["data-p435930-rosary-method-launch","function launchTraditionalRosaryMethod(method)","api.setMethod(method)"]){
+for(const marker of ["data-p435930-rosary-choose","function launchTraditionalRosaryMethod(method)","api.setMethod(method)"]){
  assert.ok(runtime.includes(marker),"Method picker not integrated: "+marker);
 }
 assert.match(donorBundle,/setMethod:\(method\)=>/,"Method setting must be owned by the canonical donor");
@@ -139,7 +145,7 @@ assert.ok(donorBundle.indexOf("rosary-dom-collect")<donorBundle.indexOf("rosary-
 assert.match(donorBundle,/AO_ROSARY_METHOD_SOURCE\.montfort/,"Original French source link must be retained");
 
 for(const method of ["montfort_short","scriptural"]){
- assert.ok(runtime.includes("data-p435930-rosary-method-launch"),"Method catalogue launcher absent");
+ assert.ok(runtime.includes("data-p435930-rosary-choose"),"Method chooser absent");
  assert.ok(donorBundle.includes("'"+method+"'"),"Canonical donor missing method "+method);
 }
 const rawBlock=donorBundle.slice(donorBundle.indexOf("const AO_MONTFORT_SHORT_CLAUSES="),
