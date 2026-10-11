@@ -79,7 +79,7 @@ assert.match(design,/font-family:inherit!important/);
 assert.match(design,/\.aoCSEAnswer/);
 assert.match(mass,/import \{ decorateLiturgicalSpeaker \} from "\.\.\/app\/liturgical-speakers\.js";/);
 assert.match(mass,/decorateLiturgicalSpeaker\(target,raw\)/);
-assert.match(mass,/decorateLiturgicalSpeaker\(secondary,p\.secondary\)/);
+assert.match(mass,/decorateLiturgicalSpeaker\(secondary,parallel\)/,"Both source-projected Missal languages retain consistent speaker typography");
 assert.match(pray,/aoAngelusDialogueLine \$\{part\.role\}/);
 assert.match(pray,/aoP435930VRLine \$\{role\}/);
 assert.equal((pray.match(/class="ao-liturgical-speaker"/g)||[]).length,2,"Angelus and Stations must share exactly one speaker class each");
