@@ -132,7 +132,9 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
    if(!button||!host.contains(button))return;
    const target=Number(button.dataset.aoRosaryCinemaJump);
    if(!Number.isSafeInteger(target))return;
-   onJump(target);
+   host.dataset.aoCinemaLastJump=String(target);
+   const jumped=onJump(target);
+   host.dataset.aoCinemaJumpResult=String(jumped);
   });
   image.addEventListener("error",()=>{stage.dataset.artwork="unavailable";image.removeAttribute("src");});
  }
