@@ -12,23 +12,23 @@ const read=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8")
 const events=[1,2,3,4,5,6].flatMap(n=>read("../data/mass/mc-events-0"+n+".v1.json").events);
 const audit=auditOrdinarySungPriestEventAlignment(events);
 assert.deepEqual({all:audit.sourceOnlyCues,matched:audit.eventMatched,pending:audit.pending},
-  {all:15,matched:10,pending:5});
-assert.deepEqual([...audit.pendingCueIds].sort(),[
-  "AO.SM.C0042","AO.SM.C0077","AO.SM.C0109",
-  "AO.SM.C0250","AO.SM.C0256",
-].sort(),"Guarded movements should never acquire approximate automatic event triggers");
+  {all:15,matched:15,pending:0});
+assert.deepEqual(audit.pendingCueIds,[]);
+assert.equal(audit.graphEventBindings,10);
+assert.equal(audit.observerOnlyBindings,5);
 assert.equal(ORDINARY_SUNG_PRIEST_EVENT_ALIGNMENT.length,ORDINARY_SUNG_SOURCE_ONLY_CUES.length);
 
-// These five observation predicates are documented but NOT MC event bindings.
-// A Schola cue, a nearby priest utterance, a swipe, or even host preparation
-// is insufficient evidence to turn one into an automatic priest event.
+// Five exact *observer-only* MC identities, never part of the certified
+// Solemn traversal: no Schola, swipe, proximate prayer, or host preparation
+// can produce the required independent evidence.
 assert.equal(ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS.length,5);
 assert.deepEqual(ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS.map(x=>x.cueId).sort(),
-  [...audit.pendingCueIds].sort());
+  ["AO.SM.C0042","AO.SM.C0077","AO.SM.C0109","AO.SM.C0250","AO.SM.C0256"].sort());
 assert.equal(new Set(ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS.map(x=>x.observationKey)).size,5);
 for(const row of ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS){
-  assert.equal(row.eventId,null,"An observation key is not a fabricated canonical MC event");
-  assert.equal(row.activation,"SPECIFIED_UNBOUND_NO_TRIGGER");
+  assert.match(row.eventId,/^MC-OBS-[A-Z0-9-]+$/);
+  assert.equal(row.activation,"EXPLICIT_OBSERVER_EVENT_ONLY");
+  assert.equal(row.observerOnly,true);
   assert.equal(row.automatedIconAllowed,false);
   assert.equal(row.faithfulPostureAllowed,false);
   assert.equal(row.scholaClockAllowed,false);
@@ -55,21 +55,79 @@ const prepared={session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",provenance:{
 const controller=createReaderCueStateController({registries,sungCorpus:sung,prepared});
 const index=new Map(events.map(e=>[e.id,e]));
 const base={independentlyObserved:true,form:"MISSA_CANTATA_INCENSE",eventIndex:index,cueController:controller};
-const observed=(eventId,sectionId,conditions=[])=>projectObservedOrdinaryPriestEvent({
-  ...base,observedEventId:eventId,sourceSectionId:sectionId,conditions,
+const observed=(eventId,sectionId,conditions=[],proof={})=>projectObservedOrdinaryPriestEvent({
+  ...base,observedEventId:eventId,sourceSectionId:sectionId,conditions,...proof,
 });
-// Against the REAL event index/controller: existing proxy events can legitimately
-// project their *own* canonical cue (e.g. MC-INT-020 -> C0043), but must
-// never claim one of these five unobserved movements or private actions.
+// Against the REAL event index/controller: a proxy may legitimately own
+// another cue (e.g. C0043), but never an observer-only cue.
 for(const row of ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS){
-  assert.equal(observed(row.observationKey,row.sourceSectionId),null,
-    "A descriptive observation key must not be treated as a canonical MC ID");
+  assert.equal(observed(row.observationKey,row.sourceSectionId),null);
+  assert.equal(observed(row.eventId,row.sourceSectionId),null,
+    "Naming event without proof must fail closed");
+  assert.equal(observed(row.eventId,row.sourceSectionId,[],{
+    [row.requiredWitness]:row.requiredValue}),null,
+    "Exact observation still requires independently identified PRIEST");
   for(const eventId of row.forbiddenProxyEvents){
-    assert.ok(index.has(eventId),"A prohibited proxy must name a real existing MC event: "+eventId);
+    assert.ok(index.has(eventId),"Prohibited proxy must actually exist: "+eventId);
     assert.notEqual(observed(eventId,row.sourceSectionId)?.cueId,row.cueId,
-      eventId+" must not turn into unbound "+row.cueId);
+      eventId+" must not produce observed "+row.cueId);
   }
 }
+const priest={observedActor:"PRIEST"};
+const introitMove=observed("MC-OBS-INT-POS","AO.CARD.001",[],{
+  ...priest,observedPosition:"ALTAR_EPISTLE_MISSAL"});
+assert.equal(introitMove?.cueId,"AO.SM.C0042");
+assert.equal(introitMove?.priestPosition?.station,"ALTAR_EPISTLE_MISSAL");
+assert.equal(introitMove?.priestVoice,null,"Physical move has no public prayer");
+assert.equal(observed("MC-OBS-INT-POS","AO.CARD.001",[],{
+  ...priest,observedPosition:"ALTAR_CENTER"}),null);
+const gradual=observed("MC-OBS-GRADUAL","AO.CARD.006",[],{
+  ...priest,observedDelivery:"READ"});
+assert.equal(gradual,null,"Solemn-only source must not leak into Missa Cantata");
+const solemnGradual=projectObservedOrdinaryPriestEvent({...base,form:"SOLEMN",
+  observedEventId:"MC-OBS-GRADUAL",sourceSectionId:"AO.CARD.006",
+  ...priest,observedDelivery:"READ"});
+assert.equal(solemnGradual?.cueId,"AO.SM.C0077");
+assert.equal(solemnGradual?.priestVoice?.value,"LOW_VOICE");
+assert.equal(solemnGradual?.priestPosition,null,
+  "PRIEST_TRACK_ASYNC must not display as physical station");
+const offertory=observed("MC-OBS-OFFERTORY","AO.CARD.010",[],{
+  ...priest,observedDelivery:"READ"});
+assert.equal(offertory?.cueId,"AO.SM.C0109");
+assert.equal(offertory?.priestVoice?.value,"LOW_VOICE");
+assert.equal(offertory?.faithfulPosture,null,
+  "C0109 faithful sitting is NOT transferred by priest recitation");
+assert.equal(offertory?.priestPosture,null);
+assert.equal(offertory?.bell,null);
+const postcommunionTurn=observed("MC-OBS-PC-TURN","AO.CARD.026",[],{
+  ...priest,observedAction:"TURN_TO_PEOPLE"});
+assert.equal(postcommunionTurn?.cueId,"AO.SM.C0250");
+assert.equal(postcommunionTurn?.priestAction?.label,"TURNS TO PEOPLE");
+assert.equal(postcommunionTurn?.priestVoice,null);
+const dismissalTurn=observed("MC-OBS-DISMISS-TURN","AO.CARD.027",[],{
+  ...priest,observedAction:"TURN_TO_PEOPLE"});
+assert.equal(dismissalTurn?.cueId,"AO.SM.C0256");
+assert.equal(dismissalTurn?.priestAction?.label,"TURNS TO PEOPLE");
+assert.equal(observed("MC-OBS-DISMISS-TURN","AO.CARD.027",
+  ["ORATIO_SUPER_POPULUM_PRESENT"],{
+  ...priest,observedAction:"TURN_TO_PEOPLE"}),null,
+  "Lenten prayer must finish before the final turn");
+assert.equal(observed("MC-OBS-DISMISS-TURN","AO.CARD.027",
+  ["ORATIO_SUPER_POPULUM_PRESENT","ORATIO_SUPER_POPULUM_COMPLETED"],{
+  ...priest,observedAction:"TURN_TO_PEOPLE"})?.cueId,"AO.SM.C0256");
+for(const [id,section] of [["MC-OBS-PC-TURN","AO.CARD.026"],
+                            ["MC-OBS-DISMISS-TURN","AO.CARD.027"]]){
+  assert.equal(observed(id,section,["ALTAR_FACES_PEOPLE"],{
+    ...priest,observedAction:"TURN_TO_PEOPLE"}),null,
+    "Versus populum setting must not invent a physical turn");
+  assert.equal(observed(id,section,[],{...priest,observedAction:"KISS_ALTAR"}),null);
+  assert.equal(observed(id,"AO.CARD.001",[],{
+    ...priest,observedAction:"TURN_TO_PEOPLE"}),null);
+}
+assert.equal(projectObservedOrdinaryPriestEvent({...base,form:"LOW",
+  observedEventId:"MC-OBS-INT-POS",sourceSectionId:"AO.CARD.001",
+  ...priest,observedPosition:"ALTAR_EPISTLE_MISSAL"}),null);
+
 const sit=["SEDILIA_USED","SEDILIA_USED_AND_CHANT_CONTINUES"];
 for(const [id,section,position] of [
   ["MC-GLR-040","AO.CARD.003","SEDILIA"],
@@ -141,7 +199,7 @@ assert.equal(observed("MC-GSP-060","AO.CARD.007")?.cueId,"AO.SM.C0086");
 assert.equal(projectObservedOrdinaryPriestEvent({...base,form:"SOLEMN",observedEventId:"MC-GSP-060",
   sourceSectionId:"AO.CARD.007"}),null,
   "Solemn Gospel minister is not necessarily the priest");
-for(const id of ["MC-INT-010","MC-EPI-020","MC-CHT-010","MC-OFF-030","MC-COM-305",
+for(const id of ["MC-INT-010","MC-EPI-020","MC-CHANT-010","MC-OFF-030","MC-COM-305",
                  "MC-COM-260","MC-END-030"]){
   assert.equal(observed(id,"AO.CARD.001"),null,
     id+" lacked an exact one-to-one priest cue and must fail closed");
@@ -153,4 +211,4 @@ assert.equal(projectObservedOrdinaryPriestEvent({...base,observedEventId:"MC-SEC
   sourceSectionId:"AO.CARD.011",form:"LOW"}),null,"Low Mass not licensed by Sung event map");
 assert.equal(projectObservedOrdinaryPriestEvent({...base,observedEventId:"MC-SEC-010",
   sourceSectionId:"AO.CARD.011",eventIndex:new Map()}),null,"Unknown event must fail closed");
-console.log("Mass source-only priest event alignment PASS: 15 classified; 10 event-identified (Epistle needs resolved actor/delivery); 5 held; conditional/form/context/faithful lanes fail closed.");
+console.log("Mass source-only priest event alignment PASS: 15/15 bound (10 canonical traversal + 5 observer-only); strict actor, physical observation, Solemn/Lent, Schola and faithful lanes fail closed.");
