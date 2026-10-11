@@ -1029,6 +1029,36 @@ function selectNativeRosarySet(set,{skipOpening=false}={}){
  decorateRosary();setTimeout(decorateRosary,0);
  return true;
 }
+let rosaryFullCycleObserver=null,rosaryFullCycleRoot=null,rosaryFullCycleHandoff="";
+/**
+ * The packed donor can consume Next at window capture before the modular
+ * presentation intercepts it. Observe donor *render results*, not timers or
+ * prayer progress. Only a user-initiated move into an intermediate conclusion
+ * may hand off to the next existing five-decade set.
+ */
+function observeCanonicalRosaryFullCycle(root){
+ if(!root||typeof MutationObserver!=="function")return false;
+ if(rosaryFullCycleRoot===root&&rosaryFullCycleObserver)return true;
+ rosaryFullCycleObserver?.disconnect();
+ rosaryFullCycleRoot=root;
+ rosaryFullCycleObserver=new MutationObserver(()=>{
+  if(!ROSARY_METHOD.fullActive||ROSARY_METHOD.length!==15||!root.classList.contains("open"))return;
+  const api=window.AO_ROSARY_V381,st=api?.state?.(),steps=api?.steps?.()||[],
+   next=nextFullRosarySet(st?.set),index=Number(st?.step);
+  if(!next||!Number.isInteger(index)||index!==lastDecadeBoundary(steps)+1||
+     steps[index]?.phase!=="conclusion")return;
+  const key=st.set+":"+index;
+  if(rosaryFullCycleHandoff===key)return;
+  rosaryFullCycleHandoff=key;
+  queueMicrotask(()=>{
+   if(root.classList.contains("open")&&ROSARY_METHOD.fullActive){
+    selectNativeRosarySet(next,{skipOpening:true});
+   }
+  });
+ });
+ rosaryFullCycleObserver.observe(root,{subtree:true,childList:true});
+ return true;
+}
 let rosaryMethodsCaptureBound=false;
 function bindRosaryMethodControls(){
  if(rosaryMethodsCaptureBound)return true;
@@ -1074,6 +1104,7 @@ function decorateRosary(){
  const r=rosaryDonorRoot();if(!r||!r.classList?.contains('open'))return;
  r.querySelectorAll('.flipHint,.translationNote,.pbFlipHint,.lab-flip-hint,[data-pb-flip-hint]').forEach(n=>{n.hidden=true;n.setAttribute('aria-hidden','true')});
  bindRosaryMethodControls();
+ observeCanonicalRosaryFullCycle(r);
  r.classList.toggle('aoP435930RosarySimple',S.rosary.mode==='simple');r.classList.toggle('aoP435930RosaryGuided',S.rosary.mode==='guided');
  let bar=r.querySelector('.aoP435930RosaryBar');if(!bar){bar=document.createElement('div');bar.className='aoP435930RosaryBar';bar.setAttribute('aria-label',L('Rosary reading depth','Profondeur du Rosaire'));const h=r.querySelector('.lab-view-head,.pbTop,.pbHead,header');h?.insertAdjacentElement('afterend',bar)}
  if(bar)bar.innerHTML=`<button type="button" data-p435930-rosary-depth="simple" class="${S.rosary.mode==='simple'?'active':''}" aria-pressed="${S.rosary.mode==='simple'}">${esc(L('Simple','Simple'))}</button><button type="button" data-p435930-rosary-depth="guided" class="${S.rosary.mode==='guided'?'active':''}" aria-pressed="${S.rosary.mode==='guided'}">${esc(L('Guided','Guidé'))}</button>`;
