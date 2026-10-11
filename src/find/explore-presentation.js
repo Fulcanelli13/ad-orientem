@@ -372,6 +372,7 @@ export function buildExploreViewModel({
   expandPlace=false,
   expandDetail=false,
   customCards=[],
+  nearby=[],
   displayLimit=120,
 }={}){
   const list=arr(items);
@@ -394,6 +395,7 @@ export function buildExploreViewModel({
     expandPlace:Boolean(expandPlace),
     expandDetail:Boolean(expandDetail),
     customCards:arr(customCards),
+    nearby:arr(nearby),
     mapped,
     addressOnly,
     displayLimit:Number.isFinite(Number(displayLimit))?Math.max(24,Math.floor(Number(displayLimit))):24,
