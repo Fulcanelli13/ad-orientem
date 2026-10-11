@@ -10,6 +10,10 @@ const PINNED_ABSENT_SOURCES=new Set([
   PINNED_DO+"web/www/horas/English/Commune/Coronatio.txt",
   PINNED_DO+"web/www/horas/Francais/Commune/Coronatio.txt",
   PINNED_DO+"web/www/horas/French/Commune/Coronatio.txt",
+  // The pinned 1962 Commons inventory does not contain C10t.txt.
+  // Keep the resolver's 404 semantics but avoid repeated external 404 probes.
+  ...["Latin","English","Francais","French"].map(language=>
+    PINNED_DO+"web/www/horas/"+language+"/Commune/C10t.txt"),
   ...["Latin","English","Francais","French"].flatMap(language=>[
     PINNED_DO+"web/www/missa/"+language+"/Sancti/10-08c.txt",
     PINNED_DO+"web/www/horas/"+language+"/Sancti/10-08c.txt",
