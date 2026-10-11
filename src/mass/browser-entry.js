@@ -778,6 +778,17 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
+         getCalendarState:()=>runtimeState(),
+         onOpenCalendar:async date=>{
+           // Navigate only to the actual selected Mass day. Never replace the
+           // celebration, selected Proper or reader preferences.
+           if(!date||runtimeState()?.selectedDate!==date)return false;
+           const calendar=globalThis.AO_CALENDAR_APP_V1;
+           if(!calendar?.setView?.("day"))return false;
+           const result=await globalThis.AO_APP_SHELL_V1?.navigate?.("calendar");
+           return result===true||result?.ok===true;
+         },
+
          getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
          getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
          language:()=>runtimeState()?.language??"en",
