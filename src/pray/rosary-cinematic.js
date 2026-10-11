@@ -86,6 +86,13 @@ export function bindRosaryCinematicCapture(win=globalThis){
  if(!win?.document||!win.addEventListener)return false;
  if(win.__aoRosaryCinematicCaptureV1)return true;
  win.addEventListener("click",event=>{
+  const changeButton=event.target?.closest?.("[data-lab-rosary-change],[data-pb-rosary-change]");
+  if(changeButton?.closest?.("#aoPrayerBookRoot.open") &&
+      typeof win.AO_ROSARY_V381?.changeSet==="function"){
+   event.preventDefault();event.stopImmediatePropagation();
+   win.AO_ROSARY_V381.changeSet();
+   return;
+  }
   const collectionButton=event.target?.closest?.("[data-ao-rosary-art-collection]");
   const artHost=collectionButton?.closest?.(".aoRosaryCinema[data-ao-rosary-cinema-owner='v1']");
   if(artHost?.closest?.("#aoPrayerBookRoot.open") && typeof artHost.__aoRosaryCinemaSetCollection==="function"){
