@@ -401,7 +401,7 @@ try{
     track:document.querySelectorAll("#ao-calendar-modular-root .aoCalYearTrack").length,
     ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect().width??0,
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    selected:document.querySelector(todayTabs+" [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
+    selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineYear.segments,11,"Liturgical Year lost its eleven 1962 periods");
   assert.equal(inlineYear.periods,11,"Liturgical Year periods are not selectable");
@@ -419,7 +419,7 @@ try{
     markers:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-liturgical-marker]").length,
     views:[...document.querySelectorAll("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view]")].map(x=>x.dataset.calMonthView),
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
-    active:document.querySelector(todayTabs+" [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
+    active:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='picker']")?.getAttribute("aria-current")??null
   }));
   assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
   assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
