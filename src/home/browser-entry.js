@@ -392,7 +392,7 @@ export function createHomeOwner(win=globalThis){
 
   function paint(next=state(win)){
     if(next?.route!=="home")return false;
-    if(inlineCalendarView&&win?.document?.querySelector?.(".homeScreen.aoTodayV2 [data-home-calendar-inline] #ao-calendar-modular-root"))return true;
+    if(inlineCalendarView&&win?.document?.querySelector?.(".homeScreen.aoTodayV2 [data-home-calendar-inline]"))return true;
     const appRoot=root(win);
     if(!appRoot)return false;
     const rendered=renderHome(appRoot,next,win);
