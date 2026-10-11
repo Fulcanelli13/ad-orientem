@@ -906,4 +906,5 @@ assert.equal(classifiedFeatures[0].properties.place_type,"cathedral","Map must i
 
 await import("./explore-photo-research.mjs");
 await import("./explore-photo-r59.mjs");
+await import("./explore-r61-bilingual-stories.mjs");
 await import("./explore-world-boundaries.mjs");
