@@ -808,7 +808,9 @@ assert.equal(mediaRegistry.items.length,0,"No unlicensed Place photos may be pub
 const mediaFixture={
   place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
   source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",
-  license_url:"https://creativecommons.org/licenses/by/4.0/",changes:"Resized and converted to WebP",
+  license_url:"https://creativecommons.org/licenses/by/4.0/",
+  changes_en:"Resized and converted to WebP",changes_fr:"Redimensionnée et convertie en WebP",
+  width:1200,height:900,orientation:"landscape",
   rights_verified:true,subject_verified:true,crop_reviewed:true,
   alt_en:"View of the physical sanctuary",alt_fr:"Vue du sanctuaire physique",
 };
@@ -822,8 +824,12 @@ assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:"https://cr
   "Licence link must exactly match licence identifier");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:""}],mediaFixture.place_id),null,
   "No image without a licence URL");
-assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes:""}],mediaFixture.place_id),null,
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes_en:""}],mediaFixture.place_id),null,
   "All image modifications must be disclosed");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes_fr:""}],mediaFixture.place_id),null,
+  "French modification disclosure must be present");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,orientation:"portrait"}],mediaFixture.place_id),null,
+  "Image orientation must match actual dimensions");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,rights_verified:false}],mediaFixture.place_id),null,
   "Unverified rights must fail closed");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,alt_fr:""}],mediaFixture.place_id),null,
