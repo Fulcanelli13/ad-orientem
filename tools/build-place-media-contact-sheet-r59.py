@@ -10,3 +10,12 @@ if not records:raise SystemExit("No staged images for review")
 helpers["render"](records,"R59 unreleased ten-site review","place-media-review-r59.webp")
 helpers["render"](records[:6],"R59 alternative photos 1–6","place-media-review-r59-a.webp")
 helpers["render"](records[6:],"R59 alternative photos 7–10","place-media-review-r59-b.webp")
+
+# A layout filled only with empty navy cells is not a valid visual review.
+from PIL import Image, ImageStat
+overview=root/"assets/staged/place-media-review-r59.webp"
+with Image.open(overview) as board:
+    region=board.crop((80,140,330,290)).convert("RGB")
+    contrast=max(ImageStat.Stat(region).stddev)
+    assert contrast>18, "The staged source photographs did not render in the review sheet"
+print("PASS R59 real imagery visible in contact sheets")
