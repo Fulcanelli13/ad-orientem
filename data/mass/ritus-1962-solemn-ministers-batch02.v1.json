@@ -1,6 +1,6 @@
 {
   "schema": "ao-solemn-minister-ritus1962-batch02",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "RESEARCH_SOURCE_CHECKED_NOT_RUNTIME_CERTIFIED",
   "description": "Fine-grained Solemn Mass priest/deacon/subdeacon/acolyte/thurifer movements, with Requiem branch gates. English 1962 translation source checked; Latin facsimile and concurrent event timing pending.",
   "authority": {
@@ -138,7 +138,7 @@
       "actor": "DEACON",
       "cueId": "AO.SM.C0084",
       "anchorType": "NEAR_CUE",
-      "actionKey": "PROCESS_GOSPEL_WITH_THRURIFER_AND_CANDLES",
+      "actionKey": "PROCESS_GOSPEL_WITH_THURIFER_AND_CANDLES",
       "condition": "NOT_REQUIEM",
       "ritus": "VI.5",
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -337,7 +337,7 @@
       "cueId": "AO.SM.C0112",
       "anchorType": "EXACT_CUE",
       "actionKey": "SHOW_WATER_CRUET_SAY_BENEDICITE",
-      "condition": "ALL",
+      "condition": "NOT_REQUIEM",
       "ritus": "VII.9",
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
       "sourcePdfPage": 12,
@@ -347,7 +347,8 @@
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": null
+      "sourceCueText": null,
+      "reviewNote": "The 1962 XIII.1 wording omits the blessing of water in Requiem; whether the Subdeacon speaks Benedicite requires a separate source decision. Do not project this as an active Requiem formula."
     },
     {
       "id": "MR62.SOL.B02.019",
@@ -804,7 +805,7 @@
       "actor": "DEACON",
       "cueId": "AO.SM.C0181",
       "anchorType": "NEAR_CUE",
-      "actionKey": "UNCOVER_RECOvER_CHALICE_AT_ELEVATION",
+      "actionKey": "UNCOVER_AND_RECOVER_CHALICE_AT_ELEVATION",
       "condition": "ALL",
       "ritus": "VIII.8",
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -1036,20 +1037,21 @@
     {
       "id": "MR62.SOL.B02.057",
       "actor": "DEACON",
-      "cueId": "AO.SM.C0225",
-      "anchorType": "NEAR_CUE",
+      "cueId": null,
+      "anchorType": "BRANCH_ONLY_RITE_EVENT",
       "actionKey": "NO_PAX_IN_REQUIEM",
       "condition": "REQUIEM",
       "ritus": "XIII.1",
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
       "sourcePdfPage": 24,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=24",
-      "shortRubricFr": "Le baiser de paix est supprimé au Requiem.",
+      "shortRubricFr": "À la messe des défunts, le baiser de paix est omis; aucun événement du texte supprimé n'est activé.",
       "formScope": "SOLEMN",
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": null
+      "sourceCueText": null,
+      "branchMoment": "AFTER_AGNUS_DEI_BEFORE_PRIEST_COMMUNION"
     },
     {
       "id": "MR62.SOL.B02.058",
@@ -1144,20 +1146,21 @@
     {
       "id": "MR62.SOL.B02.063",
       "actor": "PRIEST",
-      "cueId": "AO.SM.C0259",
-      "anchorType": "NEAR_CUE",
+      "cueId": null,
+      "anchorType": "BRANCH_ONLY_RITE_EVENT",
       "actionKey": "NO_BLESSING_REQUIEM",
       "condition": "REQUIEM",
       "ritus": "XIII.1",
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
       "sourcePdfPage": 24,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=24",
-      "shortRubricFr": "Après Placeat, n'impartit pas la bénédiction finale à la messe des défunts.",
+      "shortRubricFr": "À la messe des défunts, le célébrant n'impartit pas la bénédiction finale.",
       "formScope": "SOLEMN",
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": null
+      "sourceCueText": null,
+      "branchMoment": "AFTER_PLACEAT_BEFORE_LAST_GOSPEL"
     },
     {
       "id": "MR62.SOL.B02.064",
@@ -1179,16 +1182,16 @@
     },
     {
       "id": "MR62.SOL.B02.065",
-      "actor": "SUBDEACON",
+      "actor": "ACOLYTES",
       "cueId": "AO.SM.C0084",
       "anchorType": "NEAR_CUE",
-      "actionKey": "SUPPORT_GOSPEL_BOOK_REQUIEM",
+      "actionKey": "TWO_ACOLYTES_HOLD_GOSPEL_BOOK_WITHOUT_LIGHTS_REQUIEM",
       "condition": "REQUIEM",
       "ritus": "XIII.2",
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
       "sourcePdfPage": 24,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=24",
-      "shortRubricFr": "À l'Évangile du Requiem, deux acolytes sans cierges soutiennent l'évangéliaire.",
+      "shortRubricFr": "Deux acolytes, sans cierges, soutiennent l'évangéliaire de part et d'autre du diacre.",
       "formScope": "SOLEMN",
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
@@ -1230,6 +1233,24 @@
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
       "sourceCueText": null
+    }
+  ],
+  "corrections": [
+    {
+      "eventId": "MR62.SOL.B02.057",
+      "reason": "Suppressed Pax prayer is absent in Requiem; must not anchor no-Pax state to suppressed text cue C0225."
+    },
+    {
+      "eventId": "MR62.SOL.B02.063",
+      "reason": "No Ite dismissal in Requiem: no-blessing state must be branch-only, not anchored to suppressed C0259."
+    },
+    {
+      "eventId": "MR62.SOL.B02.065",
+      "reason": "Ritus XIII.2 specifies TWO ACOLYTES hold Gospel book in Requiem, not the subdeacon."
+    },
+    {
+      "eventId": "MR62.SOL.B02.018",
+      "reason": "Water blessing excluded in Requiem; subdeacon verbal formula needs further research."
     }
   ]
 }
