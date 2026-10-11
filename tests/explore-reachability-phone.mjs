@@ -44,10 +44,10 @@ try{
  const layout=await page.evaluate(()=>{
    const root=document.querySelector("#ao-find-modular-root .aoHeritageSurface");
    const map=root?.querySelector(".aoHeritageBody .aoFindMap");
-   const panels=[".aoFindHeader",".aoExploreMainDestinations",".aoHeritageTools",".aoHeritageCategories"];
+   const panels=[".aoFindHeader",".aoHeritageTools",".aoHeritageCategories"];
    const box=element=>{const r=element?.getBoundingClientRect();return r?{width:r.width,height:r.height,top:r.top,bottom:r.bottom}:null};
    return {map:box(map),root:box(root),chrome:panels.map(x=>box(root?.querySelector(x))),
-     targets:[...root.querySelectorAll(".aoExploreMainDestinations button,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")].map(box),
+     targets:[...root.querySelectorAll(".aoHeritageMassShortcut,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")].map(box),
      overflow:document.documentElement.scrollWidth-innerWidth};
  });
  assert.ok(layout.map?.height>=300,"Explore mobile chrome squeezed the map below 300px");

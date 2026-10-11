@@ -674,7 +674,7 @@ const heritageVm=buildExploreViewModel({
   customCards:heritageCustoms,counts:{...projection.counts,heritage:heritagePlaces.length},
 });
 const heritageHtml=renderExploreToString(heritageVm);
-assert.match(heritageHtml,/Sacred Geography/);
+assert.match(heritageHtml,/Sacred places/);
 assert.match(heritageHtml,/data-find-view="map"/);
 assert.match(heritageHtml,/data-heritage-category="ALL"/);
 for(const category of HERITAGE_CATEGORIES)assert.match(heritageHtml,new RegExp('data-heritage-category="'+category+'"'));
@@ -705,7 +705,10 @@ const heritagePreview=renderExploreToString(buildExploreViewModel({
   selectedPlaceId:lourdesCombined.place_id,placeProfiles,
 }));
 assert.match(heritagePreview,/data-explore-expand-place/,"map click must open compact Place preview");
-assert.match(heritagePreview,/Explorer ce lieu/);
+assert.match(heritagePreview,/Découvrir/);
+assert.match(heritagePreview,/data-explore-sheet-toggle/);
+assert.match(heritagePreview,/data-explore-calendar-date/);
+assert.match(heritagePreview,/data-explore-open-novena/);
 assert.match(heritagePreview,/aoHeritageCardHeading/,"place preview should show its type and location compactly");
 assert.match(heritagePreview,/aoHeritageCardTitle/,"place name must be the main visual identity");
 assert.doesNotMatch(heritagePreview,/aoHeritageCaution/,"source qualifications belong in the expanded record, not the small card");

@@ -221,7 +221,7 @@ export function mapViewport(map){
 export async function mountExploreMap(container,items,{
   win=globalThis,onSelect=()=>{},initialViewport=null,
 }={}){
-  const features=exploreMapFeatures(items);
+  let features=exploreMapFeatures(items);
   if(!container||!features.length||!win?.document)return null;
   ensureCss(win.document);
   const maplibre=await loadMapLibre(win);
@@ -300,7 +300,14 @@ export async function mountExploreMap(container,items,{
       map.on("mouseleave",layer,()=>{map.getCanvas().style.cursor=""});
     }
   });
-  return Object.freeze({map,destroy(){try{map.remove()}catch{}}});
+  return Object.freeze({map,
+    updateItems(nextItems){
+      features=exploreMapFeatures(nextItems);
+      const source=map.getSource?.("ao-explore-items");
+      source?.setData?.({type:"FeatureCollection",features});
+    },
+    destroy(){try{map.remove()}catch{}}
+  });
 }
 
 export const FIND_MAP_RUNTIME=Object.freeze({module:MAPLIBRE_MODULE,style:DEFAULT_STYLE});
