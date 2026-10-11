@@ -25,6 +25,8 @@ def parse_atlas(path):
  return json.loads(m.group(1))
 def build(args):
  original=parse_atlas(args.atlas)
+ review=read(ROOT/"data/calendar/sacred-art-curator-decisions-20261011.v1.json")
+ assert review["schema"]=="AO_SACRED_ART_CURATOR_RECONCILIATION_V1"
  works=read(ROOT/"data/calendar/sacred-art-candidates.v1.json")
  targets=read(ROOT/"data/calendar/sacred-art-subject-targets.v2.json")["targets"]
  mapping=read(ROOT/"data/calendar/sacred-art-editorial-crosswalk.v1.json")["exactIconography"]
@@ -75,7 +77,10 @@ def build(args):
           "subjectCount":len(output),"originals":len(original["items"]),
           "observedDays":len(original["days"]),"dateUses":original["summary"]["sourceAlternatives"],
           "reviewPolicy":"Subject-first shortlist, not 2,467 individual reviews; no production approval.",
-          "groups":output,"items":original["items"],"days":original["days"]}
+          "groups":output,"items":original["items"],"days":original["days"],
+          "reviewSeed":{"sourceExportedAt":review["sourceExportedAt"],
+             "approvals":review["approvals"],"selections":review["selections"],
+             "refusals":review["refusals"],"exceptions":review["exceptions"]}}
  dataset=json.dumps(payload,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
  out=PAGE.replace("__PAYLOAD__",dataset)
  args.output.parent.mkdir(parents=True,exist_ok=True)
@@ -84,6 +89,9 @@ def build(args):
   "subjectsWithoutAcquiredCandidates":sum(not g["candidates"] for g in output),
   "originalsAvailableOnDemand":len(original["items"]),
   "datedUsesHiddenUntilExpanded":original["summary"]["sourceAlternatives"],
+  "userSubjectSelectionsRestored":len(review["selections"]),
+  "subjectSpecificRefusalsRestored":len(review["refusals"]),
+  "subjectsRemainingWithoutSelection":len(output)-len(review["selections"]),
   "htmlBytes":args.output.stat().st_size}
  (args.output.parent/"priority-review-stats.json").write_text(json.dumps(stats,indent=2)+"\n",encoding="utf-8")
  print("SACRED_ART_PRIORITY_REVIEW="+json.dumps(stats))
@@ -129,13 +137,13 @@ footer{font-size:12px;color:var(--dim);margin-top:25px}
 </style></head><body>
 <header><div class="kicker">Ad Orientem · 1962 liturgical calendar</div>
 <h1>Sacred Art — Curator's Selection</h1>
-<p>One proposed painting per subject. Approve it, ask for an alternative, or reject it. The much larger archive stays hidden unless you choose to explore it.</p>
+<p>Your earlier choices have been restored. Only the remaining unselected subjects appear at first; the larger collection remains optional.</p>
 <div id="stats" class="stats"></div>
 <nav><button id="export" class="primary">Export my decisions</button><button id="import">Import earlier review</button><input type="file" id="upload" accept=".json" hidden>
 <button id="fullToggle">Browse complete collection (optional)</button></nav></header>
 <main>
 <div class="note">This is an <b>editorial artwork review</b>, not a publication licence. A painting may be attractive but unsuitable for a particular saint, prayer or liturgical day. Your approval never overrides image rights, historical identity, mobile crop or 1962 Proper verification.</div>
-<div class="tools"><select id="section"><option value="">All priority subjects</option><option>Calendar</option><option>Rosary</option><option>Devotions</option><option>Saints</option><option>Gospel</option></select><input id="query" type="search" placeholder="Search feast, saint, prayer or artist"><button id="next" class="primary">Show more subjects</button><span id="remaining" class="muted"></span></div>
+<div class="tools"><select id="reviewStatus"><option value="remaining">Unselected subjects first</option><option value="all">All subjects</option><option value="selected">Previously selected</option></select><select id="section"><option value="">All priority subjects</option><option>Calendar</option><option>Rosary</option><option>Devotions</option><option>Saints</option><option>Gospel</option></select><input id="query" type="search" placeholder="Search feast, saint, prayer or artist"><button id="next" class="primary">Show more subjects</button><span id="remaining" class="muted"></span></div>
 <section class="grid" id="cards"></section>
 <section id="fullCatalogue"><h2>Complete collection — optional</h2><p>All source-acquired paintings. This area is not required for the priority review.</p><div class="catalogue" id="catalogue"></div></section>
 <footer>Reviews are saved locally in this browser and can be exported to JSON. Do not delete the exported file. Museum links require internet access; the painting previews are embedded.</footer>
@@ -149,10 +157,16 @@ const byId=new Map(data.items.map(a=>[a.id,a])),groups=data.groups;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const approvals=new Map(),selections=new Map(),refusals=new Map(),exceptions=new Map(),indexes=new Map();
-const storage="ao-sacred-art-priority-review-v1";
+const storage="ao-sacred-art-priority-review-v2-"+(data.reviewSeed?.sourceExportedAt||"blank");
 let shown=12;
 const lookup=(gid,aid)=>gid+"|"+aid;
-function restore(){try{const o=JSON.parse(localStorage.getItem(storage)||"{}");for(const x of o.approvals||[])if(byId.get(x.artworkId)?.sha===x.originalSha256)approvals.set(x.artworkId,x);for(const x of o.selections||[])if(byId.get(x.artworkId)?.sha===x.originalSha256)selections.set(x.targetId,x);for(const x of o.refusals||[])refusals.set(lookup(x.targetId,x.artworkId),x);for(const x of o.exceptions||[])exceptions.set(x.kind+"|"+x.artworkId+"|"+(x.date||"*"),x);}catch(e){console.warn("No saved review loaded",e)}}
+function restore(){try{
+ const o=JSON.parse(localStorage.getItem(storage)||"null")||data.reviewSeed||{};
+ for(const x of o.approvals||[])if(byId.get(x.artworkId)?.sha===x.originalSha256)approvals.set(x.artworkId,x);
+ for(const x of o.selections||[])if(byId.get(x.artworkId)?.sha===x.originalSha256)selections.set(x.targetId,x);
+ for(const x of o.refusals||[])if(byId.get(x.artworkId)?.sha===x.originalSha256)refusals.set(lookup(x.targetId,x.artworkId),x);
+ for(const x of o.exceptions||[])if(byId.get(x.artworkId)?.sha===x.originalSha256)exceptions.set(x.kind+"|"+x.artworkId+"|"+(x.date||"*"),x);
+ }catch(e){console.warn("Could not load the embedded or locally saved review",e)}}
 function save(){try{localStorage.setItem(storage,JSON.stringify({approvals:[...approvals.values()],selections:[...selections.values()],refusals:[...refusals.values()],exceptions:[...exceptions.values()]}))}catch(e){}}
 function rejected(aid){return exceptions.has("REJECT_ARTWORK_GLOBALLY|"+aid+"|*")}
 function candidates(g){return g.candidates.filter(id=>!rejected(id)&&!refusals.has(lookup(g.id,id)))}
@@ -165,9 +179,14 @@ function preview(a){return a.preview?'<img loading="lazy" alt="'+esc(a.title)+'"
 function makeCard(g,i){
  const a=byId.get(chosen(g));const el=document.createElement("article");el.className="card";
  let h='<div class="hdr"><div class="num">'+esc(g.section)+' · '+(i+1)+' / '+data.subjectCount+'</div><h2>'+esc(g.title)+'</h2><div class="subject">'+esc(g.id)+'</div></div>';
- if(!a){h+='<div class="body"><p>There is no acquired exact-subject painting left in this shortlist. Check the source record, or leave this subject unresolved.</p>';
+ if(!a){const declined=[...refusals.values()].filter(x=>x.targetId===g.id);
+ h+='<div class="body"><p>No suitable acquired painting remains from the current shortlist. '+declined.length+' earlier candidate(s) were declined for this subject. More targeted research is required.</p>';
+ if(declined.length)h+='<button data-act="reconsider">Reconsider previously declined options ('+declined.length+')</button>';
  for(const lead of g.leads)h+='<p><b>'+esc(lead.title)+'</b> · '+esc(lead.artist)+'<a class="url" href="'+esc(lead.url)+'" target="_blank" rel="noopener noreferrer">'+esc(lead.url)+'</a></p>';
- h+='</div>';el.innerHTML=h;return el;}
+ h+='</div>';el.innerHTML=h;
+ const retry=el.querySelector('button[data-act="reconsider"]');
+ if(retry)retry.onclick=()=>{for(const [k,x] of refusals)if(x.targetId===g.id)refusals.delete(k);save();draw()};
+ return el;}
  const approved=selections.get(g.id)?.artworkId===a.id;
  h+='<div class="art">'+preview(a)+'</div><div class="body"><h2>'+esc(a.title)+'</h2><div class="meta">'+esc(a.artist)+' · '+esc(a.museum)+' · '+esc(a.dateCreated)+'</div><div class="status">'+esc(a.rights)+(approved?" · SELECTED FOR THIS SUBJECT":" · Proposed first choice")+'</div>';
  h+='<a class="url" href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer">'+esc(a.source)+'</a>';
@@ -201,8 +220,9 @@ function makeCard(g,i){
  return el;
 }
 function draw(){
- const sec=$("section").value,q=$("query").value.trim().toLowerCase();
- const filtered=groups.filter(g=>(!sec||g.section===sec)&&(!q||[g.title,g.id,g.section,...g.candidates.flatMap(id=>{const a=byId.get(id);return a?[a.title,a.artist]:[]})].join(" ").toLowerCase().includes(q)));
+ const sec=$("section").value,q=$("query").value.trim().toLowerCase(),review=$("reviewStatus").value;
+ const filtered=groups.filter(g=>(review==="all"||(review==="remaining"?!selections.has(g.id):selections.has(g.id)))&&
+ (!sec||g.section===sec)&&(!q||[g.title,g.id,g.section,...g.candidates.flatMap(id=>{const a=byId.get(id);return a?[a.title,a.artist]:[]})].join(" ").toLowerCase().includes(q)));
  const display=filtered.slice(0,shown),list=$("cards");list.replaceChildren();
  for(const [i,g] of display.entries())list.append(makeCard(g,groups.indexOf(g)));
  $("remaining").textContent=display.length+" of "+filtered.length+" subjects shown";
@@ -214,6 +234,7 @@ function allCatalogue(){
  for(const a of data.items){const card=document.createElement("div");card.className="smallart";card.innerHTML=preview(a)+'<strong>'+esc(a.title)+'</strong><small>'+esc(a.artist)+'</small><a class="url" href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer">Museum source</a>';
  el.append(card);}
 }
+$("reviewStatus").onchange=()=>{shown=12;draw()};
 $("section").onchange=()=>{shown=12;draw()};$("query").oninput=()=>{shown=12;draw()};
 $("next").onclick=()=>{shown+=12;draw()};
 $("fullToggle").onclick=()=>{const el=$("fullCatalogue");el.style.display=el.style.display==="block"?"none":"block";if(el.style.display==="block")allCatalogue()};
