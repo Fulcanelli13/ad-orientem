@@ -106,8 +106,8 @@ function placeSheet(vm){
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-place>'+esc(L(vm.language,"← Back to place preview","← Retour à l’aperçu"))+'</button></div>';
   if(arr(profile.aliases).length)html+='<p class="aoExploreLead">'+esc(profile.aliases.join(" · "))+'</p>';
   if(profile.media){
-    html+='<figure class="aoExplorePlaceMedia"><img loading="lazy" decoding="async" src="'+esc(profile.media.asset_path)+'" alt="'+esc(vm.language==="fr"?profile.media.alt_fr:profile.media.alt_en)+'">';
-    html+='<figcaption>'+esc(profile.media.credit)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a> · <a href="'+esc(profile.media.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(profile.media.license)+'</a> · '+esc(profile.media.changes)+'</figcaption></figure>';
+    html+='<figure class="aoExplorePlaceMedia" data-photo-orientation="'+esc(profile.media.orientation)+'"><img loading="lazy" decoding="async" src="'+esc(profile.media.asset_path)+'" alt="'+esc(vm.language==="fr"?profile.media.alt_fr:profile.media.alt_en)+'">';
+    html+='<figcaption>'+esc(profile.media.credit)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a> · <a href="'+esc(profile.media.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(profile.media.license)+'</a> · '+esc(vm.language==="fr"?profile.media.changes_fr:profile.media.changes_en)+'</figcaption></figure>';
   }
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
