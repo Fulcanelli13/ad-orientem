@@ -7,6 +7,7 @@ on:
     paths:
       - data/geography/research/place-media-candidates-r58.v1.json
       - tools/stage-place-media.py
+      - tools/build-place-media-contact-sheet.py
       - .github/workflows/explore-stage-place-photos.yml
   workflow_dispatch:
 
@@ -35,11 +36,13 @@ jobs:
         run: python tools/stage-place-media.py --validate-only
       - name: Verify Wikimedia licences and stage local optimized images
         run: python tools/stage-place-media.py
+      - name: Build visual contact sheets for identity and crop review
+        run: python tools/build-place-media-contact-sheet.py
       - name: Publish staged-only derivatives to this review branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/staged/place-media data/geography/research/place-media-stage-report-r58.v1.json
+          git add assets/staged/place-media assets/staged/place-media-review-*-r58.webp data/geography/research/place-media-stage-report-r58.v1.json
           if ! git diff --cached --quiet; then
             git commit -m "Explore R58: stage licensed candidate derivatives for exact-site review [skip ci]"
             git push origin HEAD:feature/explore-place-photo-acquisition-r58-20261011
