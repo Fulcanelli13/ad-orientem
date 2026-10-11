@@ -1,7 +1,7 @@
 import { normalizePresentationMode } from "./session-engine.js";
 import { createMassReaderModel } from "./reader-model.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
-import { projectExpandedOrdinaryLiveCards } from "./reader-live-expanded-cards.js";
+import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
 
 function modeResolvedMass(prepared,mode){
   const normalized=normalizePresentationMode(mode);
@@ -27,7 +27,7 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=fa
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
   const presentationModel=reviewExpandedCards
-    ? projectExpandedOrdinaryLiveCards(sourceModel)
+    ? projectCuratedOrdinaryLiveCards(sourceModel)
     : projectSourceFirst48Presentation(sourceModel);
   return Object.freeze({mode:normalized,sourceModel,presentationModel});
 }
