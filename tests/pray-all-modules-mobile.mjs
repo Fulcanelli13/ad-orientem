@@ -289,7 +289,13 @@ try{
    assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
    const disclosure=page.locator(box+" details.aoP435930Source").last();
    await disclosure.locator("summary").tap();
-   assert.equal(await disclosure.getAttribute("open"),"","Historical witness drawer cannot be opened on touch: "+route);
+   // Native <details> toggles after the touch default action is dispatched.
+   await page.waitForFunction(selector=>{
+     const nodes=document.querySelectorAll(selector);
+     return nodes.length>0&&nodes[nodes.length-1].open===true;
+   },box+" details.aoP435930Source",{timeout:3000}).catch(()=>{
+     throw new Error("Historical witness drawer cannot be opened on touch: "+route);
+   });
  }
 
  // Reach the lazy canonical Novena reader through the public module registry.
