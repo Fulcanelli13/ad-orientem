@@ -80,5 +80,5 @@ const todaySections=readFileSync(new URL("../src/home/today-v2-sections.js",impo
 assert.match(app,/scripture\/browser-entry/);
 assert.match(home,/renderTodayV2Sections/,"Home must mount the canonical Today v2 reading sections");
 assert.match(todaySections,/data-home-scripture/,"Today v2 must still expose the Scripture reader entry");
-assert.match(todaySections,/data-action=\\?"gospel\\?"/,"Today v2 must still offer the appointed Gospel action");
+assert.match(todaySections,/data-action="gospel"/,"Today v2 must still offer the appointed Gospel action");
 console.log("Scripture user experience, bookmarks, import rights and Home entry contracts passed");
