@@ -462,4 +462,13 @@ export const HERITAGE_STYLE = String.raw`
 .aoHeritageSurface .aoHeritagePlaceThumb figcaption a{
   color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;
 }
+
+/* Portrait shrine photographs preserve the whole site, not crop out towers. */
+.aoHeritageSurface .aoHeritagePlaceThumb[data-photo-orientation="portrait"] img{
+  object-fit:contain;background:var(--ao-surface-2,#0d141c);
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia[data-photo-orientation="portrait"] img{
+  height:min(46dvh,420px);max-height:420px;object-fit:contain;
+  background:var(--ao-surface-2,#0d141c);
+}
 `;
