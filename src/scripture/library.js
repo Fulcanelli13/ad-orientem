@@ -425,13 +425,20 @@ export function mountScriptureLibrary(root,{
    setRecords(next){
       if(!Array.isArray(next))throw new TypeError("Scripture records array required");
       records=next;
-      // A source book may finish downloading as a reader types a new
-      // chapter/verse. Recreating the controls before their change event
-      // would discard the uncommitted number and reset navigation to verse 1.
+      // Source-witness loading must never replace an actively edited chapter,
+      // verse or edition control. Checking only for a changed field value is
+      // insufficient: the load can complete between focus and the input event,
+      // leaving Playwright/touch change on a newly recreated (stale) control.
       const focused=document.activeElement;
-      const fields=wrap.querySelectorAll(".aoScriptureNav input");
-      if((focused===fields[0]&&focused.value!==String(location.chapter))||
-         (focused===fields[1]&&focused.value!==String(location.verseStart)))return;
+      if(focused?.closest?.(".aoScriptureNav") && wrap.contains(focused)){
+        // The record cache has already been updated. Apply it after genuine
+        // navigation focus leaves the control, unless an intervening change
+        // has rebuilt the view and detached the old input.
+        focused.addEventListener("blur",()=>{
+          if(wrap.contains(focused))draw();
+        },{once:true});
+        return;
+      }
       const closeFocused=wrap.querySelector("[data-scripture-close]")===focused;
       draw();
       if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
