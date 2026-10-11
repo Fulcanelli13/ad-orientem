@@ -121,7 +121,51 @@ function itemRef(item){
     summary:item?.summary??"",
     summary_fr:item?.summary_fr??null,
     eyebrow:item?.eyebrow??"",
+    source_links:Object.freeze(arr(item?.source_links)
+      .filter(link=>/^https:\/\/[^\s]+$/i.test(text(link?.url)))
+      .map(link=>Object.freeze({
+        url:text(link.url),title:text(link?.title)||"Source",
+        issuer:text(link?.issuer)||text(link?.title)||"Source",
+      }))),
   });
+}
+
+/**
+ * A restrained source-first editorial sequence. Every paragraph is the prose
+ * of one exact-place canonical owner and can be opened at its own original
+ * external source. No assistant-written biographies, inferred narratives,
+ * combined claims, or unsourced calendar dates are introduced here.
+ */
+export function sourceBoundPlaceChapters(related){
+  const chapters=[],seen=new Set();
+  const groups=[["shrines","ORIGIN",1],["pilgrimages","PILGRIMAGE",2],
+    ["apparitions","APPARITION",1],["relics","RELIC",1],["traditions","TRADITION",1]];
+  for(const [group,kind,max] of groups){
+    let added=0;
+    for(const item of arr(related?.[group])){
+      if(added>=max)break;
+      const summary_en=text(item?.summary).replace(/\s+/g," ");
+      const summary_fr=text(item?.summary_fr).replace(/\s+/g," ");
+      // Never promise a complete French editorial paragraph if the underlying
+      // source owner has only the original English. Record details stay readable.
+      if(!summary_en||!summary_fr||summary_en===summary_fr)continue;
+      const sources=arr(item?.source_links).filter(source=>/^https:\/\/[^\s]+$/i.test(text(source?.url)));
+      if(!sources.length)continue;
+      const fingerprint=summary_en.toLowerCase().replace(/\W+/g," ").trim();
+      if(seen.has(fingerprint))continue;
+      seen.add(fingerprint);
+      chapters.push(Object.freeze({
+        kind,item_id:item?.item_id??null,
+        title_en:text(item?.title),title_fr:text(item?.title_fr)||text(item?.title),
+        body_en:summary_en,body_fr:summary_fr,
+        sources:Object.freeze(sources.slice(0,2).map(source=>Object.freeze({
+          url:source.url,title:source.title,issuer:source.issuer,
+        }))),
+      }));
+      added++;
+    }
+  }
+  return Object.freeze(chapters);
 }
 
 function exactTlmItems(dataset,projection,placeId){
@@ -195,16 +239,32 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     const saints=[...new Set(related.shrines.flatMap(item=>arr(item?.raw?.shrine?.associated_saints)).filter(Boolean))];
     const shrineIds=new Set(related.shrines.map(item=>item?.raw?.shrine?.shrine_id).filter(Boolean));
     const novenaMap=new Map(arr(dataset?.novenas?.records).map(record=>[record?.id,record]).filter(([id])=>id));
+    const novenaSources=new Map(arr(dataset?.novenas?.sources).filter(row=>row?.id&&/^https:\/\/[^\s]+$/i.test(text(row?.url))).map(row=>[row.id,row]));
     const groupedNovenas=new Map();
     for(const link of arr(dataset?.novenas?.links)){
       if(!link?.novena_id||!(link?.place_id===placeId||(link?.shrine_id&&shrineIds.has(link.shrine_id))))continue;
       const record=novenaMap.get(link.novena_id);
       if(!record)continue;
       const previous=groupedNovenas.get(link.novena_id);
-      if(previous){if(link.note&&!previous.notes.includes(link.note))previous.notes.push(link.note);continue;}
-      groupedNovenas.set(link.novena_id,{id:link.novena_id,title_en:record.title_en??record.title_fr??link.novena_id,title_fr:record.title_fr??record.title_en??link.novena_id,notes:link.note?[link.note]:[]});
+      const citations=arr(link.source_ids).map(id=>novenaSources.get(id)).filter(Boolean);
+      if(previous){
+        for(const source of citations)if(!previous.sources.some(row=>row.url===source.url))previous.sources.push(source);
+        continue;
+      }
+      groupedNovenas.set(link.novena_id,{
+        id:link.novena_id,
+        title_en:record.title_en??record.title_fr??link.novena_id,
+        title_fr:record.title_fr??record.title_en??link.novena_id,
+        sources:citations,
+      });
     }
-    const novenas=Object.freeze([...groupedNovenas.values()].map(row=>Object.freeze({...row,notes:Object.freeze(row.notes)})));
+    const novenas=Object.freeze([...groupedNovenas.values()].map(row=>Object.freeze({
+      id:row.id,title_en:row.title_en,title_fr:row.title_fr,
+      sources:Object.freeze(row.sources.map(source=>Object.freeze({
+        url:source.url,title:source.title??source.id,
+      }))),
+    })));
+    const sourceBoundChapters=featuredPlace?sourceBoundPlaceChapters(related):Object.freeze([]);
 
     profiles.push(Object.freeze({
       place_id:placeId,
@@ -236,9 +296,13 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       related_places:relatedPlaces,
       saints:Object.freeze(saints),
       novenas,
+      story_chapters:sourceBoundChapters,
       calendar,
       seasonal_pilgrimages,
       sources:Object.freeze([...uniqueSourceLinks(allItems,place),
+        ...novenas.flatMap(row=>row.sources.map(source=>Object.freeze({
+          id:source.url,title:source.title,issuer:"Devotional source",url:source.url,role:"DEVOTION",
+        }))),
         ...relatedPlaces.filter(row=>row.source_url).map(row=>Object.freeze({
           id:row.source_url,title:row.source_label,issuer:"Institutional place relationship",
           url:row.source_url,role:"RELATIONSHIP",
