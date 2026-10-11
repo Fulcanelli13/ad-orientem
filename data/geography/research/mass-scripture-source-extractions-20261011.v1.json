@@ -1,0 +1,1383 @@
+{
+  "schema": "MASS_SCRIPTURE_SOURCE_EXTRACTION_V1",
+  "status": "RESEARCH_SOURCED_NOT_1962_TEXT_CERTIFIED",
+  "date": "2026-10-11",
+  "sourcePolicy": "Each item is an attributable and located authorial interpretation. Bible anchors remain subject to exact Vulgate/Crampon/1962 text collation; source passages do not in themselves prove ritual origins.",
+  "primarySources": [
+    {
+      "id": "G1885",
+      "author": "Guéranger",
+      "title": "Explication des prières et cérémonies de la sainte messe",
+      "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "edition": "Solesmes second edition 1885 as transcribed by society",
+      "caution": "Edition says its notes are incomplete and unattributed copier error possible; dated claims are not critically certified."
+    },
+    {
+      "id": "A13",
+      "author": "Thomas Aquinas",
+      "title": "Summa Theologiae III q.83",
+      "url": "https://www.newadvent.org/summa/4083.htm",
+      "edition": "New Advent English translation",
+      "caution": "Aquinas interprets the rite; his interpretation does not independently date a rite."
+    },
+    {
+      "id": "CY3",
+      "author": "Cyprian of Carthage",
+      "title": "Letter to Caecilius, On the Sacrament of the Cup",
+      "url": "https://www.newadvent.org/fathers/050662.htm",
+      "edition": "New Advent English, Epistle 62 numbering; other editions differ",
+      "caution": "Claims reflect third-century patristic Eucharistic exegesis, not early Roman Canon manuscript text."
+    },
+    {
+      "id": "AM4",
+      "author": "Ambrose of Milan",
+      "title": "De mysteriis, chapter VIII",
+      "url": "https://www.newadvent.org/fathers/3405.htm",
+      "edition": "New Advent English translation",
+      "caution": "Initiatory catechesis in Milan, not the later 1962 Roman Missal."
+    },
+    {
+      "id": "LB1843",
+      "author": "Pierre Le Brun",
+      "title": "Explication littérale historique et dogmatique de la messe",
+      "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+      "edition": "1843 facsimile p. xv–xvi excerpt on true reasons for gestures",
+      "caution": "Historical caution on symbolic versus physical causes; rest of full volume not yet extracted."
+    }
+  ],
+  "classification": [
+    "TEXT_QUOTATION",
+    "LITURGICAL_EXPLICIT_FIGURE",
+    "SCRIPTURAL_TYPOLOGY_PATRISTIC",
+    "DEVOTIONAL_ANALOGY",
+    "HISTORICAL_ATTESTATION"
+  ],
+  "records": [
+    {
+      "id": "MS001",
+      "phase": "PRAYERS_AT_FOOT",
+      "liturgicalAnchor": "Introibo ad altare Dei",
+      "biblicalReferences": "Psalms 42:4 (Vulgate numbering)",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "Psalm 42 is selected around the altar-approach verse; Guéranger also reads it christologically. Verify Psalm 42/43 edition numbering.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "PSAUME JUDICA",
+          "webLineRange": "84–90",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS002",
+      "phase": "PRAYERS_AT_FOOT",
+      "liturgicalAnchor": "mea culpa",
+      "biblicalReferences": "Luke 18:13",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger expressly compares breast-striking during the Confiteor with the publican's penitence; this comparison is not a claim that the Confiteor was authored in Luke.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "CONFITEOR",
+          "webLineRange": "95–100",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS003",
+      "phase": "PRAYERS_AT_FOOT",
+      "liturgicalAnchor": "Ostende nobis Domine misericordiam tuam",
+      "biblicalReferences": "Psalms 84:8 (Vulgate numbering)",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The verse from Psalm 84/85 asks God to show mercy and grant salvation; Guéranger offers a Christological reading.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "CONFITEOR, concluding versicles",
+          "webLineRange": "105–109",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS004",
+      "phase": "ASCENT_ALTAR",
+      "liturgicalAnchor": "Ad Sancta Sanctorum",
+      "biblicalReferences": "Exodus 26:33; Hebrews 9:3",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "The priest's ascent is described with sanctuary language; Guéranger likens the approach to the Holy of Holies. This is theological analogy, not evidence of an identical Temple ritual.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "Prayers at the ascent",
+          "webLineRange": "109–114",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS005",
+      "phase": "INTROIT",
+      "liturgicalAnchor": "Incensation of altar",
+      "biblicalReferences": "Revelation 8:3–4",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger explicitly invokes the angel with golden censer and prayers of the saints in the Apocalypse when interpreting incense.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "ENCENSEMENT",
+          "webLineRange": "115–120",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS006",
+      "phase": "INTROIT",
+      "liturgicalAnchor": "Introit and Psalm",
+      "biblicalReferences": "Psalms (proper varies)",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "Guéranger explains the original chant role and its later recital by priests with the development of Low Mass; historical dates and exact evolution still need Jungmann/Le Brun checks.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "INTROIT",
+          "webLineRange": "122–127",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS007",
+      "phase": "KYRIE",
+      "liturgicalAnchor": "Kyrie eleison; Christe eleison",
+      "biblicalReferences": "—",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger interprets groups of three invocations in a Trinitarian way and relates the nine utterances to the nine choirs; no claim of direct biblical quotation.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "KYRIE",
+          "webLineRange": "129–134",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS008",
+      "phase": "GLORIA",
+      "liturgicalAnchor": "Gloria in excelsis Deo, et in terra pax",
+      "biblicalReferences": "Luke 2:14",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The angelic announcement forms the opening; the later hymn includes substantially more text than the Gospel verse.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "GLORIA IN EXCELSIS",
+          "webLineRange": "135–145",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS009",
+      "phase": "GLORIA",
+      "liturgicalAnchor": "Agnus Dei, Filius Patris",
+      "biblicalReferences": "John 1:29",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger reads the Christological title in the Gloria through John the Baptist's testimony.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "GLORIA IN EXCELSIS",
+          "webLineRange": "145–146",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS010",
+      "phase": "READINGS",
+      "liturgicalAnchor": "Epistle / first scriptural lesson",
+      "biblicalReferences": "1 Timothy 4:13 (illustrative, not a reading fixed for every Mass)",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "Guéranger contrasts an older multiple-lesson order with the ordinary later one-lesson order; no fixed scriptural passage exists for the epistle slot.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "ÉPÎTRE",
+          "webLineRange": "170–176",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS011",
+      "phase": "READINGS",
+      "liturgicalAnchor": "Gradual after Epistle",
+      "biblicalReferences": "Psalms (proper varies)",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "The Gradual is a responsorial chant associated with the ambo steps; Guéranger separates historical naming from the biblical Psalms of ascent.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "GRADUEL",
+          "webLineRange": "178–180",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS012",
+      "phase": "READINGS",
+      "liturgicalAnchor": "Gospel announcement",
+      "biblicalReferences": "Four Gospels (proper varies)",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "Guéranger explains the distinct Gospel proclamation and the ministerial roles; neither epistle nor Gospel is one unchanging biblical episode.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "ÉVANGILE",
+          "webLineRange": "201–208",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS013",
+      "phase": "CREDO",
+      "liturgicalAnchor": "Credo in unum Deum",
+      "biblicalReferences": "John 17:3 (context only)",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "Guéranger gives an account of the Niceno-Constantinopolitan Creed's adoption at Rome; compare dates and contents with documentary research. Creed is a conciliar formulation, not a verbatim biblical passage.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "CREDO",
+          "webLineRange": "209–220",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS014",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "Suscipe sancte Pater immaculatam hostiam",
+      "biblicalReferences": "Leviticus 22:20; 1 Peter 1:19",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger explicitly connects the unblemished-host wording with Old Testament unblemished offerings and with Christ; textual allusions require individual verse collation.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "OFFERTOIRE",
+          "webLineRange": "299–305",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS015",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "Deus qui humanae substantiae dignitatem",
+      "biblicalReferences": "Genesis 1:26; 2 Peter 1:4",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger connects the creation of humanity and participation in divine nature to the prayer over the water and wine.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "OFFERTOIRE, water and wine",
+          "webLineRange": "309–317",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS016",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "Water mixed with wine: the people and Christ",
+      "biblicalReferences": "John 15:1; Revelation 17:15",
+      "relationType": "SCRIPTURAL_TYPOLOGY_PATRISTIC",
+      "attributableClaim": "Cyprian insists on mixed wine and water, reading wine in relation to Christ's blood and water to the people united with Him. This is not identical to Guéranger's water/humanity, wine/divinity explanation.",
+      "sources": [
+        {
+          "author": "St Cyprian, Letter to Caecilius (New Advent numbering Ep.62)",
+          "url": "https://www.newadvent.org/fathers/050662.htm",
+          "locator": "§§1–3, 11–13",
+          "webLineRange": "9–16, 42–53",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "OFFERTOIRE, water and wine",
+          "webLineRange": "310–317",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS017",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "Offerimus tibi Domine calicem salutaris",
+      "biblicalReferences": "Psalms 115:4 (Vulgate numbering; verify)",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The offering of the chalice echoes the psalm's cup of salvation; classify as candidate allusion pending exact 1962 Latin / Vulgate collation.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "OFFERTOIRE, offering of chalice",
+          "webLineRange": "322–329",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS018",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "In spiritu humilitatis",
+      "biblicalReferences": "Daniel 3:39–40 (Latin/Greek additions, edition-specific)",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "Traditional scriptural wording of humble/contrite spirit and acceptable sacrifice. Exact verse numbering across Catholic editions remains on hold.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "OFFERTOIRE, in spiritu humilitatis",
+          "webLineRange": "329–331",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS019",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "Suscipe sancta Trinitas ob memoriam Passionis Resurrectionis et Ascensionis",
+      "biblicalReferences": "Luke 23:46; Luke 24:6; Acts 1:9",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger treats Passion, Resurrection and Ascension as the three explicitly named mysteries of salvation in the Offertory prayer, not an assertion that the formula is a Gospel quotation.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SUSCIPE SANCTA TRINITAS",
+          "webLineRange": "360–366",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS020",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "Dirigatur Domine oratio mea sicut incensum",
+      "biblicalReferences": "Psalms 140:2–4 (Vulgate numbering)",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The Offertory incense prayer quotes Psalm 140/141. Check Solemn / sung distinctions and place this passage in the actual incensation phase.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "Second incensation",
+          "webLineRange": "338–349",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS021",
+      "phase": "OFFERTORY",
+      "liturgicalAnchor": "Lavabo inter innocentes manus meas",
+      "biblicalReferences": "Psalms 25:6–12 (Vulgate numbering)",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "Guéranger explicitly identifies Psalm 25 and distinguishes practical handwashing after incense from purification symbolism.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "LAVABO",
+          "webLineRange": "350–356",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS022",
+      "phase": "PREFACE",
+      "liturgicalAnchor": "Sursum corda; Gratias agamus Domino Deo nostro",
+      "biblicalReferences": "—",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger describes thanksgiving and union with the angels in the Preface. Do not manufacture a literal Bible citation for the introductory dialogue.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "PREFACE",
+          "webLineRange": "390–401",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body, Preface and people's prayer",
+          "webLineRange": "131–139",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS023",
+      "phase": "SANCTUS",
+      "liturgicalAnchor": "Sanctus Sanctus Sanctus Dominus Deus Sabaoth",
+      "biblicalReferences": "Isaiah 6:3",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The heavenly acclamation in Isaiah is recited in the Sanctus; Revelation 4:8 is a parallel vision, not the source of every word in the Roman formula.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SANCTUS",
+          "webLineRange": "404–410",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body, angelic hymn",
+          "webLineRange": "133–135",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS024",
+      "phase": "SANCTUS",
+      "liturgicalAnchor": "Sanctus Sanctus Sanctus (heavenly liturgy)",
+      "biblicalReferences": "Revelation 4:8",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger explicitly juxtaposes Isaiah and St John's Apocalypse; create a second, parallel episode link rather than fusing their visions.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SANCTUS",
+          "webLineRange": "404–410",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS025",
+      "phase": "BENEDICTUS",
+      "liturgicalAnchor": "Benedictus qui venit in nomine Domini",
+      "biblicalReferences": "Matthew 21:9; Psalm 117:26 (Vulgate numbering)",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "This acclamation is presented in Guéranger as the crowd's blessing at the entry into Jerusalem; Psalm 117 supplies prior biblical wording.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SANCTUS / BENEDICTUS",
+          "webLineRange": "410–418",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body, the children",
+          "webLineRange": "133–135",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS026",
+      "phase": "CANON_TE_IGITUR",
+      "liturgicalAnchor": "Te igitur ... pro Ecclesia tua sancta catholica",
+      "biblicalReferences": "John 17:21",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger explains prayer for unity of the Church and links it to the scriptural vision of unity; the Latin Canon prayer is not a verbatim quotation from John 17.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "TE IGITUR",
+          "webLineRange": "438–448",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS027",
+      "phase": "CANON_MEMENTO_VIVOS",
+      "liturgicalAnchor": "Memento Domine famulorum famularumque tuarum",
+      "biblicalReferences": "1 Timothy 2:1–2",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Prayer for the living in the Canon corresponds to intercession for others; Aquinas explains the prayer for the Church and particular persons.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "MEMENTO DES VIVANTS",
+          "webLineRange": "462–475",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body",
+          "webLineRange": "133–137",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS028",
+      "phase": "CANON_HANC_IGITUR",
+      "liturgicalAnchor": "Hanc igitur oblationem, hands held over offerings",
+      "biblicalReferences": "Leviticus 1:4",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger relates the extension of hands to Old Law hand-imposition over victims. This is an explicit traditional interpretation, not sufficient historical evidence that one gesture was directly inherited from the other.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "HANC IGITUR",
+          "webLineRange": "496–502",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS029",
+      "phase": "CANON_QUAM_OBLATIONEM",
+      "liturgicalAnchor": "Quam oblationem ... rationabilem acceptabilemque",
+      "biblicalReferences": "Romans 12:1",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Aquinas interprets 'rational' as a moral/spiritual transformation of the faithful; a citation to Romans 12 is a theme requiring further source collation, not a direct textual derivation.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "QUAM OBLATIONEM",
+          "webLineRange": "507–513",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 reply to objection 7",
+          "webLineRange": "158–160",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS030",
+      "phase": "CANON_CONSECRATION",
+      "liturgicalAnchor": "Qui pridie ... Hoc est enim Corpus meum",
+      "biblicalReferences": "Matthew 26:26; Mark 14:22; Luke 22:19; 1 Corinthians 11:23–24",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The Roman institution narrative is rooted in scriptural institution accounts, but the 1962 Latin formula must be collated against each account word by word; not a verbatim duplicate of any one Gospel.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "Consecration of the Host",
+          "webLineRange": "514–533",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body",
+          "webLineRange": "136–141",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS031",
+      "phase": "CANON_CONSECRATION",
+      "liturgicalAnchor": "Hic est enim calix sanguinis mei ... pro multis",
+      "biblicalReferences": "Matthew 26:28; Mark 14:24; Luke 22:20; 1 Corinthians 11:25",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The Roman cup formula synthesises scriptural Last Supper expressions in received liturgical form; a four-text comparison is required, particularly for 'mysterium fidei'.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "Consecration of the Wine",
+          "webLineRange": "534–545",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS032",
+      "phase": "CANON_UNDE_ET_MEMORES",
+      "liturgicalAnchor": "Unde et memores ... Passionis Resurrectionis Ascensionis",
+      "biblicalReferences": "Luke 22:19; 1 Corinthians 11:25–26",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "The liturgy expressly commemorates the Passion, Resurrection and Ascension; do not reduce anamnesis to replaying only the Last Supper.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "UNDE ET MEMORES",
+          "webLineRange": "557–566",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body",
+          "webLineRange": "135–138",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS033",
+      "phase": "CANON_SUPRA_QUAE",
+      "liturgicalAnchor": "munera pueri tui justi Abel",
+      "biblicalReferences": "Genesis 4:4",
+      "relationType": "LITURGICAL_EXPLICIT_FIGURE",
+      "attributableClaim": "Abel's accepted gift is named by the Roman Canon; Guéranger distinguishes the ancient offering from Christ's sacrifice.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SUPRA QUAE",
+          "webLineRange": "574–585",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 reply to objection 8",
+          "webLineRange": "160–162",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS034",
+      "phase": "CANON_SUPRA_QUAE",
+      "liturgicalAnchor": "sacrificium patriarchae nostri Abrahae",
+      "biblicalReferences": "Genesis 22:1–19",
+      "relationType": "LITURGICAL_EXPLICIT_FIGURE",
+      "attributableClaim": "Abraham's obedient offering and the substitute ram are narrated in Genesis; Guéranger contrasts his consent with Christ's perfect self-offering.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SUPRA QUAE",
+          "webLineRange": "579–585",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS035",
+      "phase": "CANON_SUPRA_QUAE",
+      "liturgicalAnchor": "quod tibi obtulit summus sacerdos tuus Melchisedech",
+      "biblicalReferences": "Genesis 14:18–20; Hebrews 7:1–17; Psalms 109:4 (Vulgate)",
+      "relationType": "LITURGICAL_EXPLICIT_FIGURE",
+      "attributableClaim": "Melchizedek is expressly named. Cyprian §4 and Ambrose §§45–46 interpret the priest and bread/wine christologically; the Genesis account itself does not explain all of the later typology.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SUPRA QUAE",
+          "webLineRange": "583–586",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Cyprian, Letter to Caecilius (New Advent numbering Ep.62)",
+          "url": "https://www.newadvent.org/fathers/050662.htm",
+          "locator": "§4",
+          "webLineRange": "19–23",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Ambrose, De mysteriis",
+          "url": "https://www.newadvent.org/fathers/3405.htm",
+          "locator": "§§45–46",
+          "webLineRange": "115–118",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS036",
+      "phase": "CANON_SUPPLICES",
+      "liturgicalAnchor": "in sublime altare tuum",
+      "biblicalReferences": "Revelation 5:6; Revelation 8:3–4",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger relates this prayer to the Lamb and heavenly altar in Revelation. Aquinas explicitly disallows a literal physical transport of the Eucharistic species; his explanation is spiritual/ecclesial.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "SUPPLICES TE ROGAMUS",
+          "webLineRange": "587–600",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 reply to objection 9",
+          "webLineRange": "162–164",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS037",
+      "phase": "CANON_MEMENTO_DEFUNCTORUM",
+      "liturgicalAnchor": "Memento etiam Domine ... qui nos praecesserunt",
+      "biblicalReferences": "2 Maccabees 12:44–46",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "The Mass prays for the departed; the deuterocanonical text provides a Catholic scriptural rationale for prayer for the dead, not the source of these exact words.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "MEMENTO DES MORTS",
+          "webLineRange": "603–620",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body",
+          "webLineRange": "136–140",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS038",
+      "phase": "CANON_PER_QUEM",
+      "liturgicalAnchor": "Per quem haec omnia Domine",
+      "biblicalReferences": "John 1:3 (thematic only)",
+      "relationType": "HISTORICAL_ATTESTATION",
+      "attributableClaim": "Guéranger proposes a historical account involving blessing produce during the Canon; documentation must be checked critically with primary ritual witnesses and Jungmann before giving as fact.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "PER QUEM HAEC OMNIA",
+          "webLineRange": "637–642",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS039",
+      "phase": "PATER_NOSTER",
+      "liturgicalAnchor": "Praeceptis salutaribus moniti ... Pater noster",
+      "biblicalReferences": "Matthew 6:9–13; Luke 11:2–4",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "Guéranger cites Christ's instruction and discusses the petitions. The introductions and liturgical arrangement are distinct from the Gospel texts.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "PATER NOSTER",
+          "webLineRange": "672–684",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Thomas Aquinas, ST III q.83",
+          "url": "https://www.newadvent.org/summa/4083.htm",
+          "locator": "a.4 body",
+          "webLineRange": "137–141",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS040",
+      "phase": "FRACTION",
+      "liturgicalAnchor": "Haec commixtio et consecratio Corporis et Sanguinis",
+      "biblicalReferences": "Luke 24:30–35 (not a textual source)",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger reads the mixture as a sign of reunion of the risen Christ's Body and Blood; this is one traditional devotional exposition, not the demonstrated historical purpose of the ritual.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "COMMIxture / fraction",
+          "webLineRange": "699–705",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS041",
+      "phase": "AGNUS_DEI",
+      "liturgicalAnchor": "Agnus Dei qui tollis peccata mundi",
+      "biblicalReferences": "John 1:29",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "Guéranger identifies the Baptist's words and contrasts the Mass's response and prayers for peace and repose.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "AGNUS DEI",
+          "webLineRange": "707–711",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS042",
+      "phase": "COMMUNION_PREPARATION",
+      "liturgicalAnchor": "Pacem relinquo vobis pacem meam do vobis",
+      "biblicalReferences": "John 14:27",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The priest's Communion preparation prayer expressly cites Christ's words on peace, interpreted by Guéranger through Eucharistic communion.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "ORAISONS AVANT LA COMMUNION",
+          "webLineRange": "713–719",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS043",
+      "phase": "COMMUNION_PREPARATION",
+      "liturgicalAnchor": "Domine non sum dignus ut intres sub tectum meum",
+      "biblicalReferences": "Matthew 8:8",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "The centurion's request becomes an adapted first-person prayer for healing of the soul before Communion.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "Before priest's Communion",
+          "webLineRange": "729–733",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS044",
+      "phase": "LAST_GOSPEL",
+      "liturgicalAnchor": "In principio erat Verbum ... Et Verbum caro factum est",
+      "biblicalReferences": "John 1:1–14",
+      "relationType": "TEXT_QUOTATION",
+      "attributableClaim": "Guéranger identifies the Johannine Prologue and describes the later devotion and medieval origin of the Last Gospel. The Gospel source is direct, but its placement at the end of Mass is historical development.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "DERNIER EVANGILE",
+          "webLineRange": "762–772",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS045",
+      "phase": "DEVOTIONAL_HISTORY",
+      "liturgicalAnchor": "Kneeling at Et Verbum caro factum est",
+      "biblicalReferences": "Philippians 2:7–11; John 1:14",
+      "relationType": "DEVOTIONAL_ANALOGY",
+      "attributableClaim": "Guéranger explicitly connects the genuflection to the Incarnation and the self-emptying of the Word; not proof that the gesture itself was appointed in the apostolic era.",
+      "sources": [
+        {
+          "author": "Dom Prosper Guéranger, Explication (1885)",
+          "url": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+          "locator": "DERNIER EVANGILE",
+          "webLineRange": "770–773",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS046",
+      "phase": "EUCHARISTIC_TYPES",
+      "liturgicalAnchor": "Manna and living Bread",
+      "biblicalReferences": "Exodus 16:13–36; John 6:32–58; 1 Corinthians 10:1–4",
+      "relationType": "SCRIPTURAL_TYPOLOGY_PATRISTIC",
+      "attributableClaim": "Ambrose §47–49 deliberately contrasts perishable manna with the Eucharist; this is a patristic type available to a broader Eucharistic formation module, not a direct quotation in a fixed part of Mass.",
+      "sources": [
+        {
+          "author": "St Ambrose, De mysteriis",
+          "url": "https://www.newadvent.org/fathers/3405.htm",
+          "locator": "De mysteriis §§44, 47–49",
+          "webLineRange": "113–124",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS047",
+      "phase": "EUCHARISTIC_TYPES",
+      "liturgicalAnchor": "Melchizedek and Eucharistic sacrifice",
+      "biblicalReferences": "Genesis 14:18–20; Hebrews 7",
+      "relationType": "SCRIPTURAL_TYPOLOGY_PATRISTIC",
+      "attributableClaim": "Cyprian §4 explicitly argues for Melchizedek as prefiguration of Christ's sacrifice and Ambrose §45–46 treats Christ as priestly fulfilment. Keep distinct from M035's claim about the Canon's own words.",
+      "sources": [
+        {
+          "author": "St Cyprian, Letter to Caecilius (New Advent numbering Ep.62)",
+          "url": "https://www.newadvent.org/fathers/050662.htm",
+          "locator": "§4",
+          "webLineRange": "19–23",
+          "inspection": "DIRECTLY_INSPECTED"
+        },
+        {
+          "author": "St Ambrose, De mysteriis",
+          "url": "https://www.newadvent.org/fathers/3405.htm",
+          "locator": "§§45–46",
+          "webLineRange": "115–118",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    },
+    {
+      "id": "MS048",
+      "phase": "EUCHARISTIC_TYPES",
+      "liturgicalAnchor": "Psalm 42 approach to altar",
+      "biblicalReferences": "Psalms 42:4 (Vulgate); Psalms 22:5 (Vulgate)",
+      "relationType": "SCRIPTURAL_TYPOLOGY_PATRISTIC",
+      "attributableClaim": "Ambrose §43 applies the Psalm 'I will go to the altar of God' to newly initiated Christians approaching the Eucharistic altar; do not claim this is an historical origin of the 1962 foot-of-altar prayers.",
+      "sources": [
+        {
+          "author": "St Ambrose, De mysteriis",
+          "url": "https://www.newadvent.org/fathers/3405.htm",
+          "locator": "De mysteriis §43",
+          "webLineRange": "107–112",
+          "inspection": "DIRECTLY_INSPECTED"
+        }
+      ],
+      "certification": {
+        "authorialPassage": "EXCERPT_LOCATED",
+        "latin1962Text": "AWAITING_COMPARISON",
+        "bibleEditionConcordance": "AWAITING_COMPARISON",
+        "historicalOrigin": "NOT_CERTIFIED",
+        "forPublishing": false
+      }
+    }
+  ],
+  "criticalMethodWitness": {
+    "author": "Pierre Le Brun, Preface (1843 ed.)",
+    "url": "https://fr.wikisource.org/wiki/Page:Lebrun_-_Explication_litt%C3%A9rale_historique_et_dogmatique_des_pri%C3%A8res_et_des_c%C3%A9r%C3%A9monies_de_la_messe_-_Tome_1_(1843).djvu/30",
+    "locator": "Discussion of gesture meaning, against theatrically literal gesturing and purely practical rationalism",
+    "webLineRange": "preface /30",
+    "inspection": "DIRECTLY_INSPECTED"
+  },
+  "holds": [
+    {
+      "code": "G1885_CANON_UNCHANGED",
+      "note": "Guéranger claims the Roman Canon has always remained the same everywhere; do not state this as history: compare early Sacramentaries, 1962 wording and Jungmann/Fortescue.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "OFFERTOIRE 305–307"
+    },
+    {
+      "code": "G1885_PAPAL_ATTRIBUTIONS",
+      "note": "Attributions to Popes Alexander I/Leo/Gregory for adding exact Canon phrases need manuscript and historical verification.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "Qui pridie 515; Supra quae 577; Hanc igitur 501"
+    },
+    {
+      "code": "G1885_WATER_WINE_VARIANTS",
+      "note": "Cyprian reads water as people and wine as Christ's blood, while Guéranger emphasizes humanity/divinity and incorporation; retain both named interpretations separately.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "OFFERTOIRE 310–317"
+    },
+    {
+      "code": "G1885_PASSION_REENACTMENT",
+      "note": "Guéranger explicitly rejects interpreting every gesture as an incident of the Passion.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "Introduction 79–82"
+    },
+    {
+      "code": "G1885_GLORIA_HILARY",
+      "note": "Guéranger notes and questions attribution of the Gloria to St Hilary; do not assign as fact.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "GLORIA 135–139"
+    },
+    {
+      "code": "G1885_LAST_GOSPEL",
+      "note": "Later addition: although exact John 1 wording is scriptural, the Last Gospel's liturgical placement is medieval, with numerous historical particularities.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "DERNIER EVANGILE 762–772"
+    },
+    {
+      "code": "G1885_ANGEL_PHYSICALITY",
+      "note": "Aquinas rejects physical transportation of consecrated species in Supplices; prevent literal cinematics of angel carrying Christ's body to heaven.",
+      "source": "https://www.newadvent.org/summa/4083.htm",
+      "loc": "III q.83 a.4 Reply to Obj.9"
+    },
+    {
+      "code": "DANIEL_PSALM_NUMBERING",
+      "note": "Crampon/Douay/Vulgate numbering differences in Daniel 3 Greek addition and Psalms: edition crosswalk required.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "Offertory 329–331 and prayers 84–90"
+    },
+    {
+      "code": "SPECIFIC_1962_MISSAL",
+      "note": "Source texts date to earlier Roman liturgical usages, sometimes inaccurate about 1962 Holy Week, Joseph in Canon, rubrics. Compare canonical project 1962 Mass text for every record before rendering.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "Entire work"
+    },
+    {
+      "code": "G1885_COMMIxture",
+      "note": "Guéranger's 'reunion of Body and Blood' for commixture is attributed interpretation and is not an archaeological/historical explanation.",
+      "source": "https://www.domgueranger.net/explication-des-prieres-de-la-sainte-messe-2/",
+      "loc": "COMMIxture 699–705"
+    }
+  ]
+}
