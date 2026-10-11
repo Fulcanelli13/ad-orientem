@@ -69,3 +69,26 @@ No automatic "one prayer → one Scripture scene" implication; many prayers requ
 - Continue batch 2 with historical references and exact prayer-phrase source-ownership, not illustrations or production interface modifications.
 
 **Gate: source corpus remains research-only. No merge to the 151/181 Atlas, no alteration to LIVE or Missal UI.**
+
+## Jungmann — page-level research itinerary (table of contents only)
+
+A 1959 revised-edition catalogue/table of contents now supplies a focused historical collation route: [J. A. Jungmann, *The Mass of the Roman Rite*, revised edition](https://books.google.com/books/about/The_Mass_of_the_Roman_Rite.html?hl=en&id=aoVnzwEACAAJ&output=html_text). The numbers below are **edition-specific page starts in that table of contents**, **not claims that the pages themselves have been read**.
+
+| Topic | TOC beginning page | Research question against Guéranger / Durandus |
+|---|---:|---|
+| Canon Actionis / Eucharistic prayer as a whole | 363 | When and how the structure developed |
+| *Te igitur* | 389 | Historically attested origin of prayers and crosses |
+| *Memento* for the living | 395 | Named intercession and changing commemorations |
+| *Communicantes* | 402 | Saints' commemoration and text history |
+| *Hanc igitur* | 408 | Extension of hands and sacrificial interpretation |
+| *Quam oblationem* | 413 | Actual early wording and transformation of offering language |
+| Institution narrative | 417 | Roman formula vs four NT institution accounts; *mysterium fidei* |
+| *Unde et memores* | 430 | Anamnesis and oblation history |
+| *Supra quae* and *Supplices te rogamus* | 434 | Named sacrifices and heavenly altar; texts vs images |
+| Commemoration of departed | 441 | Roman source history of Memento for the dead |
+| *Nobis quoque peccatoribus* | 446 | Text and ceremonial history |
+| Fraction and commingling | 471 / 475 | Distinguish historical rite from Luke 24 Emmaus allegory |
+| *Agnus Dei* | 485 | Scripture phrase versus origin of chant |
+| Last Gospel | 543 | The later placement of John 1 at the end of Mass |
+
+**Status:** bibliography/TOC verified; argument and documentary apparatus **not inspected**. Priority is to acquire a legally accessible edition or library copy and transcribe only the relevant citation/argument locators into separate historical-attestation records. No assertion in the 54-record corpus can be upgraded to certified historical origin from these TOC headings alone.
