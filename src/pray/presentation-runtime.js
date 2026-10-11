@@ -722,7 +722,7 @@ function bindRosaryDonorBack(root){
      const nextSet=ROSARY_METHOD.fullActive&&ROSARY_METHOD.length===15?nextFullRosarySet(st?.set):null;
      if(nextSet&&delta>0&&current===lastDecadeBoundary(steps)){
       e.preventDefault();e.stopImmediatePropagation();
-      if(api.selectSet?.(nextSet,{skipOpening:true})!==false){decorateRosary();setTimeout(decorateRosary,0)}
+      selectNativeRosarySet(nextSet,{skipOpening:true})
       return;
      }
      if(target!==current){
@@ -1004,6 +1004,31 @@ function ensureRosaryGuide(r){
  * All method actions delegate to the v3.4.14 canonical Rosary bead owner.
  * This listener is installed before the donor's stopImmediatePropagation handler.
  */
+/**
+ * Delegate to the loaded, canonical PrayerBook handlers. The legacy source is
+ * prepacked at build time, so edits to its extracted source do not modify the
+ * executing copy. Never create a rival Rosary state owner.
+ */
+function selectNativeRosarySet(set,{skipOpening=false}={}){
+ if(!["joyful","sorrowful","glorious","luminous"].includes(set))return false;
+ const r=rosaryDonorRoot(),api=window.AO_ROSARY_V381;
+ if(!r?.classList.contains("open")||typeof api?.setStep!=="function")return false;
+ if(api.state?.()?.set){
+  const change=r.querySelector("[data-lab-rosary-change],[data-pb-rosary-change]");
+  if(typeof change?.onclick!=="function")return false;
+  change.onclick(); // The native donor resets and renders the selection screen.
+ }
+ const choice=r.querySelector('[data-pb-rosary-set="'+set+'"]');
+ if(typeof choice?.onclick!=="function")return false;
+ choice.onclick(); // Calls the already running donor's native state transition.
+ if(api.state?.()?.set!==set)return false;
+ if(skipOpening){
+  const first=firstMysteryIndex(api.steps?.()||[]);
+  if(first<0||api.setStep(first)===false)return false;
+ }
+ decorateRosary();setTimeout(decorateRosary,0);
+ return true;
+}
 let rosaryMethodsCaptureBound=false;
 function bindRosaryMethodControls(){
  if(rosaryMethodsCaptureBound)return true;
@@ -1028,9 +1053,7 @@ function bindRosaryMethodControls(){
   const next=button.dataset.aoRosaryContinue;
   if(next&&nextFullRosarySet(window.AO_ROSARY_V381?.state?.()?.set)===next&&ROSARY_METHOD.fullActive){
    e.preventDefault();e.stopImmediatePropagation();
-   if(window.AO_ROSARY_V381?.selectSet?.(next,{skipOpening:true})!==false){
-    decorateRosary();setTimeout(decorateRosary,0);
-   }
+   selectNativeRosarySet(next,{skipOpening:true});
    return;
   }
   const chosen=button.dataset.pbRosarySet;
@@ -1038,9 +1061,9 @@ function bindRosaryMethodControls(){
   if(ROSARY_METHOD.length===15||ROSARY_METHOD.method==="dominican"){
    const set=ROSARY_METHOD.length===15?"joyful":chosen;
    e.preventDefault();e.stopImmediatePropagation();
-   if(window.AO_ROSARY_V381?.selectSet?.(set,{skipOpening:ROSARY_METHOD.method==="dominican"})!==false){
-    ROSARY_METHOD.fullActive=ROSARY_METHOD.length===15;
-    decorateRosary();setTimeout(decorateRosary,0);
+   ROSARY_METHOD.fullActive=ROSARY_METHOD.length===15;
+   if(!selectNativeRosarySet(set,{skipOpening:ROSARY_METHOD.method==="dominican"})){
+    ROSARY_METHOD.fullActive=false;
    }
   }else ROSARY_METHOD.fullActive=false;
  },true);
