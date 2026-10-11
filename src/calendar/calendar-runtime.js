@@ -763,6 +763,7 @@ ${yearJourneyCss}
 #${ROOT_ID}[data-ao-calendar-embedded="true"]{position:relative!important;inset:auto!important;z-index:auto!important;width:100%;height:auto;max-height:none;min-height:0;overflow:visible!important;background:transparent;box-shadow:none}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModTop{position:relative;top:auto;padding:8px}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModBody{width:100%;max-width:760px;padding:6px 4px 26px}
+#${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalV2Week{margin-right:0}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalV2Tabs{display:none!important}
 `;
 }
