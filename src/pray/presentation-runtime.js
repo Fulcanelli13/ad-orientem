@@ -1540,7 +1540,7 @@ function renderMercy(){
  const index=Math.max(0,Math.min(MERCY.step,steps.length-1));MERCY.step=index;
  const item=steps[index],fr=isFr(),language=fr?'fr':'en';
  const groupTitle={opening:L('Opening prayers','Prières initiales'),'large-bead':L('Large bead','Gros grain'),'small-bead':L('Small bead','Petit grain'),conclusion:L('Closing invocations','Invocations finales'),'optional-conclusion':L('Optional closing prayer','Prière finale facultative')}[item.group];
- const count=item.decade?L('Decade ','Dizaine ')+item.decade+' / 5 · '+(item.bead?item.bead+' / 10':groupTitle):groupTitle;
+ const count=item.decade?L('Decade ','Dizaine ')+item.decade+' / 5 · '+(item.bead?item.bead+' / 10':groupTitle):L('Prayer ','Prière ')+(index+1)+' / '+steps.length;
  const text=mercyStepText(item,language);
  const note=item.group==='large-bead'?L('Pray once on the large bead.','Récitez une fois sur le gros grain.'):item.group==='small-bead'?L('Pray on each of the ten small beads.','Récitez sur chacun des dix petits grains.'):item.group==='conclusion'?L('Repeat three times.','Répétez trois fois.'):'';
  const dots=item.group==='small-bead'?'<div class="aoMercyBeads" aria-label="'+esc(L('Ten beads','Dix grains'))+'">'+Array.from({length:10},(_,n)=>'<i class="'+(n<item.bead?'active':'')+'" aria-hidden="true"></i>').join('')+'</div>':'';

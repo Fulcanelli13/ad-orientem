@@ -69,6 +69,22 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureLibrary .aoScriptureFather summary{color:#e6d5af;font:600 13px/1.5 system-ui,sans-serif}
  .aoScriptureFatherText{white-space:pre-wrap;font:17px/1.74 Georgia,"Garamond",serif;color:#e5e0d5;margin:9px 0 14px}
  .aoHomeScriptureLink{margin:12px 0}
+ /* The contextual Bible reader is used on actual phones, often in church.
+    Navigation, disclosure and source actions must have distinct touch territory. */
+ .aoScriptureLibrary button,
+ .aoScriptureLibrary select,
+ .aoScriptureLibrary input{min-height:44px}
+ .aoScriptureLibrary .aoScriptureActions button{min-height:44px}
+ .aoScriptureLibrary .aoScriptureSegments button{min-height:44px}
+ .aoScriptureLibrary :is(.aoScriptureBrowse,.aoScriptureSearch,.aoScriptureBookmarks,.aoScriptureRosary) > summary{
+   display:flex;align-items:center;min-height:44px;box-sizing:border-box
+ }
+ .aoScriptureLibrary .aoScriptureFather summary{
+   display:flex;align-items:center;min-height:44px
+ }
+ .aoScriptureLibrary .aoScriptureContextCommentary a{
+   min-height:44px;align-items:center
+ }
  @media(max-width:700px){.aoScriptureNav{grid-template-columns:repeat(2,minmax(0,1fr))}.aoScriptureLibrary{padding:16px;border:0;border-radius:0}.aoScriptureText{font-size:19px}.aoScriptureContextControls{gap:3px}#ao-scripture-overlay{padding:0 0 max(16px,env(safe-area-inset-bottom))}.aoScriptureHeader{position:sticky;top:0;z-index:2;background:#0e151d;padding-top:max(10px,env(safe-area-inset-top))}}
  @media(prefers-reduced-motion:reduce){#ao-scripture-overlay *{scroll-behavior:auto!important;transition:none!important}}
  `;

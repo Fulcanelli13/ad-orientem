@@ -1,4 +1,5 @@
 import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
+import { attachExploreMapStatus } from "./map-status.js";
 const MAPLIBRE_MODULE="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.mjs";
 const MAPLIBRE_CSS="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.css";
 const DEFAULT_STYLE="https://tiles.openfreemap.org/styles/dark";
@@ -236,6 +237,7 @@ export async function mountExploreMap(container,items,{
   });
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
   if(maplibre.FullscreenControl)map.addControl?.(new maplibre.FullscreenControl({pseudo:true}),"top-right");
+  const visualStatus=attachExploreMapStatus(container,map,{win});
   map.on("load",()=>{
     const sourceId="ao-explore-items",prefix="ao-explore";
     map.addSource(sourceId,{type:"geojson",data:{type:"FeatureCollection",features},
@@ -320,7 +322,8 @@ export async function mountExploreMap(container,items,{
       const source=map.getSource?.("ao-explore-items");
       source?.setData?.({type:"FeatureCollection",features});
     },
-    destroy(){try{map.remove()}catch{}}
+    mapStatus:()=>visualStatus.status(),
+    destroy(){visualStatus.dispose();try{map.remove()}catch{}}
   });
 }
 

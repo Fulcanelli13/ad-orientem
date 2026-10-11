@@ -53,10 +53,19 @@ try{
  assert.equal(await hubNav.locator(".aoFNavMenu").isVisible(),false,
   "Jumping to a subject must close the expanded contents index");
  const grid=await doors.evaluateAll(nodes=>nodes.map(x=>{const b=x.getBoundingClientRect();return{x:b.x,y:b.y,w:b.width,h:b.height,id:x.dataset.aoLearnFamily}}));
- assert.ok(grid[1].x>grid[0].x+30&&Math.abs(grid[1].y-grid[0].y)<3,
-   "320px Formation categories must use compact two-column geometry: "+JSON.stringify(grid.slice(0,2)));
- assert.ok(grid.every(x=>x.w>=128&&x.h>=120),
-   "320px Formation subject cards are too small: "+JSON.stringify(grid));
+ // Source-preserving UI change: each family gets the full 320px reading width.
+ // Reject hidden descriptions, accidental two-column regressions and tiny targets.
+ assert.ok(grid.every(x=>x.w>=280&&x.h>=100),
+   "320px Formation subject rows too narrow or short: "+JSON.stringify(grid));
+ assert.ok(grid.slice(1).every((x,i)=>x.y>=grid[i].y+grid[i].h-1),
+   "320px Formation families overlap or revert to cramped two-column tiles: "+JSON.stringify(grid.slice(0,3)));
+ const readable=await doors.evaluateAll(nodes=>nodes.map(node=>{
+   const d=node.querySelector("p"),r=d?.getBoundingClientRect();
+   return {text:d?.textContent?.trim()||"",height:r?.height||0,
+     font:d?parseFloat(getComputedStyle(d).fontSize):0};
+ }));
+ assert.ok(readable.every(x=>x.text&&x.height>0&&x.font>=13),
+   "Formation must visibly retain every family description at 320px: "+JSON.stringify(readable));
  assert.deepEqual(grid.map(x=>x.id),
    ["foundations","spiritual-moral","liturgy-tradition","sacraments-life","questions","apologetics","church-crisis","latin","reference"]);
  const search=hub.locator("[data-ao-learn-discovery-search]");

@@ -472,6 +472,46 @@ export const HERITAGE_STYLE = String.raw`
   background:var(--ao-surface-2,#0d141c);
 }
 
+/* Search must reveal the actual church/shrine name before its category.
+   Names remain full in data and are limited to two visible lines on phones.
+   The short location line stays legible without adding map chrome. */
+.aoHeritageSurface .aoHeritageSearchResults button>span:first-child{min-width:0;flex:1}
+.aoHeritageSurface .aoHeritageSearchResults strong{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  white-space:normal;overflow:hidden;text-overflow:ellipsis;
+  line-height:1.35;overflow-wrap:anywhere
+}
+.aoHeritageSurface .aoHeritageSearchResults small{
+  font-size:12px;line-height:1.4;overflow-wrap:anywhere
+}
+.aoHeritageSurface .aoHeritageSearchResults button{
+  min-height:58px;height:auto;align-items:center
+}
+@media(max-width:430px){
+  .aoHeritageSurface .aoHeritageSearchResults{max-height:42dvh}
+  .aoHeritageSurface .aoHeritageSearchResults button{padding:11px 10px}
+}
+
+/* MapLibre's remote style can lag independently of the local directory.
+   Keep a legible non-blocking status, without pretending to render a basemap. */
+.aoFindMap{position:relative}
+.aoFindMap>.aoExploreMapLoading{
+  position:absolute;z-index:3;inset:auto 12px 14px;display:block;
+  width:auto;max-width:480px;margin:0 auto;box-sizing:border-box;
+  padding:9px 12px;border-radius:10px;pointer-events:none;
+  background:rgba(8,12,18,.91);border:1px solid rgba(201,173,120,.3);
+  color:var(--ao-text-primary,#e9e4d9);
+  font:500 13px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+  box-shadow:0 8px 24px rgba(0,0,0,.32);
+}
+.aoFindMap>.aoExploreMapLoading.aoExploreMapStalled{
+  inset:auto 12px 18px;border-color:rgba(201,173,120,.48);
+  color:var(--ao-text-primary,#e9e4d9);
+}
+@media(max-width:430px){
+  .aoFindMap>.aoExploreMapLoading{left:9px;right:9px;bottom:10px}
+}
+
 /* R60: a reading sequence of independently sourced canonical witnesses,
    not an unsourced manufactured pilgrimage narrative. */
 .aoExplorePlaceSheet .aoExploreSourcedStory{

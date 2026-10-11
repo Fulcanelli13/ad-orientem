@@ -62,6 +62,17 @@ try{
         chips:[...document.querySelectorAll('.aoHeritageCategories button')].map(b=>b.getBoundingClientRect().height),
         searchWidth:rect(".aoFindSearch input")?.width};
     });
+    // Map data can load before MapLibre's third-party background. The map
+    // must communicate this independently of the canonical search/results.
+    const visibleMapStatus=page.locator('.aoFindMap[data-ao-map-state="loading"] .aoExploreMapLoading').first();
+    await visibleMapStatus.waitFor({state:"visible",timeout:10000});
+    const pending=await visibleMapStatus.evaluate(el=>({
+      role:el.getAttribute("role"),text:el.textContent,
+      pointerEvents:getComputedStyle(el).pointerEvents
+    }));
+    assert.equal(pending.role,"status");
+    assert.ok(pending.text.length>15,"Map loading notice is empty");
+    assert.equal(pending.pointerEvents,"none","Map status should not block pan/zoom/taps");
     assert.ok(initial.map?.height>=200,width+"px map too short: "+JSON.stringify(initial));
     assert.ok(initial.world?.height>=44&&initial.world.width>=44,width+"px world control too small");
     assert.ok(initial.world.bottom<initial.map.bottom,width+"px world button outside map");
