@@ -376,6 +376,7 @@ export function buildExploreViewModel({
   expandPlace=false,
   expandDetail=false,
   customCards=[],
+  featuredPlaces=[],
   nearby=[],
   displayLimit=120,
 }={}){
@@ -399,6 +400,7 @@ export function buildExploreViewModel({
     expandPlace:Boolean(expandPlace),
     expandDetail:Boolean(expandDetail),
     customCards:arr(customCards),
+    featuredPlaces:arr(featuredPlaces),
     nearby:arr(nearby),
     mapped,
     addressOnly,
