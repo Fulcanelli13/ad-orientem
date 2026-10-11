@@ -3623,6 +3623,65 @@
       ],
       "confidence": "MEDIUM_HIGH",
       "origin_summary_fr": "La Vang, au centre du Viêt Nam, est un sanctuaire marial lié à la dévotion des catholiques vietnamiens pendant les périodes de persécution. Le récit d'apparition appartient à la tradition locale ; le repère indique le sanctuaire actuel, et non un point d'apparition authentifié."
+    },
+    {
+      "shrine_id": "shrine:IE:croagh-patrick-pilgrimage",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "name": "Croagh Patrick — Murrisk Pilgrimage Base",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Patrick and penitential Croagh Patrick pilgrimage",
+      "origin_summary": "The Croagh Patrick pilgrimage starts at the mountain base in Murrisk, County Mayo. Tradition associates the mountain with Saint Patrick's forty-day fast; the mountain itself is not the base car-park pin, which marks a documented access point. The national pilgrimage is Reek Sunday, the last Sunday in July.",
+      "associated_saints": [
+        "Saint Patrick"
+      ],
+      "source_ids": [
+        "SG-R65-IE-CROAGH-LOCAL",
+        "SG-R65-IE-CROAGH-TRAIL",
+        "SG-R65-IE-CROAGH-SAFETY"
+      ],
+      "confidence": "HIGH",
+      "origin_summary_fr": "Le pèlerinage de Croagh Patrick commence au pied de la montagne, à Murrisk, dans le comté de Mayo. La tradition associe le sommet au jeûne de quarante jours de saint Patrick. Le repère cartographique désigne le départ documenté, non le sommet. Le grand pèlerinage national est le Reek Sunday, dernier dimanche de juillet."
+    },
+    {
+      "shrine_id": "shrine:IE:st-oliver-plunkett-drogheda",
+      "place_id": "place:IE:st-peters-oliver-plunkett-drogheda",
+      "name": "Saint Peter’s Catholic Church — Saint Oliver Plunkett Shrine",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OFFICIAL_SANCTUARY",
+      "dedication": "Saint Oliver Plunkett, Archbishop of Armagh and martyr",
+      "origin_summary": "The National Shrine of Saint Oliver Plunkett occupies the Catholic Church of Saint Peter on West Street in Drogheda. Oliver was martyred at Tyburn on 1 July 1681; the head relic was entrusted to Dominican sisters and installed in Saint Peter's Church on 29 June 1921, according to the Archdiocese of Armagh.",
+      "associated_saints": [
+        "Saint Oliver Plunkett"
+      ],
+      "source_ids": [
+        "SG-R65-IE-OLIVER-ARMAGH",
+        "SG-R65-IE-OLIVER-RELIC",
+        "SG-R65-IE-OLIVER-TOURISM"
+      ],
+      "confidence": "HIGH",
+      "origin_summary_fr": "Le sanctuaire national de saint Olivier Plunkett se trouve dans l'église catholique Saint-Pierre de West Street, à Drogheda. Olivier fut martyrisé à Tyburn le 1er juillet 1681 ; la relique de son chef fut confiée aux dominicaines puis installée à Saint-Pierre le 29 juin 1921, selon l'archidiocèse d'Armagh."
+    },
+    {
+      "shrine_id": "shrine:IE:solas-bhride-kildare",
+      "place_id": "place:IE:solas-bhride-kildare",
+      "name": "Solas Bhríde Centre and Hermitages",
+      "shrine_kind": "SAINT",
+      "recognition_class": "OTHER_OFFICIAL",
+      "dedication": "Saint Brigid of Kildare, pilgrimage centre and Brigidine spirituality",
+      "origin_summary": "Solas Bhríde Centre and Hermitages at Tully Road is a Brigidine-run Christian spirituality and pilgrimage centre in Kildare. The sisters organise walking pilgrimages to sacred places associated with Saint Brigid. The medieval Cathedral of Saint Brigid, visited along the route, is currently a Church of Ireland cathedral, not a Catholic parish or Catholic Mass provider.",
+      "associated_saints": [
+        "Saint Brigid of Kildare"
+      ],
+      "source_ids": [
+        "SG-R65-IE-BRIGID-CENTRE",
+        "SG-R65-IE-BRIGID-PILGRIMAGE",
+        "SG-R65-IE-BRIGID-OSM",
+        "SG-R65-IE-BRIGID-CATHEDRAL",
+        "SG-R65-IE-BRIGID-2026"
+      ],
+      "confidence": "HIGH",
+      "origin_summary_fr": "Le centre Solas Bhríde, sur Tully Road à Kildare, est un centre chrétien de spiritualité et de pèlerinage animé par les sœurs brigittines. Elles organisent des marches sur les lieux liés à sainte Brigitte. La cathédrale médiévale Sainte-Brigitte, étape du parcours, relève aujourd'hui de l'Église d'Irlande : ce n'est ni la paroisse catholique ni un lieu de messe catholique."
     }
   ],
   "pilgrimages": [
@@ -6758,6 +6817,56 @@
       ],
       "confidence": "MEDIUM_HIGH",
       "scope_note_fr": "Les pèlerins viennent au Mont-Cassin prier à l'abbaye et au tombeau traditionnellement associé à Benoît et Scholastique. Cette tradition, comme celle de Fleury, ne tranche pas matériellement l'identité des reliques."
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IE:croagh-patrick-reek-sunday",
+      "name": "Pilgrimage to Croagh Patrick — Murrisk Pilgrimage Base",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IE:croagh-patrick-pilgrimage",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Pilgrims climb the strenuous Croagh Patrick mountain path, especially on Reek Sunday. Mountain weather can change rapidly; visitors must check local safety advice and take suitable footwear, water and food. The published pin is the base trailhead, not the summit or a guaranteed Mass venue.",
+      "source_ids": [
+        "SG-R65-IE-CROAGH-LOCAL",
+        "SG-R65-IE-CROAGH-TRAIL",
+        "SG-R65-IE-CROAGH-SAFETY"
+      ],
+      "confidence": "HIGH",
+      "scope_note_fr": "Les pèlerins gravissent le sentier exigeant de Croagh Patrick, notamment lors du Reek Sunday. Les conditions en montagne changent rapidement ; il faut vérifier les conseils locaux, porter des chaussures adaptées et prévoir eau et nourriture. Le repère indique le départ au pied du mont, non le sommet ni un lieu de messe garanti."
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IE:st-oliver-plunkett-drogheda",
+      "name": "Pilgrimage to Saint Peter’s Catholic Church — Saint Oliver Plunkett Shrine",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IE:st-oliver-plunkett-drogheda",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Pilgrims visit Saint Peter's to pray at the shrine containing the traditionally venerated head of Saint Oliver Plunkett. The archdiocese records special celebrations on 1 July and a relic procession; visiting times and Mass schedules must always be verified with the present parish.",
+      "source_ids": [
+        "SG-R65-IE-OLIVER-ARMAGH",
+        "SG-R65-IE-OLIVER-RELIC",
+        "SG-R65-IE-OLIVER-TOURISM"
+      ],
+      "confidence": "HIGH",
+      "scope_note_fr": "Les pèlerins viennent à Saint-Pierre prier auprès du sanctuaire abritant le chef traditionnellement vénéré de saint Olivier Plunkett. L'archidiocèse décrit les célébrations du 1er juillet et une procession de la relique ; les horaires de visite et de messe doivent être vérifiés auprès de la paroisse."
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IE:solas-bhride-kildare-walk",
+      "name": "Pilgrimage to Solas Bhríde Centre and Hermitages",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IE:solas-bhride-kildare",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "The sisters offer booked pilgrim walks that may connect Solas Bhríde, the two holy wells, Saint Brigid's Catholic parish church and the historic cathedral with its Anglican custodian. The source lists these as separate physical stops; the map marker identifies the Brigidine centre only, not the cathedral, wells or parish church.",
+      "source_ids": [
+        "SG-R65-IE-BRIGID-CENTRE",
+        "SG-R65-IE-BRIGID-PILGRIMAGE",
+        "SG-R65-IE-BRIGID-OSM",
+        "SG-R65-IE-BRIGID-CATHEDRAL",
+        "SG-R65-IE-BRIGID-2026"
+      ],
+      "confidence": "HIGH",
+      "scope_note_fr": "Les sœurs organisent sur réservation des marches reliant notamment Solas Bhríde, les deux puits sacrés, l'église paroissiale catholique Sainte-Brigitte et la cathédrale historique confiée à l'Église d'Irlande. Ces lieux restent des étapes physiques distinctes ; le repère indique uniquement le centre brigittin, non la cathédrale, les puits ou l'église."
     }
   ],
   "routes": [
