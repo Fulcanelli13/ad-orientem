@@ -42,7 +42,17 @@ try{
    await change.evaluate(x=>x.click());
   }
   const button=page.locator("#aoPrayerBookRoot.open [data-pb-rosary-set='"+set+"']").first();
-  await button.waitFor({state:"visible",timeout:10000});
+  await button.waitFor({state:"visible",timeout:7000}).catch(async error=>{
+    const diag=await page.evaluate((wanted)=>{
+      const roots=[...document.querySelectorAll("#aoPrayerBookRoot")].map(r=>({
+       classes:r.className,hidden:r.hidden,style:r.getAttribute("style"),
+       area:r.getBoundingClientRect().toJSON(),hasSelection:!!r.querySelector("[data-pb-rosary-set='"+wanted+"']"),
+       choices:[...r.querySelectorAll("[data-pb-rosary-set]")].map(n=>[n.dataset.pbRosarySet,n.getBoundingClientRect().height]),
+       change:!!r.querySelector("[data-lab-rosary-change]")}));
+      return {state:window.AO_ROSARY_V381?.state?.(),roots};
+    },set);
+    throw new Error("Rosary source-set change diagnostic "+JSON.stringify(diag)+"; "+String(error));
+   });
   await button.evaluate(x=>x.click());
   await page.waitForFunction(n=>window.AO_ROSARY_V381?.state?.()?.set===n,set,{timeout:10000});
   await page.waitForSelector("#aoPrayerBookRoot.open .aoRosaryCinemaTimeline",{timeout:12000});
