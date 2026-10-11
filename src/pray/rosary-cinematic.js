@@ -4,6 +4,7 @@
  * Does not create a new bead state machine, progress counter or prayer corpus.
  */
 import "./rosary-cinematic-styles.js";
+import {antwerpPackReady,antwerpEntryFor} from "./rosary-antwerp-cycle.js";
 
 export const ROSARY_CINEMATIC_VERSION="rosary-cinematic-v1";
 export const ROSARY_MYSTERY_SETS=Object.freeze({
@@ -84,6 +85,13 @@ export function bindRosaryCinematicCapture(win=globalThis){
  if(!win?.document||!win.addEventListener)return false;
  if(win.__aoRosaryCinematicCaptureV1)return true;
  win.addEventListener("click",event=>{
+  const collectionButton=event.target?.closest?.("[data-ao-rosary-art-collection]");
+  const artHost=collectionButton?.closest?.(".aoRosaryCinema[data-ao-rosary-cinema-owner='v1']");
+  if(artHost?.closest?.("#aoPrayerBookRoot.open") && typeof artHost.__aoRosaryCinemaSetCollection==="function"){
+   event.preventDefault();event.stopPropagation();
+   artHost.__aoRosaryCinemaSetCollection(collectionButton.dataset.aoRosaryArtCollection);
+   return;
+  }
   const button=event.target?.closest?.(".aoRosaryCinemaStop[data-ao-rosary-cinema-jump]");
   const host=button?.closest?.(".aoRosaryCinema[data-ao-rosary-cinema-owner='v1']");
   const root=host?.closest?.("#aoPrayerBookRoot.open");
@@ -146,6 +154,18 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
   const caption=E(doc,"p","aoRosaryCinemaCaption",txt("Remain with the mystery.","Demeurez avec le mystère.",language));
   copy.append(index,title,caption);
   stage.append(image,shade,copy);
+  const artMode=E(doc,"div","aoRosaryCinemaArtModes");
+  artMode.dataset.aoRosaryArtModes="";
+  artMode.setAttribute("role","group");
+  artMode.setAttribute("aria-label",txt("Art collection","Collection d’œuvres",language));
+  for(const [key,en,fr] of [["existing","Current","Actuel"],["antwerp","Antwerp","Anvers"]]){
+   const button=E(doc,"button","aoRosaryCinemaArtMode",txt(en,fr,language));
+   button.type="button";button.dataset.aoRosaryArtCollection=key;
+   artMode.append(button);
+  }
+  const artCredit=E(doc,"p","aoRosaryCinemaArtCredit");
+  artCredit.setAttribute("aria-live","off");
+  stage.append(artMode,artCredit);
   host.append(nav,stage);
   const bar=root.querySelector(".aoP435930RosaryBar");
   if(bar)bar.insertAdjacentElement("afterend",host);
@@ -153,6 +173,21 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
   image.addEventListener("error",()=>{stage.dataset.artwork="unavailable";image.removeAttribute("src");});
  }
  host.__aoRosaryCinemaOnJump=onJump;
+ const artPack=win?.AO_ROSARY_ANTWERP_CLEARED_V1;
+ const hasAntwerp=info.set!=="luminous"&&antwerpPackReady(artPack);
+ const artModes=host.querySelector(".aoRosaryCinemaArtModes");
+ if(artModes)artModes.hidden=!hasAntwerp;
+ if(!hasAntwerp)root.dataset.aoRosaryArtCollection="existing";
+ const collection=hasAntwerp&&root.dataset.aoRosaryArtCollection==="antwerp"?"antwerp":"existing";
+ host.dataset.aoArtCollection=collection;
+ host.__aoRosaryCinemaSetCollection=key=>{
+  if(key!=="existing"&&!(key==="antwerp"&&hasAntwerp))return false;
+  root.dataset.aoRosaryArtCollection=key;
+  return syncRosaryCinematic({root,info,win,language,onJump});
+ };
+ artModes?.querySelectorAll("[data-ao-rosary-art-collection]").forEach(button=>{
+  button.setAttribute("aria-pressed",String(button.dataset.aoRosaryArtCollection===collection));
+ });
  bindRosaryCinematicCapture(win);
  const stage=host.querySelector(".aoRosaryCinemaStage");
  const image=stage.querySelector(".aoRosaryCinemaImage");
@@ -176,11 +211,24 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
  title.textContent=txt(m.en,m.fr,language);
  kicker.textContent=ROMAN[mi]+" / V · "+txt("MYSTERY","MYSTÈRE",language);
  stage.dataset.effect=m.effect;
- const art=rosaryCinematicArtSource(root,info,win);
+ const originalArt=rosaryCinematicArtSource(root,info,win);
+ const selectedArt=collection==="antwerp"?antwerpEntryFor(artPack,current.id):null;
+ const art=selectedArt?.src||originalArt;
+ const credit=stage.querySelector(".aoRosaryCinemaArtCredit");
+ if(credit){
+  credit.hidden=!selectedArt;
+  credit.textContent=selectedArt?selectedArt.artist+" · Saint Paul’s Church, Antwerp · "+selectedArt.photographerCredit:"";
+ }
+ stage.dataset.aoOriginalAvailable=originalArt?"true":"false";
  if(art){
   if(image.getAttribute("src")!==art){
    stage.dataset.artwork="loading";
    image.onload=()=>{stage.dataset.artwork="ready"};
+   image.onerror=()=>{
+    if(selectedArt&&originalArt&&image.getAttribute("src")!==originalArt){
+     stage.dataset.artwork="fallback";image.src=originalArt;
+    }else{stage.dataset.artwork="unavailable";image.removeAttribute("src");}
+   };
    image.src=art;
    if(image.complete&&image.naturalWidth>0)stage.dataset.artwork="ready";
   }
