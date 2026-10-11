@@ -4,7 +4,9 @@ on:
   pull_request:
     paths:
       - "data/mass/ritus-1962-*.json"
+      - "data/mass/alphonsus-fortescue-direct-book-evidence.v1.json"
       - "tests/ritus-1962-*.mjs"
+      - "tests/mass-book-only-evidence-v1.mjs"
       - ".github/workflows/ritus-1962-ceremonial-research.yml"
   push:
     branches: [main]
@@ -33,3 +35,5 @@ jobs:
         run: node tests/ritus-1962-latin-phrase-batch03.mjs
       - name: Faithful posture custom-profile and observed-state batch 04
         run: node tests/ritus-1962-faithful-posture-batch04.mjs
+      - name: Verify direct-book page evidence and source-scope policy
+        run: node tests/mass-book-only-evidence-v1.mjs
