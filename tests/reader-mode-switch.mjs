@@ -6,6 +6,7 @@ import {
   findReaderModeAnchorCard,
 } from "../src/mass/reader-mode-switch.js";
 import { guideForPresentationCard } from "../src/mass/reader-guide.js";
+import { auditOrdinarySungSourceOnlyCues } from "../src/mass/reader-source-only-cues.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -104,6 +105,40 @@ for(const [family,file] of Object.entries(cueRegistryNames)){
 }
 assert.ok(nonRenderedSourceAnchors.every(row=>!projectedCueCards.has(row.cueId)),
   "Non-rendered rubric anchor acquired invented LIVE prayer ownership");
+
+const exactRegistries=Object.freeze(Object.fromEntries(
+  Object.entries(cueRegistryNames).map(([name,file])=>[name,load("../data/presentation/"+file)])
+));
+const exactSourceOnlyAudit=auditOrdinarySungSourceOnlyCues({
+  sungCorpus:data.sungCorpus,sourceModel:expandedReview.sourceModel,
+  registries:exactRegistries,
+});
+assert.equal(exactSourceOnlyAudit.sourceOnlyCueCount,15);
+assert.equal(exactSourceOnlyAudit.registryReferences,28);
+assert.deepEqual(exactSourceOnlyAudit.classificationCounts,{
+  properBlockCues:11,conditionalSediliaCues:4,
+});
+assert.deepEqual(
+  expandedReview.presentationModel.sourceOnlyCueRegister.map(x=>x.cueId),
+  exactSourceOnlyAudit.entries.map(x=>x.cueId),
+  "The curated review must expose a full source-only audit register");
+for(const anchor of exactSourceOnlyAudit.entries){
+  assert.equal(anchor.automatedIconAllowed,false,
+    anchor.cueId+" unaligned priest cue must not generate an icon");
+  assert.equal(anchor.runtimePolicy,"REQUIRE_INDEPENDENT_SOURCE_EVENT_TRIGGER");
+  assert.ok(expandedReview.presentationModel.cards.some(card=>
+    card.blocks.some(block=>block.blockId===anchor.blockId)),
+    anchor.cueId+" lost its owning proper/Gloria/Credo source block");
+  assert.equal(projectedCueCards.has(anchor.cueId),false,
+    anchor.cueId+" source-only action incorrectly acquired an exact prayer focus");
+}
+const actualRegistryReferences=nonRenderedSourceAnchors
+  .map(x=>x.family+"|"+x.cueId).sort();
+const auditedReferences=exactSourceOnlyAudit.entries.flatMap(x=>
+  x.registryFamilies.map(f=>f+"|"+x.cueId)).sort();
+assert.deepEqual(actualRegistryReferences,auditedReferences,
+  "Some hidden priest/Proper states were not covered by the exact 28-ref audit");
+
 const transitionRegistry=load("../data/presentation/reader-responses.v1.json").items;
 for(const item of transitionRegistry){
   const cueId=item.cueId;
