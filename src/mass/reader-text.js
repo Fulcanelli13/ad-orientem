@@ -137,7 +137,7 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
       const latin=correctSungPreparatoryAmen(unit.cue_id,variant?.lat??unit.latin,{form});
       // The three opening Amens lost their speaker prefixes in the Sung
       // donor. Restore them in both language surfaces, not the raw corpus.
-      if(speaker.prefix && /^Amen\\.$/iu.test(String(vernacular??"").trim())){
+      if(speaker.prefix && /^Amen\.$/iu.test(String(vernacular??"").trim())){
         vernacular=speaker.prefix+" "+String(vernacular).trim();
       }
       return {
