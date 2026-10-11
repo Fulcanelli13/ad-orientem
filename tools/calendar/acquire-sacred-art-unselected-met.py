@@ -43,7 +43,7 @@ def main():
  for k in IDS:
   assert k in leads,"Expected sourced museum replacement is absent"
   lead=leads[k]
-  row={"id":k,"targetId":lead["targetId"],"source":lead["sourceUrl"],
+  row={"id":k,"targetId":lead["targetIds"][0],"source":lead["sourceUrl"],
        "artCuratorApproved":False,"publicationApproved":False,"status":"NOT_ACQUIRED"}
   try:
    if k in previous:
