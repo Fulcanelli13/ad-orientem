@@ -115,7 +115,15 @@ function placeSheet(vm){
   // Chapter shortcuts scroll this Place sheet, never leave the application.
   const preferredCategory=arr(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
   const synopsis=sacredPlaceSynopsis(profile,{maxLength:750,language:vm.language,preferredCategory});
-  const chapters=arr(profile.story_chapters);
+  // A relic-only or apparition-only map selection must not silently inherit
+  // a different Shrine account simply because the physical Place is shared.
+  const storyKindForFilter={shrines:"ORIGIN",pilgrimages:"PILGRIMAGE",
+    apparitions:"APPARITION",relics:"RELIC",traditions:"TRADITION"};
+  const restricted=vm.lens==="heritage"&&arr(vm.filters?.heritageCategories).length===1
+    ?arr(vm.filters.heritageCategories)[0]:null;
+  const chapters=restricted&&storyKindForFilter[restricted]
+    ?arr(profile.story_chapters).filter(row=>row.kind===storyKindForFilter[restricted])
+    :arr(profile.story_chapters);
   const hasNovenas=arr(profile.novenas).length>0;
   const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
   const hasSources=arr(profile.sources).some(source=>source?.url);
@@ -141,7 +149,7 @@ function placeSheet(vm){
       const caption=KIND_LABELS[chapter.kind]??["Record","Fiche"];
       const narrative=vm.language==="fr"?chapter.body_fr:chapter.body_en;
       html+='<article class="aoExploreStoryChapter" data-story-kind="'+esc(chapter.kind)+'">'
-        +'<h3>'+esc(L(vm.language,...caption))+(chapter.kind==="PILGRIMAGE"&&chapters.filter(row=>row.kind==="PILGRIMAGE").length>1?' · '+esc(vm.language==="fr"?chapter.title_fr:chapter.title_en):"")+'</h3>'
+        +'<h3>'+esc(L(vm.language,...caption))+(chapter.kind==="PILGRIMAGE"&&chapters.filter(row=>row.kind==="PILGRIMAGE").length>1?' · '+String(chapters.slice(0,index+1).filter(row=>row.kind==="PILGRIMAGE").length):"")+'</h3>'
         +'<p>'+esc(narrative)+'</p><div class="aoExploreStoryEvidence" aria-label="'+esc(L(vm.language,"Sources for this paragraph","Sources de ce paragraphe"))+'">';
       for(const source of arr(chapter.sources))html+='<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(source.title)+'">'+esc(source.issuer||source.title||L(vm.language,"Original source","Source originale"))+' <span aria-hidden="true">↗</span></a>';
       html+='</div></article>';
