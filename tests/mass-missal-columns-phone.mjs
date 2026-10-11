@@ -51,6 +51,7 @@ try{
     sizeTranslation:parseFloat(getComputedStyle(translated).fontSize),
     secondaryVisible:getComputedStyle(translated).display!=="none",
     stateRibbon:getComputedStyle(shell.querySelector(".ao-state-ribbon")).display,
+    readerProgress:getComputedStyle(shell.querySelector(".ao-reader-progress")).display,
     schola:getComputedStyle(shell.querySelector(".ao-schola-dock")).display,
     viewportOverflow:document.documentElement.scrollWidth-innerWidth,
     primaryText:primary.textContent,secondaryText:translated.textContent};
@@ -61,7 +62,8 @@ try{
   audit.push({viewport:{width,height},language:lang,file:filename,
     mode:measure.mode,pairedRows:measure.rows,gridColumns:measure.gridColumns,
     leftX:measure.textLeft,rightX:measure.textRight,
-    viewportOverflowPx:measure.viewportOverflow,serifFontsMatch:measure.fontPrimary===measure.fontTranslation,
+    viewportOverflowPx:measure.viewportOverflow,readerProgressDisplay:measure.readerProgress,
+    serifFontsMatch:measure.fontPrimary===measure.fontTranslation,
     equalFontSize:measure.sizePrimary===measure.sizeTranslation});
   await writeFile(resolve(captureDir,"metrics.json"),JSON.stringify(audit,null,2)+"\n");
   assert.equal(measure.mode,"MISSAL",width+"px reader did not open in Missal");
@@ -72,6 +74,7 @@ try{
   assert.equal(measure.sizePrimary,measure.sizeTranslation,"Missal vernacular text uses an inconsistent size");
   assert.equal(measure.secondaryVisible,true,"Missal translation is not visible");
   assert.equal(measure.stateRibbon,"none","Minimal Missal has the LIVE posture ribbon");
+  assert.equal(measure.readerProgress,"none","MISSAL book text is obscured by LIVE section progress overlay");
   assert.equal(measure.schola,"none","Minimal Missal has the Schola overlay");
   assert.ok(measure.viewportOverflow<=1,width+"px Missal overflows phone width");
   assert.ok(measure.primaryText?.trim()&&measure.secondaryText?.trim(),"Both sourced columns must contain text");
