@@ -88,7 +88,8 @@ try{
   assert.ok((await page.locator("#detailSources a").getAttribute("href")).includes("col004"));
   await page.locator('[data-profile="thomas"]').click();
   await page.locator('[data-index="1"]').click();
-  assert.equal(await page.locator("#pinsLayer circle").count(),1,"Parthia in bounds, India remains unpinned");
+  assert.equal(await page.locator("#pinsLayer circle.mapcircle").count(),1,"Parthia is the only regional point; India remains unpinned");
+  assert.ok(await page.locator("#pinsLayer circle.mapcircle").evaluateAll(nodes=>nodes.every(n=>Number(n.getAttribute("cx"))<=1200)),"never render pins beyond the coastline map");
   assert.match(await page.locator("#mapHint").innerText(),/outside verified basemap/);
   await page.locator('[data-profile="philip-evangelist"]').click();
   assert.match(await page.locator("#sceneTitle").innerText(),/Philip the Evangelist/);
