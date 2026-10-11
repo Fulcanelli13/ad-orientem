@@ -28,7 +28,7 @@ The Commons file page for each photo provides the actual licence claim. License 
 - It writes an immutable-style report with original file SHA-1, derivative SHA-256, dimensions, source URL, actual author metadata, conversion description and exact file page. Failures are retained as explicit HOLD records.
 - It **does not** write `approved-place-media.v1.json`. A separate editorial gate must check physical building identity, permitted adaptation, attribution, actual thumbnail/crop at mobile size, author credit, bilingual alt text, no unrelated Calendar painting, and the `CC BY-SA 4.0` ShareAlike obligations.
 
-The branch-only workflow `.github/workflows/explore-stage-place-photos.yml` stages assets on the feature branch for review, not on `main`. It writes no user location and touches no geography pins or routes.
+The read-only workflow `.github/workflows/explore-stage-place-photos.yml` downloads and verifies Commons images on its temporary runner, builds an overview and two 9-site contact sheets, and uploads an `explore-r58-photo-review` GitHub Actions artifact. The 18 downloaded candidate WebPs already stored under `assets/staged/place-media/` remain **review-only**. The workflow has `contents: read` and never pushes to any branch. It writes no user location and touches no geography pins or routes.
 
 ## Editorial safeguards
 
@@ -41,3 +41,9 @@ The branch-only workflow `.github/workflows/explore-stage-place-photos.yml` stag
 ## Next gate after staging
 
 Review all available WebP derivatives together, comparing the photo with Commons' source page and the physical Place's registry record. Mark exact subject, useful crop and rights evidence per image, then promote the **fully approved** results through a separate PR into `approved-place-media.v1.json`; review the two held older licences independently.
+
+## R58 acquisition result and residual acceptance
+
+The successful Commons import report on the review branch records **18 locally staged WebP files, zero failed image transfers, two old-licence holds, and zero approved/public images**. The images were fetched after accepting `thumb.wikimedia.org` as an additional official Wikimedia delivery host, with licence verification through Commons API. A subsequent run generated visual contact sheets, but an attempted write to the feature branch was rejected; that workflow was replaced by a **read-only GitHub Actions artifact**. Use the artifact for detailed identity/crop review, not a public production feed.
+
+The production resolver explicitly rejects `assets/staged/` paths and requires a separately copied approved asset, matching Creative Commons licence URL, photographer credit, original source, change disclosure, bilingual alt text, subject and crop review, and true rights verification. Do not infer editorial publication status from GitHub Actions job success.
