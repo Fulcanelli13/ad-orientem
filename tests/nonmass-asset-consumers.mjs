@@ -159,7 +159,7 @@ assert.match(home,/ao-ui-previous/);
 assert.match(home,/ao-ui-next/);
 assert.match(home,/ao-ui-settings/,"Home utility Settings entry lost its canonical asset");
 assert.doesNotMatch(home,/ao-ui-close/,"Home regained a modal-sheet Close control after those sheets were retired");
-assert.match(calendar,/ao-ui-back/);
+assert.match(calendar,/navigationActionIcon\("back"\)/);
 assert.match(calendar,/ao-ui-previous/);
 assert.match(calendar,/ao-ui-next/);
 if(calendarIsLazy){
@@ -173,7 +173,7 @@ assert.match(learn,/data-ao-asset-renderer="mask"/,"Learn file-backed assets lac
 assert.ok(existsSync("assets/active/modules/ao-module-catechism.png"),"canonical Traditional Catechism asset was not externalized");
 assert.match(learnOwner,/canonicalAssetIdForSurface\("learn"\)/);
 assert.match(prayOwner,/canonicalAssetIdForSurface\("pray"\)/);
-assert.match(prayPresentation,/ao-ui-back/);
+assert.match(prayPresentation,/navigationActionIcon\("back"\)/);
 assert.match(prayPresentation,/ao-ui-close/);
 assert.match(prayPresentation,/ao-ui-next/);
 assert.match(prayPresentation,/ao-ui-search/);
@@ -182,8 +182,8 @@ assert.match(prayPresentation,/data-ao-pray-module-asset/);
 assert.match(prayPresentation,/data-ao-asset-renderer="embedded-symbol"/);
 assert.doesNotMatch(prayPresentation,/AO_ICON_REGISTRY_V4333/,"PRAY regained the historical icon registry");
 assert.match(settingsOwner,/canonicalAssetIdForSurface\("settings"\)/);
-assert.match(settings,/ao-ui-back/);
-assert.match(settings,/ao-ui-close/);
+assert.match(settings,/navigationActionIcon\("back"\)/);
+assert.match(settings,/navigationActionIcon\("close"\)/);
 assert.match(settings,/ao-ui-next/);
 
 console.log("PASS canonical non-Mass asset consumers: all current presentation consumers resolve to physical frozen assets or approved embedded canonical symbols; "+CONSUMED_DEVOTIONAL_MASK_ASSETS.length+" consumed devotional masks are physically externalized.");
