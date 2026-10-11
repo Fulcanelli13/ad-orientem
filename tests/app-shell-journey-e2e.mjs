@@ -69,7 +69,10 @@ try{
     massMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
-    homeEmbeddedCanonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
+    prayNow:document.querySelectorAll(".aoTodayV2Below .aoTodayV2PrayNow [data-home-cu-route='pray.rosary']").length,
+    scripture:document.querySelectorAll(".aoTodayV2Below [data-home-scripture]").length,
+    gospel:document.querySelectorAll(".aoTodayV2Below [data-action='gospel']").length,
+    catechism:document.querySelectorAll(".aoTodayV2Below [data-home-daily-catechism]").length,
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
@@ -85,8 +88,11 @@ try{
   assert.equal(cold.owner,"AO_APP_SHELL_V1","modular shell ownership marker missing");
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
   assert.equal(cold.enrichersOwner,"modular-home-enrichers-v1","cold Home did not use modular enrichers");
-  assert.equal(cold.modularEnrichers,2,"cold Home did not render both modular enricher cards");
-  assert.equal(cold.homeEmbeddedCanonicalIcons,3,"cold Home did not render all three Coming Up icons from canonical embedded artwork");
+  assert.equal(cold.modularEnrichers,1,"Today v2 must have one canonical editorial enricher owner");
+  assert.equal(cold.prayNow,1,"Today must retain the real Rosary Prayer Now route");
+  assert.equal(cold.scripture,1,"Today must retain the canonical Scripture reader route");
+  assert.equal(cold.gospel,1,"Today must retain its appointed Gospel route");
+  assert.equal(cold.catechism,1,"Today must retain its daily Catechism route");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
   assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
   assert.equal(cold.releaseAuthority,"AO_APP_SHELL_V1");
@@ -96,27 +102,27 @@ try{
   assert.equal(await page.locator("[data-ao-app-surface]").count(),5,"Five permanent destinations required");
    assert.equal(await page.locator("[data-ao-app-surface='calendar']").count(),0,"Calendar still occupies a ribbon tab");
    assert.equal(await page.locator("[data-ao-app-surface='home']").getAttribute("aria-label"),"Today");
-   await page.locator("[data-home-calendar]").click();
-  await page.waitForFunction(()=>
-    globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
-    globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&
-    document.getElementById("ao-calendar-modular-root")?.isConnected,
-    null,{timeout:10000});
+  // Calendar was deliberately embedded in Today by PR #1023. Preserve
+  // the source-owned month rather than navigating to a retired sixth surface.
+  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
+  await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',{state:"visible",timeout:15000});
   const calendarOwnership=await page.evaluate(()=>({
-    owner:document.getElementById("ao-calendar-modular-root")?.dataset?.aoCalendarOwner??null,
+    owner:document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root")?.dataset?.aoCalendarOwner??null,
     donorPanel:globalThis.AO_NAV_V25?.getState?.()?.panel??null,
-    shell:globalThis.AO_APP_SHELL_V1?.status?.().calendarOwner??false,
+    shell:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+    monthBody:document.querySelectorAll(".aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]").length,
     homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null,
     homeDisplay:getComputedStyle(document.querySelector(".homeScreen")).display,
   }));
-  assert.equal(calendarOwnership.owner,"modular-calendar-v2-liturgical-year","Calendar did not mount the modular presentation owner");
-  assert.notEqual(calendarOwnership.donorPanel,"calendar","Calendar still opened the donor v25 panel");
-  assert.equal(calendarOwnership.shell,true,"app shell did not report the modular Calendar owner");
-  assert.equal(calendarOwnership.homeSuppressed,"true","Calendar did not isolate Home");
-  assert.equal(calendarOwnership.homeDisplay,"none","Home remained visually exposed beneath Calendar");
+  assert.equal(calendarOwnership.owner,"modular-calendar-v2-liturgical-year","Month did not mount the canonical Calendar presentation");
+  assert.notEqual(calendarOwnership.donorPanel,"calendar","Month still opened the old donor calendar");
+  assert.equal(calendarOwnership.shell,"home","Embedded Calendar must preserve Today as the app surface");
+  assert.equal(calendarOwnership.monthBody,1,"Month view lost the canonical Calendar body");
+  assert.equal(calendarOwnership.homeSuppressed,"false","Embedded Calendar incorrectly suppressed Today");
+  assert.notEqual(calendarOwnership.homeDisplay,"none","Today must remain the active visual surface");
 
   await page.locator("[data-ao-app-surface='mass']").click();
-  await page.waitForFunction(()=>!document.getElementById("ao-calendar-modular-root"),null,{timeout:10000});
+  await page.waitForFunction(()=>!document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root"),null,{timeout:10000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="mass",null,{timeout:10000});
 
   const setup=await page.evaluate(async({iconKeys,excludedIconKeys})=>{
@@ -498,6 +504,10 @@ try{
     donorAvailable:globalThis.AO_HOME_APP_V1?.status?.().donorHomeAvailable??false,
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
+    prayNow:document.querySelectorAll(".aoTodayV2Below .aoTodayV2PrayNow [data-home-cu-route='pray.rosary']").length,
+    scripture:document.querySelectorAll(".aoTodayV2Below [data-home-scripture]").length,
+    gospel:document.querySelectorAll(".aoTodayV2Below [data-action='gospel']").length,
+    catechism:document.querySelectorAll(".aoTodayV2Below [data-home-daily-catechism]").length,
     donorHomeEnricherVisible:[...document.querySelectorAll(".aoComingUpV4323,.aoDailyCateHome")].some(node=>{
       const style=getComputedStyle(node);
       return node.isConnected&&!node.hidden&&style.display!=="none"&&style.visibility!=="hidden";
@@ -511,7 +521,11 @@ try{
   assert.equal(homeOwnership.installed,true);
   assert.equal(homeOwnership.presentationAttached,true,"modular Home presentation is not subscribed to runtime state");
   assert.equal(homeOwnership.enrichersOwner,"modular-home-enrichers-v1","Home transition did not restore modular enrichers");
-  assert.equal(homeOwnership.modularEnrichers,2,"Home transition did not restore both modular enricher cards");
+  assert.equal(homeOwnership.modularEnrichers,1,"Home transition lost Today v2 editorial owner");
+  assert.equal(homeOwnership.prayNow,1,"Home return lost Rosary Pray Now");
+  assert.equal(homeOwnership.scripture,1,"Home return lost the Scripture reader");
+  assert.equal(homeOwnership.gospel,1,"Home return lost the appointed Gospel");
+  assert.equal(homeOwnership.catechism,1,"Home return lost the daily Catechism");
   assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
   assert.equal(homeOwnership.homeSuppressed,"false","Home suppression survived return to Home");

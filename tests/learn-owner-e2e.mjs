@@ -121,7 +121,17 @@ try{
     const donor=document.getElementById("ao-v37-root");
     const ribbon=document.getElementById("ao-global-ribbon");
     const rr=root?.getBoundingClientRect(),rb=ribbon?.getBoundingClientRect();
-    const tapTargets=[...root.querySelectorAll("button")].map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height}});
+    const tapTargets=[...root.querySelectorAll("button")].map(node=>{
+      const r=node.getBoundingClientRect();
+      const hiddenAncestor=node.closest("[hidden],[inert]");
+      const css=getComputedStyle(node);
+      return {
+        w:r.width,h:r.height,
+        visible:node.getClientRects().length>0&&!hiddenAncestor&&css.visibility!=="hidden"&&css.display!=="none",
+        label:node.getAttribute("aria-label")||node.textContent?.trim().slice(0,65)||"",
+        selector:node.className||node.dataset.aoFnavGo||node.outerHTML.slice(0,100)
+      };
+    });
     const oldLearn=document.getElementById("ao-learn-root");
     const oldCate=document.getElementById("ao-cate-root");
     const oldDaily=document.getElementById("ao-daily-cate-root");
@@ -167,8 +177,24 @@ try{
   assert.ok(learned.geometry.width>300,"Learn phone surface collapsed");
   assert.ok(learned.geometry.scrollWidth<=learned.geometry.clientWidth+1,"Learn phone surface has horizontal overflow");
   assert.ok(learned.geometry.rootBottom<=learned.geometry.ribbonTop+2,"Learn surface covers the global app ribbon");
-  assert.ok(learned.geometry.tapTargets.length>=6,"Learn surface lost expected controls");
-  for(const target of learned.geometry.tapTargets)assert.ok(target.w>=44&&target.h>=44,"Learn touch target fell below 44px");
+  const visibleLearnTargets=learned.geometry.tapTargets.filter(target=>target.visible);
+  assert.ok(visibleLearnTargets.length>=6,"Learn surface lost expected visible controls");
+  for(const target of visibleLearnTargets)
+    assert.ok(target.w>=44&&target.h>=44,
+      "Visible Learn touch target fell below 44px: "+JSON.stringify(target));
+  // Collapsed section-index buttons are non-rendered; also audit their actual
+  // hitboxes when the user opens that menu, rather than counting them as 0px.
+  const formationNavToggle=page.locator('#ao-learn-modular-root [data-ao-fnav-action="toggle"]');
+  if(await formationNavToggle.count()){
+    await formationNavToggle.tap();
+    const openIndexTargets=await page.locator('#ao-learn-modular-root .aoFNavMenu:not([hidden]) [data-ao-fnav-go]').evaluateAll(nodes=>
+      nodes.map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height,label:node.textContent?.trim().slice(0,65)}}));
+    assert.ok(openIndexTargets.length>=2,"Opened Formation section index lost its navigation buttons");
+    for(const target of openIndexTargets)
+      assert.ok(target.w>=44&&target.h>=44,
+        "Opened Formation index touch target fell below 44px: "+JSON.stringify(target));
+    await formationNavToggle.tap();
+  }
   await assertNoMass("Home -> Learn");
   await assertFocusSafe("Home -> Learn");
 
@@ -332,7 +358,13 @@ try{
   const spiritualLanding=await page.evaluate(()=>{
     const root=document.getElementById("ao-spiritual-life-root");
     const rect=root?.getBoundingClientRect();
-    const buttons=[...root.querySelectorAll("button")].map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height}});
+    const buttons=[...root.querySelectorAll("button")]
+      .filter(node=>node.getClientRects().length>0&&!node.closest("[hidden],[inert]")&&getComputedStyle(node).visibility!=="hidden")
+      .map(node=>{const r=node.getBoundingClientRect();return {
+        w:r.width,h:r.height,
+        label:node.getAttribute("aria-label")||node.textContent?.trim().slice(0,65)||"",
+        selector:node.className||node.outerHTML.slice(0,100)
+      };});
     return {
       status:globalThis.AO_SPIRITUAL_LIFE_V1?.status?.()??null,
       lessons:root?.querySelectorAll("[data-ao-sl-lesson]").length??0,
@@ -351,7 +383,19 @@ try{
   assert.ok(spiritualLanding.width>300,"Spiritual Life phone surface collapsed");
   assert.ok(spiritualLanding.overflow<=1,"Spiritual Life has horizontal overflow on 390px phone geometry");
   assert.match(spiritualLanding.text,/There is no score|Il n’y a ni score/,"Spiritual Life lost its anti-scoring boundary");
-  for(const target of spiritualLanding.buttons)assert.ok(target.w>=44&&target.h>=44,"Spiritual Life landing touch target fell below 44px");
+  assert.ok(spiritualLanding.buttons.length>=6,"Spiritual Life landing lost visible touch controls");
+  for(const target of spiritualLanding.buttons)
+    assert.ok(target.w>=44&&target.h>=44,"Visible Spiritual Life landing touch target fell below 44px: "+JSON.stringify(target));
+  const spiritualIndexToggle=page.locator('#ao-spiritual-life-root [data-ao-fnav-action="toggle"]');
+  if(await spiritualIndexToggle.count()){
+    await spiritualIndexToggle.tap();
+    const indexHitboxes=await page.locator('#ao-spiritual-life-root .aoFNavMenu:not([hidden]) [data-ao-fnav-go]').evaluateAll(nodes=>
+      nodes.map(node=>{const r=node.getBoundingClientRect();return {w:r.width,h:r.height,label:node.textContent?.trim().slice(0,65)}}));
+    assert.ok(indexHitboxes.length>=2,"Opened Spiritual Life section index lost navigation buttons");
+    for(const target of indexHitboxes)
+      assert.ok(target.w>=44&&target.h>=44,"Opened Spiritual Life section index target below 44px: "+JSON.stringify(target));
+    await spiritualIndexToggle.tap();
+  }
   await assertNoMass("Spiritual Life landing");
   await assertFocusSafe("Spiritual Life landing");
 
@@ -594,8 +638,9 @@ try{
   await assertNoMass("Learn -> Pray");
   await assertFocusSafe("Learn -> Pray");
 
-  // Calendar remains directly routable, but its visible user journey is
-  // Formation -> Today -> Full Calendar rather than a sixth ribbon slot.
+  // Calendar is now embedded in Today (PR #1023), not a standalone
+  // sixth app destination. Use the exact Month control, not the nine
+  // context-specific buttons sharing data-home-calendar.
   await openLearn();
   await page.locator("[data-ao-app-surface='home']").tap();
   await page.waitForFunction(()=>
@@ -603,15 +648,19 @@ try{
     !document.getElementById("ao-learn-modular-root"),
     null,{timeout:10000}
   );
-  await page.locator("[data-home-calendar]").tap();
-  await page.waitForFunction(()=>
-    globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar" &&
-    globalThis.AO_CALENDAR_APP_V1?.status?.().open===true &&
-    !document.getElementById("ao-learn-modular-root"),
-    null,{timeout:10000}
-  );
-  await assertNoMass("Learn -> Today -> Calendar");
-  await assertFocusSafe("Learn -> Today -> Calendar");
+  await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').tap();
+  await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
+    {state:"visible",timeout:15000});
+  assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
+    "Formation -> Today -> Month must open the canonical Calendar body");
+  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"home",
+    "Embedded Calendar must preserve Today as the app surface");
+  await assertNoMass("Learn -> Today -> Month");
+  await assertFocusSafe("Learn -> Today -> Month");
+  await page.locator("[data-home-calendar-today]").tap();
+  await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
+  assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,
+    "Return from Month must restore Today without an orphaned Calendar");
 
   await openLearn();
   // Settings is a contextual app overlay, not the sixth global ribbon tab.
