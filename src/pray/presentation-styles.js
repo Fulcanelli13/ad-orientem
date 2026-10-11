@@ -587,13 +587,22 @@ const ANGELUS_GUIDE_RITUAL_CSS=`
 
 
 const ROSARY_GUIDE_CSS=`
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuide{margin:0 0 12px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:13px;background:var(--surface-1,#151c24);position:relative;z-index:2;overflow:hidden}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuide>summary{display:flex;align-items:center;min-height:44px;padding:10px 12px;cursor:pointer;color:var(--liturgical,#d8bd7d);font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideBody{padding:0 13px 5px}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection{padding:11px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection h3{font:650 14px/1.3 var(--ao-font-display,Georgia,serif);margin:0 0 5px;color:var(--text,#f3ead7)}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection p{font:400 13px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8);margin:0}
-#aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
+#aoPrayerBookRoot.open .aoRosaryGuide{margin:0 0 12px;border:1px solid var(--border,rgba(255,255,255,.13));border-radius:13px;background:var(--surface-1,#151c24);position:relative;z-index:2;overflow:hidden}
+#aoPrayerBookRoot.open .aoRosaryGuide>summary{display:flex;align-items:center;min-height:44px;padding:10px 12px;cursor:pointer;color:var(--liturgical,#d8bd7d);font:650 13px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPrayerBookRoot.open .aoRosaryGuideBody{padding:0 13px 5px}
+@media(max-width:560px){
+  /* Preserve six source-linked sections without letting the guide displace the prayer. */
+  #aoPrayerBookRoot.open .aoRosaryGuide[open] .aoRosaryGuideBody{
+    max-height:min(34dvh,290px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+#aoPrayerBookRoot.open .aoRosaryGuideSection{padding:11px 0;border-top:1px solid var(--border,rgba(255,255,255,.1))}
+#aoPrayerBookRoot.open .aoRosaryGuideSection h3{font:650 14px/1.3 var(--ao-font-display,Georgia,serif);margin:0 0 5px;color:var(--text,#f3ead7)}
+#aoPrayerBookRoot.open .aoRosaryGuideSection p{font:400 13px/1.55 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#aeb2b8);margin:0}
+#aoPrayerBookRoot.open .aoRosaryGuideSection a{color:var(--liturgical,#d8bd7d);text-decoration:underline;text-underline-offset:3px}
 `;
 
 const ROSARY_SCRIPTURE_POLICY_CSS=`
