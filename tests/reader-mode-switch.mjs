@@ -89,6 +89,24 @@ assert.equal(cardForCue("AO.SM.C0027").paragraphs.find(p=>
   p.sourceCueIds.includes("AO.SM.C0027")).speakerRole,"MINISTERS");
 assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Credo · Incarnation"),
   "Credo Incarnation milestone lost");
+const distinct=(earlier,later,message)=>assert.notEqual(
+  cardForCue(earlier)?.sectionId,cardForCue(later)?.sectionId,message);
+distinct("AO.SM.C0009","AO.SM.C0010","Psalm 42 final doxology must be a separate stage");
+distinct("AO.SM.C0033","AO.SM.C0034","The final opening dialogue must be distinct");
+distinct("AO.SM.C0046","AO.SM.C0047","Kyrie/Christe repetitions need separate prayer cards");
+distinct("AO.SM.C0049","AO.SM.C0050","Christe/final Kyrie card boundary lost");
+distinct("AO.SM.C0131","AO.SM.C0132","Orate fratres priest/response card boundary lost");
+distinct("AO.SM.C0147","AO.SM.C0148","Sanctus/Benedictus card boundary lost");
+distinct("AO.SM.C0172","AO.SM.C0173","Host consecration formula must follow preparation");
+distinct("AO.SM.C0178","AO.SM.C0179","Chalice consecration formula must follow preparation");
+distinct("AO.SM.C0272","AO.SM.C0273","Et Verbum caro factum est must have its own card");
+assert.equal(cardForCue("AO.SM.C0173"),cardForCue("AO.SM.C0174"),
+  "Host elevation must remain linked to the exact words without a blank transition");
+assert.equal(cardForCue("AO.SM.C0179"),cardForCue("AO.SM.C0181"),
+  "Chalice elevation must remain linked to the exact words without a blank transition");
+console.log("Expanded Mass card review: "+expandedReview.presentationModel.totalCards+
+  " unique cards; every source paragraph conserved.");
+
 
 const host=live.presentationModel.cards.find(card=>
   card.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0174"))
