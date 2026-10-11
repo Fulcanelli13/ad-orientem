@@ -1330,6 +1330,8 @@ export async function mountNativeReaderPreview({
       eventIndex:priestEventIndex,cueController:ready.cueState,
       observedActor:observedPriestEvent.observedActor??null,
       observedDelivery:observedPriestEvent.observedDelivery??null,
+      observedPosition:observedPriestEvent.observedPosition??null,
+      observedAction:observedPriestEvent.observedAction??null,
     });
   }
 
@@ -2483,12 +2485,13 @@ export async function mountNativeReaderPreview({
     // fail closed. Production 48 and special rites do not accept events.
     observePriestCeremonialEvent:(eventId,{
       conditions=[],observedActor=null,observedDelivery=null,
+      observedPosition=null,observedAction=null,
     }={})=>{
       if(!ready.curatedEligible || !eventId || !Array.isArray(conditions)){
         observedPriestEvent=null;queue();return false;
       }
       observedPriestEvent={eventId:String(eventId),conditions:[...conditions],
-        observedActor,observedDelivery};
+        observedActor,observedDelivery,observedPosition,observedAction};
       const matched=currentObservedPriestEvent();
       if(!matched){observedPriestEvent=null;queue();return false;}
       queue();return true;
