@@ -69,7 +69,7 @@ try{
     massMounted:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
     enrichersOwner:globalThis.AO_HOME_APP_V1?.status?.().enrichersOwner??null,
     modularEnrichers:document.querySelectorAll("[data-ao-home-enricher-owner='modular-home-enrichers-v1']").length,
-    homeEmbeddedCanonicalIcons:document.querySelectorAll(".aoHomeCuIcon use").length,
+    homeCanonicalIcons:document.querySelectorAll(' .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="embedded"], .aoHomeComingUp .aoHomeCuIcon[data-ao-asset-renderer="mask"]'.trim()).length,
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
@@ -86,7 +86,7 @@ try{
   assert.equal(cold.massMounted,false,"cold launch unexpectedly restored a Mass surface");
   assert.equal(cold.enrichersOwner,"modular-home-enrichers-v1","cold Home did not use modular enrichers");
   assert.equal(cold.modularEnrichers,2,"cold Home did not render both modular enricher cards");
-  assert.equal(cold.homeEmbeddedCanonicalIcons,3,"cold Home did not render all three Coming Up icons from canonical embedded artwork");
+  assert.equal(cold.homeCanonicalIcons,3,"cold Home did not render all three Coming Up icons from canonical embedded or masked artwork");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
   assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
   assert.equal(cold.releaseAuthority,"AO_APP_SHELL_V1");
