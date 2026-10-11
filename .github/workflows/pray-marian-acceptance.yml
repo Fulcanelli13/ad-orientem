@@ -29,3 +29,11 @@ jobs:
         run: timeout --signal=TERM --kill-after=5s 160s node tests/pray-marian-mobile.mjs
       - name: All devotional routes and canonical Prayer Library mobile
         run: timeout --signal=TERM --kill-after=5s 190s node tests/pray-all-modules-mobile.mjs
+      - name: Preserve Angelus Tanner four-stage review captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: angelus-tanner-mobile-${{ github.run_id }}
+          path: reviews/captures/angelus-tanner/*.png
+          if-no-files-found: ignore
+          retention-days: 14
