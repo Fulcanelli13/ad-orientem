@@ -370,7 +370,7 @@ export const HERITAGE_STYLE = String.raw`
 }
 .aoHeritageSurface .aoHeritagePlaceThumb figcaption{
   color:var(--ao-text-muted,#9ba5b1);font:400 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
-  padding:4px 6px;max-height:27px;overflow:hidden;
+  padding:5px 6px;max-height:none;overflow-wrap:anywhere;
 }
 .aoExplorePlaceSheet .aoExplorePlaceMedia{
   margin:11px 0 16px;border-radius:12px;overflow:hidden;
@@ -457,5 +457,9 @@ export const HERITAGE_STYLE = String.raw`
 }
 @media(prefers-reduced-motion:reduce){
  .aoExplorePlaceSheet .aoExplorePlaceChapters{scroll-behavior:auto}
+}
+
+.aoHeritageSurface .aoHeritagePlaceThumb figcaption a{
+  color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;
 }
 `;
