@@ -336,6 +336,47 @@ try{
         if(expected.gesture)assert.match(state.gesture??"",expected.gesture);
       }
     }
+
+    // Priest mode may only update these source-only states after a genuine
+    // independent MC event observation. A page swipe, Schola advancement,
+    // and a different source Mass section must not move the priest.
+    const independentPriest=await page.evaluate(async()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const first=api.model.cards.find(c=>c.title==="Gloria · Praise and Supplication");
+      const second=api.model.cards.find(c=>c.title==="Gloria · Doxology");
+      const other=api.model.cards.find(c=>c.title==="Credo · The Celebrant's Intonation");
+      api.showSequence(first.sequence);
+      const before=api.getScholaState()?.trackId??null;
+      const notObserved=api.getObservedPriestEvent();
+      const accepted=api.observePriestCeremonialEvent("MC-GLR-040",{
+        conditions:["SEDILIA_USED","SEDILIA_USED_AND_CHANT_CONTINUES"]
+      });
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      const seated=api.getObservedPriestEvent();
+      const scholaUnchanged=(api.getScholaState()?.trackId??null)===before;
+      const visual=window.AO_R17_NATIVE_READER_STATE?.priestPosition?.station;
+      api.showSequence(second.sequence);
+      const stays=api.getObservedPriestEvent()?.cueId??null;
+      api.showSequence(other.sequence);
+      const cleared=api.getObservedPriestEvent();
+      const refused=api.observePriestCeremonialEvent("MC-GLR-040",{
+        conditions:["SEDILIA_USED","SEDILIA_USED_AND_CHANT_CONTINUES"]
+      });
+      return {notObserved,accepted,seated:seated?.cueId??null,
+        visual,scholaUnchanged,stays,cleared,refused};
+    });
+    assert.equal(independentPriest.notObserved,null);
+    assert.equal(independentPriest.accepted,true);
+    assert.equal(independentPriest.seated,"AO.SM.C0276");
+    assert.equal(independentPriest.visual,"SEDILIA");
+    assert.equal(independentPriest.scholaUnchanged,true,
+      "Observing a priest event must never rewind the independent Schola");
+    assert.equal(independentPriest.stays,"AO.SM.C0276",
+      "Priest seat must not change merely because the Schola changes Gloria card");
+    assert.equal(independentPriest.cleared,null,
+      "Priest state leaked across Gloria to Credo");
+    assert.equal(independentPriest.refused,false,
+      "Wrong-section priest observation must fail closed");
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
     const guides=await page.evaluate(()=>{
