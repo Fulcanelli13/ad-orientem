@@ -1,6 +1,6 @@
 {
   "schema": "ao-1962-ceremonial-research-contract-v2",
-  "version": "2.1.0-research",
+  "version": "2.2.0-research",
   "status": "RESEARCH_NOT_RUNTIME",
   "sourceOfAuthority": {
     "rubrics1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
@@ -81,22 +81,49 @@
   "sourceCheckedBatches": [
     {
       "file": "data/mass/ritus-1962-verified-ceremonial-batch01.v1.json",
-      "events": 44,
-      "canonicalAnchors": 31
+      "events": 46,
+      "uniqueCueAnchors": 33,
+      "languageStatus": "1962 English translation; 3 corrected against 1962 Latin transcription"
     },
     {
       "file": "data/mass/ritus-1962-solemn-ministers-batch02.v1.json",
       "events": 67,
       "canonicalAnchorCount": 64,
-      "branchOnlyAnchors": 3
+      "branchOnlyAnchors": 3,
+      "languageStatus": "English translation; Latin review partial"
+    },
+    {
+      "file": "data/mass/ritus-1962-latin-phrase-audit-batch03.v1.json",
+      "events": 36,
+      "languageStatus": "1962 Latin–French transcription, facsimile review pending"
+    },
+    {
+      "file": "data/mass/ritus-1962-faithful-posture-classification-batch04.v1.json",
+      "events": 23,
+      "localCustom": 5,
+      "languageStatus": "Sung source of truth classifications; historical lay custom review pending"
     }
   ],
   "historicalParallelRegister": "data/mass/ritus-1962-alphonsus-fortescue-parallels.v1.json",
   "certificationLimits": [
-    "44 action candidates are source checked in English Ritus translation",
-    "67 minister candidates source checked in English translation and 1962 ceremonial reconciliation, not Latin certified",
-    "Research-only scripts pass GH Actions; runtime unchanged",
-    "Unresolved subdeacon paten micro-timing and subdeacon Requiem water formula",
-    "Every source passage and each French rubric requires Latin 1962 editorial certification"
+    "Do not interpret green CI as liturgical certification",
+    "Original printed Latin facsimile not reviewed line by line",
+    "Bilingual Latin transcription and English 1962 Ritus checked for selected triggers",
+    "Practical timing of subdeacon's paten at Pater remains open",
+    "Faithful postures may vary by local customary practice"
+  ],
+  "priorities": [
+    "Finish printed 1962 Latin facsimile editorial review",
+    "Review source ownership of minister movements and precise positions",
+    "Validate all 23 sung plus separately archived Low Mass faithful posture variants",
+    "Translate long/short rubrics into French for actual Priest Mode only after source certification",
+    "Perform phone LIVE regression for all Mass forms after runtime integration"
+  ],
+  "correctionsSinceV2": [
+    "C0163 opening Quam oblationem precedes crosses; C0164 three crosses on benedictam, adscriptam, ratam; C0165 Corpus-only, C0166 Sanguis-only.",
+    "Three Agnus Dei breast strikes individually owned by C0222, C0223 and C0224; Requiem omitted.",
+    "Foot-of-altar C0010 Gloria Patri tied to Judica me III.6 and unavailable where that Psalm is omitted.",
+    "Wine poured into chalice before priest begins C0112 Deus qui humanae.",
+    "All 23 faithful sung postures are usage/profile-guidance, not universal rubrical mandates."
   ]
 }
