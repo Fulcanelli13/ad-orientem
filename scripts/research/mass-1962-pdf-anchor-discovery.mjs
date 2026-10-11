@@ -6,8 +6,10 @@ const [input,output]=process.argv.slice(2);
 if(!input||!output)throw Error("Usage: node script input-pdftotext.txt output.json");
 const prefix="data/geography/research/";
 const packets=JSON.parse(readFileSync(prefix+"mass-1962-high-priority-100-evidence-packets-20261011.v1.json","utf8"));
-const normalize=s=>(s||"").toLowerCase().replace(/æ/g,"ae").replace(/œ/g,"oe").normalize("NFD")
- .replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]+/g," ").replace(/\s+/g," ").trim();
+const normalize=s=>(s||"").replace(/([A-Za-zæœ])[-\\u00ad]\\s*\\n\\s*([A-Za-zæœ])/gi,"$1$2")
+ .toLowerCase().replace(/æ/g,"ae").replace(/œ/g,"oe").normalize("NFD")
+ .replace(/[\\u0300-\\u036f\\u00ad\\u0002]/g,"").replace(/j/g,"i").replace(/v/g,"u")
+ .replace(/[^a-z]+/g," ").replace(/\\s+/g," ").trim();
 const rawPages=readFileSync(input,"utf8").split("\f");
 if(!rawPages.at(-1).trim())rawPages.pop();
 if(rawPages.length<900)throw Error("Not a full scanned Missal: "+rawPages.length+" pages");
@@ -29,11 +31,16 @@ for(const row of packets.rows){
    anchors.push({...base,result:"SHORT_OR_UNAVAILABLE_ANCHOR",pageCandidates:[],candidateCount:0});
    continue;
   }
-  const phrase=words.slice(0,11).join(" ");
-  const candidates=[];
-  for(let i=0;i<pageText.length;i++)if(pageText[i].includes(phrase))candidates.push(i+1);
+  const tiers=[9,7,5,4].filter(n=>n<=words.length);
+  let phrase=null,candidates=[],matchedWords=0;
+  for(const n of tiers){
+   const trial=words.slice(0,n).join(" ");
+   const pages=[];
+   for(let i=0;i<pageText.length;i++)if(pageText[i].includes(trial))pages.push(i+1);
+   if(pages.length){phrase=trial;candidates=pages;matchedWords=n;break;}
+  }
   anchors.push({...base,searchPhrase:phrase,result:candidates.length?"PRINTED_OCR_CANDIDATE":"NO_EXACT_OCR_MATCH",
-   pageCandidates:candidates.slice(0,15),candidateCount:candidates.length,
+   matchStrengthWords:matchedWords,pageCandidates:candidates.slice(0,15),candidateCount:candidates.length,
    multipleMatches:candidates.length>1,ocrFoundNotVisuallyCertified:true});
  }
 }
