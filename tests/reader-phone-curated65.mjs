@@ -513,6 +513,49 @@ try{
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
   }
+  // Separate offline human evidence sheet: test on real phone-sized Chromium.
+  // This sheet records independently witnessed facts and never operates the Mass UI.
+  const fieldContext=await browser.newContext({viewport:{width:390,height:844},
+    isMobile:true,hasTouch:true,acceptDownloads:true,deviceScaleFactor:1});
+  try{
+    const sheet=await fieldContext.newPage();
+    const fieldErrors=[];
+    sheet.on("pageerror",e=>fieldErrors.push(String(e.message)));
+    await sheet.goto("http://127.0.0.1:4282/tools/priest-event-field-review.html",
+      {waitUntil:"load",timeout:15000});
+    assert.equal(await sheet.locator("details.event").count(),15,
+      "Field sheet must cover all fifteen source-only cues");
+    await sheet.selectOption("#form","MISSA_CANTATA_INCENSE");
+    await sheet.selectOption("#filter","observer");
+    assert.equal(await sheet.locator("details.event").count(),5,
+      "Five observer-only events should be filterable");
+    const introitField=sheet.locator("details.event").filter({hasText:"C0042"});
+    await introitField.locator("summary").click();
+    await sheet.fill("#choir","Schola singing independently");
+    await sheet.fill("#notes","Directly saw celebrant at Epistle Missal.");
+    await introitField.getByRole("button",{name:"Observed directly"}).click();
+    assert.match(await sheet.locator("#stats").innerText(),/1\/15/);
+    assert.match(await sheet.locator("#feedback").innerText(),/Recorded C0042/);
+    assert.equal(await sheet.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true,
+      "Field sheet must not overflow 390px viewport");
+    const downloadable=sheet.waitForEvent("download");
+    await sheet.getByRole("button",{name:"Export evidence JSON"}).click();
+    const download=await downloadable;
+    const target=resolve(out,"priest-field-evidence-fixture.json");
+    await download.saveAs(target);
+    const data=JSON.parse(await readFile(target,"utf8"));
+    assert.equal(data.schema,"ao-priest-field-evidence-v1");
+    assert.equal(data.fieldCertified,false);
+    assert.equal(data.session.form,"MISSA_CANTATA_INCENSE");
+    assert.equal(data.expectedCueCount,15);
+    assert.equal(data.records.length,1);
+    assert.deepEqual([data.records[0].cueId,data.records[0].eventId,
+      data.records[0].result,data.records[0].scholaObservation],
+      ["C0042","MC-OBS-INT-POS","OBSERVED","Schola singing independently"]);
+    assert.match(data.records[0].notes,/Directly saw celebrant/);
+    await sheet.screenshot({path:resolve(out,"priest-field-review-390.png")});
+    assert.deepEqual(fieldErrors,[],"Human field sheet produced browser errors");
+  }finally{await fieldContext.close()}
   console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and Guide.");
 }finally{
   await browser?.close();
