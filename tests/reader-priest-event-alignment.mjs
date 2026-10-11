@@ -11,6 +11,21 @@ import {
 const read=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const events=[1,2,3,4,5,6].flatMap(n=>read("../data/mass/mc-events-0"+n+".v1.json").events);
 const audit=auditOrdinarySungPriestEventAlignment(events);
+
+const sheet=readFileSync(new URL("../tools/priest-event-field-review.html",import.meta.url),"utf8");
+const sheetRows=[...sheet.matchAll(/^\["(C\d{4})","(MC-[A-Z0-9-]+)"/gm)];
+assert.equal(sheetRows.length,15,"Field sheet must track exactly 15 source-only cues");
+assert.deepEqual(sheetRows.map(r=>"AO.SM."+r[1]).sort(),
+  ORDINARY_SUNG_SOURCE_ONLY_CUES.map(r=>r.cueId).sort(),
+  "Human evidence sheet drifted from canonical source-only registry");
+for(const row of ORDINARY_SUNG_PENDING_PRIEST_OBSERVATIONS){
+  assert.equal(sheetRows.find(r=>"AO.SM."+r[1]===row.cueId)?.[2],row.eventId,
+    "Observer-only field sheet event is stale for "+row.cueId);
+}
+assert.ok(sheet.includes("fieldCertified:false") &&
+  sheet.includes("readerOutcome") && sheet.includes("Export evidence JSON"),
+  "Field review must distinguish physical evidence from app output and never self-certify");
+
 assert.deepEqual({all:audit.sourceOnlyCues,matched:audit.eventMatched,pending:audit.pending},
   {all:15,matched:15,pending:0});
 assert.deepEqual(audit.pendingCueIds,[]);
