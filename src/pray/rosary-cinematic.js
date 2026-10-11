@@ -134,7 +134,7 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
    if(!Number.isSafeInteger(target))return;
    onJump(target);
   });
-  image.addEventListener("error",()=>{stage.dataset.artwork="unavailable";image.removeAttribute("src")});
+  image.addEventListener("error",()=>{stage.dataset.artwork="unavailable";image.removeAttribute("src");});
  }
  const stage=host.querySelector(".aoRosaryCinemaStage");
  const image=stage.querySelector(".aoRosaryCinemaImage");
@@ -161,9 +161,10 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
  const art=rosaryCinematicArtSource(root,info,win);
  if(art){
   if(image.getAttribute("src")!==art){
-   image.src=art;
    stage.dataset.artwork="loading";
    image.onload=()=>{stage.dataset.artwork="ready"};
+   image.src=art;
+   if(image.complete&&image.naturalWidth>0)stage.dataset.artwork="ready";
   }
  }else{
   image.removeAttribute("src");stage.dataset.artwork="unselected";
