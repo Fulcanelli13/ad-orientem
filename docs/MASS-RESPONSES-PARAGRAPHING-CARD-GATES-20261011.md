@@ -122,3 +122,32 @@ The source-first 65-card review is now gated by a direct comparison against all 
 - Consecration words and source-authorized elevations remain in the same presentation card, with the elevation *after* the words in source order for both Host and Chalice; no synthetic cross or premature elevation cue.
 - The 1962 ordinary still displays **64 navigable cards** by default, with the source-audited optional second Confiteor making 65 only when requested.
 - Latest applicable repository test at commit `07c156c7` passed this cross-registry gate. This is **automated source-order certification**, not field certification of musical tempo, celebrant actions, regional customs or actual congregation behavior. Those remain the release gate.
+
+
+## Batch 2 source-only register — all 28 references classified
+
+This audit distinguishes the **28 registry references** from their **15 unique canonical source cues**. Every referenced unit has null/blank Latin and English in the original sung workbook. **It would be incorrect to interpret those 28 references as 28 lost prayer paragraphs, and equally incorrect to invent a trigger merely because the associated Proper is displayed.**
+
+Machine-readable authority: [reader-source-only-cues.js](../src/mass/reader-source-only-cues.js). It pins 15 IDs, original block, Proper slot, source execution sort and category; a six-registry test validates the 28 references, confirms all 15 are absent from rendered paragraph cue IDs, and refuses an unsourced auto-gesture/icon.
+
+| Source cue | Sort | Original block / context | Registry channels | Classification / remaining activation |
+|---|---:|---|---|---|
+| C0042 | 42 | B014 Introit | Position, voice | Priest at Epistle missal; non-textual parallel priest state |
+| C0043 | 43 | B014 Introit | Voice | Quiet priest recitation independent of Schola |
+| C0276 | 69.1 | B016 Gloria | Position, voice | Conditional sedilia state while Schola continues |
+| C0277 | 69.9 | B016 Gloria | Position, voice | Conditional return to altar |
+| C0075 | 75 | B020 Epistle | Posture, voice, action | Sit / reading; requires form-specific minister attribution |
+| C0077 | 77 | B021 Gradual | Position, voice | Asynchronous priest/Schola tracks; no competing public text |
+| C0086 | 86 | B026 Gospel | Voice, action | Gospel proclamation; minister varies by Mass form |
+| C0278 | 105.1 | B027 Credo | Position, voice | Conditional sedilia state while Schola continues |
+| C0279 | 105.9 | B027 Credo | Position, voice | Conditional return to altar |
+| C0109 | 109 | B030 Offertory | Posture, voice | Sitting/chant-to-private-prayer transition; parallel clocks |
+| C0134 | 134 | B040 Secret | Voice | Quiet Secret prayer; resolved Proper ownership |
+| C0144 | 144 | B045 Preface | Voice | Sung Preface; resolved Proper ownership |
+| C0249 | 249 | B085 Communion | Position, voice | Quiet priest track alongside Communion antiphon |
+| C0250 | 250 | B085 Communion | Voice, action | Turning to people; needs explicit priest-event timing |
+| C0256 | 256 | B088 Postcommunion | Voice, action | Turning to people; needs explicit priest-event timing |
+
+**Disposition:** 11 Proper-related source-only cues (20 registry references) and four conditional Gloria/Credo sedilia state cues (eight references). All are accounted for; none can be assigned an automatic prayer-word focus, gesture, voice change or priest position simply by projecting the 65-card text. The review model now carries their immutable sourceOnlyCueRegister for later priest-mode/event alignment, with automatedIconAllowed=false and runtimePolicy=REQUIRE_INDEPENDENT_SOURCE_EVENT_TRIGGER.
+
+**Before enabling these events:** match each to its actual priest-side ceremonial event, retain explicit sung/solemn distinctions (particularly Epistle/Gospel proclaimers), and require the relevant posture/customary conditions for the Gloria/Credo sedilia states. Synchronization between independent Schola and priest clocks must be validated in a real service. These are **15 documented event-alignment tasks**, not 28 unaccounted text defects and not a reason to increase the ordinary LIVE card count.
