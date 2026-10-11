@@ -204,6 +204,7 @@ function load(){
 let S=load();
 let view='home',familyId=null,returnContext=null,returnFocus=null,navStack=[],externalResume=null,rosaryDonorReturnSnapshot=null,lastRenderSignature='';
 let MERCY={step:0,includeClosing:false,guide:'guided'};
+let ROSARY_FIFTEEN={active:false};
 function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,afterStep:0,since:''}}
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false};
@@ -716,6 +717,31 @@ function bindRosaryDonorBack(root){
      const current=Math.max(0,Math.min(steps.length-1,Math.trunc(Number(st?.step)||0))),
       delta=nav.matches('[data-lab-rosary-prev]')?-1:1,
       target=Math.max(0,Math.min(steps.length-1,current+delta));
+     if(ROSARY_FIFTEEN.active){
+      const sets=['joyful','sorrowful','glorious'],at=sets.indexOf(st?.set),
+        firstDecade=steps.findIndex(x=>x.kind==='mystery'&&x.phase==='decade'),
+        lastDecade=steps.findLastIndex(x=>x.phase==='decade');
+      if(at>=0&&firstDecade>=0&&lastDecade>=firstDecade){
+       const goingForward=delta===1&&at<2&&current===lastDecade;
+       const goingBack=delta===-1&&at>0&&current===firstDecade;
+       if(goingForward||goingBack){
+        e.preventDefault();e.stopImmediatePropagation();
+        const set=sets[at+(goingForward?1:-1)];
+        if(api.setMysterySet?.(set)===true){
+         const nextSteps=api.steps?.()||[];
+         const step=goingForward?nextSteps.findIndex(x=>x.kind==='mystery'&&x.phase==='decade'):
+           nextSteps.findLastIndex(x=>x.phase==='decade');
+         if(step>=0)api.setStep(step);
+         decorateRosary();setTimeout(decorateRosary,0);
+        }
+        return;
+       }
+       // The opening belongs only to the first group; later sets begin at their first mystery.
+       if(delta===-1&&at>0&&current<=firstDecade){
+        e.preventDefault();e.stopImmediatePropagation();return;
+       }
+      }
+     }
      if(target!==current){
       e.preventDefault();e.stopImmediatePropagation();
       if(api.setStep(target)!==false){decorateRosary();setTimeout(decorateRosary,0)}
@@ -762,6 +788,14 @@ function restoreRosaryLaunchPrefs(raw,attempt=0){
 function renderRosary(){
  const rs=window.AO_ROSARY_V381?.state?.()||{};
  return `${head(L('Holy Rosary','Saint Rosaire'))}<main class="aoP435930Body aoP435930RosaryFallback"><button type="button" class="aoP435930Primary" data-p435930-launch-rosary>${esc(rs.set?L('Continue Rosary','Continuer le Rosaire'):L('Begin Rosary','Commencer le Rosaire'))}</button></main>`;
+}
+function launchFifteenRosary(){
+ const api=window.AO_ROSARY_V381;
+ if(typeof api?.setMysterySet!=='function')return false;
+ ROSARY_FIFTEEN.active=true;
+ if(!launchRosaryPlayer(captureResume())){ROSARY_FIFTEEN.active=false;return false}
+ // A newly opened canonical donor is always started in the Joyful set.
+ return api.setMysterySet('joyful',{step:0})===true;
 }
 function launchRosaryPlayer(resume=captureResume()){
  const prefs=syncRosaryPrefs({...S.rosary});
@@ -1494,8 +1528,9 @@ function renderMercy(){
 }
 function renderRosaryMethods(){
  const names={ordinary:L('Traditional Rosary','Rosaire traditionnel'),dominican:L('Dominican Rosary','Rosaire dominicain'),montfort:L('Montfortian method','Méthode montfortaine'),scriptural:L('Scriptural meditation','Méditation biblique'),clausules:L('Rosary with clausules','Rosaire avec clausules')};
+ const fifteen='<article class="aoMercyMethod"><h3>'+esc(L('Complete fifteen-decade Rosary','Rosaire complet de quinze dizaines'))+'</h3><p>'+esc(L('Joyful, Sorrowful and Glorious mysteries in one journey.','Mystères joyeux, douloureux et glorieux dans une même prière.'))+'</p><button type="button" data-p435930-rosary-fifteen>'+esc(L('Begin fifteen decades','Commencer quinze dizaines'))+'</button></article>';
  const rows=Object.values(ROSARY_METHODS).map(v=>'<article class="aoMercyMethod"><h3>'+esc(names[v.id])+'</h3><p>'+esc(v.policy)+'</p><a href="'+esc(v.source)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Primary source','Source principale'))+' ↗</a> '+(v.status==='canonical-active'?'<button type="button" data-p435930-rosary-original>'+esc(L('Open Rosary','Ouvrir le Rosaire'))+'</button>':'<small>'+esc(L('Further text verification required before live activation','Vérification des textes requise avant activation'))+'</small>')+'</article>').join('');
- return `${head(L('Traditional Rosary methods','Méthodes traditionnelles du Rosaire'),L('Original texts first','Priorité aux textes originaux'))}<main class="aoP435930Body aoMercyMethods"><p>${esc(L('A full fifteen-decade plan and additional prayer forms are being source-collated; the existing five-decade canonical player remains unchanged.','Le Rosaire complet de quinze dizaines et les méthodes alternatives sont en cours de vérification des sources ; le lecteur canonique actuel demeure inchangé.'))}</p>${rows}</main>`;
+ return `${head(L('Traditional Rosary methods','Méthodes traditionnelles du Rosaire'),L('Original texts first','Priorité aux textes originaux'))}<main class="aoP435930Body aoMercyMethods"><p>${esc(L('A full fifteen-decade plan and additional prayer forms are being source-collated; the existing five-decade canonical player remains unchanged.','Le Rosaire complet de quinze dizaines et les méthodes alternatives sont en cours de vérification des sources ; le lecteur canonique actuel demeure inchangé.'))}</p>${fifteen}${rows}</main>`;
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
@@ -1538,7 +1573,8 @@ function onClick(e){
  const b=e.target.closest?.('button,[data-p435930-flip]');if(!b)return;
  if(b.hasAttribute('data-p435930-mercy-open')){view='mercy';MERCY.step=0;navStack=[];return render()}
  if(b.hasAttribute('data-p435930-rosary-methods')){view='rosaryMethods';navStack=[];return render()}
- if(b.hasAttribute('data-p435930-rosary-original'))return open('pray.rosary',{returnContext:PRAY_CTX});
+ if(b.hasAttribute('data-p435930-rosary-original')){ROSARY_FIFTEEN.active=false;return open('pray.rosary',{returnContext:PRAY_CTX});}
+ if(b.hasAttribute('data-p435930-rosary-fifteen'))return launchFifteenRosary();
  if(view==='mercy'){
   if(b.hasAttribute('data-p435930-mercy-prev')){MERCY.step=Math.max(0,MERCY.step-1);return render()}
   if(b.hasAttribute('data-p435930-mercy-next')){MERCY.step=Math.min(divineMercySteps({includeClosing:MERCY.includeClosing}).length-1,MERCY.step+1);return render()}
