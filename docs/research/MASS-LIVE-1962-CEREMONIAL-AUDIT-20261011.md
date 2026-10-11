@@ -106,3 +106,20 @@ Evidence reviewed directly in the supplied St Alphonsus *The Holy Mass* (PDF tex
 These are **16 evidence records on 14 distinct canonical cue IDs** (C0042 and C0088 each have ordinary plus exceptional rows). Every record, source excerpt, proposed correction and human-review caveat is stored in `data/mass/alphonsus-fortescue-low-sung-differences-adjudicated.v1.json`. The regression test `tests/mass-two-books-form-differences-adjudication.mjs` verifies the review map against the original 113 source locators and the canonical Low/Sung corpora.
 
 **Next integration priorities:** reconcile the seven actor/timing entries with actual runtime ownership before adding any new rendered gesture; implement 1962 form gates for Requiem and bishop contexts; retain separately certified Low and Missa Cantata variants; then test the phone LIVE 48-card projection and Priest Mode against the existing canon.
+
+
+## Thirteen cue/actor ownership issues — runtime-readiness reconciliation
+
+The six book-semantic reanchors and seven Low/Sung owner questions have now been reconciled against the actual current source files. In `data/mass/ritus-1962-priest-cue-owner-reconciliation13.v1.json`, **four are already implemented in the canonical SOT, three are only partly modelled, and six still require independent event/conditional work.** No canonical gesture ID, cue, 48-card reader, Schola lane or faithful gesture has been mutated.
+
+**Already covered**: Gospel centre-to-corner movement C0081 with arrival C0082, C0196 Nobis quoque short audible phrase, three separate Domine non sum dignus priest strikes C0229–C0231, and the C0181 five-step chalice elevation source action (though Alphonsus's C0180 verbal boundary needs 1962 adjudication). Do not add duplicate actions.
+
+**Partially covered**: Offertory wine pouring *before* C0112 in Solemn research as deacon action but not generalized to Low/Missa Cantata; water blessing conditional on Requiem and concurrent with Deus qui humanae (requires detailed word/event model); after-Epistle Deo gratias C0076 is MINISTER_RESPONSE in Low, USER_RESPONSE in Sung, and lacks a dedicated source response item.
+
+**Actual integration issues**: unvoiced entrance approach and reservation-conditional genuflection before C0001; priest altar kiss **after petimus (end of C0150)** not at C0151 opening; owner collision for priest's own Sanctus and Benedictus gestures at Schola-public sung cues C0145/C0148; separate LOW priest paten handling after C0211 versus Solemn subdeacon→deacon→priest handoff near C0209–C0210.
+
+### Runnable fail-closed priest-clock prototype (not production)
+
+`tools/mass/priest-owner-independent-clock-preview.mjs` exposes `previewPriestCeremonialOwnership`, given the unchanged canonical gesture matrix, Sung text corpus, actual current public cue and an explicit **priest observation** from a distinct clock. It does **not** generate the priest's Sanctus/Benedictus gesture merely because the Schola reaches those sung words. It does not produce faithful postures, mutate or duplicate canonical cue identity, or infer missing observations. It is intentionally not imported into the application. `tests/mass-priest-owner-independent-clock-preview.mjs` checks the fail-closed Schola-only case and deliberately out-of-sync priest recitation case for Low, both Missa Cantata variants and Solemn. An explicit observation in the prototype is a test input, **not automated detection of actual priest movements**.
+
+The narrow first production candidate is to replace the priest-only Schola-cue inference in the existing LIVE renderer with a state machine driven by an independent source-owned priest event/reader position, and keep the choir text and congregation lane fully independent. This requires separate phone tests, a non-legacy regressions baseline and PR approval. No automatic historical source promotion is allowed.
