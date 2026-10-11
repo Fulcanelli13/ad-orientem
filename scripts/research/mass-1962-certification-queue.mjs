@@ -7,6 +7,8 @@ const inventory=load(base+"mass-latin-upstream-directory-census-20261011.v1.json
 const source105=load(base+"mass-1962-105-source-path-chant-index-20261011.v1.json");
 const seasonal=load(base+"mass-seasonal-bulk-source-audit-20261011.v1.json");
 const saints=load(base+"mass-sanctoral-bulk-source-audit-20261011.v1.json");
+const inheritance=load(base+"mass-1962-chant-inheritance-source-traces-20261011.v1.json");
+const conditional=load(base+"mass-1962-contextual-primary-witness-pilot-20261011.v1.json");
 const originals=new Map();
 for(const row of source105.rows) {
  if(!originals.has(row.sourcePath)) originals.set(row.sourcePath,[]);
@@ -53,16 +55,19 @@ const rows=inventory.sourceFiles.map(classify).sort((a,b)=>
 if(rows.length!==1052||new Set(rows.map(x=>x.sourcePath)).size!==1052)throw Error("Incomplete 1052 file census");
 const tally=p=>rows.filter(x=>x.priority===p).length;
 const reasons=[...new Set(rows.flatMap(x=>x.reasons))].sort().map(reason=>({reason,count:rows.filter(x=>x.reasons.includes(reason)).length}));
+const missingCommons=inheritance.sourceLinkCandidates.filter(x=>x.lookupStatus==="PARENT_PATH_OUTSIDE_FOUR_CHANT_INDEX"&&x.parentSourcePath.startsWith("Commune/"));
 const out={schema:"MASS_1962_EDITION_CERTIFICATION_SOURCE_QUEUE_V1",date:"2026-10-11",
  disclaimer:"Source presence is not 1962 eligibility. Priority is a deterministic editorial triage, not an assertion of feast assignment, scriptural authorship, or publication accuracy.",
  provenance:["data/geography/research/mass-latin-upstream-directory-census-20261011.v1.json",
  "data/geography/research/mass-1962-105-source-path-chant-index-20261011.v1.json",
  "data/geography/research/mass-seasonal-bulk-source-audit-20261011.v1.json",
  "data/geography/research/mass-sanctoral-bulk-source-audit-20261011.v1.json"],
+ outstandingNonEnumeratedCommonUses:missingCommons.map(x=>({childSource:x.sourcePath,slot:x.properSlot,requiredParent:x.parentSourcePath,requiredSection:x.parentSection,status:"ORIGINAL_UPSTREAM_PARENT_MISSING_NOT_A_ZERO_CITATION",editionVerified:false})),
+ contextualRubricHolds:conditional.conditionHolds.map(x=>({id:x.id,decision:x.decision})),
  stats:{sourcePaths:rows.length,high:tally("HIGH"),medium:tally("MEDIUM"),baseline:tally("BASELINE"),
   previouslyWitnessed:rows.filter(x=>x.sourceObservationType==="FOUR_SLOT_105").length,
   sectionExtracted:rows.filter(x=>x.sourceObservationType==="ALL_SECTIONS_947").length,
-  certifiedEligibility:0,appApproved:0},reasonCounts:reasons,rows};
+  nonEnumeratedCommonUses:missingCommons.length,certifiedEligibility:0,appApproved:0},reasonCounts:reasons,rows};
 const output=base+"mass-1962-edition-certification-priority-queue-20261011.v1.json";
 writeFileSync(output,JSON.stringify(out,null,2)+"\n");
 console.log(JSON.stringify({stats:out.stats,reasonCounts:out.reasonCounts}));
