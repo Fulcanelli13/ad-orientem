@@ -814,6 +814,29 @@ const mediaFixture={
   rights_verified:true,subject_verified:true,crop_reviewed:true,
   alt_en:"View of the physical sanctuary",alt_fr:"Vue du sanctuaire physique",
 };
+const realMedia=readJson("data/geography/approved-place-media.v1.json");
+const reviewedProfiles=buildExplorePlaceProfiles({...dataset,media:{approved:realMedia.items}},projection);
+const reviewedLourdes=reviewedProfiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
+assert.equal(reviewedLourdes?.media?.license,"CC-BY-SA-4.0","Exact Place should expose screened photograph");
+assert.match(reviewedLourdes.media.asset_path,/^assets\/approved\/place-media\//);
+assert.equal(reviewedProfiles.find(p=>p.place_id==="place:FR:chartres-notre-dame")?.media,null,
+ "Portal-detail image must remain withheld from primary Place photo");
+const reviewedPreview=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:reviewedLourdes.place_id,placeProfiles:reviewedProfiles,
+}));
+assert.match(reviewedPreview,/aoHeritagePlaceThumb/,"Screened image must appear within canonical Place preview");
+assert.match(reviewedPreview,/creativecommons.org\/licenses\/by-sa\/4\.0/,"Photographer license link must be visible in preview");
+const reviewedExpanded=renderExploreToString(buildExploreViewModel({
+  language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:reviewedLourdes.place_id,placeProfiles:reviewedProfiles,expandPlace:true,
+}));
+assert.match(reviewedExpanded,/aoExplorePlaceMedia/,"Screened image must appear in Place reading view");
+assert.match(reviewedExpanded,/convertie en WebP/,"Image modification must be disclosed in French");
+assert.match(reviewedExpanded,/commons.wikimedia.org/,"Image source must link to the original file");
+
 const approved=resolveApprovedPlaceMedia([mediaFixture],mediaFixture.place_id);
 assert.equal(approved.asset_path,mediaFixture.asset_path,"Approved Place media must resolve by exact identity");
 assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,asset_path:"https://example.org/image.jpg"}],mediaFixture.place_id),null,
