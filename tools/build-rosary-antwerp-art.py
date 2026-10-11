@@ -14,6 +14,7 @@ import time
 from pathlib import Path
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 from PIL import Image, ImageOps
 
 SOURCE=Path("data/pray/rosary-antwerp-commons-sources.v1.json")
@@ -29,7 +30,7 @@ def fetched(url):
     if urlparse(url).scheme!="https":
         raise RuntimeError("Non-HTTPS source URL")
     req=Request(url,headers={"User-Agent":USER_AGENT,"Accept":"application/json,image/*;q=0.9,*/*;q=0.2"})
-    for attempt in range(4):
+    for attempt in range(6):
         try:
             with urlopen(req,timeout=75) as res:
                 if urlparse(res.geturl()).hostname not in (
@@ -38,9 +39,15 @@ def fetched(url):
                 data=res.read(MAX_DOWNLOAD+1)
                 if len(data)>MAX_DOWNLOAD: raise RuntimeError("Source too large")
                 return data
+        except HTTPError as err:
+            if attempt==5 or err.code not in (429,502,503):raise
+            retry=err.headers.get("Retry-After","")
+            wait=float(retry) if retry.isdigit() else min(120,12*(attempt+1))
+            print("Wikimedia rate limit / retry in",wait,"seconds",flush=True)
+            time.sleep(wait)
         except Exception:
-            if attempt==3:raise
-            time.sleep(1.5*(attempt+1))
+            if attempt==5:raise
+            time.sleep(min(25,3*(attempt+1)))
     raise RuntimeError("Download retry exhausted")
 
 def image_info(name):
@@ -106,6 +113,7 @@ def main():
         compiled.append(record)
         outputs.append((DEST/(id+".webp"),result))
         print(id,":",right,",",size,",",len(result),"bytes",flush=True)
+        time.sleep(6)  # Public Wikimedia Commons; intentionally avoid rapid-fire requests.
     pack={"version":"antwerp-15-cleared-v1","sourceEdition":"Commons-PD-Art approved candidate set · Oct 2026",
           "artworkCatalogueUrl":manifest["workCatalogueUrl"],
           "licensePolicy":"Commons per-file licence and local SHA-256 verified; do not use museum press photographs",
