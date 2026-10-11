@@ -299,6 +299,7 @@ function open(id,opts={}){
   if(id==='pray.hub')view='home';
   else if(id==='pray.angelus'||id==='pray.angelus_regina')view='angelus';
   else if(id==='pray.rosary'){
+    ROSARY_FIFTEEN.active=false;
     view='home';navStack=[];
     return launchRosaryPlayer({view:'home',navStack:[],prayerReturnView:null,prayerId:null});
   }
@@ -795,7 +796,8 @@ function launchFifteenRosary(){
  ROSARY_FIFTEEN.active=true;
  if(!launchRosaryPlayer(captureResume())){ROSARY_FIFTEEN.active=false;return false}
  // A newly opened canonical donor is always started in the Joyful set.
- return api.setMysterySet('joyful',{step:0})===true;
+ if(api.setMysterySet('joyful',{step:0})===true)return true;
+ ROSARY_FIFTEEN.active=false;return false;
 }
 function launchRosaryPlayer(resume=captureResume()){
  const prefs=syncRosaryPrefs({...S.rosary});
@@ -1530,7 +1532,7 @@ function renderRosaryMethods(){
  const names={ordinary:L('Traditional Rosary','Rosaire traditionnel'),dominican:L('Dominican Rosary','Rosaire dominicain'),montfort:L('Montfortian method','Méthode montfortaine'),scriptural:L('Scriptural meditation','Méditation biblique'),clausules:L('Rosary with clausules','Rosaire avec clausules')};
  const fifteen='<article class="aoMercyMethod"><h3>'+esc(L('Complete fifteen-decade Rosary','Rosaire complet de quinze dizaines'))+'</h3><p>'+esc(L('Joyful, Sorrowful and Glorious mysteries in one journey.','Mystères joyeux, douloureux et glorieux dans une même prière.'))+'</p><button type="button" data-p435930-rosary-fifteen>'+esc(L('Begin fifteen decades','Commencer quinze dizaines'))+'</button></article>';
  const rows=Object.values(ROSARY_METHODS).map(v=>'<article class="aoMercyMethod"><h3>'+esc(names[v.id])+'</h3><p>'+esc(v.policy)+'</p><a href="'+esc(v.source)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Primary source','Source principale'))+' ↗</a> '+(v.status==='canonical-active'?'<button type="button" data-p435930-rosary-original>'+esc(L('Open Rosary','Ouvrir le Rosaire'))+'</button>':'<small>'+esc(L('Further text verification required before live activation','Vérification des textes requise avant activation'))+'</small>')+'</article>').join('');
- return `${head(L('Traditional Rosary methods','Méthodes traditionnelles du Rosaire'),L('Original texts first','Priorité aux textes originaux'))}<main class="aoP435930Body aoMercyMethods"><p>${esc(L('A full fifteen-decade plan and additional prayer forms are being source-collated; the existing five-decade canonical player remains unchanged.','Le Rosaire complet de quinze dizaines et les méthodes alternatives sont en cours de vérification des sources ; le lecteur canonique actuel demeure inchangé.'))}</p>${fifteen}${rows}</main>`;
+ return `${head(L('Traditional Rosary methods','Méthodes traditionnelles du Rosaire'),L('Original texts first','Priorité aux textes originaux'))}<main class="aoP435930Body aoMercyMethods"><p>${esc(L('The fifteen-decade option uses the canonical Rosary player. Alternative traditional methods remain subject to original-text verification.','Le Rosaire de quinze dizaines utilise le lecteur canonique. Les autres méthodes traditionnelles exigent encore une vérification des textes originaux.'))}</p>${fifteen}${rows}</main>`;
 }
 function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});if(view==='stations')queueMicrotask(stationsFx);if(view==='angelus')queueMicrotask(bindAngelusExactRail);else stopAngelusExactRail()}
