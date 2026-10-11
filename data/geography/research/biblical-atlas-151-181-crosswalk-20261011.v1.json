@@ -4614,6 +4614,10 @@
         {
           "label": "Vulgate Matthew 1",
           "url": "https://www.newadvent.org/bible/mat001.htm"
+        },
+        {
+          "label": "Clementine Vulgate — Matthew 1, Latin original",
+          "url": "https://la.wikisource.org/wiki/Vulgata_Clementina/Evangelium_Secundum_Matthaeum"
         }
       ]
     },
@@ -4623,7 +4627,7 @@
         "Luke 3:36",
         "Genesis 11:12"
       ],
-      "issue": "Luke names a second Cainan between Arphaxad and Shelah; Genesis's present Hebrew/Vulgate genealogy follows a direct father-son sequence. Do not merge or delete either in a synthetic genealogy.",
+      "issue": "Luke 3:36 explicitly preserves Cainan after Arphaxad in the Clementine Vulgate, while Clementine Genesis 11:12 says Arphaxad begot Sale; literary/scriptural sequences must remain separate. Never invent Cainan in Genesis or delete him in Luke to force a harmonized tree.",
       "status": "EDITORIAL_HOLD",
       "sources": [
         {
@@ -4635,12 +4639,12 @@
           "url": "https://fr.wikisource.org/wiki/Bible_Crampon_1923/Gen%C3%A8se"
         },
         {
-          "label": "Vulgate Luke 3",
-          "url": "https://www.newadvent.org/bible/luk003.htm"
+          "label": "Clementine Vulgate — Luke 3, Latin original",
+          "url": "https://la.wikisource.org/wiki/Vulgata_Clementina/Evangelium_Secundum_Lucam"
         },
         {
-          "label": "Vulgate Genesis 11",
-          "url": "https://www.newadvent.org/bible/gen011.htm"
+          "label": "Clementine Vulgate — Genesis 11, Latin original",
+          "url": "https://la.wikisource.org/wiki/Vulgata_Clementina/Liber_Genesis"
         }
       ]
     },
@@ -4698,5 +4702,11 @@
         }
       ]
     }
-  ]
+  ],
+  "editionEvidence": {
+    "latinVulgate": "Clementine Vulgate original text, Latin Wikisource; edition-specific not equivalent to Douay-Rheims English",
+    "frenchCrampon": "Augustin Crampon, 1923, French Wikisource; preserve notes and internal spelling",
+    "status": "EXPLICIT_CITATIONS_RETRIEVED_BUT_NO_FULL_VERSE_CROSSWALK_CERTIFIED",
+    "doNotAutoGenerateMappings": true
+  }
 }
