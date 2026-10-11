@@ -69,6 +69,19 @@ try{
     assert.ok(initial.chips.every(h=>h>=44),width+"px category chip too small");
     assert.ok(initial.searchWidth>=65,width+"px search collapsed");
     assert.ok(initial.overflow<=1,width+"px viewport horizontally overflows");
+    const typography=await page.evaluate(()=>{
+      const size=selector=>{const node=document.querySelector(selector);return node?Number.parseFloat(getComputedStyle(node).fontSize):null};
+      return {
+        nav:size(".aoExploreSectionNav>span"),
+        rail:size(".aoHeritageCustomRail small"),
+        previewTitle:size(".aoExploreQuickPreview header small"),
+        caution:size(".aoExplorePreviewCaution"),
+      };
+    });
+    if(typography.nav!==null)assert.ok(typography.nav>=12,width+"px Explore section label below 12px");
+    if(typography.rail!==null)assert.ok(typography.rail>=12,width+"px Explore rail metadata below 12px");
+    if(typography.previewTitle!==null)assert.ok(typography.previewTitle>=12,width+"px Explore preview metadata below 12px");
+    if(typography.caution!==null)assert.ok(typography.caution>=12,width+"px Explore caution text below 12px");
     assert.equal(initial.wrap,false,width+"px repeated world enabled");
     assert.deepEqual(initial.bounds,[[-179.99,-85.051129],[179.99,85.051129]]);
     await page.locator('.aoHeritageNearby').tap();
