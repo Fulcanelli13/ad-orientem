@@ -15,6 +15,8 @@ on:
       - "data/geography/research/mass-variable-chant-bible-batch01-20261011.v1.json"
       - "data/geography/research/mass-variable-chant-bible-batch02-20261011.v1.json"
       - "data/geography/research/mass-variable-chant-bible-batch03-20261011.v1.json"
+      - "data/geography/research/mass-ember-passion-lesson-order-batch01-20261011.v1.json"
+      - "tests/mass-ember-passion-lesson-order-batch01.mjs"
       - "docs/research/MASS-VARIABLE-CHANT-SCRIPTURE-INDEX-BATCH01-20261011.md"
       - "tests/mass-variable-chant-scripture-discovery.mjs"
       - "data/geography/research/mass-dujardin-1962-order-bridge-20261011.v1.json"
@@ -66,6 +68,8 @@ jobs:
         run: node tests/mass-variable-chant-scripture-discovery.mjs
       - name: Validate actual source-marked Mass Proper chants
         run: node tests/mass-proper-chant-bible-batch01.mjs
+      - name: Validate source-ordered Ember and Palm Passion reading disagreement
+        run: node tests/mass-ember-passion-lesson-order-batch01.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
