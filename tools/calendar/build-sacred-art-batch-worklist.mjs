@@ -10,6 +10,9 @@ const audit=read(base+"/all-modules-v2.json");
 const saint=read(base+"/saint-visual-coverage.v1.json");
 const leads=read("data/calendar/sacred-art-primary-museum-leads-20261011.v1.json");
 const registry=read("data/calendar/sacred-art-candidates.v1.json");
+const rawTargets=[...read("data/calendar/sacred-art-subject-targets.v2.json").targets,
+ ...read("data/learn/sacred-art-formation-targets.v1.json").targets];
+const researchExposureByTarget=new Map(rawTargets.map(t=>[t.id,t.observed2026GapDatesEstimated??null]));
 const calendarPath=base+"/full-year-multiple-associations.v1.json";
 const year=existsSync(calendarPath)?read(calendarPath):null;
 const acquiredById=new Map(registry.artworks.filter(a=>
@@ -35,8 +38,8 @@ const missing=audit.subjects.filter(t=>t.missingToMinimum>0).map(t=>{
   imageRights:l.reproductionRights,sourceOriginalDownloaded:false
  }));
  const useCount=t.contexts.length;
- const researchExposure=Number.isInteger(t.observed2026GapDatesEstimated)
-  ?t.observed2026GapDatesEstimated:null;
+ const exposureValue=researchExposureByTarget.get(t.id);
+ const researchExposure=Number.isInteger(exposureValue)?exposureValue:null;
  return {targetId:t.id,title:t.title,priority:t.priority,subjectType:t.type,
   desiredSourceOriginals:t.required,acquiredExactOriginals:t.downloadedOriginals,
   remainingOriginals:t.missingToMinimum,
