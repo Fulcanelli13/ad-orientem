@@ -128,11 +128,18 @@ for(const unit of canonicalUnits){
   const owners=model.cards.flatMap(card=>(card.blocks??[])
     .filter(meta=>meta.blockId===block&&meta.paragraphCount>0)
     .map(meta=>({card,meta})));
-  assert.equal(owners.length,1,block+": actual resolved Proper has no unique reading-stage owner");
-  assert.ok(owners[0].card.paragraphs.slice(
-    owners[0].meta.firstParagraphIndex,
-    owners[0].meta.firstParagraphIndex+owners[0].meta.paragraphCount).length,
-    block+": resolved Proper has no prayer text");
+  const slot=data.sungCorpus.blocks.find(b=>b.Block_ID===block)?.Proper_Slot;
+  const status=sourceModel.properSlots?.slots?.[slot]?.status;
+  if(status==="NOT_APPLICABLE"){
+    assert.equal(owners.length,0,block+": not-applicable sequence must not invent a second chant");
+  }else{
+    assert.equal(status,"READY",block+": Proper block has no ready source envelope");
+    assert.equal(owners.length,1,block+": actual resolved Proper has no unique reading-stage owner");
+    assert.ok(owners[0].card.paragraphs.slice(
+      owners[0].meta.firstParagraphIndex,
+      owners[0].meta.firstParagraphIndex+owners[0].meta.paragraphCount).length,
+      block+": resolved Proper has no prayer text");
+  }
 }
 assert.deepEqual([...byCue.keys()].sort(),
   sourceCueIds.filter(id=>!nonDisplay.has(id)).sort(),
