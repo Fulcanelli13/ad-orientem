@@ -1,0 +1,35 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const load=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const d=load("data/geography/research/mass-1962-contextual-primary-witness-pilot-20261011.v1.json");
+assert.equal(d.schema,"MASS_1962_CONTEXTUAL_PRINTED_WITNESS_RECONCILIATION_V1");
+assert.equal(d.usageRecords.length,4);
+assert.equal(d.conditionHolds.length,2);
+assert.equal(d.provenance.fullVolumeTitleAndDecreePageInspected,false);
+assert.equal(d.stats.publicationApprovals,0);
+assert.ok(d.releaseGate.startsWith("CLOSED_"));
+const keys=d.usageRecords.map(r=>r.occasion+"|"+r.liturgicalSlot);
+assert.equal(new Set(keys).size,4,"Different celebrations cannot be collapsed into one chant");
+assert.ok(d.usageRecords.every(r=>r.sourcePath==="Sancti/10-07"));
+assert.ok(d.usageRecords.every(r=>r.printedPageChecked===true));
+assert.ok(d.usageRecords.every(r=>r.missalEditionProvenanceIndependentlyCertified===false&&!r.approvedForApp));
+assert.ok(d.usageRecords.every(r=>r.witnesses.some(w=>w.kind==="PRINTED_MISSAL_PAGE_IMAGE" && w.printedPage==="677")));
+const pick=(occasion,slot)=>d.usageRecords.find(x=>x.occasion===occasion&&x.liturgicalSlot===slot);
+const feast=pick("OCTOBER_07_FIXED_FEAST","INTROIT");
+const votive=pick("VOTIVE_MASS_CONDITION","INTROIT");
+assert.ok(feast.actualLatinIncipit.startsWith("Gaudeamus"));
+assert.ok(votive.actualLatinIncipit.startsWith("Salve"));
+assert.equal(feast.textOriginClass,"LITURGICAL_TEXT_NOT_DIRECT_BIBLE_QUOTE");
+assert.equal(votive.textOriginClass,"EXTRABIBLICAL_POETIC_SEDULIUS");
+for(const row of d.usageRecords.filter(x=>x.liturgicalSlot==="INTROIT_PSALM_VERSE")){
+ assert.equal(row.scriptureCitation.edition,"VULGATE_CLEMENTINE");
+ assert.equal(row.scriptureCitation.chapter,44);
+ assert.equal(row.scriptureCitation.verseStart,2);
+ assert.equal(row.scriptureCitation.numbering,"VULGATE_LATIN");
+ assert.ok(row.scriptureVerseCollated);
+ assert.ok(!row.frenchCramponChecked && !row.approvedForApp);
+}
+assert.ok(d.conditionHolds.some(x=>x.id==="MR62-ROSARY-EXTERNAL-SOLEMNITY-INTOIT"&&x.decision==="RUBRICAL_INTERPRETATION_HOLD"));
+assert.ok(d.conditionHolds.some(x=>x.id==="MR62-ADVENT-WEEKDAY-ALLELUIA-OMISSION"&&x.decision.includes("SOURCE_WITNESSED")));
+assert.ok(d.conditionHolds.every(x=>x.approvedForApp===false));
+console.log("PASS: 4 contextual 1962-labelled source usages; 2 Clementine Psalm matches, one unique Psalm source, 2 rubrical conditions held; 0 app approvals.");
