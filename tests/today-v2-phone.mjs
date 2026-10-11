@@ -35,9 +35,9 @@ try{
     const info=await page.evaluate(()=>{
       const root=document.querySelector(".homeScreen"),hero=root?.querySelector(".aoTodayV2Frontispiece"),
         art=hero?.querySelector(".aoTodayV2Art"),title=art?.querySelector("h1"),
-        cta=hero?.querySelector(".aoTodayV2PrimaryMass"),rect=cta?.getBoundingClientRect(),
+        cta=root?.querySelector(".aoTodayV2PrimaryMass"),rect=cta?.getBoundingClientRect(),
         bottom=cta?.getBoundingClientRect().bottom,sections=[...root.querySelectorAll(".aoTodayV2Zone")].map(x=>x.className);
-      return {vw:innerWidth,scrollWidth:document.documentElement.scrollWidth,artWidth:art?.getBoundingClientRect().width,
+      return {vw:innerWidth,heroContainsCTA:Boolean(hero?.contains(cta)),massButtonClasses:[...root.querySelectorAll("[data-home-mass-entry],[data-resume-mass]")].map(x=>x.className),scrollWidth:document.documentElement.scrollWidth,artWidth:art?.getBoundingClientRect().width,
         heroWidth:hero?.getBoundingClientRect().width,cta:!!cta,ctaHeight:rect?.height,ctaBottom:bottom,
         artworkTitle:title?.textContent?.trim(),sections,
         prayCount:root.querySelectorAll(".aoTodayV2PrayerFeature").length,
@@ -47,6 +47,8 @@ try{
         dayTabs:root.querySelectorAll(".aoTodayV2Tabs button").length,
         dateLinks:root.querySelectorAll(".aoTodayV2Event[data-home-calendar-date]").length};
     });
+    await page.screenshot({path:resolve(dir,"today-v2-"+width+".png"),fullPage:true});
+    console.log("TODAY_V2_PHONE_DIAGNOSTIC",JSON.stringify(info));
     assert.equal(info.cta,true,"Mass CTA missing at "+width);
     assert.equal(info.massCount,1,"Duplicate primary Mass entry at "+width);
     assert.ok(info.ctaHeight>=44,"Mass CTA touch target too small at "+width);
@@ -61,7 +63,6 @@ try{
     assert.equal(info.sections.length,3,"Expected Pray now, Read & reflect and Approaching at "+width);
     if(width<700)assert.ok(info.ctaBottom<=height-30,"Primary Mass action below the first mobile viewport at "+width+": "+info.ctaBottom);
     assert.deepEqual(errors,[],"Page errors at "+width+": "+JSON.stringify(errors));
-    await page.screenshot({path:resolve(dir,"today-v2-"+width+".png"),fullPage:true});
     report.push({width,height,...info,errors});
     await context.close();
   }
