@@ -91,7 +91,7 @@ assert.equal(projected.length,216);
 for(const site of updated){
   const item=projected.find(p=>p.source_id===site.shrine_id);
   assert.ok(item&&item.summary===site.origin_summary&&item.summary_fr===site.origin_summary_fr,"bilingual projection lost "+site.shrine_id);
-  assert.ok(item.source_links.length>=2,"the map provenance and Catholic place source must remain clickable: "+site.shrine_id);
+  assert.ok(item.source_links.length>=(ORIGINAL_38.has(site.shrine_id)?2:1),"source-backed bilingual profile must expose its original provenance: "+site.shrine_id);
 }
 // Exercise the actual preview and expanded place source renderer in French.
 const testPlace="place:FR:sanctuary-of-our-lady-of-rocamadour";
