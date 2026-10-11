@@ -8,9 +8,14 @@ const L = (language,en,fr) => language === "fr" ? fr : en;
 export function buildTodayV2Sections(state,vm,enrichers){
   const selected=vm.dateIso,language=vm.language,year=buildLiturgicalYear(selected),period=year.currentPeriod;
   const resolution=state?.resolution;
-  const observed=resolution?.date===selected&&resolution?.status!=="failed"&&resolution?.day?.main
-    ? resolution : null;
-  const saintOrFeast=observed && observedCycle(observed,selected)==="sanctorale"
+  // The store's selectedDate is canonical. Some resolver builds omit
+  // resolution.date, while others stamp date on the resolution or day.
+  // Respect any explicit stamp and never surface a previous day's feast while
+  // a selection is resolving.
+  const stamped=resolution?.date??resolution?.day?.date??null;
+  const observed=!state?.resolving&&resolution?.status!=="failed"
+    &&(!stamped||stamped===selected)&&resolution?.day?.main?resolution:null;
+  const saintOrFeast=observed && observedCycle(observed)==="sanctorale"
     ? vm.celebration : null;
   // These are nominal general-calendar appointments, NOT an assertion that the
   // full 1962 precedence resolver has already observed each future celebration.
