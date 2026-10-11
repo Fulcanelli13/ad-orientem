@@ -4,6 +4,45 @@
 // No ritual event or canonical corpus mutation is permitted.
 
 const STANZAS=Object.freeze({
+  "AO.SM.B003":Object.freeze([
+    Object.freeze({end:9,title:"Psalm 42 · Iudica me, Deus"}),
+    Object.freeze({end:13,title:"Psalm 42 · Doxology and Introibo"}),
+  ]),
+  "AO.SM.B010":Object.freeze([
+    Object.freeze({end:33,title:"Versicles · Prayer for mercy"}),
+    Object.freeze({end:36,title:"Versicles · Dominus vobiscum and Oremus"}),
+  ]),
+  "AO.SM.B015":Object.freeze([
+    Object.freeze({end:46,title:"Kyrie eleison"}),
+    Object.freeze({end:49,title:"Christe eleison"}),
+    Object.freeze({end:52,title:"Kyrie eleison · Conclusion"}),
+  ]),
+  "AO.SM.B039":Object.freeze([
+    Object.freeze({end:131,title:"Orate, fratres · Priest's invitation"}),
+    Object.freeze({end:133,title:"Suscipiat · Response and priest's Amen"}),
+  ]),
+  "AO.SM.B046":Object.freeze([
+    Object.freeze({end:147,title:"Sanctus"}),
+    Object.freeze({end:149,title:"Benedictus"}),
+  ]),
+  "AO.SM.B052":Object.freeze([
+    Object.freeze({end:172,title:"Consecration of the Host · Qui pridie"}),
+    Object.freeze({end:174,title:"Consecration of the Host · Words and Elevation"}),
+  ]),
+  "AO.SM.B053":Object.freeze([
+    Object.freeze({end:178,title:"Consecration of the Chalice · Simili modo"}),
+    Object.freeze({end:181,title:"Consecration of the Chalice · Words and Elevation"}),
+  ]),
+  "AO.SM.B064":Object.freeze([
+    Object.freeze({end:213,title:"Libera nos · Deliverance"}),
+    Object.freeze({end:216,title:"Libera nos · Peace and conclusion"}),
+  ]),
+  "AO.SM.B095":Object.freeze([
+    Object.freeze({end:271,title:"Last Gospel · In principio"}),
+    Object.freeze({end:272,title:"Last Gospel · The true light"}),
+    Object.freeze({end:273,title:"Last Gospel · Et Verbum caro factum est"}),
+    Object.freeze({end:275,title:"Last Gospel · Witness and thanksgiving"}),
+  ]),
   "AO.SM.B016":Object.freeze([
     Object.freeze({end:54,title:"Gloria · Celebrant's intonation"}),
     Object.freeze({end:59,title:"Gloria · Praise and thanksgiving"}),
