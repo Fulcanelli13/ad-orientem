@@ -142,7 +142,8 @@ ${resume?
 `<button type="button" class="aoTodayV2PrimaryMass phaseButton primary aoEditorialPrimary" data-home-mass-entry>
 <b>${esc(t("openMass"))} →</b></button>`}
 <div class="aoTodayV2SecondaryMass"><button type="button" data-action="prepare">${esc(t("prepare"))}</button><button type="button" data-action="thanks">${esc(t("giveThanks"))}</button></div>
-</section>
+</section></div></section>
+${status}${translationStatus}
 ${renderTodayV2Sections(buildTodayV2Sections(state,vm,enrichers),vm)}
 <div class="homeSpacer"></div></main>`;
 }
