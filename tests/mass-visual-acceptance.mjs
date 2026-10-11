@@ -1737,6 +1737,7 @@ try{
     "; page errors: "+JSON.stringify(errors));
   assert.ok(await page.locator("#assets .asset").count()>=50,
     "complete asset bank failed to display image candidates");
+  await page.locator("#targetStatus").selectOption(""); // The approval test uses an established high-confidence cue, not the default provisional-only filter.
   await page.locator("#findTarget").fill("AO.SM.C0068");
   await page.locator("#targets .target").first().click();
   await page.locator("#findAsset").fill("cross");
