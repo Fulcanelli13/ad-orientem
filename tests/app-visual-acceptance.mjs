@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { observedCycle } from "../src/calendar/observed-cycle.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/visual-acceptance");
@@ -363,7 +364,9 @@ try{
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").count(),3,"Calendar top navigation must be Day · Month · Liturgical Year");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view='index']").count(),0,"redundant Year Index returned to top-level Calendar navigation");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Hero").count(),1,"Calendar Day lost its single selected-feast hero");
-  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").count(),1,"Calendar Day did not surface the principal saint/feast reference");
+  const observedCalendarDay=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution??null);
+  const expectPrincipalSaint=observedCycle(observedCalendarDay)==="sanctorale"?1:0;
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Saint [data-cal-saint-date]").count(),expectPrincipalSaint,"Calendar Day saint reference must follow the actually observed sanctorale/temporale identity");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [data-cal-date]").count(),7,"Calendar Day lost its seven-day context strip");
   assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2Week [aria-current='date']").count(),1,"Calendar selected date is not uniquely identified");
   const calendarDay=await page.evaluate(()=>({
