@@ -39,6 +39,7 @@ jobs:
       - name: Rebuild full source-resolved 2026 observed-day associations
         run: |
           node tests/calendar-1962-full-year-audit.mjs
+          node tools/calendar/audit-sacred-art-modules.mjs
           node tools/calendar/report-sacred-art-liturgical-priorities.mjs --year-audit artifacts/calendar-oracle/1962-2026-full-year-audit.json
           node tools/calendar/build-sacred-art-full-year-associations.mjs
       - name: Recover exact-source originals and verify SHA256 against catalogue
