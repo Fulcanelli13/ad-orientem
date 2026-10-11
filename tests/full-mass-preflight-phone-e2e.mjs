@@ -37,7 +37,13 @@ try{
     getResolvedMass:()=>globalThis.__observed?.effectiveResolvedMass(__legacyMass())??__legacyMass(),
     onOpenSourceProper:()=>globalThis.__observed?.open?.(),
     getSourceGate:()=>globalThis.__observed?.preparationGate?.()??{ready:true,reason:null},
-    getDefaultForm:()=>__formDefault,language:()=>__lang});
+    getDefaultForm:()=>__formDefault,language:()=>__lang,
+    getCalendarState:()=>({selectedDate:__formDate,resolving:false,
+      resolution:{date:__formDate,status:"ready",
+        day:{main:{id:"tempora.XIX",title:"Nineteenth Sunday after Pentecost",rank:"II class",color:"Green"}},
+        proper:{status:"ready",data:{color:"Green"}}}}),
+    onOpenCalendar:async date=>{globalThis.__openedCalendarDate=date;return true;}});
+
  });
 
  // Independent Mass source date: this must be available on *any* host Mass date
@@ -64,6 +70,16 @@ try{
    language:()=>__lang,onSelectionChange:()=>__full.refresh(),
   });
  });
+ const header=page.locator("[data-mass-calendar-context]");
+ assert.equal(await header.count(),1,"Mass Calendar context must be single-owned");
+ assert.match(await header.locator("[data-mass-calendar-day]").innerText(),/Nineteenth Sunday/);
+ assert.match(await header.locator("[data-mass-calendar-colour]").innerText(),/Green/);
+ assert.equal(await header.getAttribute("data-mass-calendar-source"),"1962_RESOLVER");
+ await header.locator("[data-mass-calendar-open]").click();
+ assert.equal(await page.evaluate(()=>globalThis.__openedCalendarDate),"2026-10-04",
+  "Opening Calendar must pass the actual Mass date, not a feast source date");
+ assert.equal(await page.locator("[data-full-mass-category]").count(),6,
+  "Calendar preview must not replace the actual Mass selector");
  const picker=page.locator("[data-ao-observed-mass-picker]");
  assert.equal(await page.locator("[data-full-mass-source-slot] [data-ao-observed-mass-picker]").count(),1,
    "Different Proper picker is outside the unified Mass form/celebration module");
@@ -103,6 +119,12 @@ try{
  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-proper-source"),"Sancti/10-07",
    "Mass preparation review continued to display the old Sunday Proper");
  assert.match(await page.locator("[data-full-mass-celebration]").innerText(),/Most Holy Rosary/);
+ assert.match(await header.locator("[data-mass-calendar-day]").innerText(),/Nineteenth Sunday/,
+  "Selected alternate Rosary Proper rewrote the actual calendar observance");
+ assert.match(await header.locator("[data-mass-calendar-actual]").innerText(),/Most Holy Rosary/,
+  "Selected alternate Proper is missing from the actual-Mass context");
+ assert.equal(await header.getAttribute("data-mass-celebration-different"),"true");
+
  assert.equal(await page.locator("[data-full-mass-review]").evaluate(el=>el.open),true,
   "Alternative Proper review must open immediately on selection");
  assert.match(await page.locator("[data-full-mass-review-body]").innerText(),/Sancti\/10-07/);
