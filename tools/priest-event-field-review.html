@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Mass LIVE — priest/Schola field evidence</title>
+<style>
+:root{color-scheme:dark;background:#080c12;color:#ede9df;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px}
+*{box-sizing:border-box}body{margin:0;max-width:900px;margin-inline:auto;padding:20px 16px 90px}h1,h2{font-family:Georgia,serif;font-weight:400;letter-spacing:.02em}
+h1{font-size:1.65rem;margin:.3em 0}h2{font-size:1.2rem}p,small{line-height:1.5;color:#b8bec7}small{display:block}
+header{border-bottom:1px solid #39404b;margin-bottom:20px;padding-bottom:16px}.eyebrow{letter-spacing:.15em;text-transform:uppercase;color:#b2a486;font-size:.7rem}
+label{display:block;color:#d8d4ca;font-size:.83rem;margin-top:13px;margin-bottom:5px}
+input,select,textarea,button{font:inherit}input,select,textarea{width:100%;background:#121b27;border:1px solid #485260;border-radius:6px;color:#eee;padding:10px}
+textarea{min-height:64px;resize:vertical}
+button{background:#2a3545;border:1px solid #5d6980;border-radius:6px;padding:11px 14px;color:#fff;cursor:pointer;min-height:43px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #d5bf8e;outline-offset:3px}
+button.primary{background:#524531;border-color:#bdab83}button.danger{background:transparent;border-color:#744b4b;color:#e2aaa6}
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stats{display:flex;gap:16px;flex-wrap:wrap;border:1px solid #3a4554;border-radius:8px;padding:12px;margin:18px 0}
+.stats strong{font-size:1.35rem;font-weight:600;color:#e4d0a4}.stats span{display:block;font-size:.75rem;color:#b3bac5}
+.event{margin:13px 0;padding:17px;border:1px solid #3e4957;border-radius:9px;background:#0e1520}
+.event summary{cursor:pointer;list-style:none}.event summary::-webkit-details-marker{display:none}
+.event summary strong{display:block;font-family:Georgia,serif;font-size:1.1rem;font-weight:normal;margin:5px 0}
+.event summary small{font-size:.78rem}.event[open]{border-color:#8b806a}
+.tag{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:#d5c39c}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.controls button{flex:1 1 130px}.current{color:#e2c890}.note{padding:12px;border-left:2px solid #8a7a59;background:#101b29}
+footer{margin-top:28px;border-top:1px solid #303c48;padding-top:16px}
+@media(max-width:530px){.layout{grid-template-columns:1fr}body{padding:16px 12px 84px}.controls button{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">Ad Orientem · opt-in QA only</div>
+<h1>Priest-event field observations</h1>
+<p>1962 Sung Ordinary — separate priest and Schola clocks. This is an <strong>evidence recorder</strong>, not a priest detector or a claim of liturgical certification. Never mark private words observed merely because nearby chant is audible.</p>
+<div class="layout">
+  <div><label for="form">Mass form</label><select id="form"><option value="">Choose the actual form</option><option value="MISSA_CANTATA_SIMPLE">Missa Cantata · without incense</option><option value="MISSA_CANTATA_INCENSE">Missa Cantata · with incense</option><option value="SOLEMN">Solemn High Mass</option></select></div>
+  <div><label for="date">Date of field observation</label><input id="date" type="date"></div>
+  <div><label for="place">Church or service identifier (optional)</label><input id="place" placeholder="Church / service code"></div>
+  <div><label for="reviewer">Observer identifier (optional)</label><input id="reviewer" placeholder="Initials / anonymous code"></div>
+</div>
+</header>
+<p class="note">Use <strong>Observed</strong> only for direct visual or audible evidence. <strong>Unverifiable</strong> is the correct result when private prayer cannot actually be discerned. <strong>Mismatch</strong> captures incorrect order, minister or displayed cue. Manual observations must be compared with the phone reader separately.</p>
+<div id="stats" class="stats" aria-live="polite"></div>
+<div class="layout">
+  <div><label for="filter">Review category</label><select id="filter"><option value="all">All 15 source-only cues</option><option value="observer">Five newly defined observer-only events</option><option value="graph">Ten pre-existing graph-event bindings</option><option value="unrecorded">Still unrecorded</option></select></div>
+  <div><label for="actor">Witnessed actor</label><select id="actor"><option value="PRIEST">Celebrant / priest</option><option value="LECTOR">Lector</option><option value="DEACON">Deacon</option><option value="SCHOLA">Schola</option><option value="UNSURE">Uncertain / obscured</option></select></div>
+</div>
+<div><label for="choir">Independent Schola observation (optional, never a trigger)</label><input id="choir" placeholder="e.g. Gradual still being sung / finished"></div>
+<div><label for="notes">Observation notes (optional, attached to next result)</label><textarea id="notes" placeholder="What was actually seen/heard? What did the reader display?"></textarea></div>
+<main id="events"></main>
+<footer>
+<h2>Evidence export</h2>
+<p>All entries stay in this browser session. Export the JSON before closing the page. No network transfer, server upload, automatic acceptance or automatic runtime state changes occur.</p>
+<div class="controls">
+<button class="primary" id="export" type="button">Export evidence JSON</button>
+<button id="copy" type="button">Copy evidence JSON</button>
+<button class="danger" id="clear" type="button">Clear entries</button>
+</div>
+<small id="feedback" aria-live="polite"></small>
+</footer>
+<script>
+// This standalone field-QA sheet deliberately does not import app code or
+// call observePriestCeremonialEvent(). It never changes the Mass reader.
+const entries=[
+["C0042","MC-OBS-INT-POS","Introit · celebrant reaches Epistle Missal","observer","Visual position, not Schola Introit beginning."],
+["C0043","MC-INT-020","Introit · celebrant quietly recites","graph","Separate from Schola Introit; may be inaudible."],
+["C0276","MC-GLR-040","Gloria · conditional sedilia sitting","graph","Only if celebrant actually sits and choir continues."],
+["C0277","MC-GLR-060","Gloria · return to altar","graph","Only if sedilia used. Independent of chant verse."],
+["C0075","MC-EPI-020","Epistle · actual proclaimer","graph","Missa Cantata only for priest track; do not credit lector as celebrant."],
+["C0077","MC-OBS-GRADUAL","Gradual · celebrant's private recitation","observer","Solemn only in this adapter. Cannot infer private prayer from choir."],
+["C0086","MC-GSP-060","Gospel · actual proclaimer","graph","Missa Cantata priest; Solemn Gospel belongs to deacon."],
+["C0278","MC-CRD-040","Credo · conditional sedilia sitting","graph","Only if celebrant sits while choir continues."],
+["C0279","MC-CRD-070","Credo · return to altar","graph","Do not infer from Schola Et vitam."],
+["C0109","MC-OBS-OFFERTORY","Offertory · celebrant quietly reads antiphon","observer","Separate from Schola chant and from faithful sitting."],
+["C0134","MC-SEC-010","Secret · celebrant's private prayer","graph","Do not infer from visible Schola sequence."],
+["C0144","MC-PREF-040","Preface · celebrant sings","graph","Exact celebrant voice, not congregation."],
+["C0249","MC-END-010","Communion antiphon · priest after ablutions","graph","Distinct from Schola Communion while faithful communicate."],
+["C0250","MC-OBS-PC-TURN","Physical turn before Postcommunion greeting","observer","After Communion antiphon, centre return and altar kiss."],
+["C0256","MC-OBS-DISMISS-TURN","Physical turn before final greeting","observer","After Postcommunions and any prescribed Prayer over the People."],
+];
+const records=[];
+const $=id=>document.getElementById(id);
+function statusFor(id){return [...records].reverse().find(r=>r.cueId===id)?.result??null}
+function render(){
+  const filter=$("filter").value;
+  const total=entries.length,reviewed=entries.filter(e=>statusFor(e[0])).length;
+  const observed=entries.filter(e=>statusFor(e[0])==="OBSERVED").length;
+  const mismatch=entries.filter(e=>statusFor(e[0])==="MISMATCH").length;
+  $("stats").innerHTML='<div><strong>'+reviewed+'/'+total+'</strong><span>Recorded cues</span></div><div><strong>'+observed+'</strong><span>Directly observed</span></div><div><strong>'+mismatch+'</strong><span>Mismatches</span></div><div><strong>Not certified</strong><span>Human review required</span></div>';
+  const container=$("events");container.replaceChildren();
+  for(const [id,eventId,title,kind,description] of entries){
+    if(filter!=="all" && (filter==="unrecorded"?statusFor(id)!==null:filter!==kind))continue;
+    const item=document.createElement("details");item.className="event";
+    const summary=document.createElement("summary");
+    const status=statusFor(id);
+    summary.innerHTML='<span class="tag">'+id+' · '+eventId+' · '+kind+'</span><strong>'+title+'</strong><small>'+description+'</small><small class="current">Latest: '+(status??'No record')+'</small>';
+    item.append(summary);
+    const actions=document.createElement("div");actions.className="controls";
+    for(const [value,label] of [["OBSERVED","Observed directly"],["UNVERIFIABLE","Unverifiable"],["MISMATCH","Mismatch"],["NOT_APPLICABLE","Not applicable"]]){
+      const button=document.createElement("button");button.type="button";button.textContent=label;
+      button.addEventListener("click",()=>{
+        if(!$("form").value){$("feedback").textContent="Choose the actual Mass form before recording."; $("form").focus();return;}
+        records.push({schema:"ao-priest-field-entry-v1",time:new Date().toISOString(),
+          cueId:id,eventId,kind,result:value,form:$("form").value,
+          observedActor:$("actor").value,scholaObservation:$("choir").value.trim(),
+          notes:$("notes").value.trim()});
+        $("notes").value="";$("feedback").textContent="Recorded "+id+": "+value+".";
+        render();
+      });
+      actions.append(button);
+    }
+    item.append(actions);container.append(item);
+  }
+}
+function report(){return {schema:"ao-priest-field-evidence-v1",authority:"HUMAN_FIELD_NOT_AUTOMATIC",
+  fieldCertified:false,session:{form:$("form").value,date:$("date").value,
+    place:$("place").value.trim(),reviewer:$("reviewer").value.trim()},
+  expectedCueCount:entries.length,records:[...records]};}
+function json(){return JSON.stringify(report(),null,2)}
+$("export").onclick=()=>{
+ const blob=new Blob([json()],{type:"application/json"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download="ao-priest-field-"+($("date").value||"undated")+".json";
+ a.click();setTimeout(()=>URL.revokeObjectURL(url),250);
+ $("feedback").textContent="Evidence exported; not certified.";
+};
+$("copy").onclick=async()=>{
+ try{await navigator.clipboard.writeText(json());$("feedback").textContent="Evidence copied; not certified."}
+ catch{$("feedback").textContent="Clipboard unavailable; use Export evidence JSON."}
+};
+$("clear").onclick=()=>{
+ if(!confirm("Clear all observations in this session? Export first if needed."))return;
+ records.length=0;render();$("feedback").textContent="Entries cleared.";
+};
+$("filter").addEventListener("change",render);
+render();
+</script>
+</body></html>
