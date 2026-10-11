@@ -76,6 +76,8 @@ assert.equal(scriptureContextCapsule("unsupported passage"),"");
 
 const app=readFileSync(new URL("../src/app/browser-entry.js",import.meta.url),"utf8");
 const home=readFileSync(new URL("../src/home/presentation.js",import.meta.url),"utf8");
+const today=readFileSync(new URL("../src/home/today-v2-sections.js",import.meta.url),"utf8");
 assert.match(app,/scripture\/browser-entry/);
-assert.match(home,/data-home-scripture/);
+assert.match(home,/renderTodayV2Sections\(buildTodayV2Sections/,"Home must render the canonical Today sections");
+assert.match(today,/data-home-scripture/,"Today must expose the canonical Scripture destination");
 console.log("Scripture user experience, bookmarks, import rights and Home entry contracts passed");
