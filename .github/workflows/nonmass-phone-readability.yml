@@ -1,0 +1,33 @@
+name: Non-Mass phone readability
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "src/learn/presentation.js"
+      - "src/pray/presentation-styles.js"
+      - "tests/nonmass-phone-readability.mjs"
+      - ".github/workflows/nonmass-phone-readability.yml"
+  workflow_dispatch:
+
+jobs:
+  formation-and-prayer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Formation and Prayer 320/390/430/768 browser acceptance
+        run: node tests/nonmass-phone-readability.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nonmass-phone-readability
+          path: artifacts/nonmass-phone-readability/
+          if-no-files-found: warn
+          retention-days: 30
