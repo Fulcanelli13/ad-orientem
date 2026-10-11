@@ -1,0 +1,31 @@
+name: 1962 ceremonial research validation
+
+on:
+  pull_request:
+    paths:
+      - "data/mass/ritus-1962-*.json"
+      - "tests/ritus-1962-*.mjs"
+      - ".github/workflows/ritus-1962-ceremonial-research.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/mass/ritus-1962-*.json"
+      - "tests/ritus-1962-*.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Ceremonial cue, form and source evidence batch 01
+        run: node tests/ritus-1962-ceremonial-batch01.mjs
+      - name: Solemn ministers and Requiem conditional batch 02
+        run: node tests/ritus-1962-solemn-ministers-batch02.mjs
