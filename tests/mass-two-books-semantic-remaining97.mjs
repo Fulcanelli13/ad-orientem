@@ -49,7 +49,7 @@ for(const e of batch.items){
 assert.equal(new Set([...ids,...priorIds]).size,113,"113 historical records not fully accounted for");
 const at=id=>batch.items.find(x=>x.evidenceRecordId==="ALPH.BK2."+id);
 assert.equal(at("047").semanticStatus,"REANCHOR_REQUIRED");
-assert.match(at("047").reviewFinding,/AFTER petimus|after petimus/i);
+assert.match(at("047").reviewFinding,/after (the word )?petimus/i);
 assert.equal(at("042").semanticStatus,"PASS_AFTER_CORRECTED_PASSAGE");
 assert.equal(at("070").semanticStatus,"RESEARCH_SUMMARY_INCOMPLETE");
 assert.equal(at("070").canonicalCorrectionNeeded,false);
