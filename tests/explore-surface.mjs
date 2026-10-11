@@ -914,5 +914,6 @@ await import("./explore-r66-illustrated-france.mjs");
 await import("./explore-r67-france-six.mjs");
 await import("./explore-r68-photo-gallery.mjs");
 await import("./explore-r69-multi-place-gallery.mjs");
+await import("./sacred-geography-coverage-r70.mjs");
 await import("./explore-r65-ireland-five-places.mjs");
 await import("./explore-world-boundaries.mjs");
