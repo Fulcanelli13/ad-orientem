@@ -8,8 +8,8 @@ const raw=html.match(/<script id="researchData" type="application\/json">([\s\S]
 assert.ok(raw);const D=JSON.parse(raw);
 const registry=JSON.parse(readFileSync(new URL("../data/geography/research/biblical-curated-lineage-dispersion-20261011.v1.json",import.meta.url),"utf8"));
 assert.deepEqual(D,registry,"Embedded research data must match editable canonical registry");
-assert.ok(D.genealogies.matthew.nodes.every(n=>/^Matthew 1:\\d+$/.test(n.reference)));
-assert.ok(D.genealogies.luke.nodes.every(n=>/^Luke 3:\\d+$/.test(n.reference)));
+assert.ok(D.genealogies.matthew.nodes.every(n=>/^Matthew 1:\d+$/.test(n.reference)));
+assert.ok(D.genealogies.luke.nodes.every(n=>/^Luke 3:\d+$/.test(n.reference)));
 assert.ok(D.genealogies.luke.nodes.filter(n=>n.type==="legal-or-putative").length===1);
 assert.deepEqual(D.genealogies.matthew.nodes.filter(n=>n.associatedWomen).map(n=>n.associatedWomen[0].person),["Tamar","Rahab","Ruth","Wife of Uriah (Bathsheba)","The Blessed Virgin Mary"]);
 assert.ok(D.profiles.some(p=>p.id==="james-alphaeus")&&D.profiles.some(p=>p.id==="judas-iscariot"));
