@@ -45,6 +45,9 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2CalendarInline{width:100%;min-height:100px;padding:0 10px 28px}
 .aoTodayV2[data-ao-home-calendar-view="day"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="picker"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="year"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Below{display:none!important}
 .aoTodayV2[data-ao-home-calendar-view] .aoTodayV2CalendarInline{display:block}
+.aoTodayV2[data-ao-home-calendar-view] > :not(.aoTodayV2Header){display:none!important}
+.aoTodayV2[data-ao-home-calendar-view] .aoTodayV2Header > :not(.brandRow):not(.aoTodayV2Tabs):not(.aoTodayV2CalendarInline){display:none!important}
+
 @media(prefers-reduced-motion:reduce){.aoTodayV2 *{scroll-behavior:auto}}
 
 /* Compact rhythm from the supplied Today v2 study: never reproduce legacy cards. */
