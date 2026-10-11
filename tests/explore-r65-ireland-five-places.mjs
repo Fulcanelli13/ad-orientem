@@ -69,7 +69,9 @@ for(const row of recordSet){
  assert.equal(profile.media,null,"No unlicensed Irish image must appear");
  assert.ok(profile.story_chapters.some(x=>x.kind==="ORIGIN"));
  assert.ok(profile.story_chapters.some(x=>x.kind==="PILGRIMAGE"));
- assert.equal(features.filter(x=>x.properties.place_id===row.id).length,1,"Duplicate or absent pin "+row.id);
+ const projected=projection.byLens.shrines.find(item=>item.place_id===row.id);
+ assert.ok(projected,"Canonical shrine projection missing "+row.id);
+ assert.equal(features.filter(x=>x.properties.item_id===projected.item_id).length,1,"Duplicate or absent pin "+row.id);
  for(const language of ["en","fr"]){
   const html=renderExploreToString(buildExploreViewModel({
    language,lens:"heritage",view:"map",items:projection.byLens.shrines,
