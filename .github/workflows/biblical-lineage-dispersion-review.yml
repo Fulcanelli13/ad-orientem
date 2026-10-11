@@ -7,6 +7,8 @@ on:
       - "data/geography/research/biblical-atlas-151-181-crosswalk-20261011.v1.json"
       - "data/geography/research/mass-scripture-source-extractions-20261011.v1.json"
       - "data/geography/research/mass-scripture-primary-controls-batch02-20261011.v1.json"
+      - "data/geography/research/mass-scripture-historical-iconography-batch02-20261011.v1.json"
+      - "tests/mass-scripture-historical-iconography-batch02.mjs"
       - "docs/research/MASS-SCRIPTURE-PRIMARY-CONTROLS-BATCH02-20261011.md"
       - "tests/mass-scripture-primary-controls-batch02.mjs"
       - "docs/research/MASS-SCRIPTURE-SOURCES-LITERATURE-CENSUS-20261011.md"
@@ -31,6 +33,8 @@ jobs:
         run: node tests/mass-scripture-extraction-batch01.mjs
       - name: Validate ancient-text source controls and bibliographic boundary
         run: node tests/mass-scripture-primary-controls-batch02.mjs
+      - name: Validate historical artwork sources and licensing gates
+        run: node tests/mass-scripture-historical-iconography-batch02.mjs
       - name: Validate mobile and source evidence in actual Chromium
         run: node tests/biblical-lineage-dispersion-pilot.mjs
       - uses: actions/upload-artifact@v4
