@@ -45,6 +45,16 @@ assert.equal(rosaryCinematicArtSource(null,{set:"joyful",mi:0}),"");
 assert.equal(syncRosaryCinematic({root:null,info:null,win:{document:null}}),false);
 const module=readFileSync("src/pray/rosary-cinematic.js","utf8");
 const styles=readFileSync("src/pray/rosary-cinematic-styles.js","utf8");
+const appHtml=readFileSync("index.html","utf8");
+const nativePreviewJson=appHtml.match(/const PREVIEW=(\{[^;]+\});\s*const ROOT_ID='aoPrayerBookRoot'/)?.[1];
+assert.ok(nativePreviewJson,"Native Rosary preview asset registry missing");
+const nativePreview=JSON.parse(nativePreviewJson);
+assert.deepEqual(nativePreview.sorrowful.slice(2),[
+ "./assets/generated-inline/art-38800ca15fdb27a677c8.webp", // painted Crowning with Thorns
+ "./assets/generated-inline/art-063ee07ee0e4cacbec78.webp", // painted Carrying of the Cross
+ "./assets/generated-inline/art-f7eeb9f73a9a68b4f6c3.webp"  // painted Crucifixion
+],"Three Sorrowful artwork subjects were previously assigned to the wrong mysteries");
+
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.match(runtime,/import \{ syncRosaryCinematic \} from "\.\/rosary-cinematic\.js"/);
 assert.match(runtime,/const cinema=syncRosaryCinematic\(\{root:r,info,win:window,language:lang\(\),onJump:target=>/);
