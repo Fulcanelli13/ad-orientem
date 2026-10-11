@@ -44,7 +44,13 @@ try{
   assert.equal(await page.locator('.aoTodayV2CalendarInline [data-cal-body]').count(),1);
   await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
   await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',{timeout:15000});
-  assert.ok(await page.locator('.aoTodayV2CalendarInline [data-cal-body]').count()>0,"Canonical Month content missing");
+  await page.waitForFunction(()=>{
+    const host=document.querySelector(".aoTodayV2CalendarInline");
+    const cal=host?.querySelector("#ao-calendar-modular-root");
+    return cal?.dataset.aoCalendarView==="picker"&&Boolean(cal.querySelector("[data-cal-body]"));
+  },null,{timeout:12000});
+  assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
+    "Canonical Month content missing");
   await page.locator('[data-home-calendar-today]').click();
   await page.waitForSelector(".homeScreen .aoTodayV2Frontispiece",{state:"visible",timeout:15000});
   assert.equal(await page.locator(".homeScreen #ao-calendar-modular-root").count(),0,"Returning to Today should close the embedded Calendar");
