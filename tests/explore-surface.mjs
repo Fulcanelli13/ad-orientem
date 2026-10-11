@@ -910,5 +910,6 @@ await import("./explore-r61-bilingual-stories.mjs");
 await import("./explore-r62-bilingual-stories.mjs");
 await import("./explore-r63-source-enrichment.mjs");
 await import("./explore-r64-illustrated-ireland.mjs");
+await import("./explore-r66-illustrated-france.mjs");
 await import("./explore-r65-ireland-five-places.mjs");
 await import("./explore-world-boundaries.mjs");

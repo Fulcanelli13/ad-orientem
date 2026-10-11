@@ -29,10 +29,11 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   approvedPlaceMedia:moduleUrl("../../data/geography/approved-place-media.v1.json"),
   majorPlaceEditorial:moduleUrl("../../data/geography/major-places-editorial.v1.json"),
   illustratedPlaceGuides:moduleUrl("../../data/shrines/illustrated-place-guides-ireland.v1.json"),
+  illustratedFrenchGuides:moduleUrl("../../data/shrines/illustrated-place-guides-france.v1.json"),
 });
 
 export async function loadExploreDataset({fetchImpl=fetch}={}){
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,majorPlaceEditorial,illustratedPlaceGuides]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -46,6 +47,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     fetchJson(EXPLORE_DATA_URLS.approvedPlaceMedia,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.majorPlaceEditorial,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedPlaceGuides,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.illustratedFrenchGuides,{fetchImpl,optional:true}),
   ]);
   return Object.freeze({
     directory,
@@ -71,7 +73,7 @@ export async function loadExploreDataset({fetchImpl=fetch}={}){
     media:Object.freeze({approved:approvedPlaceMedia?.schema==="AO_APPROVED_PLACE_MEDIA_V1"?safeArray(approvedPlaceMedia?.items):[]}),
     editorial:Object.freeze({
       featured:majorPlaceEditorial?.schema==="AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1"?safeArray(majorPlaceEditorial?.items):[],
-      placeGuides:illustratedPlaceGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1"?safeArray(illustratedPlaceGuides?.guides).filter(row=>row?.publication==="PUBLISHED"):[],
+      placeGuides:[...((illustratedPlaceGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedPlaceGuides?.guides):[]),...((illustratedFrenchGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedFrenchGuides?.guides):[])].filter(row=>row?.publication==="PUBLISHED"),
     }),
     novenas:Object.freeze({
       records:safeArray(novenaSot?.novenas),

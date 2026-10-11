@@ -1,0 +1,414 @@
+{
+  "schema": "AO_ILLUSTRATED_PLACE_GUIDES_V1",
+  "version": "1.0.0",
+  "reviewed_on": "2026-10-11",
+  "scope": "Source-owned France pilgrimage pilot, append-only alongside separate canonical Ireland guide corpus",
+  "source_policy": "Each history, pilgrimage stop, date and visitor advisory cites an original custodian URL",
+  "media_policy": "Only exact locally approved media from existing place-media registry",
+  "guides": [
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "publication": "PUBLISHED",
+      "official_url": "https://www.lourdes-france.org/",
+      "region_en": "Lourdes · Hautes-Pyrénées · France",
+      "region_fr": "Lourdes · Hautes-Pyrénées · France",
+      "subtitle_en": "The Grotto of Massabielle, the testimony of Bernadette and a sanctuary built for the pilgrimage of the sick.",
+      "subtitle_fr": "La grotte de Massabielle, le témoignage de Bernadette et un sanctuaire au service du pèlerinage des malades.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "witness",
+          "title_en": "Bernadette and the eighteen apparitions",
+          "title_fr": "Bernadette et les dix-huit apparitions",
+          "paragraphs": [
+            {
+              "en": "From 11 February to 16 July 1858, Bernadette Soubirous reported eighteen apparitions at the Grotto of Massabielle. The sanctuary preserves a day-by-day account, including prayer of the Rosary, the discovery of the spring and the words identifying the Lady as the Immaculate Conception.",
+              "fr": "Du 11 février au 16 juillet 1858, Bernadette Soubirous rapporta dix-huit apparitions à la grotte de Massabielle. Le sanctuaire conserve un récit chronologique comprenant la prière du chapelet, la découverte de la source et les paroles par lesquelles la Dame se présenta comme l'Immaculée Conception.",
+              "source_url": "https://www.lourdes-france.org/apparitions/"
+            },
+            {
+              "en": "The bishop of Tarbes established a commission of inquiry in July 1858. On 18 January 1862, Bishop Laurence issued his decree recognising the apparitions. This ecclesiastical judgment is distinct from later stories about cures and from the ordinary programme of pilgrimage.",
+              "fr": "L'évêque de Tarbes institua une commission d'enquête en juillet 1858. Le 18 janvier 1862, Mgr Laurence publia son mandement reconnaissant les apparitions. Ce jugement ecclésiastique est distinct des récits ultérieurs de guérisons et du programme ordinaire des pèlerinages.",
+              "source_url": "https://www.lourdes-france.org/en/the-decree/"
+            }
+          ]
+        },
+        {
+          "id": "sanctuary",
+          "title_en": "The Grotto and expanding sanctuary",
+          "title_fr": "La grotte et le développement du sanctuaire",
+          "paragraphs": [
+            {
+              "en": "After the recognition of the apparitions, the sanctuary developed a crypt, a chapel and several basilicas to receive growing pilgrim crowds. Massabielle remains the spiritual centre: the shrines and churches are parts of a single pilgrimage complex rather than separate unrelated destinations.",
+              "fr": "Après la reconnaissance des apparitions, une crypte, une chapelle et plusieurs basiliques furent aménagées pour accueillir les pèlerins toujours plus nombreux. Massabielle demeure le centre spirituel : les églises et basiliques font partie d'un même ensemble de pèlerinage, et non de destinations sans rapport.",
+              "source_url": "https://www.lourdes-france.org/en/lourdes-pilgrimage/our-mission-welcome-pilgrims/"
+            },
+            {
+              "en": "The sanctuary deliberately places the sick and disabled at the centre of its mission. Confession, prayer at the Grotto, the Rosary and the sacramental life accompany the public processions that have become characteristic of Lourdes.",
+              "fr": "Le sanctuaire entend placer les personnes malades et handicapées au cœur de sa mission. Confession, prière à la grotte, chapelet et vie sacramentelle accompagnent les processions publiques qui caractérisent Lourdes.",
+              "source_url": "https://www.lourdes-france.org/en/lourdes-pilgrimage/our-mission-welcome-pilgrims/"
+            }
+          ]
+        },
+        {
+          "id": "ritual",
+          "title_en": "A pilgrim's devotional route",
+          "title_fr": "Un parcours de dévotion",
+          "paragraphs": [
+            {
+              "en": "The sanctuary's suggested three-day pilgrimage includes prayer at the Grotto, the fountains and baths, confession, Stations of the Cross, Rosary and processions. Its April-to-October procession times are examples published by the sanctuary, not permanently valid schedules for every date.",
+              "fr": "Le pèlerinage de trois jours proposé par le sanctuaire comprend la prière à la grotte, les fontaines et les bains, la confession, le chemin de croix, le chapelet et les processions. Les horaires publiés pour les processions d'avril à octobre sont des indications saisonnières, non des horaires garantis pour chaque jour.",
+              "source_url": "https://www.lourdes-france.org/en/authentic-pilgrimage-in-lourdes/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "grotto",
+          "name_en": "Massabielle Grotto",
+          "name_fr": "Grotte de Massabielle",
+          "description_en": "Site of the 1858 testimony and principal focal point of pilgrim prayer.",
+          "description_fr": "Lieu du témoignage de 1858 et centre principal de la prière des pèlerins.",
+          "source_url": "https://www.lourdes-france.org/apparitions/"
+        },
+        {
+          "id": "basilicas",
+          "name_en": "Basilicas and crypt",
+          "name_fr": "Basiliques et crypte",
+          "description_en": "Churches erected to receive the crowds that followed recognition in 1862.",
+          "description_fr": "Églises édifiées pour accueillir les foules après la reconnaissance de 1862.",
+          "source_url": "https://www.lourdes-france.org/en/lourdes-pilgrimage/our-mission-welcome-pilgrims/"
+        },
+        {
+          "id": "procession",
+          "name_en": "Procession route and devotional fountains",
+          "name_fr": "Parcours des processions et fontaines",
+          "description_en": "Prayer, water and processions remain related but distinct pilgrim observances.",
+          "description_fr": "La prière, l'eau et les processions sont des démarches de pèlerinage liées mais distinctes.",
+          "source_url": "https://www.lourdes-france.org/en/authentic-pilgrimage-in-lourdes/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1858-02-11",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "First reported apparition",
+          "title_fr": "Première apparition rapportée",
+          "source_url": "https://www.lourdes-france.org/apparitions/"
+        },
+        {
+          "when": "1858-03-25",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "The Lady names herself the Immaculate Conception",
+          "title_fr": "La Dame se nomme l'Immaculée Conception",
+          "source_url": "https://www.lourdes-france.org/apparitions/"
+        },
+        {
+          "when": "1858-07-16",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Eighteenth and final reported apparition",
+          "title_fr": "Dix-huitième et dernière apparition rapportée",
+          "source_url": "https://www.lourdes-france.org/apparitions/"
+        },
+        {
+          "when": "1862-01-18",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Bishop Laurence issues the recognition decree",
+          "title_fr": "Mgr Laurence publie le mandement de reconnaissance",
+          "source_url": "https://www.lourdes-france.org/en/the-decree/"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "lourdes-1858",
+          "label_en": "Anniversary of the first apparition",
+          "label_fr": "Anniversaire de la première apparition",
+          "month_day": "02-11",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "Historical anniversary; confirm the year's sanctuary liturgy independently.",
+          "details_fr": "Anniversaire historique ; vérifier séparément les célébrations de l'année.",
+          "source_url": "https://www.lourdes-france.org/apparitions/"
+        },
+        {
+          "id": "lourdes-annunciation",
+          "label_en": "The Annunciation in the 1858 narrative",
+          "label_fr": "L'Annonciation dans le récit de 1858",
+          "month_day": "03-25",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "On 25 March 1858, Bernadette reported the words 'I am the Immaculate Conception'.",
+          "details_fr": "Le 25 mars 1858, Bernadette rapporta les paroles « Je suis l'Immaculée Conception ».",
+          "source_url": "https://www.lourdes-france.org/apparitions/"
+        }
+      ],
+      "visit": {
+        "en": "Check the sanctuary website for processions, baths and confessions on the date of your visit; published seasonal hours can change.",
+        "fr": "Consulter le site du sanctuaire pour les processions, les bains et les confessions le jour de la visite ; les horaires saisonniers peuvent évoluer.",
+        "source_url": "https://www.lourdes-france.org/en/authentic-pilgrimage-in-lourdes/"
+      }
+    },
+    {
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "publication": "PUBLISHED",
+      "official_url": "https://sacrecoeur-paray.org/",
+      "region_en": "Paray-le-Monial · Saône-et-Loire · France",
+      "region_fr": "Paray-le-Monial · Saône-et-Loire · France",
+      "subtitle_en": "The Visitation chapel and Saint Margaret Mary: origins of the modern devotion to the Sacred Heart.",
+      "subtitle_fr": "La chapelle de la Visitation et sainte Marguerite-Marie : aux origines de la dévotion moderne au Sacré-Cœur.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "visitation",
+          "title_en": "The Visitation and Margaret Mary",
+          "title_fr": "La Visitation et Marguerite-Marie",
+          "paragraphs": [
+            {
+              "en": "At the chapel of the Visitation monastery in Paray-le-Monial, Saint Margaret Mary Alacoque reported the principal appearances of Christ between 1673 and 1675. The sanctuary situates most of them in the monastery chapel and relates the representations there to the experience of prayer before the tabernacle.",
+              "fr": "Dans la chapelle du monastère de la Visitation à Paray-le-Monial, sainte Marguerite-Marie Alacoque rapporta les principales apparitions du Christ entre 1673 et 1675. Le sanctuaire situe la plupart de ces événements dans la chapelle et rattache les représentations actuelles à la prière devant le tabernacle.",
+              "source_url": "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+            },
+            {
+              "en": "The chapel has undergone extensions and alterations, but the sanctuary states that its choir or sanctuary zone has retained its historic configuration from Margaret Mary's time. It is important to distinguish this setting from later depictions of the Sacred Heart and subsequent architectural changes.",
+              "fr": "La chapelle a été agrandie et remaniée, mais le sanctuaire indique que son chœur, ou espace du sanctuaire, a conservé sa disposition de l'époque de Marguerite-Marie. Il convient de distinguer ce cadre historique des images postérieures du Sacré-Cœur et des transformations architecturales.",
+              "source_url": "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+            }
+          ]
+        },
+        {
+          "id": "devotion",
+          "title_en": "The Sacred Heart and reparation",
+          "title_fr": "Le Sacré-Cœur et la réparation",
+          "paragraphs": [
+            {
+              "en": "The sanctuary presents the apparitions as a call to respond to the love of Christ. Prayer before the Blessed Sacrament and acts of reparation are central to the local devotional tradition; the present pilgrim should distinguish Margaret Mary's seventeenth-century experiences from practices and feasts developed subsequently.",
+              "fr": "Le sanctuaire présente les apparitions comme un appel à répondre à l'amour du Christ. Prière devant le Saint-Sacrement et actes de réparation appartiennent au cœur de la tradition locale ; le pèlerin doit distinguer les expériences de Marguerite-Marie au XVIIe siècle des pratiques et fêtes développées ensuite.",
+              "source_url": "https://sacrecoeur-paray.org/demarche-jubilaire/"
+            }
+          ]
+        },
+        {
+          "id": "jubilee",
+          "title_en": "A sanctuary of recurring pilgrimage",
+          "title_fr": "Un sanctuaire de pèlerinage vivant",
+          "paragraphs": [
+            {
+              "en": "The shrine celebrated a special jubilee from 27 December 2023 to 27 June 2025, marking 350 years since the apparitions associated with Margaret Mary. The jubilee included a pilgrimage visit to the Apparitions Chapel; this concluded event must not be offered as a current indulgence or open jubilee door in 2026.",
+              "fr": "Le sanctuaire a célébré un jubilé particulier du 27 décembre 2023 au 27 juin 2025, pour les 350 ans des apparitions liées à Marguerite-Marie. La démarche comprenait une visite à la chapelle des Apparitions ; ce jubilé achevé ne doit pas être présenté en 2026 comme une porte jubilaire ou une indulgence toujours ouvertes.",
+              "source_url": "https://sacrecoeur-paray.org/demarche-jubilaire/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "chapel",
+          "name_en": "Chapel of the Apparitions",
+          "name_fr": "Chapelle des Apparitions",
+          "description_en": "Visitation monastery chapel associated with the principal seventeenth-century accounts.",
+          "description_fr": "Chapelle du monastère de la Visitation liée aux principaux récits du XVIIe siècle.",
+          "source_url": "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+        },
+        {
+          "id": "choir",
+          "name_en": "Historic chapel sanctuary",
+          "name_fr": "Chœur historique de la chapelle",
+          "description_en": "The historic sacred space and cloister grille described by the official sanctuary.",
+          "description_fr": "L'espace sacré historique et la grille du cloître décrits par le sanctuaire.",
+          "source_url": "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+        },
+        {
+          "id": "jubilee",
+          "name_en": "Pilgrimage encounter at the Visitation",
+          "name_fr": "Démarche de pèlerinage à la Visitation",
+          "description_en": "Site of the concluded 2023–2025 jubilee, not a standing year-round jubilee itinerary.",
+          "description_fr": "Lieu du jubilé achevé de 2023–2025, non d'un parcours jubilaire permanent.",
+          "source_url": "https://sacrecoeur-paray.org/demarche-jubilaire/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1673",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Beginning of the major Sacred Heart apparition period",
+          "title_fr": "Début de la période des grandes apparitions",
+          "source_url": "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+        },
+        {
+          "when": "1675",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "End of the principal 1673–1675 apparition period",
+          "title_fr": "Fin de la principale période des apparitions",
+          "source_url": "https://sacrecoeur-paray.org/lieux/la-chapelle-apparitions/"
+        },
+        {
+          "when": "2023-12-27",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Opening of the 350th-anniversary jubilee",
+          "title_fr": "Ouverture du jubilé des 350 ans",
+          "source_url": "https://sacrecoeur-paray.org/demarche-jubilaire/"
+        },
+        {
+          "when": "2025-06-27",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Conclusion of the 350th-anniversary jubilee",
+          "title_fr": "Clôture du jubilé des 350 ans",
+          "source_url": "https://sacrecoeur-paray.org/demarche-jubilaire/"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "paray-jubilee",
+          "label_en": "350th-anniversary jubilee — concluded",
+          "label_fr": "Jubilé des 350 ans — terminé",
+          "start_date": "2023-12-27",
+          "end_date": "2025-06-27",
+          "date_kind": "VERIFIED_PAST_FIXED_PERIOD",
+          "details_en": "The official jubilee ended in June 2025. Consult the sanctuary for any current pilgrimage events.",
+          "details_fr": "Le jubilé officiel s'est terminé en juin 2025. Consulter le sanctuaire pour les événements actuels.",
+          "source_url": "https://sacrecoeur-paray.org/demarche-jubilaire/"
+        }
+      ],
+      "visit": {
+        "en": "Consult the current Paray-le-Monial sanctuary calendar before visiting the Visitation chapel. The 2023–2025 jubilee is not ongoing.",
+        "fr": "Consulter le calendrier actuel du sanctuaire de Paray-le-Monial avant de visiter la chapelle de la Visitation. Le jubilé 2023–2025 est terminé.",
+        "source_url": "https://sacrecoeur-paray.org/demarche-jubilaire/"
+      }
+    },
+    {
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "publication": "PUBLISHED",
+      "official_url": "https://sainteanne-sanctuaire.com/",
+      "region_en": "Sainte-Anne-d'Auray · Morbihan · Brittany",
+      "region_fr": "Sainte-Anne-d'Auray · Morbihan · Bretagne",
+      "subtitle_en": "Breton devotion to Saint Anne, the testimony of Yvon Nicolazic and the great annual pardon.",
+      "subtitle_fr": "La dévotion bretonne à sainte Anne, le témoignage d'Yvon Nicolazic et le grand pardon annuel.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "nicolazic",
+          "title_en": "Nicolazic and the origins of the pilgrimage",
+          "title_fr": "Nicolazic et l'origine du pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The sanctuary records the first reported appearance of Saint Anne to Yvon Nicolazic in August 1623. A statue was discovered on 7 March 1625, a decisive event in the pilgrimage's beginning. These are specific seventeenth-century claims documented in the sanctuary's own chronology.",
+              "fr": "Le sanctuaire situe la première apparition rapportée de sainte Anne à Yvon Nicolazic en août 1623. Une statue fut découverte le 7 mars 1625, événement décisif dans l'origine du pèlerinage. Ces faits relèvent de récits du XVIIe siècle conservés dans la chronologie officielle du sanctuaire.",
+              "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+            },
+            {
+              "en": "The first Mass connected with the new pilgrimage was celebrated on 26 July 1625, Saint Anne's day. A chapel followed, blessed in 1628, and Carmelite friars arrived in 1633. These successive developments document the transformation of a local event into an organised Breton sanctuary.",
+              "fr": "La première messe liée au nouveau pèlerinage fut célébrée le 26 juillet 1625, jour de sainte Anne. Une chapelle fut bénie en 1628 et les carmes arrivèrent en 1633. Ces étapes successives témoignent du passage d'un événement local à un sanctuaire breton organisé.",
+              "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+            }
+          ]
+        },
+        {
+          "id": "rupture",
+          "title_en": "The sanctuary through religious upheaval",
+          "title_fr": "Le sanctuaire dans les bouleversements religieux",
+          "paragraphs": [
+            {
+              "en": "The official chronology records the departure of the Carmelites in 1792, the destruction of the chapel in 1794 and the return of the chapel to worship in 1802. This rupture and restoration belong to the history of the sanctuary and help explain why its buildings reflect several periods.",
+              "fr": "La chronologie officielle enregistre le départ des carmes en 1792, le saccage de la chapelle en 1794 et son retour au culte en 1802. Cette rupture puis cette restauration font partie de l'histoire du sanctuaire et expliquent la présence de plusieurs périodes architecturales.",
+              "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+            }
+          ]
+        },
+        {
+          "id": "pardon",
+          "title_en": "Saint Anne and the Breton pardon",
+          "title_fr": "Sainte Anne et le pardon breton",
+          "paragraphs": [
+            {
+              "en": "The feast of Saint Anne on 26 July provides the historic centre of the annual pilgrimage. The sanctuary traces that association to the first pilgrim Mass in 1625. Exact ceremonies, procession routes and participation details must be checked against the year's published Grand Pardon programme.",
+              "fr": "La fête de sainte Anne, le 26 juillet, constitue le centre historique du pèlerinage annuel. Le sanctuaire fait remonter ce lien à la première messe de pèlerinage en 1625. Les célébrations, parcours processionnels et modalités de participation doivent être vérifiés dans le programme du Grand Pardon de l'année.",
+              "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "statue",
+          "name_en": "Site of the 1625 statue tradition",
+          "name_fr": "Lieu de la tradition de la statue de 1625",
+          "description_en": "The discovery of the statue is central to the official origin chronology.",
+          "description_fr": "La découverte de la statue est au centre de la chronologie officielle des origines.",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        },
+        {
+          "id": "chapel",
+          "name_en": "Historic chapel and Carmelite legacy",
+          "name_fr": "Ancienne chapelle et héritage carmélitain",
+          "description_en": "A chapel was blessed in 1628 and Carmelites reached the shrine in 1633.",
+          "description_fr": "Une chapelle fut bénie en 1628 et les carmes arrivèrent en 1633.",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        },
+        {
+          "id": "pardon",
+          "name_en": "Sanctuary during the Saint Anne pardon",
+          "name_fr": "Sanctuaire lors du pardon de sainte Anne",
+          "description_en": "The 26 July observance is historic; current itineraries must be checked annually.",
+          "description_fr": "La célébration du 26 juillet est historique ; les itinéraires actuels doivent être vérifiés chaque année.",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1623-08",
+          "when_kind": "HISTORICAL_MONTH",
+          "title_en": "First reported appearance of Saint Anne",
+          "title_fr": "Première apparition rapportée de sainte Anne",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        },
+        {
+          "when": "1625-03-07",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Discovery of the statue",
+          "title_fr": "Découverte de la statue",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        },
+        {
+          "when": "1625-07-26",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "First pilgrimage Mass",
+          "title_fr": "Première messe du pèlerinage",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        },
+        {
+          "when": "1628-07-04",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Blessing of the first chapel",
+          "title_fr": "Bénédiction de la première chapelle",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        },
+        {
+          "when": "1794-12-16",
+          "when_kind": "HISTORICAL_DATE",
+          "title_en": "Chapel ransacked during the Revolution",
+          "title_fr": "Saccage de la chapelle pendant la Révolution",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "grand-pardon",
+          "label_en": "Saint Anne's feast and historic Grand Pardon",
+          "label_fr": "Fête de sainte Anne et Grand Pardon historique",
+          "month_day": "07-26",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "The recurring feast is established historically; verify the current year's celebrations with the sanctuary.",
+          "details_fr": "La fête annuelle est établie historiquement ; vérifier les célébrations de l'année auprès du sanctuaire.",
+          "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+        }
+      ],
+      "visit": {
+        "en": "Use the sanctuary's official website for the year's Grand Pardon programme, pilgrim services and visitor access; a historical feast date is not a timetable.",
+        "fr": "Consulter le site officiel pour le programme annuel du Grand Pardon, l'accueil et les accès ; une fête historique ne constitue pas un horaire.",
+        "source_url": "https://sainteanne-sanctuaire.com/?mode=histoire"
+      }
+    }
+  ]
+}
