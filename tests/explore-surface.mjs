@@ -827,7 +827,7 @@ const reviewedPreview=renderExploreToString(buildExploreViewModel({
   selectedPlaceId:reviewedLourdes.place_id,placeProfiles:reviewedProfiles,
 }));
 assert.match(reviewedPreview,/aoHeritagePlaceThumb/,"Screened image must appear within canonical Place preview");
-assert.match(reviewedPreview,/creativecommons.org\/licenses\/by-sa\/4\.0/,"Photographer license link must be visible in preview");
+assert.match(reviewedPreview,/CC-BY-SA-4.0/,"Compact preview credits the photographer and licence without undersized links");
 const reviewedExpanded=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
   filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
@@ -836,6 +836,8 @@ const reviewedExpanded=renderExploreToString(buildExploreViewModel({
 assert.match(reviewedExpanded,/aoExplorePlaceMedia/,"Screened image must appear in Place reading view");
 assert.match(reviewedExpanded,/convertie en WebP/,"Image modification must be disclosed in French");
 assert.match(reviewedExpanded,/commons.wikimedia.org/,"Image source must link to the original file");
+assert.match(reviewedExpanded,/creativecommons.org\/licenses\/by-sa\/4\.0/,
+  "Expanded reader must link the actual image licence");
 
 const approved=resolveApprovedPlaceMedia([mediaFixture],mediaFixture.place_id);
 assert.equal(approved.asset_path,mediaFixture.asset_path,"Approved Place media must resolve by exact identity");
@@ -865,7 +867,7 @@ const auditedCard=compactHeritagePlaceSheet({language:"en",
  filters:{heritageCategories:[...HERITAGE_CATEGORIES]}});
 assert.match(auditedCard,/aoHeritagePlaceThumb/,"Approved photography must have a visible, credited card slot");
 assert.match(auditedCard,/Photographer Name/);
-assert.match(auditedCard,/creativecommons.org\/licenses\/by\/4\.0/,"The preview must link its actual licence");
+assert.match(auditedCard,/CC-BY-4.0/,"The thumbnail credits licence in readable, noninteractive text");
 
 const nearbyFixtures=[
   {place_id:"place:FR:lourdes",title:"Lourdes",subtitle:"France",place_type:"shrine",map_publishable:true,geo:{lat:43.09738,lng:-0.05875}},
