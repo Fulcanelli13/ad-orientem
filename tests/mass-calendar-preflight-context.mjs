@@ -71,6 +71,13 @@ assert.equal(absent.actual.colour,"White");
 const distinct=massCalendarPreflightContext({...mass,exceptionalProfile:"good-friday-1962",
  celebrationTitle:"Good Friday liturgy",proper:{data:{color:"Black"}}},calendar);
 assert.equal(distinct.actual.kind,"GOOD_FRIDAY");
+const distinctUnderscore=massCalendarPreflightContext({...mass,exceptionalProfile:"good_friday_1962",
+ celebrationTitle:"Good Friday liturgy"},calendar);
+assert.equal(distinctUnderscore.actual.kind,"GOOD_FRIDAY");
+const vigil=massCalendarPreflightContext({...mass,exceptionalProfile:"easter_vigil_1962",
+ celebrationTitle:"Easter Vigil"},calendar);
+assert.equal(vigil.actual.kind,"EASTER_VIGIL");
+assert.equal(vigil.differs,true);
 assert.equal(distinct.differs,true,"Good Friday is not a generic Calendar Mass");
 assert.equal(JSON.stringify({mass,calendar}),original,"Projection must be read-only");
 console.log("PASS Mass liturgical context: day/selected Proper distinct, 1962 resolver, votive, Requiem, alternative source, FR, stale locks");
