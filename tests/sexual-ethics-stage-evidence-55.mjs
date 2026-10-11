@@ -49,10 +49,10 @@ for(const id of CSE_DEBATE_IDS){
  }
 }
 assert.equal(stageCount,440);
-assert.equal(referenceCount,636);
+assert.equal(referenceCount,637);
 assert.equal(audit.summary.stage_specific_mapping_debates,55);
 assert.equal(audit.summary.stage_specific_mapping_records,440);
-assert.equal(audit.summary.stage_specific_mapping_references,636);
+assert.equal(audit.summary.stage_specific_mapping_references,637);
 assert.equal(audit.summary.stage_specific_mapping_pending,0);
 assert.equal(audit.summary.stage_full_text_certified,0);
 assert.equal(audit.summary.remaining_full_passage_review,55);
