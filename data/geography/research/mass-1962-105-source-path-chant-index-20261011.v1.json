@@ -17,7 +17,8 @@
       "TRACT",
       "SEQUENCE"
     ],
-    "auxiliaryIndex": "Matthew P. Hazell (2013) canonical Scripture index used only as bibliography; copyright not imported"
+    "auxiliaryIndex": "Matthew P. Hazell (2013) canonical Scripture index used only as bibliography; copyright not imported",
+    "note": "All 7 source-note prefixes previously lacking parser recognition were independently identified as Acts, Exodus, Esther or Galatians abbreviations; no spurious nonbiblical claim."
   },
   "provenance": {
     "segments": [
@@ -49,7 +50,7 @@
     "inheritanceRows": 42,
     "sequenceMarkerRows": 23,
     "sourceErrors": 0,
-    "maybeNonScripturalNotes": 7
+    "knownAlternateBookAbbreviationSourceNotes": 7
   },
   "rows": [
     {
@@ -9971,43 +9972,6 @@
       "optionalLocatedParent": null
     }
   ],
-  "citationFormatReview": [
-    {
-      "path": "Tempora/Pasc5-4",
-      "slot": "INTROIT",
-      "note": "Acta 1:11"
-    },
-    {
-      "path": "Tempora/Pent12-0",
-      "slot": "OFFERTORY",
-      "note": "Exod 32:11 32:13; 32:14"
-    },
-    {
-      "path": "Tempora/Pent18-0",
-      "slot": "OFFERTORY",
-      "note": "Exodi 24:4; 24:5"
-    },
-    {
-      "path": "Tempora/Pent21-0",
-      "slot": "INTROIT",
-      "note": "Esth 13:9; 13:10-11"
-    },
-    {
-      "path": "Tempora/Pent22-0",
-      "slot": "OFFERTORY",
-      "note": "Esth 14:12; 14:13"
-    },
-    {
-      "path": "Tempora/Quad6-2",
-      "slot": "INTROIT",
-      "note": "Gal 6:14"
-    },
-    {
-      "path": "Tempora/Quad2-4",
-      "slot": "OFFERTORY",
-      "note": "Exod 32:11; 32:13; 32:14"
-    }
-  ],
   "nextResearchGates": [
     "Independent typical 1962 Missale Romanum section and rite classification",
     "Check all inherited Commune and variant paths before assigning Bible reference",
@@ -10015,5 +9979,63 @@
     "Resolve seasonal tract/alleluia sequence and Ember or Passion special source order, not four-slot flattening",
     "Full Bible verse text and Clementine Vulgate, Crampon, Douay numbering",
     "Link only inspected and approved prayer-to-verse records into existing learn.mass and Scripture overlay"
+  ],
+  "abbreviationAudit": [
+    {
+      "sourcePath": "Tempora/Pasc5-4",
+      "slot": "INTROIT",
+      "sourceAnnotation": "Acta 1:11",
+      "originalBookAbbreviation": "Acta",
+      "recognizedCanonicalBook": "Acts",
+      "status": "BOOK_ABBREVIATION_RECOGNIZED_VERSE_SCOPE_AND_EDITION_NOT_CERTIFIED"
+    },
+    {
+      "sourcePath": "Tempora/Pent12-0",
+      "slot": "OFFERTORY",
+      "sourceAnnotation": "Exod 32:11 32:13; 32:14",
+      "originalBookAbbreviation": "Exod",
+      "recognizedCanonicalBook": "Exodus",
+      "status": "BOOK_ABBREVIATION_RECOGNIZED_VERSE_SCOPE_AND_EDITION_NOT_CERTIFIED"
+    },
+    {
+      "sourcePath": "Tempora/Pent18-0",
+      "slot": "OFFERTORY",
+      "sourceAnnotation": "Exodi 24:4; 24:5",
+      "originalBookAbbreviation": "Exodi",
+      "recognizedCanonicalBook": "Exodus",
+      "status": "BOOK_ABBREVIATION_RECOGNIZED_VERSE_SCOPE_AND_EDITION_NOT_CERTIFIED"
+    },
+    {
+      "sourcePath": "Tempora/Pent21-0",
+      "slot": "INTROIT",
+      "sourceAnnotation": "Esth 13:9; 13:10-11",
+      "originalBookAbbreviation": "Esth",
+      "recognizedCanonicalBook": "Esther",
+      "status": "BOOK_ABBREVIATION_RECOGNIZED_VERSE_SCOPE_AND_EDITION_NOT_CERTIFIED"
+    },
+    {
+      "sourcePath": "Tempora/Pent22-0",
+      "slot": "OFFERTORY",
+      "sourceAnnotation": "Esth 14:12; 14:13",
+      "originalBookAbbreviation": "Esth",
+      "recognizedCanonicalBook": "Esther",
+      "status": "BOOK_ABBREVIATION_RECOGNIZED_VERSE_SCOPE_AND_EDITION_NOT_CERTIFIED"
+    },
+    {
+      "sourcePath": "Tempora/Quad6-2",
+      "slot": "INTROIT",
+      "sourceAnnotation": "Gal 6:14",
+      "originalBookAbbreviation": "Gal",
+      "recognizedCanonicalBook": "Galatians",
+      "status": "BOOK_ABBREVIATION_RECOGNIZED_VERSE_SCOPE_AND_EDITION_NOT_CERTIFIED"
+    },
+    {
+      "sourcePath": "Tempora/Quad2-4",
+      "slot": "OFFERTORY",
+      "sourceAnnotation": "Exod 32:11; 32:13; 32:14",
+      "originalBookAbbreviation": "Exod",
+      "recognizedCanonicalBook": "Exodus",
+      "status": "BOOK_ABBREVIATION_RECOGNIZED_VERSE_SCOPE_AND_EDITION_NOT_CERTIFIED"
+    }
   ]
 }
