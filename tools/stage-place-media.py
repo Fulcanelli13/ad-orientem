@@ -40,7 +40,7 @@ def request_bytes(url, max_bytes=15_000_000):
                 "Accept": "application/json" if "/api.php" in url else "image/*"})
             with urllib.request.urlopen(req, timeout=35) as response:
                 if urllib.parse.urlparse(response.geturl()).hostname not in {
-                    "commons.wikimedia.org", "upload.wikimedia.org"}:
+                    "commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org"}:
                     raise ValueError("Unsafe image redirect destination")
                 data = response.read(max_bytes + 1)
                 if len(data) > max_bytes:
