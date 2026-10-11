@@ -7,6 +7,8 @@ on:
       - "tools/calendar/collect-sacred-art-atlas-originals.py"
       - "tools/calendar/build-sacred-art-final-atlas.py"
       - "tools/calendar/build-sacred-art-priority-review.py"
+      - "data/calendar/sacred-art-curator-decisions-20261011.v1.json"
+      - "tests/calendar-sacred-art-curator-decisions.mjs"
       - "tests/test_sacred_art_final_atlas.py"
       - "data/calendar/sacred-art-candidates.v1.json"
       - "data/calendar/sacred-art-primary-museum-leads-20261011.v1.json"
@@ -53,6 +55,7 @@ jobs:
           python tests/test_sacred_art_final_atlas.py
       - name: Generate manageable subject-first review page
         run: |
+          node tests/calendar-sacred-art-curator-decisions.mjs
           python tools/calendar/build-sacred-art-priority-review.py --atlas artifacts/sacred-art-final-atlas/index.html --output reviews/sacred-art-curator-priority.html
           python - <<'PY'
           import json,re,subprocess
@@ -65,6 +68,9 @@ jobs:
           assert len(data["groups"])>=50
           assert len(data["items"])==264
           assert data["dateUses"]>=2000
+          assert len(data["reviewSeed"]["selections"])==44
+          assert len(data["reviewSeed"]["approvals"])==35
+          assert len(data["reviewSeed"]["refusals"])==30
           assert "Not suitable here" in s and "Approve for this subject" in s
           part=s.rsplit("<script>",1)[1].split("</script>",1)[0]
           Path("/tmp/sacred-art-priority-ui.js").write_text(part,encoding="utf8")
