@@ -149,6 +149,19 @@ ${renderTodayV2Sections(buildTodayV2Sections(state,vm,enrichers),vm)}
 <div class="homeSpacer"></div></main>`;
 }
 
+export function reconcileTodayHero(root){
+  const screen=root?.querySelector?.(".homeScreen")??root;
+  const hero=screen?.querySelector?.(".aoTodayV2Frontispiece");
+  const actions=screen?.querySelector?.(".aoTodayV2HeroActions");
+  const mass=screen?.querySelector?.(".aoTodayV2Mass");
+  if(!hero||!actions||!mass)return false;
+  // Enforce one authored structural parent after legacy home rehydration.
+  // No new state, listener or duplicate Mass button is created.
+  if(!hero.contains(actions))hero.append(actions);
+  if(!actions.contains(mass))actions.append(mass);
+  return hero.contains(mass);
+}
+
 export function renderHome(root,state,win=globalThis){
   if(!root||state?.route!=="home")return false;
   root.innerHTML=renderHomeToString(state,win);
@@ -160,5 +173,6 @@ export function renderHome(root,state,win=globalThis){
     catch(error){win?.console?.warn?.("Approved Today artwork unavailable",error)}
     if(art)slot.innerHTML=art;
   }
+  reconcileTodayHero(root);
   return true;
 }
