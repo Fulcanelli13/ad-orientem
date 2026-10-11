@@ -8,7 +8,9 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 const load=p=>JSON.parse(readFileSync(p,"utf8"));
 const htmlEsc=value=>String(value).replace(/[&<>"\']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#039;"}[c]));
 const manifest=load("data/geography/research/explore-r68-reviewed-photo-sources.v1.json");
-const gallery=load("data/geography/approved-place-gallery.v1.json");
+const sourceGallery=load("data/geography/approved-place-gallery.v1.json");
+// R68 tests its original exact Pontmain cohort, not the later approved gallery appendices.
+const gallery={...sourceGallery,items:sourceGallery.items.filter(item=>item.place_id==="place:FR:pontmain")};
 const geo=load("data/geography/seed-registry.v1.json");
 const shr=load("data/shrines/shrines-pilgrimages-seed.v1.json");
 const refs=load("data/shrines/source-registry.v1.json");
