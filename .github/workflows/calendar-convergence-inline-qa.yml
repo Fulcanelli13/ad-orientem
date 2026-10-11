@@ -11,6 +11,9 @@ on:
       - "src/mass/full-mass-preflight-styles.js"
       - "src/mass/browser-entry.js"
       - "tests/calendar-embedded-home-mass-e2e.mjs"
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
