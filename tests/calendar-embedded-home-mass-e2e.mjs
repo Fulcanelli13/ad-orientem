@@ -23,6 +23,8 @@ try{
  browser=await chromium.launch({headless:true});
  for(const width of [390,320]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true,locale:"en-GB"});
+  await page.addInitScript(()=>{globalThis.__aoCalendarTrace=true});
+  page.on("console",m=>{if(m.text().startsWith("AO_"))console.log("BROWSER_TRACE",m.text())});
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForSelector(".homeScreen.aoTodayV2",{state:"visible",timeout:45000});
   // Do not visually certify a Home that is still behind the cinematic splash.
