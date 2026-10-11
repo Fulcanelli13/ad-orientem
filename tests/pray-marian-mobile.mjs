@@ -225,6 +225,8 @@ try{
     api.setStep(idx);return idx;
    });
    assert.ok(first>0);
+    // Allow the intentional mystery-introduction cinematic to clear before capture.
+    await page.waitForTimeout(4000);
     await page.screenshot({path:resolve(captures,"02-montfort-clausule-390.png"),fullPage:false,animations:"disabled"});
    const latin=await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet [data-pb-latin]").first().innerText();
    const vern=await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet [data-pb-vern]").first().textContent();
@@ -281,7 +283,11 @@ try{
    document.querySelector("#aoPrayerBookRoot.open")?.dataset?.aoRosaryActiveRoot==="true" &&
    document.querySelector("#aoPrayerBookRoot.open .pbShell")?.dataset?.aoRosaryExactDonor==="v3.4.14" &&
    !!document.querySelector("#aoPrayerBookRoot.open [data-lab-rosary-next]"),null,{timeout:14000});
-  await page.screenshot({path:resolve(captures,"05-fifteen-decade-opening-390.png"),fullPage:false,animations:"disabled"});
+  await page.waitForTimeout(1500);
+  await page.screenshot({path:resolve(captures,"05-fifteen-decade-guide-390.png"),fullPage:false,animations:"disabled"});
+  const rosaryGuide=page.locator("#aoPrayerBookRoot.open .aoRosaryGuide");
+  if(await rosaryGuide.count()&&await rosaryGuide.evaluate(el=>el.open))await rosaryGuide.locator("summary").first().evaluate(el=>el.click());
+  await page.screenshot({path:resolve(captures,"05b-fifteen-decade-opening-390.png"),fullPage:false,animations:"disabled"});
  const wholeRosary=await page.evaluate(()=>{
   const api=globalThis.AO_ROSARY_V381;
   const expected=['joyful','sorrowful','glorious'],seen=[],crossings=[];
@@ -331,6 +337,7 @@ try{
  assert.equal(wholeRosary.reversePasses,2);
  assert.equal(wholeRosary.endSet,"glorious");
  assert.equal(wholeRosary.endKind,"conclusion");
+  await page.waitForTimeout(4000);
   await page.screenshot({path:resolve(captures,"06-fifteen-decade-conclusion-390.png"),fullPage:false,animations:"disabled"});
 
  assert.equal(pageErrors.filter(x=>/angelus-guide|rosary-guide|presentation-runtime|undefined/i.test(x)).length,0,"Marian reader threw a runtime error: "+pageErrors.join(" | "));
