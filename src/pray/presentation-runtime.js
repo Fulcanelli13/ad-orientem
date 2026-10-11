@@ -8,6 +8,7 @@ import {loadTenebraeHour} from "./tenebrae-1960.js";
 import {renderTenebraeBody} from "./tenebrae-presentation.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "./angelus-guide-data.js";
 import { rosaryGuideSections } from "./rosary-guide-data.js";
+import { syncRosaryCinematic } from "./rosary-cinematic.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
@@ -911,7 +912,7 @@ function decorateRosaryExact(r){
  ensureRosaryDonorRecitation(r);
  r.querySelectorAll('[data-r23-overview-open],#r23-overview-sheet').forEach(node=>node.remove());
  rosaryDonorArt(r,info);
- rosaryDonorMysteryFx(r,info);
+ // The cinematic timeline handles mystery transitions once the reader is decorated.
  // Source-first mystery context, not the uncertified 200-bead quotation bank.
  applyRosaryScripturePolicy(r,info,{french:isFr(),guided:S.rosary.mode==='guided'});
  lastRosaryRitualKey=st.key;
@@ -994,6 +995,13 @@ function decorateRosary(){
  if(S.rosary.mode==='guided'&&!r.querySelector('.aoP435930SilencePrompt')){const target=r.querySelector('.lab-contemplation');if(target){const n=document.createElement('div');n.className='aoP435930SilencePrompt';n.textContent=L('Silence · remain with the mystery before moving on.','Silence · demeurez avec le mystère avant de poursuivre.');target.appendChild(n)}}
  decorateRosaryExact(r);
  ensureRosaryGuide(r);
+ const info=rosaryLiveInfo();
+ const cinema=syncRosaryCinematic({root:r,info,win:window,language:lang(),onJump:target=>{
+  const api=window.AO_ROSARY_V381;
+  if(api?.setStep?.(target)===false)return false;
+  decorateRosary();setTimeout(decorateRosary,0);return true;
+ }});
+ if(!cinema)rosaryDonorMysteryFx(r,info); // Exact donor fallback.
  declutterRosaryDonor(r);
 }
 function confessionModeLabel(path){
