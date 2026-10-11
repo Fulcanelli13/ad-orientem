@@ -178,3 +178,19 @@ Five unresolved cases that must **not** be auto-mapped:
 | C0256 | Turning after Postcommunion toward the final dismissal needs an explicit priest-turn event; the final Dominus vobiscum is not proof of the exact preceding turn |
 
 Regression gates: repository `tests/reader-priest-event-alignment.mjs` pins **10 event-identified and five pending** cues, denies unresolved lector/celebrant actors and unobserved movement; Chromium `tests/reader-phone-curated65.mjs` exercises the true priest Introit, Epistle and Communion tracks, Schola independence and correct source-only position suppression. No new prayer card or source text was created, and production 48 remains the default. The unresolved five require a new independently certified MC action/movement event or human input, not another textual cue grouping.
+
+## Five guarded movements: source-backed observation definitions (11 October)
+
+These **complete the observational descriptions**, not the canonical MC-event crosswalk: **10/15 source-only cues remain event-bound and 5/15 remain fail-closed**. Machine-readable acceptance predicates: [reader-priest-pending-observations.js](../src/mass/reader-priest-pending-observations.js). No synthetic IDs are admitted into the runtime adapter.
+
+| Cue | Independent observation required | Exact primary rubric | Disallowed shortcut |
+|---|---|---|---|
+| C0042 | Celebrant physically reaches the Epistle-side Missal for Introit; Solemn incensation may precede this movement | [1962 *Ritus servandus* III.2, III.4](https://1962ordo.today/1962-rubrics/) | Schola Introit start or priest's later Introit recitation |
+| C0077 | Celebrant *himself* privately recites Gradual; Solemn Mass explicitly attested, Missa Cantata applicability to be separately certified | [*Ritus servandus* VI.4, VI.8](https://1962ordo.today/1962-rubrics/) | Schola Gradual/Alleluia start, Epistle finishing |
+| C0109 | Celebrant reads Offertory antiphon at altar before preparing the gifts | [*Ritus servandus* VII.1–2](https://1962ordo.today/1962-rubrics/) | Schola Offertory chant, `Oremus`, or `Suscipe sancte Pater`/host preparation |
+| C0250 | Celebrant returns to centre after Communion antiphon, kisses altar and **turns toward people** before the first Postcommunion greeting | [*Ritus servandus* XI.1](https://1962ordo.today/1962-rubrics/) | Mere return to centre (`MC-END-020`) or hearing `Dominus vobiscum` (`MC-END-030`) |
+| C0256 | Following all Postcommunions and any prescribed Lenten *Oratio super populum*, celebrant returns to centre, kisses altar and **turns toward people** before the final greeting | [*Ritus servandus* XI.1–2](https://1962ordo.today/1962-rubrics/) | Completion of Postcommunions (`MC-END-050`), optional prayer (`MC-END-060`), or final greeting (`MC-END-070`) |
+
+**Mandatory ownership exclusions:** Gradual and Offertory chant are Schola-lane events; they cannot serve as priest-side observations. C0109 also contains a faithful-posture `SIT` registry entry; that faithful state must **not** activate as a side-effect of any priest observation. A voice or movement observation may alter only its independently supported priest lane. Physical turns must not be inferred merely from words heard, since those are distinct instants and form-dependent exceptions apply.
+
+**Next implementation gate:** certify distinct priest-side MC event identities for each observation against the source graph, with phase/actor/form/condition metadata; add positive and negative mobile acceptance for a separately reporting human observer, including Solemn minister variants and Lenten `Oratio super populum`. Until then, `eventId:null` and `SPECIFIED_UNBOUND_NO_TRIGGER` are intentional. Do not change the opt-in status, production 48 cards, or the independent Schola clock.
