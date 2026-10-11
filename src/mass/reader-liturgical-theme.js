@@ -1,16 +1,18 @@
-// Mass-specific liturgical palette. The selected/resolved celebration owns colour;
-// the calendar is context, never an override for a votive Mass or Requiem.
-// The seven named accents reproduce v1.80's v1.70 palette exactly; dark
-// ambience surfaces are contextual additions. No Mass graph/text changes.
+// Mass-specific palette: the actual selected Proper/celebration owns the colour.
+// Dark neutral surfaces are the foundation in EVERY season; colour is an accent,
+// never a saturated green (or purple/red) background. Liturgical white is white,
+// not gold. Black uses a charcoal accent and contrasting silver text so it remains
+// identifiable without black-on-black illegibility.
+// The calendar can only supply Mass colour as a last resort for unresolved Proper.
 const PALETTES=Object.freeze({
-  WHITE:Object.freeze({bg:"#191815",top:"#211f19",bottom:"#151410",panel:"#27231d",accent:"#d6caa6",accentText:"#e9dabc"}),
-  RED:Object.freeze({bg:"#1b1014",top:"#271418",bottom:"#140b10",panel:"#2b191d",accent:"#b7736b",accentText:"#e5a5a4"}),
-  GREEN:Object.freeze({bg:"#101a14",top:"#15241b",bottom:"#0b130f",panel:"#1a2a20",accent:"#6d9575",accentText:"#b2d0b5"}),
-  VIOLET:Object.freeze({bg:"#17121e",top:"#21182b",bottom:"#110d18",panel:"#271d31",accent:"#927aa2",accentText:"#c7b5d9"}),
-  ROSE:Object.freeze({bg:"#21151d",top:"#2d1d29",bottom:"#170e15",panel:"#33212f",accent:"#c58e9f",accentText:"#ecc0d5"}),
-  BLACK:Object.freeze({bg:"#0c0e12",top:"#111319",bottom:"#08090d",panel:"#1b1c23",accent:"#a8aaa6",accentText:"#c4c5d1"}),
-  GOLD:Object.freeze({bg:"#1d1710",top:"#292015",bottom:"#141009",panel:"#302619",accent:"#c7aa6d",accentText:"#f0d5a5"}),
-  // An unresolved celebration must not silently become a green Mass.
+  WHITE:Object.freeze({bg:"#080b10",top:"#11151a",bottom:"#070a0e",panel:"#171c22",accent:"#eff0ed",accentText:"#f7f7f4"}),
+  RED:Object.freeze({bg:"#0c0b10",top:"#16141b",bottom:"#090910",panel:"#1c1b23",accent:"#b7736b",accentText:"#e5a5a4"}),
+  GREEN:Object.freeze({bg:"#090e10",top:"#11181a",bottom:"#080b0e",panel:"#182124",accent:"#6d9575",accentText:"#b2d0b5"}),
+  VIOLET:Object.freeze({bg:"#0c0b11",top:"#17151e",bottom:"#080910",panel:"#201d27",accent:"#927aa2",accentText:"#c7b5d9"}),
+  ROSE:Object.freeze({bg:"#0e0b11",top:"#19141d",bottom:"#090911",panel:"#241d28",accent:"#c58e9f",accentText:"#ecc0d5"}),
+  BLACK:Object.freeze({bg:"#050609",top:"#0b0d12",bottom:"#040507",panel:"#11141a",accent:"#50545c",accentText:"#aeb5be"}),
+  GOLD:Object.freeze({bg:"#0e0c0a",top:"#1a1714",bottom:"#090909",panel:"#231e18",accent:"#c7aa6d",accentText:"#f0d5a5"}),
+  // Never silently render an unresolved celebration as a green Mass.
   NEUTRAL:Object.freeze({bg:"#080c12",top:"#10151c",bottom:"#080b10",panel:"#181e27",accent:"#929ba8",accentText:"#c6cdd5"}),
 });
 const COLOUR_ALIASES=Object.freeze({

@@ -1,3 +1,4 @@
+import { formationReaderCss, installFormationNavigation } from "./formation-ui.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import {
   SPIRITUAL_LIFE_ROUTE_ID,
@@ -50,6 +51,7 @@ function css(){
 .aoSLBoundary,.aoSLRow p,.aoSLPractice p,.aoSLLessonHead p{font-size:max(14px,.875rem);line-height:1.55}
 .aoSLSource,.aoSLSourceLoc{font-size:max(13px,.8125rem);line-height:1.55}
 
+${formationReaderCss()}
 `;
 }
 
@@ -189,6 +191,7 @@ export function createSpiritualLifeRuntime(win=globalThis){
     const lesson=currentLesson();
     node.innerHTML=state.view==="lesson"&&lesson?lessonHtml(win,lesson):listHtml(win);
     node.hidden=false;node.removeAttribute("aria-hidden");
+    installFormationNavigation(win,node);
     return true;
   }
 

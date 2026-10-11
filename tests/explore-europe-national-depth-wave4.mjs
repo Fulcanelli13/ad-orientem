@@ -3,6 +3,12 @@ import {readFileSync} from "node:fs";
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const A=read("data/explore/europe-acquisition.wave4-national-depth.research.v1.json");
 const G=read("data/geography/seed-registry.v1.json");
+// Source-acquisition wave snapshots compare with the geography registry at their original research freeze, not later map promotions.
+const publishedAfterFreeze=new Set(read("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json").promoted.map(p=>p.place_id));
+for(const p of read("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json").promoted)publishedAfterFreeze.add(p.place_id);
+// Post-freeze Ireland R65 promotions must not rewrite this 10 October research snapshot.
+for(const c of read("data/shrines/illustrated-place-guides-ireland.v1.json").candidates??[])if(c.published_place_id)publishedAfterFreeze.add(c.published_place_id);
+const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const W1=read("data/explore/europe-acquisition.wave1.research.v1.json");
 const W2=read("data/explore/europe-acquisition.wave2.research.v1.json");
 const W3=read("data/explore/europe-acquisition.wave3.research.v1.json");
@@ -30,7 +36,7 @@ for(const s of A.sites){
  assert.equal(s.biography,null);
  assert.ok(s.source_ids.length>0&&s.source_ids.every(id=>sources.has(id)));
  assert.ok(!previous.some(x=>x.cc===s.country_code&&norm(x.name)===norm(s.name)),"duplicate Europe wave identity: "+s.name);
- assert.ok(!G.places.some(p=>p.address.country_code===s.country_code&&norm(p.name.official)===norm(s.name)),"site exact existing Place duplicate: "+s.name);
+ assert.ok(!historicalPlaces.some(p=>p.address.country_code===s.country_code&&norm(p.name.official)===norm(s.name)),"site exact existing Place duplicate: "+s.name);
 }
 for(const a of A.associations){
  assert.ok(sites.has(a.site_id),"category orphan Place "+a.id);

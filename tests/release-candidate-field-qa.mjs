@@ -146,12 +146,14 @@ async function openSurface(page,surface,width){
     // Settings is contextual, never an extra permanent destination.
     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
   }else if(surface==="calendar"){
-    // Calendar is reached through Today, from every preceding surface.
+    // PR #1023 made Calendar a canonical in-page Today view. Many contextual
+    // date links exist, so use the unique Month tab rather than an ambiguous
+    // [data-home-calendar] locator or retired sixth shell destination.
     await page.locator("[data-ao-app-surface='home']").first().click();
     await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
-    const calendar=page.locator(".homeScreen [data-home-calendar]");
-    assert.equal(await calendar.count(),1,width+"px Today is missing its full Calendar action");
-    await calendar.click();
+    const month=page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]');
+    assert.equal(await month.count(),1,width+"px Today lost its Month tab");
+    await month.click();
   }else{
     const nav=page.locator("[data-ao-app-surface='"+surface+"']").first();
     assert.equal(await nav.count(),1,width+"px missing "+surface+" top-level navigation control");
@@ -162,8 +164,12 @@ async function openSurface(page,surface,width){
     await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="home",null,{timeout:10000});
     await page.waitForSelector(".homeScreen",{state:"visible",timeout:10000});
   }else if(surface==="calendar"){
-    await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()==="calendar",null,{timeout:10000});
-    await page.waitForSelector("#ao-calendar-modular-root",{state:"visible",timeout:10000});
+    await page.waitForSelector('.aoTodayV2CalendarInline #ao-calendar-modular-root[data-ao-calendar-view="picker"]',
+      {state:"visible",timeout:15000});
+    assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"home",
+      width+"px embedded Calendar unexpectedly replaced the Today app surface");
+    assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-body]').count(),1,
+      width+"px Month lost its canonical Calendar body");
   }else if(surface==="pray"){
     await page.waitForFunction(()=>globalThis.AO_PRAY_APP_V1?.status?.().open===true,null,{timeout:10000});
     await page.waitForSelector("#aoPray435930.open",{state:"visible",timeout:10000});
@@ -283,7 +289,7 @@ try{
     await context.close();
   }
 
-  console.log("RC field QA PASS — 320/360/390/430px assembled shell, repeated six-surface routing, Mass preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
+  console.log("RC field QA PASS — 320/360/390/430px assembled shell, five destinations plus embedded Calendar routing, Mass preflight geometry, no legacy leakage, no duplicate roots, no uncaught errors, no failed production resources.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));

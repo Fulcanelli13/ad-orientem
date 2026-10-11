@@ -15,20 +15,35 @@ import {
   const root=()=>({dataset:{},innerHTML:""});
   const normal=root();
   renderLearnPresentation(normal,{language:"en"},{location:{search:""},document:{getElementById:()=>null}});
-  assert.doesNotMatch(normal.innerHTML,/data-ao-learn-dossier-review=/);
+  assert.match(normal.innerHTML,/data-ao-learn-questions/,"Questions area is not discoverable");
+  assert.doesNotMatch(normal.innerHTML,/data-ao-learn-dossier-review=/,"research cards should be organised inside Questions, not on the landing");
   const preview=root();
   const win={location:{search:"?aoFormationReview=1"},document:{getElementById:()=>null}};
   assert.equal(formationDossierReviewEnabled(win),true);
   assert.equal(formationDossierReviewEnabled({location:{search:"?aoFormationReview=0"}}),false);
   assert.equal(formationDossierReviewEnabled({location:{search:"?foo=aoFormationReview=1"}}),false);
-  renderLearnPresentation(preview,{language:"en"},win);
-  assert.match(preview.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
-  assert.match(preview.innerHTML,/data-ao-learn-dossier-review="crisis"/);
-  assert.match(preview.innerHTML,/Unpublished editorial preview/);
+  renderLearnPresentation(preview,{language:"en"},win,{familyId:"questions"});
+  assert.match(preview.innerHTML,/data-ao-learn-module="learn.sexual_ethics"/);
+  assert.doesNotMatch(preview.innerHTML,/data-ao-learn-dossier-review=/,
+    "Moral Questions should never contain Apologetics or Crisis dossiers");
+  const apol=root();
+  renderLearnPresentation(apol,{language:"en"},win,{familyId:"apologetics"});
+  assert.match(apol.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
+  assert.doesNotMatch(apol.innerHTML,/data-ao-learn-dossier-review="crisis"/);
+  assert.match(apol.innerHTML,/Research preview/,"Apologetics must remain unapproved");
+  const crisis=root();
+  renderLearnPresentation(crisis,{language:"en"},win,{familyId:"church-crisis"});
+  assert.match(crisis.innerHTML,/data-ao-learn-dossier-review="crisis"/);
+  assert.doesNotMatch(crisis.innerHTML,/data-ao-learn-dossier-review="apologetics"/);
+  assert.match(crisis.innerHTML,/Research preview/,"Church Crisis must remain unapproved");
   const french=root();
-  renderLearnPresentation(french,{language:"fr"},win);
-  assert.match(french.innerHTML,/Apologétique/);
+  renderLearnPresentation(french,{language:"fr"},win,{familyId:"church-crisis"});
   assert.match(french.innerHTML,/Crise dans l’Église/);
+  assert.match(french.innerHTML,/Aperçu de recherche/);
+  const spiritual=root();
+  renderLearnPresentation(spiritual,{language:"en"},win,{familyId:"spiritual-moral"});
+  assert.match(spiritual.innerHTML,/data-ao-learn-module="learn.spiritual_life"/);
+  assert.doesNotMatch(spiritual.innerHTML,/data-ao-learn-module="learn.sexual_ethics"/,"moral questions are now housed in Questions");
 }
 
 assert.equal(LEARN_DONOR_RELEASE,"43.59.30");
@@ -39,16 +54,19 @@ assert.deepEqual(
   LEARN_LAYOUT.sections.map(section=>section.title),
   [
     ["Foundations","Fondements"],
-    ["Spiritual & Moral Life","Vie spirituelle & morale"],
-    ["Liturgy & Tradition","Liturgie & tradition"],
-    ["Sacraments & Life Events","Sacrements & étapes de vie"],
+    ["Spiritual Life & Devotions","Vie spirituelle & dévotions"],
+    ["Mass & Liturgy","Messe & liturgie"],
+    ["Sacraments & Christian Life","Sacrements & vie chrétienne"],
+    ["Moral Questions","Questions de morale"],
+    ["Apologetics","Apologétique"],
+    ["Crisis in the Church","Crise dans l’Église"],
     ["Latin","Latin"],
     ["Reference","Référence"],
   ],
 );
 assert.deepEqual(
   LEARN_MODULE_IDS,
-  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.sexual_ethics","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.latin","learn.glossary"],
+  ["learn.catechism.daily","learn.catechism","learn.spiritual_life","learn.scapular","learn.mass","learn.serve_mass.responses","learn.rites.sick","learn.rites.baptism","learn.rites.first_communion","learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony","learn.sexual_ethics","learn.latin","learn.glossary"],
   "Formation learning-intent layout changed unexpectedly",
 );
 assert.equal(LEARN_MODULE_IDS.some(id=>id.startsWith("formation.")),false,"A2 introduced a forbidden formation.* route namespace");
@@ -89,16 +107,27 @@ assert.match(owner,/new Set\(\[\.\.\.LEARN_MODULE_IDS,"today\.saint","today\.gos
 assert.doesNotMatch(presentation,/Saint of the Day|Saint du jour/,"Saint of the Day remained duplicated in visible Learn");
 assert.doesNotMatch(presentation,/id:"today\.gospel"/,"Today’s Gospel returned as a Formation launcher");
 assert.match(owner,/"today\.gospel"/,"Today’s Gospel compatibility route was removed rather than hidden");
-assert.match(presentation,/Spiritual & Moral Life/);
-assert.match(presentation,/Sacraments & Life Events/);
+assert.match(presentation,/Spiritual Life & Devotions/);
+assert.match(presentation,/Sacraments & Christian Life/);
 assert.match(presentation,/data-ao-learn-family/,"Formation landing does not expose learning-intent doors");
 assert.match(presentation,/aoLearnFamilyGrid/,"Formation family-door grid is missing");
 assert.match(owner,/state\.family/,"Formation owner does not retain family navigation state");
 assert.match(owner,/familyId:state\.family/,"Formation presentation is not driven by family state");
 const spiritualSection=LEARN_LAYOUT.sections.find(section=>section.id==="spiritual-moral");
 const liturgySection=LEARN_LAYOUT.sections.find(section=>section.id==="liturgy-tradition");
-assert.ok(spiritualSection?.items.some(item=>item.id==="learn.scapular"),"Brown Scapular is not classified under Spiritual & Moral Life");
+assert.ok(spiritualSection?.items.some(item=>item.id==="learn.scapular"),"Brown Scapular is not classified under Spiritual Life & Devotions");
 assert.equal(liturgySection?.items.some(item=>item.id==="learn.scapular"),false,"Brown Scapular remains misclassified under Liturgy & Tradition");
+const questionSection=LEARN_LAYOUT.sections.find(section=>section.id==="questions");
+assert.deepEqual(questionSection?.items.map(item=>item.id),["learn.sexual_ethics"],"Sexual Ethics needs a single authoritative Questions category");
+assert.equal(spiritualSection?.items.some(item=>item.id==="learn.sexual_ethics"),false,"Moral debates were duplicated under Spiritual Life");
+assert.equal(LEARN_LAYOUT.sections.length,9,"All nine Formation subjects must have an equal navigation level");
+assert.equal(LEARN_LAYOUT.sections.find(x=>x.id==="apologetics")?.reviewCorpus,"apologetics");
+assert.equal(LEARN_LAYOUT.sections.find(x=>x.id==="church-crisis")?.reviewCorpus,"crisis");
+assert.deepEqual(LEARN_LAYOUT.sections.filter(x=>x.reviewCorpus).map(x=>x.id),
+ ["apologetics","church-crisis"],"Two distinct draft subject owners only");
+assert.equal(new Set(LEARN_MODULE_IDS).size,15,"Formation has duplicated canonical module routes");
+assert.match(presentation,/formationReaderCss/,"Formation hub has not joined the shared reader design");
+
 assert.match(presentation,/type:"practice".*learn\.serve_mass\.responses|id:"learn\.serve_mass\.responses",type:"practice"/s,"Serve Low Mass is not classified as practice");
 assert.match(owner,/modular-learn-v1/);
 assert.match(owner,/aoLearnRouteOwner/);

@@ -32,6 +32,9 @@ export function resolveReaderPreferences(input = {}) {
     gestureProfile,
     language: input.language ?? "vernacular",
     localPostures: Object.freeze({ ...(input.localPostures ?? {}) }),
+    localGestures: Object.freeze({ ...(input.localGestures ?? {}) }),
+    followPriestSeating: input.followPriestSeating !== false,
+    credoSitStart: input.credoSitStart === "AO.SM.C0098" ? "AO.SM.C0098" : "AO.SM.C0097",
   });
 }
 

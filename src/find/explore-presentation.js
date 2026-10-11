@@ -1,5 +1,5 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
-import { renderHeritageToString } from "./heritage-presentation.js";
+import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
 const arr=value=>Array.isArray(value)?value:[];
@@ -92,26 +92,110 @@ function placeRecordRows(records,language){
 function placeSources(profile,language){
   const links=arr(profile?.sources).filter(source=>source?.url);
   if(!links.length)return "";
-  return '<section class="aoFindSources"><small>'+esc(L(language,"SOURCES","SOURCES"))+'</small><div>'
-    +links.map(source=>'<a href="'+esc(source.url)+'" target="_blank" rel="noopener">'+esc(source.issuer||source.title||L(language,"Source","Source"))+'</a>').join("")
-    +'</div></section>';
+  return '<section class="aoFindSources" data-explore-place-chapter="sources"><details class="aoPlaceAccordion"><summary>'+esc(L(language,"Sources and geographic evidence","Sources et références géographiques"))+' · '+links.length+'</summary><div>'
+    +links.map(source=>'<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.issuer||source.title||L(language,"Source","Source"))+'</a>').join("")
+    +'</div></details></section>';
 }
+
+function illustratedGuideHtml(profile,language){
+ const guide=profile?.illustrated_guide;if(!guide)return "";
+ const loc=(item,key)=>item?.[key+"_"+language]??item?.[key+"_en"]??"";
+ const cite=(url,label)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(label||L(language,"Original source","Source originale"))+' ↗</a>';
+ let html='<section class="aoExploreIllustratedGuide" data-explore-place-chapter="guide" aria-label="'+esc(L(language,"Pilgrimage guide","Guide du pèlerin"))+'">';
+ html+='<header class="aoExploreGuideIntro"><small>'+esc(L(language,"PILGRIMAGE GUIDE","GUIDE DU PÈLERIN"))+'</small><h3>'+esc(loc(guide,"subtitle"))+'</h3><p>'+esc(loc(guide,"region"))+'</p><div class="aoExploreStoryEvidence">'+cite(guide.official_url,L(language,"Official website","Site officiel"))+'</div></header>';
+ for(const section of arr(guide.sections)){
+  html+='<section class="aoExploreGuideSection"><h4>'+esc(loc(section,"title"))+'</h4>';
+  for(const row of arr(section.paragraphs))html+='<article class="aoExploreGuideParagraph"><p>'+esc(row?.[language]||row?.en||"")+'</p><div class="aoExploreStoryEvidence">'+cite(row?.source_url,L(language,"Historical source","Source historique"))+'</div></article>';
+  html+='</section>';
+ }
+ if(arr(guide.stops).length){
+  html+='<section class="aoExploreGuideSection"><h4>'+esc(L(language,"Sacred places to see","Lieux sacrés à découvrir"))+'</h4><div class="aoExploreGuideStops">';
+  for(const row of guide.stops)html+='<article><h5>'+esc(loc(row,"name"))+'</h5><p>'+esc(loc(row,"description"))+'</p><div class="aoExploreStoryEvidence">'+cite(row.source_url)+'</div></article>';
+  html+='</div></section>';
+ }
+ if(arr(guide.chronology).length){
+  html+='<section class="aoExploreGuideSection"><h4>'+esc(L(language,"Historical timeline","Repères chronologiques"))+'</h4><ol class="aoExploreGuideTimeline">';
+  for(const row of guide.chronology)html+='<li><time>'+esc(row.when)+'</time><div><strong>'+esc(loc(row,"title"))+'</strong><div class="aoExploreStoryEvidence">'+cite(row.source_url)+'</div></div></li>';
+  html+='</ol></section>';
+ }
+ if(arr(guide.programmes).length){
+  html+='<section class="aoExploreGuideSection"><h4>'+esc(L(language,"Dates and pilgrimage programmes","Dates et programmes de pèlerinage"))+'</h4>';
+  for(const row of guide.programmes){
+   const period=row.month_day?L(language,"Anniversary: ","Anniversaire : ")+row.month_day:row.start_date?(row.start_date+(row.end_date?" — "+row.end_date:"")):"";
+   const yearSpecific=String(row.date_kind||"").includes("YEAR_SPECIFIC");
+   html+='<article class="aoExploreGuideDate"><strong>'+esc(loc(row,"label"))+'</strong>'+(period?'<time>'+esc(period)+'</time>':"")+(yearSpecific?'<small>'+esc(L(language,"Published year only, not a recurring schedule","Année publiée uniquement ; dates non reconduites"))+'</small>':"")+'<p>'+esc(loc(row,"details"))+'</p><div class="aoExploreStoryEvidence">'+cite(row.source_url,L(language,"Official source","Source officielle"))+'</div></article>';
+  }
+  html+='</section>';
+ }
+ if(guide.visit)html+='<section class="aoExploreGuideSection aoExploreGuideVisit"><h4>'+esc(L(language,"Plan a visit","Préparer une visite"))+'</h4><p>'+esc(guide.visit?.[language]||guide.visit.en||"")+'</p><div class="aoExploreStoryEvidence">'+cite(guide.visit.source_url,L(language,"Check current information","Informations actuelles"))+'</div></section>';
+ return html+'</section>';
+}
+
 function placeSheet(vm){
   const profile=vm.selectedPlace;if(!profile)return "";
-  let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
-  html+='<header><div><small>'+esc(L(vm.language,"PLACE","LIEU"))+'</small><h2>'+esc(profile.name||"")+'</h2>';
+  let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet'+(profile.editorial_feature?' aoExplorePlaceEditorial':'')+'" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
+  html+='<header><div><small>'+(profile.editorial_feature?esc(L(vm.language,"IN FOCUS","À DÉCOUVRIR"))+' · ':"")+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
   if(profile.address_label)html+='<p>'+esc(profile.address_label)+'</p>';
   html+='</div><button type="button" data-find-close-place aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
+  html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-place>'+esc(L(vm.language,"← Back to place preview","← Retour à l’aperçu"))+'</button></div>';
   if(arr(profile.aliases).length)html+='<p class="aoExploreLead">'+esc(profile.aliases.join(" · "))+'</p>';
+  if(profile.media){
+    html+='<figure class="aoExplorePlaceMedia" data-photo-orientation="'+esc(profile.media.orientation)+'"><img loading="lazy" decoding="async" src="'+esc(profile.media.asset_path)+'" alt="'+esc(vm.language==="fr"?profile.media.alt_fr:profile.media.alt_en)+'">';
+    html+='<figcaption>'+esc(profile.media.credit)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a> · <a href="'+esc(profile.media.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(profile.media.license)+'</a> · '+esc(vm.language==="fr"?profile.media.changes_fr:profile.media.changes_en)+'</figcaption></figure>';
+  }
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
-  html+='<div class="aoFindFacts">'
-    +'<div><small>'+esc(L(vm.language,"Shrines","Sanctuaires"))+'</small><strong>'+esc(profile.counts?.shrines??0)+'</strong></div>'
-    +'<div><small>'+esc(L(vm.language,"Traditions","Traditions"))+'</small><strong>'+esc(profile.counts?.traditions??0)+'</strong></div>'
-    +'<div><small>'+esc(L(vm.language,"Pilgrimages","Pèlerinages"))+'</small><strong>'+esc(profile.counts?.pilgrimages??0)+'</strong></div>'
-    +'<div><small>TLM</small><strong>'+esc(profile.counts?.tlm??0)+'</strong></div>'
-    +'</div>';
+  // Reader-first: only source-owned text and already linked devotions appear.
+  // Chapter shortcuts scroll this Place sheet, never leave the application.
+  const preferredCategory=arr(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
+  const synopsis=sacredPlaceSynopsis(profile,{maxLength:750,language:vm.language,preferredCategory});
+  // A relic-only or apparition-only map selection must not silently inherit
+  // a different Shrine account simply because the physical Place is shared.
+  const storyKindForFilter={shrines:"ORIGIN",pilgrimages:"PILGRIMAGE",
+    apparitions:"APPARITION",relics:"RELIC",traditions:"TRADITION"};
+  const restricted=vm.lens==="heritage"&&arr(vm.filters?.heritageCategories).length===1
+    ?arr(vm.filters.heritageCategories)[0]:null;
+  const chapters=restricted&&storyKindForFilter[restricted]
+    ?arr(profile.story_chapters).filter(row=>row.kind===storyKindForFilter[restricted])
+    :arr(profile.story_chapters);
+  const hasGuide=Boolean(profile.illustrated_guide);
+  const hasNovenas=arr(profile.novenas).length>0;
+  const hasCalendar=arr(profile.calendar).length>0||arr(profile.seasonal_pilgrimages).length>0;
+  const hasSources=arr(profile.sources).some(source=>source?.url);
+  if(profile.editorial_feature||chapters.length){
+    html+='<nav class="aoExplorePlaceChapters" aria-label="'+esc(L(vm.language,"Explore this place","Explorer ce lieu"))+'">';
+    if(chapters.length||synopsis)html+='<button type="button" data-explore-place-jump="story">'+esc(L(vm.language,"The place","Le lieu"))+'</button>';
+    if(hasGuide)html+='<button type="button" data-explore-place-jump="guide">'+esc(L(vm.language,"Pilgrimage guide","Guide du pèlerin"))+'</button>';
+    if(hasNovenas)html+='<button type="button" data-explore-place-jump="pray">'+esc(L(vm.language,"Pray","Prier"))+'</button>';
+    if(hasCalendar)html+='<button type="button" data-explore-place-jump="calendar">'+esc(L(vm.language,"Calendar","Calendrier"))+'</button>';
+    if(profile.directions_url)html+='<button type="button" data-explore-place-jump="visit">'+esc(L(vm.language,"Visit","Visiter"))+'</button>';
+    if(hasSources)html+='<button type="button" data-explore-place-jump="sources">'+esc(L(vm.language,"Sources","Sources"))+'</button>';
+    html+='</nav>';
+  }
+  if(chapters.length){
+    const KIND_LABELS={
+      ORIGIN:["The sanctuary","Le sanctuaire"],
+      PILGRIMAGE:["Pilgrimage","Pèlerinage"],
+      APPARITION:["Apparition account","Récit d’apparition"],
+      RELIC:["Relics and custody","Reliques et conservation"],
+      TRADITION:["Devotional practice","Pratique dévotionnelle"],
+    };
+    html+='<section class="aoExplorePlaceOpening aoExploreSourcedStory" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small>';
+    for(const [index,chapter] of chapters.entries()){
+      const caption=KIND_LABELS[chapter.kind]??["Record","Fiche"];
+      const narrative=vm.language==="fr"?chapter.body_fr:chapter.body_en;
+      html+='<article class="aoExploreStoryChapter" data-story-kind="'+esc(chapter.kind)+'">'
+        +'<h3>'+esc(L(vm.language,...caption))+(chapter.kind==="PILGRIMAGE"&&chapters.filter(row=>row.kind==="PILGRIMAGE").length>1?' · '+String(chapters.slice(0,index+1).filter(row=>row.kind==="PILGRIMAGE").length):"")+'</h3>'
+        +'<p>'+esc(narrative)+'</p><div class="aoExploreStoryEvidence" aria-label="'+esc(L(vm.language,"Sources for this paragraph","Sources de ce paragraphe"))+'">';
+      for(const source of arr(chapter.sources))html+='<a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(source.title)+'">'+esc(source.issuer||source.title||L(vm.language,"Original source","Source originale"))+' <span aria-hidden="true">↗</span></a>';
+      html+='</div></article>';
+    }
+    html+='</section>';
+  }else if(synopsis)html+='<section class="aoExplorePlaceOpening" data-explore-place-chapter="story"><small>'+esc(L(vm.language,"THE PLACE","LE LIEU"))+'</small><p class="aoHeritageOverview">'+esc(synopsis)+'</p></section>';
+  if(hasGuide)html+=illustratedGuideHtml(profile,vm.language);
+  if(profile.directions_url)html+='<div class="aoFindActions aoExplorePlaceVisit" data-explore-place-chapter="visit"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></div>';
+  if(!chapters.length&&!synopsis)html+='<p class="aoHeritageMeta">'+esc(L(vm.language,"Explore original records and their sources below.","Consultez les fiches originales et leurs sources ci-dessous."))+'</p>';
 
   if(arr(profile.related_places).length){
     html+='<section class="aoExplorePlaceGroup" data-explore-related-places><small>'+esc(L(vm.language,"RELATED PLACES","LIEUX ASSOCIÉS"))+'</small><div class="aoExplorePlaceRows">';
@@ -131,16 +215,19 @@ function placeSheet(vm){
   }
 
   if(arr(profile.novenas).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"RELATED NOVENAS & DEVOTIONS","NEUVAINES ET DÉVOTIONS ASSOCIÉES"))+'</small>';
+    html+='<section class="aoExplorePlaceGroup" data-explore-place-chapter="pray"><small>'+esc(L(vm.language,"RELATED NOVENAS & DEVOTIONS","NEUVAINES ET DÉVOTIONS ASSOCIÉES"))+'</small>';
     for(const novena of profile.novenas){
       const name=vm.language==="fr"?novena.title_fr:novena.title_en;
-      html+='<article><div><strong>'+esc(name)+'</strong>'+(arr(novena.notes).length?'<p>'+esc(novena.notes.join(" "))+'</p>':"")+'</div><button type="button" data-explore-open-novena="'+esc(novena.id)+'">'+esc(L(vm.language,"Pray novena","Prier la neuvaine"))+'</button></article>';
+      html+='<article><div><strong>'+esc(name)+'</strong>';
+      const association=arr(novena.sources).find(source=>/^https:\/\/[^\s]+$/i.test(source?.url||""));
+      if(association)html+='<p class="aoExploreNovenaEvidence"><a href="'+esc(association.url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(vm.language,"Devotional association — source","Lien dévotionnel — source"))+' ↗</a></p>';
+      html+='</div><button type="button" data-explore-open-novena="'+esc(novena.id)+'">'+esc(L(vm.language,"Pray novena","Prier la neuvaine"))+'</button></article>';
     }
     html+='</section>';
   }
 
   if(arr(profile.calendar).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"CALENDAR","CALENDRIER"))+'</small>';
+    html+='<section class="aoExplorePlaceGroup" data-explore-place-chapter="calendar"><small>'+esc(L(vm.language,"DATED OBSERVANCES","CÉLÉBRATIONS DATÉES"))+'</small>';
     for(const event of profile.calendar){
       html+='<article><strong>'+esc(event.title)+'</strong>'+(event.date_label?'<button type="button" data-explore-calendar-date="'+esc(event.date)+'">'+esc(event.date_label)+' →</button>':'<span>'+esc(L(vm.language,"Seasonal / local schedule","Saison / calendrier local"))+'</span>')+'</article>';
     }
@@ -148,36 +235,34 @@ function placeSheet(vm){
   }
 
   if(arr(profile.seasonal_pilgrimages).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"SEASONAL / VARIABLE PILGRIMAGE DATES","PÈLERINAGES SAISONNIERS / DATES VARIABLES"))+'</small>';
+    html+='<section class="aoExplorePlaceGroup"'+(arr(profile.calendar).length?'':' data-explore-place-chapter="calendar"')+'><small>'+esc(L(vm.language,"SEASONAL / VARIABLE PILGRIMAGE DATES","PÈLERINAGES SAISONNIERS / DATES VARIABLES"))+'</small>';
     for(const row of profile.seasonal_pilgrimages){
       html+='<article><strong>'+esc(row.title)+'</strong><span>'+esc(L(vm.language,"Check local programme","Voir le programme local"))+'</span></article>';
     }
     html+='</section>';
   }
   if(arr(profile.apparitions).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"APPARITION HISTORIES","HISTOIRE DES APPARITIONS"))+'</small>'+placeRecordRows(profile.apparitions,vm.language)+'</section>';
+    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"APPARITION HISTORIES","HISTOIRE DES APPARITIONS"))+' · '+arr(profile.apparitions).length+'</summary>'+placeRecordRows(profile.apparitions,vm.language)+'</details></section>';
   }
   if(arr(profile.relics).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"RELICS & CUSTODY","RELIQUES ET LIEUX DE CONSERVATION"))+'</small>'+placeRecordRows(profile.relics,vm.language)+'</section>';
+    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"RELICS & CUSTODY","RELIQUES ET LIEUX DE CONSERVATION"))+' · '+arr(profile.relics).length+'</summary>'+placeRecordRows(profile.relics,vm.language)+'</details></section>';
   }
   if(arr(profile.shrines).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"SACRED SITE","LIEU SACRÉ"))+'</small>'+placeRecordRows(profile.shrines,vm.language)+'</section>';
+    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"SACRED SITE","LIEU SACRÉ"))+' · '+arr(profile.shrines).length+'</summary>'+placeRecordRows(profile.shrines,vm.language)+'</details></section>';
   }
   if(arr(profile.traditions).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"TRADITIONS & DEVOTIONAL CONTEXT","TRADITIONS & CONTEXTE DÉVOTIONNEL"))+'</small>'+placeRecordRows(profile.traditions,vm.language)+'</section>';
+    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"TRADITIONS & DEVOTIONAL CONTEXT","TRADITIONS & CONTEXTE DÉVOTIONNEL"))+' · '+arr(profile.traditions).length+'</summary>'+placeRecordRows(profile.traditions,vm.language)+'</details></section>';
   }
   if(arr(profile.pilgrimages).length){
-    html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"PILGRIMAGES","PÈLERINAGES"))+'</small>'+placeRecordRows(profile.pilgrimages,vm.language)+'</section>';
+    html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"PILGRIMAGES","PÈLERINAGES"))+' · '+arr(profile.pilgrimages).length+'</summary>'+placeRecordRows(profile.pilgrimages,vm.language)+'</details></section>';
   }
 
-  html+='<section class="aoExplorePlaceGroup"><small>'+esc(L(vm.language,"TLM AT THIS EXACT PLACE","MESSE TRADITIONNELLE EN CE LIEU EXACT"))+'</small>';
+  // Never show a giant empty TLM section on every shrine page. Exact
+  // Directory relationships remain accessible when source-verified.
+  html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"TLM AT THIS EXACT PLACE","MESSE TRADITIONNELLE EN CE LIEU EXACT"))+'</summary>';
   if(arr(profile.tlm).length)html+=placeRecordRows(profile.tlm,vm.language);
   else html+='<p>'+esc(L(vm.language,"No TLM venue is currently linked to this exact Place. This does not make any claim about nearby Masses.","Aucun lieu de messe traditionnelle n’est actuellement relié à ce lieu exact. Cela ne dit rien des messes célébrées à proximité."))+'</p>';
-  html+='</section>';
-
-  if(profile.directions_url){
-    html+='<section class="aoFindActions"><a href="'+esc(profile.directions_url)+'" target="_blank" rel="noopener">'+esc(L(vm.language,"Directions","Itinéraire"))+'</a></section>';
-  }
+  html+='</details></section>';
   html+=placeSources(profile,vm.language);
   html+='<footer><small>'+esc(L(vm.language,"This page aggregates records by canonical Place ID. It does not infer relationships from geographic proximity.","Cette page agrège les fiches par identifiant canonique de lieu. Elle ne déduit aucune relation de la seule proximité géographique."))+'</small>';
   if(profile?.geo?.attribution)html+='<small class="aoFindGeoAttribution">'+esc(profile.geo.attribution)+'</small>';
@@ -188,12 +273,60 @@ function placeSheet(vm){
 const translatedTitle=(item,language)=>language==="fr"&&item?.title_fr?item.title_fr:item?.title;
 const translatedSummary=(item,language)=>language==="fr"&&item?.summary_fr?item.summary_fr:item?.summary;
 function itemCard(item,vm){
+  const full=(item.kind==="TLM_VENUE"?"":String(translatedSummary(item,vm.language)??"")).replace(/\s+/g," ").trim();
+  const cut=full.length>170?full.slice(0,170).replace(/\s+\S*$/u,"").trimEnd()+"…":full;
   return '<button type="button" class="aoFindCard aoExploreCard" data-explore-item="'+esc(item.item_id)+'" data-explore-lens="'+esc(item.lens)+'">'
-    +'<span class="aoFindCardTop"><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><i class="aoFindStatus" data-state="'+esc(item.map_publishable?"YES":"UNKNOWN")+'">'+esc(item.status||"")+'</i></span>'
+    +'<span class="aoFindCardTop"><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small>'
+    +(item.status?'<i class="aoExploreCardRecognition">'+esc(item.status==="OFFICIAL SANCTUARY"?L(vm.language,"Official Sanctuary","Sanctuaire officiel"):item.status)+'</i>':"")+'</span>'
     +'<strong>'+esc(translatedTitle(item,vm.language)||"")+'</strong>'
-    +(item.subtitle?'<span>'+esc(item.subtitle)+'</span>':"")
-    +(item.summary?'<p>'+esc(String(translatedSummary(item,vm.language)).slice(0,240))+'</p>':"")
+    +(item.subtitle?'<span class="aoExploreCardLocation">'+esc(item.subtitle)+'</span>':"")
+    +(cut?'<p>'+esc(cut)+'</p>':"")
+    +'<span class="aoExploreCardOpen">'+esc(L(vm.language,"Explore record","Voir la fiche"))+' <span aria-hidden="true">→</span></span>'
     +'</button>';
+}
+
+// Map and list use the same two-stage pattern: compact preview first,
+// then detailed records and their source links on deliberate request.
+function compactExploreItemSheet(vm){
+  const item=vm.selected;
+  if(!item)return "";
+  const lang=vm.language;
+  const title=translatedTitle(item,lang)||"";
+  const area=[item.subtitle||"",item.subtitle?"":addressText(item.address)].filter(Boolean).join("");
+  const fullSummary=String(translatedSummary(item,lang)||"").replace(/\s+/g," ").trim();
+  const max=210;
+  const summary=fullSummary.length>max
+    ?fullSummary.slice(0,max).replace(/\s+\S*$/,"")+"…":fullSummary;
+  const isMass=item.kind==="TLM_VENUE";
+  const isRelic=item.lens==="relics";
+  const isApparition=item.lens==="apparitions";
+  const floatingOnMap=vm.view==="map";
+  let html='<div class="aoFindSheetBackdrop'+(floatingOnMap?' aoExploreQuickPreviewLayer':'')+'" data-find-close-detail><section class="aoFindSheet aoExploreQuickPreview" role="dialog" aria-modal="'+String(!floatingOnMap)+'" aria-label="'+esc(title)+'" data-explore-preview="'+esc(item.item_id)+'">';
+  html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
+  html+='<header><div><small>'+esc(item.eyebrow||lensLabel(lang,item.lens))+'</small><h2>'+esc(title)+'</h2>';
+  if(area)html+='<p>'+esc(area)+'</p>';
+  html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
+  if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
+  if(isMass)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
+    "Provisional venue. Current Mass times, entrance and the una-cum status of individual celebrations are not verified.",
+    "Lieu provisoire. Horaires actuels, entrée et caractère una cum de chaque célébration non vérifiés."))+'</p>';
+  else if(item.geo?.approximate||item.geo?.indicative_only)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
+    "Map position is indicative, not a verified entrance.",
+    "Position indicative, non une entrée vérifiée."))+'</p>';
+  if(isRelic||isApparition)html+='<p class="aoExplorePreviewCaution">'+esc(isRelic
+    ?L(lang,"Reported custody does not authenticate a relic.","Le lieu de conservation rapporté n’authentifie pas la relique.")
+    :L(lang,"A reported apparition is not thereby authenticated.","Un récit d’apparition ne constitue pas une authentification."))+'</p>';
+  html+='<div class="aoExplorePreviewActions">';
+  html+='<button type="button" data-explore-expand-detail>'+esc(L(lang,
+    "Details & sources","Détails et sources"))+' <span aria-hidden="true">→</span></button>';
+  const primary=arr(item.actions).find(action=>action?.url&&action?.label==="Website");
+  if(primary)html+='<a href="'+esc(primary.url)+'" target="_blank" rel="noopener noreferrer">'+esc(L(lang,"Official site","Site officiel"))+'</a>';
+  html+='</div>';
+  const sources=arr(item.source_links).length;
+  if(sources)html+='<small class="aoExplorePreviewSourceCount">'+esc(String(sources))+' '+esc(L(lang,
+    sources===1?"source in details":"sources in details",
+    sources===1?"source dans la fiche":"sources dans la fiche"))+'</small>';
+  return html+'</section></div>';
 }
 function detailSheet(vm){
   const item=vm.selected;if(!item)return "";
@@ -202,6 +335,7 @@ function detailSheet(vm){
   if(item.subtitle)html+='<p>'+esc(item.subtitle)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
+  html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-detail>'+esc(L(vm.language,"← Back to preview","← Retour à l’aperçu"))+'</button></div>';
   if(item.summary)html+='<p class="aoExploreLead">'+esc(translatedSummary(item,vm.language))+'</p>';
   if(item.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(item.geo.reference_point_name?" · "+item.geo.reference_point_name:""))+"</p>";
 
@@ -274,6 +408,23 @@ function emptyState(vm){
 }
 function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
+  if(Object.hasOwn(f,"directoryGroup")){
+    let html='<section class="aoFindFilters aoExploreTlmFilters" aria-label="'+esc(L(vm.language,"Mass venue filters","Filtres des lieux de messe"))+'">';
+    html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"Show","Afficher"))+'</span>';
+    html+=pill("directoryGroup","ROME",L(vm.language,"Communities in communion with Rome","Communautés en communion avec Rome"),f.directoryGroup);
+    html+=pill("directoryGroup","ALL",L(vm.language,"All","Tous"),f.directoryGroup);
+    html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
+    html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
+    html+='</div><details class="aoExploreAdvancedFilters"><summary>'+esc(L(vm.language,"Affiliation filters","Filtres par affiliation"))+'</summary>';
+    html+='<section><small>'+esc(L(vm.language,"SOURCE-REPORTED COMMUNITY","COMMUNAUTÉ SELON LES SOURCES"))+'</small><div class="aoFindAffiliations">';
+    for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"])
+      html+='<button type="button" data-find-affiliation="'+id+'" class="'+(aff.includes(id)?"active":"")+'" aria-pressed="'+String(aff.includes(id))+'">'+esc(id==="DIOCESAN"?L(vm.language,"Diocesan","Diocésain"):id)+'</button>';
+    html+='</div></section></details>';
+    html+='<p class="aoPreliminaryDirectoryNotice">'+esc(L(vm.language,
+      "Preliminary locations only. Affiliation comes from listings; an individual Mass’s una-cum status, current celebration and timetable have not been checked. Consult the linked source before visiting.",
+      "Lieux provisoires. L’appartenance est indiquée selon les sources ; le caractère una cum de chaque messe, sa célébration actuelle et ses horaires restent à vérifier. Consultez la source avant toute visite."))+'</p>';
+    return html+'</section>';
+  }
   let html='<div class="aoFindFilters aoExploreTlmFilters">';
   html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"When","Quand"))+'</span>'
     +pill("day","ANY",L(vm.language,"Any day","Tous les jours"),f.day||"ANY")
@@ -305,7 +456,10 @@ export function buildExploreViewModel({
   placeProfiles=[],
   selectedPlaceId=null,
   expandPlace=false,
+  expandDetail=false,
   customCards=[],
+  featuredPlaces=[],
+  nearby=[],
   displayLimit=120,
 }={}){
   const list=arr(items);
@@ -326,27 +480,32 @@ export function buildExploreViewModel({
     selected,
     selectedPlace,
     expandPlace:Boolean(expandPlace),
+    expandDetail:Boolean(expandDetail),
     customCards:arr(customCards),
+    featuredPlaces:arr(featuredPlaces),
+    nearby:arr(nearby),
     mapped,
     addressOnly,
-    displayLimit:Number.isFinite(Number(displayLimit))?Math.max(60,Math.floor(Number(displayLimit))):120,
+    displayLimit:Number.isFinite(Number(displayLimit))?Math.max(24,Math.floor(Number(displayLimit))):24,
   });
 }
 
 export function renderExploreToString(vm){
-  if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet});
+  if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview:compactExploreItemSheet});
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.counts?.[vm.lens]??vm.items.length);
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
-  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(L(vm.language,"Explore","Explorer"))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
+  html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
 
   html+='<p class="aoFindActionError" data-find-action-error role="alert" hidden></p>';
-  html+='<nav class="aoExploreLensTabs"><button type="button" data-find-filter="lens" data-find-filter-value="heritage" class="aoExploreReturnMap">'+esc(L(vm.language,"Unified map","Carte générale"))+'</button>';
+  html+='<nav class="aoExploreSectionNav" aria-label="'+esc(L(vm.language,"Explore navigation","Navigation Explorer"))+'">';
+  html+='<span>'+esc(L(vm.language,"SACRED GEOGRAPHY","GÉOGRAPHIE SACRÉE"))+' · '+esc(lensLabel(vm.language,vm.lens))+'</span>';
+  html+='<details class="aoExploreSectionSwitcher"><summary>'+esc(L(vm.language,"Other sections","Autres sections"))+'</summary><div>';
+  html+='<button type="button" data-find-filter="lens" data-find-filter-value="heritage">'+esc(L(vm.language,"Sacred places map","Carte des lieux sacrés"))+'</button>';
   for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages"]){
-    const label=lensLabel(vm.language,lens);
-    const count=vm.counts?.[lens];
-    html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+esc(lens)+'" class="'+(vm.lens===lens?"active":"")+'" aria-pressed="'+String(vm.lens===lens)+'"><span>'+esc(label)+'</span>'+(Number.isFinite(Number(count))?'<small>'+esc(count)+'</small>':"")+'</button>';
+    if(lens===vm.lens)continue;
+    html+='<button type="button" data-find-filter="lens" data-find-filter-value="'+esc(lens)+'">'+esc(lensLabel(vm.language,lens))+'</button>';
   }
-  html+='</nav>';
+  html+='</div></details></nav>';
   if(vm.lens==="traditions")html+=customsAtlasPanel(vm);
   if(vm.lens==="pilgrimages"&&f.calendarKey)html+='<section class="aoExploreCalendarBridge"><span>'+esc(L(vm.language,"Pilgrimages associated with this Calendar observance","Pèlerinages associés à cette célébration du calendrier"))+' · '+esc(f.calendarKey)+'</span><button type="button" data-find-clear-calendar>'+esc(L(vm.language,"Show all pilgrimages","Tous les pèlerinages"))+'</button></section>';
 
@@ -390,11 +549,11 @@ export function renderExploreToString(vm){
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
       html+='<div class="aoMapLegend" role="note" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'">'
-        +'<span class="aoMapLegendLabel">'+esc(L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
+        +'<span class="aoMapLegendLabel">'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"Source affiliation","Affiliation selon les sources"):L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
         +'<span data-group="FSSP">FSSP</span><span data-group="ICKSP">ICKSP</span>'
         +'<span data-group="SSPX">SSPX</span><span data-group="DIOCESAN">'+esc(L(vm.language,"Diocesan","Diocésain"))+'</span>'
         +'<span data-group="OTHER">'+esc(L(vm.language,"Other","Autre"))+'</span>'
-        +'<small>'+esc(L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
+        +'<small>'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"All pins provisional; exact entrances and Mass times are not verified.","Tous les repères sont provisoires ; entrées exactes et horaires des messes non vérifiés."):L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
         +'</div>';
     }
   }else if(vm.items.length){
@@ -403,6 +562,6 @@ export function renderExploreToString(vm){
     if(visible.length<vm.items.length)html+='<div class="aoFindMore"><span>'+esc(L(vm.language,"Showing ","Affichage de "))+visible.length+' / '+vm.items.length+'</span>'
       +'<button type="button" data-find-show-more>'+esc(L(vm.language,"Show more results","Afficher plus de résultats"))+'</button></div>';
   }else html+=emptyState(vm);
-  html+='</div>'+(vm.selectedPlace?placeSheet(vm):detailSheet(vm))+'</section>';
+  html+='</div>'+(vm.selectedPlace?(vm.expandPlace?placeSheet(vm):compactHeritagePlaceSheet(vm)):(vm.selected?(vm.expandDetail?detailSheet(vm):compactExploreItemSheet(vm)):""))+'</section>';
   return html;
 }

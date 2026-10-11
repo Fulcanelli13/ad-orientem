@@ -28,17 +28,38 @@ try{
     deviceScaleFactor:2,serviceWorkers:"block"});
   const errors=[];
   page.on("pageerror",e=>errors.push(String(e?.message||e)));
-  await page.goto("http://127.0.0.1:4251/index.html?aoFormationReview=1",
+  await page.goto("http://127.0.0.1:4251/index.html",
     {waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
     null,{timeout:30000});
   const navigated=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("learn"));
   assert.equal(navigated?.ok,true,"Formation hub did not open");
   await page.locator("#ao-learn-modular-root").waitFor({state:"visible",timeout:12000});
+  assert.equal(await page.locator("#ao-learn-modular-root [data-ao-learn-dossier-review]").count(),0,
+    "Research previews must not crowd the Formation root");
+  const hub=page.locator("#ao-learn-modular-root");
+  await hub.locator('[data-ao-learn-family="questions"]').tap();
+  await page.waitForFunction(()=>globalThis.AO_LEARN_APP_V1?.status?.().family==="questions",null,{timeout:10000});
+  assert.equal(await hub.locator('[data-ao-learn-module="learn.sexual_ethics"]').count(),1,
+    "Moral Questions lost the canonical Sexual Ethics owner");
+  assert.equal(await hub.locator("[data-ao-learn-dossier-review]").count(),0,
+    "Neither Apologetics nor Church Crisis belongs under moral questions");
+  await hub.locator("[data-ao-learn-back]").tap();
+  await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
   const selector="#ao-learn-modular-root [data-ao-learn-dossier-review]";
-  assert.equal(await page.locator(selector).count(),2,"exactly two QA-only research doors expected");
+  async function enterSubject(family,corpus){
+    if((await page.evaluate(()=>globalThis.AO_LEARN_APP_V1?.status?.().family))!==null){
+      await hub.locator("[data-ao-learn-back]").tap();
+      await page.waitForFunction(()=>!globalThis.AO_LEARN_APP_V1?.status?.().family,null,{timeout:10000});
+    }
+    await hub.locator('[data-ao-learn-family="'+family+'"]').tap();
+    await page.waitForFunction(id=>globalThis.AO_LEARN_APP_V1?.status?.().family===id,family,{timeout:10000});
+    assert.equal(await page.locator(selector).count(),1,"Each subject has only its own dossier collection");
+    assert.equal(await page.locator(selector).first().getAttribute("data-ao-learn-dossier-review"),corpus);
+  }
+  await enterSubject("apologetics","apologetics");
 
-  async function openReview(corpus,firstId,otherId){
+  async function openReview(corpus,expectedThemes,expectedQuestions,otherId){
     const button=page.locator(selector+'[data-ao-learn-dossier-review="'+corpus+'"]');
     await button.tap();
     const root=page.locator("#ao-formation-recovery-review");
@@ -47,48 +68,116 @@ try{
       !globalThis.AO_FORMATION_RECOVERY_REVIEW_V1?.status?.().loading,null,{timeout:30000});
     const status=await page.evaluate(()=>globalThis.AO_FORMATION_RECOVERY_REVIEW_V1.status());
     assert.equal(status.error,"","research source files unavailable");
-    assert.equal(status.public,false,"unreviewed theological research advertised as public");
-    assert.equal(await root.locator('[data-rr-dossier="'+firstId+'"]').count(),1,"canonical dossier missing");
-    assert.equal(await root.locator('[data-rr-dossier="'+otherId+'"]').count(),0,"opposite corpus leaked");
-    assert.equal(await root.locator("[data-rr-family]").count(),1,"topic-family selector missing");
+    assert.equal(status.public,false,"draft was marked independently published");
+    assert.equal(status.studyPreview,true,"user-facing study preview exposed raw editorial archive");
+    assert.equal(status.view,"themes","Preview should land on subthemes rather than a flat list");
+    assert.equal(status.themeCount,expectedThemes,"Canonical category count lost");
+    assert.equal(await root.locator("[data-rr-theme]").count(),expectedThemes);
+    const navigator=root.locator(".aoFNav");
+    assert.equal(await navigator.count(),1,"Research reader missing visual topic navigator");
+    assert.equal(await navigator.locator("[data-ao-fnav-go]").count(),expectedThemes,
+      "Expanded navigator must index each canonical subject");
+    const controls=await navigator.locator(".aoFNavRail button").evaluateAll(nodes=>
+      nodes.map(b=>({w:b.getBoundingClientRect().width,h:b.getBoundingClientRect().height})));
+    assert.ok(controls.every(x=>x.w>=44&&x.h>=44),"Research reader navigation touch targets are undersized");
+    await navigator.locator('[data-ao-fnav-action="toggle"]').tap();
+    assert.equal(await navigator.locator(".aoFNavMenu").isVisible(),true);
+    await navigator.locator('[data-ao-fnav-go="1"]').tap();
+    assert.equal(await navigator.locator(".aoFNavMenu").isVisible(),false);
+    const counts=await root.locator(".rrThemeCard").evaluateAll(nodes=>nodes.map(n=>Number(n.dataset.rrThemeCount)));
+    assert.equal(counts.reduce((a,b)=>a+b,0),expectedQuestions,"Subtheme counts do not cover canonical questions");
+    assert.equal(await root.locator("[data-rr-dossier]").count(),0,
+      "Subtheme landing should not expose a flat dossier warehouse");
+    assert.equal(await root.locator("[data-rr-mode]").count(),0,
+      "Internal research-bank tabs leaked to a public preview");
+    assert.equal(await root.locator("[data-rr-family]").count(),0,
+      "Old select-menu theme navigation has not been replaced");
+    assert.equal(await root.locator('[data-rr-dossier="'+otherId+'"]').count(),0,
+      "Opposite corpus leaked into a preview");
+    assert.ok(await root.locator(".rrWarning").first().textContent(),"Preliminary caution missing");
     return root;
   }
 
-  let root=await openReview("apologetics","APOL-001","CR-LIT-05");
-  await root.locator("[data-rr-family]").selectOption("christ");
+  // Apologetics: 9 visible subthemes; one category opens its own question list.
+  let root=await openReview("apologetics",9,60,"CR-LIT-05");
+  await root.locator('[data-rr-theme="christ"]').tap();
+  await page.waitForFunction(()=>globalThis.AO_FORMATION_RECOVERY_REVIEW_V1?.status?.().theme==="christ",null,{timeout:10000});
+  assert.equal(await root.locator("[data-rr-dossier]").count(),5,"Christ should have five canonical questions");
   assert.equal(await root.locator('[data-rr-dossier="APOL-001"]').count(),0,
-    "family selection failed to filter unrelated questions");
-  assert.equal(await root.locator('[data-rr-dossier="APOL-007"]').count(),1,
-    "Christ category did not expose its canonical questions");
-  await root.locator("[data-rr-family]").selectOption("all");
+    "Christ category mixed unrelated apologetics questions");
+  assert.equal(await root.locator('[data-rr-dossier="APOL-007"]').count(),1);
+  await root.locator('[data-rr-theme="god-revelation"]').tap();
+  await page.waitForFunction(()=>globalThis.AO_FORMATION_RECOVERY_REVIEW_V1?.status?.().theme==="god-revelation",null,{timeout:10000});
+  assert.equal(await root.locator("[data-rr-dossier]").count(),6,"God and Revelation should have six questions");
   await root.locator('[data-rr-dossier="APOL-001"]').tap();
   await root.locator('[data-rr-canonical-synthesis="APOL-001"]').waitFor({state:"visible"});
   assert.ok(await root.locator('[data-rr-canonical-synthesis="APOL-001"] a[href^="https://"]').count()>0,
-    "canonical answer has no source links");
+    "Apologetics paragraphs lost their original-source links");
   await root.locator("[data-rr-back]").tap();
-  await root.locator("[data-rr-back]").tap();
-  assert.equal(await page.locator("#ao-formation-recovery-review").count(),0,"reader Back failed to close");
-  assert.equal(await page.evaluate(()=>document.activeElement?.dataset?.aoLearnDossierReview),
-    "apologetics","Formation launcher focus not restored");
+  assert.equal(await root.locator('[data-rr-dossier="APOL-001"]').count(),1,
+    "Back from the answer must restore its originating theme");
+  await root.locator("[data-rr-themes]").tap();
+  assert.equal(await root.locator("[data-rr-theme]").count(),9,"All nine themes must be reachable again");
 
-  root=await openReview("crisis","CR-LIT-05","APOL-001");
+  // Global search should work from the overview without first choosing a category.
+  const globalSearch=root.locator("[data-rr-search]");
+  await globalSearch.fill("APOL-045");
+  assert.equal(await root.locator('[data-rr-dossier="APOL-045"]').count(),1,
+    "Apologetics overview search did not find a cross-theme question");
+  await root.locator('[data-rr-dossier="APOL-045"]').tap();
+  await root.locator('[data-rr-canonical-synthesis="APOL-045"]').waitFor({state:"visible"});
+  await root.locator("[data-rr-back]").tap();
+  assert.equal(await root.locator("[data-rr-theme]").count(),9,
+    "Back from global search must restore the theme overview");
+  assert.equal(await globalSearch.inputValue(),"APOL-045","Search query must survive dossier navigation");
+  await root.locator("[data-rr-back]").tap();
+  assert.equal(await page.locator("#ao-formation-recovery-review").count(),0,
+    "Back from Apologetics overview must return to Formation");
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset?.aoLearnDossierReview),
+    "apologetics","Formation Apologetics launcher focus not restored");
+
+  await enterSubject("church-crisis","crisis");
+  root=await openReview("crisis",8,81,"APOL-001");
+  await root.locator('[data-rr-theme="liturgical"]').tap();
+  assert.equal(await root.locator("[data-rr-dossier]").count(),12,
+    "Liturgical Crisis should list twelve questions");
+  const themeSearch=root.locator("[data-rr-search]");
+  await themeSearch.fill("CR-LIT-05");
+  assert.equal(await root.locator("[data-rr-dossier]").count(),1,
+    "Theme search did not narrow to its canonical Crisis dossier");
   await root.locator('[data-rr-dossier="CR-LIT-05"]').tap();
   await root.locator('[data-rr-canonical-synthesis="CR-LIT-05"]').waitFor({state:"visible"});
   assert.ok(await root.locator('[data-rr-canonical-synthesis="CR-LIT-05"] a[href^="https://"]').count()>0,
-    "Church Crisis answer lost original-source links");
+    "Crisis answer lost primary source links");
+  await root.locator("[data-rr-back]").tap();
+  assert.equal(await root.locator('[data-rr-dossier="CR-LIT-05"]').count(),1,
+    "Back from Crisis answer must preserve topic search");
+  assert.equal(await themeSearch.inputValue(),"CR-LIT-05");
+  await root.locator("[data-rr-back]").tap();
+  assert.equal(await root.locator("[data-rr-theme]").count(),8,
+    "Back from a Crisis theme must restore eight subthemes");
   for(const width of [320,390,430]){
     await page.setViewportSize({width,height:844});
     const metrics=await root.evaluate(el=>({
       overflow:el.scrollWidth-el.clientWidth,
       headerHeight:el.querySelector(".rrTop")?.getBoundingClientRect().height,
-      screenWidth:el.getBoundingClientRect().width
+      screenWidth:el.getBoundingClientRect().width,
+      tiles:[...el.querySelectorAll(".rrThemeCard")].map(x=>x.getBoundingClientRect().width)
     }));
-    assert.ok(metrics.overflow<=3,"review reader overflows at "+width+"px: "+JSON.stringify(metrics));
+    assert.ok(metrics.overflow<=3,"subtheme grid overflows at "+width+"px: "+JSON.stringify(metrics));
     assert.ok(metrics.headerHeight>=44,"review header controls too small for phone");
+    assert.ok(metrics.tiles.every(n=>n>=128),"theme tile collapses below usable phone size");
+    const navMetrics=await root.locator(".aoFNav").evaluate(n=>({
+      overflow:n.scrollWidth-n.clientWidth,
+      buttons:[...n.querySelectorAll(".aoFNavRail button")].map(b=>b.getBoundingClientRect().height)
+    }));
+    assert.ok(navMetrics.overflow<=2,"formation cinematic navigation overflows at "+width+"px");
+    assert.ok(navMetrics.buttons.every(h=>h>=44),"formation subtheme navigator has undersized controls");
   }
+
   assert.equal(errors.filter(e=>/formation.recovery|formation.research|research files unavailable/i.test(e)).length,0,
     "Formation review raised a browser runtime exception: "+errors.join("; "));
-  console.log("PASS: Formation review phone route, APOL/CR corpus isolation, thematic filter, sources, Back/focus");
+  console.log("PASS: distinct Formation subjects expose preliminary previews, source status, nine/eight subtheme doors, topic and global search, isolated sources and mobile Back/focus");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));

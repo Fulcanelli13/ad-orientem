@@ -211,6 +211,10 @@ try {
   await lourdesCard.click();
   const detail=page.locator("#ao-find-modular-root [data-find-close-detail].aoFindSheetBackdrop");
   await detail.waitFor({state:"visible"});
+  // A first tap now opens a deliberate compact preview; the full shrine
+  // record with its source-backed actions is shown only on request.
+  await page.locator("#ao-find-modular-root .aoExploreQuickPreview [data-explore-expand-detail]").click();
+  await page.locator("#ao-find-modular-root [data-explore-collapse-detail]").waitFor({state:"visible"});
   const placeAction=page.locator("#ao-find-modular-root [data-explore-open-place]").first();
   await placeAction.waitFor({state:"visible"});
   await placeAction.click();
@@ -220,6 +224,8 @@ try {
     "Explore Place-page click was swallowed by the detail backdrop dismissal handler");
   // A Place-page novena launches on the first Prayer visit; the heavy
   // PRAY donor is intentionally not loaded by the cold Home or Explore.
+  await page.locator("#ao-find-modular-root .aoHeritagePreview [data-explore-expand-place]").click();
+  await page.locator("#ao-find-modular-root .aoExplorePlaceSheet").waitFor({state:"visible",timeout:12000});
   const novenaAction=page.locator("#ao-find-modular-root [data-explore-open-novena]").first();
   await novenaAction.waitFor({state:"visible",timeout:12000});
   const selectedNovena=await novenaAction.getAttribute("data-explore-open-novena");
@@ -244,7 +250,9 @@ try {
     lens:"shrines",view:"list",query:"Lourdes",
     placeId:"place:FR:sanctuaire-notre-dame-de-lourdes"
   }));
-  await page.locator("#ao-find-modular-root [data-explore-place-owner]").waitFor({state:"visible",timeout:12000});
+  await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible",timeout:12000});
+  await page.locator("#ao-find-modular-root .aoHeritagePreview [data-explore-expand-place]").click();
+  await page.locator("#ao-find-modular-root .aoExplorePlaceSheet").waitFor({state:"visible",timeout:12000});
   const dateButton=page.locator("#ao-find-modular-root [data-explore-calendar-date]").first();
   await dateButton.waitFor({state:"visible",timeout:12000});
   const linkedDate=await dateButton.getAttribute("data-explore-calendar-date");

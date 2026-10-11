@@ -1,6 +1,8 @@
 import "./source-transport-compat.js";
 import "./offline-boot.js";
 import { installAppDesignSystem } from "./design-system.js";
+import { installAppLiturgicalTheme } from "./liturgical-theme.js";
+import { createScrollTapGuard } from "./scroll-tap-guard.js";
 import { installDateFormat } from "./date-format.js";
 import "./cinematic-runtime.js";
 import "./loading-director.js";
@@ -56,6 +58,13 @@ function installVisibleRibbonOwner(win, controller, state, presentationFx = null
   let boundRibbon = null;
   let observedRibbon = null;
   const cleanups = [];
+  // Shell buttons are particularly sensitive because a stray tap leaves
+  // Explore or a LIVE Mass. Do not interpret a swipe as navigation.
+  const scrollGuard=createScrollTapGuard(doc,{
+    trackAnywhere:true,
+    contains:target=>Boolean(doc.getElementById("ao-global-ribbon")?.contains?.(target)),
+  });
+  cleanups.push(()=>scrollGuard.dispose());
 
   const isolatedNonMass=new Set(["calendar","pray","learn","settings","find","apostolate"]);
 
@@ -412,6 +421,8 @@ export function installAppShellBridge({
         win,
         getActive: () => state.controller?.getActive?.() ?? null,
       });
+      // Calendar-owned dark accents, preserving independent selected-Proper Mass colours.
+      installAppLiturgicalTheme({ win });
       try {
         installNonMassConvergence({ win });
       } catch (error) {
@@ -433,7 +444,7 @@ export function installAppShellBridge({
     contract: NON_MASS_DONOR_CONTRACT,
     get installed() { return Boolean(state.controller); },
     get polls() { return state.polls; },
-    navigate(surface) {
+    navigate(surface,options={}) {
       if (!state.controller) {
         return Promise.resolve(Object.freeze({
           ok: false,
@@ -441,7 +452,9 @@ export function installAppShellBridge({
           reason: state.blocked ? "APP_SHELL_BLOCKED" : "APP_SHELL_NOT_READY",
         }));
       }
-      return state.presentationFx?.navigate?.(surface, () => state.controller.go(surface)) ?? state.controller.go(surface);
+      // Preserve explicit-only resume while ordinary Mass ribbon/Follow Mass
+      // commands always open the resolved preparation flow.
+      return state.presentationFx?.navigate?.(surface, () => state.controller.go(surface,options)) ?? state.controller.go(surface,options);
     },
     getActive() {
       return state.controller?.getActive?.() ?? null;

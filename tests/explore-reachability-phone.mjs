@@ -39,6 +39,63 @@ try{
  // behind the explicit More disclosure and must be reachable on phones.
  assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.().lens),"heritage");
  await page.locator('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]').waitFor({state:"visible"});
+ // Small-screen acceptance: the landing view is a map, never a directory dump.
+ assert.equal(await page.locator("#ao-find-modular-root .aoHeritageSurface .aoFindList").count(),0);
+ const layout=await page.evaluate(()=>{
+   const root=document.querySelector("#ao-find-modular-root .aoHeritageSurface");
+   const map=root?.querySelector(".aoHeritageBody .aoFindMap");
+   const panels=[".aoFindHeader",".aoHeritageTools",".aoHeritageCategories"];
+   const box=element=>{const r=element?.getBoundingClientRect();return r?{width:r.width,height:r.height,top:r.top,bottom:r.bottom}:null};
+   return {map:box(map),root:box(root),chrome:panels.map(x=>box(root?.querySelector(x))),
+     targets:[...root.querySelectorAll(".aoHeritageMassShortcut,.aoHeritageCategories button,.aoHeritageNearby,.aoHeritageMore summary")].map(box),
+     overflow:document.documentElement.scrollWidth-innerWidth};
+ });
+ assert.ok(layout.map?.height>=300,"Explore mobile chrome squeezed the map below 300px");
+ assert.ok(layout.map.width>=300,"Explore map is narrower than its intended phone canvas");
+ assert.ok(layout.chrome.every(Boolean),"Explore navigation has missing layout sections");
+ assert.ok(layout.targets.every(x=>x.height>=44),"Explore filter or navigation control below 44px");
+ const glossary=page.locator("#ao-find-modular-root .aoHeritageGlossaryButton");
+ await glossary.waitFor({state:"visible"});
+ assert.ok((await glossary.boundingBox())?.height>=44,"Contextual glossary must remain visible on phones");
+ assert.ok(layout.overflow<=1,"Explore mobile chrome causes horizontal page overflow");
+
+ const nearby=page.locator("#ao-find-modular-root [data-heritage-nearby]");
+ assert.equal(await nearby.count(),1,"opt-in nearby map control missing");
+ const nearbyBox=await nearby.boundingBox();
+ assert.ok(nearbyBox&&nearbyBox.height>=44&&nearbyBox.width>=44,"nearby control is too small for touch");
+ const mapSearch=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
+ await mapSearch.fill("Sanctuaire Notre-Dame de Lourdes");
+ await page.waitForFunction(()=>Boolean(document.querySelector("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]")),null,{timeout:15000});
+ const options=page.locator("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]");
+ assert.ok(await options.count()<=6,"search opened an unbounded list instead of compact suggestions");
+ await options.first().tap();
+ await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
+ assert.ok(await page.locator("#ao-find-modular-root .aoHeritageSynopsis").count()>=1,"map pin preview lacks substantive source-owned introduction");
+ await page.locator("#ao-find-modular-root [data-explore-expand-place]").tap();
+ await page.locator("#ao-find-modular-root .aoExplorePlaceSheet").waitFor({state:"visible"});
+ assert.ok(await page.locator("#ao-find-modular-root .aoExplorePlaceSheet details.aoPlaceAccordion").count()>0,
+   "detailed source records are not progressively disclosed");
+ await page.locator("#ao-find-modular-root .aoExplorePlaceSheet [data-explore-collapse-place]").tap();
+ await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
+ await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").tap();
+ await page.locator("#ao-find-modular-root [data-find-query]").fill("");
+ await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoHeritageSearchResults"),null,{timeout:15000});
+
+ // A phone scroll which began over a navigation button must not exit Explore.
+ const scrollSafety=await page.evaluate(()=>{
+   const button=document.querySelector('#ao-find-modular-root .aoFindHeader [data-find-close]');
+   const rect=button.getBoundingClientRect(),x=rect.left+rect.width/2,y=rect.top+rect.height/2;
+   const touch=(atY)=>new Touch({identifier:9,target:button,clientX:x,clientY:atY});
+   const start=touch(y),finish=touch(y+62);
+   button.dispatchEvent(new TouchEvent('touchstart',{bubbles:true,touches:[start],targetTouches:[start],changedTouches:[start]}));
+   button.dispatchEvent(new TouchEvent('touchmove',{bubbles:true,touches:[finish],targetTouches:[finish],changedTouches:[finish]}));
+   button.dispatchEvent(new TouchEvent('touchend',{bubbles:true,touches:[],changedTouches:[finish]}));
+   const click=new MouseEvent('click',{bubbles:true,cancelable:true,detail:1,clientX:x,clientY:y+62});
+   return {dispatched:button.dispatchEvent(click),defaultPrevented:click.defaultPrevented};
+ });
+ assert.equal(scrollSafety.defaultPrevented,true,'Scroll gesture was not protected from synthesized Back click');
+ assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1?.status?.().open),true,'Scroll gesture left Explore');
+
  const activeAll=page.locator('#ao-find-modular-root [data-heritage-category="ALL"]');
  assert.equal(await activeAll.getAttribute("aria-pressed"),"true");
  const shrineChip=page.locator('#ao-find-modular-root [data-heritage-category="shrines"]');
@@ -67,7 +124,7 @@ try{
  for(const lens of lenses){
   const selector='#ao-find-modular-root [data-find-filter="lens"][data-find-filter-value="'+lens+'"]';
   const more=page.locator("#ao-find-modular-root .aoHeritageMore");
-  await more.locator("summary").tap({timeout:15000});
+  await more.locator(":scope > summary").tap({timeout:15000});
   const lensButton=page.locator(selector);
   assert.equal(await lensButton.count(),1,"Explore lens has no unique detail control: "+lens);
   await lensButton.tap({timeout:15000});
@@ -91,7 +148,7 @@ try{
   assert.equal(snapshot.lens,lens);
   assert.ok(snapshot.visibleText>=50,lens+" produced a blank search interface");
   assert.ok(snapshot.overflow<=1,lens+" causes viewport horizontal overflow");
-  assert.equal(snapshot.rows,Math.min(120,snapshot.count),
+  assert.equal(snapshot.rows,Math.min(24,snapshot.count),
     lens+" initial rendered list does not match the live filtered result count");
   if(snapshot.count){
    const first=page.locator("#ao-find-modular-root .aoFindList [data-explore-item]").first();
@@ -102,6 +159,18 @@ try{
    assert.ok(size.width>=44&&size.height>=44,lens+" result item has an undersized touch target");
    await first.tap({timeout:12000});
    await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]").waitFor({state:"visible",timeout:12000});
+   // First touch opens a concise preview. Evidence/actions must be opt-in.
+   const preview=page.locator("#ao-find-modular-root .aoExploreQuickPreview");
+   await preview.waitFor({state:"visible",timeout:12000});
+   assert.equal(await preview.locator(".aoFindSources a[href]").count(),0,
+     lens+" exposed dense bibliography on initial map/list tap");
+   assert.equal(await preview.locator("[data-explore-expand-detail]").count(),1,
+     lens+" lacks explicit Details & sources navigation");
+   const previewHeight=await preview.evaluate(node=>node.getBoundingClientRect().height);
+   assert.ok(previewHeight<520,
+     lens+" preview blocks too much mobile map");
+   await preview.locator("[data-explore-expand-detail]").tap();
+   await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]:not(.aoExploreQuickPreview)").waitFor({state:"visible",timeout:12000});
    const detail=await page.locator("#ao-find-modular-root .aoFindSheet[role=dialog]").innerText();
    assert.ok(detail.trim().length>=title.length+5,lens+" source detail has no substantive content");
    // Validate hyperlink controls rendered in the real selected item's source drawer.
@@ -114,14 +183,16 @@ try{
      assert.ok(source.label.length>=2,lens+" source link is unlabelled");
    }
    verifiedSourceLinks+=sources.length;
+   await page.locator("#ao-find-modular-root [data-explore-collapse-detail]").tap();
+   await page.locator("#ao-find-modular-root .aoExploreQuickPreview").waitFor({state:"visible",timeout:12000});
    await page.locator("#ao-find-modular-root button[data-find-close-detail]").first().tap({timeout:10000});
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheet[role=dialog]"),null,{timeout:12000});
   }
-  if(snapshot.count>120){
-   assert.equal(snapshot.rows,120,lens+" initial result pagination lost its limit");
+  if(snapshot.count>24){
+   assert.equal(snapshot.rows,24,lens+" initial result pagination lost its limit");
    await page.locator("#ao-find-modular-root [data-find-show-more]").tap({timeout:12000});
    await page.waitForFunction(expected=>document.querySelectorAll("#ao-find-modular-root .aoFindList [data-explore-item]").length===expected,
-     Math.min(snapshot.count,240),{timeout:15000});
+     Math.min(snapshot.count,48),{timeout:15000});
   }
   // An impossible literal query must be actionable and reversible. This
   // checks the actual phone input and its result state, not just projector code.
@@ -133,14 +204,20 @@ try{
   await page.locator("#ao-find-modular-root [data-find-query]").fill("",{timeout:12000});
   await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
     snapshot.count,{timeout:12000});
+  // Each detailed section uses a compact switcher, not a seven-button grid.
+  assert.equal(await page.locator('#ao-find-modular-root .aoExploreSectionSwitcher summary').count(),1);
+  assert.equal(await page.locator('#ao-find-modular-root .aoExploreLensTabs').count(),0);
   if(lens==="tlm"){
-   // Exercise a real timetable filter without claiming current schedules are verified.
-   await page.locator('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="SUNDAY"]').tap();
-   await page.waitForFunction(()=>Boolean(document.querySelector('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="SUNDAY"].active')),
+   // Preliminary map publishes venue locations only, never fabricated day-level schedules.
+   assert.equal(await page.locator('#ao-find-modular-root [data-find-filter="day"]').count(),0,
+     "Unverified preliminary venue markers must not expose a timetable filter");
+   await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ALL"]').tap();
+   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===1879,
      null,{timeout:12000});
-   const sunday=Number(await page.locator("#ao-find-modular-root .aoFindResultMeta strong").innerText());
-   assert.ok(sunday<=snapshot.count,"Sunday filter incorrectly adds venues");
-   await page.locator('#ao-find-modular-root [data-find-filter="day"][data-find-filter-value="ANY"]').tap();
+   await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="SSPX"]').tap();
+   await page.waitForFunction(()=>Number(document.querySelector('#ao-find-modular-root .aoFindResultMeta strong')?.textContent)===732,
+     null,{timeout:12000});
+   await page.locator('#ao-find-modular-root [data-find-filter="directoryGroup"][data-find-filter-value="ROME"]').tap();
    await page.waitForFunction(n=>Number(document.querySelector("#ao-find-modular-root .aoFindResultMeta strong")?.textContent)===n,
      snapshot.count,{timeout:12000});
    await page.locator("#ao-find-modular-root .aoExploreAdvancedFilters summary").tap();
@@ -189,8 +266,8 @@ try{
   await page.waitForFunction(id=>Boolean(document.querySelector('#ao-find-modular-root [data-find-view="list"][data-explore-lens="'+id+'"]')),
     lens,{timeout:12000});
   reached.push({lens,count:snapshot.count});
-  // Return to the common map before selecting another optional source lens.
-  await page.locator('#ao-find-modular-root [data-find-filter="lens"][data-find-filter-value="heritage"]').tap({timeout:15000});
+  // Back from a section must return one level to Sacred Geography, not Home.
+  await page.locator('#ao-find-modular-root .aoFindHeader [data-find-close]').tap({timeout:15000});
   await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="heritage"
     &&Boolean(document.querySelector('#ao-find-modular-root [data-find-view="map"][data-explore-lens="heritage"]')),null,{timeout:15000});
  }

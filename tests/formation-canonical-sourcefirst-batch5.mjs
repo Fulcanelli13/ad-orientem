@@ -56,6 +56,6 @@ assert.equal(d.metrics.public_routes_added,0);
 assert.equal(d.metrics.independent_approvals,0);
 for(const id of ["APOL-054","APOL-055","APOL-056","APOL-057","APOL-058"]){
  const x=d.dossiers.find(y=>y.id===id);
- assert.ok(x.sections[1].source_ids.some(s=>["URBAN1095","JPINQ2004","GAL1992","VELM2023","VATS2023"].includes(s)),id+" missing primary documentary opposition or correction");
+ assert.ok(x.sections[1].source_ids.some(s=>["URBAN1095","JPINQ2004","GAL-1633-SENT-OPP","MURPHY-2009-OPP","TRC-2015-OPP"].includes(s)),id+" missing primary documentary opposition or correction");
 }
 console.log(JSON.stringify({qa:"PASS",canonical:141,apologeticsDrafted:60,churchCrisisDrafted:39,totalDrafted:99,remainingChurchCrisis:42,newEnglish:104,newFrench:104,sourceWorks:sources.size,sourcePointers:pointers,independentlyCertified:0,publicRoutes:0}));

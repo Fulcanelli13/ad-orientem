@@ -8,11 +8,11 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
-assert.equal(geo.places.length,182);
+assert.equal(geo.places.length,223);
 assert.equal(sacred.apparitions.length,32);
 assert.equal(sacred.relics.length,122);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
-assert.equal(assertExploreGeographyRegistry(geo).counts.places,182);
+assert.equal(assertExploreGeographyRegistry(geo).counts.places,223);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
 const ids=new Set();
 for(const record of [...sacred.apparitions,...sacred.relics]){
@@ -43,7 +43,7 @@ assert.ok(croce.every(x=>x.authentication==="NOT_INDEPENDENTLY_CERTIFIED_BY_APP"
 const romeItem=projectExploreDataset({geography:geo,sacredPhenomena:sacred}).byLens.relics.find(x=>x.source_id==="relic:IT:santa-croce-true-cross");
 assert.ok(romeItem.sections.some(x=>x.label==="Visitor access"&&x.body_fr?.includes("fermée")));
 const romeUi=renderExploreToString(buildExploreViewModel({language:"fr",lens:"relics",view:"list",
-items:[romeItem],counts:{relics:1},selectedId:romeItem.item_id}));
+items:[romeItem],counts:{relics:1},selectedId:romeItem.item_id,expandDetail:true}));
 assert.match(romeUi,/Chapelle des reliques temporairement fermée/);
 
 assert.ok(sacred.relics.some(x=>x.relic_kind==="REPUTED_PASSION_RELIC"));
@@ -93,13 +93,13 @@ assert.match(french,/origine surnaturelle/);
 const selected=projection.byLens.relics.find(x=>x.source_id==="relic:FR:crown-of-thorns-paris");
 const detail=renderExploreToString(buildExploreViewModel({
   lens:"relics",language:"fr",view:"list",items:projection.byLens.relics,counts:projection.counts,
-  selectedId:selected.item_id
+  selectedId:selected.item_id,expandDetail:true
 }));
 assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);
 assert.match(detail,/aucune authentification canonique indépendante/);
 const profiles=buildExplorePlaceProfiles({geography:geo},projection,{today:"2026-10-09"});
-assert.equal(profiles.length,182);
+assert.equal(profiles.length,223);
 const cotignac=profiles.find(p=>p.place_id==="place:FR:saint-joseph-bessillon");
 assert.equal(cotignac.counts.apparitions,1);
 assert.equal(cotignac.counts.relics,0);
@@ -114,4 +114,4 @@ assert.equal(notreDame.counts.apparitions,0);
 assert.equal(notreDame.counts.relics,3);
 assert.equal(geo.directoryPlaceLinks.some(link=>link.place_id==="place:FR:abbaye-mont-saint-michel"),false,
   "historical shrine is not automatically a TLM directory venue");
-console.log("PASS 32 documented apparition traditions, 122 relic holdings, 182 GPS-shared Places, bilingual status and no TLM/calendar inference");
+console.log("PASS 32 documented apparition traditions, 122 relic holdings, 220 GPS-shared Places, bilingual status and no TLM/calendar inference");

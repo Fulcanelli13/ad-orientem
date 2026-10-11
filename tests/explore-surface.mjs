@@ -7,11 +7,12 @@ import {
   projectExploreDataset,
 } from "../src/find/explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "../src/find/explore-presentation.js";
+import { sacredPlaceSynopsis, compactHeritagePlaceSheet } from "../src/find/heritage-presentation.js";
 import { exploreMapFeatures } from "../src/find/map-runtime.js";
 import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/customs-atlas-filters.js";
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "../src/find/traditions-browse.js";
-import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards } from "../src/find/heritage-map.js";
-import { buildExplorePlaceProfiles } from "../src/find/place-profiles.js";
+import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "../src/find/heritage-map.js";
+import { buildExplorePlaceProfiles, resolveApprovedPlaceMedia } from "../src/find/place-profiles.js";
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const geography=readJson("data/geography/seed-registry.v1.json");
@@ -22,6 +23,15 @@ const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
 const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
 const novenaSot=readJson("data/pray/novena-sot.v1.json");
+const featuredEditorial=readJson("data/geography/major-places-editorial.v1.json");
+assert.equal(featuredEditorial.schema,"AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1");
+assert.equal(featuredEditorial.items.length,20);
+assert.equal(new Set(featuredEditorial.items.map(row=>row.place_id)).size,20,"Curated Place identities must be unique");
+for(const item of featuredEditorial.items){
+  const place=geography.places.find(p=>p.place_id===item.place_id);
+  assert.ok(place?.source_ids?.includes(item.source_id),"Featured site must cite an original Place source: "+item.place_id);
+  assert.equal(item.media_review,"NOT_CURATED","No site photograph may be implied approved");
+}
 
 const records=joinDirectoryRecords({
   venues:[{
@@ -52,6 +62,7 @@ const records=joinDirectoryRecords({
 });
 
 const dataset={
+  editorial:{featured:featuredEditorial.items},
   directory:{
     records,
     communities:[{id:"FSSP",abbreviation:"FSSP",name:"Priestly Fraternity of Saint Peter"}],
@@ -77,14 +88,34 @@ const dataset={
 };
 
 const projection=projectExploreDataset(dataset);
+const sacredGeoLaunch=readJson("data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json");
+const majorExceptions=readJson("data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json");
+assert.equal(sacredGeoLaunch.promoted.length,35,"major-site launch batch drifted");
+const launchPlaceIds=new Set();
+for(const site of [...sacredGeoLaunch.promoted,...majorExceptions.promoted]){
+  assert.ok(!launchPlaceIds.has(site.place_id),"duplicate launched Place "+site.place_id);
+  launchPlaceIds.add(site.place_id);
+  const place=geography.places.find(p=>p.place_id===site.place_id);
+  assert.ok(place,"launched Place absent from canonical geography: "+site.place_id);
+  const item=projection.byLens.shrines.find(s=>s.place_id===site.place_id);
+  assert.ok(item&&item.map_publishable,"launched shrine not projected onto app map: "+site.place_id);
+  assert.ok(item.source_links.some(source=>source.url===(site.identity_source_url??site.officialUrl)),
+    "launched shrine lacks clickable identity source: "+site.place_id);
+  assert.equal(item.geo.lat,place.geo.lat,"launched map position drifted from canonical Place");
+  assert.equal(item.geo.lng,place.geo.lng,"launched map position drifted from canonical Place");
+}
+const mexicanGuadalupe=geography.places.find(p=>p.place_id==="place:MX:basilica-guadalupe-mexico-city");
+assert.equal(mexicanGuadalupe?.geo?.source_ref,"osm:way:120733641","Guadalupe must point to the modern 1976 Basilica");
+assert.equal(geography.places.filter(p=>p.place_id===mexicanGuadalupe.place_id).length,1,"Guadalupe must not duplicate canonical identity");
+
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages"]);
 assert.deepEqual(projection.counts,{
   tlm:1,
-  shrines:178,
+  shrines:219,
   apparitions:32,
   relics:122,
   traditions:89,
-  pilgrimages:206,
+  pilgrimages:209,
 });
 
 for(const lens of EXPLORE_LENSES){
@@ -135,10 +166,11 @@ const shrineVm=buildExploreViewModel({
   view:"list",
   filters:{query:"Sanctuaire Notre-Dame de Lourdes"},
   selectedId:lourdesShrine[0].item_id,
+  expandDetail:true,
 });
 const shrineHtml=renderExploreToString(shrineVm);
 assert.match(shrineHtml,/AD ORIENTEM · EXPLORE/);
-assert.match(shrineHtml,/>Explore</);
+assert.match(shrineHtml,/<h1>Shrines<\/h1>/,"R53 gives the active Explore section its own heading");
 assert.match(shrineHtml,/data-find-filter="lens"/);
 assert.match(shrineHtml,/Shrines/);
 assert.match(shrineHtml,/Traditions/);
@@ -161,6 +193,7 @@ const tlmVm=buildExploreViewModel({
   view:"list",
   filters:{query:"",day:"ANY",affiliations:[],unaCum:"ANY",liturgy:"ANY",massType:"ANY"},
   selectedId:tlm.item_id,
+  expandDetail:true,
 });
 const tlmHtml=renderExploreToString(tlmVm);
 assert.match(tlmHtml,/data-find-filter="unaCum"/);
@@ -187,7 +220,7 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   filters:{},
 }));
 assert.match(shrineMapHtml,/Loading source-backed map points/i);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"only provenance-locked shrine Places should publish map points");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,219,"only provenance-locked shrine Places should publish map points");
 
 const chartresShrine=filterExploreItems(projection.byLens.shrines,{query:"Chartres"});
 assert.equal(chartresShrine.length,1);
@@ -334,7 +367,7 @@ assert.ok(namugongo[0].sections.some(section=>/Uganda Martyrs Day/.test(section.
 const munyonyo=filterExploreItems(projection.byLens.pilgrimages,{query:"Munyonyo"});
 assert.equal(munyonyo.length,1);
 assert.ok(munyonyo[0].sections.some(section=>/Uganda Martyrs/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"Australasia/Africa mapped shrine count drifted");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,219,"Australasia/Africa mapped shrine count drifted");
 
 const guadalupeMx=filterExploreItems(projection.byLens.pilgrimages,{query:"Santa María de Guadalupe"});
 assert.equal(guadalupeMx.length,1);
@@ -366,7 +399,7 @@ assert.equal(chiquinquira.length,1);
 assert.equal(chiquinquira[0].map_publishable,true);
 assert.ok(chiquinquira[0].sections.some(section=>/Chiquinquirá/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"Latin America shrine pin count drifted");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,219,"Latin America shrine pin count drifted");
 
 const banneux=filterExploreItems(projection.byLens.pilgrimages,{query:"Banneux"});
 assert.equal(banneux.length,1);
@@ -408,7 +441,7 @@ assert.equal(sameiro[0].map_publishable,true);
 assert.ok(sameiro[0].sections.some(section=>/Archdiocesan pilgrimage to Sameiro/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 assert.ok(sameiro[0].sections.some(section=>/Feast of Our Lady of Sameiro/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"tranche 7 mapped Place count changed unexpectedly");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,219,"tranche 7 mapped Place count changed unexpectedly");
 
 const bermontShrine=filterExploreItems(projection.byLens.shrines,{query:"Bermont"});
 assert.ok(bermontShrine.some(item=>item.source_id==="shrine:FR:bermont-greux"),"historical Bermont sanctuary missing from expanded shrine search");
@@ -442,7 +475,7 @@ assert.equal(rueDuBacPilgrimage.length,1);
 assert.equal(rueDuBacPilgrimage[0].map_publishable,true);
 assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Médaille Miraculeuse/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"France tranche mapped Place count changed unexpectedly");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,219,"France tranche mapped Place count changed unexpectedly");
 
 const wigratzbadShrine=filterExploreItems(projection.byLens.shrines,{query:"Wigratzbad"});
 assert.equal(wigratzbadShrine.length,1);
@@ -468,7 +501,7 @@ const vesperbild=filterExploreItems(projection.byLens.pilgrimages,{query:"Maria 
 assert.equal(vesperbild.length,1);
 assert.ok(vesperbild[0].sections.some(section=>/13th of every month/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"Germany tranche mapped Place count changed unexpectedly");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,219,"Germany tranche mapped Place count changed unexpectedly");
 
 const oswegoShrine=filterExploreItems(projection.byLens.shrines,{query:"St. Mary of the Assumption Parish and Shrine"});
 assert.equal(oswegoShrine.length,1);
@@ -500,7 +533,7 @@ assert.equal(fiskdaleNovena.length,1);
 assert.equal(fiskdaleNovena[0].map_publishable,true);
 assert.ok(fiskdaleNovena[0].sections.some(section=>/18–26 July/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,178,"US Northeast mapped Place count changed unexpectedly");
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,219,"US Northeast mapped Place count changed unexpectedly");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
@@ -553,7 +586,7 @@ assert.equal(searchedContexts.length,31,"18 novena contextual links should remai
 assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,13,"canonical practice identities must be unique");
 const practiceVm=buildExploreViewModel({
   language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:13},
-  view:"list",filters:{},selectedId:"tradition:custom:DEV-007",
+  view:"list",filters:{},selectedId:"tradition:custom:DEV-007",expandDetail:true,
 });
 const practiceHtml=renderExploreToString(practiceVm);
 assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
@@ -626,7 +659,7 @@ assert.match(homeOwnerSource,/lens:"heritage",view:"map",categories:\["tradition
 // Each documented site appears once even when it has multiple independent claims.
 const heritagePlaces=projectHeritagePlaces(projection);
 assert.deepEqual(HERITAGE_CATEGORIES,["shrines","relics","pilgrimages","apparitions","traditions"]);
-assert.ok(heritagePlaces.length>=178,"mapped shrine places must survive the unified projection");
+assert.ok(heritagePlaces.length>=216,"mapped shrine places must survive the unified projection");
 assert.equal(new Set(heritagePlaces.map(item=>item.place_id)).size,heritagePlaces.length,"unified map duplicated a physical Place");
 assert.equal(exploreMapFeatures(heritagePlaces).length,heritagePlaces.length,"unified Place points must remain source-backed");
 const lourdesCombined=heritagePlaces.find(item=>item.place_id===lourdesShrine[0].place_id);
@@ -651,28 +684,107 @@ const heritageVm=buildExploreViewModel({
   customCards:heritageCustoms,counts:{...projection.counts,heritage:heritagePlaces.length},
 });
 const heritageHtml=renderExploreToString(heritageVm);
-assert.match(heritageHtml,/Sacred Geography/);
+assert.match(heritageHtml,/Sacred places/);
 assert.match(heritageHtml,/data-find-view="map"/);
 assert.match(heritageHtml,/data-heritage-category="ALL"/);
 for(const category of HERITAGE_CATEGORIES)assert.match(heritageHtml,new RegExp('data-heritage-category="'+category+'"'));
 assert.match(heritageHtml,/aoHeritageCustomRail/,"customs need a compact horizontal rail");
 assert.match(heritageHtml,/data-heritage-custom="DEV-006"/,"universal customs must remain visible without pins");
 assert.doesNotMatch(heritageHtml,/class="aoFindList"/,"map-first Explore must not default to a result list");
+assert.match(heritageHtml,/data-heritage-nearby/,"map-first discovery must support user-requested nearby recentering");
+assert.match(heritageHtml,/aoHeritageMapHint/,"initial screen should explain pin interaction without a long list");
+assert.match(heritageHtml,/data-heritage-world/,"a world-view recovery control is required");
+assert.ok(heritageHtml.indexOf('class="aoHeritageTools"')<heritageHtml.indexOf('class="aoHeritageCategories"'),"search must appear before the category filters");
+assert.match(heritageHtml,/aoHeritageMore/,"technical record lists should be behind Browse");
+assert.equal((heritageHtml.match(/data-find-glossary/g)||[]).length,1,"Glossary should have one visible entry beside search");
+assert.match(heritageHtml,/aoHeritageGlossaryButton/);
+assert.match(heritageHtml,/data-find-filter-value="tlm"/,"Mass map shortcut remains reachable in Browse");
+assert.doesNotMatch(heritageHtml,/aoHeritageSearchResults/,"unfiltered launch must not display search results");
+const searchableMap=projectHeritagePlaces(projection,{query:"Lourdes"});
+const searchHtml=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:searchableMap,
+  filters:{query:"Lourdes",heritageCategories:[...HERITAGE_CATEGORIES]},
+}));
+assert.match(searchHtml,/aoHeritageSearchResults/,"matching sites need a compact navigable search surface");
+assert.match(searchHtml,/data-explore-open-place=/,"search matches must open the canonical Place, not duplicate place records");
+assert.ok((searchHtml.match(/data-explore-open-place=/g)||[]).length<=6,"mobile search must not become an unbounded list");
+assert.doesNotMatch(searchHtml,/class="aoFindList"/,"search must remain map-first");
+
 const placeProfiles=buildExplorePlaceProfiles(dataset,projection);
+const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
+  .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
+assert.ok(featuredPlaces.length>=12,"Editorial list should expose numerous actual source-backed map Places");
+assert.ok(featuredPlaces.every(p=>p.sources.some(source=>source.url)),"No unsourced editorial Place should be featured");
+const featuredMenu=renderExploreToString(buildExploreViewModel({
+ language:"en",lens:"heritage",view:"map",items:heritagePlaces,featuredPlaces,
+ filters:{heritageCategories:[...HERITAGE_CATEGORIES]}
+}));
+assert.match(featuredMenu,/aoHeritageFeatured/);
+assert.match(featuredMenu,/data-explore-open-place="place:FR:sanctuaire-notre-dame-de-lourdes"/);
+assert.doesNotMatch(featuredMenu,/aoExploreMainDestinations/);
+const invalidFeatured=buildExplorePlaceProfiles({...dataset,editorial:{featured:[{place_id:featuredPlaces[0].place_id,source_id:"UNRELATED"}]}},projection);
+assert.equal(invalidFeatured.find(p=>p.place_id===featuredPlaces[0].place_id).editorial_feature,null,"A mismatched source must never yield editorial promotion");
 const heritagePreview=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
   filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
-  selectedPlaceId:lourdesCombined.place_id,placeProfiles,
+  selectedPlaceId:lourdesCombined.place_id,placeProfiles,featuredPlaces,
 }));
 assert.match(heritagePreview,/data-explore-expand-place/,"map click must open compact Place preview");
-assert.match(heritagePreview,/Découvrir ce lieu/);
+assert.match(heritagePreview,/Découvrir/);
+assert.match(heritagePreview,/data-explore-sheet-toggle/);
+assert.match(heritagePreview,/data-explore-calendar-date/);
+assert.match(heritagePreview,/data-explore-open-novena/);
+assert.match(heritagePreview,/aoHeritageEditorialPreview/);
+assert.match(heritagePreview,/À DÉCOUVRIR/);
+assert.doesNotMatch(heritagePreview,/<img/,"Unapproved site photographs must not appear in the compact card");
+assert.match(heritagePreview,/aoHeritageCardHeading/,"place preview should show its type and location compactly");
+assert.match(heritagePreview,/aoHeritageCardTitle/,"place name must be the main visual identity");
+assert.doesNotMatch(heritagePreview,/aoHeritageCaution/,"source qualifications belong in the expanded record, not the small card");
 assert.doesNotMatch(heritagePreview,/class="aoExplorePlaceRows"/,"Place preview must not open a dense record listing immediately");
+assert.match(heritagePreview,/aoHeritageSynopsis/,"sourced place explanation must be the salient preview");
+assert.doesNotMatch(heritagePreview,/class="aoFindFacts"/,"place previews should not be numerical dashboards");
+assert.match(heritagePreview,/data-find-close-place/,"Place preview must be dismissible");
+
 const expandedPlace=renderExploreToString(buildExploreViewModel({
   language:"en",lens:"heritage",view:"map",items:heritagePlaces,
   filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
   selectedPlaceId:lourdesCombined.place_id,placeProfiles,expandPlace:true,
 }));
 assert.match(expandedPlace,/data-explore-place-item=/,"expanded Place must retain original source-owned records");
+assert.match(expandedPlace,/aoExploreSourcedStory/,"featured Place should open with a source-cited, multi-stage story");
+assert.match(expandedPlace,/aoExploreStoryEvidence/,"each editorial paragraph needs a direct original source");
+assert.match(expandedPlace,/data-story-kind="ORIGIN"/);
+assert.match(expandedPlace,/data-story-kind="PILGRIMAGE"/);
+assert.doesNotMatch(expandedPlace,/The linked institution records this mary apparition/,"generic evidence placeholder is not editorial narrative");
+assert.match(expandedPlace,/aoExplorePlaceEditorial/);
+assert.match(expandedPlace,/aoExplorePlaceChapters/);
+assert.match(expandedPlace,/data-explore-place-jump="story"/);
+assert.match(expandedPlace,/data-explore-place-jump="pray"/);
+assert.match(expandedPlace,/data-explore-place-jump="sources"/);
+assert.doesNotMatch(expandedPlace,/aoExplorePlaceMedia/,"Unapproved site images must not be inserted into Place pages");
+assert.match(expandedPlace,/class="aoPlaceAccordion"/,"long evidence lists should be opt-in disclosures");
+assert.doesNotMatch(expandedPlace,/class="aoFindFacts"/,"expanded Place should not open with numeric record counters");
+assert.match(expandedPlace,/Sources and geographic evidence/,"original evidence must remain one tap away");
+
+
+
+const mixedProfile={
+  place_id:"place:FR:mixed-test",name:"Mixed Sacred Place",
+  address:{city:"Lourdes",region:"Occitanie",country:"France"},
+  counts:{"shrines":1,"relics":1},geo:{precision:"site"},
+  shrines:[{summary:"SHRINE INTRO ORIGINAL"}],
+  relics:[{summary:"RELIC INTRO ORIGINAL",summary_fr:"INTRO RELIQUE FRANÇAISE"}],
+};
+assert.equal(sacredPlaceSynopsis(mixedProfile,{preferredCategory:"relics"}),"RELIC INTRO ORIGINAL");
+assert.equal(sacredPlaceSynopsis(mixedProfile,{preferredCategory:"relics",language:"fr"}),"INTRO RELIQUE FRANÇAISE");
+assert.equal(sacredPlaceSynopsis({...mixedProfile,relics:[{}]},{preferredCategory:"relics"}),"",
+  "missing relic synopsis must not silently substitute shrine history");
+const relicPreview=compactHeritagePlaceSheet({selectedPlace:mixedProfile,language:"en",filters:{heritageCategories:["relics"]}});
+assert.match(relicPreview,/RELIC INTRO ORIGINAL/);
+assert.doesNotMatch(relicPreview,/SHRINE INTRO ORIGINAL/);
+assert.match(relicPreview,/aoHeritageCardLayer/);
+assert.match(relicPreview,/aria-modal="false"/);
+assert.match(relicPreview,/Lourdes · France/);
 
 console.log("PASS unified Explore projection, canonical customs and map-first heritage surface");
 await import("./heritage-place-reconciliation.mjs");
@@ -691,3 +803,113 @@ await import("./explore-relic-final60-open20-source.mjs");
 await import("./explore-sot07-source-recovery.mjs");
 await import("./explore-handoff-recovery.mjs");
 await import("./explore-first-load-recovery.mjs");
+
+
+
+const mediaRegistry=readJson("data/geography/approved-place-media.v1.json");
+assert.equal(mediaRegistry.schema,"AO_APPROVED_PLACE_MEDIA_V1");
+assert.equal(mediaRegistry.items.length,18,"Exactly eighteen reviewed physical-site photographs should be published");
+const mediaFixture={
+  place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
+  source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",
+  license_url:"https://creativecommons.org/licenses/by/4.0/",
+  changes_en:"Resized and converted to WebP",changes_fr:"Redimensionnée et convertie en WebP",
+  width:1200,height:900,orientation:"landscape",
+  rights_verified:true,subject_verified:true,crop_reviewed:true,
+  alt_en:"View of the physical sanctuary",alt_fr:"Vue du sanctuaire physique",
+};
+const realMedia=readJson("data/geography/approved-place-media.v1.json");
+const reviewedProfiles=buildExplorePlaceProfiles({...dataset,media:{approved:realMedia.items}},projection);
+const reviewedLourdes=reviewedProfiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
+assert.equal(reviewedLourdes?.media?.license,"CC-BY-SA-4.0","Exact Place should expose screened photograph");
+assert.match(reviewedLourdes.media.asset_path,/^assets\/approved\/place-media\//);
+assert.ok(reviewedProfiles.find(p=>p.place_id==="place:FR:chartres-notre-dame")?.media,
+ "The previous portal detail must be replaced by the source-confirmed full Chartres facade");
+assert.equal(reviewedProfiles.find(p=>p.place_id==="place:MU:pere-laval-sainte-croix")?.media,null,
+ "Older-licence Père Laval documentary photograph remains research-only");
+const reviewedPreview=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:reviewedLourdes.place_id,placeProfiles:reviewedProfiles,
+}));
+assert.match(reviewedPreview,/aoHeritagePlaceThumb/,"Screened image must appear within canonical Place preview");
+assert.match(reviewedPreview,/CC-BY-SA-4.0/,"Compact preview credits the photographer and licence without undersized links");
+const reviewedExpanded=renderExploreToString(buildExploreViewModel({
+  language:"fr",lens:"heritage",view:"map",items:heritagePlaces,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+  selectedPlaceId:reviewedLourdes.place_id,placeProfiles:reviewedProfiles,expandPlace:true,
+}));
+assert.match(reviewedExpanded,/aoExplorePlaceMedia/,"Screened image must appear in Place reading view");
+assert.match(reviewedExpanded,/convertie en WebP/,"Image modification must be disclosed in French");
+assert.match(reviewedExpanded,/commons.wikimedia.org/,"Image source must link to the original file");
+assert.match(reviewedExpanded,/creativecommons.org\/licenses\/by-sa\/4\.0/,
+  "Expanded reader must link the actual image licence");
+
+const approved=resolveApprovedPlaceMedia([mediaFixture],mediaFixture.place_id);
+assert.equal(approved.asset_path,mediaFixture.asset_path,"Approved Place media must resolve by exact identity");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,asset_path:"https://example.org/image.jpg"}],mediaFixture.place_id),null,
+  "External hotlinked photos must never be published");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,asset_path:"assets/staged/place-media/lourdes.webp"}],mediaFixture.place_id),null,
+  "Review-only staged photos must never be publishable");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:"https://creativecommons.org/licenses/by-sa/4.0/"}],mediaFixture.place_id),null,
+  "Licence link must exactly match licence identifier");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,license_url:""}],mediaFixture.place_id),null,
+  "No image without a licence URL");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes_en:""}],mediaFixture.place_id),null,
+  "All image modifications must be disclosed");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,changes_fr:""}],mediaFixture.place_id),null,
+  "French modification disclosure must be present");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,orientation:"portrait"}],mediaFixture.place_id),null,
+  "Image orientation must match actual dimensions");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,rights_verified:false}],mediaFixture.place_id),null,
+  "Unverified rights must fail closed");
+assert.equal(resolveApprovedPlaceMedia([{...mediaFixture,alt_fr:""}],mediaFixture.place_id),null,
+  "Images require bilingual alternative text");
+assert.equal(resolveApprovedPlaceMedia([mediaFixture],"place:FR:other"),null,
+  "A photograph must never transfer to a different physical Place");
+const auditedCard=compactHeritagePlaceSheet({language:"en",
+ selectedPlace:{place_id:mediaFixture.place_id,name:"Lourdes",place_type:"shrine",
+  counts:{shrines:1},saints:[],novenas:[],calendar:[],geo:{},media:approved},
+ filters:{heritageCategories:[...HERITAGE_CATEGORIES]}});
+assert.match(auditedCard,/aoHeritagePlaceThumb/,"Approved photography must have a visible, credited card slot");
+assert.match(auditedCard,/Photographer Name/);
+assert.match(auditedCard,/CC-BY-4.0/,"The thumbnail credits licence in readable, noninteractive text");
+
+const nearbyFixtures=[
+  {place_id:"place:FR:lourdes",title:"Lourdes",subtitle:"France",place_type:"shrine",map_publishable:true,geo:{lat:43.09738,lng:-0.05875}},
+  {place_id:"place:FR:tarbes",title:"Tarbes",subtitle:"France",place_type:"cathedral",map_publishable:true,geo:{lat:43.23,lng:0.07,precision:"complex_anchor"}},
+  {place_id:"place:FR:unmapped",title:"Unmapped",map_publishable:false,geo:{lat:43.09,lng:0}},
+  {place_id:"place:FR:lourdes",title:"Duplicate Lourdes",map_publishable:true,geo:{lat:43.1,lng:0}},
+];
+const nearest=nearbyHeritagePlaces(nearbyFixtures,{lat:43.09738,lng:-0.05875});
+assert.equal(nearest.length,2,"Nearby must deduplicate and exclude unpublished markers");
+assert.equal(nearest[0].place_id,"place:FR:lourdes");
+assert.equal(nearest[0].distance_km,0);
+assert.ok(nearest[1].distance_km>0&&nearest[1].indicative,"Nearby must expose distance and indicative precision");
+assert.equal(nearbyHeritagePlaces(nearbyFixtures,{lat:null,lng:0}).length,0,"Invalid position must not resolve to equator");
+assert.ok(nearbyHeritagePlaces([
+  {place_id:"place:dateline",title:"Across date line",map_publishable:true,geo:{lat:0,lng:-179.9}},
+],{lat:0,lng:179.9})[0].distance_km<25,"Nearby must respect the antimeridian");
+const nearbyMarkup=renderExploreToString(buildExploreViewModel({
+  language:"en",lens:"heritage",view:"map",items:nearbyFixtures,nearby:nearest,
+  filters:{heritageCategories:[...HERITAGE_CATEGORIES]},
+}));
+assert.match(nearbyMarkup,/aoHeritageNearbyPanel/,"Nearby needs discoverable source-backed results");
+assert.match(nearbyMarkup,/Straight-line|straight-line/,"Nearby distances must not be mistaken for driving time");
+assert.match(nearbyMarkup,/data-explore-open-place="place:FR:lourdes"/);
+assert.doesNotMatch(nearbyMarkup,/data-heritage-nearby aria-label/,"Nearby panel must not overlap the geolocation action");
+const classifiedFeatures=exploreMapFeatures([{
+  item_id:"heritage:place:FR:tarbes",place_id:"place:FR:tarbes",lens:"heritage",title:"Tarbes",
+  place_type:"cathedral",heritage_primary:"shrines",map_publishable:true,geo:{lat:43.23,lng:0.07},
+}]);
+assert.equal(classifiedFeatures[0].properties.place_type,"cathedral","Map must inherit source-owned physical site category");
+
+await import("./explore-photo-research.mjs");
+await import("./explore-photo-r59.mjs");
+await import("./explore-r61-bilingual-stories.mjs");
+await import("./explore-r62-bilingual-stories.mjs");
+await import("./explore-r63-source-enrichment.mjs");
+await import("./explore-r64-illustrated-ireland.mjs");
+await import("./explore-r66-illustrated-france.mjs");
+await import("./explore-r65-ireland-five-places.mjs");
+await import("./explore-world-boundaries.mjs");

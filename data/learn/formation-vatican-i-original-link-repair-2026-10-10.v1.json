@@ -1,0 +1,55 @@
+{
+  "schema": "formation-original-url-repair-v1",
+  "date": "2026-10-10",
+  "governing_rule": "Retain original dated source findings and invalid bibliographic URL as historical evidence. New reader source link resolves to the verified canonical Vatican council page. This repair does not independently certify any theological claim or historical passage.",
+  "source_pack": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+  "source_id": "V1",
+  "original_url": "https://www.vatican.va/archive/hist_councils/i_vatican_council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+  "corrected_url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+  "findings": [
+    {
+      "finding_id": "PSV7-037",
+      "owner": "APOL-018",
+      "source_id": "V1",
+      "historical_record_not_edited": true,
+      "external_url_repaired": true,
+      "new_claim_certified": false
+    },
+    {
+      "finding_id": "PSV10-084",
+      "owner": "APOL-018",
+      "source_id": "V1",
+      "historical_record_not_edited": true,
+      "external_url_repaired": true,
+      "new_claim_certified": false
+    },
+    {
+      "finding_id": "PSV11-036",
+      "owner": "APOL-020",
+      "source_id": "V1",
+      "historical_record_not_edited": true,
+      "external_url_repaired": true,
+      "new_claim_certified": false
+    },
+    {
+      "finding_id": "PSV11-037",
+      "owner": "APOL-020",
+      "source_id": "V1",
+      "historical_record_not_edited": true,
+      "external_url_repaired": true,
+      "new_claim_certified": false
+    },
+    {
+      "finding_id": "PSV11-038",
+      "owner": "APOL-020",
+      "source_id": "V1",
+      "historical_record_not_edited": true,
+      "external_url_repaired": true,
+      "new_claim_certified": false
+    }
+  ],
+  "publication_allowed": false,
+  "independent_original_source_approved": false,
+  "independent_theology_approved": false,
+  "native_french_approved": false
+}

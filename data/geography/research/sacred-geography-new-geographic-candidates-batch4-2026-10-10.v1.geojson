@@ -1,0 +1,453 @@
+{
+  "type": "FeatureCollection",
+  "schema": "AO_SACRED_GEOGRAPHY_GEO_BATCH4_V1",
+  "as_of": "2026-10-10",
+  "summary": {
+    "candidate_coordinates": 16,
+    "countries": 6,
+    "existing_place_collisions_under_100m": 0,
+    "exact_building_geometry_holds": 1
+  },
+  "guardrails": [
+    "Independent sacred Catholic sites and the separate Biblical Atlas are distinct data owners: no Biblical Atlas imports",
+    "Coordinate source determines site precision, not editorial priority",
+    "Mapcarta-derived OSM coordinates require OpenStreetMap contributor attribution and ODbL compliance",
+    "Two Catholic churches in same town may warrant separate pins, but a building and its relic/chapel may not",
+    "Do not rely on administrative country coding to merge/deny identity in Jerusalem",
+    "No canonical status claims inferred from travel or heritage sources"
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.92297,
+          49.28498
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0209",
+        "site_name": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
+        "editorial_country_label": "PL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/218675752",
+        "church_or_custodian_source_url": "https://smbf.pl/en/the-national-shrine/",
+        "original_osm_object": "way/218675752",
+        "point_precision": "CHURCH_BUILDING",
+        "review_note": "National shrine designation confirmed in custodian report citing Polish Bishops Conference's 2018 decree",
+        "nearest_canonical_place_id": "place:PL:kalwaria-zebrzydowska",
+        "nearest_canonical_distance_km": 66.461,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.1194,
+          46.00452
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0309",
+        "site_name": "National Shrine of Our Lady of Marija Bistrica",
+        "editorial_country_label": "HR",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/143372213",
+        "church_or_custodian_source_url": "https://www.wikidata.org/wiki/Q107013115",
+        "original_osm_object": "way/143372213",
+        "point_precision": "CHURCH_BUILDING",
+        "review_note": "National shrine public title; diocesan canonical designation separately verify",
+        "nearest_canonical_place_id": "place:AT:mariazell-basilica",
+        "nearest_canonical_distance_km": 205.816,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.55038,
+          32.87181
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0548",
+        "site_name": "Church of the Primacy of Saint Peter, Tabgha",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/366377858",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/news/celebrating-peters-primacy-tabgha/",
+        "original_osm_object": "way/366377858",
+        "point_precision": "CHURCH_BUILDING",
+        "review_note": "Keep separate from the Church of the Multiplication nearby",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 125.266,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.23207,
+          31.77128
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0551",
+        "site_name": "Church of Saint Peter in Gallicantu, Jerusalem",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/376137590",
+        "church_or_custodian_source_url": "https://www.wikidata.org/wiki/Q1861408",
+        "original_osm_object": "way/376137590",
+        "point_precision": "CHURCH_BUILDING",
+        "review_note": "Assumptionist Catholic church on Mt Zion; geographic region labels are not sovereignty judgments",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 0.815,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.75206,
+          32.05475
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0565",
+        "site_name": "Church of Saint Peter, Jaffa",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/103818601",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/sanctuaries/jaffa/",
+        "original_osm_object": "way/103818601",
+        "point_precision": "CHURCH_BUILDING",
+        "review_note": "Franciscan Catholic site: do not confuse with nearby St Peter Church of England",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 54.564,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8559,
+          1.30317
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0680",
+        "site_name": "Church of Our Lady of Lourdes, Singapore",
+        "editorial_country_label": "SG",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/191010553",
+        "church_or_custodian_source_url": "https://www.roots.gov.sg/places/places-landing/Places/national-monuments/church-of-our-lady-of-lourdes",
+        "original_osm_object": "way/191010553",
+        "point_precision": "CHURCH_BUILDING",
+        "review_note": "National monument designation is civil heritage, not Church shrine recognition",
+        "nearest_canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
+        "nearest_canonical_distance_km": 3643.809,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.89847,
+          1.37348
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0681",
+        "site_name": "Church of Nativity of Blessed Virgin Mary, Singapore",
+        "editorial_country_label": "SG",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/32922403",
+        "church_or_custodian_source_url": "https://www.wikidata.org/wiki/Q5118013",
+        "original_osm_object": "way/32922403",
+        "point_precision": "CHURCH_BUILDING",
+        "review_note": "Catholic church; no formal pilgrimage/shrine title inferred from church dedication",
+        "nearest_canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
+        "nearest_canonical_distance_km": 3644.44,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.83134,
+          34.01788
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0705",
+        "site_name": "Saint Peter's Cathedral, Rabat",
+        "editorial_country_label": "MA",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/236725316",
+        "church_or_custodian_source_url": "https://www.wikidata.org/wiki/Q2942435",
+        "original_osm_object": "way/236725316",
+        "point_precision": "CATHOLIC_CATHEDRAL_BUILDING",
+        "review_note": "Cathedral identification; mere church existence does not prove major-pilgrimage significance",
+        "nearest_canonical_place_id": "place:PT:fatima-sanctuary",
+        "nearest_canonical_distance_km": 645.29,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.61574,
+          33.5827
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0706",
+        "site_name": "Notre-Dame-de-Lourdes Church, Casablanca",
+        "editorial_country_label": "MA",
+        "coordinate_source_url": "https://www.openstreetmap.org/node/13365630026",
+        "church_or_custodian_source_url": "https://www.wikidata.org/wiki/Q2942285",
+        "original_osm_object": "node/13365630026",
+        "point_precision": "CATHOLIC_CHURCH_POINT",
+        "review_note": "Catholic church, not canonical shrine certification",
+        "nearest_canonical_place_id": "place:PT:fatima-sanctuary",
+        "nearest_canonical_distance_km": 679.129,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.7036,
+          8.11282
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0603",
+        "site_name": "Saint Anne's National Shrine, Talawila",
+        "editorial_country_label": "LK",
+        "coordinate_source_url": "https://www.openstreetmap.org/node/6750542189",
+        "church_or_custodian_source_url": "https://mapcarta.com/N6750542189",
+        "original_osm_object": "node/6750542189",
+        "point_precision": "SHRINE_PLACE_OF_WORSHIP_POINT",
+        "review_note": "Thalawila site is distinct from St Anne's Kattimahana in Sri Lanka",
+        "nearest_canonical_place_id": "place:IN:basilica-bom-jesus-old-goa",
+        "nearest_canonical_distance_km": 1035.221,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.575371,
+          32.880999
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0560",
+        "site_name": "Church of Saint Peter, Capernaum",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.octagonproject.org/news/the-modern-church-at-capernaum",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/sanctuaries/capernaum/",
+        "original_osm_object": null,
+        "point_precision": "COMPLEX_LEVEL_SOURCE_POINT",
+        "review_note": "Modern elevated church and archaeological house-of-Peter complex; independent exact building polygon needed",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 126.839,
+        "near_other_new_sites": [],
+        "identity_status": "HOLD_EXACT_BUILDING_GEOMETRY",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.29779,
+          32.70209
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0545",
+        "site_name": "Basilica of the Annunciation, Nazareth",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/97417380",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/sanctuaries/nazareth-basilica-of-the-annunciation/",
+        "original_osm_object": "way/97417380",
+        "point_precision": "CATHOLIC_BASILICA_BUILDING",
+        "review_note": "Distinct from Greek Orthodox Annunciation church",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 102.916,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.39242,
+          32.68627
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0546",
+        "site_name": "Basilica of the Transfiguration, Mount Tabor",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/255793567",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/sanctuaries/mount-tabor-basilica-of-the-transfiguration/",
+        "original_osm_object": "way/255793567",
+        "point_precision": "CATHOLIC_BASILICA_BUILDING",
+        "review_note": "Mountain-wide archaeological complex is not identical to one basilica",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 102.111,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.54938,
+          32.87342
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0547",
+        "site_name": "Church of the Multiplication, Tabgha",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/node/914205673",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/sanctuaries/tabgha/",
+        "original_osm_object": "node/914205673",
+        "point_precision": "CATHOLIC_CHURCH_SITE_POINT",
+        "review_note": "Keep distinct from nearby Primacy church and its Franciscan custodians",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 125.418,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.15783,
+          31.76446
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0552",
+        "site_name": "Church of the Visitation, Ein Karem",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/254157058",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/convents/ain-karem-monastery-of-the-visitation/",
+        "original_osm_object": "way/254157058",
+        "point_precision": "CATHOLIC_CHURCH_BUILDING",
+        "review_note": "Distinct from St John Baptist church and desert hermitage in same district",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 6.969,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AO-SG-GEO4-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.24191,
+          31.77799
+        ]
+      },
+      "properties": {
+        "candidate_id": "SG-INV-0557",
+        "site_name": "Dominus Flevit Church, Mount of Olives",
+        "editorial_country_label": "IL",
+        "coordinate_source_url": "https://www.openstreetmap.org/way/280345343",
+        "church_or_custodian_source_url": "https://www.custodia.org/en/sanctuaries/dominus-flevit/",
+        "original_osm_object": "way/280345343",
+        "point_precision": "CATHOLIC_CHURCH_BUILDING",
+        "review_note": "Traditionally linked to Christ weeping over Jerusalem; map pin identifies modern church",
+        "nearest_canonical_place_id": "place:PS:holy-sepulchre-jerusalem",
+        "nearest_canonical_distance_km": 1.153,
+        "near_other_new_sites": [],
+        "identity_status": "RESEARCH_CANDIDATE_SOURCE_SPECIFIC",
+        "recognition_status": "VERIFY_SEPARATELY_WITH_ECCLESIASTICAL_AUTHORITY",
+        "publication": "RESEARCH_ONLY_NOT_MAP"
+      }
+    }
+  ]
+}

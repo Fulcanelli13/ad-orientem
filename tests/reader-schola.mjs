@@ -16,6 +16,17 @@ const properSlots=properToReaderSlots(proper);
 const prepared={session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}}};
 const schola=createNativeScholaController({sungCorpus:sung,properSlots,prepared});
 assert.equal(schola.supported,true);
+const frenchOrdinary=JSON.parse(readFileSync(new URL("../data/presentation/reader-french-ordinary.v1.json",import.meta.url),"utf8"));
+const frenchSchola=createNativeScholaController({
+  sungCorpus:sung,properSlots,
+  prepared:{session:prepared.session,readerPreferences:{language:"fr"}},
+  frenchOrdinary,
+});
+const frenchGloria=frenchSchola.selectTrack("GLORIA");
+assert.match(frenchGloria.schola.latin,/Deo/);
+assert.ok(frenchGloria.schola.english);
+assert.notEqual(frenchGloria.schola.english,frenchGloria.schola.latin);
+assert.equal(frenchGloria.schola.english,frenchOrdinary.byCue[frenchGloria.schola.cueId]);
 
 for(const id of ["INTROIT","KYRIE","GLORIA","GRADUAL","ALLELUIA_TRACT_SEQUENCE","CREDO","OFFERTORY","SANCTUS_BENEDICTUS","AGNUS_DEI","COMMUNION"]){
   assert.ok(schola.trackIds.includes(id),"missing native Schola track "+id);
@@ -32,6 +43,27 @@ s=schola.syncCue("AO.SM.C0056");
 assert.equal(s.trackId,"GLORIA");
 assert.equal(s.schola.cueId,"AO.SM.C0056");
 assert.match(s.schola.latin,/Adorámus/);
+
+// Gloria and Credo advance on their own clocks, independently of the
+// main reader's scroll/card repaint, with no duplicate-cue rewind.
+s=schola.syncCue("AO.SM.C0056");
+const gloriaCue=s.schola.cueId;
+s=schola.next();
+const gloriaAfterManual=s.schola.segmentId;
+assert.notEqual(gloriaAfterManual,gloriaCue);
+s=schola.syncCue("AO.SM.C0056");
+assert.equal(s.schola.segmentId,gloriaAfterManual,"duplicate Gloria cue rewound independent Schola progress");
+s=schola.syncCue("AO.SM.C0001");
+assert.equal(s.schola.segmentId,gloriaAfterManual,"unrelated priest cue advanced the Schola");
+s=schola.activateForCard(3);
+assert.equal(s.schola.segmentId,gloriaAfterManual,"same-card Gloria redraw reset Schola");
+s=schola.activateForCard(9);
+assert.equal(s.trackId,"CREDO");
+const credoStart=s.schola.segmentId;
+s=schola.next();
+assert.notEqual(s.schola.segmentId,credoStart,"Credo track has no independent progression");
+s=schola.activateForCard(9);
+assert.notEqual(s.schola.segmentId,credoStart,"Credo redraw reset its independent clock");
 
 s=schola.activateForCard(6);
 assert.equal(s.trackId,"GRADUAL");

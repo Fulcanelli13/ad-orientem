@@ -22,7 +22,7 @@ for(const r of doc.records){
  assert.equal(r.french_answer_present,q.a[1].length>30);
  assert.equal(r.detail_present,!!q.d);
  if(q.d)withDetail++;
- assert.deepEqual(r.all_cited_sources.map(x=>[x.source_id,x.locator]),r.id==="CSE027"?q.refs.filter(x=>x[0]!=="ST154"):q.refs,"v1 historical source snapshot mismatch "+r.id);
+ assert.deepEqual(r.all_cited_sources.map(x=>[x.source_id,x.locator]),q.refs,"source snapshot must match current canonical original references "+r.id);
  for(const link of r.all_cited_sources){
   const entry=CSE_SOURCE_MAP[link.source_id];assert.ok(entry,r.id+" missing source "+link.source_id);
   assert.equal(link.original_full_text_url,entry.canonical_url);
@@ -45,7 +45,7 @@ for(const r of doc.records){
    assert.equal(r.bounded_source,null);
  }
 }
-assert.equal(links,195);
+assert.equal(links,198);
 assert.equal(primary,30);assert.equal(pending,65);
 assert.equal(withDetail,20);
 for(const id of ["CSE057","CSE144","CSE147","CSE148","CSE150"])assert.ok(!CSE_QUESTION_MAP[id].refs.some(x=>x[0]==="LBM"),"no book-catalogue primary proof "+id);

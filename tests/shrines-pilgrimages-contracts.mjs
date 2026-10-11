@@ -35,11 +35,11 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:178,
-  pilgrimages:206,
+  shrines:219,
+  pilgrimages:209,
   routes:20,
   temporalLinks:77,
-  sources:261,
+  sources:366,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
@@ -456,3 +456,5 @@ for(const id of ["att:DOM-006:PARAY","att:DOM-007:PARAY"]){
 }
 
 console.log("shrines and pilgrimages source-of-truth: PASS");
+
+await import("./sacred-geography-profiles-editorial.mjs");

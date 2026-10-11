@@ -46,17 +46,17 @@ export const ORDINARY_SUNG_GESTURE_ANCHORS=Object.freeze({
 });
 
 export const GLORIA_CREDO_FAITHFUL_GESTURES = Object.freeze({
-  "AO.SM.C0056": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Adorámus te",anchorEn:"We adore thee",anchorFr:"Nous vous adorons",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0058": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Grátias ágimus tibi",anchorEn:"We give thee thanks",anchorFr:"Nous vous rendons grâces",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0061": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Iesu Christe",anchorEn:"Jesus Christ",anchorFr:"Jésus-Christ",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0064": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"súscipe deprecatiónem nostram",anchorEn:"receive our prayer",anchorFr:"accueillez notre prière",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0067": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Iesu Christe",anchorEn:"Jesus Christ",anchorFr:"Jésus-Christ",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0068": Object.freeze({phase:"GLORIA",action:"SIGN_OF_CROSS",anchorLat:"Cum Sancto Spíritu ✠",anchorEn:"With the Holy Ghost",anchorFr:"avec le Saint-Esprit ✠",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0090": Object.freeze({phase:"CREDO",action:"HEAD_BOW",anchorLat:"in unum Deum",anchorEn:"in one God",anchorFr:"en un seul Dieu",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0093": Object.freeze({phase:"CREDO",action:"HEAD_BOW",anchorLat:"Iesum Christum",anchorEn:"Jesus Christ",anchorFr:"Jésus-Christ",minimumProfile:"TRADITIONAL"}),
+  "AO.SM.C0056": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Adorámus te",anchorEn:"We adore thee",anchorFr:"Nous vous adorons",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0058": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Grátias ágimus tibi",anchorEn:"We give thee thanks",anchorFr:"Nous vous rendons grâces",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0061": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Iesu Christe",anchorEn:"Jesus Christ",anchorFr:"Jésus-Christ",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0064": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"súscipe deprecatiónem nostram",anchorEn:"receive our prayer",anchorFr:"accueillez notre prière",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0067": Object.freeze({phase:"GLORIA",action:"HEAD_BOW",anchorLat:"Iesu Christe",anchorEn:"Jesus Christ",anchorFr:"Jésus-Christ",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0068": Object.freeze({phase:"GLORIA",action:"SIGN_OF_CROSS",anchorLat:"Cum Sancto Spíritu ✠",anchorEn:"With the Holy Ghost",anchorFr:"avec le Saint-Esprit ✠",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0090": Object.freeze({phase:"CREDO",action:"HEAD_BOW",anchorLat:"in unum Deum",anchorEn:"in one God",anchorFr:"en un seul Dieu",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0093": Object.freeze({phase:"CREDO",action:"HEAD_BOW",anchorLat:"Iesum Christum",anchorEn:"Jesus Christ",anchorFr:"Jésus-Christ",minimumProfile:"GUIDED_1962"}),
   "AO.SM.C0096": Object.freeze({phase:"CREDO",action:"INCARNATUS_RESOLVER",anchorLat:"Et incarnátus est … et homo factus est",anchorEn:"And was incarnate … and was made man",anchorFr:"Il a pris chair … et s’est fait homme",minimumProfile:"ESSENTIAL"}),
-  "AO.SM.C0101": Object.freeze({phase:"CREDO",action:"HEAD_BOW",anchorLat:"simul adorátur",anchorEn:"is together adored",anchorFr:"il reçoit même adoration",minimumProfile:"TRADITIONAL"}),
-  "AO.SM.C0104": Object.freeze({phase:"CREDO",action:"SIGN_OF_CROSS",anchorLat:"Et vitam ✠",anchorEn:"And the life",anchorFr:"Et la vie ✠",minimumProfile:"TRADITIONAL"}),
+  "AO.SM.C0101": Object.freeze({phase:"CREDO",action:"HEAD_BOW",anchorLat:"simul adorátur",anchorEn:"is together adored",anchorFr:"il reçoit même adoration",minimumProfile:"GUIDED_1962"}),
+  "AO.SM.C0104": Object.freeze({phase:"CREDO",action:"SIGN_OF_CROSS",anchorLat:"Et vitam ✠",anchorEn:"And the life",anchorFr:"Et la vie ✠",minimumProfile:"GUIDED_1962"}),
 });
 
 export const GLORIA_CREDO_SOURCE_GESTURE_CUES=Object.freeze(new Set([

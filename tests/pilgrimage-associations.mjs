@@ -21,12 +21,12 @@ const dataset={
   customs:{...customs,sources:customSources.sources},
   novenas:{records:novenas.novenas,links:bridge.links,sources:bridge.sources},
 };
-assert.equal(shrines.shrines.length,178);
-assert.equal(shrines.pilgrimages.length,206);
+assert.equal(shrines.shrines.length,219);
+assert.equal(shrines.pilgrimages.length,209);
 assert.equal(shrines.routes.length,20);
 assert.equal(shrines.temporalLinks.length,77);
 const projection=projectExploreDataset(dataset);
-assert.equal(projection.byLens.pilgrimages.length,206);
+assert.equal(projection.byLens.pilgrimages.length,209);
 const allShrineIds=new Set(shrines.shrines.map(shrine=>shrine.shrine_id));
 assert.ok(shrines.pilgrimages.every(p=>allShrineIds.has(p.destination_shrine_id)),
   "a pilgrimage lost its actual destination shrine");
@@ -78,7 +78,7 @@ assert.equal(loughDergProfile.seasonal_pilgrimages.length,1);
 assert.match(loughDergProfile.seasonal_pilgrimages[0].title,/Three Day Pilgrimage/);
 const ui=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"pilgrimages",items:projection.byLens.pilgrimages,view:"list",
-  placeProfiles:profiles,selectedPlaceId:parayProfile.place_id,counts:projection.counts,
+  placeProfiles:profiles,selectedPlaceId:parayProfile.place_id,expandPlace:true,counts:projection.counts,
 }));
 assert.match(ui,/NEUVAINES ET DÉVOTIONS ASSOCIÉES/);
 assert.match(ui,/data-explore-open-novena="sacred_heart"/);
@@ -111,4 +111,4 @@ assert.match(calendarRuntime,/pilgrimagePlacesForCalendarKeys/,"actual Calendar 
 assert.match(calendarRuntime,/find:pilgrimages:/,"actual Calendar runtime must preserve pilgrimage routing");
 assert.match(exploreBrowser,/state\.calendarKey/);
 assert.match(exploreBrowser,/data-explore-calendar-date/);
-console.log("PASS 178 shrines; 206 pilgrimages; saints, novenas, local devotions, 46 bound links/37 Calendar keys, date navigation");
+console.log("PASS 216 shrines; 206 pilgrimages; saints, novenas, local devotions, 46 bound links/37 Calendar keys, date navigation");

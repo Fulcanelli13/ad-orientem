@@ -13,7 +13,7 @@ assert.equal(data.summary.bounded_original_paragraph_checks,72);
 assert.equal(data.summary.original_passage_checks_outstanding,23);
 assert.equal(data.summary.fully_certified_questions,0);
 assert.equal(data.summary.independent_approvals,0);
-assert.equal(data.summary.original_sources_total,196);
+assert.equal(data.summary.original_sources_total,198);
 assert.deepEqual(data.records.map(x=>x.id),short.map(x=>x.id));
 let verified=0,pending=0,sourceCount=0;
 for(const row of data.records){
@@ -42,7 +42,7 @@ for(const row of data.records){
   pending++;assert.equal(row.source_status,"EXACT_ORIGINAL_PASSAGE_VERIFICATION_PENDING");
  }
 }
-assert.equal(verified,72);assert.equal(pending,23);assert.equal(sourceCount,196);
+assert.equal(verified,72);assert.equal(pending,23);assert.equal(sourceCount,198);
 assert.ok(CSE_QUESTION_MAP.CSE027.refs.some(x=>x[0]==="ST154"&&x[1].includes("a.5")));
 assert.match(CSE_QUESTION_MAP.CSE027.a[0],/involuntarily/);
 assert.ok(data.records.find(x=>x.id==="CSE027").bounded_source.claim_en.includes("Nocturnal emission")||data.records.find(x=>x.id==="CSE027").bounded_source.claim_en.includes("nocturnal emission"));

@@ -14,6 +14,7 @@ const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
 const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
 const novenaSot=readJson("data/pray/novena-sot.v1.json");
+const curatedMajor=readJson("data/geography/major-places-editorial.v1.json");
 
 const records=joinDirectoryRecords({
   venues:[{
@@ -109,6 +110,7 @@ function buildDataset(directoryPlaceLinks=geography.directoryPlaceLinks){
       temporalLinks:shrineSeed.temporalLinks,
       sources:shrineSources.sources
     },
+    editorial:{featured:curatedMajor.items},
     novenas:{
       records:novenaSot.novenas,
       links:novenaBridge.links,
@@ -122,7 +124,42 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,182,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,223,"every seeded canonical Place should have one Place profile");
+
+// Twenty featured places must render two independently source-credited,
+// bilingual passages without creating facts or cross-Place associations.
+assert.equal(curatedMajor.items.length,20);
+for(const selected of curatedMajor.items){
+ const profile=explorePlaceProfile(profiles,selected.place_id);
+ assert.ok(profile?.editorial_feature,"Editorial place lost its canonical identity "+selected.place_id);
+ const chapters=profile.story_chapters;
+ assert.ok(chapters.length>=2,"Featured Place needs source-owned origin and pilgrimage "+selected.place_id);
+ assert.equal(chapters[0].kind,"ORIGIN","History must retain Shrine owner "+selected.place_id);
+ assert.ok(chapters.some(c=>c.kind==="PILGRIMAGE"),"No pilgrim context "+selected.place_id);
+ for(const chapter of chapters){
+  assert.ok(chapter.body_en.length>=28&&chapter.body_fr.length>=28,
+    "Missing substantial bilingual record body "+selected.place_id);
+  assert.notEqual(chapter.body_en,chapter.body_fr,
+    "French page must not silently revert to English "+selected.place_id);
+  assert.ok(chapter.sources.length>0,"Narrative paragraph has no direct original source "+selected.place_id);
+  assert.ok(chapter.sources.every(x=>/^https:\/\//.test(x.url)));
+  const owner=[...profile.shrines,...profile.pilgrimages,...profile.apparitions,...profile.relics,...profile.traditions]
+    .find(record=>record.item_id===chapter.item_id);
+  assert.ok(owner,"Narrative sourced to another physical Place "+selected.place_id);
+  assert.ok(chapter.sources.every(x=>owner.source_links.some(y=>y.url===x.url)),
+    "A narrative has evidence borrowed from an unrelated record "+selected.place_id);
+ }
+}
+// The official witness stays the source; a user's French translation must
+// never change the provenanced English shrine claim.
+const upgradedSaints=[
+ ["place:FR:basilique-sainte-therese-lisieux","Thérèse"],
+ ["place:IT:basilica-san-francesco-assisi","François"],
+ ["place:IN:basilica-bom-jesus-old-goa","François Xavier"],
+];
+for(const [id,name] of upgradedSaints)
+ assert.match(explorePlaceProfile(profiles,id).story_chapters[0].body_fr,new RegExp(name));
+
 
 const lourdes=explorePlaceProfile(profiles,"place:FR:sanctuaire-notre-dame-de-lourdes");
 assert.ok(lourdes);
@@ -627,7 +664,8 @@ const vm=buildExploreViewModel({
   filters:{query:"Lourdes"},
   selectedId:null,
   placeProfiles:profiles,
-  selectedPlaceId:lourdes.place_id
+  selectedPlaceId:lourdes.place_id,
+  expandPlace:true
 });
 const html=renderExploreToString(vm);
 assert.ok(html.includes('data-explore-place-owner="'+lourdes.place_id+'"'));
@@ -637,6 +675,36 @@ assert.match(html,/No TLM venue is currently linked to this exact Place/);
 assert.match(html,/data-explore-place-item=/);
 assert.match(html,/data-explore-place-lens="pilgrimages"/);
 assert.match(html,/This page aggregates records by canonical Place ID/);
+assert.match(html,/aoExploreSourcedStory/,"Featured place must show a provenance-anchored reading sequence");
+assert.match(html,/data-story-kind="ORIGIN"/);
+assert.match(html,/data-story-kind="PILGRIMAGE"/);
+assert.match(html,/aoExploreStoryEvidence/);
+assert.match(html,/data-explore-place-jump="calendar"/);
+assert.match(html,/lourdes-france\.com/);
+
+const frenchReader=renderExploreToString(buildExploreViewModel({
+ language:"fr",items:[lourdesShrine],lens:"shrines",counts:projection.counts,
+ view:"list",filters:{query:"Lourdes"},placeProfiles:profiles,
+ selectedPlaceId:lourdes.place_id,expandPlace:true,
+}));
+assert.match(frenchReader,/Sanctuaire de pèlerinage lié aux apparitions/);
+assert.match(frenchReader,/Lieu de pèlerinage ouvert toute l’année/);
+assert.match(frenchReader,/Sources de ce paragraphe/);
+assert.match(frenchReader,/data-explore-place-jump="calendar"/);
+assert.doesNotMatch(frenchReader,/Pilgrimage sanctuary associated/,"French reader leaked the original English story");
+assert.doesNotMatch(frenchReader,/Promoted to the canonical|exact frozen AO prayer form|Shared canonical place ID/,
+ "Internal link research commentary must never leak into public devotional cards");
+const parayReader=renderExploreToString(buildExploreViewModel({
+ language:"fr",items:projection.byLens.shrines.filter(x=>x.place_id===paray.place_id),
+ lens:"shrines",view:"list",filters:{},placeProfiles:profiles,
+ selectedPlaceId:paray.place_id,expandPlace:true,
+}));
+assert.match(parayReader,/sainte Marguerite-Marie Alacoque/);
+assert.match(parayReader,/data-explore-open-novena="sacred_heart"/);
+assert.match(parayReader,/Lien dévotionnel — source/);
+assert.match(parayReader,/sacrecoeur-paray.org/);
+assert.doesNotMatch(parayReader,/AO['’]s exact|Promoted to the canonical|same devotional family as family consecration/);
+
 
 const detailHtml=renderExploreToString(buildExploreViewModel({
   language:"en",
@@ -646,7 +714,8 @@ const detailHtml=renderExploreToString(buildExploreViewModel({
   view:"list",
   filters:{query:"Lourdes"},
   selectedId:lourdesShrine.item_id,
-  placeProfiles:profiles
+  placeProfiles:profiles,
+  expandDetail:true
 }));
 assert.ok(detailHtml.includes('data-explore-open-place="'+lourdes.place_id+'"'));
 assert.match(detailHtml,/Place page/);

@@ -5,6 +5,14 @@
 import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
+import { mountFullMassPreflight } from "./full-mass-preflight.js";
+import { mountObservedMassSourceSelector } from "./observed-mass-selector.js";
+import "./observed-mass-styles.js";
+import { specialMassPresentation,renderSpecialMassContext } from "./full-mass-special-presentation.js";
+import { mountSpecialMassStage } from "./reader-special-stage.js";
+import "./reader-special-stage-styles.js";
+import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
+import "./full-mass-preflight-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
@@ -46,7 +54,7 @@ export function mapInsertedRites(values = []) {
     if (raw.includes("REQUIEM") && raw.includes("ABSOLUTION")) add(followingActions, "REQUIEM_ABSOLUTION");
     if (raw.includes("HOLY_THURSDAY") || raw.includes("ALTAR_REPOSE")) add(followingActions, "HOLY_THURSDAY_POST");
     if (raw.includes("CORPUS") && raw.includes("PROCESSION")) add(followingActions, "CORPUS_CHRISTI_PROCESSION");
-    else if (raw.includes("PROCESSION")) add(followingActions, "GENERIC_PROCESSION");
+    else if (raw.includes("PROCESSION") && !/(?:ROGATION|PALM|ASH|CANDLEMAS|CANDLE)/.test(raw)) add(followingActions, "GENERIC_PROCESSION");
   }
   return Object.freeze({
     precedingRites: Object.freeze(precedingRites),
@@ -463,6 +471,28 @@ function installReaderScriptureBridge(preview,prepared){
   }});
 }
 
+// Secondary liturgical map in R17: never a second prayer-card owner.
+function installReaderSpecialMassContext(preview,prepared){
+ const root=preview?.root;
+ const panel=root?.querySelector?.('[data-role="mass-preferences"]');
+ if(!panel?.ownerDocument)return null;
+ const fr=String(prepared?.readerPreferences?.language??"en").startsWith("fr");
+ const model=specialMassPresentation(prepared,{mode:"reader",language:fr?"fr":"en"});
+ if(!model.distinct)return null;
+ root.dataset.aoSpecialMassVariant=model.variant;
+ const details=panel.ownerDocument.createElement("details");
+ details.dataset.aoReaderSpecialMass="";
+ details.className="aoMassSpecialReaderGuide";
+ const summary=panel.ownerDocument.createElement("summary");
+ summary.textContent=fr?"Déroulement de cette célébration":"Order of this celebration";
+ const content=panel.ownerDocument.createElement("section");
+ content.className="aoSpecialMassContext";
+ renderSpecialMassContext(content,model,{compact:true});
+ details.append(summary,content);
+ panel.append(details);
+ return Object.freeze({dispose(){details.remove()}});
+}
+
 function installReaderParametersBridge(preview,prepared){
   return installReaderSurfaceBridge(preview,{
     selector:"[data-reader-parameters]",
@@ -544,6 +574,7 @@ export function suspendPersistedMass({
   }
 
   globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.();
+  globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
   preview?.destroy?.();
   try { delete globalThis.AO_R17_ACTIVE_MASS; } catch {}
   try { delete globalThis.AO_R17_MASS_RUNTIME; } catch {}
@@ -588,6 +619,11 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
+  installReaderSpecialMassContext(previewState.preview,prepared);
+  globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
+  globalThis.AO_R17_SPECIAL_STAGE=mountSpecialMassStage({
+    preview:previewState.preview,prepared,doc:document,
+  });
   const uiOwner=stampMassReaderUi(previewState.uiOwner);
   globalThis.AO_R17_MASS_RUNTIME=Object.freeze({
     version:VERSION,
@@ -620,6 +656,7 @@ export async function resumePersistedMass({
     clearPersistedActiveMass(storage);
     try { globalThis.AO_R17_ACTIVE_MASS_CHECKPOINT?.dispose?.(); } catch {}
     try { globalThis.AO_R17_NATIVE_READER_PREVIEW?.destroy?.(); } catch {}
+    globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
     try { delete globalThis.AO_R17_ACTIVE_MASS; } catch {}
     try { delete globalThis.AO_R17_MASS_RUNTIME; } catch {}
     if (globalThis.document?.documentElement?.dataset) {
@@ -642,12 +679,24 @@ export async function resumePersistedMass({
   });
 }
 
-export function createBrowserMassController({rogationPreflight=null}={}) {
+export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
+  // The observer may explicitly select the source Proper of a different
+  // calendar day, while the real Mass date remains unchanged. This proxy only
+  // changes the prepared Mass, never the global Calendar or host API.
+  const actualApi=observedSource ? {
+    getResolvedMass:()=>{
+      const gate=observedSource.preparationGate();
+      if(!gate.ready)throw new Error(gate.reason);
+      const base=api.getResolvedMass();
+      return observedSource.effectiveResolvedMass(base);
+    },
+  } : api;
   return createMassEntryController({
-    celebrationApi: api,
-    readReaderPreferences: () => readerPreferences(),
+    celebrationApi: actualApi,
+    readReaderPreferences: resolvedMass => ({...readerPreferences(),
+      mode:fullMassPreflight?.selectionFor?.(resolvedMass)?.readerMode??readerPreferences().mode}),
     resolveHostOptions: async (resolvedMass) => {
       const options=deriveHostOptions({
         resolvedMass,
@@ -655,11 +704,22 @@ export function createBrowserMassController({rogationPreflight=null}={}) {
         arch: arch(),
         runtimeState: runtimeState(),
       });
-      const proper=await recoverReaderProperOmissions(options.proper,{
+      const observed=observedSource?.selectionFor?.(resolvedMass.date?
+        api.getResolvedMass():null)??null;
+      const proper=await recoverReaderProperOmissions(observed?.proper??options.proper,{
         hostResolver:runtime()?.resolver?.properResolver,
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
-      return Object.freeze({...options,proper,rogationSelection});
+      const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
+      if(chosen?.kind==="GOOD_FRIDAY" && chosen?.explicitlyChosenForm)
+        throw new Error("GOOD_FRIDAY_IS_NOT_A_MASS_FORM");
+      const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
+      return Object.freeze({...options,proper,rogationSelection,
+        ...(optional?{
+          precedingRites:optional.precedingRites,
+          followingActions:optional.followingActions,
+        }:{}),
+        celebrationForm:chosen?.form??options.celebrationForm});
     },
     openReader: openProductionReader,
   });
@@ -689,7 +749,7 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null };
 
   function tryInstall() {
     state.polls += 1;
@@ -705,7 +765,59 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
           (date)=>runtime().resolver.resolveDay(date):null,
         language:()=>runtimeState()?.language??"en"
       });
-      state.controller = createBrowserMassController({rogationPreflight:state.rogationPreflight});
+      // One Mass-preparation surface: actual celebration, alternate source
+      // Proper, ceremonial form and optional real rites all live together.
+      // Mount the source-owning host categories first; the alternative source
+      // picker then occupies its dedicated slot, never a parallel screen.
+      state.fullMassPreflight=mountFullMassPreflight({
+         doc:document,
+         getResolvedMass:()=>{
+           const base=celebrationApi().getResolvedMass();
+           return state.observedSource?.effectiveResolvedMass(base)??base;
+         },
+         onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
+         onOpenSourceProper:()=>state.observedSource?.open?.(),
+         getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
+         getCalendarState:()=>runtimeState(),
+         subscribeCalendarState:notify=>runtime()?.store?.subscribe?.(notify)??null,
+         onOpenCalendar:async(date,view="day",host)=>{
+           if(!host?.isConnected||!["day","picker","year"].includes(view))return false;
+           const api=globalThis.AO_CALENDAR_APP_V1;
+           if(!api?.openEmbedded)return false;
+           // The Calendar is embedded in preparation; it must never replace
+           // the selected Proper, ceremony form or the R17 reader.
+           return api.openEmbedded(host,{view,onClose:()=>{
+             const details=host.closest("[data-mass-calendar-details]");
+             if(details)details.open=false;
+           }});
+         },
+         getDefaultForm:()=>arch()?.celebrationForm??runtimeState()?.settings?.massForm??"sung",
+         getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
+         language:()=>runtimeState()?.language??"en",
+       });
+      state.observedSource=mountObservedMassSourceSelector({
+        doc:document,
+        getResolvedMass:()=>celebrationApi().getResolvedMass(),
+        mountTarget:()=>document.querySelector("[data-full-mass-source-slot]"),
+        resolveDay:typeof runtime()?.resolver?.resolveDay==="function"
+          ?date=>runtime().resolver.resolveDay(date):null,
+        recoverProper:proper=>recoverReaderProperOmissions(proper,{
+          hostResolver:runtime()?.resolver?.properResolver,
+        }),
+        language:()=>runtimeState()?.language??"en",
+        onSelectionChange:()=>state.fullMassPreflight?.refresh?.(),
+      });
+      state.fullMassPreflight.refresh();
+       state.fullMassCatalogue=mountSourceOwnedMassCatalogue({
+         doc:document,
+         stage:()=>arch()?.stage,
+         language:()=>runtimeState()?.language??"en",
+       });
+       state.controller = createBrowserMassController({
+         rogationPreflight:state.rogationPreflight,
+         fullMassPreflight:state.fullMassPreflight,
+         observedSource:state.observedSource,
+       });
       state.installed = true;
       document.documentElement.dataset.aoR17MassBridge = "ready";
     } catch (error) {
@@ -740,6 +852,10 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     status: () => Object.freeze({
       installed: state.installed,
       rogationPreflightMounted:Boolean(state.rogationPreflight),
+      observedMassSourceMounted:Boolean(state.observedSource),
+      observedMassSelection:state.observedSource?.status?.()??null,
+       fullMassPreflight:state.fullMassPreflight?.status?.()??null,
+       fullMassCatalogue:state.fullMassCatalogue?.status?.()??null,
       polls: state.polls,
       hostApi: Boolean(celebrationApi()?.getResolvedMass),
       presentationOwner: "R17_NATIVE_PRODUCTION",

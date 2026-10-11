@@ -1,0 +1,41 @@
+{
+  "schema": "ao-mass-icon-extension-approval-v1",
+  "approvedOn": "2026-10-11",
+  "scope": "USER_APPROVED_ARTWORK_ONLY",
+  "immutableCoreBank": "assets/active/mass-v46/manifest.v1.json",
+  "authority": "User explicitly approved both revised silhouette candidates in conversation on 2026-10-11. Keep user-approved images unchanged.",
+  "originalSelectedCount": 42,
+  "newlyApprovedCount": 2,
+  "overallUserApprovedCount": 44,
+  "entries": [
+    {
+      "id": "priest:fingers_joined_after_consecration",
+      "sourceReview": "assets/review/mass-finger-joined-silhouette-v2.svg",
+      "asset": "assets/approved/mass/finger-contact-post-consecration.svg",
+      "status": "APPROVED_ARTWORK",
+      "actor": "PRIEST",
+      "owner": "priest_action",
+      "validity": "AFTER_HOST_CONSECRATION_UNTIL_POST_COMMUNION_ABLUTION",
+      "mappingCandidate": "Rubrical events:AO.RUB.C0174.06:33",
+      "runtimeBound": false
+    },
+    {
+      "id": "priest:post_communion_finger_ablutions",
+      "sourceReview": "assets/review/mass-finger-ablutions-silhouette-v2.svg",
+      "asset": "assets/approved/mass/finger-ablutions-post-communion.svg",
+      "status": "APPROVED_ARTWORK",
+      "actor": "PRIEST",
+      "owner": "priest_action",
+      "validity": "POST_COMMUNION_ABLUTIONS_NOT_OFFERTORY_LAVABO",
+      "mappingCandidate": "Rubrical events:AO.RUB.C0248.01:51",
+      "runtimeBound": false
+    }
+  ],
+  "constraints": [
+    "Do not overwrite the original frozen v4.6 bank of 67 donor masters.",
+    "Do not change the 42 earlier selected preferences.",
+    "Do not confuse priest action icons with faithful posture icons.",
+    "The first and second mapping candidates must be checked against the actual rubrical event source before binding to runtime.",
+    "Artwork approval does not imply global automatic mapping or changing rubric timing."
+  ]
+}

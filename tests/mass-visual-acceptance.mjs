@@ -574,13 +574,47 @@ try{
   await scholaPause.click();
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola resume control did not resume");
 
+  const scholaBeforeTranslation=await page.evaluate(()=>
+    globalThis.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.schola??null);
+  const expectedScholaTranslation=scholaBeforeTranslation?.english??null;
+  const expectedScholaLatin=scholaBeforeTranslation?.latin??null;
+  assert.ok(expectedScholaTranslation,"independent Schola source is missing a vernacular translation");
   await scholaDock.locator("[data-schola-translate]").click();
-  assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not open");
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"true","Schola translation did not activate");
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"true","Schola translation did not pause moving text");
-  assert.ok(((await scholaDock.locator("[data-role='schola-translation']").textContent())??"").trim().length>0,"Schola translation is empty");
+  assert.equal((await scholaDock.locator("[data-role='schola']").textContent())?.trim(),
+    expectedScholaTranslation,"Schola translation did not replace the very same visible line");
+  assert.equal(await scholaDock.locator("[data-role='schola-translation']").count(),0,
+    "a second Schola translation below the Latin is forbidden");
+  assert.equal(await scholaDock.locator("[data-schola-translate]").getAttribute("aria-pressed"),"true");
+  await page.screenshot({path:resolve(out,"06a-schola-inline-vernacular.png"),fullPage:false});
   await scholaDock.locator("[data-schola-translate]").click();
-  assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola translation did not close");
+  assert.equal(await scholaDock.getAttribute("data-show-translation"),"false","Schola text did not return to Latin");
+  assert.equal((await scholaDock.locator("[data-role='schola']").textContent())?.trim(),
+    expectedScholaLatin,"Schola did not restore its original Latin in place");
   assert.equal(await scholaPause.getAttribute("aria-pressed"),"false","Schola did not resume after translation closed");
+
+  const missalTypography=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const reader=root?.querySelector(".ao-reader-paragraph:not([data-kind='RUBRIC'])");
+    const main=reader?.querySelector(".ao-line-primary");
+    const shell=root?.querySelector("[data-ao-reader-shell]");
+    const dock=root?.querySelector(".ao-schola-main");
+    return {
+      prayerFont:main?getComputedStyle(main).fontFamily:null,
+      scholaFont:dock?getComputedStyle(dock).fontFamily:null,
+      backdrop:shell?getComputedStyle(shell).backgroundImage:null,
+      colour:shell?.dataset?.liturgicalColour??null,
+      scholaRect:dock?.getBoundingClientRect().toJSON()??null,
+    };
+  });
+  assert.match(missalTypography.prayerFont??"",/Garamond|Baskerville|Georgia/i,
+    "Mass prayer text is not in a missal-style serif family");
+  assert.match(missalTypography.scholaFont??"",/Garamond|Baskerville|Georgia/i,
+    "Schola chant must share the Mass's book-like serif family");
+  assert.match(missalTypography.backdrop??"",/gradient/,
+    "Mass lost its app-dark palette gradient");
+  assert.ok(missalTypography.scholaRect?.height>=35,"Schola text touch target is too small");
 
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
@@ -723,15 +757,15 @@ try{
   assert.equal(elevationState.bellActive,"true","Host elevation action cue did not activate the bell channel");
   assert.match(elevationState.bellText,/ELEVATION BELL/i);
   assert.equal(elevationState.bellIconHidden,false,"Host elevation bell rail is active but its icon is hidden");
-  assert.match(elevationState.bellIconMask,/mass-v46\/bells\.svg/,
-    "Host elevation bell rail is active but is not using the exact v4.6 donor bell art");
+  assert.match(elevationState.bellIconMask,/^url\(["\x27]?data:image\/png;base64,/,
+    "Host elevation bell should use unwrapped exact v1.80 PNG alpha, not an opaque SVG wrapper");
   assert.equal(elevationState.cueStateSupported,true,
     "Sung cue-state controller is not active at the Host elevation: "+JSON.stringify(elevationState));
   assert.equal(elevationState.cueStateAction,"ELEVATES HOST",
     "loaded v1.80 priest-action registry does not expose the Host elevation action at AO.SM.C0174: "+JSON.stringify(elevationState));
   assert.equal(elevationState.projectedAction,"ELEVATES HOST",
     "native state projection dropped the Host elevation action after cue resolution");
-  assert.equal(elevationState.projectedActionIconKey,"priest_elevate_host_rich","Host elevation cue lost its exact v4.6 action key");
+  assert.equal(elevationState.projectedActionIconKey,"priest_elevation","Host elevation lost the reviewed v1.80 art");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
   const elevationBackdrop=await page.locator("#ao-r17-native-reader-preview [data-role='cinematic']").evaluate(el=>({
     backgroundColor:getComputedStyle(el).backgroundColor,
@@ -845,14 +879,48 @@ try{
   assert.ok(gloriaAdoramus.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
     "Adoramus te gesture rail activates without highlighting the sourced phrase in the displayed language: "+JSON.stringify(gloriaAdoramus));
   assert.equal(gloriaAdoramus.anchorFlag,"true");
+  assert.match(gloriaAdoramus.anchoredParagraphSource,/Adorámus te/i,
+    "real sung Gloria paragraph should be Latin-first in the LIVE reader");
 
   const gloriaBow=await focusCanonicalCue("AO.SM.C0061");
   assert.match(gloriaBow.gesture,/BOW HEAD/i,"Traditional Gloria Holy Name cue is not visibly salient");
-  assert.equal(gloriaBow.posture,"STAND","Gloria posture did not remain visible in the faithful state ribbon");
+  assert.equal(gloriaBow.posture,"STAND","Gloria stays standing until Qui sedes ad dexteram Patris");
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
   assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
+  const faithfulGloriaIcons=await page.evaluate(()=>{
+    const r=document.querySelector("#ao-r17-native-reader-preview");
+    const rows=[...r.querySelectorAll(".ao-reader-paragraph[data-faithful-row-id]")];
+    return {count:rows.length,eachHasPosture:rows.every(row=>Boolean(row.querySelector('[data-faithful-field="posture"] .ao-icon-mask'))),
+      current:rows.find(row=>row.dataset.cueId==="AO.SM.C0061")?.querySelector('[data-faithful-field="gesture"] .ao-icon-mask')?.hidden??null};
+  });
+  assert.ok(faithfulGloriaIcons.count>=1 && faithfulGloriaIcons.eachHasPosture,
+    "each visible Gloria paragraph requires its own faithful posture icon");
+  assert.equal(faithfulGloriaIcons.current,false,"Gloria bow missing from faithful paragraph itself");
+  // An actual tap on the faithful pictogram, not the priest icon, owns
+  // the local posture/gesture picker. Saving must not rebuild the card.
+  const gloriaInline=page.locator(
+    "#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='posture']");
+  await gloriaInline.click();
+  const faithfulPicker=page.locator("#ao-r17-native-reader-preview [data-role='faithful-icon-picker']");
+  assert.equal(await faithfulPicker.isVisible(),true,"tapping faithful icon did not open customization");
+  assert.equal(await faithfulPicker.getAttribute("data-cue-id"),"AO.SM.C0061");
+  await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("STAND");
+  await page.waitForFunction(()=>
+    document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061']")
+      ?.dataset.faithfulPosture==="STAND",null,{timeout:7000});
+  await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("SIGN_OF_CROSS");
+  await page.waitForFunction(()=>
+    document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']")
+      ?.title?.includes("SIGN OF CROSS"),null,{timeout:7000});
+  assert.match(await page.evaluate(()=>localStorage.getItem("ao-mass-customary-v1")??""),/AO.SM.C0061/,
+    "faithful paragraph icon customization was not saved");
+  await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("DEFAULT");
+  await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("DEFAULT");
+  await faithfulPicker.locator("[data-faithful-picker-close]").click();
+  assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
+
   const priestBowArt=await page.evaluate(()=>{
     const root=document.getElementById("ao-r17-native-reader-preview");
     const rail=root?.querySelector('.ao-rail-right [data-channel="priest-action"]');
@@ -873,6 +941,14 @@ try{
   assert.ok(!gloriaBow.anchorWords.some(word=>/Ador[aá]mus te|We adore thee|Nous vous adorons/i.test(word)),
     "Gloria previous-word ritual highlight leaked into the next cue");
   await page.screenshot({path:resolve(out,"09-mass-gloria-bow.png"),fullPage:false});
+  const beforeGloriaSit=await focusCanonicalCue("AO.SM.C0064");
+  assert.equal(beforeGloriaSit.posture,"STAND","Gloria sits too early before Qui sedes");
+  const gloriaSit=await focusCanonicalCue("AO.SM.C0065");
+  assert.equal(gloriaSit.posture,"SIT","Gloria must sit exactly at Qui sedes ad dexteram Patris");
+  await page.screenshot({path:resolve(out,"09a-mass-gloria-qui-sedes-sit.png"),fullPage:false});
+  const gloriaRise=await focusCanonicalCue("AO.SM.C0068");
+  assert.equal(gloriaRise.posture,"STAND","Gloria must rise at Cum Sancto Spiritu before Amen");
+  assert.match(gloriaRise.anchoredParagraphSource,/Cum Sancto Spíritu/i);
 
   // Source-owned v1.80 LISTEN cue appears during actual sung priest text,
   // but the separate faithful response and posture channels remain independent.
@@ -888,21 +964,28 @@ try{
   assert.equal(listenCue.active,"true","sung Collect did not activate the faithful LISTEN channel: "+JSON.stringify({collectListening,listenCue}));
   assert.equal(listenCue.display,"grid","LISTEN cue exists but is hidden by rail CSS");
   assert.equal(listenCue.iconHidden,false,"LISTEN cue lost its exact donor art");
-  assert.match(listenCue.iconMask,/listen\.svg/,"LISTEN cue resolved to the wrong donor key");
+  assert.match(listenCue.iconMask,/^url\(["\x27]?data:image\/png;base64,/,"LISTEN cue must use original unwrapped v1.80 PNG alpha");
   assert.equal(listenCue.postureCueActive,"false",
     "persistent STAND was duplicated as a second posture-change icon");
 
   const incarnatus=await focusCanonicalCue("AO.SM.C0096");
   assert.match(incarnatus.gesture,/GENUFLECT/i,"Incarnatus genuflection is not visibly salient");
-  assert.equal(incarnatus.posture,"STAND","Incarnatus transient genuflection incorrectly replaced the persistent standing posture");
+  assert.equal(incarnatus.posture,"STAND","Credo stands through Incarnatus and sits only after the kneeling");
   assert.equal(incarnatus.leftRail,"true");
   assert.equal(incarnatus.gestureIconHidden,false,"Incarnatus lost its canonical genuflect icon");
   assert.equal(incarnatus.targetActive,"true");
   assert.equal(incarnatus.anchorFlag,"true","Incarnatus genuflect rail did not activate its Latin words");
+  assert.match(incarnatus.anchoredParagraphSource,/incarn[aá]tus est/i,
+    "real sung Credo should be Latin-first in the LIVE reader");
   assert.ok(incarnatus.anchorWords.some(word=>/Et incarn[aá]tus est|And was incarnate|Il a pris chair/i.test(word)) &&
     incarnatus.anchorWords.some(word=>/et homo factus est|and was made man|s.est fait homme/i.test(word)),
     "Credo Incarnatus sourced opening and closing words are not highlighted as its gesture engages: "+JSON.stringify(incarnatus));
   await page.screenshot({path:resolve(out,"10-mass-incarnatus.png"),fullPage:false});
+  const credoSit=await focusCanonicalCue("AO.SM.C0097");
+  assert.equal(credoSit.posture,"SIT","Credo must sit at Crucifixus, after Incarnatus");
+  await page.screenshot({path:resolve(out,"10a-mass-credo-post-incarnatus-sit.png"),fullPage:false});
+  const credoRise=await focusCanonicalCue("AO.SM.C0104");
+  assert.equal(credoRise.posture,"STAND","Credo must rise at Et vitam before Amen");
 
   // Check unrelated phases, not just Gloria/Credo. These anchors belong to
   // their exact canonical cues, in the language the reader already displays.
@@ -1638,7 +1721,30 @@ try{
     errors
   },null,2));
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
-  console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration},null,2));
+  // Independent 390px review client: source records, selectable artwork,
+  // note/approval persistence and actual JSON export.
+  await page.goto("http://127.0.0.1:4190/reviews/mass-complete-icon-assignment-atlas-20261011.html",
+    {waitUntil:"domcontentloaded",timeout:90000});
+  await page.locator("#targets .target").first().waitFor({timeout:20000});
+  assert.ok(await page.locator("#assets .asset").count()>=50,
+    "complete asset bank failed to display image candidates");
+  await page.locator("#findTarget").fill("AO.SM.C0068");
+  await page.locator("#targets .target").first().click();
+  await page.locator("#findAsset").fill("cross");
+  await page.locator("#assets .asset [data-primary]").first().click();
+  await page.locator("#status").selectOption("approved");
+  await page.locator("#notes").fill("Review example: exact cue; approved only in local export");
+  const [reviewDownload]=await Promise.all([
+    page.waitForEvent("download",{timeout:12000}),page.locator("#export").click()
+  ]);
+  const exported=JSON.parse(await readFile(await reviewDownload.path(),"utf8"));
+  assert.equal(exported.schema,"ao-icon-assignment-review-v1");
+  assert.ok(Object.keys(exported.changes).length>=1);
+  assert.ok(exported.sourceCounts?.matrix142===142);
+  await page.screenshot({path:resolve(out,"18-mass-complete-icon-atlas-mobile.png"),fullPage:false});
+  assert.deepEqual(errors,[],"review page JavaScript error: "+JSON.stringify(errors));
+  console.log("mass visual acceptance capture: PASS",JSON.stringify({opening,consecration,
+    iconAtlas:{targets:exported.sourceCounts?.matrix142,changed:Object.keys(exported.changes).length}},null,2));
   await context.close();
 }finally{
   await browser?.close();

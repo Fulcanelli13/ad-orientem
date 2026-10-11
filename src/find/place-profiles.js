@@ -4,6 +4,54 @@ import { calendarDateForSemanticKey } from "../calendar/intelligence.js";
 const arr=value=>Array.isArray(value)?value:[];
 const text=value=>String(value??"").trim();
 
+/** Only reviewed, source-identified local media may enter a Place page.
+ * A research candidate, hotlink, unrelated painting or uncredited image
+ * must never silently become a published shrine photograph. */
+export function resolveApprovedPlaceMedia(records,placeId){
+  const approvedLicenses=Object.freeze({
+    "CC0-1.0":/^https:\/\/creativecommons\.org\/publicdomain\/zero\/1\.0\//,
+    "CC-BY-4.0":/^https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//,
+    "CC-BY-SA-4.0":/^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\//,
+    "PUBLIC_DOMAIN":/^https:\/\/creativecommons\.org\/publicdomain\/mark\/1\.0\//,
+  });
+  const record=arr(records).find(row=>row?.place_id===placeId&&row?.status==="APPROVED");
+  if(!record)return null;
+  const path=text(record.asset_path);
+  // Research and staging directories are *never* valid public image paths.
+  // All files must be copied into the separately curated approved asset tree.
+  const width=Number(record.width),height=Number(record.height);
+  const orientation=height>width?"portrait":"landscape";
+  if(!/^assets\/(?:places|approved\/place-media)\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp|jpg|jpeg)$/.test(path)||
+     !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
+     !approvedLicenses[record.license]?.test(text(record.license_url))||
+     !/^https:\/\/[^\s]+$/.test(text(record.source_url))||
+     !text(record.credit)||!text(record.alt_en)||!text(record.alt_fr)||
+     !text(record.changes_en)||!text(record.changes_fr)||
+     !Number.isFinite(width)||!Number.isFinite(height)||width<100||height<100||
+     record.orientation!==orientation)return null;
+  return Object.freeze({
+    asset_path:path,credit:text(record.credit),license:text(record.license),
+    license_url:text(record.license_url),changes_en:text(record.changes_en),
+    changes_fr:text(record.changes_fr),orientation,
+    source_url:text(record.source_url),alt_en:text(record.alt_en),alt_fr:text(record.alt_fr),
+  });
+}
+
+
+function publishedIllustratedPlaceGuide(guides,placeId){
+  const guide=arr(guides).find(row=>row?.place_id===placeId&&row?.publication==="PUBLISHED");
+  if(!guide||!/^https:\/\/[^\s]+$/.test(text(guide.official_url)))return null;
+  const sourced=value=>/^https:\/\/[^\s]+$/.test(text(value?.source_url));
+  const paragraphs=arr(guide.sections).flatMap(section=>arr(section?.paragraphs));
+  if(!paragraphs.length||!paragraphs.every(row=>text(row?.en)&&text(row?.fr)&&sourced(row)))return null;
+  if(!arr(guide.stops).every(row=>text(row?.name_en)&&text(row?.name_fr)&&sourced(row)))return null;
+  if(!arr(guide.chronology).every(row=>text(row?.when)&&sourced(row)))return null;
+  if(!arr(guide.programmes).every(row=>text(row?.date_kind)&&sourced(row)))return null;
+  // Candidate research can never become a place guide through fallback titles or pins.
+  // Artwork is independently licensed through the existing approved-media registry.
+  return Object.freeze({...guide,gallery:Object.freeze([])});
+}
+
 function placeIdForItem(item){
   if(item?.place_id)return item.place_id;
   if(item?.raw?.place?.place_id)return item.raw.place.place_id;
@@ -86,8 +134,60 @@ function itemRef(item){
     title:item?.title??"",
     status:item?.status??"",
     summary:item?.summary??"",
+    summary_fr:item?.summary_fr??null,
     eyebrow:item?.eyebrow??"",
+    source_links:Object.freeze(arr(item?.source_links)
+      .filter(link=>/^https:\/\/[^\s]+$/i.test(text(link?.url)))
+      .map(link=>Object.freeze({
+        url:text(link.url),title:text(link?.title)||"Source",
+        issuer:text(link?.issuer)||text(link?.title)||"Source",
+      }))),
   });
+}
+
+/**
+ * A restrained source-first editorial sequence. Every paragraph is the prose
+ * of one exact-place canonical owner and can be opened at its own original
+ * external source. No assistant-written biographies, inferred narratives,
+ * combined claims, or unsourced calendar dates are introduced here.
+ */
+export function sourceBoundPlaceChapters(related){
+  const chapters=[],seen=new Set();
+  const groups=[["shrines","ORIGIN",1],["pilgrimages","PILGRIMAGE",3],
+    ["apparitions","APPARITION",1],["relics","RELIC",1],["traditions","TRADITION",1]];
+  for(const [group,kind,max] of groups){
+    let added=0;
+    for(const item of arr(related?.[group])){
+      if(added>=max)break;
+      const summary_en=text(item?.summary).replace(/\s+/g," ");
+      const summary_fr=text(item?.summary_fr).replace(/\s+/g," ");
+      // Never promise a complete French editorial paragraph if the underlying
+      // source owner has only the original English. Record details stay readable.
+      if(!summary_en||!summary_fr||summary_en===summary_fr)continue;
+      // Some research-side Apparition/Relic entries deliberately carry a
+      // generic evidence-scoping sentence rather than historical prose.
+      // Preserve these in the source-owned records, not as devotional copy.
+      if(!["ORIGIN","PILGRIMAGE"].includes(kind)&&(
+        /^(the linked institution records|the linked source records|documented source|this entry records|the record identifies|a source (?:records|identifies))/i.test(summary_en)||
+        /(?:at the indicated site|the linked institution|as reported in the source)/i.test(summary_en)
+      ))continue;
+      const sources=arr(item?.source_links).filter(source=>/^https:\/\/[^\s]+$/i.test(text(source?.url)));
+      if(!sources.length)continue;
+      const fingerprint=summary_en.toLowerCase().replace(/\W+/g," ").trim();
+      if(seen.has(fingerprint))continue;
+      seen.add(fingerprint);
+      chapters.push(Object.freeze({
+        kind,item_id:item?.item_id??null,
+        title_en:text(item?.title),title_fr:text(item?.title_fr)||text(item?.title),
+        body_en:summary_en,body_fr:summary_fr,
+        sources:Object.freeze(sources.slice(0,2).map(source=>Object.freeze({
+          url:source.url,title:source.title,issuer:source.issuer,
+        }))),
+      }));
+      added++;
+    }
+  }
+  return Object.freeze(chapters);
 }
 
 function exactTlmItems(dataset,projection,placeId){
@@ -135,9 +235,14 @@ function relatedItemsForPlace(projection,placeId){
 
 export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}={}){
   const profiles=[];
+  // Curation is an editorial discovery index, not a new evidence owner.
+  // Only exact existing source IDs and physical Place identities qualify.
+  const featured=new Map(arr(dataset?.editorial?.featured).map((entry,index)=>[entry?.place_id,{...entry,ordinal:index}]));
   for(const place of arr(dataset?.geography?.places)){
     const placeId=place?.place_id;
     if(!placeId)continue;
+    const curated=featured.get(placeId);
+    const featuredPlace=curated&&arr(place?.source_ids).includes(curated.source_id)?curated:null;
     const related=relatedItemsForPlace(projection,placeId);
     const tlm=exactTlmItems(dataset,projection,placeId);
     const relatedPlaces=relatedPlacesForPlace(dataset?.geography,placeId);
@@ -156,22 +261,53 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
     const saints=[...new Set(related.shrines.flatMap(item=>arr(item?.raw?.shrine?.associated_saints)).filter(Boolean))];
     const shrineIds=new Set(related.shrines.map(item=>item?.raw?.shrine?.shrine_id).filter(Boolean));
     const novenaMap=new Map(arr(dataset?.novenas?.records).map(record=>[record?.id,record]).filter(([id])=>id));
+    const novenaSources=new Map(arr(dataset?.novenas?.sources).filter(row=>row?.id&&/^https:\/\/[^\s]+$/i.test(text(row?.url))).map(row=>[row.id,row]));
     const groupedNovenas=new Map();
     for(const link of arr(dataset?.novenas?.links)){
       if(!link?.novena_id||!(link?.place_id===placeId||(link?.shrine_id&&shrineIds.has(link.shrine_id))))continue;
       const record=novenaMap.get(link.novena_id);
       if(!record)continue;
       const previous=groupedNovenas.get(link.novena_id);
-      if(previous){if(link.note&&!previous.notes.includes(link.note))previous.notes.push(link.note);continue;}
-      groupedNovenas.set(link.novena_id,{id:link.novena_id,title_en:record.title_en??record.title_fr??link.novena_id,title_fr:record.title_fr??record.title_en??link.novena_id,notes:link.note?[link.note]:[]});
+      const citations=arr(link.source_ids).map(id=>novenaSources.get(id)).filter(Boolean);
+      if(previous){
+        if(link.note&&!previous.notes.includes(link.note))previous.notes.push(link.note);
+        for(const source of citations)if(!previous.sources.some(row=>row.url===source.url))previous.sources.push(source);
+        continue;
+      }
+      groupedNovenas.set(link.novena_id,{
+        id:link.novena_id,
+        title_en:record.title_en??record.title_fr??link.novena_id,
+        title_fr:record.title_fr??record.title_en??link.novena_id,
+        sources:citations,
+        notes:link.note?[link.note]:[],
+      });
     }
-    const novenas=Object.freeze([...groupedNovenas.values()].map(row=>Object.freeze({...row,notes:Object.freeze(row.notes)})));
+    const novenas=Object.freeze([...groupedNovenas.values()].map(row=>Object.freeze({
+      id:row.id,title_en:row.title_en,title_fr:row.title_fr,
+      // Research-side notes remain available for provenance/regression only,
+      // but are never printed in the user-facing devotional cards.
+      notes:Object.freeze(row.notes),
+      sources:Object.freeze(row.sources.map(source=>Object.freeze({
+        url:source.url,title:source.title??source.id,
+      }))),
+    })));
+    const candidateChapters=sourceBoundPlaceChapters(related);
+    // All exactly linked Places may become editorial readers, without adding
+    // them to the separate 20-site "In focus" discovery menu. Require both
+    // a sourced bilingual shrine account and a sourced bilingual pilgrimage
+    // witness; untranslated/general records remain in their original lenses.
+    const sourceBoundChapters=candidateChapters.some(row=>row.kind==="ORIGIN")
+      &&candidateChapters.some(row=>row.kind==="PILGRIMAGE")
+      ?candidateChapters:Object.freeze([]);
 
     profiles.push(Object.freeze({
       place_id:placeId,
       name:place?.name?.official??placeId,
+      editorial_feature:featuredPlace?Object.freeze({ordinal:featuredPlace.ordinal,source_id:featuredPlace.source_id}):null,
       aliases:Object.freeze(arr(place?.name?.aliases).filter(Boolean)),
       place_type:place?.place_type??"other",
+      media:resolveApprovedPlaceMedia(dataset?.media?.approved,placeId),
+      illustrated_guide:publishedIllustratedPlaceGuide(dataset?.editorial?.placeGuides,placeId),
       address:place?.address??null,
       address_label:addressLabel(place?.address),
       geo:place?.geo??null,
@@ -195,9 +331,13 @@ export function buildExplorePlaceProfiles(dataset={},projection={}, {today=null}
       related_places:relatedPlaces,
       saints:Object.freeze(saints),
       novenas,
+      story_chapters:sourceBoundChapters,
       calendar,
       seasonal_pilgrimages,
       sources:Object.freeze([...uniqueSourceLinks(allItems,place),
+        ...novenas.flatMap(row=>row.sources.map(source=>Object.freeze({
+          id:source.url,title:source.title,issuer:"Devotional source",url:source.url,role:"DEVOTION",
+        }))),
         ...relatedPlaces.filter(row=>row.source_url).map(row=>Object.freeze({
           id:row.source_url,title:row.source_label,issuer:"Institutional place relationship",
           url:row.source_url,role:"RELATIONSHIP",

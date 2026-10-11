@@ -8,10 +8,14 @@ on:
       - 'data/pray/rosary-primary-edition-review.v1.json'
       - 'data/pray/rosary-drc-crampon-collation.v1.json'
       - 'tests/rosary-drc-crampon-collation.mjs'
-      - 'package.json'
   workflow_dispatch:
 permissions:
   contents: read
+# Cancel obsolete revisions of the same pull request; never cancel manual or main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   compare-catholic-witnesses:
     runs-on: ubuntu-latest

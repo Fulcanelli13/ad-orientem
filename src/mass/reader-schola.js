@@ -21,13 +21,19 @@ const TRACK_SPECS=Object.freeze([
 function clean(value){const s=String(value??"").trim();return s||null}
 function freezeSegment(segment){return Object.freeze({...segment});}
 
-function ordinarySegments(corpus,macroId){
+function ordinarySegments(corpus,macroId,{language="en",frenchOrdinary=null}={}){
   const blocks=(corpus?.blocks??[]).filter(b=>b.Macro_ID===macroId);
   const rows=[];
   for(const block of blocks){
     for(const unit of block.units??[]){
       if(unit.clock!=="SCHOLA_PUBLIC")continue;
-      const latin=clean(unit.latin),english=clean(unit.english);
+      const latin=clean(unit.latin);
+      const fr=String(language).toLowerCase().startsWith("fr");
+      // The Schola's translation follows the reader's language, but Latin
+      // always remains the immutable default sung text.
+      const english=fr
+        ? clean(frenchOrdinary?.byCue?.[unit.cue_id]??unit.english)
+        : clean(unit.english);
       if(!latin&&!english)continue;
       rows.push(freezeSegment({
         id:unit.cue_id,cueId:unit.cue_id,
@@ -54,7 +60,7 @@ function properSegments(properSlots,slot){
   })).filter(x=>x.latin||x.english));
 }
 
-export function buildNativeScholaTracks({sungCorpus,properSlots,prepared}={}){
+export function buildNativeScholaTracks({sungCorpus,properSlots,prepared,frenchOrdinary=null}={}){
   const form=String(prepared?.session?.resolvedMass?.form??"").toUpperCase();
   if(form==="LOW")return Object.freeze({
     supported:true,structuralAbsence:true,reason:null,tracks:Object.freeze([])
@@ -65,7 +71,9 @@ export function buildNativeScholaTracks({sungCorpus,properSlots,prepared}={}){
   if(!sungCorpus?.blocks)throw new TypeError("Verified Sung corpus required for Schola");
   const tracks=TRACK_SPECS.map(spec=>{
     const segments=spec.kind==="ORDINARY"
-      ? ordinarySegments(sungCorpus,spec.macroId)
+      ? ordinarySegments(sungCorpus,spec.macroId,{
+          language:prepared?.readerPreferences?.language??"en",frenchOrdinary,
+        })
       : properSegments(properSlots,spec.slot);
     if(!segments.length && !spec.optional)throw new Error("Native Schola track has no source text: "+spec.id);
     return Object.freeze({...spec,segments});
@@ -95,7 +103,7 @@ export function createNativeScholaController(args={}){
   for(const track of built.tracks)for(const segment of track.segments){
     if(segment.cueId)cueToTrack.set(segment.cueId,{trackId:track.id,index:track.segments.indexOf(segment)});
   }
-  let activeTrackId=null,index=0,complete=false;
+  let activeTrackId=null,index=0,complete=false,lastSyncedCueId=null;
 
   function state(){
     const track=activeTrackId?byId.get(activeTrackId):null;
@@ -114,8 +122,8 @@ export function createNativeScholaController(args={}){
     });
   }
   function activate(trackId,{reset=true}={}){
-    if(!byId.has(trackId)){activeTrackId=null;index=0;complete=false;return state()}
-    if(activeTrackId!==trackId || reset){activeTrackId=trackId;index=0;complete=false}
+    if(!byId.has(trackId)){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
+    if(activeTrackId!==trackId || reset){activeTrackId=trackId;index=0;complete=false;lastSyncedCueId=null}
     return state();
   }
   function activateForCard(sequence){
@@ -123,13 +131,18 @@ export function createNativeScholaController(args={}){
     const current=activeTrackId?byId.get(activeTrackId):null;
     if(current?.cards?.includes(n))return state();
     const matches=built.tracks.filter(t=>t.cards.includes(n));
-    if(!matches.length){activeTrackId=null;index=0;complete=false;return state()}
+    if(!matches.length){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
     return activate(matches[0].id);
   }
   function syncCue(cueId){
-    const hit=cueToTrack.get(String(cueId??""));
+    const id=String(cueId??"");
+    const hit=cueToTrack.get(id);
     if(!hit)return state();
+    // A layout refresh or unchanged cue focus must not rewind a Schola
+    // segment manually advanced within its independent track.
+    if(id===lastSyncedCueId && activeTrackId===hit.trackId)return state();
     activeTrackId=hit.trackId;index=hit.index;complete=false;
+    lastSyncedCueId=id;
     return state();
   }
   function next(){

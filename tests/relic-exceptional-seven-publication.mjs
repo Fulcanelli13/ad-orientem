@@ -17,7 +17,7 @@ assert.equal(publication.sites.length,7);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:shrine.shrines,pilgrimages:shrine.pilgrimages,routes:shrine.routes,temporalLinks:shrine.temporalLinks,sources:sources.sources,places:geo.places}).pass,true);
 const counts=[geo.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length];
-assert.deepEqual(counts,[182,178,206,261,122]);
+assert.deepEqual(counts,[223,219,209,366,122]);
 const geos=new Map(geo.places.map(p=>[p.place_id,p]));
 const groups=new Map(research.groups.map(g=>[g.object_group_id,g]));
 const pins=new Set(),oldGroups=research.groups.filter(g=>!g.research_candidate_id);
@@ -64,7 +64,7 @@ for(const s of publication.sites){
  const id="relic:"+s.slug,item=items.find(i=>i.source_id===id);
  assert.ok(item?.sections.some(section=>section.label==="Exposition & visitor access"),"Source-specific visitor guidance absent "+id);
  assert.ok(!item.sections.some(section=>section.title==="Temporary closure"),"Ordinary display restriction falsely labelled closure "+id);
- const rendered=renderExploreToString(buildExploreViewModel({language:"fr",lens:"relics",view:"list",items:[item],selectedId:item.item_id,counts:{relics:1}}));
+ const rendered=renderExploreToString(buildExploreViewModel({language:"fr",lens:"relics",view:"list",items:[item],selectedId:item.item_id,counts:{relics:1},expandDetail:true}));
  assert.ok(rendered.includes("Ostension et accès"),"French reader missing special-access explanation "+id);
 }
 const aachen=publication.sites.find(s=>s.group==="sacred-object-group:aachen-four-cloths");

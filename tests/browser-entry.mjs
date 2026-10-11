@@ -47,8 +47,10 @@ const rites = mapInsertedRites([
   "corpus procession",
   "requiem absolution",
   "rogation procession",
+  "palm procession",
+  "generic following procession",
 ]);
-assert.deepEqual([...rites.precedingRites], ["ASPERGES", "ROGATIONS"]);
+assert.deepEqual([...rites.precedingRites], ["ASPERGES", "ROGATIONS","PALM"]);
 assert.deepEqual(
   [...rites.followingActions],
   ["CORPUS_CHRISTI_PROCESSION", "REQUIEM_ABSOLUTION", "GENERIC_PROCESSION"],

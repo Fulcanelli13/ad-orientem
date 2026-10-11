@@ -1,4 +1,4 @@
-import { HOME_PRESENTATION_VERSION, renderHome } from "./presentation.js";
+import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 
 const VERSION="modular-home-v2";
 
@@ -86,6 +86,8 @@ export function createHomeOwner(win=globalThis){
   let retryTimer=null;
   let enricherClicksBound=false;
   let retiredEnricherObserver=null;
+  let inlineCalendarView=null;
+  let inlineCalendarRestoring=false;
 
   function ensureRetiredEnricherWatch(){
     if(retiredEnricherObserver)return;
@@ -93,6 +95,26 @@ export function createHomeOwner(win=globalThis){
       if(state(win)?.route==="home"){
         retireLegacyHomeEnrichers(win);
         retireUnresolvedSaintArt(win);
+        // The historical Home donor may repaint #app asynchronously while the
+        // current destination remains Today. Restore the *same* shared Calendar
+        // in the new slot rather than losing Year/Month to a silent DOM swap.
+        if(inlineCalendarView&&!inlineCalendarRestoring){
+          const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+          const slot=screen?.querySelector?.("[data-home-calendar-inline]");
+          const calendar=slot?.querySelector?.("#ao-calendar-modular-root");
+          const intact=Boolean(calendar?.isConnected&&!slot.hidden&&
+            screen?.dataset?.aoHomeCalendarView===inlineCalendarView);
+          if(slot&&!intact){
+            inlineCalendarRestoring=true;
+            queueMicrotask(()=>{
+              if(!inlineCalendarView||state(win)?.route!=="home"){
+                inlineCalendarRestoring=false;return;
+              }
+              Promise.resolve(openHomeCalendar(inlineCalendarView))
+                .finally(()=>{inlineCalendarRestoring=false});
+            });
+          }
+        }
       }
     });
     retireLegacyHomeEnrichers(win);
@@ -219,6 +241,39 @@ export function createHomeOwner(win=globalThis){
     try{return win?.AO_MODULES?.open?.(id)??false;}catch{return false;}
   }
 
+  function showHomeToday(){
+    inlineCalendarView=null;
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+    if(screen){
+      try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home"})}catch{}
+      delete screen.dataset.aoHomeCalendarView;
+      const slot=screen.querySelector("[data-home-calendar-inline]");
+      if(slot)slot.hidden=true;
+    }
+    paint(state(win));
+    return true;
+  }
+  async function openHomeCalendar(view="picker",date=null){
+    if(!["day","picker","year"].includes(view))view="picker";
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+    const slot=screen?.querySelector?.("[data-home-calendar-inline]");
+    if(!screen||!slot||state(win)?.route!=="home")return false;
+    inlineCalendarView=view;
+    slot.hidden=false;
+    screen.dataset.aoHomeCalendarView=view;
+    for(const button of screen.querySelectorAll(".aoTodayV2Tabs [aria-current]"))
+      button.removeAttribute("aria-current");
+    const selectedTab=screen.querySelector('.aoTodayV2Tabs [data-home-calendar-view="'+view+'"]');
+    selectedTab?.setAttribute("aria-current","page");
+    const api=win?.AO_CALENDAR_APP_V1;
+    const opened=await api?.openEmbedded?.(slot,{view,onClose:()=>{
+      if(inlineCalendarView)showHomeToday();
+    }});
+    if(opened!==true){showHomeToday();return false}
+    if(date&&/^\d{4}-\d{2}-\d{2}$/.test(date))await api.select?.(date,{closeAfter:false});
+    return true;
+  }
+
   function onEnricherClick(event){
     const target=event?.target;
     const retry=target?.closest?.("[data-home-shortcut-retry]");
@@ -231,7 +286,16 @@ export function createHomeOwner(win=globalThis){
     if(resumeMass){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
-      void navigateHomeShortcut("mass",{trigger:resumeMass,routeId:"mass.current"});
+      // This is the only Home control authorized to restore an active R17
+      // checkpoint. Follow Mass and the ribbon Mass icon always prepare.
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("mass",{resume:true}))
+        .then(result=>{
+          if(routeAccepted(result)){clearRouteError();return;}
+          showRouteError("mass.resume",resumeMass);
+        }).catch(error=>{
+          try{win?.console?.error?.("Mass resume unavailable",error)}catch{}
+          showRouteError("mass.resume",resumeMass);
+        });
       return;
     }
     const massEntry=target?.closest?.("[data-home-mass-entry]");
@@ -241,10 +305,16 @@ export function createHomeOwner(win=globalThis){
       void navigateHomeShortcut("mass",{trigger:massEntry,routeId:"mass.current"});
       return;
     }
+    const backToday=target?.closest?.("[data-home-calendar-today]");
+    if(backToday){event.preventDefault?.();event.stopImmediatePropagation?.();showHomeToday();return}
     const calendar=target?.closest?.("[data-home-calendar]");
     if(calendar){
-      event.preventDefault?.();
-      void navigateHomeShortcut("calendar",{trigger:calendar,routeId:"calendar"});
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const view=calendar.dataset?.homeCalendarView||"picker";
+      const date=calendar.dataset?.homeCalendarDate||null;
+      void openHomeCalendar(view,date).then(ok=>{
+        if(!ok)showRouteError("calendar",calendar);
+      });
       return;
     }
     const settings=target?.closest?.("[data-home-settings]");
@@ -271,7 +341,13 @@ export function createHomeOwner(win=globalThis){
     const daily=target?.closest?.("[data-home-daily-catechism]");
     if(daily){
       event.preventDefault?.();
-      try{win?.AO_DAILY_CATECHISM?.open?.();}catch{}
+      try{
+        const opened=win?.AO_DAILY_CATECHISM?.open?.();
+        if(opened===undefined||opened===false)showRouteError("today.daily-catechism",daily);
+      }catch(error){
+        win?.console?.error?.("Daily Catechism could not open",error);
+        showRouteError("today.daily-catechism",daily);
+      }
       return;
     }
     const dynamic=target?.closest?.("[data-home-cu-dynamic]");
@@ -337,13 +413,14 @@ export function createHomeOwner(win=globalThis){
 
   function paint(next=state(win)){
     if(next?.route!=="home")return false;
+    if(inlineCalendarView&&win?.document?.querySelector?.(".homeScreen.aoTodayV2 [data-home-calendar-inline]"))return true;
     const appRoot=root(win);
     if(!appRoot)return false;
     const rendered=renderHome(appRoot,next,win);
     if(!rendered)return false;
     markOwner();
     const queue=typeof win?.queueMicrotask==="function"?win.queueMicrotask.bind(win):queueMicrotask;
-    queue(()=>rehydrateRemainingHomeDonors(win));
+    queue(()=>{rehydrateRemainingHomeDonors(win);reconcileTodayHero(appRoot)});
     return true;
   }
 
@@ -362,6 +439,21 @@ export function createHomeOwner(win=globalThis){
   }
 
   function open(){
+    // In-page Calendar is still the Home destination. Boot/enricher owners can
+    // request Home again during first-use Calendar resolution: that is not an
+    // instruction to discard the user's selected Year or Month view.
+    if(inlineCalendarView&&state(win)?.route==="home"){
+      const slot=win?.document?.querySelector?.(".homeScreen.aoTodayV2 [data-home-calendar-inline]");
+      if(slot){
+        ensureRetiredEnricherWatch();
+        attachPresentation();
+        if(!slot.querySelector("#ao-calendar-modular-root"))
+          void openHomeCalendar(inlineCalendarView);
+        markOwner();
+        return true;
+      }
+    }
+    inlineCalendarView=null;
     closeTransientSurfaces(win);
     resetCoreRoute(win);
     try{win?.AO_SETTINGS_APP_V1?.restoreHome?.();}catch{}

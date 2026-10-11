@@ -52,8 +52,8 @@ for(const [childId,parentId,query] of cases){
  assert.ok(parent.sources.some(x=>x.role==="RELATIONSHIP"&&x.url.startsWith("https://")));
  const hits=filterExploreItems(projection.byLens.shrines,{query});
  assert.ok(hits.some(x=>x.place_id===parentId),"the child place name must be discoverable through the associated shrine search");
- const en=renderExploreToString(buildExploreViewModel({language:"en",items:hits,lens:"shrines",counts:projection.counts,view:"list",selectedPlaceId:parentId,placeProfiles:profiles}));
- const fr=renderExploreToString(buildExploreViewModel({language:"fr",items:hits,lens:"shrines",counts:projection.counts,view:"list",selectedPlaceId:parentId,placeProfiles:profiles}));
+ const en=renderExploreToString(buildExploreViewModel({language:"en",items:hits,lens:"shrines",counts:projection.counts,view:"list",selectedPlaceId:parentId,placeProfiles:profiles,expandPlace:true}));
+ const fr=renderExploreToString(buildExploreViewModel({language:"fr",items:hits,lens:"shrines",counts:projection.counts,view:"list",selectedPlaceId:parentId,placeProfiles:profiles,expandPlace:true}));
  assert.ok(en.includes('data-explore-open-place="'+childId+'"'));
  assert.ok(fr.includes('data-explore-open-place="'+childId+'"'));
  assert.match(en,/RELATED PLACES/);

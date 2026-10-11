@@ -1,0 +1,66 @@
+name: Preliminary Mass Map R49 Acceptance
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/directory/preliminary-map-r49.v1.json"
+      - "src/find/preliminary-directory-r49.js"
+      - "src/find/browser-entry.js"
+      - "src/find/explore-presentation.js"
+      - "src/find/heritage-presentation.js"
+      - "tests/preliminary-world-mass-map-r49.mjs"
+      - "tests/directory-r50-rome-aliases.mjs"
+      - "data/directory/research/staging/map-first-r37/R50-rome-source-aliases.json"
+      - "data/directory/research/staging/map-first-r37/R51-rome-venue-aliases.json"
+      - "tests/directory-r51-rome-aliases.mjs"
+      - "tests/directory-r52-named-worship.mjs"
+      - "data/directory/research/staging/map-first-r37/R52-named-worship-source-aliases.json"
+      - "tests/explore-reachability-phone.mjs"
+      - ".github/workflows/directory-preliminary-map-r49.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+# Only the latest revision of the same PR runs in this workflow; preserve independent manual and main runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check preliminary map modules
+        run: |
+          node --check src/find/preliminary-directory-r49.js
+          node --check src/find/browser-entry.js
+          node --check src/find/explore-presentation.js
+          node --check src/find/heritage-presentation.js
+      - name: Map-first unit acceptance
+        run: |
+          node tests/preliminary-world-mass-map-r49.mjs
+          node tests/directory-r50-rome-aliases.mjs
+          node tests/directory-r51-rome-aliases.mjs
+          node tests/directory-r52-named-worship.mjs
+      - name: Existing Find and Explore contracts
+        run: |
+          node tests/find-surface.mjs
+          node tests/explore-surface.mjs
+  phone:
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: unit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Native Find/Explore phone regression
+        run: node tests/explore-reachability-phone.mjs

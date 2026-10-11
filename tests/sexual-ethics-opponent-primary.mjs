@@ -10,7 +10,7 @@ const audit=JSON.parse(readFileSync("data/learn/sexual-ethics-opponent-source-au
 const preview=readFileSync("src/learn/sexual-ethics.js","utf8");
 const directIds=["CURRAN1987","FARLEY_QUOTED2012","FARLEY_RESPONSE2012","CURRAN_CDF1986","ACOG_ECTOPIC","ACOG_ECTOPIC_GUIDELINE","MILL_IV_FULL"];
 assert.equal(new Set(CSE_SOURCES.map(s=>s.id)).size,CSE_SOURCES.length);
-assert.equal(CSE_SOURCES.length,89);
+assert.equal(CSE_SOURCES.length,97,"Canonical source registry grew after the original opponent audit");
 for(const id of directIds){assert.match(CSE_SOURCE_MAP[id].canonical_url,/^https:\/\//);assert.ok(CSE_SOURCE_MAP[id].title);}
 assert.equal(audit.summary.records,55);
 assert.equal(audit.cases.length,55);
@@ -72,5 +72,5 @@ assert.equal(audit.summary.unverified_literally_attributed_debate_stages,55);
 assert.deepEqual(audit.summary.remaining_without_any_checked_primary,["CSE008","CSE010","CSE038","CSE145"]);
 assert.match(preview,/Contextual evidence \(not an attributed proponent\)/);
 assert.match(preview,/Sources de contexte \(sans attribution à un défenseur précis\)/);
-assert.match(preview,/Illustrative objection: the linked sources document context or criticism/);
+assert.match(preview,/Illustrative objection: cited sources establish context rather than a named advocate/);
 console.log("PASS Sexual Ethics scope: 55/55 cases reviewed, 51 with some primary evidence, 4 without firsthand proof, all 55 stage-level editorial gates open.");

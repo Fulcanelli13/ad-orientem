@@ -1,0 +1,140 @@
+{
+  "schema": "AO_EXPLORE_PLACE_MEDIA_PUBLICATION_REVIEW_V1",
+  "version": "1.0.0",
+  "reviewed_at": "2026-10-11",
+  "source_stage_report": "data/geography/research/place-media-stage-report-r58.v1.json",
+  "publication_owner": "data/geography/approved-place-media.v1.json",
+  "counts": {
+    "approved": 10,
+    "needs_replacement": 8,
+    "held_license": 2,
+    "coverage": 20
+  },
+  "review_method": "Inspect all 18 actual WebP files via contact sheets; simulate mobile 320×260 centre crops; cross-check Wikimedia Commons current licence metadata, file description and physical Place identity. Publish only the approved subset with bilingual changes, local assets and visible credit.",
+  "approved": [
+    {
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:PT:fatima-sanctuary",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:IT:loreto-santa-casa",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    },
+    {
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "status": "APPROVED_SEPARATE_PRODUCTION_REGISTRY",
+      "reviewed_subject": true,
+      "reviewed_mobile_crop": true,
+      "license_verified_via_commons_metadata": true
+    }
+  ],
+  "needs_replacement": [
+    {
+      "place_id": "place:FR:chartres-notre-dame",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Architecture detail only: stone portal statues. Prefer recognisable cathedral exterior; original bilingual alt wrongly implies a broad facade view."
+    },
+    {
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Close view of high altar/reliquary rather than overall sanctuary. Reserve as secondary interior evidence, not primary card."
+    },
+    {
+      "place_id": "place:FR:rue-du-bac",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Dim, narrow interior frame; acceptable documentary evidence but poor readability in small preview. Seek brighter chapel photograph."
+    },
+    {
+      "place_id": "place:PL:jasna-gora",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Oblique rooftop and spire fragment, not recognisable as the Jasna Góra complex on a phone."
+    },
+    {
+      "place_id": "place:IE:knock-shrine",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Extremely dark nighttime scene; not suitable as primary site image."
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Exact chapel source, but steep portrait cropping and oblique façade need a better overview for primary hero."
+    },
+    {
+      "place_id": "place:UG:namugongo-martyrs",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Correct Catholic shrine source but mostly sign/roof detail; not a clear full sanctuary view."
+    },
+    {
+      "place_id": "place:BR:aparecida-national-shrine",
+      "status": "HOLD_IMAGE_QUALITY",
+      "reason": "Architectural arch close-up; insufficient visual identification of the national sanctuary."
+    }
+  ],
+  "held": [
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "status": "HOLD_LICENSE_AND_SITE_IDENTITY",
+      "reason": "Older CC BY-SA 3.0 / GFDL dual licensing requires its own exact legal attribution and tomb/centre identity review."
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "status": "HOLD_OLDER_LICENSE",
+      "reason": "CC BY 3.0 requires separately supported licence URL and attribution; Catholic Slipper Chapel must not be confused with Anglican/American Walsingham sites."
+    }
+  ]
+}

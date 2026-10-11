@@ -1,0 +1,342 @@
+{
+  "schema": "ao-mass-icon-campion17-source-triage-v1",
+  "date": "2026-10-11",
+  "status": "RESEARCH_ONLY_ALL_PRIEST_VISUAL_CANDIDATES_REJECTED",
+  "source": "data/mass/gesture-matrix.v1.json",
+  "context": {
+    "rejectedPR": 1014,
+    "approvedFingerPR": 1011,
+    "approvedPreviousCount": 42,
+    "approvedFingerCount": 2
+  },
+  "invariants": [
+    "Do not promote or reference five v1/v2 priest silhouette icon candidates from rejected PR #1014 as valid artwork.",
+    "All 17 matrix rows remain PENDING_EXACT_MASTER until exact suitable artwork/conditional reuse is explicitly approved.",
+    "Original 67 Mass v4.6 masters and 42 prior selections plus two approved finger icons remain immutable.",
+    "Technical SVG validity, fill-rule evenodd and currentColor are necessary but not sufficient for acceptance.",
+    "Any new priest figure must match original Mass v1.80 donor silhouette anatomy, vestment topology, linework, proportions and realistic liturgical motion.",
+    "The 1962 Roman rubrics and reader gesture source govern action timing, not analogy from generated illustrations.",
+    "No production bindings/ownership changes from this research-only file."
+  ],
+  "groups": [
+    {
+      "id": "F_CONFITEOR",
+      "actor": "FAITHFUL",
+      "title": "Confiteor · bow, remain, return",
+      "cueIds": [
+        "GM.F.C0021.01",
+        "GM.F.C0023.01",
+        "GM.F.C0235.01",
+        "GM.F.C0237.01"
+      ],
+      "classification": "EXISTING_ART_CONDITIONAL",
+      "masterKeys": [
+        "profound_bow",
+        "head_bow"
+      ],
+      "note": "Existing approved bow silhouettes. Gesture activation must observe current posture profile; optional second Confiteor exists only when explicitly enabled. No new drawing.",
+      "rows": [
+        {
+          "id": "GM.F.C0021.01",
+          "cueId": "AO.SM.C0021",
+          "triggerLatin": "During Confiteor",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        },
+        {
+          "id": "GM.F.C0023.01",
+          "cueId": "AO.SM.C0023",
+          "triggerLatin": "After mea culpa",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        },
+        {
+          "id": "GM.F.C0235.01",
+          "cueId": "AO.SM.C0235",
+          "triggerLatin": "During optional second Confiteor",
+          "condition": "SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED",
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        },
+        {
+          "id": "GM.F.C0237.01",
+          "cueId": "AO.SM.C0237",
+          "triggerLatin": "Conclusion of optional Confiteor",
+          "condition": "SECOND_CONFITEOR_LOCAL_CUSTOM_ENABLED",
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        }
+      ],
+      "artworkStatus": "UNREVIEWED_CONTEXTUAL_MAPPING",
+      "rejectedArtworkIds": []
+    },
+    {
+      "id": "F_GLORIA",
+      "actor": "FAITHFUL",
+      "title": "Gloria · customary bow",
+      "cueIds": [
+        "GM.F.C0056.01"
+      ],
+      "classification": "EXISTING_ART_CONDITIONAL",
+      "masterKeys": [
+        "head_bow"
+      ],
+      "note": "Existing approved head-bow art; activation is local custom, not universal instruction.",
+      "rows": [
+        {
+          "id": "GM.F.C0056.01",
+          "cueId": "AO.SM.C0056",
+          "triggerLatin": "Adorámus te",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        }
+      ],
+      "artworkStatus": "UNREVIEWED_CONTEXTUAL_MAPPING",
+      "rejectedArtworkIds": []
+    },
+    {
+      "id": "F_INCARNATUS",
+      "actor": "FAITHFUL",
+      "title": "Et incarnatus · conditional genuflection",
+      "cueIds": [
+        "GM.F.C0096.01"
+      ],
+      "classification": "EXISTING_ART_CONDITIONAL",
+      "masterKeys": [
+        "genuflect",
+        "kneel"
+      ],
+      "note": "Use currently approved genuflect and kneel artwork only under the sung/calendar/profile rubric. Do not collapse kneeling and genuflection into a universal state.",
+      "rows": [
+        {
+          "id": "GM.F.C0096.01",
+          "cueId": "AO.SM.C0096",
+          "triggerLatin": "Et incarnatus est ... et homo factus est",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        }
+      ],
+      "artworkStatus": "UNREVIEWED_CONTEXTUAL_MAPPING",
+      "rejectedArtworkIds": []
+    },
+    {
+      "id": "F_ELEVATIONS",
+      "actor": "FAITHFUL",
+      "title": "Elevations · reverent bow and look",
+      "cueIds": [
+        "GM.F.C0173.01",
+        "GM.F.C0174.01",
+        "GM.F.C0179.01"
+      ],
+      "classification": "EXISTING_ART_SEQUENCED",
+      "masterKeys": [
+        "head_bow",
+        "kneel",
+        "priest_elevate_host_rich",
+        "priest_elevate_chalice_rich"
+      ],
+      "note": "Existing head-bow, kneel and priest elevation icons serve distinct actors. Time bow and upward attention separately; do not invent a new compulsory posture or use a priest illustration for the faithful cue.",
+      "rows": [
+        {
+          "id": "GM.F.C0173.01",
+          "cueId": "AO.SM.C0173",
+          "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        },
+        {
+          "id": "GM.F.C0174.01",
+          "cueId": "AO.SM.C0174",
+          "triggerLatin": "The Host is actually elevated — At the actual elevation [Do not add an invent...",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        },
+        {
+          "id": "GM.F.C0179.01",
+          "cueId": "AO.SM.C0179",
+          "triggerLatin": "The Chalice is actually elevated — At the actual elevation [Do not add an inv...",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        }
+      ],
+      "artworkStatus": "UNREVIEWED_CONTEXTUAL_MAPPING",
+      "rejectedArtworkIds": []
+    },
+    {
+      "id": "F_ATTENTION",
+      "actor": "FAITHFUL",
+      "title": "Ecce Agnus Dei · reverent attention",
+      "cueIds": [
+        "GM.F.C0242.01"
+      ],
+      "classification": "NO_MANDATORY_POSTURE_ICON",
+      "masterKeys": [
+        "listen"
+      ],
+      "note": "Observational attention is not a universally prescribed physical posture. Optional visual cue only; do not force a new gesture icon.",
+      "rows": [
+        {
+          "id": "GM.F.C0242.01",
+          "cueId": "AO.SM.C0242",
+          "triggerLatin": "Ecce Agnus Dei",
+          "condition": null,
+          "authorityClass": "FAITHFUL_CUE_SOT"
+        }
+      ],
+      "artworkStatus": "UNREVIEWED_CONTEXTUAL_MAPPING",
+      "rejectedArtworkIds": []
+    },
+    {
+      "id": "P_EYES_HANDS",
+      "actor": "PRIEST",
+      "title": "Raises eyes and hands",
+      "cueIds": [
+        "GM.P.C0117.01",
+        "GM.P.C0263.01"
+      ],
+      "classification": "EXACT_MASTER_REFINEMENT",
+      "masterKeys": [
+        "priest_centre_arms_rich"
+      ],
+      "note": "Existing master accurately depicts raised arms, but eye direction is not legible at rail size. Candidate only until exact combined gesture is reviewed.",
+      "rows": [
+        {
+          "id": "GM.P.C0117.01",
+          "cueId": "AO.SM.C0117",
+          "triggerLatin": null,
+          "condition": null,
+          "authorityClass": "1962_NORMATIVE"
+        },
+        {
+          "id": "GM.P.C0263.01",
+          "cueId": "AO.SM.C0263",
+          "triggerLatin": null,
+          "condition": null,
+          "authorityClass": "1962_NORMATIVE"
+        }
+      ],
+      "artworkStatus": "REJECTED_DO_NOT_REUSE_20261011",
+      "rejectedArtworkIds": [
+        "GM.P.C0117.01",
+        "GM.P.C0263.01"
+      ]
+    },
+    {
+      "id": "P_MEMENTO",
+      "actor": "PRIEST",
+      "title": "Memento · hands joined/head bowed",
+      "cueIds": [
+        "GM.P.C0155.01",
+        "GM.P.C0193.01"
+      ],
+      "classification": "NEW_EXACT_MASTER_REQUIRED",
+      "masterKeys": [
+        "priest_centre_hands_rich",
+        "hands_joined",
+        "priest_profound_bow_rich"
+      ],
+      "note": "Existing centre_hands_rich is visually near-identical to centre_rich and does not encode joined hands; combined action must be depicted faithfully. Living and dead Mementos share base geometry, contextual eyes/head details differ.",
+      "rows": [
+        {
+          "id": "GM.P.C0155.01",
+          "cueId": "AO.SM.C0155",
+          "triggerLatin": "silent commemoration of the living",
+          "condition": null,
+          "authorityClass": "1962_NORMATIVE"
+        },
+        {
+          "id": "GM.P.C0193.01",
+          "cueId": "AO.SM.C0193",
+          "triggerLatin": "silent commemoration of the dead",
+          "condition": null,
+          "authorityClass": "1962_NORMATIVE"
+        }
+      ],
+      "artworkStatus": "REJECTED_DO_NOT_REUSE_20261011",
+      "rejectedArtworkIds": [
+        "GM.P.C0155.01",
+        "GM.P.C0193.01"
+      ]
+    },
+    {
+      "id": "P_OBLATIONS",
+      "actor": "PRIEST",
+      "title": "Hands extended over the oblations",
+      "cueIds": [
+        "GM.P.C0161.01"
+      ],
+      "classification": "NEW_EXACT_MASTER_REQUIRED",
+      "masterKeys": [
+        "priest_centre_arms_rich",
+        "priest_elevate_host_rich"
+      ],
+      "note": "Neither arms-open or Host elevation artwork depicts hands extended over the oblata. Need distinct exact figure, not generic altar pose.",
+      "rows": [
+        {
+          "id": "GM.P.C0161.01",
+          "cueId": "AO.SM.C0161",
+          "triggerLatin": null,
+          "condition": null,
+          "authorityClass": "1962_NORMATIVE"
+        }
+      ],
+      "artworkStatus": "REJECTED_DO_NOT_REUSE_20261011",
+      "rejectedArtworkIds": [
+        "GM.P.C0161.01"
+      ]
+    },
+    {
+      "id": "P_EYES",
+      "actor": "PRIEST",
+      "title": "Raises eyes only",
+      "cueIds": [
+        "GM.P.C0169.01"
+      ],
+      "classification": "NEW_EXACT_MASTER_REQUIRED",
+      "masterKeys": [
+        "priest_centre_rich",
+        "priest_centre_arms_rich"
+      ],
+      "note": "Head/eye lift must be visible without depicting raised hands; existing arms-up master expresses the wrong combined action.",
+      "rows": [
+        {
+          "id": "GM.P.C0169.01",
+          "cueId": "AO.SM.C0169",
+          "triggerLatin": "elevatis oculis",
+          "condition": null,
+          "authorityClass": "1962_NORMATIVE"
+        }
+      ],
+      "artworkStatus": "REJECTED_DO_NOT_REUSE_20261011",
+      "rejectedArtworkIds": [
+        "GM.P.C0169.01"
+      ]
+    },
+    {
+      "id": "P_MINOR_ELEVATION",
+      "actor": "PRIEST",
+      "title": "Minor elevation · Host and Chalice",
+      "cueIds": [
+        "GM.P.C0204.01"
+      ],
+      "classification": "NEW_EXACT_MASTER_REQUIRED",
+      "masterKeys": [
+        "canon",
+        "priest_elevate_host_rich",
+        "chalice_elevation"
+      ],
+      "note": "Need Host and chalice held slightly raised together at Per ipsum. Do not substitute either great elevation or generic Eucharistic symbolism.",
+      "rows": [
+        {
+          "id": "GM.P.C0204.01",
+          "cueId": "AO.SM.C0204",
+          "triggerLatin": "omnis honor, et glória",
+          "condition": null,
+          "authorityClass": "1962_NORMATIVE"
+        }
+      ],
+      "artworkStatus": "REJECTED_DO_NOT_REUSE_20261011",
+      "rejectedArtworkIds": [
+        "GM.P.C0204.01"
+      ]
+    }
+  ]
+}

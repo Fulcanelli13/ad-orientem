@@ -1,0 +1,1544 @@
+{
+  "schema": "ao.sacred_geography.shrine_media_audit.v1",
+  "version": "1.0.0",
+  "audited_at": "2026-10-10",
+  "scope": "canonical shrine place sheets (not independent Calendar artwork or general asset bank)",
+  "method": "Checked the canonical shrine data schema and the source-owned Explore Place renderer. Shrine-to-photo mappings, visual attribution and rights records are not published by this module. This does not imply suitable photographs do not exist elsewhere.",
+  "counts": {
+    "canonical_shrines": 216,
+    "curated_place_photo_links": 0,
+    "not_yet_curated": 216
+  },
+  "requirements": {
+    "publication": [
+      "confirmed site_identity",
+      "permitted and documented reuse/license",
+      "photographer or institutional credit",
+      "source URL",
+      "alt text (English and French)",
+      "image crop and aspect-ratio review",
+      "mobile layout review"
+    ],
+    "guardrails": [
+      "Do not scrape and republish an official website photograph without permission or a compatible license.",
+      "Do not substitute Calendar saint paintings for an unrelated physical shrine photograph.",
+      "Do not equate map pin accuracy with photo subject accuracy.",
+      "Keep place cards useful without photographs until validated images are available."
+    ]
+  },
+  "image_pipeline_separate_from": "Calendar/Saints artwork research",
+  "sites": [
+    {
+      "shrine_id": "shrine:FR:lourdes-our-lady",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:laghet-our-lady",
+      "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:paray-sacred-heart",
+      "place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:chartres-notre-dame",
+      "place_id": "place:FR:chartres-notre-dame",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:sainte-anne-d-auray",
+      "place_id": "place:FR:sainte-anne-d-auray",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IE:knock",
+      "place_id": "place:IE:knock-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IE:lough-derg",
+      "place_id": "place:IE:lough-derg-station-island",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:MU:pere-laval",
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:altoetting-our-lady",
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:AT:mariazell-our-lady",
+      "place_id": "place:AT:mariazell-basilica",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
+      "place_id": "place:AT:maria-taferl-basilica",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CH:einsiedeln-our-lady",
+      "place_id": "place:CH:einsiedeln-monastery",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CH:mariastein-our-lady",
+      "place_id": "place:CH:kloster-mariastein",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:champion-our-lady",
+      "place_id": "place:US:champion-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:guadalupe-la-crosse",
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:holy-hill-mary-help",
+      "place_id": "place:US:holy-hill",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CA:sainte-anne-de-beaupre",
+      "place_id": "place:CA:sainte-anne-de-beaupre",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CA:notre-dame-du-cap",
+      "place_id": "place:CA:notre-dame-du-cap",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CA:martyrs-midland",
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:loreto-holy-house",
+      "place_id": "place:IT:loreto-santa-casa",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:pompei-rosary",
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:jasna-gora-czestochowa",
+      "place_id": "place:PL:jasna-gora",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:kalwaria-zebrzydowska",
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:GB:walsingham-our-lady",
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:GB:holywell-st-winefride",
+      "place_id": "place:GB:holywell-st-winefride",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:AU:penrose-our-lady-mercy",
+      "place_id": "place:AU:penrose-park",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:AU:marian-valley-help-christians",
+      "place_id": "place:AU:marian-valley",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:NZ:pukekaraka-mary",
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:NG:ugwogo-perpetual-help",
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:NG:nne-enyemaka-umuaka",
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:UG:namugongo-martyrs",
+      "place_id": "place:UG:namugongo-martyrs",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:UG:munyonyo-martyrs",
+      "place_id": "place:UG:munyonyo-martyrs",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:MX:guadalupe-tepeyac",
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:MX:zapopan-our-lady",
+      "place_id": "place:MX:basilica-zapopan",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:BR:aparecida-our-lady",
+      "place_id": "place:BR:aparecida-national-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:BR:nazare-belem",
+      "place_id": "place:BR:nazare-belem",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CO:las-lajas",
+      "place_id": "place:CO:las-lajas-ipiales",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CO:chiquinquira",
+      "place_id": "place:CO:chiquinquira-basilica",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:BE:banneux-virgin-poor",
+      "place_id": "place:BE:banneux",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:BE:beauraing-golden-heart",
+      "place_id": "place:BE:beauraing",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CZ:svata-hora",
+      "place_id": "place:CZ:svata-hora-pribram",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:NL:heiloo-olv-ter-nood",
+      "place_id": "place:NL:heiloo-olv-ter-nood",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:NL:maastricht-sterre-der-zee",
+      "place_id": "place:NL:maastricht-sterre-der-zee",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PT:fatima",
+      "place_id": "place:PT:fatima-sanctuary",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PT:sameiro",
+      "place_id": "place:PT:sameiro-braga",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:alphonsus-baltimore",
+      "place_id": "place:US:st-alphonsus-baltimore",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:neumann-philadelphia",
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:miraculous-medal-philadelphia",
+      "place_id": "place:US:miraculous-medal-philadelphia",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:czestochowa-doylestown",
+      "place_id": "place:US:czestochowa-doylestown",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:seton-emmitsburg",
+      "place_id": "place:US:seton-emmitsburg",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:lourdes-grotto-emmitsburg",
+      "place_id": "place:US:lourdes-grotto-emmitsburg",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:bermont-greux",
+      "place_id": "place:FR:bermont-greux",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:arcachon-marins",
+      "place_id": "place:FR:notre-dame-des-marins-arcachon",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:pontmain",
+      "place_id": "place:FR:pontmain",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:pellevoisin",
+      "place_id": "place:FR:pellevoisin",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:montligeon",
+      "place_id": "place:FR:montligeon",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:rue-du-bac",
+      "place_id": "place:FR:rue-du-bac",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:wigratzbad-maria-vom-sieg",
+      "place_id": "place:DE:wigratzbad-maria-vom-sieg",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:mariahilf-amberg",
+      "place_id": "place:DE:mariahilf-amberg",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:st-leonhard-nussdorf",
+      "place_id": "place:DE:st-leonhard-nussdorf",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:st-apollinaris-frielingsdorf",
+      "place_id": "place:DE:st-apollinaris-frielingsdorf",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:bettbrunn-st-salvator",
+      "place_id": "place:DE:bettbrunn-st-salvator",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:maria-vesperbild",
+      "place_id": "place:DE:maria-vesperbild",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:st-mary-assumption-oswego",
+      "place_id": "place:US:st-mary-assumption-oswego",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:auriesville-martyrs",
+      "place_id": "place:US:auriesville-martyrs",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:divine-mercy-stockbridge",
+      "place_id": "place:US:divine-mercy-stockbridge",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:la-salette-attleboro",
+      "place_id": "place:US:la-salette-attleboro",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:lourdes-litchfield",
+      "place_id": "place:US:lourdes-litchfield",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:st-anne-fiskdale",
+      "place_id": "place:US:st-anne-fiskdale",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:gietrzwald",
+      "place_id": "place:PL:gietrzwald-basilica",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LT:siluva",
+      "place_id": "place:LT:siluva-apparition-chapel",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:NI:cuapa",
+      "place_id": "place:NI:cuapa-national-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:VE:betania",
+      "place_id": "place:VE:finca-betania",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:AR:san-nicolas",
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:santa-croce-rome",
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:basilique-sainte-therese-lisieux",
+      "place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:cathedrale-notre-dame-le-puy",
+      "place_id": "place:FR:cathedrale-notre-dame-le-puy",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:basilique-notre-dame-victoires-paris",
+      "place_id": "place:FR:basilique-notre-dame-victoires-paris",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "place_id": "place:FR:basilique-notre-dame-perpetuel-secours-paris",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:grottes-saint-antoine-brive",
+      "place_id": "place:FR:grottes-saint-antoine-brive",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:basilique-saint-martin-tours",
+      "place_id": "place:FR:basilique-saint-martin-tours",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:notre-dame-graces-cotignac",
+      "place_id": "place:FR:notre-dame-graces-cotignac",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:notre-dame-la-salette-fallavaux",
+      "place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+      "place_id": "place:IT:san-michele-gargano",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+      "place_id": "place:FR:carmel-lisieux",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:basilique-ars",
+      "place_id": "place:FR:basilique-ars",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:notre-dame-du-laus",
+      "place_id": "place:FR:notre-dame-du-laus",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+      "place_id": "place:PL:divine-mercy-plock",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:basilica-sant-antonio-padova",
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:basilica-san-francesco-assisi",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:basilica-san-nicola-bari",
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IN:basilica-bom-jesus-old-goa",
+      "place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:RW:sanctuaire-kibeho",
+      "place_id": "place:RW:sanctuaire-kibeho",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:FR:notre-dame-paris",
+      "place_id": "place:FR:notre-dame-paris",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+      "place_id": "place:VA:saint-peter-vatican",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:santa-maria-maggiore-rome",
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+      "place_id": "place:IT:scala-santa-rome",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:basilica-del-pilar-zaragoza",
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+      "place_id": "place:ES:santo-toribio-liebana",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+      "place_id": "place:ES:carmel-alba-tormes",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:PS:holy-sepulchre-jerusalem",
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:PS:nativity-bethlehem",
+      "place_id": "place:PS:nativity-bethlehem",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:20261009:JP:our-lady-akita-convent",
+      "place_id": "place:JP:our-lady-akita-convent",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-denis",
+      "place_id": "place:FR:basilique-saint-denis",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:sanktuarium-jana-pawla-ii-krakow",
+      "place_id": "place:PL:sanktuarium-jana-pawla-ii-krakow",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-denys-argenteuil",
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:kolner-dom-three-kings",
+      "place_id": "place:DE:kolner-dom-three-kings",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:basilica-san-marco-venezia",
+      "place_id": "place:IT:basilica-san-marco-venezia",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:basilica-san-domenico-bologna",
+      "place_id": "place:IT:basilica-san-domenico-bologna",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:amalfi-sant-andrea",
+      "place_id": "place:IT:amalfi-sant-andrea",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:ortona-san-tommaso",
+      "place_id": "place:IT:ortona-san-tommaso",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:salerno-duomo",
+      "place_id": "place:IT:salerno-duomo",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:trier-sankt-matthias",
+      "place_id": "place:DE:trier-sankt-matthias",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:san-bartolomeo-isola",
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:sant-ambrogio-milano",
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:santa-giustina-padova",
+      "place_id": "place:IT:santa-giustina-padova",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-milano",
+      "place_id": "place:IT:duomo-milano",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:santa-chiara-assisi",
+      "place_id": "place:IT:santa-chiara-assisi",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:santa-maria-minerva-rome",
+      "place_id": "place:IT:santa-maria-minerva-rome",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:chiesa-gesu-rome",
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:couvent-jacobins-toulouse",
+      "place_id": "place:FR:couvent-jacobins-toulouse",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:collegiale-sainte-marthe-tarascon",
+      "place_id": "place:FR:collegiale-sainte-marthe-tarascon",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:basilique-visitation-annecy",
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:sant-agostino-campo-marzio",
+      "place_id": "place:IT:sant-agostino-campo-marzio",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:maria-ausiliatrice-torino",
+      "place_id": "place:IT:maria-ausiliatrice-torino",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:sant-alfonso-pagani",
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:cattedrale-sant-agata-catania",
+      "place_id": "place:IT:cattedrale-sant-agata-catania",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:ES:convento-san-juan-cruz-segovia",
+      "place_id": "place:ES:convento-san-juan-cruz-segovia",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:GR:saint-titus-heraklion",
+      "place_id": "place:GR:saint-titus-heraklion",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:SV:catedral-metropolitana-san-salvador",
+      "place_id": "place:SV:catedral-metropolitana-san-salvador",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:sacra-famiglia-bakhita-schio",
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LT:vilnius-cathedral-st-casimir",
+      "place_id": "place:LT:vilnius-cathedral-st-casimir",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:saint-hilaire-le-grand-poitiers",
+      "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:duomo-torino-sindone",
+      "place_id": "place:IT:duomo-torino-sindone",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DE:trierer-dom-heiliger-rock",
+      "place_id": "place:DE:trierer-dom-heiliger-rock",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-cahors",
+      "place_id": "place:FR:cathedrale-saint-etienne-cahors",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:ES:catedral-san-salvador-oviedo",
+      "place_id": "place:ES:catedral-san-salvador-oviedo",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:abbatiale-sainte-trinite-fecamp",
+      "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:santuario-volto-santo-manoppello",
+      "place_id": "place:IT:santuario-volto-santo-manoppello",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:montecassino-abbey",
+      "place_id": "place:IT:montecassino-abbey",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "EXISTING_SHRINE",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IT:sacro-monte-di-varallo",
+      "place_id": "place:IT:sacro-monte-di-varallo",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:FR:sanctuary-of-our-lady-of-rocamadour",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:ES:santa-maria-de-montserrat-abbey",
+      "place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:HR:national-shrine-of-saint-joseph-karlovac",
+      "place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LT:divine-mercy-sanctuary-vilnius",
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:AR:basilica-of-our-lady-of-lujan",
+      "place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LK:shrine-of-our-lady-of-madhu",
+      "place_id": "place:LK:shrine-of-our-lady-of-madhu",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PH:padre-pio-shrine-santo-tomas-batangas",
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PH:national-shrine-of-saint-joseph-mandaue",
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:church-of-saint-peter-jaffa",
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:LK:saint-anne-s-national-shrine-talawila",
+      "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:basilica-of-the-annunciation-nazareth",
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:basilica-of-the-transfiguration-mount-tabor",
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:church-of-the-multiplication-tabgha",
+      "place_id": "place:IL:church-of-the-multiplication-tabgha",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:church-of-the-visitation-ein-karem",
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:dominus-flevit-church-mount-of-olives",
+      "place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:ES:real-monasterio-santa-maria-guadalupe",
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:IL:capernaum-saint-peter-memorial",
+      "place_id": "place:IL:capernaum-saint-peter-memorial",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    },
+    {
+      "shrine_id": "shrine:VN:our-lady-la-vang-national-shrine",
+      "place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "photo_status": "NOT_CURATED",
+      "priority_group": "RECENT_EDITORIAL_PASS",
+      "approved_asset": null
+    }
+  ]
+}

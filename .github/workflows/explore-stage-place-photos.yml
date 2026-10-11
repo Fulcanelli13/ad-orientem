@@ -1,0 +1,58 @@
+name: Explore R58 staged site photography
+
+on:
+  push:
+    branches:
+      - feature/explore-place-photo-acquisition-r58-20261011
+    paths:
+      - data/geography/research/place-media-candidates-r58.v1.json
+      - tools/stage-place-media.py
+      - tools/build-place-media-contact-sheet.py
+      - .github/workflows/explore-stage-place-photos.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: explore-r58-photo-staging-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  import-staged-commons-photos:
+    if: github.ref == 'refs/heads/feature/explore-place-photo-acquisition-r58-20261011'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Check canonical Place and Commons candidate manifest
+        run: python tools/stage-place-media.py --validate-only
+      - name: Verify Wikimedia licences and stage local optimized images
+        run: python tools/stage-place-media.py
+      - name: Build visual contact sheets for identity and crop review
+        run: python tools/build-place-media-contact-sheet.py
+      - name: Upload original-source review package (no repository writes)
+        uses: actions/upload-artifact@v4
+        with:
+          name: explore-r58-photo-review
+          path: |
+            assets/staged/place-media-review-*-r58.webp
+            assets/staged/place-media/*.webp
+            data/geography/research/place-media-stage-report-r58.v1.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Report publication boundary
+        run: |
+          echo "Staging only. No approved-place-media publication registry changes."
+          python - <<'PY'
+          import json
+          p='data/geography/research/place-media-stage-report-r58.v1.json'
+          print(json.load(open(p,encoding='utf-8'))['summary'])
+          PY

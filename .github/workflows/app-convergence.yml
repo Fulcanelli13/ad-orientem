@@ -2,6 +2,7 @@ name: App convergence
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "src/app/**"
       - "src/find/**"
@@ -107,6 +108,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  urgent-mass-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Mass versus explicit resume contract
+        run: node tests/app-shell-contract.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Real phone — Follow Mass must expose source-owned preflight
+        run: node tests/mass-preflight-entry-phone.mjs
+
   app-shell-contract:
     runs-on: ubuntu-latest
     steps:
@@ -136,7 +152,7 @@ jobs:
 
   app-shell-phone:
     # Validate actual phone journeys on PRs, not only after merging into main.
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     needs: app-shell-contract
     runs-on: ubuntu-latest
     steps:
@@ -149,6 +165,9 @@ jobs:
       # Fail fast on incomplete composed Mass prayers before costly full-phone journeys.
       - run: node tools/calendar/proper-source-batch-100.mjs --focus-gaps
       - run: npm run test:field-current-week
+      # Run compact four-width release routing first: catch outdated surfaces
+      # before incurring the full cross-module phone acceptance matrix.
+      - run: npm run test:rc-field-qa
       - run: node tests/per-icon-svg-e2e.mjs
       - run: node tests/external-svg-sprite-e2e.mjs
       - run: node tests/route-lazy-browser-e2e.mjs
@@ -161,10 +180,10 @@ jobs:
           if-no-files-found: warn
       - run: node tests/formation-calendar-lazy-e2e.mjs
       - run: node tests/learn-formation-review-e2e.mjs
+      - run: node tests/learn-content-search-phone-e2e.mjs
       - run: node tests/pray-route-lazy-e2e.mjs
       - run: node tests/pray-all-modules-mobile.mjs
       - run: node tests/thin-html-browser-e2e.mjs
       - run: npm run test:rc-interaction-qa
       - run: npm run test:phone
       - run: node tests/app-shell-journey-e2e.mjs
-      - run: npm run test:rc-field-qa

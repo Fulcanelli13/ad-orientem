@@ -17,6 +17,11 @@ on:
 permissions:
   contents: read
 
+# Superseded commits within one PR share a lane; never cancel another PR or production push.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   content-census-contracts:
     runs-on: ubuntu-latest

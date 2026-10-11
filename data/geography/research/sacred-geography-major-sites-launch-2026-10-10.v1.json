@@ -1,0 +1,508 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_MAJOR_SITE_LAUNCH_V1",
+  "date": "2026-10-10",
+  "scope": "MAP_FIRST_MAJOR_SITES",
+  "outcome": {
+    "prior_published_places": 182,
+    "added_places": 35,
+    "production_places": 217,
+    "prior_shrine_records": 178,
+    "added_shrines": 35,
+    "production_shrine_records": 213,
+    "geo_areas_added": [
+      "MT",
+      "HR",
+      "LK",
+      "PH",
+      "DZ",
+      "SN",
+      "CI",
+      "CL",
+      "IL"
+    ]
+  },
+  "rules": [
+    "Use one Place for one physical site; reuse the 20 previously reconciled canonical Places without minting duplicates.",
+    "Source-backed coordinate is not approval of an apparition, relic, national-shrine title or supernatural claim.",
+    "Ordinary churches and obscure sites are deferred to later batches.",
+    "Bible Atlas and traditional Latin Mass Directory remain unchanged."
+  ],
+  "promoted": [
+    {
+      "candidate_id": "SG-NEW-VARALLO",
+      "origin_feature": "SG-GEO-NEW-003",
+      "place_id": "place:IT:sacro-monte-di-varallo",
+      "shrine_id": "shrine:IT:sacro-monte-di-varallo",
+      "country": "IT",
+      "name": "Sacro Monte di Varallo",
+      "geo_url": "https://www.openstreetmap.org/way/494243748",
+      "identity_source_url": "https://whc.unesco.org/en/list/1068/maps/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0006",
+      "origin_feature": "SG-BATCH2-001",
+      "place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "shrine_id": "shrine:FR:sanctuary-of-our-lady-of-rocamadour",
+      "country": "FR",
+      "name": "Sanctuary of Our Lady of Rocamadour",
+      "geo_url": "https://www.wikidata.org/wiki/Q2974823",
+      "identity_source_url": "https://www.sanctuairerocamadour.com/sanctuaire/vierge-noire/",
+      "precision": "complex_anchor",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0106",
+      "origin_feature": "SG-BATCH2-002",
+      "place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "shrine_id": "shrine:ES:santa-maria-de-montserrat-abbey",
+      "country": "ES",
+      "name": "Santa Maria de Montserrat Abbey",
+      "geo_url": "https://mapcarta.com/W182384937",
+      "identity_source_url": "https://abadiamontserrat.cat/en/sanctuary/start",
+      "precision": "complex_anchor",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0351",
+      "origin_feature": "SG-BATCH2-003",
+      "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "shrine_id": "shrine:MT:national-shrine-of-our-lady-of-ta-pinu",
+      "country": "MT",
+      "name": "National Shrine of Our Lady of Ta' Pinu",
+      "geo_url": "https://mapcarta.com/W33779121",
+      "identity_source_url": "https://tapinu.org/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0210",
+      "origin_feature": "SG-GEO-P3-002",
+      "place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "shrine_id": "shrine:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "country": "PL",
+      "name": "Divine Mercy Sanctuary, Kraków-Łagiewniki",
+      "geo_url": "https://www.openstreetmap.org/way/123144540",
+      "identity_source_url": "https://mapcarta.com/W123144540",
+      "precision": "complex_anchor",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0314",
+      "origin_feature": "SG-GEO-P3-003",
+      "place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
+      "shrine_id": "shrine:HR:national-shrine-of-saint-joseph-karlovac",
+      "country": "HR",
+      "name": "National Shrine of Saint Joseph, Karlovac",
+      "geo_url": "https://www.openstreetmap.org/way/177574260",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q12637953",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0338",
+      "origin_feature": "SG-GEO-P3-004",
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "shrine_id": "shrine:LT:divine-mercy-sanctuary-vilnius",
+      "country": "LT",
+      "name": "Divine Mercy Sanctuary, Vilnius",
+      "geo_url": "https://www.openstreetmap.org/way/81296879",
+      "identity_source_url": "https://parapijos.lt/en/church/vilniaus/Vilniaus-Dievo-Gailestingumo-%C5%A1ventov%C4%97",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0489",
+      "origin_feature": "SG-GEO-P3-005",
+      "place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "shrine_id": "shrine:AR:basilica-of-our-lady-of-lujan",
+      "country": "AR",
+      "name": "Basilica of Our Lady of Luján",
+      "geo_url": "https://www.openstreetmap.org/way/186577050",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q2607636",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0583",
+      "origin_feature": "SG-GEO-P3-006",
+      "place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "shrine_id": "shrine:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "country": "IN",
+      "name": "Basilica of Our Lady of Good Health, Vailankanni",
+      "geo_url": "https://www.openstreetmap.org/way/672541959",
+      "identity_source_url": "https://www.wikipedia.org/wiki/Basilica_of_Our_Lady_of_Good_Health",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0586",
+      "origin_feature": "SG-GEO-P3-007",
+      "place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "shrine_id": "shrine:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "country": "IN",
+      "name": "Basilica of Our Lady of Lourdes, Poondi",
+      "geo_url": "https://www.openstreetmap.org/way/424972317",
+      "identity_source_url": "https://mapcarta.com/W424972317",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0600",
+      "origin_feature": "SG-GEO-P3-008",
+      "place_id": "place:LK:shrine-of-our-lady-of-madhu",
+      "shrine_id": "shrine:LK:shrine-of-our-lady-of-madhu",
+      "country": "LK",
+      "name": "Shrine of Our Lady of Madhu",
+      "geo_url": "https://www.openstreetmap.org/way/483435994",
+      "identity_source_url": "https://mapcarta.com/W483435994",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0637",
+      "origin_feature": "SG-GEO-P3-009",
+      "place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "country": "PH",
+      "name": "National Shrine of Our Lady of Lourdes, Quezon City",
+      "geo_url": "https://www.openstreetmap.org/way/140348903",
+      "identity_source_url": "https://nsoll.ph/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0639",
+      "origin_feature": "SG-GEO-P3-010",
+      "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "country": "PH",
+      "name": "National Shrine of Our Lady of Fatima, Valenzuela",
+      "geo_url": "https://www.openstreetmap.org/way/50982921",
+      "identity_source_url": "https://mapcarta.com/W50982921",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0648",
+      "origin_feature": "SG-GEO-P3-011",
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "country": "PH",
+      "name": "National Shrine of Our Lady of Guadalupe, Makati",
+      "geo_url": "https://www.openstreetmap.org/way/153741157",
+      "identity_source_url": "https://mapcarta.com/W153741157",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0655",
+      "origin_feature": "SG-GEO-P3-012",
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "shrine_id": "shrine:PH:padre-pio-shrine-santo-tomas-batangas",
+      "country": "PH",
+      "name": "Padre Pio Shrine, Santo Tomas, Batangas",
+      "geo_url": "https://www.openstreetmap.org/relation/4065077",
+      "identity_source_url": "https://mapcarta.com/National_Shrine_of_Saint_Padre_Pio_R4065077",
+      "precision": "complex_anchor",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0659",
+      "origin_feature": "SG-GEO-P3-013",
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "shrine_id": "shrine:PH:national-shrine-of-saint-joseph-mandaue",
+      "country": "PH",
+      "name": "National Shrine of Saint Joseph, Mandaue",
+      "geo_url": "https://www.openstreetmap.org/way/855787222",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q39055340",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0690",
+      "origin_feature": "SG-GEO-P3-014",
+      "place_id": "place:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "shrine_id": "shrine:DZ:basilica-of-notre-dame-dafrique-algiers",
+      "country": "DZ",
+      "name": "Basilica of Notre-Dame d’Afrique, Algiers",
+      "geo_url": "https://www.openstreetmap.org/way/26614341",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q2088381",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0707",
+      "origin_feature": "SG-GEO-P3-015",
+      "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "shrine_id": "shrine:SN:basilica-of-our-lady-of-deliverance-popenguine",
+      "country": "SN",
+      "name": "Basilica of Our Lady of Deliverance, Popenguine",
+      "geo_url": "https://www.openstreetmap.org/way/232424082",
+      "identity_source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-de-la-D%C3%A9livrande_de_Popenguine",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0719",
+      "origin_feature": "SG-GEO-P3-016",
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "shrine_id": "shrine:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "country": "CI",
+      "name": "Basilica of Our Lady of Peace, Yamoussoukro",
+      "geo_url": "https://www.openstreetmap.org/way/89584501",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q815584",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0374",
+      "origin_feature": "SG-GEO-P3-017",
+      "place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "shrine_id": "shrine:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "country": "US",
+      "name": "Basilica of the National Shrine of the Immaculate Conception, Washington",
+      "geo_url": "https://www.openstreetmap.org/way/297739340",
+      "identity_source_url": "https://www.nationalshrine.org/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0381",
+      "origin_feature": "SG-GEO-P3-018",
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "shrine_id": "shrine:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "country": "US",
+      "name": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+      "geo_url": "https://www.openstreetmap.org/way/1251763730",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q4867411",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0498",
+      "origin_feature": "SG-GEO-P3-020",
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "shrine_id": "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "country": "CL",
+      "name": "Sanctuary of Our Lady of La Tirana, Chile",
+      "geo_url": "https://www.openstreetmap.org/way/157593768",
+      "identity_source_url": "https://www.santuariodelatirana.cl/2025/06/entrega-de-programacion-y-formularios-para-medios-de-comunicacion-tirana-2025/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0574",
+      "origin_feature": "SG-GEO-P3-021",
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "shrine_id": "shrine:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "country": "LB",
+      "name": "Shrine of Our Lady of Lebanon, Harissa",
+      "geo_url": "https://mapcarta.com/12881604",
+      "identity_source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-du-Liban_de_Harissa",
+      "precision": "complex_anchor",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0601",
+      "origin_feature": "SG-GEO-P3-022",
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "shrine_id": "shrine:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "country": "LK",
+      "name": "National Basilica of Our Lady of Lanka, Tewatta",
+      "geo_url": "https://www.openstreetmap.org/node/2362887712",
+      "identity_source_url": "https://mapcarta.com/N2362887712",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0209",
+      "origin_feature": "AO-SG-GEO4-001",
+      "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "shrine_id": "shrine:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "country": "PL",
+      "name": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
+      "geo_url": "https://www.openstreetmap.org/way/218675752",
+      "identity_source_url": "https://smbf.pl/en/the-national-shrine/",
+      "precision": "site",
+      "recognition_class": "OFFICIAL_SANCTUARY"
+    },
+    {
+      "candidate_id": "SG-INV-0309",
+      "origin_feature": "AO-SG-GEO4-002",
+      "place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "shrine_id": "shrine:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "country": "HR",
+      "name": "National Shrine of Our Lady of Marija Bistrica",
+      "geo_url": "https://www.openstreetmap.org/way/143372213",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q107013115",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0548",
+      "origin_feature": "AO-SG-GEO4-003",
+      "place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "shrine_id": "shrine:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "country": "IL",
+      "name": "Church of the Primacy of Saint Peter, Tabgha",
+      "geo_url": "https://www.openstreetmap.org/way/366377858",
+      "identity_source_url": "https://www.custodia.org/en/news/celebrating-peters-primacy-tabgha/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0551",
+      "origin_feature": "AO-SG-GEO4-004",
+      "place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "shrine_id": "shrine:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "country": "IL",
+      "name": "Church of Saint Peter in Gallicantu, Jerusalem",
+      "geo_url": "https://www.openstreetmap.org/way/376137590",
+      "identity_source_url": "https://www.wikidata.org/wiki/Q1861408",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0565",
+      "origin_feature": "AO-SG-GEO4-005",
+      "place_id": "place:IL:church-of-saint-peter-jaffa",
+      "shrine_id": "shrine:IL:church-of-saint-peter-jaffa",
+      "country": "IL",
+      "name": "Church of Saint Peter, Jaffa",
+      "geo_url": "https://www.openstreetmap.org/way/103818601",
+      "identity_source_url": "https://www.custodia.org/en/sanctuaries/jaffa/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0603",
+      "origin_feature": "AO-SG-GEO4-010",
+      "place_id": "place:LK:saint-anne-s-national-shrine-talawila",
+      "shrine_id": "shrine:LK:saint-anne-s-national-shrine-talawila",
+      "country": "LK",
+      "name": "Saint Anne's National Shrine, Talawila",
+      "geo_url": "https://www.openstreetmap.org/node/6750542189",
+      "identity_source_url": "https://mapcarta.com/N6750542189",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0545",
+      "origin_feature": "AO-SG-GEO4-012",
+      "place_id": "place:IL:basilica-of-the-annunciation-nazareth",
+      "shrine_id": "shrine:IL:basilica-of-the-annunciation-nazareth",
+      "country": "IL",
+      "name": "Basilica of the Annunciation, Nazareth",
+      "geo_url": "https://www.openstreetmap.org/way/97417380",
+      "identity_source_url": "https://www.custodia.org/en/sanctuaries/nazareth-basilica-of-the-annunciation/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0546",
+      "origin_feature": "AO-SG-GEO4-013",
+      "place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "shrine_id": "shrine:IL:basilica-of-the-transfiguration-mount-tabor",
+      "country": "IL",
+      "name": "Basilica of the Transfiguration, Mount Tabor",
+      "geo_url": "https://www.openstreetmap.org/way/255793567",
+      "identity_source_url": "https://www.custodia.org/en/sanctuaries/mount-tabor-basilica-of-the-transfiguration/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0547",
+      "origin_feature": "AO-SG-GEO4-014",
+      "place_id": "place:IL:church-of-the-multiplication-tabgha",
+      "shrine_id": "shrine:IL:church-of-the-multiplication-tabgha",
+      "country": "IL",
+      "name": "Church of the Multiplication, Tabgha",
+      "geo_url": "https://www.openstreetmap.org/node/914205673",
+      "identity_source_url": "https://www.custodia.org/en/sanctuaries/tabgha/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0552",
+      "origin_feature": "AO-SG-GEO4-015",
+      "place_id": "place:IL:church-of-the-visitation-ein-karem",
+      "shrine_id": "shrine:IL:church-of-the-visitation-ein-karem",
+      "country": "IL",
+      "name": "Church of the Visitation, Ein Karem",
+      "geo_url": "https://www.openstreetmap.org/way/254157058",
+      "identity_source_url": "https://www.custodia.org/en/convents/ain-karem-monastery-of-the-visitation/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    },
+    {
+      "candidate_id": "SG-INV-0557",
+      "origin_feature": "AO-SG-GEO4-016",
+      "place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "shrine_id": "shrine:IL:dominus-flevit-church-mount-of-olives",
+      "country": "IL",
+      "name": "Dominus Flevit Church, Mount of Olives",
+      "geo_url": "https://www.openstreetmap.org/way/280345343",
+      "identity_source_url": "https://www.custodia.org/en/sanctuaries/dominus-flevit/",
+      "precision": "site",
+      "recognition_class": "UNKNOWN"
+    }
+  ],
+  "held": [
+    {
+      "origin": "batch3",
+      "ids": [
+        "SG-GEO-P3-001"
+      ],
+      "reason": "UNESCO property centroid requires coordinate reuse/licence and site precision review"
+    },
+    {
+      "origin": "batch3",
+      "ids": [
+        "SG-GEO-P3-019"
+      ],
+      "reason": "Same Guadalupe Mexico City complex as existing production canonical Place; resolve historic versus current basilica point"
+    },
+    {
+      "origin": "batch4",
+      "ids": [
+        "AO-SG-GEO4-006",
+        "AO-SG-GEO4-007",
+        "AO-SG-GEO4-008",
+        "AO-SG-GEO4-009"
+      ],
+      "reason": "Ordinary Catholic churches and cathedrals are not first-pass major pilgrimage pins"
+    },
+    {
+      "origin": "batch4",
+      "ids": [
+        "AO-SG-GEO4-011"
+      ],
+      "reason": "Capernaum church and archaeological complex exact building geometry held"
+    },
+    {
+      "origin": "batch2",
+      "ids": [
+        "SG-BATCH2-004",
+        "SG-BATCH2-005",
+        "SG-BATCH2-006",
+        "SG-BATCH2-007",
+        "SG-BATCH2-008",
+        "SG-BATCH2-009",
+        "SG-BATCH2-010",
+        "SG-BATCH2-011"
+      ],
+      "reason": "Other Sacri Monti sites deferred to subsequent non-essential coverage"
+    },
+    {
+      "origin": "batch1",
+      "ids": [
+        "SG-GEO-NEW-001",
+        "SG-GEO-NEW-002",
+        "SG-GEO-NEW-004"
+      ],
+      "reason": "Smaller or subsidiary destinations deferred"
+    }
+  ]
+}
