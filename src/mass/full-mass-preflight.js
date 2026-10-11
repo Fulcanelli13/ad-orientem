@@ -63,6 +63,7 @@ export function mountFullMassPreflight({
   onOpenSourceProper=()=>{},
   getSourceGate=()=>({ready:true,reason:null}),
   getCalendarState=()=>null,
+  subscribeCalendarState=null,
   onOpenCalendar=null,
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
@@ -378,6 +379,10 @@ export function mountFullMassPreflight({
         ))))queueMicrotask(refresh);
     }):null;
   observer?.observe(doc.body,{subtree:true,childList:true});
+  // Resolver updates can complete while Mass preflight remains open. Reflect
+  // them without requiring a click, and without changing the Mass choice.
+  const unsubscribeCalendar=typeof subscribeCalendarState==="function"
+    ?subscribeCalendarState(()=>queueMicrotask(refresh)):null;
   refresh();
   return Object.freeze({
     selectionFor,
@@ -388,6 +393,6 @@ export function mountFullMassPreflight({
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides})}),
-    dispose(){disposed=true;doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}
+    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}
   });
 }
