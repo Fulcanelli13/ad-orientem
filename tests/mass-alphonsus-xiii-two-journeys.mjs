@@ -14,7 +14,7 @@ assert.ok(S.sourceUnits.find(x=>x.id==="V13_PREFACE_DUJARDIN").author.includes("
 assert.ok(S.sourceUnits.find(x=>x.id==="V13_ALPHONSUS_SACRIFICE").author.startsWith("St Alphonsus"));
 assert.ok(S.sourceUnits.find(x=>x.id==="V13_EDITOR_MIRACLE").author.includes("Editorial"));
 assert.ok(S.editorialOwnership.dujardin.includes("NOT written by St Alphonsus"));
-assert.ok(S.editorialOwnership.anonymousFrenchAuthor.includes("uncertain"));
+assert.ok(S.editorialOwnership.anonymousFrenchAuthor.includes("does NOT conclusively identify original"));
 assert.deepEqual(S.dujardinMeditativeStations.map(x=>x.sequence),Array.from({length:22},(_,i)=>i+1));
 assert.equal(new Set(S.dujardinMeditativeStations.map(x=>x.id)).size,22);
 assert.ok(S.dujardinMeditativeStations.every(x=>!x.publishable && !x.authorialBiblicalCitationsCertified));
