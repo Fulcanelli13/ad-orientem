@@ -50,19 +50,19 @@ assert.equal(live.presentationModel.totalCards,48);
 assert.equal(live.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
 assert.equal(prepared.session.resolvedMass.presentationMode,"LIVE","mode rebuild mutated canonical resolved Mass");
 
-// Explicit review mode tests the complete real-data Ordinary at finer
-// liturgical block/stanza boundaries; the production 48 projection is untouched.
+// Explicit review mode uses curated liturgical turns, not one card per block.
+// The production 48-card reader is untouched.
 const expandedReview=buildReaderModeModels({prepared,data,mode:"LIVE",reviewExpandedCards:true});
-assert.ok(expandedReview.presentationModel.totalCards>48,
-  "expanded Ordinary must have more prayer cards than the production LIVE 48");
-assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_EXPANDED_REVIEW");
+assert.equal(expandedReview.presentationModel.totalCards,65,
+  "curated LIVE should have precisely 65 cards for the standard Sung Ordinary");
+assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
 assert.equal(expandedReview.presentationModel.cardForEvent,undefined,
   "review cards cannot claim canonical event ownership");
 const inputParagraphIds=expandedReview.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id));
 const expandedParagraphIds=expandedReview.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id));
 assert.deepEqual(expandedParagraphIds,inputParagraphIds,
-  "fine divisions duplicated or dropped canonical prayer paragraphs");
+  "curated stage boundaries duplicated or dropped canonical prayer paragraphs");
 const cardForCue=id=>expandedReview.presentationModel.cards.find(c=>
   c.paragraphs.some(p=>(p.sourceCueIds??[]).includes(id)));
 assert.equal(cardForCue("AO.SM.C0053"),cardForCue("AO.SM.C0054"),
@@ -87,15 +87,20 @@ assert.equal(cardForCue("AO.SM.C0025").paragraphs.find(p=>
   p.sourceCueIds.includes("AO.SM.C0025")).speakerRole,"MINISTERS");
 assert.equal(cardForCue("AO.SM.C0027").paragraphs.find(p=>
   p.sourceCueIds.includes("AO.SM.C0027")).speakerRole,"MINISTERS");
-assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Credo · Incarnation"),
-  "Credo Incarnation milestone lost");
+assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Credo · Incarnation, Passion and Resurrection"),
+  "Credo Incarnation and Passion milestone lost");
 const distinct=(earlier,later,message)=>assert.notEqual(
   cardForCue(earlier)?.sectionId,cardForCue(later)?.sectionId,message);
-distinct("AO.SM.C0009","AO.SM.C0010","Psalm 42 final doxology must be a separate stage");
-distinct("AO.SM.C0033","AO.SM.C0034","The final opening dialogue must be distinct");
-distinct("AO.SM.C0046","AO.SM.C0047","Kyrie/Christe repetitions need separate prayer cards");
-distinct("AO.SM.C0049","AO.SM.C0050","Christe/final Kyrie card boundary lost");
-distinct("AO.SM.C0131","AO.SM.C0132","Orate fratres priest/response card boundary lost");
+assert.equal(cardForCue("AO.SM.C0009"),cardForCue("AO.SM.C0010"),
+  "Psalm 42 and doxology belong on one card, not separate swipe targets");
+assert.equal(cardForCue("AO.SM.C0033"),cardForCue("AO.SM.C0034"),
+  "The opening dialogue remains inside the ascent prayer card");
+assert.equal(cardForCue("AO.SM.C0046"),cardForCue("AO.SM.C0047"),
+  "Kyrie/Christe/Kyrie is one navigable liturgical prayer");
+assert.equal(cardForCue("AO.SM.C0049"),cardForCue("AO.SM.C0050"),
+  "The Kyrie must not be over-segmented");
+assert.equal(cardForCue("AO.SM.C0131"),cardForCue("AO.SM.C0132"),
+  "Orate fratres and Suscipiat response must share one card");
 distinct("AO.SM.C0147","AO.SM.C0148","Sanctus/Benedictus card boundary lost");
 distinct("AO.SM.C0172","AO.SM.C0173","Host consecration formula must follow preparation");
 distinct("AO.SM.C0178","AO.SM.C0179","Chalice consecration formula must follow preparation");
@@ -104,8 +109,19 @@ assert.equal(cardForCue("AO.SM.C0173"),cardForCue("AO.SM.C0174"),
   "Host elevation must remain linked to the exact words without a blank transition");
 assert.equal(cardForCue("AO.SM.C0179"),cardForCue("AO.SM.C0181"),
   "Chalice elevation must remain linked to the exact words without a blank transition");
-console.log("Expanded Mass card review: "+expandedReview.presentationModel.totalCards+
-  " unique cards; every source paragraph conserved.");
+distinct("AO.SM.C0015","AO.SM.C0016","The celebrant Confiteor starts its own prayer card");
+distinct("AO.SM.C0020","AO.SM.C0021","The server Confiteor starts its own prayer card");
+distinct("AO.SM.C0036","AO.SM.C0042","The Introit is a separate liturgical stage");
+distinct("AO.SM.C0094","AO.SM.C0095","The Credo Incarnation starts a separate stage");
+assert.equal(cardForCue("AO.SM.C0095"),cardForCue("AO.SM.C0096"),
+  "The Credo genuflection and its doctrinal context must stay on one card");
+distinct("AO.SM.C0108","AO.SM.C0109","Offertory antiphon should retain source-prayer transition only within first stage");
+distinct("AO.SM.C0116","AO.SM.C0120","Incensation is a distinct conditional stage");
+distinct("AO.SM.C0237","AO.SM.C0242","Optional Communion Confiteor must not blend into Ecce Agnus Dei");
+distinct("AO.SM.C0249","AO.SM.C0250","Ablutions and Communion antiphon need distinct ownership");
+distinct("AO.SM.C0262","AO.SM.C0264","Final Blessing must not merge with Placeat");
+console.log("Curated Mass LIVE review: "+expandedReview.presentationModel.totalCards+
+  " unique liturgical cards; all source prayer paragraphs retained.");
 
 
 const host=live.presentationModel.cards.find(card=>
