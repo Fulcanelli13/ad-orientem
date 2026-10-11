@@ -118,7 +118,7 @@ function renderMission(reset=false){
  const btn=$("eventTimeline").querySelector('button[data-index="'+eventIndex+'"]');btn?.scrollIntoView({inline:"center",block:"nearest",behavior:"instant"});
  const classes={scripture:L("SCRIPTURE · DOCUMENTED","ÉCRITURE · ATTESTÉ"),patristic:L("EARLY CHRISTIAN TESTIMONY","TÉMOIGNAGE PATRISTIQUE"),later:L("LATER TRADITION","TRADITION POSTÉRIEURE"),identification:L("TRADITIONAL IDENTITY","IDENTITÉ TRADITIONNELLE"),hold:L("NO TRAVEL VERIFIED","AUCUN VOYAGE ATTESTÉ")};
  const geographic=e.place?loc.get(e.place):null;
- const commentary=(x.note||"")+(geographic?" "+L("Geographical reference: ","Repère géographique : ")+geographic.name+" ("+geographic.kind+").":"");
+ const commentary=(e.note||"")+(geographic?" "+L("Geographical reference: ","Repère géographique : ")+geographic.name+" ("+geographic.kind+").":"");
  sourceDetail(lang==="fr"?e.fr:e.title,(commentary||L("This event is recorded by the cited witness. No reconstructed ancient road is implied.","Cet événement figure dans le témoignage cité ; aucune route antique n'est reconstituée.")),e.reference,e.source,classes[e.kind]||e.kind);
  $("progressControls").classList.add("hidden");
  missionMap();
