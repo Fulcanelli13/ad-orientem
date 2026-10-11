@@ -101,7 +101,8 @@ function freezeCard(card){
     sourceEventIds:Object.freeze([...(card.sourceEventIds??[])])
   });
 }
-function sourceId(card){return String(card.sourceSectionId??card.sectionId);}
+function sourceId(card){return String(card.sectionId);}
+function canonicalSourceId(card){return String(card.sourceSectionId??card.sectionId);}
 function boundaryIndex(card,marker){
   if(marker.cue!=null){
     const target=cueId(marker.cue);
@@ -189,7 +190,7 @@ export function projectCuratedOrdinaryLiveCards(model){
         sequence:result.length+1,
         paragraphs:chunk.paragraphs,
         blocks:chunk.blocks,
-        sourceSectionId:id,
+        sourceSectionId:canonicalSourceId(sourceCard),
         sourceSequence:sourceCard.sourceSequence??sourceCard.guideSequence??sourceCard.sequence,
         guideSequence:sourceCard.guideSequence??sourceCard.sourceSequence??sourceCard.sequence,
         sourceEventIds:[...(sourceCard.eventIds??[])],
