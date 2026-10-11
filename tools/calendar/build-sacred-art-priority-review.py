@@ -34,6 +34,12 @@ def build(args):
  grades={a["id"]:a["visualGrade"] for a in visually}
  by_id={a["id"]:a for a in works["artworks"]}
  images={a["id"]:a for a in original["items"]}
+ for decision in review["approvals"]+review["selections"]+review["refusals"]:
+  source=images.get(decision["artworkId"])
+  assert source is not None, "Reviewed artwork not available in packaged source: "+decision["artworkId"]
+  assert source["sha"]==decision["originalSha256"], "Reviewed source hash no longer matches: "+decision["artworkId"]
+ assert len(review["selections"])==44 and len(review["approvals"])==35
+ assert len(review["refusals"])==30 and len(review["exceptions"])==0
  target_by_id={t["id"]:t for t in targets}
  output=[]
  for section,ids in IDS.items():
