@@ -5,6 +5,7 @@
  */
 import "./rosary-cinematic-styles.js";
 import {antwerpPackReady,antwerpEntryFor} from "./rosary-antwerp-cycle.js";
+import {ANTWERP_IMAGE_PACK_V1} from "./rosary-antwerp-licences.v1.js";
 
 export const ROSARY_CINEMATIC_VERSION="rosary-cinematic-v1";
 export const ROSARY_MYSTERY_SETS=Object.freeze({
@@ -174,7 +175,7 @@ export function syncRosaryCinematic({root,info,win=globalThis,language="en",onJu
   // can fall back to the existing art without two competing error handlers.
  }
  host.__aoRosaryCinemaOnJump=onJump;
- const artPack=win?.AO_ROSARY_ANTWERP_CLEARED_V1;
+ const artPack=ANTWERP_IMAGE_PACK_V1;
  const hasAntwerp=info.set!=="luminous"&&antwerpPackReady(artPack);
  const artModes=host.querySelector(".aoRosaryCinemaArtModes");
  if(artModes)artModes.hidden=!hasAntwerp;
