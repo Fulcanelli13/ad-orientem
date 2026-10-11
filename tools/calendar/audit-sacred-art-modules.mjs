@@ -102,7 +102,41 @@ const summary={
 };
 assert.equal(rosary.length,15);
 assert.equal(summary.rosaryMysteriesOriginalCovered,15,"Rosary two-acquired-original milestone regressed");
+// A saint can be depicted in a museum painting without owning the painting's
+// principal subject, and without the work being an authenticated lifetime portrait.
+// Keep these secondary/reusable depictions separate from strict person-target quotas.
+const saintDepictionCoverage=allTargets.filter(t=>t.id.startsWith("person.")).map(t=>{
+ const personId=t.id.slice("person.".length);
+ const iconographyKey="saint-"+personId;
+ const depictions=works.artworks.filter(a=>isAcquired(a)&&(a.tags?.iconography||[]).includes(iconographyKey));
+ const entries=depictions.map(a=>({
+  artworkId:a.id,sourceUrl:a.source.objectUrl,originalSha256:a.acquisition.originalSha256,
+  iconographyKey,role:"DEPICTED_PERSON_ROLE_NOT_YET_CURATOR_CERTIFIED",
+  isPrincipalPersonTag:a.tags?.portraitSubjectId===personId,
+  portraitAuthenticity:"NOT_AUTHENTICATED_BY_SUBJECT_TAG",
+  releaseStatus:"RESEARCH_ONLY"
+ }));
+ return {personTargetId:t.id,title:t.title,required:t.minimumOriginals,
+  distinctOriginalDepictions:entries.length,preliminarilyAssignedPrincipalPerson:entries.filter(x=>x.isPrincipalPersonTag).length,
+  depictions:entries};
+});
+const saintVisualSummary={
+ personTargets:saintDepictionCoverage.length,
+ withAnyMuseumTaggedDepiction:saintDepictionCoverage.filter(x=>x.distinctOriginalDepictions>0).length,
+ withoutMuseumTaggedDepiction:saintDepictionCoverage.filter(x=>x.distinctOriginalDepictions===0).length,
+ withSecondaryOrMultiSaintDepiction:saintDepictionCoverage.filter(x=>x.depictions.some(d=>!d.isPrincipalPersonTag)).length,
+ approvedSaintPortraits:0
+};
+assert.equal(saintVisualSummary.personTargets,
+ saintVisualSummary.withAnyMuseumTaggedDepiction+saintVisualSummary.withoutMuseumTaggedDepiction);
+
 mkdirSync(outdir,{recursive:true});
+writeFileSync(outdir+"/saint-visual-coverage.v1.json",JSON.stringify({
+ schema:"AO_SACRED_ART_SAINT_VISUAL_COVERAGE_V1",source:"data/calendar/sacred-art-candidates.v1.json",
+ status:"RESEARCH_ONLY_NO_PORTRAIT_OR_DATE_CERTIFICATION",
+ distinction:"A saint tagged as a figure in a painting is not automatically its principal subject, an authentic lifetime portrait, or a valid 1962 day hero.",
+ summary:saintVisualSummary,persons:saintDepictionCoverage
+},null,2)+"\\n");
 const report={schema:"AO_SACRED_ART_ALL_MODULE_COVERAGE_AUDIT_V2",date:"2026-10-10",
  warnings:[
  "SourceOriginalsAvailable != museum-grade beauty, crop quality, reliable subject attribution or publication approval.",
