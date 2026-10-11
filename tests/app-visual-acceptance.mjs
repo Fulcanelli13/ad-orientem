@@ -312,7 +312,17 @@ try{
   assert.notEqual(genericCalendarTransition.title,"Calendar","Calendar ribbon navigation regressed to the fabricated generic destination cinematic");
   await page.waitForFunction(()=>document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Tabs [data-cal-view]").length===3,null,{timeout:5000});
   await waitForFxSettled();
-  await assertHomeHidden("Calendar");
+  const embeddedCalendar=await page.evaluate(()=>{
+    const home=document.querySelector(".homeScreen.aoTodayV2");
+    const slot=home?.querySelector("[data-home-calendar-inline]");
+    const child=slot?.querySelector("#ao-calendar-modular-root");
+    return {route:globalThis.AO_APP_SHELL_V1?.getActive?.(),
+      view:home?.dataset?.aoHomeCalendarView??null,slotVisible:slot?.hidden===false,
+      childEmbedded:Boolean(child&&home.contains(child)),
+      homeSuppressed:document.documentElement.dataset.aoHomeSuppressed??null};
+  });
+  assert.deepEqual(embeddedCalendar,{route:"home",view:"day",slotVisible:true,childEmbedded:true,homeSuppressed:"false"},
+    "Calendar v2 must occupy the in-page Today tab rather than a separate hidden-Home route");
   await page.waitForFunction(()=>globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.version==="43.45-modular-exact",null,{timeout:5000});
   await page.evaluate(()=>{
     const id=globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate;
