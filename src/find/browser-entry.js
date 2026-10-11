@@ -417,7 +417,13 @@ export function createFindOwner(win=globalThis){
     const exactDestination=["lens","categories","view","query","placeId","calendarKey"]
       .some(hasOwn);
     const returning=!openState&&!exactDestination&&hasExploreReturnContext;
+    const previousLens=state.lens;
     if(options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    // Explicit category/search routes start a new lookup; reopening an ordinary
+    // Explore tab is a return and retains its selected pin and sheet.
+    if(exactDestination&&(state.lens!==previousLens||hasOwn("categories")||hasOwn("query"))){
+      state.selectedId=null;state.selectedPlaceId=null;
+    }
     if(state.lens==="heritage"&&!returning&&!hasOwn("view"))state.view="map";
     if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
     if(hasOwn("calendarKey"))state.calendarKey=state.lens==="pilgrimages"&&typeof options.calendarKey==="string"?options.calendarKey:null;
