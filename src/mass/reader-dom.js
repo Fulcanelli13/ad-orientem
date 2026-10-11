@@ -1940,7 +1940,7 @@ export function createReaderDomAdapter({
         return;
       }
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
-      if(translatable){
+      if(translatable && mode!=="MISSAL"){
         toggleReaderTranslation(translatable);
         translatable.dataset.ritualCueActive="false";
         syncReaderRitualHighlights(root,current?.gesture);
@@ -2043,7 +2043,7 @@ export function createReaderDomAdapter({
       const tag=String(event.target?.tagName??"").toUpperCase();
       if(key==="Enter"||key===" "){
         const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
-        if(translatable){
+        if(translatable && mode!=="MISSAL"){
           event.preventDefault?.();
           toggleReaderTranslation(translatable);
           translatable.dataset.ritualCueActive="false";
