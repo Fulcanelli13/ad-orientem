@@ -305,12 +305,15 @@ export function createFindOwner(win=globalThis){
     const customCards=state.lens==="heritage"
       ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
     const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
+    const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
+      .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
       language:language(win),
       items,
       lens:state.lens,
       counts:preliminaryMode?{tlm:PRELIMINARY_R49_TOTAL}:{...projection.counts,traditions:countCanonicalTraditions(projection.byLens.traditions),heritage:items.length},
       customCards,
+      featuredPlaces,
       nearby:state.lens==="heritage"?nearbyResults:[],
       atlasFacets:state.lens==="traditions"?buildCustomsAtlasFacets(projection.byLens.traditions):null,
       loadedProviders:preliminaryMode?[]:data.directory?.loadedProviders??[],
@@ -592,6 +595,18 @@ export function createFindOwner(win=globalThis){
       // their source-backed pins rather than preserving an unrelated viewport.
       lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
       void paint();return;
+    }
+    const chapterButton=target?.closest?.("[data-explore-place-jump]");
+    if(chapterButton){
+      event.preventDefault?.();
+      const name=chapterButton.dataset.explorePlaceJump;
+      const chapter=getRoot(win)?.querySelector?.('.aoExplorePlaceSheet [data-explore-place-chapter="'+name+'"]');
+      if(chapter){
+        const details=chapter.matches?.("details")?chapter:chapter.querySelector?.("details");
+        if(details)details.open=true;
+        chapter.scrollIntoView?.({block:"start",behavior:win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"instant":"smooth"});
+      }
+      return;
     }
     const openPlace=target?.closest?.("[data-explore-open-place]");
     if(openPlace){
