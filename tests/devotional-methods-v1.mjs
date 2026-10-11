@@ -91,7 +91,8 @@ for(const marker of ["data-p435930-rosary-fifteen","function launchFifteenRosary
  assert.ok(runtime.includes(marker),"Missing live fifteen-decade transition: "+marker);
 }
 assert.match(runtime,/launchTraditionalRosaryMethod\('ordinary'\)/,"The canonical five-decade launch must remain separate");
-const donorBundle=readFileSync("ao-packed-04392ad5e156c05227d9.js","utf8");
+const packedManifest=JSON.parse(readFileSync("data/presentation/startup-thin-shell.v1.json","utf8"));
+const donorBundle=readFileSync(packedManifest.pack.file,"utf8");
 assert.match(donorBundle,/setMysterySet:\(set,\{step=0\}=\{\}\)=>/,"Canonical runtime must expose in-place mystery-set switching");
 assert.match(donorBundle,/\['joyful','sorrowful','glorious'\]\.includes\(set\)/,"Reject nontraditional sets in 15-decade API");
 assert.match(donorBundle,/S\.rosarySet=set;[\s\S]{0,100}labRosarySteps\(set\)/,"Reuse canonical Rosary data and render path");
