@@ -1,0 +1,34 @@
+name: Required main gate
+
+# This check must report on EVERY PR. Do not add paths/path-ignore filters:
+# path-filtered workflows are valuable specialist checks but cannot be
+# selected as unconditional branch-protection requirements.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  merge_group:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Obsolete heads of a single PR may be cancelled; independent PRs never share
+# a group, and manual / merge-queue runs have independent SHA-based groups.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  required-main-gate:
+    name: required-main-gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify required check remains unconditional
+        run: node tests/required-main-gate-contract.mjs
+      - name: Full existing non-browser regression suite
+        run: npm test
