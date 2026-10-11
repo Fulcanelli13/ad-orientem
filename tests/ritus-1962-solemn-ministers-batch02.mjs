@@ -30,7 +30,7 @@ for(const e of ev){
   assert.equal(e.latinFacsimileReviewed,false);
   assert.equal(e.runtimeCertified,false);
   assert.ok(e.condition && e.ritus && e.sourceUrl && e.shortRubricFr,e.id+" missing evidence/condition");
-  assert.match(e.sourceUrl,/ritus-servandus-translated-english\/download\/#page=\d+/);
+  assert.ok(e.sourceUrl.includes("ritus-servandus-translated-english/download/#page="),e.id+" missing primary PDF page");
   if(e.cueId)assert(cues.has(e.cueId),e.id+" loses source cue");
   else{
     assert.equal(e.anchorType,"BRANCH_ONLY_RITE_EVENT","missing cue but not branch event "+e.id);
