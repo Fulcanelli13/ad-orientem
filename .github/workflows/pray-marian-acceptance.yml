@@ -5,6 +5,9 @@ on:
       - "src/pray/**"
       - "tests/pray-presentation.mjs"
       - "tests/pray-marian-mobile.mjs"
+      - "tests/rosary-cinematic-collection-mobile.mjs"
+      - "tests/rosary-cinematic-contract.mjs"
+      - "tests/rosary-antwerp-art-contract.mjs"
       - "tests/pray-all-modules-mobile.mjs"
       - ".github/workflows/pray-marian-acceptance.yml"
   workflow_dispatch:
@@ -16,7 +19,7 @@ concurrency:
 jobs:
   marian-mobile:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,11 +32,21 @@ jobs:
         run: timeout --signal=TERM --kill-after=5s 160s node tests/pray-marian-mobile.mjs
       - name: All devotional routes and canonical Prayer Library mobile
         run: timeout --signal=TERM --kill-after=5s 190s node tests/pray-all-modules-mobile.mjs
+      - name: Verify full original Rosary artwork on the phone
+        run: timeout --signal=TERM --kill-after=5s 160s node tests/rosary-cinematic-collection-mobile.mjs
       - name: Preserve Rosary mystery-cinema phone captures
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: rosary-cinema-mobile-${{ github.run_id }}
           path: reviews/captures/rosary-cinema/*.png
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Preserve full current-Rosary artwork review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rosary-existing-art-15-${{ github.run_id }}
+          path: reviews/captures/rosary-art-coherence/*
           if-no-files-found: ignore
           retention-days: 14
