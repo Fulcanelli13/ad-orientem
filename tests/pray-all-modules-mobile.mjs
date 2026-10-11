@@ -288,8 +288,13 @@ try{
    assert.ok(sources.some(x=>x.href.includes(witness)),"Missing direct historical witness from "+route+": "+JSON.stringify(sources));
    assert.ok(sources.every(x=>x.href.startsWith("https://")&&x.rel.includes("noreferrer")),"Unsafe historical witness link in "+route);
    const disclosure=page.locator(box+" details.aoP435930Source").last();
+   const initiallyOpen=await disclosure.evaluate(el=>el.open);
    await disclosure.locator("summary").tap();
-   assert.equal(await disclosure.getAttribute("open"),"","Historical witness drawer cannot be opened on touch: "+route);
+   assert.notEqual(await disclosure.evaluate(el=>el.open),initiallyOpen,"Historical witness drawer cannot toggle on touch: "+route);
+   if(initiallyOpen){
+     await disclosure.locator("summary").tap();
+     assert.equal(await disclosure.evaluate(el=>el.open),true,"Historical witness drawer cannot reopen on touch: "+route);
+   }
  }
 
  // Reach the lazy canonical Novena reader through the public module registry.
