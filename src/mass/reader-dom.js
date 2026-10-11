@@ -853,6 +853,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     return Object.freeze({
       id:String(p.id ?? index),kind,primary,secondary,alternate,replaceOnToggle,
       active:p.active === true,
+      speakerRole:p.speakerRole??null,
+      speakerEvidence:p.speakerEvidence??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
     });
   }) : (previous.paragraphs ?? Object.freeze([]));
@@ -2265,6 +2267,7 @@ export function createReaderDomAdapter({
           const node=doc.createElement("p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
+          if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
           if(decorateThisSection&&!openingSet&&p.kind==="TEXT"&&/^\s*\p{L}/u.test(p.primary)){
             node.dataset.opening="true";openingSet=true;
           }
