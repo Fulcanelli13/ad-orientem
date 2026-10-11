@@ -50,6 +50,38 @@ assert.equal(live.presentationModel.totalCards,48);
 assert.equal(live.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
 assert.equal(prepared.session.resolvedMass.presentationMode,"LIVE","mode rebuild mutated canonical resolved Mass");
 
+// Explicit review mode tests the complete real-data Ordinary at finer
+// liturgical block/stanza boundaries; the production 48 projection is untouched.
+const expandedReview=buildReaderModeModels({prepared,data,mode:"LIVE",reviewExpandedCards:true});
+assert.ok(expandedReview.presentationModel.totalCards>48,
+  "expanded Ordinary must have more prayer cards than the production LIVE 48");
+assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_EXPANDED_REVIEW");
+assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
+assert.equal(expandedReview.presentationModel.cardForEvent,undefined,
+  "review cards cannot claim canonical event ownership");
+const inputParagraphIds=expandedReview.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id));
+const expandedParagraphIds=expandedReview.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id));
+assert.deepEqual(expandedParagraphIds,inputParagraphIds,
+  "fine divisions duplicated or dropped canonical prayer paragraphs");
+const cardForCue=id=>expandedReview.presentationModel.cards.find(c=>
+  c.paragraphs.some(p=>(p.sourceCueIds??[]).includes(id)));
+assert.equal(cardForCue("AO.SM.C0053"),cardForCue("AO.SM.C0054"),
+  "Gloria priestly intonation must stay together");
+assert.notEqual(cardForCue("AO.SM.C0054"),cardForCue("AO.SM.C0055"),
+  "Schola's Et in terra pax must be its own prayer card");
+assert.equal(cardForCue("AO.SM.C0089"),cardForCue("AO.SM.C0090"),
+  "Credo priestly intonation must stay together");
+assert.notEqual(cardForCue("AO.SM.C0090"),cardForCue("AO.SM.C0091"),
+  "Schola's Patrem omnipotentem must start a separate prayer card");
+assert.equal(cardForCue("AO.SM.C0020").paragraphs.find(p=>
+  p.sourceCueIds.includes("AO.SM.C0020")).speakerRole,"PRIEST");
+assert.equal(cardForCue("AO.SM.C0025").paragraphs.find(p=>
+  p.sourceCueIds.includes("AO.SM.C0025")).speakerRole,"MINISTERS");
+assert.equal(cardForCue("AO.SM.C0027").paragraphs.find(p=>
+  p.sourceCueIds.includes("AO.SM.C0027")).speakerRole,"MINISTERS");
+assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Credo · Incarnation"),
+  "Credo Incarnation milestone lost");
+
 const host=live.presentationModel.cards.find(card=>
   card.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0174"))
 );
