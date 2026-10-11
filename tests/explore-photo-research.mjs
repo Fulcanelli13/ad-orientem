@@ -15,7 +15,7 @@ for(const item of approved.items){
   assert.ok(!approvedIds.has(item.place_id));approvedIds.add(item.place_id);
   assert.equal(item.status,"APPROVED");
   assert.ok(item.rights_verified&&item.subject_verified&&item.crop_reviewed);
-  assert.match(item.asset_path,/^assets\\/approved\\/place-media\\/[a-zA-Z0-9_.-]+\\.webp$/);
+  assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
   assert.equal(item.license,"CC-BY-SA-4.0");
   assert.equal(item.license_url,"https://creativecommons.org/licenses/by-sa/4.0/");
   assert.ok(item.source_sha1&&item.derivative_sha256);
