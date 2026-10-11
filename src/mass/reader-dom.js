@@ -2350,6 +2350,16 @@ export function createReaderDomAdapter({
           // its source-record cue; other GF records must never acquire an
           // identity from a shared card's source list.
           if(exactCueIds.length===1) node.dataset.cueId=exactCueIds[0];
+          // Sung Gloria and Credo intonations pair a canonical incipit cue
+          // with its priestly completion on one legible paragraph. Both
+          // source IDs remain on data-source-cue-ids; the opening cue owns
+          // focus while this visual composite is active. Without this
+          // explicit two-pair bridge, neither celebrant intonation receives
+          // any LIVE cue focus, voice or cue-scoped rubric projection.
+          if(exactCueIds.length===2 && (
+            (exactCueIds[0]==="AO.SM.C0053" && exactCueIds[1]==="AO.SM.C0054") ||
+            (exactCueIds[0]==="AO.SM.C0089" && exactCueIds[1]==="AO.SM.C0090")
+          )) node.dataset.cueId=exactCueIds[0];
           // The Passion death rubric is tied to the final Latin words,
           // rather than to the long Good Friday Passion card as a whole.
           // This cue identity is inherited from source GF-PASS-320 and
