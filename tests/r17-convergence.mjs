@@ -21,6 +21,12 @@ const events = graph.storage.eventFiles.flatMap((ref) =>
 const fail = (message) => { throw new Error(message); };
 const expect = (condition, message) => { if (!condition) fail(message); };
 
+// Prevent future merge-forward reconciliation from silently removing Missal browser acceptance.
+const phoneCommand = JSON.parse(fs.readFileSync(path.join(root,"package.json"),"utf8")).scripts["test:phone"] || "";
+expect(phoneCommand.includes("node tests/mass-missal-columns-phone.mjs"),
+  "Standard test:phone must execute bilingual Missal column acceptance");
+
+
 expect(MASS_FORMS.length === 4, "four Mass forms required");
 expect(PRESENTATION_MODES.join(",") === "MISSAL,SIMPLE,LIVE", "presentation mode contract changed");
 expect(forms.forms.MISSA_CANTATA_SIMPLE.certifiedBindings === 189, "MC simple 189 bindings lost");
