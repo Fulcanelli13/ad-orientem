@@ -11,7 +11,7 @@ function modeResolvedMass(prepared,mode){
   });
 }
 
-export function buildReaderModeModels({prepared,data,mode}={}){
+export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=false}={}){
   if(!prepared?.session?.resolvedMass)throw new TypeError("Prepared Mass session required");
   if(!data?.sectionMap||!data?.lowCorpus||!data?.sungCorpus)throw new TypeError("Reader presentation data required");
   const normalized=normalizePresentationMode(mode);
