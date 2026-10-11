@@ -6,7 +6,7 @@ function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function state(win){return runtime(win)?.store?.getState?.()??null;}
 
 function closeTransientSurfaces(win){
-  try{win?.AO_LEARN_APP_V1?.close?.();}catch{}
+  try{win?.AO_LEARN_APP_V1?.close?.({preserveContext:true});}catch{}
   try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home"});}catch{}
   try{win?.AO_FIND_APP_V1?.close?.();}catch{}
   try{win?.AO_SCRIPTURE_APP_V1?.close?.();}catch{}
