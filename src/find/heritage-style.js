@@ -357,4 +357,34 @@ export const HERITAGE_STYLE = String.raw`
    max-height:min(42dvh,370px);
  }
 }
+
+/* Images are absent until the separate, licensed Place media registry approves
+   an exact-match physical-site image. Never render decorative substitute art. */
+.aoHeritageSurface .aoHeritagePlaceThumb{
+  float:right;width:102px;max-width:33%;margin:8px 0 9px 14px;
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  border-radius:8px;overflow:hidden;background:var(--ao-surface-2,#0d141c);
+}
+.aoHeritageSurface .aoHeritagePlaceThumb img{
+  display:block;width:100%;height:85px;object-fit:cover;
+}
+.aoHeritageSurface .aoHeritagePlaceThumb figcaption{
+  color:var(--ao-text-muted,#9ba5b1);font:400 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  padding:4px 6px;max-height:27px;overflow:hidden;
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia{
+  margin:11px 0 16px;border-radius:12px;overflow:hidden;
+  border:1px solid var(--ao-rule,rgba(255,255,255,.11));
+  background:var(--ao-surface-2,#0d141c);
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia img{
+  display:block;width:100%;max-height:260px;object-fit:cover;
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia figcaption{
+  padding:9px 12px;color:var(--ao-text-muted,#9ba5b1);
+  font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExplorePlaceSheet .aoExplorePlaceMedia a{
+  color:var(--ao-liturgical-accent,#c9ad78);text-decoration:underline;
+}
 `;
