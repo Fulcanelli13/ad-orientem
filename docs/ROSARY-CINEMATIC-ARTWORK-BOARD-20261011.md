@@ -9,6 +9,8 @@ Original object: https://www.metmuseum.org/art/collection/search/437216
 
 15 small individually painted scenes plus central Madonna/Devotion: a consistent late medieval / early Renaissance palette and spatial grammar. The institution classifies the work as Public Domain and offers its Open Access images for unrestricted uses. Check whether all fifteen panels have sufficient separately downloadable resolution, image dimensions, scene ordering and subject-safe crops before selecting. Do not substitute arbitrary paintings for missing panels.
 
+**Iconographic exception / nontrivial acceptance gate:** The Met's scholarly monograph identifies the fourth Glorious panel as **the Death (Dormition) of the Virgin, not the customary bodily Assumption**. Do not falsely relabel its content or silently present this panel as a literal Assumption scene. When evaluating family A, either disclose this iconography in the meditative caption with orthodox theological context, or commission/select a separate approved Assumption work for that movement (which breaks the one-family visual lock). Scholarly source: https://resources.metmuseum.org/resources/metpublications/pdf/Rosary_Picture_View_of_Park_of_Ducal_Palace_Brussels_The_Metropolitan_Museum_Journal_v_24_1989.pdf (Guy C. Bauman, 1989).
+
 Potential effects: slow lateral camera travel through panel-to-panel scene thresholds; architectural/light reveal in Joyful; shadow and restrained camera in Sorrowful; vertical light/ascension in Glorious.
 
 ## B. Antwerp St Paul's Rosary cycle — historically exact fifteen but multiple authors
