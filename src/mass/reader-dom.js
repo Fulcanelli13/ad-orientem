@@ -744,7 +744,11 @@ button.ao-schola-control{cursor:pointer}
      than its nominal 100% scroll-child containing block. Deduct a guarded
      88px as well as the live dock to keep the actual scroll rectangle
      above the panel; the extra height remains accessible by finger scroll. */
-  height:calc(100% - var(--ao-schola-reserve) - 88px)!important
+  /* Measured against the root's full-viewport fixed shell, not a
+     percentage of the viewport's content box (whose intrinsic 100% child
+     was 69px too tall on phone Chromium). Header/ribbon is 120px; the
+     48px residual margin keeps the real scroller above the floating dock. */
+  height:calc(100dvh - var(--ao-schola-reserve) - 168px)!important
 }
 
 
