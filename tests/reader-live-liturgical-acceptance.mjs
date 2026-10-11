@@ -90,8 +90,55 @@ for(const card of model.cards){
     }
   }
 }
-assert.deepEqual([...byCue.keys()].sort(),sourceCueIds.slice().sort(),
-  "The 65-card presentation dropped, duplicated, or invented a spoken source cue");
+// These donor IDs are NOT missing prayers. Fourteen PRIEST_ACTION
+// placeholders are replaced by the actual, date-resolved Proper texts;
+// four private-recitation state markers have no displayed spoken paragraph.
+// All 18 remain in the canonical donor and the source audit.
+const properReplacements=Object.freeze({
+  "AO.SM.B014":["AO.SM.C0042","AO.SM.C0043"],
+  "AO.SM.B019":["AO.SM.C0073"],
+  "AO.SM.B020":["AO.SM.C0075"],
+  "AO.SM.B021":["AO.SM.C0077"],
+  "AO.SM.B022":["AO.SM.C0078"],
+  "AO.SM.B026":["AO.SM.C0086"],
+  "AO.SM.B030":["AO.SM.C0109"],
+  "AO.SM.B040":["AO.SM.C0134"],
+  "AO.SM.B045":["AO.SM.C0144"],
+  "AO.SM.B085":["AO.SM.C0249","AO.SM.C0250"],
+  "AO.SM.B088":["AO.SM.C0254","AO.SM.C0256"],
+});
+const privateStateMarkers=new Set([
+  "AO.SM.C0276","AO.SM.C0277","AO.SM.C0278","AO.SM.C0279",
+]);
+const properPlaceholderIds=new Set(Object.values(properReplacements).flat());
+assert.equal(properPlaceholderIds.size,14);
+const nonDisplay=new Set([...properPlaceholderIds,...privateStateMarkers]);
+assert.equal(nonDisplay.size,18);
+for(const unit of canonicalUnits){
+  if(!nonDisplay.has(unit.cue_id))continue;
+  if(privateStateMarkers.has(unit.cue_id)){
+    assert.equal(unit.type,"state",unit.cue_id+": private recitation marker became a spoken donor");
+    continue;
+  }
+  assert.equal(unit.type,"text",unit.cue_id+": Proper placeholder unexpectedly changed type");
+  assert.equal(unit.clock,"PRIEST_ACTION",
+    unit.cue_id+": Proper placeholder unexpectedly contains independent spoken prayer");
+  const block=Object.entries(properReplacements).find(([,ids])=>ids.includes(unit.cue_id))?.[0];
+  assert.equal(unit.blockId,block,unit.cue_id+": excluded source no longer belongs to its Proper");
+  const owners=model.cards.flatMap(card=>(card.blocks??[])
+    .filter(meta=>meta.blockId===block&&meta.paragraphCount>0)
+    .map(meta=>({card,meta})));
+  assert.equal(owners.length,1,block+": actual resolved Proper has no unique reading-stage owner");
+  assert.ok(owners[0].card.paragraphs.slice(
+    owners[0].meta.firstParagraphIndex,
+    owners[0].meta.firstParagraphIndex+owners[0].meta.paragraphCount).length,
+    block+": resolved Proper has no prayer text");
+}
+assert.deepEqual([...byCue.keys()].sort(),
+  sourceCueIds.filter(id=>!nonDisplay.has(id)).sort(),
+  "The 65-card presentation lost a real cue, or a Proper replacement lost its distinct owner");
+assert.equal(byCue.size,261,
+  "Expected 261 displayed canonical utterances plus 14 Proper replacements and four state markers");
 const sourceRoles=new Map(speakerAudit.records.map(r=>[r.cueId,r]));
 assert.equal(sourceRoles.size,280);
 for(const unit of canonicalUnits){
