@@ -574,6 +574,17 @@
         "comparedAgainstFacsimile1962": false,
         "resolvedThroughExistingAppProper": false,
         "approvedForApp": false
+      },
+      "inheritedSourceResolution": {
+        "parentSourcePath": "Tempora/Pent08-0",
+        "parentSection": "Introitus",
+        "parentUrl": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Pent08-0.txt",
+        "parentCitationNotes": [
+          "Ps 47:10-11.",
+          "Ps 47:2."
+        ],
+        "parentLatinIncipit": "v. Suscépimus, Deus, misericórdiam tuam in médio templi tui: secúndum nomen tuum, Deus, ita et laus tua in fines terræ: justítia plena est déxtera tua.",
+        "status": "DIRECT_PARENT_SECTION_LOCATED_BUT_1962_TEXT_AND_SELECTION_PENDING"
       }
     },
     {
@@ -764,7 +775,8 @@
   "sourceCaveats": [
     "Holy Thursday Tempora/Quad6-4 is a stub or inherited-data source here; its chant slots are not derivable from the file without resolving ownership. Do not invent Mass-of-the-Lord's-Supper propers.",
     "Candlemas and some other feast chants are inherited from Commons and not yet resolved.",
-    "Scriptural verses attached to existing Graduale/Alleluia sequence may have special rite-dependent structure."
+    "Scriptural verses attached to existing Graduale/Alleluia sequence may have special rite-dependent structure.",
+    "Candlemas Introit inherited from Tempora/Pent08-0 was traced to its source Psalm 47 annotation; this is NOT yet a facsimile check of the 1962 Candlemas Introit or an approval for calendar use."
   ],
   "productionNote": "No overwrite to live Proper resolution or external Bible navigation; all publication flags false."
 }
