@@ -231,7 +231,16 @@ export function createHomeOwner(win=globalThis){
     if(resumeMass){
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
-      void navigateHomeShortcut("mass",{trigger:resumeMass,routeId:"mass.current"});
+      // This is the only Home control authorized to restore an active R17
+      // checkpoint. Follow Mass and the ribbon Mass icon always prepare.
+      void Promise.resolve(win?.AO_APP_SHELL_V1?.navigate?.("mass",{resume:true}))
+        .then(result=>{
+          if(routeAccepted(result)){clearRouteError();return;}
+          showRouteError("mass.resume",resumeMass);
+        }).catch(error=>{
+          try{win?.console?.error?.("Mass resume unavailable",error)}catch{}
+          showRouteError("mass.resume",resumeMass);
+        });
       return;
     }
     const massEntry=target?.closest?.("[data-home-mass-entry]");
