@@ -29,13 +29,58 @@ const R60_MAJOR_PLACE_IDS=new Set([
   "shrine:20261009:IT:basilica-san-francesco-assisi",
   "shrine:20261009:IN:basilica-bom-jesus-old-goa",
 ]);
+// Preserve the separately reviewed original 38 substantial introductions.
+// R61 adds concise, bilingual map synopses with longer, source-linked story
+// chapters owned by its own editorial dataset and tests: do not apply the
+// 110-character full-introduction gate to those deliberately short previews.
+const ORIGINAL_38=new Set([
+  "shrine:IT:sacro-monte-di-varallo",
+  "shrine:FR:sanctuary-of-our-lady-of-rocamadour",
+  "shrine:ES:santa-maria-de-montserrat-abbey",
+  "shrine:MT:national-shrine-of-our-lady-of-ta-pinu",
+  "shrine:PL:divine-mercy-sanctuary-krakow-agiewniki",
+  "shrine:HR:national-shrine-of-saint-joseph-karlovac",
+  "shrine:LT:divine-mercy-sanctuary-vilnius",
+  "shrine:AR:basilica-of-our-lady-of-lujan",
+  "shrine:IN:basilica-of-our-lady-of-good-health-vailankanni",
+  "shrine:IN:basilica-of-our-lady-of-lourdes-poondi",
+  "shrine:LK:shrine-of-our-lady-of-madhu",
+  "shrine:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+  "shrine:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+  "shrine:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+  "shrine:PH:padre-pio-shrine-santo-tomas-batangas",
+  "shrine:PH:national-shrine-of-saint-joseph-mandaue",
+  "shrine:DZ:basilica-of-notre-dame-dafrique-algiers",
+  "shrine:SN:basilica-of-our-lady-of-deliverance-popenguine",
+  "shrine:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+  "shrine:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+  "shrine:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+  "shrine:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+  "shrine:LB:shrine-of-our-lady-of-lebanon-harissa",
+  "shrine:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+  "shrine:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+  "shrine:HR:national-shrine-of-our-lady-of-marija-bistrica",
+  "shrine:IL:church-of-the-primacy-of-saint-peter-tabgha",
+  "shrine:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+  "shrine:IL:church-of-saint-peter-jaffa",
+  "shrine:LK:saint-anne-s-national-shrine-talawila",
+  "shrine:IL:basilica-of-the-annunciation-nazareth",
+  "shrine:IL:basilica-of-the-transfiguration-mount-tabor",
+  "shrine:IL:church-of-the-multiplication-tabgha",
+  "shrine:IL:church-of-the-visitation-ein-karem",
+  "shrine:IL:dominus-flevit-church-mount-of-olives",
+  "shrine:ES:real-monasterio-santa-maria-guadalupe",
+  "shrine:IL:capernaum-saint-peter-memorial",
+  "shrine:VN:our-lady-la-vang-national-shrine"
+]);
 const updated=corpus.shrines.filter(s=>Object.hasOwn(s,"origin_summary_fr"));
 assert.ok(updated.length>=38,"the original 38 completed profiles must remain bilingual; additional reviewed profiles may be added");
+for(const id of ORIGINAL_38)assert.ok(updated.some(s=>s.shrine_id===id),id+" original bilingual introduction disappeared");
 const sourceMap=new Map(sourceRegistry.sources.map(s=>[s.id,s]));
 assert.equal(sourceMap.size,sourceRegistry.sources.length,"source IDs must be unique");
 assert.equal(sourceRegistry.sources.length,349,"12 additional original sources must be retained");
 for(const site of updated){
-  const minimum=R60_MAJOR_PLACE_IDS.has(site.shrine_id)?100:110;
+  const minimum=ORIGINAL_38.has(site.shrine_id)?110:(R60_MAJOR_PLACE_IDS.has(site.shrine_id)?100:90);
   assert.ok(site.origin_summary.length>=minimum&&site.origin_summary_fr.length>=minimum,site.shrine_id+" has a placeholder synopsis");
   assert.notEqual(site.origin_summary,site.origin_summary_fr,site.shrine_id+" was not translated");
   assert.ok(site.source_ids.some(id=>sourceMap.get(id)?.url?.startsWith("https://")),site.shrine_id+" has no linked full original");
