@@ -10,7 +10,7 @@ assert.equal(D.genealogies.matthew.nodes.length,41);
 assert.equal(D.genealogies.luke.nodes.length,76);
 assert.equal(D.genealogies.genesis.edges.length,38);
 assert.equal(D.profiles.length,18);
-assert.equal(D.events.length,50);
+assert.equal(D.events.length,53);
 assert.ok(D.events.every(e=>/^https:\/\//.test(e.source)));
 assert.ok(D.events.filter(e=>e.kind==="scripture").length>=35);
 assert.ok(D.events.some(e=>e.person==="thomas"&&e.kind==="later"&&e.source.includes("20060927")));
@@ -46,13 +46,17 @@ try{
   assert.ok((await page.locator("#detailSources a").getAttribute("href")).includes("newadvent.org"));
   await page.locator('[data-index="2"]').click();
   assert.match(await page.locator("#detailEvidence").innerText(),/EARLY CHRISTIAN TESTIMONY/);
+  await page.locator('[data-profile="mary"]').click();
+  await page.locator('[data-index="9"]').click();
+  assert.match(await page.locator("#detailEvidence").innerText(),/LATER TRADITION/);
+  assert.ok((await page.locator("#detailSources a").getAttribute("href")).includes("cathen/02006b"));
   await page.locator('[data-profile="thomas"]').click();
   await page.locator('[data-index="1"]').click();
   assert.match(await page.locator("#detailEvidence").innerText(),/LATER TRADITION/);
   assert.ok((await page.locator("#detailSources a").getAttribute("href")).includes("vatican.va"));
   await page.locator('[data-profile="philip-evangelist"]').click();
   assert.match(await page.locator("#sceneTitle").innerText(),/Philip the Evangelist/);
-  assert.ok(!await page.locator("#map .mapline").count()===false || true); // no invented route requirement asserted elsewhere
+  assert.equal(await page.locator("#detailEvidence").innerText(),"SCRIPTURE · DOCUMENTED");
   await page.locator('[data-profile="bartholomew"]').click();
   assert.equal(await page.locator("#pinsLayer circle").count(),0,"no fabricated Bartholomew journey");
   await page.locator("#lang").click();
