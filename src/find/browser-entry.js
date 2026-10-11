@@ -375,6 +375,47 @@ export function createFindOwner(win=globalThis){
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
+      // Local directory readiness is not proof the third-party map library or
+      // tiles have loaded. Show state before the remote module import starts.
+      const showMapRecovery=(noMappedPins=false)=>{
+        if(!mapNode||token!==paintToken||!openState||
+           typeof mapNode.replaceChildren!=="function")return;
+        const panel=win.document.createElement("div");
+        panel.className="aoFindMapFallback";
+        const title=win.document.createElement("strong");
+        title.textContent=noMappedPins
+          ?(language(win)==="fr"?"Aucun lieu cartographié":"No mapped places")
+          :(language(win)==="fr"?"Carte indisponible":"Map unavailable");
+        const detail=win.document.createElement("span");
+        detail.textContent=noMappedPins
+          ?(language(win)==="fr"
+            ?"Essayez un autre filtre ou recherchez un lieu par son nom."
+            :"Try another filter or search for a place by name.")
+          :(language(win)==="fr"
+            ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
+            :"Use search above to open any place and its source references.");
+        panel.append(title,detail);mapNode.replaceChildren(panel);
+        if(mapNode.dataset)mapNode.dataset.aoMapState=noMappedPins?"empty":"unavailable";
+      };
+      // Keep import-time status independent of map style/tile status.
+      // A slow CDN response must be allowed to recover, not destroy the map.
+      let pending=null;
+      if(mapNode?.append&&win.document?.createElement){
+        if(mapNode.dataset)mapNode.dataset.aoMapState="loading";
+        pending=win.document.createElement("div");
+        pending.className="aoExploreMapLoading";
+        pending.setAttribute("role","status");pending.setAttribute("aria-live","polite");
+        pending.textContent=language(win)==="fr"?"Chargement du fond de carte…":"Loading map background…";
+        mapNode.append(pending);
+      }
+      const importTimer=win.setTimeout?.(()=>{
+        if(token!==paintToken||!openState||!pending)return;
+        pending.className="aoExploreMapLoading aoExploreMapStalled";
+        pending.textContent=language(win)==="fr"
+          ?"Le fond de carte tarde à répondre. La recherche et les fiches restent disponibles."
+          :"The map background is taking longer than expected. Search and place details remain available.";
+        if(mapNode.dataset)mapNode.dataset.aoMapState="stalled";
+      },12000);
       try{
         const nextHandle=await mountExploreMap(mapNode,items,{
           win,initialViewport:lastMapLens===state.lens?lastMapView:null,
@@ -386,23 +427,20 @@ export function createFindOwner(win=globalThis){
             void paint({selectionOnly:true});
           },
         });
-        if(token!==paintToken||!openState){nextHandle?.destroy?.();return false;}
+        if(importTimer!==undefined)win.clearTimeout?.(importTimer);
+        if(token!==paintToken||!openState){
+          nextHandle?.destroy?.();return false;
+        }
+        if(!nextHandle){
+          // Zero publishable pins is not a network failure or failed Explore route.
+          showMapRecovery(true);return true;
+        }
         mapHandle=nextHandle;
       }catch(error){
-        // MapLibre may fail offline or behind a tile/CDN blocker. It empties
-        // its container before construction; put an accessible recovery back.
-        if(mapNode&&win?.document){
-          const panel=win.document.createElement("div");
-          panel.className="aoFindMapFallback";
-          const title=win.document.createElement("strong");
-          title.textContent=language(win)==="fr"?"Carte indisponible":"Map unavailable";
-          const detail=win.document.createElement("span");
-          detail.textContent=language(win)==="fr"
-            ?"Utilisez la recherche ci-dessus pour ouvrir un lieu et ses sources."
-            :"Use search above to open any place and its source references.";
-          panel.append(title,detail);
-          mapNode.replaceChildren(panel);
-        }
+        if(importTimer!==undefined)win.clearTimeout?.(importTimer);
+        // A blocked CDN or failed module import must show the existing
+        // recovery instructions, rather than leaving an empty map canvas.
+        showMapRecovery();
         console.error("Explore map failed",error);
       }
     }

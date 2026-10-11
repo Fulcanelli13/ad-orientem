@@ -1,0 +1,26 @@
+name: Explore map status acceptance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - "src/find/map-status.js"
+      - "src/find/map-runtime.js"
+      - "src/find/heritage-style.js"
+      - "tests/explore-map-status.mjs"
+      - ".github/workflows/explore-map-status.yml"
+  workflow_dispatch:
+
+jobs:
+  map-status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Map loading, stalled, recovery and cleanup contract
+        run: node tests/explore-map-status.mjs
