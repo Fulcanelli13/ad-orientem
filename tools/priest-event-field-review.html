@@ -47,12 +47,15 @@ footer{margin-top:28px;border-top:1px solid #303c48;padding-top:16px}
   <div><label for="filter">Review category</label><select id="filter"><option value="all">All 15 source-only cues</option><option value="observer">Five newly defined observer-only events</option><option value="graph">Ten pre-existing graph-event bindings</option><option value="unrecorded">Still unrecorded</option></select></div>
   <div><label for="actor">Witnessed actor</label><select id="actor"><option value="PRIEST">Celebrant / priest</option><option value="LECTOR">Lector</option><option value="DEACON">Deacon</option><option value="SCHOLA">Schola</option><option value="UNSURE">Uncertain / obscured</option></select></div>
 </div>
+<div class="layout">
+<div><label for="readerOutcome">App reader result (separate from observation)</label><select id="readerOutcome"><option value="NOT_CHECKED">Not checked</option><option value="MATCHED">Correct priest cue / state</option><option value="MISMATCHED">Wrong priest cue / state</option><option value="STALE">Stale cue / wrong timing</option></select></div>
 <div><label for="choir">Independent Schola observation (optional, never a trigger)</label><input id="choir" placeholder="e.g. Gradual still being sung / finished"></div>
+</div>
 <div><label for="notes">Observation notes (optional, attached to next result)</label><textarea id="notes" placeholder="What was actually seen/heard? What did the reader display?"></textarea></div>
 <main id="events"></main>
 <footer>
 <h2>Evidence export</h2>
-<p>All entries stay in this browser session. Export the JSON before closing the page. No network transfer, server upload, automatic acceptance or automatic runtime state changes occur.</p>
+<p>All entries stay in this browser session. Export the JSON before closing the page; it cannot be recovered from a closed session without an exported file. No network transfer, server upload, automatic acceptance or automatic runtime state changes occur.</p>
 <div class="controls">
 <button class="primary" id="export" type="button">Export evidence JSON</button>
 <button id="copy" type="button">Copy evidence JSON</button>
@@ -104,8 +107,8 @@ function render(){
         if(!$("form").value){$("feedback").textContent="Choose the actual Mass form before recording."; $("form").focus();return;}
         records.push({schema:"ao-priest-field-entry-v1",time:new Date().toISOString(),
           cueId:id,eventId,kind,result:value,form:$("form").value,
-          observedActor:$("actor").value,scholaObservation:$("choir").value.trim(),
-          notes:$("notes").value.trim()});
+          observedActor:$("actor").value,readerOutcome:$("readerOutcome").value,
+          scholaObservation:$("choir").value.trim(),notes:$("notes").value.trim()});
         $("notes").value="";$("feedback").textContent="Recorded "+id+": "+value+".";
         render();
       });
