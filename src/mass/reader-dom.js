@@ -693,6 +693,33 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
 }
+/* Opt-in 65-card field reader: keep the sacred dark hierarchy, but the
+   noncurrent text must still be readable in dim church light. The preceding
+   48-card production aesthetic remains unchanged. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{opacity:.84}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"])
+  .ao-reader-paragraph{opacity:.81}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
+  .ao-reader-paragraph[data-active="true"]{opacity:1}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
+  .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.91}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.83}
+
+/* The persistent Schola panel may be resized/hidden, but it must not lie
+   across prayer rows in the visual scroll window. Reserve real viewport
+   space instead of only adding invisible content after the last paragraph. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-card-viewport{
+  padding-bottom:var(--ao-schola-reserve)
+}
+#ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-prayer-card{
+  padding-bottom:clamp(92px,22vh,250px)
+}
+
 `;
 
 function esc(value){
