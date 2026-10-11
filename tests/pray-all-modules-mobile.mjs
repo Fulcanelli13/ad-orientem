@@ -211,6 +211,7 @@ try{
    });
    assert.match(metrics.title,/Morning.*Evening/i);
    assert.ok(metrics.font>=17,width+"px Prayer heading is too small: "+JSON.stringify(metrics));
+   assert.ok(metrics.font<=20,width+"px Prayer heading ignored phone font-size limit: "+JSON.stringify(metrics));
    assert.ok(metrics.full<=metrics.shown+2,width+"px Prayer header truncates full title: "+JSON.stringify(metrics));
    assert.ok(metrics.overflow<=1,width+"px Prayer heading causes horizontal overflow");
  }
