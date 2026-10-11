@@ -154,7 +154,7 @@ try{
   assert.equal(opening.uiOwner,"R17_NATIVE_PRODUCTION");
   assert.equal(opening.liturgicalColour,"WHITE","selected Rosary Mass must own its white theme, not the Sunday calendar");
   assert.equal(opening.liturgicalSource,"SELECTED_PROPER");
-  assert.equal(opening.massBackground,"#191815");
+  assert.equal(opening.massBackground,"#080b10","native LIVE reader must retain the current deep-night canvas");
   assert.equal(opening.legacyStarts,0);
   assert.equal(opening.modeButtons,3);
   assert.equal(opening.livePressed,"true");
@@ -1723,11 +1723,21 @@ try{
   assert.deepEqual(errors,[],"page errors during native Mass visual audit: "+JSON.stringify(errors));
   // Independent 390px review client: source records, selectable artwork,
   // note/approval persistence and actual JSON export.
-  await page.goto("http://127.0.0.1:4190/reviews/mass-complete-icon-assignment-atlas-20261011.html",
+  const atlasResponse=await page.goto("http://127.0.0.1:4190/reviews/mass-complete-icon-assignment-atlas-20261011.html",
     {waitUntil:"domcontentloaded",timeout:90000});
-  await page.locator("#targets .target").first().waitFor({timeout:20000});
+  assert.equal(atlasResponse?.status(),200,"icon review atlas HTML was not served");
+  const atlasHealth=await page.evaluate(()=>({
+    targets:document.querySelectorAll("#targets .target").length,
+    allData:document.getElementById("atlas-data")?.textContent?.length??0,
+    defaultFilter:document.getElementById("targetStatus")?.value??null,
+    htmlLength:document.documentElement.outerHTML.length
+  }));
+  assert.ok(atlasHealth.targets>0,
+    "icon atlas produced no review targets: "+JSON.stringify(atlasHealth)+
+    "; page errors: "+JSON.stringify(errors));
   assert.ok(await page.locator("#assets .asset").count()>=50,
     "complete asset bank failed to display image candidates");
+  await page.locator("#targetStatus").selectOption(""); // The approval test uses an established high-confidence cue, not the default provisional-only filter.
   await page.locator("#findTarget").fill("AO.SM.C0068");
   await page.locator("#targets .target").first().click();
   await page.locator("#findAsset").fill("cross");
