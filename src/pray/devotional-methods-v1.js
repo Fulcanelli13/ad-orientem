@@ -9,10 +9,10 @@ export const ROSARY_METHODS=Object.freeze({
   status:"canonical-active",source:"https://www.newadvent.org/cathen/13184b.htm",
   policy:"Use unchanged canonical Rosary prayers and 15 mysteries."}),
  dominican:Object.freeze({id:"dominican",label:{en:"Dominican opening",fr:"Ouverture dominicaine"},
-  status:"source-verification",source:"https://www.dominicanrosary.com/rosary-prayers/",
+  status:"opening-source-verified",source:"https://rosaryconfraternity.org/the-rosary/how-to-pray-the-rosary/",
   policy:"Only source-attested opening and concluding prayers; never replace Marian mysteries."}),
  montfort:Object.freeze({id:"montfort",label:{en:"St Louis-Marie de Montfort",fr:"Saint Louis-Marie de Montfort"},
-  status:"original-french-text-required",source:"https://www.montfort.org.uk/Writings/MSR.php",
+  status:"original-french-source-located",source:"https://www.montfort.org/content/uploads/pdf/PDF_FR_30_1.pdf",
   policy:"Offerings, virtues and optional clauses. The modern English edition is copyrighted; do not reproduce."}),
  scriptural:Object.freeze({id:"scriptural",label:{en:"Scriptural meditation",fr:"Méditation biblique"},
   status:"edition-collation-required",source:"https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html",
@@ -37,6 +37,22 @@ export function rosaryPlan({method="ordinary",decades=5,set="joyful",guidance="g
   readyForLive:method==="ordinary",
   canonicalOwner:"AO_ROSARY_V381",
   source:ROSARY_METHODS[method].source});
+}
+/** A pure fifteen-decade cursor. Deliberately does not launch or replace the v3.4.14 donor. */
+export function rosaryJourney({method="ordinary",decades=15,set="joyful"}={}){
+ const plan=rosaryPlan({method,decades,set});
+ return Object.freeze(plan.ids.map((id,index)=>Object.freeze({
+  id,index,number:index+1,total:plan.ids.length,
+  set:id.startsWith("joy")?"joyful":id.startsWith("sor")?"sorrowful":"glorious",
+  localMystery:Number(id.slice(3)),
+  previous:index?plan.ids[index-1]:null,
+  next:index+1<plan.ids.length?plan.ids[index+1]:null,
+  isFinal:index===plan.ids.length-1
+ })));
+}
+export function rosaryJourneyAt(journey,index){
+ if(!Array.isArray(journey)||!Number.isSafeInteger(index))return null;
+ return journey[index]??null;
 }
 export const MERCY_WITNESSES=Object.freeze({
  en:"https://www.vaticannews.va/en/prayers/divine-mercy-chaplet.html",
