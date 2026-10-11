@@ -1,11 +1,14 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const captureDir=resolve(root,"artifacts/missal-phone-review");
+await mkdir(captureDir,{recursive:true});
+const audit=[];
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
  ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
@@ -52,6 +55,15 @@ try{
     viewportOverflow:document.documentElement.scrollWidth-innerWidth,
     primaryText:primary.textContent,secondaryText:translated.textContent};
   });
+  // Viewport screenshots complement assertions; they do not constitute real-handset signoff.
+  const filename="missal-"+width+"-"+lang+".png";
+  await page.screenshot({path:resolve(captureDir,filename),fullPage:false});
+  audit.push({viewport:{width,height},language:lang,file:filename,
+    mode:measure.mode,pairedRows:measure.rows,gridColumns:measure.gridColumns,
+    leftX:measure.textLeft,rightX:measure.textRight,
+    viewportOverflowPx:measure.viewportOverflow,serifFontsMatch:measure.fontPrimary===measure.fontTranslation,
+    equalFontSize:measure.sizePrimary===measure.sizeTranslation});
+  await writeFile(resolve(captureDir,"metrics.json"),JSON.stringify(audit,null,2)+"\n");
   assert.equal(measure.mode,"MISSAL",width+"px reader did not open in Missal");
   assert.ok(measure.rows>0,width+"px Missal has no bilingual paragraph pairs");
   assert.ok(measure.textRight>measure.textLeft+30,width+"px Latin and vernacular are not side by side: "+JSON.stringify(measure));
