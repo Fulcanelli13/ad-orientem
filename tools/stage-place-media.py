@@ -96,7 +96,9 @@ def validate():
     assert research["schema"] == "AO_EXPLORE_PLACE_MEDIA_RESEARCH_V1"
     assert curated["schema"] == "AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1"
     assert approved["schema"] == "AO_APPROVED_PLACE_MEDIA_V1"
-    assert not approved.get("items"), "This acquisition must not modify the publication registry"
+    # Importing never writes approval records; separately reviewed entries
+    # may already be present in the production registry.
+    assert isinstance(approved.get("items", []), list), "Invalid approved-media registry"
     candidates = research.get("candidates", [])
     held = research.get("held", [])
     assert len(candidates) == 18 and len(held) == 2
@@ -110,6 +112,20 @@ def validate():
         assert row.get("source_page_url", "").startswith(
             "https://commons.wikimedia.org/wiki/File:"), key
     assert seen == featured, "Every curated physical site requires a source or explicit hold"
+    candidate_by_id = {row["place_id"]: row for row in candidates}
+    published = set()
+    for row in approved.get("items", []):
+        place_id = row.get("place_id")
+        assert place_id in candidate_by_id and place_id not in published, (
+            "Approved photo must be from unique rights-rechecked candidate " + str(place_id))
+        published.add(place_id)
+        assert row.get("status") == "APPROVED"
+        assert row.get("license") == "CC-BY-SA-4.0"
+        assert row.get("source_url") == candidate_by_id[place_id]["source_page_url"]
+        assert row.get("asset_path", "").startswith("assets/approved/place-media/")
+        assert row.get("rights_verified") is True
+        assert row.get("subject_verified") is True
+        assert row.get("crop_reviewed") is True
     for row in candidates:
         assert row["commons_title"].startswith("File:")
         assert row["expected_license"] == "CC BY-SA 4.0"
