@@ -718,7 +718,12 @@ button.ao-schola-control{cursor:pointer}
   padding-bottom:calc(var(--ao-schola-reserve) + max(12px,env(safe-area-inset-bottom)))
 }
 #ao-r17-native-reader-preview[data-r17-curated-review="true"] .ao-prayer-card{
-  padding-bottom:clamp(92px,22vh,250px)
+  /* Preserve the native short-card cue-travel variable. The previous
+     fixed clamp masked this inherited reserve and left short responses
+     impossible to reach by scrolling (C0071). Keep actual scroll
+     territory, not inflated prayer paragraph heights. */
+  padding-bottom:calc(max(42vh,240px) + var(--ao-schola-reserve) +
+    var(--ao-short-cue-tail,0px) + max(12px,env(safe-area-inset-bottom)))
 }
 
 `;
