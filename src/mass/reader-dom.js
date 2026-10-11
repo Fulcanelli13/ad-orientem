@@ -740,7 +740,11 @@ button.ao-schola-control{cursor:pointer}
    padding alone does not constrain the scroller's outer rectangle. */
 #ao-r17-native-reader-preview[data-r17-curated-review="true"]
   .ao-reader-shell[data-schola-visible="true"] .ao-prayer-card{
-  height:calc(100% - var(--ao-schola-reserve) - max(12px,env(safe-area-inset-bottom)))
+  /* The parent viewport itself includes a larger top-ribbon/rail offset
+     than its nominal 100% scroll-child containing block. Deduct a guarded
+     88px as well as the live dock to keep the actual scroll rectangle
+     above the panel; the extra height remains accessible by finger scroll. */
+  height:calc(100% - var(--ao-schola-reserve) - 88px)
 }
 
 
