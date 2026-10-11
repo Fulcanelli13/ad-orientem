@@ -916,5 +916,6 @@ await import("./explore-r68-photo-gallery.mjs");
 await import("./explore-r69-multi-place-gallery.mjs");
 await import("./sacred-geography-coverage-r70.mjs");
 await import("./sacred-geography-r70-six-global-sites.mjs");
+await import("./sacred-geography-r70-worldwide-coverage.mjs");
 await import("./explore-r65-ireland-five-places.mjs");
 await import("./explore-world-boundaries.mjs");
