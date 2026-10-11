@@ -6,7 +6,8 @@
   "source_production": "data/geography/seed-registry.v1.json",
   "source_launch_records": [
     "data/geography/research/sacred-geography-major-sites-launch-2026-10-10.v1.json",
-    "data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json"
+    "data/geography/research/sacred-geography-major-exceptions-2026-10-10.v1.json",
+    "data/geography/research/sacred-geography-r70-global-six-site-evidence.v1.json"
   ],
   "review_batch_size": 75,
   "policy": {
@@ -19,20 +20,20 @@
   "summary": {
     "curated_physical_candidates": 750,
     "nonphysical_routes_events_excluded": 98,
-    "existing_production_places": 223,
-    "existing_published_shrines": 219,
-    "linked_pilgrimages": 209,
-    "existing_country_coverage": 48,
-    "published_sites_bilingual": 219,
-    "source_registry_sites": 219,
-    "existing_physical_pins": 219,
+    "existing_production_places": 229,
+    "existing_published_shrines": 225,
+    "linked_pilgrimages": 211,
+    "existing_country_coverage": 51,
+    "published_sites_bilingual": 225,
+    "source_registry_sites": 225,
+    "existing_physical_pins": 225,
     "full_illustrated_guides": 14,
     "approved_hero_images": 18,
     "approved_supplemental_images": 6,
     "candidate_status": {
       "POTENTIAL_EXISTING_ID_REVIEW": 106,
-      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 606,
-      "CONFIRMED_EXISTING_PROMOTION": 38
+      "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW": 600,
+      "CONFIRMED_EXISTING_PROMOTION": 44
     },
     "priorities": {
       "Essential": 64,
@@ -176,10 +177,10 @@
     {
       "country": "CA",
       "curated_candidates": 13,
-      "published_shrines": 4,
-      "confirmed_promotions": 0,
+      "published_shrines": 5,
+      "confirmed_promotions": 1,
       "possible_reuses": 3,
-      "unresolved": 10
+      "unresolved": 9
     },
     {
       "country": "IE",
@@ -600,10 +601,10 @@
     {
       "country": "MA",
       "curated_candidates": 2,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 2,
+      "confirmed_promotions": 2,
       "possible_reuses": 0,
-      "unresolved": 2
+      "unresolved": 0
     },
     {
       "country": "MY",
@@ -656,10 +657,10 @@
     {
       "country": "SG",
       "curated_candidates": 2,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 2,
+      "confirmed_promotions": 2,
       "possible_reuses": 0,
-      "unresolved": 2
+      "unresolved": 0
     },
     {
       "country": "SV",
@@ -952,10 +953,10 @@
     {
       "country": "ZM",
       "curated_candidates": 1,
-      "published_shrines": 0,
-      "confirmed_promotions": 0,
+      "published_shrines": 1,
+      "confirmed_promotions": 1,
       "possible_reuses": 0,
-      "unresolved": 1
+      "unresolved": 0
     }
   ],
   "candidates": [
@@ -1398,13 +1399,13 @@
       "category": "Great church / monastery",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:MA:cathedrale-saint-pierre-rabat",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 28,
-      "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "source_gate": "PUBLISHED_CANONICAL_RECORD_RECHECK_AS_NEEDED",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE"
     },
     {
@@ -1430,13 +1431,13 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:SG:church-our-lady-of-lourdes-ophir",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 30,
-      "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "source_gate": "PUBLISHED_CANONICAL_RECORD_RECHECK_AS_NEEDED",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE"
     },
     {
@@ -1670,13 +1671,13 @@
       "category": "Great church / monastery",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 45,
-      "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "source_gate": "PUBLISHED_CANONICAL_RECORD_RECHECK_AS_NEEDED",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE"
     },
     {
@@ -1702,13 +1703,13 @@
       "category": "Marian shrine",
       "priority": "Essential",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
       "possible_existing_place_id": null,
       "review_wave": 1,
       "review_order": 47,
-      "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "source_gate": "PUBLISHED_CANONICAL_RECORD_RECHECK_AS_NEEDED",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE"
     },
     {
@@ -2438,13 +2439,13 @@
       "category": "Marian shrine",
       "priority": "Strong",
       "discovery_sources_count": 0,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
       "possible_existing_place_id": null,
       "review_wave": 2,
       "review_order": 93,
-      "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "source_gate": "PUBLISHED_CANONICAL_RECORD_RECHECK_AS_NEEDED",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE"
     },
     {
@@ -7718,13 +7719,13 @@
       "category": "Saints and relics",
       "priority": "Strong",
       "discovery_sources_count": 1,
-      "reconciliation_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
-      "confirmed_place_id": null,
+      "reconciliation_status": "CONFIRMED_EXISTING_PROMOTION",
+      "confirmed_place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
       "possible_existing_place_id": null,
       "review_wave": 6,
       "review_order": 423,
-      "source_gate": "ORIGINAL_SITE_SOURCE_REQUIRED",
-      "pin_gate": "NO_PIN_FROM_TEXT_MATCH",
+      "source_gate": "PUBLISHED_CANONICAL_RECORD_RECHECK_AS_NEEDED",
+      "pin_gate": "EXISTING_CANONICAL_PIN",
       "publication": "NO_AUTOMATIC_CHANGE"
     },
     {

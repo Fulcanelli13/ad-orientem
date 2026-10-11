@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 223,
-    "places_with_linked_records": 221,
+    "places": 229,
+    "places_with_linked_records": 227,
     "places_without_direct_claim": 2,
-    "multicategory_heritage_places": 181,
-    "shrines": 219,
-    "pilgrimages": 209,
+    "multicategory_heritage_places": 183,
+    "shrines": 225,
+    "pilgrimages": 211,
     "relic_claims": 122,
     "apparition_accounts": 32,
     "canonical_customs": 13,
@@ -326,6 +326,19 @@
         ],
         "relics": [
           "relic:BR:pateo-do-collegio-sao-paulo"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "display_name": "Bishop Velychkovsky National Martyr's Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:bishop-velychkovsky-martyrs-shrine-winnipeg"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:bishop-velychkovsky-martyrs-shrine-winnipeg-destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2729,6 +2742,26 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "display_name": "Cathédrale Saint-Pierre de Rabat",
+      "record_ids": {
+        "shrines": [
+          "shrine:MA:cathedrale-saint-pierre-rabat"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "display_name": "Église Notre-Dame de Lourdes, Casablanca",
+      "record_ids": {
+        "shrines": [
+          "shrine:MA:eglise-notre-dame-de-lourdes-casablanca"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
       "display_name": "National Shrine of Our Lady of Ta' Pinu",
       "record_ids": {
@@ -3196,6 +3229,26 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "display_name": "Church of Our Lady of Lourdes, Singapore",
+      "record_ids": {
+        "shrines": [
+          "shrine:SG:church-our-lady-of-lourdes-ophir"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "display_name": "Church of the Nativity of the Blessed Virgin Mary, Hougang",
+      "record_ids": {
+        "shrines": [
+          "shrine:SG:nativity-blessed-virgin-mary-hougang"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:SN:basilica-of-our-lady-of-deliverance-popenguine",
       "display_name": "Basilica of Our Lady of Deliverance, Popenguine",
       "record_ids": {
@@ -3608,11 +3661,24 @@
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+      "display_name": "Archdiocese of Lusaka Marian Shrine",
+      "record_ids": {
+        "shrines": [
+          "shrine:ZM:archdiocese-lusaka-marian-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:ZM:archdiocese-lusaka-marian-shrine-destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
-    "shrines": 219,
-    "pilgrimages": 181,
+    "shrines": 225,
+    "pilgrimages": 183,
     "relics": 92,
     "apparitions": 29,
     "customs": 55,
