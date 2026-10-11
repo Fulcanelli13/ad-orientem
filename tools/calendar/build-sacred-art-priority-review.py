@@ -65,6 +65,8 @@ def build(args):
     score={"A+":110,"A":70,"B":-20}.get(grade,0)
     score+=25 if a["rights"]=="CC0" else -60
     score+=10 if terms.intersection(icons) else 0
+    if key=="devotion.adoration" and "adoration-of-host" in icons:score+=220
+    if key=="devotion.adoration" and "glorification-eucharist" in icons:score+=75
     score+=8 if token in canonical.get("association",{}).get("observedIds",[]) else 0
     if section=="Saints" and tags.get("portraitSubjectId")==token:score+=35
     if a["preview"] is None:score-=1000
