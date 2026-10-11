@@ -763,6 +763,7 @@ ${yearJourneyCss}
 #${ROOT_ID}[data-ao-calendar-embedded="true"]{position:relative!important;inset:auto!important;z-index:auto!important;width:100%;height:auto;max-height:none;min-height:0;overflow:visible!important;background:transparent;box-shadow:none}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModTop{position:relative;top:auto;padding:8px}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModBody{width:100%;max-width:760px;padding:6px 4px 26px}
+#${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalV2Tabs{display:none!important}
 `;
 }
 let unsub=null,embeddedReturn=null;
@@ -843,7 +844,7 @@ function paint(){
   requestAnimationFrame(()=>centerSelectedDay(r));return true;
 }
 function syncShell(surface){globalThis.AO_APP_SHELL_V1?.syncSurface?.(surface)}
-function close({surface="home",silent=false}={}){if(globalThis.__aoCalendarTrace)console.warn("AO_CALENDAR_CLOSE",silent,new Error().stack);cancelPendingNavigation();yearColourLoad=null;const previous=embeddedReturn;embeddedReturn=null;root()?.remove?.();try{unsub?.()}catch{}unsub=null;if(silent)return true;if(previous){try{previous.onClose?.()}catch{}return true}syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
+function close({surface="home",silent=false}={}){cancelPendingNavigation();yearColourLoad=null;const previous=embeddedReturn;embeddedReturn=null;root()?.remove?.();try{unsub?.()}catch{}unsub=null;if(silent)return true;if(previous){try{previous.onClose?.()}catch{}return true}syncShell(surface);try{globalThis.AO_GLOBAL_RIBBON_V4323?.setActive?.(surface)}catch{}return true}
 async function waitForResolution(target,{attempts=120,delay=50}={}){
   for(let i=0;i<attempts;i+=1){
     const s=state(),r=s?.resolution;
