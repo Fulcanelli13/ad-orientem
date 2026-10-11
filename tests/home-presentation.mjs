@@ -134,3 +134,4 @@ assert.match(failed,/Calendar unavailable/);
 assert.doesNotMatch(failed,/Mass in progress/);
 
 console.log("PASS modular Home base presentation");
+\nimport "./today-v2-convergence.mjs";
