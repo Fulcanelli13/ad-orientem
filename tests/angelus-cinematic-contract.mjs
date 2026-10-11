@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {TANNER_ANGELUS_MASTER,TANNER_ANGELUS_STORYBOARD,tannerScene} from "../src/pray/angelus-tanner-storyboard.js";
 import {readFileSync} from "node:fs";
 import {
   ANGELUS_CINEMATIC_SCENES,
@@ -9,6 +10,17 @@ import {
 } from "../src/pray/angelus-cinematic.js";
 
 assert.equal(ANGELUS_CINEMATIC_VERSION,"angelus-cinematic-v1");
+assert.equal(TANNER_ANGELUS_MASTER.artist,"Henry Ossawa Tanner");
+assert.equal(TANNER_ANGELUS_MASTER.date,"1898");
+assert.match(TANNER_ANGELUS_MASTER.localPath,/^assets\/pray\/angelus\/.*\.webp$/);
+assert.match(TANNER_ANGELUS_MASTER.sourceUrl,/^https:\/\/commons\.wikimedia\.org\//);
+assert.deepEqual(TANNER_ANGELUS_STORYBOARD.map(s=>s.id),ANGELUS_CINEMATIC_SCENES.angelus.map(s=>s.id));
+assert.deepEqual(TANNER_ANGELUS_STORYBOARD.map(s=>s.prayerUnits),[["vr","hail"],["vr","hail"],["vr","hail"],["vr","collect"]]);
+assert.equal(tannerScene("incarnation").anchorLatin,"Et Verbum caro factum est");
+assert.equal(tannerScene("collect").effect,"stillness");
+assert.ok(TANNER_ANGELUS_STORYBOARD.every(s=>s.durationMs>=700&&s.durationMs<=2000));
+assert.ok(TANNER_ANGELUS_STORYBOARD.every(s=>s.focus.scale>=1&&s.focus.scale<=1.4));
+assert.equal(tannerScene("not-a-stage"),null);
 assert.deepEqual(
   planAngelusChapters(["vr","hail","vr","hail","vr","hail","vr","collect"],"angelus"),
   [[0,1],[2,3],[4,5],[6,7]],
@@ -54,6 +66,9 @@ assert.match(module,/Math\.abs\(dx\)>Math\.abs\(dy\)\*1\.45/,"vertical scroll mu
 assert.match(module,/button\.setAttribute\("aria-current","step"\)/,"current timeline milestone must be accessible");
 assert.match(module,/group\.hidden=i!==step/,"invisible prayer chapters must not read or receive focus");
 assert.match(module,/motionReduced\(win\)/,"reduced motion support missing");
+assert.match(module,/tannerScene\(scene\.id\)/,"Tanner camera direction is not wired to the reader");
+assert.match(module,/target\.src===currentSrc/,"Same-painting continuity must avoid duplicate full-screen transition");
+assert.match(style,/--ao-tanner-zoom/,"The selected painting has no scene camera compositor");
 assert.match(style,/prefers-reduced-motion:reduce/);
 assert.match(style,/data-ao-angelus-form/,"dark theme must be scoped to Angelus");
 assert.doesNotMatch(module,/setInterval|localStorage|requestAnimationFrame\(/,"prayer progression must be user driven");
